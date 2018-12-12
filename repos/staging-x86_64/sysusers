@@ -13,6 +13,7 @@ g network 90 - -
 g floppy 94 - -
 g scanner 96 - -
 g power 98 - -
+g users 100 - -
 
 # default artix users
 u bin 1 - -
