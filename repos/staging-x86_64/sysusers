@@ -1,6 +1,5 @@
 # default artix groups
 # groups first, because we have user/group id mismatch on ftp and mail
-
 g sys 3 - -
 g adm 4 - -
 g tty 5 - -
