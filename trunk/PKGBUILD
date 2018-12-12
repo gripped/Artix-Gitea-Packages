@@ -3,12 +3,11 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=239.3
-pkgrel=2
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 license=('GPL' 'LGPL2.1')
-depends=('audit')
 makedepends=('intltool' 'libtool' 'gperf' 'gtk-doc' 'polkit' 'dbus' 'eudev'
             'libseccomp' 'meson' 'kexec-tools' 'artix-sysvcompat')
 options=('!libtool')
