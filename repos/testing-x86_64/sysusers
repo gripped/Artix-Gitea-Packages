@@ -14,6 +14,9 @@ g floppy 94 - -
 g scanner 96 - -
 g power 98 - -
 
+# Default group for normal users
+g users 100 - -
+
 # default artix users
 u bin 1 - -
 u daemon 2 - -
