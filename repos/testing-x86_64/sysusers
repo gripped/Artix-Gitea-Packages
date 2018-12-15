@@ -17,12 +17,18 @@ g power 98 - -
 # Default group for normal users
 g users 100 - -
 
+# Administrator group: can *see* more than normal users
+g adm - - -
+
 # default artix users
 u bin 1 - -
 u daemon 2 - -
 u mail 8 - /var/spool/mail
 u ftp 14 - /srv/ftp
 u http 33 - /srv/http
+
+# The nobody user for NFS file systems
+u nobody 65534 "Nobody" -
 
 # default membership
 m bin daemon
