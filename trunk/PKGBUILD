@@ -9,15 +9,12 @@ pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        typo-fix.patch::https://gitea.artixlinux.org/artix/artools/commit/442aee08df0a234e468c87c47f3d3a56f753f5de.patch)
-sha256sums=('b3c1bde2743c285b86331b3733738f3e177274a5b5c9faa5c9b73fc43e562c31'
-            '5944d8555e3db765523e63dae5e1c2e7d0176ad1dd1fbaf839fd990dece8207d')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('b3c1bde2743c285b86331b3733738f3e177274a5b5c9faa5c9b73fc43e562c31')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-    patch -Np 1 -i $srcdir/typo-fix.patch
 }
 
 build() {
