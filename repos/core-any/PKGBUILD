@@ -2,8 +2,8 @@
 
 pkgbase=linux-firmware
 pkgname=(linux-firmware amd-ucode)
-_commit=1cb4e51018293c14642f115b5868cda92b879161 # master
-pkgver=20181026.1cb4e51
+_commit=0f22c8527439eaaf5c3fcf87b31c89445b6fa84 # master
+pkgver=20181218.0f22c85
 pkgrel=1
 pkgdesc="Firmware files for Linux"
 makedepends=('git')
