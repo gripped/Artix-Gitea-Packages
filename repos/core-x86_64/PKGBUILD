@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=239.3
-pkgrel=1
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -12,7 +12,6 @@ makedepends=('intltool' 'libtool' 'gperf' 'gtk-doc' 'polkit' 'dbus' 'eudev'
             'libseccomp' 'meson' 'kexec-tools' 'artix-sysvcompat')
 options=('!libtool')
 source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz")
-# source=("git+https://github.com/elogind/elogind.git#branch=v238-stable")
 sha256sums=('fde2791134ec14f17f7a5f0257c7337e4976826ce6ce86da7eedae54bccf2945')
 
 prepare() {
@@ -36,8 +35,7 @@ build() {
 }
 
 check(){
-    cd build
-    meson test
+    meson test -C build
 }
 
 package_elogind() {
@@ -48,7 +46,7 @@ package_elogind() {
     optdepends=('polkit: polkit support')
     backup=('etc/elogind/logind.conf')
 
-    DESTDIR="$pkgdir" ninja -C build install
+    DESTDIR="$pkgdir" meson install -C build
 
     mkdir ${srcdir}/_libelogind
     mv -v ${pkgdir}/usr/lib/pkgconfig ${srcdir}/_libelogind
