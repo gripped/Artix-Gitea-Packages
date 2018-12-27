@@ -1,10 +1,9 @@
-# $Id$
 # Maintainer: Sébastien Luttringer
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2018.8
-pkgrel=1
+pkgver=2018.12
+pkgrel=2.7
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
 license=('GPL')
@@ -29,8 +28,8 @@ md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          '5deb9f890a4d08a245e9752ede77271e'
          '580cf8b59eebfaac4fad373ffadc9912'
          'd41d8cd98f00b204e9800998ecf8427e'
-         '73b893207546f06425a21df19b46a366'
-         '1284f25f6a95293c4c68d8202733bc4f'
+         'fdfa843fc6354816f50ea2f17e6dce50'
+         '4fadfc766872636306499b8cf8cfb60c'
          '5182ac38a0de85da8ade93ef71975ca4'
          '598e4abf063f02d75950e07d1185bc9c'
          '0ee015fad07732676d9488ae498eed41'
@@ -38,7 +37,7 @@ md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          'f64466dd77c7bec37a8b47681468211a'
          'a78cd8d7f8240a8448edee82f503c34e'
          'a51847c012555c843dbdf8df0da171d3'
-         '4f54e0e4ac4895d668413427975b20bd'
+         '08e22c5d70ddcc1345f9ce3f15514ea2'
          '0267a3a463f35eec8a31f40a720dfd86')
 
 package() {
@@ -68,8 +67,8 @@ package() {
     install -m600 "$srcdir"/$f etc/
     install -m600 "$srcdir"/$f usr/share/factory/etc/
   done
-  touch etc/arch-release
-  install -m755 "$srcdir"/locale.sh etc/profile.d/locale.sh
+  touch etc/artix-release
+  install -m644 "$srcdir"/locale.sh etc/profile.d/locale.sh
   install -Dm644 "$srcdir"/os-release usr/lib/os-release
 
   # setup /var
