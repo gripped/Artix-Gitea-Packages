@@ -5,7 +5,7 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=prometheus-openrc
-pkgver=20180312
+pkgver=20190105
 pkgrel=1
 pkgdesc="OpenRC prometheus init script"
 arch=('any')
