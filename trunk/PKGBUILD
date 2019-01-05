@@ -5,8 +5,8 @@ _url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname='prometheus-runit'
-pkgver=20180314
-pkgrel=2
+pkgver=20190105
+pkgrel=1
 pkgdesc="Runit service script for prometheus"
 arch=('any')
 url="https://github.com/artix-linux"
