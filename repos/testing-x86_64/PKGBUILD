@@ -3,7 +3,7 @@
 
 pkgname=man-db
 pkgver=2.8.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A utility for reading man pages"
 arch=('x86_64')
 url="http://www.nongnu.org/man-db/"
@@ -36,6 +36,7 @@ build() {
     --disable-setuid \
     --enable-cache-owner=root \
     --enable-mandirs=GNU \
+    --with-systemdsystemunitdir=no \
     --with-sections="1 n l 8 3 0 2 5 4 9 6 7"
   make
 }
