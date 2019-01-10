@@ -4,14 +4,15 @@
 
 pkgname=pacman
 pkgver=5.1.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="http://www.archlinux.org/pacman/"
 license=('GPL')
 groups=('base' 'base-devel')
 depends=('bash' 'glibc' 'libarchive' 'curl'
-         'gpgme' 'pacman-mirrorlist' 'archlinux-keyring')
+         'gpgme' 'artix-mirrorlist' 'artix-keyring'
+         'archlinux-mirrorlist' 'archlinux-keyring')
 makedepends=('asciidoc')
 checkdepends=('python2' 'fakechroot')
 optdepends=('perl-locale-gettext: translation support in makepkg-template'
