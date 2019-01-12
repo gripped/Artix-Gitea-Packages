@@ -4,7 +4,7 @@
 # Maintainer: Christos Nouskas <nous@artixlinux.org>
 
 pkgname=artix-mirrorlist
-pkgver=20181023
+pkgver=20190112
 pkgrel=1
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
