@@ -1,11 +1,10 @@
-# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=sddm
 pkgver=0.18.0
-pkgrel=1
+pkgrel=2
 pkgdesc='QML based X11 and Wayland display manager'
 arch=('x86_64')
 url='http://github.com/sddm/sddm'
@@ -29,10 +28,11 @@ build() {
   cd build
   cmake ../${pkgname}-${pkgver} \
         -DCMAKE_INSTALL_PREFIX=/usr \
-        -DNO_SYSTEMD=yes \
-        -DUSE_ELOGIND=yes \
         -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib/sddm \
+        -DDBUS_CONFIG_DIR=/usr/share/dbus-1/system.d \
         -DDBUS_CONFIG_FILENAME=sddm_org.freedesktop.DisplayManager.conf \
+        -DUSE_ELOGIND=yes \
+        -DNO_SYSTEMD=yes \
         -DBUILD_MAN_PAGES=ON
   make
 }
