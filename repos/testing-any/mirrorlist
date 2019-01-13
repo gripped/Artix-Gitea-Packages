@@ -9,6 +9,7 @@ Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 Server = https://artix.wheaton.edu/repos/$repo/os/$arch
 Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
+Server = http://artix.unixpeople.org/repos/$repo/os/$arch
 Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
 Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
