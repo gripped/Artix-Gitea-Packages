@@ -5,7 +5,7 @@ _url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname='prometheus-runit'
-pkgver=20190105
+pkgver=20190114
 pkgrel=1
 pkgdesc="Runit service script for prometheus"
 arch=('any')
@@ -14,12 +14,13 @@ license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('prometheus')
-groups=('runit-galaxy')
+groups=('runit-world')
 provides=('prometheus-runscripts')
 replaces=('prometheus-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("prometheus.run::${_url}/prometheus/files/prometheus/run")
-sha256sums=('b6ad364c97a317773ee619e979b41787d48681895f45f6c09232f1be1c753a3e')
+# source=("prometheus.run::${_url}/prometheus/files/prometheus/run")
+source=("prometheus.run")
+sha256sums=('8e69c726a51b723935ce1db4b812ac6ec6ffdb5bb3a5d85448aeced91563c0f5')
 
 _inst_logsv() {
     for file in run finish check; do
