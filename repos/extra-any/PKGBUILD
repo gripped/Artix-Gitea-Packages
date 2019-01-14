@@ -5,20 +5,22 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=prometheus-openrc
-pkgver=20190105
+pkgver=20190114
 pkgrel=1
 pkgdesc="OpenRC prometheus init script"
 arch=('any')
 url="https://github.com/artix-linux/packages-galaxy"
 license=('GPL2')
-groups=('openrc-galaxy')
+groups=('openrc-world')
 depends=('openrc' 'prometheus')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/prometheus')
-source=("prometheus.confd::${_url}/net-analyzer/prometheus/files/prometheus.confd"
-       "prometheus.initd::${_url}/net-analyzer/prometheus/files/prometheus-3.initd")
+# source=("prometheus.confd::${_url}/net-analyzer/prometheus/files/prometheus.confd"
+#        "prometheus.initd::${_url}/net-analyzer/prometheus/files/prometheus-3.initd")
+source=("prometheus.confd"
+       "prometheus.initd")
 sha256sums=('940f1a3ad08f0eb370951b1a42c29a9217cba9ae2f5cb6cc675bdec1d51e8309'
-            '3f17a26f1bf3e16e6828ecce6b8919a7f91f54ed88092d2c2b943b1a70b8fcb4')
+            '90d49549f24265aef6d8ea0cd703a745974a4833bafdd580c8304057ff38a6d9')
 
 # pkgver() {
 # 	date +%Y%m%d
@@ -27,11 +29,11 @@ sha256sums=('940f1a3ad08f0eb370951b1a42c29a9217cba9ae2f5cb6cc675bdec1d51e8309'
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
 
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e "s/:-config\.file/:--config\.file/g" \
-        -i ${pkgdir}/etc/init.d/$1
+#     sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+#         -e 's|/var/run|/run|g' \
+#         -e 's|/usr/sbin|/usr/bin|g' \
+#         -e "s/:-config\.file/:--config\.file/g" \
+#         -i ${pkgdir}/etc/init.d/$1
 }
 
 _inst_confd(){
