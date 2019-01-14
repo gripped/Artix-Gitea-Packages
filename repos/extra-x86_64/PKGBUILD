@@ -1,10 +1,9 @@
-# $Id$
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=system-config-printer
 pkgver=1.5.11
-pkgrel=3
+pkgrel=4
 pkgdesc="A CUPS printer configuration tool and status applet"
 url="https://github.com/zdohnal/system-config-printer"
 arch=('x86_64')
@@ -32,7 +31,6 @@ build() {
     --sysconfdir=/etc \
     --with-udevdir=/usr/lib/udev --with-udev-rules \
     --with-systemdsystemunitdir=no
-
   make
 }
 
@@ -44,4 +42,9 @@ package() {
   find "${pkgdir}" -name '*.py' -exec python -mpy_compile {} +
   # Compile *.pyo
   find "${pkgdir}" -name '*.py' -exec python -O -mpy_compile {} +
+
+  # fix dbus policy location - --with-dbusdir doens't work
+  install -dm755 ${pkgdir}/usr/share/dbus-1/system.d
+  mv ${pkgdir}/etc/dbus-1/system.d/* ${pkgdir}/usr/share/dbus-1/system.d
+  rm -rf ${pkgdir}/etc/dbus-1
 }
