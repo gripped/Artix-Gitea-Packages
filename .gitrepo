@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = gitea@gitea.artixlinux.org:packagesPython/python-cssselect2.git
+	branch = master
+	commit = a4526c8fec0199a18fc57de6da99e998ce91d51b
+	parent = 8101b06cd4050c808176fcf9df2c6a3e9bce7869
+	method = merge
+	cmdver = 0.4.0
