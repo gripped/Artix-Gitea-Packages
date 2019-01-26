@@ -4,8 +4,8 @@
 
 pkgbase=linux               # Build stock -ARTIX kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_artix=4.20.2-artix1
-_srcver=4.20.2-arch1
+_artix=4.20.4-artix1
+_srcver=4.20.4-arch1
 pkgver=${_artix//-/.}
 pkgrel=1
 arch=(x86_64)
@@ -27,7 +27,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'fb94ad42e70bc14c2313639c3ce1012f3c5199e76ee9de9686249ff5d30a40b1'
+            '2df6ef44b9f30b4da0533ead73350e819cd3b8d58c0991176c7959be3a729b62'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             'c043f3033bb781e2688794a59f6d1f7ed49ef9b13eb77ff9a425df33a244a636'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65')
