@@ -26,5 +26,5 @@ _inst_confd(){
 }
 
 package() {
-    _inst_initd 'pdnsd'
+    _inst_initd 'pcscd'
 }
