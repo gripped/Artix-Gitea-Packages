@@ -1,0 +1,30 @@
+# Maintainer: artoo <artoo@artixlinux.org>
+
+pkgname=pcsclite-openrc
+pkgver=20190128
+pkgrel=1
+pkgdesc="OpenRC pcsclite init script"
+arch=('any')
+url="https://github.com/artix-linux/packages-galaxy"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'pcsclite')
+conflicts=('systemd-sysvcompat')
+source=("pcscd.initd")
+sha256sums=('aee3b795660076d362be3343bd63c55404ddf1f5d76f1d57bdb2930ac52a0d3b')
+
+# pkgver() {
+# 	date +%Y%m%d
+# }
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_initd 'pdnsd'
+}
