@@ -9,16 +9,12 @@ pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        buildtree.patch::https://gitea.artixlinux.org/artix/artools/commit/be5fa4af09d38a15b2b188c8d208c2969d08888c.patch)
-sha256sums=('d685d7f52668ff4879e48c4cb67f0bda3786c8ec12bdc2d047e50529ebc67213'
-            '4c01d0ee8f096ab7e72d957512b98164745fb65f61ec72e171fa68a7b2c5a819')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('d685d7f52668ff4879e48c4cb67f0bda3786c8ec12bdc2d047e50529ebc67213')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-
-    patch -Np1 -i $srcdir/buildtree.patch
 }
 
 build() {
