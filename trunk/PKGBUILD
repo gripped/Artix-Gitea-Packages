@@ -3,7 +3,7 @@
 
 pkgbase=python-msgpack
 pkgname=('python-msgpack' 'python2-msgpack')
-pkgver=0.6.0
+pkgver=0.6.1
 pkgrel=1
 
 url='https://github.com/msgpack/msgpack-python'
@@ -48,4 +48,4 @@ package_python2-msgpack() {
 }
 
 # vim:set ts=2 sw=2 et:
-sha256sums=('4478a5f68142414084cd43af8f21cef9619ad08bb3c242ea505330dade6ca9ea')
+sha256sums=('734e1abc6f14671f28acd5266de336ae6d8de522fe1c8d0b7146365ad1fe6b0f')
