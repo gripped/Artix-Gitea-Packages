@@ -6,7 +6,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=syncthing-runit
 pkgver=20190202
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for syncthing"
 arch=('any')
 url="https://gitea.artixlinux.org"
@@ -21,7 +21,8 @@ source=("syncthing.run"
         "logsyncthing.run"
         "syncthing.conf")
 sha256sums=('937c1c910f583e38bedf911d0ef522b6fc16998302d6d9cd4e313bdec65cad83'
-            'cc524d6e190a19a70ca34b66520abec2060e08041589b34a3a1048b63e6bf4a4')
+            'cc524d6e190a19a70ca34b66520abec2060e08041589b34a3a1048b63e6bf4a4'
+            '9af1ce2cf531c758a0a84f7e683172cac24081fbb2001d6e3125e512a214f03e')
 
 _inst_logsv() {
     for file in run finish check; do
