@@ -4,24 +4,25 @@ _url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='syncthing-runit'
-pkgver=20180314
+pkgname=syncthing-runit
+pkgver=20190202
 pkgrel=2
 pkgdesc="Runit service script for syncthing"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
+url="https://gitea.artixlinux.org"
+license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('syncthing')
 groups=('runit-galaxy')
-provides=('syncthing-runscripts')
-replaces=('syncthing-runscripts')
+install=syncthing-runit.install
 conflicts=('systemd-sysvcompat')
-source=("relaysrv.run::${_url}/syncthing/files/relaysrv/run"
-        "logrelaysrv.run::${_url}/syncthing/files/relaysrv/log/run")
-sha256sums=('79b76c3010b182aa9f7d17062b7b5e705157b19386e252967bf795c0113ec17c'
-            '1ead1dd0b2e1a77d7dce1e48eef319548454db47c7e5a8a255e0cedf7a6164a6')
+source=("syncthing.run"
+        "logsyncthing.run"
+        "syncthing.conf")
+sha256sums=('937c1c910f583e38bedf911d0ef522b6fc16998302d6d9cd4e313bdec65cad83'
+            'cc524d6e190a19a70ca34b66520abec2060e08041589b34a3a1048b63e6bf4a4'
+            '9af1ce2cf531c758a0a84f7e683172cac24081fbb2001d6e3125e512a214f03e')
 
 _inst_logsv() {
     for file in run finish check; do
@@ -46,7 +47,6 @@ _inst_sv() {
 }
 
 package() {
-    sed -e 's|-u relaysrv|-u syncthing-relaysrv|g' -i "$srcdir/relaysrv.run"
-    _inst_sv 'relaysrv'
-    _inst_logsv 'relaysrv'
+    _inst_sv 'syncthing'
+    _inst_logsv 'syncthing'
 }
