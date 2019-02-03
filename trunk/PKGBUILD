@@ -15,7 +15,7 @@ sha512sums=('5e46db5e048cf55681d50bffb87b93c9127d2ccc22a7614453e6437ba5e156d3a96
 build() {
   cd "$srcdir"/$pkgname-$pkgver
   ./autogen.sh
-  ./configure --prefix=/usr --sysconfdir=/etc
+  ./configure --prefix=/usr --sysconfdir=/etc --without-systemd
   make
 }
 
