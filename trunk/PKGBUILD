@@ -4,7 +4,7 @@
 
 pkgname=whois
 pkgver=5.4.1
-pkgrel=0.1
+pkgrel=1
 pkgdesc='Intelligent WHOIS client'
 url='https://github.com/rfc1036/whois'
 license=('GPL')
