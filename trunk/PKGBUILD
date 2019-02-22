@@ -3,7 +3,7 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=syslog-ng-openrc
-pkgver=20160222
+pkgver=20190222
 pkgrel=1
 pkgdesc="OpenRC syslog-ng init script"
 arch=('any')
