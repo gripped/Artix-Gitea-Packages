@@ -1,5 +1,5 @@
 # Maintainer: Chris Cromer <chris@cromer.cl>
-# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org> rebuild
 
 _url=https://gitea.artixlinux.org/artix/runit-artix
 _pkgname=runit-artix
