@@ -1,5 +1,5 @@
 # Maintainer: Chris Cromer <chris@cromer.cl>
-# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org> rebuild
 
 _url=https://gitea.artixlinux.org/artix/runit-artix
 _pkgname=runit-artix
@@ -10,11 +10,12 @@ _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.1.2
-pkgrel=13
+pkgrel=14
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
 license=('BSD')
+depends=('runit-rc')
 makedepends=('git')
 backup=('etc/rc/rc.local')
 provides=('svc-manager')
