@@ -20,6 +20,7 @@ options=('!emptydirs')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/openstack/oslo.log/archive/$pkgver.tar.gz")
 sha512sums=('a801f6270570d4caace309710d7bad34564f29182efb266471593d2ef2263e4161a9d7e71f129f407f1f7b04f649af3ae6c4c7dd49356d5246502f1a32ce4815')
 
+
 prepare() {
   sed -i 's/unittest2/unittest/g' oslo.log-$pkgver/oslo_log/tests/unit/*.py
   cp -a oslo.log-$pkgver{,-py2}
