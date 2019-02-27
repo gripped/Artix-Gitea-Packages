@@ -2,7 +2,7 @@
 
 pkgbase=python-hypothesis
 pkgname=('python-hypothesis' 'python2-hypothesis')
-pkgver=4.7.8
+pkgver=4.7.10
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=('any')
@@ -17,7 +17,7 @@ checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'flake8' 'python2-f
               'python2-dpcontracts' 'python-pytest-xdist' 'python2-pytest-xdist'
               'python-lark-parser' 'python2-lark-parser')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/HypothesisWorks/hypothesis/archive/hypothesis-python-$pkgver.tar.gz")
-sha512sums=('510b12435e6e6ef7dd7d0b69124a4fcd4aa279b941d78c3dac70eca2f62674d0f42c6f91dceb8e578c1bdd659c2b4c7d6c8aba80419b0b42a63c52a877fe2382')
+sha512sums=('c43626fc9758e986b5e3bb2881770d12284acfeac57ea83db275e4c1825fc2265bbc523712ef4ec1f2a2446c1fa7b0eef48244d8408c022adeec42711fb90343')
 
 prepare() {
   mv hypothesis-hypothesis-python-$pkgver hypothesis-$pkgver
