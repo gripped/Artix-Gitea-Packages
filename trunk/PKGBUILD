@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=iso-profiles
-pkgver=0.9.2
+pkgver=0.9.3
 pkgrel=1
 pkgdesc='Artix iso profiles'
 arch=('any')
@@ -10,7 +10,7 @@ url='https://gitea.artixlinux.org/artix/iso-profiles'
 makedepends=('git')
 conflicts=('artix-iso-profiles')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('3fda6b2f83136b92e222b0f379edd916d0a35a9e3b16228e81238454d13f5d32')
+sha256sums=('eba1ec2754dae42dba1b9ad1e02e95ab28eb6211d73885e16e6230b80cde4a33')
 
 package() {
     cd ${pkgname}
