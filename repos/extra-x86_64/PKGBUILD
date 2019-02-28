@@ -4,7 +4,7 @@
 pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xdmx' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-xwayland' 'xorg-server-common' 'xorg-server-devel')
-pkgver=1.20.3
+pkgver=1.20.4
 pkgrel=1
 arch=('x86_64')
 license=('custom')
@@ -22,19 +22,25 @@ source=(https://xorg.freedesktop.org/releases/individual/xserver/${pkgbase}-${pk
         0001-v2-FS-58644.patch
         0002-fix-libshadow-2.patch
         xvfb-run # with updates from FC master
-        xvfb-run.1)
+        xvfb-run.1
+        xorg-elogind.diff
+        xorg-meson-elogind.diff
+        xorg-meson-fix-elogind.diff)
 validpgpkeys=('7B27A3F1A6E18CD9588B4AE8310180050905E40C'
               'C383B778255613DFDB409D91DB221A6900000011'
               'DD38563A8A8224537D1F90E45B8A2D50A0ECD0D3'
               '995ED5C8A6138EB0961F18474C09DD83CAAA50B2')
-sha512sums=('ee44554f86df4297f54c5871fe7a18954eeef4338775a25f36d6577b279c4775f61128da71b86cfaeadcc080838d6749dede138d4db178866579da2056543fba'
+sha512sums=('f1c92ef6d7613e0636973d3395b48dfdad42230847ab1c8b1cea84647a968f649f9aba97bdb01c10ee8351cbe954d4e6ca4a0fc84bb8fa662d49c8ba2aee00a8'
             'SKIP'
             'd707e0870367de2665c3b82f09564d17ed3f62c9e8b4bd471c11af1fb1e9249e306e92c7961a04e355756eec9f5271bc8e66999e56c73c31bc9da4127ff30a8e'
             'd84f4d63a502b7af76ea49944d1b21e2030dfd250ac1e82878935cf631973310ac9ba1f0dfedf10980ec6c7431d61b7daa4b7bbaae9ee477b2c19812c1661a22'
             '74e1aa0c101e42f0f25349d305641873b3a79ab3b9bb2d4ed68ba8e392b4db2701fcbc35826531ee2667d3ee55673e4b4fecc2a9f088141af29ceb400f72f363'
             '0c7f7e43a2ba2372509f4a35e33a8a87a2e631c7e630c9c7c67ecaad00453b52c31d9dc26d1852ecd2fe1cb8c02cb716c1f39a4723473c38a0ef6e559bead271'
             '55bbf520333f6e818b0125b37179a7039b69a0d3d2242b80a08da003d94cbf6c1fb912d880abcce318a85d7947e3eff8fbc4cdf57d7118572e8ebc56c4569af6'
-            'de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22')
+            'de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22'
+            '3364db821f165e7887a24b50f296d6eae24e5c3ac886905b8edbb2301c9d034ac146c4fb7be2e32b1350cb37cd781ea5c0aa8b4403e37ca5b2383a9e074a2f87'
+            '41244bba06b599e813d4656dfd614af247229f7997f2dc18d090b7e44316c395ca2cce9fed2eefacbb6d40934510df3ada3adc00b69190965e8948c609731cdc'
+            '8246f46edfdae4b954f1aa7acc8f4fc1afaee158642c2ea5948ceb26fdefcfba7d4428183bce1e347eecaece8fc91dc43af42e6fd75f164c7be6f2d7525d4cf6')
 
 prepare() {
   # missing from tarball
@@ -52,6 +58,10 @@ prepare() {
   # Fix libshadow.so: libfb.so => not found - FS#58731
   # https://bugs.freedesktop.org/show_bug.cgi?id=106656
   patch -Np1 -i ../0002-fix-libshadow-2.patch
+
+  patch -Np1 -i ../xorg-elogind.diff
+  patch -Np1 -i ../xorg-meson-elogind.diff
+  patch -Np1 -i ../xorg-meson-fix-elogind.diff
 }
 
 build() {
@@ -76,6 +86,7 @@ build() {
     -D glamor=true \
     -D udev=true \
     -D systemd_logind=true \
+    -D elogind=true \
     -D suid_wrapper=true \
     -D xkb_dir=/usr/share/X11/xkb \
     -D xkb_output_dir=/var/lib/xkb
@@ -103,7 +114,7 @@ package_xorg-server-common() {
   depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
-  _install fakeinstall/usr/share/man/man1/Xserver.1.gz
+  _install fakeinstall/usr/share/man/man1/Xserver.1
 
   install -m644 -Dt "${pkgdir}/var/lib/xkb/" "${pkgbase}-${pkgver}"/xkb/README.compiled
   # license
@@ -128,9 +139,9 @@ package_xorg-server() {
   _install fakeinstall/usr/lib/Xorg{,.wrap}
   _install fakeinstall/usr/lib/xorg/modules/*
   _install fakeinstall/usr/share/X11/xorg.conf.d/10-quirks.conf
-  _install fakeinstall/usr/share/man/man1/{Xorg,Xorg.wrap,cvt,gtf}.1.gz
-  _install fakeinstall/usr/share/man/man4/{exa,fbdevhw,modesetting}.4.gz
-  _install fakeinstall/usr/share/man/man5/{Xwrapper.config,xorg.conf,xorg.conf.d}.5.gz
+  _install fakeinstall/usr/share/man/man1/{Xorg,Xorg.wrap,cvt,gtf}.1
+  _install fakeinstall/usr/share/man/man4/{exa,fbdevhw,modesetting}.4
+  _install fakeinstall/usr/share/man/man5/{Xwrapper.config,xorg.conf,xorg.conf.d}.5
 
   # distro specific files must be installed in /usr/share/X11/xorg.conf.d
   install -m755 -d "${pkgdir}/etc/X11/xorg.conf.d"
@@ -146,7 +157,7 @@ package_xorg-server-xephyr() {
            nettle libtirpc)
 
   _install fakeinstall/usr/bin/Xephyr
-  _install fakeinstall/usr/share/man/man1/Xephyr.1.gz
+  _install fakeinstall/usr/share/man/man1/Xephyr.1
 
   # license
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" "${pkgbase}-${pkgver}"/COPYING
@@ -157,7 +168,7 @@ package_xorg-server-xvfb() {
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth libgl nettle)
 
   _install fakeinstall/usr/bin/Xvfb
-  _install fakeinstall/usr/share/man/man1/Xvfb.1.gz
+  _install fakeinstall/usr/share/man/man1/Xvfb.1
 
   install -m755 "${srcdir}/xvfb-run" "${pkgdir}/usr/bin/"
   install -m644 "${srcdir}/xvfb-run.1" "${pkgdir}/usr/share/man/man1/" # outda
@@ -171,7 +182,7 @@ package_xorg-server-xnest() {
   depends=(libxfont2 libxext pixman xorg-server-common nettle libtirpc)
 
   _install fakeinstall/usr/bin/Xnest
-  _install fakeinstall/usr/share/man/man1/Xnest.1.gz
+  _install fakeinstall/usr/share/man/man1/Xnest.1
 
   # license
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" "${pkgbase}-${pkgver}"/COPYING
@@ -183,7 +194,7 @@ package_xorg-server-xdmx() {
            pixman xorg-server-common nettle)
 
   _install fakeinstall/usr/bin/{Xdmx,dmx*,vdltodmx,xdmxconfig}
-  _install fakeinstall/usr/share/man/man1/{Xdmx,dmxtodmx,vdltodmx,xdmxconfig}.1.gz
+  _install fakeinstall/usr/share/man/man1/{Xdmx,dmxtodmx,vdltodmx,xdmxconfig}.1
 
   # license
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" "${pkgbase}-${pkgver}"/COPYING
