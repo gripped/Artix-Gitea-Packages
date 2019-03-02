@@ -12,27 +12,27 @@ index 8d43b6db428..a96fbcc9d2c 100644
 --- a/support-files/mariadb.service.in
 +++ b/support-files/mariadb.service.in
 @@ -117,7 +117,7 @@ UMask=007
-
+ 
  # If you don't use the /tmp directory for SELECT ... OUTFILE and
  # LOAD DATA INFILE you can enable PrivateTmp=true for a little more security.
 -PrivateTmp=false
 +PrivateTmp=true
-
+ 
  ##
  ## Options previously available to be set via [mysqld_safe]
 diff --git a/support-files/mariadb@.service.in b/support-files/mariadb@.service.in
-index a2f5cff0828..83d75f80b87 100644
+index a2f5cff0828..30631a8738a 100644
 --- a/support-files/mariadb@.service.in
 +++ b/support-files/mariadb@.service.in
-@@ -41,7 +41,7 @@ Type=notify
-
- # Setting this to true can break replication and the Type=notify settings
- # See also bind-address mysqld option.
--PrivateNetwork=false
-+PrivateNetwork=true
-
- ##############################################################################
- ## Package maintainers
+@@ -138,7 +138,7 @@ UMask=007
+ 
+ # If you don't use the /tmp directory for SELECT ... OUTFILE and
+ # LOAD DATA INFILE you can enable PrivateTmp=true for a little more security.
+-PrivateTmp=false
++PrivateTmp=true
+ 
+ ##
+ ## Options previously available to be set via [mysqld_safe]
 From 0e4a158086b765aa3a12b84646aefb9b192443f7 Mon Sep 17 00:00:00 2001
 From: Christian Hesse <mail@eworm.de>
 Date: Tue, 29 Jan 2019 23:12:54 +0100
@@ -51,7 +51,7 @@ index a96fbcc9d2c..6bb5d4227b9 100644
  # (in LD_LIBRARY_PATH) and library name (in LD_PRELOAD).
  # Environment="LD_LIBRARY_PATH=/path1 /path2" "LD_PRELOAD=
 +Environment="LD_PRELOAD=/usr/lib/libjemalloc.so"
-
+ 
  # Flush caches. previously [mysqld_safe] flush-caches=1
  # ExecStartPre=sync
 diff --git a/support-files/mariadb@.service.in b/support-files/mariadb@.service.in
@@ -63,7 +63,7 @@ index 83d75f80b87..d1d24d685f9 100644
  # (in LD_LIBRARY_PATH) and library name (in LD_PRELOAD).
  # Environment="LD_LIBRARY_PATH=/path1 /path2" "LD_PRELOAD=
 +Environment="LD_PRELOAD=/usr/lib/libjemalloc.so"
-
+ 
  # Flush caches. previously [mysqld_safe] flush-caches=1
  # ExecStartPre=sync
 From 72b42fb1a344bfc3f3c3c905fe85c93ac4a752e3 Mon Sep 17 00:00:00 2001
@@ -96,7 +96,7 @@ index 913b88f8328..17d25361178 100644
  #
 -!includedir /etc/my.cnf.d
 +!includedir /etc/mysql/my.cnf.d
-
+ 
 From 820b47c1e70d36f1272cca3ddbdf4bbd2dd62bde Mon Sep 17 00:00:00 2001
 From: Christian Hesse <mail@eworm.de>
 Date: Wed, 30 Jan 2019 00:46:47 +0100
@@ -111,45 +111,24 @@ index 8d43b6db428..d7fa6bf5b14 100644
 --- a/support-files/mariadb.service.in
 +++ b/support-files/mariadb.service.in
 @@ -20,8 +20,6 @@ After=network.target
-
+ 
  [Install]
  WantedBy=multi-user.target
 -Alias=mysql.service
 -Alias=mysqld.service
-
-
+ 
+ 
  [Service]
 diff --git a/support-files/mariadb@.service.in b/support-files/mariadb@.service.in
 index a2f5cff0828..3fc41358e14 100644
 --- a/support-files/mariadb@.service.in
 +++ b/support-files/mariadb@.service.in
 @@ -27,8 +27,6 @@ ConditionPathExists=@sysconf2dir@/my%I.cnf
-
+ 
  [Install]
  WantedBy=multi-user.target
 -Alias=mysql.service
 -Alias=mysqld.service
-
-
+ 
+ 
  [Service]
-From c86912c8896b65c1dd9226c1bc2987189d4840c2 Mon Sep 17 00:00:00 2001
-From: Christian Hesse <mail@eworm.de>
-Date: Tue, 2 Jan 2018 14:36:49 +0100
-Subject: Make systemd-tmpfiles create MYSQL_DATADIR
-
-This is a no-op if the directory exists, but makes sure it is created by
-systemd-tmpfiles with proper permissions otherwise.
-
-This solves packaging issues when the user MYSQLD_USER is created by
-systemd-sysusers and uid is not known in advance.
----
- support-files/tmpfiles.conf.in | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/support-files/tmpfiles.conf.in b/support-files/tmpfiles.conf.in
-index 03d66abc0c7..3c89cb258c9 100644
---- a/support-files/tmpfiles.conf.in
-+++ b/support-files/tmpfiles.conf.in
-@@ -1 +1,2 @@
- d @MYSQL_UNIX_DIR@ 0755 @MYSQLD_USER@ @MYSQLD_USER@ -
-+d @MYSQL_DATADIR@ 0700 @MYSQLD_USER@ @MYSQLD_USER@ -
