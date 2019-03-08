@@ -3,7 +3,7 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=postgresql-openrc
-pkgver=20180315
+pkgver=20190309
 pkgrel=1
 pkgdesc="OpenRC postgresql init script"
 arch=('any')
