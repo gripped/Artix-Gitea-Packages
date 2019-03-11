@@ -9,7 +9,7 @@ url='https://www.freedesktop.org/wiki/Software/VDPAU/'
 depends=('libxext')
 license=('custom')
 _commit=eac1393480bc7c2209d4984819951cb9dc1e03d0  # libvdpau-1.2
-source=("git+https://anongit.freedesktop.org/git/vdpau/libvdpau#commit=$_commit")
+source=("git+https://gitlab.freedesktop.org/vdpau/libvdpau#commit=$_commit")
 makedepends=('dri2proto' git)
 sha256sums=('SKIP')
 
