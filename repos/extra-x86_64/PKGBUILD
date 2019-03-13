@@ -2,8 +2,8 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xf86-video-intel
-_commit=3a2dec17459dea56331430c8481646d538278518 # master
-pkgver=2.99.917+860+g3a2dec17
+_commit=6afed33b2d673d88674f0c76efe500ae414e8e1b # master
+pkgver=2.99.917+863+g6afed33b
 pkgrel=1
 epoch=1
 arch=(x86_64)
@@ -27,7 +27,7 @@ provides=('xf86-video-intel-uxa' 'xf86-video-intel-sna')
 conflicts=('xorg-server<1.20' 'X-ABI-VIDEODRV_VERSION<24' 'X-ABI-VIDEODRV_VERSION>=25'
            'xf86-video-intel-sna' 'xf86-video-intel-uxa' 'xf86-video-i810' 'xf86-video-intel-legacy')
 groups=('xorg-drivers')
-source=("git+https://anongit.freedesktop.org/git/xorg/driver/xf86-video-intel#commit=$_commit"
+source=("git+https://anongit.freedesktop.org/git/xorg/driver/xf86-video-intel#commit=$_commit" 
         0001-SNA-fix-PRIME-output-support-since-xserver-1.20.patch)
 sha256sums=('SKIP'
             '7cdc310953379ede9693a387ecac6c803cc4c4461df5ad9ab875b35e90a552f5')
