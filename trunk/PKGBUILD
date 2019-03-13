@@ -2,22 +2,19 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.12.5
-pkgrel=2
+pkgver=0.12.6
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        pkg2yaml.patch::$url/commit/16d0c1759d626f3c3265f3ad3b52418d953c57a1.patch)
-sha256sums=('fc2fb250ebd47d247fe3ac744944368be3cf410c09c37b553913fbd64c6aeb40'
-            '2751c435ceefe935d18874a72d58b9d3b3abcfddecf7b9a8317094b8ae008d26')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('e0bb96c0fa69849154ba8e99c3407875188eacc1fa1aa4ec96c11f5897d6aa97')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-    patch -Np1 -i ../pkg2yaml.patch
 }
 
 build() {
