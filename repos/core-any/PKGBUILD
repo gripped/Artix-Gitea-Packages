@@ -4,18 +4,18 @@
 # Maintainer: Christos Nouskas <nous@artixlinux.org>
 
 pkgname=artix-mirrorlist
-pkgver=20190304
+pkgver=20190314
 pkgrel=1
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
-url="https://www.artixlinux.org/mirrorlist/"
+url="https://gitea.artixlinux.org/packagesA/artix-mirrorlist/src/branch/master/trunk/mirrorlist"
 license=('GPL')
 provides=('pacman-mirrorlist')
 conflicts=('pacman-mirrorlist')
 replaces=('pacman-mirrorlist')
 backup=(etc/pacman.d/mirrorlist)
 source=(mirrorlist)
-sha256sums=('a1fff735afe2f60c657bbb88fcf04a8a02df87a5ecfb0bee4c98c145002d9823')
+sha256sums=('b5cf1277946d48c62df8444129e1b29c147f5df396f8973e0793922b05ef2b8c')
 
 package() {
   mkdir -p $pkgdir/etc/pacman.d
