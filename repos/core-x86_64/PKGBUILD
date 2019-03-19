@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=241.1
-pkgrel=6
+pkgrel=7
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -41,7 +41,7 @@ check(){
 package_elogind() {
     pkgdesc="The systemd project's logind, extracted to a standalone package"
     groups=('base')
-    provides=("elogind=${pkgver}" 'systemd-dummy' 
+    provides=("elogind=${pkgver}" 'systemd-dummy'
             "systemd=${pkgver}" "systemd-tools=${pkgver}")
     conflicts=('systemd-dummy' 'systemd')
     replaces=('systemd-dummy')
@@ -50,7 +50,7 @@ package_elogind() {
     backup=('etc/elogind/logind.conf')
 
     DESTDIR="$pkgdir" meson install -C build
-    
+
     mkdir ${srcdir}/_libelogind
     mv -v ${pkgdir}/usr/lib/pkgconfig ${srcdir}/_libelogind
     mv -v ${pkgdir}/usr/include/ ${srcdir}/_libelogind
@@ -62,7 +62,7 @@ package_libelogind(){
     groups=('base-devel')
     provides=('libelogind.so' "libelogind=${pkgver}" 'systemd-libs-dummy'
             "libsystemd=${pkgver}" "systemd-libs=${pkgver}"
-            'libsystemd.so' 'libelogind.so')
+            'libsystemd.so')
     conflicts=('systemd-libs-dummy' 'systemd-libs')
     replaces=('systemd-libs-dummy')
     depends=('libcap' 'libeudev')
@@ -73,7 +73,7 @@ package_libelogind(){
     mv ${srcdir}/_libelogind/include ${pkgdir}/usr
     mv ${srcdir}/_libelogind/pkgconfig ${pkgdir}/usr/lib
     mv ${srcdir}/_libelogind/libelogind*.so* ${pkgdir}/usr/lib
-    
+
     ln -sfv libelogind.so ${pkgdir}/usr/lib/libsystemd.so
     ln -sfv libsystemd.so ${pkgdir}/usr/lib/libsystemd.so.0
     ln -sfv libelogind.pc ${pkgdir}/usr/lib/pkgconfig/libsystemd.pc
