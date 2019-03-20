@@ -15,6 +15,7 @@ checkdepends=('python-case' 'python2-case' 'python-pytest-sugar' 'python2-pytest
 source=("$pkgbase-$_commit.tar.gz::https://github.com/celery/py-amqp/archive/$_commit.tar.gz")
 sha512sums=('e820e733293428bfe86f185136060847d99251baa571ec6f106a9d6db01251b8950db4ead815b3df662c72166ffd575afb45389e2c2c19026e43a21e738a15a6')
 
+
 prepare() {
   mv py-amqp-{$_commit,$pkgver}
 }
