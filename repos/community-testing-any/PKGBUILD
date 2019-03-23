@@ -3,18 +3,17 @@
 pkgbase=python-py-cpuinfo
 pkgname=('python-py-cpuinfo' 'python2-py-cpuinfo')
 pkgver=5.0.0
-_commit=0a8915b2601850318c1d113bed02d00af0b17a2a
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Get CPU info with pure Python 2 & 3'
 url='https://github.com/workhorsy/py-cpuinfo'
 license=('MIT')
 makedepends=('python-setuptools' 'python2-setuptools')
 checkdepends=('python-pytest-runner' 'python2-pytest-runner')
-source=("$pkgbase-$_commit.tar.gz::https://github.com/workhorsy/py-cpuinfo/archive/$_commit.tar.gz")
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/workhorsy/py-cpuinfo/archive/v$pkgver.tar.gz")
+sha512sums=('186bae1745c927b613ac852819e046ef43b9b9322e4455d9fb0ce94d4ab7d3239a25d7bb01347f3a5a9dc80a0cc047feeb3af97ab85e5e995ff19a5f8b7a8129')
 
 prepare() {
-  mv py-cpuinfo-{$_commit,$pkgver}
   cp -a py-cpuinfo-$pkgver{,-py2}
 }
 
@@ -52,4 +51,3 @@ package_python2-py-cpuinfo() {
 
   mv "$pkgdir"/usr/bin/cpuinfo{,2}
 }
-sha256sums=('5be55f553da654770e1feb65a0f994d44317da8f91f408f3154392e0c4f6915d')
