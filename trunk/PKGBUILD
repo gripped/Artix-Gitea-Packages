@@ -28,8 +28,10 @@ prepare() {
   cd ${pkgname}-${pkgver}
   patch -Np1 -i ../refresh_adv_manager_for_non-LE_devices.diff
 
-  # no systemd fixes
+  # no systemd obex fix
   patch -Np1 -i ../0001-Allow-using-obexd-without-systemd-in-the-user-session.patch
+
+  # signal.h missing fix
   patch -Np1 -i ../bluez-5.50-btpclient-header.patch
 
   autoreconf -vi
