@@ -5,24 +5,32 @@
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
 pkgver=5.50
-pkgrel=6
+pkgrel=6.1
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL2')
 makedepends=('dbus' 'libical' 'eudev' 'alsa-lib' 'ell' 'json-c')
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe
-        refresh_adv_manager_for_non-LE_devices.diff)
+        refresh_adv_manager_for_non-LE_devices.diff
+        0001-Allow-using-obexd-without-systemd-in-the-user-session.patch
+        bluez-5.50-btpclient-header.patch)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
 sha512sums=('64a680e4b3c270bc2439610c91ad2aef36131d84401e4bbdf6c2b7ec8708a19dfc942b31b9189c38a97ca072c761c669ae1aace5f4ff5d06de3ccbf33184be45'
             'SKIP'
             '5370ea87fc3f76ab46f2d549c5396b6204a21b629d4765de658fe8e90331b936a36aa8624de8bb2304cc1b78ac2fa6e84f2411f247dff1aab2daf7aa21b2c650'
-            'c6ef673956963725edc52d667648e51df5b99f820e87705096b4b9338e8a4540722e734f1e8e67998c2fbbefec30645ff1fa064789c8a858f770d1214399561d')
+            'c6ef673956963725edc52d667648e51df5b99f820e87705096b4b9338e8a4540722e734f1e8e67998c2fbbefec30645ff1fa064789c8a858f770d1214399561d'
+            '17a0967ac291be3822e2be73912ab4c1720564bdce0765582e54bc0347d0477d38f82dbf0db9d660f982c35b3c2ea13dd37b22e18223d36745306c4c9d859423'
+            'adab1e006f71ecaa97576023178fb73c27a8320f09d0c2039675c062314b15613b7dddbe90006afc28ddac4043cb7689987a5a226891363220edcf944fe63740')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
 
 prepare() {
   cd ${pkgname}-${pkgver}
   patch -Np1 -i ../refresh_adv_manager_for_non-LE_devices.diff
+  patch -Np1 -i ../0001-Allow-using-obexd-without-systemd-in-the-user-session.patch
+  patch -Np1 -i ../bluez-5.50-btpclient-header.patch
+
+  autoreconf -vi
 }
 
 build() {
