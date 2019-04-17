@@ -3,6 +3,7 @@
 
 # toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
 # NOTE: valgrind requires rebuilt with each major glibc version
+#
 
 pkgbase=glibc
 pkgname=(glibc lib32-glibc)
@@ -36,7 +37,7 @@ md5sums=('e6c279d5b2f0736f740216f152acf974'
 prepare() {
   mkdir -p glibc-build lib32-glibc-build
 
-  [[ -d glibc-$pkgver ]] && ln -s glibc-$pkgver glibc 
+  [[ -d glibc-$pkgver ]] && ln -s glibc-$pkgver glibc
   cd glibc
 
   local i; for i in ${source[@]}; do
