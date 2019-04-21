@@ -15,7 +15,6 @@ sha256sums=('acad863ded8d9f18d8cadb98bbdf1f38056a648efd4d756c625c46ad7a0550f3')
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-    patch -Np1 -i ../comparepkg.patch
 }
 
 build() {
