@@ -3,8 +3,8 @@
 
 pkgbase=virtualbox-modules-artix
 pkgname=('virtualbox-host-modules-artix' 'virtualbox-guest-modules-artix')
-pkgver=6.0.4
-pkgrel=18
+pkgver=6.0.6
+pkgrel=3
 arch=('x86_64')
 url='http://virtualbox.org'
 license=('GPL')
