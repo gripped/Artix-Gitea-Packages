@@ -1,17 +1,17 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux               # Build stock -ARTIX kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_artix=5.0.6-artix1
-_srcver=5.0.6-arch1
+_artix=5.0.9-artix1
+_srcver=5.0.9-arch1
 pkgver=${_artix//-/.}
 pkgrel=1
 arch=(x86_64)
 url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
 license=(GPL2)
-makedepends=(xmlto kmod inetutils bc libelf git python-sphinx graphviz)
+makedepends=(xmlto kmod inetutils bc libelf git)
 options=('!strip')
 _srcname=archlinux-linux
 source=(
@@ -27,7 +27,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'a90f5f5581011c2cdc8b15f21deb820cbae56c192f5aa52283803dd78e9be433'
+            '79b9497f48f50ae1a8b00be597fff3ac8d38a72f55594711ff8054df7315ac2d'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             'c043f3033bb781e2688794a59f6d1f7ed49ef9b13eb77ff9a425df33a244a636'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65')
@@ -64,7 +64,7 @@ prepare() {
 
 build() {
   cd $_srcname
-  make bzImage modules htmldocs
+  make bzImage modules
 }
 
 _package() {
@@ -214,18 +214,6 @@ _package-docs() {
   msg2 "Installing documentation..."
   mkdir -p "$builddir"
   cp -t "$builddir" -a Documentation
-
-  msg2 "Removing doctrees..."
-  rm -r "$builddir/Documentation/output/.doctrees"
-
-  msg2 "Moving HTML docs..."
-  local src dst
-  while read -rd '' src; do
-    dst="$builddir/Documentation/${src#$builddir/Documentation/output/}"
-    mkdir -p "${dst%/*}"
-    mv "$src" "$dst"
-    rmdir -p --ignore-fail-on-non-empty "${src%/*}"
-  done < <(find "$builddir/Documentation/output" -type f -print0)
 
   msg2 "Adding symlink..."
   mkdir -p "$pkgdir/usr/share/doc"
