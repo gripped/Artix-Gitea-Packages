@@ -2,7 +2,7 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.12.8
+pkgver=0.13
 pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
@@ -10,7 +10,7 @@ license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
 source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('acad863ded8d9f18d8cadb98bbdf1f38056a648efd4d756c625c46ad7a0550f3')
+sha256sums=('9aeaeea50bfeed7a955063f4204767464a23ccdad4033b499a74323e261bb673')
 
 prepare() {
     cd ${pkgbase}
