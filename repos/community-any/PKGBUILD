@@ -1,7 +1,8 @@
-# Maintainer: nosu@artixlinux.org
+# Maintainer: nous@artixlinux.org
+# Maintainer: artoo@artixlinux.org
 
-_url="https://gitweb.gentoo.org/repo/gentoo.git/plain/mail-filter/postgrey/files"
-_pkg=postgrey
+_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
+
 pkgname=postgrey-openrc
 pkgver=20190504
 pkgrel=1
@@ -13,8 +14,8 @@ groups=('openrc-galaxy')
 depends=('openrc' 'postgrey')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/postgrey')
-source=("postgrey.confd::${_url}/postgrey.conf.new"
-        "postgrey.initd::${_url}/postgrey-1.34-r3.rc.new")
+source=("postgrey.confd::${_url}/mail-filter/postgrey/files/postgrey.conf.new"
+        "postgrey.initd::${_url}/mail-filter/postgrey/files/postgrey-1.34-r3.rc.new")
 sha256sums=('c4c5bfe68b99513152669443ee268186989a89f9846e7fd560841d4cb47fb031'
             '119ede5d8be2b7b0bf945121c9427946fde73610e447717070d98a2fb42c1961')
 
