@@ -71,5 +71,3 @@ package_jasper-doc() {
   install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
   rm -rf "${pkgdir}/usr/"{bin,include,lib,share/man}
 }
-
-# vim: ts=2 sw=2 et:
