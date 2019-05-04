@@ -3,7 +3,7 @@
 _url="https://gitweb.gentoo.org/repo/gentoo.git/plain/mail-filter/postgrey/files"
 _pkg=postgrey
 pkgname=postgrey-openrc
-pkgver=20181017
+pkgver=20190504
 pkgrel=1
 pkgdesc="OpenRC postgrey init script"
 arch=('any')
