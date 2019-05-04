@@ -5,7 +5,7 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=openntpd-openrc
-pkgver=20181024
+pkgver=20190504
 pkgrel=1
 pkgdesc="OpenRC openntpd init script"
 arch=('any')
