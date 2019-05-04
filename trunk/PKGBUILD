@@ -8,7 +8,7 @@ pkgdesc='A small library that versions your Python projects'
 arch=('any')
 license=('MIT')
 url='https://github.com/hawkowl/incremental'
-makedepends=('python-setuptools' 'python2-setuptools' 'python-click' 'python2-click')
+makedepends=('python-setuptools' 'python2-setuptools' 'python-click' 'python2-click' 'python-twisted' 'python2-twisted')
 #             'python-twisted' 'python2-twisted')
 checkdepends=('python-pytest-runner' 'python2-pytest-runner')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/hawkowl/incremental/archive/incremental-$pkgver.tar.gz")
