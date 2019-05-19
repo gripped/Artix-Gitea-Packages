@@ -4,7 +4,7 @@ _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 
 pkgname=device-mapper-openrc
-pkgver=20180429
+pkgver=20190519
 pkgrel=1
 pkgdesc="OpenRC device-mapper init script"
 arch=('any')
@@ -16,14 +16,14 @@ conflicts=('init-device-mapper')
 backup=('etc/conf.d/device-mapper')
 source=("device-mapper.confd::${_url}/sys-fs/lvm2/files/device-mapper.conf-1.02.22-r3"
         "device-mapper.initd::${_url}/sys-fs/lvm2/files/device-mapper.rc-2.02.105-r2"
-        "dmeventd.initd::${_url}/sys-fs/lvm2/files/dmeventd.initd-2.02.67-r1")
+        "dmeventd.initd::${_url}/sys-fs/lvm2/files/dmeventd.initd-2.02.184-r2")
 sha256sums=('57777904f12a35617e5a4193c964ebb32396452487fd02353e71e16e7b46bc22'
             'e8bfde63341f9e6136ee20a15ed9ea455e2259dbcaea756f8c3d0f710c1c2746'
-            '5edaaad292d4fd6b67fd5323636dd2e839be33ae16fbc7872dadb0499fcf22da')
+            'e83c70f22bd8c428f4fa3a8a16a1f7f597a38d3d80aa3e0dd72d7aacc547932c')
 
-pkgver() {
-    date +%Y%m%d
-}
+# pkgver() {
+#     date +%Y%m%d
+# }
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
