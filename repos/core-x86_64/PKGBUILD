@@ -5,7 +5,7 @@
 
 pkgbase=dbus
 pkgname=(dbus dbus-docs)
-pkgver=1.12.12
+pkgver=1.12.14
 pkgrel=1
 pkgdesc="Freedesktop.org message bus system"
 url="https://wiki.freedesktop.org/www/Software/dbus/"
@@ -13,7 +13,7 @@ arch=(x86_64)
 license=(GPL custom)
 depends=(libx11 libelogind expat audit)
 makedepends=(elogind xmlto docbook-xsl python yelp-tools doxygen git autoconf-archive graphviz)
-_commit=d4f8423bbff9b3c5fca2d8009c28d1cff4652788  # tags/dbus-1.12.12^0
+_commit=a330c6184fe9c7f67495f8d4563b11d51a6dccc7  # tags/dbus-1.12.14^0
 source=("git+https://gitlab.freedesktop.org/dbus/dbus.git#commit=$_commit"
         'dbus-enable-elogind.patch')
 sha256sums=('SKIP'
@@ -34,6 +34,7 @@ prepare() {
     HAVE_DOT=yes DOT_IMAGE_FORMAT=svg INTERACTIVE_SVG=yes
 
   patch -Np 1 -i ${srcdir}/dbus-enable-elogind.patch
+
   NOCONFIGURE=1 ./autogen.sh
 }
 
@@ -44,18 +45,21 @@ build() {
     --sysconfdir=/etc \
     --localstatedir=/var \
     --libexecdir=/usr/lib/dbus-1.0 \
-    --with-system-pid-file=/run/dbus/pid \
-    --with-system-socket=/run/dbus/system_bus_socket \
     --with-console-auth-dir=/run/console/ \
     --with-dbus-user=dbus \
-    --enable-inotify \
+    --with-system-pid-file=/run/dbus/pid \
+    --with-system-socket=/run/dbus/system_bus_socket \
     --without-systemdsystemunitdir \
+    --enable-inotify \
     --disable-systemd \
     --enable-user-session \
     --enable-elogind \
     --enable-x11-autolaunch \
-    --disable-static
-    #runstatedir=/run --with-dbus-session-bus-connect-address=unix:runtime=yes
+    --disable-static \
+    --disable-verbose-mode \
+    --disable-asserts \
+    --disable-checks \
+    #runstatedir=/run --without-x
   make
 }
 
