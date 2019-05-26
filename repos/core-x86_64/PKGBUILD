@@ -3,14 +3,13 @@
 
 # toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
 # NOTE: valgrind requires rebuilt with each major glibc version
-#
 
 pkgbase=glibc
 pkgname=(glibc lib32-glibc)
 pkgver=2.29
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
-url='http://www.gnu.org/software/libc'
+url='https://www.gnu.org/software/libc'
 license=(GPL LGPL)
 makedepends=(git gd lib32-gcc-libs python)
 options=(!strip staticlibs)
@@ -37,7 +36,7 @@ md5sums=('e6c279d5b2f0736f740216f152acf974'
 prepare() {
   mkdir -p glibc-build lib32-glibc-build
 
-  [[ -d glibc-$pkgver ]] && ln -s glibc-$pkgver glibc
+  [[ -d glibc-$pkgver ]] && ln -s glibc-$pkgver glibc 
   cd glibc
 
   local i; for i in ${source[@]}; do
@@ -75,6 +74,11 @@ build() {
 
   # remove fortify for building libraries
   CPPFLAGS=${CPPFLAGS/-D_FORTIFY_SOURCE=2/}
+
+  #
+  CFLAGS=${CFLAGS/-fno-plt/}
+  CXXFLAGS=${CXXFLAGS/-fno-plt/}
+  LDFLAGS=${LDFLAGS/,-z,now/}
 
   "$srcdir/glibc/configure" \
       --libdir=/usr/lib \
