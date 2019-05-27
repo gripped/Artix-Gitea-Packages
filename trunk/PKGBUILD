@@ -3,7 +3,7 @@
 
 pkgname=filesystem
 pkgver=2019.05
-pkgrel=1
+pkgrel=2
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
 license=('GPL')
@@ -40,7 +40,7 @@ md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          '08e22c5d70ddcc1345f9ce3f15514ea2'
          '0267a3a463f35eec8a31f40a720dfd86'
          '1b7e0cfbb630433fdff16fffda9cfa5c'
-         '310ba8112c38ad6e78992a74c20234d9')
+         '7ef98723f854c531c431074ef7b127d3')
 
 package() {
   cd "$pkgdir"
