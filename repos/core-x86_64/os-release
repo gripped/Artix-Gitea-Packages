@@ -1,4 +1,4 @@
-NAME="Artix"
+NAME="Artix Linux"
 PRETTY_NAME="Artix Linux"
 ID=artix
 BUILD_ID=rolling
@@ -7,3 +7,4 @@ HOME_URL="https://www.artixlinux.org/"
 DOCUMENTATION_URL="https://wiki.artixlinux.org/"
 SUPPORT_URL="https://forum.artixlinux.org/"
 BUG_REPORT_URL="https://gitea.artixlinux.org/"
+LOGO=artixlinux

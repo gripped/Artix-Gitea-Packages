@@ -2,8 +2,8 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2018.12
-pkgrel=2.7
+pkgver=2019.05
+pkgrel=2
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
 license=('GPL')
@@ -17,7 +17,7 @@ backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
 source=('crypttab' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
         'issue' 'ld.so.conf' 'locale.sh' 'motd' 'nsswitch.conf' 'os-release'
         'passwd' 'profile' 'resolv.conf' 'securetty' 'shadow' 'shells' 'sysctl'
-        'sysusers' 'tmpfiles')
+        'sysusers' 'tmpfiles' 'artixlinux.svg' 'artixlinux.png')
 md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          'e33f6dfdd61978fcb3ddf1431286e05a'
          '7fed1e1fb855e41a6d64d41f8521d69a'
@@ -29,7 +29,7 @@ md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          '580cf8b59eebfaac4fad373ffadc9912'
          'd41d8cd98f00b204e9800998ecf8427e'
          'fdfa843fc6354816f50ea2f17e6dce50'
-         '4fadfc766872636306499b8cf8cfb60c'
+         '180f59810b106ff33b533f261bd5be4d'
          '5182ac38a0de85da8ade93ef71975ca4'
          '598e4abf063f02d75950e07d1185bc9c'
          '0ee015fad07732676d9488ae498eed41'
@@ -38,7 +38,9 @@ md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          'a78cd8d7f8240a8448edee82f503c34e'
          'a51847c012555c843dbdf8df0da171d3'
          '08e22c5d70ddcc1345f9ce3f15514ea2'
-         '0267a3a463f35eec8a31f40a720dfd86')
+         '0267a3a463f35eec8a31f40a720dfd86'
+         '1b7e0cfbb630433fdff16fffda9cfa5c'
+         '7ef98723f854c531c431074ef7b127d3')
 
 package() {
   cd "$pkgdir"
@@ -84,7 +86,7 @@ package() {
   ln -s ../run/lock var/lock
 
   # setup /usr hierarchy
-  for d in bin include lib share/misc src; do
+  for d in bin include lib share/{misc,pixmaps} src; do
     install -d -m755 usr/$d
   done
   for d in {1..8}; do
@@ -117,6 +119,9 @@ package() {
 
   # setup opentmpfiles
   install -D -m644 "$srcdir"/tmpfiles usr/lib/tmpfiles.d/artix.conf
+
+  # add logo
+  install -D -m644 "$srcdir"/artixlinux.{svg,png} usr/share/pixmaps
 }
 
 # vim:set ts=2 sw=2 et:
