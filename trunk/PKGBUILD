@@ -17,27 +17,27 @@ sha256sums=('c30931518b2882cb03b90378167bc6d9b604ca1c0ff0d6227db6ab093ad9dfad')
 sha512sums=('7a2121cf6cb7799940e8d6cb0fb73117e9d0c04ef500995a8213d1e77cfad840fbc0b43934f836a9f43c85c6b9acc2325d9ca01bf2281ef562319252dfdf8ef7')
 
 prepare() {
-  cp -r CommonMark-py-${pkgver}{,-py2}
+  cp -r commonmark.py-${pkgver}{,-py2}
 }
 
 build() {
-  (cd CommonMark-py-${pkgver}
+  (cd commonmark.py-${pkgver}
     python setup.py build
     make -C docs man text SPHINXBUILD=sphinx-build
   )
-  (cd CommonMark-py-${pkgver}-py2
+  (cd commonmark.py-${pkgver}-py2
     python2 setup.py build
     make -C docs man text SPHINXBUILD=sphinx-build2
   )
 }
 
 check() {
-  (cd CommonMark-py-${pkgver}
+  (cd commonmark.py-${pkgver}
     export PYTHONPATH=.
     python CommonMark/tests/unit_tests.py
     python setup.py test
   )
-  (cd CommonMark-py-${pkgver}-py2
+  (cd commonmark.py-${pkgver}-py2
     export PYTHONPATH=.
     export PYTHONIOENCODING=UTF-8
     python2 CommonMark/tests/unit_tests.py
@@ -48,7 +48,7 @@ check() {
 package_python-commonmark() {
   depends=('python-docutils' 'python-future')
 
-  cd CommonMark-py-${pkgver}
+  cd commonmark.py-${pkgver}
   python setup.py install --root="${pkgdir}" -O1 --skip-build
   install -Dm 644 README.rst CHANGELOG.md -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
@@ -60,7 +60,7 @@ package_python-commonmark() {
 package_python2-commonmark() {
   depends=('python2-docutils' 'python2-future')
 
-  cd CommonMark-py-${pkgver}-py2
+  cd commonmark.py-${pkgver}-py2
   python2 setup.py install --root="${pkgdir}" -O1 --skip-build
   install -Dm 644 README.rst CHANGELOG.md -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
