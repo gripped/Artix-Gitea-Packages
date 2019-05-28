@@ -20,6 +20,7 @@ sha512sums=('62a48ced225bf9167259b82f5e88a953bdc422982a6c0b0121b28e895cc8347cc03
             '1106afed483b7258e4ae89c5d9459c3834412b31aac90169725ed62d2ab44f61f6f79e894d4c9e4d8bd99e14530ab778df2187784f0b25eaab86d312fad68944'
             'f303770c9f8565755230c2e957c444f2c69aea711abd8efc3d916688a31fe187d996e250eeba43e692e87d558831d4708fc712e2c653519d7ea42efba7d3e832')
 
+
 prepare() {
   cd "${srcdir}/${_pkgbase}-${pkgver}"
   patch -p1 -N -i "${srcdir}/cheroot-fix-setup-python3.patch"
