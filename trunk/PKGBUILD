@@ -8,8 +8,8 @@ pkgdesc='Python parser for the CommonMark Markdown spec'
 url='https://pypi.python.org/pypi/CommonMark'
 arch=('any')
 license=('BSD')
-makedepends=('python-setuptools' 'python-docutils' 'python-future' 'python-sphinx' 'python-sphinx_rtd_theme'
-             'python2-setuptools' 'python2-docutils' 'python2-future' 'python2-sphinx' )
+makedepends=('python-setuptools' 'python-docutils' 'python-future' 'python-sphinx' 'python-sphinx_rtd_theme' 
+             'python2-setuptools' 'python2-docutils' 'python2-future' 'python2-sphinx' 'python2-sphinx_rtd_theme' )
 checkdepends=('python-hypothesis' 'python2-hypothesis')
 options=('!makeflags')
 source=(${pkgname}-${pkgver}.tar.gz::https://github.com/rtfd/CommonMark-py/archive/${pkgver}.tar.gz)
@@ -34,13 +34,13 @@ build() {
 check() {
   (cd commonmark.py-${pkgver}
     export PYTHONPATH=.
-    python CommonMark/tests/unit_tests.py
+    python commonmark/tests/unit_tests.py
     python setup.py test
   )
   (cd commonmark.py-${pkgver}-py2
     export PYTHONPATH=.
     export PYTHONIOENCODING=UTF-8
-    python2 CommonMark/tests/unit_tests.py
+    python2 commonmark/tests/unit_tests.py
     python2 setup.py test
   )
 }
