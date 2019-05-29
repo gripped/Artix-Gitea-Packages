@@ -3,37 +3,22 @@
 
 _pkgname=gitea
 pkgname=gitea-openrc
-pkgver=20180812
-pkgver() {
- date +%Y%m%d
-}
+pkgver=20190520
 pkgrel=1
 pkgdesc="OpenRC Gitea init script"
 arch=('any')
-url="https://gitea.artixlinux.org/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'gitea')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/gitea')
-_gentoo="https://gitweb.gentoo.org/repo/gentoo.git/plain/www-apps/gitea/files"
-source=("${_gentoo}/gitea.confd"
-        "${_gentoo}/gitea.initd-r1"
-        "${_gentoo}/gitea.logrotated")
-sha256sums=('edf43ca063fccf9951cd1e3975fdfa7ba0e26b47d7442596ce27bc5f2fd21e4c'
-            '687f7f360ade83af7219e2f12ecc6c07cde8ee5eb047c7c58779ba91f82ea101'
-            '19538aff00c6ad5377df593391f33f59b28333ebe7a95eb9848ce663a6f7c9ba')
-
+source=("gitea.confd"
+        "gitea.initd")
+sha256sums=('1006c19591b1c2a674d83d08517e484219cb4f1ac29b7301245a52454a156a4c'
+            '6b2e0a99d6ddc9f8626766cba7bb1d77a3598099ec7311b6f57ef287232e4e80')
 
 package() {
-# Artix patches
-  sed -e 's|/sbin/openrc|/usr/bin/openrc|' \
-      -e "s/need net/need net mysql/" \
-      -e "s/:-git/:-gitea/g" \
-      -i ${srcdir}/${_pkgname}.initd-r1
-  sed -e 's|/var/lib/gitea/conf/|/etc/gitea/|' -i  ${srcdir}/${_pkgname}.confd
-
   install -Dm0644 "${srcdir}/${_pkgname}.confd" "${pkgdir}/etc/conf.d/${_pkgname}"
-  install -Dm0644 "${srcdir}/${_pkgname}.logrotated" "${pkgdir}/etc/logrotate.d/${_pkgname}"
-  install -Dm0755 "${srcdir}/${_pkgname}.initd-r1" "${pkgdir}/etc/init.d/${_pkgname}"
+  install -Dm0755 "${srcdir}/${_pkgname}.initd" "${pkgdir}/etc/init.d/${_pkgname}"
 }
