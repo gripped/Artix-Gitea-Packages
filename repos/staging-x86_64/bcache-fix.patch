@@ -1,0 +1,59 @@
+--- a/drivers/md/bcache/bset.c	
++++ a/drivers/md/bcache/bset.c	
+@@ -885,14 +885,14 @@ unsigned int bch_btree_insert_key(struct btree_keys *b, struct bkey *k,
+ {
+ 	unsigned int status = BTREE_INSERT_STATUS_NO_INSERT;
+ 	struct bset *i = bset_tree_last(b)->data;
+-	struct bkey *m, *prev = NULL;
++	struct bkey *m, *prev = NULL, preceding_key;
+ 	struct btree_iter iter;
+ 
+ 	BUG_ON(b->ops->is_extents && !KEY_SIZE(k));
+ 
+ 	m = bch_btree_iter_init(b, &iter, b->ops->is_extents
+-				? PRECEDING_KEY(&START_KEY(k))
+-				: PRECEDING_KEY(k));
++				? bch_preceding_key(&START_KEY(k), &preceding_key)
++				: bch_preceding_key(k, &preceding_key));
+ 
+ 	if (b->ops->insert_fixup(b, k, &iter, replace_key))
+ 		return status;
+--- a/drivers/md/bcache/bset.h	
++++ a/drivers/md/bcache/bset.h	
+@@ -434,20 +434,22 @@ static inline bool bch_cut_back(const struct bkey *where, struct bkey *k)
+ 	return __bch_cut_back(where, k);
+ }
+ 
+-#define PRECEDING_KEY(_k)					\
+-({								\
+-	struct bkey *_ret = NULL;				\
+-								\
+-	if (KEY_INODE(_k) || KEY_OFFSET(_k)) {			\
+-		_ret = &KEY(KEY_INODE(_k), KEY_OFFSET(_k), 0);	\
+-								\
+-		if (!_ret->low)					\
+-			_ret->high--;				\
+-		_ret->low--;					\
+-	}							\
+-								\
+-	_ret;							\
+-})
++static inline struct bkey *bch_preceding_key(const struct bkey *k, struct bkey *out)
++{
++	struct bkey *ret;
++
++	if (!KEY_INODE(k) && !KEY_OFFSET(k))
++		return NULL;
++
++	ret = &KEY(KEY_INODE(k), KEY_OFFSET(k), 0);
++
++	if (!ret->low)
++		ret->high--;
++	ret->low--;
++
++	*out = *ret;
++	return out;
++}
+ 
+ static inline bool bch_ptr_invalid(struct btree_keys *b, const struct bkey *k)
+ {
