@@ -4,8 +4,8 @@
 
 pkgbase=linux               # Build stock -ARTIX kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_artix=5.1.4-artix1
-_srcver=5.1.4-arch1
+_artix=5.1.8-artix1
+_srcver=5.1.8-arch1
 pkgver=${_artix//-/.}
 pkgrel=1
 arch=(x86_64)
@@ -20,6 +20,8 @@ source=(
   60-linux.hook  # pacman hook for depmod
   90-linux.hook  # pacman hook for initramfs regeneration
   linux.preset   # standard config files for mkinitcpio ramdisk
+  0001-bcache-fix-stack-corruption-by-PRECEDING_KEY.patch
+  0002-bcache-only-set-BCACHE_DEV_WB_RUNNING-when-cached-de.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -27,10 +29,12 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '1c05a1fcab06313c3001a23455b9b07b6c2b6d5cbcb543a8a990c3505126bb45'
+            'f8d1ad23a008f2de15c182580cf6d04f6088b1a9a8b337451f57a6f3247f758f'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             'c043f3033bb781e2688794a59f6d1f7ed49ef9b13eb77ff9a425df33a244a636'
-            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65')
+            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
+            'cc6f17bbff34b5beeba468134d0c8435b9c6696b0301103be2429853b4892208'
+            'c82faccc2e31179e446e1927c15c125a069e90197aa8e840cb0cea6a26d3115d')
 
 _kernelname=${pkgbase#linux}
 : ${_kernelname:=-ARTIX}
