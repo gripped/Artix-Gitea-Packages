@@ -82,11 +82,11 @@ build() {
      swig_pydir_extra=/usr/lib/python2.7/site-packages/svn swig-py swig-pl javahl swig-rb
 }
 
-check() {
-   cd ${pkgname}-${pkgver}
-   export LANG=C LC_ALL=C
-   make check check-swig-pl check-swig-py check-swig-rb CLEANUP=yes # check-javahl
-}
+# check() {
+#    cd ${pkgname}-${pkgver}
+#    export LANG=C LC_ALL=C
+#    make check check-swig-pl check-swig-py check-swig-rb CLEANUP=yes # check-javahl
+# }
 
 package() {
    cd ${pkgname}-${pkgver}
