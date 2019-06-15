@@ -1,9 +1,8 @@
-# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgbase=python-pytest-relaxed
 pkgname=('python-pytest-relaxed' 'python2-pytest-relaxed')
-pkgver=1.1.4
+pkgver=1.1.5
 pkgrel=1
 pkgdesc='Relaxed test discovery for pytest'
 arch=('any')
@@ -12,6 +11,7 @@ url='https://github.com/bitprophet/pytest-relaxed'
 makedepends=('python-pytest32' 'python2-pytest32' 'python-decorator' 'python2-decorator'
              'python-six' 'python2-six')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/bitprophet/pytest-relaxed/archive/$pkgver.tar.gz")
+sha512sums=('a5484bc92be29e5228afb7d9911c1d3a7d6e493bec44af541780de24b91dfa8e8c9e1245acd8ae8670805294eb52b20f7c4abefad1afb8373109249a2df1cdaa')
 
 prepare() {
   cp -a pytest-relaxed-$pkgver{,-py2}
@@ -54,4 +54,3 @@ package_python2-pytest-relaxed() {
 }
 
 # vim:set ts=2 sw=2 et:
-sha256sums=('7ba2d75fb0dcc561ae7b7991a819b512d54639a420daa4db0dda92eb7575007d')
