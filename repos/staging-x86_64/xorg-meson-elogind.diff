@@ -1,0 +1,75 @@
+diff --git a/hw/xfree86/os-support/meson.build b/hw/xfree86/os-support/meson.build
+index 65418b74a743aac6a2b1f336a7a9410eaa967701..cacfe43fb06ee6f13ba3b74c3988372ee7884a98 100644
+--- a/hw/xfree86/os-support/meson.build
++++ b/hw/xfree86/os-support/meson.build
+@@ -40,6 +40,10 @@ if host_machine.system() == 'linux'
+         srcs_xorg_os_support += 'linux/systemd-logind.c'
+     endif
+ 
++    if build_elogind
++        srcs_xorg_os_support += 'linux/systemd-logind.c'
++    endif
++
+     # this is ugly because the code is also
+     if build_apm or build_acpi
+         srcs_xorg_os_support += 'linux/lnx_apm.c'
+diff --git a/include/meson.build b/include/meson.build
+index 88d4d4dc2f93f985cc4ca757661e8b7d827f9850..bfa1a45a236cd816b56034a7246d73898fdee1e7 100644
+--- a/include/meson.build
++++ b/include/meson.build
+@@ -89,7 +89,7 @@ conf_data.set('HAVE_DBUS', build_dbus)
+ conf_data.set('CONFIG_HAL', build_hal)
+ conf_data.set('SYSTEMD_LOGIND', build_systemd_logind)
+ conf_data.set('ELOGIND_LOGIND', build_systemd_logind)
+-conf_data.set('NEED_DBUS', build_systemd_logind or build_hal)
++conf_data.set('NEED_DBUS', build_elogind or build_systemd_logind or build_hal)
+ conf_data.set('CONFIG_WSCONS', host_machine.system() == 'openbsd')
+ 
+ conf_data.set('HAVE_XSHMFENCE', xshmfence_dep.found())
+diff --git a/meson.build b/meson.build
+index 29794f08306343a96482d68fb9acd8c69a04393b..8b55d8753ca37bb3d3a7781120e1a15c12ba2e64 100644
+--- a/meson.build
++++ b/meson.build
+@@ -94,6 +94,7 @@ xfont2_dep = dependency('xfont2', version: '>= 2.0')
+ nettle_dep = dependency('nettle')
+ 
+ dbus_required = get_option('systemd_logind') == 'true'
++dbus_requried = get_option('elogind') == 'true'
+ dbus_dep = dependency('dbus-1', version: '>= 1.0', required: dbus_required)
+ 
+ # libsystemd-daemon was moved into libsystemd in version 209
+@@ -157,6 +158,12 @@ else
+     build_systemd_logind = get_option('systemd_logind') == 'true'
+ endif
+ 
++if get_option('elogind') == 'auto'
++    build_elogind = build_udev and dbus_dep.found()
++else
++    build_elogind = get_option('elogind') == 'true'
++endif
++
+ build_xorg = false
+ if (host_machine.system() != 'darwin' and
+     host_machine.system() != 'windows')
+@@ -263,7 +270,7 @@ if build_udev and build_hal
+     error('Hotplugging through both libudev and hal not allowed')
+ endif
+ 
+-build_dbus = build_hal or build_systemd_logind
++build_dbus = build_hal or build_systemd_logind or build_elogind
+ 
+ udev_dep = dependency('', required:false)
+ if build_udev
+diff --git a/meson_options.txt b/meson_options.txt
+index 7211f9ffae9b9ee53ab794688ab61db709d422ce..b3b6083cbc3058ab9e994a7f60405bc1db11dede 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -66,6 +66,8 @@ option('hal', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto',
+        description: 'Enable HAL integration')
+ option('systemd_logind', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto',
+        description: 'Enable systemd-logind integration')
++option('elogind', type: 'combo', choices: ['true', 'false, 'auto'], value: 'auto',
++       description: 'Enable elogind integration')
+ option('vbe', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto',
+        description: 'Xorg VBE module')
+ option('vgahw', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto',
