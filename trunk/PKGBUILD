@@ -1,5 +1,4 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Felix Kaiser <felix.kaiser@fxkr.net>
 
 pkgbase=python-pytest
 pkgname=('python-pytest' 'python2-pytest')
