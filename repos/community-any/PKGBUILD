@@ -16,6 +16,7 @@ checkdepends=('python-pytest-runner' 'flake8' 'python-pytz' 'python-numpy' 'pyth
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/HypothesisWorks/hypothesis/archive/hypothesis-python-$pkgver.tar.gz")
 sha512sums=('23de2cc187f3e5bacd082b1e1c7263bf2f9ea4f7a4310f64d85170de2196d797fd33d6925850eb768d1c1817f537967c0a89a7f59df13c98d480b2e9261729b9')
 
+
 prepare() {
   mv hypothesis-hypothesis-python-$pkgver hypothesis-$pkgver
 
