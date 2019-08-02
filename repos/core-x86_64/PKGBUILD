@@ -23,7 +23,7 @@ pkgname='grub'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 epoch=2
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
@@ -64,7 +64,8 @@ source=("git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}?signe
         "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"{,.sig}
         '0003-10_linux-detect-archlinux-initramfs.patch'
         '0004-add-GRUB_COLOR_variables.patch'
-        'grub.default')
+        'grub.default'
+        'update-grub')
 
 sha256sums=('SKIP'
             'SKIP'
@@ -73,7 +74,8 @@ sha256sums=('SKIP'
             'SKIP'
             '171415ab075d1ac806f36c454feeb060f870416f24279b70104bba94bd6076d4'
             'a5198267ceb04dceb6d2ea7800281a42b3f91fd02da55d2cc9ea20d47273ca29'
-            'dbae847d86bbd68720948871e972bed959991dc0834a35b991aa3d3c175e43bf')
+            'cd305d2f93ec5004056bf762730e497e0c4413f71b90ebcaee8e0f80b43b3b2f'
+            '5900d115dc66dc591468c80c9fd230ecf1b576bdc76903eeaa647992e6bf80e7')
 
 _backports=(
 )
@@ -306,4 +308,5 @@ package() {
 
 	echo "Package grub bios stuff..."
 	_package_grub-common_and_bios
+	install -m0644 "${srcdir}/update-grub" "${pkgdir}/usr/bin"
 }
