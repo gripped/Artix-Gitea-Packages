@@ -1,47 +1,46 @@
-# $Id$
 # Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 
 pkgname=libgudev
-pkgver=232
+pkgver=233
 pkgrel=1
 pkgdesc="GObject bindings for libudev"
-arch=('i686' 'x86_64')
 url="https://wiki.gnome.org/Projects/libgudev"
-license=('LGPL2.1')
-depends=('libeudev' 'glib2')
-makedepends=('eudev' 'gobject-introspection' 'gtk-doc' 'gnome-common' 'git')
-provides=('libgudev-1.0.so')
-_commit=58eb745d8c4fb06b35706c2c997313235dccb1fc  # tags/232^0
-source=("git+https://git.gnome.org/browse/libgudev#commit=$_commit")
+arch=(x86_64)
+license=(LGPL2.1)
+depends=(libeudev glib2)
+makedepends=(eudev gobject-introspection gtk-doc git)
+provides=(libgudev-1.0.so)
+_commit=f76d04cbb66f9c0ef7f744ebc12f0336a4dc9170  # tags/233^0
+source=("git+https://gitlab.gnome.org/GNOME/libgudev.git#commit=$_commit")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd ${pkgname}
+  cd $pkgname
   git describe --tags | sed 's/-/+/g'
 }
 
 prepare() {
-  cd ${pkgname}
+  cd $pkgname
   NOCONFIGURE=1 ./autogen.sh
 }
 
 check() {
-  cd ${pkgname}
+  cd $pkgname
   make check
 }
 
 build() {
-cd "${pkgname}"
+  cd $pkgname
   ./configure \
     --prefix=/usr \
     --enable-gtk-doc \
     --disable-umockdev
-    sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' -i libtool
+  sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
 package() {
-  cd "${pkgname}"
+  cd $pkgname
   make DESTDIR="$pkgdir" install
 }
 
