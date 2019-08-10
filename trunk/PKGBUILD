@@ -2,23 +2,19 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.14
-pkgrel=2
+pkgver=0.14.1
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        comparepkg-group.patch::https://gitea.artixlinux.org/artix/artools/commit/bfe9130cfb2bf476abd293e09484b4c3ff658aad.patch)
-sha256sums=('3a8fd03fc5f3e255f4d8e244aa9f700b8f3ec1f20b0f2ea248702ddd36344a76'
-            '7fa881a218ba02f48d15f510cc5e37d2154ca8b383bc7d1e71ac133a1a4e790b')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('9ed2fda05b6d22527df94d0af2be7fa6b91e91741dead37aee36935f12ea5694')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-
-    patch -Np 1 -i ../comparepkg-group.patch
 }
 
 build() {
@@ -41,7 +37,7 @@ package_artools-base() {
 
 package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
-    depends=('artools-pkglist' 'namcap' 'git-subrepo' 'jshon')
+    depends=('artools-pkglist>=0.1' 'namcap' 'git-subrepo' 'jshon')
     conflicts=('devtools')
 
     cd ${pkgbase}
