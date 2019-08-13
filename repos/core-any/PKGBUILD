@@ -1,9 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=dbus-openrc
-pkgver=20180429
+pkgver=20190813
 pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
@@ -12,25 +10,16 @@ license=('GPL2')
 provides=('init-dbus')
 depends=('dbus')
 conflicts=('init-dbus')
-source=("dbus.initd::${_url}/sys-apps/dbus/files/dbus.initd-r1")
-sha256sums=('00a1a8f254d4f40b6f98a2777809b9c45ad81c4aeb4c0592793dd839777990bd')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|dbus.pid|dbus/pid|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=('dbus.initd'
+        'dbus-reload.hook')
+sha256sums=('9964aa935b4a7d64f5970bcfcd561b06013a85ae2712444bc4c5f644364dab3b'
+            '1335a86bb5eb68614bf13af314f1a7f5f6f68253584986e9c5b492a4585ab722')
 
 package() {
-    _inst_initd 'dbus'
+    install -Dm755 ${srcdir}/dbus.initd ${pkgdir}/etc/init.d/dbus
 
     install -d "${pkgdir}/etc/runlevels/default"
     ln -sf "/etc/init.d/dbus" "${pkgdir}/etc/runlevels/default/dbus"
+
+    install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
 }
