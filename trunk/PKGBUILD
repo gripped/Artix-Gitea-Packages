@@ -52,7 +52,7 @@ build() {
     --without-systemdsystemunitdir \
     --enable-inotify \
     --disable-systemd \
-    --enable-user-session \
+    --disable-user-session \
     --disable-static \
     --disable-verbose-mode \
     --disable-asserts \
