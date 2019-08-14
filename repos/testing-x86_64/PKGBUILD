@@ -6,18 +6,20 @@
 pkgbase=pulseaudio
 pkgname=(pulseaudio libpulse pulseaudio-{zeroconf,lirc,jack,bluetooth,equalizer})
 pkgdesc="A featureful, general-purpose sound server"
-pkgver=12.99.2+3+g493e7f358
+pkgver=12.99.2+5+g728a4402e
 pkgrel=1
 arch=(x86_64)
 url="https://www.freedesktop.org/wiki/Software/PulseAudio/"
 license=(GPL)
-makedepends=(libasyncns libcap attr libxtst libsm libsndfile libtool rtkit libsoxr
-             speexdsp tdb elogind dbus avahi bluez bluez-libs intltool jack2-dbus sbc
-             lirc openssl fftw orc gtk3 webrtc-audio-processing
-             check autoconf-archive git)
-_commit=493e7f35821c09a3b79b883a76283f5614ae1202  # master
-source=("git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=$_commit")
-sha256sums=('SKIP')
+makedepends=(libasyncns libcap attr libxtst libsm libsndfile rtkit libsoxr
+             speexdsp tdb elogind dbus avahi bluez bluez-libs jack2-dbus sbc
+             lirc openssl fftw orc gtk3 webrtc-audio-processing check git meson
+             xmltoman)
+_commit=728a4402eb85983eb9ad160470e79c57201b572a  # master
+source=("git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=$_commit"
+        meson-elogind-support.patch)
+sha256sums=('SKIP'
+            'fea0e09a9f026bc3c9160b53018b8e1dd1f3493c60f68405a758de7d3cb592cf')
 
 pkgver() {
   cd pulseaudio
@@ -26,34 +28,21 @@ pkgver() {
 
 prepare() {
   cd pulseaudio
-  NOCONFIGURE=1 ./bootstrap.sh
+  patch -Np 1 -i ../meson-elogind-support.patch
 }
 
 build() {
-  cd pulseaudio
+  arch-meson pulseaudio build \
+    -D gcov=false \
+    -D pulsedsp-location='/usr/\$LIB/pulseaudio' \
+    -D udevrulesdir=/usr/lib/udev/rules.d \
+    -D systemd=disabled \
+    -D elogind=enabled
+  ninja -C build
+}
 
-  ./configure --prefix=/usr \
-    --sysconfdir=/etc \
-    --libexecdir=/usr/lib \
-    --localstatedir=/var \
-    --with-udev-rules-dir=/usr/lib/udev/rules.d \
-    --with-pulsedsp-location='/usr/\\$$LIB/pulseaudio' \
-    --with-database=tdb \
-    --disable-tcpwrap \
-    --disable-bluez4 \
-    --disable-samplerate \
-    --disable-rpath \
-    --disable-default-build-tests \
-    --with-systemduserunitdir=no \
-    --enable-systemd-login=yes \
-    --enable-systemd-journal=no \
-    --enable-systemd-daemon=no \
-    DATADIRNAME=share
-
-  # fight unused direct deps
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
-  make
+check() {
+  meson test -C build -t 5 --print-errorlogs
 }
 
 _pick() {
@@ -73,16 +62,13 @@ package_pulseaudio() {
   backup=(etc/pulse/{daemon.conf,default.pa,system.pa})
   replaces=('pulseaudio-xen<=9.0' 'pulseaudio-gconf<=11.1')
 
-  cd pulseaudio
-
-  local pulsever=$(./git-version-gen .tarball-version)
+  local pulsever=$(cd pulseaudio; ./git-version-gen .tarball-version)
   while [[ $pulsever = *.*.* ]]; do
     pulsever=${pulsever%.*}
   done
   pulsever=${pulsever%%-*}
 
-  make -j1 DESTDIR="$pkgdir" install \
-    bashcompletiondir=/usr/share/bash-completion/completions
+  DESTDIR="$pkgdir" meson install -C build
 
   cd "$pkgdir"
 
@@ -94,6 +80,7 @@ package_pulseaudio() {
   sed -e '/flat-volumes/iflat-volumes = no' \
       -i etc/pulse/daemon.conf
 
+  # Superseded by socket activation
   sed -e '/autospawn/iautospawn = yes' \
       -i etc/pulse/client.conf
 
@@ -182,3 +169,5 @@ package_pulseaudio-equalizer(){
 
   mv equalizer/* "$pkgdir"
 }
+
+# vim:set sw=2 et:
