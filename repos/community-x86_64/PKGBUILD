@@ -5,7 +5,7 @@
 # Jan de Groot <jgc@archlinux.org>
 
 pkgname=cinnamon-control-center
-pkgver=4.2.1
+pkgver=4.2.2
 pkgrel=1
 pkgdesc="The Control Center for Cinnamon"
 arch=('x86_64')
@@ -19,7 +19,7 @@ optdepends=('cinnamon-translations: i18n'
 makedepends=('gnome-online-accounts' 'intltool' 'python')
 options=('!emptydirs')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('93742e071806662194951203fe4096be0fd350b8e33ae61de2571a96f1a9f841')
+sha256sums=('0cd334e9fc36165664362d2bef7953879ec1f1d1becdbce21ef0557ea34618d7')
 b2sums=('16db678f75a4c15b4f86a49213ac60a6eed6e142bac07ceee181200061c68abca7a38c017ad8cf63886aaac474d8d799d0aaf0b356d7affaeffe7b14750b3858')
 
 prepare() {
