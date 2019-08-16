@@ -1,0 +1,55 @@
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
+# Contributor: Adam Hani Schakaki <adam@schakaki.net>
+# Contributor: Ner0
+
+pkgname=muffin
+pkgver=4.2.2
+pkgrel=1
+pkgdesc="Cinnamon window manager based on Mutter"
+arch=('x86_64')
+url="https://github.com/linuxmint/${pkgname}"
+license=('GPL')
+depends=('cinnamon-desktop' 'gobject-introspection-runtime' 'libcanberra' 'libinput'
+         'libsm' 'libxkbcommon-x11' 'startup-notification' 'zenity')
+makedepends=('intltool' 'gobject-introspection' 'gtk-doc' 'gnome-doc-utils')
+options=('!emptydirs')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
+sha256sums=('08c64a7a951fc526d96b4e3b6b53997328904ae2430aad4c2611a4f130a5bd16')
+b2sums=('84f23cdfa6441f2c35e824a5ad2a461e4e453f94b54d4ec17696de1580a5a4c0cf2dbe03e579721d31e10b64ec2145e1904f99bda8c6c89e9f5bf41d2a118915')
+
+prepare() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    ./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --libexecdir=/usr/lib/muffin \
+                --localstatedir=/var \
+                --disable-gtk-doc \
+                --disable-static \
+                --disable-schemas-compile \
+                --enable-compile-warnings=minimum
+
+    #https://bugzilla.gnome.org/show_bug.cgi?id=656231
+    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+    make
+}
+
+package() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    make DESTDIR="${pkgdir}" install
+
+    # Remove unused stuff
+    make -C src DESTDIR="${pkgdir}" uninstall-binPROGRAMS uninstall-desktopfilesDATA
+    make -C src/tools DESTDIR="${pkgdir}" uninstall
+    make -C src/compositor/plugins DESTDIR="${pkgdir}" uninstall
+    make -C doc/man DESTDIR="${pkgdir}" uninstall
+}
