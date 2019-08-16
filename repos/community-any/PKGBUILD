@@ -1,0 +1,27 @@
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Alexandre Filgueira <alexfilgueira@antergos.com>
+
+pkgname=cinnamon-translations
+pkgver=4.2.2
+pkgrel=1
+pkgdesc="Translations for Cinnamon and Nemo"
+arch=('any')
+url="https://github.com/linuxmint/${pkgname}"
+license=('GPL2')
+options=('!emptydirs')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
+sha512sums=('df6385c0cb219046ee8c9432171037e7f374e30ca59ed0e495b78dd0ba62ddbba551bf5cb41501ed54aa327bb45522d86c7163951c7cd3b6c2ee794f53262a4e')
+b2sums=('e122826f3a33d867adbd79dcc1b0438586d09070a403661486a9da4c5e8c02a6a5ac34a06d7301460eadf36d6ddcc66fa0c17eb561d928f1a338ef702fcf63a5')
+
+build() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    make
+    find usr -name '*bluetooth*' -delete
+}
+
+package() {
+    cd "${srcdir}"/${pkgname}-${pkgver}
+
+    cp -r usr/ "${pkgdir}"
+}
