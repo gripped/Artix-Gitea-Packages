@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=241.3
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -51,9 +51,9 @@ package_elogind() {
 
     DESTDIR="$pkgdir" meson install -C build
 
-    mkdir ${srcdir}/_libelogind
-    mv -v ${pkgdir}/usr/lib/pkgconfig ${srcdir}/_libelogind
-    mv -v ${pkgdir}/usr/include/ ${srcdir}/_libelogind
+    ln -sfv libelogind.pc ${pkgdir}/usr/lib/pkgconfig/libsystemd.pc
+
+    install -dm755 ${srcdir}/_libelogind
     mv -v ${pkgdir}/usr/lib/libelogind*.so* ${srcdir}/_libelogind
 }
 
@@ -70,11 +70,8 @@ package_libelogind(){
     cd ${pkgbase}-${pkgver}
 
     install -dm755 ${pkgdir}/usr/lib
-    mv ${srcdir}/_libelogind/include ${pkgdir}/usr
-    mv ${srcdir}/_libelogind/pkgconfig ${pkgdir}/usr/lib
     mv ${srcdir}/_libelogind/libelogind*.so* ${pkgdir}/usr/lib
 
     ln -sfv libelogind.so ${pkgdir}/usr/lib/libsystemd.so
     ln -sfv libsystemd.so ${pkgdir}/usr/lib/libsystemd.so.0
-    ln -sfv libelogind.pc ${pkgdir}/usr/lib/pkgconfig/libsystemd.pc
 }
