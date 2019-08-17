@@ -4,7 +4,7 @@
 
 pkgname=gitea
 pkgver=1.9.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Painless self-hosted Git service. Community managed fork of Gogs."
 arch=(x86_64)
 url="https://gitea.io"
@@ -27,12 +27,14 @@ source=("git+https://github.com/go-gitea/gitea.git#tag=${_tag}"
         gitea.tmpfiles
         gitea.sysusers
         gitea-arch-defaults.patch
-        org-repo-creation.patch)
+        org-repo-creation.patch
+        team-add-repo-to-org.patch)
 sha256sums=('SKIP'
             '1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba'
             '2abc51ccd0086bb996194bb7fb241a3f26d84f518417c872b66a3db8970da7e4'
             '5eb47d104acd2e4f8c83bfc27c77b98fcfabcab492ffb2c91675062ecd1706ad'
-            '30d26cc5bcaccabe2a799c43a2f67c32ad9f3a3fd27de10fa5e447f1d201d7ac')
+            '30d26cc5bcaccabe2a799c43a2f67c32ad9f3a3fd27de10fa5e447f1d201d7ac'
+            'e7011975e2b0d2754440ff42d4f7415b1a5279d6b981641aefa7684bca33165d')
 validpgpkeys=(8C4033A23895237CB27D52D9D9B5613BEB813F99  # Matti Ranta <matti@mdranta.net> old RSA2048, retrieved from https://github.com/techknowlogick.gpg
               B56E3C7437A49E136862F5DE9D8A57ADAA232E95  # Matti Ranta <matti@mdranta.net> new RSA4096, retrieved from https://github.com/techknowlogick.gpg
               ED810FD31FBE67F406ED71BDD4F1E9B6493ED946  # Jonas Franz <info@jonasfranz.software>
@@ -44,6 +46,8 @@ prepare() {
   patch -Np1 -i ../gitea-arch-defaults.patch
   # Artixlinux! Make possible for teams with write access to create new repos on Organizations
   patch -Np1 -i ../org-repo-creation.patch
+  # Artixlinux! Make possible for non admin users to assign a new repo to a team
+  patch -Np1 -i ../team-add-repo-to-org.patch
   # Fetch dependency using go mod
   make vendor
 }
