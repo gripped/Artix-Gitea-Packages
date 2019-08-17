@@ -6,7 +6,7 @@
 pkgbase=dbus
 pkgname=(dbus dbus-docs)
 pkgver=1.12.16
-pkgrel=1
+pkgrel=2
 pkgdesc="Freedesktop.org message bus system"
 url="https://wiki.freedesktop.org/www/Software/dbus/"
 arch=(x86_64)
@@ -52,7 +52,7 @@ build() {
     --without-systemdsystemunitdir \
     --enable-inotify \
     --disable-systemd \
-    --enable-user-session \
+    --disable-user-session \
     --disable-static \
     --disable-verbose-mode \
     --disable-asserts \
