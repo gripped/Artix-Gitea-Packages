@@ -18,7 +18,7 @@ validpgpkeys=('2578ABA1F9023159DFF211B7368712C4D7A44445') # Ulrik Sverdrup <ulri
 
 build() {
   cd keybinder-3.0-${pkgver}
-  ./configure --prefix=/usr --enable-gtk-doc
+  ./configure --prefix=/usr
   make
 }
 
