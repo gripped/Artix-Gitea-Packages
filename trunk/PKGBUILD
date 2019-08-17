@@ -6,7 +6,7 @@
 pkgbase=pulseaudio
 pkgname=(pulseaudio libpulse pulseaudio-{zeroconf,lirc,jack,bluetooth,equalizer})
 pkgdesc="A featureful, general-purpose sound server"
-pkgver=12.99.2+5+g728a4402e
+pkgver=12.99.2+16+ga7caa9d39
 pkgrel=1
 arch=(x86_64)
 url="https://www.freedesktop.org/wiki/Software/PulseAudio/"
@@ -15,9 +15,9 @@ makedepends=(libasyncns libcap attr libxtst libsm libsndfile rtkit libsoxr
              speexdsp tdb elogind dbus avahi bluez bluez-libs jack2-dbus sbc
              lirc openssl fftw orc gtk3 webrtc-audio-processing check git meson
              xmltoman)
-_commit=728a4402eb85983eb9ad160470e79c57201b572a  # master
+_commit=a7caa9d393a3a71b355527c14e655d8e07b9a5b0  # master
 source=("git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=$_commit"
-        meson-elogind-support.patch)
+        'meson-elogind-support.patch')
 sha256sums=('SKIP'
             'fea0e09a9f026bc3c9160b53018b8e1dd1f3493c60f68405a758de7d3cb592cf')
 
@@ -42,7 +42,8 @@ build() {
 }
 
 check() {
-  meson test -C build -t 5 --print-errorlogs
+  meson test -C build --print-errorlogs
+  ninja -C build test-daemon
 }
 
 _pick() {
