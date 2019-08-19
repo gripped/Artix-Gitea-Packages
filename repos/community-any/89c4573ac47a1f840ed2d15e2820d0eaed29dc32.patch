@@ -1,0 +1,35 @@
+From 89c4573ac47a1f840ed2d15e2820d0eaed29dc32 Mon Sep 17 00:00:00 2001
+From: tothegump <tothegump@gmail.com>
+Date: Mon, 19 Aug 2019 01:02:42 +0800
+Subject: [PATCH] i-5676(fix): fix unit test
+ test_MongoBackend.test_init_mongodb_dns_seedlist (#5680)
+
+---
+ t/unit/backends/test_mongodb.py | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/t/unit/backends/test_mongodb.py b/t/unit/backends/test_mongodb.py
+index e6b8846262..8f904d9977 100644
+--- a/t/unit/backends/test_mongodb.py
++++ b/t/unit/backends/test_mongodb.py
+@@ -129,8 +129,9 @@ def test_init_mongodb_dns_seedlist(self, dns_resolver_query):
+ 
+         self.app.conf.mongodb_backend_settings = None
+ 
+-        def mock_resolver(_, record_type):
+-            if record_type == 'SRV':
++        def mock_resolver(_, rdtype, rdclass=None, lifetime=None, **kwargs):
++
++            if rdtype == 'SRV':
+                 return [
+                     SRV(0, 0, 0, 0, 27017, Name(labels=hostname))
+                     for hostname in [
+@@ -139,7 +140,7 @@ def mock_resolver(_, record_type):
+                         b'mongo3.example.com'.split(b'.')
+                     ]
+                 ]
+-            elif record_type == 'TXT':
++            elif rdtype == 'TXT':
+                 return [TXT(0, 0, [b'replicaSet=rs0'])]
+ 
+         dns_resolver_query.side_effect = mock_resolver
