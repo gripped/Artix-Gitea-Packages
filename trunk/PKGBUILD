@@ -34,13 +34,13 @@ build() {
 check() {
   (cd commonmark.py-${pkgver}
     export PYTHONPATH=.
-    python CommonMark/tests/unit_tests.py
+    python commonmark/tests/unit_tests.py
     python setup.py test
   )
   (cd commonmark.py-${pkgver}-py2
     export PYTHONPATH=.
     export PYTHONIOENCODING=UTF-8
-    python2 CommonMark/tests/unit_tests.py
+    python2 commonmark/tests/unit_tests.py
     python2 setup.py test
   )
 }
