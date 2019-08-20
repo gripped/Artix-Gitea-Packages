@@ -2,7 +2,7 @@
 
 pkgbase=python-commonmark
 pkgname=('python-commonmark' 'python2-commonmark')
-pkgver=0.8.0
+pkgver=0.9.0
 pkgrel=1
 pkgdesc='Python parser for the CommonMark Markdown spec'
 url='https://pypi.python.org/pypi/CommonMark'
@@ -13,8 +13,8 @@ makedepends=('python-setuptools' 'python-docutils' 'python-future' 'python-sphin
 checkdepends=('python-hypothesis' 'python2-hypothesis' python-sphinx_rtd_theme python2-sphinx_rtd_theme)
 options=('!makeflags')
 source=(${pkgname}-${pkgver}.tar.gz::https://github.com/rtfd/CommonMark-py/archive/${pkgver}.tar.gz)
-sha256sums=('b52fe76749ad856cd52be67e35b548143e7d49d02faef288cf0abf2ee59dabec')
-sha512sums=('fcb70913ec2a8693fc667e18c1600a90d6fa26d9516a9cffd2a3d7a7c2bce2167d65d2ecd0940b4d8933b833f1ed6620bc59fd7bc2ae198365043119dced9da3')
+sha256sums=('c30931518b2882cb03b90378167bc6d9b604ca1c0ff0d6227db6ab093ad9dfad')
+sha512sums=('7a2121cf6cb7799940e8d6cb0fb73117e9d0c04ef500995a8213d1e77cfad840fbc0b43934f836a9f43c85c6b9acc2325d9ca01bf2281ef562319252dfdf8ef7')
 
 prepare() {
   cp -r commonmark.py-${pkgver}{,-py2}
