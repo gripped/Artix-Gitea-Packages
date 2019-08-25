@@ -26,7 +26,7 @@ prepare() {
 
   # Allow buiding with gettext 0.20
   # https://gitlab.gnome.org/GNOME/libgsf/commit/7f927f09a47eb674606295b776d8cccc4554859a
-  git cherry-pick -n 7f927f09a47eb674606295b776d8cccc4554859a
+  git cherry-pick -n 91027d3447666c6f13c31b4b5984e1a8212983da
 
   NOCONFIGURE=1 ./autogen.sh
 }
