@@ -19,6 +19,7 @@ source=("${pkgname}-${pkgver}.tar.gz::https://github.com/hashicorp/consul/archiv
         'consul-ldflags.patch'
         'unparallelize-or-disable-flaky-tests.patch'
         )
+
 install=consul.install
 sha512sums=('9a1ec590132069deb0d74809bcc7da7df4d40b17e6e2ff95cf90a2dbd5487bd2309164f09ca9c4802f77a56b453479605841531083bf272dbcb9a53b91e9bc8c'
             'SKIP'
