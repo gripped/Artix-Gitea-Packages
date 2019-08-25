@@ -22,7 +22,7 @@ pkgver() {
 prepare() {
     cd libwnck
     # Fix startup-notification use
-    git cherry-pick -n bbf3286f66c79118b16ff429265bbc3e6ce283ad
+    git cherry-pick -n 0d9ff7db63af568feef8e8c566e249058ccfcb4e
 }
 
 build() {
