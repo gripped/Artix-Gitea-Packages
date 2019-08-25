@@ -3,7 +3,7 @@
 
 pkgname=consul
 pkgver=1.5.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
 _gocli_commit='3d22a244be8aa6fb16ac24af0e195c08b7d973aa' # HEAD
@@ -20,7 +20,7 @@ source=("${pkgname}-${pkgver}.tar.gz::https://github.com/hashicorp/consul/archiv
         'unparallelize-or-disable-flaky-tests.patch'
         )
 install=consul.install
-sha512sums=('3f275ec160b9e583b81ba8d463fdb05e9fc9058db2453d9393a56b67337ea04df98a89225323192230938e1abfb48fa60fe0a32b4d8980573b749217b69933e9'
+sha512sums=('9a1ec590132069deb0d74809bcc7da7df4d40b17e6e2ff95cf90a2dbd5487bd2309164f09ca9c4802f77a56b453479605841531083bf272dbcb9a53b91e9bc8c'
             'SKIP'
             'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348'
