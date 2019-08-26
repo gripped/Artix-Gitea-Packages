@@ -9,7 +9,8 @@ pkgdesc="USB Device Utilities"
 arch=(x86_64)
 license=('GPL')
 groups=('base')
-depends=('libusb' 'hwids')
+depends=('libusb' 'hwids' 'libeudev')
+makedepends=('eudev')
 optdepends=('python: for lsusb.py usage'
             'coreutils: for lsusb.py usage')
 url="http://linux-usb.sourceforge.net/"
