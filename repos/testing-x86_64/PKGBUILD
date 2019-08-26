@@ -3,7 +3,7 @@
 pkgbase="cups"
 pkgname=('libcups' 'cups')
 pkgver=2.3.0
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('Apache' 'custom')
 url="https://www.cups.org/"
