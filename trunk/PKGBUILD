@@ -5,7 +5,7 @@ pkgbase=phonon
 pkgname=(phonon-qt5)
 pkgdesc="The multimedia framework by KDE"
 pkgver=4.11.0
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='http://phonon.kde.org/'
 license=(LGPL)
@@ -24,7 +24,8 @@ prepare() {
 build() {
   cd build
   cmake ../$pkgbase-$pkgver \
-    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib
   make
 }
 
