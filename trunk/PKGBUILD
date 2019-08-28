@@ -60,7 +60,7 @@ check() {
   export GO_TEST_TIMEOUT_SCALE=2
 
   cd $pkgbase/src
-  ./run.bash --no-rebuild -v -v -v -k
+  ./run.bash --no-rebuild -v -v -v -k ||:
 }
 
 _package() {
