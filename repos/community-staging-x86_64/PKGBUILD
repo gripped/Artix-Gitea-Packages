@@ -29,10 +29,10 @@ source=(
 )
 sha256sums=('2de2f0cec243da0d9ff2255ceb9dac9d95e8be06d6ea13926fae460d72e4b8aa')
 
-prepare() {
-    cd "Waybar-$pkgver"
-    patch -Np1 -i ../waybar-fmt6.patch
-}
+#prepare() {
+#    cd "Waybar-$pkgver"
+#    patch -Np1 -i ../waybar-fmt6.patch
+#}
 
 
 build() {
