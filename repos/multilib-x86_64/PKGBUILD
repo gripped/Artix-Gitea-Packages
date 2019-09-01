@@ -11,7 +11,7 @@ license=('LGPL')
 depends=('lib32-glibc' 'libusb' 'lib32-eudev')
 replaces=('lib32-libusb1' 'lib32-libusbx')
 provides=("lib32-libusbx=$pkgver")
-makedepends=('gcc-multilib')
+makedepends=('gcc-multilib' 'eudev')
 source=(https://github.com/libusb/libusb/releases/download/v$pkgver/libusb-$pkgver.tar.bz2)
 md5sums=('1e29700f6a134766d32b36b8d1d61a95')
 
