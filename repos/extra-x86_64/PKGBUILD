@@ -1,7 +1,7 @@
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=syslog-ng
-pkgver=3.22.1
+pkgver=3.23.1
 pkgrel=1
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=('x86_64')
@@ -29,8 +29,8 @@ backup=('etc/syslog-ng/scl.conf'
         'etc/logrotate.d/syslog-ng')
 source=(https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$pkgver/$pkgname-$pkgver.tar.gz
         syslog-ng.conf syslog-ng.logrotate)
-sha256sums=('0656443776fa554320cb81bbebeac72bdf871298dd2ebef7413c393aec4d74c8'
-            '688c00b7c04e683e2b30f9b59ce8d4374c1441f5ef115ba96e0f6b2306dc2791'
+sha256sums=('fb36cfc1982831f74143b77a924ee79714745b5e2b3ff59d086d09a77d0acd38'
+            '3491c028f9ff9ccd7437b487de682a961ca64202f861838775d872bef980bf4d'
             '93c935eca56854011ea9e353b7a1da662ad40b2e8452954c5b4b5a1d5b2d5317')
 
 build() {
