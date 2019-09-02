@@ -38,6 +38,7 @@ build() {
   cmake ../ogg \
     -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DBUILD_SHARED_LIBS=ON
   ninja
 }
