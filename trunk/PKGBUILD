@@ -9,7 +9,7 @@ license=(GPL)
 url="https://github.com/calamares/calamares"
 license=('LGPL')
 depends=('yaml-cpp' 'kpmcore>=3.1.0' 'boost-libs' 'hwinfo' 'gtk-update-icon-cache'
-          'libpwquality' 'polkit-qt5' 'qt5-xmlpatterns' 'plasma-framework' 'pythonqt')
+          'libpwquality' 'polkit-qt5' 'qt5-xmlpatterns' 'plasma-framework')
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
@@ -40,13 +40,13 @@ build() {
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
               -DCMAKE_INSTALL_LIBDIR=lib \
-              -DWITH_PYTHONQT:BOOL=ON \
+              -DWITH_PYTHONQT:BOOL=OFF \
               -DINSTALL_CONFIG:BOOL=ON \
               -DINSTALL_POLKIT:BOOL=ON \
               -DSKIP_MODULES="webview interactiveterminal initramfs \
                               initramfscfg \
                               dummyprocess dummypython dummycpp \
-                              dummypythonqt services-systemd"
+                              dummypythonqt services-systemd packagechooser"
         make
 }
 
