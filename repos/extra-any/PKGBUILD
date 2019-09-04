@@ -2,22 +2,19 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.14.5
-pkgrel=2
+pkgver=0.14.6
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        "buildtree-xfce.patch::https://gitea.artixlinux.org/artix/artools/commit/4a06d4d2ebe06afe4d56d3cd090b00ff7bd81cce.patch")
-sha256sums=('92a6ac36ff9490b4496a090d3ec1dab6506d8512ea31d65746002c74b55c88c8'
-            '0e4be4dd534533c948a509a6ebcff73ae7c35003f5a89510b20d28a8f6be51ff')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('9d567677eed29f3c93d07e2640779c51dd4e164241cbc0f2e33c518f07cadc0c')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-    patch -Np 1 -i ../buildtree-xfce.patch
 }
 
 build() {
