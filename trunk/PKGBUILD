@@ -2,8 +2,8 @@
 # Contributor: Dylan Araps <dylan.araps@gmail.com>
 
 pkgname=neofetch
-pkgver=6.0.1
-pkgrel=2
+pkgver=6.1.0
+pkgrel=1
 pkgdesc="A CLI system information tool written in BASH that supports displaying images."
 arch=('any')
 url="https://github.com/dylanaraps/neofetch"
@@ -26,9 +26,7 @@ optdepends=(
   'xorg-xrandr: Resolution detection (Multi Monitor + Refresh rates)'
   'xorg-xwininfo: See https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal'
 )
-#source=("${pkgname}-${pkgver}.tar.gz::https://github.com/dylanaraps/neofetch/archive/${pkgver}.tar.gz")
-source=(https://github.com/dylanaraps/neofetch/archive/master.zip)  # Use this temporarily as our new logo didn't make a version bump
-sha256sums=('dbe1873f3118e7f1fe37922004d7285a27863d91379c6abfdefc7ea135c1f2a7')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/dylanaraps/neofetch/archive/${pkgver}.tar.gz")
 
 package() {
 #  cd "${pkgname}-${pkgver}/"
@@ -36,3 +34,4 @@ package() {
   make DESTDIR="$pkgdir" install
   install -Dm644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }
+sha256sums=('ece351e35286b64d362000d409b27597fcbdcf77e8e60fa0adae1f29d3c29637')
