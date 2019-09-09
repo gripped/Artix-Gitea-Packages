@@ -17,6 +17,7 @@ source=("https://github.com/zeromq/libzmq/releases/download/v$pkgver/zeromq-$pkg
 sha256sums=('ebd7b5c830d6428956b67a0454a7f8cbed1de74b3b01e5c33c5378e22740f763'
             '117fc1ca24d98dbe1a60c072cde13be863d429134907797f8e03f654ce679385')
 
+
 prepare() {
   # Needed for new libsodium
   sed -i 's/libzmq_werror="yes"/libzmq_werror="no"/' $pkgname-$pkgver/configure
