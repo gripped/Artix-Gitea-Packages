@@ -9,9 +9,8 @@ license=('GPL')
 url="http://www.ivrix.org.il/projects/spell-checker/"
 makedepends=('glibc' 'zlib' 'perl' 'hunspell' 'gawk' 'qt5-webengine')
 options=('!makeflags')
-source=(http://hspell.ivrix.org.il/${pkgname}-${pkgver}.tar.gz{,.sig})
-sha256sums=('7310f5d58740d21d6d215c1179658602ef7da97a816bc1497c8764be97aabea3'
-            'SKIP')
+source=(http://hspell.ivrix.org.il/${pkgname}-${pkgver}.tar.gz) #{,.sig})
+sha256sums=('7310f5d58740d21d6d215c1179658602ef7da97a816bc1497c8764be97aabea3')
 validpgpkeys=('996512CD85DC510BD45EAD46415E26D84D4E37DB')
 
 build() {
@@ -19,7 +18,7 @@ build() {
   export PERLLIB="$PWD"
   ./configure --prefix=/usr --mandir=/usr/share/man \
       --enable-linginfo --enable-fatverb --enable-shared
-  make 
+  make
   make hunspell
 }
 
@@ -37,7 +36,7 @@ package_hspell() {
 package_hunspell-he() {
 
   pkgdesc="Hebrew hunspell dictionary"
-  
+
   cd ${pkgbase}-${pkgver}
 
   install -dm755 "$pkgdir"/usr/share/hunspell
