@@ -8,7 +8,7 @@ arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
 source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('e1adb7647dfc9eb889d65f3657f10f646a15a524e081129dfd8a1d4b7fa948c1')
+sha256sums=('3d831e99db3c7edfa59b76055b784e093c98f11ee21e35e44375a99b767b8472')
 
 package_artix-backgrounds(){
     pkgdesc='Artix backgrounds'
