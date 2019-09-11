@@ -56,7 +56,8 @@ build() {
 
   arch-meson p11-kit build \
     --libdir=/usr/lib32 \
-    -D trust_paths=/etc/ca-certificates/trust-source:/usr/share/ca-certificates/trust-source
+    -D trust_paths=/etc/ca-certificates/trust-source:/usr/share/ca-certificates/trust-source \
+    -D systemd=disabled
   ninja -C build
 }
 
