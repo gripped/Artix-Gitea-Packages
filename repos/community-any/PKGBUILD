@@ -2,13 +2,13 @@
 
 pkgbase=artix-artwork
 pkgname=('artix-icons' 'artix-backgrounds')
-pkgver=0.8.2
+pkgver=0.8.3
 pkgrel=1
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
 source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('3d831e99db3c7edfa59b76055b784e093c98f11ee21e35e44375a99b767b8472')
+sha256sums=('d2984703cc716ef2601b08578fe42102c7fca7bb6548815878f782ef481d3a3e')
 
 package_artix-backgrounds(){
     pkgdesc='Artix backgrounds'
