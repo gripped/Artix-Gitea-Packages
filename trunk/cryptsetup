@@ -28,6 +28,7 @@ do_unlock_device() {
 				"keyfile-size"*) opts+="-l ${i##*=}" ;;
 				"keyfile-offset"*) opts+="--keyfile-offset ${i##*=}" ;;
 				"key-slot"*) opts+="-S ${i##*=}" ;;
+				"luks") ;;
 				*)
 					printhl "The option '${i%%=*}' is not currently supported at the moment."
 					printhl "Partition '$2' cannot be unlocked."
