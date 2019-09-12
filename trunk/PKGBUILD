@@ -5,7 +5,7 @@
 
 pkgname=ddclient
 pkgver=3.9.0
-pkgrel=3.1
+pkgrel=4
 
 pkgdesc="Update dynamic DNS entries for accounts on many dynamic DNS services"
 url="https://github.com/ddclient/ddclient"
@@ -14,14 +14,17 @@ license=('GPL2')
 
 backup=('etc/ddclient/ddclient.conf')
 
-depends=('perl-io-socket-inet6' 'perl-io-socket-ssl' 'perl-digest-sha1' 'net-tools' 'perl-data-validate-ip')
+depends=('perl-io-socket-inet6' 'perl-io-socket-ssl' 'perl-digest-sha1'
+         'net-tools' 'perl-data-validate-ip')
 optdepends=('smtp-forwarder: email support requires sendmail binary')
 
-source=(https://github.com/ddclient/ddclient/archive/v$pkgver.tar.gz
-        https://gitweb.gentoo.org/repo/gentoo.git/plain/net-dns/ddclient/files/ddclient.tmpfiles)
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/ddclient/ddclient/archive/v$pkgver.tar.gz
+        tmpfiles
+        sysusers)
 
 sha512sums=('ae314c96a37dd90256d6acf62f4a4523b72f540194131e351a032239b00b4520351f6549d3b20a9209fe49ccc6de7ce158ffa8635d341066ea71b789dc667438'
-            '13c6e541ff23575d799eee943b8e10e277e5073732cd7c9705c23ee557bd99978435c0fe8b546fa3122a60cfb0499e27853e1968f0c1e0225890b68ae678e0c7')
+            '13c6e541ff23575d799eee943b8e10e277e5073732cd7c9705c23ee557bd99978435c0fe8b546fa3122a60cfb0499e27853e1968f0c1e0225890b68ae678e0c7'
+            '4a3ce3e00783c99030740f407fdbb9e6185a1ea6faff809a7ca415c1999bd55f5cafffe278b68ee4a428fb56e01ff36ac12ad4f28c4954816ff68f28a78136a8')
 
 package() {
   cd ddclient-$pkgver
@@ -30,13 +33,13 @@ package() {
   install -Dm600 sample-etc_ddclient.conf "$pkgdir"/etc/ddclient/ddclient.conf
   install -d "$pkgdir"/var/cache/ddclient
 
-  #tmpfiles
-  install -Dm644 "$srcdir"/ddclient.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/ddclient.conf
-
   install -Dm644 README.cisco "$pkgdir"/usr/share/doc/ddclient/README.cisco
   install -Dm644 README.md "$pkgdir"/usr/share/doc/ddclient/README.md
   install -Dm644 README.ssl "$pkgdir"/usr/share/doc/ddclient/README.ssl
   install -Dm644 sample-etc_cron.d_ddclient "$pkgdir"/usr/share/doc/ddclient/sample-etc_cron.d_ddclient
   install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
   install -Dm644 COPYRIGHT "$pkgdir"/usr/share/licenses/$pkgname/COPYRIGHT
+
+  install -Dm644 "$srcdir"/tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/ddclient.conf
+  install -Dm644 "$srcdir"/sysusers "$pkgdir"/usr/lib/sysusers.d/ddclient.conf
 }
