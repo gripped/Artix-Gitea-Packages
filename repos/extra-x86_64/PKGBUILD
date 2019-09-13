@@ -55,5 +55,3 @@ package() {
   # https://bugzilla.gnome.org/show_bug.cgi?id=688161
   install -Dt "$pkgdir/etc/security/limits.d" -m644 ../10-gcr.conf
 }
-
-# vim:set ts=2 sw=2 et:
