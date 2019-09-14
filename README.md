@@ -1,2 +1,2 @@
-# dhcpcd-s6
+# agetty-s6
 
