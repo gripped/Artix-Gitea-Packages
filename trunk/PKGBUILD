@@ -25,14 +25,14 @@ source=(jdk8u-${_repo_ver}.tar.gz::${_url_src}/archive/${_repo_ver}.tar.gz
         langtools-${_repo_ver}.tar.gz::${_url_src}/langtools/archive/${_repo_ver}.tar.gz
         nashorn-${_repo_ver}.tar.gz::${_url_src}/nashorn/archive/${_repo_ver}.tar.gz)
 
-sha256sums=('9556cee8070449fd515e1dfb4c23b6499d5dc49586136e17fb8862aff3e37024'
-            '996e17a077a00e4d205f635c38f432a0eee5225e556a35bf6b5d333b72a2d12f'
-            '48955c5d073129b57bb2a03f27397a1eb74aaaa3459663848dbd896ccd8ad9de'
-            '66f1805fdd465813618399ac1bd3b4fbe87a2820afb803cfb6d59a45eebfe51f'
-            '92e876099a42001e8c8ec749cc00f10a9e2d8d5dba57d8e15e20d05d02474460'
-            '465b40d283fd2063e4422c3c7f2a43da0dcfe70e8125442cff9134436c8a18d1'
-            '845e3c106beb7319180adcb41a0f5d40de169453291da4050b326f828de7d8c7'
-            '96673ee96926ee942148a3e8cc381e172db550bc9af9e230ac0526b45d65234c')
+sha256sums=('0f55ff00da5e356a7bd703cef9208c5a3c2fd0dfa02fa42575ff42348688a530'
+            '0ad3f9a17fc91f23bddf6bbecd6999ae38a83a4ccc2d26a977c7a59be084f12e'
+            'b2d48ef855bcf7ec036567516ad45b34e9c4c5c54b087cd0642254ec55c2897c'
+            'dad37f169d79a86bd45db58a97d2f78a4b78a9627d9d2f8131717517dcc225bb'
+            '4d7fc3a95b0c728a4109cf92ea263981cfa6a477551ea07daeef6e87927b9258'
+            '0583ba9a993a0eb38a91c173552ea060b5d53294e5b86ad968c745c4f5bb16da'
+            '6ff07b7bcf955819ef80daa8bd2c4d8546f8b74d8941f84e430b20e381c4b11f'
+            '0699029f693e22dd6945571050a6e8a9e3e0d5295e33b6200d5b5b405caaf767')
 
 case "${CARCH}" in
   'x86_64') _JARCH=amd64 ; _DOC_ARCH=x86_64 ;;
