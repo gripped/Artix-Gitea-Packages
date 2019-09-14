@@ -1,2 +1,2 @@
-# cups-s6
+# agetty-s6
 
