@@ -1,2 +1,2 @@
-# elogind-s6
+# agetty-s6
 
