@@ -28,7 +28,7 @@ build() {
               --sysconfdir=/etc \
               --with-drivedbdir \
               --with-libcap-ng=yes \
-              --with-systemdsystemunitdir=/usr/lib/systemd/system \
+              --with-systemdsystemunitdir=no \
               --with-smartdscriptdir=/usr/share/smartmontools \
               --with-smartdplugindir=/usr/share/smartmontools/smartd_warning.d
 
@@ -37,9 +37,6 @@ build() {
 
 package() {
   cd "${srcdir}/${pkgname}-${pkgver}"
-
-  sed -i -e "s:sysconfig/smartmontools:conf.d/smartd:g" smartd.service
-  sed -i -e "s:smartd_opts:SMARTD_ARGS:g" smartd.service
 
   make DESTDIR="${pkgdir}" install
 
