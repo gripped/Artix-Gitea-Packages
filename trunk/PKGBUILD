@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20190914
+pkgver=20190915
 pkgrel=1
 pkgdesc="s6 service scripts for elogind"
 arch=('any')
 url="https://github.com/artix-linux"
-depends=('elogind' 's6' 'dbus-s6')
+depends=('elogind' 's6-rc' 'dbus-s6')
 install=elogind.install
 source=("elogind.dependencies" "elogind.run" "elogind.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
