@@ -1,8 +1,7 @@
 # Maintainer Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=execline
 pkgver=2.5.1.0
-#hack because the one in AUR is unfortunately also pkgrel=2
+#hack since pkgrel=2 unfortunately already exists in AUR
 pkgrel=2
 pkgdesc='A small scripting language, to be used in place of a shell in non-interactive scripts.'
 arch=('x86_64')
@@ -14,7 +13,8 @@ sha256sums=('b1a756842947488404db8173bbae179d6e78b6ef551ec683acca540ecaf22677')
 
 build() {
 	cd ${pkgname}-${pkgver}
-	./configure --exec-prefix=/usr
+	./configure --prefix=/usr \
+	            --datadir=/etc
 	make
 }
 
