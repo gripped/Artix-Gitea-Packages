@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=skalibs
 pkgver=2.8.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A general-purpose utility library for secure, small C development"
 url="http://www.skarnet.org/software/skalibs/"
 license=('ISC')
@@ -12,7 +12,8 @@ sha256sums=('431c6507b4a0f539b6463b4381b9b9153c86ad75fa3c6bfc9dc4722f00b166ba')
 
 build() {
 	cd ${pkgname}-${pkgver}
-	./configure --exec-prefix=/usr
+	./configure --prefix=/usr \
+	            --datadir=/etc
 	make
 }
 
