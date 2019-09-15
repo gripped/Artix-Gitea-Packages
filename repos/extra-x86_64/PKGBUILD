@@ -31,7 +31,7 @@ pkgver() {
 }
 
 prepare() {
-  cd ../${pkgname}
+  cd ${pkgname}
   # Build hybrid support
   sed 's|^#OPENSSL|OPENSSL|g' -i Makefile
   # fix resolvconf location for community/openresolv
@@ -51,7 +51,6 @@ check() {
 package() {
   cd ${pkgname}
   make DESTDIR="${pkgdir}" PREFIX=/usr SBINDIR=/usr/bin install
-  install -Dm 644 ../vpnc@.service -t "${pkgdir}/usr/lib/systemd/system"
   install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
   install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
