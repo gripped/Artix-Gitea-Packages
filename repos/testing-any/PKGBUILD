@@ -5,6 +5,7 @@ pkgrel=1
 pkgdesc="s6 service scripts for cups"
 arch=('any')
 url="https://github.com/artix-linux"
+groups=('s6-world')
 depends=('cups' 's6-rc')
 install=cupsd.install
 source=("cupsd.run" "cupsd.type")
