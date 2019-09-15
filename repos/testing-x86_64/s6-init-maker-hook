@@ -1,0 +1,18 @@
+#!/bin/sh -e
+if [ -e /etc/s6-linux-init ]; then
+    if [ -e /etc/s6-linux-init/current ]; then
+        cp -r /etc/s6-linux-init/current/scripts/ /tmp
+        echo "Old rc scripts moved to /tmp/scripts/*. Please back them up if they are important."
+	    rm -rf /etc/s6-linux-init/current
+    fi
+    s6-linux-init-maker -1 -G "/usr/bin/agetty -L -8 tty1 115200" /etc/s6-linux-init/current
+    mv /etc/s6-linux-init/current/bin/init /etc/s6-linux-init/current/bin/s6-init
+	rm /etc/s6-linux-init/current/scripts/*
+    mv /usr/bin/halt /tmp
+    mv /usr/bin/poweroff /tmp
+    mv /usr/bin/reboot /tmp
+    mv /usr/bin/*-init /tmp
+    mv /usr/bin/shutdown /tmp
+    mv /usr/bin/telinit /tmp
+    echo "Old init binaries moved to /tmp/*. Use those for rebooting."
+fi
