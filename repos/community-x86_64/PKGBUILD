@@ -11,9 +11,8 @@ url="https://virtualgl.org"
 license=('LGPL')
 depends=('libxv' 'glu' 'libjpeg-turbo' 'xcb-util-keysyms')
 makedepends=('cmake' 'mesa' 'libxtst')
-source=("https://downloads.sourceforge.net/project/virtualgl/${pkgver}/VirtualGL-${pkgver}.tar.gz"{,.sig})
-sha512sums=('826707451a7c85de84f3e4b2cc629ee41ee48132c62d55dd2af87d7f1a45873a8d0a281936bae37ce838491948c462e9cebb08ce8b20fcba2122c94d8bc2f5e5'
-            'SKIP')
+source=("https://downloads.sourceforge.net/project/virtualgl/${pkgver}/VirtualGL-${pkgver}.tar.gz")
+sha512sums=('826707451a7c85de84f3e4b2cc629ee41ee48132c62d55dd2af87d7f1a45873a8d0a281936bae37ce838491948c462e9cebb08ce8b20fcba2122c94d8bc2f5e5')
 validpgpkeys=('ECF01671D05E2A105FF84DC46BBEFA1972FEB9CE') # The VirtualGL Project (Signing key for official binaries) <information@VirtualGL.org>
 
 prepare() {
