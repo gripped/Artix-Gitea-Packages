@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = s6-rc
+
+[Action]
+Description = Initalizing s6-rc database...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/s6-rc-db-init-hook

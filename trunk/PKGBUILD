@@ -1,0 +1,38 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=s6-rc
+pkgver=0.5.0.0
+pkgrel=1
+pkgdesc='A complete service manager for s6 systems.'
+arch=('x86_64')
+url='https://skarnet.org/software/s6-rc/'
+license=('ISC')
+depends=('skalibs' 'execline' 's6')
+source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+        "s6-rc-db-init-hook"
+        "s6-rc-db-init.hook"
+        "s6-rc-db-update-hook"
+        "s6-rc-db-update.hook")
+sha256sums=('cb7f033965a6c1b6f500cbb7a2f3ecdf2310fbb18f79e7a2a384541413b9275d'
+            '2a66e79812cb20264d29eb0264ba27dd7f5c4ea68b59be24896b49d9d5eb7bbc'
+            '318444958f5d995f2b55bc57fc7f9e87cfacd89df6a6b120bf0e341d2b7d3852'
+            'd85c10a6a5e61016887c20c77b4fa5d907703889f3f93595ee772b368f32b57d'
+            '3e81c01f44c4a0a57a3d66d0b13de7c4cf1bc020f1b9bff2c6481b7920ca0409')
+
+build() {
+    cd ${pkgname}-${pkgver}
+    ./configure --prefix=/usr \
+                --datadir=/etc
+}
+
+package() {
+    cd ${pkgname}-${pkgver}
+	mkdir -p "${pkgdir}"/etc/s6-rc
+	mkdir -p "${pkgdir}"/etc/s6/sv
+    make DESTDIR="${pkgdir}" install
+
+    # pacman hooks
+	mkdir -p "${pkgdir}"/usr/share/libalpm/scripts
+	mkdir -p "${pkgdir}"/usr/share/libalpm/hooks
+    install -Dm755 -t "${pkgdir}"/usr/share/libalpm/scripts ${srcdir}/*-hook
+    install -Dm755 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
+}
