@@ -1,0 +1,32 @@
+# Maintainer: Ainola <ainola@archlinux.org>
+# Contributor: Drew DeVault
+
+pkgname=scdoc
+pkgver=1.10.0
+pkgrel=1
+license=('MIT')
+pkgdesc='Tool for generating roff manual pages'
+arch=('x86_64')
+url='https://git.sr.ht/~sircmpwn/scdoc/'
+source=("$pkgname-$pkgver.tar.gz::https://git.sr.ht/~sircmpwn/$pkgname/archive/$pkgver.tar.gz")
+sha512sums=('546743376380d84aa9c8be65529dbbe1634e574203220ce1c057341436bd3a15297f393ca79d29372cb125bf457cfc00f64ba2867b8d2e910ca6531acb552e97')
+
+build() {
+    cd "$pkgname-$pkgver"
+    # Upstream purposefully does not honor the user's LDFLAGS in order to keep
+    # scdoc static. As we gain no benefit to statically linking and, in fact,
+    # lose standard Arch practices (such as RELRO and PIE), we must override
+    # LDFLAGS
+    make PREFIX=/usr LDFLAGS="$LDFLAGS"
+}
+
+check() {
+    cd "$pkgname-$pkgver"
+    make check
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -Dm644 COPYING -t "$pkgdir/usr/share/licenses/$pkgname"
+}
