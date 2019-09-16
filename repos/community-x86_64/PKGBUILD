@@ -10,7 +10,7 @@
 pkgname=('dmd' 'dmd-docs' 'libphobos')
 pkgdesc='D programming language compiler and standard library'
 groups=('dlang' 'dlang-dmd')
-pkgbase=dmd.0
+pkgbase=dmd
 pkgver=2.088.0
 pkgrel=1
 epoch=1
