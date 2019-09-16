@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cups-s6
 pkgver=20190915
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for cups"
 arch=('any')
 url="https://github.com/artix-linux"
