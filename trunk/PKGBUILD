@@ -11,7 +11,7 @@ url='https://github.com/gabime/spdlog'
 license=('MIT')
 #_commit=a9ed6b352b1ecfe0650a34bba265e56b0391ba78
 makedepends=('cmake' 'fmt')
-source=("git+https://github.com/gabime/spdlog.git")
+source=("https://github.com/gabime/spdlog.git")
 
 prepare() {
     mkdir -p build
