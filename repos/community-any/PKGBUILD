@@ -9,19 +9,17 @@ pkgdesc='Very fast, header-only/compiled, C++ logging library'
 arch=('any')
 url='https://github.com/gabime/spdlog'
 license=('MIT')
+_commit=a9ed6b352b1ecfe0650a34bba265e56b0391ba78
 makedepends=('cmake' 'fmt')
-source=(
-    "$pkgname-$pkgver.tar.gz::https://github.com/gabime/spdlog/archive/v$pkgver.tar.gz"
-)
-sha256sums=('160845266e94db1d4922ef755637f6901266731c4cb3b30b45bf41efa0e6ab70')
+source=("git+https://github.com/gabime/spdlog.git#commit=$_commit")
 
 prepare() {
-    mkdir build
+    mkdir -p build
 }
 
 build() {
     cd build
-    cmake ../"$pkgname-$pkgver" \
+    cmake ../"$pkgname" \
         -DSPDLOG_BUILD_BENCH=OFF \
         -DSPDLOG_BUILD_EXAMPLES=OFF \
         -DSPDLOG_FMT_EXTERNAL=ON \
@@ -33,7 +31,7 @@ build() {
 
 check() {
     cd build
-    make test ||:
+    make test
 }
 
 package() {
@@ -41,3 +39,4 @@ package() {
     make DESTDIR="$pkgdir" install
     install -Dm644 ../"$pkgname-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
+sha256sums=('SKIP')
