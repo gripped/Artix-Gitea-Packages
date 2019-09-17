@@ -17,7 +17,8 @@ backup=('etc/couchdb/local.ini'
 source=("https://www-eu.apache.org/dist/couchdb/source/${pkgver}/apache-couchdb-${pkgver}.tar.gz"
         'couchdb.sysusers'
         'couchdb.tmpfiles'
-        'datadirs.ini')
+        'datadirs.ini'
+        )
 sha256sums=('43eb8cec41eb52871bf22d35f3e2c2ce5b806ebdbce3594cf6b0438f2534227d'
             '3ed1ad2a37a068ce194b03fb72eb35285d60fa7faf2d2c2bb710703d229108a8'
             '0ce806cbc5e18e60b17be9fd2cdbd4c7f12cc84ca95b079efdede16ddb5f3efd'
