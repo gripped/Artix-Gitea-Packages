@@ -2,22 +2,19 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.15
-pkgrel=2
+pkgver=0.15.1
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        "buildtree-fix.patch::https://gitea.artixlinux.org/artix/artools/commit/17f49857e25c906f3ad4f305eb52a90d42002871.patch")
-sha256sums=('be60463b68df83450078f2c28135126b4ea95121c08e674940792daa576fd9f7'
-            'ef8ee14db84a0cc06e71619fcfe36073e23137bf434af0651afc6a1afb502209')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('b32934c7bddb032b1734c43736d85f21306c5d2aaece212dd80e1bb006a9e04b')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-    patch -Np 1 -i ../buildtree-fix.patch
 }
 
 build() {
