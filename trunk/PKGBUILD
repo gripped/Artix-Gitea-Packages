@@ -26,7 +26,6 @@ check() {
   make test
 }
 
-
 package() {
   cd Archive-Zip-${pkgver}
   make DESTDIR="${pkgdir}" install
