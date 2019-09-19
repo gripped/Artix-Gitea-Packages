@@ -1,5 +1,4 @@
 # Maintainer: David Runge <dave@sleepmap.de>
-
 _name=toml
 pkgbase=python-toml
 pkgname=('python-toml' 'python2-toml')
