@@ -1,0 +1,46 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgbase=python-soupsieve
+pkgname=(python-soupsieve python2-soupsieve)
+pkgver=1.9.3
+pkgrel=1
+pkgdesc="A CSS4 selector implementation for Beautiful Soup"
+url="https://github.com/facelessuser/soupsieve"
+license=('MIT')
+arch=('any')
+makedepends=('python-setuptools' 'python2-setuptools' 'python2-backports.functools_lru_cache')
+checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'python-beautifulsoup4'
+              'python2-beautifulsoup4' 'python-html5lib' 'python2-html5lib' 'python-lxml'
+              'python2-lxml')
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/facelessuser/soupsieve/archive/$pkgver.tar.gz")
+sha512sums=('e8db91905aae0532482b6872b47cd600214ecd1a54ec73d7068bf7177e3bd33182e9f6585a5b43350aab8f3bcc412c739ef8eb5b7778e9c44cf53f73254ec06a')
+
+build() {
+  cd soupsieve-$pkgver
+  python setup.py build
+  python2 setup.py build
+}
+
+check() {
+  cd soupsieve-$pkgver
+  python setup.py pytest
+  python2 setup.py pytest
+}
+
+package_python-soupsieve() {
+  depends=('python')
+
+  cd soupsieve-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
+}
+
+package_python2-soupsieve() {
+  depends=('python2-backports.functools_lru_cache')
+
+  cd soupsieve-$pkgver
+  python2 setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
+}
