@@ -1,0 +1,32 @@
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
+
+pkgname=python-cfn-lint
+pkgver=0.24.1
+pkgrel=1
+pkgdesc='CloudFormation Linter'
+arch=(any)
+url='https://github.com/aws-cloudformation/cfn-python-lint'
+license=('custom:MIT No Attribution')
+depends=(python python-yaml python-six python-aws-sam-translator
+         python-jsonpatch python-jsonschema python-setuptools)
+checkdepends=(python-pytest python-mock)
+source=("https://github.com/aws-cloudformation/cfn-python-lint/archive/v$pkgver/cfn-python-lint-$pkgver.tar.gz")
+sha256sums=('c2fed29d0cf8d023d96b5a5baf029193e570210d6a8869d68341499cef08ed8a')
+
+build() {
+  cd cfn-python-lint-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd cfn-python-lint-$pkgver
+
+  PYTHONPATH=build/lib pytest -v test
+}
+
+package() {
+  cd cfn-python-lint-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
+}
