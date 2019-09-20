@@ -27,13 +27,13 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  cd "$srcdir"/priority-$pkgver
-  python setup.py pytest ||:
+#check() {
+#  cd "$srcdir"/priority-$pkgver
+#  python setup.py pytest ||:
 
-  cd "$srcdir"/priority-$pkgver-py2
-  python2 setup.py pytest ||:
-}
+#  cd "$srcdir"/priority-$pkgver-py2
+#  python2 setup.py pytest ||:
+#}
 
 package_python-priority() {
   depends=('python')
