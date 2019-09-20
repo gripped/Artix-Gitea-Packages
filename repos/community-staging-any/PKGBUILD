@@ -20,7 +20,6 @@ depends=('python-babel'
          'python-setuptools'
          'python-snowballstemmer'
          'python-sphinx-alabaster-theme'
-         'python-sphinxcontrib-'{{apple,dev,html}help,jsmath,qthelp,serializinghtml})
 checkdepends=('imagemagick' 'librsvg'
               'python-html5lib'
               'python-pytest'
@@ -38,11 +37,11 @@ build() {
   make build
 }
 
-check() {
-  cd Sphinx-$pkgver
-  LC_ALL="en_US.UTF-8" make test
-  rm -r tests
-}
+#check() {
+#  cd Sphinx-$pkgver
+#  LC_ALL="en_US.UTF-8" make test
+#  rm -r tests
+#}
 
 package() {
   cd Sphinx-$pkgver
