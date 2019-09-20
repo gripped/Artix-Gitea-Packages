@@ -19,7 +19,7 @@ depends=('python-babel'
          'python-requests'
          'python-setuptools'
          'python-snowballstemmer'
-         'python-sphinx-alabaster-theme'
+         'python-sphinx-alabaster-theme')
 checkdepends=('imagemagick' 'librsvg'
               'python-html5lib'
               'python-pytest'
