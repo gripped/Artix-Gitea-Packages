@@ -2,9 +2,9 @@
 Operation = Install
 Operation = Upgrade
 Type = Package
-Target = artix-sysvcompat
+Target = s6-linux-init
 
 [Action]
 Description = Creating s6-init binaries...
-When = PreTransaction
+When = PostTransaction
 Exec = /usr/share/libalpm/scripts/s6-init-maker-hook
