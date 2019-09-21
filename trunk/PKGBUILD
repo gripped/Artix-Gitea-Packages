@@ -1,11 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20190915
-pkgrel=2
+pkgver=20190921
+pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
 url="https://github.com/artix-linux"
 groups=('s6-system')
+provides=('init-dhcpcd')
+conflicts=('init-dhcpcd')
 depends=('dhcpcd' 's6-rc' 'eudev-s6')
 install=dhcpcd.install
 source=('dhcpcd.conf' 'dhcpcd.dependencies' 'dhcpcd.run' 'dhcpcd.type')
