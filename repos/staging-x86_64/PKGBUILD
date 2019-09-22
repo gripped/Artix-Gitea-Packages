@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-rc
 pkgver=0.5.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
@@ -23,6 +23,7 @@ build() {
     ./configure --prefix=/usr \
                 --datadir=/etc \
                 --libexecdir=/usr/lib
+    make
 }
 
 package() {
