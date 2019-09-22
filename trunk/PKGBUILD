@@ -6,7 +6,7 @@ pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
 license=('ISC')
-depends=('skalibs' 'execline' 's6')
+depends=('s6-linux-init')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-init-hook"
         "s6-rc-db-init.hook"
@@ -21,18 +21,19 @@ sha256sums=('cb7f033965a6c1b6f500cbb7a2f3ecdf2310fbb18f79e7a2a384541413b9275d'
 build() {
     cd ${pkgname}-${pkgver}
     ./configure --prefix=/usr \
-                --datadir=/etc
+                --datadir=/etc \
+                --libexecdir=/usr/lib
 }
 
 package() {
     cd ${pkgname}-${pkgver}
-	mkdir -p "${pkgdir}"/etc/s6-rc
-	mkdir -p "${pkgdir}"/etc/s6/sv
+    mkdir -p "${pkgdir}"/etc/s6-rc
+    mkdir -p "${pkgdir}"/etc/s6/sv
     make DESTDIR="${pkgdir}" install
 
     # pacman hooks
-	mkdir -p "${pkgdir}"/usr/share/libalpm/scripts
-	mkdir -p "${pkgdir}"/usr/share/libalpm/hooks
+    mkdir -p "${pkgdir}"/usr/share/libalpm/scripts
+    mkdir -p "${pkgdir}"/usr/share/libalpm/hooks
     install -Dm755 -t "${pkgdir}"/usr/share/libalpm/scripts ${srcdir}/*-hook
     install -Dm755 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
 }
