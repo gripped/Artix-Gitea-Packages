@@ -1,15 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
 pkgver=1.0.2.1
-pkgrel=4
+pkgrel=5
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems. For Artix Linux.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
 depends=('sh')
 makedepends=('s6')
-provides=('svc-manager')
-conflicts=('svc-manager')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "40-s6-init-maker.hook"
         "s6-init-maker-hook"
