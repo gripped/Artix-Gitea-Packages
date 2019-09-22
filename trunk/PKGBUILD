@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cups-s6
-pkgver=20190921
+pkgver=20190922
 pkgrel=1
 pkgdesc="s6 service scripts for cups"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://github.com/artix-linux"
 groups=('s6-world')
 provides=('cups-runscripts')
 conflicts=('cups-runscripts')
-depends=('cups' 's6-rc')
+depends=('cups' 's6')
 install=cupsd.install
 source=("cupsd.run" "cupsd.type")
 sha256sums=('1db6a12394ff0555409207e282e496ab5a4e3b79567bdc66ee03aade75928375'
