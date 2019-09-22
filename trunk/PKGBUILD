@@ -6,7 +6,8 @@ pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
-depends=('sh' 's6')
+depends=('sh')
+makedepends=('s6')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "40-s6-init-maker.hook"
         "s6-init-maker-hook"
