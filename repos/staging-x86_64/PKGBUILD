@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-rc
 pkgver=0.5.0.0
-pkgrel=4.1
+pkgrel=5
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
 license=('ISC')
-#depends=('s6-linux-init')
+depends=('s6-linux-init')
 makedepends=('s6')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-init-hook"
