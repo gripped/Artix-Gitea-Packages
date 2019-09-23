@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <random342@airmail.cc>
 pkgname=syslog-ng-s6
-pkgver=20190922
+pkgver=20190923
 pkgrel=1
 pkgdesc="s6 service scripts for syslog-ng"
 arch=('any')
 url="https://github.com/artix-linux"
 groups=('s6-world')
-provides=('syslog-ng-runscripts')
-conflicts=('syslog-ng-runscripts')
+provides=('syslog-ng-runscripts' 'init-syslog-ng')
+conflicts=('syslog-ng-runscripts' 'init-syslog-ng')
 depends=('syslog-ng' 's6')
 install=syslog-ng.install
 source=("syslog-ng.run" "syslog-ng.type")
