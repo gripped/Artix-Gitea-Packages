@@ -19,7 +19,7 @@ sha512sums=('8b14eea98f541b981162abce728e0f917654ad3c990721ec398fe41bdd68069fe55
             'SKIP'
             '5370ea87fc3f76ab46f2d549c5396b6204a21b629d4765de658fe8e90331b936a36aa8624de8bb2304cc1b78ac2fa6e84f2411f247dff1aab2daf7aa21b2c650'
             'c6ef673956963725edc52d667648e51df5b99f820e87705096b4b9338e8a4540722e734f1e8e67998c2fbbefec30645ff1fa064789c8a858f770d1214399561d'
-            '17a0967ac291be3822e2be73912ab4c1720564bdce0765582e54bc0347d0477d38f82dbf0db9d660f982c35b3c2ea13dd37b22e18223d36745306c4c9d859423')
+            '1652fb1a925a364842a06a847a38518c5f62498fe51bcee36906d26f336e3da314ce3fda9b44b75ec2131283e5aab9b2476a0c2cc9da22c7e40d79be39718e95')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
 
 prepare() {
@@ -56,7 +56,7 @@ check() {
 
 package_bluez() {
   pkgdesc="Daemons for the bluetooth protocol stack"
-  depends=('libical' 'dbus' 'glib2' 'alsa-lib')
+  depends=('libical' 'dbus' 'glib2' 'alsa-lib' 'json-c')
   backup=('etc/bluetooth/main.conf')
   conflicts=('obexd-client' 'obexd-server')
 
