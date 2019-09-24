@@ -1,8 +1,8 @@
 # Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
 
 pkgname=iwd
-pkgver=0.20
-pkgrel=3
+pkgver=0.21
+pkgrel=1
 pkgdesc='Internet Wireless Daemon'
 arch=('x86_64')
 url='https://git.kernel.org/cgit/network/wireless/iwd.git/'
@@ -33,5 +33,5 @@ package() {
 }
 
 # vim: set ts=2 sw=2 ft=sh noet:
-sha256sums=('946c62ac7352f232647636d453e7b45651677feb0f623369df61f282d1013f08'
+sha256sums=('fb15a390cb1a6ffbf3c45fbc5ed1f1e565be2677d23cad117b168f1828edaa70'
             'SKIP')
