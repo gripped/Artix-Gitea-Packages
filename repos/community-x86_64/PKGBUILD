@@ -4,7 +4,7 @@
 # Contributor: Alfredo Palhares <masterkorp@masterkorp.net>
 
 pkgname=hub
-pkgver=2.12.4
+pkgver=2.12.7
 pkgrel=1
 
 pkgdesc="cli interface for Github"
@@ -16,7 +16,7 @@ depends=('git')
 makedepends=('go-pie')
 
 source=("hub-$pkgver.tar.gz::https://github.com/github/hub/archive/v$pkgver.tar.gz")
-sha256sums=('82f445505866319c6bbad78cf149afca27c5542e98132cdff2f31c26a700d05a')
+sha256sums=('53d812b09aed87c49cc62d09a8827c2dfe7b776732b71287b800320bd23ea028')
 b2sums=('16e857fbd62fa79ba10a61f214a2c2fa0d08b71330e522d617209699318d501681049eaf05bfff3d2a143f20226fe240f76733be3296b305ae8ff8a2256a7187')
 
 build() {
