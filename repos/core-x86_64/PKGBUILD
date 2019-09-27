@@ -10,7 +10,7 @@ _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.1.2
-pkgrel=14
+pkgrel=15
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
@@ -22,11 +22,15 @@ provides=('svc-manager')
 conflicts=('svc-manager')
 source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "${_pkgname}-${_pkgver}.tar.gz::${_url}/archive/${_pkgver}.tar.gz"
+        "halt.c"
+        "shutdown"
         "clearmem.patch"
         "svlogd.patch"
         "utmpset-time_t.patch")
 sha256sums=('6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18'
             '3da451a7480931067c440e08ad51b05e19803d2df1f411f09e62e1b1f15696d4'
+            'a9e4b3e09fb72fd44e62f052fd2302d6fcde64a112d53037febd221564e62b1a'
+            '7f11c5cab16f10178612b6a81d37184c25c4426b9c2d5d3f8ef7ed7ab2b52c56'
             '19b5e99135f153d07052f2dff707430af9faeabc717a5740ea58a8a783f609de'
             '9cf269264c0713975be1b3bc9dd3b5b3bb1e2078ac596527370a902d8d025a5a'
             '527f68f501cc9eb4bbab33f8ad374822624342c7d74b5c795efe4aac6b3f170a')
@@ -43,6 +47,8 @@ prepare() {
 }
 
 build() {
+	cc ${CFLAGS} halt.c -o halt ${LDFLAGS}
+
 	cd ${_pkgname}
 	make SERVICEDIR="${_servicedir}"
 
@@ -64,6 +70,10 @@ package() {
 	# commands
 	install -dm755 "${pkgdir}/usr/bin"
 	install -Dm755 ${srcdir}/admin/${pkgname}-${pkgver}/command/* "${pkgdir}/usr/bin"
+	install -Dm755 ${srcdir}/halt ${pkgdir}/usr/bin/halt
+	ln -s halt ${pkgdir}/usr/bin/poweroff
+	ln -s halt ${pkgdir}/usr/bin/reboot
+	install -Dm755 ${srcdir}/shutdown ${pkgdir}/usr/bin/shutdown
 
 	cd ${_pkgname}
 	make DESTDIR="${pkgdir}" PREFIX="/usr" SERVICEDIR="${_servicedir}" install-runit
