@@ -17,8 +17,7 @@ source=("http://ftp.porcupine.org/mirrors/postfix-release/official/${pkgname}-${
         'sysusers.d')
 sha256sums=('fe3253121d3ba8836a23774225518560b35e40497951ad5bec154afa8205f967'
             'f4c766efc20b4638f9fd72707ca6d4c2628279ebd79f5227276fa4ca6867c336'
-            '63f39147887336bdd173fb9425998f0a0c6f00a31241f922a255c157bfd8d02e'
-            '52781649c49a50cecd7d20f693f602d7dc78b985ac5f0e72c4abfa0d800e58f0')
+            '63f39147887336bdd173fb9425998f0a0c6f00a31241f922a255c157bfd8d02e')
 
 backup=('etc/postfix/'{access,aliases,canonical,generic,header_checks,main.cf,master.cf,relocated,transport,virtual})
 
