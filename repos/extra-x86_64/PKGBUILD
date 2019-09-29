@@ -12,8 +12,9 @@ groups=('xfce4')
 depends=('exo' 'garcon' 'libxfce4ui' 'xfconf' 'libwnck3' 'hicolor-icon-theme'
          'desktop-file-utils')
 makedepends=('intltool' 'gobject-introspection' 'vala')
-source=(https://archive.xfce.org/src/xfce/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('9c3c78b49ddfac7d42a804e6a6ad9d22ad64ec60bbe17d8724bc52d3e3f6d114')
+#source=(https://archive.xfce.org/src/xfce/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
+source=(https://github.com/xfce-mirror/xfce4-panel/archive/xfce4-panel-$pkgver.tar.gz)
+sha256sums=('19336b3187bd623f357f734ba5e221752b25354af7c647675725eeed0bb7df4e')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
