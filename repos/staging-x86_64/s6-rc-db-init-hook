@@ -1,3 +1,0 @@
-#!/bin/sh -e
-timestamp=$(date +%s)
-s6-rc-compile /etc/s6-rc/compiled-$timestamp /etc/s6/sv
