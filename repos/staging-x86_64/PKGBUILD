@@ -1,7 +1,7 @@
-# Maintainer Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=execline
-pkgver=2.5.1.0
-pkgrel=4
+pkgver=2.5.2.0
+pkgrel=1
 pkgdesc='A small scripting language, to be used in place of a shell in non-interactive scripts.'
 arch=('x86_64')
 url='https://skarnet.org/software/exceline'
@@ -9,7 +9,7 @@ license=('ISC')
 depends=('glibc')
 makedepends=('skalibs')
 source=(https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('b1a756842947488404db8173bbae179d6e78b6ef551ec683acca540ecaf22677')
+sha256sums=('280bb633cbe96088193225729ad32d80493d68380a127e6bc1789aac64375e29')
 
 build() {
 	cd ${pkgname}-${pkgver}
