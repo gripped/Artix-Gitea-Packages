@@ -1,8 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# temporary workaround for jenkins
 pkgname=s6-linux-init
 pkgver=1.0.3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
@@ -40,24 +39,24 @@ package() {
     make DESTDIR="$pkgdir" install
 
     # dummy files for PM tracking
-    #install -Dm755 /dev/null "${pkgdir}"/usr/bin/s6-init
-    #install -Dm755 /dev/null "${pkgdir}"/usr/bin/halt
-    #install -Dm755 /dev/null "${pkgdir}"/usr/bin/poweroff
-    #install -Dm755 /dev/null "${pkgdir}"/usr/bin/reboot
-    #install -Dm755 /dev/null "${pkgdir}"/usr/bin/shutdown
-    #install -Dm755 /dev/null "${pkgdir}"/usr/bin/telinit
-    #install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.init
-    #install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.shutdown
-    #install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.shutdown.final
-    #install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/runlevel
+    install -Dm755 /dev/null "${pkgdir}"/usr/bin/s6-init
+    install -Dm755 /dev/null "${pkgdir}"/usr/bin/halt
+    install -Dm755 /dev/null "${pkgdir}"/usr/bin/poweroff
+    install -Dm755 /dev/null "${pkgdir}"/usr/bin/reboot
+    install -Dm755 /dev/null "${pkgdir}"/usr/bin/shutdown
+    install -Dm755 /dev/null "${pkgdir}"/usr/bin/telinit
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.init
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.shutdown
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.shutdown.final
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/runlevel
 
     # default artix scripts
-    #install -Dm755 ${srcdir}/rc.init "${pkgdir}"/etc/s6-linux-init/skel/rc.init
-    #install -Dm755 ${srcdir}/rc.shutdown "${pkgdir}"/etc/s6-linux-init/skel/rc.shutdown
-    #install -Dm755 ${srcdir}/rc.shutdown.final "${pkgdir}"/etc/s6-linux-init/skel/rc.shutdown.final
-    #install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6-linux-init/skel/runlevel
+    install -Dm755 ${srcdir}/rc.init "${pkgdir}"/etc/s6-linux-init/skel/rc.init
+    install -Dm755 ${srcdir}/rc.shutdown "${pkgdir}"/etc/s6-linux-init/skel/rc.shutdown
+    install -Dm755 ${srcdir}/rc.shutdown.final "${pkgdir}"/etc/s6-linux-init/skel/rc.shutdown.final
+    install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6-linux-init/skel/runlevel
 
     # install hooks
-    #install -Dm755 ${srcdir}/s6-init-maker-hook "${pkgdir}"/usr/share/libalpm/scripts/s6-init-maker-hook
-    #install -Dm755 ${srcdir}/40-s6-init-maker.hook "${pkgdir}"/usr/share/libalpm/hooks/40-s6-init-maker.hook
+    install -Dm755 ${srcdir}/s6-init-maker-hook "${pkgdir}"/usr/share/libalpm/scripts/s6-init-maker-hook
+    install -Dm755 ${srcdir}/40-s6-init-maker.hook "${pkgdir}"/usr/share/libalpm/hooks/40-s6-init-maker.hook
 }
