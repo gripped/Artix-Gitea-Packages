@@ -1,0 +1,47 @@
+# Maintainer: Arch Linux Team
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Eli Schwartz <eschwartz@archlinux.org>
+
+pkgname=base
+pkgver=2
+pkgrel=1
+pkgdesc='Minimal package set to define a basic Artix Linux installation'
+url='https://www.artixlinux.org'
+arch=('any')
+license=('GPL')
+depends=(
+  # very very base
+  'filesystem' 'gcc-libs' 'glibc' 'bash'
+
+  # POSIX tools
+  'coreutils' 'file' 'findutils' 'gawk' 'grep' 'procps-ng' 'sed' 'tar'
+
+  # standard linux toolset
+  'gettext' 'pciutils' 'psmisc' 'shadow' 'util-linux' 'bzip2' 'gzip' 'xz'
+
+  # distro defined requirements
+  'licenses' 'pacman' 'svc-manager'
+
+  # networking, ping, etc
+  'iputils' 'iproute2'
+)
+optdepends=('linux: bare metal support')
+provides=('artix-sysvcompat')
+conflicts=('artix-sysvcompat')
+replaces=('artix-sysvcompat')
+source=('initswitch-hook'
+        '55-initswitch.hook'
+        '50-sysvcompat.hook')
+sha256sums=('dab2a5f959b37d4f489111d999fec31f8c03d07ca9ec26400b0e556466b50b29'
+            '994fee99d8515cbc3c93ac3271f1dff334a1959dfedff2a04927bf9781b91d81'
+            '20d1e1170e6b2bfdb5b895cabc792e87f87abfdcaccc9f73a2dd6429aa0e3591')
+
+package() {
+	# pacman hooks
+    install -Dm755 ${srcdir}/initswitch-hook "${pkgdir}"/usr/share/libalpm/scripts/initswitch-hook
+    install -Dm644 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
+
+    # provide default symlink for PM file tracking
+    install -d "${pkgdir}"/usr/bin
+    ln -sf openrc-init "${pkgdir}"/usr/bin/init
+}
