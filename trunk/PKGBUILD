@@ -1,16 +1,23 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
 pkgname=s6
 pkgver=2.9.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="skarnet.org's small & secure supervision software suite. Comes with an ultra-fast init replacement, process management tools, an asynchronous locking library, and more."
 arch=('x86_64')
 url='https://skarnet.org/software/s6/'
 license=('ISC')
 provides=('svc-manager')
 conflicts=('svc-manager')
-depends=('skalibs' 'execline' 's6-rc')
-source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('1cac59bf9ff7c011b189ae2def3c76b147c2c431b0a901029fcaf957a6d9a343')
+depends=('skalibs' 'execline' 's6-rc' 'eudev-s6')
+source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+        "agetty.conf"
+        "agetty.run"
+        "agetty.type")
+sha256sums=('1cac59bf9ff7c011b189ae2def3c76b147c2c431b0a901029fcaf957a6d9a343'
+            '4260c574b5b94d1b6e68c2aeaf188f80fa64027b35fc2eddd634501f13e372e1'
+            '00db8e4814177b6d83b91d9d370cfc9ec9ddfbfc472c2801d598f0e963160c1b'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 build() {
     cd ${pkgname}-${pkgver}
@@ -20,7 +27,27 @@ build() {
     make
 }
 
+_inst_sv(){
+    for file in conf finish run type; do
+        if test -f "$srcdir/"agetty".$file"; then
+            install -Dm755 "$srcdir/"agetty".$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
 package() {
     cd ${pkgname}-${pkgver}
     make DESTDIR="$pkgdir" install
+
+    _inst_sv 'agetty-console'
+    _inst_sv 'agetty-generic'
+    _inst_sv 'agetty-serial'
+    _inst_sv 'agetty-tty2'
+    _inst_sv 'agetty-tty3'
+    _inst_sv 'agetty-tty4'
+    _inst_sv 'agetty-tty5'
+    _inst_sv 'agetty-tty6'
+    _inst_sv 'agetty-ttyAMAO'
+    _inst_sv 'agetty-ttyS0'
+    _inst_sv 'agetty-ttyUSB0'
 }
