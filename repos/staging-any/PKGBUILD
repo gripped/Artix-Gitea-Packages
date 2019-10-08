@@ -20,7 +20,7 @@ depends=(
   'gettext' 'pciutils' 'psmisc' 'shadow' 'util-linux' 'bzip2' 'gzip' 'xz'
 
   # distro defined requirements
-  'licenses' 'pacman' 'svc-manager' 'init-elogind'
+  'licenses' 'pacman' 'init-elogind'
 
   # networking, ping, etc
   'iputils' 'iproute2'
@@ -34,7 +34,7 @@ source=('initswitch-hook'
         '50-sysvcompat.hook')
 sha256sums=('dab2a5f959b37d4f489111d999fec31f8c03d07ca9ec26400b0e556466b50b29'
             '994fee99d8515cbc3c93ac3271f1dff334a1959dfedff2a04927bf9781b91d81'
-            '20d1e1170e6b2bfdb5b895cabc792e87f87abfdcaccc9f73a2dd6429aa0e3591')
+            '2a5fa67f95da713b67323c3d6cfd4e5cc6339847acd30edfea154d66cadb3b76')
 
 package() {
 	# pacman hooks
