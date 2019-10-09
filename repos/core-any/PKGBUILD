@@ -1,14 +1,15 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20190813
+pkgver=20191008
 pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://github.com/artix-linux/packages-openrc"
 license=('GPL2')
+groups=('openrc-system')
 provides=('init-dbus')
-depends=('dbus')
+depends=('dbus' 'openrc')
 conflicts=('init-dbus')
 source=('dbus.initd'
         'dbus-reload.hook')
