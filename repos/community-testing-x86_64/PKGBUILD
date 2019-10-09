@@ -38,7 +38,7 @@ prepare() {
     git submodule update
 
     # Set version used for path construction in getFullClangCompilerRTLibPath()
-    #sed -i "s/ldc::llvm_version_base/\"$_clangversion\"/" driver/linker-gcc.cpp
+    sed -i "s/ldc::llvm_version_base/\"$_clangversion\"/" driver/linker-gcc.cpp
 
     # LLVM 9 compatibility fixes
     git cherry-pick -n 030123410a 0ab79c1950 c25614eb6b 29436882e8
