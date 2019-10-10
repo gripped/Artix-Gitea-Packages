@@ -1,38 +1,19 @@
-From 79257e2972b5a33fe669d8633c4a1911649e0a85 Mon Sep 17 00:00:00 2001
-From: artoo <artoo@artixlinux.org>
-Date: Wed, 3 Oct 2018 03:23:02 +0200
-Subject: [PATCH] artix default config
-
----
- data/artix/modules/bootloader.conf      | 12 ++++++++
- data/artix/modules/displaymanager.conf  | 10 ++++++
+17f4613a8008bbddabe54adaae31bd81e350a051
+ data/artix/modules/bootloader.conf      | 12 +++++++++
+ data/artix/modules/displaymanager.conf  | 10 ++++++++
  data/artix/modules/finished.conf        |  4 +++
  data/artix/modules/initcpio.conf        |  2 ++
- data/artix/modules/locale.conf          |  4 +++
+ data/artix/modules/locale.conf          | 10 ++++++++
  data/artix/modules/machineid.conf       |  4 +++
  data/artix/modules/postcfg.conf         |  2 ++
- data/artix/modules/services-openrc.conf | 16 ++++++++++
- data/artix/modules/services-runit.conf  | 23 ++++++++++++++
- data/artix/modules/umount.conf          |  3 ++
- data/artix/modules/unpackfs.conf        |  8 +++++
- data/artix/modules/users.conf           | 18 +++++++++++
- data/artix/modules/welcome.conf         | 19 ++++++++++++
- data/artix/settings.conf                | 41 +++++++++++++++++++++++++
- 14 files changed, 166 insertions(+)
- create mode 100644 data/artix/modules/bootloader.conf
- create mode 100644 data/artix/modules/displaymanager.conf
- create mode 100644 data/artix/modules/finished.conf
- create mode 100644 data/artix/modules/initcpio.conf
- create mode 100644 data/artix/modules/locale.conf
- create mode 100644 data/artix/modules/machineid.conf
- create mode 100644 data/artix/modules/postcfg.conf
- create mode 100644 data/artix/modules/services-openrc.conf
- create mode 100644 data/artix/modules/services-runit.conf
- create mode 100644 data/artix/modules/umount.conf
- create mode 100644 data/artix/modules/unpackfs.conf
- create mode 100644 data/artix/modules/users.conf
- create mode 100644 data/artix/modules/welcome.conf
- create mode 100644 data/artix/settings.conf
+ data/artix/modules/services-openrc.conf | 16 ++++++++++++
+ data/artix/modules/services-runit.conf  | 23 +++++++++++++++++
+ data/artix/modules/umount.conf          |  3 +++
+ data/artix/modules/unpackfs.conf        |  5 ++++
+ data/artix/modules/users.conf           | 18 +++++++++++++
+ data/artix/modules/welcome.conf         | 26 +++++++++++++++++++
+ data/artix/settings.conf                | 45 +++++++++++++++++++++++++++++++++
+ 14 files changed, 180 insertions(+)
 
 diff --git a/data/artix/modules/bootloader.conf b/data/artix/modules/bootloader.conf
 new file mode 100644
@@ -88,14 +69,20 @@ index 000000000..41d039740
 +kernel: linux
 diff --git a/data/artix/modules/locale.conf b/data/artix/modules/locale.conf
 new file mode 100644
-index 000000000..582207b97
+index 000000000..ce55f53a0
 --- /dev/null
 +++ b/data/artix/modules/locale.conf
-@@ -0,0 +1,4 @@
+@@ -0,0 +1,10 @@
 +---
++# region:                     "America"
++# zone:                       "New_York"
++
 +localeGenPath: /etc/locale.gen
-+geoipUrl: "ip-api.com"
-+geoipSelector: "timezone"
++
++geoip:
++    style:    "json"
++    url:      "https://geoip.kde.org/v1/calamares"
++    selector: ""
 diff --git a/data/artix/modules/machineid.conf b/data/artix/modules/machineid.conf
 new file mode 100644
 index 000000000..a5c1c054d
@@ -167,25 +154,22 @@ index 000000000..2d6d7b29e
 +        runlevel: default
 diff --git a/data/artix/modules/umount.conf b/data/artix/modules/umount.conf
 new file mode 100644
-index 000000000..d1fadd826
+index 000000000..f5ea6faed
 --- /dev/null
 +++ b/data/artix/modules/umount.conf
 @@ -0,0 +1,3 @@
 +---
-+srcLog: "/root/.cache/Calamares/Calamares/Calamares.log"
++srcLog: "/root/.cache/Calamares/Calamares.log"
 +destLog: "/var/log/Calamares.log"
 diff --git a/data/artix/modules/unpackfs.conf b/data/artix/modules/unpackfs.conf
 new file mode 100644
-index 000000000..1649bf68a
+index 000000000..e92bd79d0
 --- /dev/null
 +++ b/data/artix/modules/unpackfs.conf
-@@ -0,0 +1,8 @@
+@@ -0,0 +1,5 @@
 +---
 +unpack:
 +    - source: "/run/artix/bootmnt/artix/x86_64/rootfs.sfs"
-+      sourcefs: "squashfs"
-+      destination: ""
-+    - source: "/run/artix/bootmnt/artix/x86_64/desktopfs.sfs"
 +      sourcefs: "squashfs"
 +      destination: ""
 diff --git a/data/artix/modules/users.conf b/data/artix/modules/users.conf
@@ -214,17 +198,17 @@ index 000000000..9394b1ddc
 +avatarFilePath:  ~/.face
 diff --git a/data/artix/modules/welcome.conf b/data/artix/modules/welcome.conf
 new file mode 100644
-index 000000000..44c1f8868
+index 000000000..65098455a
 --- /dev/null
 +++ b/data/artix/modules/welcome.conf
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,26 @@
 +---
 +showSupportUrl:         true
 +showKnownIssuesUrl:     true
 +showReleaseNotesUrl:    true
 +
 +requirements:
-+    requiredStorage:    7.9
++    requiredStorage:    5.5
 +    requiredRam:        1.0
 +    internetCheckUrl:   https://artixlinux.org
 +    check:
@@ -237,12 +221,19 @@ index 000000000..44c1f8868
 +      - storage
 +      - ram
 +      - root
++
++# geoip:
++#     style:    "none"
++#     url:      "https://geoip.kde.org/v1/ubiquity"  # extended XML format
++#     selector: "CountryCode"  # blank uses default, which is wrong
++
++# languageIcon: set-language
 diff --git a/data/artix/settings.conf b/data/artix/settings.conf
 new file mode 100644
-index 000000000..571dda1a8
+index 000000000..2567d76e2
 --- /dev/null
 +++ b/data/artix/settings.conf
-@@ -0,0 +1,41 @@
+@@ -0,0 +1,45 @@
 +---
 +modules-search: [ local ]
 +
@@ -284,6 +275,7 @@ index 000000000..571dda1a8
 +prompt-install: false
 +
 +dont-chroot: false
--- 
-2.19.0
-
++
++disable-cancel: false
++
++disable-cancel-during-exec: false

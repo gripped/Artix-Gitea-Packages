@@ -2,7 +2,7 @@
 
 pkgname=calamares
 pkgver=3.2.14
-pkgrel=1
+pkgrel=2
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -17,7 +17,7 @@ source=("${url}/archive/v$pkgver.tar.gz"
         0001-postcfg-module.patch
         0001-services-runit-module.patch)
 sha256sums=('a726374032c9dabfe34f75f725760ead7e9389f4d21d36fbe5b6de5cdd314db4'
-            '459b38135c147fa095f72dd91ae4e481a03f6eae9b4e8a6018f2d593da54a285'
+            '9bebda62ce664ea31e0ae63e8008301eb7b469c0c63dce36031ea19e5d5bab46'
             '5a96a6631b7b31e991fc037a23b3aa95c7951dbd3eef25fc4d0ccce4aebed8f8'
             '1833271a4c132ba4e030272bce253bf2d42a82071a1953426e6f4cbc51b70a3f')
 
@@ -45,9 +45,8 @@ build() {
               -DINSTALL_POLKIT:BOOL=ON \
               -DBoost_NO_BOOST_CMAKE=ON \
               -DSKIP_MODULES="webview interactiveterminal initramfs \
-                              initramfscfg \
-                              dummyprocess dummypython dummycpp \
-                              dummypythonqt services-systemd packagechooser"
+                              initramfscfg packagechooser services-systemd \
+                              dummyprocess dummypython dummycpp dummypythonqt"
         make
 }
 
