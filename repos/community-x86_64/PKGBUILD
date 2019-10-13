@@ -1,13 +1,14 @@
 # Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
 
 pkgname=iwd
-pkgver=0.21
+pkgver=0.22
 pkgrel=1
 pkgdesc='Internet Wireless Daemon'
 arch=('x86_64')
 url='https://git.kernel.org/cgit/network/wireless/iwd.git/'
 license=('LGPL')
 depends=('glibc' 'dbus')
+makedepends=('python-docutils')
 source=("https://www.kernel.org/pub/linux/network/wireless/iwd-${pkgver}.tar"{.xz,.sign})
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659')
 install=iwd.install
@@ -27,11 +28,10 @@ package() {
   cd "${srcdir}/${pkgname}-${pkgver}"
   make install DESTDIR="${pkgdir}"
 
-# This fixes #62874: include docs and autotests file for easier configuration
-  install -Dm644 "doc/iwmon.txt" "${pkgdir}/usr/share/iwd/doc/iwmon.txt"
-  install -Dm644 "doc/main.conf" "${pkgdir}/usr/share/iwd/doc/main.conf"
+  for f in doc/*; do
+	install -Dm644 "${f}" "${pkgdir}/usr/share/iwd/doc/$(basename ${f})"
+	done
 }
 
-# vim: set ts=2 sw=2 ft=sh noet:
-sha256sums=('fb15a390cb1a6ffbf3c45fbc5ed1f1e565be2677d23cad117b168f1828edaa70'
+sha256sums=('b50c778716a2a1f9da961de0cac4711ad43ab104a67405935248f33ea8a6559a'
             'SKIP')
