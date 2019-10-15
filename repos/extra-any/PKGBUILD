@@ -3,21 +3,24 @@
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.15.2
-pkgrel=2
+pkgrel=3
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
 source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        cal-unpack-fix.patch::https://gitea.artixlinux.org/artix/artools/commit/f5f9a2acb87121031440dfe24d7f0b9148cc1143.patch)
+        cal-unpack-fix.patch::https://gitea.artixlinux.org/artix/artools/commit/f5f9a2acb87121031440dfe24d7f0b9148cc1143.patch
+        kernel-fix.patch::https://gitea.artixlinux.org/artix/artools/commit/e8913b07c33898bf2f90e6c63df6d073acc97bcc.patch)
 sha256sums=('6557ae14401aa82be45c4a48f41b29544c5f6cbc0ad786de53ce10a55c7095f9'
-            '680bcef77e64be23496f00c225997ffccb8be5659f6b7ce74afc2de39a2d2c33')
+            '680bcef77e64be23496f00c225997ffccb8be5659f6b7ce74afc2de39a2d2c33'
+            '91918e2462cd9be4ab9e8e9a828e558b80b8f687db043515c385e45a28099991')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
     patch -Np 1 -i ../cal-unpack-fix.patch
+    patch -Np 1 -i ../kernel-fix.patch
 }
 
 build() {
