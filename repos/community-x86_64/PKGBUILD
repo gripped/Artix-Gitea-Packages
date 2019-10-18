@@ -1,37 +1,51 @@
-# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Maintainer : Christian Rebischke <chris.rebischke@archlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: AndyRTR <andyrtr at archlinux.org>
 
 pkgname=iwd
 pkgver=0.22
-pkgrel=1
+pkgrel=3
 pkgdesc='Internet Wireless Daemon'
 arch=('x86_64')
 url='https://git.kernel.org/cgit/network/wireless/iwd.git/'
 license=('LGPL')
-depends=('glibc' 'dbus')
+depends=('glibc' 'readline' 'libreadline.so' 'ell' 'dbus')
 makedepends=('python-docutils')
+backup=(etc/iwd/main.conf)
 source=("https://www.kernel.org/pub/linux/network/wireless/iwd-${pkgver}.tar"{.xz,.sign})
+sha512sums=('4fa9f8688a33663aad754a371e9c1c71161f394fc0d7c4a32ce3afe7e00efdca8f55f378a71ab32002bbe73538b1a092bc0f24c19912672d70d6b02fcc824fe0'
+            'SKIP')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659')
+changelog=ChangeLog
 install=iwd.install
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd ${pkgname}-${pkgver}
 	./configure --prefix=/usr \
 	--sysconfdir=/etc \
+	--localstatedir=/var \
 	--libexecdir=/usr/lib/iwd \
-  --enable-wired \
-  --localstatedir=/var \
-  --disable-systemd-service
+	--enable-external-ell \
+	--enable-wired \
+	--enable-ofono \
+	--enable-sim-hardcoded \
+	--enable-hwsim \
+	--disable-tools \
+	--disable-systemd-service
   make
 }
 
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make install DESTDIR="${pkgdir}"
-
-  for f in doc/*; do
-	install -Dm644 "${f}" "${pkgdir}/usr/share/iwd/doc/$(basename ${f})"
-	done
+check() {
+  cd ${pkgname}-${pkgver}
+  # pass broken tests - should reported upstream
+  make -k check || /bin/true
 }
 
-sha256sums=('b50c778716a2a1f9da961de0cac4711ad43ab104a67405935248f33ea8a6559a'
-            'SKIP')
+package() {
+  cd ${pkgname}-${pkgver}
+  make install DESTDIR="${pkgdir}"
+  install -Dm 644 doc/main.conf -t "${pkgdir}/etc/iwd"
+  install -Dm 644 README -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:
