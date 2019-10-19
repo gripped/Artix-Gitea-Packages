@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=241.3
-pkgrel=4
+pkgrel=5
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -42,7 +42,7 @@ package_elogind() {
     pkgdesc="The systemd project's logind, extracted to a standalone package"
     provides=("elogind=${pkgver}" "systemd=${pkgver}" "systemd-tools=${pkgver}")
     conflicts=('systemd')
-    depends=('acl' 'pam' 'dbus' 'libseccomp' 'libelogind' 'kexec-tools' 'svc-manager')
+    depends=('pam' 'dbus' 'libseccomp' 'libelogind' 'kexec-tools' 'eudev')
     optdepends=('polkit: polkit support')
     backup=('etc/elogind/logind.conf')
 
