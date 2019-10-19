@@ -28,7 +28,7 @@ md5sums=('SKIP'
          'SKIP'
          'SKIP'
          'SKIP'
-         '4c19a66617d73adf1c0b4b0a63e22cba296fd5af32b9b32a9787ff8d')
+         '9a8b2744db23b14ca3cd350fdf73c179')
 
 
 # create a fake go path directory and pushd into it
