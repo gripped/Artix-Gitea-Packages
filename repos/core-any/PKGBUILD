@@ -1,15 +1,14 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=elogind-openrc
-pkgver=20191008
+pkgver=20191020
 pkgrel=1
 pkgdesc="OpenRC elogind init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-groups=('openrc-system')
-provides=('init-elogind')
 depends=('elogind' 'dbus-openrc')
+provides=('init-elogind')
 conflicts=('init-elogind')
 source=("elogind.confd"
         "elogind.initd")
