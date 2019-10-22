@@ -18,6 +18,7 @@ build() {
   python setup.py build
 }
 
+
 check() {
   cd elementpath-$pkgver
   python setup.py pytest || warning "missing it_IT locale for testing"
