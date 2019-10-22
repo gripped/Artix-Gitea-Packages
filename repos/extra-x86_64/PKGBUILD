@@ -9,10 +9,14 @@ url="https://github.com/kergoth/tslib"
 license=(GPL2)
 depends=(glibc)
 makedepends=()
-source=("https://github.com/kergoth/tslib/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('d2a57b823ea59e53a3b130eef05dfed1190b857854f886eec764e1ca1957cf56'
-            'SKIP')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/libts/tslib/archive/$pkgver.tar.gz")
+sha256sums=('8b3df2af000aff5c1efcab40ba96d3a61859062e6630f6090b6994e6272e0d30')
 validpgpkeys=(F2082B880F9E423934686E3F500398DF5AB387D3) # Martin Kepplinger <martink@posteo.de>
+
+prepare(){
+  cd $pkgname-$pkgver
+  ./autogen.sh
+}
 
 build() {
   cd $pkgname-$pkgver
