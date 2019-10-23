@@ -4,7 +4,7 @@
 _commit=451fe75e69527cf656451517def18f0e07193675
 
 pkgname=runit-rc
-pkgver=20190913
+pkgver=20191023
 pkgrel=1
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
@@ -13,8 +13,8 @@ license=('BSD')
 backup=('etc/rc/rc.conf')
 makedepends=('git')
 depends=('procps-ng' 'bash' 'opentmpfiles' 'bootlogd' 'eudev-runit')
-provides=('init-kmod' 'init-opentmpfiles' 'init-opensysusers')
-conflicts=('init-kmod' 'init-opentmpfiles' 'init-opensysusers')
+provides=('init-rc')
+conflicts=('init-rc')
 source=("git+${url}.git#commit=$_commit")
 sha256sums=('SKIP')
 optdepends=('lvm2-runit: LVM support for runit'
