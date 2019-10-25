@@ -3,8 +3,6 @@
 rl="$1"
 shift
 
-. /usr/lib/rc/functions
-run_sysinit
 ### argv now contains the arguments of the kernel command line that are
 ### not of the form key=value. (The key=value arguments were stored by
 ### s6-linux-init into an envdir, if instructed so via the -s option.)
