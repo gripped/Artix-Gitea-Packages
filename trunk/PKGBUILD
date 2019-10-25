@@ -5,7 +5,7 @@
 pkgbase=python-six
 pkgname=('python2-six' 'python-six')
 pkgver=1.12.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Python 2 and 3 compatibility utilities"
 arch=('any')
 url="https://pypi.python.org/pypi/six/"
@@ -19,13 +19,13 @@ build() {
   cp -a six-$pkgver{,-py2}
 }
 
-# check() {
-#   cd "$srcdir"/six-$pkgver
-#   python -m pytest
-#
-#   cd "$srcdir"/six-$pkgver-py2
-#   python2 -m pytest
-# }
+check() {
+  cd "$srcdir"/six-$pkgver
+  python -m pytest
+
+  cd "$srcdir"/six-$pkgver-py2
+  python2 -m pytest
+}
 
 package_python-six() {
   depends=('python')
