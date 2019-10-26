@@ -12,7 +12,7 @@ url="https://brltty.app"
 license=('LGPL2.1')
 depends=('gpm' 'icu' 'liblouis' 'tcl')
 makedepends=('at-spi2-core' 'bluez-libs' 'cython' 'espeak' 'java-environment'
-'libxaw' 'ocaml-ctypes' 'ocaml-findlib' 'polkit' 'speech-dispatcher' 'ocaml')
+'libxaw' 'ocaml-ctypes' 'ocaml-findlib' 'polkit' 'speech-dispatcher' 'ocaml' 'ocamlbuild')
 optdepends=('at-spi2-core: X11/GNOME Apps accessibility'
             'atk: ATK bridge for X11/GNOME accessibility'
             'bluez-libs: bluetooth support'
