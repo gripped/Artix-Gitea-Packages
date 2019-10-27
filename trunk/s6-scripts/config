@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://gitea.artixlinux.org/artix/s6-scripts.git
+	fetch = +refs/*:refs/*
+	mirror = true
