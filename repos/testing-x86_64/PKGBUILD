@@ -1,17 +1,17 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
 pkgver=1.0.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
 depends=('sh')
 makedepends=('s6')
-backup=('etc/s6-linux-init/skel/rc.init'
-        'etc/s6-linux-init/skel/rc.shutdown'
-        'etc/s6-linux-init/skel/rc.shutdown.final'
-        'etc/s6-linux-init/skel/runlevel')
+backup=('etc/s6/skel/rc.init'
+        'etc/s6/skel/rc.shutdown'
+        'etc/s6/skel/rc.shutdown.final'
+        'etc/s6/skel/runlevel')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "40-s6-init-maker.hook"
         "s6-init-maker-hook"
@@ -21,16 +21,17 @@ source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "runlevel")
 sha256sums=('a48dd2fb78a719d586f3f174b1a06fdf1c125839cee52e6a47d83cdb251529be'
             'cbd8aceac85ce3521623aff06f487ae78a71c381b239bb5add0d86963d37747a'
-            'c38685307df9132db6b548ff941102f7981dc0b4ebdee57c3aadb6a804fd1f8a'
-            '3fc6f595f7a677174cb7fd77c544f0767997f79e2d66f090adad90ee05d2ce8c'
+            '51304770bb96bbed6b73d5e2d4bf6b145cde1cc600efcc638c1a81f74d066a0b'
+            '1a5988747836625427a1a71d761687d36965e1653d7178ca873b9c68027485b3'
             '931bbb408307cbf6ab4423f95de01ad29e38f6c4d1425a8ba39c84b2ca2d1243'
             '524df97d15ea7cbcd885dd9a2e5af1f6411c41614e5c8125807412cc2e07c65a'
-            '766d23213c53a6bc271690407b279a7df0560cb7d8ed7b7936c0fd114e960b21')
+            '9e541452ce26b747a01d5be3deac55576cf23941f214fcc5473a9a128efeb290')
 
 build() {
  	cd ${pkgname}-${pkgver}
     ./configure --exec-prefix=/usr \
-                --libexecdir=/usr/lib
+                --libexecdir=/usr/lib \
+                --skeldir=/etc/s6/skel
     make
 }
 
@@ -45,16 +46,16 @@ package() {
     install -Dm755 /dev/null "${pkgdir}"/usr/bin/reboot
     install -Dm755 /dev/null "${pkgdir}"/usr/bin/shutdown
     install -Dm755 /dev/null "${pkgdir}"/usr/bin/telinit
-    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.init
-    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.shutdown
-    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/rc.shutdown.final
-    install -Dm755 /dev/null "${pkgdir}"/etc/s6-linux-init/current/scripts/runlevel
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6/current/scripts/rc.init
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6/current/scripts/rc.shutdown
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6/current/scripts/rc.shutdown.final
+    install -Dm755 /dev/null "${pkgdir}"/etc/s6/current/scripts/runlevel
 
     # default artix scripts
-    install -Dm755 ${srcdir}/rc.init "${pkgdir}"/etc/s6-linux-init/skel/rc.init
-    install -Dm755 ${srcdir}/rc.shutdown "${pkgdir}"/etc/s6-linux-init/skel/rc.shutdown
-    install -Dm755 ${srcdir}/rc.shutdown.final "${pkgdir}"/etc/s6-linux-init/skel/rc.shutdown.final
-    install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6-linux-init/skel/runlevel
+    install -Dm755 ${srcdir}/rc.init "${pkgdir}"/etc/s6/skel/rc.init
+    install -Dm755 ${srcdir}/rc.shutdown "${pkgdir}"/etc/s6/skel/rc.shutdown
+    install -Dm755 ${srcdir}/rc.shutdown.final "${pkgdir}"/etc/s6/skel/rc.shutdown.final
+    install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6/skel/runlevel
 
     # install hooks
     install -Dm755 ${srcdir}/s6-init-maker-hook "${pkgdir}"/usr/share/libalpm/scripts/s6-init-maker-hook
