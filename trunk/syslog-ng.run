@@ -1,4 +1,4 @@
-#!/bin/sh
-echo $$ > /var/run/syslog-ng.pid
-echo 2>&1
-exec syslog-ng -F
+#!/usr/bin/execlineb -P
+
+fdmove -c 2 1
+foreground { syslog-ng -F }
