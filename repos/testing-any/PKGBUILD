@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20191001
+pkgver=20191027
 pkgrel=1
 pkgdesc="s6 service scripts for elogind"
 arch=('any')
@@ -11,7 +11,7 @@ conflicts=('init-elogind')
 install=elogind.install
 source=("elogind.dependencies" "elogind.run" "elogind.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            'c7f062f5f126ec5f9cc1b3117a2b981c8d0ea6f8f284690dc764f4749359ee28'
+            '1dd959d3f5886ff9cf7cfadc007f2854ba001a0e73bd9731215422ac301ae479'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
