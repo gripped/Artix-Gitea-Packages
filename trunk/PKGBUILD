@@ -2,22 +2,19 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.15.3
-pkgrel=2
+pkgver=0.15.4
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
-        buildiso-live-conf-fix.patch::https://gitea.artixlinux.org/artix/artools/commit/bb674109ed6618913d3838dfaf99d3ae0087046a.patch)
-sha256sums=('c1b43299a1f54789c6c2f9607ed42c5055baf4b01b0884120a234f3ca5479352'
-            'a4a069a68cf04927ab76f45dd58d1a5a9f2db5dd52b16cbfcdecc83ecb649d91')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('74d32aa26f1c3c7f2d4daf98c79dc29284dc65ccdd75dd2df4eec4e3b6e8368e')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
-    patch -Np 1 -i ../buildiso-live-conf-fix.patch
 }
 
 build() {
@@ -40,7 +37,7 @@ package_artools-base() {
 
 package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
-    depends=('artools-pkglist>=0.3' 'namcap' 'git-subrepo' 'jshon')
+    depends=('artools-pkglist>=0.5' 'namcap' 'git-subrepo' 'jshon')
     conflicts=('devtools')
 
     cd ${pkgbase}
