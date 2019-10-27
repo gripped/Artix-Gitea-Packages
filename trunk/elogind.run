@@ -1,2 +1,4 @@
-#!/bin/sh
-exec /usr/lib/elogind/elogind
+#!/usr/bin/execlineb -P
+
+fdmove -c 2 1
+foreground { /usr/lib/elogind/elogind }
