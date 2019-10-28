@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 
 pkgname=s6
-pkgver=2.9.0.0
-pkgrel=3
+pkgver=2.9.0.1
+pkgrel=1
 pkgdesc="skarnet.org's small & secure supervision software suite. Comes with an ultra-fast init replacement, process management tools, an asynchronous locking library, and more."
 arch=('x86_64')
 url='https://skarnet.org/software/s6/'
@@ -11,7 +11,7 @@ provides=('svc-manager')
 conflicts=('svc-manager')
 depends=('skalibs' 'execline' 's6-rc' 'eudev-s6')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('1cac59bf9ff7c011b189ae2def3c76b147c2c431b0a901029fcaf957a6d9a343')
+sha256sums=('e0cdbaf26e3ba1c41ecc0a8d1f45fb78194f96109b55cabeb849528b7e966c57')
 
 build() {
     cd ${pkgname}-${pkgver}
@@ -24,4 +24,5 @@ build() {
 package() {
     cd ${pkgname}-${pkgver}
     make DESTDIR="$pkgdir" install
+	install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
