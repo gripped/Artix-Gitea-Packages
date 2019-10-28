@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=haveged-s6
-pkgver=20191027
+pkgver=20191028
 pkgrel=1
 pkgdesc="s6 service scripts for haveged"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('s6-system')
+groups=('s6-world')
 provides=('init-haveged')
 conflicts=('init-haveged')
 depends=('haveged' 's6')
