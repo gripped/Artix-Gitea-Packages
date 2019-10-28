@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
-pkgver=1.0.3.0
-pkgrel=4
+pkgver=1.0.3.1
+pkgrel=1
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
@@ -19,7 +19,7 @@ source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "rc.shutdown"
         "rc.shutdown.final"
         "runlevel")
-sha256sums=('a48dd2fb78a719d586f3f174b1a06fdf1c125839cee52e6a47d83cdb251529be'
+sha256sums=('216af5589c2bc5dbdea6b6c94d55575c12e31f57b2e0fde5c534a840aeed02fb'
             'cbd8aceac85ce3521623aff06f487ae78a71c381b239bb5add0d86963d37747a'
             '51304770bb96bbed6b73d5e2d4bf6b145cde1cc600efcc638c1a81f74d066a0b'
             '1a5988747836625427a1a71d761687d36965e1653d7178ca873b9c68027485b3'
@@ -38,6 +38,7 @@ build() {
 package() {
     cd ${pkgname}-${pkgver}
     make DESTDIR="$pkgdir" install
+    install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
     # dummy files for PM tracking
     install -Dm755 /dev/null "${pkgdir}"/usr/bin/s6-init
