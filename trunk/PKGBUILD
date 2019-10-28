@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=execline
 pkgver=2.5.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A small scripting language, to be used in place of a shell in non-interactive scripts.'
 arch=('x86_64')
 url='https://skarnet.org/software/exceline'
@@ -14,7 +14,8 @@ sha256sums=('05205c6869ae65a51c63d0e805572573806f6474aa21e12c49dd5654d3ceed33')
 build() {
 	cd ${pkgname}-${pkgver}
 	./configure --prefix=/usr \
-	            --datadir=/etc
+	            --datadir=/etc \
+                --enable-shared
 	make
 }
 
