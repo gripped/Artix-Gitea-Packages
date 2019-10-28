@@ -1,23 +1,24 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wpa_supplicant-s6
 pkgver=20191028
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for wpa_supplicant"
 arch=('any')
 url="https://github.com/artix-linux"
 groups=('s6-system')
 provides=('init-wpa_supplicant')
 conflicts=('init-wpa_supplicant')
-depends=('wpa_supplicant' 's6')
+depends=('wpa_supplicant' 'dhcpcd-s6' 's6')
 install=wpa_supplicant.install
 backup=('etc/s6/sv/wpa_supplicant/conf')
-source=("wpa_supplicant.conf" "wpa_supplicant.run" "wpa_supplicant.type")
+source=("wpa_supplicant.conf" "wpa_supplicant.dependencies" "wpa_supplicant.run" "wpa_supplicant.type")
 sha256sums=('ad5929875a33aef2bd3a98b32a98a175ce3171daba0e46cf270b12c6b5c5e51a'
-            '27234672c5fb3dacf8b2418f426830d67344769ed1955ae4733cdc77c06bdef8'
+            'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
+            '8e7f8e90093236e4c4a40d7a068440a128eabb9d1725c12e0503fd7e41910315'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in conf run type; do
+    for file in conf dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
