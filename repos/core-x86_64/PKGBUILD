@@ -3,7 +3,7 @@
 # Contributor: Judd Vinet <jvinet.zeroflux.org>
 
 pkgname=dhcpcd
-pkgver=8.0.6
+pkgver=8.1.1
 pkgrel=1
 pkgdesc="RFC2131 compliant DHCP client daemon"
 url="https://roy.marples.name/projects/dhcpcd/"
@@ -16,7 +16,7 @@ backup=('etc/dhcpcd.conf')
 options=('emptydirs')  # We Need the Empty /var/lib/dhcpcd Directory
 source=("https://roy.marples.name/downloads/$pkgname/$pkgname-$pkgver.tar.xz")
 validpgpkeys=('A785ED2755955D9E93EA59F6597F97EA9AD45549')  # Roy Marples (NetBSD) <roy@NetBSD.org>
-sha256sums=('66b50199ed83bf502af3fab9ac001b417f0fac7e69c92d97a9c41499cebabd4f')
+sha256sums=('485d308fe10febd36b6f936e4260e4ab34a146e4f00a9f7a5509c4377ad5ea82')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
