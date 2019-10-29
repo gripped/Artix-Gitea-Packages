@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=device-mapper-s6
+pkgver=20191029
+pkgrel=1
+pkgdesc="s6 service scripts for device-mapper"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-device-mapper')
+conflicts=('init-device-mapper')
+depends=('device-mapper' 's6')
+install=dmeventd.install
+source=("dmeventd.run" "dmeventd.type")
+sha256sums=('aaf79b8c9698154922c3d70fd8f0d927e45fe3aea1933713bd26bf93ac028031'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'dmeventd'
+}
