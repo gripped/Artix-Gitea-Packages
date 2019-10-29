@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=rpcbind-s6
+pkgver=20191029
+pkgrel=1
+pkgdesc="s6 service scripts for rpcbind"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-rpcbind')
+conflicts=('init-rpcbind')
+depends=('rpcbind' 's6')
+install=rpcbind.install
+source=("rpcbind.run" "rpcbind.type")
+sha256sums=('c12c32745561d0a665d36549ca1d82cdc1d0a4756e77b5c77b1b8d5a95d5de86'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'rpcbind'
+}
