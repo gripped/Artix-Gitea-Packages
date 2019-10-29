@@ -1,0 +1,9 @@
+#!/usr/bin/execlineb -P
+
+foreground { modprobe sunrpc }
+foreground { modprobe nfs }
+foreground { modprobe nfsd }
+foreground { mountpoint -q /var/lib/nfs/rpc_pipefs }
+foreground { sh -c "exportfs -ra > /dev/null" }
+foreground { rpc.nfsd -- = 4 }
+exec rpc.mountd --foreground
