@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20191029
+pkgver=20191030
 pkgrel=1
 pkgdesc="s6 service scripts for cryptsetup"
 arch=('any')
@@ -9,6 +9,7 @@ groups=('s6-system')
 provides=('init-cryptsetup')
 conflicts=('init-cryptsetup')
 depends=('cryptsetup' 's6')
+install=cryptsetup.install
 source=("down" "shell_down" "shell_up" "type" "up")
 sha256sums=('bd920ddecb9f89d03f8dc304b7e5c3cd98fbda8d654bb2a8515640ee4b18576c'
             'a09d48469d308b12c1b1ac046a0ebf122a7598b5ed53a81888e95008d824b31e'
@@ -23,8 +24,8 @@ _inst_sv(){
         fi
     done
     for file in shell_down shell_up; do
-        if test -f "$pkgdir/etc/s6/sv/$out/$file"; then
-            chmod +x "$pkgdir/etc/s6/sv/$out/$file"
+        if test -f "$pkgdir/etc/s6/sv/$1/$file"; then
+            chmod +x "$pkgdir/etc/s6/sv/$1/$file"
         fi
 	done
 }
