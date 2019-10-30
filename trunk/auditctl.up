@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+
+envfile /etc/s6/sv/auditctl/conf
+importas -i USE_AUGENRULES USE_AUGENRULES
+if { test $USE_AUGENRULES = no } augenrules >/dev/null
+foreground { auditctl -R /etc/audit/audit >/dev/null }
