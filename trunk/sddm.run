@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+
+foreground { mkdir -p /var/lib/sddm }
+foreground { chown -R sddm:sddm /var/lib/sddm }
+fdmove -c 2 1
+exec sddm
