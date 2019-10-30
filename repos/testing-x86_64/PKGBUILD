@@ -2,7 +2,7 @@
 
 pkgname=s6-rc
 pkgver=0.5.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
@@ -11,7 +11,7 @@ provides=('init-rc')
 conflicts=('init-rc')
 depends=('s6-linux-init' 'opentmpfiles' 'pam')
 makedepends=('s6' 'git')
-_commit=f079f17364757508f49e56ede1dd1f167ed7f6b6
+_commit=a444769842e01ee12e670ed0f69f4dca60a8cb44
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
         "https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
@@ -74,13 +74,11 @@ package() {
     _inst_sv 'boot'
     _inst_sv 'cleanup'
     _inst_sv 'console-setup'
-    _inst_sv 'cryptsetup'
     _inst_sv 'dmesg'
     _inst_sv 'getty'
     _inst_sv 'hostname'
     _inst_sv 'hwclock'
     _inst_sv 'kmod-static-nodes'
-    _inst_sv 'lvm'
     _inst_sv 'misc'
     _inst_sv 'mount'
     _inst_sv 'mount-cgroups'
@@ -88,6 +86,7 @@ package() {
     _inst_sv 'mount-filesystems'
     _inst_sv 'mount-sysfs'
     _inst_sv 'net-lo'
+    _inst_sv 'pre-mount'
     _inst_sv 'random-seed'
     _inst_sv 'setup'
     _inst_sv 'swap'
