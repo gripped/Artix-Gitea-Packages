@@ -1,17 +1,150 @@
- src/modules/services-runit/main.py             | 147 +++++++++++++++++++++++++
+ src/modules/postcfg/main.py                    |  99 +++++++++++++++++
+ src/modules/postcfg/module.desc                |   6 +
+ src/modules/services-openrc/main.py            |   2 +
+ src/modules/services-runit/main.py             | 148 +++++++++++++++++++++++++
  src/modules/services-runit/module.desc         |   5 +
  src/modules/services-runit/services-runit.conf |  44 ++++++++
- src/modules/services-s6/main.py                | 144 ++++++++++++++++++++++++
+ src/modules/services-s6/main.py                | 146 ++++++++++++++++++++++++
  src/modules/services-s6/module.desc            |   5 +
  src/modules/services-s6/services-s6.conf       |  44 ++++++++
- 6 files changed, 389 insertions(+)
+ 9 files changed, 499 insertions(+)
 
+diff --git a/src/modules/postcfg/main.py b/src/modules/postcfg/main.py
+new file mode 100644
+index 000000000..4d3f60a5b
+--- /dev/null
++++ b/src/modules/postcfg/main.py
+@@ -0,0 +1,99 @@
++#!/usr/bin/env python3
++# -*- coding: utf-8 -*-
++#
++# === This file is part of Calamares - <http://github.com/calamares> ===
++#
++#   Copyright 2014 - 2016, Philip Müller <philm@manjaro.org>
++#   Copyright 2016, Artoo <artoo@manjaro.org>
++#   Copyright 2018, Artoo <artoo@artixlinux.org>
++#
++#   Calamares is free software: you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation, either version 3 of the License, or
++#   (at your option) any later version.
++#
++#   Calamares is distributed in the hope that it will be useful,
++#   but WITHOUT ANY WARRANTY; without even the implied warranty of
++#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
++#   GNU General Public License for more details.
++#
++#   You should have received a copy of the GNU General Public License
++#   along with Calamares. If not, see <http://www.gnu.org/licenses/>.
++
++
++from os.path import join, exists
++
++import libcalamares
++from libcalamares.utils import target_env_call
++
++
++class ConfigController:
++    """Configuration controller
++    """
++
++    def __init__(self):
++        self.root = libcalamares.globalstorage.value("rootMountPoint")
++        self.initsys = libcalamares.globalstorage.value("initType")
++
++    def terminate(self, proc):
++        """Send SIGKILL to the given proccess
++        """
++
++        target_env_call(['killall', '-9', proc])
++
++    def sedFile(self, pattern, file):
++        """Sed the given file with the given pattern
++        """
++
++        target_env_call(["sed", "-e", pattern, "-i", file])
++
++    def configure(self):
++        """Configure the services
++        """
++        if self.initsys == 'openrc':
++            exp = 's|^.*keymap=.*|keymap="{}"|'.format(
++                libcalamares.globalstorage.value("keyboardLayout")
++            )
++            self.sedFile(exp, "/etc/conf.d/keymaps")
++
++            exp = 's|^.*KEYMAP=.*|KEYMAP="{}"|'.format(
++                libcalamares.globalstorage.value("keyboardLayout")
++            )
++            if exists(self.root + "/etc/vconsole.conf"):
++                self.sedFile(exp, "/etc/vconsole.conf")
++
++            for dm in libcalamares.globalstorage.value("displayManagers"):
++                exp = 's|^.*DISPLAYMANAGER=.*|DISPLAYMANAGER="{}"|'.format(dm)
++                self.sedFile(exp, "/etc/conf.d/xdm")
++
++        elif self.initsys == 'runit' || self.initsys == 's6':
++            exp = 's|^.*KEYMAP=.*|KEYMAP="{}"|'.format(
++                libcalamares.globalstorage.value("keyboardLayout")
++            )
++            if exists(self.root + "/etc/vconsole.conf"):
++                self.sedFile(exp, "/etc/vconsole.conf")
++
++    def run(self):
++        """Run the controller
++
++        Workaround for pacman-key bug
++        FS#45351 https://bugs.archlinux.org/task/45351
++        We have to kill gpg-agent because if it stays
++        around we can't reliably unmount
++        the target partition.
++        """
++        self.configure()
++        self.terminate('gpg-agent')
++
++        # Update grub.cfg
++        if (exists(join(self.root, "usr/bin/update-grub")) and
++                libcalamares.globalstorage.value("bootLoader") is not None):
++            target_env_call(["update-grub"])
++
++
++def run():
++    """ Misc postinstall configurations """
++
++    config = ConfigController()
++
++    return config.run()
+diff --git a/src/modules/postcfg/module.desc b/src/modules/postcfg/module.desc
+new file mode 100644
+index 000000000..77e9ca4dd
+--- /dev/null
++++ b/src/modules/postcfg/module.desc
+@@ -0,0 +1,6 @@
++# Syntax is YAML 1.2
++---
++type:       "job"
++name:       "postcfg"
++interface:  "python"
++script:     "main.py"   #assumed relative to the current directory
+diff --git a/src/modules/services-openrc/main.py b/src/modules/services-openrc/main.py
+index 23591fb84..d11ab48fc 100644
+--- a/src/modules/services-openrc/main.py
++++ b/src/modules/services-openrc/main.py
+@@ -127,6 +127,8 @@ class OpenrcController:
+         """Run the controller
+         """
+
++        libcalamares.globalstorage.insert("initType", "openrc")
++
+         for state in ("add", "del"):
+             r = self.update(state)
+             if r is not None:
 diff --git a/src/modules/services-runit/main.py b/src/modules/services-runit/main.py
 new file mode 100644
-index 000000000..3da73590f
+index 000000000..7976dc4f8
 --- /dev/null
 +++ b/src/modules/services-runit/main.py
-@@ -0,0 +1,147 @@
+@@ -0,0 +1,148 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -147,6 +280,7 @@ index 000000000..3da73590f
 +    def run(self):
 +        """Run the controller
 +        """
++        libcalamares.globalstorage.insert("initType", "runit")
 +
 +        for state in ("enable", "disable"):
 +            r = self.update(state)
@@ -222,10 +356,10 @@ index 000000000..04476b107
 +disable: []
 diff --git a/src/modules/services-s6/main.py b/src/modules/services-s6/main.py
 new file mode 100644
-index 000000000..f7db49cf3
+index 000000000..fe2afa048
 --- /dev/null
 +++ b/src/modules/services-s6/main.py
-@@ -0,0 +1,144 @@
+@@ -0,0 +1,146 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -358,6 +492,8 @@ index 000000000..f7db49cf3
 +    def run(self):
 +        """Run the controller
 +        """
++
++        libcalamares.globalstorage.insert("initType", "s6")
 +
 +        for state in ("add", "delete"):
 +            r = self.update(state)

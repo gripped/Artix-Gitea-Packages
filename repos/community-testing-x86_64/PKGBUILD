@@ -2,7 +2,7 @@
 
 pkgname=calamares
 pkgver=3.2.15
-pkgrel=3
+pkgrel=4
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -13,22 +13,14 @@ depends=('yaml-cpp' 'kpmcore>=3.1.0' 'boost-libs' 'hwinfo' 'gtk-update-icon-cach
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
-        0001-artix-default-config.patch
-        0001-postcfg-module.patch
-        0001-runit-and-s6-support.patch)
+        0001-artix-modules.patch)
 sha256sums=('ad5ba514d7060af36689cd7c18eb2018acf4ebd82924a19c0f4e61f636195f54'
-            '9bebda62ce664ea31e0ae63e8008301eb7b469c0c63dce36031ea19e5d5bab46'
-            '5a96a6631b7b31e991fc037a23b3aa95c7951dbd3eef25fc4d0ccce4aebed8f8'
-            'cc2b902fd4c7396114b6cc90dcaf88464aed0d97ed247a4598de18fd666d7f43')
+            '30d09681ec649ce37581371aecea6abe0d033aa5995bec12fbeb7836eeb2d5e0')
 
 prepare() {
     cd $pkgname-$pkgver
     # patches here
-
-    patch -Np 1 -i $srcdir/0001-postcfg-module.patch
-    patch -Np 1 -i $srcdir/0001-runit-and-s6-support.patch
-    patch -Np 1 -i $srcdir/0001-artix-default-config.patch
-
+    patch -Np 1 -i $srcdir/0001-artix-modules.patch
 }
 
 build() {
@@ -55,8 +47,4 @@ package() {
 	make DESTDIR="$pkgdir" install
 
     cd ${srcdir}/$pkgname-$pkgver
-
-    install -dm755 ${pkgdir}/etc/calamares/modules
-    install -m644 data/artix/settings.conf ${pkgdir}/etc/calamares/settings.conf
-    install -m644 data/artix/modules/*.conf ${pkgdir}/etc/calamares/modules/
 }
