@@ -11,7 +11,7 @@
 
 diff --git a/src/modules/postcfg/main.py b/src/modules/postcfg/main.py
 new file mode 100644
-index 000000000..4d3f60a5b
+index 000000000..484ccd45e
 --- /dev/null
 +++ b/src/modules/postcfg/main.py
 @@ -0,0 +1,99 @@
@@ -83,7 +83,7 @@ index 000000000..4d3f60a5b
 +                exp = 's|^.*DISPLAYMANAGER=.*|DISPLAYMANAGER="{}"|'.format(dm)
 +                self.sedFile(exp, "/etc/conf.d/xdm")
 +
-+        elif self.initsys == 'runit' || self.initsys == 's6':
++        elif self.initsys == 'runit' or self.initsys == 's6':
 +            exp = 's|^.*KEYMAP=.*|KEYMAP="{}"|'.format(
 +                libcalamares.globalstorage.value("keyboardLayout")
 +            )
