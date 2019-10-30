@@ -1,17 +1,17 @@
- src/modules/services-runit/main.py             | 142 +++++++++++++++++++++++++
+ src/modules/services-runit/main.py             | 147 +++++++++++++++++++++++++
  src/modules/services-runit/module.desc         |   5 +
- src/modules/services-runit/services-runit.conf |  43 ++++++++
- src/modules/services-s6/main.py                | 138 ++++++++++++++++++++++++
+ src/modules/services-runit/services-runit.conf |  44 ++++++++
+ src/modules/services-s6/main.py                | 144 ++++++++++++++++++++++++
  src/modules/services-s6/module.desc            |   5 +
- src/modules/services-s6/services-s6.conf       |  43 ++++++++
- 6 files changed, 376 insertions(+)
+ src/modules/services-s6/services-s6.conf       |  44 ++++++++
+ 6 files changed, 389 insertions(+)
 
 diff --git a/src/modules/services-runit/main.py b/src/modules/services-runit/main.py
 new file mode 100644
-index 000000000..0202618be
+index 000000000..3da73590f
 --- /dev/null
 +++ b/src/modules/services-runit/main.py
-@@ -0,0 +1,142 @@
+@@ -0,0 +1,147 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -90,8 +90,7 @@ index 000000000..0202618be
 +    def update(self, state):
 +        """
 +        Call sv-helper for each service listed
-+        in services for the given @p state. sv-helper
-+        is called with @p state as the command as well.
++        in services for the given @p state.
 +        """
 +
 +        for svc in self.services.get(state, []):
@@ -106,17 +105,23 @@ index 000000000..0202618be
 +
 +            service_path = self.root + self.svDir + "/" + name
 +            runlevel_path = self.root + self.runsvDir + "/" + runlevel
-+            cmd = sv + "-" + state
++            src = self.svDir + "/" + name
++            dest = self.runsvDir + "/" + runlevel + "/"
++
++            if state == 'enable':
++                cmd = ["ln", "-sv", src, dest]
++            elif state == 'disable':
++                cmd = ["rm", "-rv", dest]
 +
 +            if exists(service_path):
 +                if exists(runlevel_path):
-+                    ec = target_env_call([cmd, name])
++                    ec = target_env_call(cmd)
 +                    if ec != 0:
 +                        warning("Cannot {} service {} to {}".format(state, name, runlevel))
 +                        warning("{} returned error code {!s}".format(cmd, ec))
 +                        if mandatory:
 +                            title = _("Cannot modify service")
-+                            diagnostic = _("<code>{command!s} {arg!s}</code> call in chroot returned error code {num!s}.").format(command=cmd arg=state, num=ec)
++                            diagnostic = _("<code>cmd {arg!s}</code> call in chroot returned error code {num!s}.").format(arg=state, num=ec)
 +                            return (title,
 +                                    self.make_failure_description(state, name, runlevel) + " " + diagnostic
 +                                    )
@@ -167,14 +172,14 @@ index 000000000..29737c13e
 +script:     "main.py"
 diff --git a/src/modules/services-runit/services-runit.conf b/src/modules/services-runit/services-runit.conf
 new file mode 100644
-index 000000000..295c3043e
+index 000000000..04476b107
 --- /dev/null
 +++ b/src/modules/services-runit/services-runit.conf
-@@ -0,0 +1,43 @@
-+# runit services module to modify service runlevels via sv-helper in the chroot
+@@ -0,0 +1,44 @@
++# runit services module to modify service runlevels via symlinks in the chroot
 +#
 +# Services can be added (to any runlevel, or multiple runlevels) or deleted.
-+# Handle sv-disable with care and only use it if absolutely necessary.
++# Handle disable with care and only use it if absolutely necessary.
 +#
 +# if a service is listed in the conf but is not present/detected on the target system,
 +# or a runlevel does not exist, it will be ignored and skipped; a warning is logged.
@@ -209,6 +214,7 @@ index 000000000..295c3043e
 +#     - name: foo1
 +#       mandatory: true
 +#     - name: foo2
++#       runlevel: nonetwork
 +# disable:
 +#     - name: foo3
 +#     - foo4
@@ -216,16 +222,20 @@ index 000000000..295c3043e
 +disable: []
 diff --git a/src/modules/services-s6/main.py b/src/modules/services-s6/main.py
 new file mode 100644
-index 000000000..e44f4305c
+index 000000000..f7db49cf3
 --- /dev/null
 +++ b/src/modules/services-s6/main.py
-@@ -0,0 +1,138 @@
+@@ -0,0 +1,144 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
 +# === This file is part of Calamares - <https://github.com/calamares> ===
 +#
-+#   Copyright 2018-2019, Artoo <artoo@artixlinux.org>
++#   Copyright 2016, Artoo <artoo@manjaro.org>
++#   Copyright 2017, Philip Müller <philm@manjaro.org>
++#   Copyright 2018, Artoo <artoo@artixlinux.org>
++#   Copyright 2018-2019, Adriaan de Groot <groot@kde.org>
++#   Copyright 2019, Artoo <artoo@artixlinux.org>
 +#
 +#   Calamares is free software: you can redistribute it and/or modify
 +#   it under the terms of the GNU General Public License as published by
@@ -284,7 +294,7 @@ index 000000000..e44f4305c
 +        if state == "add":
 +            description = _("Cannot add service {names!s} to run-level {level!s}.")
 +        elif state == "delete":
-+            description = _("Cannot remove service {names!s} from run-level {level!s}.")
++            description = _("Cannot remove services {names!s} from run-level {level!s}.")
 +        else:
 +            description = _("Unknown service-action <code>{arg!s}</code> for service {names!s} in run-level {level!s}.")
 +
@@ -321,8 +331,10 @@ index 000000000..e44f4305c
 +                            self.make_failure_description(state, name, runlevel) + " " + diagnostic
 +                            )
 +
-+        runlevel_path = self.root + self.rcDir + "/" + compiled
-+        ec = target_env_call(["s6-rc-bundle", "-c", runlevel_path, state, runlevel, names])
++        runlevel_path = self.root + self.rcDir + "/compiled"
++        bundle_path = self.rcDir + "/compiled"
++
++        ec = target_env_call(["s6-rc-bundle", "-c", bundle_path, state, runlevel, names])
 +        if ec != 0:
 +            warning("Cannot {} services {} to {}".format(state, names, runlevel))
 +            warning("s6-rc-bundle returned error code {!s}".format(ec))
@@ -371,10 +383,10 @@ index 000000000..0e031e60f
 +script:     "main.py"
 diff --git a/src/modules/services-s6/services-s6.conf b/src/modules/services-s6/services-s6.conf
 new file mode 100644
-index 000000000..a2776a927
+index 000000000..29e23b3df
 --- /dev/null
 +++ b/src/modules/services-s6/services-s6.conf
-@@ -0,0 +1,43 @@
+@@ -0,0 +1,44 @@
 +# s6 services module to modify service runlevels via s6-rc-bundle in the chroot
 +#
 +# Services can be added (to any runlevel, or multiple runlevels) or deleted.
@@ -415,6 +427,7 @@ index 000000000..a2776a927
 +#     - name: foo2
 +# disable:
 +#     - name: foo3
++#       runlevel: default
 +#     - foo4
 +services: []
 +disable: []
