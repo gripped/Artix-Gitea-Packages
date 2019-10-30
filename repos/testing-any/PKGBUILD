@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=alsa-utils-s6
+pkgver=20191030
+pkgrel=1
+pkgdesc="s6 service scripts for alsa-utils"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('alsa-utils-runscripts')
+conflicts=('alsa-utils-runscripts')
+depends=('alsa-utils' 's6')
+install=alsa.install
+source=("alsa.down" "alsa.type" "alsa.up")
+sha256sums=('3d9b6024eacaa102704f0ab5339a296b49b3d8be646cdaa5597b8f4728257b50'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '72d0c28bba89d91971db552f6385f12265750e1308f8d152324cd806028286c0')
+
+_inst_sv(){
+    for file in down type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'alsa'
+}
