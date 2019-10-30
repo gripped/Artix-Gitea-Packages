@@ -5,12 +5,12 @@
 
 pkgname=apcupsd
 pkgver=3.14.14
-pkgrel=4
+pkgrel=5
 pkgdesc="Power mangement and controlling most of APC's UPS models"
 arch=(x86_64)
 url="http://www.apcupsd.org"
 license=('GPL')
-depends=('gcc-libs' 'openrc' 'artix-sysvcompat' 'libusb-compat')
+depends=('gcc-libs' 'svc-manager' 'libusb-compat')
 optdepends=('gd: for CGI')
 makedepends=('gd')
 backup=(etc/apcupsd/apcupsd.conf
