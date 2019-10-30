@@ -1,0 +1,35 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=lvm2-s6
+pkgver=20191030
+pkgrel=1
+pkgdesc="s6 service scripts for lvm2"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-lvm2')
+conflicts=('init-lvm2')
+depends=('lvm2' 's6')
+install=lvm.install
+source=("lvm2.down"
+        "lvm2.type"
+        "lvm2.up"
+        "lvmetad.run"
+        "lvmetad.type")
+sha256sums=('682bb32e4d7337f348f1d70fcd5285c3b663af50d4a1a812f8c30e25283057e2'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '9cc3c5eff67cc74fc2d6073f6c42aadbbd17da485aecb1871561eedd9aeae502'
+            '7ece41faae1fc65f54fad2a2aa6fb8b79aa4f5aec8d1665ac44006a89de03e9a'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in down run type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'lvm2'
+    _inst_sv 'lvmetad'
+}

@@ -1,0 +1,7 @@
+post_remove() {
+	sed -i '/lvm2/d' /etc/s6/sv/pre-mount/contents
+}
+
+post_install() {
+	echo "lvm2" >> /etc/s6/sv/pre-mount/contents
+}
