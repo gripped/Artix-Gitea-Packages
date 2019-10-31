@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=darkhttpd-s6
+pkgver=20191031
+pkgrel=1
+pkgdesc="s6 service scripts for darkhttpd"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('darkhttpd-runscripts')
+conflicts=('darkhttpd-runscripts')
+depends=('darkhttpd' 's6')
+install=darkhttpd.install
+source=("darkhttpd.conf" "darkhttpd.run" "darkhttpd.type")
+sha256sums=('6c7acc520346272ba1c90b5220f635ef4210a541403cbce1e73ba20e8da4a61e'
+            'e0be4f64f661d60f554270aef87349de28bb73930ee02f7d59b2a9d23d6ac4a6'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'darkhttpd'
+}

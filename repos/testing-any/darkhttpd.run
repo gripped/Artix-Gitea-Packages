@@ -1,0 +1,10 @@
+#!/usr/bin/execlineb -P
+
+envfile /etc/s6/sv/darkhttpd/conf
+importas -i PORT PORT
+importas -i USER USER
+importas -i GROUP GROUP
+importas -i DIR DIR
+importas -D "" OPTS OPTS
+fdmove -c 2 1
+ifte { test -z $OPTS } { darkhttpd $DIR --uid $USER --gid $GROUP --port $PORT } darkhttpd $DIR --uid $USER --gid $GROUP --port $PORT $OPTS
