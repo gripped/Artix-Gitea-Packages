@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=dnsmasq-s6
+pkgver=20191031
+pkgrel=1
+pkgdesc="s6 service scripts for dnsmasq"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('dnsmasq-runscripts')
+conflicts=('dnsmasq-runscripts')
+depends=('dnsmasq' 's6')
+install=dnsmasq.install
+source=("dnsmasq.run" "dnsmasq.type")
+sha256sums=('93f186adf2b96e8492996669028d89f04b950f1c63f59f547bdf78eee2d72710'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in finish run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'dnsmasq'
+}
