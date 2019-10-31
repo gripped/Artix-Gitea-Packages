@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+
+foreground { mkdir -p /run/brltty }
+exec brltty -n
