@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=cyrus-sasl-s6
+pkgver=20191031
+pkgrel=1
+pkgdesc="s6 service scripts for cyrus-sasl"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('cyrus-sasl-runscripts')
+conflicts=('cyrus-sasl-runscripts')
+depends=('cyrus-sasl' 's6')
+install=saslauthd.install
+source=("saslauthd.run" "saslauthd.type")
+sha256sums=('6fca5a6a73f30b1230826a1ea087544d9a79e51cbc22d8f0efaed1fac59db9a4'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'saslauthd'
+}
