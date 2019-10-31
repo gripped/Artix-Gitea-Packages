@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/dovecot" ]; then
+        s6-rc -d change dovecot
+    fi
+}
