@@ -2,7 +2,7 @@
 
 pkgname=calamares
 pkgver=3.2.15
-pkgrel=5
+pkgrel=6
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -15,7 +15,7 @@ optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
         0001-artix-modules.patch)
 sha256sums=('ad5ba514d7060af36689cd7c18eb2018acf4ebd82924a19c0f4e61f636195f54'
-            '335874fe17fdd2bbcfaec8efbef69e9f41580184cfdf77d1ef23f0e7511a1158')
+            '6a985d8bf31932826610ee2e2a46a860117447534f1d5d5efea6366fc4a3d67f')
 
 prepare() {
     cd $pkgname-$pkgver

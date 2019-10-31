@@ -1,20 +1,19 @@
- src/modules/postcfg/main.py                    |  99 +++++++++++++++++
- src/modules/postcfg/module.desc                |   6 +
- src/modules/services-openrc/main.py            |   2 +
- src/modules/services-runit/main.py             | 148 +++++++++++++++++++++++++
+ src/modules/postcfg/main.py                    |  92 ++++++++++++++++
+ src/modules/postcfg/module.desc                |   6 ++
+ src/modules/services-runit/main.py             | 144 +++++++++++++++++++++++++
  src/modules/services-runit/module.desc         |   5 +
  src/modules/services-runit/services-runit.conf |  44 ++++++++
- src/modules/services-s6/main.py                | 146 ++++++++++++++++++++++++
+ src/modules/services-s6/main.py                | 101 +++++++++++++++++
  src/modules/services-s6/module.desc            |   5 +
- src/modules/services-s6/services-s6.conf       |  44 ++++++++
- 9 files changed, 499 insertions(+)
+ src/modules/services-s6/services-s6.conf       |  28 +++++
+ 8 files changed, 425 insertions(+)
 
 diff --git a/src/modules/postcfg/main.py b/src/modules/postcfg/main.py
 new file mode 100644
-index 000000000..484ccd45e
+index 000000000..d0b37d78d
 --- /dev/null
 +++ b/src/modules/postcfg/main.py
-@@ -0,0 +1,99 @@
+@@ -0,0 +1,92 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -55,40 +54,33 @@ index 000000000..484ccd45e
 +    def terminate(self, proc):
 +        """Send SIGKILL to the given proccess
 +        """
-+
 +        target_env_call(['killall', '-9', proc])
 +
 +    def sedFile(self, pattern, file):
 +        """Sed the given file with the given pattern
 +        """
-+
 +        target_env_call(["sed", "-e", pattern, "-i", file])
 +
 +    def configure(self):
 +        """Configure the services
 +        """
-+        if self.initsys == 'openrc':
++        if exists(join(self.root, "/etc/conf.d/keymaps")):
 +            exp = 's|^.*keymap=.*|keymap="{}"|'.format(
 +                libcalamares.globalstorage.value("keyboardLayout")
 +            )
 +            self.sedFile(exp, "/etc/conf.d/keymaps")
 +
++        if exists(join(self.root, "/etc/vconsole.conf")):
 +            exp = 's|^.*KEYMAP=.*|KEYMAP="{}"|'.format(
 +                libcalamares.globalstorage.value("keyboardLayout")
 +            )
-+            if exists(self.root + "/etc/vconsole.conf"):
-+                self.sedFile(exp, "/etc/vconsole.conf")
++            self.sedFile(exp, "/etc/vconsole.conf")
 +
++        if exists(join(self.root, "/etc/conf.d/xdm")):
 +            for dm in libcalamares.globalstorage.value("displayManagers"):
 +                exp = 's|^.*DISPLAYMANAGER=.*|DISPLAYMANAGER="{}"|'.format(dm)
 +                self.sedFile(exp, "/etc/conf.d/xdm")
 +
-+        elif self.initsys == 'runit' or self.initsys == 's6':
-+            exp = 's|^.*KEYMAP=.*|KEYMAP="{}"|'.format(
-+                libcalamares.globalstorage.value("keyboardLayout")
-+            )
-+            if exists(self.root + "/etc/vconsole.conf"):
-+                self.sedFile(exp, "/etc/vconsole.conf")
 +
 +    def run(self):
 +        """Run the controller
@@ -103,9 +95,9 @@ index 000000000..484ccd45e
 +        self.terminate('gpg-agent')
 +
 +        # Update grub.cfg
-+        if (exists(join(self.root, "usr/bin/update-grub")) and
-+                libcalamares.globalstorage.value("bootLoader") is not None):
-+            target_env_call(["update-grub"])
++        #if (exists(join(self.root, "usr/bin/update-grub")) and
++                #libcalamares.globalstorage.value("bootLoader") is not None):
++            #target_env_call(["update-grub"])
 +
 +
 +def run():
@@ -126,33 +118,17 @@ index 000000000..77e9ca4dd
 +name:       "postcfg"
 +interface:  "python"
 +script:     "main.py"   #assumed relative to the current directory
-diff --git a/src/modules/services-openrc/main.py b/src/modules/services-openrc/main.py
-index 23591fb84..d11ab48fc 100644
---- a/src/modules/services-openrc/main.py
-+++ b/src/modules/services-openrc/main.py
-@@ -127,6 +127,8 @@ class OpenrcController:
-         """Run the controller
-         """
-
-+        libcalamares.globalstorage.insert("initType", "openrc")
-+
-         for state in ("add", "del"):
-             r = self.update(state)
-             if r is not None:
 diff --git a/src/modules/services-runit/main.py b/src/modules/services-runit/main.py
 new file mode 100644
-index 000000000..7976dc4f8
+index 000000000..8b616191d
 --- /dev/null
 +++ b/src/modules/services-runit/main.py
-@@ -0,0 +1,148 @@
+@@ -0,0 +1,144 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
 +# === This file is part of Calamares - <https://github.com/calamares> ===
 +#
-+#   Copyright 2016, Artoo <artoo@manjaro.org>
-+#   Copyright 2017, Philip Müller <philm@manjaro.org>
-+#   Copyright 2018, Artoo <artoo@artixlinux.org>
 +#   Copyright 2018-2019, Adriaan de Groot <groot@kde.org>
 +#   Copyright 2019, Artoo <artoo@artixlinux.org>
 +#
@@ -280,7 +256,6 @@ index 000000000..7976dc4f8
 +    def run(self):
 +        """Run the controller
 +        """
-+        libcalamares.globalstorage.insert("initType", "runit")
 +
 +        for state in ("enable", "disable"):
 +            r = self.update(state)
@@ -356,18 +331,15 @@ index 000000000..04476b107
 +disable: []
 diff --git a/src/modules/services-s6/main.py b/src/modules/services-s6/main.py
 new file mode 100644
-index 000000000..fe2afa048
+index 000000000..288cdbe93
 --- /dev/null
 +++ b/src/modules/services-s6/main.py
-@@ -0,0 +1,146 @@
+@@ -0,0 +1,101 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
 +# === This file is part of Calamares - <https://github.com/calamares> ===
 +#
-+#   Copyright 2016, Artoo <artoo@manjaro.org>
-+#   Copyright 2017, Philip Müller <philm@manjaro.org>
-+#   Copyright 2018, Artoo <artoo@artixlinux.org>
 +#   Copyright 2018-2019, Adriaan de Groot <groot@kde.org>
 +#   Copyright 2019, Artoo <artoo@artixlinux.org>
 +#
@@ -411,94 +383,52 @@ index 000000000..fe2afa048
 +    def __init__(self):
 +        self.root = libcalamares.globalstorage.value('rootMountPoint')
 +
-+        # Translate the entries in the config to the actions passed to s6-rc-bundle
++        self.svDir = libcalamares.job.configuration['svDir']
++        self.dbDir = libcalamares.job.configuration['dbDir']
++
 +        self.services = dict()
 +        self.services["add"] = libcalamares.job.configuration.get('services', [])
 +        self.services["delete"] = libcalamares.job.configuration.get('disable', [])
 +
-+        self.svDir = libcalamares.job.configuration['svDir']
-+        self.rcDir = libcalamares.job.configuration['rcDir']
 +
-+
-+    def make_failure_description(self, state, names, runlevel):
-+        """
-+        Returns a generic "could not <foo>" failure message, specialized
-+        for the action @p state and the specific service @p name in @p runlevel.
-+        """
-+        if state == "add":
-+            description = _("Cannot add service {names!s} to run-level {level!s}.")
-+        elif state == "delete":
-+            description = _("Cannot remove services {names!s} from run-level {level!s}.")
-+        else:
-+            description = _("Unknown service-action <code>{arg!s}</code> for service {names!s} in run-level {level!s}.")
-+
-+        return description.format(arg=state, name=names, level=runlevel)
-+
-+
-+    def update(self, state):
++    def makeBundle(self):
 +        """
 +        Call s6-rc-bundle for each service listed
 +        in services for the given @p state. s6-rc-bundle
 +        is called with @p state as the command as well.
 +        """
-+        for svc in self.services.get(state, []):
-+            if isinstance(svc, str):
-+                name = svc
-+                runlevel = "default"
-+                mandatory = False
++
++        deleteBundles = self.services.get("delete", [])
++        contents = []
++        addBundle = "default"
++
++        if deleteBundles:
++            ec = target_env_call(["s6-rc-bundle", "-c", self.dbDir, "delete", *deleteBundles])
++            if ec != 0:
++                warning("Cannot delete {}".format(*deleteBundles))
++                warning("s6-rc-bundle returned error code {!s}".format(ec))
++
++        for svc in self.services.get('add', []):
++            ec = target_env_call(["s6-rc-db", "-c", self.dbDir, "type", svc])
++            if ec != 0:
++                warning("Service {} does not exist.".format(svc))
++                warning("s6-rc-db returned error code {!s}".format(ec))
 +            else:
-+                name = svc["name"]
-+                runlevel = svc.get("runlevel", "default")
-+                mandatory = svc.get("mandatory", False)
++                contents.append(svc)
 +
-+            service_path = self.root + self.svDir + "/" + name
-+
-+
-+            if exists(service_path):
-+                names += " ".join(name)
-+            else:
-+                warning("Target service {} does not exist in {}.".format(name, self.svDir))
-+                if mandatory:
-+                    title = _("Target service does not exist")
-+                    diagnostic = _("The path for service {name!s} is <code>{path!s}</code>, which does not exist.").format(name=name, path=service_path)
-+                    return (title,
-+                            self.make_failure_description(state, name, runlevel) + " " + diagnostic
-+                            )
-+
-+        runlevel_path = self.root + self.rcDir + "/compiled"
-+        bundle_path = self.rcDir + "/compiled"
-+
-+        ec = target_env_call(["s6-rc-bundle", "-c", bundle_path, state, runlevel, names])
++        ec = target_env_call(["s6-rc-bundle", "-c", self.dbDir, "add", addBundle, *contents])
 +        if ec != 0:
-+            warning("Cannot {} services {} to {}".format(state, names, runlevel))
++            warning("Cannot add services {} to {} bundle".format(*contents, addBundle))
 +            warning("s6-rc-bundle returned error code {!s}".format(ec))
-+            if mandatory:
-+                title = _("Cannot modify service")
-+                diagnostic = _("<code>s6-rc-bundle {arg!s}</code> call in chroot returned error code {num!s}.").format(arg=state, num=ec)
-+                return (title,
-+                        self.make_failure_description(state, names, runlevel) + " " + diagnostic
-+                        )
-+        else:
-+            warning("Target runlevel {} does not exist for {}.".format(runlevel, names))
-+            if mandatory:
-+                title = _("Target runlevel does not exist")
-+                diagnostic = _("The path for runlevel {level!s} is <code>{path!s}</code>, which does not exist.").format(level=runlevel, path=runlevel_path)
-+
-+                return (title,
-+                        self.make_failure_description(state, names, runlevel) + " " + diagnostic
-+                        )
 +
 +
 +    def run(self):
 +        """Run the controller
 +        """
 +
-+        libcalamares.globalstorage.insert("initType", "s6")
-+
-+        for state in ("add", "delete"):
-+            r = self.update(state)
-+            if r is not None:
-+                return r
++        r = self.makeBundle()
++        if r is not None:
++            return r
 +
 +def run():
 +    """
@@ -519,10 +449,10 @@ index 000000000..0e031e60f
 +script:     "main.py"
 diff --git a/src/modules/services-s6/services-s6.conf b/src/modules/services-s6/services-s6.conf
 new file mode 100644
-index 000000000..29e23b3df
+index 000000000..f4a7a03c6
 --- /dev/null
 +++ b/src/modules/services-s6/services-s6.conf
-@@ -0,0 +1,44 @@
+@@ -0,0 +1,28 @@
 +# s6 services module to modify service runlevels via s6-rc-bundle in the chroot
 +#
 +# Services can be added (to any runlevel, or multiple runlevels) or deleted.
@@ -532,38 +462,22 @@ index 000000000..29e23b3df
 +# or a runlevel does not exist, it will be ignored and skipped; a warning is logged.
 +#
 +---
-+# svDir: holds the s6 service directory location
++
++# services path
 +svDir: /etc/s6/sv
 +
-+# rcsDir: holds the bundle directory location
-+rcDir: /etc/s6/rc
++# database path
++dbDir: /etc/s6/rc/compiled
 +
-+# services: a list of entries to **enable**
-+# disable: a list of entries to **disable**
-+#
-+# Each entry has three fields:
-+#   - name: the service name
-+#   - (optional) runlevel: can hold any runlevel present on the target
-+#     system; if no runlevel is provided, "default" is assumed.
-+#   - (optional) mandatory: if set to true, a failure to modify
-+#     the service will result in installation failure, rather than just
-+#     a warning. The default is false.
-+#
-+# an entry may also be a single string, which is interpreted
-+# as the name field (runlevel "default" is assumed then, and not-mandatory).
-+#
-+# # Example services and disable settings:
-+# # - add foo1 to default, but it must succeed
-+# # - add foo2 to nonetwork
-+# # - remove foo3 from default
-+# # - remove foo4 from default
-+# services:
-+#     - name: foo1
-+#       mandatory: true
-+#     - name: foo2
-+# disable:
-+#     - name: foo3
-+#       runlevel: default
-+#     - foo4
-+services: []
++# services to be added to the default bundle
++services:
++  - acpid
++  - bluetoothd
++  - cronie
++  - cupsd
++  - syslog-ng
++  - connmand
++  - sddm
++
++# bundles to delete
 +disable: []
