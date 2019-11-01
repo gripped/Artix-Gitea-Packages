@@ -1,19 +1,19 @@
- src/modules/postcfg/main.py                    |  92 ++++++++++++++++
+ src/modules/postcfg/main.py                    |  81 ++++++++++++++
  src/modules/postcfg/module.desc                |   6 ++
  src/modules/services-runit/main.py             | 144 +++++++++++++++++++++++++
  src/modules/services-runit/module.desc         |   5 +
  src/modules/services-runit/services-runit.conf |  44 ++++++++
  src/modules/services-s6/main.py                | 101 +++++++++++++++++
  src/modules/services-s6/module.desc            |   5 +
- src/modules/services-s6/services-s6.conf       |  28 +++++
- 8 files changed, 425 insertions(+)
+ src/modules/services-s6/services-s6.conf       |  30 ++++++
+ 8 files changed, 416 insertions(+)
 
 diff --git a/src/modules/postcfg/main.py b/src/modules/postcfg/main.py
 new file mode 100644
-index 000000000..d0b37d78d
+index 000000000..9bd49a5f5
 --- /dev/null
 +++ b/src/modules/postcfg/main.py
-@@ -0,0 +1,92 @@
+@@ -0,0 +1,81 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -70,12 +70,6 @@ index 000000000..d0b37d78d
 +            )
 +            self.sedFile(exp, "/etc/conf.d/keymaps")
 +
-+        if exists(join(self.root, "/etc/vconsole.conf")):
-+            exp = 's|^.*KEYMAP=.*|KEYMAP="{}"|'.format(
-+                libcalamares.globalstorage.value("keyboardLayout")
-+            )
-+            self.sedFile(exp, "/etc/vconsole.conf")
-+
 +        if exists(join(self.root, "/etc/conf.d/xdm")):
 +            for dm in libcalamares.globalstorage.value("displayManagers"):
 +                exp = 's|^.*DISPLAYMANAGER=.*|DISPLAYMANAGER="{}"|'.format(dm)
@@ -93,11 +87,6 @@ index 000000000..d0b37d78d
 +        """
 +        self.configure()
 +        self.terminate('gpg-agent')
-+
-+        # Update grub.cfg
-+        #if (exists(join(self.root, "usr/bin/update-grub")) and
-+                #libcalamares.globalstorage.value("bootLoader") is not None):
-+            #target_env_call(["update-grub"])
 +
 +
 +def run():
@@ -449,17 +438,17 @@ index 000000000..0e031e60f
 +script:     "main.py"
 diff --git a/src/modules/services-s6/services-s6.conf b/src/modules/services-s6/services-s6.conf
 new file mode 100644
-index 000000000..f4a7a03c6
+index 000000000..d9fe571bc
 --- /dev/null
 +++ b/src/modules/services-s6/services-s6.conf
-@@ -0,0 +1,28 @@
-+# s6 services module to modify service runlevels via s6-rc-bundle in the chroot
+@@ -0,0 +1,30 @@
++# s6 services module to create a services bundle via s6-rc-bundle in the chroot
 +#
-+# Services can be added (to any runlevel, or multiple runlevels) or deleted.
-+# Handle delete with care and only use it if absolutely necessary.
++# Services can be added to default bundle
++# Handle disable with care and only use it if absolutely necessary.
 +#
 +# if a service is listed in the conf but is not present/detected on the target system,
-+# or a runlevel does not exist, it will be ignored and skipped; a warning is logged.
++# it will be ignored and skipped; a warning is logged.
 +#
 +---
 +
@@ -469,15 +458,17 @@ index 000000000..f4a7a03c6
 +# database path
 +dbDir: /etc/s6/rc/compiled
 +
-+# services to be added to the default bundle
-+services:
-+  - acpid
-+  - bluetoothd
-+  - cronie
-+  - cupsd
-+  - syslog-ng
-+  - connmand
-+  - sddm
-+
-+# bundles to delete
++# services: a list of services to **add** to the default bundle
++# disable: a list of bundles to **delete**
++#
++# Each entry:
++#   - the name
++# # Example services and disable settings:
++# services:
++#     - foo1
++#     - foo2
++# disable:
++#     - foo3
++#     - foo4
++services: []
 +disable: []
