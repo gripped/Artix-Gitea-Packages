@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/at" ]; then
-        s6-rc -d change at
-    fi
-}
