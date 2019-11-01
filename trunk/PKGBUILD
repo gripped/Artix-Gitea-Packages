@@ -61,5 +61,3 @@ package() {
     KCONF="$srcdir"/kconf \
     install
 }
-
-# vim:set ts=2 sw=2 et:
