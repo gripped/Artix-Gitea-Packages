@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/espeakup" ]; then
-        s6-rc -d change espeakup
-    fi
-}
