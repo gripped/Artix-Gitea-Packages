@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/dnscrypt-proxy" ]; then
-        s6-rc -d change dnscrypt-proxy
-    fi
-}
