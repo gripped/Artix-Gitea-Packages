@@ -1,11 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
 pkgname=ddclient-s6
-pkgver=20191031
+pkgver=20191102
 pkgrel=1
 pkgdesc="s6 service scripts for ddclient"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('s6-galaxy')
+groups=('galaxy-s6')
 provides=('ddclient-runscripts')
 conflicts=('ddclient-runscripts')
 depends=('ddclient' 's6')
