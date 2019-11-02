@@ -1,11 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
 pkgname=acpid-s6
 pkgver=20191102
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for acpid"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('s6-galaxy')
+groups=('galaxy-s6')
 provides=('acpid-runscripts')
 conflicts=('acpid-runscripts')
 depends=('acpid' 's6')
