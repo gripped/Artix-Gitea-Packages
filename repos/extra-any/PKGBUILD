@@ -1,7 +1,7 @@
 # Maintainer: Sébastien Luttringer
 
 pkgname=dkms
-pkgver=2.7.1
+pkgver=2.8.1
 pkgrel=1
 pkgdesc='Dynamic Kernel Modules System'
 arch=('any')
