@@ -2,11 +2,11 @@
 
 pkgname=at-s6
 pkgver=20191102
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for at"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('s6-galaxy')
+groups=('galaxy-s6')
 provides=('at-runscripts')
 conflicts=('at-runscripts')
 depends=('at' 's6')
