@@ -1,9 +1,13 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Josh Taylor <joshtaylor.mail@gmail.com>
+# Contributor: simo <simo@archlinux.org>
+# Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
+# Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgbase=pyopengl
 pkgname=('python2-opengl' 'python-opengl')
 pkgver=3.1.0
-pkgrel=5
+pkgrel=6
 pkgdesc="The cross platform Python binding to OpenGL and related APIs"
 url="http://pyopengl.sourceforge.net/"
 license=('BSD')
@@ -37,7 +41,7 @@ package_python2-opengl() {
 
 package_python-opengl() {
     depends=('python' 'freeglut')
-
+ 
     cd python-PyOpenGL-${pkgver}
  	python setup.py install --root="${pkgdir}" --optimize=1
 	install -Dm644 "${srcdir}/LICENSE" \
