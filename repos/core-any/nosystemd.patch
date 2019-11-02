@@ -3,7 +3,7 @@
  2 files changed, 1 insertion(+), 16 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 264f077..3958b62 100644
+index 9ef0f6a..f6e322e 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -17,7 +17,6 @@ DIRS = \
@@ -11,11 +11,11 @@ index 264f077..3958b62 100644
  	/usr/share/man/man1 \
  	/usr/share/mkinitcpio \
 -	/usr/lib/systemd/system/shutdown.target.wants \
- 	/usr/lib/tmpfiles.d
- 
- BASH_SCRIPTS = \
-@@ -55,10 +54,7 @@ install: all
- 
+ 	/usr/lib/tmpfiles.d \
+ 	/usr/share/libalpm/hooks \
+ 	/usr/share/libalpm/scripts
+@@ -57,10 +56,7 @@ install: all
+
  	cp -at $(DESTDIR)/usr/lib/initcpio hooks install
  	install -m644 -t $(DESTDIR)/usr/share/mkinitcpio mkinitcpio.d/*
 -	install -m644 systemd/mkinitcpio-generate-shutdown-ramfs.service \
@@ -24,7 +24,7 @@ index 264f077..3958b62 100644
 -			$(DESTDIR)/usr/lib/systemd/system/shutdown.target.wants/mkinitcpio-generate-shutdown-ramfs.service
 +
  	install -m644 tmpfiles/mkinitcpio.conf $(DESTDIR)/usr/lib/tmpfiles.d/mkinitcpio.conf
- 
+
  	install -m755 50-mkinitcpio.install $(DESTDIR)/usr/lib/kernel/install.d/50-mkinitcpio.install
 diff --git a/init_functions b/init_functions
 index 8ad10c7..5579a49 100644
@@ -47,4 +47,4 @@ index 8ad10c7..5579a49 100644
 -        fi
      fi
  }
- 
+
