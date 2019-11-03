@@ -10,7 +10,7 @@
 
 pkgname=dovecot
 pkgver=2.3.8
-pkgrel=1
+pkgrel=2
 
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="http://dovecot.org/"
@@ -81,6 +81,7 @@ build() {
     --with-solr \
     --with-lucene \
     --with-sodium \
+    --with-rundir=/run/dovecot \
     --with-docs
 
   make
