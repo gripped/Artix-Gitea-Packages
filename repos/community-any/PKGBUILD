@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 
 pkgname=docker-s6
-pkgver=20191102
+pkgver=20191103
 pkgrel=1
 pkgdesc="s6 service scripts for docker"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('galaxy-s6')
+groups=('s6-galaxy')
 provides=('docker-runscripts')
 conflicts=('docker-runscripts')
 depends=('docker' 's6')
