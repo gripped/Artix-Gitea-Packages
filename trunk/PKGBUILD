@@ -51,8 +51,6 @@ package() {
   cd "${pkgname}-${pkgver}"
   make INSTALL_ROOT="${pkgdir}" install
   install -vDm 644 "Documents/${pkgname}.conf" -t "${pkgdir}/etc/"
-  install -vDm 644 "../${pkgname}.service" \
-    -t "${pkgdir}/usr/lib/systemd/system/"
   install -vDm 644 "../${pkgname}.sysusers" \
     "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
   install -vDm 644 "../${pkgname}.tmpfiles" \
