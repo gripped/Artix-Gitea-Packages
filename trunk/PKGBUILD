@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 
 pkgname=at-s6
-pkgver=20191102
-pkgrel=2
+pkgver=20191103
+pkgrel=1
 pkgdesc="s6 service scripts for at"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('galaxy-s6')
+groups=('s6-galaxy')
 provides=('at-runscripts')
 conflicts=('at-runscripts')
 depends=('at' 's6')
