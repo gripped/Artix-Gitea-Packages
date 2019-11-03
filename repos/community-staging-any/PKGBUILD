@@ -11,7 +11,7 @@ url="https://github.com/ionrock/${_pkgname}"
 license=('Apache')
 makedepends=('python-msgpack' 'python-requests' 'python2-msgpack' 'python2-requests')
 checkdepends=('python-mock' 'python-pytest' 'python-lockfile' 'python-cherrypy'
-              'python2-mock' 'python2-pytest' 'python2-lockfile' 'python2-cherrypy')
+              'python2-mock' 'python2-pytest' 'python2-lockfile' 'python2-cherrypy' 'python2-zc.lockfile')
 source=("${_pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
         "0001-Remove-unnecessary-console-script.patch"
          cachecontrol-pytest4.patch::"https://github.com/ionrock/cachecontrol/commit/2b886af2.patch")
