@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+
+export JENKINS_USER=jenkins
+export JENKINS_USER=/var/lib/jenkins
+
+exec java -Xmx512m -jar /opt/jenkins/jenkins.war
