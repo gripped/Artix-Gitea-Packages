@@ -22,7 +22,8 @@ build() {
   ./configure --prefix=/usr \
     --sbindir=/usr/bin \
     --sysconfdir=/etc \
-    --with-udevdir=/usr/lib/udev --with-udev-rules
+    --with-udevdir=/usr/lib/udev --with-udev-rules \
+    --with-systemdsystemunitdir=no
   make
 }
 
@@ -34,9 +35,6 @@ package() {
   find "$pkgdir" -name '*.py' -exec python -mpy_compile {} +
   # Compile *.pyo
   find "$pkgdir" -name '*.py' -exec python -O -mpy_compile {} +
-  
-  # new cups 2.0.0 service naming
-  sed -i "s|cups.socket|org.cups.cupsd.socket|g" "$pkgdir"/usr/lib/systemd/system/configure-printer@.service
 
   # fix dbus policy location - --with-dbusdir doens't work
   install -dm755 "$pkgdir"/usr/share/dbus-1/system.d
