@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=fcron-s6
+pkgver=20191104
+pkgrel=1
+pkgdesc="s6 service scripts for fcron"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('fcron-runscripts')
+conflicts=('fcron-runscripts' 'cronie' 'cronie-runit')
+depends=('fcron' 's6')
+install=fcron.install
+source=("fcron.run" "fcron.type")
+sha256sums=('b4295f6ea215048f0d03344baba9f48b1166a2123f552d877f12720edcdff14d'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'fcron'
+}
