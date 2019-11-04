@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/fcron" ]; then
+        s6-rc -d change fcron
+    fi
+}
