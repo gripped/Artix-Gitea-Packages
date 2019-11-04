@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+
+if { test -e /etc/iptables/iptables.rules } ip6tables-restore /etc/iptables/iptables.rules -w 3
