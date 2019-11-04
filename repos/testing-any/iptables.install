@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/iptables" ]; then
+        s6-rc -d change iptables
+    fi
+}
