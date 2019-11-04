@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=iptables-s6
 pkgver=20191104
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for iptables"
 arch=('any')
 url="https://github.com/artix-linux"
