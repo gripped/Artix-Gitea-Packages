@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=fwknop-s6
+pkgver=20191104
+pkgrel=1
+pkgdesc="s6 service scripts for fwknop"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('fwknop-runscripts')
+conflicts=('fwknop-runscripts')
+depends=('fwknop' 's6')
+install=fwknopd.install
+source=("fwknopd.run" "fwknopd.type")
+sha256sums=('ed5924b59d3cb4b332e4e7e2b86448bd587fd745b00b9c0658f05ec3d2dbbd81'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'fwknopd'
+}
