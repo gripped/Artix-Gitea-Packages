@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=gpm-s6
+pkgver=20191104
+pkgrel=1
+pkgdesc="s6 service scripts for gpm"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-gpm')
+conflicts=('init-gpm')
+depends=('gpm' 's6')
+install=gpm.install
+source=("gpm.run" "gpm.type")
+sha256sums=('f458ea68286fa02de2d4dee68cdadfa3b85976096e19c64853445effd3e2950e'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'gpm'
+}
