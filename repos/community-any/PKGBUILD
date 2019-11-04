@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=iwd-s6
+pkgver=20191104
+pkgrel=1
+pkgdesc="s6 service scripts for iwd"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('iwd-runscripts')
+conflicts=('iwd-runscripts')
+depends=('iwd' 's6')
+install=iwd.install
+source=("iwd.run" "iwd.type")
+sha256sums=('240325b56a08e56325c540599b3062f9587c9fb15bbae903176b3866527e6916'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'iwd'
+}
