@@ -1,0 +1,8 @@
+pre_remove() {
+    if [ -e "/run/service/fancontrol" ]; then
+        s6-rc -d change fancontrol
+    fi
+    if [ -e "/run/service/lm_sensors" ]; then
+        s6-rc -d change lm_sensors
+    fi
+}

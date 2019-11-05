@@ -1,0 +1,10 @@
+#!/usr/bin/execlineb -P
+
+backtick -n BUS_MODULES { sh -c "source /etc/sysconfig/lm_sensors; echo $BUS_MODULES" }
+importas BUS_MODULES BUS_MODULES
+
+backtick -n HWMON_MODULES { sh -c "source /etc/sysconfig/lm_sensors; echo $HWMON_MODULES" }
+importas HWMON_MODULES HWMON_MODULES
+
+foreground { modprobe -qabr $BUS_MODULES }
+foreground { modprobe -qabr $HWMON_MODULES }

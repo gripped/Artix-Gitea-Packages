@@ -1,0 +1,37 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=lm_sensors-s6
+pkgver=20191105
+pkgrel=1
+pkgdesc="s6 service scripts for lm_sensors"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('lm_sensors-runscripts')
+conflicts=('lm_sensors-runscripts')
+depends=('lm_sensors' 's6')
+install=lm_sensors.install
+source=("fancontrol.dependencies"
+        "fancontrol.run"
+        "fancontrol.type"
+        "lm_sensors.down"
+        "lm_sensors.type"
+        "lm_sensors.up")
+sha256sums=('373e0d6ffc0ae8c4bd23d1e933da075023c6ef8ab3fb5176f3b4a1ad2187e68b'
+            'e5ed9603d43c1c8fbb6f4e5e245ae00c466992daba7ab4835838ec66b5951e8c'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'dae0923a66c52e5fd68f4eebbe2f11244689a19eb53e76b25c0109e2920ed792'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            'd22c9da206f92c858ebef366d4ec64fbdfb6602513eea4d415e1091de2e7ee1f')
+
+_inst_sv(){
+    for file in dependencies down run type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'fancontrol'
+    _inst_sv 'lm_sensors'
+}
