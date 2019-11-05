@@ -1,0 +1,11 @@
+pre_remove() {
+    if [ -e "/run/service/libvirtd" ]; then
+        s6-rc -d change libvirtd
+    fi
+    if [ -e "/run/service/virtlockd" ]; then
+        s6-rc -d change virtlockd
+    fi
+    if [ -e "/run/service/virtlogd" ]; then
+        s6-rc -d change virtlogd
+    fi
+}
