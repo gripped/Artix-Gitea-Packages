@@ -9,8 +9,8 @@ groups=('s6-world')
 provides=('lirc-runscripts')
 conflicts=('lirc-runscripts')
 depends=('lirc' 's6')
-install=lirc.install
-source=("lirc.run" "lirc.type")
+install=lircd.install
+source=("lircd.run" "lircd.type")
 sha256sums=('dbd04bff4edc6508fe319d351954286c4799b438a88f3134bf58ea9c75b5ebc3'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
@@ -23,5 +23,5 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'lirc'
+    _inst_sv 'lircd'
 }
