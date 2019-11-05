@@ -1,0 +1,43 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=libvirt-s6
+pkgver=20191105
+pkgrel=1
+pkgdesc="s6 service scripts for libvirt"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('libvirt-runscripts')
+conflicts=('libvirt-runscripts')
+depends=('libvirt' 'dbus-s6' 's6')
+install=libvirt.install
+source=("libvirtd.dependencies"
+        "libvirtd.run"
+        "libvirtd.type"
+        "virtlockd.run"
+        "virtlockd.type"
+        "virtlogd.dependencies"
+        "virtlogd.run"
+        "virtlogd.type")
+sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            '25d69c3e1bd1969c8f19b1e6da90e7959a1f2e51317d724841625d3c82ac88a9'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'ed738d5e2c6584143cd297de22a278394ace516710d7344942659a185d081c52'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            'bee5310f5a9485f1ca7641696bc246adb76822be5eb705760d08ef736c8c0a45'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in dependencies run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'libvirtd'
+    _inst_sv 'virtlockd'
+    _inst_sv 'virtlogd'
+}
