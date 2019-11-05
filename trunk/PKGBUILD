@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=lighttpd-s6
+pkgver=20191105
+pkgrel=1
+pkgdesc="s6 service scripts for lighttpd"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('lighttpd-runscripts')
+conflicts=('lighttpd-runscripts')
+depends=('lighttpd' 's6')
+install=lighttpd.install
+source=("lighttpd.run" "lighttpd.type")
+sha256sums=('5c5ff01ac54e34d345f0ff892d3ab6b1bc0f4a17fd49abd127e0035c3490f1cc'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'lighttpd'
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/execlineb -P
+
+if -n { test -d /srv/www/lighttpd } mkdir -p /srv/www/lighttpd
+foreground { chown _lighttpd:_lighttpd /srv/www/lighttpd }
+
+if -n { test -d /var/log/lighttpd } mkdir -p /var/log/lighttpd
+foreground { chown _lighttpd:_lighttpd /var/log/lighttpd }
+
+exec lighttpd-angel -D -f /etc/lighttpd/lighttpd.conf
