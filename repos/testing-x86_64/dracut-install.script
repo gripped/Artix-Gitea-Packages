@@ -1,0 +1,69 @@
+#!/bin/bash -e
+
+args=()
+all=0
+
+while read -r line; do
+    if [[ $line != */vmlinuz ]]; then
+        # triggers when it's a change to usr/lib/dracut/modules.d/*
+        all=1
+        continue
+    fi
+
+    if ! read -r pkgbase > /dev/null 2>&1 < "${line%/vmlinuz}/pkgbase"; then
+        # if the kernel has no pkgbase, we skip it
+        continue
+    fi
+
+    initramfs="/boot/initramfs-${pkgbase}-dracut.img"
+    fallback="/boot/initramfs-${pkgbase}-dracut-fallback.img"
+
+    kver=${line%*/vmlinuz}
+    kver=${kver##*/}
+
+    # always install the kernel
+    install -Dm644 "${line}" "/boot/vmlinuz-${pkgbase}"
+done
+
+if (( all )); then
+    # change to use all kernels
+    kernels=$(compgen -G /usr/lib/modules/"*")
+    for kernel in ${kernels[@]}; do
+        if ! read -r pkgbase > /dev/null 2>&1 < "${kernel}/pkgbase"; then
+            # if the kernel has no pkgbase, we skip it
+            continue
+        fi
+
+        initramfs="/boot/initramfs-${pkgbase}-dracut.img"
+        fallback="/boot/initramfs-${pkgbase}-dracut-fallback.img"
+
+        allver=${kernel##*/}
+        for preset in 'default' 'fallback';do
+            case $preset in
+                'fallback') args=(-fMq "${fallback}" "${allver}") ;;
+                *) args=(-fMqH "${initramfs}" "${allver}") ;;
+            esac
+            if (( ${#args[@]} )); then
+                echo "==> Building image: $preset"
+                echo "  -> ${args[@]}"
+                echo "==> Starting build: ${allver}"
+                dracut "${args[@]}"
+            fi
+        done
+    done
+else
+    # compound args for each kernel
+    for preset in 'default' 'fallback';do
+        case $preset in
+            'fallback') args=(-fMq "${fallback}" "${kver}") ;;
+            *) args=(-fMqH "${initramfs}" "${kver}") ;;
+        esac
+        echo "${name}"
+        if (( ${#args[@]} )); then
+            echo "==> Building image: $preset"
+            echo "  -> ${args[@]}"
+            echo "==> Starting build: ${kver}"
+            dracut "${args[@]}"
+        fi
+    done
+fi

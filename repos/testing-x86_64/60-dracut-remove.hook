@@ -1,0 +1,15 @@
+[Trigger]
+Type = File
+Operation = Remove
+Target = usr/lib/modules/*/vmlinuz
+
+[Trigger]
+Type = Package
+Operation = Remove
+Target = dracut
+
+[Action]
+Description = Removing linux dracut modules...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/dracut-remove
+NeedsTargets

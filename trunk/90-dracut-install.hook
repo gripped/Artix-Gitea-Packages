@@ -1,0 +1,12 @@
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = usr/lib/modules/*/vmlinuz
+Target = usr/lib/dracut/modules.d/*
+
+[Action]
+Description = Updating dracut modules...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/dracut-install
+NeedsTargets
