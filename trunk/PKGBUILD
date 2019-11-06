@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=minidlna-s6
+pkgver=20191106
+pkgrel=1
+pkgdesc="s6 service scripts for minidlna"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('minidlna-runscripts')
+conflicts=('minidlna-runscripts')
+depends=('minidlna' 's6')
+install=minidlnad.install
+source=("minidlnad.run" "minidlnad.type")
+sha256sums=('8577f52a0d655afaf63c47119933fa2b8180a7ff562e3dd1d933b54fd744e980'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'minidlnad'
+}
