@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=networkmanager-s6
+pkgver=20191106
+pkgrel=1
+pkgdesc="s6 service scripts for networkmanager"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('networkmanager-runscripts')
+conflicts=('networkmanager-runscripts')
+depends=('networkmanager' 'dbus-s6' 's6')
+install=NetworkManager.install
+source=("NetworkManager.dependencies" "NetworkManager.run" "NetworkManager.type")
+sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            '2942edae59164732cf86b4b171f620ab13f5a473a48d92be66721d331793d357'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'NetworkManager'
+}
