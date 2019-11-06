@@ -1,11 +1,11 @@
 # Maintainer: Chris Cromer <chris@cromer.cl>
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_commit=451fe75e69527cf656451517def18f0e07193675
+_commit=cbbed45ce3c17a4dccf3de21eeab996dadf445ab
 
 pkgname=runit-rc
-pkgver=20191023
-pkgrel=1
+pkgver=20191106
+pkgrel=2
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
 url='https://gitea.artixlinux.org/artix/runit-rc'
