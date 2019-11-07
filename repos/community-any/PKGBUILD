@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=pcsclite-s6
+pkgver=20191107
+pkgrel=1
+pkgdesc="s6 service scripts for pcsclite"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('pcsclite-runscripts')
+conflicts=('pcsclite-runscripts')
+depends=('pcsclite' 's6')
+install=pcscd.install
+source=("pcscd.run" "pcscd.type")
+sha256sums=('ced84e862be3fe566b5908f688a13f09214747d611a42679194cececd4b24c41'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'pcscd'
+}
