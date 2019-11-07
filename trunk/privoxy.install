@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/privoxy" ]; then
+        s6-rc -d change privoxy
+    fi
+}
