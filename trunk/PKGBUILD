@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=redis-s6
+pkgver=20191107
+pkgrel=1
+pkgdesc="s6 service scripts for redis"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('redis-runscripts')
+conflicts=('redis-runscripts')
+depends=('redis' 's6')
+install=redis.install
+source=("redis.run" "redis.type")
+sha256sums=('44270d7b9c8c7c4cdfe4977d88da9173aef8d82332503ca4920730e1be7e6425'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'redis'
+}
