@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=prometheus-s6
+pkgver=20191107
+pkgrel=1
+pkgdesc="s6 service scripts for prometheus"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('prometheus-runscripts')
+conflicts=('prometheus-runscripts')
+depends=('prometheus' 's6')
+install=prometheus.install
+source=("prometheus.run" "prometheus.type")
+sha256sums=('134a6d6264a21b5d8716d4b2ea39be9e48b3a57c1631d85b6f373a721d0913f3'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'prometheus'
+}
