@@ -17,8 +17,6 @@ makedepends=('go-pie')
 
 source=("hub-$pkgver.tar.gz::https://github.com/github/hub/archive/v$pkgver.tar.gz")
 sha256sums=('0b5147a25aa8dff37d6c88b2a30ed38c05d35e03c64d79039925dcb49de80940')
-b2sums=('e790c13cfab9070699b3995c91c3adfad89b438d70b4f0683dcf2f487349c785d97f1aa845620cf0ccabf93f6738a3a1d45410bd1155c861d55f3d2568312235')
-b2sums=('25a0548a1ef18d941b1cfc8930e4c45d994b0705f723fd6b66495ae6d1d56cf85832e2d4e2721926afb6704322fdfc17683bed3a875332be5cea8e21147c02e2')
 
 build() {
   cd "$srcdir"/hub-$pkgver
