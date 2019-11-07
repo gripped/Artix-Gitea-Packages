@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=pdnsd-s6
+pkgver=20191107
+pkgrel=1
+pkgdesc="s6 service scripts for pdnsd"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('pdnsd-runscripts')
+conflicts=('pdnsd-runscripts')
+depends=('pdnsd' 's6')
+install=pdnsd.install
+source=("pdnsd.run" "pdnsd.type")
+sha256sums=('791e1c57f7df125546500be9db05bbc7fc9ec5dc95ffa2e9542d5c6c0a4ab5a9'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'pdnsd'
+}
