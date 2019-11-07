@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=privoxy-s6
+pkgver=20191107
+pkgrel=1
+pkgdesc="s6 service scripts for privoxy"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('privoxy-runscripts')
+conflicts=('privoxy-runscripts')
+depends=('privoxy' 's6')
+install=privoxy.install
+source=("privoxy.run" "privoxy.type")
+sha256sums=('ec12d37000726824bae30e9330e59ae89d558a8c8dabb89aec2efe1d831e039f'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'privoxy'
+}
