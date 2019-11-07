@@ -1,0 +1,7 @@
+#!/usr/bin/execlineb -P
+
+foreground { mkdir -m0700 -p /var/lib/redis }
+foreground { chown redis:redis /var/lib/redis }
+foreground { mkdir -m0750 -p /run/redis }
+foreground { chown redis:redis /run/redis }
+exec redis-server /etc/redis/redis.conf > /dev/null
