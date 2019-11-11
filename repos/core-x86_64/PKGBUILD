@@ -1,10 +1,11 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgbase=linux
-pkgver=5.3.8.1
-pkgrel=2
-_srcver=${pkgver%.*}-arch${pkgver##*.}
-url="https://git.archlinux.org/linux.git/log/?h=v$_srcver"
+pkgver=5.3.9.1
+pkgrel=1
+pkgdesc='Linux'
+_srctag=v${pkgver%.*}-arch${pkgver##*.}
+url="https://git.archlinux.org/linux.git/log/?h=$_srctag"
 arch=(x86_64)
 license=(GPL2)
 makedepends=(
@@ -15,7 +16,7 @@ makedepends=(
 options=('!strip')
 _srcname=archlinux-linux
 source=(
-  "$_srcname::git+https://git.archlinux.org/linux.git?signed#tag=v$_srcver"
+  "$_srcname::git+https://git.archlinux.org/linux.git?signed#tag=$_srctag"
   config         # the main kernel config file
 )
 validpgpkeys=(
@@ -24,11 +25,11 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '32a4bbc5c6a848b9971b3b82737ac045ae651aae3b97b57313df38a5e3fc0cc8')
+            'b399a10587fa6257842f86cdf4286aba4939d472fe4a8be79d55315c747e18ae')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
-export KBUILD_BUILD_TIMESTAMP="@${SOURCE_DATE_EPOCH:-$(date +%s)}"
+export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
 prepare() {
   cd $_srcname
@@ -63,7 +64,7 @@ build() {
 }
 
 _package() {
-  pkgdesc="The ${pkgbase/linux/Linux} kernel and modules"
+  pkgdesc="The $pkgdesc kernel and modules"
   depends=(coreutils kmod initramfs)
   optdepends=('crda: to set the correct wireless channels of your country'
               'linux-firmware: firmware images needed for some devices')
@@ -76,7 +77,6 @@ _package() {
   # systemd expects to find the kernel here to allow hibernation
   # https://github.com/systemd/systemd/commit/edda44605f06a41fb86b7ab8128dcf99161d2344
   install -Dm644 "$(make -s image_name)" "$modulesdir/vmlinuz"
-  #install -Dm644 "$modulesdir/vmlinuz" "$pkgdir/boot/vmlinuz-$pkgbase"
 
   # Used by mkinitcpio to name the kernel
   echo "$pkgbase" | install -Dm644 /dev/stdin "$modulesdir/pkgbase"
@@ -92,7 +92,7 @@ _package() {
 }
 
 _package-headers() {
-  pkgdesc="Header files and scripts for building modules for ${pkgbase/linux/Linux} kernel"
+  pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
@@ -170,7 +170,7 @@ _package-headers() {
 }
 
 _package-docs() {
-  pkgdesc="Kernel hackers manual - HTML documentation that comes with the ${pkgbase/linux/Linux} kernel"
+  pkgdesc="Kernel hacker's manual for the $pkgdesc kernel"
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
@@ -179,8 +179,8 @@ _package-docs() {
   mkdir -p "$builddir"
   cp -t "$builddir" -a Documentation
 
-  msg2 "Removing doctrees..."
-  rm -r "$builddir/Documentation/output/.doctrees"
+  msg2 "Removing unneeded files..."
+  rm -rv "$builddir"/Documentation/{,output/}.[^.]*
 
   msg2 "Moving HTML docs..."
   local src dst
