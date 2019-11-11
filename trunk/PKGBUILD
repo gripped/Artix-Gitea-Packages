@@ -1,5 +1,4 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
-
 pkgname=python-ukpostcodeparser
 pkgver=1.1.2
 pkgrel=6
