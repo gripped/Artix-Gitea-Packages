@@ -14,6 +14,7 @@ depends=('python-psutil' 'python-pytest' 'python-pytest-cache' 'python-setuptool
 source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz")
 sha512sums=('fda868a12a056070afd5838c4bc466b4906a7138f685d4a0e6e0adbd975e5a1a2b9b37b8de36a45fb700e02ca14ae219cfe29c467f8d03e55d2a375a7efc9927')
 
+
 build() {
   cd "${_name}-${pkgver}"
   python setup.py build
