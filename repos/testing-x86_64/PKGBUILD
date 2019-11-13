@@ -6,7 +6,7 @@
 
 pkgname=brltty
 pkgver=6.0
-pkgrel=6
+pkgrel=7
 pkgdesc="Braille display driver for Linux/Unix"
 arch=('x86_64')
 url="https://brltty.app"
@@ -44,7 +44,7 @@ build() {
               --with-tables-directory=/usr/share/brltty \
               --with-screen-driver=lx \
               --enable-gpm
-  make
+  MAKEFLAGS="-j1" make
 }
 
 package() {
