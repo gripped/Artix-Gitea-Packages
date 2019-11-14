@@ -3,7 +3,7 @@
 
 pkgname=('python-itsdangerous' 'python2-itsdangerous')
 pkgver=1.1.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Various helpers to pass trusted data to untrusted environments'
 arch=('any')
 url="http://pypi.python.org/pypi/itsdangerous"
@@ -11,7 +11,6 @@ license=('BSD')
 makedepends=('python' 'python2' 'python-setuptools' 'python2-setuptools')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/mitsuhiko/itsdangerous/archive/${pkgver}.tar.gz")
 sha256sums=('2fbc62987b9f7aa646083326e5746ab5d791628e63575851a8ce5d5d5e8754b9')
-
 
 prepare() {
   cp -r "itsdangerous-$pkgver" "python-itsdangerous-$pkgver"
