@@ -3,7 +3,7 @@
 
 pkgname=python-cmd2
 pkgver=0.9.15
-pkgrel=1
+pkgrel=3
 pkgdesc="A tool for building interactive command line apps"
 arch=('any')
 url="https://github.com/python-cmd2/cmd2"
@@ -21,10 +21,10 @@ build() {
   python setup.py build
 }
 
-#check() {
-#  cd cmd2-$pkgver
-#  python setup.py pytest 
-#}
+check() {
+  cd cmd2-$pkgver
+  python setup.py pytest
+}
 
 package() {
   cd cmd2-$pkgver
