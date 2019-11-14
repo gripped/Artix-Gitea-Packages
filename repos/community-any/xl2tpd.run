@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+foreground { mkdir -p /run/xl2tpd }
+exec xl2tpd -D -c /etc/xl2tpd/xl2tpd.conf
