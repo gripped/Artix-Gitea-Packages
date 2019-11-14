@@ -1,12 +1,11 @@
-# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgbase=python-semver
 pkgname=(python-semver python2-semver)
 pkgver=2.8.1
-pkgrel=1
+pkgrel=3
 pkgdesc="Python helper for Semantic Versioning"
-url="https://github.com/k-bx/semver"
+url="https://github.com/k-bx/python-semver"
 license=('BSD')
 arch=('any')
 makedepends=('python-setuptools' 'python2-setuptools')
