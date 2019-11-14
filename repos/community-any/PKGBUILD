@@ -1,0 +1,29 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=ufw-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for ufw"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('ufw-runscripts')
+conflicts=('ufw-runscripts')
+depends=('ufw' 's6')
+install=ufw.install
+source=("ufw.down" "ufw.type" "ufw.up")
+sha256sums=('f8c2b6ce160e4fe27d8d744115c2e11e7f0a956eb19bfd13a5ab4e6f00d13c50'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '55b86cad2c964702c0156fc02be2320fe9626dc180b5e82ca25cfc2d2ce4a8a9')
+
+_inst_sv(){
+    for file in type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'ufw'
+}
