@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+foreground { install -o squid -g squid -m 0755 -d /run/squid }
+foreground { squid -N -s -z }
+exec squid -N -s
