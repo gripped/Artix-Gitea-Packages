@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=xdm-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for xdm"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('xdm-runscripts')
+conflicts=('xdm-runscripts')
+depends=('xorg-xdm' 's6')
+install=xdm.install
+source=("xdm.run" "xdm.type")
+sha256sums=('3fb6072e7b9e9b265c8c2a5903111a0b6687315121b0207d3e516e9c5efe2bfa'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in dependencies run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'xdm'
+}
