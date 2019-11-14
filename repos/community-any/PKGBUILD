@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=znc-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for znc"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('znc-runscripts')
+conflicts=('znc-runscripts')
+depends=('znc' 's6')
+install=znc.install
+source=("znc.run" "znc.type")
+sha256sums=('571f1328a9219528ea58ee0e77a929aeb8dae3d4def450255baf2c561c68fd01'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'znc'
+}
