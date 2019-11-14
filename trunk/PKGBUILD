@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=tor-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for tor"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('tor-runscripts')
+conflicts=('tor-runscripts')
+depends=('tor' 's6')
+install=tor.install
+source=("tor.run" "tor.type")
+sha256sums=('9a72ce36644b847b6742fefd67601ab5d4f7006dc226ab5f7497453e821235e5'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'tor'
+}
