@@ -1,0 +1,44 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=salt-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for salt"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('salt-runscripts')
+conflicts=('salt-runscripts')
+depends=('salt' 's6')
+install=salt.install
+source=("salt-api.run"
+        "salt-api.type"
+        "salt-master.run"
+        "salt-master.type"
+        "salt-minion.run"
+        "salt-minion.type"
+        "salt-syndic.run"
+        "salt-syndic.type")
+sha256sums=('fa2800af509ffd89c7650e546eb8b81e66057adbb61fb475901f09a4ffb4ca59'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '5893a3e1755b2de8206316db201a5e0a041a8163ffc54e0ab68e2e45c5f9339d'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'ff74d8cdd41989f851f0ce66028d5013ccbc0398204860db3e2e408b3860ff8d'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '2878289c8510bbfdd0d1850d8fb753b32a63a090d4b8146c69b222b21d5a7d19'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'salt-api'
+    _inst_sv 'salt-master'
+    _inst_sv 'salt-minion'
+    _inst_sv 'salt-syndic'
+}

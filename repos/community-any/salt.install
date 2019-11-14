@@ -1,0 +1,14 @@
+pre_remove() {
+    if [ -e "/run/service/salt-api" ]; then
+        s6-rc -d change salt
+    fi
+    if [ -e "/run/service/salt-master" ]; then
+        s6-rc -d change salt
+    fi
+    if [ -e "/run/service/salt-minion" ]; then
+        s6-rc -d change salt
+    fi
+    if [ -e "/run/service/salt-syndic" ]; then
+        s6-rc -d change salt
+    fi
+}
