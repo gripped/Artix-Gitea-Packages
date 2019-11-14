@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/syncthing" ]; then
+        s6-rc -d change syncthing
+    fi
+}
