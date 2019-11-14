@@ -1,0 +1,29 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=thermald-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for thermald"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('thermald-runscripts')
+conflicts=('thermald-runscripts')
+depends=('thermald' 'dbus-s6' 's6')
+install=thermald.install
+source=("thermald.dependencies" "thermald.run" "thermald.type")
+sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            '3635e7df6c7c945dae9fb4dd4866aebcf38f0ba2e55504353f4efdf8a51126a6'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in dependencies run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'thermald'
+}
