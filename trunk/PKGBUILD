@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=squid-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for squid"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('squid-runscripts')
+conflicts=('squid-runscripts')
+depends=('squid' 's6')
+install=squid.install
+source=("squid.run" "squid.type")
+sha256sums=('c7468b6ddb7b76f9634ea05cdc16e88dada67b7c45090af6f92b3f067b684749'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'squid'
+}
