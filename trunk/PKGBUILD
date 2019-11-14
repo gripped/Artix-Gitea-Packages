@@ -1,0 +1,34 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=vsftpd-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for vsftpd"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('vsftpd-runscripts')
+conflicts=('vsftpd-runscripts')
+depends=('vsftpd' 's6')
+install=vsftpd.install
+source=("vsftpd-ipv6.run"
+        "vsftpd-ipv6.type"
+        "vsftpd.run"
+        "vsftpd.type")
+sha256sums=('ef752ef8636e7c1fa3ddd0bb05cb80d30b9f5588e523e3c91231863b53c9b801'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'e9918aff1ca96a37beb594d3bba6438948223e90b039bdc4bae82222a5828d0b'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'vsftpd'
+    _inst_sv 'vsftpd-ipv6'
+}
