@@ -5,7 +5,7 @@ _pkgname=aiohttp
 pkgname=python-aiohttp
 _gitcommit=6a5ab96bd9cb404b4abfd5160fe8f34a29d941e5
 pkgver=3.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc='HTTP client/server for asyncio'
 url='https://aiohttp.readthedocs.io'
 arch=('x86_64')
@@ -50,5 +50,3 @@ package() {
   cd ${pkgname}
   python setup.py install --root="${pkgdir}" -O1 --skip-build
 }
-
-# vim: ts=2 sw=2 et:
