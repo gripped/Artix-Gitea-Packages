@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=toxcore-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for toxcore"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('toxcore-runscripts')
+conflicts=('toxcore-runscripts')
+depends=('toxcore' 's6')
+install=toxcore.install
+source=("toxbootstrapd.run" "toxbootstrapd.type")
+sha256sums=('adf8c9da34e4486588e976430393eb5822223a7d6a4e52a1c15c417f17ac0bc6'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'toxbootstrapd'
+}
