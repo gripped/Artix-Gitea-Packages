@@ -1,13 +1,12 @@
-# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgbase=python-hpack
 pkgname=(python-hpack python2-hpack)
 pkgver=3.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Pure-Python HPACK header compression"
 arch=('any')
-url="http://hyper.rtfd.org/"
+url="https://hyper.rtfd.org/"
 license=('MIT')
 makedepends=('python-setuptools' 'python2-setuptools' 'git')
 checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'python-hypothesis' 'python2-hypothesis')
@@ -28,10 +27,10 @@ build() {
 
 check() {
   cd "$srcdir"/hpack-$pkgver
-  python setup.py pytest --addopts test ||:
+  python setup.py pytest --addopts test
 
   cd "$srcdir"/hpack-$pkgver-py2
-  python2 setup.py pytest --addopts test ||:
+  python2 setup.py pytest --addopts test
 }
 
 package_python-hpack() {
