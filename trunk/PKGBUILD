@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=transmission-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for transmission"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('transmission-runscripts')
+conflicts=('transmission-runscripts')
+depends=('transmission-cli' 's6')
+install=transmission.install
+source=("transmission-daemon.run" "transmission-daemon.type")
+sha256sums=('1134d3ac84bf7583badd3c39cf6075339458262a9b07f86c327bac53e05b87ed'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'transmission-daemon'
+}
