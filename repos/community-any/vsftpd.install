@@ -1,0 +1,8 @@
+pre_remove() {
+    if [ -e "/run/service/vsftpd" ]; then
+        s6-rc -d change vsftpd
+    fi
+    if [ -e "/run/service/vsftpd-ipv6" ]; then
+        s6-rc -d change vsftpd-ipv6
+    fi
+}
