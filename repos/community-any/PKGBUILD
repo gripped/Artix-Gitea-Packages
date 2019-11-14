@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=unbound-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for unbound"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('unbound-runscripts')
+conflicts=('unbound-runscripts')
+depends=('unbound' 's6')
+install=unbound.install
+source=("unbound.run" "unbound.type")
+sha256sums=('3ef2e1b51c43e0823883d293b54ada5431832d22eedf41412b8c080e21fd1929'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'unbound'
+}
