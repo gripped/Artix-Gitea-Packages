@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=stubby-s6
+pkgver=20191114
+pkgrel=1
+pkgdesc="s6 service scripts for stubby"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('stubby-runscripts')
+conflicts=('stubby-runscripts')
+depends=('stubby' 's6')
+install=stubby.install
+source=("stubby.run" "stubby.type")
+sha256sums=('e95b9032d4e029f1266fa3796e08c9b444006b6e617c4c1d511a91e9c5687348'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'stubby'
+}
