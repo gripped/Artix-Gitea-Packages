@@ -1,0 +1,8 @@
+pre_remove() {
+    if [ -e "/run/service/nmbd" ]; then
+        s6-rc -d change nmbd
+    fi
+    if [ -e "/run/service/smbd" ]; then
+        s6-rc -d change smbd
+    fi
+}
