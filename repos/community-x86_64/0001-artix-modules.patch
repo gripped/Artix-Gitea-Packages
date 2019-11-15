@@ -1,19 +1,20 @@
- src/modules/postcfg/main.py                    |  81 ++++++++++++++
+ src/modules/postcfg/main.py                    |  92 ++++++++++++++++
  src/modules/postcfg/module.desc                |   6 ++
+ src/modules/postcfg/postcfg.conf               |   3 +
  src/modules/services-runit/main.py             | 144 +++++++++++++++++++++++++
  src/modules/services-runit/module.desc         |   5 +
  src/modules/services-runit/services-runit.conf |  44 ++++++++
- src/modules/services-s6/main.py                | 101 +++++++++++++++++
+ src/modules/services-s6/main.py                | 100 +++++++++++++++++
  src/modules/services-s6/module.desc            |   5 +
  src/modules/services-s6/services-s6.conf       |  30 ++++++
- 8 files changed, 416 insertions(+)
+ 9 files changed, 429 insertions(+)
 
 diff --git a/src/modules/postcfg/main.py b/src/modules/postcfg/main.py
 new file mode 100644
-index 000000000..9bd49a5f5
+index 000000000..e8a9a95b7
 --- /dev/null
 +++ b/src/modules/postcfg/main.py
-@@ -0,0 +1,81 @@
+@@ -0,0 +1,92 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -49,7 +50,7 @@ index 000000000..9bd49a5f5
 +
 +    def __init__(self):
 +        self.root = libcalamares.globalstorage.value("rootMountPoint")
-+        self.initsys = libcalamares.globalstorage.value("initType")
++        self.keyrings = libcalamares.job.configuration.get('keyrings', [])
 +
 +    def terminate(self, proc):
 +        """Send SIGKILL to the given proccess
@@ -74,6 +75,17 @@ index 000000000..9bd49a5f5
 +            for dm in libcalamares.globalstorage.value("displayManagers"):
 +                exp = 's|^.*DISPLAYMANAGER=.*|DISPLAYMANAGER="{}"|'.format(dm)
 +                self.sedFile(exp, "/etc/conf.d/xdm")
++
++        action = "--init"
++        ec = target_env_call(["pacman-key", action])
++        if ec != 0:
++            warning("pacman-key returned error code {!s}".format(ec))
++
++        action = "--populate"
++        ec = target_env_call(["pacman-key", action, *self.keyrings])
++        if ec != 0:
++            warning("pacman-key returned error code {!s}".format(ec))
++
 +
 +
 +    def run(self):
@@ -107,6 +119,15 @@ index 000000000..77e9ca4dd
 +name:       "postcfg"
 +interface:  "python"
 +script:     "main.py"   #assumed relative to the current directory
+diff --git a/src/modules/postcfg/postcfg.conf b/src/modules/postcfg/postcfg.conf
+new file mode 100644
+index 000000000..069955e52
+--- /dev/null
++++ b/src/modules/postcfg/postcfg.conf
+@@ -0,0 +1,3 @@
++---
++# list pacman keyrings to populate
++keyrings: []
 diff --git a/src/modules/services-runit/main.py b/src/modules/services-runit/main.py
 new file mode 100644
 index 000000000..8b616191d
@@ -320,10 +341,10 @@ index 000000000..04476b107
 +disable: []
 diff --git a/src/modules/services-s6/main.py b/src/modules/services-s6/main.py
 new file mode 100644
-index 000000000..288cdbe93
+index 000000000..c3aec3aaf
 --- /dev/null
 +++ b/src/modules/services-s6/main.py
-@@ -0,0 +1,101 @@
+@@ -0,0 +1,100 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
@@ -382,9 +403,8 @@ index 000000000..288cdbe93
 +
 +    def makeBundle(self):
 +        """
-+        Call s6-rc-bundle for each service listed
-+        in services for the given @p state. s6-rc-bundle
-+        is called with @p state as the command as well.
++        Call s6-rc-bundle with each service listed
++        in services as arg.
 +        """
 +
 +        deleteBundles = self.services.get("delete", [])
