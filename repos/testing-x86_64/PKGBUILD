@@ -3,7 +3,7 @@ pkgname=dracut
 pkgver=049
 # tag commit of the pkgver
 _tag_blob='1a3447fa9bbf0954d62025957362536a482f1f79'
-pkgrel=4.1
+pkgrel=4.2
 pkgdesc="An event driven initramfs infrastructure"
 arch=('x86_64')
 url="https://dracut.wiki.kernel.org"
@@ -14,12 +14,13 @@ makedepends=('asciidoc' 'bash-completion' 'git')
 provides=('initramfs')
 backup=('etc/dracut.conf')
 source=("git+https://github.com/dracutdevs/dracut#tag=${_tag_blob}?signed"
-#         'artix.conf'
+        'artix.conf'
         dracut-{install,remove}.script
         90-dracut-install.hook
         60-dracut-remove.hook)
 sha256sums=('SKIP'
-            '565d2d8c04edcc0a612d6f964f09f54ab7a36e6e0332627e90e91a5614b63e17'
+            'd7de4154590e2869eb864befd9562046399ab8a1ff8a685d3965b8e16ba07827'
+            'a959dae13268a6d3251be69bffa877e6a91b8c053d2fd83c417e5e9dab75d88b'
             'f5042092e8a9a2826d8435774a9156688fa7b21004616253aa7395ee0101c4c9'
             '69c6ed79167a91b28794bf0929557c4fa00d186339c9fcfde33c50c9e65eadf9'
             '59123dcf5a7c3a09bcf33ed5a7140d87a81befcaa2a88228302543495fb90e67')
@@ -70,7 +71,7 @@ package() {
 
   DESTDIR="$pkgdir" make install
 
-#   install -Dm 755 $srcdir/artix.conf $pkgdir/etc/dracut.conf.d/50-artix.conf
+  install -Dm 755 $srcdir/artix.conf $pkgdir/etc/dracut.conf.d/01-artix.conf
 
   # pacman hooks
   install -Dm755 "${srcdir}"/dracut-install.script "${pkgdir}"/usr/share/libalpm/scripts/dracut-install

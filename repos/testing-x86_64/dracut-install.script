@@ -3,6 +3,24 @@
 args=()
 all=0
 
+build_presets() {
+    local name="$1" ver="$2"
+    local initramfs=/boot/initramfs-"${name}"-dracut.img
+    local fallback=/boot/initramfs-"${name}"-dracut-fallback.img
+    for preset in 'default' 'fallback';do
+        case $preset in
+            'default') args=(-fMqH "${initramfs}" "${ver}") ;;
+            *) args=(-fMq "${fallback}" "${ver}") ;;
+        esac
+        if (( ${#args[@]} )); then
+            echo "==> Building image: $preset"
+            echo "  -> ${args[@]}"
+            echo "==> Starting build: ${ver}"
+            dracut "${args[@]}"
+        fi
+    done
+}
+
 while read -r line; do
     if [[ $line != */vmlinuz ]]; then
         # triggers when it's a change to usr/lib/dracut/modules.d/*
@@ -15,9 +33,6 @@ while read -r line; do
         continue
     fi
 
-    initramfs="/boot/initramfs-${pkgbase}-dracut.img"
-    fallback="/boot/initramfs-${pkgbase}-dracut-fallback.img"
-
     kver=${line%*/vmlinuz}
     kver=${kver##*/}
 
@@ -26,7 +41,7 @@ while read -r line; do
 done
 
 if (( all )); then
-    # change to use all kernels
+    # build for all kernels
     kernels=$(compgen -G /usr/lib/modules/"*")
     for kernel in ${kernels[@]}; do
         if ! read -r pkgbase > /dev/null 2>&1 < "${kernel}/pkgbase"; then
@@ -34,36 +49,9 @@ if (( all )); then
             continue
         fi
 
-        initramfs="/boot/initramfs-${pkgbase}-dracut.img"
-        fallback="/boot/initramfs-${pkgbase}-dracut-fallback.img"
-
-        allver=${kernel##*/}
-        for preset in 'default' 'fallback';do
-            case $preset in
-                'fallback') args=(-fMq "${fallback}" "${allver}") ;;
-                *) args=(-fMqH "${initramfs}" "${allver}") ;;
-            esac
-            if (( ${#args[@]} )); then
-                echo "==> Building image: $preset"
-                echo "  -> ${args[@]}"
-                echo "==> Starting build: ${allver}"
-                dracut "${args[@]}"
-            fi
-        done
+        build_presets "${pkgbase}" "${kernel##*/}"
     done
 else
-    # compound args for each kernel
-    for preset in 'default' 'fallback';do
-        case $preset in
-            'fallback') args=(-fMq "${fallback}" "${kver}") ;;
-            *) args=(-fMqH "${initramfs}" "${kver}") ;;
-        esac
-        echo "${name}"
-        if (( ${#args[@]} )); then
-            echo "==> Building image: $preset"
-            echo "  -> ${args[@]}"
-            echo "==> Starting build: ${kver}"
-            dracut "${args[@]}"
-        fi
-    done
+    # build for tigger
+    build_presets "${pkgbase}" "${kver}"
 fi
