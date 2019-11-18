@@ -2,11 +2,11 @@
 
 pkgname=pambase
 pkgver=20190105.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Base PAM configuration for services"
 arch=('any')
 depends=('opensysusers')
-url="http://www.artixlinux.org"
+url="https://www.artixlinux.org"
 license=('GPL')
 source=('system-auth'
         'system-local-login'
