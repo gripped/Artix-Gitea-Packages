@@ -2,10 +2,10 @@
 
 pkgname=libpipeline
 pkgver=1.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc="a C library for manipulating pipelines of subprocesses in a flexible and convenient way"
 arch=('x86_64')
-url="https://libpipeline.nongnu.org/"
+url="https://nongnu.org/libpipeline/"
 license=('GPL')
 depends=('glibc')
 source=(https://download.savannah.gnu.org/releases/libpipeline/$pkgname-$pkgver.tar.gz{,.asc})
