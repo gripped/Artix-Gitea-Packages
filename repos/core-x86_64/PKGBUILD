@@ -1,16 +1,14 @@
-# $Id$
 # Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=procps-ng
 pkgver=3.3.15
-pkgrel=1
+pkgrel=2
 pkgdesc='Utilities for monitoring your system and its processes'
 url='https://gitlab.com/procps-ng/procps'
 license=(GPL LGPL)
 arch=(x86_64)
-groups=(base)
 depends=(ncurses libelogind)
 makedepends=(elogind)
 conflicts=(procps sysvinit-tools)
