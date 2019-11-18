@@ -1,0 +1,37 @@
+diff --git a/routers/api/v1/org/team.go b/routers/api/v1/org/team.go
+index 59a000b67..acd235ef5 100644
+--- a/routers/api/v1/org/team.go
++++ b/routers/api/v1/org/team.go
+@@ -440,6 +440,32 @@ func AddTeamRepository(ctx *context.APIContext) {
+ 		ctx.Error(500, "AccessLevel", err)
+ 		return
+ 	} else if access < models.AccessModeAdmin {
++		// check if the user is member of the organization and allow him to add the repo
++		isMember, err := models.IsOrganizationMember(ctx.Org.Team.OrgID, ctx.User.ID)
++		if err != nil {
++			ctx.Error(500, "IsOrganizationMember", err)
++			return
++		}
++
++		if isMember {
++			teams, err := models.GetUserOrgTeams(ctx.Org.Team.OrgID, ctx.User.ID)
++			if err != nil {
++				ctx.Error(500, "GetUserOrgTeams", err)
++				return
++			}
++
++			for _, team := range teams {
++				if team.HasWriteAccess() {
++					if err := ctx.Org.Team.AddRepository(repo); err != nil {
++						ctx.Error(500, "AddRepository", err)
++						return
++					}
++					ctx.Status(204)
++					return
++				}
++			}
++		}
++
+ 		ctx.Error(403, "", "Must have admin-level access to the repository")
+ 		return
+ 	}
