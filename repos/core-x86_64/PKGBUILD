@@ -7,7 +7,7 @@
 #pkgname=('cyrus-sasl' 'cyrus-sasl-gssapi' 'cyrus-sasl-ldap' 'cyrus-sasl-sql')
 pkgname=libsasl
 pkgver=2.1.27
-pkgrel=1
+pkgrel=2
 pkgdesc="Cyrus Simple Authentication Service Layer (SASL) library"
 arch=('x86_64')
 url="https://www.cyrusimap.org/sasl/"
@@ -122,7 +122,6 @@ package_libsasl() {
 package_cyrus-sasl() {
   depends=("libsasl=${pkgver}" 'krb5' 'pam')
   pkgdesc="Cyrus saslauthd SASL authentication daemon"
-  backup=('etc/conf.d/saslauthd')
 
   cd cyrus-sasl-$pkgver/saslauthd
   make DESTDIR="${pkgdir}" install
