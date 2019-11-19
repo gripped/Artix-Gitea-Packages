@@ -1,10 +1,10 @@
-# Maintainer: David Runge <dave@sleepmap.de>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Techlive Zheng <techlivezheng at gmail dot com>
 # Contributor: peace4all <markspost at rocketmail dot com>
 
 pkgname=dnscrypt-proxy
-pkgver=2.0.31
+pkgver=2.0.33
 pkgrel=1
 pkgdesc="DNS proxy, supporting encrypted DNS protocols such as DNSCrypt v2 and DNS-over-HTTPS"
 arch=('x86_64')
@@ -12,6 +12,7 @@ url="https://dnscrypt.info"
 license=('custom:ISC')
 depends=('glibc')
 makedepends=('git' 'go-pie')
+optdepends=('python-urllib3: for generate-domains-blacklist')
 install="${pkgname}.install"
 backup=("etc/${pkgname}/${pkgname}.toml"
         "etc/${pkgname}/blacklist.txt"
@@ -24,7 +25,7 @@ source=("${pkgname}-${pkgver}.tar.gz::https://github.com/jedisct1/${pkgname}/arc
         'sysusers.d'
         'tmpfiles.d'
         'configuration.diff')
-sha512sums=('500c800213b94bf8ecbea7493716de5fe41afd584c70844519f1f50827b94a28ec982f2c2b85f7a281dca58273ba968113beed6a965c62bb3dc47ab83d7a1629'
+sha512sums=('5c6eb655aa70457889253cbf630e7e37011a461a7f181f0a667694d53146ad9dee88bbbf80c7db3187bba0054af2a63b7b5be1a229800b2566a9758e9d047429'
             '888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8'
             '005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151'
             '6144f3d33f3d85c9a4e5573f88e92f1b9d7118fd654072eeac6c3f76085086d4b2464e1d3579d8501153f453bc5125859d148fc3b3486d26368d1f51911aeb33')
@@ -58,12 +59,16 @@ package() {
     "${pkgdir}/etc/${pkgname}/ip-blacklist.txt"
   install -vDm 644 "${pkgname}/example-whitelist.txt" \
     "${pkgdir}/etc/${pkgname}/whitelist.txt"
+  # utils
+  install -vDm 644 utils/generate-domains-blacklists/*.{conf,txt} \
+    -t "${pkgdir}/usr/share/${pkgname}/utils/generate-domains-blacklists"
+  install -vDm 755 utils/generate-domains-blacklists/generate-domains-blacklist.py \
+    "${pkgdir}/usr/bin/generate-domains-blacklist"
   # license
   install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
   # docs
   install -vDm 644 {ChangeLog,README.md} \
     -t "${pkgdir}/usr/share/doc/${pkgname}"
-
   # sysusers.d
   install -vDm 644 "$srcdir/sysusers.d" "$pkgdir/usr/lib/sysusers.d/${pkgname}.conf"
   # tmpfiles.d
