@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgbase=linux
-pkgver=5.3.9.1
+pkgver=5.3.11.1
 pkgrel=1
 pkgdesc='Linux'
 _srctag=v${pkgver%.*}-arch${pkgver##*.}
@@ -25,7 +25,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'b399a10587fa6257842f86cdf4286aba4939d472fe4a8be79d55315c747e18ae')
+            '3ce5e58cf8f5d9c37fe3ef9a68c42078876743cbc63b84dcc612d8817c783aed')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
