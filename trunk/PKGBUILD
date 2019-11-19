@@ -3,18 +3,21 @@
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.16.3
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('5a6cc7e330b1057ba4257ce3ff0a589c587c03feedcf0606ddbeeefc0574242e')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
+        "dev-label.patch::https://gitea.artixlinux.org/artix/artools/commit/7be420a24f021c418bfefc92c3ceeee5a362e77a.patch")
+sha256sums=('5a6cc7e330b1057ba4257ce3ff0a589c587c03feedcf0606ddbeeefc0574242e'
+            '7417ce422a84c4f705d8663c2eb331f5d0f883f7e02507cb971ab40b505ed462')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
+    patch -Np1 -i ../dev-label.patch
 }
 
 build() {
@@ -27,7 +30,7 @@ package_artools-base() {
     depends=('openssh' 'rsync' 'haveged' 'os-prober' 'gnupg' 'pacman')
     optdepends=('artools-pkg: Artix package tools'
                 'artools-iso: Artix iso tools')
-    backup=('etc/artools/artools.conf')
+    backup=('etc/artools/artools-base.conf')
     conflicts=('arch-install-scripts')
     install=artools.install
 
@@ -39,6 +42,7 @@ package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
     depends=('artools-pkglist>=0.5' 'namcap' 'git-subrepo' 'jshon')
     conflicts=('devtools')
+    backup=('etc/artools/artools-pkg.conf')
 
     cd ${pkgbase}
     make PREFIX=/usr DESTDIR=${pkgdir} install_pkg
@@ -49,6 +53,7 @@ package_artools-iso() {
     depends=('dosfstools' 'libisoburn' 'squashfs-tools' 'mkinitcpio'
             'grub' 'artools-base' 'iso-profiles')
     conflicts=('archiso')
+    backup=('etc/artools/artools-iso.conf')
 
     cd ${pkgbase}
     make PREFIX=/usr DESTDIR=${pkgdir} install_iso
