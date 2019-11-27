@@ -3,7 +3,7 @@ pkgname=dracut
 pkgver=049
 # tag commit of the pkgver
 _tag_blob='1a3447fa9bbf0954d62025957362536a482f1f79'
-pkgrel=4
+pkgrel=4.3
 pkgdesc="An event driven initramfs infrastructure"
 arch=('x86_64')
 url="https://dracut.wiki.kernel.org"
@@ -13,8 +13,19 @@ depends=('bash' 'coreutils' 'cpio' 'filesystem' 'findutils' 'grep' 'gzip'
 makedepends=('asciidoc' 'bash-completion' 'git')
 provides=('initramfs')
 backup=('etc/dracut.conf')
-source=("git+https://github.com/dracutdevs/dracut#tag=${_tag_blob}?signed")
-sha512sums=('SKIP')
+source=("git+https://github.com/dracutdevs/dracut#tag=${_tag_blob}?signed"
+        'artix.conf'
+        dracut-{install,remove}.script
+        90-dracut-install.hook
+        60-dracut-remove.hook
+        union-join.patch::https://github.com/artix-linux/dracut/commit/ebefda36228bc30f733511e27376dc6b47fbaf44.patch)
+sha256sums=('SKIP'
+            'd7de4154590e2869eb864befd9562046399ab8a1ff8a685d3965b8e16ba07827'
+            'a959dae13268a6d3251be69bffa877e6a91b8c053d2fd83c417e5e9dab75d88b'
+            'f5042092e8a9a2826d8435774a9156688fa7b21004616253aa7395ee0101c4c9'
+            '69c6ed79167a91b28794bf0929557c4fa00d186339c9fcfde33c50c9e65eadf9'
+            '59123dcf5a7c3a09bcf33ed5a7140d87a81befcaa2a88228302543495fb90e67'
+            'a8fa327b9499170fff3ec304658d968d58f830aa541a0a79ad657a555d1c8c77')
 validpgpkeys=(
   '4C96E1500F9421CCF82D5DCA034EB370014DF270' # Harald Hoyer <harald@redhat.com>
 )
@@ -41,6 +52,8 @@ prepare() {
     git log --oneline -1 "${_c}"
     git revert -n "${_c}"
   done
+
+  patch -Np1 -i ../union-join.patch
 }
 
 build() {
@@ -61,4 +74,11 @@ package() {
   cd "$srcdir/${pkgname}"
 
   DESTDIR="$pkgdir" make install
+
+  install -Dm 755 $srcdir/artix.conf $pkgdir/etc/dracut.conf.d/01-artix.conf
+
+  # pacman hooks
+  install -Dm755 "${srcdir}"/dracut-install.script "${pkgdir}"/usr/share/libalpm/scripts/dracut-install
+  install -Dm755 "${srcdir}"/dracut-remove.script "${pkgdir}"/usr/share/libalpm/scripts/dracut-remove
+  install -Dm644 -t "${pkgdir}"/usr/share/libalpm/hooks "${srcdir}"/*.hook
 }
