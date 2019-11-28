@@ -1,5 +1,4 @@
 # Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
-# Maintainer: Mantas M. <grawity@gmail.com>
 
 pkgname=sssd
 pkgver=2.2.2
