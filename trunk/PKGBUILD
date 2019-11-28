@@ -1,8 +1,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.2.16
-pkgrel=2
+pkgver=3.2.17
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -14,7 +14,7 @@ makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
         0001-artix-modules.patch)
-sha256sums=('82d9886c5a26390f8f4313508ef504dfbf7a59a71af2a412fecc4e6407e0f579'
+sha256sums=('511b3df78b4eb7a9d9e616ed26100dc7d82da750814603b7f68c5a822f7a1b41'
             '0e0b376e3f32c60eb962e79076d93786f0bd5ea0e8bdea66e69a633e9fe89a08')
 
 prepare() {
