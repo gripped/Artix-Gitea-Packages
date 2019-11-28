@@ -15,7 +15,6 @@ backup=('etc/grafana.ini')
 source=("git+https://github.com/grafana/grafana.git#tag=v$pkgver"
         'grafana.sysusers'
         'grafana.tmpfiles'
-        'golang-xerrors.patch'
        )
 install=$pkgname.install
 sha512sums=('SKIP'
