@@ -3,7 +3,7 @@
 pkgname=python-aiobotocore
 _pkgname=aiobotocore
 pkgver=0.11.0
-pkgrel=2
+pkgrel=3
 pkgdesc='asyncio support for botocore library using aiohttp'
 arch=(any)
 url='https://github.com/aio-libs/aiobotocore'
@@ -39,7 +39,7 @@ build() {
 check() {
   cd $_pkgname-$pkgver
 
-  PYTHONPATH=build/lib pytest -v -m moto tests ||:
+  PYTHONPATH=build/lib pytest -v -m moto tests
 }
 
 package() {
