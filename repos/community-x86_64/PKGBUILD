@@ -15,8 +15,8 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 
-pkgver=5.3
-pkgrel=2
+pkgver=5.4
+pkgrel=1
 license=('GPL2')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -37,9 +37,10 @@ makedepends+=('ncurses')
 makedepends+=('python-docutils')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}"
-#        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
+        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
         'cpupower.default')
 md5sums=('SKIP'
+         '0f859f2223def2b6e5dbf627515f708f'
          '56883c159381ba89e50ab8ea65efec77')
 
 prepare() {
@@ -76,7 +77,6 @@ build() {
     PYTHON_CONFIG=python-config \
     PERF_VERSION=$pkgver-$pkgrel \
     DESTDIR="$pkgdir" \
-    all man
   popd
 
   msg2 'cpupower'
@@ -115,7 +115,7 @@ build() {
 
   msg2 'hv'
   pushd linux/tools/hv
-  CFLAGS+=' -DKVP_SCRIPTS_PATH=/usr/lib/hyperv/kvp_scripts/' make
+  CFLAGS+=' -DKVP_SCRIPTS_PATH=\"/usr/lib/hyperv/kvp_scripts/\"' make
   popd
 
   msg2 'bpf'
@@ -171,7 +171,7 @@ package_perf() {
     PYTHON_CONFIG=python-config \
     PERF_VERSION=$pkgver-$pkgrel \
     DESTDIR="$pkgdir" \
-    install install-man
+    install
   cd "$pkgdir"
   # add linker search path
   mkdir "$pkgdir/etc/ld.so.conf.d"
@@ -270,7 +270,7 @@ package_bpf() {
   mv "$pkgdir"/usr/sbin/bpftool "$pkgdir"/usr/bin/bpftool
   rmdir "$pkgdir"/usr/sbin
   # install man pages
-  make -C bpftool doc-install prefix=/usr DESTDIR="$pkgdir"
+  make -C bpftool doc-install prefix=/usr/share DESTDIR="$pkgdir"
 }
 
 # vim:set ts=2 sw=2 et:
