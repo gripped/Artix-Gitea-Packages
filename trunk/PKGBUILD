@@ -97,7 +97,8 @@ build() {
   export LDFLAGS=-lX11
   export RADVD=/usr/bin/radvd
   mkdir build && cd build
-  ZFS=/usr/bin/zfs ZPOOL=/usr/bin/zpool ../configure \    --prefix=/usr \
+  ZFS=/usr/bin/zfs ZPOOL=/usr/bin/zpool ../configure \
+    --prefix=/usr \
     --libexec=/usr/lib/"${pkgname}" \
     --sbindir=/usr/bin \
     --disable-static \
