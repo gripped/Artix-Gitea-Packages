@@ -4,7 +4,7 @@ pkgbase=linux-firmware
 pkgname=(linux-firmware amd-ucode)
 _commit=e8a0f4c9314754d8b2cbe9840357d88a861c438a  # master
 pkgver=20191118.e8a0f4c
-pkgrel=1
+pkgrel=2
 pkgdesc="Firmware files for Linux"
 makedepends=('git')
 arch=('any')
@@ -12,9 +12,9 @@ url="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=su
 license=('GPL2' 'GPL3' 'custom')
 options=(!strip)
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git#commit=${_commit}?signed"
-        0001-iwlwifi-Add-Core47-firmwares.patch.xz)
+        0001-iwlwifi-Add-Core47-firmwares.patch)
 sha256sums=('SKIP'
-            '5ccce33fa502c5c6851efdd9359744e63a90db1bb09b83b6299f9988f695d3fe')
+            '7aa779f1a03984263ebe271b27357f0d6f079194f12f91ddba07a5376e258204')
 validpgpkeys=('4CDE8575E547BF835FE15807A31B6BD72486CFD6') # Josh Boyer <jwboyer@fedoraproject.org>
 
 prepare() {
@@ -36,7 +36,7 @@ build() {
   cat ${pkgbase}/amd-ucode/microcode_amd*.bin > kernel/x86/microcode/AuthenticAMD.bin
 
   # Reproducibility: set the timestamp on the bin file
-  if [[ -n $SOURCE_DATE_EPOCH ]]; then 
+  if [[ -n $SOURCE_DATE_EPOCH ]]; then
     touch -d @$SOURCE_DATE_EPOCH kernel/x86/microcode/AuthenticAMD.bin
   fi
 
