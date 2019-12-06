@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/nftables" ]; then
+        s6-rc -d change nftables
+    fi
+}

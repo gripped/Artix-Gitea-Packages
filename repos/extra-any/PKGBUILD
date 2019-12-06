@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=nftables-s6
+pkgver=20191206
+pkgrel=1
+pkgdesc="s6 service scripts for nftables"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('nftables-runscripts')
+conflicts=('nftables-runscripts')
+depends=('nftables' 's6')
+install=nftables.install
+source=("nftables.type" "nftables.up")
+sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '49130d6c65d2ac4ece173504796163dd670b91a0acfea821a0b75e26d7fb086b')
+
+_inst_sv(){
+    for file in type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'nftables'
+}
