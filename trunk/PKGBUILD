@@ -1,10 +1,10 @@
 # Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: nous <nous@artixlinux.org>
+# Maintainer: nous <nous@artixlinux.org>
 
 _repo=documentation
 
 pkgname=artix-docs
-pkgver=20190406
+pkgver=20191208
 pkgrel=1
 arch=('any')
 url="https://gitea.artixlinux.org/artix/documentation"
