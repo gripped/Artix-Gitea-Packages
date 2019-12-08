@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=iptables-s6
-pkgver=20191104
-pkgrel=2
+pkgver=20191208
+pkgrel=1
 pkgdesc="s6 service scripts for iptables"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -14,7 +14,7 @@ source=("ip6tables.type" "ip6tables.up" "iptables.type" "iptables.up")
 sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '47c1c45da94e8bcd4c0dac05c960c31a77840dfd0ade71751b0cb0f16bd985f0'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '7aa914e1f276815902a31b17cd2e9eaa0fbe06259ae081e959c58e9732c97ec4')
+            '525aedbe68b0f2993510aed02df79e1ab9fe33609639087de0bb40c453bc0977')
 
 _inst_sv(){
     for file in type up; do
