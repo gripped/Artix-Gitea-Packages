@@ -5,7 +5,7 @@
 
 pkgname=dnsmasq
 pkgver=2.80
-pkgrel=4
+pkgrel=5
 pkgdesc="Lightweight, easy to configure DNS forwarder and DHCP server"
 url="http://www.thekelleys.org.uk/dnsmasq/doc.html"
 arch=('x86_64')
@@ -15,10 +15,14 @@ backup=('etc/dnsmasq.conf')
 validpgpkeys=('D6EACBD6EE46B834248D111215CDDA6AE19135A2') # Simon Kelley <simon@thekelleys.org.uk>
 source=("http://www.thekelleys.org.uk/$pkgname/$pkgname-$pkgver.tar.xz"{,.asc}
         'nettle-3.5.patch'
+        'glib.patch'
+        'dnsmasq.conf'
         'dnsmasq-sysusers.conf')
 sha256sums=('cdaba2785e92665cf090646cba6f94812760b9d7d8c8d0cfb07ac819377a63bb'
             'SKIP'
             'd9e54439eb20ccd99c263d9c80013002fecb60b387fb8fefd787c7958fdb96c6'
+            '37d602572cfd8108873abb8fe03efa2b7e6c6379674b84523b1f5cd3abecada4'
+            '7e5eed5e367165eeb2cc3fa3a964f807dc50d70e992b7084c95bd1d325fe6b1c'
             '7f6ff6a709038ae580758f4b6a754451d7f7ce22957b88a36b97f7b643d3c2ab')
 
 _build_copts="-DHAVE_DNSSEC -DHAVE_DBUS -DHAVE_LIBIDN2 -DHAVE_CONNTRACK"
@@ -28,6 +32,9 @@ prepare() {
 
   # fix build with nettle 3.5 (patch from PLD Linux)
   patch -Np1 -i ../nettle-3.5.patch
+
+  # fix build with glib patch (commit 3052ce20)
+  patch -Np1 -i ../glib.patch
 }
 
 build() {
@@ -53,7 +60,7 @@ package() {
     DESTDIR="$pkgdir" \
     install install-i18n
 
-  install -Dm644 "dbus/dnsmasq.conf" "$pkgdir"/usr/share/dbus-1/system.d/dnsmasq.conf
+  install -Dm644 "$srcdir/dnsmasq.conf" "$pkgdir"/usr/share/dbus-1/system.d/dnsmasq.conf
   install -Dm644 "dnsmasq.conf.example" "$pkgdir"/etc/dnsmasq.conf
   install -Dm644 "$srcdir/dnsmasq-sysusers.conf" "$pkgdir"/usr/lib/sysusers.d/dnsmasq.conf
 
