@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+### This script is called once at boot time by rc.init, and is
+### also called by the runleveld service every time the user
+### requests a machine state change via telinit.
+### Ideally, it should just be a call to the service manager.
+
+test "$#" -gt 0 || { echo 'runlevel: fatal: too few arguments' 1>&2 ; exit 100 ; }
+
+
+### If your services are managed by sysv-rc:
+# exec /etc/init.d/rc "$1"
+
+### If your services are managed by OpenRC:
+# exec /sbin/openrc "$1"
+
+### If your services are managed by s6-rc:
+
+# start essential oneshot boot scripts first
+s6-rc -v2 -u change "boot"
+
+# if it exists, start the bundle named default
+exists=$(s6-rc-db type "$1" 2> /dev/null)
+if [ "$exists" = "bundle" ]; then
+    exec s6-rc -v2 -u change "$1"
+fi

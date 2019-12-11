@@ -1,0 +1,18 @@
+#!/bin/sh
+if [ -d /etc/s6 ]; then
+    if [ -d /etc/s6/current ]; then
+        rm -rf /etc/s6/current
+    fi
+    if [ -d /run ]; then
+        s6-linux-init-maker -1 -n -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
+    else
+        s6-linux-init-maker -1 -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
+	fi
+    mv /etc/s6/current/bin/init /etc/s6/current/bin/s6-init
+    rm /etc/s6/current/scripts/*
+    cp -r /etc/s6/current/bin /usr
+    ln -s /etc/s6/skel/rc.init /etc/s6/current/scripts/rc.init
+    ln -s /etc/s6/skel/rc.shutdown /etc/s6/current/scripts/rc.shutdown
+    ln -s /etc/s6/skel/rc.shutdown.final /etc/s6/current/scripts/rc.shutdown.final
+    ln -s /etc/s6/skel/runlevel /etc/s6/current/scripts/runlevel
+fi

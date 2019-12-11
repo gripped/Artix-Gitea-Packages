@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = s6-linux-init
+
+[Action]
+Description = Creating s6-init binaries...
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/s6-init-maker-hook
