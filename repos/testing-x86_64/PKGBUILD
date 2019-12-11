@@ -1,0 +1,104 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+
+pkgname=s6-rc
+pkgver=0.5.1.1
+pkgrel=4
+pkgdesc='A complete service manager for s6 systems.'
+arch=('x86_64')
+url='https://skarnet.org/software/s6-rc/'
+license=('ISC')
+provides=('init-rc')
+conflicts=('init-rc')
+depends=('s6-linux-init' 'opentmpfiles' 'pam')
+makedepends=('s6' 'git')
+_commit=a444769842e01ee12e670ed0f69f4dca60a8cb44
+source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
+        "https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+        "s6-rc-db-update-hook"
+        "s6-rc-db-update.hook")
+sha256sums=('SKIP'
+            '257e2c428336c2b57cd17b65382bc55592759acc65e053e23ad646444f28af52'
+            'b49c71d7f86fe0006690ec4aafdbf67d792f620ca628b712882e3587f6a1d5be'
+            '998f4f0b7ce2a087e73ff20bc12ead854146558bdebce0b68ae71f0b6afc5a51')
+
+build() {
+    cd ${pkgname}-${pkgver}
+    ./configure --prefix=/usr \
+                --datadir=/etc \
+                --libexecdir=/usr/lib
+    make
+}
+
+_inst_sv(){
+    if test -z "$2"; then
+        out=$1
+    else
+        out=$2
+    fi
+    cd $1
+    for file in contents dependencies down run shell_down shell_up type up; do
+        if test -f "$srcdir/s6-scripts/$1/$file"; then
+            install -Dm755 "$srcdir/s6-scripts/$1/$file" "$pkgdir/etc/s6/sv/$out/$file"
+        fi
+    done
+    for file in shell_down shell_up; do
+        if test -f "$pkgdir/etc/s6/sv/$out/$file"; then
+            chmod +x "$pkgdir/etc/s6/sv/$out/$file"
+        fi
+	done
+    cd ..
+}
+
+package() {
+    cd ${pkgname}-${pkgver}
+    mkdir -p "${pkgdir}"/etc/s6/rc
+    mkdir -p "${pkgdir}"/etc/s6/sv
+    make DESTDIR="${pkgdir}" install
+    install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+    # pacman hooks
+    mkdir -p "${pkgdir}"/usr/share/libalpm/scripts
+    mkdir -p "${pkgdir}"/usr/share/libalpm/hooks
+    install -Dm755 -t "${pkgdir}"/usr/share/libalpm/scripts ${srcdir}/*-hook
+    install -Dm755 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
+
+    # install startup oneshots
+    cd ..
+    cd s6-scripts
+    _inst_sv 'agetty' 'agetty-tty2'
+    _inst_sv 'agetty' 'agetty-tty3'
+    _inst_sv 'agetty' 'agetty-tty4'
+    _inst_sv 'agetty' 'agetty-tty5'
+    _inst_sv 'agetty' 'agetty-tty6'
+    _inst_sv 'binfmt'
+    _inst_sv 'boot'
+    _inst_sv 'cleanup'
+    _inst_sv 'console-setup'
+    _inst_sv 'dmesg'
+    _inst_sv 'getty'
+    _inst_sv 'hostname'
+    _inst_sv 'hwclock'
+    _inst_sv 'kmod-static-nodes'
+    _inst_sv 'misc'
+    _inst_sv 'mount'
+    _inst_sv 'mount-cgroups'
+    _inst_sv 'mount-devfs'
+    _inst_sv 'mount-filesystems'
+    _inst_sv 'mount-sysfs'
+    _inst_sv 'net-lo'
+    _inst_sv 'pre-mount'
+    _inst_sv 'random-seed'
+    _inst_sv 'setup'
+    _inst_sv 'swap'
+    _inst_sv 'sysctl'
+    _inst_sv 'sysuser'
+    _inst_sv 'tmpfiles-dev'
+    _inst_sv 'tmpfiles-setup'
+    _inst_sv 'udev'
+    _inst_sv 'udev-daemon'
+    _inst_sv 'udev-settle'
+    _inst_sv 'udev-trigger'
+
+    # licenses 
+    install -Dm755 -t "${pkgdir}"/usr/share/licenses/obarun LICENSE
+}
