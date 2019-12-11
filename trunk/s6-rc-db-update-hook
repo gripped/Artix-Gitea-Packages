@@ -1,8 +1,8 @@
 #!/bin/sh
-old_bundles=$(s6-rc-db list bundles)
+old_bundles=$(s6-rc-db -c /etc/s6/rc/compiled list bundles)
 len=0
 for i in $old_bundles; do
-    contents[$len]=$(s6-rc-db contents $i)
+    contents[$len]=$(s6-rc-db -c /etc/s6/rc/compiled contents $i)
     len=$(($len + 1))
 done
 
@@ -17,8 +17,8 @@ else
     ln -sf /etc/s6/rc/compiled-$timestamp /etc/s6/rc/compiled
 fi
 
-new_bundles=$(s6-rc-db list bundles)
-all_services=$(s6-rc-db list all)
+new_bundles=$(s6-rc-db -c /etc/s6/rc/compiled list bundles)
+all_services=$(s6-rc-db -c /etc/s6/rc/compiled list all)
 
 in_newbundle() {
     for j in $new_bundles; do
@@ -51,7 +51,7 @@ for l in $old_bundles; do
                 new_contents=$new_contents" "$m
             fi
         done
-        s6-rc-bundle add $l $new_contents
+        s6-rc-bundle -c /etc/s6/rc/compiled add $l $new_contents
     fi
     len=$(($len + 1))
 done
