@@ -3,7 +3,7 @@
 
 pkgname=gssproxy
 pkgver=0.8.2
-pkgrel=2
+pkgrel=3
 pkgdesc="GSSAPI Proxy"
 arch=(x86_64)
 url="https://pagure.io/gssproxy"
@@ -18,23 +18,20 @@ sha512sums=('68ce39b36ee83d77da19e9a9fb322ba901366999828a2b427bc2275c4187b4d2291
 
 build() {
   cd gssproxy-$pkgver
+
   # make it find bundled verto from krb5 without its own pkg-config file
   export VERTO_CFLAGS="-I/usr/include"
   export VERTO_LIBS="-L/usr/lib -lverto"
+
   ./configure --prefix=/usr \
     --sysconfdir=/etc  \
     --with-pubconf-path=/etc/gssproxy \
     --sbindir=/usr/bin \
     --localstatedir=/var \
     --without-selinux \
-    --with-os=gentoo \
     --with-initscript=none \
     --with-gpp-default-behavior=REMOTE_FIRST
 
-#LOCAL_FIRST|LOCAL_ONLY|REMOTE_FIRST|REMOTE_ONLY
-#                          Which default behavior the gssproxy interposer
-#                          plugin should use [LOCAL_FIRST]
-#--help
   make
 }
 
