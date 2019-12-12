@@ -2,7 +2,7 @@
 
 pkgname=s6-rc
 pkgver=0.5.1.1
-pkgrel=3
+pkgrel=4
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
@@ -18,7 +18,7 @@ source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
         "s6-rc-db-update.hook")
 sha256sums=('SKIP'
             '257e2c428336c2b57cd17b65382bc55592759acc65e053e23ad646444f28af52'
-            '2832e142c87c4babd5b16241d95a4641ca01b9b7b52c452652099b78ccdd0a98'
+            'b49c71d7f86fe0006690ec4aafdbf67d792f620ca628b712882e3587f6a1d5be'
             '998f4f0b7ce2a087e73ff20bc12ead854146558bdebce0b68ae71f0b6afc5a51')
 
 build() {
