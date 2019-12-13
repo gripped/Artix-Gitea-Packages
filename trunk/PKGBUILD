@@ -2,23 +2,24 @@
 
 pkgname=s6-rc
 pkgver=0.5.1.1
-pkgrel=4
+pkgrel=5
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
 license=('ISC')
 provides=('init-rc')
 conflicts=('init-rc')
-depends=('s6-linux-init' 'opentmpfiles' 'pam')
-makedepends=('s6' 'git')
-_commit=a444769842e01ee12e670ed0f69f4dca60a8cb44
+depends=('s6' 's6-linux-init' 'opentmpfiles' 'pam')
+replaces=('eudev-s6')
+makedepends=('git')
+_commit=9d7ffafa05a5f57dca98d67e39e60defa1f78431
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
         "https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
         "s6-rc-db-update.hook")
 sha256sums=('SKIP'
             '257e2c428336c2b57cd17b65382bc55592759acc65e053e23ad646444f28af52'
-            'b49c71d7f86fe0006690ec4aafdbf67d792f620ca628b712882e3587f6a1d5be'
+            'dc9ac8f40a406ff0a762ec028d3a1303e165bda0d0a44115c5589cb1daa6c1c1'
             '998f4f0b7ce2a087e73ff20bc12ead854146558bdebce0b68ae71f0b6afc5a51')
 
 build() {
@@ -53,8 +54,16 @@ package() {
     cd ${pkgname}-${pkgver}
     mkdir -p "${pkgdir}"/etc/s6/rc
     mkdir -p "${pkgdir}"/etc/s6/sv
+
+	# various installs
     make DESTDIR="${pkgdir}" install
     install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm755 "${srcdir}"/s6-scripts/s6.conf "${pkgdir}"/etc/s6/s6.conf
+	install -Dm755 "${srcdir}"/s6-scripts/modules-load "${pkgdir}"/usr/bin/modules-load 
+	install -d "${pkgdir}"/usr/share/man/man8
+	install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
+	install -d "${pkgdir}"/usr/share/licenses/obarun
+    install -Dm644 "${srcdir}"/s6-scripts/LICENSE "${pkgdir}"/usr/share/licenses/obarun
 
     # pacman hooks
     mkdir -p "${pkgdir}"/usr/share/libalpm/scripts
@@ -63,8 +72,7 @@ package() {
     install -Dm755 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
 
     # install startup oneshots
-    cd ..
-    cd s6-scripts
+    cd "${srcdir}"/s6-scripts
     _inst_sv 'agetty' 'agetty-tty2'
     _inst_sv 'agetty' 'agetty-tty3'
     _inst_sv 'agetty' 'agetty-tty4'
@@ -80,6 +88,7 @@ package() {
     _inst_sv 'hwclock'
     _inst_sv 'kmod-static-nodes'
     _inst_sv 'misc'
+    _inst_sv 'modules'
     _inst_sv 'mount'
     _inst_sv 'mount-cgroups'
     _inst_sv 'mount-devfs'
@@ -95,10 +104,7 @@ package() {
     _inst_sv 'tmpfiles-dev'
     _inst_sv 'tmpfiles-setup'
     _inst_sv 'udev'
-    _inst_sv 'udev-daemon'
     _inst_sv 'udev-settle'
     _inst_sv 'udev-trigger'
-
-    # licenses 
-    install -Dm755 -t "${pkgdir}"/usr/share/licenses/obarun LICENSE
+    _inst_sv 'udevd'
 }

@@ -1,10 +1,12 @@
 #!/bin/sh
-old_bundles=$(s6-rc-db -c /etc/s6/rc/compiled list bundles)
-len=0
-for i in $old_bundles; do
-    contents[$len]=$(s6-rc-db -c /etc/s6/rc/compiled contents $i)
-    len=$(($len + 1))
-done
+if [ -e "/etc/s6/rc/compiled" ]; then
+    old_bundles=$(s6-rc-db -c /etc/s6/rc/compiled list bundles)
+    len=0
+    for i in $old_bundles; do
+        contents[$len]=$(s6-rc-db -c /etc/s6/rc/compiled contents $i)
+        len=$(($len + 1))
+    done
+fi
 
 timestamp=$(date +%s)
 s6-rc-compile /etc/s6/rc/compiled-$timestamp /etc/s6/sv
@@ -38,21 +40,23 @@ service_exists() {
     return 1
 }
 
-len=0
-for l in $old_bundles; do
-    in_newbundle $l
-    ret=$?
-    if test $ret -eq 1; then
-        old_contents=${contents[$len]}
-        for m in $old_contents; do
-            service_exists $m
-            ret2=$?
-            if test $ret2 -eq 0; then
-                new_contents=$new_contents" "$m
-            fi
-        done
-        s6-rc-bundle -c /etc/s6/rc/compiled add $l $new_contents
-    fi
-    len=$(($len + 1))
-done
+if test -n "$old_bundles"; then
+    len=0
+    for l in $old_bundles; do
+        in_newbundle $l
+        ret=$?
+        if test $ret -eq 1; then
+            old_contents=${contents[$len]}
+            for m in $old_contents; do
+                service_exists $m
+                ret2=$?
+                if test $ret2 -eq 0; then
+                    new_contents=$new_contents" "$m
+                fi
+            done
+            s6-rc-bundle -c /etc/s6/rc/compiled add $l $new_contents
+        fi
+        len=$(($len + 1))
+    done
+fi
 echo "Switched to a new database. Feel free to remove any old unwanted/unneeded database directories in /etc/s6/rc."
