@@ -37,8 +37,7 @@ build() {
                 --sysconfdir=/etc \
                 --localstatedir=/var \
                 --libexecdir="/usr/lib/${pkgname}" \
-                --with-dbus-sys="/usr/share/dbus-1/system.d" \
-                --enable-systemd \
+                --disable-systemd \
                 --enable-polkit
 
     #https://bugzilla.gnome.org/show_bug.cgi?id=656231
