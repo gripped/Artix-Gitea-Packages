@@ -1,0 +1,37 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=audit-s6
+pkgver=20191214
+pkgrel=1
+pkgdesc="s6 service scripts for audit"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-audit')
+conflicts=('init-audit')
+depends=('audit' 's6')
+install=audit.install
+source=("auditctl.conf"
+        "auditctl.down"
+        "auditctl.type"
+        "auditctl.up"
+        "auditd.run"
+        "auditd.type")
+sha256sums=('58f5ccacf1ceee80bfa3c2286ea7d986318d83b0e095b79c6eab0925a4a45572'
+            '84e7251a84f6767b65e4e6797402bd431c46a006bb4de7075e26ce29ad6bf76f'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '92eac0b5539f53ae6fe5f908b8bb0c6563674ac74cfcb21b1182a11beb5217ff'
+            '62daabecfacf0c394d2ff3d97e1dbc5ec92747191b2c18fb4c9f8005ced070f1'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf down run type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'auditctl'
+    _inst_sv 'auditd'
+}
