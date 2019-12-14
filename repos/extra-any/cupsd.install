@@ -1,5 +1,5 @@
 pre_remove() {
-if [ -e "/run/service/cupsd" ]; then
-    s6-rc -d change cupsd
-fi
+	if [ -e "/run/service/cupsd" ]; then
+		s6-rc -d change cupsd
+	fi
 }
