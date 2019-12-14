@@ -1,4 +1,3 @@
 #!/usr/bin/execlineb -P
-
-fdmove -c 2 1
-exec ntpd -g -u ntp:ntp -n >/dev/null
+redirfd -w 1 /dev/null
+exec ntpd -g -u ntp:ntp -n

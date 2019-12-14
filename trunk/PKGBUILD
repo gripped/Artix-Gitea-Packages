@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=ntp-s6
-pkgver=20191029
+pkgver=20191214
 pkgrel=1
 pkgdesc="s6 service scripts for ntp"
 arch=('any')
@@ -11,7 +11,7 @@ conflicts=('ntp-runscripts')
 depends=('ntp' 's6')
 install=ntpd.install
 source=("ntpd.run" "ntpd.type")
-sha256sums=('16025e285dce5686fcdd1a7bf3d3448ba06ae990ea025120d2eea51cf1a42354'
+sha256sums=('e7e2491c91b483889b58901764b127aa686658c6b442ae83159887122e8c1adc'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
