@@ -7,12 +7,12 @@ pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
 license=('ISC')
-provides=('init-rc')
+provides=('init-rc' 'init-udev')
 conflicts=('init-rc')
 depends=('s6' 's6-linux-init' 'opentmpfiles' 'pam')
 replaces=('eudev-s6')
 makedepends=('git')
-_commit=9d7ffafa05a5f57dca98d67e39e60defa1f78431
+_commit=ff65f93c2a5e013d1492a2a2b809cea1f40e2e05
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
         "https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
@@ -104,7 +104,6 @@ package() {
     _inst_sv 'tmpfiles-dev'
     _inst_sv 'tmpfiles-setup'
     _inst_sv 'udev'
-    _inst_sv 'udev-settle'
-    _inst_sv 'udev-trigger'
+    _inst_sv 'udevadm'
     _inst_sv 'udevd'
 }
