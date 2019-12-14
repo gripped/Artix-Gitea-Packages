@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=redis-s6
-pkgver=20191107
+pkgver=20191214
 pkgrel=1
 pkgdesc="s6 service scripts for redis"
 arch=('any')
@@ -12,7 +11,7 @@ conflicts=('redis-runscripts')
 depends=('redis' 's6')
 install=redis.install
 source=("redis.run" "redis.type")
-sha256sums=('44270d7b9c8c7c4cdfe4977d88da9173aef8d82332503ca4920730e1be7e6425'
+sha256sums=('9ffae555cd4758132def1e062028ff1abb6fdbad2f9cc66458527bbd51403701'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
