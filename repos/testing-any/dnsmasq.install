@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/dnsmasq" ]; then
-        s6-rc -d change dnsmasq
-    fi
-}
