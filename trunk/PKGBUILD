@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cups-s6
-pkgver=20191027
+pkgver=20191213
 pkgrel=1
 pkgdesc="s6 service scripts for cups"
 arch=('any')
@@ -8,14 +8,15 @@ url="https://github.com/artix-linux"
 groups=('s6-world')
 provides=('cups-runscripts')
 conflicts=('cups-runscripts')
-depends=('cups' 's6')
+depends=('cups' 'dbus-s6' 's6')
 install=cupsd.install
-source=("cupsd.run" "cupsd.type")
-sha256sums=('57e561ec6b4c313adc50198a96cd8bc93a8263a1707d476a4602baa5e1efa6cb'
+source=("cupsd.dependencies" "cupsd.run" "cupsd.type")
+sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            '57e561ec6b4c313adc50198a96cd8bc93a8263a1707d476a4602baa5e1efa6cb'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
