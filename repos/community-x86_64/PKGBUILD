@@ -3,14 +3,14 @@
 # Contributor: Jonathan Wiersma <archaur at jonw dot org>
 
 pkgname=libvirt
-pkgver=5.9.0
+pkgver=5.10.0
 pkgrel=1
 pkgdesc="API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)"
 arch=('x86_64')
 url="https://libvirt.org/"
 license=('LGPL')
 makedepends=('lvm2' 'linux-api-headers' 'dnsmasq' 'lxc' 'libiscsi' 'open-iscsi'
-             'perl-xml-xpath' 'libxslt' 'qemu' 'parted' 'python')
+             'perl-xml-xpath' 'libxslt' 'qemu' 'parted' 'python' 'rpcsvc-proto')
 depends=('e2fsprogs' 'gnutls' 'iptables' 'libxml2' 'parted' 'polkit'
          'yajl' 'libpciaccess' 'eudev' 'dbus' 'libxau' 'libxdmcp' 'libpcap'
          'libcap-ng' 'curl' 'libsasl' 'libgcrypt' 'libgpg-error' 'openssl'
@@ -61,9 +61,6 @@ options=('emptydirs')
 validpgpkeys=('C74415BA7C9C7F78F02E1DC34606B8A5DE95BC1F')
 source=("https://libvirt.org/sources/${pkgname}-${pkgver}.tar.xz"{,.asc}
         'libvirt.sysusers.d')
-sha512sums=('3c7760053c5aabf8b3662f48f21a25fd1005ba8871bb51f78ff2b0ce4053c7bebc728298f3e3d662695a1408fbd554d281257bfe6cd637eca9771375847cb939'
-            'SKIP'
-            '7d1d535aaf739a6753f6819c49272c8d9b5f488e0a8553797499334a76b8631474e222b6048f2125b858e5ecc21e602face45dd02121f833d605b9ae58322982')
 changelog=Changelog
 
 prepare() {
@@ -99,7 +96,8 @@ build() {
   export PYTHON=$(command -v python)
   export LDFLAGS=-lX11
   export RADVD=/usr/bin/radvd
-  [ -f Makefile ] || ZFS=/usr/bin/zfs ZPOOL=/usr/bin/zpool ./configure \
+  mkdir build && cd build
+  ZFS=/usr/bin/zfs ZPOOL=/usr/bin/zpool ../configure \
     --prefix=/usr \
     --libexec=/usr/lib/"${pkgname}" \
     --sbindir=/usr/bin \
@@ -123,7 +121,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
 
   make DESTDIR="${pkgdir}" install
 
@@ -146,3 +144,6 @@ package() {
   # Fix firewalld rules Fix #62219
   sed -i "s|<rule priority='32767'><reject/></rule>|#<rule priority='32767'><reject/></rule>|" "${pkgdir}/usr/lib/firewalld/zones/libvirt.xml"
 }
+sha256sums=('9aaa889dccdc16e39eaa53dae36375413619561896920419fb1351bee8a2fc87'
+            'SKIP'
+            '6dc7907d6d4d883ac5ea15c195af673c97cff13f4c0493d23196e94bc87f04db')
