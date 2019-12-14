@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20191029
-pkgrel=2
+pkgver=20191214
+pkgrel=1
 pkgdesc="s6 service scripts for openssh"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -11,7 +11,7 @@ conflicts=('init-openssh')
 depends=('openssh' 's6')
 install=sshd.install
 source=("sshd.run" "sshd.type")
-sha256sums=('693311530238a57b5b4ac4e6de56b6f9cf5bd255ffd8adc61dd5db9a354e3cbf'
+sha256sums=('58a8ca0d50ae49f00eb74a1de2530130a5767efb47ff50351d403238e2f0069a'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){

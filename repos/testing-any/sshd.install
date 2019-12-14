@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/sshd" ]; then
-        s6-rc -d change sshd
-    fi
-}
