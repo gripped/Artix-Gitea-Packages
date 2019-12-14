@@ -4,6 +4,7 @@ foreground { modprobe sunrpc }
 foreground { modprobe nfs }
 foreground { modprobe nfsd }
 foreground { mountpoint -q /var/lib/nfs/rpc_pipefs }
-foreground { sh -c "exportfs -ra > /dev/null" }
+redirfd -w 1 /dev/null
+foreground { exportfs -ra }
 foreground { rpc.nfsd -- = 4 }
 exec rpc.mountd --foreground
