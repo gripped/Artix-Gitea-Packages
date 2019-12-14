@@ -1,6 +1,0 @@
-#!/usr/bin/execlineb -P
-
-fdmove -c 2 1
-foreground { dbus-uuidgen --ensure=/etc/machine-id }
-foreground { install -m755 -g 81 -o 81 -d /run/dbus }
-exec dbus-daemon --system --nofork --nopidfile --print-pid=3
