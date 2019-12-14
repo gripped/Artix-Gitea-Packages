@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nfs-utils-s6
-pkgver=20191029
+pkgver=20191214
 pkgrel=1
 pkgdesc="s6 service scripts for nfs-utils"
 arch=('any')
