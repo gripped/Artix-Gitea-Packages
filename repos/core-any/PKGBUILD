@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=audit-s6
-pkgver=20191030
+pkgver=20191214
 pkgrel=1
 pkgdesc="s6 service scripts for audit"
 arch=('any')
@@ -17,10 +17,10 @@ source=("auditctl.conf"
         "auditd.run"
         "auditd.type")
 sha256sums=('58f5ccacf1ceee80bfa3c2286ea7d986318d83b0e095b79c6eab0925a4a45572'
-            '5c4297d6e8c3dc951f15940dd91a4c1741056d131c2bcb279835e5fa30d4a27d'
+            '84e7251a84f6767b65e4e6797402bd431c46a006bb4de7075e26ce29ad6bf76f'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            'd82379d1df3672b711ab806cee2c6e4870dc8fad970c57519ba4098f69c42735'
-            '525589db901b191edcaa0562185862b1fc9cacd786099f9430961fcc5d4369ee'
+            '92eac0b5539f53ae6fe5f908b8bb0c6563674ac74cfcb21b1182a11beb5217ff'
+            '62daabecfacf0c394d2ff3d97e1dbc5ec92747191b2c18fb4c9f8005ced070f1'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
