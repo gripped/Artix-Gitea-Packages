@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
 pkgver=20191213
-pkgrel=0
+pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
 url="https://github.com/artix-linux"
