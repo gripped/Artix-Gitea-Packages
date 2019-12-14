@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20191029
-pkgrel=2
+pkgver=20191214
+pkgrel=1
 pkgdesc="s6 service scripts for openssh"
 arch=('any')
 url="https://github.com/artix-linux"
