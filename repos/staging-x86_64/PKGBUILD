@@ -1,5 +1,4 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=s6-rc
 pkgver=0.5.1.1
 pkgrel=5
@@ -12,7 +11,7 @@ conflicts=('init-rc')
 depends=('s6' 's6-linux-init' 'opentmpfiles' 'pam')
 replaces=('eudev-s6')
 makedepends=('git')
-_commit=ff65f93c2a5e013d1492a2a2b809cea1f40e2e05
+_commit=9f58a6014c719b2551f0303578255eecd53d5fe3
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
         "https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
