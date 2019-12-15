@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=tlp-s6
-pkgver=20191114
+pkgver=20191215
 pkgrel=1
 pkgdesc="s6 service scripts for tlp"
 arch=('any')
@@ -10,12 +9,13 @@ groups=('s6-galaxy')
 provides=('tlp-runscripts')
 conflicts=('tlp-runscripts')
 depends=('tlp' 's6')
-source=("tlp.type" "tlp.up")
-sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            'cb88aee109c95f4dd010916357f4b8f03b0be6231dd7b85ab14c8ec8c5963458')
+source=("tlp.down" "tlp.type" "tlp.up")
+sha256sums=('f87c38f58f4dbbfc1029d6d5d84c61f49286a6b83a064153e60bca7072e9eaef'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '90c97ede242c5fad46d05cc00bfcd0a983fee10bb98784285aac906f432f391f')
 
 _inst_sv(){
-    for file in type up; do
+    for file in down type up; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
