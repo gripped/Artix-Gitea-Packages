@@ -17,12 +17,12 @@ depends=('glibc')
 
 backup=('etc/rhashrc')
 
-source=(rhash-$pkgver.tar.gz::https://github.com/rhash/RHash/archive/v$pkgver.tar.gz
-        rhash-$pkgver.tar.gz.asc::https://github.com/rhash/RHash/releases/download/v$pkgver/v$pkgver.tar.gz.asc)
+source=(rhash-$pkgver.tar.gz::https://github.com/rhash/RHash/archive/v$pkgver.tar.gz)
+#         rhash-$pkgver.tar.gz.asc::https://github.com/rhash/RHash/releases/download/v$pkgver/v$pkgver.tar.gz.asc)
 
-sha256sums=('42b1006f998adb189b1f316bf1a60e3171da047a85c4aaded2d0d26c1476c9f6'
-            'SKIP')
-validpgpkeys=('2875F6B1C2D27A4F0C8AF60B2A714497E37363AE')
+sha256sums=('42b1006f998adb189b1f316bf1a60e3171da047a85c4aaded2d0d26c1476c9f6')
+#             'SKIP')
+# validpgpkeys=('2875F6B1C2D27A4F0C8AF60B2A714497E37363AE')
 
 prepare() {
   cd RHash-$pkgver
