@@ -1,0 +1,26 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Jan Koppe <post@jankoppe.de>
+
+pkgname=yarn
+pkgver=1.21.1
+pkgrel=1
+pkgdesc='Fast, reliable, and secure dependency management'
+arch=(any)
+url='http://yarnpkg.com'
+license=('BSD')
+depends=('nodejs')
+source=("https://github.com/yarnpkg/yarn/releases/download/v$pkgver/yarn-v$pkgver.tar.gz")
+sha512sums=('75082626febbe97fcd41cce96e20ed73686c13fa69a460c9033c25462003313bc5cd86ddc4f8f658ee0f70dcab892b767388ec08ca6df14151287528ceddb519')
+
+package() {
+  cd yarn-v${pkgver}
+  install -dm755  "$pkgdir"/usr/lib/node_modules/yarn
+  cp -R * "$pkgdir"/usr/lib/node_modules/yarn
+
+  install -dm755 "$pkgdir"/usr/bin
+  ln -s /usr/lib/node_modules/yarn/bin/yarn.js "$pkgdir"/usr/bin/yarn
+  ln -s /usr/lib/node_modules/yarn/bin/yarn.js "$pkgdir"/usr/bin/yarnpkg
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
