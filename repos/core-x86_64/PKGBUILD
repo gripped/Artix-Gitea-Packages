@@ -2,14 +2,14 @@
 
 pkgname=s6
 pkgver=2.9.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="skarnet.org's small & secure supervision software suite. Comes with an ultra-fast init replacement, process management tools, an asynchronous locking library, and more."
 arch=('x86_64')
 url='https://skarnet.org/software/s6/'
 license=('ISC')
 provides=('svc-manager')
 conflicts=('svc-manager')
-depends=('skalibs' 'execline' 's6-rc' 'eudev-s6')
+depends=('skalibs' 'execline' 's6-rc')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('e0cdbaf26e3ba1c41ecc0a8d1f45fb78194f96109b55cabeb849528b7e966c57')
 
