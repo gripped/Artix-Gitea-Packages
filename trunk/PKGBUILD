@@ -2,7 +2,7 @@
 # Contributor: Alasdair Haswell <ali at arhaswell dot co dot uk>
 
 pkgname=rng-tools
-pkgver=6.8
+pkgver=6.9
 pkgrel=1
 pkgdesc="Random number generator related utilities"
 arch=('i686' 'x86_64')
@@ -33,4 +33,4 @@ package() {
 	make DESTDIR="$pkgdir" install
 }
 
-sha256sums=('93e548d4aaf2a1897d4b677f41d8473db1c7f57648adeca18cafa1907e410bb3')
+sha256sums=('a57a7f51a2e3c0faa8afb979709a4c0cbea36d0b52fd835b104f8fb4fd1fa610')
