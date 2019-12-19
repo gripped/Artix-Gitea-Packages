@@ -1,0 +1,43 @@
+# Maintainer: nous <nous@artixlinux.org>
+
+_pkgbase=desktop-presets
+
+pkgname=artix-desktop-presets
+pkgver=0.8+21+gb1b7917
+pkgrel=1
+pkgdesc='Artix common desktop presets'
+arch=('any')
+url="https://gitea.artixlinux.org/artix/desktop-presets"
+license=('GPL')
+depends=('artix-dark-theme')
+makedepends=('git')
+_commit=b1b7917786ca423706410e2c16c79cfa5d7a77d0
+source=("git+$url.git#commit=${_commit}")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd ${_pkgbase}
+    git describe --tags | sed 's/-/+/g'
+}
+
+_inst_dir(){
+    cd ${_pkgbase} #-${pkgver}
+    local profile="$1"
+
+    install -d ${pkgdir}/etc
+    cp -r $profile/skel ${pkgdir}/etc
+
+    if [[ -d $profile/schemas ]];then
+        install -d ${pkgdir}/usr/share/glib-2.0/schemas
+        cp -r $profile/schemas ${pkgdir}/usr/share/glib-2.0/schemas
+    fi
+
+    if [[ -d $profile/scripts ]];then
+        install -d ${pkgdir}/usr/bin
+        cp -r $profile/scripts ${pkgdir}/usr/bin
+    fi
+}
+
+package() {
+    _inst_dir 'desktop'
+}
