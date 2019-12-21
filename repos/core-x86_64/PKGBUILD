@@ -4,7 +4,7 @@
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
 pkgver=2.02.186
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL2' 'LGPL2.1')
@@ -23,6 +23,9 @@ sha256sums=('SKIP'
 _backports=(
   # pvscan: fix activation of incomplete VGs
   '6b12930860a993624d6325aec2e9c561f4412aa9'
+
+  # udev: remove unsupported OPTIONS+="event_timeout" rule
+  '125f27ac37bc9b93cc96f64052b9681b3d479ee1'
 )
 
 prepare() {
@@ -84,7 +87,7 @@ package_device-mapper() {
 
   make DESTDIR="${pkgdir}" install_device-mapper
   # extra udev rule for device-mapper in initramfs
-  install -D -m644 "${srcdir}/11-dm-initramfs.rules" "${pkgdir}/usr/lib/initcpio/udev/11-dm-initramfs.rules"
+  install -D -m0644 "${srcdir}/11-dm-initramfs.rules" "${pkgdir}/usr/lib/initcpio/udev/11-dm-initramfs.rules"
 }
 
 package_lvm2() {
@@ -103,8 +106,8 @@ package_lvm2() {
   # /etc directories
   install -d "${pkgdir}"/etc/lvm/{archive,backup}
   # mkinitcpio hook
-  install -D -m644 "${srcdir}/lvm2_hook" "${pkgdir}/usr/lib/initcpio/hooks/lvm2"
-  install -D -m644 "${srcdir}/lvm2_install" "${pkgdir}/usr/lib/initcpio/install/lvm2"
+  install -D -m0644 "${srcdir}/lvm2_hook" "${pkgdir}/usr/lib/initcpio/hooks/lvm2"
+  install -D -m0644 "${srcdir}/lvm2_install" "${pkgdir}/usr/lib/initcpio/install/lvm2"
   # extra udev rule for lvmetad in non-systemd initramfs
-  install -D -m644 "${srcdir}/lvm2-initramfs/udev/69-dm-lvm-metad.rules" "${pkgdir}/usr/lib/initcpio/udev/69-dm-lvm-metad.rules"
+  install -D -m0644 "${srcdir}/lvm2-initramfs/udev/69-dm-lvm-metad.rules" "${pkgdir}/usr/lib/initcpio/udev/69-dm-lvm-metad.rules"
 }
