@@ -16,7 +16,7 @@ conflicts=('artix-lxqt-presets')
 #replaces=('artix-lxqt-presets')
 optdepends=('qt5ct')
 makedepends=('git')
-_commit=cdd192999230bd407da0b164079e4f9eec4dfbad
+_commit=3cee57539f63c2770845387aa7069b34214f9468
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
