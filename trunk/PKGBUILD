@@ -116,9 +116,6 @@ END
   _pick libnm "$pkgdir"/usr/share/vala/vapi/libnm.*
 
   _pick nm-cloud-setup "$pkgdir"/usr/lib/**/*nm-cloud-setup*
-
-  # Restore empty dir
-  mkdir "$pkgdir/usr/lib/NetworkManager/dispatcher.d/no-wait.d"
 }
 
 package_libnm() {
