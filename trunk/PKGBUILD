@@ -16,7 +16,7 @@ optdepends=('qt5-styleplugins' 'qt5ct')
 conflicts=('artix-lxde-presets' 'artix-mate-presets')
 #replaces=('artix-lxde-presets' 'artix-mate-presets')
 makedepends=('git')
-_commit=1871c6093ec22bbe3d6b62e6decd2f9b5fe12b08
+_commit=20aac6948d099ebf0c4a8705ca20fef5502edbd0
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
