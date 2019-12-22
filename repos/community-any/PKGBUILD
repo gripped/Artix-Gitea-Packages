@@ -4,7 +4,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-gtk-presets
-pkgver=0.8+31+g3cee575
+pkgver=0.8+33+g1871c60
 pkgrel=1
 pkgdesc='Artix GTK presets'
 arch=('any')
@@ -16,7 +16,7 @@ optdepends=('qt5-styleplugins' 'qt5ct')
 conflicts=('artix-lxde-presets' 'artix-mate-presets')
 #replaces=('artix-lxde-presets' 'artix-mate-presets')
 makedepends=('git')
-_commit=3cee57539f63c2770845387aa7069b34214f9468
+_commit=1871c6093ec22bbe3d6b62e6decd2f9b5fe12b08
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
