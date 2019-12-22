@@ -1,0 +1,49 @@
+# Maintainer: nous <nous@artixlinux.org>
+# Maintainer: artoo <artoo@artixlinux.org>
+
+_pkgbase=desktop-presets
+
+pkgname=artix-qt-presets
+pkgver=0.8+28+gcdd1929
+pkgrel=1
+pkgdesc='Artix Qt presets'
+arch=('any')
+url="https://gitea.artixlinux.org/artix/desktop-presets"
+license=('GPL')
+provides=('desktop-presets')
+depends=('artix-desktop-presets' 'qt5-styleplugins')
+conflicts=('artix-lxqt-presets')
+#replaces=('artix-lxqt-presets')
+optdepends=('qt5ct')
+makedepends=('git')
+_commit=cdd192999230bd407da0b164079e4f9eec4dfbad
+source=("git+$url.git#commit=${_commit}")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd ${_pkgbase}
+    git describe --tags | sed 's/-/+/g'
+}
+
+_inst_dir(){
+    cd ${_pkgbase} #-${pkgver}
+    git checkout refactor
+    local profile="$1"
+
+    install -d ${pkgdir}/etc
+    cp -vr $profile/skel ${pkgdir}/etc
+
+    if [[ -d $profile/schemas ]];then
+        install -d ${pkgdir}/usr/share/glib-2.0/schemas
+        cp -v $profile/schemas/* ${pkgdir}/usr/share/glib-2.0/schemas
+    fi
+
+    if [[ -d $profile/scripts ]];then
+        install -d ${pkgdir}/usr/bin
+        cp -v $profile/scripts/* ${pkgdir}/usr/bin
+    fi
+}
+
+package() {
+    _inst_dir 'qt'
+}
