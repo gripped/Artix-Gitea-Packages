@@ -4,7 +4,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-qt-presets
-pkgver=0.8+28+gcdd1929
+pkgver=0.8+32+g3df49d0
 pkgrel=1
 pkgdesc='Artix Qt presets'
 arch=('any')
@@ -16,7 +16,7 @@ conflicts=('artix-lxqt-presets')
 #replaces=('artix-lxqt-presets')
 optdepends=('qt5ct')
 makedepends=('git')
-_commit=3cee57539f63c2770845387aa7069b34214f9468
+_commit=3df49d0d436f2045c36ea1acc76d4198219fba92
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
