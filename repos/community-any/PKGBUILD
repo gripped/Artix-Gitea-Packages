@@ -4,7 +4,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-gtk-presets
-pkgver=0.8+28+gcdd1929
+pkgver=0.8+31+g3cee575
 pkgrel=1
 pkgdesc='Artix GTK presets'
 arch=('any')
