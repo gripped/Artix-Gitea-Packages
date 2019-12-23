@@ -3,11 +3,12 @@
 pkgbase=artix-branding
 pkgname=(artix-branding-base)
 pkgver=$(date +"%Y%m%d")
-pkgrel=2
+pkgrel=3
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
 url="https://gitea.artixlinux.org/nous/$pkgbase"
+depends=('neofetch')
 makedepends=('git')
 license=('GPL3')
 source=("git+${url}.git")
