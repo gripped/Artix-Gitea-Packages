@@ -3,11 +3,12 @@
 pkgbase=artix-branding
 pkgname=(artix-branding-base)
 pkgver=$(date +"%Y%m%d")
-pkgrel=1
-pkgdesc="Artix base branding"
+pkgrel=2
+pkgdesc="Base branding for Artix ISOs"
 arch=('any')
-groups=($pkgbase 'artix-branding')
+groups=($pkgbase)
 url="https://gitea.artixlinux.org/nous/$pkgbase"
+makedepends=('git')
 license=('GPL3')
 source=("git+${url}.git")
 sha256sums=('SKIP')
@@ -18,7 +19,6 @@ prepare() {
 }
  
 package_artix-branding-base() {
-pkgdesc="Base branding for Artix ISOs"
     cd "$pkgbase/$pkgname"
     install -dm755 $pkgdir/etc
     cp -r etc/* $pkgdir/etc
