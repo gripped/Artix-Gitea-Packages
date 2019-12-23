@@ -1,0 +1,25 @@
+# Maintainer: nous <nous@artixlinux.org>
+
+pkgbase=artix-branding
+pkgname=(artix-branding-base)
+pkgver=$(date +"%Y%m%d")
+pkgrel=1
+pkgdesc="Artix base branding"
+arch=('any')
+groups=($pkgbase 'artix-branding')
+url="https://gitea.artixlinux.org/nous/$pkgbase"
+license=('GPL3')
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+prepare() {
+    cd $pkgbase
+    git checkout refactor
+}
+ 
+package_artix-branding-base() {
+pkgdesc="Base branding for Artix ISOs"
+    cd "$pkgbase/$pkgname"
+    install -dm755 $pkgdir/etc
+    cp -r etc/* $pkgdir/etc
+}
