@@ -11,7 +11,7 @@ url="https://gitea.artixlinux.org/artix/desktop-presets"
 license=('GPL')
 depends=('artix-dark-theme')
 makedepends=('git')
-_commit=3cee57539f63c2770845387aa7069b34214f9468
+_commit=20aac6948d099ebf0c4a8705ca20fef5502edbd0
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
