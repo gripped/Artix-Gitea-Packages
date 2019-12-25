@@ -1,9 +1,10 @@
 # Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: nous <nous@artixlinux.org>
 
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=haveged-openrc
-pkgver=20180221
+pkgver=20191225
 pkgrel=1
 pkgdesc="OpenRC haveged init script"
 arch=('any')
@@ -28,6 +29,7 @@ _inst_initd(){
     sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
         -e 's|/var/run|/run|g' \
         -e 's|/usr/sbin|/usr/bin|g' \
+        -e '/logger/d' \
         -i ${pkgdir}/etc/init.d/$1
 }
 
