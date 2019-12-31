@@ -4,7 +4,7 @@ _pkgbase=desktop-presets
 
 pkgname=artix-desktop-presets
 pkgver=0.8+37+g8880377
-pkgrel=2
+pkgrel=3
 pkgdesc='Artix common desktop presets'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
