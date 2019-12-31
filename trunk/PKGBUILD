@@ -59,7 +59,7 @@ package() {
     install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -Dm755 "${srcdir}"/s6-scripts/s6.conf "${pkgdir}"/etc/s6/s6.conf
     install -Dm755 "${srcdir}"/s6-scripts/rc.local "${pkgdir}"/etc/s6/rc.local
-    ln -s "${pkgdir}"/etc/s6/rc.local "${pkgdir}"/etc/rc.local
+    ln -s /etc/s6/rc.local "${pkgdir}"/etc/rc.local
     install -Dm755 "${srcdir}"/s6-scripts/modules-load "${pkgdir}"/usr/bin/modules-load 
     install -d "${pkgdir}"/usr/share/man/man8
     install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
