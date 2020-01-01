@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-rc
 pkgver=0.5.1.1
-pkgrel=6
+pkgrel=7
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
@@ -11,7 +11,7 @@ conflicts=('init-rc')
 depends=('s6' 's6-linux-init' 'opentmpfiles' 'pam')
 replaces=('eudev-s6')
 makedepends=('git')
-_commit=dc858a0384c33f53fca2997c14a2243da397defa
+_commit=6e5ad49f98bf1d75093770de170206d5ffcd06ff
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit"
         "https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
@@ -59,7 +59,6 @@ package() {
     install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -Dm755 "${srcdir}"/s6-scripts/s6.conf "${pkgdir}"/etc/s6/s6.conf
     install -Dm755 "${srcdir}"/s6-scripts/rc.local "${pkgdir}"/etc/s6/rc.local
-    ln -s /etc/s6/rc.local "${pkgdir}"/etc/rc.local
     install -Dm755 "${srcdir}"/s6-scripts/modules-load "${pkgdir}"/usr/bin/modules-load 
     install -d "${pkgdir}"/usr/share/man/man8
     install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
