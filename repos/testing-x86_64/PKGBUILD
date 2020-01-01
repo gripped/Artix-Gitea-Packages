@@ -10,14 +10,14 @@ _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.1.2
-pkgrel=16
+pkgrel=17
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
 license=('BSD')
 depends=('runit-rc')
 makedepends=('git')
-backup=('etc/rc/rc.local')
+backup=('etc/rc.local' 'etc/rc/rc.local')
 provides=('svc-manager')
 conflicts=('svc-manager')
 source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
