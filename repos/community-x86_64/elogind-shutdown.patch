@@ -1,0 +1,12 @@
+diff -Naur cinnamon-session-4.4.0-orig/cinnamon-session/csm-systemd.c cinnamon-session-4.4.0/cinnamon-session/csm-systemd.c
+--- cinnamon-session-4.4.0-orig/cinnamon-session/csm-systemd.c	2019-11-16 11:13:15.000000000 -0300
++++ cinnamon-session-4.4.0/cinnamon-session/csm-systemd.c	2020-01-02 15:03:49.566648316 -0300
+@@ -739,7 +739,7 @@
+         CsmSystemd *manager;
+ 
+         /* logind is not running ? */
+-        if (access("/run/systemd/system/", F_OK) < 0) // sd_booted ()
++        if (access("/run/systemd/seats/", F_OK) < 0) // sd_booted ()
+                 return NULL;
+ 
+         manager = g_object_new (CSM_TYPE_SYSTEMD, NULL);
