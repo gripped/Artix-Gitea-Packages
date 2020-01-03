@@ -20,6 +20,7 @@ build() {
   python setup.py build
 }
 
+
 package() {
   cd "$srcdir"/joblib-${pkgver}
   python setup.py install --skip-build --root="$pkgdir" --optimize=1
