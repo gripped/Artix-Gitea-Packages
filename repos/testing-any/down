@@ -1,0 +1,5 @@
+#!/usr/bin/execlineb -P
+
+fdmove -c 2 1
+if { echo -- Stopping encrypted devices }
+foreground { sh /etc/s6/sv/cryptsetup/shell_down }
