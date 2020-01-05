@@ -16,7 +16,10 @@ test "$#" -gt 0 || { echo 'runlevel: fatal: too few arguments' 1>&2 ; exit 100 ;
 
 ### If your services are managed by s6-rc:
 
-# start essential oneshot boot scripts first
+# start any logging daemons first
+s6-rc -v2 -u change "log"
+
+# start essential oneshot boot scripts/daemons
 s6-rc -v2 -u change "boot"
 
 # if it exists, start the bundle named default
