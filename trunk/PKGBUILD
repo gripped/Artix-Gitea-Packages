@@ -1,0 +1,45 @@
+# Maintainer: nous <nous@artixlinux.org>
+
+_url="https://git.alpinelinux.org/aports/plain/main/mariadb"
+
+pkgname=mariadb-openrc
+pkgver=20200105
+pkgrel=1
+pkgdesc="OpenRC mariadb init script"
+arch=('any')
+url="https://gitea.artixlinux.org/packagesM/mariadb-openrc"
+license=('GPL2')
+groups=('openrc-world')
+depends=('mariadb' 'openrc')
+conflicts=('systemd-sysvcompat')
+source=('mariadb.initd' 'mariadb-supervise.initd')
+sha256sums=('72305264d70d6562c94b50350bc891629919c13f4e4bf97d7c5796ea7e24cb00'
+            'c648a3b89f0bbb77064012e3b14cb734bec2f1fe0bda3ecc1f1482351206fcab')
+
+pkgver() {
+    date +%Y%m%d
+}
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+        -e 's|/sbin/mysqld|/bin/mysqld|g' \
+        -i ${pkgdir}/etc/init.d/$1
+
+#    install -Dm755 ${srcdir}/$1.initd.supervise ${pkgdir}/etc/init.d/$1-supervise
+#    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+#        -e 's|/sbin|/usr/bin|g' \
+#        -i ${pkgdir}/etc/init.d/$1-supervise
+}
+
+#_inst_confd(){
+#    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+#}
+
+package() {
+#    _inst_confd 'mysql'
+    _inst_initd 'mariadb'
+    _inst_initd 'mariadb-supervise'
+}
