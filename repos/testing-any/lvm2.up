@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+
+fdmove -c 2 1
+if { echo -- Starting LVM2 groups }
+foreground { vgchange --sysinit -a y }
+foreground { vgchange --monitor y }
