@@ -77,7 +77,7 @@ build() {
 check() {
    cd ${pkgname}-${pkgver}
    export LANG=C LC_ALL=C
-   make check check-swig-pl check-swig-py check-swig-rb CLEANUP=yes # check-javahl
+   make check check-swig-pl check-swig-py check-swig-rb CLEANUP=yes # check-javahl ||:
 }
 
 package() {
