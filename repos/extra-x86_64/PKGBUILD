@@ -33,7 +33,6 @@ validpgpkeys=(B0F4253373F8F6F510D42178520A9993A1C052F8) # Maxim Dounin <mdounin@
 md5sums=('45a80f75336c980d240987badc3dcf60'
          'SKIP'
          'SKIP'
-         'ba2e3b08ce0f0fff7cced624d0ecf7cc'
          '6a01fb17af86f03707c8ae60f98a2dc2')
 
 _common_flags=(
