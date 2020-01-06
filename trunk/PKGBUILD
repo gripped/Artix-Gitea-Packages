@@ -4,9 +4,10 @@
 # Contributor: Miroslaw Szot <mss@czlug.icis.pcz.pl>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 
-pkgname=nginx
+pkgbase=nginx
+pkgname=(nginx nginx-src)
 pkgver=1.16.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Lightweight HTTP server and IMAP/POP3 proxy server'
 arch=(x86_64)
 url='https://nginx.org'
@@ -14,7 +15,7 @@ license=(custom)
 depends=(pcre zlib openssl geoip mailcap)
 makedepends=(mercurial)
 checkdepends=(perl perl-gd perl-io-socket-ssl perl-fcgi perl-cache-memcached
-              memcached ffmpeg inetutils)
+              memcached ffmpeg inetutils) 
 backup=(etc/nginx/fastcgi.conf
         etc/nginx/fastcgi_params
         etc/nginx/koi-win
@@ -25,12 +26,15 @@ backup=(etc/nginx/fastcgi.conf
         etc/nginx/win-utf
         etc/logrotate.d/nginx)
 install=nginx.install
-source=($url/download/nginx-$pkgver.tar.gz #{,.asc}
+source=($url/download/nginx-$pkgver.tar.gz{,.asc}
         hg+http://hg.nginx.org/nginx-tests#revision=ddbde6c5b0cd
+        service
         logrotate)
 validpgpkeys=(B0F4253373F8F6F510D42178520A9993A1C052F8) # Maxim Dounin <mdounin@mdounin.ru>
 md5sums=('45a80f75336c980d240987badc3dcf60'
          'SKIP'
+         'SKIP'
+         'ba2e3b08ce0f0fff7cced624d0ecf7cc'
          '6a01fb17af86f03707c8ae60f98a2dc2')
 
 _common_flags=(
@@ -67,8 +71,12 @@ _common_flags=(
 _stable_flags=(
 )
 
+prepare() {
+  cp -r $pkgbase-$pkgver{,-src}
+}
+
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgbase-$pkgver
 
   ./configure \
     --prefix=/etc/nginx \
@@ -95,11 +103,11 @@ build() {
 
 check() {
   cd nginx-tests
-  TEST_NGINX_BINARY="$srcdir/$pkgname-$pkgver/objs/nginx" prove .
+  TEST_NGINX_BINARY="$srcdir/$pkgbase-$pkgver/objs/nginx" prove .
 }
 
-package() {
-  cd $pkgname-$pkgver
+package_nginx() {
+  cd $pkgbase-$pkgver
   make DESTDIR="$pkgdir" install
 
   sed -e 's|\<user\s\+\w\+;|user html;|g' \
@@ -131,4 +139,11 @@ package() {
     install -Dm644 contrib/vim/$i/nginx.vim \
       "$pkgdir/usr/share/vim/vimfiles/$i/nginx.vim"
   done
+}
+
+package_nginx-src() {
+  pkgdesc="Source code of nginx $pkgver, useful for building modules"
+  depends=()
+  install -d "$pkgdir/usr/src"
+  cp -r $pkgbase-$pkgver-src "$pkgdir/usr/src/nginx"
 }
