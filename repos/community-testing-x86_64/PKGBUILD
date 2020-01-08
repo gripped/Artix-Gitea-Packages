@@ -3,7 +3,7 @@
 
 pkgname=sssd
 pkgver=2.2.3
-pkgrel=3
+pkgrel=4
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://pagure.io/SSSD/sssd"
@@ -24,9 +24,8 @@ makedepends=(
   'docbook-xsl'
   'doxygen'
   'python'
-  'python2'
   'samba'         # for libndr-nbt headers
-  'systemd'
+  'eudev'
 )
 source=("https://releases.pagure.org/SSSD/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc})
 sha512sums=('b61d52a53e26e8efa9cb799fc6efc2314bf9d174d3cacfe591a4ca77530637591eacc0dc70c0555252e04a9617e8b134b1ab2d9b0f7351b4228e7b61499e6a10'
@@ -57,15 +56,13 @@ build() {
     --libexecdir=/usr/lib/sssd                    \
     --datadir=/usr/share                          \
     --enable-pammoddir=/usr/lib/security          \
-    --with-initscript=systemd                     \
     --with-os=fedora                              \
     --with-pid-path=/run                          \
-    --with-python2-bindings                       \
+    --without-python2-bindings                       \
     --with-python3-bindings                       \
-    --with-syslog=journald                        \
+    --with-syslog=syslog                        \
     --without-selinux                             \
     --without-semanage                            \
-    --with-systemdunitdir=/usr/lib/systemd/system \
     ;
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
   make
@@ -84,7 +81,6 @@ package() {
   cd "$srcdir"
   rm -rf "$pkgdir/etc/systemd" # remove the drop-in
 
-  sed '1 s/python$/python2/' -i "$pkgdir"/usr/bin/sss_obfuscate
 }
 
 # vim: ts=2:sw=2:et:nowrap
