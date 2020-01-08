@@ -11,13 +11,15 @@ arch=('x86_64')
 makedepends=('cmake' 'zlib' 'lz4' 'zstd' 'libaio' 'pam' 'numactl' 'jemalloc' 'openssl' 'rpcsvc-proto' 'boost')
 license=('GPL')
 url="https://www.percona.com/software/mysql-database/percona-server"
-source=("https://www.percona.com/downloads/Percona-Server-${pkgver%.*_*}/Percona-Server-$_pkgver/source/tarball/percona-server-$_pkgver.tar.gz"
+source=(
+        "https://www.percona.com/downloads/Percona-Server-${pkgver%.*_*}/Percona-Server-$_pkgver/source/tarball/percona-server-$_pkgver.tar.gz"
         "https://dl.bintray.com/boostorg/release/$_boost_ver/source/boost_${_boost_ver//./_}.tar.gz"
         'my.cnf'
         'mysql-user.conf'
         'build-hostname.patch'
         'no-werror.patch'
-        'rocksdb-systemlibs.patch')
+        'rocksdb-systemlibs.patch'
+        )
 sha256sums=('31b980b0f87a8d261f5bdfd353e05dc92b261997a94c3df604d7ed2526fdc2d7'
             '882b48708d211a5f48e60b0124cf5863c1534cd544ecd0664bb534a4b5d506e9'
             'b467b04d6d06152b2abc33f2a6de63fef0fc922dd5119d2ee1d07d3c1a489731'
