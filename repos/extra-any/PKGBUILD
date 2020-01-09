@@ -1,5 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
+# rebuild
 pkgname=cantarell-fonts
 pkgver=0.200
 pkgrel=1
