@@ -3,7 +3,7 @@
 pkgbase=artix-branding
 pkgname=(artix-branding-base)
 pkgver=$(date +"%Y%m%d")
-pkgrel=3
+pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
@@ -18,7 +18,7 @@ prepare() {
     cd $pkgbase
     git checkout refactor
 }
- 
+
 package_artix-branding-base() {
     cd "$pkgbase/$pkgname"
     install -dm755 $pkgdir/etc
