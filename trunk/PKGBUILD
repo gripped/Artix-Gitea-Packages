@@ -37,5 +37,3 @@ package() {
   DESTDIR="$pkgdir" meson install -C build
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgname/COPYING
 }
-
-# vim:set ts=2 sw=2 et:
