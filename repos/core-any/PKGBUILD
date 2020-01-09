@@ -2,8 +2,8 @@
 
 pkgbase=linux-firmware
 pkgname=(linux-firmware amd-ucode)
-_commit=eefb5f7410150c00d0ab5c41c5d817ae9bf449b3  # tags/20191215^0
-pkgver=20191215.eefb5f7
+_commit=6871bffa79ed240696986837cfb17b272ff57466  # master
+pkgver=20191220.6871bff
 pkgrel=1
 pkgdesc="Firmware files for Linux"
 makedepends=('git')
@@ -12,16 +12,16 @@ url="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=su
 license=('GPL2' 'GPL3' 'custom')
 options=(!strip)
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git#commit=${_commit}?signed"
-        0001-iwlwifi-Add-Core47-firmwares.patch)
+        0001-Update-iwlwifi-firmware.patch)
 sha256sums=('SKIP'
-            '7aa779f1a03984263ebe271b27357f0d6f079194f12f91ddba07a5376e258204')
+            '7ffffe66262660032485ea0c1bcb9ff06c06a83f0242a34c95daeb0c7a60fb6d')
 validpgpkeys=('4CDE8575E547BF835FE15807A31B6BD72486CFD6') # Josh Boyer <jwboyer@fedoraproject.org>
 
 prepare() {
   cd ${pkgname}
 
   # https://bugs.archlinux.org/task/64703
-  git apply -3 ../0001-iwlwifi-Add-Core47-firmwares.patch
+  git apply -3 ../0001-Update-iwlwifi-firmware.patch
 }
 
 pkgver() {
