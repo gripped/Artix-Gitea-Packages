@@ -4,12 +4,12 @@
 
 pkgname=pacman
 pkgver=5.2.1
-pkgrel=1
+pkgrel=4
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
 license=('GPL')
-groups=('base' 'base-devel')
+groups=('base-devel')
 depends=('bash' 'glibc' 'libarchive' 'curl'
          'gpgme' 'artix-mirrorlist' 'artix-keyring'
          'archlinux-mirrorlist' 'archlinux-keyring')
@@ -23,19 +23,24 @@ options=('strip' 'debug')
 validpgpkeys=('6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD'  # Allan McRae <allan@archlinux.org>
               'B8151B117037781095514CA7BBDFFC92306B1121') # Andrew Gregory (pacman) <andrew@archlinux.org>
 source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.gz{,.sig}
+        pacman-5.2.1-fix-pactest-package-tar-format.patch::https://git.archlinux.org/pacman.git/patch/?id=b9faf652735c603d1bdf849a570185eb721f11c1
+        makepkg-fix-one-more-file-seccomp-issue.patch
         pacman.conf
         makepkg.conf
         extracolors.patch)
 sha256sums=('1930c407265fd039cb3a8e6edc82f69e122aa9239d216d9d57b9d1b9315af312'
             'SKIP'
+            'd268379269c9dfa6eb3358f8931d3c84ef5fa4d47fe22567022fcbac8e4638c1'
+            'e481a161bba76729cd434c97e0b319ddfcb1d93b2e4890d72b4e8a32982531d9'
             '7e39ff31031ca4b3d6d4c4e5e1757c2993a50653a0fa1574c6db0ed524c53d73'
             '8c100b64450f5a19a16325dd05c143d49395bdeb96bd957f863cde4b95d3cb86'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466')
 
 prepare() {
   cd "$pkgname-$pkgver"
-  # patch to add extra colors to libmakepkg
-  patch -Np1 -i "$srcdir/extracolors.patch"
+  patch -Np1 < ../pacman-5.2.1-fix-pactest-package-tar-format.patch
+  patch -Np1 < ../makepkg-fix-one-more-file-seccomp-issue.patch
+  patch -Np1 < ../extracolors.patch
 }
 
 build() {
