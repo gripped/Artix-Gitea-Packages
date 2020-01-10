@@ -1,7 +1,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgbase=artix-branding
-pkgname=(artix-branding-base)
+pkgname=artix-branding-base
 pkgver=$(date +"%Y%m%d")
 pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
