@@ -4,7 +4,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-qt-presets
-pkgver=0.8+37+g8880377
+pkgver=0.8+38+g2f324bd
 pkgrel=1
 pkgdesc='Artix Qt presets, for KDE Plasma and LXQt.'
 arch=('any')
@@ -16,7 +16,8 @@ conflicts=('artix-lxqt-presets')
 #replaces=('artix-lxqt-presets')
 optdepends=('qt5ct')
 makedepends=('git')
-_commit=8880377738e3a10acff2b1a85ac5c716d2bcba51
+groups=('artix-branding')
+_commit=2f324bd060bf7e0f75c470569ebbbf0faeea3095
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
