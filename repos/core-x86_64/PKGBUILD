@@ -5,7 +5,7 @@ _dist=arch${_rel}
 _artix=artix${_rel}
 
 pkgbase=linux
-pkgver=5.4.6.${_artix}
+pkgver=5.4.10.${_artix}
 pkgrel=1
 pkgdesc='Linux'
 _srctag=v${pkgver%.*}-${_dist}
@@ -29,7 +29,7 @@ validpgpkeys=(
   '8218F88849AAC522E94CF470A5E9288C4FA415FA'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            '3e220cebf2a8b87a35e1f527f4fe5c53f9d189d5547110cc8eab7b19f1746886')
+            'bef5db750d6c28e02b0ecd8fa8ccadadd9a83bfe6e8f7711e0972fec089e7cda')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
