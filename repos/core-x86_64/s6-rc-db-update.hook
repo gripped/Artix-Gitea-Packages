@@ -3,7 +3,7 @@ Operation = Install
 Operation = Upgrade
 Operation = Remove
 Type = Package
-Target = s6-rc
+Target = s6-scripts
 Target = *-s6
 
 [Action]
