@@ -8,7 +8,7 @@ url='https://skarnet.org/software/s6-rc/'
 license=('ISC')
 provides=('init-rc')
 conflicts=('init-rc')
-depends=('s6' 's6-linux-init')
+depends=('s6' 's6-linux-init' 's6-scripts')
 makedepends=('git')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
@@ -27,7 +27,7 @@ build() {
 
 package() {
     cd ${pkgname}-${pkgver}
-    #mkdir -p "${pkgdir}"/etc/s6/rc
+    mkdir -p "${pkgdir}"/etc/s6/rc
 
     # various installs
     make DESTDIR="${pkgdir}" install
