@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ -e "/etc/s6/rc/compiled" ]; then
     old_bundles=$(s6-rc-db -c /etc/s6/rc/compiled list bundles)
     len=0
