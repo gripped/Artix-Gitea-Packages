@@ -1,0 +1,41 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=s6-rc
+pkgver=0.5.1.1
+pkgrel=11
+pkgdesc='A complete service manager for s6 systems.'
+arch=('x86_64')
+url='https://skarnet.org/software/s6-rc/'
+license=('ISC')
+provides=('init-rc')
+conflicts=('init-rc')
+depends=('s6' 's6-linux-init' 's6-scripts' 'bash')
+makedepends=('git')
+source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
+        "s6-rc-db-update-hook"
+        "s6-rc-db-update.hook")
+sha256sums=('257e2c428336c2b57cd17b65382bc55592759acc65e053e23ad646444f28af52'
+            '817cac01b5f699de19e8fa36dd1da4bfaa3a50b069d94da75375f88877b3115d'
+            '9d70105a7145e6116a6a3041b81f11a678cc2d1053694fce295584ae9b70e576')
+
+build() {
+    cd ${pkgname}-${pkgver}
+    ./configure --prefix=/usr \
+                --datadir=/etc \
+                --libexecdir=/usr/lib
+    make
+}
+
+package() {
+    cd ${pkgname}-${pkgver}
+    mkdir -p "${pkgdir}"/etc/s6/rc
+
+    # various installs
+    make DESTDIR="${pkgdir}" install
+    install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+    # pacman hooks
+    mkdir -p "${pkgdir}"/usr/share/libalpm/scripts
+    mkdir -p "${pkgdir}"/usr/share/libalpm/hooks
+    install -Dm755 -t "${pkgdir}"/usr/share/libalpm/scripts ${srcdir}/*-hook
+    install -Dm644 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
+}
