@@ -2,8 +2,8 @@
 
 pkgbase=artix-branding
 pkgname=artix-branding-base
-pkgver=$(date +"%Y%m%d")
-pkgrel=2
+pkgver=20200114
+pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
@@ -11,7 +11,9 @@ url="https://gitea.artixlinux.org/nous/$pkgbase"
 depends=('neofetch')
 makedepends=('git')
 license=('GPL3')
-source=("git+${url}.git")
+# pls don't pull from head (equals artix-branding-base-git), use a commit sha
+_commit=401b4f33b3c86cca17001a050568761bbd1f7641
+source=("git+${url}.git#commit=${_commit}")
 sha256sums=('SKIP')
 
 prepare() {
