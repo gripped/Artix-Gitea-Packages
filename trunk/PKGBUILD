@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20191031
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for clamav"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('c05ba660d64f36649547263939e55595bfb06ea081675423cec7c7b93d050acc'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
