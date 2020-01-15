@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=jenkins-s6
-pkgver=20191104
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for jenkins"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('c744970a89e4ee1238de5f912bc80b323ef3df2ceb0a4315da5d1bbbc42bb846'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
