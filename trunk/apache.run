@@ -1,3 +1,2 @@
 #!/usr/bin/execlineb -P
-
 exec httpd -k start -DFOREGROUND

@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=apache-s6
-pkgver=20191030
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for apache"
 arch=('any')
@@ -18,7 +18,7 @@ sha256sums=('85aefe713ca944c263b153593a0e9ba40264af2c9289a284499440be58519ad8'
 _inst_sv(){
     for file in finish run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }

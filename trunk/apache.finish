@@ -1,3 +1,2 @@
 #!/usr/bin/execlineb -P
-
 httpd -k graceful-stop
