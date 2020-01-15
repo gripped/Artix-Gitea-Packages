@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=git-s6
-pkgver=20191104
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for git"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('c7dd2100e3e5dffe9f4aebb0fc93e5f84dffadc96b67fbeedca0cc4363c919d2'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
