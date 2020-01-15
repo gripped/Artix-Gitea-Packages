@@ -11,7 +11,7 @@ conflicts=('pcsclite-runscripts')
 depends=('pcsclite' 's6')
 install=pcscd.install
 source=("pcscd.run" "pcscd.type")
-sha256sums=('ced84e862be3fe566b5908f688a13f09214747d611a42679194cececd4b24c41'
+sha256sums=('5164031234686e44a4eaad37ea1c98cd2b857eb94e693b363ea0b1feaa8d1caf'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
