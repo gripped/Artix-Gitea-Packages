@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <random342@airmail.cc>
 pkgname=syslog-ng-s6
-pkgver=20200105
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for syslog-ng"
 arch=('any')
