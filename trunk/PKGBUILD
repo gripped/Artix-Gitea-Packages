@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=dropbear-s6
-pkgver=20191211
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for dropbear"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('ae17ebff02594857265e281d4b640affe2de0662b746b03f46fbc1022f92a6c6'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
