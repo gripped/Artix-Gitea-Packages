@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=boinc-s6
-pkgver=20191103
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for boinc"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('c3bf9fbfe2d112bb702f46cb9c6101d74481384fe8364ea8828ff78b72df2657'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
