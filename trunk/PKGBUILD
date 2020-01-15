@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=vsftpd-s6
-pkgver=20191114
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for vsftpd"
 arch=('any')
@@ -23,7 +22,7 @@ sha256sums=('ef752ef8636e7c1fa3ddd0bb05cb80d30b9f5588e523e3c91231863b53c9b801'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
