@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20191213
-pkgrel=2
+pkgver=20200115
+pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -18,7 +18,7 @@ sha256sums=('3809f3ba1f3db4bd0eafffd50b0349387b9972672bb3c6e3a152e90952431d12'
 _inst_sv(){
     for file in dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
