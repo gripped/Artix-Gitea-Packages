@@ -12,7 +12,7 @@ depends=('dhcpcd' 's6')
 install=dhcpcd.install
 source=('dhcpcd.dependencies' 'dhcpcd.run' 'dhcpcd.type')
 sha256sums=('3809f3ba1f3db4bd0eafffd50b0349387b9972672bb3c6e3a152e90952431d12'
-            '2329a945ac498447c4f83b63285f5a5b9013d7ba8c93814d344d7f5ad56df137'
+            '450a202a1738e84478accb61f988b34d9b561ef3be7f426553a6ca83a4edc1d1'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
