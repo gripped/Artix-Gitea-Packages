@@ -11,7 +11,7 @@ conflicts=('jenkins-runscripts')
 depends=('jenkins' 's6')
 install=jenkins.install
 source=("jenkins.run" "jenkins.type")
-sha256sums=('c744970a89e4ee1238de5f912bc80b323ef3df2ceb0a4315da5d1bbbc42bb846'
+sha256sums=('aaf4164ee22f3487db33a9a017fbad77f123fd43de3a0e92b429466049aa0319'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
