@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nfs-utils-s6
-pkgver=20191214
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for nfs-utils"
 arch=('any')
@@ -28,7 +28,7 @@ sha256sums=('8fba6bc7497a82526bf4c678820099dcc93d4af4c98fe0266fcf369e942b82f1'
 _inst_sv(){
     for file in dependencies finish run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }

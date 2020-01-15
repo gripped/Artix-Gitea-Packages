@@ -1,3 +1,2 @@
 #!/usr/bin/execlineb -P
-
 exec rpc.statd -F -d
