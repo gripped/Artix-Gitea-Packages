@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcp-s6
-pkgver=20191031
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for dhcp"
 arch=('any')
@@ -26,7 +26,7 @@ sha256sums=('3b662a853c5915740229075a1a0a4c23dcb408a899b98d76e6538c08b86a14d0'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
