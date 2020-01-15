@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sane-s6
-pkgver=20191114
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for sane"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('1ef693f94ab014e6a0c2f00d531c540bc3841a537dbce9bedcc34c20a7d2d544'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
