@@ -11,7 +11,7 @@ conflicts=('brltty-runscripts')
 depends=('brltty' 's6')
 install=brltty.install
 source=("brltty.run" "brltty.type")
-sha256sums=('b8ddfc7aa91c9c4b13d3a1576d2cae3d8840e38f161fef8fc089ea442692062f'
+sha256sums=('aa2edf89093e58243d570eba3d3fe47644cc3e0e6516cf4034d3508b12cdbad9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
