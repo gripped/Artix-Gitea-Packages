@@ -11,7 +11,7 @@ conflicts=('clamav-runscripts')
 depends=('clamav' 's6')
 install=clamd.install
 source=("clamd.run" "clamd.type")
-sha256sums=('c05ba660d64f36649547263939e55595bfb06ea081675423cec7c7b93d050acc'
+sha256sums=('9c19fd6e5f5876b583510f5cdca378017b9bf568f7cac17d264065ee3ec0157f'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
