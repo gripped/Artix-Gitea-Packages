@@ -12,7 +12,7 @@ depends=('cups' 'dbus-s6' 's6')
 install=cupsd.install
 source=("cupsd.dependencies" "cupsd.run" "cupsd.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '57e561ec6b4c313adc50198a96cd8bc93a8263a1707d476a4602baa5e1efa6cb'
+            '989a2737f0e614dd2980162341b2fd2474c7e23937352008d72dfd0a58e0936e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
