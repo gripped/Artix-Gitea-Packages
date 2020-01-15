@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=ufw-s6
-pkgver=20191214
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for ufw"
 arch=('any')
@@ -19,7 +18,7 @@ sha256sums=('155fe63256e164170af51c84880fab8c2ade9242cd2bdccb5ab7b9f4ef75ed81'
 _inst_sv(){
     for file in down type up; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
