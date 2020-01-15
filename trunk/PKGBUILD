@@ -11,9 +11,9 @@ conflicts=('alsa-utils-runscripts')
 depends=('alsa-utils' 's6')
 install=alsa.install
 source=("alsa.down" "alsa.type" "alsa.up")
-sha256sums=('3d9b6024eacaa102704f0ab5339a296b49b3d8be646cdaa5597b8f4728257b50'
+sha256sums=('9877dbb8418ddd5d2d1560cbec139afc7405e12bf8a873dd846400c4913dd626'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '72d0c28bba89d91971db552f6385f12265750e1308f8d152324cd806028286c0')
+            '282573e652ee14f16f51ff255ecfc68cc91b42746410615af5b450378a20b6e7')
 
 _inst_sv(){
     for file in down type up; do
