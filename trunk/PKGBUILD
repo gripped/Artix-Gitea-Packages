@@ -11,7 +11,7 @@ conflicts=('boinc-runscripts')
 depends=('boinc' 's6')
 install=boinc.install
 source=("boinc.run" "boinc.type")
-sha256sums=('c3bf9fbfe2d112bb702f46cb9c6101d74481384fe8364ea8828ff78b72df2657'
+sha256sums=('8c208ed9f6b994b4c19ecdf65ee1f3f8dd4f36ba39d8f473f6060e604c65cfac'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
