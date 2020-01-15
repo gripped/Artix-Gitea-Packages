@@ -1,5 +1,4 @@
 #!/usr/bin/execlineb -P
-
 foreground { mkdir -p /var/lib/misc }
 fdmove -c 2 1
 exec dnsmasq -k --enable-dbus -u dnsmasq -g dnsmasq
