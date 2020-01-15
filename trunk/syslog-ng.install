@@ -1,0 +1,10 @@
+pre_remove() {
+    if [ -e "/run/service/syslog-ng" ]; then
+        s6-rc -d change syslog-ng
+    fi
+	sed -i '/syslog-ng/d' /etc/s6/sv/log/contents
+}
+
+post_install() {
+	echo "syslog-ng" >> /etc/s6/sv/log/contents
+}

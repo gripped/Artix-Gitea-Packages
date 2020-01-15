@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <random342@airmail.cc>
+pkgname=syslog-ng-s6
+pkgver=20200115
+pkgrel=1
+pkgdesc="s6 service scripts for syslog-ng"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('syslog-ng-runscripts' 'init-syslog-ng')
+conflicts=('syslog-ng-runscripts' 'init-syslog-ng')
+depends=('syslog-ng' 's6')
+install=syslog-ng.install
+source=("syslog-ng.run" "syslog-ng.type")
+sha256sums=('156ba7bef3cfa54be843129441b4df7e6786367ef2d088e05a4fbcedc990f999'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'syslog-ng'
+}
