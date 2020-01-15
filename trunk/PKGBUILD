@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=haveged-s6
-pkgver=20191028
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for haveged"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('94ccf6598d332a9984db05083b46def2239b0e5218637c883065710b3d51c9c6'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
