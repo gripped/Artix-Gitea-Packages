@@ -11,7 +11,7 @@ conflicts=('minidlna-runscripts')
 depends=('minidlna' 's6')
 install=minidlnad.install
 source=("minidlnad.run" "minidlnad.type")
-sha256sums=('8577f52a0d655afaf63c47119933fa2b8180a7ff562e3dd1d933b54fd744e980'
+sha256sums=('97ea3c96439f7ac398d55aaad92404b715b27f1f34208dfc324d0f9dd8c3e1c4'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
