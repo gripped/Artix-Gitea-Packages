@@ -11,7 +11,7 @@ conflicts=('git-runscripts')
 depends=('git' 's6')
 install=git-daemon.install
 source=("git-daemon.run" "git-daemon.type")
-sha256sums=('c7dd2100e3e5dffe9f4aebb0fc93e5f84dffadc96b67fbeedca0cc4363c919d2'
+sha256sums=('5734b800bf9bc68f5734f1d3aee0a367389b0be18cb02d1079545843d2049315'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
