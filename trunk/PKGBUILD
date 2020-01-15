@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nftables-s6
-pkgver=20191206
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for nftables"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
 _inst_sv(){
     for file in type up; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
