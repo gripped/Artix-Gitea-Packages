@@ -1,7 +1,11 @@
 pre_remove() {
     if [ -e "/run/service/dhclient" ]; then
-        s6-rc -d change dhcpd6
-        s6-rc -d change dhcpd4
         s6-rc -d change dhclient
     fi
+    if [ -e "/run/service/dhcpd4" ]; then
+        s6-rc -d change dhcpd4
+	fi
+    if [ -e "/run/service/dhcpd6" ]; then
+        s6-rc -d change dhcpd6
+	fi
 }
