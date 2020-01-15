@@ -11,7 +11,7 @@ conflicts=('bumblebee-runscripts')
 depends=('bumblebee' 's6')
 install=bumblebeed.install
 source=("bumblebeed.run" "bumblebeed.type")
-sha256sums=('ea578f3a15e8073e393f1807ab1b1a4f4fd8103247818af1e96d8eb71710a2f5'
+sha256sums=('4a4f496690a71b92d767bc41ecae513a83ef6b959cd6301e3e435b6eb5b918c3'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
