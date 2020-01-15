@@ -11,7 +11,7 @@ conflicts=('metalog-runscripts')
 depends=('metalog' 's6')
 install=metalog.install
 source=("metalog.run" "metalog.type")
-sha256sums=('2066699af173743213bd6fc5a89b9bac326a492b308fef41fbc67d55a9b4cab6'
+sha256sums=('e81aaa1d17e2dcc78e2394d04995acbc76bc25a18f2fcdcb1ef87dddd1aa4e4a'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
