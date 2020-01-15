@@ -11,7 +11,7 @@ conflicts=('fcron-runscripts' 'cronie' 'cronie-runit')
 depends=('fcron' 's6')
 install=fcron.install
 source=("fcron.run" "fcron.type")
-sha256sums=('b4295f6ea215048f0d03344baba9f48b1166a2123f552d877f12720edcdff14d'
+sha256sums=('e3406286c6a718b037eeeb141e5d4939c0c378b28d36a8881922a4de2066f981'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
