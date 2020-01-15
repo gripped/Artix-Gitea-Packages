@@ -1,5 +1,4 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=acpid-s6
 pkgver=20200115
 pkgrel=1
