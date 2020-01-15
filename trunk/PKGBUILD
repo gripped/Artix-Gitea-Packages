@@ -11,7 +11,7 @@ conflicts=('at-runscripts')
 depends=('at' 's6')
 install=at.install
 source=("at.run" "at.type")
-sha256sums=('659818825294c2b513b9f6b29f622fbc065f72432b94a79f220888aeed62cb7e'
+sha256sums=('debced2158307b03de048f6fe2f139a6eb7484c5bc1958a9137c62ba2e1dfa03'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
