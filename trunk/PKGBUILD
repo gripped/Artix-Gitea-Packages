@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=metalog-s6
-pkgver=20191106
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for metalog"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('2066699af173743213bd6fc5a89b9bac326a492b308fef41fbc67d55a9b4cab6'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
