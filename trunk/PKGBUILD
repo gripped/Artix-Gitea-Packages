@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=postgresql-s6
-pkgver=20191107
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for postgresql"
 arch=('any')
@@ -12,14 +12,14 @@ depends=('postgresql' 's6')
 install=postgresql.install
 source=("postgresql.conf" "postgresql.run" "postgresql.shell_run" "postgresql.type")
 sha256sums=('e75f6bb86488cbf2e2efcf91f753cae1d7f9879d5687bfe954ffed52338dd580'
-            '1302141b44df31c4bcc8d3e5ef9a25a51051b72f4b32f76d1ec94de3d99a6d00'
+            '5106ecf36c426f992045ef25eced3d5c8f6dfeb9c70f2e0891d65addc4908030'
             'dabfc3101910af450000b34fe4b11634748505618b2951d4e83325d1ab6a9635'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in conf run shell_run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
     for file in shell_run; do
