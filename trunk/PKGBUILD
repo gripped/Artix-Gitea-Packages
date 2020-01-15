@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=pcsclite-s6
-pkgver=20191107
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for pcsclite"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('ced84e862be3fe566b5908f688a13f09214747d611a42679194cececd4b24c41'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
