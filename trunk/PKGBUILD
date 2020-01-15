@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=libvirt-s6
-pkgver=20191105
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for libvirt"
 arch=('any')
@@ -31,7 +30,7 @@ sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
 _inst_sv(){
     for file in dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
