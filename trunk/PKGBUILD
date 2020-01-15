@@ -11,7 +11,7 @@ conflicts=('iwd-runscripts')
 depends=('iwd' 's6')
 install=iwd.install
 source=("iwd.run" "iwd.type")
-sha256sums=('240325b56a08e56325c540599b3062f9587c9fb15bbae903176b3866527e6916'
+sha256sums=('9054a2cbbca9ff05fcb41dd25dd98eedf5b958253ba7705694b8d8b27069d5f8'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
