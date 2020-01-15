@@ -11,7 +11,7 @@ conflicts=('ddclient-runscripts')
 depends=('ddclient' 's6')
 install=ddclient.install
 source=("ddclient.run" "ddclient.type")
-sha256sums=('763a88d6ff8aaa6a5814517e60de30ab94f48388e4a690480088f8c2bc525291'
+sha256sums=('3fc29b94b504344df09aaab3d56226015f0d5a186ff558e78ec0b6e67f04d34c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
