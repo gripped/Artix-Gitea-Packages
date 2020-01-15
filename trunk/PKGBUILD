@@ -11,7 +11,7 @@ conflicts=('dovecot-runscripts')
 depends=('dovecot' 's6')
 install=dovecot.install
 source=("dovecot.run" "dovecot.type")
-sha256sums=('e45e58128139090f2cab0690d27c763f9ebdf3c58b1855f4a0cb9b68a20e7c2e'
+sha256sums=('6c943044e21a1778f616cdc2ef3e8dd32946e1db964dff3121a9a95ba49edc9e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
