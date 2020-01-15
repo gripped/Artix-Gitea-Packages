@@ -11,7 +11,7 @@ conflicts=('pdnsd-runscripts')
 depends=('pdnsd' 's6')
 install=pdnsd.install
 source=("pdnsd.run" "pdnsd.type")
-sha256sums=('791e1c57f7df125546500be9db05bbc7fc9ec5dc95ffa2e9542d5c6c0a4ab5a9'
+sha256sums=('b861ed3f73313ec65b7fda96adb868cbbba0b3ce5b0ac8e1b3d8d48d7dfc56b9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
