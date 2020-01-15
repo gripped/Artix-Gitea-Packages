@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fuse-s6
-pkgver=20191217
-pkgrel=2
+pkgver=20200115
+pkgrel=1
 pkgdesc="s6 service scripts for fuse"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -18,7 +18,7 @@ sha256sums=('bb6795df788580f573a8fb0800f53cbd83406a53a92b6a56c50a8f6f2d14401c'
 _inst_sv(){
     for file in down type up; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
