@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=alsa-utils-s6
-pkgver=20191030
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for alsa-utils"
 arch=('any')
@@ -18,7 +18,7 @@ sha256sums=('3d9b6024eacaa102704f0ab5339a296b49b3d8be646cdaa5597b8f4728257b50'
 _inst_sv(){
     for file in down type up; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
