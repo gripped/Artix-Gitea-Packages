@@ -11,8 +11,8 @@ conflicts=('apache-runscripts')
 depends=('apache' 's6')
 install=apache.install
 source=("apache.finish" "apache.run" "apache.type")
-sha256sums=('85aefe713ca944c263b153593a0e9ba40264af2c9289a284499440be58519ad8'
-            '43edb86352703e05a06411a4f618c66b5c44a4880877bf14e77869d7c8d013ee'
+sha256sums=('cfdc4075028919503efe7aa3b9f0b978e226e4b39dcab1a36665ef803f588c8e'
+            '98cada8fe63fbe3ce31a5dd46f78e308781a9a237771861e9453f249eb577a70'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
