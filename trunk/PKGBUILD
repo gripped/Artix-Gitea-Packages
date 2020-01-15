@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=rng-tools-s6
-pkgver=20191107
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for rng-tools"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('rng-tools-runscripts')
 depends=('rng-tools' 's6')
 install=rngd.install
 source=("rngd.run" "rngd.type")
-sha256sums=('448eaf9cd9ed7834cbcb9dc245a355a7c2b1e994aadcd8255de0ca2fcae69088'
+sha256sums=('db815e38ceb6bd03787fab7a959b95b9bd21ca67146b3bb8082c459d3859f705'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
