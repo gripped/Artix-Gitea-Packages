@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lm_sensors-s6
-pkgver=20191105
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for lm_sensors"
 arch=('any')
@@ -26,7 +26,7 @@ sha256sums=('373e0d6ffc0ae8c4bd23d1e933da075023c6ef8ab3fb5176f3b4a1ad2187e68b'
 _inst_sv(){
     for file in dependencies down run type up; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
