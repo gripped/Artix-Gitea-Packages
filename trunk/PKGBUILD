@@ -12,7 +12,7 @@ depends=('avahi' 'dbus-s6' 's6')
 install=avahi-daemon.install
 source=("avahi-daemon.dependencies" "avahi-daemon.run" "avahi-daemon.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '22987c28db9a2b0a5b577d7c06d3dfe923df582fda1f43cad51d8842d521bf4b'
+            '164c2e8da7ff8f4de0bfeb4ae8be93cae1e0bbf06f4088b84d877cb2ea713ee9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
