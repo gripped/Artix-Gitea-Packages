@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=espeakup-s6
-pkgver=20191103
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for espeakup"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('d41cdb653f2a425c98d0fb0e87d72c6a8404e23a3e709eeaea9c35a621965163'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
