@@ -12,9 +12,9 @@ depends=('iptables' 's6')
 install=iptables.install
 source=("ip6tables.type" "ip6tables.up" "iptables.type" "iptables.up")
 sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '47c1c45da94e8bcd4c0dac05c960c31a77840dfd0ade71751b0cb0f16bd985f0'
+            'b32d018a99fc2514a737dac4aa9736c66a266093ba3ce80e0e89169725b31804'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '525aedbe68b0f2993510aed02df79e1ab9fe33609639087de0bb40c453bc0977')
+            '0e167d1971c542a570290349b9e8f8e5bf3cc0b2d0658f05ca57500a1c6ea389')
 
 _inst_sv(){
     for file in type up; do
