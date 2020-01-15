@@ -11,7 +11,7 @@ conflicts=('apcupsd-runscripts')
 depends=('apcupsd' 's6')
 install=apcupsd.install
 source=("apcupsd.run" "apcupsd.type")
-sha256sums=('50b7ebc0b8463648f154595432333faf5bb21003cbd47ff1428d7b48cd2a408f'
+sha256sums=('4d82d532451bf5dc4a3f88a924dc465ca4cbd148bca93aa68a8e9bbfa0ce5f9e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
