@@ -11,7 +11,7 @@ conflicts=('init-openldap')
 depends=('openldap' 's6')
 install=slapd.install
 source=("slapd.run" "slapd.type")
-sha256sums=('af8509d4044f7b5b18e0a0a6169c219aff4cf97450fe25e1992678bcac8cd09b'
+sha256sums=('f786b3ebf7de2ecedbce67d6d6cef527f496ec3986166e57a76b82280dfeb633'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
