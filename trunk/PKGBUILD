@@ -11,7 +11,7 @@ conflicts=('init-dbus')
 install=dbus.install
 source=("dbus.notification-fd" "dbus.run" "dbus.type")
 sha256sums=('1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '487e0c12ad45589aec8ec9ec7eb52f9c13f02dfeef6329447f47d224838ffaae'
+            '88b80bc271e7cccc021d7b3bf5ec05fee81f0a2e7579b8c8c23136d94f594825'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
