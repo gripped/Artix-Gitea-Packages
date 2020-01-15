@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20191214
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for openssh"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('58a8ca0d50ae49f00eb74a1de2530130a5767efb47ff50351d403238e2f0069a'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
