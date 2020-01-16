@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=krb5-s6
-pkgver=20191104
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for krb5"
 arch=('any')
@@ -11,15 +11,15 @@ conflicts=('krb5-runscripts')
 depends=('krb5' 's6')
 install=krb5.install
 source=("kadmind.run" "kadmind.type" "krb5kdc.run" "krb5kdc.type")
-sha256sums=('2f7a63b6eb12b28626fee23af1bb09f661ae1e3fb1684e029257edc41502ed4c'
+sha256sums=('c202c42d56524a0598cf96115469cb45202d594f800e4c59fc188cefb567abb9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '19b4c1dbd9c537a165f7c299095427993b35abfcc0195ac0be6fd240bd4d1536'
+            '19b9cd6f33003c114746e320ae922aa898f860c5b6435488fbbb0a376c2fa75a'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in finish run type; do
+    for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
