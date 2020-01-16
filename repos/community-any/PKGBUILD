@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=apcupsd-s6
-pkgver=20191103
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for apcupsd"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('apcupsd-runscripts')
 depends=('apcupsd' 's6')
 install=apcupsd.install
 source=("apcupsd.run" "apcupsd.type")
-sha256sums=('50b7ebc0b8463648f154595432333faf5bb21003cbd47ff1428d7b48cd2a408f'
+sha256sums=('4d82d532451bf5dc4a3f88a924dc465ca4cbd148bca93aa68a8e9bbfa0ce5f9e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
