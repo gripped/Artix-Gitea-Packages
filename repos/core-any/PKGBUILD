@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openvpn-s6
-pkgver=20191106
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for openvpn"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('init-openvpn')
 depends=('openvpn' 's6')
 install=openvpn.install
 source=("openvpn.run" "openvpn.type")
-sha256sums=('c31ce07d70fa0d035aed14eb4841699567584456d14c11de18263e88c3df6bc9'
+sha256sums=('d1afce210018d3742a696e15854ca5391d3dd399348ad561b40d1201577bee67'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
