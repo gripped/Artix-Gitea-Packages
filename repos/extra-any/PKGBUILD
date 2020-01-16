@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=gdm-s6
-pkgver=20191104
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for gdm"
 arch=('any')
@@ -12,13 +12,13 @@ depends=('gdm' 'dbus-s6' 's6')
 install=gdm.install
 source=("gdm.dependencies" "gdm.run" "gdm.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '30dcf3ee94aa4274c192443750aed099e44c1026c5f8f52a5f45fc057f579754'
+            '54ef74a6d6a0272b4c023f2bfb63f3b9194512226eb35fdacae8066c92f00e9d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
