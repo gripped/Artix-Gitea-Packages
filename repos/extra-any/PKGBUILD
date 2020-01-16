@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=xdm-s6
-pkgver=20191114
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for xdm"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('3fb6072e7b9e9b265c8c2a5903111a0b6687315121b0207d3e516e9c5efe2bfa'
 _inst_sv(){
     for file in dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
