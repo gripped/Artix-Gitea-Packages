@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=syncthing-relaysrv-s6
-pkgver=20191114
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for syncthing-relaysrv"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('1ac1f77588849a283023fe5e2bbfbfdadb03666f10b9e991bf157961a7888468'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
