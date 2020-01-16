@@ -1,5 +1,4 @@
 #!/usr/bin/execlineb -P
-
 if -n { test -d /srv/www/lighttpd } mkdir -p /srv/www/lighttpd
 foreground { chown _lighttpd:_lighttpd /srv/www/lighttpd }
 
