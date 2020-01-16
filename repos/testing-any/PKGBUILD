@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=mdadm-s6
+pkgver=20200115
+pkgrel=1
+pkgdesc="s6 service scripts for mdadm"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-mdadm')
+conflicts=('init-mdadm')
+depends=('mdadm' 's6')
+install=mdadm.install
+source=("mdadm.run" "mdadm.type")
+sha256sums=('973e434dd6c63a3f97a3a6cd809df1ab12db20fab5ad8652cd0d9f2cca76addc'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'mdadm'
+}
