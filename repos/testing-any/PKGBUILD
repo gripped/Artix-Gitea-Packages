@@ -1,0 +1,30 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=wpa_supplicant-s6
+pkgver=20200115
+pkgrel=1
+pkgdesc="s6 service scripts for wpa_supplicant"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-wpa_supplicant')
+conflicts=('init-wpa_supplicant')
+depends=('wpa_supplicant' 'dhcpcd-s6' 's6')
+install=wpa_supplicant.install
+backup=('etc/s6/sv/wpa_supplicant/conf')
+source=("wpa_supplicant.conf" "wpa_supplicant.dependencies" "wpa_supplicant.run" "wpa_supplicant.type")
+sha256sums=('ad5929875a33aef2bd3a98b32a98a175ce3171daba0e46cf270b12c6b5c5e51a'
+            'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
+            '9964236237dabaf7cccfe9f4efb49985f4bd9ce39364fa4f9fb02bb53749062e'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf dependencies run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'wpa_supplicant'
+}
