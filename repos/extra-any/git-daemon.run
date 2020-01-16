@@ -1,4 +1,3 @@
 #!/usr/bin/execlineb -P
-
 foreground { mkdir -p /srv/git }
 exec git daemon --base-path=/srv/git
