@@ -1,4 +1,3 @@
 #!/usr/bin/execlineb -P
-
 fdmove -c 2 1
 exec haveged -F -w 1024 -v 1
