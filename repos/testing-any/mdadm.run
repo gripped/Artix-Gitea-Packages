@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-# --syslog makes it run in every case, yet forwards to mail address if given.
-exec mdadm --monitor --scan --syslog
