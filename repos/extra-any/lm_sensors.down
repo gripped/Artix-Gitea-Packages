@@ -1,5 +1,4 @@
 #!/usr/bin/execlineb -P
-
 backtick -n BUS_MODULES { sh -c "source /etc/sysconfig/lm_sensors; echo $BUS_MODULES" }
 importas BUS_MODULES BUS_MODULES
 
