@@ -1,6 +1,8 @@
 pre_remove() {
-    if [ -e "/run/service/auditd" ]; then
+	if [ -e "/run/service/s6rc-oneshot-runner" ]; then
         s6-rc -d change auditctl
+	fi
+    if [ -e "/run/service/auditd" ]; then
         s6-rc -d change auditd
     fi
 }
