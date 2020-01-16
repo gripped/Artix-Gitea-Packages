@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcp-s6
-pkgver=20191031
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for dhcp"
 arch=('any')
@@ -16,17 +16,17 @@ source=("dhclient.run"
         "dhcpd4.type"
         "dhcpd6.run"
         "dhcpd6.type")
-sha256sums=('3b662a853c5915740229075a1a0a4c23dcb408a899b98d76e6538c08b86a14d0'
+sha256sums=('424b2c5da138cbabb9578cb6bf88e318698b6b7671803a9ba2db5dd6e181723d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '0faed858b85188b4e9356baa160028114487913a373d35d908189bbf154463fb'
+            'fefbd0a397a76a5943af61b1a685145244672968ef710b45c389acb0907cd320'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '0a753c8cac3258b5d395d686d803ff186d7a3715147c509d6dec84bd490d945a'
+            '02a42d4c70e6bd1a77ab51304bcc9bdc947ad5c4788739e6d5cca58d7e4db1e9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
