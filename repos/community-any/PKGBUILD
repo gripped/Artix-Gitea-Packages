@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=docker-s6
-pkgver=20191103
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for docker"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('docker-runscripts')
 depends=('docker' 's6')
 install=docker.install
 source=("docker.run" "docker.type")
-sha256sums=('7cbae9b7a569470c82aabb828539d3e6685119e7f6f332ebd3fc2c5a3f01d808'
+sha256sums=('c41653dc5a9706544e8fcf789ebc6a53ac81cf518801360bd25a9687aff3f374'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
