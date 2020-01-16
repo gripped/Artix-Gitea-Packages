@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mpd-s6
-pkgver=20191106
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for mpd"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('mpd-runscripts')
 depends=('mpd' 's6')
 install=mpd.install
 source=("mpd.run" "mpd.type")
-sha256sums=('fc212f626bf008dd3b4f455604f18b56e842f5ce8d26535435899d8fcc1d9d93'
+sha256sums=('21a07d36b992f95ee87405dd6732648b3e91d7617fa0acfbbb79917b38e941c9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
