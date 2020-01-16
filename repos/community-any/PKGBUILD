@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=openntpd-s6
-pkgver=20191106
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for openntpd"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('openntpd-runscripts')
 depends=('openntpd' 's6')
 install=openntpd.install
 source=("openntpd.run" "openntpd.type")
-sha256sums=('2bca9bb9ee18e6392e6811050d52c4c3c2701ee00ca47ffb16768eac628e947e'
+sha256sums=('2b44e41ae83698ba1021767cf842f7d1251e91de8344abc1e7afe7443cf1e5fe'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
