@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/nftables" ]; then
+    if [ -e "/run/service/s6rc-oneshot-holder" ]; then
         s6-rc -d change nftables
     fi
 }
