@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cyrus-sasl-s6
-pkgver=20191031
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for cyrus-sasl"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('cyrus-sasl-runscripts')
 depends=('cyrus-sasl' 's6')
 install=saslauthd.install
 source=("saslauthd.run" "saslauthd.type")
-sha256sums=('6fca5a6a73f30b1230826a1ea087544d9a79e51cbc22d8f0efaed1fac59db9a4'
+sha256sums=('b17fd051a8553c4907a6b8984bc655b70e7c71c18d10f68b91174062179034bd'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
