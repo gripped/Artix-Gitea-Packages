@@ -1,5 +1,4 @@
 #!/usr/bin/execlineb -P
-
 envfile /etc/s6/sv/darkhttpd/conf
 importas -i PORT PORT
 importas -i USER USER
