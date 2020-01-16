@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=lxdm-s6
-pkgver=20191105
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for lxdm"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('lxdm-runscripts')
 depends=('lxdm' 's6')
 install=lxdm.install
 source=("lxdm.run" "lxdm.type")
-sha256sums=('73128f80cd65d0f7fba0e934a65c0319571b7db0e2afcbd8f6eac2780e1eb5dc'
+sha256sums=('3f630ce447baaf995103494c398b1d1ee6d460082a8d297bb0ef5752306c2e98'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
