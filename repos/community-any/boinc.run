@@ -1,3 +1,2 @@
 #!/usr/bin/execlineb -P
-
 exec boinc_client --dir /var/lib/boinc
