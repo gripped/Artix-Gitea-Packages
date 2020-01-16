@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=ntp-s6
-pkgver=20191214
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for ntp"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('e7e2491c91b483889b58901764b127aa686658c6b442ae83159887122e8c1adc'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
