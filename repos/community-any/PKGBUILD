@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tlp-s6
-pkgver=20191215
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for tlp"
 arch=('any')
@@ -17,7 +17,7 @@ sha256sums=('f87c38f58f4dbbfc1029d6d5d84c61f49286a6b83a064153e60bca7072e9eaef'
 _inst_sv(){
     for file in down type up; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
