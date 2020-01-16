@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cronie-s6
-pkgver=20191027
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for cronie"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('init-cronie')
 depends=('cronie' 's6')
 install=cronie.install
 source=("cronie.run" "cronie.type")
-sha256sums=('4deb6310d8a8aaced34728218ccf18e6a1bb91825e4279a3ed339b1532d7668a'
+sha256sums=('031ea9683d5da11691b8f41cc42aa1d12a92d60c6283b55539f72b2c65805e6e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
