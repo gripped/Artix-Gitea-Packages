@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dnsmasq-s6
-pkgver=20191213
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for dnsmasq"
 arch=('any')
@@ -12,13 +12,13 @@ depends=('dnsmasq' 'dbus-s6' 's6')
 install=dnsmasq.install
 source=("dnsmasq.dependencies" "dnsmasq.run" "dnsmasq.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '93f186adf2b96e8492996669028d89f04b950f1c63f59f547bdf78eee2d72710'
+            '3e9703a1f333c331c6e604b26fed9d0eae8c04ada3ea56abfcf8e6f65964378e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in dependencies run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
