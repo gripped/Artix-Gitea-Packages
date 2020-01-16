@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=fwknop-s6
-pkgver=20191104
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for fwknop"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('fwknop-runscripts')
 depends=('fwknop' 's6')
 install=fwknopd.install
 source=("fwknopd.run" "fwknopd.type")
-sha256sums=('ed5924b59d3cb4b332e4e7e2b86448bd587fd745b00b9c0658f05ec3d2dbbd81'
+sha256sums=('610144aebe3f14f7c3e1057560b7f353992afba3a0203b7b235269585ff7da01'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
