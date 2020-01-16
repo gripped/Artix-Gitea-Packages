@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=acpid-s6
-pkgver=20191103
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for acpid"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('acpid-runscripts')
 depends=('acpid' 's6')
 install=acpid.install
 source=("acpid.run" "acpid.type")
-sha256sums=('d3c581ad7524c331e62c1655564a5886ce9a1b25dc343bb6c3ac67ee64640b12'
+sha256sums=('3b1183d7580369a00f578fc4b38e63a9874778bbf8387d0eaad40a2b6d246678'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
