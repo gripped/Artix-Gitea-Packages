@@ -1,8 +1,6 @@
 pre_remove() {
-    if [ -e "/run/service/ip6tables" ]; then
+    if [ -e "/run/service/s6rc-oneshot-holder" ]; then
         s6-rc -d change ip6tables
-    fi
-    if [ -e "/run/service/iptables" ]; then
         s6-rc -d change iptables
     fi
 }
