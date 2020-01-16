@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=php-fpm-s6
-pkgver=20191107
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for php-fpm"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('php-fpm-runscripts')
 depends=('php-fpm' 's6')
 install=php-fpm.install
 source=("php-fpm.run" "php-fpm.type")
-sha256sums=('6e4fe7c3916ba9efd38dca8cc09167e14def8fcfed9e6742cf83397f0d43e11a'
+sha256sums=('3ae60c3e75bc224d36af4ead75b375c86ef9ad914fd63f4bf5b0420b4f888c91'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
