@@ -1,0 +1,27 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=dbus-s6
+pkgver=20200115
+pkgrel=1
+pkgdesc="s6 service scripts for dbus"
+arch=('any')
+url="https://github.com/artix-linux"
+depends=('dbus' 's6')
+provides=('init-dbus')
+conflicts=('init-dbus')
+install=dbus.install
+source=("dbus.notification-fd" "dbus.run" "dbus.type")
+sha256sums=('1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '88b80bc271e7cccc021d7b3bf5ec05fee81f0a2e7579b8c8c23136d94f594825'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in notification-fd run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'dbus'
+}
