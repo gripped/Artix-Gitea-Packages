@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20191027
-pkgrel=2
+pkgver=20200115
+pkgrel=1
 pkgdesc="s6 service scripts for elogind"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -11,13 +11,13 @@ conflicts=('init-elogind')
 install=elogind.install
 source=("elogind.dependencies" "elogind.run" "elogind.type")
 sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '9960edc21bdcf187d132653876a297da234606997702daf2f24d4fbfb4a94cf8'
+            '3132937fd5c6c343223e4f04e7d4cdf1ebb94d972d3d760bae34a9fdccfe838d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in dependencies type run; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
