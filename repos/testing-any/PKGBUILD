@@ -1,0 +1,30 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=iptables-s6
+pkgver=20200115
+pkgrel=1
+pkgdesc="s6 service scripts for iptables"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-system')
+provides=('init-iptables')
+conflicts=('init-iptables')
+depends=('iptables' 's6')
+install=iptables.install
+source=("ip6tables.type" "ip6tables.up" "iptables.type" "iptables.up")
+sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            'b32d018a99fc2514a737dac4aa9736c66a266093ba3ce80e0e89169725b31804'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '0e167d1971c542a570290349b9e8f8e5bf3cc0b2d0658f05ca57500a1c6ea389')
+
+_inst_sv(){
+    for file in type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'iptables'
+    _inst_sv 'ip6tables'
+}
