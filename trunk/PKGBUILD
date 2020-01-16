@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=znc-s6
-pkgver=20191114
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for znc"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('571f1328a9219528ea58ee0e77a929aeb8dae3d4def450255baf2c561c68fd01'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
