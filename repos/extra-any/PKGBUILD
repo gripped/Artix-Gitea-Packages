@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=rsync-s6
-pkgver=20191029
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for rsync"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('rsync-runscripts')
 depends=('rsync' 's6')
 install=rsyncd.install
 source=("rsyncd.run" "rsyncd.type")
-sha256sums=('058c8c131a81c36ec55563936ebb2397a662a4c001ca43a30a4ffe203cbbdaa5'
+sha256sums=('098e7b1cb3c1f8638c62ce2585e61b514ba795b17ed26ba56e7b879098b7de9f'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
