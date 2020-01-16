@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=hostapd-s6
-pkgver=20191104
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for hostapd"
 arch=('any')
@@ -12,13 +11,13 @@ conflicts=('hostapd-runscripts')
 depends=('hostapd' 's6')
 install=hostapd.install
 source=("hostapd.run" "hostapd.type")
-sha256sums=('cd14120ab79aa034d02c86ac8c50799b20ecf10c2abf5281036b163120480628'
+sha256sums=('b48f725cc04379fb87e9f2f6a25737395dfed8178dc1cf88014096e8b0af75c6'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
