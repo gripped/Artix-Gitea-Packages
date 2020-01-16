@@ -1,5 +1,4 @@
 #!/usr/bin/execlineb -P
-
 fdmove -c 2 1
 envfile /etc/s6/sv/wpa_supplicant/conf
 importas -i WPA_INTERFACE WPA_INTERFACE
