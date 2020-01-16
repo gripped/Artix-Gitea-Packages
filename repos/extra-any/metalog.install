@@ -1,5 +1,10 @@
 pre_remove() {
     if [ -e "/run/service/metalog" ]; then
-        s6-rc -d change metalog
+        s6-rc -d change syslog-ng
     fi
+	sed -i '/metalog/d' /etc/s6/sv/log/contents
+}
+
+post_install() {
+	echo "metalog" >> /etc/s6/sv/log/contents
 }
