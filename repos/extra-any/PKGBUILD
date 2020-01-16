@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=bind-s6
-pkgver=20191031
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for bind"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('bind-runscripts')
 depends=('bind' 's6')
 install=named.install
 source=("named.run" "named.type")
-sha256sums=('fdfb49f74398cd2700c0eb4ced84a59d5a534ff87571e6da9f1e766fb0c691be'
+sha256sums=('995dee4b4d458cb17dd0c87d6143941f34b8680335d15adf9e96c614acaaf0c9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
