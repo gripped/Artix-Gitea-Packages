@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=postfix-s6
-pkgver=20191107
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for postfix"
 arch=('any')
@@ -11,13 +11,13 @@ conflicts=('postfix-runscripts')
 depends=('postfix' 's6')
 install=postfix.install
 source=("postfix.run" "postfix.type")
-sha256sums=('7a17fe0c9624b613caf3666449069e33d5148b493e031004f3df29894d303345'
+sha256sums=('f79d8d23ab4cf7eb52745fa626a6ac8f21556e74fcd87754d7c00118ae14b2c4'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
