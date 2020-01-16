@@ -1,7 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-
 pkgname=xl2tpd-s6
-pkgver=20191114
+pkgver=20200115
 pkgrel=1
 pkgdesc="s6 service scripts for xl2tpd"
 arch=('any')
@@ -18,7 +17,7 @@ sha256sums=('190f7568fa71194d9d445e9c3616ab219e544b84ad2ded340fa0792293447ca0'
 _inst_sv(){
     for file in run type; do
         if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
 }
