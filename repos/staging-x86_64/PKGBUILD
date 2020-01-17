@@ -8,6 +8,7 @@ url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
 depends=('sh')
 makedepends=('s6')
+install=s6-linux-init.install
 backup=('etc/s6/current/scripts/rc.init'
         'etc/s6/current/scripts/rc.shutdown'
         'etc/s6/current/scripts/rc.shutdown.final'
