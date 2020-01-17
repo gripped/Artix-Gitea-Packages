@@ -43,7 +43,7 @@ package() {
     install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6/skel/runlevel
 
     # execute s6-linux-init-maker
-    ./s6-linux-init-maker -1 -n -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
+    ./s6-linux-init-maker -1 -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
     mv "${pkgdir}"/etc/s6/current/bin/init "${pkgdir}"/etc/s6/current/bin/s6-init
     cp -a "${pkgdir}"/etc/s6/current/bin/* "${pkgdir}"/usr/bin
 }
