@@ -1,2 +1,36 @@
 #!/usr/bin/execlineb -P
-foreground { sh /etc/s6/sv/postgresql/shell_run }
+backtick -n PGROOT { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGROOT" }
+importas -iu PGROOT PGROOT
+
+backtick -n PGDATA { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGDATA" }
+importas -iu PGDATA PGDATA
+
+backtick -n PGLOG { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGLOG" }
+importas -iu PGLOG PGLOG
+
+backtick -n INITOPTS { sh -c "source /etc/s6/sv/postgresql/conf; echo $INITOPTS" }
+importas -iu INITOPTS INITOPTS
+
+backtick -n PGOPTS { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGOPTS" }
+importas -iu PGOPTS PGOPTS
+
+foreground {
+    if { test $PGROOT != /var/lib/postgresql }
+    foreground { echo Creating symlink /var/lib/postgresql -> $PGROOT }
+    foreground { if -n { test -L /var/lib/postgres } if { test -d /var/lib/postgres } rmdir /var/lib/postgres }
+    foreground { ln -sf $PGROOT /var/lib/postgresql }
+}
+
+foreground {
+    if -n { test -d $PGDATA }
+    foreground { echo Initializing database in $PGDATA }
+    foreground { mkdir -p $PGDATA }
+    foreground { chown -R postgres:postgres $PGDATA }
+    foreground { chmod 0700 $PGDATA }
+    foreground { redirfd -w 1 /dev/null su - postgres -m -c /usr/bin/initdb $INITOPTS -D $PGDATA }
+    foreground { if { test -f /etc/postgresql/postgresql.conf } ln -sf /etc/postgresql/postgresql.conf $PGDATA/postgresql.conf }
+}
+
+ifte { test -n $PGOPTS }
+{ fdmove -c 2 1 exec s6-setuidgid postgres postgres -D $PGDATA }
+fdmove -c 2 1 exec s6-setuidgid postgres postgres -D $PGDATA $PGOPTS
