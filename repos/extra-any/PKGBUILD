@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=metalog-s6
-pkgver=20200115
+pkgver=20200118
 pkgrel=1
 pkgdesc="s6 service scripts for metalog"
 arch=('any')
