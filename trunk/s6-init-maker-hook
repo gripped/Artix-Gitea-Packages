@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ -d /etc/s6 ]; then
+    rm -rf /etc/s6/current/bin /etc/s6/current/env /etc/s6/current/run-image /tmp/current
+    s6-linux-init-maker -1 -n -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /tmp/current
+    mv /tmp/current/bin/init /tmp/current/bin/s6-init
+    rm -rf /tmp/current/bin/scripts
+    mv /tmp/current/* /etc/s6/current
+    cp -r /etc/s6/current/bin /usr
+fi
