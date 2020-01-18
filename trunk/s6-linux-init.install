@@ -1,7 +1,7 @@
 post_install() {
     rm -rf /tmp/current
     mv /etc/s6/current /tmp
-    s6-linux-init-maker -1 -n -f /etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
+    s6-linux-init-maker -1 -f /etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
     mv /etc/s6/current/bin/init /etc/s6/current/bin/s6-init
     rm -rf /etc/s6/current/scripts
     mv /tmp/current/scripts /etc/s6/current
@@ -11,7 +11,7 @@ post_install() {
 post_upgrade() {
     rm -rf /tmp/current
     mv /etc/s6/current /tmp
-    s6-linux-init-maker -1 -n -f /etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
+    s6-linux-init-maker -1 -f /etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
     mv /etc/s6/current/bin/init /etc/s6/current/bin/s6-init
     rm -rf /etc/s6/current/scripts
     mv /tmp/current/scripts /etc/s6/current
