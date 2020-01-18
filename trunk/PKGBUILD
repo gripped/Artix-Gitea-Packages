@@ -43,8 +43,6 @@ package() {
     install -Dm755 ${srcdir}/rc.shutdown.final "${pkgdir}"/etc/s6/skel/rc.shutdown.final
     install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6/skel/runlevel
 
-    # execute s6-linux-init-maker
+    # execute s6-linux-init-maker for PM tracking
     ./s6-linux-init-maker -1 -n -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
-    mv "${pkgdir}"/etc/s6/current/bin/init "${pkgdir}"/etc/s6/current/bin/s6-init
-    cp -r "${pkgdir}"/etc/s6/current/bin "${pkgdir}"/usr
 }
