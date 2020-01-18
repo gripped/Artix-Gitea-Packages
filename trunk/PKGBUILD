@@ -44,5 +44,5 @@ package() {
     install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6/skel/runlevel
 
     # execute s6-linux-init-maker for PM tracking
-    ./s6-linux-init-maker -1 -n -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
+    # ./s6-linux-init-maker -1 -n -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
 }
