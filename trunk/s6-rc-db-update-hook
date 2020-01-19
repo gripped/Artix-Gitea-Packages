@@ -9,7 +9,11 @@ if [ -e "/etc/s6/rc/compiled" ]; then
 fi
 
 timestamp=$(date +%s)
-s6-rc-compile /etc/s6/rc/compiled-$timestamp /etc/s6/sv
+ret=$(s6-rc-compile /etc/s6/rc/compiled-$timestamp /etc/s6/sv)
+if [[ "$?" != 0 ]]; then
+    echo "Error compiling database. Please double check the /etc/s6/sv directories. Exiting."
+    exit 1
+fi
 if [ -e "/run/service" ]; then
     s6-rc-update /etc/s6/rc/compiled-$timestamp
 fi
