@@ -40,7 +40,7 @@ build() {
     --with-pidfile-dir=/run --enable-spoof-source --enable-ipv6 \
     --disable-systemd --with-systemdsystemunitdir=no \
     --enable-manpages --enable-all-modules --disable-java --disable-java-modules  \
-    --disable-riemann --with-python=3 --with-jsonc=system
+    --disable-riemann --with-python=3 --disable-kafka --with-jsonc=system
   make
 }
 
