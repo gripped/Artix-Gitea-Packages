@@ -38,7 +38,7 @@ build() {
   ./configure --prefix=/usr --sysconfdir=/etc/syslog-ng --libexecdir=/usr/lib \
     --sbindir=/usr/bin --localstatedir=/var/lib/syslog-ng --datadir=/usr/share \
     --with-pidfile-dir=/run --enable-spoof-source --enable-ipv6 \
-    --disable-systemd --with-systemdsystemunitdir=no \
+    --disable-systemd --with-systemdsystemunitdir=no --disable-linux-caps \
     --enable-manpages --enable-all-modules --disable-java --disable-java-modules  \
     --disable-riemann --with-python=3 --disable-kafka --with-jsonc=system
   make
