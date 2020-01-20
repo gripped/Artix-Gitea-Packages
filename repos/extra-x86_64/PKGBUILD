@@ -21,7 +21,14 @@ makedepends=(
 )
 source=(git+https://github.com/hughsie/libgusb#tag=bda40aca1f11f841524ad6ed16c352329b8a8d41)
 sha256sums=(SKIP)
- 
+
+prepare() {
+  cd libgusb
+
+  # https://github.com/hughsie/libgusb/issues/24
+  git cherry-pick -n 3813921b7248a5f8a340f3395ff0ddf304bcf64e
+}
+
 prepare() {
   cd libgusb
 
