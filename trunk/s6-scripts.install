@@ -1,0 +1,37 @@
+post_install() {
+    cryptsetup=$(pacman -Qi cryptsetup-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "cryptsetup" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+    lvm2=$(pacman -Qi lvm2-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+    metalog=$(pacman -Qi metalog-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "metalog" >> /etc/s6/sv/log/contents
+    fi
+    syslog=$(pacman -Qi syslog-ng-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "syslog-ng" >> /etc/s6/sv/log/contents
+    fi
+}
+
+post_upgrade() {
+    cryptsetup=$(pacman -Qi cryptsetup-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "cryptsetup" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+    lvm2=$(pacman -Qi lvm2-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+    metalog=$(pacman -Qi metalog-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "metalog" >> /etc/s6/sv/log/contents
+    fi
+    syslog=$(pacman -Qi syslog-ng-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+	    echo "syslog-ng" >> /etc/s6/sv/log/contents
+    fi
+}
