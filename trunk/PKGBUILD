@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=audit-s6
-pkgver=20200124
+pkgver=20200125
 pkgrel=1
 pkgdesc="s6 service scripts for audit"
 arch=('any')
@@ -10,6 +10,7 @@ provides=('init-audit')
 conflicts=('init-audit')
 depends=('audit' 's6')
 install=audit.install
+backup=('etc/s6/sv/auditd-log/conf')
 source=("auditctl.conf"
         "auditctl.down"
         "auditctl.type"
