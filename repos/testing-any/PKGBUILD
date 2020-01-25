@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cronie-s6
-pkgver=20200124
+pkgver=20200125
 pkgrel=1
 pkgdesc="s6 service scripts for cronie"
 arch=('any')
@@ -10,6 +10,7 @@ provides=('init-cronie')
 conflicts=('init-cronie')
 depends=('cronie' 's6')
 install=cronie.install
+backup=('etc/s6/sv/cronie-log/conf')
 source=("cronie-log.conf"
         "cronie-log.consumer-for"
         "cronie-log.notification-fd"
