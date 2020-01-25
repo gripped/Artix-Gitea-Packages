@@ -14,7 +14,7 @@ if [[ "$?" != 0 ]]; then
     echo "Error compiling database. Please double check the /etc/s6/sv directories. Exiting."
     exit 1
 fi
-if [ -e "/run/service" ]; then
+if [ -e "/run/s6-rc" ]; then
     s6-rc-update /etc/s6/rc/compiled-$timestamp
 fi
 if [ -d "/etc/s6/rc/compiled" ]; then
