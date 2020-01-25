@@ -5,7 +5,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-gtk-presets
-pkgver=0.8+51+geb2382d
+pkgver=0.9+a9d57bb
 pkgrel=1
 pkgdesc='Artix GTK presets, for MATE, LXDE and Cinnamon.'
 arch=('any')
@@ -18,13 +18,14 @@ conflicts=('artix-lxde-presets' 'artix-mate-presets' 'artix-cinnamon-presets')
 #replaces=('artix-lxde-presets' 'artix-mate-presets' 'artix-cinnamon-presets') # when refactor merges into master
 groups=('artix-branding')
 makedepends=('git')
-_commit=eb2382d9452c33833245b8ddf7216f68f9f35740
-source=("git+$url.git#commit=${_commit}")
+#_commit=eb2382d9452c33833245b8ddf7216f68f9f35740
+_branch='refactor'
+source=("git+$url.git#branch=${_branch}")
 sha256sums=('SKIP')
 
 pkgver() {
     cd ${_pkgbase}
-    git describe --tags | sed 's/-/+/g'
+    printf '%s+%s' "$(git describe --tags | sed 's/-/+/g')" "$(git rev-parse --short HEAD)"
 }
 
 _inst_dir(){
