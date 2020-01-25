@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
-pkgver=0.8+51+geb2382d
+pkgver=0.8+52+g7e34832
 pkgrel=1
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
@@ -15,7 +15,7 @@ conflicts=('artix-lxqt-presets' 'artix-lxde-presets' 'artix-mate-presets' 'artix
 optdepends=('qt5ct')
 makedepends=('git')
 groups=('artix-branding')
-_commit=eb2382d9452c33833245b8ddf7216f68f9f35740
+_commit=7e34832631eb1b2653628e9799e58207bac6f021
 source=("git+$url.git#commit=${_commit}")
 sha256sums=('SKIP')
 
