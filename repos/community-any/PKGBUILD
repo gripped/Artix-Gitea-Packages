@@ -4,7 +4,7 @@ _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
 pkgver=0.9+1+g0b76459
-pkgrel=3
+pkgrel=4
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
@@ -22,7 +22,7 @@ sha256sums=('SKIP')
 
 pkgver() {
     cd ${_pkgbase}
-    (git describe --tags | sed 's/-/+/g'
+    git describe --tags | sed 's/-/+/g'
 }
 
 _inst_dir(){
