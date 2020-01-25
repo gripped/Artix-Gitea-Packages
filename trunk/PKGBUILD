@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20200124
+pkgver=20200125
 pkgrel=1
 pkgdesc="s6 service scripts for dbus"
 arch=('any')
@@ -9,6 +9,7 @@ depends=('dbus' 's6')
 provides=('init-dbus')
 conflicts=('init-dbus')
 install=dbus.install
+backup=('etc/s6/sv/dbus-log/conf')
 source=("dbus-log.conf"
         "dbus-log.consumer-for"
         "dbus-log.notification-fd"
