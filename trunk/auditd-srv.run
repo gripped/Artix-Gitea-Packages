@@ -1,2 +1,2 @@
 #!/usr/bin/execlineb -P
-exec auditd -n
+exec auditd -n -f
