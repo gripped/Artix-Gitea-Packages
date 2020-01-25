@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-rc
 pkgver=0.5.1.1
-pkgrel=12
+pkgrel=13
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
@@ -14,7 +14,7 @@ source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
         "s6-rc-db-update.hook")
 sha256sums=('257e2c428336c2b57cd17b65382bc55592759acc65e053e23ad646444f28af52'
-            '54fb99c7da5a1b64f63df260602da0e8aebe767044d977516234a8f698dc94ed'
+            '27636cbb22615015d1428a3d02d0564d83e61532c26a89c9c8b03b0f6d8eb136'
             '9d70105a7145e6116a6a3041b81f11a678cc2d1053694fce295584ae9b70e576')
 
 build() {
