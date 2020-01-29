@@ -25,6 +25,7 @@ options=('!emptydirs')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/mpv-player/$pkgname/archive/v$pkgver.tar.gz")
 sha256sums=('9163f64832226d22e24bbc4874ebd6ac02372cd717bef15c28a0aa858c5fe592')
 
+
 build() {
   cd ${pkgname}-${pkgver}
 
