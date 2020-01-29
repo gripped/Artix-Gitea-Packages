@@ -4,7 +4,6 @@
 # Contributor: Giorgio Lando <patroclo7@gmail.com>
 # Contributor: Nicolas Quienot <niQo@aur>
 # Contributor: Jesse Young <jesse.young@gmail.com>
-# Contributor: Anton Eliasson <devel@antoneliasson.se>
 
 pkgbase=python-httplib2
 pkgname=(python-httplib2 python2-httplib2)
