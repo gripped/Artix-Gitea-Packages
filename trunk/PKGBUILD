@@ -144,8 +144,6 @@ package() {
 
   make DESTDIR="${pkgdir}" install
 
-  install -D -m644 "${srcdir}"/libvirtd.conf.d "${pkgdir}"/etc/conf.d/libvirtd
-  install -D -m644 "${srcdir}"/libvirtd-guests.conf.d "${pkgdir}"/etc/conf.d/libvirt-guests
   install -D -m644 "${srcdir}"/libvirt.sysusers.d "${pkgdir}"/usr/lib/sysusers.d/libvirt.conf
 
   chown 0:102 "${pkgdir}"/usr/share/polkit-1/rules.d
