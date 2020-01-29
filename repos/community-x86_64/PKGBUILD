@@ -21,6 +21,7 @@ sha512sums=('SKIP'
             '38b46d953837a7afa5a654dfeef163b210d56cad57d937018531d00cd63b5341d6f9cd777299bdc7a994d0cb7df09b8157aad0f166e76ad47564e1ad6d5441d4'
             'c1724bfc7cbd6a406f17acb661efca0f1e57e2c30cc1841f4cb7ccfc420adc40cc61cb1c023d00444827b2c40e9caa4c2fefbfd503419848c74a0b455b2375ab')
 validpgpkeys=("AA70DF6234FBF96AB9101D09E6D5D452E87026E9")
+
 prepare() {
   cd $pkgname
   # apply patch from the source array (should be a pacman feature)
