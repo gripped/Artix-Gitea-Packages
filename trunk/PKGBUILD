@@ -2,7 +2,7 @@
 
 pkgname=artix-dark-theme
 pkgver=20200130
-pkgrel=1
+pkgrel=2
 pkgdesc="Dark theme for the community ISOs of Artix Linux. GTK2/3, QT5, Plasma splash."
 arch=('any')
 url="https://gitea.artixlinux.org/nous/artix-dark-theme"
