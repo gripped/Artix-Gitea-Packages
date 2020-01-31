@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+if [ ! -f /etc/s6/${2}.backup ]; then
+    s6-rc list ${2} > /etc/s6/${2}.backup
+fi
+
+case $1 in
+    add)
+	s6-rc list $2 > /tmp/s6_old
+	s6-rc-bundle delete $2
+	s6-rc-bundle add $2 $(cat /tmp/s6_old) $3
+
+	if [[ "$?" -ne 1 ]]; then
+		rm /etc/s6/*.backup
+	fi ;;
+
+    delete)
+	s6-rc list $2 > /tmp/s6_old
+	s6-rc-bundle delete $2
+	sed -i "/$3/d" /tmp/s6_old
+	s6-rc-bundle add $2 $(cat /tmp/s6_old)
+
+	if [[ "$?" -ne 1 ]]; then
+		rm /etc/s6/*.backup
+	fi ;;
+    
+    list)
+	$(echo s6-rc list $2) ;;
+        
+    -h)
+	case $2 in
+	    add)
+		echo "Add sshd to default bundle"
+	        echo "s6-rc-bundle-update add default sshd";;
+
+	    delete)
+		echo "Remove sshd from default bundle"
+		echo "s6-rc-bundle-update delete default sshd";;
+
+	    list)
+		echo "List services in default bundle"
+		echo "s6-rc-bundle-update list default";;
+
+	    *)
+		echo "You can do '-h option' for option example"
+		echo "TIP: You can add/delete more than one service if you surround the service names in quotes";;
+	esac
+	;;
+    
+    *)
+		echo "Options: add delete list backup";;
+esac
