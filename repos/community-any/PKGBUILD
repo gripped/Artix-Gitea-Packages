@@ -4,8 +4,8 @@
 # Contributor: David Rosenstrauch <darose@darose.net>
 
 pkgname=ddclient
-pkgver=3.9.0
-pkgrel=4
+pkgver=3.9.1
+pkgrel=1
 
 pkgdesc="Update dynamic DNS entries for accounts on many dynamic DNS services"
 url="https://github.com/ddclient/ddclient"
@@ -22,7 +22,7 @@ source=(${pkgname}-${pkgver}.tar.gz::https://github.com/ddclient/ddclient/archiv
         tmpfiles
         sysusers)
 
-sha512sums=('ae314c96a37dd90256d6acf62f4a4523b72f540194131e351a032239b00b4520351f6549d3b20a9209fe49ccc6de7ce158ffa8635d341066ea71b789dc667438'
+sha512sums=('a8a4d6cb94e4239a7b7b4fc7d9ebef703cbd6c45fc3394b644694a053b5b8aa8d109410b5b8b3676a5f30b18474d24c7feb16c65c30b28bd7d941d8a214b1346'
             '13c6e541ff23575d799eee943b8e10e277e5073732cd7c9705c23ee557bd99978435c0fe8b546fa3122a60cfb0499e27853e1968f0c1e0225890b68ae678e0c7'
             '4a3ce3e00783c99030740f407fdbb9e6185a1ea6faff809a7ca415c1999bd55f5cafffe278b68ee4a428fb56e01ff36ac12ad4f28c4954816ff68f28a78136a8')
 
