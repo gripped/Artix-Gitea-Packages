@@ -1,0 +1,8 @@
+pre_remove() {
+    if [ -e "/run/service/nfs-server" ]; then
+        s6-rc -d change nfs-server
+    fi
+    if [ -e "/run/service/statd" ]; then
+        s6-rc -d change statd
+	fi
+}
