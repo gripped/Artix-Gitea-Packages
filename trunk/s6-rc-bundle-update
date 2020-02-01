@@ -1,44 +1,80 @@
 #!/usr/bin/env bash
 
-if [ ! -f /etc/s6/${2}.backup ]; then
-    s6-rc list ${2} > /etc/s6/${2}.backup
-fi
-
 case $1 in
     add)
-	s6-rc list $2 > /tmp/s6_old
+	if [ "$#" -ne 3 ]; then
+		echo "usage: s6-rc-bundle-update add|delete|list bundlename servicenames... (use s6-rc-bundle-update -h for more details)"
+		exit 1
+	fi
+	isbundle=$(s6-rc-db type "$2" 2> /dev/null)
+	if [[ "$isbundle" != "bundle" ]]; then
+		echo "$2 is not an existing bundle!"
+		exit 1
+	fi
+
+	echo "$(sudo s6-rc list $2)" > /etc/s6/$2.backup
 	s6-rc-bundle delete $2
-	s6-rc-bundle add $2 $(cat /tmp/s6_old) $3
-
-	if [[ "$?" -ne 1 ]]; then
-		rm /etc/s6/*.backup
-	fi ;;
-
+	old=$(echo $(cat /etc/s6/$2.backup))
+	if [[ -n $old ]]; then
+		ret=$(s6-rc-bundle add $2 $old $3)
+		if [[ "$?" != 0 ]]; then
+			echo "Error when trying to add $3!"
+			s6-rc-bundle add $2 $old
+		fi
+	fi
+	rm /etc/s6/$2.backup ;;
+    
     delete)
-	s6-rc list $2 > /tmp/s6_old
+	if [ "$#" -ne 3 ]; then
+		echo "usage: s6-rc-bundle-update add|delete|list bundlename servicenames... (use s6-rc-bundle-update -h for more details)"
+		exit 1
+	fi
+	isbundle=$(s6-rc-db type "$2" 2> /dev/null)
+	if [[ "$isbundle" != "bundle" ]]; then
+		echo "$2 is not an existing bundle!"
+		exit 1
+	fi
+	echo "$(sudo s6-rc list $2)" > /etc/s6/$2.backup
 	s6-rc-bundle delete $2
-	sed -i "/$3/d" /tmp/s6_old
-	s6-rc-bundle add $2 $(cat /tmp/s6_old)
-
-	if [[ "$?" -ne 1 ]]; then
-		rm /etc/s6/*.backup
-	fi ;;
+	old=$(echo $(cat /etc/s6/$2.backup))
+	for entry in $3; do
+		ret=$(grep -x $entry /etc/s6/$2.backup)
+		if [[ "$?" != 0 ]]; then
+			echo "$entry does not exist in bundle $2!"
+			s6-rc-bundle add $2 $old
+			rm /etc/s6/$2.backup
+			exit 1
+		else
+			sed -i "/$entry/d" /etc/s6/$2.backup
+		fi
+	done
+	s6-rc-bundle add $2 $(echo $(cat /etc/s6/$2.backup))
+	rm /etc/s6/$2.backup ;;
     
     list)
-	$(echo s6-rc list $2) ;;
-        
-    -h)
+	if [ "$#" -ne 2 ]; then
+		echo "usage: s6-rc-bundle-update add|delete|list bundlename servicenames... (use s6-rc-bundle-update -h for more details)"
+		exit 1
+	fi
+	isbundle=$(s6-rc-db type "$2" 2> /dev/null)
+	if [[ "$isbundle" != "bundle" ]]; then
+		echo "$2 is not an existing bundle!"
+		exit 1
+	fi
+	echo "$(sudo s6-rc list $2)" ;;
+    
+    -h|--help)
 	case $2 in
 	    add)
-		echo "Add sshd to default bundle"
+		echo "Add sshd to a bundle"
 	        echo "s6-rc-bundle-update add default sshd";;
 
 	    delete)
-		echo "Remove sshd from default bundle"
+		echo "Remove sshd from a bundle"
 		echo "s6-rc-bundle-update delete default sshd";;
 
 	    list)
-		echo "List services in default bundle"
+		echo "List services in a bundle"
 		echo "s6-rc-bundle-update list default";;
 
 	    *)
@@ -48,5 +84,6 @@ case $1 in
 	;;
     
     *)
-		echo "Options: add delete list backup";;
+		echo "usage: s6-rc-bundle-update add|delete|list bundlename servicenames... (use s6-rc-bundle-update -h for more details)"
+
 esac

@@ -13,11 +13,11 @@ makedepends=('git')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-rc-db-update-hook"
         "s6-rc-db-update.hook"
-	"s6-rc-bundle-update")
+        "s6-rc-bundle-update")
 sha256sums=('257e2c428336c2b57cd17b65382bc55592759acc65e053e23ad646444f28af52'
             '27636cbb22615015d1428a3d02d0564d83e61532c26a89c9c8b03b0f6d8eb136'
             '9d70105a7145e6116a6a3041b81f11a678cc2d1053694fce295584ae9b70e576'
-            '6913761962f1a8825818337f12ccc089ab94f028927fc70efa837918d32def9a')
+            'cff27aa66065957fb2028c027eb59a5c66818a82f3d3816bfc63ce4b81b76b68')
 
 build() {
     cd ${pkgname}-${pkgver}
@@ -39,5 +39,5 @@ package() {
     mkdir -p ${pkgdir}/usr/share/libalpm/{scripts,hooks}
     install -Dm755 ${srcdir}/*-hook ${pkgdir}/usr/share/libalpm/scripts
     install -Dm644 ${srcdir}/*.hook ${pkgdir}/usr/share/libalpm/hooks
-    install -Dm644 ../s6-rc-bundle-update ${pkgdir}/usr/bin
+    install -Dm755 ../s6-rc-bundle-update ${pkgdir}/usr/bin
 }
