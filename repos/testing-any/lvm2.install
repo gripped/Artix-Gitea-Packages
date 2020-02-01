@@ -1,0 +1,13 @@
+pre_remove() {
+	if [ -e "/run/service/s6rc-oneshot-runner" ]; then
+		s6-rc -d change lvm2
+	fi
+	sed -i '/lvm2/d' /etc/s6/sv/mount-filesystems/dependencies
+	if [ -e "/run/service/lvmetad" ]; then
+		s6-rc -d change lvmetad
+	fi
+}
+
+post_install() {
+	echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+}
