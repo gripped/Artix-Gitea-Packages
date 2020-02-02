@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/rpcbind" ]; then
+        s6-rc -d change rpcbind
+    fi
+}
