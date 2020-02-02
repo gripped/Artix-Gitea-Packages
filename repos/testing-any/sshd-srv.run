@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+redirfd -w 1 /dev/null
+foreground { ssh-keygen -A }
+exec /usr/bin/sshd -D
