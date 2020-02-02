@@ -4,7 +4,7 @@ pre_upgrade() {
 	echo "Press 'ctrl+\' to quit the update. Press 'ctrl+c' to continue."
 	echo "If you quit, you need to manually remove the /var/lib/pacman/db.lck file."
 	while true; do
-		sleep infinity
+		trap "echo 'Manually run sh /usr/share/libalpm/scripts/s6-rc-db-update-hook to complete this update'; break" 2
 	done
 }
 
