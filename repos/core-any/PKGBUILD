@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20200121
+pkgver=20200202
 pkgrel=1
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
@@ -9,14 +9,13 @@ provides=('init-udev')
 depends=('execline' 'opentmpfiles' 'pam')
 replaces=('eudev-s6')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
-            'lvm2-s6: lvm2 boot script support'
-            'metalog-s6: metalog boot script support'
-            'syslog-ng-s6: syslog-ng boot script support')
+            'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
-        'etc/s6/s6.conf')
+        'etc/s6/s6.conf'
+        'etc/s6/sv/rc-local/dependencies')
 install=s6-scripts.install
 makedepends=('git')
-_commit=4f982c94076c5f01225e5f20369ccfaacdd0f05e
+_commit=553eafaa413b7a065bcb9a32b1b654cbe9e6037e
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -27,7 +26,8 @@ _inst_sv(){
         out=$2
     fi
     cd $1
-    for file in contents dependencies down run shell_down shell_up type up; do
+    for file in consumer-for contents dependencies down notification-fd \
+                pipeline-name producer-for run shell_down shell_up type up; do
         if test -f "$srcdir/s6-scripts/$1/$file"; then
             install -Dm644 "$srcdir/s6-scripts/$1/$file" "$pkgdir/etc/s6/sv/$out/$file"
         fi
@@ -49,8 +49,6 @@ package() {
     install -Dm755 "${srcdir}"/s6-scripts/modules-load "${pkgdir}"/usr/bin/modules-load 
     install -d "${pkgdir}"/usr/share/man/man8
     install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
-    install -d "${pkgdir}"/usr/share/licenses/obarun
-    install -Dm644 "${srcdir}"/s6-scripts/LICENSE "${pkgdir}"/usr/share/licenses/obarun
 
     # install startup/shutdown scripts
     _inst_sv 'agetty' 'agetty-tty2'
@@ -67,7 +65,6 @@ package() {
     _inst_sv 'hostname'
     _inst_sv 'hwclock'
     _inst_sv 'kmod-static-nodes'
-    _inst_sv 'log'
     _inst_sv 'misc'
     _inst_sv 'modules'
     _inst_sv 'mount'
@@ -86,5 +83,6 @@ package() {
     _inst_sv 'tmpfiles-setup'
     _inst_sv 'udev'
     _inst_sv 'udevadm'
-    _inst_sv 'udevd'
+    _inst_sv 'udevd-log'
+    _inst_sv 'udevd-srv'
 }
