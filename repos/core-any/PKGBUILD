@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20200115
+pkgver=20200201
 pkgrel=1
 pkgdesc="s6 service scripts for openssh"
 arch=('any')
@@ -10,12 +10,29 @@ provides=('init-openssh')
 conflicts=('init-openssh')
 depends=('openssh' 's6')
 install=sshd.install
-source=("sshd.run" "sshd.type")
-sha256sums=('58a8ca0d50ae49f00eb74a1de2530130a5767efb47ff50351d403238e2f0069a'
+backup=('etc/s6/sv/sshd-log/conf')
+source=("sshd-log.conf"
+        "sshd-log.consumer-for"
+        "sshd-log.notification-fd"
+        "sshd-log.pipeline-name"
+        "sshd-log.run"
+        "sshd-log.type"
+        "sshd-srv.producer-for"
+        "sshd-srv.run"
+        "sshd-srv.type")
+sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '5e044d5d6f7688f54d033408b0dd4ca0b2a5e6377137860635118f9b9ad78d2d'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '26a6e5ad8ece50bdc2a5e6f5f14629002e996c9b83cfcbe6d2d253c55db833eb'
+            '50c125e6cd6741b8ed55e031f49f5481501af6ecf15f541454822fa2fa70ced2'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '616bf3d26c352f679fbf66b555603859925ca06735fb36cd7b1e51de76a221b3'
+            '58a8ca0d50ae49f00eb74a1de2530130a5767efb47ff50351d403238e2f0069a'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +40,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'sshd'
+    _inst_sv 'sshd-log'
+    _inst_sv 'sshd-srv'
 }
