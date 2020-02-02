@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20200124
+pkgver=20200201
 pkgrel=1
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
@@ -9,14 +9,12 @@ provides=('init-udev')
 depends=('execline' 'opentmpfiles' 'pam')
 replaces=('eudev-s6')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
-            'lvm2-s6: lvm2 boot script support'
-            'metalog-s6: metalog boot script support'
-            'syslog-ng-s6: syslog-ng boot script support')
+            'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
         'etc/s6/s6.conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=14880dc7431210a8809caf25648466da2bc69420
+_commit=553eafaa413b7a065bcb9a32b1b654cbe9e6037e
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -66,7 +64,6 @@ package() {
     _inst_sv 'hostname'
     _inst_sv 'hwclock'
     _inst_sv 'kmod-static-nodes'
-    _inst_sv 'log'
     _inst_sv 'misc'
     _inst_sv 'modules'
     _inst_sv 'mount'
