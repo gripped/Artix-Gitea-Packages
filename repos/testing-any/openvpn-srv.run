@@ -1,2 +1,0 @@
-#!/usr/bin/execlineb -P
-exec openvpn --config /etc/openvpn/openvpn.conf
