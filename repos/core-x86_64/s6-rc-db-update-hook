@@ -58,7 +58,9 @@ if test -n "$old_bundles"; then
                     new_contents=$new_contents" "$m
                 fi
             done
-            s6-rc-bundle -c /etc/s6/rc/compiled add $l $new_contents
+            if test -n "$new_contents"; then
+                s6-rc-bundle -c /etc/s6/rc/compiled add $l $new_contents
+            fi
         fi
         len=$(($len + 1))
     done
