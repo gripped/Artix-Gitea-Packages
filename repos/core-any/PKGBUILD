@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20200105
+pkgver=20200201
 pkgrel=1
 pkgdesc="s6 service scripts for lvm2"
 arch=('any')
@@ -10,23 +10,39 @@ provides=('init-lvm2')
 conflicts=('init-lvm2')
 depends=('lvm2' 's6')
 install=lvm2.install
+backup=('etc/s6/sv/lvmetad-log/conf')
 source=("lvm2.dependencies"
         "lvm2.down"
         "lvm2.type"
         "lvm2.up"
-        "lvmetad.dependencies"
-        "lvmetad.run"
-        "lvmetad.type")
+        "lvmetad-log.conf"
+        "lvmetad-log.consumer-for"
+        "lvmetad-log.notification-fd"
+        "lvmetad-log.pipeline-name"
+        "lvmetad-log.run"
+        "lvmetad-log.type"
+        "lvmetad-srv.dependencies"
+        "lvmetad-srv.producer-for"
+        "lvmetad-srv.run"
+        "lvmetad-srv.type")
 sha256sums=('a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
             '682bb32e4d7337f348f1d70fcd5285c3b663af50d4a1a812f8c30e25283057e2'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '9cc3c5eff67cc74fc2d6073f6c42aadbbd17da485aecb1871561eedd9aeae502'
+            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '5b27d3c028dc93e6fdc97740aec2e87e7f008700c18b6775845182ac62cc60a8'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '24b23e4f88306d08f5be773b23d6196bab7ac9c2e6ba47e7037400053d095e22'
+            'ea73b81696df79ad679a6c5a2f2ebf1595c495373c01c9d88fbcb894eb6f1159'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
-            '7ece41faae1fc65f54fad2a2aa6fb8b79aa4f5aec8d1665ac44006a89de03e9a'
+            'aff16b256adddccefa98e32fb4cafbdd9f21c5bb58409df8c4bd8d5f4461312f'
+            '4a719253763962e71c70cd559d6dcf381e1ba261f637ccefc92d779313dfd9bb'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in dependencies down run type up; do
+    for file in conf consumer-for dependencies down notification-fd \
+        pipeline-name producer-for run type up; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -35,5 +51,6 @@ _inst_sv(){
 
 package() {
     _inst_sv 'lvm2'
-    _inst_sv 'lvmetad'
+    _inst_sv 'lvmetad-log'
+    _inst_sv 'lvmetad-srv'
 }
