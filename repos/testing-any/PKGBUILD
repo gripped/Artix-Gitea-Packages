@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20200128
+pkgver=20200202
 pkgrel=1
 pkgdesc="s6 service scripts for dbus"
 arch=('any')
