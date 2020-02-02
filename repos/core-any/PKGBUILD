@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=device-mapper-s6
-pkgver=20200115
-pkgrel=1
+pkgver=20200128
+pkgrel=2
 pkgdesc="s6 service scripts for device-mapper"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -10,12 +10,29 @@ provides=('init-device-mapper')
 conflicts=('init-device-mapper')
 depends=('device-mapper' 's6')
 install=dmeventd.install
-source=("dmeventd.run" "dmeventd.type")
-sha256sums=('aa29d2e06c5d54e2f3d0632f5732f942b4c84d0a5d85d126b67cedb1ac6c553c'
+backup=('etc/s6/sv/dmeventd-log/conf')
+source=("dmeventd-log.conf"
+        "dmeventd-log.consumer-for"
+        "dmeventd-log.notification-fd"
+        "dmeventd-log.pipeline-name"
+        "dmeventd-log.run"
+        "dmeventd-log.type"
+        "dmeventd-srv.producer-for"
+        "dmeventd-srv.run"
+        "dmeventd-srv.type")
+sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '803175374bb3b213d3e241a798809119933f41ac0924acc968b6c6fc2bfc7b2a'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '8793d442471ffc52ee7c8deed24850be77a1bd18e074ef3a3cf5d7a9036c0d9e'
+            '3e03eb27b44d301e442a5248f70c657aefcbc2a2923f52df399ebee3cb15ea85'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'f2b0112b749196d26651413e0207b31d79b603578fbcc681c87878a1372e964e'
+            'aa29d2e06c5d54e2f3d0632f5732f942b4c84d0a5d85d126b67cedb1ac6c553c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +40,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'dmeventd'
+    _inst_sv 'dmeventd-log'
+    _inst_sv 'dmeventd-srv'
 }
