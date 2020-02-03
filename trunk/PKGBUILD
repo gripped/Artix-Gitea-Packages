@@ -3,8 +3,8 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
-pkgver=0.9+1+g0b76459
-pkgrel=4
+pkgver=20200203
+pkgrel=1
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
@@ -20,10 +20,10 @@ _branch='refactor'
 source=("git+$url.git#branch=${_branch}")
 sha256sums=('SKIP')
 
-pkgver() {
-    cd ${_pkgbase}
-    git describe --tags | sed 's/-/+/g'
-}
+#pkgver() {
+#    cd ${_pkgbase}
+#    git describe --tags | sed 's/-/+/g'
+#}
 
 _inst_dir(){
     cd ${_pkgbase} #-${pkgver}
