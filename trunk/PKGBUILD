@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-desktop-presets
-pkgver=0.9+a9d57bb
+pkgver=20200203
 pkgrel=1
 pkgdesc='Artix common desktop presets'
 arch=('any')
@@ -17,10 +17,10 @@ _branch='refactor'
 source=("git+$url.git#branch=${_branch}")
 sha256sums=('SKIP')
 
-pkgver() {
-    cd ${_pkgbase}
-    printf '%s+%s' "$(git describe --tags | sed 's/-/+/g')" "$(git rev-parse --short HEAD)"
-}
+#pkgver() {
+#    cd ${_pkgbase}
+#    printf '%s+%s' "$(git describe --tags | sed 's/-/+/g')" "$(git rev-parse --short HEAD)"
+#}
 
 _inst_dir(){
     cd ${_pkgbase} #-${pkgver}
