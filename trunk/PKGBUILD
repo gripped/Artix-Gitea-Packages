@@ -1,6 +1,5 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Contributor: Sergej Pupykin <arch+pub@sergej.pp.ru>
-# Contributor: Gilbert Kennen <gilbert firewatcher org>
 
 pkgname=elixir
 pkgver=1.10.0
