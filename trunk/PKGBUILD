@@ -1,8 +1,9 @@
 # Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
 pkgver=3.2.18
-pkgrel=1
+pkgrel=2
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -13,14 +14,17 @@ depends=('yaml-cpp' 'kpmcore>=3.1.0' 'boost-libs' 'hwinfo' 'gtk-update-icon-cach
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
-        0001-artix-modules.patch)
+        0001-artix-modules.patch
+        0002-machineid.patch)
 sha256sums=('f85c81d0b65e37b4e49f5536db8e4b1b2e510a0f323ecdc5aae2b58a3e3b9803'
-            '0e0b376e3f32c60eb962e79076d93786f0bd5ea0e8bdea66e69a633e9fe89a08')
+            '0e0b376e3f32c60eb962e79076d93786f0bd5ea0e8bdea66e69a633e9fe89a08'
+            '8a5ceb26106d36432dd2526071412f1f6884cf1fb8e3177a2143c0c86516755b')
 
 prepare() {
     cd $pkgname-$pkgver
     # patches here
     patch -Np 1 -i $srcdir/0001-artix-modules.patch
+    patch -Np 1 -i $srcdir/0002-machineid.patch
 }
 
 build() {
