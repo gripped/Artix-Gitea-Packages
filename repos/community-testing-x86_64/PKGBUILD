@@ -10,7 +10,7 @@ arch=(x86_64)
 url="https://gitea.io"
 license=(MIT)
 depends=(git)
-makedepends=(go-pie)
+makedepends=(go-pie nodejs npm)
 optdepends=(
   'mariadb: MariaDB support'
   'memcached: MemCached support'
