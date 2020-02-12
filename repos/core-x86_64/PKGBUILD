@@ -5,7 +5,7 @@ _dist=arch${_rel}
 _artix=artix${_rel}
 
 pkgbase=linux
-pkgver=5.5.2.${_artix}
+pkgver=5.5.3.${_artix}
 pkgrel=1
 pkgdesc='Linux'
 _srctag=v${pkgver%.*}-${_dist}
@@ -59,7 +59,7 @@ prepare() {
   make olddefconfig
 
   make -s kernelrelease > version
-  echo "Prepared %s version %s" "$pkgbase" "$(<version)"
+  echo "Prepared $pkgbase version $(<version)"
 }
 
 build() {
