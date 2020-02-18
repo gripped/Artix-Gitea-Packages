@@ -5,7 +5,7 @@
 # Contributor: Ben <ben@benmazer.net>
 
 pkgname=mpd
-pkgver=0.21.19
+pkgver=0.21.20
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='https://www.musicpd.org/'
@@ -23,12 +23,14 @@ validpgpkeys=('0392335A78083894A4301C43236E8A58C6DB4512')
 source=("https://www.musicpd.org/download/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"{,.sig}
         'tmpfiles.d'
         'sysusers.d'
-        'conf')
-sha256sums=('d3275e11d85637adde250cadf3b4f5aec2144228f0d8085767493fc46c55b2f9'
+        'conf'
+	'systemd_disable.patch')
+sha256sums=('422ef0a996d961f3ebc6856395f3a855b45fa0059910e878fb98281007e510e1'
             'SKIP'
             '2faa85c12449a5b3ca422ff1c1fa06d057c7e262a74bfa6298c914a92d6f2e7a'
             '0b74c6e5db08daab3091dc15a6b0c75210ba2f9e98fa074f6cfd605a461056b6'
-            'f40f68205834ca53cea3372e930bfe6c2f9ecc9df3b1605df2fec63a658b2e03')
+            'f40f68205834ca53cea3372e930bfe6c2f9ecc9df3b1605df2fec63a658b2e03'
+            '6eb5e882758d05b9d9be0b1c5eb2d21a6cdd6904bc0a1d531cf6a957274db956')
 
 backup=('etc/mpd.conf')
 
@@ -36,6 +38,7 @@ prepare() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
 	rm -fr build
 	install -d build
+	patch -Np1 -i ../systemd_disable.patch
 }
 
 build() {
@@ -47,9 +50,6 @@ build() {
 	       '-Dsndio=disabled' # interferes with detection of alsa devices
 	       '-Dshine=disabled' # not in an official repo
 	       '-Dtremor=disabled' # not in an official repo
-	       '-Dsystemd_system_unit_dir=no'
-	       '-Dsystemd_user_unit_dir=no'
-	       '-Dsystemd=disabled'
 	)
 	arch-meson .. ${_opts[@]}
 	ninja
