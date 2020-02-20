@@ -5,11 +5,11 @@
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
 pkgver=5.53
-pkgrel=1
+pkgrel=1.1
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL2')
-makedepends=('dbus' 'libical' 'systemd' 'alsa-lib' 'json-c' 'ell')
+makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'eudev')
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe
         0001-Allow-using-obexd-without-systemd-in-the-user-session.patch
@@ -64,8 +64,6 @@ package_bluez() {
   make DESTDIR=${pkgdir} \
        install-pkglibexecPROGRAMS \
        install-dbussessionbusDATA \
-       install-systemdsystemunitDATA \
-       install-systemduserunitDATA \
        install-dbussystembusDATA \
        install-dbusDATA \
        install-man8
@@ -88,7 +86,7 @@ package_bluez() {
 
 package_bluez-utils() {
   pkgdesc="Development and debugging utilities for the bluetooth protocol stack"
-  depends=('dbus' 'systemd' 'glib2')
+  depends=('dbus' 'eudev' 'glib2' 'json-c')
   optdepends=('ell: for btpclient')
   conflicts=('bluez-hcidump')
   provides=('bluez-hcidump')
@@ -137,8 +135,7 @@ package_bluez-cups() {
 
 package_bluez-hid2hci() {
   pkgdesc="Put HID proxying bluetooth HCI's into HCI mode"
-  depends=('systemd')
-
+  depends=('eudev')
   cd "${pkgbase}"-${pkgver}
   make DESTDIR=${pkgdir} \
        install-udevPROGRAMS \
@@ -150,7 +147,7 @@ package_bluez-hid2hci() {
 
 package_bluez-plugins() {
   pkgdesc="bluez plugins (PS3 Sixaxis controller)"
-  depends=('systemd')
+  depends=('eudev')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR="${pkgdir}" \
