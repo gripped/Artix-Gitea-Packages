@@ -136,6 +136,7 @@ package_bluez-cups() {
 package_bluez-hid2hci() {
   pkgdesc="Put HID proxying bluetooth HCI's into HCI mode"
   depends=('eudev')
+  
   cd "${pkgbase}"-${pkgver}
   make DESTDIR=${pkgdir} \
        install-udevPROGRAMS \
