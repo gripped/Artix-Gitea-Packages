@@ -4,22 +4,22 @@
 
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
-pkgver=5.52
-pkgrel=2
+pkgver=5.53
+pkgrel=1
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL2')
-makedepends=('dbus' 'libical' 'eudev' 'alsa-lib' 'json-c' 'ell')
+makedepends=('dbus' 'libical' 'systemd' 'alsa-lib' 'json-c' 'ell')
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe
-        refresh_adv_manager_for_non-LE_devices.diff
-        0001-Allow-using-obexd-without-systemd-in-the-user-session.patch)
+        0001-Allow-using-obexd-without-systemd-in-the-user-session.patch
+	refresh_adv_manager_for_non-LE_devices.diff)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
-sha256sums=('f7144ce2039202cfac18ccb52426efea11c98e4f6e1bb8041bcb994b8378560a'
+sha256sums=('38aa2da8302fefad53116bb281a11968732a42eeb19c5fb3668342f39b7938bc'
             'SKIP'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4'
-            'ae195834cdc9d3d1961ae3c49da6381c820883a5af580e61aebed05a3e911d48'
-            '8e071fb24d7d50090036418d80f7a687f1e45f4c279d905daa6a47d4da5d7d9d')
+            '8e071fb24d7d50090036418d80f7a687f1e45f4c279d905daa6a47d4da5d7d9d'
+            'ae195834cdc9d3d1961ae3c49da6381c820883a5af580e61aebed05a3e911d48')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
 
 prepare() {
@@ -42,7 +42,7 @@ build() {
           --enable-sixaxis \
           --enable-mesh \
           --enable-experimental \
-          --disable-systemd \
+	  --disable-systemd \
           --enable-library # this is deprecated
   make
 }
@@ -64,6 +64,8 @@ package_bluez() {
   make DESTDIR=${pkgdir} \
        install-pkglibexecPROGRAMS \
        install-dbussessionbusDATA \
+       install-systemdsystemunitDATA \
+       install-systemduserunitDATA \
        install-dbussystembusDATA \
        install-dbusDATA \
        install-man8
@@ -86,7 +88,7 @@ package_bluez() {
 
 package_bluez-utils() {
   pkgdesc="Development and debugging utilities for the bluetooth protocol stack"
-  depends=('dbus' 'eudev' 'glib2' 'json-c')
+  depends=('dbus' 'systemd' 'glib2')
   optdepends=('ell: for btpclient')
   conflicts=('bluez-hcidump')
   provides=('bluez-hcidump')
@@ -103,12 +105,12 @@ package_bluez-utils() {
     filename=$(basename $files)
     install -Dm755 "${srcdir}"/"${pkgbase}"-${pkgver}/tools/$filename "${pkgdir}"/usr/bin/$filename
   done
-
+  
   # libbluetooth.so* are part of libLTLIBRARIES and binPROGRAMS targets
   #make DESTDIR=${pkgdir} uninstall-libLTLIBRARIES
   #rmdir ${pkgdir}/usr/lib
   rm -rf "${pkgdir}"/usr/lib
-
+  
   # move the hid2hci man page out
   mv "${pkgdir}"/usr/share/man/man1/hid2hci.1 "${srcdir}"/
 }
@@ -135,20 +137,20 @@ package_bluez-cups() {
 
 package_bluez-hid2hci() {
   pkgdesc="Put HID proxying bluetooth HCI's into HCI mode"
-  depends=('eudev')
+  depends=('systemd')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR=${pkgdir} \
        install-udevPROGRAMS \
        install-rulesDATA
-
+  
   install -dm755 "${pkgdir}"/usr/share/man/man1
   mv "${srcdir}"/hid2hci.1 "${pkgdir}"/usr/share/man/man1/hid2hci.1
 }
 
 package_bluez-plugins() {
   pkgdesc="bluez plugins (PS3 Sixaxis controller)"
-  depends=('eudev')
+  depends=('systemd')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR="${pkgdir}" \
