@@ -1,0 +1,29 @@
+# Maintainer: nous@artixlinux.org
+
+_base=fail2ban
+pkgname=${_base}-openrc
+pkgver=200225
+pkgrel=1
+pkgdesc="OpenRC ${_base} init script"
+arch=('any')
+url="https://gitea.artixlinux.org/packages/$pkgname"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' "${_base}")
+backup=('etc/conf.d/${_base}')
+source=("${_base}.initd" "${_base}.confd")
+sha256sums=('eeb19f1d1801c308f6e91ae65e05fd4421509dcbed85826dc74c0abc057d5d9d'
+            '4a4fe009c575e9f1dd09ee33d8dc048019e0443106d0dd7fb53eac3834526cf1')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm644 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd ${_base}
+    _inst_initd ${_base}
+}
