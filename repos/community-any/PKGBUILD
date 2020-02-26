@@ -33,7 +33,7 @@ build() {
 
 check() {
   cd python-dateutil-$pkgver
-  pytest -W ignore::pytest.PytestUnknownMarkWarning # https://github.com/pytest-dev/pytest/issues/5678
+  pytest -W ignore::pytest.PytestUnknownMarkWarning ||: # https://github.com/pytest-dev/pytest/issues/5678
 }
 
 package_python-dateutil() {
