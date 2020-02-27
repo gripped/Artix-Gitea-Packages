@@ -1,7 +1,7 @@
 [Trigger]
 Operation = Install
 Operation = Upgrade
-Type = File
+Type = Path
 Target = usr/bin/openrc-init
 Target = usr/bin/runit-init
 Target = usr/bin/s6-init
