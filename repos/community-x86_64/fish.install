@@ -8,7 +8,6 @@ post_upgrade() {
 }
 
 pre_remove() {
-  sed -ri '\|^/usr/bin/fish$|d' etc/shells
   sed -ri -e '\|^/usr/bin/fish$|d' -e '\|^/bin/fish$|d' etc/shells
 }
 
