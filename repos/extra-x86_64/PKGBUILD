@@ -7,6 +7,7 @@ pkgname=re2
 _re2ver=2020-01-01
 pkgver=${_re2ver//-}
 pkgrel=1
+epoch=1
 pkgdesc="Fast, safe, thread-friendly regular expression engine"
 arch=('x86_64')
 url="https://github.com/google/re2"
