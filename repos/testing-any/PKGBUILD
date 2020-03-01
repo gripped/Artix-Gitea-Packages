@@ -1,0 +1,40 @@
+# Maintainer: artoo <artoo@artixlinux.org>
+
+_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
+
+pkgname=nftables-openrc
+pkgver=20190301
+pkgrel=1
+pkgdesc="OpenRC nftables init script"
+arch=('any')
+url="https://github.com/artix-linux/packages-openrc"
+license=('GPL2')
+groups=('openrc-world')
+depends=('openrc' 'nftables')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/nftables'
+        'etc/conf.d/nftables-mk')
+source=("nftables-mk.confd"
+        "nftables-mk.initd"
+        "nftables.confd"
+        "nftables.initd"
+        "nftables-mk.sh"
+        "nftables.sh"
+        )
+sha256sums=('5ea765fce16e2ee6a760760a1cfde9994bef24e9a788ab83750e96ac2bc9533a'
+            '155be88ef6cddf95841f629264d8d4b42d15b4f7e8e572e5159e2cc17f8258b1'
+            'd5e3077345dfea02849a70aea220396322a10c3808f0303b988119adbc56fdbd'
+            'd99250bf4e54545d978041819b94ea27634ee1812e9b56f15f287ca68640dec8'
+            '041b5fb2d42d6245459fd581a3b7ad39aa898caaefb2178595606b38391fc4db'
+            'e3b1423f877871c649e7da15352f2abb489900f05b022a87292ff92d36203b67')
+
+package() {
+    install -Dm755 ${srcdir}/nftables-mk.confd ${pkgdir}/etc/conf.d/nftables-mk
+    install -Dm755 ${srcdir}/nftables-mk.initd ${pkgdir}/etc/init.d/nftables-mk
+
+    install -Dm755 ${srcdir}/nftables.confd ${pkgdir}/etc/conf.d/nftables
+    install -Dm755 ${srcdir}/nftables.initd ${pkgdir}/etc/init.d/nftables
+
+    install -Dm755 ${srcdir}/nftables-mk.sh ${pkgdir}/usr/lib/nftables/nftables-mk.sh
+    install -Dm755 ${srcdir}/nftables.sh ${pkgdir}/usr/lib/nftables/nftables.sh
+}
