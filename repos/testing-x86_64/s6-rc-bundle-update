@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+BUNDLENAME=""
+c_arg=false
+COMMAND=""
+CONTENTS=""
+DATABASE="/etc/s6/rc/compiled"
+HELP_MSG="s6-rc-bundle-update: usage: s6-rc-bundle-update [ -c compiled ] command... (use s6-rc-bundle-update help for more information)"
+for arg in "$@"; do
+	if [[ "$c_arg" = true ]]; then
+		DATABASE=$arg
+		c_arg=false
+		continue
+	fi
+	if [[ $arg = "-c" ]]; then
+		c_arg=true
+		continue
+	fi
+	if [[ $COMMAND = "" ]]; then
+		COMMAND=$arg
+		continue
+	fi
+	if [[ $BUNDLENAME = "" ]]; then
+		BUNDLENAME=$arg
+		continue
+	fi
+	if [[ $CONTENTS = "" ]]; then
+		CONTENTS=$arg
+		continue
+	fi
+done
+
+case $COMMAND in
+    help)
+	echo "s6-rc-bundle-update help"
+	echo "s6-rc-bundle-update add bundlename contents..."
+	echo "s6-rc-bundle-update delete bundlename contents..."
+	echo "s6-rc-bundle-update list bundlename"
+	echo "TIP: You can add/delete more than one service if you surround the service names in quotes";;
+
+    add)
+	if [ "$#" -ne 3 ] && [ "$#" -ne 5 ]; then
+		echo "$HELP_MSG"
+		exit 1
+	fi
+	isbundle=$(s6-rc-db type "$BUNDLENAME" 2> /dev/null)
+	if [[ "$?" == 111 ]]; then
+		echo "s6-rc-bundle-update: fatal: unable to take lock on /run/s6-rc/compiled: Permission denied"
+		exit 1
+	fi
+	if [[ "$isbundle" != "bundle" ]]; then
+		echo "$BUNDLENAME is not an existing bundle. Create it with s6-rc-bundle."
+		exit 1
+	fi
+
+	echo "$(s6-rc-db -c $DATABASE contents $BUNDLENAME)" > /etc/s6/$BUNDLENAME.backup
+	s6-rc-bundle -c $DATABASE delete $BUNDLENAME
+	old=$(echo $(cat /etc/s6/$BUNDLENAME.backup))
+	if [[ -n $old ]]; then
+		ret=$(s6-rc-bundle -c $DATABASE add $BUNDLENAME $old $CONTENTS)
+		if [[ "$?" != 0 ]]; then
+			echo "Error when trying to add $CONTENTS!"
+			s6-rc-bundle -c $DATABASE add $BUNDLENAME $old
+		fi
+	fi
+	rm /etc/s6/$BUNDLENAME.backup;;
+    
+    delete)
+	if [ "$#" -ne 3 ] && [ "$#" -ne 5 ]; then
+		echo "$HELP_MSG"
+		exit 1
+	fi
+	isbundle=$(s6-rc-db type "$BUNDLENAME" 2> /dev/null)
+	if [[ "$?" == 111 ]]; then
+		echo "s6-rc-bundle-update: fatal: unable to take lock on /run/s6-rc/compiled: Permission denied"
+		exit 1
+	fi
+	if [[ "$isbundle" != "bundle" ]]; then
+		echo "$BUNDLENAME is not an existing bundle. Create it with s6-rc-bundle"
+		exit 1
+	fi
+	echo "$(s6-rc-db -c $DATABASE contents $BUNDLENAME)" > /etc/s6/$BUNDLENAME.backup
+	s6-rc-bundle -c $DATABASE delete $BUNDLENAME
+	old=$(echo $(cat /etc/s6/$BUNDLENAME.backup))
+	for entry in $CONTENTS; do
+		ret=$(grep -x $entry /etc/s6/$BUNDLENAME.backup)
+		if [[ "$?" != 0 ]]; then
+			echo "$entry does not exist in bundle $BUNDLENAME!"
+			s6-rc-bundle -c $DATABASE add $BUNDLENAME $old
+			rm /etc/s6/$BUNDLENAME.backup
+			exit 1
+		else
+			sed -i "/$entry/d" /etc/s6/$BUNDLENAME.backup
+		fi
+	done
+	s6-rc-bundle -c $DATABASE add $BUNDLENAME $(echo $(cat /etc/s6/$BUNDLENAME.backup))
+	rm /etc/s6/$BUNDLENAME.backup;;
+    
+    list)
+	if [ "$#" -ne 2 ] && [ "$#" -ne 4 ]; then
+		echo "$HELP_MSG"
+		exit 1
+	fi
+	isbundle=$(s6-rc-db type "$BUNDLENAME" 2> /dev/null)
+	if [[ "$?" == 111 ]]; then
+		echo "s6-rc-bundle-update: fatal: unable to take lock on /run/s6-rc/compiled: Permission denied"
+		exit 1
+	fi
+	if [[ "$isbundle" != "bundle" ]]; then
+		echo "$BUNDLENAME is not an existing bundle. Create it with s6-rc-bundle"
+		exit 1
+	fi
+	echo "$(s6-rc-db -c $DATABASE contents $BUNDLENAME)";;
+
+    *)
+	echo "$HELP_MSG" ;;
+esac
