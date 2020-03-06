@@ -1,13 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
-pkgver=1.0.3.1
-pkgrel=6
+pkgver=1.0.4.0
+pkgrel=1
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
-depends=('sh')
-makedepends=('s6')
+depends=('s6')
 install=s6-linux-init.install
 backup=('etc/s6/current/scripts/rc.init'
         'etc/s6/current/scripts/rc.shutdown'
@@ -18,14 +17,14 @@ source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "rc.shutdown"
         "rc.shutdown.final"
         "runlevel")
-sha256sums=('216af5589c2bc5dbdea6b6c94d55575c12e31f57b2e0fde5c534a840aeed02fb'
-            '1a5988747836625427a1a71d761687d36965e1653d7178ca873b9c68027485b3'
-            '931bbb408307cbf6ab4423f95de01ad29e38f6c4d1425a8ba39c84b2ca2d1243'
+sha256sums=('de7937499e787a5d06f412962b57774d9dabfb38bb19e3ab59cf5cdaf17cd59c'
+            '0e9cfda4e290314760b8d0915251e11d373e1a57851e9f68770d7d0f1f5bca44'
+            '900f823893bc20e4409a9cb2f2a85275bff6b4d2778d62f66bdabbe03ee17295'
             '524df97d15ea7cbcd885dd9a2e5af1f6411c41614e5c8125807412cc2e07c65a'
             'bbce4be2e6cf254eaf5f7eaf063a92ae35cc2b8b6dbed5f97b0c9dd1c4847e09')
 
 build() {
- 	cd ${pkgname}-${pkgver}
+    cd ${pkgname}-${pkgver}
     ./configure --exec-prefix=/usr \
                 --libexecdir=/usr/lib \
                 --skeldir=/etc/s6/skel
@@ -45,6 +44,6 @@ package() {
 
     # execute s6-linux-init-maker for PM tracking
     ./s6-linux-init-maker -1 -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
-	mv "${pkgdir}"/etc/s6/current/bin/init "${pkgdir}"/etc/s6/current/bin/s6-init
+    mv "${pkgdir}"/etc/s6/current/bin/init "${pkgdir}"/etc/s6/current/bin/s6-init
     cp -a "${pkgdir}"/etc/s6/current/bin "${pkgdir}"/usr
 }
