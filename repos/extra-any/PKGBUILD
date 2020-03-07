@@ -1,7 +1,6 @@
 # Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: eric <eric@archlinux.org>
-# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
- 
+
 pkgname=psutils
 pkgver=1.93
 pkgrel=3
@@ -18,7 +17,7 @@ sha256sums=('48da2ec1be379ac05d0d3d5d7b6229c2fa56dfb41ae811f5120021e832db21f4')
 
 build() {
   cd ${pkgname}-${pkgver}
-  
+
   export CFLAGS="$CFLAGS -DPAPER=\\\"letter\\\" -DUNIX -Wall" \
   export CCFLAGS="$LDFLAGS"
 
