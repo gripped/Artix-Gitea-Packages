@@ -24,10 +24,7 @@ for arg in "$@"; do
 		BUNDLENAME=$arg
 		continue
 	fi
-	if [[ $CONTENTS = "" ]]; then
-		CONTENTS=$arg
-		continue
-	fi
+	CONTENTS="${CONTENTS} $arg"
 done
 
 case $COMMAND in
@@ -36,10 +33,9 @@ case $COMMAND in
 	echo "s6-rc-bundle-update add bundlename contents..."
 	echo "s6-rc-bundle-update delete bundlename contents..."
 	echo "s6-rc-bundle-update list bundlename"
-	echo "TIP: You can add/delete more than one service if you surround the service names in quotes";;
 
     add)
-	if [ "$#" -ne 3 ] && [ "$#" -ne 5 ]; then
+	if [ "$#" -lt 3 ]; then
 		echo "$HELP_MSG"
 		exit 1
 	fi
@@ -66,7 +62,7 @@ case $COMMAND in
 	rm /etc/s6/$BUNDLENAME.backup;;
     
     delete)
-	if [ "$#" -ne 3 ] && [ "$#" -ne 5 ]; then
+	if [ "$#" -lt 3 ]; then
 		echo "$HELP_MSG"
 		exit 1
 	fi
@@ -97,7 +93,7 @@ case $COMMAND in
 	rm /etc/s6/$BUNDLENAME.backup;;
     
     list)
-	if [ "$#" -ne 2 ] && [ "$#" -ne 4 ]; then
+	if [ "$#" -lt 2 ]; then
 		echo "$HELP_MSG"
 		exit 1
 	fi
