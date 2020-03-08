@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=4.57.1
+pkgver=5.0.1
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=('any')
@@ -17,15 +17,12 @@ optdepends=('python-pytz: for datetime and django module'
 makedepends=('python-setuptools')
 checkdepends=('python-pytest-runner' 'flake8' 'python-pytz' 'python-numpy' 'python-faker'
               'python-flaky' 'python-django' 'python-mock' 'python-pandas' 'python-dpcontracts'
-              'python-pytest-xdist' 'python-lark-parser' 'python-pexpect' 'python-coverage'
-              'python2-coverage')
+              'python-pytest-xdist' 'python-lark-parser' 'python-pexpect' 'python-coverage')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/HypothesisWorks/hypothesis/archive/hypothesis-python-$pkgver.tar.gz")
-sha512sums=('28622ce8a1d89d09df65f3fbf7e92a1ad98dac140ab646fe11fcb15e6aa9a9672eb51d459f984384d92b819f902de911b06cec2542582d529dd556d2f99ed952')
+sha512sums=('ea1f61ea32eed2d1d79e31c2acf616eaebbd6c2740ee1e6f28856e5b507ef965997320a225e4d2e2cff00f0de178e91d7361cf2d41d443703b37b3b26eea1e1a')
 
 prepare() {
   mv hypothesis-hypothesis-python-$pkgver hypothesis-$pkgver
-
-  rm -r hypothesis-$pkgver/hypothesis-python/tests/py2
 }
 
 build() {
