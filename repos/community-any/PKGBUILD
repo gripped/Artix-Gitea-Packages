@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-acme-alien-dontpanic
-pkgver=1.9800
+pkgver=2.0400
 pkgrel=1
 pkgdesc="Test Module for Alien::Base"
 arch=('any')
@@ -12,7 +12,7 @@ makedepends=('perl-alien-base-modulebuild')
 checkdepends=('perl-test2-suite')
 options=('!emptydirs')
 source=("https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Acme-Alien-DontPanic-$pkgver.tar.gz")
-sha512sums=('a293061ac6364cdf9d42394bd1345a75a93178f30045cf6228015c7e732830acb6666a0e026dde80a7748a457e616d9fe7fe90e5c4afe669ef8b4a556de64976')
+sha512sums=('f95b4e8e7278db50edb96b054a198dde7c10b1f558c8d57f73ff5c7ea4c92760b61e71ba7515838f52e97c1178d2d2b57f8f018bf8c0d2c2f4b934a46fe3adf0')
 
 build() {
   cd Acme-Alien-DontPanic-$pkgver
