@@ -17,9 +17,9 @@ epoch=1
 arch=('x86_64')
 url='https://www.dlang.org'
 makedepends=('git' 'ldc')
-source=("git+https://github.com/dlang/dmd.git#tag=v$pkgver"
-        "git+https://github.com/dlang/druntime.git#tag=v$pkgver"
-        "git+https://github.com/dlang/phobos.git#tag=v$pkgver"
+source=("dmd-dlang::git+https://github.com/dlang/dmd.git#tag=v$pkgver"
+        "druntime-dlang::git+https://github.com/dlang/druntime.git#tag=v$pkgver"
+        "phobos-dlang::git+https://github.com/dlang/phobos.git#tag=v$pkgver"
         "http://downloads.dlang.org/releases/2.x/$pkgver/dmd.$pkgver.linux.tar.xz"
         "http://downloads.dlang.org/releases/2.x/$pkgver/dmd.$pkgver.linux.tar.xz.sig"
         'dmd.conf'
@@ -39,26 +39,26 @@ prepare() {
     tar xfJ "dmd.$pkgver.linux.tar.xz" dmd2/html
 
     # Make sure the version is not -dirty
-    sed -i "s/\.git/.nope/" "$srcdir"/dmd/src/build.d
+    sed -i "s/\.git/.nope/" "$srcdir"/dmd-dlang/src/build.d
 
     # Add $LDFLAGS and $CXXFLAGS to the compilation
     # '-link-defaultlib-shared=false' statically links dmd to liblphobos
     _dflags=$(echo -ne $LDFLAGS | cut -d\" -f2 | tail -c+4 | sed "s/,/ -L=/g")
-    sed -i "s/--called-from-make/& CXXFLAGS=\"$CXXFLAGS\" DFLAGS='-link-defaultlib-shared=false $(echo -ne $LDFLAGS | cut -d\" -f2 | tail -c+4 | sed "s/,/ -L=/g") -flto=full'/" "$srcdir"/dmd/src/posix.mak
+    sed -i "s/--called-from-make/& CXXFLAGS=\"$CXXFLAGS\" DFLAGS='-link-defaultlib-shared=false $(echo -ne $LDFLAGS | cut -d\" -f2 | tail -c+4 | sed "s/,/ -L=/g") -flto=full'/" "$srcdir"/dmd-dlang/src/posix.mak
 }
 
 build() {
-    cd "$srcdir"/dmd
+    cd "$srcdir"/dmd-dlang
     make -f posix.mak BUILD=release ENABLE_RELEASE=1 PIC=1 ENABLE_LTO=1 HOST_DMD=ldmd2
 
-    cd "$srcdir"/druntime
-    make -f posix.mak DMD="$srcdir"/dmd/generated/linux/release/*/dmd BUILD=release ENABLE_RELEASE=1 PIC=1
+    cd "$srcdir"/druntime-dlang
+    make -f posix.mak PHOBOS_PATH=../phobos-dlang DMD_DIR=../dmd-dlang DMD="$srcdir"/dmd-dlang/generated/linux/release/*/dmd BUILD=release ENABLE_RELEASE=1 PIC=1
 
-    cd "$srcdir"/phobos
-    make -f posix.mak DMD="$srcdir"/dmd/generated/linux/release/*/dmd BUILD=release ENABLE_RELEASE=1 PIC=1
+    cd "$srcdir"/phobos-dlang
+    make -f posix.mak  DMD_DIR=../dmd-dlang DRUNTIME_PATH=../druntime-dlang DMD="$srcdir"/dmd-dlang/generated/linux/release/*/dmd BUILD=release ENABLE_RELEASE=1 PIC=1
 
     # This requires object.d to compile, thus need to be after druntime is built
-    cd "$srcdir"/dmd
+    cd "$srcdir"/dmd-dlang
     make -C docs DMD=ldmd2
 }
 
@@ -74,9 +74,9 @@ package_dmd() {
     provides=("d-compiler=$pkgver")
     license=('Boost')
 
-    cd "$srcdir"/dmd
+    cd "$srcdir"/dmd-dlang
 
-    install -Dm755 "$srcdir"/dmd/generated/linux/release/*/dmd "$pkgdir"/usr/bin/dmd
+    install -Dm755 "$srcdir"/dmd-dlang/generated/linux/release/*/dmd "$pkgdir"/usr/bin/dmd
 
     mkdir -p "$pkgdir"/etc
     install -Dm644 "$srcdir"/dmd.conf "$pkgdir"/etc/dmd.conf
@@ -97,7 +97,7 @@ package_dmd-docs() {
     depends=('dmd')
     license=('Boost')
 
-    cd "$srcdir"/dmd
+    cd "$srcdir"/dmd-dlang
 
     mkdir -p "$pkgdir"/usr/share/applications
     install -Dm644 "$srcdir"/dmd-doc.desktop "$pkgdir"/usr/share/applications/dmd-doc.desktop
@@ -121,15 +121,15 @@ package_libphobos() {
     license=('Boost')
 
     mkdir -p "$pkgdir"/usr/lib
-    cp -P $(find "$srcdir"/{druntime,phobos}/generated/linux/release/ \( -iname "*.a" -a \! -iname "*.so.a" \) -o \( -iname "*.so*" -a \! -iname "*.o" -a \! -iname "*.a" \) ) "$pkgdir"/usr/lib
+    cp -P $(find "$srcdir"/{druntime,phobos}-dlang/generated/linux/release/ \( -iname "*.a" -a \! -iname "*.so.a" \) -o \( -iname "*.so*" -a \! -iname "*.o" -a \! -iname "*.a" \) ) "$pkgdir"/usr/lib
 
     mkdir -p "$pkgdir"/usr/include/dlang/dmd
-    cp -r "$srcdir"/phobos/{*.d,etc,std} "$pkgdir"/usr/include/dlang/dmd
-    cp -r "$srcdir"/druntime/import/* "$pkgdir"/usr/include/dlang/dmd/
+    cp -r "$srcdir"/phobos-dlang/{*.d,etc,std} "$pkgdir"/usr/include/dlang/dmd
+    cp -r "$srcdir"/druntime-dlang/import/* "$pkgdir"/usr/include/dlang/dmd/
 
     find "$pkgdir"/usr -type f | xargs chmod 0644
 
-    install -Dm644 "$srcdir"/druntime/LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE-druntime
-    install -Dm644 "$srcdir"/phobos/LICENSE_1_0.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+    install -Dm644 "$srcdir"/druntime-dlang/LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE-druntime
+    install -Dm644 "$srcdir"/phobos-dlang/LICENSE_1_0.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
 
