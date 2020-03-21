@@ -22,7 +22,7 @@ optdepends=('enchant: for word predication support'
             'fcitx-configtool: for configuration (GTK based)'
             'kcm-fcitx: for configuration under KDE')
 makedepends=('extra-cmake-modules' 'doxygen' 'gtk2' 'gtk3' 'mesa' 'opencc'
-             'iso-codes' 'gobject-introspection' 'enchant' 'python')
+             'iso-codes' 'gobject-introspection' 'enchant' 'python' 'json-c')
 source=("https://download.fcitx-im.org/$pkgname/$pkgname-${pkgver}_dict.tar.xz"{,.sig})
 sha512sums=('b940478c648e30b2ea55903465ed02c8a0c3ae3539e4bd5b77be46a9e4d0c13ceff074ddd7532f86893111eb96308e1740db621a83fb809e4fd02256d75ebe7b'
             'SKIP')
