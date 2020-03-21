@@ -15,7 +15,6 @@ source=("git+https://github.com/p11-glue/p11-kit?signed#tag=$pkgver")
 sha256sums=('SKIP')
 validpgpkeys=('C0F67099B808FB063E2C81117BFB1108D92765AF'  # Stef Walter
               '462225C3B46F34879FC8496CD605848ED7E69871') # Daiki Ueno
-
 prepare() {
   cd p11-kit
 }
