@@ -21,18 +21,17 @@ optdepends=('plasma-workspace: for the KDE/Openbox xsession'
 groups=('lxde' 'lxde-gtk3' 'lxqt')
 backup=('etc/xdg/openbox/menu.xml' 'etc/xdg/openbox/rc.xml'
         'etc/xdg/openbox/autostart' 'etc/xdg/openbox/environment')
-source=(http://openbox.org/dist/openbox/$pkgname-$pkgver.tar.gz{,.asc}
+source=(http://openbox.org/dist/openbox/$pkgname-$pkgver.tar.gz
         openbox-3.5.0-title-matching.patch
         openbox-3.5.0-which-2.20.patch
         $pkgname-kde-paths.patch
         py3.patch)
 md5sums=('b72794996c6a3ad94634727b95f9d204'
-         'SKIP'
          '0a11d7149da210a31ef88f8a9c717711'
          '7ca3b5244bb092d46f5bcf1e2bdf4a18'
          'f7df0df8c1d2da279e48d0fdc984fb71'
          '67ae9735c283637ef6d11b17a3f81953')
-validpgpkeys=(4B71379A9D5263D112A85620A5A4E99C711D3B61)
+#validpgpkeys=(4B71379A9D5263D112A85620A5A4E99C711D3B61)
 
 prepare() {
   cd $pkgname-$pkgver
