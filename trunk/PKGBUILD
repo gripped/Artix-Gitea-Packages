@@ -15,6 +15,7 @@ checkdepends=('python-nose' 'python2-nose' 'python-requests' 'python2-requests' 
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/elastic/elasticsearch-py/archive/$pkgver.tar.gz")
 sha512sums=('f8a54cd222af94d659087d654bcbe52da5ee90570ff04dbdd6793b870b8fd7e4b5b896620424f85057f2274ed3a16ecd97f53f704c2a97931b4876d246311ea9')
 
+
 prepare() {
   sed -i 's/urllib3<.*,>/urllib3>/' elasticsearch-py-$pkgver/setup.py
   cp -a elasticsearch-py-$pkgver{,-py2}
