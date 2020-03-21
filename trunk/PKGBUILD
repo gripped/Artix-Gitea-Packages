@@ -9,9 +9,8 @@ pkgdesc="Vulkan Utilities and Tools"
 license=('custom')
 depends=(gcc-libs libxcb vulkan-icd-loader)
 makedepends=(git cmake python vulkan-headers libx11 wayland)
-source=("https://github.com/KhronosGroup/Vulkan-Tools/archive/v${pkgver}.tar.gz")
-#source=("git+https://github.com/KhronosGroup/Vulkan-Tools.git#commit=534747d770a84a18a20949430679aa1b7bf0f398")
-sha256sums=('6b497194fb2e06e41a9ab8c404ea3c82cca1fc1e0c540ffcd2905b9bebef5e84')
+source=("git+https://github.com/KhronosGroup/Vulkan-Tools.git#commit=f881e61208736b1f381be819d923606c19fc9a12")
+sha256sums=('SKIP')
 
 #pkgver() {
 #  cd "${srcdir}"/Vulkan-Tools*
