@@ -1,0 +1,37 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+# Contributor: feuri
+
+pkgname=dunst
+pkgver=1.4.1
+pkgrel=1
+
+pkgdesc="Customizable and lightweight notification-daemon"
+url="https://dunst-project.org/"
+arch=('x86_64')
+license=('BSD')
+
+depends=('dbus' 'libxinerama' 'libxss' 'pango' 'gdk-pixbuf2' 'libxrandr' 'glib2')
+makedepends=('libnotify')
+optdepends=('libnotify: dunstify')
+
+provides=('notification-daemon')
+
+source=("dunst-$pkgver.tar.gz::https://github.com/dunst-project/dunst/archive/v$pkgver.tar.gz")
+md5sums=('ea22e152ae40a1fc8e0e4da5b762ad20')
+
+build() {
+  cd dunst-$pkgver
+
+  make PREFIX=/usr X11INC=/usr/include/X11 X11LIB=/usr/lib/X11 all dunstify
+}
+
+package() {
+  cd dunst-$pkgver
+
+  make DESTDIR="$pkgdir" PREFIX=/usr install
+  install -Dm755 dunstify "$pkgdir"/usr/bin/dunstify
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
+
+# vim:set ts=2 sw=2 et:
