@@ -1,0 +1,68 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=colord-s6
+pkgver=20200322
+pkgrel=1
+pkgdesc="s6 service scripts for colord"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-world')
+provides=('colord-runscripts')
+conflicts=('colord-runscripts')
+depends=('colord' 'dbus-s6' 's6')
+install=colord.install
+source=("colord-log.conf"
+        "colord-log.consumer-for"
+        "colord-log.notification-fd"
+        "colord-log.pipeline-name"
+        "colord-log.run"
+        "colord-log.type"
+        "colord-srv.dependencies"
+        "colord-srv.producer-for"
+        "colord-srv.run"
+        "colord-srv.type"
+        "colord-session-log.conf"
+        "colord-session-log.consumer-for"
+        "colord-session-log.notification-fd"
+        "colord-session-log.pipeline-name"
+        "colord-session-log.run"
+        "colord-session-log.type"
+        "colord-session-srv.dependencies"
+        "colord-session-srv.producer-for"
+        "colord-session-srv.run"
+        "colord-session-srv.type")
+sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            'e5438de7a5380eb53c7c6e29e3d8e02e8a260f5dbb9dcb9bdf957e940b43532b'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '1de51a149552e1e8bf5995d8a3d0dd94ca2ed1b566776817bdb81c5ca4aa839c'
+            '2fb25ed0aa67c1c07b495b8462ffbba2c049e08c0923d4250eab980c5d790792'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            'b2d30a3d7e042a65d1930e83934abc66f1dc5741db8e84164203fbc7d6b6508d'
+            '0721bec62511de77d90b8e6f564414541f9412e9f1bf7edab54c64f3f93510c7'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            'ce2f28cf4d882c0cbe0d11164ddebfbff8226548ebcf92fb0c0c7168f49edd8a'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '6e6bdf45394ae4f3ee182cdcbb4ed0c17c9f0a4a201fafd858b97e8f6d8ad632'
+            '8190aff091e8a394400c46ce475bf521a403e4386b1ccc2b3d9c09ab1ee4a37d'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            '1adf1d55e5502536e0d68f8e9f05449b791a707903f096f7e90f3fdecf681ee7'
+            'c6ef17c1a8310968540ad6cb25ad0d83d12e2f2c64657e1c89df6fd80ae2c5fd'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf consumer-for dependencies notification-fd \
+        pipeline-name producer-for run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'colord-log'
+    _inst_sv 'colord-srv'
+    _inst_sv 'colord-session-log'
+    _inst_sv 'colord-session-srv'
+}
