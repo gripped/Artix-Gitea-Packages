@@ -1,0 +1,52 @@
+# Maintainer: Ivy Foster <iff@archlinux.org>
+
+pkgname=bemenu
+pkgver=0.3.0
+pkgrel=3
+
+# Wayland without wlroots is not supported.
+# https://github.com/Cloudef/bemenu/issues/79#issuecomment-572867783
+pkgdesc='Dynamic menu library and client program inspired by dmenu with support for wlroots-based wayland compositors'
+url='https://github.com/Cloudef/bemenu'
+arch=(x86_64)
+license=(GPL3 LGPL3)
+
+depends=(pango)
+makedepends=(cmake libxinerama libxkbcommon ncurses wayland wlroots)
+optdepends=(
+	'libxinerama: For the x11 backend'
+	'libxkbcommon: For the wayland backend'
+	'ncurses: For the curses backend'
+	'wayland: For the wayland backend'
+	'wlroots: For the wayland backend'
+)
+source=(
+	"bemenu-$pkgver.tar.gz::https://github.com/Cloudef/bemenu/archive/$pkgver.tar.gz"
+	"bemenu-$pkgver.tar.gz.asc::https://github.com/Cloudef/bemenu/releases/download/$pkgver/bemenu-$pkgver.tar.gz.asc"
+)
+# Checksums provided by packager
+sha256sums=(
+	a57ae85ca14b4adb6c32bc40138d49ec51dd2e2b0d211557c8f92489f4c3fb84
+	SKIP
+)
+validpgpkeys=(08C8361E825F7502797E874F0CBD2CD395613887)
+
+build() {
+	cd "bemenu-$pkgver"
+	cmake \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DBEMENU_WAYLAND_RENDERER=ON
+	make
+}
+
+check() {
+	cd "bemenu-$pkgver"
+	make test
+}
+
+package() {
+	cd "bemenu-$pkgver"
+	make DESTDIR="$pkgdir" install
+}
