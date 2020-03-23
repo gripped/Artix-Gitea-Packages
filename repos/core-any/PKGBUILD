@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20200308
+pkgver=20200323
 pkgrel=1
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
@@ -12,10 +12,11 @@ optdepends=('cryptsetup-s6: cryptsetup boot script support'
             'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
         'etc/s6/s6.conf'
+        'etc/s6/sv/mount-net/dependencies'
         'etc/s6/sv/rc-local/dependencies')
 install=s6-scripts.install
 makedepends=('git')
-_commit=2c4224f5eadc7c61c9cf3cacda9dc5fa141c6ff6
+_commit=0b47e44bcd2ae9365100d8fe8b181e1206b95c13
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -71,6 +72,7 @@ package() {
     _inst_sv 'mount-cgroups'
     _inst_sv 'mount-devfs'
     _inst_sv 'mount-filesystems'
+    _inst_sv 'mount-net'
     _inst_sv 'mount-sysfs'
     _inst_sv 'net-lo'
     _inst_sv 'random-seed'

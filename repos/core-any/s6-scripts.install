@@ -19,3 +19,8 @@ post_upgrade() {
 	    echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
     fi
 }
+
+post_remove() {
+    rm -rf /etc/s6/sv/mount-net/dependencies
+    rm -rf /etc/s6/sv/rc-local/dependencies
+}
