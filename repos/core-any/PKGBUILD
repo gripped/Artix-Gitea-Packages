@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wpa_supplicant-s6
-pkgver=20200125
+pkgver=20200323
 pkgrel=1
 pkgdesc="s6 service scripts for wpa_supplicant"
 arch=('any')
