@@ -1,8 +1,8 @@
 pre_remove() {
-    if [ -e "/run/service/colord-srv" ]; then
+    if [ -e "/run/service/colord" ]; then
         s6-rc -d change colord
     fi
-    if [ -e "/run/service/colord-session-srv" ]; then
+    if [ -e "/run/service/colord-session" ]; then
         s6-rc -d change colord-session
     fi
 }
