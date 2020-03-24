@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openvpn-s6
-pkgver=20200201
+pkgver=20200323
 pkgrel=1
 pkgdesc="s6 service scripts for openvpn"
 arch=('any')
