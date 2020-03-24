@@ -6,4 +6,5 @@ foreground { mountpoint -q /var/lib/nfs/rpc_pipefs }
 redirfd -w 1 /dev/null
 foreground { exportfs -ra }
 foreground { rpc.nfsd -- = 4 }
+fdmove -c 2 1
 exec rpc.mountd --foreground
