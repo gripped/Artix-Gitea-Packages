@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=rpcbind-s6
-pkgver=20200201
+pkgver=20200323
 pkgrel=1
 pkgdesc="s6 service scripts for rpcbind"
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
             'ed03e94cb73a5c233a7b5f46a112b91877d9dcc29978863e5581daecfe5267bc'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '6d56addefdcd56a6cb4becfd9ce709bff1215cd942fa54d43ae165a038851c27'
-            '871e2c226dbfb2fad5f2ccc51caa778005d1f984f412a3d399950e2d1a1e101c'
+            'a314eb1b7bc46e0e6b1e5542227f28ad4c70a9508c6d9ee76c842e51d4590598'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
