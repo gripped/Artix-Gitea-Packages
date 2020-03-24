@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20200201
+pkgver=20200323
 pkgrel=1
 pkgdesc="s6 service scripts for lvm2"
 arch=('any')
@@ -37,7 +37,7 @@ sha256sums=('a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
             'aff16b256adddccefa98e32fb4cafbdd9f21c5bb58409df8c4bd8d5f4461312f'
-            '4a719253763962e71c70cd559d6dcf381e1ba261f637ccefc92d779313dfd9bb'
+            'e3a325d38708d2b5290c471fabe3477015c01c098df288150a3e388a338a81fb'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
