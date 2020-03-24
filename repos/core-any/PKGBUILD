@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wpa_supplicant-s6
-pkgver=20200323
+pkgver=20200324
 pkgrel=1
 pkgdesc="s6 service scripts for wpa_supplicant"
 arch=('any')
@@ -32,7 +32,7 @@ sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
             'ad5929875a33aef2bd3a98b32a98a175ce3171daba0e46cf270b12c6b5c5e51a'
             'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
             'c17fa39302d4e8835c8b67fb1283739aedd52aac911e69d727aab4707212cf85'
-            'b7d694d5177d66511f2293ee7e2226166eeb53cd54c15c8e32d4132dd781cdb1'
+            '2f918e01c47d4838e714853f38fef1f16d8920e034f58f67eea09cd28850f391'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
