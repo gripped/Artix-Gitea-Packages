@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=device-mapper-s6
-pkgver=20200128
-pkgrel=2
+pkgver=20200323
+pkgrel=1
 pkgdesc="s6 service scripts for device-mapper"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -27,7 +27,7 @@ sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
             '3e03eb27b44d301e442a5248f70c657aefcbc2a2923f52df399ebee3cb15ea85'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'f2b0112b749196d26651413e0207b31d79b603578fbcc681c87878a1372e964e'
-            'aa29d2e06c5d54e2f3d0632f5732f942b4c84d0a5d85d126b67cedb1ac6c553c'
+            '72b62ce1b1a625331f0d2e8195864ff02740838da20f7a276af2e5693871a61c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
