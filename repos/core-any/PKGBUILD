@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=audit-s6
-pkgver=20200125
+pkgver=20200323
 pkgrel=1
 pkgdesc="s6 service scripts for audit"
 arch=('any')
@@ -35,7 +35,7 @@ sha256sums=('58f5ccacf1ceee80bfa3c2286ea7d986318d83b0e095b79c6eab0925a4a45572'
             'f403e8637d573150c4b232856015ea00ec955507b9955ede215939522dd2c9d2'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'e68d75704581ec72cd80e04904f7a683a5a63cd61e08c498517c030fd5645176'
-            '48ab2df2a14ce857af9b056f8d9f9bb7a9860bc0c860658ac5cfc707d0b3330b'
+            'd83b471b5277faab20405d702bf46dd501b1a0913672e2cb032dc8de33c21cb9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
