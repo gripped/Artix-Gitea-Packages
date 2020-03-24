@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/xinetd" ]; then
+        s6-rc -d change xinetd
+    fi
+}
