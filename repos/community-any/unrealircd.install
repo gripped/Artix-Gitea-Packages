@@ -1,0 +1,5 @@
+pre_remove() {
+    if [ -e "/run/service/unrealircd" ]; then
+        s6-rc -d change unrealircd
+    fi
+}
