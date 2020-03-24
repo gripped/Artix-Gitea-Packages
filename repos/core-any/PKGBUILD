@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=xinetd-s6
-pkgver=20200201
+pkgver=20200323
 pkgrel=1
 pkgdesc="s6 service scripts for xinetd"
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
             '259c242145c3bc5a151f16c12f7a5e243ff74d727cacbb591b85f4fa225b783d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'c1c34edff2938919795c73efe395cb3c3273d6036e32d4248c9b0f478243078d'
-            '06180e568738497e774ea51bb41828be463740b45a50c1b48bcb42af783d2f2f'
+            '79b401ebcdf22a911d88280314c7d567c728da110daba83886fc5b69187a8e30'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
