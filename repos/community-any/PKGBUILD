@@ -16,7 +16,7 @@ makedepends=('python-setuptools-scm' 'python2-setuptools-scm' 'python-py' 'pytho
              'python-filelock' 'python2-filelock' 'python-freezegun' 'python2-freezegun')
 checkdepends=('python-pytest-runner' 'python2-pytest-runner' 'python-pytest-mock'
               'python2-pytest-mock' 'python2-pathlib2' 'python-flaky' 'python2-flaky'
-              'python-pathlib2' 'python2-pathlib2' 'python-distlib' 'python2-distlib')
+              'python-pathlib2' 'python2-pathlib2' 'python-distlib' 'python2-distlib' 'python-zipp' 'python2-zipp')
 source=("https://pypi.io/packages/source/t/tox/tox-$pkgver.tar.gz")
 sha512sums=('54fd836c7667aa4f7be80716d1f1f2aea3ef3f73a5e2d3999303f3bdb7463c9751e77d9cc338064ec11ab28e01ea59af5cdbe2c57abdd741b9d3e3f419ace473')
 
@@ -45,7 +45,7 @@ check() {
     cd "$srcdir"/tox-$pkgver
     virtualenv "$srcdir/pyvenv" --system-site-packages
     . "$srcdir/pyvenv/bin/activate"
-    python setup.py install
+    python setup.py install 
     python setup.py pytest ||:
   )
 
@@ -53,7 +53,7 @@ check() {
     cd "$srcdir"/tox-$pkgver-py2
     virtualenv2 "$srcdir/pyvenv-py2" --system-site-packages
     . "$srcdir/pyvenv-py2/bin/activate"
-    python setup.py install
+    python setup.py install 
     python setup.py pytest ||:
   )
 }
