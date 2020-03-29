@@ -1,21 +1,57 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20200115
+pkgver=20200324
 pkgrel=1
 pkgdesc="s6 service scripts for clamav"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('s6-world')
+groups=('s6-galaxy')
 provides=('clamav-runscripts')
 conflicts=('clamav-runscripts')
 depends=('clamav' 's6')
 install=clamd.install
-source=("clamd.run" "clamd.type")
-sha256sums=('9c19fd6e5f5876b583510f5cdca378017b9bf568f7cac17d264065ee3ec0157f'
+backup=('etc/s6/sv/clamd-log/conf'
+        'etc/s6/sv/freshclam-log/conf')
+source=("clamd-log.conf"
+        "clamd-log.consumer-for"
+        "clamd-log.notification-fd"
+        "clamd-log.pipeline-name"
+        "clamd-log.run"
+        "clamd-log.type"
+        "clamd-srv.producer-for"
+        "clamd-srv.run"
+        "clamd-srv.type"
+        "freshclam-log.conf"
+        "freshclam-log.consumer-for"
+        "freshclam-log.notification-fd"
+        "freshclam-log.pipeline-name"
+        "freshclam-log.run"
+        "freshclam-log.type"
+        "freshclam-srv.producer-for"
+        "freshclam-srv.run"
+        "freshclam-srv.type")
+sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '71567ac1a8c8f8a9a0b8959650030e248043c3d0c1a54d1dd4e714285eb487d9'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '673170e1ed16339a69efdeef937403628525a56b8c317c1f3567ab2600df2a26'
+            'c2aad387b8e5f431348a5711354946a7552b12c4013b6f5c0f7d2a00064e6898'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '19159c6a4b0ae8c9fd18ef92940ed12d51aa1659bc4352f62b8324d15cc8a60a'
+            '1356f3a30da24652e32b02fcf9cebc6d140ef88d49f52602e33c224caeff1a02'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '0fda583192cbb614384ded60f43dce28211b3429fd449f7fac52d5f3463ae9f1'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'f5c9b34d17e9cd46da94951346156ff8167a75cfddfed8e06be98cae52d1c1a1'
+            'f32654462b6a20d6cb211a1dabb4033d2fb20cda924b2e125b8c6e3882eab791'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '880e0dfed17b42f5fe287f53bd6bf075919a887bf815303d907a3359e5caa5dd'
+            '9976be86412232cc9e335c568c6c525629f1b6501a9df3f993282cb60f0d896e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +59,8 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'clamd'
+    _inst_sv 'clamd-log'
+    _inst_sv 'clamd-srv'
+    _inst_sv 'freshclam-log'
+    _inst_sv 'freshclam-srv'
 }
