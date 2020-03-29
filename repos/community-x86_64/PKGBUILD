@@ -1,8 +1,9 @@
 # Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Maintainer: Mantas M. <grawity@gmail.com>
 
 pkgname=sssd
 pkgver=2.2.3
-pkgrel=2
+pkgrel=5
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://pagure.io/SSSD/sssd"
@@ -18,17 +19,26 @@ depends=(
   'smbclient'     # for libndr-nbt
   'nfsidmap'
   'jansson'
+  'tevent'
+  'ldb'
 )
 makedepends=(
   'docbook-xsl'
   'doxygen'
   'python'
-  'python2'
   'samba'         # for libndr-nbt headers
   'eudev'
+  'tevent'
+  'ldb'
 )
-source=("https://releases.pagure.org/SSSD/$pkgname/$pkgname-$pkgver.tar.gz")
-sha512sums=('b61d52a53e26e8efa9cb799fc6efc2314bf9d174d3cacfe591a4ca77530637591eacc0dc70c0555252e04a9617e8b134b1ab2d9b0f7351b4228e7b61499e6a10')
+checkdepends=(
+  'check'
+  'cmocka'
+  'libfaketime'
+)
+source=("https://releases.pagure.org/SSSD/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc})
+sha512sums=('b61d52a53e26e8efa9cb799fc6efc2314bf9d174d3cacfe591a4ca77530637591eacc0dc70c0555252e04a9617e8b134b1ab2d9b0f7351b4228e7b61499e6a10'
+            'SKIP')
 validpgpkeys=('E4E366758CA0716AAB8048671EC6AB7532E7BC25'
               '16F24229488E736048952737BA88000FE6398272')
 
@@ -36,13 +46,16 @@ prepare() {
   cd "$srcdir/$pkgname-$pkgver"
   for f in "${source[@]}"; do
     if [[ $f == *.patch ]]; then
-      msg2 "Applying $f"
       patch -p1 < "$srcdir/$f"
     fi
   done
 
   # dbus policy files in /usr/share/dbus-1
   sed -i -e 's/^dbuspolicydir = $(sysconfdir)/dbuspolicydir = $(datadir)/' Makefile.in
+
+  # remove flaky network test
+  sed '/fail_over-tests/d' -i Makefile.am
+  autoreconf -fiv
 }
 
 build() {
@@ -57,7 +70,7 @@ build() {
     --enable-pammoddir=/usr/lib/security          \
     --with-os=fedora                              \
     --with-pid-path=/run                          \
-    --with-python2-bindings                       \
+    --without-python2-bindings                    \
     --with-python3-bindings                       \
     --with-syslog=syslog                        \
     --without-selinux                             \
@@ -66,6 +79,12 @@ build() {
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
   make
 }
+
+check() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make check
+}
+
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -79,8 +98,6 @@ package() {
 
   cd "$srcdir"
   rm -rf "$pkgdir/etc/systemd" # remove the drop-in
-
-  sed '1 s/python$/python2/' -i "$pkgdir"/usr/bin/sss_obfuscate
 }
 
 # vim: ts=2:sw=2:et:nowrap
