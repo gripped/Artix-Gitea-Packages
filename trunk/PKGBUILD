@@ -4,7 +4,7 @@
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 
 pkgname=wine
-pkgver=5.4
+pkgver=5.5
 pkgrel=1
 
 _pkgbasever=${pkgver/rc/-rc}
