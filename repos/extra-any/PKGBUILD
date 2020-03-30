@@ -4,7 +4,7 @@
 
 pkgbase=python-virtualenv
 pkgname=('python-virtualenv' 'python2-virtualenv')
-pkgver=20.0.12
+pkgver=20.0.15
 pkgrel=1
 pkgdesc="Virtual Python Environment builder"
 url="https://virtualenv.pypa.io/"
@@ -17,12 +17,12 @@ makedepends=('python-setuptools' 'python-appdirs' 'python-filelock' 'python-six'
              'python-setuptools-scm' 'python2-setuptools-scm' 'python-sphinx'
              'python-sphinx_rtd_theme' 'python-sphinx-argparse' 'towncrier')
 checkdepends=('python-pytest-mock' 'python2-pytest' 'python2-pytest-mock' 'python-pip' 'python2-pip'
-              'python-coverage' 'python2-coverage' 'fish' 'tcsh' 'xonsh')
+              'python-coverage' 'python2-coverage' 'fish' 'xonsh')  # 'tcsh' removed: randomly hangs tests
 replaces=('virtualenv')
 conflicts=('virtualenv')
 options=('!makeflags')
 source=($pkgbase-$pkgver.tar.gz::https://github.com/pypa/virtualenv/archive/$pkgver.tar.gz)
-sha512sums=('7cb6e58a89cf68efbc1cc631dd9e6610f90d16f9c41a6c99341852c0895b17f13146b6cdd32c046cab71144f1412e2ab062267486a91929dccf98866cc64adda')
+sha512sums=('fd26a41f141d4ea53bd79408f031d7d485d0be483202dccb6428cf98c4780219fc96d847a5aeac3af5c8512de395d26df80299841896562d194ba7a71f88c68b')
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver
 
@@ -43,10 +43,10 @@ build() {
 
 check() {
   (cd virtualenv-$pkgver
-    PYTHONPATH="$PWD/build/lib:$PWD/src" python -m pytest  ||:
+    PYTHONPATH="$PWD/build/lib:$PWD/src" python -m pytest
   )
   (cd virtualenv-$pkgver-py2
-    PYTHONPATH="$PWD/build/lib:$PWD/src" python2 -m pytest ||:
+    PYTHONPATH="$PWD/build/lib:$PWD/src" python2 -m pytest
   )
 }
 
