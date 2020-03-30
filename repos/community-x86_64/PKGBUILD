@@ -2,18 +2,15 @@
 # Contributor: Jakob Gahde <j5lx@fmail.co.uk>
 
 pkgname=dune
-pkgver=1.11.4
-pkgrel=2
+pkgver=2.1.2
+pkgrel=1
 pkgdesc="A composable build system for OCaml (formerly jbuilder)"
 arch=(x86_64)
 url="https://github.com/ocaml/dune"
 license=(Apache)
 depends=(glibc ocaml ocaml-findlib)
-provides=(jbuilder)
-conflicts=(jbuilder)
-replaces=(jbuilder)
 source=("${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('325e6744a55b9b2033dc92b562196337bf9cd99b86bd153f5e7941f6fbfbf9fb')
+sha512sums=('ede9fe430ebe1404a6d39cdf8c45cb8b08864fbe2c988545b7fb5469dcc80df3edd3d96e32d761d1ddf7a7b4e06e4e804ccddf03d7fb4a6231a8c6b767e2eca1')
 
 build() {
     cd ${pkgname}-${pkgver}
