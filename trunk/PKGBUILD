@@ -36,18 +36,18 @@ checkdepends=(
   'cmocka'
   'libfaketime'
 )
-source=("https://releases.pagure.org/SSSD/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc})
+source=("https://releases.pagure.org/SSSD/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc}
+        "ndr_get.patch::https://github.com/SSSD/sssd/commit/bc56b10aea999284458dcc293b54cf65288e325d.patch")
 sha512sums=('b61d52a53e26e8efa9cb799fc6efc2314bf9d174d3cacfe591a4ca77530637591eacc0dc70c0555252e04a9617e8b134b1ab2d9b0f7351b4228e7b61499e6a10'
-            'SKIP')
+            'SKIP'
+            'a92866008a64aee487a541fd13f32839c1f819b493923ddb36ad708347d160088722c158e7a75c2fc8413f03852e5c8534a3c89dfba343956ed67bba860330ac')
 validpgpkeys=('E4E366758CA0716AAB8048671EC6AB7532E7BC25'
               '16F24229488E736048952737BA88000FE6398272')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
-  for f in "${source[@]}"; do
-    if [[ $f == *.patch ]]; then
-      patch -p1 < "$srcdir/$f"
-    fi
+  for f in "$srcdir/*.patch"; do
+    patch -Np1 < $f
   done
 
   # dbus policy files in /usr/share/dbus-1
