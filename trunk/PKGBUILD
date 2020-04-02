@@ -1,0 +1,45 @@
+# Maintainer: Christian Rebischke <chris.rebischke at archlinux.org>
+# Contributor:  kpcyrd <git@rxv.cc>
+# Contributor: Jonathan Steel <jsteel at archlinux.org>
+# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
+# Contributor: flaccid aka Chris Fordham <chris@fordham.id.au>
+# Contributor: Sparadox <etienne.lafarge at gmail.com>
+
+pkgname=cloud-init
+pkgver=19.3
+pkgrel=1
+pkgdesc="The standard for customising cloud instances"
+arch=('any')
+url="https://cloud-init.io"
+license=('GPL3')
+depends=('sudo' 'python-yaml' 'python-prettytable'
+  'python-oauthlib' 'python-configobj'
+  'python-jsonschema' 'python-jsonpatch' 'net-tools'
+  'python-requests' 'python-oauthlib' 'python-jinja' 'python-six'
+  'netplan')
+makedepends=('python' 'python-setuptools')
+backup=('etc/cloud/cloud.cfg' 'etc/cloud/cloud.cfg.d/05_logging.cfg')
+source=("https://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-${pkgver}.tar.gz"
+  'fix-lib.patch'
+  'artixlinux.cloud.cfg')
+sha512sums=('4b2c7dbcfeeaa9abc097e4f89035009fe839347041ab93cf33593bf31add3f6e6744cf8cd080de4d937b7e1aa50026f109c8f9240452dbff331b4d477d558e2d'
+            '6c435fbe1e0a7093b79f8bb3789b05a39afd1e43b7ff96f13e68c9ad16311cc58270b947bae574cfdc3d2e27c7258789880a101c9bdf2c3c141bcbedc47a8a4b'
+            'efdd07ef24837b66bfac504d0f5afab3c96fb19d03b77d48596a39ddc2a79fef83bedefccde763f23b679f807df79b22633907845d0f8d219277f9e136d1e03f')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  patch -Np1 -i "${srcdir}/fix-lib.patch"
+}
+
+# This checks need: python-mock, python-httpretty
+# Due to a bug unittest2 is used even when python3 is used for building
+# So let's wait until cloud-init implemented a try/except for python3 builds
+# check() {
+#   cd "${pkgname}"-"${pkgver}"
+#   nosetests tests/unittests/
+# }
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  python ./setup.py install --root="${pkgdir}" -O1 --init-system sysvinit_openrc
+}
