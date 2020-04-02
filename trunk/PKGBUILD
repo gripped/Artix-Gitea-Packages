@@ -10,9 +10,10 @@ provides=('postgresql-runscripts')
 conflicts=('postgresql-runscripts')
 depends=('postgresql' 's6')
 install=postgresql.install
+backup=('etc/s6/sv/postgresql/conf')
 source=("postgresql.conf" "postgresql.run" "postgresql.type")
-sha256sums=('6b7ba3d078eefbe8ec522c48cbf23ebe2b4037dec98333be4b544f2eb667a682'
-            '95b72c87ea9b9b908981c47fbf658f81f481c9503e939b3926ab739dc5866b28'
+sha256sums=('79e887e893965bf8c3a6e4cf6d7d1a8825f24160b45f948d1d882f4b049f075d'
+            'e57d63adea8c3b2f7ce6cf6cc98bf0dabed9e6a042226dc0ebfa606673954689'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){

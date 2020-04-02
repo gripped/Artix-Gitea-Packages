@@ -15,10 +15,10 @@ backtick -n PGOPTS { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGOPTS" }
 importas -iu PGOPTS PGOPTS
 
 foreground {
-    if { test $PGROOT != /var/lib/postgresql }
-    foreground { echo Creating symlink /var/lib/postgresql -> $PGROOT }
+    if { test $PGROOT != /var/lib/postgres }
+    foreground { echo Creating symlink /var/lib/postgres -> $PGROOT }
     foreground { if -n { test -L /var/lib/postgres } if { test -d /var/lib/postgres } rmdir /var/lib/postgres }
-    foreground { ln -sf $PGROOT /var/lib/postgresql }
+    foreground { ln -sf $PGROOT /var/lib/postgres }
 }
 
 foreground {
