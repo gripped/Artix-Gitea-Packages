@@ -1,0 +1,55 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Ondřej Surý <ondrej@sury.org>
+# Contributor: Julian Brost <julian@0x4a42.net>
+# Contributor: Oleander Reis <oleander@oleander.cc>
+# Contributor: Otto Sabart <seberm[at]gmail[dot]com>
+
+pkgname=knot
+pkgver=2.9.3
+pkgrel=1.1
+pkgdesc="High-performance authoritative-only DNS server"
+arch=(x86_64)
+url="https://www.knot-dns.cz/"
+license=(GPL3)
+depends=(libedit gnutls liburcu lmdb
+         libidn2 libcap-ng
+         fstrm protobuf-c libmaxminddb)
+backup=('etc/knot/knot.conf')
+source=("https://secure.nic.cz/files/knot-dns/${pkgname}-${pkgver}.tar.xz"{,.asc})
+sha256sums=(f2adf137d70955a4a20df90c5409e10be8e1127204a98b27d626ac090531a07e SKIP)
+validpgpkeys=(742FA4E95829B6C5EAC6B85710BB7AF6FEBBD6AB) # Daniel Salzman <daniel.salzman@nic.cz>
+
+build() {
+    cd ${pkgname}-${pkgver}
+
+    ./configure \
+        --prefix=/usr \
+        --sbindir=/usr/bin \
+        --sysconfdir=/etc \
+        --localstatedir=/var/lib \
+        --libexecdir=/usr/lib/knot \
+        --with-rundir=/run/knot \
+        --with-storage=/var/lib/knot \
+        --enable-recvmmsg \
+        --enable-dnstap \
+        --enable-reuseport \
+        --disable-silent-rules
+
+    make
+}
+
+check() {
+    cd ${pkgname}-${pkgver}
+    make check
+}
+
+package() {
+    cd ${pkgname}-${pkgver}
+
+    make DESTDIR="${pkgdir}" install
+
+    mv "${pkgdir}"/etc/knot/{knot.sample.conf,knot.conf}
+
+    install -Dm644 distro/arch/knot.tmpfiles.arch "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
+    install -Dm644 distro/arch/knot.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
+}
