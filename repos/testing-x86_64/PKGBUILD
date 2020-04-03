@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=243.7
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -26,7 +26,7 @@ build() {
         -Ddocdir=/usr/share/doc/elogind
         -Ddefault-hierarchy=hybrid
         -Dcgroup-controller=openrc
-#         -Ddefault-kill-user-processes=false
+        -Ddefault-kill-user-processes=false
     )
 
     arch-meson "$pkgbase-${pkgver}" build "${meson_options[@]}"
