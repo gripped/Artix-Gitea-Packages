@@ -4,7 +4,7 @@
 
 pkgname=libvirt
 pkgver=5.10.0
-pkgrel=2.1
+pkgrel=3
 pkgdesc="API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)"
 arch=('x86_64')
 url="https://libvirt.org/"
@@ -74,7 +74,6 @@ sha512sums=('bb518a6aa6731a7de4b24fc7b8ffdcd2cdd84dfe49047374e0f02265c274eb06dbe
             '4162a7a38d94cb98a2c9a318fb7d7b9b8dc37a07762e8f6c8e2962c9961230f901fe354c80ea83dfe6d0d8cdda5f706a7cf20fcbcaf916f854755ea9a00e435b'
             '64334505c906a256852d7d56715ce259e2881e147b290ca321d73043dd683d594b291245de36f97259b87c247852858e04e89315f929234236bb8abc39c284f2'
             '8908557893efe6f53d15907be059a410f99e4f6ffd5211979978f30ab21faaeabaf80ff98e45eef2802540dd688c862b3bea22555b968651368c629c53da39fa')
-changelog=Changelog
 
 prepare() {
   cd "${srcdir}/${pkgname}-${pkgver}"
@@ -134,7 +133,8 @@ build() {
     --with-storage-gluster \
     --with-storage-iscsi \
     --with-storage-lvm \
-    --with-storage-zfs
+    --with-storage-zfs \
+    --with-runstatedir=/run
     # --with-audit
   make
 }
