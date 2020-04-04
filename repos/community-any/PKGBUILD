@@ -24,7 +24,6 @@ optdepends=(
   "perl-cpanel-json-xs: --output json - required for export"
   "perl-json-xs: --output json - required for export (legacy)"
   "perl-xml-dumper: --output xml - Crude and raw"
-  "systemd-sysvcompat: inxi -I runlevel"
   "sudo: inxi -Dx hddtemp-user;-o file-user"
   "tree: --debugger 20,21 /sys tree"
   "usbutils: inxi -A usb audio;-N usb networking"
