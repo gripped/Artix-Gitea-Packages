@@ -7,7 +7,7 @@
 
 pkgname=cloud-init
 pkgver=19.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="The standard for customising cloud instances"
 arch=('any')
 url="https://cloud-init.io"
@@ -25,12 +25,6 @@ source=("https://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-$
 sha512sums=('4b2c7dbcfeeaa9abc097e4f89035009fe839347041ab93cf33593bf31add3f6e6744cf8cd080de4d937b7e1aa50026f109c8f9240452dbff331b4d477d558e2d'
             '6c435fbe1e0a7093b79f8bb3789b05a39afd1e43b7ff96f13e68c9ad16311cc58270b947bae574cfdc3d2e27c7258789880a101c9bdf2c3c141bcbedc47a8a4b'
             '2ff2e592f0eca4a96c9392866a6278c6b7b977f974b734c905c348a671d65dd28bd92c508ed8da1301a20b8dac3ed070ac224b004c0d6c0950dd67a4702f6cf6')
-
-prepare() {
-  cd "${pkgname}-${pkgver}"
-  patch -Np1 -i "${srcdir}/fix-lib.patch"
-  sed -e 's:/etc/systemd:/usr/lib/systemd:g' -e 's:\"/lib\":\"/usr/lib\":g' -i setup.py
-}
 
 # This checks need: python-mock, python-httpretty
 # Due to a bug unittest2 is used even when python3 is used for building
