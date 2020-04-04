@@ -1,0 +1,37 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Devin Cofer <ranguvar[at]ranguvar[dot]io>
+# Contributor: DriverX
+# Contributor: Nicolas Quiénot <niQo @ aur>
+# Contributor: Martin Schrodt <martin@schrodt.org>
+
+pkgname=nvme-cli
+pkgver=1.10.1
+pkgrel=2
+pkgdesc="NVM-Express user space tooling for Linux"
+arch=('i686' 'x86_64')
+url="https://github.com/linux-nvme/nvme-cli"
+license=('GPL')
+makedepends=('libeudev')
+# checkdepends=('python2-nose' 'python-nose')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/linux-nvme/${pkgname}/archive/v${pkgver}.tar.gz")
+sha256sums=('6be38485464e37fd822eba05eb3b47e792565350b2c0249a94528910cdc1ea31')
+
+build() {
+	cd "${pkgname}-${pkgver}"
+	make PREFIX=/usr
+}
+
+# Tests require a working NVME disk.
+# check() {
+# 	cd "${pkgname}-${pkgver}"
+# 	make test
+# }
+
+package() {
+	cd "${pkgname}-${pkgver}"
+	make DESTDIR="$pkgdir" UDEVDIR=/usr/lib/udev PREFIX=/usr SBINDIR=/usr/bin install
+ # remove systemd stuff
+ cd "$pkgdir"
+ rm  -r usr/lib/systemd
+ rm usr/lib/udev/rules.d/70-nvmf-autoconnect.rules #run systemctl which not exist in artixlinux
+}
