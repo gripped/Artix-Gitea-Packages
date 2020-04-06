@@ -10,11 +10,8 @@ license=(Apache)
 depends=(glibc)
 makedepends=(go-pie git)
 backup=(etc/matterbridge.toml)
-source=(${pkgname}-${pkgver}.tar.gz::"${url}/archive/v${pkgver}.tar.gz"
-        ${pkgname}-${pkgver}.tar.gz.asc::"${url}/releases/download/v${pkgver}/v${pkgver}.tar.gz.asc")
-sha256sums=('66c70c51e30ec5a6f21ffa084d86a3ade3575f82a1e33dc5ef167fba57d0c075'
-            'SKIP')
-validpgpkeys=(CC7D978417C1AEA1E4CDD7240E41AB4BF4C610B4) # wim <wim@42.be>
+source=(${pkgname}-${pkgver}.tar.gz::"${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('66c70c51e30ec5a6f21ffa084d86a3ade3575f82a1e33dc5ef167fba57d0c075')
 
 prepare() {
   cd ${pkgname}-${pkgver}
