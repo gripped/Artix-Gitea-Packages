@@ -1,7 +1,7 @@
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=vulkan-validation-layers
-pkgver=1.2.133
+pkgver=1.1.97.0+9672+443c2caa
 pkgrel=1
 pkgdesc="Vulkan Validation Layers"
 arch=(x86_64)
@@ -9,15 +9,14 @@ url="https://www.khronos.org/vulkan/"
 license=('custom')
 depends=(gcc-libs vulkan-icd-loader vulkan-headers libx11)
 makedepends=(cmake python-lxml libx11 libxrandr wayland git)
-source=(https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/v${pkgver}.tar.gz)
-#source=("git+https://github.com/KhronosGroup/Vulkan-ValidationLayers.git#commit=35d091dad71304dab79758fdae4bda12f692d735")
-sha256sums=('f9a87f424960457d6798baa3c592b09a14e2f29533851dddb3fa8a110cf0ae8a')
+source=("git+https://github.com/KhronosGroup/Vulkan-ValidationLayers.git#commit=443c2caa1714d73693cbb0924b524f0fa7558efd")
+sha256sums=('SKIP')
 
-#pkgver() {
-#  cd "${srcdir}/Vulkan-ValidationLayers"
-#
-#  echo 1.1.97.0+$(git rev-list --count HEAD)+$(git rev-parse --short HEAD)
-#}
+pkgver() {
+  cd "${srcdir}/Vulkan-ValidationLayers"
+
+  echo 1.1.97.0+$(git rev-list --count HEAD)+$(git rev-parse --short HEAD)
+}
 
 build() {
   cd "${srcdir}"/Vulkan-ValidationLayers*
