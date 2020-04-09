@@ -22,7 +22,6 @@ prepare() {
     autoreconf -fi
 }
 
-
 build() {
     cd "${srcdir}"/${pkgname}-${pkgver}
 
