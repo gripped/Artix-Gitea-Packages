@@ -3,5 +3,5 @@ envfile /etc/s6/sv/wpa_supplicant-log/conf
 importas -iu DIRECTIVE DIRECTIVE
 backtick -n ARGS { pipeline { echo $DIRECTIVE } sed "s/_/ /g" }
 importas -iu ARGS ARGS
-foreground { s6-setuidgid s6log mkdir -p /var/log/wpa_supplicant }
+foreground { if -n -t { test -d /var/log/wpa_supplicant } install -d -m 0755 -o s6log -g s6log /var/log/wpa_supplicant }
 s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${ARGS} /var/log/wpa_supplicant"

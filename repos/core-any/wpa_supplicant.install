@@ -5,8 +5,6 @@ pre_remove() {
     sed -i '/wpa_supplicant/d' /etc/s6/sv/mount-net/dependencies
 }
 
-post_upgrade() {
-    if [ -e "/etc/s6/sv/wpa_supplicant" ]; then
-        rm -rf /etc/s6/sv/wpa_supplicant
-    fi
+post_remove() {
+    rm -rf /etc/s6/sv/wpa_supplicant-log
 }
