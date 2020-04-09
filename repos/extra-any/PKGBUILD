@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=networkmanager-s6
-pkgver=20200324
+pkgver=20200408
 pkgrel=1
 pkgdesc="s6 service scripts for networkmanager"
 arch=('any')
@@ -25,7 +25,7 @@ sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
             '4c34baa615e03535d32d648dc9af017a3c5c4270140a769cd1d3685c3d6a1c43'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'ea129b16d63b0b0bb1eb7652beb522d7f0f2a88c9b279014a28b5e52f1af758f'
-            'a71f62a22f4cc12e27483fb043edf44f568768e99496c981cbc080c88ca44d44'
+            'bf4b31d06194b3367eba101c4547e06c5c8397b0872f9150a90e179be611e663'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
             '7bdb94d78be286b25e76cf9c04ca6c1c1afe9d0036c09da9a61a030a2d1eb3f0'
