@@ -1,8 +1,6 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
-# Contributor: Pierre Schmitz <pierre@archlinux.de>
 
-# build
 pkgname=cmake
 pkgver=3.17.1
 pkgrel=1
