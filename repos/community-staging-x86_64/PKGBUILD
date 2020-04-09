@@ -2,6 +2,7 @@
 # Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
+
 pkgname=cjs
 pkgver=4.4.0
 pkgrel=2
