@@ -1,7 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -n -t { test -d /var/log/unrealircd } install -d -m 0755 -o ircd -g ircd /var/log/unrealircd }
-envfile /etc/s6/sv/unrealircd-log/conf
-importas -iu DIRECTIVE DIRECTIVE
-backtick -n ARGS { pipeline { echo $DIRECTIVE } sed "s/_/ /g" }
-importas -iu ARGS ARGS
-s6-setuidgid ircd exec -c sh -c "s6-log -d3 -b ${ARGS} /var/log/unrealircd"
