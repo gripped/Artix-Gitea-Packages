@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /srv/git }
-fdmove -c 2 1
-exec git daemon --base-path=/srv/git
