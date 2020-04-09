@@ -4,7 +4,7 @@
 
 pkgname=cjs
 pkgver=4.4.0
-pkgrel=2
+pkgrel=1
 pkgdesc="Javascript Bindings for Cinnamon"
 arch=('x86_64')
 url="https://github.com/linuxmint/${pkgname}"
@@ -21,6 +21,7 @@ prepare() {
 
     autoreconf -fi
 }
+
 
 build() {
     cd "${srcdir}"/${pkgname}-${pkgver}
