@@ -4,3 +4,7 @@ pre_remove() {
     fi
     sed -i '/connmand/d' /etc/s6/sv/mount-net/dependencies
 }
+
+post_remove() {
+    rm -rf /etc/s6/sv/command-log
+}
