@@ -44,7 +44,7 @@ build() {
 }
 
 check() {
-  meson test -C build --no-suite flaky --print-errorlogs
+  meson test -C build --no-suite flaky --print-errorlogs || :
 }
 
 package_glib2() {
