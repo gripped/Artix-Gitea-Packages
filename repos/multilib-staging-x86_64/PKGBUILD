@@ -9,7 +9,7 @@ url="https://p11-glue.freedesktop.org"
 arch=(x86_64)
 license=(BSD)
 depends=(lib32-glibc lib32-libtasn1 lib32-libffi libp11-kit)
-makedepends=(git meson lib32-systemd)
+makedepends=(git meson lib32-eudev)
 provides=(libp11-kit.so)
 source=("git+https://github.com/p11-glue/p11-kit?signed#tag=$pkgver")
 sha256sums=('SKIP')
@@ -28,7 +28,8 @@ build() {
   arch-meson p11-kit build \
     --buildtype debugoptimized \
     --libdir /usr/lib32 \
-    -D trust_paths=/etc/ca-certificates/trust-source:/usr/share/ca-certificates/trust-source
+    -D trust_paths=/etc/ca-certificates/trust-source:/usr/share/ca-certificates/trust-source \
+    -D systemd=disabled
   ninja -C build
 }
 
