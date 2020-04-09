@@ -20,4 +20,5 @@ Server = https://mirrors.nettek.us/artix-linux/$repo/os/$arch
 Server = https://artix.cccp.io/$repo/os/$arch
 Server = https://mirror.linux.pizza/artix-linux/$repo/os/$arch
 Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
+Server = http://mirrors.redcorelinux.org/artixlinux/$repo/os/$arch
 Server = http://mirror1.artixlinux.org/repos/$repo/os/$arch
