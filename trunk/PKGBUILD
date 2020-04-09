@@ -45,7 +45,6 @@ _pick() {
 
 package_p11-kit() {
   depends=("libp11-kit=$pkgver-$pkgrel" libp11-kit.so)
-  install=p11-kit.install
 
   DESTDIR="$pkgdir" meson install -C build
   ln -sr "$pkgdir/usr/bin/update-ca-trust" "$pkgdir/usr/lib/p11-kit/trust-extract-compat"
