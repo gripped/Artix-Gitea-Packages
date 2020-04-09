@@ -1,6 +1,7 @@
 # Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Marco Scarpetta <marcoscarpetta02@gmail.com>
 
+
 pkgname=pdfmixtool
 pkgver=0.5
 pkgrel=2.1
