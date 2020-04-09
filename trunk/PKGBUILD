@@ -16,12 +16,12 @@ source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
 sha512sums=('3b2bdc55ab572713d6b6f92978522b290819656f64fef620659065ff5673a04a0585b83a1a0248116570ac1cfee4f54acc228f355c02aa4e0a2a13b59fbafed2')
 b2sums=('af276cd8f9ef0f66a6f4ab3e0072b485e33015e070bb796818907964df0696240b753f7a271bf45db788eb244e0cd1fb866f3b78798adf3ef8f9e76825fc4d74')
 
-
 prepare() {
     cd "${srcdir}"/${pkgname}-${pkgver}
 
     autoreconf -fi
 }
+
 
 build() {
     cd "${srcdir}"/${pkgname}-${pkgver}
