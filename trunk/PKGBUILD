@@ -2,7 +2,6 @@
 # Contributor: mortzu <me@mortzu.de>
 # Contributor: fnord0 <fnord0@riseup.net>
 
-
 pkgname=acpi_call
 pkgver=1.1.0
 pkgrel=306
