@@ -4,7 +4,7 @@
 
 pkgname=dhcpcd
 pkgver=9.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="RFC2131 compliant DHCP client daemon"
 url="https://roy.marples.name/projects/dhcpcd/"
 arch=('x86_64')
@@ -14,9 +14,13 @@ optdepends=('openresolv: resolvconf support')
 provides=('dhcp-client')
 backup=('etc/dhcpcd.conf')
 options=('emptydirs')  # We Need the Empty /var/lib/dhcpcd Directory
-source=("https://roy.marples.name/downloads/$pkgname/$pkgname-$pkgver.tar.xz")
+source=("https://roy.marples.name/downloads/$pkgname/$pkgname-$pkgver.tar.xz"
+        dhcpcd.sysusers
+        dhcpcd.tmpfiles)
 validpgpkeys=('A785ED2755955D9E93EA59F6597F97EA9AD45549')  # Roy Marples (NetBSD) <roy@NetBSD.org>
-sha256sums=('4a31ae9edcb469dc626e9e70f61c7a87104c26936126ccac24be6d45d4cfe46a')
+sha256sums=('4a31ae9edcb469dc626e9e70f61c7a87104c26936126ccac24be6d45d4cfe46a'
+            'df33c69a79fb30895217db8fe6a46ad0658a70b32a280bc91fc04a09b584fa62'
+            'd9156325d42017201beeb833ff9931ec880accd503b5e39fc973392b8fef8b81')
 
 build() {
   cd ${pkgname}-${pkgver}
@@ -28,7 +32,8 @@ build() {
       --sbindir=/usr/bin \
       --libexecdir=/usr/lib/dhcpcd \
       --dbdir=/var/lib/dhcpcd \
-      --rundir=/run
+      --runstatedir=/run \
+      --privsepuser=dhcpcd
 
   # Build
   make
@@ -52,4 +57,7 @@ package() {
 
   # Set Options in /etc/dhcpcd.conf
   echo noipv4ll >> "${pkgdir}/etc/dhcpcd.conf" # Disable ip4vall
+
+  install -Dm644 "${srcdir}/dhcpcd.sysusers" "${pkgdir}/usr/lib/sysusers.d/dhcpcd.conf"
+  install -Dm644 "${srcdir}/dhcpcd.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/dhcpcd.conf"
 }
