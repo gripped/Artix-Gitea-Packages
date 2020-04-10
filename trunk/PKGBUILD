@@ -72,5 +72,3 @@ package_libappindicator-gtk3() {
   cd ${pkgbase}-${pkgver}
   make DESTDIR="${pkgdir}" install
 }
-
-# vim: ts=2 sw=2 et:
