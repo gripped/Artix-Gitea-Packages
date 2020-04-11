@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributer: John Smith <promisedneverland@disroot.org>
+pkgname=trojan-s6
+pkgver=20200410
+pkgrel=1
+pkgdesc="s6 service scripts for trojan"
+arch=('any')
+url="https://github.com/artix-linux"
+groups=('s6-galaxy')
+provides=('trojan-runscripts')
+conflicts=('trojan-runscripts')
+depends=('trojan' 's6')
+install=trojan.install
+source=("trojan.run" "trojan.type")
+sha256sums=('9723f78390b277f29176713d5190399d309ccc608f24cf2c27a9e522b9c676fe'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'trojan'
+}
