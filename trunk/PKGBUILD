@@ -2,6 +2,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
+# build it
 pkgname=extra-cmake-modules
 pkgver=5.69.0
 pkgrel=1
