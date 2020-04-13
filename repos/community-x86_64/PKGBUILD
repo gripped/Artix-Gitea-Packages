@@ -3,7 +3,7 @@
 
 pkgname=sndio
 pkgver=1.6.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='A small audio and MIDI framework part of the OpenBSD project'
 arch=(x86_64)
 url='http://www.sndio.org'
@@ -14,9 +14,11 @@ license=(ISC)
 # if done that way. Licenses are complicated.
 depends=(alsa-lib libbsd)
 
-source=("http://www.sndio.org/sndio-$pkgver.tar.gz")
+source=("http://www.sndio.org/sndio-$pkgver.tar.gz"
+	"${pkgname}.sysusers.conf")
 # checksums provided by packager
-sha256sums=(99e0064ac11aceab24c73ed4630a31de401ff2f37689565b7b375682476f5bc1)
+sha256sums=('99e0064ac11aceab24c73ed4630a31de401ff2f37689565b7b375682476f5bc1'
+            '4dd07d579971c4a3b3091f109305e39b5e1a69e3bd62ead6229ef12e4384dba7')
 backup=(etc/default/sndiod)
 
 build() {
@@ -37,4 +39,6 @@ package() {
 	# this is the most up-to-date license outside of bsd-compat,
 	# which isn't being used in this build
 	sed '/^ \*\//q' aucat/aucat.c > "$pkgdir/usr/share/licenses/sndio/LICENSE"
+
+	install -Dm644 "${srcdir}/${pkgname}.sysusers.conf" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
 }
