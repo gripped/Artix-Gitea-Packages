@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20200408
+pkgver=20200413
 pkgrel=1
 pkgdesc="s6 service scripts for clamav"
 arch=('any')
 url="https://github.com/artix-linux"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('clamav-runscripts')
 conflicts=('clamav-runscripts')
 depends=('clamav' 's6')
