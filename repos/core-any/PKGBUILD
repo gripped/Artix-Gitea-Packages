@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20190105
+pkgver=20200413
 pkgrel=1
 pkgdesc="s6 service scripts for cryptsetup"
 arch=('any')
@@ -12,11 +12,11 @@ depends=('cryptsetup' 's6')
 install=cryptsetup.install
 source=("dependencies" "down" "shell_down" "shell_up" "type" "up")
 sha256sums=('a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
-            'bd920ddecb9f89d03f8dc304b7e5c3cd98fbda8d654bb2a8515640ee4b18576c'
+            '40817cf81ccc926b538c9d5f359282235a78ef34676202c35db26b6ea833996f'
             'a09d48469d308b12c1b1ac046a0ebf122a7598b5ed53a81888e95008d824b31e'
-            '69ff2d5b31433de138333c8e8f3126ae71dba38986f704f2a632aa7cac648111'
+            'e0b45230d75864921c34182a3604d0d89795cbeb81ee53d1cb291ce1bda21e60'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '7b4e19050b60f61097b25df64c6eeffe9b3e70dca0bb3bd123a669316beb5181')
+            'ba87658fe3eb671c8ec770c25df8251b9f5472ea20e980ee6cb8d70099103c4f')
 
 _inst_sv(){
     for file in dependencies down shell_down shell_up type up; do

@@ -14,13 +14,13 @@ do_unlock_device() {
 		a=$2
 		b=$1
 	else
-		printhl "Non-LUKS partitions are not supported at the moment."
+		echo "Non-LUKS partitions are not supported at the moment."
 		continue
 	fi
 	if [[ $4 ]]; then
 		for i in ${4//,/ }; do
 			case $i in
-				"discard") opts+="--allow-discard" ;;
+				"discard") opts+="--allow-discards" ;;
 				"readonly"|"read-only") opts+="--readonly" ;;
 				"tries"*) opts+="-T ${i##*=}" ;;
 				"keyfile-size"*) opts+="-l ${i##*=}" ;;
