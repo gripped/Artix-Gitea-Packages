@@ -2,7 +2,7 @@
 
 pkgname=docker
 pkgver=19.03.8
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc='Pack, ship and run any application as a lightweight container'
 arch=('x86_64')
@@ -158,4 +158,7 @@ package() {
   cd "$srcdir"/src/github.com/docker
   install -Dm755 app/bin/docker-app "$pkgdir/usr/lib/docker/cli-plugins/docker-app"
   install -Dm755 buildx/bin/docker-buildx "$pkgdir/usr/lib/docker/cli-plugins/docker-buildx"
+  # install sysuser for Artix users
+  install -Dm644 "$srcdir/$pkgname.sysusers" \
+    "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
 }
