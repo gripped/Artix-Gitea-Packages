@@ -22,7 +22,7 @@ do_unlock_device() {
 	if [[ $4 ]]; then
 		for i in ${4//,/ }; do
 			case $i in
-				"discard") opts+="--allow-discard" ;;
+				"discard") opts+="--allow-discards" ;;
 				"readonly"|"read-only") opts+="--readonly" ;;
 				"tries"*) opts+="-T ${i##*=}" ;;
 				"keyfile-size"*) opts+="-l ${i##*=}" ;;
