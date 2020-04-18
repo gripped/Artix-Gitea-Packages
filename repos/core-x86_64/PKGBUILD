@@ -5,7 +5,7 @@ _dist=arch${_rel}
 _artix=artix${_rel}
 
 pkgbase=linux
-pkgver=5.6.3.${_artix}
+pkgver=5.6.4.${_artix}
 pkgrel=1
 pkgdesc='Linux'
 _srctag=v${pkgver%.*}-${_dist}
