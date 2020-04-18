@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=backlight-s6
+pkgver=20200417
+pkgrel=1
+pkgdesc="Restore the screen brightness at system startup"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('backlight-runscripts')
+conflicts=('backlight-runscripts')
+depends=('s6')
+install=backlight.install
+source=("backlight.down" "backlight.type" "backlight.up")
+sha256sums=('23d20bce676a1b69f79502f997d2340515330c9855fdfcc240330f3b1ca5500e'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '4e983d7bcad88ca0e32816b7449c98b4b962817d6683a6a8b49747c5f0e3ae78')
+
+_inst_sv(){
+    for file in down type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'backlight'
+}
