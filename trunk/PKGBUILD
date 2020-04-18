@@ -1,17 +1,17 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nginx-s6
-pkgver=20200115
+pkgver=20200418
 pkgrel=1
 pkgdesc="s6 service scripts for nginx"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org"
 groups=('s6-world')
 provides=('nginx-runscripts')
 conflicts=('nginx-runscripts')
 depends=('nginx' 's6')
 install=nginx.install
 source=("nginx.run" "nginx.type")
-sha256sums=('5b27a413720fdbabb83dacf5c86b8201b0bc305e6f2a7258103ad59de4755fef'
+sha256sums=('f3d9d98520ce2665cc3b4d1b8d5b497fd702e4c0b0a71ddc406caf7540abfba3'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
