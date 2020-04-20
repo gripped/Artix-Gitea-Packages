@@ -18,7 +18,6 @@ source=("https://www.remlab.net/files/ndisc6/$pkgname-$pkgver.tar.bz2"{,.asc}
 validpgpkeys=('9480583353E334D2F03FE80CC3EC6DBEDD6D12BD') # Rémi Denis-Courmont <remi@remlab.net>
 md5sums=('a796350c1629aa3e438a2bb55be1b792'
          'SKIP'
-         '58b44cbe6d38082fb299eb136754bf31'
          '48d0a77ed9536cd0d4642e1f1ca0b255')
 
 prepare() {
