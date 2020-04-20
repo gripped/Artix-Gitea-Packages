@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20200419
+pkgver=20200420
 pkgrel=1
 pkgdesc="s6 service scripts for cryptsetup"
 arch=('any')
