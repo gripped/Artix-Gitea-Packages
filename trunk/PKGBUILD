@@ -1,35 +1,33 @@
 # Maintainer: CupIvan <mail@cupivan.ru>
 
 pkgname=tinydns
-pkgver=0.3
+pkgver=0.3.1
 pkgrel=1
-
 pkgdesc='Tiny cache DNS server'
 arch=('any')
 url=https://github.com/CupIvan/${pkgname}
-
+license=('MIT')
+backup=(etc/${pkgname}.conf)
 source=(https://github.com/CupIvan/${pkgname}/archive/v${pkgver}.tar.gz
         ${pkgname}.openrc)
-md5sums=('ba79f85fd76464c9e2c060fbea021d72'
-         'fbf3b07d3f482cbef4e2416b186c4799')
-dir=${pkgname}-${pkgver}
+sha256sums=('baf5d4246a22bd0c2d8ac3579cea18b50b3636762fecc452cad8614c13fc9807'
+            'f7865099036c835b1e50796a80d37dd6b8c45cac5179fda28cdb56253488860a')
 
-#source=(git+https://github.com/CupIvan/${pkgname}.git)
-#md5sums=('ba79f85fd76464c9e2c060fbea021d72')
-#dir=${pkgname}
-
-backup=(etc/${pkgname}.conf)
+prepare() {
+	cd "$srcdir/$pkgname-$pkgver"
+	sed -i 's:tinydns:& -Wl,-z,now,-z,relro:' Makefile	
+}
 
 build() {
-	cd ${srcdir}/${dir}
+	cd "$srcdir/$pkgname-$pkgver"
 	make
 }
 
 package() {
-	cd ${srcdir}/${dir}
-
-	install -Dm755 ${pkgname}         ${pkgdir}/usr/bin/${pkgname}
-	install -Dm644 ${pkgname}.conf    ${pkgdir}/etc/${pkgname}.conf
-	cd ..
-	install -Dm755 ${pkgname}.openrc  ${pkgdir}/etc/init.d/${pkgname}
+	cd "$srcdir/$pkgname-$pkgver"
+	
+	install -Dm755 ${pkgname} ${pkgdir}/usr/bin/${pkgname}
+	install -Dm644 ${pkgname}.conf ${pkgdir}/etc/${pkgname}.conf
+	install -Dm755 ${srcdir}/${pkgname}.openrc ${pkgdir}/etc/init.d/${pkgname}
+	install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
 }
