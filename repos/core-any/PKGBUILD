@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20200408
+pkgver=20200420
 pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
