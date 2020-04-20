@@ -2,7 +2,6 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: AndyRTR <andyrtr at archlinux.org>
 
-
 pkgname=iwd
 pkgver=1.7
 pkgrel=1
