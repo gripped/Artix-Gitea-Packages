@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=tinydns-s6
+pkgver=20200421
+pkgrel=1
+pkgdesc="s6 service scripts for tinydns"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('tinydns-runscripts')
+conflicts=('tinydns-runscripts')
+depends=('tinydns' 's6')
+install=tinydns.install
+source=("tinydns.run" "tinydns.type")
+sha256sums=('6e81dde526c46a2822f6d84f30a5d9fd85791b3bdfbfe9afde787206ff454866'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'tinydns'
+}
