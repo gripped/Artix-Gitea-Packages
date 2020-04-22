@@ -1,5 +1,4 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Contributor: GreaterFire <GreaterFire at protonmail dot com>
+# Maintainer: mr_robot <mr_robot@artixlinux.org>
 
 pkgname=trojan
 pkgver=1.15.1
