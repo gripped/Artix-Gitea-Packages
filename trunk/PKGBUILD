@@ -13,8 +13,7 @@ optdepends=('ca-certificates: server certificate verification'
 makedepends=('cmake' 'boost' 'openssl' 'mariadb-libs')
 checkdepends=('openssl' 'python' 'curl' 'netcat')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/trojan-gfw/$pkgname/archive/v$pkgver.tar.gz")
-backup=('etc/trojan.json'
-        'etc/trojan/config.json')
+backup=('etc/trojan/config.json')
 sha512sums=('5e0dfb46116b9de54f5d4e6d0646ab5ba3746143c5ad0f275c894929ba7fc840cacb187e514bbfaa770f0651fc4d3ff9e662f648f515a972ddf72ad0e93d616f')
 
 build() {
