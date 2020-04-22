@@ -44,6 +44,9 @@ build() {
     -D modify_system=true
     -D polkit_agent=true
     -D selinux=false
+    -D systemdsystemunitdir=no
+    -D session_tracking=elogind
+    -D systemd_journal=false
 
     # features
     -D iwd=true
@@ -89,7 +92,7 @@ _pick() {
 
 package_networkmanager() {
   depends=(libnm iproute2 polkit wpa_supplicant libmm-glib libnewt libndp libteam curl
-           bluez-libs libpsl audit mobile-broadband-provider-info)
+           bluez-libs libpsl audit mobile-broadband-provider-info elogind)
   optdepends=('dnsmasq: connection sharing'
               'bluez: Bluetooth support'
               'ppp: dialup connection support'
