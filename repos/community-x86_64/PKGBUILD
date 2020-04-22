@@ -1,7 +1,7 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=matterbridge
-pkgver=1.17.2
+pkgver=1.17.4
 pkgrel=1
 pkgdesc="Multi-protocols (IRC/XMPP/Mattermost/Slack/Matrix/etc) bridge"
 arch=(x86_64)
