@@ -51,9 +51,11 @@ validpgpkeys=('E4E366758CA0716AAB8048671EC6AB7532E7BC25'
               '16F24229488E736048952737BA88000FE6398272')
 
 prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
-  for f in "$srcdir"/*.patch; do
-    git apply --stat "$f"
+cd "$srcdir/$pkgname-$pkgver"
+  for f in "${source[@]}"; do
+    if [[ $f == *.patch ]]; then
+      patch -p1 < "$srcdir/$f"
+    fi
   done
 
   # dbus policy files in /usr/share/dbus-1
