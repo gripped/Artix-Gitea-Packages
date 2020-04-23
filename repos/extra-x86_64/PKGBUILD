@@ -4,7 +4,7 @@
 pkgbase=gdm
 pkgname=(gdm libgdm)
 pkgver=3.34.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Display manager and login screen"
 url="https://wiki.gnome.org/Projects/GDM"
 arch=(x86_64)
@@ -16,11 +16,14 @@ _commit=80e010198217284d3cf52e8b334862a80b00cbd1  # tags/3.34.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gdm.git#commit=$_commit"
         0001-Xsession-Don-t-start-ssh-agent-by-default.patch
         0002-pam-arch-Don-t-check-greeter-account-for-expiry.patch
-        0003-pam-arch-Restrict-greeter-service-to-the-gdm-user.patch)
+        0003-pam-arch-Restrict-greeter-service-to-the-gdm-user.patch
+        0004-enable-logind.patch
+)
 sha256sums=('SKIP'
             '098ffb1cdc0232f014e5fe5fb8d268b752afc54d6ee661664036879acd075b22'
             '2e2b12d4609004a010245de51a8c017b164e84f249cd19706d020cb599d2d7e7'
-            '3fa02eb7bbbe1586eae4ae98221a284251ca2869dc731c80b753e7effc443379')
+            '3fa02eb7bbbe1586eae4ae98221a284251ca2869dc731c80b753e7effc443379'
+            '49e07d6af456814ab0ccfc87ba80a2edd18321247042c11c65c0340077a1955e')
 
 pkgver() {
   cd gdm
@@ -35,7 +38,8 @@ prepare() {
   # https://bugs.archlinux.org/task/63706
   patch -Np1 -i ../0002-pam-arch-Don-t-check-greeter-account-for-expiry.patch
   patch -Np1 -i ../0003-pam-arch-Restrict-greeter-service-to-the-gdm-user.patch
-
+  patch -Np1 -i ../0004-enable-logind.patch
+  
   NOCONFIGURE=1 ./autogen.sh
 }
 
