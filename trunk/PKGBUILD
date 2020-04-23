@@ -1,0 +1,38 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=wf-recorder
+pkgver=0.2.1
+pkgrel=1.1
+pkgdesc="Screen recorder for wlroots-based compositors"
+arch=('i686' 'x86_64')
+url='https://github.com/ammen99/wf-recorder'
+license=(MIT)
+depends=('ffmpeg' 'ocl-icd')
+makedepends=('meson' 'wayland-protocols' 'ninja' 'scdoc' 'opencl-headers' 'git')
+optdepends=(
+	"slurp: limit recording to a part of the screen"
+)
+source=("git+https://github.com/ammen99/wf-recorder.git#tag=v${pkgver}"
+	"check_buffers.patch::${url}/commit/bfa12936d49ed58bbe3d65cd17df104ac3e67279.patch")
+sha256sums=('SKIP'
+            '7aeafbdaebe8b28b328f3a14f47f274dfc8ed5b7d15c25d0d7153fc059cf0fec')
+
+prepare() {
+	cd "$pkgname"
+	if [ -f "$srcdir"/*.patch ]; then
+	for _patch in "$srcdir"/*.patch ; do
+		git apply --stat "$_patch"
+	done
+	fi
+}
+
+build() {
+	cd "$pkgname"
+	meson -Dwerror=false --prefix /usr "$srcdir/build" --buildtype=release
+	ninja -C "$srcdir/build"
+}
+
+package() {
+	cd "$pkgname"
+	DESTDIR="$pkgdir" ninja -C "$srcdir/build" install
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
