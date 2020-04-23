@@ -36,6 +36,7 @@ checkdepends=(
   'check'
   'cmocka'
   'libfaketime'
+  'openssh'
 )
 source=("https://releases.pagure.org/SSSD/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc}
         "ndr_get.patch::https://github.com/SSSD/sssd/commit/bc56b10aea999284458dcc293b54cf65288e325d.patch"
