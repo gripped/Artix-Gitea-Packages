@@ -1,0 +1,45 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=strongswan-s6
+pkgver=20200424
+pkgrel=1
+pkgdesc="s6 service scripts for strongswan"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('strongswan-runscripts')
+conflicts=('strongswan-runscripts')
+depends=('strongswan' 's6')
+install=strongswan.install
+source=("strongswan-log.conf"
+        "strongswan-log.consumer-for"
+        "strongswan-log.notification-fd"
+        "strongswan-log.pipeline-name"
+        "strongswan-log.run"
+        "strongswan-log.type"
+        "strongswan-srv.producer-for"
+        "strongswan-srv.run"
+        "strongswan-srv.type")
+sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '760554b2f1362c1c9ac17830cc668d43e566ef6b2f4462f62e7039fbdbe04aa0'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '82a8d70575436d4790ef5fb1b7a9dec7ba7130443dafed4a9f63b95334c90e21'
+            'd2732837a29dbabb7a5115bd39bd95792f7f9fc4529fc73fff65c0834305221a'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '7268996ad3e15dd0946b6032fdbffb1d13d42d69a85dadcc37a57a4676006dca'
+            '8aab4e4c140093f6e0ce4c0736ea78afd2f48d9dbfe9e507669fde9a7e4f7464'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'strongswan-log'
+    _inst_sv 'strongswan-srv'
+}
