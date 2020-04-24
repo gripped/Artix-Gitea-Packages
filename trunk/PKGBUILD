@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=knot-s6
+pkgver=20200424
+pkgrel=1
+pkgdesc="s6 service scripts for knot"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('knot-runscripts')
+conflicts=('knot-runscripts')
+depends=('knot' 's6')
+install=knot.install
+source=("knotd.run" "knotd.type")
+sha256sums=('fbc293ba3ed2f86cea19e332ee85600dd3d45ded5eccfa6d91fa7bf40e8f45f8'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'knotd'
+}
