@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+exec doh-server -conf /etc/dns-over-https/doh-server.conf

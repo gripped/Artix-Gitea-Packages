@@ -1,0 +1,9 @@
+pre_remove() {
+    if [ -e "/run/service/doh-server" ]; then
+        s6-rc -d change doh-server
+    fi
+
+    if [ -e "/run/service/doh-client" ]; then
+        s6-rc -d change doh-client
+    fi
+}
