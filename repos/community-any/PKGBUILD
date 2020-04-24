@@ -1,5 +1,4 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
-# Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=stunnel-s6
 pkgver=20200424
 pkgrel=1
