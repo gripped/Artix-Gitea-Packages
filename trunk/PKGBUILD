@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributor: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=atftp-s6
+pkgver=20200424
+pkgrel=1
+pkgdesc="s6 service scripts for atftp"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('atftp-runscripts')
+conflicts=('atftp-runscripts')
+depends=('atftp' 's6')
+install=atftp.install
+source=("atftpd.run" "atftpd.type")
+sha256sums=('3e8641c29880a4afcfd0aa8cb9ccb9e631c44af48da106c60de7a79fb8341fed'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'atftpd'
+}
