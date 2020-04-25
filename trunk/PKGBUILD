@@ -3,7 +3,7 @@
 
 pkgname=libmicrodns
 pkgver=0.1.2
-pkgrel=1
+pkgrel=1.01
 pkgdesc='Minimal mDNS resolver library'
 url='https://github.com/videolabs/libmicrodns'
 arch=('x86_64')
