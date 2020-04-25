@@ -1,0 +1,13 @@
+pre_remove() {
+	if [ -e "/run/service/deluged" ]; then
+		s6-rc -d change deluged
+	fi
+	if [ -e "/run/service/deluge-web" ]; then
+		s6-rc -d change deluge-web
+	fi
+}
+
+post_remove() {
+	rm -rf /etc/s6/sv/deluged-log
+	rm -rf /etc/s6/sv/deluge-web-log
+}
