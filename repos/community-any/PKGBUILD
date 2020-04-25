@@ -13,7 +13,7 @@ install=matrix-synapse.install
 backup=('etc/s6/sv/matrix-synapse-log/conf')
 source=("matrix-synapse-srv.run" "matrix-synapse-srv.type" "matrix-synapse-srv.producer-for" "matrix-synapse-log.run" "matrix-synapse-log.type"
 	"matrix-synapse-log.consumer-for" "matrix-synapse-log.pipeline-name" "matrix-synapse-log.notification-fd" "matrix-synapse-log.conf")
-sha256sums=('77da00cbaeca2dd5ba22a9ae1682d761a590806e98c7bd8badea662d6d9d09ec'
+sha256sums=('3e18f34c43ef051d163ad0dcb521dedfb0892f7b44069011bdee02346a440cd1'
 	'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
 	'6e312645f550dee669c85f21d597ba8d58fd48a3d16ba191e05263e9cd9fbecb'
 	'11da7dd3cf1fcc17ee9b0101478bd9cd6d095921528ce87941cb7fd7eef83ba4'
