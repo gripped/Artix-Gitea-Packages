@@ -17,8 +17,7 @@ groups=('runit-world')
 depends=('bftpd' 'runit')
 conflicts=('systemd-sysvcompat')
 source=("bftpd.run")
-sha256sums=('b9f19c950711c45a8205ea52ca731387038a8b957798b73025f35c0656db7474'
-            'd00e9ef211c9f11b3ef836c5ee7c6b763cacb426fbd3d9697f03048e55c0c21c')
+sha256sums=('8764cadeea642068a5a43babb5098d148f6808128688748fc8aa7ac1ff8d7a4f')
 
 _inst_logsv() {
     for file in run finish check; do
