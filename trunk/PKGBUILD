@@ -4,18 +4,30 @@
 
 pkgname=l-smash
 pkgver=2.14.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc='MP4 muxer and other tools'
 arch=('x86_64')
 url='https://github.com/l-smash/l-smash'
 license=('custom')
 depends=('glibc')
+makedepends=('git')
 provides=('liblsmash.so')
-source=("l-smash-${pkgver}.tar.gz::https://github.com/l-smash/l-smash/archive/v${pkgver}.tar.gz")
-sha256sums=('e6f7c31de684f4b89ee27e5cd6262bf96f2a5b117ba938d2d606cf6220f05935')
+source=("git+https://github.com/l-smash/l-smash#tag=v${pkgver}"
+        "out-of-bound.patch::https://github.com/l-smash/l-smash/commit/74329b46c401d500f3eff72675f4d55af393ad0d.patch"
+        "improve-dts.patch::https://github.com/l-smash/l-smash/commit/f963b5a195e7561e732df0f72b7b0301277367eb.patch")
+sha256sums=('SKIP'
+            'f451f6bca98440a0b1097a2eb88aef6302957f557731efd0211554c1e7f97276'
+            'e929634d747e72a172e5a4d4dafa8c172968148e1597dc37ca53ab5b37155645')
+
+prepare() {
+  cd "$pkgname"
+  for _patch in "$srcdir"/*.patch ; do
+    git apply --stat "$_patch"
+  done
+}
 
 build() {
-  cd l-smash-${pkgver}
+  cd "$pkgname"
 
   ./configure \
     --prefix='/usr' \
@@ -27,7 +39,7 @@ build() {
 }
 
 package() {
-  cd l-smash-${pkgver}
+  cd "$pkgname"
 
   make DESTDIR="${pkgdir}" install
 
