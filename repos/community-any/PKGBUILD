@@ -2,7 +2,7 @@
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=ejabberd-s6
 pkgver=20200427
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for ejabberd"
 arch=('any')
 url="https://gitea.artixlinux.org"
@@ -30,7 +30,7 @@ sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'ce5ee41c7ccefe14c0e667959180f75068c023b1690beb36dcc343208f26f33d'
             '114584f6957ae2ad2f26cd51d1fe2c87d280114d283c514b7c79695270eddb01'
-            '4ce2ac8c004ca978b2ebd9ba7971af44e4a99e1e15fb1c041b6570772271584a'
+            '819e4e3aecfe4f474bd75fe4333d911046c6de8eeeaed1f29df5b833b79850cd'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
