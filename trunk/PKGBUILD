@@ -1,0 +1,29 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=radicale-s6
+pkgver=20200427
+pkgrel=1
+pkgdesc="s6 service scripts for radicale"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('radicale-runscripts')
+conflicts=('radicale-runscripts')
+depends=('radicale' 's6')
+install=radicale.install
+source=("radicale.run"
+        "radicale.type")
+sha256sums=('b67f481112ada2a5c5245602a0c3e46711633a54cdba820702015ca14e89d38e'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'radicale'
+}
