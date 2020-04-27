@@ -14,7 +14,7 @@ url="http://www.amule.org"
 license=(GPL)
 depends=(wxgtk gd geoip libupnp crypto++ boost-libs)
 makedepends=(git ccache boost)
-source=("git://repo.or.cz/amule.git#tag=amule-svn-r$pkgver"
+source=("git+https://repo.or.cz/amule.git#tag=amule-svn-r$pkgver"
         amule.sysusers amule.tmpfiles compile.patch)
 sha256sums=('SKIP'
             'c4ca658ab4105b3b90e0bb3efcc8121eca1c4d873787db1ed4f637925c16d502'
@@ -23,7 +23,7 @@ sha256sums=('SKIP'
 
 prepare() {
   cd amule
-  patch -Np1 "$srcdir"/compile.patch
+  patch -Np1 -i "$srcdir"/compile.patch
 }
 
 build() {
