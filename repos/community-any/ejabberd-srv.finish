@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+export HOME /var/lib/ejabberd
+s6-setuidgid jabber ejabberdctl stop
