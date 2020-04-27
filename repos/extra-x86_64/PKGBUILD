@@ -5,7 +5,7 @@
 
 pkgname=vid.stab
 pkgver=1.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Video stabilization library'
 arch=('x86_64')
 url='http://public.hronopik.de/vid.stab'
@@ -14,8 +14,10 @@ depends=('gcc-libs' 'glibc')
 makedepends=('cmake' 'git')
 provides=('libvidstab.so')
 _hash='2d82492533bf5004bc2c4f8213a1b622c45f6a44'
-source=("vid.stab-${pkgver}::git+https://github.com/georgmartius/vid.stab.git#commit=${_hash}")
-sha256sums=('SKIP')
+source=("vid.stab-${pkgver}::git+https://github.com/georgmartius/vid.stab.git#commit=${_hash}"
+        "underflow_check.patch::https://github.com/georgmartius/vid.stab/commit/eeb9b81f8e55d7a573e31b4208d2330d0862daa2.patch")
+sha256sums=('SKIP'
+            'SKIP')
 
 prepare() {
   cd vid.stab-${pkgver}
@@ -24,6 +26,7 @@ prepare() {
     rm -rf build
   fi
   mkdir build
+ patch -Np1 -i "$srcdir"/underflow_check.patch
 }
 
 build() {
