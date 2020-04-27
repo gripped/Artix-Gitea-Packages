@@ -1,0 +1,31 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=prosody-s6
+pkgver=20200427
+pkgrel=1
+pkgdesc="s6 service scripts for prosody"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('prosody-runscripts')
+conflicts=('prosody-runscripts')
+depends=('prosody' 's6')
+install=prosody.install
+source=("prosody.finish"
+        "prosody.run"
+	"prosody.type")
+sha256sums=('6a67af0ca03daa49bb3b5fd581298ac20317ce21b5da365d4c0839690a512939'
+            '6e0d8e476c52c87fbd0ab42c27c32757194a8334b52f90cf8e11578d86f692e1'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in finish run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'prosody'
+}
