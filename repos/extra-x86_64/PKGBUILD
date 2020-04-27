@@ -4,18 +4,25 @@
 
 pkgname=wildmidi
 pkgver=0.4.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Open Source MIDI Synthesizer'
 arch=('x86_64')
 url="https://www.mindwerks.net/projects/wildmidi/"
 license=('LGPL3')
 depends=('alsa-lib')
-makedepends=('cmake')
-source=(https://github.com/psi29a/wildmidi/archive/wildmidi-${pkgver}.tar.gz)
-sha256sums=('498e5a96455bb4b91b37188ad6dcb070824e92c44f5ed452b90adbaec8eef3c5')
+makedepends=('cmake' 'git')
+source=("https://github.com/psi29a/wildmidi/archive/wildmidi-${pkgver}.tar.gz"
+	"broken_filename.patch::https://github.com/Mindwerks/wildmidi/commit/ef50330257b60049b357e2729d88ddda82f4e5f6.patch"
+	"loop_variable.patch::https://github.com/Mindwerks/wildmidi/commit/d2763e608c6b170d1d6e20505d0d991ed83c0b00.patch")
+sha256sums=('498e5a96455bb4b91b37188ad6dcb070824e92c44f5ed452b90adbaec8eef3c5'
+            'b0d3faac63a14221ae8bec018f72fb5cfca001a2151d849df0865618b61e8deb'
+            '0101e7ce2e600a43d79d1f49e55613becf049b4df32f2888fd92232bbba1ec7f')
 
 prepare() {
   mkdir build
+  for _patch in "$srcdir"/*.patch ; do
+	git apply --stat "$_patch"
+  done
 }
 
 build() {
