@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributer: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=opensmtpd-s6
+pkgver=20200427
+pkgrel=1
+pkgdesc="s6 service scripts for opensmtpd"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-galaxy')
+provides=('opensmtpd-runscripts')
+conflicts=('opensmtpd-runscripts')
+depends=('opensmtpd' 's6')
+install=opensmtpd.install
+source=("smtpd.run" "smtpd.type")
+sha256sums=('beccf1624d3e177b32fc6a15eb59ad7110cb2dc3e0ccb10003a17873d4d2e0a5'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'smtpd'
+}
