@@ -1,0 +1,21 @@
+diff --git a/src/libs/common/MuleDebug.cpp b/src/libs/common/MuleDebug.cpp
+index 5d8d7589..9b9f170e 100644
+--- a/src/libs/common/MuleDebug.cpp
++++ b/src/libs/common/MuleDebug.cpp
+@@ -268,14 +268,14 @@ void get_file_line_info(bfd *abfd, asection *section, void* _address)
+ 		return;
+ 	}
+ 
+-	bfd_vma vma = bfd_get_section_vma(abfd, section);
++	bfd_vma vma = bfd_section_vma(section);
+ 
+ 	unsigned long address = (unsigned long)_address;
+ 	if (address < vma) {
+ 		return;
+ 	}
+ 
+-	bfd_size_type size = bfd_section_size(abfd, section);
++	bfd_size_type size = bfd_section_size(section);
+ 	if (address > (vma + size)) {
+ 		return;
+ 	}
