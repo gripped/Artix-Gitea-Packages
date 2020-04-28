@@ -6,7 +6,7 @@
 
 pkgname=mpd
 pkgver=0.21.23
-pkgrel=2
+pkgrel=4
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='https://www.musicpd.org/'
 license=('GPL')
@@ -14,9 +14,9 @@ arch=('x86_64')
 depends=('audiofile' 'avahi' 'curl' 'faad2' 'ffmpeg' 'fluidsynth'
 	 'icu' 'jack' 'libao' 'libcdio-paranoia' 'libgme' 'libid3tag' 'libmad'
 	 'libmikmod' 'libmms' 'libmodplug' 'libmpcdec' 'libmpdclient' 'libnfs'
-	 'libsamplerate' 'libshout' 'libsoxr' 'libvorbis' 'libupnp' 'mpg123' 
-	 'openal' 'smbclient' 'sqlite' 'twolame' 'wavpack' 'wildmidi' 'yajl')
-makedepends=('boost' 'meson' 'python-sphinx')
+	 'libsamplerate' 'libshout' 'libsoxr' 'libvorbis' 'libupnp' 'mpg123'
+	 'openal' 'smbclient' 'sqlite' 'twolame' 'wavpack' 'wildmidi' 'yajl' 'zziplib')
+makedepends=('boost' 'meson' 'python-sphinx' 'zziplib')
 validpgpkeys=('0392335A78083894A4301C43236E8A58C6DB4512')
 #source=("https://www.musicpd.org/download/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.xz"{,.sig}
 source=("https://www.musicpd.org/download/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"{,.sig}
@@ -37,6 +37,7 @@ prepare() {
 	install -d build
 }
 
+
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}/build"
 	_opts=('-Ddocumentation=true'
@@ -46,7 +47,7 @@ build() {
 	       '-Dsndio=disabled' # interferes with detection of alsa devices
 	       '-Dshine=disabled' # not in an official repo
 	       '-Dtremor=disabled' # not in an official repo
-	       '-Dzzip=disabled' # not detected correctly
+	       '-Dsystemd=disabled'
 	)
 	arch-meson .. ${_opts[@]}
 	ninja
