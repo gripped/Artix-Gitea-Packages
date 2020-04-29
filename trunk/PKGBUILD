@@ -208,7 +208,6 @@ package_qemu-guest-agent() {
   depends=(gcc-libs glib2 libudev.so)
 
   install -D build-full/qemu-ga "$pkgdir/usr/bin/qemu-ga"
-  install -Dm644 qemu-ga.service "$pkgdir/usr/lib/systemd/system/qemu-ga.service"
   install -Dm755 "$srcdir/qemu-$pkgver/scripts/qemu-guest-agent/fsfreeze-hook" "$pkgdir/etc/qemu/fsfreeze-hook"
 }
 
