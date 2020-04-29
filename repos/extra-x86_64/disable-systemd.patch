@@ -1,0 +1,48 @@
+diff --git a/data/meson.build b/data/meson.build
+index bada139..82b0eed 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -11,15 +11,15 @@ configure_file(
+     install_dir: dbus_service_dir,
+ )
+ 
+-configure_file(
+-    configuration: configuration_data({
+-        'libexecdir': fprintd_installdir,
+-    }),
+-    input: 'fprintd.service.in',
+-    output: 'fprintd.service',
+-    install: true,
+-    install_dir: systemd_unit_dir,
+-)
++# configure_file(
++#    configuration: configuration_data({
++#        'libexecdir': fprintd_installdir,
++#    }),
++#    input: 'fprintd.service.in',
++#    output: 'fprintd.service',
++#    install: true,
++#    install_dir: systemd_unit_dir,
++# )
+ 
+ polkit_policy = 'net.reactivated.fprint.device.policy'
+ polkit_policy_target = i18n.merge_file(polkit_policy,
+diff --git a/meson.build b/meson.build
+index 9ad0e43..b8e1076 100644
+--- a/meson.build
++++ b/meson.build
+@@ -83,11 +83,11 @@ pod2man = find_program('pod2man', required: get_option('man'))
+ xsltproc = find_program('xsltproc', required: get_option('gtk_doc'))
+ 
+ # StateDirectory was introduced in systemd 235
+-systemd_dep = dependency('systemd', version: '>= 235')
++systemd_dep = dependency('systemd', version: '>= 235', required: false)
+ systemd_unit_dir = get_option('systemd_system_unit_dir')
+ 
+-if systemd_unit_dir == ''
+-    systemd_unit_dir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
++if systemd_unit_dir == '' and systemd_dep.found()
++  systemd_unit_dir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
+ endif
+ 
+ dbus_service_dir = get_option('dbus_service_dir')
