@@ -20,7 +20,8 @@ build() {
     ./autogen.sh
     ./configure \
         --prefix=/usr \
-        --enable-dynamic
+        --enable-dynamic \
+        --disable-systemd
     make
 }
 
