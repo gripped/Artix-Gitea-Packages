@@ -5,7 +5,7 @@
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
 pkgver=5.54
-pkgrel=1
+pkgrel=2
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL2')
@@ -24,8 +24,9 @@ validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <mar
 
 prepare() {
   cd "${pkgname}"-${pkgver}
-  patch -Np1 -i ../refresh_adv_manager_for_non-LE_devices.diff
-  patch -Np1 -i ../0001-Allow-using-obexd-without-systemd-in-the-user-session.patch
+for _patch in "$srcdir"/*.patch; do
+	patch -Np1 -i "$_patch"
+done
 }
 
 build() {
