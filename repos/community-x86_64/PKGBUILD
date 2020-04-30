@@ -4,7 +4,7 @@
 pkgname=sway
 pkgver=1.4
 epoch=1
-pkgrel=8
+pkgrel=9
 pkgdesc='Tiling Wayland compositor and replacement for the i3 window manager'
 arch=(x86_64)
 url='https://swaywm.org/'
@@ -42,7 +42,7 @@ sha512sums=('3b280bdfdbdae8fb9b4f555bc630c64e7c1d09f7b2c783b99413863a6b620d50cd2
 validpgpkeys=('9DDA3B9FA5D58DD5392C78E652CB6609B22DA89A') # Drew DeVault
 
 prepare() {
-cd "$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
 
   # Set the version information to 'Arch Linux' instead of 'makepkg'
   sed -i "s/branch \\\'@1@\\\'/Arch Linux/g" meson.build
@@ -64,3 +64,4 @@ package() {
   done
 }
 
+# vim: ts=2 sw=2 et
