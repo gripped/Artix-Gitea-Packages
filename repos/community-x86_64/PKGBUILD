@@ -4,7 +4,7 @@
 
 pkgname=vnstat
 pkgver=2.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A console-based network traffic monitor"
 arch=('x86_64')
 url="https://humdi.net/vnstat/"
@@ -13,8 +13,11 @@ depends=('bash' 'sqlite')
 makedepends=('gd')
 optdepends=('gd: image output')
 backup=(etc/vnstat.conf)
-source=(https://humdi.net/vnstat/$pkgname-$pkgver.tar.gz)
-sha256sums=('89276e0a7281943edb554b874078278ad947dc312938a2451e03eb80679f7ff7')
+source=(https://humdi.net/vnstat/$pkgname-$pkgver.tar.gz
+        vnstatd.tmpfile vnstatd.sysusers)
+sha256sums=('89276e0a7281943edb554b874078278ad947dc312938a2451e03eb80679f7ff7'
+            '91c9577f36c7f7ec32bb2963035a6ac49e7556ac6adc41564c033db8889b669e'
+            'b9c3af7c6e8dc42aa6be0b52988aba8d64646116c211a1d055a17262c1d32edf')
 
 build() {
   cd "$srcdir"/$pkgname-$pkgver
@@ -27,5 +30,9 @@ package() {
   mkdir -p "$pkgdir"/usr/bin
   make DESTDIR="$pkgdir" install
   install -Dm0755 examples/vnstat.cgi "$pkgdir"/usr/share/doc/vnstat/examples/vnstat.cgi
-  install -Dm0644 examples/systemd/vnstat.service "$pkgdir"/usr/lib/systemd/system/vnstat.service
+  mkdir -p  "$pkgdir"/etc/init.d/
+  install -Dm0755 examples/init.d/debian/vnstat "$pkgdir"/etc/init.d/
+  # Artix
+  install -Dm644 "$srcdir"/vnstatd.tmpfile "$pkgdir"/usr/lib/tmpfiles.d/vnstatd.conf
+  install -Dm644 "$srcdir"/vnstatd.sysusers "$pkgdir"/usr/lib/sysusers.d/vnstatd.conf
 }
