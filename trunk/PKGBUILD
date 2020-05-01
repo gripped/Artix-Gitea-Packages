@@ -2,6 +2,7 @@
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 # Contributor: tobias <tobias@archlinux.org>
 
+
 pkgname=inkscape
 pkgver=0.92.5
 pkgrel=2
