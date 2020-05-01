@@ -2,10 +2,9 @@
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 # Contributor: tobias <tobias@archlinux.org>
 
-
 pkgname=inkscape
 pkgver=0.92.5
-pkgrel=2.1
+pkgrel=2
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
