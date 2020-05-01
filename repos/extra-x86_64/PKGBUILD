@@ -4,7 +4,7 @@
 pkgbase=pipewire
 pkgname=(pipewire pipewire-docs pipewire-jack pipewire-pulse)
 pkgver=0.3.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Server and user space API to deal with multimedia pipelines"
 url="https://pipewire.org"
 license=(LGPL2.1)
@@ -62,7 +62,6 @@ package_pipewire() {
               'pipewire-pulse: PulseAudio support')
   provides=(libpipewire-$_ver.so)
   backup=(etc/pipewire/pipewire.conf)
-  install=pipewire.install
 
   DESTDIR="$pkgdir" meson install -C build
 
