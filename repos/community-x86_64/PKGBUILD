@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.2.18
-pkgrel=5
+pkgver=3.2.23
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -14,17 +14,14 @@ depends=('yaml-cpp' 'kpmcore>=3.1.0' 'boost-libs' 'hwinfo' 'gtk-update-icon-cach
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
-        0001-artix-modules.patch
-        0002-machineid.patch)	# This is to be merged in 3.2.19
-sha256sums=('f85c81d0b65e37b4e49f5536db8e4b1b2e510a0f323ecdc5aae2b58a3e3b9803'
-            '0e0b376e3f32c60eb962e79076d93786f0bd5ea0e8bdea66e69a633e9fe89a08'
-            'ebf0b951555919fe3ebdeca1f6776344ff23cc614bcb43bc0dd60f1d8bdef5de')
+        0001-artix-modules.patch)
+sha256sums=('551acbac65146b8e61e0677712fac909adff7aeb27a787ac31235e759df3b645'
+            '0e0b376e3f32c60eb962e79076d93786f0bd5ea0e8bdea66e69a633e9fe89a08')
 
 prepare() {
     cd $pkgname-$pkgver
     # patches here
     patch -Np 1 -i $srcdir/0001-artix-modules.patch
-    patch -Np 1 -i $srcdir/0002-machineid.patch
 }
 
 build() {
