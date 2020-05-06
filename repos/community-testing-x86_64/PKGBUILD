@@ -127,7 +127,7 @@ package_libvirt() {
   cd build
   make DESTDIR="$pkgdir" install
 
-  mv "$pkgdir"/etc/{sysconfig,conf.d}
+#  mv "$pkgdir"/etc/{sysconfig,conf.d}
   mkdir "$pkgdir"/usr/lib/{sysusers,tmpfiles}.d
   echo "g libvirt - -" > "$pkgdir/usr/lib/sysusers.d/libvirt.conf"
   echo "z /var/lib/libvirt/qemu 0751" > "$pkgdir/usr/lib/tmpfiles.d/libvirt.conf"
