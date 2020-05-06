@@ -4,7 +4,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-qt-presets
-pkgver=20200211
+pkgver=20200506
 pkgrel=1
 pkgdesc='Artix Qt presets, for KDE Plasma and LXQt.'
 arch=('any')
@@ -13,12 +13,12 @@ license=('GPL')
 provides=('desktop-presets')
 depends=('artix-desktop-presets' 'qt5-styleplugins')
 conflicts=('artix-lxqt-presets')
-#replaces=('artix-lxqt-presets')
+replaces=('artix-lxqt-presets')
 optdepends=('qt5ct')
 makedepends=('git')
 groups=('artix-branding')
 #_commit=e3d447cc62d6626dd6b1faf9e85811817bcf39a9
-_branch='refactor'
+_branch='master'
 source=("git+$url.git#branch=${_branch}")
 sha256sums=('SKIP')
 
@@ -29,7 +29,7 @@ sha256sums=('SKIP')
 
 _inst_dir(){
     cd ${_pkgbase} #-${pkgver}
-    git checkout refactor
+    git checkout ${_branch}
     local profile="$1"
 
     install -d ${pkgdir}/etc
