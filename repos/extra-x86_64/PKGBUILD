@@ -5,7 +5,7 @@ pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-xwayland' 'xorg-server-common' 'xorg-server-devel')
 pkgver=1.20.8
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('custom')
 groups=('xorg')
@@ -148,7 +148,7 @@ package_xorg-server-xephyr() {
 
 package_xorg-server-xvfb() {
   pkgdesc="Virtual framebuffer X server"
-  depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth
+  depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
            libgl nettle libtirpc)
 
   _install fakeinstall/usr/bin/Xvfb
