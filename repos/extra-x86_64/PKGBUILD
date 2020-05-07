@@ -22,6 +22,7 @@ sha512sums=('21ef0cbe107c468a40f0fa2635db2a40048c8790b629dfffca5cd62bb1b502ea8eb
             'bdf05f99407491e27a03aaf845b7cc8acfa2e0e59968236f10ffc905e5e3d5e8569df496fd71c887da2b5b8d1902494520c7da2d3a8258f7fd93a881dd610c99')
 validpgpkeys=('CEACC9E15534EBABB82D3FA03353C9CEF108B584')
 
+
 case $CARCH in
   i?86) _corearch=i386 ;;
   x86_64) _corearch=x86_64 ;;
