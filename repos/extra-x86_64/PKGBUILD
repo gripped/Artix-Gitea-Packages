@@ -1,11 +1,10 @@
-# $Id$
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=slang
 pkgver=2.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="S-Lang is a powerful interpreted language"
 arch=('x86_64')
 url="http://www.jedsoft.org/slang/"
@@ -24,11 +23,11 @@ build() {
   make
 }
 
-# check() {
-#   cd ${pkgname}-${pkgver}
-#
-#   [[ $CARCH = "i686" ]] || make check
-# }
+check() {
+  cd ${pkgname}-${pkgver}
+
+  [[ $CARCH = "i686" ]] || make check
+}
 
 package() {
   cd ${pkgname}-${pkgver}
