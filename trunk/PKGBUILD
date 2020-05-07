@@ -3,7 +3,7 @@
 pkgbase=artix-branding
 pkgname=artix-branding-base
 pkgver=20200507
-pkgrel=1
+pkgrel=2
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
@@ -15,7 +15,7 @@ license=('GPL3')
 #_commit=253100f10cbe8177c7d7d6e184343a92d5c43c98
 #source=("git+${url}.git#commit=${_commit}")
 _branch='master'
-source=("git+$url.git")
+source=("git+$url.git#branch=${_branch}")
 sha256sums=('SKIP')
 
 #prepare() {
