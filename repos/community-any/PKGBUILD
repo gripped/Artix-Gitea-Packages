@@ -2,8 +2,8 @@
 
 pkgbase=artix-branding
 pkgname=artix-branding-base
-pkgver=20200506
-pkgrel=2
+pkgver=20200507
+pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
@@ -11,9 +11,11 @@ url="https://gitea.artixlinux.org/artix/$pkgbase"
 depends=('neofetch')
 makedepends=('git')
 license=('GPL3')
-# pls don't pull from head (equals artix-branding-base-git), use a commit sha
-_commit=253100f10cbe8177c7d7d6e184343a92d5c43c98
-source=("git+${url}.git#commit=${_commit}")
+
+#_commit=253100f10cbe8177c7d7d6e184343a92d5c43c98
+#source=("git+${url}.git#commit=${_commit}")
+_branch='master'
+source=("git+$url.git")
 sha256sums=('SKIP')
 
 #prepare() {
@@ -22,6 +24,7 @@ sha256sums=('SKIP')
 #}
 
 package_artix-branding-base() {
+    git checkout ${_branch}
     cd "$pkgbase/$pkgname"
     install -dm755 $pkgdir/etc
     cp -r etc/* $pkgdir/etc
