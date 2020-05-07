@@ -3,7 +3,7 @@
 pkgbase=artix-branding
 pkgname=artix-branding-base
 pkgver=20200507
-pkgrel=2
+pkgrel=3
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
@@ -24,8 +24,8 @@ sha256sums=('SKIP')
 #}
 
 package_artix-branding-base() {
-    git checkout ${_branch}
     cd "$pkgbase/$pkgname"
+    git checkout ${_branch}
     install -dm755 $pkgdir/etc
     cp -r etc/* $pkgdir/etc
 }
