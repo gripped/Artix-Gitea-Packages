@@ -6,7 +6,7 @@ _name=FreeRDP
 pkgname=freerdp
 epoch=2
 pkgver=2.1.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=('x86_64')
 url="https://www.freerdp.com/"
@@ -57,7 +57,7 @@ build() {
 
 package() {
   depends+=('libasound.so' 'libavcodec.so' 'libavutil.so' 'libpulse.so'
-  'libswscale.so' 'libswresample.so' 'libeudev.so' 'libusb-1.0.so')
+  'libswscale.so' 'libswresample.so' 'libudev.so' 'libusb-1.0.so')
   cd "${pkgname}-${pkgver}"
   make DESTDIR="${pkgdir}" install -C build
   install -vDm 644 {ChangeLog,README.md} \
