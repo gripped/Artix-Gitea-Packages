@@ -11,7 +11,6 @@ depends=(gcc-libs vulkan-icd-loader vulkan-headers libx11)
 makedepends=(cmake python-lxml libx11 libxrandr wayland git)
 source=(https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/v${pkgver}.tar.gz)
 #source=("git+https://github.com/KhronosGroup/Vulkan-ValidationLayers.git#commit=35d091dad71304dab79758fdae4bda12f692d735")
-sha256sums=('54d9abf5faf0a554bbb88c82b81d44b98849018da33f25537f4a86ea1f25ba28')
 
 #pkgver() {
 #  cd "${srcdir}/Vulkan-ValidationLayers"
@@ -51,3 +50,4 @@ package() {
   install -m644 ../docs/* "${pkgdir}"/usr/share/doc/${pkgname}/
   install -m644 ../LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
+sha512sums=('c3d0039cd49d91890bfeff24f3df536170d3072db333b7438b92a22b0385634051e2309133d100ab0d22150eeea57a21190ba5eacbce5293983fd280bcf83045')
