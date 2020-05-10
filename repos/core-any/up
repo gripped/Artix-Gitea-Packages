@@ -1,4 +1,2 @@
 #!/usr/bin/execlineb -P
-fdmove -c 2 1
-foreground { sh /etc/s6/sv/cryptsetup/shell_up }
-redirfd -w 1 /dev/null echo finished
+exec bash -c "/etc/s6/sv/cryptsetup/shell_up"

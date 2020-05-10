@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 do_unlock_device() {
 	# $1 = requested name
@@ -15,7 +15,7 @@ do_unlock_device() {
 		b=$1
 	else
 		echo "Non-LUKS partitions are not supported at the moment."
-		continue
+		return
 	fi
 	if [[ $4 ]]; then
 		for i in ${4//,/ }; do
@@ -84,19 +84,13 @@ do_unlock() {
 }
 
 read_crypttab() {
-	# $1 = function to call with the split out line from the crypttab
-	local line nspo failed=0
+	local line nspo
 	while read line <&3; do
 		[[ $line && $line != '#'* ]] || continue
 		eval nspo=("${line%#*}")
-		if $1 "${nspo[0]}" "${nspo[1]}" "${nspo[2]}" "${nspo[*]:3}"; then
-			crypto_unlocked=1
-		else
-			failed=1
-		fi
+		do_unlock "${nspo[0]}" "${nspo[1]}" "${nspo[2]}" "${nspo[3]}"
 	done 3< /etc/crypttab
-	return $failed
 }
 
-read_crypttab do_unlock
+read_crypttab
 vgchange --sysinit -a y >/dev/null

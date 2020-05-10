@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20200413
+pkgver=20200421
 pkgrel=1
 pkgdesc="s6 service scripts for cryptsetup"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org"
 groups=('s6-system')
 provides=('init-cryptsetup')
 conflicts=('init-cryptsetup')
@@ -12,13 +12,13 @@ depends=('cryptsetup' 's6')
 install=cryptsetup.install
 source=("dependencies" "down" "shell_down" "shell_up" "type" "up")
 sha256sums=('a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
-            '40817cf81ccc926b538c9d5f359282235a78ef34676202c35db26b6ea833996f'
-            'a09d48469d308b12c1b1ac046a0ebf122a7598b5ed53a81888e95008d824b31e'
-            'e0b45230d75864921c34182a3604d0d89795cbeb81ee53d1cb291ce1bda21e60'
+            '28db38b7de81e689aab6a59f4a92bdca436b67b0a30df5adf45c8edad12f5d13'
+            '24c2d2dd964127443a871d65cdba95c2b63a90fc5fbcf5f1332e740a440801af'
+            'daad0d509ad9a6422876fc352d0f04fc3c5ab7a75837fd5acf94fad1b001b108'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            'ba87658fe3eb671c8ec770c25df8251b9f5472ea20e980ee6cb8d70099103c4f')
+            'e4a012a046dc5fd59b495706f4eb91349b744eb7ea99e771c752fa2ffb5d36a1')
 
-_inst_sv(){
+_inst_sv() {
     for file in dependencies down shell_down shell_up type up; do
         if test -f "$srcdir/$file"; then
             install -Dm644 "$srcdir/$file" "$pkgdir/etc/s6/sv/$1/$file"
@@ -28,7 +28,7 @@ _inst_sv(){
         if test -f "$pkgdir/etc/s6/sv/$1/$file"; then
             chmod +x "$pkgdir/etc/s6/sv/$1/$file"
         fi
-	done
+    done
 }
 
 package() {
