@@ -1,0 +1,28 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+# Contributor: Nathan Owens <ndowens@artixlinux.org> 
+pkgname=pptpd-s6
+pkgver=20200512
+pkgrel=1
+pkgdesc="s6 service scripts for pptpd"
+arch=('any')
+url="https://gitea.artixlinux.org"
+groups=('s6-world')
+provides=('pptpd-runscripts')
+conflicts=('pptpd-runscripts')
+depends=('pptpd' 's6')
+install=pptpd.install
+source=("pptpd.run" "pptpd.type")
+sha256sums=('9e6a7831b5efe973a1b9b0009f63a2e400f016501b85b2b20b2a2778dd97b7ac'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'pptpd'
+}
