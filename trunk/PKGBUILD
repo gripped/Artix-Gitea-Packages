@@ -1,6 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-purl
+pkgbase=python-purl
 pkgver=1.5
 pkgrel=4
 pkgdesc="An immutable URL class for easy URL-building and manipulation"
@@ -10,7 +11,7 @@ url="https://github.com/codeinthehole/purl"
 depends=('python-six')
 makedepends=('python-setuptools')
 checkdepends=('python-nose')
-source=("https://github.com/codeinthehole/purl/archive/$pkgver.tar.gz")
+source=("$pkgbase-$pkgver.tar.gz::https://github.com/codeinthehole/purl/archive/$pkgver.tar.gz")
 
 build() {
   cd "$srcdir"/purl-$pkgver
