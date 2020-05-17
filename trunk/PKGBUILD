@@ -1,4 +1,5 @@
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
+#
 
 pkgname=libmythes
 pkgver=1.2.4
