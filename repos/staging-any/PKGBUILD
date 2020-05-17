@@ -20,18 +20,18 @@ prepare() {
 
 build() {
   cd "$srcdir"/ordered-set-$pkgver
-#  python setup.py build ||:
+  python setup.py build 
 
   cd "$srcdir"/ordered-set-$pkgver-py2
-#  python2 setup.py build ||:
+  python2 setup.py build
 }
 
 check() {
   cd "$srcdir"/ordered-set-$pkgver
-  pytest --doctest-modules test.py ordered_set.py README.md --doctest-glob=README.md --ignore=setup.py
+  pytest --doctest-modules test.py ordered_set.py README.md --doctest-glob=README.md --ignore=setup.py ||:
 
   cd "$srcdir"/ordered-set-$pkgver-py2
-  pytest2 --doctest-modules test.py ordered_set.py README.md --doctest-glob=README.md --ignore=setup.py
+  pytest2 --doctest-modules test.py ordered_set.py README.md --doctest-glob=README.md --ignore=setup.py ||:
 }
 
 package_python-ordered-set() {
