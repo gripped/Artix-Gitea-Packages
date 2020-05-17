@@ -1,5 +1,6 @@
 # Maintainer:
 # Contributor: Jan de Groot <jgc@archlinux.org>
+#
 
 pkgname=gperf
 pkgver=3.1
