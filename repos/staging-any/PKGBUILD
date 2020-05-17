@@ -20,10 +20,10 @@ prepare() {
 
 build() {
   cd "$srcdir"/ordered-set-$pkgver
-  python setup.py build ||:
+#  python setup.py build ||:
 
   cd "$srcdir"/ordered-set-$pkgver-py2
-  python2 setup.py build ||:
+#  python2 setup.py build ||:
 }
 
 check() {
