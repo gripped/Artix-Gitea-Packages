@@ -2,7 +2,6 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Kevin Edmonds <edmondskevin@hotmail.com>
 # Contributor: Filip Wojciechowski, filip at loka dot pl
-#
 
 pkgname=libnfnetlink
 pkgver=1.0.1
