@@ -3,7 +3,7 @@
 
 pkgname=opam
 pkgver=2.0.7
-pkgrel=1
+pkgrel=2
 pkgdesc='OCaml package manager'
 arch=(x86_64)
 url='https://opam.ocaml.org/'
@@ -18,6 +18,7 @@ sha256sums=('9c0dac1094ed624158fff13000cdfa8edbc96798d32b9fab40b0b5330f9490a2')
 
 build() {
   cd "opam-full-$pkgver"
+
   ./configure --prefix=/usr
   make lib-ext all -j1 \
     OCAMLC='ocamlc -unsafe-string' \
