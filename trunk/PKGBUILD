@@ -36,5 +36,4 @@ package() {
 
   make DESTDIR="$pkgdir" install
 
-  install -D -m0644 init.d/service.fedora "$pkgdir"/usr/lib/systemd/system/haveged.service
 }
