@@ -3,7 +3,7 @@
 
 pkgname=pacman-contrib
 pkgver=1.3.0
-pkgrel=2
+pkgrel=2.1
 
 pkgdesc="Contributed scripts and tools for pacman systems"
 url="https://git.archlinux.org/pacman-contrib.git/about/"
@@ -46,6 +46,15 @@ package() {
   cd pacman-contrib-$pkgver
 
   make DESTDIR="$pkgdir" install
+
+  ##artix stuff - don't remove !!
+  rm -fr {$pkgdir}/usr/lib/systemd
+  # make it Artix-compatible
+  cd ${pkgdir}/usr/bin
+  sed s/core/system/g rankmirrors >rankmirrors-artix
+  chmod +x rankmirrors-artix
+  mv rankmirrors rankmirrors-arch
+  ln -s rankmirrors-artix rankmirrors
 }
 
 # vim:set ts=2 sw=2 et:
