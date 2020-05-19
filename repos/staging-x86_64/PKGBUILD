@@ -2,6 +2,7 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: kfgz <kfgz at interia dot pl>
 # Contributor: pootzko <pootzko at gmail dot com>
+#
 
 pkgname=haveged
 pkgver=1.9.8
