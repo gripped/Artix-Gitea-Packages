@@ -1,5 +1,6 @@
 # Maintainer: Florian Pritz< flo@xinu.at>
 # Contributor: Dany Martineau <dany.luc.martineau@gmail.com>
+#
 
 pkgname=qrencode
 pkgver=4.0.2
