@@ -1,5 +1,6 @@
 # Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
+#
 
 pkgname=dejagnu
 pkgver=1.6.2
