@@ -1,5 +1,6 @@
 # Maintainer: Juergen Hoetzel <juergen@archlinux.org>
 # Contributor: Renchi Raju <renchi@green.tam.uiuc.edu>
+#
 
 pkgname=emacs
 pkgver=26.3
