@@ -12,9 +12,9 @@ license=('LGPL2.1')
 makedepends=('git')
 depends=('glibc')
 provides=('libefiboot.so' 'libefivar.so')
-source=("git+https://github.com/rhinstaller/efivar.git#tag=${pkgver}?signed")
+source=("git+https://github.com/rhinstaller/efivar.git#tag=${pkgver}") #?signed")
 sha512sums=('SKIP')
-validpgpkeys=('B00B48BC731AA8840FED9FB0EED266B70F4FEF10') # Peter Jones <pjones@redhat.com>
+#validpgpkeys=('B00B48BC731AA8840FED9FB0EED266B70F4FEF10') # Peter Jones <pjones@redhat.com>
 
 prepare() {
   mv -v "${pkgname}" "${pkgname}-${pkgver}"
