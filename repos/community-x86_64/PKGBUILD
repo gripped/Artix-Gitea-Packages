@@ -1,0 +1,51 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
+
+pkgname=ccache
+pkgver=3.7.9
+pkgrel=1
+pkgdesc='Compiler cache that speeds up recompilation by caching previous compilations'
+url='https://ccache.samba.org/'
+arch=('x86_64')
+license=('GPL3')
+depends=('glibc' 'zlib')
+source=(https://github.com/ccache/ccache/releases/download/v${pkgver}/ccache-${pkgver}.tar.xz{,.asc})
+validpgpkeys=('5A939A71A46792CF57866A51996DDA075594ADB8') # Joel Rosdahl <joel@rosdahl.net>
+sha512sums=('5d39baeb66265451b0e9cef250f6d9c5f6869cd87e27c108c9a50bef80050122ed4280ff662a81bba8d1d1311f2004bcaf9ada6b783a42eedc67ca01ebc48bb4'
+            'SKIP')
+b2sums=('791491c3f9da58f06bb0a58e411d9a7b3e39e460102793ef736820913d43d488ce7daffba572c21f507ea78d8da04edc3aaa47eb1a0fbec8cb35461a60b770e9'
+        'SKIP')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc
+  make
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  make check
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+
+  install -Dm 755 ccache -t "${pkgdir}/usr/bin"
+  install -Dm 644 doc/ccache.1 -t "${pkgdir}/usr/share/man/man1"
+  install -Dm 644 doc/{AUTHORS,MANUAL,NEWS}.adoc README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+  install -d "${pkgdir}/usr/lib/ccache/bin"
+  local _prog
+  for _prog in gcc g++ c++; do
+    ln -s /usr/bin/ccache "${pkgdir}/usr/lib/ccache/bin/$_prog"
+    ln -s /usr/bin/ccache "${pkgdir}/usr/lib/ccache/bin/${CHOST}-$_prog"
+  done
+  for _prog in cc clang clang++; do
+    ln -s /usr/bin/ccache "${pkgdir}/usr/lib/ccache/bin/$_prog"
+  done
+}
+
+# vim: ts=2 sw=2 et:
