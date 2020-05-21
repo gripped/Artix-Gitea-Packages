@@ -1,0 +1,34 @@
+# Contributor: Nathan Owens <ndowens@artixlinux.org>
+pkgname=chrony-openrc
+pkgver=20200520
+pkgrel=1
+pkgdesc="${pkgname/-openrc//} OpenRC init"
+arch=('any')
+url="https://git.alpinelinux.org/aports/tree/main/chrony?h=master"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'chrony')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/chrony')
+source=("chrony.confd::https://git.alpinelinux.org/aports/plain/main/chrony/chronyd.confd"
+	"chrony.initd::https://git.alpinelinux.org/aports/plain/main/chrony/chronyd.initd")
+md5sums=('69038f98d1073239c1369879adb9b6c6'
+         'f5870fb18a569f04e694083df766619c')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd 'chrony'
+    _inst_initd 'chrony'
+}
