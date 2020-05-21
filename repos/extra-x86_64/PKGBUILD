@@ -3,20 +3,18 @@
 
 pkgname=soundtouch
 pkgver=2.1.2
-pkgrel=1.1
+pkgrel=2
 pkgdesc='An audio processing library'
 arch=(x86_64)
-url='http://www.surina.net/soundtouch/'
+url='https://www.surina.net/soundtouch/'
 license=(LGPL)
 makedepends=(git)
-source=("git+https://gitlab.com/soundtouch/soundtouch.git#tag=${pkgver}"
-        "performance.patch::https://gitlab.com/soundtouch/soundtouch/-/commit/eef1220d7200c5a67b156e85d8c2fbc5a80ca388.patch")
-sha256sums=("SKIP"
-            "SKIP")
+source=(git+https://gitlab.com/soundtouch/soundtouch.git#tag=${pkgver})
+sha256sums=(SKIP)
 
 prepare() {
   cd soundtouch
-  git apply --stat "$srcdir"/performance.patch
+
   ./bootstrap
 }
 
