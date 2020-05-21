@@ -4,15 +4,15 @@
 
 pkgname=libtommath
 pkgver=1.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Highly optimized and portable routines for integer based number theoretic applications"
 url="http://www.libtom.org/"
 license=('custom')
 arch=('x86_64')
 depends=('glibc')
 options=(staticlibs)
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/libtom/libtommath/archive/v$pkgver.tar.gz")
-sha256sums=('f3c20ab5df600d8d89e054d096c116417197827d12732e678525667aa724e30f')
+source=("https://github.com/libtom/libtommath/releases/download/v$pkgver/ltm-$pkgver.tar.xz")
+sha256sums=('b7c75eecf680219484055fcedd686064409254ae44bc31a96c5032843c0e18b1')
 
 build() {
   cd $pkgname-$pkgver
