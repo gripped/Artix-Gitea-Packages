@@ -1,0 +1,34 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=ejabberd-openrc
+pkgver=20200520
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://git.alpinelinux.org/aports/tree/testing/ejabberd?h=master"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'ejabberd')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("ejabberd.confd::https://git.alpinelinux.org/aports/plain/testing/ejabberd/ejabberd.confd"
+	"ejabberd.initd::https://git.alpinelinux.org/aports/plain/testing/ejabberd/ejabberd.initd")
+md5sums=('fa61d30731cb4d818187d2e5e2fd766a'
+         '62242441aaed1025587dcc3b40d08e68')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd "${pkgname/-openrc/}"
+    _inst_initd "${pkgname/-openrc/}"
+}
