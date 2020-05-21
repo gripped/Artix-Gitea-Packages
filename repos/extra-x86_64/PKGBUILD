@@ -6,7 +6,7 @@
 
 pkgname=taglib
 pkgver=1.11.1
-pkgrel=3.1
+pkgrel=4
 pkgdesc="A Library for reading and editing the meta-data of several popular audio formats"
 arch=(x86_64)
 url="https://taglib.github.io/"
@@ -14,19 +14,15 @@ license=(LGPL MPL)
 depends=(zlib)
 makedepends=(cmake boost)
 source=("https://taglib.github.io/releases/$pkgname-$pkgver.tar.gz"
-        "taglib-ogg-corruption.patch::https://github.com/taglib/taglib/commit/9336c82d.patch"
-	"overflow.patch::https://github.com/taglib/taglib/commit/005441faaa373f93f30adede374aa7a7c6c7476f.patch")
+        taglib-ogg-corruption.patch::"https://github.com/taglib/taglib/commit/9336c82d.patch")
 sha256sums=('b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b'
-            'bf15f9d99263ca9e3cd96ee16dbfe38ca02932a0e8e2d77696d7188679bda272'
-            'eb4c429b856088b5b194adef2f06b597780f9bc3ac6e24aea79d3ff7a4aff49c')
+            'bf15f9d99263ca9e3cd96ee16dbfe38ca02932a0e8e2d77696d7188679bda272')
 
 prepare() {
   mkdir -p build
 
   cd $pkgname-$pkgver
-  for _patch in "$srcdir"/*.patch ; do
-    patch -Np1 -i "$_patch"
-  done
+  patch -p1 -i ../taglib-ogg-corruption.patch # Fix occasional OGG file corruption
 }
 
 build() {
