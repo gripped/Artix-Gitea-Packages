@@ -61,7 +61,7 @@ build() {
 
 package() {
   depends+=('libasound.so' 'libavcodec.so' 'libavutil.so' 'libpulse.so'
-  'libswscale.so' 'libswresample.so' 'libeudev.so' 'libusb-1.0.so')
+  'libswscale.so' 'libswresample.so' 'libudev.so' 'libusb-1.0.so')
   cd "${pkgname}-${pkgver}"
   make DESTDIR="${pkgdir}" install -C build
   install -vDm 644 {ChangeLog,README.md} \
