@@ -1,0 +1,33 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=knot-openrc
+pkgver=20200521
+pkgrel=1
+pkgdesc="OpenRC knot init script"
+arch=('any')
+url="https://git.alpinelinux.org/aports/tree/main/knot?h=master"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'knot')
+conflicts=('systemd-sysvcompat')
+source=("knot.confd::https://git.alpinelinux.org/aports/plain/main/knot/knotd.confd"
+        "knot.initd::https://git.alpinelinux.org/aports/plain/main/knot/knotd.initd")
+sha256sums=('ff384d428c9e67139ed21b0c78eabf6a26d96f31775f6143ce0c4f9c4f6beaf3'
+            'da7b93cf442a3ede972d1239b40e2d5f07227e0a2846c2c7286c0f5f343f8284')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd 'knot'
+    _inst_initd 'knot'
+}
