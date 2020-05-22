@@ -1,0 +1,22 @@
+#!/usr/bin/openrc-run
+
+extra_commands="checkconfig"
+
+pidfile="/run/${RC_SVCNAME}.pid"
+command="/usr/bin/opensips"
+command_args="-f ${SIPS_CFG} ${DEBUG} -w ${WORK_DIR} -P ${pidfile}"
+command_background_args="-F"
+
+depend() {
+	need net
+	after firewall
+	use dns
+}
+
+checkconfig() {
+	opensips -c -f ${SIPS_CFG} || return $?
+}
+
+pre_start() {
+	checkconfig || return $?
+}

@@ -1,0 +1,29 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=opensips-openrc
+pkgver=20200521
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://artixlinux.org"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'opensips')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.confd"
+	"${pkgname/-openrc/}.initd")
+md5sums=('58fe6c12c8c41968df47e322ddc844d2'
+         'ed1a8fae1c4280d6847524ad8a23b271')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd "${pkgname/-openrc/}"
+    _inst_initd "${pkgname/-openrc/}"
+}
