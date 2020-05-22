@@ -1,0 +1,35 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=sslh-openrc
+pkgver=20200521
+pkgrel=1
+pkgdesc="OpenRC sslh init script"
+arch=('any')
+url="https://git.alpinelinux.org/aports/tree/testing/sslh?h=master"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'sslh')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/sslh')
+source=("sslh.confd::https://git.alpinelinux.org/aports/plain/testing/sslh/sslh.confd"
+        "sslh.initd::https://git.alpinelinux.org/aports/plain/testing/sslh/sslh.initd")
+sha256sums=('582623e0886ec8428a76776ff1b8605d78796ef2d5bf08f6a01984155dffab26'
+            'c38ad9ce2cb9e7282b9e3fbd0effd8a6f15303cf67d32bb45a3c713048e76981')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+	-e 's|sslh.conf|sslh.cfg|' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd 'sslh'
+    _inst_initd 'sslh'
+}
