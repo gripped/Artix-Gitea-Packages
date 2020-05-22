@@ -10,7 +10,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'radicale')
 conflicts=('systemd-sysvcompat')
 source=("${pkgname/-openrc/}.initd")
-md5sums=('0541ee7876b32d36163d765c254c3102')
+md5sums=('89107b05571d6c1bc8e229e29150867f')
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
