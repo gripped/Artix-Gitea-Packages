@@ -1,0 +1,21 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=webhook-openrc
+pkgver=20200521
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://codeberg.org/ndowens/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'webhook')
+conflicts=('systemd-sysvcompat')
+source=("${pkgname/-openrc/}.initd")
+md5sums=('da97253271765e04596ef67d5effeaf7')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+package() {
+    _inst_initd "${pkgname/-openrc/}"
+}

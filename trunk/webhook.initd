@@ -1,0 +1,11 @@
+#!/usr/bin/openrc-run
+
+pidfile="/run/${RC_SVCNAME}.pid"
+command="/usr/bin/webhook"
+command_args="--hooks /etc/webhook/hooks.json -verbose"
+command_background=true
+
+depends() {
+	after net
+	wants net
+}
