@@ -1,0 +1,13 @@
+#!/usr/bin/openrc-run
+
+pidfile="/run/shairplay.pid"
+command="/usr/bin/shairplay"
+command_args="-a ${SHAIRPLAY_NAME} ${SHAIRPLAY_PASSWORD}"
+command_background=true
+
+depends() {
+	need net sound
+	wants avahi
+	after avahi
+}
+

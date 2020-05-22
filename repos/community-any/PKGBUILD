@@ -1,0 +1,29 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=shairplay-openrc
+pkgver=20200521
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://codeberg.org/ndowens/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'shairplay')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('d25b6d2adc647060b467098b51360e81'
+         '8b66a23646e62e63da18b72825a9700b')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd "${pkgname/-openrc/}"
+    _inst_initd "${pkgname/-openrc/}"
+}
