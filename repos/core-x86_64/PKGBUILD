@@ -2,7 +2,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2020.05.07
+pkgver=2020.05.20
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
@@ -30,10 +30,10 @@ md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
          'fdfa843fc6354816f50ea2f17e6dce50'
          '180f59810b106ff33b533f261bd5be4d'
          '5182ac38a0de85da8ade93ef71975ca4'
-         'ed806cef14d633a9ef5d361196ca03df'
+         'd5bfd4ce7442dd42127edf0989b8397d'
          '0ee015fad07732676d9488ae498eed41'
          'f04bcb2803afc4dcb95670fe87343b4d'
-         'f64466dd77c7bec37a8b47681468211a'
+         '815652599be54fd3607cf276e89a0a19'
          'a78cd8d7f8240a8448edee82f503c34e'
          'a51847c012555c843dbdf8df0da171d3'
          '08e22c5d70ddcc1345f9ce3f15514ea2'
