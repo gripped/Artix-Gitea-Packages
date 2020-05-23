@@ -1,0 +1,34 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=minio-openrc
+pkgver=20200522
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="http://git.alpinelinux.org/aports/tree/testing/minio?h=master"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'minio')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd::https://git.alpinelinux.org/aports/plain/testing/minio/minio.initd"
+	"${pkgname/-openrc/}.confd::https://git.alpinelinux.org/aports/plain/testing/minio/minio.confd")
+md5sums=('0a009f33e4cf0c250d3176dfb547061c'
+         '6ec61a82eaad9eeb0869f7770c12b75e')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd "${pkgname/-openrc/}"
+    _inst_initd "${pkgname/-openrc/}"
+}
