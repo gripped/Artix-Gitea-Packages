@@ -1,0 +1,26 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=mopidy-openrc
+pkgver=20200522
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="http://git.alpinelinux.org/aports/tree/community/mopidy?h=master"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'mopidy')
+conflicts=('systemd-sysvcompat')
+source=("${pkgname/-openrc/}.initd::https://git.alpinelinux.org/aports/plain/community/mopidy/mopidy.initd")
+md5sums=('5d68b7ac96e5618a2793602b0ffee67d')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+
+    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
+        -e 's|/var/run|/run|g' \
+        -e 's|/usr/sbin|/usr/bin|g' \
+        -i ${pkgdir}/etc/init.d/$1
+}
+
+package() {
+    _inst_initd "${pkgname/-openrc/}"
+}
