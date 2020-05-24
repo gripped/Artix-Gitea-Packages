@@ -1,42 +1,26 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=lighttpd-openrc
-pkgver=20180221
+pkgver=20200524
 pkgrel=1
 pkgdesc="OpenRC lighttpd init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'lighttpd')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/lighttpd')
-source=("lighttpd.confd::${_url}/www-servers/lighttpd/files/lighttpd.confd"
-        "lighttpd.initd::${_url}/www-servers/lighttpd/files/lighttpd.initd")
+source=('lighttpd.confd'
+        'lighttpd.initd'
+        'lighttpd.logrotate')
 sha256sums=('0be7c9c04ce508cbefb3e913951d83c5ed7f0e01fe5aebcf3a5071f30ef3dbc2'
-            'aceed021f24b817347fdf216ccc61e7f34cb8fd831a377c2fbbf1230873498e2')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e 's/lighttpd:lighttpd/http:http/' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '861e921f86130f0ff147f293db244930930d53dfa6fca16505d3067063018daf'
+            '4d7fe108fe50f23be0a5d97d5989a064d180621d0bfa37965d4ad065f90a206d')
 
 package() {
-    _inst_confd 'lighttpd'
-    _inst_initd 'lighttpd'
+    install -D -m644 $srcdir/lighttpd.logrotate $pkgdir/etc/logrotate.d/lighttpd
+
+    install -Dm755 ${srcdir}/lighttpd.confd ${pkgdir}/etc/conf.d/lighttpd
+    install -Dm755 ${srcdir}/lighttpd.initd ${pkgdir}/etc/init.d/lighttpd
 }
