@@ -1,4 +1,4 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Contributor: Nathan Owens <ndowens@artixlinux.org>
 pkgname=ejabberd-openrc
 pkgver=20200524
 pkgrel=1
