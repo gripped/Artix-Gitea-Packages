@@ -1,0 +1,29 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=pptpd-openrc
+pkgver=20200524
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/packagesP/pptpd-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'pptpd')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('165044b378bc202a3ebc8df0edc9c295'
+         'bff575819b8997e7bbe743b95cb134cb')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_confd "${pkgname/-openrc/}"
+    _inst_initd "${pkgname/-openrc/}"
+}
