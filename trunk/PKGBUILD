@@ -16,10 +16,9 @@ optdepends=('libxml2: mod_webdav'
 backup=('etc/lighttpd/lighttpd.conf' 'etc/logrotate.d/lighttpd')
 options=('emptydirs')
 source=("https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-${pkgver}.tar.xz"{,.asc}
-        'lighttpd.logrotate.d' 'lighttpd.conf' 'lighttpd.tmpfiles')
+        'lighttpd.conf' 'lighttpd.tmpfiles')
 sha256sums=('6a0b50e9c9d5cc3d9e48592315c25a2d645858f863e1ccd120507a30ce21e927'
             'SKIP'
-            'cc5aba74d0b17602a1008b337ac8d56f6d73b5edebbf81ea05bc89adb8d5f0a5'
             'fece4581bebf39768571962dedce176b2b5f487c0abb5c1cfb35395de216c01f'
             'd8a185145a7c08b4fd8c8e6c12dae3e176389dd9b1c66e239757b2ba5108c871')
 validpgpkeys=('C7CA1E9E29DC77F5480894B2E0E7D0171E95BAD7'
