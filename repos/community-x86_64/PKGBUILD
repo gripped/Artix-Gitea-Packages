@@ -1,0 +1,55 @@
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
+# Contributor: Bartlomiej Piotrowski <nospam@bpiotrowski.pl>
+# Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
+# Contributor: Jason Pierce <pierce.json@gmail.com>
+# Contributor: Jeremy Cowgar <jeremy@cowgar.com>
+# Contributor: Simon Perry <aur@sanxion.net>
+
+pkgbase=dropbear
+pkgname=(dropbear dropbear-scp)
+pkgver=2019.78
+pkgrel=1
+pkgdesc='Lightweight SSH server'
+arch=(x86_64)
+url='https://matt.ucc.asn.au/dropbear/dropbear.html'
+license=(MIT)
+options=(emptydirs)
+validpgpkeys=('F7347EF2EE2E07A267628CA944931494F29C6773')
+source=("https://matt.ucc.asn.au/$pkgname/releases/$pkgname-$pkgver.tar.bz2"{,.asc}
+        localoptions.h)
+sha256sums=('525965971272270995364a0eb01f35180d793182e63dd0b0c3eb0292291644a4'
+            'SKIP'
+            'a284c2a2570d5b1f98f38fc044ab6fd45b9834be7a91216df7f159257b54e0bc')
+
+prepare() {
+  cp -f localoptions.h "$pkgname-$pkgver/"
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --bindir=/usr/bin --prefix=/usr --sbindir=/usr/bin
+  make \
+    PROGRAMS='dbclient dropbear dropbearconvert dropbearkey scp' \
+    SCPPROGRESS=1
+}
+
+package_dropbear() {
+  install -d "$pkgdir/etc/$pkgname"
+  make -C $pkgbase-$pkgver install DESTDIR="$pkgdir"
+  install -Dm644 $pkgbase-$pkgver/LICENSE \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+package_dropbear-scp() {
+  pkgdesc='Lightweight application for copying files over SSH'
+  provides=(scp)
+  conflicts=(openssh)
+
+  make -C $pkgbase-$pkgver install PROGRAMS=scp DESTDIR="$pkgdir"
+  install -Dm644 $pkgbase-$pkgver/LICENSE \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  rmdir "$pkgdir/usr/share/man"{/man1,}
+}
+
+# vim: ts=2 sw=2 et:
