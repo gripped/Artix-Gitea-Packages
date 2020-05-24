@@ -18,7 +18,7 @@ optdepends=('aspell: for aspell based spell checking support'
            'hspell: for hspell based spell checking support'
            'nuspell: for nuspell based spell checking support')
 provides=('libenchant-2.so') # enchant_voikko.so enchant_nuspell.so enchant_hunspell.so enchant_hspell.so enchant_aspell.so)
-source=("https://github.com/AbiWord/enchant/releases/download/v$pkgver/enchant-$pkgver.tar.gz")
+source=("https://github.com/AbiWord/enchant/releases/download/v2.2.8/enchant-2.2.8.tar.gz")
 sha512sums=('4bfa771af0deab3d0ca5523abab1fdb14cb596747dba7cf887e8cd812601015f52502cbd3df68247f102bba259cb281414e9ccde83b8bdd3c8cc83c2fcbc9090')
 
 prepare() {
