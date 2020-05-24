@@ -2,7 +2,7 @@
 
 pkgname=lighttpd
 pkgver=1.4.55
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc='A secure, fast, compliant and very flexible web-server'
 license=('custom')
 arch=('x86_64')
@@ -56,7 +56,6 @@ package() {
 	cd $srcdir/$pkgname-$pkgver
 	make DESTDIR=$pkgdir install
 
-	install -D -m644 $srcdir/lighttpd.logrotate.d $pkgdir/etc/logrotate.d/lighttpd
 	install -D -m644 $srcdir/lighttpd.conf $pkgdir/etc/lighttpd/lighttpd.conf
 	install -d -m700 -o http -g http $pkgdir/var/{log,cache}/lighttpd/
 	install -D -m644 ${srcdir}/lighttpd.tmpfiles ${pkgdir}/usr/lib/tmpfiles.d/lighttpd.conf
