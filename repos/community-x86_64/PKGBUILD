@@ -1,7 +1,7 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=matterbridge
-pkgver=1.17.4
+pkgver=1.17.5
 pkgrel=1
 pkgdesc="Multi-protocols (IRC/XMPP/Mattermost/Slack/Matrix/etc) bridge"
 arch=(x86_64)
@@ -11,7 +11,7 @@ depends=(glibc)
 makedepends=(go-pie git)
 backup=(etc/matterbridge.toml)
 source=(${pkgname}-${pkgver}.tar.gz::"${url}/archive/v${pkgver}.tar.gz")
-sha256sums=('44ffd8ef556d0210f19619477a9981a99b39cf46fb7ee1bf214ea87992a3abc3')
+sha512sums=('e6fc9d9c060c98969cc278db38583c20f98bcb80d9d6da3940d1cefc07e53675af212dc87d0769a40daf94154a151ed5f80d79dcb01bfc97d13431c828527b9f')
 
 prepare() {
   cd ${pkgname}-${pkgver}
