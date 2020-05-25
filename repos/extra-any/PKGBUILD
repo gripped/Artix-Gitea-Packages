@@ -2,7 +2,7 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.17.7
+pkgver=0.18.1
 pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
@@ -10,7 +10,7 @@ license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
 source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('9abd776463d8fedd92c4de88be73d263793c294062fb99935c4401f3a0420787')
+sha256sums=('5a545d95219d4ff4e05bbe34a8d884f07636f1f18e7195d0317485996eb92493')
 
 prepare() {
     cd ${pkgbase}
@@ -37,7 +37,7 @@ package_artools-base() {
 
 package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
-    depends=('artools-pkglist>=0.5' 'namcap' 'git-subrepo' 'jq')
+    depends=('artools-base' 'namcap' 'git-subrepo' 'jq')
     conflicts=('devtools')
     backup=('etc/artools/artools-pkg.conf')
 
@@ -47,8 +47,8 @@ package_artools-pkg() {
 
 package_artools-iso() {
     pkgdesc='Development tools for Artix (ISO tools)'
-    depends=('dosfstools' 'libisoburn' 'squashfs-tools' 'mkinitcpio'
-            'grub' 'artools-base' 'iso-profiles')
+    depends=('artools-base' 'iso-profiles' 'grub' 'mkinitcpio'
+            'dosfstools' 'squashfs-tools' 'libisoburn')
     conflicts=('archiso')
     backup=('etc/artools/artools-iso.conf')
 
