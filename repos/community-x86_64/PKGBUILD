@@ -153,7 +153,6 @@ package_percona-server() {
 
 	cd "$pkgdir"
 	chmod 755 usr
-	mv usr/usr/lib/* usr/lib
 	rm -rf usr/{usr,data,run,lib/perconaserver/plugin/debug,lib/tmpfiles.d/mysql.conf}
 
 	# Move documentation
