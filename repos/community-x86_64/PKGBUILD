@@ -2,7 +2,7 @@
 # Contributor: Zerial <fernando@zerial.org>
 
 pkgname=unrealircd
-pkgver=5.0.3.1
+pkgver=5.0.5
 pkgrel=1
 pkgdesc="Open Source IRC Server"
 arch=('x86_64')
@@ -17,7 +17,7 @@ source=(https://www.unrealircd.org/unrealircd4/unrealircd-$pkgver.tar.gz
 	unrealircd.tmpfiles.d
 	unrealircd.sysusers.d
 	install.pl)
-sha256sums=('6bef40442585893dbb950c86ca6dac16324a3c29f4545d8169f42fa7c0715345'
+sha256sums=('28eb494d1ba95750bab7beeb9f2c4a9b7bbacb8f8b3e27b6c201a846d977df99'
             '75360541bc3aec9c1241c75e0ce60214c65cb618ffe5ca77144f01651ef5ab5b'
             '9e595176e63b301476982b1456d6ed065c479ff913b6743417ab8a9efdda0e3a'
             '43f07093ada8eb5c954f9e2e189610575906c690c0953fec041d4f2d31210d85')
@@ -31,7 +31,6 @@ prepare() {
 }
 
 build() {
-export CFLAGS="${CFLAGS} -Wl,-z,now -Wl,-z,relro"
   cd "$srcdir"/unrealircd-$pkgver
   ./configure \
     --with-pidfile=/run/unrealircd/ircd.pid \
