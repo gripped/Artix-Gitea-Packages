@@ -6,7 +6,8 @@ command_args="-conf /etc/dns-over-https/doh-server.conf"
 command_background_args="-pid-file ${pidfile}"
 command_background=true
 
-depends() {
+depend() {
 	after net
-	use dns logger
+	use logger
+	provides dns
 }

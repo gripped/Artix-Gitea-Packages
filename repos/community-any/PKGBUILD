@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=dns-over-https-openrc
 pkgver=20200523
-pkgrel=1
+pkgrel=1.1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
 url="https://codeberg.org/ndowens/packages-openrc"
@@ -11,8 +11,8 @@ depends=('openrc' 'dns-over-https')
 conflicts=('systemd-sysvcompat')
 source=("doh-server.initd"
 	"doh-client.initd")
-md5sums=('11660745d2f71b3a356f76e5d8272048'
-         'aad202fbdf1ae95d12e2412cc3609ec7')
+md5sums=('59b4f833623ab926f2e91c87c8ccf9fa'
+         'a0819cc4eb4cb443f2e788f92b4b5116')
 
 package() {
     install -Dm755 ${srcdir}/doh-server.initd ${pkgdir}/etc/init.d/doh-server
