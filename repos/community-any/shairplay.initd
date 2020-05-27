@@ -5,7 +5,7 @@ command="/usr/bin/shairplay"
 command_args="-a ${SHAIRPLAY_NAME} ${SHAIRPLAY_PASSWORD}"
 command_background=true
 
-depends() {
+depend() {
 	need net sound
 	wants avahi
 	after avahi
