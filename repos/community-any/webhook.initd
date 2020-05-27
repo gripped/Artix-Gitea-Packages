@@ -5,7 +5,7 @@ command="/usr/bin/webhook"
 command_args="--hooks /etc/webhook/hooks.json -verbose"
 command_background=true
 
-depends() {
+depend() {
 	after net
 	wants net
 }
