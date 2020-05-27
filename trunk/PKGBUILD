@@ -17,7 +17,7 @@ md5sums=('SKIP')
 build() {
   cd "$pkgname"
 
-  arch-meson build
+  arch-meson -D systemd_units=false build
   ninja -v -C build
 }
 
