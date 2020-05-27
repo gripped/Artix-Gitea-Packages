@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=unrealircd-openrc
 pkgver=20200521
-pkgrel=1
+pkgrel=1.1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
 url="https://codeberg.org/ndowens/packages-openrc"
@@ -10,7 +10,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'unrealircd')
 conflicts=('systemd-sysvcompat')
 source=("${pkgname/-openrc/}.initd")
-md5sums=('b3e5e0d451c5ce92d7ffffae418635c7')
+md5sums=('bf85b59b9f16baba199b24e9b469b649')
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1

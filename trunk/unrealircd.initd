@@ -5,7 +5,8 @@ command="/usr/bin/unrealircd"
 command_background=true
 command_user="ircd:ircd"
 
-depends() {
+depend() {
 	after net nss
 	use dns logger
+	provides ircd
 }
