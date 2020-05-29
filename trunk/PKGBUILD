@@ -130,10 +130,6 @@ END
 
   _pick nm-cloud-setup "$pkgdir"/usr/lib/**/*nm-cloud-setup*
 
-  # Restore empty dir
-  mkdir "$pkgdir/usr/lib/NetworkManager/dispatcher.d/no-wait.d"
-}
-
 package_libnm() {
   pkgdesc="NetworkManager client library"
   depends=(glib2 nss libutil-linux jansson libelogind)
