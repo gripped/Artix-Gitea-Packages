@@ -1,12 +1,12 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=xdm-openrc
 pkgver=20200528
-pkgrel=1
+pkgrel=1.1
 pkgdesc="${pkgname/-openrc//} OpenRC init"
 arch=('any')
 url="https://gitea.artixlinux.org/PackagesX/xdm-openrc"
 license=('GPL2')
-groups=('openrc-galaxy')
+groups=('openrc-world')
 depends=('openrc' 'xorg-xdm')
 conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
