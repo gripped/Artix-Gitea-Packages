@@ -1,61 +1,50 @@
 #!/usr/bin/openrc-run
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-extra_started_commands="reload graceful"
+name="lighttpd"
+description="Lighttpd web server"
 
-LIGHTTPD_PID="$(grep pid ${LIGHTTPD_CONF} | cut -d '=' -f 2 | tr -d \\\" | tr -d [:space:])"
+conf_file="${LIGHTTPD_CONF:-/etc/lighttpd/lighttpd.conf}"
+extra_started_commands="reload graceful"
+required_files="${conf_file}"
+pidfile="/run/${RC_SVCNAME}.pid"
+command="/usr/bin/lighttpd"
+command_args="-f ${conf_file}"
+command_foreground_args="-D"
 
 depend() {
 	need net
 	use mysql logger spawn-fcgi ldap slapd netmount dns
+	after firewall
 	after famd
 	after sshd
 }
 
 checkconfig() {
-	if [ ! -f "${LIGHTTPD_CONF}" ] ; then
-		ewarn "${LIGHTTPD_CONF} does not exist."
-		return 1
+	ebegin "Checking for ${conf_file}"
+	if [ ! -f "${conf_file}" ] ; then
+		eerror "${conf_file} does not exist."
 	fi
+	eend $?
 
-	if [ -z "${LIGHTTPD_PID}" ] ; then
-		eerror "server.pid-file variable in ${LIGHTTPD_CONF}"
-		eerror "is not set. Please set this variable properly"
-		eerror "and try again"
-		return 1
-	fi
-	/usr/bin/lighttpd -t -f ${LIGHTTPD_CONF} >/dev/null
+	/usr/bin/lighttpd -t -f "${conf_file}" >/dev/null
 }
 
-start() {
-	checkconfig || return 1
-	# Glean lighttpd's credentials from the configuration file
-	# Fixes bug 454366
-	LIGHTTPD_USER="$(awk '/^server.username/{s=$3};{sub("\"","",s)};END{print s}' ${LIGHTTPD_CONF})"
-	LIGHTTPD_GROUP="$(awk '/^server.groupname/{s=$3};{sub("\"","",s)};END{print s}' ${LIGHTTPD_CONF})"
-	checkpath -d -q -m 0750 -o "${LIGHTTPD_USER}":"${LIGHTTPD_GROUP}" /run/lighttpd/
-
-	ebegin "Starting lighttpd"
-	start-stop-daemon --start --quiet --exec /usr/bin/lighttpd \
-		--pidfile "${LIGHTTPD_PID}" -- -f "${LIGHTTPD_CONF}"
-	eend $?
+start_pre() {
+	checkconfig || return $?
+	checkpath -d -q -m 0750 /run/lighttpd/
 }
 
-stop() {
-	local rv=0
-	ebegin "Stopping lighttpd"
-	start-stop-daemon --stop --quiet --pidfile "${LIGHTTPD_PID}"
-	eend $?
+check_running() {
+	if ! service_started "${SVCNAME}" ; then
+		eerror "${SVCNAME} isn't running"
+	fi
+	checkconfig || return $?
 }
 
 reload() {
-	if ! service_started "${SVCNAME}" ; then
-		eerror "${SVCNAME} isn't running"
-		return 1
-	fi
-	checkconfig || return 1
-
+	check_running
 	ebegin "Re-opening lighttpd log files"
 	start-stop-daemon --quiet --pidfile "${LIGHTTPD_PID}" \
 		--signal HUP
@@ -63,12 +52,7 @@ reload() {
 }
 
 graceful() {
-	if ! service_started "${SVCNAME}" ; then
-		eerror "${SVCNAME} isn't running"
-		return 1
-	fi
-	checkconfig || return 1
-
+	check_running
 	ebegin "Gracefully stopping lighttpd"
 	start-stop-daemon --quiet --pidfile "${LIGHTTPD_PID}" \
 		--signal INT
