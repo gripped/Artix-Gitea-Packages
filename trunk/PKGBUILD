@@ -129,7 +129,7 @@ END
   _pick libnm "$pkgdir"/usr/share/vala/vapi/libnm.*
 
   _pick nm-cloud-setup "$pkgdir"/usr/lib/**/*nm-cloud-setup*
-
+}
 package_libnm() {
   pkgdesc="NetworkManager client library"
   depends=(glib2 nss libutil-linux jansson libelogind)
