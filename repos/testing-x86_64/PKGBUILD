@@ -24,13 +24,12 @@ checkdepends=('ruby-test-unit')
 provides=('svn')
 backup=('etc/xinetd.d/svn' 'etc/conf.d/svnserve')
 options=('!makeflags' '!emptydirs')
-source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2{,.asc}
+source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2
         svn
         svnserve.tmpfiles
         subversion.rpath.fix.patch
         ruby-frozen-nil.patch)
 sha512sums=('af6b706fdc91f7ab292fce9d9de582da306fd11e92767dc852687e71a6a8b65bb867fa70d5afd7f76a46005acb1b3c2d3193e690def48cd26875b3a7851cd13b'
-            'SKIP'
             '3df59e92aa0314ff6adce26e2e1162bf2872ca03ff1f78891081a60e67b521b6046b4a2f85f718dcd27f9d5709594658817a09548cdb74e3976d371dbe47e7db'
             '7775f4da5003970c9ebdc2f696ba090df194a77d9daed791875488c943f72ae496b5f9cc6f3ff9f3f4de9f352a3b518137babdea38947d1a2d5dd16aa1844036'
             '60d538160e738eb3b3e84a3881fe5a8d75c79053d3f31c4c29ef6ace6ccc5dd4367ed712766c911bae3436e9706e4dd144b270bb45161a6c1834a37e154d0440'
