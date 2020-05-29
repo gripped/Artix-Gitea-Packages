@@ -1,0 +1,18 @@
+#!/usr/bin/openrc-run
+
+command="/usr/bin/wg-quick"
+command_args="up ${WIREGUARD_INTERFACE}"
+required_files="/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
+
+depend() {
+	need localmount net
+	use dns
+	provide vpn ipsec
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	wg-quick down ${WIREGUARD_INTERFACE}
+	eend $?
+}
+
