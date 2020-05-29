@@ -2,10 +2,8 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=tor-openrc
-pkgver=20180312
+pkgver=20200529
 pkgrel=1
 pkgdesc="OpenRC tor init script"
 arch=('any')
@@ -15,22 +13,13 @@ groups=('openrc-galaxy')
 depends=('openrc' 'tor')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/tor')
-source=("tor.confd::${_url}/net-vpn/tor/files/tor.confd"
-        "tor.initd::${_url}/net-vpn/tor/files/tor.initd-r8")
-sha256sums=('41d780f291847e19f632428bbf27c3f289414afd237546d2974da1b75384c25c'
-            'b637006715ab1cb0b321dc9e703b1dcaf61878c13134669eabebe4b422da96d3')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
+source=("tor.confd"
+        "tor.initd")
+sha256sums=('864d7ff6c8a6b06734c3f314365304c6ba8b3b893e8f29ed5f6fb9869e647b4b'
+            '3b533a699f887102364fd222fdac9f626a18bd81b6913949c0a021e2e8246ef8')
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
 }
 
 _inst_confd(){
