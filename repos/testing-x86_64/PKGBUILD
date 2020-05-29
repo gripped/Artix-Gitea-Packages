@@ -12,7 +12,7 @@ arch=('x86_64')
 url="https://subversion.apache.org/"
 license=('APACHE')
 depends=('file' 'libutf8proc' 'serf' 'sqlite')
-makedepends=('apache' 'python' 'python-py3c' 'perl' 'swig3' 'java-environment>=8'
+makedepends=('apache' 'python' 'python-py3c' 'perl' 'swig' 'java-environment>=8'
              'libgnome-keyring' 'kwallet' 'kdelibs4support' 'ruby')
 optdepends=('libgnome-keyring: for GNOME Keyring for auth credentials'
             'kwallet: for KWallet for auth credentials'
