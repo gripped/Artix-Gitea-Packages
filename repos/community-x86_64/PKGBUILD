@@ -3,7 +3,7 @@
 
 pkgname=sssd
 pkgver=2.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -53,6 +53,8 @@ prepare() {
     fi
   done
 
+  sed -i 's#/var/run/#/run/#' src/examples/logrotate
+
   # dbus policy files in /usr/share/dbus-1
   sed -i -e 's/^dbuspolicydir = $(sysconfdir)/dbuspolicydir = $(datadir)/' Makefile.in
 
@@ -100,6 +102,8 @@ package() {
   rm -f "$pkgdir"/usr/lib/ldb/modules/ldb/memberof.la
   find "$pkgdir"/usr -depth -type d \
     -exec rmdir --ignore-fail-on-non-empty {} \;
+
+  install -Dm0644 src/examples/logrotate "$pkgdir/etc/logrotate.d/sssd"
 
   cd "$srcdir"
   rm -rf "$pkgdir/etc/systemd" # remove the drop-in
