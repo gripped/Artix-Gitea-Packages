@@ -3,18 +3,33 @@
 command="/usr/bin/wg-quick"
 command_args="up ${WIREGUARD_INTERFACE}"
 required_files="/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
+extra_commands="save add"
+description_save="Save configuration"
+description_add="Add interface without distrupting service"
 
 depend() {
 	need localmount
-	use dns net
+	use dns
 	provide vpn ipsec
 	keyword -shutdown
 }
 
 stop() {
-	# Remove interface as it is more reliable
 	ebegin "Stopping ${SVCNAME}"
-	ip link delete "${WIREGUARD_INTERFACE}"
+	"${command}" down "${WIREGUARD_INTERFACE}"
 	eend $?
 }
 
+save() {
+	ebegin "Saving configuration"
+	"${command}" save "${WIREGUARD_INTERFACE}"
+	eend $?
+}
+
+
+add() {
+	# Usage: rc-service add interface_name interface_configuration_name
+	ebegin "Adding interface ${WIREGUARD_INTERFACE}"
+	wg addconf "$2" "$3" <"${command}" strip "$2"
+	eend $?
+}
