@@ -10,7 +10,7 @@ license=('custom')
 depends=(gcc-libs vulkan-icd-loader vulkan-headers libx11)
 makedepends=(cmake python-lxml libx11 libxrandr wayland git)
 options=(debug !strip)
-source=(https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/v${pkgver}.tar.gz)
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/v${pkgver}.tar.gz)
 #source=("git+https://github.com/KhronosGroup/Vulkan-ValidationLayers.git#commit=35d091dad71304dab79758fdae4bda12f692d735")
 sha256sums=('68d0064fc4a8f1ac1272790ef1182e8a5f070310c5f036efbcbddcfbfbb141bf')
 
