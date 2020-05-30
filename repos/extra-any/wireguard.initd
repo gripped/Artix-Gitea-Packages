@@ -5,14 +5,16 @@ command_args="up ${WIREGUARD_INTERFACE}"
 required_files="/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
 
 depend() {
-	need localmount net
-	use dns
+	need localmount
+	use dns net
 	provide vpn ipsec
+	keyword -shutdown
 }
 
 stop() {
+	# Remove interface as it is more reliable
 	ebegin "Stopping ${SVCNAME}"
-	wg-quick down ${WIREGUARD_INTERFACE}
+	ip link delete "${WIREGUARD_INTERFACE}"
 	eend $?
 }
 
