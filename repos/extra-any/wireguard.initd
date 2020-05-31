@@ -3,7 +3,7 @@
 command="/usr/bin/wg-quick"
 command_args="up ${WIREGUARD_INTERFACE}"
 required_files="/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
-extra_commands="save add"
+extra_commands="save add sync"
 description_save="Save configuration"
 description_add="Add interface without distrupting service"
 
@@ -28,8 +28,23 @@ save() {
 
 
 add() {
-	# Usage: rc-service add interface_name interface_configuration_name
-	ebegin "Adding interface ${WIREGUARD_INTERFACE}"
-	wg addconf "$2" "$3" <"${command}" strip "$2"
-	eend $?
+	if [ ! -f "/etc/wireguard/${WIREGUARD_NFACE}.conf" ]; then
+		eerror "Config for ${WIREGUARD_NFACE} not found"
+	else
+		ebegin "Adding interface ${WIREGUARD_NFACE}"
+		wg addconf "${WIREGUARD_NFACE}" "/etc/wireguard/${WIREGUARD_NFACE}.conf"
+		"${command}" strip "$WIREGUARD_NFACE"
+		eend $?
+	fi
+}
+
+
+sync() {
+	if [ ! -f "/etc/wireguard/${WIREGUARD_INTERFACE}.conf" ]; then
+		eerror "Config for ${WIREGUARD_INTERNFACE} not found"
+	else
+		ebegin "Syncing ${WIREGUARD_INTERFACE} configuration"
+		wg syncconf "${WIREGUARD_INTERFACE}" "/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
+		eend $?
+	fi
 }
