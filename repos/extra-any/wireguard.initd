@@ -41,7 +41,7 @@ add() {
 
 sync() {
 	if [ ! -f "/etc/wireguard/${WIREGUARD_INTERFACE}.conf" ]; then
-		eerror "Config for ${WIREGUARD_INTERNFACE} not found"
+		eerror "Config for ${WIREGUARD_INTERFACE} not found"
 	else
 		ebegin "Syncing ${WIREGUARD_INTERFACE} configuration"
 		wg syncconf "${WIREGUARD_INTERFACE}" "/etc/wireguard/${WIREGUARD_INTERFACE}.conf"

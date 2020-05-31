@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowen@artixlinux.org> 
 pkgname=wireguard-openrc
 pkgver=20200530
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="OpenRC wireguard init script"
 arch=('any')
 url="https://gitea.artixlinux.org/PackagesW/wireguard-openrc"
@@ -11,7 +11,7 @@ depends=('openrc' 'wireguard-tools')
 conflicts=('systemd-sysvcompat')
 backup=(etc/conf.d/wireguard)
 source=("wireguard.initd" "wireguard.confd")
-sha256sums=('be5bdc287e30ceac42b8b1260ef0b503cccd99c392a87cf50d065d86896fb0c0'
+sha256sums=('a1313ae573580b4b681e20956c410dd6f6cb7682a564ccff7f2b218ec5a9ca80'
             'ef2a35db4aeb29a1f2533fedc3b3208ca17cd6c32315a453df55d46e4927b61a')
 
 _inst_initd(){
