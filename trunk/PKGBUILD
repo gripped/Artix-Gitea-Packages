@@ -1,0 +1,32 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=matrix-synapse-openrc
+pkgver=20200529
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/PackagesM/matrix-synapse-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'matrix-synapse')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd"
+	"matrix.log.config")
+md5sums=('1706f88d21a6a5c10c67f562f1fb1d2a'
+         'efa1f895954f06676a9d3354f7f5cfc5'
+         '8c89a8c89f4e274faa67853d36abe4a0')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm644 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_initd "${pkgname/-openrc/}"
+    _inst_confd "${pkgname/-openrc/}"
+    install -Dm644 "$srcdir/matrix.log.config" -t "$pkgdir/etc/synapse/"
+}
