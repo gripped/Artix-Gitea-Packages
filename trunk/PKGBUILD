@@ -2,7 +2,7 @@
 
 pkgname=backuppc
 pkgver=4.3.2
-_xsver=0.59
+_xsver=0.60
 _rbpcver=3.1.2.1
 pkgrel=1
 pkgdesc='Enterprise-grade system for backing up Linux, Windows and MacOS PCs'
@@ -31,7 +31,7 @@ backup=("etc/$pkgname/config.pl"
         "etc/httpd/conf/extra/$pkgname.conf"
         "etc/$pkgname/$pkgname.users")
 md5sums=('a4354d846a76e1bf9edf0a468f3b3671'
-         '1f64d8ced0095435849a7e771f025d84'
+         'dd7e2ff85a44f669e3d01de2d570be03'
          '7749b21b46db4e6a74120c8687a5944c'
          'd90840387358e5dd230cace0b2d6b53a'
          'bda3ec3f4c75521c6869279eb16af2f8'
