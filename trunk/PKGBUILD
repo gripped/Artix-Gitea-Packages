@@ -1,14 +1,13 @@
-# $Id$
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Damir Perisa <damir.perisa@bluewin.ch>
 
 pkgname=xosd
 pkgver=2.2.14
-pkgrel=9
+pkgrel=10
 pkgdesc="Displays text on your screen. On-Screen-Display-libs for some tools"
 arch=('x86_64')
 license=('GPL2')
-url="http://sourceforge.net/projects/libxosd/"
+url="https://sourceforge.net/projects/libxosd/"
 depends=('libxt' 'libxinerama' 'sh' 'xorg-fonts-misc')
 source=("https://downloads.sourceforge.net/libxosd/${pkgname}-${pkgver}.tar.gz"
         "http://http.debian.net/debian/pool/main/x/xosd/xosd_$pkgver-2.1.debian.tar.xz")
