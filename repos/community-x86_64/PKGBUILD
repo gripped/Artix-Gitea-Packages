@@ -1,0 +1,31 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Konstantin Shabanov <kes.eclipse@gmail.com>
+# Contributor: Evka
+# Maintainer: Jose Riha <jose 1711 gmail com>
+
+pkgname=udpxy
+pkgver=1.0.23.12
+_pkgver=1.0.23-12
+_commit=612d2271b0d3ccb92f5e1c1c54aa3c0674af75cf
+pkgrel=2
+pkgdesc="small-footprint UNIX/Linux daemon to relay multicast UDP traffic to client's TCP (HTTP) connection."
+arch=(x86_64)
+url="https://github.com/pcherenkov/udpxy"
+license=('GPL3')
+makedepends=('git')
+source=("git+https://github.com/pcherenkov/udpxy.git#commit=${_commit}")
+sha256sums=('SKIP')
+
+prepare() {
+  sed -e 's|-Werror||' -i udpxy/chipmunk/Makefile
+}
+
+build() {
+  cd "$srcdir"/udpxy/chipmunk
+  make PREFIX=/usr CC="gcc ${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
+}
+
+package() {
+  cd "$srcdir"/udpxy/chipmunk
+  make DESTDIR="$pkgdir" PREFIX=/usr install
+}
