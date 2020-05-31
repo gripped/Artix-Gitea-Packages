@@ -1,0 +1,21 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=udpxy-openrc
+pkgver=20200530
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/PackagesU/udpxy-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'udpxy')
+conflicts=('systemd-sysvcompat')
+source=("${pkgname/-openrc/}.initd")
+md5sums=('4780f7d796965a941d852082012e9ebb')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+package() {
+    _inst_initd "${pkgname/-openrc/}"
+}
