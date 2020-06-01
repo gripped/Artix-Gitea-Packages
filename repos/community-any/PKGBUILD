@@ -1,0 +1,29 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=motion-openrc
+pkgver=20200531
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/PackagesM/motion-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'motion')
+conflicts=('systemd-sysvcompat')
+backup=(etc/conf.d/motion)
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('db1839fd7a50f25c6ba6e2c91d4daf69'
+         'ffb6d419c322702a9dcc7ef5dcb7c63c')
+
+_inst_initd(){
+    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
+}
+
+_inst_confd(){
+    install -Dm644 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+}
+
+package() {
+    _inst_initd "${pkgname/-openrc/}"
+    _inst_confd "${pkgname/-openrc/}"
+}
