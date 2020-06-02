@@ -4,7 +4,7 @@ BUNDLENAME=""
 c_arg=false
 COMMAND=""
 CONTENTS=""
-DATABASE="/etc/s6/rc/compiled"
+DATABASE="/run/s6-rc/compiled"
 HELP_MSG="s6-rc-bundle-update: usage: s6-rc-bundle-update [ -c compiled ] command... (use s6-rc-bundle-update help for more information)"
 for arg in "$@"; do
 	if [[ "$c_arg" = true ]]; then
@@ -39,9 +39,9 @@ case $COMMAND in
 		echo "$HELP_MSG"
 		exit 1
 	fi
-	isbundle=$(s6-rc-db type "$BUNDLENAME" 2> /dev/null)
+	isbundle=$(s6-rc-db -c $DATABASE type "$BUNDLENAME" 2> /dev/null)
 	if [[ "$?" == 111 ]]; then
-		echo "s6-rc-bundle-update: fatal: unable to take lock on /run/s6-rc/compiled: Permission denied"
+		echo "s6-rc-bundle-update: fatal: unable to take lock on $DATABASE: Permission denied"
 		exit 1
 	fi
 	if [[ "$isbundle" != "bundle" ]]; then
@@ -66,9 +66,9 @@ case $COMMAND in
 		echo "$HELP_MSG"
 		exit 1
 	fi
-	isbundle=$(s6-rc-db type "$BUNDLENAME" 2> /dev/null)
+	isbundle=$(s6-rc-db -c $DATABASE type "$BUNDLENAME" 2> /dev/null)
 	if [[ "$?" == 111 ]]; then
-		echo "s6-rc-bundle-update: fatal: unable to take lock on /run/s6-rc/compiled: Permission denied"
+		echo "s6-rc-bundle-update: fatal: unable to take lock on $DATABASE: Permission denied"
 		exit 1
 	fi
 	if [[ "$isbundle" != "bundle" ]]; then
@@ -97,9 +97,9 @@ case $COMMAND in
 		echo "$HELP_MSG"
 		exit 1
 	fi
-	isbundle=$(s6-rc-db type "$BUNDLENAME" 2> /dev/null)
+	isbundle=$(s6-rc-db -c $DATABASE type "$BUNDLENAME" 2> /dev/null)
 	if [[ "$?" == 111 ]]; then
-		echo "s6-rc-bundle-update: fatal: unable to take lock on /run/s6-rc/compiled: Permission denied"
+		echo "s6-rc-bundle-update: fatal: unable to take lock on $DATABASE: Permission denied"
 		exit 1
 	fi
 	if [[ "$isbundle" != "bundle" ]]; then
