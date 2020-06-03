@@ -4,7 +4,7 @@
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
 pkgver=2.02.187
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL2' 'LGPL2.1')
@@ -88,7 +88,7 @@ build() {
 package_device-mapper() {
   pkgdesc="Device mapper userspace library and tools"
   url="http://sourceware.org/dm/"
-  depends=('glibc' 'libeudev')
+  depends=('glibc' 'libeudev' 'libudev.so')
   provides=('libdevmapper.so'
     'libdevmapper-event.so')
 
@@ -101,7 +101,9 @@ package_device-mapper() {
 
 package_lvm2() {
   pkgdesc="Logical Volume Manager 2 utilities"
-  depends=('bash' "device-mapper>=${pkgver}" 'libeudev' 'libutil-linux' 'readline' 'thin-provisioning-tools')
+  depends=('bash' "device-mapper>=${pkgver}" 'libdevmapper.so' 'libeudev'
+    'libudev.so' 'libutil-linux' 'libblkid.so' 'readline' 'libreadline.so'
+    'thin-provisioning-tools')
   conflicts=('lvm' 'mkinitcpio<0.7')
   backup=('etc/lvm/lvm.conf'
     'etc/lvm/lvmlocal.conf')
