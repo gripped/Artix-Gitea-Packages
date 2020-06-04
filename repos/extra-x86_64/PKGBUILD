@@ -3,14 +3,14 @@
 # Contributor: Michal Bozon <michal.bozon__at__gmail.com>
 
 pkgname=libyaml
-pkgver=0.2.4
+pkgver=0.2.5
 pkgrel=1
 pkgdesc="YAML 1.1 library"
 arch=('x86_64')
 url="https://pyyaml.org/wiki/LibYAML"
 license=('MIT')
 source=("https://pyyaml.org/download/libyaml/yaml-$pkgver.tar.gz")
-md5sums=('0532bb32548ee92f1c0328aa8a87dec7')
+md5sums=('bb15429d8fb787e7d3f1c83ae129a999')
 
 build() {
   cd "$srcdir/yaml-$pkgver"
