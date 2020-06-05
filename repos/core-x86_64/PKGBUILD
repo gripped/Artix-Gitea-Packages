@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=5.4.42
+pkgver=5.4.44
 pkgrel=1
 pkgdesc='LTS Linux'
 url="https://www.kernel.org/"
@@ -17,7 +17,6 @@ source=(
   https://www.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   config         # the main kernel config file
   0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
-  0002-gcc-common.h-Update-for-GCC-10.patch
   sphinx-workaround.patch
 )
 validpgpkeys=(
@@ -25,11 +24,10 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('4e431b7c0266a07b76fdb77f8917ad681f0fa34ffba0eb8a172b67f7ef57bc31'
+sha256sums=('97c2bbce51c73294cf150f26401d47a2d32d3095f3afb0ddb693f21fb6b68439'
             'SKIP'
-            '421ec2ca6fae563871a0ae4db44a14b81befc14bd62b061cd73318e3e064ca55'
+            'd4c489126ed23b558b3e11df11b48437454c3bf965ee59b3f42bac32dbe5558b'
             'bdd05caf94135898bceac0a9d14ec6b1b458dba162d00efd46a292fe97f2679b'
-            'bdfd9d472790f1f417459c6c4f16f492140e772f0f3e502c5e915f581cf7d75a'
             'b7c814c8183e4645947a6dcc3cbf80431de8a8fd4e895b780f9a5fd92f82cb8e')
 
 export KBUILD_BUILD_HOST=artixlinux
