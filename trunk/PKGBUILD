@@ -38,9 +38,6 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  # Hack entry points
-}
 
 package_python-tox() {
   depends=('python-py' 'python-virtualenv' 'python-setuptools' 'python-pluggy' 'python-toml'
