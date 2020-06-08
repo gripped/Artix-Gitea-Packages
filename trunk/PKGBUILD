@@ -1,19 +1,22 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgbase=artools
-pkgname=('artools-base' 'artools-pkg' 'artools-iso' 'artools-docker')
+pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.19
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('28bd50dc605e692349bcf7f07ecc9098ad1e859acb420096df1291c46e665208')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
+        conf.patch::https://gitea.artixlinux.org/artix/artools/commit/ad33bccd49857f1290d288104578c2fe71bf6beb.patch)
+sha256sums=('28bd50dc605e692349bcf7f07ecc9098ad1e859acb420096df1291c46e665208'
+            '116155be3b09826ad1b9c36a9e74ffe0d118744a13ea2a916b22b12436a8aa10')
 
 prepare() {
     cd ${pkgbase}
+    patch -Np1 -i ../conf.patch
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
 }
 
@@ -54,12 +57,4 @@ package_artools-iso() {
 
     cd ${pkgbase}
     make PREFIX=/usr DESTDIR=${pkgdir} install_iso
-}
-
-package_artools-docker() {
-    pkgdesc='Development tools for Artix (docker pacman alpm hook & configuration)'
-    depends=('pacman')
-
-    cd ${pkgbase}
-    make DESTDIR=${pkgdir} install_docker
 }
