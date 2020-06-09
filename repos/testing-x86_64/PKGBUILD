@@ -5,7 +5,7 @@
 
 pkgname=haveged
 pkgver=1.9.9
-pkgrel=2
+pkgrel=3
 pkgdesc='Entropy harvesting daemon using CPU timings'
 arch=('x86_64')
 url='https://github.com/jirka-h/haveged'
@@ -35,5 +35,4 @@ package() {
   cd $pkgname-$pkgver
 
   make DESTDIR="$pkgdir" install
-
 }
