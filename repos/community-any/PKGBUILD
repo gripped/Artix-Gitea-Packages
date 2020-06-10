@@ -2,10 +2,8 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=apcupsd-openrc
-pkgver=20180312
+pkgver=20200610
 pkgrel=1
 pkgdesc="OpenRC apcupsd init script"
 arch=('any')
@@ -14,24 +12,13 @@ license=('GPL2')
 groups=('openrc-galaxy')
 conflicts=('systemd-sysvcompat')
 depends=('openrc' 'apcupsd')
-source=("apcupsd.initd::${_url}/sys-power/apcupsd/files/apcupsd.init.4"
-        "apcupsd.powerfail.initd::${_url}/sys-power/apcupsd/files/apcupsd.powerfail.init")
-sha256sums=('a43fe46b55d938a5402d6c83235adfc5d488cdd797b6ad722d6156eb711ab688'
-            'edd81aa8249c6f3ec1749c61ec464219380ddb5f2d3667a619ce8a0fdb6905c1')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
+source=("apcupsd.initd"
+        "apcupsd.powerfail.initd")
+sha256sums=('5fd474027ddb56c0c5974d4d7ca0e568f3167b90fbd40001f6cb85035d4e7481'
+            'ca6c0f83d239b98a3cf75dea01dce2bbd01cee244e1e47cf983c1ff101b65e49')
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e 's|/sbin|/usr/bin|g' \
-        -e 's|/bin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
 }
 
 _inst_confd(){
