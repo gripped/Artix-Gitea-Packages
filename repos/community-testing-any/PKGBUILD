@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=connman-s6
 pkgver=20200610
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for connman"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -21,7 +21,7 @@ source=("connmand-log.conf"
         "connmand-srv.producer-for"
         "connmand-srv.run"
         "connmand-srv.type")
-sha256sums=('e30ce61aabb1ccbea82014e6f455e19fe40a762332c0d9c3e857878a31a15bfd'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'd1bac81e06291cad2378d1b9af2643c1e4df13bb6d66ae46dbbb7eda24fb85e1'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'e04982537052657db87d293f66792a3550a0c4232260907a78af67fb20cba314'
