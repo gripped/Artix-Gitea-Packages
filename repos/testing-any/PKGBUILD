@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
 pkgver=20200610
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for clamav"
 arch=('any')
 url="https://github.com/artix-linux"
