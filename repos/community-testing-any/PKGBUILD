@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=connman-s6
-pkgver=20200408
+pkgver=20200610
 pkgrel=1
 pkgdesc="s6 service scripts for connman"
 arch=('any')
