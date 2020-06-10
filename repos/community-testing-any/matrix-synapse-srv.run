@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+fdmove -c 2 1
+cd /var/lib/synapse
+s6-setuidgid synapse exec python -m synapse.app.homeserver --config-path=/etc/synapse/homeserver.yaml
