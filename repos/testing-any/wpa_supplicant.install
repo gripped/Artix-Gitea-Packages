@@ -1,0 +1,10 @@
+pre_remove() {
+    if [ -e "/run/service/wpa_supplicant" ]; then
+        s6-rc -d change wpa_supplicant
+    fi
+    sed -i '/wpa_supplicant/d' /etc/s6/sv/mount-net/dependencies
+}
+
+post_remove() {
+    rm -rf /etc/s6/sv/wpa_supplicant-log
+}
