@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20200413
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for clamav"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-world')
 provides=('clamav-runscripts')
 conflicts=('clamav-runscripts')
@@ -30,20 +30,20 @@ source=("clamd-log.conf"
         "freshclam-srv.producer-for"
         "freshclam-srv.run"
         "freshclam-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '71567ac1a8c8f8a9a0b8959650030e248043c3d0c1a54d1dd4e714285eb487d9'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '673170e1ed16339a69efdeef937403628525a56b8c317c1f3567ab2600df2a26'
-            'ac121bf5ec742fb5e24d53a1ec39b048c31629005801832feb59c27a629ce3f4'
+            '6e8f938fb8294ce813b060f206e7f71e5a2ae05f3a171edaa6fdadbcae40800d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '19159c6a4b0ae8c9fd18ef92940ed12d51aa1659bc4352f62b8324d15cc8a60a'
             '1356f3a30da24652e32b02fcf9cebc6d140ef88d49f52602e33c224caeff1a02'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '1e6a23421ac56a71151c8ba752d301b645f4cd62399326a2ad7305952aee4c93'
             '0fda583192cbb614384ded60f43dce28211b3429fd449f7fac52d5f3463ae9f1'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'f5c9b34d17e9cd46da94951346156ff8167a75cfddfed8e06be98cae52d1c1a1'
-            '3368b405de73f4bce8f264c5762254fea4a6580e584232e28698ef408136c6ba'
+            'fc9e521ceead8ca90b11498c13fde8ecf88b2bf3ee9162d3f90dc65fbd1b2f5e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '880e0dfed17b42f5fe287f53bd6bf075919a887bf815303d907a3359e5caa5dd'
             '9976be86412232cc9e335c568c6c525629f1b6501a9df3f993282cb60f0d896e'

@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -t -n { test -e /var/lib/clamav/main.cvd } freshclam }
-fdmove -c 2 1
-exec clamd --foreground=true
