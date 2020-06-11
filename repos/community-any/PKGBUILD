@@ -1,15 +1,13 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='bumblebee-runit'
+pkgname=bumblebee-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for bumblebee"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
@@ -18,7 +16,7 @@ groups=('runit-galaxy')
 provides=('bumblebee-runscripts')
 replaces=('bumblebee-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("bumblebeed.run::${_url}/bumblebee/files/bumblebeed/run")
+source=("bumblebeed.run")
 sha256sums=('df2290d8e9bd9fa57cf80143758d8524f61af81a7e6197fc0678cf4067df3c2a')
 
 _inst_logsv() {
