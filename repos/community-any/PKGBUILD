@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=stunnel-s6
-pkgver=20200424
+pkgver=20200610
 pkgrel=1
 pkgdesc="s6 service scripts for stunnel"
 arch=('any')
@@ -19,11 +19,11 @@ source=("stunnel-log.conf"
         "stunnel-srv.producer-for"
         "stunnel-srv.run"
         "stunnel-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'efba906d1d28c94d1e5ec05c3cc060139a24491b135962d82cc0f413e5a37b1a'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '17443afe0a1b0b452fbe0ae3680e574575c8a41708e67d3cc7e49e395db86909'
-            '77f75eca1d9291f1c08dfacaa82279df7144c24a852041ece227ca1626fff046'
+            '9a2cecaa8847bbafb9d7414a0d9fb982b54fd132b641710120b9fb6797abe804'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '139c3647582d16d327ea2acc83ce58a008c706fef18d922946b4f6b49e0f7e04'
             'ca9beaebda2cd9a8f99fb2299d02bca7a7daeffbf67f4c05d34d811b9ead4bae'
