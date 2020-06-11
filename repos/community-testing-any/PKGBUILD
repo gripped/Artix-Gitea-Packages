@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sndio-s6
-pkgver=20200610
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for sndio"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-galaxy')
 provides=('sndio-runscripts')
 conflicts=('sndio-runscripts')
