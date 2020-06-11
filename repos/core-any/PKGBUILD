@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for dbus"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 depends=('dbus' 's6')
 provides=('init-dbus')
 conflicts=('init-dbus')
@@ -20,11 +20,11 @@ source=("dbus-log.conf"
         "dbus-srv.producer-for"
         "dbus-srv.run"
         "dbus-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'ffa2034bba7a0fd6ad8995240479bd96cd1f06b74d49cc29d44c78a9c6d54fe0'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '1bbef3cdd98c91ecc770135894ae73ab398f728f11a7dcc1f930a25b18ab7fac'
+            '9668276478272ae535c3cc009fdd40e8f918674669e49faae262b25be5aa14b9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '2e6760d773576d323c65b1b5abc9006dc6734bc9d831c35051678c2af44179bd'
