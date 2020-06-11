@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nfs-utils-s6
-pkgver=20200610
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for nfs-utils"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-nfs-utils')
 conflicts=('init-nfs-utils')
