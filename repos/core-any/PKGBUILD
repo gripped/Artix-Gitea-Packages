@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nfs-utils-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for nfs-utils"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-nfs-utils')
 conflicts=('init-nfs-utils')
@@ -33,22 +33,22 @@ source=("nfs-server-log.conf"
         "statd-srv.producer-for"
         "statd-srv.run"
         "statd-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '6a90ea139ce5f2ad1c90ac492da0a96ce36c855b21ba0f32fc8ff006a0626008'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '257953bdf2e1f7cf83d2dc3c636db4828fcb39305229b7ac85384bc052131d39'
-            '6c032569351f69ec3f62eebf521da55c9e73d15100fa311c65dc1446bd1873d3'
+            'f37398c7b74ecd768ac85c32702998f43f19231212f881f9926f2664658a1871'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '8fba6bc7497a82526bf4c678820099dcc93d4af4c98fe0266fcf369e942b82f1'
             '2936df1a1fe9315b47df18dbbcae9b738ac3d34807eb862aa3a5f0acb6ecb0b9'
             'dac785ebc42fa35ef6ce90de83567e3541d2a7526064ef97c412878760ebc7a5'
             '1f9028781b43c4849251f44d2b9719818c098407e20db34a9f5bba5059a2c509'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '16043867625e675151c77023210c539525a689fb8548749449732898a5db7123'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '8fba6bc7497a82526bf4c678820099dcc93d4af4c98fe0266fcf369e942b82f1'
-            '35d016be8ec6f1e5262992bd09bbbd2f296a302fc7124a065b0541e9aefbc8c6'
+            '870429f96a78d71d01da62e4025bb12c66d119ee095fd4da8ae77547409cb3cf'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '1a90a45be95bdc12904e7a4f09b610bbbc73aa7cd2b9450db8a76af3a449ea7d'
             '9e25511f8ef4c9b29a62a87b2e67478a16ec98a0168bc21c55f5f28344bfd87c'
