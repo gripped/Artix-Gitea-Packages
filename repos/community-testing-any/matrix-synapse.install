@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/matrix-synapse" ]; then
-        s6-rc -d change matrix-synapse
-    fi
-}
-
-post_remove() {
-	rm -rf /etc/s6/sv/matrix-synapse-log
-}

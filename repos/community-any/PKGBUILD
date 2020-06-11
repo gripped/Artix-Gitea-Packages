@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=matrix-synapse-s6
-pkgver=20200425
+pkgver=20200610
 pkgrel=1
 pkgdesc="s6 service scripts for matrix-synapse"
 arch=('any')
@@ -11,17 +11,24 @@ conflicts=('matrix-synapse-runscripts')
 depends=('matrix-synapse' 's6')
 install=matrix-synapse.install
 backup=('etc/s6/sv/matrix-synapse-log/conf')
-source=("matrix-synapse-srv.run" "matrix-synapse-srv.type" "matrix-synapse-srv.producer-for" "matrix-synapse-log.run" "matrix-synapse-log.type"
-	"matrix-synapse-log.consumer-for" "matrix-synapse-log.pipeline-name" "matrix-synapse-log.notification-fd" "matrix-synapse-log.conf")
+source=("matrix-synapse-srv.run"
+        "matrix-synapse-srv.type"
+        "matrix-synapse-srv.producer-for"
+        "matrix-synapse-log.run"
+        "matrix-synapse-log.type"
+        "matrix-synapse-log.consumer-for"
+        "matrix-synapse-log.pipeline-name"
+        "matrix-synapse-log.notification-fd"
+        "matrix-synapse-log.conf")
 sha256sums=('3e18f34c43ef051d163ad0dcb521dedfb0892f7b44069011bdee02346a440cd1'
-	'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-	'6e312645f550dee669c85f21d597ba8d58fd48a3d16ba191e05263e9cd9fbecb'
-	'11da7dd3cf1fcc17ee9b0101478bd9cd6d095921528ce87941cb7fd7eef83ba4'
-	'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-	'026e5dfdb908134e3fcaaf8875d5668e5dc17d97271e73c6156c9c234ccb25a4'
-	'ae3bac5754273d96fbb210c11421944ec0bccd014c3202cd03b39519bbfe3b71'
-	'1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-	'7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c')	
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '6e312645f550dee669c85f21d597ba8d58fd48a3d16ba191e05263e9cd9fbecb'
+            'd0207e92fdc0a5d0b639d16f841673cfac6df03448cd8b35a0736a9b900352b3'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '026e5dfdb908134e3fcaaf8875d5668e5dc17d97271e73c6156c9c234ccb25a4'
+            'ae3bac5754273d96fbb210c11421944ec0bccd014c3202cd03b39519bbfe3b71'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135')	
 _inst_sv(){
     for file in conf consumer-for notification-fd \
         pipeline-name producer-for run type; do
