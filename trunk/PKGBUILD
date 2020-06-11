@@ -4,8 +4,8 @@
 # Contributor: peace4all <markspost at rocketmail dot com>
 
 pkgname=dnscrypt-proxy
-pkgver=2.0.42
-pkgrel=3
+pkgver=2.0.43
+pkgrel=1
 pkgdesc="DNS proxy, supporting encrypted DNS protocols such as DNSCrypt v2 and DNS-over-HTTPS"
 arch=('x86_64')
 url="https://github.com/DNSCrypt/dnscrypt-proxy"
@@ -22,7 +22,7 @@ backup=("etc/${pkgname}/${pkgname}.toml"
         "etc/${pkgname}/whitelist.txt"
 )
 source=("git+https://github.com/jedisct1/${pkgname}#tag=${pkgver}?signed"
-        "${pkgname}-configuration.patch::https://github.com/dvzrv/dnscrypt-proxy/commit/8d0fb58eaf5b2e315c9a243e34596104d4f2bff4.patch"
+        "${pkgname}-configuration.patch::https://github.com/dvzrv/dnscrypt-proxy/commit/23baf327e249e2577e7e2f8c25b36fc579caa8c9.patch"
 	      "sysusers.d"
         "tmpfiles.d")
 sha512sums=('SKIP'
@@ -34,7 +34,7 @@ validpgpkeys=('54A2B8892CC3D6A597B92B6C210627AABA709FE1') # Frank Denis (Jedi/Se
 prepare() {
   mv -v "${pkgname}" "${pkgname}-${pkgver}"
   cd "$pkgname-$pkgver"
-  patch -Np1 -i "../${pkgname}-configuration.patch"
+  git apply --stat "../${pkgname}-configuration.patch"
   # create empty ip-blacklist.txt
   touch "${pkgname}/ip-blacklist.txt"
 }
