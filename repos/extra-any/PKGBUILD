@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cups-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for cups"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-world')
 provides=('cups-runscripts')
 conflicts=('cups-runscripts')
@@ -21,11 +21,11 @@ source=("cupsd-log.conf"
         "cupsd-srv.producer-for"
         "cupsd-srv.run"
         "cupsd-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '6b2dd84c8be99cab87ebc793015cd7854880f15be2490a1701790cea69926e44'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '6314a754701d44397e4049b0263e9e921e7f8e3aae2eaec3c206cc86568afcdb'
-            '88991bb100e9b81c1a12b602802070ed3924eed58091230db9c96d06e774a89c'
+            '717a183a9e629fcb77247c81f850209c9721b6d7b0be5ac17e4ee2397e667563'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
             '0d649a7495ed4c0a40b09d228b99b8a2d33068af552bd04f761d235e3192a953'
