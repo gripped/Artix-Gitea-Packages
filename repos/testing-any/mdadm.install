@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/mdadm" ]; then
-        s6-rc -d change mdadm
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/mdadm-log
-}
