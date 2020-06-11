@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20200610
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for dbus"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 depends=('dbus' 's6')
 provides=('init-dbus')
 conflicts=('init-dbus')
