@@ -1,7 +1,5 @@
 #!/usr/bin/execlineb -P
 envfile /etc/s6/sv/auditd-log/conf
-importas -iu DIRECTIVE DIRECTIVE
-backtick -n ARGS { pipeline { echo $DIRECTIVE } sed "s/_/ /g" }
-importas -iu ARGS ARGS
+importas -iu DIRECTIVES DIRECTIVES
 foreground { s6-setuidgid s6log mkdir -p /var/log/auditd }
-s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${ARGS} /var/log/auditd"
+s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${DIRECTIVES} /var/log/auditd"

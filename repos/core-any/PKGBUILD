@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=audit-s6
-pkgver=20200323
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for audit"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-audit')
 conflicts=('init-audit')
@@ -28,11 +28,11 @@ sha256sums=('58f5ccacf1ceee80bfa3c2286ea7d986318d83b0e095b79c6eab0925a4a45572'
             '84e7251a84f6767b65e4e6797402bd431c46a006bb4de7075e26ce29ad6bf76f'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '92eac0b5539f53ae6fe5f908b8bb0c6563674ac74cfcb21b1182a11beb5217ff'
-            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '285ae3908e7a6096d25bc0525a246a7da7e0709fa6b98d5de7f1231a65eadfbd'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '6b97ecf638e4a1a3dec710b722848050e88b5dfae819d76d24e1ceef9b314cb6'
-            'f403e8637d573150c4b232856015ea00ec955507b9955ede215939522dd2c9d2'
+            '2a32a5d40144851581ba5e1858b8eac4b7ec0dcb4df8af25abd87a9c8e40fc50'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'e68d75704581ec72cd80e04904f7a683a5a63cd61e08c498517c030fd5645176'
             'd83b471b5277faab20405d702bf46dd501b1a0913672e2cb032dc8de33c21cb9'
