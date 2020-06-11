@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/trojan" ]; then
-        s6-rc -d change trojan
-    fi
-}
-
-post_remove() {
-	rm -rf /etc/s6/sv/trojan-log
-}
