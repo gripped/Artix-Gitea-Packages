@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-export HOME /var/lib/ejabberd
-fdmove -c 2 1
-exec s6-setuidgid jabber ejabberdctl foreground --logs /dev/null
-
