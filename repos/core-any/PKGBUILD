@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20200420
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-dhcpcd')
 conflicts=('init-dhcpcd')
@@ -21,11 +21,11 @@ source=('dhcpcd-log.conf'
         'dhcpcd-srv.producer-for'
         'dhcpcd-srv.run'
         'dhcpcd-srv.type')
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '06fbf21500208014b1a98458b584fd6481eafd450dfad96541bad35d166efd61'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
-            'b3b39dfbb2105686f51a3699bb743286109076aa88cd1f9bd5158a504e8e74c5'
+            'fc4c72d741dba9ae4308eb5e22c74eeca713e2f1403bd4d0b31c7d5e63d78470'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
             'c2ecc91f84de6ae3d234fb0dcdbcf47d6e4fd1e6495ceec252710109168064ad'
