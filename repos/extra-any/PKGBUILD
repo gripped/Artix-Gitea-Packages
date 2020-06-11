@@ -1,7 +1,5 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=bluez-runit
@@ -18,7 +16,7 @@ depends=('bluez' 'dbus-runit')
 provides=('bluez-runscripts')
 replaces=('bluez-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("bluetoothd.run::${_url}/bluez/files/bluetoothd/run")
+source=("bluetoothd.run")
 sha256sums=('8ab29771e3000314c7e356190db0a44b19de1b6865389811f4b8d8548725255a')
 
 _inst_logsv() {
