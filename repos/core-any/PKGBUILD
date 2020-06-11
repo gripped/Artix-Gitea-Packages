@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openvpn-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for openvpn"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-openvpn')
 conflicts=('init-openvpn')
@@ -20,11 +20,11 @@ source=("openvpn-log.conf"
         "openvpn-srv.producer-for"
         "openvpn-srv.run"
         "openvpn-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'e7e294ade1ddb47cc68fe2e372e854cf13137f6d071a888e7a1b1939314decd0'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '3d7c4388fa6e4e1285cf300609fec430c27768524f8a314bd66a77c6ce0f5757'
-            '338367203af5a53f35b1c1449702fa4becbdea7c92e8a49084422c2a32dc822c'
+            '09a807ed554ab19378e4ab23579df85530ab94eddfc5cc4446ca2ad24fd5ba2d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'db8497e47acd8734c9ace7b6679c5170b5e3cfd0c8aa5defb9ca5d898e667868'
             'cb29b53d93d7180b40bb268f0b172ffe60d43007fec8d0a504c26fcee80322e0'
