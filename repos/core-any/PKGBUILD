@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=xinetd-s6
-pkgver=20200408
+pkgver=20200610
 pkgrel=1
 pkgdesc="s6 service scripts for xinetd"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org"
 groups=('s6-system')
 provides=('init-xinetd')
 conflicts=('init-xinetd')
@@ -20,11 +20,11 @@ source=("xinetd-log.conf"
         "xinetd-srv.producer-for"
         "xinetd-srv.run"
         "xinetd-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'f7924a81806ad92fa7e09eb39b701e6216cb7206f3a3f29bdcbb88cd1ffa8a1e'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '589e0f2c4679e2f89ad29b651e60a4b8328311bf98a110e3c9af49e197703fbf'
-            '10ecc3fb7de60eee62a879886093f2362be8c782a8ca6e121bc6f8624fc353c3'
+            '8908131d179a1f907ad205db7eff1195c7a3112cb8a32473e537512c90e00122'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'c1c34edff2938919795c73efe395cb3c3273d6036e32d4248c9b0f478243078d'
             '79b401ebcdf22a911d88280314c7d567c728da110daba83886fc5b69187a8e30'
