@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for openssh"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-openssh')
 conflicts=('init-openssh')
@@ -20,11 +20,11 @@ source=("sshd-log.conf"
         "sshd-srv.producer-for"
         "sshd-srv.run"
         "sshd-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '5e044d5d6f7688f54d033408b0dd4ca0b2a5e6377137860635118f9b9ad78d2d'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '26a6e5ad8ece50bdc2a5e6f5f14629002e996c9b83cfcbe6d2d253c55db833eb'
-            'a7a8aaff862949a98dbf40ccf44e7fc1c4c3c1b68533b3a76d54c7b62579cf81'
+            'c784a94b6b4cadf67cf3b1e651946bd110519be11e85433fd251f2af0d8684b5'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '616bf3d26c352f679fbf66b555603859925ca06735fb36cd7b1e51de76a221b3'
             '3966d916c8fb0f2c61e4a397d1a38cda15774b53c583ff3f88bcd286878bd788'
