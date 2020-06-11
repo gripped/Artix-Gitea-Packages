@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=matterbridge-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for matterbridge"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-galaxy')
 provides=('matterbridge-runscripts')
 conflicts=('matterbridge-runscripts')
@@ -20,11 +20,11 @@ source=("matterbridge-log.conf"
         "matterbridge-srv.producer-for"
         "matterbridge-srv.run"
         "matterbridge-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'deea760dbc1d39046431d5d92c4e448ecd25138143a7657494ed1f84cd98572d'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'e260878d280e340aa77ff9d6f651c1c2cc0e57374270ced6779c0b27330602dd'
-            '7cf10db2cd2a7daa73876cd07ba287c6e8690677a951250e0e07134009c84924'
+            '1759e901e22b4b1b70a0dfd3b7e73f28784290a9a4a7f45f37d6e3b48d06c28c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'a252de9a0f648ad80c1f1e7104d362d9a698c37f1d4dd7e6291229b29a6298c9'
             'dc3b1aea95ef3c123d7a8547c57b55a75a5c2721f58c3d4bf13d9ebcbaa25224'
