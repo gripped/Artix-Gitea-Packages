@@ -1,10 +1,10 @@
-# Maintainer: Dudemanguy <random342@airmail.cc>
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syslog-ng-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for syslog-ng"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-world')
 provides=('syslog-ng-runscripts' 'init-syslog-ng')
 conflicts=('syslog-ng-runscripts' 'init-syslog-ng')
@@ -20,11 +20,11 @@ source=("syslog-ng-log.conf"
         "syslog-ng-srv.producer-for"
         "syslog-ng-srv.run"
         "syslog-ng-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '77626a7d016cb6efb014ebe733761a18a168081aeed2c414035bd79619e63526'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '14bdd461f944e61b3906f29818bb77d76000f9c31ce766d9dbd96d56fbd89d19'
-            'ee44a99b4968d17aa35a512b60dddc1a4f7dc7c26e110bb3a64d8a10439c8dd5'
+            'e12dde16fdea2d2b44421e0e29e3e6254dd631bc1668d1d84f019f44e619d000'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'de5cddfea87c948dd1ac251b44a0ca17c73f77b2ed40c32a0a15e5cc7336b451'
             '156ba7bef3cfa54be843129441b4df7e6786367ef2d088e05a4fbcedc990f999'
