@@ -1,8 +1,6 @@
 #!/usr/bin/execlineb -P
 envfile /etc/s6/sv/slapd-log/conf
-importas -iu DIRECTIVE DIRECTIVE
-backtick -n ARGS { pipeline { echo $DIRECTIVE } sed "s/_/ /g" }
-importas -iu ARGS ARGS
+importas -iu DIRECTIVES DIRECTIVES
 foreground { s6-setuidgid s6log mkdir -p /var/log/slapd }
 foreground { if -n -t { test -d /var/log/slapd } install -d -m 0755 -o s6log -g s6log /var/log/slapd }
-s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${ARGS} /var/log/slapd"
+s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${DIRECTIVES} /var/log/slapd"

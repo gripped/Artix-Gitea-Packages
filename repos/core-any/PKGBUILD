@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openldap-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for openldap"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-openldap')
 conflicts=('init-openldap')
@@ -20,11 +20,11 @@ source=("slapd-log.conf"
         "slapd-srv.producer-for"
         "slapd-srv.run"
         "slapd-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'e4f27669d658f43b7d377286f63f03895410b959260b356190884b527597a4d3'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '4e40f9c43a69fd83638301e276ac19f124e377e20d9da22d5343eb26a75af7cb'
-            '38bde53e0a39667a9dd415df6995df02239f6c248af4787693e53a0234972a63'
+            '9dac99148505f07ec6e11446a3d0e2ba780edf2efee38384d7634ee6ab6a1d09'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '6af1c648c7bb365463cc99eb1be30e0d87fdebf82c39a0315ed59a9a21735c56'
             'f786b3ebf7de2ecedbce67d6d6cef527f496ec3986166e57a76b82280dfeb633'
