@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wpa_supplicant-s6
-pkgver=20200408
+pkgver=20200610
 pkgrel=1
 pkgdesc="s6 service scripts for wpa_supplicant"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org"
 groups=('s6-system')
 provides=('init-wpa_supplicant')
 conflicts=('init-wpa_supplicant')
@@ -23,11 +23,11 @@ source=("wpa_supplicant-log.conf"
         "wpa_supplicant-srv.producer-for"
         "wpa_supplicant-srv.run"
         "wpa_supplicant-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'be779860e4314739d25eaa524a8fb80578b1959ed7add850e3d3ed1c3f094db3'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '05fdfa9f6e9c9ec8c7218f2363b699928f82db9e9527e5506f8c913e235a4647'
-            'b215f5959d38201f034b0253c14dc5a2cf1ef9ff76700ad3c9b4d661b552bc51'
+            '151f20cec2dc022dbc4899184874674ff2c13a2a2665d4a964e072594b7f9c88'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'ad5929875a33aef2bd3a98b32a98a175ce3171daba0e46cf270b12c6b5c5e51a'
             'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
