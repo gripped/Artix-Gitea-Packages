@@ -1,7 +1,5 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=avahi-runit
@@ -18,7 +16,7 @@ depends=('avahi' 'dbus-runit')
 provides=('avahi-runscripts')
 replaces=('avahi-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("avahi-daemon.run::${_url}/avahi/files/avahi-daemon/run")
+source=("avahi-daemon.run")
 sha256sums=('46ea509ae7bab80c1dc5f8c638454bfb6ed2d0de0459e86e0a08826f63b34617')
 
 _inst_logsv() {
