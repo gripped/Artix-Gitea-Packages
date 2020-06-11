@@ -1,4 +1,4 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
 
@@ -18,8 +18,8 @@ depends=('alsa-utils' 'runit')
 provides=('alsa-utils-runscripts')
 replaces=('alsa-utils-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("alsa.run::${_url}/alsa-utils/files/alsa/run"
-        "alsa.finish::${_url}/alsa-utils/files/alsa/finish")
+source=("alsa.run"
+        "alsa.finish")
 sha256sums=('b9f19c950711c45a8205ea52ca731387038a8b957798b73025f35c0656db7474'
             'd00e9ef211c9f11b3ef836c5ee7c6b763cacb426fbd3d9697f03048e55c0c21c')
 
