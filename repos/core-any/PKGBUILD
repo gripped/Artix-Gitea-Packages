@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for elogind"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 depends=('elogind' 'dbus-s6' 's6')
 provides=('init-elogind')
 conflicts=('init-elogind')
@@ -20,11 +20,11 @@ source=("elogind-log.conf"
         "elogind-srv.producer-for"
         "elogind-srv.run"
         "elogind-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '9029a131cb5197da6ed6b58650cdcdb633193df141085fa10ef8e60dc5c665f6'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
-            '18f0d0b57c9211ed3cd86d37de6d4897f71134864aeb378d2399eeeb313d97a1'
+            '85a2e7eece0ae13aa582467bb7e4923f5409be02af16b1730cb2d48cb53b003d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
             'd196672a8e55cb598f0b4245172914bb4c29ccce7eb9f5b14a70578d644e7688'
