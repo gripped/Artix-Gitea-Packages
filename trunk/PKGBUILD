@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=audit-runit
 pkgver=20181212
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for audit"
 arch=('any')
 url="https://github.com/artix-linux"
