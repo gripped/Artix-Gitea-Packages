@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=connman-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for connman"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-galaxy')
 provides=('connman-runscripts')
 conflicts=('connman-runscripts')
@@ -21,11 +21,11 @@ source=("connmand-log.conf"
         "connmand-srv.producer-for"
         "connmand-srv.run"
         "connmand-srv.type")
-sha256sums=('7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'd1bac81e06291cad2378d1b9af2643c1e4df13bb6d66ae46dbbb7eda24fb85e1'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'e04982537052657db87d293f66792a3550a0c4232260907a78af67fb20cba314'
-            '3140d3cce8e202e3cc128ddf3f3f375d18e8143af36771af81ded81c32c27b94'
+            'f00462b3c77216689571b95c99b6a2c29cd03dfafbf85542e946536295fa252e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
             'cc5c1be7e5c0564de98714c256443a236d91017f8eeb4869421cb5a8214fae9e'
