@@ -1,27 +1,34 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dnscrypt-proxy-s6
-pkgver=20200424
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for dnscrypt-proxy"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-galaxy')
 provides=('dnscrypt-proxy-runscripts')
 conflicts=('dnscrypt-proxy-runscripts')
 depends=('dnscrypt-proxy' 's6')
 install=dnscrypt-proxy.install
 backup=('etc/s6/sv/dnscrypt-proxy-log/conf')
-source=("dnscrypt-proxy-srv.run" "dnscrypt-proxy-srv.type" "dnscrypt-proxy-srv.producer-for" "dnscrypt-proxy-log.run" "dnscrypt-proxy-log.type"
-	"dnscrypt-proxy-log.consumer-for" "dnscrypt-proxy-log.pipeline-name" "dnscrypt-proxy-log.notification-fd" "dnscrypt-proxy-log.conf")
+source=("dnscrypt-proxy-srv.run"
+        "dnscrypt-proxy-srv.type"
+        "dnscrypt-proxy-srv.producer-for"
+        "dnscrypt-proxy-log.run"
+        "dnscrypt-proxy-log.type"
+        "dnscrypt-proxy-log.consumer-for"
+        "dnscrypt-proxy-log.pipeline-name"
+        "dnscrypt-proxy-log.notification-fd"
+        "dnscrypt-proxy-log.conf")
 sha256sums=('c2acb408d1fb2423bd66da0157a36b0d63864bfcf5c1051ef8ec019e2cf2b1fe'
-	'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-	'23cfa90c7aa00eb8d0416db5a146400ce0b2ee64c88cc1a91a63ceb0b1171b5f'
-	'c244fff8ae9f052d5ce1500a6010799cb94c6600843394c2773379a0dd9e3fa6'
-	'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-	'7ea7eed981d2afa73beb14ca071dcd5fe6dc5decf37d7331d06b1ac0b22170bd'
-	'36d3652eef921e6448d85259404616018099b435045b7f19f4bb493380b968d2'
-	'1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-	'7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c')
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '23cfa90c7aa00eb8d0416db5a146400ce0b2ee64c88cc1a91a63ceb0b1171b5f'
+            '6cd611216805b07e1e44f65954415a09c93c1a599bbd1d5cfc3635c911566723'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '7ea7eed981d2afa73beb14ca071dcd5fe6dc5decf37d7331d06b1ac0b22170bd'
+            '36d3652eef921e6448d85259404616018099b435045b7f19f4bb493380b968d2'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135')
 _inst_sv(){
     for file in conf consumer-for notification-fd \
         pipeline-name producer-for run type; do
