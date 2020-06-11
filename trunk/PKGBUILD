@@ -1,10 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='at-runit'
+pkgname=at-runit
 pkgver=20180314
 pkgrel=2
 pkgdesc="Runit service script for at"
@@ -18,7 +16,7 @@ groups=('runit-galaxy')
 provides=('at-runscripts')
 replaces=('at-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("at.run::${_url}/at/files/at/run")
+source=("at.run")
 sha256sums=('6db3f1cedfe7d89d08514be052c45a4276b172263a368d3a25c11f97bc6777bb')
 
 _inst_logsv() {
