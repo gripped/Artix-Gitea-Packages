@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20200408
+pkgver=20200611
 pkgrel=1
 pkgdesc="s6 service scripts for lvm2"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/"
 groups=('s6-system')
 provides=('init-lvm2')
 conflicts=('init-lvm2')
@@ -53,22 +53,22 @@ sha256sums=('8f542dc756504210d0bd8927e1fa360a33eb3737ecbbec5c87173fd5b279b8d8'
             '20bceaf1a4811abbc63e724078144a3bd9dd64ea9d1bf1cd86be9993ad784cc7'
             '35ed55525ccbdaf1aae614097939af215c61d516f1f68464f8cd85172ce5da86'
             'ef17b7d320f2acc023f2018dab381827ba22f9d01b6c4c97894e1bbfe4928313'
-            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '5b27d3c028dc93e6fdc97740aec2e87e7f008700c18b6775845182ac62cc60a8'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '24b23e4f88306d08f5be773b23d6196bab7ac9c2e6ba47e7037400053d095e22'
-            'aa124ff997b28c27cff69d7190910db9e6e57d324942866dae5169061e849e6d'
+            'f2627cdf48dccc357a3bf897f07ebbde22a8422582751fc6fdef034b8d64a12d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '84a9dd266b3934166afa3525d84e7191ca051bfeed2a0a706c21a0ee444ed523'
             'b8a1f2ca2c7228b993a8d68c8f46c6918aa10946a290614091b6b2862cb6529a'
             'aff16b256adddccefa98e32fb4cafbdd9f21c5bb58409df8c4bd8d5f4461312f'
             'e3a325d38708d2b5290c471fabe3477015c01c098df288150a3e388a338a81fb'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '7bd1fe2c69a7aab98655c7600e958d8fdb5d0e39603c2e0cef2eb3c0434eb51c'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '68f243df58115bc0028c70c8f73112e6cb59fc6952bdd573d6197a59103d1066'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '581835ea5dbaf989cb156799796501c458d95ccc670e9ed017b6f50809a70409'
-            '1ec1581d2727f46bf0c7b9d2eb142adf412968de13b3d6eb52dc54a24c1436ba'
+            '359e7c93951733921a460bf19098db1bcc8c1db58e5a5cd7ac88b0d2eb586c3c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
             'bce200433ea7072301098ba1f48268d07a0c611554bb95f303f9af3667c5f6ee'
