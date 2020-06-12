@@ -2,8 +2,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=consul
-pkgver=1.7.3
-pkgrel=2
+pkgver=1.7.4
+pkgrel=1
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
 url="https://www.consul.io"
