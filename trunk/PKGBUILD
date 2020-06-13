@@ -1,22 +1,20 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=lvm2-runit
 pkgver=20180514
-pkgrel=5
+pkgrel=6
 pkgdesc="runit service and stage1 scripts for lvm2"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 groups=('runit-system')
 depends=('lvm2' 'runit')
 provides=('lvm2-runscripts' 'init-lvm2')
 conflicts=('init-lvm2')
 replaces=('lvm2-runscripts')
-source=("lvmetad.run::${_url}/lvm2/files/lvmetad/run"
+source=("lvmetad.run"
         "lvm2-monitoring"
         "lvm2")
 sha256sums=('ed490eab75c0ff3e2d9f1802c47478198725e9b16cfd03392f7f03d2d65b6fc2'
