@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='hostapd-runit'
+pkgname=hostapd-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for hostapd"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('hostapd')
 groups=('runit-galaxy')
-provides=('hostapd-runscripts')
-replaces=('hostapd-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("hostapd.run::${_url}/hostapd/files/hostapd/run")
+source=("hostapd.run")
 sha256sums=('1c42d40e94b3dc91ee2a77672fd360503ff9ea988fcec6a46e21a7da6921e774')
 
 _inst_logsv() {
