@@ -5,8 +5,8 @@
 # Contributor: Ben <ben@benmazer.net>
 
 pkgname=mpd
-pkgver=0.21.23
-pkgrel=4
+pkgver=0.21.24
+pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='https://www.musicpd.org/'
 license=('GPL')
@@ -14,16 +14,17 @@ arch=('x86_64')
 depends=('audiofile' 'avahi' 'curl' 'faad2' 'ffmpeg' 'fluidsynth'
 	 'icu' 'jack' 'libao' 'libcdio-paranoia' 'libgme' 'libid3tag' 'libmad'
 	 'libmikmod' 'libmms' 'libmodplug' 'libmpcdec' 'libmpdclient' 'libnfs'
-	 'libsamplerate' 'libshout' 'libsoxr' 'libvorbis' 'libupnp' 'mpg123'
-	 'openal' 'smbclient' 'sqlite' 'twolame' 'wavpack' 'wildmidi' 'yajl' 'zziplib')
-makedepends=('boost' 'meson' 'python-sphinx' 'zziplib')
+	 'libsamplerate' 'libshout' 'libsoxr' 'libvorbis'
+	 'libupnp' 'mpg123' 'openal' 'smbclient' 'sqlite' 'twolame' 'wavpack'
+	 'wildmidi' 'yajl' 'zziplib')
+makedepends=('boost' 'meson' 'python-sphinx')
 validpgpkeys=('0392335A78083894A4301C43236E8A58C6DB4512')
 #source=("https://www.musicpd.org/download/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.xz"{,.sig}
 source=("https://www.musicpd.org/download/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"{,.sig}
         'tmpfiles.d'
         'sysusers.d'
         'conf')
-sha256sums=('439f522ca9800f375e4fb459ec31e61b3d824fc5c0580ff06dac48b5d21207a3'
+sha256sums=('84632a7e82e672b3a6d71651a75d05fb7acd62645c33e3f3af5a1067cfa64cd6'
             'SKIP'
             '2faa85c12449a5b3ca422ff1c1fa06d057c7e262a74bfa6298c914a92d6f2e7a'
             '0b74c6e5db08daab3091dc15a6b0c75210ba2f9e98fa074f6cfd605a461056b6'
@@ -36,7 +37,6 @@ prepare() {
 	rm -fr build
 	install -d build
 }
-
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}/build"
