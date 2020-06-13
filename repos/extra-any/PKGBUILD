@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=networkmanager-runit
 pkgver=20180226
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for networkmanager"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('networkmanager' 'dbus-runit')
-provides=('networkmanager-runscripts')
-replaces=('networkmanager-runscripts')
 conflicts=('systemd-sysvcompat' 'networkmanager-consolekit')
-source=("NetworkManager.run::${_url}/NetworkManager/files/NetworkManager/run")
+source=("NetworkManager.run")
 sha256sums=('bd313b32a68a7938950b104470e0240758a9538111029c11994355db0c2705e9')
 
 _inst_logsv() {
