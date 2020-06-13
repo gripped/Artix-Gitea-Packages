@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=mdadm-runit
 pkgver=20180429
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for mdadm"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -16,7 +14,7 @@ depends=('mdadm' 'runit')
 provides=('mdadm-runscripts' 'init-mdadm')
 conflicts=('init-mdadm')
 replaces=('mdadm-runscripts')
-source=("mdadm.run::${_url}/mdadm/files/mdadm/run")
+source=("mdadm.run")
 sha256sums=('651ab1a6b9a643bfd725c43cbac28cf0299d9b9caaf583f3c33787b48e2c86d7')
 
 _inst_sv(){
