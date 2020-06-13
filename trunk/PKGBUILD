@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='docker-runit'
+pkgname=docker-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for docker"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -20,7 +18,7 @@ replaces=('docker-runscripts')
 conflicts=('systemd-sysvcompat')
 source=("docker.run::${_url}/docker/files/docker/run"
         "logdocker.run::${_url}/docker/files/docker/log/run")
-sha256sums=('6043901d86026383e024a61563ae1fb683b82836a4d29670ed79a2022176342e'
+sha256sums=('27f9446c839f4ec868e1fbee548767ec5a85327d1174d4672758d4c93cfc6dd5'
             '172109457d290780c41cba205c232e4851aaa894e76538890115885b70cf1e0b')
 
 _inst_logsv() {
