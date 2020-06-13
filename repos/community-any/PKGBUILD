@@ -1,12 +1,10 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
-
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='jenkins-runit'
-pkgver=20180314
-pkgrel=2
+pkgname=jenkins-runit
+pkgver=20200613
+pkgrel=1
 pkgdesc="Runit service script for jenkins"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,11 +13,9 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('jenkins')
 groups=('runit-galaxy')
-provides=('jenkins-runscripts')
-replaces=('jenkins-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("jenkins.run::${_url}/jenkins/files/jenkins/run")
-sha256sums=('5d2c6d28d292c2dbc5cfa898add9ec9c10fa92cd8ce3b678b431feb5afc868e5')
+source=("jenkins.run")
+sha256sums=('67cfd06499b6ef62ceb256c0d6955c91cf28ae9e0fbd8e8c0c2469c4e7586733')
 
 _inst_logsv() {
     for file in run finish check; do
