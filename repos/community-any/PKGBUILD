@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='connman-runit'
+pkgname=connman-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for connman"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -18,8 +16,8 @@ groups=('runit-galaxy')
 provides=('connman-runscripts')
 replaces=('connman-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("connmand.run::${_url}/connman/files/connmand/run")
-sha256sums=('93733b084fc27c708679716e4ee5253c8b74ceb70b214cc28a91cf0fa9943e25')
+source=("connmand.run")
+sha256sums=('1b06eee193dc07505277bfbb9a4fa986225b4249bb73bbdfa14c96ffe1cfc31a')
 
 _inst_logsv() {
     for file in run finish check; do
