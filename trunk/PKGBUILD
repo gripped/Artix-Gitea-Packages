@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=cups-runit
 pkgver=20180226
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for cups"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('cups' 'dbus-runit')
-provides=('cups-runscripts')
-replaces=('cups-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("cupsd.run::${_url}/cups/files/cupsd/run")
+source=("cupsd.run")
 sha256sums=('1db6a12394ff0555409207e282e496ab5a4e3b79567bdc66ee03aade75928375')
 
 _inst_logsv() {
