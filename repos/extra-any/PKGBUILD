@@ -1,25 +1,21 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=mpd-runit
-pkgver=20180226
+pkgver=20200613
 pkgrel=1
 pkgdesc="runit service scripts for mpd"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('mpd')
-provides=('mpd-runscripts')
-replaces=('mpd-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("mpd.run::${_url}/mpd/files/mpd/run")
-sha256sums=('0a3f2733ad9982d5ac362e9d6440efcac810ac529670459537e0d46f0e2c03cd')
+source=("mpd.run")
+sha256sums=('20aad2fffd95234c41ab6c3d6aa4768569789b546614d54105585a910cc21678')
 
 _inst_logsv() {
     for file in run finish check; do
