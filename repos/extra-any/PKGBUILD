@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=dnsmasq-runit
 pkgver=20180226
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for dnsmasq"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -18,7 +16,7 @@ depends=('dnsmasq')
 provides=('dnsmasq-runscripts')
 replaces=('dnsmasq-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("dnsmasq.run::${_url}/dnsmasq/files/dnsmasq/run")
+source=("dnsmasq.run")
 sha256sums=('535c6160055b3a3aef6ddf9aae763bedc2afcbd1f113986a195f225f629d558c')
 
 _inst_logsv() {
