@@ -1,24 +1,20 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='fwknop-runit'
+pkgname=fwknop-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for fwknop"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('fwknop')
 groups=('runit-galaxy')
-provides=('fwknop-runscripts')
-replaces=('fwknop-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("fwknopd.run::${_url}/fwknop/files/fwknopd/run")
+source=("fwknopd.run")
 sha256sums=('eb98eb062122a0ae15f6ca070466b0c8da1cb4582fc4f9b07ccb9779af7125bb')
 
 _inst_logsv() {
