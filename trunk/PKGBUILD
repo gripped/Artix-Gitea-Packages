@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='espeakup-runit'
+pkgname=espeakup-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for espeakup"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('espeakup')
 groups=('runit-galaxy')
-provides=('espeakup-runscripts')
-replaces=('espeakup-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("espeakup.run::${_url}/espeakup/files/espeakup/run")
+source=("espeakup.run")
 sha256sums=('f30855ddbdec2ce512388a849900d76817013125b82325f6b0b6c68699d4fc9a')
 
 _inst_logsv() {
