@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='dovecot-runit'
+pkgname=dovecot-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for dovecot"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,8 +13,6 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('dovecot')
 groups=('runit-galaxy')
-provides=('dovecot-runscripts')
-replaces=('dovecot-runscripts')
 conflicts=('systemd-sysvcompat')
 source=("dovecot.run::${_url}/dovecot/files/dovecot/run")
 sha256sums=('456a533453bc6349d72907a478ed3d01c0c37ec74e7f5683953507ca9a7c1b57')
