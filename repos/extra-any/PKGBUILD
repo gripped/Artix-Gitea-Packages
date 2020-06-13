@@ -1,11 +1,9 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=lighttpd-runit
-pkgver=20180226
+pkgver=20200613
 pkgrel=1
 pkgdesc="runit service scripts for lighttpd"
 arch=('any')
@@ -15,11 +13,9 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('lighttpd')
-provides=('lighttpd-runscripts')
-replaces=('lighttpd-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("lighttpd.run::${_url}/lighttpd/files/lighttpd/run")
-sha256sums=('6dfb73bb657cf7f52eddcd4cfd7f81ef6d339b110167e5f3ffd380be2c225a8b')
+source=("lighttpd.run")
+sha256sums=('1603defa096c498fd0eac842712187e9ab0f591818080c9515298b5b2dad9106')
 
 _inst_logsv() {
     for file in run finish check; do
