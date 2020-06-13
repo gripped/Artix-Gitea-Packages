@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='fcron-runit'
+pkgname=fcron-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for fcron"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -18,7 +16,7 @@ groups=('runit-galaxy')
 provides=('fcron-runscripts' 'runit-cron')
 replaces=('fcron-runscripts')
 conflicts=('systemd-sysvcompat' 'cronie' 'cronie-runit')
-source=("fcron.run::${_url}/fcron/files/fcron/run")
+source=("fcron.run")
 sha256sums=('ee2153404bcfe8b1d284bd0f9d4e74de778964f10bbab97bf7b960dd7daf0e10')
 
 _inst_logsv() {
