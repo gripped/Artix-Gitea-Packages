@@ -1,6 +1,6 @@
 # Contributor: Nathan Owens <ndowens@artixlinux.org>
 pkgname=chrony-openrc
-pkgver=20200520
+pkgver=20200613
 pkgrel=1
 pkgdesc="${pkgname/-openrc//} OpenRC init"
 arch=('any')
@@ -26,6 +26,9 @@ _inst_initd(){
 
 _inst_confd(){
     install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
+    sed -e 's|/etc/chrony|/etc|' \
+        -e 's|STARTUP=no|STARTUP=yes|' \
+        -i ${pkgdir}/etc/conf.d/$1
 }
 
 package() {
