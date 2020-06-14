@@ -1,22 +1,20 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=openldap-runit
 pkgver=20180429
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for openldap"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 groups=('runit-system')
 depends=('openldap' 'runit')
 provides=('openldap-runscripts' 'init-openldap')
 conflicts=('init-openldap')
 replaces=('openldap-runscripts')
-source=("slapd.run::${_url}/openldap/files/slapd/run")
+source=("slapd.run")
 sha256sums=('4ebf5766b9847f3e4a83cb34f95d61a8bc5874be1ed818f4ca39ad4424d03c02')
 
 _inst_sv(){
