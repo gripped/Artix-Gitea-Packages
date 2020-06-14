@@ -1,22 +1,20 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=pcsclite-runit
 pkgver=20190202
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for pcsclite"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('pcsclite')
 groups=('runit-galaxy')
 conflicts=('systemd-sysvcompat')
-source=("pcscd.run::${_url}/pcsclite/files/pcscd/run")
+source=("pcscd.run")
 sha256sums=('9dab79ad0136c0c648e8b9078e57d5619f31033533d03b43b9c837c7085eecad')
 
 _inst_logsv() {
