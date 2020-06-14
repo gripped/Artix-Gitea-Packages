@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='vnstat-runit'
+pkgname=vnstat-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for vnstat"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('vnstat')
 groups=('runit-galaxy')
-provides=('vnstat-runscripts')
-replaces=('vnstat-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("vnstatd.run::${_url}/vnstat/files/vnstatd/run")
+source=("vnstatd.run")
 sha256sums=('31911b3ae4dec76c0c36b7a6998e53b77f00cfa9a3ec8548033b284746385b36')
 
 _inst_logsv() {
