@@ -1,24 +1,20 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='squid-runit'
+pkgname=squid-runit
 pkgver=20180314
 pkgrel=2
 pkgdesc="Runit service script for squid"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('squid')
 groups=('runit-galaxy')
-provides=('squid-runscripts')
-replaces=('squid-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("squid.run::${_url}/squid/files/squid/run")
+source=("squid.run")
 sha256sums=('ae62bcc33fd7fa91aaca0eb709932c8b3add5a279ac82dd43cfbb711bdb198dd')
 
 _inst_logsv() {
