@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=syncthing-relaysrv-runit
 pkgver=20190202
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for syncthing-relaysrv"
 arch=('any')
 url="https://gitea.artixlinux.org"
