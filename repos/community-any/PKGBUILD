@@ -1,24 +1,22 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='unbound-runit'
+pkgname=unbound-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for unbound"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('unbound')
 groups=('runit-galaxy')
-provides=('unbound-runscripts')
-replaces=('unbound-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("unbound.run::${_url}/unbound/files/unbound/run")
+source=("unbound.run")
 sha256sums=('8f2c35264b758ef13bd19e68ba5d40fb81e524e1614499669a0a9067c2ecba30')
 
 _inst_logsv() {
