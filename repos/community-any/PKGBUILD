@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='thermald-runit'
+pkgname=thermald-runit
 pkgver=20180314
-pkgrel=2 # rebuild
+pkgrel=3
 pkgdesc="Runit service script for thermald"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('thermald' 'dbus-runit')
 groups=('runit-galaxy')
-provides=('thermald-runscripts')
-replaces=('thermald-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("thermald.run::${_url}/thermald/files/thermald/run")
+source=("thermald.run")
 sha256sums=('35d65b0576f9a484e95c32a1bdd2fe0e31cd63009dcb36b418f678d4ed102b47')
 
 _inst_logsv() {
