@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='vsftpd-runit'
-pkgver=20180314
-pkgrel=2
+pkgname=vsftpd-runit
+pkgver=20200614
+pkgrel=1
 pkgdesc="Runit service script for vsftpd"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,13 +13,11 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('vsftpd')
 groups=('runit-galaxy')
-provides=('vsftpd-runscripts')
-replaces=('vsftpd-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("vsftpd.run::${_url}/vsftpd/files/vsftpd/run"
-        "vsftpd-ipv6.run::${_url}/vsftpd/files/vsftpd-ipv6/run")
-sha256sums=('7eeafe0e92918c7595333d346ba1bece66a33364b843bbf8015ae607a22e47f2'
-            '15fb0087aa68201b46cd80a94523e1912094b426e265e26b1f25373c38d2146d')
+source=("vsftpd.run"
+        "vsftpd-ipv6.run")
+sha256sums=('e9f6754d2717946b5a0072fa4469684c3091161ccc70403e1ef240c98f5c38d2'
+            'e2804bc64dd4bbf7fda2203f57196dbd9d3cae721506eb59c3e59f9175625ff9')
 
 _inst_logsv() {
     for file in run finish check; do
