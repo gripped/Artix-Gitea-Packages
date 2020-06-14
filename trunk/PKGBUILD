@@ -1,27 +1,25 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='ufw-runit'
-pkgver=20180314
-pkgrel=2
+pkgname=ufw-runit
+pkgver=20200614
+pkgrel=1
 pkgdesc="Runit service script for ufw"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('ufw')
 groups=('runit-galaxy')
-provides=('ufw-runscripts')
-replaces=('ufw-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("ufw.run::${_url}/ufw/files/ufw/run"
-        "ufw.finish::${_url}/ufw/files/ufw/finish")
-sha256sums=('c6bbf1ec4d6c76b35fa481994bc0da1898d7d3a869d8406c4ab562db0212133d'
-            '60157d1a20cfbbe22b23b2f6f2307435ef1684cb3e2ccad04926c22f8d4d7ba9')
+source=("ufw.run"
+        "ufw.finish")
+sha256sums=('30a427d380dde4e7d10ec6a14303b02e28af85f3817785d8a9938d96ac25e949'
+            '2ab02f56ca98a14573145cf46dbb5152ed45599d1bb434d0795164b7ccf02a32')
 
 _inst_logsv() {
     for file in run finish check; do
