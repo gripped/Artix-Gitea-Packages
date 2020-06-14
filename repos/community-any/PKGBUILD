@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='znc-runit'
-pkgver=20180314
-pkgrel=2
+pkgname=znc-runit
+pkgver=20200614
+pkgrel=1
 pkgdesc="Runit service script for znc"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,11 +13,9 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('znc')
 groups=('runit-galaxy')
-provides=('znc-runscripts')
-replaces=('znc-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("znc.run::${_url}/znc/files/znc/run")
-sha256sums=('40d30177e03f43f7580188e801f91e79c4c30fba032c084322b26eb9c21dfd4e')
+source=("znc.run")
+sha256sums=('ad40a43e00c9a1c2892d8d3394ae4b8dde078f20e1cd10e7dbd38ecaea1ef9dc')
 
 _inst_logsv() {
     for file in run finish check; do
