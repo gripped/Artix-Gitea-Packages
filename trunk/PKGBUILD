@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='rng-tools-runit'
+pkgname=rng-tools-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for rng-tools"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,10 +13,8 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('rng-tools')
 groups=('runit-galaxy')
-provides=('rng-tools-runscripts')
-replaces=('rng-tools-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("rngd.run::${_url}/rng-tools/files/rngd/run")
+source=("rngd.run")
 sha256sums=('71f137d16c1ac4c87c4b8d623f27dbfe247bfee35321fc314b8e9f786492987a')
 
 _inst_logsv() {
