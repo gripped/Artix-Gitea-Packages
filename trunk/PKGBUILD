@@ -1,22 +1,18 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='openntpd-runit'
+pkgname=openntpd-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for openntpd"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('openntpd')
 groups=('runit-galaxy')
-provides=('openntpd-runscripts')
-replaces=('openntpd-runscripts')
 conflicts=('systemd-sysvcompat' 'ntp' 'ntp-runit')
 source=("openntpd.run::${_url}/openntpd/files/openntpd/run"
         "logopenntpd.run::${_url}/openntpd/files/openntpd/log/run")
