@@ -1,25 +1,21 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='redis-runit'
-pkgver=20180314
-pkgrel=2
+pkgname=redis-runit
+pkgver=20200614
+pkgrel=1
 pkgdesc="Runit service script for redis"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('redis')
 groups=('runit-galaxy')
-provides=('redis-runscripts')
-replaces=('redis-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("redis.run::${_url}/redis/files/redis/run")
-sha256sums=('cb9b177b3995fbc66d709af843876c699f834805853940f964b34cbb1edd2301')
+source=("redis.run")
+sha256sums=('a7146c833535888519c1ab52428076389563a4594e1edb2f61f4ba6dd0ce026f')
 
 _inst_logsv() {
     for file in run finish check; do
