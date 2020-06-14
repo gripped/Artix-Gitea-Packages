@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='privoxy-runit'
+pkgname=privoxy-runit
 pkgver=20180314
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for privoxy"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -15,11 +13,9 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 depends=('privoxy')
 groups=('runit-galaxy')
-provides=('privoxy-runscripts')
-replaces=('privoxy-runscripts')
-conflicts=('systemd-sysvcompat' 'ntp' 'ntp-runit')
-source=("privoxy.run::${_url}/privoxy/files/privoxy/run"
-        "logprivoxy.run::${_url}/privoxy/files/privoxy/log/run")
+conflicts=('systemd-sysvcompat')
+source=("privoxy.run"
+        "logprivoxy.run")
 sha256sums=('5cb2368923b02c24d89a3a60ee5ebca41dfe60c975129d220f2f792529cc5731'
             'bc71f18b949e684213fd29096ba176accdca3213769d88e5daea638cabf5a316')
 
