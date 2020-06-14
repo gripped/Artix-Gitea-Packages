@@ -1,12 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=strongswan-runit
 pkgver=20200425
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for strongswan"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -16,7 +14,7 @@ license=('BSD3')
 depends=('strongswan')
 groups=('runit-galaxy')
 conflicts=('systemd-sysvcompat')
-source=("strongswan.run::${_url}/strongswan/files/strongswan/run")
+source=("strongswan.run")
 sha256sums=('e5519ca41b57b5ee19cda98f18ba4c7b0f29718623a79df504dc01c8da5cae83')
 
 _inst_logsv() {
