@@ -1,11 +1,9 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=subversion-runit
-pkgver=20180226
+pkgver=20200614
 pkgrel=1
 pkgdesc="runit service scripts for subversion"
 arch=('any')
@@ -15,11 +13,9 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('subversion')
-provides=('subversion-runscripts')
-replaces=('subversion-runscripts')
 conflicts=('systemd-sysvcompat')
-source=("svnserve.run::${_url}/subversion/files/svnserve/run")
-sha256sums=('4cc8012d96cb34536e7f372da55f61c3d38684189616c40cba16581ad286fa44')
+source=("svnserve.run")
+sha256sums=('8559d8ad83cf3ffcaff8090aeeeafd402349b7bbcc26a625e4306d5b2f7dbe74')
 
 _inst_logsv() {
     for file in run finish check; do
