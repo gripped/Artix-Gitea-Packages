@@ -1,7 +1,5 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=xinetd-runit
@@ -16,7 +14,7 @@ depends=('xinetd' 'runit')
 provides=('xinetd-runscripts' 'init-xinetd')
 replaces=('xinetd-runscripts')
 conflicts=('init-xinetd')
-source=("xinetd.run::${_url}/xinetd/files/xinetd/run")
+source=("xinetd.run")
 sha256sums=('abade658564cfb5f7ed9d343be80a33195df632e82577a6574b45804ab9b7b5b')
 
 _inst_sv(){
