@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20200611
+pkgver=20200613
 pkgrel=1
 pkgdesc="s6 service scripts for clamav"
 arch=('any')
@@ -39,7 +39,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '19159c6a4b0ae8c9fd18ef92940ed12d51aa1659bc4352f62b8324d15cc8a60a'
             '1356f3a30da24652e32b02fcf9cebc6d140ef88d49f52602e33c224caeff1a02'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '1e6a23421ac56a71151c8ba752d301b645f4cd62399326a2ad7305952aee4c93'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '0fda583192cbb614384ded60f43dce28211b3429fd449f7fac52d5f3463ae9f1'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'f5c9b34d17e9cd46da94951346156ff8167a75cfddfed8e06be98cae52d1c1a1'
