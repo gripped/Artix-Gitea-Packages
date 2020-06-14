@@ -1,7 +1,5 @@
 #!/usr/bin/execlineb -P
-envfile /etc/s6/s6.conf
-importas -iu DIRECTIVE DIRECTIVE
-backtick -n ARGS { pipeline { echo $DIRECTIVE } sed "s/_/ /g" }
-importas -iu ARGS ARGS
+envfile /etc/s6/sv/lvm2-pvscan/conf
+importas -iu DIRECTIVES DIRECTIVES
 foreground { if -n -t { test -d /var/log/lvm2-pvscan } install -d -m 0755 -o s6log -g s6log /var/log/lvm2-pvscan }
-pipeline { fdmove -c 2 1 pvscan --cache --activate ay } s6-setuidgid s6log sh -c "s6-log -b ${ARGS} /var/log/lvm2-pvscan"
+pipeline { fdmove -c 2 1 pvscan --cache --activate ay } s6-setuidgid s6log sh -c "s6-log -b ${DIRECTIVES} /var/log/lvm2-pvscan"

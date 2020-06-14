@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20200611
+pkgver=20200613
 pkgrel=1
 pkgdesc="s6 service scripts for lvm2"
 arch=('any')
@@ -10,12 +10,16 @@ provides=('init-lvm2')
 conflicts=('init-lvm2')
 depends=('lvm2' 's6')
 install=lvm2.install
-backup=('etc/s6/sv/lvmetad-log/conf'
+backup=('etc/s6/sv/lvm2-monitor/conf'
+        'etc/s6/sv/lvm2-pvscan/conf'
+        'etc/s6/sv/lvmetad-log/conf'
         'etc/s6/sv/lvmpolld-log/conf')
-source=("lvm2-monitor.dependencies"
+source=("lvm2-monitor.conf"
+        "lvm2-monitor.dependencies"
         "lvm2-monitor.down"
         "lvm2-monitor.type"
         "lvm2-monitor.up"
+        "lvm2-pvscan.conf"
         "lvm2-pvscan.dependencies"
         "lvm2-pvscan.down"
         "lvm2-pvscan.type"
@@ -43,14 +47,16 @@ source=("lvm2-monitor.dependencies"
         "lvmpolld-srv.producer-for"
         "lvmpolld-srv.run"
         "lvmpolld-srv.type")
-sha256sums=('8f542dc756504210d0bd8927e1fa360a33eb3737ecbbec5c87173fd5b279b8d8'
-            '9efed427305b2228ebb98578814d712f79aa10774a1c8d67796930246042585e'
-            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '83db1bf0a6b5846358ca5b3970bca6a6ac43f426a66b5c2d562f5a502f1b1c67'
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '8f542dc756504210d0bd8927e1fa360a33eb3737ecbbec5c87173fd5b279b8d8'
-            'a82981d593aebcb00caaef2a4cf6b2678a0447e5c519b10330628e5cdd7b86c0'
+            'cd757002eb53bca44db4f5bb2eda0b8938ca1bab4a01d5a8288e4146761dfc62'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '20bceaf1a4811abbc63e724078144a3bd9dd64ea9d1bf1cd86be9993ad784cc7'
+            '381357f0b7706e1e8be938c3de809c716beba18849ddb3d5a4fad9b74cb4d82e'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '8f542dc756504210d0bd8927e1fa360a33eb3737ecbbec5c87173fd5b279b8d8'
+            'af3069c313c50b48cad17f65b32f61eae946481556f116efcf64f4e6cd88cce2'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '412e6ec2f52c048672aaec80b9d6f6c990c233e65d35df41ae86cdfb8a12297c'
             '35ed55525ccbdaf1aae614097939af215c61d516f1f68464f8cd85172ce5da86'
             'ef17b7d320f2acc023f2018dab381827ba22f9d01b6c4c97894e1bbfe4928313'
             '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
