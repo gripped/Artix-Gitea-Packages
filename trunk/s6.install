@@ -1,5 +1,0 @@
-post_upgrade() {
-	echo "The s6log user/group has been moved to opensysusers!"
-	echo "You may need to readd any users to the s6log group."
-	echo "You man run 'chown root:root /var/log' to remove the unneeded s6log ownership of /var/log."
-}
