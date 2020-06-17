@@ -9,7 +9,7 @@ url='http://www.littlecms.com/'
 license=('MIT')
 depends=('libtiff')
 provides=('liblcms2.so')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/mm2/Little-CMS/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
+source=("https://netix.dl.sourceforge.net/project/lcms/lcms/${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('478c9c3938d7a91b1171de4616f8b04308a8676d73eadc19505b7ace41327f28')
 
 build() {
