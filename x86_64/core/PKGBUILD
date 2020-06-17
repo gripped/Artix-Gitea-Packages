@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
-pkgver=1.0.4.0
-pkgrel=2
+pkgver=1.0.4.1
+pkgrel=1
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
@@ -17,7 +17,7 @@ source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "rc.shutdown"
         "rc.shutdown.final"
         "runlevel")
-sha256sums=('de7937499e787a5d06f412962b57774d9dabfb38bb19e3ab59cf5cdaf17cd59c'
+sha256sums=('0d02355b4febda5ac830237ab60ea17355d6e13a9b5385c08e336cfc27ae54b2'
             '0e9cfda4e290314760b8d0915251e11d373e1a57851e9f68770d7d0f1f5bca44'
             '900f823893bc20e4409a9cb2f2a85275bff6b4d2778d62f66bdabbe03ee17295'
             '524df97d15ea7cbcd885dd9a2e5af1f6411c41614e5c8125807412cc2e07c65a'
