@@ -5,8 +5,8 @@
 
 pkgname=('rust' 'lib32-rust-libs' 'rust-docs')
 epoch=1
-pkgver=1.44.0
-pkgrel=2
+pkgver=1.44.1
+pkgrel=1
 
 _llvm_ver=10.0.0
 
@@ -77,6 +77,18 @@ build() {
 
   python ./x.py dist -j "$(nproc)"
   DESTDIR="$PWD"/dest-rust python ./x.py install -j "$(nproc)"
+
+  # Remove analysis data for libs that weren't installed
+  # TODO: Find out where these come from
+  local file lib
+  while read -rd '' file; do
+    lib="${file%.json}.rlib"
+    lib="${lib/\/analysis\///lib/}"
+    if [[ ! -e $lib ]]; then
+      echo "missing '$lib'"
+      rm -v "$file"
+    fi
+  done < <(find "dest-rust/usr/lib/rustlib"  -path '*/analysis/*.json' -print0)
 
   # move docs and lib32 libs out of the way for splitting
   mv dest-rust/usr/lib/rustlib/i686-unknown-linux-gnu dest-i686
