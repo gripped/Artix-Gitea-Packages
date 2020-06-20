@@ -5,7 +5,7 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=at-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC at init script"
 arch=('any')
@@ -19,10 +19,6 @@ source=("atd.confd::${_url}/sys-process/at/files/atd.confd"
         "atd.initd::${_url}/sys-process/at/files/atd.rc8")
 sha256sums=('ece01506efa6d73d7cbe9bc1da6eb1afc4d63451ab1fccf5051178b6e937d68e'
             '115f3be9cfd306251909ca7fc2dbc55ca71f6f38a3ebb62d9a428a9eddcd8ffb')
-
-# pkgver() {
-#     date +%Y%m%d
-# }
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
