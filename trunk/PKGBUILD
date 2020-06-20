@@ -2,40 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=at-openrc
 pkgver=20200620
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC at init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'at')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/atd')
-source=("atd.confd::${_url}/sys-process/at/files/atd.confd"
-        "atd.initd::${_url}/sys-process/at/files/atd.rc8")
-sha256sums=('ece01506efa6d73d7cbe9bc1da6eb1afc4d63451ab1fccf5051178b6e937d68e'
-            '115f3be9cfd306251909ca7fc2dbc55ca71f6f38a3ebb62d9a428a9eddcd8ffb')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-    sed -e 's|/var/run|/run|g' \
-        -i "${pkgdir}/etc/conf.d/$1"
-}
+source=("atd.confd"
+        "atd.initd")
+sha256sums=('ab023e245103b6e0786ad1888143fdb87933ff5937114ac086f0616d6b620c02'
+            '1bc565e71a068785c1db691c81b396ee6df22f0a1b5fa2b70e43e60ba1a335a5')
 
 package() {
-    _inst_confd 'atd'
-    _inst_initd 'atd'
+    install -Dm755 "${srcdir}/atd.initd" -t "${pkgdir}/etc/init.d"
+    install -Dm755 "${srcdir}/atd.confd" -t "${pkgdir}/etc/conf.d"
 }
