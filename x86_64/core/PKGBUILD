@@ -1,45 +1,24 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=krb5-openrc
-pkgver=20180216
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC krb5 init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('openrc' 'krb5')
 conflicts=('systemd-sysvcompat')
-source=("krb5kadmind.initd::${_url}/app-crypt/mit-krb5/files/mit-krb5kadmind.initd-r2"
-        "krb5kdc.initd::${_url}/app-crypt/mit-krb5/files/mit-krb5kdc.initd-r2"
-        "krb5kpropd.initd::${_url}/app-crypt/mit-krb5/files/mit-krb5kpropd.initd-r2")
-sha256sums=('0b3b5bcfdb5010d20e3d4457f4128a4fb9f2d91261bfcf489601b1c714f9d815'
-            '30572eeec9013fbfb6170f2b0bd1016582d2664268e4019fa8e2edd41e52919d'
-            'bf8539b70561d9eb495f55141a5295a8c2e8246af4d1990af94e98be952dcdf9')
-
-pkgver() {
-    date +%Y%m%d
-}
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e 's|mit-krb5kdc|krb5kdc|g' \
-        -e 's|mit-krb5kadmind|krb5kadmind|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("krb5kadmind.initd"
+        "krb5kdc.initd"
+        "krb5kpropd.initd")
+sha256sums=('0fbe7d615394477503de5801a2b225c5ccbae255aef601a17b91a7c262648864'
+            '09f9599c63100d47e00f2fa76f21f5c1031b1b2358aaa51251599be9eb1fa9cc'
+            '3d30d8c1d5d1e4b4dd254ef7699315ca5b0cb542f0434c33d9b1b6a50b950a85')
 
 package() {
     for f in krb5kadmind krb5kdc krb5kpropd;do
-        _inst_initd $f
+        install -Dm755 ${srcdir}/$f.initd ${pkgdir}/etc/init.d/$f
     done
 }
