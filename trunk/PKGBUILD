@@ -11,7 +11,7 @@ license=(GPL)
 depends=(glib2)
 makedepends=(git meson)
 _commit=54cec012921e52eb66b6ee1a1f40f2e9c9849f7c  # tags/0.26
-source=("git+https://gitlab.freedesktop.org/xdg/desktop-file-utils.git#commit=$_commit"
+source=("dfu::git+https://gitlab.freedesktop.org/xdg/desktop-file-utils.git#commit=$_commit"
         update-desktop-database.hook)
 sha256sums=('SKIP'
             '501f1eb35d9fbbd61666f40302b0ce63425299edf023c075986a24dc3ef18575')
@@ -23,6 +23,7 @@ pkgver() {
 }
 
 prepare() {
+  mv dfu $pkgname
   cd $pkgname
 }
 
