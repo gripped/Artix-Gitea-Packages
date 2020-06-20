@@ -23,4 +23,5 @@ Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
 Server = http://mirrors.redcorelinux.org/artixlinux/$repo/os/$arch
 Server = https://eu-mirror.artixlinux.org/repos/$repo/os/$arch
 Server = https://us-mirror.artixlinux.org/$repo/os/$arch
+Server = https://mirror.maakpain.kro.kr/artix/$repo/os/$arch
 Server = http://mirror1.artixlinux.org/repos/$repo/os/$arch
