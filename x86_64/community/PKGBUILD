@@ -2,43 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=ufw-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC ufw init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'ufw')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/ufw')
-source=("ufw.confd::${_url}/net-firewall/ufw/files/ufw.confd"
-        "ufw.initd::${_url}/net-firewall/ufw/files/ufw-2.initd")
+source=("ufw.confd"
+        "ufw.initd")
 sha256sums=('069aa7382b40aecebf26ef53f3f4c49890314e0357925c84b3c15f1d0b913be0'
-            '7d668989a96d47cb5a9f71ae2e6000b469be6d1786f9cf3809b28461d42308ea')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e 's|/usr/share/ufw/ufw-init-functions|/usr/lib/ufw/ufw-init-functions|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            'e38c22a3ea0c977f857fcc4e10b4015e9ede745bb2fa700be20272b0cfd2effc')
 
 package() {
-    _inst_confd 'ufw'
-    _inst_initd 'ufw'
+    install -Dm755 "$srcdir/ufw.initd" "$pkgdir/etc/init.d/ufw"
+    install -Dm644 "$srcdir/ufw.confd" "$pkgdir/etc/conf.d/ufw"
 }
