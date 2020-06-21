@@ -1,4 +1,5 @@
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+#
 
 pkgname='perl-types-serialiser'
 pkgver=1.0
