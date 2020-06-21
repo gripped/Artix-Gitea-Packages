@@ -1,0 +1,13 @@
+#!/usr/bin/openrc-run
+# Copyright 1999-2019 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+command="/usr/bin/sshguard"
+pidfile="${SSHGUARD_PIDFILE:-/run/${SVCNAME}.pid}"
+command_args="-i \"${pidfile}\" ${SSHGUARD_OPTS}"
+start_stop_daemon_args="--background --wait ${SSHGUARD_WAIT:-999} --interpreted --quiet"
+
+depend() {
+	after iptables
+	use logger
+}
