@@ -2,42 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=unbound-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC unbound init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'unbound')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/unbound')
-source=("unbound.confd::${_url}/net-dns/unbound/files/unbound.confd"
-        "unbound.initd::${_url}/net-dns/unbound/files/unbound.initd")
-sha256sums=('7da812ef83f8f8b9351363525ab6bebd5348faed76d0ae424dcbd7cb6a830dfd'
-            'fe18b49ea3c50bf17343581599953dac1cc190d1ea9aab1e69eab0b295420c76')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("unbound.confd"
+        "unbound.initd")
+sha256sums=('7be43d80f0caf6448048a0278615617e0eaffd2e8e23468576149af8cece465f'
+            'cb40465590249b9fe14e435944ce308ba1adf5853dfd8f90080232155a82144c')
 
 package() {
-    _inst_confd 'unbound'
-    _inst_initd 'unbound'
+    install -Dm755 "$srcdir/unbound.initd" "$pkgdir/etc/init.d/unbound"
+    install -Dm644 "$srcdir/unbound.confd" "$pkgdir/etc/conf.d/unbound"
 }
