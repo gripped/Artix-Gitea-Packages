@@ -2,42 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=vnstat-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC vnstat init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'vnstat')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/vnstatd')
-source=("vnstatd.confd::${_url}/net-analyzer/vnstat/files/vnstatd.confd-r1"
-        "vnstatd.initd::${_url}/net-analyzer/vnstat/files/vnstatd.initd-r2")
+source=("vnstatd.confd"
+        "vnstatd.initd")
 sha256sums=('e5820c6557cd578faf31c6d5060606e9fe4c024d5f91a90e9b4701c4677fbb5f'
-            '5ce75e189239ab52b9114defda6c46f57c18ed88d0ffc8116def3bc6df3831c5')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '3583aaaa9c3d949cbc1dd1706d0d1fe0029e50435204e8cf76a6c3ae5cfc5801')
 
 package() {
-    _inst_confd 'vnstatd'
-    _inst_initd 'vnstatd'
+    install -Dm755 "$srcdir/vnstatd.initd" "$pkgdir/etc/init.d/vnstatd"
+    install -Dm644 "$srcdir/vnstatd.confd" "$pkgdir/etc/conf.d/vnstatd"
 }
