@@ -1,5 +1,4 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
-#
 
 pkgname=perl-alien-build
 pkgver=2.26
