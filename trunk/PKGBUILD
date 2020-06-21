@@ -2,48 +2,26 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=vsftpd-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC vsftpd init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'vsftpd')
 conflicts=('systemd-sysvcompat')
-source=("${_url}/net-ftp/vsftpd/files/vsftpd-checkconfig.sh"
-        "vsftpd.initd::${_url}/net-ftp/vsftpd/files/vsftpd.init")
-sha256sums=('2de7c7c1edfe3ae0480e22d988a564db3bb873050929ebb6e8361d7a1288ddda'
-            '46dba1df0fb5d575d6d37ed54aa887d9a5fa8853bc46b2b0bd18f9fab2a27640')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e 's|/usr/libexec/|/usr/lib/|g' \
-        -e 's|/etc/vsftpd/|/etc/|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("vsftpd.initd"
+	"vsftpd-checkconfig.sh")
+sha256sums=('99ac5c135e60745e9faeddac4b9e5dd099100e3b58e984cce550572706c7306b'
+            '866865419c3c82f0e56bdc2d38950d453791032255c39a5700a795a670a579ba')
 
 package() {
-    _inst_initd 'vsftpd'
+    install -Dm755 "$srcdir/vsftpd.initd" \
+	"$pkgdir/etc/init.d/vsftpd"
 
-    install -Dm755 "${srcdir}/vsftpd-checkconfig.sh" "${pkgdir}/usr/lib/vsftpd-checkconfig.sh"
-
-    sed -e 's|/etc/vsftpd/|/etc/|g' \
-        -i "${pkgdir}/usr/lib/vsftpd-checkconfig.sh"
+    install -Dm755 "${srcdir}/vsftpd-checkconfig.sh" \
+	"${pkgdir}/usr/lib/vsftpd-checkconfig.sh"
 }
 
