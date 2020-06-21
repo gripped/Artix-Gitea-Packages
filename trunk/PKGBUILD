@@ -1,10 +1,10 @@
 # Maintainer: Sébastien Luttringer
 
 pkgname=backuppc
-pkgver=4.3.2
+pkgver=4.4.0
 _xsver=0.62
 _rbpcver=3.1.2.2
-pkgrel=3
+pkgrel=1
 pkgdesc='Enterprise-grade system for backing up Linux, Windows and MacOS PCs'
 url='https://github.com/backuppc/'
 license=('GPL2')
@@ -12,7 +12,7 @@ arch=('x86_64')
 makedepends=('git')
 depends=('glibc' 'popt' 'perl' 'par2cmdline' 'perl-archive-zip' 'perl-io-dirent'
          'perl-file-listing' 'perl-time-modules' 'perl-cgi' 'perl-xml-rss'
-         'smtp-forwarder')
+         'perl-json-xs' 'smtp-forwarder')
 optdepends=('openssh: ssh transfert support'
             'rsync: rsync transfert support'
             'smbclient: smb/cifs transfert support'
@@ -30,14 +30,6 @@ backup=("etc/$pkgname/config.pl"
         "etc/$pkgname/hosts"
         "etc/httpd/conf/extra/$pkgname.conf"
         "etc/$pkgname/$pkgname.users")
-md5sums=('a4354d846a76e1bf9edf0a468f3b3671'
-         'd3aa7f6405f8ed96e8e2f6282e861439'
-         'bb914e52312b556ce87640350bcff53a'
-         'd90840387358e5dd230cace0b2d6b53a'
-         'bda3ec3f4c75521c6869279eb16af2f8'
-         '67a939aa63740c52d12bbdca72d37891'
-         'ef09e4dae5b4197998f5c3a74e0ec86d'
-         '99e641c4f3ba4fbcc53e046ce7290ad5')
 
 prepare() {
   cd BackupPC-$pkgver
@@ -126,3 +118,11 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
+sha512sums=('0c88447ab000c4a452034d5d8a074cd56801c7b38b0886e686e446c73ecfd0a40f0aa08703f76d16c31b24aec85c10c4ed1815d0cb67be5a1d66e5caeb3de418'
+            '64a87c5660cf8674e5f9a9974e5be6a6d57201b38a94923e9de9b090fa4ce09fac28d1634c8991dea81cae05ffbbc848ede0f5b5c40b7d1f6d728b3466980f17'
+            'beee4f365c958de5ced495b9ab01f2b8d7bba72d82259f6b267dad1a53f79831b07945a4ae3bb2ca2eddebd291a1d33f79418a87eae89b623620c08b92067b2c'
+            'ce820416efe1431a9a9d706d1023b8c3792ad3e385e3c138e7d61fc19fff32e107e9d46ea5499534181e33596e6885c6bc962689af0dd5f99f8e3c7e84d70f18'
+            'f44afc1d62c3591fed35c78492dd2ec572e2266a3f94963e40486f653637ecae1e62e37460eb0121542750617c67a2b0220a58bcb8a38176fe2f6497cffa3644'
+            '6f5783b2806c7f136c5970876201ac513f31f1f9b079ba8a99b7c823499f749235b771c6da22556d8c6eb6b173f70aed077c9edaa870be47aac332ed88a99a43'
+            '905f5f82e428e94d8c631ea2cf6dcb9b3f605d2dfa576f0f12af9617c24648659b4508d237fa7d69b3309f943416aab47103edca44e47205c3c644d2320e86be'
+            '2ab1f9180b92f292debcfc87b7883bb5fcea41fa9caa377df7839acc004cf0546fac3a4ee91ad92fba58d4c6b1a8a19262c294b31e4ce571f9b939b36ab679d0')
