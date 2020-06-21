@@ -2,42 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=grafana-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC grafana init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'grafana')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/grafana')
-source=("grafana.confd::${_url}/www-apps/grafana-bin/files/grafana.confd"
-        "grafana.initd::${_url}/www-apps/grafana-bin/files/grafana.initd.3")
+source=("grafana.confd"
+        "grafana.initd")
 sha256sums=('5b9e125f2648ed98125097770b609dcce543443f0862b99c0653f55b3b9be895'
-            '0f898484e081a416429d4a881c99988aea6a9d9d2085b326c5dd1e85163cbb39')
-
-# pkgver() {
-#     date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '6637505d7030172e80ea3bc153a041b7e9fa6a068bf38ea26e8e1dc61b81ffed')
 
 package() {
-    _inst_confd 'grafana'
-    _inst_initd 'grafana'
+    install -Dm755 "$srcdir/grafana.initd" "$pkgdir/etc/init.d/grafana"
+    install -Dm644 "$srcdir/grafana.confd" "$pkgdir/etc/conf.d/grafana"
 }
