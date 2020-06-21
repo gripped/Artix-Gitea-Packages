@@ -9,7 +9,7 @@
 pkgbase=dropbear
 pkgname=(dropbear dropbear-scp)
 pkgver=2020.79
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Lightweight SSH server'
 arch=(x86_64)
 url='https://github.com/mkj/dropbear'
