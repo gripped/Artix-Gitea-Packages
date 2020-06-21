@@ -2,43 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=bumblebee-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC bumblebee init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'bumblebee')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/bumblebee')
-source=("bumblebee.confd::${_url}/x11-misc/bumblebee/files/bumblebee.confd"
-        "bumblebee.initd::${_url}/x11-misc/bumblebee/files/bumblebee.initd")
+source=("bumblebee.confd"
+        "bumblebee.initd")
 sha256sums=('9e0287f542cff0fd3452a0c3d6d427a3404706c93ac9a00f4d99fe52ed596d75'
-            '5c67465ca9a2d4dc6fd35a7827d82ea6d72b13a8e93373e9055970fc71754b18')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e 's|need xdm vgl|need xdm|' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '300850d53f0ce249278d0314b9c786c06fba7c280d230afb1dbb75cdc97293f2')
 
 package() {
-    _inst_confd 'bumblebee'
-    _inst_initd 'bumblebee'
+    install -Dm755 "${srcdir}/bumblebee.initd" "${pkgdir}/etc/init.d/bumblebee"
+    install -Dm644 "${srcdir}/bumblebee.confd" "${pkgdir}/etc/conf.d/bumblebee"
 }
