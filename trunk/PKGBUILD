@@ -1,5 +1,6 @@
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Sergej Pupykin <pupykin.s+aur@gmail.com>
+#
 
 pkgname=perl-gd
 pkgver=2.71
