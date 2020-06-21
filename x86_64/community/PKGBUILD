@@ -2,42 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=espeakup-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC espeakup init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'espeakup')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/espeakup')
-source=("espeakup.confd::${_url}/app-accessibility/espeakup/files/espeakup.confd"
-        "espeakup.initd::${_url}/app-accessibility/espeakup/files/espeakup.rc")
+source=("espeakup.confd"
+        "espeakup.initd")
 sha256sums=('32e6de11417ebb199a7bf46eb8cf77054b1af1c9f4bcc80b856b34758830eb9f'
-            '9bfaf3950744a9376cdd74240c3e6b9a92d7b17a16a3b9eb0485f5fd279ff963')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '4027b49ccb9f42517e81aa9897a31c81fc89c32ae3162631040b218aa8b0e222')
 
 package() {
-    _inst_confd 'espeakup'
-    _inst_initd 'espeakup'
+     install -Dm755 "$srcdir/espeakup.initd" "$pkgdir/etc/initd./espeakup"
+     install -Dm644 "$srcdir/espeakup.confd" "$pkgdir/etc/conf.d/espeakup"
 }
