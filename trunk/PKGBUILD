@@ -2,42 +2,23 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=hostapd-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC hostapd init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'hostapd')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/hostapd')
-source=("hostapd.confd::${_url}/net-wireless/hostapd/files/hostapd-conf.d"
-        "hostapd.initd::${_url}/net-wireless/hostapd/files/hostapd-init.d")
-sha256sums=('916f4b14095ee4ec8a510391c883e9f01868e18d79a3d5cbeb13a104a793d45d'
-            '3678565083106e698ca30c305c4561152a2b043fe894b8b773b28a0bb273411e')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("hostapd.confd"
+        "hostapd.initd")
+sha256sums=('6c14e88b14bb9a93d2dca69239d829f435e93180e621319aeed0f3987290dfba'
+            '90a5bf46cf59e8a952470245a2e18dd92b47dc18638951fb8e5cccdfca1e5f93')
 
 package() {
-    _inst_confd 'hostapd'
-    _inst_initd 'hostapd'
+    install -Dm755 "$srcdir/hostapd.initd" "$pkgdir/etc/init.d/hostapd"
+    install -Dm644 "$srcdir/hostapd.confd" "$pkgdir/etc/conf.d/hostapd"
 }
