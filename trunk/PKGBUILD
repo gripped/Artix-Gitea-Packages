@@ -2,42 +2,36 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=syncthing-openrc
-pkgver=20180312
+pkgver=20200620
 pkgrel=1
 pkgdesc="OpenRC syncthing init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'syncthing')
 conflicts=('systemd-sysvcompat')
-backup=('etc/conf.d/syncthing')
-source=("syncthing.confd"
-        "syncthing.initd")
-sha256sums=('eb4a4315916fe3f8688c1da5bb5c249a1f402e61617452288d5b0668078c955c'
-            '63708b1a7b61ae791df64bb4cefa01dc12236f96bb67fe6d0b2c513e11c81f3e')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+backup=('etc/conf.d/syncthing'
+	'etc/conf.d/strelaysrv'
+	'etc/conf.d/stdiscosrv')
+source=('syncthing.'{initd,confd}
+	'strelaysrv.'{initd,confd}
+	'stdiscosrv.'{initd,confd})
+sha256sums=('efb6c4c6f5fccc1d3f09f7a129f82f624ac3ccb393c6e0f47c9fd752a3dce0cf'
+            'eaa8062872bae4cc451392ef6d05e093b5c18f7589bd4e6e289737a55bc7d22d'
+            'a939db3ba1332574295f9b608a341659bba87fc10dac06bd049ae244d0808090'
+            '8ae5fb440478f93a9450a723249729b814056e9447b2ea8db1c32b9eb8ccee47'
+            '64e6f8196876eae884032ae0cceb5b4352aed1a4d42dfe29c539396d6bfe093e'
+            '980f4bb874b3bcc5f4b0e28b0b7303132b20226dc4b065d9bebafe386b52ff40')
 
 package() {
-    _inst_confd 'syncthing'
-    _inst_initd 'syncthing'
+  cd "$srcdir"
+  for i in *.initd ; do
+	install -Dm755 "$i" "$pkgdir/etc/init.d/${i/.initd}"
+  done
+
+  for c in *.confd ; do
+	install -Dm644 "$c" "$pkgdir/etc/conf.d/${c/.confd}"
+  done
 }
