@@ -1,4 +1,5 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
+#
 
 pkgname=apparmor
 pkgver=2.13.4
