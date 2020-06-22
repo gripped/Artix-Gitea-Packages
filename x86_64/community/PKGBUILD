@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=ufw-openrc
-pkgver=20200620
+pkgver=20200621
 pkgrel=1
 pkgdesc="OpenRC ufw init script"
 arch=('any')
@@ -16,7 +16,7 @@ backup=('etc/conf.d/ufw')
 source=("ufw.confd"
         "ufw.initd")
 sha256sums=('069aa7382b40aecebf26ef53f3f4c49890314e0357925c84b3c15f1d0b913be0'
-            'e38c22a3ea0c977f857fcc4e10b4015e9ede745bb2fa700be20272b0cfd2effc')
+            'ce4f6c0246a5356a84762d192039d717918da4e75133233a741e299775adccca')
 
 package() {
     install -Dm755 "$srcdir/ufw.initd" "$pkgdir/etc/init.d/ufw"

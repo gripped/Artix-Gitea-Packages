@@ -1,6 +1,7 @@
 #!/usr/bin/openrc-run
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/ufw/files/ufw-2.initd,v 1.1 2011/07/24 11:18:22 pva Exp $
 
 depend() {
 	before net
@@ -82,7 +83,7 @@ _status_quiet() {
 	local ret
 	ufw_status > /dev/null
 	ret=$?
-	# Return values for ufw_status come from /usr/share/ufw/ufw-init-functions.
+	# Return values for ufw_status come from /usr/lib/ufw/ufw-init-functions.
 	case $ret in
 	0) return 0 ;;
 	3) return 1 ;;
@@ -91,14 +92,14 @@ _status_quiet() {
 }
 
 _source_file() {
-	local sourced_f="/usr/share/ufw/ufw-init-functions"
+	local sourced_f="/usr/lib/ufw/ufw-init-functions"
 	if [ ! -f "$sourced_f" ]; then
 		eerror "Cannot find file $sourced_f!"
 		return 1
 	fi
 
 	local _path=$PATH
-	if ! . "$sourced_f"; then
+	if ! source "$sourced_f"; then
 		# PATH can be broken here, fix it...
 		PATH=$_path
 		eerror "Error sourcing file $sourced_f"
@@ -123,7 +124,7 @@ _check_if_enabled_in_cfg() {
 		return 2
 	fi
 
-	if ! . "$sourced_f"; then
+	if ! source "$sourced_f"; then
 		eerror "Error sourcing file $sourced_f"
 		return 2
 	fi
