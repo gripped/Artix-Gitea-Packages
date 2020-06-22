@@ -9,7 +9,7 @@
 pkgbase=dropbear
 pkgname=(dropbear dropbear-scp)
 pkgver=2020.79
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Lightweight SSH server'
 arch=(x86_64)
 url='https://github.com/mkj/dropbear'
@@ -38,6 +38,7 @@ build() {
 
 package_dropbear() {
   install -d "$pkgdir/etc/$pkgname"
+  make -C $pkgbase install DESTDIR="$pkgdir"
   install -Dm644 $pkgbase/LICENSE \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
