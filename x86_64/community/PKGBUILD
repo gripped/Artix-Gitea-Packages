@@ -3,7 +3,7 @@
 
 pkgbase=sddm-theme
 pkgname=${pkgbase}-artix
-pkgver=0.6
+pkgver=0.7
 pkgrel=1
 pkgdesc="Artix theme for SDDM"
 arch=('any')
@@ -14,7 +14,7 @@ depends=('sddm' "artix-backgrounds")
 conflicts=('artix-sddm-theme')
 replaces=('artix-sddm-theme')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('99dde21f09fa5e6e341485729c6af2988ef8d7109021fb4b04326eadfd60c753')
+sha256sums=('f9e82fe5f655ff30b40bf2daa9c67b0dce0777daa2c8d9a76f391068ae22247c')
 
 package() {
     cd ${pkgname} #-${pkgver}
