@@ -6,25 +6,19 @@
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 pkgname=amule
-pkgver=11025
-pkgrel=1.2
+pkgver=11047
+pkgrel=1
 pkgdesc="An eMule-like client for ed2k p2p network"
 arch=(x86_64)
 url="http://www.amule.org"
 license=(GPL)
-depends=(wxgtk gd geoip libupnp crypto++ boost-libs)
-makedepends=(git ccache boost)
+depends=(wxgtk gd geoip libupnp crypto++)
+makedepends=(git boost)
 source=("git://repo.or.cz/amule.git#tag=amule-svn-r$pkgver"
-        amule.sysusers amule.tmpfiles compile.patch)
+        amule.sysusers amule.tmpfiles)
 sha256sums=('SKIP'
             'c4ca658ab4105b3b90e0bb3efcc8121eca1c4d873787db1ed4f637925c16d502'
-            'e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d'
-            '0b0bceed91646c4a7a0a3591e98e63b81b1114d13cb0f8f86ed8ef547ca47559')
-
-prepare() {
-  cd amule
-  patch -Np1 -i "$srcdir"/compile.patch
-}
+            'e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d')
 
 build() {
   cd amule
@@ -40,7 +34,6 @@ build() {
               --enable-webserver \
               --disable-debug \
               --enable-optimize \
-              --enable-ccache \
               --enable-geoip \
               --enable-upnp \
               --enable-fileview \
