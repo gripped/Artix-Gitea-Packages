@@ -2,7 +2,7 @@
 
 pkgname=perl-file-listing
 pkgver=6.04
-pkgrel=8
+pkgrel=8.1
 pkgdesc="parse directory listing"
 arch=('any')
 url="https://search.cpan.org/dist/File-Listing"
