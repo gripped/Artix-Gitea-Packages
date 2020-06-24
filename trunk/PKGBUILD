@@ -15,7 +15,7 @@ license=(GPL)
 depends=(wxgtk gd geoip libupnp crypto++ boost-libs)
 makedepends=(git ccache boost)
 source=("git://repo.or.cz/amule.git#tag=amule-svn-r$pkgver"
-        amule.sysusers amule.tmpfiles compile.patch)
+        amule.sysusers amule.tmpfiles)
 sha256sums=('SKIP'
             'c4ca658ab4105b3b90e0bb3efcc8121eca1c4d873787db1ed4f637925c16d502'
             'e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d'
