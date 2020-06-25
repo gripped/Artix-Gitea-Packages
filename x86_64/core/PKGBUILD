@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20200613
+pkgver=20200625
 pkgrel=1
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
@@ -16,7 +16,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/rc-local/dependencies')
 install=s6-scripts.install
 makedepends=('git')
-_commit=87660c280b241325c2cbef93930cc174a2fb7225
+_commit=78a2f39b9c6e70b285e54f82a8c4042061443b9e
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -48,6 +48,7 @@ package() {
     install -Dm644 "${srcdir}"/s6-scripts/rc.local "${pkgdir}"/etc/s6/rc.local
     install -Dm644 "${srcdir}"/s6-scripts/s6.conf "${pkgdir}"/etc/s6/s6.conf
     install -Dm755 "${srcdir}"/s6-scripts/modules-load "${pkgdir}"/usr/bin/modules-load 
+    install -Dm755 "${srcdir}"/s6-scripts/mount-cgroups/cgroup-release-agent.sh "${pkgdir}"/etc/s6/sv/mount-cgroups/cgroup-release-agent.sh
     install -d "${pkgdir}"/usr/share/man/man8
     install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
 
