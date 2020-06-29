@@ -1,0 +1,47 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=firewalld-s6
+pkgver=20200629
+pkgrel=1
+pkgdesc="s6 service scripts for firewalld"
+arch=('any')
+url="https://gitea.artixlinux.org/"
+groups=('s6-galaxy')
+provides=('firewalld-runscripts')
+conflicts=('firewalld-runscripts')
+depends=('firewalld' 'dbus-s6' 's6')
+install=firewalld.install
+backup=('etc/s6/sv/firewalld-log/conf')
+source=("firewalld-log.conf"
+        "firewalld-log.consumer-for"
+        "firewalld-log.notification-fd"
+        "firewalld-log.pipeline-name"
+        "firewalld-log.run"
+        "firewalld-log.type"
+        "firewalld-srv.dependencies"
+        "firewalld-srv.producer-for"
+        "firewalld-srv.run"
+        "firewalld-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '22c7d02986567656d29fb383a206e615f9d576cd19a694ec87e277331aae267b'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '670911993ee54164fdbef6518723ff727c885a4b5c707ef254e488bfaa9bd437'
+            '5710e817af5f1445f5f824c52c21644307e01b07312f928c7c546fe21979d907'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            '92c7f2f20b18c44ebbc49730b6a55112fdfa17216fe888419241d3e758512985'
+            '095eb0c1e352eab87236fe6588192fb3d938d35a2c1a144a533c2ad550907a34'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf consumer-for dependencies notification-fd \
+        pipeline-name producer-for run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'firewalld-log'
+    _inst_sv 'firewalld-srv'
+}
