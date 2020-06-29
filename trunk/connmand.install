@@ -6,5 +6,5 @@ pre_remove() {
 }
 
 post_remove() {
-    rm -rf /etc/s6/sv/command-log
+    rm -rf /etc/s6/sv/connmand-log
 }
