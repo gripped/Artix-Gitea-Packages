@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+exec fcgiwrap -s unix:/run/fcgiwrap.sock
