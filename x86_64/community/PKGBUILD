@@ -28,24 +28,6 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  cd "$srcdir"/zope.testrunner-$pkgver
-  virtualenv "$srcdir/pyvenv" --system-site-packages
-  (
-    . "$srcdir/pyvenv/bin/activate"
-#    python setup.py develop
-#    python setup.py test
-  )
-
-  cd "$srcdir"/zope.testrunner-$pkgver-py2
-  virtualenv2 "$srcdir/pyvenv-py2" --system-site-packages
-  (
-    . "$srcdir/pyvenv-py2/bin/activate"
-#    python2 setup.py develop
-#    python2 setup.py test
-  )
-}
-
 package_python-zope-testrunner() {
   depends=('python-setuptools' 'python-zope-interface' 'python-zope-exceptions' 'python-six')
 
