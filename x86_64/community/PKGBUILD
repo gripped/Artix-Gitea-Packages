@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fcgiwrap-s6
 pkgver=20200629
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for fcgiwrap"
 arch=('any')
 url="https://gitea.artixlinux.org"
@@ -29,7 +29,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '5591cf3bf3b909a90cda40184a24cc03c517252d7114c373f5777fa849c11074'
             '23321a532e109facc9c7adcb591e50a3ff025a42fc129715680d45744f30aa78'
-            '93ae1773eb434ba99200c7ea626ea28ed89a8c814bbf2c9e913e56ba3bce75f5'
+            '0889c999bd18b110f0e5cdd72520a3d6e205597a76a33ff14e834259e2835481'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
