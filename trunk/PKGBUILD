@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=unrealircd-s6
-pkgver=20200610
+pkgver=20200629
 pkgrel=1
 pkgdesc="s6 service scripts for unrealircd"
 arch=('any')
@@ -24,7 +24,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '42e0b7827af366211be946bf2e3664dd8f3f25d1d5a35e4c085885e692c8e777'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'd3cdf746d313633d46688b553f88ffedeb3288939dbf05b9a5d856661911e753'
-            '6f1ff51e13e18cce3eb453866bfa2cdeb8c390ee46c9472e4d0520d0be3cfc52'
+            'e4d4afc41009e9971bf3a4c074b90a548a27128043367381d9c7de9da0e36d00'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '345f5612ff8f75e6145ff4083f261bd7aea5728d384ad40621ae58374d05d971'
             'd789d1f22c683834be1ff013968f65210a08099b797fd5306353172ace836e6b'
