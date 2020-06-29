@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fcgiwrap-s6
-pkgver=20200628
+pkgver=20200629
 pkgrel=1
 pkgdesc="s6 service scripts for fcgiwrap"
 arch=('any')
@@ -10,15 +10,31 @@ provides=('fcgiwrap-runscripts')
 conflicts=('fcgiwrap-runscripts')
 depends=('fcgiwrap' 's6')
 install=fcgiwrap.install
-source=("fcgiwrap.finish"
-        "fcgiwrap.run"
-        "fcgiwrap.type")
-sha256sums=('5591cf3bf3b909a90cda40184a24cc03c517252d7114c373f5777fa849c11074'
+backup=('etc/s6/sv/fcgiwrap-log/conf')
+source=("fcgiwrap-log.conf"
+        "fcgiwrap-log.consumer-for"
+        "fcgiwrap-log.notification-fd"
+        "fcgiwrap-log.pipeline-name"
+        "fcgiwrap-log.run"
+        "fcgiwrap-log.type"
+        "fcgiwrap-srv.finish"
+        "fcgiwrap-srv.producer-for"
+        "fcgiwrap-srv.run"
+        "fcgiwrap-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '6066e0fcb5479c5dfa1f7b3a1fdcc4a4a79f53c8a4f415f6466c91cddd4d02aa'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '90e0c611e5c302aa4a7ef46155cf6791b013e4e53f737a291fb6ad231dd387e0'
+            'a040d2b4138a629803a59f58545972f113414b8f50a8bea55678ff6bc80080ba'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '5591cf3bf3b909a90cda40184a24cc03c517252d7114c373f5777fa849c11074'
+            '23321a532e109facc9c7adcb591e50a3ff025a42fc129715680d45744f30aa78'
             '93ae1773eb434ba99200c7ea626ea28ed89a8c814bbf2c9e913e56ba3bce75f5'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in finish run type; do
+    for file in conf consumer-for dependencies finish notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -26,5 +42,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'fcgiwrap'
+    _inst_sv 'fcgiwrap-log'
+    _inst_sv 'fcgiwrap-srv'
 }
