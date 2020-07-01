@@ -1,45 +1,22 @@
-# Maintainer: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
-# Contributor: artoo <artoo@artixlinux.org>
-# Contributor: Oscar Campos <damnwidget@artixlinux.org>
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
-pkgname=acpid-openrc
-pkgver=20180806
+pkgname=qemu-guest-agent-openrc
+pkgver=20200701
 pkgrel=1
-pkgdesc="OpenRC acpid init script"
+pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-groups=('openrc-galaxy')
-depends=('openrc' 'acpid')
+groups=('openrc-world')
+depends=('openrc' 'qemu-guest-agent')
 conflicts=('systemd-sysvcompat')
-backup=('etc/conf.d/acpid')
-source=("acpid.confd::${_url}/sys-power/acpid/files/acpid-2.0.16-conf.d"
-        "acpid.initd::${_url}/sys-power/acpid/files/acpid-2.0.26-init.d")
-sha256sums=('3755d4eb8bb64a1304e5defedb949305ac550565da36fe4f94d5f31beee821ba'
-            '5dcf5721a129b3782c13fc453853c390c34e2ad4ee00706388ce014454b063ee')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -re 's_( |\t)/var/run_\1/run_g' \
-        -re 's_( |\t)/usr/sbin_\1/usr/bin_g' \
-        -re 's_( |\t)/sbin_\1/usr/bin_g' \
-        -re 's_( |\t)/bin_\1/usr/bin_g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('8d935b7880e1ede0a43164ffc724c8bf'
+         '2fdcbdaf0ba4caf7423d43f52e56abfb')
 
 package() {
-    _inst_confd 'acpid'
-    _inst_initd 'acpid'
+  install -Dm755 "$srcdir/qemu-guest-agent.initd" "$pkgdir/etc/init.d/qemu-guest-agent"
+  install -Dm644 "$srcdir/qemu-guest-agent.confd" "$pkgdir/etc/conf.d/qemu-guest-agent"
 }
