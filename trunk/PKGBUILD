@@ -4,7 +4,7 @@
 
 pkgname=cmake
 pkgver=3.17.3
-pkgrel=2
+pkgrel=3
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
@@ -23,6 +23,7 @@ prepare() {
 
   #artixlinux stuff don't remove
   sed -e 's|/etc/arch-release|/etc/artix-release|' -i Modules/GNUInstallDirs.cmake
+  sed -i 's/LUA_VERSIONS5 5.3/LUA_VERSIONS5 5.4 5.3/' Modules/FindLua.cmake # Add Lua 5.4 to search list
 }
 
 build() {
