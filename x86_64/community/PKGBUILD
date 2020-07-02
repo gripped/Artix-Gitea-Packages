@@ -2,8 +2,8 @@
 
 pkgbase=artix-branding
 pkgname=artix-branding-base
-pkgver=20200507
-pkgrel=3
+pkgver=20200702
+pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=($pkgbase)
