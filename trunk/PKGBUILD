@@ -1,18 +1,21 @@
-# Maintainer: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
-# Contributor: artoo <artoo@artixlinux.org>
-# Contributor: Oscar Campos <damnwidget@artixlinux.org>
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
+<<<<<<< HEAD
 
 pkgname=acpid-openrc
+=======
+pkgname=qemu-guest-agent-openrc
+>>>>>>> refs/subrepo/acpid-openrc/fetch
 pkgver=20200701
 pkgrel=1
-pkgdesc="OpenRC acpid init script"
+pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-groups=('openrc-galaxy')
-depends=('openrc' 'acpid')
+groups=('openrc-world')
+depends=('openrc' 'qemu-guest-agent')
 conflicts=('systemd-sysvcompat')
+<<<<<<< HEAD
 backup=('etc/conf.d/acpid')
 source=("acpid.confd"
         "acpid.initd")
@@ -22,4 +25,15 @@ sha256sums=('3755d4eb8bb64a1304e5defedb949305ac550565da36fe4f94d5f31beee821ba'
 package() {
     install -Dm755 "$srcdir/acpid.initd" "$pkgdir/etc/init.d/acpid"
     install -Dm644 "$srcdir/acpid.confd" "$pkgdir/etc/conf.d/acpid" 
+=======
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('8d935b7880e1ede0a43164ffc724c8bf'
+         '2fdcbdaf0ba4caf7423d43f52e56abfb')
+
+package() {
+  install -Dm755 "$srcdir/qemu-guest-agent.initd" "$pkgdir/etc/init.d/qemu-guest-agent"
+  install -Dm644 "$srcdir/qemu-guest-agent.confd" "$pkgdir/etc/conf.d/qemu-guest-agent"
+>>>>>>> refs/subrepo/acpid-openrc/fetch
 }
