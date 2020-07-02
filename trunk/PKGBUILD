@@ -1,0 +1,22 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
+pkgname=qemu-guest-agent-openrc
+pkgver=20200701
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-world')
+depends=('openrc' 'qemu-guest-agent')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('8d935b7880e1ede0a43164ffc724c8bf'
+         '2fdcbdaf0ba4caf7423d43f52e56abfb')
+
+package() {
+   install -Dm755 "$srcdir/qemu-guest-agent.initd" "$pkgdir/etc/init.d/qemu-guest-agent"
+   install -Dm644 "$srcdir/qemu-guest-agent.confd" "$pkgdir/etc/conf.d/qemu-guest-agent"
+}
