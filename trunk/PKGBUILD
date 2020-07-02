@@ -17,7 +17,7 @@ backup=('etc/conf.d/acpid')
 source=("acpid.confd"
         "acpid.initd")
 sha256sums=('3755d4eb8bb64a1304e5defedb949305ac550565da36fe4f94d5f31beee821ba'
-            '5dcf5721a129b3782c13fc453853c390c34e2ad4ee00706388ce014454b063ee')
+            'd8ab3f84431957e1c320944fa8d5af83d37af893ba63e120552049def9f63828')
 
 package() {
     install -Dm755 "$srcdir/acpid.initd" "$pkgdir/etc/init.d/acpid"
