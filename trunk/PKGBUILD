@@ -1,6 +1,7 @@
 # Maintainer: Angel Velasquez <angvp@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Sébastien Luttringer <seblu@aur.archlinux.org>
+#
 
 pkgbase=python-sqlalchemy
 pkgname=('python-sqlalchemy' 'python2-sqlalchemy')
