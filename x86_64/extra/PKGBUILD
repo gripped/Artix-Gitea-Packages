@@ -13,7 +13,7 @@ depends=('metis' 'lapack' 'tbb' 'mpfr')
 makedepends=('gcc-fortran' 'cmake' 'chrpath')
 license=('GPL')
 options=('staticlibs')
-source=($pkgname-$pkgver.tar.gz::"https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v$pkgver.tar.gz"
+source=(${pkgname}-${pkgver}.tar.gz::"https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v${pkgver}.tar.gz"
         suitesparse-no-demo.patch)
 sha256sums=('94a9b7134eb4dd82b97f1a22a6b464feb81e73af2dcdf683c6f252285191df1d'
             '409b32e546ec4936d0d88e39c59ee68dfd9f630d8c454ce1e3d58243df7ad396')
