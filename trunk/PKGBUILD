@@ -17,7 +17,7 @@ checkdepends=('lsof' 'python-perf' 'python2-perf' 'python2-virtualenv' 'python-o
               'python2-dnspython' 'python-requests' 'python2-requests' 'python-zope-event'
               'python2-zope-event' 'python2-mock')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/gevent/gevent/archive/$pkgver.tar.gz")
-sha512sums=('baeb8298054e65f7a00de40192b9a149b03d9c6ad0c9655a6b610726fade0dae0270a299c1f736dc49745e144570850aaaf34e209022f818647616f38a7f511c')
+sha512sums=('9c95033e109b3f91ee772bd11889c7edf0ee85a076a2e52574c1140c498a656f79ab3d4a034c90f0a72e9432d0aa779522b47904727b74b648437ec35f26e267')
 
 export EMBED=0
 
