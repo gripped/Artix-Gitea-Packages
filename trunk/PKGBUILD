@@ -15,7 +15,7 @@ groups=('runit-galaxy')
 depends=('pptpd')
 conflicts=('systemd-sysvcompat')
 source=("pptpd.run")
-sha256sums=('e87a6c69896f00bc73b312c6bbc9c926ad44f313252d6e138ae7d70ddb697c40')
+sha256sums=('5e867c1f20a40cbbf6c13c20bd291f4f6e3d4d69b45aa97b7d8163a7c473b5fc')
 
 _inst_logsv() {
     for file in run finish check; do
