@@ -6,13 +6,14 @@
 
 pkgname=minicom
 pkgver=2.7.1
-pkgrel=4
+pkgrel=4.1
 pkgdesc="A serial communication program"
 arch=('x86_64')
 url="http://alioth.debian.org/projects/minicom/"
 license=('GPL')
 depends=('bash')
 optdepends=('lrzsz: for xmodem, ymodem and zmodem file transfer protocols')
+install="minicom.install"
 backup=('etc/minirc.dfl')
 source=("${pkgname}-${pkgver}.tar.gz::http://ftp.debian.org/debian/pool/main/m/minicom/minicom_${pkgver}.orig.tar.gz"
         "minicom-2.7.1-gcc-10.patch")
@@ -37,4 +38,8 @@ package() {
 
   make DESTDIR="${pkgdir}/" install
   install -Dm644 doc/minirc.dfl ${pkgdir}/etc/minirc.dfl
+
+  # Fix conflict with OpenRC's runscript
+  mv ${pkgdir}/usr/bin/runscript ${pkgdir}/usr/bin/runscript-minicom
+  echo 'pu scriptprog       runscript-minicom' >> ${pkgdir}/etc/minirc.dfl
 }
