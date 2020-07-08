@@ -9,7 +9,7 @@ arch=('x86_64')
 url='https://github.com/williamh/espeakup'
 license=('GPL3')
 source=(https://github.com/williamh/espeakup/archive/v$pkgver.tar.gz
-        espeakup.service espeakup.modules-load.d)
+        espeakup.modules-load.d)
 depends=('speakup-utils' 'espeak')
 
 prepare() {
@@ -25,7 +25,6 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="${pkgdir}" install 
-  install -m644 -D "${srcdir}/espeakup.service" "${pkgdir}/usr/lib/systemd/system/espeakup.service"
   install -m644 -D "${srcdir}/espeakup.modules-load.d" "${pkgdir}/usr/lib/modules-load.d/espeakup.conf"
 }
 
