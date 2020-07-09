@@ -4,7 +4,7 @@
 
 pkgname=ndisc6
 pkgver=1.0.4
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Collection of IPv6 networking utilities'
 arch=('x86_64')
 url='https://www.remlab.net/ndisc6/'
@@ -12,7 +12,6 @@ license=('GPL')
 depends=('glibc' 'perl')
 makedepends=('glibc' 'gcc')
 options=('!emptydirs')
-install=$pkgname.install
 source=("https://www.remlab.net/files/ndisc6/$pkgname-$pkgver.tar.bz2"{,.asc}
         'resolvconf-hook')
 validpgpkeys=('9480583353E334D2F03FE80CC3EC6DBEDD6D12BD') # Rémi Denis-Courmont <remi@remlab.net>
