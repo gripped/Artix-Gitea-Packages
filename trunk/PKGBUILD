@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=bluez-openrc
-pkgver=20191102
+pkgver=20200709
 pkgrel=1
 pkgdesc="OpenRC bluez init script"
 arch=('any')
