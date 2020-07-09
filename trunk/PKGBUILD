@@ -3,6 +3,7 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Roman Kyrylych <roman@archlinux.org>
 # Contributor: scippio <scippio@seznam.cz>
+#
 
 pkgname=libconfig
 pkgver=1.7.2
