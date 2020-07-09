@@ -11,7 +11,7 @@ groups=('openrc-world')
 depends=('openrc' 'brltty')
 conflicts=('systemd-sysvcompat')
 source=("brltty.initd")
-sha256sums=('4dd0338d2f9943165d5922c8964ca3456e8e8b67b37cf5f2652435bc1f644c41')
+sha256sums=('28156db939f74a46e24dbd19cb8e39f981ca0924b86a7f4543ec62b59df3895d')
 
 package() {
 	install -Dm755 "$srcdir/brltty.initd" "$pkgdir/etc/init.d/brltty"
