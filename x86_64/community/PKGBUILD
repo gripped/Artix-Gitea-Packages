@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=iwd-openrc
-pkgver=20190412
+pkgver=20200709
 pkgrel=1
 pkgdesc="OpenRC iwd init script"
 arch=('any')
@@ -13,22 +13,6 @@ conflicts=('systemd-sysvcompat')
 source=("iwd.initd")
 sha256sums=('fae285f13b4c6ef9e27405f1e81c7870beee82836b5751fbfb41ba932a2915e7')
 
-pkgver() {
-    date +%Y%m%d
-}
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_initd 'iwd'
+	install -Dm755 "$srcdir/iwd.initd" "$pkgdir/etc/init.d/iwd"
 }
