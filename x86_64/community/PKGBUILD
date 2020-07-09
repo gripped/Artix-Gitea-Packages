@@ -3,7 +3,7 @@
 
 _pkgname=gitea
 pkgname=gitea-openrc
-pkgver=20190520
+pkgver=20200709
 pkgrel=1
 pkgdesc="OpenRC Gitea init script"
 arch=('any')
