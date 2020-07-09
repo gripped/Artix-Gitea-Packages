@@ -1,13 +1,12 @@
 # Maintainer: Chris Brannon <chris@the-brannons.com>
 # Contributor: Kyle <kyle@gmx.ca>
 
-
 pkgname=espeakup
 pkgver=0.80
-pkgrel=2
+pkgrel=3
 pkgdesc='Allows the Speakup screen review system to use the ESpeak synthesizer.'
 arch=('x86_64')
-url='http://github.com/williamh/espeakup'
+url='https://github.com/williamh/espeakup'
 license=('GPL3')
 source=(https://github.com/williamh/espeakup/archive/v$pkgver.tar.gz
         espeakup.modules-load.d)
@@ -25,7 +24,7 @@ build() {
 
 package() {
   cd $pkgname-$pkgver
-  make DESTDIR="${pkgdir}" install
+  make DESTDIR="${pkgdir}" install 
   install -m644 -D "${srcdir}/espeakup.modules-load.d" "${pkgdir}/usr/lib/modules-load.d/espeakup.conf"
 }
 
