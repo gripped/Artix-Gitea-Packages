@@ -2,20 +2,17 @@
 
 pkgname=pcaudiolib
 pkgver=1.1
-pkgrel=2.1
+pkgrel=3
 pkgdesc='Portable C Audio Library'
 url=https://github.com/espeak-ng/pcaudiolib
 arch=('x86_64')
 license=('GPL3')
 depends=('alsa-lib' 'libpulse')
-source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz"
-        "sample_size.patch::https://github.com/espeak-ng/pcaudiolib/commit/d6a6b00aa4334b461c1a09c27b6c681eaac8da8a.patch")
-sha512sums=('d503c11b355601e1e05f0f438a0cd9ce277d19fd53d3f7edf26f6e17f1f8184e8b2112a282e8ed74db8646bb5534d2a9a3c707b1742ce02ef13fd89669785007'
-            '67b689c879f80be5bea14221aff5c66f8d5c544b26d4e2174e3d7d2002bca20906dc5d8989592b286c8ebd0e2a6d860bd3d99ac3e524ee03259d8f93c6350404')
+source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('d503c11b355601e1e05f0f438a0cd9ce277d19fd53d3f7edf26f6e17f1f8184e8b2112a282e8ed74db8646bb5534d2a9a3c707b1742ce02ef13fd89669785007')
 
 prepare() {
   cd $pkgname-$pkgver
-  patch -Np1 -i "$srcdir"/sample_size.patch
   ./autogen.sh
 }
 
