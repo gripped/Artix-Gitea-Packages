@@ -6,7 +6,7 @@
 
 pkgname=vsftpd
 pkgver=3.0.3
-pkgrel=6
+pkgrel=7
 pkgdesc='Very Secure FTP daemon'
 url='https://security.appspot.com/vsftpd.html'
 arch=('x86_64')
@@ -57,7 +57,7 @@ package() {
   install -Dm 644 ${pkgname}.8 -t "${pkgdir}/usr/share/man/man8"
   install -Dm 644 ${pkgname}.conf.5 -t "${pkgdir}/usr/share/man/man5"
   install -Dm 644 BENCHMARKS BUGS Changelog FAQ INSTALL README README.ssl REFS \
-   REWARD SPEED TODO TUNING -t "${pkgdir}/usr/share/doc/${pkgname}"
+    REWARD SPEED TODO TUNING -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
 
 sha256sums=('9d4d2bf6e6e2884852ba4e69e157a2cecd68c5a7635d66a3a8cf8d898c955ef7'
