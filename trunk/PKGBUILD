@@ -26,11 +26,6 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  # Hack entry points by installing it
-
-}
-
 package_python-flaky() {
   depends=('python')
 
