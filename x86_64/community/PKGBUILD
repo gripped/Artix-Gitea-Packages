@@ -4,7 +4,7 @@
 
 pkgbase='grpc'
 pkgname=('grpc' 'python-grpcio' 'php-grpc' 'grpc-cli')
-pkgver=1.30.01
+pkgver=1.30.1
 _gtestver=c9ccac7cb7345901884aabf5d1a786cfa6e2f397
 _abseilcppver=20200225.2
 pkgrel=2
