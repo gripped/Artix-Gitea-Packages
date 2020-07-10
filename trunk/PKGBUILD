@@ -2,43 +2,24 @@
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=openntpd-openrc
-pkgver=20190504
+pkgver=20200709
 pkgrel=1
 pkgdesc="OpenRC openntpd init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 provides=('openrc-timed')
 depends=('openrc' 'openntpd')
 conflicts=('ntp' 'ntp-openrc' 'systemd-sysvcompat')
 backup=('etc/conf.d/ntpd')
-source=("ntpd.confd::${_url}/net-misc/openntpd/files/openntpd.conf.d-20080406-r6"
-        "ntpd.initd::${_url}/net-misc/openntpd/files/openntpd.init.d-20080406-r6")
+source=("ntpd.confd"
+        "ntpd.initd")
 sha256sums=('91fb1497b3a6ef0bb3a3d5baefdff801d8ff1cba27aaf742303415550814a09b'
-            'e3ddd2620be927f66e9fb325ad3dbe89e7845b5a30de09fbe25fad2d13df641b')
-
-pkgver() {
-    date +%Y%m%d
-}
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '0b7e722c47df7ff99717cb1f1d18dc573d2903e4bfcc34366b62092c0ae7c4e0')
 
 package() {
-    _inst_confd 'ntpd'
-    _inst_initd 'ntpd'
+	install -Dm755 "$srcdir/ntpd.initd" "$pkgdir/etc/init.d/ntpd"
+	install -Dm644 "$srcdir/ntpd.confd" "$pkgdir/etc/conf.d/ntpd"
 }
