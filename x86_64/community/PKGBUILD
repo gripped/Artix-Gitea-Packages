@@ -29,7 +29,6 @@ build() {
 check() {
   # Hack entry points by installing it
 
-  )
 }
 
 package_python-flaky() {
