@@ -1,43 +1,22 @@
 # Maintainer: nous@artixlinux.org
 
-_url="https://gitweb.gentoo.org/repo/gentoo.git/plain"
-#https://gitweb.gentoo.org/repo/gentoo.git/tree/net-misc/tigervnc
-
-#https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/tigervnc/files/tigervnc.initd
-#https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/tigervnc/files/tigervnc.initd
-
 pkgname=tigervnc-openrc
-pkgver=20200417
+pkgver=20200710
 pkgrel=1
 pkgdesc="OpenRC tigervnc init script"
 arch=('any')
-url="https://gitea.artixlinux.org/packagesT/tigervnc-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'tigervnc')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/tigervnc')
-source=("tigervnc.initd::${_url}/net-misc/tigervnc/files/tigervnc.initd"
-        "tigervnc.confd::${_url}/net-misc/tigervnc/files/tigervnc.confd")
-sha256sums=('8e516bc12f88e238b1aebac39ed47a6123b4130d5977ca3fb4d7fcc0c04f32a0'
+source=("tigervnc.initd"
+        "tigervnc.confd")
+sha256sums=('f470ef010dfe98d2bf03f29d5bf77f4a00d68c91311ea96ef5578316b493e4c2'
             '48b6ae4f3e9e528b3cd4bc1349ceed3cd1a403ab0f3a2a8dd57a4769f88ceafc')
 
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-    sed -e 's|/var/run|/run|g' \
-        -i "${pkgdir}/etc/conf.d/$1"
-}
-
 package() {
-    _inst_confd 'tigervnc'
-    _inst_initd 'tigervnc'
+	install -Dm755 "$srcdir/tigervnc.initd" "$pkgdir/etc/init.d/tigervnc"
+	install -Dm644 "$srcdir/tigervnc.confd" "$pkgdir/etc/conf.d/tigervnc"
 }
