@@ -1,43 +1,23 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 # Maintainer: nous <nous@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=haveged-openrc
-pkgver=20191225
+pkgver=20200709
 pkgrel=1
 pkgdesc="OpenRC haveged init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'haveged')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/haveged')
-source=("haveged.confd::${_url}/sys-apps/haveged/files/haveged-conf.d"
-        "haveged.initd::${_url}/sys-apps/haveged/files/haveged-init.d.3")
+source=("haveged.confd"
+        "haveged.initd")
 sha256sums=('e796a353534e8ec36b84a29ab4cbd738ebd18098efca5ed8d92b267a99dc58f6'
-            '5ee06c49764ecc4aaa9a88a222ef7838dbc065d049279693a37bebd0431855de')
-
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -e '/logger/d' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            'e4ff099970ad8924f4cf76873835b108f541901cfd364c65a41f5e5b0dc1cf7b')
 
 package() {
-    _inst_confd 'haveged'
-    _inst_initd 'haveged'
+	install -Dm755 "$srcdir/haveged.initd" "$pkgdir/etc/init.d/haveged"
+	install -Dm644 "$srcdir/haveged.confd" "$pkgdir/etc/conf.d/haveged"
 }
