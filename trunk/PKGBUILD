@@ -1,29 +1,21 @@
 # Maintainer: nous@artixlinux.org
 
-_base=fail2ban
-pkgname=${_base}-openrc
-pkgver=200225
+pkgname=fail2ban-openrc
+pkgver=20200709
 pkgrel=1
-pkgdesc="OpenRC ${_base} init script"
+pkgdesc="OpenRC fail2ban init script"
 arch=('any')
-url="https://gitea.artixlinux.org/packages/$pkgname"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
-depends=('openrc' "${_base}")
-backup=('etc/conf.d/${_base}')
-source=("${_base}.initd" "${_base}.confd")
-sha256sums=('eeb19f1d1801c308f6e91ae65e05fd4421509dcbed85826dc74c0abc057d5d9d'
+depends=('openrc' "fail2ban")
+backup=('etc/conf.d/fail2ban')
+source=("fail2ban.initd"
+	"fail2ban.confd")
+sha256sums=('3c1305febe311e14f7da895c3c4e47b480e8cd5459d75f40e4ee56182a549893'
             '4a4fe009c575e9f1dd09ee33d8dc048019e0443106d0dd7fb53eac3834526cf1')
 
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm644 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_confd ${_base}
-    _inst_initd ${_base}
+	install -Dm755 "$srcdir/fail2ban.initd" "$pkgdir/etc/init.d/fail2ban"
+	install -Dm644 "$srcdir/fail2ban.confd" "$pkgdir/etc/conf.d/fail2ban"
 }
