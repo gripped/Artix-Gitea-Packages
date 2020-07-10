@@ -1,4 +1,4 @@
-#!/sbin/openrc-run
+#!/usr/bin/openrc-run
 extra_stopped_commands="setup"
 supervisor=supervise-daemon
 #healthcheck_timer=10
