@@ -9,8 +9,7 @@ pidfile=/run/pcscd/pcscd.pid
 
 command=/usr/bin/pcscd
 command_args="${EXTRA_OPTS}"
-
-start_stop_daemon_args="--user ${PCSCD_USER}:${PCSCD_GROUP}"
+command_user="${PCSCD_USER}:${PCSCD_GROUP}"
 
 depend() {
     need localmount
@@ -19,6 +18,6 @@ depend() {
 }
 
 start_pre() {
-    checkpath -d -m 0755 -o ${PCSCD_USER}:${PCSCD_GROUP} /run/pcscd
+    checkpath -d -m 0755 -o "$command_user" /run/pcscd
 }
 

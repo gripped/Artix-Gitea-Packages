@@ -1,32 +1,21 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=pcsclite-openrc
-pkgver=20190128
-pkgrel=2
+pkgver=20200709
+pkgrel=1
 pkgdesc="OpenRC pcsclite init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artlxinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'pcsclite')
 conflicts=('systemd-sysvcompat')
-source=("pcscd.initd" "pcscd.confd")
-sha256sums=('be7210e7ebb17bee2da9a22082323fa87f3d76da71e6957b9205f3a04af4be20'
+source=("pcscd.initd"
+	"pcscd.confd")
+sha256sums=('d5e0b9657cb5dd3048e3354e180b2abd8e2bd857e4ae293974b458e0a3422ebe'
             '75c38f3d60fc6506d6bccdefeace24143cae2786b5665770ec69aed3140407d4')
 
-# pkgver() {
-# 	date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_initd 'pcscd'
-    _inst_confd 'pcscd'
+	install -Dm755 "$srcdir/pcscd.initd" "$pkgdir/etc/init.d/pcscd"
+	install -Dm644 "$srcdir/pcscd.confd" "$pkgdir/etc/conf.d/pcscd"
 }
