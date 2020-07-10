@@ -1,0 +1,6 @@
+#!/usr/bin/openrc-run
+
+command=/usr/bin/tinydns
+command_args="-d"
+name="tinydns"
+description="tiny DNS cache service"
