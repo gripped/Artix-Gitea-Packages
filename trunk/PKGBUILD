@@ -4,7 +4,8 @@
 
 pkgbase='grpc'
 pkgname=('grpc' 'python-grpcio' 'php-grpc' 'grpc-cli')
-pkgver=1.30.01_gtestver=c9ccac7cb7345901884aabf5d1a786cfa6e2f397
+pkgver=1.30.01
+_gtestver=c9ccac7cb7345901884aabf5d1a786cfa6e2f397
 _abseilcppver=20200225.2
 pkgrel=2
 pkgdesc="High performance, open source, general RPC framework that puts mobile and HTTP/2 first."
