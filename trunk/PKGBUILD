@@ -2,7 +2,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=php-fpm-openrc
-pkgver=20190629
+pkgver=20200709
 pkgrel=1
 pkgdesc="OpenRC php fpm init script"
 arch=('any')
@@ -14,14 +14,6 @@ conflicts=('systemd-sysvcompat')
 source=("php-fpm.initd")
 sha256sums=('91050aae105de42f55e129d59fc101e5174d2bac2b9c91557786b249e160c370')
 
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_initd 'php-fpm'
+	install -Dm755 "$srcdir/php-fpm.initd" "$pkgdir/etc/init.d/php-fpm"
 }
