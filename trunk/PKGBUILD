@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowen@artixlinux.org> 
 pkgname=wireguard-openrc
-pkgver=20200530
-pkgrel=1.2
+pkgver=20200710
+pkgrel=1
 pkgdesc="OpenRC wireguard init script"
 arch=('any')
 url="https://gitea.artixlinux.org/PackagesW/wireguard-openrc"
@@ -14,15 +14,7 @@ source=("wireguard.initd" "wireguard.confd")
 sha256sums=('a1313ae573580b4b681e20956c410dd6f6cb7682a564ccff7f2b218ec5a9ca80'
             'ef2a35db4aeb29a1f2533fedc3b3208ca17cd6c32315a453df55d46e4927b61a')
 
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-} 
-
-_inst_confd() {
-  install -Dm644 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_initd 'wireguard'
-    _inst_confd 'wireguard'
+	install -Dm755 "$srcdir"/wireguard.initd "$pkgdir"/etc/init.d/wireguard
+	install -Dm644 "$srcdir"/wireguard.confd "$pkgdir"/etc/conf.d/wireguard
 }
