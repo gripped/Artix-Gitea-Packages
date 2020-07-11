@@ -1,11 +1,9 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=darkhttpd-runit
-pkgver=20181229
+pkgver=20200711
 pkgrel=1
 pkgdesc="runit service scripts for darkhttpd"
 arch=('any')
