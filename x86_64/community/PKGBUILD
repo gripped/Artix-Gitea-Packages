@@ -15,7 +15,7 @@ groups=('runit-galaxy')
 depends=('fcgiwrap')
 conflicts=('systemd-sysvcompat')
 source=("fcgiwrap.run")
-sha256sums=('49ec0c63613c71f7adab59484198d560cc167aa75751c36b90a77666f4080466')
+sha256sums=('d2e7a07902d826d257817ffc673f2ae607aa8ba3a51c0d384e95fb14e55fb82d')
 
 _inst_logsv() {
     for file in run finish check; do
