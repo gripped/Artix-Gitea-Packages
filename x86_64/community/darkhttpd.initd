@@ -1,18 +1,13 @@
 #!/usr/bin/openrc-run
 
+command=/usr/bin/darkhttpd
+command_args="${DARKHTTPD_OPTS} --daemon"
+command_user="http:http"
+
 depend() {
         use net
 }
 
-start() {
-        ebegin "Starting darkhttpd"
-        mkdir -p $DARKHTTPD_PIDDIR && chown jenkins $DARKHTTPD_PIDDIR
-        start-stop-daemon --start --exec /usr/bin/darkhttpd -- ${DARKHTTPD_OPTS} --pidfile $DARKHTTPD_PID
-        eend $?
-}
-
-stop() {
-        ebegin "Stopping darkhttpd"
-        start-stop-daemon --stop --quiet --pidfile $DARKHTTPD_PID
-        eend $?
+start_pre() {
+	checkpath -d --owner "$command_user" /srv/http
 }
