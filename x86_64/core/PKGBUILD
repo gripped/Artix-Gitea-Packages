@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20202602
+pkgver=20200711
 pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
@@ -16,10 +16,10 @@ sha256sums=('9964aa935b4a7d64f5970bcfcd561b06013a85ae2712444bc4c5f644364dab3b'
             '517cb12a30f84ba9580532d5485ce219ad96668480db99fcd4954c7017a0ea47')
 
 package() {
-    install -Dm755 ${srcdir}/dbus.initd ${pkgdir}/etc/init.d/dbus
+    install -Dm755 "${srcdir}"/dbus.initd "${pkgdir}"/etc/init.d/dbus
 
-    install -d "${pkgdir}/etc/runlevels/default"
-    ln -sf "/etc/init.d/dbus" "${pkgdir}/etc/runlevels/default/dbus"
+    install -d "${pkgdir}"/etc/runlevels/default
+    ln -sf /etc/init.d/dbus "${pkgdir}"/etc/runlevels/default/dbus
 
-    install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
+    install -Dt "${pkgdir}"/usr/share/libalpm/hooks -m644 *.hook
 }
