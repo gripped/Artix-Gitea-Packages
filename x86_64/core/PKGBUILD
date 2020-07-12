@@ -1,11 +1,11 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=cronie-openrc
-pkgver=20191014
+pkgver=20200711
 pkgrel=1
 pkgdesc="OpenRC cronie init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('openrc' 'cronie')
