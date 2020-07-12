@@ -1,41 +1,22 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=cryptsetup-openrc
-pkgver=20190222
+pkgver=20200711
 pkgrel=1
 pkgdesc="OpenRC cryptsetup init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('device-mapper-openrc' 'cryptsetup')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/dmcrypt')
-source=("dmcrypt.confd::${_url}/sys-fs/cryptsetup/files/2.0.5-dmcrypt.confd"
-        "dmcrypt.initd::${_url}/sys-fs/cryptsetup/files/2.0.5-dmcrypt.rc")
-sha256sums=('5c294d57dda99da26c38b4e4cc29c67ef080e7208f99b54ef1bc426d7e672b40'
-            'bed74c28a0ecfdbba6a723712085bba10c70d3b0a5879c48e24c396243d55dc9')
-
-pkgver() {
-    date +%Y%m%d
-}
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("dmcrypt.confd"
+        "dmcrypt.initd")
+sha256sums=('3d933a54abe62a547294b83208dbf5d7615d9c7f380d6504c91fff3620530803'
+            'ee4c2fef64a185176dbb69d8d0ef477b96c757289fde3826cae7778e81a81bbc')
 
 package() {
-    _inst_confd 'dmcrypt'
-    _inst_initd 'dmcrypt'
+    install -Dm755 "${srcdir}"/dmcrypt.initd "${pkgdir}"/etc/init.d/dmcrypt
+    install -Dm755 "${srcdir}"/dmcrypt.confd "${pkgdir}"/etc/conf.d/dmcrypt
 }
