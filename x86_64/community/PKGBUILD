@@ -24,6 +24,9 @@ prepare() {
   # Use local marked/marked-man
   sed -i 's|node bin/npm-cli.js install marked|true |' Makefile
 
+  #temporary build fix
+  sed -i '/all:/s|docs||' Makefile
+
   # Don't build twice
   sed -i 's/install: all/install:/' Makefile
 
