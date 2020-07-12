@@ -1,53 +1,34 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=lvm2-openrc
-pkgver=20190519
+pkgver=20200711
 pkgrel=1
 pkgdesc="OpenRC lvm2 init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 provides=('init-lvm2')
 depends=('device-mapper-openrc' 'lvm2')
 conflicts=('init-lvm2')
 backup=('etc/conf.d/lvm')
-source=("lvm.confd::${_url}/sys-fs/lvm2/files/lvm.confd-2.02.184-r3"
-        "lvm.initd::${_url}/sys-fs/lvm2/files/lvm.rc-2.02.184-r3"
-        "lvm-monitoring.initd::${_url}/sys-fs/lvm2/files/lvm-monitoring.initd-2.02.105-r2"
-        "lvmetad.initd::${_url}/sys-fs/lvm2/files/lvmetad.initd-2.02.116-r3"
-        "lvmpolld.initd::${_url}/sys-fs/lvm2/files/lvmpolld.initd-2.02.183")
-#         "lvmlockd.initd::${_url}/sys-fs/lvm2/files/lvmlockd.initd-2.02.166-r1"
+source=("lvm.confd"
+        "lvm.initd"
+        "lvm-monitoring.initd"
+        "lvmetad.initd"
+        "lvmpolld.initd")
+#         "lvmlockd.initd"
 sha256sums=('70318500ade549f6587033ed18e89f35d77478d812765629783fbb47e82e209b'
-            '5fa4120d2b771ccd9662d62d896afbc27490bded7a930344e0bace99c30ba023'
-            '42847d8e6dabbcf2cc19846c6ad22cbab65e9a033c4add569b152504b16ab477'
-            'e7f17004d505eae5d8a2fb336b22f1cdb20bb2ecf85a98daf2485bb4b0d4ff12'
-            '0e27943c335e4fc655c21c1a304b37a86654041117b0eac7b7f1396986789931')
-
-# pkgver() {
-#     date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            'd5fa0d21ff28cf50198699c1049470fef00ed725e8f8744341f184e095bd27d5'
+            '46604a5e759883de2758af947390e2a3af81b8977733540185a55484628f13b7'
+            'fc01a258e01d2fdb64aade25816aca3ba95acf228410894916200aa491f531a9'
+            'c2ecb427721be25e42386b73f278da08944c40676acb3fe7124bc2239a5f7651')
 
 package() {
-    _inst_confd 'lvm'
+    install -Dm755 "${srcdir}"/lvm.confd "${pkgdir}"/etc/conf.d/lvm
 
     for f in lvm lvm-monitoring lvmetad lvmpolld; do
-        _inst_initd "$f"
+        install -Dm755 "${srcdir}"/"$f".initd "${pkgdir}"/etc/init.d/"$f"
     done
 }
 
