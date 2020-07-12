@@ -1,45 +1,27 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
-
 pkgname=device-mapper-openrc
-pkgver=20190519
+pkgver=20200711
 pkgrel=1
 pkgdesc="OpenRC device-mapper init script"
 arch=('any')
-url="https://github.com/artix-linux/packages"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 provides=('init-device-mapper')
 depends=('device-mapper' 'openrc')
 conflicts=('init-device-mapper')
 backup=('etc/conf.d/device-mapper')
-source=("device-mapper.confd::${_url}/sys-fs/lvm2/files/device-mapper.conf-1.02.22-r3"
-        "device-mapper.initd::${_url}/sys-fs/lvm2/files/device-mapper.rc-2.02.105-r2"
-        "dmeventd.initd::${_url}/sys-fs/lvm2/files/dmeventd.initd-2.02.184-r2")
+source=("device-mapper.confd"
+        "device-mapper.initd"
+        "dmeventd.initd")
 sha256sums=('57777904f12a35617e5a4193c964ebb32396452487fd02353e71e16e7b46bc22'
-            'e8bfde63341f9e6136ee20a15ed9ea455e2259dbcaea756f8c3d0f710c1c2746'
-            'e83c70f22bd8c428f4fa3a8a16a1f7f597a38d3d80aa3e0dd72d7aacc547932c')
-
-# pkgver() {
-#     date +%Y%m%d
-# }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+            '630fbe07721c2a264c1b2f0195caf658c591bdef13cb82d5605bb489f59971a4'
+            'b4b91555f1486754717073dae83715d1e03adfdd5e56d80be8ac9689a85bc717')
 
 package() {
-    _inst_confd 'device-mapper'
-    _inst_initd 'device-mapper'
-    _inst_initd 'dmeventd'
+    install -Dm755 "${srcdir}"/device-mapper.confd "${pkgdir}"/etc/conf.d/device-mapper
+
+    for f in device-mapper dmeventd; do
+        install -Dm755 "${srcdir}"/"$f".initd "${pkgdir}"/etc/init.d/"$f"
+    done
 }
