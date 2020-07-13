@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=bftpd-s6
-pkgver=20200424
+pkgver=20200713
 pkgrel=1
 pkgdesc="s6 service scripts for bftpd"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('bftpd-runscripts')
 conflicts=('bftpd-runscripts')
