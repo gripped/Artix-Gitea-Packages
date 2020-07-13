@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mpd-s6
-pkgver=20200115
+pkgver=20200713
 pkgrel=1
 pkgdesc="s6 service scripts for mpd"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('mpd-runscripts')
 conflicts=('mpd-runscripts')
