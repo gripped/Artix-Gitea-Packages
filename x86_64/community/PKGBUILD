@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=backlight-s6
-pkgver=20200417
+pkgver=20200713
 pkgrel=1
 pkgdesc="Restore the screen brightness at system startup"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('backlight-runscripts')
 conflicts=('backlight-runscripts')
