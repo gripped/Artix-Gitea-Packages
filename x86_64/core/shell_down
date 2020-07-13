@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 do_lock() {
+	umount /dev/mapper/"$1" >/dev/null
 	cryptsetup luksClose "$1" >/dev/null
 }
 
