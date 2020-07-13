@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=opensmtpd-s6
-pkgver=20200427
+pkgver=20200713
 pkgrel=1
 pkgdesc="s6 service scripts for opensmtpd"
 arch=('any')
