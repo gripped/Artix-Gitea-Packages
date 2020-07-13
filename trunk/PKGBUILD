@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=stubby-s6
-pkgver=20200115
+pkgver=20200713
 pkgrel=1
 pkgdesc="s6 service scripts for stubby"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('stubby-runscripts')
 conflicts=('stubby-runscripts')
