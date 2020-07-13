@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fwknop-s6
-pkgver=20200115
+pkgver=20200713
 pkgrel=1
 pkgdesc="s6 service scripts for fwknop"
 arch=('any')
