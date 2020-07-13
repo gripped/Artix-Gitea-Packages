@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fcron-s6
 pkgver=20200713
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for fcron"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('fcron-runscripts')
 conflicts=('fcron-runscripts' 'cronie' 'cronie-runit')
