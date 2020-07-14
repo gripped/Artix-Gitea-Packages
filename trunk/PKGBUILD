@@ -1,36 +1,20 @@
+# Maintainer: Nathan Owens <ndowens @ artixlinux.org>
 # Submitter: alium@artixlinux.org
 
-pkgbase=firewalld
 pkgname=firewalld-openrc
-pkgver=20200514
+pkgver=20200714
 pkgrel=1
 pkgdesc="OpenRC firewalld init script"
 arch=('any')
-url="https://github.com/artix-linux/packages-galaxy"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'firewalld')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/firewalld')
-source=("$pkgbase.initd::https://gitweb.gentoo.org/repo/gentoo.git/plain/net-firewall/firewalld/files/firewalld.init")
-sha256sums=('03e682fa5a426a97ac8de1abc91b9c9b449ecaaaad14eca00be5c88f722a7342')
-
- pkgver() {
-        date +%Y%m%d
- }
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -re 's_( |\t)/var/run_\1/run_g' \
-        -re 's_( |\t)/usr/sbin_\1/usr/bin_g' \
-        -re 's_( |\t)/sbin_\1/usr/bin_g' \
-        -re 's_( |\t)/bin_\1/usr/bin_g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
+source=("firewalld.initd")
+sha256sums=('59c64d64f72e612d76b5aff4a03f4e1dde55652da8c57aa8c8453241286a4f73')
 
 package() {
-    _inst_initd 'firewalld'
+	install -Dm755 "$srcdir/firewalld.initd" "$pkgdir/etc/init.d/firewalld"
 }
