@@ -1,34 +1,21 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=dropbear-openrc
-pkgver=20200521
+pkgver=20200715
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://git.alpinelinux.org/aports/tree/main/dropbear?h=master"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'dropbear')
 conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
-source=("${pkgname/-openrc/}.initd::https://git.alpinelinux.org/aports/plain/main/dropbear/dropbear.initd"
-	"${pkgname/-openrc/}.confd::https://git.alpinelinux.org/aports/plain/main/dropbear/dropbear.confd")
-md5sums=('4299b86af9f2903f19477538e22ece30'
+source=("${pkgname/-openrc/}.initd"
+	"${pkgname/-openrc/}.confd")
+md5sums=('0ed105c4380eaab5307029c626678eed'
          'af73c487e2be37d65d0e8bf80489357e')
 
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_confd "${pkgname/-openrc/}"
-    _inst_initd "${pkgname/-openrc/}"
+	install -Dm755 "$srcdir/dropbear.initd" "$pkgdir/etc/init.d/dropbear"
+	install -Dm644 "$srcdir/dropbear.confd" "$pkgdir/etc/conf.d/dropbear"
 }
