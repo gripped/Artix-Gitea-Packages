@@ -1,26 +1,18 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=opensmtpd-openrc
-pkgver=20200521
+pkgver=20200715
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://git.alpinelinux.org/aports/tree/main/opensmtpd?h=master"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'opensmtpd')
 conflicts=('systemd-sysvcompat')
-source=("${pkgname/-openrc/}.initd::https://git.alpinelinux.org/aports/plain/main/opensmtpd/smtpd.initd")
-md5sums=('5178126c5a8abfb8cb1f4bb7d35b6368')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
+source=("${pkgname/-openrc/}.initd")
+md5sums=('e1f40709d5fab785b5d9ac524e5cb6c0')
 
 package() {
-    _inst_initd "${pkgname/-openrc/}"
+	install -Dm755 "$srcdir/opensmtpd.initd" "$pkgdir/etc/init.d/opensmtpd"
 }
