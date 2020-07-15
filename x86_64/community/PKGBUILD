@@ -1,12 +1,10 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
-
-_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=iwd-runit
 pkgver=20180804
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for iwd"
 arch=('any')
 url="https://artixlinux.org"
