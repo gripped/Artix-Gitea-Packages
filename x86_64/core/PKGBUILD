@@ -5,12 +5,12 @@
 
 pkgname=dhcpcd
 pkgver=9.1.4
-pkgrel=1
+pkgrel=2
 pkgdesc="RFC2131 compliant DHCP client daemon"
 url="https://roy.marples.name/projects/dhcpcd/"
 arch=('x86_64')
 license=('BSD')
-depends=('glibc' 'sh' 'udev' 'systemd-libs')
+depends=('glibc' 'sh' 'udev')
 optdepends=('openresolv: resolvconf support')
 provides=('dhcp-client')
 backup=('etc/dhcpcd.conf')
