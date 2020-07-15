@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=nsd-openrc
-pkgver=20200521
+pkgver=20200715
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -9,18 +9,9 @@ license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'nsd')
 conflicts=('systemd-sysvcompat')
-source=("${pkgname/-openrc/}.initd::https://git.alpinelinux.org/aports/plain/main/nsd/nsd.initd")
-md5sums=('c2e4377e29efc2d416cf408606c599c6')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
+source=("${pkgname/-openrc/}.initd")
+md5sums=('01d7ecb02aa0f677f8bcae3286f23ec8')
 
 package() {
-    _inst_initd "${pkgname/-openrc/}"
+	install -Dm755 "$srcdir/nsd.initd" "$pkgdir/etc/init.d/nsd"
 }
