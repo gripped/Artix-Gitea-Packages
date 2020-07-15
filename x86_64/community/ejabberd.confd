@@ -2,4 +2,3 @@
 # Put here only command line arguments for ejabberdctl (if any are required)
 
 #EJABBERDCTL_OPTS=""
-

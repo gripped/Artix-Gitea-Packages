@@ -1,8 +1,8 @@
 #!/usr/bin/openrc-run
 
 pidfile="/run/ejabberd.pid"
-daemon="/usr/bin/ejabberdctl"
-daemon_args="${EJABBERDCTL_OPT}"
+command="/usr/bin/ejabberdctl"
+command_args="${EJABBERDCTL_OPT} start"
 
 depend() {
 	use dns
@@ -10,14 +10,7 @@ depend() {
 	provide jabber-server
 }
 
-start() {
-	ebegin "Starting ejabberd"
-	start-stop-daemon --pidfile ${pidfile} --exec ${daemon} ${daemon_args} start
-	eend $?
-}
-
 stop() {
-	ebegin "Stopping ejabberd"
-	start-stop-daemon --pidfile ${pidfile} --exec ${daemon} stop
-	eend $?
+	start-stop-daemon --pidfile "$pidfile" --exec "$command" stop
+		
 }
