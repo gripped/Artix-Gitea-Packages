@@ -1,16 +1,14 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
-
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=atftp-runit
 pkgver=20200425
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for atftp"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
+url="https://artixlinux.org"
+license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runitscript should follow it's main package's licenses.
 depends=('atftp')
