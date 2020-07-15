@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=bumblebee-openrc
-pkgver=20200620
+pkgver=20200715
 pkgrel=1
 pkgdesc="OpenRC bumblebee init script"
 arch=('any')
@@ -16,7 +16,7 @@ backup=('etc/conf.d/bumblebee')
 source=("bumblebee.confd"
         "bumblebee.initd")
 sha256sums=('9e0287f542cff0fd3452a0c3d6d427a3404706c93ac9a00f4d99fe52ed596d75'
-            '300850d53f0ce249278d0314b9c786c06fba7c280d230afb1dbb75cdc97293f2')
+            '9edfc6fa88d72f2c7faf6f7c39f7a416ee33cf1cd558626d55268e99413a0876')
 
 package() {
     install -Dm755 "${srcdir}/bumblebee.initd" "${pkgdir}/etc/init.d/bumblebee"
