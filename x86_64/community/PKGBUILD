@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=privoxy-openrc
-pkgver=20200620
+pkgver=20200715
 pkgrel=1
 pkgdesc="OpenRC privoxy init script"
 arch=('any')
@@ -13,7 +13,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'privoxy')
 conflicts=('systemd-sysvcompat')
 source=("privoxy.initd")
-sha256sums=('741e494d4a99d6636c0c605b1cc70f760136ca5b060c227987d6f92f15c0f937')
+sha256sums=('db1ee12855e223257b989580f946d08e93f4a8e45354807917c284846975bd5a')
 
 package() {
     install -Dm755 "$srcdir/privoxy.initd" "$pkgdir/etc/init.d/privoxy"
