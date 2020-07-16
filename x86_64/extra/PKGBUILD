@@ -1,6 +1,4 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
-
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
@@ -9,14 +7,12 @@ pkgver=20180226
 pkgrel=1
 pkgdesc="runit service scripts for lirc"
 arch=('any')
-url="https://lirchub.com/artix-linux"
-license=('BSD3')
+url="https://artixlinux.org"
+license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('lirc')
-provides=('lirc-runscripts')
-replaces=('lirc-runscripts')
 conflicts=('systemd-sysvcompat')
 source=("lircd.run")
 sha256sums=('c7f73528f4772dee888dc000b99a4237eca344ba31948bd796dcd9cf8fcf1a5d')
