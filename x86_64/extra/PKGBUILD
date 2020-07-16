@@ -1,10 +1,11 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=mpd-openrc
-pkgver=20200520
+pkgver=20200716
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://gitea.artixlinux.org/PackagesM/mpd-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'mpd')
@@ -12,18 +13,10 @@ conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("${pkgname/-openrc/}.confd"
 	"${pkgname/-openrc/}.initd")
-md5sums=('dbd301041953a5cf9c2b9de8f23eb6bb'
-         '73f97e50879a50ddea0e846b7d4eb9b8')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+md5sums=('4815a523cb9ee5e3350341b91e3ee712'
+         '1c9cda806edeed7eb7ded8f44afaee52')
 
 package() {
-    _inst_confd "${pkgname/-openrc/}"
-    _inst_initd "${pkgname/-openrc/}"
+	install -Dm755 "$srcdir/mpd.initd" "$pkgdir/etc/init.d/mpd"
+	install -Dm644 "$srcdir/mpd.confd" "$pkgdir/etc/conf.d/mpd"
 }

@@ -4,4 +4,4 @@
 # Specify daemon $OPTS here.
 #
 
-OPTS=""
+MPD_OPTS=""
