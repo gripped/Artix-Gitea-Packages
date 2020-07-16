@@ -6,6 +6,7 @@
 command="/usr/bin/hostapd"
 command_args="-B ${OPTIONS} ${CONFIGS}"
 extra_started_commands="reload"
+required_files="$CONFIGS"
 
 depend() {
 	need net
@@ -13,24 +14,7 @@ depend() {
 	use logger
 }
 
-checkconfig() {
-	local file
-
-	for file in ${CONFIGS}; do
-		if [ ! -r "${file}" ]; then
-			eerror "hostapd configuration file (${CONFIG}) not found"
-			return 1
-		fi
-	done
-}
-
-start_pre() {
-	checkconfig || return 1
-}
-
 reload() {
-	checkconfig || return 1
-
 	ebegin "Reloading ${SVCNAME} configuration"
 	kill -HUP $(pidof /usr/bin/hostapd) > /dev/null 2>&1
 	eend $?
