@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syncthing-relaysrv-s6
-pkgver=20200713
+pkgver=20200716
 pkgrel=1
 pkgdesc="s6 service scripts for syncthing-relaysrv"
 arch=('any')
@@ -10,12 +10,29 @@ provides=('syncthing-relaysrv-runscripts')
 conflicts=('syncthing-relaysrv-runscripts')
 depends=('syncthing-relaysrv' 's6')
 install=syncthing-relaysrv.install
-source=("relaysrv.run" "relaysrv.type")
-sha256sums=('1ac1f77588849a283023fe5e2bbfbfdadb03666f10b9e991bf157961a7888468'
+backup=('etc/s6/sv/relaysrv-log/conf')
+source=("relaysrv-log.conf"
+        "relaysrv-log.consumer-for"
+        "relaysrv-log.notification-fd"
+        "relaysrv-log.pipeline-name"
+        "relaysrv-log.run"
+        "relaysrv-log.type"
+        "relaysrv-srv.producer-for"
+        "relaysrv-srv.run"
+        "relaysrv-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '6cc688fa990b0083a669799260a52aa5caf3e396efd436e62d5fd9699313ddfc'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '6dfbef5530929860682246d0101e8f1a3ce6b4b4c8ace3f8bfc52efc13f560d2'
+            '0556ebc6224f24c003f8492b205d3b318eaeeed00a0816876fdf070fba9c861b'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'd133a5ae164073074d49e371207d566592a18fc810ab879e6a6f774b17ba1772'
+            'd55c4e1eef1c3cd81bf2498bed8ac28ae8e976206d9f3d142b633ac728b85ddb'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +40,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'relaysrv'
+    _inst_sv 'relaysrv-log'
+    _inst_sv 'relaysrv-srv'
 }
