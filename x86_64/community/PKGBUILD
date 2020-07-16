@@ -1,0 +1,33 @@
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
+
+pkgname=cargo-c
+pkgver=0.6.8
+pkgrel=1
+pkgdesc='A cargo subcommand to build and install C-ABI compatibile dynamic and static libraries'
+arch=('x86_64')
+url='https://github.com/lu-zero/cargo-c/'
+license=('MIT')
+depends=('curl' 'openssl' 'zlib')
+makedepends=('rust')
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/lu-zero/cargo-c/archive/v${pkgver}.tar.gz"
+        "${pkgname}-${pkgver}.Cargo.lock"::"https://github.com/lu-zero/cargo-c/releases/download/v${pkgver}/Cargo.lock")
+sha256sums=('ca8cb5e08b0ba5b6eccea1481854829e1b411ebb9885be891a897c27b5a76cba'
+            'f956c171676375ecdf5069d32896c8c8047001b207f377d1ba6442be449a3688')
+
+prepare() {
+    ln -sf "../${pkgname}-${pkgver}.Cargo.lock" "${pkgname}-${pkgver}/Cargo.lock"
+    cargo fetch --locked --manifest-path="${pkgname}-${pkgver}/Cargo.toml"
+}
+
+build() {
+    cargo build --release --frozen --manifest-path="${pkgname}-${pkgver}/Cargo.toml"
+}
+
+check() {
+    cargo test --release --frozen --manifest-path="${pkgname}-${pkgver}/Cargo.toml"
+}
+
+package() {
+    install -D -m755 "${pkgname}-${pkgver}/target/release/"cargo-c{build,install} -t "${pkgdir}/usr/bin"
+    install -D -m644 "${pkgname}-${pkgver}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
