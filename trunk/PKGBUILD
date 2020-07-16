@@ -13,8 +13,8 @@ conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/chrony')
 source=("chrony.confd"
 	"chrony.initd")
-md5sums=('69038f98d1073239c1369879adb9b6c6'
-         'f5870fb18a569f04e694083df766619c')
+md5sums=('9a5fd0cd6dd6ec7d77a0681f20c6e2c8'
+         'f2a45826f968f7efdd9d242c07e944d9')
 
 package() {
 	install -Dm755 "$srcdir/chrony.initd" "$pkgdir/etc/init.d/chrony"
