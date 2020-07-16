@@ -13,7 +13,7 @@ depends=(openssl gnutls nettle argon2 readline fmt http-parser jsoncpp libjsoncp
 makedepends=(msgpack-c cmake cython cppunit restinio)
 optdepends=('python: to use the Python bindings')
 source=("${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('41717d700c2f0ed9ab54e23caed3faef48d6d8c59c314d3c53dc075703b26618')
+sha512sums=('fb783a186bbe4fc66339c9e37ea987c6bf3c035a3d9f6737e264171709cff74ffa761dee1e13ad7ab0dab090f12d6a326d171127666da1f54e972bd2fa0fe3e1')
 
 prepare() {
   mkdir -p build
@@ -32,7 +32,6 @@ build() {
     -DOPENDHT_TOOLS=ON \
     -DOPENDHT_INDEX=ON \
     -DOPENDHT_PYTHON=ON \
-    -DOPENDHT_HTTP=ON \
     -DOPENDHT_PROXY_SERVER=ON \
     -DOPENDHT_PROXY_CLIENT=ON \
     -DOPENDHT_PUSH_NOTIFICATIONS=ON
