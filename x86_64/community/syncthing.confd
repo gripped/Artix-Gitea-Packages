@@ -7,8 +7,11 @@
 # Configuration directory
 #SYNCTHING_HOMEDIR="/var/lib/syncthing/.config/syncthing"
 
+# Log directory location
+#SYNCTHING_LOGDIR=/var/log/syncthing
+
 # Log file location
-#SYNCTHING_LOGFILE="/var/log/syncthing/syncthing.log"
+#SYNCTHING_LOGFILE="${SYNCTHING_LOGDIR}/syncthing.log"
 
 # umask used to create files
 # The default allows group access

@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=syncthing-openrc
-pkgver=20200620
+pkgver=20200716
 pkgrel=1
 pkgdesc="OpenRC syncthing init script"
 arch=('any')
@@ -13,17 +13,13 @@ groups=('openrc-galaxy')
 depends=('openrc' 'syncthing')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/syncthing'
-	'etc/conf.d/strelaysrv'
-	'etc/conf.d/stdiscosrv')
+	'etc/conf.d/strelaysrv')
 source=('syncthing.'{initd,confd}
-	'strelaysrv.'{initd,confd}
-	'stdiscosrv.'{initd,confd})
-sha256sums=('efb6c4c6f5fccc1d3f09f7a129f82f624ac3ccb393c6e0f47c9fd752a3dce0cf'
-            'eaa8062872bae4cc451392ef6d05e093b5c18f7589bd4e6e289737a55bc7d22d'
+	'strelaysrv.'{initd,confd})
+sha256sums=('adb1e273a8199b3da7038ce6f69d6028c924ff6f4e4db3ee1e2ae76e97637acc'
+            '7592b3be5a8adc1e6a8f488797f569e62422956ade8625ca9e43a09bbaf01d7d'
             'a939db3ba1332574295f9b608a341659bba87fc10dac06bd049ae244d0808090'
-            '8ae5fb440478f93a9450a723249729b814056e9447b2ea8db1c32b9eb8ccee47'
-            '64e6f8196876eae884032ae0cceb5b4352aed1a4d42dfe29c539396d6bfe093e'
-            '980f4bb874b3bcc5f4b0e28b0b7303132b20226dc4b065d9bebafe386b52ff40')
+            '8ae5fb440478f93a9450a723249729b814056e9447b2ea8db1c32b9eb8ccee47')
 
 package() {
   cd "$srcdir"
