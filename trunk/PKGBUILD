@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syncthing-s6
-pkgver=20200713
+pkgver=20200716
 pkgrel=1
 pkgdesc="s6 service scripts for syncthing"
 arch=('any')
@@ -9,13 +9,33 @@ groups=('s6-galaxy')
 provides=('syncthing-runscripts')
 conflicts=('syncthing-runscripts')
 depends=('syncthing' 's6')
+backup=('etc/s6/sv/syncthing-log/conf'
+        'etc/s6/sv/syncthing-srv/conf')
 install=syncthing.install
-source=("syncthing.run" "syncthing.type")
-sha256sums=('016a5d8995aae71e94608099a3659df53366895718a150f5c62238237bd63bc0'
+source=("syncthing-log.conf"
+        "syncthing-log.consumer-for"
+        "syncthing-log.notification-fd"
+        "syncthing-log.pipeline-name"
+        "syncthing-log.run"
+        "syncthing-log.type"
+        "syncthing-srv.conf"
+        "syncthing-srv.producer-for"
+        "syncthing-srv.run" 
+        "syncthing-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '7e09baa46a5b768626351b368840d12afe6a85b72e73f09b38fe26bfe75a1415'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '1ad7b4aba4454b1a18a7ba4388563c26fae70c6f69d7b589e10c8a5082bfac03'
+            '0446ab575c189e41a21b64b1fc5da4ccbbf4f729d6d68b417fe95f634b50d496'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '4ee919149c16252b285b80bab4d219e3210b5fc0a14ab39c9227e9c5b7fcdc44'
+            '9e487a9879713f4e87e4364a89ac040a2305a16d624e4a95a0690653e3ed8395'
+            '4995bd44582d53d1fdaad256267e2c7b8dc5f4622cd37b70810a5e3d205c7063'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +43,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'syncthing'
+    _inst_sv 'syncthing-log'
+    _inst_sv 'syncthing-srv'
 }
