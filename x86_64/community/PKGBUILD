@@ -10,6 +10,7 @@
 # Contributor: Mike Rosset <mike.rosset@gmail.com>
 # Contributor: Daniel YC Lin <dlin.tw@gmail.com>
 # Contributor: John Luebs <jkluebs@gmail.com>
+#
 
 pkgname=go
 epoch=2
