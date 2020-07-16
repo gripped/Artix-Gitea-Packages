@@ -1,24 +1,19 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
-pkgname='prometheus-runit'
+pkgname=prometheus-runit
 pkgver=20190114
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for prometheus"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
+url="https://artixlinux.org"
+license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 depends=('prometheus')
 groups=('runit-world')
-provides=('prometheus-runscripts')
-replaces=('prometheus-runscripts')
 conflicts=('systemd-sysvcompat')
-# source=("prometheus.run::${_url}/prometheus/files/prometheus/run")
 source=("prometheus.run")
 sha256sums=('8e69c726a51b723935ce1db4b812ac6ec6ffdb5bb3a5d85448aeced91563c0f5')
 
