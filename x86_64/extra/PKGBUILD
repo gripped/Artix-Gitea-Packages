@@ -1,13 +1,13 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=openvpn-openrc
-pkgver=20200620
+pkgver=20200720
 pkgrel=1
 pkgdesc="OpenRC openvpn init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-groups=('openrc-system')
+groups=('openrc-world')
 depends=('openrc' 'openvpn')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/openvpn')
