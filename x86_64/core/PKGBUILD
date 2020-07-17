@@ -3,14 +3,15 @@
 # Maintainer: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=mkinitcpio
-pkgver=27
-pkgrel=3
+pkgver=28
+pkgrel=1
 pkgdesc="Modular initramfs image creation utility"
 arch=('any')
 url="https://projects.archlinux.org/mkinitcpio.git/"
 license=('GPL')
 depends=('awk' 'mkinitcpio-busybox>=1.19.4-2' 'kmod' 'util-linux>=2.23' 'libarchive' 'coreutils'
          'bash' 'diffutils' 'findutils' 'grep' 'filesystem>=2011.10-1' 'gzip' 'eudev')
+makedepends=('asciidoc')
 optdepends=('xz: Use lzma or xz compression for the initramfs image'
             'bzip2: Use bzip2 compression for the initramfs image'
             'lzop: Use lzo compression for the initramfs image'
@@ -19,29 +20,19 @@ optdepends=('xz: Use lzma or xz compression for the initramfs image'
 provides=('initramfs')
 backup=('etc/mkinitcpio.conf')
 source=("https://sources.archlinux.org/other/$pkgname/$pkgname-$pkgver.tar.gz"{,.sig}
-        'nosystemd.patch'
-        "0001-mkinitcpio-remove-preset-pacsave.patch"
-        "0002-mkinitcpio-fix-builtin.patch")
+        'nosystemd.patch')
 install=mkinitcpio.install
-sha256sums=('e6bff1cb78b677538eb9aace900b715fd59de8fc210b74fb9d899dfaa32bc354'
+sha256sums=('bf83a158786d272d8046a4dd48bfcc343ec37de2cae0ae65c59132a45744808c'
             'SKIP'
-            'c4afeb6b3300c4d50c3f01233705b542f59d6e95a7670f7efde097ea209ef5bd'
-            '845569fa760f70c868ecb3dc8ae9667287970526dddaf403fdafcb716e8b3d51'
-            'd097f3df15ba9fefd3771f9f784e1c31c8d5ff1d9d6885a46fc6b5188e419796')
+            'c4afeb6b3300c4d50c3f01233705b542f59d6e95a7670f7efde097ea209ef5bd')
 validpgpkeys=('487EACC08557AD082088DABA1EB2638FF56C0C53'   # Dave Reisner
               '86CFFCA918CF3AF47147588051E8B148A9999C34'   # Evangelos Foutras
               'ECCAC84C1BA08A6CC8E63FBBF22FB1D78A77AEAB')  # Giancarlo Razzolini
 
 prepare() {
   cd $pkgname-$pkgver
-  # Apply 0001-mkinitcpio-remove-preset-pacsave.patch
-  patch -Np1 < $srcdir/0001-mkinitcpio-remove-preset-pacsave.patch
-
   rm -rf install/sd-*
-  patch -Np1 -i $srcdir/nosystemd.patch
-
-  # Apply 0002-mkinitcpio-fix-builtin.patch
-  patch -Np1 < $srcdir/0002-mkinitcpio-fix-builtin.patch
+  patch -Np1 -i ../nosystemd.patch
 }
 
 check() {
