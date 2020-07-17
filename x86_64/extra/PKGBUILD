@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openvpn-s6
-pkgver=20200611
+pkgver=20200716
 pkgrel=1
 pkgdesc="s6 service scripts for openvpn"
 arch=('any')
 url="https://gitea.artixlinux.org/"
-groups=('s6-system')
-provides=('init-openvpn')
-conflicts=('init-openvpn')
+groups=('s6-world')
+provides=('openvpn-runscripts')
+conflicts=('openvpn-runscripts')
 depends=('openvpn' 's6')
 install=openvpn.install
 backup=('etc/s6/sv/openvpn-log/conf')
