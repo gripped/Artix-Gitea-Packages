@@ -1,19 +1,16 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
-
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=elogind-runit
 pkgver=20191020
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for elogind"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD')
 depends=('dbus-runit' 'elogind')
-provides=('elogind-runscripts' 'init-elogind')
-replaces=('elogind-runscripts')
+provides=('init-elogind')
 conflicts=('init-elogind')
 source=("elogind.run")
 sha256sums=('f1375235c4543f3081ddfa7c71bb4f5343b3048c7fd4d9dc312ce6163055f396')
