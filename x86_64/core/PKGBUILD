@@ -1,11 +1,11 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=cryptsetup-runit
 pkgver=20200413
-pkgrel=1
+pkgrel=2
 pkgdesc="runit stage1 script for cryptsetup"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-system')
 provides=('init-cryptsetup')
@@ -18,7 +18,6 @@ sha256sums=('ad8700650190d1fdc265538aaf6e4599d49535f24a1b1ef35a5d9f9e75c0c5ae')
 package() {
     install -Dm755 "${srcdir}/cryptsetup" "${pkgdir}/usr/lib/rc/sv.d/cryptsetup"
 
-    # create default symlinks?
      install -d ${pkgdir}/etc/rc/{sysinit,shutdown}
      ln -sf /usr/lib/rc/sv.d/cryptsetup ${pkgdir}/etc/rc/sysinit/35-cryptsetup
      ln -sf /usr/lib/rc/sv.d/cryptsetup ${pkgdir}/etc/rc/shutdown/65-cryptsetup
