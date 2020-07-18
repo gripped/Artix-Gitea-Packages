@@ -1,16 +1,14 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
-
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=dbus-runit
 pkgver=20191020
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for dbus"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
+url="https://artixlinux.org"
+license=('BSD')
 depends=('dbus' 'runit')
 provides=('dbus-runscripts' 'init-dbus')
 conflicts=('init-dbus')
