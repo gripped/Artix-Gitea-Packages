@@ -5,7 +5,7 @@ _commit=2314c2630f19c176cb1a7a39bebed565c126b66e
 
 pkgname=runit-rc
 pkgver=20200413
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
 url='https://gitea.artixlinux.org/artix/runit-rc'
