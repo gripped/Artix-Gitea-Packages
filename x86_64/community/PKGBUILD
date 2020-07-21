@@ -1,0 +1,22 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
+pkgname=lxd-openrc
+pkgver=20200721
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'lxd')
+conflicts=('systemd-sysvcompat')
+backup=("etc/conf.d/${pkgname/-openrc/}")
+source=("lxd.initd"
+	"lxd.confd")
+md5sums=('9e1438a6e9e5e0fa08497a6de8ae2c24'
+         '381b6ae3febdba745424d219debb9090')
+
+package() {
+	install -Dm755 "$srcdir/lxd.initd" "$pkgdir/etc/init.d/lxd"
+	install -Dm644 "$srcdir/lxd.confd" "$pkgdir/etc/conf.d/lxd"
+}
