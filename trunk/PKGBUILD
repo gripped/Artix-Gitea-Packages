@@ -4,9 +4,11 @@
 # Contributor: Patryk Kowalczyk < patryk at kowalczyk dot ws>
 
 pkgbase=libseccomp
-pkgname=(libseccomp python-libseccomp)
+pkgname=(libseccomp
+# python-libseccomp
+)
 pkgver=2.5.0
-pkgrel=2
+pkgrel=1
 pkgdesc='Enhanced seccomp library'
 arch=('x86_64')
 license=('LGPL2.1')
@@ -33,8 +35,8 @@ build() {
   cd ${pkgbase}-${pkgver}
   ./configure --prefix=/usr
   make
-  cd src/python
-  env VERSION_RELEASE=${pkgver} python setup.py build
+#   cd src/python
+#   env VERSION_RELEASE=${pkgver} python setup.py build
 }
 
 check() {
