@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+foreground { mkdir -m0711 -p /run/gdm }
+foreground { chown root:gdm /run/gdm }
+exec gdm
