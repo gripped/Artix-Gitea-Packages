@@ -2,8 +2,8 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname='virtualbox-host-modules-artix'
-pkgver=6.1.10
-pkgrel=9
+pkgver=6.1.12
+pkgrel=3
 pkgdesc='Virtualbox host kernel modules for Artix Kernel'
 arch=('x86_64')
 url='https://virtualbox.org/'
@@ -18,7 +18,7 @@ provides=('VIRTUALBOX-HOST-MODULES')
 build() {
   _kernver="$(</usr/src/linux/version)"
 
-  dkms build --dkmstree "$srcdir" -m vboxhost/${pkgver}_OSE -k ${_kernver}
+  fakeroot dkms build --dkmstree "$srcdir" -m vboxhost/${pkgver}_OSE -k ${_kernver}
 }
 
 package(){
