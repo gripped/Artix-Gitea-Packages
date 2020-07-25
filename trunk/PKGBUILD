@@ -11,8 +11,7 @@ depends=(glibc)
 makedepends=(go git)
 backup=(etc/matterbridge.toml)
 source=(${pkgname}-${pkgver}.tar.gz::"${url}/archive/v${pkgver}.tar.gz")
-sha512sums=('bce8a441e309cf82c03ab78ac8dbc95cff7c145defd2cc3c1946fa224c5fe66d85688742d4637acf0703191a61f3dc3a8676c53daa3d778f4186591630cfe600'
-            'SKIP')
+sha512sums=('bce8a441e309cf82c03ab78ac8dbc95cff7c145defd2cc3c1946fa224c5fe66d85688742d4637acf0703191a61f3dc3a8676c53daa3d778f4186591630cfe600')
 
 prepare() {
   cd ${pkgname}-${pkgver}
