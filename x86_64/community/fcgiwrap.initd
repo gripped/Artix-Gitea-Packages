@@ -1,12 +1,13 @@
 #!/usr/bin/openrc-run
 
+: ${socket:=unix:/run/fcgiwrap/fcgiwrap.sock}
 name="fcgiwrap"
 description="fcgiwrap cgi daemon"
 
 command="/usr/bin/fcgiwrap"
-user="http"
-group="http"
-: ${socket:=unix:/run/fcgiwrap/fcgiwrap.sock}
+command_args="-c ${nproc:-$(nproc)} -s $socket"
+command_user="http:http"
+start_stop_daemon_args="--background"
 
 depend() {
 	need net localmount
@@ -14,23 +15,13 @@ depend() {
 }
 
 start_pre() {
-	command_args="-c ${nproc:-$(nproc)} -s $socket"
 	case "$socket" in
 	unix:/*)
 		local socket_path=${socket#unix:}
-		checkpath --directory --mode 2775 --owner http:http \
+		checkpath --directory --mode 2775 --owner "$command_user" \
 			${socket_path%/*}
 		;;
 	esac
-}
-
-start() {
-	ebegin "Starting ${name}"
-	start-stop-daemon --exec ${command} \
-		--background \
-		-u http -g http \
-		--start -- ${command_args}
-	eend $?
 }
 
 stop_post() {

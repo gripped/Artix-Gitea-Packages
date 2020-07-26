@@ -1,29 +1,20 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=fcgiwrap-openrc
-pkgver=20200524
+pkgver=202000726
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://gitea.artixlinux.org/PackagesF/fcgiwrap-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'fcgiwrap')
 conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
-source=("${pkgname/-openrc/}.initd"
-	"${pkgname/-openrc/}.confd")
-md5sums=('a59105b3835715366256441bd25ffd72'
-         '2033dbac5f2d25437f4dc82e67cbe8c9')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("${pkgname/-openrc/}."{initd,confd})
+sha256sums=('e4d3550c32fc02e456077624b2f2e4ec4e5ee14fe4dca4e4594d745d653bc6e6'
+            '22bf354841c0486bdf5e7909adc47092690fb09520841f8aa2f11ef4e0ee651d')
 
 package() {
-    _inst_confd "${pkgname/-openrc/}"
-    _inst_initd "${pkgname/-openrc/}"
+  install -Dm755 "$srcdir/fcgiwrap.initd" "$pkgdir/etc/init.d/fcgiwrap"
+  install -Dm644 "$srcdir/fcgiwrap.confd" "$pkgdir/etc/conf.d/fcgiwrap"
 }
