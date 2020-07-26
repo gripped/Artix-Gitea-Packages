@@ -1,7 +1,7 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 
 pkgname=blocaled
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc='Provides a stand-alone implementation of the localed D-Bus service.'
 arch=('x86_64')
@@ -10,8 +10,8 @@ license=('BSD')
 depends=('polkit' 'libdaemon')
 makedepends=('gtk-doc')
 conflicts=('openrc-settingsd')
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v0.1.tar.gz")
-sha256sums=('ab90f2973fcea13380928657c417f4199192f9620dbfe04111063ed25812b747')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('96562abd23d70eccedcebad8f09a79cf436f801cf3d257169583f281da0357ba')
 
 build(){
     cd ${pkgname}-${pkgver}
