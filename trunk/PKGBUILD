@@ -1,27 +1,17 @@
 # Maintainer Nathan Owens <ndowens@artixlinux.org> 
 pkgname=prosody-openrc
-pkgver=20200521
+pkgver=20200726
 pkgrel=1
 pkgdesc="OpenRC prosody init script"
 arch=('any')
 url="https://git.alpinelinux.org/aports/tree/community/prosody?h=master"
 license=('GPL2')
-groups=('openrc-world')
-provides=('openrc-timed')
+groups=('openrc-galaxy')
 depends=('openrc' 'prosody')
 conflicts=('systemd-sysvcompat')
-source=("prosody.initd::https://git.alpinelinux.org/aports/plain/community/prosody/prosody.initd")
-sha256sums=('d4326044734480fa61c33c1d75ea32af14fb274d0a7629ea408765cb1c6368f4')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-
-    sed -e 's|#!/sbin/openrc-run|#!/usr/bin/openrc-run|g' \
-        -e 's|/var/run|/run|g' \
-        -e 's|/usr/sbin|/usr/bin|g' \
-        -i ${pkgdir}/etc/init.d/$1
-}
+source=("prosody.initd")
+sha256sums=('cf15eb2852b2f6cd75794a7444df49c75fb1cb99afa19e0fe35d60a7a648e4ca')
 
 package() {
-    _inst_initd 'prosody'
+  install -Dm755 "$srcdir/prosody.initd" "$pkgdir/etc/init.d/prosody"
 }
