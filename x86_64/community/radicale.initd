@@ -14,8 +14,6 @@ depend() {
 }
 
 start_pre() {
-	checkpath --directory --owner radicale /var/lib/radicale
-	checkpath --directory --owner radicale /var/log/radicale
-	checkpath --file --owner root:radicale --mode 0640 /etc/radicale/config
-	checkpath --file --owner root:radicale --mode 0640 /etc/radicale/logging
+	checkpath --directory --owner "$command_user" /var/{lib,log}/radicale
+	checkpath --file --owner root:radicale --mode 0640 /etc/radicale/{config,logging}
 }

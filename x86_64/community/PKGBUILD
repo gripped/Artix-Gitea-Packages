@@ -1,21 +1,17 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=radicale-openrc
-pkgver=20200522
+pkgver=20200726
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://codeberg.org/ndowens/packages-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'radicale')
 conflicts=('systemd-sysvcompat')
 source=("${pkgname/-openrc/}.initd")
-md5sums=('89107b05571d6c1bc8e229e29150867f')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
+sha256sums=('a04ee36d917e3062ddef74d50a9568f482f74e13a57ec817337b54442495ed56')
 
 package() {
-    _inst_initd "${pkgname/-openrc/}"
+  install -Dm755 "$srcdir/radicale.initd" "$pkgdir/etc/init.d/radicale"
 }
