@@ -2,7 +2,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.2.25
+pkgver=3.2.27
 pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
@@ -15,7 +15,7 @@ makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 optdepends=('calamares-branding: Artix branding')
 source=("${url}/archive/v$pkgver.tar.gz"
         0001-artix-modules.patch)
-sha256sums=('797ce33db7d4e4c06bbccef95f6c4023f7628e91bd142896695565fed4ae8c4b'
+sha256sums=('1b53e1cc19f7d1045fd3cd0c4fe7d6f8f78d2759f96a87235125d55b7ba5051d'
             '0e0b376e3f32c60eb962e79076d93786f0bd5ea0e8bdea66e69a633e9fe89a08')
 
 prepare() {
