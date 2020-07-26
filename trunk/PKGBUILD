@@ -1,29 +1,20 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=shairplay-openrc
-pkgver=20200521
-pkgrel=1.1
+pkgver=20200726
+pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
-url="https://codeberg.org/ndowens/packages-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'shairplay')
 conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
-source=("${pkgname/-openrc/}.initd"
-	"${pkgname/-openrc/}.confd")
-md5sums=('6f38ec5eb411a525edcbd40770de5f60'
-         '8b66a23646e62e63da18b72825a9700b')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+source=("${pkgname/-openrc/}."{initd,confd})
+sha256sums=('409ce81cff2a8babffdafbd91282d43a6084796b580d9333f8b6215f042c0fae'
+            'b7a30e3b767858609e191c8937588e246a445a13744c51d1c6c447a2cb5d78a1')
 
 package() {
-    _inst_confd "${pkgname/-openrc/}"
-    _inst_initd "${pkgname/-openrc/}"
+  install -Dm755 "$srcdir/shairplay.initd" "$pkgdir/etc/init.d/shairplay"
+  install -Dm644 "$srcdir/shairplay.confd" "$pkgdir/etc/conf.d/shairplay"
 }
