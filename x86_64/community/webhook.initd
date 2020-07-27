@@ -7,5 +7,5 @@ command_background=true
 
 depend() {
 	after net
-	wants net
+	want net
 }
