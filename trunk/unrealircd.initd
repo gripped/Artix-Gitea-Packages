@@ -8,5 +8,9 @@ command_user="ircd:ircd"
 depend() {
 	after net nss
 	use dns logger
-	provides ircd
+	provide ircd
+}
+
+start_pre() {
+	checkpath -d /var/log/unrealircd
 }
