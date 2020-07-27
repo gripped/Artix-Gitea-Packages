@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=gdm-s6
-pkgver=20200423
+pkgver=20200727
 pkgrel=1
 pkgdesc="s6 service scripts for gdm"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('gdm-runscripts')
 conflicts=('gdm-runscripts')
