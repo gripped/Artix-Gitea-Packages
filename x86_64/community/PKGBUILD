@@ -1,9 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
-#
 
 pkgbase=python-pytest-forked
 pkgname=('python-pytest-forked' 'python2-pytest-forked')
-pkgver=1.2.0
+pkgver=1.3.0
 pkgrel=1
 pkgdesc='run tests in isolated forked subprocesses'
 arch=('any')
@@ -11,7 +10,7 @@ license=('MIT')
 url='https://github.com/pytest-dev/pytest-forked'
 makedepends=('python-pytest' 'python2-pytest' 'python-setuptools-scm' 'python2-setuptools-scm')
 source=("$pkgbase-$pkgver.tar.gz::https://github.com/pytest-dev/pytest-forked/archive/v$pkgver.tar.gz")
-sha512sums=('4af4b73b1ad23f84b679844685d325c4f17031a01a997b41349745a07998182a6057ade2a650d709cd8586a8ee20795395920d4f38f654b190501b822b9314f0')
+sha512sums=('3fbbde21b4157eb8d2f72ae4285e2a84718a1ba85781ee10b53cc36d8de21512c6f2285fad5fa3cf40dcb6df767cc87fc8e749897011d89e84dcf153fc466ba6')
 
 prepare() {
   cp -a pytest-forked-$pkgver{,-py2}
@@ -32,11 +31,11 @@ check() {
 
   cd "$srcdir"/pytest-forked-$pkgver
   python setup.py install --root="$PWD/tmp_install" --optimize=1
-#  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.8/site-packages:$PYTHONPATH" py.test
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.8/site-packages:$PYTHONPATH" py.test
 
   cd "$srcdir"/pytest-forked-$pkgver-py2
   python2 setup.py install --root="$PWD/tmp_install" --optimize=1
-#  PYTHONPATH="$PWD/tmp_install/usr/lib/python2.7/site-packages:$PYTHONPATH" py.test2
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python2.7/site-packages:$PYTHONPATH" py.test2
 }
 
 package_python-pytest-forked() {
