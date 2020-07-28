@@ -12,7 +12,7 @@ url="https://dunst-project.org/"
 arch=('x86_64')
 license=('BSD')
 
-depends=('libxinerama' 'libxss' 'pango' 'gdk-pixbuf2' 'libxrandr' 'glib2')
+depends=('libxinerama' 'libxss' 'pango' 'gdk-pixbuf2' 'libxrandr' 'glib2' 'dbus')
 makedepends=('libnotify')
 optdepends=('libnotify: dunstify')
 
