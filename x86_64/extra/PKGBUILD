@@ -2,18 +2,20 @@
 
 pkgname=accounts-qml-module
 pkgver=0.7
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Expose the Online Accounts API to QML applications"
 url="https://gitlab.com/accounts-sso/accounts-qml-module"
 arch=(x86_64)
 license=(LGPL)
 depends=(signond libaccounts-qt qt5-declarative)
 makedepends=(qt5-tools)
-source=("https://gitlab.com/accounts-sso/$pkgname/repository/archive.tar.gz?ref=VERSION_$pkgver")
-md5sums=('dfbfdd00f455ba9b4a110971118bf289')
+source=("https://gitlab.com/accounts-sso/$pkgname/repository/archive.tar.gz?ref=VERSION_$pkgver"
+        fix_qt513.patch)
 
 prepare() {
   mkdir -p build
+  cd accounts-qml-module-VERSION_0.7-cfadea7ba8ba4011ae20d771696eb74deb87201e
+  patch -Np1 -i ../fix_qt513.patch
 }
 
 build() {
@@ -27,3 +29,5 @@ package() {
   make INSTALL_ROOT="$pkgdir" install_subtargets # skip docs
 }
 
+sha512sums=('1a9edcba9e22bc3564c67502b161a8c1ea76c41be0af7d82e647d71317f8893b36cd5137964bc613afbdbb5f8b581cd1a42e57431c01f768f1700841aa366cfb'
+            '6425d29270f05e785092f30ff6325b5ea7b3e83baf8e7a82d9a7eafbf851fc5f7c0392ea773d18ca10663aedd6cc01c352a396632fc41e0b005bf9c83205a30c')
