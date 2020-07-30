@@ -10,12 +10,15 @@ license=(LGPL)
 depends=(signond libaccounts-qt qt5-declarative)
 makedepends=(qt5-tools)
 source=("https://gitlab.com/accounts-sso/$pkgname/repository/archive.tar.gz?ref=VERSION_$pkgver"
-        fix_qt513.patch)
+        Build-add-qmltypes-file-to-repository.patch 
+        Fix-compilation-with-Qt-5.13.patch)
 
 prepare() {
+
   mkdir -p build
   cd accounts-qml-module-VERSION_0.7-cfadea7ba8ba4011ae20d771696eb74deb87201e
-  patch -Np1 -i ../fix_qt513.patch
+  patch -Np1 -i ../Fix-compilation-with-Qt-5.13.patch
+  patch -Np1 -i ../Build-add-qmltypes-file-to-repository.patch 
 }
 
 build() {
@@ -30,4 +33,5 @@ package() {
 }
 
 sha512sums=('1a9edcba9e22bc3564c67502b161a8c1ea76c41be0af7d82e647d71317f8893b36cd5137964bc613afbdbb5f8b581cd1a42e57431c01f768f1700841aa366cfb'
-            '6425d29270f05e785092f30ff6325b5ea7b3e83baf8e7a82d9a7eafbf851fc5f7c0392ea773d18ca10663aedd6cc01c352a396632fc41e0b005bf9c83205a30c')
+            '3ce471ea317256ac78536cc27bb93f04f417114f273f2e5737c9fc44cbf3ccb4745b4d300cceed7e8ece34ea24e4d1b20e3e32ce5c4d7b9771b738e43bc11659'
+            'dbbd68cf607912517d982952e2eeeeaf58c768f001bce7cd1cb133a548bcaf9a031ffe979283ad717a53ecd288956379105d55a984febba2060259602222cf28')
