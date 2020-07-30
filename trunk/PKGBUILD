@@ -14,9 +14,8 @@ makedepends=('polkit' 'sqlite' 'gobject-introspection' 'gtk-doc' 'intltool'
 options=('!emptydirs')
 validpgpkeys=('163EB50119225DB3DF8F49EA17ACBA8DFA970E17'	# Richard Hughes <richard@hughsie.com>
               'EC60AABDF42AAE8FB062640480858FA38F62AF74')	# Kalev Lember <klember@redhat.com>
-source=("https://www.freedesktop.org/software/PackageKit/releases/PackageKit-${pkgver}.tar.xz"{,.asc})
-sha256sums=('88b64130cca54a4e7a223d2ccf1b80cf5a19375fdd8bbb54498d16c3a2a221b7'
-            'SKIP')
+source=("https://www.freedesktop.org/software/PackageKit/releases/PackageKit-${pkgver}.tar.xz")
+sha256sums=('88b64130cca54a4e7a223d2ccf1b80cf5a19375fdd8bbb54498d16c3a2a221b7')
 
 build() {
 	cd "${srcdir}/PackageKit-${pkgver}"
