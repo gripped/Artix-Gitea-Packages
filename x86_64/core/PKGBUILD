@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=5.4.52
+pkgver=5.4.54
 pkgrel=1
 pkgdesc='LTS Linux'
 url="https://www.kernel.org/"
@@ -25,11 +25,11 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('037efa531120b1c20ff55e78cd3e17288b1804b3a57dc31de760837b3bea5d3a'
+sha256sums=('03e2a14e0eace8f4d668b72f82ad0a16f2221a676a22047aaac9ed0453dbf477'
             'SKIP'
-            'd4c489126ed23b558b3e11df11b48437454c3bf965ee59b3f42bac32dbe5558b'
-            '93de5436e4d62abd7d3f2f9de0008aa647e67cba5a54fea0641ddcf4f6d85e97'
-            '4bcd0abe1d5eadabbeff8aa0370a1d050f7a147756f5571845fd76e3f2aece6d'
+            'adf38b3a78f0f0af2d78fdf099f8f8a3c9146328da9413b958cd80195f47fd4e'
+            'b3f2777462517abd75039fc56a63dfa3f5eb6b3865e02fe9e0c3512381eed54b'
+            '4fd74bb2a7101d700fba91806141339d8c9e46a14f8fc1fe276cfb68f1eec0f5'
             'b7c814c8183e4645947a6dcc3cbf80431de8a8fd4e895b780f9a5fd92f82cb8e')
 
 export KBUILD_BUILD_HOST=artixlinux
