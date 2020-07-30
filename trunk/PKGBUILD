@@ -12,10 +12,9 @@ url="https://distributions.freedesktop.org/wiki/AppStream"
 license=(GPL)
 depends=(libyaml libxml2 libstemmer glib2 lmdb libsoup)
 makedepends=(meson xmlto gobject-introspection gtk-doc qt5-tools itstool vala gperf)
-source=("https://www.freedesktop.org/software/appstream/releases/AppStream-$pkgver.tar.xz"{,.asc}
+source=("https://www.freedesktop.org/software/appstream/releases/AppStream-$pkgver.tar.xz"
         update-appstream-cache.hook)
 sha256sums=('194d871ae057c6bf2b5a95e98d77da2b0107996f593b2ac0b0b88fa8ba452f11'
-            'SKIP'
             '3a96a1479cfd18dad36c2ca3181aabe46af9bf772c00b965d86ec5f55cd0e0eb')
 validpgpkeys=(D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB) # Matthias Klumpp <matthias@tenstral.net>
 
