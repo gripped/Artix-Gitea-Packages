@@ -3,7 +3,7 @@
 # Contributor: Florian Pritz <f-p@gmx.at>
 
 pkgname=inxi
-pkgver=3.1.03
+pkgver=3.1.05
 pkgrel=1
 pkgdesc="Full featured CLI system information tool"
 arch=(any)
@@ -33,11 +33,11 @@ optdepends=(
             "xorg-xprop: inxi -S desktop data"
             "xorg-xrandr: inxi -G single screen resolution"
 )
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/smxi/inxi/archive/${pkgver}-1.tar.gz")
-sha256sums=('af6843ee886a95e7e35cec8ffb2877b9c9b7b11ed4e9a129fab66b07a536d2a9')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/smxi/inxi/archive/${pkgver}-2.tar.gz")
+sha256sums=('76dcb54b64269f61d0a8e23018ecda7a3a58b9c687eb587f93bd5b3bfa20b62a')
 
 package() {
-  cd "${pkgname}-${pkgver}-1"
+  cd "${pkgname}-${pkgver}-2"
   install -D -m755 $pkgname "${pkgdir}/usr/bin/$pkgname"
   install -D -m755 $pkgname.1 "${pkgdir}/usr/share/man/man1/$pkgname.1"
 }
