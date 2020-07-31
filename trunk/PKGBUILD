@@ -4,6 +4,7 @@
 # Contributor: Lukas Linhart <bugs@almad.net>
 # Contributor: Marco Elver <marco.elver AT gmail.com>
 # Contributor: apkawa <apkawa@gmail.com>
+#
 
 pkgname=python-celery
 pkgver=4.4.7
