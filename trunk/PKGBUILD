@@ -3,6 +3,7 @@
 # Contributor: Alexander F Rødseth <xyproto@archlinux.org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: userwithuid <userwithuid@gmail.com>
+#
 
 pkgname=('rust' 'lib32-rust-libs' 'rust-docs')
 epoch=1
