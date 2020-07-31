@@ -1,7 +1,6 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
-#
 
 pkgname=kdeclarative
 pkgver=5.72.0
