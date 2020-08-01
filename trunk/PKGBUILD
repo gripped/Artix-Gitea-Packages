@@ -11,10 +11,9 @@ license=('GPL')
 depends=('cairo' 'gavl')
 makedepends=('cmake' 'doxygen') # opencv - not compatible with 4.0
 #optdepends=('opencv: for facebl0r and facedetect plugins')
-source=(https://files.dyne.org/frei0r/$pkgname-$pkgver.tar.gz{,.asc})
+source=(https://files.dyne.org/frei0r/$pkgname-$pkgver.tar.gz)
 validpgpkeys=('6113D89CA825C5CEDD02C87273B35DA54ACB7D10') # Denis Roio (Jaromil)
-sha256sums=('1b1ff8f0f9bc23eed724e94e9a7c1d8f0244bfe33424bb4fe68e6460c088523a'
-            'SKIP')
+sha256sums=('1b1ff8f0f9bc23eed724e94e9a7c1d8f0244bfe33424bb4fe68e6460c088523a')
 
 build() {
   mkdir -p build
