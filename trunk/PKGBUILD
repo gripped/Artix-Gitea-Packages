@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=mopidy-runit
-pkgver=20200802
-pkgrel=1
+pkgver=20200803
+pkgrel=2
 pkgdesc="Runit service script for mopidy"
 arch=('any')
 url="https://artixlinux.org"
@@ -15,7 +15,7 @@ depends=('mopidy')
 groups=('runit-galaxy')
 conflicts=('systemd-sysvcompat')
 source=("mopidy.run")
-sha256sums=('8c258bad0a57d8976a3ac70e5daadafc0024db959123e63dcaab68c9c60f467e')
+sha256sums=('429b0530140da15fdfc4bcc0c37abb38409dfdd4240b03a0a3d24ca900caaf59')
 
 _inst_logsv() {
     for file in run finish check; do
