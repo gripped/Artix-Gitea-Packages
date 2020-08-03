@@ -21,10 +21,10 @@ optdepends=('gtk3: GUI frontends'
             'qt5-base: for Qgpsmm')
 makedepends=('scons' 'docbook-xsl' 'qt5-base' 'python-gobject' 'python-cairo' 'python-pyserial' 'gtk3')
 backup=('etc/default/gpsd')
-source=(https://download.savannah.gnu.org/releases/$pkgname/$pkgname-$pkgver.tar.gz{,.sig}
+source=(https://download.savannah.gnu.org/releases/$pkgname/$pkgname-$pkgver.tar.gz
         $pkgname.conf fix-python-libdir.patch)
 sha256sums=('172a7805068eacb815a3c5225436fcb0be46e7e49a5001a94034eac43df85e50'
-            'SKIP'
+
             'dcfa71c4c730b486269995468bdcfa8e96bf3c282db1dadea9384d32015d277f'
             '631cf609db1f4b26b94d324a9ca16624487781f0b8736c5c59d8c45acc5d7322')
 validpgpkeys=('EED4A0893DCC705DB309E202CCF29C7238522905') # Gary E. Miller <gem@rellim.com>
