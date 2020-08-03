@@ -14,9 +14,8 @@ provides=('libtss2-esys.so' 'libtss2-fapi.so' 'libtss2-mu.so' 'libtss2-rc.so' 'l
 backup=('etc/tpm2-tss/fapi-config.json'
         'etc/tpm2-tss/fapi-profiles/P_ECCP256SHA256.json'
         'etc/tpm2-tss/fapi-profiles/P_RSA2048SHA256.json')
-source=("$url/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc})
-sha512sums=('51551d63fa404e23664aaad1b247bd4b1f93812ced1aed144c37f28cdb3adb4e696aa9e93a502c8fa0eb7e9b4376ac9377f0537eb4c717b68c0b014fee7a0643'
-            'SKIP')
+source=("$url/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('51551d63fa404e23664aaad1b247bd4b1f93812ced1aed144c37f28cdb3adb4e696aa9e93a502c8fa0eb7e9b4376ac9377f0537eb4c717b68c0b014fee7a0643')
 validpgpkeys=('D760B790CCF0A41CBE7B047C316CC1FB24ABDC72'  # Tadeusz Struk <tadeusz.struk@intel.com>
               'D6B4D8BAC7E0CC97DCD4AC7272E88B53F7A95D84'  # Andreas Fuchs <andreas.fuchs@sit.fraunhofer.de>
               '5B482B8E3E19DA7C978E1D016DE2E9078E1F50C1') # William Roberts (Bill Roberts) <william.c.roberts@intel.com>
