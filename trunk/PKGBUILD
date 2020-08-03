@@ -10,8 +10,8 @@ license=(LGPL)
 depends=(glib2 libstemmer)
 makedepends=(meson gobject-introspection gtk-doc)
 checkdepends=(shared-mime-info)
-source=("https://people.freedesktop.org/~hughsient/releases/${pkgname}-${pkgver}.tar.xz"{,.asc})
-sha256sums=('e9625e609d20c491f37d0ab41f4c6edb59bc4b042ae9ba374390e9ef71c6ab98' 'SKIP')
+source=("https://people.freedesktop.org/~hughsient/releases/${pkgname}-${pkgver}.tar.xz")
+sha256sums=('e9625e609d20c491f37d0ab41f4c6edb59bc4b042ae9ba374390e9ef71c6ab98')
 validpgpkeys=(163EB50119225DB3DF8F49EA17ACBA8DFA970E17) # Richard Hughes <richard@hughsie.com>
 
 build() {
