@@ -6,8 +6,8 @@
 # Contributor: Sparadox <etienne.lafarge at gmail.com>
 
 pkgname=cloud-init
-pkgver=19.3
-pkgrel=2.1
+pkgver=20.2
+pkgrel=1
 pkgdesc="The standard for customising cloud instances"
 arch=('any')
 url="https://cloud-init.io"
@@ -22,9 +22,15 @@ backup=('etc/cloud/cloud.cfg' 'etc/cloud/cloud.cfg.d/05_logging.cfg')
 source=("https://launchpad.net/${pkgname}/trunk/${pkgver}/+download/${pkgname}-${pkgver}.tar.gz"
   'fix-lib.patch'
   'artixlinux.cloud.cfg')
-sha512sums=('4b2c7dbcfeeaa9abc097e4f89035009fe839347041ab93cf33593bf31add3f6e6744cf8cd080de4d937b7e1aa50026f109c8f9240452dbff331b4d477d558e2d'
+sha512sums=('2b63d435b162b6db232121959dc2e5fa59c7cc8916fca3bccb637dd5e583931930f6b4e0a22b961ee71058f518a090c0a636da8147b999acdaa06cd2fc3ee51c'
             '6c435fbe1e0a7093b79f8bb3789b05a39afd1e43b7ff96f13e68c9ad16311cc58270b947bae574cfdc3d2e27c7258789880a101c9bdf2c3c141bcbedc47a8a4b'
-            '2ff2e592f0eca4a96c9392866a6278c6b7b977f974b734c905c348a671d65dd28bd92c508ed8da1301a20b8dac3ed070ac224b004c0d6c0950dd67a4702f6cf6')
+            '5dcf5a0e4d2ccbe2f5ab3318beac4dae8e396c3c14407b848dab0edb1883971b69f3bd64bf59d0783cf179b3a60d056d4fc0bd9def6fd25d266c94a72f539af6')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  patch -Np1 -i "${srcdir}/fix-lib.patch"
+  sed -e 's:\"/lib\":\"/usr/lib\":g' -i setup.py
+}
 
 # This checks need: python-mock, python-httpretty
 # Due to a bug unittest2 is used even when python3 is used for building
