@@ -15,8 +15,7 @@ backup=('etc/tpm2-tss/fapi-config.json'
         'etc/tpm2-tss/fapi-profiles/P_ECCP256SHA256.json'
         'etc/tpm2-tss/fapi-profiles/P_RSA2048SHA256.json')
 source=("$url/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('ba54904f2cd8cbcca85ce4d4ac5c8650da6ab076e8d8d142e1b7ee75c5e9a645520f1a5ac8ffe5269deceba84762c9074b131296e8b2d4c684ddc335a828d7a8'
-            'SKIP')
+sha512sums=('ba54904f2cd8cbcca85ce4d4ac5c8650da6ab076e8d8d142e1b7ee75c5e9a645520f1a5ac8ffe5269deceba84762c9074b131296e8b2d4c684ddc335a828d7a8')
 validpgpkeys=('D760B790CCF0A41CBE7B047C316CC1FB24ABDC72'  # Tadeusz Struk <tadeusz.struk@intel.com>
               'D6B4D8BAC7E0CC97DCD4AC7272E88B53F7A95D84'  # Andreas Fuchs <andreas.fuchs@sit.fraunhofer.de>
               '5B482B8E3E19DA7C978E1D016DE2E9078E1F50C1') # William Roberts (Bill Roberts) <william.c.roberts@intel.com>
