@@ -14,7 +14,7 @@ provides=('libtss2-esys.so' 'libtss2-fapi.so' 'libtss2-mu.so' 'libtss2-rc.so' 'l
 backup=('etc/tpm2-tss/fapi-config.json'
         'etc/tpm2-tss/fapi-profiles/P_ECCP256SHA256.json'
         'etc/tpm2-tss/fapi-profiles/P_RSA2048SHA256.json')
-source=("$url/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc})
+source=("$url/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
 sha512sums=('ba54904f2cd8cbcca85ce4d4ac5c8650da6ab076e8d8d142e1b7ee75c5e9a645520f1a5ac8ffe5269deceba84762c9074b131296e8b2d4c684ddc335a828d7a8'
             'SKIP')
 validpgpkeys=('D760B790CCF0A41CBE7B047C316CC1FB24ABDC72'  # Tadeusz Struk <tadeusz.struk@intel.com>
