@@ -2,6 +2,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Alexey D. <lq07829icatm at rambler.ru>
+#
 
 pkgbase=plasma-workspace
 pkgname=(plasma-workspace plasma-wayland-session)
