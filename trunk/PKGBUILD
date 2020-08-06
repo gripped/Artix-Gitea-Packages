@@ -33,21 +33,17 @@ optdepends=(
     'lynx: apachectl status'
 )
 source=(
-    https://www.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2{,.asc}
+    https://www.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2
     openssl-malloc-init.patch
     apache.tmpfiles.conf
     httpd.logrotate
     artix.layout
 )
 sha256sums=('740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea'
-            'SKIP'
             'd305f8b52ac2a9bbda7bb0776496471e69e9d30642740f594d00086a8c7e344c'
             '63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf'
             '0bbbfae23a917b2fce0bf8f900f60319b50769224a96314e9301a75ccd078e16'
             'ad1304d19d2e91e236d2a980ff4ee5affe9bce79011cc987e2aee6227d9604a7')
-validpgpkeys=('A93D62ECC3C8EA12DB220EC934EA76E6791485A8' # Jim Jagielski
-              'B9E8213AEFB861AF35A41F2C995E35221AD84DFF'
-	      'E3480043595621FE56105F112AB12A7ADC55C003') # Daniel Ruggeri 
 
 prepare() {
   cd httpd-${pkgver}
