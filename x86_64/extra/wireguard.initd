@@ -1,7 +1,6 @@
 #!/usr/bin/openrc-run
 
-command="/usr/bin/wg-quick"
-command_args="up ${WIREGUARD_INTERFACE}"
+pidfile=/run/wireguard.pid
 required_files="/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
 extra_commands="save add sync"
 description_save="Save configuration"
@@ -14,9 +13,23 @@ depend() {
 	keyword -shutdown
 }
 
+start() {
+	ebegin "Starting ${SVCNAME}"
+	
+	checkpath -f "$pidfile"
+	
+	if yesno "$pidfile" ; then
+		echo "${SVC_NAME} already running; Skipping"
+	else
+		wg-quick up "$WIREGUARD_INTERFACE"
+	fi
+	eend $?
+}
+
 stop() {
 	ebegin "Stopping ${SVCNAME}"
 	"${command}" down "${WIREGUARD_INTERFACE}"
+	rm "$pidfile"
 	eend $?
 }
 
