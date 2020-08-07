@@ -1,6 +1,5 @@
 #!/usr/bin/openrc-run
 
-pidfile=/run/wireguard.pid
 required_files="/etc/wireguard/${WIREGUARD_INTERFACE}.conf"
 extra_commands="save add sync"
 description_save="Save configuration"
@@ -15,27 +14,19 @@ depend() {
 
 start() {
 	ebegin "Starting ${SVCNAME}"
-	
-	checkpath -f "$pidfile"
-	
-	if yesno "$pidfile" ; then
-		echo "${SVC_NAME} already running; Skipping"
-	else
-		wg-quick up "$WIREGUARD_INTERFACE"
-	fi
+	wg-quick up "$WIREGUARD_INTERFACE"
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping ${SVCNAME}"
-	"${command}" down "${WIREGUARD_INTERFACE}"
-	rm "$pidfile"
+	wg-quick down "${WIREGUARD_INTERFACE}"
 	eend $?
 }
 
 save() {
 	ebegin "Saving configuration"
-	"${command}" save "${WIREGUARD_INTERFACE}"
+	wg-quick save "${WIREGUARD_INTERFACE}"
 	eend $?
 }
 
@@ -46,7 +37,7 @@ add() {
 	else
 		ebegin "Adding interface ${WIREGUARD_NFACE}"
 		wg addconf "${WIREGUARD_NFACE}" "/etc/wireguard/${WIREGUARD_NFACE}.conf"
-		"${command}" strip "$WIREGUARD_NFACE"
+		wg-quick strip "$WIREGUARD_NFACE"
 		eend $?
 	fi
 }
