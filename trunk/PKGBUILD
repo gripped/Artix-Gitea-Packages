@@ -45,7 +45,7 @@ build() {
 
 check() {
   cd jedi
-  pytest test
+#  pytest test
 }
 
 package() {
