@@ -4,22 +4,22 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=10.4.13
+pkgver=10.4.14
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
 url='https://mariadb.org/'
-makedepends=('boost' 'bzip2' 'cmake' 'jemalloc' 'libaio' 'libxml2' 'lz4' 'lzo'
-             'openssl' 'zlib' 'zstd')
+makedepends=('rsync' 'boost' 'bzip2' 'cmake' 'jemalloc' 'libaio' 'libxml2'
+             'lz4' 'lzo' 'openssl' 'zlib' 'zstd')
 validpgpkeys=('199369E5404BD5FC7D2FE43BCBCB082A1BB943DB') # MariaDB Package Signing Key <package-signing-key@mariadb.org>
 # The default links with mirror redirection fail for signatures, specific
 # mirrors may be out of date every now and then. Let's use the upstream
 # rsync source and hope it does not hurt them too much.
 # https://mariadb.com/kb/en/library/mirror-sites-for-mariadb/
-source=("rsync://rsync.osuosl.org/mariadb/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"{,.asc}
+source=("rsync://mirror.nodesdirect.com/mariadb/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"{,.asc}
 	'mariadb.sysusers.conf'
 	'mariadb.tmpfiles.conf')
-sha256sums=('45bbbb12d1de8febd9edf630e940c23cf14efd60570c743b268069516a5d91df'
+sha256sums=('f92fcd59e0122461482f28c67c5ea01c7cf6979494a571db68074396864c86fc'
             'SKIP'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
@@ -97,7 +97,7 @@ package_mariadb-libs() {
   pkgdesc='MariaDB libraries'
   depends=('bzip2' 'libaio' 'lz4' 'lzo' 'openssl' 'xz' 'zlib')
   conflicts=('libmysqlclient' 'libmariadbclient' 'mariadb-connector-c')
-  provides=('libmariadbclient' 'mariadb-connector-c')
+  provides=('libmariadbclient' 'mariadb-connector-c' 'libmariadb.so' 'libmariadbd.so')
   replaces=('libmariadbclient')
 
   cd build
