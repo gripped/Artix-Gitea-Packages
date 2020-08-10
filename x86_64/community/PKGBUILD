@@ -1,0 +1,41 @@
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Thomas Dziedzic <gostrc@gmail.com>
+# Contributor: Nicolás de la torre <ndelatorre@gmail.com>
+# Contributor: Ryan Coyner <rcoyner@gmail.com>
+# Contributor: Jens Maucher <defcon@archlinux.us>
+
+pkgname=python-rope
+pkgver=0.17.0
+pkgrel=1
+pkgdesc='Refactoring library'
+arch=('any')
+url='https://github.com/python-rope/rope'
+license=('GPL')
+makedepends=('python' 'python-setuptools')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/python-rope/rope/archive/$pkgver.tar.gz"
+        "ast.patch::https://github.com/python-rope/rope/commit/c6574094b9b087c0ff2aa11506f42b667c913e2b.patch")
+sha256sums=('43a0150a431639ac63a5b4e0520a31eda6d7d0c9d41345f21316a848d6b8e738'
+            '09dcdc5704ea88920778917a7f188205adb5106de8693afea3c256f4901a84cc')
+
+prepare() {
+  cd "rope-$pkgver"
+  patch -Np1 < "../ast.patch"
+}
+
+build(){
+  cd "rope-$pkgver"
+  python setup.py build
+}
+
+check(){
+  cd "rope-$pkgver"
+  python -m unittest
+}
+
+package() {
+  cd "rope-$pkgver"
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}
+
+# vim:set ts=2 sw=2 et:
