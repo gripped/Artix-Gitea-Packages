@@ -9,9 +9,8 @@ url="https://bitbucket.org/pidgin/libgnt/"
 license=('GPL')
 depends=('glib2' 'libxml2' 'ncurses')
 makedepends=('meson' 'gtk-doc')
-source=(https://downloads.sourceforge.net/project/pidgin/libgnt/$pkgver/$pkgname-$pkgver.tar.xz{,.asc})
-sha256sums=('6b7ea2030c9755ad9756ab4b1d3396dccaef4a712eccce34d3990042bb4b3abf'
-            'SKIP')
+source=(https://downloads.sourceforge.net/project/pidgin/libgnt/$pkgver/$pkgname-$pkgver.tar.xz)
+sha256sums=('6b7ea2030c9755ad9756ab4b1d3396dccaef4a712eccce34d3990042bb4b3abf')
 validpgpkeys=('40DE1DC7288FE3F50AB938C548F66AFFD9BDB729') # Gary Kramlich <grim@reaperworld.com>
 
 build() {
