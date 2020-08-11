@@ -4,7 +4,7 @@
 # Contributor: Ner0
 
 pkgname=muffin
-pkgver=4.6.2
+pkgver=4.6.3
 pkgrel=1
 pkgdesc="Cinnamon window manager based on Mutter"
 arch=('x86_64')
@@ -15,8 +15,8 @@ depends=('cinnamon-desktop' 'gobject-introspection-runtime' 'libcanberra' 'libin
 makedepends=('intltool' 'gobject-introspection' 'gtk-doc')
 options=('!emptydirs')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('7a62a09fffe2015044d4fa6eebf2883dffe17aa0386e48c42fb3377d2a778081')
-b2sums=('5f7fde1998ff2f969c77682fe26e2251b8fd9c61bca438c9de261c96356ec5ed8a34d951c5b617ff7b77dacaad0e0a2532819ec7df358fe829e50dcc833d1909')
+sha256sums=('e634209f1a1dfec7efc7c741e65014903ea937926070dba3793cac595df3d5a3')
+b2sums=('1b8c0eeab13c35fc0b66898328f378331cb2bfc78b27a48a8f9e22c842df1a223613f27f5b29fe28c1edaaeb59972262024ed656dfabafa6c9454c4c4c0a74b9')
 
 prepare() {
     cd "${srcdir}"/${pkgname}-${pkgver}
