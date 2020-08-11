@@ -13,7 +13,7 @@ makedepends=(extra-cmake-modules doxygen qt5-tools qt5-doc)
 source=("https://gitlab.com/caspermeijn/kdsoap-ws-discovery-client/-/archive/$_commit/$pkgname-$_commit.tar.gz"
          kdsoap-dependency.patch::"https://gitlab.com/caspermeijn/kdsoap-ws-discovery-client/-/merge_requests/11.patch")
 sha256sums=('17e092729597aecb96bcf46459b4eb14d28cf335f4b4c225971b5be55b9572a7'
-            '6e05120695bd1df6adf89e99f39c8e186e1075bb0a30c046d922eaff67e2b547')
+            'dbe0c354cbf29e6c9f4ec3aef60bc171ff883ceceb4f3211f4caf922c4fccc8b')
 
 prepare() {
   mkdir -p build
