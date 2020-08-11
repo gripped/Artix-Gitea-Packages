@@ -13,11 +13,10 @@ url="http://telepathy.freedesktop.org/wiki/Mission Control"
 license=(LGPL2.1)
 depends=(telepathy-glib dconf libnm)
 makedepends=(libxslt python gtk-doc)
-source=(https://telepathy.freedesktop.org/releases/$pkgname/$pkgname-$pkgver.tar.gz{,.asc}
+source=(https://telepathy.freedesktop.org/releases/telepathy-mission-control/telepathy-mission-control-5.16.5.tar.gz
         tmc-glib-2.64.patch::"https://gitlab.freedesktop.org/telepathy/telepathy-mission-control/commit/d8dab08f.patch")
 sha256sums=('4c6b433b8b9079fd7df3e29aefcad6755a2081a9a634ffb6b33936c7d0d8bd03'
-            'SKIP'
-            'd28f42c32467c341b2b7fb5ab48e816aa000aeca3d9131edb799740fef8439bd')
+            '02b468836213a35fc50b1075769cea1ef579a3a6fb8d8022357503a34e3acefb')
 validpgpkeys=(38FDAD7D73CE1AE7A16200291F3845DD1432A9FB  # Georgios Kiagiadakis <gkiagia@tolabaki.gr>
               AA33B0D27868E36C151780F0FE0B6D736B1195ED) # Alexandr Akulich <akulichalexander@gmail.com>
 
