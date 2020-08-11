@@ -8,10 +8,9 @@ url="http://telepathy.freedesktop.org/wiki/Logger"
 license=('LGPL2.1')
 depends=('telepathy-glib' 'sqlite' 'libxml2' 'dconf')
 makedepends=('intltool' 'gobject-introspection' 'libxslt' 'python')
-source=(https://telepathy.freedesktop.org/releases/$pkgname/$pkgname-$pkgver.tar.bz2{,.asc}
+source=(https://telepathy.freedesktop.org/releases/$pkgname/$pkgname-$pkgver.tar.bz2
         0001-tools-Fix-the-build-with-Python-3.patch)
 sha256sums=('8fcad534d653b1b365132c5b158adae947810ffbae9843f72dd1797966415dae'
-            'SKIP'
             'd94899bed85a4ac90158838524d16c761956eec2cd0d223b6a18bffa09ec008b')
 validpgpkeys=('5113B855236702158C41C366432705FACDD40325')
 
