@@ -9,9 +9,8 @@ url="https://community.kde.org/KIO_GDrive"
 license=(GPL)
 depends=(libkgapi kaccounts-providers)
 makedepends=(extra-cmake-modules kdoctools intltool)
-source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('697a9382bebb6b6fdfd37cadad9c6e9516258e375704b979799447ad629f7906'
-            'SKIP')
+source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz)
+sha256sums=('697a9382bebb6b6fdfd37cadad9c6e9516258e375704b979799447ad629f7906')
 validpgpkeys=('F07D85CAA18ACF46A346FD017C7FC6EA8633B4EA') # Elvis Angelaccio <elvis.angelaccio@kde.org>
 
 build() {
