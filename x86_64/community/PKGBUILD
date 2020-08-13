@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python' 'python-setuptools' 'python-sphinx' 'python-docutils' 'python-six')
 makedepends=('python' 'git' 'python-setuptools')
 checkdepends=('python-pytest')
-source=("git+https://github.com/michaeljones/breathe#tag=v${pkgver}?signed")
+source=("git+https://github.com/michaeljones/breathe#tag=v${pkgver}")
 sha512sums=('SKIP')
 validpgpkeys=('79DC0FAF18C31807E82E1A6B9EF1DC92B5F301BD') # Melvin Vermeeren <mail@mel.vin>
 
