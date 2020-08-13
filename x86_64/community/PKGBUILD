@@ -11,8 +11,15 @@ url="https://movit.sesse.net/"
 license=('GPL')
 depends=('fftw' 'libepoxy')
 makedepends=('eigen' 'gtest' 'sdl2')
-source=(https://movit.sesse.net/$pkgname-$pkgver.tar.gz)
-sha256sums=('eb19f109ec99d6050de5267d059c7b351d3d5e39c77d43ca348a95f474a99498')
+source=(https://movit.sesse.net/$pkgname-$pkgver.tar.gz
+        workaround-glsizeiptr-abi-change.diff)
+
+prepare() {
+  cd $pkgname-$pkgver
+
+  patch -Np1 -i ../workaround-glsizeiptr-abi-change.diff
+}
+
 
 build() {
   cd $pkgname-$pkgver
@@ -26,3 +33,5 @@ package() {
 
   make DESTDIR="$pkgdir" install
 }
+sha512sums=('6f7169710fbb60f79c44393aea57619f4c83d64fb296ea946d591e78fb9a71b513869dc6325f90e4c2dc843b7ed4841eaef41ca69f64787c8a57f4fde583b1e5'
+            '07a97502af231c7d5ee4b02fc8d9c35f9e3463d61d89dc05753622cec910a5824108ac4f21c2f1a2637eaa709ec5feb8be24740778ad02d1321b23b40d5f52f3')
