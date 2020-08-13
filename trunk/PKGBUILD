@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=5.24.0
+pkgver=5.24.2
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=('any')
@@ -20,7 +20,7 @@ checkdepends=('python-pytest-runner' 'flake8' 'python-pytz' 'python-numpy' 'pyth
               'python-pytest-xdist' 'python-lark-parser' 'python-pexpect' 'python-coverage'
               'python-typing_extensions' 'python-black')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/HypothesisWorks/hypothesis/archive/hypothesis-python-$pkgver.tar.gz")
-sha512sums=('649bd9e1770c4b2ca55ad70f80b912f183dda73cb602538ba4d887f1df91b3ae9048b0fa3199d371019c06e15421de842e0451fc468a28e8a62506bcdae179d4')
+sha512sums=('88c1351b70355906cc57b667f2a863ac1334219e1721504ea76b1599d57fdf272a96263c365fe24882be9f83f28671998ebee28b0faea2190d9b6b39d2c2dc84')
 
 prepare() {
   mv hypothesis-hypothesis-python-$pkgver hypothesis-$pkgver
