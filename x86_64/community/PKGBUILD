@@ -9,7 +9,7 @@ url='https://github.com/taocpp/PEGTL'
 arch=('any')
 license=('MIT')
 makedepends=('git' 'cmake')
-source=(${pkgname}::"git+https://github.com/taocpp/PEGTL#commit=${_gitcommit}?signed")
+source=(${pkgname}::"git+https://github.com/taocpp/PEGTL#commit=${_gitcommit}")
 sha512sums=('SKIP')
 validpgpkeys=('3AC06334B62566C11A5912FB014C496DEC39EB21') # Daniel Frey <d.frey@gmx.de>
 
