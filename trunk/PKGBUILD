@@ -28,9 +28,8 @@ optdepends=('konsole: embedded terminal'
             'clazy: clazy analyzer plugin')
 conflicts=(kdevelop-qmljs kdevplatform)
 replaces=(kdevelop-qmljs kdevplatform kdevelop-clang-tidy)
-source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da'
-            'SKIP')
+source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz")
+sha256sums=('228e981a268704fef0f8fa437e37e3e2e0d261d3a2afbabff0f4d060c31f74da')
 validpgpkeys=('329FD02C5AA48FCC77A4BBF0AC44AC6DB29779E6'  # Sven Brauch <mail@svenbrauch.de>
               '364EFA5F639572907D392999C64CF56B13CACE5D'  # Kevin Funk <kfunk@kde.org>
               'E191FD5BE6F46870F09E82B2024E7FB43D015474'  # Friedrich W. H. Kossebau <kossebau@kde.org>
