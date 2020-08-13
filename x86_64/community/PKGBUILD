@@ -3,15 +3,15 @@
 # Contributor: Bruno Gola <brunogola at gmail dot com>
 
 pkgname=libfreexl
-pkgver=1.0.5
-pkgrel=2
+pkgver=1.0.6
+pkgrel=1
 pkgdesc="Library to extract valid data from within an Excel (.xls) spreadsheet"
 arch=('x86_64')
 url="https://www.gaia-gis.it/fossil/freexl/‎"
 license=('MPL' 'GPL' 'LGPL')
 depends=('glibc')
-source=(https://www.gaia-gis.it/gaia-sins/${pkgname/lib/}-$pkgver.tar.gz)
-sha256sums=('3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d')
+source=(http://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-$pkgver.zip)
+sha256sums=('9bd148ae81356bc65dc14b7e70c1c2227dee20693abd83f2c2d22ba80855598f')
 
 build() {
   cd "${srcdir}"/${pkgname/lib/}-$pkgver
