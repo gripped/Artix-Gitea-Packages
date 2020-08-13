@@ -10,7 +10,7 @@ arch=('x86_64')
 url="https://movit.sesse.net/"
 license=('GPL')
 depends=('fftw' 'libepoxy')
-makedepends=('eigen' 'gtest' 'sdl2')
+makedepends=('eigen' 'gtest-1.8' 'sdl2')
 source=(https://movit.sesse.net/$pkgname-$pkgver.tar.gz
         workaround-glsizeiptr-abi-change.diff)
 
