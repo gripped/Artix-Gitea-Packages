@@ -12,9 +12,8 @@ arch=(x86_64)
 license=(GPL LGPL FDL)
 depends=(kcmutils kparts knewstuff qca qt5-script hicolor-icon-theme)
 makedepends=(extra-cmake-modules kdoctools qt5-tools)
-source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('ef22b096c4d8a682b5467ee7d8e9e05ede44cde116daef804312745c4bfd0f03'
-            'SKIP')
+source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz")
+sha256sums=('ef22b096c4d8a682b5467ee7d8e9e05ede44cde116daef804312745c4bfd0f03')
 validpgpkeys=(E191FD5BE6F46870F09E82B2024E7FB43D015474  # Friedrich W. H. Kossebau <kossebau@kde.org>
               0A48BC961075B4BA8523E3790A345FB086E797D9) # https://share.kde.org/s/8dKaJTw8pR8iiwJ
 
