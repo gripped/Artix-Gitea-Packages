@@ -8,8 +8,8 @@
 
 pkgbase=dropbear
 pkgname=(dropbear dropbear-scp)
-pkgver=2020.79
-pkgrel=1.2
+pkgver=2020.80
+pkgrel=1
 pkgdesc='Lightweight SSH server'
 arch=(x86_64)
 url='https://github.com/mkj/dropbear'
@@ -32,8 +32,7 @@ build() {
   autoheader
   ./configure --bindir=/usr/bin --prefix=/usr --sbindir=/usr/bin
   make \
-    PROGRAMS='dbclient dropbear dropbearconvert dropbearkey scp' \
-    SCPPROGRESS=1
+    PROGRAMS='dbclient dropbear dropbearconvert dropbearkey scp' SCPPROGRESS=1
 }
 
 package_dropbear() {
