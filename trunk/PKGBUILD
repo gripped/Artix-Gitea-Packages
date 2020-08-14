@@ -1,5 +1,6 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+#
 
 pkgname=akonadiconsole
 pkgver=20.08.0
