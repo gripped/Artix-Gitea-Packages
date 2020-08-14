@@ -8,8 +8,7 @@ arch=('x86_64')
 url='https://git.kernel.dk/cgit/liburing/'
 license=('MIT' 'LGPL2.1')
 makedepends=('git')
-validpgpkeys=('C0FC392DCADE26D975FA5E4AF7D358FB2971E0A6') # Jens Axboe <axboe@kernel.dk>
-source=("git+https://git.kernel.dk/liburing#tag=liburing-$pkgver?signed")
+source=("git+https://git.kernel.dk/liburing#tag=liburing-$pkgver")
 sha512sums=('SKIP')
 
 build() {
