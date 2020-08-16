@@ -13,11 +13,9 @@ makedepends=('texinfo' 'libx11' 'libsm')
 optdepends=('libx11: required by floppyd'
 	    'libsm:  required by floppyd')
 backup=('etc/mtools.conf')
-source=("https://ftp.gnu.org/gnu/mtools/${pkgname}-${pkgver}.tar.bz2"
-        "https://ftp.gnu.org/gnu/mtools/${pkgname}-${pkgver}.tar.bz2.sig")
+source=("https://ftp.gnu.org/gnu/mtools/${pkgname}-${pkgver}.tar.bz2")
 validpgpkeys=('E151F8F54AE4F4E9019F037BC80631B26F431961')
-sha512sums=('b74becc4f696315cfabc016d1746e744b43e366de73bf1bffeec4fbab1e4815967594de8acb4af01f89d36a925f93672efbac205b89540161bd53ab7edebcf04'
-            'SKIP')
+sha512sums=('b74becc4f696315cfabc016d1746e744b43e366de73bf1bffeec4fbab1e4815967594de8acb4af01f89d36a925f93672efbac205b89540161bd53ab7edebcf04')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
