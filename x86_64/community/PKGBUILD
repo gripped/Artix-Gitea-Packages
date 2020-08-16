@@ -1,0 +1,35 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Contributor: Ivan Shapovalov <intelfx@intelfx.name>
+
+pkgname=python-canonicaljson
+pkgver=1.1.4
+pkgrel=5
+
+pkgdesc='Canonical JSON'
+url='https://pypi.python.org/pypi/canonicaljson/'
+arch=('any')
+license=('Apache')
+
+depends=('python' 'python-simplejson' 'python-frozendict')
+makedepends=('python-setuptools')
+
+source=("python-canonicaljson-$pkgver.tar.gz::https://github.com/matrix-org/python-canonicaljson/archive/v${pkgver}.tar.gz")
+
+md5sums=('3f29b4eab8219076532ab34315843634')
+
+build() {
+	cd python-canonicaljson-$pkgver
+	python setup.py build
+}
+
+check() {
+	cd python-canonicaljson-$pkgver
+	python setup.py test
+}
+
+package() {
+	cd python-canonicaljson-$pkgver
+	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}
+
+# vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :
