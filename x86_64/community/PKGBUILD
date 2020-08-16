@@ -1,0 +1,34 @@
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+
+pkgname=python-bleach
+pkgver=3.1.5
+pkgrel=1
+
+pkgdesc="An easy whitelist-based HTML-sanitizing tool"
+url="https://pypi.org/project/bleach/"
+arch=('any')
+license=('Apache')
+depends=('python-webencodings')
+makedepends=('python'
+             'python-setuptools')
+checkdepends=('python-pytest')
+
+source=(https://pypi.org/packages/source/b/bleach/bleach-$pkgver.tar.gz)
+
+sha256sums=('3c4c520fdb9db59ef139915a5db79f8b51bc2a7257ea0389f30c846883430a4b')
+
+build() {
+	cd "$srcdir"/bleach-$pkgver
+	python setup.py build
+}
+
+# Upstream broke the test suite.
+#check() {
+#	cd "$srcdir"/bleach-$pkgver
+#	python -m pytest
+#}
+
+package() {
+	cd "$srcdir"/bleach-$pkgver
+	python setup.py install --root="$pkgdir" --optimize=1
+}
