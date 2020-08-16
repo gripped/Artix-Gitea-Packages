@@ -1,0 +1,31 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Simon Sapin <simon dot sapin at exyr dot org>
+# Contributor: Kyle Keen <keenerd@gmail.com>
+
+pkgname=python-ldap3
+pkgver=2.8
+pkgrel=1
+pkgdesc="A strictly RFC 4510 conforming LDAP V3 pure Python client library"
+url="https://github.com/cannatag/ldap3"
+license=('LGPL')
+arch=('any')
+depends=('python-pyasn1')
+makedepends=('python-setuptools')
+checkdepends=('python-nose')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/cannatag/ldap3/archive/v$pkgver.tar.gz")
+sha512sums=('5fd5d35910dbe9818f7c3dc4d3b89ff289a259728bee1bd42700ddc309d68123e41ed4e6ed8bf081138bb549f4d778c127ce50ac39f9cbdaf10751e1137a3f15')
+
+build() {
+  cd "$srcdir"/ldap3-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir"/ldap3-$pkgver
+  nosetests3 -s test || warning "Tests require a running LDAP server"
+}
+
+package() {
+  cd ldap3-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
