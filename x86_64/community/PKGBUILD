@@ -19,11 +19,12 @@ depends=(
   libreadline.so
   libuuid.so
   zlib
-  lvm2
+  eudev
 )
 makedepends=(
   git
   gtk-doc
+  libeudev
 )
 provides=(
   ldmtool
