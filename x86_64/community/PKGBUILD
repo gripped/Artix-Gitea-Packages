@@ -14,7 +14,7 @@ pkgdesc='Multipath tools for Linux (including kpartx)'
 arch=('x86_64')
 url='http://christophe.varoqui.free.fr/'
 license=('GPL2')
-depends=('libaio' 'device-mapper' 'json-c' 'liburcu' 'eudev')
+depends=('libaio' 'device-mapper' 'json-c' 'liburcu')
 makedepends=('git')
 source=("multipath-tools::git+https://git.opensvc.com/multipath-tools/.git#tag=${pkgver}"
         '0001-fix-boolean-value-with-json-c-0.14.patch'
