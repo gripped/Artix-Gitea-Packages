@@ -13,8 +13,7 @@ depends=('python-cryptography')
 makedepends=('git' 'python-setuptools')
 checkdepends=('python-pytest-asyncio' 'python-pytest-django' 'python-requests'
               'python-django' 'python-flask-sqlalchemy' 'python-httpx' 'python-starlette')
-source=("git+${url}.git#commit=${_commit}?signed")
-b2sums=('SKIP')
+source=("git+${url}.git#commit=${_commit}")
 validpgpkeys=('72F8E895A70CEBDF4F2ADFE07E55E3E0118B2B4C') # Hsiaoming (UJET) <lepture@ujet.co>
 
 pkgver() {
@@ -48,3 +47,4 @@ package() {
     python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
     install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
+sha512sums=('SKIP')
