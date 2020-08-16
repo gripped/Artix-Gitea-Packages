@@ -19,6 +19,7 @@ depends=(
   libreadline.so
   libuuid.so
   zlib
+  lvm2
 )
 makedepends=(
   git
@@ -54,7 +55,6 @@ build() {
 
 package() {
   make DESTDIR="${pkgdir}" -C libldm install
-  install -Dm 644 ldmtool.service -t "${pkgdir}"/usr/lib/systemd/system/
 }
 
 # vim: ts=2 sw=2 et:
