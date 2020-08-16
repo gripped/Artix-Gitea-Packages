@@ -33,11 +33,9 @@ provides=(
 conflicts=(ldmtool)
 source=(
   git+https://github.com/mdbooth/libldm.git#commit=a856552670944b4dbb28740aa42e58ffa8434803
-  ldmtool.service
 )
 sha256sums=(
   SKIP
-  bc191523e702b9f8813d93f9e37693e6b97d9adf7eada5463c29fbf1b46c6f2a
 )
 
 pkgver() {
