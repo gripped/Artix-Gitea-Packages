@@ -14,9 +14,8 @@ makedepends=("python2" "ruby" "ruby-rake" "ruby-rdoc" "perl-io-stringy" "perl-te
 optdepends=("python2: python bindings"
 	    "ruby: ruby bindings"
 	    "ocaml: ocaml bindings")
-source=("http://libguestfs.org/download/$pkgname/$pkgname-$pkgver.tar.gz"{,.sig})
-sha512sums=('1851351118921e81df9e505f90d00048a178572c2edd3de40194a69915176bdb615e2eb5afea408d57063e98257c8d1e3d0cd6730407153892cc9e3befc4aa3a'
-            'SKIP')
+source=("http://libguestfs.org/download/$pkgname/$pkgname-$pkgver.tar.gz")
+sha512sums=('1851351118921e81df9e505f90d00048a178572c2edd3de40194a69915176bdb615e2eb5afea408d57063e98257c8d1e3d0cd6730407153892cc9e3befc4aa3a')
 validpgpkeys=('F7774FB1AD074A7E8C8767EA91738F73E1B768A0') # Richard W.M. Jones <rjones@redhat.com>
 
 build() {
