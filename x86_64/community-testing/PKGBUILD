@@ -1,0 +1,44 @@
+# Maintainer: artist <artist@artixlinux.org>
+
+_sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
+
+pkgname=coturn-runit
+pkgver=20200818
+pkgrel=1
+pkgdesc="Runit service script for coturn"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
+#       included runscript should follow it's main package's licenses.
+depends=('coturn')
+groups=('runit-galaxy')
+conflicts=('systemd-sysvcompat')
+source=("coturn.run")
+sha256sums=('830937454c269549deba5a08d1107d15bf0c7e3fbf272edbf3e97470cccb3a5b')
+
+_inst_logsv() {
+    for file in run finish check; do
+        if test -f "$srcdir/log$1.$file"; then
+            install -Dm755 "$srcdir/log$1.$file" "$pkgdir/etc/runit/sv/$1/log/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/log/$file"
+        fi
+    done
+}
+
+_inst_sv() {
+    if test -f "$srcdir/$1.conf"; then
+        install -Dm644 "$srcdir/$1.conf" "$pkgdir/etc/runit/sv/$1/conf"
+    fi
+
+    for file in run finish check; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
+            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'coturn'
+}
