@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=coturn-runit
-pkgver=20200818
-pkgrel=1
+pkgver=20200820
+pkgrel=2
 pkgdesc="Runit service script for coturn"
 arch=('any')
 url="https://artixlinux.org"
@@ -15,7 +15,7 @@ depends=('coturn')
 groups=('runit-galaxy')
 conflicts=('systemd-sysvcompat')
 source=("coturn.run")
-sha256sums=('830937454c269549deba5a08d1107d15bf0c7e3fbf272edbf3e97470cccb3a5b')
+sha256sums=('038b118f3303f4cfd2945f250b7090a414ec389a10303d4f60aa53a685398606')
 
 _inst_logsv() {
     for file in run finish check; do
