@@ -4,7 +4,7 @@
 # Contributor: Illarion Kovalchuk <illarion.kovalchuk at gmail dot com>
 
 pkgname=jenkins
-pkgver=2.252
+pkgver=2.253
 pkgrel=1
 pkgdesc='Extendable continuous integration server (latest)'
 arch=('any')
@@ -20,13 +20,11 @@ source=("jenkins-${pkgver}.war::http://mirrors.jenkins-ci.org/war/${pkgver}/jenk
         # Rename to force re-download on new version
         'jenkins.tmpfiles'
         'jenkins.sysusers'
-        'LICENSE'
-        'jenkins.conf')
-sha512sums=('c9a0b1676155f66e0cfbc97762c663ce4d968d2be296e03aa29d4670dfcea6e432340bf424076951c268b28766fbba84efaff397b2ba50fadb9ca04f5bb52236'
+        'LICENSE')
+sha512sums=('e94cfed72c6961fc83f372940a8cf5504b2cdbb54fb7371af9f959d107cec5ef1b9cadfe169dae13b87ec183054c74cd27e609cae784e130dde61e4c01dfd23c'
             'a845a7147be54affc586dfce9a188ec24c92e673e88dec0b62da386d2e597de6ecda103429008562abd897f179a52c37cf2188ebc65b8c636efd07d707e18f90'
             '896cbc64eadb2f3bb9fa7fc26dbfc527b1823d8bff3158be7f1936cc250f55eeafe89079e1ceb8f3d269041662573ccbbb36248140b4ba24144a564366f8847a'
-            '0df6479a600db395c12ad29ebda3120d00460338b9a6b15913e2245aa29212a3798c32e664ca70c8034146e2e0b573066deec9e3210198202f753994e1b83efa'
-            '7a81b2fd0ce91da42bacf35615fd7cb0352a0316b78b41fe180ba531848ca85b1f1df1573ab5707d9aebb36bacc51c81bc200f80cf41f1d1903309c1478d50f8')
+            '0df6479a600db395c12ad29ebda3120d00460338b9a6b15913e2245aa29212a3798c32e664ca70c8034146e2e0b573066deec9e3210198202f753994e1b83efa')
 
 package() {
   install -Dm444 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
