@@ -12,9 +12,8 @@ license=('LGPL' 'GPL')
 depends=('ncurses' 'perl')
 options=('!makeflags')
 changelog=$pkgname.changelog
-source=(https://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/$pkgname/$pkgname-$pkgver.tar.gz{,.asc})
-sha256sums=('5bf1906aff9ffc3eeacf32567270f4d819055d8386d98b9c8c05519012d5a196'
-            'SKIP')
+source=(https://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/$pkgname/$pkgname-$pkgver.tar.gz)
+sha256sums=('5bf1906aff9ffc3eeacf32567270f4d819055d8386d98b9c8c05519012d5a196')
 validpgpkeys=('4BD95F908A5040E8D26CD6816C226B37FDF38D55') # Tim Bishop <tim@bishnet.net>
 
 build() {
