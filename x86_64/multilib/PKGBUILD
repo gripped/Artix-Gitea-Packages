@@ -1,6 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Florian Pritz <bluewind@xinu.at>
 # Contributor: Christoph Vigano <mail@cvigano.de>
+#
 
 pkgname=lib32-p11-kit
 pkgver=0.23.21
