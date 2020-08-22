@@ -11,7 +11,7 @@ arch=(x86_64)
 license=(GPL LGPL FDL)
 groups=(kde-applications kde-education)
 depends=(analitza libspectre kpty ktexteditor knewstuff libqalculate hicolor-icon-theme qt5-xmlpatterns poppler-qt5)
-makedepends=(extra-cmake-modules python kdoctools luajit r julia)
+makedepends=(extra-cmake-modules python kdoctools luajit r julia libxcrypt)
 optdepends=('maxima: Maxima backend'
             'octave: Octave backend'
             'r: R backend'
