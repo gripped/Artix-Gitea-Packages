@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
 pkgver=20200824
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
@@ -16,7 +16,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/rc-local/dependencies')
 install=s6-scripts.install
 makedepends=('git')
-_commit=c6725a117eb714fd3e377b8d432ae1fa1a738a9d
+_commit=7019e5e293f4419bc24e2a93bb4bc9dba64ef71
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -74,6 +74,7 @@ package() {
     _inst_sv 'mount-devfs'
     _inst_sv 'mount-filesystems'
     _inst_sv 'mount-net'
+    _inst_sv 'mount-procfs'
     _inst_sv 'mount-sysfs'
     _inst_sv 'net-lo'
     _inst_sv 'random-seed'
