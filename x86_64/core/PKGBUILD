@@ -2,7 +2,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2020.05.20
+pkgver=2020.08.21
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
@@ -17,29 +17,29 @@ source=('crypttab' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
         'issue' 'ld.so.conf' 'locale.sh' 'motd' 'nsswitch.conf' 'os-release'
         'passwd' 'profile' 'resolv.conf' 'securetty' 'shadow' 'shells' 'sysctl'
         'sysusers' 'tmpfiles' 'artixlinux.svg' 'artixlinux.png')
-md5sums=('5fa6674df7645d7f5895f2d12b4ef4e9'
-         'e33f6dfdd61978fcb3ddf1431286e05a'
-         '7fed1e1fb855e41a6d64d41f8521d69a'
-         '1c1e3b08acfa286f4b417c49de3e4366'
-         '7d119a9cce152aa182fb3392ddeecea7'
-         'a1315ea3e2b64d197b6efaf9c14ff778'
-         '8d7f77c9f6f7a82cc89d3feadd45bb7e'
-         '5deb9f890a4d08a245e9752ede77271e'
-         '580cf8b59eebfaac4fad373ffadc9912'
-         'd41d8cd98f00b204e9800998ecf8427e'
-         'fdfa843fc6354816f50ea2f17e6dce50'
-         '180f59810b106ff33b533f261bd5be4d'
-         '5182ac38a0de85da8ade93ef71975ca4'
-         'd5bfd4ce7442dd42127edf0989b8397d'
-         '0ee015fad07732676d9488ae498eed41'
-         'f04bcb2803afc4dcb95670fe87343b4d'
-         '815652599be54fd3607cf276e89a0a19'
-         'a78cd8d7f8240a8448edee82f503c34e'
-         'a51847c012555c843dbdf8df0da171d3'
-         '08e22c5d70ddcc1345f9ce3f15514ea2'
-         '0267a3a463f35eec8a31f40a720dfd86'
-         '1b7e0cfbb630433fdff16fffda9cfa5c'
-         '7ef98723f854c531c431074ef7b127d3')
+sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
+            'e54626e74ed8fee4173b62a545ab1c3a3a069e4217a0ee8fc398d9933e9c1696'
+            '244f0718ee2a9d6862ae59d6c18c1dd1568651eada91a704574fa527fbac2b3a'
+            '90d879374f77bac47f132164c1e7fc4892e994ff1d1ac376efa0c1c26ea37273'
+            '4d7b647169063dfedbff5e1e22cee77bd1a4183dbcfd5e802e68939da4bbf733'
+            'd9cd8a77d9e0aa5e90d7f4ed74c8745c17b525e720e28e4c44364150003c35f9'
+            'fe86e5d282e55658fdc9c383eabbabb0ba2d791be04814082230ac8a9c056452'
+            'dad04a370e488aa85fb0a813a5c83cf6fd981ce01883fc59685447b092de84b5'
+            '8ca2d8eef6fb5143c9ef7e9174ccfef59ac7ad2deee243574cd10c763156cc10'
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+            'aa4dc5b2374fb32863e3bc1ce20a2de2d34fe4eed1cd63c599bc82fab21463cc'
+            'fe9bb5b7ef357e38ef2efb5bee32a0ac495f55cb14d573e0e1b59a6ede43213d'
+            '5e06477834f51abf42ea4e8dc199632afc6afbfd8c44354685a271e9a48d2c0a'
+            '8461dea900fdac6fae6706f347e4c2cd183a69a12c62329c0a3cbba31ce0fe45'
+            '5557d8e601b17a80d1ea7de78a9869be69637cb6a02fbfe334e22fdf64e61d4c'
+            'd88be2b45b43605ff31dd83d6a138069b6c2e92bc8989b7b9ab9eba8da5f8c7b'
+            '6e13705ac4d6f69cdba118c6b70c722346fd3c45224133e6bbfe28aca719563c'
+            'c390b31fffc4a2b5d78ae8c89f5317aadef1f71baac09cfb467b675db1406d61'
+            '89e43a0b7028f52d5c8e7fb961d962c4b4f4e9595880a6157274ddb2c7c0b6b4'
+            'df8511932df35db335b58d4ec169cdc0bee958226de5359f4698297b4056ed7e'
+            '618ac097441c1f2daffc9967e5c3cd18ea8866f776db62d04bf401c53907b1c9'
+            '7b8fffc06755488931ce2aa4d3f9547be650d9e873323b7171515004d02e83c1'
+            'f52db4a98fbfdd6d957068ea0e631240c9a138df859fc43d902bf97b0759459d')
 
 package() {
   cd "$pkgdir"
