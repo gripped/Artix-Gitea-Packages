@@ -9,15 +9,8 @@ url='https://github.com/Netflix/vmaf/'
 license=('BSD')
 depends=('gcc-libs')
 makedepends=('meson' 'nasm')
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/Netflix/${pkgname}/archive/v${pkgver}.tar.gz"
-	"build_order.patch::https://github.com/Netflix/vmaf/commit/4a5483fa9b68a8b22696d45acc125b69360c3889.patch")
-sha256sums=('440652ae417d88be083ffd9fa5967662172601e31c458a9743f6008d7150c900'
-            '7327f1e28294e9d6348fef5eaa6101a2ecbecdc6d768c2094687430b7bd9bc05')
-
-prepare() {
-	cd "$srcdir/$pkgname-$pkgver"
-	patch -Np1 -i "$srcdir"/build_order.patch
-}
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/Netflix/${pkgname}/archive/v${pkgver}.tar.gz")
+sha256sums=('440652ae417d88be083ffd9fa5967662172601e31c458a9743f6008d7150c900')
 
 build() {
     arch-meson "${pkgname}-${pkgver}/libvmaf/build" "${pkgname}-${pkgver}/libvmaf"
