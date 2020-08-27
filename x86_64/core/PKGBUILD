@@ -1,18 +1,18 @@
 # Maintainer: Chris Cromer <cromer@artixlinux.org>
 
 pkgname=artix-keyring
-pkgver=20200526
+pkgver=20200824
 pkgrel=1
 pkgdesc='Artix PGP keyring'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/artix-keyring'
 license=('GPL')
 install="${pkgname}.install"
-_srctarball='ac7e7192-2f86-4162-835d-c435e2204d68'
-_srctarballsig='843cf9b3-7e90-42a4-9958-134ae9f2ca32'
+_srctarball='bb51fb0a-e853-4769-9ba0-b282dabdb945'
+_srctarballsig='c5d87a28-718a-4fee-8cda-237127dea769'
 source=("${pkgname}-${pkgver}.tar.gz::https://gitea.artixlinux.org/attachments/${_srctarball}"
 "${pkgname}-${pkgver}.tar.gz.sig::https://gitea.artixlinux.org/attachments/${_srctarballsig}")
-sha512sums=('852725a2aff55713b2f201bc83bf6be13b9c9f428d9e9aea1bb029f2053d4f03a3a388ab5d2568128576643b5126c6dcd44977eb20649363fa7cff576a7537d2'
+sha512sums=('4337f204ea51fba0665d335e2d6f1dbb09f3802497e1c4484a0b783ea416ae956b17967851f7f831df129c3ad1199c1600a98da9709ee27569ba79d17fa609bd'
             'SKIP')
 validpgpkeys=('A55C3F1BA61CAA63036D82BAFA91071797BEEEC2') # cromer
 
