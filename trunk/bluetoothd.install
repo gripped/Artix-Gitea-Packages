@@ -1,5 +1,9 @@
 pre_remove() {
-    if [ -e "/run/service/bluetoothd" ]; then
+    if [ -e "/run/service/bluetoothd-srv" ]; then
         s6-rc -d change bluetoothd
     fi
+}
+
+post_remove() {
+    rm -rf /etc/s6/sv/bluetoothd-log
 }

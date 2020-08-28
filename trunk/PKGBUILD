@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=bluez-s6
-pkgver=20200713
+pkgver=20200828
 pkgrel=1
 pkgdesc="s6 service scripts for bluez"
 arch=('any')
@@ -10,13 +10,30 @@ provides=('bluez-runscripts')
 conflicts=('bluez-runscripts')
 depends=('bluez' 'dbus-s6' 's6')
 install=bluetoothd.install
-source=("bluetoothd.dependencies" "bluetoothd.run" "bluetoothd.type")
-sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            'f863c2a58262a8a3676cfc8bb1c0efd2ccd1d47dfe08a8817a85d63e30217865'
+source=("bluetoothd-log.conf"
+        "bluetoothd-log.consumer-for"
+        "bluetoothd-log.notification-fd"
+        "bluetoothd-log.pipeline-name"
+        "bluetoothd-log.run"
+        "bluetoothd-log.type"
+        "bluetoothd-srv.dependencies"
+        "bluetoothd-srv.producer-for"
+        "bluetoothd-srv.run"
+        "bluetoothd-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            'fcbdefe7553385687955615af3acf031218cd6f3bcda08ee8a7c362213f197bc'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'bcea56dbbbd73fbca8b1b71bfeefb7acb7928e0ceecd67c5d59dc938d89a52b8'
+            '4e41665244e78e35936f96d42f3dac82f3f6a5b5957bfcf46461ad4719239587'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
+            'bc88994ba50535d14a33ef6fba43037449d271c13a5c564008cb47f5cf737874'
+            'cc9617a88b2db43da46eae60953aef500f5b9eb9c29cddc217ecabcc8c7efb6e'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in dependencies run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -24,5 +41,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'bluetoothd'
+    _inst_sv 'bluetoothd-log'
+    _inst_sv 'bluetoothd-srv'
 }
