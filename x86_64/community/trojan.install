@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/trojan" ]; then
+    if [ -e "/run/service/trojan-srv" ]; then
         s6-rc -d change trojan
     fi
 }
