@@ -1,0 +1,24 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgname=gsasl
+pkgver=1.8.1
+pkgrel=2
+pkgdesc="Simple Authentication and Security Layer framework and a few common SASL mechanisms"
+arch=('x86_64')
+url="https://josefsson.org/gsasl/"
+license=('GPL')
+depends=('gnutls' 'libidn' 'krb5' 'libgcrypt')
+source=(http://download.savannah.nongnu.org/releases/gsasl/$pkgname-$pkgver.tar.gz)
+sha1sums=('82ba0079da6918784a8170d4a13ee133d9df1d7a')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --with-gssapi-impl=mit
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
