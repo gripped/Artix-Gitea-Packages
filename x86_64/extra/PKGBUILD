@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openvpn-s6
-pkgver=20200716
+pkgver=20200829
 pkgrel=1
 pkgdesc="s6 service scripts for openvpn"
 arch=('any')
-url="https://gitea.artixlinux.org/"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('openvpn-runscripts')
 conflicts=('openvpn-runscripts')

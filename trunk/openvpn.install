@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/openvpn" ]; then
+    if [ -e "/run/service/openvpn-srv" ]; then
         s6-rc -d change openvpn
     fi
 }
