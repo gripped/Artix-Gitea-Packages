@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/syslog-ng" ]; then
+    if [ -e "/run/service/syslog-ng-srv" ]; then
         s6-rc -d change syslog-ng
     fi
 }
