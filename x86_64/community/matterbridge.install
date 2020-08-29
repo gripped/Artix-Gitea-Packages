@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/matterbridge" ]; then
+    if [ -e "/run/service/matterbridge-srv" ]; then
         s6-rc -d change matterbridge
     fi
 }
