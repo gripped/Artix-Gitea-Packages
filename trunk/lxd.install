@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/lxd" ]; then
+    if [ -e "/run/service/lxd-srv" ]; then
         s6-rc -d change lxd
     fi
 }
