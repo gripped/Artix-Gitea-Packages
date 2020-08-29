@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/ejabberd" ]; then
+    if [ -e "/run/service/ejabberd-srv" ]; then
         s6-rc -d change ejabberd
     fi
 }
