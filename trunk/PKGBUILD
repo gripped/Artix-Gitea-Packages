@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openntpd-s6
-pkgver=20200713
+pkgver=20200829
 pkgrel=1
 pkgdesc="s6 service scripts for openntpd"
 arch=('any')
@@ -10,12 +10,28 @@ provides=('openntpd-runscripts')
 conflicts=('openntpd-runscripts')
 depends=('openntpd' 's6')
 install=openntpd.install
-source=("openntpd.run" "openntpd.type")
-sha256sums=('2b44e41ae83698ba1021767cf842f7d1251e91de8344abc1e7afe7443cf1e5fe'
+source=("openntpd-log.conf"
+        "openntpd-log.consumer-for"
+        "openntpd-log.notification-fd"
+        "openntpd-log.pipeline-name"
+        "openntpd-log.run"
+        "openntpd-log.type"
+        "openntpd-srv.producer-for"
+        "openntpd-srv.run"
+        "openntpd-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '430e056e9c03e9c316bc647c93afa50c29e2d5fcb3798ea44717fb9c1e425ddc'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'f613feea1fa3974ec243a9178bc0968f1542a2ef7767cae35953813a10b8e1d4'
+            '6433bd7164c4e2bc91f06c7696d718d03159a285728f750808d469e9125f6ea2'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '447cf347f5e8d327e930085352aa0c735a29d40b7ec37756a4b1ee4af5b2278b'
+            '2b44e41ae83698ba1021767cf842f7d1251e91de8344abc1e7afe7443cf1e5fe'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +39,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'openntpd'
+    _inst_sv 'openntpd-log'
+    _inst_sv 'openntpd-srv'
 }
