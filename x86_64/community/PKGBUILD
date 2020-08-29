@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=unrealircd-s6
-pkgver=20200629
+pkgver=20200829
 pkgrel=1
 pkgdesc="s6 service scripts for unrealircd"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('unrealircd-runscripts')
 conflicts=('unrealircd-runscripts')
