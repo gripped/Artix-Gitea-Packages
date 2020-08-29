@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/connmand" ]; then
+    if [ -e "/run/service/connmand-srv" ]; then
         s6-rc -d change connmand
     fi
     sed -i '/connmand/d' /etc/s6/sv/mount-net/dependencies
