@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/NetworkManager" ]; then
+    if [ -e "/run/service/NetworkManager-srv" ]; then
         s6-rc -d change NetworkManager
     fi
     sed -i '/NetworkManager/d' /etc/s6/sv/mount-net/dependencies
