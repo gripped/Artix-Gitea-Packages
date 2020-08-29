@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/git-daemon" ]; then
+    if [ -e "/run/service/git-daemon-srv" ]; then
         s6-rc -d change git-daemon
     fi
 }
