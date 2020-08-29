@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/firewalld" ]; then
+    if [ -e "/run/service/firewalld-srv" ]; then
         s6-rc -d change firewalld
     fi
 }
