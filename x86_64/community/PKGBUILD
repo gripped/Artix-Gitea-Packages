@@ -1,10 +1,10 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=stunnel-s6
-pkgver=20200610
+pkgver=20200829
 pkgrel=1
 pkgdesc="s6 service scripts for stunnel"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('stunnel-runscripts')
 conflicts=('stunnel-runscripts')
