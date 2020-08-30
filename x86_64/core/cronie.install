@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/cronie" ]; then
+    if [ -e "/run/service/cronie-srv" ]; then
         s6-rc -d change cronie
     fi
 }
