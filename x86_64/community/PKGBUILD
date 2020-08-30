@@ -5,7 +5,7 @@
 
 pkgname=apcupsd
 pkgver=3.14.14
-pkgrel=5
+pkgrel=6
 pkgdesc="Power mangement and controlling most of APC's UPS models"
 arch=(x86_64)
 url="http://www.apcupsd.org"
@@ -33,8 +33,8 @@ sha256sums=('db7748559b6b4c3784f9856561ef6ac6199ef7bd019b3edcd7e0a647bf8f9867'
 validpgpkeys=(635B9D943945DCA05BE9AB0A24E84804A57B2D90)
 
 prepare() {
-    cd "$srcdir/$pkgname-$pkgver"
-    patch -p1 -i "$srcdir/apcupsd-3.14.4-shutdown.patch"
+	cd "$srcdir/$pkgname-$pkgver"
+	patch -p1 -i "$srcdir/apcupsd-3.14.4-shutdown.patch"
 }
 
 build() {
@@ -58,6 +58,7 @@ package() {
 	install -Dm644 "$srcdir/apcupsd-tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/apcupsd.conf"
 
 	chmod 755 "$pkgdir"/usr/bin/*
+	mv "$pkgdir/usr/bin/"smtp{,-$pkgname}
 
 	install -dm755 "$pkgdir/usr/lib/$pkgname/cgi-bin"
 	mv "$pkgdir"/etc/apcupsd/*.cgi "$pkgdir/usr/lib/$pkgname/cgi-bin"
