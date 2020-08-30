@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/mdadm" ]; then
+    if [ -e "/run/service/mdadm-srv" ]; then
         s6-rc -d change mdadm
     fi
 }
