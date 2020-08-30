@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/gpm" ]; then
+    if [ -e "/run/service/gpm-srv" ]; then
         s6-rc -d change gpm
     fi
 }
