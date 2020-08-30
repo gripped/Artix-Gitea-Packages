@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/elogind" ]; then
+    if [ -e "/run/service/elogind-srv" ]; then
         s6-rc -d change elogind
     fi
 }
