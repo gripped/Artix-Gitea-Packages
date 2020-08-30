@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/dmeventd" ]; then
+    if [ -e "/run/service/dmeventd-srv" ]; then
         s6-rc -d change dmeventd
     fi
 }
