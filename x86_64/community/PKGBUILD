@@ -1,6 +1,6 @@
-# Contributor: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=exim-openrc
-pkgver=20200525
+pkgver=20200830
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -11,19 +11,11 @@ depends=('openrc' 'exim')
 conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("exim.confd"
-	"exim.initd")
+	      "exim.initd")
 md5sums=('186f4491800be8c56ce39320f24d7264'
          '7dbe7444689616a8959c67c70a3aa30d')
 
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
-
 package() {
-    _inst_confd "${pkgname/-openrc/}"
-    _inst_initd "${pkgname/-openrc/}"
+  install -Dm644 "$srcdir"/exim.confd "$pkgdir"/etc/conf.d/exim
+  install -Dm755 "$srcdir"/exim.initd "$pkgdir"/etc/init.d/exim
 }
