@@ -1,9 +1,9 @@
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=accountsservice
 pkgver=0.6.55
-pkgrel=2.1
+pkgrel=3
 pkgdesc="D-Bus interface for user account query and manipulation"
 url="https://gitlab.freedesktop.org/accountsservice/accountsservice"
 arch=(x86_64)
@@ -35,7 +35,7 @@ build() {
     -D systemdsystemunitdir=no \
     -D elogind=true \
     -D user_heuristics=false
-  ninja -C build
+  meson compile -C build
 }
 
 check() {
@@ -48,3 +48,5 @@ package() {
   # Fix permissions to match the ones the daemon sets
   chmod 0775 "$pkgdir/var/lib/AccountsService/icons"
 }
+
+# vim:set ts=2 sw=2 et:
