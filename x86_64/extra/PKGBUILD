@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=apache-s6
-pkgver=20200713
+pkgver=20200902
 pkgrel=1
 pkgdesc="s6 service scripts for apache"
 arch=('any')
@@ -10,13 +10,28 @@ provides=('apache-runscripts')
 conflicts=('apache-runscripts')
 depends=('apache' 's6')
 install=apache.install
-source=("apache.finish" "apache.run" "apache.type")
-sha256sums=('cfdc4075028919503efe7aa3b9f0b978e226e4b39dcab1a36665ef803f588c8e'
-            '98cada8fe63fbe3ce31a5dd46f78e308781a9a237771861e9453f249eb577a70'
+source=("apache-log.conf"
+        "apache-log.consumer-for"
+        "apache-log.notification-fd"
+        "apache-log.pipeline-name"
+        "apache-log.run"
+        "apache-log.type"
+        "apache-srv.producer-for"
+        "apache-srv.run"
+        "apache-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '8c45896688801f5a0f70c3e443c3d643589800aea5364ddfa7ea7e97a1bc7665'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'cc89df1069b17555b87f33cece5b1cd954116d70d889cf64557d36721bc631f6'
+            '6db0b9e4cde58591704d22468d4bf682a401c185f3e7fefd61e4ffd9528178ee'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '1c11a77bcb269454e8e1b23c313ea49963ba98580304397851298d5ca1a861f9'
+            '0c3da064d60e55315e6804e34f6c9abfa2ec4aaf18c5a6721254c15b0d4b21b2'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
-_inst_sv(){
-    for file in finish run type; do
+_inst_sv() {
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -24,5 +39,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'apache'
+    _inst_sv 'apache-log'
+    _inst_sv 'apache-srv'
 }
