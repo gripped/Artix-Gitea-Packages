@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=acpid-s6
-pkgver=20200713
+pkgver=20200902
 pkgrel=1
 pkgdesc="s6 service scripts for acpid"
 arch=('any')
@@ -10,12 +10,28 @@ provides=('acpid-runscripts')
 conflicts=('acpid-runscripts')
 depends=('acpid' 's6')
 install=acpid.install
-source=("acpid.run" "acpid.type")
-sha256sums=('3b1183d7580369a00f578fc4b38e63a9874778bbf8387d0eaad40a2b6d246678'
+source=("acpid-log.conf"
+        "acpid-log.consumer-for"
+        "acpid-log.notification-fd"
+        "acpid-log.pipeline-name"
+        "acpid-log.run"
+        "acpid-log.type"
+        "acpid-srv.producer-for"
+        "acpid-srv.run" 
+        "acpid-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            'e8b72c6d41a9460b5e44840a58b0dd86512bf4daa20bd91b8b316bb15a50cd12'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '4262a7862f52ae1e6389959f418c4fbea895d3b45957a2297f8978a3e21cd537'
+            'e8d136d959aff152068f79a458198df36ee46b9b46a08c76eb59d0b9452b5de6'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '817eb6e521e588ee6f61198da1ced5ad02868f10e956f9ca822ff754b21c064b'
+            '3b1183d7580369a00f578fc4b38e63a9874778bbf8387d0eaad40a2b6d246678'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
-_inst_sv(){
-    for file in run type; do
+_inst_sv() {
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +39,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'acpid'
+    _inst_sv 'acpid-log'
+    _inst_sv 'acpid-srv'
 }
