@@ -9,6 +9,7 @@ pkgrel=1
 pkgdesc="Miscellaneous system utilities for Linux (32-bit)"
 url='https://github.com/karelzak/util-linux'
 arch=('x86_64')
+makedepends=('lib32-libxcrypt')
 depends=('lib32-glibc' "$_pkgbasename")
 provides=('libuuid.so' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.so')
 license=('GPL2')
