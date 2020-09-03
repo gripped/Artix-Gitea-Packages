@@ -24,10 +24,6 @@ build() {
   make
 }
 
-check() {
-#  make -C libffi-${pkgver} check
-}
-
 package() {
   cd libffi-${pkgver}
 
