@@ -3,14 +3,14 @@
 
 pkgname=rclone
 pkgver=1.53.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage"
 arch=('x86_64')
 url="https://rclone.org/"
 license=('MIT')
 depends=('glibc')
 optdepends=('fuse2: for rclone mount')
-makedepends=('python' 'pandoc' 'go' 'git')
+makedepends=('python' 'pandoc-bin' 'go' 'git')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/rclone/rclone/archive/v$pkgver.tar.gz")
 sha512sums=('8313f56d8e597aa08dd322356c21eb1716bf8d969e2e0e8c6054881db1a703c6c4e6c619b4f7f3a5ca12266c003412130868e271ee6eff952a25e4e4ac40ee59')
 
