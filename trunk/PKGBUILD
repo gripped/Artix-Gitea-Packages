@@ -18,7 +18,7 @@ license=('custom')
 makedepends=('java-environment>=11' 'cpio' 'unzip' 'zip' 'libelf' 'libcups' 'libx11'
              'libxrender' 'libxtst' 'libxt' 'libxext' 'libxrandr' 'alsa-lib' 'pandoc-bin'
              'graphviz' 'freetype2' 'libjpeg-turbo' 'giflib' 'libpng' 'lcms2'
-             'libnet' 'bash')
+             'libnet' 'bash' 'jre-openjdk' 'jre-openjdk-headless' 'jdk-openjdk') # java14 need for boot start java 13 or java 14, no more java 11
 source=(https://hg.openjdk.java.net/jdk-updates/jdk${_majorver}u/archive/${_hg_tag}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
