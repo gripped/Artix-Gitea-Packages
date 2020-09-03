@@ -21,6 +21,8 @@ sha512sums=('59e038ba71aa74c9af6f927b357483a965f675ab3ffcd25cf0c1b043656312d2d2d
 build() {
   cd "$_pkgbasename-$pkgver"
 
+  export CFLAGS+=" -Wno-error"
+  
   ./configure \
       CC="${CC:-cc} -m32" \
       PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
