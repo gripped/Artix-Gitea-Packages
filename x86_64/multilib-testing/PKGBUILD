@@ -24,6 +24,7 @@ makedepends=(
   gobject-introspection
   gtk-doc
   intltool
+  js68
 )
 _commit='941e9329f8d3d43ace8335d206365b212824e686' # tags/0.116^0
 source=("git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
