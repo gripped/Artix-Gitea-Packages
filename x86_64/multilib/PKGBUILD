@@ -14,9 +14,14 @@ provides=('libuuid.so' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.s
 license=('GPL2')
 options=('!emptydirs')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
-source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/$_pkgbasename-$pkgver.tar."{xz,sign})
+source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/$_pkgbasename-$pkgver.tar.xz" gcc10.patch)
 sha512sums=('cbb4975da8d99a1edd45514171d59ea7b019ce0f77a81e88b447a733f725e91c53540d9dc78bc626dc011dca129b8b150aaf9e64ccf62a4202ae816581acf4fd'
-            'SKIP')
+            '09fbdd0dccc9d374738c300222fe167a749334b00c62cc397c5f73e36e27824efd45124b6422e8d76149937874390b31abe9c07a73acc1f49703ddef5886d7fe')
+prepare() {
+  cd "$_pkgbasename-$pkgver"
+ patch -Np1 -i ../gcc10.patch
+
+}
 
 build() {
   cd "$_pkgbasename-$pkgver"
