@@ -6,14 +6,14 @@
 
 pkgname=powerdns-recursor
 pkgver=4.3.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Resolving DNS server'
 url='https://www.powerdns.com/'
 arch=('x86_64')
 license=('GPL2')
 depends=('gcc-libs' 'boost-libs' 'libsodium' 'luajit' 'openssl' 'protobuf'
          'libboost_context.so' 'fstrm' 'net-snmp' 'libprotobuf.so')
-makedepends=('boost' 'inetutils' 'pandoc' 'ragel')
+makedepends=('boost' 'inetutils' 'pandoc-bin' 'ragel')
 provides=('pdns-recursor')
 conflicts=('pdns-recursor')
 backup=('etc/powerdns/recursor.conf')
