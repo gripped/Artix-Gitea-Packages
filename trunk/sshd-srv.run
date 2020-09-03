@@ -1,5 +1,4 @@
 #!/usr/bin/execlineb -P
-redirfd -w 1 /dev/null
-foreground { ssh-keygen -A }
+foreground { redirfd -w 1 /dev/null ssh-keygen -A }
 fdmove -c 2 1
 exec /usr/bin/sshd -D -e

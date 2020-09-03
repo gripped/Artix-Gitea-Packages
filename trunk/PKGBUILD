@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20200902
+pkgver=20200903
 pkgrel=1
 pkgdesc="s6 service scripts for openssh"
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'c784a94b6b4cadf67cf3b1e651946bd110519be11e85433fd251f2af0d8684b5'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '616bf3d26c352f679fbf66b555603859925ca06735fb36cd7b1e51de76a221b3'
-            '365dc4e661b85a37382a8b91ee9254fcf91131df6ce09603d2e3ed6338cd7dc3'
+            '4ab4b9a4f0cd71795c4701f727b1867befb141ba630a9f5d92acd02185645154'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
