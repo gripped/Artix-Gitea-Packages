@@ -3,8 +3,8 @@
 
 _pkgbasename=util-linux
 pkgname=lib32-$_pkgbasename
-_pkgmajor=2.35
-pkgver=2.35.2
+_pkgmajor=2.36
+pkgver=2.36
 pkgrel=1
 pkgdesc="Miscellaneous system utilities for Linux (32-bit)"
 url='https://github.com/karelzak/util-linux'
@@ -15,7 +15,7 @@ license=('GPL2')
 options=('!emptydirs')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("https://www.kernel.org/pub/linux/utils/util-linux/v$_pkgmajor/$_pkgbasename-$pkgver.tar."{xz,sign})
-sha512sums=('59e038ba71aa74c9af6f927b357483a965f675ab3ffcd25cf0c1b043656312d2d2d07c55659fd3da69ede165bec313e0ae7e1cd73758e49681ae610604b399a2'
+sha512sums=('cbb4975da8d99a1edd45514171d59ea7b019ce0f77a81e88b447a733f725e91c53540d9dc78bc626dc011dca129b8b150aaf9e64ccf62a4202ae816581acf4fd'
             'SKIP')
 
 build() {
