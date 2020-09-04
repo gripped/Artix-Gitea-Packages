@@ -27,7 +27,7 @@ makedepends=(
   js60
 )
 _commit=585f4f2715639394e36319d4918389d26e250e7b
-source=("git+https://anongit.freedesktop.org/git/polkit#commit=$_commit"
+source=("git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
         elogind-configure-fix.patch)
 sha256sums=('SKIP'
             'd90b2a95aa3e9e1ebf9369c038c144e04900e095c5405bc4ba4901c31bf3f59b')
