@@ -16,7 +16,7 @@ optdepends=('python: python scripting support' 'keditbookmarks: for managing boo
 makedepends=(extra-cmake-modules kdoctools)
 license=(GPL2 FDL)
 source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"
-         qt5.13.patch gcc.patch qt5.15.patch kwindows.patch missing.patch)
+         qt5.13.patch gcc.patch kwindows.patch missing.patch)
 validpgpkeys=(DA6B31C4B98A877DBB2EF9A292220328C632316E) # Eike Hein <hein@kde.org>
 
 prepare() {
@@ -44,6 +44,5 @@ package() {
 sha512sums=('001534c7f6c5110ca5e210977cc4275e083f5c3704078a74aa573af659154e0fa4c3c960be08f41256db1ac4568f0734741bf10cfb2e15d9e6f6440250682504'
             '87779ee97ea7a50c7488e41505ce0c9c5f21491c2856656823710e756668b346773ac3cfd66cab90069d338894495dd7efbdb5a86d461a9ff3f8ba4814af38e5'
             '0eec360c0daab49a8cae2f99cfc7ad9ec8db27cd9fd6a7f70b81316f5f74d4763aa717a60063950b235093d705794e64d44879f65cdae9a33c584f0eb29a2a09'
-            'f6fc5fe8771bae21fe1eaeb5cd36d829edeb4ac89cabe447e062bc2b8740bc4f4d0a35cde123da613333d0eeebed6de6993b645ac333333e26784af709d83820'
             '7a7968ced95f8cd7b173c08e4ffefd144874f1f6b3c97f7070fb48b5843edd4415c968aa28ca8b10201d138c516d8c34c9c87fc02e548c5369ada5515bc43586'
             'ad08b611c32d2661f641ab2d6db0382c73b6cc5f555bae47b416a3fa48068beafc4782eb6dba5c7205765dbfb42f1c6dea9877e6c6c9abc4867d83e989e36084')
