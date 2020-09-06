@@ -4,14 +4,14 @@
 
 pkgname=lib32-libgudev
 pkgver=233
-pkgrel=1
+pkgrel=1.1
 pkgdesc='GObject bindings for libudev'
 arch=(x86_64)
 url=https://wiki.gnome.org/Projects/libgudev
 license=(LGPL2.1)
 depends=(
   lib32-glib2
-  lib32-eudev
+  lib32-elogind
   libgudev
 )
 makedepends=(
