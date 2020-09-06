@@ -2,7 +2,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2020.08.30
+pkgver=2020.09.03
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
@@ -37,7 +37,7 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             '6e13705ac4d6f69cdba118c6b70c722346fd3c45224133e6bbfe28aca719563c'
             'c390b31fffc4a2b5d78ae8c89f5317aadef1f71baac09cfb467b675db1406d61'
             '89e43a0b7028f52d5c8e7fb961d962c4b4f4e9595880a6157274ddb2c7c0b6b4'
-            'df8511932df35db335b58d4ec169cdc0bee958226de5359f4698297b4056ed7e'
+            'd6b0e95e3cdf663d3383f883301f5ed6cf900cccb7cba0c268ab8f6e78177d16'
             '618ac097441c1f2daffc9967e5c3cd18ea8866f776db62d04bf401c53907b1c9'
             '7b8fffc06755488931ce2aa4d3f9547be650d9e873323b7171515004d02e83c1'
             'f52db4a98fbfdd6d957068ea0e631240c9a138df859fc43d902bf97b0759459d'
@@ -74,7 +74,6 @@ package() {
   touch etc/artix-release
   install -m644 "$srcdir"/locale.sh etc/profile.d/locale.sh
   install -Dm644 "$srcdir"/os-release usr/lib/os-release
-  ln -s ../usr/lib/os-release etc/os-release
 
   # setup /var
   for d in cache local opt log/old lib/misc empty; do
