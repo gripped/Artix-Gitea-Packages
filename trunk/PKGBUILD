@@ -9,7 +9,7 @@ pkgdesc="X11 Inter-Client Exchange library (32-bit)"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
 depends=('lib32-glibc' $_pkgbasename)
-makedepends=('xtrans>=1.2.5' 'xorg-util-macros')
+makedepends=('xtrans>=1.2.5' 'xorg-util-macros' 'xorgproto')
 source=(${url}/releases/individual/lib/libICE-${pkgver}.tar.bz2{,.sig})
 license=('custom')
 sha1sums=('5b5eb125d4f43a3ab8153b0f850963ee6c982c24'
