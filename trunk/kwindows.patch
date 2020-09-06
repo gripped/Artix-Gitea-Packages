@@ -1,0 +1,2861 @@
+From 4295aba5c02533040723d140e062aebd231b3f18 Mon Sep 17 00:00:00 2001
+From: David Faure <faure@kde.org>
+Date: Thu, 28 Nov 2019 12:56:34 +0100
+Subject: [PATCH 1/3] Port away from deprecated KWindowSystem API (with ifdefs)
+
+---
+ src/application.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/application.cpp b/src/application.cpp
+index 4667c2403..538624ba8 100644
+--- a/src/application.cpp
++++ b/src/application.cpp
+@@ -50,6 +50,7 @@
+ #include <KTextEdit>
+ #include <KSharedConfig>
+ #include <KStartupInfo>
++#include <kwindowsystem_version.h>
+ 
+ using namespace Konversation;
+ 
+@@ -1392,7 +1393,12 @@ void Application::handleActivate(const QStringList& arguments)
+ 
+     newInstance(m_commandLineParser);
+ 
++#if KWINDOWSYSTEM_VERSION <= QT_VERSION_CHECK(5, 62, 0)
+     KStartupInfo::setNewStartupId(mainWindow, KStartupInfo::startupId());
++#else
++    mainWindow->setAttribute(Qt::WA_NativeWindow, true);
++    KStartupInfo::setNewStartupId(mainWindow->windowHandle(), KStartupInfo::startupId());
++#endif
+     mainWindow->show();
+     mainWindow->raise();
+ }
+-- 
+GitLab
+
+
+From 60cce0f9e66fe4ac5c2d3d47ea694a9ebb0fdee1 Mon Sep 17 00:00:00 2001
+From: David Faure <faure@kde.org>
+Date: Thu, 28 Nov 2019 13:02:11 +0100
+Subject: [PATCH 2/3] Add missing "override" keywords; scripted with clang-tidy
+
+---
+ src/application.h                      |  4 +--
+ src/awaymanager.h                      |  2 +-
+ src/bookmarkhandler.h                  | 16 +++++------
+ src/config/alias_config.h              | 10 +++----
+ src/config/autoreplace_config.h        | 10 +++----
+ src/config/configdialog.h              |  6 ++--
+ src/config/connectionbehavior_config.h |  8 +++---
+ src/config/dcc_config.h                |  4 +--
+ src/config/highlight_config.h          | 10 +++----
+ src/config/highlighttreewidget.h       |  2 +-
+ src/config/ignore_config.h             | 10 +++----
+ src/config/nicklistbehavior_config.h   | 10 +++----
+ src/config/osd_config.h                | 14 +++++-----
+ src/config/preferences.h               |  2 +-
+ src/config/quickbuttons_config.h       | 10 +++----
+ src/config/settingsdialog.h            | 12 ++++----
+ src/config/tabs_config.h               |  4 +--
+ src/config/theme_config.h              | 10 +++----
+ src/config/warnings_config.h           | 10 +++----
+ src/connectionmanager.h                |  2 +-
+ src/dcc/chat.h                         |  2 +-
+ src/dcc/chatcontainer.h                | 18 ++++++------
+ src/dcc/dccfiledialog.h                |  2 +-
+ src/dcc/recipientdialog.h              |  2 +-
+ src/dcc/resumedialog.h                 |  2 +-
+ src/dcc/transfer.h                     |  2 +-
+ src/dcc/transferdetailedinfopanel.h    |  2 +-
+ src/dcc/transferlistmodel.h            | 26 +++++++++---------
+ src/dcc/transfermanager.h              |  2 +-
+ src/dcc/transferpanel.h                |  4 +--
+ src/dcc/transferrecv.h                 | 12 ++++----
+ src/dcc/transfersend.h                 | 10 +++----
+ src/dcc/transferview.h                 | 12 ++++----
+ src/dcc/whiteboard.h                   |  2 +-
+ src/dcc/whiteboardcolorchooser.h       |  8 +++---
+ src/dcc/whiteboardfontchooser.h        |  4 +--
+ src/dcc/whiteboardpaintarea.h          | 14 +++++-----
+ src/dcc/whiteboardtoolbar.h            |  2 +-
+ src/identitydialog.h                   |  4 +--
+ src/irc/channel.h                      | 38 +++++++++++++-------------
+ src/irc/channellistpanel.h             | 24 ++++++++--------
+ src/irc/inputfilter.h                  |  2 +-
+ src/irc/invitedialog.h                 | 12 ++++----
+ src/irc/ircqueue.h                     |  2 +-
+ src/irc/joinchanneldialog.h            |  2 +-
+ src/irc/modebutton.h                   |  2 +-
+ src/irc/nick.h                         |  6 ++--
+ src/irc/nicklistview.cpp               |  2 +-
+ src/irc/nicklistview.h                 | 14 +++++-----
+ src/irc/nicksonline.h                  |  8 +++---
+ src/irc/nicksonlineitem.h              |  2 +-
+ src/irc/outputfilter.h                 |  2 +-
+ src/irc/outputfilterresolvejob.h       |  2 +-
+ src/irc/query.h                        | 28 +++++++++----------
+ src/irc/server.h                       |  2 +-
+ src/irc/servergroupdialog.h            |  8 +++---
+ src/irc/serverlistdialog.h             |  4 +--
+ src/irc/serverlistview.h               | 10 +++----
+ src/irc/topichistorymodel.h            | 10 +++----
+ src/konsolepanel.h                     |  6 ++--
+ src/mainwindow.h                       | 14 +++++-----
+ src/notificationhandler.h              |  2 +-
+ src/queuetuner.h                       |  4 +--
+ src/quickconnectdialog.h               |  2 +-
+ src/scriptlauncher.h                   |  2 +-
+ src/sound.h                            |  2 +-
+ src/ssllabel.h                         |  2 +-
+ src/statusbar.h                        |  2 +-
+ src/upnp/upnpdescriptionparser.cpp     | 12 ++++----
+ src/upnp/upnpmcastsocket.h             |  2 +-
+ src/upnp/upnprouter.h                  |  2 +-
+ src/urlcatcher.h                       | 16 +++++------
+ src/viewer/awaylabel.h                 |  2 +-
+ src/viewer/channeloptionsdialog.h      |  8 +++---
+ src/viewer/chatwindow.h                |  6 ++--
+ src/viewer/editnotifydialog.h          |  2 +-
+ src/viewer/highlightviewitem.h         |  2 +-
+ src/viewer/ignorelistviewitem.h        |  2 +-
+ src/viewer/images.cpp                  |  6 ++--
+ src/viewer/images.h                    |  2 +-
+ src/viewer/insertchardialog.h          |  2 +-
+ src/viewer/irccontextmenus.h           |  2 +-
+ src/viewer/ircinput.h                  | 24 ++++++++--------
+ src/viewer/ircview.cpp                 |  6 ++--
+ src/viewer/ircview.h                   | 30 ++++++++++----------
+ src/viewer/ircviewbox.h                |  2 +-
+ src/viewer/logfilereader.h             |  8 +++---
+ src/viewer/osd.h                       | 16 +++++------
+ src/viewer/pasteeditor.h               |  2 +-
+ src/viewer/quickbutton.h               |  2 +-
+ src/viewer/rawlog.h                    |  8 +++---
+ src/viewer/searchbar.h                 |  8 +++---
+ src/viewer/statuspanel.h               | 34 +++++++++++------------
+ src/viewer/topicedit.h                 |  8 +++---
+ src/viewer/topichistoryview.h          | 32 +++++++++++-----------
+ src/viewer/topiclabel.h                | 18 ++++++------
+ src/viewer/trayicon.h                  |  2 +-
+ src/viewer/viewcontainer.h             | 36 ++++++++++++------------
+ src/viewer/viewspringloader.h          |  4 +--
+ src/viewer/viewtree.h                  | 36 ++++++++++++------------
+ 100 files changed, 422 insertions(+), 422 deletions(-)
+
+diff --git a/src/application.h b/src/application.h
+index 6b7bcb154..9bca1cea6 100644
+--- a/src/application.h
++++ b/src/application.h
+@@ -86,7 +86,7 @@ class Application : public QApplication
+         QStandardItemModel* getUrlModel() { return m_urlModel; }
+ 
+         Application(int &argc, char **argv);
+-        ~Application();
++        ~Application() override;
+ 
+         static Application* instance();
+ 
+@@ -174,7 +174,7 @@ class Application : public QApplication
+         void closeWallet();
+ 
+     protected:
+-        bool event(QEvent* event);
++        bool event(QEvent* event) override;
+ 
+     private:
+         void implementRestart();
+diff --git a/src/awaymanager.h b/src/awaymanager.h
+index 49b4bdfba..5188e714e 100644
+--- a/src/awaymanager.h
++++ b/src/awaymanager.h
+@@ -24,7 +24,7 @@ class AwayManager : public QObject
+ 
+     public:
+         explicit AwayManager(QObject* parent = 0);
+-        ~AwayManager();
++        ~AwayManager() override;
+ 
+ 
+     public Q_SLOTS:
+diff --git a/src/bookmarkhandler.h b/src/bookmarkhandler.h
+index 9fac4d19c..53fc7ba1c 100644
+--- a/src/bookmarkhandler.h
++++ b/src/bookmarkhandler.h
+@@ -34,16 +34,16 @@ class KonviBookmarkHandler : public QObject, public KBookmarkOwner
+ 
+         public:
+         explicit KonviBookmarkHandler(QMenu *menu, MainWindow* mainWindow);
+-        ~KonviBookmarkHandler();
++        ~KonviBookmarkHandler() override;
+ 
+         // KBookmarkOwner interface:
+-        virtual void openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km);
+-        virtual QUrl currentUrl() const;
+-        virtual QString currentTitle() const;
+-        virtual bool enableOption(BookmarkOption option) const;
+-        virtual bool supportsTabs() const;
+-        virtual QList<KBookmarkOwner::FutureBookmark> currentBookmarkList() const;
+-        virtual void openFolderinTabs(const KBookmarkGroup &group);
++        void openBookmark(const KBookmark &bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km) override;
++        QUrl currentUrl() const override;
++        QString currentTitle() const override;
++        bool enableOption(BookmarkOption option) const override;
++        bool supportsTabs() const override;
++        QList<KBookmarkOwner::FutureBookmark> currentBookmarkList() const override;
++        void openFolderinTabs(const KBookmarkGroup &group) override;
+ 
+     private:
+         MainWindow* m_mainWindow;
+diff --git a/src/config/alias_config.h b/src/config/alias_config.h
+index 39a177d30..8d97f05e2 100644
+--- a/src/config/alias_config.h
++++ b/src/config/alias_config.h
+@@ -23,12 +23,12 @@ class Alias_Config : public QWidget, public KonviSettingsPage, private Ui::Alias
+ 
+     public:
+         explicit Alias_Config(QWidget* parent, const char* name = 0);
+-        ~Alias_Config();
++        ~Alias_Config() override;
+ 
+-        virtual void saveSettings();
+-        virtual void loadSettings();
+-        virtual void restorePageToDefaults();
+-        virtual bool hasChanged();
++        void saveSettings() override;
++        void loadSettings() override;
++        void restorePageToDefaults() override;
++        bool hasChanged() override;
+ 
+     Q_SIGNALS:
+         void modified();
+diff --git a/src/config/autoreplace_config.h b/src/config/autoreplace_config.h
+index ed9aa7bf9..65e25c264 100644
+--- a/src/config/autoreplace_config.h
++++ b/src/config/autoreplace_config.h
+@@ -23,13 +23,13 @@ class Autoreplace_Config : public QWidget, public KonviSettingsPage, private Ui:
+ 
+   public:
+     explicit Autoreplace_Config(QWidget* parent, const char* name=NULL);
+-    ~Autoreplace_Config();
++    ~Autoreplace_Config() override;
+ 
+-    virtual void saveSettings();
+-    virtual void loadSettings();
+-    virtual void restorePageToDefaults();
++    void saveSettings() override;
++    void loadSettings() override;
++    void restorePageToDefaults() override;
+ 
+-    virtual bool hasChanged();
++    bool hasChanged() override;
+ 
+   Q_SIGNALS:
+     void modified();
+diff --git a/src/config/configdialog.h b/src/config/configdialog.h
+index 877eebaf1..e6f6bb66e 100644
+--- a/src/config/configdialog.h
++++ b/src/config/configdialog.h
+@@ -110,7 +110,7 @@ public:
+      * Deletes private class.
+      * @see exists()
+      */
+-    ~ConfigDialog();
++    ~ConfigDialog() override;
+ 
+     /**
+      * Adds page to the dialog and to KConfigDialogManager.  When an
+@@ -275,12 +275,12 @@ protected:
+     /**
+      * @internal
+      */
+-    virtual void showEvent(QShowEvent *e);
++    void showEvent(QShowEvent *e) override;
+ 
+     /**
+      * @internal
+      */
+-    virtual void moveEvent(QMoveEvent *e);
++    void moveEvent(QMoveEvent *e) override;
+ 
+ private Q_SLOTS:
+     /**
+diff --git a/src/config/connectionbehavior_config.h b/src/config/connectionbehavior_config.h
+index edd36a4bb..d462289f3 100644
+--- a/src/config/connectionbehavior_config.h
++++ b/src/config/connectionbehavior_config.h
+@@ -32,11 +32,11 @@ class ConnectionBehavior_Config : public QWidget, public KonviSettingsPage, priv
+     public:
+         explicit ConnectionBehavior_Config(QWidget* parent = NULL);
+ 
+-        virtual void restorePageToDefaults();
+-        virtual void saveSettings();
+-        virtual void loadSettings();
++        void restorePageToDefaults() override;
++        void saveSettings() override;
++        void loadSettings() override;
+ 
+-        virtual bool hasChanged();
++        bool hasChanged() override;
+ 
+     protected Q_SLOTS:
+         void setPasswordChanged(bool changed = true);
+diff --git a/src/config/dcc_config.h b/src/config/dcc_config.h
+index 360f1600f..fa1b86d8e 100644
+--- a/src/config/dcc_config.h
++++ b/src/config/dcc_config.h
+@@ -22,7 +22,7 @@ class DCC_Config : public QWidget, private Ui::DCC_ConfigUI
+ 
+     public:
+         DCC_Config(QWidget* parent, const char* name);
+-        ~DCC_Config();
++        ~DCC_Config() override;
+ 
+     protected Q_SLOTS:
+         virtual void languageChange();
+@@ -30,7 +30,7 @@ class DCC_Config : public QWidget, private Ui::DCC_ConfigUI
+         void dccUPnPChanged(int state);
+ 
+     protected:
+-        virtual void showEvent(QShowEvent *event);
++        void showEvent(QShowEvent *event) override;
+ };
+ 
+ #endif
+diff --git a/src/config/highlight_config.h b/src/config/highlight_config.h
+index a5e511f24..5a644c3dc 100644
+--- a/src/config/highlight_config.h
++++ b/src/config/highlight_config.h
+@@ -25,14 +25,14 @@ class Highlight_Config : public QWidget, public KonviSettingsPage, private Ui::H
+ 
+     public:
+         explicit Highlight_Config(QWidget *parent = 0, const char *name = 0);
+-        ~Highlight_Config();
++        ~Highlight_Config() override;
+ 
+     public:
+-        virtual void saveSettings();
+-        virtual void loadSettings();
+-        virtual void restorePageToDefaults();
++        void saveSettings() override;
++        void loadSettings() override;
++        void restorePageToDefaults() override;
+ 
+-        virtual bool hasChanged();
++        bool hasChanged() override;
+ 
+     Q_SIGNALS:
+         void modified();
+diff --git a/src/config/highlighttreewidget.h b/src/config/highlighttreewidget.h
+index db1c37254..540a63112 100644
+--- a/src/config/highlighttreewidget.h
++++ b/src/config/highlighttreewidget.h
+@@ -22,7 +22,7 @@ class HighlightTreeWidget : public QTreeWidget
+         HighlightTreeWidget(QWidget *parent = nullptr);
+ 
+     protected:
+-        virtual void dropEvent(QDropEvent *event);
++        void dropEvent(QDropEvent *event) override;
+ 
+     signals:
+         void itemDropped();
+diff --git a/src/config/ignore_config.h b/src/config/ignore_config.h
+index e2117a345..dfaf6e033 100644
+--- a/src/config/ignore_config.h
++++ b/src/config/ignore_config.h
+@@ -23,14 +23,14 @@ class Ignore_Config : public QWidget, public KonviSettingsPage, private Ui::Igno
+ 
+     public:
+         explicit Ignore_Config( QWidget* parent = 0, const char* name = 0, Qt::WindowFlags fl = 0 );
+-        ~Ignore_Config();
++        ~Ignore_Config() override;
+         QString flagNames;
+ 
+-        virtual void restorePageToDefaults();
+-        virtual void saveSettings();
+-        virtual void loadSettings();
++        void restorePageToDefaults() override;
++        void saveSettings() override;
++        void loadSettings() override;
+ 
+-        virtual bool hasChanged();
++        bool hasChanged() override;
+ 
+     private:
+         QStringList m_oldIgnoreList;
+diff --git a/src/config/nicklistbehavior_config.h b/src/config/nicklistbehavior_config.h
+index 7b901759d..192e62467 100644
+--- a/src/config/nicklistbehavior_config.h
++++ b/src/config/nicklistbehavior_config.h
+@@ -23,13 +23,13 @@ class NicklistBehavior_Config : public QWidget, public KonviSettingsPage, privat
+ 
+     public:
+         explicit NicklistBehavior_Config(QWidget *parent = 0, const char *name = 0);
+-        ~NicklistBehavior_Config();
++        ~NicklistBehavior_Config() override;
+ 
+-        virtual void saveSettings();
+-        virtual void loadSettings();
+-        virtual void restorePageToDefaults();
++        void saveSettings() override;
++        void loadSettings() override;
++        void restorePageToDefaults() override;
+ 
+-        virtual bool hasChanged();
++        bool hasChanged() override;
+ 
+     private:
+         void setNickList(const QString &sortingOrder);
+diff --git a/src/config/osd_config.h b/src/config/osd_config.h
+index 7061e1e80..e1e9b09c7 100644
+--- a/src/config/osd_config.h
++++ b/src/config/osd_config.h
+@@ -28,13 +28,13 @@ class OSD_Config : public QWidget, public KonviSettingsPage, private Ui::OSD_Con
+ 
+     public:
+         explicit OSD_Config( QWidget* parent = 0, const char* name = 0, Qt::WindowFlags fl = 0 );
+-        ~OSD_Config();
++        ~OSD_Config() override;
+ 
+-        virtual void restorePageToDefaults();
+-        virtual void saveSettings();
+-        virtual void loadSettings();
++        void restorePageToDefaults() override;
++        void saveSettings() override;
++        void loadSettings() override;
+ 
+-        virtual bool hasChanged();  // implement the interface, will not be used here, though
++        bool hasChanged() override;  // implement the interface, will not be used here, though
+ 
+     protected Q_SLOTS:
+         void slotOSDEnabledChanged(bool on);
+@@ -47,8 +47,8 @@ class OSD_Config : public QWidget, public KonviSettingsPage, private Ui::OSD_Con
+         void slotPositionChanged();
+ 
+     protected:
+-        void showEvent(QShowEvent* event);
+-        void hideEvent(QHideEvent* event);
++        void showEvent(QShowEvent* event) override;
++        void hideEvent(QHideEvent* event) override;
+ 
+     private:
+         OSDPreviewWidget* m_pOSDPreview;
+diff --git a/src/config/preferences.h b/src/config/preferences.h
+index aa69ccbf4..f18b00dc4 100644
+--- a/src/config/preferences.h
++++ b/src/config/preferences.h
+@@ -47,7 +47,7 @@ class Preferences : public PreferencesBase
+     public:
+ 
+         static Preferences *self();
+-        ~Preferences();
++        ~Preferences() override;
+         enum Pages
+         {
+             NotifyPage,
+diff --git a/src/config/quickbuttons_config.h b/src/config/quickbuttons_config.h
+index 3fc293447..4bf633b25 100644
+--- a/src/config/quickbuttons_config.h
++++ b/src/config/quickbuttons_config.h
+@@ -23,13 +23,13 @@ class QuickButtons_Config : public QWidget, public KonviSettingsPage, private Ui
+ 
+   public:
+     explicit QuickButtons_Config(QWidget* parent, const char* name=NULL);
+-    ~QuickButtons_Config();
++    ~QuickButtons_Config() override;
+ 
+-    virtual void saveSettings();
+-    virtual void loadSettings();
+-    virtual void restorePageToDefaults();
++    void saveSettings() override;
++    void loadSettings() override;
++    void restorePageToDefaults() override;
+ 
+-    virtual bool hasChanged();
++    bool hasChanged() override;
+ 
+   Q_SIGNALS:
+     void modified();
+diff --git a/src/config/settingsdialog.h b/src/config/settingsdialog.h
+index cd5823bfc..553812a93 100644
+--- a/src/config/settingsdialog.h
++++ b/src/config/settingsdialog.h
+@@ -38,17 +38,17 @@ class KonviSettingsDialog : public ConfigDialog
+ 
+     public:
+         explicit KonviSettingsDialog(QWidget *parent);
+-        ~KonviSettingsDialog();
++        ~KonviSettingsDialog() override;
+ 
+     protected Q_SLOTS:
+-        virtual void updateSettings();
+-        virtual void updateWidgets();
+-        virtual void updateWidgetsDefault();
++        void updateSettings() override;
++        void updateWidgets() override;
++        void updateWidgetsDefault() override;
+         void modifiedSlot();
+ 
+     protected:
+-        virtual bool hasChanged();
+-        virtual bool isDefault();
++        bool hasChanged() override;
++        bool isDefault() override;
+ 
+         Warnings_Config* m_confWarningsWdg;
+         Theme_Config* m_confThemeWdg;
+diff --git a/src/config/tabs_config.h b/src/config/tabs_config.h
+index fd78a64b2..fab27dd8d 100644
+--- a/src/config/tabs_config.h
++++ b/src/config/tabs_config.h
+@@ -21,13 +21,13 @@ class Tabs_Config : public QWidget, private Ui::Tabs_PreferencesUI
+ 
+     public:
+         explicit Tabs_Config(QWidget *parent = 0, const char *name = 0);
+-        ~Tabs_Config();
++        ~Tabs_Config() override;
+ 
+     protected Q_SLOTS:
+         void toggleCheckBoxes(int activated);
+ 
+     protected:
+-        virtual void showEvent(QShowEvent *event);
++        void showEvent(QShowEvent *event) override;
+ };
+ 
+ #endif
+diff --git a/src/config/theme_config.h b/src/config/theme_config.h
+index 642dfcd97..1f107e275 100644
+--- a/src/config/theme_config.h
++++ b/src/config/theme_config.h
+@@ -27,13 +27,13 @@ class Theme_Config : public QWidget, public KonviSettingsPage, private Ui::Theme
+ 
+     public:
+         explicit Theme_Config(QWidget* parent, const char* name=NULL);
+-        ~Theme_Config();
++        ~Theme_Config() override;
+ 
+-        virtual void restorePageToDefaults();
+-        virtual void saveSettings();
+-        virtual void loadSettings();
++        void restorePageToDefaults() override;
++        void saveSettings() override;
++        void loadSettings() override;
+ 
+-        virtual bool hasChanged();
++        bool hasChanged() override;
+ 
+     Q_SIGNALS:
+         void modified();
+diff --git a/src/config/warnings_config.h b/src/config/warnings_config.h
+index 364be2422..707cc3c00 100644
+--- a/src/config/warnings_config.h
++++ b/src/config/warnings_config.h
+@@ -23,13 +23,13 @@ class Warnings_Config : public QWidget, public KonviSettingsPage, private Ui::Wa
+ 
+     public:
+         explicit Warnings_Config( QWidget* parent = 0, const char* name = 0, Qt::WindowFlags fl = 0 );
+-        ~Warnings_Config();
++        ~Warnings_Config() override;
+ 
+-        virtual void restorePageToDefaults();
+-        virtual void saveSettings();
+-        virtual void loadSettings();
++        void restorePageToDefaults() override;
++        void saveSettings() override;
++        void loadSettings() override;
+ 
+-        virtual bool hasChanged();
++        bool hasChanged() override;
+ 
+     public Q_SLOTS:
+         virtual void languageChange();
+diff --git a/src/connectionmanager.h b/src/connectionmanager.h
+index f30ded67b..f23b30945 100644
+--- a/src/connectionmanager.h
++++ b/src/connectionmanager.h
+@@ -27,7 +27,7 @@ class ConnectionManager : public QObject
+ 
+     public:
+         explicit ConnectionManager(QObject* parent = 0);
+-        ~ConnectionManager();
++        ~ConnectionManager() override;
+ 
+         uint connectionCount() const { return m_connectionList.count(); }
+ 
+diff --git a/src/dcc/chat.h b/src/dcc/chat.h
+index 3f03ee36c..13d276127 100644
+--- a/src/dcc/chat.h
++++ b/src/dcc/chat.h
+@@ -51,7 +51,7 @@ namespace Konversation
+                 };
+ 
+                 explicit Chat(QObject *parent);
+-                ~Chat();
++                ~Chat() override;
+ 
+                 quint16 ownPort() const;
+                 QString ownNick() const;
+diff --git a/src/dcc/chatcontainer.h b/src/dcc/chatcontainer.h
+index 47773e307..eb13f4aa6 100644
+--- a/src/dcc/chatcontainer.h
++++ b/src/dcc/chatcontainer.h
+@@ -31,23 +31,23 @@ namespace Konversation
+ 
+             public:
+                 ChatContainer(QWidget *parent, Chat *chat);
+-                ~ChatContainer();
++                ~ChatContainer() override;
+ 
+             // ChatWindow
+-                virtual bool closeYourself(bool askForConfirmation=true);
+-                virtual bool canBeFrontView();
+-                virtual bool searchView();
++                bool closeYourself(bool askForConfirmation=true) override;
++                bool canBeFrontView() override;
++                bool searchView() override;
+ 
+-                virtual void setChannelEncoding(const QString &encoding);
+-                virtual QString getChannelEncoding();
+-                virtual QString getChannelEncodingDefaultDesc();
+-                virtual void emitUpdateInfo();
++                void setChannelEncoding(const QString &encoding) override;
++                QString getChannelEncoding() override;
++                QString getChannelEncodingDefaultDesc() override;
++                void emitUpdateInfo() override;
+ 
+                 QString ownNick() const;
+ 
+             protected:
+                 /** Called from ChatWindow adjustFocus */
+-                virtual void childAdjustFocus();
++                void childAdjustFocus() override;
+ 
+             public Q_SLOTS:
+                 void setPartnerNick(const QString &nick);
+diff --git a/src/dcc/dccfiledialog.h b/src/dcc/dccfiledialog.h
+index 0e7aa12ea..1482625ef 100644
+--- a/src/dcc/dccfiledialog.h
++++ b/src/dcc/dccfiledialog.h
+@@ -28,7 +28,7 @@ public:
+ 
+     bool passiveSend();
+ 
+-    QSize sizeHint() const;
++    QSize sizeHint() const override;
+ 
+ private:
+     KFileWidget* m_fileWidget;
+diff --git a/src/dcc/recipientdialog.h b/src/dcc/recipientdialog.h
+index f5bc49b6c..db224d40a 100644
+--- a/src/dcc/recipientdialog.h
++++ b/src/dcc/recipientdialog.h
+@@ -34,7 +34,7 @@ namespace Konversation
+ 
+             public:
+                 RecipientDialog(QWidget* parent, QAbstractListModel* model);
+-                ~RecipientDialog();
++                ~RecipientDialog() override;
+ 
+                 static QString getNickname(QWidget* parent, QAbstractListModel* model);
+ 
+diff --git a/src/dcc/resumedialog.h b/src/dcc/resumedialog.h
+index 0dd8c2b0a..1c4001d3d 100644
+--- a/src/dcc/resumedialog.h
++++ b/src/dcc/resumedialog.h
+@@ -41,7 +41,7 @@ namespace Konversation
+                     RA_OverwriteDefaultPath = 1 << 4
+                 };
+ 
+-                virtual ~ResumeDialog();
++                ~ResumeDialog() override;
+ 
+                 static ReceiveAction ask(TransferRecv* item, const QString& message, int enabledActions, ReceiveAction defaultAction);
+ 
+diff --git a/src/dcc/transfer.h b/src/dcc/transfer.h
+index 6edeac2d4..acd243074 100644
+--- a/src/dcc/transfer.h
++++ b/src/dcc/transfer.h
+@@ -64,7 +64,7 @@ namespace Konversation
+                 };
+ 
+                 Transfer(Type dccType, QObject *parent);
+-                virtual ~Transfer();
++                ~Transfer() override;
+ 
+                 Type               getType()                  const;
+                 Status             getStatus()                const;
+diff --git a/src/dcc/transferdetailedinfopanel.h b/src/dcc/transferdetailedinfopanel.h
+index 0e7391de1..aeabcd6ec 100644
+--- a/src/dcc/transferdetailedinfopanel.h
++++ b/src/dcc/transferdetailedinfopanel.h
+@@ -32,7 +32,7 @@ namespace Konversation
+ 
+             public:
+                 explicit TransferDetailedInfoPanel(QWidget *parent = 0);
+-                virtual ~TransferDetailedInfoPanel();
++                ~TransferDetailedInfoPanel() override;
+ 
+                 void setTransfer(Transfer *item);
+                 Transfer *transfer() const;
+diff --git a/src/dcc/transferlistmodel.h b/src/dcc/transferlistmodel.h
+index 8673a884f..3a8a945ce 100644
+--- a/src/dcc/transferlistmodel.h
++++ b/src/dcc/transferlistmodel.h
+@@ -81,9 +81,9 @@ namespace Konversation
+         public:
+             explicit TransferSizeDelegate(KCategoryDrawer* categoryDrawer, QObject *parent = 0);
+ 
+-            virtual QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const;
+-            virtual void paint(QPainter *painter, const QStyleOptionViewItem & option,
+-                                const QModelIndex &index) const;
++            QSize sizeHint(const QStyleOptionViewItem & option, const QModelIndex & index) const override;
++            void paint(QPainter *painter, const QStyleOptionViewItem & option,
++                                const QModelIndex &index) const override;
+         private:
+             KCategoryDrawer* m_categoryDrawer;
+         };
+@@ -93,8 +93,8 @@ namespace Konversation
+         public:
+             explicit TransferProgressBarDelegate(QObject *parent = 0);
+ 
+-            virtual void paint(QPainter *painter, const QStyleOptionViewItem & option,
+-                                const QModelIndex &index) const;
++            void paint(QPainter *painter, const QStyleOptionViewItem & option,
++                                const QModelIndex &index) const override;
+         };
+ 
+ 
+@@ -103,7 +103,7 @@ namespace Konversation
+         public:
+             explicit TransferListProxyModel(QObject *parent = 0);
+ 
+-            bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
++            bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
+         };
+ 
+ 
+@@ -128,21 +128,21 @@ namespace Konversation
+ 
+             void appendHeader(TransferHeaderData data);
+ 
+-            int columnCount(const QModelIndex &parent = QModelIndex()) const;
++            int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+             // counts the rows regardless of what type they are
+-            int rowCount(const QModelIndex &parent = QModelIndex()) const;
++            int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+             // itemCount only counts the transferitems, not the CategoryItems
+             int itemCount(TransferItemData::ItemDisplayType displaytype) const;
+ 
+-            QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
++            QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+             QVariant headerData (int section, Qt::Orientation orientation,
+-                                 int role = Qt::DisplayRole) const;
++                                 int role = Qt::DisplayRole) const override;
+ 
+             bool removeRow (int row, const QModelIndex &parent = QModelIndex());
+-            virtual bool removeRows (int row, int count,
+-                                     const QModelIndex &parent = QModelIndex());
++            bool removeRows (int row, int count,
++                                     const QModelIndex &parent = QModelIndex()) override;
+ 
+-            Qt::ItemFlags flags (const QModelIndex &index) const;
++            Qt::ItemFlags flags (const QModelIndex &index) const override;
+ 
+             static QString getStatusText(Transfer::Status status, Transfer::Type type);
+             static QString getSpeedPrettyText(transferspeed_t speed);
+diff --git a/src/dcc/transfermanager.h b/src/dcc/transfermanager.h
+index 6e3227bc2..3d75f9247 100644
+--- a/src/dcc/transfermanager.h
++++ b/src/dcc/transfermanager.h
+@@ -45,7 +45,7 @@ namespace Konversation
+ 
+             public:
+                 explicit TransferManager(QObject* parent = 0);
+-                ~TransferManager();
++                ~TransferManager() override;
+ 
+             Q_SIGNALS:
+                 /*
+diff --git a/src/dcc/transferpanel.h b/src/dcc/transferpanel.h
+index d581001cb..4fb322517 100644
+--- a/src/dcc/transferpanel.h
++++ b/src/dcc/transferpanel.h
+@@ -45,7 +45,7 @@ namespace Konversation
+ 
+             public:
+                 explicit TransferPanel(QWidget *parent);
+-                ~TransferPanel();
++                ~TransferPanel() override;
+ 
+                 TransferView *getTransferView();
+ 
+@@ -76,7 +76,7 @@ namespace Konversation
+ 
+             protected:
+                 /** Called from ChatWindow adjustFocus */
+-                virtual void childAdjustFocus();
++                void childAdjustFocus() override;
+ 
+             private:
+                 inline void initGUI();
+diff --git a/src/dcc/transferrecv.h b/src/dcc/transferrecv.h
+index 8b4064636..3bb2fc211 100644
+--- a/src/dcc/transferrecv.h
++++ b/src/dcc/transferrecv.h
+@@ -48,7 +48,7 @@ namespace Konversation
+ 
+             public:
+                 explicit TransferRecv(QObject *parent);
+-                virtual ~TransferRecv();
++                ~TransferRecv() override;
+ 
+                 // REQUIRED
+                 void setPartnerIp(const QString &ip);
+@@ -64,19 +64,19 @@ namespace Konversation
+                 void setReverse(bool reverse, const QString &reverseToken);
+ 
+             public Q_SLOTS:
+-                virtual bool queue();
++                bool queue() override;
+ 
+                 /** The user has accepted the download.
+                  *  Check we are saving it somewhere valid, create any directories needed, and
+                  *  connect to remote host.
+                  */
+-                virtual void start();
++                void start() override;
+                 /** The user has chosen to abort.
+                  *  Either by chosen to abort directly, or by choosing cancel when
+                  *  prompted for information on where to save etc.
+                  *  Not called when it fails due to another problem.
+                  */
+-                virtual void abort();
++                void abort() override;
+                 void startResume(quint64 position);
+ 
+             protected Q_SLOTS:
+@@ -101,7 +101,7 @@ namespace Konversation
+                 void sendReverseAck(bool error, quint16 port);
+ 
+             protected:
+-                void cleanUp();
++                void cleanUp() override;
+ 
+                                                           // (startPosition == 0) means "don't resume"
+                 void prepareLocalKio(bool overwrite, bool resume, KIO::fileoffset_t startPosition = 0);
+@@ -152,7 +152,7 @@ namespace Konversation
+ 
+             public:
+                 explicit TransferRecvWriteCacheHandler(KIO::TransferJob *transferJob);
+-                virtual ~TransferRecvWriteCacheHandler();
++                ~TransferRecvWriteCacheHandler() override;
+ 
+                 void append(char *data, int size);
+                 bool write(bool force = false);
+diff --git a/src/dcc/transfersend.h b/src/dcc/transfersend.h
+index b81b0a503..439c9c6aa 100644
+--- a/src/dcc/transfersend.h
++++ b/src/dcc/transfersend.h
+@@ -40,7 +40,7 @@ namespace Konversation
+ 
+             public:
+                 explicit TransferSend(QObject *parent);
+-                virtual ~TransferSend();
++                ~TransferSend() override;
+ 
+                 // REQUIRED
+                 void setFileURL(const QUrl &url);
+@@ -59,9 +59,9 @@ namespace Konversation
+                 void reject();
+ 
+             public Q_SLOTS:
+-                virtual bool queue();
+-                virtual void start();
+-                virtual void abort();
++                bool queue() override;
++                void start() override;
++                void abort() override;
+ 
+                 // invoked when the receiver accepts the offer (Reverse DCC)
+                 void connectToReceiver(const QString &partnerHost, quint16 partnerPort);
+@@ -79,7 +79,7 @@ namespace Konversation
+                 void slotLocalCopyReady(KJob *job);
+ 
+             protected:
+-                void cleanUp();
++                void cleanUp() override;
+ 
+                 void startConnectionTimer(int secs);
+                 void stopConnectionTimer();
+diff --git a/src/dcc/transferview.h b/src/dcc/transferview.h
+index 7915b109e..48f7df522 100644
+--- a/src/dcc/transferview.h
++++ b/src/dcc/transferview.h
+@@ -39,7 +39,7 @@ namespace Konversation
+         public:
+ 
+             explicit TransferView(QWidget *parent = 0);
+-            virtual ~TransferView();
++            ~TransferView() override;
+ 
+             void addTransfer(Transfer *transfer);
+ 
+@@ -47,7 +47,7 @@ namespace Konversation
+             int rowCount() const;
+ 
+             QList<QModelIndex> rowIndexes(int column = 0) const;
+-            QList<QModelIndex> selectedIndexes() const;
++            QList<QModelIndex> selectedIndexes() const override;
+             QList<QModelIndex> selectedRows(int column = 0) const;
+             QModelIndex index(int row, int column) const;
+             QModelIndex index(Transfer *transfer) const;
+@@ -82,10 +82,10 @@ namespace Konversation
+                                        int newStatus, int oldStatus);
+ 
+         protected:
+-            virtual void drawRow(QPainter *painter, const QStyleOptionViewItem &option,
+-                                 const QModelIndex &index) const;
+-            virtual void scrollContentsBy(int dx, int dy);
+-            virtual void keyPressEvent(QKeyEvent *event);
++            void drawRow(QPainter *painter, const QStyleOptionViewItem &option,
++                                 const QModelIndex &index) const override;
++            void scrollContentsBy(int dx, int dy) override;
++            void keyPressEvent(QKeyEvent *event) override;
+ 
+         protected Q_SLOTS:
+             void rowsAboutToBeRemovedFromModel(const QModelIndex &parent,
+diff --git a/src/dcc/whiteboard.h b/src/dcc/whiteboard.h
+index 849ade076..2ac6b85fe 100644
+--- a/src/dcc/whiteboard.h
++++ b/src/dcc/whiteboard.h
+@@ -29,7 +29,7 @@ namespace Konversation
+ 
+             public:
+                 explicit WhiteBoard(QWidget* parent);
+-                ~WhiteBoard();
++                ~WhiteBoard() override;
+ 
+                 static QStringList whiteboardCommands();
+ 
+diff --git a/src/dcc/whiteboardcolorchooser.h b/src/dcc/whiteboardcolorchooser.h
+index eeb8a3444..100ff8e06 100644
+--- a/src/dcc/whiteboardcolorchooser.h
++++ b/src/dcc/whiteboardcolorchooser.h
+@@ -37,7 +37,7 @@ namespace Konversation
+             };
+ 
+             explicit WhiteBoardColorChooser(QWidget* parent = 0);
+-            ~WhiteBoardColorChooser();
++            ~WhiteBoardColorChooser() override;
+ 
+             QColor color(const ColorLayer& layer) const;
+             QColor foregroundColor() const;
+@@ -55,9 +55,9 @@ namespace Konversation
+             void backgroundColorChanged(const QColor& color);
+ 
+         protected:
+-            virtual void mouseReleaseEvent(QMouseEvent *e);
+-            virtual void paintEvent(QPaintEvent *e);
+-            virtual void resizeEvent(QResizeEvent *e);
++            void mouseReleaseEvent(QMouseEvent *e) override;
++            void paintEvent(QPaintEvent *e) override;
++            void resizeEvent(QResizeEvent *e) override;
+ 
+         private:
+             inline QRect swapPixmapRect() const;
+diff --git a/src/dcc/whiteboardfontchooser.h b/src/dcc/whiteboardfontchooser.h
+index b5cfe7284..93abf1e9c 100644
+--- a/src/dcc/whiteboardfontchooser.h
++++ b/src/dcc/whiteboardfontchooser.h
+@@ -30,7 +30,7 @@ namespace Konversation
+ 
+             public:
+                 explicit WhiteBoardFontChooser(QWidget* parent);
+-                ~WhiteBoardFontChooser();
++                ~WhiteBoardFontChooser() override;
+ 
+                 QFont font() const;
+                 int textStyle() const;
+@@ -39,7 +39,7 @@ namespace Konversation
+                 void fontChanged(const QFont& font);
+ 
+             protected:
+-                virtual void closeEvent(QCloseEvent* event);
++                void closeEvent(QCloseEvent* event) override;
+ 
+             protected Q_SLOTS:
+                 void currentFontChanged(const QFont& font);
+diff --git a/src/dcc/whiteboardpaintarea.h b/src/dcc/whiteboardpaintarea.h
+index f7f2f64b3..aa3a0e799 100644
+--- a/src/dcc/whiteboardpaintarea.h
++++ b/src/dcc/whiteboardpaintarea.h
+@@ -36,7 +36,7 @@ namespace Konversation
+ 
+         public:
+             explicit WhiteBoardPaintArea(QWidget* parent = 0);
+-            ~WhiteBoardPaintArea();
++            ~WhiteBoardPaintArea() override;
+ 
+         public Q_SLOTS:
+             void setTool(Konversation::DCC::WhiteBoardGlobals::WhiteBoardTool tool);
+@@ -90,12 +90,12 @@ namespace Konversation
+             void colorPicked(const QColor& color);
+ 
+         protected:
+-            virtual void paintEvent(QPaintEvent * event);
+-            virtual void resizeEvent(QResizeEvent * event);
+-            virtual void mousePressEvent(QMouseEvent * event);
+-            virtual void mouseReleaseEvent(QMouseEvent * event);
+-            virtual void mouseMoveEvent(QMouseEvent * event);
+-            virtual void keyPressEvent(QKeyEvent * event);
++            void paintEvent(QPaintEvent * event) override;
++            void resizeEvent(QResizeEvent * event) override;
++            void mousePressEvent(QMouseEvent * event) override;
++            void mouseReleaseEvent(QMouseEvent * event) override;
++            void mouseMoveEvent(QMouseEvent * event) override;
++            void keyPressEvent(QKeyEvent * event) override;
+ 
+         private:
+             inline void makeLastPosInvalid();
+diff --git a/src/dcc/whiteboardtoolbar.h b/src/dcc/whiteboardtoolbar.h
+index 760c1a34d..bab2a4955 100644
+--- a/src/dcc/whiteboardtoolbar.h
++++ b/src/dcc/whiteboardtoolbar.h
+@@ -41,7 +41,7 @@ namespace Konversation
+                 };
+ 
+                 explicit WhiteBoardToolBar(QWidget* parent);
+-                ~WhiteBoardToolBar();
++                ~WhiteBoardToolBar() override;
+ 
+                 QColor foregroundColor() const;
+                 QColor backgroundColor() const;
+diff --git a/src/identitydialog.h b/src/identitydialog.h
+index b18b0ef81..7a7721e8d 100644
+--- a/src/identitydialog.h
++++ b/src/identitydialog.h
+@@ -30,13 +30,13 @@ namespace Konversation
+         Q_OBJECT
+         public:
+             explicit IdentityDialog(QWidget *parent = 0);
+-            ~IdentityDialog() {}
++            ~IdentityDialog() override {}
+             void setCurrentIdentity(int index);
+             IdentityPtr setCurrentIdentity(IdentityPtr identity);
+             IdentityPtr currentIdentity() const;
+ 
+         public Q_SLOTS:
+-            virtual void accept();
++            void accept() override;
+ 
+         Q_SIGNALS:
+             void identitiesChanged();
+diff --git a/src/irc/channel.h b/src/irc/channel.h
+index f542053ba..c0a1313c1 100644
+--- a/src/irc/channel.h
++++ b/src/irc/channel.h
+@@ -72,28 +72,28 @@ class Channel : public ChatWindow
+ 
+     public:
+         explicit Channel(QWidget* parent, const QString& name);
+-        ~Channel();
++        ~Channel() override;
+ //META
+ 
+-        virtual bool canBeFrontView();
+-        virtual bool searchView();
++        bool canBeFrontView() override;
++        bool searchView() override;
+ 
+-        virtual void append(const QString& nickname, const QString& message, const QHash<QString, QString> &messageTags = QHash<QString, QString>(), const QString& label = QString());
+-        virtual void appendAction(const QString& nickname, const QString& message, const QHash<QString, QString> &messageTags = QHash<QString, QString>());
++        void append(const QString& nickname, const QString& message, const QHash<QString, QString> &messageTags = QHash<QString, QString>(), const QString& label = QString()) override;
++        void appendAction(const QString& nickname, const QString& message, const QHash<QString, QString> &messageTags = QHash<QString, QString>()) override;
+         void nickActive(const QString& nickname);
+         #ifdef HAVE_QCA2
+         Konversation::Cipher* getCipher();
+         #endif
+ //General administrative stuff
+     public:
+-        void setName(const QString& newName);
++        void setName(const QString& newName) override;
+         QString getPassword();
+ 
+         const Konversation::ChannelSettings channelSettings();
+ 
+         QString getPassword() const;
+ 
+-        virtual void setServer(Server* newServer);
++        void setServer(Server* newServer) override;
+ 
+         void setEncryptedOutput(bool);
+ 
+@@ -102,11 +102,11 @@ class Channel : public ChatWindow
+ //Unsure of future placement and/or continued existence of these members
+         int numberOfNicks() const { return nicks; }
+         int numberOfOps() const { return ops; }
+-        virtual void setChannelEncoding(const QString& encoding);
+-        virtual QString getChannelEncoding();
+-        virtual QString getChannelEncodingDefaultDesc();
++        void setChannelEncoding(const QString& encoding) override;
++        QString getChannelEncoding() override;
++        QString getChannelEncodingDefaultDesc() override;
+ 
+-        virtual bool log();
++        bool log() override;
+ 
+     protected:
+         // use with caution! does not check for duplicates
+@@ -126,7 +126,7 @@ class Channel : public ChatWindow
+         void autoWho();
+         void updateAutoWho();
+         void fadeActivity();
+-        virtual void serverOnline(bool online);
++        void serverOnline(bool online) override;
+         void delayedSortNickList();
+ 
+ 
+@@ -149,7 +149,7 @@ class Channel : public ChatWindow
+ 
+         void adjustNicks(int value);
+         void adjustOps(int value);
+-        virtual void emitUpdateInfo();
++        void emitUpdateInfo() override;
+ 
+         void resizeNicknameListViewColumns();
+ 
+@@ -209,14 +209,14 @@ class Channel : public ChatWindow
+ 
+ //Generic GUI
+     public:
+-        virtual bool eventFilter(QObject* watched, QEvent* e);
++        bool eventFilter(QObject* watched, QEvent* e) override;
+ 
+ //Specific GUI
+     public:
+         void updateModeWidgets(char mode, bool plus, const QString &parameter);
+ 
+         /// Sounds suspiciously like a destructor..
+-        virtual bool closeYourself(bool askForConfirmation=true);
++        bool closeYourself(bool askForConfirmation=true) override;
+ 
+         bool autoJoin();
+ 
+@@ -234,12 +234,12 @@ class Channel : public ChatWindow
+         void updateQuickButtons();
+         void channelTextEntered();
+         void channelPassthroughCommand();
+-        void sendText(const QString& line);
++        void sendText(const QString& line) override;
+         void showOptionsDialog();
+         void showQuickButtons(bool show);
+         void showModeButtons(bool show);
+ 
+-        virtual void indicateAway(bool show);
++        void indicateAway(bool show) override;
+         void showTopic(bool show);
+         void showNicknameBox(bool show);
+         void showNicknameList(bool show);
+@@ -274,10 +274,10 @@ class Channel : public ChatWindow
+ 
+         void nicknameListViewTextChanged(int textChangedFlags);
+     protected:
+-        void showEvent(QShowEvent* event);
++        void showEvent(QShowEvent* event) override;
+         void syncSplitters();
+         /// Called from ChatWindow adjustFocus
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+ 
+         // to take care of redraw problem if hidden
+         bool quickButtonsChanged;
+diff --git a/src/irc/channellistpanel.h b/src/irc/channellistpanel.h
+index 744d70ec1..7953e7941 100644
+--- a/src/irc/channellistpanel.h
++++ b/src/irc/channellistpanel.h
+@@ -50,7 +50,7 @@ class ChannelListProxyModel : public QSortFilterProxyModel
+         void setFilterChannel(bool filter);
+ 
+     protected:
+-        bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
++        bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
+ 
+     private:
+         bool usersInRange(int users) const;
+@@ -69,11 +69,11 @@ class ChannelListModel : public QAbstractListModel
+ 
+         void append(const ChannelItem& item);
+ 
+-        int columnCount(const QModelIndex& parent = QModelIndex()) const;
+-        int rowCount(const QModelIndex& parent = QModelIndex()) const;
++        int columnCount(const QModelIndex& parent = QModelIndex()) const override;
++        int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+ 
+-        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+-        QVariant headerData (int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
++        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
++        QVariant headerData (int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+ 
+     private:
+         QList<ChannelItem> m_channelList;
+@@ -85,14 +85,14 @@ class ChannelListPanel : public ChatWindow, private Ui::ChannelListWidgetUI
+ 
+     public:
+         explicit ChannelListPanel(QWidget* parent);
+-        ~ChannelListPanel();
++        ~ChannelListPanel() override;
+ 
+         using ChatWindow::closeYourself;
+         virtual bool closeYourself();
+-        virtual void emitUpdateInfo();
++        void emitUpdateInfo() override;
+ 
+-        bool isInsertSupported() { return true; }
+-        QString getTextInLine() { return m_filterLine->text(); }
++        bool isInsertSupported() override { return true; }
++        QString getTextInLine() override { return m_filterLine->text(); }
+ 
+     Q_SIGNALS:
+         void refreshChannelList();
+@@ -104,7 +104,7 @@ class ChannelListPanel : public ChatWindow, private Ui::ChannelListWidgetUI
+         void endOfChannelList();
+         void applyFilterClicked();
+ 
+-        virtual void appendInputText(const QString&, bool fromCursor);
++        void appendInputText(const QString&, bool fromCursor) override;
+         void setFilter(const QString& filter);
+ 
+     protected Q_SLOTS:
+@@ -121,12 +121,12 @@ class ChannelListPanel : public ChatWindow, private Ui::ChannelListWidgetUI
+         void contextMenu(const QPoint& pos);
+         void openURL();
+         //Used to disable functions when not connected
+-        virtual void serverOnline(bool online);
++        void serverOnline(bool online) override;
+ 
+     protected:
+ 
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus(){}
++        void childAdjustFocus() override{}
+ 
+         void countUsers(const QModelIndex& index, int pos);
+ 
+diff --git a/src/irc/inputfilter.h b/src/irc/inputfilter.h
+index d02af1b7a..dfd1df2b6 100644
+--- a/src/irc/inputfilter.h
++++ b/src/irc/inputfilter.h
+@@ -29,7 +29,7 @@ class InputFilter : public QObject
+ 
+     public:
+         InputFilter();
+-        ~InputFilter();
++        ~InputFilter() override;
+ 
+         void setServer(Server* newServer);
+         void parseLine(const QString &line);
+diff --git a/src/irc/invitedialog.h b/src/irc/invitedialog.h
+index c5a9df530..5a86be207 100644
+--- a/src/irc/invitedialog.h
++++ b/src/irc/invitedialog.h
+@@ -43,14 +43,14 @@ class InviteChannelListModel : public QAbstractListModel
+         void addInvite(const QString& nickname, const QString& channel);
+         QString selectedChannels() const;
+ 
+-        virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
+-        virtual int columnCount(const QModelIndex& parent = QModelIndex()) const;
++        int rowCount(const QModelIndex& parent = QModelIndex()) const override;
++        int columnCount(const QModelIndex& parent = QModelIndex()) const override;
+ 
+-        virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+-        virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+-        virtual Qt::ItemFlags flags(const QModelIndex& index) const;
++        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
++        QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
++        Qt::ItemFlags flags(const QModelIndex& index) const override;
+ 
+-        virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole);
++        bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+ 
+     private:
+         QMap<QString, ChannelItem> m_channelMap;
+diff --git a/src/irc/ircqueue.h b/src/irc/ircqueue.h
+index 2038a7ffd..3f7f0c803 100644
+--- a/src/irc/ircqueue.h
++++ b/src/irc/ircqueue.h
+@@ -96,7 +96,7 @@ public:
+     };
+ 
+     IRCQueue(Server *server, EmptyingRate& rate, int myindex=0);
+-    ~IRCQueue();
++    ~IRCQueue() override;
+ 
+     void enqueue(const QString& line);
+     void reset();
+diff --git a/src/irc/joinchanneldialog.h b/src/irc/joinchanneldialog.h
+index 3d787f945..c549801c5 100644
+--- a/src/irc/joinchanneldialog.h
++++ b/src/irc/joinchanneldialog.h
+@@ -29,7 +29,7 @@ namespace Konversation
+         Q_OBJECT
+             public:
+             explicit JoinChannelDialog(Server* server, QWidget *parent = 0);
+-            ~JoinChannelDialog();
++            ~JoinChannelDialog() override;
+ 
+             int connectionId() const;
+             QString channel() const;
+diff --git a/src/irc/modebutton.h b/src/irc/modebutton.h
+index fd4410710..226ef3502 100644
+--- a/src/irc/modebutton.h
++++ b/src/irc/modebutton.h
+@@ -23,7 +23,7 @@ class ModeButton : public QToolButton
+ 
+         public:
+         ModeButton(const QString& label,QWidget* parent,int id);
+-        ~ModeButton();
++        ~ModeButton() override;
+ 
+         void setOn(bool state);
+ 
+diff --git a/src/irc/nick.h b/src/irc/nick.h
+index ec9e8e55d..040800132 100644
+--- a/src/irc/nick.h
++++ b/src/irc/nick.h
+@@ -27,12 +27,12 @@ class Nick : public QTreeWidgetItem
+     public:
+         Nick(NickListView *listView, Channel* channel,
+             const ChannelNickPtr& channelnick);
+-        ~Nick();
++        ~Nick() override;
+ 
+         ChannelNickPtr getChannelNick() const;
+ 
+-        virtual QVariant data(int column, int role) const;
+-        virtual bool operator<(const QTreeWidgetItem& other) const;
++        QVariant data(int column, int role) const override;
++        bool operator<(const QTreeWidgetItem& other) const override;
+ 
+         void refresh();
+         void repositionMe();
+diff --git a/src/irc/nicklistview.cpp b/src/irc/nicklistview.cpp
+index 619877111..dec4fa9e9 100644
+--- a/src/irc/nicklistview.cpp
++++ b/src/irc/nicklistview.cpp
+@@ -31,7 +31,7 @@ class NickItemDelegate : public QStyledItemDelegate
+     public:
+         NickItemDelegate(QObject *parent = 0);
+ 
+-        virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
++        QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+ };
+ 
+ NickItemDelegate::NickItemDelegate(QObject *parent)
+diff --git a/src/irc/nicklistview.h b/src/irc/nicklistview.h
+index 319d1d604..6bee3e7ee 100644
+--- a/src/irc/nicklistview.h
++++ b/src/irc/nicklistview.h
+@@ -31,7 +31,7 @@ class NickListView : public QTreeWidget
+ 
+         public:
+         NickListView(QWidget* parent, Channel *chan);
+-        ~NickListView();
++        ~NickListView() override;
+ 
+         /** Call when the icons have been changed.
+          */
+@@ -70,15 +70,15 @@ class NickListView : public QTreeWidget
+ 
+     protected:
+         //! Reimplemented for dynamic tooltips
+-        virtual bool event(QEvent* ev);
+-        virtual void contextMenuEvent(QContextMenuEvent* ev);
++        bool event(QEvent* ev) override;
++        void contextMenuEvent(QContextMenuEvent* ev) override;
+ 
+         // Drag & Drop support
+-        virtual QStringList mimeTypes () const;
++        QStringList mimeTypes () const override;
+         bool canDecodeMime(QDropEvent const *event) const;
+-        virtual bool dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action);
+-        virtual void dragEnterEvent(QDragEnterEvent *event);
+-        virtual void dragMoveEvent(QDragMoveEvent *event);
++        bool dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action) override;
++        void dragEnterEvent(QDragEnterEvent *event) override;
++        void dragMoveEvent(QDragMoveEvent *event) override;
+ 
+         Channel *channel;
+         QTimer *m_resortTimer;
+diff --git a/src/irc/nicksonline.h b/src/irc/nicksonline.h
+index b22413c8a..5d16d1a83 100644
+--- a/src/irc/nicksonline.h
++++ b/src/irc/nicksonline.h
+@@ -47,13 +47,13 @@ class NicksOnline : public ChatWindow
+         };
+ 
+         explicit NicksOnline(QWidget* parent);
+-        ~NicksOnline();
++        ~NicksOnline() override;
+ 
+         // These are here for the benefit of NicksOnlineTooltip.
+         QTreeWidget* getNickListView();
+         NickInfoPtr getNickInfo(const QTreeWidgetItem* item);
+ 
+-        virtual bool canBeFrontView()   { return true; }
++        bool canBeFrontView() override   { return true; }
+ 
+     Q_SIGNALS:
+         /**
+@@ -104,9 +104,9 @@ class NicksOnline : public ChatWindow
+ 
+     protected:
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+     //! Reimplemented for dynamic tooltips
+-    virtual bool eventFilter(QObject*obj, QEvent *ev);
++    bool eventFilter(QObject*obj, QEvent *ev) override;
+     private:
+         /**
+         * Returns the named child of parent item in a NicksOnlineItem
+diff --git a/src/irc/nicksonlineitem.h b/src/irc/nicksonlineitem.h
+index c86a866c2..782769e1c 100644
+--- a/src/irc/nicksonlineitem.h
++++ b/src/irc/nicksonlineitem.h
+@@ -39,7 +39,7 @@ class NicksOnlineItem : public QTreeWidgetItem
+         * @param item              Pointer to the QTreeWidgetItem to compare with.
+         * @return                  -1 if this item's value is smaller than i, 0 if they are equal, 1 if it's greater
+         */
+-        bool operator<(const QTreeWidgetItem &item) const;
++        bool operator<(const QTreeWidgetItem &item) const override;
+         /**
+         * Returns the type of the item.
+         * @return                  One of the enum NickListViewColumn
+diff --git a/src/irc/outputfilter.h b/src/irc/outputfilter.h
+index 291ed5df0..298cee2da 100644
+--- a/src/irc/outputfilter.h
++++ b/src/irc/outputfilter.h
+@@ -66,7 +66,7 @@ namespace Konversation
+ 
+         public:
+             explicit OutputFilter(Server* server);
+-            ~OutputFilter();
++            ~OutputFilter() override;
+ 
+             static const QSet<QString>& supportedCommands() { return m_commands; }
+ 
+diff --git a/src/irc/outputfilterresolvejob.h b/src/irc/outputfilterresolvejob.h
+index fda9fc92b..fe0e5e56d 100644
+--- a/src/irc/outputfilterresolvejob.h
++++ b/src/irc/outputfilterresolvejob.h
+@@ -35,7 +35,7 @@ class OutputFilterResolveJob : public QObject
+ 
+     public:
+         explicit OutputFilterResolveJob(const Konversation::OutputFilterInput& input);
+-        ~OutputFilterResolveJob();
++        ~OutputFilterResolveJob() override;
+ 
+ 
+     private Q_SLOTS:
+diff --git a/src/irc/query.h b/src/irc/query.h
+index 09537c04a..bf84a2340 100644
+--- a/src/irc/query.h
++++ b/src/irc/query.h
+@@ -42,9 +42,9 @@ class Query : public ChatWindow
+ 
+     public:
+         explicit Query(QWidget* parent, const QString& _name);
+-        virtual void setServer(Server* newServer);
++        void setServer(Server* newServer) override;
+ 
+-        ~Query();
++        ~Query() override;
+ 
+         /** This will always be called soon after this object is created.
+          *  @param nickInfo A nickinfo that must exist.
+@@ -55,14 +55,14 @@ class Query : public ChatWindow
+          *  This should be fixed maybe?  I don't know.
+          */
+         NickInfoPtr getNickInfo();
+-        virtual bool closeYourself(bool askForConfirmation=true);
+-        virtual bool canBeFrontView();
+-        virtual bool searchView();
++        bool closeYourself(bool askForConfirmation=true) override;
++        bool canBeFrontView() override;
++        bool searchView() override;
+ 
+-        virtual void setChannelEncoding(const QString& encoding);
+-        virtual QString getChannelEncoding();
+-        virtual QString getChannelEncodingDefaultDesc();
+-        virtual void emitUpdateInfo();
++        void setChannelEncoding(const QString& encoding) override;
++        QString getChannelEncoding() override;
++        QString getChannelEncodingDefaultDesc() override;
++        void emitUpdateInfo() override;
+ 
+         /** call this when you see a nick quit from the server.
+          *  @param reason The quit reason given by that user.
+@@ -78,8 +78,8 @@ class Query : public ChatWindow
+         void updateQueryChrome(ChatWindow*, const QString&);
+ 
+     public Q_SLOTS:
+-        void sendText(const QString& text);
+-        virtual void indicateAway(bool show);
++        void sendText(const QString& text) override;
++        void indicateAway(bool show) override;
+         void setEncryptedOutput(bool);
+         void connectionStateChanged(Server*, Konversation::ConnectionState);
+ 
+@@ -94,10 +94,10 @@ class Query : public ChatWindow
+         void updateNickInfo(Server* server, NickInfoPtr nickInfo);
+ 
+     protected:
+-        void setName(const QString& newName);
+-        void showEvent(QShowEvent* event);
++        void setName(const QString& newName) override;
++        void showEvent(QShowEvent* event) override;
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+ 
+     private:
+         bool awayChanged;
+diff --git a/src/irc/server.h b/src/irc/server.h
+index 12e6653bb..aa3561841 100644
+--- a/src/irc/server.h
++++ b/src/irc/server.h
+@@ -94,7 +94,7 @@ class Server : public QObject
+         Q_DECLARE_FLAGS(CapModifiers, CapModifier)
+ 
+         Server(QObject* parent, ConnectionSettings& settings);
+-        ~Server();
++        ~Server() override;
+ 
+         void cycle();
+         void abortScheduledRecreation() { m_recreationScheduled = false; }
+diff --git a/src/irc/servergroupdialog.h b/src/irc/servergroupdialog.h
+index 537df3df5..ad18955e2 100644
+--- a/src/irc/servergroupdialog.h
++++ b/src/irc/servergroupdialog.h
+@@ -32,7 +32,7 @@ namespace Konversation
+         Q_OBJECT
+         public:
+             explicit ServerGroupDialog(const QString& title, QWidget* parent = 0);
+-            ~ServerGroupDialog();
++            ~ServerGroupDialog() override;
+ 
+             void setServerGroupSettings(ServerGroupSettingsPtr settings);
+             ServerGroupSettingsPtr serverGroupSettings();
+@@ -44,7 +44,7 @@ namespace Konversation
+             bool identitiesNeedsUpdate() const { return m_identitiesNeedsUpdate; }
+ 
+         public Q_SLOTS:
+-            virtual void accept();
++            void accept() override;
+ 
+         protected Q_SLOTS:
+             void addServer();
+@@ -86,7 +86,7 @@ namespace Konversation
+         Q_OBJECT
+         public:
+             explicit ServerDialog(const QString& title, QWidget *parent = 0);
+-            ~ServerDialog();
++            ~ServerDialog() override;
+ 
+             void setServerSettings(const ServerSettings& server);
+             ServerSettings serverSettings();
+@@ -105,7 +105,7 @@ namespace Konversation
+         Q_OBJECT
+         public:
+             explicit ChannelDialog(const QString& title, QWidget *parent = 0);
+-            ~ChannelDialog();
++            ~ChannelDialog() override;
+ 
+             void setChannelSettings(const ChannelSettings& channel);
+             ChannelSettings channelSettings();
+diff --git a/src/irc/serverlistdialog.h b/src/irc/serverlistdialog.h
+index b3c4b601c..2ae38546e 100644
+--- a/src/irc/serverlistdialog.h
++++ b/src/irc/serverlistdialog.h
+@@ -29,7 +29,7 @@ namespace Konversation
+         public:
+             ServerListItem(QTreeWidget* tree, QStringList & strings);
+             ServerListItem(QTreeWidgetItem* parent, QStringList & strings);
+-            bool operator<(const QTreeWidgetItem &other) const;
++            bool operator<(const QTreeWidgetItem &other) const override;
+             enum DataRole
+             {
+                 SortIndex = Qt::UserRole + 2
+@@ -42,7 +42,7 @@ namespace Konversation
+ 
+         public:
+             explicit ServerListDialog(const QString& title, QWidget *parent = 0);
+-            ~ServerListDialog();
++            ~ServerListDialog() override;
+             enum DataRole
+             {
+                 ServerGroupId = Qt::UserRole + 1,
+diff --git a/src/irc/serverlistview.h b/src/irc/serverlistview.h
+index 9722fe908..f5dbb9f1d 100644
+--- a/src/irc/serverlistview.h
++++ b/src/irc/serverlistview.h
+@@ -25,7 +25,7 @@ class ServerListView : public QTreeWidget
+     
+     public:
+         explicit ServerListView(QWidget *parent);
+-        ~ServerListView();
++        ~ServerListView() override;
+ 
+     private:
+         bool badDropSelection();
+@@ -34,10 +34,10 @@ class ServerListView : public QTreeWidget
+         void aboutToMove();
+         
+     protected:        
+-        void dragMoveEvent(QDragMoveEvent *e);
+-        void dragLeaveEvent(QDragLeaveEvent *);
+-        void dragEnterEvent(QDragEnterEvent *);
+-        void dropEvent(QDropEvent *event);
++        void dragMoveEvent(QDragMoveEvent *e) override;
++        void dragLeaveEvent(QDragLeaveEvent *) override;
++        void dragEnterEvent(QDragEnterEvent *) override;
++        void dropEvent(QDropEvent *event) override;
+ };
+ 
+ #endif
+diff --git a/src/irc/topichistorymodel.h b/src/irc/topichistorymodel.h
+index 6fd8535d3..e6a21514f 100644
+--- a/src/irc/topichistorymodel.h
++++ b/src/irc/topichistorymodel.h
+@@ -56,7 +56,7 @@ class TopicHistoryModel : public QAbstractListModel
+ 
+     public:
+         explicit TopicHistoryModel(QObject* parent = 0);
+-        ~TopicHistoryModel();
++        ~TopicHistoryModel() override;
+ 
+         QString currentTopic();
+ 
+@@ -68,11 +68,11 @@ class TopicHistoryModel : public QAbstractListModel
+         void clearCipher();
+ #endif
+ 
+-        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+-        QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
++        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
++        QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+ 
+-        int columnCount(const QModelIndex& parent = QModelIndex()) const;
+-        int rowCount(const QModelIndex& parent = QModelIndex()) const;
++        int columnCount(const QModelIndex& parent = QModelIndex()) const override;
++        int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+ 
+         static QString authorPlaceholder();
+ 
+diff --git a/src/konsolepanel.h b/src/konsolepanel.h
+index a8eca6c9f..5a9a33c6d 100644
+--- a/src/konsolepanel.h
++++ b/src/konsolepanel.h
+@@ -27,9 +27,9 @@ class KonsolePanel : public ChatWindow
+ 
+     public:
+         explicit KonsolePanel(QWidget *p);
+-        ~KonsolePanel();
++        ~KonsolePanel() override;
+ 
+-        virtual void setName(const QString& newName) { ChatWindow::setName(newName); }
++        void setName(const QString& newName) override { ChatWindow::setName(newName); }
+ 
+         QWidget* getWidget();
+ 
+@@ -41,7 +41,7 @@ class KonsolePanel : public ChatWindow
+         void manageKonsoleProfiles();
+ 
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+ 
+     protected Q_SLOTS:
+         void konsoleChanged(const QString& data);
+diff --git a/src/mainwindow.h b/src/mainwindow.h
+index 2c41666a3..111894e29 100644
+--- a/src/mainwindow.h
++++ b/src/mainwindow.h
+@@ -44,7 +44,7 @@ class MainWindow : public KXmlGuiWindow
+ 
+     public:
+         MainWindow();
+-        ~MainWindow();
++        ~MainWindow() override;
+ 
+         ViewContainer* getViewContainer() { return m_viewContainer; }
+         Konversation::TrayIcon* systemTrayIcon() const { return m_trayIcon; }
+@@ -106,17 +106,17 @@ class MainWindow : public KXmlGuiWindow
+ 
+         void toggleVisibility();
+ 
+-        void showEvent(QShowEvent* e);
+-        void hideEvent(QHideEvent* e);
+-        void leaveEvent(QEvent* e);
++        void showEvent(QShowEvent* e) override;
++        void hideEvent(QHideEvent* e) override;
++        void leaveEvent(QEvent* e) override;
+ 
+ 
+     protected:
+-        virtual QSize sizeHint() const;
++        QSize sizeHint() const override;
+ 
+         int confirmQuit();
+-        bool queryClose();
+-        virtual bool event(QEvent* e);
++        bool queryClose() override;
++        bool event(QEvent* e) override;
+ 
+         ViewContainer* m_viewContainer;
+         Konversation::StatusBar* m_statusBar;
+diff --git a/src/notificationhandler.h b/src/notificationhandler.h
+index 183c9d189..9a4ab973a 100644
+--- a/src/notificationhandler.h
++++ b/src/notificationhandler.h
+@@ -30,7 +30,7 @@ namespace Konversation
+ 
+         public:
+             explicit NotificationHandler(Application* parent = 0);
+-            ~NotificationHandler();
++            ~NotificationHandler() override;
+ 
+         public Q_SLOTS:
+             void message(ChatWindow* chatWin, const QString& fromNick, const QString& message);
+diff --git a/src/queuetuner.h b/src/queuetuner.h
+index d0eb5711f..3d3391e31 100644
+--- a/src/queuetuner.h
++++ b/src/queuetuner.h
+@@ -30,8 +30,8 @@ class QueueTuner: public QWidget, private Ui::QueueTunerBase
+ 
+     public:
+         QueueTuner(QWidget* parent, ViewContainer *container);
+-        ~QueueTuner();
+-        virtual void contextMenuEvent (QContextMenuEvent*);
++        ~QueueTuner() override;
++        void contextMenuEvent (QContextMenuEvent*) override;
+ 
+     public Q_SLOTS:
+         void setServer(Server* newServer);
+diff --git a/src/quickconnectdialog.h b/src/quickconnectdialog.h
+index 1d2bbfef5..01a820e75 100644
+--- a/src/quickconnectdialog.h
++++ b/src/quickconnectdialog.h
+@@ -30,7 +30,7 @@ class QuickConnectDialog : public QDialog
+ 
+     public:
+         explicit QuickConnectDialog(QWidget* parent=0);
+-        ~QuickConnectDialog();
++        ~QuickConnectDialog() override;
+ 
+     Q_SIGNALS:
+         void connectClicked(Konversation::ConnectionFlag flag,
+diff --git a/src/scriptlauncher.h b/src/scriptlauncher.h
+index 1e3a770b1..6a42e678b 100644
+--- a/src/scriptlauncher.h
++++ b/src/scriptlauncher.h
+@@ -23,7 +23,7 @@ class ScriptLauncher : public QObject
+ 
+     public:
+         explicit ScriptLauncher(QObject* parent);
+-        ~ScriptLauncher();
++        ~ScriptLauncher() override;
+ 
+         static QString scriptPath(const QString& script);
+ 
+diff --git a/src/sound.h b/src/sound.h
+index a5d8eab62..179df5245 100644
+--- a/src/sound.h
++++ b/src/sound.h
+@@ -43,7 +43,7 @@ namespace Konversation
+ 
+         public:
+             explicit Sound(QObject *parent = 0, const QString &name = QString());
+-            ~Sound();
++            ~Sound() override;
+ 
+         public Q_SLOTS:
+             void play(const QUrl &url);
+diff --git a/src/ssllabel.h b/src/ssllabel.h
+index 63518283e..830a58674 100644
+--- a/src/ssllabel.h
++++ b/src/ssllabel.h
+@@ -25,7 +25,7 @@ class SSLLabel : public QLabel
+         explicit SSLLabel(QWidget* parent);
+ 
+     protected:
+-        void mouseReleaseEvent(QMouseEvent *e);
++        void mouseReleaseEvent(QMouseEvent *e) override;
+ 
+         Q_SIGNALS:
+         void clicked();
+diff --git a/src/statusbar.h b/src/statusbar.h
+index 488f533a5..3c6e65694 100644
+--- a/src/statusbar.h
++++ b/src/statusbar.h
+@@ -31,7 +31,7 @@ namespace Konversation
+ 
+         public:
+             explicit StatusBar(MainWindow* parent);
+-            ~StatusBar();
++            ~StatusBar() override;
+ 
+         public Q_SLOTS:
+             void updateAppearance();
+diff --git a/src/upnp/upnpdescriptionparser.cpp b/src/upnp/upnpdescriptionparser.cpp
+index 9a6de360f..4d89ad76f 100644
+--- a/src/upnp/upnpdescriptionparser.cpp
++++ b/src/upnp/upnpdescriptionparser.cpp
+@@ -37,15 +37,15 @@ namespace Konversation
+             QStack<Status> status_stack;
+         public:
+             XMLContentHandler(UPnPRouter* router);
+-            virtual ~XMLContentHandler();
++            ~XMLContentHandler() override;
+ 
+ 
+-            bool startDocument();
+-            bool endDocument();
++            bool startDocument() override;
++            bool endDocument() override;
+             bool startElement(const QString &, const QString & localName, const QString &,
+-                            const QXmlAttributes & atts);
+-            bool endElement(const QString & , const QString & localName, const QString &  );
+-            bool characters(const QString & ch);
++                            const QXmlAttributes & atts) override;
++            bool endElement(const QString & , const QString & localName, const QString &  ) override;
++            bool characters(const QString & ch) override;
+ 
+             bool interestingDeviceField(const QString & name);
+             bool interestingServiceField(const QString & name);
+diff --git a/src/upnp/upnpmcastsocket.h b/src/upnp/upnpmcastsocket.h
+index 6e6ad8ff5..0ad782432 100644
+--- a/src/upnp/upnpmcastsocket.h
++++ b/src/upnp/upnpmcastsocket.h
+@@ -36,7 +36,7 @@ namespace Konversation
+             Q_OBJECT
+         public:
+             UPnPMCastSocket();
+-            virtual ~UPnPMCastSocket();
++            ~UPnPMCastSocket() override;
+ 
+             /// Get the number of routers discovered
+             quint32 getNumDevicesDiscovered() const {return routers.count();}
+diff --git a/src/upnp/upnprouter.h b/src/upnp/upnprouter.h
+index 8dfc72150..84c3aaa37 100644
+--- a/src/upnp/upnprouter.h
++++ b/src/upnp/upnprouter.h
+@@ -124,7 +124,7 @@ namespace Konversation
+             * @param verbose Print lots of debug info
+             */
+             UPnPRouter(const QString & server,const QUrl &location,const QString & uuid);
+-            virtual ~UPnPRouter();
++            ~UPnPRouter() override;
+ 
+             /// Get the name  of the server
+             QString getServer() const {return server;}
+diff --git a/src/urlcatcher.h b/src/urlcatcher.h
+index 183a85ba7..f0526e688 100644
+--- a/src/urlcatcher.h
++++ b/src/urlcatcher.h
+@@ -39,9 +39,9 @@ class UrlDateItem : public QStandardItem
+ {
+     public:
+         explicit UrlDateItem(const QDateTime& dateTime);
+-        ~UrlDateItem();
++        ~UrlDateItem() override;
+ 
+-        QVariant data(int role) const;
++        QVariant data(int role) const override;
+ };
+ 
+ 
+@@ -51,13 +51,13 @@ class UrlSortFilterProxyModel : public QSortFilterProxyModel
+ 
+     public:
+         explicit UrlSortFilterProxyModel(QObject* parent = 0);
+-        ~UrlSortFilterProxyModel();
++        ~UrlSortFilterProxyModel() override;
+ 
+-        Qt::ItemFlags flags(const QModelIndex& index) const;
++        Qt::ItemFlags flags(const QModelIndex& index) const override;
+ 
+ 
+     protected:
+-        bool lessThan(const QModelIndex& left, const QModelIndex& right) const;
++        bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
+ };
+ 
+ 
+@@ -67,12 +67,12 @@ class UrlCatcher : public ChatWindow
+ 
+     public:
+         explicit UrlCatcher(QWidget* parent);
+-        ~UrlCatcher();
++        ~UrlCatcher() override;
+ 
+ 
+     protected:
+-        void childAdjustFocus();
+-        bool event(QEvent* event);
++        void childAdjustFocus() override;
++        bool event(QEvent* event) override;
+ 
+ 
+     private Q_SLOTS:
+diff --git a/src/viewer/awaylabel.h b/src/viewer/awaylabel.h
+index 26a915fd6..762f99477 100644
+--- a/src/viewer/awaylabel.h
++++ b/src/viewer/awaylabel.h
+@@ -22,7 +22,7 @@ class AwayLabel : public QLabel
+ 
+     public:
+         explicit AwayLabel(QWidget *parent = 0);
+-        ~AwayLabel();
++        ~AwayLabel() override;
+ 
+     Q_SIGNALS:
+         void awayMessageChanged(const QString&);
+diff --git a/src/viewer/channeloptionsdialog.h b/src/viewer/channeloptionsdialog.h
+index 7ab0c7919..496210b03 100644
+--- a/src/viewer/channeloptionsdialog.h
++++ b/src/viewer/channeloptionsdialog.h
+@@ -30,7 +30,7 @@ namespace Konversation
+         Q_OBJECT
+             public:
+             explicit ChannelOptionsDialog(Channel *channel);
+-            ~ChannelOptionsDialog();
++            ~ChannelOptionsDialog() override;
+ 
+             QString topic();
+             QStringList modes();
+@@ -64,8 +64,8 @@ namespace Konversation
+             void topicBeingEdited(bool edited);
+ 
+         protected:
+-            void showEvent(QShowEvent* event);
+-            void hideEvent(QHideEvent* event);
++            void showEvent(QShowEvent* event) override;
++            void hideEvent(QHideEvent* event) override;
+ 
+             bool m_editingTopic;
+             bool m_isAnyTypeOfOp;
+@@ -81,7 +81,7 @@ namespace Konversation
+             explicit BanListViewItem( QTreeWidget *parent );
+             BanListViewItem(QTreeWidget *parent, const QString& label1, const QString& label2 = QString(), uint timestamp = 0);
+ 
+-            bool operator<(const QTreeWidgetItem &item) const;
++            bool operator<(const QTreeWidgetItem &item) const override;
+ 
+         protected:
+             QDateTime m_timestamp;
+diff --git a/src/viewer/chatwindow.h b/src/viewer/chatwindow.h
+index 880477a4d..9268357b6 100644
+--- a/src/viewer/chatwindow.h
++++ b/src/viewer/chatwindow.h
+@@ -31,7 +31,7 @@ class ChatWindow : public QWidget
+ 
+     public:
+         explicit ChatWindow(QWidget* parent);
+-        ~ChatWindow();
++        ~ChatWindow() override;
+ 
+         enum WindowType
+         {
+@@ -108,7 +108,7 @@ class ChatWindow : public QWidget
+ 
+         virtual bool notificationsEnabled() { return m_notificationsEnabled; }
+ 
+-        virtual bool eventFilter(QObject* watched, QEvent* e);
++        bool eventFilter(QObject* watched, QEvent* e) override;
+ 
+         QString logFileName() { return logfile.fileName(); }
+ 
+@@ -180,7 +180,7 @@ class ChatWindow : public QWidget
+         virtual void serverOnline(bool online);
+ 
+     protected:
+-        virtual void childEvent(QChildEvent* event);
++        void childEvent(QChildEvent* event) override;
+ 
+         /** Some children may handle the name themselves, and not want this public.
+          *  Increase the visibility in the subclass if you want outsiders to call this.
+diff --git a/src/viewer/editnotifydialog.h b/src/viewer/editnotifydialog.h
+index 67f507445..8678f828f 100644
+--- a/src/viewer/editnotifydialog.h
++++ b/src/viewer/editnotifydialog.h
+@@ -35,7 +35,7 @@ class EditNotifyDialog : public QDialog
+     public:
+         explicit EditNotifyDialog(QWidget* parent=0, int serverGroupId=0,
+             const QString& nickname=QString());
+-        ~EditNotifyDialog();
++        ~EditNotifyDialog() override;
+ 
+         Q_SIGNALS:
+         void notifyChanged(int serverGroupId,
+diff --git a/src/viewer/highlightviewitem.h b/src/viewer/highlightviewitem.h
+index c5fa95690..69c3ed7e2 100644
+--- a/src/viewer/highlightviewitem.h
++++ b/src/viewer/highlightviewitem.h
+@@ -27,7 +27,7 @@ class HighlightViewItem : public QTreeWidgetItem
+ {
+     public:
+         HighlightViewItem(QTreeWidget* parent, Highlight* highlight);
+-        ~HighlightViewItem();
++        ~HighlightViewItem() override;
+ 
+         void setID(const int itemID);
+         int getID() const;
+diff --git a/src/viewer/ignorelistviewitem.h b/src/viewer/ignorelistviewitem.h
+index 19c695c71..a21fd5e10 100644
+--- a/src/viewer/ignorelistviewitem.h
++++ b/src/viewer/ignorelistviewitem.h
+@@ -23,7 +23,7 @@ class IgnoreListViewItem : public QTreeWidgetItem
+ {
+     public:
+         IgnoreListViewItem(QTreeWidget* parent, const QString& name, int flags);
+-        ~IgnoreListViewItem();
++        ~IgnoreListViewItem() override;
+ 
+         void setFlag(int flag,bool active);
+         bool getFlag(int flag) { return m_flags & flag; };
+diff --git a/src/viewer/images.cpp b/src/viewer/images.cpp
+index 06223c441..2ae5f71af 100644
+--- a/src/viewer/images.cpp
++++ b/src/viewer/images.cpp
+@@ -33,9 +33,9 @@ class LedIconEngine : public QIconEngine
+         }
+ 
+         // QIconEngine
+-        virtual void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state);
+-        virtual QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state);
+-        virtual QIconEngine* clone() const;
++        void paint(QPainter *painter, const QRect &rect, QIcon::Mode mode, QIcon::State state) override;
++        QPixmap pixmap(const QSize &size, QIcon::Mode mode, QIcon::State state) override;
++        QIconEngine* clone() const override;
+ 
+     private:
+         const QColor m_color;
+diff --git a/src/viewer/images.h b/src/viewer/images.h
+index e8bb5ae57..847c49ebc 100644
+--- a/src/viewer/images.h
++++ b/src/viewer/images.h
+@@ -42,7 +42,7 @@ class Images : public QObject
+         };
+ 
+         Images();
+-        virtual ~Images();
++        ~Images() override;
+ 
+         QIcon getLed(const QColor& col, bool state = true);
+ 
+diff --git a/src/viewer/insertchardialog.h b/src/viewer/insertchardialog.h
+index 771bcb8c0..b57616f60 100644
+--- a/src/viewer/insertchardialog.h
++++ b/src/viewer/insertchardialog.h
+@@ -27,7 +27,7 @@ namespace Konversation
+ 
+         public:
+             explicit InsertCharDialog(const QString& font = QString(), QWidget *parent = 0);
+-            ~InsertCharDialog();
++            ~InsertCharDialog() override;
+ 
+             void setFont(const QFont &font);
+             uint chr();
+diff --git a/src/viewer/irccontextmenus.h b/src/viewer/irccontextmenus.h
+index c85e417ed..849b24b1f 100644
+--- a/src/viewer/irccontextmenus.h
++++ b/src/viewer/irccontextmenus.h
+@@ -70,7 +70,7 @@ class IrcContextMenus : public QObject
+         };
+         Q_DECLARE_FLAGS(MenuOptions, MenuOption)
+ 
+-        ~IrcContextMenus();
++        ~IrcContextMenus() override;
+ 
+         static IrcContextMenus* self();
+ 
+diff --git a/src/viewer/ircinput.h b/src/viewer/ircinput.h
+index b8954b48f..a26ed2b90 100644
+--- a/src/viewer/ircinput.h
++++ b/src/viewer/ircinput.h
+@@ -25,7 +25,7 @@ class IRCInput : public KTextEdit
+ 
+     public:
+         explicit IRCInput(QWidget* parent);
+-        ~IRCInput();
++        ~IRCInput() override;
+ 
+         void setCompletionMode(char mode);
+         char getCompletionMode();
+@@ -34,12 +34,12 @@ class IRCInput : public KTextEdit
+         QString lastCompletion() const { return m_lastCompletion; }
+         void doInlineAutoreplace();
+ 
+-        virtual QSize sizeHint() const;
+-        virtual QSize minimumSizeHint() const;
++        QSize sizeHint() const override;
++        QSize minimumSizeHint() const override;
+ 
+-        virtual bool event(QEvent* e);
++        bool event(QEvent* e) override;
+ 
+-        virtual void createHighlighter();
++        void createHighlighter() override;
+ 
+     Q_SIGNALS:
+         void nickCompletion();
+@@ -65,16 +65,16 @@ class IRCInput : public KTextEdit
+         void maybeResize();
+ 
+     protected:
+-        bool eventFilter(QObject *object,QEvent *event);
++        bool eventFilter(QObject *object,QEvent *event) override;
+         void addHistory(const QString& text);
+         bool checkPaste(QString& text);
+ 
+-        virtual void insertFromMimeData(const QMimeData *source);
+-        virtual void keyPressEvent(QKeyEvent* e);
+-        virtual void wheelEvent(QWheelEvent* e);
+-        virtual void showEvent(QShowEvent* e);
+-        virtual void hideEvent(QHideEvent* e);
+-        virtual void resizeEvent(QResizeEvent* e);
++        void insertFromMimeData(const QMimeData *source) override;
++        void keyPressEvent(QKeyEvent* e) override;
++        void wheelEvent(QWheelEvent* e) override;
++        void showEvent(QShowEvent* e) override;
++        void hideEvent(QHideEvent* e) override;
++        void resizeEvent(QResizeEvent* e) override;
+ 
+         QStringList historyList;
+         int lineNum;
+diff --git a/src/viewer/ircview.cpp b/src/viewer/ircview.cpp
+index 7be5424a0..73f5305fa 100644
+--- a/src/viewer/ircview.cpp
++++ b/src/viewer/ircview.cpp
+@@ -231,10 +231,10 @@ class IrcViewMimeData : public QMimeData
+ {
+ public:
+     IrcViewMimeData(const QTextDocumentFragment& _fragment): fragment(_fragment) {}
+-    virtual QStringList formats() const;
++    QStringList formats() const override;
+ 
+ protected:
+-    virtual QVariant retrieveData(const QString &mimeType, QVariant::Type type) const;
++    QVariant retrieveData(const QString &mimeType, QVariant::Type type) const override;
+ 
+ private:
+     mutable QTextDocumentFragment fragment;
+@@ -316,7 +316,7 @@ struct Burr: public QTextBlockUserData
+             m_prev->m_next = this;
+     }
+ 
+-    ~Burr()
++    ~Burr() override
+     {
+         m_owner->blockDeleted(this);
+         unlink();
+diff --git a/src/viewer/ircview.h b/src/viewer/ircview.h
+index 99d830b7f..1254696ad 100644
+--- a/src/viewer/ircview.h
++++ b/src/viewer/ircview.h
+@@ -35,9 +35,9 @@ class IrcViewMarkerLine: public QObject, public QTextObjectInterface
+ 
+     public:
+         IrcViewMarkerLine(QObject *p) : QObject(p), QTextObjectInterface() {}
+-        ~IrcViewMarkerLine() {}
+-        virtual void drawObject(QPainter *painter, const QRectF &rect, QTextDocument *doc, int posInDocument, const QTextFormat &format);
+-        virtual QSizeF intrinsicSize(QTextDocument *doc, int posInDocument, const QTextFormat &format);
++        ~IrcViewMarkerLine() override {}
++        void drawObject(QPainter *painter, const QRectF &rect, QTextDocument *doc, int posInDocument, const QTextFormat &format) override;
++        QSizeF intrinsicSize(QTextDocument *doc, int posInDocument, const QTextFormat &format) override;
+ };
+ 
+ /// Helper struct which remembers the openHtmlTags, the fore and
+@@ -63,7 +63,7 @@ class IRCView : public QTextBrowser
+ 
+     public:
+         explicit IRCView(QWidget* parent);
+-        ~IRCView();
++        ~IRCView() override;
+ 
+         //! this function is proper given it is not nessary for the ircview to have a server for DCC.
+         void setServer(Server* server);
+@@ -125,10 +125,10 @@ class IRCView : public QTextBrowser
+         void clearLines();
+ 
+     protected:
+-        virtual QMimeData* createMimeDataFromSelection() const;
+-        virtual void dragEnterEvent(QDragEnterEvent* e);
+-        virtual void dragMoveEvent(QDragMoveEvent* e);
+-        virtual void dropEvent(QDropEvent* e);
++        QMimeData* createMimeDataFromSelection() const override;
++        void dragEnterEvent(QDragEnterEvent* e) override;
++        void dragMoveEvent(QDragMoveEvent* e) override;
++        void dropEvent(QDropEvent* e) override;
+ 
+     private:
+         /// The internal mechanics of inserting a line.
+@@ -277,13 +277,13 @@ class IRCView : public QTextBrowser
+         inline QString getColors(const QString& text, int start, QString& _fgColor, QString& _bgColor, bool* invalidFgVal, bool* invalidBgValue);
+ 
+     protected:
+-        virtual void resizeEvent(QResizeEvent *event);
+-        virtual void mouseReleaseEvent(QMouseEvent* ev);
+-        virtual void mousePressEvent(QMouseEvent* ev);
+-        virtual void mouseMoveEvent(QMouseEvent* ev);
+-        virtual void keyPressEvent(QKeyEvent* ev);
+-        virtual void contextMenuEvent(QContextMenuEvent* ev);
+-        virtual void wheelEvent(QWheelEvent* ev);
++        void resizeEvent(QResizeEvent *event) override;
++        void mouseReleaseEvent(QMouseEvent* ev) override;
++        void mousePressEvent(QMouseEvent* ev) override;
++        void mouseMoveEvent(QMouseEvent* ev) override;
++        void keyPressEvent(QKeyEvent* ev) override;
++        void contextMenuEvent(QContextMenuEvent* ev) override;
++        void wheelEvent(QWheelEvent* ev) override;
+ 
+         QChar::Direction basicDirection(const QString &string);
+ 
+diff --git a/src/viewer/ircviewbox.h b/src/viewer/ircviewbox.h
+index 6016fb37c..5846c197e 100644
+--- a/src/viewer/ircviewbox.h
++++ b/src/viewer/ircviewbox.h
+@@ -24,7 +24,7 @@ class IRCViewBox : public QWidget
+     public:
+ 
+         explicit IRCViewBox(QWidget* parent);
+-        ~IRCViewBox();
++        ~IRCViewBox() override;
+ 
+         IRCView*   ircView() const;
+ 
+diff --git a/src/viewer/logfilereader.h b/src/viewer/logfilereader.h
+index 1eb59fd64..436ed763b 100644
+--- a/src/viewer/logfilereader.h
++++ b/src/viewer/logfilereader.h
+@@ -30,13 +30,13 @@ class LogfileReader : public ChatWindow
+ 
+         public:
+         LogfileReader(QWidget* parent, const QString& log, const QString& caption);
+-        ~LogfileReader();
++        ~LogfileReader() override;
+ 
+         using ChatWindow::closeYourself;
+         virtual bool closeYourself() { closeLog(); return true; }
+-        virtual bool searchView();
++        bool searchView() override;
+ 
+-        virtual bool eventFilter(QObject* watched, QEvent* e);
++        bool eventFilter(QObject* watched, QEvent* e) override;
+ 
+ 
+     protected Q_SLOTS:
+@@ -53,7 +53,7 @@ class LogfileReader : public ChatWindow
+         int spacing();
+ 
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+ 
+         KToolBar* toolBar;
+         QSpinBox* sizeSpin;
+diff --git a/src/viewer/osd.h b/src/viewer/osd.h
+index a401012f7..47e4b0c09 100644
+--- a/src/viewer/osd.h
++++ b/src/viewer/osd.h
+@@ -27,7 +27,7 @@ class OSDWidget : public QWidget
+         enum Alignment { Left, Middle, Center, Right };
+ 
+         explicit OSDWidget(const QString &appName, QWidget *parent = 0, const char *name = "osd" );
+-        virtual ~OSDWidget();
++        ~OSDWidget() override;
+ 
+         /** resets the colours to defaults */
+         void unsetColors();
+@@ -71,10 +71,10 @@ class OSDWidget : public QWidget
+         QRect determineMetrics( const int M );
+ 
+         // Reimplemented from QWidget
+-        virtual void paintEvent( QPaintEvent* );
+-        virtual void mousePressEvent( QMouseEvent* );
+-        void resizeEvent( QResizeEvent *e );
+-        virtual bool event( QEvent* );
++        void paintEvent( QPaintEvent* ) override;
++        void mousePressEvent( QMouseEvent* ) override;
++        void resizeEvent( QResizeEvent *e ) override;
++        bool event( QEvent* ) override;
+ 
+         /** distance from screen edge */
+         static const int MARGIN = 15;
+@@ -124,9 +124,9 @@ Q_SIGNALS:
+     void positionChanged();
+ 
+ protected:
+-    void mousePressEvent( QMouseEvent * );
+-    void mouseReleaseEvent( QMouseEvent * );
+-    void mouseMoveEvent( QMouseEvent * );
++    void mousePressEvent( QMouseEvent * ) override;
++    void mouseReleaseEvent( QMouseEvent * ) override;
++    void mouseMoveEvent( QMouseEvent * ) override;
+ 
+ private:
+     bool   m_dragging;
+diff --git a/src/viewer/pasteeditor.h b/src/viewer/pasteeditor.h
+index dc41edc1b..67b1495d2 100644
+--- a/src/viewer/pasteeditor.h
++++ b/src/viewer/pasteeditor.h
+@@ -27,7 +27,7 @@ class PasteEditor : public QDialog, private Ui::PasteEditor
+     Q_OBJECT
+     public:
+         explicit PasteEditor(QWidget* parent);
+-        ~PasteEditor();
++        ~PasteEditor() override;
+ 
+         void setText(const QString& text);
+         QString text() const;
+diff --git a/src/viewer/quickbutton.h b/src/viewer/quickbutton.h
+index 8e2f6ed34..7c395ddd8 100644
+--- a/src/viewer/quickbutton.h
++++ b/src/viewer/quickbutton.h
+@@ -23,7 +23,7 @@ class QuickButton : public QPushButton
+ 
+         public:
+         QuickButton(const QString &label,const QString &newDefinition,QWidget* parent);
+-        ~QuickButton();
++        ~QuickButton() override;
+ 
+         void setDefinition(const QString &newDefinition);
+ 
+diff --git a/src/viewer/rawlog.h b/src/viewer/rawlog.h
+index cae79c33c..01767fa71 100644
+--- a/src/viewer/rawlog.h
++++ b/src/viewer/rawlog.h
+@@ -26,12 +26,12 @@ class RawLog : public ChatWindow
+         enum MessageDirection { Inbound, Outbound };
+ 
+         explicit RawLog(QWidget* parent);
+-        ~RawLog();
++        ~RawLog() override;
+ 
+         using ChatWindow::closeYourself;
+         virtual bool closeYourself();
+-        virtual bool searchView();
+-        virtual bool log();
++        bool searchView() override;
++        bool log() override;
+         using ChatWindow::appendRaw;
+         virtual void appendRaw(MessageDirection dir, const QByteArray& message);
+     public Q_SLOTS:
+@@ -39,7 +39,7 @@ class RawLog : public ChatWindow
+ 
+     protected:
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+ };
+ 
+ #endif /* RAWLOG_H */
+diff --git a/src/viewer/searchbar.h b/src/viewer/searchbar.h
+index a1af9b43e..6105fefcc 100644
+--- a/src/viewer/searchbar.h
++++ b/src/viewer/searchbar.h
+@@ -28,7 +28,7 @@ class SearchBar : public QWidget, private Ui::SearchBarBase
+ 
+     public:
+         explicit SearchBar(QWidget* parent);
+-        ~SearchBar();
++        ~SearchBar() override;
+ 
+         void setHasMatch(bool value);
+ 
+@@ -38,11 +38,11 @@ class SearchBar : public QWidget, private Ui::SearchBarBase
+ 
+         bool fromCursor() const;
+ 
+-        bool eventFilter(QObject* object, QEvent* e);
++        bool eventFilter(QObject* object, QEvent* e) override;
+ 
+     protected:
+-        virtual void showEvent(QShowEvent* e);
+-        virtual void hideEvent(QHideEvent* e);
++        void showEvent(QShowEvent* e) override;
++        void hideEvent(QHideEvent* e) override;
+         bool focusedChild();
+ 
+     private Q_SLOTS:
+diff --git a/src/viewer/statuspanel.h b/src/viewer/statuspanel.h
+index bbebf35ec..625682905 100644
+--- a/src/viewer/statuspanel.h
++++ b/src/viewer/statuspanel.h
+@@ -28,53 +28,53 @@ class StatusPanel : public ChatWindow
+ 
+     public:
+         explicit StatusPanel(QWidget* parent);
+-        ~StatusPanel();
++        ~StatusPanel() override;
+ 
+-        virtual void cycle();
++        void cycle() override;
+ 
+-        virtual void setName(const QString& newName);
++        void setName(const QString& newName) override;
+ 
+-        virtual bool closeYourself(bool askForConfirmation=true);
+-        virtual bool canBeFrontView();
+-        virtual bool searchView();
++        bool closeYourself(bool askForConfirmation=true) override;
++        bool canBeFrontView() override;
++        bool searchView() override;
+ 
+-        virtual void setChannelEncoding(const QString& encoding);
+-        virtual QString getChannelEncoding();
+-        virtual QString getChannelEncodingDefaultDesc();
+-        virtual void emitUpdateInfo();
++        void setChannelEncoding(const QString& encoding) override;
++        QString getChannelEncoding() override;
++        QString getChannelEncodingDefaultDesc() override;
++        void emitUpdateInfo() override;
+ 
+-        virtual void setServer(Server* newServer);
++        void setServer(Server* newServer) override;
+ 
+-        virtual void setNotificationsEnabled(bool enable);
++        void setNotificationsEnabled(bool enable) override;
+ 
+     Q_SIGNALS:
+         void sendFile();
+ 
+     public Q_SLOTS:
+         void setNickname(const QString& newNickname);
+-        virtual void indicateAway(bool show);
++        void indicateAway(bool show) override;
+         void updateAppearance();
+         void updateName();
+ 
+     protected Q_SLOTS:
+         void sendFileMenu();
+         void statusTextEntered();
+-        void sendText(const QString& line);
++        void sendText(const QString& line) override;
+         // connected to IRCInput::textPasted() - used for large/multiline pastes
+         void textPasted(const QString& text);
+         void changeNickname(const QString& newNickname);
+         void nicknameComboboxChanged();
+         //Used to disable functions when not connected
+-        virtual void serverOnline(bool online);
++        void serverOnline(bool online) override;
+ 
+     protected:
+         /** Called from ChatWindow adjustFocus */
+-        virtual void childAdjustFocus();
++        void childAdjustFocus() override;
+ 
+         bool awayChanged;
+         bool awayState;
+ 
+-        void showEvent(QShowEvent* event);
++        void showEvent(QShowEvent* event) override;
+ 
+         KComboBox* nicknameCombobox;
+         AwayLabel* awayLabel;
+diff --git a/src/viewer/topicedit.h b/src/viewer/topicedit.h
+index 4446d85ac..e749df911 100644
+--- a/src/viewer/topicedit.h
++++ b/src/viewer/topicedit.h
+@@ -39,7 +39,7 @@ class TopicEdit : public KTextEdit
+ 
+     public:
+         explicit TopicEdit(QWidget* parent = 0);
+-        ~TopicEdit();
++        ~TopicEdit() override;
+ 
+         Channel* channel() const;
+         void setChannel(Channel* channel);
+@@ -47,13 +47,13 @@ class TopicEdit : public KTextEdit
+         int maximumLength() const;
+         void setMaximumLength(int length);
+ 
+-        QSize minimumSizeHint() const;
++        QSize minimumSizeHint() const override;
+ 
+-        bool eventFilter(QObject* watched, QEvent* event);
++        bool eventFilter(QObject* watched, QEvent* event) override;
+ 
+ 
+     protected:
+-        void moveEvent(QMoveEvent* event);
++        void moveEvent(QMoveEvent* event) override;
+ 
+ 
+     private Q_SLOTS:
+diff --git a/src/viewer/topichistoryview.h b/src/viewer/topichistoryview.h
+index 8e155d212..3d9474b8d 100644
+--- a/src/viewer/topichistoryview.h
++++ b/src/viewer/topichistoryview.h
+@@ -43,15 +43,15 @@ class TopicHistorySortfilterProxyModel : public KCategorizedSortFilterProxyModel
+ 
+     public:
+         explicit TopicHistorySortfilterProxyModel(QObject* parent = 0);
+-        ~TopicHistorySortfilterProxyModel();
++        ~TopicHistorySortfilterProxyModel() override;
+ 
+-        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
++        QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+ 
+-        void setSourceModel(QAbstractItemModel* model);
++        void setSourceModel(QAbstractItemModel* model) override;
+ 
+ 
+     protected:
+-        bool filterAcceptsColumn ( int source_column, const QModelIndex & source_parent ) const;
++        bool filterAcceptsColumn ( int source_column, const QModelIndex & source_parent ) const override;
+ 
+ 
+     private Q_SLOTS:
+@@ -65,7 +65,7 @@ class TopicHistoryLabel : public KTextEdit
+ 
+     public:
+         explicit TopicHistoryLabel(QWidget* parent = 0);
+-        ~TopicHistoryLabel();
++        ~TopicHistoryLabel() override;
+ 
+ 
+     public Q_SLOTS:
+@@ -79,18 +79,18 @@ class TopicHistoryItemDelegate : public KWidgetItemDelegate
+ 
+     public:
+         explicit TopicHistoryItemDelegate(QAbstractItemView* itemView, QObject* parent = 0);
+-        ~TopicHistoryItemDelegate();
++        ~TopicHistoryItemDelegate() override;
+ 
+-        void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+-        QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
++        void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
++        QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+ 
+-        bool eventFilter(QObject* watched, QEvent* event);
++        bool eventFilter(QObject* watched, QEvent* event) override;
+ 
+ 
+     protected:
+-        QList<QWidget*> createItemWidgets (const QModelIndex& index) const;
++        QList<QWidget*> createItemWidgets (const QModelIndex& index) const override;
+         void updateItemWidgets(const QList<QWidget*> widgets, const QStyleOptionViewItem& option,
+-            const QPersistentModelIndex& index) const;
++            const QPersistentModelIndex& index) const override;
+ 
+ 
+     private:
+@@ -105,14 +105,14 @@ class TopicHistoryView : public KCategorizedView
+ 
+     public:
+         explicit TopicHistoryView(QWidget* parent = 0);
+-        ~TopicHistoryView();
++        ~TopicHistoryView() override;
+ 
+         void setServer(Server* server) { m_server = server; }
+ 
+         bool textSelectable() const;
+         void setTextSelectable(bool selectable);
+ 
+-        void setModel(QAbstractItemModel* model);
++        void setModel(QAbstractItemModel* model) override;
+ 
+ 
+     Q_SIGNALS:
+@@ -120,9 +120,9 @@ class TopicHistoryView : public KCategorizedView
+ 
+ 
+     protected:
+-        void resizeEvent(QResizeEvent* event);
+-        void contextMenuEvent (QContextMenuEvent* event);
+-        void updateGeometries();
++        void resizeEvent(QResizeEvent* event) override;
++        void contextMenuEvent (QContextMenuEvent* event) override;
++        void updateGeometries() override;
+ 
+ 
+     private Q_SLOTS:
+diff --git a/src/viewer/topiclabel.h b/src/viewer/topiclabel.h
+index 1293686c3..4e365bb8a 100644
+--- a/src/viewer/topiclabel.h
++++ b/src/viewer/topiclabel.h
+@@ -28,10 +28,10 @@ namespace Konversation
+ 
+         public:
+             explicit TopicLabel(QWidget *parent = 0, const char *name = 0);
+-            ~TopicLabel();
++            ~TopicLabel() override;
+ 
+-            QSize minimumSizeHint() const;
+-            QSize sizeHint() const;
++            QSize minimumSizeHint() const override;
++            QSize sizeHint() const override;
+             void setServer(Server* server);
+             void setChannelName(const QString& channel);
+ 
+@@ -49,12 +49,12 @@ namespace Konversation
+             void updateSqueezedText();
+             QString rPixelSqueeze(const QString& text, int maxPixels);
+             int textWidth(const QString& text);
+-            virtual void leaveEvent (QEvent*);
+-            virtual void contextMenuEvent(QContextMenuEvent* ev);
+-            virtual void resizeEvent(QResizeEvent*);
+-            virtual void mouseReleaseEvent(QMouseEvent* ev);
+-            virtual void mousePressEvent(QMouseEvent* ev);
+-            virtual void mouseMoveEvent(QMouseEvent* ev);
++            void leaveEvent (QEvent*) override;
++            void contextMenuEvent(QContextMenuEvent* ev) override;
++            void resizeEvent(QResizeEvent*) override;
++            void mouseReleaseEvent(QMouseEvent* ev) override;
++            void mousePressEvent(QMouseEvent* ev) override;
++            void mouseMoveEvent(QMouseEvent* ev) override;
+ 
+         protected Q_SLOTS:
+             void highlightedSlot(const QString&);
+diff --git a/src/viewer/trayicon.h b/src/viewer/trayicon.h
+index ee6504adb..d3fcc103d 100644
+--- a/src/viewer/trayicon.h
++++ b/src/viewer/trayicon.h
+@@ -25,7 +25,7 @@ namespace Konversation
+ 
+         public:
+             explicit TrayIcon(QWidget* parent = 0);
+-            ~TrayIcon();
++            ~TrayIcon() override;
+ 
+             bool notificationEnabled() { return m_notificationEnabled; }
+ 
+diff --git a/src/viewer/viewcontainer.h b/src/viewer/viewcontainer.h
+index 001f46197..872936c21 100644
+--- a/src/viewer/viewcontainer.h
++++ b/src/viewer/viewcontainer.h
+@@ -49,7 +49,7 @@ class ViewMimeData : public QMimeData
+ {
+     public:
+         explicit ViewMimeData(ChatWindow *view);
+-        ~ViewMimeData();
++        ~ViewMimeData() override;
+ 
+         ChatWindow* view() const;
+ 
+@@ -63,15 +63,15 @@ class TabWidget : public QTabWidget
+ 
+     public:
+         explicit TabWidget(QWidget* parent = 0);
+-        ~TabWidget();
++        ~TabWidget() override;
+ 
+     Q_SIGNALS:
+         void contextMenu(QWidget* widget, const QPoint& pos);
+         void tabBarMiddleClicked(int index);
+ 
+     protected:
+-        virtual void contextMenuEvent(QContextMenuEvent* event);
+-        virtual void mouseReleaseEvent(QMouseEvent* event);
++        void contextMenuEvent(QContextMenuEvent* event) override;
++        void mouseReleaseEvent(QMouseEvent* event) override;
+ };
+ 
+ class ViewContainer : public QAbstractItemModel
+@@ -86,7 +86,7 @@ class ViewContainer : public QAbstractItemModel
+         };
+ 
+         explicit ViewContainer(MainWindow* window);
+-        ~ViewContainer();
++        ~ViewContainer() override;
+ 
+         QSplitter* getWidget() { return m_viewTreeSplitter; }
+         MainWindow* getWindow() { return m_window; }
+@@ -97,24 +97,24 @@ class ViewContainer : public QAbstractItemModel
+ 
+         void prepareShutdown();
+ 
+-        int rowCount(const QModelIndex & parent = QModelIndex()) const;
+-        int columnCount(const QModelIndex& parent = QModelIndex()) const;
++        int rowCount(const QModelIndex & parent = QModelIndex()) const override;
++        int columnCount(const QModelIndex& parent = QModelIndex()) const override;
+ 
+-        QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
++        QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
+         QModelIndex indexForView(ChatWindow* view) const;
+-        QModelIndex parent(const QModelIndex& index) const;
++        QModelIndex parent(const QModelIndex& index) const override;
+ 
+-        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
++        QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+ 
+-        Qt::DropActions supportedDragActions() const;
+-        Qt::DropActions supportedDropActions() const;
+-        Qt::ItemFlags flags(const QModelIndex &index) const;
+-        QStringList mimeTypes() const;
+-        QMimeData* mimeData(const QModelIndexList &indexes) const;
+-        bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const;
+-        bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
++        Qt::DropActions supportedDragActions() const override;
++        Qt::DropActions supportedDropActions() const override;
++        Qt::ItemFlags flags(const QModelIndex &index) const override;
++        QStringList mimeTypes() const override;
++        QMimeData* mimeData(const QModelIndexList &indexes) const override;
++        bool canDropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) const override;
++        bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) override;
+ 
+-        bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
++        bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
+ 
+         QString currentViewTitle();
+         QString currentViewURL(bool passNetwork = true);
+diff --git a/src/viewer/viewspringloader.h b/src/viewer/viewspringloader.h
+index 4f38fe1e8..52151c1b1 100644
+--- a/src/viewer/viewspringloader.h
++++ b/src/viewer/viewspringloader.h
+@@ -32,11 +32,11 @@ class ViewSpringLoader : public QObject
+ 
+     public:
+         explicit ViewSpringLoader(ViewContainer* viewContainer);
+-        ~ViewSpringLoader();
++        ~ViewSpringLoader() override;
+ 
+         void addWidget(QWidget* widget);
+ 
+-        bool eventFilter(QObject* watched, QEvent* event);
++        bool eventFilter(QObject* watched, QEvent* event) override;
+ 
+ 
+     private Q_SLOTS:
+diff --git a/src/viewer/viewtree.h b/src/viewer/viewtree.h
+index 4378e1cb5..4b3821127 100644
+--- a/src/viewer/viewtree.h
++++ b/src/viewer/viewtree.h
+@@ -27,12 +27,12 @@ class ViewTreeDelegate : public QStyledItemDelegate
+ 
+     public:
+         explicit ViewTreeDelegate(QObject *parent = 0);
+-        ~ViewTreeDelegate();
++        ~ViewTreeDelegate() override;
+ 
+-        QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
++        QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+         QSize preferredSizeHint(const QModelIndex& index) const;
+ 
+-        void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
++        void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+ 
+     private:
+         ViewTree* m_view;
+@@ -44,9 +44,9 @@ class ViewTree : public QTreeView
+ 
+     public:
+         explicit ViewTree(QWidget *parent);
+-        ~ViewTree();
++        ~ViewTree() override;
+ 
+-        virtual void setModel(QAbstractItemModel *model);
++        void setModel(QAbstractItemModel *model) override;
+ 
+         bool dropIndicatorOnItem() const;
+ 
+@@ -61,21 +61,21 @@ class ViewTree : public QTreeView
+         void showViewContextMenu(QWidget* widget, const QPoint& point) const;
+ 
+     protected:
+-        bool event(QEvent* event);
+-        void paintEvent(QPaintEvent* event);
+-        void drawRow(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+-        void resizeEvent(QResizeEvent* event);
+-        void mousePressEvent(QMouseEvent* event);
+-        void mouseReleaseEvent(QMouseEvent* event);
+-        void mouseMoveEvent(QMouseEvent *event);
+-        void dragEnterEvent(QDragEnterEvent *event);
+-        void dragMoveEvent(QDragMoveEvent *event);
+-        void contextMenuEvent(QContextMenuEvent* event);
+-        void wheelEvent(QWheelEvent* event);
+-        void keyPressEvent(QKeyEvent* event);
++        bool event(QEvent* event) override;
++        void paintEvent(QPaintEvent* event) override;
++        void drawRow(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
++        void resizeEvent(QResizeEvent* event) override;
++        void mousePressEvent(QMouseEvent* event) override;
++        void mouseReleaseEvent(QMouseEvent* event) override;
++        void mouseMoveEvent(QMouseEvent *event) override;
++        void dragEnterEvent(QDragEnterEvent *event) override;
++        void dragMoveEvent(QDragMoveEvent *event) override;
++        void contextMenuEvent(QContextMenuEvent* event) override;
++        void wheelEvent(QWheelEvent* event) override;
++        void keyPressEvent(QKeyEvent* event) override;
+ 
+     private Q_SLOTS:
+-        void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
++        void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected) override;
+ 
+     private:
+         QPointer<ChatWindow> m_pressedView;
+-- 
+GitLab
+
+
+From 132b8bd02de411a1cb638d9e4fed372144ec985f Mon Sep 17 00:00:00 2001
+From: David Faure <faure@kde.org>
+Date: Thu, 28 Nov 2019 16:54:43 +0100
+Subject: [PATCH 3/3] Port away from qSort
+
+---
+ src/dcc/transferpanel.cpp | 4 ++--
+ src/irc/channel.cpp       | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/dcc/transferpanel.cpp b/src/dcc/transferpanel.cpp
+index a81835aae..a49818d0d 100644
+--- a/src/dcc/transferpanel.cpp
++++ b/src/dcc/transferpanel.cpp
+@@ -319,7 +319,7 @@ namespace Konversation
+ 
+             //sort QModelIndexList descending
+             //NOTE: selectedRows() returned an unsorted list
+-            qSort(indexesToRemove.begin(), indexesToRemove.end(), rowGreaterThan);
++            std::sort(indexesToRemove.begin(), indexesToRemove.end(), rowGreaterThan);
+ 
+             //remove from last to first item, to keep a valid row
+             foreach (const QModelIndex &index, indexesToRemove)
+@@ -388,7 +388,7 @@ namespace Konversation
+ 
+             //sort QModelIndexList descending
+             //NOTE: selectedRows() returned an unsorted list
+-            qSort(indexesToRemove.begin(), indexesToRemove.end(), rowGreaterThan);
++            std::sort(indexesToRemove.begin(), indexesToRemove.end(), rowGreaterThan);
+ 
+             //remove from last to first item, to keep a valid row
+             foreach (const QModelIndex &index, indexesToRemove)
+diff --git a/src/irc/channel.cpp b/src/irc/channel.cpp
+index 978b1051e..6488a0c17 100644
+--- a/src/irc/channel.cpp
++++ b/src/irc/channel.cpp
+@@ -2627,7 +2627,7 @@ void Channel::delayedSortNickList()
+ void Channel::sortNickList(bool delayed)
+ {
+     if (!delayed || m_delayedSortTrigger > DELAYED_SORT_TRIGGER) {
+-        qSort(nicknameList.begin(), nicknameList.end(), nickLessThan);
++        std::sort(nicknameList.begin(), nicknameList.end(), nickLessThan);
+         nicknameListView->resort();
+     }
+     if (!nicknameListView->isSortingEnabled())
+@@ -2850,7 +2850,7 @@ QString NickList::completeNick(const QString& pattern, bool& complete, QStringLi
+         }
+     }
+ 
+-    qSort(foundNicks.begin(), foundNicks.end(), nickTimestampLessThan);
++    std::sort(foundNicks.begin(), foundNicks.end(), nickTimestampLessThan);
+ 
+     foreach (Nick *nick, foundNicks)
+     {
+-- 
+GitLab
+
