@@ -15,7 +15,7 @@ depends=(knotifyconfig kemoticons kparts kidletime phonon-qt5 qca-qt5 hicolor-ic
 optdepends=('python: python scripting support' 'keditbookmarks: for managing bookmarks')
 makedepends=(extra-cmake-modules kdoctools)
 license=(GPL2 FDL)
-source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig}
+source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"
          qt5.13.patch gcc.patch)
 validpgpkeys=(DA6B31C4B98A877DBB2EF9A292220328C632316E) # Eike Hein <hein@kde.org>
 
@@ -39,6 +39,5 @@ package() {
   make DESTDIR="$pkgdir" install
 }
 sha512sums=('001534c7f6c5110ca5e210977cc4275e083f5c3704078a74aa573af659154e0fa4c3c960be08f41256db1ac4568f0734741bf10cfb2e15d9e6f6440250682504'
-            'SKIP'
             '87779ee97ea7a50c7488e41505ce0c9c5f21491c2856656823710e756668b346773ac3cfd66cab90069d338894495dd7efbdb5a86d461a9ff3f8ba4814af38e5'
             '0eec360c0daab49a8cae2f99cfc7ad9ec8db27cd9fd6a7f70b81316f5f74d4763aa717a60063950b235093d705794e64d44879f65cdae9a33c584f0eb29a2a09')
