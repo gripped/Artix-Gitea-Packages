@@ -20,7 +20,7 @@ validpgpkeys=(1EE5A3205904BAA2B88C0A9D24FD31940095C0E1) # Andrius Štikonas <and
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DWITH_SYSTEM_GEOIP=ON
+    -DWITH_SYSTEM_GEOIP=ON -DENABLE_MEDIAPLAYER_PLUGIN=false
   cmake --build build
 }
 
