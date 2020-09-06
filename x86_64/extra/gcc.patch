@@ -1,0 +1,56 @@
+From 510745a88fa59070330bc3c5a8742a39b6470c28 Mon Sep 17 00:00:00 2001
+From: Albert Astals Cid <aacid@kde.org>
+Date: Fri, 11 Oct 2019 19:05:21 +0200
+Subject: [PATCH] Fix -Wdeprecated-copy warning
+
+Summary: If we have a copy constructor, we need to have an assignment operator too
+
+Reviewers: mlaurent
+
+Reviewed By: mlaurent
+
+Subscribers: #kde_applications, psn, ngraham, mlaurent
+
+Differential Revision: https://phabricator.kde.org/D24552
+---
+ src/irc/serversettings.cpp | 10 ++--------
+ src/irc/serversettings.h   |  2 ++
+ 2 files changed, 4 insertions(+), 8 deletions(-)
+
+diff --git a/src/irc/serversettings.cpp b/src/irc/serversettings.cpp
+index f5b76ebb8..66652bc8f 100644
+--- a/src/irc/serversettings.cpp
++++ b/src/irc/serversettings.cpp
+@@ -23,14 +23,8 @@ namespace Konversation
+         setBypassProxy(false);
+     }
+ 
+-    ServerSettings::ServerSettings(const ServerSettings& settings)
+-    {
+-        setHost(settings.host());
+-        setPort(settings.port());
+-        setPassword(settings.password());
+-        setSSLEnabled(settings.SSLEnabled());
+-        setBypassProxy(settings.bypassProxy());
+-    }
++    ServerSettings::ServerSettings(const ServerSettings& settings) = default;
++    ServerSettings &ServerSettings::operator=(const ServerSettings& settings) = default;
+ 
+     ServerSettings::ServerSettings(const QString& host)
+     {
+diff --git a/src/irc/serversettings.h b/src/irc/serversettings.h
+index 6631cd5a5..4bdecd875 100644
+--- a/src/irc/serversettings.h
++++ b/src/irc/serversettings.h
+@@ -25,6 +25,8 @@ namespace Konversation
+             ServerSettings(const ServerSettings& settings);
+             explicit ServerSettings(const QString& host);
+ 
++            ServerSettings &operator=(const ServerSettings& settings);
++
+             void setHost(const QString& host);
+             QString host() const { return m_host; }
+ 
+-- 
+GitLab
+
