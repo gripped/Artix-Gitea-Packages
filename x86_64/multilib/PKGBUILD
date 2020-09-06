@@ -3,12 +3,12 @@
 
 pkgname=lib32-dbus
 pkgver=1.12.20
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Freedesktop.org message bus system (32-bit)"
 url="https://wiki.freedesktop.org/www/Software/dbus/"
 arch=(x86_64)
 license=(GPL custom)
-depends=(lib32-eudev dbus)
+depends=(lib32-elogind dbus)
 makedepends=(lib32-glib2 lib32-expat git autoconf-archive)
 source=("git+https://gitlab.freedesktop.org/dbus/dbus.git?signed#tag=dbus-$pkgver"
         no-fatal-warnings.diff)
