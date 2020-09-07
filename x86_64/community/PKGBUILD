@@ -13,10 +13,9 @@ depends=('chromaprint' 'flac' 'id3lib' 'kxmlgui' 'libmp4v2'
          'qt5-declarative' 'qt5-multimedia' 'taglib')
 makedepends=('cmake' 'docbook-xsl' 'extra-cmake-modules' 'kdoctools' 'python' 'qt5-tools')
 changelog=$pkgbase.changelog
-source=(https://download.kde.org/stable/$pkgbase/$pkgver/$pkgbase-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/$pkgbase/$pkgver/$pkgbase-$pkgver.tar.xz)
 validpgpkeys=('7D09794C2812F62194B081C14CAD34426E354DD2') # Urs Fleisch
-sha256sums=('3556e7a76d65baf8b4258b955f6c93d7467a02a0b588ff7249c8ab96bc128377'
-            'SKIP')
+sha256sums=('3556e7a76d65baf8b4258b955f6c93d7467a02a0b588ff7249c8ab96bc128377')
 
 prepare() {
   cd "${srcdir}"
