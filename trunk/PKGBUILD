@@ -11,7 +11,7 @@ license=('BSD')
 depends=('glibc' 'gcc-libs')
 checkdepends=('zlib')
 makedepends=('cmake' 'clang')
-source=("https://github.com/google/snappy/archive/$pkgname-$pkgver.tar.gz"
+source=("https://github.com/google/snappy/archive/$pkgver/$pkgname-$pkgver.tar.gz"
         snappy.pc)
 md5sums=('70e48cba7fecf289153d009791c9977f'
          '4b491e29a8142fedd11472306f5c1192')
