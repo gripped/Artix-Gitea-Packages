@@ -5,14 +5,14 @@ _commit=4be15079e20c2a48ed1215d5e54a4c10abb9b7fa
 
 pkgname=runit-rc
 pkgver=20200825
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
 url='https://gitea.artixlinux.org/artix/runit-rc'
 license=('BSD')
 backup=('etc/rc/rc.conf')
 makedepends=('git')
-depends=('procps-ng' 'bash' 'opentmpfiles' 'bootlogd' 'eudev-runit')
+depends=('procps-ng' 'bash' 'bootlogd' 'eudev-runit')
 provides=('init-rc')
 conflicts=('init-rc')
 source=("git+${url}.git#commit=$_commit")
