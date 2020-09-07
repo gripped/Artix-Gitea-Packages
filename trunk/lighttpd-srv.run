@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+foreground { if -n -t { test -d /srv/www/lighttpd } install -dm 755 -o http -g http /srv/www/lighttpd }
+# Remove error.log to use s6-log
+foreground { sh -c "sed -i s/^server.errorlog/#server.errorlog/ /etc/lighttpd/lighttpd.conf" }
+fdmove -c 2 1
+exec lighttpd-angel -D -f /etc/lighttpd/lighttpd.conf
