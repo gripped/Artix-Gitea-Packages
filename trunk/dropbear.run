@@ -1,2 +1,0 @@
-#!/usr/bin/execlineb -P
-exec dropbear -F -P /run/dropbear.pid -R
