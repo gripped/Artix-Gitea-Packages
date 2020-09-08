@@ -1,5 +1,10 @@
 pre_remove() {
-    if [ -e "/run/service/znc" ]; then
+    if [ -e "/run/service/znc-srv" ]; then
         s6-rc -d change znc
     fi
+}
+
+post_remove() {
+    rm -rf /etc/s6/sv/znc-log
+    rm -rf /etc/s6/sv/znc-srv
 }
