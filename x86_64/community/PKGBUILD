@@ -1,6 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=jenkins-s6
-pkgver=20200713
+pkgver=20200907
 pkgrel=1
 pkgdesc="s6 service scripts for jenkins"
 arch=('any')
@@ -10,18 +11,24 @@ provides=('jenkins-runscripts')
 conflicts=('jenkins-runscripts')
 depends=('jenkins' 's6')
 install=jenkins.install
-source=("jenkins.run" "jenkins.type")
-sha256sums=('aaf4164ee22f3487db33a9a017fbad77f123fd43de3a0e92b429466049aa0319'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+source=("jenkins-srv."{type,run,producer-for}
+        "jenkins-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
+b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        'e488855c9ecca889202ed3a6527904ffe5429c30e97dd18537b19d197d5af1051af81b8f427818f57ac15aa0493e59a23bc5303bbca78e1466ab4ca92515f485'
+        '961ba3d105e24941f21bdd06f03303773bbf20a2f47935f75405d1a5b7abb1b7633e4c52c583efb16485846cf0672beddc17feb139ca26ab02255014af2902aa'
+        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        '13c1b0dceebe7b128da0ad273dd292546824d77e218b9d54203fddbbf2417adbd1a65aaa73be2a504af50d95fb5523cdf20de478f5df1a1543d63e01080e2457'
+        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
+        '2790d4808dfb141e78dfe5d37c8f78adf1d1369ca1cb576cac34ce519084fc1f1858e588e2ffb808e2090c8da63d4c4075583013047c21171be29647bc979e67'
+        '4140556c81d43d0d36d0b2e73bfb12d35b3c527c8288b77c7ec6a3932f8d487812534687ef25b96a90adc910a17781f3491e1f640ff96e91c93f0a6d2c955714'
+        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
 
 package() {
-    _inst_sv 'jenkins'
+  for _srv in jenkins-srv.{type,run,producer-for}; do
+    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/jenkins-srv/${_srv/jenkins-srv./}
+  done
+  
+  for _log in jenkins-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
+    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/jenkins-log/${_log/jenkins-log./}
+  done
 }
