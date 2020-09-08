@@ -1,6 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=sane-s6
-pkgver=20200713
+pkgver=20200906
 pkgrel=1
 pkgdesc="s6 service scripts for sane"
 arch=('any')
@@ -10,18 +11,24 @@ provides=('sane-runscripts')
 conflicts=('sane-runscripts')
 depends=('sane' 's6')
 install=sane.install
-source=("saned.run" "saned.type")
-sha256sums=('1ef693f94ab014e6a0c2f00d531c540bc3841a537dbce9bedcc34c20a7d2d544'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+source=("saned-srv."{type,run,producer-for}
+        "saned-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
+b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        '01fc2348b4a376100a7fb4802e267b0b91657aee3442ba0bf2d0196f8a57ee97ef36f11e05adbf87d9dd175683e1dfd21604178917edda971104013cf29b3847'
+        '116a643fe586646e39cb789dd2325f01b32be9345afe22f2735a44b756b2a5dadf8c137316fb1a4ec6de6b7d777acbc2ff8f5d6309c6842d1ff0dcfcd3d44d25'
+        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        'a9db030487703456474839086dea746ff9ebce18ddb198ace9e4d8b2ee99a4cb222f4a389b59838a8b36fad41284ddf25d56c53a53405bfcf54bf9ee70988bb1'
+        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
+        '3276551f594cd84495576f881838e6cdcab6f34805f5fa5e98451b6e7b56a9637cc9cdc6eea7e65af0146b1c6df2689d6a7b76ead78fa8ef2e747d8559dde44a'
+        'b11fecf983e044874de37c36230a07e1feb23ceb89fd1c6e5374452e149a71751098446cd9d99266a486d61d39d50b240b5379222b3fb566e83587afb92cc500'
+        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
 
 package() {
-    _inst_sv 'saned'
+  for _srv in saned-srv.{type,run,producer-for}; do
+    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/saned-srv/${_srv/saned-srv./}
+  done
+  
+  for _log in saned-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
+    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/saned-log/${_log/saned-log./}
+  done
 }
