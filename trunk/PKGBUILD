@@ -1,0 +1,25 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
+pkgname=wireguard-s6
+pkgver=20200908
+pkgrel=1
+pkgdesc="s6 init script for Wireguard"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+license=('GPL2')
+groups=('s6-world')
+depends=('s6' 'wireguard-tools')
+source=("wireguard.up"
+        "wireguard.down"
+        "wireguard.conf"
+        "wireguard.type")
+md5sums=('d5995a01537f64e9cc208772be7f77a2'
+         'b1feb3f0cd0a2878ff60df8da1f623f5'
+         '95bc89153db46c4dff1a27ebab61a44f'
+         '85bceea1fb94d4166f24496dc40a35e6')
+
+package() {
+  for file in wireguard.{up,down,type,conf}; do
+    install -Dm644 "$srcdir"/"$file" "$pkgdir"/etc/s6/sv/wireguard/${file/wireguard./}
+  done
+}
