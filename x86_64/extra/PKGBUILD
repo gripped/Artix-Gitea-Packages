@@ -1,6 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=ntp-s6
-pkgver=20200713
+pkgver=20200907
 pkgrel=1
 pkgdesc="s6 service scripts for ntp"
 arch=('any')
@@ -10,18 +11,24 @@ provides=('ntp-runscripts')
 conflicts=('ntp-runscripts')
 depends=('ntp' 's6')
 install=ntpd.install
-source=("ntpd.run" "ntpd.type")
-sha256sums=('e7e2491c91b483889b58901764b127aa686658c6b442ae83159887122e8c1adc'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+source=("ntpd-srv."{type,run,producer-for}
+        "ntpd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
+b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        '913f532f2b0d4f94ff65324d24875f8a7c2ab02dbb5e6fde198332bc23a5d0f9f50db377723ea28dc338a7ad0100ec2e96155ff68af342a79c497115cca943d2'
+        '4afca73b8a44fb5c6f55ac9d47a3ce59fca606c982a91bacd018395ff45e95a5a23085a1d2eb624d1e012e6c0c42f848c91ec2810cc89e91e2cfd4132cde4c56'
+        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        '5943c438a934a747a8addc627a84808517b16ac96cf6fe040b8186508bc9ff9adb96162a3fdfd39c1be5a3bc113edbe06b718eb9e15b39458ae8312d083984de'
+        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
+        'cb57a84530e7f0cbb3cd370f1e80305b8398bf807e9e0e3e35b05ef30a232141fe17240c5e85bf3343bf28624fddc17ef3721fbedf388abafbd8c9535efee412'
+        'e1c81103a849b990cb1da937d2b06b7c4741e8ab454302552f3cb874a98c404c4c9c9d397e893a27f6aaac29ded042d69c6af3cf54e3bea18bfa262dd53ec044'
+        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
 
 package() {
-    _inst_sv 'ntpd'
+  for _srv in ntpd-srv.{type,run,producer-for}; do
+    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/ntpd-srv/${_srv/ntpd-srv./}
+  done
+  
+  for _log in ntpd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
+    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/ntpd-log/${_log/ntpd-log./}
+  done
 }

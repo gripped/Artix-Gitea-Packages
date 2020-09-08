@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+envfile /etc/s6/sv/ntpd-log/conf
+importas -iu DIRECTIVES DIRECTIVES
+foreground { if -n -t { test -d /var/log/ntpd } install -d -m 0755 -o s6log -g s6log /var/log/ntpd }
+foreground { chmod -R 755 /var/log/ntpd }
+s6-setuidgid s6log exec -c sh -c "s6-log -d3 -b ${DIRECTIVES} /var/log/ntpd"
