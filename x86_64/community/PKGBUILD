@@ -1,6 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=dropbear-s6
-pkgver=20200713
+pkgver=202000906
 pkgrel=1
 pkgdesc="s6 service scripts for dropbear"
 arch=('any')
@@ -10,18 +11,24 @@ provides=('dropbear-runscripts')
 conflicts=('dropbear-runscripts')
 depends=('dropbear' 's6')
 install=dropbear.install
-source=("dropbear.run" "dropbear.type")
-sha256sums=('ae17ebff02594857265e281d4b640affe2de0662b746b03f46fbc1022f92a6c6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+source=("dropbear-srv."{type,run,producer-for}
+        "dropbear-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
+b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        '543353463b9ade83d1c845cc904428ab3d0088be7d9217868e9199be013e5da1b8fc7fc7c133200ddca2f379b81e35c8611988027096a55b69bb2c02e7600cbd'
+        'f549feec1002000f22b41fbd265055d497c49b8ae4a0fd725d86c87d76141e82b6f0919c1043bddb7216d12f0f19546557af1b497f530931da633c7265981bb9'
+        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        '32631f23fcafe38c96ed6adb9cc812322021108c61ac3c43159c271556e57904d742b4afb1320f413ae356bc5908c3b6186b0fdc28ee6522ece817e97c1a5eb8'
+        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
+        '4ca7074607ff33621868984635dc18a8676b90cced7b2e8b39a100d4d3e314050fdd213e7407a9951fc50df922e5c26cbd2dce326404ae56854ebb686eaa4063'
+        '4c4b02175f725eb68f2ac9d36956169c76b282ca7918c4f8b461211e7f526c788bb568bc36f6704405abca9c262f76a288f8298d42033296ee0a14ee32518263'
+        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
 
 package() {
-    _inst_sv 'dropbear'
+  for _srv in dropbear-srv.{type,run,producer-for}; do
+    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/dropbear-srv/${_srv/dropbear-srv./}
+  done
+  
+  for _log in dropbear-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
+    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/dropbear-log/${_log/dropbear-log./}
+  done
 }
