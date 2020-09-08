@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+if [ -d /var/run/fail2ban ]; then
+  rm -rf /var/run/fail2ban
+fi
