@@ -1,6 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=minidlna-s6
-pkgver=20200713
+pkgver=20200907
 pkgrel=1
 pkgdesc="s6 service scripts for minidlna"
 arch=('any')
@@ -10,18 +11,24 @@ provides=('minidlna-runscripts')
 conflicts=('minidlna-runscripts')
 depends=('minidlna' 's6')
 install=minidlnad.install
-source=("minidlnad.run" "minidlnad.type")
-sha256sums=('97ea3c96439f7ac398d55aaad92404b715b27f1f34208dfc324d0f9dd8c3e1c4'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+source=("minidlnad-srv."{type,run,producer-for}
+        "minidlnad-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
+b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        'ca6523456af6c766e75541c1814f8ad6ff1835207e592bede9d9fdb2658484e00ee4efa7c31c7fd2fa2d4fa7f4bbc029e3c3a18fd4421941fb5b3e52f1f3bded'
+        '63b9b5634121bc9e87216de2739fea78db73091d1b26fefc349e5395c390275c8cbcb5eb7336250e321837dde67ce1ff20835754791e0aa73cf211090540dbe8'
+        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
+        'c2f00cd5afb40bd4a7c73dd8c5a4876e505fc36ba7626a9db357ef48fa945efdaddd496efb5e4795e532c46c18cdf3a1a463531b3f5ec5b976b596d721320113'
+        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
+        '235cb8c7559be5d6f0f19b94e5f1833dca488377c7897c7d9b3dc300a5ed2169291ca980f5bea732de3489ca192322929fc35e4432ce6747098f5344136e8fe4'
+        '7fd95121ba3252aaa0f58cad3a6909c94c6d2974e3e0a463e1a743b9e0767659167b4c21634306ea6c579dde8c3c7ca9a0422f24dcd32988a1f9937c6ff4de02'
+        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
 
 package() {
-    _inst_sv 'minidlnad'
+  for _srv in minidlnad-srv.{type,run,producer-for}; do
+    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/minidlnad-srv/${_srv/minidlnad-srv./}
+  done
+  
+  for _log in minidlnad-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
+    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/minidlnad-log/${_log/minidlnad-log./}
+  done
 }
