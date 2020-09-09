@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/pcscd" ]; then
+    if [ -e "/run/service/pcscd-srv" ]; then
         s6-rc -d change pcscd
     fi
 }
