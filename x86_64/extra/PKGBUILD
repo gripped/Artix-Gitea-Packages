@@ -2,7 +2,7 @@
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=mpd-s6
 pkgver=20200906
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for mpd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
@@ -14,7 +14,7 @@ install=mpd.install
 source=("mpd-srv."{type,run,producer-for}
         "mpd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'f5c59d22748827cc87bde1224d814283193286b8d25d97fc6324421c8c04e696cd3e155bf47274c66861d076ff6e96ee7911edbab606ad03260ce69d46cad90f'
+        '461c4745ba06d6731c70b4f659886a0a549bf445075be0f5ab55b443c00e789f10f762b7862dde1bee2000ebae0b09ba9268ebce405f460365fe30c976f9ba65'
         '3906080ffc5f120f30865795eca7a6919da1a21a691fdea7f23455f29a57bce2c62e5c7a7d43d2a61fdae56f4f3c8c4aed109eb3d8e4a24d8eecdca595cd420d'
         'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
         '7601c9d17ce67db512fdb462b922d35b935aa86ecf84caf0c3f4f3e05f120999d919ea6f3b7af0a2317eae3b299741ea79279992482379b3788c1a0d68bd6dc9'
