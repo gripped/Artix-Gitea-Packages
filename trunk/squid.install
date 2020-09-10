@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/squid" ]; then
+    if [ -e "/run/service/squid-srv" ]; then
         s6-rc -d change squid
     fi
 }
