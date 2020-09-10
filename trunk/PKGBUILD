@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tlp-s6
-pkgver=20200713
+pkgver=20200909
 pkgrel=1
 pkgdesc="s6 service scripts for tlp"
 arch=('any')
@@ -12,16 +12,10 @@ depends=('tlp' 's6')
 source=("tlp.down" "tlp.type" "tlp.up")
 sha256sums=('f87c38f58f4dbbfc1029d6d5d84c61f49286a6b83a064153e60bca7072e9eaef'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '90c97ede242c5fad46d05cc00bfcd0a983fee10bb98784285aac906f432f391f')
-
-_inst_sv(){
-    for file in down type up; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+            '7524927461dd4492295d2afb80e5843a93aa1eb62d2b3945fae4d0e5b5f90934')
 
 package() {
-    _inst_sv 'tlp'
+  for i in ${source[@]} ; do
+    install -Dm644 "$i" "$pkgdir"/etc/s6/sv/tlp/${i/tlp./}
+  done
 }
