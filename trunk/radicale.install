@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/radicale" ]; then
+    if [ -e "/run/service/radicale-srv" ]; then
         s6-rc -d change radicale
     fi
 }
