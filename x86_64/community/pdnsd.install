@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/pdnsd" ]; then
+    if [ -e "/run/service/pdnsd-srv" ]; then
         s6-rc -d change pdnsd
     fi
 }
