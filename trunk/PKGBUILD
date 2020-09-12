@@ -1,0 +1,30 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=perl-ppix-quotelike
+pkgver=0.012
+pkgrel=1
+pkgdesc="Parse Perl string literals and string-literal-like things"
+arch=('any')
+license=('PerlArtistic')
+url="https://metacpan.org/release/PPIx-QuoteLike"
+depends=('perl-ppi')
+makedepends=('perl-ppix-regexp' 'perl-readonly')
+options=('!emptydirs')
+source=("https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-QuoteLike-$pkgver.tar.gz")
+sha512sums=('108fff327273db20ebb290b585cef27c28801375d3e60f71a36c32070d68095dc42711de148b068bda22b714e81a22e76d7324a741ca7c2e6da3a64c477ff84e')
+
+build() {
+  cd PPIx-QuoteLike-$pkgver
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}
+
+check() {
+  cd PPIx-QuoteLike-$pkgver
+  make test
+}
+
+package() {
+  cd PPIx-QuoteLike-$pkgver
+  make DESTDIR="$pkgdir" install
+}
