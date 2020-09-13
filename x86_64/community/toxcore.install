@@ -1,5 +1,5 @@
 pre_remove() {
-    if [ -e "/run/service/toxbootstrapd" ]; then
+    if [ -e "/run/service/toxbootstrapd-srv" ]; then
         s6-rc -d change toxbootstrapd
     fi
 }
