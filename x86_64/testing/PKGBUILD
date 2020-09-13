@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20200907
+pkgver=20200913
 pkgrel=1
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
@@ -9,7 +9,9 @@ provides=('init-udev')
 depends=('execline' 'pam')
 replaces=('eudev-s6')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
-            'lvm2-s6: lvm2 boot script support')
+            'dbus-s6: dbus boot script support'
+            'lvm2-s6: lvm2 boot script support'
+            'stratisd-s6: stratisd boot script support')
 backup=('etc/s6/rc.local'
         'etc/s6/s6.conf'
         'etc/s6/sv/mount-net/dependencies'
