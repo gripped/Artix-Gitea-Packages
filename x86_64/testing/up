@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+exec bash -c "/etc/s6/sv/cryptsetup/shell_up"
