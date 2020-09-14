@@ -4,7 +4,7 @@
 
 pkgname=base
 pkgver=2
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -20,7 +20,7 @@ depends=(
   'gettext' 'pciutils' 'psmisc' 'shadow' 'util-linux' 'bzip2' 'gzip' 'xz'
 
   # distro defined requirements
-  'licenses' 'pacman' 'init-elogind'
+  'licenses' 'pacman' 'init-elogind' 'esysusers' 'etmpfiles'
 
   # networking, ping, etc
   'iputils' 'iproute2'
