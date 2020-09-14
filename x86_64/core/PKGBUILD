@@ -2,7 +2,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2020.08.21
+pkgver=2020.09.03
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
@@ -16,7 +16,8 @@ backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
 source=('crypttab' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
         'issue' 'ld.so.conf' 'locale.sh' 'motd' 'nsswitch.conf' 'os-release'
         'passwd' 'profile' 'resolv.conf' 'securetty' 'shadow' 'shells' 'sysctl'
-        'sysusers' 'tmpfiles' 'artixlinux.svg' 'artixlinux.png')
+        'sysusers' 'tmpfiles' 'artixlinux.svg' 'artixlinux.png'
+        'artixlinux-logo.svg' 'artixlinux-logo.png')
 sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'e54626e74ed8fee4173b62a545ab1c3a3a069e4217a0ee8fc398d9933e9c1696'
             '244f0718ee2a9d6862ae59d6c18c1dd1568651eada91a704574fa527fbac2b3a'
@@ -30,16 +31,18 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'aa4dc5b2374fb32863e3bc1ce20a2de2d34fe4eed1cd63c599bc82fab21463cc'
             'fe9bb5b7ef357e38ef2efb5bee32a0ac495f55cb14d573e0e1b59a6ede43213d'
             '5e06477834f51abf42ea4e8dc199632afc6afbfd8c44354685a271e9a48d2c0a'
-            '8461dea900fdac6fae6706f347e4c2cd183a69a12c62329c0a3cbba31ce0fe45'
+            'f86a0b98d5fee4aae0e11a61fa0a1a4061927d5ca80753329285f87376acf2b6'
             '5557d8e601b17a80d1ea7de78a9869be69637cb6a02fbfe334e22fdf64e61d4c'
             'd88be2b45b43605ff31dd83d6a138069b6c2e92bc8989b7b9ab9eba8da5f8c7b'
             '6e13705ac4d6f69cdba118c6b70c722346fd3c45224133e6bbfe28aca719563c'
             'c390b31fffc4a2b5d78ae8c89f5317aadef1f71baac09cfb467b675db1406d61'
             '89e43a0b7028f52d5c8e7fb961d962c4b4f4e9595880a6157274ddb2c7c0b6b4'
-            'df8511932df35db335b58d4ec169cdc0bee958226de5359f4698297b4056ed7e'
+            'd6b0e95e3cdf663d3383f883301f5ed6cf900cccb7cba0c268ab8f6e78177d16'
             '618ac097441c1f2daffc9967e5c3cd18ea8866f776db62d04bf401c53907b1c9'
             '7b8fffc06755488931ce2aa4d3f9547be650d9e873323b7171515004d02e83c1'
-            'f52db4a98fbfdd6d957068ea0e631240c9a138df859fc43d902bf97b0759459d')
+            'f52db4a98fbfdd6d957068ea0e631240c9a138df859fc43d902bf97b0759459d'
+            '02302481e97d88b2bd548bbfe54aadd1611fd3aa09911fd8b7eb1208cde4351d'
+            '1242caf07c6c3aa4ac600b5f2401a7422c85cbdc9ed9ef41357b068355c6a45b')
 
 package() {
   cd "$pkgdir"
@@ -120,7 +123,7 @@ package() {
   install -D -m644 "$srcdir"/tmpfiles usr/lib/tmpfiles.d/artix.conf
 
   # add logo
-  install -D -m644 "$srcdir"/artixlinux.{svg,png} usr/share/pixmaps
+  install -D -m644 "$srcdir"/artixlinux{,-logo}.{svg,png} usr/share/pixmaps
 }
 
 # vim:set ts=2 sw=2 et:
