@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20200829
+pkgver=20200913
 pkgrel=1
 pkgdesc="s6 service scripts for dbus"
 arch=('any')
@@ -28,7 +28,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '2e6760d773576d323c65b1b5abc9006dc6734bc9d831c35051678c2af44179bd'
-            '88b80bc271e7cccc021d7b3bf5ec05fee81f0a2e7579b8c8c23136d94f594825'
+            '3e05eda9f408323bb8535213412618992088497f4b1372afd56e2a8a9903cb63'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
