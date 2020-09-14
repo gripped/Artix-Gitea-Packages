@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20200913
+pkgver=20200914
 pkgrel=1
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
@@ -10,15 +10,15 @@ depends=('execline' 'pam')
 replaces=('eudev-s6')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
             'dbus-s6: dbus boot script support'
-            'lvm2-s6: lvm2 boot script support'
-            'stratisd-s6: stratisd boot script support')
+            'eudev-s6: eudev boot script support'
+            'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
         'etc/s6/s6.conf'
         'etc/s6/sv/mount-net/dependencies'
         'etc/s6/sv/rc-local/dependencies')
 install=s6-scripts.install
 makedepends=('git')
-_commit=a0e072b5fdf27ff12f605e29d26bae99bc5fec12
+_commit=d292a118990c2f4d46131fc257a532984d2450cf
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -47,6 +47,7 @@ package() {
     cd ${pkgname}
 
     # various installs
+    install -Dm644 "${srcdir}"/s6-scripts/50-default.conf "${pkgdir}"/usr/lib/sysctl.d/50-default.conf
     install -Dm644 "${srcdir}"/s6-scripts/rc.local "${pkgdir}"/etc/s6/rc.local
     install -Dm644 "${srcdir}"/s6-scripts/s6.conf "${pkgdir}"/etc/s6/s6.conf
     install -Dm755 "${srcdir}"/s6-scripts/modules-load "${pkgdir}"/usr/bin/modules-load 
@@ -87,8 +88,4 @@ package() {
     _inst_sv 'sysuser'
     _inst_sv 'tmpfiles-dev'
     _inst_sv 'tmpfiles-setup'
-    _inst_sv 'udev'
-    _inst_sv 'udevadm'
-    _inst_sv 'udevd-log'
-    _inst_sv 'udevd-srv'
 }
