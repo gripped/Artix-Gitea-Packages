@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tlp-s6
-pkgver=20200909
+pkgver=20200913
 pkgrel=1
 pkgdesc="s6 service scripts for tlp"
 arch=('any')
@@ -9,10 +9,14 @@ groups=('s6-galaxy')
 provides=('tlp-runscripts')
 conflicts=('tlp-runscripts')
 depends=('tlp' 's6')
-source=("tlp.down" "tlp.type" "tlp.up")
-sha256sums=('f87c38f58f4dbbfc1029d6d5d84c61f49286a6b83a064153e60bca7072e9eaef'
+source=("tlp.conf"
+        "tlp.down"
+        "tlp.type"
+        "tlp.up")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            'f87c38f58f4dbbfc1029d6d5d84c61f49286a6b83a064153e60bca7072e9eaef'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '7524927461dd4492295d2afb80e5843a93aa1eb62d2b3945fae4d0e5b5f90934')
+            'afaee7ef4ea3025eaa5ad2a7625e403169f3879ba5091bcc7636352bcf3b1760')
 
 package() {
   for i in ${source[@]} ; do
