@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cups-s6
-pkgver=20200829
+pkgver=20200914
 pkgrel=1
 pkgdesc="s6 service scripts for cups"
 arch=('any')
-url="https://gitea.artixlinux.org/"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('cups-runscripts')
 conflicts=('cups-runscripts')
-depends=('cups' 'dbus-s6' 's6')
+depends=('cups' 'dbus-s6' 'eudev-s6' 's6')
 install=cupsd.install
 backup=('etc/s6/sv/cupsd-log/conf')
 source=("cupsd-log.conf"
