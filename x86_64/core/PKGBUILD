@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20200613
+pkgver=20200914
 pkgrel=1
 pkgdesc="s6 service scripts for lvm2"
 arch=('any')
-url="https://gitea.artixlinux.org/"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-lvm2')
 conflicts=('init-lvm2')
-depends=('lvm2' 's6')
+depends=('lvm2' 'eudev-s6' 's6')
 install=lvm2.install
 backup=('etc/s6/sv/lvm2-monitor/conf'
         'etc/s6/sv/lvm2-pvscan/conf'
@@ -49,12 +49,12 @@ source=("lvm2-monitor.conf"
         "lvmpolld-srv.type")
 sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '8f542dc756504210d0bd8927e1fa360a33eb3737ecbbec5c87173fd5b279b8d8'
-            'cd757002eb53bca44db4f5bb2eda0b8938ca1bab4a01d5a8288e4146761dfc62'
+            '5209793393a75d71cc1a16d11123b085cd7dc30397a829bed7b9e2980c0c76c1'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '381357f0b7706e1e8be938c3de809c716beba18849ddb3d5a4fad9b74cb4d82e'
             '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '8f542dc756504210d0bd8927e1fa360a33eb3737ecbbec5c87173fd5b279b8d8'
-            'af3069c313c50b48cad17f65b32f61eae946481556f116efcf64f4e6cd88cce2'
+            'c3e3517aa7b69bddfb3a9d0bb5f7d0a79765496286f4e1752c453ccb5b263c6f'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '412e6ec2f52c048672aaec80b9d6f6c990c233e65d35df41ae86cdfb8a12297c'
             '35ed55525ccbdaf1aae614097939af215c61d516f1f68464f8cd85172ce5da86'
