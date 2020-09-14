@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20200829
+pkgver=20200914
 pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
-url="https://gitea.artixlinux.org/"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-dhcpcd')
 conflicts=('init-dhcpcd')
-depends=('dhcpcd' 's6')
+depends=('dhcpcd' 'eudev-s6' 's6')
 install=dhcpcd.install
 backup=('etc/s6/sv/dhcpcd-log/conf')
 source=('dhcpcd-log.conf'
