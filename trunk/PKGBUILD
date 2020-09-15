@@ -15,7 +15,7 @@ optdepends=("python2: python bindings"
 	    "ruby: ruby bindings"
 	    "ocaml: ocaml bindings")
 source=("http://libguestfs.org/download/$pkgname/$pkgname-$pkgver.tar.gz")
-sha512sums=('dc271349c6efa7b55ba144617e57fe4e7ce855ec1f4ef9f84ee86eeefd3a34cb6b26078786e1568f3008b922a31b758ff2c2734e599b67e0e210aa72e9f41177'
+sha512sums=('dc271349c6efa7b55ba144617e57fe4e7ce855ec1f4ef9f84ee86eeefd3a34cb6b26078786e1568f3008b922a31b758ff2c2734e599b67e0e210aa72e9f41177')
 validpgpkeys=('F7774FB1AD074A7E8C8767EA91738F73E1B768A0') # Richard W.M. Jones <rjones@redhat.com>
 
 build() {
