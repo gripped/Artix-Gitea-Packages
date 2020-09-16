@@ -7,6 +7,10 @@ post_install() {
     if [[ "$?" == "0" ]]; then
         echo "dbus" >> /etc/s6/sv/misc/contents
     fi
+    elogind=$(pacman -Qi elogind-s6 2> /dev/null)
+    if [[ "$?" == "0" ]]; then
+        echo "elogind" >> /etc/s6/sv/misc/contents
+    fi
     eudev=$(pacman -Qi eudev-s6 2> /dev/null)
     if [[ "$?" == "0" ]]; then
         echo "udev" >> /etc/s6/sv/boot/contents

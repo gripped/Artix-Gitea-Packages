@@ -1,13 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
 pkgver=20200916
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
 depends=('execline' 'pam')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
             'dbus-s6: dbus boot script support'
+            'elogind-s6: elogind boot script support'
             'eudev-s6: eudev boot script support'
             'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
