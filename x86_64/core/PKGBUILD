@@ -4,7 +4,7 @@
 
 pkgname=base
 pkgver=2
-pkgrel=2.2
+pkgrel=2.3
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -32,7 +32,7 @@ replaces=('artix-sysvcompat')
 source=('initswitch-hook'
         '55-initswitch.hook'
         '50-sysvcompat.hook')
-sha256sums=('dab2a5f959b37d4f489111d999fec31f8c03d07ca9ec26400b0e556466b50b29'
+sha256sums=('3acd842566df7ac77bbc9801c8580d8d7e398a03f5aa4f0472d74a7de6f60423'
             '97cac34e626d54de123662387360e60be4c4a654581bce1be81ef1cc2cc8eea0'
             '2a5fa67f95da713b67323c3d6cfd4e5cc6339847acd30edfea154d66cadb3b76')
 

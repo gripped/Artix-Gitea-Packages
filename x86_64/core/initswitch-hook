@@ -9,14 +9,14 @@ init_conf(){
 
 init_detect(){
     local init
-    if [[ -f /usr/bin/openrc-init ]];then
+    if [ -f /usr/bin/openrc-init ];then
         init=openrc-init
-    elif [[ -f /usr/bin/runit-init ]];then
+    elif [ -f /usr/bin/runit-init ];then
         init=runit-init
-    elif [[ -f /usr/bin/s6-init ]];then
+    elif [ -f /usr/bin/s6-init ];then
         init=s6-init
     fi
-    if [[ -n "$init" ]];then
+    if [ -n "$init" ];then
         echo "	==> Found $init"
         ln -sf "$init" "/usr/bin/init"
     fi
