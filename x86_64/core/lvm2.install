@@ -6,13 +6,15 @@ pre_remove() {
 }
 
 post_install() {
-    echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+    if ! grep -q lvm2 /etc/s6/sv/mount-filesystems/dependencies; then
+        echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+	echo "  lvm2-s6 automatically installs itself into the boot bundle."
+	echo "  There's no need to add it to the default bundle."
 }
 
 post_upgrade() {
-    if ! grep -q lvm2 /etc/s6/sv/mount-filesystems/dependencies; then
-        post_install
-    fi
+    post_install
 }
 
 post_remove() {
