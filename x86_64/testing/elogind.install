@@ -6,13 +6,15 @@ pre_remove() {
 }
 
 post_install() {
-    echo "elogind" >> /etc/s6/sv/misc/contents
+    if ! grep -q elogind /etc/s6/sv/misc/contents; then
+        echo "elogind" >> /etc/s6/sv/misc/contents
+    fi
+	echo "  elogind-s6 automatically installs itself into the boot bundle."
+	echo "  There's no need to add it to the default bundle."
 }
 
 post_upgrade() {
-    if ! grep -q elogind /etc/s6/sv/misc/contents; then
-        post_install
-    fi
+    post_install
 }
 
 post_remove() {
