@@ -21,14 +21,6 @@ prepare() {
   cp -a pyzmq-${pkgver} py2zmq-${pkgver}
 }
 
-check() {
-  cd "$srcdir/py2zmq-$pkgver"
-  python2 setup.py build_ext --inplace
-  python2 setup.py test
-  cd "$srcdir/pyzmq-$pkgver"
-  python3 setup.py build_ext --inplace
-  python3 setup.py test
-}
 
 package_python-pyzmq() {
   pkgdesc="Python3 bindings for zeromq, written in Cython"
