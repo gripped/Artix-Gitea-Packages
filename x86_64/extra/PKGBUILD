@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lightdm-s6
 pkgver=20200916
-pkgrel=1
+pkgrel=2
 pkgdesc="s6 service scripts for lightdm"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
@@ -10,13 +10,30 @@ provides=('lightdm-runscripts')
 conflicts=('lightdm-runscripts')
 depends=('lightdm' 'elogind-s6' 's6')
 install=lightdm.install
-source=("lightdm.dependencies" "lightdm.run" "lightdm.type")
-sha256sums=('d150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
-            '39fe02749ed6108d0341825b287095613331957aa36798e89f35354af777a69b'
+source=("lightdm-log.conf"
+        "lightdm-log.consumer-for"
+        "lightdm-log.notification-fd"
+        "lightdm-log.pipeline-name"
+        "lightdm-log.run"
+        "lightdm-log.type"
+        "lightdm-srv.dependencies"
+        "lightdm-srv.producer-for"
+        "lightdm-srv.run"
+        "lightdm-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            'a8e3e073d2653901787e41ecddf7116f4d81500e549b655395cfb06781f64df5'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '580a6fd9764245ab8933b1086efd616938a570f76c4d2d2d6ba3e922fed883b2'
+            'a3432cda14b10bbe104e57d81a67badac5d01ae0ff23509f4b1b2836b0d52686'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
+            '9d45199b5991c34717727160e2fa8f5b8c778c95bfe74e88cdf2a1221325e395'
+            '9432bf60abce410739ecbd70b4f2b6a4433da8fafe93e4ff432bdb941bc81287'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in dependencies run type; do
+    for file in conf consumer-for dependencies notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -24,5 +41,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'lightdm'
+    _inst_sv 'lightdm-log'
+    _inst_sv 'lightdm-srv'
 }
