@@ -10,7 +10,7 @@ replaces=('artix-i3-presets')
 arch=('any')
 url="https://gitea.artixlinux.org/linuxer/artix-i3-presets"
 license=('GPL')
-depends=('i3')
+depends=('i3-wm')
 source=("https://gitea.artixlinux.org/linuxer/artix-i3-presets.git#commit=${_commit}")
 sha256sums=('SKIP')
 
