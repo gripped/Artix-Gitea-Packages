@@ -4,7 +4,7 @@
 _commit=c0c2ab41a8cb39420e924860a169d16f0c73dc2e
 
 pkgname=runit-rc
-pkgver=20200915
+pkgver=20200918
 pkgrel=1
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
@@ -27,4 +27,8 @@ build() {
 package() {
 	cd ${pkgname} #-${pkgver}
 	make DESTDIR="${pkgdir}" install-rc
+
+	# iputils-specific configuration
+	mkdir -p "$pkgdir/usr/lib/sysctl.d"
+	echo "net.ipv4.ping_group_range = 0 2147483647" > "$pkgdir/usr/lib/sysctl.d/55-iputils.conf"
 }
