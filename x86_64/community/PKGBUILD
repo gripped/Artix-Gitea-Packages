@@ -15,7 +15,6 @@ source=("artix-i3-presets::git+https://gitea.artixlinux.org/linuxer/artix-i3-pre
 sha256sums=('SKIP')
 
 package() {
-	echo "${srcdir}/${pkgname}"
     cd "${srcdir}/${pkgname}"
     mkdir -p "$pkgdir"/etc/skel
     cp -R skel "$pkgdir"/etc/skel
