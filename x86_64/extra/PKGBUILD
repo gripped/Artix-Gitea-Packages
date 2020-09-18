@@ -1,14 +1,14 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=wireguard-s6
-pkgver=20200908
+pkgver=20200918
 pkgrel=1
 pkgdesc="s6 init script for Wireguard"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 license=('GPL2')
 groups=('s6-world')
-depends=('s6' 'wireguard-tools')
+depends=('s6' 'wireguard-tools' 'resolvconf')
 source=("wireguard.up"
         "wireguard.down"
         "wireguard.conf"
