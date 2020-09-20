@@ -1,6 +1,6 @@
 post_install() {
     mkdir -p /etc/s6/backup_scripts
-    mv /etc/s6/current/scripts /etc/s6/backup_scripts
+    mv /etc/s6/current/scripts/* /etc/s6/backup_scripts
     rm -rf /etc/s6/current
     # we need to ensure that s6-linux-init-maker is run on every machine
     s6-linux-init-maker -1 -f /etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current /etc/s6/current
