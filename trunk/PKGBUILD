@@ -31,12 +31,12 @@ build() {
   ninja -C build
 }
 
-check() {
 # test fails for us. comment out for now
+#check() {
 #  dbus-run-session xvfb-run \
 #    -s '-screen 0 1920x1080x24 -nolisten local' \
 #    meson test -C build --print-errorlogs
-}
+#}
 
 package() {
   DESTDIR="$pkgdir" meson install -C build
