@@ -2,7 +2,7 @@
 
 pkgname=prometheus
 pkgver=2.21.0
-pkgrel=1
+pkgrel=2
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
 url='https://prometheus.io'
@@ -36,14 +36,14 @@ build() {
     -buildmode=pie \
     -mod=readonly \
     -modcacherw \
-    -ldflags "$LDFLAGS" \
+    -ldflags "-linkmode external $LDFLAGS" \
     ./cmd/prometheus
   go build \
     -trimpath \
     -buildmode=pie \
     -mod=readonly \
     -modcacherw \
-    -ldflags "$LDFLAGS" \
+    -ldflags "-linkmode external $LDFLAGS" \
     ./cmd/promtool
 }
 
