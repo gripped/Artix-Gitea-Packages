@@ -18,6 +18,12 @@ validpgpkeys=('462225C3B46F34879FC8496CD605848ED7E69871') # Daiki Ueno <ueno@uni
 sha512sums=('01dcab6e05ea4c33572bf96cc0558bcffbfc0e62fc86410cef06c1597a0073d5750525fe2dee4fdb39c9bd704557fcbab864f9645958108a2e07950bc539fe54'
             'SKIP')
 
+prepare(){
+  cd libunistring-$pkgver
+  # https://git.savannah.gnu.org/cgit/gnulib.git/commit/?id=cca32830b5
+  sed -i '/pragma weak pthread_create/d' tests/glthread/thread.h
+}
+
 build() {
   cd libunistring-${pkgver}
   export CC='gcc -m32'
