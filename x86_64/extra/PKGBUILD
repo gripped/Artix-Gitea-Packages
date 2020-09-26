@@ -4,18 +4,18 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=gdm-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for gdm"
 arch=('any')
 url="https://github.com/artix-linux"
-license=('BSD3')
+license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('gdm' 'dbus-runit')
 conflicts=('systemd-sysvcompat')
 source=("gdm.run")
-sha256sums=('475b0b66a2eec37d380cda4cca7dcac7e388a2d8f58b7151cca6e0745e17510d')
+sha256sums=('76d1e7c7c02a77ba96ebc800af219c4ade86d2174eb1ddf43b10b49c0f8add22')
 
 _inst_logsv() {
     for file in run finish check; do
