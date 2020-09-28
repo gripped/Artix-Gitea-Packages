@@ -35,7 +35,7 @@ prepare() {
 }
 
 build() {
-  arch-meson $pkgname build
+  arch-meson $pkgname build -Dsystemd=false
   meson compile -C build
 }
 
