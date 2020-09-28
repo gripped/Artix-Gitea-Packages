@@ -1,0 +1,17 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=powerdns-recursor-openrc
+pkgver=20200928
+pkgrel=1
+pkgdesc="${pkgname/-openrc/} OpenRC init"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'powerdns-recursor')
+conflicts=('systemd-sysvcompat')
+source=("pdns-recursor.initd")
+b2sums=('9c0fdcccb31a0cc2d3bb0d2af606153b6aa6f12efb60f8deb745f7438bfec80822879154c57cc3a6af1ebbde338ba043aff6d3a683de3b0d58a4b58185327ae7')
+
+package() {
+    install -Dm755 ${srcdir}/pdns-recursor.initd ${pkgdir}/etc/init.d/pdns-recursor
+}
