@@ -15,9 +15,8 @@ depends=(knotifyconfig kemoticons kparts kidletime phonon-qt5 qca-qt5 hicolor-ic
 optdepends=('python: python scripting support' 'keditbookmarks: for managing bookmarks')
 makedepends=(extra-cmake-modules kdoctools)
 license=(GPL2 FDL)
-source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('fdd24f2c8c73eb271afea457466e1e7050b70c4d96f9d6640f2bbf6390cea093'
-            'SKIP')
+source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz")
+sha256sums=('fdd24f2c8c73eb271afea457466e1e7050b70c4d96f9d6640f2bbf6390cea093')
 validpgpkeys=(DA6B31C4B98A877DBB2EF9A292220328C632316E  # Eike Hein <hein@kde.org>
               0A48BC961075B4BA8523E3790A345FB086E797D9) # Friedrich W. H. Kossebau <kossebau@kde.org>
 
