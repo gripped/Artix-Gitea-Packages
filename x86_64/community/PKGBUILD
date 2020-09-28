@@ -13,10 +13,8 @@ depends=('glibc')
 makedepends=('doxygen' 'splint')
 checkdepends=('check')
 provides=('libqb.so')
-source=(https://github.com/ClusterLabs/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz{,.asc})
-sha512sums=('78d3e5a33edaf2f2eb26e51055f1836180d22273b23e2a53ce77a5193e368a0b3beaa2739f99450ec4e6c004f6ce8dabbee07120fd9003a99e9178c0c379483e'
-            'SKIP')
-validpgpkeys=('EA78541A2D92451106C8A1F7B67157F3A70D4537') # Christine Caulfield (Chrissie at work) <ccaulfie@redhat.com>
+source=(https://github.com/ClusterLabs/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('78d3e5a33edaf2f2eb26e51055f1836180d22273b23e2a53ce77a5193e368a0b3beaa2739f99450ec4e6c004f6ce8dabbee07120fd9003a99e9178c0c379483e')
 
 prepare() {
   cd ${pkgname}-${pkgver}
