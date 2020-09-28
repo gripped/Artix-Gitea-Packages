@@ -10,7 +10,7 @@ arch=('x86_64')
 license=('GPL2')
 depends=('glibc' 'libqb' 'libqb.so' 'libsodium' 'libcap-ng' 'protobuf' 'polkit' 'dbus-glib'
          'audit' 'libaudit.so' 'libseccomp' 'libseccomp.so')
-makedepends=('catch2' 'pegtl' 'libxslt' 'asciidoc' 'systemd')
+makedepends=('catch2' 'pegtl' 'libxslt' 'asciidoc')
 provides=('libusbguard.so')
 backup=(etc/usbguard/usbguard-daemon.conf
         etc/usbguard/rules.conf)
@@ -37,7 +37,6 @@ build() {
     --sys=/etc \
     --sbindir=/usr/bin \
     --libdir=/usr/lib \
-    --enable-systemd \
     --without-bundled-catch \
     --without-bundled-pegtl \
     --with-dbus \
