@@ -13,23 +13,23 @@ makedepends=(git glade gobject-introspection meson vala)
 checkdepends=(xorg-server-xvfb)
 provides=(libhandy-1.so)
 _commit=94313c206258860b2428712e7ece1d02c5177857  # tags/1.0.0^0
-source=("git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
+source=("${pkgname}-${pkgver}::git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
 sha256sums=('SKIP')
 
 prepare() {
-  cd $pkgname
+  cd $pkgname-$pkgver
 
   # Fix build with glade 3.38.0
   git cherry-pick -n 65ff089b7f346f3809e9e0050ea32ac003465ede
 }
 
 pkgver() {
-  cd $pkgname
+  cd $pkgname-$pkgver
   git describe --tags | sed 's/^v//;s/-/+/g'
 }
 
 build() {
-  arch-meson $pkgname build \
+  arch-meson $pkgname-$pkgver build \
     -D gtk_doc=true \
     -D examples=false
   meson compile -C build
