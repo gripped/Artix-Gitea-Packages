@@ -1,0 +1,5 @@
+pre_remove() {
+  if [ -e "/run/pdns-recursor-srv" ]; then
+    s6-rc -d change pdns-recursor
+  fi
+}
