@@ -28,7 +28,10 @@ prepare() {
 }
   
 build() {
-  arch-meson $pkgname build -Dsystemd_journal=false
+  arch-meson $pkgname build \
+    -Dsystemd=false \
+    -Dsystemd_session=disable \
+    -Dsystemd_journal=false
   meson compile -C build
 }
 
