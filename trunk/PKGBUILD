@@ -20,7 +20,7 @@ pkgname=('php'
          'php-sqlite'
          'php-tidy'
          'php-xsl')
-pkgver=7.4.10
+pkgver=7.4.11
 pkgrel=1
 arch=('x86_64')
 license=('PHP')
@@ -29,11 +29,10 @@ makedepends=('apache' 'aspell' 'c-client' 'db' 'enchant' 'gd' 'gmp' 'icu' 'libso
              'postgresql-libs' 'sqlite' 'tidy' 'unixodbc' 'curl' 'libtool' 'postfix' 'freetds' 'pcre2' 'libnsl'
              'oniguruma' 'argon2')
 checkdepends=('procps-ng')
-source=("${pkgname}-${pkgver}.tar.gz::https://php.net/distributions/${pkgbase}-${pkgver}.tar.xz"{,.asc}
+source=("${pkgname}-${pkgver}.tar.gz::https://php.net/distributions/${pkgbase}-${pkgver}.tar.xz"
         'apache.patch' 'apache.conf' 'php-fpm.patch' 'php-fpm.tmpfiles' 'php.ini.patch'
         'enchant-2.patch')
-sha512sums=('c7beb2d821f4e28b0444c8653c360d210a924e0638cc4b4ebc71bf2c22ef83caedfc880275329c3ffa644adc5858ccff59d35bf36255d57218774089d3376a21'
-            'SKIP'
+sha512sums=('9bdd29a4a6c1ac55ed75d8fb2203ae5ef41992c518cb7e3b84cf74db62b03cfbe0ef4ea5614a684a37fcd2ae727376022ce49ed3ff32fc3a728e2f1e2474fb92'
             '284e3c0fe3ded0ff3e7d53f2769ea207b4591ef42abeff2d8604e87fe379929bd3b19ff294a729834f339a9da85ae7d4a7d8605890677222f78601b4f2b22247'
             'eccbe1a0c7b2757ab3c982c871cc591a66ad70f085aaa0d44f93cacacedc7b8fd21b8d0c66471327ff070db1bab1ab83a802f6fa190f33bdd74c134975e3910e'
             '86ee6630bf0cac43bbf5a4b3918e63f32e01e74ac00845ebba2d122e14300bb47b41af17d88dfbf655b3a03966f5619b87b6f1ad8623e22482fe46be273309cb'
