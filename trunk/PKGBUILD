@@ -36,7 +36,8 @@ build() {
   # Ensure static library is non-LTO compatible
   CFLAGS+=" -ffat-lto-objects"
 
-  arch-meson $pkgname build
+  # Dummy path for systemd service to avoid the systemd build dependency
+  arch-meson $pkgname build -D systemdunitdir=/usr/lib/systemd
   meson compile -C build
 }
 
@@ -46,4 +47,7 @@ check() {
 
 package() {
   DESTDIR="$pkgdir" meson install -C build
+
+  # remove systemd service
+  rm -r "$pkgdir"/usr/lib/systemd
 }
