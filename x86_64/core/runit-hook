@@ -9,7 +9,7 @@ runit_live() {
 
 svc_help(){
     echo "	==> Start/stop/restart a service:"
-    echo "	sv <service> <start/stop/restart>"
+    echo "	sv <start/stop/restart> <service>"
 }
 
 svc_add_help(){
