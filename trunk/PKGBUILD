@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributior: Jacob Moody <moody@posixcafe.org>
+# Contributor: Jacob Moody <moody@posixcafe.org>
 pkgname=s6-dns
 pkgver=2.3.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A suite of DNS client programs and libraries for UNIX systems"
 arch=('x86_64')
 url="https://skarnet.org/software/s6-dns/"
 license=('ISC')
-makedepends=('skalibs')
+depends=('skalibs')
 source=("https://skarnet.org/software/s6-dns/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('27b6129eaaea31ab907eea8a52369fe864ba7984c8f3e33dc098beb47b581e26')
 
@@ -23,4 +23,5 @@ build() {
 package() {
     cd ${pkgname}-${pkgver}
     make DESTDIR="$pkgdir" install
+    install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 } 
