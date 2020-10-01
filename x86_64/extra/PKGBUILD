@@ -2,13 +2,12 @@
 # Contributor: Jacob Moody <moody@posixcafe.org>
 pkgname=s6-networking
 pkgver=2.3.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A suite of small networking tools for UNIX systems."
 arch=('x86_64')
 url="https://skarnet.org/software/s6-networking/"
 license=('ISC')
-depends=('s6' 'libressl' 'execline')
-makedepends=('skalibs' 's6-dns')
+depends=('s6' 's6-dns' 'skalibs' 'libressl' 'execline')
 source=("https://skarnet.org/software/s6-networking/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('d953dbfdf9020bb27e873328df1b644f8a7b6a3972a4288b1f20edeaf85b4980')
 
@@ -25,4 +24,5 @@ build() {
 package() {
     cd ${pkgname}-${pkgver}
     make DESTDIR="$pkgdir" install
+    install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 } 
