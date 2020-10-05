@@ -2,10 +2,10 @@
 
 pkgname=backuppc-s6
 pkgver=20201005
-pkgrel=1
+pkgrel=1.1
 pkgdesc="backuppc s6 init"
 arch=('any')
-url="https://backuppc.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 license=('GPL2')
 groups=('s6-galaxy')
 install=backuppc.install
