@@ -1,10 +1,10 @@
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
-# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgbase=gvfs
 pkgname=(gvfs gvfs-{smb,afc,gphoto2,goa,mtp,nfs,google})
-pkgver=1.44.1
-pkgrel=4
+pkgver=1.46.1
+pkgrel=1
 pkgdesc="Virtual filesystem implementation for GIO"
 url="https://wiki.gnome.org/Projects/gvfs"
 arch=(x86_64)
@@ -15,7 +15,7 @@ makedepends=(dbus libgphoto2 libimobiledevice smbclient docbook-xsl gtk3 libmtp
              gnome-online-accounts libnfs libgdata git gtk-doc python meson
              openssh)
 groups=(gnome)
-_commit=0071ed715da2c6ace52c4e772205c01eca209f25  # tags/1.44.1^0
+_commit=53755093d789a4f7a9da2f34c3d287832ef61332  # tags/1.46.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gvfs.git#commit=$_commit"
         gvfsd.hook)
 sha256sums=('SKIP'
@@ -23,8 +23,6 @@ sha256sums=('SKIP'
 
 prepare() {
   cd $pkgbase
-
-  sed -e "s|'libplist'|'libplist-2.0'|" -i meson.build # Support libplist 2.2
 }
 
 pkgver() {
@@ -34,9 +32,9 @@ pkgver() {
 
 build() {
   arch-meson $pkgbase build -D man=true \
-  -D logind=true -D systemduserunitdir=no \
-  -D tmpfilesdir=/usr/lib/tmpfiles.d
-  ninja -C build
+    -D systemduserunitdir=no \
+    -D tmpfilesdir=/usr/lib/tmpfiles.d
+  meson compile -C build
 }
 
 check() {
@@ -81,25 +79,21 @@ package_gvfs() {
 
   _split afc \
     lib/gvfs{-afc-volume-monitor,d-afc} \
-    share/dbus-1/services/org.gtk.vfs.AfcVolumeMonitor.service \
     share/gvfs/mounts/afc.mount \
     share/gvfs/remote-volume-monitors/afc.monitor
 
   _split gphoto2 \
     lib/gvfs{-gphoto2-volume-monitor,d-gphoto2} \
-    share/dbus-1/services/org.gtk.vfs.GPhoto2VolumeMonitor.service \
     share/gvfs/mounts/gphoto2.mount \
     share/gvfs/remote-volume-monitors/gphoto2.monitor
 
   _split mtp \
     lib/gvfs{-mtp-volume-monitor,d-mtp} \
-    share/dbus-1/services/org.gtk.vfs.MTPVolumeMonitor.service \
     share/gvfs/mounts/mtp.mount \
     share/gvfs/remote-volume-monitors/mtp.monitor
 
   _split goa \
     lib/gvfs-goa-volume-monitor \
-    share/dbus-1/services/org.gtk.vfs.GoaVolumeMonitor.service \
     share/gvfs/remote-volume-monitors/goa.monitor
 
   _split nfs \
