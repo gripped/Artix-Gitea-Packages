@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=pulseaudio
-pkgname=(pulseaudio libpulse pulseaudio-{zeroconf,lirc,jack,bluetooth,equalizer})
+pkgname=(pulseaudio libpulse alsa-card-profiles pulseaudio-{zeroconf,lirc,jack,bluetooth,equalizer})
 pkgdesc="A featureful, general-purpose sound server"
 pkgver=13.99.2+2+g410db7d21
 pkgrel=1
@@ -34,12 +34,13 @@ prepare() {
 
 build() {
   arch-meson pulseaudio build \
+    -D alsadatadir=/usr/share/alsa-card-profile/mixer \
     -D pulsedsp-location='/usr/\$LIB/pulseaudio' \
     -D stream-restore-clear-old-devices=true \
     -D udevrulesdir=/usr/lib/udev/rules.d \
     -D systemd=disabled \
     -D elogind=enabled
-  ninja -C build
+  meson compile -C build 
 }
 
 check() {
@@ -58,8 +59,8 @@ _pick() {
 }
 
 package_pulseaudio() {
-  depends=("libpulse=$pkgver-$pkgrel" rtkit libltdl speexdsp tdb orc libsoxr
-           webrtc-audio-processing gst-plugins-base-libs)
+  depends=("libpulse=$pkgver-$pkgrel" alsa-card-profiles rtkit libltdl speexdsp
+           tdb orc libsoxr webrtc-audio-processing gst-plugins-base-libs)
   optdepends=('pulseaudio-alsa: ALSA configuration (recommended)')
   backup=(etc/pulse/{daemon.conf,default.pa,system.pa})
   replaces=('pulseaudio-xen<=9.0' 'pulseaudio-gconf<=11.1')
@@ -100,6 +101,9 @@ package_pulseaudio() {
   _pick libpulse usr/share/man/man5/pulse-client.conf.5
   _pick libpulse usr/share/vala
 
+### Split alsa-card-profiles
+  _pick alsa-card-profiles usr/share/alsa-card-profile
+
 ### Split modules
   local moddir=usr/lib/pulse-$pulsever/modules
 
@@ -128,6 +132,14 @@ package_libpulse() {
   backup=(etc/pulse/client.conf)
 
   mv libpulse/* "$pkgdir"
+}
+
+package_alsa-card-profiles() {
+  pkgdesc="ALSA card profiles shared by PulseAudio"
+  arch=('any')
+  license=(LGPL)
+
+  mv alsa-card-profiles/* "$pkgdir"
 }
 
 package_pulseaudio-zeroconf(){
