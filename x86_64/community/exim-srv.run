@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+s6-setuidgid exim exec sh -c "/usr/bin/exim -bdf -q30m"
