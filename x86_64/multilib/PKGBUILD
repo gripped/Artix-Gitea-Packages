@@ -28,7 +28,7 @@ build() {
     --prefix=/usr \
     --libdir=/usr/lib32 \
     --disable-documentation 
-  make
+  make -j1
 
 }
 
