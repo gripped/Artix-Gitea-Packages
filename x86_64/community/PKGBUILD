@@ -28,14 +28,6 @@ build() {
   python2 setup.py build
 }
 
-check() {
-  cd "$srcdir"/pluggy-$pkgver
-  python setup.py pytest
-
-  cd "$srcdir"/pluggy-$pkgver-py2
-  python2 setup.py pytest
-}
-
 package_python-pluggy() {
   depends=('python-importlib-metadata')
 
