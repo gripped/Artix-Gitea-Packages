@@ -11,9 +11,8 @@ arch=('x86_64')
 url="https://www.kernel.org/pub/software/network/ethtool/"
 license=('GPL')
 depends=('glibc' 'libmnl')
-source=(https://www.kernel.org/pub/software/network/$pkgname/$pkgname-$pkgver.tar.{xz,sign})
-sha1sums=('b16ecf0ede1635f8a8abac9b8db58b831f408f7b'
-          'SKIP')
+source=(https://www.kernel.org/pub/software/network/$pkgname/$pkgname-$pkgver.tar.xz)
+sha1sums=('b16ecf0ede1635f8a8abac9b8db58b831f408f7b')
 validpgpkeys=(CE4A4D080F0D304F23B9EBDD972D5BF4DC613806  # John W. Linville <linville@kernel.org>
               D2CB120AB45957B721CD9596F4554567B91DE934) # Michal Kubecek <mkubecek@suse.cz>
 
