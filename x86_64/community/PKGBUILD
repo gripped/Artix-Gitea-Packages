@@ -1,0 +1,45 @@
+# Maintainer: Nathan <ndownes@artixlinux.org>
+pkgname=nsd-s6
+pkgver=20201006
+pkgrel=1
+pkgdesc="s6 service scripts for nsd"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+groups=('s6-galaxy')
+provides=('nsd-runscripts')
+conflicts=('nsd-runscripts')
+depends=('nsd' 's6')
+backup=('etc/s6/sv/nsd-log/conf')
+install=nsd.install
+source=("nsd-log.conf"
+        "nsd-log.consumer-for"
+        "nsd-log.notification-fd"
+        "nsd-log.pipeline-name"
+        "nsd-log.run"
+        "nsd-log.type"
+        "nsd-srv.producer-for"
+        "nsd-srv.run" 
+        "nsd-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            'f61c98a6cd28141f9f07510ce8252cb912db3d1136b962cef2e772babadd3e9d'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '0ab0324c100247de27fcb6b2fbc837c2149809b16b7da531d46e1aaa4ac16e97'
+            'd6ff3eac45361cc591259ad6469704eace08e1d1c508e2caf02c5ff852dd27f6'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '9cc1444c7a39914e604aa848fe76551784d66d03d1b6e412e53c7372999ce030'
+            '06d0b1ec18255c80844d187eb03076141a96ec74b4dab0f35842e5b075a16123'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'nsd-log'
+    _inst_sv 'nsd-srv'
+}
