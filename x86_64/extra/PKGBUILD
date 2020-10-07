@@ -1,6 +1,6 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=postfix-s6
-pkgver=20200727
+pkgver=20201007
 pkgrel=1
 pkgdesc="s6 service scripts for postfix"
 arch=('any')
@@ -9,13 +9,30 @@ groups=('s6-world')
 provides=('postfix-runscripts')
 conflicts=('postfix-runscripts')
 depends=('postfix' 's6')
+backup=('etc/s6/sv/postfix-log/conf')
 install=postfix.install
-source=("postfix.run" "postfix.type")
-sha256sums=('f79d8d23ab4cf7eb52745fa626a6ac8f21556e74fcd87754d7c00118ae14b2c4'
+source=("postfix-log.conf"
+        "postfix-log.consumer-for"
+        "postfix-log.notification-fd"
+        "postfix-log.pipeline-name"
+        "postfix-log.run"
+        "postfix-log.type"
+        "postfix-srv.producer-for"
+        "postfix-srv.run" 
+        "postfix-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '09664edf380ae82b23c1ff47283992a2a68934f656e6729c8c662091c2cb1d71'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'ea40eb8e064b21dfa2cee861225e206f7c7c0c6f745cdd8538e6716edb520685'
+            '55b7954a95cdc5d170e36f357ea2bed393371b9454c52b42910ee652cfce69c6'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '91a824048aab46e52b295df57b4d34740f019fe23bf84fec93381b32ab02bc1b'
+            '888015c2c62a8144ab6efb86a12f99b19b1490c7c2ffdaa5f79676cdab87f4e3'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +40,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'postfix'
+    _inst_sv 'postfix-log'
+    _inst_sv 'postfix-srv'
 }
