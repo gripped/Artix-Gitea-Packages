@@ -1,0 +1,45 @@
+# Maintainer: Nathan <ndownes@artixlinux.org>
+pkgname=postgrey-s6
+pkgver=20201006
+pkgrel=1
+pkgdesc="s6 service scripts for postgrey"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+groups=('s6-galaxy')
+provides=('postgrey-runscripts')
+conflicts=('postgrey-runscripts')
+depends=('postgrey' 's6')
+backup=('etc/s6/sv/postgrey-log/conf')
+install=postgrey.install
+source=("postgrey-log.conf"
+        "postgrey-log.consumer-for"
+        "postgrey-log.notification-fd"
+        "postgrey-log.pipeline-name"
+        "postgrey-log.run"
+        "postgrey-log.type"
+        "postgrey-srv.producer-for"
+        "postgrey-srv.run" 
+        "postgrey-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '0cd2da4185a969ad15cfef0efeca57497c4b7c29bcade3338cf3ab3b6f3d0a83'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'bb10c891e2f9f2a26a21a0d69b2a6b46934b0ecbafa4fd0ebaecbcebb0a23c9b'
+            'fc6fed8b1da1ddb88e2780611ae9d4bff2f029f6470670d469d4837d1191b5ea'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '845870a4960076383710a6b7f103d21d627e06cc103ad0d10a5d18d3baea1f7c'
+            'd29a6673e70c5deaab8e4e6ebe577f9607bf0fb0452cf46ecf3d1921bab21da9'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
+
+_inst_sv(){
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'postgrey-log'
+    _inst_sv 'postgrey-srv'
+}
