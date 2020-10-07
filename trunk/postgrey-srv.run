@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+fdmove -c 2 1
+exec /usr/bin/postgrey --inet=127.0.0.1:10030 --user=postgrey --group=postgrey --greylist-text="Greylisted for %%s seconds"
