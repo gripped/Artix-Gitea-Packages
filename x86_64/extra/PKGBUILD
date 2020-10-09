@@ -13,7 +13,7 @@ depends=('gcc-libs' 'glibc')
 makedepends=('cmake' 'ffmpeg' 'gtest')
 provides=('libchromaprint.so')
 # upstream signs with DSA key: https://github.com/acoustid/chromaprint/issues/81
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/acoustid/${pkgname}/archive/v${pkgver}.tar.gz")
+source=("${pkgname}_${pkgver}.tar.gz::https://github.com/acoustid/${pkgname}/archive/v${pkgver}.tar.gz")
 sha512sums=('333114949928abdf5d4b11aba1db6ec487eebe526324c68d903b3fa80a3af87a28d942af765a2f873e63a1bf222b658b6438cd10cde4446f61b26ea91f537469')
 b2sums=('930d1a7b8fa30dc726f78e3fc93c4e1aef5036b60ceee003c36ce7ea344523ce8b3abc294a4204e9acb6472600e7cfa5b15b1ca27c2917bd161b59cac1e7120c')
 
