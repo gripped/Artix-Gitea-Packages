@@ -1,6 +1,7 @@
 # Maintainer : Felix Yan <felixonmars@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
+#
 
 pkgbase=python-zope-interface
 pkgname=('python-zope-interface' 'python2-zope-interface')
