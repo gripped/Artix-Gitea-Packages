@@ -12,10 +12,9 @@ license=(LGPL)
 depends=(cmake)
 makedepends=(python-sphinx python-requests qt5-tools)
 groups=(kf5)
-source=("https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz"{,.sig}
+source=("https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz"
         ECM-no-init.py.patch)
 sha512sums=('b322ef33ba6e910bdc7374e572d218fab540453044218a08eb2633998d4aacd0e925f3dd3b7dd20af43d5853a81d540512e0e47d444cb7d864fca63b7e78731a'
-            'SKIP'
             'e3d7cc9f969e6a88717cf5532b4c7e5a85ba30eddc31dda4167fbb0a9c2bf28ea652f0ca3af0adbcc583820ea5f23af93d71ca14c1edb3fe52da501755d1fee7')
 
 prepare() {
