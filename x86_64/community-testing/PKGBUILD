@@ -24,7 +24,7 @@ check() {
   ERL_EPMD_PORT=5369 make test
 
   # The elixir test suite starts up epmd and then doesn't kill it again afterwards.
-  epmd -port 5369 -kill
+  epmd -port 5369 -kill ||:
 }
 
 package() {
