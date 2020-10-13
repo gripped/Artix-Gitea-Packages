@@ -12,8 +12,8 @@ license=(LGPL)
 depends=(lib32-libxml2 lib32-glib2 lib32-libunwind lib32-libelf gstreamer)
 makedepends=(gtk-doc gobject-introspection autoconf-archive git)
 _commit=129493687793cbc109d6211bb0e465218e383e9d  # tags/1.16.2^0
-source=("git+https://anongit.freedesktop.org/git/gstreamer/gstreamer#commit=$_commit"
-        "gst-common::git+https://anongit.freedesktop.org/git/gstreamer/common")
+source=("git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git#commit=$_commit"
+        "gst-common::git+https://gitlab.freedesktop.org/gstreamer/gstreamer.gitcommon")
 sha512sums=('SKIP'
             'SKIP')
 
