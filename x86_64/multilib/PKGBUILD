@@ -11,29 +11,21 @@ arch=(x86_64)
 license=(LGPL)
 depends=(lib32-libxml2 lib32-glib2 lib32-libunwind lib32-libelf gstreamer)
 makedepends=(gtk-doc gobject-introspection autoconf-archive git)
-_commit=129493687793cbc109d6211bb0e465218e383e9d  # tags/1.16.2^0
-source=("https://github.com/GStreamer/gstreamer.git#commit=$_commit"
-        "gst-common::https://github.com/GStreamer/common.git")
-sha512sums=('SKIP'
-            'SKIP')
-
-pkgver() {
-  cd $_pkgbasename
-  git describe --tags | sed 's/-/+/g'
-}
+source=("https://github.com/GStreamer/gstreamer/archive/$pkgver.tar.gz"
+        https://github.com/GStreamer/common/archive/master.zip)
+sha512sums=('0029858d6fc8be7b2ee766740b22e97c5feac28017a55934981f39258839754d5bdcbe99205e4e410f94eceadf9bebe7590894e9e3ab5e230ab45975bfaf32e9'
+            'f1db7319287b12f1b14f77a9577d22a3f63ce2967935b3fa323a88292225ea8943188099c9886117076fbe4e05d01314dd1ea938b80ce144300d4ed4745206ac')
 
 prepare() {
-  cd $_pkgbasename
+  cd common-master
+  cp -r * ../gstreamer-$pkgver/common
 
-  git submodule init
-  git config --local submodule.common.url "$srcdir/gst-common"
-  git submodule update
-
+  cd ../gstreamer-$pkgver
   NOCONFIGURE=1 ./autogen.sh
 }
 
 build() {
-  cd $_pkgbasename
+  cd gstreamer-$pkgver
 
   export CC='gcc -m32'
   export CXX='g++ -m32'
@@ -62,7 +54,7 @@ build() {
 }
 
 package() {
-  cd $_pkgbasename
+  cd gstreamer-$pkgver
   make DESTDIR="${pkgdir}" install
 
   rm -R "${pkgdir}"/usr/{share,include}
