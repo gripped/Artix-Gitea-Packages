@@ -3,7 +3,7 @@
 
 pkgname=lib32-gstreamer
 _pkgbasename=gstreamer
-pkgver=1.16.2
+pkgver=1.18.0
 pkgrel=1
 pkgdesc="GStreamer open-source multimedia framework core library (32-bit)"
 url="https://gstreamer.freedesktop.org/"
