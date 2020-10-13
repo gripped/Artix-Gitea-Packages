@@ -7,7 +7,7 @@
 pkgname=('rust' 'lib32-rust-libs' 'rust-docs')
 epoch=1
 pkgver=1.47.0
-pkgrel=1
+pkgrel=2
 
 _llvm_ver=11.0.0
 
