@@ -3,7 +3,7 @@
 
 pkgname=lib32-gstreamer
 _pkgbasename=gstreamer
-pkgver=1.18.0
+pkgver=1.16.2
 pkgrel=1
 pkgdesc="GStreamer open-source multimedia framework core library (32-bit)"
 url="https://gstreamer.freedesktop.org/"
@@ -12,15 +12,18 @@ license=(LGPL)
 depends=(lib32-libxml2 lib32-glib2 lib32-libunwind lib32-libelf gstreamer)
 makedepends=(gtk-doc gobject-introspection autoconf-archive git)
 source=("https://github.com/GStreamer/gstreamer/archive/$pkgver.tar.gz"
-        https://github.com/GStreamer/common/archive/master.zip)
+        "https://github.com/GStreamer/common/archive/master.zip" fix.patch)
 sha512sums=('0029858d6fc8be7b2ee766740b22e97c5feac28017a55934981f39258839754d5bdcbe99205e4e410f94eceadf9bebe7590894e9e3ab5e230ab45975bfaf32e9'
-            'f1db7319287b12f1b14f77a9577d22a3f63ce2967935b3fa323a88292225ea8943188099c9886117076fbe4e05d01314dd1ea938b80ce144300d4ed4745206ac')
+            'f1db7319287b12f1b14f77a9577d22a3f63ce2967935b3fa323a88292225ea8943188099c9886117076fbe4e05d01314dd1ea938b80ce144300d4ed4745206ac'
+            '6c6f3059fb72c396b0c1ef2253e380971c4c62e9b6d9b739b09c53abb00aad41adde9083f7927257e62f2af285c6f0610824e596e206f24c62347354f51f411b')
 
 prepare() {
   cd common-master
+  patch -Np1 -i ../fix.patch
   cp -r * ../gstreamer-$pkgver/common
 
   cd ../gstreamer-$pkgver
+
   NOCONFIGURE=1 ./autogen.sh
 }
 
