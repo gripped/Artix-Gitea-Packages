@@ -70,9 +70,8 @@ backup=(
   'etc/logrotate.d/libvirtd.qemu'
   'etc/sasl2/libvirt.conf'
 )
-source=("https://libvirt.org/sources/$pkgname-$pkgver.tar.xz"{,.asc})
-b2sums=('c118ca6b263054bb6941c62f3d1415f7ed1a3f29a35294272d04bc726643247ee5691e0310a1bf013faeba856d7aadd00a90fe8dbdca6ff4c7eb480e94d92fa2'
-        'SKIP')
+source=("https://libvirt.org/sources/$pkgname-$pkgver.tar.xz")
+b2sums=('c118ca6b263054bb6941c62f3d1415f7ed1a3f29a35294272d04bc726643247ee5691e0310a1bf013faeba856d7aadd00a90fe8dbdca6ff4c7eb480e94d92fa2')
 validpgpkeys=('C74415BA7C9C7F78F02E1DC34606B8A5DE95BC1F'  # Daniel Veillard <veillard@redhat.com>
               '453B65310595562855471199CA68BE8010084C9C') # Jiří Denemark <jdenemar@redhat.com.
 
