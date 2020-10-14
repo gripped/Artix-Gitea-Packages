@@ -7,7 +7,7 @@
 pkgname=('rust' 'lib32-rust-libs' 'rust-musl' 'rust-docs')
 epoch=1
 pkgver=1.47.0
-pkgrel=2
+pkgrel=3
 
 _llvm_ver=11.0.0
 
@@ -16,7 +16,8 @@ url='https://www.rust-lang.org/'
 arch=('x86_64')
 license=('MIT' 'Apache')
 
-makedepends=('rust' "llvm=$_llvm_ver" 'libffi' 'lib32-gcc-libs' 'perl' 'python' 'curl' 'cmake' 'rust-musl')
+makedepends=('rust' "llvm=$_llvm_ver" 'libffi' 'lib32-gcc-libs' 'perl' 'python'
+             'curl' 'cmake' 'musl')
 checkdepends=('procps-ng' 'gdb')
 
 options=('!emptydirs' '!strip')
@@ -97,6 +98,7 @@ build() {
 
   # move docs and cross targets out of the way for splitting
   mv dest-rust/usr/lib/rustlib/i686-unknown-linux-gnu dest-i686
+  mv dest-rust/usr/lib/rustlib/x86_64-unknown-linux-musl dest-musl
   mv dest-rust/usr/share/doc dest-doc
 }
 
@@ -126,7 +128,7 @@ package_rust() {
 }
 
 package_lib32-rust-libs() {
-  description=('32-bit targets and libraries for Rust')
+  description=('32-bit target and libraries for Rust')
   depends=('lib32-gcc-libs')
   provides=('lib32-rust')
   conflicts=('lib32-rust')
