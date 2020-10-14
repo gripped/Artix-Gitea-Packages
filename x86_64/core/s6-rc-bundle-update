@@ -40,7 +40,7 @@ case $COMMAND in
 		exit 1
 	fi
 	isbundle=$(s6-rc-db -c $DATABASE type "$BUNDLENAME" 2> /dev/null)
-	if [ "$?" == 111 ]; then
+	if [ "$?" = 111 ]; then
 		echo "s6-rc-bundle-update: fatal: unable to take lock on $DATABASE: Permission denied"
 		exit 1
 	fi
@@ -63,7 +63,7 @@ case $COMMAND in
 		exit 1
 	fi
 	isbundle=$(s6-rc-db -c $DATABASE type "$BUNDLENAME" 2> /dev/null)
-	if [ "$?" == 111 ]; then
+	if [ "$?" = 111 ]; then
 		echo "s6-rc-bundle-update: fatal: unable to take lock on $DATABASE: Permission denied"
 		exit 1
 	fi
@@ -74,7 +74,7 @@ case $COMMAND in
 	old=$(s6-rc-db -c $DATABASE contents $BUNDLENAME)
 	for entry in $CONTENTS; do
 		isbundle=$(s6-rc-db -c $DATABASE type "$entry" 2> /dev/null)
-		if [ "$isbundle" == "bundle" ]; then
+		if [ "$isbundle" = "bundle" ]; then
 			entrycontents=$(s6-rc-db -c $DATABASE contents $entry)
 		else
 			entrycontents=$entry
@@ -104,7 +104,7 @@ case $COMMAND in
 		exit 1
 	fi
 	isbundle=$(s6-rc-db -c $DATABASE type "$BUNDLENAME" 2> /dev/null)
-	if [ "$?" == 111 ]; then
+	if [ "$?" = 111 ]; then
 		echo "s6-rc-bundle-update: fatal: unable to take lock on $DATABASE: Permission denied"
 		exit 1
 	fi
