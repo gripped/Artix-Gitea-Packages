@@ -22,7 +22,7 @@ optdepends=('a2jmidid: Expose ALSA MIDI in JACK MIDI'
 provides=('jack' 'libjack.so' 'libjacknet.so' 'libjackserver.so')
 conflicts=('jack')
 replaces=('jack2-dbus')
-source=("git+https://github.com/jackaudio/${pkgname}.git#tag=v${pkgver}?signed")
+source=("git+https://github.com/jackaudio/${pkgname}.git#tag=v${pkgver}")
 validpgpkeys=('62B11043D2F6EB6672D93103CDBAA37ABC74FBA0') # falkTX <falktx@falktx.com>
 sha512sums=('SKIP')
 
