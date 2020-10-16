@@ -4,13 +4,14 @@
 
 pkgname=gsfonts
 pkgver=20200616
+_pkgver=20200910
 pkgrel=1
 pkgdesc='(URW)++ Core Font Set [Level 2]'
 url='https://github.com/ArtifexSoftware/urw-base35-fonts'
 arch=('any')
 license=('AGPL3')
 makedepends=('git')
-source=("git+https://github.com/ArtifexSoftware/urw-base35-fonts#tag=$pkgver")
+source=("git+https://github.com/ArtifexSoftware/urw-base35-fonts#tag=$_pkgver")
 sha256sums=('SKIP')
 
 pkgver() {
