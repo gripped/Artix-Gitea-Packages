@@ -15,7 +15,7 @@ depends=('bluez-libs' 'expat' 'gcc-libs' 'glibc' 'liblouis' 'libspeechd' 'pcre'
 'polkit' 'tcl')
 makedepends=('alsa-lib' 'at-spi2-atk' 'at-spi2-core' 'atk' 'cython' 'dbus'
 'espeak-ng' 'festival' 'glib2' 'gpm' 'icu' 'java-environment' 'libxaw' 'ncurses'
-'ocaml-ctypes' 'ocaml-findlib' 'speech-dispatcher' 'systemd-libs')
+'ocaml-ctypes' 'ocaml-findlib' 'speech-dispatcher' 'elogind')
 optdepends=('at-spi2-core: X11/GNOME Apps accessibility'
             'atk: ATK bridge for X11/GNOME accessibility'
             'espeak-ng: espeak-ng driver'
