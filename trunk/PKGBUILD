@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=apache-s6
-pkgver=20200902
+pkgver=20201017
 pkgrel=1
 pkgdesc="s6 service scripts for apache"
 arch=('any')
@@ -23,7 +23,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '8c45896688801f5a0f70c3e443c3d643589800aea5364ddfa7ea7e97a1bc7665'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'cc89df1069b17555b87f33cece5b1cd954116d70d889cf64557d36721bc631f6'
-            '6db0b9e4cde58591704d22468d4bf682a401c185f3e7fefd61e4ffd9528178ee'
+            'b6403b9b777ea0f5f78664d8e155f82023949d9132d9999541d0e0fe5cdf5d90'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '1c11a77bcb269454e8e1b23c313ea49963ba98580304397851298d5ca1a861f9'
             '0c3da064d60e55315e6804e34f6c9abfa2ec4aaf18c5a6721254c15b0d4b21b2'
