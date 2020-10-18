@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=toxcore-s6
-pkgver=20200912
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for toxcore"
 arch=('any')
@@ -11,6 +11,7 @@ provides=('toxcore-runscripts')
 conflicts=('toxcore-runscripts')
 depends=('toxcore' 's6')
 install=toxcore.install
+backup=('etc/s6/sv/toxbootstrapd-log/conf')
 source=("toxbootstrapd-log.conf"
         "toxbootstrapd-log.consumer-for"
         "toxbootstrapd-log.notification-fd"
@@ -25,7 +26,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'ea3a8ae03316c13d50ac5800e48135d1dc5b7cc4ffa1022646e393a0cb6d0768'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '68c713467643723cdcd8ae003111f34d88020a11667f619410fd224e783260ac'
-            '5caa15f0e985855005aa59eb842bd87ff539a4a55bb8e905c94b5e1ee53f5c40'
+            'cd109598b298f913ffbbf467ff9ecdb5a70eaa5b18060fe456f6e1be41eb7db0'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '4ee919149c16252b285b80bab4d219e3210b5fc0a14ab39c9227e9c5b7fcdc44'
             '610be10eaa146b0bcb2d4b6b4cd137d3f9237c3b957395290a706c53ffa67a33'
