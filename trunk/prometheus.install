@@ -3,3 +3,8 @@ pre_remove() {
         s6-rc -d change prometheus
     fi
 }
+
+post_remove() {
+  rm -rf /etc/s6/sv/prometheus-srv
+  rm -rf /etc/s6/sv/prometheus-log
+}
