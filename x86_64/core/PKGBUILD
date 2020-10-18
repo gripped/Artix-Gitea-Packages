@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20200914
+pkgver=20201017
 pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-dhcpcd')
 conflicts=('init-dhcpcd')
-depends=('dhcpcd' 'eudev-s6' 's6')
+depends=('dhcpcd' 's6')
 install=dhcpcd.install
 backup=('etc/s6/sv/dhcpcd-log/conf')
 source=('dhcpcd-log.conf'
@@ -25,7 +25,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '06fbf21500208014b1a98458b584fd6481eafd450dfad96541bad35d166efd61'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
-            'fc4c72d741dba9ae4308eb5e22c74eeca713e2f1403bd4d0b31c7d5e63d78470'
+            '357656f605fbc5440603422ff07f0fc4b373143fb313cd7dc3f022ee098135f9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
             'c2ecc91f84de6ae3d234fb0dcdbcf47d6e4fd1e6495ceec252710109168064ad'
