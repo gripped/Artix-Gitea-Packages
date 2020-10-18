@@ -2,9 +2,9 @@
 
 _pkgname=authlib
 pkgname=python-authlib
-pkgver=0.14.3
-_commit=ffdc4378a2b0c8e6627170396384d1bfcfb7ed40
-pkgrel=2
+pkgver=0.15.2
+_commit=1969b567733f6426e5a8e20c5edf3371e9d23e5c
+pkgrel=1
 pkgdesc="The ultimate Python library in building OAuth and OpenID Connect servers"
 arch=('any')
 url="https://github.com/lepture/${_pkgname}"
@@ -13,7 +13,8 @@ depends=('python-cryptography')
 makedepends=('git' 'python-setuptools')
 checkdepends=('python-pytest-asyncio' 'python-pytest-django' 'python-requests'
               'python-django' 'python-flask-sqlalchemy' 'python-httpx' 'python-starlette')
-source=("git+${url}.git#commit=${_commit}")
+source=("git+${url}.git#commit=${_commit}?signed")
+b2sums=('SKIP')
 validpgpkeys=('72F8E895A70CEBDF4F2ADFE07E55E3E0118B2B4C') # Hsiaoming (UJET) <lepture@ujet.co>
 
 pkgver() {
@@ -38,7 +39,11 @@ build() {
 check() {
     cd "${srcdir}"/${_pkgname}
 
-    python -m pytest
+    # Some tests fail is run with Django with Flask tests
+    # https://github.com/lepture/authlib/issues/284
+    python -m pytest --ignore tests/django --ignore tests/flask
+    python -m pytest tests/django
+    python -m pytest tests/flask
 }
 
 package() {
@@ -47,4 +52,3 @@ package() {
     python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
     install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
-sha512sums=('SKIP')
