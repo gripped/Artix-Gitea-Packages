@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syslog-ng-s6
-pkgver=20200829
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for syslog-ng"
 arch=('any')
@@ -24,7 +24,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '77626a7d016cb6efb014ebe733761a18a168081aeed2c414035bd79619e63526'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '14bdd461f944e61b3906f29818bb77d76000f9c31ce766d9dbd96d56fbd89d19'
-            'e12dde16fdea2d2b44421e0e29e3e6254dd631bc1668d1d84f019f44e619d000'
+            'bb2502b594fe7f93d8c64d7069ab4f8951483b3ec67b0a5dcf1eee57f10f76e5'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'de5cddfea87c948dd1ac251b44a0ca17c73f77b2ed40c32a0a15e5cc7336b451'
             '156ba7bef3cfa54be843129441b4df7e6786367ef2d088e05a4fbcedc990f999'
