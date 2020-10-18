@@ -1,6 +1,6 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 pkgname=powerdns-recursor-s6
-pkgver=20200928
+pkgver=20201018
 pkgrel=1.1
 pkgdesc="s6 service scripts for pdns-recursor"
 arch=('any')
@@ -25,7 +25,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '88a8194b685c5705dcf4dcece35e55a2168bddaba1c90749c84377f7a98273d5'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'd4ae4b18fc1d521c71244afaa65d33cff7c96234eb533e1d5fcc370c1c5934df'
-            '4ecff3d11f0ffea9afeb0c956228fe776afde885c99d808912d0054cf5a5feb7'
+            '6daa49e67180678fca4d36569bcc4a88411ab8dab71386c7b332163313d365ff'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '4ee919149c16252b285b80bab4d219e3210b5fc0a14ab39c9227e9c5b7fcdc44'
             'a00680f8b0950ddf58db507f660875d457c60a5fdcfd0ac33e39dc717d914ad8'
