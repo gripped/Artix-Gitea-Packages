@@ -3,3 +3,8 @@ pre_remove() {
         s6-rc -d change xl2tpd
     fi
 }
+
+post_remove() {
+  rm -rf /etc/s6/sv/xl2tpd-log
+  rm -rf /etc/s6/sv/xl2tpd-srv
+}
