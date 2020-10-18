@@ -1,5 +1,9 @@
 pre_remove() {
-    if [ -e "/run/service/chronyd" ]; then
+    if [ -e "/run/service/chronyd-srv" ]; then
         s6-rc -d change chronyd
     fi
+}
+
+post_remove() {
+    rm -rf /etc/s6/sv/chronyd-log
 }
