@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dnscrypt-proxy-s6
-pkgver=20200829
+pkgver=20201017
 pkgrel=1
 pkgdesc="s6 service scripts for dnscrypt-proxy"
 arch=('any')
@@ -23,7 +23,7 @@ source=("dnscrypt-proxy-srv.run"
 sha256sums=('c2acb408d1fb2423bd66da0157a36b0d63864bfcf5c1051ef8ec019e2cf2b1fe'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '23cfa90c7aa00eb8d0416db5a146400ce0b2ee64c88cc1a91a63ceb0b1171b5f'
-            '6cd611216805b07e1e44f65954415a09c93c1a599bbd1d5cfc3635c911566723'
+            'ba94c436661c36551e17146b3aa3532ed54cb766d52457c575cc3b8b16010744'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '7ea7eed981d2afa73beb14ca071dcd5fe6dc5decf37d7331d06b1ac0b22170bd'
             '36d3652eef921e6448d85259404616018099b435045b7f19f4bb493380b968d2'
