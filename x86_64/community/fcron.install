@@ -1,5 +1,9 @@
 pre_remove() {
-    if [ -e "/run/service/fcron" ]; then
+    if [ -e "/run/service/fcron-srv" ]; then
         s6-rc -d change fcron
     fi
+}
+
+post_remove() {
+    rm -rf /etc/s6/sv/fcron-log
 }

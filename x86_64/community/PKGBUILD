@@ -1,23 +1,24 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=fcron-s6
-pkgver=20200907
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for fcron"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('fcron-runscripts')
-conflicts=('fcron-runscripts' 'cronie' 'cronie-runit')
+conflicts=('fcron-runscripts' 'cronie' 'cronie-s6')
 depends=('fcron' 's6')
 install=fcron.install
+backup=('etc/s6/sv/fcron-log/conf')
 source=("fcron-srv."{type,run,producer-for}
         "fcron-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
         '64919e630f928ac2a22512c598048b42b8852ec265a330542355a8d1576ac0647d39fcc92db8b84fc8cc1d045d823bb46645db24d61f6b606616c7b027e77ce7'
         '5178760ad0b88444c65bc3a458aa3c33f8783834dccd9d9e6ca7b131eb56f67b56f19065871c79a519068f45af69c304a63ed927839251a3145261043e3286fd'
         'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '8c7026fdb199831ef4fb4048af7dbdfe652f22a9519f01dc62d38aee9954e133eb8c677e5647b6e32e91235a2e2e63361241b5fe1778d597716bcdbb4587791d'
+        '341bc1312958d1088b9b1291b627d5e2a673e794bbbd6a7644c663cfcbb4d2e4f701d6a23192714ad5616ef2cf445548a4e56d32446866fac6ab18ea3a55a8cb'
         '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
         '527e6876c078270357d3fde1976778fb6416b570ecd8a4c4e90756e4786914cfa0d875668b1f13711af3f8ea94eaedec489cf21e1ba2105420261feb83e6df50'
         '5654a98f7e5047e4167c2232e8f5d8cfc43a5dd626363b38bb9fb20b93ec3e45b04d1c934ec58c0e64a4d62e3ad2d2803904caececedcd2070d82c185f8ab0dd'
