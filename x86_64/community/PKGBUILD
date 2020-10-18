@@ -1,6 +1,6 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=minio-s6
-pkgver=20201005
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for minio"
 arch=('any')
@@ -24,7 +24,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '671cd046c325d70c0323616e214971d9e06df16c9db803b2a14442580b460a55'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'fd05d1b2e3fca020bc28196dc33381fd48aaa68c255c11ba5560f6ce8e6063d9'
-            'af3126aad7d3e02414682cabf5fab42004aa5555dadaa4cb70cb9909a46de3eb'
+            '87b6fcf962f648b2c4e0d57bf8ba10727def6cc0a921fbd1382083c34e09bb6c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '45b05738697a4b12e54d7bf6a295055dd658b912b4cee2ceb67a2a74e731de08'
             'c8f99b4c4d707a41b7ca9779e9d3a0333093283a55c4908f273f9f03a39fadae'
