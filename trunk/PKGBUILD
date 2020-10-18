@@ -1,6 +1,6 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=shairplay-s6
-pkgver=20201007
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for shairplay"
 arch=('any')
@@ -26,7 +26,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '766b1037b14819623a375c04b4679b9d91de9bcb1100ce547a9fbacc6bc0c89a'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'aa21fc386a1863c06d70d2404fcb5f65e4062833b3d6234937be22dbeafe64a7'
-            '0bcbd6ef9a623131f3c77ee3c93b3210bbe16c19b03e6b5b79e25911db208f88'
+            '81fd084c77c2f85002594afed5caa2eebc958994ce8658eb7c90c37ae721b211'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '33490a6052a03ed26de277437f41aaaa3a168f9aa0c7e304e93b1969b0b2f39d'
             '25b822c86ad1d03255bf0b120634055f0a6c39e894ac31b9bd4df5253085749e'
