@@ -3,3 +3,8 @@ pre_remove() {
         s6-rc -d change vnstatd
     fi
 }
+
+post_remove() {
+  rm -rf /etc/s6/sv/vnstatd-log
+  rm -rf /etc/s6/sv/vnstatd-srv
+}
