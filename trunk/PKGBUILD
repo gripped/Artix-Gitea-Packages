@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syncthing-relaysrv-s6
-pkgver=20200829
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for syncthing-relaysrv"
 arch=('any')
