@@ -3,3 +3,8 @@ pre_remove() {
         s6-rc -d change php-fpm
     fi
 }
+
+post_remove() {
+  rm -rf /etc/s6/sv/php-fpm-srv
+  rm -rf /etc/s6/sv/php-fpm-log
+}
