@@ -1,6 +1,7 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
+# Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=distcc-s6
-pkgver=20201005
+pkgver=20201017
 pkgrel=1
 pkgdesc="s6 service scripts for distcc"
 arch=('any')
@@ -26,11 +27,11 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '9f8ef17d569557516b5a497b364a35306e3681e658f20735500fe3d5e890749f'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '9fc063ec666f7859d0a1ad1203edd644eb98f458910fc2005ffdba4c794198d8'
-            'b98ffa5679196ea26b0c598315d68205ddc17ef2bcda5797f737977bc607a9d4'
+            'b8f507c20ee5319db84d04eeb76aab603b649dd4ccdcaaac4020f6edf735b894'
             '6419d7377aa55bf3848fe654df0fb19cf97419335d611fd1c9e028670a49d7e3'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'b8b333cf9b0ae3e79bb45777ee2d5b0614934062a7eb3df834bbd2f076afec36'
-            '1c930a6fa814f6e534c6e6e40519e02a8d7ba67c24224ca34fadc0cad61e19d1'
+            '484567e0da448a9cbba222f0baaf0a5fa7bb88d62fccc3936d4ddabf7b52880d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
