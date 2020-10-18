@@ -3,3 +3,8 @@ pre_remove() {
         s6-rc -d change pcscd
     fi
 }
+
+post_remove() {
+  rm -rf /etc/s6/sv/pcscd-srv
+  rm -rf /etc/s6/sv/pcscd-log
+}
