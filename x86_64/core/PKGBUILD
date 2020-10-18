@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20200917
+pkgver=20201017
 pkgrel=1
 pkgdesc="s6 service scripts for elogind"
 arch=('any')
@@ -24,7 +24,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '9029a131cb5197da6ed6b58650cdcdb633193df141085fa10ef8e60dc5c665f6'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
-            '85a2e7eece0ae13aa582467bb7e4923f5409be02af16b1730cb2d48cb53b003d'
+            '73435f7761cb7261ff6eab5b9282c744831cd091aeb99ae91de67c5a8bb41d19'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
             'd196672a8e55cb598f0b4245172914bb4c29ccce7eb9f5b14a70578d644e7688'
