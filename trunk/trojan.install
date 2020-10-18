@@ -6,4 +6,5 @@ pre_remove() {
 
 post_remove() {
 	rm -rf /etc/s6/sv/trojan-log
+	rm -rf /etc/s6/sv/trojan-srv
 }
