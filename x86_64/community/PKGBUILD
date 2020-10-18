@@ -1,6 +1,7 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
+# Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=exim-s6
-pkgver=20201005
+pkgver=20201017
 pkgrel=1
 pkgdesc="s6 service scripts for exim"
 arch=('any')
@@ -24,7 +25,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'd23973cccd97764970dd970fb36d4798d661652c1a85aaf3af55d5b977ec7ede'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '3c39ffa5d318038a850d48fdb2c8afc1d43fe2103507760eb4694ce1f57cee34'
-            'b385d70ed12df635875c04f0495e15b397086807cdded95a7fb1923b1e58b426'
+            '5ef08ed5d4eddec4989b7b0e8b050203a2455e409237d106c735c3f11878a003'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '530f619e946240de81c9cbec9d7893d0bdb53b5c233dc831f898ac5247cc670c'
             'ff76500aa4e33969993fc2ecebe9e06f177cd97958f69e7465c28ef3f34ee760'
