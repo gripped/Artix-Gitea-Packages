@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=lighttpd-s6
-pkgver=20200907
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for lighttpd"
 arch=('any')
@@ -11,13 +11,14 @@ provides=('lighttpd-runscripts')
 conflicts=('lighttpd-runscripts')
 depends=('lighttpd' 's6')
 install=lighttpd.install
+backup=('etc/s6/sv/lighttpd-log/conf')
 source=("lighttpd-srv."{type,run,producer-for}
         "lighttpd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
         '2cb3f1fdf3868671d9a11a6f3a3e257ad3ad16438fc191be0791004477b5af5b64eb4347ed4381bbe36b2c69caa25cc5f0776507d7287e13d5939e86a62d1a7d'
         'f2fdb458ec02c624aa6d766f2815e684e6f7c6a7eef28222148f93c161063f9cb4a5bc1d0c934975c5c5261e8dd315cb7ed9f192795258cf4af69577517175d8'
         'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '74dd0ac95dfc09b8e950a2919d7b480df670dbc7dbf9a88be56a1fa5c6b247916b354d4edf9beb550479997a8bbbeeca331eaedf0f27019307b250902a81adfd'
+        '8e5dfe9b195ca6d7f0f2d50793029bbefb0658702bbb0e019501f223f57a0f4b1f708facba9e1cb27d32ee2c7f74d2280515fd257bc00cbb943913832f87d35e'
         '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
         'f6bb016a140df36956896d425397d3e24dfaaa18dd07f63efa1d52160fa09e5156414fb2c569a4e4d8eb25e84b079ed5c4dcc279abc7a94f4608fe44e1b7537d'
         '11f893f4fdb21b27dbf14b76a38e776a4568814ae9003bb37179a65c0f27d92ebbec088c889842150bbd86c0be13d064e92636d7b42de278c3654eeaffca4889'
