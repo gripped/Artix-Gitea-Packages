@@ -1,7 +1,8 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
+# Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=grafana-s6
-pkgver=20201005
-pkgrel=1.2
+pkgver=20201018
+pkgrel=1
 pkgdesc="s6 service scripts for grafana"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
@@ -9,8 +10,8 @@ groups=('s6-galaxy')
 provides=('grafana-runscripts')
 conflicts=('grafana-runscripts')
 depends=('grafana' 's6')
-backup=('etc/s6/sv/grafana-log/conf')
 install=grafana.install
+backup=('etc/s6/sv/grafana-log/conf')
 source=("grafana-log.conf"
         "grafana-log.consumer-for"
         "grafana-log.notification-fd"
@@ -24,7 +25,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '7cdc9cbbe0c6edaab07292d7ab3eeec17d74f6f33680157949e44fff9f3eb47a'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '9927550b139822cd210b34809502b332016b5d675722889453dc4faf3e10826d'
-            '736b205c220a9f13036c1216b14220f4881e3c6dad4ca0a8fa044d1d4de44b75'
+            '8969c5da6f5d14aca42690ccdec2c91f91a72322a015421bcacf551a08cd7386'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'dcb1ddfb32b79299f4b8274a90c892299db3f17e27d04a99fcab657b591eda51'
             '8ab760531525c04782322c4cd24d56f068902f13661ffeae05c58cfa1c736850'
