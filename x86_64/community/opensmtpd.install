@@ -3,3 +3,8 @@ pre_remove() {
         s6-rc -d change smtpd
     fi
 }
+
+post_remove() {
+  rm -rf /etc/s6/sv/smtpd-srv
+  rm -rf /etc/s6/sv/smtpd-log
+}
