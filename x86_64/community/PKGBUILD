@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lxd-s6
-pkgver=20200829
+pkgver=20201018
 pkgrel=1
 pkgdesc="s6 service scripts for lxd"
 arch=('any')
@@ -24,7 +24,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'dff73a609599a0cc52ae0b76235364a8b81dea4f33bcb48c8220a55dbeede215'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '5e81ec853b02bfb95e658766e7acd52fbd47165129ce4bfb543480b468ab4713'
-            'd6206e93e363ec0400dce1dd53072291e54127e5ceed09dc790a9d5564515179'
+            '1a84dd3dfbd98720641648e71560c9aeb8ec4482fafa5da1a56a5e4eeeb9a93c'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'fae6673cf9dc86b756ee7e56d35cea18941b4729146261930dbc31cdb8ec3d32'
             'fa3c80fbec9ce88ca9ab1a02a612bb5415ac1c639454d3b6a7b47b1fb16d87b1'
