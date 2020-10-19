@@ -10,7 +10,7 @@ url="https://www.alsa-project.org"
 license=('LGPL2.1')
 depends=('glibc' 'alsa-topology-conf' 'alsa-ucm-conf')
 provides=('libasound.so' 'libatopology.so')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/alsa-project/${pkgname}/archive/v${pkgver}.tar.gz")
+source=("${pkgname}_${pkgver}.tar.gz::https://github.com/alsa-project/${pkgname}/archive/v${pkgver}.tar.gz")
 sha512sums=('2dc8d026e42d444e23feaff28cf87ece5577bcb61984d6c690c3a0c848f7206cb9c8838fccaf8e9ea58f32fce7f66a88da2381f8795d52f52662739da0414176')
 b2sums=('9a412c45cb46f5d2cbeead353d92ae73977b5eeef8a5ee955dd86ab6defdd696fd154f277d54734f245607e33f8632b1d45b1f7072d0ee94445721960b020e34')
 
