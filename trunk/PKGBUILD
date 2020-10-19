@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=apache-s6
-pkgver=20201017
+pkgver=20201019
 pkgrel=1
 pkgdesc="s6 service scripts for apache"
 arch=('any')
@@ -10,6 +10,7 @@ provides=('apache-runscripts')
 conflicts=('apache-runscripts')
 depends=('apache' 's6')
 install=apache.install
+backup=('etc/s6/sv/apache-log/conf')
 source=("apache-log.conf"
         "apache-log.consumer-for"
         "apache-log.notification-fd"
