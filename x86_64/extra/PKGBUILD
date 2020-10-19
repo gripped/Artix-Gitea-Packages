@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lightdm-s6
-pkgver=20200918
+pkgver=20201019
 pkgrel=1
 pkgdesc="s6 service scripts for lightdm"
 arch=('any')
@@ -10,6 +10,7 @@ provides=('lightdm-runscripts')
 conflicts=('lightdm-runscripts')
 depends=('lightdm' 'elogind-s6' 's6')
 install=lightdm.install
+backup=('etc/s6/sv/lightdm-log/conf')
 source=("lightdm-log.conf"
         "lightdm-log.consumer-for"
         "lightdm-log.notification-fd"
@@ -24,7 +25,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'a8e3e073d2653901787e41ecddf7116f4d81500e549b655395cfb06781f64df5'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
             '580a6fd9764245ab8933b1086efd616938a570f76c4d2d2d6ba3e922fed883b2'
-            '771b90dcff9a32829f50d9e5d322d2b2598b5057531064ac6eb1fc89937ce06a'
+            'f415120e2ec5e4e7a0a5d5d2ffe8b9ffcf079b6732e9da52c1f7d212251db6f7'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
             '9d45199b5991c34717727160e2fa8f5b8c778c95bfe74e88cdf2a1221325e395'
