@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=acpid-s6
-pkgver=20201017
+pkgver=20201019
 pkgrel=1
 pkgdesc="s6 service scripts for acpid"
 arch=('any')
@@ -10,6 +10,7 @@ provides=('acpid-runscripts')
 conflicts=('acpid-runscripts')
 depends=('acpid' 's6')
 install=acpid.install
+backup=('etc/s6/sv/acpid-log/conf')
 source=("acpid-log.conf"
         "acpid-log.consumer-for"
         "acpid-log.notification-fd"
