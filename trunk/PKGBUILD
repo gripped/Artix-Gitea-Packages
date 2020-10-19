@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributor: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=atftp-s6
-pkgver=20201017
+pkgver=20201019
 pkgrel=1
 pkgdesc="s6 service scripts for atftp"
 arch=('any')
