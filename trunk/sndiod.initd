@@ -1,0 +1,12 @@
+#!/usr/bin/openrc-run
+
+pidfile=/run/sndiod.pid
+command=/usr/bin/sndiod
+command_args="$OPTS -d"
+command_background=yes
+output_log=/var/log/sndio.log
+error_log=/var/log/sndio.log
+
+depend() {
+	after bootmisc
+}
