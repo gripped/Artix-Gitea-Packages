@@ -3,7 +3,7 @@
 
 pkgname=alsa-lib
 pkgver=1.2.4
-pkgrel=2
+pkgrel=3
 pkgdesc="An alternative implementation of Linux sound support"
 arch=('x86_64')
 url="https://www.alsa-project.org"
