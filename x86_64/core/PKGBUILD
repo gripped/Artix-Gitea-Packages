@@ -8,12 +8,12 @@ _func_ver=0.13
 
 pkgname=netifrc
 pkgver=0.7.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Gentoo Network Interface Management Scripts"
 arch=('x86_64')
 url="http://www.gentoo.org/proj/en/base/openrc/"
 license=('BSD2')
-depends=('eudev-openrc')
+depends=('udev')
 backup=('etc/conf.d/net')
 source=("${pkgname}-${pkgver}.tar.gz::${_net_url}/${pkgver}.tar.gz"
         "gentoo-functions-${_func_ver}.tar.gz::${_func_url}/${_func_ver}.tar.gz")
