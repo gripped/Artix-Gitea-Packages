@@ -11,11 +11,9 @@ url="https://www.alsa-project.org"
 license=('LGPL2.1')
 depends=('lib32-glibc' "alsa-lib=${pkgver}")
 provides=('libasound.so' 'libatopology.so')
-source=("https://www.alsa-project.org/files/pub/lib/${_name}-${pkgver}.tar.bz2"{,.sig})
-sha512sums=('12086952dc8f16f1cb6946517858e17b1c3276aeda9ff5703a84bb38aa78eb4c4e9cb4485c5b3f21f174fdbd976b3bcbbc481e85cb2460652858490df51ae844'
-            'SKIP')
-b2sums=('e1d5d9afe21dac693645274ae4ec8a607c9fcc9915ba4ebccfdb539d44b9353ba07529e2c8eaca119884b926d4467285313c945c9015a788101fe532064442db'
-        'SKIP')
+source=("https://www.alsa-project.org/files/pub/lib/${_name}-${pkgver}.tar.bz2")
+sha512sums=('12086952dc8f16f1cb6946517858e17b1c3276aeda9ff5703a84bb38aa78eb4c4e9cb4485c5b3f21f174fdbd976b3bcbbc481e85cb2460652858490df51ae844')
+b2sums=('e1d5d9afe21dac693645274ae4ec8a607c9fcc9915ba4ebccfdb539d44b9353ba07529e2c8eaca119884b926d4467285313c945c9015a788101fe532064442db')
 validpgpkeys=('F04DF50737AC1A884C4B3D718380596DA6E59C91') # ALSA Release Team (Package Signing Key v1) <release@alsa-project.org>
 
 prepare() {
