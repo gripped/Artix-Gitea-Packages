@@ -8,7 +8,7 @@
 pkgbase=nfs-utils
 pkgname=('nfs-utils' 'nfsidmap')
 pkgver=2.5.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='http://nfs.sourceforge.net'
 makedepends=('libevent' 'sqlite' 'rpcsvc-proto' 'device-mapper')
@@ -41,7 +41,9 @@ build() {
     --enable-ipv6 \
     --enable-libmount-mount \
     --enable-mountconfig \
-    --with-start-statd=/usr/bin/start-statd
+    --with-start-statd=/usr/bin/start-statd \
+    --without-systemd
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
