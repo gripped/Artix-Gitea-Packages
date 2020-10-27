@@ -15,7 +15,6 @@ depends=('nodejs' 'node-gyp' 'semver')
 makedepends=('libgl' 'libxi' 'marked' 'marked-man' 'procps-ng' 'python')
 options=('!emptydirs')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/npm/cli/archive/v$pkgver.tar.gz")
-sha512sums=('bfdd3cfa179bb11940847c522e62be8c8771b03ac5d8fe1fd285905ac753f1f97f78149996c1453f3d15d6be2b6d3f572e4a420ea6f6791872a302ccf5e732c0')
 
 prepare() {
   cd cli-$pkgver
@@ -61,3 +60,4 @@ package() {
 
   install -Dm644 "$srcdir"/cli-$pkgver/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
+sha512sums=('bfdd3cfa179bb11940847c522e62be8c8771b03ac5d8fe1fd285905ac753f1f97f78149996c1453f3d15d6be2b6d3f572e4a420ea6f6791872a302ccf5e732c0')
