@@ -3,7 +3,7 @@
 
 pkgname=fmt
 pkgver=7.1.0
-pkgrel=0.1
+pkgrel=1
 pkgdesc='Open-source formatting library for C++'
 arch=(x86_64)
 url=https://fmt.dev
@@ -42,7 +42,7 @@ build() {
     -DBUILD_SHARED_LIBS=1
   cmake --build build
   # docs fail with missing package.json
-  #cmake --build build --target doc
+  cmake --build build --target doc
 }
 
 check() {
