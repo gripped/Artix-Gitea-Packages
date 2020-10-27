@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=npm
-pkgver=6.14.8
+pkgver=7.0.5
 pkgrel=1
 pkgdesc='A package manager for javascript'
 arch=('any')
@@ -11,10 +11,10 @@ depends=('nodejs' 'node-gyp' 'semver')
 # libgl: TODO
 # libvips: for sharp (doc build) (disabled as current version of gatsby imports a broken sharp)
 # libxi: for cwebp (doc build)
-makedepends=('libgl' 'libxi' 'marked' 'marked-man' 'procps-ng' 'python')
+makedepends=('libgl' 'libxi' 'marked' 'marked-man' 'nodejs-yaml' 'procps-ng' 'python')
 options=('!emptydirs')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/npm/cli/archive/v$pkgver.tar.gz")
-sha512sums=('e5a77fc9130443dd96713129d5764e2afc185efda9f7e6465505c0619c146ce571e28c855913ad43fd11ebe6b0080822e29632f8f50c182fb4b05f2478c62a9d')
+sha512sums=('1f7a89196d19311546709ec19da74062b9ee5171be93daa9951159d354ec978d0b9b860b222487af7883caa1073c8359f61173a34db2cde98efb15b9877ce98f')
 
 prepare() {
   cd cli-$pkgver
@@ -32,11 +32,15 @@ prepare() {
 
 build() {
   cd cli-$pkgver
+  # node's cmark-gfm vendors cmark-gfm. Hard to fix.
+  node bin/npm-cli.js install cmark-gfm --no-global --no-timing --no-save
   NODE_PATH=/usr/lib/node_modules make
 }
 
 package() {
   cd cli-$pkgver
+  # More broken in 7.x
+  mkdir -p "$pkgdir"/usr/lib
   make NPMOPTS="--prefix=\"$pkgdir/usr\"" install
 
   # Non-deterministic race in npm gives 777 permissions to random directories.
@@ -51,9 +55,6 @@ package() {
   _npmdir="$pkgdir"/usr/lib/node_modules/$pkgname
   rm -r "$_npmdir"/node_modules/{,.bin/}semver
   rm -r "$_npmdir"/node_modules/{,.bin/}node-gyp
-  sed -i '/node-gyp.js/c\  exec /usr/bin/node-gyp "$@"' \
-    "$_npmdir"/node_modules/npm-lifecycle/node-gyp-bin/node-gyp \
-    "$_npmdir"/bin/node-gyp-bin/node-gyp
 
   install -dm755 "$pkgdir"/usr/share/bash-completion/completions
   node "$srcdir"/cli-$pkgver/bin/npm-cli.js completion > "$pkgdir"/usr/share/bash-completion/completions/npm
