@@ -14,7 +14,7 @@ depends=('nodejs' 'node-gyp' 'semver')
 # libxi: for cwebp (doc build)
 makedepends=('libgl' 'libxi' 'marked' 'marked-man' 'procps-ng' 'python')
 options=('!emptydirs')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/npm/cli/archive/v$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/npm/cli/archive/v6.14.8.tar.gz")
 
 prepare() {
   cd cli-$pkgver
