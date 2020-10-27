@@ -1,3 +1,17 @@
+From a8bb1878df6a98798c66b87bbc555bc9f55fcec6 Mon Sep 17 00:00:00 2001
+From: Dudemanguy <random342@airmail.cc>
+Date: Tue, 27 Oct 2020 18:00:24 -0500
+Subject: [PATCH] enable elogind build
+
+---
+ common/meson.build                       |  2 +-
+ data/meson.build                         | 62 ++++++++++++++----------
+ data/pam-arch/gdm-launch-environment.pam |  1 +
+ libgdm/meson.build                       |  2 +-
+ meson.build                              | 36 +++++++++-----
+ meson_options.txt                        |  5 +-
+ 6 files changed, 66 insertions(+), 42 deletions(-)
+
 diff --git a/common/meson.build b/common/meson.build
 index 074dd92e..bca58f7c 100644
 --- a/common/meson.build
@@ -95,11 +109,11 @@ index 5d9e2847..56074489 100644
  # XSession
  if get_option('gdm-xsession')
 diff --git a/data/pam-arch/gdm-launch-environment.pam b/data/pam-arch/gdm-launch-environment.pam
-index 2ff5ae56..e6c215d3 100644
+index 20d1810a..d8910d0a 100644
 --- a/data/pam-arch/gdm-launch-environment.pam
 +++ b/data/pam-arch/gdm-launch-environment.pam
 @@ -14,4 +14,5 @@ session    optional                    pam_keyinit.so       force revoke
- session    required                    pam_succeed_if.so    audit quiet_success user = gdm
+ session    required                    pam_succeed_if.so    audit quiet_success user in gdm:gnome-initial-setup
  session    optional                    pam_permit.so
  -session   optional                    pam_systemd.so
 +-session   optional                    pam_elogind.so
@@ -118,7 +132,7 @@ index 3f8cafbb..83e95151 100644
  ]
  
 diff --git a/meson.build b/meson.build
-index 7e336bfa..0c0c8e5c 100644
+index a729792c..e152c6ca 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -93,21 +93,30 @@ xdmcp_dep = cc.find_library('Xdmcp', required: get_option('xdmcp'))
@@ -196,3 +210,6 @@ index 49550bc1..b01676da 100644
  option('tcp-wrappers', type: 'boolean', value: false, description: 'Use TCP wrappers.')
  option('udev-dir', type: 'string', value: '', description: 'Directory for udev rules file.')
  option('user', type: 'string', value: 'gdm', description: 'GDM\'s username.')
+-- 
+2.29.1
+
