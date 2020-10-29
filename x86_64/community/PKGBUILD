@@ -1,13 +1,13 @@
 # Maintainer: nous
 
 pkgname=artix-dark-theme
-pkgver=20200130
-pkgrel=2
+pkgver=20201028
+pkgrel=1
 pkgdesc="Dark theme for the community ISOs of Artix Linux. GTK2/3, QT5, Plasma splash."
 arch=('any')
 url="https://gitea.artixlinux.org/nous/artix-dark-theme"
 license=('GPL')
-source=('git+https://gitea.artixlinux.org/nous/artix-dark-theme.git')
+source=('git+https://gitea.artixlinux.org/artix/artix-dark-theme.git')
 sha256sums=('SKIP')
 depends=('artix-backgrounds' 'artix-icons')
 makedepends=('git')
