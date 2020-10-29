@@ -4,7 +4,7 @@
 _repo=documentation
 
 pkgname=artix-docs
-pkgver=20200208
+pkgver=20201029
 pkgrel=1
 arch=('any')
 url="https://gitea.artixlinux.org/artix/documentation"
