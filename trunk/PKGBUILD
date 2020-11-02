@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lm_sensors-s6
-pkgver=20200713
+pkgver=20201102
 pkgrel=1
 pkgdesc="s6 service scripts for lm_sensors"
 arch=('any')
@@ -17,11 +17,11 @@ source=("fancontrol.dependencies"
         "lm_sensors.type"
         "lm_sensors.up")
 sha256sums=('373e0d6ffc0ae8c4bd23d1e933da075023c6ef8ab3fb5176f3b4a1ad2187e68b'
-            '4df748d31c39565ff2efa3130f3cb1b6b902e4104386613fa00b7f3f7b4e0686'
+            '6b2b01066a337c24291165bc404f5671cb80541cf9d51cd9eb5529ed40d25ce6'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '4894163f64222d8d1ecc1999121161e4f5fe90e83363b26b58d10334b08c8376'
+            '9676dfacaf0ac0c2aaea143ef59833f4d4e14becb8a53e3cc08e58c298ea0dc8'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '71dcf3f9aa8495dd162649ab3fc4c00b172ed683b8d9e385de163207c73c8a44')
+            '55dad78f364a600c73e177757b1a01468d2ae1efaafc66246d0ab7277efda088')
 
 _inst_sv(){
     for file in dependencies down run type up; do

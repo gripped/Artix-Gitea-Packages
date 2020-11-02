@@ -1,2 +1,2 @@
 #!/usr/bin/execlineb -P
-exec /usr/bin/fancontrol /etc/fancontrol
+exec fancontrol /etc/fancontrol
