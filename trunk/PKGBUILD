@@ -35,7 +35,6 @@ build() {
   #   -j1 ${SOURCE_DATE_EPOCH:+
   #    SH_NOW="${SOURCE_DATE_EPOCH}000000"
   #    SH_DATE="$(date --utc --date="@$SOURCE_DATE_EPOCH" '+%Y-%m-%d %T')"
-  }
 }
 
 package() {
