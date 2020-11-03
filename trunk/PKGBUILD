@@ -4,6 +4,7 @@
 # Contributor: kfgz <kfgz at interia pl>
 # Contributor: Ionut Biru <ibiru at archlinux dot org>
 
+
 pkgname=lib32-nspr
 pkgver=4.29
 pkgrel=1
