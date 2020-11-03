@@ -1,13 +1,13 @@
 pkgname=pandoc-bin
 pkgver=2.11.0.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
 license=("GPL")
 arch=('x86_64')
 conflicts=('pandoc' 'pandoc-citeproc' 'haskell-pandoc-citeproc-bin')
 provides=('pandoc' 'pandoc-citeproc')
-replaces=('pandoc-static' 'pandoc-lite' 'pandoc-citeproc')
+replaces=('pandoc' 'pandoc-static' 'pandoc-lite' 'pandoc-citeproc')
 depends=()
 optdepends=(
     'texlive-core: for pdf output'
