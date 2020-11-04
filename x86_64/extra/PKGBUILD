@@ -27,7 +27,6 @@ sha256sums=('e76da1f13d5ad5e0179e3fec57543126044339405ef19c397e105e0807bd4e41'
 prepare() {
   mkdir -p build
   cd ${srcdir}/${pkgname}-${pkgver}
-  # fix pam 1.4.x #67372
   patch -Np1 -i ${srcdir}/pam-faillock.diff
 }
 
