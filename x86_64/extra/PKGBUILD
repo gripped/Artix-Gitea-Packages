@@ -27,7 +27,7 @@ sha256sums=('e76da1f13d5ad5e0179e3fec57543126044339405ef19c397e105e0807bd4e41'
 prepare() {
   mkdir -p build
   cd ${srcdir}/${pkgname}-${pkgver}
-patch -d $pkgname-$pkgver -p1 -i ../pam-faillock.patch # Port away from deprecated pam_tally2
+  patch -Np1 -i ${srcdir}/pam-faillock.patch # Port away from deprecated pam_tally2
 }
 
 build() {
