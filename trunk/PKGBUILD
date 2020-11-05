@@ -28,7 +28,7 @@ optdepends=('konsole: embedded terminal'
             'clazy: clazy analyzer plugin')
 conflicts=(kdevelop-qmljs kdevplatform)
 replaces=(kdevelop-qmljs kdevplatform kdevelop-clang-tidy)
-source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz
+source=("https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz"
          kdevelop-gdb10.patch::"https://invent.kde.org/kdevelop/kdevelop/-/commit/8831937f.patch")
 sha256sums=('38adc7d4c4cf2f0fb4191650001e979b5e1b5a3476db28737020baf2fb56f532'
             '14368ecd9e941e8abea21b63b45d269675906d9639fb90dfc710eb9db67fcb8f')
