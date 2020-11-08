@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+if { test -e /dev/virtio-ports/org.qemu.guest_agent.0 }
+fdmove -c 2 1
+exec qemu-ga
