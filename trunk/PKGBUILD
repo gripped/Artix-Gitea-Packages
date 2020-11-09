@@ -18,7 +18,7 @@ source=("git+https://gitlab.gnome.org/GNOME/gobject-introspection.git#commit=$_c
         "git+https://gitlab.gnome.org/GNOME/glib.git?signed#tag=$_glibver")
 sha512sums=('SKIP'
             'SKIP')
-validpgpkeys=('923B7025EE03C1C59F42684CF0942E894B2EAFA0') # Philip Withnall <philip@tecnocode.co.uk>
+# validpgpkeys=('923B7025EE03C1C59F42684CF0942E894B2EAFA0') # Philip Withnall <philip@tecnocode.co.uk>
 
 pkgver() {
   cd $pkgbase
