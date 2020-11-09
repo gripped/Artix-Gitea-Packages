@@ -82,7 +82,7 @@ check() {
 
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
-    "${srcdir}/Python-${pkgver}/python" -m test.regrtest -v -uall -x test_tk -x test_lib2to3 -x test_tools
+    "${srcdir}/Python-${pkgver}/python" -m test.regrtest -v -uall -x test_tk -x test_lib2to3 -x test_tools -x test.test_socket.BasicRDSTest
 }
 
 package_python() {
