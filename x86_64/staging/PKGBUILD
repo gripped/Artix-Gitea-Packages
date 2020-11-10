@@ -2,6 +2,7 @@
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Sebastien Binet <binet@lblbox>
 
+
 pkgname=('python-pip' 'python2-pip')
 pkgver=20.2
 pkgrel=2
