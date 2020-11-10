@@ -1,0 +1,75 @@
+From fee759c93c0eba8886296472d67f02c08bf1765a Mon Sep 17 00:00:00 2001
+From: Nathan Owens <ndowens@artixlinux.org>
+Date: Tue, 10 Nov 2020 15:33:52 -0600
+Subject: [PATCH] Remove systemd
+
+---
+ meson.build | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 00d39c9..458dd1b 100644
+--- a/meson.build
++++ b/meson.build
+@@ -51,7 +51,6 @@ pixman         = dependency('pixman-1')
+ glesv2         = dependency('glesv2')
+ libevdev       = dependency('libevdev')
+ libinput       = dependency('libinput', version: '>=1.6.0')
+-systemd        = dependency('libsystemd', version: '>=239', required: false)
+ elogind        = dependency('libelogind', version: '>=239', required: false)
+ xcb            = dependency('xcb', required: get_option('xwayland'))
+ bash_comp      = dependency('bash-completion', required: false)
+@@ -91,7 +90,6 @@ conf_data = configuration_data()
+ 
+ conf_data.set10('HAVE_XWAYLAND', have_xwayland)
+ conf_data.set10('HAVE_GDK_PIXBUF', gdk_pixbuf.found())
+-conf_data.set10('HAVE_SYSTEMD', systemd.found())
+ conf_data.set10('HAVE_ELOGIND', elogind.found())
+ conf_data.set10('HAVE_TRAY', have_tray)
+ 
+-- 
+2.29.2
+
+diff --git a/meson.build b/meson.build
+index 458dd1b..54a7489 100644
+--- a/meson.build
++++ b/meson.build
+@@ -80,7 +80,7 @@ if get_option('xwayland').enabled() and not wlroots_has_xwayland
+ endif
+ have_xwayland = xcb.found() and wlroots_has_xwayland
+ 
+-tray_deps_found = systemd.found() or elogind.found()
++tray_deps_found = elogind.found()
+ if get_option('tray').enabled() and not tray_deps_found
+ 	error('Building with -Dtray=enabled, but libsystemd and libelogind have not been not found')
+ endif
+@@ -277,13 +277,12 @@ endif
+ summary({
+ 	'xwayland': have_xwayland,
+ 	'gdk-pixbuf': gdk_pixbuf.found(),
+-	'systemd': systemd.found(),
+ 	'elogind': elogind.found(),
+ 	'tray': have_tray,
+ 	'man-pages': scdoc.found(),
+ }, bool_yn: true)
+ 
+-if not systemd.found() and not elogind.found()
++if not elogind.found()
+ 	warning('The sway binary must be setuid when compiled without (e)logind')
+ 	warning('You must do this manually post-install: chmod a+s /path/to/sway')
+ endif
+diff --git a/swaybar/meson.build b/swaybar/meson.build
+index 469145a..cc59f23 100644
+--- a/swaybar/meson.build
++++ b/swaybar/meson.build
+@@ -19,9 +19,7 @@ swaybar_deps = [
+ 	wayland_cursor
+ ]
+ if have_tray
+-	if systemd.found()
+-		swaybar_deps += systemd
+-	elif elogind.found()
++	if elogind.found()
+ 		swaybar_deps += elogind
+ 	endif
+ endif
