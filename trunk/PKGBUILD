@@ -4,7 +4,7 @@
 
 pkgname=avahi
 pkgver=0.8+15+ge8a3dd0
-pkgrel=2
+pkgrel=3
 pkgdesc='Service Discovery for Linux using mDNS/DNS-SD -- compatible with Bonjour'
 url='https://github.com/lathiat/avahi'
 license=(LGPL)
@@ -49,7 +49,7 @@ build() {
     with_dbus_sys=/usr/share/dbus-1/system.d \
     --disable-mono \
     --enable-compat-libdns_sd \
-    --with-distro=archlinux \
+    --with-distro=artixlinux \
     --with-avahi-priv-access-group=network \
     --with-autoipd-user=avahi \
     --with-autoipd-group=avahi \
