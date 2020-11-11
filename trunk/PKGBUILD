@@ -49,7 +49,7 @@ build() {
     with_dbus_sys=/usr/share/dbus-1/system.d \
     --disable-mono \
     --enable-compat-libdns_sd \
-    --with-distro=artixlinux \
+    --with-distro=archlinux \
     --with-avahi-priv-access-group=network \
     --with-autoipd-user=avahi \
     --with-autoipd-group=avahi \
