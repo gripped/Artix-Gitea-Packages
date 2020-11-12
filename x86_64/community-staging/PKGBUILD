@@ -26,7 +26,7 @@ check() {
   cd sh-$pkgver
   export PYTHONPATH="build:${PYTHONPATH}"
   # test_no_fd_leak: AssertionError: 27 != 25
-  pytest test.py --deselect test.py::MiscTests::test_no_fd_leak |::
+  pytest test.py --deselect test.py::MiscTests::test_no_fd_leak ||:
 }
 
 package() {
