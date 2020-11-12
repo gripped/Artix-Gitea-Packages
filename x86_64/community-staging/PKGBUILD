@@ -2,13 +2,12 @@
 # Contributor: Aleksey Filippov <sarum9in@gmail.com>
 # Contributor: Victor Aurélio Santos <victoraur.santos@gmail.com>
 
-
 pkgbase='grpc'
 pkgname=('grpc' 'python-grpcio' 'php-grpc' 'grpc-cli')
 pkgver=1.33.2
 _gtestver=c9ccac7cb7345901884aabf5d1a786cfa6e2f397
 _abseilcppver=20200225.2
-pkgrel=2
+pkgrel=3
 pkgdesc="High performance, open source, general RPC framework that puts mobile and HTTP/2 first."
 arch=('x86_64')
 url='https://grpc.io'
@@ -22,7 +21,7 @@ source=("https://github.com/grpc/grpc/archive/v$pkgver/$pkgbase-$pkgver.tar.gz"
 sha256sums=('2060769f2d4b0d3535ba594b2ab614d7f68a492f786ab94b4318788d45e3278a'
             '443d383db648ebb8e391382c0ab63263b7091d03197f304390baac10f178a468'
             'f41868f7a938605c92936230081175d1eae87f6ea2c248f41077c8f88316f111'
-            'SKIP'
+            'ad771906e2f8e1e04bd9bab4f0292e14c208ca12a87817d058f6def29338ea8f'
             'a105e796854fb726908a0b6f5501d50478f52afad6ed3e8aeffe5d30b855aead')
 
 prepare() {
