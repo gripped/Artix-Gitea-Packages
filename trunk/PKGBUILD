@@ -46,8 +46,8 @@ prepare() {
   sed -ri 's,^(\s*plugins\s*=).*,\1 /var/lib/grafana/plugins,' conf/defaults.ini
   sed -ri 's,^(\s*provisioning\s*=).*,\1 /var/lib/grafana/conf/provisioning,' conf/defaults.ini
   sed -ri 's,^(\s*logs\s*=).*,\1 /var/log/grafana,' conf/defaults.ini
-  # Create dir or build fails
-  mkdir -p npm/lib
+  # Build fails without creating dir
+  mkdir -p "$srcdir"/npm/lib
 }
 
 build() {

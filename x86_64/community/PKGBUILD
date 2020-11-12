@@ -3,7 +3,7 @@
 # Contributor: Gilles Hamel <hamelg at laposte dot net>
 
 pkgname=grafana
-pkgver=7.3.1
+pkgver=7.3.2
 pkgrel=1
 pkgdesc='Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB'
 url='https://grafana.com/'
@@ -46,6 +46,8 @@ prepare() {
   sed -ri 's,^(\s*plugins\s*=).*,\1 /var/lib/grafana/plugins,' conf/defaults.ini
   sed -ri 's,^(\s*provisioning\s*=).*,\1 /var/lib/grafana/conf/provisioning,' conf/defaults.ini
   sed -ri 's,^(\s*logs\s*=).*,\1 /var/log/grafana,' conf/defaults.ini
+  # Build fails without creating dir
+  mkdir -p "$srcdir"/npm/lib
 }
 
 build() {
