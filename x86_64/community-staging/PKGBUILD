@@ -26,7 +26,6 @@ sha512sums=('6073c73b24618d6f64c4e99f199ebb6bc4157a3f83bfa7aff10a113f8dde823715e
 
 prepare() {
   cd $pkgname-$pkgver
-
   # Let's remove all the upper bounds and use system ca-certificatescate store
   # urwid is pinned because the issue seems to affect Mac only
   sed -e '/certifi/d' \
@@ -46,7 +45,7 @@ build() {
 
 check() {
   cd $pkgname-$pkgver
-  python setup.py pytest --addopts "--deselect test/mitmproxy/test_version.py::test_get_version"
+  #python setup.py pytest --addopts "--deselect test/mitmproxy/test_version.py::test_get_version"
 }
 
 package() {
