@@ -5,7 +5,7 @@
 
 pkgname=postfix
 pkgver=3.5.8
-pkgrel=1
+pkgrel=2
 url="http://www.postfix.org/"
 pkgdesc='Fast, easy to administer, secure mail server'
 license=('EPL')
@@ -21,7 +21,8 @@ backup=('etc/postfix/'{access,aliases,canonical,generic,header_checks,main.cf,ma
 source=("http://ftp.porcupine.org/mirrors/postfix-release/official/${pkgname}-${pkgver}.tar.gz"
         "${pkgname}-3.5.8-main_defaults.patch"
         "${pkgname}.sysusers"
-        "${pkgname}.tmpfiles")
+        "${pkgname}.tmpfiles"
+)
 sha512sums=('0abb07d99e343b76e6a26b4a090af9d592f4dfd03c8c737cc72bfb0f4267dafcbb0cb0aa7b6255f8b834c9289d89a5c47b167be3758239309937cb77e0d9464b'
             '7b2785aa8120ca3ff91b405baf675e9e11f8d58b18a9b842672e7ae30932febddac10556a70823d8746fcb160bceb4dbabdee45cf46b02fc0127057656fb85c4'
             'a7f15970f613ae7b98ce1b84ca0a6034ce3cc7b2b9ce7160dad9731f740fb762f4a54f44acceb5f06f8744fa9e952b088086af8a69da388a600b742a3cda37f2'
