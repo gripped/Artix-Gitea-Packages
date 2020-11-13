@@ -19,7 +19,7 @@ sha256sums=('SKIP')
 build() {
     cd ${pkgname}
 
-    export CGO_LDFLAGS="${LDFLAGS}"
+#    export CGO_LDFLAGS="${LDFLAGS}"
     export GOFLAGS="-buildmode=pie"
     make all
 }
