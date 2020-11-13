@@ -42,10 +42,6 @@ package() {
   cd $pkgname-$pkgver
   python setup.py install --root "$pkgdir" --optimize=1
 
-#  install -Dm644 files/gentoo-initd \
-#    "$pkgdir"/etc/init.d/$pkgname
-#  install -Dm644 files/gentoo-confd \
-#    "$pkgdir"/etc/conf.d/$pkgname
   install -Dm644 files/fail2ban-tmpfiles.conf \
     "$pkgdir"/usr/lib/tmpfiles.d/$pkgname.conf
   install -Dm644 files/fail2ban-logrotate \
