@@ -66,7 +66,7 @@ check() {
     --exclude='test_create_stack_lambda_and_dynamodb' \
     --exclude='test_delete_subscription_filter_errors' \
     --exclude='test_put_subscription_filter_update' \
-    --exclude='test_put_subscription_filter_with_lambda'
+    --exclude='test_put_subscription_filter_with_lambda' ||:
 }
 
 package() {
