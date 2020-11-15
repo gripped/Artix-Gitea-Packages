@@ -2,8 +2,8 @@
 
 pkgbase="cups"
 pkgname=('libcups' 'cups')
-_commit=59137acc14cffad7fa1c076ea09f6d555aac203d # master 2020-11-14
-pkgver=2.3.3+105+g59137acc1
+_commit=a72b0140ee9ad72f7ffc1f46fbe962bde159cbb8 # master 2020-11-15
+pkgver=2.3.3+106+ga72b0140e
 pkgrel=1
 arch=('x86_64')
 license=('Apache' 'custom')
