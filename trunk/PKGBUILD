@@ -1,0 +1,18 @@
+# Maintainer: ndowens
+
+pkgbase=shellcheck-bin
+pkgname=('shellcheck')
+pkgver=0.7.1
+pkgrel=1
+url='https://shellcheck.net'
+pkgdesc='Shell script analysis tool (binary release)'
+license=(AGPL3)
+arch=(x86_64)
+conflicts=('shellcheck')
+source_x86_64=(https://github.com/koalaman/"${pkgname%-bin}"/releases/download/v"$pkgver"/"${pkgname%-bin}"-v"${pkgver}".linux.x86_64.tar.xz)
+sha512sums_x86_64=('beca3d7819a6bdcfbd044576df4fc284053b48f468b2f03428fe66f4ceb2c05d9b5411357fa15003cb0311406c255084cf7283a3b8fce644c340c2f6aa910b9f')
+
+
+package_shellcheck() {
+    install -Dm755 "${pkgname%-bin}-v${pkgver}/${pkgname%-bin}" -t "${pkgdir}/usr/bin" 
+}
