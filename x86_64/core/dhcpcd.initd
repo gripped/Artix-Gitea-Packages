@@ -1,18 +1,17 @@
 #!/usr/bin/openrc-run
-
-supervisor=supervise-daemon
-
-name="DHCP Client Daemon"
-description="DHCP Client Daemon"
+# Copyright 2007-2020 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
 
 command=/usr/bin/dhcpcd
-command_args_foreground="-B"
-command_args="-q ${command_args:-}"
+pidfile=/run/dhcpcd/pid
+command_args=-q
+name="DHCP Client Daemon"
 
-depend() {
-    provide net
-    need localmount
-    use logger network
-    after bootmisc modules
-    before dns
+depend()
+{
+	provide net
+	need localmount
+	use logger network
+	after bootmisc modules
+	before dns
 }
