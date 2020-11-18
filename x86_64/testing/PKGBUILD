@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dhcpcd-openrc
-pkgver=20201028
+pkgver=20201118
 pkgrel=1
 pkgdesc="OpenRC dhcpcd init script"
 arch=('any')
