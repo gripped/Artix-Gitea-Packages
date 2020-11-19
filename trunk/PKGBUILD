@@ -10,7 +10,7 @@ url="https://rclone.org/"
 license=('MIT')
 depends=('glibc')
 optdepends=('fuse2: for rclone mount')
-makedepends=('python' 'pandoc-bin' 'go' 'git')
+makedepends=('python' 'pandoc' 'go' 'git')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/rclone/rclone/archive/v$pkgver.tar.gz")
 sha512sums=('17d0ccf1165bc9d36e2aae5729dded2ccc6ecddd8a9902f1ca6b2bb26628afa99f58da5521ec5a1ebb27e8ea04cb736f88279603eeaeb0740cfe633cbe9de083')
 
