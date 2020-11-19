@@ -68,7 +68,7 @@ build() {
 
   #arch-meson ${pkgbase}-$pkgver build \
   arch-meson xserver build \
-    -D os_vendor="Artix Linux" \
+    -D os_vendor="Artix Linux"  \
     -D ipv6=true \
     -D xvfb=true \
     -D xnest=true \
