@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=5.4.74
+pkgver=5.4.78
 pkgrel=1
 pkgdesc='LTS Linux'
 url="https://www.kernel.org/"
@@ -25,10 +25,10 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('ec04f4ade1146a3b458a1ac3dc2059188cbb62cd51d2e66fcd8397fcec153ab7'
+sha256sums=('46886a21f44c80d9b5e4427d48cb5f23508120fe0eabee6efad9c9c4819c1a7d'
             'SKIP'
-            '252ba983363d0df3da257bf81ac2a8548191e2b291b11539a067ffb19e18a1d4'
-            '239c842020931f10c7a01b857bae9e24ed75661293555de6a9b0033de8942628'
+            '3602c2367bad5015cb45e92f4491aeea7a7c8fe80ff3c3529a6412bf1e9e844f'
+            'b439f57b84bc98730c0265695abb92385ee4dcd35a5c00d4cb3d3155c75fb491'
             '4fd74bb2a7101d700fba91806141339d8c9e46a14f8fc1fe276cfb68f1eec0f5'
             'b7c814c8183e4645947a6dcc3cbf80431de8a8fd4e895b780f9a5fd92f82cb8e')
 
