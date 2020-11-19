@@ -3,7 +3,6 @@
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 # Contributor: Alexander Fehr <pizzapunk gmail com>
 
-
 pkgname=python-pylint
 pkgver=2.6.0
 pkgrel=3
