@@ -1,6 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
+
 pkgbase=qt5-base
 pkgname=(qt5-base qt5-xcb-private-headers)
 _qtver=5.15.2
