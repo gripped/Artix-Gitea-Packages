@@ -26,7 +26,8 @@ prepare() {
    cd $pkgbase
 
     # fix kwin
-     git cherry-pick -n fc2b0b20ad4271b0c6f258451a82311b792b7a57}
+    git cherry-pick -n fc2b0b20ad4271b0c6f258451a82311b792b7a57
+}
 
 build() {
   arch-meson $pkgbase build \
@@ -107,7 +108,7 @@ package_pipewire-pulse() {
   mv pulse/* "$pkgdir"
 }
 
-package_pipewire-alsa() {
+ package_pipewire-alsa() {
   arch=(any)
   pkgdesc="ALSA Configuration for PipeWire"
   depends=(libpipewire-$_ver.so)
