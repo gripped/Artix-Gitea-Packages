@@ -5,7 +5,7 @@ pkgbase=pipewire
 pkgname=(pipewire pipewire-docs pipewire-jack pipewire-pulse pipewire-alsa
          gst-plugin-pipewire)
 pkgver=0.3.16
-pkgrel=2
+pkgrel=4
 pkgdesc="Server and user space API to deal with multimedia pipelines"
 url="https://pipewire.org"
 license=(LGPL2.1)
@@ -21,6 +21,12 @@ pkgver() {
   cd $pkgbase
   git describe --tags | sed 's/-/+/g'
 }
+
+prepare() {
+   cd $pkgbase
+
+    # fix kwin
+     git cherry-pick -n fc2b0b20ad4271b0c6f258451a82311b792b7a57}
 
 build() {
   arch-meson $pkgbase build \
@@ -55,7 +61,8 @@ package_pipewire() {
   optdepends=('pipewire-docs: Documentation'
               'pipewire-jack: JACK support'
               'pipewire-pulse: PulseAudio support')
-  provides=(libpipewire-$_ver.so)
+  provides=(pulseaudio pulseaudio-bluetooth)
+  conflicts=(pulseaudio)
   backup=(etc/pipewire/pipewire.conf)
 
   DESTDIR="$pkgdir" meson install -C build
