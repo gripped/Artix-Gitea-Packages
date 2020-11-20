@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=darkhttpd-s6
-pkgver=20201017
+pkgver=20201120
 pkgrel=1
 pkgdesc="s6 service scripts for darkhttpd"
 arch=('any')
@@ -16,7 +16,7 @@ backup=('etc/s6/sv/darkhttpd-log/conf'
 source=("darkhttpd-srv."{type,run,producer-for,conf}
         "darkhttpd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '92b6a9226241543a6add7a9ad2b6328a1ac6f60fcbc5a6dc9b9e1d106023de568bf5916069650db679c37d68ca1c5871573d7a8ec0a6063914240a18bd208e33'
+        '1332b90ad5d958de5f348e9bf42ddb19269016a6ef6c498f98230c482e50939076e7175fa2a1178f405a818d1016cc349b3ad3cd6560e74215fd9118349b9eb1'
         '83861210315b61ced2751b2d458474e26bf3e4668509d286b7c2eb0d66f80985985f392a2f75a1dfb9102c06ea06411b5d6d691f861629655098330d20c2b5f6'
         'dfecf7d2ee904af22edb885b9a241fedfcc5bf19cc1df42a27644f5fa2fd6fee60a0720462bdf30088890ba89ae23c02761a3a1a50b33773af30a45204cd7bf1'
         'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
