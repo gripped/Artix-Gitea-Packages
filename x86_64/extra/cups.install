@@ -17,4 +17,3 @@ post_upgrade() {
     echo "cups group - run \"chgrp -R cups /etc/cups\"." 
   fi
 }
-
