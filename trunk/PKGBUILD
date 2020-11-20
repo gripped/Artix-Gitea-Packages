@@ -1,5 +1,6 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
+
 pkgname=falkon
 pkgver=3.1.0
 pkgrel=14
