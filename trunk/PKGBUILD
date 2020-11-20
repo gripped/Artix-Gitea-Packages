@@ -10,7 +10,7 @@ url="https://pipewire.org"
 license=(LGPL2.1)
 arch=(x86_64)
 makedepends=(git meson doxygen graphviz xmltoman valgrind jack2 libpulse
-             alsa-lib gstreamer gst-plugins-base sbc rtkit vulkan-icd-loader
+             alsa-lib gst-plugins-base sbc rtkit vulkan-icd-loader
              dbus libsndfile bluez-libs vulkan-headers)
 _commit=16872549e3a2433f49f27c1875dfd432377ca0be  # tags/0.3.15
 source=("git+https://github.com/PipeWire/pipewire#commit=$_commit")
