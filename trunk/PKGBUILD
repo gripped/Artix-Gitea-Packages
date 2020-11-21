@@ -3,7 +3,7 @@
 pkgbase=python-hyperlink
 pkgname=('python-hyperlink' 'python2-hyperlink')
 pkgver=20.0.1
-pkgrel=3
+pkgrel=1.1
 pkgdesc='A featureful, correct URL for Python'
 arch=('any')
 license=('BSD')
