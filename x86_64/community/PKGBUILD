@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=tor-s6
-pkgver=20201018
+pkgver=20201122
 pkgrel=1
 pkgdesc="s6 service scripts for tor"
 arch=('any')
@@ -15,7 +15,7 @@ backup=('etc/s6/sv/tor-log/conf')
 source=("tor-srv."{type,run,producer-for}
         "tor-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '59d6870637ee2a32ca3913b2a706f9bb12c902d227212efe1c1c980a6576b6da3eaa95d47600de3c040bad13eaf3a83a841af485b377abc6a5f3bf132322e72a'
+        'af30145d899bab81a45bc02e5bee4786da1748f006393ae8e54ea38f4e4b1295f9fc5bec80fd7291fad8c58570af2aa81b898c2f95c3c4198603ec6358db6f29'
         '5c197d268d257b7553ceeaa3ec59063ecace89e1c0c650be5b5cb43793e934c64843ecc3a4e2a7a1ca71a88a62db5bdb5f43c51d8d395fbb0d49712549167498'
         'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
         'c184b49ba3145fb6cc503a649bad47ae35a8c851e4049b087d9290ff645046d38ee8df725fd18e251cd15e07fe3a73b7af3d0631cb44f27e0e1c45a5f1cce001'
