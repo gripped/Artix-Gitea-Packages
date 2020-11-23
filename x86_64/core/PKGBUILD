@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20201026
+pkgver=20201123
 pkgrel=1
-pkgdesc='A collection of s6 oneshots and daemons scripts for startup/shutdown.'
+pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
 provides=('init-udev' 'eudev-s6')
@@ -20,7 +20,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/udevd-log/conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=f28aab598b984c8417d122eaedc5ab51c9c58782
+_commit=13001f8f9c9dc3d2b846ab53319ad934e3e80bc9
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
