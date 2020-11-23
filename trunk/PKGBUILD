@@ -2,7 +2,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=freeradius-openrc
-pkgver=20201120
+pkgver=20201123
 pkgrel=1
 pkgdesc="OpenRC freeradius init script"
 arch=('any')
@@ -15,7 +15,7 @@ backup=('etc/conf.d/freeradiusd')
 source=("freeradius.initd"
         "freeradius.confd")
 sha256sums=('156e2e4ba8f92a903456a61bfcf4be765e7e2264e947399a9fd886f099f189af'
-            '5090c25d84dc1f6bb8176d421c2acc600e9e42bf28707cc96607ca9429953180')
+            '5a0c3bccf341830718648f662e33a3ce43d6c7cd0e6fc11b0b64628d765cfdad')
 
 package() {
 	install -Dm755 "${srcdir}"/freeradius.initd "${pkgdir}"/etc/init.d/freeradiusd
