@@ -13,7 +13,7 @@ license=(GPL BSD)
 depends=('gnutls' 'nss' 'openssl')
 provides=('libpkcs11-helper.so')
 source=("https://github.com/OpenSC/${pkgname}/releases/download/${pkgname}-${pkgver%.0}/${pkgname}-${pkgver}.tar.bz2")
-sha256sums=('e886ec3ad17667a3694b11a71317c584839562f74b29c609d54c002973b387be')
+sha256sums=('653730f0c561bbf5941754c0783976113589b2dc64a0661c908dc878bfa4e58b')
 
 build() {
   cd pkcs11-helper-$pkgver
