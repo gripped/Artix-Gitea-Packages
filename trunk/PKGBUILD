@@ -1,0 +1,22 @@
+# Maintainer: nous@artixlinux.org
+
+pkgname=spamassassin-openrc
+pkgver=20201124
+pkgrel=1
+pkgdesc="OpenRC spamassassin init script"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'spamassassin')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/spamassassin')
+source=("spamassassin.confd"
+        "spamassassin.initd")
+sha256sums=('94214cef86c5eb6664e5b0af1e31763568caa168941d29a683ce8073510e0b07'
+            'e5f027dd3fd8af6c665cf7b531bda84b5e9da9493491e08728bf82e895982e10')
+
+package() {
+    install -Dm755 "$srcdir/spamassassin.initd" "$pkgdir/etc/init.d/spamassassin"
+    install -Dm644 "$srcdir/spamassassin.confd" "$pkgdir/etc/conf.d/spamassassin"
+}
