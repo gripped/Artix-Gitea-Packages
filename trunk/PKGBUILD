@@ -2,12 +2,12 @@
 
 pkgname=spamassassin-openrc
 pkgver=20201124
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC spamassassin init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-groups=('openrc-galaxy')
+groups=('openrc-world')
 depends=('openrc' 'spamassassin')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/spamassassin')
