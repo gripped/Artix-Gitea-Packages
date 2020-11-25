@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
-pkgver=20201123
+pkgver=20201125
 pkgrel=1
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
@@ -16,8 +16,10 @@ optdepends=('qt5ct')
 makedepends=('git')
 groups=('artix-branding')
 #_commit=7e34832631eb1b2653628e9799e58207bac6f021
-_branch='master'
-source=("git+$url.git#branch=${_branch}")
+#source=("git+$url.git#commit=${_commit}")
+#_branch='master'
+#source=("git+$url.git#branch=${_branch}")
+source=("git+$url.git")
 sha256sums=('SKIP')
 
 #pkgver() {
