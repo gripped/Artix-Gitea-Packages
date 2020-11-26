@@ -1,0 +1,11 @@
+post_upgrade() {
+  if [[ $(vercmp 0.15.5-1 $2) < 1 ]]; then
+    echo "  artools.conf has been split up!"
+    echo "  Please merge changes in obsolete"
+    echo "  /etc/artools/artools.conf and possibly existing"
+    echo "  ~/.config/artools/artools.conf into"
+    echo "  /etc/artools/artools-{base,pkg,iso}.conf"
+    echo "  ~/.config/artools/artools-{base,pkg,iso}.conf"
+    echo "  accordingly."
+  fi
+}
