@@ -11,7 +11,7 @@ arch=('x86_64')
 url="https://github.com/linuxmint/${pkgname}"
 license=('GPL')
 depends=('cinnamon-desktop' 'dconf' 'gvfs' 'exempi' 'libexif' 'libnotify' 'libxml2'
-         'python' 'xapps')
+         'python' 'xapp')
 optdepends=('cinnamon-translations: i18n'
             'ffmpegthumbnailer: support for video thumbnails')
 makedepends=('meson' 'samurai' 'gobject-introspection' 'intltool')
