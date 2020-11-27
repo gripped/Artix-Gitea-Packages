@@ -71,7 +71,7 @@ build() {
     meson --prefix=/usr \
                 --sysconfdir=/etc \
                 --libexecdir=/usr/lib/cinnamon \
-                --localstatedir=/var
+                --localstatedir=/var \
                 ..
 
     samu
