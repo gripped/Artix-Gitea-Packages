@@ -3,14 +3,6 @@ post_install() {
     if [[ "$?" == "0" ]]; then
         echo "cryptsetup" >> /etc/s6/sv/mount-filesystems/dependencies
     fi
-    dbus=$(pacman -Qi dbus-s6 2> /dev/null)
-    if [[ "$?" == "0" ]]; then
-        echo "dbus" >> /etc/s6/sv/misc/contents
-    fi
-    elogind=$(pacman -Qi elogind-s6 2> /dev/null)
-    if [[ "$?" == "0" ]]; then
-        echo "elogind" >> /etc/s6/sv/misc/contents
-    fi
     lvm2=$(pacman -Qi lvm2-s6 2> /dev/null)
     if [[ "$?" == "0" ]]; then
         echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
