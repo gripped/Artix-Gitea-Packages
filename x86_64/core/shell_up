@@ -68,8 +68,6 @@ do_unlock_device() {
 do_unlock() {
 	local name=$1 device=$2 password=$3 options=$4
 
-	printf "${C_MAIN}Unlocking $1${C_CLEAR}\n"
-
 	if [[ ${options:0:2} =~ -. ]]; then
 		do_unlock_device "$name" "$device" "$password" "$options"
 		return $?
@@ -93,4 +91,4 @@ read_crypttab() {
 }
 
 read_crypttab
-vgchange --sysinit -a y >/dev/null
+vgchange --sysinit -a y &> /dev/null
