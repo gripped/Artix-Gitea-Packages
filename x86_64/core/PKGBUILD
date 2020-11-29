@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20201123
-pkgrel=1
+pkgver=20201129
+pkgrel=2
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
@@ -9,8 +9,6 @@ provides=('init-udev' 'eudev-s6')
 depends=('execline' 'pam')
 replaces=('eudev-s6')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
-            'dbus-s6: dbus boot script support'
-            'elogind-s6: elogind boot script support'
             'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
         'etc/s6/s6.conf'
@@ -20,7 +18,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/udevd-log/conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=13001f8f9c9dc3d2b846ab53319ad934e3e80bc9
+_commit=854172c4942f66503535ad5f81d064978b9ef0d7
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -67,6 +65,7 @@ package() {
     _inst_sv 'boot'
     _inst_sv 'cleanup'
     _inst_sv 'console-setup'
+    _inst_sv 'default'
     _inst_sv 'dmesg'
     _inst_sv 'getty'
     _inst_sv 'hostname'
