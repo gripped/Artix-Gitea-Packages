@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20201128
+pkgver=20201130
 pkgrel=1
 pkgdesc="s6 service scripts for cryptsetup"
 arch=('any')
@@ -11,7 +11,7 @@ conflicts=('init-cryptsetup')
 depends=('cryptsetup' 'lvm2' 'eudev-s6' 's6')
 install=cryptsetup.install
 source=("dependencies" "shell_up" "type" "up")
-sha256sums=('a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
+sha256sums=('cf198688579ee8487ea71994dbbbd0c295b58ec92290918e5e612853e5373f99'
             'e6e0007c573d7d4a1478c59caf079b6a00d4eb6b737360bc2baa4c4ff5d7f091'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             'e4a012a046dc5fd59b495706f4eb91349b744eb7ea99e771c752fa2ffb5d36a1')
