@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=alsa-utils-s6
-pkgver=20200907
+pkgver=20201130
 pkgrel=1
 pkgdesc="s6 service scripts for alsa-utils"
 arch=('any')
@@ -10,13 +10,17 @@ provides=('alsa-utils-runscripts')
 conflicts=('alsa-utils-runscripts')
 depends=('alsa-utils' 's6')
 install=alsa.install
-source=("alsa.down" "alsa.type" "alsa.up")
-sha256sums=('d4245454439cf9ef863ca02c7358eea8ee1b713187eec894f13c6d6d8bdd5b7b'
+source=("alsa.dependencies"
+        "alsa.down"
+        "alsa.type"
+        "alsa.up")
+sha256sums=('953bc981527e6a08efdd7de8c5db0916ca58c52765b6e4ae599290e0486607a8'
+            'd4245454439cf9ef863ca02c7358eea8ee1b713187eec894f13c6d6d8bdd5b7b'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '539504c87967783712c6789f628f9732222304c9e741f8b1499de3f1e8bddb28')
 
 _inst_sv(){
-    for file in down type up; do
+    for file in dependencies down type up; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
