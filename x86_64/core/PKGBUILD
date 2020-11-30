@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcpcd-s6
-pkgver=20201017
+pkgver=20201130
 pkgrel=1
 pkgdesc="s6 service scripts for dhcpcd"
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             'cad66f7d0124437f9038f3191ed73c43c6e9b6509a55b7e9104acc6cf6f93188'
             '357656f605fbc5440603422ff07f0fc4b373143fb313cd7dc3f022ee098135f9'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'a3b24db57bba15f8cee6d540099647d90b9dfd683cfc9a6c9431dc3f8e0a0f85'
+            '3809f3ba1f3db4bd0eafffd50b0349387b9972672bb3c6e3a152e90952431d12'
             'c2ecc91f84de6ae3d234fb0dcdbcf47d6e4fd1e6495ceec252710109168064ad'
             '450a202a1738e84478accb61f988b34d9b561ef3be7f426553a6ca83a4edc1d1'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
