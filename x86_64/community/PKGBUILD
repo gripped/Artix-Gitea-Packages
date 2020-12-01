@@ -3,23 +3,25 @@
 
 pkgname=rng-tools
 pkgver=6.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Random number generator related utilities"
 arch=('i686' 'x86_64')
 url="https://github.com/nhorman/rng-tools"
 license=('GPL')
 depends=('curl' 'libxml2' 'sysfsutils' 'jitterentropy' 'libp11' 'jansson' 'rtl-sdr')
+optdepends=('opensc: PKCS11 entropy engine')
 source=(https://github.com/nhorman/rng-tools/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('2e462821aaa7d6dc24646aa0d2239d97cb8b07b3e60715159a9edcaa9189f8ef')
 
 prepare() {
-    cd "$srcdir"/$pkgname-$pkgver
-    mv README{.md,}
+	cd "$srcdir"/$pkgname-$pkgver
+	mv README{.md,}
 
-    libtoolize --force
-    aclocal
-    autoheader
-    automake --force-missing --add-missing
-    autoconf
+	libtoolize --force
+	aclocal
+	autoheader
+	automake --force-missing --add-missing
+	autoconf
 }
 
 build() {
@@ -32,5 +34,3 @@ package() {
 	cd "$srcdir"/$pkgname-$pkgver
 	make DESTDIR="$pkgdir" install
 }
-
-sha256sums=('2e462821aaa7d6dc24646aa0d2239d97cb8b07b3e60715159a9edcaa9189f8ef')
