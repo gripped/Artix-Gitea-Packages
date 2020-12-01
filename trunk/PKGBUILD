@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=ufw-s6
-pkgver=20200915
+pkgver=20201130
 pkgrel=1
 pkgdesc="s6 service scripts for ufw"
 arch=('any')
@@ -10,14 +10,15 @@ provides=('ufw-runscripts')
 conflicts=('ufw-runscripts')
 depends=('ufw' 's6')
 install=ufw.install
-source=("ufw."{conf,type,up,down})
-sha256sums=('7c7a56cd561f5c55750535381e0e382456dcc6f3450415297e8abdb817a4db17'
+source=("ufw."{conf,dependencies,down,type,up})
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '953bc981527e6a08efdd7de8c5db0916ca58c52765b6e4ae599290e0486607a8'
+            'f15edf4109ba28846a4ea8812fbd4431ccea1527b042f7dc652af2658cdd40d9'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '3fab66e3586c1d69a0737def3ce7976da51e47c93d2890774e56017030813a2e'
-            'f15edf4109ba28846a4ea8812fbd4431ccea1527b042f7dc652af2658cdd40d9')
+            '3fab66e3586c1d69a0737def3ce7976da51e47c93d2890774e56017030813a2e')
 
 _inst_sv(){
-    for file in up down type conf ; do
+    for file in conf dependencies down type up; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
