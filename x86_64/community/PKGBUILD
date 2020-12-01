@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=backlight-s6
-pkgver=20201017
+pkgver=20201130
 pkgrel=1
 pkgdesc="Restore the screen brightness at system startup"
 arch=('any')
@@ -10,13 +10,17 @@ provides=('backlight-runscripts')
 conflicts=('backlight-runscripts')
 depends=('s6')
 install=backlight.install
-source=("backlight.down" "backlight.type" "backlight.up")
-sha256sums=('840d3d4114f1945964c3a70321035c272df51d89992f2bf65e8a563456df8ae4'
+source=("backlight.dependencies"
+        "backlight.down"
+        "backlight.type"
+        "backlight.up")
+sha256sums=('953bc981527e6a08efdd7de8c5db0916ca58c52765b6e4ae599290e0486607a8'
+            '840d3d4114f1945964c3a70321035c272df51d89992f2bf65e8a563456df8ae4'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             'f2ec5f6623dbf7e7457ac4d5521bb8ee9b54fb448b0e7b653d1f5fa9269c05e7')
 
 _inst_sv(){
-    for file in down type up; do
+    for file in dependencies down type up; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
