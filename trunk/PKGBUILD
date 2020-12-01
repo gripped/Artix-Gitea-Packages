@@ -5,9 +5,9 @@ pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-xwayland' 'xorg-server-common' 'xorg-server-devel')
 
-_commit=5c400cae1f9817045378966effa6bca91e45aead # server-1.20-branch 2020-11-09
+_commit=bc111a2e67e16d4e6d4f3196ab86c22c1e278c45 # server-1.20-branch 2020-12-01 = 1.20.10
 
-pkgver=1.20.9+21+g5c400cae1
+pkgver=1.20.10
 pkgrel=1
 arch=('x86_64')
 license=('custom')
@@ -40,7 +40,7 @@ sha256sums=('SKIP'
 
 pkgver() {
   cd xserver
-  git describe --tags | sed 's/^xorg-server-//;s/_/./g;s/-/+/g'
+  git describe --tags | sed 's/^xorg.server.//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {
