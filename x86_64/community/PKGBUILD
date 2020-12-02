@@ -3,7 +3,7 @@
 pkgbase=python-pluggy
 pkgname=(python-pluggy python2-pluggy)
 pkgver=0.13.1
-pkgrel=2
+pkgrel=4
 pkgdesc="Plugin and hook calling mechanisms for python"
 arch=('any')
 url="https://github.com/pytest-dev/pluggy"
@@ -26,6 +26,14 @@ build() {
 
   cd "$srcdir"/pluggy-$pkgver-py2
   python2 setup.py build
+}
+
+check() {
+  cd "$srcdir"/pluggy-$pkgver
+  python setup.py pytest
+
+  cd "$srcdir"/pluggy-$pkgver-py2
+  python2 setup.py pytest
 }
 
 package_python-pluggy() {
