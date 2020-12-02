@@ -4,7 +4,7 @@
 
 pkgname=('python-jinja' 'python2-jinja')
 pkgver=2.11.2
-pkgrel=2
+pkgrel=4
 pkgdesc="A simple pythonic template language written in Python"
 arch=('any')
 url="https://palletsprojects.com/p/jinja/"
@@ -24,6 +24,7 @@ check() {
   cd Jinja2-$pkgver
   export PYTHONPATH=build/lib:$PYTHONPATH
   py.test
+  py.test2
 }
 
 package_python-jinja() {
