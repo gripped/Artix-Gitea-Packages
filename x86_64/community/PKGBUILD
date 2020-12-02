@@ -6,7 +6,7 @@
 
 pkgname=gpsd
 pkgver=3.21
-pkgrel=1
+pkgrel=3
 pkgdesc="GPS daemon and library to support USB/serial GPS devices"
 arch=('x86_64')
 url="http://catb.org/gpsd/"
@@ -34,7 +34,7 @@ build() {
   export LINKFLAGS="${LDFLAGS}"
   _pythonpath=`python -c "from sysconfig import get_path; print(get_path('platlib'))"`
   scons prefix=/usr \
-        systemd=yes \
+        systemd=no \
         gpsd_group=uucp \
         python_libdir=$_pythonpath \
         sbindir=/usr/bin \
