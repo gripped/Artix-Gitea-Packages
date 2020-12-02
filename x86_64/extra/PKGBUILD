@@ -6,7 +6,7 @@
 
 pkgname=subversion
 pkgver=1.14.0
-pkgrel=2
+pkgrel=4
 pkgdesc="A Modern Concurrent Version Control System"
 arch=('x86_64')
 url="https://subversion.apache.org/"
@@ -22,7 +22,7 @@ optdepends=('libgnome-keyring: for GNOME Keyring for auth credentials'
             'ruby: for some hook scripts')
 checkdepends=('ruby-test-unit')
 provides=('svn')
-backup=('etc/xinetd.d/svn' 'etc/conf.d/svnserve')
+backup=('etc/xinetd.d/svn')
 options=('!makeflags' '!emptydirs')
 source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2
         svn
@@ -42,9 +42,10 @@ validpgpkeys=('19BBCAEF7B19B280A0E2175E62D48FAD16A0DE01'
               'A844790FB5743606EE95920776D788E1ED1A599C'
               '7B8CA7F6451AD89C8ADC077B376A3CFD110B1C95'
               '056F8016D9B87B1BDE41746799EC741B57921ACC'
-              '3F8E467CB3366E3013E1120D583F00ADF981C39F')
+              '3F8E467CB3366E3013E1120D583F00ADF981C39F'
+              '91BFBF4D6956BD5DF7B72D23DFE691AE331BA3DB')
 # Ben Reser / Stefan Sperling / Branko Čibej / Evgeny Kotkov / Bert Huijben / Philip Martin /
-# Stefan Fuhrmann / Stefan Hett (CODE SIGNING KEY) /Nathan Hartman (CODE SIGNING KEY)  / James McCoy
+# Stefan Fuhrmann / Stefan Hett (CODE SIGNING KEY) /Nathan Hartman (CODE SIGNING KEY) / James McCoy
 
 prepare() {
    cd ${pkgname}-${pkgver}
@@ -65,14 +66,14 @@ build() {
                --disable-static
 
    make LT_LDFLAGS="-L$Fdestdir/usr/lib"
-   make swig_pydir=/usr/lib/python3.8/site-packages/libsvn \
-     swig_pydir_extra=/usr/lib/python3.8/site-packages/svn swig-py swig-pl javahl swig-rb
+   make swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
+     swig_pydir_extra=/usr/lib/python3.9/site-packages/svn swig-py swig-pl javahl swig-rb
 }
 
 check() {
    cd ${pkgname}-${pkgver}
    export LANG=C LC_ALL=C
-   make check check-swig-pl check-swig-py check-swig-rb CLEANUP=yes # check-javahl 
+   make check check-swig-pl check-swig-py check-swig-rb CLEANUP=yes # check-javahl
 }
 
 package() {
@@ -80,8 +81,8 @@ package() {
 
    export LD_LIBRARY_PATH="${pkgdir}"/usr/lib:${LD_LIBRARY_PATH}
    make DESTDIR="${pkgdir}" INSTALLDIRS=vendor \
-     swig_pydir=/usr/lib/python3.8/site-packages/libsvn \
-     swig_pydir_extra=/usr/lib/python3.8/site-packages/svn \
+     swig_pydir=/usr/lib/python3.9/site-packages/libsvn \
+     swig_pydir_extra=/usr/lib/python3.9/site-packages/svn \
      install install-swig-py install-swig-pl install-javahl install-swig-rb
 
    install -dm755 "${pkgdir}"/usr/share/subversion
@@ -100,4 +101,3 @@ package() {
       ln -sf subversion "${pkgdir}"/usr/share/bash-completion/completions/${i}
    done
 }
-
