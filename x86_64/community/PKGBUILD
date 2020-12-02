@@ -1,8 +1,8 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Patrick Ziegler <p.ziegler96@gmail.com>
 pkgname=polybar
-pkgver=3.4.3
-pkgrel=2
+pkgver=3.5.0
+pkgrel=1
 pkgdesc="A fast and easy-to-use status bar"
 arch=("i686" "x86_64")
 url="https://github.com/polybar/polybar"
@@ -13,11 +13,11 @@ optdepends=("i3-wm: i3 module support"
             "ttf-unifont: Font used in example config"
             "siji-git: Font used in example config"
             "xorg-fonts-misc: Font used in example config")
-makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm")
+makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm" "git")
 conflicts=("polybar-git")
 install="${pkgname}.install"
 source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar")
-sha256sums=('d4ed121c1d3960493f8268f966d65a94d94c4646a4abb131687e37b63616822f')
+sha256sums=('e8c1798c195854852fc7c99703287294123381101b371f171d4aa540aeb17afd')
 
 build() {
   cd ${pkgname}
@@ -25,7 +25,7 @@ build() {
   mkdir build
   
   cmake -B build \
-	-DCMAKE_INSTALL_PREFIX=/usr
+	  -DCMAKE_INSTALL_PREFIX=/usr
   make -C build
 }
 
@@ -35,10 +35,11 @@ package() {
   make -C build DESTDIR="${pkgdir}" install
   
   install -Dm644 LICENSE \
-	-t "${pkgdir}/usr/share/licenses/${pkgname}"
+	  -t "${pkgdir}/usr/share/licenses/${pkgname}"
   
   mv "$pkgdir"/usr/share/doc/${pkgname}/{_sources/man/*.txt,man/polybar.1.html} \
-	"${pkgdir}/usr/share/doc/${pkgname}"
+	  "${pkgdir}/usr/share/doc/${pkgname}"
   
-  rm -rf "${pkgdir}"/usr/share/doc/${pkgname}/man "${pkgdir}"/usr/share/doc/${pkgname}/_sources/man
+  rm -rf "${pkgdir}"/usr/share/doc/${pkgname}/man \
+    "${pkgdir}"/usr/share/doc/${pkgname}/_sources/man
 }
