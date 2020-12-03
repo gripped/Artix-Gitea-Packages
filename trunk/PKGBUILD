@@ -1,0 +1,24 @@
+# Maintainer: Alois Nespor <alium@artixlinux.org>
+
+pkgname=artixnews
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Utility for displaying Artixlinux news feed in console"
+arch=(any)
+url=https://github.com/ryukinix/artix-news
+license=(MIT)
+depends=(python)
+source=("https://github.com/ryukinix/artix-news/archive/$pkgver.tar.gz")
+md5sums=('c6d43796f9175028263823af2fa77ccb')
+
+build() {
+  cd artix-news-$pkgver
+  python setup.py build
+}
+
+package() {
+cd artix-news-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
