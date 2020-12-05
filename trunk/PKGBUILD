@@ -1,8 +1,9 @@
 # Maintainer: Sébastien "Seblu" Luttringer
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=docker
 pkgver=19.03.14
-pkgrel=1
+pkgrel=3
 epoch=1
 pkgdesc='Pack, ship and run any application as a lightweight container'
 arch=('x86_64')
@@ -29,13 +30,13 @@ source=("git+https://github.com/docker/docker-ce.git#tag=v$pkgver"
         "git+https://github.com/docker/buildx.git"
         "git+https://github.com/docker/app.git#tag=$_APP_TAG"
         "$pkgname.sysusers")
-md5sums=('SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
-         'SKIP'
-         '8cf9900ebada61f352a03465a088da34')
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            '541826011a9836d05a2f42293d5f1beadf2ca8d89fb604487d61a013505678eb')
 
 
 # create a fake go path directory and pushd into it
@@ -54,7 +55,7 @@ _fake_gopath_popd() {
 
 build() {
   ### check my mistakes on commit version
-  msg2 'Checking commit mismatch'
+  echo 'Checking commit mismatch'
   (
   local _cfile
   for _cfile in tini proxy; do
@@ -66,7 +67,7 @@ build() {
     _pkgbuild=_${_commit}_COMMIT
     _dockerfile=${_commit}_COMMIT
     if [[ ${!_pkgbuild} != ${!_dockerfile} ]]; then
-      error "Invalid $_commit commit, should be ${!_dockerfile}"
+      echo "Invalid $_commit commit, should be ${!_dockerfile}" >&2
       err=$(($err + 1))
     fi
   done
@@ -78,10 +79,11 @@ build() {
   export PATH="$GOPATH/bin:$PATH"
 
   ### cli
-  msg2 'Building cli'
+  echo 'Building cli'
   _fake_gopath_pushd docker-ce/components/cli github.com/docker/cli
-  DISABLE_WARN_OUTSIDE_CONTAINER=1 make VERSION=$pkgver-ce dynbinary
+  DISABLE_WARN_OUTSIDE_CONTAINER=1 make VERSION=$pkgver dynbinary
   _fake_gopath_popd
+
   ### app cli plugin
   echo 'Building app cli plugin'
   _fake_gopath_pushd app github.com/docker/app
@@ -96,16 +98,16 @@ build() {
   _fake_gopath_popd
 
   ### daemon
-  msg2 'Building daemon'
+  echo 'Building daemon'
   _fake_gopath_pushd docker-ce/components/engine github.com/docker/docker
   DOCKER_GITCOMMIT=$(cd "$srcdir"/docker-ce && git rev-parse --short HEAD) \
     DOCKER_BUILDTAGS='seccomp apparmor' \
-    VERSION=$pkgver-ce \
+    VERSION=$pkgver \
     hack/make.sh dynbinary
   _fake_gopath_popd
 
   ### docker man pages
-  msg2 'Building man pages'
+  echo 'Building man pages'
   mkdir -p src/github.com/spf13
   ln -rsfT cobra src/github.com/spf13/cobra
   # use docker-ce cli version because they mess up with man dir
@@ -114,13 +116,13 @@ build() {
   _fake_gopath_popd
 
   ### docker proxy
-  msg2 'Building docker-proxy'
+  echo 'Building docker-proxy'
   _fake_gopath_pushd libnetwork github.com/docker/libnetwork
   go build -ldflags='-linkmode=external' github.com/docker/libnetwork/cmd/proxy
   _fake_gopath_popd
 
   ### docker-init
-  msg2 'Building docker-init'
+  echo 'Building docker-init'
   _fake_gopath_pushd tini github.com/krallin/tini
   cmake .
   # we must use the static binary because it's started in a foreign os
@@ -164,3 +166,5 @@ package() {
   install -Dm644 "$srcdir/$pkgname.sysusers" \
     "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
 }
+
+# vim:set ts=2 sw=2 et:
