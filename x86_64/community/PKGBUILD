@@ -1,0 +1,44 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=intel-undervolt-s6
+pkgver=20201204
+pkgrel=1
+pkgdesc="s6 service scripts for intel-undervolt"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+groups=('s6-galaxy')
+provides=('intel-undervolt-runscripts')
+conflicts=('intel-undervolt-runscripts')
+depends=('intel-undervolt' 'elogind-s6' 's6')
+install=intel-undervolt.install
+backup=('etc/s6/sv/intel-undervolt-loop-log/conf')
+source=("intel-undervolt."{type,up,dependencies}
+        "intel-undervolt-loop-srv."{type,run,dependencies,producer-for}
+        "intel-undervolt-loop-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
+sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            '961c32c29019431d0275f315d8b0cddf9aaa9d812ea2936d1602fc00beb18f1f'
+            'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '393d0a1e7bfb7a1d16e385b06af2bef0c9c0d2f39be5a54a24f92c843b586dc4'
+            'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
+            'ef9dbc6b995cbfd95f04c382ab34752837abdc0a64e666a28ec1a717bab72fa5'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            'f30eef0190a4d2e73eb01cdec6562f7f2ea1f9fba5d7df45114eeb292e7d61d6'
+            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '7fa0e4a33e8750030fd66ba1102d89e6760a64fc9086f117e66fccd305426ed3'
+            'db253eeb98e5812d606ad15608d1f64f522733339f92f6f432984cc76e9aaf20'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2')
+
+_inst_sv(){
+    for file in conf consumer-for dependencies notification-fd \
+        pipeline-name producer-for run type up; do
+        if test -f "$srcdir/$1.$file"; then
+            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'intel-undervolt'
+    _inst_sv 'intel-undervolt-loop-log'
+    _inst_sv 'intel-undervolt-loop-srv'
+}

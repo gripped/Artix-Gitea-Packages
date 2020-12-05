@@ -1,0 +1,9 @@
+pre_remove() {
+    if [ -e "/run/service/intel-undervolt-loop-srv" ]; then
+        s6-rc -d change intel-undervolt-loop
+    fi
+}
+
+post_remove() {
+    rm -rf /etc/s6/sv/intel-undervolt-loop-log
+}
