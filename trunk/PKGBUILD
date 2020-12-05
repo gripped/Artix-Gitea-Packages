@@ -3,7 +3,7 @@
 
 pkgname=intel-undervolt
 pkgver=1.7
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Intel CPU undervolting tool'
 arch=('x86_64')
 url='https://github.com/kitsunyan/intel-undervolt'
@@ -15,7 +15,7 @@ b2sums=('0daade381b492184616356f097de32d14c76d6ab3f7dd59240fb25f92ee1b9aebb16cbe
 
 build() {
   cd ${pkgname}-${pkgver}
-  ./configure --disable-systemd
+  ./configure --enable-elogind --eloginddir=/usr/lib/elogind
   make
 }
 
