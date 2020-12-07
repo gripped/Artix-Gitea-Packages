@@ -13,7 +13,7 @@ arch=('x86_64')
 license=('GPL2')
 depends=('gcc-libs' 'boost-libs' 'libsodium' 'luajit' 'openssl' 'protobuf'
          'libboost_context.so' 'fstrm' 'net-snmp' 'libprotobuf.so')
-makedepends=('boost' 'inetutils' 'pandoc-bin' 'ragel')
+makedepends=('boost' 'inetutils' 'pandoc' 'ragel')
 provides=('pdns-recursor')
 conflicts=('pdns-recursor')
 backup=('etc/powerdns/recursor.conf')
