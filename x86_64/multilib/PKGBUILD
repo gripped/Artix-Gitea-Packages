@@ -19,15 +19,8 @@ makedepends=(
   cmake
   git
 )
-_tag=e61745a6b7add50d380cfd7d3883dd6c62fc2c71
-source=(git+https://github.com/google/brotli.git#tag=${_tag})
-sha256sums=(SKIP)
+source=("https://github.com/google/brotli/archive/v$pkgver.tar.gz")
 
-pkgver() {
-  cd brotli
-
-  git describe --tags | sed 's/^v//'
-}
 
 prepare() {
   if [[ -d build ]]; then
@@ -42,7 +35,7 @@ build() {
   export CC='gcc -m32'
   export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
 
-  cmake ../brotli \
+  cmake ../brotli-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=/usr/lib32
   make
@@ -64,3 +57,4 @@ package() {
 }
 
 # vim: ts=2 sw=2 et:
+sha512sums=('b8e2df955e8796ac1f022eb4ebad29532cb7e3aa6a4b6aee91dbd2c7d637eee84d9a144d3e878895bb5e62800875c2c01c8f737a1261020c54feacf9f676b5f5')
