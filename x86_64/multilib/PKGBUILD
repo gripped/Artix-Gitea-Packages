@@ -30,14 +30,15 @@ pkgver() {
 }
 
 build() {
-  export CC='gcc -m32'
-  export CXX='g++ -m32'
+  export CC='gcc -m32 -O2'
+  export CXX='g++ -m32 -O2'
   export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
 
   arch-meson libgusb build \
     --libdir='/usr/lib32' \
     -Ddocs=false \
-    -Dvapi=false
+    -Dvapi=false \
+    -Dintrospection=false
   ninja -C build
 }
 
