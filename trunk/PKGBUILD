@@ -20,6 +20,7 @@ depends=(
   lib32-polkit
   lib32-sqlite
   lib32-dbus
+  lib32-elogind
 )
 makedepends=(
   argyllcms
@@ -62,7 +63,8 @@ build() {
     -D sane=false \
     -D vapi=false \
     -D print_profiles=false \
-    -D daemon_user=colord
+    -D daemon_user=colord \
+    -D systemd=false
   meson compile -C build
 }
 
