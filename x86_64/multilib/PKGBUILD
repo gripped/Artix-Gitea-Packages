@@ -5,7 +5,7 @@
 
 pkgname=lib32-gtk3
 pkgver=3.24.24
-pkgrel=0.1
+pkgrel=1
 pkgdesc='GObject-based multi-platform GUI toolkit'
 arch=(x86_64)
 license=(LGPL)
@@ -28,7 +28,7 @@ depends=(
   lib32-libxrandr
   lib32-pango
   lib32-rest
-#  lib32-libcanberra
+  lib32-libcanberra
   lib32-wayland
   lib32-libxdamage
 )
