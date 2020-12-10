@@ -1,12 +1,11 @@
-# Maintainer: Chris Cromer <cromer@artixlinux.org>
-# Contributor: Eli Schwartz <eschwartz@archlinux.org>
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Based on gnome-control-center:
 # Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Jan de Groot <jgc@archlinux.org>
 
 pkgname=cinnamon-control-center
-pkgver=4.8.0
+pkgver=4.8.1
 pkgrel=1
 pkgdesc="The Control Center for Cinnamon"
 arch=('x86_64')
@@ -17,26 +16,31 @@ depends=('cinnamon-settings-daemon' 'cinnamon-menus' 'colord'
 optdepends=('cinnamon-translations: i18n'
             'gnome-color-manager: for color management tasks'
             'gnome-online-accounts: for the online accounts module')
-makedepends=('meson' 'samurai' 'gnome-online-accounts' 'intltool' 'python')
+makedepends=('meson' 'samurai' 'gnome-online-accounts')
 options=('!emptydirs')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('c419b7ce59c24492543ba95bd7dbb5fcc4b5338d2596b14820d80ec26d98fdd3')
-b2sums=('056b41c48ad00c6870971526b72de5cae03489cca595d5ed842aca4f08819f613faef4aefc350bb08d93fd05a533564baefc108741117856edc1474ba5821216')
+sha256sums=('ef908035b2d09ecf67dc18770e242035c6ff1e7f7ea1fa3e8b4843fa12d3ebd1')
+b2sums=('3ec781098bc3d581fae469ee3f92dc1ca5341147b18985f894d5e7cc42e123d60b3cdfb09977a5f467fc2cf2ab6fcf12048f3533fce4c62d8366f250586562b5')
 
 build() {
-	mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
-    cd "${srcdir}"/${pkgname}-${pkgver}/build
+    mkdir -p "${srcdir}"/${pkgname}-${pkgver}/builddir
+    cd "${srcdir}"/${pkgname}-${pkgver}/builddir
 
     meson --prefix=/usr \
-	  --sysconfdir=/etc \
-	  --localstatedir=/var \
-      ..
+          --buildtype=plain \
+        ..
 
-	samu
+    samu
 }
 
 package() {
-    cd "${srcdir}"/${pkgname}-${pkgver}/build
-    
+    cd "${srcdir}"/${pkgname}-${pkgver}/builddir
+
     DESTDIR="${pkgdir}" samu install
+
+    # https://github.com/linuxmint/Cinnamon/pull/7382#issuecomment-374894901
+    # /usr/bin/cinnamon-control-center is not meant for users, it is a development troubleshooting tool.
+    # Just install the shell libs/headers.
+    rm "${pkgdir}"/usr/bin/cinnamon-control-center
+    rm "${pkgdir}"/usr/share/cinnamon-control-center/ui/shell.ui
 }
