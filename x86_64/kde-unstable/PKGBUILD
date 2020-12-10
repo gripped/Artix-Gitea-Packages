@@ -3,7 +3,7 @@
 
 pkgname=kalarm
 pkgver=20.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Personal alarm scheduler"
 arch=(x86_64)
 url="https://kontact.kde.org"
