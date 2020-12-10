@@ -2,7 +2,7 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xed
-pkgver=2.8.0
+pkgver=2.8.2
 pkgrel=1
 pkgdesc="A small and lightweight text editor. X-Apps Project."
 arch=('x86_64')
@@ -12,8 +12,8 @@ groups=('x-apps')
 depends=('gspell' 'gtksourceview4' 'libpeas' 'xapps')
 makedepends=('meson' 'samurai' 'gobject-introspection' 'intltool' 'itstool')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('320b095b12e37fccfbb4dd8489b4ea4e923e7e07148e6499fdfaafab29f9e3e7')
-b2sums=('7056a9541bfe8a498948b6fb81863c2114ddf70032c989bac8444defd40b1c39627ab57ab530833cd384974aeee6b2a4a29256279025fc75edd62f4cd1ac9b2d')
+sha256sums=('b310d4bd00d42329264989c233707499207e320710be9e007dd49db3670bd00d')
+b2sums=('7d0dbd4fbe1ea52cb88aa4010b71e20b76a17b1a6a5fca58fa32a202472f641961602bfdd01a21c1fee617bf6a377e266ee6d52ec004149b3b88865d83a02aab')
 
 build() {
     mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
