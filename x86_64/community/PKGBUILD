@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Patrick Ziegler <p.ziegler96@gmail.com>
 pkgname=polybar
-pkgver=3.5.0
+pkgver=3.5.1
 pkgrel=1
 pkgdesc="A fast and easy-to-use status bar"
 arch=("i686" "x86_64")
@@ -16,11 +16,20 @@ optdepends=("i3-wm: i3 module support"
 makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm" "git")
 conflicts=("polybar-git")
 install="${pkgname}.install"
-source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar")
-sha256sums=('e8c1798c195854852fc7c99703287294123381101b371f171d4aa540aeb17afd')
+source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar.gz")
+sha256sums=('1802811dba725e3747554f866c9c879c14b24d8de92ebeab5abf9b6ace523507')
+
+prepare() {
+  cd ${pkgname}-${pkgver}/lib
+  rm -rf xpp i3ipcpp
+  git init .
+  git submodule add https://github.com/polybar/xpp.git
+  git submodule add https://github.com/polybar/i3ipcpp.git
+  git submodule update --init --recursive
+}
 
 build() {
-  cd ${pkgname}
+  cd ${pkgname}-${pkgver}
   
   mkdir build
   
@@ -30,7 +39,7 @@ build() {
 }
 
 package() {
-  cd ${pkgname}
+  cd ${pkgname}-${pkgver}
   
   make -C build DESTDIR="${pkgdir}" install
   
