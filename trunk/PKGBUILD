@@ -17,7 +17,7 @@ makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm" "git")
 conflicts=("polybar-git")
 install="${pkgname}.install"
 source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar.gz")
-sha256sums=('1802811dba725e3747554f866c9c879c14b24d8de92ebeab5abf9b6ace523507')
+b2sums=('2b252c3bea296581160af74412485a6a19201c1a6666ef688c496294823380503574e8b912be4b9eb822214b6a696954ccfc3e3ca29303f751bfa6640988593a')
 
 prepare() {
   cd ${pkgname}-${pkgver}/lib
