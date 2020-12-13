@@ -12,7 +12,7 @@ makedepends=('python-setuptools-scm')
 checkdepends=('python-pip' 'python-pytest-runner' 'python-importlib_resources'
               'python-wheel' 'python-pyfakefs' 'python-tests')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/python/importlib_metadata/archive/v$pkgver.tar.gz")
-sha512sums=('ca41ff9690628e3483da3024e96c4118282e970c98ce8572854fdd1f1d14464590742d3cf7219c5014fd7b05861f6dcb3800d6313c7c5a047b2ff605d06f73cd')
+sha512sums=('8f3991869a5a05d452d214c125509c660a41bbb60c1952958ceb2cd438c3794efe94173e5a83ca6f41a7589ae6ccec78d3a2fec4856a28d686df5fd6d4e71964')
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver
 
