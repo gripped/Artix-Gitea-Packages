@@ -20,11 +20,8 @@ optdepends=('arc-icon-theme: recommended icon theme'
             'gnome-themes-standard: for gtk2 themes'            )
 makedepends=('sassc' 'optipng' 'inkscape')
 
-source=("${pkgname}-${pkgver}.tar.xz::${url}/releases/download/${pkgver}/${_pkgname}-${pkgver}.tar.xz"
-        "${pkgname}-${pkgver}.tar.xz.sig::${url}/releases/download/${pkgver}/${_pkgname}-${pkgver}.tar.xz.asc")
-sha512sums=('c1c70c80935af2b1f3c7c9bf79ee72d5fba907fd03caadecf96d6fd796bf70d325bbb16dbe93f95d9a63eff748c7d90bcb0bf837e446e5c2770cfdccb131f45c'
-            'SKIP')
-validpgpkeys=('31743CDF250EF641E57503E5FAEDBC4FB5AA3B17')
+source=("${pkgname}-${pkgver}.tar.xz::${url}/releases/download/${pkgver}/${_pkgname}-${pkgver}.tar.xz")
+sha512sums=('c1c70c80935af2b1f3c7c9bf79ee72d5fba907fd03caadecf96d6fd796bf70d325bbb16dbe93f95d9a63eff748c7d90bcb0bf837e446e5c2770cfdccb131f45c')
 
 prepare() {
     cp -a ${_pkgname}-${pkgver}{,-solid}
