@@ -37,12 +37,9 @@ makedepends+=('ncurses')
 makedepends+=('python-docutils')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}"
-        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
-        "$pkgname-$pkgver-perf-visibility.patch::https://github.com/torvalds/linux/commit/d0e7b0c71fbb.patch"
+#        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
         'cpupower.default')
 sha256sums=('SKIP'
-            '1b5ca3683e8ae99eee357d11a2f2bfe21561883d6288e29d7bddf3eb0e007fcd'
-            'f29c9f8fc2db88856f02738b4af36c16127e22e2fa5d06f2113784b741011d3c'
             '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
