@@ -10,9 +10,8 @@ arch=('x86_64')
 url="https://www.gnu.org/software/glpk/glpk.html"
 license=('GPL')
 depends=('gmp')
-source=(https://ftp.gnu.org/gnu/glpk/${pkgname}-${pkgver}.tar.gz{,.sig} glpk-remove-warnings.patch)
+source=(https://ftp.gnu.org/gnu/glpk/${pkgname}-${pkgver}.tar.gz glpk-remove-warnings.patch)
 sha1sums=('d9b607a9cf3a25b754a0cd9a842ea5043f8604db'
-          'SKIP'
           '6f4e904c5dc88a8b43391e030496644d77e39163')
 validpgpkeys=('A2B56CCB42220C06481335BAD17BF2305981E818') # Andrew Makhorin
 
