@@ -29,7 +29,7 @@ prepare() {
   echo -e '[pytest]\nnorecursedirs = .* _* build' > pytest.ini
 
   # Remove failing tests (we can't test udev inside makepkg)
-  rm tests/test_{util,discover,device,monitor,enumerate,observer,udev}.py
+  rm tests/test_{util,discover,device,monitor,enumerate,observer}.py
 
   # Fix documentation build
   sed -i "s|os.path.join(doc_directory, os.pardir)|os.path.join(doc_directory, os.pardir, 'src')|
