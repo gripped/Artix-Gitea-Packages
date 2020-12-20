@@ -28,7 +28,6 @@ depend() {
 	use clock
 	need hostname localmount
 	after bootmisc
-	want haveged
 	provide logger
 }
 
