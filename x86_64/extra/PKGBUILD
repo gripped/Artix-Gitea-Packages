@@ -1,14 +1,13 @@
 # Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
-
 pkgname=dracut
-pkgver=050
-pkgrel=1
+pkgver=051
+pkgrel=0.9
 pkgdesc="An event driven initramfs infrastructure"
 arch=('x86_64')
 url="https://dracut.wiki.kernel.org"
 license=('GPL')
 depends=('bash' 'coreutils' 'cpio' 'filesystem' 'findutils' 'grep' 'gzip'
-         'kmod' 'pkgconf' 'procps-ng' 'sed' 'eudev' 'util-linux' 'xz')
+         'kmod' 'pkgconf' 'procps-ng' 'sed' 'udev' 'util-linux' 'xz')
 makedepends=('asciidoc' 'bash-completion' 'git')
 optdepends=('binutils: --uefi option support'
             'elfutils: strip binaries to reduce initramfs size'
@@ -18,18 +17,9 @@ optdepends=('binutils: --uefi option support'
             'sbsigntools: uefi_secureboot_cert/key configuration option support')
 provides=('initramfs')
 backup=('etc/dracut.conf')
-source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut-050.tar{.gz,.sign}
-        'artix.conf'
-        dracut-{install,remove}.script
-        90-dracut-install.hook
-        60-dracut-remove.hook)
-sha512sums=('41ab9e089b91f8cd037dc545c164bbd63fe470bc5475d887f98d291ed5da24876b4cdfc4ae259151e52bfdcb599dce87c0b19d753c97cb4a25b664d8f5b39487'
-            'SKIP'
-            '7ed427f610b849c0e460ce723bbb9e7217d2574bfae684e82bafee4c16b64a9b804096be0bf72f8860c9c51d3304ac8077497dd0e33532d94529d0d29cf1c73a'
-            'dc6966c4f3c64994de165e91e197027d685911d73d61f4b8bee224ce3ebef4f9bed1324bcd9db214c8eeff4722b2a71f4d050c566f059f4801d64cd33d20e586'
-            '078581bb7c04e75f1e086ecbe063924ead7dcb71eb5b5212f44e62695cc7f563347d776f58b8664db20bf9af243a4fa990d504235b929923e036195d4dd8cd80'
-            'dd62f6155a28b2ede0ace0b50b722033ec045a271b1e34ad012908cdd8d1fb56386e4667d88f39e3f0cdf1603869fa679c9caed5e4cdadd13817876e54f9b8ca'
-            '070a31b388869ca8cda6545adb31530398273a5aab8fc4ae987e64dbe002225d28204404f5ebd129747c6f0b00fbd49eeff808a111fafad9a7080c4c105014f1')
+source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut-${pkgver}.tar{.gz,.sign})
+sha512sums=('e714ca395aa3534c28793b91fd79ec400f6e87ae98f67042e20d1312e25693f31629537475f2445587bc548bac94731e3cec8cba928ac34cebf05b1b08f67e07'
+            'SKIP')
 validpgpkeys=(
   '7F3D64824AC0B6B8009E50504BC0896FB5693595' # Harald Hoyer <harald@redhat.com>
 )
@@ -52,11 +42,4 @@ package() {
   cd "$srcdir/${pkgname}-${pkgver}"
 
   DESTDIR="$pkgdir" make install
-
-  install -Dm 755 $srcdir/artix.conf $pkgdir/etc/dracut.conf.d/01-artix.conf
-
-  # pacman hooks
-  install -Dm755 "${srcdir}"/dracut-install.script "${pkgdir}"/usr/share/libalpm/scripts/dracut-install
-  install -Dm755 "${srcdir}"/dracut-remove.script "${pkgdir}"/usr/share/libalpm/scripts/dracut-remove
-  install -Dm644 -t "${pkgdir}"/usr/share/libalpm/hooks "${srcdir}"/*.hook
 }
