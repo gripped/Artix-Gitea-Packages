@@ -4,12 +4,12 @@
 pkgbase=vte3
 pkgname=(vte3 vte-common)
 pkgver=0.62.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Virtual Terminal Emulator widget"
 url="https://wiki.gnome.org/Apps/Terminal/VTE"
 arch=(x86_64)
 license=(LGPL)
-depends=(gtk3 pcre2 gnutls fribidi systemd-libs)
+depends=(gtk3 pcre2 gnutls fribidi)
 makedepends=(gobject-introspection vala git gtk-doc gperf meson)
 _commit=62c4908953e3fea8e0771fa82212462157d46d4f  # tags/0.62.1^0
 source=("git+https://gitlab.gnome.org/GNOME/vte.git#commit=$_commit")
@@ -25,7 +25,7 @@ prepare() {
 }
 
 build() {
-  arch-meson vte build -D docs=true -D b_lto=false
+  arch-meson vte build -D docs=true -D b_lto=false -D _systemd=false
   meson compile -C build
 }
 
@@ -51,7 +51,7 @@ package_vte3() {
 
 ### Split vte-common
   _pick vte-common "$pkgdir"/etc/profile.d
-  _pick vte-common "$pkgdir"/usr/lib/{systemd,vte-urlencode-cwd}
+  _pick vte-common "$pkgdir"/usr/lib/vte-urlencode-cwd
 }
 
 package_vte-common() {
