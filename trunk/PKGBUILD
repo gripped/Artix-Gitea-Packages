@@ -17,8 +17,15 @@ makedepends=('libjpeg' 'libpng' 'libtiff' 'openexr' 'libgl' 'glu' 'boost' 'help2
 replaces=('enblend')
 conflicts=('enblend')
 provides=('enblend')
-source=(https://downloads.sourceforge.net/enblend/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48')
+source=(https://downloads.sourceforge.net/enblend/${pkgname}-${pkgver}.tar.gz
+        boost.patch)
+sha256sums=('8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48'
+            '542b255edb9312d87fdb539ebf214ce3f770d396ce82d8fafc87b7561c11598e')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  patch -Np1 -i ../boost.patch 
+}
 
 build() {
     cd ${pkgname}-${pkgver}
