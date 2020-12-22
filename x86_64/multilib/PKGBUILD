@@ -21,8 +21,8 @@ makedepends=(
   ninja
 )
 _tag=0da9e01980a93aa13c40de492dca3c47cde50bfc
-source=(git+https://github.com/libproxy/libproxy.git#tag=${_tag})
-b2sums=(SKIP)
+source=("git+https://github.com/libproxy/libproxy.git#tag=${_tag}")
+b2sums=('SKIP')
 
 pkgver() {
   cd libproxy
