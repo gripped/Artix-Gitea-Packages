@@ -38,5 +38,5 @@ package_pandoc() {
 
     # When pandoc stopped having templates as a submodule, they copied various github turds into their source
     # tree, so let's tidy that up...
-    rm -R ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
+    # rm -R ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
 }
