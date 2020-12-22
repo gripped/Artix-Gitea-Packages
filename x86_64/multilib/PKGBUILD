@@ -11,7 +11,7 @@ arch=('x86_64')
 url='http://libproxy.googlecode.com'
 license=('LGPL')
 depends=('lib32-gcc-libs' 'libproxy')
-makedepends=('cmake' 'gcc-multilib' 'lib32-zlib')
+makedepends=('cmake' 'gcc-multilib' 'lib32-zlib' 'lib32-dbus')
 source=("https://github.com/libproxy/libproxy/archive/${pkgver}.tar.gz")
 md5sums=('b4cbde53c3746c01571e49561d5117be')
 
