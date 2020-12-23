@@ -16,6 +16,7 @@ noextract=($pkgname-$pkgver.tgz)
 sha512sums=('7de67347e90871256e2e2decff4c746f64f1e08a24c2ab7ef0f24cef24472ae95d83830b75a9b84c215e202bfe9600edb98882b5d9abb483feb8df4b5af0dab3')
 
 package() {
+  mkdir -p "$pkgdir"/usr/lib
   npm install -g --user root --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
   mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
   ln -s "../../../lib/node_modules/uglify-js/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/"
