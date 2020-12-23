@@ -14,6 +14,12 @@ post_upgrade() {
 }
 
 post_remove() {
+    rm -rf /etc/s6/sv/agetty-tty1
+    rm -rf /etc/s6/sv/agetty-tty2
+    rm -rf /etc/s6/sv/agetty-tty3
+    rm -rf /etc/s6/sv/agetty-tty4
+    rm -rf /etc/s6/sv/agetty-tty5
+    rm -rf /etc/s6/sv/agetty-tty6
     rm -rf /etc/s6/sv/dmesg
     rm -rf /etc/s6/sv/mount-net
     rm -rf /etc/s6/sv/rc-local
