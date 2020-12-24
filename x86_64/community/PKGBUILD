@@ -44,6 +44,7 @@ build() {
           --buildtype=plain \
           --auto-features=enabled \
           --wrap-mode=nodownload \
+          -Dsystemd=disabled \
           build
     ninja -C build
 }
