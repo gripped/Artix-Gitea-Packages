@@ -1,13 +1,13 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=xinetd-openrc
-pkgver=20200620
+pkgver=20201225
 pkgrel=1
 pkgdesc="OpenRC xinetd init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-groups=('openrc-system')
+groups=('openrc-world')
 provides=('init-xinetd')
 depends=('openrc' 'xinetd')
 conflicts=('init-xinetd')
