@@ -14,11 +14,16 @@ depends=('xfce4-panel')
 makedepends=('intltool')
 conflicts=('verve-plugin')
 replaces=('verve-plugin')
-source=(https://archive.xfce.org/src/panel-plugins/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('9e6510ba6c48fcfc60d1c6ab14613dd7b6ff095cabbf4746f82bf788d8ab4cd2')
+source=(https://archive.xfce.org/src/panel-plugins/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2
+        fix.patch)
+sha256sums=('9e6510ba6c48fcfc60d1c6ab14613dd7b6ff095cabbf4746f82bf788d8ab4cd2'
+            '334d9d1be3775b9d47b4713eff9b97cfb6ef039af5c69dceadf7f659810434f4')
 
 build() {
+
   cd "$srcdir/$pkgname-$pkgver"
+
+  patch -Np1 < "$srcdir/fix.patch"
 
   ./configure \
     --prefix=/usr \
