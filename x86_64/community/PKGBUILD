@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=dnscrypt-proxy-openrc
-pkgver=20200620
+pkgver=20210102
 pkgrel=1
 pkgdesc="OpenRC dnscrypt-proxy init script"
 arch=('any')
@@ -14,8 +14,8 @@ depends=('openrc' 'dnscrypt-proxy')
 conflicts=('systemd-sysvcompat')
 source=("dnscrypt-proxy.confd"
         "dnscrypt-proxy.initd")
-sha256sums=('32e4f5469e4b5de0f4950456bf504f7ec11a6eec4ba8399977b5754fa39a6e6d'
-            '3d5abcfcc0bb78291e76a038dfa8f99f96c2e69026a428dd37314df45a046bce')
+sha256sums=('fd918f1c0c04e594b8ba50b693b617c8e28562f14e9faa4f1528539d64b2c840'
+            '7cad301defd16e597adbe381f16504c721b433f6299cd91580786562e17b7bfd')
 
 package() {
     install -Dm755 "${srcdir}/dnscrypt-proxy.initd" "${pkgdir}/etc/init.d/dnscrypt-proxy"
