@@ -1,0 +1,2 @@
+#!/bin/sh
+exec chpst -u colord /usr/lib/colord 2>&1
