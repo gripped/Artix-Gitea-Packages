@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=usbguard-runit
 pkgver=20210103
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for usbguard"
 arch=('any')
 url="https://artixlinux.org"
