@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cronie-s6
-pkgver=20201017
-pkgrel=1
+pkgver=20210103
+pkgrel=2
 pkgdesc="s6 service scripts for cronie"
 arch=('any')
 url="https://gitea.artixlinux.org/"
@@ -10,29 +10,13 @@ provides=('init-cronie')
 conflicts=('init-cronie')
 depends=('cronie' 's6')
 install=cronie.install
-backup=('etc/s6/sv/cronie-log/conf')
-source=("cronie-log.conf"
-        "cronie-log.consumer-for"
-        "cronie-log.notification-fd"
-        "cronie-log.pipeline-name"
-        "cronie-log.run"
-        "cronie-log.type"
-        "cronie-srv.producer-for"
-        "cronie-srv.run"
-        "cronie-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '918dd304cc582a9b8a3ded8ab054d1e4f1123621a12927aeb72d818b32200cc3'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'bcb740c0deb2de98e8397591d66335242f1745e0fd7e9e6402ff4f7184e683f6'
-            'bd9ecda16016dd55b2b92d18d46d5db96ba43d9cc782f5899b6f6943cf0cc0e6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '0007b38ae4c842f40e7565b489ec8b9345b255cd49a8cbadb0396cdd52a6f68b'
-            '031ea9683d5da11691b8f41cc42aa1d12a92d60c6283b55539f72b2c65805e6e'
+source=("cronie.run"
+        "cronie.type")
+sha256sums=('e7446518e18fd2c744d86fc703d602de9bad4bb4c8c1a02d8f6d1b52a3f5be7d'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in conf consumer-for notification-fd \
-                pipeline-name producer-for run type; do
+    for file in run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -40,6 +24,5 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'cronie-log'
-    _inst_sv 'cronie-srv'
+    _inst_sv 'cronie'
 }
