@@ -14,7 +14,7 @@ makedepends=(ghostscript openexr libwmf librsvg libxml2 openjpeg2 libraw opencl-
 checkdepends=(gsfonts ttf-dejavu)
 _relname=ImageMagick-${pkgver%%.*}
 _tarname=ImageMagick-${pkgver%.*}-${pkgver##*.}
-source=(https://imagemagick.org/download/$_tarname.tar.xz{,.asc}
+source=(https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/$_tarname.tar.xz{,.asc}
         arch-fonts.diff)
 sha256sums=('bea0eca1c6818e12e7e8f0338e70dce6f1231a7284a79674610f3ffae2b7c799'
             'SKIP'
