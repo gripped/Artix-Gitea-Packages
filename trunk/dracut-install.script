@@ -1,57 +1,36 @@
 #!/bin/bash -e
 
-args=()
-all=0
-
-build_presets() {
-    local name="$1" ver="$2"
-    local initramfs=/boot/initramfs-"${name}"-dracut.img
-    local fallback=/boot/initramfs-"${name}"-dracut-fallback.img
-    for preset in 'default' 'fallback';do
-        case $preset in
-            'default') args=(-fMqH "${initramfs}" "${ver}") ;;
-            *) args=(-fMq "${fallback}" "${ver}") ;;
-        esac
-        if (( ${#args[@]} )); then
-            echo "==> Building image: $preset"
-            echo "  -> ${args[@]}"
-            echo "==> Starting build: ${ver}"
-            dracut "${args[@]}"
-        fi
-    done
-}
+kernels=()
+dracut_update=0
 
 while read -r line; do
-    if [[ $line != */vmlinuz ]]; then
-        # triggers when it's a change to usr/lib/dracut/modules.d/*
-        all=1
+    if [[ $line != 'usr/lib/modules/'+([^/])'/pkgbase' ]]; then
+		dracut_update=1 # Dracut files have been updated
         continue
     fi
 
-    if ! read -r pkgbase > /dev/null 2>&1 < "${line%/vmlinuz}/pkgbase"; then
-        # if the kernel has no pkgbase, we skip it
-        continue
-    fi
-
-    kver=${line%*/vmlinuz}
-    kver=${kver##*/}
-
-    # always install the kernel
-    install -Dm644 "${line}" "/boot/vmlinuz-${pkgbase}"
+    read -r pkgbase < "/${line}"
+	kernels+=("${pkgbase}")
 done
 
-if (( all )); then
-    # build for all kernels
-    kernels=$(compgen -G /usr/lib/modules/"*")
-    for kernel in ${kernels[@]}; do
-        if ! read -r pkgbase > /dev/null 2>&1 < "${kernel}/pkgbase"; then
-            # if the kernel has no pkgbase, we skip it
-            continue
-        fi
-
-        build_presets "${pkgbase}" "${kernel##*/}"
-    done
-else
-    # build for tigger
-    build_presets "${pkgbase}" "${kver}"
+if (( dracut_update )); then
+	kernels=()
+	for file in /lib/modules/*/pkgbase; do
+		if read -r pkgbase &> /dev/null < "$file"; then
+			kernels+=("${pkgbase}")
+		fi
+	done
 fi
+
+for kernel in "${kernels[@]}"; do
+	path="$(grep -lE "^${kernel}\$" /usr/lib/modules/*/pkgbase)"
+	version=$(basename "${path%/pkgbase}")
+    read -r pkgbase < "$path"
+
+    install -Dm0644 "/${path%'/pkgbase'}/vmlinuz" "/boot/vmlinuz-${pkgbase}"
+
+	echo ":: Building initramfs for $kernel-$version"
+	dracut -f --no-hostonly-cmdline "/boot/initramfs-${kernel}.img" --kver "${version}"
+	echo ":: Building fallback initramfs for $kernel-$version"
+	dracut -f -N "/boot/initramfs-${kernel}-fallback.img" --kver "${version}"
+done
