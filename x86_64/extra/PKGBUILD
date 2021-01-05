@@ -4,7 +4,7 @@
 pkgbase=pipewire
 pkgname=(pipewire pipewire-docs pipewire-jack pipewire-pulse pipewire-alsa
          gst-plugin-pipewire)
-pkgver=0.3.18
+pkgver=0.3.19
 pkgrel=1
 pkgdesc="Server and user space API to deal with multimedia pipelines"
 url="https://pipewire.org"
@@ -13,7 +13,7 @@ arch=(x86_64)
 makedepends=(git meson doxygen graphviz xmltoman valgrind jack2 libpulse
              alsa-lib gst-plugins-base sbc rtkit vulkan-icd-loader dbus
              libsndfile bluez-libs vulkan-headers)
-_commit=e7dffd64ebff76e2388d6e694de96d6693a6ed7d  # tags/0.3.18
+_commit=b2b45abe0198354ff43e5bf1bc0324b060dde97a  # tags/0.3.19
 source=("git+https://github.com/PipeWire/pipewire#commit=$_commit")
 sha256sums=('SKIP')
 
