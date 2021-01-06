@@ -14,11 +14,9 @@ makedepends=('intltool' 'xmlto' 'docbook-xsl' 'desktop-file-utils' 'libsecret')
 optdepends=('libsecret: password management'
             'python-pysmbc: SMB browser support'
             'cups-pk-helper: PolicyKit helper to configure cups with fine-grained privileges')
-source=(https://github.com/OpenPrinting/system-config-printer/releases/download/v${pkgver}/system-config-printer-${pkgver}.tar.xz{,.asc}
-        autoconf-2-70.diff
-)
+source=(https://github.com/OpenPrinting/system-config-printer/releases/download/v${pkgver}/system-config-printer-${pkgver}.tar.xz
+        autoconf-2-70.diff)
 sha256sums=('0e7b8cea3762e3eaf0167a955e6667db077f4717a42230a64e07d04988a4e9d0'
-            'SKIP'
             'e43c45255f19017b0ab925839861dd48692054985e829650c99cdc86ea61f1a5')
 
 prepare() {
