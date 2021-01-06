@@ -2,7 +2,7 @@
 
 pkgname=python-jaraco.context
 pkgver=3.0.0
-pkgrel=0.1
+pkgrel=1
 pkgdesc="Context managers by jaraco"
 url="https://github.com/jaraco/jaraco.context"
 license=('MIT')
@@ -28,10 +28,10 @@ build() {
   python setup.py build
 }
 
-#check() {
-#  cd jaraco.context-$pkgver
-#  python -m pytest
-#}
+check() {
+  cd jaraco.context-$pkgver
+  python -m pytest
+}
 
 package() {
   cd jaraco.context-$pkgver
