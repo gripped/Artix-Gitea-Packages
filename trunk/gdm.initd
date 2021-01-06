@@ -1,0 +1,22 @@
+#!/usr/bin/openrc-run
+
+command="/usr/bin/gdm"
+command_args="--background"
+pidfile="/run/${RC_SVCNAME}.pid"
+# command_args_background=""
+# command_background=true
+# command_user="user:group"
+# procname="gdm"
+
+depend() {
+    need localmount
+
+    # this should start as early as possible
+    after bootmisc consolefont modules netmount
+    after readahead-list ypbind autofs openvpn gpm lircmd
+    after quota keymaps
+    before alsasound
+
+    # Start before X
+    use elogind dbus xfs
+}
