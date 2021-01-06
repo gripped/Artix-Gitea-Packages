@@ -28,10 +28,10 @@ build() {
   python setup.py build
 }
 
-check() {
+#check() {
 #  cd jaraco.context-$pkgver
 #  python -m pytest
-}
+#}
 
 package() {
   cd jaraco.context-$pkgver
