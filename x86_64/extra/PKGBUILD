@@ -20,9 +20,9 @@ makedepends=(
   rust
 )
 provides=(librav1e.so)
-_tag=67c2009dbeaf7e01f1d0b38c450c76fc7fbde882
+_tag=727571e9e88068cbdcf6158006be0671da7a6071
 source=(git+https://github.com/xiph/rav1e.git#tag=${_tag})
-sha256sums=('SKIP')
+sha256sums=(SKIP)
 
 pkgver() {
   cd rav1e
