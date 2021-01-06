@@ -1,15 +1,22 @@
 #!/usr/bin/openrc-run
 
-supervisor=supervise-daemon
+command="/usr/bin/xdm"
+command_args="-m --background"
+pidfile="/run/${RC_SVCNAME}.pid"
+# command_args_background=""
+# command_background=true
+# command_user="user:group"
+# procname="xdm"
 
-name="Display Manager"
-description="X Display Manager"
+depend() {
+    need localmount
 
-command=/usr/bin/xdm
-command_args="${xdm_opts}"
-command_args_foreground="-nodaemon"
+    # this should start as early as possible
+    after bootmisc consolefont modules netmount
+    after readahead-list ypbind autofs openvpn gpm lircmd
+    after quota keymaps
+    before alsasound
 
-depends() {
-	needs localmount
+    # Start before X
+    use elogind dbus xfs
 }
-

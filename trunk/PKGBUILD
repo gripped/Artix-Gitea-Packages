@@ -1,29 +1,20 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: artoo <artoo@artixlinux.org>
+
 pkgname=xdm-openrc
-pkgver=20200528
-pkgrel=1.1
-pkgdesc="${pkgname/-openrc//} OpenRC init"
+pkgver=20210106
+pkgrel=1
+pkgdesc="OpenRC xdm init script"
 arch=('any')
-url="https://gitea.artixlinux.org/PackagesX/xdm-openrc"
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('openrc' 'xorg-xdm')
-conflicts=('systemd-sysvcompat')
-backup=("etc/conf.d/${pkgname/-openrc/}")
-source=("xdm.initd"
-	"xdm.confd")
-md5sums=('ef266fbbb11d57dd5e5a633207800416'
-         'c047547e5dea07a3096f80be2f4bebbf')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm755 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+provides=('init-displaymanager')
+depends=('xorg-xdm' 'openrc')
+conflicts=('init-displaymanager')
+# backup=('etc/conf.d/xdm')
+source=("xdm.initd")
+sha256sums=('63d06e80fdc764d7253b3aa685c43f07d9d0dc1fc778dc30e7ec922512dca0b2')
 
 package() {
-    _inst_confd "${pkgname/-openrc/}"
-    _inst_initd "${pkgname/-openrc/}"
+    install -Dm755 "$srcdir/xdm.initd" "$pkgdir/etc/init.d/xdm"
 }
