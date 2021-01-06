@@ -1,13 +1,22 @@
 #!/usr/bin/openrc-run
 
-supervisor=supervise-daemon
+command="/usr/bin/sddm"
+command_args="-m --background"
+pidfile="/run/${RC_SVCNAME}.pid"
+# command_args_background=""
+# command_background=true
+# command_user="user:group"
+# procname="sddm"
 
-name="Display Manager"
-description="SDDM Display Manager"
+depend() {
+    need localmount
 
-command=/usr/bin/sddm
-command_args="$sddm_opts"
+    # this should start as early as possible
+    after bootmisc consolefont modules netmount
+    after readahead-list ypbind autofs openvpn gpm lircmd
+    after quota keymaps
+    before alsasound
 
-depends() {
-	needs localmount
+    # Start before X
+    use elogind dbus xfs
 }
