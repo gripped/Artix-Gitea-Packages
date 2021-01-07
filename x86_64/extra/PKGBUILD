@@ -1,7 +1,7 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 
 pkgname=prometheus
-pkgver=2.23.0
+pkgver=2.24.0
 pkgrel=1
 pkgdesc='An open-source systems monitoring and alerting toolkit'
 url='https://prometheus.io'
@@ -12,7 +12,7 @@ makedepends=('go' 'git' 'bzr' 'yarn')
 backup=('etc/prometheus/prometheus.yml')
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers)
-sha256sums=('7ef1d61052fe3dace20b89ab287a6a0e835f8f111ab41584aa39b80f6093842b'
+sha256sums=('aaf32298f7342bf01e2215c376575d22d3d35bcbb91645766eb42540b1ba3385'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 build() {
