@@ -12,10 +12,10 @@ arch=('x86_64')
 url="https://brltty.app"
 license=('LGPL2.1')
 depends=('bluez-libs' 'gcc-libs' 'glibc' 'liblouis' 'libspeechd' 'pcre'
-'polkit' 'tcl' 'elogind')
+'polkit' 'tcl')
 makedepends=('alsa-lib' 'at-spi2-atk' 'at-spi2-core' 'atk' 'cython' 'dbus'
 'espeak-ng' 'expat' 'festival' 'glib2' 'gpm' 'icu' 'java-environment' 'libxaw'
-'ncurses' 'ocaml-ctypes' 'ocaml-findlib' 'speech-dispatcher')
+'ncurses' 'ocaml-ctypes' 'ocaml-findlib' 'speech-dispatcher' 'elogind')
 optdepends=('at-spi2-core: X11/GNOME Apps accessibility'
             'atk: ATK bridge for X11/GNOME accessibility'
             'espeak-ng: espeak-ng driver'
@@ -67,7 +67,7 @@ build() {
 package() {
   depends+=('libasound.so' 'libdbus-1.so' 'libexpat.so' 'libgio-2.0.so'
   'libglib-2.0.so' 'libgobject-2.0.so' 'libicuuc.so' 'libgpm.so'
-  'libncursesw.so')
+  'libncursesw.so' 'libelogind.so')
   cd "${pkgname}-${pkgver}"
   make INSTALL_ROOT="${pkgdir}" install
   make INSTALL_ROOT="${pkgdir}" install -C Autostart/Udev
