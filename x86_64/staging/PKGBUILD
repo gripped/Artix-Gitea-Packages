@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=lightdm-openrc
-pkgver=20210106
+pkgver=20210107
 pkgrel=1
 pkgdesc="OpenRC lightdm init script"
 arch=('any')
@@ -12,7 +12,7 @@ provides=('init-displaymanager')
 depends=('lightdm' 'openrc')
 conflicts=('init-displaymanager')
 source=("lightdm.initd")
-sha256sums=('b585efaa6ee9154846abee9b76e0132ae1dd9fa82a480b38102404cfe442abf5')
+sha256sums=('5bd11b5bc0609e235980c5fe5b65c4fadc17d5e31b9ce04cc7e966c5a7361669')
 
 package() {
     install -Dm755 "$srcdir/lightdm.initd" "$pkgdir/etc/init.d/lightdm"

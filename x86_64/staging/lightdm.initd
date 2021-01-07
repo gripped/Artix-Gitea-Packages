@@ -1,22 +1,15 @@
 #!/usr/bin/openrc-run
 
 command="/usr/bin/lightdm"
-command_args="--background"
 pidfile="/run/${RC_SVCNAME}.pid"
-# command_args_background=""
-# command_background=true
-# command_user="user:group"
-# procname="lightdm"
 
 depend() {
-    need localmount
+    need localmount dbus elogind
 
-    # this should start as early as possible
     after bootmisc consolefont modules netmount
-    after readahead-list ypbind autofs openvpn gpm lircmd
+    after ypbind autofs openvpn gpm lircmd
     after quota keymaps
     before alsasound
 
-    # Start before X
-    use elogind dbus xfs
+    use xfs
 }
