@@ -13,7 +13,7 @@ provides=(libcamel-1.2.so libebackend-1.2.so libebook-1.2.so libebook-contacts-1
           libecal-2.0.so libedata-book-1.2.so libedata-cal-2.0.so libedataserver-1.2.so
           libedataserverui-1.2.so)
 license=(GPL)
-_commit=681ce6c7f6b2a84a3615fcd9e1c0c74673714fb4  # tags/3.38.3^0
+_commit=53df39527b113e1ea2ffb6bf4b61e26534f5355a  # tags/3.38.3^0
 source=("git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -27,8 +27,6 @@ prepare() {
 }
 
 build() {
-  CFLAGS+=" $CPPFLAGS"
-  CXXFLAGS+=" $CPPFLAGS"
   cmake -S $pkgname -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLIBEXEC_INSTALL_DIR=/usr/lib \
