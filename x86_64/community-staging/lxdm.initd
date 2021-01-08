@@ -1,22 +1,16 @@
 #!/usr/bin/openrc-run
 
 command="/usr/bin/lxdm-binary"
-command_args="--background"
+command_args="-d"
 pidfile="/run/${RC_SVCNAME}.pid"
-# command_args_background=""
-# command_background=true
-# command_user="user:group"
-# procname="lxdm"
 
 depend() {
-    need localmount
+    need localmount dbus elogind
 
-    # this should start as early as possible
     after bootmisc consolefont modules netmount
     after readahead-list ypbind autofs openvpn gpm lircmd
     after quota keymaps
     before alsasound
 
-    # Start before X
-    use elogind dbus xfs
+    use xfs
 }
