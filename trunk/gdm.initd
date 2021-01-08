@@ -2,14 +2,15 @@
 
 command="/usr/bin/gdm"
 pidfile="/run/${RC_SVCNAME}.pid"
+command_background=true
 
 depend() {
-    need localmount dbus elogind
+    need localmount
 
     after bootmisc consolefont modules netmount
     after readahead-list ypbind autofs openvpn gpm lircmd
     after quota keymaps
     before alsasound
-
+    want elogind
     use xfs
 }
