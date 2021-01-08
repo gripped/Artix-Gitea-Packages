@@ -2,14 +2,15 @@
 
 command="/usr/bin/lightdm"
 pidfile="/run/${RC_SVCNAME}.pid"
+command_background=true
 
 depend() {
-    need localmount dbus elogind
+    need localmount
 
     after bootmisc consolefont modules netmount
     after ypbind autofs openvpn gpm lircmd
-    after quota keymaps
+    after quota keymaps acpid
     before alsasound
 
-    use xfs
+    use xfs dbus elogind
 }
