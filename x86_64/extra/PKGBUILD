@@ -2,21 +2,20 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=iso-profiles
-pkgver=0.51
+pkgver=2021.01
 pkgrel=1
 pkgdesc='Artix iso profiles'
 arch=('any')
 license=('GPL')
 url='https://gitea.artixlinux.org/artix/iso-profiles'
 makedepends=('git')
-_commit=317378612d3ceabec02c947f1b4e3dc3577630db # git/tag 0.51
+_commit=9d4ea3c254d158a4fedda6459ed9db37fa543e2a
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
-# pkgver() {
-#     cd ${pkgname}
-#     git describe --tags | sed 's/-/+/g'
-# }
+pkgver() {
+    date +%Y.%m
+}
 
 package() {
     cd ${pkgname}
