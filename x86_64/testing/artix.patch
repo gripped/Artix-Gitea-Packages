@@ -1,0 +1,11 @@
+--- a/kde-modules/KDEInstallDirs.cmake	2021-01-02 10:03:08.000000000 +0100
++++ b/kde-modules/KDEInstallDirs.cmake	2021-01-09 14:46:00.023007851 +0100
+@@ -236,7 +236,7 @@
+ # See https://wiki.debian.org/Multiarch
+ if((CMAKE_SYSTEM_NAME MATCHES "Linux|kFreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "GNU")
+    AND NOT CMAKE_CROSSCOMPILING
+-   AND NOT EXISTS "/etc/arch-release"
++   AND NOT EXISTS "/etc/artix-release"
+    AND NOT DEFINED ENV{FLATPAK_ID})
+   if (EXISTS "/etc/debian_version") # is this a debian system ?
+     if(CMAKE_LIBRARY_ARCHITECTURE)
