@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = gitea@gitea.artixlinux.org:packagesV/vulkan-icd-loader.git
+	branch = master
+	commit = bd58d851618494729878ad674f2a11f68d1be5dc
+	parent = f2701dca57c7cf971e1988daea1a19ab79f3675d
+	method = merge
+	cmdver = 0.4.3
