@@ -30,8 +30,15 @@ optdepends=('youtube-dl: for video-sharing websites playback')
 provides=('libmpv.so')
 options=('!emptydirs')
 validpgpkeys=('145077D82501AA20152CACCE8D769208D5E31419') # sfan5 <sfan5@live.de>
-source=("git+https://github.com/mpv-player/mpv.git#tag=${_tag}")
-sha256sums=('SKIP')
+source=("git+https://github.com/mpv-player/mpv.git#tag=${_tag}"
+        "libplacebo.patch::https://github.com/mpv-player/mpv/commit/7c4465cefb27d4e0d07535d368febdf77b579566.patch")
+sha256sums=('SKIP'
+            'a9f656a163e17a33050ea3ffe51203b948168437c87038239fc3a2424927b35a')
+
+prepare() {
+  cd ${pkgname}
+  patch -Np1 -i ../libplacebo.patch
+}
 
 build() {
   cd ${pkgname}
