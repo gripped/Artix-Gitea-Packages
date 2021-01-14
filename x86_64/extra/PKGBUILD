@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sddm-s6
-pkgver=20200713
+pkgver=20210114
 pkgrel=1
 pkgdesc="s6 service scripts for sddm"
 arch=('any')
@@ -11,8 +11,8 @@ conflicts=('sddm-runscripts')
 depends=('sddm' 'elogind-s6' 's6')
 install=sddm.install
 source=("sddm.dependencies" "sddm.run" "sddm.type")
-sha256sums=('d150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
-            '0e3086b193a93281ab63e76887215047c3db247589f32f103c98eed4d36d4b2e'
+sha256sums=('40c2658b1781fa7250f55d7daec005ac0d43dc04c500a634cdd056e276146413'
+            '5ac43a5c1d0971f2d6d1036882ef468467328b946b53c882f20c8a028bf24f63'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
