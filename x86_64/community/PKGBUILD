@@ -8,8 +8,8 @@
 
 pkgbase=erlang
 pkgname=(erlang erlang-unixodbc)
-pkgver=23.2
-pkgrel=3
+pkgver=23.2.2
+pkgrel=1
 _docver=23.2
 arch=(x86_64)
 url='https://www.erlang.org'
@@ -71,6 +71,7 @@ package_erlang() {
   # move files that belong to the erlang-unixodbc package
   mkdir -p unixodbc
   mv "$pkgdir/usr/lib/erlang/lib/odbc"* "$srcdir/unixodbc/"
+
 
   # readme and licenses
   install -Dm644 otp/README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
