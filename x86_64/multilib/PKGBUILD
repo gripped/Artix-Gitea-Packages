@@ -2,7 +2,7 @@
 
 pkgname=lib32-cdparanoia
 pkgver=10.2
-pkgrel=5
+pkgrel=6
 pkgdesc='Compact Disc Digital Audio extraction tool'
 arch=('x86_64')
 url='http://www.xiph.org/paranoia/'
@@ -19,7 +19,6 @@ prepare() {
   cd cdparanoia-III-${pkgver}
 
   patch -Np0 -i ../gcc.patch
-  mv configure.in configure.ac
 }
 
 build() {
@@ -29,7 +28,7 @@ build() {
   export CXX='g++ -m32'
   export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
 
-  autoreconf
+  autoreconf -fi
   ./configure \
     --prefix="${pkgdir}/usr" \
     --libdir="${pkgdir}/usr/lib32"
