@@ -21,22 +21,15 @@ makedepends=(
   git
   ninja
 )
-_tag=e78a5ccfe0a2340f2c73e419767f8492ffc2787a
-source=(git+https://github.com/libproxy/libproxy.git#tag=${_tag})
-b2sums=(SKIP)
-
-pkgver() {
-  cd libproxy
-
-  git describe --tags
-}
+source=("https://github.com/libproxy/libproxy/archive/${pkgver}.tar.gz")
+b2sums=('70b78c90aebb0ea308d105ec6d2c61bb54dea36df2d99db835f29c6ffa91168c15e73e01823b799a37fa89a9cb6fca51013ea057006b608fa2a79f4056a5d3c5')
 
 build() {
   export CC='gcc -m32'
   export CXX='g++ -m32'
   export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
 
-  cmake -S libproxy -B build -G Ninja \
+  cmake -S libproxy-$pkgver -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_C_FLAGS="${CFLAGS}" \
     -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
