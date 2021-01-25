@@ -11,7 +11,7 @@ license=(GPL)
 makedepends=(cmake)
 depends=(qt5-base)
 source=($pkgname-$pkgver.tar.gz::"https://github.com/ksnip/kColorPicker/archive/v$pkgver.tar.gz")
-sha256sums=('d99226a7da265ec56e7937f8dd2eeb2c1523c725726d35d2e92d6e6f66237337')
+sha256sums=('fe6f6c540f3921cc7097f1e5cf001883f814a9c2678c85b7f78fb7a2ba2a8c34')
 
 build() {
   cmake -B build -S kColorPicker-$pkgver \
