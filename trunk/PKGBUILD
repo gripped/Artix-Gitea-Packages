@@ -18,7 +18,6 @@ optdepends=('tk: Tk{Agg,Cairo} backends'
             'python-gobject: for GTK3{Agg,Cairo} backend'
             'python-wxpython: WX{,Agg,Cairo} backend'
             'python-cairo: {GTK3,Qt5,Tk,WX}Cairo backends'
-            'python-cairocffi: alternative for Cairo backends'
             'python-tornado: WebAgg backend'
             'ffmpeg: for saving movies'
             'imagemagick: for saving animated gifs'
@@ -28,9 +27,10 @@ optdepends=('tk: Tk{Agg,Cairo} backends'
             'python-certifi: https support')
 makedepends=(git rsync python-setuptools
              tk python-pyqt5 python-gobject
-             python-wxpython python-cairocffi
+             python-wxpython 
              python-certifi python-tornado
              ghostscript texlive-bin)
+	     # artixlinux --> python-cairocffi need deps which need haskell, but is only optional
              # agg missing some non-upstreamed patches?
 checkdepends=(python-pytest-xdist python-pytest-runner xorg-server-xvfb
               texlive-core texlive-latexextra inkscape mencoder
