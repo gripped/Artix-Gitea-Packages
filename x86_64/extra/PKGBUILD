@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=postgresql-s6
-pkgver=20200713
+pkgver=20210201
 pkgrel=1
 pkgdesc="s6 service scripts for postgresql"
 arch=('any')
@@ -10,14 +10,32 @@ provides=('postgresql-runscripts')
 conflicts=('postgresql-runscripts')
 depends=('postgresql' 's6')
 install=postgresql.install
-backup=('etc/s6/sv/postgresql/conf')
-source=("postgresql.conf" "postgresql.run" "postgresql.type")
-sha256sums=('79e887e893965bf8c3a6e4cf6d7d1a8825f24160b45f948d1d882f4b049f075d'
-            'e57d63adea8c3b2f7ce6cf6cc98bf0dabed9e6a042226dc0ebfa606673954689'
+backup=('etc/s6/sv/postgresql-log/conf'
+        'etc/s6/sv/postgresql-srv/conf')
+source=("postgresql-log.conf"
+        "postgresql-log.consumer-for"
+        "postgresql-log.notification-fd"
+        "postgresql-log.pipeline-name"
+        "postgresql-log.run"
+        "postgresql-log.type"
+        "postgresql-srv.conf"
+        "postgresql-srv.producer-for"
+        "postgresql-srv.run"
+        "postgresql-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '7746e3e6f664c456babc4cded04e6d1e3c4da9db2666ca30a265a3a3fdff6af4'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            'b3ff5138ddac344f14e7a2e74eb56e7ac2a80039ad6559c96668a9f9416411b0'
+            '3271da6c3ff5da9c385730bd9c2818e637ae09ee4d86e47d4333fdd3371ee30e'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '79e887e893965bf8c3a6e4cf6d7d1a8825f24160b45f948d1d882f4b049f075d'
+            '6f5970978dd6d443814cd3fb23ba9c108ad014e984e99c540edfbc9c966eb51d'
+            'af8b2c664d5837d3dd1852f1c6e99d5198d614690908b6fa31e3a67016b29b68'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in conf run shell_run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -25,5 +43,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'postgresql'
+    _inst_sv 'postgresql-log'
+    _inst_sv 'postgresql-srv'
 }

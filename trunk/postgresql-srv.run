@@ -1,18 +1,13 @@
 #!/usr/bin/execlineb -P
-backtick -n PGROOT { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGROOT" }
+envfile /etc/s6/sv/postgresql-srv/conf
 importas -iu PGROOT PGROOT
-
-backtick -n PGDATA { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGDATA" }
 importas -iu PGDATA PGDATA
-
-backtick -n PGLOG { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGLOG" }
 importas -iu PGLOG PGLOG
+importas -sCiu INITOPTS INITOPTS
+importas -sCu -D "" PGOPTS PGOPTS
 
-backtick -n INITOPTS { sh -c "source /etc/s6/sv/postgresql/conf; echo $INITOPTS" }
-importas -iu INITOPTS INITOPTS
-
-backtick -n PGOPTS { sh -c "source /etc/s6/sv/postgresql/conf; echo $PGOPTS" }
-importas -iu PGOPTS PGOPTS
+foreground { mkdir -p /run/postgresql }
+foreground { chown -R postgres:postgres /run/postgresql }
 
 foreground {
     if { test $PGROOT != /var/lib/postgres }
@@ -27,10 +22,9 @@ foreground {
     foreground { mkdir -p $PGDATA }
     foreground { chown -R postgres:postgres $PGDATA }
     foreground { chmod 0700 $PGDATA }
-    foreground { redirfd -w 1 /dev/null su - postgres -m -c /usr/bin/initdb $INITOPTS -D $PGDATA }
+    foreground { redirfd -w 1 /dev/null s6-setuidgid postgres initdb $INITOPTS -D $PGDATA }
     foreground { if { test -f /etc/postgresql/postgresql.conf } ln -sf /etc/postgresql/postgresql.conf $PGDATA/postgresql.conf }
 }
 
-ifte { test -n $PGOPTS }
-{ fdmove -c 2 1 exec s6-setuidgid postgres postgres -D $PGDATA }
-fdmove -c 2 1 exec s6-setuidgid postgres postgres -D $PGDATA $PGOPTS
+fdmove -c 2 1
+exec s6-setuidgid postgres postgres -D $PGDATA $PGOPTS
