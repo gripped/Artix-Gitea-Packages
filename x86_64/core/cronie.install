@@ -3,3 +3,7 @@ pre_remove() {
         s6-rc -d change cronie
     fi
 }
+
+post_upgrade() {
+    rm -rf /etc/s6/sv/cronie-log
+}
