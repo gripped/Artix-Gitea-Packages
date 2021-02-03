@@ -2,15 +2,10 @@
 [ -r conf ] && . ./conf
 : ${PGDATA:="$PGROOT/data"}
 
-if [ "$PGROOT" != "/var/lib/postgresql" ]; then
-	echo "Creating symlink /var/lib/postgresql -> $PGROOT"
+if [ "$PGROOT" != "/var/lib/postgres" ]; then
+	echo "Creating symlink /var/lib/postgres -> $PGROOT"
 
-	# Remove /var/lib/postgres if empty dir, but not if symlink
-	if [ ! -L /var/lib/postgres ] && [ -d /var/lib/postgres ]; then
-		rmdir /var/lib/postgres
-	fi
-
-	ln -sf "$PGROOT" /var/lib/postgresql
+	ln -sf "$PGROOT" /var/lib/postgres
 fi
 
 

@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=postgresql-runit
-pkgver=20180605
-pkgrel=2
+pkgver=20210203
+pkgrel=1
 pkgdesc="runit service scripts for postgresql"
 arch=('any')
 url="https://artixlinux.org"
@@ -17,9 +17,9 @@ conflicts=('systemd-sysvcompat')
 source=("postgresql.run"
         "logpostgresql.run"
         "postgresql.conf")
-sha256sums=('40851056deed2d27f36f892d774f7fb64d01f58c17269a17eb2a96fef2a0794c'
+sha256sums=('5dc26034a57c3ad37c8b8619038577d594458a806cc89defb39133b83b4555eb'
             '007cd1227fa789ef5616275ed079f9cc8a4ac95fc2d8f2fa71ca30bb2defc33f'
-            'e75f6bb86488cbf2e2efcf91f753cae1d7f9879d5687bfe954ffed52338dd580')
+            '62870cdb1665f8a4a614110617bc9f2a1c39ca38898bbbf80befa67c6752438e')
 
 _inst_logsv() {
     for file in run finish check; do
