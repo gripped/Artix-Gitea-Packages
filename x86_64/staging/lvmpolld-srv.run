@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+foreground { mkdir -p /run/lvm }
+fdmove -c 2 1
+exec lvmpolld -t 60 -f
