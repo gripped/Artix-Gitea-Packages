@@ -15,7 +15,7 @@ _commit=87d92fece1bbc67146631330649cee2353bd6761  # master
 source=("git+https://gitlab.gnome.org/GNOME/gnome-session.git#commit=$_commit"
         "0001-meson-add-elogind-support.patch")
 sha256sums=('SKIP'
-            'daddd167e1ae64291d078f57faf018656a8540684020aa568bdc9a66749aae2d')
+            'd36c0df0784539e3690ba09429a767997ccd652514b68d42102361d73142aea6')
 
 pkgver() {
   cd $pkgname

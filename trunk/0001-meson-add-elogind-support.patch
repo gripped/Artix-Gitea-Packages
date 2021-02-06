@@ -1,4 +1,4 @@
-From 7a716084791ac95eb8cb3d2038b7945e273a8c12 Mon Sep 17 00:00:00 2001
+From 9e06c736f7d2e9ca6f8c2851ec709f32eb9a8fa4 Mon Sep 17 00:00:00 2001
 From: Dudemanguy <random342@airmail.cc>
 Date: Wed, 7 Oct 2020 10:08:33 -0500
 Subject: [PATCH] meson: add elogind support
@@ -45,7 +45,7 @@ index 0893300b..b3e9fbc8 100644
  #include <systemd/sd-journal.h>
  #endif
 diff --git a/gnome-session/gsm-manager.c b/gnome-session/gsm-manager.c
-index 6839a02d..100c7799 100644
+index a15d2176..d9566f04 100644
 --- a/gnome-session/gsm-manager.c
 +++ b/gnome-session/gsm-manager.c
 @@ -957,7 +957,7 @@ _client_stop (const char *id,
@@ -80,10 +80,10 @@ index 6ac6c9bf..e07111db 100644
  #include <errno.h>
  #include <string.h>
 diff --git a/gnome-session/gsm-util.c b/gnome-session/gsm-util.c
-index 18a94700..1ecd5aaf 100644
+index cdf67610..83cdb2ce 100644
 --- a/gnome-session/gsm-util.c
 +++ b/gnome-session/gsm-util.c
-@@ -613,7 +613,7 @@ gsm_util_export_activation_environment (GError     **error)
+@@ -610,7 +610,7 @@ gsm_util_export_activation_environment (GError     **error)
          return environment_updated;
  }
  
@@ -92,7 +92,7 @@ index 18a94700..1ecd5aaf 100644
  gboolean
  gsm_util_export_user_environment (GError     **error)
  {
-@@ -823,7 +823,7 @@ gsm_util_setenv (const char *variable,
+@@ -821,7 +821,7 @@ gsm_util_setenv (const char *variable,
                  g_clear_error (&error);
          }
  
@@ -115,19 +115,19 @@ index bc26a21e..97289c02 100644
  gboolean    gsm_util_start_systemd_unit             (const char  *unit,
                                                       const char  *mode,
 diff --git a/gnome-session/main.c b/gnome-session/main.c
-index 84edfbe5..0e0de669 100644
+index 443bc045..d25e3271 100644
 --- a/gnome-session/main.c
 +++ b/gnome-session/main.c
-@@ -533,7 +533,7 @@ main (int argc, char **argv)
+@@ -537,7 +537,7 @@ main (int argc, char **argv)
  
          session_name = opt_session_name;
  
 -#ifdef HAVE_SYSTEMD
 +#if defined(HAVE_SYSTEMD) || defined(HAVE_ELOGIND)
-         gsm_util_export_user_environment (NULL);
- #endif
- 
-@@ -609,7 +609,7 @@ main (int argc, char **argv)
+         gsm_util_export_user_environment (&error);
+         if (error) {
+                 g_warning ("Failed to upload environment to systemd: %s", error->message);
+@@ -617,7 +617,7 @@ main (int argc, char **argv)
  
          gsm_main ();
  
@@ -189,5 +189,5 @@ index 4c05dc6e..4a27c7fd 100644
  option('docbook', type: 'boolean', value: true, description: 'build documentation')
  option('man', type: 'boolean', value: true, description: 'build documentation (requires xmlto)')
 -- 
-2.28.0
+2.30.0
 
