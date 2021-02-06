@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=lighttpd-openrc
-pkgver=20200529
+pkgver=20210207
 pkgrel=1
 pkgdesc="OpenRC lighttpd init script"
 arch=('any')
@@ -12,14 +12,13 @@ depends=('openrc' 'lighttpd')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/lighttpd')
 source=('lighttpd.confd'
-        'lighttpd.initd'
-        'lighttpd.logrotate')
+        'lighttpd.initd')
+#         'lighttpd.logrotate')
 sha256sums=('0be7c9c04ce508cbefb3e913951d83c5ed7f0e01fe5aebcf3a5071f30ef3dbc2'
-            '95d3bc504d849282e21e681a0a34f4aaffbb7c914d9b4bedb243cd7153e5b63a'
-            '4d7fe108fe50f23be0a5d97d5989a064d180621d0bfa37965d4ad065f90a206d')
+            '95d3bc504d849282e21e681a0a34f4aaffbb7c914d9b4bedb243cd7153e5b63a')
 
 package() {
-    install -D -m644 $srcdir/lighttpd.logrotate $pkgdir/etc/logrotate.d/lighttpd
+#     install -D -m644 $srcdir/lighttpd.logrotate $pkgdir/etc/logrotate.d/lighttpd
 
     install -Dm755 ${srcdir}/lighttpd.confd ${pkgdir}/etc/conf.d/lighttpd
     install -Dm755 ${srcdir}/lighttpd.initd ${pkgdir}/etc/init.d/lighttpd
