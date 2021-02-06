@@ -13,4 +13,5 @@ depend() {
     before alsasound
     want elogind
     use xfs
+    provide xdm
 }
