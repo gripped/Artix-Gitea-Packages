@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=lxdm-openrc
-pkgver=20210108
+pkgver=20210207
 pkgrel=1
 pkgdesc="OpenRC lxdm init script"
 arch=('any')
@@ -12,7 +12,7 @@ provides=('init-displaymanager')
 depends=('lxdm-gtk3' 'openrc')
 conflicts=('init-displaymanager')
 source=("lxdm.initd")
-sha256sums=('610af36428989d2244b58c1dd2b3e6d9b7abf4b25a1618b142a91c644431714f')
+sha256sums=('f8424d85645eee3e552a4eae9fdffcf084609f1287992cb8158f0445e01686f0')
 
 package() {
     install -Dm755 "$srcdir/lxdm.initd" "$pkgdir/etc/init.d/lxdm"

@@ -13,4 +13,6 @@ depend() {
     before alsasound
 
     use xfs
+
+    provide xdm
 }
