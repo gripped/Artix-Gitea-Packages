@@ -3,7 +3,7 @@
 
 pkgname=haproxy
 pkgver=2.3.5
-pkgrel=1
+pkgrel=1.1
 
 pkgdesc='Reliable, high performance TCP/HTTP load balancer'
 url='https://www.haproxy.org/'
