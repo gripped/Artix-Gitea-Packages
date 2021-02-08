@@ -4,7 +4,7 @@
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
 pkgver=2.03.11
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL2' 'LGPL2.1')
@@ -15,7 +15,7 @@ source=("git+https://sourceware.org/git/lvm2.git#tag=v${pkgver//./_}?signed"
         'lvm2_install'
         '11-dm-initramfs.rules')
 sha256sums=('SKIP'
-            'af5ea3dac7466eda16da2482714d82f2b12a20b673ba973fa34663542ee34fb5'
+            'f0c330df0ba27949eeb368db00a4d0d7ea59fd3e722399e11f38a051c075f5e9'
             'e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0')
 
 _backports=(
