@@ -2,7 +2,7 @@
 
 pkgname=apparmor-runit
 pkgver=20210129
-pkgrel=1
+pkgrel=2
 pkgdesc="runit stage1 script for AppArmor"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,7 +14,7 @@ conflicts=('init-apparmor')
 backup=('etc/rc/apparmor.conf')
 install=apparmor-runit.install
 source=('apparmor' 'apparmor.conf')
-sha256sums=('52239c4dfa65d32126489b7184eafe93117839d6dc3a48deb2628c3958bb6983'
+sha256sums=('9618cb1f13969791ebf83e66f30c28b132493ffa8cf04058b46d05e26e6d2c05'
             '2d706f8c6b5bbb35087890f6ce3f4cdb94854b893050eb215274293f094b682a')
 
 package() {

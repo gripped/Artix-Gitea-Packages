@@ -24,7 +24,7 @@ case "$1" in
             if [[ -d /etc/apparmor.d && -x /usr/bin/apparmor_parser ]]; then
                 for profile in /etc/apparmor.d/*; do
                     if [[ -f "$profile" ]]; then
-                        printf '* Load profile %s: %s\n' "$(APPARMOR)" "$profile"
+                        printf '* Load profile %s: %s\n' "$APPARMOR" "$profile"
                         apparmor_parser -a "$AACOMPLAIN" "$profile"
                     fi
                 done
