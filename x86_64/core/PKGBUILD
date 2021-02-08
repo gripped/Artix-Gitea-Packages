@@ -4,7 +4,7 @@
 
 pkgname=pacman
 pkgver=5.2.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
@@ -25,17 +25,20 @@ validpgpkeys=('6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD'  # Allan McRae <allan@a
 source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.gz{,.sig}
         pacman.conf
         makepkg.conf
-        extracolors.patch)
+        extracolors.patch
+        pacman-5.2.2-fix-strip-messing-up-file-attributes.patch::'https://git.archlinux.org/pacman.git/patch/?id=88d054093c1c99a697d95b26bd9aad5bc4d8e170')
 sha256sums=('bb201a9f2fb53c28d011f661d50028efce6eef2c1d2a36728bdd0130189349a0'
             'SKIP'
             '7e39ff31031ca4b3d6d4c4e5e1757c2993a50653a0fa1574c6db0ed524c53d73'
             '9c769f13c09a6f24c393a9762474eded2f269d8966e7764d9160d62232a7919b'
-            'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466')
+            'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
+            '871fd97b3f13f1718358e4b8e046a56c0262c9042b5e3b5d60835606735798bd')
 
 
 prepare() {
   cd "$pkgname-$pkgver"
   patch -Np1 < ../extracolors.patch
+  patch -Np1 < ../pacman-5.2.2-fix-strip-messing-up-file-attributes.patch
 }
 
 build() {
