@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20201130
+pkgver=20210205
 pkgrel=1
 pkgdesc="s6 service scripts for lvm2"
 arch=('any')
@@ -12,31 +12,17 @@ depends=('lvm2' 's6')
 install=lvm2.install
 backup=('etc/s6/sv/lvm2-monitor/conf'
         'etc/s6/sv/lvm2-pvscan/conf'
-        'etc/s6/sv/lvmetad-log/conf'
         'etc/s6/sv/lvmpolld-log/conf')
 source=("lvm2-monitor.conf"
-        "lvm2-monitor.dependencies"
         "lvm2-monitor.down"
         "lvm2-monitor.type"
         "lvm2-monitor.up"
         "lvm2-pvscan.conf"
-        "lvm2-pvscan.dependencies"
         "lvm2-pvscan.down"
         "lvm2-pvscan.type"
         "lvm2-pvscan.up"
         "lvm2.contents"
         "lvm2.type"
-        "lvmetad-log.conf"
-        "lvmetad-log.consumer-for"
-        "lvmetad-log.notification-fd"
-        "lvmetad-log.pipeline-name"
-        "lvmetad-log.run"
-        "lvmetad-log.type"
-        "lvmetad-srv.dependencies"
-        "lvmetad-srv.finish"
-        "lvmetad-srv.producer-for"
-        "lvmetad-srv.run"
-        "lvmetad-srv.type"
         "lvmpolld-log.conf"
         "lvmpolld-log.consumer-for"
         "lvmpolld-log.notification-fd"
@@ -48,28 +34,15 @@ source=("lvm2-monitor.conf"
         "lvmpolld-srv.run"
         "lvmpolld-srv.type")
 sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '24b23e4f88306d08f5be773b23d6196bab7ac9c2e6ba47e7037400053d095e22'
             '68422ed6e8b81c647e20fdf38548aa938d74cac8ca2945aac8d5eee246efd217'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '9ae347ab21cf1f9a7d31bb7bc8a130e5d41084abfd4f5578eee7586dbc685234'
             '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '24b23e4f88306d08f5be773b23d6196bab7ac9c2e6ba47e7037400053d095e22'
             '827df9ed1ab88affe1cc7c47a03a161b398214703ec8443ef79e5883f0e32396'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '2b5408f97934e843ec19415ca9ffb1ada472cb802f5a08c8702292f9d09c4b04'
-            '35ed55525ccbdaf1aae614097939af215c61d516f1f68464f8cd85172ce5da86'
+            'd7ece00c40c703c300cdacab86ca39374eba4562bfca7623a43ada525ca6e1d1'
             'ef17b7d320f2acc023f2018dab381827ba22f9d01b6c4c97894e1bbfe4928313'
-            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '5b27d3c028dc93e6fdc97740aec2e87e7f008700c18b6775845182ac62cc60a8'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '24b23e4f88306d08f5be773b23d6196bab7ac9c2e6ba47e7037400053d095e22'
-            '008de624f6f73b879eee8dda940ec6c9cfc354787a1e425ba5e412eb9cf461bd'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '581835ea5dbaf989cb156799796501c458d95ccc670e9ed017b6f50809a70409'
-            'b8a1f2ca2c7228b993a8d68c8f46c6918aa10946a290614091b6b2862cb6529a'
-            'aff16b256adddccefa98e32fb4cafbdd9f21c5bb58409df8c4bd8d5f4461312f'
-            'e3a325d38708d2b5290c471fabe3477015c01c098df288150a3e388a338a81fb'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '68f243df58115bc0028c70c8f73112e6cb59fc6952bdd573d6197a59103d1066'
             '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
@@ -94,8 +67,6 @@ package() {
     _inst_sv 'lvm2'
     _inst_sv 'lvm2-monitor'
     _inst_sv 'lvm2-pvscan'
-    _inst_sv 'lvmetad-log'
-    _inst_sv 'lvmetad-srv'
     _inst_sv 'lvmpolld-log'
     _inst_sv 'lvmpolld-srv'
 }
