@@ -2,7 +2,7 @@
 
 pkgname=kbd
 pkgver=2.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Keytable files and keyboard utilities"
 arch=('x86_64')
 url="http://www.kbd-project.org"
@@ -14,6 +14,7 @@ makedepends=('check' 'git')
 source=(git+https://git.kernel.org/pub/scm/linux/kernel/git/legion/kbd.git#tag=v$pkgver
         'fix-euro2.patch'
 	'vlock.pam')
+backup=('etc/pam.d/vlock')
 provides=('vlock')
 conflicts=('vlock')
 replaces=('vlock')
@@ -21,7 +22,7 @@ sha256sums=('SKIP'
             'a5e0167b6a82a9eb4d581d56baab930c2d80f5541dc34630460b73e1115384b8'
             '5c2d377a87121e7c399534fb91e2ffc0cc1e75d44a8f07ee6f55c9c089bc81e4')
 validpgpkeys=(
-              '7F2A3D07298149A0793C9A4EA45ABA544CFFD434' #Alexey Gladkov 
+              '7F2A3D07298149A0793C9A4EA45ABA544CFFD434' #Alexey Gladkov
              )
 
 prepare() {
@@ -42,7 +43,7 @@ prepare() {
 
 build() {
   cd ${pkgname}
-  ./configure --prefix=/usr --datadir=/usr/share/kbd --mandir=/usr/share/man
+  ./configure --prefix=/usr --sysconfdir=/etc --datadir=/usr/share/kbd --mandir=/usr/share/man
   make KEYCODES_PROGS=yes RESIZECONS_PROGS=yes
 }
 
