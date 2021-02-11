@@ -14,9 +14,6 @@ if [[ "$?" != 0 ]]; then
     echo "Error compiling database. Please double check the /etc/s6/sv directories. Exiting."
     exit 1
 fi
-if [ -e "/run/s6-rc" ]; then
-    s6-rc-update /etc/s6/rc/compiled-$timestamp
-fi
 if [ -d "/etc/s6/rc/compiled" ]; then
     ln -sf /etc/s6/rc/compiled-$timestamp /etc/s6/rc/compiled/compiled && mv -f /etc/s6/rc/compiled/compiled /etc/s6/rc
 else
@@ -84,4 +81,9 @@ if test -n "$old_bundles"; then
         len=$(($len + 1))
     done
 fi
+
+if [ -e "/run/s6-rc" ]; then
+    s6-rc-update /etc/s6/rc/compiled-$timestamp
+fi
+
 echo "Switched to a new database. Feel free to remove any old unwanted/unneeded database directories in /etc/s6/rc."
