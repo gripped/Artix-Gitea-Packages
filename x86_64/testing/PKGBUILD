@@ -1,0 +1,34 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=cryptsetup-s6
+pkgver=20210211
+pkgrel=1
+pkgdesc="s6 service scripts for cryptsetup"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+groups=('s6-system')
+provides=('init-cryptsetup')
+conflicts=('init-cryptsetup')
+depends=('cryptsetup' 'lvm2' 'eudev-s6' 's6')
+install=cryptsetup.install
+source=("dependencies" "shell_up" "type" "up")
+sha256sums=('cf198688579ee8487ea71994dbbbd0c295b58ec92290918e5e612853e5373f99'
+            'e6e0007c573d7d4a1478c59caf079b6a00d4eb6b737360bc2baa4c4ff5d7f091'
+            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
+            'e4a012a046dc5fd59b495706f4eb91349b744eb7ea99e771c752fa2ffb5d36a1')
+
+_inst_sv() {
+    for file in dependencies down shell_down shell_up type up; do
+        if test -f "$srcdir/$file"; then
+            install -Dm644 "$srcdir/$file" "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+    for file in shell_down shell_up; do
+        if test -f "$pkgdir/etc/s6/sv/$1/$file"; then
+            chmod +x "$pkgdir/etc/s6/sv/$1/$file"
+        fi
+    done
+}
+
+package() {
+    _inst_sv 'cryptsetup'
+}
