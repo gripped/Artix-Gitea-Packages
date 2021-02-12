@@ -30,13 +30,13 @@ sha256sums=('5056c20157349f8dc74f005b6e88ccbf1078c4e26068876f13ca3d1d7d045fe7')
 b2sums=('379c4d4ee1b10e09d39192ab570be10f8b51f31c355866c494c3ab3d79961b81d0fb1c5c0a63e89f671644a55ff25627250597b0a05dfe78e55760480fe60765')
 
 prepare() {
-  cd ${pkgname}-py3-${pkgver}
+  cd ${pkgname}-py-${pkgver}
 
   autoconf
 }
 
 build() {
-  cd ${pkgname}-py3-${pkgver}
+  cd ${pkgname}-py-${pkgver}
 
   ./configure \
     --prefix=/usr \
@@ -45,13 +45,13 @@ build() {
 }
 
 check() {
-  cd ${pkgname}-py3-${pkgver}
+  cd ${pkgname}-py-${pkgver}
 
   make test
 }
 
 package() {
-  cd ${pkgname}-py3-${pkgver}
+  cd ${pkgname}-py-${pkgver}
 
   make install DESTDIR="${pkgdir}"
   make docs DESTDIR="${pkgdir}"
