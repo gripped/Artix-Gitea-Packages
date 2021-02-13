@@ -2,16 +2,16 @@
 
 pkgname=micro
 pkgver=2.0.8
-pkgrel=1
+pkgrel=2
 pkgdesc="A modern and intuitive terminal-based text editor"
 arch=("i686" "x86_64")
 url="https://${pkgname}-editor.github.io/"
 license=("MIT")
 depends=("glibc")
-makedepends=("git" "go")
+makedepends=("go")
 optdepends=(
-  "xclip: Required for copying/pasting text"
-  "wl-clipboard"
+  "xclip: Required for copying/pasting text on X11"
+  "wl-clipboard: Required for copying/pasting text on wayland"
 )
 source=(
   "${pkgname}-${pkgver}::https://github.com/zyedidia/${pkgname}/archive/v${pkgver}.tar.gz"
