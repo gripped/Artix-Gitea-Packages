@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=execline
-pkgver=2.7.0.1
+pkgver=2.8.0.0
 pkgrel=1
 pkgdesc='A small scripting language, to be used in place of a shell in non-interactive scripts.'
 arch=('x86_64')
@@ -8,7 +8,7 @@ url='https://skarnet.org/software/execline'
 license=('ISC')
 depends=('skalibs')
 source=(https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('cdf61164f97f764a06aba36986d549159df56f2d1a4b3bbf5467ee91ad8fdcdd')
+sha256sums=('e7744b4a400eda68b83dcfb1bce65e454606279882d83d8230ddf8afda25766d')
 
 build() {
 	cd ${pkgname}-${pkgver}
