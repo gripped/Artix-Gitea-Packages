@@ -4,7 +4,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=whois
-pkgver=5.5.7
+pkgver=5.5.8
 pkgrel=1
 pkgdesc="Intelligent WHOIS client"
 arch=('x86_64')
@@ -13,7 +13,7 @@ license=('GPL')
 depends=('libidn2')
 makedepends=('perl' 'git')
 backup=('etc/whois.conf')
-source=(git+https://github.com/rfc1036/whois.git#tag=v$pkgver)
+source=(git+https://github.com/rfc1036/whois.git#tag=v$pkgver?signed)
 sha256sums=('SKIP')
 validpgpkeys=('6791403B68AE2690517C42EAE6FFF1E38DC968B0') # Marco d'Itri <md@linux.it>
 
