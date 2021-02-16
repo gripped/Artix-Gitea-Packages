@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20210212
+pkgver=20210215
 pkgrel=1
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
@@ -24,7 +24,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/udevd-log/conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=debfad66a7082049347615d3f00530621ddba33a
+_commit=9cb5279fcd990525102726b548d62646d1d830fd
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -36,7 +36,7 @@ _inst_sv(){
             install -Dm644 "$srcdir/s6-scripts/$1/$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
     done
-    for file in shell_down shell_up; do
+    for file in shell_up; do
         if test -f "$pkgdir/etc/s6/sv/$1/$file"; then
             chmod +x "$pkgdir/etc/s6/sv/$1/$file"
         fi
