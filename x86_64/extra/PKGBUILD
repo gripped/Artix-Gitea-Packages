@@ -1,6 +1,6 @@
 # Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
 pkgname=dracut
-pkgver=051
+pkgver=052
 pkgrel=1
 pkgdesc="An event driven initramfs infrastructure"
 arch=('x86_64')
@@ -23,7 +23,7 @@ source=(https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut-${pkg
         90-dracut-install.hook
         60-dracut-remove.hook
         artix.conf)
-sha512sums=('e714ca395aa3534c28793b91fd79ec400f6e87ae98f67042e20d1312e25693f31629537475f2445587bc548bac94731e3cec8cba928ac34cebf05b1b08f67e07'
+sha512sums=('c36fbcd4c40c9f9c90d285338758e2dfa47fa68499a08f697f2fb51404dce513aed7d74a570620a698ba39cd8e42dc3dcbeec274fda4867149a1019cf35d10b1'
             'SKIP'
             'ac8455951468e7f4bfa2c7211316837219f960dd03e9cebf319166cc1e0fa6f3be0f9db6e2bc0e10879b64f76d63bec1fff691205970322caf155d09347d5c37'
             '80d22d68a29062fdd97256cdd15b1363045667b1de2168806e14bd77a65e58900c9ce06fa322364ac6a0f45e819e3abc300670cb19cbbcf8dcdfa213d1d9d7b7'
