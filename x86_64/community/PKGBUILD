@@ -1,5 +1,6 @@
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
+
 pkgname=python-cfn-lint
 pkgver=0.45.0
 pkgrel=1
