@@ -3,6 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 # Contributor: Mikko Seppälä <t-r-a-y@mbnet.fi>
 
+
 pkgname=lib32-glib2
 pkgver=2.66.7
 pkgrel=1
