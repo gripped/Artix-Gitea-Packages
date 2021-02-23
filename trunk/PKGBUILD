@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lightdm-s6
-pkgver=20201019
+pkgver=20210223
 pkgrel=1
 pkgdesc="s6 service scripts for lightdm"
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '580a6fd9764245ab8933b1086efd616938a570f76c4d2d2d6ba3e922fed883b2'
             'f415120e2ec5e4e7a0a5d5d2ffe8b9ffcf079b6732e9da52c1f7d212251db6f7'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'd150375e1adf4cab68cb3978b5222f4ea2af46919a55c4e3c8533f80fbaaff43'
+            'ce701dc7ae4a337f063bbc8968585b5ae3c973b00b3283816d1f476c7b2f5b3b'
             '9d45199b5991c34717727160e2fa8f5b8c778c95bfe74e88cdf2a1221325e395'
             '9432bf60abce410739ecbd70b4f2b6a4433da8fafe93e4ff432bdb941bc81287'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
