@@ -2,6 +2,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
+
 pkgname=kdecoration
 pkgver=5.21.1
 pkgrel=1
