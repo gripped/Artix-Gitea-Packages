@@ -7,15 +7,15 @@
 # Contributor: delor <bartekpiech gmail com>
 
 pkgname=qtcreator
-pkgver=4.14.0
+pkgver=4.14.1
 _clangver=11.1.0
-pkgrel=5
+pkgrel=1
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
 license=(LGPL)
 depends=(qt5-tools qt5-quickcontrols qt5-quickcontrols2 qt5-webengine qt5-svg qt5-quick3d qt5-serialport
-         clang=$_clangver qbs clazy syntax-highlighting yaml-cpp)
+         clang=$_clangver clazy syntax-highlighting yaml-cpp)
 makedepends=(cmake llvm python)
 options=(docs)
 optdepends=('qt5-doc: integrated Qt documentation'
@@ -23,6 +23,7 @@ optdepends=('qt5-doc: integrated Qt documentation'
             'qt5-translations: for other languages'
             'gdb: debugger'
             'cmake: cmake project support'
+            'qbs: QBS project support'
             'x11-ssh-askpass: ssh support'
             'git: git support'
             'mercurial: mercurial support'
@@ -30,26 +31,21 @@ optdepends=('qt5-doc: integrated Qt documentation'
             'valgrind: analyze support'
             'perf: performer analyzer')
 source=("https://download.qt.io/official_releases/qtcreator/${pkgver%.*}/$pkgver/qt-creator-opensource-src-$pkgver.tar.xz"
-         qtcreator-fix-clang-paths.patch)
-sha256sums=('d240109351e96446ff149cbd56341ec02ba37bfa50462a85e4d02dfe6b21201e'
-            'eaaa001d3b2705ca2bdfafca5ffce7919baed8726c50113ae03e1d97da5b8c8d')
+         qtcreator-fix-clang-paths.patch::"https://code.qt.io/cgit/qt-creator/qt-creator.git/patch/?id=86348d56")
+sha256sums=('ef6fdcbaebb0d3d37cfdbc68f8b9e94ffeb6f63194564da5ce77760bb7790367'
+            '99518ed7e9525bba7a8f49111c948b56fae224298f06d7dc93bb905bbcd87de4')
 
 prepare() {
   cd qt-creator-opensource-src-$pkgver
 
 # use system qbs
   rm -r src/shared/qbs
-# Fix linking to clang
-  sed -e 's|clangFormat|clang-cpp|' -i src/plugins/clangformat/CMakeLists.txt  
-# Fix libexec path
-  sed -e 's|libexec/qtcreator|lib/qtcreator|' -i cmake/QtCreatorAPIInternal.cmake
-# Fix clang include path
-  patch -p1 -i ../qtcreator-fix-clang-paths.patch
 }
 
 build() {
   cmake -B build -S qt-creator-opensource-src-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DWITH_DOCS=ON
   cmake --build build
 }
