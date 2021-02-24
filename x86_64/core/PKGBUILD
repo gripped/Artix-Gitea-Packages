@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=5.10.16
+_ver=5.11.1
 _rel=1
 _dist=arch${_rel}
 _artix=artix${_rel}
@@ -23,6 +23,7 @@ _srcname=archlinux-linux
 source=(
   "$_srcname::git+https://git.archlinux.org/linux.git?signed#tag=$_srctag"
   config         # the main kernel config file
+  sphinx-workaround.patch  # Sphinx 3.5 broke the build again
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -30,7 +31,8 @@ validpgpkeys=(
   'A2FF3A36AAA56654109064AB19802F8B0D70FC30'  # Jan Alexander Steffens (heftig)
 )
 sha256sums=('SKIP'
-            'adaf8ade8a481462f93c1715a31bd6409e6cde30b073162aa7cf0c1ea272fa75')
+            '1e7f535877a3fe124e43673ad8389c88c8e3001208b38a39861b857e6a48ab43'
+            '52fc0fcd806f34e774e36570b2a739dbdf337f7ff679b1c1139bee54d03301eb')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -98,6 +100,7 @@ _package() {
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
+  depends=(pahole)
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
