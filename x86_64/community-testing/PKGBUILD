@@ -25,7 +25,7 @@ pkgname=(
   uwsgi-plugin-notfound
 )
 pkgver=2.0.19.1
-pkgrel=9
+pkgrel=10
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
 url="https://uwsgi-docs.readthedocs.io/en/latest/"
@@ -97,17 +97,13 @@ prepare() {
   mv plugins/ruby{19,}
   sed -e 's/ruby19/ruby/' \
       -i plugins/ruby/uwsgiplugin.py
-  # remove the explicit lib version from the linking stage of the PHP plugins
+  # duplicate the php plugin, so that we can modify it (and leave the php7
+  # version unmodified)
+  cp -av plugins/php{,7}
+  # remove the explicit lib version from the linking stage of the PHP plugin as
+  # we do not provide /usr/lib/libphp8.so
   sed -e "s/ + php_version//" \
       -i plugins/php/uwsgiplugin.py
-  # duplicate and modify php plugin for php7
-  cp -av plugins/php{,7}
-  mv -v plugins/php7/php{,7}_plugin.c
-  sed -e "s/'php'/'php7'/" \
-      -e 's/php-config/php-config7/g' \
-      -e 's/php_plugin/php7_plugin/g' \
-      -e 's/lphp/lphp7/g' \
-      -i plugins/php7/uwsgiplugin.py
   # copy our custom build profile into place
   cp -v ../archlinux.ini buildconf/
 }
@@ -115,6 +111,9 @@ prepare() {
 build() {
   cd "$pkgbase-$pkgver"
   python uwsgiconfig.py --verbose --build archlinux
+  # build php7 plugin separately and override php-config in use
+  UWSGICONFIG_PHPPATH='php-config7' \
+  python uwsgiconfig.py --verbose --plugin plugins/php7 archlinux php7
 }
 
 package_uwsgi() {
