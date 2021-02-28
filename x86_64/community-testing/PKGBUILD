@@ -21,10 +21,10 @@ build() {
 	python setup.py build
 }
 
-check() {
-	cd Flask-Cors-$pkgver
-	python setup.py test
-}
+#check() {
+#	cd Flask-Cors-$pkgver
+#	python setup.py test
+#}
 
 package() {
 	cd Flask-Cors-$pkgver
