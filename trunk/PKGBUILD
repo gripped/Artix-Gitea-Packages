@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=alsa-utils-s6
-pkgver=20201130
+pkgver=20210228
 pkgrel=1
 pkgdesc="s6 service scripts for alsa-utils"
 arch=('any')
@@ -14,10 +14,10 @@ source=("alsa.dependencies"
         "alsa.down"
         "alsa.type"
         "alsa.up")
-sha256sums=('953bc981527e6a08efdd7de8c5db0916ca58c52765b6e4ae599290e0486607a8'
-            'd4245454439cf9ef863ca02c7358eea8ee1b713187eec894f13c6d6d8bdd5b7b'
+sha256sums=('3431337a4e6a26fdc286412d925c02a3959838c4a8b041bb80ae51cbd2eaa90c'
+            '9877dbb8418ddd5d2d1560cbec139afc7405e12bf8a873dd846400c4913dd626'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '539504c87967783712c6789f628f9732222304c9e741f8b1499de3f1e8bddb28')
+            '0d4bd0659c7ce5241a8901820fe9ed215735895b0a0b55bab99bf109f3d3c203')
 
 _inst_sv(){
     for file in dependencies down type up; do

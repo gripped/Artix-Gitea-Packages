@@ -1,2 +1,2 @@
 #!/usr/bin/execlineb -P
-alsactl store
+exec alsactl store
