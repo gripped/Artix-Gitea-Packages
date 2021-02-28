@@ -23,10 +23,6 @@ package() {
   # install darkhttpd
   install -Dm755 "$srcdir/$pkgname-$pkgver/darkhttpd" "$pkgdir/usr/bin/darkhttpd"
 
-  # install README
-  install -d "$pkgdir"/usr/share/doc/$pkgname
-  install -Dm644 "$srcdir/$pkgname-$pkgver/README" "$pkgdir/usr/share/doc/$pkgname/"
-
   # install license
   install -d "$pkgdir/usr/share/licenses/$pkgname"
   sed -n '1,/^$/p' darkhttpd.c > "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
