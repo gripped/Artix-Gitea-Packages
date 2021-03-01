@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lxdm-s6
-pkgver=20200713
+pkgver=20210301
 pkgrel=1
 pkgdesc="s6 service scripts for lxdm"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('lxdm-runscripts')
-conflicts=('lxdm-runscripts')
+provides=('init-lxdm')
+conflicts=('init-lxdm')
 depends=('lxdm' 's6')
 install=lxdm.install
 source=("lxdm.run" "lxdm.type")
