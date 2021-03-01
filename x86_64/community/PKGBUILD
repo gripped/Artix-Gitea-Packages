@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=boinc-s6
-pkgver=20201017
+pkgver=20210301
 pkgrel=1
-pkgdesc="s6 service scripts for boinc"
+pkgdesc="s6-rc service scripts for boinc"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('boinc-runscripts')
-conflicts=('boinc-runscripts')
+provides=('init-boinc')
+conflicts=('init-boinc')
 depends=('boinc' 's6')
 install=boinc.install
 backup=('etc/s6/sv/boinc-log/conf')
