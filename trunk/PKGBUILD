@@ -1,13 +1,15 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=backuppc-s6
-pkgver=20201017
+pkgver=20210301
 pkgrel=1
-pkgdesc="backuppc s6 init"
+pkgdesc="s6-rc service scripts for backuppc"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 license=('GPL2')
 groups=('s6-galaxy')
+provides=('init-backuppc')
+conflicts=('init-backuppc')
 install=backuppc.install
 depends=('s6' 'backuppc')
 backup=('etc/s6/sv/backuppc-log/conf')
