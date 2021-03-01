@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sddm-s6
-pkgver=20210114
+pkgver=20210301
 pkgrel=1
 pkgdesc="s6 service scripts for sddm"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('sddm-runscripts')
-conflicts=('sddm-runscripts')
+provides=('init-sddm')
+conflicts=('init-sddm')
 depends=('sddm' 'elogind-s6' 's6')
 install=sddm.install
 source=("sddm.dependencies" "sddm.run" "sddm.type")
