@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=bind-s6
-pkgver=20200713
+pkgver=20210301
 pkgrel=1
-pkgdesc="s6 service scripts for bind"
+pkgdesc="s6-rc service scripts for bind"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('bind-runscripts')
-conflicts=('bind-runscripts')
+provides=('init-bind')
+conflicts=('init-bind')
 depends=('bind' 's6')
 install=named.install
 source=("named.run" "named.type")
