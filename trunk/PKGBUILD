@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=xdm-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for xdm (The original Xorg XDM)"
 arch=('any')
 url="https://github.com/artix-linux"
@@ -12,6 +12,7 @@ license=('BSD3')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
+provides=('init-xdm' 'init-displaymanager')
 depends=('xorg-xdm')
 conflicts=('systemd-sysvcompat')
 source=("xdm.run")
