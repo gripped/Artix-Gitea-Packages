@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lightdm-s6
-pkgver=20210223
+pkgver=20210301
 pkgrel=1
 pkgdesc="s6 service scripts for lightdm"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('lightdm-runscripts')
-conflicts=('lightdm-runscripts')
+provides=('init-lightdm')
+conflicts=('init-lightdm')
 depends=('lightdm' 'elogind-s6' 's6')
 install=lightdm.install
 backup=('etc/s6/sv/lightdm-log/conf')
