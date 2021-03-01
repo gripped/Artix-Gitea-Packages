@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=brltty-s6
-pkgver=20201017
+pkgver=20210301
 pkgrel=1
-pkgdesc="s6 service scripts for brltty"
+pkgdesc="s6-rc service scripts for brltty"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('brltty-runscripts')
-conflicts=('brltty-runscripts')
+provides=('init-brltty')
+conflicts=('init-brltty')
 depends=('brltty' 's6')
 install=brltty.install
 backup=('etc/s6/sv/brltty-log/conf')
