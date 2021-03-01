@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=apache-s6
-pkgver=20201019
+pkgver=20210301
 pkgrel=1
 pkgdesc="s6 service scripts for apache"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('apache-runscripts')
-conflicts=('apache-runscripts')
+provides=('init-apache')
+conflicts=('init-apache')
 depends=('apache' 's6')
 install=apache.install
 backup=('etc/s6/sv/apache-log/conf')
