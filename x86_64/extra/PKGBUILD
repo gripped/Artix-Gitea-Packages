@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=lightdm-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for lightdm"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,6 +13,7 @@ license=('BSD3')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('lightdm' 'dbus-runit')
+provides=('init-lightdm' 'init-displaymanager')
 conflicts=('systemd-sysvcompat')
 source=("lightdm.run")
 sha256sums=('092cf2c0eeba2f503d3b894aff978916a973a64f9a76f645ed78f60c8f2d790f')
