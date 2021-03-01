@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=bluez-s6
-pkgver=20201017
+pkgver=20210301
 pkgrel=1
-pkgdesc="s6 service scripts for bluez"
+pkgdesc="s6-rc service scripts for bluez"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('bluez-runscripts')
-conflicts=('bluez-runscripts')
+provides=('init-bluez')
+conflicts=('init-bluez')
 depends=('bluez' 'dbus-s6' 's6')
 install=bluetoothd.install
 backup=('etc/s6/sv/bluetoothd-log/conf')
