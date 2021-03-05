@@ -1,5 +1,6 @@
 # Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 
+
 pkgname=libgnt
 pkgver=2.14.1
 pkgrel=1
