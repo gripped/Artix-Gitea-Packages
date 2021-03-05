@@ -20,9 +20,6 @@ sha256sums=('SKIP')
 prepare() {
   mkdir -p src/github.com/containerd
   ln -rTsf $pkgname src/github.com/containerd/containerd
-
-  # fix paths in service
-  sed -i 's,/sbin,/usr/bin,;s,/usr/local,/usr,' $pkgname/containerd.service
 }
 
 build() {
