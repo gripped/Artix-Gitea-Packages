@@ -4,29 +4,34 @@
 # Contributor: Iwan Timmer <irtimmer@gmail.com>
 
 pkgname=containerd
-pkgver=1.4.3
+pkgver=1.4.4
 pkgrel=1
 pkgdesc='An open and reliable container runtime'
 url='https://containerd.io/'
 depends=('runc')
-makedepends=('go' 'git' 'btrfs-progs' 'libseccomp' 'containers-common')
+makedepends=('go' 'git' 'btrfs-progs' 'libseccomp' 'containers-common' 'go-md2man')
 provides=('container-runtime')
 arch=('x86_64')
 license=("Apache")
-source=("git+https://github.com/containerd/containerd.git#tag=v${pkgver}")
+source=("git+https://github.com/containerd/containerd.git#tag=v${pkgver}
 validpgpkeys=("8C7A111C21105794B0E8A27BF58C5D0A4405ACDB") # Derek McGowan
 sha256sums=('SKIP')
 
 prepare() {
   mkdir -p src/github.com/containerd
   ln -rTsf $pkgname src/github.com/containerd/containerd
+
+  # fix paths in service
+  sed -i 's,/sbin,/usr/bin,;s,/usr/local,/usr,' $pkgname/containerd.service
 }
 
 build() {
   export GOPATH="$srcdir"
   cd src/github.com/containerd/containerd
   export GOFLAGS="-trimpath -mod=readonly -modcacherw"
+  export GO111MODULE=off
   make VERSION=v$pkgver
+  make VERSION=v$pkgver man
 }
 
 check() {
