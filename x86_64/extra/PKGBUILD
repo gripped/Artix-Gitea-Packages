@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=colord-s6
-pkgver=20200914
+pkgver=20210306
 pkgrel=1
-pkgdesc="s6 service scripts for colord"
+pkgdesc="s6-rc service scripts for colord"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('colord-runscripts')
-conflicts=('colord-runscripts')
+provides=('init-colord')
+conflicts=('init-colord')
 depends=('colord' 'dbus-s6' 'eudev-s6' 's6')
 install=colord.install
 source=("colord-session.dependencies"
