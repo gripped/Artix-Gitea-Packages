@@ -1,13 +1,15 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=coturn-s6
-pkgver=20201017
+pkgver=20210306
 pkgrel=1
-pkgdesc="s6 service scripts for coturn"
+pkgdesc="s6-rc service scripts for coturn"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 license=('GPL2')
 groups=('s6-galaxy')
+provides=('init-coturn')
+conflicts=('init-coturn')
 install=coturn.install
 depends=('s6' 'coturn')
 backup=('etc/s6/sv/coturn-log/conf')
