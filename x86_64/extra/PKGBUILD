@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20201017
+pkgver=20210306
 pkgrel=1
-pkgdesc="s6 service scripts for clamav"
+pkgdesc="s6-rc service scripts for clamav"
 arch=('any')
 url="https://gitea.artixlinux.org/"
 groups=('s6-world')
-provides=('clamav-runscripts')
-conflicts=('clamav-runscripts')
+provides=('init-clamav')
+conflicts=('init-clamav')
 depends=('clamav' 's6')
 install=clamd.install
 backup=('etc/s6/sv/clamd-log/conf'
