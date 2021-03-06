@@ -1,9 +1,10 @@
 # Maintainer: Sébastien "Seblu" Luttringer <seblu@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=btrfs-progs
 pkgver=5.10.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Btrfs filesystem utilities'
 arch=('x86_64')
 makedepends=('git' 'asciidoc' 'xmlto' 'eudev' 'python' 'python-setuptools' 'e2fsprogs' 'reiserfsprogs')
