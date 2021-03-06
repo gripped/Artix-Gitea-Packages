@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=cyrus-sasl-s6
-pkgver=20201017
+pkgver=20210306
 pkgrel=1
-pkgdesc="s6 service scripts for cyrus-sasl"
+pkgdesc="s6-rc service scripts for cyrus-sasl"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('cyrus-sasl-runscripts')
-conflicts=('cyrus-sasl-runscripts')
+provides=('init-cyrus-sasl')
+conflicts=('init-cyrus-sasl')
 depends=('cyrus-sasl' 's6')
 install=saslauthd.install
 backup=('etc/s6/sv/saslauthd-log/conf')
