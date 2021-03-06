@@ -1,13 +1,15 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=consul-s6
-pkgver=20201017
+pkgver=20210306
 pkgrel=1
-pkgdesc="s6 consul init script"
+pkgdesc="s6-rc service scripts for consul"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 license=('GPL2')
 groups=('s6-galaxy')
+provides=('init-consul')
+conflicts=('init-consul')
 install=consul.install
 depends=('s6' 'consul')
 backup=('etc/s6/sv/consul-log/conf')
