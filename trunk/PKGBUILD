@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cups-s6
-pkgver=20201203
+pkgver=20210306
 pkgrel=1
-pkgdesc="s6 service scripts for cups"
+pkgdesc="s6-rc service scripts for cups"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('cups-runscripts')
-conflicts=('cups-runscripts')
+provides=('init-cups')
+conflicts=('init-cups')
 depends=('cups' 'dbus-s6' 's6')
 install=cupsd.install
 source=("cupsd.dependencies"
