@@ -2,14 +2,13 @@
 
 pkgname=perl-net-dns
 pkgver=1.29
-pkgrel=0.1
+pkgrel=1
 pkgdesc="Perl Module: Interface to the DNS resolver"
 arch=('any')
 license=('PerlArtistic')
 url="https://search.cpan.org/dist/Net-DNS/"
 depends=('perl-digest-hmac' 'perl-net-ip')
-checkdepends=('perl-test-pod' 'perl-mime-base32' 'perl-net-libidn2')
-#'perl-net-dns-sec' 'perl-net-libidn2')
+checkdepends=('perl-test-pod' 'perl-mime-base32' 'perl-net-dns-sec' 'perl-net-libidn2')
 optdepends=('perl-io-socket-inet6: IPv6 support'
             'perl-socket6: IPv6 support'
             'perl-net-libidn2: non-ASCII domain support')
