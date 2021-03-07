@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcp-s6
-pkgver=20200713
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for dhcp"
+pkgdesc="s6-rc service scripts for dhcp"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('dhcp-runscripts')
-conflicts=('dhcp-runscripts')
+provides=('init-dhcp')
+conflicts=('init-dhcp')
 depends=('dhcp' 's6')
 install=dhcp.install
 source=("dhclient.run"
