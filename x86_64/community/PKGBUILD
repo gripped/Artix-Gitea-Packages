@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=espeakup-s6
-pkgver=20200713
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for espeakup"
+pkgdesc="s6-rc service scripts for espeakup"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('espeakup-runscripts')
-conflicts=('espeakup-runscripts')
+provides=('init-espeakup')
+conflicts=('init-espeakup')
 depends=('espeakup' 's6')
 install=espeakup.install
 source=("espeakup.run" "espeakup.type")
