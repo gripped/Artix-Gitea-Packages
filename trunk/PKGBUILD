@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=dns-over-https-s6
-pkgver=20201017
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for dns-over-https"
+pkgdesc="s6-rc service scripts for dns-over-https"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('dns-over-https-runscripts')
-conflicts=('dns-over-https-runscripts')
+provides=('init-dns-over-https')
+conflicts=('init-dns-over-https')
 depends=('dns-over-https' 's6')
 install=dns-over-https.install
 backup=('etc/s6/sv/doh-client-log/conf'
