@@ -16,7 +16,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=5.11
-pkgrel=1
+pkgrel=1.1
 license=('GPL2')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -212,6 +212,11 @@ package_cpupower() {
     docdir='/usr/share/doc/cpupower' \
     install install-man
   popd
+
+  # install startup scripts <-- artix need this
+  install -Dm 644 $pkgname.default "$pkgdir/etc/default/$pkgname"
+
+
 }
 
 package_x86_energy_perf_policy() {
