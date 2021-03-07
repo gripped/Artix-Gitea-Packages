@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=deluge-s6
-pkgver=20201017
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for deluge"
+pkgdesc="s6-rc service scripts for deluge"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('deluge-runscripts')
-conflicts=('deluge-runscripts')
+provides=('init-deluge')
+conflicts=('init-deluge')
 depends=('deluge' 's6')
 install=deluge.install
 backup=('etc/s6/sv/deluged-log/conf'
