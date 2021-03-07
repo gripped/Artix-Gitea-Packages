@@ -1,14 +1,14 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=exim-s6
-pkgver=20201017
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for exim"
+pkgdesc="s6-rc service scripts for exim"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('exim-runscripts')
-conflicts=('exim-runscripts')
+provides=('init-exim')
+conflicts=('init-exim')
 depends=('exim' 's6')
 backup=('etc/s6/sv/exim-log/conf')
 install=exim.install
