@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=firewalld-s6
-pkgver=20201018
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for firewalld"
+pkgdesc="s6-rc service scripts for firewalld"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('firewalld-runscripts')
-conflicts=('firewalld-runscripts')
+provides=('init-firewalld')
+conflicts=('init-firewalld')
 depends=('firewalld' 'dbus-s6' 's6')
 install=firewalld.install
 backup=('etc/s6/sv/firewalld-log/conf')
