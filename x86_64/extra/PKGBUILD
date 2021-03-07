@@ -1,20 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fuse-s6
-pkgver=20201130
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for fuse"
+pkgdesc="s6-rc service scripts for fuse"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('fuse-runscripts')
-conflicts=('fuse-runscripts')
+provides=('init-fuse')
+conflicts=('init-fuse')
 depends=('fuse' 's6')
 install=fuse.install
 source=("fuse.dependencies"
         "fuse.down"
         "fuse.type"
         "fuse.up")
-sha256sums=('65436a8b75e17df97eee711fde905732e2ae4a3fe70d3ba8d364543ec3761bf5'
+sha256sums=('98f44254aec6dd6b0a37ddb732118b5817479cc5cdb001c410964cbdca1c0114'
             'bb6795df788580f573a8fb0800f53cbd83406a53a92b6a56c50a8f6f2d14401c'
             'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
             '4909550fe00251e1118a1094b955af5257e8ca2d7ac2aee5afb2fe01daa28c0d')
