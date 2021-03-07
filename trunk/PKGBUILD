@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=dropbear-s6
-pkgver=20201017
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for dropbear"
+pkgdesc="s6-rc service scripts for dropbear"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('dropbear-runscripts')
-conflicts=('dropbear-runscripts')
+provides=('init-dropbear')
+conflicts=('init-dropbear')
 depends=('dropbear' 's6')
 install=dropbear.install
 backup=('etc/s6/sv/dropbear-log/conf')
