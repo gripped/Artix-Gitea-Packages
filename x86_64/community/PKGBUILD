@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=dovecot-s6
-pkgver=20201017
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for dovecot"
+pkgdesc="s6-rc service scripts for dovecot"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('dovecot-runscripts')
-conflicts=('dovecot-runscripts')
+provides=('init-dovecot')
+conflicts=('init-dovecot')
 depends=('dovecot' 's6')
 install=dovecot.install
 backup=('etc/s6/sv/dovecot-log/conf')
