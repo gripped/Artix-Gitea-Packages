@@ -1,14 +1,14 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=distcc-s6
-pkgver=20201017
+pkgver=20210307
 pkgrel=1
-pkgdesc="s6 service scripts for distcc"
+pkgdesc="s6-rc service scripts for distcc"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('distcc-runscripts')
-conflicts=('distcc-runscripts')
+provides=('init-distcc')
+conflicts=('init-distcc')
 depends=('distcc' 's6')
 backup=('etc/s6/sv/distcc-log/conf'
         'etc/s6/sv/distcc-srv/conf')
