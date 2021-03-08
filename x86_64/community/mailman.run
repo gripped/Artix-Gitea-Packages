@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+exec s6-fghack /usr/lib/mailman/bin/mailmanctl start

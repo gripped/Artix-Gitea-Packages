@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+exec /usr/lib/mailman/bin/mailmanctl stop
