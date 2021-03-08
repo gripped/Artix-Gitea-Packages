@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=git-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for git"
+pkgdesc="s6-rc service scripts for git"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('git-runscripts')
-conflicts=('git-runscripts')
+provides=('init-git')
+conflicts=('init-git')
 depends=('git' 's6')
 install=git-daemon.install
 backup=('etc/s6/sv/git-daemon-log/conf')
