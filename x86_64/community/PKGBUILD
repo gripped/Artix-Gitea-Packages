@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=intel-undervolt-s6
-pkgver=20201204
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for intel-undervolt"
+pkgdesc="s6-rc service scripts for intel-undervolt"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('intel-undervolt-runscripts')
-conflicts=('intel-undervolt-runscripts')
+provides=('init-intel-undervolt')
+conflicts=('init-intel-undervolt')
 depends=('intel-undervolt' 'elogind-s6' 's6')
 install=intel-undervolt.install
 backup=('etc/s6/sv/intel-undervolt-loop-log/conf')
