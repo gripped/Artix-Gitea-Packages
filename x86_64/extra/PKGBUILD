@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nftables-s6
-pkgver=20200713
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for nftables"
+pkgdesc="s6-rc service scripts for nftables"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('nftables-runscripts')
-conflicts=('nftables-runscripts')
+provides=('init-nftables')
+conflicts=('init-nftables')
 depends=('nftables' 's6')
 install=nftables.install
 source=("nftables.type" "nftables.up")
