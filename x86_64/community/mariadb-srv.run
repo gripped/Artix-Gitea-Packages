@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+foreground { if -nt { test -d /run/mysqld } install -dm755 -o mysql -g mysql /run/mysqld }
+fdmove -c 2 1
+exec mysqld --user=mysql
