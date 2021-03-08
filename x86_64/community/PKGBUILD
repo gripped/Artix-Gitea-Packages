@@ -1,13 +1,14 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
-
+# Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=opensips-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="opensips s6 init"
+pkgdesc="s6-rc service scripts for opensips"
 arch=('any')
 url="https://opensips.artixlinux.org/artixlinux/packages-s6"
-license=('GPL2')
 groups=('s6-galaxy')
+provides=('init-opensips')
+conflicts=('init-opensips')
 install=opensips.install
 backup=('etc/s6/sv/opensips-log/conf')
 depends=('s6' 'opensips')
