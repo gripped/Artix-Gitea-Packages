@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lxd-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for lxd"
+pkgdesc="s6-rc service scripts for lxd"
 arch=('any')
-url="https://gitea.artixlinux.org/"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('lxd-runscripts')
-conflicts=('lxd-runscripts')
+provides=('init-lxd')
+conflicts=('init-lxd')
 depends=('lxd' 'dbus-s6' 's6')
 install=lxd.install
 backup=('etc/s6/sv/lxd-log/conf')
