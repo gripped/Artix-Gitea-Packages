@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=mpd-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for mpd"
+pkgdesc="s6-rc service scripts for mpd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('mpd-runscripts')
-conflicts=('mpd-runscripts')
+provides=('init-mpd')
+conflicts=('init-mpd')
 depends=('mpd' 's6')
 install=mpd.install
 backup=('etc/s6/sv/mpd-log/conf')
