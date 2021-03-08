@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=minidlna-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for minidlna"
+pkgdesc="s6-rc service scripts for minidlna"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('minidlna-runscripts')
-conflicts=('minidlna-runscripts')
+provides=('init-minidlna')
+conflicts=('init-minidlna')
 depends=('minidlna' 's6')
 install=minidlnad.install
 backup=('etc/s6/sv/minidlnad-log/conf')
