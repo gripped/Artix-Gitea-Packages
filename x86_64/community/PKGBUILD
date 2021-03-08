@@ -1,14 +1,14 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=grafana-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for grafana"
+pkgdesc="s6-rc service scripts for grafana"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('grafana-runscripts')
-conflicts=('grafana-runscripts')
+provides=('init-grafana')
+conflicts=('init-grafana')
 depends=('grafana' 's6')
 install=grafana.install
 backup=('etc/s6/sv/grafana-log/conf')
