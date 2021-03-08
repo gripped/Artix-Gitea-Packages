@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=jenkins-s6
-pkgver=20201019
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for jenkins"
+pkgdesc="s6-rc service scripts for jenkins"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('jenkins-runscripts')
-conflicts=('jenkins-runscripts')
+provides=('init-jenkins')
+conflicts=('init-jenkins')
 depends=('jenkins' 's6')
 install=jenkins.install
 backup=('etc/s6/sv/jenkins-log/conf')
