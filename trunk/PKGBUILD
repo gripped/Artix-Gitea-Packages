@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openntpd-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for openntpd"
+pkgdesc="s6-rc service scripts for openntpd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('openntpd-runscripts')
-conflicts=('openntpd-runscripts')
+provides=('init-openntpd')
+conflicts=('init-openntpd')
 depends=('openntpd' 's6')
 install=openntpd.install
 backup=('etc/s6/sv/openntpd-log/conf')
