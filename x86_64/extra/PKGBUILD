@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=lighttpd-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for lighttpd"
+pkgdesc="s6-rc service scripts for lighttpd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('lighttpd-runscripts')
-conflicts=('lighttpd-runscripts')
+provides=('init-lighttpd')
+conflicts=('init-lighttpd')
 depends=('lighttpd' 's6')
 install=lighttpd.install
 backup=('etc/s6/sv/lighttpd-log/conf')
