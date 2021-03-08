@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=openfire-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for openfire"
+pkgdesc="s6-rc service scripts for openfire"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('openfire-runscripts')
-conflicts=('openfire-runscripts')
+provides=('init-openfire')
+conflicts=('init-openfire')
 depends=('openfire' 's6')
 install=openfire.install
 backup=('etc/s6/sv/openfire-log/conf')
