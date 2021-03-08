@@ -1,13 +1,13 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=motion-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for motion"
+pkgdesc="s6-rc service scripts for motion"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('motion-runscripts')
-conflicts=('motion-runscripts')
+provides=('init-motion')
+conflicts=('init-motion')
 depends=('motion' 's6')
 backup=('etc/s6/sv/motion-log/conf')
 install=motion.install
