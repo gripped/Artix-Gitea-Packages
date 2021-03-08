@@ -1,0 +1,5 @@
+#!/usr/bin/execlineb -P
+envfile /etc/s6/sv/nvidia-persistenced/conf
+importas -iu NVPD_USER NVPD_USER
+importas -sCiu ARGS ARGS
+exec s6-fghack nvidia-persistenced --user ${NVPD_USER} ${ARGS}
