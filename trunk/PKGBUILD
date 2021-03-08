@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=libvirt-s6
-pkgver=20200713
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for libvirt"
+pkgdesc="s6-rc service scripts for libvirt"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('libvirt-runscripts')
-conflicts=('libvirt-runscripts')
+provides=('init-libvirt')
+conflicts=('init-libvirt')
 depends=('libvirt' 'dbus-s6' 's6')
 install=libvirt.install
 source=("libvirtd.dependencies"
