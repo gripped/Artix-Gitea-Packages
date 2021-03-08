@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=matrix-synapse-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for matrix-synapse"
+pkgdesc="s6-rc service scripts for matrix-synapse"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('matrix-synapse-runscripts')
-conflicts=('matrix-synapse-runscripts')
+provides=('init-matrix-synapse')
+conflicts=('init-matrix-synapse')
 depends=('matrix-synapse' 's6')
 install=matrix-synapse.install
 backup=('etc/s6/sv/matrix-synapse-log/conf')
