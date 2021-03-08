@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=matterbridge-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for matterbridge"
+pkgdesc="s6-rc service scripts for matterbridge"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('matterbridge-runscripts')
-conflicts=('matterbridge-runscripts')
+provides=('init-matterbridge')
+conflicts=('init-matterbridge')
 depends=('matterbridge' 's6')
 install=matterbridge.install
 backup=('etc/s6/sv/matterbridge-log/conf')
