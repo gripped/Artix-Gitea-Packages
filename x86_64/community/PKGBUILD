@@ -1,13 +1,13 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=nsd-s6
-pkgver=20201018
+pkgver=20210308
 pkgrel=1
-pkgdesc="s6 service scripts for nsd"
+pkgdesc="s6-rc service scripts for nsd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('nsd-runscripts')
-conflicts=('nsd-runscripts')
+provides=('init-nsd')
+conflicts=('init-nsd')
 depends=('nsd' 's6')
 backup=('etc/s6/sv/nsd-log/conf')
 install=nsd.install
