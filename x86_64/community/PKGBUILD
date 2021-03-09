@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=privoxy-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for privoxy"
+pkgdesc="s6-rc service scripts for privoxy"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('privoxy-runscripts')
-conflicts=('privoxy-runscripts')
+provides=('init-privoxy')
+conflicts=('init-privoxy')
 depends=('privoxy' 's6')
 install=privoxy.install
 backup=('etc/s6/sv/privoxy-log/conf')
