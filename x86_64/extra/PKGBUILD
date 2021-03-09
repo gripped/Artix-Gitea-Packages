@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=transmission-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for transmission"
+pkgdesc="s6-rc service scripts for transmission"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('transmission-runscripts')
-conflicts=('transmission-runscripts')
-depends=('transmission-cli' 's6')
+provides=('init-transmission')
+conflicts=('init-transmission')
+depends=('transmission-cli' 's6-rc')
 install=transmission.install
 backup=('etc/s6/sv/transmission-daemon-log/conf')
 source=("transmission-daemon-srv."{type,run,producer-for}
