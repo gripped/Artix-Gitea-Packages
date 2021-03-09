@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=unrealircd-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for unrealircd"
+pkgdesc="s6-rc service scripts for unrealircd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('unrealircd-runscripts')
-conflicts=('unrealircd-runscripts')
-depends=('unrealircd' 's6')
+provides=('init-unrealircd')
+conflicts=('init-unrealircd')
+depends=('unrealircd' 's6-rc')
 install=unrealircd.install
 backup=('etc/s6/sv/unrealircd-log/conf')
 source=("unrealircd-log.conf"
