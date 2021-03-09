@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=znc-s6
-pkgver=20201018
-pkgrel=2
-pkgdesc="s6 service scripts for znc"
+pkgver=20210309
+pkgrel=1
+pkgdesc="s6-rc service scripts for znc"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('znc-runscripts')
-conflicts=('znc-runscripts')
-depends=('znc' 's6')
+provides=('init-znc')
+conflicts=('init-znc')
+depends=('znc' 's6-rc')
 install=znc.install
 backup=('etc/s6/sv/znc-log/conf')
 source=("znc-srv."{type,run,producer-for}
