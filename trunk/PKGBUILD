@@ -1,13 +1,13 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=postfix-s6
-pkgver=20201018
-pkgrel=1.0
-pkgdesc="s6 service scripts for postfix"
+pkgver=20210309
+pkgrel=1
+pkgdesc="s6-rc service scripts for postfix"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('postfix-runscripts')
-conflicts=('postfix-runscripts')
+provides=('init-postfix')
+conflicts=('init-postfix')
 depends=('postfix' 's6')
 backup=('etc/s6/sv/postfix-log/conf')
 install=postfix.install
