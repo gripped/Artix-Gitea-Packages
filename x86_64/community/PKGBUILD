@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syncthing-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for syncthing"
+pkgdesc="s6-rc service scripts for syncthing"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('syncthing-runscripts')
-conflicts=('syncthing-runscripts')
-depends=('syncthing' 's6')
+provides=('init-syncthing')
+conflicts=('init-syncthing')
+depends=('syncthing' 's6-rc')
 backup=('etc/s6/sv/syncthing-log/conf'
         'etc/s6/sv/syncthing-srv/conf')
 install=syncthing.install
