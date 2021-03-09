@@ -1,13 +1,13 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=postgrey-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for postgrey"
+pkgdesc="s6-rc service scripts for postgrey"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('postgrey-runscripts')
-conflicts=('postgrey-runscripts')
+provides=('init-postgrey')
+conflicts=('init-postgrey')
 depends=('postgrey' 's6')
 backup=('etc/s6/sv/postgrey-log/conf')
 install=postgrey.install
