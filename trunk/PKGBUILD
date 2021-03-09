@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=pcsclite-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for pcsclite"
+pkgdesc="s6-rc service scripts for pcsclite"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('pcsclite-runscripts')
-conflicts=('pcsclite-runscripts')
+provides=('init-pcsclite')
+conflicts=('init-pcsclite')
 depends=('pcsclite' 's6')
 install=pcscd.install
 backup=('etc/s6/sv/pcscd-log/conf')
