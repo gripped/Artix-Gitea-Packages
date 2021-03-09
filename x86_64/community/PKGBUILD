@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=squid-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for squid"
+pkgdesc="s6-rc service scripts for squid"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('squid-runscripts')
-conflicts=('squid-runscripts')
-depends=('squid' 's6')
+provides=('init-squid')
+conflicts=('init-squid')
+depends=('squid' 's6-rc')
 install=squid.install
 backup=('etc/s6/sv/squid-log/conf')
 source=("squid-srv."{type,run,producer-for}
