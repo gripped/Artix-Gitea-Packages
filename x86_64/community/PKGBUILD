@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=stunnel-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for stunnel"
+pkgdesc="s6-rc service scripts for stunnel"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('stunnel-runscripts')
-conflicts=('stunnel-runscripts')
-depends=('stunnel' 's6')
+provides=('init-stunnel')
+conflicts=('init-stunnel')
+depends=('stunnel' 's6-rc')
 install=stunnel.install
 backup=('etc/s6/sv/stunnel-log/conf')
 source=("stunnel-log.conf"
