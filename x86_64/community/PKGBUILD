@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=tor-s6
-pkgver=20201122
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for tor"
+pkgdesc="s6-rc service scripts for tor"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('tor-runscripts')
-conflicts=('tor-runscripts')
-depends=('tor' 's6')
+provides=('init-tor')
+conflicts=('init-tor')
+depends=('tor' 's6-rc')
 install=tor.install
 backup=('etc/s6/sv/tor-log/conf')
 source=("tor-srv."{type,run,producer-for}
