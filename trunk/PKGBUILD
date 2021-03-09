@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=sane-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for sane"
+pkgdesc="s6-rc service scripts for sane"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('sane-runscripts')
-conflicts=('sane-runscripts')
+provides=('init-sane')
+conflicts=('init-sane')
 depends=('sane' 's6')
 install=sane.install
 backup=('etc/s6/sv/saned-log/conf')
