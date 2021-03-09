@@ -1,16 +1,16 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributer: John Smith <promisedneverland@disroot.org>
 pkgname=trojan-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for trojan"
+pkgdesc="s6-rc service scripts for trojan"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 license=(GPL)
 groups=('s6-galaxy')
-provides=('trojan-runscripts')
-conflicts=('trojan-runscripts')
-depends=('trojan' 's6')
+provides=('init-trojan')
+conflicts=('init-trojan')
+depends=('trojan' 's6-rc')
 install=trojan.install
 backup=('etc/s6/sv/trojan-log/conf')
 source=("trojan-srv.run"
