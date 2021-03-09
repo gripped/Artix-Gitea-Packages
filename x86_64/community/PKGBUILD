@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sndio-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for sndio"
+pkgdesc="s6-rc service scripts for sndio"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('sndio-runscripts')
-conflicts=('sndio-runscripts')
+provides=('init-sndio')
+conflicts=('init-sndio')
 depends=('sndio' 's6')
 install=sndio.install
 backup=('etc/s6/sv/sndiod-log/conf')
