@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tlp-s6
-pkgver=20201130
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for tlp"
+pkgdesc="s6-rc service scripts for tlp"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('tlp-runscripts')
-conflicts=('tlp-runscripts')
+provides=('init-tlp')
+conflicts=('init-tlp')
 depends=('tlp' 's6')
 source=("tlp.conf"
         "tlp.dependencies"
