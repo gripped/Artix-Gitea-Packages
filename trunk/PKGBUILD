@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=php-fpm-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for php-fpm"
+pkgdesc="s6-rc service scripts for php-fpm"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('php-fpm-runscripts')
-conflicts=('php-fpm-runscripts')
+provides=('init-php-fpm')
+conflicts=('init-php-fpm')
 depends=('php-fpm' 's6')
 install=php-fpm.install
 backup=('etc/s6/sv/php-fpm-log/conf')
