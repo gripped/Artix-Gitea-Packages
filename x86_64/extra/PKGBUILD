@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=subversion-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for subversion"
+pkgdesc="s6-rc service scripts for subversion"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('subversion-runscripts')
-conflicts=('subversion-runscripts')
-depends=('subversion' 's6')
+provides=('init-subversion')
+conflicts=('init-subversion')
+depends=('subversion' 's6-rc')
 install=subversion.install
 backup=('etc/s6/sv/svnserve-log/conf')
 source=("svnserve-srv."{type,run,producer-for}
