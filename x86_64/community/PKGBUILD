@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributor: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=pptpd-s6
-pkgver=20200512
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for pptpd"
+pkgdesc="s6-rc service scripts for pptpd"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('pptpd-runscripts')
-conflicts=('pptpd-runscripts')
+provides=('init-pptpd')
+conflicts=('init-pptpd')
 depends=('pptpd' 's6')
 install=pptpd.install
 source=("pptpd.run" "pptpd.type")
