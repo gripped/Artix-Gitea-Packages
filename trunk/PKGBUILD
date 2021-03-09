@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=pdnsd-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for pdnsd"
+pkgdesc="s6-rc service scripts for pdnsd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('pdnsd-runscripts')
-conflicts=('pdnsd-runscripts')
+provides=('init-pdnsd')
+conflicts=('init-pdnsd')
 depends=('pdnsd' 's6')
 install=pdnsd.install
 backup=('etc/s6/sv/pdnsd-log/conf')
