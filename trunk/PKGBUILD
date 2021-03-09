@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=vsftpd-s6
-pkgver=20200713
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for vsftpd"
+pkgdesc="s6-rc service scripts for vsftpd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('vsftpd-runscripts')
-conflicts=('vsftpd-runscripts')
-depends=('vsftpd' 's6')
+provides=('init-vsftpd')
+conflicts=('init-vsftpd')
+depends=('vsftpd' 's6-rc')
 install=vsftpd.install
 source=("vsftpd-ipv6.run"
         "vsftpd-ipv6.type"
