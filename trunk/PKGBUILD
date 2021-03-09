@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=radicale-s6
-pkgver=20201018
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for radicale"
+pkgdesc="s6-rc service scripts for radicale"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('radicale-runscripts')
-conflicts=('radicale-runscripts')
+provides=('init-radicale')
+conflicts=('init-radicale')
 depends=('radicale' 's6')
 install=radicale.install
 backup=('etc/s6/sv/radicale-log/conf')
