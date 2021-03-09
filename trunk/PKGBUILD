@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=salt-s6
-pkgver=20200713
+pkgver=20210309
 pkgrel=1
-pkgdesc="s6 service scripts for salt"
+pkgdesc="s6-rc service scripts for salt"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('salt-runscripts')
-conflicts=('salt-runscripts')
+provides=('init-salt')
+conflicts=('init-salt')
 depends=('salt' 's6')
 install=salt.install
 source=("salt-api.run"
