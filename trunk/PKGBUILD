@@ -10,15 +10,14 @@ arch=('x86_64')
 license=('GPL2')
 depends=('glibc' 'libqb' 'libqb.so' 'libsodium' 'libcap-ng' 'protobuf' 'polkit' 'dbus-glib'
          'audit' 'libaudit.so' 'libseccomp' 'libseccomp.so')
-makedepends=('catch2' 'pegtl' 'libxslt' 'asciidoc' 'systemd')
+makedepends=('catch2' 'pegtl' 'libxslt' 'asciidoc')
 provides=('libusbguard.so')
 backup=(etc/usbguard/usbguard-daemon.conf
         etc/usbguard/rules.conf)
-source=(https://github.com/USBGuard/usbguard/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.gz{,.asc}
+source=(https://github.com/USBGuard/usbguard/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.gz
         increase-C++-version-to-c++17.patch
         fix-compilation-errors-with-PEGTL-3.2.0.patch)
 sha512sums=('068a9be8bd5ea05efcdad79e2c4beb5e8b646b4703fbe1f8bb262e37ae9a6284a6eeb811a6bd441250a38bce1e45b7f44ad15726aa5963da2e1b56e85f5e16fd'
-            'SKIP'
             '4b17564e2b21f1378d6369536d47a658e5f018ea9aef47ff726c272d3d40ae5ffadd3ca5ff7304c916cbf169c288b38fb9280dab61ff2edf9e4878847085ae78'
             '31ebb71aa9c9d5dcec378d6974d63fe6f2675f748bdff6498a027f9840e0da03ad66c86d240eeccdceb4c1f2a966f6c528c8630226892d94271dac3ae11d1697')
 validpgpkeys=('DE78B93EAED8A620F5AA14DF52F7E84653274B59') # Radovan Sroka <rsroka@redhat.com>
@@ -40,7 +39,6 @@ build() {
     --sys=/etc \
     --sbindir=/usr/bin \
     --libdir=/usr/lib \
-    --enable-systemd \
     --without-bundled-catch \
     --without-bundled-pegtl \
     --with-dbus \
