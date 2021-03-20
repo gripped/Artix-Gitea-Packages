@@ -3,7 +3,7 @@
 pkgbase=artix-artwork
 pkgname=('artix-icons' 'artix-backgrounds')
 pkgver=0.8.6
-pkgrel=2
+pkgrel=3
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
