@@ -18,6 +18,7 @@ validpgpkeys=('7D09794C2812F62194B081C14CAD34426E354DD2') # Urs Fleisch
 sha256sums=('4788005a50b0f117b38586f0d570e8fb0769efdec86cba0cdf0a87c2bfae97a9'
             'SKIP')
 
+
 prepare() {
   cd "${srcdir}"
   [[ ! -d build ]] && mkdir build
