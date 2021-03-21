@@ -1,0 +1,45 @@
+From 1b6802ba85898c947f2276c365bf8be7eb5f1642 Mon Sep 17 00:00:00 2001
+From: "Richard W.M. Jones" <rjones@redhat.com>
+Date: Thu, 23 Jul 2020 15:21:27 +0100
+Subject: [PATCH] pacman: Handle release field which is not an integer.
+
+Resolves: https://bugzilla.redhat.com/show_bug.cgi?id=1858625
+Thanks: Tim Schumacher
+---
+ src/ph_pacman.ml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/ph_pacman.ml b/src/ph_pacman.ml
+index b3effca..67f7512 100644
+--- a/src/ph_pacman.ml
++++ b/src/ph_pacman.ml
+@@ -36,7 +36,7 @@ type pac_t = {
+   name : string;
+   epoch : int;
+   version : string;
+-  release : int;
++  release : string;
+   arch : string;
+ }
+ 
+@@ -81,7 +81,7 @@ let pacman_package_of_string str =
+           with Not_found -> 0, evr in
+         let version, release =
+           match string_split "-" vr with
+-          | [ v; r ] -> v, int_of_string r
++          | [ v; r ] -> v, r
+           | _ -> assert false in
+         epoch, version, release
+       with
+@@ -117,9 +117,9 @@ let pacman_package_of_string str =
+ let pacman_package_to_string pkg =
+   let pac = pac_of_pkg pkg in
+   if pac.epoch = 0 then
+-    sprintf "%s-%s-%d.%s" pac.name pac.version pac.release pac.arch
++    sprintf "%s-%s-%s.%s" pac.name pac.version pac.release pac.arch
+   else
+-    sprintf "%s-%d:%s-%d.%s"
++    sprintf "%s-%d:%s-%s.%s"
+       pac.name pac.epoch pac.version pac.release pac.arch
+ 
+ let pacman_package_name pkg =
