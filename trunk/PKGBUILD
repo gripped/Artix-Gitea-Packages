@@ -1,3 +1,5 @@
+# Maintainer: alium <alium@artixlinux.org>
+
 pkgbase=pandoc-bin
 pkgname=('pandoc')
 pkgver=2.13
