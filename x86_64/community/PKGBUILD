@@ -1,11 +1,11 @@
 pkgbase=pandoc-bin
 pkgname=('pandoc')
-pkgver=2.12
+pkgver=2.13
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
 license=("GPL")
-arch=('x86_64')
+arch=('x86_64' 'aarch64')
 conflicts=('pandoc-citeproc' 'haskell-pandoc-citeproc-bin')
 provides=( 'pandoc-citeproc')
 replaces=('pandoc-static' 'pandoc-lite' 'pandoc-citeproc')
@@ -14,14 +14,11 @@ optdepends=(
     'texlive-core: for pdf output'
 )
 
-source=(
-    "$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz"
+source_x86_64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
+source_aarch64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-arm64.tar.gz")
 
-    # The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
-   "$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz"
-)
-sha256sums=('6d89c16f31ef4cd826133b35bbe978dd2ca7328d7b8d51fbaf2c02ca5b5553e0'
-            '0bc749a7806ca6c30f1343a202f103fe3c9566bd99d23dfc99e97fc9cbf14777')
+# The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
+source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz")
 
 package_pandoc() {
     cd "${srcdir}/pandoc-${pkgver}"
@@ -40,3 +37,6 @@ package_pandoc() {
     # tree, so let's tidy that up...
     # rm -R ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
 }
+sha512sums=('a60f1bb2048995ad35a9e8277984d3f0fcdb8f43f0315bea95eb284eb28370929ada1096a90302a2e3a87c53baccb0f80c9cb2844e26befa025e10ef07ae9eed')
+sha512sums_x86_64=('0b20327ac530cbcd00d27b84e8c2bce98977e1eaea378e4325e780a7285de998c33117470b23f96d917d04c0aed85f2387734408c52efa00a8b6bec7541b8927')
+sha512sums_aarch64=('0b20327ac530cbcd00d27b84e8c2bce98977e1eaea378e4325e780a7285de998c33117470b23f96d917d04c0aed85f2387734408c52efa00a8b6bec7541b8927')
