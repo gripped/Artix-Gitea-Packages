@@ -38,7 +38,8 @@ pkgver() {
 build() {
   # Disable the admin backend while it's broken
   # https://gitlab.gnome.org/GNOME/gvfs/-/issues/552
-  arch-meson $pkgbase build -D man=true -D admin=false
+  arch-meson $pkgbase build -D man=true \
+    -D admin=false \
     -D systemduserunitdir=no \
     -D tmpfilesdir=/usr/lib/tmpfiles.d
   meson compile -C build
