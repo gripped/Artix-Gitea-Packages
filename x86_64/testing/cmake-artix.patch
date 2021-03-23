@@ -1,0 +1,11 @@
+--- ../Modules/GNUInstallDirs.cmake	2020-07-28 16:12:19.350852147 +0200
++++ ../Modules/GNUInstallDirs.cmake	2020-07-28 16:12:38.210634182 +0200
+@@ -228,7 +228,7 @@
+   endif()
+   if(CMAKE_SYSTEM_NAME MATCHES "^(Linux|kFreeBSD|GNU)$"
+       AND NOT CMAKE_CROSSCOMPILING
+-      AND NOT EXISTS "/etc/arch-release")
++      AND NOT EXISTS "/etc/artix-release")
+     if (EXISTS "/etc/debian_version") # is this a debian system ?
+       if(CMAKE_LIBRARY_ARCHITECTURE)
+         if("${CMAKE_INSTALL_PREFIX}" MATCHES "^/usr/?$")
