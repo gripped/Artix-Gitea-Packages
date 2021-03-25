@@ -9,7 +9,7 @@ pkgbase=julia
 pkgname=(julia julia-docs)
 epoch=2
 pkgver=1.6.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
 url='https://julialang.org/'
@@ -21,7 +21,7 @@ checkdepends=(p7zip)
 source=("https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgbase-$pkgver-full.tar.gz"{,.asc}
         julia-system-cblas.patch
         make-install-no-build.patch)
-sha256sums=('c4c6872ee79fbe6391991057c3d0007e578b28d42572b0b35dace4107fe8bdf4'
+sha256sums=('1b05f42c9368bc2349c47363b7ddc175a2da3cd162d52b6e24c4f5d4d6e1232c'
             'SKIP'
             'd4c8fe9eec1bc416549924ae328ceb3f63cc736ecd5e67886faa924e7c14bc5d'
             '8be4605f92a009072ca7e843549c225fc4e959893498e7c4f8f79e861e63714d')
@@ -33,6 +33,7 @@ prepare() {
   cd $pkgbase-$pkgver
 
   patch -p1 -i ../julia-system-cblas.patch # Add and use option to build with system cblas
+  mkdir -p usr/lib && ln -s /usr/lib/libgcc_s.so.1 usr/lib # Workaround build failure with system gcc-libs
 
   # Don't build again in install
   patch -p1 -i ../make-install-no-build.patch
@@ -45,6 +46,7 @@ _buildopts="prefix=/usr \
     bindir=/usr/bin \
     sysconfdir=/etc \
     libexecdir=/usr/lib \
+    USE_SYSTEM_CSL=1 \
     USE_SYSTEM_LLVM=1 \
     USE_SYSTEM_LIBUNWIND=1 \
     USE_SYSTEM_PCRE=1 \
@@ -99,6 +101,7 @@ package_julia() {
   optdepends=('gnuplot: If using the Gaston Package from julia')
 
   make -C $pkgbase-$pkgver DESTDIR="$pkgdir" install $_buildopts
+  ln -s /usr/lib/libgcc_s.so.1 "$pkgdir"/usr/lib/julia
 
   # Documentation is in the julia-docs package.
   # Man pages in /usr/share/julia/doc/man are duplicate.
