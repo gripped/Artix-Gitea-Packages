@@ -31,7 +31,6 @@ source=(
 sha256sums=('7a6b9bafc8b3d81bbc566e7c0d1f17c9f499fd22b95142f7ea3a8e4d1f9eb847'
             'SKIP'
             'def1fc00c764cd3abbba925c712ac38860a756a43b696b291f46fee09e453274'
-            'SKIP'
             '3703c3defd3af5498a492f80fbb0b0b67c58a5ce0d1bab51328e65598141b745'
             '9ba3070dbc877ab5e045b6a20be9134f80d8aece42766b4cfbad2a4a60c27514')
 validpgpkeys=('108F66205EAEB0AAA8DD5E1C85AB96E6FA1BE5FE'  # Rust Language (Tag and Release Signing Key) <rust-key@rust-lang.org>
