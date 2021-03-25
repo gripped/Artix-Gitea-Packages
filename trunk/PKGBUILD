@@ -29,7 +29,7 @@ sha256sums=('1b05f42c9368bc2349c47363b7ddc175a2da3cd162d52b6e24c4f5d4d6e1232c'
 validpgpkeys=('3673DF529D9049477F76B37566E3C7DC03D6E495')
 
 prepare() {
-  mv julia-{f9720dc2eb,$pkgver}
+#  mv julia-{f9720dc2eb,$pkgver}
   cd $pkgbase-$pkgver
 
   patch -p1 -i ../julia-system-cblas.patch # Add and use option to build with system cblas
