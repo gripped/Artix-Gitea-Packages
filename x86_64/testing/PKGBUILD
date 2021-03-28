@@ -16,7 +16,7 @@ depends=(
   'glibc' 'glib2' 'lua' 'wireless_tools' 'libxdamage' 'libxinerama' 'libxft' 'imlib2'
   'libxml2' 'libpulse' 'libxnvctrl' 'ncurses' 'curl'
   libncursesw.so libXNVCtrl.so libpulse.so libcurl.so)
-source=("git+https://github.com/brndnmtthws/conky.git#commit=${_gitcommit})
+source=("git+https://github.com/brndnmtthws/conky.git#commit=${_gitcommit}")
 sha512sums=('SKIP')
 b2sums=('SKIP')
 validpgpkeys=(
