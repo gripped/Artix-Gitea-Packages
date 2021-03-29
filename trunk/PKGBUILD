@@ -10,7 +10,6 @@ license=(custom)
 depends=(fuse zstd)
 makedepends=()
 source=(https://github.com/vasi/squashfuse/releases/download/$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('aa52460559e0d0b1753f6b1af5c68cfb777ca5a13913285e93f4f9b7aa894b3a')
 
 build() {
   cd $pkgname-$pkgver
@@ -28,3 +27,4 @@ package() {
 # install missing headers
   install -Dm644 *.h -t "$pkgdir"/usr/include/squashfuse
 }
+sha512sums=('ea3cd5d77d659bc54b63e3bf8084f29e8d8a5ec12dca5e9669e8537c44e53de6e332d52b307188dfb20b2b60a5fbe1e23c0d8813a9cc1d0283f665ec169ce854')
