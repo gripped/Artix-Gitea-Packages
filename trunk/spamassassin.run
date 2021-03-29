@@ -1,4 +1,9 @@
 #!/bin/sh
 [ -r conf ] && . ./conf
-[ -d /var/lib/spamassassin ] || sa-update
-exec spamd ${OPTS}
+if [ ! -d /etc/mail/sa-update-keys ] ; then
+  mkdir /etc/mail/sa-update-keys
+  chown -R spamd:spamd /etc/mail
+  chown -R spamd:spamd /var/lib/spamassassin
+  exec chpst -u spamd:spamd /usr/bin/vendor_perl/sa-update
+fi
+exec /usr/bin/vendor_perl/spamd ${OPTS}

@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=spamassassin-runit
-pkgver=20210306
-pkgrel=1
+pkgver=20210329
+pkgrel=2
 pkgdesc="Runit service script for spamassassin"
 arch=('any')
 url="https://artixlinux.org"
