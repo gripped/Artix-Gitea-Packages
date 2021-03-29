@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=spamassassin-runit
 pkgver=20210329
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for spamassassin"
 arch=('any')
 url="https://artixlinux.org"
@@ -15,7 +15,7 @@ depends=('spamassassin')
 groups=('runit-galaxy')
 conflicts=('systemd-sysvcompat')
 source=("spamassassin.run")
-sha256sums=('8a05449cfbaedc23ab06414a0530890f93d6026844b27c74dd2260899ee56742')
+sha256sums=('cf29dec10d7a04307dc776785162091a00d41d6654513e2fe1361e35cee263fc')
 
 _inst_logsv() {
     for file in run finish check; do
