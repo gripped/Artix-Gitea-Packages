@@ -24,7 +24,7 @@ source=("https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-
         make-install-no-build.patch
         julia-system-gcc-libs.patch)
 backup=(etc/julia/startup.jl)
-sha256sums=('c4c6872ee79fbe6391991057c3d0007e578b28d42572b0b35dace4107fe8bdf4'
+sha256sums=('1b05f42c9368bc2349c47363b7ddc175a2da3cd162d52b6e24c4f5d4d6e1232c'
             'SKIP'
             'e44c260e4111908337caa82e1c3fef563b9d40e0a30da68d6e91405bf6db24dc'
             '7497bff3cc6faac0a0664e620fd5525d7bb19d1bc3d2ff7f4d900dc36d476ceb'
