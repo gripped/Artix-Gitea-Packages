@@ -1,8 +1,8 @@
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-io-socket-ssl
-pkgver=2.067
-pkgrel=2
+pkgver=2.069
+pkgrel=1
 pkgdesc="Nearly transparent SSL encapsulation for IO::Socket::INET"
 arch=('any')
 license=('GPL' 'PerlArtistic')
@@ -11,7 +11,7 @@ depends=('perl-net-ssleay' 'perl' 'perl-uri')
 checkdepends=('perl-io-socket-inet6')
 options=('!emptydirs')
 source=(https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-${pkgver}.tar.gz)
-sha512sums=('b7b9edc470f2283c363a6296d3ce23f8754cc1b1a763329ccc8a0bc81dca7ffbaf9a833fc8ac31e62f5f72cab7c689ea0d4d0e293f75fe176d1b5c71ed723516')
+sha512sums=('502cfb87432c3f76a0c92cf2761f0e5e18d350e734b1aa4c032cd519c0262d934e3050341edde7887a141d6b13892ea18da95129147b9467db6ec283a5cb4b6b')
 
 build() {
   cd IO-Socket-SSL-${pkgver}
