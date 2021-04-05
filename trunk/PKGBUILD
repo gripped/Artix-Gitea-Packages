@@ -1,0 +1,24 @@
+# Maintainer: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
+# Contributor: artoo <artoo@artixlinux.org>
+# Contributor: Oscar Campos <damnwidget@artixlinux.org>
+
+pkgname=syncthing-relaysrv-openrc
+pkgver=20210405
+pkgrel=1
+pkgdesc="OpenRC syncthing-relaysrv init script"
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'syncthing-relaysrv')
+conflicts=('systemd-sysvcompat')
+backup=('etc/conf.d/strelaysrv')
+source=('strelaysrv.'{initd,confd})
+sha256sums=('a939db3ba1332574295f9b608a341659bba87fc10dac06bd049ae244d0808090'
+            '8ae5fb440478f93a9450a723249729b814056e9447b2ea8db1c32b9eb8ccee47')
+
+package() {
+  cd "$srcdir"
+  install -Dm755 strelaysrv.initd "$pkgdir"/etc/init.d/strelaysrv
+  install -Dm644 strelaysrv.confd "$pkgdir"/etc/conf.d/strelaysrv
+}
