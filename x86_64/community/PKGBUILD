@@ -1,0 +1,33 @@
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
+# Contributor: Bert Peters <bert@bertptrs.nl>
+# Contributor: Varakh <varakh@varakh.de>
+# Contributor: Florian Klink <flokli@flokli.de>
+
+pkgbase=spotifyd
+pkgname=('spotifyd')
+pkgver=0.3.2
+pkgrel=1.1
+pkgdesc='Lightweigt spotify streaming daemon with spotify connect support'
+arch=('x86_64')
+url='https://github.com/Spotifyd/spotifyd'
+license=('GPL3')
+depends=('alsa-lib' 'libogg' 'libpulse' 'dbus')
+makedepends=('rust')
+source=("https://github.com/Spotifyd/spotifyd/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+b2sums=('368c33e06dd681a2d6260df99929e889854226d17ebe6e681110961560bc1af1abd13642d39528dfbc01781cadbefd157aa698abf63fd71a599de8c57b777412')
+
+build() {
+  cd spotifyd-${pkgver}
+  cargo build --release --locked --features pulseaudio_backend,dbus_mpris,dbus_keyring,rodio_backend
+}
+
+check() {
+  cd spotifyd-${pkgver}
+  cargo test --release --locked --target-dir=target
+ }
+
+package() {
+  cd spotifyd-${pkgver}
+  cargo install --locked --root "${pkgdir}"/usr --path "${srcdir}"/${pkgbase}-${pkgver} --features pulseaudio_backend,dbus_mpris,dbus_keyring,rodio_backend
+  rm "${pkgdir}"/usr/{.crates.toml,.crates2.json}
+}
