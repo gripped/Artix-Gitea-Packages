@@ -1,0 +1,16 @@
+# Maintainer linuxer <https://gitea.artixlinux.org/linuxer>
+
+pkgname=i2pd-openrc
+pkgdesc="i2pd OpenRC init script"
+pkgver=0.2.1
+pkgrel=1
+arch=('any')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+depends=('openrc' 'i2pd')
+source=("i2pd.initd")
+b2sums=('67b20e73c01fcbdf30b85ee9596c1cefc9c93f827cf8e4d3e1b974f7468fea164c060064a8141db0f711e87340f22c7c824f8c6b4532bb5562052ba17406fdc2')
+
+package() {
+    install -Dm755 i2pd.initd "$pkgdir/etc/init.d/i2pd"
+}
