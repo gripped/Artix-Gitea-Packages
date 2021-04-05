@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=syncthing-openrc
-pkgver=20200716
+pkgver=20210405
 pkgrel=1
 pkgdesc="OpenRC syncthing init script"
 arch=('any')
@@ -12,22 +12,13 @@ license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'syncthing')
 conflicts=('systemd-sysvcompat')
-backup=('etc/conf.d/syncthing'
-	'etc/conf.d/strelaysrv')
-source=('syncthing.'{initd,confd}
-	'strelaysrv.'{initd,confd})
+backup=('etc/conf.d/syncthing')
+source=('syncthing.'{initd,confd})
 sha256sums=('adb1e273a8199b3da7038ce6f69d6028c924ff6f4e4db3ee1e2ae76e97637acc'
-            '7592b3be5a8adc1e6a8f488797f569e62422956ade8625ca9e43a09bbaf01d7d'
-            'a939db3ba1332574295f9b608a341659bba87fc10dac06bd049ae244d0808090'
-            '8ae5fb440478f93a9450a723249729b814056e9447b2ea8db1c32b9eb8ccee47')
+            '7592b3be5a8adc1e6a8f488797f569e62422956ade8625ca9e43a09bbaf01d7d')
 
 package() {
   cd "$srcdir"
-  for i in *.initd ; do
-	install -Dm755 "$i" "$pkgdir/etc/init.d/${i/.initd}"
-  done
-
-  for c in *.confd ; do
-	install -Dm644 "$c" "$pkgdir/etc/conf.d/${c/.confd}"
-  done
+  install -Dm755 syncthing.initd "$pkgdir"/etc/init.d/syncthing
+  install -Dm644 syncthing.confd "$pkgdir"/etc/conf.d/syncthing
 }
