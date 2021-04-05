@@ -2,10 +2,11 @@
 
 pkgname=i2pd-openrc
 pkgdesc="i2pd OpenRC init script"
-pkgver=0.2.1
+pkgver=20210405
 pkgrel=1
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+groups=('openrc-galaxy')
 license=('GPL2')
 depends=('openrc' 'i2pd')
 source=("i2pd.initd")
