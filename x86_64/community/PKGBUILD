@@ -1,0 +1,19 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=spotifyd-openrc
+pkgver=20210405
+pkgrel=1
+pkgdesc="OpenRC script for spotifyd"
+arch=('x86_64')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'spotifyd')
+source=('spotifyd')
+b2sums=('6271323458deb6a02a0b5e1153209d15c586202a971a08fb25a78a51ab7f5c0fa00f31718922f5bf1ff1bf9bacb6d59f7a966fb9512d89d397f51313727bb543')
+
+package() {
+  cd "$srcdir"
+  install -Dm755 spotifyd -t "$pkgdir"/etc/init.d/
+}
+
+# vim:set ts=2 sw=2 et:

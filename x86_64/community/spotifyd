@@ -1,0 +1,6 @@
+#!/usr/bin/openrc-run
+
+command="/usr/bin/spotifyd"
+command_args=" --no-daemon"
+pidfile=/run/spotifyd.pid
+command_background=true
