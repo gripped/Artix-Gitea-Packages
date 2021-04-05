@@ -1,0 +1,7 @@
+#!/usr/bin/openrc-run
+
+supervisor=supervise-daemon
+command="/usr/bin/matterbridge"
+command_args=" -conf /etc/matterbridge.toml"
+pidfile=/run/matterbridge.pid
+command_background=true
