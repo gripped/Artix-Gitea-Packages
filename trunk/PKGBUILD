@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-session
-pkgver=40beta+3+gb5198510
+pkgver=40beta+4+gd44888fb
 pkgrel=1
 pkgdesc="The GNOME Session Handler"
 url="https://gitlab.gnome.org/GNOME/gnome-session"
@@ -11,7 +11,7 @@ depends=(elogind dconf gsettings-desktop-schemas gtk3 gnome-desktop
          json-glib libgl libsm libxtst)
 makedepends=(mesa gtk-doc xtrans git python xmlto docbook-xsl meson)
 groups=(gnome)
-_commit=b51985100660c543c62bac39a6ebaf3732cceaef  # master
+_commit=d44888fb304e9d957805bf052bf879b0f50568be  # master
 source=("git+https://gitlab.gnome.org/GNOME/gnome-session.git#commit=$_commit"
         "0001-meson-add-elogind-support.patch")
 sha256sums=('SKIP'
