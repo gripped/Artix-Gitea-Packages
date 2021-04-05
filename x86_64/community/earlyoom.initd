@@ -5,7 +5,3 @@ pidfile="/run/earlyoom.pid"
 command="/usr/bin/earlyoom"
 command_args=$EARLYOOM_ARGS
 command_background=true
-
-stop() {
-       start-stop-daemon --stop --pidfile "$pidfile"
-}

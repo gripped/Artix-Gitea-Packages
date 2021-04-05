@@ -1,15 +1,15 @@
 # Contributor: linuxer <linuxer@artixlinux.org>
 
 pkgname=earlyoom-openrc
-pkgver=20210225
+pkgver=20210405
 pkgrel=1
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 pkgdesc="earlyoom openrc init script"
 arch=('x86_64')
-license=('MIT')
+license=('GPL2')
 depends=('openrc' 'earlyoom')
 source=("earlyoom.initd")
-b2sums=('870d2ad4753f15164cef698187e7ddcfaef6586e9001fcaa46ce4668036b92280f7099b8319c44e96fca919bc86bbf7f93ed1ac10cc6cf8365666431990fdaf8')
+b2sums=('9b13d41b7f6fd24f9eb27c34c95d263890440a832b2fabda491e61846adc4ad5acbbcd3f055e0d433c7f4b0ef04741c601a99fb49ca4f9a9695998a827a97aa9')
 
 package(){
     install -Dm755 ${srcdir}/earlyoom.initd ${pkgdir}/etc/init.d/earlyoom
