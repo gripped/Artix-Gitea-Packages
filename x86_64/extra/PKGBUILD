@@ -1,3 +1,4 @@
+# $Id: PKGBUILD 320127 2018-03-24 09:48:28Z arojas $
 # Maintainer: Ronald van Haren <ronald@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
@@ -6,7 +7,7 @@
 pkgname=digikam
 _pkgver=7.2.0
 pkgver=${_pkgver//-/_} # for beta versions
-pkgrel=2
+pkgrel=3
 pkgdesc="An advanced digital photo management application"
 arch=(x86_64)
 license=(GPL)
@@ -18,6 +19,8 @@ optdepends=('hugin: panorama tool' 'qt5-imageformats: support for additional ima
             'rawtherapee: RAW import' 'darktable: RAW import'
             'perl: for digitaglinktree')
 source=("https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$_pkgver.tar.xz"{,.sig})
+sha256sums=('cd87ece143aefa02e692a4af5c3c3cc107b9a4d61804d79fa77dd2e344798a17'
+            'SKIP')
 validpgpkeys=(D1CF2444A7858C5F2FB095B74A77747BC2386E50) # digiKam.org (digiKam project) <digikamdeveloper@gmail.com>
 
 build() {
@@ -35,6 +38,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-
-sha512sums=('2908a802fda84caf6b398a5dc328d2e9c00ab68776bde4620db1cb981995879e89d590520bf855471c968f065951280f863620641ccf945c43704e6cf3c0abd7'
-            'SKIP')
