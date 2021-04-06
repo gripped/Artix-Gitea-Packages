@@ -12,7 +12,7 @@ license=(BSD custom:PATENTS)
 depends=(gcc-libs)
 makedepends=(git cmake ninja doxygen yasm)
 source=("$pkgbase-$pkgver.tar.gz::https://aomedia.googlesource.com/aom/+archive/v$pkgver.tar.gz")
-b2sums=('572af4b99669f2aff52748446fe985373fdfabe9dedfcc484c8346937a6adb80c60e251126ca529c75f6ace24c6c9a9d71bbf7eede49f07a97fde57ee04494ad')
+b2sums=('d19da68d6487e11e8fc21d8a731d3a583d4c91b64d6b3adaf993f6a6af2bb7f86dcb74bb1dd3a667dae3a3761fd039b2e7d1856eeaa976c4e39b25263dd0a670')
 
 build() {
   cmake -S . -B build -G Ninja \
