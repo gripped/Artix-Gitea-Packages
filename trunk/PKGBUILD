@@ -11,13 +11,11 @@ license=('BSD')
 depends=('glibc' 'openssl' 'libcbor' 'libcbor.so' 'hidapi' 'libeudev'  'libudev.so' 'zlib')
 makedepends=('cmake' 'eudev')
 provides=('libfido2.so')
-source=("https://developers.yubico.com/libfido2/Releases/libfido2-${pkgver}.tar.gz"{,.sig}
+source=("https://developers.yubico.com/libfido2/Releases/libfido2-${pkgver}.tar.gz"
         '0001-log-explicit-truncation-to-placate-gcc-gh-318.patch')
 sha512sums=('f40d394883d909e9e3ea3308b32f7ca31a882c709e11b3b143ed5734d16b0c244d4932effe06965d566776b03d152b1fc280e73cdfeeb81b65d8414042af19fe'
-            'SKIP'
             'b571a686e0024dc9d42501edc1bf236cf3c2cc92925424524c4017a7ed834215c901c8c1a0868e1d72224040766290c08fc02ea76c743929435112d8c00bfe4e')
 b2sums=('c7ad55d1402808ad12dc999b0ec67161a5fe82dfeaeed362c35f4183144af9bd2771c1e3318a731db46fd8fc21ccd0737024b72c8dd3c754e34625118817742f'
-        'SKIP'
         'f328b3a5205177f37219a576eebe426ce4322513468aec82fb1ac7d0c7d5712eafcf72550db1203e6b7f5a05d7510167626960e6faf3f2f26b3a5cb35e87b1e4')
 validpgpkeys=(
   'EE90AE0D19774C8386628FAAB428949EF7914718' # pedro martelletto <pedro@yubico.com>
