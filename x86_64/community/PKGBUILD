@@ -2,7 +2,7 @@
 
 pkgname=i2pd-openrc
 pkgdesc="i2pd OpenRC init script"
-pkgver=20210405
+pkgver=20210406
 pkgrel=1
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -10,7 +10,7 @@ groups=('openrc-galaxy')
 license=('GPL2')
 depends=('openrc' 'i2pd')
 source=("i2pd.initd")
-b2sums=('67b20e73c01fcbdf30b85ee9596c1cefc9c93f827cf8e4d3e1b974f7468fea164c060064a8141db0f711e87340f22c7c824f8c6b4532bb5562052ba17406fdc2')
+b2sums=('ea0151a750c0eebee3dd3a772a4be2bb2e83a12f2d9bd8a292b6fd693382b35cc9aaf38e1ab5393102291ac4c15d01faeabefd8afe0f395540b0a612424df45f')
 
 package() {
     install -Dm755 i2pd.initd "$pkgdir/etc/init.d/i2pd"
