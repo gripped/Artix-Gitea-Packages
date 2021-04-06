@@ -1,0 +1,9 @@
+post_upgrade() {
+  cat << EOF
+plocate now provides its own "updatedb".
+EOF
+}
+
+post_install(){
+  post_upgrade
+}
