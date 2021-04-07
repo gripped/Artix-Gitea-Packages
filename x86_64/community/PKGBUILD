@@ -14,7 +14,7 @@ groups=('runit-galaxy')
 conflicts=('init-rspamd')
 provides=('init-rspamd')
 source=("rspamd.run")
-sha256sums=('61df6c3adea58fbb4b1389d0df5e0359762f718eb3b90105fd6c5c60420ebbe6')
+sha256sums=('02561f0e340ebf4768f5736cca59db0b81f0955304e8a93bf9c0b69a1d43c547')
 
 _inst_logsv() {
     for file in run finish check; do
