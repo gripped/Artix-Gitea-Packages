@@ -3,7 +3,7 @@
 
 pkgname=cryptsetup
 pkgver=2.3.5
-pkgrel=1
+pkgrel=4
 pkgdesc='Userspace setup tool for transparent encryption of block devices using dm-crypt'
 arch=(x86_64)
 license=('GPL')
@@ -30,6 +30,7 @@ build() {
     --sbindir=/usr/bin \
     --enable-libargon2 \
     --disable-static
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
