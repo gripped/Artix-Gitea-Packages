@@ -1,0 +1,38 @@
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
+pkgname=tang
+pkgver=8
+_commit=95d482256f2d44bd6819df4e41a278937a9827b5 # git rev-parse "v$pkgver^{}"
+pkgrel=1
+pkgdesc='Server for binding data to network presence'
+arch=('x86_64')
+url='https://github.com/latchset/tang'
+license=('GPL3')
+depends=('http-parser' 'jose')
+makedepends=('git' 'asciidoc' 'meson')
+source=("git+$url.git?signed#commit=$_commit")
+sha512sums=('SKIP')
+validpgpkeys=('7CE2CB3D2AF59FE1EA22F551D0D219ED1F7E762C') # Sergio Correia <scorreia@redhat.com>
+
+pkgver() {
+	cd "$pkgname"
+	git describe --tags | sed 's/^v//;s/\([^-]*-\)g/r\1/;s/-/./g'
+}
+
+build() {
+	cd "$pkgname"
+	meson --libexecdir=/usr/lib --buildtype=plain build
+	meson compile -C build
+}
+
+check() {
+	cd "$pkgname"
+	meson test -C build
+}
+
+package() {
+	cd "$pkgname"
+	DESTDIR="$pkgdir" meson install -C build
+
+	# rm systemd
+	rm -rf "$pkgdir"/usr/lib/systemd
+}
