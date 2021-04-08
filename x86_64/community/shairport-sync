@@ -1,0 +1,14 @@
+#!/usr/bin/openrc-run
+
+NAME="shairport-sync"
+
+command="/usr/bin/shairport-sync"
+command_user="shairport-sync:shairport-sync"
+pidfile="/run/${NAME}.pid"
+command_background=true
+
+
+depend() {
+         need avahi-daemon
+         after avahi-daemon net
+}

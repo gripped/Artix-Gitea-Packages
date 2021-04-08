@@ -1,0 +1,19 @@
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+pkgname=shairport-sync-openrc
+pkgver=20210407
+pkgrel=1
+pkgdesc="OpenRC script for shairport-sync"
+arch=('x86_64')
+url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+license=('GPL2')
+groups=('openrc-galaxy')
+depends=('openrc' 'shairport-sync' 'avahi-openrc')
+source=(shairport-sync)
+b2sums=('019efe7fa2f966c1fc8be9030399e02cb4052c362629d9be1b985b4edeb5f4663613db9ea03f9a11a24a30be6601ddd4e0159c9e475c72260ed30e3b358db1ef')
+
+package() {
+  cd "$srcdir"
+  install -Dm755 shairport-sync -t "$pkgdir"/etc/init.d
+}
+
+# vim:set ts=2 sw=2 et:
