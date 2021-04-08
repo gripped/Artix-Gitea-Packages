@@ -1,4 +1,4 @@
-#1/bin/sh
+#!/bin/sh
 [ -r /etc/default/cpupower ] && . /etc/default/cpupower
 
 # CPU speed

@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=cpupower-runit
 pkgver=20210407
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for cpupower"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,7 +14,7 @@ groups=('runit-galaxy')
 conflicts=('init-cpupower')
 provides=('init-cpupower')
 source=("cpupower.run")
-sha256sums=('61df6c3adea58fbb4b1389d0df5e0359762f718eb3b90105fd6c5c60420ebbe6')
+sha256sums=('8e0c0cd37f6d5b1fb6407991d38069a7be9e12ade755df9f7c0a36cb93bf1c45')
 
 _inst_logsv() {
     for file in run finish check; do
