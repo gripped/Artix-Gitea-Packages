@@ -1,23 +1,19 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=bluez-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=4
 pkgdesc="runit service scripts for bluez"
 arch=('any')
 url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+license=('BSD')
 groups=('runit-world')
 depends=('bluez' 'dbus-runit')
-provides=('bluez-runscripts')
-replaces=('bluez-runscripts')
 conflicts=('systemd-sysvcompat')
 source=("bluetoothd.run")
-sha256sums=('8ab29771e3000314c7e356190db0a44b19de1b6865389811f4b8d8548725255a')
+sha256sums=('9e1987ac236ad48a4efce1a4ad25205f20fd7e77800bd294744aaa6a1245b6ee')
 
 _inst_logsv() {
     for file in run finish check; do
