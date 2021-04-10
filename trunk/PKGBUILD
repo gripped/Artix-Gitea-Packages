@@ -9,9 +9,8 @@ url="https://kde.org/plasma-desktop"
 license=(LGPL)
 depends=()
 makedepends=(qt5-base extra-cmake-modules)
-source=(https://download.kde.org/stable/$pkgname/$pkgname-v$pkgver.tar.xz{,.sig})
-sha256sums=('287b90903f9a7f394c75e75cb187426862eaf64a92f1be7e2ef68e99fd8cbaaa'
-            'SKIP')
+source=(https://download.kde.org/stable/$pkgname/$pkgname-v$pkgver.tar.xz)
+sha256sums=('287b90903f9a7f394c75e75cb187426862eaf64a92f1be7e2ef68e99fd8cbaaa')
 validpgpkeys=(CA1B4E348D22755A67EF4E1A6A4F2C4CDC8BC77F  # Aleix Pol Gonzalez <aleixpol@kde.org>
               EC5516B514543DA145169FD12276F09AF4A790F4) # Vlad Zahorodnii <vlad.zahorodnii@kde.org>
 
