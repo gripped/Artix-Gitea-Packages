@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20210307
+pkgver=20210410
 pkgrel=1
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
@@ -12,6 +12,7 @@ optdepends=('cryptsetup-s6: cryptsetup boot script support'
             'lvm2-s6: lvm2 boot script support')
 backup=('etc/s6/rc.local'
         'etc/s6/s6.conf'
+        'etc/s6/sv/agetty-serial/conf'
         'etc/s6/sv/agetty-tty1/conf'
         'etc/s6/sv/agetty-tty2/conf'
         'etc/s6/sv/agetty-tty3/conf'
@@ -24,7 +25,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/udevd-log/conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=27e697216b2d39e283c78431cbcc750d8f6ece4b
+_commit=64ba9156e5799a92c5a88332cab171218fe8441f
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -57,6 +58,7 @@ package() {
     install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
 
     # install startup/shutdown scripts
+    _inst_sv 'agetty-serial'
     _inst_sv 'agetty-tty1'
     _inst_sv 'agetty-tty2'
     _inst_sv 'agetty-tty3'
