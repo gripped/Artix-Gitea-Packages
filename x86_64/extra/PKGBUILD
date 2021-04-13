@@ -1,13 +1,13 @@
 # Maintainer: Nathan Owens <ndowen@artixlinux.org> 
 pkgname=wireguard-openrc
-pkgver=20200807
+pkgver=20210413
 pkgrel=1
 pkgdesc="OpenRC wireguard init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('openrc' 'wireguard-tools')
+depends=('openrc' 'wireguard-tools' 'resolvconf')
 conflicts=('systemd-sysvcompat')
 backup=(etc/conf.d/wireguard)
 source=("wireguard."{initd,confd})
