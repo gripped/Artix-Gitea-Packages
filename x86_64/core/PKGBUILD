@@ -3,14 +3,14 @@
 
 _url=https://gitea.artixlinux.org/artix/runit-artix
 _pkgname=runit-artix
-_pkgver=20200905-3
+_pkgver=20210413
 
 # set default service path to /run/runit/service
 _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.1.2
-pkgrel=23
+pkgrel=24
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
@@ -18,8 +18,9 @@ license=('BSD')
 depends=('runit-rc')
 makedepends=('git')
 install=runit.install
-provides=('svc-manager')
-conflicts=('svc-manager')
+provides=('svc-manager' 'eudev-runit')
+conflicts=('svc-manager' 'eudev-runit')
+replaces=('eudev-runit')
 source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "${_pkgname}-${_pkgver}.tar.gz::${_url}/archive/${_pkgver}.tar.gz"
         "halt.c"
@@ -33,7 +34,7 @@ source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "30-binfmt.hook"
         "30-sysctl.hook")
 sha256sums=('6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18'
-            '0f27ce182b6240d883617d6f62043d7ee7bb311bebfd4eeaabfb0df1bb8faf92'
+            '7d2d53c1ce3887d15d502322b9ec7bb93b68c10d4c13c0b799be1e24ab2f3b4e'
             'a9e4b3e09fb72fd44e62f052fd2302d6fcde64a112d53037febd221564e62b1a'
             '7f11c5cab16f10178612b6a81d37184c25c4426b9c2d5d3f8ef7ed7ab2b52c56'
             '19b5e99135f153d07052f2dff707430af9faeabc717a5740ea58a8a783f609de'
