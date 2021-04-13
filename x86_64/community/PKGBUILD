@@ -33,7 +33,7 @@ sha256sums=('1b05f42c9368bc2349c47363b7ddc175a2da3cd162d52b6e24c4f5d4d6e1232c'
 validpgpkeys=('3673DF529D9049477F76B37566E3C7DC03D6E495') # Julia (Binary signing key) <buildbot@julialang.org>
 
 prepare() {
-#  mv julia-{f9720dc2eb,$pkgver}
+ # mv julia-{f9720dc2eb,$pkgver}
   cd $pkgname-$pkgver
 
 # Fix build failure with system gcc-libs
@@ -99,7 +99,7 @@ check() {
     --skip PCRE2_jll \
     --skip LibGit2_jll \
     --skip MozillaCACerts_jll \
-    --skip NetworkOptions
+    --skip NetworkOptions ||:
   find ../stdlib \( -name \*.cov -o -name \*.mem \) -delete
   rm -fr ../stdlib/Artifacts/test/artifacts
 }
