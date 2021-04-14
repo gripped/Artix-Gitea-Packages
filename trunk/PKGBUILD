@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=bftpd-s6
-pkgver=20210301
+pkgver=20210414
 pkgrel=1
 pkgdesc="s6-rc service scripts for bftpd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-bftpd')
 conflicts=('init-bftpd')
-depends=('bftpd' 's6')
+depends=('bftpd' 's6-rc')
 install=bftpd.install
 source=("bftpd.run" "bftpd.type")
 sha256sums=('89eada7dffb470ff7c6eed56dab422757ca04437d001fdffbe0c8efaac609891'
