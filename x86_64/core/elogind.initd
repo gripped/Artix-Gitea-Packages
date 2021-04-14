@@ -4,7 +4,7 @@
 
 depend() {
 	need dbus
-
+    provide logind
 	# Make sure elogind is up before xdm starts any dm
 	before xdm
 }
