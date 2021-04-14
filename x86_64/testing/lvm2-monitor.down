@@ -1,0 +1,12 @@
+#!/usr/bin/execlineb -P
+foreground { if -n -t { test -d /var/log/lvm2-monitor } install -d -m 0755 -o s6log -g s6log /var/log/lvm2-monitor }
+foreground {
+	envfile /etc/s6/sv/lvm2-monitor/conf
+	importas -sCiu DIRECTIVES DIRECTIVES
+	pipeline { fdmove -c 2 1 vgchange --sysinit -a n } s6-setuidgid s6log exec -c s6-log -b -- ${DIRECTIVES} /var/log/lvm2-monitor
+}
+foreground {
+	envfile /etc/s6/sv/lvm2-monitor/conf
+	importas -sCiu DIRECTIVES DIRECTIVES
+	pipeline { fdmove -c 2 1 vgchange --monitor n } s6-setuidgid s6log exec -c s6-log -b -- ${DIRECTIVES} /var/log/lvm2-monitor
+}
