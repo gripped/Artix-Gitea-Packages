@@ -11,7 +11,7 @@ depend() {
     after ypbind autofs openvpn gpm lircmd
     after quota keymaps acpid
     before alsasound
-    want elogind
+    want logind
     use xfs
     provide xdm
 }
