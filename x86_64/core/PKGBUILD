@@ -3,13 +3,13 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=246.10
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 license=('GPL' 'LGPL2.1')
-makedepends=('intltool' 'libtool' 'gperf' 'gtk-doc' 'polkit' 'dbus'
-            'libseccomp' 'meson' 'kexec-tools' 'openrc')
+makedepends=('acl' 'intltool' 'libtool' 'gperf' 'gtk-doc' 'polkit' 'dbus'
+            'libseccomp' 'meson' 'kexec-tools' 'openrc' 'libcap')
 options=('!libtool')
 source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz")
 sha256sums=('c490dc158c8f5bca8d00ecfcc7ad5af24d1c7b9e59990a0b3b1323996221a922')
@@ -40,9 +40,9 @@ check(){
 
 package_elogind() {
     pkgdesc="The systemd project's logind, extracted to a standalone package"
-    provides=("elogind=${pkgver}" "systemd=${pkgver}")
+    provides=("elogind=${pkgver}" "systemd=${pkgver}" 'logind')
     conflicts=('systemd')
-    depends=('pam' 'dbus' 'libseccomp' 'libelogind' 'kexec-tools' 'eudev')
+    depends=('acl' 'dbus' 'libseccomp' 'libelogind' 'kexec-tools' 'udev')
     optdepends=('polkit: polkit support')
     backup=('etc/elogind/logind.conf')
 
@@ -58,11 +58,10 @@ package_elogind() {
 
 package_libelogind(){
     pkgdesc="elogind client libraries"
-    provides=('libelogind.so' "libelogind=${pkgver}"
+    provides=('libelogind.so' "libelogind=${pkgver}" 'liblogind'
             "libsystemd=${pkgver}" "systemd-libs=${pkgver}")
-#             'libsystemd.so'
     conflicts=('systemd-libs')
-    depends=('libcap' 'libeudev')
+    depends=('libcap' 'libudev')
 
     cd "${pkgbase}-${pkgver}"
 
