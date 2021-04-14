@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=apcupsd-s6
-pkgver=20210301
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for apcupsd"
+pkgdesc="s6-rc service scripts for apcupsd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-apcupsd')
 conflicts=('init-apcupsd')
-depends=('apcupsd' 's6')
+depends=('apcupsd' 's6-rc')
 install=apcupsd.install
 backup=('etc/s6/sv/apcupsd-log/conf')
 source=("apcupsd-srv."{type,run,producer-for}
