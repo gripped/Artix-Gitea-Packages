@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=krb5-s6
-pkgver=20210308
+pkgver=20210414
 pkgrel=1
 pkgdesc="s6-rc service scripts for krb5"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-krb5')
 conflicts=('init-krb5')
-depends=('krb5' 's6')
+depends=('krb5' 's6-rc')
 install=krb5.install
 source=("kadmind.run" "kadmind.type" "krb5kdc.run" "krb5kdc.type")
 sha256sums=('c202c42d56524a0598cf96115469cb45202d594f800e4c59fc188cefb567abb9'
