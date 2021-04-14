@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=postgresql-s6
-pkgver=20210201
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for postgresql"
+pkgdesc="s6-rc service scripts for postgresql"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
-provides=('postgresql-runscripts')
-conflicts=('postgresql-runscripts')
-depends=('postgresql' 's6')
+provides=('init-postgresql')
+conflicts=('init-postgresql')
+depends=('postgresql' 's6-rc')
 install=postgresql.install
 backup=('etc/s6/sv/postgresql-log/conf'
         'etc/s6/sv/postgresql-srv/conf')
