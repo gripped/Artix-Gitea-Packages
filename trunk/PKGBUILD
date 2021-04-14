@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=ejabberd-s6
-pkgver=20210307
+pkgver=20210414
 pkgrel=1
 pkgdesc="s6-rc service scripts for ejabberd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-ejabberd')
 conflicts=('init-ejabberd')
-depends=('ejabberd' 's6')
+depends=('ejabberd' 's6-rc')
 install=ejabberd.install
 backup=('etc/s6/sv/ejabberd-log/conf')
 source=("ejabberd-log.conf"
