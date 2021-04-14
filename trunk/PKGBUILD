@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=ntp-s6
-pkgver=20210308
+pkgver=20210414
 pkgrel=1
 pkgdesc="s6-rc service scripts for ntp"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-ntp')
 conflicts=('init-ntp')
-depends=('ntp' 's6')
+depends=('ntp' 's6-rc')
 install=ntpd.install
 backup=('etc/s6/sv/ntpd-log/conf')
 source=("ntpd-srv."{type,run,producer-for}
