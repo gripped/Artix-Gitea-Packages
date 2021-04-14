@@ -2,13 +2,13 @@
 pkgname=alsa-utils-s6
 pkgver=20210301
 pkgrel=1
-pkgdesc="s6 service scripts for alsa-utils"
+pkgdesc="s6-rc service scripts for alsa-utils"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-alsa-utils')
 conflicts=('init-alsa-utils')
-depends=('alsa-utils' 's6')
+depends=('alsa-utils' 's6-rc')
 install=alsa.install
 source=("alsa.dependencies"
         "alsa.down"
