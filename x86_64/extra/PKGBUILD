@@ -13,7 +13,7 @@ makedepends=(git gobject-introspection meson vala glade)
 checkdepends=(xorg-server-xvfb)
 provides=(libhandy-1.so)
 _commit=e6e5b4f747d43f10ad2af18060bf1c1d034c9c1a  # tags/1.2.1^0
-source=("git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
+source=("libhandy-${pkgver}::git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
 sha256sums=('SKIP')
 
 prepare() {
