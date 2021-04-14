@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=iptables-s6
-pkgver=20200713
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for iptables"
+pkgdesc="s6-rc service scripts for iptables"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-iptables')
 conflicts=('init-iptables')
-depends=('iptables' 's6')
+depends=('iptables' 's6-rc')
 install=iptables.install
 source=("ip6tables.type" "ip6tables.up" "iptables.type" "iptables.up")
 sha256sums=('aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
