@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openldap-s6
-pkgver=20201019
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for openldap"
+pkgdesc="s6-rc service scripts for openldap"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-openldap')
 conflicts=('init-openldap')
-depends=('openldap' 's6')
+depends=('openldap' 's6-rc')
 install=slapd.install
 backup=('etc/s6/sv/slapd-log/conf')
 source=("slapd-log.conf"
