@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=alsa-utils-s6
-pkgver=20210301
+pkgver=20210414
 pkgrel=1
 pkgdesc="s6-rc service scripts for alsa-utils"
 arch=('any')
