@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=xdm-openrc
-pkgver=20210108
+pkgver=20210413
 pkgrel=1
 pkgdesc="OpenRC xdm init script"
 arch=('any')
@@ -12,7 +12,7 @@ provides=('init-displaymanager')
 depends=('xorg-xdm' 'openrc')
 conflicts=('init-displaymanager')
 source=("xdm.initd")
-sha256sums=('8f2e639ddc326acaa309926eb302ac2da20f36c3bf2a69bb39e2d7fa2bcfe25d')
+sha256sums=('feab7864d5dd89833b991760dbf27b195addd587aab1c7aafa9371f20165758d')
 
 package() {
     install -Dm755 "$srcdir/xdm.initd" "$pkgdir/etc/init.d/xdm"
