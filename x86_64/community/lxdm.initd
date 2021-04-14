@@ -5,7 +5,7 @@ command_args="-d"
 pidfile="/run/${RC_SVCNAME}.pid"
 
 depend() {
-    need localmount dbus elogind
+    need localmount dbus logind
 
     after bootmisc consolefont modules netmount
     after readahead-list ypbind autofs openvpn gpm lircmd
