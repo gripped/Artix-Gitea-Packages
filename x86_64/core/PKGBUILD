@@ -3,15 +3,15 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=elogind-runit
-pkgver=20191020
-pkgrel=2
+pkgver=20210413
+pkgrel=1
 pkgdesc="runit service scripts for elogind"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 depends=('dbus-runit' 'elogind')
-provides=('init-elogind')
-conflicts=('init-elogind')
+provides=('init-elogind' 'init-logind')
+conflicts=('init-elogind' 'init-logind')
 source=("elogind.run")
 sha256sums=('f1375235c4543f3081ddfa7c71bb4f5343b3048c7fd4d9dc312ce6163055f396')
 
