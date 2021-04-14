@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=fcron-s6
-pkgver=20210307
+pkgver=20210414
 pkgrel=1
 pkgdesc="s6-rc service scripts for fcron"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-fcron')
 conflicts=('init-fcron' 'cronie' 'cronie-s6')
-depends=('fcron' 's6')
+depends=('fcron' 's6-rc')
 install=fcron.install
 backup=('etc/s6/sv/fcron-log/conf')
 source=("fcron-srv."{type,run,producer-for}
