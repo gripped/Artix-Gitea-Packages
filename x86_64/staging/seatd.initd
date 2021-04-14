@@ -1,0 +1,13 @@
+#!/usr/bin/openrc-run
+# Copyright 2021 Artix Linux
+# Distributed under the terms of the GNU General Public License v2
+
+pidfile="/run/seatd.pid"
+command="/usr/bin/seatd"
+command_background=true
+
+depend() {
+    need dbus
+    provide logind
+    before xdm
+}
