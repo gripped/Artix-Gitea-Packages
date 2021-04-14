@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=at-s6
-pkgver=20210301
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for at"
+pkgdesc="s6-rc service scripts for at"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-at')
 conflicts=('init-at')
-depends=('at' 's6')
+depends=('at' 's6-rc')
 install=at.install
 backup=('etc/s6/sv/at-log/conf')
 source=("at-srv."{type,run,producer-for}
