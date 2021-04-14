@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=gdm-openrc
-pkgver=20210207
+pkgver=20210413
 pkgrel=1
 pkgdesc="OpenRC gdm init script"
 arch=('any')
@@ -12,7 +12,7 @@ provides=('init-displaymanager')
 depends=('gdm' 'openrc')
 conflicts=('init-displaymanager')
 source=("gdm.initd")
-sha256sums=('e6dcb0e95e647b615439b1f21840d64dde483a2efc84449e00b26dbe81a2bf83')
+sha256sums=('05a68a0b98b71125065b3577888a6f6dc4264b788bfe054e8a1097d612c7088a')
 
 package() {
     install -Dm755 "$srcdir/gdm.initd" "$pkgdir/etc/init.d/gdm"
