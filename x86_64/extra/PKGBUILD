@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=avahi-s6
-pkgver=20210301
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for avahi"
+pkgdesc="s6-rc service scripts for avahi"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-avahi')
 conflicts=('init-avahi')
-depends=('avahi' 'dbus-s6' 's6')
+depends=('avahi' 'dbus-s6' 's6-rc')
 install=avahi-daemon.install
 backup=('etc/s6/sv/avahi-daemon-log/conf')
 source=("avahi-daemon-srv."{type,run,producer-for,dependencies}
