@@ -2,7 +2,6 @@
 
 supervisor=supervise-daemon
 command="/usr/bin/sddm"
-command_background=true
 
 depend() {
     need localmount
