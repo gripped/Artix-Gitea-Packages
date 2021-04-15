@@ -12,7 +12,7 @@ provides=('init-displaymanager')
 depends=('gdm' 'openrc')
 conflicts=('init-displaymanager')
 source=("gdm.initd")
-sha256sums=('876023d1897219ca35293ee92b732319d0839e76d7cc58d8b785e346581c293c')
+sha256sums=('abb3ab817375f2167eeae46e7a3652cf936c5c3f212d8bb245e4df963f9167da')
 
 package() {
     install -Dm755 "$srcdir/gdm.initd" "$pkgdir/etc/init.d/gdm"
