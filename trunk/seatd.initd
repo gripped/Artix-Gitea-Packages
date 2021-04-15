@@ -4,6 +4,7 @@
 
 pidfile="/run/seatd.pid"
 command="/usr/bin/seatd"
+command_args="-g video"
 command_background=true
 
 depend() {

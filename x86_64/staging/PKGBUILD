@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=seatd-openrc
-pkgver=20210414
+pkgver=20210415
 pkgrel=1
 pkgdesc="OpenRC seatd init script"
 arch=('any')
@@ -11,7 +11,7 @@ depends=('seatd' 'dbus-openrc')
 provides=('init-logind')
 conflicts=('init-logind')
 source=("seatd.initd")
-sha256sums=('1d0814a2599fdb78273eda27ee61d91e282e7f12ecc6e1d04edda0a604d42b7b')
+sha256sums=('2db20c072de4ffdea2a76eabff9c21ec00a2359c08e193362238b9b45855ff33')
 
 package() {
     install -Dm755 "${srcdir}"/seatd.initd "${pkgdir}"/etc/init.d/seatd
