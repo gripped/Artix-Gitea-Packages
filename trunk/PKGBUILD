@@ -13,7 +13,7 @@ depends=('dbus-runit' 'seatd')
 provides=('init-logind')
 conflicts=('init-logind')
 source=("seatd.run")
-sha256sums=('c408c2b87a7e1c97623e435819c79933ea814d1fc5f55348267281f149fb477c')
+sha256sums=('f5dc16d5499999e5f6fcc7f2072a5afdbcab7a60d03eb47b20e579ac96165dc4')
 
 _inst_sv(){
     for file in run finish check; do
