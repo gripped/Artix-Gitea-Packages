@@ -1,12 +1,13 @@
 #!/usr/bin/openrc-run
 
 description="EXIM internet mailer"
-
-supervisor=supervise-daemon
-command=/usr/bin/exim
-command_args=${command_args:--bdf -q15m}
 cfgfile=/etc/mail/exim.conf
+pidfile=/run/exim.pid
+command=/usr/bin/exim
+command_args=${command_args:--bd -q15m}
 required_files="$cfgfile"
+extra_started_commands="reload"
+description_reload="Reload configuration"
 
 depend() {
 	use antivirus net
@@ -16,5 +17,11 @@ depend() {
 start_pre() {
 	ebegin
 	$command -bV >/dev/null 2>>${startuplog:-/dev/null}
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading $RC_SVCNAME"
+	start-stop-daemon --signal HUP --pidfile $pidfile
 	eend $?
 }
