@@ -1,0 +1,49 @@
+From 6ac0a7ddc37d84a9ed2fd1ecf48db25a47cd8172 Mon Sep 17 00:00:00 2001
+From: Dudemanguy <dudemanguy@artixlinux.org>
+Date: Thu, 7 Jan 2021 16:35:06 -0600
+Subject: [PATCH] libbrlapi: use elogind instead of systemd
+
+Not pretty or elegant but good enough for our purposes.
+---
+ Programs/brlapi_client.c | 2 +-
+ configure.ac             | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/Programs/brlapi_client.c b/Programs/brlapi_client.c
+index d803d59d2..48e120bfa 100644
+--- a/Programs/brlapi_client.c
++++ b/Programs/brlapi_client.c
+@@ -97,7 +97,7 @@
+ #endif /* MAXIMUM_VIRTUAL_CONSOLE */
+ 
+ #ifdef HAVE_SD_SESSION_GET_VT
+-#include <systemd/sd-login.h>
++#include <elogind/sd-login.h>
+ #endif /* HAVE_SD_SESSION_GET_VT */
+ 
+ #define BRLAPI_NO_DEPRECATED
+diff --git a/configure.ac b/configure.ac
+index a8d8d237c..e6025fafc 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -1263,13 +1263,13 @@ in
+       ;;
+ esac
+ 
+-BRLTTY_HAVE_PACKAGE([systemd], [libsystemd], [
++BRLTTY_HAVE_PACKAGE([elogind], [libelogind], [
+     brltty_libs_save="${LIBS}"
+-    LIBS="${LIBS} ${systemd_libs}"
++    LIBS="${LIBS} ${elogind_libs}"
+     AC_CHECK_FUNC([sd_session_get_vt], [
+       AC_DEFINE([HAVE_SD_SESSION_GET_VT], [1],
+-                [Define this if the function sd_session_get_vt is available in libsystemd.])
+-      api_libraries="${api_libraries} ${systemd_libs}"
++                [Define this if the function sd_session_get_vt is available in libelogind.])
++      api_libraries="${api_libraries} ${elogind_libs}"
+     ])
+     LIBS="${brltty_libs_save}"
+ ])
+-- 
+2.30.0
+
