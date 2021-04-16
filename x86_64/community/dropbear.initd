@@ -2,10 +2,9 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-pidfile=/run/dropbear.pid
+supervisor=supervise-daemon
 command=/usr/bin/dropbear
-command_args="${DROPBEAR_OPTS}"
-command_background=yes
+command_args="-F ${DROPBEAR_OPTS}"
 
 depend() {
 	use logger dns

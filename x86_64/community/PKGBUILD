@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=dropbear-openrc
-pkgver=20200715
+pkgver=20210415
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -12,8 +12,8 @@ conflicts=('systemd-sysvcompat')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("${pkgname/-openrc/}.initd"
 	"${pkgname/-openrc/}.confd")
-md5sums=('0ed105c4380eaab5307029c626678eed'
-         'af73c487e2be37d65d0e8bf80489357e')
+sha256sums=('38bc266fb5b1e55f710c0c349fde677c0cb9d313eb76bd84d87a68515f459f44'
+            'e891255a49d408eb11514662faa4d724a1df27cc2ee90268507dbd2573b67334')
 
 package() {
 	install -Dm755 "$srcdir/dropbear.initd" "$pkgdir/etc/init.d/dropbear"
