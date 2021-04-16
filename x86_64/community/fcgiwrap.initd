@@ -1,33 +1,14 @@
 #!/usr/bin/openrc-run
 
-: ${socket:=unix:/run/fcgiwrap/fcgiwrap.sock}
 name="fcgiwrap"
 description="fcgiwrap cgi daemon"
 
+supervisor=supervise-daemon
 command="/usr/bin/fcgiwrap"
-command_args="-c ${nproc:-$(nproc)} -s $socket"
+command_args="-c ${nproc:-$(nproc)}"
 command_user="http:http"
-start_stop_daemon_args="--background"
 
 depend() {
 	need net localmount
 	after firewall
-}
-
-start_pre() {
-	case "$socket" in
-	unix:/*)
-		local socket_path=${socket#unix:}
-		checkpath --directory --mode 2775 --owner "$command_user" \
-			${socket_path%/*}
-		;;
-	esac
-}
-
-stop_post() {
-	case "$socket" in
-	unix:/*)
-		rm -f "${socket#unix:}"
-		;;
-	esac
 }
