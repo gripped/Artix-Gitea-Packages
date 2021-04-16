@@ -19,17 +19,16 @@
 #
 
 description="Daemon to ban hosts that cause multiple authentication errors"
-description_reload="reload configuration"
 description_showlog="show fail2ban logs"
 
-pidfile=/run/fail2ban/fail2ban.pid
+supervisor=supervise=daemon
 command=/usr/bin/fail2ban-client
-command_args="${FAIL2BAN_OPTIONS} start"
-extra_started_commands="reload showlog"
+command_args="${FAIL2BAN_OPTIONS} -f start"
+extra_started_commands="showlog"
 
 depend() {
         need net
-        need logger
+        use logger
         after iptables
 }
 
@@ -39,12 +38,6 @@ start_pre() {
 	# remove stalled sock file after system crash
         # bug 347477
         rm -f /run/fail2ban/fail2ban.sock || return $?
-}
-
-reload() {
-        ebegin "Reloading fail2ban"
-        "$command" reload
-        eend $? "Failed to reload fail2ban"
 }
 
 showlog(){
