@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=connman-openrc
-pkgver=20200709
+pkgver=20210415
 pkgrel=1
 pkgdesc="OpenRC connman init script"
 arch=('any')
@@ -16,7 +16,7 @@ backup=('etc/conf.d/connmand')
 source=("connmand.confd"
         "connmand.initd")
 sha256sums=('e92c5c58ab45f85b6da4f7b153fd2f7ad9aa95d96f7d684cbffd3779dca647e3'
-            '6620b9aaa76ddca97f82c37aed216c3bbc69cd8f54fa39fa4be71e629a31eadc')
+            '5cc966e53e0bfe2b6e551b629a777948d8dfd2de8c20ac6979630692a0800791')
 
 package() {
     install -Dm755 "${srcdir}/connmand.initd" "${pkgdir}/etc/init.d/connmand"
