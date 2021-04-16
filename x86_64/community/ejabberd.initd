@@ -1,16 +1,11 @@
 #!/usr/bin/openrc-run
 
-pidfile="/run/ejabberd.pid"
+supervisor=supervise-daemon
 command="/usr/bin/ejabberdctl"
-command_args="${EJABBERDCTL_OPT} start"
+command_args="${EJABBERDCTL_OPT} foreground"
 
 depend() {
 	use dns
 	need net
 	provide jabber-server
-}
-
-stop() {
-	start-stop-daemon --pidfile "$pidfile" --exec "$command" stop
-		
 }
