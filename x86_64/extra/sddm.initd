@@ -1,8 +1,7 @@
 #!/usr/bin/openrc-run
 
+supervisor=supervise-daemon
 command="/usr/bin/sddm"
-pidfile="/run/${RC_SVCNAME}.pid"
-command_background=true
 
 depend() {
     need localmount
