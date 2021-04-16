@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=exim-openrc
-pkgver=20210415
+pkgver=20210416
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
