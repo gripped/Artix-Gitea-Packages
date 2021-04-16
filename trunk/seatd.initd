@@ -2,10 +2,9 @@
 # Copyright 2021 Artix Linux
 # Distributed under the terms of the GNU General Public License v2
 
-pidfile="/run/seatd.pid"
+supervisor=supervise-daemon
 command="/usr/bin/seatd"
 command_args="-g video"
-command_background=true
 
 depend() {
     need dbus
