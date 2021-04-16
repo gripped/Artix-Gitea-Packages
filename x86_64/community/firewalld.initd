@@ -3,8 +3,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
 description="FirewallD"
+
+supervisor=supervise-daemon
 command=/usr/sbin/firewalld
-pidfile=/run/firewalld.pid
+command_args="--nofork"
 
 depend() {
 	need dbus
