@@ -1,13 +1,6 @@
 #!/usr/bin/openrc-run
 
 supervisor="supervise-daemon"
-pidfile="/run/i2pd.pid"
 command="/usr/bin/i2pd"
-command_args=" --conf=/var/lib/i2pd/i2pd.conf --daemon --service /usr/bin/i2pd"
+command_args=" --conf=/var/lib/i2pd/i2pd.conf --service /usr/bin/i2pd"
 command_user="i2pd:i2pd"
-command_background=true
-
-stop() {
-       /usr/bin/i2pd toss
-}
-
