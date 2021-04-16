@@ -4,14 +4,12 @@
 
 name="lighttpd"
 description="Lighttpd web server"
-
 conf_file="${LIGHTTPD_CONF:-/etc/lighttpd/lighttpd.conf}"
-extra_started_commands="reload graceful"
-required_files="${conf_file}"
-pidfile="/run/${RC_SVCNAME}.pid"
+
+supervisor=supervise-daemon
 command="/usr/bin/lighttpd"
-command_args="-f ${conf_file}"
-command_foreground_args="-D"
+command_args="-D -f ${conf_file}"
+required_files="${conf_file}"
 
 depend() {
 	need net
@@ -34,30 +32,4 @@ checkconfig() {
 start_pre() {
 	checkconfig || return $?
 	checkpath -d -q -m 0750 /run/lighttpd/
-}
-
-check_running() {
-	if ! service_started "${SVCNAME}" ; then
-		eerror "${SVCNAME} isn't running"
-	fi
-	checkconfig || return $?
-}
-
-reload() {
-	check_running
-	ebegin "Re-opening lighttpd log files"
-	start-stop-daemon --quiet --pidfile "${LIGHTTPD_PID}" \
-		--signal HUP
-	eend $?
-}
-
-graceful() {
-	check_running
-	ebegin "Gracefully stopping lighttpd"
-	start-stop-daemon --quiet --pidfile "${LIGHTTPD_PID}" \
-		--signal INT
-	if eend $? ; then
-		rm -f "${LIGHTTPD_PID}"
-		start
-	fi
 }
