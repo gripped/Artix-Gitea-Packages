@@ -5,7 +5,8 @@
 supervisor=supervise-daemon
 description="An IPC message bus daemon"
 command="/usr/bin/dbus-daemon"
-command_args="--system --nofork --nopidfile"
+command_args="--system"
+command_args_background="--nofork --nopidfile"
 extra_started_commands="reload"
 
 dbus_socket="/run/dbus/system_bus_socket"
