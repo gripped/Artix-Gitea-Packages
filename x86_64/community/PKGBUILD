@@ -4,15 +4,15 @@
 
 pkgbase=podman
 pkgname=(podman podman-docker)
-pkgver=3.1.0
-pkgrel=1
+pkgver=3.1.1
+pkgrel=2
 pkgdesc='Tool and library for running OCI-based containers in pods'
 arch=(x86_64)
 url='https://github.com/containers/libpod'
 license=(Apache)
 depends=(cni-plugins conmon containers-common device-mapper iptables libseccomp
-runc slirp4netns eudev fuse-overlayfs)
-makedepends=(btrfs-progs go go-md2man git gpgme)
+runc slirp4netns libudev fuse-overlayfs)
+makedepends=(btrfs-progs go go-md2man git gpgme udev)
 source=("git+$url#tag=v$pkgver?signed")
 validpgpkeys=('B7DBDCA456F7335E91F1C25CD3624C551D0515C4')
 sha256sums=('SKIP')
@@ -20,20 +20,6 @@ sha256sums=('SKIP')
 pkgver() {
   cd libpod
   git describe --tags | sed 's/^v//;s/-/+/g'
-}
-
-prepare() {
-  cd libpod
-
-  # From
-  # Makefile: Fix make install.docker regression
-  # https://github.com/containers/podman/pull/9898
-
-  # Makefile: ensure install.docker creates BINDIR
-  git cherry-pick -n ab3b6df130f5ce21b126a666f5df3bd85aaf4c46
-
-  # Makefile: introduce install.docker-full
-  git cherry-pick -n 7801072851315cd1409d5d82a5e649659aa06b79
 }
 
 build() {
@@ -59,8 +45,6 @@ package_podman() {
   make install install.completions DESTDIR="$pkgdir" PREFIX=/usr
   # remove man pages provided by containers-common
   rm -rvf "${pkgdir}/usr/share/man/man5"
-  # Remove systemd dir(empty)
-  rm -rf "$pkgdir"/usr/lib/systemd
 }
 
 package_podman-docker() {
@@ -70,7 +54,8 @@ package_podman-docker() {
   provides=(docker)
 
   cd libpod
-  # Remove systemd dir(empty)
-  rm -rf "$pkgdir"/usr/lib/systemd
   make -j1 install.docker-full DESTDIR="$pkgdir" PREFIX=/usr
+
+  # Remove sysd unit(Artix)
+  rm -rf "$pkgdir"/usr/lib/systemd
 }
