@@ -2,7 +2,7 @@
 
 pkgname=prometheus
 pkgver=2.26.0
-pkgrel=1
+pkgrel=2
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
 url='https://prometheus.io'
@@ -15,8 +15,8 @@ makedepends=('go' 'git' 'bzr' 'yarn')
 backup=('etc/prometheus/prometheus.yml' 'etc/conf.d/prometheus')
 
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
-        prometheus.sysusers
-        )
+        prometheus.sysusers)
+
 sha256sums=('d2f5187946198e8d0ef820fb4f7e360d3d1b40587c70f6b7061a3a73b6ce90ab'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
@@ -28,7 +28,7 @@ build() {
     -X github.com/prometheus/common/version.Revision=$pkgver \
     -X github.com/prometheus/common/version.Branch=tarball \
     -X github.com/prometheus/common/version.BuildUser=someone@builder \
-    -X github.com/prometheus/common/version.BuildDate=$(date -d@"$SOURCE_DATE_EPOCH" +%Y%m%d-%H:%M:%S)"
+    -X github.com/prometheus/common/version.BuildDate=$(date -u '+%Y%m%d-%H:%M:%S' --date=@${SOURCE_DATE_EPOCH})"
 
   make assets
   go build \
