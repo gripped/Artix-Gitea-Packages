@@ -6,19 +6,16 @@ SR_GROUP=strelaysrv
 SR_HOMEDIR=/var/lib/strelaysrv
 SR_LOGFILE=/var/log/syncthing/strelaysrv.log
 
-
 description="Relay service for syncthing"
-command="/usr/libexec/syncthing/strelaysrv"
-command_args="${SR_OPTS}"
+
+supervisor=supervise-daemon
 pidfile="/run/strelaysrv.pid"
-start_stop_daemon_args="--background
-  --user ${SR_USER}
-  --group ${SR_GROUP}
-  --chdir \"${SR_HOMEDIR}\"
-  --make-pidfile
-  --stdout \"${SR_LOGFILE}\"
-  --stderr \"${SR_LOGFILE}\"
-  "
+command="syncthing-relaysrv"
+command_args="${SR_OPTS}"
+command_user="${SR_USER}:${SR_GROUP}"
+output_log="$SR_LOGFILE"
+error_log="$output_log"
+supervise_daemon_args="--chdir ${SR_HOMEDIR}"
 
 depend() {
   need net
