@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=matterbridge-openrc
-pkgver=20210405
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC script for matterbridge"
 arch=('x86_64')
@@ -9,7 +9,7 @@ license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'matterbridge')
 source=('matterbridge.initd')
-b2sums=('702fa40e6a0f6e84a0f0a4832d7ca8d95c319ddfbcd8ef5805b327f62c48ac8db507745c2245f6ec798c463e0232e22872a01a7303c0d69c9e04b0576261fc0b')
+b2sums=('eef7511d82fa5e549fa3297b59e29543a9328d07de5ef7e9effb41694d4a6cdf2a9f03b2156c553867d9d88579f14dc89b17b381f24a6673418a27a1b100abff')
 
 package() {
   cd "$srcdir"
