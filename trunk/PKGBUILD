@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=toxcore-openrc
-pkgver=20200709
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC tox init script"
 arch=('any')
@@ -15,7 +15,7 @@ conflicts=('systemd-sysvcompat')
 source=("tox.confd"
         "tox.initd")
 sha256sums=('eb0aa3b25232a64971c6b39799c384577cf85ffe16ec41119b6b4e8336649cd5'
-            '6c761b6314e310cbdd76afaaff133d70beef93d97b9035953922f7a97b4a3b18')
+            '1d2338543e40c5452cfbc27b997cf5fc2140db45b27a20b48136bf6781fb4595')
 
 package() {
 	install -Dm755 "$srcdir/tox.initd" "$pkgdir/etc/init.d/tox"
