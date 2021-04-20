@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=vsftpd-openrc
-pkgver=20200620
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC vsftpd init script"
 arch=('any')
@@ -13,8 +13,8 @@ groups=('openrc-galaxy')
 depends=('openrc' 'vsftpd')
 conflicts=('systemd-sysvcompat')
 source=("vsftpd.initd"
-	"vsftpd-checkconfig.sh")
-sha256sums=('99ac5c135e60745e9faeddac4b9e5dd099100e3b58e984cce550572706c7306b'
+	 "vsftpd-checkconfig.sh")
+sha256sums=('2198e04a52071d0f1b6880bce8d2360bede25c2ee590a28b0057a959ccb5921e'
             '866865419c3c82f0e56bdc2d38950d453791032255c39a5700a795a670a579ba')
 
 package() {
