@@ -10,6 +10,7 @@ license=('GPL')
 depends=('cheese' 'gdm' 'gnome-online-accounts' 'libgnomekbd' 'malcontent')
 makedepends=('meson')
 source=("https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
+sha256sums=('14e0c74614380ee112a7414fec6606bd0f6f3f421b980070ca7d519d1b99896f')
 
 build() {
   arch-meson $pkgname-$pkgver build -Dsystemd=false
