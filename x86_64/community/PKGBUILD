@@ -4,7 +4,7 @@
 
 pkgname=gitea
 pkgver=1.14.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Painless self-hosted Git service. Community managed fork of Gogs."
 arch=(x86_64)
 url="https://gitea.io"
@@ -21,7 +21,7 @@ optdepends=(
   'sqlite: SQLite support'
 )
 backup=('etc/gitea/app.ini')
-_tag=90c9af99ae052a2b0fa937e2863eddecc4145f97 # git rev-parse v${pkgver}
+_tag=918d3d96ff30670f0b63d99698d76dab434ba833 # git rev-parse v${pkgver}
 source=("git+https://github.com/go-gitea/gitea.git#tag=${_tag}"
         gitea.tmpfiles
         gitea.sysusers
