@@ -4,7 +4,7 @@
 
 pkgname=sshguard-openrc
 pkgver=20210419
-pkgrel=1
+pkgrel=1.1
 pkgdesc="OpenRC SSHGuard init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -16,7 +16,7 @@ backup=('etc/conf.d/sshguard')
 source=("sshguard.confd"
         "sshguard.initd")
 sha256sums=('ee121f8c4c045ba1cfa67a173040358b1ea5c0561427d64dbd1092a24f068519'
-            '21f504e8ca00fe42ca8314bf2f65e301243ec0c682920102703c14fb37179baf')
+            'de00e9f6cc42542b185e975a23229bddcb31d59c5593ea31f36210119c26f9c9')
 
 package() {
     install -Dm755 "$srcdir/sshguard.initd" "$pkgdir/etc/init.d/sshguard"

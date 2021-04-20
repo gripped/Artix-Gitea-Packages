@@ -6,7 +6,6 @@ supervisor=supervise-daemon
 command="/usr/bin/sshguard"
 pidfile="${SSHGUARD_PIDFILE:-/run/${SVCNAME}.pid}"
 command_args="${SSHGUARD_OPTS}"
-supervise_daemon_args="--wait ${SSHGUARD_WAIT:-999} --interpreted --quiet"
 
 depend() {
 	after iptables
