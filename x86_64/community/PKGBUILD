@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=thermald-openrc
-pkgver=20200620
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC thermald init script"
 arch=('any')
@@ -13,7 +13,7 @@ groups=('openrc-galaxy')
 depends=('dbus-openrc' 'thermald')
 conflicts=('systemd-sysvcompat')
 source=("thermald.initd")
-sha256sums=('8c035bd35d3e7a25d52d2cf896c356b5854dd8c869460dd14453c6be6edd1d84')
+sha256sums=('c53e318a6da1e3abd758f864e870f3186ebfe49c729fe65b0f2dd94168e65892')
 
 package() {
     install -Dm 755 "$srcdir/thermald.initd" "$pkgdir/etc/init.d/thermald"
