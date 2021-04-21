@@ -3,11 +3,9 @@
 name="motion"
 description="Motion daemon"
 
-pidfile=/run/motion.pid
+supervisor=supervise-daemon
 command=/usr/bin/motion
 command_args="$MOTION_OPT"
-command_background=true
-command_background_args="-n"
 command_user="motion:video"
 error_log="/var/log/motion.log"
 output_log="/var/log/motion.log"

@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=motion-openrc
-pkgver=20200531
+pkgver=20210419
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -12,18 +12,10 @@ conflicts=('systemd-sysvcompat')
 backup=(etc/conf.d/motion)
 source=("${pkgname/-openrc/}.initd"
 	"${pkgname/-openrc/}.confd")
-md5sums=('db1839fd7a50f25c6ba6e2c91d4daf69'
-         'ffb6d419c322702a9dcc7ef5dcb7c63c')
-
-_inst_initd(){
-    install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
-}
-
-_inst_confd(){
-    install -Dm644 ${srcdir}/$1.confd ${pkgdir}/etc/conf.d/$1
-}
+b2sums=('791a4a840edfcfaedbd38e21cea3d2db2c6048fb23f2b1d97ee82b715aa4c5580e11b5994ed099a639e0da458802098ade645372626fba892957c22f75d45676'
+        'fcca520f610cf7a1925c7bbc418c484e209afa1e034b3b6b6f67823385c196d96b89646a729a6b91455be90f0a01d5da92db72dd62153e81d4b277f7d4675dde')
 
 package() {
-    _inst_initd "${pkgname/-openrc/}"
-    _inst_confd "${pkgname/-openrc/}"
+    install -Dm755 ${srcdir}/motion.initd ${pkgdir}/etc/init.d/motion
+    install -Dm644 ${srcdir}/motion.confd ${pkgdir}/etc/conf.d/motion
 }
