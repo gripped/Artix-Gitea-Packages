@@ -5,10 +5,9 @@ description_checkconfig="Check the configuration file for validity"
 
 name="OpenSMTPD"
 
-pidfile="/run/$RC_SVCNAME.pid"
+supervisor=supervise-daemon
 command=/usr/bin/smtpd
 command_args="-F ${command_args:-$SMTPD_OPTS}"  # SMTPD_OPTS is deprecated
-command_background=yes
 required_files=/etc/smtpd/smtpd.conf
 
 depend() {
