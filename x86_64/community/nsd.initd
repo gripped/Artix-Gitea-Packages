@@ -6,19 +6,16 @@ description="NSD is an authoritative-only, high performance, open source name se
 extra_commands="configtest"
 extra_started_commands="reload"
 
+supervisor=supervise-daemon
 # these can be overridden in /etc/conf.d/nsd if necessary
 NSD_CONFIG="${NSD_CONFIG:-/etc/nsd/nsd.conf}"
 NSD_CHECKCONF="${NSD_CHECKCONF:-/usr/bin/nsd-checkconf}"
-command="${NSD_BINARY:-/usr/bin/nsd}"
-command_args="-c ${NSD_CONFIG}"
+command="${NSD_BINARY:-nsd}"
+command_args="-c ${NSD_CONFIG} -d"
 
 depend() {
 	need net
 	use logger
-}
-
-get_pidfile() {
-	printf '%s' "$("${NSD_CHECKCONF}" -o pidfile "${NSD_CONFIG}")"
 }
 
 checkconfig() {
@@ -39,21 +36,9 @@ configtest() {
 	eend $?
 }
 
-start_pre() {
-	checkconfig || return $?
-	pidfile="$(get_pidfile)"
-	checkpath --directory --owner nsd:nsd "${pidfile%/*}" || return 1
-}
-
-stop_pre() {
-	checkconfig || return $?
-	pidfile="$(get_pidfile)"
-}
-
 reload() {
 	checkconfig || return $?
-	pidfile="$(get_pidfile)"
 	ebegin "Reloading config and zone files"
-	kill -s HUP $(cat ${pidfile})
+	supervisor-daemon "$command" --signal HUP
 	eend $?
 }
