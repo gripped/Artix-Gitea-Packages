@@ -1,9 +1,10 @@
-# Maintainer: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Contributor: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=privoxy-openrc
-pkgver=20200715
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC privoxy init script"
 arch=('any')
@@ -13,7 +14,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'privoxy')
 conflicts=('systemd-sysvcompat')
 source=("privoxy.initd")
-sha256sums=('db1ee12855e223257b989580f946d08e93f4a8e45354807917c284846975bd5a')
+sha256sums=('e40431d539b9a1738c77dbeebea7c7b02e6b8e8952d5fa6d2a28415dc8ab7e47')
 
 package() {
     install -Dm755 "$srcdir/privoxy.initd" "$pkgdir/etc/init.d/privoxy"
