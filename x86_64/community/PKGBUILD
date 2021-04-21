@@ -1,21 +1,18 @@
 # Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
 
-_url="https://github.com/voidlinux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=unrealircd-runit
 pkgver=20200425
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for unrealircd"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 depends=('unrealircd')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-unrealircd')
+provides=('init-unrealircd')
 source=("unrealircd.run")
 sha256sums=('8ca7261a092135f377d74e353b0c9cb4dd467a65e99247a3b5f4678237abc4bb')
 
