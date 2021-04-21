@@ -4,7 +4,7 @@
 
 
 pkgname=acpid-openrc
-pkgver=20200701
+pkgver=20210418
 pkgrel=1
 pkgdesc="OpenRC acpid init script"
 arch=('any')
@@ -17,9 +17,9 @@ backup=('etc/conf.d/acpid')
 source=("acpid.confd"
         "acpid.initd")
 sha256sums=('3755d4eb8bb64a1304e5defedb949305ac550565da36fe4f94d5f31beee821ba'
-            'd8ab3f84431957e1c320944fa8d5af83d37af893ba63e120552049def9f63828')
+            'c784a8b8ceceb3a453808a860a8dd9e0f8847f96cc82a7cc8410bc682aaadb06')
 
 package() {
     install -Dm755 "$srcdir/acpid.initd" "$pkgdir/etc/init.d/acpid"
-    install -Dm644 "$srcdir/acpid.confd" "$pkgdir/etc/conf.d/acpid" 
+    install -Dm644 "$srcdir/acpid.confd" "$pkgdir/etc/conf.d/acpid"
 }

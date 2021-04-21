@@ -6,6 +6,9 @@ extra_started_commands="reload"
 command="/usr/bin/acpid"
 command_args="${ACPID_ARGS}"
 description="Daemon for Advanced Configuration and Power Interface"
+supervisor="supervise-daemon"
+command_args_foreground="--foreground"
+#pidfile="/run/acpid.pid"
 
 depend() {
 	need localmount
@@ -14,6 +17,6 @@ depend() {
 
 reload() {
 	ebegin "Reloading acpid configuration"
-	start-stop-daemon --exec $command --signal HUP
+	${supervisor} ${RC_SVCNAME} --signal HUP --pidfile /run/acpid.pid
 	eend $?
 }
