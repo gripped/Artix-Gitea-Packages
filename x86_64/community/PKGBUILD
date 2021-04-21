@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=pcsclite-openrc
-pkgver=20200709
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC pcsclite init script"
 arch=('any')
@@ -11,8 +11,8 @@ groups=('openrc-galaxy')
 depends=('openrc' 'pcsclite')
 conflicts=('systemd-sysvcompat')
 source=("pcscd.initd"
-	"pcscd.confd")
-sha256sums=('d5e0b9657cb5dd3048e3354e180b2abd8e2bd857e4ae293974b458e0a3422ebe'
+	    "pcscd.confd")
+sha256sums=('dddd871d0e41718c06ab9cdd4454bdac335e11967d0a73d85f73003dcc671f11'
             '75c38f3d60fc6506d6bccdefeace24143cae2786b5665770ec69aed3140407d4')
 
 package() {

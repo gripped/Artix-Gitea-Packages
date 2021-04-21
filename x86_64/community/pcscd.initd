@@ -5,10 +5,9 @@
 
 name="PC/SC Daemon"
 
-pidfile=/run/pcscd/pcscd.pid
-
+supervisor=supervise-daemon
 command=/usr/bin/pcscd
-command_args="${EXTRA_OPTS}"
+command_args="${EXTRA_OPTS} -f"
 command_user="${PCSCD_USER}:${PCSCD_GROUP}"
 
 depend() {
