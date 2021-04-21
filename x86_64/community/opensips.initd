@@ -1,9 +1,8 @@
 #!/usr/bin/openrc-run
 
-pidfile="/run/${RC_SVCNAME}.pid"
+supervisor=supervise-daemon
 command="/usr/bin/opensips"
-command_args="-f ${SIPS_CFG} ${DEBUG} -w ${WORK_DIR} -P ${pidfile}"
-command_background_args="-F"
+command_args="-f ${SIPS_CFG} ${DEBUG} -w ${WORK_DIR} -F"
 required_files="$SIPS_CFG"
 
 depend() {
