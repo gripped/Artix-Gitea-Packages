@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=shairport-sync-openrc
-pkgver=20210407
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC script for shairport-sync"
 arch=('x86_64')
@@ -9,7 +9,7 @@ license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'shairport-sync' 'avahi-openrc')
 source=(shairport-sync)
-b2sums=('019efe7fa2f966c1fc8be9030399e02cb4052c362629d9be1b985b4edeb5f4663613db9ea03f9a11a24a30be6601ddd4e0159c9e475c72260ed30e3b358db1ef')
+b2sums=('51284d6beff69162511e66f3d4181f82d877fbf4ae424ff1755a18e38de6470cfbf0eaae00ad0fb9a1c9164121a917ac4a07b5328e275866b482e1f86bb22aaf')
 
 package() {
   cd "$srcdir"
