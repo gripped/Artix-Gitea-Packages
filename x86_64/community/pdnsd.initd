@@ -2,9 +2,9 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-pidfile="/run/pdnsd.pid"
+supervisor=supervise-daemon
 command="/usr/bin/pdnsd"
-command_args="-s -t -d -p ${pidfile} ${PDNSDCONFIG}"
+command_args="-s -t ${PDNSDCONFIG}"
 extra_started_commands="reload"
 
 depend() {

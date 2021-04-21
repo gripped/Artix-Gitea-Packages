@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=pdnsd-openrc
-pkgver=20200620
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC pdnsd init script"
 arch=('any')
@@ -13,7 +13,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'pdnsd')
 conflicts=('systemd-sysvcompat')
 source=("pdnsd.initd")
-sha256sums=('e2c121b80dbe189eb45f0b0e500740b8219633125ac9b283aed76f0e8243ad01')
+sha256sums=('8ae0dc4373fe99e3880b9b9b9b32e4853b04d8bb47eff759626db56b19dac8e0')
 
 package() {
     install -Dm755 "$srcdir/pdnsd.initd" "$pkgdir/etc/init.d/pdnsd"
