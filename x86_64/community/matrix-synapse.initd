@@ -3,11 +3,10 @@
 : ${serv_name:=${MATRIX_SERVERNAME=-matrix}}
 : ${serv_conf:=${MATRIX_CONF=-/etc/synapse/homeserver.yaml}}
 
-pidfile="/run/${RC_SVCNAME}.pid"
 directory=/var/lib/synapse
+supervisor=supervise-daemon
 command="/usr/bin/python"
 command_args="-m synapse.app.homeserver -c ${serv_conf} --data-directory ${directory} ${MATRIX_OPT}"
-command_background=true
 command_user="synapse:synapse"
 extra_commands="checkconfig"
 error_log=/var/log/synapse.log
