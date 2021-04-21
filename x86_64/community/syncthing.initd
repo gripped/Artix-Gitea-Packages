@@ -13,15 +13,16 @@ SYNCTHING_NICE="${SYNCTHING_NICE:-0}"
 
 description="Syncthing is an open, trustworthy and decentralized cloud storage system"
 pidfile="/run/syncthing.pid"
+supervisor=supervise-daemon
 command="/usr/bin/syncthing"
 command_args="-no-browser -home=${SYNCTHING_HOMEDIR} ${SYNCTHING_OPTS}"
 command_user="${SYNCTHING_USER}:${SYNCTHING_GROUP}"
-command_background=yes
-start_stop_daemon_args=" --umask ${SYNCTHING_UMASK} \
+output_log="$SYNCTHING_LOGFILE"
+error_log="$output_log"
+
+supervisor_daemon_args=" --umask ${SYNCTHING_UMASK} \
   --ionice ${SYNCTHING_IONICE} \
-  --nicelevel ${SYNCTHING_NICE} \
-  --stdout ${SYNCTHING_LOGFILE} \
-  --stderr ${SYNCTHING_LOGFILE}"
+  --nicelevel ${SYNCTHING_NICE}"
 
 depend() {
   need localmount net
