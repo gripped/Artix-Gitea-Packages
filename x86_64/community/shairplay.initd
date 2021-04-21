@@ -1,9 +1,9 @@
 #!/usr/bin/openrc-run
 
+supervisor=supervise-daemon
 pidfile="/run/shairplay.pid"
 command="/usr/bin/shairplay"
 command_args="-a ${SHAIRPLAY_NAME:-shairplay} ${SHAIRPLAY_PASSWORD}"
-command_background=true
 
 depend() {
 	use net audio
