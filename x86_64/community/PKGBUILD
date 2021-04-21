@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=webhook-openrc
-pkgver=20200726
+pkgver=20210419
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -10,7 +10,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'webhook')
 conflicts=('systemd-sysvcompat')
 source=("${pkgname/-openrc/}.initd")
-sha256sums=('435238ec01f005ea1e693703fcb279c82061c3704acef760499ee9fb49444231')
+sha256sums=('109d9b223cfd497301f46c73c30b485ad44e3af5c32ddddff5b20219bb851535')
 
 package() {
   install -Dm755 "$srcdir/webhook.initd" "$pkgdir/etc/init.d/webhook"
