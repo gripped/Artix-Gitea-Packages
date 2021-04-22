@@ -7,7 +7,7 @@ pkgbase='cyrus-sasl'
 pkgname=('cyrus-sasl' 'cyrus-sasl-gssapi' 'cyrus-sasl-ldap' 'cyrus-sasl-sql')
 #pkgname=libsasl
 pkgver=2.1.27
-pkgrel=3
+pkgrel=4
 pkgdesc="Cyrus Simple Authentication Service Layer (SASL) library"
 arch=('x86_64')
 url="https://www.cyrusimap.org/sasl/"
@@ -56,7 +56,7 @@ build() {
   export CFLAGS="$CFLAGS -fPIC"
   cd cyrus-sasl-$pkgver
 
-  rm -f config/config.guess config/config.sub
+  rm -f config/config.guess config/config.sub 
   rm -f config/ltconfig config/ltmain.sh config/libtool.m4
   rm -fr autom4te.cache
   libtoolize -c
@@ -124,7 +124,7 @@ package_libsasl() {
 }
 
 package_cyrus-sasl() {
-  depends=("libsasl=${pkgver}" 'krb5' 'pam')
+  depends=("libsasl=${pkgver}" 'krb5' 'pam' 'gdbm')
   pkgdesc="Cyrus saslauthd SASL authentication daemon"
   backup=('etc/conf.d/saslauthd')
 
