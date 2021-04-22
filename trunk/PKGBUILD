@@ -7,12 +7,12 @@
 
 pkgname=python-celery
 pkgver=5.0.5
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
 license=('BSD')
-depends=('python-billiard' 'python-click-didyoumean' 'python-click-repl'
+depends=('python-billiard' 'python-click-didyoumean' 'python-click-plugins' 'python-click-repl'
          'python-kombu' 'python-pytz' 'python-vine')
 optdepends=('python-cryptography: for celery.security'
             'python-pymongo: for celery.backends.mongodb'
