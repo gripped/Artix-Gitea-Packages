@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=spice-vdagent-s6
-pkgver=20210309
+pkgver=20210423
 pkgrel=1
 pkgdesc="s6-rc service scripts for spice-vdagent"
 arch=('any')
@@ -10,12 +10,29 @@ provides=('init-spice-vdagent')
 conflicts=('init-spice-vdagent')
 depends=('spice-vdagent' 's6-rc')
 install=spice-vdagent.install
-source=("spice-vdagentd.run" "spice-vdagentd.type")
-sha256sums=('45719ac7cc80d0eade7eca935484ade3b474840b68691e3a5c5989b6af5d0fab'
+backup=('etc/s6/sv/spice-vdagentd-log/conf')
+source=("spice-vdagentd-log.conf"
+        "spice-vdagentd-log.consumer-for"
+        "spice-vdagentd-log.notification-fd"
+        "spice-vdagentd-log.pipeline-name"
+        "spice-vdagentd-log.run"
+        "spice-vdagentd-log.type"
+        "spice-vdagentd-srv.producer-for"
+        "spice-vdagentd-srv.run" 
+        "spice-vdagentd-srv.type")
+sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
+            '4d2dfde12b949a74c1970d3ba6e2a44030697c3a3640aa5102e2b39e736150f1'
+            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
+            '1a54f8311afdd98d51a4ea8b65777537e8526821938dbf9f3dd01353e547f344'
+            '654fa714356d18590a30b3b750525918b35751fd0313cbf8e57141920fd81912'
+            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
+            '3bc647c2f98e9b6f02c06756f8baef77d996924cb070b33867a413158ce92328'
+            'f702b0baec40e49935030ecdd5a347e4fa929d0a5c781b6c932417ba351d9e32'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
-    for file in run type; do
+    for file in conf consumer-for notification-fd \
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi
@@ -23,5 +40,6 @@ _inst_sv(){
 }
 
 package() {
-    _inst_sv 'spice-vdagentd'
+    _inst_sv 'spice-vdagentd-log'
+    _inst_sv 'spice-vdagentd-srv'
 }
