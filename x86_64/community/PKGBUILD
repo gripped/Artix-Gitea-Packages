@@ -3,8 +3,8 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=at-openrc
-pkgver=20200620
-pkgrel=3
+pkgver=20210421
+pkgrel=1
 pkgdesc="OpenRC at init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -16,7 +16,7 @@ backup=('etc/conf.d/atd')
 source=("atd.confd"
         "atd.initd")
 sha256sums=('ab023e245103b6e0786ad1888143fdb87933ff5937114ac086f0616d6b620c02'
-            '1bc565e71a068785c1db691c81b396ee6df22f0a1b5fa2b70e43e60ba1a335a5')
+            'd0a18f3dc45e42074fa071e915a847a5bb84faa1365e5a667bafea607f178526')
 
 package() {
     install -Dm755 "${srcdir}/atd.initd" "${pkgdir}/etc/init.d/atd"
