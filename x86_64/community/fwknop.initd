@@ -66,9 +66,8 @@ start() {
 	checkconfig || return 1
 
 	ebegin "Starting ${SVCNAME}"
-	start-stop-daemon --start \
-		--exec ${FWKNOPD_BINARY} --pidfile ${FWKNOPD_PIDFILE} \
-		-- ${FWKNOPD_OPTS}
+	supervise-daemon fwknop --start \
+		fwknopd -- ${FWKNOPD_OPTS} -f
 	eend $?
 }
 
@@ -78,7 +77,7 @@ stop() {
 	fi
 
 	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop --pidfile ${FWKNOPD_PIDFILE}
+	supervise-daemon fwknop --stop
 	eend $?
 }
 
@@ -86,6 +85,6 @@ reload() {
 	checkconfig || return 1
 
 	ebegin "Reloading ${SVCNAME} configuration"
-	start-stop-daemon --signal HUP --pidfile ${FWKNOPD_PIDFILE}
+	supervise-daemon fwknop --signal HUP
 	eend $?
 }

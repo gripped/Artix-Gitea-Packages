@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=fwknop-openrc
-pkgver=20200620
+pkgver=20210421
 pkgrel=1
 pkgdesc="OpenRC fwknop init script"
 arch=('any')
@@ -13,10 +13,9 @@ groups=('openrc-galaxy')
 depends=('openrc' 'fwknop')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/fwknop')
-source=("fwknop.confd"
-        "fwknop.initd")
+source=("fwknop."{confd,initd})
 sha256sums=('818366d8012cf50771ab427bcf645de697e7d05e4bb80d5eb2f98291e071d510'
-            '3fdce45e243c143e706136d49b0f440bd19a991622691390363101697542f0d1')
+            '798e7100e8f7e78df46d33fa34c54ea6f81284cb7db46253592a8315ca452a6a')
 
 package() {
     install -Dm755 "$srcdir/fwknop.initd" "$pkgdir/etc/init.d/fwknop"
