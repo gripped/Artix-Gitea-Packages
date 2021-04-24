@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=spice-vdagent-s6
-pkgver=20210423
+pkgver=20210424
 pkgrel=1
 pkgdesc="s6-rc service scripts for spice-vdagent"
 arch=('any')
@@ -27,7 +27,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '654fa714356d18590a30b3b750525918b35751fd0313cbf8e57141920fd81912'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             '3bc647c2f98e9b6f02c06756f8baef77d996924cb070b33867a413158ce92328'
-            'f702b0baec40e49935030ecdd5a347e4fa929d0a5c781b6c932417ba351d9e32'
+            '2de0ae9529d02a2da46bf26c4231cf4e59f6cf3b82584968c317eb73d623f789'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
