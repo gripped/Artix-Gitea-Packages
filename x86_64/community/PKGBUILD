@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=ddclient-openrc
-pkgver=20200620
+pkgver=20210421
 pkgrel=1
 pkgdesc="OpenRC ddclient init script"
 arch=('any')
@@ -13,7 +13,7 @@ groups=('openrc-galaxy')
 depends=('openrc' 'ddclient')
 conflicts=('systemd-sysvcompat')
 source=("ddclient.initd")
-sha256sums=('b87cdb4cf57720bd2b82d66a373174a2d3f24e6401c7d694d9c116e9825c9c10')
+sha256sums=('61aad153a4ca385089eefb6f03190c0e2629e2f674278e426a34a746f5524695')
 
 package() {
     install -Dm755 "${srcdir}/ddclient.initd" "${pkgdir}/etc/init.d/ddclient"
