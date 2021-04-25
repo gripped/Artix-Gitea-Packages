@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=bluez-openrc
-pkgver=20200709
+pkgver=20210418
 pkgrel=1
 pkgdesc="OpenRC bluez init script"
 arch=('any')
@@ -11,7 +11,7 @@ groups=('openrc-world')
 depends=('bluez' 'openrc')
 conflicts=('systemd-sysvcompat')
 source=("bluetoothd.initd")
-sha256sums=('b80a38737be3a1112bc52d2474e8ece3adb405a92623cfb36c3df5aed99ebf51')
+sha256sums=('b99147767d339b0d6707bbd8cd4da51e795835b7519e7d6d2fcf70dabcaeeb9a')
 
 package() {
     install -Dm755 "${srcdir}"/bluetoothd.initd "${pkgdir}"/etc/init.d/bluetoothd
