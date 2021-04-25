@@ -4,8 +4,9 @@
 
 pidfile=/run/${SVCNAME}.pid
 
+supervisor=supervise-daemon
 command="/usr/bin/${SVCNAME}"
-command_args="-r 0 ${HAVEGED_OPTS} -p ${pidfile}"
+command_args="-r 0 ${HAVEGED_OPTS} --Foreground"
 
 depend() {
 	need localmount

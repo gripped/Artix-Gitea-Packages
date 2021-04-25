@@ -2,7 +2,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=haveged-openrc
-pkgver=20200709
+pkgver=20210421
 pkgrel=1
 pkgdesc="OpenRC haveged init script"
 arch=('any')
@@ -12,10 +12,9 @@ groups=('openrc-world')
 depends=('openrc' 'haveged')
 conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/haveged')
-source=("haveged.confd"
-        "haveged.initd")
+source=("haveged."{confd,initd})
 sha256sums=('e796a353534e8ec36b84a29ab4cbd738ebd18098efca5ed8d92b267a99dc58f6'
-            'e4ff099970ad8924f4cf76873835b108f541901cfd364c65a41f5e5b0dc1cf7b')
+            'f2882c612006491f5e415f76660edc67d6fbbd33b70988930483f2784dc6c63c')
 
 package() {
 	install -Dm755 "$srcdir/haveged.initd" "$pkgdir/etc/init.d/haveged"
