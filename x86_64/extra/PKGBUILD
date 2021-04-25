@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=cups-openrc
-pkgver=20210409
+pkgver=20210418
 pkgrel=1
 pkgdesc="OpenRC cups init script"
 arch=('any')
@@ -11,7 +11,7 @@ groups=('openrc-world')
 depends=('cups' 'openrc' 'avahi-openrc')
 conflicts=('systemd-sysvcompat')
 source=("cupsd.initd")
-sha256sums=('eb029c05ef28517e28fe9046fb66fd1837f09411453a8c37690fa855c4687fca')
+sha256sums=('d808de1c4c21fc5bfbf5d5182d89d31bb6fb1e9e115bcab627d669b964bc7222')
 
 package() {
 	install -Dm755 "$srcdir/cupsd.initd" "$pkgdir/etc/init.d/cupsd"
