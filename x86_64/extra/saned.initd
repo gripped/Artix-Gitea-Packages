@@ -2,10 +2,12 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-pidfile="/run/saned.pid"
+supervisor="supervise-daemon"
+# pidfile="/run/saned.pid"
 command="/usr/bin/saned"
-command_args="-a ${SANED_USER:-root}"
+# command_args="-a ${SANED_USER:-root}"
+command_args="${SANED_USER:-root}"
 
-start_pre() {
-	checkpath -d -o ${SANED_USER:-root} ${pidfile%/*}
-}
+# start_pre() {
+# 	checkpath -d -o ${SANED_USER:-root} ${pidfile%/*}
+# }

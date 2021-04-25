@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=sane-openrc
-pkgver=20200709
+pkgver=20210418
 pkgrel=1
 pkgdesc="OpenRC sane init script"
 arch=('any')
@@ -14,7 +14,7 @@ backup=('etc/conf.d/saned')
 source=("saned.confd"
         "saned.initd")
 sha256sums=('197e44ba1f438a18f5f7d9f5858feb19c1ece4286d82a5e63caf9be5b964aa76'
-            '1762f958dc97022cd1399b21ea7fc1d26198ddce2a12486adb48587f4091fb9b')
+            '2409a98d34e4af4cb234b680744cdab5f5ccdc4f00303ba36e9b6cedf1e59391')
 
 package() {
 	install -Dm755 "$srcdir/saned.initd" "$pkgdir/etc/init.d/saned"
