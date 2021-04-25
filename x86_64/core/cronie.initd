@@ -4,7 +4,9 @@
 
 command="/usr/bin/crond"
 command_args="${CRONDARGS}"
-pidfile="/run/crond.pid"
+# pidfile="/run/crond.pid"
+supervisor="supervise-daemon"
+command_args_foreground="-n"
 
 depend() {
 	use clock logger

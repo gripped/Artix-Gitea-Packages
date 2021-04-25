@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=cronie-openrc
-pkgver=20200711
+pkgver=20210418
 pkgrel=1
 pkgdesc="OpenRC cronie init script"
 arch=('any')
@@ -14,7 +14,7 @@ conflicts=('fcron' 'fcron-openrc' 'init-cron')
 backup=('etc/init.d/cronie')
 source=('cronie.initd'
         '80-cronie.hook')
-sha256sums=('e1ce0b87768dfc00cf2de040d65e504a8695bf0f31f1e0ec0e17b8bcfe779408'
+sha256sums=('4423ab44c307b21224c43f2fc9b310f4a7f8587bba7a472bd8194137a0f702b9'
             '2f23d0a73bd6e5f250e43bf3f1e0b218026f268959fadc7ec78c346951cd2725')
 
 package() {
