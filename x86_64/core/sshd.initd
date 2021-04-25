@@ -12,13 +12,18 @@ extra_started_commands="reload"
 : ${SSHD_KEYGEN_BINARY:=${RC_PREFIX%/}/usr/bin/ssh-keygen}
 
 command="${SSHD_BINARY}"
-pidfile="${SSHD_PIDFILE}"
-command_args="${SSHD_OPTS} -o PidFile=${pidfile} -f ${SSHD_CONFIG}"
+# pidfile="${SSHD_PIDFILE}"
+# command_args="${SSHD_OPTS} -o PidFile=${pidfile} -f ${SSHD_CONFIG}"
+#command_args_background="-o PidFile=${pidfile}"
+command_args="${SSHD_OPTS} -f ${SSHD_CONFIG}"
+command_args_foreground="-D"
+supervisor="supervise-daemon"
+
 
 # Wait one second (length chosen arbitrarily) to see if sshd actually
 # creates a PID file, or if it crashes for some reason like not being
 # able to bind to the address in ListenAddress (bug 617596).
-: ${SSHD_SSD_OPTS:=--wait 1000}
+#: ${SSHD_SSD_OPTS:=--wait 1000}
 start_stop_daemon_args="${SSHD_SSD_OPTS}"
 
 depend() {
@@ -82,7 +87,8 @@ stop_pre() {
 reload() {
 	checkconfig || return $?
 	ebegin "Reloading ${SVCNAME}"
-	start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	#start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	${supervisor} ${SVCNAME} --signal HUP --pidfile "${SSHD_PIDFILE}"
 	eend $?
 }
 
