@@ -3,10 +3,13 @@
 # Distributed under the terms of the GNU General Public License v2
 
 description="ntpd - the network time protocol daemon"
-pidfile="/run/ntpd.pid"
+#pidfile="/run/ntpd.pid"
 command="/usr/bin/ntpd"
-command_args="-p ${pidfile} ${NTPD_OPTS}"
-start_stop_daemon_args="--pidfile ${pidfile}"
+#command_args_background="-p ${pidfile}"
+command_args="${NTPD_OPTS}"
+#start_stop_daemon_args="--pidfile ${pidfile}"
+supervisor="supervise-daemon"
+command_args_foreground="-n"
 
 depend() {
 	use net dns logger
