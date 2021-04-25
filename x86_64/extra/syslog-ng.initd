@@ -13,16 +13,19 @@
 : ${SYSLOG_NG_USER:=root}
 
 command="/usr/bin/syslog-ng"
+#command_args_background="--pidfile \"${SYSLOG_NG_PIDFILE}\""
 command_args="--cfgfile \"${SYSLOG_NG_CONFIGFILE}\" --control \"${SYSLOG_NG_CONTROLFILE}\" --persist-file \"${SYSLOG_NG_STATEFILE}\" --pidfile \"${SYSLOG_NG_PIDFILE}\" ${SYSLOG_NG_OPTS}"
-command_user="${SYSLOG_NG_USER}:${SYSLOG_NG_GROUP}"
+supervisor="supervise-daemon"
 extra_commands="checkconfig"
 extra_started_commands="reload"
-pidfile="${SYSLOG_NG_PIDFILE}"
+#pidfile="${SYSLOG_NG_PIDFILE}"
 description="Syslog-ng is a syslog replacement with advanced filtering features."
 description_checkconfig="Check the configuration file that will be used by \"start\""
 description_reload="Reload the configuration without exiting"
 required_files="${SYSLOG_NG_CONFIGFILE}"
 required_dirs="${SYSLOG_NG_PIDFILE_DIR}"
+command_args_foreground="--foreground" # --process-mode=foreground"
+command_user="${SYSLOG_NG_USER}:${SYSLOG_NG_GROUP}"
 
 depend() {
 	use clock
@@ -54,6 +57,7 @@ stop_pre() {
 reload() {
 	checkconfig || return 1
 	ebegin "Reloading configuration and re-opening log files"
-	start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	#start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	${supervisor} ${RC_SVCNAME} --signal HUP --pidfile "${SYSLOG_NG_PIDFILE}"
 	eend $?
 }
