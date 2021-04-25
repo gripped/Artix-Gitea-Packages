@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=xinetd-s6
-pkgver=20201019
+pkgver=20210414
 pkgrel=1
-pkgdesc="s6 service scripts for xinetd"
+pkgdesc="s6-rc service scripts for xinetd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-xinetd')
 conflicts=('init-xinetd')
-depends=('xinetd' 's6')
+depends=('xinetd' 's6-rc')
 install=xinetd.install
 backup=('etc/s6/sv/xinetd-log/conf')
 source=("xinetd-log.conf"
