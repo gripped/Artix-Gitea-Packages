@@ -9,11 +9,9 @@ group=${group:-${SVCNAME}}
 
 command="/usr/bin/prometheus"
 command_args="${command_args:---config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus/data}"
-command_background="true"
-start_stop_daemon_args="--user ${user} --group ${group} \
-	--stdout /var/log/${RC_SVCNAME}/${RC_SVCNAME}.log \
-	--stderr /var/log/${RC_SVCNAME}/${RC_SVCNAME}.log"
-
+command_user="${user}:${group}"
+output_log="/var/log/${RC_SVCNAME}/${RC_SVCNAME}.log"
+error_log="${output_log}"
 extra_started_commands="reload"
 
 depend() {
@@ -22,7 +20,7 @@ depend() {
 
 reload() {
         ebegin "Reloading ${SVCNAME}"
-        start-stop-daemon --signal HUP --pidfile "${pidfile}"
+        supervise-daemon prometheus --signal HUP
         eend $? "Failed to stop ${SVCNAME}"
 }
 
