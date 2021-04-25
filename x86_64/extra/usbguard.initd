@@ -2,10 +2,10 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-command="/usr/bin/usbguard-daemon"
-command_args="-k -c /etc/usbguard/usbguard-daemon.conf"
-command_background="true"
+supervisor=supervise-daemon
 pidfile="/run/usbguard.pid"
+command="/usr/bin/usbguard-daemon"
+command_args="-c /etc/usbguard/usbguard-daemon.conf"
 
 depend() {
     need udev localmount

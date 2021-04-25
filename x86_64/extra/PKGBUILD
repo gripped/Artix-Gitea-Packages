@@ -1,6 +1,6 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 pkgname=usbguard-openrc
-pkgver=20210405
+pkgver=20210419
 pkgrel=1
 pkgdesc="openrc script for usbguard"
 arch=('x86_64')
@@ -9,7 +9,7 @@ license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'usbguard')
 source=('usbguard.initd')
-b2sums=('df1b0353f0d52e1c65be297e7718a12eb0cd57e7d291ca02e2750e2747463508199450b091e9562b5f7bf96a19c92b63da9dd8d0334d7d6f167f800a66369670')
+b2sums=('d468ac7d76ab3051c9edcee39b4ab02f8fb26f123470b620d235d65ebeb3517e3f3e53ee2eb692117efa7dfd4c0e16e01470327e6ff9a990a6540c4b093f4526')
 
 package() {
   cd "$srcdir"
