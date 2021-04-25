@@ -2,9 +2,8 @@
 # Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-pidfile="${PIDFILE:-/run/metalog.pid}"
-command="/usr/bin/metalog"
-command_args="--pidfile=${pidfile} --daemonize ${METALOG_OPTS}"
+supervisor=supervise-daemon
+command="metalog"
 
 extra_started_commands="buffer unbuffer"
 
@@ -17,12 +16,12 @@ depend() {
 
 buffer() {
 	ebegin "Enabling log buffering"
-	start-stop-daemon --exec "${command}" --signal USR2 --pidfile "${pidfile}"
+	supervisor-daemon "${command}" --signal USR2
 	eend ${?}
 }
 
 unbuffer() {
 	ebegin "Disabling log buffering"
-	start-stop-daemon --exec "${command}" --signal USR1 --pidfile "${pidfile}"
+	supervisor-daemon "${command}" --signal USR1
 	eend ${?}
 }

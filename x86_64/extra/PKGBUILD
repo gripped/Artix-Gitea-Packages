@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=metalog-openrc
-pkgver=20200709
+pkgver=20210419
 pkgrel=1
 pkgdesc="OpenRC metalog init script"
 arch=('any')
@@ -14,7 +14,7 @@ backup=('etc/conf.d/metalog')
 source=("metalog.confd"
         "metalog.initd")
 sha256sums=('dd9d30a6c22dca6d072a9c63e1494d3d0a26709a5f045ce5985642933fe24efc'
-            'afdf1d34239fa267293bdd1395f0b055fcd85e49710c87f86fdc2ea10efe96e9')
+            '70d354651aaa7683afc98181b596009fc562c90cc6b6f9d3afd68c58fcf47402')
 
 package() {
 	install -Dm755 "$srcdir/metalog.initd" "$pkgdir/etc/init.d/metalog"
