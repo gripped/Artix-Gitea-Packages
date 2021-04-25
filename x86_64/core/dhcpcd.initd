@@ -3,7 +3,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 command=/usr/bin/dhcpcd
-pidfile=/run/dhcpcd/pid
+#pidfile=/run/dhcpcd/pid
+supervisor="supervise-daemon"
+command_args_foreground="--nobackground"
 command_args=-q
 name="DHCP Client Daemon"
 
