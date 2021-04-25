@@ -4,9 +4,9 @@
 
 extra_started_commands="reload rotate"
 
-pidfile="/run/dnsmasq.pid"
+supervisor=supervise-daemon
 command="/usr/bin/dnsmasq"
-command_args="-x ${pidfile} ${DNSMASQ_OPTS}"
+command_args="${DNSMASQ_OPTS} -k"
 retry="TERM/3/TERM/5"
 
 depend() {
@@ -18,12 +18,12 @@ depend() {
 
 reload() {
 	ebegin "Reloading ${RC_SVCNAME}"
-	start-stop-daemon --signal HUP --pidfile "${pidfile}"
+	supervise-daemon dnsmasq --signal HUP
 	eend $?
 }
 
 rotate() {
 	ebegin "Reopening ${RC_SVCNAME} log file"
-	start-stop-daemon --signal USR2 --pidfile "${pidfile}"
+	supervise-daemon dnsmasq --signal USR2
 	eend $?
 }
