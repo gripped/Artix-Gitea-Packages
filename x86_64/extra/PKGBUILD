@@ -3,13 +3,13 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=xinetd-runit
-pkgver=20200620
+pkgver=202010425
 pkgrel=1
 pkgdesc="runit service scripts for xinetd"
 arch=('any')
 url="https://github.com/artix-linux"
 license=('BSD3')
-groups=('runit-system')
+groups=('runit-world')
 depends=('xinetd' 'runit')
 provides=('xinetd-runscripts' 'init-xinetd')
 replaces=('xinetd-runscripts')
