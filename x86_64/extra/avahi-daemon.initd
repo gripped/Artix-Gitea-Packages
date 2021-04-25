@@ -3,6 +3,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 extra_started_commands="reload"
+command="/usr/sbin/avahi-daemon"
+supervisor="supervise-daemon"
 
 depend() {
 	before netmount nfsmount
@@ -10,20 +12,20 @@ depend() {
 	need dbus
 }
 
-start() {
-	ebegin "Starting avahi-daemon"
-	/usr/bin/avahi-daemon -D
-	eend $?
-}
-
-stop() {
-	ebegin "Stopping avahi-daemon"
-	/usr/bin/avahi-daemon -k
-	eend $?
-}
+# start() {
+# 	ebegin "Starting avahi-daemon"
+# 	/usr/bin/avahi-daemon -D
+# 	eend $?
+# }
+#
+# stop() {
+# 	ebegin "Stopping avahi-daemon"
+# 	/usr/bin/avahi-daemon -k
+# 	eend $?
+# }
 
 reload() {
 	ebegin "Reloading avahi-daemon"
-	/usr/bin/avahi-daemon -r
+	${command} -r
 	eend $?
 }

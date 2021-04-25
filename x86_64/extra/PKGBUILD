@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=avahi-openrc
-pkgver=20200709
+pkgver=20210418
 pkgrel=1
 pkgdesc="OpenRC avahi init script"
 arch=('any')
@@ -13,8 +13,8 @@ conflicts=('systemd-sysvcompat')
 source=('avahi-daemon.initd'
         'avahi-dnsconfd.initd'
         'autoipd-openrc.sh')
-sha256sums=('876788303553fe773e64917f76f0208f5e8adf7b91d4af24aa9d6a68a147d646'
-            'e128576d72981e402ff106bb481108ab6d5ba941ab1b0f5f53e96a7831fc1d15'
+sha256sums=('0e6513b19d79edfe8d3a124e15fe48ee3cfa073fa93971c2265d82c4df7caa10'
+            'a359e718f6c0be654ded4f27e2215067564358d43e17d9a99d5d65c8379eb815'
             '064a4cedc00f67e93a6f2ef99489e2614305a673a75a2135010283e99da6d6bf')
 
 package() {

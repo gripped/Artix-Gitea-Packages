@@ -3,26 +3,28 @@
 # Distributed under the terms of the GNU General Public License v2
 
 extra_started_commands="reload"
+supervisor="supervise-daemon"
+command="/usr/bin/avahi-dnsconfd"
 
 depend() {
 	need avahi-daemon
 	use net
 }
 
-start() {
-	ebegin "Starting avahi-dnsconfd"
-	/usr/bin/avahi-dnsconfd -D
-	eend $?
-}
-
-stop() {
-	ebegin "Stopping avahi-dnsconfd"
-	/usr/bin/avahi-dnsconfd -k
-	eend $?
-}
+# start() {
+# 	ebegin "Starting avahi-dnsconfd"
+# 	/usr/bin/avahi-dnsconfd -D
+# 	eend $?
+# }
+#
+# stop() {
+# 	ebegin "Stopping avahi-dnsconfd"
+# 	/usr/bin/avahi-dnsconfd -k
+# 	eend $?
+# }
 
 reload() {
 	ebegin "Reloading avahi-dnsconfd"
-	/usr/bin/avahi-dnsconfd -r
+	${command} -r
 	eend $?
 }
