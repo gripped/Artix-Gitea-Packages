@@ -1,6 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=openfire-openrc
-pkgver=20200521
+pkgver=20210427
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
