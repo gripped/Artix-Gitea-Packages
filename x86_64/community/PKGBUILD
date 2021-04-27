@@ -1,9 +1,8 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
-
 pkgname=strongswan-openrc
-pkgver=20210427
+pkgver=20200527
 pkgrel=1
-pkgdesc="Strongswan OpenRC init"
+pkgdesc="${pkgname/-openrc//} OpenRC init"
 arch=('any')
 url="https://gitea.artixlinux.org/PackagesS/strongswan-openrc"
 license=('GPL2')
