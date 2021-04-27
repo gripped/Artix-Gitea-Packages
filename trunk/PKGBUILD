@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=networkmanager-openrc
-pkgver=20210419
+pkgver=20210427
 pkgrel=1
 pkgdesc="OpenRC networkmanager init script"
 arch=('any')
@@ -13,12 +13,12 @@ conflicts=('systemd-sysvcompat')
 backup=('etc/conf.d/NetworkManager')
 source=(#"NetworkManager.confd"
         "NetworkManager.initd"
-        "10-openrc-status")
-sha256sums=('c9211f2a8f0fc43e898b4c61b91e0e3e8a59cd98ffd86aa9aed7b34272fdc654'
-            '1535237db113a76261d6f1ce0b24a55e956934b0c1c59e9fd624f621961327b6')
+        #"10-openrc-status"
+        )
+sha256sums=('c9211f2a8f0fc43e898b4c61b91e0e3e8a59cd98ffd86aa9aed7b34272fdc654')
 
 package() {
-	install -Dm755 "$srcdir/10-openrc-status" "$pkgdir/etc/NetworkManager/dispatcher.d/10-openrc-status"
+# 	install -Dm755 "$srcdir/10-openrc-status" "$pkgdir/etc/NetworkManager/dispatcher.d/10-openrc-status"
 	install -Dm755 "$srcdir/NetworkManager.initd" "$pkgdir/etc/init.d/NetworkManager"
 # 	install -Dm644 "$srcdir/NetworkManager.confd" "$pkgdir/etc/conf.d/NetworkManager"
 }
