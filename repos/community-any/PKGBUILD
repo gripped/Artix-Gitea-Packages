@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=tor-openrc
-pkgver=20200529
+pkgver=20210427
 pkgrel=1
 pkgdesc="OpenRC tor init script"
 arch=('any')
