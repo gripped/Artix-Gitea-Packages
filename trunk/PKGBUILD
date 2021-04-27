@@ -1,0 +1,25 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=s6-portable-utils
+pkgver=2.2.3.2
+pkgrel=1
+pkgdesc='Tiny portable generic utilities.'
+arch=('x86_64')
+url='https://skarnet.org/software/s6-portable-utils/'
+license=('ISC')
+depends=('skalibs')
+source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('6627a2d3ea263539e83512a36f10a587fa0dd5e899bc3612187e9e3b9faf769c')
+build() {
+    cd ${pkgname}-${pkgver}
+    ./configure --prefix=/usr \
+                --datadir=/etc \
+                --libexecdir=/usr/lib \
+                --enable-shared
+    make
+}
+
+package() {
+    cd ${pkgname}-${pkgver}
+    make DESTDIR="$pkgdir" install
+    install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+} 
