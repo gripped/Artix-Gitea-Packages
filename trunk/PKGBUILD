@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=subversion-runit
 pkgver=20200614
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for subversion"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 groups=('runit-world')
 depends=('subversion')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-subversion')
+provides=('init-subversion')
 source=("svnserve.run")
 sha256sums=('8559d8ad83cf3ffcaff8090aeeeafd402349b7bbcc26a625e4306d5b2f7dbe74')
 
