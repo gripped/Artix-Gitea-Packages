@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=connman-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for connman"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 depends=('connman')
 groups=('runit-galaxy')
-provides=('connman-runscripts')
-replaces=('connman-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-connman')
+conflicts=('systemd-sysvcompat' 'init-connman')
 source=("connmand.run")
 sha256sums=('1b06eee193dc07505277bfbb9a4fa986225b4249bb73bbdfa14c96ffe1cfc31a')
 
