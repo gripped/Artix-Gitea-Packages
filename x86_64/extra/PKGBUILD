@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=mpd-runit
 pkgver=20200613
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for mpd"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+license=('BSD')
 groups=('runit-world')
 depends=('mpd')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-mpd')
+provides=('init-mpd')
 source=("mpd.run")
 sha256sums=('20aad2fffd95234c41ab6c3d6aa4768569789b546614d54105585a910cc21678')
 
