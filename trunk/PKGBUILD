@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=transmission-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for transmission"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+license=('BSD')
 groups=('runit-world')
-depends=('transmission-cli')
-conflicts=('systemd-sysvcompat')
+depends=('runit' 'transmission-cli')
+conflicts=('systemd-sysvcompat' 'init-transmission')
+provides=('init-transmission')
 source=("transmission-daemon.run")
 sha256sums=('9dc3fa97c34942c03c5d4c409675ad1ad1fbce27c0ed74c1a40f775f0e05f417')
 
