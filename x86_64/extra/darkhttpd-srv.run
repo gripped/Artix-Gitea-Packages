@@ -1,9 +1,0 @@
-#!/usr/bin/execlineb -P
-envfile /etc/s6/sv/darkhttpd-srv/conf
-importas -iu PORT PORT
-importas -iu USER USER
-importas -iu GROUP GROUP
-importas -iu DIR DIR
-importas -sCiu OPTS OPTS
-fdmove -c 2 1
-darkhttpd $DIR --uid $USER --gid $GROUP --port $PORT $OPTS
