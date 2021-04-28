@@ -5,7 +5,7 @@
 pkgname=iputils
 # Commit date + git rev-parse --short origin/master
 _rev=23c3782a
-pkgver=20200821
+pkgver=20210202
 pkgrel=1
 pkgdesc="Network monitoring tools, including ping"
 arch=('x86_64')
@@ -15,16 +15,15 @@ depends=('libcap' 'libidn2')
 makedepends=('perl-sgmls' 'git' 'docbook-xsl' 'meson')
 conflicts=('netkit-base' 'arping' 'netkit-tftpd')
 replaces=('netkit-base')
-source=("git+https://github.com/iputils/iputils.git#commit=${_rev}"
-        'tftp.xinetd')
-sha1sums=('SKIP'
-          'fc2ae26f5609725e3f4aeaf4ab82dfa6d2e378fd')
+source=("git+https://github.com/iputils/iputils.git#tag=${pkgver}")
+# validpgpkeys=('2016FEA4858B1C36B32E833AC0DEC2EE72F33A5F') # Petr Vorel
+sha1sums=('SKIP')
 
 build() {
   mkdir -p build
   cd build
 
-  arch-meson ../$pkgname -DBUILD_RARPD=true -DBUILD_TFTPD=true
+  arch-meson ../$pkgname -DBUILD_RARPD=true -DBUILD_TFTPD=true -DINSTALL_SYSTEMD_UNITS=false
   ninja
 }
 
@@ -33,6 +32,5 @@ package() {
 
   DESTDIR="$pkgdir" ninja install
 
-  install -dm755 "${pkgdir}"/etc/xinetd.d/
-  install -m644 "${srcdir}"/tftp.xinetd "${pkgdir}"/etc/xinetd.d/tftp
+  rm -vr "${pkgdir}"/etc/init.d
 }
