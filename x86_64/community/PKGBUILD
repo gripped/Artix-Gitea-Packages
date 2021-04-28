@@ -1,4 +1,4 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
 
@@ -6,16 +6,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=tlp-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for tlp"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+license=('BSD')
 depends=('tlp')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-tlp')
+provides=('init-tlp')
 source=("tlp.run"
         "tlp.finish")
 sha256sums=('b0712b3c2a41d4b90da91f41c778e2647f9b8cd60078a3d0704b4a201933104f'
