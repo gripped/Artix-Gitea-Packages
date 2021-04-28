@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=cronie-runit
 pkgver=20200613
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for cronie"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
+url="https://artixlinux.org"
+license=('BSD')
 groups=('runit-system')
 depends=('cronie' 'runit')
 provides=('runit-cron' 'cronie-runscripts' 'init-cron')
-replaces=('cronie-runscripts')
-conflicts=('fcron' 'fcron-runit' 'init-cron')
+conflicts=('fcron' 'init-fcron' 'init-cron')
 source=("cronie.run")
 sha256sums=('882836bff4df1d856a40c4d288d88f8e00685f0683e545bc5193bf754be0e1d6')
 
@@ -27,6 +26,5 @@ _inst_sv(){
 }
 
 package() {
-    sed -e 's|cronie-crond|crond|g' -i "$srcdir/cronie.run"
     _inst_sv 'cronie'
 }
