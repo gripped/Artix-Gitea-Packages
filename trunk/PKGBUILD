@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=libvirt-runit
 pkgver=20180801
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for libvirt"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('libvirt')
+license=('BSD')
+depends=('libvirt' 'runit')
 groups=('runit-galaxy')
-provides=('libvirt-runscripts')
-replaces=('libvirt-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-libvirt')
+conflicts=('init-libvirt')
 source=("libvirtd.run"
         "loglibvirtd.run"
         "virtlogd.run"
