@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=boinc-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for boinc"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 depends=('boinc')
 groups=('runit-galaxy')
-provides=('boinc-runscripts')
-replaces=('boinc-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-boinc')
+conflicts=('init-boinc' 'systemd-sysvcompat')
 backup=('etc/runit/sv/boinc/conf')
 source=("boinc.run"
         "boinc.conf")
