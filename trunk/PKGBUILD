@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=syncthing-relaysrv-runit
 pkgver=20190202
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for syncthing-relaysrv"
 arch=('any')
-url="https://gitea.artixlinux.org"
+url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('syncthing-relaysrv')
+depends=('syncthing-relaysrv' 'runit')
+conflicts=('init-syncthing-relaysrv')
+provides=('init-syncthing-relaysrv')
 groups=('runit-galaxy')
 source=("relaysrv.run::${_url}/syncthing/files/relaysrv/run"
         "logrelaysrv.run::${_url}/syncthing/files/relaysrv/log/run")
