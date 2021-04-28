@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=znc-runit
 pkgver=20200614
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for znc"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('znc')
+url="https://artixlinux.org"
+license=('BSD')
+depends=('znc' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-znc')
+provides=('init-znc')
 source=("znc.run")
 sha256sums=('ad40a43e00c9a1c2892d8d3394ae4b8dde078f20e1cd10e7dbd38ecaea1ef9dc')
 
