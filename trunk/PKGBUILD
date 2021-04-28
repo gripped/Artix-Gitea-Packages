@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=fcron-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for fcron"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 depends=('fcron')
 groups=('runit-galaxy')
-provides=('fcron-runscripts' 'runit-cron')
-replaces=('fcron-runscripts')
-conflicts=('systemd-sysvcompat' 'cronie' 'cronie-runit')
+provides=('init-fcron')
+conflicts=('init-fcron' 'systemd-sysvcompat' 'cronie' 'init-cron')
 source=("fcron.run")
 sha256sums=('ee2153404bcfe8b1d284bd0f9d4e74de778964f10bbab97bf7b960dd7daf0e10')
 
