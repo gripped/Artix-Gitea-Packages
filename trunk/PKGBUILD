@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=at-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for at"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 depends=('at')
 groups=('runit-galaxy')
-provides=('at-runscripts')
-replaces=('at-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-at')
+conflicts=('systemd-sysvcompat' 'init-at')
 source=("at.run")
 sha256sums=('6db3f1cedfe7d89d08514be052c45a4276b172263a368d3a25c11f97bc6777bb')
 
