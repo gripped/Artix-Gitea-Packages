@@ -18,18 +18,18 @@ makedepends=(
   git
   lib32-libvorbis
 )
-source=(git+https://git.xiph.org/theora.git#tag=v${pkgver})
+source=(https://gitlab.xiph.org/xiph/theora/-/archive/v${pkgver}/theora-v${pkgver}.tar.gz)
 sha256sums=(SKIP)
 
 prepare() {
-  cd theora
+  cd theora-v${pkgver}
 
   sed 's/AC_DEFINE(\[OC_X86_64_ASM\]/#AC_DEFINE(\[OC_X86_64_ASM\]/
        s/AM_CONFIG_HEADER/AC_CONFIG_HEADERS/' -i configure.ac
 }
 
 build() {
-  cd theora
+  cd theora-v${pkgver}
 
   export CC='gcc -m32'
   export CXX='g++ -m32'
@@ -45,7 +45,7 @@ build() {
 }
 
 package() {
-  cd theora
+  cd theora-v${pkgver}
 
   make DESTDIR="${pkgdir}" install
   rm -rf "${pkgdir}"/usr/{include,share}
