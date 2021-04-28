@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=openssh-runit
 pkgver=20180429
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for openssh"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
+license=('BSD')
 groups=('runit-system')
 depends=('openssh')
 provides=('openssh-runscripts' 'init-openssh')
 conflicts=('init-openssh')
-replaces=('openssh-runscripts')
 source=("sshd.run")
 sha256sums=('220dde8d4495bab6f08e063860c0ad54cc70ef8b7913a00e27126f1d5eb0af5f')
 
