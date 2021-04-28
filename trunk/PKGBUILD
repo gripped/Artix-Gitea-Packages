@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=lighttpd-runit
 pkgver=20200613
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for lighttpd"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 groups=('runit-world')
 depends=('lighttpd')
-conflicts=('systemd-sysvcompat')
+provides=('init-lighttpd')
+conflicts=('systemd-sysvcompat' 'init-lighttpd')
 source=("lighttpd.run")
 sha256sums=('1603defa096c498fd0eac842712187e9ab0f591818080c9515298b5b2dad9106')
 
