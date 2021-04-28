@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=openldap-runit
 pkgver=20180429
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for openldap"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
+license=('BSD')
 groups=('runit-system')
 depends=('openldap' 'runit')
-provides=('openldap-runscripts' 'init-openldap')
+provides=('init-openldap')
 conflicts=('init-openldap')
-replaces=('openldap-runscripts')
 source=("slapd.run")
 sha256sums=('4ebf5766b9847f3e4a83cb34f95d61a8bc5874be1ed818f4ca39ad4424d03c02')
 
@@ -28,7 +27,4 @@ _inst_sv(){
 
 package() {
     _inst_sv 'slapd'
-
-    sed -e 's|/usr/lib/openldap/slapd|/usr/lib/slapd|g' \
-        -i "${pkgdir}/etc/runit/sv/slapd"/*
 }
