@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=bumblebee-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for bumblebee"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('bumblebee')
+license=('BSD')
+depends=('bumblebee' 'runit')
 groups=('runit-galaxy')
-provides=('bumblebee-runscripts')
-replaces=('bumblebee-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-bumblebee')
+conflicts=('init-bumblebee')
 source=("bumblebeed.run")
 sha256sums=('df2290d8e9bd9fa57cf80143758d8524f61af81a7e6197fc0678cf4067df3c2a')
 
