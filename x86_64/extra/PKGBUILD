@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=krb5-s6
 pkgver=20210414
-pkgrel=1
+pkgrel=2
 pkgdesc="s6-rc service scripts for krb5"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
-groups=('s6-world')
+groups=('s6-system')
 provides=('init-krb5')
 conflicts=('init-krb5')
 depends=('krb5' 's6-rc')
