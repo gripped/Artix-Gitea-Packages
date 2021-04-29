@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=darkhttpd-runit
 pkgver=20200711
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for darkhttpd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-groups=('runit-world')
-depends=('darkhttpd')
-conflicts=('systemd-sysvcompat')
+groups=('runit-galaxy')
+depends=('darkhttpd' 'runit')
+conflicts=('init-darkhttpd')
+provides=('init-darkhttpd')
 source=("darkhttpd.run"
         "darkhttpd.conf"
         "logdarkhttpd.run")
