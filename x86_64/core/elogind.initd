@@ -1,25 +1,24 @@
 #!/usr/bin/openrc-run
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 2021 Artix Linux
 # Distributed under the terms of the GNU General Public License v2
 
 depend() {
-	need dbus
+    need dbus
     provide logind
-	# Make sure elogind is up before xdm starts any dm
-	before xdm
+    before xdm
 }
 
 start() {
-	ebegin "Starting elogind"
+    ebegin "Starting elogind"
 
-	start-stop-daemon --start --quiet \
-		--pidfile "${ELOGIND_PIDFILE}" \
-		--exec "${ELOGIND_EXEC}" -- --daemon
-	eend $?
+    start-stop-daemon --start --quiet \
+        --pidfile "${ELOGIND_PIDFILE}" \
+        --exec "${ELOGIND_EXEC}" -- --daemon
+    eend $?
 }
 
 stop() {
-	ebegin "Stopping elogind"
-	start-stop-daemon --stop --quiet --pidfile "${ELOGIND_PIDFILE}"
-	eend $?
+    ebegin "Stopping elogind"
+    start-stop-daemon --stop --quiet --pidfile "${ELOGIND_PIDFILE}"
+    eend $?
 }
