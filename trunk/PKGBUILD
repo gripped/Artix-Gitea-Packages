@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=ejabberd-runit
 pkgver=20200607
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for ejabberd"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 groups=('runit-galaxy')
 depends=('ejabberd')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-ejabberd')
+provides=('init-ejabberd')
 source=("ejabberd.run")
 sha256sums=('8f489fa13039fbd34b6d0934411921fc7d26c5e169e4bee396c44bd23ad71784')
 
