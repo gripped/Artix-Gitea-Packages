@@ -1,21 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=avahi-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for avahi"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 groups=('runit-world')
 depends=('avahi' 'dbus-runit')
-provides=('avahi-runscripts')
-replaces=('avahi-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-avahi')
+conflicts=('init-avahi')
 source=("avahi-daemon.run")
 sha256sums=('46ea509ae7bab80c1dc5f8c638454bfb6ed2d0de0459e86e0a08826f63b34617')
 
