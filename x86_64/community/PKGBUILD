@@ -4,7 +4,7 @@ _pkgbase=desktop-presets
 
 pkgname=artix-cinnamon-presets
 pkgver=0.8+28+g95291d1
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix Cinnamon presets'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
