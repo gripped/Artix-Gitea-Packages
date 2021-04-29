@@ -1,20 +1,19 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=dovecot-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for dovecot"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+url="https://artixlinux.org"
+license=('BSD')
 depends=('dovecot')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
-source=("dovecot.run::${_url}/dovecot/files/dovecot/run")
+conflicts=('init-dovecot')
+provides=('init-dovecot')
+source=("dovecot.run")
 sha256sums=('456a533453bc6349d72907a478ed3d01c0c37ec74e7f5683953507ca9a7c1b57')
 
 _inst_logsv() {
