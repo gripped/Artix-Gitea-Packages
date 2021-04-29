@@ -1,23 +1,20 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=docker-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for docker"
 arch=('any')
-url="https://github.com/artix-linux"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('docker')
+url="https://artixlinux.org"
+license=('BSD')
+depends=('docker' 'runit')
 groups=('runit-galaxy')
-provides=('docker-runscripts')
-replaces=('docker-runscripts')
-conflicts=('systemd-sysvcompat')
-source=("docker.run::${_url}/docker/files/docker/run"
-        "logdocker.run::${_url}/docker/files/docker/log/run")
+provides=('init-docker')
+conflicts=('init-docker')
+source=("docker.run"
+        "logdocker.run")
 sha256sums=('27f9446c839f4ec868e1fbee548767ec5a85327d1174d4672758d4c93cfc6dd5'
             '172109457d290780c41cba205c232e4851aaa894e76538890115885b70cf1e0b')
 
