@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=elogind-openrc
-pkgver=20210429
+pkgver=20210430
 pkgrel=1
 pkgdesc="OpenRC elogind init script"
 arch=('any')
@@ -10,14 +10,13 @@ license=('GPL2')
 depends=('elogind' 'dbus-openrc')
 provides=('init-logind')
 conflicts=('init-logind')
-source=("elogind.confd"
-        "elogind.initd")
-sha256sums=('ec73fcc5cf9fe45df72a779c5dc6bfe2908b0460d944947488f4b748406052e4'
-            '0906456037bed54b3679962a2ec963d68bec4b220fe8c23ffeafd85d729655fa')
+source=(#"elogind.confd"
+        "elogind.sv.initd")
+sha256sums=('b4097e85f81f37d8529eb57563813e94b7c7afb9931d892907d805093187761b')
 
 package() {
-    install -Dm755 "${srcdir}"/elogind.confd "${pkgdir}"/etc/conf.d/elogind
-    install -Dm755 "${srcdir}"/elogind.initd "${pkgdir}"/etc/init.d/elogind
+#     install -Dm755 "${srcdir}"/elogind.confd "${pkgdir}"/etc/conf.d/elogind
+    install -Dm755 "${srcdir}"/elogind.sv.initd "${pkgdir}"/etc/init.d/elogind
 
     install -d "${pkgdir}"/etc/runlevels/boot
     ln -sf /etc/init.d/elogind "${pkgdir}"/etc/runlevels/boot/elogind
