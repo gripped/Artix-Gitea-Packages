@@ -1,5 +1,6 @@
 # Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
+
 _pkgname=MyST-Parser
 pkgname=python-myst-parser
 pkgver=0.13.6
