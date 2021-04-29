@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=fwknop-runit
 pkgver=20180314
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for fwknop"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('fwknop')
+license=('BSD')
+depends=('fwknop' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-fwknop')
+provides=('init-fwknop')
 source=("fwknopd.run")
 sha256sums=('eb98eb062122a0ae15f6ca070466b0c8da1cb4582fc4f9b07ccb9779af7125bb')
 
