@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=colord-runit
 pkgver=20210103
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for colord"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 depends=('colord')
-groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+groups=('runit-world')
+conflicts=('init-colord')
+provides=('init-colord')
 source=("colord.run")
 sha256sums=('0776c9752222581bcc9ecf005bfaa401531dabac839353dd5a1d6fa7bfc440de')
 
@@ -42,4 +41,3 @@ _inst_sv() {
 package() {
     _inst_sv 'colord'
 }
-
