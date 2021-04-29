@@ -1,9 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
-
 pkgname=python-cachetools
 pkgver=4.2.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Extensible memoizing collections and decorators"
 url="https://github.com/tkem/cachetools"
 license=('MIT')
