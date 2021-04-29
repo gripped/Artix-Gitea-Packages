@@ -10,7 +10,7 @@ _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.1.2
-pkgrel=26
+pkgrel=27
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
@@ -43,8 +43,8 @@ sha256sums=('6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18'
             '201cf7e03d400195c461face4ec29559bbfe3308e6d291a7633a9d1632e99410'
             'a3e95c60b616ae0a85690d0251924b084f85166cfbd7c037377cfe67b3baaf1b'
             'b85ae57b50a323fd5b11c3584b1b34f723b38d769ea238ab3c27429f2f4fb7b9'
-            '20d0c5297f20f5f48d9bad24203603f7768c2dc2085b51eafac45dc62aa7ac4c'
-            '7b1c4928483df7715a3a897f82baccf4552a3f9b61fba87139aad80addf53202')
+            '3248e86fe739aaff412f5b4f77b689f690fac1c0e9e634a0305cc3f517d41338'
+            'af91ca198fc402f39faf9e62b8da56e47f5cda9ce3d61c43fcf5b24f59fbbf5a')
 
 prepare() {
 	# set default service path to /run/runit/service
