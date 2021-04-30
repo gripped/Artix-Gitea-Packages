@@ -1,9 +1,10 @@
 # Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Christian Brauner <christianvanbrauner@gmail.com>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=lxcfs
-pkgver=4.0.7
-pkgrel=2
+pkgver=4.0.8
+pkgrel=1
 pkgdesc="FUSE filesystem for LXC"
 arch=(x86_64)
 url="https://linuxcontainers.org/"
@@ -12,7 +13,8 @@ depends=('lxc' 'libnih' 'fuse3' 'dbus-glib')
 makedepends=('help2man')
 options=('emptydirs')
 source=("https://linuxcontainers.org/downloads/lxcfs/lxcfs-$pkgver.tar.gz")
-sha256sums=('3f28e2f4b04c0090aaf88b72666505f0313768a5254dd48a14c43cf78c543ec8')
+validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
+sha256sums=('3fe5f4be1877f7d47c6aa341bd8f4bd10f0d0c1bc5ba052fb9c49b2713db3e6f')
 
 build() {
     cd "$srcdir/$pkgname-$pkgver"
