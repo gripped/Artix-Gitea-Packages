@@ -32,5 +32,5 @@ package() {
     mkdir -p ${pkgdir}/usr/share/libalpm/{scripts,hooks}
     install -Dm755 ${srcdir}/*-hook ${pkgdir}/usr/share/libalpm/scripts
     install -Dm644 ${srcdir}/*.hook ${pkgdir}/usr/share/libalpm/hooks
-    install -Dm755 ../s6-rc-bundle-update ${pkgdir}/usr/bin/s6-rc-bundle-update
+    install -Dm755 ${srcdir}/s6-rc-bundle-update ${pkgdir}/usr/bin/s6-rc-bundle-update
 }
