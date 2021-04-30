@@ -3,18 +3,21 @@
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.23
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('710aeb09b67f8224a53d29c5880caf9b8c7397ff15b06189add8861b0a931440')
+source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz"
+        "suite66_fix.patch::https://gitea.artixlinux.org/artix/artools/commit/390cc84bbf784d93bc8f6fbeaf65ec3492ceab26.patch")
+sha256sums=('710aeb09b67f8224a53d29c5880caf9b8c7397ff15b06189add8861b0a931440'
+            '150021ecc01ef7e99dddf15c06168b468f93bba17643443ded3cc78eda004a3b')
 
 prepare() {
     cd ${pkgbase}
     sed -e "s/^VERSION=.*/VERSION=${pkgver}/" -i Makefile
+    patch -Np 1 -i "${srcdir}"/suite66_fix.patch
 }
 
 build() {
@@ -29,7 +32,6 @@ package_artools-base() {
                 'artools-iso: Artix iso tools')
     backup=('etc/artools/artools-base.conf')
     conflicts=('arch-install-scripts')
-    # install=artools.install
 
     cd ${pkgbase}
     make PREFIX=/usr DESTDIR=${pkgdir} install_base
