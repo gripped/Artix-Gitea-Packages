@@ -5,7 +5,6 @@ pkgrel=3
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
-groups=('s6-base' '66-base')
 license=('ISC')
 depends=('skalibs' 'execline' 's6')
 makedepends=('git')
