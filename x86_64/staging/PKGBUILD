@@ -1,13 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=seatd-s6
-pkgver=20210430
+pkgver=20210501
 pkgrel=1
 pkgdesc="s6-rc service scripts for seatd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 depends=('seatd' 'dbus-s6' 's6-base')
 provides=('init-logind')
-conflicts=('init-logind')
+conflicts=('init-logind' 'init-elogind')
 install=seatd.install
 source=("seatd.dependencies"
         "seatd.run"
