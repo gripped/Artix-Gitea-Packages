@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-base
-pkgver=1
+pkgver=1.1
 pkgrel=1
 pkgdesc='Packages, hooks, and scripts to define a basic s6 init system implementation for Artix Linux.'
 url='https://www.artixlinux.org'
 arch=('any')
 license=('GPL')
-depends=('skalibs' 'execline' 's6' 's6-rc' 's6-scripts' 's6-linux-init')
+depends=('s6' 's6-scripts' 's6-linux-init')
 provides=('svc-manager' 'init-rc')
 conflicts=('svc-manager' 'init-rc')
 source=('30-binfmt.hook'
