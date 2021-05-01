@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=seatd-openrc
-pkgver=20210416
+pkgver=20210501
 pkgrel=1
 pkgdesc="OpenRC seatd init script"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 depends=('seatd' 'dbus-openrc')
 provides=('init-logind')
-conflicts=('init-logind')
+conflicts=('init-logind' 'init-elogind')
 source=("seatd.initd")
 sha256sums=('eaa2cd40c29fbeae61a92ecdc0f71c3316f41fe4e4d4154c77d860c17b7fb892')
 
