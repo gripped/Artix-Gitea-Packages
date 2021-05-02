@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=networkmanager-openrc
-pkgver=20210427
+pkgver=20210501
 pkgrel=1
 pkgdesc="OpenRC networkmanager init script"
 arch=('any')
@@ -15,7 +15,7 @@ source=(#"NetworkManager.confd"
         "NetworkManager.initd"
         #"10-openrc-status"
         )
-sha256sums=('c9211f2a8f0fc43e898b4c61b91e0e3e8a59cd98ffd86aa9aed7b34272fdc654')
+sha256sums=('ab198fc2fadf1483b78593f59a7bef40c68a7244ff58d955507a4de130e809e3')
 
 package() {
 # 	install -Dm755 "$srcdir/10-openrc-status" "$pkgdir/etc/NetworkManager/dispatcher.d/10-openrc-status"
