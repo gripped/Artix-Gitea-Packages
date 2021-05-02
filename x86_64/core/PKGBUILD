@@ -1,12 +1,13 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
 pkgver=1.0.6.3
-pkgrel=1
+pkgrel=3
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
-depends=('s6')
+depends=('bash' 's6' 'libs6.so')
+provides=('libs6_linux_init.so')
 install=s6-linux-init.install
 backup=('etc/s6/current/scripts/rc.init'
         'etc/s6/current/scripts/rc.shutdown'
@@ -25,9 +26,11 @@ sha256sums=('29e368516b1a3c61a6d1f8680645cc122a2e02127debec91738f170a3b93b8c5'
 
 build() {
     cd ${pkgname}-${pkgver}
-    ./configure --exec-prefix=/usr \
+    ./configure --prefix=/usr \
                 --libexecdir=/usr/lib \
-                --skeldir=/etc/s6/skel
+                --skeldir=/etc/s6/skel \
+                --enable-shared \
+                --disable-static
     make
 }
 
