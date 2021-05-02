@@ -21,7 +21,7 @@
 description="Daemon to ban hosts that cause multiple authentication errors"
 description_showlog="show fail2ban logs"
 
-supervisor=supervise=daemon
+supervisor=supervise-daemon
 command=/usr/bin/fail2ban-client
 command_args="${FAIL2BAN_OPTIONS} -f start"
 extra_started_commands="showlog"
@@ -34,7 +34,7 @@ depend() {
 
 start_pre() {
 	checkpath -d /run/fail2ban || return $?
-        
+
 	# remove stalled sock file after system crash
         # bug 347477
         rm -f /run/fail2ban/fail2ban.sock || return $?

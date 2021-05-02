@@ -1,7 +1,7 @@
 # Maintainer: nous@artixlinux.org
 
 pkgname=fail2ban-openrc
-pkgver=20210415
+pkgver=20210502
 pkgrel=1
 pkgdesc="OpenRC fail2ban init script"
 arch=('any')
@@ -12,7 +12,7 @@ depends=('openrc' "fail2ban")
 backup=('etc/conf.d/fail2ban')
 source=("fail2ban.initd"
 	    "fail2ban.confd")
-sha256sums=('98c03636027bf9355b49b18d74e12e0f80c4549aa1c385dca2333c70222049f1'
+sha256sums=('42ead317212f93fd179c4504e068d08dbfa163b30909c497c5a731c8eb640b46'
             '4a4fe009c575e9f1dd09ee33d8dc048019e0443106d0dd7fb53eac3834526cf1')
 
 package() {
