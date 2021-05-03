@@ -1,7 +1,7 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=grafana-s6
-pkgver=20210414
+pkgver=20210503
 pkgrel=1
 pkgdesc="s6-rc service scripts for grafana"
 arch=('any')
@@ -33,7 +33,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
 
 _inst_sv(){
     for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run dependencies type; do
+        pipeline-name producer-for run type; do
         if test -f "$srcdir/$1.$file"; then
             install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
         fi

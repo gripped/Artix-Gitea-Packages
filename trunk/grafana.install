@@ -4,20 +4,6 @@ pre_remove() {
 	fi
 }
 
-post_install() {
-	if [ -f /etc/s6/sv/postgresql/run ]; then
-		echo "postgresql" >> /etc/s6/sv/grafana-srv/dependencies
-	fi
-
-	if [ -f /etc/s6/sv/mysqld-srv/run ]; then
-		echo "mysqld" >> /etc/s6/sv/grafana-srv/dependencies
-	fi
-}
-
-post_ugprade() {
-	post_install
-}
-
 pre_remove() {
 	rm /etc/s6/sv/grafana-log/conf
 }
