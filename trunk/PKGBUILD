@@ -1,7 +1,7 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=distcc-s6
-pkgver=20210414
+pkgver=20210503
 pkgrel=1
 pkgdesc="s6-rc service scripts for distcc"
 arch=('any')
@@ -31,7 +31,7 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '6419d7377aa55bf3848fe654df0fb19cf97419335d611fd1c9e028670a49d7e3'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
             'b8b333cf9b0ae3e79bb45777ee2d5b0614934062a7eb3df834bbd2f076afec36'
-            '484567e0da448a9cbba222f0baaf0a5fa7bb88d62fccc3936d4ddabf7b52880d'
+            '639d3c86bdd307131c58f4253583a4a6042fd9938c1f6850c5f8042d2773747a'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
