@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=consul-s6
-pkgver=20210414
+pkgver=20210503
 pkgrel=1
 pkgdesc="s6-rc service scripts for consul"
 arch=('any')
@@ -16,7 +16,7 @@ backup=('etc/s6/sv/consul-log/conf')
 source=("consul-srv."{type,run,producer-for}
         "consul-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '94bb7ce2ae7151802381fa5f1e65ff865d1e2ae9b710eb9272d50847bbc049b5ffb981f6039127510f8937d279b9d26be6ff64ba7ba06b246df012eda534c2a6'
+        '1ac335092ea025396ff7cb229e844897b96a749d767bf279984a619a6ad9bb08166ce2aa16c0635d542b0498de17765fa41f1fd1a17238a28ec769bfad448fe5'
         '4a3b149d671be1ec968a9c4163d4e60104c316ab885ab4a1511cf73536fca56e6a7e45e1fa80cd6b41e0164fa43cebafcd8752881d0dbc537a6b2acc0bbbf669'
         'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
         'b4e5f19ec169fd29b8d104ecf8fca924e5f8d352fd70a773b236d7212f88bf79d5cc8cbb7f458a2c2377ebd7248f4e2cfa5fd4796c4881304044901c42cf7ac5'
