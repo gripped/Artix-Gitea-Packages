@@ -29,7 +29,7 @@ makedepends=('gst-plugins-base-libs' 'live-media' 'libnotify' 'libbluray'
              'libx265.so' 'libx264.so' 'zvbi' 'libass' 'libkate' 'libtiger'
              'sdl_image' 'libpulse' 'alsa-lib' 'jack' 'libsamplerate' 'libsoxr'
              'lirc' 'libgoom2' 'projectm' 'chromaprint' 'aom' 'srt' 'dav1d'
-             'aribb24' 'aribb25' 'pcsclite')
+             'aribb24' 'aribb25' 'pcsclite' 'autoconf')
 optdepends=('avahi: service discovery using bonjour protocol'
             'aom: AOM AV1 codec'
             'gst-plugins-base-libs: for libgst plugins'
@@ -126,6 +126,7 @@ prepare() {
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
   done
+  autoreconf -fi
 }
 
 build() {
@@ -138,7 +139,6 @@ build() {
   export LUAC=/usr/bin/luac5.2
   export LUA_LIBS="$(pkg-config --libs lua5.2)"
   export RCC=/usr/bin/rcc-qt5
-
   ./configure \
     --prefix=/usr \
     --sysconfdir=/etc \
