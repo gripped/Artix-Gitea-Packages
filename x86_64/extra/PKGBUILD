@@ -4,7 +4,7 @@
 
 pkgname=live-media
 pkgver=2021.04.06
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Set of C++ libraries for multimedia streaming'
 url='http://live555.com/liveMedia'
 arch=('x86_64')
@@ -19,7 +19,7 @@ build() {
   cd live
   sed -E 's|(\$\(INCLUDES\) -I. -O2 -DSOCKLEN_T=socklen_t)|\1 -fPIC -DRTSPCLIENT_SYNCHRONOUS_INTERFACE=1|g' -i config.linux
   ./genMakefiles linux
-  make
+  make CFLAGS="$CFLAGS -fPIC" CXXFLAGS="$CXXFLAGS -fPIC"
 }
 
 package() {
