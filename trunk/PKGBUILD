@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=chrony-openrc
-pkgver=20200716
+pkgver=20210504
 pkgrel=1
 pkgdesc="${pkgname/-openrc//} OpenRC init"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'chrony')
-conflicts=('systemd-sysvcompat')
+provides=('init-chrony')
+conflicts=('init-chrony')
 backup=('etc/conf.d/chrony')
 source=("chrony.confd"
 	"chrony.initd")
