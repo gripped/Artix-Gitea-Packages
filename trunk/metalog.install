@@ -4,6 +4,10 @@ pre_remove() {
     fi
 }
 
+post_upgrade() {
+    rm -rf /etc/s6/sv/metalog-log
+}
+
 post_remove() {
     rm -rf /etc/s6/sv/metalog-log
 }
