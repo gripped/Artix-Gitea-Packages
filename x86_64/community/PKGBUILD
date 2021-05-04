@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=sshguard-runit
-pkgver=20200614
-pkgrel=2
+pkgver=20210504
+pkgrel=1
 pkgdesc="Runit service script for sshguard (using socklog)"
 arch=('any')
 url="https://artixlinux.org"
