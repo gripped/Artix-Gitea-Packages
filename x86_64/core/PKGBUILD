@@ -2,7 +2,7 @@
 
 pkgname=mdadm-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC mdadm init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -23,7 +23,7 @@ sha256sums=('ec55674955af7a31da51b8b72b599e8519809287dad796a9b16155bcba471b79'
 
 package() {
     for f in mdadm mdraid;do
-        install -Dm755 "${srcdir}"/"$f".confd "${pkgdir}"/etc/conf.d/"$f"
+        install -Dm644 "${srcdir}"/"$f".confd "${pkgdir}"/etc/conf.d/"$f"
         install -Dm755 "${srcdir}"/"$f".initd "${pkgdir}"/etc/init.d/"$f"
     done
 }
