@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=openfire-runit
 pkgver=20200704
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for openfire"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,9 @@ license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
-depends=('openfire')
-conflicts=('systemd-sysvcompat')
+depends=('openfire' 'runit')
+provides=('init-openfire')
+conflicts=('init-openfire')
 source=("openfire.run")
 sha256sums=('e65dd9352edee9171facedd614e3910e572782cc23030d33737ef528f5d93af1')
 
