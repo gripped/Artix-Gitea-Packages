@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=stubby-runit
 pkgver=20180706
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for stubby"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,7 +13,8 @@ license=('BSD')
 #       included runscript should follow it's main package's licenses.
 depends=('runit' 'stubby')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+provides=('init-stubby')
+conflicts=('init-stubby')
 source=("stubby.run")
 sha256sums=('c3652819d3b78036022ec89b805936a12647924fde6b49c928d601b31798ea06')
 
