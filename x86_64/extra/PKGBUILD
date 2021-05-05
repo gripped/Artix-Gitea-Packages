@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=subversion-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC svnserve init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('subversion' 'openrc')
-conflicts=('systemd-sysvcompat')
+provides=('init-subversion')
+conflicts=('systemd-sysvcompat' 'init-subversion')
 backup=('etc/conf.d/svnserve')
 source=("svnserve.confd"
         "svnserve.initd")
