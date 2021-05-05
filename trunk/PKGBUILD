@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=brltty-openrc
-pkgver=20200709
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC brltty init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'brltty')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-brltty')
+provides=('init-brltty')
 source=("brltty.initd")
 sha256sums=('28156db939f74a46e24dbd19cb8e39f981ca0924b86a7f4543ec62b59df3895d')
 
