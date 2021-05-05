@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=cyrus-sasl-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC cyrus-sasl init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'cyrus-sasl')
-conflicts=('systemd-sysvcompat')
+provides=('init-cyrus-sasl')
+conflicts=('systemd-sysvcompat' 'init-cyrus-sasl')
 source=("saslauthd.initd")
 sha256sums=('9b5f5c652cf354e73b04b4f410b6b7303d5b1d76723ec4bf93d956ea14340e9a')
 
