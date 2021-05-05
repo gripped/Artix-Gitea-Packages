@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=syslog-ng-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for syslog-ng"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('syslog-ng')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-syslog-ng')
+provides=('init-syslog-ng')
 source=("syslog-ng.run")
 sha256sums=('479057f277a7f3b40f115256149a6ce34b7f57332964235a29d8df223332870a')
 
