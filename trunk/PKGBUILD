@@ -1,20 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=lightdm-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for lightdm"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD3')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
+license=('BSD')
 groups=('runit-world')
 depends=('lightdm' 'dbus-runit')
 provides=('init-lightdm' 'init-displaymanager')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-lightdm' 'init-displaymanager')
 source=("lightdm.run")
 sha256sums=('092cf2c0eeba2f503d3b894aff978916a973a64f9a76f645ed78f60c8f2d790f')
 
