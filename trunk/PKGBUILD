@@ -1,12 +1,14 @@
 # Maintainer: Nathan Owens <ndowens @ artixlinux.org>
 
 pkgname=colord-openrc
-pkgver=20210103
+pkgver=20210505
 pkgrel=1
 arch=('any')
 pkgdesc="Colord openrc init script"
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL')
+conflicts('systemd-svsvcompat' 'init-colord')
+provides=('init-colord')
 groups=('openrc-world')
 depends=('openrc' 'colord')
 source=('colord.initd')
