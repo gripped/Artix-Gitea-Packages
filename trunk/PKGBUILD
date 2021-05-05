@@ -4,16 +4,17 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=nsd-runit
 pkgver=20200925
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for nsd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
-depends=('nsd')
+depends=('nsd' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+provides=('init-nsd')
+conflicts=('init-nsd')
 source=("nsd.run")
 sha256sums=('bfc149acad08695d3bc6d67fd7067f554d189bf4a93d429cf7c9ce9774775f21')
 
