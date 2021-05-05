@@ -2,7 +2,7 @@
 
 pkgname=clamav-openrc
 pkgdesc="Clamav openrc init script"
-pkgver=20200717
+pkgver=20210504
 pkgrel=1
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -11,6 +11,8 @@ groups=('openrc-world')
 install=clamd.install
 depends=('acpid-openrc' 'clamav')
 optdepends=('clamav-unofficial-sigs')
+conflicts=('systemd-sysvcompat' 'init-clamav' 'init-clamd')
+provides=('init-clamav' 'init-clamd')
 source=('clamd.initd'
 	'clamd.confd'
 	'clamd.install')
