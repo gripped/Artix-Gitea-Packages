@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=syncthing-relaysrv-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC syncthing-relaysrv init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'syncthing-relaysrv')
-conflicts=('systemd-sysvcompat')
+provides=('init-syncthing-relaysrv')
+conflicts=('init-syncthing-relaysrv')
 backup=('etc/conf.d/strelaysrv')
 source=('strelaysrv.'{initd,confd})
 sha256sums=('9e9c5e7c84f092a7086e323c6a3ae07942edfb9157314d414b95dfe351087a05'
