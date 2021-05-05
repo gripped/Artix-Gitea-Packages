@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=bind-openrc
-pkgver=20200709
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC bind init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'bind')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-named')
+provides=('init-named')
 backup=('etc/conf.d/named')
 source=("named.confd"
         "named.initd")
