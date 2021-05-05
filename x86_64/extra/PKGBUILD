@@ -2,7 +2,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=php-fpm-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC php fpm init script"
 arch=('any')
@@ -10,7 +10,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'php-fpm')
-conflicts=('systemd-sysvcompat')
+provides=('init-php-fpm')
+conflicts=('systemd-sysvcompat' 'init-php-fpm')
 source=("php-fpm.initd")
 sha256sums=('91050aae105de42f55e129d59fc101e5174d2bac2b9c91557786b249e160c370')
 
