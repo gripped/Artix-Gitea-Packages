@@ -3,14 +3,15 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=apcupsd-openrc
-pkgver=20200713
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC apcupsd init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'apcupsd-init')
+provides=('apcupsd-init')
 depends=('openrc' 'apcupsd')
 source=("apcupsd.initd"
         "apcupsd.powerfail.initd")
