@@ -1,15 +1,15 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=iptables-openrc
-pkgver=20200711
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC iptables init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
-depends=('openrc' 'iptables')
 provides=('init-iptables' 'ebtables-openrc')
+depends=('openrc' 'iptables')
 conflicts=('init-iptables' 'ebtables-openrc')
 backup=('etc/conf.d/iptables'
         'etc/conf.d/ip6tables')
