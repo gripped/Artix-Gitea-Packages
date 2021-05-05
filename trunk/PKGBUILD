@@ -1,6 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=motion-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -8,7 +9,8 @@ url="https://gitea.artixlinux.org/PackagesM/motion-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'motion')
-conflicts=('systemd-sysvcompat')
+provides=('init-motion')
+conflicts=('init-motion')
 backup=(etc/conf.d/motion)
 source=("${pkgname/-openrc/}.initd"
 	"${pkgname/-openrc/}.confd")
