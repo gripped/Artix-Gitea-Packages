@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=prosody-runit
 pkgver=20200704
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for prosody"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,9 @@ license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
-depends=('prosody')
-conflicts=('systemd-sysvcompat')
+depends=('prosody' 'runit')
+provides=('init-prosody')
+conflicts=('init-prosody')
 source=("prosody.run")
 sha256sums=('e87a6c69896f00bc73b312c6bbc9c926ad44f313252d6e138ae7d70ddb697c40')
 
