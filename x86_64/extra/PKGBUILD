@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=cups-openrc
-pkgver=20210418
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC cups init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('cups' 'openrc' 'avahi-openrc')
-conflicts=('systemd-sysvcompat')
+provides=('init-cups')
+conflicts=('systemd-sysvcompat' 'init-cups')
 source=("cupsd.initd")
 sha256sums=('d808de1c4c21fc5bfbf5d5182d89d31bb6fb1e9e115bcab627d669b964bc7222')
 
