@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=squid-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC squid init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'squid')
-conflicts=('systemd-sysvcompat')
+provides=('init-squid')
+conflicts=('init-squid')
 backup=('etc/conf.d/squid')
 source=("squid.confd"
         "squid.initd")
