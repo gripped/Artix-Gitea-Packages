@@ -4,17 +4,16 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=cyrus-sasl-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for cyrus-sasl"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
-depends=('cyrus-sasl')
+depends=('cyrus-sasl' 'runit')
 backup=('etc/runit/sv/saslauthd/conf')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-cyrus-sasl')
+provides=('init-cyrus-sasl')
 source=("saslauthd.run"
         "saslauthd.conf")
 sha256sums=('1d2682575f0134f6a0de20c9fbb606e4c8f72aa9ee357c31963bdc46abe5b774'
