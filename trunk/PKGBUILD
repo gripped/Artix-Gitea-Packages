@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=lxd-openrc
-pkgver=20210415
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'lxd')
-conflicts=('systemd-sysvcompat')
+provides=('init-lxd')
+conflicts=('init-lxd')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("lxd.initd"
 	    "lxd.confd")
