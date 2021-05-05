@@ -9,11 +9,10 @@ pkgdesc="Runit service script for nftables"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('nftables')
-groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+depends=('nftables' 'runit')
+groups=('runit-world')
+conflicts=('init-nftables')
+provides=('init-nftables')
 source=("nftables.run"
         "nftables.finish")
 sha256sums=('00c18977a3dfad7f59a0d419929cfa567fdf1478519197e53b7f79e9cc57cb53'
