@@ -7,7 +7,7 @@ arch=('any')
 pkgdesc="Colord openrc init script"
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL')
-conflicts('systemd-svsvcompat' 'init-colord')
+conflicts=('systemd-svsvcompat' 'init-colord')
 provides=('init-colord')
 groups=('openrc-world')
 depends=('openrc' 'colord')
