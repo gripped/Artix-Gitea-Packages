@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens @ artixlinux.org>
 
 pkgname=stubby-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC Stubby init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'stubby')
-conflicts=('systemd-sysvcompat')
+provides=('init-stubby')
+conflicts=('init-stubby')
 backup=('etc/conf.d/stubby')
 source=("stubby.confd"
         "stubby.initd"
