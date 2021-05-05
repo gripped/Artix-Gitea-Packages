@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=openvpn-openrc
-pkgver=20200720
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC openvpn init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'openvpn')
-conflicts=('systemd-sysvcompat')
+provides=('init-openvpn')
+conflicts=('systemd-sysvcompat' 'init-openvpn')
 backup=('etc/conf.d/openvpn')
 source=("openvpn.confd"
         "openvpn.initd")
@@ -17,6 +18,6 @@ sha256sums=('330149a83684ddabe413d134d4c8efad4c88b18c2ab67165014deff5f7fffad2'
             '63c437caea0d9568270592e449e2555d0db6e3c5d114189def61a17b49968144')
 
 package() {
-    install -Dm755 ${srcdir}/openvpn.initd ${pkgdir}/etc/init.d/openvpn
-    install -Dm755 ${srcdir}/openvpn.confd ${pkgdir}/etc/conf.d/openvpn
+    install -Dm755 "${srcdir}"/openvpn.initd "${pkgdir}"/etc/init.d/openvpn
+    install -Dm755 "${srcdir}"/openvpn.confd "${pkgdir}"/etc/conf.d/openvpn
 }
