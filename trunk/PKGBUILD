@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=knot-runit
 pkgver=20200425
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for knot"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,6 +13,8 @@ license=('BSD')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
 depends=('knot')
+provides=('init-knot')
+conflicts=('init-knot')
 source=("knotd.run")
 sha256sums=('3a5f4f1847b909684ef62318a47e0b52974788f6f5bd8427e9bd5ffd7fe2896a')
 
