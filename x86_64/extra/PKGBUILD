@@ -4,14 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=metalog-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for metalog"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
 depends=('metalog')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-metalog')
+provides=('init-metalog')
 source=("metalog.run")
 sha256sums=('357434befd93d8637cf0f773fd71ec2132e2fd6a3046c349e2163316a7f56a32')
 
