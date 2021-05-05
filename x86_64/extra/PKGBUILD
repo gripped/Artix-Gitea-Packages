@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=rsync-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for rsync"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
-depends=('rsync')
-conflicts=('systemd-sysvcompat')
+depends=('rsync' 'runit')
+conflicts=('init-rsync')
+provides=('init-rsync')
 source=("rsyncd.run")
 sha256sums=('7352a0cb1a8c7a427e3f4011f54049a35764bf9c4e029ab38c0c1b7992e307e9')
 
