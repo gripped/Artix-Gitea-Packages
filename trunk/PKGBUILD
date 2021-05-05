@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=mopidy-openrc
-pkgver=20200715
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -9,7 +9,8 @@ url="http://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'mopidy')
-conflicts=('systemd-sysvcompat')
+provides=('init-mopidy')
+conflicts=('init-mopidy')
 backup=('etc/conf.d/mopidy')
 source=("${pkgname/-openrc/}.initd"
 	"${pkgname/-openrc/}.confd")
