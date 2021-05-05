@@ -2,7 +2,7 @@
 # Maintainer: artoo@artixlinux.org
 
 pkgname=postgrey-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC postgrey init script"
 arch=('any')
@@ -10,7 +10,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'postgrey')
-conflicts=('systemd-sysvcompat')
+provides=('init-postgrey')
+conflicts=('init-postgrey')
 backup=('etc/conf.d/postgrey')
 source=("postgrey.confd"
         "postgrey.initd")
