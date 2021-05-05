@@ -1,6 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=strongswan-openrc
-pkgver=20200527
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc//} OpenRC init"
 arch=('any')
@@ -8,7 +9,8 @@ url="https://gitea.artixlinux.org/PackagesS/strongswan-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'strongswan')
-conflicts=('systemd-sysvcompat')
+provides=('init-strongswan')
+conflicts=('init-strongswan')
 source=("strongswan.initd"
 	"charon.initd")
 md5sums=('9c0557cbd2caff7262e9ad31d904aa14'
