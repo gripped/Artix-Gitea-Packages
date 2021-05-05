@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=sndio-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'sndio')
-conflicts=('systemd-sysvcompat')
+provides=('init-sndio')
+conflicts=('init-sndio')
 backup=("etc/conf.d/${pkgname/-openrc/}d")
 source=("${pkgname/-openrc/}d.initd"
 	      "${pkgname/-openrc/}d.confd")
