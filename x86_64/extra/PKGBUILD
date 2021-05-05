@@ -1,6 +1,7 @@
 # Contributor: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=deluge-openrc
-pkgver=20201020
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc//} OpenRC init"
 arch=('any')
@@ -8,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'deluge')
-conflicts=('systemd-sysvcompat')
+provides=('init-deluge')
+conflicts=('systemd-sysvcompat' 'init-deluge')
 backup=('etc/conf.d/deluged')
 source=("deluged."{confd,initd}
 	      "deluge-web.initd")
