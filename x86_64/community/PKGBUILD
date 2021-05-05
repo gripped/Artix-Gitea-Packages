@@ -1,7 +1,7 @@
 # Maintainer: nous@artixlinux.org
 
 pkgname=fail2ban-openrc
-pkgver=20210502
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC fail2ban init script"
 arch=('any')
@@ -9,6 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' "fail2ban")
+provides=('init-fail2ban')
+conflicts=('init-fail2ban')
 backup=('etc/conf.d/fail2ban')
 source=("fail2ban.initd"
 	    "fail2ban.confd")
