@@ -1,15 +1,16 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=metalog-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC metalog init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
+provides=('init-metalog')
 depends=('openrc' 'metalog')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-metalog')
 backup=('etc/conf.d/metalog')
 source=("metalog.confd"
         "metalog.initd")
