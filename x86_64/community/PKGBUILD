@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=fwknop-openrc
-pkgver=20210421
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC fwknop init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'fwknop')
-conflicts=('systemd-sysvcompat')
+provides=('init-fwknop')
+conflicts=('init-fwknop')
 backup=('etc/conf.d/fwknop')
 source=("fwknop."{confd,initd})
 sha256sums=('818366d8012cf50771ab427bcf645de697e7d05e4bb80d5eb2f98291e071d510'
