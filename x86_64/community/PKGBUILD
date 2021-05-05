@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=backlight-runit
 pkgver=20200420
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for backlight"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
 depends=('runit')
+provides=('init-backlight')
+conflicts=('init-backlight')
 source=("backlight.run"
         "backlight.finish")
 sha256sums=('d60221218641d2be6bc589c5b5c37e76ae8ad7b3f380b3d883197164cea5cff8'
