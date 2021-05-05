@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=knot-openrc
-pkgver=20200715
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC knot init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'knot')
-conflicts=('systemd-sysvcompat')
+provides=('init-knot')
+conflicts=('init-knot')
 source=("knot.confd"
         "knot.initd")
 sha256sums=('ff384d428c9e67139ed21b0c78eabf6a26d96f31775f6143ce0c4f9c4f6beaf3'
