@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=bftpd-runit
 pkgver=20200425
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for bftpd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('bftpd' 'runit')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-bftpd')
+provides=('init-bftpd')
 source=("bftpd.run")
 sha256sums=('8764cadeea642068a5a43babb5098d148f6808128688748fc8aa7ac1ff8d7a4f')
 
