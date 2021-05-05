@@ -2,7 +2,7 @@
 
 pkgname=udpxy-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
