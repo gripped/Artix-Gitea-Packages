@@ -2,14 +2,14 @@
 
 pkgname=cryptsetup-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC cryptsetup init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('device-mapper-openrc' 'cryptsetup')
-provdes=('init-cryptsetup')
+provides=('init-cryptsetup')
 conflicts=('systemd-sysvcompat' 'init-cryptsetup')
 backup=('etc/conf.d/dmcrypt')
 source=("dmcrypt.confd"
