@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=rpcbind-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC rpcbind init script"
 arch=('any')
@@ -19,5 +19,5 @@ sha256sums=('cfe28557f14afc1b93537c5c41abdd12d8142a8f08eafaa0bc6b3ba02dc2aed0'
 
 package() {
     install -Dm755 "${srcdir}"/rpcbind.initd "${pkgdir}"/etc/init.d/rpcbind
-    install -Dm755 "${srcdir}"/rpcbind.confd "${pkgdir}"/etc/conf.d/rpcbind
+    install -Dm644 "${srcdir}"/rpcbind.confd "${pkgdir}"/etc/conf.d/rpcbind
 }
