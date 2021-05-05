@@ -1,13 +1,15 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=atftp-openrc
-pkgver=20200709
+pkgver=20210504
 pkgrel=1
-pkgdesc="${pkgname/-openrc//} OpenRC init"
+pkgdesc="OpenRC script for atftp"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
+conflicts=('systemd-sysvcompat' 'init-atftp')
+provides=('init-atftp')
 depends=('openrc' 'atftp')
 conflicts=('systemd-sysvcompat')
 source=("atftp.initd")
