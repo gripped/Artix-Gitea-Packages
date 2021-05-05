@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=vsftpd-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC vsftpd init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'vsftpd')
-conflicts=('systemd-sysvcompat')
+provides=('init-vsftpd')
+conflicts=('init-vsftpd')
 source=("vsftpd.initd"
 	 "vsftpd-checkconfig.sh")
 sha256sums=('2198e04a52071d0f1b6880bce8d2360bede25c2ee590a28b0057a959ccb5921e'
