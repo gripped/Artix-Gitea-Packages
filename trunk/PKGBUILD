@@ -4,18 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=apcupsd-runit
 pkgver=20180314
-pkgrel=5
+pkgrel=6
 pkgdesc="Runit service script for apcupsd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('apcupsd')
+depends=('apcupsd' 'runit')
 groups=('runit-galaxy')
-provides=('apcupsd-runscripts')
-replaces=('apcupsd-runscripts')
-conflicts=('systemd-sysvcompat')
+provides=('init-apcupsd')
+conflicts=('init-apcupsd')
 source=("apcupsd.run")
 sha256sums=('4215ad5f27b67473937df6312969468fc5ae53f16f1dfee4cfef4c8a45cf31c6')
 
