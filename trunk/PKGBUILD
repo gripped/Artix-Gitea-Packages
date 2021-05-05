@@ -3,8 +3,8 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=openntpd-openrc
-pkgver=202100505
-pkgrel=1
+pkgver=20210505
+pkgrel=2
 pkgdesc="OpenRC openntpd init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -12,7 +12,7 @@ license=('GPL2')
 groups=('openrc-galaxy')
 provides=('openrc-timed' 'init-ntp')
 depends=('openrc' 'openntpd')
-conflicts=('ntp' 'ntp-openrc' 'systemd-sysvcompat' 'init-ntp')
+conflicts=('ntp' 'ntp-openrc' 'init-ntp')
 backup=('etc/conf.d/ntpd')
 source=("ntpd.confd"
         "ntpd.initd")
