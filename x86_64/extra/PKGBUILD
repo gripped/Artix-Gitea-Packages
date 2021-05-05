@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dnsmasq-openrc
-pkgver=20210421
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC dnsmasq init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'dnsmasq')
-conflicts=('systemd-sysvcompat')
+provides=('init-dnsmasq')
+conflicts=('systemd-sysvcompat' 'init-dnsmasq')
 backup=('etc/conf.d/dnsmasq')
 source=("dnsmasq."{initd,confd})
 sha256sums=('bf50cc01e8268d267f3327333439b96ee529b88a8c209962504829247857142e'
