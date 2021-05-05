@@ -2,7 +2,7 @@
 
 pkgname=audit-openrc
 pkgver=20210505
-pkgrel=2
+pkgrel=3
 pkgdesc="OpenRC audit init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -23,7 +23,7 @@ sha256sums=('815d60bfe276afe59fb59355159f2675d6785f6010d70622f7eb8fc8c6f2a8b8'
             '94f4f6c1dad194ad7a4caa719023f783eba6743fa735e9f61d75ab0ccc1c35ad')
 
 package() {
-    install -Dm755 "${srcdir}"/auditd.confd "${pkgdir}"/etc/conf.d/auditd
+    install -Dm644 "${srcdir}"/auditd.confd "${pkgdir}"/etc/conf.d/auditd
     install -Dm755 "${srcdir}"/auditd.initd "${pkgdir}"/etc/init.d/auditd
 
     for f in audit.rules audit.rules.stop.pre audit.rules.stop.post;do
