@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=jenkins-runit
 pkgver=20200613
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for jenkins"
 arch=('any')
 url="https://artixlinux.org"
