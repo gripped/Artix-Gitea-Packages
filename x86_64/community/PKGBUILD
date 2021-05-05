@@ -2,14 +2,14 @@
 
 pkgname=dropbear-runit
 pkgver=20191211
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for dropbear"
 arch=('any')
 url="https://artixlinux.org"
 groups=('runit-galaxy')
-provides=('dropbear-runscripts')
-replaces=('dropbear-runscripts')
-depends=('dropbear')
+provides=('init-dropbear')
+replaces=('init-dropbear')
+depends=('dropbear' 'runit')
 source=("dropbear.run")
 sha256sums=('74185d398ea3d99c7e44443d3c60f3dc2ec6ffa6a501f9e95db9e1ab58ea9d31')
 
