@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=rspamd-openrc
-pkgver=20210105
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC rspamd init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'rspamd')
-conflicts=('systemd-sysvcompat')
+provides=('init-rspamd')
+conflicts=('init-rspamd')
 backup=('etc/conf.d/rspamd')
 source=("rspamd.confd"
         "rspamd.initd")
