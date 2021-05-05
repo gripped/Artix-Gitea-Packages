@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=sndio-runit
 pkgver=20200417
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for sndio"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-groups=('runit-world')
-depends=('sndio')
-conflicts=('systemd-sysvcompat')
+groups=('runit-galaxy')
+depends=('sndio' 'runit')
+conflicts=('init-sndio')
+provides=('init-sndio')
 source=("sndio.run"
         "logsndio.run")
 sha256sums=('e0581321580c957e2ca1341a3bdc9231fb8f53d1abfb18f66c574d7d8d54808a'
