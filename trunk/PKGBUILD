@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=fcgiwrap-runit
 pkgver=20200711
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for fcgiwrap"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
-depends=('fcgiwrap')
-conflicts=('systemd-sysvcompat')
+depends=('fcgiwrap' 'runit')
+conflicts=('init-fcgiwrap')
+provides=('init-fcgiwrap')
 source=("fcgiwrap.run")
 sha256sums=('d2e7a07902d826d257817ffc673f2ae607aa8ba3a51c0d384e95fb14e55fb82d')
 
