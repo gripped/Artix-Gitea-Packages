@@ -4,16 +4,17 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=toxcore-runit
 pkgver=20190504
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for toxcore"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
-depends=('toxcore')
+depends=('toxcore' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+provides=('init-toxcore')
+conflicts=('init-toxcore')
 source=("toxbootstrapd.run")
 sha256sums=('15ed2f156f469f688764a2a491750e55edf90bf3a8611af46d1a531a2728b694')
 
