@@ -2,15 +2,15 @@
 
 pkgname=hdparm-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC hdparm init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
-depends=('openrc' 'hdparm')
 provides=('init-hdparm')
-conflicts=('systemd-sysvcompat' 'init-hdparm')
+depends=('openrc' 'hdparm')
+conflicts=('init-hdparm')
 backup=('etc/conf.d/hdparm')
 source=("hdparm.confd"
         "hdparm.initd")
