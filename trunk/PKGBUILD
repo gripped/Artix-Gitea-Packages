@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=boinc-openrc
-pkgver=20200620
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC boinc init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'boinc')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-boinc')
+provides=('init-boinc')
 backup=('etc/conf.d/boinc')
 source=("boinc.confd"
         "boinc.initd")
