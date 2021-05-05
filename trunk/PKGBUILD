@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=redis-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC redis init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'redis')
-conflicts=('systemd-sysvcompat')
+provides=('init-redis')
+conflicts=('init-redis')
 backup=('etc/conf.d/redis')
 source=("redis.confd"
         "redis.initd")
