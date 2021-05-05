@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=syncthing-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC syncthing init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'syncthing')
-conflicts=('systemd-sysvcompat')
+provides=('init-syncthing')
+conflicts=('init-syncthing')
 backup=('etc/conf.d/syncthing')
 source=('syncthing.'{initd,confd})
 sha256sums=('966434c75a376b1d3220048a4f4bb75fd0e93db4bd6549ef31109e2a5bc1b572'
