@@ -1,13 +1,15 @@
 # Maintainer: Alois Nespor <alium@centrum.cz>
 
 pkgname=backlight-openrc
-pkgver=20200709
+pkgver=20210504
 pkgrel=1
 pkgdesc="Restore the screen brightness at system startup"
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 arch=('any')
 license=('GPL3')
 groups=('openrc-galaxy')
+conflicts=('systemd-sysvcompat' 'init-backlight')
+provides=('init-backlight')
 depends=('openrc')
 source=("backlight")
 sha256sums=('07c97340e1a9ddc5b428ec4e256572df356fdcc1f28e1aa6beb114a2189774f4')
