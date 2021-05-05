@@ -3,7 +3,7 @@
 _url="https://raw.githubusercontent.com/gentoo/gentoo/master"
 
 pkgname=gpm-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC gpm init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('openrc' 'gpm')
-conflicts=('systemd-sysvcompat')
+provides=('init-gpm')
+conflicts=('systemd-sysvcompat' 'init-gpm')
 backup=('etc/conf.d/gpm')
 source=("gpm.confd"
         "gpm.initd")
