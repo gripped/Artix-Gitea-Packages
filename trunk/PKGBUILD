@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=connman-openrc
-pkgver=20210415
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC connman init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'connman')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-connman' 'init-connmand')
+provides=('init-connman' 'init-connmand')
 backup=('etc/conf.d/connmand')
 source=("connmand.confd"
         "connmand.initd")
