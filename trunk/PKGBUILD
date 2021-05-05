@@ -4,7 +4,7 @@
 # Contributor: nous <nous@artixlinux.org>
 
 pkgname=libvirt-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC libvirt init script"
 arch=('any')
@@ -12,7 +12,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'libvirt')
-conflicts=('systemd-sysvcompat')
+provides=('init-libvirt')
+conflicts=('init-libvirt')
 backup=('etc/conf.d/libvirtd')
 source=("libvirtd.confd"
         "libvirtd.initd"
@@ -32,7 +33,7 @@ package() {
 	for _c in libvirtd libvirt-guests ; do
 		install -Dm644 "$srcdir/$_c.confd" "$pkgdir/etc/conf.d/$_c"
 	done
-	
+
 	for _i in libvirtd virtlockd virtlogd libvirt-guests ; do
 		install -Dm755 "$srcdir/$_i.initd" "$pkgdir/etc/init.d/$_i"
 	done
