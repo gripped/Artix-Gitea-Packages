@@ -4,17 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=sddm-runit
 pkgver=20180507
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for sddm"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('sddm' 'dbus-runit')
 provides=('init-sddm' 'init-displaymanager')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-sddm' 'init-displaymanager')
 source=("sddm.run::${_url}/sddm/files/sddm/run")
 sha256sums=('786edc36dd0ecc98909dcb57667865e69a6bf4ae133ae92cafb8ce248afc4f64')
 
