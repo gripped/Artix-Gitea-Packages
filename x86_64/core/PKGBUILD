@@ -2,15 +2,15 @@
 
 pkgname=krb5-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC krb5 init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
-depends=('openrc' 'krb5')
 provides=('init-krb5')
-conflicts=('systemd-sysvcompat' 'init-krb5')
+depends=('openrc' 'krb5')
+conflicts=('init-krb5')
 source=("krb5kadmind.initd"
         "krb5kdc.initd"
         "krb5kpropd.initd")
