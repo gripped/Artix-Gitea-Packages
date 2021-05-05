@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=lvm2-openrc
-pkgver=20210208
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC lvm2 init script"
 arch=('any')
