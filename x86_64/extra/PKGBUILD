@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=sane-openrc
-pkgver=20210418
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC sane init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'sane')
-conflicts=('systemd-sysvcompat')
+provides=('init-sane')
+conflicts=('systemd-sysvcompat' 'init-sane')
 backup=('etc/conf.d/saned')
 source=("saned.confd"
         "saned.initd")
