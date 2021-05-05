@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=bumblebee-openrc
-pkgver=20200715
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC bumblebee init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'bumblebee')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'bumblebee-init')
+provides=('bumblebee-init')
 backup=('etc/conf.d/bumblebee')
 source=("bumblebee.confd"
         "bumblebee.initd")
