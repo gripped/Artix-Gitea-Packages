@@ -2,7 +2,7 @@
 
 pkgname=iptables-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC iptables init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -28,10 +28,10 @@ package() {
 
     for f in iptables ebtables; do
         install -Dm755 "${srcdir}"/"$f".initd "${pkgdir}"/etc/init.d/"$f"
-        install -Dm755 "${srcdir}"/"$f".confd "${pkgdir}"/etc/conf.d/"$f"
+        install -Dm644 "${srcdir}"/"$f".confd "${pkgdir}"/etc/conf.d/"$f"
     done
 
-    install -Dm755 "${srcdir}"/ip6tables.confd "${pkgdir}"/etc/conf.d/ip6tables
+    install -Dm644 "${srcdir}"/ip6tables.confd "${pkgdir}"/etc/conf.d/ip6tables
 
     install -Dm755 "${srcdir}"/iptables.initd "${pkgdir}"/etc/init.d/ip6tables
 
