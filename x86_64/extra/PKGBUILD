@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dhcp-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC dhcp init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'dhcp')
-conflicts=('systemd-sysvcompat')
+provides=('init-dhcp')
+conflicts=('systemd-sysvcompat' 'init-dhcp')
 backup=('etc/conf.d/dhcpd'
         'etc/conf.d/dhcrelay'
         'etc/conf.d/dhcrelay6')
@@ -29,7 +30,7 @@ package() {
 		install -Dm755 "$srcdir/$f.initd" "$pkgdir/etc/init.d/$f"
 		install -Dm644 "$srcdir/$f.confd" "$pkgdir/etc/conf.d/$f"
 	done
-	
+
 	install -Dm644 "$srcdir/dhcrelay6.confd" "$pkgdir/etc/conf.d/dhcrelay6"
 	install -Dm755 "$srcdir/dhcrelay.initd" "$pkgdir/etc/init.d/dhcrelay6"
 }
