@@ -4,7 +4,7 @@
 
 pkgname=sshguard-openrc
 pkgver=20210505
-pkgrel=1.1
+pkgrel=2
 pkgdesc="OpenRC SSHGuard init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
