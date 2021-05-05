@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=matrix-synapse-runit
 pkgver=20200704
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for matrix-synapse"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
-depends=('matrix-synapse')
+depends=('matrix-synapse' 'runit')
 provides=('init-matrix-synapse')
 conflicts=('init-matrix-synapse')
 source=("matrix-synapse-srv.run")
