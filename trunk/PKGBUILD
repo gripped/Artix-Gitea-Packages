@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=lm_sensors-runit
 pkgver=20180226
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for lm_sensors"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('lm_sensors')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-lm_sensors')
+provides=('init-lm_sensors')
 source=("fancontrol.run"
         "lm_sensors.run"
         "lm_sensors.finish")
