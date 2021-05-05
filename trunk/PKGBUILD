@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=minidlna-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC minidlna init script"
 arch=('any')
@@ -12,7 +12,8 @@ license=('GPL2')
 groups=('openrc-galaxy')
 provides=('openrc-minidlna')
 depends=('openrc' 'minidlna')
-conflicts=('systemd-sysvcompat')
+provides=('init-minidlna')
+conflicts=('init-minidlna')
 backup=('etc/conf.d/minidlna')
 source=("minidlna.confd"
         "minidlna.initd")
