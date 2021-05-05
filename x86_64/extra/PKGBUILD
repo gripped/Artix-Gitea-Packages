@@ -1,14 +1,15 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=apparmor-openrc
-pkgver=20201005
+pkgver=20210504
 pkgrel=1
 pkgdesc="OpenRC apparmor init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-apparmor')
+provides=('init-apparmor')
 depends=('openrc' 'apparmor')
 source=("apparmor.initd")
 sha256sums=('ba7601a738761a3f27278a7508ae32463f7097c597f0806931983ef6af2a5d3a')
