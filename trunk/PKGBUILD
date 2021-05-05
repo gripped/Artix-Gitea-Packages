@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=rng-tools-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC rng-tools init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'rng-tools')
-conflicts=('systemd-sysvcompat')
+provides=('init-rng-tools')
+conflicts=('init-rng-tools')
 source=("rngd.confd"
         "rngd.initd")
 sha256sums=('4023c9020947db0bb9572ed739797c297791ac45dbc2d04808a332d907583a59'
