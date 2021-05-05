@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=lxd-runit
 pkgver=20200711
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for lxd"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,7 +13,8 @@ license=('BSD')
 #       included runscript should follow it's main package's licenses.
 groups=('runit-galaxy')
 depends=('lxd')
-conflicts=('systemd-sysvcompat')
+provides=('init-lxd')
+conflicts=('init-lxd')
 source=("lxd.run")
 sha256sums=('49ec0c63613c71f7adab59484198d560cc167aa75751c36b90a77666f4080466')
 
