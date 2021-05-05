@@ -2,7 +2,7 @@
 
 pkgname=cryptsetup-openrc
 pkgver=20210505
-pkgrel=3
+pkgrel=4
 pkgdesc="OpenRC cryptsetup init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -19,5 +19,5 @@ sha256sums=('3d933a54abe62a547294b83208dbf5d7615d9c7f380d6504c91fff3620530803'
 
 package() {
     install -Dm755 "${srcdir}"/dmcrypt.initd "${pkgdir}"/etc/init.d/dmcrypt
-    install -Dm755 "${srcdir}"/dmcrypt.confd "${pkgdir}"/etc/conf.d/dmcrypt
+    install -Dm644 "${srcdir}"/dmcrypt.confd "${pkgdir}"/etc/conf.d/dmcrypt
 }
