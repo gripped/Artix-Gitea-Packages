@@ -4,16 +4,17 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=mopidy-runit
 pkgver=20200803
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for mopidy"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
-depends=('mopidy')
+depends=('mopidy' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+provides=('init-mopidy')
+conflicts=('init-mopidy')
 source=("mopidy.run")
 sha256sums=('429b0530140da15fdfc4bcc0c37abb38409dfdd4240b03a0a3d24ca900caaf59')
 
