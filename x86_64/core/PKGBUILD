@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=krb5-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC krb5 init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('openrc' 'krb5')
-conflicts=('systemd-sysvcompat')
+provides=('init-krb5')
+conflicts=('systemd-sysvcompat' 'init-krb5')
 source=("krb5kadmind.initd"
         "krb5kdc.initd"
         "krb5kpropd.initd")
@@ -19,6 +20,6 @@ sha256sums=('0fbe7d615394477503de5801a2b225c5ccbae255aef601a17b91a7c262648864'
 
 package() {
     for f in krb5kadmind krb5kdc krb5kpropd;do
-        install -Dm755 ${srcdir}/$f.initd ${pkgdir}/etc/init.d/$f
+        install -Dm755 "${srcdir}/$f".initd "${pkgdir}"/etc/init.d/"$f"
     done
 }
