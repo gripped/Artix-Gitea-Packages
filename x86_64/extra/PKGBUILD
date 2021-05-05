@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=prometheus-openrc
-pkgver=20210419
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC prometheus init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'prometheus')
-conflicts=('systemd-sysvcompat')
+provides=('init-prometheus')
+conflicts=('systemd-sysvcompat' 'init-prometheus')
 backup=('etc/conf.d/prometheus')
 source=("prometheus.confd"
 	 "prometheus.initd")
