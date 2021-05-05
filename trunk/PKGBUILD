@@ -1,19 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=prometheus-runit
 pkgver=20190114
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for prometheus"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('prometheus')
+depends=('prometheus' 'runit')
 groups=('runit-world')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-prometheus')
+provides=('init-prometheus')
 source=("prometheus.run")
 sha256sums=('8e69c726a51b723935ce1db4b812ac6ec6ffdb5bb3a5d85448aeced91563c0f5')
 
