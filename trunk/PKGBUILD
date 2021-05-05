@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=tlp-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC tlp init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'tlp')
-conflicts=('systemd-sysvcompat')
+provides=('init-tlp')
+conflicts=('init-tlp')
 source=('tlp.initd')
 sha256sums=('4fc771f1ce9423b1f5facc006845d3ab5cbce3bfdf1aa0737b2ed8e7d6f8c3ac')
 
