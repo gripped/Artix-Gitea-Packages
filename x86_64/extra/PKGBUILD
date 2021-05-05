@@ -4,16 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=apache-runit
 pkgver=20180605
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for apache"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
-depends=('apache')
-conflicts=('systemd-sysvcompat')
+depends=('apache' 'runit')
+conflicts=('init-apache')
+provides=('init-apache')
 source=("apache.run"
         "apache.finish")
 sha256sums=('6404e115334b559c6d8e91b63a7712d381c165639a252f4de3efee260f724a2e'
