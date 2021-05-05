@@ -2,7 +2,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=freeradius-openrc
-pkgver=20201123
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC freeradius init script"
 arch=('any')
@@ -10,7 +10,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'freeradius')
-conflicts=('systemd-sysvcompat')
+provides=('init-freeradius')
+conflicts=('init-freeradius')
 backup=('etc/conf.d/freeradiusd')
 source=("freeradius.initd"
         "freeradius.confd")
