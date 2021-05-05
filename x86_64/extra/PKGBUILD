@@ -1,15 +1,16 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=mpd-openrc
-pkgver=20200716
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
+provides=('init-mpd')
 depends=('openrc' 'mpd')
-conflicts=('systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'init-mpd')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("${pkgname/-openrc/}.confd"
 	"${pkgname/-openrc/}.initd")
