@@ -4,16 +4,17 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=tinydns-runit
 pkgver=20201010
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for tinydns"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
-depends=('tinydns')
+depends=('tinydns' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat')
+provides=('init-tinydns')
+conflicts=('init-tinydns')
 source=("tinydns.run")
 sha256sums=('9d5bd9c38d0e032e4920b1e19a6c8c5f1d4f98e2e4f31e9354b77562c540f283')
 
