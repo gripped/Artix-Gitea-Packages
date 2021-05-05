@@ -1,6 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
+
 pkgname=exim-openrc
-pkgver=20210416
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -8,7 +9,8 @@ url="https://gitea.artixlinux.org/PackagesE/exim-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'exim')
-conflicts=('systemd-sysvcompat')
+provides=('init-exim')
+conflicts=('init-exim')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("exim.confd"
 	    "exim.initd")
