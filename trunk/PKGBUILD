@@ -1,17 +1,17 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=dns-over-https-runit
 pkgver=20200425
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for dns-over-https"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('dns-over-https')
+depends=('dns-over-https' 'runit')
+provides=('init-dns-over-https')
+conflicts=('init-dns-over-https')
 groups=('runit-galaxy')
 source=("doh-client.run"
         "doh-server.run")
