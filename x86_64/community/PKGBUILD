@@ -1,7 +1,7 @@
 # Maintainer: nous@artixlinux.org
 
 pkgname=darkhttpd-openrc
-pkgver=20200711
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC darkhttpd init script"
 arch=('any')
@@ -9,6 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'darkhttpd')
+provides=('init-darkhttpd')
+conflicts=('init-darkhttpd')
 backup=('etc/conf.d/darkhttpd')
 source=("darkhttpd.confd"
         "darkhttpd.initd")
