@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 
 pkgname=transmission-openrc
-pkgver=20201020
+pkgver=20210505
 pkgrel=1
 pkgdesc="${pkgname/-openrc/} OpenRC init"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'transmission-cli')
-conflicts=('systemd-sysvcompat')
+provides=('init-transmission')
+conflicts=('systemd-sysvcompat' 'init-transmission')
 backup=("etc/conf.d/${pkgname/-openrc/}")
 source=("${pkgname/-openrc/}.initd"
 	    "${pkgname/-openrc/}.confd")
