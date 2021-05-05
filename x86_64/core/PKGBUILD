@@ -1,9 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_url="https://raw.githubusercontent.com/gentoo/gentoo/master"
-
 pkgname=hdparm-openrc
-pkgver=20200620
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC hdparm init script"
 arch=('any')
@@ -11,10 +9,11 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
 depends=('openrc' 'hdparm')
-conflicts=('systemd-sysvcompat')
+provides=('init-hdparm')
+conflicts=('systemd-sysvcompat' 'init-hdparm')
 backup=('etc/conf.d/hdparm')
-source=("hdparm.confd::${_url}/sys-apps/hdparm/files/hdparm-conf.d.3"
-        "hdparm.initd::${_url}/sys-apps/hdparm/files/hdparm-init-8")
+source=("hdparm.confd"
+        "hdparm.initd")
 sha256sums=('37c95ff723fa578e9039613d09dbf790d99113a318c065422986c744519214e9'
             '05b264cadc84984f773cd555af322b41fdb13da7cb2ca60d8a7d590ddf4d5e5f')
 
