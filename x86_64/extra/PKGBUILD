@@ -2,7 +2,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=haveged-openrc
-pkgver=20210421
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC haveged init script"
 arch=('any')
@@ -10,7 +10,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'haveged')
-conflicts=('systemd-sysvcompat')
+provides=('init-haveged')
+conflicts=('systemd-sysvcompat' 'init-haveged')
 backup=('etc/conf.d/haveged')
 source=("haveged."{confd,initd})
 sha256sums=('e796a353534e8ec36b84a29ab4cbd738ebd18098efca5ed8d92b267a99dc58f6'
