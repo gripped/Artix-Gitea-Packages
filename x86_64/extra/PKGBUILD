@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=lirc-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC lirc init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'lirc')
-conflicts=('systemd-sysvcompat')
+provides=('init-lirc')
+conflicts=('systemd-sysvcompat' 'init-lirc')
 backup=('etc/conf.d/lircd'
 	'etc/conf.d/irexec'
 	'etc/conf.d/lircmd')
