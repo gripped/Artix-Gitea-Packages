@@ -2,15 +2,15 @@
 
 pkgname=audit-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC audit init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-system')
-depends=('openrc' 'audit')
 provides=('init-audit')
-conflicts=('systemd-sysvcompat' 'init-audit')
+depends=('openrc' 'audit')
+conflicts=('init-audit')
 source=("auditd.initd"
         "auditd.confd"
         "audit.rules.stop.pre"
