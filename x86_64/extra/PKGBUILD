@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=postgresql-openrc
-pkgver=20200709
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC postgresql init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
 depends=('openrc' 'postgresql')
-conflicts=('systemd-sysvcompat')
+provides=('init-postgresql')
+conflicts=('systemd-sysvcompat' 'init-postgresql')
 source=("postgresql.confd"
         "postgresql.initd")
 sha256sums=('e462e04a18020be379b5466e98a889292f2f8240701c5bc6e742d1e74352d393'
