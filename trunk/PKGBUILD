@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=openssh-openrc
-pkgver=20210418
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC openssh init script"
 arch=('any')
@@ -19,5 +19,5 @@ sha256sums=('d0abc00305e255eb8962e5e47dfd332ad5935a4acbae89cc28c0bd167cc0f5d6'
 
 package() {
     install -Dm755 "${srcdir}"/sshd.initd "${pkgdir}"/etc/init.d/sshd
-    install -Dm755 "${srcdir}"/sshd.confd "${pkgdir}"/etc/conf.d/sshd
+    install -Dm644 "${srcdir}"/sshd.confd "${pkgdir}"/etc/conf.d/sshd
 }
