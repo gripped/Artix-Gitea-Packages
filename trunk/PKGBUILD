@@ -1,20 +1,18 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=gdm-runit
 pkgver=20180226
-pkgrel=4
+pkgrel=5
 pkgdesc="runit service scripts for gdm"
 arch=('any')
-url="https://github.com/artix-linux"
+url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('gdm' 'dbus-runit')
 provides=('init-gdm' 'init-displaymanager')
-conflicts=('systemd-sysvcompat')
+conflicts=('init-gdm' 'init-displaymanager')
 source=("gdm.run")
 sha256sums=('76d1e7c7c02a77ba96ebc800af219c4ade86d2174eb1ddf43b10b49c0f8add22')
 
