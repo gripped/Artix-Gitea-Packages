@@ -1,7 +1,7 @@
 # Maintainer: nous@artixlinux.org
 
 pkgname=tigervnc-openrc
-pkgver=20200710
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC tigervnc init script"
 arch=('any')
@@ -9,7 +9,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'tigervnc')
-conflicts=('systemd-sysvcompat')
+provides=('init-tigervnc')
+conflicts=('init-tigervnc')
 backup=('etc/conf.d/tigervnc')
 source=("tigervnc.initd"
         "tigervnc.confd")
