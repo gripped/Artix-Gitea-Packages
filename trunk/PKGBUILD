@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=espeakup-openrc
-pkgver=20210415
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC espeakup init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'espeakup')
-conflicts=('systemd-sysvcompat')
+provides=('init-espeakup')
+conflicts=('init-espeakup')
 backup=('etc/conf.d/espeakup')
 source=("espeakup.confd"
         "espeakup.initd")
