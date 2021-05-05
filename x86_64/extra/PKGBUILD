@@ -1,16 +1,16 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=ntp-openrc
-pkgver=20210418
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC ntp init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-provides=('openrc-timed')
+provides=('openrc-timed' 'init-ntp')
 depends=('openrc' 'ntp')
-conflicts=('openntpd' 'openntpd-openrc' 'systemd-sysvcompat')
+conflicts=('systemd-sysvcompat' 'openrc-timed'  'init-ntp')
 backup=('etc/conf.d/ntpd'
         'etc/conf.d/ntp-client'
         'etc/init.d/sntp')
