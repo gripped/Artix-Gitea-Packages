@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=tor-openrc
-pkgver=20200529
+pkgver=20210505
 pkgrel=1
 pkgdesc="OpenRC tor init script"
 arch=('any')
@@ -11,7 +11,8 @@ url="https://github.com/artix-linux/packages-galaxy"
 license=('GPL2')
 groups=('openrc-galaxy')
 depends=('openrc' 'tor')
-conflicts=('systemd-sysvcompat')
+provides=('init-tor')
+conflicts=('init-tor')
 backup=('etc/conf.d/tor')
 source=("tor.confd"
         "tor.initd")
