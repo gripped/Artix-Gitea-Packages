@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=xdm-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for xdm"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-xdm')
 conflicts=('init-xdm')
-depends=('xorg-xdm' 's6-rc')
+depends=('xorg-xdm' 's6-base')
 install=xdm.install
 source=("xdm.run" "xdm.type")
 sha256sums=('3fb6072e7b9e9b265c8c2a5903111a0b6687315121b0207d3e516e9c5efe2bfa'
