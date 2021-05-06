@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=lighttpd-runit
 pkgver=20200613
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for lighttpd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('lighttpd')
+depends=('runit' 'lighttpd')
 provides=('init-lighttpd')
-conflicts=('systemd-sysvcompat' 'init-lighttpd')
+conflicts=('init-lighttpd')
 source=("lighttpd.run")
 sha256sums=('1603defa096c498fd0eac842712187e9ab0f591818080c9515298b5b2dad9106')
 
