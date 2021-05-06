@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=acpid-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for acpid"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-acpid')
 conflicts=('init-acpid')
-depends=('acpid' 's6-rc')
+depends=('acpid' 's6-base')
 install=acpid.install
 backup=('etc/s6/sv/acpid-log/conf')
 source=("acpid-log.conf"
