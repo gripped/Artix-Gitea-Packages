@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=sshguard-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for sshguard"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-sshguard')
 conflicts=('init-sshguard')
-depends=('sshguard' 's6-rc')
+depends=('sshguard' 's6-base')
 install=sshguard.install
 source=("sshguard.run" "sshguard.type")
 sha256sums=('77f2a12830a204b7751e2c48f5084580511b3a26a0134476f3eaaa1ccdf4563a'
