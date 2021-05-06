@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=samba-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for samba"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-samba')
 conflicts=('init-samba')
-depends=('samba' 's6-rc')
+depends=('samba' 's6-base')
 install=samba.install
 backup=('etc/s6/sv/nmbd-log/conf'
         'etc/s6/sv/smbd-log/conf')
