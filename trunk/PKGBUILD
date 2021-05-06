@@ -2,7 +2,7 @@
 
 pkgname=openvpn-openrc
 pkgver=20210505
-pkgrel=2
+pkgrel=3
 pkgdesc="OpenRC openvpn init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -18,5 +18,5 @@ sha256sums=('330149a83684ddabe413d134d4c8efad4c88b18c2ab67165014deff5f7fffad2'
 
 package() {
     install -Dm755 "${srcdir}"/openvpn.initd "${pkgdir}"/etc/init.d/openvpn
-    install -Dm755 "${srcdir}"/openvpn.confd "${pkgdir}"/etc/conf.d/openvpn
+    install -Dm644 "${srcdir}"/openvpn.confd "${pkgdir}"/etc/conf.d/openvpn
 }
