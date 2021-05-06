@@ -2,15 +2,15 @@
 
 pkgname=apache-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC apache init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('apache' 'openrc')
 provides=('init-apache')
-conflicts=('systemd-sysvcompat' 'init-apache')
+depends=('apache' 'openrc')
+conflicts=('init-apache')
 backup=('etc/conf.d/httpd')
 source=("httpd.initd"
 	"httpd.confd")
