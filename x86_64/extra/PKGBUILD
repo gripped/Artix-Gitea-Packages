@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=clamav-s6
-pkgver=20210428
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for clamav"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-clamav')
 conflicts=('init-clamav')
-depends=('clamav' 's6-rc')
+depends=('clamav' 's6-base')
 install=clamd.install
 backup=('etc/s6/sv/clamd-log/conf'
         'etc/s6/sv/freshclam-log/conf')
