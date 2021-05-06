@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=at-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for at"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('at')
+depends=('at' 'runit')
 groups=('runit-galaxy')
 provides=('init-at')
-conflicts=('systemd-sysvcompat' 'init-at')
+conflicts=('init-at')
 source=("at.run")
 sha256sums=('6db3f1cedfe7d89d08514be052c45a4276b172263a368d3a25c11f97bc6777bb')
 
