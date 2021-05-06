@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=toxcore-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for toxcore"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-toxcore')
 conflicts=('init-toxcore')
-depends=('toxcore' 's6-rc')
+depends=('toxcore' 's6-base')
 install=toxcore.install
 backup=('etc/s6/sv/toxbootstrapd-log/conf')
 source=("toxbootstrapd-log.conf"
