@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=xl2tpd-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for xl2tpd"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-xl2tpd')
 conflicts=('init-xl2tpd')
-depends=('xl2tpd' 's6-rc')
+depends=('xl2tpd' 's6-base')
 backup=('etc/s6/sv/xl2tpd-log/conf')
 install=xl2tpd.install
 source=("xl2tpd-srv."{type,run,producer-for}
