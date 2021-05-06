@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=mpd-runit
 pkgver=20200613
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for mpd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('mpd')
+depends=('mpd' 'runit')
 conflicts=('init-mpd')
 provides=('init-mpd')
 source=("mpd.run")
