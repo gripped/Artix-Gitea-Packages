@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=haveged-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for haveged"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('haveged')
-conflicts=('systemd-sysvcompat' 'init-haveged')
+depends=('haveged' 'runit')
+conflicts=('init-haveged')
 provides=('init-haveged')
 source=("haveged.run")
 sha256sums=('fa32cb565083aba02742f1a72a66bdefeaff59be4dec3a08a634a44985a55512')
