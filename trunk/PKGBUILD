@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=rng-tools-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for rng-tools"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-rng-tools')
 conflicts=('init-rng-tools')
-depends=('rng-tools' 's6-rc')
+depends=('rng-tools' 's6-base')
 install=rngd.install
 backup=('etc/s6/sv/rngd-log/conf')
 source=("rngd-srv."{type,run,producer-for}
