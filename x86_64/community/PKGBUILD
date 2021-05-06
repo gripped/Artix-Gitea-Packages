@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=ddclient-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for ddclient"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-ddclient')
 conflicts=('init-ddclient')
-depends=('ddclient' 's6-rc')
+depends=('ddclient' 's6-base')
 install=ddclient.install
 source=("ddclient.run" "ddclient.type")
 sha256sums=('3fc29b94b504344df09aaab3d56226015f0d5a186ff558e78ec0b6e67f04d34c'
