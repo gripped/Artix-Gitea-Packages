@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=xdm-runit
 pkgver=20180226
-pkgrel=4
+pkgrel=5
 pkgdesc="runit service scripts for xdm (The original Xorg XDM)"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('xorg-xdm')
+depends=('xorg-xdm' 'runit')
 provides=('init-xdm' 'init-displaymanager')
 conflicts=('init-xdm' 'init-displaymanager')
 source=("xdm.run")
