@@ -1,16 +1,16 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=metalog-runit
 pkgver=20180226
-pkgrel=4
+pkgrel=5
 pkgdesc="runit service scripts for metalog"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('metalog')
+depends=('metalog' 'runit')
 conflicts=('init-metalog')
 provides=('init-metalog')
 source=("metalog.run")
