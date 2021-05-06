@@ -2,18 +2,18 @@
 
 pkgname=lirc-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC lirc init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('openrc' 'lirc')
 provides=('init-lirc')
-conflicts=('systemd-sysvcompat' 'init-lirc')
+depends=('openrc' 'lirc')
+conflicts=('init-lirc')
 backup=('etc/conf.d/lircd'
-	'etc/conf.d/irexec'
-	'etc/conf.d/lircmd')
+        'etc/conf.d/irexec'
+        'etc/conf.d/lircmd')
 source=("lircd.confd" "lircd.initd"
         "irexec.confd" "irexec.initd"
         "lircmd.confd" "lircmd.initd")
@@ -25,8 +25,8 @@ sha256sums=('d36ff77fa193a065d25e373723e03f1a9471205151b82c73a6574cce4f095962'
             'e55fa0b5ef4a6a11c4124d8d46c6ce5e34e7344590c72c6e17439b915ad29f10')
 
 package() {
-	for _i in lircd irexec lircmd ; do
-		install -Dm755 "$srcdir/$_i.initd" "$pkgdir/etc/init.d/$_i"
-		install -Dm644 "$srcdir/$_i.confd" "$pkgdir/etc/conf.d/$_i"
-	done
+    for _i in lircd irexec lircmd ; do
+        install -Dm755 "$srcdir/$_i.initd" "$pkgdir/etc/init.d/$_i"
+        install -Dm644 "$srcdir/$_i.confd" "$pkgdir/etc/conf.d/$_i"
+    done
 }
