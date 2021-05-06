@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=hostapd-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for hostapd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-hostapd')
 conflicts=('init-hostapd')
-depends=('hostapd' 's6-rc')
+depends=('hostapd' 's6-base')
 install=hostapd.install
 backup=('etc/s6/sv/hostapd-log/conf')
 source=("hostapd-srv."{type,run,producer-for}
