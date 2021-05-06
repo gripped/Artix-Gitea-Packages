@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan Owens <ndowens@artixlinux.org>
 pkgname=rsync-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for rsync"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-rsync')
 conflicts=('init-rsync')
-depends=('rsync' 's6-rc')
+depends=('rsync' 's6-base')
 install=rsyncd.install
 backup=('etc/s6/sv/rsyncd-log/conf')
 source=("rsyncd-srv."{type,run,producer-for}
