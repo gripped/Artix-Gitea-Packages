@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mariadb-s6
-pkgver=20210504
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for mariadb"
 arch=('any')
@@ -9,7 +9,7 @@ groups=('s6-world')
 provides=('init-mariadb' 'init-mysql')
 conflicts=('init-mariadb')
 replaces=('init-mysql')
-depends=('mariadb' 's6-rc')
+depends=('mariadb' 's6-base')
 install=mariadb.install
 backup=('etc/s6/sv/mariadb-log/conf')
 source=("mariadb-srv."{type,run,producer-for}
