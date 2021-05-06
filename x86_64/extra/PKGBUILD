@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syslog-ng-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for syslog-ng"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-syslog-ng')
 conflicts=('init-syslog-ng')
-depends=('syslog-ng' 's6-rc')
+depends=('syslog-ng' 's6-base')
 install=syslog-ng.install
 backup=('etc/s6/sv/syslog-ng-log/conf')
 source=("syslog-ng-log.conf"
