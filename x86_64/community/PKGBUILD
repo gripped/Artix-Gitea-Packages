@@ -4,16 +4,16 @@
 
 
 pkgname=acpid-openrc
-pkgver=20210504
+pkgver=20210506
 pkgrel=1
 pkgdesc="OpenRC acpid init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
-depends=('openrc' 'acpid')
-conflicts=('systemd-sysvcompat' 'init-acpid')
 provides=('init-acpid')
+depends=('openrc' 'acpid')
+conflicts=('init-acpid')
 backup=('etc/conf.d/acpid')
 source=("acpid.confd"
         "acpid.initd")
