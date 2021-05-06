@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=lirc-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for lirc"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-lirc')
 conflicts=('init-lirc')
-depends=('lirc' 's6-rc')
+depends=('lirc' 's6-base')
 install=lircd.install
 backup=('etc/s6/sv/lircd-log/conf')
 source=("lircd-srv."{type,run,producer-for}
