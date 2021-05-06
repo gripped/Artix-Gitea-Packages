@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=mpd-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for mpd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-mpd')
 conflicts=('init-mpd')
-depends=('mpd' 's6-rc')
+depends=('mpd' 's6-base')
 install=mpd.install
 backup=('etc/s6/sv/mpd-log/conf')
 source=("mpd-srv."{type,run,producer-for}
