@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=spamassassin-s6
-pkgver=20210406
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for spamassassin"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-spamassassin')
 conflicts=('init-spamassassin')
-depends=('spamassassin' 's6-rc')
+depends=('spamassassin' 's6-base')
 install=spamassassin.install
 backup=('etc/s6/sv/spamassassin-log/conf')
 source=("spamassassin-log.conf"
