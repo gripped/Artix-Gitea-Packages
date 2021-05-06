@@ -5,12 +5,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=qemu-guest-agent-runit
 pkgver=20201020
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for qemu-guest-agent"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('qemu-guest-agent')
+depends=('qemu-guest-agent' 'runit')
 groups=('runit-world')
 conflicts=('init-qemu-guest-agent')
 provides=('init-qemu-guest-agent')
