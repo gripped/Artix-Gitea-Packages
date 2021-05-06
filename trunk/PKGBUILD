@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=tinydns-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for tinydns"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-tinydns')
 conflicts=('init-tinydns')
-depends=('tinydns' 's6-rc')
+depends=('tinydns' 's6-base')
 install=tinydns.install
 source=("tinydns.run" "tinydns.type")
 sha256sums=('6e81dde526c46a2822f6d84f30a5d9fd85791b3bdfbfe9afde787206ff454866'
