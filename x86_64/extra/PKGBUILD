@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=usbguard-s6
-pkgver=20210310
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for usbguard"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-usbguard')
 conflicts=('init-usbguard')
-depends=('usbguard' 's6-rc')
+depends=('usbguard' 's6-base')
 install=usbguard.install
 source=("usbguard.run" "usbguard.type")
 sha256sums=('0d5e38c4ae8cd7ff67811530897e69bca20002ed3aef566b793df7a0dc09f688'
