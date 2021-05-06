@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fail2ban-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for fail2ban"
 arch=('any')
@@ -10,7 +10,7 @@ groups=('s6-galaxy')
 provides=('init-fail2ban')
 conflicts=('init-fail2ban')
 install=fail2ban.install
-depends=('fail2ban' 's6-rc')
+depends=('fail2ban' 's6-base')
 backup=('etc/s6/sv/fail2ban-log/conf')
 source=("fail2ban-srv."{type,run,producer-for}
         "fail2ban-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
