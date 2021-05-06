@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=coturn-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for coturn"
 arch=('any')
@@ -11,7 +11,7 @@ groups=('s6-galaxy')
 provides=('init-coturn')
 conflicts=('init-coturn')
 install=coturn.install
-depends=('coturn' 's6-rc')
+depends=('coturn' 's6-base')
 backup=('etc/s6/sv/coturn-log/conf')
 source=("coturn-srv."{type,run,producer-for}
         "coturn-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
