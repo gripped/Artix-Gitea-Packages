@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+s6-setuidgid rspamd exec rspamd -c /etc/rspamd/rspamd.conf -f
