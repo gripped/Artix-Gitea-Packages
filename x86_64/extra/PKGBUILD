@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=metalog-s6
-pkgver=20210504
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for metalog"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-metalog')
 conflicts=('init-metalog')
-depends=('metalog' 's6-rc')
+depends=('metalog' 's6-base')
 install=metalog.install
 source=("metalog.run"
         "metalog.type")
