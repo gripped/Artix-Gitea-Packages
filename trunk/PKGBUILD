@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=webhook-s6
-pkgver=20210310
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for webhook"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-webhook')
 conflicts=('init-webhook')
-depends=('webhook' 's6-rc')
+depends=('webhook' 's6-base')
 install=webhook.install
 backup=('etc/s6/sv/webhook-log/conf')
 source=("webhook-log.conf"
