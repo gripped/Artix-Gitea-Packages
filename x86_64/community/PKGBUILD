@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=opensmtpd-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for opensmtpd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-opensmtpd')
 conflicts=('init-opensmtpd')
-depends=('opensmtpd' 's6-rc')
+depends=('opensmtpd' 's6-base')
 install=opensmtpd.install
 backup=('etc/s6/sv/smtpd-log/conf')
 source=("smtpd-srv."{type,run,producer-for}
