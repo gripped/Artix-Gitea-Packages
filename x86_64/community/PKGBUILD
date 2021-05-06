@@ -1,6 +1,6 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=mopidy-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for mopidy"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-mopidy')
 conflicts=('init-mopidy')
-depends=('mopidy' 's6-rc')
+depends=('mopidy' 's6-base')
 backup=('etc/s6/sv/mopidy-log/conf')
 install=mopidy.install
 source=("mopidy-log.conf"
