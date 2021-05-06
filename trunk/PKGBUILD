@@ -1,15 +1,15 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=chrony-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for chrony"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
-provides=('init-chrony')
-conflicts=('init-chrony')
-depends=('chrony' 's6-rc')
+provides=('init-chrony' 'init-cron')
+conflicts=('init-chrony' 'init-cron')
+depends=('chrony' 's6-base')
 install=chrony.install
 backup=('etc/s6/sv/chronyd-log/conf')
 source=("chronyd-srv."{type,run,producer-for}
