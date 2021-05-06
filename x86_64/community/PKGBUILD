@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=prosody-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for prosody"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-prosody')
 conflicts=('init-prosody')
-depends=('prosody' 's6-rc')
+depends=('prosody' 's6-base')
 install=prosody.install
 backup=('etc/s6/sv/prosody-log/conf')
 source=("prosody-srv."{type,run,producer-for,finish}
