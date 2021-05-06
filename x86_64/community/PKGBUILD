@@ -1,7 +1,7 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=erlang-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for epmd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-epmd')
 conflicts=('init-epmd')
-depends=('erlang-nox' 's6-rc')
+depends=('erlang-nox' 's6-base')
 backup=('etc/s6/sv/epmd-log/conf')
 install=epmd.install
 source=("epmd-log.conf"
