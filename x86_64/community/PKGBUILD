@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=opensips-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for opensips"
 arch=('any')
@@ -11,7 +11,7 @@ provides=('init-opensips')
 conflicts=('init-opensips')
 install=opensips.install
 backup=('etc/s6/sv/opensips-log/conf')
-depends=('opensips' 's6-rc')
+depends=('opensips' 's6-base')
 source=("opensips-srv."{type,run,producer-for}
         "opensips-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
 b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
