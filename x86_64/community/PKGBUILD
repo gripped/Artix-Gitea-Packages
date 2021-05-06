@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributor: linuxer <linuxer@artixlinux.org> 
 pkgname=earlyoom-s6
-pkgver=20210326
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for earlyoom"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-earlyoom')
 conflicts=('init-earlyoom')
-depends=('earlyoom' 's6-rc')
+depends=('earlyoom' 's6-base')
 install=earlyoom.install
 backup=('etc/s6/sv/earlyoom-log/conf'
         'etc/s6/sv/earlyoom-srv/conf')
