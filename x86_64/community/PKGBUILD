@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=sslh-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for sslh"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-sslh')
 conflicts=('init-sslh')
-depends=('sslh' 's6-rc')
+depends=('sslh' 's6-base')
 install=sslh.install
 source=("sslh.run" "sslh.type")
 sha256sums=('dd58fbe9cc095120d188051e89228a8ac50fff911a165de614750e6d28428a31'
