@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=php-fpm-runit
 pkgver=20190628
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for php-fpm"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('php-fpm')
+depends=('php-fpm' 'runit')
 conflicts=('init-php-fpm')
 provides=('init-php-fpm')
 source=("php-fpm.run")
