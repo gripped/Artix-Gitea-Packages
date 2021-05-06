@@ -1,6 +1,6 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=minio-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for minio"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-minio')
 conflicts=('init-minio')
-depends=('minio' 's6-rc')
+depends=('minio' 's6-base')
 backup=('etc/s6/sv/minio-log/conf')
 install=minio.install
 source=("minio-log.conf"
