@@ -4,14 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=dhcp-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for dhcp"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
+depends=('runit' 'dhcp')
 provides=('init-dhcp')
-conflicts=('systemd-sysvcompat' 'init-dhcp')
+conflicts=('init-dhcp')
 source=("dhclient.run"
         "dhcpd4.run"
         "dhcpd6.run")
