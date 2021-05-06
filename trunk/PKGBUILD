@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=consul-s6
-pkgver=20210503
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for consul"
 arch=('any')
@@ -11,7 +11,7 @@ groups=('s6-galaxy')
 provides=('init-consul')
 conflicts=('init-consul')
 install=consul.install
-depends=('consul' 's6-rc')
+depends=('consul' 's6-base')
 backup=('etc/s6/sv/consul-log/conf')
 source=("consul-srv."{type,run,producer-for}
         "consul-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
