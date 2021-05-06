@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor:: Nathan Owens <ndowens@artixlinux.org>
 pkgname=redis-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for redis"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-redis')
 conflicts=('init-redis')
-depends=('redis' 's6-rc')
+depends=('redis' 's6-base')
 install=redis.install
 backup=('etc/s6/sv/redis-log/conf')
 source=("redis-srv."{type,run,producer-for}
