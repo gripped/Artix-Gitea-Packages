@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=gdm-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for gdm"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-gdm')
 conflicts=('init-gdm')
-depends=('gdm' 'elogind-s6' 's6-rc')
+depends=('gdm' 'init-logind' 's6-base')
 install=gdm.install
 source=("gdm.dependencies" "gdm.run" "gdm.type")
 sha256sums=('ce701dc7ae4a337f063bbc8968585b5ae3c973b00b3283816d1f476c7b2f5b3b'
