@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=stubby-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for stubby"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-stubby')
 conflicts=('init-stubby')
-depends=('stubby' 's6-rc')
+depends=('stubby' 's6-base')
 install=stubby.install
 backup=('etc/s6/sv/stubby-log/conf')
 source=("stubby-srv."{type,run,producer-for}
