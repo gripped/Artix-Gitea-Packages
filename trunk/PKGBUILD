@@ -5,12 +5,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=spamassassin-runit
 pkgver=20210417
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for spamassassin"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('spamassassin')
+depends=('spamassassin' 'runit')
 groups=('runit-world')
 conflicts=('init-spamassassin')
 provides=('init-spamassassin')
