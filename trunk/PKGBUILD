@@ -2,15 +2,15 @@
 
 pkgname=alsa-utils-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC alsa-utils init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('openrc' 'alsa-utils')
 provides=('init-alsa-utils')
-conflicts=('systemd-sysvcompat' 'init-alsa-utils')
+depends=('openrc' 'alsa-utils')
+conflicts=('init-alsa-utils')
 backup=('etc/conf.d/alsasound')
 source=("alsasound.confd"
         "alsasound.initd")
