@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributor: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=atftp-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for atftp"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-atftp')
 conflicts=('init-atftp')
-depends=('atftp' 's6-rc')
+depends=('atftp' 's6-base')
 install=atftp.install
 backup=('etc/s6/sv/atftpd-log/conf')
 source=("atftpd-srv."{type,run,producer-for}
