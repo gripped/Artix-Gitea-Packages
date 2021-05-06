@@ -1,7 +1,7 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=powerdns-recursor-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for pdns-recursor"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-pdns-recursor')
 conflicts=('init-pdns-recursor')
-depends=('powerdns-recursor' 's6-rc')
+depends=('powerdns-recursor' 's6-base')
 backup=('etc/s6/sv/pdns-recursor-log/conf')
 install=pdns-recursor.install
 source=("pdns-recursor-log.conf"
