@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=iwd-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for iwd"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-iwd')
 conflicts=('init-iwd')
-depends=('iwd' 'dbus-s6' 's6-rc')
+depends=('iwd' 'dbus-s6' 's6-base')
 install=iwd.install
 source=("iwd-srv."{type,run,dependencies,producer-for}
         "iwd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
