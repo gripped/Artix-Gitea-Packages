@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=bumblebee-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for bumblebee"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-bumblebee')
 conflicts=('init-bumblebee')
-depends=('bumblebee' 's6-rc')
+depends=('bumblebee' 's6-base')
 install=bumblebeed.install
 backup=('etc/s6/sv/bumblebeed-log/conf')
 source=("bumblebeed-srv."{type,run,producer-for}
