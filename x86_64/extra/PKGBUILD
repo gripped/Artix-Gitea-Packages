@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=networkmanager-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for networkmanager"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-networkmanager')
 conflicts=('init-networkmanager')
-depends=('networkmanager' 'dbus-s6' 'eudev-s6' 's6-rc')
+depends=('networkmanager' 'dbus-s6' 's6-base')
 install=NetworkManager.install
 backup=('etc/s6/sv/NetworkManager-log/conf')
 source=("NetworkManager-log.conf"
