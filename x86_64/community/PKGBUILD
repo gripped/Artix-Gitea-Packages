@@ -1,6 +1,6 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 pkgname=bolt-s6
-pkgver=20210426
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for bolt"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-bolt')
 conflicts=('init-bolt')
-depends=('bolt' 's6-rc')
+depends=('bolt' 's6-base')
 install=boltd.install
 backup=('etc/s6/sv/bolt-log/conf')
 source=("boltd-log.conf"
