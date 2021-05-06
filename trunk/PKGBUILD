@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=vnstat-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for vnstat"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-vnstat')
 conflicts=('init-vnstat')
-depends=('vnstat' 's6-rc')
+depends=('vnstat' 's6-base')
 install=vnstat.install
 backup=('etc/s6/sv/vnstatd-log/conf')
 source=("vnstatd-srv."{type,run,producer-for}
