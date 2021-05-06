@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+envfile /etc/s6/sv/auditctl/conf
+importas -i AUDITD_CLEAN_STOP AUDITD_CLEAN_STOP
+if { test $AUDITD_CLEAN_STOP = yes } redirfd -w 1 /dev/null auditctl -R /etc/audit/audit-stop.rules
