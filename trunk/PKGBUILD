@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=dnsmasq-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for dnsmasq"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('dnsmasq')
+depends=('dnsmasq' 'runit')
 provides=('init-dnsmasq')
 conflicts=('init-dnsmasq')
 source=("dnsmasq.run")
