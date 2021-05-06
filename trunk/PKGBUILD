@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=tigervnc-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for tigervnc"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-tigervnc')
 conflicts=('init-tigervnc')
-depends=('tigervnc' 's6-rc')
+depends=('tigervnc' 's6-base')
 install=tigervnc.install
 backup=('etc/s6/sv/vncserver/conf')
 source=("vncserver.conf" "vncserver.run" "vncserver.type")
