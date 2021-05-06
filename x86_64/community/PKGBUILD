@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=boinc-runit
 pkgver=20180314
-pkgrel=5
+pkgrel=6
 pkgdesc="Runit service script for boinc"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('boinc')
+depends=('boinc' 'runit')
 groups=('runit-galaxy')
 provides=('init-boinc')
-conflicts=('init-boinc' 'systemd-sysvcompat')
+conflicts=('init-boinc')
 backup=('etc/runit/sv/boinc/conf')
 source=("boinc.run"
         "boinc.conf")
