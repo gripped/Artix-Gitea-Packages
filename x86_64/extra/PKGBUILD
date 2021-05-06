@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=subversion-runit
 pkgver=20200614
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for subversion"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('subversion')
-conflicts=('systemd-sysvcompat' 'init-subversion')
+depends=('subversion' 'runit')
+conflicts=('init-subversion')
 provides=('init-subversion')
 source=("svnserve.run")
 sha256sums=('8559d8ad83cf3ffcaff8090aeeeafd402349b7bbcc26a625e4306d5b2f7dbe74')
