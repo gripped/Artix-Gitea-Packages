@@ -4,12 +4,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=atftp-runit
 pkgver=20200425
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for atftp"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('atftp')
+depends=('atftp' 'runit')
 groups=('runit-galaxy')
 provides=('init-atftp')
 conflicts=('init-atftp')
