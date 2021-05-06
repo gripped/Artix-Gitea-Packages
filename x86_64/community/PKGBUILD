@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lxdm-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for lxdm"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-lxdm')
 conflicts=('init-lxdm')
-depends=('lxdm-gtk3' 's6-rc')
+depends=('lxdm-gtk3' 's6-base')
 install=lxdm.install
 source=("lxdm.run" "lxdm.type")
 sha256sums=('3f630ce447baaf995103494c398b1d1ee6d460082a8d297bb0ef5752306c2e98'
