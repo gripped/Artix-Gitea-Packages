@@ -2,15 +2,15 @@
 
 pkgname=dhcp-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC dhcp init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('openrc' 'dhcp')
 provides=('init-dhcp')
-conflicts=('systemd-sysvcompat' 'init-dhcp')
+depends=('openrc' 'dhcp')
+conflicts=('init-dhcp')
 backup=('etc/conf.d/dhcpd'
         'etc/conf.d/dhcrelay'
         'etc/conf.d/dhcrelay6')
@@ -26,12 +26,12 @@ sha256sums=('e8a413e9102948b336f60041fc3cade33125faf56d8319ee65d9f3c63199a8e7'
             'd05649769734c39e3371e02d3fe3d388a485534462d11141656be868d6f12532')
 
 package() {
-	for f in dhcpd dhcrelay; do
-		install -Dm755 "$srcdir/$f.initd" "$pkgdir/etc/init.d/$f"
-		install -Dm644 "$srcdir/$f.confd" "$pkgdir/etc/conf.d/$f"
-	done
+    for f in dhcpd dhcrelay; do
+        install -Dm755 "${srcdir}/$f".initd "${pkgdir}"/etc/init.d/"$f"
+        install -Dm644 "${srcdir}/$f".confd "${pkgdir}"/etc/conf.d/"$f"
+    done
 
-	install -Dm644 "$srcdir/dhcrelay6.confd" "$pkgdir/etc/conf.d/dhcrelay6"
-	install -Dm755 "$srcdir/dhcrelay.initd" "$pkgdir/etc/init.d/dhcrelay6"
+    install -Dm644 "${srcdir}"/dhcrelay6.confd "${pkgdir}"/etc/conf.d/dhcrelay6
+    install -Dm755 "${srcdir}"/dhcrelay.initd "${pkgdir}"/etc/init.d/dhcrelay6
 }
 
