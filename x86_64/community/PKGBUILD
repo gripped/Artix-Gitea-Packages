@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mailman-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for mailman"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-mailman')
 conflicts=('init-mailman')
-depends=('mailman' 's6-rc')
+depends=('mailman' 's6-base')
 install=mailman.install
 source=("mailman.finish" "mailman.run" "mailman.type")
 sha256sums=('c8acb16058057ecd7bf8024f0578e1408e1c24f13244cd61f1b0f4ba7c967350'
