@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syncthing-relaysrv-s6
-pkgver=20210309
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for syncthing-relaysrv"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-syncthing-relaysrv')
 conflicts=('init-syncthing-relaysrv')
-depends=('syncthing-relaysrv' 's6-rc')
+depends=('syncthing-relaysrv' 's6-base')
 install=syncthing-relaysrv.install
 backup=('etc/s6/sv/relaysrv-log/conf')
 source=("relaysrv-log.conf"
