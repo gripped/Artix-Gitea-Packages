@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=gitea-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for gitea"
 arch=('any')
@@ -10,7 +10,7 @@ groups=('s6-galaxy')
 provides=('init-gitea')
 conflicts=('init-gitea')
 install=gitea.install
-depends=('gitea' 's6-rc')
+depends=('gitea' 's6-base')
 backup=('etc/s6/sv/gitea-log/conf')
 source=("gitea-srv."{type,run,producer-for}
         "gitea-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
