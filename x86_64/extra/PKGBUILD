@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=nginx-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for nginx"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('nginx')
-conflicts=('systemd-sysvcompat' 'init-nginx')
+depends=('nginx' 'runit')
+conflicts=('init-nginx')
 provides=('init-nginx')
 source=("nginx.run")
 sha256sums=('c335100e3e5afa859d0f283828ab5ba9b53ee242a5b3e2cbe843716ca004119e')
