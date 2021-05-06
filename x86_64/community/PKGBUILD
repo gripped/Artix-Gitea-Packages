@@ -1,7 +1,7 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=grafana-s6
-pkgver=20210503
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for grafana"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-grafana')
 conflicts=('init-grafana')
-depends=('grafana' 's6-rc')
+depends=('grafana' 's6-base')
 install=grafana.install
 backup=('etc/s6/sv/grafana-log/conf')
 source=("grafana-log.conf"
