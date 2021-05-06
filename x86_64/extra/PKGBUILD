@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=qemu-guest-agent-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for qemu-guest-agent"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-world')
 provides=('init-qemu-guest-agent')
 conflicts=('init-qemu-guest-agent')
-depends=('qemu-guest-agent' 's6-rc')
+depends=('qemu-guest-agent' 's6-base')
 install=qemu-guest-agent.install
 backup=('etc/s6/sv/qemu-guest-agent-log/conf')
 source=("qemu-guest-agent-log.conf"
