@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fcgiwrap-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for fcgiwrap"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-galaxy')
 provides=('init-fcgiwrap')
 conflicts=('init-fcgiwrap')
-depends=('fcgiwrap' 's6-rc')
+depends=('fcgiwrap' 's6-base')
 install=fcgiwrap.install
 backup=('etc/s6/sv/fcgiwrap-log/conf')
 source=("fcgiwrap-log.conf"
