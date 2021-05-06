@@ -2,15 +2,15 @@
 
 pkgname=avahi-openrc
 pkgver=20210505
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC avahi init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-world')
-depends=('avahi' 'openrc')
 provides=('init-avahi')
-conflicts=('systemd-sysvcompat' 'init-avahi')
+depends=('avahi' 'openrc')
+conflicts=('init-avahi')
 source=('avahi-daemon.initd'
         'avahi-dnsconfd.initd'
         'autoipd-openrc.sh')
