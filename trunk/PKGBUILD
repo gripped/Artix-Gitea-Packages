@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=samba-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for samba"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
-depends=('samba')
+depends=('samba' 'runit')
 conflicts=('init-samba')
 provides=('init-samba')
 source=("smbd.run"
