@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=hostapd-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for hostapd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('hostapd')
+depends=('hostapd' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-hostapd')
+conflicts=('init-hostapd')
 provides=('init-hostapd')
 source=("hostapd.run")
 sha256sums=('1c42d40e94b3dc91ee2a77672fd360503ff9ea988fcec6a46e21a7da6921e774')
