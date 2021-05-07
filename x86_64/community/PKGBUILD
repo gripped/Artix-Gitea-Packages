@@ -4,12 +4,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=rng-tools-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for rng-tools"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('rng-tools')
+depends=('rng-tools' 'runit')
 groups=('runit-galaxy')
 conflicts=('init-rng-tools')
 provides=('init-rng-tools')
