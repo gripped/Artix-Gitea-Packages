@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=ejabberd-runit
 pkgver=20200607
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for ejabberd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-galaxy')
-depends=('ejabberd')
+depends=('ejabberd' 'runit')
 conflicts=('init-ejabberd')
 provides=('init-ejabberd')
 source=("ejabberd.run")
