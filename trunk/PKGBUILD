@@ -1,15 +1,15 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=motion-runit
 pkgver=20210407
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for motion"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('motion')
+depends=('motion' 'runit')
 groups=('runit-galaxy')
 conflicts=('init-motion')
 provides=('init-motion')
