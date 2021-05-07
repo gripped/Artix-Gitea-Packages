@@ -4,12 +4,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=dovecot-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for dovecot"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('dovecot')
+depends=('dovecot' 'runit')
 groups=('runit-galaxy')
 conflicts=('init-dovecot')
 provides=('init-dovecot')
