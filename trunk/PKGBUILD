@@ -4,16 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=espeakup-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for espeakup"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
-depends=('espeakup')
+depends=('espeakup' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-espeakup')
+conflicts=('init-espeakup')
 provides=('init-espeakup')
 source=("espeakup.run")
 sha256sums=('f30855ddbdec2ce512388a849900d76817013125b82325f6b0b6c68699d4fc9a')
