@@ -1,0 +1,5 @@
+#!/usr/bin/execlineb -P
+envfile /etc/s6/sv/ModemManager-srv/conf
+importas -sCiu OPTS OPTS
+fdmove -c 2 1
+exec ModemManager --debug ${OPTS}
