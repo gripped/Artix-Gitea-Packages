@@ -4,12 +4,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=pcsclite-runit
 pkgver=20190202
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for pcsclite"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('pcsclite')
+depends=('pcsclite' 'runit')
 groups=('runit-galaxy')
 conflicts=('init-pcsclite')
 provides=('init-pcsclite')
