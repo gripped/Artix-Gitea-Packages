@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=rspamd-s6
 pkgver=20210506
-pkgrel=1
+pkgrel=2
 pkgdesc="s6-rc service scripts for rspamd"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
-groups=('s6-world')
+groups=('s6-galaxy')
 provides=('init-rspamd')
 conflicts=('init-rspamd')
 depends=('rspamd' 's6-base')
