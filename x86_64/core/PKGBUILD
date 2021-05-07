@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cronie-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for cronie"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
-provides=('init-cronie')
-conflicts=('init-cronie')
-depends=('cronie' 's6-rc')
+provides=('init-cronie' 'init-cron')
+conflicts=('init-cronie' 'init-cron')
+depends=('cronie' 's6-base')
 install=cronie.install
 source=("cronie.run"
         "cronie.type")
