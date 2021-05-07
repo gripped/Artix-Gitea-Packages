@@ -1,17 +1,17 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=unrealircd-runit
 pkgver=20200425
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for unrealircd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('unrealircd')
+depends=('unrealircd' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-unrealircd')
+conflicts=('init-unrealircd')
 provides=('init-unrealircd')
 source=("unrealircd.run")
 sha256sums=('8ca7261a092135f377d74e353b0c9cb4dd467a65e99247a3b5f4678237abc4bb')
