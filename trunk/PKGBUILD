@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=redis-runit
 pkgver=20200614
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for redis"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('redis')
+depends=('redis' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-redis')
+conflicts=('init-redis')
 provides=('init-redis')
 source=("redis.run")
 sha256sums=('a7146c833535888519c1ab52428076389563a4594e1edb2f61f4ba6dd0ce026f')
