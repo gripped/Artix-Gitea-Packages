@@ -2,14 +2,14 @@
 
 pkgname=cryptsetup-runit
 pkgver=20200811
-pkgrel=1
+pkgrel=2
 pkgdesc="runit stage1 script for cryptsetup"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-system')
 provides=('init-cryptsetup')
-depends=('cryptsetup' 'runit')
+depends=('cryptsetup' 'runit-rc')
 conflicts=('init-cryptsetup')
 source=('cryptsetup')
 optdepends=('lvm2-runit: LVM support for encrypted filesystems')
