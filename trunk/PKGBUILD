@@ -4,17 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=krb5-runit
 pkgver=20180605
-pkgrel=4
+pkgrel=5
 pkgdesc="runit service scripts for krb5"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-system')
-depends=('krb5')
+depends=('krb5' 'runit')
 provides=('init-krb5')
-conflicts=('systemd-sysvcompat' 'init-krb5')
+conflicts=('init-krb5')
 source=("kadmind.run"
         "krb5kdc.run")
 sha256sums=('aa0879a6193df0f52b0eff10bb00733c5c2fe31a4374894672e864b32fb3d59e'
