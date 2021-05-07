@@ -1,16 +1,16 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=lvm2-runit
 pkgver=20210205
-pkgrel=1
+pkgrel=2
 pkgdesc="runit stage1 scripts for lvm2"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-system')
-depends=('lvm2' 'runit')
+depends=('lvm2' 'runit-rc')
 provides=('init-lvm2')
 conflicts=('init-lvm2')
 source=("lvm2-monitoring"
