@@ -1,11 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for dbus"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-s6"
-depends=('dbus' 's6-rc')
+groups=('s6-system')
+depends=('dbus' 's6-base')
 provides=('init-dbus')
 conflicts=('init-dbus')
 install=dbus.install
