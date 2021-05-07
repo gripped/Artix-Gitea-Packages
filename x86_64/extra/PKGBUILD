@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=transmission-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for transmission"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-world')
 depends=('runit' 'transmission-cli')
-conflicts=('systemd-sysvcompat' 'init-transmission')
+conflicts=('init-transmission')
 provides=('init-transmission')
 source=("transmission-daemon.run")
 sha256sums=('9dc3fa97c34942c03c5d4c409675ad1ad1fbce27c0ed74c1a40f775f0e05f417')
