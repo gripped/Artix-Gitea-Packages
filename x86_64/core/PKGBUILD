@@ -2,14 +2,14 @@
 
 pkgname=hdparm-runit
 pkgver=20210407
-pkgrel=1
+pkgrel=2
 pkgdesc="runit stage1 script for hdparm"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-system')
 provides=('init-hdparm')
-depends=('hdparm')
+depends=('hdparm' 'runit-rc')
 conflicts=('init-hdparm')
 backup=('etc/rc/hdparm.conf')
 source=('hdparm' 'hdparm.conf')
