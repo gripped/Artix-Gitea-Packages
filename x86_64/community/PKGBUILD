@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=vsftpd-runit
 pkgver=20200614
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for vsftpd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('vsftpd')
+depends=('vsftpd' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-vsftpd')
+conflicts=('init-vsftpd')
 provides=('init-vsftpd')
 source=("vsftpd.run"
         "vsftpd-ipv6.run")
