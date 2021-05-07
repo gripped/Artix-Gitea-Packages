@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=privoxy-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for privoxy"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('privoxy')
+depends=('privoxy' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-privoxy')
+conflicts=('init-privoxy')
 provides=('init-privoxy')
 source=("privoxy.run"
         "logprivoxy.run")
