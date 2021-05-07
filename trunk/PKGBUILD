@@ -1,19 +1,17 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_url="https://github.com/void-linux/void-packages/raw/master/srcpkgs"
-
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=tlp-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for tlp"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('tlp')
+depends=('tlp' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-tlp')
+conflicts=('init-tlp')
 provides=('init-tlp')
 source=("tlp.run"
         "tlp.finish")
