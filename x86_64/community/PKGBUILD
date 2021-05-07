@@ -1,15 +1,15 @@
-# Maintainer: Muhammad Herdiansyah <herdiansyah@netc.eu>
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=intel-undervolt-runit
 pkgver=20210407
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for intel-undervolt"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('intel-undervolt')
+depends=('intel-undervolt' 'runit')
 groups=('runit-galaxy')
 conflicts=('init-intel-undervolt')
 provides=('init-intel-undervolt')
