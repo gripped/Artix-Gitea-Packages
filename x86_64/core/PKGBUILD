@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=gpm-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for gpm"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-gpm')
 conflicts=('init-gpm')
-depends=('gpm' 's6-rc')
+depends=('gpm' 's6-base')
 install=gpm.install
 backup=('etc/s6/sv/gpm-log/conf')
 source=("gpm-log.conf"
