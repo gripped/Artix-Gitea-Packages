@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=audit-runit
 pkgver=20181212
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for audit"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('audit')
+depends=('audit' 'runit')
 groups=('runit-system')
-conflicts=('systemd-sysvcompat' 'init-audit')
+conflicts=('init-audit')
 provides=('init-audit')
 backup=('etc/runit/sv/auditctl/conf')
 source=("auditd.run"
