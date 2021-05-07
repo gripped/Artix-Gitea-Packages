@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=device-mapper-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for device-mapper"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-device-mapper')
 conflicts=('init-device-mapper')
-depends=('device-mapper' 's6-rc')
+depends=('device-mapper' 's6-base')
 install=dmeventd.install
 backup=('etc/s6/sv/dmeventd-log/conf')
 source=("dmeventd-log.conf"
