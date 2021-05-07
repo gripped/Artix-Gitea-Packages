@@ -4,13 +4,13 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=consul-runit
 pkgver=20210429
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for consul"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-galaxy')
-depends=('consul')
+depends=('consul' 'runit')
 conflicts=('init-consul')
 provides=('init-consul')
 source=("consul.run")
