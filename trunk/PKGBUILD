@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=brltty-runit
 pkgver=20180226
-pkgrel=3
+pkgrel=4
 pkgdesc="runit service scripts for brltty"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ license=('BSD')
 groups=('runit-world')
 depends=('brltty' 'runit')
 provides=('init-brltty')
-conflicts=('systemd-sysvcompat' 'init-brltty')
+conflicts=('init-brltty')
 source=("brltty.run")
 sha256sums=('ee62a1f937d2b9606c23f7cc23185def35855e2a5775ce1d1c94d04f1fbd90ed')
 
