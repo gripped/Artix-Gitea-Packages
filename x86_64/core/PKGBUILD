@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nfs-utils-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for nfs-utils"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-nfs-utils')
 conflicts=('init-nfs-utils')
-depends=('nfs-utils' 'device-mapper-s6' 'rpcbind-s6' 's6-rc')
+depends=('nfs-utils' 'device-mapper-s6' 'rpcbind-s6' 's6-base')
 install=nfs-utils.install
 backup=('etc/s6/sv/nfs-server-log/conf'
         'etc/s6/sv/statd-log/conf')
