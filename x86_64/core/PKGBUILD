@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for cryptsetup"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-cryptsetup')
 conflicts=('init-cryptsetup')
-depends=('cryptsetup' 'lvm2' 'eudev-s6' 's6-rc')
+depends=('cryptsetup' 'lvm2' 's6-base')
 install=cryptsetup.install
 source=("dependencies" "shell_up" "type" "up")
 sha256sums=('cf198688579ee8487ea71994dbbbd0c295b58ec92290918e5e612853e5373f99'
