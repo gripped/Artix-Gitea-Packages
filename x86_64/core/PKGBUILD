@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=cronie-runit
 pkgver=20200613
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for cronie"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('runit-system')
 depends=('cronie' 'runit')
-provides=('runit-cron' 'cronie-runscripts' 'init-cron')
-conflicts=('fcron' 'init-fcron' 'init-cron')
+provides=('init-cronie' 'init-cron')
+conflicts=('fcron' 'init-cronie' 'init-cron')
 source=("cronie.run")
 sha256sums=('882836bff4df1d856a40c4d288d88f8e00685f0683e545bc5193bf754be0e1d6')
 
