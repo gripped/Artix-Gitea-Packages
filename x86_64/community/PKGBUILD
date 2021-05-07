@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=fcron-runit
 pkgver=20180314
-pkgrel=4
+pkgrel=5
 pkgdesc="Runit service script for fcron"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('fcron')
+depends=('fcron' 'runit')
 groups=('runit-galaxy')
-provides=('init-fcron')
-conflicts=('init-fcron' 'systemd-sysvcompat' 'cronie' 'init-cron')
+provides=('init-fcron' 'init-cron')
+conflicts=('init-fcron' 'cronie' 'init-cron')
 source=("fcron.run")
 sha256sums=('ee2153404bcfe8b1d284bd0f9d4e74de778964f10bbab97bf7b960dd7daf0e10')
 
