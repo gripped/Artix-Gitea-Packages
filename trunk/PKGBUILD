@@ -4,17 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=ntp-runit
 pkgver=20210301
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for ntp"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('ntp' 'runit')
-conflicts=('systemd-sysvcompat' 'openntpd' 'init-openntpd' 'init-ntp')
-provides=('init-ntp')
+conflicts=('openntpd' 'init-ntp' 'init-timed')
+provides=('init-ntp' 'init-timed')
 source=("ntpd.run")
 sha256sums=('6ee5781605810724601793dce19c9ae946a825bf5796ca757a018be9f0a0fd8b')
 
