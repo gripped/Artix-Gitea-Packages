@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+if -t { test -e /var/lib/alsa/asound.state } exec alsactl restore
