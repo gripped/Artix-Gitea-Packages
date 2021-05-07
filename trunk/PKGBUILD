@@ -4,17 +4,15 @@ _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's
 
 pkgname=deluge-runit
 pkgver=20200711
-pkgrel=2
+pkgrel=3
 pkgdesc="runit service scripts for deluge"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-# Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
-#       included runscript should follow it's main package's licenses.
 groups=('runit-world')
 depends=('runit' 'deluge')
 provides=('init-deluge')
-conflicts=('systemd-sysvcompat' 'init-deluge')
+conflicts=('init-deluge')
 source=("deluged.run"
         "deluge-web.run")
 sha256sums=('b7c11c88986f76af8c9ed9b7b3b33e0a2a5f4ff25e3bcd40640308f0f94a15e4'
