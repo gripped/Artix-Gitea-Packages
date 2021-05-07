@@ -4,12 +4,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=ufw-runit
 pkgver=20200614
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for ufw"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('ufw')
+depends=('ufw' 'runit')
 groups=('runit-galaxy')
 conflicts=('init-ufw')
 provides=('init-ufw')
