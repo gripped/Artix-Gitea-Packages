@@ -11,6 +11,8 @@ post_install() {
 
 post_upgrade() {
     post_install
+    echo "  A tmpfs will now be mounted by default in /tmp!"
+    echo "  Please do not save any important files there!"
 }
 
 post_remove() {

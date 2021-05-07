@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20210504
+pkgver=20210506
 pkgrel=1
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
@@ -25,7 +25,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/udevd-log/conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=204b4da5e8b4b1f437fb7f2390da40e1f9608f11
+_commit=589a855f44b4a7c7d734d8c1cb3ff83131baa74d
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -57,6 +57,9 @@ package() {
     install -d "${pkgdir}"/usr/share/man/man8
     install -Dm644 "${srcdir}"/s6-scripts/modules-load.8 "${pkgdir}"/usr/share/man/man8
 
+    # temporarily leave out the mount-tmpfs dependency for now to avoid automatically overwriting a user's current /tmp dir
+    sed -i '/mount-tmpfs/d' $srcdir/s6-scripts/mount-filesystems/dependencies
+
     # install startup/shutdown scripts
     _inst_sv 'agetty-serial'
     _inst_sv 'agetty-tty1'
@@ -86,6 +89,7 @@ package() {
     _inst_sv 'mount-net'
     _inst_sv 'mount-procfs'
     _inst_sv 'mount-sysfs'
+    _inst_sv 'mount-tmpfs'
     _inst_sv 'net-lo'
     _inst_sv 'random-seed'
     _inst_sv 'rc-local'
@@ -93,7 +97,7 @@ package() {
     _inst_sv 'setup'
     _inst_sv 'swap'
     _inst_sv 'sysctl'
-    _inst_sv 'sysuser'
+    _inst_sv 'sysusers'
     _inst_sv 'tmpfiles-dev'
     _inst_sv 'tmpfiles-setup'
     _inst_sv 'udev'
