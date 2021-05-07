@@ -4,14 +4,14 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=strongswan-runit
 pkgver=20200425
-pkgrel=3
+pkgrel=4
 pkgdesc="Runit service script for strongswan"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('strongswan')
+depends=('strongswan' 'runit')
 groups=('runit-galaxy')
-conflicts=('systemd-sysvcompat' 'init-strongswan')
+conflicts=('init-strongswan')
 provides=('init-strongswan')
 source=("strongswan.run")
 sha256sums=('e5519ca41b57b5ee19cda98f18ba4c7b0f29718623a79df504dc01c8da5cae83')
