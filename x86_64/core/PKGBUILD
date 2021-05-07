@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mdadm-s6
-pkgver=20210414
+pkgver=20210506
 pkgrel=1
 pkgdesc="s6-rc service scripts for mdadm"
 arch=('any')
@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artixlinux/packages-s6"
 groups=('s6-system')
 provides=('init-mdadm')
 conflicts=('init-mdadm')
-depends=('mdadm' 's6-rc')
+depends=('mdadm' 's6-base')
 install=mdadm.install
 backup=('etc/s6/sv/mdadm-log/conf')
 source=("mdadm-log.conf"
