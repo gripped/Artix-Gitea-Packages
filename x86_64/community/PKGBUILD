@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=tigervnc-s6
-pkgver=20210506
+pkgver=20210507
 pkgrel=1
 pkgdesc="s6-rc service scripts for tigervnc"
 arch=('any')
@@ -12,8 +12,8 @@ depends=('tigervnc' 's6-base')
 install=tigervnc.install
 backup=('etc/s6/sv/vncserver/conf')
 source=("vncserver.conf" "vncserver.run" "vncserver.type")
-sha256sums=('e459e30657a12ac1eda614f5b943c08ae6d96b817054f67749f6e5bf9239c438'
-            '3ebf4451f73570961c499f9576e55ec328bf365f9891c0500e0a76786e17b2f6'
+sha256sums=('1ddfbb4225a99057cb01964435f9a04a89110b3b99e61ffc193f005847fc345d'
+            'e5aeaeb56c22fe4f2fda0d88c5ab6de2be0ac3d4a1abbec71c83c85cff630769'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
 
 _inst_sv(){
