@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=toxcore-s6
-pkgver=20210506
+pkgver=20210507
 pkgrel=1
 pkgdesc="s6-rc service scripts for toxcore"
 arch=('any')
@@ -18,7 +18,6 @@ source=("toxbootstrapd-log.conf"
         "toxbootstrapd-log.pipeline-name"
         "toxbootstrapd-log.run"
         "toxbootstrapd-log.type"
-        "toxbootstrapd-srv.conf"
         "toxbootstrapd-srv.producer-for"
         "toxbootstrapd-srv.run"
         "toxbootstrapd-srv.type")
@@ -28,7 +27,6 @@ sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
             '68c713467643723cdcd8ae003111f34d88020a11667f619410fd224e783260ac'
             'cd109598b298f913ffbbf467ff9ecdb5a70eaa5b18060fe456f6e1be41eb7db0'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '4ee919149c16252b285b80bab4d219e3210b5fc0a14ab39c9227e9c5b7fcdc44'
             '610be10eaa146b0bcb2d4b6b4cd137d3f9237c3b957395290a706c53ffa67a33'
             '692a272c4ea0bca5ccfffdc2a35acd2a5f70221541ccbb979135c6ff5bc4c024'
             'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')

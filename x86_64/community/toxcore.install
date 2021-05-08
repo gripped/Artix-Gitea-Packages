@@ -5,6 +5,5 @@ pre_remove() {
 }
 
 post_remove() {
-  rm -rf /etc/s6/sv/toxbootstrapd-srv
   rm -rf /etc/s6/sv/toxbootstrapd-log
 }
