@@ -2,15 +2,15 @@
 
 pkgname=chrony-openrc
 pkgver=20210506
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC chrony init"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
 groups=('openrc-galaxy')
-provides=('init-chrony')
+provides=('init-chrony' 'init-timed')
 depends=('openrc' 'chrony')
-conflicts=('init-chrony')
+conflicts=('init-chrony' 'init-timed')
 backup=('etc/conf.d/chrony')
 source=("chrony.confd"
         "chrony.initd")
