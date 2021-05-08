@@ -1,6 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
+
 pkgname=syntax-highlighting
 pkgver=5.82.0
 pkgrel=1
