@@ -2,7 +2,7 @@
 
 pkgname=networkmanager-openrc
 pkgver=20210505
-pkgrel=2
+pkgrel=3
 pkgdesc="OpenRC networkmanager init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -12,9 +12,14 @@ provides=('init-networkmanager')
 depends=('openrc' 'networkmanager')
 conflicts=('init-networkmanager')
 backup=('etc/conf.d/NetworkManager')
-source=("NetworkManager.initd")
-sha256sums=('01a42dde972c2643c70fc6ed014ea509ff1068d90fcf1df2b20abd4b2e080fac')
+source=("NetworkManager".{initd,confd}
+        '10-openrc-status')
+sha256sums=('68112da36d4ce1494bc47f662f9170afc3a49555718c3d27580d16ac6b7f458f'
+            '4594573f01fe5e04b6dde4525796acf909158591bdcefd662ec23fe0d1c3e1bd'
+            'df1fa96d6a9f423899834b5ea0d743972349e84dd790f177e0a09f22fc44cce0')
 
 package() {
     install -Dm755 "${srcdir}"/NetworkManager.initd "${pkgdir}"/etc/init.d/NetworkManager
+
+    install -Dm755 "${srcdir}"/10-openrc-status "${pkgdir}"/etc/NetworkManager/dispatcher.d/10-openrc-status
 }
