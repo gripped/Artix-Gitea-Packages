@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
 pkgver=20210511
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
@@ -29,6 +29,9 @@ source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
 package() {
-    cd ${pkgname}
-    make DESTDIR=${pkgdir} install
+    # temporarily leave out the mount-tmpfs dependency for now to avoid automatically overwriting a user's current /tmp dir
+    sed -i '/mount-tmpfs/d' "$srcdir"/s6-scripts/mount-filesystems/dependencies
+
+    cd "${pkgname}"
+    make DESTDIR="${pkgdir}" install
 }
