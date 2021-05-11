@@ -5,6 +5,7 @@ Type = Path
 Target = usr/bin/openrc-init
 Target = usr/bin/runit-init
 Target = usr/bin/s6-init
+Target = usr/bin/suite66-init
 
 [Action]
 Description = Setting init symlink ...
