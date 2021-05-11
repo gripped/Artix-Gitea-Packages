@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20210506
+pkgver=20210510
 pkgrel=1
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
@@ -19,13 +19,13 @@ backup=('etc/s6/rc.local'
         'etc/s6/sv/agetty-tty4/conf'
         'etc/s6/sv/agetty-tty5/conf'
         'etc/s6/sv/agetty-tty6/conf'
-        'etc/s6/sv/dmesg/conf'
+        'etc/s6/sv/dmesg-log/conf'
         'etc/s6/sv/mount-net/dependencies'
         'etc/s6/sv/rc-local/dependencies'
         'etc/s6/sv/udevd-log/conf')
 install=s6-scripts.install
 makedepends=('git')
-_commit=589a855f44b4a7c7d734d8c1cb3ff83131baa74d
+_commit=563c18a04b850aad02008e56b5245e08bf72a5f6
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -73,7 +73,8 @@ package() {
     _inst_sv 'cleanup'
     _inst_sv 'console-setup'
     _inst_sv 'default'
-    _inst_sv 'dmesg'
+    _inst_sv 'dmesg-log'
+    _inst_sv 'dmesg-srv'
     _inst_sv 'early-getty-down'
     _inst_sv 'getty'
     _inst_sv 'hostname'
