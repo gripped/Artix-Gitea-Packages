@@ -7,14 +7,14 @@
 pkgname=lxd
 _pkgname=lxd
 _lxd=github.com/lxc/lxd
-pkgver=4.13
+pkgver=4.14
 pkgrel=1
 pkgdesc="Daemon based on liblxc offering a REST API to manage containers"
 arch=('x86_64')
 url="https://linuxcontainers.org/lxd"
 license=('APACHE')
 depends=('lxc' 'lxcfs' 'squashfs-tools' 'dnsmasq' 'dqlite' 'libuv' 'ebtables')
-makedepends=('go' 'git' 'tcl' 'apparmor' 'libseccomp' 'eudev')
+makedepends=('go' 'git' 'tcl' 'apparmor' 'libseccomp' 'udev')
 optdepends=(
     'lvm2: for lvm2 support'
     'thin-provisioning-tools: for thin provisioning support'
@@ -23,13 +23,13 @@ optdepends=(
     'cdrtools: VM support'
     'qemu: VM support'
     'ovmf: VM support'
-    'libeudev: unix device hotplug support'
+    'libudev: unix device hotplug support'
     'apparmor: apparmor support'
 )
 source=("https://linuxcontainers.org/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         "lxd.sysusers")
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
-sha256sums=('8efd95ad4023e0d197490deb169512977ce81e3560cfd5dd93511ae438405970'
+sha256sums=('1e1ea51aec8860faae3028820d38df66f3dbf70436bc2749117c8c21c1d92ff5'
             'SKIP'
             'd0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4')
 
