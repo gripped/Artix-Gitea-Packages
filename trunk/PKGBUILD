@@ -11,8 +11,9 @@ conflicts=('init-cryptsetup')
 depends=('cryptsetup' 'lvm2' 's6-base')
 makedepends=('git')
 _commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
 install=cryptsetup.install
-source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit#commit=$_commit")
 sha256sums=('SKIP')
 
 package() {
