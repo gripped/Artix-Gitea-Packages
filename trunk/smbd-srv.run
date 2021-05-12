@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /run/samba }
-exec smbd -F -S -d=1 --no-process-group
