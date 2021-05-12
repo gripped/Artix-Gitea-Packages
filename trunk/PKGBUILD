@@ -66,6 +66,8 @@ _build() (
     --enable-sdl \
     --enable-slirp=system \
     --enable-xfsctl \
+    # build currently fails if these are enabled
+    --disable-docs \
     "${@:2}"
 
   ninja
