@@ -1,6 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -n -t { test -d /var/lib/jenkins } install -dm 0755 -o jenkins -g jenkins /var/lib/jenkins }
-export JENKINS_USER jenkins
-export JENKINS_HOME /var/lib/jenkins
-fdmove -c 2 1
-s6-setuidgid jenkins exec java -Xmx512m -jar /usr/share/java/jenkins/jenkins.war
