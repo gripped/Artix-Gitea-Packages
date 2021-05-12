@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /var/lib/dhcp }
-foreground { touch /var/lib/dhcp/dhcpd.leases }
-exec dhcpd -f -6 -q -pf /run/dhcpd6.pid
