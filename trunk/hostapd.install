@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/hostapd-srv" ]; then
-        s6-rc -d change hostapd
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/hostapd-log
-}
