@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -nt { test -d /run/pdns-recursor } install -dm755 -o pdns-recursor /run/pdns-recursor }
-fdmove -c 2 1
-exec sh -c "/usr/bin/pdns_recursor --setuid=pdns-recursor --daemon=no --disable-syslog=yes --write-pid=no --config-dir=/etc/powerdns --socket-dir=/run/pdns-recursor"
