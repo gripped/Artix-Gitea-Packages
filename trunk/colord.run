@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /var/lib/colord }
-foreground { chown -R colord:colord /var/lib/colord }
-s6-setuidgid colord exec /usr/lib/colord
