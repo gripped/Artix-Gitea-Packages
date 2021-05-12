@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/avahi-daemon-srv" ]; then
-        s6-rc -d change avahi-daemon
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/avahi-daemon-log
-}
