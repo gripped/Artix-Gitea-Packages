@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20210511
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for lvm2"
 arch=('any')
@@ -16,6 +16,6 @@ source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
 sha256sums=('SKIP')
 
 package() {
-    cd $srcdir/s6-services
-    sh install.sh lvm2 $pkgdir
+    cd "${srcdir}"/s6-services
+    sh install.sh "lvm2" "${pkgdir}"
 }
