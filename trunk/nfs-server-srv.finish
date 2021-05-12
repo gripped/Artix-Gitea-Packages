@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { umount -l /proc/fs/nfsd }
-foreground { umount-l /var/lib/nfs/rpc_pipefs }
-foreground { rpc.nfsd -- 0 }
-foreground { exportfs -a -u }
