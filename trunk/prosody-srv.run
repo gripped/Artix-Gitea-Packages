@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { chown prosody:jabber /var/lib/prosody }
-foreground { sh -c "sed -i 's/daemonize = true/daemonize = false/' /etc/prosody/prosody.cfg.lua" }
-fdmove -c 2 1
-exec prosodyctl start
