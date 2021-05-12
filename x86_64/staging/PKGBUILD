@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=alsa-utils-s6
-pkgver=20210511
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for alsa-utils"
 arch=('any')
@@ -9,8 +9,9 @@ groups=('s6-world')
 provides=('init-alsa-utils')
 conflicts=('init-alsa-utils')
 depends=('alsa-utils' 's6-base')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
 makedepends=('git')
-source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
 package() {
