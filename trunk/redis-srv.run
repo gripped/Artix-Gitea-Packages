@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { install -dm 0700 -o redis -g redis /var/lib/redis }
-foreground { install -dm 0750 -o redis -g redis /run/redis }
-fdmove -c 2 1
-exec redis-server /etc/redis.conf
