@@ -1,8 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/kadmind" ]; then
-        s6-rc -d change kadmind
-    fi
-    if [ -e "/run/service/krb5kdc" ]; then
-        s6-rc -d change krb5kdc
-	fi
-}
