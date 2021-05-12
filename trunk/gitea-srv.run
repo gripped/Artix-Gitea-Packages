@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-export HOME /var/lib/gitea
-fdmove -c 2 1
-/usr/bin/gitea web -w /var/lib/gitea --config /etc/gitea/app.ini
