@@ -9,6 +9,7 @@ groups=('s6-world')
 provides=('init-bind')
 conflicts=('init-bind')
 depends=('bind' 's6-base')
+makedepends=('git')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
 sha256sums=('SKIP')
 
