@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wireguard-s6
-pkgver=20210511
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for wireguard"
 arch=('any')
@@ -10,8 +10,9 @@ groups=('s6-world')
 provides=('init-wireguard')
 conflicts=('init-wireguard')
 depends=('wireguard-tools' 'resolvconf' 's6-base')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
 makedepends=('git')
-source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
 package() {
