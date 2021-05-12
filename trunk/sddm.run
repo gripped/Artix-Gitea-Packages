@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /var/lib/sddm }
-foreground { chown -R sddm:sddm /var/lib/sddm }
-exec sddm
