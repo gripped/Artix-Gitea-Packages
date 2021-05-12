@@ -9,7 +9,7 @@
 pkgbase=dropbear
 pkgname=(dropbear dropbear-scp)
 pkgver=2020.81
-pkgrel=2
+pkgrel=3
 pkgdesc='Lightweight SSH server'
 arch=(x86_64)
 url='https://github.com/mkj/dropbear'
@@ -17,13 +17,13 @@ license=(MIT)
 options=(emptydirs)
 makedepends=(git)
 validpgpkeys=('F7347EF2EE2E07A267628CA944931494F29C6773')
-source=("git+$url#commit=80e928170150f2f11ce6aeaa030870608bb6323b" # tag: DROPBEAR_2020.80
-  localoptions.h)
-sha256sums=('SKIP'
-            'a284c2a2570d5b1f98f38fc044ab6fd45b9834be7a91216df7f159257b54e0bc')
+source=("git+$url#commit=d852d69b50187dd81d424846e7dc677ec57e2d4f" # tag: DROPBEAR_2020.81
+        localoptions.h)
+b2sums=('SKIP'
+        '49628bbce0d26eb33598de276ede705bd592a38b7892c9db0ceebfb0598a1ee6e7e84ed03dbf255ee1adcad0c5214d38dc03e6c04176a405f59a19765cb28388')
 
 prepare() {
-  cp -f localoptions.h $pkgname/localoptions.h
+  cp -fv localoptions.h $pkgname/localoptions.h
 }
 
 build() {
@@ -51,5 +51,5 @@ package_dropbear-scp() {
   make -C $pkgbase install PROGRAMS=scp DESTDIR="$pkgdir"
   install -Dm644 $pkgbase/LICENSE \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  rmdir "$pkgdir/usr/share/man"{/man1,}
+  rmdir "$pkgdir/usr/share/man/"{man1,}
 }
