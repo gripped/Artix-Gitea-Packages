@@ -1,6 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /var/cache/backlight }
-pipeline { ls /sys/class/backlight }
-forstdin CARD
-importas -u card CARD
-exec -c cp /var/cache/backlight/${card}-brightness-old /sys/class/backlight/${card}/brightness
