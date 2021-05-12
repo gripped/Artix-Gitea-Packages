@@ -1,9 +1,0 @@
-pre_remove() {
-	if [ -e /run/service/grafana-srv ]; then
-		s6-rc -d change grafana
-	fi
-}
-
-pre_remove() {
-	rm /etc/s6/sv/grafana-log/conf
-}
