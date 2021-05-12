@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-fdmove -c 2 1
-exec /usr/bin/fail2ban-client -s /run/fail2ban.socket --logtarget stdout -fx start

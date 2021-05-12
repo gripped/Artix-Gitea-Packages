@@ -1,9 +1,0 @@
-pre_remove() {
-	if [ -e /run/service/fail2ban-srv ] || [ -e /run/service/fail2ban-log ]; then
-		s6-rc -d change fail2ban
-	fi
-}
-
-post_remove() {
-	rm -rf /etc/s6/sv/fail2ban-log
-}
