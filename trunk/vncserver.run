@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-envfile /etc/s6/sv/vncserver/conf
-importas -iu DISPLAY DISPLAY
-importas -iu USER USER
-exec s6-fghack vncsession ${USER} ${DISPLAY}
