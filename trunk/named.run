@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /run/named }
-foreground { chown named:named /run/named }
-exec named -u named -f -c /etc/named/named.conf
