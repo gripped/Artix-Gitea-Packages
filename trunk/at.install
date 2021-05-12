@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/at-srv" ]; then
-        s6-rc -d change at
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/at-log
-}
