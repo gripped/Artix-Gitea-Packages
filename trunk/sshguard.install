@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/sshguard" ]; then
-        s6-rc -d change sshguard
-    fi
-}
