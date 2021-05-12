@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wpa_supplicant-s6
 pkgver=20210512
-pkgrel=1
+pkgrel=2
 pkgdesc="s6-rc service scripts for wpa_supplicant"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
@@ -12,8 +12,9 @@ depends=('wpa_supplicant' 's6-base')
 makedepends=('git')
 optdepends=('dhcpcd-s6: dhcpcd integration')
 install=wpa_supplicant.install
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
 backup=('etc/s6/config/wpa_supplicant.conf')
-source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
 package() {
