@@ -2,7 +2,7 @@
 
 pkgname=networkmanager-openrc
 pkgver=20210505
-pkgrel=4
+pkgrel=5
 pkgdesc="OpenRC networkmanager init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -14,7 +14,7 @@ conflicts=('init-networkmanager')
 backup=('etc/conf.d/NetworkManager')
 source=("NetworkManager".{initd,confd}
         '10-openrc-status')
-sha256sums=('7449cebc89ad855d3f7b11e72ec89b6037871a3f11c1cd03ba5614a36c14c738'
+sha256sums=('e131c21f68eaf920993f9a28a0e558cfabec71a15ea953cde336c2345355c369'
             '4594573f01fe5e04b6dde4525796acf909158591bdcefd662ec23fe0d1c3e1bd'
             'd32a21c0683cf7a09370b35b7e3d3b3f28f5d4d242ecde2c866cfb400b94bcbe')
 

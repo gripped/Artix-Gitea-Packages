@@ -21,7 +21,9 @@ start_pre() {
 
     yesno "${IN_BACKGROUND}" && return 0
 
-    [ -z "${INACTIVE_TIMEOUT}" ] && INACTIVE_TIMEOUT="1"
+    if [ -z "${INACTIVE_TIMEOUT}" ]; then
+        INACTIVE_TIMEOUT="1"
+    fi
 }
 
 stop_pre() {
