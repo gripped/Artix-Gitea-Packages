@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-envfile /etc/s6/sv/tlp/conf
-importas -iu DIRECTIVES DIRECTIVES
-foreground { if -n -t { test -d /var/log/tlp } install -dm 755 -o s6log -g s6log /var/log/tlp }
-fdmove -c 2 1 pipeline { exec tlp init start } sh -c "s6-log -b ${DIRECTIVES} /var/log/tlp"
