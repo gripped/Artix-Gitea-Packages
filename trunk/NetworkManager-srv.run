@@ -1,7 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -m0755 -p /etc/NetworkManager/dispatcher.d }
-foreground { mkdir -m0755 -p /etc/NetworkManager/VPN }
-foreground { mkdir -m0755 -p /etc/NetworkManager/system-connections }
-foreground { mkdir -m0700 -p /var/lib/NetworkManager }
-fdmove -c 2 1
-exec NetworkManager -d
