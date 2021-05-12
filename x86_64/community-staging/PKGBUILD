@@ -9,6 +9,7 @@ groups=('s6-galaxy')
 provides=('init-backlight')
 conflicts=('init-backlight')
 depends=('s6-base')
+makedepends=('git')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
 sha256sums=('SKIP')
 
