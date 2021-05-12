@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wpa_supplicant-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for wpa_supplicant"
 arch=('any')
@@ -17,6 +17,6 @@ source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
 sha256sums=('SKIP')
 
 package() {
-    cd $srcdir/s6-services
-    sh install.sh wpa_supplicant $pkgdir
+    cd "${srcdir}"/s6-services
+    sh install.sh "wpa_supplicant" "${pkgdir}"
 }
