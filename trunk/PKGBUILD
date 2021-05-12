@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
 pkgver=20210512
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
 provides=('init-udev' 'eudev-s6')
-depends=('bash' 'execline' 'pam' 's6-rc')
+depends=('bash' 'execline' 'pam' 's6-rc' 'udev')
 replaces=('eudev-s6')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
             'lvm2-s6: lvm2 boot script support')
