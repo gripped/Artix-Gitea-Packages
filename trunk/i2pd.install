@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/i2pd-srv" ]; then
-        s6-rc -d change i2pd
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/i2pd-log
-}

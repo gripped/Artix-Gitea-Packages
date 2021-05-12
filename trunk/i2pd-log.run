@@ -1,6 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -n -t { test -d /var/log/i2pd } install -d -m 0755 -o s6log -g s6log /var/log/i2pd }
-foreground { chown -R s6log:s6log /var/log/i2pd }
-envfile /etc/s6/sv/i2pd-log/conf
-importas -sCiu DIRECTIVES DIRECTIVES
-s6-setuidgid s6log exec -c s6-log -d3 -b -- ${DIRECTIVES} /var/log/i2pd
