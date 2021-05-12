@@ -9,6 +9,7 @@ groups=('s6-system')
 provides=('init-cronie' 'init-cron')
 conflicts=('init-cronie' 'init-cron')
 depends=('cronie' 's6-base')
+makedepends=('git')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
 sha256sums=('SKIP')
 
