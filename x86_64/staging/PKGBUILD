@@ -10,9 +10,8 @@ depends=('dbus' 's6-base')
 makedepends=('git')
 provides=('init-dbus')
 conflicts=('init-dbus')
-backup=('etc/s6/sv/dbus-log/conf'
+backup=('etc/s6/config/dbus.conf')
 _commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
-        'etc/s6/sv/dbus-srv/conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
