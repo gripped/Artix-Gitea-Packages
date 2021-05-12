@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=udpxy-s6
-pkgver=20210511
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for udpxy"
 arch=('any')
@@ -10,8 +10,9 @@ provides=('init-udpxy')
 conflicts=('init-udpxy')
 depends=('udpxy' 's6-rc')
 makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
 backup=('etc/s6/config/udpxy.conf')
-source=("git+https://gitea.artixlinux.org/artix/s6-services.git")
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
 package() {
