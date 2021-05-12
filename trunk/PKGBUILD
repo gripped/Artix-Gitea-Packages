@@ -56,6 +56,8 @@ build() {
 _build() (
   cd build-$1
 
+    # build currently fails if docs are enabled
+    # disable for now
   ../${pkgname}-${pkgver}/configure \
     --prefix=/usr \
     --sysconfdir=/etc \
@@ -66,7 +68,6 @@ _build() (
     --enable-sdl \
     --enable-slirp=system \
     --enable-xfsctl \
-    # build currently fails if these are enabled
     --disable-docs \
     "${@:2}"
 
