@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/ModemManager-srv" ]; then
-        s6-rc -d change ModemManager
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/ModemManager-log
-}
