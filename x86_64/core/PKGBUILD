@@ -1,36 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: artoo <artoo@artixlinux.org> 
 pkgname=s6-base
-pkgver=1.1
+pkgver=1.5
 pkgrel=1
 pkgdesc='Packages, hooks, and scripts to define a basic s6 init system implementation for Artix Linux.'
-url='https://www.artixlinux.org'
+url='https://gitea.artixlinux.org/artix/alpm-hooks'
 arch=('any')
 license=('GPL')
 depends=('s6' 's6-scripts' 's6-linux-init')
+makedepends=('git')
 provides=('svc-manager' 'init-rc')
 conflicts=('svc-manager' 'init-rc')
-source=('30-binfmt.hook'
-        '30-sysctl.hook'
-        's6-rc-bundle-update'
-        's6-rc-db-update-hook'
-        's6-rc-db-update.hook'
-        's6-rc-hook'
-        's6-rc-install.hook'
-        's6-rc-remove.hook')
-sha256sums=('fc1116d1adbd1a6679cb00fa9a2410d983d53fb10244f69912a9298437f76d5c'
-            '327ca5de9bc3c6eb3d8dab276a5dfeba0b4dc15a609f70c5665b7bd8d7bfc016'
-            '3dfc73bf8eb72912fe54ae07e719c93bb6dbdfade96b58a0e411d13d535fee0c'
-            'e399152bccb12e27561d8da876152c454510a765ce73c515d046c218b4f80285'
-            '0cc066d8b19172aad5207b8cc40012a57b0c96319b5c836737e9f6ac786f0c98'
-            '7bd9807a942b71a3aed82916841c72bfe760ae8207dd61e0fc6862f8e1f57e43'
-            'f5b77175a55c41cbedb3d66d03a434a85d76a60c6e62938f954d896def094aab'
-            '1ad618a72bcd93e890546ecd12af426d95f93dfef5c74e898b50b18ecea44cfe')
+_commit=0f09dfeaf9397bc269e796868b4ec5c573297fe6
+source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    # s6-rc hooks
-    mkdir -p ${pkgdir}/etc/s6/rc
-    mkdir -p ${pkgdir}/usr/share/libalpm/{scripts,hooks}
-    install -Dm755 ${srcdir}/*-hook ${pkgdir}/usr/share/libalpm/scripts
-    install -Dm644 ${srcdir}/*.hook ${pkgdir}/usr/share/libalpm/hooks
-    install -Dm755 ${srcdir}/s6-rc-bundle-update ${pkgdir}/usr/bin/s6-rc-bundle-update
+    cd $srcdir/alpm-hooks
+    make DESTDIR=$pkgdir install_s6
+    install -v -d "${pkgdir}"/etc/s6/rc
 }
