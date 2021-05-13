@@ -9,6 +9,7 @@ pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
 license=('GPL')
+makedepends=('git')
 depends=(
   # very very base
   'filesystem' 'gcc-libs' 'glibc' 'bash'
