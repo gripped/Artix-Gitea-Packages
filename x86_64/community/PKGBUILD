@@ -15,7 +15,7 @@ replaces=('python-pifpaf')
 makedepends=('python-setuptools')
 checkdepends=('python-testrepository' 'python-requests' 'python-testtools' 'python-oslotest'
               'memcached' 'percona-server' 'percona-server-clients' 'postgresql' 'redis'
-              'ceph' 'consul' 'couchdb' 'elasticsearch' 'httpbin' 'rabbitmq')
+              'ceph' 'consul' 'couchdb' 'httpbin' 'rabbitmq')
 source=("https://github.com/jd/pifpaf/archive/$pkgver/$pkgname-$pkgver.tar.gz")
 sha512sums=('98489181f5d79d23b2f4d9d49522bb1e301b0d23b4bd3e358fd10426f4da84955f66c4bd0007379180c3af50f541fbb68f5c7de79ec585e262e266f4ad6e8f1e')
 
