@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = gitea@gitea.artixlinux.org:packagesPython/python-s3transfer.git
+	branch = master
+	commit = 633981f94802d12ffc84aad97b07250a67cd57b1
+	parent = 1be0328b4114fd7ab816edada51eafb0562e8a37
+	method = merge
+	cmdver = 0.4.3
