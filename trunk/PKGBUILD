@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=dnscrypt-proxy-runit
 pkgver=20210513
-pkgrel=1
+pkgrel=2
 pkgdesc="runit service scripts for dnscrypt-proxy"
 arch=('any')
 url="https://artixlinux.org"
@@ -43,10 +43,4 @@ _inst_sv() {
 package() {
     _inst_sv 'dnscrypt-proxy'
     _inst_logsv 'dnscrypt-proxy'
-
-    sed -e 's|dnscrypt_proxy|dnscrypt|g' \
-        -i "${pkgdir}/etc/runit/sv/dnscrypt-proxy/log/run"
-
-    sed -e 's|/etc/dnscrypt-proxy.toml|/etc/dnscrypt-proxy/dnscrypt-proxy.toml|g' \
-        -i "${pkgdir}/etc/runit/sv/dnscrypt-proxy/run"
 }
