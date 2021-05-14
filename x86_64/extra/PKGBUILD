@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=prometheus-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for prometheus"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-prometheus')
 conflicts=('init-prometheus')
 depends=('prometheus' 's6-base')
-install=prometheus.install
-backup=('etc/s6/sv/prometheus-log/conf')
-source=("prometheus-srv."{type,run,producer-for}
-        "prometheus-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'ac87bf3a6ff505b226b590739f39d4a783ca19c59672d3cea1a946dd659f11a4d5ae50c70ae02bf56090fa79943450b281492de3bcb3c0b7409cd8d3b5ce6e65'
-        '9151eef461cc0859df8c057ba52d085d9a5415e2ec0a7a2dff932664ef71e007829f69a3f8119e46d0f3906f1bf39c958fdaaa111da120eb5b4ae3b2f1f83cf2'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '6fe4604e01075a6ba9006357a6fdd771e34398e0d1fce2a73ba1e741259fe1621d4f4b914cf70f5686ebcb7e6d47276c4731a11b35849944aaf34cf1dfeb0895'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        'eccea44ed7a3ae0f504862fd85ebd4b8475f10609bf6895a0aefb25be03277a306316be74a465483c11f2f1b138af5ad4bd820cb69fd8c449f4ff6dc0e2ddc01'
-        'bd254d8265263fa502cff1529bc4ed8a09dc7efe308f35ad9165598bacd587e2cf0ebdbf669cc6e383376b81be623955b00e18f4781620b15b91a1fa9a47a113'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/prometheus.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in prometheus-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/prometheus-srv/${_srv/prometheus-srv./}
-  done
-  
-  for _log in prometheus-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/prometheus-log/${_log/prometheus-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "prometheus" "${pkgdir}"
 }
