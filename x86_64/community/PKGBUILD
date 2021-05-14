@@ -1,48 +1,22 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=powerdns-recursor-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for pdns-recursor"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-pdns-recursor')
 conflicts=('init-pdns-recursor')
 depends=('powerdns-recursor' 's6-base')
-backup=('etc/s6/sv/pdns-recursor-log/conf')
-install=pdns-recursor.install
-source=("pdns-recursor-log.conf"
-        "pdns-recursor-log.consumer-for"
-        "pdns-recursor-log.notification-fd"
-        "pdns-recursor-log.pipeline-name"
-        "pdns-recursor-log.run"
-        "pdns-recursor-log.type"
-        "pdns-recursor-srv.conf"
-        "pdns-recursor-srv.producer-for"
-        "pdns-recursor-srv.run" 
-        "pdns-recursor-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '88a8194b685c5705dcf4dcece35e55a2168bddaba1c90749c84377f7a98273d5'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'd4ae4b18fc1d521c71244afaa65d33cff7c96234eb533e1d5fcc370c1c5934df'
-            '6daa49e67180678fca4d36569bcc4a88411ab8dab71386c7b332163313d365ff'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '4ee919149c16252b285b80bab4d219e3210b5fc0a14ab39c9227e9c5b7fcdc44'
-            'a00680f8b0950ddf58db507f660875d457c60a5fdcfd0ac33e39dc717d914ad8'
-            '224296044647a2bd1c7e42c1ecc16f6a08ee248d5129be9f757083eb39db244f'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/powerdns-recursor.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'pdns-recursor-log'
-    _inst_sv 'pdns-recursor-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "powerdns-recursor" "${pkgdir}"
 }
