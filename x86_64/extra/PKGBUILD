@@ -1,28 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sddm-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for sddm"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-sddm')
 conflicts=('init-sddm')
 depends=('sddm' 'elogind-s6' 's6-base')
-install=sddm.install
-source=("sddm.dependencies" "sddm.run" "sddm.type")
-sha256sums=('40c2658b1781fa7250f55d7daec005ac0d43dc04c500a634cdd056e276146413'
-            '5ac43a5c1d0971f2d6d1036882ef468467328b946b53c882f20c8a028bf24f63'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in dependencies run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'sddm'
+    cd "${srcdir}"/s6-services
+    sh install.sh "sddm" "${pkgdir}"
 }
