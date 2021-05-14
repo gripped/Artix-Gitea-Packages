@@ -1,32 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fuse-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for fuse"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-fuse')
 conflicts=('init-fuse')
 depends=('fuse' 's6-base')
-install=fuse.install
-source=("fuse.dependencies"
-        "fuse.down"
-        "fuse.type"
-        "fuse.up")
-sha256sums=('98f44254aec6dd6b0a37ddb732118b5817479cc5cdb001c410964cbdca1c0114'
-            'bb6795df788580f573a8fb0800f53cbd83406a53a92b6a56c50a8f6f2d14401c'
-            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '4909550fe00251e1118a1094b955af5257e8ca2d7ac2aee5afb2fe01daa28c0d')
-
-_inst_sv(){
-    for file in dependencies down type up; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'fuse'
+    cd "${srcdir}"/s6-services
+    sh install.sh "fuse" "${pkgdir}"
 }
