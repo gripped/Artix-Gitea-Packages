@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=squid-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for squid"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-squid')
 conflicts=('init-squid')
 depends=('squid' 's6-base')
-install=squid.install
-backup=('etc/s6/sv/squid-log/conf')
-source=("squid-srv."{type,run,producer-for}
-        "squid-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'bd233a2c8115bcab7f8fb630e8464071aa2ab555b00bb0a86e5d14cad0fdadf4a3154fdfaf20ac861dfa7777bc18a6bea4cb5340fc34a48c5746efe4c8e872b6'
-        '7811d08f69fe2dfbdd3cd08dfaa235142c20b01a43b2c03be35ceee07231b6b252fd447069288fa0b8fe4c1836896225178ad7df79a93cf9add15664b1edd6ed'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'ee82172b07ea74662078b9f1f0d40ced93035366cb76a403a6131a5eee839fab70187fa716a962627a19cad445762b77c7e15d5628c2467e72dc28ed81674f4a'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '87ae3d65786cda2bbdb3922ae587855879cb87716c9e70438a66676a29c327b9933c345cf4a34d6b314d6b42dd70543e7ca7415f9da5b246fe7db3b1ea5ae419'
-        '6a2c7cdd38b55d91e854b26430416246004a4c9d571f1fdd6f215b83157cce94de781a6e0e0e905388774ddceb84ef1ee05f7467f4d45fb77a4bac885722e09e'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/squid.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in squid-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/squid-srv/${_srv/squid-srv./}
-  done
-  
-  for _log in squid-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/squid-log/${_log/squid-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "squid" "${pkgdir}"
 }

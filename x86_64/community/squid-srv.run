@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -n -t { test -d /run/squid } install -o squid -g squid -m 0755 -d /run/squid }
-foreground { squid -N -z }
-fdmove -c 2 1
-exec squid -N
