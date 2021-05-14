@@ -1,36 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=cyrus-sasl-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for cyrus-sasl"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-cyrus-sasl')
 conflicts=('init-cyrus-sasl')
 depends=('cyrus-sasl' 's6-base')
-install=saslauthd.install
-backup=('etc/s6/sv/saslauthd-log/conf')
-source=("saslauthd-srv."{type,run,producer-for,conf}
-        "saslauthd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'fd24ecd072ae76da6a048a3ced249a6a0e1322da64b7ae99959ce082caa47d8a7b30aa2ab186f65711573e75d311cda8c7dd77c4e5cec192e5cbc646f6014600'
-        'c05903232adcb03b2e406d147631cbe0bfb1bceb9e81c679d9b666281fb3a7671fa8e3acb7f5a442afe5a920c8bce8ceda631d5303dbbd85692c3fb2d43dabc3'
-        '5eba62f4a1620eda4ae8ee916744aaa12d15fe722049c3cdae7afe2c2093cb150218203b5ee397ebca59eb90f86e5b8927a39dccf2e97ecc8fbcc57a45875818'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '10b5e5e514f69deb90c00b4be8c2552665ad9bc7f44cc87f75f87c0291e4d1608be8081546b5ee731694b2b7068ee20fe0ca9b6a8140f95966b86f93f0187c8e'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '741693bd06ca4fd00ddfad17108451718e2250e24b63c038a8e7d3d44e08f04da229a5e1335d3a203b9ca4f5afed0bf00928c10e0a1eca4b2471df8acbce2d90'
-        'eee75595974bee4115171cf8a15f741c8e04aa11d64d08afe5f5f17b741c950df96673daba44ebc07a0df0777d496a90c54995bb5fb365165850f6880aaf13ad'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/cyrus-sasl.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in saslauthd-srv.{type,run,producer-for,conf}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/saslauthd-srv/${_srv/saslauthd-srv./}
-  done
-  
-  for _log in saslauthd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/saslauthd-log/${_log/saslauthd-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "cyrus-sasl" "${pkgdir}"
 }
