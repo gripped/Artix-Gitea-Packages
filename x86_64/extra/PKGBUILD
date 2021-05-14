@@ -1,66 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=samba-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for samba"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-samba')
 conflicts=('init-samba')
 depends=('samba' 's6-base')
-install=samba.install
-backup=('etc/s6/sv/nmbd-log/conf'
-        'etc/s6/sv/smbd-log/conf')
-source=("nmbd-log.conf"
-        "nmbd-log.consumer-for"
-        "nmbd-log.notification-fd"
-        "nmbd-log.pipeline-name"
-        "nmbd-log.run"
-        "nmbd-log.type"
-        "nmbd-srv.producer-for"
-        "nmbd-srv.run"
-        "nmbd-srv.type"
-        "smbd-log.conf"
-        "smbd-log.consumer-for"
-        "smbd-log.notification-fd"
-        "smbd-log.pipeline-name"
-        "smbd-log.run"
-        "smbd-log.type"
-        "smbd-srv.producer-for"
-        "smbd-srv.run"
-        "smbd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '8950c1bab15670a3b4fc7908742e0cf6917af15588822fd30f9194d6fcaa42e3'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '7c14efbe7b474f450edab0c84c6340b3979cb49c7e250afc4b68ed57c9e75cb2'
-            '27a8d349339c7332bb7c8ded33cd54bca5693401c1861bb71f63508591d5fd0c'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '3a7e27247f4ca9dcf72ec3ac01d8ed40b061f8f92b333bc7c349d36d159c4698'
-            'daea6230b7df2dc5c96e045de94c620b80785f0094988e0e50fab938a26f30e5'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '72f0c974aa1a0ad565e09dcb318d547008931a7592dd3f4739abd2fee8111ac4'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '0113920ceaec4731231152cb90e4fee1ebcc8b381f4f0ee05ba7076b4b14f50f'
-            '2941d1dce1d540d59ca0fda5a58984bf3971e904793307bca76320b550672de2'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '90a8cbb7fc32fa333f9c781c38bf3f783f309452d64b778a5a45d2d293bcdc49'
-            '8f7fcabc008cb0bfb65135b062fba45a46eea61873174db13814b805338fbb5f'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/samba.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'nmbd-log'
-    _inst_sv 'nmbd-srv'
-    _inst_sv 'smbd-log'
-    _inst_sv 'smbd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "samba" "${pkgdir}"
 }
