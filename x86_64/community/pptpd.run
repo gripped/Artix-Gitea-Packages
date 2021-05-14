@@ -1,2 +1,0 @@
-#!/usr/bin/execlineb -P
-exec pptpd -c /etc/pptpd.conf -p /var/run/pptpd.pid -f
