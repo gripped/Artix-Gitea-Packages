@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=git-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for git"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-git')
 conflicts=('init-git')
 depends=('git' 's6-base')
-install=git-daemon.install
-backup=('etc/s6/sv/git-daemon-log/conf')
-source=("git-daemon-log.conf"
-        "git-daemon-log.consumer-for"
-        "git-daemon-log.notification-fd"
-        "git-daemon-log.pipeline-name"
-        "git-daemon-log.run"
-        "git-daemon-log.type"
-        "git-daemon-srv.producer-for"
-        "git-daemon-srv.run"
-        "git-daemon-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'e0980125d456031d038c6a4a4fb268918146e5443d844e7877cb879f4f8198b5'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '7da9157c5915ca84f51960ea3523ac90a44f4d46d27b18cd34ee5da403fa27a0'
-            'b273c36e41abab12bc8a8f6a0111ce99997bac4e6424956a37ed190afc6d293f'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '3fbe70a6c4eb3ce744ad6b4bfb6c35c38639e3da1fd12c4982df888dbdcbdf06'
-            '231bb0770320f9f135fc7e8ab14bdb93ed942e32a4032def8ffe425f8de21bbd'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/git.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'git-daemon-log'
-    _inst_sv 'git-daemon-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "git" "${pkgdir}"
 }
