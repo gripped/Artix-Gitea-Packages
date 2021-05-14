@@ -1,29 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nvidia-utils-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for nvidia-utils"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-nvidia-utils')
 conflicts=('init-nvidia-utils')
 depends=('nvidia-utils' 's6-base')
-install=nvidia-utils.install
-backup=('etc/s6/sv/nvidia-persistenced/conf')
-source=("nvidia-persistenced.conf" "nvidia-persistenced.run" "nvidia-persistenced.type")
-sha256sums=('65f66df5660c7496dbcb10b241d1bb2b6c3fbfa57364169bba88a6cb7067e3eb'
-            '7cd4e9524e50562bfc3fee88345a5fc3a19a0ae30f4098725c92948714054319'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/nvidia-utils.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'nvidia-persistenced'
+    cd "${srcdir}"/s6-services
+    sh install.sh "nvidia-utils" "${pkgdir}"
 }

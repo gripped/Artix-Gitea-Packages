@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/nvidia-persistenced" ]; then
-        s6-rc -d change nvidia-persistenced
-    fi
-}
