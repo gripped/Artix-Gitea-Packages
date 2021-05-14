@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=shairport-sync-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for shairport-sync"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-shairport-sync')
 conflicts=('init-shairport-sync')
 depends=('shairport-sync' 's6-base')
-install=shairport-sync.install
-backup=('etc/s6/sv/shairport-sync-log/conf')
-source=("shairport-sync-log.conf"
-        "shairport-sync-log.consumer-for"
-        "shairport-sync-log.notification-fd"
-        "shairport-sync-log.pipeline-name"
-        "shairport-sync-log.run"
-        "shairport-sync-log.type"
-        "shairport-sync-srv.producer-for"
-        "shairport-sync-srv.run"
-        "shairport-sync-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '82d8c58bb4371e99a84a2594e22e145ba6b2796d3ab4a67bb4c6646e8db97dc5'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '28318b84a8a91e0280f34cf2f66954ac2b76407747f0098c1ff712037fff4732'
-            '8e2eaa50b7db37643176b673e17f1af5cb6d66f2f378e034ce730a1e6cfb9b30'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'ae99e8e0e7c5c99cfb773399749356990983f74822508c326c644577b763dfe0'
-            '52dc0e967ffc47d71abe8971355e20cfd14052072ce09f13e2d843bedd489fc6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/shairport-sync.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'shairport-sync-log'
-    _inst_sv 'shairport-sync-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "shairport-sync" "${pkgdir}"
 }
