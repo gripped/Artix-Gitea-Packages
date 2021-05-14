@@ -1,27 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=rspamd-s6
-pkgver=20210506
-pkgrel=2
+pkgver=20210512
+pkgrel=1
 pkgdesc="s6-rc service scripts for rspamd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-rspamd')
 conflicts=('init-rspamd')
 depends=('rspamd' 's6-base')
-install=rspamd.install
-source=("rspamd.run" "rspamd.type")
-sha256sums=('f90bcc2768acac319b88759e50182650e38e23897d4fc3eba8ced0729ab2c8fa'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'rspamd'
+    cd "${srcdir}"/s6-services
+    sh install.sh "rspamd" "${pkgdir}"
 }
