@@ -1,45 +1,21 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=mopidy-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for mopidy"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-mopidy')
 conflicts=('init-mopidy')
 depends=('mopidy' 's6-base')
-backup=('etc/s6/sv/mopidy-log/conf')
-install=mopidy.install
-source=("mopidy-log.conf"
-        "mopidy-log.consumer-for"
-        "mopidy-log.notification-fd"
-        "mopidy-log.pipeline-name"
-        "mopidy-log.run"
-        "mopidy-log.type"
-        "mopidy-srv.producer-for"
-        "mopidy-srv.run" 
-        "mopidy-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '218d40dac97369e1810bb255fadf431f5de110da101c1f9fbb48a531817b74e4'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'c171a6e1773ffafe4298fba1638c380ec755c496d319135e2ce6b294d6270b3e'
-            '1a11118839ae671b2f2cc6a7147e36b94d09cfa7cfdd5578b411e9069260e470'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '84ad534cc18f92ef9229701459725ba3a2f2dea2889c7acd372bdc552ff35a88'
-            '1072c74b27a517c89dd4383635deceded26c7fe256d50eabb63772f737edf9c5'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/mopidy.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'mopidy-log'
-    _inst_sv 'mopidy-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "mopidy" "${pkgdir}"
 }
