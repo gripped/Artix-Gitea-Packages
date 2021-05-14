@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=hostapd-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for hostapd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-hostapd')
 conflicts=('init-hostapd')
 depends=('hostapd' 's6-base')
-install=hostapd.install
-backup=('etc/s6/sv/hostapd-log/conf')
-source=("hostapd-srv."{type,run,producer-for}
-        "hostapd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '45d9870c60ee53a3faca14fda773255b563c895667632a5217f9fb3fb0a2246ce8858425b246014fcd4c36bf3579221dbc4863e520b3bd44cd18b2a4f6c6f8c7'
-        'aaca9f444da99dba4735bdf063928e6015a1fc4adc9d2ea228253af16e736dec8328aee349303b5dbc5286be71d244e3d15c39a0d0cdaf2f4264c686cdda9adc'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '4350a0cda81c79a1e72cab3845b7eb1b2237e856312d81df1d5677fa456955c12afa8ef924b0d52cfa6464b9655e8b0d75fc24b1f57ac6e80b03fa44e99ee9b8'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '0f811e50278b720fa53dd35ce57a3a15088377cabd2fa73b29a368f646968937afddfaea52bdffd8ac26c9ad5ccfa85a1233d2b45380916fa7a5be94d21f09d0'
-        '0f8a4ad0d0739bb00693d141c35fa2ab33bb7807031d943592e3dbc59ace4be56b846857399a8afc225f101c1e4bd71b22dfb4de958a5d3831171f7c539e927d'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/hostapd.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in hostapd-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/hostapd-srv/${_srv/hostapd-srv./}
-  done
-  
-  for _log in hostapd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/hostapd-log/${_log/hostapd-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "hostapd" "${pkgdir}"
 }
