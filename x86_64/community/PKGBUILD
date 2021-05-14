@@ -1,45 +1,21 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=motion-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for motion"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-motion')
 conflicts=('init-motion')
 depends=('motion' 's6-base')
-backup=('etc/s6/sv/motion-log/conf')
-install=motion.install
-source=("motion-log.conf"
-        "motion-log.consumer-for"
-        "motion-log.notification-fd"
-        "motion-log.pipeline-name"
-        "motion-log.run"
-        "motion-log.type"
-        "motion-srv.producer-for"
-        "motion-srv.run" 
-        "motion-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'bb491605230c0a4a822ca2f47994b8fbf07b694c8e5ddd5c5953b0e7cda1e830'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '13d453bdb82f04880edd159c806b6020794cdeff911b47eab7e5b3a1b84ed5cd'
-            '4ed727865b51c027285c6dc2b0fa35039acedd1439d7cc100e60ff01b4a0b4bc'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'acdde83852ab4993fdd7f5f3c3fe8268eccef7a988d1732e38bf4da5f2057217'
-            'a4f44db14baf12e77a4e3c51839531eb999789e61f7f86bcbc0d4697f583bea6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/motion.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'motion-log'
-    _inst_sv 'motion-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "motion" "${pkgdir}"
 }
