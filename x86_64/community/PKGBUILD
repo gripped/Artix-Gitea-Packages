@@ -1,36 +1,23 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=coturn-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for coturn"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 license=('GPL2')
 groups=('s6-galaxy')
 provides=('init-coturn')
 conflicts=('init-coturn')
-install=coturn.install
 depends=('coturn' 's6-base')
-backup=('etc/s6/sv/coturn-log/conf')
-source=("coturn-srv."{type,run,producer-for}
-        "coturn-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '95de97266f8e85bcb58071c239c9dc2b9ee3a53b74950b083d657cd25a728749fa6fe860f81c7d31d87509844e8f9a12b59b7ed99c98164b78ea3c795d2cddd9'
-        'fd33d459ee2d6d66c88d2b0c80b1ed7c9c42956b2c5ea0113243c2239de927698abd6003ae96c4eab1ceb283d2b5f8272158a76444bd131bbadbaf51916f2c63'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '7daa5ae93f89b129c0c001c57b103b10844331736cc37bc9296df1a184f12c281ce9d521edc3e1b3eef8387da0947fa588c0daea2cc57b6b7a816c447c335a4f'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '19b939aa32bd320e0a4fe55b9bf390c86d6b6baa88a33f55de38d7951f30255a1f28c39c5e62f080ff88b300e4819af8dccca9e3cab1885c62e0573cc8cdbd41'
-        '30c055c560677e59f36bcfa1f70e98cbf4249f4da616ffc3680264e8cbf365e00b8c67737435da155bdcdac3ca2cdfb13164e0e8d7be23c7ecd291d17d4108f3'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/coturn.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in coturn-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/coturn-srv/${_srv/coturn-srv./}
-  done
-  
-  for _log in coturn-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/coturn-log/${_log/coturn-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "coturn" "${pkgdir}"
 }
