@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=vnstat-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for vnstat"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-vnstat')
 conflicts=('init-vnstat')
 depends=('vnstat' 's6-base')
-install=vnstat.install
-backup=('etc/s6/sv/vnstatd-log/conf')
-source=("vnstatd-srv."{type,run,producer-for}
-        "vnstatd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '2d2de8f25fde77f77decd47dcf1ab73b9c5b0be71740fc2bcfe1a14ceeae59467e6cf76f80d1bcd09112f6c713f1899d2f007dab0f15930f6c1fa88868293d29'
-        'f645e0b40fca27a852ec039983bfe789a64f60a9181048865c3e2a2aca218ea87f92e88543edd925b492745688ec7f72b4919e75f73fcbf72d17af3fc5d6b726'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'aeceeebc033e6a6a9c55b7f863cbd78ab08079457159edf9097b8e6e0b23193eb2c549b152b814e1b515426de31f2df73ef33f9f38ab073b647759636edf4f68'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '659c70057f212e3ae9291f394c46b5b0274c557ff6a585236162be980aa387ee9e54181eaac15e881b9cbff5cbaefb4490c81da7093e967a378a866823991b30'
-        '52f07a6ad01238a0a5cee12667eb181c784586b0d74e0ce179318eebd92140ecdd804834675a355b3e4baaf675d16dd99ca9a0af6c644d267b2d9cc775bdbc7b'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/vnstat.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in vnstatd-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/vnstatd-srv/${_srv/vnstatd-srv./}
-  done
-  
-  for _log in vnstatd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/vnstatd-log/${_log/vnstatd-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "vnstat" "${pkgdir}"
 }
