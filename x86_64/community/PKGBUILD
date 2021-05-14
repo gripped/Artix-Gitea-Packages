@@ -1,35 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=iwd-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for iwd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-iwd')
 conflicts=('init-iwd')
 depends=('iwd' 'dbus-s6' 's6-base')
-install=iwd.install
-source=("iwd-srv."{type,run,dependencies,producer-for}
-        "iwd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '0cbd9137d03911f0fe3039a9a9d56225e5a34a5d1f651454edf0e0840c12c4ef7c7ee2ea4f6f228f494576952b948874fb829cfffa2e206e91fc4de9db3557ad'
-        '8e288d6068cb005626b02fbf2f92a716952e08e3b26226992171a749e4cc5dc3aa4a4e82780a3a254d16c1b9daf5cadd71383c06869e3e41e73d20c1dc65ecb7'
-        '28874407ee7ab173ef2409b131aef3d1f07d9712941a269c5ce280c0887335b4667090d3dd22cc6b61148d756f4c0c23874bd3e7a444d5270db8021a055b5d20'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'fda0e024c1c3e48fb8d78421ce6808653d6952739dc4d757501359d19fb2216538ec96593df22b9e135d5217eaeb3b8d3c42be36a54ed0b5038d67f83f32b218'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '444714469d9777f0573c2bf6399c23aedaac3044a77efbea79ebc4403adc49e27c9a7b24522095716b879b92db213e06ca13f6d69088e70ffb0e34d21ba6aad9'
-        '074a2b4df1deb17d26b720c4acf29382bfe0ca7e91c6dd7c414b319dfbc113dff803b6f20a827f658ce3c7a5f7183013930b97a81aab2b437ef4f4c0d3581b64'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in iwd-srv.{type,run,dependencies,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/iwd-srv/${_srv/iwd-srv./}
-  done
-  
-  for _log in iwd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/iwd-log/${_log/iwd-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "iwd" "${pkgdir}"
 }
