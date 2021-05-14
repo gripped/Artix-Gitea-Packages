@@ -1,46 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=toxcore-s6
-pkgver=20210507
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for toxcore"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-toxcore')
 conflicts=('init-toxcore')
 depends=('toxcore' 's6-base')
-install=toxcore.install
-backup=('etc/s6/sv/toxbootstrapd-log/conf')
-source=("toxbootstrapd-log.conf"
-        "toxbootstrapd-log.consumer-for"
-        "toxbootstrapd-log.notification-fd"
-        "toxbootstrapd-log.pipeline-name"
-        "toxbootstrapd-log.run"
-        "toxbootstrapd-log.type"
-        "toxbootstrapd-srv.producer-for"
-        "toxbootstrapd-srv.run"
-        "toxbootstrapd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'ea3a8ae03316c13d50ac5800e48135d1dc5b7cc4ffa1022646e393a0cb6d0768'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '68c713467643723cdcd8ae003111f34d88020a11667f619410fd224e783260ac'
-            'cd109598b298f913ffbbf467ff9ecdb5a70eaa5b18060fe456f6e1be41eb7db0'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '610be10eaa146b0bcb2d4b6b4cd137d3f9237c3b957395290a706c53ffa67a33'
-            '692a272c4ea0bca5ccfffdc2a35acd2a5f70221541ccbb979135c6ff5bc4c024'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/toxcore.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'toxbootstrapd-log'
-    _inst_sv 'toxbootstrapd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "toxcore" "${pkgdir}"
 }
