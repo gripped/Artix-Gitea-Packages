@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=bumblebee-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for bumblebee"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-bumblebee')
 conflicts=('init-bumblebee')
 depends=('bumblebee' 's6-base')
-install=bumblebeed.install
-backup=('etc/s6/sv/bumblebeed-log/conf')
-source=("bumblebeed-srv."{type,run,producer-for}
-        "bumblebeed-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '5e1b7561f9541d1874e800f560ff8cb9ae1f6bad3173826afe0c191684b2d67da075b097658f6f09cb1cd5fcb5d3be964350f5c15d76e42f62e1278f58fabbd3'
-        '604db43ef7a0d4e66c0cd7aa6993181ec47a0db827f4bf8e96368746bfb646fc0c7131e6628e4aceb2d128caf03db1b46561f4a532567c5ed10f23955d3944a3'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '1b5cc05776879e4b4e630351cac57479e61735c4182bc81b59e5c98aea0db691bbce03fcff016fceeee5a406fb8753b4f3ce6aac99ffe9f60ba1c2ea2c5daf5e'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        'c095e415c06b7648bf73ab457f95996fe3b1cea155680838af33a8469edb9e2c0387fee02c927e405ad2211b447ff9c788d2b15b86f8a4e377cd76a25755d135'
-        '605c9235c62246c9b6953e3d87e198c3f82c25edacd55b09693cdcfc0a7d657a5312b2f47c2be2027aae1f073d4614f97559c9dc6eb16949af173f87fe1fdf6b'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/bumblebee.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in bumblebeed-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/bumblebeed-srv/${_srv/bumblebeed-srv./}
-  done
-  
-  for _log in bumblebeed-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/bumblebeed-log/${_log/bumblebeed-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "bumblebee" "${pkgdir}"
 }
