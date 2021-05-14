@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=docker-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for docker"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-docker')
 conflicts=('init-docker')
 depends=('docker' 's6-base')
-install=docker.install
-backup=('etc/s6/sv/docker-log/conf')
-source=("docker-srv."{type,run,producer-for}
-        "docker-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '9952a11326673ef401fe69c192dcad2d4a65001861ef276b8b7d0125d80cff7a31b1581e82ecf25c244de137e9ac0392bcac0aa7934afc325332b22682f25500'
-        '3d29ad0c0ae833a18d15cd2481dfcc75f38f443049f7d53fd21fe84a22a0d02051392a37932bba54092c83852328372177995ed1f5578381e6453d534305da5b'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '5a7193039fd10bf550df6e1e9ea296b51c9f9f3807e941179a93e0e690e377b58ce705ec0576637e1845f569d19bc0540fef2852b314b4c6d6b373e61913ffea'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        'de9b9aef52e75e4784de66535c1d86d35f81cbe83d568ca602cbf92a52f1cc27c46abcaa2e2e1d5b9d4bb3e6202230c1fe5a1ab1bd393538be9b5cd4ff8de94a'
-        'd7f9a79973c82778826b9021a17ecf2fa1f64d4671be75719fc97c9db0cba53666530f13983db76350ff059ea0420a6d583998f98abaefff80c1acfed1e4459d'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/docker.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in docker-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/docker-srv/${_srv/docker-srv./}
-  done
-  
-  for _log in docker-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/docker-log/${_log/docker-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "docker" "${pkgdir}"
 }

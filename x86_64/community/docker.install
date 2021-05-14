@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/docker-srv" ]; then
-        s6-rc -d change docker
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/docker-log
-}
