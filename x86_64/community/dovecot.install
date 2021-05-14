@@ -1,9 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/dovecot-srv" ]; then
-        s6-rc -d change dovecot
-    fi
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/dovecot-log
-}

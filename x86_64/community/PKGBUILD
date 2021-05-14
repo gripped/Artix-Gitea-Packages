@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=dovecot-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for dovecot"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-dovecot')
 conflicts=('init-dovecot')
 depends=('dovecot' 's6-base')
-install=dovecot.install
-backup=('etc/s6/sv/dovecot-log/conf')
-source=("dovecot-srv."{type,run,producer-for}
-        "dovecot-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'cee1f7e1cd8ddfc5388c2470dd830a632f1e9429542061e154da95c0c6a9ed7c19941aea2c9b55c5f315e486461b87e802fe924806a149679695ba33108cb883'
-        '19e5af3a94091dbff729dbf43f4b0a3d61126ed7aa9c80c45e18c0f3df506885469cfd5ddff53bfac5ec11dc412bceffc19104eb74d95699ab2712c0ee2918fa'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '22c72f3baa96028f57d442bbed2b74a641e8a56c6850f1df6941e8cb3137642926e90d5919560225164289262cb6961a6ccc6000c778c639700920c6339d7b05'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '688cc6921945ca66a6130ec0b16279aee9e80c4321bb39e9fd4b8bfabd72e27a1a41d0bf47b0f58e0831120e223558c60dbdc98cf8a0b7fc8fc36516409721b1'
-        '1197bde1b482f5cd1b2b53c5f1e3b050b288ce12e0066fc6c7dcb9fc012091b3729c524a4461a916aac440f8ae666fd7b37bb00dc4e060340972e8c5d77a6171'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/dovecot.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in dovecot-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/dovecot-srv/${_srv/dovecot-srv./}
-  done
-  
-  for _log in dovecot-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/dovecot-log/${_log/dovecot-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "dovecot" "${pkgdir}"
 }
