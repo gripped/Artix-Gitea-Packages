@@ -1,29 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=tigervnc-s6
-pkgver=20210507
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for tigervnc"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-tigervnc')
 conflicts=('init-tigervnc')
 depends=('tigervnc' 's6-base')
-install=tigervnc.install
-backup=('etc/s6/sv/vncserver/conf')
-source=("vncserver.conf" "vncserver.run" "vncserver.type")
-sha256sums=('1ddfbb4225a99057cb01964435f9a04a89110b3b99e61ffc193f005847fc345d'
-            'e5aeaeb56c22fe4f2fda0d88c5ab6de2be0ac3d4a1abbec71c83c85cff630769'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/tigervnc.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'vncserver'
+    cd "${srcdir}"/s6-services
+    sh install.sh "tigervnc" "${pkgdir}"
 }
