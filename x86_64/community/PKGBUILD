@@ -1,47 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fcgiwrap-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for fcgiwrap"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-fcgiwrap')
 conflicts=('init-fcgiwrap')
 depends=('fcgiwrap' 's6-base')
-install=fcgiwrap.install
-backup=('etc/s6/sv/fcgiwrap-log/conf')
-source=("fcgiwrap-log.conf"
-        "fcgiwrap-log.consumer-for"
-        "fcgiwrap-log.notification-fd"
-        "fcgiwrap-log.pipeline-name"
-        "fcgiwrap-log.run"
-        "fcgiwrap-log.type"
-        "fcgiwrap-srv.finish"
-        "fcgiwrap-srv.producer-for"
-        "fcgiwrap-srv.run"
-        "fcgiwrap-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '6066e0fcb5479c5dfa1f7b3a1fdcc4a4a79f53c8a4f415f6466c91cddd4d02aa'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '90e0c611e5c302aa4a7ef46155cf6791b013e4e53f737a291fb6ad231dd387e0'
-            '0e8294a180f21e9c206e13eb7083f04f1bd7f10f065a30a817b5925e46e47ed7'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '5591cf3bf3b909a90cda40184a24cc03c517252d7114c373f5777fa849c11074'
-            '23321a532e109facc9c7adcb591e50a3ff025a42fc129715680d45744f30aa78'
-            '0889c999bd18b110f0e5cdd72520a3d6e205597a76a33ff14e834259e2835481'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies finish notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/fcgiwrap.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'fcgiwrap-log'
-    _inst_sv 'fcgiwrap-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "fcgiwrap" "${pkgdir}"
 }
