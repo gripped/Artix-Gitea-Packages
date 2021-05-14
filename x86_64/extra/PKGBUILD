@@ -1,38 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dhcp-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for dhcp"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-dhcp')
 conflicts=('init-dhcp')
 depends=('dhcp' 's6-base')
-install=dhcp.install
-source=("dhclient.run"
-        "dhclient.type"
-        "dhcpd4.run"
-        "dhcpd4.type"
-        "dhcpd6.run"
-        "dhcpd6.type")
-sha256sums=('424b2c5da138cbabb9578cb6bf88e318698b6b7671803a9ba2db5dd6e181723d'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'fefbd0a397a76a5943af61b1a685145244672968ef710b45c389acb0907cd320'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '02a42d4c70e6bd1a77ab51304bcc9bdc947ad5c4788739e6d5cca58d7e4db1e9'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'dhclient'
-    _inst_sv 'dhcpd4'
-    _inst_sv 'dhcpd6'
+    cd "${srcdir}"/s6-services
+    sh install.sh "dhcp" "${pkgdir}"
 }
