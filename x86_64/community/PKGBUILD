@@ -1,42 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=libvirt-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for libvirt"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-libvirt')
 conflicts=('init-libvirt')
 depends=('libvirt' 'dbus-s6' 's6-base')
-install=libvirt.install
-source=("libvirtd.dependencies"
-        "libvirtd.run"
-        "libvirtd.type"
-        "virtlockd.run"
-        "virtlockd.type"
-        "virtlogd.dependencies"
-        "virtlogd.run"
-        "virtlogd.type")
-sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '42b484eb449d0f88e511c4dd732fc29762ba1a02a619e4ffe8278555b5385fc9'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '1156a65b181bf75af859df633e28a078dfcf7cd4165d010569d7254dbac251cc'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            'fcee60d41ad28cdab5058b587eabd05cef1c777552534ae4c8d8f6c48d9f93b3'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in dependencies run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'libvirtd'
-    _inst_sv 'virtlockd'
-    _inst_sv 'virtlogd'
+    cd "${srcdir}"/s6-services
+    sh install.sh "libvirt" "${pkgdir}"
 }
