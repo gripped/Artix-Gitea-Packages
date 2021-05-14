@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { install -d -m0711 -olightdm -glightdm /run/lightdm }
-fdmove -c 2 1
-exec lightdm -d

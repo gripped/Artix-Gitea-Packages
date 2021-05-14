@@ -1,47 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lightdm-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for lightdm"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-lightdm')
 conflicts=('init-lightdm')
 depends=('lightdm' 'elogind-s6' 's6-base')
-install=lightdm.install
-backup=('etc/s6/sv/lightdm-log/conf')
-source=("lightdm-log.conf"
-        "lightdm-log.consumer-for"
-        "lightdm-log.notification-fd"
-        "lightdm-log.pipeline-name"
-        "lightdm-log.run"
-        "lightdm-log.type"
-        "lightdm-srv.dependencies"
-        "lightdm-srv.producer-for"
-        "lightdm-srv.run"
-        "lightdm-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'a8e3e073d2653901787e41ecddf7116f4d81500e549b655395cfb06781f64df5'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '580a6fd9764245ab8933b1086efd616938a570f76c4d2d2d6ba3e922fed883b2'
-            'f415120e2ec5e4e7a0a5d5d2ffe8b9ffcf079b6732e9da52c1f7d212251db6f7'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'ce701dc7ae4a337f063bbc8968585b5ae3c973b00b3283816d1f476c7b2f5b3b'
-            '9d45199b5991c34717727160e2fa8f5b8c778c95bfe74e88cdf2a1221325e395'
-            '9432bf60abce410739ecbd70b4f2b6a4433da8fafe93e4ff432bdb941bc81287'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/lightdm.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'lightdm-log'
-    _inst_sv 'lightdm-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "lightdm" "${pkgdir}"
 }
