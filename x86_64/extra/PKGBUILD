@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=subversion-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for subversion"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-subversion')
 conflicts=('init-subversion')
 depends=('subversion' 's6-base')
-install=subversion.install
-backup=('etc/s6/sv/svnserve-log/conf')
-source=("svnserve-srv."{type,run,producer-for}
-        "svnserve-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '8bf36adfc244b527df9b30b2a7c60a0f03fabdc40f70d6ba1cba272970ae58626097ba600eeeca8cca6db8b7f21196b301680722e2119d459d2482ef2c9f248e'
-        '22b44f831d91076a4d58cc10da31acfd988947152a511be952f0a5356075c80d3ab4a5d4f5f3aa754ba163a6dfc3dea4200191123259fb22051ff7872c7afcb8'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'b323f3ea3b8a5adfc0b39bd212fa343033261fae4654dafe9e5159d1dac81e95777af5f2ac2a11f533a4c92c08a4fa70fa3d86355f223747919e823e6683091a'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '625fc1f0d9f5323bf86aab767a60022c28a6e2557c9ac18b49f997b710895ebdc027658b1d31a2582842ff85974fb058721dc85e9d4f71d12ef0862ddf093ec6'
-        'c91da2f1d10d61fba0077ba78c8db803d5c56b7840e4255b16689d5633ad624f3b4848272d4ee42474c3c773465aac63e78efe9006821eabdbf9acc3a6ae093a'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/subversion.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in svnserve-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/svnserve-srv/${_srv/svnserve-srv./}
-  done
-  
-  for _log in svnserve-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/svnserve-log/${_log/svnserve-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "subversion" "${pkgdir}"
 }
