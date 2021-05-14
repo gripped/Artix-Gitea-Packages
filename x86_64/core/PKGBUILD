@@ -1,30 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=krb5-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for krb5"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-system')
 provides=('init-krb5')
 conflicts=('init-krb5')
 depends=('krb5' 's6-base')
-install=krb5.install
-source=("kadmind.run" "kadmind.type" "krb5kdc.run" "krb5kdc.type")
-sha256sums=('c202c42d56524a0598cf96115469cb45202d594f800e4c59fc188cefb567abb9'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '19b9cd6f33003c114746e320ae922aa898f860c5b6435488fbbb0a376c2fa75a'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'kadmind'
-    _inst_sv 'krb5kdc'
+    cd "${srcdir}"/s6-services
+    sh install.sh "krb5" "${pkgdir}"
 }
