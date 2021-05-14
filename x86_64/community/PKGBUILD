@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=unbound-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for unbound"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-unbound')
 conflicts=('init-unbound')
 depends=('unbound' 's6-base')
-install=unbound.install
-backup=('etc/s6/sv/unbound-log/conf')
-source=("unbound-srv."{type,run,producer-for}
-        "unbound-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'a98adc76dd78b030296aca7ca4934c0e542a19ff29672f1666507ec3ae5ff7d1560c36e3ee89c30eb252ed036eb0c56eb17da8bfddc05d051500e4225fb5eb09'
-        'fc0b774bd5318ea327adc0cf8ffc4e1da141b9092788629467fa3c187c21229b8856337ebdbacb650ee318e0f7ea2c960785e1e678751588d8ea882f03b6539e'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'a4c6bc72367b23c44493f17800ad37debad9b4d4003e015bb5a797b9e5415b16e6a01022149ae2a8613ed91eaffcffca938f20c766f4a8eb69509f4e09c4bcfd'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '5d75b89826a538b11aabfce6aaf1adb8309d761812afd0d6e62a675d3f918a3d582f2535c61caf3f0c7f389102196d97b79737b68e5839f9d05e3985b69daebf'
-        'bd215ea3cfa1d595adc896338ec0b856444598f08e9d9c18a3947e92a8be20c221bc7700d1465174f60a34fc6ce731ac4f9bad92827ee597058b5007237853ed'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/unbound.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in unbound-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/unbound-srv/${_srv/unbound-srv./}
-  done
-  
-  for _log in unbound-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/unbound-log/${_log/unbound-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "unbound" "${pkgdir}"
 }
