@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syslog-ng-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for syslog-ng"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-syslog-ng')
 conflicts=('init-syslog-ng')
 depends=('syslog-ng' 's6-base')
-install=syslog-ng.install
-backup=('etc/s6/sv/syslog-ng-log/conf')
-source=("syslog-ng-log.conf"
-        "syslog-ng-log.consumer-for"
-        "syslog-ng-log.notification-fd"
-        "syslog-ng-log.pipeline-name"
-        "syslog-ng-log.run"
-        "syslog-ng-log.type"
-        "syslog-ng-srv.producer-for"
-        "syslog-ng-srv.run"
-        "syslog-ng-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '77626a7d016cb6efb014ebe733761a18a168081aeed2c414035bd79619e63526'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '14bdd461f944e61b3906f29818bb77d76000f9c31ce766d9dbd96d56fbd89d19'
-            'bb2502b594fe7f93d8c64d7069ab4f8951483b3ec67b0a5dcf1eee57f10f76e5'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'de5cddfea87c948dd1ac251b44a0ca17c73f77b2ed40c32a0a15e5cc7336b451'
-            '156ba7bef3cfa54be843129441b4df7e6786367ef2d088e05a4fbcedc990f999'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/syslog-ng.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'syslog-ng-log'
-    _inst_sv 'syslog-ng-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "syslog-ng" "${pkgdir}"
 }
