@@ -1,47 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=bluez-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for bluez"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-bluez')
 conflicts=('init-bluez')
 depends=('bluez' 'dbus-s6' 's6-base')
-install=bluetoothd.install
-backup=('etc/s6/sv/bluetoothd-log/conf')
-source=("bluetoothd-log.conf"
-        "bluetoothd-log.consumer-for"
-        "bluetoothd-log.notification-fd"
-        "bluetoothd-log.pipeline-name"
-        "bluetoothd-log.run"
-        "bluetoothd-log.type"
-        "bluetoothd-srv.dependencies"
-        "bluetoothd-srv.producer-for"
-        "bluetoothd-srv.run"
-        "bluetoothd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'fcbdefe7553385687955615af3acf031218cd6f3bcda08ee8a7c362213f197bc'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'bcea56dbbbd73fbca8b1b71bfeefb7acb7928e0ceecd67c5d59dc938d89a52b8'
-            'ac3c8dd770c805049d4e5b957c945df4dcf6b73995fb04545f6678e9ae5e44c8'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            'bc88994ba50535d14a33ef6fba43037449d271c13a5c564008cb47f5cf737874'
-            'cc9617a88b2db43da46eae60953aef500f5b9eb9c29cddc217ecabcc8c7efb6e'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/bluez.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'bluetoothd-log'
-    _inst_sv 'bluetoothd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "bluez" "${pkgdir}"
 }
