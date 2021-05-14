@@ -1,36 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=thermald-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for thermald"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-thermald')
 conflicts=('init-thermald')
 depends=('thermald' 'dbus-s6' 's6-base')
-install=thermald.install
-backup=('etc/s6/sv/thermald-log/conf')
-source=("thermald-srv."{type,run,producer-for,dependencies}
-        "thermald-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '5ce49fd7eba9102b44da841c253bfbf1a1831e7bdf759cf3b274577f4df1f83eedd1e09dd7bd94a4a18a3cb6e54fb843f441519e7a2f053158a32faaaf6c5875'
-        'ab82328a0da8cac3cc96d619f0b9624c5a257c9c1fd1bfd306b6046b16f2e0250e9ce3861b968cbef4e4599dd31b177135d9f4cdaacb64a2d8ffbfb315f04248'
-        'a2ee08ef12d98c2da448e0c1c4d1be4f6c73beec754ffbdbdbbe36534b749f3f39d169d6f8b1a51ac0f6215874a38797295b6cd9843b795f8f4b3ad2e585876c'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '8a7bb89e3f14bf487b22af8456e40e8e7a2619ad8675efac89cb6350b9a8109ff876ddf019d4096584c4eff993d7c81cfa385150a231d96bbb43f057228057b7'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '378623e946eea9f7a5888cfe946f13955b4e4d83d4a327ebde09cf92e71b654db8b2a22b8936d48a14cee5290cce0dee9b3cd6bff77953a357146fc9e1049aa0'
-        '87a368e850ad1d973a926c1d7fc8baf6a0cd5eb2b18d744be19acbd53c85e8645d179749365cf78b89ecbe0771a1a73b580650a24ec819ea082ed67900d93530'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/thermald.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in thermald-srv.{type,run,producer-for,dependencies}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/thermald-srv/${_srv/thermald-srv./}
-  done
-  
-  for _log in thermald-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/thermald-log/${_log/thermald-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "thermald" "${pkgdir}"
 }
