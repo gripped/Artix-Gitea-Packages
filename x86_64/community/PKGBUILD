@@ -1,35 +1,22 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=opensips-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for opensips"
 arch=('any')
-url="https://opensips.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-opensips')
 conflicts=('init-opensips')
-install=opensips.install
-backup=('etc/s6/sv/opensips-log/conf')
+backup=('etc/s6/config/opensips.conf')
 depends=('opensips' 's6-base')
-source=("opensips-srv."{type,run,producer-for}
-        "opensips-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '9eaee9258c352cedecb20e616d5f2568a52edcbaebeeab941c0ab692a0730413570a683f634b25286a2c1221edb2fa466a3cfdb1cf3871d2af198d9dde4596eb'
-        '26714db359591f19416662512bbe2900334aeb1629de416e8df778d1667d2a62b13379a0a2b37b8e6a44f8b060f868911307cfb07b2d30a79b56a6e470f46be0'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '4c0f7f0fea58e1f2db5baa2398657a320f3bbea1ceafe5ac98c94d08adc9a890ee55a8793571896bbf10f5599b967ad9002b4a46fcaaf7dcc31a870174096148'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        'ac29cd6f3fb7b20351553753d9372aacc7ecafad9abe91ae1054699fd74e8c13d769b8bb828bb78f2e1455f783debb5063d8336fa3c86401b235aebfc53c32fb'
-        '0b715f085caf6d1c4d8d57e3cf024de105bc6e9f46c106003e6f2da6fd819040eaba98432a721d2cdfec68960fde5c6275e94eeb68621791c290de777c7551d3'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in opensips-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/opensips-srv/${_srv/opensips-srv./}
-  done
-  
-  for _log in opensips-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/opensips-log/${_log/opensips-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "opensips" "${pkgdir}"
 }

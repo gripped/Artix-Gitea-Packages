@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-fdmove -c 2 1
-exec /usr/bin/opensips -F -f /etc/opensips/opensips.cfg -w /var/tmp -E
