@@ -1,46 +1,22 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=grafana-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for grafana"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-grafana')
 conflicts=('init-grafana')
 depends=('grafana' 's6-base')
-install=grafana.install
-backup=('etc/s6/sv/grafana-log/conf')
-source=("grafana-log.conf"
-        "grafana-log.consumer-for"
-        "grafana-log.notification-fd"
-        "grafana-log.pipeline-name"
-        "grafana-log.run"
-        "grafana-log.type"
-        "grafana-srv.producer-for"
-        "grafana-srv.run" 
-        "grafana-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '7cdc9cbbe0c6edaab07292d7ab3eeec17d74f6f33680157949e44fff9f3eb47a'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '9927550b139822cd210b34809502b332016b5d675722889453dc4faf3e10826d'
-            '8969c5da6f5d14aca42690ccdec2c91f91a72322a015421bcacf551a08cd7386'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'dcb1ddfb32b79299f4b8274a90c892299db3f17e27d04a99fcab657b591eda51'
-            '8ab760531525c04782322c4cd24d56f068902f13661ffeae05c58cfa1c736850'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/grafana.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'grafana-log'
-    _inst_sv 'grafana-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "grafana" "${pkgdir}"
 }
