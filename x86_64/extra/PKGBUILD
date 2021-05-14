@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=transmission-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for transmission"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-transmission')
 conflicts=('init-transmission')
 depends=('transmission-cli' 's6-base')
-install=transmission.install
-backup=('etc/s6/sv/transmission-daemon-log/conf')
-source=("transmission-daemon-srv."{type,run,producer-for}
-        "transmission-daemon-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '3db7f17abc57ed74f9f633e279c48aa70a35e2bba906c23536d604281e28e903d52b3510b0c4d47fd4650360fd99506b3126a46ce941410f6dde1c81c2230d15'
-        'a6b396834d1059da12747d0396f913984cbb4b81de03507ddbae26ca0dfd82375f8c529961f48ac3de904d2bce244f39ba80c2e1d81dea89ede6cadb8fd184f9'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '5e7de5c446a77e393baf90decec0ed9c82726f03869944e30f0ee05e76225d96094f31dc7137cdd04f3803bc80b768b27f86c86f42e08afcf9dac31f4c4b9897'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '9c3298f7b0823eaf90e4716745dfac8b95d9a470c2dd7bbdbd32fac2454037f1a794f0398da002caa226e3b38289394482209426075e823d56f3966fb1b67802'
-        'c167f8642c143393fd61ba40424ada14e82431c05ccfd928d61c2e50e31fdbbbf70de3f139ea0b51c417e60ef36ea089a997e9a0bca550cb30469a35d774185c'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/transmission.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in transmission-daemon-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/transmission-daemon-srv/${_srv/transmission-daemon-srv./}
-  done
-  
-  for _log in transmission-daemon-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/transmission-daemon-log/${_log/transmission-daemon-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "transmission" "${pkgdir}"
 }
