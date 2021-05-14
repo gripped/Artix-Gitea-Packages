@@ -1,32 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=alsa-utils-s6
-pkgver=20210506
-pkgrel=2
+pkgver=20210512
+pkgrel=1
 pkgdesc="s6-rc service scripts for alsa-utils"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-alsa-utils')
 conflicts=('init-alsa-utils')
 depends=('alsa-utils' 's6-base')
-install=alsa.install
-source=("alsa.dependencies"
-        "alsa.down"
-        "alsa.type"
-        "alsa.up")
-sha256sums=('8e14ed915f31dc33d0ac7762a9ec784eed3b87ddc1ffed6e1738f45d6b2c8b12'
-            '9877dbb8418ddd5d2d1560cbec139afc7405e12bf8a873dd846400c4913dd626'
-            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '0d4bd0659c7ce5241a8901820fe9ed215735895b0a0b55bab99bf109f3d3c203')
-
-_inst_sv(){
-    for file in dependencies down type up; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'alsa'
+    cd "${srcdir}"/s6-services
+    sh install.sh "alsa-utils" "${pkgdir}"
 }
