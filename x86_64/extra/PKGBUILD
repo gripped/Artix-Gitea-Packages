@@ -1,46 +1,22 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=postfix-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for postfix"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-postfix')
 conflicts=('init-postfix')
 depends=('postfix' 's6-base')
-backup=('etc/s6/sv/postfix-log/conf')
-install=postfix.install
-source=("postfix-log.conf"
-        "postfix-log.consumer-for"
-        "postfix-log.notification-fd"
-        "postfix-log.pipeline-name"
-        "postfix-log.run"
-        "postfix-log.type"
-        "postfix-srv.producer-for"
-        "postfix-srv.run" 
-        "postfix-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '09664edf380ae82b23c1ff47283992a2a68934f656e6729c8c662091c2cb1d71'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'ea40eb8e064b21dfa2cee861225e206f7c7c0c6f745cdd8538e6716edb520685'
-            'cec41c2dde02d4b5fcec44f0c69be27a071347bb758bb9bdb2de54ed90941fd1'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '91a824048aab46e52b295df57b4d34740f019fe23bf84fec93381b32ab02bc1b'
-            '888015c2c62a8144ab6efb86a12f99b19b1490c7c2ffdaa5f79676cdab87f4e3'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/postfix.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'postfix-log'
-    _inst_sv 'postfix-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "postfix" "${pkgdir}"
 }
