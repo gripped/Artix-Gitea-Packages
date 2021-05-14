@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-fdmove -c 2 1
-exec doh-client -verbose -conf /etc/dns-over-https/doh-client.conf

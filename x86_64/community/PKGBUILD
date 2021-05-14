@@ -1,55 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=dns-over-https-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for dns-over-https"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-dns-over-https')
 conflicts=('init-dns-over-https')
 depends=('dns-over-https' 's6-base')
-install=dns-over-https.install
-backup=('etc/s6/sv/doh-client-log/conf'
-        'etc/s6/sv/doh-server-log/conf')
-source=("doh-server-srv."{type,run,producer-for}
-        "doh-client-srv."{type,run,producer-for}
-        "doh-server-log."{type,run,conf,pipeline-name,consumer-for,notification-fd}
-        "doh-client-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '6bc0ce9ee1af54c9615e82b594c3dd5a78f80810b46b3e07cef9dfd9dcded79c6ab8ac534c57f871d68332ca2d72257fe67b55e50cf4168c3c1e53d8f87704a3'
-        '5d9e8aecdcb80926a427d5ad1d084c9578c5fa8c83086ba987cffabaa41190009db951af820dbc8be81719ed5a3633b06cc99093908c2f420050bfdf25f8193f'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '8a66eb256c7a560aa4a3ab85381615cfa0b0e9b75c5b60cfe3d081faa44fb15dfdc3551d5bb25c3d79f89131837dc692a442def924401242d277b93cba9b0740'
-        '0686f5d6f0ccd3ffbe2792349ed39c3d39d3a130298739420db47917a338eaad869dc8dd680b507a2d98e3a01b3229b60e8ba68b3bdda2f6144c6fc6867d7e6d'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'a3ec25b2a2e9726fcc3377bd1c7994ecee7fdc27ec47d80c1203bfa32e629deced362f523a03d00d6af975a5c32d0720dce2179badc213c6181c06a4b6483821'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '4fb7a69d55b48c89a0d0e6247d4983221a5365b29bb2cbe5cc23967efff9b53df8e9ab0e1e2f9a845f74d911ba2e084bac4152a2d2518a715a08c050dec2cc09'
-        'ade37c6bc3b0da01f27e3b6d1a0763ffea6b871412392b1fd2744664d38695d55353b46d3a9d56a77e1f177114cb693217ad2ab64f1578285fc5625e609f04e4'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '7cb168c54ee33bf7bbfa237ba2e6ae39b14061fe3e9924ef1dc1f69b9dc3df01b589771048f4728a08d6d1f1d761293508a90533e3089b8a436abbb864b4ae81'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '266e4c07231e65c420df7419f7cebc2763f1e932c961c84e772a011e7373e782b8aca179c47aae8d56e68fc22e2c68204b71814ed68e67653e4e46b8c26bd3bb'
-        'e6cf2b1b05e601fde182e054c06320cc500492fa219d973860715415d9230a17961c5a455e73ef7f2c3e182f3ed3cbc5eac94c26bd002d3288dc8b9c5f0f62f0'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/dns-over-https.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in doh-server-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/doh-server-srv/${_srv/doh-server-srv./}
-  done
-  
-  for _log in doh-server-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/doh-server-log/${_log/doh-server-log./}
-  done
-  
-  for _dsrv in doh-client-srv.{type,run,producer-for}; do
-    install -Dm644 "$_dsrv" "$pkgdir"/etc/s6/sv/doh-client-srv/${_dsrv/doh-client-srv./}
-  done
-  
-  for _dlog in doh-client-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_dlog" "$pkgdir"/etc/s6/sv/doh-client-log/${_dlog/doh-client-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "dns-over-https" "${pkgdir}"
 }
