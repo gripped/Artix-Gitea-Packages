@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=spotifyd-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for spotifyd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-spotifyd')
 conflicts=('init-spotifyd')
 depends=('spotifyd' 's6-base')
-install=spotifyd.install
-backup=('etc/s6/sv/spotifyd-log/conf')
-source=("spotifyd-log.conf"
-        "spotifyd-log.consumer-for"
-        "spotifyd-log.notification-fd"
-        "spotifyd-log.pipeline-name"
-        "spotifyd-log.run"
-        "spotifyd-log.type"
-        "spotifyd-srv.producer-for"
-        "spotifyd-srv.run"
-        "spotifyd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '5fd65351fea96b61a875b3705aec0361abdfdc95a2151ec950ca9f3526276b95'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '91e8d03e59740e278b763dede90daaf132eb19167fef6d577293b5abf047b514'
-            '216385589065050a284e69b06582f6ee8ab6ec7d7f1563e61a922d03fd22ec0c'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '193d1b0f1e0ca3e0531c9738f212b8a2f15a965f970543bdc2ee869710f09830'
-            'c74148c8559262850ff6bbe10def0ee4cf1ed95d63837ca147599d24e407b9a8'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/spotifyd.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'spotifyd-log'
-    _inst_sv 'spotifyd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "spotifyd" "${pkgdir}"
 }
