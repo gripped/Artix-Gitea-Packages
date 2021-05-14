@@ -1,46 +1,22 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=erlang-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for epmd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-epmd')
 conflicts=('init-epmd')
 depends=('erlang-nox' 's6-base')
-backup=('etc/s6/sv/epmd-log/conf')
-install=epmd.install
-source=("epmd-log.conf"
-        "epmd-log.consumer-for"
-        "epmd-log.notification-fd"
-        "epmd-log.pipeline-name"
-        "epmd-log.run"
-        "epmd-log.type"
-        "epmd-srv.producer-for"
-        "epmd-srv.run" 
-        "epmd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '696edf1e2d3b31cfc9ff911a90f6fe3c40897fa11b30993d610b53e62f80a878'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'b860a9516854c0d2bccd1f9ceb49e06497ddcb6ff7e1d45d59690eab98f3aa44'
-            '884bd225d2e02dd3a21d671d296743c2b0c528dc6d7f49d9f9a8090da04b9bbd'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '27ef7c2c30c5e8b343919ef9307b17fc9d266f57d90f25586bf12588acae09f8'
-            '8813804eee4458e4e7894ac7fd81394ff4dcf1e8dd22d4e7d08ca3e50caca68e'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/erlang.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'epmd-log'
-    _inst_sv 'epmd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "erlang" "${pkgdir}"
 }
