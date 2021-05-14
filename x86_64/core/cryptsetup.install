@@ -1,7 +1,4 @@
 pre_remove() {
-	if [ -e "/run/service/s6rc-oneshot-runner" ]; then
-		s6-rc -d change cryptsetup
-	fi
 	sed -i '/cryptsetup/d' /etc/s6/sv/mount-filesystems/dependencies
 }
 
