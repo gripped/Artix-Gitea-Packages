@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=nginx-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for nginx"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-nginx')
 conflicts=('init-nginx')
 depends=('nginx' 's6-base')
-backup=('etc/s6/sv/nginx-log/conf')
-install=nginx.install
-source=("nginx-srv."{type,run,producer-for}
-        "nginx-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '54a66db48a4523edd4a1e2065ceb39e710ebf551bf86e165cf4f4d16481bfd2e3aea765abe53fc294bd5a77508d9d997eede779eae9211c4eb7ea5db43e0676a'
-        'e4bf675c31c9b3a04f20329c916bae488ac9fb3c7ccb3dea556dece8f5e1e4a7260f66e0eed4d237123d077b7ebd61c37bd45d644e2a63774ebaa70ed15c34f8'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'cfc46914c5c679f690ef5f564dcec44265fb6a3bc9ae5a35af2fcfc1eae39373d04e95d22127b1516550c11c85f74b6928b0dbf25970a37b7df7899eec49b086'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        'd00a4ae06fb85905cbb9d47981a11c411dd8a0259eb49dde5831d20ba8971a357f840572a042952cc2ad6c8d2ffc766a7218db652884e7e0810f73f736c97191'
-        '7ed38ca00f1fe23d07c73347038e6ad8c44a30b11e030527eebf838adfe95a13b8bef1c5bdde5231c0ce745e1b85887ba767c69b53e085903f384ca2b31a586a'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/nginx.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in nginx-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/nginx-srv/${_srv/nginx-srv./}
-  done
-  
-  for _log in nginx-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/nginx-log/${_log/nginx-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "nginx" "${pkgdir}"
 }
