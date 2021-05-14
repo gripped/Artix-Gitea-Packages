@@ -1,49 +1,22 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=shairplay-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for shairplay"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-shairplay')
 conflicts=('init-shairplay')
 depends=('shairplay' 's6-base')
-backup=('etc/s6/sv/shairplay-log/conf'
-        'etc/s6/sv/shairplay-srv/conf')
-install=shairplay.install
-source=("shairplay-log.conf"
-        "shairplay-log.consumer-for"
-        "shairplay-log.notification-fd"
-        "shairplay-log.pipeline-name"
-        "shairplay-log.run"
-        "shairplay-log.type"
-        "shairplay-srv.conf"
-        "shairplay-srv.producer-for"
-        "shairplay-srv.run" 
-        "shairplay-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '766b1037b14819623a375c04b4679b9d91de9bcb1100ce547a9fbacc6bc0c89a'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'aa21fc386a1863c06d70d2404fcb5f65e4062833b3d6234937be22dbeafe64a7'
-            '81fd084c77c2f85002594afed5caa2eebc958994ce8658eb7c90c37ae721b211'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '33490a6052a03ed26de277437f41aaaa3a168f9aa0c7e304e93b1969b0b2f39d'
-            '25b822c86ad1d03255bf0b120634055f0a6c39e894ac31b9bd4df5253085749e'
-            '243ee4ce3cc13034bd75e52d6c93a13389f66f09b96e060b209ab7f09758a545'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/shairplay.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'shairplay-log'
-    _inst_sv 'shairplay-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "shairplay" "${pkgdir}"
 }
