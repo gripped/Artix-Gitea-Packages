@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=stunnel-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for stunnel"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-stunnel')
 conflicts=('init-stunnel')
 depends=('stunnel' 's6-base')
-install=stunnel.install
-backup=('etc/s6/sv/stunnel-log/conf')
-source=("stunnel-log.conf"
-        "stunnel-log.consumer-for"
-        "stunnel-log.notification-fd"
-        "stunnel-log.pipeline-name"
-        "stunnel-log.run"
-        "stunnel-log.type"
-        "stunnel-srv.producer-for"
-        "stunnel-srv.run"
-        "stunnel-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'efba906d1d28c94d1e5ec05c3cc060139a24491b135962d82cc0f413e5a37b1a'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '17443afe0a1b0b452fbe0ae3680e574575c8a41708e67d3cc7e49e395db86909'
-            '7e92ef09a3cd15da04b68ae33e9a9bd619a4fc0ed16bc6b42e8739fd354970d2'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '139c3647582d16d327ea2acc83ce58a008c706fef18d922946b4f6b49e0f7e04'
-            'ca9beaebda2cd9a8f99fb2299d02bca7a7daeffbf67f4c05d34d811b9ead4bae'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/stunnel.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'stunnel-log'
-    _inst_sv 'stunnel-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "stunnel" "${pkgdir}"
 }
