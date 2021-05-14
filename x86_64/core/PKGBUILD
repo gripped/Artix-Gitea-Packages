@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openldap-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for openldap"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-system')
 provides=('init-openldap')
 conflicts=('init-openldap')
 depends=('openldap' 's6-base')
-install=slapd.install
-backup=('etc/s6/sv/slapd-log/conf')
-source=("slapd-log.conf"
-        "slapd-log.consumer-for"
-        "slapd-log.notification-fd"
-        "slapd-log.pipeline-name"
-        "slapd-log.run"
-        "slapd-log.type"
-        "slapd-srv.producer-for"
-        "slapd-srv.run"
-        "slapd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'e4f27669d658f43b7d377286f63f03895410b959260b356190884b527597a4d3'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '4e40f9c43a69fd83638301e276ac19f124e377e20d9da22d5343eb26a75af7cb'
-            'e16a03431c794e32af4b003bef2bc4b76d4ae53a9af9de56188ee26a100128b9'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '6af1c648c7bb365463cc99eb1be30e0d87fdebf82c39a0315ed59a9a21735c56'
-            'f786b3ebf7de2ecedbce67d6d6cef527f496ec3986166e57a76b82280dfeb633'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/openldap.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'slapd-log'
-    _inst_sv 'slapd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "openldap" "${pkgdir}"
 }
