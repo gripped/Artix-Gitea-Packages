@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=chrony-s6
-pkgver=20210508
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for chrony"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-chrony')
 conflicts=('init-chrony')
 depends=('chrony' 's6-base')
-install=chrony.install
-backup=('etc/s6/sv/chronyd-log/conf')
-source=("chronyd-srv."{type,run,producer-for}
-        "chronyd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '1e04c954dc69cff5b9405322e961f79e03a4b9f535615533eb86c5b69595570f2ece4700d8939d5a63e5173e21bd3240a72c4f03d22fffa8fd0fbfb496d113a6'
-        '4ece3f5ed32d25a2eb0818737da536166b36384da605021cd4d00cbeb020162f17933c5394c9599e8e0079aadbed367cbafc93e2ed31c4b3ee9efef7e478c703'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '723e194cdf8bdb90f3c802f00aead6436fb4b70f5d3500938ae971a50aca01e29654501374d2e3575653c0703a3d4ffc9fc1d4f7096f77d4875792a0d25d3074'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '44e4378ca7520dabcde84f64ee20594c31763d362f904cd496fcf16cf637431d3fffe372c8f5320f8caf3f6226967e1088295467fc07b6cb005a5d719893128d'
-        '338e71c5d812023b0a5aaeeb4745c74dadcbb64fea4506e5b127210ed7e33e56ab3e981d106c92e2c554efcd40178a09fa5e11e043a632af20c75934eeda5d46'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/chrony.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in chronyd-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/chronyd-srv/${_srv/chronyd-srv./}
-  done
-  
-  for _log in chronyd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/chronyd-log/${_log/chronyd-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "chrony" "${pkgdir}"
 }
