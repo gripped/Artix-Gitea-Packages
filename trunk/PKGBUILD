@@ -4,15 +4,15 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=chrony-runit
 pkgver=20200907
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for chrony"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 depends=('chrony' 'runit')
 groups=('runit-galaxy')
-conflicts=('init-chrony')
-provides=('init-chrony')
+conflicts=('init-chrony' 'init-timed')
+provides=('init-chrony' 'init-timed')
 source=("chrony.run")
 sha256sums=('c0a138f1b62a8b000cc8ec19deb4f8a0c45d6f87c869ececd2783c7501312fff')
 
