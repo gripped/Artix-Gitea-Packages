@@ -1,47 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=connman-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for connman"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-connman')
 conflicts=('init-connman')
 depends=('connman' 'dbus-s6' 's6-base')
-install=connmand.install
-backup=('etc/s6/sv/connmand-log/conf')
-source=("connmand-log.conf"
-        "connmand-log.consumer-for"
-        "connmand-log.notification-fd"
-        "connmand-log.pipeline-name"
-        "connmand-log.run"
-        "connmand-log.type"
-        "connmand-srv.dependencies"
-        "connmand-srv.producer-for"
-        "connmand-srv.run"
-        "connmand-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'd1bac81e06291cad2378d1b9af2643c1e4df13bb6d66ae46dbbb7eda24fb85e1'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'e04982537052657db87d293f66792a3550a0c4232260907a78af67fb20cba314'
-            '10312f41078bf9474b2dd7eeece3841663f4021560c5a33dcd41a500a4b9cfa0'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'febd32c9870221c44d30bfc4aa1294d6f694a2f3b9b4dcdf8e4191fca4d5ccf7'
-            'cc5c1be7e5c0564de98714c256443a236d91017f8eeb4869421cb5a8214fae9e'
-            '1c6cd5b4d8ba019aacad25b065de19912d7e2e1f2ebfc2ce7ef868b82c96b5c7'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/connman.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'connmand-log'
-    _inst_sv 'connmand-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "connman" "${pkgdir}"
 }
