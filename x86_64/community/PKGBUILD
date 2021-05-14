@@ -1,28 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mailman-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for mailman"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-mailman')
 conflicts=('init-mailman')
 depends=('mailman' 's6-base')
-install=mailman.install
-source=("mailman.finish" "mailman.run" "mailman.type")
-sha256sums=('c8acb16058057ecd7bf8024f0578e1408e1c24f13244cd61f1b0f4ba7c967350'
-            '136cb6ab3b247b2869badf6aee7bbd5d0071ac1cf9ac096b8a5df209de3514cd'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in finish run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'mailman'
+    cd "${srcdir}"/s6-services
+    sh install.sh "mailman" "${pkgdir}"
 }

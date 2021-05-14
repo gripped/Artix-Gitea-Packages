@@ -1,5 +1,0 @@
-pre_remove() {
-    if [ -e "/run/service/mailman" ]; then
-        s6-rc -d change mailman
-    fi
-}
