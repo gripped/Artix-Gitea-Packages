@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-envfile /etc/s6/sv/ufw/conf
-importas -ui DIRECTIVES DIRECTIVES
-foreground { if -nt { test -d /var/log/ufw } install -dm755 -o s6log -g s6log /var/log/ufw }
-pipeline { ufw enable } s6-setuidgid s6log exec sh -c "s6-log -b ${DIRECTIVES} /var/log/ufw"

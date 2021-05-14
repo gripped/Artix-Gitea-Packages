@@ -1,30 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=ufw-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for ufw"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-ufw')
 conflicts=('init-ufw')
 depends=('ufw' 's6-base')
-install=ufw.install
-source=("ufw."{conf,dependencies,down,type,up})
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '953bc981527e6a08efdd7de8c5db0916ca58c52765b6e4ae599290e0486607a8'
-            'f15edf4109ba28846a4ea8812fbd4431ccea1527b042f7dc652af2658cdd40d9'
-            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '3fab66e3586c1d69a0737def3ce7976da51e47c93d2890774e56017030813a2e')
-
-_inst_sv(){
-    for file in conf dependencies down type up; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'ufw'
+    cd "${srcdir}"/s6-services
+    sh install.sh "ufw" "${pkgdir}"
 }
