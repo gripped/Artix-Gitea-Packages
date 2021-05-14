@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -p /run/brltty }
-fdmove -c 2 1
-exec brltty -n
