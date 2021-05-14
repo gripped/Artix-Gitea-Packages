@@ -1,49 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributor: linuxer <linuxer@artixlinux.org> 
 pkgname=earlyoom-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for earlyoom"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-earlyoom')
 conflicts=('init-earlyoom')
 depends=('earlyoom' 's6-base')
-install=earlyoom.install
-backup=('etc/s6/sv/earlyoom-log/conf'
-        'etc/s6/sv/earlyoom-srv/conf')
-source=("earlyoom-log.conf"
-        "earlyoom-log.consumer-for"
-        "earlyoom-log.notification-fd"
-        "earlyoom-log.pipeline-name"
-        "earlyoom-log.run"
-        "earlyoom-log.type"
-        "earlyoom-srv.conf"
-        "earlyoom-srv.producer-for"
-        "earlyoom-srv.run"
-        "earlyoom-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'c05d8f03221bec1e18bc84fdd9ffb73c8b3d34304348a6d5ae4f898e759f1efb'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'aa77b92410b3536fd9268922f541941b0013e718738005f7e3ce8da556f91a0e'
-            'eccdbfce6f2366fd43cd381a757cc2a7a5d7d6768a492334ebed23a0472014d8'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '22ea5061edb9298c57a8a34dec48bcc30ee37b2603c45a10da97c3364b8f753b'
-            'aff1d6c0450587b77e1d0234598859d75e51fa216c0e7f087bb938f5fa2b5aaa'
-            '093aaed529511243cf94189fd624029f5606c4d4aff0c648b6be7e83ec855f81'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/earlyoom.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'earlyoom-log'
-    _inst_sv 'earlyoom-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "earlyoom" "${pkgdir}"
 }
