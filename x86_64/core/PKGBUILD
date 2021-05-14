@@ -1,33 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=hdparm-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for hdparm"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-system')
 provides=('init-hdparm')
 conflicts=('init-hdparm')
 depends=('hdparm' 's6-base')
-install=hdparm.install
-backup=('etc/s6/sv/hdparm/conf')
-source=("hdparm.conf"
-        "hdparm.dependencies"
-        "hdparm.type"
-        "hdparm.up")
-sha256sums=('464c24e345ef4360735fcb0afbfe71c966091644b7d5e3951cbb8477915531e6'
-            'f24878426bd2ff992aa17612f3e7f3cdefcf053c3f5bd874922a00736b2b3257'
-            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            'ae46dad0519bec0716828f0ee9dfab393db8dd3eb48702477ab9edf902e0c096')
-
-_inst_sv(){
-    for file in conf type up; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/hdparm.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'hdparm'
+    cd "${srcdir}"/s6-services
+    sh install.sh "hdparm" "${pkgdir}"
 }
