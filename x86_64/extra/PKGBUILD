@@ -1,27 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=usbguard-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for usbguard"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-usbguard')
 conflicts=('init-usbguard')
 depends=('usbguard' 's6-base')
-install=usbguard.install
-source=("usbguard.run" "usbguard.type")
-sha256sums=('0d5e38c4ae8cd7ff67811530897e69bca20002ed3aef566b793df7a0dc09f688'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'usbguard'
+    cd "${srcdir}"/s6-services
+    sh install.sh "usbguard" "${pkgdir}"
 }
