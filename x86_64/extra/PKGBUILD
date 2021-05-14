@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openvpn-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for openvpn"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-openvpn')
 conflicts=('init-openvpn')
 depends=('openvpn' 's6-base')
-install=openvpn.install
-backup=('etc/s6/sv/openvpn-log/conf')
-source=("openvpn-log.conf"
-        "openvpn-log.consumer-for"
-        "openvpn-log.notification-fd"
-        "openvpn-log.pipeline-name"
-        "openvpn-log.run"
-        "openvpn-log.type"
-        "openvpn-srv.producer-for"
-        "openvpn-srv.run"
-        "openvpn-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'e7e294ade1ddb47cc68fe2e372e854cf13137f6d071a888e7a1b1939314decd0'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '3d7c4388fa6e4e1285cf300609fec430c27768524f8a314bd66a77c6ce0f5757'
-            'f7aacaa51cf9285e11fff1af987ce8eb285f471847e1579ada3645956b8d65b7'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'db8497e47acd8734c9ace7b6679c5170b5e3cfd0c8aa5defb9ca5d898e667868'
-            'cb29b53d93d7180b40bb268f0b172ffe60d43007fec8d0a504c26fcee80322e0'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/openvpn.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'openvpn-log'
-    _inst_sv 'openvpn-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "openvpn" "${pkgdir}"
 }
