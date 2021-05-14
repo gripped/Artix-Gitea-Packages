@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openntpd-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for openntpd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-openntpd' 'init-timed')
 conflicts=('init-openntpd' 'init-timed')
 depends=('openntpd' 's6-base')
-install=openntpd.install
-backup=('etc/s6/sv/openntpd-log/conf')
-source=("openntpd-log.conf"
-        "openntpd-log.consumer-for"
-        "openntpd-log.notification-fd"
-        "openntpd-log.pipeline-name"
-        "openntpd-log.run"
-        "openntpd-log.type"
-        "openntpd-srv.producer-for"
-        "openntpd-srv.run"
-        "openntpd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '430e056e9c03e9c316bc647c93afa50c29e2d5fcb3798ea44717fb9c1e425ddc'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'f613feea1fa3974ec243a9178bc0968f1542a2ef7767cae35953813a10b8e1d4'
-            '34360ce7268cdcadb0de63cf21d0d71eef13e506f2aa882af943bf2ed0854ae7'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '447cf347f5e8d327e930085352aa0c735a29d40b7ec37756a4b1ee4af5b2278b'
-            '2b44e41ae83698ba1021767cf842f7d1251e91de8344abc1e7afe7443cf1e5fe'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/openntpd.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'openntpd-log'
-    _inst_sv 'openntpd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "openntpd" "${pkgdir}"
 }
