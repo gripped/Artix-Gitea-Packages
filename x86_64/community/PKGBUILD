@@ -1,47 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=firewalld-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for firewalld"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-firewalld')
 conflicts=('init-firewalld')
 depends=('firewalld' 'dbus-s6' 's6-base')
-install=firewalld.install
-backup=('etc/s6/sv/firewalld-log/conf')
-source=("firewalld-log.conf"
-        "firewalld-log.consumer-for"
-        "firewalld-log.notification-fd"
-        "firewalld-log.pipeline-name"
-        "firewalld-log.run"
-        "firewalld-log.type"
-        "firewalld-srv.dependencies"
-        "firewalld-srv.producer-for"
-        "firewalld-srv.run"
-        "firewalld-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '22c7d02986567656d29fb383a206e615f9d576cd19a694ec87e277331aae267b'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '670911993ee54164fdbef6518723ff727c885a4b5c707ef254e488bfaa9bd437'
-            '1efd56e6371c380f09f3554737802126dc0bcfff3708adfe0cb67b757b728826'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '92c7f2f20b18c44ebbc49730b6a55112fdfa17216fe888419241d3e758512985'
-            '095eb0c1e352eab87236fe6588192fb3d938d35a2c1a144a533c2ad550907a34'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/firewalld.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'firewalld-log'
-    _inst_sv 'firewalld-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "firewalld" "${pkgdir}"
 }
