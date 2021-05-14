@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=apache-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for apache"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-apache')
 conflicts=('init-apache')
 depends=('apache' 's6-base')
-install=apache.install
-backup=('etc/s6/sv/apache-log/conf')
-source=("apache-log.conf"
-        "apache-log.consumer-for"
-        "apache-log.notification-fd"
-        "apache-log.pipeline-name"
-        "apache-log.run"
-        "apache-log.type"
-        "apache-srv.producer-for"
-        "apache-srv.run"
-        "apache-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '8c45896688801f5a0f70c3e443c3d643589800aea5364ddfa7ea7e97a1bc7665'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'cc89df1069b17555b87f33cece5b1cd954116d70d889cf64557d36721bc631f6'
-            'b6403b9b777ea0f5f78664d8e155f82023949d9132d9999541d0e0fe5cdf5d90'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '1c11a77bcb269454e8e1b23c313ea49963ba98580304397851298d5ca1a861f9'
-            '0c3da064d60e55315e6804e34f6c9abfa2ec4aaf18c5a6721254c15b0d4b21b2'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv() {
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/apache.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'apache-log'
-    _inst_sv 'apache-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "apache" "${pkgdir}"
 }
