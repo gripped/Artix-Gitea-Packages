@@ -1,9 +1,0 @@
-pre_remove() {
-  if [ -e /run/service/gitea-srv ] || [ -e /run/service/gitea-log ]; then
-    s6-rc -d change gitea
-  fi
-}
-
-post_remove() {
-  rm -rf /etc/s6/sv/gitea-log
-}
