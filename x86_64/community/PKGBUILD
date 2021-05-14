@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=stubby-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for stubby"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-stubby')
 conflicts=('init-stubby')
 depends=('stubby' 's6-base')
-install=stubby.install
-backup=('etc/s6/sv/stubby-log/conf')
-source=("stubby-srv."{type,run,producer-for}
-        "stubby-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '70b709cd63e65a7b25e1fe85fa6c8de5dae20f72735b9ceab1483c92667adebc7eaeb0cb3a57b956347bf4e01fa013b339c86e52285afbad360d2c022136c210'
-        '66b0d78b34ac22c3c8171f36196970795e830447e3e8b8ba47b2187417da007df96a7eb63563371bdf543c90b4b78f895e6219b14f599120c6b872ecdd9fee25'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '716fd9cb1597b71a6c10cba0753908510bdac718ff1963b73589dfac26e22315eda972ea3eac988aae93adf8c3d83310ca2c1d1c019058f3ee173420247bbbec'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        'ce2fb5ceff9d5553f3195003f5a0a464e673e61b8e546951a512c24b5df3775f95c0fa3a3f30bd9f298c2c6e4985b6fc8898d12d4915dfaf5af066994c446003'
-        '1f075be40099cbd357931a84031d52e80a711d082d5ec54a043f54db47b2234754216f636239930d6958144a34f75685081d0dc5bc3defc2909c0de74ddf4f28'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/stubby.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in stubby-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/stubby-srv/${_srv/stubby-srv./}
-  done
-  
-  for _log in stubby-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/stubby-log/${_log/stubby-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "stubby" "${pkgdir}"
 }
