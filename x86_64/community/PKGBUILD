@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lxd-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for lxd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-lxd')
 conflicts=('init-lxd')
 depends=('lxd' 'dbus-s6' 's6-base')
-install=lxd.install
-backup=('etc/s6/sv/lxd-log/conf')
-source=("lxd-log.conf"
-        "lxd-log.consumer-for"
-        "lxd-log.notification-fd"
-        "lxd-log.pipeline-name"
-        "lxd-log.run"
-        "lxd-log.type"
-        "lxd-srv.producer-for"
-        "lxd-srv.run"
-        "lxd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'dff73a609599a0cc52ae0b76235364a8b81dea4f33bcb48c8220a55dbeede215'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '5e81ec853b02bfb95e658766e7acd52fbd47165129ce4bfb543480b468ab4713'
-            '7194adb1352c2c299e3f47ed0167968b58b684c3e69d59edf7a2ab44b75699a7'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'fae6673cf9dc86b756ee7e56d35cea18941b4729146261930dbc31cdb8ec3d32'
-            'fa3c80fbec9ce88ca9ab1a02a612bb5415ac1c639454d3b6a7b47b1fb16d87b1'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/lxd.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'lxd-log'
-    _inst_sv 'lxd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "lxd" "${pkgdir}"
 }
