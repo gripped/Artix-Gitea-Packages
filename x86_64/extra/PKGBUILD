@@ -1,37 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lm_sensors-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for lm_sensors"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-lm_sensors')
 conflicts=('init-lm_sensors')
 depends=('lm_sensors' 's6-base')
-install=lm_sensors.install
-source=("fancontrol.dependencies"
-        "fancontrol.run"
-        "fancontrol.type"
-        "lm_sensors.down"
-        "lm_sensors.type"
-        "lm_sensors.up")
-sha256sums=('373e0d6ffc0ae8c4bd23d1e933da075023c6ef8ab3fb5176f3b4a1ad2187e68b'
-            '6b2b01066a337c24291165bc404f5671cb80541cf9d51cd9eb5529ed40d25ce6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '9676dfacaf0ac0c2aaea143ef59833f4d4e14becb8a53e3cc08e58c298ea0dc8'
-            'aab38fd7998987a22d44fda7822afcfa69d039d3ba02b1f707f064df64352217'
-            '55dad78f364a600c73e177757b1a01468d2ae1efaafc66246d0ab7277efda088')
-
-_inst_sv(){
-    for file in dependencies down run type up; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'fancontrol'
-    _inst_sv 'lm_sensors'
+    cd "${srcdir}"/s6-services
+    sh install.sh "lm_sensors" "${pkgdir}"
 }
