@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mdadm-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for mdadm"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-system')
 provides=('init-mdadm')
 conflicts=('init-mdadm')
 depends=('mdadm' 's6-base')
-install=mdadm.install
-backup=('etc/s6/sv/mdadm-log/conf')
-source=("mdadm-log.conf"
-        "mdadm-log.consumer-for"
-        "mdadm-log.notification-fd"
-        "mdadm-log.pipeline-name"
-        "mdadm-log.run"
-        "mdadm-log.type"
-        "mdadm-srv.producer-for"
-        "mdadm-srv.run"
-        "mdadm-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '1e04011d4855e68b8e1667749c755983e5f3acf9611bb37519b0369b79b3bdf1'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'ca9535320251a9e19b42a45e58bda7418357c880206daecbf88a3544d721fea3'
-            '4bae108767451422da8cde57643092cc183031eda385a7191c721d7173e762b6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '96717ed01f86898a47701a51262dded0c93f84f2fefecf2d8e416b139b6cd7b3'
-            '59d4aa612f76b71ae55bfdec0ebfa9ec84aacd44b5eac67be6165e9bdad06426'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/mdadm.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'mdadm-log'
-    _inst_sv 'mdadm-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "mdadm" "${pkgdir}"
 }
