@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=znc-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for znc"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-znc')
 conflicts=('init-znc')
 depends=('znc' 's6-base')
-install=znc.install
-backup=('etc/s6/sv/znc-log/conf')
-source=("znc-srv."{type,run,producer-for}
-        "znc-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '2b61b40a161d3ba5f0efdbc8a1774ac883781ecfe27fac620491a12d588e5b99a40f109dfe13e53f892f5cd21be8188c39c763cc3620623caf8db2e1c9a3bcd9'
-        '1e150baf8a89d8741a3f8b026d53d21c71a1f61e9f5f382129161617ed1935d148845b6e319ef48bbe24b5dbe6fb740a59d2c61d5424efdb2b3fde19e4e1d84d'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '5ae3b996e0a43e479cb31eafd526a3bfb5a3aa4a1ef4d0ba98605c0ef28237a58ed6b3b7d25a2bb09ece4b7d38a0f45676d64f49db5342c8d0d9635f78b0db14'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '94bdce7257d4295c0f5007c561ec225dddbb9328830de494530f04080a2acc6c9972969e3594ec63f8c6a96f894fd74063135d689e33f4ecab5901cc4f66c0ab'
-        '2244dfedd18317f11b7fe7cb243fac82c4230434de242418c951f42daa6ce9c72f10d42cb788fe735e735a10a3c539064a369a915ccf9ce1d1203a798d302219'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/znc.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in znc-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/znc-srv/${_srv/znc-srv./}
-  done
-  
-  for _log in znc-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/znc-log/${_log/znc-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "znc" "${pkgdir}"
 }
