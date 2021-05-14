@@ -1,45 +1,21 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 pkgname=minio-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for minio"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-minio')
 conflicts=('init-minio')
 depends=('minio' 's6-base')
-backup=('etc/s6/sv/minio-log/conf')
-install=minio.install
-source=("minio-log.conf"
-        "minio-log.consumer-for"
-        "minio-log.notification-fd"
-        "minio-log.pipeline-name"
-        "minio-log.run"
-        "minio-log.type"
-        "minio-srv.producer-for"
-        "minio-srv.run" 
-        "minio-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '671cd046c325d70c0323616e214971d9e06df16c9db803b2a14442580b460a55'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'fd05d1b2e3fca020bc28196dc33381fd48aaa68c255c11ba5560f6ce8e6063d9'
-            '87b6fcf962f648b2c4e0d57bf8ba10727def6cc0a921fbd1382083c34e09bb6c'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '45b05738697a4b12e54d7bf6a295055dd658b912b4cee2ceb67a2a74e731de08'
-            'c8f99b4c4d707a41b7ca9779e9d3a0333093283a55c4908f273f9f03a39fadae'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/minio.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'minio-log'
-    _inst_sv 'minio-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "minio" "${pkgdir}"
 }
