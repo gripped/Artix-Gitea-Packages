@@ -1,49 +1,22 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=distcc-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for distcc"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-distcc')
 conflicts=('init-distcc')
 depends=('distcc' 's6-base')
-backup=('etc/s6/sv/distcc-log/conf'
-        'etc/s6/sv/distcc-srv/conf')
-install=distcc.install
-source=("distcc-log.conf"
-        "distcc-log.consumer-for"
-        "distcc-log.notification-fd"
-        "distcc-log.pipeline-name"
-        "distcc-log.run"
-        "distcc-srv.conf"
-        "distcc-log.type"
-        "distcc-srv.producer-for"
-        "distcc-srv.run" 
-        "distcc-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '9f8ef17d569557516b5a497b364a35306e3681e658f20735500fe3d5e890749f'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '9fc063ec666f7859d0a1ad1203edd644eb98f458910fc2005ffdba4c794198d8'
-            'b8f507c20ee5319db84d04eeb76aab603b649dd4ccdcaaac4020f6edf735b894'
-            '6419d7377aa55bf3848fe654df0fb19cf97419335d611fd1c9e028670a49d7e3'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'b8b333cf9b0ae3e79bb45777ee2d5b0614934062a7eb3df834bbd2f076afec36'
-            '639d3c86bdd307131c58f4253583a4a6042fd9938c1f6850c5f8042d2773747a'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/distcc.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'distcc-log'
-    _inst_sv 'distcc-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "distcc" "${pkgdir}"
 }

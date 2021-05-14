@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-envfile /etc/s6/sv/distcc-srv/conf
-importas -sCiu DISTCCD_OPTS DISTCCD_OPTS
-fdmove -c 2 1
-s6-setuidgid distcc exec -c distccd --no-detach --daemon -- ${DISTCCD_OPTS}
