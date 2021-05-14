@@ -1,3 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { mkdir -pm 0755 /var/empty }
-exec vsftpd -obackground=no -olisten=no -olisten_ipv6=yes
