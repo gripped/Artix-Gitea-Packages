@@ -1,6 +1,0 @@
-#!/usr/bin/execlineb -P
-foreground { if -n -t { test -d /var/log/saned } install -d -m 0755 -o s6log -g s6log /var/log/saned }
-foreground { chmod -R 755 /var/log/saned }
-envfile /etc/s6/sv/saned-log/conf
-importas -sCiu DIRECTIVES DIRECTIVES
-s6-setuidgid s6log exec -c s6-log -d3 -b -- ${DIRECTIVES} /var/log/saned
