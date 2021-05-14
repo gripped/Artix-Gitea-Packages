@@ -1,29 +1,19 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20210430
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for elogind"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 depends=('elogind' 'dbus-s6' 's6-base')
+makedepends=('git')
 provides=('init-logind' 'init-elogind')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
 conflicts=('init-logind' 'init-elogind')
-install=elogind.install
-source=("elogind.dependencies"
-        "elogind.run"
-        "elogind.type")
-sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            'ecadf94f8850cb3f27f22bb14ac670957690584d1a0c9e3ba4ffda6608977596'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in dependencies run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'elogind'
+    cd "${srcdir}"/s6-services
+    sh install.sh "elogind" "${pkgdir}"
 }
