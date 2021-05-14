@@ -1,7 +1,4 @@
 pre_remove() {
-    if [ -e "/run/service/s6rc-oneshot-runner" ]; then
-        s6-rc -d change lvm2
-    fi
     sed -i '/lvm2/d' /etc/s6/sv/mount-filesystems/dependencies
 }
 
@@ -15,13 +12,4 @@ post_install() {
 
 post_upgrade() {
     post_install
-    rm -rf /etc/s6/sv/lvmetad-log
-    rm -rf /etc/s6/sv/lvmetad-srv
-}
-
-post_remove() {
-    rm -rf /etc/s6/sv/lvm2-monitor
-    rm -rf /etc/s6/sv/lvm2-pvscan
-    rm -rf /etc/s6/sv/lvmetad-log
-    rm -rf /etc/s6/sv/lvmpolld-log
 }
