@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=openfire-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for openfire"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-openfire')
 conflicts=('init-openfire')
 depends=('openfire' 's6-base')
-install=openfire.install
-backup=('etc/s6/sv/openfire-log/conf')
-source=("openfire-srv."{type,run,producer-for}
-        "openfire-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '8b9edc3a07212e71ee9e3eed63740c26792150c386e97c951b6b25ecc79e67a6947f2b00e08b95206ae09da12fb63ca9433d00b1e551f99bec4143f9e67d5816'
-        'ed16bf63a8a267738a5ea33592f201fbef877605474d514bc77770c917b9f966806edbf5d9f972ad80dc364d619c4898e5756cf5b77232f6a5a52439d94ba942'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'fad94f375d52cbe6eb265b197028b5a7cbb262d4a144b6c2d136b0c35edcc8dfe85fb485c2befa3773e7961dfd04c45b9ff54f41edc3faedb31814e459bc0d29'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '1597f8a4061e1536c333e946ccdb4e924b92014671aeb976917bb43091a86276cfa0aa223fd0e7ea44c2c17c30e225e4af6e35bb54b8cf81478419b35d6ae3e6'
-        '307db1863c9cda36674ff482b188ca1663481eb0857e07ec373dd7549c49d43822946b49d8d471dd865d441ed1c85b0bde2b2e00bc5830cb0a85f1ac6ae0b806'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/openfire.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in openfire-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/openfire-srv/${_srv/openfire-srv./}
-  done
-  
-  for _log in openfire-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/openfire-log/${_log/openfire-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "openfire" "${pkgdir}"
 }
