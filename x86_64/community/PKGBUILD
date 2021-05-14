@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=i2pd-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for i2pd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-i2pd')
 conflicts=('init-i2pd')
 depends=('i2pd' 's6-base')
-install=i2pd.install
-backup=('etc/s6/sv/i2pd-log/conf')
-source=("i2pd-log.conf"
-        "i2pd-log.consumer-for"
-        "i2pd-log.notification-fd"
-        "i2pd-log.pipeline-name"
-        "i2pd-log.run"
-        "i2pd-log.type"
-        "i2pd-srv.producer-for"
-        "i2pd-srv.run"
-        "i2pd-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'd20a6c378c91f21b642bdfde21fb78a718d864db06ca5895b2c413d770281991'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'e38f43025da8a565dc63629f2453cfec86e008b1e70148e50cf793a82504b7b1'
-            'dbe98bbec9299c8413a275866e63e86aaa64766f942cefd0d8b82ecf832918b6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '9316ecbcbc9ca5131df638d33b2eb3fed0d3ac55e631dec4dead042d91062ce5'
-            '7934fc2b683f5aaba681f7507c5fe8a98169dedc082f70a242b243d2c4d105fb'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/i2pd.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'i2pd-log'
-    _inst_sv 'i2pd-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "i2pd" "${pkgdir}"
 }
