@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=jenkins-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for jenkins"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-jenkins')
 conflicts=('init-jenkins')
 depends=('jenkins' 's6-base')
-install=jenkins.install
-backup=('etc/s6/sv/jenkins-log/conf')
-source=("jenkins-srv."{type,run,producer-for}
-        "jenkins-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'b87a6e97bd5a83747f4977c306a9d8f874314fee659877548caf0fbc1c88115f5c748fbac565aa3573974bde254156a39f65342580a6c9f1292b4a6bc986e3f4'
-        '961ba3d105e24941f21bdd06f03303773bbf20a2f47935f75405d1a5b7abb1b7633e4c52c583efb16485846cf0672beddc17feb139ca26ab02255014af2902aa'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        'd13cfc101f83de1ba540f887b33db3ac0b81e9f5e72d873b2d4be862b34bef8f38388ce34a26c473bc07f6bb90e0a80d8ee1630b172772890e1e6120248a2aa7'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '2790d4808dfb141e78dfe5d37c8f78adf1d1369ca1cb576cac34ce519084fc1f1858e588e2ffb808e2090c8da63d4c4075583013047c21171be29647bc979e67'
-        '4140556c81d43d0d36d0b2e73bfb12d35b3c527c8288b77c7ec6a3932f8d487812534687ef25b96a90adc910a17781f3491e1f640ff96e91c93f0a6d2c955714'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/jenkins.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in jenkins-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/jenkins-srv/${_srv/jenkins-srv./}
-  done
-  
-  for _log in jenkins-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/jenkins-log/${_log/jenkins-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "jenkins" "${pkgdir}"
 }
