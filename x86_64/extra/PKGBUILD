@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=spamassassin-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for spamassassin"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-spamassassin')
 conflicts=('init-spamassassin')
 depends=('spamassassin' 's6-base')
-install=spamassassin.install
-backup=('etc/s6/sv/spamassassin-log/conf')
-source=("spamassassin-log.conf"
-        "spamassassin-log.consumer-for"
-        "spamassassin-log.notification-fd"
-        "spamassassin-log.pipeline-name"
-        "spamassassin-log.run"
-        "spamassassin-log.type"
-        "spamassassin-srv.producer-for"
-        "spamassassin-srv.run"
-        "spamassassin-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '810fc32e126de4b1df3b20d5de8a02b0fced9f0a44dc946eb21469216059aee7'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '69d904b9d94dcc2e3cc59d5ef43b9dad4bc90a20ea8570ebc44cad747c34788c'
-            'aac90b2a87014885855078088fbee9132c878a76c46d47ac597556d4bed2ea4b'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'afcfc4b535556c1c7cfcb50a2ff64c9903f7e1651574777baff132f20d96dbb5'
-            'a17aa37a3208e97999bea42ccde5c6052fd2e2b59d8eb1fbd9ff12a4bd58c5a6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/spamassassin.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'spamassassin-log'
-    _inst_sv 'spamassassin-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "spamassassin" "${pkgdir}"
 }
