@@ -1,47 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=networkmanager-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for networkmanager"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-networkmanager')
 conflicts=('init-networkmanager')
 depends=('networkmanager' 'dbus-s6' 's6-base')
-install=NetworkManager.install
-backup=('etc/s6/sv/NetworkManager-log/conf')
-source=("NetworkManager-log.conf"
-        "NetworkManager-log.consumer-for"
-        "NetworkManager-log.notification-fd"
-        "NetworkManager-log.pipeline-name"
-        "NetworkManager-log.run"
-        "NetworkManager-log.type"
-        "NetworkManager-srv.dependencies"
-        "NetworkManager-srv.producer-for"
-        "NetworkManager-srv.run"
-        "NetworkManager-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '4c34baa615e03535d32d648dc9af017a3c5c4270140a769cd1d3685c3d6a1c43'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'ea129b16d63b0b0bb1eb7652beb522d7f0f2a88c9b279014a28b5e52f1af758f'
-            '984a9cf2beb706d30b43c328cb4a60736cbe0bd6cbd575a4344e72c6d1a86d05'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '7bdb94d78be286b25e76cf9c04ca6c1c1afe9d0036c09da9a61a030a2d1eb3f0'
-            '884aea6169febd9764f7a7e27d0cd96baf2e755d66d08b48e40996f4906ef1e5'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/networkmanager.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'NetworkManager-log'
-    _inst_sv 'NetworkManager-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "networkmanager" "${pkgdir}"
 }
