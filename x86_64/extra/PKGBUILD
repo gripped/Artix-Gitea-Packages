@@ -1,49 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=modemmanager-s6
-pkgver=20210507
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for ModemManager"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-modemmanager')
 conflicts=('init-modemmanager')
 depends=('modemmanager' 'dbus-s6' 's6-base')
-install=ModemManager.install
-backup=('etc/s6/sv/ModemManager-log/conf')
-source=("ModemManager-log.conf"
-        "ModemManager-log.consumer-for"
-        "ModemManager-log.notification-fd"
-        "ModemManager-log.pipeline-name"
-        "ModemManager-log.run"
-        "ModemManager-log.type"
-        "ModemManager-srv.conf"
-        "ModemManager-srv.dependencies"
-        "ModemManager-srv.producer-for"
-        "ModemManager-srv.run"
-        "ModemManager-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '61869dcace06145dca8472faacdc8fc324819f17149d1d0b228a2b2bbec5da81'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '53a705a73654819a25c2c26e92873726285161c303838631dd66f5c6a96e9b58'
-            'ad20f3fbff57cfb3871ac6644795d4c0ff64cc714008da7da67d49c163011a3c'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            '95828fa89b098bb93c9bfcb95dbc734ad67ed970493c87fc5afdfec9243df195'
-            '9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '5ebcf8b4b44c050a232d7e5237794b0ac8799b8f0d6177cf738e8ce84bb14f73'
-            'b6236ff59d5e2ac96d90ef3253e95c29c189e38bb12f984af264924f4d708937'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for dependencies notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/modemmanager.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'ModemManager-log'
-    _inst_sv 'ModemManager-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "modemmanager" "${pkgdir}"
 }
