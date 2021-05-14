@@ -1,27 +1,21 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=wireguard-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for wireguard"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-wireguard')
 conflicts=('init-wireguard')
 depends=('wireguard-tools' 'resolvconf' 's6-base')
-install=wireguard.install
-source=("wireguard.up"
-        "wireguard.down"
-        "wireguard.conf"
-        "wireguard.type")
-md5sums=('d5995a01537f64e9cc208772be7f77a2'
-         'b1feb3f0cd0a2878ff60df8da1f623f5'
-         '95bc89153db46c4dff1a27ebab61a44f'
-         '85bceea1fb94d4166f24496dc40a35e6')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for file in wireguard.{up,down,type,conf}; do
-    install -Dm644 "$srcdir"/"$file" "$pkgdir"/etc/s6/sv/wireguard/${file/wireguard./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "wireguard" "${pkgdir}"
 }
