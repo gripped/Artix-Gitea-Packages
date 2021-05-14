@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=qemu-guest-agent-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for qemu-guest-agent"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-qemu-guest-agent')
 conflicts=('init-qemu-guest-agent')
 depends=('qemu-guest-agent' 's6-base')
-install=qemu-guest-agent.install
-backup=('etc/s6/sv/qemu-guest-agent-log/conf')
-source=("qemu-guest-agent-log.conf"
-        "qemu-guest-agent-log.consumer-for"
-        "qemu-guest-agent-log.notification-fd"
-        "qemu-guest-agent-log.pipeline-name"
-        "qemu-guest-agent-log.run"
-        "qemu-guest-agent-log.type"
-        "qemu-guest-agent-srv.producer-for"
-        "qemu-guest-agent-srv.run"
-        "qemu-guest-agent-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            '8c45896688801f5a0f70c3e443c3d643589800aea5364ddfa7ea7e97a1bc7665'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            'f4ea29c7570f13b4bbfacba92cd9f2e78c05a1c2052c0457d60dd50a180b04b4'
-            'b989de285a9cf468afdd5e81d5afec85f1761244352d86d24b943b9c2b0b5aea'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'dcc38ef77aba491842b3da55cd9aa98a9c848d514dc1adb1405c1b76fd9f263c'
-            'dc213222e50abe8ae9b6b9471682d59b541a6dedf56ab44c1296a1d3f0f0f72a'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv() {
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/qemu-guest-agent.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'qemu-guest-agent-log'
-    _inst_sv 'qemu-guest-agent-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "qemu-guest-agent" "${pkgdir}"
 }
