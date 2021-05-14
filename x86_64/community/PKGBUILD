@@ -1,27 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lxdm-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for lxdm"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-lxdm')
 conflicts=('init-lxdm')
 depends=('lxdm-gtk3' 's6-base')
-install=lxdm.install
-source=("lxdm.run" "lxdm.type")
-sha256sums=('3f630ce447baaf995103494c398b1d1ee6d460082a8d297bb0ef5752306c2e98'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'lxdm'
+    cd "${srcdir}"/s6-services
+    sh install.sh "lxdm" "${pkgdir}"
 }
