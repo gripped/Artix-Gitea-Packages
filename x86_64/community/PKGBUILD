@@ -1,45 +1,21 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=webhook-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for webhook"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-webhook')
 conflicts=('init-webhook')
 depends=('webhook' 's6-base')
-install=webhook.install
-backup=('etc/s6/sv/webhook-log/conf')
-source=("webhook-log.conf"
-        "webhook-log.consumer-for"
-        "webhook-log.notification-fd"
-        "webhook-log.pipeline-name"
-        "webhook-log.run"
-        "webhook-log.type"
-        "webhook-srv.producer-for"
-        "webhook-srv.run"
-        "webhook-srv.type")
-sha256sums=('8a3d2abcc40d355ca913f39871d24f6c770dd216fe075d2548e729b2ae952135'
-            'e9c18712901252214ce1222034d4c0f302758f70bb1996332d1b43734abd8646'
-            '1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2'
-            '8805f8f8d0d9f28d1c96e4ae407d6c69fec1cc0be0c13bb7aa6c7678d80db27e'
-            'd96992cd07b6923342f054ac63d9a1bc3e8bab2d8f39c5830cd6125a39c011e6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006'
-            'ff28ca9c872e71ce8dad1e5b55dcbf9b66c31ab513f5069adf24bdc9619ee215'
-            'c13db20ff5aef71fcfae74d34a4dc01fd2c73062226904ee69033aeb970427f6'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in conf consumer-for notification-fd \
-        pipeline-name producer-for run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/webhook.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'webhook-log'
-    _inst_sv 'webhook-srv'
+    cd "${srcdir}"/s6-services
+    sh install.sh "webhook" "${pkgdir}"
 }
