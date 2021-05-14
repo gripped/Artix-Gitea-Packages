@@ -1,35 +1,22 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=fwknop-s6
-pkgver=20210506
+pkgver=20210512
 pkgrel=1
 pkgdesc="s6-rc service scripts for fwknop"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
+url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-galaxy')
 provides=('init-fwknop')
 conflicts=('init-fwknop')
 depends=('fwknop' 's6-base')
-install=fwknopd.install
-backup=('etc/s6/sv/fwknopd-log/conf')
-source=("fwknopd-srv."{type,run,producer-for}
-        "fwknopd-log."{type,run,conf,pipeline-name,consumer-for,notification-fd})
-b2sums=('d64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '39061f0c067f3acc7ca7b9c83cfdb2b0679fe24f45a55729a05c67b1069811e129dd6a9c8331a240794f22438d953ba0e4fbe732a11d73b4b26d081af36b0c1e'
-        'f4e4bcf36d650661ecb722e697b3a538b5c34faae3d7bcca98f08e60c4bea5bc5e9671da8b38b3cd9850b5091d3db2f303cd184943b7eab348ac4a7204c8c9f4'
-        'd64d49cff4f8f99eb08cf0a31d20f5b6908fabfcc055feab7d5b260bbdae4a39fc5e7be8d91a0d8f97ffe6da2d3924c4c3fa91be18130bc144fdd42a8e63de85'
-        '7b3351926be239b1a3de651857a72be9d83086eef2fbc460d24cc30af697b56f3599c5459f84298c87b34b53c51f220394f3f996e605fa7b0e94e1459e9b67ef'
-        '2a517d2f5dc7ddbfb2e24054c863167044f2ac414cc636f60d86b6373592ab6e960d42a8ef5c0058b186099a92b5b98915753f9b80220aed9003e7beb987ef05'
-        '1e8b3abad153f7e9b785f69f605955620dd3eae2a30615509dbc6cf4da959d2a4223224c36bfc05b509b3783723cae441402280572d054a7d8844c3ca8e34eb8'
-        '581f7d0c1f1aa5b2e9da5931c81b748c21768078b22915d43493c93f6ee7f8bf2ae9c63e8f7715caed6067ee608caa8cdab3804301f437bb981d2d8812c32a3d'
-        'dfb4f0a38f1ba4731ab1e568b7ec45fa2977d1661b5d1b3a7bb79d49b900d7849a78ef67af65243b357d8a209f379e6f026f86efdce430256f6fadc8ce2b0a49')
+makedepends=('git')
+_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+backup=('etc/s6/config/fwknop.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-  for _srv in fwknopd-srv.{type,run,producer-for}; do
-    install -Dm644 "$_srv" "$pkgdir"/etc/s6/sv/fwknopd-srv/${_srv/fwknopd-srv./}
-  done
-  
-  for _log in fwknopd-log.{type,run,consumer-for,notification-fd,pipeline-name,conf}; do
-    install -Dm644 "$_log" "$pkgdir"/etc/s6/sv/fwknopd-log/${_log/fwknopd-log./}
-  done
+    cd "${srcdir}"/s6-services
+    sh install.sh "fwknop" "${pkgdir}"
 }
