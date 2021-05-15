@@ -18,22 +18,19 @@ pkgname=(
   uwsgi-plugin-php
   uwsgi-plugin-php7
   uwsgi-plugin-lua51
-  uwsgi-plugin-jvm
   uwsgi-plugin-mono
   uwsgi-plugin-webdav
   uwsgi-plugin-zabbix
   uwsgi-plugin-notfound
 )
 pkgver=2.0.19.1
-pkgrel=11
+pkgrel=12
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
 url="https://uwsgi-docs.readthedocs.io/en/latest/"
 license=(GPL2)
 makedepends=(
-  classpath
   jansson
-  java-environment=7
   libxcrypt
   libxml2
   lua51
@@ -70,7 +67,7 @@ sha512sums=('e18359c5ea3606d5de7fb3a0074d777e1c4b41f51f4b1a21f1446f32253058d7924
             '9e9eab08199cf08810ec95b0697cd8817226986d1e3aeb54845c0140ea5887360580348f295060c0558fb2d6aaed26fec929ea36b28cfeaf2b3588ce40fec3df'
             '4def9dcd06cfc2c6ce554add9d9545a01f3bb2681f0a2a6fc4ba68f91011111803a955cc41b5e70832ca448b196109368fdf874e81b7ec0edee4b51f864e16f7'
             '162ca1be96282b32e8e6be919b6315bfd08954c491056958985bf99e7f5bdad3511665f059329d6cb6ef5d222f9aa11d4dc43c72e6a963ab941ada959fe8d964'
-            '665edc291d944167ca88e1cf2d80c16290836b23820a3da173cbfdc2ed727c96c936de05c60131cdf266cb64723b4c4b0531b9cb1be7ebcfa66aa189c32890ab')
+            '91b9548bb24eb4fff86ff867121edab92b531db04dacf5402b9bd8849632edfbfa0878e244bf5d243f34dcd5ee0df0ad136c888a4f27984dd6a96fd7b5e0959e')
 b2sums=('3f13da44081e85dfee01c827593656c0d1074a0217ca5fde5424ff36e0ae529d506f65a2bca658bd7df0a07520cae21cf8ce72ec85c767ec73304afd8a70b89e'
         '6cb0ef47fec9b74a27e2451da9d332b2f9c0200e75d00441163363b4eaa6859ebb23fa7c520b180caae26b8290b470c63b535d84c2e2733f6228983fb4d1c311'
         '835a1036422e9821cd52ffdf5a6053bdd59fc700d473600bda60b6730746f6c0750c30c85f4139d3ea81c6b6dd10d6849f9406decee3179861c51aca90da6161'
@@ -78,35 +75,27 @@ b2sums=('3f13da44081e85dfee01c827593656c0d1074a0217ca5fde5424ff36e0ae529d506f65a
         '82e03ea95995cfa78abc4d930bd0c250f22788d9ca4dc0921cfbb44a965c0f851cbcc7a855e36ec6e6aa5bf33fbd313b4fe68a2f1c4b7935c2b297be25895324'
         '9759827f7619358383bf0e68c955522c0054620f742f5122a59888fadfc0bc20bd587eab7a77bc73e8ee4d20cf8f02625c07f241462e8ab9c08f5af509daaef3'
         '0068763ca5a2f1b60782f53070cbff8cf930e1463d9199b156b02413026bcdb3d923bffcbba063a26d620b8e734bdbd26a4c22776532546ad8c8e5c0c73bd7d6'
-        'd4edc0b7e88c8f64c4746355bbdffcd20f43f61e15ed0efc621f7fb904ca1908f1fe0296ea0603a07e7847cbad3dd23ca2a295141719974edf0104abb877220f')
+        '1f070c1720381f08af2009d075aec17f08820820abf9f89eab1ce557610d51e3d5b9669467a0e4e8a484133fa49f6b90e48d174befb95da38a9d32aaf4674f87')
 
 prepare() {
   local _patch
 
   cd "$pkgbase-$pkgver"
 
-  for _patch in ../*.patch; do
-    printf "Applying patch %s...\n" "${_patch}"
-      patch -Np1 -i "${_patch}"
-  done
-
+  patch -Np1 -i "$srcdir"/uwsgi-1.9.13-ruby2.0.patch
+  patch -Np1 -i "$srcdir"/uwsgi-2.0.19.1-php8.patch
 
   # fix default lua pkgconfig name
-  sed -e 's/lua5.1/lua51/' \
-      -i plugins/lua/uwsgiplugin.py
+  sed -e 's/lua5.1/lua51/' -i plugins/lua/uwsgiplugin.py
   # move ruby plugin to new location and fix its name
   mv plugins/ruby{19,}
-  sed -e 's/ruby19/ruby/' \
-      -i plugins/ruby/uwsgiplugin.py
+  sed -e 's/ruby19/ruby/' -i plugins/ruby/uwsgiplugin.py
   # duplicate the php plugin, so that we can modify it (and leave the php7
   # version unmodified)
   cp -av plugins/php{,7}
-  # remove the explicit lib version from the linking stage of the PHP plugin
-  # Dont remove (Artix)
-  sed -e 's,+ php_version,,' \
-    -e 's,-lphp,-lphp7,' \
-    -i plugins/php7/uwsgiplugin.py
-
+  # remove the explicit lib version from the linking stage of the PHP plugin as
+  # we do not provide /usr/lib/libphp8.so
+  sed -e "s/ + php_version//" -i plugins/php/uwsgiplugin.py
   # copy our custom build profile into place
   cp -v ../archlinux.ini buildconf/
 }
@@ -203,15 +192,6 @@ package_uwsgi-plugin-php7() {
 
   cd "$pkgbase-$pkgver"
   install -vDm 755 php7_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
-}
-
-package_uwsgi-plugin-jvm() {
-  pkgdesc+=" (JVM plugin)"
-  depends=('classpath' 'glibc' 'uwsgi' 'java-environment=7')
-
-  cd "$pkgbase-$pkgver"
-  install -vDm 755 jvm_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
-  install -vDm 644 plugins/jvm/uwsgi.jar -t "$pkgdir"/usr/share/java/
 }
 
 package_uwsgi-plugin-mono() {

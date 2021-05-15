@@ -1,19 +1,7 @@
-From 8b94115ef0539ad5d7ed4448e1dc5f81d3a8422d Mon Sep 17 00:00:00 2001
-From: Nathan Owens <ndowens@artixlinux.org>
-Date: Sat, 27 Feb 2021 14:14:07 -0600
-Subject: [PATCH] php8 patch
-
----
- plugins/php/common.h       |   5 -
- plugins/php/php_plugin.c   | 226 +++++++++++++++++++++----------------
- plugins/php/session.c      |  29 ++---
- plugins/php/uwsgiplugin.py |   4 +-
- 4 files changed, 138 insertions(+), 126 deletions(-)
-
-diff --git a/plugins/php/common.h b/plugins/php/common.h
-index 9bf1c06..061b0b5 100644
---- a/plugins/php/common.h
-+++ b/plugins/php/common.h
+diff --git c/plugins/php/common.h w/plugins/php/common.h
+index 9bf1c069..061b0b59 100644
+--- c/plugins/php/common.h
++++ w/plugins/php/common.h
 @@ -3,11 +3,6 @@
  #include "php_main.h"
  #include "php_variables.h"
@@ -26,10 +14,10 @@ index 9bf1c06..061b0b5 100644
  #include "ext/standard/info.h"
  
  #include "ext/session/php_session.h"
-diff --git a/plugins/php/php_plugin.c b/plugins/php/php_plugin.c
-index 5cec780..717d631 100644
---- a/plugins/php/php_plugin.c
-+++ b/plugins/php/php_plugin.c
+diff --git c/plugins/php/php_plugin.c w/plugins/php/php_plugin.c
+index 5cec7805..717d6317 100644
+--- c/plugins/php/php_plugin.c
++++ w/plugins/php/php_plugin.c
 @@ -4,6 +4,11 @@ extern struct uwsgi_server uwsgi;
  
  static sapi_module_struct uwsgi_sapi_module;
@@ -570,10 +558,10 @@ index 5cec780..717d631 100644
  	}
  
  end:
-diff --git a/plugins/php/session.c b/plugins/php/session.c
-index 2312b6b..cce0698 100644
---- a/plugins/php/session.c
-+++ b/plugins/php/session.c
+diff --git c/plugins/php/session.c w/plugins/php/session.c
+index 2312b6b9..cce06985 100644
+--- c/plugins/php/session.c
++++ w/plugins/php/session.c
 @@ -12,34 +12,20 @@ PS_CLOSE_FUNC(uwsgi) {
  PS_READ_FUNC(uwsgi) {
  	char *cache = PS_GET_MOD_DATA();
@@ -628,10 +616,10 @@ index 2312b6b..cce0698 100644
  		return SUCCESS;
  	}
  	return FAILURE;
-diff --git a/plugins/php/uwsgiplugin.py b/plugins/php/uwsgiplugin.py
-index d930c44..9b8d480 100644
---- a/plugins/php/uwsgiplugin.py
-+++ b/plugins/php/uwsgiplugin.py
+diff --git c/plugins/php/uwsgiplugin.py w/plugins/php/uwsgiplugin.py
+index d930c44e..8657eb70 100644
+--- c/plugins/php/uwsgiplugin.py
++++ w/plugins/php/uwsgiplugin.py
 @@ -1,6 +1,6 @@
  import os
  
@@ -640,15 +628,3 @@ index d930c44..9b8d480 100644
  
  ld_run_path = None
  PHPPATH = 'php-config'
-@@ -21,7 +21,7 @@ if ld_run_path:
-     LDFLAGS.append('-L%s' % ld_run_path)
-     os.environ['LD_RUN_PATH'] = ld_run_path
- 
--LIBS = [os.popen(PHPPATH + ' --libs').read().rstrip(), '-lphp' + php_version]
-+LIBS = [os.popen(PHPPATH + ' --libs').read().rstrip(), '-lphp']
- 
- phplibdir = os.environ.get('UWSGICONFIG_PHPLIBDIR')
- if phplibdir:
--- 
-2.30.1
-
