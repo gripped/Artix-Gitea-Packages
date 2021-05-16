@@ -77,9 +77,7 @@ check() {
 package() {
   depends+=(xdg-desktop-portal)
 
-  cd $pkgname
-  make DESTDIR="$pkgdir" install
-  rm -rf "$pkgdir/usr/share/selinux"
+  make -C $pkgname DESTDIR="$pkgdir" install
 
   install -Dt "$pkgdir/etc/profile.d" -m644 flatpak-bindir.sh
   install -Dt "$pkgdir/etc/flatpak/remotes.d" flathub.flatpakrepo
