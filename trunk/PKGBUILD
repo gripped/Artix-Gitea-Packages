@@ -12,8 +12,10 @@ makedepends=('git' 'expect' 'gnutls' 'iproute2' 'libtasn1' 'python' 'python-cryp
 checkdepends=('softhsm')
 optdepends=('gnutls: swtpm_cert support'
             'python-cryptography: swtpm_setup support')
-source=("git+$url.git?signed#tag=$_tag")
-sha512sums=('SKIP')
+source=("git+$url.git?signed#tag=$_tag"
+	"0001-fix-deprecated-types.patch")
+sha512sums=('SKIP'
+            '240f9915e484ac0c89e1f7746795f1d6daa3ddd43befb5a08b0e34aeb45d84f81ae4b2c0dc05278c72ceafdc24bf2f27d721ef602ddb0007fdc37523bc9a3706')
 validpgpkeys=('B818B9CADF9089C2D5CEC66B75AD65802A0B4211') # Stefan Berger <stefanb@linux.vnet.ibm.com>
 
 pkgver() {
@@ -30,6 +32,7 @@ prepare() {
 	                          src/swtpm_setup/swtpm_setup.in
 
 	autoreconf --install --force
+	patch -Np1 -i ../0001-fix-deprecated-types.patch
 }
 
 build() {
