@@ -10,7 +10,7 @@ license=('GPL3')
 depends=('psutils' 'imagemagick' 'perl')
 makedepends=('gperf')
 backup=('etc/a2ps/a2ps.cfg' 'etc/a2ps/a2ps-site.cfg')
-source=(https://ftp.gnu.org/gnu/a2ps/${pkgname}-${pkgver}.tar.gz{,.sig}
+source=(https://ftp.gnu.org/gnu/a2ps/${pkgname}-${pkgver}.tar.gz
         a2ps-4.13c-fnmatch-replacement.patch a2ps-4.13c-emacs.patch
 	a2ps-4.13-manpage-chmod.patch a2ps-4.14-check-mempcpy.patch
 	a2ps-4.14-fix-stpcpy-proto.patch a2ps-texinfo5.patch
@@ -19,19 +19,6 @@ source=(https://ftp.gnu.org/gnu/a2ps/${pkgname}-${pkgver}.tar.gz{,.sig}
 	CVE-2015-8107.patch
 	a2ps-texinfo67.patch
         a2ps-adhere-source-date-epoch.patch)
-sha1sums=('365abbbe4b7128bf70dad16d06e23c5701874852'
-          'SKIP'
-          '8783952d3410d8d59ed953e1db45e2ef1a0b8f65'
-          '94e35a6ad9268161bec22a56d4cfb696d635994a'
-          '2bb3d0a2ef2f3ff9262723e35c742a80ab0235ce'
-          '6aed29c1399e79f3914b408059610f9e7c0fc38e'
-          '58fa90134f1027e3f05aeb08212cbcc10f420738'
-          '81269db9dd29685b0ece2539070ced3f7a8472df'
-          '93a4db17edfaa99e3498c7d952c560dab49dbe42'
-          '0a04f4c145d3aef8f3c7537eb00cb4040c7209c9'
-          '08c51a9361eaefe76af61b70392fa5ac1c4356c7'
-          'f54b6b319a5c134e0ee9be8dc9c8f80a65dc98d6'
-          '6f37363785adf4357977de3d595d7938d63f0993')
 validpgpkeys=('6EB39358D8328FE3CDC903A8CB6FA340E7075A54')
 
 prepare() {
@@ -66,3 +53,15 @@ package() {
   cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
 }
+sha512sums=('fd6ac8ab47d789114c283e8ca508f7f56feabd1a189f4ac772cad9e6be7e3791e210892cfffd04ad1d39efe4b15386b2e61bf4cd56b70ed581c0554f36bfe06f'
+            '5509ae1277ff1f1f487fb106ed6673eb67fa7d1531a35bfa087f78a0bdb4dc0bf38c69b7fab95161a19406fc1acaef09b22b8a05ef603c6d43a8d7a8c3077b56'
+            '0ef1a215ecb757e249c4d4bdf9a789419c6cd433f7e330783fef13a0158c57c5c5e6a22526d8abcca0919bdb1dc08337869fdd3f0fe192284ca087eafad322a3'
+            'f3dc2698ee989928b3179b65b01bf12d828f4428bd860f6f1a3811daaa9d6256b353c2acb5cd4bf392dd89b040f8e9c15420ab4373f3d54b8b60652aaf23f864'
+            '6835f5e9205cb549da52c4a3c13aad601c9e9d294f0f35ebe4d8cc6f8bd8b5f6fe77b857f8c92f552a43c02eb6de812021c078ce597c319bde176f0e91cd167b'
+            '439af060da55d93e8fa6962f7b77c292e47b1a39d987c35010edd52f0ebf360337b5bd29fd134d4d4ab8333187672e7ae97c2d0259c706e38a2cf9d719dcf7bb'
+            '6a63e63eb7a94f731a69bb7ffef72e768fade785efc883a8942bcc507aed19ff11e50e321b459648f05ce74de344acdcff6b5bfcbf318c165c4e03d20320f0c0'
+            '22b9e23d74a914a3332615b911c655cf5e63ce445073e2cd7faa353c16b3e9c813cc4f3b20db68795f09da8b5a8952effe4727e6d1a429699ad66487bd2cab32'
+            'c09a02b7d43839405f22d039ebf776215b9b31c73a49ab955a60bfa4f9a26362ac0d4321f92666fbcf7320ff7fa103ac4c44a1fecf8d51d2588c86d51473d754'
+            '901f0b2eac7ec36793b0181f5973a228712a6ca73c2f23b4686e32c8ca29c44e99c98db2f0587a81871d1288c348770cd8f49fc98d47d20f446e1d8e3d9a9756'
+            'b0e5730173629148d67714c29a3fc04c846e22affe18ae8bdc770e68dc7c53ab2667c6bce90900dfddfd3a985623940a642d4c5d03c979b5aa38d8f8a1f78467'
+            'd674624bb935f98c6175ef94c32744f0c502ceaea0c6c9711f0a030929e3c2c7af804eef459d890f9778d7097169e6e9affa002d29d76c1f47d93b5930902215')
