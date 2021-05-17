@@ -1,14 +1,15 @@
-# Maintainer: Arch Linux Team
+# Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 pkgname=base
 pkgver=2
-pkgrel=2.7
+pkgrel=2.8
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
 license=('GPL')
+makedepends=('git')
 depends=(
   # very very base
   'filesystem' 'gcc-libs' 'glibc' 'bash'
@@ -26,20 +27,14 @@ depends=(
   'iputils' 'iproute2'
 )
 optdepends=('linux: bare metal support')
-provides=('artix-sysvcompat')
-conflicts=('artix-sysvcompat')
-replaces=('artix-sysvcompat')
-source=('initswitch-hook'
-        '55-initswitch.hook'
-        '50-sysvcompat.hook')
-sha256sums=('29e2934cde3d2696224fc941ffb38fac7c0387ab561e850a77078b49c02d1c95'
-            '4167180c762c20de91c2e443e75a0fa6559638fb968e61b1aaa07a5afb93c9f9'
-            '2a5fa67f95da713b67323c3d6cfd4e5cc6339847acd30edfea154d66cadb3b76')
+_commit=3dc7ecf3fb340314a2ada79fe2f1dde738e6ede7
+source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
 	# pacman hooks
-    install -Dm755 ${srcdir}/initswitch-hook "${pkgdir}"/usr/share/libalpm/scripts/initswitch-hook
-    install -Dm644 -t "${pkgdir}"/usr/share/libalpm/hooks ${srcdir}/*.hook
+    cd alpm-hooks
+    make DESTDIR="${pkgdir}" install_base
 
     # provide default symlink for PM file tracking
     install -d "${pkgdir}"/usr/bin
