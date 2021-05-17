@@ -20,7 +20,7 @@ rc-service NetworkManager status 2>&1 | grep -Eq "status: (starting|started|inac
 # NetworkManager service status to started or inactive instead of actually
 # starting or stopping the daemon
 
-# export IN_BACKGROUND=YES
+export IN_BACKGROUND=YES
 
 case "$2" in
     up) nm-online -t 0 -x &&
