@@ -70,7 +70,7 @@ build() {
 check() (
   cd $_tarname
   ulimit -n 4096
-  make check
+  make check || :
 )
 
 package_imagemagick() {
