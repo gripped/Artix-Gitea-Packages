@@ -23,11 +23,9 @@ groups=(gnome)
 install=gnome-shell.install
 _commit=8e644ec39b5ac5b3fd22ceff3a7c0f8d897aa1da  # tags/40.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-shell.git#commit=$_commit"
-        "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git"
-        "0001-Revert-windowManager-Return-failure-to-start-X11-ser.patch")
+        "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git")
 sha256sums=('SKIP'
-            'SKIP'
-            '180499315ff05e538dce16abbccca6709dcaff9cf70f941bb11f83fb5f1c48d2')
+            'SKIP')
 
 pkgver() {
   cd $pkgname
