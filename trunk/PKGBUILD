@@ -42,7 +42,6 @@ prepare() {
   git submodule init
   git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
   git submodule update
-  git apply -3 ../0001-Revert-windowManager-Return-failure-to-start-X11-ser.patch
 }
 
 build() {
