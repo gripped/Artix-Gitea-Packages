@@ -1,0 +1,7 @@
+post_install() {
+    echo "  dhcpcd-s6 needs to be running for wpa_supplicant to actually get a network connection!"
+}
+
+post_upgrade() {
+    post_install
+}
