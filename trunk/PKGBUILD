@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=hostapd-s6
-pkgver=20210512
+pkgver=20210520
 pkgrel=1
 pkgdesc="s6-rc service scripts for hostapd"
 arch=('any')
@@ -11,7 +11,7 @@ provides=('init-hostapd')
 conflicts=('init-hostapd')
 depends=('hostapd' 's6-base')
 makedepends=('git')
-_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+_commit=092f51406d2c0e05c2c370a75d282d54682aab57
 backup=('etc/s6/config/hostapd.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
