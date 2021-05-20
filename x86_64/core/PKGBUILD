@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dbus-s6
-pkgver=20210513
+pkgver=20210520
 pkgrel=1
 pkgdesc="s6-rc service scripts for dbus"
 arch=('any')
@@ -11,7 +11,7 @@ makedepends=('git')
 provides=('init-dbus')
 conflicts=('init-dbus')
 backup=('etc/s6/config/dbus.conf')
-_commit=3cb52daad8645d2afb14e9cd026fc46c5e55fe87
+_commit=092f51406d2c0e05c2c370a75d282d54682aab57
 _hook_commit=0bb100c62bbde2878a242cc72626d00462c921b5
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_hook_commit")
