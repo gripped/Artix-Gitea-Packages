@@ -1,0 +1,21 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=syslogd-s6
+pkgver=20210519
+pkgrel=1
+pkgdesc="s6-rc service scripts for a syslogd implementation using s6's ucspilogd"
+arch=('any')
+url="https://gitea.artixlinux.org/artix/s6-services"
+groups=('s6-world')
+provides=('init-syslogd')
+conflicts=('init-syslogd')
+depends=('s6-base')
+makedepends=('git')
+_commit=04ac378e6543ddd7cd188be82c9743d2a112626c
+backup=('etc/s6/config/syslogd.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
+
+package() {
+    cd "${srcdir}"/s6-services
+    sh install.sh "syslogd" "${pkgdir}"
+}
