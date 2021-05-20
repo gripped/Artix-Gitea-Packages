@@ -9,16 +9,19 @@ license=('MIT')
 url="https://gitlab.archlinux.org/archlinux/pytest-pacman"
 depends=(python python-pytest python-setuptools)
 makedepends=(git)
-source=(git+https://gitlab.archlinux.org/archlinux/pytest-pacman.git?signed#tag=v${pkgver})
+#source=(git+https://gitlab.archlinux.org/archlinux/pytest-pacman.git?signed#tag=v${pkgver})
+source=(https://gitlab.archlinux.org/archlinux/pytest-pacman/-/archive/v0.1/pytest-pacman-v0.1.zip)
 sha512sums=('SKIP')
 
 build() {
-  cd pytest-pacman
+  #cd pytest-pacman
+  cd pytest-pacman-v${pkgver}
   python setup.py build
 }
 
 package() {
-  cd pytest-pacman
+  #cd pytest-pacman
+  cd pytest-pacman-v${pkgver}
 
   python setup.py install --root="${pkgdir}" -O1 --skip-build
 
