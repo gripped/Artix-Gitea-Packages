@@ -34,7 +34,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/processone/ejabberd/archive
 	"goldrush::git://github.com/DeadZen/goldrush.git#commit=8f1b715d36b650ec1e1f5612c00e28af6ab0de82"
 	"idna::git://github.com/benoitc/erlang-idna#commit=6cff72747821110169ecfac871b0c69e5064afff"
 	"jiffy::git://github.com/davisp/jiffy#commit=6dadc0cd22b06e2b1972ee8aba5708c478418926"
-	"jose::git://github.com/potatosalad/erlang-jose#commit=5ad99d03c5381ec68a9576c81ed4e9312fea73e0"
+	"ejab-jose::git://github.com/potatosalad/erlang-jose#commit=5ad99d03c5381ec68a9576c81ed4e9312fea73e0"
 	"lager::git://github.com/erlang-lager/lager#commit=4ffdf0dbef53304bc0e958a00776bf0650de8c8b"
 	"luerl::git://github.com/rvirding/luerl#commit=01fa43a1a5d68becfe07236a9a71505039474108"
 	"mqtree::git://github.com/processone/mqtree#commit=d568635e6a04d9adfc01df52cb3dd41205b285a0"
@@ -92,6 +92,7 @@ sha256sums=('2a5d22cd594ea2bd31adebcbcef9d9bdf46109803874fb336f8afba76fc08d8d'
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
   mkdir -p "$srcdir/$pkgname-$pkgver/deps"
+  mv "$srcdir"/ejab-jose "$srcdir"/jose
   for i in \
     base64url cache_tab eimp ejabberd_po elixir epam eredis esip ezlib fast_tls fast_xml fast_yaml goldrush idna jiffy jose lager luerl mqtree p1_acme p1_mysql p1_oauth2 p1_pgsql p1_utils pkix rebar_elixir_plugin sqlite3 stringprep stun unicode_util_compat xmpp yconf \
     ; do
