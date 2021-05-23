@@ -7,7 +7,7 @@
 #user="tor"
 
 # Timeout for gracefulstop
-#graceful_timeout="60"
+#GRACEFUL_TIMEOUT="60"
 
 # Set the file limit
 rc_ulimit="-n 30000"

@@ -3,7 +3,7 @@
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
 
 pkgname=tor-openrc
-pkgver=20210505
+pkgver=20210521
 pkgrel=1
 pkgdesc="OpenRC tor init script"
 arch=('any')
@@ -16,8 +16,8 @@ conflicts=('init-tor')
 backup=('etc/conf.d/tor')
 source=("tor.confd"
         "tor.initd")
-sha256sums=('864d7ff6c8a6b06734c3f314365304c6ba8b3b893e8f29ed5f6fb9869e647b4b'
-            '3b533a699f887102364fd222fdac9f626a18bd81b6913949c0a021e2e8246ef8')
+sha256sums=('ff97bcf48d7e1bb95a71ab8953c8f719a8c0e0da45b231ef538968340291066e'
+            'c377c22567b534a7cf425aea15e29ffc38be596e92bb99d7c871459d9d6bef6f')
 
 _inst_initd(){
     install -Dm755 ${srcdir}/$1.initd ${pkgdir}/etc/init.d/$1
