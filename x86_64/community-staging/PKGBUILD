@@ -2,15 +2,17 @@
 
 pkgname=pacutils
 pkgver=0.11.0
-pkgrel=1
+pkgrel=2
+
 pkgdesc='Helper tools for libalpm'
 url='https://github.com/andrewgregory/pacutils'
 arch=('x86_64')
 license=('MIT')
+
 depends=('pacman')
 makedepends=('git')
-_commit=e891b53173d7a8960eec7893e2429dac155be414
-source=("git+https://github.com/andrewgregory/pacutils.git#commit=$_commit")
+
+source=("git+https://github.com/andrewgregory/pacutils.git#commit=e891b53173d7a8960eec7893e2429dac155be414")
 sha1sums=('SKIP')
 
 build() {
