@@ -3,7 +3,7 @@
 
 pkgname=dconf
 pkgver=0.40.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Configuration database system"
 url="https://wiki.gnome.org/Projects/dconf"
 arch=(x86_64)
@@ -45,6 +45,9 @@ package() {
   # Prevent this directory from getting removed when other
   # packages which install files there get uninstalled
   install -Dm644 /dev/null "$pkgdir/etc/dconf/db/.placeholder"
+
+  # Remove system service file
+  rm -r "$pkgdir/usr/lib/systemd"
 }
 
 # vim:set sw=2 et:
