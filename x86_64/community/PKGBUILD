@@ -18,7 +18,7 @@ optdepends=("gcc=$_gccver"
             'gtk3: for distccmon')
 backup=(etc/conf.d/distccd
         etc/distcc/hosts)
-source=("git+$url=tag=v$pkgver"
+source=("git+$url#tag=v$pkgver"
         distccd.conf.d
         sysusers.conf)
 b2sums=('SKIP'
