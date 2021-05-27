@@ -4,8 +4,8 @@
 
 _name=expat
 pkgname=lib32-expat
-pkgver=2.3.0
-pkgrel=2
+pkgver=2.4.1
+pkgrel=1
 pkgdesc='An XML Parser library'
 arch=(x86_64)
 url=https://libexpat.github.io/
@@ -16,9 +16,9 @@ depends=(
 )
 makedepends=(cmake)
 source=("https://github.com/libexpat/libexpat/releases/download/R_${pkgver//./_}/${_name}-${pkgver}.tar.bz2"{,.asc})
-sha512sums=('937468f2c298503a2c8d3f70b36e2c79d6b603e758abe0613fd2b636d3cf6906946776fdfe6725a8d6e90748ed7f7f07ad0d7a07c4328f6669bc89482c0e535b'
+sha512sums=('b24e19c3f91e0f3d1ad3b08a810b8874e272ddfc6d4fd8f79c14c13eddf410648343b9f69fba2ce165be46c143cecf8d66cf446b4930da42f92def555ecd3408'
             'SKIP')
-b2sums=('cac52d8f67a1019985b5568ed1baf9adfda2366a67374fc1e97db0493b1e528805d916e33bd69ab34cd88debef05082a271534e475cfa22c11bff5157bbc70c2'
+b2sums=('47a39b63023cc1a4bdb56a5b2e6a51d9dfdeb69b8d4138e9f822a48ab07b01ceff00dcadbce688a4d069961e99746f692f616c5a62d69cec2bd5f74c6066c317'
         'SKIP')
 validpgpkeys=(3176EF7DB2367F1FCA4F306B1F9B0E909AF37285) # Sebastian Pipping
 
