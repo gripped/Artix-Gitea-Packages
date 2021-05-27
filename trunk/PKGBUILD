@@ -2,6 +2,7 @@
 # Contributor: Evangelos Foutras <foutrelis@gmail.com>
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
 
+
 pkgname=('lib32-llvm' 'lib32-llvm-libs')
 pkgver=12.0.0
 pkgrel=1
