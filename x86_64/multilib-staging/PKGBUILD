@@ -1,6 +1,7 @@
 # Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
 
+
 pkgname=lib32-clang
 pkgver=12.0.0
 pkgrel=1
