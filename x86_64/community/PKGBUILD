@@ -1,9 +1,8 @@
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-#
 
 pkgname='perl-types-serialiser'
 pkgver=1.0
-pkgrel=6
+pkgrel=7
 pkgdesc="simple data types for common serialisation formats"
 arch=('any')
 license=('PerlArtistic' 'GPL')
@@ -28,7 +27,7 @@ build() {
 check() {
   cd "$srcdir/Types-Serialiser-$pkgver"
   export PERL_MM_USE_DEFAULT=1 PERL5LIB=""
-  make test ||:
+  make test
 }
 
 package() {
