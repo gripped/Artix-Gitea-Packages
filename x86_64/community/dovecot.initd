@@ -6,7 +6,7 @@ extra_commands="checkconfig"
 
 supervisor=supervise-daemon
 command=/usr/bin/dovecot
-command_args="-c ${DOVECOT_CONF}"
+command_args="-F -c ${DOVECOT_CONF}"
 
 depend() {
 	need localmount
