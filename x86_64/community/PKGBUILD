@@ -1,6 +1,8 @@
+# Maintainer: alium <alium@artixlinux.org>
+
 pkgbase=pandoc-bin
 pkgname=('pandoc')
-pkgver=2.13
+pkgver=2.14
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
@@ -15,7 +17,7 @@ optdepends=(
 )
 
 source_x86_64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
-source_aarch64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-arm64.tar.gz")
+source_aarch64=("$pkgname-bin-$pkgver-arm64.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-arm64.tar.gz")
 
 # The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
 source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz")
@@ -37,6 +39,6 @@ package_pandoc() {
     # tree, so let's tidy that up...
     # rm -R ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
 }
-sha512sums=('a60f1bb2048995ad35a9e8277984d3f0fcdb8f43f0315bea95eb284eb28370929ada1096a90302a2e3a87c53baccb0f80c9cb2844e26befa025e10ef07ae9eed')
-sha512sums_x86_64=('0b20327ac530cbcd00d27b84e8c2bce98977e1eaea378e4325e780a7285de998c33117470b23f96d917d04c0aed85f2387734408c52efa00a8b6bec7541b8927')
-sha512sums_aarch64=('0b20327ac530cbcd00d27b84e8c2bce98977e1eaea378e4325e780a7285de998c33117470b23f96d917d04c0aed85f2387734408c52efa00a8b6bec7541b8927')
+sha512sums=('397362f614bbabebd5b7ed613e880be99e3040db20251bbf1bc3173ffeea09dfc5a2d7d184b09298cf7dee39879741bb884d6c6c816be5985a782f0ab26ca3d4')
+sha512sums_x86_64=('a1e0e857a81748b1fec624b8626bdad494020c00091c02a46cd1839cddfdb7a5b8e59d4958d4aa6f08158242cb3436d940a25cbd761d1269a95d3ba919985cbb')
+sha512sums_aarch64=('beba28765cabd47d86aa7e58f242004b1ffb01293058bfd3cfc1eb883ccf32fc76399a8fab1c9562f671a1e6c4ca2a764b17b451b4372319ed24b957473b31d9')
