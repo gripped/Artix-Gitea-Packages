@@ -12,7 +12,7 @@ pkgdesc="Additional ALSA plugins"
 arch=(x86_64)
 url="https://www.alsa-project.org"
 license=(LGPL2.1)
-makedepends=(alsa-lib dbus jack libavtp libpulse libsamplerate speexdsp)
+makedepends=(alsa-lib dbus jack libavtp libpulse libsamplerate speexdsp eudev)
 source=("https://www.alsa-project.org/files/pub/plugins/$pkgbase-$pkgver.tar.bz2"
         pulse-sysdefault.diff)
 sha512sums=('32aa475ec4af040861c2bfb01eac71042242d2109d3c5102d0111f3327e3f6c9031c32cbb50eb4b6568a6bd9408691a047a39972f09d6087e31ec11f19ddc9cf'
