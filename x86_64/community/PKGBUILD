@@ -1,0 +1,21 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
+pkgname=tailscale-s6
+pkgver=20210531
+pkgrel=1
+pkgdesc="s6-rc service scripts for tailscale"
+arch=('any')
+url="https://gitea.artixlinux.org/artix/s6-services"
+groups=('s6-galaxy')
+provides=('init-tailscale')
+conflicts=('init-tailscale')
+depends=('tailscale' 's6-base')
+makedepends=('git')
+_commit=547df406149a8b5ac08070aba716d564791b1fff
+backup=('etc/s6/config/tailscale.conf')
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
+
+package() {
+    cd "${srcdir}"/s6-services
+    sh install.sh "tailscale" "${pkgdir}"
+}
