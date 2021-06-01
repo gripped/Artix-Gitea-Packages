@@ -5,13 +5,13 @@
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
 _pkgmajor=2.37
-_realver=${_pkgmajor}-rc2
+_realver=${_pkgmajor}
 pkgver=${_realver/-/}
-pkgrel=2
+pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/karelzak/util-linux'
 arch=('x86_64')
-makedepends=('asciidoctor' 'libcap-ng' 'libxcrypt' 'python' 'eudev')
+makedepends=('asciidoctor' 'libcap-ng' 'libxcrypt' 'python' 'eudev' 'pcre2')
 license=('GPL2')
 options=('strip')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
@@ -19,7 +19,7 @@ source=("https://www.kernel.org/pub/linux/utils/util-linux/v${_pkgmajor}/${pkgba
         pam-{login,common,runuser,su}
         'util-linux.sysusers'
         '60-rfkill.rules')
-sha256sums=('253cb944931f57eefea29b8147b7a002b05595da43850e5aceb8045214e667f8'
+sha256sums=('bd07b7e98839e0359842110525a3032fdb8eaf3a90bedde3dd1652d32d15cce5'
             'SKIP'
             '993a3096c2b113e6800f2abbd5d4233ebf1a97eef423990d3187d665d3490b92'
             'fc6807842f92e9d3f792d6b64a0d5aad87995a279153ab228b1b2a64d9f32f20'
@@ -54,7 +54,7 @@ package_util-linux() {
   conflicts=('rfkill' 'hardlink')
   provides=('rfkill' 'hardlink')
   replaces=('rfkill' 'hardlink')
-  depends=('pam' 'shadow' 'coreutils' 'libudev'
+  depends=('pam' 'shadow' 'coreutils' 'libudev' 'pcre2'
            'libudev.so' 'libcap-ng' 'libxcrypt' 'libcrypt.so' 'util-linux-libs'
            'libmagic.so' 'libncursesw.so' 'libreadline.so')
   optdepends=('python: python bindings to libmount'
@@ -92,7 +92,7 @@ package_util-linux() {
   ### runtime libs are shipped as part of util-linux-libs
   rm "${pkgdir}"/usr/lib/lib*.{a,so}*
 
-  ### install systemd-sysusers
+  ### install sysusers
   install -Dm0644 "${srcdir}/util-linux.sysusers" \
     "${pkgdir}/usr/lib/sysusers.d/util-linux.conf"
 
@@ -102,6 +102,7 @@ package_util-linux() {
 
 package_util-linux-libs() {
   pkgdesc="util-linux runtime libraries"
+  depends=('glibc')
   provides=('libutil-linux' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.so' 'libuuid.so')
   conflicts=('libutil-linux')
   replaces=('libutil-linux')
