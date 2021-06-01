@@ -12,8 +12,6 @@ post_install() {
 post_upgrade() {
     rm -rf /etc/s6/sv/dmesg
     post_install
-    echo "  A tmpfs will now be mounted by default in /tmp!"
-    echo "  Please do not save any important files there!"
 }
 
 post_remove() {
