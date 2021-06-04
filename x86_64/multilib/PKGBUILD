@@ -67,7 +67,8 @@ build() {
     -D introspection=false \
     -D vapi=false \
     -D print_profiles=false \
-    -D daemon_user=colord
+    -D daemon_user=colord \
+    -D systemd=false
   meson compile -C build
 }
 
