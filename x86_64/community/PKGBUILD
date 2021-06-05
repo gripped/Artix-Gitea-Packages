@@ -1,11 +1,10 @@
-# Maintainer: Chris Cromer <cromer@artixlinux.org>
-# Contributor: Eli Schwartz <eschwartz@archlinux.org>
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Contributor: Adam Hani Schakaki <adam@schakaki.net>
 # Contributor: Ner0
 
 pkgname=muffin
-pkgver=4.8.1
+pkgver=5.0.0
 pkgrel=1
 pkgdesc="Cinnamon window manager based on Mutter"
 arch=('x86_64')
@@ -16,8 +15,8 @@ depends=('cinnamon-desktop' 'gobject-introspection-runtime' 'libcanberra' 'libin
 makedepends=('intltool' 'gobject-introspection' 'gtk-doc')
 options=('!emptydirs')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('d342165270690c8565004cd6aa26aa79620d99e442ee6207061c26a505690407')
-b2sums=('33dbbf7231b8f8d5c7df23d6cf8ddb29a86caca7b8c3b4af1231c98e114ee797d1c6bc866574348fcabaa65a93ff95c80366329bd5a41a46a74ba53ba81ce545')
+sha256sums=('5b47334777b78e3d791a5fd956ca2c978819943d7c5cfd353bef1fac8c22783c')
+b2sums=('50499ad7a8b4a3ea56bf0d06b4f25b4f78d00721d58991fc1c4c174370862560e63ebf0eba32118e8c3a3537c3a98de65f4ee0ea8230130c3e36ad8fa814f2ee')
 
 prepare() {
     cd "${srcdir}"/${pkgname}-${pkgver}
