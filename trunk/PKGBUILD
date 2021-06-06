@@ -4,7 +4,7 @@
 pkgbase=colord
 pkgname=(colord colord-sane libcolord)
 pkgver=1.4.5
-pkgrel=3
+pkgrel=4
 pkgdesc="System daemon for managing color devices"
 url="https://www.freedesktop.org/software/colord"
 arch=(x86_64)
