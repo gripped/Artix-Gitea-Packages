@@ -3,7 +3,7 @@
 
 pkgname=gnome-desktop
 pkgver=40.1
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Library with common API for various GNOME modules"
 url="https://gitlab.gnome.org/GNOME/gnome-desktop"
@@ -43,5 +43,5 @@ check() {
 }
 
 package() {
-  DESTDIR="$pkgdir" meson install -C build
+  meson install -C build --destdir "$pkgdir"
 }
