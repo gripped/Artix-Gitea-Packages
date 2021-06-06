@@ -4,7 +4,7 @@
 
 pkgname=gnome-disk-utility
 pkgver=40.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Disk Management Utility for GNOME"
 url="https://gitlab.gnome.org/GNOME/gnome-disk-utility"
 arch=(x86_64)
@@ -32,5 +32,5 @@ check() {
 }
 
 package() {
-  DESTDIR="$pkgdir" meson install -C build
+  meson install -C build --destdir "$pkgdir"
 }
