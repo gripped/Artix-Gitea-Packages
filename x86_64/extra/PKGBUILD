@@ -2,13 +2,13 @@
 
 pkgname=gnome-settings-daemon
 pkgver=40.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="GNOME Settings Daemon"
 url="https://gitlab.gnome.org/GNOME/gnome-settings-daemon"
 arch=(x86_64)
 license=(GPL)
-depends=(dconf gnome-desktop gsettings-desktop-schemas libcanberra-pulse libnotify systemd-libs
-         libwacom pulseaudio pulseaudio-alsa upower librsvg libgweather geocode-glib geoclue nss
+depends=(dconf gnome-desktop gsettings-desktop-schemas libcanberra libnotify libwacom
+         pulseaudio pulseaudio-alsa upower librsvg libgweather geocode-glib geoclue nss
          libgudev gtk3 libnm gcr)
 makedepends=(xf86-input-wacom libxslt docbook-xsl python git meson usbguard)
 checkdepends=(python-gobject python-dbusmock)
@@ -44,5 +44,5 @@ check() {
 }
 
 package() {
-  DESTDIR="$pkgdir" meson install -C build
+  meson install -C build --destdir "$pkgdir"
 }
