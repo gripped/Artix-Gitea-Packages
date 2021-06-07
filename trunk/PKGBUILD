@@ -9,7 +9,7 @@ pkgdesc="GLib bindings for libvirt"
 arch=('x86_64')
 url="https://libvirt.org"
 license=('LGPL2.1')
-depends=('libvirt' 'libcap-ng')
+depends=('libvirt' 'libcap-ng' 'libnl')
 makedepends=('meson' 'intltool' 'gobject-introspection' 'vala' 'python')
 optdepends=('python: support for python')
 source=("https://libvirt.org/sources/glib/$pkgname-$pkgver.tar.xz"{,'.asc'})
@@ -20,9 +20,8 @@ validpgpkeys=('DAF3A6FDB26B62912D0E8E3FBE86EBB415104FDF') # Daniel P. Berrange <
 build() {
   cd "$srcdir/$pkgname-$pkgver"
 
-  mkdir build
-  meson setup build --prefix=/usr --buildtype=plain
-  ninja -C build
+  meson build --prefix=/usr --buildtype=plain
+  meson compile -C build
 }
 
 package() {
