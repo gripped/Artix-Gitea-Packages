@@ -32,12 +32,14 @@ build() {
 # you must allow the chroot access your X server:
 # xhost +local:
 # https://wiki.archlinux.org/index.php/chroot#Run_graphical_applications_from_chroot
-check() {
-  export DISPLAY=:0
-  cd "${pkgname}_${pkgver}"
-  ./"${_pkgname}/build/run_tests_with_x_1"
-  ./"${_pkgname}/build/run_tests_with_x_2"
-}
+
+# Skip these tests due to the chroot thing.
+#check() {
+#  export DISPLAY=:0
+#  cd "${pkgname}_${pkgver}"
+#  ./"${_pkgname}/build/run_tests_with_x_1"
+#  ./"${_pkgname}/build/run_tests_with_x_2"
+#}
 
 package() {
   make -C "${pkgname}_${pkgver}/build" DESTDIR="${pkgdir}" install
