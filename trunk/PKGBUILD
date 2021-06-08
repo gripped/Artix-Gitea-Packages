@@ -3,7 +3,7 @@
 
 pkgname=weston
 pkgver=9.0.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Reference implementation of a Wayland compositor'
 arch=('x86_64')
 url='https://wayland.freedesktop.org/'
@@ -12,7 +12,7 @@ depends=('glibc' 'wayland' 'libxkbcommon' 'libinput' 'libunwind' 'pixman'
          'libdrm' 'pam' 'libelogind' 'cairo' 'libpng' 'libjpeg-turbo' 'libwebp'
          'mesa' 'libegl' 'libgles' 'glib2' 'pango' 'lcms2' 'mtdev' 'libx11'
          'libxcb' 'dbus' 'libva' 'libxcursor' 'colord' 'libpipewire02')
-makedepends=('wayland-protocols' 'meson' 'ninja' 'freerdp')
+makedepends=('wayland-protocols' 'meson' 'ninja' 'freerdp' 'elogind')
 optdepends=('freerdp: support rdp backend')
 validpgpkeys=('34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48' # emersion <contact@emersion.fr>
               'C7223EBE4EF66513B892598911A30156E0E67611' # Bryce Harrington
