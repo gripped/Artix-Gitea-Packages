@@ -7,9 +7,9 @@
 # Contributor: delor <bartekpiech gmail com>
 
 pkgname=qtcreator
-pkgver=4.15.0
+pkgver=4.15.1
 _clangver=12.0.0
-pkgrel=2
+pkgrel=1
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
@@ -31,7 +31,7 @@ optdepends=('qt5-doc: integrated Qt documentation'
             'valgrind: analyze support'
             'perf: performer analyzer'
             'mlocate: locator filter')
-source=("https://download.qt.io/official_releases/qtcreator/${pkgver%.*}/$pkgver/qt-creator-opensource-src-$pkgver.tar.xz")
+source=(https://download.qt.io/official_releases/qtcreator/${pkgver%.*}/$pkgver/qt-creator-opensource-src-$pkgver.tar.xz)
 
 
 build() {
@@ -49,4 +49,4 @@ package() {
 
   install -Dm644 qt-creator-opensource-src-$pkgver/LICENSE.GPL3-EXCEPT "$pkgdir"/usr/share/licenses/qtcreator/LICENSE.GPL3-EXCEPT
 }
-sha512sums=('4e1e6e9a50b769778db8d33c5483f40635323c7382f0b2ddde679d66b4d0ad7cd1db23f21b41f8eb3a4cd6571e6dd1c0651a406585a38d0f91c6469dd85809ea')
+sha512sums=('a735e2c14a4e9ca94ae209039017747f51320b465fdcf9d63e62bdf4d63d5099c6b114fa14af8869acf9290fba57be6bb756dcf78edcc6f3ac620c9e844241a3')
