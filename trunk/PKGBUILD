@@ -1,0 +1,30 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Stefano Facchini <stefano.facchini@gmail.com>
+
+pkgname=gnome-boxes
+pkgver=40.2
+pkgrel=1
+pkgdesc='Simple GNOME application to access virtual systems'
+arch=('x86_64')
+url='https://wiki.gnome.org/Apps/Boxes'
+license=('LGPL')
+groups=('gnome')
+depends=('cdrtools' 'edk2-ovmf' 'gtksourceview4' 'gtk-vnc' 'libarchive' 'libgudev' 'libhandy'
+         'libosinfo' 'libsecret' 'libvirt-glib' 'mtools' 'qemu' 'spice-gtk' 'tracker3'
+         'webkit2gtk')
+makedepends=('appstream-glib' 'gobject-introspection' 'itstool' 'meson' 'spice-protocol' 'vala')
+source=("https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
+sha256sums=('8733759a2d86a56367596a534904633b81caaa5c45a5636db2e9590c714ae8d9')
+
+build() {
+  arch-meson $pkgname-$pkgver build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  DESTDIR="$pkgdir" meson install -C build
+}
