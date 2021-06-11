@@ -1,0 +1,32 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Jeff Mickey <jeff@archlinux.org>
+# Contributor: Pappa <jcberg@gmail.com >
+
+pkgname=python-xlib
+pkgver=0.30
+pkgrel=1
+pkgdesc="A fully functional X client library for Python programs"
+url="https://github.com/python-xlib/python-xlib"
+arch=('any')
+license=('LGPL')
+depends=('python-six')
+makedepends=('python-setuptools-scm')
+checkdepends=('python-mock' 'xorg-xauth' 'xorg-server-xvfb' 'python-nose')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/python-xlib/python-xlib/archive/$pkgver.tar.gz")
+sha256sums=('bd92c6687768d4b3547399ebdf967ff40e9d1e9cfd2e365ec627a66ddcc60c22')
+
+build(){
+  cd "$pkgname-$pkgver"
+  python setup.py build
+}
+
+check(){
+  cd "$pkgname-$pkgver"
+  python ./runtests.py
+}
+
+package_python-xlib() {
+  cd "$pkgname-$pkgver"
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}
