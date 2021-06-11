@@ -22,6 +22,10 @@ pkgver() {
 
 prepare() {
   cd $pkgname
+
+  # https://gitlab.gnome.org/GNOME/vala/-/issues/1121
+  git cherry-pick -n 508c0f94e5f182e50ff61be6e04f72574dee97cb
+  git cherry-pick -n e8a0aeec350ea80349582142c0e8e3cd3f1bce38
 }
 
 build() {
