@@ -22,6 +22,10 @@ pkgver() {
 
 prepare() {
   cd $pkgname
+
+  # https://gitlab.gnome.org/GNOME/gnome-nibbles/-/issues/52
+  git cherry-pick -n 1b48446068608aff9b5edf1fdbd4b8c0d9f0be94
+  git cherry-pick -n 62964e9256fcac616109af874dbb2bd8342a9853
 }
 
 build() {
