@@ -3,8 +3,8 @@
 # Contributor: Dan Anderson <dan-anderson at cox dptnet>
 
 pkgname=mosquitto
-pkgver=2.0.10
-pkgrel=2
+pkgver=2.0.11
+pkgrel=1
 pkgdesc="An Open Source MQTT Broker"
 arch=('x86_64')
 url="https://mosquitto.org/"
@@ -14,7 +14,7 @@ license=('BSD')
 source=(https://mosquitto.org/files/source/mosquitto-$pkgver.tar.gz{,.asc}
         "sysusers_mosquitto.conf")
 backup=("etc/$pkgname/$pkgname.conf")
-sha512sums=('c356bfe5dc9317e1943cf14c20ae52af544aefc0138349abd3be5001032ce63579aa059dd62901a0802f08d059a9dc29b6fbcba852e3c4cd702189433ceac174'
+sha512sums=('d0c7c52cb76c4711e54f841217529326d682c4decfc7a1bc96d872904e68df444ca3918fab7ba041b62f7b5420c89c631227b69a8eec51fd2e2dd480d8244710'
             'SKIP'
             '21848b890c2db258138795ec21a009e022b6a8369217eb31939f976ad434229dd9f61d33e8109ade7bc001e8668e9d42b59c1ab079753860417961e102356f0e')
 validpgpkeys=('A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7')
