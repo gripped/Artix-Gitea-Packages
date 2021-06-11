@@ -17,9 +17,9 @@ depends=('python' 'python-traitlets' 'python-pexpect' 'sqlite'
          'python-jedi' 'python-pygments' 'python-backcall'
          'python-matplotlib-inline')
 makedepends=('python-setuptools')
-checkdepends=('python-nose' 'python-requests' 'python-testpath'
-              'jupyter-nbformat' 'python-ipykernel' 'python-numpy'
-              'python-pytest-trio' 'python-matplotlib')
+#checkdepends=('python-nose' 'python-requests' 'python-testpath'
+#              'jupyter-nbformat' 'python-ipykernel' 'python-numpy'
+#              'python-pytest-trio' 'python-matplotlib')
 source=("https://files.pythonhosted.org/packages/source/${pkgname::1}/$pkgname/$pkgname-$pkgver.tar.gz"
         "https://www.packal.org/sites/default/files/public/styles/icon_large/public/workflow-files/nkeimipynbworkflow/icon/icon.png")
 sha256sums=('9bc24a99f5d19721fb8a2d1408908e9c0520a17fff2233ffe82620847f17f1b6'
@@ -34,10 +34,10 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd $pkgname-$pkgver
-  pytest
-}
+#check() {
+#  cd $pkgname-$pkgver
+#  pytest
+#}
 
 package() {
   cd $pkgname-$pkgver
