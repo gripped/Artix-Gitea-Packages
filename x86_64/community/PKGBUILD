@@ -1,13 +1,13 @@
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=opensips
-pkgver=3.1.0
+pkgver=3.1.2
 pkgrel=1
 pkgdesc="An Open Source SIP Server able to act as a SIP proxy, registrar, location server, redirect server ..."
 url="https://www.opensips.org"
-depends=('gcc-libs' 'openssl' 'db' 'attr' 'libxml2' 'libmicrohttpd' 'curl')
+depends=('gcc-libs' 'openssl' 'db' 'attr' 'libxml2')
 makedepends=('postgresql-libs>=8.4.1' 'unixodbc' 'libldap>=2.4.18' 'libmariadbclient'
-	     'lynx' 'libxslt')
+	     'lynx' 'libxslt' 'libmicrohttpd')
 optdepends=('postgresql-libs'
 	    'unixodbc'
 	    'libldap'
@@ -16,14 +16,14 @@ optdepends=('postgresql-libs'
 	    'python2'
 	    'pcre')
 backup=("etc/opensips/opensips.cfg"
-	      "etc/opensips/osipsconsolerc"
-	      "etc/opensips/opensipsctlrc")
+	"etc/opensips/osipsconsolerc"
+	"etc/opensips/opensipsctlrc")
 arch=('x86_64')
 license=('GPL')
 install=opensips.install
 options=('!emptydirs' 'zipman' '!makeflags' 'docs')
 source=(https://opensips.org/pub/opensips/${pkgver}/opensips-${pkgver}.tar.gz)
-sha256sums=('4e9784f3a16a93e79989cc3259b68e7ebc52f427bcfbe5c791734bb86f7265be')
+sha256sums=('557b33db1436d8212ac122f299481bee3f2957f060a2bc0b4256430faf8b3bbc')
 
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver/
@@ -56,9 +56,8 @@ package() {
 	BASEDIR="$pkgdir" PREFIX=/usr LIBDIR=lib install
 
   # Conforms to the arch packaging standards (https://wiki.archlinux.org/index.php/Arch_Packaging_Standards)
-  install -dm755  "$pkgdir"/etc/
+  mkdir -p "$pkgdir"/etc/
   mv "$pkgdir"/usr/etc/opensips/ "$pkgdir"/etc/
-  chmod +x "$pkgdir"/etc/opensips
   sed -i 's#mpath=".*lib/opensips/modules/"#mpath="/usr/lib/opensips/modules/"#' "$pkgdir"/etc/opensips/opensips.cfg
 
   # fix bad paths
@@ -69,4 +68,5 @@ package() {
 
   cd "$pkgdir"/etc
   find -type f -exec sed -i "s#"$pkgdir"##" {} \;
+
 }
