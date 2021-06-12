@@ -57,7 +57,7 @@ build() {
 
 check() {
   cd "$srcdir"/pip-$pkgver
-  pip wheel -w tests/data/common_wheels -r tools/requirements/tests-common_wheels.txt
+  pip wheel -w tests/data/common_wheels -r tools/requirements/tests-common_wheels.txt ||:
   python setup.py install --root="$PWD/tmp_install" --optimize=1 ||:
   # appdirs: https://github.com/pypa/pip/issues/7784
   # build_env: TODO weird looking errors
