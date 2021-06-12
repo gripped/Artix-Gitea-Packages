@@ -4,16 +4,16 @@
 
 pkgname=openmpi
 pkgver=4.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='High performance message passing library (MPI)'
 url='https://www.open-mpi.org'
 arch=('x86_64')
 license=('custom:OpenMPI')
 depends=('glibc' 'libltdl' 'hwloc' 'openssh' 'zlib' 'libnl' 'perl' 'libevent')
-makedepends=('inetutils' 'valgrind' 'gcc-fortran') # 'cuda')
+makedepends=('inetutils' 'valgrind' 'gcc-fortran' 'cuda')
 optdepends=(
   'gcc-fortran: fortran support'
-#   'cuda: cuda support'
+  'cuda: cuda support'
 )
 options=('staticlibs')
 source=(https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/${pkgname}-${pkgver}.tar.bz2)
@@ -36,6 +36,7 @@ build() {
     --with-hwloc=/usr \
     --with-libltdl=/usr  \
     --with-libevent=/usr  \
+    --with-cuda=/opt/cuda \
     FC=/usr/bin/gfortran \
     LDFLAGS="${LDFLAGS} -Wl,-z,noexecstack"
   make
@@ -52,8 +53,8 @@ package() {
 
   # FS#28583
   install -dm 755 "${pkgdir}/usr/lib/pkgconfig"
-  for i in *.pc; do
-    ln -sf "/usr/lib/openmpi/pkgconfig/${i}" "${pkgdir}/usr/lib/pkgconfig/"
+  for i in "${pkgdir}/usr/lib/openmpi/pkgconfig/"*.pc; do
+    ln -sf "/usr/lib/openmpi/pkgconfig/$(basename ${i})" "${pkgdir}/usr/lib/pkgconfig/"
   done
 
   install -dm 755 "${pkgdir}/etc/ld.so.conf.d"
