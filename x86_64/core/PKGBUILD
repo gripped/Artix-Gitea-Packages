@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=audit-s6
-pkgver=20210520
+pkgver=20210613
 pkgrel=1
 pkgdesc="s6-rc service scripts for audit"
 arch=('any')
@@ -10,7 +10,7 @@ provides=('init-audit')
 conflicts=('init-audit')
 depends=('audit' 's6-base')
 makedepends=('git')
-_commit=092f51406d2c0e05c2c370a75d282d54682aab57
+_commit=366da3e0cb403d739531ff048f18686e205af209
 backup=('etc/s6/config/audit.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
