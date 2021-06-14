@@ -1,20 +1,21 @@
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Geoffroy Carrier <geoffroy@archlinux.org>
 
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
-pkgver=5.58
+pkgver=5.59
 pkgrel=1
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL2')
-makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'eudev')
+makedepends=('dbus' 'libical' 'udev' 'alsa-lib' 'json-c' 'ell' 'python-docutils')
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe
-        )
+)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
-sha256sums=('c8065e75a5eb67236849ef68a354b1700540305a8c88ef0a0fd6288f19daf1f1'
+sha256sums=('046b95b386d0bfb2a16311fe799d517ee7735045512d89902c4ed701db477316'
             'SKIP'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
@@ -32,9 +33,9 @@ build() {
           --enable-midi \
           --enable-sixaxis \
           --enable-mesh \
-	  --enable-hid2hci \
+          --enable-hid2hci \
           --enable-experimental \
-	  --disable-systemd \
+	        --disable-systemd \
           --enable-library # this is deprecated
   make
 }
@@ -85,7 +86,7 @@ EOF
 
 package_bluez-utils() {
   pkgdesc="Development and debugging utilities for the bluetooth protocol stack"
-  depends=('dbus' 'eudev' 'glib2' 'json-c')
+  depends=('dbus' 'udev' 'glib2')
   optdepends=('ell: for btpclient')
   conflicts=('bluez-hcidump')
   provides=('bluez-hcidump')
@@ -96,11 +97,13 @@ package_bluez-utils() {
        install-binPROGRAMS \
        install-dist_zshcompletionDATA \
        install-man1
+
   # add missing tools FS#41132, FS#41687, FS#42716
   for files in `find tools/ -type f -perm -755`; do
     filename=$(basename $files)
     install -Dm755 "${srcdir}"/"${pkgbase}"-${pkgver}/tools/$filename "${pkgdir}"/usr/bin/$filename
   done
+  
   # libbluetooth.so* are part of libLTLIBRARIES and binPROGRAMS targets
   #make DESTDIR=${pkgdir} uninstall-libLTLIBRARIES
   #rmdir ${pkgdir}/usr/lib
@@ -133,8 +136,8 @@ package_bluez-cups() {
 
 package_bluez-hid2hci() {
   pkgdesc="Put HID proxying bluetooth HCI's into HCI mode"
-  depends=('eudev')
-  
+  depends=('udev')
+
   cd "${pkgbase}"-${pkgver}
   make DESTDIR=${pkgdir} \
        install-udevPROGRAMS \
@@ -146,7 +149,7 @@ package_bluez-hid2hci() {
 
 package_bluez-plugins() {
   pkgdesc="bluez plugins (PS3 Sixaxis controller)"
-  depends=('eudev')
+  depends=('udev')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR="${pkgdir}" \
