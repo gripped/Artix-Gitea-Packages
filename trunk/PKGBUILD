@@ -35,7 +35,7 @@ build() {
           --enable-mesh \
           --enable-hid2hci \
           --enable-experimental \
-	        --disable-udev \
+	        --disable-systemd \
           --enable-library # this is deprecated
   make
 }
