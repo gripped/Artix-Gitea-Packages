@@ -1,44 +1,33 @@
-# Maintainer: alium <alium@artixlinux.org>
-
-pkgbase=pandoc-bin
-pkgname=('pandoc')
-pkgver=2.14.0.1
+pkgname=pandoc-bin
+pkgver=2.14.0.2
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
-license=("GPL")
+license=("GPLv2+")
 arch=('x86_64' 'aarch64')
-conflicts=('pandoc-citeproc' 'haskell-pandoc-citeproc-bin')
-provides=( 'pandoc-citeproc')
-replaces=('pandoc-static' 'pandoc-lite' 'pandoc-citeproc')
-depends=()
-optdepends=(
-    'texlive-core: for pdf output'
-)
-
-source_x86_64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
-source_aarch64=("$pkgname-bin-$pkgver-arm64.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-arm64.tar.gz")
+conflicts=("pandoc")
+provides=("pandoc")
+replaces=('pandoc-static' 'pandoc-lite')
+optdepends=('texlive-core: for pdf output')
 
 # The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
 source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz")
+source_x86_64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
+source_aarch64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-arm64.tar.gz")
 
-package_pandoc() {
-    cd "${srcdir}/pandoc-${pkgver}"
+sha512sums=('c0b471491a9a60d29414a52285dec88216a343a576e67e59bec16ff96a4d8683a5a1e32e53d5f53c37661d0f10345eca1dd70415f3ae0f75acc475ce17d968a4')
+sha512sums_x86_64=('77ea6e0a24dcdfd0e3a3aa189b75e783c3f2ef1afdeb6d87127e668a71c2920ab27bc849883600b247f9bf3e26811b0bd25887252edb7d26b79317adb27e58ea')
+sha512sums_aarch64=('f14e1d8a94a4605df045a52700fd20f374d307ab866205fbf5763b243d14b7819cc97c8a650f3d3f8e228cd7a87d199767faf46bf92a0f8e700984a791b1b8d8')
 
-    # To avoid having to download over a gigabyte of haskell makedepends (400-ish for ghc, plus 750 in libs), we
-    # just yoink the binary from static compiled binary distributed by pandoc:
-    mkdir -p "${pkgdir}/usr/share/pandoc"
-    cp -R bin share "${pkgdir}/usr"
+package() {
+  cd "${srcdir}/pandoc-${pkgver}"
 
+  # To avoid having to download over a gigabyte of haskell makedepends (400-ish for ghc, plus 750 in libs), we
+  # just yoink the binary from static compiled binary distributed by pandoc:
+  mkdir -p "${pkgdir}/usr/share/pandoc"
+  cp -R bin share "${pkgdir}/usr"
 
-    # We're still missing all the datafiles and so on. We get those from the source tarball...
-    cp -R data "${pkgdir}/usr/share/pandoc/"
-    cp COPYRIGHT MANUAL.txt "${pkgdir}/usr/share/pandoc/"
-
-    # When pandoc stopped having templates as a submodule, they copied various github turds into their source
-    # tree, so let's tidy that up...
-    # rm -R ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
+  # We're still missing all the datafiles and so on. We get those from the source tarball...
+  cp -R data "${pkgdir}/usr/share/pandoc/"
+  cp COPYRIGHT MANUAL.txt "${pkgdir}/usr/share/pandoc/"
 }
-sha512sums=('029cfef53977130f3a85d782d41dfc0ce399c511b3c7f483418c03ca022f830ea782ee77f1f8dac05467a8626da516068a84587ce3a5152bf967d79c56c0f44a')
-sha512sums_x86_64=('1d1aef3b579c7327ff913513e8d3d5e1fdf652373605044465f4a026717c9a19c11015033b08330ae5841faf4988621533a63d3f493e43047ba7ccac3b8a680b')
-sha512sums_aarch64=('2d4d556ae97bffc284c6d5053ed710576d97ec8374af298ec450bbbba8182dc7bfa5fed3b089f44f49da7c43c02a0d30bf663028c2c656c6d115524a74e29120')
