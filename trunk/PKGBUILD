@@ -19,7 +19,7 @@ depends=(boost-libs cairo fontconfig freetype2 harfbuzz-icu hunspell lcms2
 makedepends=(cmake boost mesa qt5-tools)
 optdepends=('tk: scripts based on tkinter'
             'hyphen-lang: hyphenation patterns for desired languages')
-source=("https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.xz"{,.asc})
+source=("https://altushost-swe.dl.sourceforge.net/project/scribus/scribus-devel/${pkgver}/${pkgname}-${pkgver}.tar.xz"{,.asc})
 sha256sums=('318316b2cfc7a76191d3e0d3f8c2265147daea0570162028e243c292d826f8ce'
             'SKIP')
 validpgpkeys=(5086B8D68E70FDDF4C40045AEF7B95E7F60166DA  # Peter Linnell <plinnell@scribus.net>
