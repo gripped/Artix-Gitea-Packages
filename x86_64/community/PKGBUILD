@@ -1,0 +1,31 @@
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+# Contributor: wain <wain.at.gmx.net>
+
+pkgname=calcurse
+pkgver=4.7.1
+pkgrel=1
+pkgdesc='A text-based personal organizer.'
+arch=('x86_64')
+url='https://calcurse.org/'
+license=('BSD')
+depends=('ncurses')
+optdepends=('python: for CalDAV support' 'python-httplib2: for CalDAV support')
+source=("https://calcurse.org/files/${pkgname}-${pkgver}.tar.gz"{,.asc})
+md5sums=('1645068d2a15da6c773f231a1441a760'
+         'SKIP')
+validpgpkeys=(2E36D8620221482FC45CB7F2A91764759326B440) # Lukas Fleischer
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  ./configure --enable-docs --without-asciidoc --prefix=/usr --mandir=/usr/share/man
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  make DESTDIR="${pkgdir}" install
+  install -Dm0644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}
