@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=openssh-s6
-pkgver=20210520
+pkgver=20210618
 pkgrel=1
 pkgdesc="s6-rc service scripts for openssh"
 arch=('any')
@@ -10,7 +10,7 @@ provides=('init-openssh')
 conflicts=('init-openssh')
 depends=('openssh' 's6-base')
 makedepends=('git')
-_commit=092f51406d2c0e05c2c370a75d282d54682aab57
+_commit=947bc7984ca995ac8285ccd97bdc73db511b6b5e
 backup=('etc/s6/config/openssh.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
