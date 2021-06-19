@@ -26,7 +26,14 @@ pkgver() {
 
 prepare() {
   cd $pkgname
+
+  # vala 0.52 fix
+  git cherry-pick -n 64ac3a6f94cd299e5e14945dc31b48f009dec152
+  git cherry-pick -n 5d26650f0da9d47ce69cd9b739ad7a6990071f39
+  git cherry-pick -n 702fdbac0e9174d9627813a267764c7448bc919f
+
   autoreconf -fi
+
 }
 
 build() {
