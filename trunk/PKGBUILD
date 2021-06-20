@@ -17,7 +17,7 @@ b2sums=('f91a70bad0d985d313852b9e5f72dea4330ab23050ca6904ae5895d513088031f34d878
 
 build() {
   cd "$pkgname-$pkgver"
-  arch-meson build
+  arch-meson build -D systemd=disabled
   ninja -C build
 }
 
