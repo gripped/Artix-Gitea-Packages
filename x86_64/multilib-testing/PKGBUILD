@@ -4,7 +4,7 @@ _pkgbasename=libpulse
 pkgname=lib32-$_pkgbasename
 pkgdesc="A featureful, general-purpose sound server (32-bit client libraries)"
 pkgver=14.99.2+1+g36fcfeb21
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url="https://www.freedesktop.org/wiki/Software/PulseAudio/"
 license=(LGPL)
@@ -34,15 +34,25 @@ prepare() {
 
 build() {
   local meson_options=(
-    --libdir /usr/lib32 \
-    --auto-features auto \
-    -D man=false \
-    -D tests=false \
-    -D avahi=disabled \
-    -D bluez5=false \
-    -D gcov=false \
-    -D pulsedsp-location='/usr/\$LIB/pulseaudio' \
-    -D stream-restore-clear-old-devices=true \
+    --libdir /usr/lib32
+    -D daemon=false
+    -D doxygen=false
+    -D man=false
+    -D tests=false
+    -D stream-restore-clear-old-devices=true
+    -D pulsedsp-location='/usr/\$LIB/pulseaudio'
+    -D bashcompletiondir=no
+    -D zshcompletiondir=no
+    -D avahi=disabled
+    -D bluez5=false
+    -D bluez5-gstreamer=disabled
+    -D fftw=disabled
+    -D jack=disabled
+    -D lirc=disabled
+    -D orc=disabled
+    -D soxr=disabled
+    -D tcpwrap=disabled
+    -D webrtc-aec=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d \
     -D systemduserunitdir=no \
     -D systemd=disabled
