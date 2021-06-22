@@ -32,7 +32,6 @@ source=("https://pypi.io/packages/source/c/celery/celery-$pkgver.tar.gz"
         celery.tmpfiles.d)
 options=('!emptydirs')
 sha512sums=('3c37dc481c3467e4e799710104d08fbb1f386488fd5a3af911ddb5da67addeb4907edcf9eb903ac74390abf7ed65aa991ffae7286e5feb2063ce7006b8849b35'
-            '3c6c9dbdacca2de12d49c03526b34797fd867c14d04115af0d1fda64d2848a5d3f64ceb6d284be319a81d932dc86e69c157b6f5f859f2fa213fc2f43a6052c65'
             '67279b75c3b44d065811c9c90aee006296164000912d5bb97c74956b26ee4ad4f0847e846052a896d379848b869c849300367e676d3f689cf29e3a0c7ae5310b')
 
 prepare() {
