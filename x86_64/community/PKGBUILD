@@ -29,7 +29,7 @@ checkdepends=('python-pytest-celery' 'python-pytest-subtests' 'python-pytest-tim
               'python-redis' 'python-sqlalchemy' 'python-boto3' 'python-yaml' 'python-pyzmq'
               'python-eventlet' 'python-moto')
 source=("https://pypi.io/packages/source/c/celery/celery-$pkgver.tar.gz"
-        celery@.service celery.tmpfiles.d)
+        celery.tmpfiles.d)
 options=('!emptydirs')
 sha512sums=('3c37dc481c3467e4e799710104d08fbb1f386488fd5a3af911ddb5da67addeb4907edcf9eb903ac74390abf7ed65aa991ffae7286e5feb2063ce7006b8849b35'
             '3c6c9dbdacca2de12d49c03526b34797fd867c14d04115af0d1fda64d2848a5d3f64ceb6d284be319a81d932dc86e69c157b6f5f859f2fa213fc2f43a6052c65'
