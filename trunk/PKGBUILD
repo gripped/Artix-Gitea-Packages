@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=tor-s6
-pkgver=20210520
+pkgver=20210625
 pkgrel=1
 pkgdesc="s6-rc service scripts for tor"
 arch=('any')
@@ -11,7 +11,7 @@ provides=('init-tor')
 conflicts=('init-tor')
 depends=('tor' 's6-base')
 makedepends=('git')
-_commit=092f51406d2c0e05c2c370a75d282d54682aab57
+_commit=da66b0a42298dcacfe21a5f1184fcf6d0cd2fe4b
 backup=('etc/s6/config/tor.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
