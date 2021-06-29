@@ -8,13 +8,13 @@ pkgbase=jack2
 pkgname=('jack2' 'jack2-dbus')
 pkgdesc="The JACK low-latency audio server"
 pkgver=1.9.18
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://github.com/jackaudio/jack2"
 license=('GPL2' 'LGPL2.1')
 makedepends=('alsa-lib' 'celt' 'dbus' 'expat' 'git' 'libffado' 'libsamplerate'
 'libsndfile' 'zita-alsa-pcmi' 'zita-resampler' 'readline' 'waf')
-source=("${pkgbase}::git+https://github.com/jackaudio/${pkgname}.git#tag=v${pkgver}?signed")
+source=("${pkgbase}::git+https://github.com/jackaudio/${pkgname}.git#tag=v${pkgver}")
 validpgpkeys=('62B11043D2F6EB6672D93103CDBAA37ABC74FBA0') # falkTX <falktx@falktx.com>
 sha512sums=('SKIP')
 
@@ -35,6 +35,7 @@ prepare() {
 
 build() {
   cd "${pkgbase}"
+  export LINKFLAGS="$LDFLAGS"
   export PYTHONPATH="${PWD}:${PYTHONPATH}"
   waf configure --prefix=/usr \
                 --htmldir="/usr/share/doc/${pkgbase}/" \
@@ -72,8 +73,8 @@ package_jack2-dbus() {
   'wait' 'zombie')
 
   pkgdesc+=" (dbus integration)"
-  depends=('gcc-libs' 'glibc' 'jack2' 'libdbus-1.so' 'libexpat.so'
-  'libjackserver.so' 'python-dbus')
+  depends=('gcc-libs' 'glibc' 'jack2' 'libdbus-1.so' 'libjackserver.so'
+  'python-dbus')
 
   cd "${pkgbase}"
   export PYTHONPATH="${PWD}:${PYTHONPATH}"
