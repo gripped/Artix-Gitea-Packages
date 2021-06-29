@@ -3,9 +3,9 @@
 # Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 
 pkgname=sway
-pkgver=1.6
+pkgver=1.6.1
 epoch=1
-pkgrel=1.1
+pkgrel=1
 pkgdesc='Tiling Wayland compositor and replacement for the i3 window manager'
 arch=(x86_64)
 url='https://swaywm.org/'
@@ -38,7 +38,7 @@ optdepends=(
 )
 source=("https://github.com/swaywm/sway/releases/download/$pkgver/sway-$pkgver.tar.gz"
         "https://github.com/swaywm/sway/releases/download/$pkgver/sway-$pkgver.tar.gz.sig")
-sha512sums=('f62477aa4a20de99c41078c6866ec67d04d0d1824f4cb21a0c40213dbadf6394e31cd239b74376bf604d20d03ce047ba97f1728043568fd49fcef43f5101c750'
+sha512sums=('7f37fea99970db42c5485277df06d69bef5225fa03d25be179893b14d73c1d681f0355a1bc74091b4173bbccc88994a63ad0f9322e070811ba963648cf68cdeb'
             'SKIP')
 validpgpkeys=('34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48'  # Simon Ser
               '9DDA3B9FA5D58DD5392C78E652CB6609B22DA89A') # Drew DeVault
