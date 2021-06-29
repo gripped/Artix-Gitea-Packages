@@ -3,7 +3,7 @@
 
 pkgname=pacman-contrib
 pkgver=1.4.0
-pkgrel=4
+pkgrel=4.1
 
 pkgdesc="Contributed scripts and tools for pacman systems"
 url="https://gitlab.archlinux.org/pacman/pacman-contrib"
@@ -50,6 +50,9 @@ package() {
   cd pacman-contrib-v$pkgver
 
   make DESTDIR="$pkgdir" install
+
+  # remove systemd unit (Artix)
+  rm -fr ${pkgdir}/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
