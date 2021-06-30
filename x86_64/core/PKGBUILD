@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-init
 pkgver=1.0.6.3
-pkgrel=4
+pkgrel=5
 pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
@@ -45,7 +45,7 @@ package() {
     install -Dm755 ${srcdir}/runlevel "${pkgdir}"/etc/s6/skel/runlevel
 
     # execute s6-linux-init-maker for PM tracking
-    ./s6-linux-init-maker -1 -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty1 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
+    ./s6-linux-init-maker -1 -f "${pkgdir}"/etc/s6/skel -G "/usr/bin/agetty -L -8 tty7 115200" -c /etc/s6/current "${pkgdir}"/etc/s6/current
     mv "${pkgdir}"/etc/s6/current/bin/init "${pkgdir}"/etc/s6/current/bin/s6-init
     cp -a "${pkgdir}"/etc/s6/current/bin "${pkgdir}"/usr
     rm -r "${pkgdir}"/etc/s6/current/bin
