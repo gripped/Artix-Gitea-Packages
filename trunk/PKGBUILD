@@ -24,7 +24,7 @@ build() {
 check() {
   cd $pkgname-$pkgver
 
-  meson test -C ../build --print-errorlogs | ::
+  meson test -C ../build --print-errorlogs || :
 }
 
 package() {
