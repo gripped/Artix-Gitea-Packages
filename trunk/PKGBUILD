@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=sddm-s6
-pkgver=20210628
+pkgver=20210705
 pkgrel=1
 pkgdesc="s6-rc service scripts for sddm"
 arch=('any')
@@ -9,7 +9,7 @@ groups=('s6-world')
 provides=('init-sddm')
 conflicts=('init-sddm')
 depends=('sddm' 'elogind-s6' 's6-base')
-_commit=ea2dc1599f468e36ffc84f870f7f69ba6767b458
+_commit=bd0542727504220f4bb891f2b7961c695d054e11
 makedepends=('git')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
