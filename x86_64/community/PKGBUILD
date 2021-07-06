@@ -6,7 +6,7 @@
 
 pkgname=luajit
 pkgver=2.0.5
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Just-in-time compiler and drop-in replacement for Lua 5.1'
 arch=('x86_64')
 url='http://luajit.org/'
