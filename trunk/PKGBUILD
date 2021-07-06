@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.2.39.3
-pkgrel=4
+pkgrel=5
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -17,12 +17,12 @@ source=("${url}/archive/v$pkgver.tar.gz"
         postcfg.patch
         services-runit.patch
         services-s6.patch
-        services-66.patch)
+        services-suite66.patch)
 sha256sums=('7e4a10564ca17690534e4661db50799df82a3b3739c619fabbf25c1dd449a0be'
             '77c2d46c511ad6ea4f2c9663007f9d5a4cc2c385223498982d3feb4e56becc68'
             '820d515f5788b7b55e3ebaa2357db643bc1d554e931649980d8b39a6a26b51e0'
             'c1c1ba7d14754cf284b75812323cf1799d6f55c6ea2c12b3e6a110855306b3f6'
-            'c58b0de48354aa28b73964a3309617cdc224f126b69328e8d5b05d27656dd1be')
+            'b74faf40a76cc9648967fbfb79796c9e0f283d4088d0a200baed14fe923c6b8e')
 
 prepare() {
     cd $pkgname-$pkgver
@@ -30,7 +30,7 @@ prepare() {
     patch -Np 1 -i $srcdir/postcfg.patch
     patch -Np 1 -i $srcdir/services-runit.patch
     patch -Np 1 -i $srcdir/services-s6.patch
-    patch -Np 1 -i $srcdir/services-66.patch
+    patch -Np 1 -i $srcdir/services-suite66.patch
 }
 
 build() {

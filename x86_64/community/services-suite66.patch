@@ -1,14 +1,14 @@
-7c3058ceaf25830d9489574f4738c8469e1a4bd6
- src/modules/services-66/main.py          | 128 +++++++++++++++++++++++++++++++
- src/modules/services-66/module.desc      |   7 ++
- src/modules/services-66/services-66.conf |  45 +++++++++++
+e6c84c546f09888f422cda4811443f2f85e80f5b
+ src/modules/services-suite66/main.py          | 128 ++++++++++++++++++++++++++
+ src/modules/services-suite66/module.desc      |   7 ++
+ src/modules/services-suite66/services-66.conf |  45 +++++++++
  3 files changed, 180 insertions(+)
 
-diff --git a/src/modules/services-66/main.py b/src/modules/services-66/main.py
+diff --git a/src/modules/services-suite66/main.py b/src/modules/services-suite66/main.py
 new file mode 100644
 index 000000000..5f2577071
 --- /dev/null
-+++ b/src/modules/services-66/main.py
++++ b/src/modules/services-suite66/main.py
 @@ -0,0 +1,128 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
@@ -138,24 +138,24 @@ index 000000000..5f2577071
 +    """
 +
 +    return suite66Controller().run()
-diff --git a/src/modules/services-66/module.desc b/src/modules/services-66/module.desc
+diff --git a/src/modules/services-suite66/module.desc b/src/modules/services-suite66/module.desc
 new file mode 100644
-index 000000000..7ec0af74a
+index 000000000..6a30e338a
 --- /dev/null
-+++ b/src/modules/services-66/module.desc
++++ b/src/modules/services-suite66/module.desc
 @@ -0,0 +1,7 @@
 +# SPDX-FileCopyrightText: no
 +# SPDX-License-Identifier: CC0-1.0
 +---
 +type:       "job"
-+name:       "services-66"
++name:       "services-suite66"
 +interface:  "python"
 +script:     "main.py"
-diff --git a/src/modules/services-66/services-66.conf b/src/modules/services-66/services-66.conf
+diff --git a/src/modules/services-suite66/services-66.conf b/src/modules/services-suite66/services-66.conf
 new file mode 100644
 index 000000000..f7b4a7ef5
 --- /dev/null
-+++ b/src/modules/services-66/services-66.conf
++++ b/src/modules/services-suite66/services-66.conf
 @@ -0,0 +1,45 @@
 +# SPDX-FileCopyrightText: no
 +# SPDX-License-Identifier: CC0-1.0
@@ -170,7 +170,7 @@ index 000000000..f7b4a7ef5
 +#
 +---
 +# svDir: holds the 66 service directory location
-+svDir: /etc/66/service
++svDir: /etc/66/services
 +
 +# runlevelsDir: holds the runlevels directory location
 +runsvDir: /var/lib/66/system
