@@ -1,0 +1,17 @@
+# Maintainer: artoo <artoo@artixlinux.org>
+
+pkgname=iso-initcpio
+pkgver=1
+pkgrel=1
+arch=('any')
+pkgdesc='Development tools for Artix (ISO initcpio)'
+license=('GPL')
+url='https://gitea.artixlinux.org/artix/iso-initcpio'
+depends=('mkinitcpio')
+source=("${pkgname}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
+sha256sums=('fd30449d7269c1d6b49b36fcf6fa66a9fb2aa32b6d234c0e226d27b0286b8cd2')
+
+package() {
+    cd ${pkgname}
+    make DESTDIR=${pkgdir} install
+}
