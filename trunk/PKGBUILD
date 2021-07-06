@@ -7,16 +7,15 @@
 
 pkgname=ragel
 pkgver=6.10
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Compiles finite state machines from regular languages into executable C, C++, Objective-C, or D code."
 arch=('x86_64')
 url="http://www.complang.org/ragel/"
 license=('GPL')
 depends=('gcc-libs')
-source=(https://www.colm.net/files/$pkgname/$pkgname-$pkgver.tar.gz{,.asc})
+source=(https://www.colm.net/files/$pkgname/$pkgname-$pkgver.tar.gz)
 validpgpkeys=(C3260F001EE3780F1BC3D4F650FE47277DC196FB)
-md5sums=('748cae8b50cffe9efcaa5acebc6abf0d'
-         'SKIP')
+md5sums=('748cae8b50cffe9efcaa5acebc6abf0d')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
