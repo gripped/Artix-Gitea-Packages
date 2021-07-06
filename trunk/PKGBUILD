@@ -6,7 +6,7 @@
 
 pkgname=upx
 pkgver=3.96
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Extendable, high-performance executable packer for several executable formats'
 arch=(x86_64)
 url='https://github.com/upx/upx'
@@ -21,6 +21,7 @@ prepare() {
   git submodule update --init --recursive
   # Disable a warning. upx believes this is not a release version if the git revision is set.
   sed -i 's/bool warn = true/bool warn = false/' src/main.cpp
+  sed -e 's,-Werror,,g' -i src/Makefile -i src/stub/Makefile
 }
 
 build() {
