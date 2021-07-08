@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=iso-initcpio
-pkgver=1
+pkgver=2
 pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix (ISO initcpio)'
@@ -9,7 +9,7 @@ license=('GPL')
 url='https://gitea.artixlinux.org/artix/iso-initcpio'
 depends=('mkinitcpio')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('fd30449d7269c1d6b49b36fcf6fa66a9fb2aa32b6d234c0e226d27b0286b8cd2')
+sha256sums=('5b6621ad4dbea6fa9b4347623e041f9497bafb037d46697902dadccbb864b0a7')
 
 package() {
     cd ${pkgname}
