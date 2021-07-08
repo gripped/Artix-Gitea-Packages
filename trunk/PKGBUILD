@@ -3,12 +3,12 @@
 
 pkgname=bolt
 pkgver=0.9.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Thunderbolt 3 device manager"
 arch=('x86_64')
 url="https://gitlab.freedesktop.org/bolt/bolt"
 license=('LGPL')
-depends=('polkit' 'eudev')
+depends=('polkit' 'udev')
 makedepends=('asciidoc' 'meson' 'python-setuptools' 'patch')
 checkdepends=('umockdev')
 source=(https://gitlab.freedesktop.org/$pkgname/$pkgname/-/archive/$pkgver/$pkgname-$pkgver.tar.gz)
