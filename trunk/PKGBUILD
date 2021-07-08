@@ -5,7 +5,7 @@ pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=10.6.3
-pkgrel=1
+pkgrel=1.1
 arch=('x86_64')
 license=('GPL')
 url='https://mariadb.org/'
@@ -131,6 +131,9 @@ package_mariadb-libs() {
 
   # remove static libraries
   rm usr/lib/*.a
+
+  # remove man pages
+  rm -r usr/share/man
 }
 
 package_mariadb-clients() {
