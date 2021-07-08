@@ -2,12 +2,12 @@
 
 pkgname=brightnessctl
 pkgver=0.5.1
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Lightweight brightness control tool"
 arch=('x86_64')
 url='https://github.com/Hummer12007/brightnessctl'
 license=('MIT')
-depends=('eudev')
+depends=('udev')
 source=(
   "${pkgname}-${pkgver}.tar.gz::https://github.com/Hummer12007/brightnessctl/archive/${pkgver}.tar.gz"
   "${pkgname}.install"
@@ -18,7 +18,7 @@ install='brightnessctl.install'
 
 build() {
   cd "${pkgname}-${pkgver}"
-  
+
 }
 
 package() {
