@@ -1,14 +1,14 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org> 
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=stubby
 pkgver=0.3.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="DNS Privacy stub resolver"
 arch=(x86_64)
 url="https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby"
 license=(BSD)
 backup=(etc/stubby/stubby.yml)
-depends=(getdns libeudev libyaml)
+depends=(getdns libyaml)
 makedepends=(cmake)
 source=(https://github.com/getdnsapi/stubby/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz
         stubby-fix-destdir-part1.patch::https://github.com/getdnsapi/stubby/commit/2fec82b1669bb35062ff9029c4b42fb4998fbd44.patch
