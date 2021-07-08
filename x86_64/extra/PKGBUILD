@@ -3,15 +3,15 @@
 pkgname=openvpn
 _tag='0071e180470e6d3a830da7b96df4ea8e510d2987' # git rev-parse v${pkgver}
 pkgver=2.5.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='An easy-to-use, robust and highly configurable VPN (Virtual Private Network)'
 arch=('x86_64')
 url='https://openvpn.net/index.php/open-source.html'
 license=('custom')
-depends=('openssl' 'lzo' 'lz4' 'libeudev' 'libudev.so' 'pkcs11-helper' 'libpkcs11-helper.so')
+depends=('openssl' 'lzo' 'lz4' 'pkcs11-helper' 'libpkcs11-helper.so')
 optdepends=('easy-rsa: easy CA and certificate handling'
             'pam: authenticate via PAM')
-makedepends=('git' 'eudev' 'python-docutils')
+makedepends=('git' 'python-docutils')
 validpgpkeys=('F554A3687412CFFEBDEFE0A312F5F7B42F2B01E7'  # OpenVPN - Security Mailing List <security@openvpn.net>
               'B62E6A2B4E56570B7BDC6BE01D829EFECA562812') # Gert Doering <gert@v6.de>
 source=("git+https://github.com/OpenVPN/openvpn.git#tag=${_tag}?signed"
