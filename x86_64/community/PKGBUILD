@@ -4,12 +4,12 @@
 
 pkgname=sslh
 pkgver=1.21c
-pkgrel=2
+pkgrel=2.1
 pkgdesc='SSL/SSH/OpenVPN/XMPP/tinc port multiplexer'
 arch=('x86_64')
 url='https://www.rutschle.net/tech/sslh/README.html'
 license=('GPL2')
-depends=('glibc' 'libcap' 'libconfig' 'pcre' 'libeudev')
+depends=('glibc' 'libcap' 'libconfig' 'pcre')
 backup=('etc/sslh.cfg')
 source=("https://www.rutschle.net/tech/sslh/$pkgname-v$pkgver.tar.gz"{,.asc}
         'sslh.cfg'
