@@ -5,7 +5,7 @@
 _name=FreeRDP
 pkgname=freerdp
 pkgver=2.3.2
-pkgrel=1
+pkgrel=1.1
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=('x86_64')
@@ -16,7 +16,7 @@ depends=('dbus-glib' 'glibc' 'gstreamer' 'gst-plugins-base-libs' 'libcups'
 'libxkbcommon' 'libxi' 'libxinerama' 'libxkbfile' 'libxrandr' 'libxrender'
 'libxtst' 'openssl' 'pcsclite' 'wayland')
 makedepends=('alsa-lib' 'cmake' 'docbook-xsl' 'ffmpeg' 'krb5' 'libjpeg-turbo'
-'libpulse' 'libusb' 'pam' 'libeudev' 'xmlto' 'xorgproto')
+'libpulse' 'pam' 'libeudev' 'xmlto' 'xorgproto')
 provides=('libfreerdp2.so' 'libfreerdp-client2.so' 'libfreerdp-server2'
 'libfreerdp-shadow2.so' 'libfreerdp-shadow-subsystem2.so' 'libwinpr2.so'
 'libwinpr-tools2.so' 'libuwac0.so')
