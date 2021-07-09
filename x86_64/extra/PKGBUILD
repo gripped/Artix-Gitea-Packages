@@ -8,12 +8,12 @@
 
 pkgname=qtcreator
 pkgver=4.15.1
-_clangver=12.0.0
-pkgrel=1
+_clangver=12.0.1
+pkgrel=2
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
-license=(LGPL)
+license=(GPL3)
 depends=(qt5-tools qt5-quickcontrols qt5-quickcontrols2 qt5-webengine qt5-svg qt5-quick3d qt5-serialport
          clang=$_clangver clazy syntax-highlighting yaml-cpp)
 makedepends=(cmake llvm python)
@@ -32,7 +32,7 @@ optdepends=('qt5-doc: integrated Qt documentation'
             'perf: performer analyzer'
             'mlocate: locator filter')
 source=(https://download.qt.io/official_releases/qtcreator/${pkgver%.*}/$pkgver/qt-creator-opensource-src-$pkgver.tar.xz)
-
+sha256sums=('5ca9457987e7af0af929c310cc995496388076b6a0b9c429828c60bf0eec1b4d')
 
 build() {
   cmake -B build -S qt-creator-opensource-src-$pkgver \
@@ -40,7 +40,6 @@ build() {
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DWITH_DOCS=ON \
     -DBUILD_QBS=OFF
-
   cmake --build build
 }
 
@@ -49,4 +48,3 @@ package() {
 
   install -Dm644 qt-creator-opensource-src-$pkgver/LICENSE.GPL3-EXCEPT "$pkgdir"/usr/share/licenses/qtcreator/LICENSE.GPL3-EXCEPT
 }
-sha512sums=('a735e2c14a4e9ca94ae209039017747f51320b465fdcf9d63e62bdf4d63d5099c6b114fa14af8869acf9290fba57be6bb756dcf78edcc6f3ac620c9e844241a3')
