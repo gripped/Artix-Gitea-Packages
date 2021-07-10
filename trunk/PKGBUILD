@@ -7,14 +7,14 @@
 pkgname=lxd
 _pkgname=lxd
 _lxd=github.com/lxc/lxd
-pkgver=4.15
+pkgver=4.16
 pkgrel=1
 pkgdesc="Daemon based on liblxc offering a REST API to manage containers"
 arch=('x86_64')
 url="https://linuxcontainers.org/lxd"
 license=('APACHE')
 depends=('lxc' 'lxcfs' 'squashfs-tools' 'dnsmasq' 'dqlite' 'libuv' 'ebtables')
-makedepends=('go' 'git' 'tcl' 'apparmor' 'libseccomp' 'udev')
+makedepends=('go' 'git' 'tcl' 'apparmor' 'libseccomp' 'eudev')
 optdepends=(
     'lvm2: for lvm2 support'
     'thin-provisioning-tools: for thin provisioning support'
@@ -29,7 +29,7 @@ optdepends=(
 source=("https://linuxcontainers.org/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         "lxd.sysusers")
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
-sha256sums=('5178a918d59c9412a0af4af4c1abfce469e1a76497913bc316bf602895a2b265'
+sha256sums=('f9e0bf2805ac6384b24fc8bd8f0a55b920d385cfaf659b9a485e23ddeb5649b5'
             'SKIP'
             'd0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4')
 
@@ -44,6 +44,7 @@ build() {
   cd "${GOPATH}/src/${_lxd}"
   export GOFLAGS="-buildmode=pie -trimpath"
   export GO111MODULE=off
+  export CGO_LDFLAGS_ALLOW="-Wl,-z,now"
 
   mkdir -p bin
 	go build -v -tags "netgo" -o bin/ ./lxd-p2c/...
