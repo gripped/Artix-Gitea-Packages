@@ -26,6 +26,7 @@ prepare() {
 }
 
 build() {
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
   arch-meson harfbuzz build \
     -D graphite=enabled
   meson compile -C build
