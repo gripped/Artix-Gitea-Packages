@@ -4,7 +4,7 @@
 
 pkgname=kcoreaddons
 pkgver=5.84.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Addons to QtCore'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
