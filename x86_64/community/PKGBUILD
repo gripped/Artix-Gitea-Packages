@@ -5,7 +5,7 @@
 _dir=2691
 pkgname=vamp-plugin-sdk
 pkgver=2.10.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The Vamp audio analysis plug-in system"
 arch=('x86_64')
 url="https://www.vamp-plugins.org/"
@@ -15,7 +15,7 @@ depends=('gcc-libs' 'glibc')
 makedepends=('libsndfile')
 optdepends=('libsndfile: for vamp-simple-host')
 provides=('libvamp-hostsdk.so' 'libvamp-sdk.so')
-source=("https://code.soundsoftware.ac.uk/attachments/download/${_dir}/${pkgname}-${pkgver}.tar.gz")
+source=("http://archive.ubuntu.com/ubuntu/pool/universe/v/vamp-plugin-sdk/vamp-plugin-sdk_${pkgver}.orig.tar.gz")
 sha512sums=('153b7f2fa01b77c65ad393ca0689742d66421017fd5931d216caa0fcf6909355fff74706fabbc062a3a04588a619c9b515a1dae00f21a57afd97902a355c48ed')
 
 build() {
