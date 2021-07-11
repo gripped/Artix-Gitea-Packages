@@ -31,10 +31,6 @@ build() {
     make -C build
 }
 
-check() {
-    make -C build test
-}
-
 package() {
     make -C build DESTDIR="${pkgdir}" install
     install -Dm644 ${pkgname}-c-${pkgver}/COPYRIGHT -t "${pkgdir}"/usr/share/licenses/${pkgname}/
