@@ -5,7 +5,7 @@
 
 pkgname=i3blocks
 pkgver=1.5
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Define blocks for your i3bar status line'
 arch=('x86_64')
 groups=('i3')
