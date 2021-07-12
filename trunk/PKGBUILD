@@ -10,9 +10,8 @@ license=('custom')
 makedepends=('xorg-mkfontscale' 'xorg-util-macros' 'xorg-font-util')
 groups=('xorg-fonts' 'xorg')
 options=(!makeflags)
-source=(${url}/releases/individual/font/encodings-${pkgver}.tar.bz2{,.sig})
-sha512sums=('920e49f0b3545f181a1574ca3280ac9adef1e68fe27566c195dd7013f728d355c0d759132789357fcf8fa7391fcbe1e17edf2bd85aa5611df5a4d99740011008'
-            'SKIP')
+source=(${url}/releases/individual/font/encodings-${pkgver}.tar.bz2)
+sha512sums=('920e49f0b3545f181a1574ca3280ac9adef1e68fe27566c195dd7013f728d355c0d759132789357fcf8fa7391fcbe1e17edf2bd85aa5611df5a4d99740011008')
 validpgpkeys=('3BB639E56F861FA2E86505690FDD682D974CA72A') # "Matt Turner <mattst88@gmail.com>"
 
 build() {
