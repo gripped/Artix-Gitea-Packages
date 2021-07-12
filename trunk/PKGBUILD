@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=wf-recorder
 pkgver=0.2.1
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Screen recorder for wlroots-based compositors"
 arch=('i686' 'x86_64')
 url='https://github.com/ammen99/wf-recorder'
