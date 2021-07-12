@@ -3,7 +3,7 @@
 
 pkgname=cogl
 pkgver=1.22.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc="An object oriented GL/GLES Abstraction/Utility Layer"
 url="https://blogs.gnome.org/clutter/"
 arch=(x86_64)
