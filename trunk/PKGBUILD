@@ -12,9 +12,8 @@ license=('custom')
 depends=('libxmu')
 makedepends=('xorg-util-macros')
 options=('!emptydirs')
-source=(${url}/releases/individual/app/twm-${pkgver}.tar.xz{,.sig})
-sha512sums=('948034bba23e6b6c4412fcd2e46bb11a9980297601218a54a5055165ab0229a44dde0d50f338b24e82d76f390597e2fa09d11ff7f3fe1b1d736b10083c7da20d'
-            'SKIP')
+source=(${url}/releases/individual/app/twm-${pkgver}.tar.xz)
+sha512sums=('948034bba23e6b6c4412fcd2e46bb11a9980297601218a54a5055165ab0229a44dde0d50f338b24e82d76f390597e2fa09d11ff7f3fe1b1d736b10083c7da20d')
 validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # Alan Coopersmith <alan.coopersmith@oracle.com>
 validpgpkeys+=('3BB639E56F861FA2E86505690FDD682D974CA72A') # "Matt Turner <mattst88@gmail.com>"
 
