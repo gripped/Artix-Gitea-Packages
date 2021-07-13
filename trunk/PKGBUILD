@@ -1,0 +1,51 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=PyMuPDF
+pkgname=python-pymupdf
+pkgver=1.18.15
+pkgrel=1
+pkgdesc="Python bindings for MuPDF's rendering library"
+arch=('x86_64')
+url="https://github.com/pymupdf/PyMuPDF"
+license=('AGPL3')
+depends=('glibc' 'gumbo-parser' 'jbig2dec' 'libmupdf' 'openjpeg2' 'python')
+makedepends=('freetype2' 'libjpeg-turbo' 'python-distro' 'python-setuptools' 'swig' 'systemd')
+checkdepends=('python-pillow' 'python-pytest')
+# pypi sdist tarball does not have tests
+# source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/${_name}/${_name}/archive/refs/tags/${pkgver}.tar.gz")
+sha512sums=('0d5ae41487a5676dea3b40c0ab45b0134cf144bbb13ce45180bc98c1078c3a66c88f2ff15a39968a6e75c1637519038f695959c6d402ff64a87af27a0b8fceda')
+b2sums=('c9c63ea47f9543aeb6b69ed6638dc16838992991c13474f4b9328d9e08a278a3b63087b14f290a112e603ff8d56f19035dd817a22ff007abe39854b1d79026f5')
+
+prepare() {
+  mv -v "$_name-$pkgver" "$pkgname-$pkgver"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  python setup.py build
+}
+
+check() {
+  local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  local _test_dir="test_dir"
+  cd "$pkgname-$pkgver"
+  mkdir -vp "${_test_dir}"
+  # install to test dir for testing
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${_test_dir}"
+
+  export PYTHONPATH="${_test_dir}/${_site_packages}:${PYTHONPATH}"
+  pytest -v -k "not test_font1 and not test_pageids"
+}
+
+package() {
+  depends+=('libfreetype.so' 'libjpeg.so')
+  cd "$pkgname-$pkgver"
+  python setup.py install --skip-build \
+                          --optimize=1 \
+                          --root="${pkgdir}"
+  rm -rv "${pkgdir}/usr/README.md"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
