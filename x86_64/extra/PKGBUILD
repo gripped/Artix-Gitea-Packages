@@ -18,7 +18,7 @@ makedepends=('git')
 optdepends=('openresolv: Let vpnc manage resolv.conf')
 backup=('etc/vpnc/default.conf')
 source=("vpnc::git+https://github.com/streambinder/vpnc#commit=${_vpnc_commit}"
-        "vpnc-scripts::git+https://gitlab.com/openconnect/vpnc-scripts.git#commit=${_vpncscripts_commit}"
+        "vpnc-scripts1::git+https://gitlab.com/openconnect/vpnc-scripts.git#commit=${_vpncscripts_commit}"
         vpnc.conf)
 sha512sums=('SKIP'
             'SKIP'
@@ -33,12 +33,18 @@ pkgver() {
 
 prepare() {
   cd ${pkgname}
+  # Temp fix until artux can remove old vpnc-script src
+  mv "$srcdir"/vpnc-scripts1 "$srcdir"/vpnc-scripts
   # Build hybrid support
   sed 's|^#OPENSSL|OPENSSL|g' -i Makefile
   # fix resolvconf location for community/openresolv
   sed 's|/sbin/resolvconf|/usr/bin/resolvconf|g' -i ../vpnc-scripts/vpnc-script
   ln -sf ../../vpnc-scripts/vpnc-script src
   ln -sf ../../vpnc.conf src
+  # Keep from installing sysd service file (Artix)
+  sed -e '/service/d' \
+      -e "/SYSTEMDDIR=/d"\
+      -i "$srcdir"/vpnc/Makefile
 }
 
 build() {
