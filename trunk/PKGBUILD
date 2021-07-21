@@ -68,10 +68,7 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '012-vbglR3GuestCtrlDetectPeekGetCancelSupport.patch'
         '013-Makefile.patch'
         '017-fix-narrowing-conversion.patch'
-        '018-xclient.patch'
-        'xpcom18a4-config.patch'
-        'configure-in.patch'
-        'configure.patch')
+        '018-xclient.patch')
 sha256sums=('3bd7ca9df231418008823e752b046e316843e896b4e608c763302c86146e6966'
             '76d98ea062fcad9e5e3fa981d046a6eb12a3e718a296544a68b66f4b65cb56db'
             '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
@@ -89,10 +86,7 @@ sha256sums=('3bd7ca9df231418008823e752b046e316843e896b4e608c763302c86146e6966'
             '81900e13d36630488accd8c0bfd2ceb69563fb2c4f0f171caba1cca59d438024'
             'da7e58ed37dc23c6202aab3017864579a99e78417f3421ddcc98a198198fe2c9'
             '5aac692909a0a0ec56b08bdece9e42cf7463abdca9da2f990d441ff463be6a99'
-            'cac5a573e9ed5aafb2f469c2e6fffb8cd4f389bbadba5a968c9f65be7a72fee3'
-            'db144bf3500a7a5a170ebd206bab4c684909b15b1e4bd1578af37ca4b22558c8'
-            '9f6ebd28b9872b1359eeac1b17d846c01ef3fafa2d23d8c309deb3a5fe175f1e'
-            'e9b8cc343ef95294901fd9d84abb655c446bc0c0a45397ccd80776c0dfec076e')
+            'cac5a573e9ed5aafb2f469c2e6fffb8cd4f389bbadba5a968c9f65be7a72fee3')
 
 prepare() {
     cd "VirtualBox-$pkgver"
