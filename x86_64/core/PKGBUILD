@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=5.12.14
+_ver=5.13.4
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
@@ -28,9 +28,10 @@ validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
   'A2FF3A36AAA56654109064AB19802F8B0D70FC30'  # Jan Alexander Steffens (heftig)
+  'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            'b403ce3288c083d42163263b3a1edb98a7be8597e7d1c5e32876c3f5f1043a1a')
+            '3af1bb164c2818845f308c2eeadb4e42336df6c6049f33e43db9ee7a227b68be')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
