@@ -4,6 +4,7 @@
 # Contributor: Geoffroy Carrier <geoffroy.carrier@aur.archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Roman Kyrylych <roman@archlinux.org>
+#
 
 pkgname=virtualbox-guest-iso
 pkgver=6.1.24
