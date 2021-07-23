@@ -3,7 +3,7 @@
 
 pkgbase=gdm
 pkgname=(gdm libgdm)
-pkgver=40.0+2+g0a771406
+pkgver=40.1
 pkgrel=1
 pkgdesc="Display manager and login screen"
 url="https://wiki.gnome.org/Projects/GDM"
@@ -13,7 +13,7 @@ depends=(gnome-shell gnome-session upower xorg-xrdb xorg-server xorg-xhost
          libxdmcp elogind)
 makedepends=(yelp-tools gobject-introspection git docbook-xsl meson)
 checkdepends=(check)
-_commit=0a77140667930a270c1022a90e7a91968f12a82c
+_commit=7fafdbcac9b970492e9ea23df42111d90986f3f3  # tags/40.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gdm.git#commit=$_commit"
         0001-Xsession-Don-t-start-ssh-agent-by-default.patch
         0002-meson-allow-building-with-elogind.patch
@@ -79,7 +79,7 @@ package_gdm() {
   install -d "$pkgdir/var/lib/gdm/.local/share/applications" -o120 -g120
 
   # https://src.fedoraproject.org/rpms/gdm/blob/master/f/default.pa-for-gdm
-  install -Dt "$pkgdir/var/lib/gdm/.config/pulse" -o120 -g120 -m644 default.pa
+  install -t "$pkgdir/var/lib/gdm/.config/pulse" -o120 -g120 -m644 default.pa
 
   install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/gdm.conf" <<END
 g gdm 120 -
