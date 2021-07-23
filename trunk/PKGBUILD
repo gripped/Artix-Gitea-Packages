@@ -3,8 +3,8 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
-pkgver=20201126
-pkgrel=2
+pkgver=20210723
+pkgrel=1
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
