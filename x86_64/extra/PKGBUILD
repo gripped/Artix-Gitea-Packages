@@ -4,7 +4,7 @@
 
 pkgname=libid3tag
 pkgver=0.15.1b
-pkgrel=11
+pkgrel=11.1
 pkgdesc="ID3 tag manipulation library"
 arch=('x86_64')
 url="https://www.underbit.com/products/mad/"
