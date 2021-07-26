@@ -3,7 +3,7 @@
 
 pkgname=alsa-oss
 pkgver=1.1.8
-pkgrel=3
+pkgrel=3.1
 pkgdesc="OSS compatibility library"
 arch=('x86_64')
 license=('GPL2')
