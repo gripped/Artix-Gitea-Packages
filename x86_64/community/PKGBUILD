@@ -37,7 +37,6 @@ source=("https://download.strongswan.org/strongswan-${pkgver}.tar.bz2"
   'configure_ac.patch')
 validpgpkeys=("948F158A4E76A27BF3D07532DF42C170B34DBA77")
 sha512sums=('09bd78225415422c8f55c9f0dea2ca70111f42f0deacfaaac30c422109ff64180f6a6a47c6bc54238e8403f0b2f8520122c1eabbeda3f915427fadb838a5df51'
-            'SKIP'
             '0e2c818f2f620410dda949d9016a4c1a686bf2946acb3b42a729b2376c077f4dad6762fe8d2f736c213c4895c1fbd60c0d654a1c36f72d06f58ba7cff635bc74')
 
 # We don't build libipsec because it would get loaded before kernel-netlink and netkey, which
