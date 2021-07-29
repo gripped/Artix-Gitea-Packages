@@ -104,6 +104,10 @@ prepare() {
     cp "$srcdir/LocalConfig.kmk" .
 
     echo 'Use our CFLAGS'
+    export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions \
+           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
+           -fstack-clash-protection -fcf-protection"
+    export CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
     echo "VBOX_GCC_OPT=$CXXFLAGS" >> LocalConfig.kmk
 }
 
