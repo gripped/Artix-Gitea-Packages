@@ -1,0 +1,23 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=v2ray-domain-list-community
+pkgver=20210731055901
+pkgrel=1
+pkgdesc="A list of domains to be used as geosites for routing purpose in Project V"
+arch=('any')
+url="https://github.com/v2fly/domain-list-community"
+license=('MIT')
+makedepends=('go' 'git')
+source=("https://github.com/v2fly/domain-list-community/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('97724f5fc2fe1f66f1cd957fc588de3090f414bbbb4f763c991543fc8937bcee814e406275594a959a19bc915f0c4b21ed0612234fbaf71c142d1a2c56852af6')
+
+build() {
+  cd domain-list-community-$pkgver
+  go run main.go
+}
+
+package() {
+  cd domain-list-community-$pkgver
+  install -Dm644 dlc.dat "$pkgdir"/usr/share/v2ray/geosite.dat
+  install -Dm644 "$srcdir"/domain-list-community-$pkgver/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
