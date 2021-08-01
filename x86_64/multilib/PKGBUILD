@@ -6,7 +6,7 @@
 
 pkgname=lib32-libltdl
 pkgver=2.4.6+42+gb88cebd5
-pkgrel=1
+pkgrel=1.1
 _gccver=8.2.1
 pkgdesc='A generic library support script (32-bit)'
 arch=(x86_64)
