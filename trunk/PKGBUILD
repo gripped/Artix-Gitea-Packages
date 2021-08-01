@@ -4,16 +4,14 @@
 
 pkgname=libotr
 pkgver=4.1.1
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Off-the-Record Messaging Library and Toolkit'
 url='https://otr.cypherpunks.ca/'
 license=('GPL' 'LGPL')
 arch=('x86_64')
 depends=('libgcrypt')
-validpgpkeys=('22DF3305DF56667CE15784FCF24DE08F42C2ABAD') # OTR Dev Team
-source=(https://otr.cypherpunks.ca/${pkgname}-${pkgver}.tar.gz{,.asc})
-sha256sums=('8b3b182424251067a952fb4e6c7b95a21e644fbb27fbd5f8af2b2ed87ca419f5'
-            'SKIP')
+source=(https://otr.cypherpunks.ca/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('8b3b182424251067a952fb4e6c7b95a21e644fbb27fbd5f8af2b2ed87ca419f5')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
