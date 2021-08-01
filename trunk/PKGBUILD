@@ -16,7 +16,7 @@ groups=('runit-galaxy')
 provides=('init-v2ray')
 conflicts=('init-v2ray')
 source=("v2ray.run")
-sha256sums=('8f8e6f183ab04af4ac8971a087c59ceda980120e3d9c848d53732015539d1afc')
+sha256sums=('bd78d61ba0c7642da68b5358e074d56f495fe2a0fb1365bb50993a030901f1b9')
 
 _inst_logsv() {
     for file in run finish check; do
