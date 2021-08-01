@@ -2,7 +2,7 @@
 
 pkgname=libdca
 pkgver=0.0.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Free library for decoding DTS Coherent Acoustics streams"
 arch=('x86_64')
 license=('GPL')
