@@ -3,7 +3,7 @@
 
 pkgname=ffmpegthumbnailer
 pkgver=2.2.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Lightweight video thumbnailer that can be used by file managers."
 url="https://github.com/dirkvdb/ffmpegthumbnailer"
 license=('GPL2')
@@ -11,7 +11,7 @@ arch=('x86_64')
 depends=('ffmpeg' 'libjpeg' 'libpng')
 makedepends=('cmake')
 optdepends=('gvfs: support for gio uris')
-source=("https://github.com/dirkvdb/$pkgname/archive/$pkgver.tar.gz")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/dirkvdb/$pkgname/archive/$pkgver.tar.gz")
 sha1sums=('1b35a8afc94edd9135baef9e5259a40b4c0d4d79')
 
 build() {
