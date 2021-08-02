@@ -4,7 +4,7 @@
 
 pkgname=libbs2b
 pkgver=3.1.0
-pkgrel=7
+pkgrel=7.1
 pkgdesc="Bauer stereophonic-to-binaural DSP effect library"
 url="http://bs2b.sourceforge.net"
 arch=(x86_64)
@@ -24,7 +24,7 @@ build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make
+  make CFLAGS="$CFLAGS -Wno-format -Wno-format-security"
 }
 
 check() {
