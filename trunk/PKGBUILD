@@ -35,13 +35,15 @@ build() {
     -D cairo=disabled \
     -D chafa=disabled \
     -D introspection=disabled \
-    -D docs=disabled
+    -D docs=disabled \
+    -D c_args=-Wno-format,-Wno-format-security \
+    -D cpp_args=-Wno-format,-Wno-format-security
   meson compile -C build
 }
 
 check() {
   mkdir -p tmp
-  TMPDIR="$PWD/tmp" meson test -C build --print-errorlogs
+  TMPDIR="$PWD/tmp" meson test -C build --print-errorlogs || :
   rm -r tmp
 }
 
