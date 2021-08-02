@@ -3,7 +3,7 @@
 
 pkgname=enca
 pkgver=1.19
-pkgrel=4
+pkgrel=4.1
 pkgdesc="Charset analyser and converter"
 arch=('x86_64')
 url="https://cihar.com/software/enca/"
