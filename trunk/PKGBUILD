@@ -3,7 +3,7 @@
 
 pkgname=cdparanoia
 pkgver=10.2
-pkgrel=8
+pkgrel=8.1
 pkgdesc="Compact Disc Digital Audio extraction tool"
 arch=('x86_64')
 url="https://www.xiph.org/paranoia/"
@@ -21,6 +21,7 @@ prepare() {
 }
 
 build() {
+  export CFLAGS="$CFLAGS -Wno-format -Wno-format-security"
   cd cdparanoia-III-$pkgver
   ./configure --prefix=/usr --mandir=/usr/share/man
   make
