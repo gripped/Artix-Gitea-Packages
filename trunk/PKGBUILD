@@ -11,7 +11,7 @@ license=(GPL2)
 depends=(glibc glib2 libcap libseccomp libslirp)
 makedepends=(git)
 _commit=7a104a101aa3278a2152351a082a6df71f57c9a3	#refs/tags/v1.1.12^{}
-source=("git+$url#commit=$_commit?signed")
+source=("git+$url#commit=$_commit")
 sha256sums=('SKIP')
 validpgpkeys=('C020EA876CE4E06C7AB95AEF49524C6F9F638F1A') # Akihiro Suda <akihiro.suda.cz@hco.ntt.co.jp>
 
