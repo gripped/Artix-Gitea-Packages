@@ -8,7 +8,7 @@ _vlcver=3.0.16
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=2
+pkgrel=3
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
@@ -21,7 +21,7 @@ depends=('a52dec' 'libdvbpsi' 'libxpm' 'libdca' 'libproxy' 'lua52' 'libidn'
          'fontconfig' 'libxml2' 'gnutls' 'libplacebo' 'wayland-protocols')
 makedepends=('gst-plugins-base-libs' 'live-media' 'libnotify' 'libbluray'
              'flac' 'libdc1394' 'libavc1394' 'libcaca' 'gtk3'
-             'librsvg' 'libgme' 'xosd' 'twolame' 'aalib' 'avahi' 'udev'
+             'librsvg' 'libgme' 'xosd' 'twolame' 'aalib' 'avahi' 'eudev'
              'libmtp' 'libupnp' 'libmicrodns' 'libdvdcss' 'smbclient'
              'vcdimager' 'libssh2' 'mesa' 'protobuf' 'libnfs' 'mpg123'
              'libdvdread' 'libdvdnav' 'libogg' 'libshout' 'libmodplug' 'libvpx'
@@ -57,7 +57,6 @@ optdepends=('avahi: service discovery using bonjour protocol'
             'protobuf: chromecast streaming'
             'libmicrodns: mDNS services discovery (chromecast etc)'
             'lua52-socket: http interface'
-            'live-media: RTSP input'
             'libdvdread: DVD input module'
             'libdvdnav: DVD with navigation input module'
             'libogg: Ogg and OggSpots codec'
