@@ -21,7 +21,7 @@ source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-$
         '0001-arch-specific.patch'
         'mariadb.sysusers.conf'
         'mariadb.tmpfiles.conf')
-sha256sums=('5bc125606af5ec1fda80f594c1ddfacef8b305c158ecf8b1ca7a3f01cd0b18db'
+sha256sums=('75bf9b147a95d38160d01a73b098d50a1960563b46d16a235971fff64d99643c'
             'SKIP'
             '3289efb3452d199aec872115f35da3f1d6fd4ce774615076690e9bc8afae1460'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
