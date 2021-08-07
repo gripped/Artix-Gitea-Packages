@@ -1,0 +1,35 @@
+From 9dfe23ccd54cdcf4bdd616d970d2703fa8155ac6 Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Sat, 7 Aug 2021 14:04:08 -0500
+Subject: [PATCH] fix libgudev detection
+
+---
+ configure.ac | 8 --------
+ 1 file changed, 8 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 4ab54e3..3c16c90 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -152,18 +152,10 @@ dnl udev support is optional, enabled by default
+ AC_ARG_WITH(udev, AS_HELP_STRING([--without-udev], [Build without udev support]), [], [with_udev=yes])
+ case $with_udev in
+     yes)
+-        if test "x$build_firmware_update" = "xyes"; then
+             PKG_CHECK_MODULES(GUDEV, [gudev-1.0 >= $GUDEV_VERSION], [have_gudev=yes],[have_gudev=no])
+-            if test "x$have_gudev" = "xno"; then
+-                AC_MSG_ERROR([Couldn't find gudev >= $GUDEV_VERSION. Install it, or otherwise configure using --without-udev to disable udev support.])
+-            else
+                 AC_DEFINE(WITH_UDEV, 1, [Define if you want udev support])
+                 AC_SUBST(GUDEV_CFLAGS)
+                 AC_SUBST(GUDEV_LIBS)
+-            fi
+-        else
+-            with_udev="n/a"
+-        fi
+         ;;
+     *)
+         with_udev=no
+-- 
+2.32.0
+

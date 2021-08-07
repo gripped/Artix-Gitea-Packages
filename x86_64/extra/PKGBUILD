@@ -11,8 +11,10 @@ depends=(libmbim libqrtr-glib libgudev)
 makedepends=(gtk-doc python git help2man gobject-introspection)
 provides=(libqmi-glib.so)
 _commit=42182b38e1e6b3a5167b78cc2f503080de74612d  # tags/1.30.0
-source=("git+https://gitlab.freedesktop.org/mobile-broadband/libqmi.git#commit=$_commit")
-sha256sums=('SKIP')
+source=("git+https://gitlab.freedesktop.org/mobile-broadband/libqmi.git#commit=$_commit"
+	"0001-fix-libgudev-detection.patch")
+sha256sums=('SKIP'
+            'a32825d440c64ec36597f3708964a8143d49ecac0d8cb0c3764c58f3d457621f')
 
 pkgver() {
   cd $pkgname
@@ -21,11 +23,14 @@ pkgver() {
 
 prepare() {
   cd $pkgname
+  patch -Np1 -i ../0001-fix-libgudev-detection.patch
   NOCONFIGURE=1 ./autogen.sh
 }
 
 build() {
   cd $pkgname
+  export CFLAGS="$CFLAGS -I /usr/include/gudev-1.0"
+  export LDFLAGS="$LDFLAGS -L/usr/lib -lgudev-1.0"
   ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
     --libexecdir=/usr/lib --disable-static --enable-gtk-doc \
     --enable-compile-warnings=yes
