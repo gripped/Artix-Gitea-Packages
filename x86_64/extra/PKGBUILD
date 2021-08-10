@@ -51,7 +51,7 @@ prepare() {
 
 build() {
   cd $pkgname-$pkgver
-  make
+  make CFLAGS="$CFLAGS -Wno-format-security"
   # Generating useful man pages with html doc
   make MAKEMAN="${srcdir}/$pkgname-$pkgver/buildtools/makeman" USERGUIDE=. \
     -C ../doc -f "${srcdir}/$pkgname-$pkgver/buildtools/manpage.mk" manpages
