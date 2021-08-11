@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=intel-undervolt-runit
 pkgver=20210407
-pkgrel=2
+pkgrel=3
 pkgdesc="Runit service script for intel-undervolt"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,7 +14,7 @@ groups=('runit-galaxy')
 conflicts=('init-intel-undervolt')
 provides=('init-intel-undervolt')
 source=("intel-undervolt.run")
-sha256sums=('a4bc9c3651292e97f8383cabb304f63e9ec53808c30289091db083ba74a08978')
+sha256sums=('a8fcfca709b46b5755c9897efe4566e9b932f87957b5f660ae6ee8fd535da8dc')
 
 _inst_logsv() {
     for file in run finish check; do
