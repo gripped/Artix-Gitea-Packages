@@ -49,11 +49,6 @@ build() {
 	python setup.py build
 }
 
-check() {
-	cd synapse-$pkgver
-	PYTHONPATH=. trial tests || :
-}
-
 package() {
 	cd synapse-$pkgver
 	export PYTHONHASHSEED=0
