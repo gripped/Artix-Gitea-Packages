@@ -26,6 +26,7 @@ prepare() {
 }
 
 build() {
+  CXXFLAGS="$CXXFLAGS -fno-rtti $CXXFLAGS -fno-exceptions -fno-threadsafe-statics"
   artix-meson harfbuzz build \
     -D graphite=enabled
   meson compile -C build
