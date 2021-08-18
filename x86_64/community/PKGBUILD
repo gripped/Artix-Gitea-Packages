@@ -3,7 +3,7 @@
 
 pkgname=haproxy
 pkgver=2.4.3
-pkgrel=1
+pkgrel=2
 
 pkgdesc='Reliable, high performance TCP/HTTP load balancer'
 url='https://www.haproxy.org/'
@@ -33,6 +33,8 @@ prepare() {
 
 build() {
   cd haproxy-$pkgver
+
+  export CFLAGS="$CFLAGS -fwrapv"
 
   make \
     CFLAGS="$CFLAGS" \
