@@ -14,7 +14,7 @@ options=('staticlibs')
 license=('custom:Sendmail')
 # Signing keys sourced from upstream. Current version is signed with the 2021 keys.
 # https://www.proofpoint.com/us/products/email-protection/open-source-email-solution
-validpgpkeys=('F4CE2263210253D6A9F979B04C66EA8D4BEE1BEE')
+#validpgpkeys=('F4CE2263210253D6A9F979B04C66EA8D4BEE1BEE')
 source=(
   "https://ftp.sendmail.org/$_pkgname.$pkgver.tar.gz"{,.sig}
   'fd-passing-libmilter.patch'
