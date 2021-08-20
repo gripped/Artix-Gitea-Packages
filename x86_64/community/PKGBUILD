@@ -48,7 +48,10 @@ check() {
   # Tests in test_sqlalchemy_core_2.py need sqlalchemy >= 1.4 [1]
   # https://github.com/aws/aws-xray-sdk-python/pull/289
   pytest -v tests --ignore tests/ext/pymysql \
-                  --ignore tests/ext/sqlalchemy_core/test_sqlalchemy_core_2.py
+                  --ignore tests/ext/sqlalchemy_core/test_sqlalchemy_core_2.py \
+                  --ignore tests/ext/aiohttp/test_client.py \
+                  --ignore tests/ext/httplib/test_httplib.py \
+                  --ignore tests/ext/requests/test_requests.py
 }
 
 package() {
