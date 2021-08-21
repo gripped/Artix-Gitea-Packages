@@ -4,7 +4,7 @@
 # Contributor: Mikko Seppälä <t-r-a-y@mbnet.fi>
 
 pkgname=lib32-glib2
-pkgver=2.68.3
+pkgver=2.68.4
 pkgrel=1
 pkgdesc="Low level core library (32-bit)"
 url="https://wiki.gnome.org/Projects/GLib"
@@ -41,7 +41,7 @@ build() {
   export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
 
   CFLAGS+=" -DG_DISABLE_CAST_CHECKS"
-  arch-meson glib build \
+  artix-meson glib build \
     -D glib_debug=disabled \
     -D selinux=disabled \
     --libdir=/usr/lib32
