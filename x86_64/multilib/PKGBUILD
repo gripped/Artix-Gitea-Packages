@@ -38,20 +38,21 @@ optdepends=(
   'lib32-jack: JACK audio driver'
 )
 _tag=25f9ed87ff6947d9576fc9d79dee0784e638ac58
-source=(git+https://github.com/libsdl-org/SDL.git#tag=${_tag})
+# Ask artux to remove SDL source later
+source=(lib32-sdl::git+https://github.com/libsdl-org/SDL.git#tag=${_tag})
 sha512sums=(SKIP)
 
 pkgver() {
-  cd SDL
+  cd lib32-sdl
 
   git describe --tags | sed 's/^release-//'
 }
 
 prepare() {
   # fix libdir
-  sed -i 's|lib/cmake|lib32/cmake|' SDL/CMakeLists.txt
+  sed -i 's|lib/cmake|lib32/cmake|' lib32-sdl/CMakeLists.txt
   # Don't try to link against ibus
-  sed -i '/pkg_search_module.*ibus-1.0/d' SDL/CMakeLists.txt
+  sed -i '/pkg_search_module.*ibus-1.0/d' lib32-sdl/CMakeLists.txt
 }
 
 build() {
@@ -59,7 +60,7 @@ build() {
   export CXX='g++ -m32'
   export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
 
-  cmake -S SDL -B build \
+  cmake -S lib32-sdl -B build \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DLIB_SUFFIX=32 \
       -DSDL_STATIC=OFF \
