@@ -12,7 +12,7 @@ url='https://www.rutschle.net/tech/sslh/README.html'
 license=('GPL2')
 depends=('glibc' 'libcap' 'libconfig' 'pcre')
 backup=('etc/sslh.cfg')
-source=("https://www.rutschle.net/tech/sslh/$pkgname-v$pkgver.tar.gz"{,.asc}
+source=("https://www.rutschle.net/tech/sslh/$pkgname-v${_pkgver}.tar.gz"{,.asc}
         'sslh.cfg')
 validpgpkeys=('CDDDBADBEA4B72748E007D326C056F7AC7934136') # Yves Rutschle <yves@rutschle.net>
 sha256sums=('5ef48dd9dacec8dc04c100f273952e534be9ae1ef02baa52708a8ecdbd4173cc'
