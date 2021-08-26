@@ -3,14 +3,21 @@
 
 pkgname=expect
 pkgver=5.45.4
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='A tool for automating interactive applications'
 arch=(x86_64)
 url='https://www.nist.gov/el/msid/expect.cfm'
 license=(custom)
 depends=(tcl)
-source=(https://downloads.sourceforge.net/project/expect/Expect/$pkgver/expect${pkgver}.tar.gz)
-sha256sums=('49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34')
+source=(https://downloads.sourceforge.net/project/expect/Expect/$pkgver/expect${pkgver}.tar.gz
+        0001-fix-format-security.patch)
+sha256sums=('49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34'
+            'b03ece363658115d5fd1ddf1f74943666a520d401f389cfd42f9edf4be705ecb')
+
+prepare() {
+  cd expect${pkgver}
+  patch -Np1 -i ../0001-fix-format-security.patch
+}
 
 build() {
   cd expect${pkgver}
