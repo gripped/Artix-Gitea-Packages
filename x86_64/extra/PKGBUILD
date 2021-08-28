@@ -2,7 +2,7 @@
 
 pkgname=libplacebo
 pkgver=3.120.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Reusable library for GPU-accelerated video/image rendering primitives'
 url='https://github.com/haasn/libplacebo'
 arch=('x86_64')
@@ -18,7 +18,7 @@ b2sums=('6192570dba8de6e0bb98ccf3f0e4f13c01a27c5f97873ff0e5e3212d9b7cdebd98cce3d
 build() {
   cd ${pkgbase}-v${pkgver}
   CXXFLAGS+=" -I/usr/include/glslang"
-  arch-meson build \
+  artix-meson build \
     -D tests=true \
     -D vulkan=enabled \
     -D glslang=enabled \
