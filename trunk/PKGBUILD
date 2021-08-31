@@ -14,7 +14,8 @@ optdepends=('packagekit-qt5: to manage packages from Arch Linux repositories' 'f
             'fwupd: firmware update support')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$pkgver/$pkgname-$pkgver.tar.xz{,.sig}
-        discover-no-kcm.patch::https://invent.kde.org/plasma/discover/-/commit/725ae1f2.patch)
+        #discover-no-kcm.patch::https://invent.kde.org/plasma/discover/-/commit/725ae1f2.patch)
+        discover-no-kcm.patch)
 sha256sums=('c9809ec8f3f26909ce9901d6f7cd03cf52d4854431cfdf5340a4daa8404842b0'
             'SKIP'
             '23de6e2ce77324d84dffb36955a8cee7c32b4ff2f1ff003291773894bc23dc07')
