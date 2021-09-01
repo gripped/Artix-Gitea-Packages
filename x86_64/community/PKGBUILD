@@ -1,0 +1,54 @@
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Angel Velasquez <angvp@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Stéphane Gaudreault <stephane@archlinux.org>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
+
+_pyname=pylint
+pkgname=python-$_pyname
+pkgver=2.10.2
+pkgrel=2
+pkgdesc='Analyzes Python code looking for bugs and signs of poor quality'
+arch=(any)
+url=https://pylint.org
+license=(GPL)
+depends=(python
+         python-astroid
+         python-isort
+         python-platformdirs)
+makedepends=(python-setuptools
+             python-sphinx)
+checkdepends=(mpdecimal
+              python-mccabe
+              python-toml
+              python-pytest)
+optdepends=('graphviz: Enable output formats other than dot or vcg'
+            'tk: Pylint GUI')
+_archive="$_pyname-$pkgver"
+source=("https://github.com/PyCQA/pylint/archive/v$pkgver/pylint-$pkgver.tar.gz")
+sha256sums=('639254a0ef06dacfcfb27ce01bc3b1ddf27dbe702ba0685ae0286e0d02ff9194')
+
+prepare() {
+	cd "$_archive"
+	# Remove overly restrictive dependency pinning that ends up in runtime checks
+	sed -i -e '/>=/{s/>.*//;p}' setup.cfg
+}
+
+build() {
+	cd "$_archive"
+	python setup.py build
+	make PYTHONPATH="$PWD/build/lib" -C doc man
+}
+
+check() {
+	cd "$_archive"
+	PYTHONPATH="$PWD/build/lib" pytest \
+		--deselect tests/benchmark/test_baseline_benchmarks.py
+}
+
+package() {
+	cd "$_archive"
+	export PYTHONHASHSEED=0
+	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+	install -Dm0644 -t "$pkgdir/usr/share/man/man1/" doc/_build/man/*
+}
