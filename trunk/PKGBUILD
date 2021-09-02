@@ -29,7 +29,7 @@ optdepends=('tk: Tk{Agg,Cairo} backends'
             'python-certifi: https support')
 makedepends=(git rsync python-setuptools
              tk python-pyqt5 python-gobject
-             python-wxpython python-cairocffi
+             python-wxpython
              python-certifi python-tornado
              ghostscript texlive-bin)
              # agg missing some non-upstreamed patches?
