@@ -3,7 +3,7 @@
 pkgname=gpm
 pkgver=1.20.7.r38.ge82d1a6
 _commit='e82d1a653ca94aa4ed12441424da6ce780b1e530'
-pkgrel=3
+pkgrel=4
 pkgdesc='A mouse server for the console and xterm'
 arch=('x86_64')
 url='https://www.nico.schottelius.org/software/gpm/'
@@ -35,7 +35,7 @@ prepare() {
 
 build() {
   cd "${srcdir}/${pkgname}"
-
+  
   ./configure \
     --prefix=/usr \
     --sysconfdir=/etc \
@@ -47,7 +47,7 @@ package() {
   cd "${srcdir}/${pkgname}"
 
   make DESTDIR="${pkgdir}" install
-  install -D -m0755 ../gpm.sh "${pkgdir}/etc/profile.d/gpm.sh"
+  install -D -m0644 ../gpm.sh "${pkgdir}/etc/profile.d/gpm.sh"
 
 # library fixes
   cd "${pkgdir}/usr/lib/"
