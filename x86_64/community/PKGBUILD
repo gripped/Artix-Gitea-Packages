@@ -9,7 +9,7 @@
 pkgbase=erlang
 pkgname=(erlang erlang-unixodbc)
 pkgver=24.0.4
-pkgrel=1
+pkgrel=2
 _docver=24.0
 arch=(x86_64)
 url='https://erlang.org'
@@ -22,10 +22,11 @@ b2sums=('aaef8165322f39f7410840eafe562ec5038d9c89b4fa99b3b1d5748ba70fe755ba732de
         'SKIP')
 
 prepare() {
-  # Hack so that erlang can find wx-config-gtk3 as wx-config in the $PATH
+  # use a hack so that erlang can find wx-config-gtk3 as wx-config in the $PATH
   mkdir -p bin
   ln -fs /usr/bin/wx-config-gtk3 bin/wx-config
   export PATH="$srcdir/bin:$PATH"
+
   sed -i 's/^LDFLAGS = /LDFLAGS += /g' otp/lib/megaco/src/flex/Makefile.in
   sed -i 's/^LDFLAGS =  /LDFLAGS += /g' otp/lib/odbc/c_src/Makefile.in
 }
@@ -46,7 +47,7 @@ build() {
 
 package_erlang() {
   pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
-  depends=(glu ncurses openssl wxgtk3)
+  depends=(glu ncurses openssl webkit2gtk wxgtk3)
   optdepends=('erlang-unixodbc: database support'
               'java-environment: for Java support'
               'lksctp-tools: for SCTP support')
