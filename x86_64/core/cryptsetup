@@ -107,6 +107,9 @@ lock_devices() {
     for file in /sys/block/dm-*; do
         IFS=- read -r dm_type _ _ _ < "$file/dm/uuid"
 
+        # Remove /run/udev directory if exists (prevent hanging with xudev)
+        [ -d /run/udev ] && rm -rf /run/udev
+
         # --deferred used to prevent hang on FDE systems
         [ "$dm_type" = CRYPT ] && cryptsetup close --deferred "$(cat "$file/dm/name")"
     done
@@ -128,11 +131,15 @@ case "$1" in
         stat_done
         ;;
     stop)
-        stat_busy "Lobking encrypted devices"
+        stat_busy "Locking encrypted devices"
         if [ -f /run/sv.d/started/lvm2 ]; then
-            vgchange --sysinit -a y >/dev/null
+            vgchange -an >/dev/null
         fi
         lock_devices
+        # Deactivate remaining encrypted devices
+        if [ -f /run/sv.d/started/lvm2 ]; then
+            vgchange -an >/dev/null
+        fi
         rc="$?"
         (( rc || $? )) && stat_die
         rm_daemon cryptsetup
