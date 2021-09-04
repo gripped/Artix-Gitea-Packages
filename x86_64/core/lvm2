@@ -11,7 +11,7 @@ case "$1" in
         ;;
     stop)
         stat_busy "Stopping LVM2 groups"
-        vgchange --sysinit -a n &>/dev/null || stat_die
+        vgchange -a n &>/dev/null || stat_die
         rm_daemon lvm2
         stat_done
         ;;
