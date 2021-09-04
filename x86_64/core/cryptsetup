@@ -132,12 +132,10 @@ case "$1" in
         ;;
     stop)
         stat_busy "Locking encrypted devices"
-        if [ -f /run/sv.d/started/lvm2 ]; then
-            vgchange -an >/dev/null
-        fi
         lock_devices
-        # Deactivate remaining encrypted devices
-        if [ -f /run/sv.d/started/lvm2 ]; then
+        # Deactivate remaining encrypted devices that are active in LVM
+        vgs="$(vgs | wc -l)"
+        if [ "$vgs" -gt 0 ]; then
             vgchange -an >/dev/null
         fi
         rc="$?"
