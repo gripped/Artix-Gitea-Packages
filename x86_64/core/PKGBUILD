@@ -3,8 +3,8 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=gzip
-pkgver=1.10
-pkgrel=3
+pkgver=1.11
+pkgrel=1
 pkgdesc='GNU compression utility'
 arch=('x86_64')
 url='https://www.gnu.org/software/gzip/'
@@ -13,8 +13,11 @@ groups=('base-devel')
 depends=('glibc' 'bash' 'less')
 validpgpkeys=('155D3FC500C834486D1EEA677FD9FCCB000BEEEE') # Jim Meyering
 source=("https://ftp.gnu.org/pub/gnu/gzip/gzip-$pkgver.tar.xz"{,.sig})
-md5sums=('691b1221694c3394f1c537df4eee39d3'
-         'SKIP')
+sha256sums=('9b9a95d68fdcb936849a4d6fada8bf8686cddf58b9b26c9c4289ed0c92a77907'
+            'SKIP')
+b2sums=('c251066f0bded6a6557a5cbfe5d20090c6446051c31fad610af4f9f7b2537c28fed1cfab424a459452db73b7d1df1361e5aeba163a9e980fc611faf408cac128'
+        'SKIP')
+
 prepare() {
   cd $pkgname-$pkgver
   # apply patch from the source array (should be a pacman feature)
