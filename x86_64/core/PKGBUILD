@@ -3,14 +3,14 @@
 
 _url=https://gitea.artixlinux.org/artix/runit-artix
 _pkgname=runit-artix
-_pkgver=20210414
+_pkgver=20210904
 
 # set default service path to /run/runit/service
 _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.1.2
-pkgrel=27
+pkgrel=28
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
@@ -34,7 +34,7 @@ source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "30-binfmt.hook"
         "30-sysctl.hook")
 sha256sums=('6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18'
-            '880157e39e384ad0f1878d634bb6de96b4159b3e36414ba2540a7eee19dec816'
+            '7dd9b8967b8944daf3d077c52264827a660598097d5e0a631d0f33d20c9d127f'
             'a9e4b3e09fb72fd44e62f052fd2302d6fcde64a112d53037febd221564e62b1a'
             '7f11c5cab16f10178612b6a81d37184c25c4426b9c2d5d3f8ef7ed7ab2b52c56'
             '19b5e99135f153d07052f2dff707430af9faeabc717a5740ea58a8a783f609de'
