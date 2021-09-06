@@ -107,9 +107,6 @@ lock_devices() {
     for file in /sys/block/dm-*; do
         IFS=- read -r dm_type _ _ _ < "$file/dm/uuid"
 
-        # Remove /run/udev directory if exists (prevent hanging with xudev)
-        [ -d /run/udev ] && rm -rf /run/udev
-
         # --deferred used to prevent hang on FDE systems
         [ "$dm_type" = CRYPT ] && cryptsetup close --deferred "$(cat "$file/dm/name")"
     done
