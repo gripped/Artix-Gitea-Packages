@@ -11,7 +11,7 @@ groups=(vulkan-devel)
 depends=('gcc-libs')
 makedepends=('cmake' 'python' 'git' 'ninja')
 source=("SPIRV-Tools1::git+https://github.com/KhronosGroup/SPIRV-Tools.git#tag=v${pkgver}"
-        "git+https://github.com/KhronosGroup/SPIRV-Headers.git")
+        "SPIRV-Headers1::git+https://github.com/KhronosGroup/SPIRV-Headers.git")
 sha256sums=('SKIP'
             'SKIP')
 
@@ -32,7 +32,7 @@ build() {
       -DSPIRV_WERROR=Off \
       -DBUILD_SHARED_LIBS=ON \
       -DSPIRV_TOOLS_BUILD_STATIC=OFF \
-      -DSPIRV-Headers_SOURCE_DIR="${srcdir}"/SPIRV-Headers
+      -DSPIRV-Headers_SOURCE_DIR="${srcdir}"/SPIRV-Headers1
   ninja
 }
 
