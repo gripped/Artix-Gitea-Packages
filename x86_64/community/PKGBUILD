@@ -12,7 +12,7 @@ license=('APACHE')
 depends=('java-environment>=7' 'bash' 'procps-ng')
 makedepends=('maven' 'java-environment=8')
 backup=('opt/maven/conf/settings.xml')
-source=(https://www-eu.apache.org/dist/maven/maven-3/${pkgver}/source/apache-maven-${pkgver}-src.tar.gz{,.asc}
+source=(https://www-eu.apache.org/dist/maven/maven-3/${pkgver}/source/apache-maven-${pkgver}-src.tar.gz
         maven.sh)
 # https://www.apache.org/dist/maven/KEYS
 validpgpkeys=(
@@ -23,7 +23,6 @@ validpgpkeys=(
   '6A814B1F869C2BBEAB7CB7271A2A1C94BDE89688' # Michael Osipov (Java developer) <1983-01-06@gmx.net>
 )
 sha256sums=('05e1d6bdbf7b35bc4c31c33f1607ebc41cf5cfe34b3d38b780c980fa0a36ebe6'
-            'SKIP'
             '17d9b8efa6a922907110026273443bcc8d83e061e14ac82cb5052b483acc9b76')
 
 build() {
