@@ -3,7 +3,7 @@
 # Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
 
 pkgname=vnstat
-pkgver=2.7
+pkgver=2.8
 pkgrel=1
 pkgdesc="A console-based network traffic monitor"
 arch=('x86_64')
@@ -15,7 +15,7 @@ optdepends=('gd: image output')
 backup=(etc/vnstat.conf)
 source=(https://humdi.net/vnstat/$pkgname-$pkgver.tar.gz
         vnstatd.tmpfile vnstatd.sysusers)
-sha256sums=('4c28a1d8bc03c2b6e7ab96c876e07dd8ea174b7cad73b7190ecb2b9501e83e9e'
+sha256sums=('03f858a7abf6bd85bb8cd595f3541fc3bd31f8f400ec092ef3034825ccb77c25'
             '91c9577f36c7f7ec32bb2963035a6ac49e7556ac6adc41564c033db8889b669e'
             'b9c3af7c6e8dc42aa6be0b52988aba8d64646116c211a1d055a17262c1d32edf')
 
