@@ -4,8 +4,8 @@
 
 pkgname=expac
 pkgver=10
-pkgrel=4.1
-pkgdesc='alm data (pacman database) extraction utility'
+pkgrel=5
+pkgdesc='alpm data (pacman database) extraction utility'
 arch=(x86_64)
 url="https://github.com/falconindy/$pkgname"
 license=(GPL)
@@ -18,10 +18,10 @@ validpgpkeys=('487EACC08557AD082088DABA1EB2638FF56C0C53') # Dave Reisner
 md5sums=('SKIP')
 
 build() {
-	arch-meson "$pkgname" build
+	artix-meson "$pkgname" build
 	meson compile -C build
 }
 
 package() {
- 	meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 }
