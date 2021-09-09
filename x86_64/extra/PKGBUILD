@@ -14,7 +14,8 @@ license=(MIT)
 arch=(x86_64)
 makedepends=(git meson doxygen xmltoman valgrind libpulse alsa-lib libusb
              gst-plugins-base rtkit dbus sdl2 ncurses libsndfile bluez-libs sbc
-             libldac libfreeaptx libfdk-aac avahi webrtc-audio-processing)
+             libldac libfreeaptx libfdk-aac avahi webrtc-audio-processing
+             python-docutils)
 checkdepends=(desktop-file-utils)
 _commit=91069ec3d21c4c09f91f742cd1114806196e863e  # tags/0.3.35
 source=("git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit")
