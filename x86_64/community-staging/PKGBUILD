@@ -15,7 +15,7 @@ url='https://julialang.org/'
 license=(MIT)
 depends=(cblas fftw hicolor-icon-theme libgit2 libunwind libutf8proc openblas
          suitesparse mbedtls openlibm pcre2 llvm-libs p7zip)
-makedepends=(cmake gcc-fortran python llvm patchelf)
+makedepends=(cmake gcc-fortran python llvm patchelf suitesparse)
 optdepends=('gnuplot: If using the Gaston Package from julia')
 replaces=(julia-docs)
 source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$pkgver-full.tar.gz{,.asc}
