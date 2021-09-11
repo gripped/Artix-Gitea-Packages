@@ -1,0 +1,11 @@
+--- a/base/Makefile	2021-09-11 11:01:54.093307736 +0200
++++ b/base/Makefile	2021-09-11 11:02:18.346641060 +0200
+@@ -234,7 +234,7 @@
+ $(eval $(call symlink_system_library,SUITESPARSE,libcholmod))
+ $(eval $(call symlink_system_library,SUITESPARSE,libcolamd))
+ $(eval $(call symlink_system_library,SUITESPARSE,libumfpack))
+-$(eval $(call symlink_system_library,SUITESPARSE,libspqr))
++#$(eval $(call symlink_system_library,SUITESPARSE,libspqr))
+ $(eval $(call symlink_system_library,SUITESPARSE,libsuitesparseconfig))
+ # EXCLUDED LIBRARIES (installed/used, but not vendored for use with dlopen):
+ # libunwind
