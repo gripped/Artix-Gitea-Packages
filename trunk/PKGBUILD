@@ -113,7 +113,7 @@ check() {
     --skip LibGit2_jll \
     --skip MozillaCACerts_jll \
     --skip NetworkOptions \
-    --skip Downloads
+    --skip Downloads ||:
   find ../stdlib \( -name \*.cov -o -name \*.mem \) -delete
   rm -fr ../stdlib/Artifacts/test/artifacts
 }
