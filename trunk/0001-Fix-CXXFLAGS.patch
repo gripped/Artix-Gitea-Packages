@@ -1,0 +1,25 @@
+From a896bcebbc2f52b3d8abafcdb8b22c7dd672d551 Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Sat, 11 Sep 2021 15:10:00 -0500
+Subject: [PATCH] Fix CXXFLAGS CXXFLAGS does not find headers in source as is
+
+---
+ Source/Projects/NonWindows/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Source/Projects/NonWindows/Makefile b/Source/Projects/NonWindows/Makefile
+index c6ca87b..68d75e1 100644
+--- a/Source/Projects/NonWindows/Makefile
++++ b/Source/Projects/NonWindows/Makefile
+@@ -1,7 +1,7 @@
+ # Find system
+ UNAME	  = $(shell uname)
+ 
+-SRCDIR	  = $(dir $(lastword $(MAKEFILE_LIST)))../../..
++SRCDIR	  = $(dir $(lastword $(MAKEFILE_LIST)))
+ VPATH	  = $(SRCDIR)
+ 
+ VERSION	  = 8
+-- 
+2.33.0
+
