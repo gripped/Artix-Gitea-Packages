@@ -18,7 +18,7 @@ index 175f3dd2..08501789 100644
  [D-BUS Service]
  Name=org.freedesktop.ModemManager1
 -Exec=@sbindir@/ModemManager
-+Exec="@sbindir@/ModemManager --test-plugin-dir=/lib/ModemManager"
++Exec=@sbindir@/ModemManager --test-plugin-dir=/lib/ModemManager
  User=root
  SystemdService=dbus-org.freedesktop.ModemManager1.service
 -- 
