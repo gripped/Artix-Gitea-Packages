@@ -8,14 +8,14 @@
 pkgname=julia
 epoch=2
 pkgver=1.6.2
-pkgrel=2.1
+pkgrel=3
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
 url='https://julialang.org/'
 license=(MIT)
 depends=(cblas fftw hicolor-icon-theme libgit2 libunwind libutf8proc openblas
          suitesparse mbedtls openlibm pcre2 llvm-libs p7zip)
-makedepends=(cmake gcc-fortran python llvm patchelf suitesparse)
+makedepends=(cmake gcc-fortran python llvm patchelf)
 optdepends=('gnuplot: If using the Gaston Package from julia')
 replaces=(julia-docs)
 source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$pkgver-full.tar.gz{,.asc}
@@ -23,17 +23,15 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         julia-system-cblas.patch
         julia-hardcoded-libs.patch
         make-install-no-build.patch
-        processor.patch
-        libspqr.patch)
+        processor.patch)
 backup=(etc/julia/startup.jl)
 sha256sums=('01241120515cb9435b96179cf301fbd2c24d4405f252588108d13ceac0f41c0a'
             'SKIP'
             'c57ea92a11fa8dac72229e6a912d2372ec0d98d63486426fe3bdeeb795de48f7'
             'e44c260e4111908337caa82e1c3fef563b9d40e0a30da68d6e91405bf6db24dc'
-            '430935f332578b10ffd727db5aa85e288b944b07348892af339ac67212388672'
+            'a8e664f39f3efaeea63e99c2f5727a28ab7eca01e9164b464c66e991426d7e90'
             '8be4605f92a009072ca7e843549c225fc4e959893498e7c4f8f79e861e63714d'
-            'eadf0f85621f24efa2edf3467ecaa6917710dd8210c4c4b08a425ecb082d0585'
-            '04c470c13ab9a75b10b6f9a6c74984acf537652c3ecf372dd72f7fb99cf54387')
+            'eadf0f85621f24efa2edf3467ecaa6917710dd8210c4c4b08a425ecb082d0585')
 validpgpkeys=('3673DF529D9049477F76B37566E3C7DC03D6E495') # Julia (Binary signing key) <buildbot@julialang.org>
 
 prepare() {
@@ -51,9 +49,6 @@ prepare() {
   sed -e 's|0.22314355f0 + 3.1415927f0im|0.22314355f0 - 3.1415927f0im|' -i stdlib/LinearAlgebra/test/lu.jl
 # Patch to build 1.6.2 on Artix - added by artist
   patch -p1 -i ../processor.patch
-# Patch to build 1.6.2-2 on Artix - added by artist
-  patch -p1 -i ../libspqr.patch
-
 }
 
 _buildopts="prefix=/usr \
@@ -88,8 +83,6 @@ build() {
   make release VERBOSE=1 JLDFLAGS=${LDFLAGS} $_buildopts
 
   ln -s /usr/lib/libopenblas.so usr/lib/julia/libopenblas64_.so # Needed for tests
-  # Fix to build 1.6.2-2 on Artix with libspqr.patch - added by artist
-  ln -s /usr/lib/libspqr.so.2 usr/lib/julia/libspqr.so # 
 }
 
 check() {
@@ -113,7 +106,7 @@ check() {
     --skip LibGit2_jll \
     --skip MozillaCACerts_jll \
     --skip NetworkOptions \
-    --skip Downloads ||:
+    --skip Downloads
   find ../stdlib \( -name \*.cov -o -name \*.mem \) -delete
   rm -fr ../stdlib/Artifacts/test/artifacts
 }
