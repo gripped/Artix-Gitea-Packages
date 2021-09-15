@@ -3,7 +3,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sudo
-_sudover=1.9.7p2
+_sudover=1.9.8
 pkgrel=1
 pkgver=${_sudover/p/.p}
 pkgdesc="Give certain users the ability to run some commands as root"
@@ -19,7 +19,7 @@ backup=('etc/pam.d/sudo'
 install=$pkgname.install
 source=(https://www.sudo.ws/sudo/dist/$pkgname-$_sudover.tar.gz{,.sig}
         sudo.pam)
-sha256sums=('28b5ee725dbf89a7852f42f309ca877d2810a9531b4eecfe59f3a84b6b4afca8'
+sha256sums=('f1735de999804ea1af068fba6a82cb6674ea64c789813b29266fd3b16cb294e6'
             'SKIP'
             'd1738818070684a5d2c9b26224906aad69a4fea77aabd960fc2675aee2df1fa2')
 validpgpkeys=('59D1E9CCBA2B376704FDD35BA9F4C021CEA470FB')
@@ -61,7 +61,7 @@ package() {
   # Remove sudoers.dist; not needed since pacman manages updates to sudoers
   rm "$pkgdir/etc/sudoers.dist"
 
-  # Remove /run/sudo directory; we create it using tmpfiles
+  # Remove /run/sudo directory; we create it using systemd-tmpfiles
   rmdir "$pkgdir/run/sudo"
   rmdir "$pkgdir/run"
 
