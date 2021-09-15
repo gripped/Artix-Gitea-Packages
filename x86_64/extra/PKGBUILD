@@ -4,7 +4,7 @@
 pkgbase=modemmanager
 pkgname=(modemmanager libmm-glib)
 pkgver=1.18.0
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Mobile broadband modem management service"
 arch=(x86_64)
 url="https://www.freedesktop.org/wiki/Software/ModemManager/"
@@ -15,9 +15,9 @@ makedepends=(gtk-doc gobject-introspection vala meson git bash-completion)
 checkdepends=(python-gobject python-dbus)
 _commit=4ccbfcd0167b5e6134eba5da34c33b8b0b5b1619  # tags/1.18.0
 source=("git+https://gitlab.freedesktop.org/mobile-broadband/ModemManager.git#commit=$_commit"
-        "0001-Fix-plugins-dir.patch")
+        "0001-Fix-plugins-dir.patch::https://gitlab.freedesktop.org/aleksm/ModemManager/-/commit/986fbd5093725af782dbeed4ccae6cf82c022c9b.patch")
 sha256sums=('SKIP'
-            '61f8afc23614e55aa12e02cd8e8e6f419dd28aa9cdea6001e1bed921aac7e2ef')
+            'd927bb35018491532586ce6d65b40ace1caf23ca64dd779ef462f7ce7216874a')
 
 pkgver() {
   cd ModemManager
