@@ -1,0 +1,15 @@
+pre_remove() {
+    sed -i '/lvm2/d' /etc/s6/sv/mount-filesystems/dependencies
+}
+
+post_install() {
+    if ! grep -q lvm2 /etc/s6/sv/mount-filesystems/dependencies; then
+        echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+	echo "  lvm2-s6 automatically installs itself into the boot bundle."
+	echo "  There's no need to add it to the default bundle."
+}
+
+post_upgrade() {
+    post_install
+}
