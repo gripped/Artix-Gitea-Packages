@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=connman-s6
-pkgver=20210628
+pkgver=20210917
 pkgrel=1
 pkgdesc="s6-rc service scripts for connman"
 arch=('any')
@@ -10,7 +10,7 @@ provides=('init-connman')
 conflicts=('init-connman')
 depends=('connman' 'dbus-s6' 's6-base')
 makedepends=('git')
-_commit=bbaa3123f4af52ae784abfcefea0fe79e59e5bae
+_commit=4e024337a13def263e1b81e64edb0ff821fecceb
 backup=('etc/s6/config/connman.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
