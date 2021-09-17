@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=v2ray-s6
-pkgver=20210731
+pkgver=20210917
 pkgrel=1
 pkgdesc="s6-rc service scripts for v2ray"
 arch=('any')
@@ -9,7 +9,7 @@ groups=('s6-galaxy')
 provides=('init-v2ray')
 conflicts=('init-v2ray')
 depends=('v2ray' 's6-base')
-_commit=3eb9938c860e047405d1061921a4556a4175f1aa
+_commit=4e024337a13def263e1b81e64edb0ff821fecceb
 makedepends=('git')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
