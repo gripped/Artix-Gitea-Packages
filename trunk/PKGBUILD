@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=matterbridge-s6
-pkgver=20210520
+pkgver=20210917
 pkgrel=1
 pkgdesc="s6-rc service scripts for matterbridge"
 arch=('any')
@@ -10,7 +10,7 @@ provides=('init-matterbridge')
 conflicts=('init-matterbridge')
 depends=('matterbridge' 's6-base')
 makedepends=('git')
-_commit=092f51406d2c0e05c2c370a75d282d54682aab57
+_commit=4e024337a13def263e1b81e64edb0ff821fecceb
 backup=('etc/s6/config/matterbridge.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
