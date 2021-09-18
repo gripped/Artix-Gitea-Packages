@@ -1,0 +1,12 @@
+pre_upgrade() {
+    # check if this directory already exists
+    # if not hack it in ourself so sddm doesn't autorestart
+    if ! [ -d /etc/s6/sv/logind ]; then
+        mkdir /etc/s6/sv/logind
+        echo "oneshot" > /etc/s6/sv/logind/type
+        echo "#!/bin/execlineb -P" > /etc/s6/sv/logind/up
+        echo "exec true" >> /etc/s6/sv/logind/up
+        sh /usr/share/libalpm/scripts/s6-rc-db-update-hook
+        s6-rc -bu change logind
+    fi
+}
