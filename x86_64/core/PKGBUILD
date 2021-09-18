@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mdadm-s6
-pkgver=20210524
+pkgver=20210917
 pkgrel=1
 pkgdesc="s6-rc service scripts for mdadm"
 arch=('any')
@@ -10,7 +10,7 @@ provides=('init-mdadm')
 conflicts=('init-mdadm')
 depends=('mdadm' 's6-base')
 makedepends=('git')
-_commit=3bb3336c70e8d7802d1464cfd32a2580fd75d377
+_commit=4e024337a13def263e1b81e64edb0ff821fecceb
 backup=('etc/s6/config/mdadm.conf')
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
