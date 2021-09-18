@@ -2,7 +2,7 @@
 
 pkgname=seatd
 pkgver=0.6.2
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="A minimal seat management daemon, and a universal seat management library"
 arch=(x86_64)
 url="https://sr.ht/~kennylevinsen/seatd/"
@@ -21,7 +21,7 @@ depends=(
 source=("$pkgname-$pkgver.tar.gz::https://git.sr.ht/~kennylevinsen/seatd/archive/$pkgver.tar.gz"
 	"seatd.conf")
 sha256sums=('1e2745ea39266de40d5beb24011782da95468b81ecfa410dd0db5ff75c665727'
-            '242d42f43858d328459a7e688921545285df00bd4df88a675d828fb82c49107a')
+            '65f5b50e0f1bf51e5d6ad763a399c87499bf697d0373ebd990164d0cda0a2dd4')
 build() {
     mkdir build
     meson --prefix=/usr \
