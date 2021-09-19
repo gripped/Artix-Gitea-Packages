@@ -1,10 +1,15 @@
+pre_upgrade() {
+    # remove the logind dir if it was created by gdm/lightdm/sddm
+    rm -rf /etc/s6/sv/logind
+}
+
 post_install() {
     cryptsetup=$(pacman -Qi cryptsetup-s6 2> /dev/null)
-    if [[ "$?" == "0" ]]; then
+    if [ "$?" = "0" ]; then
         echo "cryptsetup" >> /etc/s6/sv/mount-filesystems/dependencies
     fi
     lvm2=$(pacman -Qi lvm2-s6 2> /dev/null)
-    if [[ "$?" == "0" ]]; then
+    if [ "$?" = "0" ]; then
         echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
     fi
 }
@@ -12,6 +17,10 @@ post_install() {
 post_upgrade() {
     rm -rf /etc/s6/sv/dmesg
     post_install
+
+    # crazy hack for making sure gdm/lightdm/sddm don't autorestart
+    sh /usr/share/libalpm/scripts/s6-rc-db-update-hook
+    s6-rc -bu change logind
 }
 
 post_remove() {
