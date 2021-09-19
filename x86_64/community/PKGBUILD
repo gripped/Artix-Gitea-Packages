@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=opensips-s6
-pkgver=20210917
+pkgver=20210919
 pkgrel=1
 pkgdesc="s6-rc service scripts for opensips"
 arch=('any')
@@ -11,8 +11,8 @@ provides=('init-opensips')
 conflicts=('init-opensips')
 backup=('etc/s6/config/opensips.conf')
 depends=('opensips' 's6-base')
-_commit=4e024337a13def263e1b81e64edb0ff821fecceb
 makedepends=('git')
+_commit=f8db772e97393417271f286a3c9dc136d25a959c
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
