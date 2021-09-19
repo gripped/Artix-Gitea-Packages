@@ -1,29 +1,20 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=seatd-s6
-pkgver=20210501
+pkgver=20210918
 pkgrel=1
 pkgdesc="s6-rc service scripts for seatd"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-s6"
-depends=('seatd' 'dbus-s6' 's6-base')
-provides=('init-logind')
-conflicts=('init-logind' 'init-elogind')
-install=seatd.install
-source=("seatd.dependencies"
-        "seatd.run"
-        "seatd.type")
-sha256sums=('9291726828590f8d9d158572c381e2cefc24adf21055036cba07585acc1abb62'
-            '8e2d1654f4642479222d2cac8b48cba5fef8355b28447cb220be8e00bcd85a26'
-            'd0001a150b83f68f09004c5059045cb76a3f064eed4d42ce072bc3722c118006')
-
-_inst_sv(){
-    for file in dependencies run type; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm644 "$srcdir/$1.$file" "$pkgdir/etc/s6/sv/$1/$file"
-        fi
-    done
-}
+url="https://gitea.artixlinux.org/artix/s6-services"
+depends=('seatd' 's6-base')
+makedepends=('git')
+provides=('init-logind' 'init-seatd')
+conflicts=('init-logind' 'init-seatd')
+_commit=f8db772e97393417271f286a3c9dc136d25a959c
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
 
 package() {
-    _inst_sv 'seatd'
+    cd "${srcdir}"/s6-services
+    sh install.sh "seatd" "${pkgdir}"
+    sh install.sh "logind" "${pkgdir}"
 }
