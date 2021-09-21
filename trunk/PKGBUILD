@@ -1,7 +1,7 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Patrick Ziegler <p.ziegler96@gmail.com>
 pkgname=polybar
-pkgver=3.5.6
+pkgver=3.5.7
 pkgrel=1
 pkgdesc="A fast and easy-to-use status bar"
 arch=("i686" "x86_64")
@@ -17,7 +17,7 @@ makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm" "git")
 conflicts=("polybar-git")
 install="${pkgname}.install"
 source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar.gz")
-b2sums=('79d385461235bb7281afb6f1962013ae0b9d829b59d27131b2ab152d8c443040bdce44ea130539c7650b8b6bf15e187b69416fce9f07b1f341d4236871cc8531')
+b2sums=('ecad8fb4bb2e7898436c2a1a31547c239fc2b0ea219db4114367335f73ab5f39422669c81b73dca2e3239645260e77b5ea16ee39ed6de7c373621bf918a99cd2')
 
 prepare() {
   cd ${pkgname}-${pkgver}/lib
