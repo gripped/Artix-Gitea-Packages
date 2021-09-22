@@ -1,31 +1,44 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=python-frozendict
 pkgver=2.0.6
 pkgrel=1
-
+epoch=1
 pkgdesc='An immutable dictionary'
 url='https://pypi.python.org/pypi/frozendict/'
 arch=('any')
-license=('MIT')
-
-depends=('python' 'python-setuptools')
-
+license=('LGPL3')
+depends=('python')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
 source=("https://pypi.org/packages/source/f/frozendict/frozendict-$pkgver.tar.gz")
+sha512sums=('c1bb1949f3f5d9b61ee3de51c5fb1ee3fb8112dad3058ae985f83837f1c280d8bb1390b934ccd47304c3c4a45856f18558492791974aba8bdfe4d52fe17bb78e')
+b2sums=('036142baa6e88a57bfa4f4c9b50cacff10bd2823f49b89b67524d67ca02c197a755b7bb1f1b8360559d58545c26d6e25984a4ccf5eab8fe87c914fb1bebb239f')
 
-md5sums=('67fe973cf3faae650a3ac0cbda1b2773')
+prepare() {
+	cd frozendict-$pkgver
+	# remove unneeded tests
+	pushd test
+	rm -v c_only.py test_frozendict_c.py test_frozendict_c_subclass.py \
+	      test_coold.py test_coold_subclass.py
+	popd
+}
 
 build() {
-	cd "$srcdir"/frozendict-$pkgver
-	python setup.py build
+	cd frozendict-$pkgver
+	python setup.py py build
+}
+
+check(){
+	cd frozendict-$pkgver
+	PYTHONPATH="$PWD/build/lib" pytest
 }
 
 package() {
 	cd frozendict-$pkgver
-	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
-
-	install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+	python setup.py py install --root="$pkgdir" --optimize=1 --skip-build
 }
 
 # vim: set ts=4 sw=4 tw=0 ft=PKGBUILD :
