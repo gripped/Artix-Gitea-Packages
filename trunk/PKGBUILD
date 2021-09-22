@@ -6,7 +6,7 @@ pkgdesc='A tool to automate the creation of suitable stage 1 init binaries for s
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-init/'
 license=('ISC')
-depends=('bash' 's6' 'libs6.so')
+depends=('sh' 's6' 'libs6.so')
 provides=('libs6_linux_init.so')
 backup=('etc/s6/current/scripts/rc.init'
         'etc/s6/current/scripts/rc.shutdown'
