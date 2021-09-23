@@ -9,9 +9,8 @@ arch=('x86_64')
 url="https://invisible-island.net/xterm/"
 license=('custom')
 depends=('libxft' 'libxaw' 'ncurses' 'luit' 'xbitmaps' 'libutempter' 'libxkbfile')
-source=(https://invisible-mirror.net/archives/${pkgname}/${pkgname}-${pkgver}.tgz{,.asc})
-sha256sums=('71ed6a48d064893d2149741a002781a973496fd24d52dadd364f63439a764e26'
-            'SKIP')
+source=(https://invisible-mirror.net/archives/${pkgname}/${pkgname}-${pkgver}.tgz)
+sha256sums=('71ed6a48d064893d2149741a002781a973496fd24d52dadd364f63439a764e26')
 #validpgpkeys=('C52048C0C0748FEE227D47A2702353E0F7E48EDB') # "Thomas Dickey <dickey@invisible-island.net>"
 validpgpkeys=('19882D92DDA4C400C22C0D56CC2AF4472167BE03') # "Thomas E. Dickey (self-signed w/o SHA1) <dickey@invisible-island.net>"
 
