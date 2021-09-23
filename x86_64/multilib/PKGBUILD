@@ -4,7 +4,7 @@
 
 pkgname=lib32-libsoup
 pkgver=2.74.0
-pkgrel=1
+pkgrel=2
 pkgdesc='HTTP client/server library for GNOME'
 arch=(x86_64)
 url=https://wiki.gnome.org/Projects/libsoup
@@ -19,10 +19,13 @@ depends=(
   libsoup
 )
 makedepends=(
-  clang
   git
   meson
   samba
+)
+checkdepends=(
+  apache
+  php-apache
 )
 optdepends=('samba: Windows Domain SSO')
 _tag=590611dac35a02ff16a556f97de9eea249e75d06
@@ -44,11 +47,13 @@ build() {
     --libdir=/usr/lib32 \
     -D introspection=disabled \
     -D sysprof=disabled \
-    -D tests=false \
     -D vapi=disabled
   meson compile -C build
 }
 
+check() {
+  meson test -C build --print-errorlogs
+}
 
 package() {
   depends+=(
