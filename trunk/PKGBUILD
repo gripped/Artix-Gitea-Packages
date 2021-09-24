@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=seatd-s6
-pkgver=20210920
+pkgver=20210924
 pkgrel=1
 pkgdesc="s6-rc service scripts for seatd"
 arch=('any')
@@ -9,7 +9,7 @@ depends=('seatd' 's6-base')
 makedepends=('git')
 provides=('logind-s6' 'init-logind' 'init-seatd')
 conflicts=('logind-s6' 'init-logind' 'init-seatd')
-_commit=f8db772e97393417271f286a3c9dc136d25a959c
+_commit=214ae2964ff8a00d13394f9fa09c4c0d6ae77d22
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
