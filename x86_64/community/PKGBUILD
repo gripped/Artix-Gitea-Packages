@@ -1,24 +1,20 @@
 # Maintainer: Brett Cornwall <ainola@archlinux.org>
 
-pkgname=seatd
+pkgbase=seatd
+pkgname=('seatd' 'libseat')
 pkgver=0.6.2
-pkgrel=1.5
+pkgrel=1.6
 pkgdesc="A minimal seat management daemon, and a universal seat management library"
 arch=(x86_64)
 url="https://sr.ht/~kennylevinsen/seatd/"
 license=('MIT')
-provides=("libseat.so" "elogind")
-conflicts=("elogind")
-replaces=("libseat")
 makedepends=(
     'meson'
     'ninja'
     'scdoc'
     'elogind'
 )
-depends=(
-    'libelogind'
-)
+depends=('libelogind')
 source=("$pkgname-$pkgver.tar.gz::https://git.sr.ht/~kennylevinsen/seatd/archive/$pkgver.tar.gz"
 	"seatd.conf"
 	"https://git.sr.ht/~kennylevinsen/seatd/commit/2eee9aa445e3f9dc6a7ca115489f87b10f60b9ba.patch"
@@ -55,8 +51,22 @@ check() {
     ninja -C build test
 }
 
-package() {
+package_seatd() {
+provides=('logind' 'elogind')
+conflicts=('logind' 'elogind')
+
     DESTDIR="$pkgdir/" ninja -C build install
     install -Dm644 "seatd-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
     install -Dm644 "$srcdir"/seatd.conf -t "$pkgdir"/usr/lib/sysusers.d
+    mv "$pkgdir"/usr/include "$srcdir"/include
+    mv "$pkgdir"/usr/lib/libseat.so* "$srcdir"
+}
+
+package_libseat() {
+provides=('libseat.so')
+
+    install -d "$pkgdir"/usr/lib
+    mv "$srcdir"/include "$pkgdir"/usr/
+    mv "$srcdir"/libseat.so* "$pkgdir"/usr/lib
+    install -Dm644 "seatd-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
