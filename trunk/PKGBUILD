@@ -15,8 +15,7 @@ depends=('bluez-libs' 'gcc-libs' 'glibc' 'liblouis' 'libspeechd' 'pcre2'
 'polkit' 'tcl')
 makedepends=('alsa-lib' 'at-spi2-atk' 'at-spi2-core' 'atk' 'cython' 'dbus'
 'dracut' 'espeak-ng' 'expat' 'festival' 'glib2' 'gpm' 'icu' 'java-environment'
-'libxaw' 'ncurses' 'ocaml-ctypes' 'ocaml-findlib' 'speech-dispatcher'
-'elogind')
+'libxaw' 'ncurses' 'ocaml-ctypes' 'ocaml-findlib' 'speech-dispatcher')
 optdepends=('at-spi2-core: X11/GNOME Apps accessibility'
             'atk: ATK bridge for X11/GNOME accessibility'
             'espeak-ng: espeak-ng driver'
@@ -36,19 +35,19 @@ install=brltty.install
 source=("https://brltty.app/archive/${pkgname}-${pkgver}.tar.bz2"
         "${pkgname}.tmpfiles"
         "${pkgname}.sysusers"
-        "0001-libbrlapi-use-elogind-instead-of-systemd.patch")
+        "0001-brlapi-use-elogind-instead-of-systemd.patch")
 sha512sums=('58394c18d56a2a93a44be1c5dcfd02613581820ea2d2dbd945372ea11e066a18a75832ea04f09cf7f411e6dd1cd4ec78574f317dafcbc5c431dcf0db21b93690'
             'a530fe66983768f9dc544af01c586abc101dfa2ed76885b4f1fd78c483b59e8445f2c0dbbfb865dd1cf2874342c346bd35ce978ab246e9cdd31d2d489a14e770'
             'cc2e2d5f33d4e11d6ff828aefc0773ccdc02127ce2f00649c1e3f8d4b39b90789f4a0e41385b344f850c38bd4a1df36d3d9d413a59144d431defdd343633f800'
-            '88e1ed1d45e0ec8f10ca3f0fcb778fa1465d6799ee5d570c9f4ef22cb29dee8e7854feaa7c6b99dff2dfea15072fad4c7361c2d9fdff1f7abc6ccea40e6fd03c')
+            'bd51db03848cf109e7e4f424cbfce9372de17db552446256c4a012359f42f2ab4156ee2d8600dd330307cc19b05e166a1dbbbc5b21a62df6b84d5bc2622a150a')
 b2sums=('2c31b8282f0bc4730e406772c8b5aa72b1650e3290cfe967ec668394627440f84afe936bfbdbdab9ee0e7ba93ef466950295dbd7d979b639605fe619b5c170bd'
         '59f50e367d2e6c6704902ebbd254232aa17c741c9a43ba27d0ebaa5fd4a86f62bc8bdd08e8e4562437dea0efa9d49845e40c022b8c4d7110675d81bf63ac4df4'
         'e6b7453360ef92254ff1049b387c9ee45f3be0e0259c9c3670154938f61ec4142b2de330401d09e1290ed9ffe8e390ede3472dab0e2f4c69b497f9ac19795aad'
-        'b29df2269b4c3d0afd64fcf2d38d0ca4a2a53f36cea62900765f782c76f2cae6b36bfca693194cc26e6d53a9f9af997d2bb5180062a7e3b0501d6c38e83936d0')
+        '868431b3a0d0d2e97647fa99d2bc43c1412f512c92f3ba25ca4a5ec7080bcd476c5486f3a7a66127ebd68f0bd4e59dff563954ffa9ea56e5ad32dcb24650ebb5')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
-  patch -Np1 -i ../0001-libbrlapi-use-elogind-instead-of-systemd.patch
+  patch -Np1 -i ../0001-brlapi-use-elogind-instead-of-systemd.patch
   ./autogen
 }
 
@@ -62,7 +61,8 @@ build() {
               --with-tables-directory=/usr/share/brltty \
               --with-writable-directory=/run/brltty \
               --enable-gpm \
-              --disable-stripping
+              --disable-stripping \
+              --without-service-package
   make
 }
 
