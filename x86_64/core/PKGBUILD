@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20210921
+pkgver=20210924
 pkgrel=1
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
@@ -28,7 +28,7 @@ backup=('etc/s6/rc.local'
         'etc/s6/config/udevd.conf'
         'usr/lib/sysctl.d/50-default.conf')
 
-_commit=2b7362e516b8f22b9af6a3733b52a84591cdbd99
+_commit=edbd768b37962dc8ab0566bf08aceb27ab290222
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
