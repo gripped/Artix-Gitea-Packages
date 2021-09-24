@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=elogind-s6
-pkgver=20210920
+pkgver=20210924
 pkgrel=1
 pkgdesc="s6-rc service scripts for elogind"
 arch=('any')
@@ -9,7 +9,7 @@ depends=('elogind' 'dbus-s6' 's6-base')
 makedepends=('git')
 provides=('logind-s6' 'init-logind' 'init-elogind')
 conflicts=('logind-s6' 'init-logind' 'init-elogind')
-_commit=341fd49c357ab13e03385d394afe4bda0e465e29
+_commit=214ae2964ff8a00d13394f9fa09c4c0d6ae77d22
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
