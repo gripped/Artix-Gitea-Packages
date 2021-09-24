@@ -1,6 +1,11 @@
 pre_upgrade() {
-    # remove the logind dir if it was created by gdm/lightdm/sddm
-    rm -rf /etc/s6/sv/logind
+    # crazy hack for making sure gdm/lightdm/sddm don't autorestart
+    # only do this if we are upgrading from an old s6-scripts version
+    s6_scripts_ver=$(pacman -Qi s6-scripts | grep -Eo '[0-9]{8}')
+    if [ $s6_scripts_ver -lt 20210918 ]; then
+        rm -rf /etc/s6/sv/logind
+        touch /etc/s6/use_hack
+    fi
 }
 
 post_install() {
@@ -18,12 +23,26 @@ post_upgrade() {
     rm -rf /etc/s6/sv/dmesg
     post_install
 
-    # crazy hack for making sure gdm/lightdm/sddm don't autorestart
-    sh /usr/share/libalpm/scripts/s6-rc-db-update-hook
-    s6-rc -bu change logind
-}
+    # hack from the pre_upgrade
+    if [ -f /etc/s6/use_hack ]; then
+        rm -f /etc/s6/use_hack
 
-post_remove() {
-    rm -rf /etc/s6/sv/mount-net
+        # the network and rc-local directories moved but the
+        # old hook from s6-base (which hasn't installed yet)
+        # won't take this to account make a couple of dummy
+        # services manually and remove them when we are done
+        mkdir -p /etc/s6/sv/network
+        mkdir -p /etc/s6/sv/rc-local
+        touch /etc/s6/sv/network/up /etc/s6/sv/rc-local/up
+        echo "oneshot" > /etc/s6/sv/network/type
+        echo "oneshot" > /etc/s6/sv/rc-local/type
+
+        sh /usr/share/libalpm/scripts/s6-rc-db-update-hook
+        s6-rc -bu change logind
+        rm -rf /etc/s6/sv/network
+        rm -rf /etc/s6/sv/rc-local
+    fi
+
+    # just in case there are pacsaves from the removal
     rm -rf /etc/s6/sv/rc-local
 }
