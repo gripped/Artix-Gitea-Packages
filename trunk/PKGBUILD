@@ -10,7 +10,7 @@ depends=('s6' 'libs6.so')
 provides=('libs6rc.so')
 makedepends=('git')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('bf3cbdc55ae609d4e4f99f573732a877da851f9829f658d55628231b786f22b9')
+sha256sums=('b2b4e120e16ae9e1b37e0f9bbb238e9affa9e89447a5f2ea28cbe2fd39bdcaf7')
 
 build() {
     cd ${pkgname}-${pkgver}
