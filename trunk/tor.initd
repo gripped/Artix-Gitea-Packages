@@ -1,10 +1,14 @@
 #!/usr/bin/openrc-run
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
+# sv-d nous, 2021
 
+SVCNAME=tor
+supervisor="supervise-daemon"
 command=/usr/bin/tor
-pidfile=/run/tor/tor.pid
-command_args="--hush --runasdaemon 1 --pidfile \"${pidfile}\""
+pidfile=/run/tor/supervise-tor.pid
+command_args="--hush"
+command_args_background="--runasdaemon 1 --pidfile ${pidfile}"
 retry=${GRACEFUL_TIMEOUT:-60}
 stopsig=INT
 command_progress=yes
