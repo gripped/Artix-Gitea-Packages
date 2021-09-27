@@ -1,0 +1,12 @@
+--2021-09-27 17:48:25--  https://invent.kde.org/plasma/discover/-/commit/725ae1f2.patch
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving invent.kde.org (invent.kde.org)... 195.201.182.103, 2a01:4f8:231:3116::3
+Connecting to invent.kde.org (invent.kde.org)|195.201.182.103|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 925 [text/plain]
+Saving to: '725ae1f2.patch'
+
+     0K                                                       100% 31.3M=0s
+
+2021-09-27 17:48:25 (31.3 MB/s) - '725ae1f2.patch' saved [925/925]
+
