@@ -20,7 +20,6 @@ checkdepends=(xorg-server-xvfb)
 optdepends=('gnome-control-center: System settings'
             'evolution-data-server: Evolution calendar integration')
 groups=(gnome)
-install=gnome-shell.install
 _commit=ad6f45f403fce7922392c43f30059c4af2aac561  # tags/40.5^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-shell.git#commit=$_commit"
         "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git")
