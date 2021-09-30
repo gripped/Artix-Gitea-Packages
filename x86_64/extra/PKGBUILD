@@ -18,7 +18,7 @@ makedepends=(gobject-introspection git egl-wayland meson xorg-server
 checkdepends=(xorg-server-xvfb pipewire-media-session)
 provides=(libmutter-8.so)
 groups=(gnome)
-_commit=ad6f45f403fce7922392c43f30059c4af2aac561  # tags/40.5^0
+_commit=2b2b3ab8502a5bcc2436e169279d2421f6f1a605  # tags/40.5^0
 source=("git+https://gitlab.gnome.org/GNOME/mutter.git#commit=$_commit")
 sha256sums=('SKIP')
 
