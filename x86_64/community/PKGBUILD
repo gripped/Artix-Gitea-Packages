@@ -12,6 +12,7 @@ url='https://github.com/containers/podman'
 license=(Apache)
 makedepends=(apparmor btrfs-progs device-mapper go go-md2man git gpgme
 libseccomp )
+source=("git+$url#tag=v$pkgver")
 validpgpkeys=('B7DBDCA456F7335E91F1C25CD3624C551D0515C4'
               '7CE1E6F8C90CB53E7E4D8F2D502E08DB0BBF8EEE')
 sha256sums=('SKIP')
