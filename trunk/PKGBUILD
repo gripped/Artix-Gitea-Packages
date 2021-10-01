@@ -53,8 +53,6 @@ build() {
       CFLAGS="$CFLAGS" \
       LDFLAGS="$LDFLAGS" \
       admin/{halog/halog,iprange/ip{,6}range}
-    make \
-      SBINDIR=/usr/bin
 }
 
 package() {
