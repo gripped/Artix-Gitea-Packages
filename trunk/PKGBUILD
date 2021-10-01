@@ -4,17 +4,14 @@
 
 pkgbase=podman
 pkgname=(podman podman-docker)
-pkgver=3.3.1
+pkgver=3.4.0
 pkgrel=1
 pkgdesc='Tool and library for running OCI-based containers in pods'
 arch=(x86_64)
 url='https://github.com/containers/podman'
 license=(Apache)
-depends=(cni-plugins conmon containers-common device-mapper iptables libseccomp
-runc slirp4netns fuse-overlayfs libudev)
-makedepends=(btrfs-progs go go-md2man git gpgme udev)
-backup=('etc/cni/net.d/87-podman-bridge.conflist')
-source=("git+$url#tag=v$pkgver")
+makedepends=(apparmor btrfs-progs device-mapper go go-md2man git gpgme
+libseccomp )
 validpgpkeys=('B7DBDCA456F7335E91F1C25CD3624C551D0515C4'
               '7CE1E6F8C90CB53E7E4D8F2D502E08DB0BBF8EEE')
 sha256sums=('SKIP')
@@ -24,15 +21,9 @@ pkgver() {
   git describe --tags | sed 's/^v//;s/-/+/g'
 }
 
-prepare(){
-  cd $pkgname
-  # Fix trimpath in makefile
-  # https://github.com/containers/podman/commit/e7b7c90bae1c65f61f524498e0ff152639f1ce04.patch 
-  git cherry-pick -n e7b7c90bae1c65f61f524498e0ff152639f1ce04  
-}
-
 build() {
-  export BUILDTAGS='seccomp'
+  # NOTE: the BUILDTAGS may change over time
+  export BUILDTAGS='apparmor seccomp '
   export CGO_CPPFLAGS="${CPPFLAGS}"
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
@@ -44,11 +35,12 @@ build() {
 }
 
 package_podman() {
-  depends+=('libgpgme.so')
-  optdepends+=('podman-docker: for Docker-compatible CLI'
+  depends=(cni-plugins conmon containers-common crun fuse-overlayfs iptables
+  libdevmapper.so libgpgme.so libseccomp.so slirp4netns)
+  optdepends=('apparmor: for AppArmor support'
               'btrfs-progs: support btrfs backend devices'
               'catatonit: --init flag support'
-              'crun: support for unified cgroupsv2')
+              'podman-docker: for Docker-compatible CLI')
 
   cd $pkgname
   make install install.completions DESTDIR="$pkgdir" PREFIX=/usr
@@ -64,6 +56,4 @@ package_podman-docker() {
 
   cd podman
   make -j1 install.docker-full DESTDIR="$pkgdir" PREFIX=/usr
-  # Remove sysd unit(Artix)
-  rm -rf "$pkgdir"/usr/lib/systemd
 }
