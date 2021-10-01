@@ -1,7 +1,7 @@
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=spirv-tools
-pkgver=2021.1
+pkgver=2021.3
 pkgrel=1
 pkgdesc="API and commands for processing SPIR-V modules"
 arch=('x86_64')
@@ -10,19 +10,19 @@ license=('custom')
 groups=(vulkan-devel)
 depends=('gcc-libs')
 makedepends=('cmake' 'python' 'git' 'ninja')
-source=("spirv-tools::git+https://github.com/KhronosGroup/SPIRV-Tools.git#tag=v${pkgver}"
-        "spirv-headers::git+https://github.com/KhronosGroup/SPIRV-Headers.git")
+source=("SPIRV-Tools1::git+https://github.com/KhronosGroup/SPIRV-Tools.git#tag=v${pkgver}"
+        "SPIRV-Headers1::git+https://github.com/KhronosGroup/SPIRV-Headers.git")
 sha256sums=('SKIP'
             'SKIP')
 
 prepare() {
-  cd spirv-tools
+  cd SPIRV-Tools1
 
   rm -rf build && mkdir build
 }
 
 build() {
-  cd spirv-tools/build
+  cd SPIRV-Tools1/build
 
   cmake .. \
       -GNinja \
@@ -32,12 +32,12 @@ build() {
       -DSPIRV_WERROR=Off \
       -DBUILD_SHARED_LIBS=ON \
       -DSPIRV_TOOLS_BUILD_STATIC=OFF \
-      -DSPIRV-Headers_SOURCE_DIR="${srcdir}"/spirv-headers
+      -DSPIRV-Headers_SOURCE_DIR="${srcdir}"/SPIRV-Headers1
   ninja
 }
 
 package() {
-  cd spirv-tools/build
+  cd SPIRV-Tools1/build
 
   DESTDIR="${pkgdir}" ninja install
 
