@@ -2,7 +2,7 @@
 # Contributor: Andrej Gelenberg <andrej.gelenberg@udo.edu>
 
 pkgname="openbsd-netcat"
-pkgver=1.217_2
+pkgver=1.217_3
 pkgrel=1
 pkgdesc="TCP/IP swiss army knife. OpenBSD variant."
 arch=('x86_64')
@@ -15,7 +15,7 @@ conflicts=('gnu-netcat')
 source=("https://deb.debian.org/debian/pool/main/n/netcat-openbsd/netcat-openbsd_${pkgver%_*}.orig.tar.gz"
 	"https://deb.debian.org/debian/pool/main/n/netcat-openbsd/netcat-openbsd_${pkgver/_/-}.debian.tar.xz")
 sha512sums=('99da59fa1d9b6e991531b45c0291ef43b064f2d54184cde8a2f508562d015b37cfc69391a4b0562b89b40dfe7307e8d38f48a63bb293af3b8f705848c689dd17'
-            '4dcd95dddd77598a37fe7f4450be6d332058cd787d64454db347bfcfe8f2f809b22884df46925f96d020f8fbe6b411c3d6a19d7cd6e3903b15438ad7928f657a')
+            '0e5d7f93a931121e93b410c0990ca0c147509557f57a33933de1699f4d05cadb84c39b2ef22e5be1f2157a3334d123e993e79c33de800c7df82d9a4e753a1a4b')
 
 build() {
   cd "$srcdir"/netcat-openbsd-${pkgver%_*}
