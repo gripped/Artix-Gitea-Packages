@@ -23,10 +23,12 @@ backup=('etc/lxc/default.conf'
 	'etc/default/lxc')
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
-	"fix-completion.patch::https://github.com/lxc/lxc/commit/7d552285950ff2757ce52dba2cd2093ee330d757.patch")
+	"fix-completion.patch::https://github.com/lxc/lxc/commit/7d552285950ff2757ce52dba2cd2093ee330d757.patch"
+  "lxc.tmpfiles.d")
 sha256sums=('a10c518056d2e497bd600e4ffac2853bdeab1e835bf455a6d87cc8df128bfae9'
             'SKIP'
-            'c1726790b68741c605b334477d2db72a05c975f73172ac91c5e7eb86696773fb')
+            'c1726790b68741c605b334477d2db72a05c975f73172ac91c5e7eb86696773fb'
+            '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
 prepare() {
   cd "$pkgname-${pkgver/_/-}"
