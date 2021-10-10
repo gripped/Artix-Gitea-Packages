@@ -8,7 +8,7 @@
 
 pkgbase=erlang
 pkgname=(erlang erlang-unixodbc)
-pkgver=24.1.0
+pkgver=24.1.2
 pkgrel=1
 _docver=24.1
 arch=(x86_64)
@@ -17,7 +17,7 @@ license=(Apache)
 makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl unixodbc wxgtk3)
 options=(staticlibs)
 source=("$url/download/otp_doc_man_$_docver.tar.gz"
-        "git+https://github.com/erlang/otp#commit=1b0a9a039a1d078c8e4f25f3eaa765259b256ace") # tag: OTP-24.1
+        "git+https://github.com/erlang/otp#commit=0706178dea1c62d8d63c33c86bbf473dcaef89d5") # tag: OTP-24.1.2
 b2sums=('092c7870914e108e3fe06b68be6c54cff508cd938b5b510ca9a7c946b786e5725ffa1f2c87282a36480a9c1c7d7c899e8118546102a98136f813309a7f0bd334'
         'SKIP')
 
