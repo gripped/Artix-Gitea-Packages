@@ -25,7 +25,7 @@ build() {
     --buildtype debugoptimized \
     -D gtk_doc=true \
     -D man=true \
-    -D systemd=disabled
+    -D systemd=disabled \
     -D trust_paths=/etc/ca-certificates/trust-source:/usr/share/ca-certificates/trust-source
   meson compile -C build
 }
