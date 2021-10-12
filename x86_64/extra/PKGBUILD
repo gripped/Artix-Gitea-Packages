@@ -5,15 +5,13 @@
 
 pkgbase=java-openjdk
 pkgname=('jre-openjdk-headless' 'jre-openjdk' 'jdk-openjdk' 'openjdk-src' 'openjdk-doc')
-_majorver=17
+_majorver=16
 _minorver=0
-_securityver=0
-_updatever=35
+_securityver=2
+_updatever=7
 pkgrel=1
-#pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
-pkgver=${_majorver}.u${_updatever}
-#_git_tag=jdk-${_majorver}.${_minorver}.${_securityver}+${_updatever}
-_git_tag=jdk-${_majorver}+${_updatever}
+pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
+_git_tag=jdk-${_majorver}.${_minorver}.${_securityver}+${_updatever}
 arch=('x86_64')
 url='https://openjdk.java.net/'
 license=('custom')
@@ -25,10 +23,10 @@ source=(https://github.com/openjdk/jdk${_majorver}u/archive/${_git_tag}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
-sha256sums=('30f18c49c004880ede19498c45e91bbef83fb3419aba7abd583bf03a670ea53b'
-            '85c4742764590783160af74587a47269e6797fbdf17ec485c7644bd239adf61d'
-            'abac1ab09a33a3654378bc69be5a7cf075263ab3ae9efec1eb25cf388e711bb7'
-            'e7cce0ecf868f656d8dc2eb25ab82ab665526a0a28aba20f02632dd29962dac3')
+sha256sums=('b4a0e71e41a11175e8a7c1dba86ed5b0aa878413158c8d48813db1b64ac9536c'
+            'b3a84d43db38f4230c4203941ec46acb5d64a8931308dc3d5ea4397d65803619'
+            'c8b2de383d7ac3cc5524955355e66c5f4871a30a1d9088dee454f254c732d70c'
+            '402f8dcd4921fde2c148cb2a02644f627d89ee19387c80c8a69121459ee59fd2')
 
 case "${CARCH}" in
   x86_64) _JARCH='x86_64';;
@@ -46,6 +44,11 @@ _nonheadless=(lib/libawt_xawt.{so,debuginfo}
 
 build() {
   cd ${_jdkdir}
+
+  # export old flags to avoid zlist fail with hotspot agent
+  export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+  export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
 
   NUM_PROC_OPT=''
   MAKEFLAG_J=$(echo ${MAKEFLAGS} | sed -En 's/.*-j([0-9]+).*/\1/p')
