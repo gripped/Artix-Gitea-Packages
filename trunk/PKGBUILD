@@ -47,11 +47,6 @@ _nonheadless=(lib/libawt_xawt.{so,debuginfo}
 build() {
   cd ${_jdkdir}
 
-  # export old flags to avoid zlist fail with hotspot agent
-  export CPPFLAGS="-D_FORTIFY_SOURCE=2"
-  export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
-  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
-
   NUM_PROC_OPT=''
   MAKEFLAG_J=$(echo ${MAKEFLAGS} | sed -En 's/.*-j([0-9]+).*/\1/p')
   if [ -n "${MAKEFLAG_J}" ]; then
