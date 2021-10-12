@@ -1,5 +1,6 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: anex <assassin.anex[@]gmail.com
+#
 
 pkgname=signon-kwallet-extension
 pkgver=21.08.2
