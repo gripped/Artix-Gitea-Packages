@@ -11,10 +11,8 @@ arch=(x86_64)
 license=(BSD custom:PATENTS)
 depends=(gcc-libs)
 makedepends=(cmake ninja doxygen yasm)
-source=(https://storage.googleapis.com/aom-releases/libaom-$pkgver.tar.gz{,.asc})
-b2sums=('b950c2cda0788d41e16ff771015ab934489c1aa53e366e394a17504845f152d93afc9ccf22a0f95fe828f1fdab27e617b8f81c61b250e64f8903e64043e746d1'
-        'SKIP')
-validpgpkeys=(B002F08B74A148DAA01F7123A48E86DB0B830498) # AOMedia release signing key <av1-discuss@aomedia.org>
+source=(https://storage.googleapis.com/aom-releases/libaom-$pkgver.tar.gz)
+b2sums=('b950c2cda0788d41e16ff771015ab934489c1aa53e366e394a17504845f152d93afc9ccf22a0f95fe828f1fdab27e617b8f81c61b250e64f8903e64043e746d1')
 
 prepare() {
   cd $pkgbase
