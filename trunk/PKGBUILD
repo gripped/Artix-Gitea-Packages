@@ -18,10 +18,10 @@ depends=('bzip2' 'chromaprint' 'gcc-libs' 'glibc' 'lame' 'libcdio'
 'libmpcdec' 'libnfs' 'libshout' 'libsidplayfp' 'libsoxr' 'openal' 'opus'
 'smbclient' 'sqlite' 'wavpack' 'wildmidi' 'zlib' 'zziplib')
 makedepends=('alsa-lib' 'audiofile' 'avahi' 'boost' 'curl' 'dbus' 'expat'
-'faad2' 'ffmpeg' 'flac' 'fluidsynth' 'icu' 'jack' 'libao' 'libid3tag'
-'libmikmod' 'libmpdclient' 'libogg' 'libpulse' 'libsamplerate' 'libsndfile'
-'libupnp' 'liburing' 'libvorbis' 'meson' 'mpg123' 'python-sphinx'
-'twolame' 'yajl')
+'faad2' 'ffmpeg' 'flac' 'fluidsynth' 'fmt' 'icu' 'jack' 'libao' 'libid3tag'
+'libmikmod' 'libmpdclient' 'libogg' 'libopenmpt' 'libpulse' 'libsamplerate'
+'libsndfile' 'libupnp' 'liburing' 'libvorbis' 'meson' 'mpg123' 'pipewire'
+'python-sphinx' 'twolame' 'yajl')
 backup=("etc/${pkgname}.conf")
 source=("https://www.musicpd.org/download/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.xz"{,.sig}
         "${pkgname}.conf"
@@ -69,11 +69,12 @@ check() {
 }
 
 package() {
-  depends+=('libbz2.so' 'libFLAC.so' 'libao.so' 'libasound.so' 'libaudiofile.so'
-  'libavahi-client.so' 'libavahi-common.so' 'libavcodec.so' 'libavformat.so'
-  'libavutil.so' 'libcurl.so' 'libdbus-1.so' 'libexpat.so' 'libfaad.so'
-  'libfluidsynth.so' 'libicui18n.so' 'libicuuc.so' 'libid3tag.so' 'libjack.so'
-  'libmikmod.so' 'libmpdclient.so' 'libmpg123.so' 'libogg.so' 'libpulse.so'
+  depends+=('libbz2.so' 'libFLAC.so' 'libao.so' 'libasound.so'
+  'libaudiofile.so' 'libavahi-client.so' 'libavahi-common.so' 'libavcodec.so'
+  'libavformat.so' 'libavutil.so' 'libcurl.so' 'libdbus-1.so' 'libexpat.so'
+  'libfaad.so' 'libfluidsynth.so' 'libfmt.so' 'libicui18n.so' 'libicuuc.so'
+  'libid3tag.so' 'libjack.so' 'libmikmod.so' 'libmpdclient.so' 'libmpg123.so'
+  'libogg.so' 'libopenmpt.so' 'libpipewire-0.3.so' 'libpulse.so'
   'libsamplerate.so' 'libsndfile.so' 'libtwolame.so'
   'libupnp.so' 'liburing.so' 'libvorbis.so' 'libvorbisenc.so' 'libyajl.so'
   'libavfilter.so' 'libchromaprint.so' 'libixml.so')
