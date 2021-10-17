@@ -2,7 +2,7 @@
 
 pkgname=lib32-libffi
 pkgver=3.4.2
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Portable foreign function interface library (32-bit)'
 arch=('x86_64')
 url='https://sourceware.org/libffi/'
