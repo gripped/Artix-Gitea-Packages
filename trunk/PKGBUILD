@@ -21,7 +21,7 @@ depends=(
   'ttf-font'
   'wlroots'
 )
-makedepends=(git meson ninja scdoc setconf wayland-protocols elogind)
+makedepends=(git meson ninja scdoc setconf wayland-protocols seatd)
 backup=(etc/sway/config)
 optdepends=(
   'alacritty: Terminal emulator used by the default config'
