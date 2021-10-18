@@ -14,7 +14,7 @@ license=(GPL3)
 depends=(libedit gnutls liburcu lmdb
          libidn2 libcap-ng
          fstrm protobuf-c libmaxminddb
-         libbpf libnghttp2)
+         libbpf libnghttp2 libmnl)
 backup=('etc/knot/knot.conf')
 source=("https://secure.nic.cz/files/knot-dns/${pkgname}-${pkgver}.tar.xz"{,.asc})
 sha256sums=(a3fc448cbce3209575f93a3cf1224fa37802fc6606f7c7d4bb3aa6dbeaed2c64 SKIP)
