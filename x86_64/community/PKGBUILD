@@ -55,6 +55,6 @@ package() {
     rm "${pkgdir}"/etc/knot/example.com.zone
     mv "${pkgdir}"/etc/knot/{knot.sample.conf,knot.conf}
 
-    install -Dm644 distro/arch/knot.tmpfiles.arch "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
-    install -Dm644 distro/arch/knot.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
+    install -Dm644 distro/pkg/arch/knot.tmpfiles.arch "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
+    install -Dm644 distro/pkg/arch/knot.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
 }
