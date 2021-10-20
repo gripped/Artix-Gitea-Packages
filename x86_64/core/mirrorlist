@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2021-09-07
+## Generated on 2021-10-20
 ##
 
 # Artix mirrors
@@ -18,7 +18,6 @@ Server = https://mirror.linux.pizza/artix-linux/$repo/os/$arch
 Server = http://mirrors.redcorelinux.org/artixlinux/$repo/os/$arch
 Server = https://mirror.one.com/artix/$repo/os/$arch
 Server = https://mirror.pascalpuffke.de/artix-linux/$repo/os/$arch
-Server = https://linuxer.ellak.gr/artixlinux/$repo/os/$arch
 Server = https://artixlinux.qontinuum.space:4443/$repo/os/$arch
 Server = https://mirror.easylee.nl/artix/$repo/os/$arch
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
@@ -37,5 +36,4 @@ Server = https://mirrors.nettek.us/artix-linux/$repo/os/$arch
 ## Asia
 Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch
 Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
-Server = https://mirror.maakpain.kro.kr/artix/$repo/os/$arch
 Server = https://artix.funami.tech/artix/$repo/os/$arch
