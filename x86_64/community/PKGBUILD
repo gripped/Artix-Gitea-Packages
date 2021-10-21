@@ -1,8 +1,8 @@
 # Maintainer: Brett Cornwall <ainola@archlinux.org>
 
 pkgname=seatd
-pkgver=0.6.2
-pkgrel=1.11
+pkgver=0.6.3
+pkgrel=1
 pkgdesc="A minimal seat management daemon, and a universal seat management library"
 arch=(x86_64)
 url="https://sr.ht/~kennylevinsen/seatd/"
@@ -18,24 +18,9 @@ makedepends=(
 )
 depends=('libelogind')
 source=("$pkgname-$pkgver.tar.gz::https://git.sr.ht/~kennylevinsen/seatd/archive/$pkgver.tar.gz"
-	"seatd.conf"
-	"https://git.sr.ht/~kennylevinsen/seatd/commit/2eee9aa445e3f9dc6a7ca115489f87b10f60b9ba.patch"
-	"https://git.sr.ht/~kennylevinsen/seatd/commit/db08fb921f8ea13202a487dcea2fdd3914b87dfd.patch")
-sha256sums=('1e2745ea39266de40d5beb24011782da95468b81ecfa410dd0db5ff75c665727'
-            '65f5b50e0f1bf51e5d6ad763a399c87499bf697d0373ebd990164d0cda0a2dd4'
-            '9e3f8bbff6412cf8744eea143331c09202d804ca3c99326ab6729a517c5093b3'
-            '0720e1f631475ae5feee0c778a74b82f0ffb3343bf22320acbb5508a0ff00e4a')
-
-
-prepare() {
-   cd "$pkgname-$pkgver"
-	local filename
-        for filename in "${source[@]}"; do
-             if [[ "$filename" =~ \.patch$ ]]; then 
-                  patch -p1 -N -i "$srcdir/${filename##*/}" 
- 	     fi   
-        done
-}
+        "seatd.conf")
+sha256sums=('5226850c163b485aebe71da0d3f4941761637e146a5c9393cb40c52617ad84a8'
+            '65f5b50e0f1bf51e5d6ad763a399c87499bf697d0373ebd990164d0cda0a2dd4')
 build() {
     mkdir build
     meson --prefix=/usr \
