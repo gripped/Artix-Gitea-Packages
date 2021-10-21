@@ -4,7 +4,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=artix-mirrorlist
-pkgver=20211020
+pkgver=20211021
 pkgrel=1
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
