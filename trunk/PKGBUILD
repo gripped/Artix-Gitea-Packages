@@ -2,9 +2,10 @@
 # Contributor: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
+# bump, rebuild against libffi.so.8
 pkgname=cjs
 pkgver=5.0.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Javascript Bindings for Cinnamon"
 arch=('x86_64')
 url="https://github.com/linuxmint/${pkgname}"
