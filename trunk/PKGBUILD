@@ -3,7 +3,7 @@
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.15.4
+pkgver=1.15.5
 pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
 arch=(x86_64)
@@ -20,13 +20,13 @@ optdepends=(
   'redis: Redis support'
   'sqlite: SQLite support'
 )
-_tag=d2bddf294c98da0e88822dfcd972e01e564d17f4 # git rev-parse v${pkgver}
+_tag=de013fbff1597c075fbd3fa0cf5eb052524b3102 # git rev-parse v${pkgver}
 source=("git+https://github.com/go-gitea/gitea.git#tag=${_tag}"
         gitea.tmpfiles
         gitea.sysusers)
-sha256sums=('SKIP'
-            '9f63a517e8da6865fa6d9e87f6b08fe25ea56285304115e052809663c48dc3d7'
-            '7e7b798b8ce035c1fb55993ece41c5efb6cad5922708866804fa50ada0cf9fa5')
+sha256sums=(SKIP
+            9f63a517e8da6865fa6d9e87f6b08fe25ea56285304115e052809663c48dc3d7
+            7e7b798b8ce035c1fb55993ece41c5efb6cad5922708866804fa50ada0cf9fa5)
 
 prepare() {
   cd ${pkgname}
