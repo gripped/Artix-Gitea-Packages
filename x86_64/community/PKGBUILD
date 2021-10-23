@@ -14,20 +14,20 @@ makedepends=(cmake git)
 # or https://github.com/KhronosGroup/SPIRV-LLVM-Translator/blob/master/spirv-headers-tag.conf
 # using whatever is newest for latest release
 _commit=e71feddb3f17c5586ff7f4cfb5ed1258b800574b
-source=(git+https://github.com/KhronosGroup/${_pkg}.git#commit=${_commit})
+source=(spirv-headers::git+https://github.com/KhronosGroup/${_pkg}.git#commit=${_commit})
 sha512sums=(SKIP)
 
 pkgver() {
-  cd ${_pkg}
+  cd spirv-headers
   git describe --tags --exclude '*raytracing*' | sed 's/\([^-]*-g\)/r\1/;s/-/./;s/-/+/'
 }
 
 build() {
-  cmake -B build -S ${_pkg} -DCMAKE_INSTALL_PREFIX=/usr .
+  cmake -B build -S spirv-headers -DCMAKE_INSTALL_PREFIX=/usr .
   make -C build
 }
 
 package() {
   make -C build DESTDIR="${pkgdir}" install
-  install -Dm644 ${_pkg}/LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
+  install -Dm644 spirv-headers/LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
