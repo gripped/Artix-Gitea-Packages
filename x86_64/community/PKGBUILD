@@ -3,7 +3,7 @@
 # Contributor: Florian Pritz <f-p@gmx.at>
 
 pkgname=inxi
-pkgver=3.3.04
+pkgver=3.3.08
 pkgrel=1
 pkgdesc="Full featured CLI system information tool"
 arch=(any)
@@ -24,7 +24,6 @@ optdepends=(
             "perl-cpanel-json-xs: --output json - required for export"
             "perl-json-xs: --output json - required for export (legacy)"
             "perl-xml-dumper: --output xml - Crude and raw"
-            "systemd-sysvcompat: inxi -I runlevel"
             "sudo: inxi -Dx hddtemp-user;-o file-user"
             "tree: --debugger 20,21 /sys tree"
             "usbutils: inxi -A usb audio;-N usb networking"
@@ -34,7 +33,7 @@ optdepends=(
             "xorg-xrandr: inxi -G single screen resolution"
 )
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/smxi/inxi/archive/${pkgver}-1.tar.gz")
-sha256sums=('1f029f5f667e0396ab9f6ba2c51cf7937ea38bf504d1621a8c50e19205a7a671')
+sha256sums=('44008d9e77dc82855fd91d634f5f817813eb4653e4df7106e56a1c9986ab8abd')
 
 package() {
   cd "${pkgname}-${pkgver}-1"
