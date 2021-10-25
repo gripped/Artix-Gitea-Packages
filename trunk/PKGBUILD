@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=openntpd-runit
 pkgver=20180314
-pkgrel=5
+pkgrel=6
 pkgdesc="Runit service script for openntpd"
 arch=('any')
 url="https://artixlinux.org"
@@ -15,7 +15,7 @@ conflicts=('ntp' 'init-openntpd' 'init-timed')
 provides=('init-openntpd' 'init-timed')
 source=("openntpd.run"
         "logopenntpd.run")
-sha256sums=('769e088fcffc08bec605fb9c4e192c395884c24ff98614f383334e22d6fbdfaf'
+sha256sums=('cbcbb592e6ebf01a370d8d15920faa850e709aa9ba0f037751aac15a0d0b6aca'
             '09925663d47d21d3040c371f70bdd559d004b10158c877b97adfc15c0ad766a4')
 
 _inst_logsv() {
