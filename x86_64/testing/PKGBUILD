@@ -24,7 +24,6 @@ prepare() {
 }
 
 build() {
-  cd $pkgname
   artix-meson $pkgname build -D gtk_doc=true
   meson compile -C build
 }
