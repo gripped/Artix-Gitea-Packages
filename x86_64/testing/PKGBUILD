@@ -2,17 +2,17 @@
 
 pkgname=artix-keyring
 pkgver=20211026
-pkgrel=2
+pkgrel=1
 pkgdesc='Artix PGP keyring'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/artix-keyring'
 license=('GPL')
 install="${pkgname}.install"
-_srctarball='e02ba93b-de3c-4faf-b827-c679969fb565'
-_srctarballsig='657e104f-3bca-4c80-909e-db0f18d3cd79'
+_srctarball='e4dc1cf9-1a04-4851-a326-2bea19256bc9'
+_srctarballsig='33308987-bd74-40e0-a7eb-369bef032ae9'
 source=("${pkgname}-${pkgver}.tar.gz::https://gitea.artixlinux.org/attachments/${_srctarball}"
 "${pkgname}-${pkgver}.tar.gz.sig::https://gitea.artixlinux.org/attachments/${_srctarballsig}")
-sha512sums=('690067710c650973f07987b091dd3ac1764ed206d1e8dcde96d291564e5739794727a73e83dd78d7c90d79f1b1cdb8f15cfa24e85903ec86b1f27ec6c4a53417'
+sha512sums=('5803957f58287f917a0aff3746001790b35c386e768c04afa5d432799ee9e1a79bc915b7737e97728032939dae95fdeb2111149233dac9918e1c573d11e54c6d'
             'SKIP')
 validpgpkeys=('A55C3F1BA61CAA63036D82BAFA91071797BEEEC2') # cromer
 
