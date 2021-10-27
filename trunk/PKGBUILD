@@ -31,7 +31,7 @@ prepare() {
 
 build() {
   artix-meson $pkgbase build \
-    -D docs=true \
+#    -D docs=true \ Docs fail.
     -D help=true
   meson compile -C build
 }
