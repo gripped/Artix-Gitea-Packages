@@ -30,7 +30,7 @@ prepare() {
 }
 
 build() {
-  # Docs fail. Disable for now.
+  # Docs fail. Just disable for now.
   artix-meson $pkgbase build \
     -D help=true
   meson compile -C build
@@ -62,13 +62,13 @@ package_gnome-builder() {
   meson install -C build --destdir "$pkgdir"
 
   cd "$pkgdir"
-  _pick libide-docs usr/share/doc/libide
+#  _pick libide-docs usr/share/doc/libide
 }
 
 package_gnome-builder-libide-docs() {
   pkgdesc+=" (libide API documentation)"
   depends=()
-  mv libide-docs/* "$pkgdir"
+#  mv libide-docs/* "$pkgdir"
 }
 
 # vim:set sw=2 et:
