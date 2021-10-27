@@ -30,8 +30,8 @@ prepare() {
 }
 
 build() {
+  # Docs fail. Disable for now.
   artix-meson $pkgbase build \
-#    -D docs=true \ Docs fail.
     -D help=true
   meson compile -C build
 }
