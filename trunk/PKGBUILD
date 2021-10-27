@@ -51,6 +51,7 @@ build() {
   cmake -B build -S ${pkgname}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DISPC_INCLUDE_EXAMPLES=OFF \
+    -DISPC_INCLUDE_GENX_EXAMPLES=OFF \
     -DISPC_NO_DUMPS=ON \
     -DGENX_ENABLED=ON \
     -DGENX_DEPS_DIR=/usr
