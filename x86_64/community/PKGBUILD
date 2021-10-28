@@ -19,7 +19,7 @@ sha512sums=('791d8f2e79900627215ce80ce67ee9c79173dbc08297c6219d5058f9b80c5e323b9
 prepare() {
   cd "$srcdir"
   cp -r $_pkgname-$pkgver ${_pkgname}2-$pkgver
-  mv "LIC-pty-$pkgver" LICENSE
+  mv "LIC-pty-$pkgver-$pkgrel" LICENSE
 }
 
 package() {
