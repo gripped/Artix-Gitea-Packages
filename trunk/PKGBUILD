@@ -1,0 +1,45 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=pywlroots
+pkgname=python-pywlroots
+pkgver=0.14.9
+pkgrel=1
+pkgdesc="Python binding to the wlroots library using cffi"
+arch=('x86_64')
+url="https://github.com/flacjacket/pywlroots"
+license=('custom:UIUC')
+depends=('glibc' 'python-cffi' 'python-pywayland' 'python-xkbcommon' 'wlroots'
+'libwlroots.so')
+makedepends=('python-setuptools')
+checkdepends=('python-pytest')
+provides=('pywlroots')
+conflicts=('pywlroots')
+replaces=('pywlroots')
+source=("https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz")
+sha512sums=('3c3e2d2bb32ff7876af592b33eef5403308b8776919d1eafdbe20f3c094138728ff461c21502dc1705c7183abb87cbdcf98eab2e3c77e623cb71ee53104641e6')
+b2sums=('95c6bad600e8e4bd90723fc0184e744d690daf785e41ac444708fa0a1fe4003c593206b29a34abb858d0d1e034f702f89db343e4f95da6ffd8eebc012b9f8b85')
+
+prepare() {
+  mv -v "${_name}-$pkgver" "$pkgname-$pkgver"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  python wlroots/ffi_build.py
+  python setup.py build
+}
+
+check() {
+  local _py_ver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+
+  cd "$pkgname-$pkgver"
+  export PYTHONPATH="build/lib.linux-${CARCH}-${_py_ver}:${PYTHONPATH}"
+  pytest -v
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python setup.py install --optimize=1 --root="${pkgdir}"
+  install -vDm 644 README.rst -t "${pkgdir}/usr/share/doc/${pkgname}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
