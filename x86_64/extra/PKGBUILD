@@ -4,13 +4,13 @@
 
 pkgname=openmpi
 pkgver=4.1.1
-pkgrel=2
+pkgrel=3
 pkgdesc='High performance message passing library (MPI)'
 url='https://www.open-mpi.org'
 arch=('x86_64')
 license=('custom:OpenMPI')
 depends=('glibc' 'libltdl' 'hwloc' 'openssh' 'zlib' 'libnl' 'perl' 'libevent')
-makedepends=('inetutils' 'valgrind' 'gcc-fortran') #no  'cuda' in artix
+makedepends=('inetutils' 'valgrind' 'gcc-fortran') # no  'cuda' in artix
 optdepends=(
   'gcc-fortran: fortran support'
   'cuda: cuda support'
