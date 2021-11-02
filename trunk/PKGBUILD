@@ -51,9 +51,9 @@ build() {
 #  export PATH="$srcdir/$pkgname/bin:$PATH"
 #  export GO_TEST_TIMEOUT_SCALE=3
 
-  cd $pkgname/src
-  ./run.bash --no-rebuild -v -v -v -k
-}
+#  cd $pkgname/src
+#  ./run.bash --no-rebuild -v -v -v -k
+#}
 
 package() {
   cd "$pkgname"
