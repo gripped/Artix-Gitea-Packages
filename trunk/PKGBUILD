@@ -18,7 +18,7 @@ checkdepends=('gcc-objc' 'vala' 'rust' 'gcc-fortran' 'mono' 'boost' 'qt5-base' '
               'python-pytest-xdist' 'python2-setuptools' 'ldc' 'rust-bindgen' 'cuda' 'hotdoc')
 source=(https://github.com/mesonbuild/meson/releases/download/${pkgver/rc/.rc}/meson-${pkgver}.tar.gz{,.asc}
         skip-test.diff
-        artix-meson)
+        arch-meson)
 sha512sums=('ffaa99622b0c2ec74edda7dcdebf981cd3acbc62f36bde37241cafa2ce27e520f6901eebaef978a1f8b2e1d40d540e7085d0e0723d385064988baacb5b79f31c'
             'SKIP'
             '486e60b1d470c64d07d4686bd0b4374924967b9e024ff6d9fe248f512995ece19b8b09dd69c91f26dec4bb92c61fc3d275a2b7e481c2acd10ebb90d7e3cb7e20'
