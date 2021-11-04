@@ -1,0 +1,19 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=cronie-dinit
+pkgver=20211030
+pkgrel=1
+pkgdesc="dinit service scripts for cronie"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-system')
+depends=('cronie' 'dinit')
+provides=('init-cronie' 'init-cron')
+conflicts=('init-cronie' 'init-cron')
+source=("cronie")
+sha256sums=('3c01951f0bf081bbe6a1fb4427267bb7b6352b1e37cfd3c5d4727b3323f9c394')
+
+package() {
+    install -Dm644 cronie "$pkgdir/etc/dinit.d/cronie"
+}
