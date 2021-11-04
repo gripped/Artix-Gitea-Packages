@@ -1,16 +1,20 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit
 pkgver=0.12.0
-pkgrel=2
+_commit=d2362e98e56dfe11308d1526c40f91f717e19a24
+pkgrel=3
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
 license=('Apache')
 depends=('dinit-rc')
+makedepends=('git')
 provides=('svc-manager')
 conflicts=('svc-manager')
-source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz")
-sha256sums=('d5f9afe7005da7c08224dddcf2b63f37a6c4120b7493bed4669ef362cde1b544')
+source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
+        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
+sha256sums=('d5f9afe7005da7c08224dddcf2b63f37a6c4120b7493bed4669ef362cde1b544'
+            'SKIP')
 
 build() {
 	cd "$pkgname-$pkgver"
@@ -20,6 +24,9 @@ build() {
 package() {
 	cd "$pkgname-$pkgver"
 	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin install
+
+	cd "$srcdir/alpm-hooks"
+	make DESTDIR="$pkgdir/" install_dinit
 
 	ln -s shutdown "$pkgdir/usr/bin/poweroff"
 }
