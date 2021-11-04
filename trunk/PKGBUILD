@@ -34,12 +34,12 @@ sha512sums=('b1b6ed1eeb9ce01c26240a0a0c1ff3991ac305787e2ed49ecf7ed9cc75789da2d0e
 b2sums=('27c4163a5762e8fa72524f91d846439b5bd54aff8ec0c4f8ffe4061295540d986b71fc333a2d65110e87821efc5a96ce0dc8a519236c5d71df9a722c65851296')
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}-${pkgname}-${pkgver}
   python setup.py build
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}-${pkgname}-${pkgver}
   python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
 }
 
