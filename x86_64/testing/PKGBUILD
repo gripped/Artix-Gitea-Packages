@@ -1,0 +1,19 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=nftables-dinit
+pkgver=20211030
+pkgrel=1
+pkgdesc="dinit service script for nftables"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+depends=('nftables' 'dinit')
+groups=('dinit-world')
+conflicts=('init-nftables')
+provides=('init-nftables')
+source=("nftables")
+sha256sums=('c05f579c1b78d0fca9469af966b8d3663bd096289aeb34a5746fb5b9fd8b774c')
+
+package() {
+    install -Dm644 nftables "$pkgdir/etc/dinit.d/nftables"
+}
