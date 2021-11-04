@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit
 pkgver=0.12.0
-_commit=d2362e98e56dfe11308d1526c40f91f717e19a24
-pkgrel=3
+_commit=185c4b2e51cf46d99b474af9018c25039d7092a8
+pkgrel=4
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
