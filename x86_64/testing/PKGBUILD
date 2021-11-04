@@ -8,6 +8,7 @@ arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 depends=('dbus' 'dinit')
+makedepends=('git')
 provides=('init-dbus')
 conflicts=('init-dbus')
 groups=('dinit-system')
