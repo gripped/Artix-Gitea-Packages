@@ -1,0 +1,21 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=openssh-dinit
+pkgver=20211026
+pkgrel=1
+pkgdesc="dinit service scripts for openssh"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+depends=('openssh' 'dinit')
+provides=('init-openssh')
+conflicts=('init-openssh')
+groups=('dinit-system')
+source=("sshd" "sshd.script")
+sha256sums=('3133fc796560e26f09bf36403ad69791fc4ef78f73fa6d567349241fb2db6baa'
+            'd0f51c16892230a68f7882897ea91b8e1a0dd9f1fe7a38e1bd006e6243806aa2')
+
+package() {
+    install -Dm644 sshd        "$pkgdir/etc/dinit.d/sshd"
+    install -Dm755 sshd.script "$pkgdir/etc/dinit.d/scripts/sshd"
+}
