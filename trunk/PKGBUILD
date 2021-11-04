@@ -1,0 +1,19 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=xdm-dinit
+pkgver=20211030
+pkgrel=1
+pkgdesc="dinit service scripts for xdm (The original Xorg XDM)"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-world')
+depends=('xorg-xdm' 'dinit')
+provides=('init-xdm' 'init-displaymanager')
+conflicts=('init-xdm' 'init-displaymanager')
+source=("xdm")
+sha256sums=('d58cff064be960cc35a0a09dd5cbef32565a84407b3c2a45dbc9d2ea0019fca9')
+
+package() {
+    install -Dm644 xdm "$pkgdir/etc/dinit.d/xdm"
+}
