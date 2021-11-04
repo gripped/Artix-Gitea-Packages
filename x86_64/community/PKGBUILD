@@ -42,19 +42,6 @@ build() {
   PATH="$GOBIN:$PATH" go install -v std
 }
 
-check() {
-  export GOARCH=amd64
-  export GOROOT_FINAL=/usr/lib/go
-  export GOROOT_BOOTSTRAP=/usr/lib/go
-  export GOROOT="$srcdir/$pkgname"
-  export GOBIN="$GOROOT/bin"
-  export PATH="$srcdir/$pkgname/bin:$PATH"
-  export GO_TEST_TIMEOUT_SCALE=3
-
-  cd $pkgname/src
-  ./run.bash --no-rebuild -v -v -v -k
-}
-
 package() {
   cd "$pkgname"
 
