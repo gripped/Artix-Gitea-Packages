@@ -1,0 +1,22 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=krb5-dinit
+pkgver=20211029
+pkgrel=1
+pkgdesc="dinit service scripts for krb5"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-system')
+depends=('krb5' 'dinit')
+provides=('init-krb5')
+conflicts=('init-krb5')
+source=("kadmind"
+        "krb5kdc")
+sha256sums=('e7a1782b170cdba63f5ed6bd690362fe4b179d8bcacfc2106ae6fa1f16e9ada9'
+            '08688a5a82fa658a12f0c28d32daa8ab071e8c4303c0ba86e9440fe63ef68bfa')
+
+package() {
+    install -Dm644 kadmind "$pkgdir/etc/dinit.d/kadmind"
+    install -Dm644 krb5kdc "$pkgdir/etc/dinit.d/krb5kdc"
+}
