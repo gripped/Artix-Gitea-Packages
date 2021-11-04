@@ -1,0 +1,16 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=openvpn-dinit
+pkgver=20211030
+pkgrel=1
+pkgdesc="dinit service scripts for openvpn"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+depends=('openvpn')
+source=("openvpn")
+sha256sums=('bc46d12e1cc4525f49a5c8cec82998d21800b2400786621600c3f0850ce58886')
+
+package() {
+    install -Dm644 openvpn "$pkgdir/etc/dinit.d/openvpn"
+}
