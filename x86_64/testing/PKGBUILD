@@ -11,9 +11,14 @@ groups=('dinit-system')
 depends=('cronie' 'dinit')
 provides=('init-cronie' 'init-cron')
 conflicts=('init-cronie' 'init-cron')
-source=("cronie")
-sha256sums=('3c01951f0bf081bbe6a1fb4427267bb7b6352b1e37cfd3c5d4727b3323f9c394')
+_commit=d2362e98e56dfe11308d1526c40f91f717e19a24
+source=("cronie"
+        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
+sha256sums=('3c01951f0bf081bbe6a1fb4427267bb7b6352b1e37cfd3c5d4727b3323f9c394'
+            'SKIP')
 
 package() {
     install -Dm644 cronie "$pkgdir/etc/dinit.d/cronie"
+    cd "$srcdir/alpm-hooks"
+    make DESTDIR="$pkgdir" install_dinit_cronie
 }
