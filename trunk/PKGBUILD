@@ -1,0 +1,30 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=dinit
+pkgver=0.12.0
+pkgrel=1
+pkgdesc="Service monitoring/init system"
+arch=('x86_64')
+url="https://github.com/davmac314/dinit"
+license=('Apache')
+depends=('dinit-rc')
+provides=('svc-manager')
+conflicts=('svc-manager')
+source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz")
+sha256sums=('d5f9afe7005da7c08224dddcf2b63f37a6c4120b7493bed4669ef362cde1b544')
+
+build() {
+	cd "$pkgname-$pkgver"
+	make
+}
+
+check() {
+	cd "$pkgname-$pkgver"
+	make -k check
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin install
+
+	ln -s shutdown "$pkgdir/usr/bin/poweroff"
+}
