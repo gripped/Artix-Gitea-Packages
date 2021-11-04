@@ -1,0 +1,19 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=rpcbind-dinit
+pkgver=20211029
+pkgrel=1
+pkgdesc="dinit service scripts for rpcbind"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-system')
+depends=('rpcbind' 'dinit')
+provides=('init-rpcbind')
+conflicts=('init-rpcbind')
+source=("rpcbind")
+sha256sums=('8a9ea2876fb2b39ff377e1a8771a8f76308d1ed946896f8854fce69210d239a6')
+
+package() {
+    install -Dm644 rpcbind "$pkgdir/etc/dinit.d/rpcbind"
+}
