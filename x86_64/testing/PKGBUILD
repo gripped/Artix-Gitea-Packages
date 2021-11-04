@@ -1,0 +1,19 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=sane-dinit
+pkgver=20211030
+pkgrel=1
+pkgdesc="dinit service scripts for sane"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-world')
+depends=('sane' 'dinit')
+conflicts=('init-sane')
+provides=('init-sane')
+source=("saned")
+sha256sums=('15a2160b049e18fd2a6f0f47cdc79c555e0d8c05c4d57a948d9bb00368fe34d4')
+
+package() {
+    install -Dm644 saned "$pkgdir/etc/dinit.d/saned"
+}
