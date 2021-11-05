@@ -2,7 +2,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=iso-profiles
-pkgver=2021.10
+pkgver=2021.11
 pkgrel=1
 pkgdesc='Artix iso profiles'
 arch=('any')
