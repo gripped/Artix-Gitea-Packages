@@ -4,7 +4,7 @@
 
 pkgname=base
 pkgver=2
-pkgrel=2.9
+pkgrel=2.10
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -27,7 +27,7 @@ depends=(
   'iputils' 'iproute2'
 )
 optdepends=('linux: bare metal support')
-_commit=897e9483c7e9dfcfdac32c0d25e165316dbeb660
+_commit=d2362e98e56dfe11308d1526c40f91f717e19a24
 source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
 sha256sums=('SKIP')
 
