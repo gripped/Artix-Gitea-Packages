@@ -90,6 +90,8 @@ build() {
   # To set tcl lib path
   local _tkver=$(echo 'puts $tcl_version' | tclsh)
 
+export TBB_ROOT=/usr/include/tbb   # artist
+
   cmake -B build -S VTK-${pkgver} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
