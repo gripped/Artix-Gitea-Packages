@@ -2,7 +2,7 @@
 
 pkgname=kaccounts-providers
 pkgver=21.08.3
-pkgrel=1
+pkgrel=1 #
 pkgdesc='Small system to administer web accounts for the sites and services across the KDE desktop, including: Google, Facebook, Owncloud, IMAP, Jabber and others'
 arch=(x86_64)
 url='https://www.kde.org/'
