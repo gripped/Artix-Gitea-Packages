@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=knot-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for knot"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('knot' 'dinit')
+conflicts=('init-knot')
+provides=('init-knot')
+source=("knotd")
+sha256sums=('2e4d062fa6f73e88fd5036cb04eb5c9a3f6bbaeddff4696818dc0b97d0dbe337')
+
+package() {
+    install -Dm644 knotd "$pkgdir/etc/dinit.d/knotd"
+}
