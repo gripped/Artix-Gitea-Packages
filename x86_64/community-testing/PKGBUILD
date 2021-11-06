@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=radicale-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for radicale"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('radicale' 'dinit')
+conflicts=('init-radicale')
+provides=('init-radicale')
+source=("radicale")
+sha256sums=('de9209df1ff7849f8d549b3da503fb18d6fa44b6fcc5f9d3a1bff8926bcec283')
+
+package() {
+    install -Dm644 radicale "$pkgdir/etc/dinit.d/radicale"
+}
