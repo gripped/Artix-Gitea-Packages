@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=fwknop-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for fwknop"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('fwknop' 'dinit')
+conflicts=('init-fwknop')
+provides=('init-fwknop')
+source=("fwknopd")
+sha256sums=('8d7de1a280e3e4b3cebca9eea4dcf28f375dd1fce3425b6b3e035f06192e62f3')
+
+package() {
+    install -Dm644 fwknopd "$pkgdir/etc/dinit.d/fwknopd"
+}
