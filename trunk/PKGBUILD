@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=matrix-synapse-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for matrix-synapse"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('matrix-synapse' 'dinit')
+conflicts=('init-matrix-synapse')
+provides=('init-matrix-synapse')
+source=("matrix-synapse")
+sha256sums=('17308a5bd890f7e4cdb65b839e2bf9f97eafaa7554f95eec440aae9afe31163a')
+
+package() {
+    install -Dm644 matrix-synapse "$pkgdir/etc/dinit.d/matrix-synapse"
+}
