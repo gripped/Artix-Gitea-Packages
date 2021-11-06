@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=opensmtpd-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for opensmtpd"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('opensmtpd' 'dinit')
+conflicts=('init-opensmtpd')
+provides=('init-opensmtpd')
+source=("smtpd")
+sha256sums=('6f00ec165db6f2b5f23c270c953013faec4c89f8ed023a8a0b5761163a9bbffb')
+
+package() {
+    install -Dm644 smtpd "$pkgdir/etc/dinit.d/smtpd"
+}
