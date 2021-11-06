@@ -1,0 +1,20 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=dns-over-https-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for dns-over-https"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('dns-over-https' 'dinit')
+conflicts=('init-dns-over-https')
+provides=('init-dns-over-https')
+source=("doh-client" "doh-server")
+sha256sums=('d9049bff52f4158eb49ba05f869ce1fabdf48225a16b08aebe666254e11ecf5e'
+            '9dfdd1b30f37c0e2e6845db2825a5ebfe1d1859e631a37942ac39a0d96ea8a38')
+
+package() {
+    install -Dm644 doh-client "$pkgdir/etc/dinit.d/doh-client"
+    install -Dm644 doh-server "$pkgdir/etc/dinit.d/doh-server"
+}
