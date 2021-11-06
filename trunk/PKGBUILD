@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=spotifyd-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for spotifyd"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('spotifyd' 'dinit')
+conflicts=('init-spotifyd')
+provides=('init-spotifyd')
+source=("spotifyd")
+sha256sums=('8116a7272e364ae65bfdb88ceb47e6814accfbb1a954f3c823f15f883c2df9cc')
+
+package() {
+    install -Dm644 spotifyd "$pkgdir/etc/dinit.d/spotifyd"
+}
