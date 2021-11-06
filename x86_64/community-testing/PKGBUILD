@@ -1,0 +1,20 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+
+pkgname=openntpd-dinit
+pkgver=20211025
+pkgrel=1
+pkgdesc="dinit service scripts for openntpd"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+depends=('openntpd' 'dinit')
+groups=('dinit-galaxy')
+conflicts=('init-openntpd' 'init-timed' 'ntp')
+provides=('init-openntpd' 'init-timed')
+source=("ntpd")
+sha256sums=('bc2a8b2ed4dbe0b5f7f69621aee15a4730eeb8d3183090b756ec1ddb08928deb')
+
+package() {
+    mkdir -p "$pkgdir/etc/dinit.d"
+    install -Dm644 ntpd "$pkgdir/etc/dinit.d"
+}
