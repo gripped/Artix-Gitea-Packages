@@ -7,7 +7,7 @@
 
 pkgname=vtk
 pkgver=9.0.3
-pkgrel=3.1
+pkgrel=3.1 #
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org/"
@@ -57,18 +57,19 @@ source=(${url}/files/release/${pkgver%.*}/VTK-${pkgver}.tar.gz
         vtk-proj8-pre.patch::https://gitlab.kitware.com/vtk/vtk/-/merge_requests/7299.patch
         vtk-proj8.patch::https://gitlab.kitware.com/vtk/vtk/-/merge_requests/7731.patch
         vtk-xutil.patch::https://gitlab.kitware.com/vtk/vtk/-/merge_requests/8219.patch
-        vtk-hdf5-1.10-api.patch::https://gitlab.kitware.com/vtk/vtk/-/commit/2f4246682eb9545fd738a0f765bec8d50730e905.patch)
+        vtk-hdf5-1.10-api.patch::https://gitlab.kitware.com/vtk/vtk/-/commit/2f4246682eb9545fd738a0f765bec8d50730e905.patch
+        tbb-include-check.patch)
 options=(staticlibs)
 sha256sums=('bc3eb9625b2b8dbfecb6052a2ab091fc91405de4333b0ec68f3323815154ed8a'
             'c9959adcb59e2f2657f0144b0b68239d4174947fb2ab8051f2575241281e4d68'
             '745b9e1523e2eb3f4f6366504d2436242300cc5bcdd2251a3434cbe53eb0bad9'
             '2d3535827d1a6eeb20e16f4986f973a25dabf68b0139516bd2c7a0313901d06c'
             '8c000357c31ede09b831186ee772cddf357e4badb2ba72edcd55fe569712ca4a'
-            '743c0e17d7ccd3dde869ed349c4a5bd3d7a08316ce5735dd0d1c11a4b92e62f3')
+            '743c0e17d7ccd3dde869ed349c4a5bd3d7a08316ce5735dd0d1c11a4b92e62f3'
+            'b2f0e09fbe86d47114cc5ff955dc0f9523c48272e5abe53c2e7df3d22f21c638')
 
 prepare() {
   cd VTK-${pkgver}
-  sed -i -e 's/tbb_stddef.h/tbb.h/g' CMake/FindTBB.cmake
   # We have a patched libharu
   sed -i "s|2.4.0|2.3.0|" ThirdParty/libharu/CMakeLists.txt
   # Missing includes with GCC11
@@ -83,6 +84,8 @@ prepare() {
   sed -i 's/typedef int hid_t;/typedef int64_t hid_t;/' ThirdParty/xdmf3/vtkxdmf3/core/XdmfHDF5Controller.hpp
   # https://gitlab.kitware.com/vtk/vtk/-/merge_requests/8546
   sed -i 's/CACHE PATH "License files/CACHE STRING "License files/' CMakeLists.txt
+  # patch for Artix build
+  patch -p1 < ../tbb-include-check.patch
 }
 
 build() {
@@ -90,8 +93,6 @@ build() {
   export JAVA_HOME=/usr/lib/jvm/default
   # To set tcl lib path
   local _tkver=$(echo 'puts $tcl_version' | tclsh)
-
-export TBB_ROOT=/usr/include/tbb   # artist
 
   cmake -B build -S VTK-${pkgver} \
     -DCMAKE_BUILD_TYPE=Release \
