@@ -1,7 +1,7 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 
 pkgname=prometheus
-pkgver=2.30.3
+pkgver=2.31.1
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -10,14 +10,14 @@ arch=('x86_64')
 license=('Apache')
 
 depends=('glibc')
-makedepends=('go' 'git' 'npm' 'nodejs')
+makedepends=('go' 'git' 'npm' 'nodejs' 'yamllint')
 
 backup=('etc/prometheus/prometheus.yml')
 
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers)
 
-sha256sums=('66a835096e717c11db2ecb5f948c6346868fa1f877196ee2237fb4630df97c06'
+sha256sums=('869a8be315721115be628f766ec3ff71aa50f1a027cee776ea54d7ba070a5026'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 build() {
@@ -40,7 +40,9 @@ build() {
 
   cd $srcdir/prometheus-$pkgver
   # Build the react app, normally a part of the assets target
-  make web/ui/static/react
+#make web/ui/static/react
+  make ui-install
+  make ui-build
 
   go build \
     -trimpath \
