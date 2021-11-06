@@ -1,0 +1,20 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=espeakup-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for espeakup"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('espeakup' 'dinit')
+conflicts=('init-espeakup')
+provides=('init-espeakup')
+source=("espeakup" "espeakup.script")
+sha256sums=('53815403637a83547cadac25cf73ebccd6cd8f5f5254487e85ef581e418a069e'
+            '2d381a03baa4fde70008fe9756bf075de377ae5b53658ddeb1f43492253cdcda')
+
+package() {
+    install -Dm644 espeakup        "$pkgdir/etc/dinit.d/espeakup"
+    install -Dm755 espeakup.script "$pkgdir/etc/dinit.d/scripts/espeakup"
+}
