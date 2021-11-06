@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=bolt-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for bolt"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('bolt' 'dinit')
+conflicts=('init-bolt')
+provides=('init-bolt')
+source=("boltd")
+sha256sums=('56483125bc3b6b5ade3f4ad5848b82a884257407191e361843fdb703f32b4b62')
+
+package() {
+    install -Dm644 boltd "$pkgdir/etc/dinit.d/boltd"
+}
