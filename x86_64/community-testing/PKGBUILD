@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=coturn-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for coturn"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('coturn' 'dinit')
+conflicts=('init-coturn')
+provides=('init-coturn')
+source=("coturn")
+sha256sums=('f54a2007a75ebca3f7556a611298e2c106fc17b4ac93a3fb746b3b9fbf560f2b')
+
+package() {
+    install -Dm644 coturn "$pkgdir/etc/dinit.d/coturn"
+}
