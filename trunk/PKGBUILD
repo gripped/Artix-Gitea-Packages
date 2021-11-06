@@ -1,0 +1,23 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=tailscale-dinit
+pkgver=20211103
+pkgrel=1
+pkgdesc="dinit service scripts for tailscale"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('tailscale' 'dinit')
+conflicts=('init-tailscale')
+provides=('init-tailscale')
+backup=('etc/dinit.d/config/tailscaled.conf')
+source=("tailscaled" "tailscaled.script" "tailscaled.conf")
+sha256sums=('0fe344a522702aeff3ef479cac5bc1d0b3fa72dd291431a80178cde160191f4a'
+            '3dc6f1572b963dc62dd6f4c1bab6cc51c324b1da4cf3fdd083dd71e1dd3987f5'
+            '51ba51042e7752ea2262a05939ebee3c9c008b955f655002a53c4aadfc714d2a')
+
+package() {
+    install -Dm644 tailscaled        "$pkgdir/etc/dinit.d/tailscaled"
+    install -Dm644 tailscaled.conf   "$pkgdir/etc/dinit.d/config/tailscaled.conf"
+    install -Dm755 tailscaled.script "$pkgdir/etc/dinit.d/scripts/tailscaled"
+}
