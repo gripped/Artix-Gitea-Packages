@@ -1,0 +1,23 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=darkhttpd-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for darkhttpd"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('darkhttpd' 'dinit')
+conflicts=('init-darkhttpd')
+provides=('init-darkhttpd')
+backup=('etc/dinit.d/config/darkhttpd.conf')
+source=("darkhttpd" "darkhttpd.conf" "darkhttpd.script")
+sha256sums=('de68a88faa0fe25ac6a3f9efaf6fe2194837752d386fa480fca15964d6b6ff03'
+            '47c77d6c4059ee1e9985205e82866b394dc48a307e9a94f5c14c051ef29f37ef'
+            'b8bdf36e0002b0419697e1490e646e78c41113bba17f4eaf5726cb388e976919')
+
+package() {
+    install -Dm644 darkhttpd        "$pkgdir/etc/dinit.d/darkhttpd"
+    install -Dm644 darkhttpd.conf   "$pkgdir/etc/dinit.d/config/darkhttpd.conf"
+    install -Dm755 darkhttpd.script "$pkgdir/etc/dinit.d/scripts/darkhttpd"
+}
