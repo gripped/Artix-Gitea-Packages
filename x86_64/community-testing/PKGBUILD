@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=sndio-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for sndio"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('sndio' 'dinit')
+conflicts=('init-sndio')
+provides=('init-sndio')
+source=("sndiod")
+sha256sums=('27a0bb3921048de0ca1dbd4b6f948f6de5917ccd6038c489c608ddc259051725')
+
+package() {
+    install -Dm644 sndiod "$pkgdir/etc/dinit.d/sndiod"
+}
