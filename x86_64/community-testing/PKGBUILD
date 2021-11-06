@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=webhook-dinit
+pkgver=20211103
+pkgrel=1
+pkgdesc="dinit service scripts for webhook"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('webhook' 'dinit')
+conflicts=('init-webhook')
+provides=('init-webhook')
+source=("webhook")
+sha256sums=('86d9336292b59c0ec9aead08435c4603442cb0307a508bccf459a885f72febaa')
+
+package() {
+    install -Dm644 webhook "$pkgdir/etc/dinit.d/webhook"
+}
