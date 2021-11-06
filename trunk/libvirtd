@@ -1,0 +1,7 @@
+type            = process
+command         = /usr/bin/libvirtd --verbose
+smooth-recovery = true
+logfile         = /var/log/dinit/libvirtd.log
+depends-on      = dbus
+waits-for       = mount-all
+waits-for       = modules

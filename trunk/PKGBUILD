@@ -1,0 +1,22 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=libvirt-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for libvirt"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('libvirt' 'dinit')
+conflicts=('init-libvirt')
+provides=('init-libvirt')
+source=("libvirtd" "virtlockd" "virtlogd")
+sha256sums=('36cbb147e4cc0cff2cb0464c36a406379c671e347f763429a4cbf43313fdc206'
+            'a9966e7757bc0aad1d271cc7f45c0679a0a4c92c8dbba0b1ac090f563e652340'
+            '4a5f3e8c2de3456f12871656ffd83bbf3d13a632b52a7334d1cf4e621550eea8')
+
+package() {
+    install -Dm644 libvirtd  "$pkgdir/etc/dinit.d/libvirtd"
+    install -Dm644 virtlockd "$pkgdir/etc/dinit.d/virtlockd"
+    install -Dm644 virtlogd  "$pkgdir/etc/dinit.d/virtlogd"
+}
