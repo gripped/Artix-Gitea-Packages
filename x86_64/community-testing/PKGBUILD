@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=unbound-dinit
+pkgver=20211103
+pkgrel=1
+pkgdesc="dinit service scripts for unbound"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('unbound' 'dinit')
+conflicts=('init-unbound')
+provides=('init-unbound')
+source=("unbound")
+sha256sums=('de7a9a18040f2a9779855d18f5001d914d4d9256b9e8e1188f832550a9959792')
+
+package() {
+    install -Dm644 unbound "$pkgdir/etc/dinit.d/unbound"
+}
