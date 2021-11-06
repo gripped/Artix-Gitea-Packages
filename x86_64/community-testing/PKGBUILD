@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=trojan-dinit
+pkgver=20211103
+pkgrel=1
+pkgdesc="dinit service scripts for trojan"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('trojan' 'dinit')
+conflicts=('init-trojan')
+provides=('init-trojan')
+source=("trojan")
+sha256sums=('ac3cad66758e3359b3aabff28b40a9f1124836f02231ba9f74361a9f81394d46')
+
+package() {
+    install -Dm644 trojan "$pkgdir/etc/dinit.d/trojan"
+}
