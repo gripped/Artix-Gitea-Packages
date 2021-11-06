@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=rng-tools-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for rng-tools"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('rng-tools' 'dinit')
+conflicts=('init-rng-tools')
+provides=('init-rng-tools')
+source=("rngd")
+sha256sums=('f098e630e577f116f87506ca46d32095b90a1874ed012132e1665601d84c1ad4')
+
+package() {
+    install -Dm644 rngd "$pkgdir/etc/dinit.d/rngd"
+}
