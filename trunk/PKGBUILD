@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=i2pd-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for i2pd"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('i2pd' 'dinit')
+conflicts=('init-i2pd')
+provides=('init-i2pd')
+source=("i2pd")
+sha256sums=('420e3cf9cf65b576ad72f68b00fd989253d19360cfe0869eff3b445ff13d9359')
+
+package() {
+    install -Dm644 i2pd "$pkgdir/etc/dinit.d/i2pd"
+}
