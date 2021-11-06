@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=strongswan-dinit
+pkgver=20211103
+pkgrel=1
+pkgdesc="dinit service scripts for strongswan"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('strongswan' 'dinit')
+conflicts=('init-strongswan')
+provides=('init-strongswan')
+source=("strongswan")
+sha256sums=('b60b6305687beec667b7ea92cd0a3cae1508018aefc85139ce8bb91865fc60a1')
+
+package() {
+    install -Dm644 strongswan "$pkgdir/etc/dinit.d/strongswan"
+}
