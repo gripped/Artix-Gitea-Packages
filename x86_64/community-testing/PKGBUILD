@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=atftp-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for atftp"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('atftp' 'dinit')
+conflicts=('init-atftp')
+provides=('init-atftp')
+source=("atftpd")
+sha256sums=('a107f5e0ef7652591b60be597e9bcd9d45cf6bb54b3c2a7253d1c30ce1ee042d')
+
+package() {
+    install -Dm644 atftpd "$pkgdir/etc/dinit.d/atftpd"
+}
