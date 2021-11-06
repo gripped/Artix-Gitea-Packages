@@ -1,0 +1,20 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=dovecot-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for dovecot"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('dovecot' 'dinit')
+conflicts=('init-dovecot')
+provides=('init-dovecot')
+source=("dovecot" "dovecot.script")
+sha256sums=('2c337da7eb29eb1a25049a7c733edc4d75c2ecf451f1d9e0052c4fc3b4143f1f'
+            'ebd698420378f87d51f418175bff87a07f2788b60acd34a86c98624e07b33239')
+
+package() {
+    install -Dm644 dovecot        "$pkgdir/etc/dinit.d/dovecot"
+    install -Dm755 dovecot.script "$pkgdir/etc/dinit.d/scripts/dovecot"
+}
