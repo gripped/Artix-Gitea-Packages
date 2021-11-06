@@ -60,12 +60,6 @@ build() {
     ./cmd/promtool
 }
 
-check() {
-  cd prometheus-$pkgver
-
-  go test -short ./...
-}
-
 package() {
   install -Dm644 prometheus.sysusers "$pkgdir"/usr/lib/sysusers.d/prometheus.conf
 
