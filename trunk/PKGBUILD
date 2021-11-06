@@ -1,0 +1,18 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=boinc-dinit
+pkgver=20211101
+pkgrel=1
+pkgdesc="dinit service scripts for boinc"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('boinc' 'dinit')
+conflicts=('init-boinc')
+provides=('init-boinc')
+source=("boinc")
+sha256sums=('5516ccc5cc112dfff52a691da2cefb2ddfe52f45ce5849860a2a6b0b18bb8f84')
+
+package() {
+    install -Dm644 boinc "$pkgdir/etc/dinit.d/boinc"
+}
