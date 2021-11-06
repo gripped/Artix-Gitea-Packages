@@ -1,0 +1,20 @@
+# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+pkgname=spice-vdagent-dinit
+pkgver=20211102
+pkgrel=1
+pkgdesc="dinit service scripts for spice-vdagent"
+arch=('any')
+url="https://artixlinux.org"
+license=('BSD')
+groups=('dinit-galaxy')
+depends=('spice-vdagent' 'dinit')
+conflicts=('init-spice-vdagent')
+provides=('init-spice-vdagent')
+source=("spice-vdagentd" "spice-vdagentd.script")
+sha256sums=('075b7fd5a50c2ea8e125a572ff1fe10eaff2f56ebc4b7a7474a6482d5c92861b'
+            '10485875b39529ef61bb31323d73d1093ff545552e726637938b3cc31791f343')
+
+package() {
+    install -Dm644 spice-vdagentd        "$pkgdir/etc/dinit.d/spice-vdagentd"
+    install -Dm755 spice-vdagentd.script "$pkgdir/etc/dinit.d/scripts/pice-vdagentd"
+}
