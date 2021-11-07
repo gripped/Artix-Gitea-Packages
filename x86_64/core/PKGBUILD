@@ -1,10 +1,10 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit-rc
-pkgver=0.0.18
+pkgver=0.0.19
 pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
-url="https://gitea.artixlinux.org/konimex/dinit-rc"
+url="https://gitea.artixlinux.org/artix/dinit-rc"
 license=('BSD')
 depends=('udev')
 makedepends=('git')
@@ -28,4 +28,7 @@ package() {
 
 	# iputils
 	mkdir -p "$pkgdir/usr/lib/sysctl.d"
+
+	# copying
+	install -Dm644 COPYING "$pkgdir/usr/share/licenses/dinit-rc/COPYING"
 }
