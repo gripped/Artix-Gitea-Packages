@@ -1,0 +1,5 @@
+type            = process
+command         = /usr/bin/lxd -d --group=lxd
+smooth-recovery = true
+logfile         = /var/log/dinit/lxd.log
+waits-for       = setup
