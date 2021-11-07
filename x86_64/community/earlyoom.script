@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r /etc/dinit.d/config/earlyoom.conf ] && . /etc/dinit.d/config/earlyoom.conf
-exec /usr/bin/earlyoom ${EARLYOOM_ARGS} 2>&1
