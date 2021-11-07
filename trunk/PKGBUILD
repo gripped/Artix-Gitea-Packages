@@ -16,8 +16,7 @@ optdepends=(
 )
 source=(
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
-  "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
-)
+  "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc")
 sha256sums=('2af0e9f212932cb36bbbf20722eaf4a1d3acf640dfed9b763ca7d388af8b7fd2'
             'SKIP')
 validpgpkeys=(
