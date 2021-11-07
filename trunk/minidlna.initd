@@ -10,8 +10,8 @@ name="MiniDLNA"
 
 pidfile="/run/minidlna/minidlna.pid"
 command="/usr/bin/minidlnad"
-command_args="-P $pidfile -f $CONFIG"
-start_stop_daemon_args="--user ${M_USER}:${M_GROUP}"
+command_args="-P $pidfile -f $CONFIG -S"
+start_stop_daemon_args="--user ${M_USER}:${M_GROUP} --background"
 
 required_files="$CONFIG"
 
