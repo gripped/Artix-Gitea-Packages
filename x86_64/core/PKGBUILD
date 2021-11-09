@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit-rc
-pkgver=0.0.21
-pkgrel=2
+pkgver=0.0.22
+pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/dinit-rc"
