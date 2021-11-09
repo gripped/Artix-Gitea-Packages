@@ -16,9 +16,11 @@ source=(https://gitlab.freedesktop.org/hadess/power-profiles-daemon/-/archive/$p
 b2sums=('a6db0c55e9109fe0ff83564c186e09c57c46999d2c44cae385772094a2c6d7f7129b3ded62ea1e921756a507fffba6d44809d6b01a05beacdfc2a5cd41934162')
 
 build() {
+  # set a dummy dir to avoid systemd dep
   meson $pkgname-$pkgver build \
     --prefix /usr \
-    --libexec lib
+    --libexec lib \
+    -Dsystemdsystemunitdir=/usr/lib/systemd
   meson compile -C build
 }
 
@@ -28,4 +30,5 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
+  rm -r $pkgdir/usr/lib/systemd
 }
