@@ -26,7 +26,7 @@ prepare() {
 }
 
 build() {
-  artix-meson gcr build
+  artix-meson gcr build -Dsystemd=false
   meson compile -C build
 }
 
