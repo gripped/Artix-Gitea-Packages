@@ -26,7 +26,8 @@ prepare() {
 }
 
 build() {
-  artix-meson $pkgname build
+  # Set dummy dir to avoid systemd dep.
+  artix-meson $pkgname build -Dsystemduserunitdir=/usr/lib/systemd
   meson compile -C build
 }
 
@@ -36,4 +37,5 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
+  rm -r $pkgdir/usr/lib/systemd
 }
