@@ -6,8 +6,8 @@
 # Contributor: Gabriel Rauter <rauter.gabriel@gmail.com>
 
 pkgname=sysprof
-pkgver=3.40.1
-pkgrel=2
+pkgver=3.42.1
+pkgrel=1
 pkgdesc="Kernel based performance profiler"
 url="https://wiki.gnome.org/Apps/Sysprof"
 license=(GPL)
@@ -15,7 +15,7 @@ arch=(x86_64)
 depends=(gtk3 polkit libdazzle)
 makedepends=(yelp-tools git meson)
 groups=(gnome-extra)
-_commit=c6840d48d18eaf6b013b550c1551e7954e98d1c8  # tags/3.40.1^0
+_commit=2903f08d02c86e520b07c0df5dcafc18bb8ef059  # tags/3.42.1^0
 source=("git+https://gitlab.gnome.org/GNOME/sysprof.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -37,7 +37,7 @@ build() {
   CFLAGS+=" -ffat-lto-objects"
 
   # Dummy path for systemd service to avoid the systemd build dependency
-  arch-meson $pkgname build -D systemdunitdir=/usr/lib/systemd
+  artix-meson $pkgname build -D systemdunitdir=/usr/lib/systemd
   meson compile -C build
 }
 
@@ -46,7 +46,7 @@ check() {
 }
 
 package() {
-  DESTDIR="$pkgdir" meson install -C build
+  meson install -C build --destdir "$pkgdir"
 
   # remove systemd service
   rm -r "$pkgdir"/usr/lib/systemd
