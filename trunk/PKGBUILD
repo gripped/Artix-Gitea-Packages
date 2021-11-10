@@ -1,10 +1,10 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Manolis Tzanidakis
-# Contributor: Firmicus <francois.archlinux.org> 
+# Contributor: Firmicus <francois.archlinux.org>
 
 pkgname=perl-uri
 pkgver=5.10
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Uniform Resource Identifiers (absolute and relative)"
 arch=('any')
 url="https://search.cpan.org/dist/URI/"
