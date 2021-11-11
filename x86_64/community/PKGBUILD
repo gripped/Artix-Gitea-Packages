@@ -6,7 +6,7 @@
 pkgbase=gradle
 pkgname=('gradle' 'gradle-doc' 'gradle-src')
 pkgver=7.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Powerful build system for the JVM'
 url='https://gradle.org/'
 arch=('any')
