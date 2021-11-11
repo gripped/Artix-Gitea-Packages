@@ -5,7 +5,7 @@
 pkgbase=opencv
 pkgname=(opencv opencv-samples python-opencv opencv-cuda)
 pkgver=4.5.4
-pkgrel=6.2
+pkgrel=6.3
 pkgdesc='Open Source Computer Vision Library'
 arch=(x86_64)
 license=(BSD)
@@ -23,20 +23,21 @@ source=(https://github.com/opencv/opencv/archive/$pkgver/$pkgname-$pkgver.tar.gz
         https://github.com/opencv/opencv_contrib/archive/$pkgver/opencv_contrib-$pkgver.tar.gz
         opencv-lapack-3.10.patch
         fix-cvv-build.patch::https://github.com/opencv/opencv_contrib/commit/2a4348e0.patch
-        vtk9.patch )
-#        0001-Correct-tbb-cmake-path.patch)
+        vtk9.patch
+        0001-Correct-tbb-cmake-path.patch)
 sha256sums=('c20bb83dd790fc69df9f105477e24267706715a9d3c705ca1e7f613c7b3bad3d'
             'ad74b440b4539619dc9b587995a16b691246023d45e34097c73e259f72de9f81'
             'f83c64f2731a39910d0d4a48898dd04e4aca5c22f746b7b0ead003992ae11199'
             'a992cbdfe40730c584df41b9d18ab6c799bf060a67cf4332e5e3301b95720369'
-            'f35a2d4ea0d6212c7798659e59eda2cb0b5bc858360f7ce9c696c77d3029668e')
- #           'a9fec061b3f55cd8cd8605a78fa143050765d7438d720aeac1d38d02e67a4a5f')
+            'f35a2d4ea0d6212c7798659e59eda2cb0b5bc858360f7ce9c696c77d3029668e'
+            '66fa2daae850e56028c957a7071c462b02fb3a9f8ccc486989c6054e9aaae45e')
 
 prepare() {
   patch -d $pkgname-$pkgver -p1 < opencv-lapack-3.10.patch # Fix build with LAPACK 3.10
   patch -d $pkgname-$pkgver -p1 < vtk9.patch # Don't require all vtk optdepends
   patch -d opencv_contrib-$pkgver -p1 < fix-cvv-build.patch # Fix build of cvv module
-# patch -d $pkgname-$pkgver -p1 -i "$srcdir"/0001-Correct-tbb-cmake-path.patch
+  patch -d $pkgname-$pkgver -p1 -i "$srcdir"/0001-Correct-tbb-cmake-path.patch
+  sed -i '/if(WITH_VTK)/,/endif()/d' "$pkgname-$pkgver"/CMakeLists.txt
 }
 
 build() {
@@ -68,7 +69,7 @@ build() {
          -DOPENCV_JNI_INSTALL_PATH=lib \
          -DOPENCV_GENERATE_SETUPVARS=OFF \
          -DEIGEN_INCLUDE_PATH=/usr/include/eigen3 \
-         -DVTK_FOUND=true"
+         -DVTK_DIR=/usr/lib/cmake/vtk"
  
   cmake -B build -S $pkgname-$pkgver $_opts
   cmake --build build
