@@ -2,7 +2,7 @@
 
 pkgname=rpcbind-dinit
 pkgver=20211029
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for rpcbind"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('rpcbind' 'dinit')
 provides=('init-rpcbind')
 conflicts=('init-rpcbind')
 source=("rpcbind")
-sha256sums=('8a9ea2876fb2b39ff377e1a8771a8f76308d1ed946896f8854fce69210d239a6')
+sha256sums=('4978652455d91a3198c5574c03226a7a85191ce16f4cb50e753ffc0117640daf')
 
 package() {
     install -Dm644 rpcbind "$pkgdir/etc/dinit.d/rpcbind"
