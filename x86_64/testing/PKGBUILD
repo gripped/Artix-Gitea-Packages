@@ -2,7 +2,7 @@
 
 pkgname=haveged-dinit
 pkgver=20211026
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for haveged"
 arch=('any')
 url="https://artixlinux.org"
