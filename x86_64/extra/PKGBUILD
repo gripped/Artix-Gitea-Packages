@@ -4,7 +4,7 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=10.6.4
+pkgver=10.6.5
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
@@ -18,14 +18,14 @@ validpgpkeys=('199369E5404BD5FC7D2FE43BCBCB082A1BB943DB') # MariaDB Package Sign
 # rsync source via https and hope it does not hurt them too much.
 # https://mariadb.com/kb/en/library/mirror-sites-for-mariadb/
 source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"{,.asc}
-        '0001-arch-specific.patch'
         'mariadb.sysusers.conf'
-        'mariadb.tmpfiles.conf')
-sha256sums=('75bf9b147a95d38160d01a73b098d50a1960563b46d16a235971fff64d99643c'
+        'mariadb.tmpfiles.conf'
+        '0001-arch-specific.patch')
+sha256sums=('e0be040428d9a42a8bb4bd221b567ff2522cd6fa8906386273da4f03c5c20a8f'
             'SKIP'
-            '3289efb3452d199aec872115f35da3f1d6fd4ce774615076690e9bc8afae1460'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
-            '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
+            '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
+            '3289efb3452d199aec872115f35da3f1d6fd4ce774615076690e9bc8afae1460')
 
 prepare() {
   cd $pkgbase-$pkgver/
