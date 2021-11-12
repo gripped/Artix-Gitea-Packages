@@ -3,7 +3,7 @@
 
 pkgname=ispc
 pkgver=1.16.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Compiler for high-performance SIMD programming on the CPU"
 arch=(x86_64)
 url="https://ispc.github.io/"
@@ -28,6 +28,7 @@ sha256sums=('e5dcd0d85df6ed5feb454ad9ec295083a07d7459fcaba00d5dd6266ceb476399'
             '49d9f960d8a07a9a6bcdab440a3b98e371c72fe265f287196f275aff79fe5415'
             '0490d9a6456a217d87ec63d6a0a4489c995e9afcaaa60715e8b6e6f58041f482'
             '51ae0943cbce2b3f29549c5fb262e8620ad5e171283a83255e15dac20c86bf9f')
+options=('buildflags')
 
 prepare() {
   cd ${pkgname}-${pkgver}
@@ -48,6 +49,9 @@ prepare() {
 }
 
 build() {
+  unset CFLAGS
+  unset CXXFLAGS
+  export CXXFLAGS=$CFLAGS
   cmake -B build -S ${pkgname}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DISPC_INCLUDE_EXAMPLES=OFF \
