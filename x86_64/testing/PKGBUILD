@@ -28,7 +28,7 @@ prepare() {
   patch -d $pkgname-$pkgver -p1 < ECM-no-init.py.patch # Don't create __init__.py
 
   # Artix stuff - don't delete it!
-  patch -d $pkgname-$pkgver -Np1 -i ../artix.patc
+  patch -d $pkgname-$pkgver -Np1 -i ../artix.patch
 }
 
 build() {
