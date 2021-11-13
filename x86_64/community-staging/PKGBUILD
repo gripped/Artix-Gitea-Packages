@@ -42,7 +42,8 @@ build() {
 
   make \
 	include_modules="${_modules}" \
-	LIBDIR=lib PREFIX=/usr
+	LIBDIR=lib PREFIX=/usr \
+    CFLAGS="$CFLAGS -Wno-format -Wno-format-security"
 }
 
 package() {
