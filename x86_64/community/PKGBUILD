@@ -14,7 +14,7 @@ depends=(glibc opendht asio gnutls nettle libgit2 libsecp256k1 ffmpeg speexdsp
          libupnp libnatpmp openssl webrtc-audio-processing
          libarchive)
 # portaudio needs a not-yet-upstream patch https://git.jami.net/savoirfairelinux/jami-daemon/-/issues/650
-makedepends=(git cmake perl msgpack-c msgpack-cxx restinio autoconf-archive) # meson
+makedepends=(git cmake perl msgpack-c msgpack-cxx restinio autoconf-archive udev) # meson
 checkdepends=(cppunit)
 _commit=c28f0af5bce653864c494a4e8c1ad9f74d934945
 _pjprojectver=e1f389d0b905011e0cb62cbdf7a8b37fc1bcde1a
