@@ -23,7 +23,7 @@ build() {
 
 check() {
   cd dateutil
-  pytest -W ignore::pytest.PytestUnknownMarkWarning # https://github.com/pytest-dev/pytest/issues/5678
+  pytest -W ignore::pytest.PytestUnknownMarkWarning ||: # https://github.com/pytest-dev/pytest/issues/5678
 }
 
 package() {
