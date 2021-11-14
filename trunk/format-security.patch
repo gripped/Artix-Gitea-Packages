@@ -1,0 +1,53 @@
+From 36d5e99bf23731cbc0d94c3eb76a11606d2ee3c5 Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Sat, 13 Nov 2021 18:59:54 -0600
+Subject: [PATCH] format-security
+
+---
+ menuconfig/curses.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/menuconfig/curses.c b/menuconfig/curses.c
+index 97ae216..7ae0c33 100644
+--- a/menuconfig/curses.c
++++ b/menuconfig/curses.c
+@@ -89,9 +89,9 @@ again:
+ 
+ 	/* print title in colour */
+ 	attron(COLOR_PAIR(1));
+-	mvprintw(HIGH_NOTICE_Y,max_x/2-20,menu->parent?menu->parent->name:"OpenSIPS Main Configuration Menu");
++	mvprintw(HIGH_NOTICE_Y,max_x/2-20,menu->parent?menu->parent->name: "%s", "OpenSIPS Main Configuration Menu");
+ 	/* print footer */
+-	print_notice(NOTICE_Y,NOTICE_X,0,"Press h for navigation help.");
++	print_notice(NOTICE_Y,NOTICE_X,0, "%s", "Press h for navigation help.");
+ 	attroff(COLOR_PAIR(1));
+ 
+ 	/* draw actual menu */
+@@ -205,7 +205,7 @@ again:
+ 
+ 	/* print title in colour */
+ 	attron(COLOR_PAIR(1));
+-	mvprintw(HIGH_NOTICE_Y,max_x/2-20,menu->name);
++	mvprintw("%s", HIGH_NOTICE_Y,max_x/2-20,menu->name);
+ 	attroff(COLOR_PAIR(1));
+ 
+ 	if (should_scroll) {
+@@ -248,7 +248,7 @@ again:
+ 	/* print current item description */
+ 	if (current->description) {
+ 		attron(COLOR_PAIR(1));
+-		print_notice(NOTICE_Y,NOTICE_X,0,current->description);
++		print_notice("%s", NOTICE_Y,NOTICE_X,0,current->description);
+ 		attroff(COLOR_PAIR(1));
+ 	}
+ 
+@@ -341,4 +341,4 @@ again:
+ 	}
+ 
+ 	return 0;
+-}
+\ No newline at end of file
++}
+-- 
+2.33.1
+

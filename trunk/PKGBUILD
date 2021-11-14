@@ -22,14 +22,17 @@ license=('GPL')
 install=opensips.install
 options=('!emptydirs' 'zipman' '!makeflags' 'docs')
 source=(https://opensips.org/pub/opensips/${pkgver}/opensips-${pkgver}.tar.gz
-        openldap-2.5.patch)
+        openldap-2.5.patch
+        format-security.patch)
 sha256sums=('557b33db1436d8212ac122f299481bee3f2957f060a2bc0b4256430faf8b3bbc'
-            '48069c579676e6d38673152b22481624d98cf17ce7ae46bdff51f7df61c03c5e')
+            '48069c579676e6d38673152b22481624d98cf17ce7ae46bdff51f7df61c03c5e'
+            '89b41c49333c60d14b46b5153041a9fa32926be6f5f23d826688eb698cc08054')
 
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver/
 
   patch -Np1 -i ../openldap-2.5.patch
+  patch -Np1 -i ../format-security.patch
 
   sed -i 's|sbin|bin|g' Makefile
   sed -i 's|bin-dir = sbin/|bin-dir = bin/|' Makefile.defs
@@ -39,11 +42,9 @@ _modules="ldap db_mysql db_postgres db_unixodbc presence presence_xml h350 proto
 
 build() {
   cd "$srcdir"/$pkgname-$pkgver/
-
   make \
 	include_modules="${_modules}" \
-	LIBDIR=lib PREFIX=/usr \
-    CFLAGS="$CFLAGS -Wno-format -Wno-format-security"
+	LIBDIR=lib PREFIX=/usr
 }
 
 package() {
