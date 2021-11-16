@@ -7,7 +7,7 @@
 
 pkgname=cinnamon
 pkgver=5.0.7
-pkgrel=1
+pkgrel=3
 pkgdesc="Linux desktop which provides advanced innovative features and a traditional user experience"
 arch=(x86_64)
 url="https://github.com/linuxmint/cinnamon"
@@ -22,7 +22,8 @@ optdepends=('blueberry: Bluetooth support'
             'cinnamon-translations: i18n'
             'gnome-panel: fallback mode'
             'metacity: fallback mode'
-            'system-config-printer: printer settings')
+            'system-config-printer: printer settings'
+            'wget: cover download support in audio applet')
 makedepends=(meson samurai gobject-introspection intltool)
 options=('!emptydirs')
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
@@ -65,19 +66,13 @@ prepare() {
 }
 
 build() {
-  mkdir -p ${pkgname}-${pkgver}/builddir
-  cd ${pkgname}-${pkgver}/builddir
-
-  meson --prefix=/usr \
-        --libexecdir=lib/cinnamon \
-        --buildtype=plain \
-        ..
-
+  mkdir -p build
+  cd build
+  artix-meson --libexecdir=lib/cinnamon ../${pkgname}-${pkgver}
   samu
 }
 
 package() {
-  cd ${pkgname}-${pkgver}/builddir
-
+  cd build
   DESTDIR="${pkgdir}" samu install
 }
