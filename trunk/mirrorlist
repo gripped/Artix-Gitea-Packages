@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2021-11-01
+## Generated on 2021-11-18
 ##
 
 # Artix mirrors
@@ -30,6 +30,7 @@ Server = https://eu-mirror.artixlinux.org/repos/$repo/os/$arch
 Server = https://artix.wheaton.edu/repos/$repo/os/$arch
 Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
 Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
+Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
 Server = https://mirrors.nettek.us/artix-linux/$repo/os/$arch
 Server = https://us-mirror.artixlinux.org/$repo/os/$arch
