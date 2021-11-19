@@ -4,7 +4,7 @@
 
 pkgname=apache
 pkgver=2.4.51
-pkgrel=1
+pkgrel=2
 pkgdesc='A high performance Unix-based HTTP server'
 arch=('x86_64')
 url='https://www.apache.org/dist/httpd'
@@ -34,13 +34,14 @@ optdepends=(
     'perl: for apxs and dbmmanage'
 )
 source=(
-    https://www.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2
+    https://www.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2{,.asc}
     openssl-malloc-init.patch
     apache.tmpfiles.conf
     httpd.logrotate
     arch.layout
 )
 sha256sums=('20e01d81fecf077690a4439e3969a9b22a09a8d43c525356e863407741b838f4'
+            'SKIP'
             'd305f8b52ac2a9bbda7bb0776496471e69e9d30642740f594d00086a8c7e344c'
             '63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf'
             '0bbbfae23a917b2fce0bf8f900f60319b50769224a96314e9301a75ccd078e16'
