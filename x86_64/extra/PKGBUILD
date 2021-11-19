@@ -2,7 +2,7 @@
 
 pkgname=apparmor-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for AppArmor"
 arch=('any')
 url="https://artixlinux.org"
