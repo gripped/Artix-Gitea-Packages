@@ -17,7 +17,7 @@ source=("https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz"
          cmake-artix.patch)
 sha512sums=('72e4e39bfd0a918572228af68391422979f89a0a5020fae7764b5d7ba86a7a56e8174e22f1b0ffeb37b741c0a6118162a2a47655a03939ea0535453186ed385c'
             '407c5c63a31266e44641ada8229dbc33df44df98e5bb575db3a33590e8ffdff9aea3f2ee5cb0cb855858facf1e46c63886dea9f948a0cad2da042e7f7f258cac'
-            'e7634f1143898e2790d1b1db13d3f27d53efd33aa4487374bbc6d073818a88b1e1f4c0af810f5f8eaff45c320ed55b4eb199713267bc2af206db52cd8ede2140')
+            '5cbd3e5294d045d546f88e041d48a084eae781e409274247df30aa92964cfc4eccb8bdbc3795bc2e1eab80b44cc67b8252bd7079947daf016cbb446e34624028')
 
 prepare() {
   cd ${pkgname}-${pkgver}
