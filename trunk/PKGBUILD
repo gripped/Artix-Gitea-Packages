@@ -29,7 +29,8 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         julia-libgit-1.2.patch
         julia-system-cblas.patch
         julia-hardcoded-libs.patch
-        make-install-no-build.patch)
+        make-install-no-build.patch
+        processor.patch)
 backup=(etc/julia/startup.jl)
 sha256sums=('954578b973fdb891c88fa1eedd931129e215ab928ecc416dd0bdf6c70549d2fc'
             'SKIP'
@@ -43,7 +44,8 @@ sha256sums=('954578b973fdb891c88fa1eedd931129e215ab928ecc416dd0bdf6c70549d2fc'
             'c57ea92a11fa8dac72229e6a912d2372ec0d98d63486426fe3bdeeb795de48f7'
             'e44c260e4111908337caa82e1c3fef563b9d40e0a30da68d6e91405bf6db24dc'
             'a8e664f39f3efaeea63e99c2f5727a28ab7eca01e9164b464c66e991426d7e90'
-            '8be4605f92a009072ca7e843549c225fc4e959893498e7c4f8f79e861e63714d')
+            '8be4605f92a009072ca7e843549c225fc4e959893498e7c4f8f79e861e63714d'
+            'b33822bb923248c68523edde75e5346953611ee98258c3ba2b5b7bc78a6334fd')
 validpgpkeys=('3673DF529D9049477F76B37566E3C7DC03D6E495') # Julia (Binary signing key) <buildbot@julialang.org>
 
 prepare() {
@@ -69,6 +71,10 @@ prepare() {
   patch -p1 -i ../make-install-no-build.patch
 # Fix test failure
   sed -e 's|0.22314355f0 + 3.1415927f0im|0.22314355f0 - 3.1415927f0im|' -i stdlib/LinearAlgebra/test/lu.jl
+
+# Patch to build 1.6.x on Artix - added by artist
+  patch -p1 -i ../processor.patch
+
 }
 
 _buildopts="prefix=/usr \
