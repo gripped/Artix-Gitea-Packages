@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=5.14.16
+_ver=5.15.2
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
@@ -31,7 +31,7 @@ validpgpkeys=(
   'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
 )
 sha256sums=('SKIP'
-            '1d9410b97f7a031660d7ca90b1880930d3b8ee000513e7fa83e0f65e621a9e7b')
+            '59d1d35341c4dc9f62817908eef653b7ba4898888fb86fb5f9005b9ba711043c')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
