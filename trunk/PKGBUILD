@@ -7,7 +7,7 @@
 
 pkgname=vtk
 pkgver=9.1.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org/"
@@ -19,8 +19,7 @@ makedepends=(adios2 cmake boost doxygen ffmpeg gdal git gnuplot java-environment
              qt5-x11extras tk unixodbc wget
              cgns double-conversion eigen expat fmt freetype2 gl2ps glew hdf5 libjpeg
              jsoncpp libharu proj libxml2 lz4 xz python-mpi4py netcdf libogg
-             libpng pugixml rapidjson sqlite libtheora libtiff utf8cpp zfp zlib
-tbb)
+             libpng pugixml rapidjson sqlite libtheora libtiff utf8cpp zfp zlib)
 # pegtl https://gitlab.kitware.com/vtk/vtk/-/issues/18151
 optdepends=('gnuplot: plotting tools'
             'graphviz: drawing tools'
@@ -56,7 +55,7 @@ optdepends=('gnuplot: plotting tools'
             sqlite
             unixodbc)
 source=(${url}/files/release/${pkgver%.*}/VTK-${pkgver}.tar.gz
-        #vtk-tbb-export.patch::https://gitlab.kitware.com/vtk/vtk-m/-/commit/3be3529f.patch
+        #vtk-tbb-export.patch::https://gitlab.kitware.com/vtk/vtk-m/-/commit/3be3529f.patch)
         tbb.patch)
 options=(staticlibs)
 sha256sums=('8fed42f4f8f1eb8083107b68eaa9ad71da07110161a3116ad807f43e5ca5ce96'
@@ -69,19 +68,14 @@ prepare() {
   # We have a patched fmt
   sed -i "s|8.1.0|8.0.1|" ThirdParty/fmt/CMakeLists.txt
   # Namespace the exported tbb target to fix conflicts
-  # patch -d ThirdParty/vtkm/vtkvtkm/vtk-m -p1 -i "$srcdir"/vtk-tbb-export.patch
+  #patch -d ThirdParty/vtkm/vtkvtkm/vtk-m -p1 -i "$srcdir"/vtk-tbb-export.patch
 
-  # Merged TBB Namepsace patch
+  # Artix: Merged TBB Namepsace patch
   patch -d ThirdParty/vtkm/vtkvtkm/vtk-m -p1 -i "$srcdir"/tbb.patch
+
 }
 
 build() {
-
-    export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
-           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
-           -fstack-clash-protection -fcf-protection"
-    export CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
-
   # To help cmake find java
   export JAVA_HOME=/usr/lib/jvm/default
   # To set tcl lib path
@@ -110,7 +104,6 @@ build() {
     -DVTKm_ENABLE_MPI=ON \
     -DVTKm_ENABLE_OPENMP=ON \
     -DVTK_USE_EXTERNAL=ON \
-    -DVTK_IOS_BUILD=0 \
     -DVTK_MODULE_USE_EXTERNAL_VTK_cli11=OFF \
     -DVTK_MODULE_USE_EXTERNAL_VTK_exprtk=OFF \
     -DVTK_MODULE_USE_EXTERNAL_VTK_ioss=OFF \
@@ -119,8 +112,7 @@ build() {
     -DVTK_MODULE_ENABLE_VTK_FiltersOpenTURNS=NO \
     -DOpenVDB_CMAKE_PATH=/usr/lib/cmake/OpenVDB \
     -Wno-dev
-  # -DFIDES_USE_EXTERNAL_RAPIDJSON=ON \
-
+#    -DFIDES_USE_EXTERNAL_RAPIDJSON=ON \
   make -C build
 }
 
