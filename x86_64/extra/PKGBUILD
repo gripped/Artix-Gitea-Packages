@@ -5,7 +5,7 @@ pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-common' 'xorg-server-devel')
 pkgver=21.1.1
-pkgrel=3
+pkgrel=3.1
 arch=('x86_64')
 license=('custom')
 groups=('xorg')
@@ -82,7 +82,7 @@ _install() {
 
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
-  depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
+  depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap libelogind)
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
   _install fakeinstall/usr/share/man/man1/Xserver.1
@@ -95,7 +95,7 @@ package_xorg-server-common() {
 package_xorg-server() {
   pkgdesc="Xorg X server"
   depends=(libepoxy libxfont2 pixman xorg-server-common libunwind
-           dbus libgl xf86-input-libinput nettle
+           dbus libgl xf86-input-libinput nettle elogind
            libpciaccess libdrm libxshmfence libxcvt) # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
@@ -121,7 +121,7 @@ package_xorg-server() {
 
 package_xorg-server-xephyr() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libgl libepoxy libunwind libelogind libxv pixman xorg-server-common
+  depends=(libxfont2 libgl libepoxy libunwind libxv pixman xorg-server-common
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc)
 
@@ -134,7 +134,7 @@ package_xorg-server-xephyr() {
 
 package_xorg-server-xvfb() {
   pkgdesc="Virtual framebuffer X server"
-  depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
+  depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth
            libgl nettle libtirpc)
 
   _install fakeinstall/usr/bin/Xvfb
