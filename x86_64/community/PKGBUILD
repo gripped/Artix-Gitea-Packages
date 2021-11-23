@@ -2,7 +2,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.2.45
+pkgver=3.2.47
 pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
@@ -19,7 +19,7 @@ source=("${url}/archive/v$pkgver.tar.gz"
         services-s6.patch
         services-suite66.patch
         lightdm-autologin-fix.patch::https://gitea.artixlinux.org/artix/calamares/commit/d1526358da29335859c49893c0eb1c610e51bd2c.patch)
-sha256sums=('ba5ef9f57ad71e3d726f3fb181c9a4342063875c1670b374f8cadca64d2bbc0e'
+sha256sums=('44c6dc6ee9c803802100f7c988a4ccb6a43b8de6e0841a0cc3c1797df9ffe3c6'
             '77c2d46c511ad6ea4f2c9663007f9d5a4cc2c385223498982d3feb4e56becc68'
             '820d515f5788b7b55e3ebaa2357db643bc1d554e931649980d8b39a6a26b51e0'
             'c1c1ba7d14754cf284b75812323cf1799d6f55c6ea2c12b3e6a110855306b3f6'
