@@ -7,7 +7,7 @@
 _name=raptor2
 pkgname=raptor
 pkgver=2.0.15
-pkgrel=16
+pkgrel=17
 pkgdesc="A C library that parses RDF/XML/N-Triples into RDF triples"
 arch=('x86_64')
 url="http://librdf.org/raptor"
@@ -24,7 +24,6 @@ sha512sums=('563dd01869eb4df8524ec12e2c0a541653874dcd834bd1eb265bc2943bb616968f6
 b2sums=('0a39c7b5705bfbf2daa0ca633f79693953b4dfe24c144008d1646a9840a36d4d7ce153b527450647127ec2522047dbd0a6e71f307ee5656951f7e4b610adfd22'
         'a3f83e34686dfd55ad1c4b9e97f6ae046be31b8224846dfa2b83ba9228cb987c6ebb19f37f48c196fab56a1e1d007d71225ed12acc2188e088b95c7cff5a0beb'
         'ab11eeb648bf2cf8ac4ef4bbff4cdb77d1b713ad086268b656c7249363bf5752b535763f9a9fd34be4d72b3ff420cd87ee6970d3da6e24e5e2b067b9dbb9c29e')
-validpgpkeys=('F879F0DEDA780198DD08DC6443EC92504F71955A') # Dave Beckett <dave@dajobe.org>
 
 prepare() {
   mv -v "${_name}-${pkgver}" "${pkgname}-${pkgver}"
