@@ -23,11 +23,11 @@ provides=(
   libbrotli{common,dec,enc}.so
 )
 _tag=e61745a6b7add50d380cfd7d3883dd6c62fc2c71
-source=(git+https://github.com/google/brotli#tag=${_tag})
+source=(brotli1::git+https://github.com/google/brotli#tag=${_tag})
 sha256sums=(SKIP)
 
 pkgver() {
-  cd brotli
+  cd brotli1
 
   git describe --tags | sed 's/^v//'
 }
@@ -36,7 +36,7 @@ build() {
   export CC='gcc -m32'
   export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
 
-  cmake -S brotli -B build \
+  cmake -S brotli1 -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=/usr/lib32
   cmake --build build
