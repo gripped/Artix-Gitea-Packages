@@ -15,7 +15,7 @@ depends=('git' 'python-smmap')
 makedepends=('python-setuptools')
 checkdepends=('python-nose')
 source=("https://pypi.org/packages/source/g/${_name}/${_name}-${pkgver}.tar.gz"{,.asc})
-sha512sums=('fa883bf135080a9defa039bf1f13aebdb91c7e8d397c870e24d7c13acc1b30fc32c6299b43c117657382c1908ace748b0967bc53e02c2d73633cc8603fcb8003'
+sha512sums=('db63a613ee59249a3fccbd09fc0eca5747b166180bb5885737f849e339e81dfacd04f65e438fef241cf013cde33fe8c99a569c1599b2b5defd37b50e87dbdb0a'
             'SKIP')
 validpgpkeys=('27C50E7F590947D7273A741E85194C08421980C9') # Sebastian Thiel (In Rust I trust!) <byronimo@gmail.com>
 
