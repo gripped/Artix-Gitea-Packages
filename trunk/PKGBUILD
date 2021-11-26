@@ -4,7 +4,7 @@
 
 pkgname=m17n-db
 pkgver=1.8.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Multilingual text processing library (database)'
 url='http://www.nongnu.org/m17n/'
 arch=('any')
