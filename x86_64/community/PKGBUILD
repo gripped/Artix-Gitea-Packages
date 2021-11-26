@@ -28,7 +28,7 @@ checkdepends=(mpdecimal
 optdepends=('graphviz: Enable output formats other than dot or vcg'
             'tk: Pylint GUI')
 _archive="$_pyname-$pkgver"
-source=("https://github.com/PyCQA/pylint/archive/v$pkgver/$_archive.tar.gz")
+source=("https://github.com/PyCQA/pylint/archive/refs/tags/v$pkgver.tar.gz")
 sha256sums=('9fa85a5f0704c8a880762c3e7c938993b2ff619291171acde97127fcb134c02e')
 
 prepare() {
