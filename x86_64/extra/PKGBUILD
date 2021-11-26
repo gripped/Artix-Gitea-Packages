@@ -4,23 +4,24 @@
 
 pkgname=libdmtx
 pkgver=0.7.5
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A software for reading and writing Data Matrix 2D barcodes"
 url="https://libdmtx.sourceforge.net/"
 arch=(x86_64)
 license=(GPL2)
 depends=(glibc)
-source=("https://github.com/dmtx/libdmtx/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('be0c5275695a732a5f434ded1fcc232aa63b1a6015c00044fe87f3a689b75f2e')
+makedepends=(git)
+source=("git+https://github.com/dmtx/libdmtx.git#tag=v${pkgver}")
+sha256sums=('SKIP')
 
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   ./autogen.sh
   ./configure --prefix=/usr
   make
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   make DESTDIR="$pkgdir" install
 }
