@@ -22,10 +22,10 @@ _commit=e3931f7b8cbd44072137c5dc9de9041486daeade  # gnome-41
 source=("git+https://gitlab.gnome.org/GNOME/mutter.git#commit=$_commit")
 sha256sums=('SKIP')
 
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+#pkgver() {
+#  cd $pkgname
+#  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+#}
 
 prepare() {
   cd $pkgname
