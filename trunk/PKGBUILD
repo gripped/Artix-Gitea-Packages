@@ -3,8 +3,8 @@
 
 pkgbase=java-common
 pkgname=('java-runtime-common' 'java-environment-common')
-pkgver=1
-pkgrel=0.5
+pkgver=3
+pkgrel=3.1
 pkgdesc='Common files for Java Runtime Environments'
 url='https://www.archlinux.org/packages/extra/any/java-common/'
 arch=('any')
