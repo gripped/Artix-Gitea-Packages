@@ -4,7 +4,7 @@
 
 pkgname=eclipse-ecj
 pkgver=4.6.3
-pkgrel=2
+pkgrel=2.1
 _date=201703010400
 pkgdesc='Eclipse java bytecode compiler'
 arch=('any')
@@ -19,7 +19,7 @@ source=(${_base_url}/${_source_file_name}
         01-ecj-include-props.patch
         02-buildxml-fix-manifest.patch
         ecj)
-validpgpkeys=('869FF7E31C98FBCFCF167CDE01D81CA560A48EFD') # Eclipse Project
+# validpgpkeys=('869FF7E31C98FBCFCF167CDE01D81CA560A48EFD') # Eclipse Project
 
 sha512sums=('a509b6d1fd7e5218ca6d9748b6c899c8c57a9d016d01e3f1d2116876f3aab796f792e1b1733189a436b6251caf8c208ec3928e3978cd0803c1449b29eae1891d'
             '2965df1005362bb4e6e17b5048ca17c0b583c746f8ac05c46451ff603707816d7eb7b9e4ffc398fadaa18229ef0d41993f3126802c22fa2c6d488dc03797557a'
