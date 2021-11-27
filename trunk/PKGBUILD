@@ -10,16 +10,22 @@ url="https://hunspell.github.io/"
 license=('GPL' 'LGPL' 'MPL')
 depends=('gcc-libs' 'readline')
 optdepends=('perl: for ispellaff2myspell')
-source=($pkgname-$pkgver.tar.gz::https://github.com/hunspell/hunspell/archive/v${pkgver}.tar.gz)
-sha256sums=('bb27b86eb910a8285407cf3ca33b62643a02798cf2eef468c0a74f6c3ee6bc8a')
+source=($pkgname-$pkgver.tar.gz::https://github.com/hunspell/hunspell/archive/v${pkgver}.tar.gz
+        CVE-2019-16707.patch)
+sha256sums=('bb27b86eb910a8285407cf3ca33b62643a02798cf2eef468c0a74f6c3ee6bc8a'
+            '8435519814099d6b733d78caab66b92b544e05d503f9c5696f3b9165bd433a57')
 
 prepare() {
   cd hunspell-$pkgver
+  patch -Np 1 -i ../CVE-2019-16707.patch
   autoreconf -vfi
 }
 
 build() {
   cd hunspell-$pkgver
+    export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+    export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
+    export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
   ./configure --prefix=/usr --disable-static \
 	--with-ui --with-readline # --with-experimental breaks build in this release
   make
