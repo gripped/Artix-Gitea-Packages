@@ -3,6 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 depend() {
+	use modules
 	before checkfs fsck
 
 	if grep -qs ^swap= "${conf_file}" ; then
@@ -21,7 +22,7 @@ fi
 # Setup mappings for an individual target/swap
 # Note: This relies on variables localized in the main body below.
 dm_crypt_execute() {
-	local dev ret mode foo
+	local dev ret mode foo source_dev
 
 	if [ -z "${target}" -a -z "${swap}" ] ; then
 		return
@@ -31,6 +32,7 @@ dm_crypt_execute() {
 	: ${dmcrypt_key_timeout:=1}
 	: ${dmcrypt_max_timeout:=300}
 	: ${dmcrypt_retries:=5}
+	: ${wait:=5}
 
 	# Handle automatic look up of the source path.
 	if [ -z "${source}" -a -n "${loop_file}" ] ; then
@@ -38,7 +40,16 @@ dm_crypt_execute() {
 	fi
 	case ${source} in
 	*=*)
-		source=$(blkid -l -t "${source}" -o device)
+		i=0
+		while [ ${i} -lt ${wait} ]; do
+			if source_dev="$(blkid -l -t "${source}" -o device)"; then
+				source="${source_dev}"
+				break
+			fi
+			: $((i += 1))
+			einfo "waiting for source \"${source}\" for ${target}..."
+			sleep 1
+		done
 		;;
 	esac
 	if [ -z "${source}" ] || [ ! -e "${source}" ] ; then
@@ -266,10 +277,10 @@ start() {
 			dm_crypt_execute
 
 			# Prepare for the next target/swap by resetting variables
-			unset gpg_options key loop_file target options pre_mount post_mount source swap remdev
+			unset gpg_options key loop_file target options pre_mount post_mount source swap remdev wait
 			;;
 
-		gpg_options=*|remdev=*|key=*|loop_file=*|options=*|pre_mount=*|post_mount=*|source=*)
+		gpg_options=*|remdev=*|key=*|loop_file=*|options=*|pre_mount=*|post_mount=*|wait=*|source=*)
 			if [ -z "${target}${swap}" ] ; then
 				ewarn "Ignoring setting outside target/swap section: ${targetline}"
 				continue
