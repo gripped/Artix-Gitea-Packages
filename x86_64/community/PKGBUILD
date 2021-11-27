@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.2.47
-pkgrel=2
+pkgrel=3
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -18,12 +18,14 @@ source=("${url}/archive/v$pkgver.tar.gz"
         services-runit.patch
         services-s6.patch
         services-suite66.patch
+        services-dinit.patch
         lightdm-autologin-fix.patch::https://gitea.artixlinux.org/artix/calamares/commit/d1526358da29335859c49893c0eb1c610e51bd2c.patch)
 sha256sums=('44c6dc6ee9c803802100f7c988a4ccb6a43b8de6e0841a0cc3c1797df9ffe3c6'
             '77c2d46c511ad6ea4f2c9663007f9d5a4cc2c385223498982d3feb4e56becc68'
             '820d515f5788b7b55e3ebaa2357db643bc1d554e931649980d8b39a6a26b51e0'
             'c1c1ba7d14754cf284b75812323cf1799d6f55c6ea2c12b3e6a110855306b3f6'
             'b74faf40a76cc9648967fbfb79796c9e0f283d4088d0a200baed14fe923c6b8e'
+            'e8fe3bd2204a527409e495f23bf9c59098d97c5d21afd97006a81ff4fc414e24'
             '2580e634e038a72f66410451e8f351d368dfb1026d41c79b460d4dcb2c41a4ab')
 
 prepare() {
@@ -33,6 +35,7 @@ prepare() {
     patch -Np 1 -i $srcdir/services-runit.patch
     patch -Np 1 -i $srcdir/services-s6.patch
     patch -Np 1 -i $srcdir/services-suite66.patch
+    patch -Np 1 -i $srcdir/services-dinit.patch
     patch -Np 1 -i $srcdir/lightdm-autologin-fix.patch
 }
 
