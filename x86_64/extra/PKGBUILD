@@ -5,33 +5,25 @@
 
 pkgname=libkate
 pkgver=0.4.1
-pkgrel=7
+pkgrel=7.1
 pkgdesc="A karaoke and text codec for embedding in ogg"
 url="https://wiki.xiph.org/OggKate"
 license=('BSD')
 arch=('x86_64')
 depends=('libpng' 'libogg')
-makedepends=('git')
-source=("$pkgname::git+git://git.xiph.org/users/oggk/kate.git#tag=kate-${pkgver}"
-        0001-Fix-automake-warnings.patch)
-sha512sums=('SKIP'
-            '525d120cddd040441859f2783e6e566da631ba304074bfa40a34399879fc3053577e8e71ef804168aeef519fac62e205829b50a61d770cddd46f7dbfba660842')
-
-prepare() {
-  cd ${pkgname}
-  patch -Np1 -i ../0001-Fix-automake-warnings.patch
-}
+source=("http://deb.debian.org/debian/pool/main/libk/libkate/libkate_${pkgver}.orig.tar.gz")
+sha512sums=('2635237753abc0f6c43fc07bd0ecc57c2f3c893efa6c62ad08de9191045612477302ed45acd61cdfea7447efd654ebbe0ed2d6a2cbf867eb834581d7ee43377b')
 
 build() {
-  cd ${pkgname}
-  ./autogen.sh --prefix=/usr \
+  cd ${pkgname}-${pkgver}
+  ./configure --prefix=/usr \
                --disable-static \
                --disable-doc
   make
 }
 
 package() {
-  cd ${pkgname}
+  cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
   install -Dt "${pkgdir}/usr/share/licenses/${pkgname}" -m644 COPYING
   rm "${pkgdir}/usr/share/man/man1/KateDJ.1"
