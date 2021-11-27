@@ -25,10 +25,10 @@ sha256sums=('SKIP'
             'ae57e7f3c9722335d48e48bd22c5c6e55bd5b13ee513bf00cc44a70f76df7f00'
             'e88410bcec9e2c7a22a319be0b771d1f8d536863a7fc618b6352a09d61327dcb')
 
-pkgver() {
-  cd gdm
-  git describe --tags | sed 's/\.rc/rc/;s/[^-]*-g/r&/;s/-/+/g'
-}
+#pkgver() {
+#  cd gdm
+#  git describe --tags | sed 's/\.rc/rc/;s/[^-]*-g/r&/;s/-/+/g'
+#}
 
 prepare() {
   cd gdm
