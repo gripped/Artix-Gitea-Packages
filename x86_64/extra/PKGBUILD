@@ -2,7 +2,7 @@
 
 pkgname=gnome-user-share
 pkgver=3.34.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Easy to use user-level file sharing for GNOME"
 arch=(x86_64)
 url="https://gitlab.gnome.org/GNOME/gnome-user-share"
@@ -24,7 +24,7 @@ prepare() {
 }
 
 build() {
-  arch-meson $pkgname build \
+  artix-meson $pkgname build \
     -D httpd=/usr/bin/httpd \
     -D modules_path=/usr/lib/httpd/modules \
     -D nautilus_extension=true \
