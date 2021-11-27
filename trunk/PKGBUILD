@@ -8,29 +8,43 @@ pkgdesc="The Linux-native asynchronous I/O facility (aio) library"
 arch=('x86_64')
 url="http://lse.sourceforge.net/io/aio.html"
 license=('LGPL')
-source=(http://ftp.de.debian.org/debian/pool/main/liba/$pkgname/${pkgname}_${pkgver}.orig.tar.xz)
-md5sums=('66e3b7dd255581a73542ee851f8cd737')
+makedepends=(git)
+source=(http://ftp.de.debian.org/debian/pool/main/liba/$pkgname/${pkgname}_${pkgver}.orig.tar.xz
+        0001-harness.patch
+        0002-harness.patch
+        0001-gcc11-test-fix.patch)
+md5sums=('66e3b7dd255581a73542ee851f8cd737'
+         '5c8d4d013ebcc68e236c30d8459a12f4'
+         '42d63a7ecf8120c5d9411252bda31cfb'
+         'da412febd6fffa19e1a1ce9876db23f1')
+
+prepare() {
+    cd "$pkgname-$pkgver"
+    patch -Np 1 -i ../0001-harness.patch
+    patch -Np 1 -i ../0002-harness.patch
+    patch -Np 1 -i ../0001-gcc11-test-fix.patch
+}
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
   # AIO library is a thin wrapper around kernel syscalls, it does not use stdlib
   # and other helpers like stack protection libraries
-  CFLAGS="-march=${CARCH/_/-} -mtune=generic -O2 -pipe"
+  #CFLAGS="-march=${CARCH/_/-} -mtune=generic -O2 -pipe"
   make
 }
 
 check() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
 
   # work around gcc warning (-Werror) in test suite
-  sed -i '/strncpy/s#sizeof(TEMPLATE)#sizeof(template)#' harness/cases/19.t
-  sed -i '/strncpy/s#sizeof(TEMPLATE)#sizeof(temp_file)#' harness/cases/21.t
+  #sed -i '/strncpy/s#sizeof(TEMPLATE)#sizeof(template)#' harness/cases/19.t
+  #sed -i '/strncpy/s#sizeof(TEMPLATE)#sizeof(temp_file)#' harness/cases/21.t
 
   make partcheck
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
   make prefix="$pkgdir/usr" install
 }
 
