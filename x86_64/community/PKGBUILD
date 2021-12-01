@@ -20,6 +20,9 @@ prepare() {
 
 build() {
   cd ${pkgname}-${pkgver}
+    export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+  export CFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
   cargo build --frozen --release --all-features
 }
 
