@@ -17,7 +17,9 @@ sha512sums=('bb9ea426278d5a7ac46595296f03b82d43df8b7db41045cdf85611e05e26c703c53
 
 build() {
   cd ruby-${pkgver}
-
+  export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+  export CFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
   ./configure \
     --prefix=/usr \
     --sysconfdir=/etc \
