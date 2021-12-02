@@ -30,6 +30,10 @@ prepare() {
 }
 
 build() {
+  export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+  export CFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
+
   cd $srcdir/$pkgname-$pkgver
   ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --libexecdir=/usr/lib/vde2 \
              --enable-experimental
