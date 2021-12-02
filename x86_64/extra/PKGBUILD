@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syslogd-s6
-pkgver=20210926
+pkgver=20211202
 pkgrel=1
-pkgdesc="s6-rc service scripts for a syslogd implementation using s6's ucspilogd"
+pkgdesc="s6-rc service scripts for a syslogd implementation using s6-socklog"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
