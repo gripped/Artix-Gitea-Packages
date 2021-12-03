@@ -46,6 +46,11 @@ prepare() {
 build() {
   cd "$srcdir/llvm-$pkgver.src/build"
 
+CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions \
+-Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security \
+-fstack-clash-protection -fcf-protection"
+CXXFLAGS="$CFLAGS -Wp,-D_GLIBCXX_ASSERTIONS"
+
   cmake .. -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
