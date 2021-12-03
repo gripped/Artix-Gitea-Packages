@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=cyrus-sasl-dinit
-pkgver=20211030
-pkgrel=2
+pkgver=20211203
+pkgrel=1
 pkgdesc="dinit service scripts for cyrus-sasl"
 arch=('any')
 url="https://artixlinux.org"
