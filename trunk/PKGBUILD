@@ -15,10 +15,10 @@ optdepends=('qt5-tools: run cppcheck-gui'
             'clang: for cppcheck-gui integration')
 source=($pkgname-$pkgver.tar.gz::https://github.com/danmar/cppcheck/archive/${pkgver}.tar.gz
         translations-location.patch
-        https://github.com/danmar/cppcheck/commit/8d682884.patch)
-sha1sums=('bf7808d527f9f3543d301c6b0b31d308bf97dfa2'
-          '03b0888438cf92ccdcbf307dbc3c35e65c91b844'
-          '7846c2e482320c2f6f9352dc134fdf0ad39faec8')
+        8d682884.patch)
+sha256sums=('99f0c5cf58a0072876c4deb114f3f5f798c933b8e459cddb00a061c8bb4dd765'
+            '80e8cd0408f311cb0091c6ef8a453796bc27570167fc522a9e095b5f8e49ca28'
+            '53c93517c6258bb7530df2ab3ea3b76ae62d25f1082691a635f20508b4c1eee6')
 
 prepare() {
    cd "${pkgname}-${pkgver}"
