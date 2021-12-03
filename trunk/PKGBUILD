@@ -32,9 +32,9 @@ build() {
    cd "${pkgname}-${pkgver}"
    export CXXFLAGS+=" -DNDEBUG"
 
-   # Manuals
-   xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
-   make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
+   # Doc is broken. Just skip for now.
+   #xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
+   #make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
    pandoc man/manual.md -o man/manual.html -s --number-sections --toc
    pandoc man/reference-cfg-format.md -o man/reference-cfg-format.html -s --number-sections --toc
 
@@ -61,7 +61,8 @@ package() {
 
    cd ..
 
-   install -D -p -m 644 cppcheck.1 "${pkgdir}"/usr/share/man/man1/cppcheck.1
+   # Broken doc.
+   #install -D -p -m 644 cppcheck.1 "${pkgdir}"/usr/share/man/man1/cppcheck.1
    install -D -p -m 755 htmlreport/cppcheck-htmlreport "${pkgdir}"/usr/bin/cppcheck-htmlreport
 
    # Fix location of language files
