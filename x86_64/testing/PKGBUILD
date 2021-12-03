@@ -13,8 +13,8 @@ provides=('init-krb5')
 conflicts=('init-krb5')
 source=("kadmind"
         "krb5kdc")
-sha256sums=('e7a1782b170cdba63f5ed6bd690362fe4b179d8bcacfc2106ae6fa1f16e9ada9'
-            '08688a5a82fa658a12f0c28d32daa8ab071e8c4303c0ba86e9440fe63ef68bfa')
+sha256sums=('9f15e47c78cca36e2846572e2f32fb529a6c3973d06e8b367ae326dba20eb625'
+            '9ebe10ac919dac8bfee50df5cdc8a60f238e34b57ec2591f057e5b20f7c9e62e')
 
 package() {
     install -Dm644 kadmind "$pkgdir/etc/dinit.d/kadmind"
