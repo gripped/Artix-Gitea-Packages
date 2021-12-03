@@ -2,7 +2,7 @@
 
 pkgname=cronie-dinit
 pkgver=20211104
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for cronie"
 arch=('any')
 url="https://artixlinux.org"
@@ -15,7 +15,7 @@ conflicts=('init-cronie' 'init-cron')
 _commit=185c4b2e51cf46d99b474af9018c25039d7092a8
 source=("cronie"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
-sha256sums=('3c01951f0bf081bbe6a1fb4427267bb7b6352b1e37cfd3c5d4727b3323f9c394'
+sha256sums=('a2d642377fbe221da9e607b7df723d737f8155f5d52eadbb36975f297ea8cc63'
             'SKIP')
 
 package() {
