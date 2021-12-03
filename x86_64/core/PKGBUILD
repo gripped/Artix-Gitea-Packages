@@ -2,7 +2,7 @@
 
 pkgname=audit-dinit
 pkgver=20211031
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for audit"
 arch=('any')
 url="https://artixlinux.org"
@@ -16,7 +16,7 @@ source=("auditd"
         "auditctl"
         "auditctl.script"
         "auditctl.conf")
-sha256sums=('d0b5c2cd5fa3e5613943cc53e8e279f9b34a31a353b3dec04e1f8578f36f7e96'
+sha256sums=('01894c6e947b13f92f103f01efb79c5b5d8ee27df1f2424e2fe294b3b9b0391e'
             'a64e63b8829f3d153e4ef86cb6cb16027ab7576a13200e3a65d8862af82b10f1'
             '321281306004be041a9adc6255b7112e22351352675072db0cc96e499fd4be5c'
             '67adef67c32704dcaf62d8ab827467647253de7b38e0254ec5120b8b87357015')
