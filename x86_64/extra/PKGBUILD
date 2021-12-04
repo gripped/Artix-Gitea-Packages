@@ -2,7 +2,7 @@
 
 pkgname=bftpd-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for bftpd"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('bftpd' 'dinit')
 conflicts=('init-bftpd')
 provides=('init-bftpd')
 source=("bftpd")
-sha256sums=('c604db0ec753343cf4111c71a5e1a8b8f1c26d298bf34c708a2df2773bdf009c')
+sha256sums=('1bfc337147834f2290f7b5ecb923d7bd02b92c1badaa8a7800da929b308992a9')
 
 package() {
     install -Dm644 bftpd "$pkgdir/etc/dinit.d/bftpd"
