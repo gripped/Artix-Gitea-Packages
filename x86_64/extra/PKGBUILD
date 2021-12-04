@@ -2,7 +2,7 @@
 
 pkgname=sddm-dinit
 pkgver=20211026
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for sddm"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('sddm' 'init-logind')
 provides=('init-sddm' 'init-displaymanager')
 conflicts=('init-sddm' 'init-displaymanager')
 source=("sddm" "sddm.script")
-sha256sums=('5b2deb96ca5772f48be2e7b9b1b9e043afc6d1c52b442d88996baacbc587e7db'
+sha256sums=('571125399cdb7f1be8803dcb40cbbe1891ed37d34f540c61c6c3a4af70b1be75'
             '7dc7739987cb0b70adf01cc1cbcccfcbfc1cc06f34eb2d32659806200512ac5f')
 
 package() {
