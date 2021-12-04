@@ -2,7 +2,7 @@
 
 pkgname=git-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for git"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,7 +13,7 @@ conflicts=('init-git')
 provides=('init-git')
 source=("git"
         "git.script")
-sha256sums=('b29bc033d63341e4b1fafd66a6302a38505a28ad0dd4754b1b6ded30149e0884'
+sha256sums=('73d8101b1a043dcced2cda5332b4a7dda501df77dc91054fce1b78f74f141bc9'
             'e19ebc1854728787d567042fd3dc7c6ae84654b05073acb332c8efcf68164f8d')
 
 package() {
