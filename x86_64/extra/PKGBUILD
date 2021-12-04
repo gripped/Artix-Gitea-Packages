@@ -5,13 +5,14 @@
 pkgname=qt6-declarative
 _qtver=6.2.2
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
 pkgdesc='Classes for QML and JavaScript languages'
 depends=(qt6-base)
 makedepends=(cmake ninja python at-spi2-core qt6-shadertools)
+options=('!lto')
 conflicts=(qt6-quickcontrols2)
 provides=(qt6-quickcontrols2)
 replaces=(qt6-quickcontrols2)
