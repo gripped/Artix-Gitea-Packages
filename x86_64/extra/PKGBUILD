@@ -2,14 +2,14 @@
 
 pkgname=openvpn-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for openvpn"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 depends=('openvpn')
 source=("openvpn")
-sha256sums=('bc46d12e1cc4525f49a5c8cec82998d21800b2400786621600c3f0850ce58886')
+sha256sums=('e246a8b6e5b7fc5e8d7d621fa1507fc87e73167f132c320eff1d7a60e6956003')
 
 package() {
     install -Dm644 openvpn "$pkgdir/etc/dinit.d/openvpn"
