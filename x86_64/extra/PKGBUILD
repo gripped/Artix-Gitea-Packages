@@ -2,7 +2,7 @@
 
 pkgname=qemu-guest-agent-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for qemu-guest-agent"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 conflicts=('init-qemu-guest-agent')
 provides=('init-qemu-guest-agent')
 source=("qemu-ga")
-sha256sums=('4b5a5bf44489c214e89aef9e5c3f871e520ef21bbd96fd6a555373252a0f55f8')
+sha256sums=('32f21654c0373e1c8d1edfb49ff7fbe2b908d5929445ab853fbec6d6445d0275')
 
 package() {
     install -Dm644 qemu-ga "$pkgdir/etc/dinit.d/qemu-ga"
