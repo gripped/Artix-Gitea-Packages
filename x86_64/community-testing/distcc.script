@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r /etc/dinit.d/config/distcc.conf ] && . /etc/dinit.d/config/distcc.conf
-exec distccd --no-detach --daemon -- ${DISTCCD_OPTS} 2>&1
