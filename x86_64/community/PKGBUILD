@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=sslh-dinit
 pkgver=20211103
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for sslh"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('sslh' 'dinit')
 conflicts=('init-sslh')
 provides=('init-sslh')
 source=("sslh")
-sha256sums=('24ab97816ce68c9f0449238129b06b5c079510978ea996232ced32a4e00d35cb')
+sha256sums=('401056cd3338d292d301e78e3abe4d26602c570aabe03e81ac2fd67e57ed63ac')
 
 package() {
     install -Dm644 sslh "$pkgdir/etc/dinit.d/sslh"
