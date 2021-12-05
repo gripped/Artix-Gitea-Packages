@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=motion-dinit
 pkgver=20211102
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for motion"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('motion' 'dinit')
 conflicts=('init-motion')
 provides=('init-motion')
 source=("motion")
-sha256sums=('20fc05dd94a3379eca0a790125b1c1f851792c8fb288bdd799add4e17ce1235d')
+sha256sums=('fdd4ecc6792248221988bce20be05664a12e8f20a2e6b5a93bb8552ae028c677')
 
 package() {
     install -Dm644 motion "$pkgdir/etc/dinit.d/motion"
