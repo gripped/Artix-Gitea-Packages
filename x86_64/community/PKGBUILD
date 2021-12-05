@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=vnstat-dinit
 pkgver=20211103
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for vnstat"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('vnstat' 'dinit')
 conflicts=('init-vnstat')
 provides=('init-vnstat')
 source=("vnstatd")
-sha256sums=('dacfb0fe135166b5bac161e72a98173b47cdd3dd17a3727f87d24657d668c646')
+sha256sums=('012064a046d42ffc5be6be9a635c868becc5ea5bfc71db0de6263047c6788019')
 
 package() {
     install -Dm644 vnstatd "$pkgdir/etc/dinit.d/vnstatd"
