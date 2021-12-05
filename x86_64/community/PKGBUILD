@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=rspamd-dinit
 pkgver=20211102
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for rspamd"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('rspamd' 'dinit')
 conflicts=('init-rspamd')
 provides=('init-rspamd')
 source=("rspamd")
-sha256sums=('cbe3bd7ad20fcfbcd6dc1c4ca14bb431217975891ede7d2f335e187c35436f90')
+sha256sums=('3e1a4d99052bb52ad590554e82601b971cd67f6bcddafd2414f034505462d63f')
 
 package() {
     install -Dm644 rspamd "$pkgdir/etc/dinit.d/rspamd"
