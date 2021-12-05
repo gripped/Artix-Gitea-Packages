@@ -4,4 +4,3 @@ smooth-recovery = true
 logfile         = /var/log/dinit/jenkins.log
 run-as          = jenkins
 depends-on      = jenkins-pre
-waits-for       = setup
