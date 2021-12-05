@@ -11,11 +11,9 @@ url='https://miniupnp.tuxfamily.org/'
 arch=('x86_64')
 license=('BSD')
 makedepends=('sh' 'glibc' 'lsb-release' 'python' 'python-setuptools')
-source=(https://miniupnp.tuxfamily.org/files/${pkgname}-${pkgver}.tar.gz{,.sig})
-sha512sums=('d322ae2a99faf01bee52f50a40d4bc2150c67a2f7e15b6078fe92faf2aecfe7ce10bd98cef3d94a77f6f7d1f7d8451cf4cdbf6fe11c9e7c1854ee066300b0116'
-            'SKIP')
-b2sums=('76bd18ad455be91a2b7680f59f59828a592077f3694ea5ed0f42222370d9e3d0e328dac1a6d530abcf28586384369d7c858c32fc3105f79cacad762ac5bc70fc'
-        'SKIP')
+source=(https://miniupnp.tuxfamily.org/files/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('d322ae2a99faf01bee52f50a40d4bc2150c67a2f7e15b6078fe92faf2aecfe7ce10bd98cef3d94a77f6f7d1f7d8451cf4cdbf6fe11c9e7c1854ee066300b0116')
+b2sums=('76bd18ad455be91a2b7680f59f59828a592077f3694ea5ed0f42222370d9e3d0e328dac1a6d530abcf28586384369d7c858c32fc3105f79cacad762ac5bc70fc')
 validpgpkeys=(
   '751E9FF6944A3B36A5432216DB511043A31ACAAF' # miniupnp (miniupnp !) <miniupnp@free.fr>
 )
