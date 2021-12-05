@@ -3,4 +3,4 @@ type            = process
 command         = /etc/dinit.d/scripts/lxd
 smooth-recovery = true
 logfile         = /var/log/dinit/lxd.log
-waits-for       = setup
+waits-for       = loginready
