@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=unrealircd-dinit
 pkgver=20211103
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for unrealircd"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('unrealircd' 'dinit')
 conflicts=('init-unrealircd')
 provides=('init-unrealircd')
 source=("unrealircd")
-sha256sums=('9285dc9a0a8d041f254b1897a59d6b9de20880be11299e8109703aa29290f7f9')
+sha256sums=('aa31e58c54c4153cfce93cb3a4e2745b827b2b1fa80abf31b73a1f51b79c3ef3')
 
 package() {
     install -Dm644 unrealircd "$pkgdir/etc/dinit.d/unrealircd"
