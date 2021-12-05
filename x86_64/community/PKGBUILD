@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=redis-dinit
 pkgver=20211102
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for redis"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('redis' 'dinit')
 conflicts=('init-redis')
 provides=('init-redis')
 source=("redis" "redis.script")
-sha256sums=('a426a63d77c31960defe74d83f63b8fdf036cfd954718b5d0c9d852c833ca3d6'
+sha256sums=('58f814f0851b3a8c7c598eb976aafa6f33e19142b035338f7dc738877f9053af'
             'a3f8f07fd059ff58e0da739f3815fad1dddf4b4021157d2d80eda5abdd9cad7d')
 
 package() {
