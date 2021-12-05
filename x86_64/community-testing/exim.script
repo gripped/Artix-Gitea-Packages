@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r /etc/dinit.d/config/exim.conf ] && . /etc/dinit.d/config/exim.conf
-exec exim -bdf -q30m $OPTS
