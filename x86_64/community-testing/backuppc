@@ -1,5 +1,0 @@
-type            = process
-command         = /usr/share/backuppc/bin/BackupPC
-smooth-recovery = true
-run-as          = backuppc
-waits-for       = loginready
