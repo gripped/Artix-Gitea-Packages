@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=tailscale-dinit
 pkgver=20211103
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for tailscale"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ conflicts=('init-tailscale')
 provides=('init-tailscale')
 backup=('etc/dinit.d/config/tailscaled.conf')
 source=("tailscaled" "tailscaled.script" "tailscaled.conf")
-sha256sums=('0fe344a522702aeff3ef479cac5bc1d0b3fa72dd291431a80178cde160191f4a'
+sha256sums=('c7a93699a40f977a9edf13f334308f56d195343af389a45b4aaa5c9e4c203e0a'
             '3dc6f1572b963dc62dd6f4c1bab6cc51c324b1da4cf3fdd083dd71e1dd3987f5'
             '51ba51042e7752ea2262a05939ebee3c9c008b955f655002a53c4aadfc714d2a')
 
