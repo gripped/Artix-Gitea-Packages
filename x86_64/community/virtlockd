@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/virtlockd --verbose
 smooth-recovery = true
 logfile         = /var/log/dinit/virtlockd.log
-waits-for       = setup
+waits-for       = loginready
