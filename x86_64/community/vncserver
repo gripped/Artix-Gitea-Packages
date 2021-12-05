@@ -7,4 +7,4 @@ smooth-recovery = true
 # don't forget to change $DISPLAY here.
 # Also, don't forget to reload the vncserver service before starting.
 pid-file        = /run/vncsession-:0.pid
-waits-for       = setup
+waits-for       = loginready
