@@ -3,7 +3,7 @@
 
 pkgbase=qt5-base
 pkgname=(qt5-base qt5-xcb-private-headers)
-pkgver=5.15.2+kde+r260
+pkgver=5.15.2+kde+r262
 pkgrel=1
 _commit=00e0ffa0297957871ad1f22626524b6bd8e87260
 arch=('x86_64')
