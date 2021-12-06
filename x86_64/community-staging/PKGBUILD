@@ -12,7 +12,7 @@ url='https://cython.org'
 license=(APACHE)
 makedepends=(python-setuptools python2-setuptools)
 source=(https://github.com/cython/cython/archive/$pkgver/$pkgbase-$pkgver.tar.gz)
-sha256sums=('dcee4374bff7a0fbd6802dacaf77b2edb1c1324380f11b8646acae9f9efa4fcc')
+sha256sums=('8e6edf6a3dcce6aae12ce2ae8dbc06f0bef1fb0884e14409d8b4752b9480733f')
 
 prepare() {
   cp -r cython-$pkgver cython2-$pkgver
