@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=fcgiwrap-runit
-pkgver=20200711
-pkgrel=2
+pkgver=20211208
+pkgrel=1
 pkgdesc="runit service scripts for fcgiwrap"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,8 +13,9 @@ groups=('runit-galaxy')
 depends=('fcgiwrap' 'runit')
 conflicts=('init-fcgiwrap')
 provides=('init-fcgiwrap')
-source=("fcgiwrap.run")
-sha256sums=('d2e7a07902d826d257817ffc673f2ae607aa8ba3a51c0d384e95fb14e55fb82d')
+source=("fcgiwrap.run" "fcgiwrap.finish")
+sha256sums=('d2e7a07902d826d257817ffc673f2ae607aa8ba3a51c0d384e95fb14e55fb82d'
+            'd33604ec38f125fc86b948d1332756994e674ae833f49f7315b954f7cb9cf131')
 
 _inst_logsv() {
     for file in run finish check; do
