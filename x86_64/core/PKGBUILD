@@ -2,7 +2,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2021.11.11
+pkgver=2021.12.07
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('x86_64')
@@ -10,11 +10,11 @@ license=('GPL')
 url='https://www.artixlinux.org'
 depends=('iana-etc')
 backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
-        'etc/hosts' 'etc/issue' 'etc/ld.so.conf' 'etc/motd' 'etc/nsswitch.conf'
+        'etc/hosts' 'etc/issue' 'etc/ld.so.conf' 'etc/nsswitch.conf'
         'etc/passwd' 'etc/profile' 'etc/resolv.conf' 'etc/securetty'
         'etc/shadow' 'etc/shells')
 source=('crypttab' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
-        'issue' 'ld.so.conf' 'locale.sh' 'motd' 'nsswitch.conf' 'os-release'
+        'issue' 'ld.so.conf' 'locale.sh' 'nsswitch.conf' 'os-release'
         'passwd' 'profile' 'resolv.conf' 'securetty' 'shadow' 'shells' 'sysctl'
         'sysusers' 'tmpfiles' 'artixlinux.svg' 'artixlinux.png'
         'artixlinux-logo.svg' 'artixlinux-logo.png')
@@ -27,7 +27,6 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'fe86e5d282e55658fdc9c383eabbabb0ba2d791be04814082230ac8a9c056452'
             'dad04a370e488aa85fb0a813a5c83cf6fd981ce01883fc59685447b092de84b5'
             '8ca2d8eef6fb5143c9ef7e9174ccfef59ac7ad2deee243574cd10c763156cc10'
-            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
             'aa4dc5b2374fb32863e3bc1ce20a2de2d34fe4eed1cd63c599bc82fab21463cc'
             'fe9bb5b7ef357e38ef2efb5bee32a0ac495f55cb14d573e0e1b59a6ede43213d'
             '5e06477834f51abf42ea4e8dc199632afc6afbfd8c44354685a271e9a48d2c0a'
@@ -38,7 +37,7 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'c390b31fffc4a2b5d78ae8c89f5317aadef1f71baac09cfb467b675db1406d61'
             '89e43a0b7028f52d5c8e7fb961d962c4b4f4e9595880a6157274ddb2c7c0b6b4'
             'd6b0e95e3cdf663d3383f883301f5ed6cf900cccb7cba0c268ab8f6e78177d16'
-            '618ac097441c1f2daffc9967e5c3cd18ea8866f776db62d04bf401c53907b1c9'
+            'f17efd1c6480c5db1fdab4a0e3cfcd4baa44a3e1ae1210aebeb40f8d5c82f742'
             '7b8fffc06755488931ce2aa4d3f9547be650d9e873323b7171515004d02e83c1'
             'f52db4a98fbfdd6d957068ea0e631240c9a138df859fc43d902bf97b0759459d'
             '02302481e97d88b2bd548bbfe54aadd1611fd3aa09911fd8b7eb1208cde4351d'
@@ -61,7 +60,7 @@ package() {
 
   # setup /etc and /usr/share/factory/etc
   install -d etc/{ld.so.conf.d,skel,profile.d} usr/share/factory/etc
-  for f in fstab group host.conf hosts issue ld.so.conf motd nsswitch.conf \
+  for f in fstab group host.conf hosts issue ld.so.conf nsswitch.conf \
   passwd resolv.conf securetty shells profile; do
     install -m644 "$srcdir"/$f etc/
     install -m644 "$srcdir"/$f usr/share/factory/etc/
