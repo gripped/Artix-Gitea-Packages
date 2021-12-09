@@ -3,16 +3,20 @@
 # Contributor: Gilbert Kennen <gilbert firewatcher org>
 
 pkgname=elixir
-pkgver=1.12.2
+pkgver=1.13.0
 pkgrel=1
+
 pkgdesc="a functional meta-programming aware language built on top of the Erlang VM"
 url="https://elixir-lang.org"
-arch=('any')
 license=('Apache' 'custom:EPL')
+
+arch=('any')
+
 depends=('erlang-nox')
 checkdepends=('git')
+
 source=("$pkgname-$pkgver.tar.gz::https://github.com/elixir-lang/elixir/archive/v$pkgver.tar.gz")
-sha256sums=('701006d1279225fc42f15c8d3f39906db127ddcc95373d34d8d160993356b15c')
+sha256sums=('0ed0fb89a9b6428cd1537b7f9aab1d6ea64e0c5972589eeb46dff6f0324468ae')
 
 build() {
   cd elixir-"$pkgver"
@@ -21,10 +25,10 @@ build() {
 
 check() {
   cd elixir-"$pkgver"
-  ERL_EPMD_PORT=5369 make test ||:
+  ERL_EPMD_PORT=5369 make test
 
   # The elixir test suite starts up epmd and then doesn't kill it again afterwards.
-  epmd -port 5369 -kill ||:
+  epmd -port 5369 -kill
 }
 
 package() {
