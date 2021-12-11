@@ -4,7 +4,7 @@
 
 pkgname=kreversi
 pkgver=21.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A simple one player strategy game played against the computer'
 url='https://apps.kde.org/kreversi/'
 arch=(x86_64)
