@@ -4,7 +4,7 @@
 
 pkgname=kturtle
 pkgver=21.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Educational Programming Environment'
 url='https://apps.kde.org/kturtle/'
 arch=(x86_64)
