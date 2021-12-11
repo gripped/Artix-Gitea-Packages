@@ -3,7 +3,7 @@
 
 pkgname=akonadiconsole
 pkgver=21.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Akonadi management and debugging console'
 arch=(x86_64)
 url='https://kontact.kde.org'
