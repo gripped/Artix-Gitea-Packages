@@ -22,7 +22,7 @@ Server = https://artixlinux.qontinuum.space:4443/$repo/os/$arch
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
 Server = https://mirror.alphvino.com/artix-linux/$repo/os/$arch
 Server = http://artist.artixlinux.org/repos/$repo/os/$arch
-Server = https://mirror.th7;27meanonymouse.xyz/artix-linux/$repo/os/$arch
+Server = https://mirror.theanonymouse.xyz/$repo/os/$arch
 Server = https://mirror1.artixlinux.org/repos/$repo/os/$arch
 Server = https://eu-mirror.artixlinux.org/repos/$repo/os/$arch
 
