@@ -3,7 +3,7 @@
 
 pkgname=gedit
 pkgver=40.1
-pkgrel=1
+pkgrel=3
 pkgdesc="GNOME Text Editor"
 url="https://wiki.gnome.org/Apps/Gedit"
 arch=(x86_64)
@@ -34,7 +34,7 @@ prepare() {
 }
 
 build() {
-  arch-meson $pkgname build \
+  artix-meson $pkgname build \
     -D gtk_doc=true \
     -D require_all_tests=true
   meson compile -C build
