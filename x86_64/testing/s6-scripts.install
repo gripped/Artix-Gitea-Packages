@@ -1,0 +1,18 @@
+post_install() {
+    cryptsetup=$(pacman -Qi cryptsetup-s6 2> /dev/null)
+    if [ "$?" = "0" ]; then
+        echo "cryptsetup" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+    lvm2=$(pacman -Qi lvm2-s6 2> /dev/null)
+    if [ "$?" = "0" ]; then
+        echo "lvm2" >> /etc/s6/sv/mount-filesystems/dependencies
+    fi
+}
+
+post_upgrade() {
+    rm -rf /etc/s6/sv/dmesg
+    post_install
+
+    # just in case there are pacsaves from the removal
+    rm -rf /etc/s6/sv/rc-local
+}
