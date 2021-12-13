@@ -17,6 +17,11 @@ b2sums=('618c3778b8b2170a145ec956cd4721e731cc135d0192e4b1c35b2c93b6b0f0e74085d04
 
 build() {
   cd "${pkgname}-${pkgver}"
+
+  export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+  export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt"
+
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE='None' \
         -DBUILD_TESTING=ON \
