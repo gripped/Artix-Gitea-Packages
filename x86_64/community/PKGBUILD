@@ -7,12 +7,12 @@
 _pkgname=pyudev
 pkgname=python-$_pkgname
 pkgver=0.22
-pkgrel=5.1
+pkgrel=7
 arch=('any')
 url='https://github.com/pyudev/pyudev'
 license=('LGPL')
 pkgdesc='Python bindings to libudev'
-depends=('python-six' 'udev')
+depends=('python-six' 'systemd')
 makedepends=('python-setuptools' 'python-sphinx' 'python-mock')
 checkdepends=('python-pytest-runner' 'python-docutils' 'python-mock' 'python-hypothesis')
 optdepends=('python-pyqt5: PyQt integration'
@@ -49,7 +49,7 @@ build() {
 check() {
   cd $_pkgname-$pkgver
 
-  python setup.py pytest ||:
+  python setup.py pytest
 }
 
 package() {
