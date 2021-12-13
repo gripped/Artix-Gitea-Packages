@@ -1,6 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Hugo Doria <hugo@archlinux.org>
+#
 
 pkgbase=deluge
 pkgname=(deluge deluge-gtk)
@@ -19,9 +20,9 @@ depends=(
   'python-rencode>=1.0.2'
   python-xdg
   python-six
-  'python-zope-interface>=4.4.2' 
-  python-chardet 
-  python-setproctitle 
+  'python-zope-interface>=4.4.2'
+  python-chardet
+  python-setproctitle
   python-pillow
   python-dbus
   python-distro
