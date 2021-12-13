@@ -3,7 +3,7 @@
 
 pkgname=qtermwidget
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A terminal widget for Qt, used by QTerminal"
 arch=("x86_64")
 url="https://github.com/lxqt/$pkgname"
@@ -16,7 +16,8 @@ optdepends=(
 )
 source=(
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
-  "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc")
+  "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
+)
 sha256sums=('2af0e9f212932cb36bbbf20722eaf4a1d3acf640dfed9b763ca7d388af8b7fd2'
             'SKIP')
 validpgpkeys=(
