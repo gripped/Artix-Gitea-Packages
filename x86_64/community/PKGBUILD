@@ -3,7 +3,7 @@
 
 pkgname=cppcheck
 pkgver=2.6
-pkgrel=1
+pkgrel=2
 pkgdesc="A tool for static C/C++ code analysis"
 arch=('x86_64')
 url="http://cppcheck.sourceforge.net/"
@@ -15,10 +15,10 @@ optdepends=('qt5-tools: run cppcheck-gui'
             'clang: for cppcheck-gui integration')
 source=($pkgname-$pkgver.tar.gz::https://github.com/danmar/cppcheck/archive/${pkgver}.tar.gz
         translations-location.patch
-        https://github.com/danmar/cppcheck/commit/8d682884.patch)
-sha1sums=('bf7808d527f9f3543d301c6b0b31d308bf97dfa2'
-          '03b0888438cf92ccdcbf307dbc3c35e65c91b844'
-          'f554bc1f0d9966e232ff13b2929d7a5851009278')
+        8d682884.patch)
+sha256sums=('99f0c5cf58a0072876c4deb114f3f5f798c933b8e459cddb00a061c8bb4dd765'
+            '80e8cd0408f311cb0091c6ef8a453796bc27570167fc522a9e095b5f8e49ca28'
+            '53c93517c6258bb7530df2ab3ea3b76ae62d25f1082691a635f20508b4c1eee6')
 
 prepare() {
    cd "${pkgname}-${pkgver}"
@@ -32,9 +32,9 @@ build() {
    cd "${pkgname}-${pkgver}"
    export CXXFLAGS+=" -DNDEBUG"
 
-   # Manuals
-   xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
-   make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
+   # Doc is broken. Just skip for now.
+   #xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
+   #make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
    pandoc man/manual.md -o man/manual.html -s --number-sections --toc
    pandoc man/reference-cfg-format.md -o man/reference-cfg-format.html -s --number-sections --toc
 
@@ -61,7 +61,8 @@ package() {
 
    cd ..
 
-   install -D -p -m 644 cppcheck.1 "${pkgdir}"/usr/share/man/man1/cppcheck.1
+   # Broken doc.
+   #install -D -p -m 644 cppcheck.1 "${pkgdir}"/usr/share/man/man1/cppcheck.1
    install -D -p -m 755 htmlreport/cppcheck-htmlreport "${pkgdir}"/usr/bin/cppcheck-htmlreport
 
    # Fix location of language files
