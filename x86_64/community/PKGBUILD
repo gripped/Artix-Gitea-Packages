@@ -10,7 +10,7 @@ pkgname=('virtualbox'
          'virtualbox-ext-vnc')
 pkgver=6.1.30
 _tarver=${pkgver}
-pkgrel=1
+pkgrel=3
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL' 'custom')
@@ -58,9 +58,15 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '60-vboxdrv.rules'
         '60-vboxguest.rules'
         'LocalConfig.kmk'
+        'vboxservice.service'
+        'vboxservice-nox.service'
         'vboxdrmclient.path'
+        'vboxdrmclient.service'
+        'vboxweb.service'
         'vboxreload'
         '001-disable-update.patch'
+        '002-python310.patch'
+        '003-pyunicode.patch'
         '005-gsoap-build.patch'
         '006-rdesktop-vrdp-keymap-path.patch'
         '008-no-vboxvideo.patch'
@@ -76,9 +82,15 @@ sha256sums=('3c60a29375549ffc148aaebe859be91b27c19d6fa2deefde1373c4f6da8f18ef'
             'f876e9f55243eded423fda4fc2ffe3b174dca90380a6315f7c9b3cd1c9d07206'
             '033c597e0f5285d2ddb0490868e5b6f945f45c7b1b1152a02a9e6fea438b2c95'
             '3cf42bc6e9e55fd2cb6be7b89c5b98d0f6a2eff6125a9ee7efafaabc35f1de22'
+            'c41a801fe344a4471a7b61a4764d1d857c403e4fb96e2ba6bc89c77a35f2be7a'
+            '01dbb921bd57a852919cc78be5b73580a564f28ebab2fe8d6c9b8301265cbfce'
             '83d8f24bff25bb925083cf39b3195236c6136105e62417712cc3f25b92e14b47'
+            '2beab8de525220fa418c9873f9e0d657ddbad4ff9e4a46d7053e6cd9bc4ce95e'
+            'e6e875ef186578b53106d7f6af48e426cdaf1b4e86834f01696b8ef1c685787f'
             '4001b5927348fe669a541e80526d4f9ea91b883805f102f7d571edbb482a9b9d'
             '9ee947c9b5ec5b25f52d3e72340fc3a57ca6e65a604e15b669ac582a3fb0dc1b'
+            '361a6de4fd91070f3e34d4a59b086a84c8a38c707f44b6db82b658d9076f69ce'
+            '3bb1643a212b9ecb4d75e31add984a6b206f71a9f46f460007812d1ce648c1a0'
             '7d2da8fe10a90f76bbfc80ad1f55df4414f118cd10e10abfb76070326abebd46'
             '13c6ca9be0f91582445fd2a14a8c58a0625a15d9cb98cb6e8c2736d77ea976ab'
             '053bfeee8863f3ffdf2f0e3f9f0d77dc61dd32764700a97a7635fd8611e20491'
@@ -225,6 +237,7 @@ package_virtualbox() {
 
     # install systemd stuff
     install -Dm0644 60-vboxdrv.rules "$pkgdir/usr/lib/udev/rules.d/60-vboxdrv.rules"
+    install -Dm0644 vboxweb.service "$pkgdir/usr/lib/systemd/system/vboxweb.service"
     install -Dm0644 virtualbox.sysusers "$pkgdir/usr/lib/sysusers.d/virtualbox.conf"
 
     # install module reloading shortcut (with a symlink with default helper)
@@ -306,6 +319,8 @@ package_virtualbox-guest-utils() {
     # systemd stuff
     install -Dm0644 60-vboxguest.rules "$pkgdir/usr/lib/udev/rules.d/60-vboxguest.rules"
     install -Dm0644 vboxdrmclient.path "$pkgdir/usr/lib/systemd/system/vboxdrmclient.path"
+    install -Dm0644 vboxdrmclient.service "$pkgdir/usr/lib/systemd/system/vboxdrmclient.service"
+    install -Dm0644 vboxservice.service "$pkgdir/usr/lib/systemd/system/vboxservice.service"
     install -Dm0644 virtualbox-guest-utils.sysusers "$pkgdir/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
     install -Dm0644 VirtualBox-$pkgver/COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
@@ -326,6 +341,7 @@ package_virtualbox-guest-utils-nox() {
     popd
     # systemd stuff
     install -Dm0644 60-vboxguest.rules "$pkgdir/usr/lib/udev/rules.d/60-vboxguest.rules"
+    install -Dm0644 vboxservice-nox.service "$pkgdir/usr/lib/systemd/system/vboxservice.service"
     install -Dm0644 virtualbox-guest-utils.sysusers "$pkgdir/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
     install -Dm0644 "$srcdir/VirtualBox-$pkgver/COPYING" \
