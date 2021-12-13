@@ -9,7 +9,7 @@ pkgname=(gcc gcc-libs gcc-fortran gcc-objc gcc-ada gcc-go lib32-gcc-libs gcc-d)
 pkgver=11.1.0
 _majorver=${pkgver%%.*}
 _islver=0.24
-pkgrel=1
+pkgrel=3
 pkgdesc='The GNU Compiler Collection'
 arch=(x86_64)
 license=(GPL LGPL FDL custom)
@@ -79,8 +79,12 @@ build() {
 
   # using -pipe causes spurious test-suite failures
   # http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48565
-  CFLAGS=${CFLAGS/-pipe/}
-  CXXFLAGS=${CXXFLAGS/-pipe/}
+#   CFLAGS=${CFLAGS/-pipe/}
+#   CXXFLAGS=${CXXFLAGS/-pipe/}
+
+  export CPPFLAGS="-D_FORTIFY_SOURCE=2"
+  export CFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
+  export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -fno-plt"
 
   "$srcdir/gcc/configure" --prefix=/usr \
       --libdir=/usr/lib \
@@ -122,8 +126,8 @@ build() {
 check() {
   cd gcc-build
 
-  # disable libphobos test to avoid segfaults and other unfunny ways to waste my time  
-  sed -i '/maybe-check-target-libphobos \\/d' Makefile 
+  # disable libphobos test to avoid segfaults and other unfunny ways to waste my time
+  sed -i '/maybe-check-target-libphobos \\/d' Makefile
 
   # do not abort on error as some are "expected"
   make -k check || true
