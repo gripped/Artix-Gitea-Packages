@@ -2,7 +2,7 @@
 
 pkgname=gom
 pkgver=0.4
-pkgrel=3
+pkgrel=5
 pkgdesc="A GObject to SQLite object mapper"
 arch=(x86_64)
 url="https://wiki.gnome.org/Projects/Gom"
@@ -24,7 +24,7 @@ prepare() {
 }
 
 build() {
-  arch-meson $pkgname build -D enable-gtk-doc=true
+  artix-meson $pkgname build -D enable-gtk-doc=true
   ninja -C build
 }
 
