@@ -3,8 +3,8 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.47.1
-pkgrel=1
+pkgver=1.48.0
+pkgrel=2
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/matrix-org/synapse"
 arch=('any')
@@ -33,8 +33,8 @@ optdepends=('perl: sync_room_to_group.pl'
 source=("synapse-$pkgver.tar.gz::https://github.com/matrix-org/synapse/archive/v$pkgver.tar.gz"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
-        'tmpfiles-synapse.conf')
-sha256sums=('cc385b6cfeba671bba800c2557ad39063bdd53f70dfb3781c85df7af6f5d064c'
+	'tmpfiles-synapse.conf')
+sha256sums=('182facc856f8d0c0d2d0dd4105fae4f851297167c0ee95c202a3aad9ed86c486'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
