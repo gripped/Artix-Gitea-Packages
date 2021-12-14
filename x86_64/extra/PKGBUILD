@@ -1,7 +1,7 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 
 pkgname=prometheus
-pkgver=2.31.1
+pkgver=2.31.2
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -17,7 +17,7 @@ backup=('etc/prometheus/prometheus.yml')
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers)
 
-sha256sums=('869a8be315721115be628f766ec3ff71aa50f1a027cee776ea54d7ba070a5026'
+sha256sums=('8b6970c9080bc2020f85990886c6e2cb1ad3796f303c88d9b474fe7de20b5f6e'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 build() {
@@ -58,6 +58,12 @@ build() {
     -modcacherw \
     -ldflags "-linkmode external $LDFLAGS" \
     ./cmd/promtool
+}
+
+check() {
+  cd prometheus-$pkgver
+
+  go test -short ./...
 }
 
 package() {
