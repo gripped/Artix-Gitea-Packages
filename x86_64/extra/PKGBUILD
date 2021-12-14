@@ -2,7 +2,7 @@
 
 pkgname=apparmor
 pkgver=3.0.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Mandatory Access Control (MAC) using Linux Security Module (LSM)"
 arch=(x86_64)
 url="https://gitlab.com/apparmor/apparmor"
@@ -130,7 +130,7 @@ package() {
                      SBINDIR="${pkgdir}/usr/bin" \
                      USR_SBINDIR="${pkgdir}/usr/bin" \
                      APPARMOR_BIN_PREFIX="${pkgdir}/usr/lib/apparmor" \
-                     install
+                     install install-systemd
   make -C profiles DESTDIR="${pkgdir}" install
   make -C utils DESTDIR="${pkgdir}" \
                 SBINDIR="${pkgdir}/usr/bin" \
@@ -157,4 +157,7 @@ package() {
   # trick extract_function_variable() in makepkg into not detecting the
   # backup array modification and adding remaining configuration files
   [[ /usr/bin/true ]] && backup=( ${backup[@]} $(find "etc/${pkgname}.d/" -type f | LC_ALL=C sort) )
+
+  # remove unneeded systemd files
+  rm -r $pkgdir/usr/lib/systemd
 }
