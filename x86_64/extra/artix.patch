@@ -1,6 +1,6 @@
---- a/kde-modules/KDEInstallDirs.cmake	2021-01-02 10:03:08.000000000 +0100
-+++ b/kde-modules/KDEInstallDirs.cmake	2021-01-09 14:46:00.023007851 +0100
-@@ -236,7 +236,7 @@
+--- a/kde-modules/KDEInstallDirsCommon.cmake	2021-12-13 11:04:07.524555495 +0100
++++ b/kde-modules/KDEInstallDirsCommon.cmake	2021-12-13 11:09:05.213633299 +0100
+@@ -26,7 +26,7 @@
  # See https://wiki.debian.org/Multiarch
  if((CMAKE_SYSTEM_NAME MATCHES "Linux|kFreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "GNU")
     AND NOT CMAKE_CROSSCOMPILING
