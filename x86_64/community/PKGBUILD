@@ -8,7 +8,7 @@ arch=('any')
 license=('MIT')
 url="https://github.com/pytest-dev/apipkg"
 makedepends=('python-setuptools' 'python-setuptools-scm')
-checkdepends=('python-pytest-runner')
+# checkdepends=('python-pytest-runner')
 source=("https://files.pythonhosted.org/packages/source/a/apipkg/apipkg-$pkgver.tar.gz"
          apipkg-pytest5.patch)
 sha512sums=('828937ca5e203915248fac54db8e7c13f941e006403f2a415c27fa4d1aa114790be3d7b5dd892f528611e5e6dfe75114ee80f4f4589a03c3f789ae6ddfcae0bf'
@@ -24,10 +24,10 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd apipkg-$pkgver
-  python setup.py pytest
-}
+# check() {
+  # cd apipkg-$pkgver
+  # python setup.py pytest
+# }
 
 package() {
   cd apipkg-$pkgver
