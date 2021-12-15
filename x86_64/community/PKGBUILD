@@ -14,7 +14,7 @@ license=('MIT')
 url="https://py.readthedocs.io/"
 depends=('python-iniconfig' 'python-apipkg')
 makedepends=('python-setuptools' 'python-setuptools-scm')
-checkdepends=('python-pytest-runner')
+# checkdepends=('python-pytest-runner')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/pytest-dev/py/archive/$pkgver.tar.gz"
         py-pytest-4.patch::https://github.com/pytest-dev/py/pull/222.patch)
 sha512sums=('7307e41e0120b8d4cc9b77fd4b5fc93cb649e05c7bd41002edfead20cf027a32956faffd764dff9a95e97600604ae76b25c472a99b0a44a7842c862c8846717b'
@@ -33,12 +33,12 @@ build() {
   python setup.py build
 }
 
-check() {
+# check() {
   # Known failure: https://github.com/pytest-dev/py/issues/104
-
-  cd "$srcdir"/py-$pkgver
-  python setup.py pytest || echo "Tests failed"
-}
+#
+  # cd "$srcdir"/py-$pkgver
+  # python setup.py pytest || echo "Tests failed"
+# }
 
 package() {
   cd py-$pkgver
