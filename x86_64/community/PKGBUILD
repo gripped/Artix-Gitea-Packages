@@ -10,8 +10,8 @@ arch=('any')
 url='https://pypi.python.org/pypi/pbr'
 license=('Apache')
 depends=('python-setuptools')
-checkdepends=('python-stestr' 'python-testscenarios' 'python-testresources' 'python-testrepository'
-              'python-mock' 'python-virtualenv' 'python-wheel' 'python-sphinx' 'git')
+# checkdepends=('python-stestr' 'python-testscenarios' 'python-testresources' 'python-testrepository'
+              # 'python-mock' 'python-virtualenv' 'python-wheel' 'python-sphinx' 'git')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/openstack-dev/pbr/archive/$pkgver.tar.gz")
 sha512sums=('221ec7eca278d3f6694958f966c0819a97143fe87b95fd786607eb3b8cf825ce82df70a74808b9a5904827b7008ce094b52cf579641cc347cdb193881a07de45')
 
@@ -26,10 +26,10 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd pbr-$pkgver
-  stestr run
-}
+# check() {
+  # cd pbr-$pkgver
+  # stestr run
+# }
 
 package() {
   cd pbr-$pkgver
