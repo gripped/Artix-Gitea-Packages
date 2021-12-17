@@ -3,8 +3,8 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xapp
-pkgver=2.2.4
-pkgrel=3
+pkgver=2.2.6
+pkgrel=1
 pkgdesc="Common library for X-Apps project"
 arch=('x86_64')
 url="https://github.com/linuxmint/${pkgname}"
@@ -16,8 +16,8 @@ provides=('xapps')
 conflicts=('xapps')
 replaces=('xapps')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('9ede1737d978b308fdcbd63f6b8a4c8e585ff97abe47bd7a58ffc4b3e0e10e6f')
-b2sums=('a2e53123776f3f0739778673d08f165d268f5d632ce57d722ac443a7201c22c14c1c88e08247f6c16dd708a01b2dd566d4bd9d55289d70eb50ba29b8f2a0987d')
+sha256sums=('f3f5ab006383b9c0e231d30f8a0be727d0352fd4733ca3ea168883205793fcfd')
+b2sums=('0ad746c0572ef17bc95e92fb9d1719aafc0c9742325dd4462f843ab4a04bee951ab2cce4bae843b35db24f3de31cdb514ac29191cf7225c7a2a01cb5882fcf04')
 
 build() {
     mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
