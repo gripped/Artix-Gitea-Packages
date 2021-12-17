@@ -1,0 +1,12 @@
+diff -Naur cinnamon-5.0.7-orig/files/usr/share/cinnamon/cinnamon-menu-editor/cme/util.py cinnamon-5.0.7/files/usr/share/cinnamon/cinnamon-menu-editor/cme/util.py
+--- cinnamon-5.0.7-orig/files/usr/share/cinnamon/cinnamon-menu-editor/cme/util.py	2021-11-04 10:04:17.000000000 -0300
++++ cinnamon-5.0.7/files/usr/share/cinnamon/cinnamon-menu-editor/cme/util.py	2021-12-17 15:49:20.953284814 -0300
+@@ -19,7 +19,7 @@
+ import os
+ import xml.dom.minidom
+ import uuid
+-from collections import Sequence
++from collections.abc import Sequence
+ from gi.repository import Gtk, GdkPixbuf, CMenu, GLib, Gdk
+ 
+ DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
