@@ -4,8 +4,8 @@
 # Contributor: Jan de Groot <jan@archlinux.org>
 
 pkgname=cinnamon-desktop
-pkgver=5.0.0
-pkgrel=2
+pkgver=5.2.0
+pkgrel=1
 pkgdesc="Library with common API for various Cinnamon modules"
 arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
@@ -14,10 +14,10 @@ depends=(accountsservice gtk3 libxkbfile libpulse)
 makedepends=(meson samurai gobject-introspection intltool)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
         config.patch)
-sha256sums=('3fa2bcfe24f370b6a4ac5fc9aa6b08d8a191f23264eaacfd8264ff5bb6a67f24'
-            '45f403e6fe4ec701a0f3d16e990bb36598dd4a58fac5a374f85ccecdf74dd98a')
-b2sums=('955fea37ceca3d5ee33ab94aaa4e22cb6973fc87a53f05486cd16e7d05e6e0a5ca7d548f68544fbc13ecebe2f59aee07db73b0db2e810d020730f77f05843cf4'
-        '40efc9c24e1011239f68734c6c0a9459dab95d4330d8c712e674c7d1e99dd01b60833667b52d0ad8c58b31469eee349757ed4c44e4589b6fbfd7236c1499d28b')
+sha256sums=('3af13e687821cfd5af1989070db1240f72fe4c12995780ea6935946eb153ca39'
+            '31d2a15e1fefce81447e087426215a49496fe8cedb3e143208e97362d535e92c')
+b2sums=('e9175230a482ae68bd5b22ce5e3dbba053494d7872c75089a0bd7922fb59e8a0787863b5ae962bca4f4d3a1ed8490c5f33d3c420c1984ce47ddb9cde6476afa6'
+        'e119a0a464e88f5d432c43dd1d79c4445dc37cc2ede9d2b284351aefd02fe54afc9d4a51d84d83f879f6d7abab8db1f4df646e21f161c3cd49addf5342222394')
 
 prepare() {
   cd ${pkgname}-${pkgver}
