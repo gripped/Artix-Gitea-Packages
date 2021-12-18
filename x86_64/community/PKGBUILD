@@ -21,7 +21,6 @@ source=(https://www.unrealircd.org/unrealircd4/unrealircd-$pkgver.tar.gz{,.asc}
 	source-date-epoch.patch)
 sha256sums=('9b71cd18a7ae61d9515d240eccdc08ac0796528c41266e7514c97d8009cc6c05'
             'SKIP'
-            '0a6d3c269ba5379f967b2ec035ad4c6226d42ce22ffaaf8c3e5b37ba8ee02ddd'
             '75360541bc3aec9c1241c75e0ce60214c65cb618ffe5ca77144f01651ef5ab5b'
             '9e595176e63b301476982b1456d6ed065c479ff913b6743417ab8a9efdda0e3a'
             '43f07093ada8eb5c954f9e2e189610575906c690c0953fec041d4f2d31210d85'
