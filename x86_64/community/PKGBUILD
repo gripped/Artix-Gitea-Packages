@@ -4,7 +4,7 @@
 
 pkgname=python-google-api-core
 pkgver=2.3.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Google API client core library"
 arch=('any')
 url="https://github.com/googleapis/googleapis"
@@ -22,4 +22,8 @@ build() {
 package() {
   cd "google-api-core-${pkgver}"
   python setup.py install --root="$pkgdir" --optimize=1
+
+  chmod -R 644 "$pkgdir"/usr/lib/python3.10/site-packages/google_api_core-2.3.2-py3.10.egg-info/
+  chmod 755 "$pkgdir"/usr/lib/python3.10/site-packages/google_api_core-2.3.2-py3.10.egg-info
+  chmod 644 "$pkgdir"/usr/lib/python3.10/site-packages/google/api_core/py.typed
 }
