@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2021-12-12
+## Generated on 2021-12-22
 ##
 
 # Artix mirrors
@@ -41,3 +41,4 @@ Server = https://us-mirror.artixlinux.org/$repo/os/$arch
 Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch
 Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
 Server = https://mirror.funami.tech/artix/$repo/os/$arch
+Server = https://mirrors.aliyun.com/artixlinux/$repo/os/$arch
