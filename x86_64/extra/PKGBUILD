@@ -1,6 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Anatol Pomozov <anatol dot pomozov at gmail>
+#
 
 pkgname=meson
 pkgver=0.60.3
@@ -59,5 +60,3 @@ package() {
   # transition symlink Artix packaging helper
   ln -sfv arch-meson "${pkgdir}"/usr/bin/artix-meson
 }
-
-# vim:set sw=2 et:
