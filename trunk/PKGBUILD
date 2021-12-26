@@ -22,7 +22,7 @@ optdepends=(
 )
 options=(!lto)
 _tag=cb1f4426e7932caf0c7a0c704d35b2090d711b2f # git rev-parse v${pkgver}
-source=("git+https://github.com/go-gitea/gitea.git#tag=${_tag}?signed"
+source=("git+https://github.com/go-gitea/gitea.git#tag=${_tag}"
         gitea.tmpfiles
         gitea.sysusers)
 sha256sums=(SKIP
