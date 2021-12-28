@@ -14,7 +14,7 @@ makedepends=(git cmake clang lld llvm python libunwind)
 options=(!emptydirs !lto)
 source=(${url}/archive/igc-${pkgver}.tar.gz
         ${pkgname}-fix-lld-prebuilt.patch::https://github.com/intel/intel-graphics-compiler/pull/210.patch
-        ${pkgname}-fix-missing-limits.patch::https://github.com/intel/intel-graphics-compiler/pull/220.patch
+        ${pkgname}-fix-missing_limits.patch::https://github.com/intel/intel-graphics-compiler/pull/220.patch
         git+https://github.com/intel/vc-intrinsics.git#commit=8ee879314584e6630688b0a3b290d065dcabb383
         git+https://github.com/KhronosGroup/SPIRV-Tools.git
         git+https://github.com/KhronosGroup/SPIRV-Headers.git)
@@ -28,7 +28,7 @@ sha256sums=('be8d1b162b838da8eb141ef103e136874c4542a8c80f3d1fd0f27ce1aadaf485'
 prepare() {
   cd ${pkgname}-igc-${pkgver}
   patch -p1 < ../${pkgname}-fix-lld-prebuilt.patch
-  patch -p1 < ../${pkgname}-fix-missing-limits.patch
+  patch -p1 < ../${pkgname}-fix-missing_limits.patch
 }
 
 build() {
