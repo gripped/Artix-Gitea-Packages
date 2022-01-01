@@ -3,7 +3,7 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xapp
-pkgver=2.2.6
+pkgver=2.2.8
 pkgrel=1
 pkgdesc="Common library for X-Apps project"
 arch=('x86_64')
@@ -16,8 +16,8 @@ provides=('xapps')
 conflicts=('xapps')
 replaces=('xapps')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('f3f5ab006383b9c0e231d30f8a0be727d0352fd4733ca3ea168883205793fcfd')
-b2sums=('0ad746c0572ef17bc95e92fb9d1719aafc0c9742325dd4462f843ab4a04bee951ab2cce4bae843b35db24f3de31cdb514ac29191cf7225c7a2a01cb5882fcf04')
+sha256sums=('81ea67e0015cf973da019e8f805312ba744d0d86b248b57472f588d9bf2ea9be')
+b2sums=('cea0999a544143b8bfdd77cfb19ac794806cf7f20ce85a16d682227c164633fdcd4aacddf0235ade19732007cccc62e789f420081b0094f890b41e703ec96ff1')
 
 build() {
     mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
