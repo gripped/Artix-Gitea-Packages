@@ -4,6 +4,7 @@ pkgbase=libadwaita
 pkgname=(libadwaita libadwaita-docs libadwaita-demos)
 pkgver=1.0.0
 pkgrel=1
+epoch=1
 pkgdesc="Building blocks for modern adaptive GNOME applications"
 url="https://gnome.pages.gitlab.gnome.org/libadwaita/"
 arch=(x86_64)
