@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2021-12-30
+## Generated on 2022-01-02
 ##
 
 # Artix mirrors
@@ -34,6 +34,10 @@ Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
 Server = https://mirrors.nettek.us/artix-linux/$repo/os/$arch
 Server = https://us-mirror.artixlinux.org/$repo/os/$arch
+
+
+## South America
+Server = https://mirror1.cl.netactuate.com/artix/repos/$repo/os/$arch
 
 
 ## Asia
