@@ -11,7 +11,7 @@ arch=(x86_64)
 url='https://cython.org'
 license=(APACHE)
 makedepends=(python-setuptools python2-setuptools)
-source=(https://github.com/cython/cython/archive/$pkgver/$pkgbase-$pkgver.tar.gz)
+source=($pkgbase-$pkgver-$pkgrel.tar.gz::https://github.com/cython/cython/archive/$pkgver/$pkgbase-$pkgver.tar.gz)
 sha256sums=('bb72b2f0ef029472759c711f0a4bded6e15e3f9bda3797550cef3c1d87d02283')
 
 prepare() {
