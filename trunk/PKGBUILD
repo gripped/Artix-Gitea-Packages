@@ -13,8 +13,8 @@ arch=(x86_64)
 depends=(gtkmm3 libsigc++ pulseaudio)
 makedepends=(meson lynx tidy git)
 _commit=d70f061e1703c53aa327d3e836222e47dde86204  # tags/v1.2^0
-source=("git+https://gitlab.freedesktop.org/pulseaudio/paprefs.git#tag=v${pkgver}")
-sha512sums=('SKIP')
+source=("https://gitlab.freedesktop.org/pulseaudio/paprefs/-/archive/v${pkgver}/paprefs-v${pkgver}.tar.gz")
+sha512sums=('3b711cf51bf6f7036dd8a7bcee68edb253d8ed8ad8d6b1bacc980bb1bcfa747cf67ecf44b55861ab277d12b0860c608ccfe9c5b0350bc5aa8364e0efa6dd0c68')
 
 pkgver() {
   cd paprefs
