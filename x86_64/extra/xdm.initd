@@ -12,4 +12,5 @@ depend() {
     before alsasound
 
     use logind dbus xfs
+    provide display-manager
 }
