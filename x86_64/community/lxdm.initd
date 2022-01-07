@@ -14,5 +14,5 @@ depend() {
 
     use xfs
 
-    provide xdm
+    provide xdm display-manager
 }
