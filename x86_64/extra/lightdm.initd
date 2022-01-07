@@ -12,5 +12,5 @@ depend() {
     before alsasound
     want logind
     use xfs
-    provide xdm
+    provide xdm display-manager
 }
