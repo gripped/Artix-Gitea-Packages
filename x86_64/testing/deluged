@@ -1,6 +1,0 @@
-type            = process
-command         = /usr/bin/deluged -d
-smooth-recovery = true
-logfile         = /var/log/dinit/deluged.log
-run-as          = deluge
-waits-for       = loginready
