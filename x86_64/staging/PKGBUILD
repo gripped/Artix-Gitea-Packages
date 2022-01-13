@@ -16,14 +16,14 @@ makedepends=(
 )
 _tag=e1f315f5358d9db5cee35a7a2886425489fcefe8
 source=(
-  git+https://codeberg.org/soundtouch/soundtouch.git#tag=${_tag}
+  Soundtouch::git+https://codeberg.org/soundtouch/soundtouch.git#tag=${_tag}
   soundtouch-cmake.patch
 )
 b2sums=('SKIP'
         '9eed09dc451c4e216a322211622e96757671613a4ba8231a699e32a50764eee4072837df697205dea87ef66a4d4d3105418451bec9cbe4f077ab55718ab374dd')
 
 prepare() {
-  cd soundtouch
+  cd Soundtouch
   # install autotools files
   patch -Np1 -i ../soundtouch-cmake.patch
   # cmake doesn't generate files for autotools
@@ -32,12 +32,12 @@ prepare() {
 }
 
 pkgver() {
-  cd soundtouch
+  cd Soundtouch
   git describe --tags
 }
 
 build() {
-  cmake -S soundtouch -B build -G Ninja \
+  cmake -S Soundtouch -B build -G Ninja \
     -DCMAKE_BUILD_TYPE='' \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_SHARED_LIBS=ON
