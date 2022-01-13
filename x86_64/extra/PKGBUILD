@@ -3,7 +3,7 @@
 
 pkgbase=wireplumber
 pkgname=(wireplumber wireplumber-docs)
-pkgver=0.4.6
+pkgver=0.4.7
 pkgrel=1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
@@ -12,8 +12,18 @@ arch=(x86_64)
 makedepends=(meson doxygen graphviz 'pipewire>=0.3.43' glib2 lua
              gobject-introspection python-sphinx python-sphinx_rtd_theme
              python-breathe python-lxml)
-source=("https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/${pkgver}/${pkgbase}-${pkgver}.tar.gz")
-sha256sums=('3eb3ef519490b4c7b51712bc6e44bb4ba63f550c49654cfc8ad6c400eaa1aa2c')
+_commit=afb177b5e0840d54dc41d02920702c3c9580ce02  # tags/0.4.7
+source=("$pkgbase::git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgbase
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd $pkgbase
+}
 
 build() {
   local meson_options=(
@@ -22,7 +32,7 @@ build() {
     -D systemd=disabled
   )
 
-  artix-meson $pkgbase-$pkgver build "${meson_options[@]}"
+  artix-meson $pkgbase build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -60,7 +70,7 @@ package_wireplumber-docs() {
 
   mv docs/* "$pkgdir"
 
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase-$pkgver/LICENSE
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
 
 # vim:set sw=2 et:
