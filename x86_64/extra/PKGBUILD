@@ -58,19 +58,18 @@ package_wireplumber() {
   conflicts=(pipewire-media-session)
 
   meson install -C build --destdir "$pkgdir"
-
+  
   _pick docs "$pkgdir"/usr/share/doc
-
-  install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase-$pkgver/{NEWS,README}*
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase-$pkgver/LICENSE
+  
+  install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase/{NEWS,README}*
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
 
 package_wireplumber-docs() {
   pkgdesc+=" - documentation"
-
+  
   mv docs/* "$pkgdir"
-
+  
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
-
 # vim:set sw=2 et:
