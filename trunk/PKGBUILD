@@ -2,6 +2,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
+
 pkgname=krunner
 pkgver=5.90.0
 pkgrel=1
