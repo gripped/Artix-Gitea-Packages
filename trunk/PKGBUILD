@@ -1,6 +1,6 @@
 # Maintainer: Tim Meusel <tim@bastelfreak.de>
 
-pkgname="ruby-${_gemname}"
+pkgname="ruby-faraday-patron"
 pkgver=2.0.1
 pkgrel=1
 pkgdesc='About Faraday adapter for Patron'
