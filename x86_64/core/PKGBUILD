@@ -2,6 +2,7 @@
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Keshav Amburay <(the ddoott ridikulus ddoott rat) (aatt) (gemmaeiil) (ddoott) (ccoomm)>
 
+
 pkgname=efivar
 pkgdesc="Tools and libraries to work with EFI variables"
 pkgver=38
