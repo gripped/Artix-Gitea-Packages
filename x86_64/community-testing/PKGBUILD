@@ -37,6 +37,8 @@ makedepends+=('ncurses')
 makedepends+=('readline' 'zlib' 'libelf' 'libcap' 'python-docutils')
 # turbostat deps
 makedepends+=('libcap')
+# fixme: llvm deps
+makedepends+=('clang' 'llvm')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
 #        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
