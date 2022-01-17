@@ -1,38 +1,37 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org> 
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Contributor: Lennard Hofmann
+
 pkgname=wf-recorder
 pkgver=0.2.1
-pkgrel=1.2
-pkgdesc="Screen recorder for wlroots-based compositors"
-arch=('i686' 'x86_64')
-url='https://github.com/ammen99/wf-recorder'
-license=(MIT)
-depends=('ffmpeg' 'ocl-icd')
-makedepends=('meson' 'wayland-protocols' 'ninja' 'scdoc' 'opencl-headers' 'git')
-optdepends=(
-	"slurp: limit recording to a part of the screen"
+pkgrel=2
+pkgdesc="Screen recorder for wlroots-based compositors such as sway"
+arch=("x86_64")
+url="https://github.com/ammen99/wf-recorder"
+license=('MIT')
+depends=(
+	'ffmpeg'
+	'ocl-icd'
 )
-source=("git+https://github.com/ammen99/wf-recorder.git#tag=v${pkgver}"
-	"check_buffers.patch::${url}/commit/bfa12936d49ed58bbe3d65cd17df104ac3e67279.patch")
-sha256sums=('SKIP'
-            '7aeafbdaebe8b28b328f3a14f47f274dfc8ed5b7d15c25d0d7153fc059cf0fec')
-
-prepare() {
-	cd "$pkgname"
-	if [ -f "$srcdir"/*.patch ]; then
-	for _patch in "$srcdir"/*.patch ; do
-		git apply --stat "$_patch"
-	done
-	fi
-}
+makedepends=(
+	'meson'
+	'opencl-headers'
+	'scdoc'
+	'wayland-protocols'
+)
+optdepends=(
+	'slurp: Select a region to record'
+)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/ammen99/wf-recorder/archive/v$pkgver.tar.gz")
+sha256sums=('45cf04cf58cf241c22fa2fbb70481a3747ad33e6930e4bdba7b9cc7018789ad1')
 
 build() {
-	cd "$pkgname"
-	meson -Dwerror=false --prefix /usr "$srcdir/build" --buildtype=release
-	ninja -C "$srcdir/build"
+	meson "$pkgname-$pkgver" build \
+		--prefix=/usr \
+		--buildtype=plain
+	ninja -C build
 }
 
 package() {
-	cd "$pkgname"
-	DESTDIR="$pkgdir" ninja -C "$srcdir/build" install
-	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	DESTDIR="$pkgdir/" ninja -C build install
+	install -Dm644 "$pkgname-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname"
 }
