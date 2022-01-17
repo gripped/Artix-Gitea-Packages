@@ -5,7 +5,7 @@
 pkgname=sway
 pkgver=1.6.1
 epoch=1
-pkgrel=2
+pkgrel=3
 pkgdesc='Tiling Wayland compositor and replacement for the i3 window manager'
 arch=(x86_64)
 url='https://swaywm.org/'
@@ -47,13 +47,13 @@ validpgpkeys=('34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48'  # Simon Ser
 prepare() {
   cd "$pkgname-$pkgver"
 
-  # Set the version information to 'Artix Linux' instead of 'makepkg'
-  sed -i "s/branch \\\'@1@\\\'/Artix Linux/g" meson.build
+  # Set the version information to 'Arch Linux' instead of 'makepkg'
+  sed -i "s/branch \\\'@1@\\\'/Arch Linux/g" meson.build
 }
 
 build() {
   mkdir -p build
-  arch-meson build "$pkgname-$pkgver" -D sd-bus-provider=libelogind -D werror=false -D b_ndebug=true
+  artix-meson build "$pkgname-$pkgver" -D sd-bus-provider=libelogind -D werror=false -D b_ndebug=true
   ninja -C build
 }
 
