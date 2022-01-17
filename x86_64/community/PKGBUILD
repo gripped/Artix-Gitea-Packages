@@ -6,8 +6,8 @@
 
 pkgname=(libvirt libvirt-storage-gluster libvirt-storage-iscsi-direct libvirt-storage-rbd)
 epoch=1
-pkgver=7.10.0
-pkgrel=2
+pkgver=8.0.0
+pkgrel=1
 pkgdesc="API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)"
 arch=('x86_64')
 url="https://libvirt.org/"
@@ -30,21 +30,6 @@ optdepends=('libvirt-storage-gluster: Gluster storage backend'
             'open-iscsi: iSCSI support via iscsiadm')
 
 backup=(
-  'etc/conf.d/libvirtd'
-  'etc/conf.d/libvirt-guests'
-  'etc/conf.d/virtchd'
-  'etc/conf.d/virtinterfaced'
-  'etc/conf.d/virtlockd'
-  'etc/conf.d/virtlogd'
-  'etc/conf.d/virtlxcd'
-  'etc/conf.d/virtnetworkd'
-  'etc/conf.d/virtnodedevd'
-  'etc/conf.d/virtnwfilterd'
-  'etc/conf.d/virtproxyd'
-  'etc/conf.d/virtqemud'
-  'etc/conf.d/virtsecretd'
-  'etc/conf.d/virtstoraged'
-  'etc/conf.d/virtvboxd'
   'etc/libvirt/libvirt-admin.conf'
   'etc/libvirt/libvirt.conf'
   'etc/libvirt/libvirtd.conf'
@@ -96,18 +81,13 @@ backup=(
   'etc/sasl2/libvirt.conf'
 )
 source=("https://libvirt.org/sources/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('cb318014af097327928c6e3d72922e3be02a3e6401247b2aa52d9ab8e0b480f9'
+sha256sums=('51e6e8ff04bafe96d7e314b213dcd41fb1163d9b4f0f75cdab01e663728f4cf6'
             'SKIP')
 validpgpkeys=('453B65310595562855471199CA68BE8010084C9C') # Jiří Denemark <jdenemar@redhat.com>
 
 prepare() {
   cd "$pkgname-$pkgver"
 
-  sed -i 's|/sysconfig/|/conf.d/|g' \
-    src/remote/libvirtd.service.in \
-    tools/{libvirt-guests.service,libvirt-guests.sh,virt-pki-validate}.in \
-    src/locking/virtlockd.service.in \
-    src/logging/virtlogd.service.in
   sed -i 's|/usr/libexec/qemu-bridge-helper|/usr/lib/qemu/qemu-bridge-helper|g' \
     src/qemu/qemu.conf \
     src/qemu/test_libvirtd_qemu.aug.in
