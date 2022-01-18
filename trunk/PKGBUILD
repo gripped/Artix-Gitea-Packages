@@ -9,7 +9,8 @@ pkgdesc="Display manager and login screen"
 url="https://wiki.gnome.org/Projects/GDM"
 arch=(x86_64)
 license=(GPL)
-depends=(gnome-shell gnome-session upower xorg-xrdb xorg-server xorg-xhost
+# TODO: add gnome-shell back as a dependency instead of accountsservice
+depends=(accountsservice gnome-session upower xorg-xrdb xorg-server xorg-xhost
          libxdmcp elogind)
 makedepends=(yelp-tools gobject-introspection git docbook-xsl meson)
 checkdepends=(check)
