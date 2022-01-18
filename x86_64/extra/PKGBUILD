@@ -4,7 +4,7 @@
 pkgbase=gdm
 pkgname=(gdm libgdm)
 pkgver=41.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Display manager and login screen"
 url="https://wiki.gnome.org/Projects/GDM"
 arch=(x86_64)
@@ -117,7 +117,7 @@ END
 
 package_libgdm() {
   pkgdesc+=" - support library"
-  depends=(libsystemd.so libg{lib,object,io}-2.0.so)
+  depends=(libelogind.so libg{lib,object,io}-2.0.so)
   provides=(libgdm.so)
 
   mv libgdm/* "$pkgdir"
