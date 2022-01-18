@@ -3,14 +3,14 @@
 _gemname='rack-test'
 pkgname="ruby-${_gemname}"
 pkgver=1.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='small, simple testing API for Rack apps'
 arch=('any')
 url='https://github.com/rack/rack-test'
 license=('MIT')
 depends=('ruby' 'ruby-rack')
 makedepends=('ruby-rdoc' 'ruby-rake')
-#checkdepends=('ruby-rspec' 'ruby-sinatra')
+checkdepends=('ruby-rspec' 'ruby-sinatra')
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz" 'disable-rubocop.patch' 'disable-simplecov.patch' 'disable-broken-test.patch')
 sha512sums=('36d947d9b13d33ee8322e5b9d18fe8266787ccb7703f1fafadc040123e34dd44e98e7faf8b6dd816e51ed167065b2ffe79e9bcee74564dc324ba2b7dba76f82a'
@@ -39,10 +39,10 @@ build() {
   gem build "${_gemname}.gemspec"
 }
 
-# check() {
-  # cd "${srcdir}/${_gemname}-${pkgver}"
-  # rake spec
-# }
+check() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  rake spec
+}
 
 package() {
 cd "${srcdir}/${_gemname}-${pkgver}"
