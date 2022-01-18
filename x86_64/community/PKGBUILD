@@ -88,7 +88,8 @@ package() {
 
   cd "$pkgname"
 
-  install -vDm644 -t "$pkgdir/usr/share/man/man1" cppcheck.1
+  # Broken doc.
+  #install -vDm644 -t "$pkgdir/usr/share/man/man1" cppcheck.1
   install -vDm755 -t "$pkgdir/usr/bin" htmlreport/cppcheck-htmlreport
 
   # Fix location of language files
