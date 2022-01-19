@@ -4,7 +4,7 @@
 
 pkgname=geary
 pkgver=40.0
-pkgrel=5.1
+pkgrel=6
 epoch=1
 pkgdesc='A lightweight email client for the GNOME desktop'
 arch=(x86_64)
@@ -58,6 +58,11 @@ pkgver() {
   git describe --tags | sed 's/^gnome-//g'
 }
 
+prepare() {
+  cd geary
+  git cherry-pick -n b8babd4aba65c85e3e4e9f0d6b5d827d220096de # fix contact auto-completion
+}
+
 build() {
   artix-meson geary build \
     -Dprofile=release
@@ -65,7 +70,8 @@ build() {
 }
 
 package() {
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build \
+    --destdir "${pkgdir}"
 }
 
 # vim: ts=2 sw=2 et:
