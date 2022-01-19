@@ -3,7 +3,7 @@
 
 pkgname=power-profiles-daemon
 pkgver=0.10.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Makes power profiles handling available over D-Bus'
 url='https://gitlab.freedesktop.org/hadess/power-profiles-daemon'
 license=(GPL3)
@@ -20,6 +20,7 @@ build() {
   meson $pkgname-$pkgver build \
     --prefix /usr \
     --libexec lib \
+    --sysconfdir /usr/share \
     -Dsystemdsystemunitdir=/usr/lib/systemd
   meson compile -C build
 }
