@@ -5,7 +5,7 @@
 
 pkgname=rspamd
 pkgver=3.1
-pkgrel=2
+pkgrel=3
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
@@ -132,14 +132,7 @@ b2sums=('SKIP'
 
 pkgver() {
   cd rspamd
-
   git describe --tags
-}
-
-prepare() {
-  cd rspamd
-
-  sed 's/_rspamd/rspamd/g' -i rspamd.service
 }
 
 build() {
@@ -159,8 +152,7 @@ build() {
 }
 
 package() {
-  DESTDIR="${pkgdir}" cmake --build build --target install
-
+  DESTDIR="${pkgdir}" cmake --install build
   install -Dm 644 rspamd/LICENSE.md -t "${pkgdir}"/usr/share/licenses/rspamd
   install -Dm 644 rspamd.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/rspamd.conf
   install -Dm 644 rspamd.sysusers "${pkgdir}"/usr/lib/sysusers.d/rspamd.conf
