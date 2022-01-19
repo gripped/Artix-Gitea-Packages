@@ -21,7 +21,7 @@ depends=('libwebp' 'python-ijson' 'python-jsonschema' 'python-twisted'
          'python-treq' 'python-idna' 'python-jinja' 'python-matrix-common')
 makedepends=('python-setuptools')
 checkdepends=('python-authlib' 'python-pyjwt' 'python-lxml' 'python-parameterized'
-              'python-txredisapi' 'python-hiredis')
+              'python-txredisapi' 'python-hiredis' 'python-bleach')
 optdepends=('perl: sync_room_to_group.pl'
             'python-psycopg2: PostgreSQL support'
             'python-lxml: URL previewing'
