@@ -3,12 +3,12 @@
 
 pkgname=libinput
 pkgver=1.19.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Input device management and event handling library"
 url="https://www.freedesktop.org/wiki/Software/libinput/"
 arch=(x86_64)
 license=(custom:X11)
-depends=('mtdev' 'udev' 'libevdev' 'libwacom')
+depends=('mtdev' 'eudev' 'libevdev' 'libwacom')
 # upstream doesn't recommend building docs
 makedepends=('gtk3' 'meson' 'wayland-protocols') # 'doxygen' 'graphviz' 'python-sphinx' 'python-recommonmark'
 optdepends=('gtk3: libinput debug-gui'
