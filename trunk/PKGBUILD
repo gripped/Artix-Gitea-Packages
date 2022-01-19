@@ -41,11 +41,11 @@ optdepends=(
   'lib32-pipewire: PipeWire audio driver'
 )
 _tag=b424665e0899769b200231ba943353a5fee1b6b6
-source=(git+https://github.com/libsdl-org/SDL.git#tag=${_tag})
+source=(lib32-SDL::git+https://github.com/libsdl-org/SDL.git#tag=${_tag})
 b2sums=(SKIP)
 
 pkgver() {
-  cd SDL
+  cd lib32-SDL
   git describe --tags | sed 's/^release-//'
 }
 
@@ -54,7 +54,7 @@ build() {
   export CXX='g++ -m32'
   export CFLAGS+=" -ffat-lto-objects"
   export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
-  cmake -S SDL -B build -G Ninja \
+  cmake -S lib32-SDL -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib32 \
     -DSDL_DLOPEN=ON \
