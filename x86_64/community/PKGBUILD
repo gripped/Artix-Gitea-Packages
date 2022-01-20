@@ -4,7 +4,7 @@
 
 pkgname=cinnamon-menus
 pkgver=5.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Cinnamon menu specifications"
 arch=(x86_64)
 url="https://github.com/linuxmint/cinnamon-menus"
