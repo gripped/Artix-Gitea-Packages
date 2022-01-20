@@ -4,27 +4,17 @@
 
 pkgname=cjs
 pkgver=5.2.0
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Javascript Bindings for Cinnamon"
 arch=('x86_64')
 url="https://github.com/linuxmint/${pkgname}"
 license=('GPL')
 depends=('gtk3' 'gobject-introspection-runtime' 'js78')
-makedepends=('meson' 'samurai' 'gobject-introspection' 'sysprof' 'ninja')
+makedepends=('meson' 'samurai' 'gobject-introspection')
 checkdepends=('xorg-server-xvfb')
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
-		"meson.patch")
-sha512sums=('0ce5cc07be036fa9af93c7d98a179881789f883578a2034c3c28255ef9da96d32b4203fc39311eaea0bdbe5148f13920d72dd24acb717c4e60302b390097a825'
-            '2b9f368899401a73c126a2dbcff527e258f17ccf8d0c4c8d754bb8177672b7f1fb9d1363a0df3e4534dc9eadbc8964bdecac36dfd3ead3ccdf3e7f4424b111c1')
-b2sums=('99fe183add425e5178863aa6b0af6aa0579de0dabee72ad9bcc86e2edf0ad13093ce659ac60ed365edb33ff1eb54d54766a7e0df1a65aa64b7da34e5559297c7'
-        '759d06f277bdb4fcea773e61ebd5e44bb797f429d2ca33aeebf225f2ea585225ad72569cccc3301a1ff663b10a749fe1b55fefdbe652be076d48a14db4d0a4d3')
-
-prepare() {
-  cd ${pkgname}-${pkgver}
-  
-  # upstream patch to fix newever version of meson
-  patch -Np1 -i ../meson.patch
-}
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
+sha512sums=('0ce5cc07be036fa9af93c7d98a179881789f883578a2034c3c28255ef9da96d32b4203fc39311eaea0bdbe5148f13920d72dd24acb717c4e60302b390097a825')
+b2sums=('99fe183add425e5178863aa6b0af6aa0579de0dabee72ad9bcc86e2edf0ad13093ce659ac60ed365edb33ff1eb54d54766a7e0df1a65aa64b7da34e5559297c7')
 
 build() {
     mkdir -p "${srcdir}"/${pkgname}-${pkgver}/builddir
@@ -36,7 +26,7 @@ build() {
           -Dinstalled_tests=false \
           ..
 
-    ninja
+    samu
 }
 
 check() {
