@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python-josepy
+pkgver=1.12.0
+pkgrel=1
+pkgdesc="JOSE protocol implementation in Python"
+url="https://github.com/certbot/josepy"
+license=('PerlArtistic')
+arch=('any')
+depends=('python-cryptography' 'python-pyopenssl' 'python-setuptools')
+checkdepends=('python-pytest')
+source=("https://pypi.io/packages/source/j/josepy/josepy-$pkgver.tar.gz")
+sha512sums=('7a5257d4a75feed65ff3abfd472e8f1c9cc81b62e27365d776d0f25e1efd94ae46374060ea463b9f04fe5e9577672bf2ab8dc8d6371cb8d01a4765921930e01b')
+
+prepare() {
+  # thou shalt not enforce coverage in distro packaging
+  # https://github.com/certbot/josepy/issues/34
+  rm josepy-$pkgver/pytest.ini
+}
+
+build() {
+  cd josepy-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd josepy-$pkgver
+  PYTHONPATH="$PWD/build/lib" pytest
+}
+
+package() {
+  cd josepy-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
