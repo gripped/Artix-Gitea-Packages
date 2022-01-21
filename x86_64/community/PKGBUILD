@@ -11,7 +11,7 @@ depends=('python-ansiwrap' 'python-asteval' 'python-colorama' 'python-cryptograp
          'python-parsedatetime' 'python-dateutil' 'python-pyxdg' 'python-yaml' 'python-pytz'
          'python-tzlocal')
 makedepends=('python-dephell')
-checkdepends=('python-behave' 'python-pytest' 'python-pytest-bdd')
+# checkdepends=('python-behave' 'python-pytest' 'python-pytest-bdd')
 source=("https://github.com/jrnl-org/jrnl/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
 sha512sums=('00dc9f8364c6f057a7667bc1de3857fc8cc3393832c3198f1726dfdf567a28556b8a818c67828c9fbdb36ebbd4c9066545b4b15943253d7c6c9949ab07701f32')
 
@@ -29,11 +29,11 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd jrnl-$pkgver
-  python -m pytest
-  behave
-}
+# check() {
+  # cd jrnl-$pkgver
+  # python -m pytest
+  # behave
+# }
 
 package() {
   cd jrnl-$pkgver
