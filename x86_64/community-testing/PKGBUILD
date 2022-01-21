@@ -108,7 +108,6 @@ package_murmur() {
     install -vDm 644 src/murmur/{Murmur.ice,MurmurRPC.proto} -t "${pkgdir}/usr/share/${pkgname}"
   )
 
-  install -vDm 644 murmur.dbus.conf "${pkgdir}/usr/share/dbus-1/system.d/murmur.conf"
   install -vDm 644 murmur.sysusers "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
   install -vDm 644 murmur.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
 }
