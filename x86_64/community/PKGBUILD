@@ -33,29 +33,29 @@ optdepends=(
 #  'python-sparse: sparse arrays support'
   'python-pint: units of measure support'
 )
-checkdepends=(
-    python-pytest
-    python-pytest-xdist
-    python-aiobotocore
-    python-aiohttp
-    python-bottleneck
-    python-boto3
-    python-cftime
-    python-dask
-    python-distributed
-    python-fsspec
-    python-h5py
-    python-hypothesis
-    python-lxml
-    python-matplotlib
-    python-netcdf4
-    python-numexpr
-    python-numpy
-    python-pint
-    python-requests
-    python-scipy
-    python-seaborn
-)
+# checkdepends=(
+    # python-pytest
+    # python-pytest-xdist
+    # python-aiobotocore
+    # python-aiohttp
+    # python-bottleneck
+    # python-boto3
+    # python-cftime
+    # python-dask
+    # python-distributed
+    # python-fsspec
+    # python-h5py
+    # python-hypothesis
+    # python-lxml
+    # python-matplotlib
+    # python-netcdf4
+    # python-numexpr
+    # python-numpy
+    # python-pint
+    # python-requests
+    # python-scipy
+    # python-seaborn
+# )
 source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 sha256sums=('9c0bffd8b55fdef277f8f6c817153eb51fa4e58653a7ad92eaed9984164b7bdb')
 
@@ -64,11 +64,11 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd ${_pkg}-${pkgver}
+# check() {
+  # cd ${_pkg}-${pkgver}
   # https://github.com/pydata/xarray/issues/4281
-  pytest --deselect xarray/tests/test_distributed.py::test_serializable_locks
-}
+  # pytest --deselect xarray/tests/test_distributed.py::test_serializable_locks
+# }
 
 package() {
   cd ${_pkg}-${pkgver}
