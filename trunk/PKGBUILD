@@ -7,7 +7,7 @@
 
 pkgname=cinnamon
 pkgver=5.2.7
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Linux desktop which provides advanced innovative features and a traditional user experience"
 arch=(x86_64)
 url="https://github.com/linuxmint/cinnamon"
@@ -20,6 +20,7 @@ depends=(accountsservice caribou cinnamon-control-center cinnamon-menus cinnamon
          python-pytz python-tinycss2 python-xapp python-requests timezonemap xapps)
 optdepends=('blueberry: Bluetooth support'
             'cinnamon-translations: i18n'
+            'mintlocale: language selection in settings'
             'gnome-panel: fallback mode'
             'metacity: fallback mode'
             'system-config-printer: printer settings'
