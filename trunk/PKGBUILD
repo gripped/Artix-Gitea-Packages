@@ -7,7 +7,7 @@
 pkgbase=mumble
 pkgname=('mumble' 'murmur')
 pkgver=1.4.230
-pkgrel=1
+pkgrel=2
 pkgdesc="An Open Source, low-latency, high quality voice chat software"
 arch=('x86_64')
 url="https://www.mumble.info/"
@@ -54,7 +54,6 @@ build() {
         -Dupdate=OFF \
         -Dserver=OFF \
         -Wno-dev \
-        -Doverlay=OFF \
         -B build-client \
         -S "${pkgbase}-${pkgver}.src"
   make VERBOSE=1 -C build-client
