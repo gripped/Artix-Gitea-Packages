@@ -4,7 +4,7 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=5.15.14.hardened1
+pkgver=5.15.16.hardened1
 pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
@@ -27,13 +27,13 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
   'E240B57E2C4630BA768E2F26FC1B547C8D8172C8'  # Levente Polyak
 )
-sha256sums=('2df2b4e71b5b2f25b201ba5a3d42bdf676b1deaae2fb44c14a1d8a33c9f76a4d'
+sha256sums=('ba0a0a14e89f8212bf3effa3e3118da9939e445bab52a6544f9f98a272ff1794'
             'SKIP'
-            'c5c8a52c3bafd72cf14c0d994a5acba1e6579dc336e2a4caecf9696bf36facef'
+            '25301989b42e63c9f6ca853abd726dee2359723ff68a03641a59022d786f0c29'
             'SKIP'
-            'a5cc259da23a29cb1bef6765c74502cee2b9a5bec7ea07558b41185556f57917')
+            'e1a4219234447435d76d9025110a7541d9a1514bca641f649dbcaec5e2a478a2')
 
-export KBUILD_BUILD_HOST=artixlinux
+export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
