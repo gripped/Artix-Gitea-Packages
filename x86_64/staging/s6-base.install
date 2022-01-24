@@ -1,0 +1,8 @@
+post_install() {
+    echo "  s6-rc-bundle-update is now deprecated and may be removed in the future!"
+    echo "  Bundle contents should be updated by touching files in the contents.d directory and recompiling the database!"
+}
+
+post_upgrade() {
+    post_install
+}
