@@ -20,7 +20,8 @@ makedepends=('avahi' 'boost' 'cmake' 'poco' 'protobuf' 'python' 'qt5-tools' 'spe
 makedepends+=('alsa-lib' 'hicolor-icon-theme' 'jack' 'libpulse' 'libsndfile'
 'libspeechd' 'libx11' 'libxi' 'mesa' 'opus' 'qt5-svg' 'speex' 'xdg-utils')
 # murmur makedepends
-makedepends+=('grpc' 'libcap' 'zeroc-ice')
+makedepends+=('grpc' 'libcap' 'zeroc-ice' 'lib32-gcc-libs')
+optdepends+=('lib32-gcc-libs: overlay')
 source=(
   "https://github.com/mumble-voip/mumble/releases/download/v${pkgver}/mumble-${pkgver}.tar.gz"
   "murmur.sysusers"
