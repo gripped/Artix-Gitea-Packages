@@ -8,7 +8,7 @@ _vlcver=3.0.16
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=7
+pkgrel=7.1
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
@@ -102,21 +102,45 @@ source=(https://download.videolan.org/${pkgname}/${_vlcver}/${pkgname}-${_vlcver
         update-vlc-plugin-cache.hook
         caca-fix-to-newer-version.patch
         vlc-3.0.11.1-srt_1.4.2.patch
-        vlc-live-media-2021.patch)
+        vlc-live-media-2021.patch
+        https://code.videolan.org/videolan/vlc/-/commit/97867416201533742be3effa2abfe3c02fafd95c.patch
+        https://code.videolan.org/videolan/vlc/-/commit/00bd7590f33357047b555d85d6e935feed033333.patch
+        https://code.videolan.org/videolan/vlc/-/commit/6feb18dadcb6176ae5cc2b4ae57f27f65fa93fdb.patch
+        https://code.videolan.org/videolan/vlc/-/commit/781082eea3c3aea140c6725d7405cdf09124e190.patch
+        https://code.videolan.org/videolan/vlc/-/commit/bd8533e0c8b50773e49be8f8b5b61a9782de386f.patch
+        https://code.videolan.org/videolan/vlc/-/commit/abb201b79367311e43e619dcda3d4a9348da42ec.patch
+        https://code.videolan.org/videolan/vlc/-/commit/07e0beb5b6ecccb2cde134f3a3bd45071bce0dae.patch
+        https://code.videolan.org/videolan/vlc/-/commit/591f658223bb6320ea61248976753e20a985c8dc.patch
+        https://code.videolan.org/videolan/vlc/-/commit/66b647fd696b7f449b09b200f4028789c2d210a8.patch
+        configure-ffmpeg.patch
+        0001-ffmpeg-code-makefile_am.patch
+        0001-ffmpeg-avcommon.patch
+        0001-ffmpeg-vaapi.patch
+        )
 sha512sums=('35cdf191071224d0cf1b5a83c00773ff87b9e5bfcf0f5523f7edd53f75b23eda6b27bb49ffa97d69a1d176b8fe4786d959aeeb00d4380beab71c9f7e6b7c7298'
             'SKIP'
             'b247510ffeadfd439a5dadd170c91900b6cdb05b5ca00d38b1a17c720ffe5a9f75a32e0cb1af5ebefdf1c23c5acc53513ed983a736e8fa30dd8fad237ef49dd3'
             'ef479a246dc98f882a05ca56a1c2872cc67ced154c625790070b887858ddc250d55b1295db82c9122e5ecd3c2c9c712ec9718e28d0a9d21ff6a230eb6c5010ce'
             'ac1d33d434aca2a0ad6e70800073deeaefc02b8fd72656b682ca833ee0cffe10dfa19a9355388700cab46ffbf9421c007d00ed04c7fa562698ff81e70db5f283'
-            'ad17d6f4f2cc83841c1c89623c339ec3ee94f6084ea980e2c8cbc3903854c85e5396e31bfd8dc90745b41794670903d854c4d282d8adec263087a9d47b226ccc')
+            'ad17d6f4f2cc83841c1c89623c339ec3ee94f6084ea980e2c8cbc3903854c85e5396e31bfd8dc90745b41794670903d854c4d282d8adec263087a9d47b226ccc'
+            '556a7919b62f4843c85a9b80807133e605f3e54332ebeb856943418b51de7125c32c7e62ce56a4f01a21062b24974f4b7874917a7fd8f3a930e6e8588a521cbd'
+            '93308a2b18ac1d5e79ce12b39aed459448c4e512747e3e2916a6f9fcd1c17beb401faaee8ecdf32b68758ced640665e5b750d16bad3d5ceb20fdcc9b727cf718'
+            '79476145d648c422dedd4c2178fd015baa903b43d1ab7cb7f56f15e445bc3fbdd1e0c8414e9cdab60b20cd288eed09b0a490f7e1492f606e6f86712a88405938'
+            'e30a2b0d464a008c32b211c3581e1e10425916df6cac91968e0dfbf7516a90079ad1e1a0172bfb5d14217034c835f78e621561ae77b9d33f45363554aef96576'
+            'b6f1fff336c25712c656d78a20f4e22eb3540604cc14af50466ca420af144fe4227c2eee3e2a6862e77304808a19fdf69251da34f131fbde68961a25a4458311'
+            'cc5862d8184f178a32e64738345d19a9210cba37de0b092f691a1b2ca18fcd8b04c1dc66c8d66006426d75eaa9087656240ce7e67a21378c338ccd8d0cea2769'
+            '0536d1d69f4c52aa9e4d80d6e08c848ec4741685bcae8228ae9cecaf3482acabb06fdd3d794ff3eb66026afa7658fb8e96d956db2dbe3b8aeb322428f07ff553'
+            '3f42db1f7918b7359118d4951aaf120be7f50e7cb63550be8ffb7d6b73ea03bd19ad62c50e463850b27fae42eaa7b42bee60339d9d44c64e6ccf5b907c34196b'
+            '92676a8c83b25724d41ebe406cf8c2b3682db7a6014605f5f750b871bdd2298ca0442c133bacb95ce8052d419cf16d6269dcc273a1c1324664c4aaa88ff5954c'
+            'b5e1f1e29e35bb5940994b57a8ae8d219f603a46978b05626c4ee587360672f74d9c76397554e2c60de77a7967a2736ad779bf1a8d3be3ed97ef662947668b00'
+            '2cfe04873293edd6f52a97dcb1e4435feafe7a845b9c2dcbe241fc4e11227d05d70a0fab1174f592ebdab0bd9a976693279d3253b0bea29c611f0033fb825fa0'
+            '3c5dde89e8db738282a2fcbc119aeb060801394728694501833e5a462765391b92484ae4baedd4f64f1bc9ae7b4b6019af7432435d480f7df44eab3d5f0829f6'
+            'eed42c13009112e381f93aab536df404b0879f1edebacd4101735e55bd0fc1a4ab040341bbf44ae8400252eb7469a6007503bcbcc48074ad1796a71e4bd014e5')
 validpgpkeys=('65F7C6B4206BD057A7EB73787180713BE58D1ADC') # VideoLAN Release Signing Key
 
 prepare() {
   cd ${pkgname}-${_vlcver}
   sed -e 's:truetype/ttf-dejavu:TTF:g' -i modules/visualization/projectm.cpp
-  sed -e 's|-Werror-implicit-function-declaration||g' -i configure
-  sed 's|whoami|echo builduser|g' -i configure
-  sed 's|hostname -f|echo arch|g' -i configure
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
@@ -126,6 +150,9 @@ prepare() {
     patch -Np1 < "../$src"
   done
   autoreconf -vf
+  sed -e 's|-Werror-implicit-function-declaration||g' -i configure
+  sed 's|whoami|echo builduser|g' -i configure
+  sed 's|hostname -f|echo arch|g' -i configure
 }
 
 build() {
