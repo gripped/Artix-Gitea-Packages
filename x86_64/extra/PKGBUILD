@@ -21,13 +21,16 @@ optdepends=('opencv-samples: samples'
             'java-runtime: Java interface')
 source=(https://github.com/opencv/opencv/archive/$pkgver/$pkgname-$pkgver.tar.gz
         https://github.com/opencv/opencv_contrib/archive/$pkgver/opencv_contrib-$pkgver.tar.gz
-        vtk9.patch)
+        vtk9.patch
+        ffmpeg.patch)
 sha256sums=('a1cfdcf6619387ca9e232687504da996aaa9f7b5689986b8331ec02cb61d28ad'
             'a97c2eaecf7a23c6dbd119a609c6d7fae903e5f9ff5f1fe678933e01c67a6c11'
-            'f35a2d4ea0d6212c7798659e59eda2cb0b5bc858360f7ce9c696c77d3029668e')
+            'f35a2d4ea0d6212c7798659e59eda2cb0b5bc858360f7ce9c696c77d3029668e'
+            'a1b20319977bd54bd419279c150cfbe7ccd52e4a269dd38ef1c8e965845e4e33')
 
 prepare() {
   patch -d $pkgname-$pkgver -p1 < vtk9.patch # Don't require all vtk optdepends
+  patch -d $pkgname-$pkgver -p0 < ffmpeg.patch
 }
 
 build() {
