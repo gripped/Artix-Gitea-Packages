@@ -1,6 +1,6 @@
 diff -up opencv-4.5.5/modules/videoio/src/cap_ffmpeg_impl.hpp.omv~ opencv-4.5.5/modules/videoio/src/cap_ffmpeg_impl.hpp
---- modules/videoio/src/cap_ffmpeg_impl.hpp.omv~	2022-01-16 01:57:43.568982322 +0100
-+++ modules/videoio/src/cap_ffmpeg_impl.hpp	2022-01-17 18:00:14.876283994 +0100
+--- opencv-4.5.5/modules/videoio/src/cap_ffmpeg_impl.hpp.omv~	2022-01-16 01:57:43.568982322 +0100
++++ opencv-4.5.5/modules/videoio/src/cap_ffmpeg_impl.hpp	2022-01-17 18:00:14.876283994 +0100
 @@ -88,6 +88,10 @@ extern "C" {
  #include <libavcodec/avcodec.h>
  #include <libswscale/swscale.h>
