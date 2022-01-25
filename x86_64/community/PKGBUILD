@@ -23,17 +23,17 @@ makedepends=(
 	'opencl-headers'
 	'scdoc'
 	'wayland-protocols'
+  'git'
 )
 optdepends=(
 	'slurp: Select a region to record'
 )
-source=("$pkgname-$pkgver.tar.gz::https://github.com/ammen99/wf-recorder/archive/v$pkgver.tar.gz")
-sha256sums=('45cf04cf58cf241c22fa2fbb70481a3747ad33e6930e4bdba7b9cc7018789ad1')
+_commit=47a3905f670fe12ecbdfe4719df654df1cd183e2
+source=("$pkgname-$pkgver::git+https://github.com/ammen99/wf-recorder.git#commit=$_commit")
+sha256sums=('SKIP')
 
 build() {
 	meson "$pkgname-$pkgver" build \
-		-Dman-pages=enabled \
-		-Dopencl=enabled \
 		--prefix=/usr \
 		--buildtype=plain
 	ninja -C build
