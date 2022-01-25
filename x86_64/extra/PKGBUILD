@@ -22,6 +22,7 @@ pkgver() {
 }
 
 prepare() {
+  cd $pkgname
   patch -Np1 -i ../ffmpeg-5-hack-build.patch
 }
 
