@@ -1,0 +1,15 @@
+diff --git a/src/io/source_avcodec.c b/src/io/source_avcodec.c
+index e0ae93b5..7a9dc683 100644
+--- a/src/io/source_avcodec.c
++++ b/src/io/source_avcodec.c
+@@ -22,6 +22,10 @@
+ 
+ #ifdef HAVE_LIBAV
+ 
++#if LIBAVCODEC_VERSION_MAJOR >= 59
++#define FF_API_LAVF_AVCTX 1
++#endif
++
+ #include <libavcodec/avcodec.h>
+ #include <libavformat/avformat.h>
+ #if defined(HAVE_SWRESAMPLE)
