@@ -24,7 +24,7 @@ install=simplescreenrecorder.install
 prepare() {
   cd ssr
   mkdir -p build
-  git apply -3 0001-Fix-build-with-ffmpeg-5.0.patch
+  git apply -3 ../0001-Fix-build-with-ffmpeg-5.0.patch
 }
 
 build() {
