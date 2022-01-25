@@ -1,15 +1,15 @@
 diff --git a/src/io/source_avcodec.c b/src/io/source_avcodec.c
-index e0ae93b5..7a9dc683 100644
+index e0ae93b5..ae34524b 100644
 --- a/src/io/source_avcodec.c
 +++ b/src/io/source_avcodec.c
-@@ -22,6 +22,10 @@
- 
- #ifdef HAVE_LIBAV
+@@ -56,6 +56,10 @@
+ #define av_packet_unref av_free_packet
+ #endif
  
 +#if LIBAVCODEC_VERSION_MAJOR >= 59
 +#define FF_API_LAVF_AVCTX 1
 +#endif
 +
- #include <libavcodec/avcodec.h>
- #include <libavformat/avformat.h>
- #if defined(HAVE_SWRESAMPLE)
+ #include "aubio_priv.h"
+ #include "fvec.h"
+ #include "fmat.h"
