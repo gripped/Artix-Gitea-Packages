@@ -14,14 +14,17 @@ depends=("qt5-base" "qt5-x11extras"
     "desktop-file-utils" "gtk-update-icon-cache")
 optdepends=("lib32-simplescreenrecorder: OpenGL recording of 32-bit applications")
 makedepends=("git" "cmake" "qt5-tools")
-source=("git+https://github.com/MaartenBaert/ssr.git#tag=$pkgver")
-md5sums=("SKIP")
+source=("git+https://github.com/MaartenBaert/ssr.git#tag=$pkgver"
+        "0001-Fix-build-with-ffmpeg-5.0.patch")
+md5sums=('SKIP'
+         '4fb4f596b553d99e1766e4b8a94a1b59')
 
 install=simplescreenrecorder.install
 
 prepare() {
   cd ssr
   mkdir -p build
+  git apply -3 0001-Fix-build-with-ffmpeg-5.0.patch
 }
 
 build() {
