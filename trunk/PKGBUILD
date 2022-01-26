@@ -19,14 +19,18 @@ checkdepends=(cppunit)
 _commit=c28f0af5bce653864c494a4e8c1ad9f74d934945
 _pjprojectver=e1f389d0b905011e0cb62cbdf7a8b37fc1bcde1a
 source=(git+https://git.jami.net/savoirfairelinux/${pkgname}.git#commit=${_commit}
-        https://github.com/savoirfairelinux/pjproject/archive/${_pjprojectver}/pjproject-${_pjprojectver}.tar.gz)
+        https://github.com/savoirfairelinux/pjproject/archive/${_pjprojectver}/pjproject-${_pjprojectver}.tar.gz
+        jami-ffmpeg.patch::https://0x0.st/oo52.patch)
 noextract=(pjproject-${_pjprojectver}.tar.gz)
-sha512sums=(SKIP a1ed0519ddf8dc91f47042497530cbcb1c8736506d0c2b677751a3368c0a202952ff563946664705dbf5806bed8ade784885db62f8278a204f516a4e60917b1e)
+sha512sums=('SKIP'
+            'a1ed0519ddf8dc91f47042497530cbcb1c8736506d0c2b677751a3368c0a202952ff563946664705dbf5806bed8ade784885db62f8278a204f516a4e60917b1e'
+            '374a604f3cb9fe2df181ef04a63681182dd273af2ed42f6431a65dc5075a958ed2784e9bc0e3758b23b64c90fc7fbba0e4a0a84cd950fa9e7464d1a6316ad2eb')
 
 prepare() {
   cd ${pkgname}
   cp ../pjproject-${_pjprojectver}.tar.gz contrib/tarballs
   mkdir contrib/native
+  patch -Np1 -i ../jami-ffmpeg.patch
   autoreconf -fvi
 }
 
