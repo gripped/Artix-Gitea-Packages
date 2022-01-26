@@ -8,20 +8,19 @@
 
 pkgname=mpd
 pkgver=0.23.5
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Flexible, powerful, server-side application for playing music"
 arch=(x86_64)
 url="https://www.musicpd.org/"
-depends=('bzip2' 'chromaprint' 'gcc-libs' 'glibc' 'lame' 'libcdio'
-'libcdio-paranoia' 'libgcrypt' 'libgme' 'libmad' 'libmms' 'libmodplug'
-'libmpcdec' 'libnfs' 'libshout' 'libsidplayfp' 'libsoxr' 'openal' 'opus'
-'smbclient' 'sqlite' 'wavpack' 'wildmidi' 'zlib' 'zziplib')
-makedepends=('alsa-lib' 'audiofile' 'avahi' 'boost' 'curl' 'dbus' 'expat'
-'faad2' 'ffmpeg' 'flac' 'fluidsynth' 'fmt' 'icu' 'jack' 'libao' 'libid3tag'
-'libmikmod' 'libmpdclient' 'libogg' 'libopenmpt' 'libpulse' 'libsamplerate'
-'libsndfile' 'libupnp' 'liburing' 'libvorbis' 'meson' 'mpg123' 'pipewire'
-'python-sphinx' 'twolame' 'yajl')
 license=(GPL2)
+depends=(bzip2 chromaprint gcc-libs glibc lame libcdio libcdio-paranoia
+libgcrypt libgme libmad libmms libmodplug libmpcdec libnfs libshout
+libsidplayfp libsoxr openal opus smbclient sqlite wavpack wildmidi zlib
+zziplib)
+makedepends=(alsa-lib audiofile avahi boost curl dbus expat faad2 ffmpeg flac
+fluidsynth fmt icu jack libao libid3tag libmikmod libmpdclient libogg
+libopenmpt libpulse libsamplerate libsndfile libupnp liburing libvorbis meson
+mpg123 pipewire python-sphinx twolame yajl)
 backup=("etc/${pkgname}.conf")
 source=("https://www.musicpd.org/download/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"{,.sig}
         "${pkgname}.conf"
@@ -50,7 +49,6 @@ build() {
         -D sndio=disabled \
         -D shine=disabled \
         -D tremor=disabled \
-        -D systemd=disabled \
         -D b_ndebug=true \
         build
   ninja -C build
@@ -62,19 +60,18 @@ check() {
 }
 
 package() {
-  depends+=('libbz2.so' 'libFLAC.so' 'libao.so' 'libasound.so'
-  'libaudiofile.so' 'libavahi-client.so' 'libavahi-common.so' 'libavcodec.so'
-  'libavformat.so' 'libavutil.so' 'libcurl.so' 'libdbus-1.so' 'libexpat.so'
-  'libfaad.so' 'libfluidsynth.so' 'libfmt.so' 'libicui18n.so' 'libicuuc.so'
-  'libid3tag.so' 'libjack.so' 'libmikmod.so' 'libmpdclient.so' 'libmpg123.so'
-  'libogg.so' 'libopenmpt.so' 'libpipewire-0.3.so' 'libpulse.so'
-  'libsamplerate.so' 'libsndfile.so' 'libtwolame.so'
-  'libupnp.so' 'liburing.so' 'libvorbis.so' 'libvorbisenc.so' 'libyajl.so'
-  'libavfilter.so' 'libchromaprint.so' 'libixml.so')
+  depends+=(libbz2.so libFLAC.so libao.so libasound.so libaudiofile.so
+  libavahi-client.so libavahi-common.so libavcodec.so libavformat.so
+  libavutil.so libcurl.so libdbus-1.so libexpat.so libfaad.so libfluidsynth.so
+  libfmt.so libicui18n.so libicuuc.so libid3tag.so libjack.so libmikmod.so
+  libmpdclient.so libmpg123.so libogg.so libopenmpt.so libpipewire-0.3.so
+  libpulse.so libsamplerate.so libsndfile.so libtwolame.so
+  libupnp.so liburing.so libvorbis.so libvorbisenc.so libyajl.so libavfilter.so
+  libchromaprint.so libixml.so)
+
   cd "${pkgname}-${pkgver}"
   DESTDIR="${pkgdir}" ninja -C build install
-  install -vDm 644 "doc/${pkgname}conf.example" \
-    -t "${pkgdir}/usr/share/doc/${pkgname}/"
+  install -vDm 644 "doc/${pkgname}conf.example" -t "${pkgdir}/usr/share/doc/${pkgname}/"
   install -vDm 644 "../${pkgname}.conf" -t "${pkgdir}/etc/"
   install -vDm 644 "../${pkgname}.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
   install -vDm 644 "../${pkgname}.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
