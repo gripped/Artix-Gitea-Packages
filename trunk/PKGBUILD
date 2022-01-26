@@ -50,6 +50,7 @@ build() {
         -D shine=disabled \
         -D tremor=disabled \
         -D b_ndebug=true \
+        -D systemd=disabled \
         build
   ninja -C build
 }
