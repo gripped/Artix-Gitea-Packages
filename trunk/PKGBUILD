@@ -13,12 +13,16 @@ depends=('chromaprint' 'flac' 'id3lib' 'kxmlgui' 'libmp4v2'
          'qt5-declarative' 'qt5-multimedia' 'taglib' 'kio')
 makedepends=('cmake' 'docbook-xsl' 'extra-cmake-modules' 'kdoctools' 'python' 'qt5-tools')
 changelog=$pkgbase.changelog
-source=(https://prdownloads.sourceforge.net/$pkgbase/$pkgbase-$pkgver.tar.gz{,.sig})
+source=(https://prdownloads.sourceforge.net/$pkgbase/$pkgbase-$pkgver.tar.gz{,.sig}
+        ooCL.patch)
 validpgpkeys=('7D09794C2812F62194B081C14CAD34426E354DD2') # Urs Fleisch
 sha256sums=('e5f126697f773dbaa10476a76810ce91c2f3f60025d38688098e075bdb561dca'
-            'SKIP')
+            'SKIP'
+            'b604cd1f20ff32325d4ef54a3f5c62780594574b809270b390d2227cc965c6cc')
 
 prepare() {
+  cd "${srcdir}"/"${pkgbase}"-"${pkgver}"
+  patch -Np1 -i "${srcdir}"/ooCL.patch
   cd "${srcdir}"
   [[ ! -d build ]] && mkdir build
 }
