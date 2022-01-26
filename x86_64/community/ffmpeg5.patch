@@ -1,0 +1,88 @@
+diff --git a/IO/FFMPEG/vtkFFMPEGVideoSource.cxx b/IO/FFMPEG/vtkFFMPEGVideoSource.cxx
+index 020f8f7bb3..a45f1ecb25 100644
+--- a/IO/FFMPEG/vtkFFMPEGVideoSource.cxx
++++ b/IO/FFMPEG/vtkFFMPEGVideoSource.cxx
+@@ -206,7 +206,7 @@ void vtkFFMPEGVideoSource::Initialize()
+ 
+   this->Internal->VideoStream = fcontext->streams[this->Internal->VideoStreamIndex];
+ 
+-  AVCodec* dec = avcodec_find_decoder(this->Internal->VideoStream->codecpar->codec_id);
++  const AVCodec* dec = avcodec_find_decoder(this->Internal->VideoStream->codecpar->codec_id);
+   if (!dec)
+   {
+     vtkErrorMacro("Failed to find codec for video");
+@@ -272,7 +272,7 @@ void vtkFFMPEGVideoSource::Initialize()
+   {
+     this->Internal->AudioStream = fcontext->streams[this->Internal->AudioStreamIndex];
+ 
+-    AVCodec* adec = avcodec_find_decoder(this->Internal->AudioStream->codecpar->codec_id);
++    const AVCodec* adec = avcodec_find_decoder(this->Internal->AudioStream->codecpar->codec_id);
+     if (!adec)
+     {
+       vtkErrorMacro("Failed to find codec for audio");
+diff --git a/IO/FFMPEG/vtkFFMPEGWriter.cxx b/IO/FFMPEG/vtkFFMPEGWriter.cxx
+index a6314187bd..6903abb065 100644
+--- a/IO/FFMPEG/vtkFFMPEGWriter.cxx
++++ b/IO/FFMPEG/vtkFFMPEGWriter.cxx
+@@ -21,6 +21,7 @@
+ 
+ extern "C"
+ {
++#include <libavcodec/avcodec.h>
+ #include <libavformat/avformat.h>
+ #include <libswscale/swscale.h>
+ }
+@@ -51,7 +52,7 @@ private:
+ 
+   AVFormatContext* avFormatContext;
+ 
+-  AVOutputFormat* avOutputFormat;
++  const AVOutputFormat* avOutputFormat;
+ 
+   AVStream* avStream;
+ 
+@@ -115,7 +116,7 @@ int vtkFFMPEGWriterInternal::Start()
+     return 0;
+   }
+ 
+-  if (this->Writer->GetCompression())
++  /*if (this->Writer->GetCompression())
+   {
+     // choose a codec that is easily playable on windows
+     this->avOutputFormat->video_codec = AV_CODEC_ID_MJPEG;
+@@ -123,7 +124,7 @@ int vtkFFMPEGWriterInternal::Start()
+   else
+   {
+     this->avOutputFormat->video_codec = AV_CODEC_ID_RAWVIDEO;
+-  }
++  }*/
+ 
+   // create the format context that wraps all of the media output structures
+   if (avformat_alloc_output_context2(
+@@ -133,7 +134,7 @@ int vtkFFMPEGWriterInternal::Start()
+     return 0;
+   }
+ 
+-  AVCodec* codec;
++  const AVCodec* codec;
+   if (!(codec = avcodec_find_encoder(this->avOutputFormat->video_codec)))
+   {
+     vtkGenericWarningMacro(<< "Failed to get video codec.");
+@@ -408,7 +409,7 @@ int vtkFFMPEGWriterInternal::Start()
+     return 0;
+   }
+ 
+-  if (this->Writer->GetCompression())
++  /*if (this->Writer->GetCompression())
+   {
+     // choose a codec that is easily playable on windows
+     this->avOutputFormat->video_codec = AV_CODEC_ID_MJPEG;
+@@ -416,7 +417,7 @@ int vtkFFMPEGWriterInternal::Start()
+   else
+   {
+     this->avOutputFormat->video_codec = AV_CODEC_ID_RAWVIDEO;
+-  }
++  }*/
+ 
+   // assign the format to the context
+   this->avFormatContext->oformat = this->avOutputFormat;
