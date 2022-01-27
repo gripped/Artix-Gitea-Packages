@@ -16,7 +16,7 @@ source=("https://downloads.sourceforge.net/project/vice-emu/releases/$pkgname-${
         0001-vice-ffmpeg.patch)
 b2sums=('129171380f3bd23d579dc29a96419446169cf9a98d2fec82951fa192914846053d213a19b395c9ca30596859cce35bcfea0de0c0a7461c45cb38511a546ca4b2'
         'a27ff2a70537a57fd1c3be561181403fede8a6fd75ca8a31a4a4ed97b010cd8f8f0376a619be126ac22ad8c81bf0d1fd9c7e5e411bf94da32006c9ecdd10d32e'
-        '1dc3da62b54f61d7a61c6816d1b5f5eef4e0f5154a34f686d0f498462efd97889f3f5e565c8d10751bc106903002fa388ba8fa264a656c2c0e673100ec2b3133')
+        '4ae332f83c9acd53ca672f49adae2d41d20e71d5b4198531fc39aa6640cd55b2b15f69cb6d0cc2ca3032f9e5ff22e6e16c556634a2ff6d225cceec5e39fb7822')
 
 prepare() {
   cd $pkgname-$pkgver
