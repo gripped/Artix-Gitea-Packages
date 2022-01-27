@@ -9,7 +9,7 @@
 pkgbase=erlang
 pkgname=(erlang erlang-unixodbc)
 pkgver=24.2
-pkgrel=2
+pkgrel=3
 _docver=24.2
 arch=(x86_64)
 url='https://erlang.org'
@@ -17,7 +17,7 @@ license=(Apache)
 makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl unixodbc wxgtk3)
 source=("$url/download/otp_doc_man_$_docver.tar.gz"
         "git+https://github.com/erlang/otp#commit=df48c260e74c3e9058ff8681ce9f554e6fa0fe34") # tag: OTP-24.2
-options=(staticlibs !strip)
+options=(staticlibs)
 b2sums=('17cf3c1e296c883e9c930cd540d439f7dd71a40048bbe80efd6f46dd5b4d9faf51177d2bb133f782742b0b367c8f54c27ed2b2cce277372a98dd55bb629f3b55'
         'SKIP')
 
@@ -32,6 +32,7 @@ prepare() {
 }
 
 build() {
+  export CFLAGS+=' -ffat-lto-objects'
   export PATH="$srcdir/bin:$PATH"
   export WX_GKT_VER="3.0"
   cd otp
