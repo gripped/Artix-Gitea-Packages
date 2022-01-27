@@ -1,0 +1,25 @@
+From 69d8fdbe28ad39d0c13b08c829669d961704c10a Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Wed, 26 Jan 2022 18:35:17 -0600
+Subject: [PATCH] vice-ffmpeg
+
+---
+ src/gfxoutputdrv/ffmpegdrv.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/gfxoutputdrv/ffmpegdrv.c b/src/gfxoutputdrv/ffmpegdrv.c
+index c558266..9bfebcb 100644
+--- a/src/gfxoutputdrv/ffmpegdrv.c
++++ b/src/gfxoutputdrv/ffmpegdrv.c
+@@ -56,7 +56,7 @@
+ #if (LIBAVCODEC_VERSION_MAJOR >= 58) && (LIBAVCODEC_VERSION_MINOR >= 18)
+ # define HAVE_FFMPEG4
+ #endif
+-
++#include <libavcodec/avcodec.h>
+ 
+ static gfxoutputdrv_codec_t avi_audio_codeclist[] = {
+     { AV_CODEC_ID_MP2, "MP2" },
+-- 
+2.35.0
+
