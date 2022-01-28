@@ -141,7 +141,6 @@ package_libvirt() {
   cd "$pkgname-$pkgver"
   DESTDIR="$pkgdir" ninja -C build install
 
-  mv "$pkgdir"/etc/{sysconfig,conf.d}
   mkdir "$pkgdir"/usr/lib/{sysusers,tmpfiles}.d
   echo "g libvirt - -" > "$pkgdir/usr/lib/sysusers.d/libvirt.conf"
   echo "z /var/lib/libvirt/qemu 0751" > "$pkgdir/usr/lib/tmpfiles.d/libvirt.conf"
