@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lvm2-s6
-pkgver=20211213
+pkgver=20220124
 pkgrel=1
 pkgdesc="s6-rc service scripts for lvm2"
 arch=('any')
@@ -10,9 +10,8 @@ provides=('init-lvm2')
 conflicts=('init-lvm2')
 depends=('lvm2' 's6-base')
 makedepends=('git')
-install=lvm2.install
 backup=('etc/s6/config/lvm2.conf')
-_commit=c980a88245d60a1a2989a8ea73e1aa02e32579a3
+_commit=394046cbe4323e981a27cb0f6afe2e3427f1ca11
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
