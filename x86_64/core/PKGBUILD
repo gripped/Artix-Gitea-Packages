@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=hdparm-s6
-pkgver=20210919
+pkgver=20220123
 pkgrel=1
 pkgdesc="s6-rc service scripts for hdparm"
 arch=('any')
@@ -11,7 +11,7 @@ conflicts=('init-hdparm')
 depends=('hdparm' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/hdparm.conf')
-_commit=f8db772e97393417271f286a3c9dc136d25a959c
+_commit=2fff2bc2c20464f1641c4b7077d3db4a67fff3f4
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
