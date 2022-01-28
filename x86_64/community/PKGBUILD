@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=intel-undervolt-s6
-pkgver=20210918
+pkgver=20220123
 pkgrel=1
 pkgdesc="s6-rc service scripts for intel-undervolt"
 arch=('any')
@@ -11,7 +11,7 @@ conflicts=('init-intel-undervolt')
 depends=('intel-undervolt' 'init-logind' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/intel-undervolt.conf')
-_commit=341fd49c357ab13e03385d394afe4bda0e465e29
+_commit=2fff2bc2c20464f1641c4b7077d3db4a67fff3f4
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
