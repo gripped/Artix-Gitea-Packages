@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tlp-s6
-pkgver=20210921
+pkgver=20220123
 pkgrel=1
 pkgdesc="s6-rc service scripts for tlp"
 arch=('any')
@@ -10,7 +10,7 @@ provides=('init-tlp')
 conflicts=('init-tlp')
 depends=('tlp' 's6-base')
 makedepends=('git')
-_commit=2470a6ccb817a2277c0cdc19f82b8d21ec7fd4a7
+_commit=2fff2bc2c20464f1641c4b7077d3db4a67fff3f4
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
