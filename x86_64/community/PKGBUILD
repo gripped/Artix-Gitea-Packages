@@ -9,7 +9,7 @@
 
 pkgname=xmms2
 pkgver=0.8DrO_o.7391.dedc33d7
-pkgrel=6.1
+pkgrel=7
 pkgdesc='X-platform Music Multiplexing System 2'
 arch=(x86_64)
 url='https://xmms2.org/'
@@ -53,12 +53,14 @@ source=('git+https://github.com/xmms2/xmms2-devel#commit=dedc33d7408e140bce714c2
         'git+https://github.com/xmms2/xmms2-tutorial#commit=8ff8c66'
         'git+https://github.com/xmms2/s4#commit=b46e597'
         tmpfiles.conf
-        sysusers.conf)
+        sysusers.conf
+        ffmpeg5.patch)
 sha256sums=('SKIP'
             'SKIP'
             'SKIP'
             '13e3e2720e21d048d776156f8ab17c40d05b70437823da00b3c4cc2e7f7ecf7f'
-            'a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a')
+            'a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a'
+            '4a0deb25c83b43f14db8bfe4877f9352b9360239176da3c91824775ea7aff3ef')
 
 prepare() {
   cd xmms2-devel
@@ -71,6 +73,9 @@ prepare() {
   sed -i 's,#include <cdio/cdda.h>,#include <cdio/paranoia/cdda.h>,' src/plugins/cdda/cdda.c
   sed -i 's,libsmbclient.h,samba-4.0/libsmbclient.h,' src/plugins/samba/{samba.c,wscript}
   sed -i 's|Werror|Wno-error|g' waftools/*.py
+
+# Fix build with FFmpeg 5
+  patch -p1 -i ../ffmpeg5.patch
 }
 
 build() {
