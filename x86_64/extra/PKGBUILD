@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lm_sensors-s6
-pkgver=20210919
+pkgver=20220123
 pkgrel=1
 pkgdesc="s6-rc service scripts for lm_sensors"
 arch=('any')
@@ -9,9 +9,8 @@ groups=('s6-world')
 provides=('init-lm_sensors')
 conflicts=('init-lm_sensors')
 depends=('lm_sensors' 's6-base')
-install=lm_sensors.install
 makedepends=('git')
-_commit=f8db772e97393417271f286a3c9dc136d25a959c
+_commit=2fff2bc2c20464f1641c4b7077d3db4a67fff3f4
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
