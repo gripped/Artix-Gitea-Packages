@@ -8,7 +8,7 @@ _vlcver=3.0.16
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=7.1
+pkgrel=7.2
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
@@ -112,10 +112,7 @@ source=(https://download.videolan.org/${pkgname}/${_vlcver}/${pkgname}-${_vlcver
         https://code.videolan.org/videolan/vlc/-/commit/07e0beb5b6ecccb2cde134f3a3bd45071bce0dae.patch
         https://code.videolan.org/videolan/vlc/-/commit/591f658223bb6320ea61248976753e20a985c8dc.patch
         https://code.videolan.org/videolan/vlc/-/commit/66b647fd696b7f449b09b200f4028789c2d210a8.patch
-        configure-ffmpeg.patch
-        0001-ffmpeg-code-makefile_am.patch
-        0001-ffmpeg-avcommon.patch
-        0001-ffmpeg-vaapi.patch
+        0001-vlc-ffmpeg5.patch
         )
 sha512sums=('35cdf191071224d0cf1b5a83c00773ff87b9e5bfcf0f5523f7edd53f75b23eda6b27bb49ffa97d69a1d176b8fe4786d959aeeb00d4380beab71c9f7e6b7c7298'
             'SKIP'
@@ -132,10 +129,7 @@ sha512sums=('35cdf191071224d0cf1b5a83c00773ff87b9e5bfcf0f5523f7edd53f75b23eda6b2
             '0536d1d69f4c52aa9e4d80d6e08c848ec4741685bcae8228ae9cecaf3482acabb06fdd3d794ff3eb66026afa7658fb8e96d956db2dbe3b8aeb322428f07ff553'
             '3f42db1f7918b7359118d4951aaf120be7f50e7cb63550be8ffb7d6b73ea03bd19ad62c50e463850b27fae42eaa7b42bee60339d9d44c64e6ccf5b907c34196b'
             '92676a8c83b25724d41ebe406cf8c2b3682db7a6014605f5f750b871bdd2298ca0442c133bacb95ce8052d419cf16d6269dcc273a1c1324664c4aaa88ff5954c'
-            'b5e1f1e29e35bb5940994b57a8ae8d219f603a46978b05626c4ee587360672f74d9c76397554e2c60de77a7967a2736ad779bf1a8d3be3ed97ef662947668b00'
-            '2cfe04873293edd6f52a97dcb1e4435feafe7a845b9c2dcbe241fc4e11227d05d70a0fab1174f592ebdab0bd9a976693279d3253b0bea29c611f0033fb825fa0'
-            '3c5dde89e8db738282a2fcbc119aeb060801394728694501833e5a462765391b92484ae4baedd4f64f1bc9ae7b4b6019af7432435d480f7df44eab3d5f0829f6'
-            'eed42c13009112e381f93aab536df404b0879f1edebacd4101735e55bd0fc1a4ab040341bbf44ae8400252eb7469a6007503bcbcc48074ad1796a71e4bd014e5')
+            '8fc0115a95b4495a627b2d39bbfb28da3e868ce14a93f9ce62a1c1f9dc2e47d9a22b4b2992da6c9a8e4d73bf13490c8fa2bf01d64ee73dc373d72135b258320d')
 validpgpkeys=('65F7C6B4206BD057A7EB73787180713BE58D1ADC') # VideoLAN Release Signing Key
 
 prepare() {

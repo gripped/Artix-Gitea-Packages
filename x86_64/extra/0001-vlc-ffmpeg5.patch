@@ -1,0 +1,287 @@
+From 34b241ad2cbde999aa330d008f9cabac385b6cda Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Thu, 27 Jan 2022 16:42:15 -0600
+Subject: [PATCH] vlc-ffmpeg5
+
+---
+ configure.ac                     | 19 -------
+ modules/codec/Makefile.am        |  3 --
+ modules/codec/avcodec/avcommon.h |  4 --
+ modules/codec/avcodec/vaapi.c    | 91 +++++++++++++++++---------------
+ 4 files changed, 49 insertions(+), 68 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 13e39e9..81f6f3a 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -2471,25 +2471,6 @@ AM_CONDITIONAL([HAVE_VAAPI_DRM], [test "${have_vaapi_drm}" = "yes"])
+ AM_CONDITIONAL([HAVE_VAAPI_X11], [test "${have_vaapi_x11}" = "yes"])
+ AM_CONDITIONAL([HAVE_VAAPI_WL], [test "${have_vaapi_wl}" = "yes"])
+ 
+-have_avcodec_vaapi="no"
+-AS_IF([test "${have_vaapi}" = "yes" -a "${have_avcodec}" = "yes"], [
+-  VLC_SAVE_FLAGS
+-  CPPFLAGS="${CPPFLAGS} ${AVCODEC_CFLAGS}"
+-  CFLAGS="${CFLAGS} ${AVCODEC_CFLAGS}"
+-  AC_CHECK_HEADERS([libavcodec/vaapi.h], [
+-    AC_MSG_NOTICE([VA API acceleration activated])
+-    have_avcodec_vaapi="yes"
+-  ],[
+-    AS_IF([test -n "${enable_libva}"], [
+-      AC_MSG_ERROR([libva is present but libavcodec/vaapi.h is missing])
+-    ], [
+-      AC_MSG_WARN([libva is present but libavcodec/vaapi.h is missing ])
+-    ])
+-  ])
+-  VLC_RESTORE_FLAGS
+-])
+-AM_CONDITIONAL([HAVE_AVCODEC_VAAPI], [test "${have_avcodec_vaapi}" = "yes"])
+-
+ dnl
+ dnl dxva2 needs avcodec
+ dnl
+diff --git a/modules/codec/Makefile.am b/modules/codec/Makefile.am
+index 3dadf11..3ab9537 100644
+--- a/modules/codec/Makefile.am
++++ b/modules/codec/Makefile.am
+@@ -414,12 +414,9 @@ libvaapi_plugin_la_SOURCES = \
+ libvaapi_plugin_la_CPPFLAGS = $(AM_CPPFLAGS)
+ libvaapi_plugin_la_CFLAGS = $(AM_CFLAGS) $(AVCODEC_CFLAGS)
+ libvaapi_plugin_la_LIBADD = $(LIBVA_LIBS)
+-if HAVE_AVCODEC_VAAPI
+ if HAVE_VAAPI_DRM
+ codec_LTLIBRARIES += libvaapi_drm_plugin.la
+ endif
+-codec_LTLIBRARIES += libvaapi_plugin.la
+-endif
+ 
+ libd3d9_common_la_SOURCES = video_chroma/d3d9_fmt.c video_chroma/d3d9_fmt.h \
+ 	video_chroma/dxgi_fmt.c video_chroma/dxgi_fmt.h
+diff --git a/modules/codec/avcodec/avcommon.h b/modules/codec/avcodec/avcommon.h
+index fc85c18..5c9f32c 100644
+--- a/modules/codec/avcodec/avcommon.h
++++ b/modules/codec/avcodec/avcommon.h
+@@ -105,8 +105,6 @@ static inline void vlc_init_avformat(vlc_object_t *obj)
+ 
+     avformat_network_init();
+ 
+-    av_register_all();
+-
+     vlc_avcodec_unlock();
+ }
+ #endif
+@@ -119,8 +117,6 @@ static inline void vlc_init_avcodec(vlc_object_t *obj)
+ 
+     vlc_init_avutil(obj);
+ 
+-    avcodec_register_all();
+-
+     vlc_avcodec_unlock();
+ }
+ #endif
+diff --git a/modules/codec/avcodec/vaapi.c b/modules/codec/avcodec/vaapi.c
+index 3675d2f..43cd2c5 100644
+--- a/modules/codec/avcodec/vaapi.c
++++ b/modules/codec/avcodec/vaapi.c
+@@ -42,16 +42,21 @@
+ # include <va/va_drm.h>
+ #endif
+ #include <libavcodec/avcodec.h>
+-#include <libavcodec/vaapi.h>
+ 
+ #include "avcodec.h"
+ #include "va.h"
+ #include "../../hw/vaapi/vlc_vaapi.h"
++#include <libavutil/display.h>
++#include <libavutil/hwcontext_vaapi.h>
++
++struct old_vaapi_context {
++  uint32_t context_id;
++};
+ 
+ struct vlc_va_sys_t
+ {
+     struct vlc_vaapi_instance *va_inst;
+-    struct vaapi_context hw_ctx;
++    struct AVCodecContext hw_frames_ctx;
+ 
+ #ifdef VLC_VA_BACKEND_DRM
+     picture_pool_t *pool;
+@@ -142,11 +147,11 @@ static void Delete(vlc_va_t *va, void **hwctx)
+ {
+     vlc_va_sys_t *sys = va->sys;
+     vlc_object_t *o = VLC_OBJECT(va);
+-
+     (void) hwctx;
++    aava *AD = av->ad
+ 
+-    vlc_vaapi_DestroyContext(o, sys->hw_ctx.display, sys->hw_ctx.context_id);
+-    vlc_vaapi_DestroyConfig(o, sys->hw_ctx.display, sys->hw_ctx.config_id);
++    vlc_vaapi_DestroyContext(o, ad->AVVAAPIDeviceContext.display, ad->AVVAAPIDeviceContext.context_id);
++    vlc_vaapi_DestroyConfig(o, ad->AVVAAPIDeviceContext.display, ad->AVVAAPIHWConfig.config_id);
+     vlc_vaapi_ReleaseInstance(sys->va_inst);
+     free(sys);
+ }
+@@ -190,37 +195,39 @@ static int Create(vlc_va_t *va, AVCodecContext *ctx, enum PixelFormat pix_fmt,
+ 
+     /* */
+     sys->va_inst = va_inst;
+-    sys->hw_ctx.display = va_dpy;
+-    sys->hw_ctx.config_id = VA_INVALID_ID;
+-    sys->hw_ctx.context_id = VA_INVALID_ID;
+-
+-    sys->hw_ctx.config_id =
+-        vlc_vaapi_CreateConfigChecked(o, sys->hw_ctx.display, i_profile,
++    avva *ava;
++    old_vaapi_context *ovc;
++    ava->AVVAAPIDeviceContext.display = va_dpy;
++    ava->AVVAAPIHWConfig.config_id = VA_INVALID_ID;
++    ovc->old_vaapi_context.context_id = VA_INVALID_ID;
++
++    AVVAAPIHWConfig.config_id =
++        vlc_vaapi_CreateConfigChecked(o, ava->AVVAAPIDeviceContext.display, i_profile,
+                                       VAEntrypointVLD, i_vlc_chroma);
+-    if (sys->hw_ctx.config_id == VA_INVALID_ID)
++    if (sys->AVVAAPIHWConfig.config_id == VA_INVALID_ID)
+         goto error;
+ 
+     /* Create a context */
+-    sys->hw_ctx.context_id =
+-        vlc_vaapi_CreateContext(o, sys->hw_ctx.display, sys->hw_ctx.config_id,
++    old_vaapi_context.context_id =
++        vlc_vaapi_CreateContext(o, AVVAAPIDeviceContext.display, AVVAAPIHWConfig.config_id,
+                                 ctx->coded_width, ctx->coded_height, VA_PROGRESSIVE,
+                                 render_targets, num_render_targets);
+-    if (sys->hw_ctx.context_id == VA_INVALID_ID)
++    if (sys->old_vaapi_context.context_id == VA_INVALID_ID)
+         goto error;
+ 
+-    ctx->hwaccel_context = &sys->hw_ctx;
++    ctx->hwaccel_context = &sys->hw_frames_ctx;
+     va->sys = sys;
+-    va->description = vaQueryVendorString(sys->hw_ctx.display);
++    va->description = vaQueryVendorString(sys->AVVAAPIDeviceContext.display);
+     va->get = Get;
+     return VLC_SUCCESS;
+ 
+ error:
+     if (sys != NULL)
+     {
+-        if (sys->hw_ctx.context_id != VA_INVALID_ID)
+-            vlc_vaapi_DestroyContext(o, sys->hw_ctx.display, sys->hw_ctx.context_id);
+-        if (sys->hw_ctx.config_id != VA_INVALID_ID)
+-            vlc_vaapi_DestroyConfig(o, sys->hw_ctx.display, sys->hw_ctx.config_id);
++        if (sys->old_vaapi_context.context_id != VA_INVALID_ID)
++            vlc_vaapi_DestroyContext(o, ava->VVAAPIDeviceContext.display, ovc->old_vaapi_context.context_id);
++        if (sys->AVVAAPIHWConfig.config_id != VA_INVALID_ID)
++            vlc_vaapi_DestroyConfig(o, ava->AVVAAPIDeviceContext.display, ava->AVVAAPIHWConfig.config_id);
+         free(sys);
+     }
+     vlc_vaapi_ReleaseInstance(va_inst);
+@@ -251,11 +258,12 @@ static void DeleteDRM(vlc_va_t *va, void **hwctx)
+ {
+     vlc_va_sys_t *sys = va->sys;
+     vlc_object_t *o = VLC_OBJECT(va);
+-
++    AVVAAPIDeviceContext *VD;
++    AVVAAPIHWConfig *AC;
+     (void) hwctx;
+     picture_pool_Release(sys->pool);
+-    vlc_vaapi_DestroyContext(o, sys->hw_ctx.display, sys->hw_ctx.context_id);
+-    vlc_vaapi_DestroyConfig(o, sys->hw_ctx.display, sys->hw_ctx.config_id);
++    vlc_vaapi_DestroyContext(o, VD->display, NULL);
++    vlc_vaapi_DestroyConfig(o, VD->display, AC->config_id);
+     vlc_vaapi_ReleaseInstance(sys->va_inst);
+     free(sys);
+ }
+@@ -263,6 +271,8 @@ static void DeleteDRM(vlc_va_t *va, void **hwctx)
+ static int CreateDRM(vlc_va_t *va, AVCodecContext *ctx, enum PixelFormat pix_fmt,
+                      const es_format_t *fmt, picture_sys_t *p_sys)
+ {
++    AVVAAPIDeviceContext *VD;
++    AVVAAPIHWConfig *AC;
+     if (pix_fmt != AV_PIX_FMT_VAAPI || p_sys)
+         return VLC_EGENERIC;
+ 
+@@ -277,29 +287,27 @@ static int CreateDRM(vlc_va_t *va, AVCodecContext *ctx, enum PixelFormat pix_fmt
+         return VLC_EGENERIC;
+ 
+     vlc_va_sys_t *sys;
+-
+     sys = malloc(sizeof(vlc_va_sys_t));
+     if (!sys)
+        return VLC_ENOMEM;
+     memset(sys, 0, sizeof (*sys));
+ 
+     /* */
+-    sys->hw_ctx.display = NULL;
+-    sys->hw_ctx.config_id = VA_INVALID_ID;
+-    sys->hw_ctx.context_id = VA_INVALID_ID;
++    VD->display = NULL;
++    AC->config_id = VA_INVALID_ID;
+     sys->pool = NULL;
+     sys->va_inst = NULL;
+ 
+     /* Create a VA display */
+     sys->va_inst = vlc_vaapi_InitializeInstanceDRM(o, vaGetDisplayDRM,
+-                                                   &sys->hw_ctx.display, NULL);
++                                                   VD->display, NULL);
+     if (!sys->va_inst)
+         goto error;
+ 
+-    sys->hw_ctx.config_id =
+-        vlc_vaapi_CreateConfigChecked(o, sys->hw_ctx.display, i_profile,
++   AC->config_id =
++        vlc_vaapi_CreateConfigChecked(o, VD->display, i_profile,
+                                       VAEntrypointVLD, 0);
+-    if (sys->hw_ctx.config_id == VA_INVALID_ID)
++    if (AC->config_id == VA_INVALID_ID)
+         goto error;
+ 
+     /* Create surfaces */
+@@ -313,33 +321,32 @@ static int CreateDRM(vlc_va_t *va, AVCodecContext *ctx, enum PixelFormat pix_fmt
+     };
+ 
+     VASurfaceID *surfaces;
+-    sys->pool = vlc_vaapi_PoolNew(o, sys->va_inst, sys->hw_ctx.display, count,
++    sys->pool = vlc_vaapi_PoolNew(o, sys->va_inst, VD->display, count,
+                                   &surfaces, &vfmt, false);
+ 
+     if (!sys->pool)
+         goto error;
+ 
+     /* Create a context */
+-    sys->hw_ctx.context_id =
+-        vlc_vaapi_CreateContext(o, sys->hw_ctx.display, sys->hw_ctx.config_id,
++    uint32_t context_id;
++    context_id =
++        vlc_vaapi_CreateContext(o, VD->display, AC->config_id,
+                                 ctx->coded_width, ctx->coded_height,
+                                 VA_PROGRESSIVE, surfaces, count);
+-    if (sys->hw_ctx.context_id == VA_INVALID_ID)
++    if (context_id == VA_INVALID_ID)
+         goto error;
+ 
+-    ctx->hwaccel_context = &sys->hw_ctx;
++    ctx->hwaccel_context = &sys->hw_frames_ctx;
+     va->sys = sys;
+-    va->description = vaQueryVendorString(sys->hw_ctx.display);
++    va->description = vaQueryVendorString(VD->display);
+     va->get = GetDRM;
+     return VLC_SUCCESS;
+ 
+ error:
+-    if (sys->hw_ctx.context_id != VA_INVALID_ID)
+-        vlc_vaapi_DestroyContext(o, sys->hw_ctx.display, sys->hw_ctx.context_id);
+     if (sys->pool != NULL)
+         picture_pool_Release(sys->pool);
+-    if (sys->hw_ctx.config_id != VA_INVALID_ID)
+-        vlc_vaapi_DestroyConfig(o, sys->hw_ctx.display, sys->hw_ctx.config_id);
++    if (AC->config_id != VA_INVALID_ID)
++        vlc_vaapi_DestroyConfig(o, VD->display, AC->config_id);
+     if (sys->va_inst != NULL)
+         vlc_vaapi_ReleaseInstance(sys->va_inst);
+     free(sys);
+-- 
+2.35.0
+
