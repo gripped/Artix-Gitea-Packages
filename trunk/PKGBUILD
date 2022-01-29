@@ -10,7 +10,7 @@ arch=('x86_64')
 license=('GPL2')
 depends=('glib2' 'i2c-tools' 'libusb' 'libdrm' 'libxrandr')
 #makedepends=('systemd')
-makedepends=('kmod')
+makedepends=('kmod' 'udev')
 source=(https://github.com/rockowitz/ddcutil/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha512sums=('0329711e536cbcaee2efe6cf981a17181ab318846e9c6a82f2ceacc42691ba49c06df44a52d1f079568e9ccec588cc85d4de4adf19b6db83bebe4bb90ae29207')
 
