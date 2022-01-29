@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=5.16.1
+_ver=5.16.3
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
