@@ -2,7 +2,7 @@
 
 pkgname=jupyter-notebook
 pkgver=6.4.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The language-agnostic HTML notebook application for Project Jupyter"
 arch=('any')
 url="https://github.com/jupyter/notebook"
@@ -10,7 +10,7 @@ license=('BSD')
 depends=('python-jinja' 'python-tornado' 'python-terminado'
          'python-traitlets' 'jupyter-nbformat' 'python-jupyter_core'
          'python-jupyter_client' 'mathjax2' 'python-send2trash'
-         'python-prometheus_client' 'python-argon2_cffi')
+         'jupyter-nbconvert' 'python-prometheus_client' 'python-argon2_cffi')
 # Much of their official dependency tree appears inverted and circular?
 makedepends=('python-setuptools' 'npm' 'git')
 #checkdepends=('python-pytest' 'python-selenium' 'python-requests')
