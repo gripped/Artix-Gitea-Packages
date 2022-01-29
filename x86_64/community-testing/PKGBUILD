@@ -1,0 +1,51 @@
+# Maintainer: Kyle Keen <keenerd@gmail.com>
+
+pkgname=jupyter-notebook
+pkgver=6.4.8
+pkgrel=1
+pkgdesc="The language-agnostic HTML notebook application for Project Jupyter"
+arch=('any')
+url="https://github.com/jupyter/notebook"
+license=('BSD')
+depends=('python-jinja' 'python-tornado' 'python-terminado'
+         'python-traitlets' 'jupyter-nbformat' 'python-jupyter_core'
+         'python-jupyter_client' 'mathjax2' 'python-send2trash'
+         'python-prometheus_client' 'python-argon2_cffi')
+# Much of their official dependency tree appears inverted and circular?
+makedepends=('python-setuptools' 'npm' 'git')
+#checkdepends=('python-pytest' 'python-selenium' 'python-requests')
+optdepends=('pandoc: notebook export')
+source=(https://github.com/jupyter/notebook/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+md5sums=('416839de38977b544948f141b01b3b4b')
+
+# todo: report bug that mathjax and nbconvert is no longer optional
+
+build() {
+  cd notebook-$pkgver
+
+  # FS45999 disable bundled mathjax
+  sed -i 's/^.*MathJax.*$//' bower.json 
+  #sed -i '/Trim mathjax/,/^                static_data.append/d' setupbase.py
+  sed -i 's/  mj(/  #mj(/' setupbase.py
+
+  # needs node, downloads a lot of stuff
+  python setup.py build
+}
+
+#check() {
+#  cd notebook-$pkgver
+#  python setup.py test
+#}
+
+package() {
+  cd notebook-$pkgver
+
+  # needs node
+  python setup.py install --prefix=/usr --root="$pkgdir" --optimize=0
+  # FS45999 use system mathjax
+  ln -s /usr/share/mathjax2 \
+  "$pkgdir/usr/lib/python3.10/site-packages/notebook/static/components/MathJax"
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 jupyter-notebook.desktop "$pkgdir/usr/share/applications/jupyter-notebook.desktop"
+}
