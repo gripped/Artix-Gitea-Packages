@@ -1,0 +1,13 @@
+diff --git a/meson.build b/meson.build
+index 3040abf..bdac92a 100644
+--- a/meson.build
++++ b/meson.build
+@@ -56,8 +56,6 @@ else
+   libnma= dependency('', required: false)
+ endif
+
+-config.set('HAVE_NMA_18', libnm.version().version_compare('>=1.8.0'))
+-
+ if get_option('modemmanager')
+   if not get_option('networkmanager')
+     error('*** NetworkManager is required by ModemManager ***')
