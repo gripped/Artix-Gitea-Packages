@@ -8,7 +8,7 @@ pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
 license=('GPL2')
-depends=('ffmpeg4.4' 'jansson' 'libxinerama' 'libxkbcommon-x11' 'mbedtls'
+depends=('ffmpeg' 'jansson' 'libxinerama' 'libxkbcommon-x11' 'mbedtls'
          'qt5-svg' 'curl' 'jack' 'gtk-update-icon-cache' 'pipewire' 'libxcomposite')
 makedepends=('cmake' 'libfdk-aac' 'x264' 'swig' 'python' 'luajit' 'sndio' 'git')
 optdepends=('libfdk-aac: FDK AAC codec support'
