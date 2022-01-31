@@ -10,7 +10,7 @@ pkgdesc="A tool for extracting annotations from audio signals"
 arch=('x86_64')
 url="https://aubio.org/"
 license=('GPL3')
-makedepends=('doxygen' 'ffmpeg4.4' 'fftw' 'jack' 'libsamplerate' 'libsndfile'
+makedepends=('doxygen' 'ffmpeg' 'fftw' 'jack' 'libsamplerate' 'libsndfile'
 'python-numpy' 'python-setuptools' 'python-sphinx' 'txt2man' 'waf')
 checkdepends=('python-pytest')
 source=("https://${pkgbase}.org/pub/${pkgbase}-${pkgver}.tar.bz2"
