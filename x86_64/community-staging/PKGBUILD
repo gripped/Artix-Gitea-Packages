@@ -22,24 +22,25 @@ optdepends=('libfdk-aac: FDK AAC codec support'
             'lib32-gcc-libs: overlay')
 source=($pkgname-$pkgver.tar.gz::https://github.com/jp9000/obs-studio/archive/$pkgver.tar.gz
         obs-ffmpeg.patch::https://github.com/obsproject/obs-studio/commit/91a9688d9f1c2bca1724f3f656eb043d9b1391f2.patch
-	fix_python_binary_loading.patch)
+	      fix_python_binary_loading.patch
+        0001-Werror-fix.patch)
 md5sums=('fc9df69561e3f1b140f7234b440a02bf'
          '9493debd802576fdb4f3aa750aa53cec'
-         '051b90f05e26bff99236b8fb1ad377d1')
+         '051b90f05e26bff99236b8fb1ad377d1'
+         '18bab5fd7d9430e034cf8301e06cf043')
 
 prepare() {
   cd $pkgname-$pkgver
   patch -Np1 < "$srcdir"/fix_python_binary_loading.patch
   patch -Np1 < ../obs-ffmpeg.patch
+  patch -Np1 < ../0001-Werror-fix.patch
 }
 
 build() {
   cd $pkgname-$pkgver
 
   mkdir -p build; cd build
-
-  export PKG_CONFIG_PATH='/usr/lib/ffmpeg4.4/pkgconfig'
-
+  export CFLAGS="$CFLAGS -Wno-error"
   cmake -DCMAKE_INSTALL_PREFIX="/usr" \
     -DBUILD_BROWSER=OFF \
     -DBUILD_VST=OFF \
