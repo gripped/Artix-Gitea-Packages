@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 5.15.16-hardened1 Kernel Configuration
+# Linux/x86 5.15.19-hardened1 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="gcc (GCC) 11.1.0"
 CONFIG_CC_IS_GCC=y
@@ -45,7 +45,7 @@ CONFIG_HAVE_KERNEL_ZSTD=y
 # CONFIG_KERNEL_LZ4 is not set
 CONFIG_KERNEL_ZSTD=y
 CONFIG_DEFAULT_INIT=""
-CONFIG_DEFAULT_HOSTNAME="archlinux"
+CONFIG_DEFAULT_HOSTNAME="artixlinux"
 CONFIG_SWAP=y
 CONFIG_SYSVIPC=y
 CONFIG_SYSVIPC_SYSCTL=y
