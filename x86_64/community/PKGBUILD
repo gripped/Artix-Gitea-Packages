@@ -4,11 +4,11 @@
 
 pkgname=nrpe
 pkgver=4.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Nagios Remote Plugin Executor"
 arch=('x86_64')
 license=('GPL')
-depends=('openssl-1.0')
+depends=('openssl')
 optdepends=("monitoring-plugins: common tools for monitoring using $pkgname")
 makedepends=('procps-ng')
 install=$pkgname.install
@@ -22,17 +22,13 @@ md5sums=('42252d3c721c87ebb5e38b748f187e8d'
 build() {
   cd $pkgname-$pkgver
 
-  export PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig
-  export sslbin=/usr/bin/openssl-1.0
-  export ssl_inc_dir=/usr/include/openssl-1.0/openssl
-
   ./configure \
     --prefix=/usr \
     --sysconfdir=/etc/nrpe \
     --libexecdir=/usr/lib/monitoring-plugins \
     --with-nrpe-user=31 --with-nrpe-group=31 \
     --with-nagios-user=31 --with-nagios-group=31 \
-    --with-piddir=/run/nrpe --with-init-type=openrc
+    --with-piddir=/run/nrpe
 
   make all
 }
@@ -51,7 +47,6 @@ package() {
   install -Dm644 README.SSL.md "$pkgdir"/usr/share/doc/$pkgname/README.SSL.md
   install -Dm644 SECURITY.md "$pkgdir"/usr/share/doc/$pkgname/SECURITY.md
   install -Dm644 LEGAL "$pkgdir"/usr/share/licenses/$pkgname/LEGAL
-
 
   # Tidy up
   chmod -R 755 "$pkgdir"/usr/lib/monitoring-plugins
