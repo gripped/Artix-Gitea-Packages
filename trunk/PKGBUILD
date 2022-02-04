@@ -13,7 +13,7 @@ license=('Apache')
 depends=('python-dateutil' 'python-jmespath' 'python-docutils' 'python-urllib3')
 makedepends=('python-setuptools')
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-md5sums=('c6b1dade5fc8a42e692273474d808f84')
+md5sums=('c7025001134ab0638eaf0fb576c00fc8')
 
 build() {
   cd botocore-$pkgver
