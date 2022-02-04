@@ -2,7 +2,7 @@
 
 pkgname=kmod
 pkgver=29
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux kernel module management tools and library"
 arch=('x86_64')
 url='https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git'
@@ -17,16 +17,11 @@ validpgpkeys=('EAB33C9690013C733916AC839BA2A5A630CBEA53')  # Lucas DeMarchi
 source=("https://www.kernel.org/pub/linux/utils/kernel/$pkgname/$pkgname-$pkgver.tar."{xz,sign}
         'depmod-search.conf'
         'depmod.hook' 'depmod.script')
-sha256sums=('0b80eea7aa184ac6fd20cafa2a1fdf290ffecc70869a797079e2cc5c6225a52a'
-            'SKIP'
-            '1a92bfeae870f61ce814577e69d2a147a9c0caf6aed1131243e4179241fcc4a8'
-            'c11c2a0f66ea405493e8617689ca10818dc81dd1dddc19bdb220c8b2917119c1'
-            '827c02e868777e8fcaa91fd519966ef5d30c8d30bad1b20eb56e01cbc9a2e43f')
-b2sums=('1362b6e7c07f66594074f07239d0f7a64e6efeb928483ed027b22a4ac77b916c631d1c03780b0515714a87847a716c35341edb1ced04a1795b4c7f8942d3207a'
-        'SKIP'
-        '2579dd874f3b4a00a052a3cad177587e0170f24090b18b46a89a3a16b045a82edf5f8a36421532f3a31da063d1f8626ebd7cbdb412a91626d9b6c4de16866834'
-        '75eca9b0eae13d300f578179b889ca9db755c875f99a6ea1672b6de0dca49ded634d1ed362e97c316c5da1876f6807e62422cbb694916a6033c7924030263fa8'
-        'e32c9e5b215f2d04d8379403754b55101d6e74cfa98c5df2e71259541f113df930ee2ddfef3c79138a1e966dc3776f5b85e558168e2de1d6d087aa9791ac30d8')
+md5sums=('e81e63acd80697d001c8d85c1acb38a0'
+         'SKIP'
+         'dd62cbf62bd8f212f51ef8c43bec9a77'
+         'e179ace75721e92b04b2e145b69dab29'
+         '18fb3d1f6024a5a84514c8276cb3ebff')
 
 build() {
   cd "$pkgname-$pkgver"
