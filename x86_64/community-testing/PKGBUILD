@@ -12,7 +12,7 @@ url="https://github.com/boto/botocore"
 license=('Apache')
 depends=('python-dateutil' 'python-jmespath' 'python-docutils' 'python-urllib3')
 makedepends=('python-setuptools')
-checkdepends=('python-pip' 'python-pytest')
+checkdepends=('python-nose' 'python-wheel' 'python-behave' 'python-jsonschema' 'python-pytest' 'python-pytest-xdist')
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
 md5sums=('520e59003ecce03a5334e2ca51d209a7')
 
@@ -23,7 +23,6 @@ build() {
 
 check() {
     cd botocore-$pkgver
-    python scripts/ci/install
     python scripts/ci/run-tests --with-xdist
 }
 
