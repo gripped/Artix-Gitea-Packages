@@ -3,7 +3,7 @@
 
 pkgbase=python-boto3
 pkgname=python-boto3
-pkgver=1.20.47
+pkgver=1.20.48
 pkgrel=1
 pkgdesc='The AWS SDK for Python'
 arch=('any')
@@ -11,9 +11,9 @@ license=('Apache')
 url='https://github.com/boto/boto3'
 depends=('python-botocore' 'python-jmespath' 'python-s3transfer')
 makedepends=('python-setuptools')
-# checkdepends=('python-coverage' 'python-nose' 'python-mock')
+checkdepends=('python-nose' 'python-wheel' 'python-coverage' 'python-pytest' 'python-pytest-cov' 'python-pytest-xdist')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/boto/boto3/archive/$pkgver.tar.gz")
-sha512sums=('c3a84ba9df6670879605e9085ea7aa15077d9f1c30117de6e9cd9cbb427a6a06097a388feb80a0ebc7ad1f422a40df402986d3dc9b004abf5252dab16524c761')
+sha512sums=('e80f2e54909a3a54e5eba9c9a75c0ccbb2ba3f8907dfec9563f50bef1be56b82b593ae0bc0ee0bfab1a7c993d4bbf0c624486822ef3cd93ef425f39205b628f0')
 
 build() {
   cd boto3-$pkgver
@@ -22,7 +22,7 @@ build() {
 
 check() {
   cd boto3-$pkgver
-  # scripts/ci/run-tests
+  python scripts/ci/run-tests
 }
 
 package() {
