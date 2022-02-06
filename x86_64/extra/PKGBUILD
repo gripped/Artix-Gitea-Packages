@@ -4,8 +4,8 @@
 # Contributor: Angel 'angvp' Velasquez <angvp[at]archlinux.com.ve> 
 
 pkgname=python-numpy
-pkgver=1.21.5
-pkgrel=2
+pkgver=1.22.2
+pkgrel=1
 pkgdesc="Scientific tools for Python"
 arch=('x86_64')
 license=('custom')
@@ -15,8 +15,8 @@ optdepends=('openblas: faster linear algebra')
 makedepends=('python-setuptools' 'gcc-fortran' 'cython')
 checkdepends=('python-pytest' 'python-hypothesis')
 options=('staticlibs')
-source=("https://github.com/numpy/numpy/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('dd9007bcf9bc93ea62ec0bacdf31b6f33159701463c2a4c8d4ba009c1b404a76e2d6ccd9c424b15820915f6265da95062c122035c66e18656eb990c3ac7df198')
+source=("https://github.com/numpy/numpy/releases/download/v$pkgver/numpy-$pkgver.tar.gz")
+sha512sums=('38b759fa0e6491386cfa34b091fc395a14de18643425187ac44a07f9ad92d4c2a94269c0e1c77ee1fb38c6531878540bbe1135376075cef5dc3cda78cb1c74cf')
 
 build() {
   cd numpy-$pkgver
