@@ -11,7 +11,7 @@ license=('LGPL2.1')
 depends=('python' 'libusb')
 makedepends=('python-setuptools' 'python-wheel')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha512sums=('4860fdb244c32249e6aba7e2b8642eec8eca9acfacaa284568821af3bf95d63411bf5da3615beff47761ca35fc387526b1a9074fe44805097e55787b6aa890e8')
+sha512sums=('d19350aa62ddd7325f2417d69ec6716068f2cc1778f9d25cd51420ffd92d2ef9c998c831a2e3cde2c32855ba339a963e2f9b078d4ff7e315c1444a6f6f8f26e7')
 
 build() {
   cd $pkgname-$pkgver
