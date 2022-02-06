@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.2.49.1
-pkgrel=4
+pkgver=3.2.51
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -19,7 +19,7 @@ source=("${url}/archive/v$pkgver.tar.gz"
         services-s6.patch
         services-suite66.patch
         services-dinit.patch)
-sha256sums=('86bdceb90eb81d42596b780ccd99385002e2b8d45d8fae836156d37b5122d020'
+sha256sums=('30eb3e568ab31d84525db38ef2fa23fb78efb584275b26007137a54b9f782d70'
             '77c2d46c511ad6ea4f2c9663007f9d5a4cc2c385223498982d3feb4e56becc68'
             '820d515f5788b7b55e3ebaa2357db643bc1d554e931649980d8b39a6a26b51e0'
             'c1c1ba7d14754cf284b75812323cf1799d6f55c6ea2c12b3e6a110855306b3f6'
