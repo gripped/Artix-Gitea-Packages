@@ -20,7 +20,6 @@ md5sums=('d973938cdb8879a03604caee0b0d039f')
 build() {
   cd $pkgname-$pkgver
   python setup.py build
-  exit 1
 }
 
 # Artix addition
