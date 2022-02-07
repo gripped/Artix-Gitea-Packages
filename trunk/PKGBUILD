@@ -13,7 +13,7 @@ depends=('python-botocore' 'python-jmespath' 'python-s3transfer')
 makedepends=('python-setuptools')
 checkdepends=('python-nose' 'python-wheel' 'python-coverage' 'python-pytest' 'python-pytest-cov' 'python-pytest-xdist')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/boto/boto3/archive/$pkgver.tar.gz")
-sha512sums=('6ea92236726b9200a8b06f773483b0d6803585480cfad1f68eab227598ca86c3aa93cbeccec5338febc52eb48691f003c5983d52be56dd91e97735ddbfac7053')
+sha512sums=('103a75edc907ea9a7ed5d08bb8a2f31b1360495a130d0492461956c0ec5c1e1b839187d9d9feaebf7eb06e2d367f9fcdc1c522c234be3314fceca7884651d54e')
 
 build() {
   cd boto3-$pkgver
