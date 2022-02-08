@@ -4,7 +4,7 @@
 
 pkgname=firefox
 pkgver=97.0
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Standalone web browser from mozilla.org"
 arch=(x86_64)
 license=(MPL GPL LGPL)
@@ -20,7 +20,7 @@ optdepends=('networkmanager: Location detection via available WiFi networks'
             'speech-dispatcher: Text-to-Speech'
             'hunspell-en_US: Spell checking, American English'
             'xdg-desktop-portal: Screensharing with Wayland')
-options=(!emptydirs !makeflags !strip !lto)
+options=(!emptydirs !makeflags !strip !lto !debug)
 source=(https://archive.mozilla.org/pub/firefox/releases/$pkgver/source/firefox-$pkgver.source.tar.xz{,.asc}
         0001-Use-remoting-name-for-GDK-application-names.patch
         $pkgname.desktop identity-icons-brand.svg)
@@ -55,7 +55,7 @@ ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 # Branding
 ac_add_options --enable-official-branding
 ac_add_options --enable-update-channel=release
-ac_add_options --with-distribution-id=org.archlinux
+ac_add_options --with-distribution-id=org.artixlinux
 ac_add_options --with-unsigned-addon-scopes=app,system
 ac_add_options --allow-addon-sideload
 export MOZILLA_OFFICIAL=1
@@ -143,14 +143,14 @@ END
   local distini="$pkgdir/usr/lib/$pkgname/distribution/distribution.ini"
   install -Dvm644 /dev/stdin "$distini" <<END
 [Global]
-id=archlinux
+id=artixlinux
 version=1.0
-about=Mozilla Firefox for Arch Linux
+about=Mozilla Firefox for Artix Linux
 
 [Preferences]
-app.distributor=archlinux
+app.distributor=artixlinux
 app.distributor.channel=$pkgname
-app.partner.archlinux=archlinux
+app.partner.artixlinux=artixlinux
 END
 
   local i theme=official
