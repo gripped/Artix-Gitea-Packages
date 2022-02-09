@@ -35,24 +35,11 @@ source=(https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/$pkgver/sou
         distribution.ini
         mozconfig.cfg
         metainfo.patch
-        Add-missing-stub-for-wl_proxy_marshal_fl.patch
         0001-Use-remoting-name-for-GDK-application-names.patch)
 validpgpkeys=(
   14F26682D0916CDD81E37B6D61B7B526D98F0353 # Mozilla Software Releases <release@mozilla.com>
   4360FE2109C49763186F8E21EBE41E90F6F12F6D # Mozilla Software Releases <release@mozilla.com>
 )
-
-# Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
-# Note: These are for Arch Linux use ONLY. For your own distribution, please
-# get your own set of keys. Feel free to contact foutrelis@archlinux.org for
-# more information.
-_google_api_key=AIzaSyDwr302FpOSkGRpLlUpPThNTDPbXcIn_FM
-
-# Mozilla API keys (see https://location.services.mozilla.com/api)
-# Note: These are for Arch Linux use ONLY. For your own distribution, please
-# get your own set of keys. Feel free to contact heftig@archlinux.org for
-# more information.
-_mozilla_api_key=16674381-f021-49de-8622-3021c5942aff
 
 prepare() {
   cd $pkgname-$pkgver
@@ -68,8 +55,6 @@ prepare() {
     patch -Np1 < "../$src"
   done
 
-  printf "%s" "$_google_api_key" >google-api-key
-  printf "%s" "$_mozilla_api_key" >mozilla-api-key
   cp ../mozconfig.cfg .mozconfig
   sed "s|@PWD@|${PWD@Q}|g" -i .mozconfig
 }
@@ -224,7 +209,6 @@ sha512sums=('a11eafe1390141ee3508eea06ba8ab135d0725513977a3b37b3b35f413a1f825dc1
             'f0c95fc9502cc81491684fb7556145e1e502a9b1a8a18640feffa00516722c722fe9e07b6061e5be3b7c7736b892fb14fd5225f2386c82dd5cbee80c935a6a9b'
             'a43c5f365fbd341a17d592726feed29a6aa0cbc3c22d6edaca9b31c15ed3e7e0482a08ee23b206b5544aaea3215cbd82f7cdf1d8afc3d8f70987c96441ad68e6'
             '7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290'
-            'd2a6a14871eb227d7d2941936949ed5d0517f63fcdd135ff3fe9557b6cddd815c99babd326fcfd504fa9c10134e0db57b12984a8abe13c378f2823041b134e23'
             '09cf7b3e21aaf517bf68362d4fa9d8c818a17c07df405947a50a8fe576d571ecdbbb9d0c34cdb0bff103f73fd34f0c4f3af1c2b678338abc29ec70f6d34ae8c8'
             '52f1ab3d9b0762753f1bfea9b5f307867dad910bf456035aba925b320aec02a41346a5f37d2c89d4d2dedb274b3fb18a2323b68e92e250fbb4e37b0bf9fc2409'
             '31e45bc21929d2334431059d8b6f68792bcb4a1bfc8988454ebfcff3df3d4d855ffb54c0907f5e89dd7169a566be72c3acad9ab868668f06fd9b800d1fe2885f'
