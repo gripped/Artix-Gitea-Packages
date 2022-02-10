@@ -15,7 +15,7 @@ depends=('python-botocore' 'python-dateutil' 'python-jmespath'
 makedepends=('python-setuptools')
 checkdepends=('python-pytest')
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-md5sums=('d973938cdb8879a03604caee0b0d039f')
+md5sums=('ea28fd9952e42227bbf291a402ed5b6d')
 
 build() {
   cd $pkgname-$pkgver
