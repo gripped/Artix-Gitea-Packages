@@ -3,7 +3,7 @@
 
 pkgbase=python-boto3
 pkgname=python-boto3
-pkgver=1.20.50
+pkgver=1.20.52
 pkgrel=1
 pkgdesc='The AWS SDK for Python'
 arch=('any')
