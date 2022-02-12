@@ -14,7 +14,7 @@ _commit=1e163f565e907d71cbec98728aaa74ce2241adaf  # tags/1.0.4^0
 source=("git+https://gitlab.gnome.org/GNOME/mm-common.git#commit=$_commit"
         https://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen/libstdc++.tag)
 sha256sums=('SKIP'
-            'ea9631f749d33e927e950e1cc7db98f7270990d131e6f405562f793ad4c72fa9')
+            'SKIP')
 
 pkgver() {
   cd $pkgname
