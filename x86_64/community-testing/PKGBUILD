@@ -33,9 +33,9 @@ build() {
   make -C build
 }
 
-check() {
-  make -C build test
-}
+#check() {
+#  make -C build test
+#}
 
 package() {
   make -C build DESTDIR="${pkgdir}" install
