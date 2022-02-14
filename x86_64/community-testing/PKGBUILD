@@ -37,7 +37,7 @@ build() {
 
 check() {
   cd $pkgname
-  PYTHONPATH="build:$PYTHONPATH"
+  PYTHONPATH="$PWD/build/lib:$PYTHONPATH"
   # disable failing test (probably related to missing pytest-cache):
   # https://github.com/horejsek/python-fastjsonschema/issues/139
   pytest -v -m "not benchmark" -k "not test_compile_to_code_custom_format_with_refs"
