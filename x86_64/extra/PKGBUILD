@@ -4,7 +4,7 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=10.6.6
+pkgver=10.6.7
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
@@ -22,7 +22,7 @@ source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-$
         'mariadb.sysusers.conf'
         'mariadb.tmpfiles.conf'
         '0001-arch-specific.patch')
-sha256sums=('e76417ec87bd1044aafe300edae554aeba67cb755ff7eb8bcd10d2fc268fe1c3'
+sha256sums=('75ee0f1f865a765fc461ab165419417a719e308faba784b2c97ecbe9e4b4b2c5'
             'SKIP'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
