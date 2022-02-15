@@ -20,7 +20,7 @@ build() {
 
 check() {
   cd sybil-$pkgver
-  python -m pytest
+  pytest -k "not test_modules_not_importable_unittest"
 }
 
 package() {
