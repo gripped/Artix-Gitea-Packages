@@ -3,41 +3,44 @@
 
 pkgname=obs-studio
 pkgver=27.1.3
-pkgrel=3.1
+pkgrel=4
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
 license=('GPL2')
 depends=('ffmpeg' 'jansson' 'libxinerama' 'libxkbcommon-x11' 'mbedtls'
          'qt5-svg' 'curl' 'jack' 'gtk-update-icon-cache' 'pipewire' 'libxcomposite')
-makedepends=('cmake' 'libfdk-aac' 'x264' 'swig' 'python' 'luajit' 'sndio' 'git')
+makedepends=('cmake' 'libfdk-aac' 'x264' 'swig' 'python' 'luajit' 'sndio' 'git'
+              'lib32-gcc-libs')
 optdepends=('libfdk-aac: FDK AAC codec support'
             'libva-intel-driver: hardware encoding'
             'libva-mesa-driver: hardware encoding'
             'luajit: scripting support'
             'python: scripting support'
             'sndio: Sndio input client'
-            'v4l2loopback-dkms: virtual camera support')
-source=($pkgname-$pkgver::git+https://github.com/jp9000/obs-studio.git#tag=${pkgver}
-  fix_python_binary_loading.patch
-  obs-ffmpeg.patch::https://github.com/obsproject/obs-studio/commit/91a9688d9f1c2bca1724f3f656eb043d9b1391f2.patch
-)
-md5sums=('SKIP'
+            'v4l2loopback-dkms: virtual camera support'
+            'lib32-gcc-libs: overlay')
+source=($pkgname-$pkgver.tar.gz::https://github.com/jp9000/obs-studio/archive/$pkgver.tar.gz
+        obs-ffmpeg.patch::https://github.com/obsproject/obs-studio/commit/91a9688d9f1c2bca1724f3f656eb043d9b1391f2.patch
+	      fix_python_binary_loading.patch
+        0001-Werror-fix.patch)
+md5sums=('fc9df69561e3f1b140f7234b440a02bf'
+         '9493debd802576fdb4f3aa750aa53cec'
          '051b90f05e26bff99236b8fb1ad377d1'
-         '9493debd802576fdb4f3aa750aa53cec')
+         '18bab5fd7d9430e034cf8301e06cf043')
 
 prepare() {
   cd $pkgname-$pkgver
   patch -Np1 < "$srcdir"/fix_python_binary_loading.patch
-  git cherry-pick -n d78971b4db34d5fffbd11d2acabf37a65e11cd58
-  patch -Np1 -i ../obs-ffmpeg.patch
+  patch -Np1 < ../obs-ffmpeg.patch
+  patch -Np1 < ../0001-Werror-fix.patch
 }
 
 build() {
   cd $pkgname-$pkgver
 
   mkdir -p build; cd build
-
+  export CFLAGS="$CFLAGS -Wno-error"
   cmake -DCMAKE_INSTALL_PREFIX="/usr" \
     -DBUILD_BROWSER=OFF \
     -DBUILD_VST=OFF \
