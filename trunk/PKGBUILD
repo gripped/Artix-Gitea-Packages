@@ -3,7 +3,7 @@
 _upstream=arch-rebuild-order
 
 pkgname=artix-rebuild-order
-pkgver=0.2.1
+pkgver=0.3
 pkgrel=1
 pkgdesc="CLI tool to determine the rebuild order of provided package(s)"
 arch=('x86_64')
