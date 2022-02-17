@@ -7,7 +7,7 @@
 
 pkgname=vtk
 pkgver=9.1.0
-pkgrel=9.1
+pkgrel=10
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org/"
@@ -60,7 +60,7 @@ source=(${url}/files/release/${pkgver%.*}/VTK-${pkgver}.tar.gz
 options=(staticlibs)
 sha256sums=('8fed42f4f8f1eb8083107b68eaa9ad71da07110161a3116ad807f43e5ca5ce96'
             '37cff664c4eaacf44ecb995e62e9e54e54880bae0857d598c74660a2159ccb2e'
-            '762e971cbdfd4a6545cdcb7550955c930e8d80a5906606aaee1b560c985cad6e')
+            '066ad5eb3f7cd101c4bbbe4d91ba97419f18537f9dadf6654776b7151c7c6a8d')
 
 prepare() {
   cd VTK-${pkgver}
@@ -70,8 +70,8 @@ prepare() {
   sed -i "s|8.1.0|8.0.1|" ThirdParty/fmt/CMakeLists.txt
   # Fix build with TBB 2021
   patch -d ThirdParty/vtkm/vtkvtkm/vtk-m -p1 -i "$srcdir"/vtk-tbb-2021.patch
-  # ffmpeg 5 patch
-  patch -Np1 -i ../ffmpeg5.patch
+  # Fix build with FFmpeg 5 https://gitlab.kitware.com/vtk/vtk/-/merge_requests/8863
+  patch -p1 -i "$srcdir"/ffmpeg5.patch
 }
 
 build() {
