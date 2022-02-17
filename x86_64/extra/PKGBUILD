@@ -8,7 +8,7 @@ _vlcver=3.0.16
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=7.2
+pkgrel=8
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
@@ -97,7 +97,7 @@ optdepends=('avahi: service discovery using bonjour protocol'
             'pcsclite: aribcam support')
 conflicts=('vlc-plugin')
 replaces=('vlc-plugin')
-options=('!emptydirs')
+options=('debug' '!emptydirs')
 source=(https://download.videolan.org/${pkgname}/${_vlcver}/${pkgname}-${_vlcver}${_vlcfixupver}.tar.xz{,.asc}
         update-vlc-plugin-cache.hook
         caca-fix-to-newer-version.patch
@@ -257,6 +257,9 @@ build() {
     --enable-aom \
     --enable-srt \
     --enable-dav1d
+
+  # prevent excessive overlinking due to libtool
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
