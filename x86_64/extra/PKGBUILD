@@ -3,18 +3,16 @@
 pkgname=gegl
 _tag='0dcdbe3e1244110e8284219250bf2345672de6a0'
 pkgver=0.4.34
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Graph based image processing framework"
 arch=('x86_64')
 url="https://www.gegl.org/"
 license=('GPL3' 'LGPL3')
 depends=('babl' 'libspiro' 'json-glib' 'libgexiv2' 'libraw' 'openexr' 'librsvg' 'libtiff' 'luajit' 'jasper' 'lensfun' 'suitesparse' 'poppler-glib')
-makedepends=('intltool' 'ruby' 'mesa' 'glu' 'ffmpeg' 'exiv2' 'vala' 'gobject-introspection' 'git' 'meson' 'python-gobject')
-optdepends=('ffmpeg: ffmpeg plugin' 'graphviz: for gegl-introspect')
-source=("git+https://gitlab.gnome.org/GNOME/gegl.git#tag=$_tag"
-        "ffmpeg-5-hack-build.patch")
-sha256sums=('SKIP'
-            'f1fe2ccdf902a2db1ca95624f02b1bcb3d43011a052bd37483ee7223be2e0cbe')
+makedepends=('intltool' 'ruby' 'mesa' 'glu' 'ffmpeg4.4' 'exiv2' 'vala' 'gobject-introspection' 'git' 'meson' 'python-gobject')
+optdepends=('ffmpeg4.4: ffmpeg plugin' 'graphviz: for gegl-introspect')
+source=("git+https://gitlab.gnome.org/GNOME/gegl.git#tag=$_tag")
+sha256sums=('SKIP')
 
 pkgver() {
   cd $pkgname
@@ -23,12 +21,12 @@ pkgver() {
 
 prepare() {
   cd $pkgname
-  patch -Np1 -i ../ffmpeg-5-hack-build.patch
 }
 
 build() {
   mkdir -p build
   cd build
+  export PKG_CONFIG_PATH='/usr/lib/ffmpeg4.4/pkgconfig'
   artix-meson ../$pkgname \
     -Dworkshop=true \
     -Dmrg=disabled \
