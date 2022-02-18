@@ -32,7 +32,8 @@ build() {
     --enable-mmx \
     --disable-amd64 \
     --libdir=/usr/lib32 \
-    --libexecdir=/usr/lib32 
+    --libexecdir=/usr/lib32 \
+    --without-heif
 
   make
 }
