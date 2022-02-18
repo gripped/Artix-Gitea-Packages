@@ -4,7 +4,7 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=10.6.7
+pkgver=10.7.3
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
@@ -22,7 +22,7 @@ source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-$
         'mariadb.sysusers.conf'
         'mariadb.tmpfiles.conf'
         '0001-arch-specific.patch')
-sha256sums=('75ee0f1f865a765fc461ab165419417a719e308faba784b2c97ecbe9e4b4b2c5'
+sha256sums=('da286919ffc9c913282202349709b6ba4ebcd342815e8dae0aa6b6bd8f515cd4'
             'SKIP'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
@@ -109,7 +109,7 @@ check() {
 
 package_mariadb-libs() {
   pkgdesc='MariaDB libraries'
-  depends=('bzip2' 'libaio' 'libxcrypt' 'libcrypt.so' 'lz4' 'lzo' 'openssl' 'xz' 'zlib')
+  depends=('libaio' 'libxcrypt' 'libcrypt.so' 'openssl' 'zlib')
   optdepends=('krb5: for gssapi authentication')
   conflicts=('libmysqlclient' 'libmariadbclient' 'mariadb-connector-c')
   provides=('libmariadbclient' 'mariadb-connector-c' 'libmariadb.so' 'libmariadbd.so')
@@ -159,18 +159,22 @@ package_mariadb() {
           'etc/my.cnf.d/client.cnf'
           'etc/my.cnf.d/enable_encryption.preset'
           'etc/my.cnf.d/mysql-clients.cnf'
-          'etc/my.cnf.d/server.cnf'
+          'etc/my.cnf.d/provider_bzip2.cnf'
+          'etc/my.cnf.d/provider_lz4.cnf'
+          'etc/my.cnf.d/provider_lzma.cnf'
           'etc/my.cnf.d/s3.cnf'
+          'etc/my.cnf.d/server.cnf'
           'etc/my.cnf.d/spider.cnf'
           'etc/security/user_map.conf')
   install=mariadb.install
-  depends=("mariadb-clients=${pkgver}" 'libxml2' 'zstd')
+  depends=("mariadb-clients=${pkgver}" 'bzip2' 'libxml2' 'lz4' 'libxml2' 'zstd')
   optdepends=('cracklib: for cracklib plugin'
               'curl: for ha_s3 plugin'
               'galera: for MariaDB cluster with Galera WSREP'
               'judy: for Open Query GRAPH (OQGraph) computation engine'
+              'perl-dbd-mariadb: for mariadb-hotcopy, mariadb-convert-table-format and mariadb-setpermission'
               'python-mysqlclient: for myrocks_hotbackup'
-              'perl-dbd-mariadb: for mariadb-hotcopy, mariadb-convert-table-format and mariadb-setpermission')
+              'xz: lzma provider')
   conflicts=('mysql')
   provides=("mysql=$pkgver")
   options=('emptydirs')
@@ -185,7 +189,7 @@ package_mariadb() {
   install -Dm644 "$srcdir"/mariadb.sysusers.conf usr/lib/sysusers.d/mariadb.conf
   install -Dm644 "$srcdir"/mariadb.tmpfiles.conf usr/lib/tmpfiles.d/mariadb.conf
   # no SysV init, please!
-  rm -r etc/{init.d,logrotate.d}
+  rm -r etc/logrotate.d
   rm usr/bin/rcmysql
   rm usr/share/mysql/{binary-configure,mysql{,d_multi}.server}
 
