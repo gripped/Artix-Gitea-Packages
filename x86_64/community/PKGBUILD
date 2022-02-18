@@ -3,7 +3,7 @@
 
 pkgbase=python-boto3
 pkgname=python-boto3
-pkgver=1.20.54
+pkgver=1.21.1
 pkgrel=1
 pkgdesc='The AWS SDK for Python'
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python-botocore' 'python-jmespath' 'python-s3transfer')
 makedepends=('python-setuptools')
 checkdepends=('python-nose' 'python-wheel' 'python-coverage' 'python-pytest' 'python-pytest-cov' 'python-pytest-xdist')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/boto/boto3/archive/$pkgver.tar.gz")
-sha512sums=('8d82a433eae2b57fe5b3057d42f25769cf70f5e24db1b680c32a34e605caf573e273daae82164c746a6f6cf2c75d67e19bf99efd6ebe27d195aeb67dd8555808')
+sha512sums=('a94d195cbcee2b18877502eca9a79f231519f63712c7522ede23357d1117885e1fd2cce91d3698527d7f19140e08d68dd7272ef1278b9cbad86c77d81aa2661b')
 
 build() {
   cd boto3-$pkgver
