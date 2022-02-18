@@ -1,0 +1,25 @@
+From 53b80662396df8e35d6321b33952519114e82f87 Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Fri, 18 Feb 2022 16:49:26 -0600
+Subject: [PATCH] multi-def
+
+---
+ src/headers/daemon.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/headers/daemon.h b/src/headers/daemon.h
+index a8936ad..949eb84 100644
+--- a/src/headers/daemon.h
++++ b/src/headers/daemon.h
+@@ -180,7 +180,7 @@ extern struct mouse_features  mouse_table[3],
+ extern Gpm_Type         mice[];
+ extern Gpm_Type         *repeated_type;
+ 
+-time_t                  last_selection_time;
++extern time_t                  last_selection_time;
+ 
+ 
+ 
+-- 
+2.35.1
+

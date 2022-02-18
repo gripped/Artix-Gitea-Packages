@@ -13,13 +13,19 @@ license=('GPL')
 depends=('lib32-ncurses' "$_pkgname")
 options=('!makeflags')
 source=(http://www.nico.schottelius.org/software/gpm/archives/${_pkgname}-${pkgver}.tar.lzma
-        gpm-glibc-2.26.patch)
+        gpm-glibc-2.26.patch
+        0001-multi-def.patch
+        0001-format-security.patch)
 sha1sums=('8d9f3655c80ce7667d31ede2a100b44986480369'
-          '57d98a5ed864ead76290d32a6899caaed0b55959')
+          '57d98a5ed864ead76290d32a6899caaed0b55959'
+          '73babbae38e21827346dd27ca3ebd1761bb76889'
+          '234055aa7e06568597677fb60417748d6125e857')
 
 prepare() {
   cd $_pkgname-$pkgver
   patch -p1 -i ../gpm-glibc-2.26.patch # Fix build with glibc 2.26 (Debian)
+  patch -p1 -i ../0001-multi-def.patch # Multiple def
+  patch -p1 -i ../0001-format-security.patch
 }
 
 build() {

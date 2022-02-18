@@ -1,0 +1,25 @@
+From 94348d0456e520a3868c0e2e314e5c81e918d075 Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Fri, 18 Feb 2022 16:52:01 -0600
+Subject: [PATCH] format-security
+
+---
+ src/lib/report-lib.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/lib/report-lib.c b/src/lib/report-lib.c
+index c0ae086..6561c08 100644
+--- a/src/lib/report-lib.c
++++ b/src/lib/report-lib.c
+@@ -47,7 +47,7 @@ void gpm_report(int line, char *file, int stat, char *text, ... )
+                            log_level = LOG_CRIT; break;
+    }
+ #ifdef HAVE_VSYSLOG
+-   syslog(log_level, string);
++   syslog(log_level,"%s", string);
+    vsyslog(log_level, text, ap);
+ #else
+    fprintf(stderr,"%s[%s(%d)]:\n",string,file,line);
+-- 
+2.35.1
+
