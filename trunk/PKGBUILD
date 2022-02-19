@@ -28,8 +28,8 @@ optdepends=('graphviz: graphviz-filter'
             'w3m: text generation'
             'lynx: alternative text generation')
 source=("https://github.com/asciidoc-py/asciidoc-py/releases/download/$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('0bfcebf4d0419323c8b4903676b05259847e6534c82a2629a0c852e621de7c47')
-b2sums=('a00ade1a849ffed98d10ddbbca5300e6f9fca9fc60663ff6e59979613a013b408829d35d9362cdf830ef08cd494ca4a47dab919ce29ce7111ee0fdaa3e301f24')
+sha256sums=('a66893dbffc2249cd57e7a5c223fae6910939718c6c1f22028f16364cda663ba')
+b2sums=('6c97c608cade764c1a7f98cb4e2cc1639b6c6800684be761b82067357ae5afeddfd55e5aa47203f1556afb655363bbc014f508207446749bf61f55b99c7d7c5b')
 
 prepare() {
   cd ${pkgname}-py-${pkgver}
