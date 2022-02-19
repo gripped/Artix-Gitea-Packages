@@ -55,7 +55,6 @@ build() {
 
   # we currently require ffmpeg4.4 as otherwise database update is broken:
   # https://github.com/MusicPlayerDaemon/MPD/issues/1448
-  export PKG_CONFIG_PATH='/usr/lib/ffmpeg4.4/pkgconfig'
   # NOTE: sndio conflicts with alsa
   # TODO: package adplug
   # TODO: package shine
@@ -77,8 +76,8 @@ package() {
   libupnp.so liburing.so libvorbis.so libvorbisenc.so libyajl.so libavfilter.so
   libchromaprint.so libixml.so)
 
-  cd "${pkgname}-${pkgver}"
   DESTDIR="${pkgdir}" ninja -C build install
+  cd "${pkgname}-${pkgver}"
   install -vDm 644 "doc/${pkgname}conf.example" -t "${pkgdir}/usr/share/doc/${pkgname}/"
   install -vDm 644 "../${pkgname}.conf" -t "${pkgdir}/etc/"
   install -vDm 644 "../${pkgname}.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
