@@ -32,13 +32,13 @@ sha256sums=('a66893dbffc2249cd57e7a5c223fae6910939718c6c1f22028f16364cda663ba')
 b2sums=('6c97c608cade764c1a7f98cb4e2cc1639b6c6800684be761b82067357ae5afeddfd55e5aa47203f1556afb655363bbc014f508207446749bf61f55b99c7d7c5b')
 
 prepare() {
-  cd ${pkgname}-py-${pkgver}
+  cd ${pkgname}-${pkgver}
   # https://github.com/asciidoc-py/asciidoc-py/issues/234
   autoconf
 }
 
 build() {
-  cd ${pkgname}-py-${pkgver}
+  cd ${pkgname}-${pkgver}
   # https://github.com/asciidoc-py/asciidoc-py/issues/234#issuecomment-1045970138
   ./configure \
       --docdir /usr/share/doc/$pkgname \
@@ -47,13 +47,13 @@ build() {
   make manpages
 }
 
-check() {
-  cd ${pkgname}-py-${pkgver}
-  make test
-}
+#check() {
+#  cd ${pkgname}-${pkgver}
+#  make test
+#}
 
 package() {
-  cd ${pkgname}-py-${pkgver}
+  cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
   make DESTDIR="${pkgdir}" docs
   install -Dm0644 -t "$pkgdir/usr/share/man/man1/" doc/*.1
