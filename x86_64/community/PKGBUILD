@@ -6,7 +6,7 @@
 pkgname=lsb-release
 pkgver=2.0.r48.3cf5103
 _commit=3cf51039933d03ef15388b75d30baa5d5e09a1a0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="LSB version query program"
 arch=('any')
 install=lsb-release.install
