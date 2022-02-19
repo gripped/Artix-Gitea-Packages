@@ -8,7 +8,7 @@
 
 pkgname=mpd
 pkgver=0.23.5
-pkgrel=4
+pkgrel=6
 pkgdesc="Flexible, powerful, server-side application for playing music"
 arch=(x86_64)
 url="https://www.musicpd.org/"
@@ -22,11 +22,14 @@ fluidsynth fmt icu jack libao libid3tag libmikmod libmpdclient libogg
 libopenmpt libpulse libsamplerate libsndfile libupnp liburing libvorbis meson
 mpg123 pipewire python-sphinx twolame yajl)
 backup=("etc/${pkgname}.conf")
+backup=(etc/$pkgname.conf)
 options=(debug)
-source=("https://www.musicpd.org/download/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"{,.sig}
-        "${pkgname}.conf"
-        "${pkgname}.sysusers"
-        "${pkgname}.tmpfiles")
+source=(
+  https://www.musicpd.org/download/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
+  $pkgname.conf
+  $pkgname.sysusers
+  $pkgname.tmpfiles
+)
 sha512sums=('3a870e79bb82c9e8877958d271e933daa3dd970a4510aff4aeea91feab521d7927cd59c7f1ea16a36e84ff879e4f24e4347602ac449c5da31853acb5a3b46f34'
             'SKIP'
             '25a823740d92da8e186916701413114142eb6ad91a172c592e68b569c8e4f50fa99580e555ccf6cd31fc4f55a09bfe0278efa46e4e76ee0fe02846292fadf3c1'
@@ -39,25 +42,28 @@ b2sums=('91f0d37bca0632a414083f6ecf8838ba5dc4ef4965692b14e56587d3d145140f61bcc12
         'd7b587c25dd5830c27af475a8fdd8102139d7c8fdd6f04fe23b36be030e4411582e289f575c299255ff8183096f7d47247327276f9a24641cbd032d9675b837a')
 validpgpkeys=('0392335A78083894A4301C43236E8A58C6DB4512') # Max Kellermann <max@blarg.de>
 
-
 build() {
-  cd "${pkgname}-${pkgver}"
+  local _meson_options=(
+    -D documentation=enabled
+    -D adplug=disabled
+    -D sndio=disabled
+    -D shine=disabled
+    -D tremor=disabled
+    -D b_ndebug=true
+    -D systemd=disabled
+  )
+
+  # we currently require ffmpeg4.4 as otherwise database update is broken:
+  # https://github.com/MusicPlayerDaemon/MPD/issues/1448
+  export PKG_CONFIG_PATH='/usr/lib/ffmpeg4.4/pkgconfig'
   # NOTE: sndio conflicts with alsa
   # TODO: package adplug
   # TODO: package shine
-  artix-meson -D documentation=enabled \
-        -D adplug=disabled \
-        -D sndio=disabled \
-        -D shine=disabled \
-        -D tremor=disabled \
-        -D b_ndebug=true \
-        -D systemd=disabled \
-        build
+  artix-meson "${_meson_options[@]}" build $pkgname-$pkgver
   ninja -C build
 }
 
 check() {
-  cd "${pkgname}-${pkgver}"
   ninja -C build test
 }
 
