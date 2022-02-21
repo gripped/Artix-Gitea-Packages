@@ -10,7 +10,7 @@ arch=('x86_64')
 license=('GPL')
 depends=('python-pycups' 'python-dbus' 'python-pycurl' 'libnotify'
          'python-gobject' 'gtk3' 'python-cairo')
-makedepends=('xmlto' 'docbook-xsl' 'desktop-file-utils' 'libsecret')
+makedepends=('intltool' 'xmlto' 'docbook-xsl' 'desktop-file-utils' 'libsecret' 'udev')
 optdepends=('libsecret: password management'
             'python-pysmbc: SMB browser support'
             'cups-pk-helper: PolicyKit helper to configure cups with fine-grained privileges')
