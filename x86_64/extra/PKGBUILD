@@ -2,7 +2,7 @@
 
 pkgname=lm_sensors-dinit
 pkgver=20211030
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for lm_sensors"
 arch=('any')
 url="https://artixlinux.org"
@@ -21,5 +21,5 @@ sha256sums=('dfc2130e22a6fdf1c8f28d398d7e440240ca2a8c02dc4fbd02035c03f6f0ccb2'
 package() {
     install -Dm644 fancontrol        "$pkgdir/etc/dinit.d/fancontrol"
     install -Dm644 lm_sensors        "$pkgdir/etc/dinit.d/lm_sensors"
-    install -Dm755 lm_sensors.script "$pkgdir/etc/dinit.d/lm_sensors.script"
+    install -Dm755 lm_sensors.script "$pkgdir/etc/dinit.d/scripts/lm_sensors"
 }
