@@ -33,13 +33,11 @@ optdepends=('perl: sync_room_to_group.pl'
 source=("synapse-$pkgver.tar.gz::https://github.com/matrix-org/synapse/archive/v$pkgver.tar.gz"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
-        'tmpfiles-synapse.conf'
-        'override-hardened.conf')
+        'tmpfiles-synapse.conf')
 sha256sums=('e9fb5c8d1178996e677f6ce8f44c11d9294da0a06297fffa34706879870f9bf4'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
-            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
-            'd8e6b2a43a8a7d8f09c643f32e789a7ffeeb2d20bb07ee88ddc6923e1ab3b0e6')
+            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
 
