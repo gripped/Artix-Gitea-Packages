@@ -37,8 +37,6 @@ b2sums=('02934da7f7a2954141888e63e81e38fad4fb8558ddd1032de44f69684802c62771fdd7e
 
 backup=('etc/ssh/ssh_config' 'etc/ssh/sshd_config' 'etc/pam.d/sshd')
 
-install=install
-
 # prepare() {
 # 	cd "${srcdir}/${pkgname}-${pkgver}"
 
