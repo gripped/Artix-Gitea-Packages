@@ -28,7 +28,7 @@ pkgver() {
 
 build() {
   # NOTE: the BUILDTAGS may change over time
-  export BUILDTAGS='apparmor seccomp systemd'
+  export BUILDTAGS='apparmor seccomp'
   export CGO_CPPFLAGS="${CPPFLAGS}"
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
