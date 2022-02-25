@@ -28,7 +28,8 @@ build() {
     --prefix=/usr \
     --sbindir=/usr/bin \
     --libexecdir=/usr/lib \
-    --disable-static
+    --disable-static \
+    --with-vpnc-script=/etc/vpnc/vpnc-script
   make
 }
 
