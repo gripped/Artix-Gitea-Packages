@@ -19,19 +19,19 @@ sha256sums=('SKIP'
 validpgpkeys=('C01EDE5BB0D91E26D003662EC76BB9FEEAD12EA7') # Hans Petter Jansson <hpj@cl.no>
 
 pkgver() {
-  cd $pkgname
+  cd dfu
   git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd $pkgname
+  cd dfu
 
   # Support Desktop Entry Spec 1.5
   git cherry-pick -n 425177a28b62 56d220dd679c
 }
 
 build() {
-  artix-meson $pkgname build
+  artix-meson dfu build
   meson compile -C build
 }
 
