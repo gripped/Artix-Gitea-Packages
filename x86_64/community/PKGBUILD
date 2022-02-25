@@ -8,20 +8,23 @@
 # Contributor: Matt Heagney <matt@heagney.com>
 
 pkgname=multipath-tools
-_tag='d9d7ae9e2125116b465b4ff4d98ce65fe0eac3cc' # git rev-parse ${pkgver}
-pkgver=0.8.8
+_tag='5d6fecb2df08c7fb98b40205417f4a45cf30a129' # git rev-parse ${pkgver}
+pkgver=0.8.9
 pkgrel=1
 pkgdesc='Multipath tools for Linux (including kpartx)'
 arch=('x86_64')
 url='http://christophe.varoqui.free.fr/'
 license=('GPL2')
 depends=('libaio' 'device-mapper' 'json-c' 'liburcu' 'libudev.so')
-makedepends=('git' 'udev')
+makedepends=('git' 'eudev')
 source=("multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=${_tag}")
 sha256sums=('SKIP')
 
 prepare() {
   cd "${pkgname}"
+
+  # Fix systemd version detection in Makefile
+  sed -i 's/sed -n .*$/head -n1 | cut -d" " -f2\)/g' Makefile.inc
 
   # Fix bindir in Makefile
   sed -i 's|$(exec_prefix)/sbin|$(exec_prefix)/bin|g' Makefile.inc
