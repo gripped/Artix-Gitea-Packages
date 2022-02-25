@@ -1,13 +1,16 @@
 # Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
 
 pkgname=earlyoom
 pkgver=1.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Early OOM Daemon for Linux"
 arch=('x86_64')
 url="https://github.com/rfjakob/earlyoom"
 license=('MIT')
+depends=('glibc')
 makedepends=('pandoc')
+optdepends=('systembus-notify: desktop notifications')
 backup=("etc/default/earlyoom")
 source=("https://github.com/rfjakob/$pkgname/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
 sha256sums=('227234cf9e77831c21c748bd361e1a7c415e158b96034eacd59e70586779bb6c')
