@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2022-02-14
+## Generated on 2022-02-24
 ##
 
 # Artix mirrors
@@ -18,7 +18,7 @@ Server = https://mirror.linux.pizza/artix-linux/$repo/os/$arch
 Server = http://mirrors.redcorelinux.org/artixlinux/$repo/os/$arch
 Server = https://mirror.one.com/artix/$repo/os/$arch
 Server = https://mirror.pascalpuffke.de/artix-linux/$repo/os/$arch
-Server = https://artixlinux.qontinuum.space:4443/$repo/os/$arch
+Server = https://artixlinux.qontinuum.space/artixlinux/$repo/os/$arch
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
 Server = http://artist.artixlinux.org/repos/$repo/os/$arch
 Server = https://mirror.theanonymouse.xyz/artix-linux/$repo/os/$arch
