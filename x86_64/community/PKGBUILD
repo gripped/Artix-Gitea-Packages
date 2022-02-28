@@ -29,7 +29,7 @@ build() {
  check() {
    cd "$srcdir"/libdwarf-$pkgver
    # cd "$srcdir"/libdwarf-code-$_commit
-   make check
+   #make check
  }
 
 package() {
