@@ -25,10 +25,10 @@ build() {
 
 check() {
   cd "${srcdir}/${pkgbase}-${pkgver}"
-  pytest
+  PYTHONPATH="$PWD/build/lib.linux-x86_64-3.10:$PWD/build" pytest
 }
 
 package() {
   cd "${srcdir}/${pkgbase}-${pkgver}"
-  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+  python setup.py install --root="${pkgdir}" --optimize=1
 }
