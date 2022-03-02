@@ -1,0 +1,34 @@
+# Maintainer: Robin Broda <robin@broda.me>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Jonathan Wiersma <archaur at jonw dot org>
+
+pkgname=('libvirt-python')
+epoch=1
+pkgver=8.0.0
+pkgrel=1
+pkgdesc="libvirt python binding"
+arch=('x86_64')
+url="https://pypi.python.org/pypi/libvirt-python"
+license=('LGPL')
+depends=('python' 'libvirt')
+checkdepends=('python-pytest')
+options=('emptydirs')
+source=("https://libvirt.org/sources/python/libvirt-python-${pkgver}.tar.gz")
+sha512sums=('9eb85ae3048274a239908b658c0dacf0588538b356fc59c388900bca7164612d7370f3dddd2eb4c81e88fff7671118517bf0f5fd4382c5a88102212349dff4ec')
+validpgpkeys=('C74415BA7C9C7F78F02E1DC34606B8A5DE95BC1F')
+
+build() {
+  cd "${srcdir}/${pkgbase}-${pkgver}"
+  python setup.py build
+}
+
+check() {
+  cd "${srcdir}/${pkgbase}-${pkgver}"
+  pytest
+}
+
+package() {
+  cd "${srcdir}/${pkgbase}-${pkgver}"
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}
