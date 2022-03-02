@@ -1,14 +1,14 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Patrick Ziegler <p.ziegler96@gmail.com>
 pkgname=polybar
-pkgver=3.5.7
-pkgrel=1.1
+pkgver=3.6.0
+pkgrel=1
 pkgdesc="A fast and easy-to-use status bar"
 arch=("i686" "x86_64")
 url="https://github.com/polybar/polybar"
 license=("MIT")
 depends=("cairo" "xcb-util-image" "xcb-util-wm" "xcb-util-xrm" "xcb-util-cursor"
-         "alsa-lib" "libpulse" "libmpdclient" "libnl" "jsoncpp" "curl")
+         "alsa-lib" "libpulse" "libmpdclient" "libnl" "jsoncpp" "curl" "libuv")
 optdepends=("i3-wm: i3 module support"
             "ttf-unifont: Font used in example config"
             "siji-git: Font used in example config"
@@ -17,7 +17,7 @@ makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm" "git")
 conflicts=("polybar-git")
 install="${pkgname}.install"
 source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar.gz")
-b2sums=('ecad8fb4bb2e7898436c2a1a31547c239fc2b0ea219db4114367335f73ab5f39422669c81b73dca2e3239645260e77b5ea16ee39ed6de7c373621bf918a99cd2')
+b2sums=('69bc5348be44fb782b4847dbda90f2a378967664d1b4783f42e79859c27259f3bb670fe2cd9043216047f28c3231d397c5d7cf0076908bf88011cccff3650110')
 
 prepare() {
   cd ${pkgname}-${pkgver}/lib
