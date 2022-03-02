@@ -12,7 +12,6 @@ arch=('x86_64')
 url="https://pypi.python.org/pypi/libvirt-python"
 license=('LGPL')
 depends=('python' 'libvirt')
-checkdepends=('python-pytest')
 options=('emptydirs')
 source=("https://libvirt.org/sources/python/libvirt-python-${pkgver}.tar.gz")
 sha512sums=('9eb85ae3048274a239908b658c0dacf0588538b356fc59c388900bca7164612d7370f3dddd2eb4c81e88fff7671118517bf0f5fd4382c5a88102212349dff4ec')
@@ -23,12 +22,7 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd "${srcdir}/${pkgbase}-${pkgver}"
-  PYTHONPATH="$PWD/build/lib.linux-x86_64-3.10:$PWD/build" pytest
-}
-
 package() {
   cd "${srcdir}/${pkgbase}-${pkgver}"
-  python setup.py install --root="${pkgdir}" --optimize=1
+  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
 }
