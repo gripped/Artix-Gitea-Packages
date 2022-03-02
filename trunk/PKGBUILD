@@ -7,7 +7,7 @@
 pkgname=(libvirt libvirt-storage-gluster libvirt-storage-iscsi-direct libvirt-storage-rbd)
 epoch=1
 pkgver=8.1.0
-pkgrel=1
+pkgrel=3
 pkgdesc="API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)"
 arch=('x86_64')
 url="https://libvirt.org/"
@@ -79,6 +79,7 @@ backup=(
   'etc/logrotate.d/libvirtd.qemu'
   'etc/sasl2/libvirt.conf'
 )
+options=(debug)
 source=("https://libvirt.org/sources/$pkgname-$pkgver.tar.xz"{,.asc})
 sha256sums=('3c6c43becffeb34a3f397c616206aa69a893ff8bf5e8208393c84e8e75352934'
             'SKIP')
@@ -98,8 +99,8 @@ build() {
   artix-meson build \
     --libexecdir=lib/libvirt \
     -Drunstatedir=/run \
-    -Dqemu_user=kvm \
-    -Dqemu_group=kvm \
+    -Dqemu_user=libvirt-qemu \
+    -Dqemu_group=libvirt-qemu \
     -Dnetcf=disabled \
     -Dopenwsman=disabled \
     -Dapparmor=disabled \
@@ -135,8 +136,10 @@ package_libvirt() {
   DESTDIR="$pkgdir" ninja -C build install
 
   mkdir "$pkgdir"/usr/lib/{sysusers,tmpfiles}.d
-  echo "g libvirt - -" > "$pkgdir/usr/lib/sysusers.d/libvirt.conf"
-  echo "z /var/lib/libvirt/qemu 0751" > "$pkgdir/usr/lib/tmpfiles.d/libvirt.conf"
+  echo 'g libvirt - -' > "$pkgdir/usr/lib/sysusers.d/libvirt.conf"
+  echo 'u libvirt-qemu /var/lib/libvirt "Libvirt QEMU user"' >> "$pkgdir/usr/lib/sysusers.d/libvirt.conf"
+  echo 'm libvirt-qemu kvm' >> "$pkgdir/usr/lib/sysusers.d/libvirt.conf"
+  echo 'z /var/lib/libvirt/qemu 0751' > "$pkgdir/usr/lib/tmpfiles.d/libvirt.conf"
 
   chown 0:102 "$pkgdir/usr/share/polkit-1/rules.d"
   chmod 0750 "$pkgdir/usr/share/polkit-1/rules.d"
