@@ -14,7 +14,8 @@ depends=('qt5-base' 'jasper' 'libmng' 'libwebp')
 makedepends=('git')
 groups=('qt' 'qt5')
 _pkgfqn=${pkgname/5-/}
-source=(git+https://invent.kde.org/qt/qt/$_pkgfqn#commit=$_commit)
+#source=(git+https://invent.kde.org/qt/qt/$_pkgfqn#commit=$_commit)
+source=(git+https://invent.kde.org/qt/qt/$_pkgfqn)
 sha256sums=('SKIP')  
 options=(debug)
 
@@ -25,6 +26,8 @@ pkgver() {
 
 prepare() {
   mkdir -p build
+  cd $_pkgfqn
+  git reset --hard $_commit
 }
 
 build() {
