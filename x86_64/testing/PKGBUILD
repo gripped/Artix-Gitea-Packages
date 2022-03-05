@@ -4,7 +4,7 @@
 pkgname=qt5-networkauth
 _basever=5.15.3
 pkgver=5.15.3+kde+r0
-pkgrel=1
+pkgrel=1.1
 _commit=958db00a2064f77b354b573102ca2c2b2e07529c
 arch=(x86_64)
 url='https://www.qt.io'
