@@ -2,7 +2,7 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=iwd-runit
-pkgver=20220304
+pkgver=20220305
 pkgrel=1
 pkgdesc='Runit service script for iwd'
 arch=(any)
