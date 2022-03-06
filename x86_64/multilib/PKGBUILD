@@ -3,7 +3,7 @@
 
 pkgname=lib32-libvdpau
 pkgver=1.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Nvidia VDPAU library'
 arch=(x86_64)
 url=https://gitlab.freedesktop.org/vdpau/libvdpau
@@ -31,7 +31,7 @@ build() {
   export CXX='g++ -m32'
   export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
 
-  arch-meson libvdpau build \
+  artix-meson libvdpau build \
     --libdir=/usr/lib32
   ninja -C build
 }
