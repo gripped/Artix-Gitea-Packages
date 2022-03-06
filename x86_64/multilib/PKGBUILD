@@ -3,7 +3,7 @@
 
 pkgname=lib32-libpsl
 pkgver=0.21.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Public Suffix List library (32-bit)'
 url='https://github.com/rockdaboot/libpsl'
 arch=('x86_64')
@@ -32,7 +32,7 @@ build() {
   export CXX='g++ -m32'
   export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
 
-  arch-meson libpsl build \
+  artix-meson libpsl build \
     --libdir=/usr/lib32 \
     -Dbuiltin=libidn2 \
     -Druntime=libidn2 \
