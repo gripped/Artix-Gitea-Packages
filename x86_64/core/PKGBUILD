@@ -3,7 +3,7 @@
 
 pkgname=libinih
 pkgver=53
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple .INI file parser written in C'
 arch=(x86_64)
 url=https://github.com/benhoyt/inih
@@ -35,7 +35,7 @@ pkgver() {
 }
 
 build() {
-  arch-meson inih build \
+  artix-meson inih build \
     -Ddefault_library=shared \
     -Ddistro_install=true \
     -Dwith_INIReader=true
