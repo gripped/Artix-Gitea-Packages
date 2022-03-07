@@ -4,7 +4,7 @@
 pkgbase=wireplumber
 pkgname=(wireplumber wireplumber-docs)
 pkgver=0.4.8
-pkgrel=1
+pkgrel=2
 pkgdesc="Session / policy manager implementation for PipeWire"
 arch=(x86_64)
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
@@ -25,12 +25,14 @@ pkgver() {
 
 prepare() {
   cd $pkgbase
+
+  # si-audio-adapter: relax format parsing 
+  git cherry-pick -n 'afbc0ce57aac7aee8dc1651de4620f15c73dbace'
 }
 
 build() {
   local meson_options=(
     -D system-lua=true
-    -D elogind=enabled
     -D systemd=disabled
   )
 
@@ -60,18 +62,19 @@ package_wireplumber() {
   conflicts=(pipewire-media-session)
 
   meson install -C build --destdir "$pkgdir"
-  
+
   _pick docs "$pkgdir"/usr/share/doc
-  
+
   install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase/{NEWS,README}*
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
 
 package_wireplumber-docs() {
   pkgdesc+=" - documentation"
-  
+
   mv docs/* "$pkgdir"
-  
+
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
+
 # vim:set sw=2 et:
