@@ -13,7 +13,8 @@ makedepends=(extra-cmake-modules plasma-framework packagekit-qt5 flatpak fwupd)
 optdepends=('packagekit-qt5: to manage packages from Arch Linux repositories' 'flatpak: Flatpak packages support'
             'fwupd: firmware update support')
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
+#source=(https://download.kde.org/stable/plasma/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/plasma/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('8af12c922ad734185ad4affd96190e1918ad7edc355c656d24711bf4a52df524'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
