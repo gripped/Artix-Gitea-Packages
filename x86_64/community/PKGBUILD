@@ -24,7 +24,7 @@ license=(Apache)
 _archive="$_pkgname-$pkgver"
 makedepends=('git')
 source=("$pkgname-$pkgver::git+$url.git#tag=$pkgver")
-sha256sums=('990fffb9b7a9b52dc9a2d053a9ef6852ca2b72bd8dfb22988b0b990a700fd3c7')
+sha256sums=('SKIP')
 
 build() {
 	:
@@ -36,7 +36,7 @@ build() {
 package_tesseract-data-osd() {
 	local lang=${pkgname##*-}
 	pkgdesc+=" ($lang)"
-	cd "$srcdir"/tessdata
+	cd "$srcdir"/tesseract-data-afr
 	install -Dm0644 -t "$pkgdir/usr/share/$_pkgname/" $lang.*
 }
 
@@ -49,7 +49,7 @@ package_tesseract-data-$lang(){
 	depends=(tesseract)
 	provides=($_pkgname)
 	groups=($pkgbase)
-	cd "$srcdir"/tessdata
+	cd "$srcdir"/tesseract-data-afr
 	install -Dm0644 -t \"\$pkgdir/usr/share/$_pkgname/\" $lang.*
 }
     "
