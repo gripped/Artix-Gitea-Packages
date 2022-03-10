@@ -42,15 +42,14 @@ package_tesseract-data-osd() {
 
 # Declare the package functions for data
 for lang in ${_langs[@]}; do
-	if [[ $lang == osd ]]; then continue; fi
-	eval "
-package_tesseract-data-$lang(){
-	pkgdesc+=' ($lang)'
+  eval "
+package_tesseract-data-$lang() {
+	pkgdesc+=' $lang'
 	depends=(tesseract)
 	provides=($_pkgname)
 	groups=($pkgbase)
-	cd "$srcdir"/tesseract-data-afr-$pkgver
-	install -Dm0644 -t \"\$pkgdir/usr/share/$_pkgname/\" $lang.*
-}
-    "
+  pushd "tesseract-data-afr-$pkgver"
+  	install -Dm0644 -t \"\$pkgdir/usr/share/$_pkgname/\" $lang.*
+  popd
+} "
 done
