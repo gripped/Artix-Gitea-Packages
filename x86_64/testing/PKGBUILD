@@ -18,6 +18,7 @@ source=("git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
         '99-artix.rules'
         meson-0.61.diff)
 sha256sums=('SKIP'
+            'd28d6ecaf7682860e2b3768bb266bd94313546b7cd0ef3c2eace7b1576c47adb'
             '45d08bbb76e1e22ca8e698df04652b7aceaded34f9b76ce6b68152fb26b0de8d')
 
 pkgver() {
