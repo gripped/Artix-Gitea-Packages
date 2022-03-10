@@ -36,7 +36,7 @@ build() {
 package_tesseract-data-osd() {
 	local lang=${pkgname##*-}
 	pkgdesc+=" ($lang)"
-	cd "$srcdir"/tesseract-data-afr
+	cd "$srcdir"/tesseract-data-afr-$pkgver
 	install -Dm0644 -t "$pkgdir/usr/share/$_pkgname/" $lang.*
 }
 
@@ -49,7 +49,7 @@ package_tesseract-data-$lang(){
 	depends=(tesseract)
 	provides=($_pkgname)
 	groups=($pkgbase)
-	cd "$srcdir"/tesseract-data-afr
+	cd "$srcdir"/tesseract-data-afr-$pkgver
 	install -Dm0644 -t \"\$pkgdir/usr/share/$_pkgname/\" $lang.*
 }
     "
