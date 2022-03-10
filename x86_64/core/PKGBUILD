@@ -4,7 +4,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=artix-mirrorlist
-pkgver=20220308
+pkgver=20220310
 pkgrel=1
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
@@ -15,7 +15,7 @@ conflicts=('pacman-mirrorlist')
 replaces=('pacman-mirrorlist')
 backup=(etc/pacman.d/mirrorlist)
 source=(mirrorlist)
-sha256sums=('eeaa66b65fab3c89d30c275e334b3210c45253fc72557bbe6d872ffbaab04bf3')
+sha256sums=('b72818a2b975104fdc5ff3459edf7624f91d21852bbfc72a5d15603f051dad4d')
 
 package() {
   mkdir -p $pkgdir/etc/pacman.d
