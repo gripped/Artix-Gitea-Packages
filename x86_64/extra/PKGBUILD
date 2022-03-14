@@ -8,13 +8,14 @@ _vlcver=3.0.17.3
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=8.1
+pkgrel=1
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
 license=('LGPL2.1' 'GPL2')
+# NOTE: switch to ffmpeg4.4, as ffmpeg >= 5 requires extensive changes disabling VAAPI (only supported with vlc >= 4)
 depends=('a52dec' 'libdvbpsi' 'libxpm' 'libdca' 'libproxy' 'lua52' 'libidn'
-         'libmatroska' 'taglib' 'libmpcdec' 'ffmpeg' 'faad2' 'libmad'
+         'libmatroska' 'taglib' 'libmpcdec' 'ffmpeg4.4' 'faad2' 'libmad'
          'libmpeg2' 'xcb-util-keysyms' 'libtar' 'libxinerama' 'libsecret'
          'libupnp' 'libixml.so' 'libupnp.so' 'libarchive' 'qt5-base'
          'qt5-x11extras' 'qt5-svg' 'freetype2' 'fribidi' 'harfbuzz'
@@ -22,14 +23,16 @@ depends=('a52dec' 'libdvbpsi' 'libxpm' 'libdca' 'libproxy' 'lua52' 'libidn'
 makedepends=('gst-plugins-base-libs' 'live-media' 'libnotify' 'libbluray'
              'flac' 'libdc1394' 'libavc1394' 'libcaca' 'gtk3'
              'librsvg' 'libgme' 'xosd' 'twolame' 'aalib' 'avahi' 'eudev'
-             'libmtp' 'libupnp' 'libmicrodns' 'libdvdcss' 'smbclient'
+             'libmtp' 'libmicrodns' 'libdvdcss' 'smbclient'
              'vcdimager' 'libssh2' 'mesa' 'protobuf' 'libnfs' 'mpg123'
              'libdvdread' 'libdvdnav' 'libogg' 'libshout' 'libmodplug' 'libvpx'
              'libvorbis' 'speex' 'opus' 'libtheora' 'libpng' 'libjpeg-turbo'
              'libx265.so' 'libx264.so' 'zvbi' 'libass' 'libkate' 'libtiger'
              'sdl_image' 'libpulse' 'alsa-lib' 'jack' 'libsamplerate' 'libsoxr'
-             'lirc' 'libgoom2' 'projectm' 'chromaprint' 'aom' 'srt' 'dav1d'
+             'lirc' 'libgoom2' 'projectm' 'aom' 'srt' 'dav1d'
              'aribb24' 'aribb25' 'pcsclite')
+
+#            'chromaprint: Chromaprint audio fingerprinter'
 optdepends=('avahi: service discovery using bonjour protocol'
             'aom: AOM AV1 codec'
             'gst-plugins-base-libs: for libgst plugins'
@@ -85,7 +88,6 @@ optdepends=('avahi: service discovery using bonjour protocol'
             'jack: jack audio server'
             'libsamplerate: audio Resampler'
             'libsoxr: SoX audio Resampler'
-            'chromaprint: Chromaprint audio fingerprinter'
             'lirc: lirc control'
             'libgoom2: Goom visualization'
             'projectm: ProjectM visualisation'
@@ -97,44 +99,24 @@ optdepends=('avahi: service discovery using bonjour protocol'
             'pcsclite: aribcam support')
 conflicts=('vlc-plugin')
 replaces=('vlc-plugin')
-options=('debug' '!emptydirs')
+options=(debug '!emptydirs')
 source=(https://download.videolan.org/${pkgname}/${_vlcver}/${pkgname}-${_vlcver}${_vlcfixupver}.tar.xz{,.asc}
         update-vlc-plugin-cache.hook
         caca-fix-to-newer-version.patch
-        vlc-3.0.11.1-srt_1.4.2.patch
-        vlc-live-media-2021.patch
-        https://code.videolan.org/videolan/vlc/-/commit/97867416201533742be3effa2abfe3c02fafd95c.patch
-        https://code.videolan.org/videolan/vlc/-/commit/00bd7590f33357047b555d85d6e935feed033333.patch
-        https://code.videolan.org/videolan/vlc/-/commit/6feb18dadcb6176ae5cc2b4ae57f27f65fa93fdb.patch
-        https://code.videolan.org/videolan/vlc/-/commit/781082eea3c3aea140c6725d7405cdf09124e190.patch
-        https://code.videolan.org/videolan/vlc/-/commit/bd8533e0c8b50773e49be8f8b5b61a9782de386f.patch
-        https://code.videolan.org/videolan/vlc/-/commit/abb201b79367311e43e619dcda3d4a9348da42ec.patch
-        https://code.videolan.org/videolan/vlc/-/commit/07e0beb5b6ecccb2cde134f3a3bd45071bce0dae.patch
-        https://code.videolan.org/videolan/vlc/-/commit/591f658223bb6320ea61248976753e20a985c8dc.patch
-        https://code.videolan.org/videolan/vlc/-/commit/66b647fd696b7f449b09b200f4028789c2d210a8.patch
-        0001-vlc-ffmpeg5.patch
-        )
+        vlc-live-media-2021.patch)
 sha512sums=('99095b39ed600c3a89ebc0d377a2fc2522b3623a56b0f6de2df50a3c6e0148c67c28c0f2d8dec28bbdf5c62cf29b3579429a79ed00440570643778a9871022b6'
             'SKIP'
             'b247510ffeadfd439a5dadd170c91900b6cdb05b5ca00d38b1a17c720ffe5a9f75a32e0cb1af5ebefdf1c23c5acc53513ed983a736e8fa30dd8fad237ef49dd3'
             'ef479a246dc98f882a05ca56a1c2872cc67ced154c625790070b887858ddc250d55b1295db82c9122e5ecd3c2c9c712ec9718e28d0a9d21ff6a230eb6c5010ce'
-            'ac1d33d434aca2a0ad6e70800073deeaefc02b8fd72656b682ca833ee0cffe10dfa19a9355388700cab46ffbf9421c007d00ed04c7fa562698ff81e70db5f283'
-            'ad17d6f4f2cc83841c1c89623c339ec3ee94f6084ea980e2c8cbc3903854c85e5396e31bfd8dc90745b41794670903d854c4d282d8adec263087a9d47b226ccc'
-            'deeb90cdb4b8915cbde98299b3e9941467b9ee53fce3d6ba0a9ff6b55798a198e6e1c60ba3749fbc1b8ac906b326e5301eac43976f8c786a8b2a02ca3926f219'
-            '84af87824bf965ca45e2e5596b30116d03fd6813200769972a94ac646d8c2fe8ec4671b98a8ada3ddbc42aa2a3d7477fca1b5366c35ce6b921e91c773c165238'
-            '0d39d16bfdc90d0b8a5bbbbe34fcd3a564326342a62150c6f371d0d3852a4b7730e075e93b3daded753cb2b4b6bfeb4848b34f1fdba3b21a043effc15be5da35'
-            '3dc47113dc691e1af2f16701cebd83099bd1337dac340a18f01c84c61ceb6010b228b49112c1eccb133d41fc433f9f409f07f2d6bda7329a39b1128645cad803'
-            '55f7c3d13ce5923c49f7825710636c37343474be9f566a539879addd5abac995d3af0ac54cd70e9249446ac6c3c50392282e71fffe7a7b50bbdd30dec7129061'
-            '82f80c2e15ea90e3dcb4a37a7c035fb1d0efd0acc02d9275a590b68ef0e287baf329563cb1eaa20e3bb8a4624e47d8ad703bc9e622aa44807822092f8d38c076'
-            '9adebe3d08c5c4cba8ce3428343256a5a6e664d5a99bbcd2367a24ebd8017ba0a74e444743ebae1b0eabf8c4284b9754a1d8cac69d0e6dc567bd063f0340c125'
-            '881705347a21abb9b574e2e528dbfdaf6713abc667eb2187f5957b6080f4db80c40f16eb180033ffe40de8cd7e55dbb5710b66e609b9f47846dd6fecfb1402be'
-            '48fc77eb2242c77340a19b7f7d8a0edae6b819cf9b29afc1da93fab6df8109a1f98aec8e72df866df4d768486d360646a1a3bf9d6171d35f2a94f50f29984613'
-            'b2e9521ff4892ad037720add4507906431310e1e332a274894714ba8e4bcde9f8d152320fd004b2f8237ca4649c8fbcdb6b6d4dd919a0ed0dcea2033d5d32029')
+            'ad17d6f4f2cc83841c1c89623c339ec3ee94f6084ea980e2c8cbc3903854c85e5396e31bfd8dc90745b41794670903d854c4d282d8adec263087a9d47b226ccc')
 validpgpkeys=('65F7C6B4206BD057A7EB73787180713BE58D1ADC') # VideoLAN Release Signing Key
 
 prepare() {
   cd ${pkgname}-${_vlcver}
   sed -e 's:truetype/ttf-dejavu:TTF:g' -i modules/visualization/projectm.cpp
+  sed -e 's|-Werror-implicit-function-declaration||g' -i configure
+  sed 's|whoami|echo builduser|g' -i configure
+  sed 's|hostname -f|echo arch|g' -i configure
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
@@ -144,9 +126,6 @@ prepare() {
     patch -Np1 < "../$src"
   done
   autoreconf -vf
-  sed -e 's|-Werror-implicit-function-declaration||g' -i configure
-  sed 's|whoami|echo builduser|g' -i configure
-  sed 's|hostname -f|echo arch|g' -i configure
 }
 
 build() {
@@ -159,6 +138,7 @@ build() {
   export LUAC=/usr/bin/luac5.2
   export LUA_LIBS="$(pkg-config --libs lua5.2)"
   export RCC=/usr/bin/rcc-qt5
+  export PKG_CONFIG_PATH="/usr/lib/ffmpeg4.4/pkgconfig/:$PKG_CONFIG_PATH"
 
   ./configure \
     --prefix=/usr \
@@ -229,7 +209,7 @@ build() {
     --enable-jack \
     --enable-samplerate \
     --enable-soxr \
-    --enable-chromaprint \
+    --disable-chromaprint \
     --enable-chromecast \
     --enable-qt \
     --enable-skins2 \
