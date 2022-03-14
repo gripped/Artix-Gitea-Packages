@@ -1,3 +1,2 @@
 #!/bin/sh
-[ -r conf ] && . ./conf
-exec ntpd -d $OPTS 2>&1
+exec ntpd -d 2>&1
