@@ -3,13 +3,13 @@
 
 pkgname=tailscale
 pkgver=1.22.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A mesh VPN that makes it easy to connect your devices, wherever they are."
 arch=("x86_64")
 url="https://tailscale.com"
 license=("MIT")
 makedepends=("git" "go")
-depends=("glibc")
+depends=("glibc" "iptables")
 backup=("etc/default/tailscaled")
 _commit=c8fb4f8c79259ae22e4ddeca2e6f72a832e07a47	#refs/tags/v1.22.1^{}
 source=("git+https://github.com/tailscale/tailscale.git#commit=${_commit}")
