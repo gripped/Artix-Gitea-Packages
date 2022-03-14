@@ -3,7 +3,7 @@
 
 pkgname=iwd-runit
 pkgver=20220305
-pkgrel=1
+pkgrel=2
 pkgdesc='Runit service script for iwd'
 arch=(any)
 url='https://artixlinux.org'
