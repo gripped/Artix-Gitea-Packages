@@ -19,12 +19,13 @@ optdepends=(
 makedepends=(
   'ca-certificates'
   'libcap'
+  'libcap.so'
   'libevent'
   'libseccomp'
+  'libseccomp.so'
   'openssl'
   'zlib'
-  'libcap.so'
-  'libseccomp.so'
+  'zstd'
   'libzstd.so'
 )
 backup=('etc/tor/torrc')
