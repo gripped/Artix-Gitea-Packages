@@ -1,4 +1,4 @@
-# Maintainer: Lukas Flescher <lfleischer@archlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
@@ -7,26 +7,15 @@
 
 pkgname=tor
 pkgver=0.4.6.9
-pkgrel=2
+pkgrel=1
 pkgdesc='Anonymizing overlay network.'
 arch=('x86_64')
 url='https://www.torproject.org/'
 license=('BSD')
-optdepends=(
-  'torsocks: to torify other programs'
-  'zstd: to use zstandard for compression'
-)
-makedepends=(
-  'ca-certificates'
-  'libcap'
-  'libevent'
-  'libseccomp'
-  'openssl'
-  'zlib'
-  'libcap.so'
-  'libseccomp.so'
-  'libzstd.so'
-)
+depends=('openssl' 'libevent' 'bash' 'libseccomp' 'zstd' 'libcap'
+         'libzstd.so' 'libseccomp.so' 'libcap.so')
+optdepends=('torsocks: for torify')
+makedepends=('ca-certificates')
 backup=('etc/tor/torrc')
 source=("https://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"{,.asc}
         'torrc.patch'
