@@ -7,21 +7,26 @@
 
 pkgname=tor
 pkgver=0.4.6.9
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='Anonymizing overlay network.'
 arch=('x86_64')
 url='https://www.torproject.org/'
 license=('BSD')
-depends=('openssl' 'libevent' 'bash' 'libseccomp' 'zstd' 'libcap'
-         'libzstd.so' 'libseccomp.so' 'libcap.so')
-optdepends=('torsocks: for torify')
-makedepends=('ca-certificates'
-             'libcap' 'libcap.so'
-             'libevent'
-             'libseccomp' 'libseccomp.so'
-             'openssl'
-             'zlib'
-             'zstd' 'libzstd.so')
+optdepends=(
+  'torsocks: to torify other programs'
+  'zstd: to use zstandard for compression'
+)
+depends=(
+  'ca-certificates'
+  'libevent'
+  'openssl'
+  'zlib'
+  'libcap' 'libcap.so'
+  'libseccomp' 'libseccomp.so'
+)
+makedepends=(
+  'zstd' 'libzstd.so'
+)
 backup=('etc/tor/torrc')
 source=("https://www.torproject.org/dist/${pkgname}-${pkgver}.tar.gz"{,.asc}
         'torrc.patch'
