@@ -28,7 +28,7 @@ prepare() {
 
 build() {
   cd $pkgname
-  ./configure --prefix=/usr --libexecdir=/usr/lib --with_systemd=no
+  ./configure --prefix=/usr --libexecdir=/usr/lib --with-systemd=no
   make 
 }
 
