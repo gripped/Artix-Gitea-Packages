@@ -75,28 +75,24 @@ meson install -C build --destdir "$pkgdir"
 
     _pick afc \
       usr/lib/gvfs{-afc-volume-monitor,d-afc} \
-      usr/lib/systemd/user/gvfs-afc-volume-monitor.service \
       usr/share/dbus-1/services/org.gtk.vfs.AfcVolumeMonitor.service \
       usr/share/gvfs/mounts/afc.mount \
       usr/share/gvfs/remote-volume-monitors/afc.monitor
 
     _pick gphoto2 \
       usr/lib/gvfs{-gphoto2-volume-monitor,d-gphoto2} \
-      usr/lib/systemd/user/gvfs-gphoto2-volume-monitor.service \
       usr/share/dbus-1/services/org.gtk.vfs.GPhoto2VolumeMonitor.service \
       usr/share/gvfs/mounts/gphoto2.mount \
       usr/share/gvfs/remote-volume-monitors/gphoto2.monitor
 
     _pick mtp \
       usr/lib/gvfs{-mtp-volume-monitor,d-mtp} \
-      usr/lib/systemd/user/gvfs-mtp-volume-monitor.service \
       usr/share/dbus-1/services/org.gtk.vfs.MTPVolumeMonitor.service \
       usr/share/gvfs/mounts/mtp.mount \
       usr/share/gvfs/remote-volume-monitors/mtp.monitor
 
     _pick goa \
       usr/lib/gvfs-goa-volume-monitor \
-      usr/lib/systemd/user/gvfs-goa-volume-monitor.service \
       usr/share/dbus-1/services/org.gtk.vfs.GoaVolumeMonitor.service \
       usr/share/gvfs/remote-volume-monitors/goa.monitor
 
