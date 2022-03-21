@@ -1,43 +1,25 @@
-# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
-
-_sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
+# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=acpid-runit
-pkgver=20180314
-pkgrel=5
-pkgdesc="Runit service script for acpid"
+pkgver=20220314
+pkgrel=1
+pkgdesc='Runit service script for acpid'
 arch=('any')
-url="https://artixlinux.org"
+url='https://artixlinux.org'
 license=('BSD')
 depends=('acpid' 'runit')
 groups=('runit-galaxy')
 provides=('init-acpid')
 conflicts=('init-acpid')
-source=("acpid.run")
-sha256sums=('6d2bdd367f695da24d993d62293a1f8ab4d6d9d13144d3154a436a09e4864c76')
-
-_inst_logsv() {
-    for file in run finish check; do
-        if test -f "$srcdir/log$1.$file"; then
-            install -Dm755 "$srcdir/log$1.$file" "$pkgdir/etc/runit/sv/$1/log/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/log/$file"
-        fi
-    done
-}
-
-_inst_sv() {
-    if test -f "$srcdir/$1.conf"; then
-        install -Dm644 "$srcdir/$1.conf" "$pkgdir/etc/runit/sv/$1/conf"
-    fi
-
-    for file in run finish check; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
-        fi
-    done
-}
+install='acpid-runit.install'
+source=('acpid.run' 'acpid.log.run')
+b2sums=('9fcd9e23cc720710d36159d6ce7c77aeaadb67368a231a69c0b9217f9c39d887ae7dbf3fa2d75eb3f4c30dc82b49469699e7b791cd5801eaa7a11c95f627c05e'
+        '83d4fae048494ebf8ef6ef27ae99d12416b6aa8ecfe3bf197fb7e6d9f8f62dc3d71d255cf920d99e114ea95cf1234fa2956879feb80fc2a4f3d53604ff4d01e2')
 
 package() {
-    _inst_sv 'acpid'
+    cd "$srcdir"
+
+    install -Dm755 acpid.run "$pkgdir/etc/runit/sv/acpid/run"
+    install -Dm755 acpid.log.run "$pkgdir/etc/runit/sv/acpid/log/run"
 }
