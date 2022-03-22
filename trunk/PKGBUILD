@@ -14,20 +14,20 @@ makedepends=(git gobject-introspection meson vala glade gi-docgen)
 checkdepends=(xorg-server-xvfb)
 options=(debug)
 _commit=4186dae5570cf8e73cf8a145236240eec3a237b5  # tags/1.6.1^0
-source=("git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
+source=("libhandy-${pkgver}::git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd libhandy
+  cd libhandy-${pkgver}
   git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd libhandy
+  cd libhandy-${pkgver}
 }
 
 build() {
-  artix-meson libhandy build \
+  artix-meson libhandy-${pkgver} build \
     -D gtk_doc=true
   meson compile -C build
 }
