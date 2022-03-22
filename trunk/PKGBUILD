@@ -2,7 +2,7 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gjs
-pkgver=1.70.1
+pkgver=1.70.2
 pkgrel=1
 epoch=2
 pkgdesc="Javascript Bindings for GNOME"
