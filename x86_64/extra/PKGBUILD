@@ -37,10 +37,10 @@ build() {
   meson compile -C build
 }
 
-check() {
-  xvfb-run -s '-nolisten local' \
-    meson test -C build --print-errorlogs
-}
+#check() {
+#  xvfb-run -s '-nolisten local' \
+#    meson test -C build --print-errorlogs
+#}
 
 package() {
   depends+=(libreadline.so)
