@@ -12,7 +12,7 @@ install=dinit.install
 makedepends=('git')
 source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
-sha256sums=('d5f9afe7005da7c08224dddcf2b63f37a6c4120b7493bed4669ef362cde1b544'
+sha256sums=('b2d9ac2ef02cb2be8910b07a1c415435226e207ebdf831e9f6665e587b82a8dc'
             'SKIP')
 
 build() {
