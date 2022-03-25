@@ -3,12 +3,11 @@ pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.13.0
 _commit=29cd296aa4635fe6f7b53bda2f2cb1648bdc0782
-pkgrel=1
+pkgrel=2
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
 license=('Apache')
-install=dinit.install
 makedepends=('git')
 source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
@@ -20,8 +19,15 @@ build() {
 	make
 }
 
+check() {
+	cd "$pkgname-$pkgver"
+	make check
+	make check-igr
+}
+
 package_dinit-base() {
 	pkgdesc='Service monitoring/init system -- base package'
+	install=dinit.install
 	cd "$pkgbase-$pkgver"
 	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=no install
 }
