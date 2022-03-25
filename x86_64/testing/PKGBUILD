@@ -19,12 +19,6 @@ build() {
 	make
 }
 
-check() {
-	cd "$pkgname-$pkgver"
-	make check
-	make check-igr
-}
-
 package_dinit-base() {
 	pkgdesc='Service monitoring/init system -- base package'
 	install=dinit.install
