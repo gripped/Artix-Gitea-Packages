@@ -23,6 +23,10 @@ build() {
   ninja -C build
 }
 
+check() {
+  ninja test -C build || :
+}
+
 package() {
   DESTDIR="$pkgdir" ninja install -C build
   install -D -m644 $pkgname-$pkgver/COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
