@@ -1,7 +1,7 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 
 pkgname=prometheus
-pkgver=2.33.4
+pkgver=2.34.0
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -18,7 +18,7 @@ options=(!lto)
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers)
 
-sha256sums=('b6742ef53fc6971d436c3635515d81accb669b9bd8090217cef1ca806db3a478'
+sha256sums=('76bb5afff1a9be179b99afe624fae73d5c23a27976f2bcb2dc663d1942e87e22'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 build() {
@@ -64,7 +64,7 @@ build() {
 check() {
   cd prometheus-$pkgver
 
-  go test -short ./...
+  GODEBUG=x509sha1=1 go test -short ./...
 }
 
 package() {
@@ -78,7 +78,7 @@ package() {
 
   # Web
   install -dm755 "$pkgdir"/usr/share/prometheus/web/ui
-  cp -R web/ui/{static,templates} "$pkgdir"/usr/share/prometheus/web/ui/
+  cp -R web/ui/static "$pkgdir"/usr/share/prometheus/web/ui/
 
   # Examples
   install -Dm644 -t "$pkgdir"/usr/share/doc/prometheus/examples documentation/examples/prometheus*.yml
