@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: artoo <artoo@artixlinux.org> 
 pkgname=s6-base
-pkgver=2.2
-pkgrel=2
+pkgver=2.3
+pkgrel=1
 pkgdesc='Packages, hooks, and scripts to define a basic s6 init system implementation for Artix Linux.'
 url='https://gitea.artixlinux.org/artix/alpm-hooks'
 arch=('any')
@@ -23,7 +23,7 @@ package() {
 
     # Default config for the s6-rc-db-update hook
     install -Dm644 /dev/stdin "${pkgdir}"/etc/s6/config/s6-rc-db-update.conf <<END
-true
+false
 END
     install -v -d "${pkgdir}"/etc/s6/rc
     ln -sfv /usr/share/libalpm/scripts/s6-rc-db-update-hook "${pkgdir}"/usr/bin/s6-db-reload
