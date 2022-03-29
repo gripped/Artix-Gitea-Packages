@@ -5,9 +5,9 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-gtk-presets
-pkgver=20220215
+pkgver=20220329
 pkgrel=1
-pkgdesc='Artix GTK presets, for MATE, LXDE, XFCE and Cinnamon.'
+pkgdesc='Artix GTK presets (MATE, LXDE, XFCE and Cinnamon)'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
 license=('GPL')
