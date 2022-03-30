@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=5.17.zen1
+pkgver=5.17.1.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 _srctag=v${pkgver%.*}-${pkgver##*.}
@@ -26,7 +26,7 @@ validpgpkeys=(
   'C5ADB4F3FEBBCE27A3E54D7D9AE4078033F8024D'  # Steven Barrett <steven@liquorix.net>
 )
 sha256sums=('SKIP'
-            '46436a1ec0faa63294f1931fe266e5c0fec26e88574e08575f17174d07f76632')
+            'fdea1a487639df9a3a8ae17120627dc89734240f9a66e1e4d2f2603592c55706')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
