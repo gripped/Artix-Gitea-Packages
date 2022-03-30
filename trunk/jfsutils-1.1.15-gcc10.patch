@@ -1,9 +1,12 @@
-Fix building with GCC 10
+Submitted By:            Pierre Labastie <pierre dot labastie at neuf dot fr>
+Date:                    2020-05-21
+Initial Package Version: 1.1.15
+Upstream Status:         Unknown (no development since 2011)
+Origin:                  self, adapted from opensuse
+Description:             Fixes building with GCC 10
 
-Origin: https://sources.debian.org/patches/jfsutils/1.1.15-5/gcc10_fix-1.patch/
-
---- jfsutils-1.1.15.old/fscklog/display.c
-+++ jfsutils-1.1.15.new/fscklog/display.c
+--- jfsutils-1.1.15.old/fscklog/display.c	2005-11-22 21:43:54.000000000 +0100
++++ jfsutils-1.1.15.new/fscklog/display.c	2020-05-21 18:15:13.410617620 +0200
 @@ -54,7 +54,7 @@
   * output: fsck extracted service log I/O buffer
   *
@@ -13,8 +16,9 @@ Origin: https://sources.debian.org/patches/jfsutils/1.1.15-5/gcc10_fix-1.patch/
  
  /* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
   *
---- jfsutils-1.1.15.old/libfs/logredo.c
-+++ jfsutils-1.1.15.new/libfs/logredo.c
+diff -ur --exclude '*.o' --exclude '*.a' jfsutils-1.1.15.old/libfs/logredo.c jfsutils-1.1.15.new/libfs/logredo.c
+--- jfsutils-1.1.15.old/libfs/logredo.c	2005-11-22 21:43:55.000000000 +0100
++++ jfsutils-1.1.15.new/libfs/logredo.c	2020-05-21 18:19:44.927703271 +0200
 @@ -87,9 +87,9 @@
   *    S T U F F    F O R    T H E    L O G
   *
@@ -68,4 +72,3 @@ Origin: https://sources.debian.org/patches/jfsutils/1.1.15-5/gcc10_fix-1.patch/
  int end_of_transaction = 0;
  
  /*
- 

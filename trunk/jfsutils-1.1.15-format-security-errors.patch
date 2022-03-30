@@ -1,5 +1,3 @@
-Origin: https://sources.debian.org/patches/jfsutils/1.1.15-5/format-security-errors.patch/
-
 --- a/fscklog/display.c
 +++ b/fscklog/display.c
 @@ -182,7 +182,7 @@ void dump_service_log()
@@ -37,4 +35,3 @@ Origin: https://sources.debian.org/patches/jfsutils/1.1.15-5/format-security-err
  
  	return 0;
  }
- 
