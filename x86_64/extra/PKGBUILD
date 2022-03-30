@@ -11,7 +11,7 @@
 pkgbase=samba
 pkgname=('smbclient' 'samba')
 pkgver=4.16.0
-pkgrel=2
+pkgrel=4
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL3')
@@ -19,9 +19,11 @@ makedepends=('python' 'python-markdown' 'python-dnspython' 'docbook-xsl' 'pkg-co
              'readline' 'tevent' 'acl' 'libldap' 'libcap' 'ldb' 'krb5' 'pam'
              'eudev' 'gnutls' 'talloc' 'tdb' 'dbus' 'libaio'
              'perl-parse-yapp' 'libnsl' 'libtirpc' 'rpcsvc-proto' 'jansson'
-             'ceph-libs' 'liburing' 'perl-json')
+             'ceph-libs' 'liburing' 'perl-json' 'glusterfs')
 optdepends=(
              'python-dnspython: samba_dnsupdate and samba_upgradedns in AD setup'
+             'python-markdown: for samba-tool domain schemeupgrade'
+             'glusterfs: for vfs_glusterfs support'
 )
 source=(https://us1.samba.org/samba/ftp/stable/${pkgbase}-${pkgver}.tar{.gz,.asc}
         samba.logrotate
@@ -83,7 +85,7 @@ build() {
 package_smbclient() {
 pkgdesc="Tools to access a server's filespace and printers via SMB"
 depends=('popt' 'cifs-utils' 'tdb' 'ldb'
-         'tevent' 'libgcrypt' 'python' 'python-markdown' 'python-dnspython' 'talloc' 'readline' 'gnutls'
+         'tevent' 'libgcrypt' 'python' 'talloc' 'readline' 'gnutls'
          'libbsd' 'libldap' 'libcups' 'libarchive' 'libnsl' 'jansson'
          'libldb.so' 'libtdb.so' 'libtevent.so' 'libreadline.so' 'icu')
 replaces=('libwbclient')
@@ -147,7 +149,8 @@ depends=('db>=4.7' 'popt' 'libcups' 'libcap>=2.16' 'gnutls>=2.4.1'
          'talloc' 'ldb' 'libbsd' 'python' 'iniparser' 'tdb' 'libaio' 'perl-parse-yapp' "smbclient>=$pkgver" 'gpgme'
          'ceph-libs' 'libldb.so' 'libtdb.so' 'libtevent.so' 'liburing')
 backup=(etc/logrotate.d/samba
-        etc/pam.d/samba)
+        etc/pam.d/samba
+        etc/conf.d/samba)
 install=samba.install
     # Use samba-pkg as a staging directory for the split packages
     # (This is so RPATHS and symlinks are generated correctly via
@@ -191,7 +194,7 @@ sys.path.insert(0, '/usr/lib/python${_pyver}/site-packages')" \
 
   # Fix waf installing the wrong permissions for sudoers.d
   chmod 750 ${pkgdir}/etc/sudoers.d
-  chmod 600 ${pkgdir}/etc/sudoers.d/ctdb
+  chmod 440 ${pkgdir}/etc/sudoers.d/ctdb
 }
 
 # vim: ts=2 sw=2 et:
