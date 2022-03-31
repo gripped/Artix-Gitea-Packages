@@ -1,0 +1,37 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+_name=identify
+pkgname=python-identify
+pkgver=2.4.12
+pkgrel=1
+pkgdesc="File identification library for Python"
+arch=(any)
+url="https://github.com/pre-commit/identify"
+license=(MIT)
+depends=(python)
+makedepends=(python-setuptools)
+checkdepends=(python-ukkonen python-pytest)
+optdepends=('python-editdistance-s: for returning license identifiers')
+optdepends=('python-ukkonen: for returning license identifiers')
+source=("${_name}-${pkgver}.tar.gz::https://github.com/pre-commit/${_name}/archive/refs/tags/v${pkgver}.tar.gz")
+sha512sums=('8b9554a0a726e6fd25ca0fe1031b0a8a114fe98e13e41e73ad6549495a0dc02a2047c151f7717d8df705aba661e11ab1c0e48eff0bcf4d2a0dcff00f5ace1eec')
+b2sums=('55c1b7642d3f273beb415fabc683bfff46c1039fcf146d7c9c09f53b2beffab82e5e687849cbae6b7d2d9d0502a340e635ced730afa6610d20d75f0412943635')
+
+build() {
+  cd "${_name}-${pkgver}"
+  python setup.py build
+}
+
+check() {
+  cd "${_name}-${pkgver}"
+  export PYTHONPATH="build:${PYTHONPATH}"
+  pytest -v
+}
+
+package() {
+  cd "${_name}-${pkgver}"
+  python setup.py install --optimize=1 --root="${pkgdir}"
+  install -vDm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
