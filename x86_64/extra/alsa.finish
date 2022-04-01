@@ -1,3 +1,2 @@
 #!/bin/sh
-set -e
-exec alsactl store
+exec alsactl store 2>&1
