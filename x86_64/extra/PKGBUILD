@@ -45,6 +45,7 @@ build() {
     -DUSE_SOUP2=OFF \
     -DENABLE_GTKDOC=ON \
     -DUSE_SYSTEMD=OFF \
+    -DENABLE_JOURNALD_LOG=OFF \
     -DENABLE_MINIBROWSER=ON
   cmake --build build
 }
