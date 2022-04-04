@@ -19,10 +19,10 @@ _commit=14272caec5175cacba4a044f4cacd591c0db8351  # main
 source=("git+https://gitlab.gnome.org/GNOME/devhelp.git#commit=$_commit")
 sha256sums=('SKIP')
 
-pkgver() {
-  cd devhelp
-  git describe --tags | sed 's/\.alpha/alpha/;s/-/+/g'
-}
+#pkgver() {
+#  cd devhelp
+#  git describe --tags | sed 's/\.alpha/alpha/;s/-/+/g'
+#}
 
 prepare() {
   cd devhelp
