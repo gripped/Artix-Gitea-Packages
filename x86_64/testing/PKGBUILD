@@ -9,7 +9,7 @@ pkgdesc="The GNOME Bluetooth Subsystem"
 url="https://wiki.gnome.org/Projects/GnomeBluetooth"
 arch=(x86_64)
 license=(GPL LGPL)
-depends=(gtk4 libadwaita libnotify bluez gsound systemd pulseaudio-bluetooth
+depends=(gtk4 libadwaita libnotify bluez gsound pulseaudio-bluetooth
          upower)
 makedepends=(gobject-introspection gtk-doc docbook-xsl git meson)
 checkdepends=(python-dbusmock)
