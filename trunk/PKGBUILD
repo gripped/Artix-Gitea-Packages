@@ -38,6 +38,7 @@ build() {
   artix-meson mutter build \
     -D egl_device=true \
     -D wayland_eglstream=true \
+    -D docs=true \
     -D installed_tests=false
   meson compile -C build
 }
