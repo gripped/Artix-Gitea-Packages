@@ -20,10 +20,10 @@ source=("git+https://gitlab.gnome.org/GNOME/nautilus.git#commit=$_commit"
 sha256sums=('SKIP'
             'SKIP')
 
-pkgver() {
-  cd $pkgbase
-  git describe --tags | sed 's/-/+/g'
-}
+#pkgver() {
+#  cd $pkgbase
+#  git describe --tags | sed 's/-/+/g'
+#}
 
 prepare() {
   cd $pkgbase
