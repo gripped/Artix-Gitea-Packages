@@ -1,0 +1,7 @@
+post_install() {
+	echo "  agetty-tty{1..6}.conf has been renamed to tty{1..6}.conf!"
+}
+
+post_upgrade() {
+    post_install
+}
