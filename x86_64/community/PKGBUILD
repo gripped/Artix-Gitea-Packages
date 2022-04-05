@@ -3,15 +3,14 @@
 pkgname=jupyter-nbconvert
 _name=nbconvert
 pkgver=6.4.5
-pkgrel=1
+pkgrel=4
 pkgdesc="Jupyter Notebook Conversion"
 arch=('any')
 url="https://pypi.python.org/pypi/nbconvert"
 license=('BSD')
 depends=(
-  'jupyter'
-  'jupyter-nbclient'
   'jupyter-nbformat'
+  'jupyter-nbclient'
   'jupyterlab_pygments'
   'python-beautifulsoup4'
   'python-bleach'
@@ -24,8 +23,8 @@ depends=(
   'python-testpath'
   'python-traitlets'
 )
-# really depends on jupyter-client, not jupyter
 makedepends=('python-pyppeteer' 'python-setuptools')
+checkdepends=('python-pytest' 'python-ipywidgets')
 optdepends=('pandoc: non-html conversion output'
             'python-pyppeteer: for webPDF conversion support')
 source=("https://github.com/jupyter/nbconvert/archive/$pkgver/$pkgname-$pkgver.tar.gz")
@@ -35,6 +34,16 @@ b2sums=('68ac22804b163fa3f36a9f81a24b39c84a60650a2c18175f7741a7299f84f627130732b
 build() {
   cd nbconvert-$pkgver
   python setup.py build
+}
+
+check() {
+  cd "${_name}-${pkgver}"
+  export PYTHONPATH="$PWD" # Make sure system nbconvert is not used
+  # disable tests that download chromium and (probably) require a graphical session
+  pytest -vv -k 'TestWebPDFExporter and not (test_export or test_webpdf_without_pyppeteer)'
+  pytest -vv -k 'TestNbConvertApp and not test_webpdf_with_chromium'
+  # run all remaining tests
+  pytest -vv -k 'not TestWebPDFExporter and not TestNbConvertApp'
 }
 
 package() {
