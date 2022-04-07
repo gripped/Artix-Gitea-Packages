@@ -1,4 +1,5 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
+#
 
 _pkg=pyspnego
 pkgname=python-${_pkg}
