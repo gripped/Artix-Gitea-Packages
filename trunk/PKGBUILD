@@ -16,7 +16,7 @@ optdepends=('python-pillow: needed to include images'
             'python-defusedxml: guard against various XML vulnerabilities'
             'python-pandas: for iteration over Pandas DataFrames')
 source=("https://foss.heptapod.net/openpyxl/openpyxl/-/archive/${pkgver}/openpyxl-${pkgver}.tar.bz2")
-sha256sums=('351d38f1bba45a4a3cdcdc626d6c3f815677f5f0bc218315664678efe47e4e3f')
+sha256sums=('7c861c264fdbef149b22facb6ad1c034c449b6d59436195fc47878bcfe5a318c')
 
 build() {
   cd "$srcdir"/openpyxl-${pkgver}
