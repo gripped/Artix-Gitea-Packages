@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
-pkgver=20220207
+pkgver=20220405
 pkgrel=1
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
@@ -11,21 +11,22 @@ makedepends=('git')
 optdepends=('cryptsetup-s6: cryptsetup boot script support'
             'lvm2-s6: lvm2 boot script support')
 replaces=('eudev-s6')
+install=s6-scripts.install
 backup=('etc/s6/rc.local'
-        'etc/s6/config/agetty-serial.conf'
-        'etc/s6/config/agetty-tty1.conf'
-        'etc/s6/config/agetty-tty2.conf'
-        'etc/s6/config/agetty-tty3.conf'
-        'etc/s6/config/agetty-tty4.conf'
-        'etc/s6/config/agetty-tty5.conf'
-        'etc/s6/config/agetty-tty6.conf'
+        'etc/s6/config/tty1.conf'
+        'etc/s6/config/tty2.conf'
+        'etc/s6/config/tty3.conf'
+        'etc/s6/config/tty4.conf'
+        'etc/s6/config/tty5.conf'
+        'etc/s6/config/tty6.conf'
+        'etc/s6/config/ttyS.conf'
         'etc/s6/config/dmesg.conf'
         'etc/s6/config/hwclock.conf'
         'etc/s6/config/mount-cgroups.conf'
         'etc/s6/config/mount-tmpfs.conf'
         'etc/s6/config/udevd.conf'
         'usr/lib/sysctl.d/50-default.conf')
-_commit=f20394af3e201e4340a992a68a0e34449110ce15
+_commit=9a73b9d6033ffe995e64d7bf0f85be8eb45e2bbb
 source=("git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=$_commit")
 sha256sums=('SKIP')
 
