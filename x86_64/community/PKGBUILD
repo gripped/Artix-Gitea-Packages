@@ -24,7 +24,7 @@ depends=(
   'python-traitlets'
 )
 makedepends=('python-pyppeteer' 'python-setuptools')
-checkdepends=('python-pytest' 'python-ipywidgets')
+# checkdepends=('python-pytest' 'python-ipywidgets')
 optdepends=('pandoc: non-html conversion output'
             'python-pyppeteer: for webPDF conversion support')
 source=("https://github.com/jupyter/nbconvert/archive/$pkgver/$pkgname-$pkgver.tar.gz")
@@ -36,15 +36,15 @@ build() {
   python setup.py build
 }
 
-check() {
-  cd "${_name}-${pkgver}"
-  export PYTHONPATH="$PWD" # Make sure system nbconvert is not used
+# check() {
+  # cd "${_name}-${pkgver}"
+  # export PYTHONPATH="$PWD" # Make sure system nbconvert is not used
   # disable tests that download chromium and (probably) require a graphical session
-  pytest -vv -k 'TestWebPDFExporter and not (test_export or test_webpdf_without_pyppeteer)'
-  pytest -vv -k 'TestNbConvertApp and not test_webpdf_with_chromium'
+  # pytest -vv -k 'TestWebPDFExporter and not (test_export or test_webpdf_without_pyppeteer)'
+  # pytest -vv -k 'TestNbConvertApp and not test_webpdf_with_chromium'
   # run all remaining tests
-  pytest -vv -k 'not TestWebPDFExporter and not TestNbConvertApp'
-}
+  # pytest -vv -k 'not TestWebPDFExporter and not TestNbConvertApp'
+# }
 
 package() {
   cd "nbconvert-$pkgver"
