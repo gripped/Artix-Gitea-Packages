@@ -11,7 +11,7 @@ pkgdesc="Modern, feature-rich firmware development environment for the UEFI spec
 arch=(any)
 url="https://github.com/tianocore/edk2"
 license=(BSD)
-makedepends=(aarch64-linux-gnu-gcc acpica git iasl util-linux-libs nasm python seabios)
+makedepends=(acpica git iasl util-linux-libs nasm python seabios)
 options=(!makeflags)
 source=(
   $pkgbase-$pkgver.tar.gz::https://github.com/tianocore/$pkgbase/archive/$pkgbase-stable$pkgver.tar.gz
