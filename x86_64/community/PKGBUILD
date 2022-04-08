@@ -12,9 +12,9 @@ url='https://pypi.org/project/ipyparallel/'
 arch=(any)
 license=(BSD)
 source=(https://files.pythonhosted.org/packages/source/${_pyname::1}/$_pyname/$_pyname-$pkgver.tar.gz)
-depends=(jupyterlab python-psutil)
+depends=(jupyterlab python-psutil python-tqdm ipython python-tornado jupyter-nbclassic)
 makedepends=(python-build python-installer python-wheel)
-checkdepends=(python-pytest-tornado python-tqdm)
+checkdepends=(python-pytest-tornado python-pytest-asyncio python-testpath python-mpi4py python-pymongo python-cloudpickle python-matplotlib python-distributed)
 optdepends=('openmpi: to use the MPI Launchers in ipcluster command')
 sha256sums=('f267473c52fc6a886c6b816adb155bec0b277bc7d224fb3fabeb83834e733c72')
 
