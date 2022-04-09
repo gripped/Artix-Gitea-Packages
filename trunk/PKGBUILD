@@ -3,7 +3,7 @@
 
 pkgname=dqlite
 pkgver=1.9.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Distributed SQLite"
 arch=('x86_64')
 url="https://github.com/CanonicalLtd/dqlite"
