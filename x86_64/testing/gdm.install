@@ -1,9 +1,13 @@
 pre_upgrade() {
-    gdm_srv=$(find /etc/s6/sv -type d -name "gdm-srv")
+    old_gdm=$(find /etc/s6/sv/gdm/run)
+    if [ -n "$old_gdm" ]; then
+        touch /etc/s6/config/old_gdm
+    fi
 }
 
 post_upgrade() {
-    if [ -z "$gdm_srv" ]; then
-        echo "gdm -> gdm-srv" >> /etc/s6/config/convfile
+    if [ -e /etc/s6/config/old_gdm ]; then
+        echo "gdm -> gdm-log" >> /etc/s6/config/convfile
+        rm /etc/s6/config/old_gdm
     fi
 }
