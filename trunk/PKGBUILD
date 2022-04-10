@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: artoo <artoo@artixlinux.org> 
 pkgname=s6-base
-pkgver=2.4.2
-pkgrel=2
+pkgver=2.5
+pkgrel=1
 pkgdesc='Packages, hooks, and scripts to define a basic s6 init system implementation for Artix Linux.'
 url='https://gitea.artixlinux.org/artix/alpm-hooks'
 arch=('any')
@@ -12,7 +12,7 @@ makedepends=('git')
 provides=('svc-manager' 'init-rc')
 conflicts=('svc-manager' 'init-rc')
 backup=('etc/s6/config/s6-rc-db-update.conf')
-_commit=b9d94c232e59368b7bb60063451df94f28a2adec
+_commit=fda818252766a261f0b5427c5d9c624c3779099c
 source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
 sha256sums=('SKIP')
 
