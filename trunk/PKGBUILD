@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=gdm-s6
 pkgver=20220410
-pkgrel=1
+pkgrel=2
 pkgdesc="s6-rc service scripts for gdm"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
@@ -10,7 +10,8 @@ provides=('init-gdm')
 conflicts=('init-gdm')
 depends=('gdm' 'logind-s6' 's6-base')
 makedepends=('git')
-_commit=c5fb92e6dc20d03cb286eba75e94d7ed6d768ff5
+install=gdm.install
+_commit=11172d7bb255662067a81da7dd7e4d25b421e806
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
