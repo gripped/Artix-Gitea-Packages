@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-scripts
 pkgver=20220410
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of essential s6-rc oneshots and longruns for startup/shutdown.'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/s6-scripts'
@@ -33,4 +33,12 @@ sha256sums=('SKIP')
 package() {
     cd "${pkgname}"
     DESTDIR="${pkgdir}" make install
+
+    # temporary hack so that the shutdown hook isn't triggered
+    mkdir -p "${pkgdir}"/etc/s6/sv/agetty-tty{1,2,3,4,5,6}/contents.d
+    mkdir -p "${pkgdir}"/etc/s6/sv/agetty-serial/contents.d
+    for i in {1..6}; do
+        echo "bundle" > "${pkgdir}"/etc/s6/sv/agetty-tty$i/type
+    done
+    echo "bundle" > "${pkgdir}"/etc/s6/sv/agetty-serial/type
 }
