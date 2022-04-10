@@ -1,3 +1,16 @@
+pre_upgrade() {
+    new_tty=$(find /etc/s6/sv -type d -name "tty1")
+    if [ -z "$new_tty" ]; then
+        echo "agetty-tty1 -> tty1" >> /etc/s6/config/convfile
+        echo "agetty-tty2 -> tty2" >> /etc/s6/config/convfile
+        echo "agetty-tty3 -> tty3" >> /etc/s6/config/convfile
+        echo "agetty-tty4 -> tty4" >> /etc/s6/config/convfile
+        echo "agetty-tty5 -> tty5" >> /etc/s6/config/convfile
+        echo "agetty-tty6 -> tty6" >> /etc/s6/config/convfile
+        echo "agetty-serial -> ttyS" >> /etc/s6/config/convfile
+    fi
+}
+
 post_upgrade() {
     echo "  agetty-tty{1..6}.conf has been renamed to tty{1..6}.conf!"
 }
