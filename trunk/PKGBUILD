@@ -24,7 +24,7 @@ sha256sums=('d294b029dc2b2d4f65da516fdc3b8088d32643eb7ff77db135a8b9ce904caa37')
 
 build() {
   export CXXFLAGS+=" -ffat-lto-objects"
-  cmake -B build -S $_pkgfn -G Ninja \ -DCMAKE_INSTALL_PREFIX=/usr
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -B build -S $_pkgfn -G Ninja \
     -DINSTALL_PUBLICBINDIR=usr/bin
   cmake --build build
 }
