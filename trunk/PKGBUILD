@@ -3,7 +3,7 @@
 
 pkgname=docker-runit
 pkgver=20220411
-pkgrel=1
+pkgrel=2
 pkgdesc='Runit service script for docker'
 arch=('any')
 url="https://artixlinux.org"
