@@ -16,7 +16,7 @@ install=docker-runit.install
 source=('docker.run'
         'docker.log.run')
 sha256sums=('b12f1fb958890063ff6e92ee653d0ac55ef4af97c3062736ab397444e9f7c13b'
-            '757afc537d5f60efdbc051e38662f91136f37d2a02396cd4265d1f0d19c9b0b6')
+            '8279f88223eaad7392ea0f7a567c7e432f4162c44752e8565b7ce109084ee069')
 
 package() {
     cd "$srcdir"
