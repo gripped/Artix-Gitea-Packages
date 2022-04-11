@@ -18,7 +18,7 @@ source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/single/
 sha256sums=('cd2789cade3e865690f3c18df58ffbff8af74cc5f01faae50634c12eb52dd85b')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -B build -S $_pkgfn -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DQT_HOST_PATH=/usr \
     -DINSTALL_BINDIR=lib/qt6/bin \
