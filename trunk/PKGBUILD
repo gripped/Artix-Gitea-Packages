@@ -8,12 +8,19 @@ pkgdesc='Faraday adapter for HTTPClient'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
 license=('MIT')
-depends=('ruby-httpclient')
+depends=('ruby' 'ruby-httpclient')
 makedepends=('ruby-rspec')
 checkdepends=('ruby-faraday' 'ruby-webmock' 'ruby-multipart-parser')
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz")
 sha512sums=('034f8dc7fff8ea214a78208a57bf92e16259ab1b515936a647d50ce3bae7361bcef891eb1baa0ce4a1f8cc4afa14b564f743aee2a0c215d3cbebabab8c41c537')
+
+prepare() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+
+  # drop broken/cirular dependencies
+  sed --in-place '/add_development_dependency/d' "${_gemname}.gemspec"
+}
 
 build() {
   cd "${srcdir}/${_gemname}-${pkgver}"
@@ -22,6 +29,7 @@ build() {
 
 check() {
   cd "${srcdir}/${_gemname}-${pkgver}"
+
   rspec
 }
 
