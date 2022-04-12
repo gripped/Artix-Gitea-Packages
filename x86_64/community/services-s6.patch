@@ -5,7 +5,7 @@
 
 diff --git a/src/modules/services-s6/main.py b/src/modules/services-s6/main.py
 new file mode 100644
-index 000000000..2a8add4a5
+index 000000000..d1bac8f2f
 --- /dev/null
 +++ b/src/modules/services-s6/main.py
 @@ -0,0 +1,101 @@
@@ -86,7 +86,7 @@ index 000000000..2a8add4a5
 +                warning("Service {} does not exist.".format(svc))
 +                warning("s6-rc-db returned error code {!s}".format(ec))
 +            else:
-+                ec = target_env_call(["s6-service", "-c", self.dbDir, "add", self.defaultBundle, svc])
++                ec = target_env_call(["s6-service", "add", self.defaultBundle, svc])
 +                if ec != 0:
 +                    warning("Cannot add service {} to {} bundle".format(svc, self.defaultBundle))
 +                    warning("s6-service returned error code {!s}".format(ec))
