@@ -5,7 +5,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=openssh
-pkgver=8.9p1
+pkgver=9.0p1
 pkgrel=1
 pkgdesc='Premier connectivity tool for remote login with the SSH protocol'
 url='https://www.openssh.com/portable.html'
@@ -22,15 +22,15 @@ validpgpkeys=('7168B983815A5EEF59A4ADFD2A3F414E736060BA')
 source=("https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/${pkgname}-${pkgver}.tar.gz"{,.asc}
         'sshd.conf'
         'sshd.pam')
-sha1sums=('205cdf0040a238047e2c49f43460e03d76e5d650'
+sha1sums=('06dd658874dcd22d66311cf5999bd56c614de509'
           'SKIP'
           'c9b2e4ce259cd62ddb00364d3ee6f00a8bf2d05f'
           'd93dca5ebda4610ff7647187f8928a3de28703f3')
-sha256sums=('fd497654b7ab1686dac672fb83dfb4ba4096e8b5ffcdaccd262380ae58bec5e7'
+sha256sums=('03974302161e9ecce32153cfa10012f1e65c8f3750f573a73ab1befd5972a28a'
             'SKIP'
             '4effac1186cc62617f44385415103021f72f674f8b8e26447fc1139c670090f6'
             '64576021515c0a98b0aaf0a0ae02e0f5ebe8ee525b1e647ab68f369f81ecd846')
-b2sums=('02934da7f7a2954141888e63e81e38fad4fb8558ddd1032de44f69684802c62771fdd7e9e470e0715059635999c8f9d2ab95f6351217e236573ead83a867f59b'
+b2sums=('49724a400951964d659d136908657940f79e150056728cc4dadf8ff8652a832f7fd46eebb47b15085e57fca4b00c77d1ec4dd1b056ea2bbcee89f54a121ed5e2'
         'SKIP'
         '27571f728c3c10834a81652f3917188436474b588f8b047462e44b6c7a424f60d06ce8cb74839b691870177d7261592207d7f35d4ae6c79af87d6a7ea156d395'
         '557d015bca7008ce824111f235da67b7e0051a693aaab666e97b78e753ed7928b72274af03d7fde12033986b733d5f996faf2a4feb6ecf53f39accae31334930')
