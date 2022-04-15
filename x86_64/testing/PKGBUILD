@@ -21,7 +21,7 @@ sha256sums=('fce94688ea925782a2879347584991f854630daadba6c52aed6d93e33cd0b19c')
 
 build() {
   CLANG_RESOURCE_DIR=/usr/include/clang
-  cmake -DCMAKE_INSTALL_PREFIX=/usr -B build -S $_pkgfn -G Ninja \
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_PREFIX_PATH=/usr -B build -S $_pkgfn -G Ninja \
     -DINSTALL_PUBLICBINDIR=usr/bin
   cmake --build build
 }
