@@ -74,7 +74,7 @@ build() {
               --enable-gpm \
               --disable-stripping \
               --without-service-package
-  make
+  make -j 1
   # make brlapi.jar deterministic
   find . -type f -iname "*.jar" -exec strip-nondeterminism {} \;
 }
