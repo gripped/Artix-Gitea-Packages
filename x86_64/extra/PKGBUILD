@@ -11,13 +11,13 @@
 pkgbase=samba
 pkgname=('smbclient' 'samba')
 pkgver=4.16.0
-pkgrel=4
+pkgrel=5
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL3')
 makedepends=('python' 'python-markdown' 'python-dnspython' 'docbook-xsl' 'pkg-config' 'libbsd' 'db' 'popt' 'libcups'
              'readline' 'tevent' 'acl' 'libldap' 'libcap' 'ldb' 'krb5' 'pam'
-             'eudev' 'gnutls' 'talloc' 'tdb' 'dbus' 'libaio'
+             'udev' 'gnutls' 'talloc' 'tdb' 'dbus' 'libaio'
              'perl-parse-yapp' 'libnsl' 'libtirpc' 'rpcsvc-proto' 'jansson'
              'ceph-libs' 'liburing' 'perl-json' 'glusterfs')
 optdepends=(
@@ -180,15 +180,15 @@ sys.path.insert(0, '/usr/lib/python${_pyver}/site-packages')" \
   chmod 700 "${pkgdir}"/etc/samba/private
 
   install -D -m644 "${srcdir}"/samba.logrotate "${pkgdir}"/etc/logrotate.d/samba
-  install -D -m644 "${srcdir}"/samba.pam "${pkgdir}"/etc/pam.d/samba 
-  
+  install -D -m644 "${srcdir}"/samba.pam "${pkgdir}"/etc/pam.d/samba
+
   # spool directory
   install -d -m1777 "${pkgdir}"/var/spool/samba
-  
+
   rm -rf "${pkgdir}"/run
   rm -rf "${pkgdir}"/var/run
   rm -rf "${pkgdir}"/etc/sysconfig
-  
+
   # copy ldap example
   install -D -m644 "${srcdir}"/samba-${pkgver}/examples/LDAP/samba.schema "${pkgdir}"/usr/share/doc/samba/examples/LDAP/samba.schema
 
