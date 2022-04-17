@@ -2,6 +2,6 @@
   missingok
   sharedscripts
   postrotate
-    /usr/bin/systemctl --signal USR1 kill rspamd.service || true
+    kill -HUP $(pidof rspamd) || true
   endscript
 }
