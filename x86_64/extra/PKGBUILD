@@ -6,7 +6,7 @@
 
 pkgname=brltty
 pkgver=6.4
-pkgrel=9
+pkgrel=10.1
 pkgdesc="Braille display driver for Linux/Unix"
 arch=(x86_64)
 url="https://brltty.app"
@@ -74,7 +74,7 @@ build() {
               --enable-gpm \
               --disable-stripping \
               --without-service-package
-  make
+  make -j 1
   # make brlapi.jar deterministic
   find . -type f -iname "*.jar" -exec strip-nondeterminism {} \;
 }
