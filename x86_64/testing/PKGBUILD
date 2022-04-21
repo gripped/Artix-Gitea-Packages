@@ -101,11 +101,11 @@ _postgres_check() {
     done; exit 1)
 }
 
-check() {
-  cd postgresql-${pkgver}
-  _postgres_check check
-  _postgres_check check-world
-}
+#check() {
+#  cd postgresql-${pkgver}
+#  _postgres_check check
+#  _postgres_check check-world
+#}
 
 package_postgresql-libs() {
   pkgdesc="Libraries for use with PostgreSQL"
