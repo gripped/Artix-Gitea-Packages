@@ -5,7 +5,7 @@
 
 pkgname=artix-mirrorlist
 pkgver=20220421
-pkgrel=1
+pkgrel=2
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
 url="https://gitea.artixlinux.org/packagesA/artix-mirrorlist/src/branch/master/trunk/mirrorlist"
@@ -15,7 +15,7 @@ conflicts=('pacman-mirrorlist')
 replaces=('pacman-mirrorlist')
 backup=(etc/pacman.d/mirrorlist)
 source=(mirrorlist)
-sha256sums=('01aef4932444a8f0a06a0eb6a0cc82de5a5826ee6efe1f82f14577feb246628e')
+sha256sums=('7a6c7882be2673dc2e75a1e1dabb253a7f9e8c4c96a05102810ff248a45d4f1c')
 
 package() {
   mkdir -p $pkgdir/etc/pacman.d

@@ -10,6 +10,7 @@
 
 # Default mirrors
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
+Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
 Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 
 ## Europe
