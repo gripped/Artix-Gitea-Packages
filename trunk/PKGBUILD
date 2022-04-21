@@ -1,5 +1,6 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+#
 
 pkgbase=pyside6
 pkgname=(shiboken6 pyside6)
