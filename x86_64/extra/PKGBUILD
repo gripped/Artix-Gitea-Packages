@@ -1,4 +1,5 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
+#
 
 pkgbase=pyqt6-charts
 pkgname=(python-pyqt6-charts)
