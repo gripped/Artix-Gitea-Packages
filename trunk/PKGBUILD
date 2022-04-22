@@ -476,7 +476,7 @@ package_qemu() {
 #    _pick qemu-user-static usr/lib/binfmt.d/*-static.conf
 
     _pick qemu-user usr/bin/qemu-{aarch64{,_be},alpha,arm{,eb},cris,hexagon,hppa,i386,m68k,microblaze{,el},mips{,64,64el,el,n32,n32el},nios2,or1k,ppc{,64,64le},riscv{32,64},s390x,sh4{,eb},sparc{,32plus,64},x86_64,xtensa{,eb}}
-    _pick qemu-user usr/lib/binfmt.d/*.conf
+#    _pick qemu-user usr/lib/binfmt.d/*.conf
 
     _pick qemu-vhost-user-gpu usr/lib/qemu/vhost-user-gpu
     _pick qemu-vhost-user-gpu usr/share/qemu/vhost-user/50-qemu-gpu.json
