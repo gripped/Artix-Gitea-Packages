@@ -284,7 +284,7 @@ package_qemu() {
   meson install -C build --destdir "$pkgdir"
 
   install -vdm 755 "$pkgdir/usr/lib/binfmt.d/"
-  $pkgbase-$pkgver/scripts/qemu-binfmt-conf.sh --exportdir "$pkgdir/usr/lib/binfmt.d/" --qemu-path "$pkgdir/usr/bin/"
+  $pkgbase-$pkgver/scripts/qemu-binfmt-conf.sh --debian --exportdir "$pkgdir/usr/lib/binfmt.d/" --qemu-path "$pkgdir/usr/bin/"
 
 # TODO: qemu-user-static
 #  for _conf in "$pkgdir/usr/lib/binfmt.d/"*; do
@@ -595,7 +595,6 @@ package_qemu-guest-agent() {
     etc/$pkgbase/$pkgbase-ga.conf
     etc/$pkgbase/fsfreeze-hook
   )
-  install=$pkgname.install
   mv -v $pkgname/* "$pkgdir"
   install -vDm 644 99-$pkgname.rules -t "$pkgdir/usr/lib/udev/rules.d/"
   install -vDm 644 $pkgbase-ga.conf -t "$pkgdir/etc/$pkgbase/"
