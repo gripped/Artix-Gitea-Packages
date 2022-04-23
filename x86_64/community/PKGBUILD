@@ -15,10 +15,10 @@ optdepends=('erlang-nox: for weatherreport')
 makedepends=(erlang-nox)
 backup=(etc/couchdb/local.ini
         etc/couchdb/vm.args)
-source=("https://archive.apache.org/dist/${pkgname}/source/${pkgver}/apache-${pkgname}-${pkgver}.tar.gz"{,.asc}
+source=("https://archive.apache.org/dist/${pkgname}/source/${pkgver}/apache-${pkgname}-${pkgver}.tar.gz"
         couchdb.sysusers
         couchdb.tmpfiles)
-sha256sums=(69c9fd6f80133557f68a02e92dda72a4fd646d646f429f45bb8329a30f82f20e SKIP
+sha256sums=(69c9fd6f80133557f68a02e92dda72a4fd646d646f429f45bb8329a30f82f20e
             3ed1ad2a37a068ce194b03fb72eb35285d60fa7faf2d2c2bb710703d229108a8
             7331b9675e3668c5f0d632bee5d154c061cc3e60d451bef3dc0d0ab2dadfa006)
 validpgpkeys=(2EC788AE3F239FA13E82D215CDE711289384AE37  # Joan Touzet (CODE SIGNING KEY) <wohali@apache.org>
