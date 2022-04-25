@@ -2,7 +2,7 @@
 
 pkgname=gnome-recipes
 pkgver=2.0.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Recipe management application for GNOME'
 arch=('x86_64')
 url='https://wiki.gnome.org/Apps/Recipes'
@@ -29,7 +29,7 @@ prepare() {
 }
 
 build() {
-  arch-meson recipes build
+  artix-meson recipes build
   meson compile -C build
 }
 
