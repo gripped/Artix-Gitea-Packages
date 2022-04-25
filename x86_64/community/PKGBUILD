@@ -3,14 +3,13 @@
 pkgname=yubikey-personalization
 _shortname=ykpers
 pkgver=1.20.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Yubico YubiKey Personalization library and tool'
 arch=('x86_64')
 url='https://github.com/Yubico/yubikey-personalization'
 license=('BSD')
 depends=('libusb' 'json-c' 'yubico-c-client')
-# We need systemd to be installed for udev version check
-makedepends=('eudev')
+makedepends=('udev')
 provides=('ykpers')
 conflicts=('ykpers')
 validpgpkeys=('0A3B0262BCA1705307D5FF06BCA00FD4B2168C0A') # Klas Lindfors <klas@yubico.com>
