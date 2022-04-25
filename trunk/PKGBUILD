@@ -2,7 +2,7 @@
 
 pkgname=phodav
 pkgver=2.5
-pkgrel=1
+pkgrel=2
 pkgdesc="WebDav server implementation using libsoup (RFC 4918)"
 arch=('x86_64')
 url="https://wiki.gnome.org/phodav"
@@ -13,7 +13,7 @@ source=("https://download.gnome.org/sources/$pkgname/$pkgver/$pkgname-$pkgver.ta
 sha256sums=('71f0a9cd70afd4dd1412a0298331dbb8ac71c0377f52117afc15eb88dc6fb910')
 
 build() {
-	arch-meson --auto-features=auto $pkgname-$pkgver build
+	artix-meson --auto-features=auto $pkgname-$pkgver build
 	meson compile -C build
 }
 
