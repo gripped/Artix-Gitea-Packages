@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=246.10
-pkgrel=5
+pkgrel=6
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -11,11 +11,14 @@ license=('GPL' 'LGPL2.1')
 makedepends=('acl' 'intltool' 'libtool' 'gperf' 'gtk-doc' 'polkit' 'dbus'
             'libseccomp' 'meson' 'kexec-tools' 'openrc' 'libcap')
 options=('!libtool')
-source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz")
-sha256sums=('c490dc158c8f5bca8d00ecfcc7ad5af24d1c7b9e59990a0b3b1323996221a922')
+source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz"
+        dbus-exit.patch::https://github.com/pierre-labastie/elogind/commit/04d76bc0f087640bedc6ee52525529ccfdc6ae78.patch)
+sha256sums=('c490dc158c8f5bca8d00ecfcc7ad5af24d1c7b9e59990a0b3b1323996221a922'
+            'cccbbe6bf6603d81c307ad670994fe058ff630b37c218041c4ca877ef0486843')
 
 prepare() {
     cd ${pkgbase}-${pkgver}
+    patch -Np 1 -i ../dbus-exit.patch
 }
 
 build() {
@@ -30,9 +33,9 @@ build() {
         -Dman=true
     )
 
-    arch-meson "$pkgbase-${pkgver}" build "${meson_options[@]}"
+    artix-meson "$pkgbase-${pkgver}" build "${meson_options[@]}"
 
-    ninja -C build
+    meson compile -C build
 }
 
 check(){
@@ -41,7 +44,7 @@ check(){
 
 package_elogind() {
     pkgdesc="The systemd project's logind, extracted to a standalone package"
-    provides=("elogind=${pkgver}" 'logind')
+    provides=('logind')
     depends=('acl' 'dbus' 'libseccomp' 'libelogind' 'kexec-tools' 'udev')
     optdepends=('polkit: polkit support')
     backup=('etc/elogind/logind.conf')
@@ -58,7 +61,7 @@ package_elogind() {
 
 package_libelogind(){
     pkgdesc="elogind client libraries"
-    provides=('libelogind.so' "libelogind=${pkgver}" 'liblogind')
+    provides=('libelogind.so' 'liblogind')
     depends=('libcap' 'libudev')
 
     cd "${pkgbase}-${pkgver}"
