@@ -13,7 +13,7 @@ arch=('x86_64')
 url="https://linuxcontainers.org/lxd"
 license=('APACHE')
 depends=('lxc' 'lxcfs' 'squashfs-tools' 'dnsmasq' 'dqlite' 'libuv' 'ebtables')
-makedepends=('go' 'git' 'tcl' 'apparmor' 'libseccomp' 'eudev')
+makedepends=('go' 'git' 'tcl' 'apparmor' 'libseccomp' 'udev')
 optdepends=(
     'lvm2: for lvm2 support'
     'thin-provisioning-tools: for thin provisioning support'
