@@ -10,13 +10,13 @@
 pkgname=multipath-tools
 _tag='5d6fecb2df08c7fb98b40205417f4a45cf30a129' # git rev-parse ${pkgver}
 pkgver=0.8.9
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Multipath tools for Linux (including kpartx)'
 arch=('x86_64')
 url='http://christophe.varoqui.free.fr/'
 license=('GPL2')
 depends=('libaio' 'device-mapper' 'json-c' 'liburcu' 'libudev.so')
-makedepends=('git' 'eudev')
+makedepends=('git' 'udev')
 source=("multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=${_tag}")
 sha256sums=('SKIP')
 
