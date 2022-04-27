@@ -5,13 +5,13 @@
 
 pkgname=pcsclite
 pkgver=1.9.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc="PC/SC Architecture smartcard middleware library"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
 license=('BSD')
 depends=('python' 'libudev.so')
-makedepends=('pkg-config' 'eudev')
+makedepends=('pkg-config' 'udev')
 provides=('libpcsclite.so' 'libpcscspy.so')
 options=('!docs')
 validpgpkeys=('F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E') # Ludovic Rousseau <rousseau@debian.org>
