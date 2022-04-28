@@ -18,6 +18,6 @@ sha256sums=('ce8d7408a0fe005a2f037d07e41ac6d64b0862f5096a7a22f2992c46e2d4bba6'
 
 package() {
     cd "$srcdir"
-    install -Dm755 elogind.run "$pkgdir/etc/runit/sv/elogind/run"
-    install -Dm755 elogind.log.run "$pkgdir/etc/runit/sv/elogind/log/run"
+    install -Dm755 lightdm.run "$pkgdir/etc/runit/sv/lightdm/run"
+    install -Dm755 lightdm.log.run "$pkgdir/etc/runit/sv/lightdm/log/run"
 }
