@@ -17,19 +17,13 @@ makedepends=(gdbm glibc krb5 libldap libsasl=$pkgver mariadb-libs openssl pam po
 options=(debug)
 source=(
   https://github.com/cyrusimap/$pkgbase/releases/download/$pkgbase-$pkgver/$pkgbase-$pkgver.tar.gz{,.sig}
-  saslauthd.service
-  saslauthd.conf.d
   tmpfiles.conf
 )
 sha512sums=('db15af9079758a9f385457a79390c8a7cd7ea666573dace8bf4fb01bb4b49037538d67285727d6a70ad799d2e2318f265c9372e2427de9371d626a1959dd6f78'
             'SKIP'
-            '99573a52c0558d34548cc14e2fc3d95c4b7dc11e0b85f6aba31b1a98d2937d559fed7bb268b88f7ebf929c70e987901b9fe7d406eb74c088628b403a45013197'
-            'e99e2da452d2d5b9c0fc7ef10a844f5aa80f20fe5d5778666e450b5e6eb183876322592ae075d55c7e24d93d8a39bf7d47864697faf398cc40fd589808dd0282'
             '2cee9d6626aa16b6b51a5f48ad2c162564ce97dabc367738b4d6af654fcd5845e0d2cd78e5c9fb2378dfba2fd67f32fdbfd42321dc59c9a1222369860312d0a7')
 b2sums=('6cca8c26cebb9c2ee5d539c43797d30b6309a476ec4233225789978e1d7315c4ea5d2abbc7f5464be0f3c0de5fd9212706b43fbc92f40b76cd0b1013cc00f823'
         'SKIP'
-        'a63fb542a7eb93bb119d655e068ca7a9be71e760298c37f220beae5331ae73c1478fb3d1455e5431a6487bcf0ce7a612e9cdc923e2da5834fc1ae58d810f8e8d'
-        'fd9c1f0a1dd3b812c483e1b119782994b556b997583d75fc905a35ba4d4aae94326b24d0313a3b396fef69d4eb6c7dcbd397144b72fd1b729c590cfba432a275'
         'e7f38d8c42d48a08b5ca810e237899111856d57635260a5c440cbe8d01ed3dc89541fe7e4d8b84b9d54b1328f17f2c1ea9cf7b6a4a1f37b962bbb6e3cc916da8')
 validpgpkeys=(
   '829F339F8C296FE80F409D93E3D7C118C7B9F46A'  # Partha Susarla <mail@spartha.org>
