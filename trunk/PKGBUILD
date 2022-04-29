@@ -3,13 +3,13 @@
 
 pkgname=iso-profiles
 pkgver=2022.04
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix iso profiles'
 arch=('any')
 license=('GPL')
 url='https://gitea.artixlinux.org/artix/iso-profiles'
 makedepends=('git')
-_commit=18a0782165f05ab983297aba73323afb73a77dba
+_commit=011b71f0d5f7831ad664f05323e0f99897a949e3
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
