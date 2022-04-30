@@ -19,7 +19,7 @@ depends=('gsfonts' 'xdg-utils' 'qt5-base' 'libxt' 'libpaper' 'freetype2'
 optdepends=('poppler: tools that used to be included in xpdf'
             'desktop-file-utils: for desktop environments')
 makedepends=('cmake' 'qt5-tools')
-source=(https://dl.xpdfreader.com/xpdf-${pkgver}.tar.gz{,.sig}
+source=(https://dl.xpdfreader.com/old/xpdf-${pkgver}.tar.gz{,.sig}
         xpdf-4.00-permissions.patch
         xpdf-4.00-xpdfrc.patch
         xpdf.desktop)
