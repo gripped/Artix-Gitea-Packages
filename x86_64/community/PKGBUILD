@@ -19,12 +19,11 @@ depends=('gsfonts' 'xdg-utils' 'qt5-base' 'libxt' 'libpaper' 'freetype2'
 optdepends=('poppler: tools that used to be included in xpdf'
             'desktop-file-utils: for desktop environments')
 makedepends=('cmake' 'qt5-tools')
-source=(https://dl.xpdfreader.com/old/xpdf-${pkgver}.tar.gz{,.sig}
+source=(https://dl.xpdfreader.com/old/xpdf-${pkgver}.tar.gz
         xpdf-4.00-permissions.patch
         xpdf-4.00-xpdfrc.patch
         xpdf.desktop)
 sha512sums=('5f8478c2c4863a3c50f9b45a6fec73c7e67a74adbeaa651dd2e29982ea4cf050740874ee670672f985a323c12c28c968c16238c4238aeb52810a45e2728d622f'
-            'SKIP'
             'f17c1c19c29518a3538a202c19fb60efc7721a42065d32c841f9ed929e571d9373c8558fdae251c1ef3781857cf51483244276179862998f94c9c1fd8bd63695'
             'c5ce8ef29d9b338fe3623fa52904d4fee5d76a34145614d05abe168108579608f3d16d0d03d34865e43980eb1b2a814f07aa3dbcfc0da06de34bd9b0738eef67'
             'd6163eb220bd567226c6006bef30c6db1eac1263ae161392db9766dca1ce78014cc555dd9d27febd2b924150053fa01b47c06777b1e760864459574c7614bfc4')
