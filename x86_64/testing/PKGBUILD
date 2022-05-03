@@ -49,8 +49,6 @@ package_plasma-workspace() {
   # Split plasma-wayland scripts
   rm -r "$pkgdir"/usr/share/wayland-sessions
 
-  rm -r "$pkgdir"/usr/share/wayland-sessions
-
   # fix some problems with D-BUS
   sed -i 's/^Exec=/Exec=dbus-run-session /g' "$pkgdir"/usr/share/xsessions/plasma.desktop
 
