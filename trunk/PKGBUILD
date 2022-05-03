@@ -1,0 +1,21 @@
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+pkgname=power-profiles-daemon-s6
+pkgver=20210503
+pkgrel=1
+pkgdesc="s6-rc service scripts for power-profiles-daemon"
+arch=('any')
+url="https://gitea.artixlinux.org/artix/s6-services"
+groups=('s6-world')
+provides=('init-power-profiles-daemon')
+conflicts=('init-power-profiles-daemon')
+depends=('power-profiles-daemon' 's6-base')
+makedepends=('git')
+backup=('etc/s6/config/power-profiles-daemon.conf')
+_commit=1eee3802d597a0e186cda820c0b6f41f994e8144
+source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
+sha256sums=('SKIP')
+
+package() {
+    cd "${srcdir}"/s6-services
+    sh install.sh "power-profiles-daemon" "${pkgdir}"
+}
