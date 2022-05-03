@@ -2,14 +2,14 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=iso-profiles
-pkgver=2022.04
-pkgrel=2
+pkgver=2022.05
+pkgrel=1
 pkgdesc='Artix iso profiles'
 arch=('any')
 license=('GPL')
 url='https://gitea.artixlinux.org/artix/iso-profiles'
 makedepends=('git')
-_commit=011b71f0d5f7831ad664f05323e0f99897a949e3
+_commit=cdb31bdda1d2127acc17b619933dafda87f7e290
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
