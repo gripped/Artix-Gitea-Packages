@@ -5,8 +5,8 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=lib32-colord
-pkgver=1.4.5
-pkgrel=3
+pkgver=1.4.6
+pkgrel=1
 pkgdesc='System daemon for managing color devices'
 arch=(x86_64)
 url=https://www.freedesktop.org/software/colord
@@ -14,8 +14,8 @@ license=(GPL2)
 depends=(
   libcolord
   lib32-glib2
+  lib32-systemd
   lib32-lcms2
-  lib32-elogind
 )
 makedepends=(
   argyllcms
@@ -46,7 +46,7 @@ sha256sums=(
 
 prepare() {
   cd colord
-
+  
   # Allow turning off introspection
   git cherry-pick -n e73723cabe4d5a2e2b281d2f1ea751b2d75bccc6
 }
@@ -56,9 +56,8 @@ build() {
   export CXX='g++ -m32'
   export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
 
-  arch-meson colord build \
+  artix-meson colord build \
     --libdir=/usr/lib32 \
-    -D bash-completion=false \
     -D docs=false \
     -D man=false \
     -D tests=false \
@@ -67,8 +66,7 @@ build() {
     -D introspection=false \
     -D vapi=false \
     -D print_profiles=false \
-    -D daemon_user=colord \
-    -D systemd=false
+    -D daemon_user=colord
   meson compile -C build
 }
 
