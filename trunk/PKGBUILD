@@ -14,7 +14,7 @@ license=(GPL2)
 depends=(
   libcolord
   lib32-glib2
-  lib32-systemd
+  lib32-elogind
   lib32-lcms2
 )
 makedepends=(
@@ -66,7 +66,8 @@ build() {
     -D introspection=false \
     -D vapi=false \
     -D print_profiles=false \
-    -D daemon_user=colord
+    -D daemon_user=colord \
+    -D systemd=false
   meson compile -C build
 }
 
