@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=cryptsetup-runit
-pkgver=20210904
-pkgrel=3
+pkgver=20220428
+pkgrel=1
 pkgdesc="runit stage1 script for cryptsetup"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,10 +11,9 @@ groups=('runit-system')
 provides=('init-cryptsetup')
 depends=('cryptsetup' 'runit-rc')
 conflicts=('init-cryptsetup')
-install=cryptsetup.install
 source=('cryptsetup')
 optdepends=('lvm2-runit: LVM support for encrypted filesystems')
-sha256sums=('6c16ef63b6542b966030076729af57227887a0aa7d9a8dd5d75f741181d48a67')
+sha256sums=('462b3fa25e09d2644da91b412187710bc9c42a6649c4910dcb3f93429e8e2382')
 
 package() {
     install -Dm755 "${srcdir}/cryptsetup" "${pkgdir}/usr/lib/rc/sv.d/cryptsetup"

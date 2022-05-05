@@ -2,6 +2,7 @@
 #
 # This script is based on KISS Linux's encryption script with MIT license.
 #
+# Copyright (c) 2022 Qontinuum
 # Copyright (c) 2021 Muhammad Herdiansyah
 # Copyright (c) 2021 Artix Linux Developers
 # Copyright (c) 2020 illiliti
@@ -44,7 +45,7 @@ unlock_devices() {
         # Break on invalid crypttab.
         [ "$err" ] && {
             stat_fail "A valid /etc/crypttab has only 4 columns. Aborting..."
-            stat_die
+            stat_die cryptsetup
         }
 
         # Turn 'UUID=*', 'LABEL=*', 'PARTUUID=*' into device name.
@@ -100,7 +101,7 @@ unlock_devices() {
         esac
 
         [ "$swap" = y ] && mkswap "/dev/mapper/$name"
-    copts=; sopts=; done < /etc/crypttab; exec 3>&-
+    copts=; sopts=; swap=; done < /etc/crypttab; exec 3>&-
 }
 
 lock_devices() {
@@ -123,22 +124,23 @@ case "$1" in
         if [ -f /run/sv.d/started/lvm2 ]; then
             vgchange --sysinit -a y >/dev/null
         fi
-        (( rc || $? )) && stat_die
+        (( rc || $? )) && stat_die cryptsetup
         add_daemon cryptsetup
-        stat_done
+        stat_done cryptsetup
         ;;
     stop)
         stat_busy "Locking encrypted devices"
         lock_devices
-        # Deactivate remaining encrypted devices that are active in LVM
-        vgs="$(vgs | wc -l)"
-        if [ "$vgs" -gt 0 ]; then
-            vgchange -an >/dev/null
-        fi
         rc="$?"
-        (( rc || $? )) && stat_die
+        # Deactivate remaining encrypted devices that are active in LVM
+        VGSCMD="$(command -v vgs)"
+        if [ -n "$VGSCMD" ]; then
+            vgs="$("$VGSCMD" | wc -l)"
+            [ "$vgs" -gt 0 ] && vgchange -an >/dev/null
+        fi
+        (( rc || $? )) && stat_die cryptsetup
         rm_daemon cryptsetup
-        stat_done
+        stat_done cryptsetup
         ;;
     *)
         echo "usage: $0 {start|stop}"
