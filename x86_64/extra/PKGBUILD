@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg4.4
 pkgver=4.4.1
-pkgrel=4
+pkgrel=5
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
 url=https://ffmpeg.org/
@@ -91,10 +91,7 @@ provides=(
   libpostproc.so
   libswresample.so
   libswscale.so
-  ffmpeg-compat-58
 )
-replaces=(ffmpeg-compat-58)
-conflicts=(ffmpeg-compat-58)
 _tag=7e0d640edf6c3eee1816b105c2f7498c4f948e74
 source=(git+https://git.ffmpeg.org/ffmpeg.git#tag=${_tag})
 b2sums=(SKIP)
@@ -179,6 +176,7 @@ build() {
 
 package() {
   make DESTDIR="${pkgdir}" -C ffmpeg install
+
   cd "${pkgdir}"
 
   # Move libs to /usr/lib, except the .so symlinks
@@ -190,6 +188,7 @@ package() {
       mv "$f" usr/lib
     fi
   done
+
   rm -r usr/share
 }
 
