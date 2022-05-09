@@ -1,54 +1,45 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Leonidas Spyropoulos <artafinde@archlinux.org>
 # Contributor: Patrick Ziegler <p.ziegler96@gmail.com>
-pkgname=polybar
-pkgver=3.6.2
-pkgrel=1
-pkgdesc="Fast and easy-to-use status bar"
-arch=("x86_64")
-url="https://github.com/polybar/polybar"
-license=("MIT")
-depends=("cairo" "xcb-util-image" "xcb-util-wm" "xcb-util-xrm" "xcb-util-cursor"
-         "alsa-lib" "libpulse" "libmpdclient" "libnl" "jsoncpp" "curl" "libuv")
-optdepends=("i3-wm: i3 module support"
-            "ttf-unifont: Font used in example config"
-            "siji-git: Font used in example config"
-            "xorg-fonts-misc: Font used in example config")
-makedepends=("cmake" "python" "pkg-config" "python-sphinx" "i3-wm" "git")
-conflicts=("polybar-git")
-install="${pkgname}.install"
-source=("https://github.com/polybar/polybar/releases/download/${pkgver}/polybar-${pkgver}.tar.gz")
-b2sums=('0d2e3662fd4b5150b3feea4d8c3cc9acc61e0d7f609b0c88c26905384f5023b3924e0b9c528677fe8e017b5136404ac507a3cdb1ec18dcbf2b89c57d3116d1af')
 
-prepare() {
-  cd ${pkgname}-${pkgver}/lib
-  rm -rf xpp i3ipcpp
-  git init .
-  git submodule add https://github.com/polybar/xpp.git
-  git submodule add https://github.com/polybar/i3ipcpp.git
-  git submodule update --init --recursive
-}
+pkgname=polybar
+pkgver=3.6.3
+pkgrel=1
+pkgdesc="A fast and easy-to-use status bar"
+arch=('x86_64')
+url="https://github.com/polybar/polybar"
+backup=("etc/polybar/config.ini")
+license=("MIT")
+depends=("libuv" "cairo" "xcb-util-image" "xcb-util-wm" "xcb-util-xrm" "xcb-util-cursor"
+         "alsa-lib" "libpulse" "libmpdclient" "libnl" "jsoncpp" "curl")
+makedepends=("cmake" "python" "pkg-config" "python-sphinx" "python-packaging" "i3-wm"
+             "ninja" "git")
+optdepends=("i3-wm: i3 module support")
+options=(debug)
+source=(${pkgname}-${pkgver}::${url}/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('f25758573567208fc7b6f4d4115a6117a87389cbcc094cf605d079775be95fa5')
 
 build() {
-  cd ${pkgname}-${pkgver}
-  
-  mkdir build
-  
-  cmake -B build \
-	  -DCMAKE_INSTALL_PREFIX=/usr
-  make -C build
+  cd "${pkgname}-${pkgver}"
+  cmake \
+    -Bbuild \
+    -GNinja \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_DOC_HTML=OFF \
+    -DBUILD_TESTS=ON \
+    -DPYTHON_EXECUTABLE=/usr/bin/python3
+  cmake --build build --verbose
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  ninja check -C build
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
-  
-  make -C build DESTDIR="${pkgdir}" install
-  
-  install -Dm644 LICENSE \
-	  -t "${pkgdir}/usr/share/licenses/${pkgname}"
-  
-  mv "$pkgdir"/usr/share/doc/${pkgname}/{_sources/man/*.txt,man/polybar.1.html} \
-	  "${pkgdir}/usr/share/doc/${pkgname}"
-  
-  rm -rf "${pkgdir}"/usr/share/doc/${pkgname}/man \
-    "${pkgdir}"/usr/share/doc/${pkgname}/_sources/man
+  cd "${pkgname}-${pkgver}"
+  DESTDIR="${pkgdir}" cmake --install build
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
+
+# vim:set ft=sh sw=2 sts=2 et:
