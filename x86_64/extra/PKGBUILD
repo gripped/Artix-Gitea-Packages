@@ -3,16 +3,16 @@
 
 pkgbase=wireplumber
 pkgname=(wireplumber wireplumber-docs)
-_commit=8b97b40c4467951fbd4181afb47e4175361365a6  # tags/0.4.9
-pkgver=0.4.9
-pkgrel=1
+_commit=3400acd0db95fefdda7595d20466c095902d8997  # tags/0.4.10
+pkgver=0.4.10
+pkgrel=2
 pkgdesc="Session / policy manager implementation for PipeWire"
-arch=(x86_64)
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
+arch=(x86_64)
 license=(MIT)
-makedepends=(meson doxygen graphviz 'pipewire>=0.3.43' glib2 lua
+makedepends=(git meson doxygen graphviz 'pipewire>=0.3.43' glib2 lua
              gobject-introspection python-sphinx python-sphinx_rtd_theme
-             python-breathe python-lxml git elogind)
+             python-breathe python-lxml)
 depends=(libelogind)
 options=(debug)
 source=("$pkgbase::git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#commit=$_commit")
@@ -53,6 +53,7 @@ package_wireplumber() {
   optdepends=('wireplumber-docs: Documentation')
   provides=(pipewire-session-manager libwireplumber-0.4.so)
   conflicts=(pipewire-media-session)
+  replaces=('pipewire-media-session<=1:0.4.1-1')
 
   meson install -C build --destdir "$pkgdir"
 
