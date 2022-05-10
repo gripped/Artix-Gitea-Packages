@@ -12,7 +12,7 @@ arch=(x86_64)
 license=(MIT)
 makedepends=(git meson doxygen graphviz 'pipewire>=0.3.43' glib2 lua
              gobject-introspection python-sphinx python-sphinx_rtd_theme
-             python-breathe python-lxml)
+             python-breathe python-lxml elogind)
 depends=(libelogind)
 options=(debug)
 source=("$pkgbase::git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#commit=$_commit")
