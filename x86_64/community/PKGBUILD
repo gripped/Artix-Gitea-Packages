@@ -20,6 +20,8 @@ prepare() {
   cd "$pkgname-$pkgver"
   # do not require to run with python-pytest-cov
   sed -e '/addopts/d' -i setup.cfg
+  # CodeBockParser was renamed PythonCodeBlockParser in sybil 3.0
+  sed -e 's/CodeBlockParser/PythonCodeBlockParser/' -i conftest.py
 }
 
 build() {
