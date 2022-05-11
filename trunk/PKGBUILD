@@ -34,6 +34,6 @@ check() {
 package() {
   meson install -C build --destdir "$pkgdir"
   rm -r $pkgdir/usr/lib/systemd
-  install -vDm 644 "../${pkgname}.tmpfiles" \
+  install -vDm 644 "${pkgname}.tmpfiles" \
     "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
 }
