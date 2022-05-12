@@ -2,7 +2,7 @@
 
 pkgname=lightdm-runit
 pkgver=20220428
-pkgrel=1
+pkgrel=2
 pkgdesc='runit service scripts for lightdm'
 arch=('any')
 url='https://artixlinux.org'
@@ -13,7 +13,7 @@ provides=('init-lightdm' 'init-displaymanager')
 conflicts=('init-lightdm' 'init-displaymanager')
 install='lightdm-runit.install'
 source=('lightdm.run' 'lightdm.log.run')
-sha256sums=('ce8d7408a0fe005a2f037d07e41ac6d64b0862f5096a7a22f2992c46e2d4bba6'
+sha256sums=('589d0108d8297c816113600852288acba9c179b169a0f819176e568876c13789'
             'e7886cd6614280f0ee7fd25c105101a21b444b8b242dfff7f3d1b8c48127d0de')
 
 package() {

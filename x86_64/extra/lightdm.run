@@ -5,6 +5,6 @@ sv start elogind >/dev/null
 
 exec 2>&1
 
-install -dm0711 -olightdm -glightdm /run/lightdm
+[ -d /run/lightdm ] || install -dm0711 -olightdm -glightdm /run/lightdm
 
 exec /usr/bin/lightdm
