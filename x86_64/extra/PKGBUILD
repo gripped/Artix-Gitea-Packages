@@ -30,7 +30,7 @@ prepare() {
 
 build() {
   cd "${srcdir}"/Vulkan-ValidationLayers*/build
-
+  unset $CXXFLAGS
   ../scripts/update_deps.py
   cmake -C helper.cmake \
     -DCMAKE_INSTALL_PREFIX=/usr \
