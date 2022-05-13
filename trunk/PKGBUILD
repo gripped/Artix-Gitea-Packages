@@ -3,7 +3,7 @@
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 pkgname=python-setuptools
-pkgver=60.0.0
+pkgver=60.0.3
 pkgrel=1
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
@@ -15,11 +15,11 @@ depends=('python-appdirs' 'python-more-itertools' 'python-ordered-set' 'python-p
 makedepends=('git' 'python-setuptools')
 checkdepends=('python-jaraco.envs' 'python-jaraco.path' 'python-mock' 'python-pip'
               'python-pytest-fixture-config' 'python-pytest-flake8' 'python-pytest-virtualenv'
-              'python-wheel' 'python-paver' 'python-pytest-cov' 'python-sphinx')
+              'python-wheel' 'python-paver' 'python-pytest-cov' 'python-sphinx' 'python-build')
 provides=('python-distribute')
 replaces=('python-distribute')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/pypa/setuptools/archive/v$pkgver.tar.gz")
-sha512sums=('565c56af414558d430720e8a475096c8e5979c0af94cb82dec926089ab45d8e58c6c2b5ab547ad7c4115607a74021481e26804847d1afbf7dd54c4849e1702ba')
+sha512sums=('069c9f0b8d23e08da7b17c4a2030d12df4a434667e12f115111ee57b212abb144815b5cf60e72399319a8e2d3b0843237cb6d8005f65b7251622360361e27f90')
 
 export SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES=0
 
@@ -74,7 +74,7 @@ check() { (
   export PYTHONDONTWRITEBYTECODE=1
 
   cd setuptools-$pkgver
-  python -m pytest --deselect setuptools/tests/test_distutils_adoption.py
+  SETUPTOOLS_USE_DISTUTILS=stdlib python -m pytest --deselect setuptools/tests/test_distutils_adoption.py
 )}
 
 package() {
