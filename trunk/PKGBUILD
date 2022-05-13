@@ -30,7 +30,7 @@ prepare() {
 
 build() {
   cd "${srcdir}"/Vulkan-ValidationLayers*/build
-  unset $CXXFLAGS
+  export CXXFLAGS="$CXXFLAGS -Wno-error"
   ../scripts/update_deps.py
   cmake -C helper.cmake \
     -DCMAKE_INSTALL_PREFIX=/usr \
@@ -46,7 +46,7 @@ build() {
     -DBUILD_WSI_WAYLAND_SUPPORT=On \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     ..
-  make CXXFLAGS="$CXXFLAGS -Wno-error"
+  make -j4
 }
 
 package() {
