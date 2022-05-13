@@ -46,7 +46,7 @@ build() {
     -DBUILD_WSI_WAYLAND_SUPPORT=On \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     ..
-  make CXXFLAGS="$CXXFLAGS -Wno-error=restrict"
+  make CXXFLAGS="$CXXFLAGS -Wno-error"
 }
 
 package() {
