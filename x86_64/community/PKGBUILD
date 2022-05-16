@@ -3,7 +3,7 @@
 
 pkgname=ispc
 pkgver=1.18.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Compiler for high-performance SIMD programming on the CPU"
 arch=(x86_64)
 url="https://ispc.github.io/"
@@ -22,7 +22,6 @@ source=(https://github.com/ispc/ispc/archive/v${pkgver}/${pkgname}-${pkgver}.tar
 sha256sums=('81f2cc23b555c815faf53429e9eee37d1f2f16873ae7074e382ede94721ee042'
             '718cc64f6f563399a228fc439b6ea9cb58d062e66e5340b92ca0f26adecfaac5'
             '51ae0943cbce2b3f29549c5fb262e8620ad5e171283a83255e15dac20c86bf9f')
-options=('buildflags')
 
 prepare() {
   cd ${pkgname}-${pkgver}
@@ -46,7 +45,6 @@ build() {
   cmake -B build -S ${pkgname}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DISPC_INCLUDE_EXAMPLES=OFF \
-    -DISPC_INCLUDE_GENX_EXAMPLES=OFF \
     -DISPC_NO_DUMPS=ON \
     -DXE_ENABLED=ON \
     -DXE_DEPS_DIR=/usr
