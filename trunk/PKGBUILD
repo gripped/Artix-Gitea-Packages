@@ -31,7 +31,7 @@ build() {
     -DENABLE_CXX_WERROR=OFF \
     -DCMAKE_INSTALL_PREFIX:PATH=/usr \
     -DBUILD_SHARED_LIBS=ON
-  make -C build
+  make -C build -j1
 }
 
 check() {
