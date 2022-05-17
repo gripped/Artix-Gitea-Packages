@@ -12,7 +12,7 @@ license=('APACHE')
 depends=('boost-libs' 'gcc-libs' 'glibc' 'leatherman' 'leatherman_execution.so'
          'leatherman_file_util.so' 'leatherman_util.so' 'leatherman_logging.so'
          'leatherman_locale.so')
-makedepends=('boost' 'cmake' 'rapidjson' 'curl')
+makedepends=('boost' 'catch2' 'cmake' 'rapidjson' 'curl')
 checkdepends=('python')
 provides=('libwhereami.so')
 source=("${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
