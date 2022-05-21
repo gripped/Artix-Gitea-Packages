@@ -2,7 +2,7 @@
 
 pkgname=adios2
 pkgver=2.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
@@ -16,6 +16,7 @@ sha256sums=('5af3d950e616989133955c2430bd09bcf6bad3a04cf62317b401eaf6e7c2d479')
 
 build() {
   cmake -B build -S ${pkgname^^}-${pkgver} \
+    -DCMAKE_PREFIX_PATH=/usr \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_SKIP_RPATH=ON \
     -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON \
