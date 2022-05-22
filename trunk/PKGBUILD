@@ -3,7 +3,7 @@
 
 pkgname=xtrans
 pkgver=1.4.0
-pkgrel=2.1
+pkgrel=3
 pkgdesc="X transport library"
 arch=('any')
 license=('custom')
@@ -24,7 +24,7 @@ prepare() {
 
 build() {
   cd ${pkgname}-${pkgver}
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr 
 }
 
 package() {
