@@ -2,7 +2,7 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=pacman-contrib
-pkgver=1.5.1
+pkgver=1.5.2
 pkgrel=1
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=('x86_64')
@@ -17,7 +17,7 @@ optdepends=('diffutils: for pacdiff'
             'vim: default merge program for pacdiff')
 source=("$url/-/archive/v$pkgver/$pkgname-v$pkgver.tar.gz"
         rankmirrors-artix.patch)
-b2sums=('e3ade880ce59f9576a9e06f687efd0f4d3adc5e3c4070f73f38108623b6cabb43e8009b0026bd405f4e341a2f6c8e8bd22b266b2aafccd336af3afdd74bf7d93'
+b2sums=('74e79ccb145a3a2680bdaceae90b7bffd93f6f0a6f3b3ab83035ca9fcd845521dfe1049950991f515be5d84f495a3c32dfb391b0e7ed239f8dab6e720b198ce3'
         'ca5d31cdd7a386241ba75a67e517bbd087f77f8740f0d7b5b53b26e2418516e395f01b7b43d09fff2430d214387e8386db679dfd2b226b1403d02135d349e469')
 #validpgpkeys=('5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5'  # Johannes Löthberg <johannes@kyriasis.com>
 #              '04DC3FB1445FECA813C27EFAEA4F7B321A906AD9') # Daniel M. Capella <polyzen@archlinux.org>
