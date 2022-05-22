@@ -7,7 +7,7 @@
 
 pkgname=tor
 pkgver=0.4.7.7
-pkgrel=1
+pkgrel=2
 pkgdesc='Anonymizing overlay network.'
 arch=('x86_64')
 url='https://www.torproject.org/download/tor/'
@@ -27,6 +27,8 @@ b2sums=('18acfbe017b2ad456184f6031881149717f6fecad0d3e6daf90241a5a8ef296c32a36ac
         '5d55d9a7e42b6ce78b8ab985bab37afe8f0bacddb5abd895c4a490adb8f98b9422f90b40066fef05ecf37b7b21e80aadc615c4b7f6e12b05581304113a1b1f1d')
 
 prepare() {
+  # verify the signed sums match the expected source tarball
+  sha256sum -c ${pkgname}-${pkgver}.tar.gz.sha256sum
   cd ${pkgname}-${pkgver}
   # uncomment essential config sections in the torrc file
   patch -Np1 < "${srcdir}/torrc.patch"
