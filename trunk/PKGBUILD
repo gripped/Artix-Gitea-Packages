@@ -3,11 +3,11 @@
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 
 pkgname=cppcheck
-pkgver=2.7.5
+pkgver=2.8
 pkgrel=1
-pkgdesc="A tool for static C/C++ code analysis"
+pkgdesc='A tool for static C/C++ code analysis'
 arch=('x86_64')
-url="http://cppcheck.sourceforge.net/"
+url='http://cppcheck.sourceforge.net/'
 license=('GPL')
 depends=(
   'python-pygments'
@@ -29,7 +29,7 @@ optdepends=(
   'clang: for cppcheck-gui integration'
 )
 options=('debug')
-_commit='392741715b664517a67712a4dc67700c198529fb'
+_commit='61f846073d9c348b408b21230790007bc8a022c2'
 source=(
   "$pkgname::git+https://github.com/danmar/cppcheck.git#commit=$_commit"
   'translations-location.patch'
@@ -57,9 +57,8 @@ build() {
 
   # Manuals
   pushd "$pkgname"
-# Doc is broken. Just skip for now.
-#  xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
-#  make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
+  xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-.*$//')
+  make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
   pandoc man/manual.md -o man/manual.html -s --number-sections --toc
   pandoc man/reference-cfg-format.md -o man/reference-cfg-format.html -s --number-sections --toc
   popd
@@ -90,8 +89,7 @@ package() {
 
   cd "$pkgname"
 
-# Broken doc
-#  install -vDm644 -t "$pkgdir/usr/share/man/man1" cppcheck.1
+  install -vDm644 -t "$pkgdir/usr/share/man/man1" cppcheck.1
   install -vDm755 -t "$pkgdir/usr/bin" htmlreport/cppcheck-htmlreport
 
   # Fix location of language files
