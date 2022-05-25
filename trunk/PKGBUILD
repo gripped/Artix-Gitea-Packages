@@ -2,7 +2,7 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 
 pkgname=s6-contrib
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc='A collection of s6 convenience scripts.'
 arch=('any')
@@ -10,9 +10,14 @@ url='https://gitea.artixlinux.org/artix/s6-contrib'
 license=('GPL')
 depends=('s6' 's6-scripts')
 makedepends=('git')
-_commit=ea6ea9a7b9f88656781d821f04cbe43d254ad2b9
+backup=('etc/s6/s6-db-reload.conf')
+_commit=8e212384e6b905eaa483ba57fe04a6372452b5b5
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
+
+build() {
+    make -C "${pkgname}"
+}
 
 package() {
     make -C "${pkgname}" install DESTDIR="${pkgdir}"
