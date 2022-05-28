@@ -1,0 +1,31 @@
+From cd53ca7898f5def54768a0b8479edb2bd35c5797 Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Sat, 28 May 2022 15:37:00 -0500
+Subject: [PATCH] Remove systemd check
+
+---
+ configure.ac | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 483406d..c736089 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -164,10 +164,13 @@ if test x$only_gss_module != xyes; then
+                          [AC_MSG_ERROR([Could not find libcap headers])])
+     fi
+ 
+-    if test x$initscript = xsystemd; then
++    AS_IF([test "$initscript" = systemd],[
+         WITH_SYSTEMD_UNIT_DIR
+         WITH_SYSTEMD_USER_UNIT_DIR
+         AM_CHECK_SYSTEMD
++	HAVE_SYSTEMD_DAEMON_TRUE],
++	[test "$initscript" != systemd ],[
++	 HAVE_SYSTEMD_DAEMON_FALSE])
+     fi
+ fi
+ AM_CONDITIONAL([BUILD_PROXY], [test x$only_gss_module != xyes ])
+-- 
+2.36.1
+
