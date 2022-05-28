@@ -3,22 +3,31 @@
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.27.3
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 groups=('artools')
+makedepends=('git')
 url='https://gitea.artixlinux.org/artix/artools'
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-sha256sums=('4fbff5e7cff414d5429fa53d1e734b4d872012753863df90e36d0859d725a943')
+source=("git+${url}.git#tag=${pkgver}")
+sha256sums=('SKIP')
+
+_patches=(
+    f7ebc6bd1118c089c54e65be865e984275ffad05
+)
 
 prepare() {
-    cd ${pkgbase}
+    cd "${pkgbase}"
+    local _p
+    for _p in "${_patches[@]}"; do
+        git log --oneline -1 "${_p}"
+        git cherry-pick -n "${_p}"
+    done
 }
 
 build() {
-    cd ${pkgbase}
-    make PREFIX=/usr
+    make -C "${pkgbase}" PREFIX=/usr
 }
 
 package_artools-base() {
@@ -29,19 +38,19 @@ package_artools-base() {
     backup=('etc/artools/artools-base.conf')
     conflicts=('arch-install-scripts')
 
-    cd ${pkgbase}
-    make PREFIX=/usr DESTDIR=${pkgdir} install_base
+    make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_base
 }
 
 package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
     depends=('artools-base' 'namcap' 'git-subrepo' 'rsync')
-    optdepends=('graphviz: mkdepgraph support')
+    optdepends=('pacman-contrib: mkdepgraph support'
+                'artix-rebuild-order: mkdepgraph support'
+                'graphviz: mkdepgraph support')
     conflicts=('devtools')
     backup=('etc/artools/artools-pkg.conf')
 
-    cd ${pkgbase}
-    make PREFIX=/usr DESTDIR=${pkgdir} install_pkg
+    make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_pkg
 }
 
 package_artools-iso() {
@@ -51,6 +60,5 @@ package_artools-iso() {
     conflicts=('archiso')
     backup=('etc/artools/artools-iso.conf')
 
-    cd ${pkgbase}
-    make PREFIX=/usr DESTDIR=${pkgdir} install_iso
+    make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_iso
 }
