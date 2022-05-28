@@ -69,7 +69,6 @@ package_pulseaudio() {
               'pulseaudio-equalizer: Graphical equalizer'
               'pulseaudio-rtp: RTP and RAOP support')
   backup=(etc/pulse/{daemon.conf,default.pa,system.pa})
-  install=pulseaudio.install
   replaces=('pulseaudio-xen<=9.0' 'pulseaudio-gconf<=11.1')
 
   meson install -C build --destdir "$pkgdir"
