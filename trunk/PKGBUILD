@@ -5,8 +5,8 @@
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=subversion
-pkgver=1.14.1
-pkgrel=6
+pkgver=1.14.2
+pkgrel=0.9
 pkgdesc="A Modern Concurrent Version Control System"
 arch=('x86_64')
 url="https://subversion.apache.org/"
@@ -29,7 +29,7 @@ source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2
         svnserve.tmpfiles
         subversion.rpath.fix.patch
         ruby-frozen-nil.patch)
-sha512sums=('0a70c7152b77cdbcb810a029263e4b3240b6ef41d1c19714e793594088d3cca758d40dfbc05622a806b06463becb73207df249393924ce591026b749b875fcdd'
+sha512sums=('20ada4688ca07d9fb8da4b7d53b5084568652a3b9418c65e688886bae950a16a3ff37710fcfc9c29ef14a89e75b2ceec4e9cf35d5876a7896ebc2b512cfb9ecc'
             '3df59e92aa0314ff6adce26e2e1162bf2872ca03ff1f78891081a60e67b521b6046b4a2f85f718dcd27f9d5709594658817a09548cdb74e3976d371dbe47e7db'
             '7775f4da5003970c9ebdc2f696ba090df194a77d9daed791875488c943f72ae496b5f9cc6f3ff9f3f4de9f352a3b518137babdea38947d1a2d5dd16aa1844036'
             '60d538160e738eb3b3e84a3881fe5a8d75c79053d3f31c4c29ef6ace6ccc5dd4367ed712766c911bae3436e9706e4dd144b270bb45161a6c1834a37e154d0440'
