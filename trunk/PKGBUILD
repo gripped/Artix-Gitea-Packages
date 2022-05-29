@@ -15,7 +15,7 @@ arch=('x86_64')
 url='https://github.com/junegunn/fzf'
 license=('MIT')
 depends=('bash')
-makedepends=('auth-tarball-from-git' 'go')
+makedepends=('go')
 optdepends=('fish: fish keybindings'
             'tmux: fzf-tmux script for launching fzf in a tmux pane'
             'vim: plugin'
@@ -28,8 +28,6 @@ sha512sums=('cebb685a7fa00bdff07751d0021edde82f0ff3bf705eff82f94f6bf57c5e008eb68
 prepare() {
 	cd "${pkgname}-${pkgver}"
 	sed -i 's/-w /-w -linkmode external /' Makefile
-	auth-tarball-from-git --keyring ../junegunn.pgp \
-		--tag "${pkgver}" "${url}" "../${pkgname}-${pkgver}.tar.gz"
 }
 
 build() {
