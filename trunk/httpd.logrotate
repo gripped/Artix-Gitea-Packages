@@ -2,6 +2,6 @@
    missingok
    sharedscripts
    postrotate
-      /usr/bin/systemctl reload httpd.service 2>/dev/null || true
+      kill -HUP $(pidof httpd) || true
    endscript
 }
