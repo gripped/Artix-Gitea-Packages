@@ -3,7 +3,7 @@
 
 pkgname=gssproxy
 pkgver=0.9.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="GSSAPI Proxy"
 arch=(x86_64)
 url="https://github.com/gssapi/gssproxy"
@@ -14,14 +14,14 @@ options=('emptydirs' 'makeflags')
 backup=(etc/gssproxy/{gssproxy,24-nfs-server,80-httpd,99-network-fs-clients}.conf
         etc/gss/mech.d/proxymech.conf)
 source=(https://github.com/gssapi/gssproxy/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz
-	0001-Remove-systemd-check.patch)
+	configure-fix.patch::https://github.com/simo5/gssproxy/commit/f025b3dc40824b61ca9ae74929a893692ee032f2.patch)
 # https://github.com/gssapi/gssproxy/releases/download/v0.9.0/gssproxy-0.9.0.tar.gz.sha512sum.txt
 sha512sums=('0c597951bd9c26db93a8aeb0c1f7328d8ae03ec72838b376eef458b0021b6b5f6d814d6b2438472cc121c0938883d30125f0e10bda01a1d0896d7933856976c9'
-            'b295efc5fd58b1c6c69d6077cf8f68156734ff4b51dca6032dd8f33c8dfe7c3407a5a8fa2e1c187e2ff89bafad9b893141a396a7f82f4e2cdd0b423ec4c33243')
+            '4af165abfec7e288cb7e366af31c31d194838aa01010bc202b52bfae37a48b83f698c088eda91832e4d42f5e1631ebf7597e8efa64035d5f178d3cb52ee7974e')
 
 prepare() {
   cd "$srcdir/gssproxy-$pkgver"
-  patch -Np1 -i ../0001-Remove-systemd-check.patch
+  patch -Np1 -i ../configure-fix.patch
   autoreconf -vfi
 }
 
@@ -31,13 +31,14 @@ build() {
   # make it find bundled verto from krb5 without its own pkg-config file
   export VERTO_CFLAGS="-I/usr/include"
   export VERTO_LIBS="-L/usr/lib -lverto"
-  
+
   ./configure --prefix=/usr \
     --sysconfdir=/etc  \
     --with-pubconf-path=/etc/gssproxy \
     --sbindir=/usr/bin \
     --localstatedir=/var \
     --without-selinux \
+    --with-initscript=none \
     --with-gpp-default-behavior=REMOTE_FIRST
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
@@ -52,7 +53,7 @@ check() {
 package() {
   cd gssproxy-$pkgver
   make DESTDIR=$pkgdir install
-  
+
   # cleanup empty directories
   rm -rf "$pkgdir"/usr/include
   rm -rf "$pkgdir"/usr/share/doc
@@ -67,7 +68,7 @@ package() {
   sed -i -e "s:euid = apache:euid = http:" "$pkgdir"/etc/gssproxy/80-httpd.conf
 
 #  install -Dm644 examples/mech  "$pkgdir"/etc/gss/mech.d/gssproxy.conf
-  
+
   # FS#51574
   install -m700 -d ${pkgdir}/var/lib/gssproxy/rcache
 
