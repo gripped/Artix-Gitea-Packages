@@ -3,7 +3,7 @@
 
 pkgname=perl-term-ui
 pkgver=0.50
-pkgrel=1
+pkgrel=2
 pkgdesc='User interfaces via Term::ReadLine made easy'
 arch=('any')
 license=('PerlArtistic' 'GPL')
@@ -26,7 +26,7 @@ check() (
   cd "$srcdir/$_ddir"
   export PERL_MM_USE_DEFAULT=1
   unset PERL5LIB
-  make test || :
+  make test
 )
 
 package() (
