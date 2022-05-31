@@ -3,6 +3,7 @@
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 # Contributor: Paul Mattal <paul@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
+#
 
 pkgname=subversion
 pkgver=1.14.2
