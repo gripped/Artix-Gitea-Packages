@@ -53,7 +53,7 @@ prepare() {
    patch -Np0 -i ../subversion.rpath.fix.patch
    patch -p1 -i ../ruby-frozen-nil.patch
    rm subversion/bindings/swig/proxy/*.swg
-
+   export LIBTOOL_CONFIG=/usr/share/libtool/build-aux
    export LIBTOOL_M4=/usr/share/aclocal
 
    ./autogen.sh
@@ -62,7 +62,7 @@ prepare() {
 build() {
    cd ${pkgname}-${pkgver}
    export LIBTOOL_M4=/usr/share/aclocal
-
+   export LIBTOOL_CONFIG=/usr/share/libtool/build-aux
    ./configure --prefix=/usr --with-apxs \
                --enable-javahl --with-jdk=/usr/lib/jvm/default \
                --with-gnome-keyring --with-kwallet \
