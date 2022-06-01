@@ -54,6 +54,8 @@ prepare() {
    patch -p1 -i ../ruby-frozen-nil.patch
    rm subversion/bindings/swig/proxy/*.swg
 
+   export LIBTOOL_M4=/usr/share/aclocal
+
    ./autogen.sh
 }
 
