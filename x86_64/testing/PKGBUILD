@@ -59,6 +59,8 @@ prepare() {
 
 build() {
    cd ${pkgname}-${pkgver}
+   export LIBTOOL_M4=/usr/share/aclocal
+
    ./configure --prefix=/usr --with-apxs \
                --enable-javahl --with-jdk=/usr/lib/jvm/default \
                --with-gnome-keyring --with-kwallet \
