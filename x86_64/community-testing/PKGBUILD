@@ -32,7 +32,7 @@ package() {
   cd "$srcdir"/${pkgname}-${pkgver}
 
   make -j1 \
-    NO_SYSTEMD=y
+    NO_SYSTEMD=y \
     DESTDIR="$pkgdir" \
     LIB_DIR=/usr/lib \
     RULESDIR=/usr/lib/udev/rules.d \
@@ -44,7 +44,9 @@ package() {
 
   # copy docs
   mkdir -p "$pkgdir"/usr/share/doc/${pkgname}
-  install -m0644 Changelog "$pkgdir"/usr/share/doc/${pkgname}/
-  install -m0644 README "$pkgdir"/usr/share/doc/${pkgname}/
-  mv "$pkgdir"/sbin "$pkgdir"/usr/bin
+  install -m0644 Changelog "$pkgdir"/usr/share/doc/${pkgname}
+  install -m0644 README "$pkgdir"/usr/share/doc/${pkgname}
+  
+  # Remove systemd dir
+  rm -rf "$pkgdir"/usr/lib/systemd
 }
