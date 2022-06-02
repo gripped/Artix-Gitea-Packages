@@ -31,7 +31,6 @@ build() {
 package() {
   cd "$srcdir"/${pkgname}-${pkgver}
 
-  make DESTDIR="$pkgdir" NO_SYSTEMD=y LIB_DIR=/usr/lib install
   make -j1 \
     NO_SYSTEMD=y
     DESTDIR="$pkgdir" \
@@ -47,6 +46,5 @@ package() {
   mkdir -p "$pkgdir"/usr/share/doc/${pkgname}
   install -m0644 Changelog "$pkgdir"/usr/share/doc/${pkgname}/
   install -m0644 README "$pkgdir"/usr/share/doc/${pkgname}/
-  install -d "$pkgdir"/sbin
   mv "$pkgdir"/sbin "$pkgdir"/usr/bin
 }
