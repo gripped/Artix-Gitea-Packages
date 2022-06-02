@@ -47,4 +47,6 @@ package() {
   mkdir -p "$pkgdir"/usr/share/doc/${pkgname}
   install -m0644 Changelog "$pkgdir"/usr/share/doc/${pkgname}/
   install -m0644 README "$pkgdir"/usr/share/doc/${pkgname}/
+  install -d "$pkgdir"/sbin
+  mv "$pkgdir"/sbin "$pkgdir"/usr/bin
 }
