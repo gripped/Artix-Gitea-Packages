@@ -3,7 +3,7 @@
 
 _pkg=arrow
 pkgname=python-pyarrow
-pkgver=7.0.0
+pkgver=8.0.0
 pkgrel=1
 pkgdesc="Columnar in-memory analytics layer for big data — Python module."
 arch=(x86_64)
@@ -12,11 +12,11 @@ license=(Apache)
 depends=(arrow python-numpy)
 makedepends=(git cmake cython python-setuptools python-setuptools-scm)
 optdepends=(python-fsspec)
-# checkdepends=(python-brotli python-cffi python-hypothesis python-pandas python-pytest python-pytest-lazy-fixture python-pytz)
+checkdepends=(python-brotli python-cffi python-hypothesis python-pandas python-pytest python-pytest-lazy-fixture python-pytz)
 source=(https://archive.apache.org/dist/${_pkg}/${_pkg}-${pkgver}/apache-${_pkg}-${pkgver}.tar.gz{,.asc}
         git+https://github.com/apache/arrow-testing.git
         tensorflow-abi.patch)
-sha256sums=(e8f49b149a15ecef4e40fcfab1b87c113c6b1ee186005c169e5cdf95d31a99de
+sha256sums=(ad9a05705117c989c116bae9ac70492fe015050e1b80fb0e38fde4b5d863aaa3
             SKIP
             SKIP
             d20e9cef6b18d3801a1ac1db50808631bec8097be58c194d6b036a5773e14958)
@@ -45,16 +45,16 @@ build(){
   python setup.py build_ext --inplace
 }
 
-# check(){
-  # cd apache-${_pkg}-${pkgver}/python
-  # local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
-  # ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
-  # ARROW_HOME=/usr \
-  # PARQUET_HOME=/usr \
-  # pytest -vv --color=yes pyarrow/tests \
-    # --deselect=pyarrow/tests/test_memory.py::test_env_var \
-    # --deselect=pyarrow/tests/test_misc.py::test_get_include
-# }
+check(){
+  cd apache-${_pkg}-${pkgver}/python
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
+  ARROW_HOME=/usr \
+  PARQUET_HOME=/usr \
+  pytest -vv --color=yes pyarrow/tests \
+    --deselect=pyarrow/tests/test_memory.py::test_env_var \
+    --deselect=pyarrow/tests/test_misc.py::test_get_include
+}
 
 package(){
   cd apache-${_pkg}-${pkgver}/python
