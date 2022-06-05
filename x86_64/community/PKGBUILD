@@ -53,7 +53,8 @@ check(){
   PARQUET_HOME=/usr \
   pytest -vv --color=yes pyarrow/tests \
     --deselect=pyarrow/tests/test_memory.py::test_env_var \
-    --deselect=pyarrow/tests/test_misc.py::test_get_include
+    --deselect=pyarrow/tests/test_misc.py::test_get_include \
+    --deselect=pyarrow/tests/test_dataset.py::test_orc_format
 }
 
 package(){
