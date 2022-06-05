@@ -55,7 +55,8 @@ check(){
     --deselect=pyarrow/tests/test_memory.py::test_env_var \
     --deselect=pyarrow/tests/test_misc.py::test_get_include \
     --deselect=pyarrow/tests/test_dataset.py::test_orc_format \
-    --deselect=pyarrow/tests/test_dataset.py::test_orc_scan_options
+    --deselect=pyarrow/tests/test_dataset.py::test_orc_scan_options \
+    --deselect=pyarrow/tests/test_orc.py::*
 }
 
 package(){
