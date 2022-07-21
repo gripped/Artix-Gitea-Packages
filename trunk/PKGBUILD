@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+=======
 # Maintainer: artist <artist@artixlinux.org>
+>>>>>>> 5406f4bdb1921828004180ed5dc7b8812d428e52
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=virtualbox
@@ -112,11 +116,7 @@ prepare() {
     echo 'Applying local config'
     cp "$srcdir/LocalConfig.kmk" .
 
-    #echo 'Use our CFLAGS'
-    echo 'Use Artix CFLAGS'   # artist
-    export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions \
-            -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
-            -fstack-clash-protection -fcf-protection"
+    echo 'Use our CFLAGS'
     echo "VBOX_GCC_OPT=$CXXFLAGS" >> LocalConfig.kmk
 }
 
