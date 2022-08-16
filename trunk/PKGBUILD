@@ -50,7 +50,7 @@ depends=(
   desktop-file-utils
 )
 
-makedepends=(autoconf bison perl fontforge flex mingw-w64-gcc
+makedepends=(autoconf bison perl fontforge flex
   giflib                lib32-giflib
   libpng                lib32-libpng
   gnutls                lib32-gnutls
