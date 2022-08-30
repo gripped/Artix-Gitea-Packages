@@ -5,7 +5,7 @@
 pkgbase=lib32-libxslt
 pkgname=(lib32-libxslt)
 pkgver=1.1.37
-pkgrel=1
+pkgrel=2
 pkgdesc="XML stylesheet transformation library (32-bit)"
 url="https://gitlab.gnome.org/GNOME/libxslt/-/wikis/home"
 arch=(x86_64)
@@ -28,7 +28,7 @@ _commit=5eca7fb65b7337409a02f9f94fde608edf7d1b0a  # tags/v1.1.37^0
 source=("git+https://gitlab.gnome.org/GNOME/libxslt.git#commit=$_commit"
         0001-Make-generate-id-deterministic.patch)
 sha256sums=('SKIP'
-            'e83c20f9a4f0c95716410c127ad10d6cde814c25d183de0d319f5dda529b7a6e')
+            '605e0a0b2ca385a90226bc5b141d3f6bfeade13e43ab39f8dea863505d7cbf18')
 
 pkgver() {
   cd libxslt
@@ -54,9 +54,11 @@ build() {
   ./configure \
     --prefix=/usr \
     --libdir=/usr/lib32 \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
     --without-python \
     --disable-static
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' libtool
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
