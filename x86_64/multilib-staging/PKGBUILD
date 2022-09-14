@@ -31,17 +31,19 @@ build() {
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
   # tests can only be built with static libs
-  artix-cmake -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE='None' \
+        -DCMAKE_PREFIX_PATH=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib32 \
         -Wno-dev \
         -B build-test \
         -S $_name-$pkgver
   make VERBOSE=1 -C build-test
 
-  artix-cmake -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE='None' \
         -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_PREFIX_PATH=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib32 \
         -Wno-dev \
         -B build \
@@ -60,5 +62,5 @@ package() {
   install -vDm 644 $_name-$pkgver/{AUTHORS,ChangeLog,README} -t "$pkgdir/usr/share/doc/$pkgname"
 
   # remove everything that is provided by libsndfile
-  rm -rf "$pkgdir/usr/"{bin,include,share/{man,doc/$_name},lib/cmake}
+  rm -rf "$pkgdir/usr/"{bin,include,share/{man,doc/$_name}}
 }
