@@ -60,5 +60,5 @@ package() {
   install -vDm 644 $_name-$pkgver/{AUTHORS,ChangeLog,README} -t "$pkgdir/usr/share/doc/$pkgname"
 
   # remove everything that is provided by libsndfile
-  rm -rf "$pkgdir/usr/"{bin,include,share/{man,doc/$_name}}
+  rm -rf "$pkgdir/usr/"{bin,include,share/{man,doc/$_name},lib/cmake}
 }
