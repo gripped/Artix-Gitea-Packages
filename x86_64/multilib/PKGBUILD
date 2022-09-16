@@ -1,10 +1,10 @@
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=libsndfile
 pkgname=lib32-$_name
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A C library for reading and writing files containing sampled audio data (32-bit)"
 arch=(x86_64)
 url="https://libsndfile.github.io/libsndfile/"
@@ -33,6 +33,7 @@ build() {
   # tests can only be built with static libs
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE='None' \
+        -DCMAKE_PREFIX_PATH=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib32 \
         -Wno-dev \
         -B build-test \
@@ -42,6 +43,7 @@ build() {
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE='None' \
         -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_PREFIX_PATH=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib32 \
         -Wno-dev \
         -B build \
