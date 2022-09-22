@@ -29,6 +29,7 @@ makedepends=(
   lib32-ladspa
   lib32-libinstpatch
   lib32-libsndfile
+  lib32-pipewire
   lib32-portaudio
 )
 options=(debug)
@@ -58,7 +59,7 @@ check() {
 
 package() {
   depends+=(libasound.so libglib-2.0.so libgmodule-2.0.so libgobject-2.0.so
-  libinstpatch-1.0.so libjack.so libportaudio.so libsndfile.so)
+  libinstpatch-1.0.so libjack.so libpipewire-0.3.solibportaudio.so libsndfile.so)
 
   make -C build DESTDIR="$pkgdir" install
   rm -rf "$pkgdir"/usr/{include,share,bin}
