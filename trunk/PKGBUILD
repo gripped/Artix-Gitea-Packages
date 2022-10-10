@@ -1,9 +1,9 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributor: Jameson Pugh <imntreal@gmail.com>
 # Contributor: J0k3r <moebius282@gmail.com>
 
 pkgname=lib32-sdl2
-pkgver=2.0.22
+pkgver=2.24.1
 pkgrel=1
 pkgdesc='A library for portable low-level access to a video framebuffer, audio output, mouse, and keyboard'
 arch=(x86_64)
@@ -40,12 +40,12 @@ optdepends=(
   'lib32-libpulse: PulseAudio audio driver'
   'lib32-pipewire: PipeWire audio driver'
 )
-_tag=53dea9830964eee8b5c2a7ee0a65d6e268dc78a1
-source=(${pkgname}::git+https://github.com/libsdl-org/SDL.git#tag=${_tag})
+_tag=a1d1946dcba6509f0679f507b57e7b228d32e6f8
+source=(git+https://github.com/libsdl-org/SDL.git#tag=${_tag})
 b2sums=(SKIP)
 
 pkgver() {
-  cd "$pkgname"
+  cd SDL
   git describe --tags | sed 's/^release-//'
 }
 
@@ -54,7 +54,7 @@ build() {
   export CXX='g++ -m32'
   export CFLAGS+=" -ffat-lto-objects"
   export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
-  cmake -S "$pkgname" -B build -G Ninja \
+  cmake -S SDL -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib32 \
     -DSDL_DLOPEN=ON \
