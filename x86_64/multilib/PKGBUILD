@@ -8,7 +8,7 @@
 pkgname=lib32-fluidsynth
 _name=fluidsynth
 pkgver=2.3.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='A real-time software synthesizer based on the SoundFont 2 specifications'
 arch=(x86_64)
 url="https://www.fluidsynth.org/"
@@ -59,7 +59,7 @@ check() {
 
 package() {
   depends+=(libasound.so libglib-2.0.so libgmodule-2.0.so libgobject-2.0.so
-  libinstpatch-1.0.so libjack.so libpipewire-0.3.solibportaudio.so libsndfile.so)
+  libinstpatch-1.0.so libjack.so libpipewire-0.3.so libportaudio.so libsndfile.so)
 
   make -C build DESTDIR="$pkgdir" install
   rm -rf "$pkgdir"/usr/{include,share,bin}
