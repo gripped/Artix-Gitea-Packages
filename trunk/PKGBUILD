@@ -14,17 +14,17 @@ depends=(lib32-gcc-libs lib32-glibc lib32-opus jack2=$pkgver)
 makedepends=(git lib32-alsa-lib lib32-dbus lib32-expat lib32-libsamplerate waf)
 conflicts=(lib32-jack)
 provides=(lib32-jack libjack.so libjackserver.so libjacknet.so)
-source=(git+$url#tag=$_commit?signed)
+source=($pkgname::git+$url#tag=$_commit?signed)
 sha512sums=('SKIP')
 validpgpkeys=('62B11043D2F6EB6672D93103CDBAA37ABC74FBA0') # falkTX <falktx@falktx.com>
 
 prepare() {
   # remove custom waflib, as we are using system provided waf
-  rm -rv $_name/waflib
+  rm -rv $pkgname/waflib
 }
 
 build() {
-  cd $_name
+  cd $pkgname
   export LINKFLAGS="$LDFLAGS"
   export PYTHONPATH="$PWD:$PYTHONPATH"
   export CC="gcc -m32"
@@ -45,7 +45,7 @@ package() {
     libsamplerate libsamplerate.so
   )
 
-  cd $_name
+  cd $pkgname
   export PYTHONPATH="$PWD:$PYTHONPATH"
   waf install --destdir="$pkgdir"
   # remove all files provided by jack2
