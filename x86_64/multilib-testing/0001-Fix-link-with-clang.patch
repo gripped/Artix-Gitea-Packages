@@ -1,0 +1,54 @@
+From 6bc0ff5c2a19fa77117dac4585bdbecfbc438f2c Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Mon, 16 Jan 2023 03:00:32 -0600
+Subject: [PATCH] Fix-link-with-clang
+
+---
+ src/gallium/targets/opencl/meson.build | 31 --------------------------
+ 1 file changed, 31 deletions(-)
+
+diff --git a/src/gallium/targets/opencl/meson.build b/src/gallium/targets/opencl/meson.build
+index db3586b..8683065 100644
+--- a/src/gallium/targets/opencl/meson.build
++++ b/src/gallium/targets/opencl/meson.build
+@@ -58,37 +58,6 @@ if can_check_clang
+ else
+   dep_clang_usable = true
+ endif
+-if not _shared_llvm or not (dep_clang.found() and dep_clang_usable)
+-  dep_clang = [
+-    cpp.find_library('clangCodeGen', dirs : llvm_libdir),
+-    cpp.find_library('clangFrontendTool', dirs : llvm_libdir),
+-    cpp.find_library('clangFrontend', dirs : llvm_libdir),
+-    cpp.find_library('clangDriver', dirs : llvm_libdir),
+-    cpp.find_library('clangSerialization', dirs : llvm_libdir),
+-    cpp.find_library('clangParse', dirs : llvm_libdir),
+-    cpp.find_library('clangSema', dirs : llvm_libdir),
+-    cpp.find_library('clangAnalysis', dirs : llvm_libdir),
+-    cpp.find_library('clangAST', dirs : llvm_libdir),
+-    cpp.find_library('clangASTMatchers', dirs : llvm_libdir),
+-    cpp.find_library('clangEdit', dirs : llvm_libdir),
+-    cpp.find_library('clangLex', dirs : llvm_libdir),
+-    cpp.find_library('clangBasic', dirs : llvm_libdir),
+-    polly_dep, polly_isl_dep,
+-  ]
+-  if dep_llvm.version().version_compare('>= 15.0')
+-    dep_clang += cpp.find_library('clangSupport', dirs : llvm_libdir)
+-  endif
+-
+-  # check clang once more
+-  if can_check_clang
+-    test_run = cpp.run(clang_test_code, name : 'dep-clang-usable',
+-                       dependencies : [dep_llvm, dep_clang], args : linker_rpath_arg)
+-    if not test_run.compiled() or test_run.returncode() != 0
+-      error('No usable clang found!')
+-    endif
+-  endif
+-endif
+-
+ ocldef_in = files(opencl_libname + '.def.in')[0]
+ ocldef = custom_target(
+   'ocldef.def',
+-- 
+2.39.0
+
