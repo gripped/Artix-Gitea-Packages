@@ -1,11 +1,11 @@
-# Maintainer: Florian Pritz <flo@xssn.at>
+# Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Alexander Baldeck <alexander@archlinux.org>
 
 _pkgbasename=libxss
 pkgname=lib32-$_pkgbasename
 pkgver=1.2.3
-pkgrel=2
+pkgrel=3
 pkgdesc="X11 Screen Saver extension library (32-bit)"
 arch=(x86_64)
 license=('custom')
