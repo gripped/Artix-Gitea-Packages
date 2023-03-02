@@ -4,8 +4,8 @@
 pkgname=multilib-devel
 pkgver=1
 pkgrel=1
-pkgdesc='Basic tools to build Arch Linux multilib packages'
-url='https://www.archlinux.org'
+pkgdesc='Basic tools to build Artix Linux multilib packages'
+url='https://www.artixlinux.org'
 arch=('x86_64')
 license=('GPL')
 options=('!debug')
