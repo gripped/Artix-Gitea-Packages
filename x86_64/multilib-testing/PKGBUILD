@@ -48,7 +48,7 @@ build() {
     --with-dbus-user=dbus
     --with-system-pid-file=/run/dbus/pid
     --with-system-socket=/run/dbus/system_bus_socket
-    --without-systemdsystemunitdir=/usr/lib/systemd/system
+    --without-systemdsystemunitdir
     --enable-inotify
     --disable-libaudit
     --disable-systemd
