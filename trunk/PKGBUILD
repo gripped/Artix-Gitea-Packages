@@ -100,18 +100,17 @@ prepare() {
   # Allow ccache to work
   mv wine-$_winever $pkgname
 
+  # Get rid of old build dirs
+  rm -rf $pkgname-{32,64}-build
+  mkdir $pkgname-{32,64}-build
+
   # apply wine-staging patchset
-  pushd wine-staging-$_pkgbasever/patches
-  ./patchinstall.sh DESTDIR="$srcdir/$pkgname" --all
-  popd
+  cd $pkgname
+  ../wine-staging-$_pkgbasever/staging/patchinstall.py --all
 
   # Doesn't compile without remove these flags as of 4.10
   export CFLAGS="${CFLAGS/-fno-plt/}"
   export LDFLAGS="${LDFLAGS/,-z,now/}"
-
-  # Get rid of old build dirs
-  rm -rf $pkgname-{32,64}-build
-  mkdir $pkgname-{32,64}-build
 }
 
 build() {
