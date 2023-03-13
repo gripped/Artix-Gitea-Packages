@@ -33,20 +33,24 @@ build() {
   export CXX="g++ -m32"
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
-  artix-meson $_pkgbasename-$pkgver build \
+  arch-meson $_pkgbasename-$pkgver build \
     --libdir=/usr/lib32 \
     -Dudev=false \
-    -Dvalgrind=false
-  ninja -C build
+    -Dman-pages=disabled \
+    -Detnaviv=disabled \
+    -Dfreedreno=disabled \
+    -Dvc4=disabled \
+    -Dvalgrind=disabled
+  meson compile -C build
 }
 
 check() {
   cd build
-  meson test
+  meson test --print-errorlogs
 }
 
 package() {
-  DESTDIR="$pkgdir" ninja -C build install
+  meson install -C build --destdir "$pkgdir"
   rm -rf "${pkgdir}"/usr/{include,share,bin}
   mkdir -p "$pkgdir/usr/share/licenses"
   ln -s $_pkgbasename "$pkgdir/usr/share/licenses/$pkgname"
