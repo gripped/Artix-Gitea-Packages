@@ -47,6 +47,7 @@ build() {
     -D enable-ladspa=ON
     -D enable-portaudio=ON
     -W no-dev
+    -D enable-systemd=off
     -S $_name-$pkgver
   )
 
