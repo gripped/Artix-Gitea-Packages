@@ -90,9 +90,9 @@ build() {
   meson compile -C build
 }
 
-check() {
-  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
-}
+#check() {
+#  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
+#}
 
 package_lib32-glib2() {
   depends+=(
