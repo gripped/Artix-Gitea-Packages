@@ -1,16 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=jupyterlab
 _pipname=jupyterlab
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='JupyterLab computational environment'
 arch=(any)
 url='https://github.com/jupyterlab/jupyterlab'
 license=(custom)
 makedepends=(python-build python-installer python-hatch-jupyter-builder)
-depends=(python-jupyterlab_server python-jupyter_packaging python-async-lru jupyter-server-ydoc nodejs)
+depends=(python-jupyterlab_server python-jupyter_packaging python-async-lru jupyter-notebook-shim jupyter-server-ydoc nodejs)
 optdepends=('npm: to install extensions' 'jupyterlab-widgets: ipywidgets support')
 checkdepends=(python-pytest-tornasync python-pytest-jupyter npm python-jupyter-server-terminals)
 source=(https://pypi.io/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$pkgver.tar.gz)
