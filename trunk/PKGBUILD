@@ -17,7 +17,8 @@ depends=(binutils
          python
          python-pyelftools)
 checkdepends=(python-pytest
-              python-six)
+              python-six
+              python)
 makedepends=(python-{build,installer,wheel}
             python-setuptools)
 _archive="$pkgname-$pkgver"
