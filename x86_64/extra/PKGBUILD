@@ -1,8 +1,7 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pyaml
-pkgver=23.5.5
+pkgver=23.5.8
 pkgrel=1
 pkgdesc="PyYAML-based module to produce pretty and readable YAML-serialized data"
 url="https://pypi.python.org/pypi/pyaml"
@@ -13,7 +12,7 @@ makedepends=('python-setuptools')
 checkdepends=('python-unidecode')
 optdepends=('python-unidecode: Needed if same-id objects or recursion is used within serialized data')
 source=("https://pypi.io/packages/source/p/pyaml/pyaml-$pkgver.tar.gz")
-sha512sums=('8ae9c09b1a4be9b3ef16abb49eddb9b7279623a705e8603954fb980ea147c67d7007aa6ccad9e15b37b222faa773e187324462215778b1745f174c4285126a45')
+sha512sums=('ad6981d400053751772860e635761bb7474ae9bbd1b99eec1e45918fc8d702dd37db24dd9647d8624b36540f40f9b6eadff27469e9de680e86da42bedb708acb')
 
 build() {
   cd pyaml-$pkgver
