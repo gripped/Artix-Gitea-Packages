@@ -14,7 +14,7 @@ makedepends=('perl-xml-xpath' 'python' 'wayland' 'libxrandr' 'xorg-server-devel'
 options=('!lto')
 source=("https://github.com/GPUOpen-Drivers/AMDVLK/archive/v-${pkgver}.tar.gz"
         cstdint.patch)
-sha256sums=('c3cb01c1b98aff47a2454e02a1af3a256144379cfb5958acd8ade8c6795d058d'
+sha256sums=('34878e1fcd4cf43dca378be7b3b9df47f665692f62e4cce965adbeb35cb86167'
             '4509fd9a02aa15a94317228df31402879631f567719d0588225adc2eafe61318')
             
 prepare() {
