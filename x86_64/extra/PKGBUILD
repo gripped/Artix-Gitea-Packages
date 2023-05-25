@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
 # Contributor: farid <farid at archlinuc-br.org>
@@ -7,11 +7,11 @@
 pkgbase=gmic
 pkgname=(gmic gimp-plugin-gmic)
 pkgver=3.2.4
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://gmic.eu/'
 license=(custom:CeCILL)
-makedepends=(cmake gimp qt5-base fftw openexr opencv eigen gmic graphicsmagick qt5-tools)
+makedepends=(cmake gimp qt5-base fftw openexr opencv eigen graphicsmagick qt5-tools gmic)
 source=(https://gmic.eu/files/source/gmic_$pkgver.tar.gz
         CMakeLists.txt FindCImg.cmake FindGMicStdlib.cmake FindGraphicsMagick.cmake)
 sha256sums=('63b441bd1dea5c4c776b9ef166c94a2f7c71f65cb87aa0eff0ca8aa3075ad692'
