@@ -1,9 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: SpepS <dreamspepser at yahoo dot it>
 
 pkgname=openimageio
 pkgver=2.4.10.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A library for reading and writing images, including classes, utilities, and applications"
 arch=('x86_64')
 url="http://www.openimageio.org/"
