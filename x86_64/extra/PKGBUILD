@@ -1,11 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kimageformats
 pkgver=5.106.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Image format plugins for Qt5'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
