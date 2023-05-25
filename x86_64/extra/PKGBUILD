@@ -3,19 +3,23 @@
 # Contributor: Nezmer <Nezmer@gmail.com>
 
 pkgname=fribidi
-pkgver=1.0.12
+pkgver=1.0.13
 pkgrel=1
 pkgdesc="A Free Implementation of the Unicode Bidirectional Algorithm"
 url="https://github.com/fribidi/fribidi/"
 arch=(x86_64)
 license=(LGPL)
-depends=(glibc)
-makedepends=(git meson)
+depends=(
+  glibc
+)
+makedepends=(
+  git
+  meson
+)
 provides=(libfribidi.so)
-options=(debug)
-_commit=6428d8469e536bcbb6e12c7b79ba6659371c435a  # tags/v1.0.12^0
+_commit=b54871c339dabb7434718da3fed2fa63320997e5  # tags/v1.0.13^0
 source=("git+https://github.com/fribidi/fribidi#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd fribidi
@@ -27,8 +31,11 @@ prepare() {
 }
 
 build() {
-  artix-meson fribidi build \
+  local meson_options=(
     -D docs=false
+  )
+
+  arch-meson fribidi build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -40,4 +47,4 @@ package() {
   meson install -C build --destdir "$pkgdir"
 }
 
-# vim:set sw=2 et:
+# vim:set sw=2 sts=-1 et:
