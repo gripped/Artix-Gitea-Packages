@@ -1,8 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-sybil
-pkgver=5.0.1
-_commit=87d1319c905da913451692d179b110ab23a3fb43
+pkgver=5.0.2
+_commit=49bf17b4ef4039cfd0e7d43055fb5620ff72b878
 pkgrel=1
 pkgdesc='Automated testing for the examples in your documentation.'
 arch=('any')
