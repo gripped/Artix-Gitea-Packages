@@ -32,7 +32,7 @@ optdepends=('perl: sync_room_to_group.pl'
             'python-txredisapi: redis'
             'python-hiredis'
             'python-pyicu: Improve user search for international display names')
-source=("$pkgname::git+https://github.com/matrix-org/synapse.git#tag=$_tag?signed"
+source=("$pkgname::git+https://github.com/matrix-org/synapse.git#tag=$_tag"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf')
