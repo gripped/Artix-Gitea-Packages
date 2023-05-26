@@ -1,0 +1,2 @@
+# python-faust-cchardet
+
