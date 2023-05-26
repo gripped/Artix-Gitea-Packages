@@ -29,7 +29,7 @@ sha256sums=('0e6260800b80c3fc9f67c4c3fb12ffae740ab1dd188e526a55e0fc8949168db2'
 
 prepare() {
   cd $pkgname-$pkgver
-  patch -Np1 < "$srcdir"/fix_python_binary_loading.patch
+  patch -Np1 < "$srcdir"/fix_python_binary_loading.patch 
   patch -Np1 < "$srcdir"/ignore_unused_submodules.patch
   patch -Np1 < "$srcdir"/2e79d4c9.patch # Fix build with FFmpeg 6
 }
