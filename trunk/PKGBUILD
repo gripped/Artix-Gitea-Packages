@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 # Contributor: Mikko Seppälä <t-r-a-y@mbnet.fi>
 
 pkgbase=lib32-glib2
 pkgname=(lib32-glib2)
-pkgver=2.76.2
+pkgver=2.76.3
 pkgrel=1
 pkgdesc="Low level core library - 32-bit"
 url="https://wiki.gnome.org/Projects/GLib"
@@ -36,7 +36,7 @@ checkdepends=(
 options=(
   debug
 )
-_commit=41ae5b5632ce9f6b2b5613ec1912821f769166c2  # tags/2.76.2^0
+_commit=69e209764bcfef599a21b32f82f88f1906bf197c  # tags/2.76.3^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
@@ -90,9 +90,9 @@ build() {
   meson compile -C build
 }
 
-#check() {
-#  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
-#}
+check() {
+  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs || :
+}
 
 package_lib32-glib2() {
   depends+=(
