@@ -2,7 +2,7 @@
 
 pkgname=python-faust-cchardet
 pkgver=2.1.18
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Fork of the original cChardet"
 url="https://pypi.org/project/faust-cchardet/"
 arch=(x86_64)
