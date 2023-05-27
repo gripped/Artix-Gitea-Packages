@@ -1,9 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Andreas Radke <andyrtr@archlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=cups-filters
 pkgver=1.28.17
-pkgrel=3
+pkgrel=4
 pkgdesc="OpenPrinting CUPS Filters"
 arch=('x86_64')
 url="https://wiki.linuxfoundation.org/openprinting/cups-filters"
