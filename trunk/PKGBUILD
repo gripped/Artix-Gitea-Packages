@@ -3,19 +3,24 @@
 # Contributor: Nezmer <Nezmer@gmail.com>
 
 pkgname=lib32-fribidi
-pkgver=1.0.12
+pkgver=1.0.13
 pkgrel=1
 pkgdesc="A Free Implementation of the Unicode Bidirectional Algorithm (32-bit)"
 url="https://github.com/fribidi/fribidi/"
 arch=(x86_64)
 license=(LGPL)
-depends=(lib32-glibc fribidi)
-makedepends=(git meson)
+depends=(
+  fribidi
+  lib32-glibc
+)
+makedepends=(
+  git
+  meson
+)
 provides=(libfribidi.so)
-options=(debug)
-_commit=6428d8469e536bcbb6e12c7b79ba6659371c435a  # tags/v1.0.12^0
+_commit=b54871c339dabb7434718da3fed2fa63320997e5  # tags/v1.0.13^0
 source=("git+https://github.com/fribidi/fribidi#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd fribidi
@@ -27,13 +32,16 @@ prepare() {
 }
 
 build() {
+  local meson_options=(
+    --libdir=/usr/lib32
+    -D docs=false
+  )
+
   export CC="gcc -m32"
   export CXX="g++ -m32"
   export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
 
-  artix-meson fribidi build \
-    --libdir=/usr/lib32 \
-    -D docs=false
+  artix-meson fribidi build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -43,7 +51,7 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-  rm -rf "$pkgdir"/usr/{include,share,bin}
+  rm -r "$pkgdir"/usr/{bin,include}
 }
 
-# vim:set sw=2 et:
+# vim:set sw=2 sts=-1 et:
