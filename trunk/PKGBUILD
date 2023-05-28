@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: jtts <jussaar@mbnet.fi>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
@@ -8,7 +7,7 @@ pkgbase=lib32-at-spi2-core
 pkgname=(
   lib32-at-spi2-core
 )
-pkgver=2.48.2
+pkgver=2.48.3
 pkgrel=1
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi (32-bit)"
 url="https://gitlab.gnome.org/GNOME/at-spi2-core"
@@ -29,7 +28,7 @@ makedepends=(
 )
 checkdepends=(
 )
-_commit=36b6bae1542a5201ff25ed16e4c026512f4fecdb  # tags/AT_SPI2_CORE_2_48_2^0
+_commit=c0c1b0477ab643e900cecfaf8d3af70ed9400b82  # tags/AT_SPI2_CORE_2_48_3^0
 source=("git+https://gitlab.gnome.org/GNOME/at-spi2-core.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -59,9 +58,7 @@ build() {
 }
 
 check() {
-  # memory test fails without desktop
-  # broker fails to launch without journald
-  dbus-run-session meson test -C build --print-errorlogs || :
+  dbus-run-session meson test -C build --print-errorlogs
 }
 
 package_lib32-at-spi2-core() {
