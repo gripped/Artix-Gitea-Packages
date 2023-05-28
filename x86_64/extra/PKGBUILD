@@ -4,7 +4,7 @@
 _pkgname=httpcore
 pkgname=python-httpcore
 # https://github.com/encode/httpcore/blob/master/CHANGELOG.md
-pkgver=0.17.1
+pkgver=0.17.2
 pkgrel=1
 pkgdesc="A minimal HTTP client"
 arch=('any')
@@ -16,10 +16,10 @@ optdepends=(
   'python-socksio: for SOCKS support'
   'python-trio: for trio backend'
 )
-makedepends=('python-setuptools' 'python-h2')
+makedepends=('python-build' 'python-installer' 'python-wheel' 'python-setuptools' 'python-h2')
 checkdepends=('python-pytest-httpbin' 'python-pytest-trio' 'python-socksio')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha512sums=('73935a22e6f91a4f9e49865066badc9b6f4ade342d294a2e419d5381ead18d2bd5f4e9cee4bfabfa66e8d0a0796d62a3def906dd0e9924b9e5c1d682ceb7edce')
+sha512sums=('429451323b31006eddae88b2f5575bb4b672206056d466e274f0667c185f196bedc06e82ed3a824836d56360004ba368370bca88656c3c998d61f7382c990296')
 
 prepare() {
     cd ${_pkgname}-${pkgver}
@@ -31,7 +31,7 @@ prepare() {
 build() {
     cd ${_pkgname}-${pkgver}
 
-    python setup.py build
+    python -m build --wheel --no-isolation
 }
 
 check() {
@@ -46,6 +46,6 @@ check() {
 package() {
     cd ${_pkgname}-${pkgver}
 
-    python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+    python -m installer --destdir="$pkgdir" dist/*.whl
     install -Dm644 LICENSE.md "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE.md
 }
