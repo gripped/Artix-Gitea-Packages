@@ -12,7 +12,7 @@ arch=('x86_64')
 license=('GPL')
 url="https://github.com/iputils/iputils"
 depends=('libcap' 'libidn2')
-makedepends=('perl-sgmls' 'git' 'docbook-xsl' 'meson' 'systemd' 'iproute')
+makedepends=('perl-sgmls' 'git' 'docbook-xsl' 'meson' 'iproute')
 conflicts=('netkit-base' 'arping')
 replaces=('netkit-base')
 source=("git+https://github.com/iputils/iputils.git#tag=${pkgver}?signed")
