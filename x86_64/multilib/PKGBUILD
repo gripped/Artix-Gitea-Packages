@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Daniel Wallace <danielwallace@aur.archlinux.org>
+# Maintainer: Daniel Wallace <danielwallace@aur.archlinux.org>
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
@@ -8,10 +7,10 @@
 
 pkgbase=lib32-curl
 pkgname=(lib32-curl lib32-libcurl-compat lib32-libcurl-gnutls)
-_tag='189aed698b23f7a1390d1b561ba73d02e66d96d2' # git rev-parse v${_tag_name}
-_tag_name='8_1_0'
+_tag='4ac817f9884c538e1343219facae19d93a42778c' # git rev-parse v${_tag_name}
+_tag_name='8_1_1'
 pkgver="${_tag_name//_/.}"
-pkgrel=1
+pkgrel=1.1
 pkgdesc='command line tool and library for transferring data with URLs (32-bit)'
 arch=('x86_64')
 url='https://curl.se/'
@@ -25,6 +24,8 @@ source=("git+https://github.com/bagder/curl.git#tag=${_tag}?signed")
 sha512sums=('SKIP')
 
 _backports=(
+  # configure: quote the assignments for run-compiler
+  '471dab2da0c6b2b08ca2b96a1da0a4825e2c3c36'
 )
 
 _reverts=(
