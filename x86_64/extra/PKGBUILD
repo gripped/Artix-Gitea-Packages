@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=at-spi2-core
@@ -6,7 +6,7 @@ pkgname=(
   at-spi2-core
   at-spi2-core-docs
 )
-pkgver=2.48.2
+pkgver=2.48.3
 pkgrel=1
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi"
 url="https://gitlab.gnome.org/GNOME/at-spi2-core"
@@ -19,7 +19,7 @@ depends=(
   libx11
   libxml2
   libxtst
-  libelogind
+  systemd
 )
 makedepends=(
   dbus-broker
@@ -32,7 +32,7 @@ makedepends=(
 checkdepends=(
   at-spi2-core
 )
-_commit=36b6bae1542a5201ff25ed16e4c026512f4fecdb  # tags/AT_SPI2_CORE_2_48_2^0
+_commit=c0c1b0477ab643e900cecfaf8d3af70ed9400b82  # tags/AT_SPI2_CORE_2_48_3^0
 source=("git+https://gitlab.gnome.org/GNOME/at-spi2-core.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -56,9 +56,7 @@ build() {
 }
 
 check() {
-  # memory test fails without desktop
-  # broker fails to launch without journald
-  dbus-run-session meson test -C build --print-errorlogs || :
+  dbus-run-session meson test -C build --print-errorlogs
 }
 
 package_at-spi2-core() {
@@ -80,9 +78,6 @@ package_at-spi2-core() {
   )
 
   meson install -C build --destdir "$pkgdir"
-
-  # remove systemd service
-  rm -r "$pkgdir"/usr/lib/systemd
 
   mkdir -p doc/usr/share
   mv {"$pkgdir",doc}/usr/share/doc
