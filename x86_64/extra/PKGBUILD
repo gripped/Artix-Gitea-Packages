@@ -19,7 +19,7 @@ depends=(
   libx11
   libxml2
   libxtst
-  systemd
+  libelogind 
 )
 makedepends=(
   dbus-broker
@@ -78,6 +78,9 @@ package_at-spi2-core() {
   )
 
   meson install -C build --destdir "$pkgdir"
+
+  # remove systemd service
+  rm -r "$pkgdir"/usr/lib/systemd
 
   mkdir -p doc/usr/share
   mv {"$pkgdir",doc}/usr/share/doc
