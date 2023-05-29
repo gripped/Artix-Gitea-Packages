@@ -57,6 +57,7 @@ build() {
           --auto-features=enabled \
           --wrap-mode=nodownload \
           -Dsystemd=disabled \
+          -Dcava=disabled \
           -Dtests=disabled \
           build
     ninja -C build
