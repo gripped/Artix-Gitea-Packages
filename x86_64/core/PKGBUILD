@@ -1,6 +1,6 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_ver=6.3.3
+_ver=6.3.4
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
@@ -29,7 +29,6 @@ makedepends=(
   imagemagick
   python-sphinx
   texlive-latexextra
-  xmlto
 )
 options=('!strip')
 _srcname=archlinux-linux
