@@ -15,7 +15,7 @@ url="https://github.com/trezor/cython-hidapi"
 depends=('python' 'hidapi')
 makedepends=('cython' 'python-setuptools' 'udev')
 license=('custom')
-source=("https://pypi.org/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$_pkgver.tar.gz")
+source=("$pkgname-$pkgver.tgz::https://pypi.org/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$_pkgver.tar.gz")
 sha512sums=('228fac22621e36a3108cefd418937a7ed0153e334e19999e947aad341a753d614877cd3f7add90d78037ebe9c7b3f6cbc42973a8e680188da14928311d317b17')
 
 build() {
