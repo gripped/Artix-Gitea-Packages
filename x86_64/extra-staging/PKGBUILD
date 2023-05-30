@@ -3,7 +3,7 @@
 
 pkgname=krename
 pkgver=5.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A very powerful batch file renamer'
 arch=(x86_64)
 url='https://www.krename.net'
@@ -14,7 +14,7 @@ source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.ta
         podofo-0.10.patch)
 sha256sums=('b23c60a7ddd9f6db4dd7f55ac55fcca8a558fa68aaf8fa5cb89e1eaf692f23ed'
             'SKIP'
-            '5a28dc74cda27f09edbb67179497a4034b00d3fae9fe3e1f36e5058bcf5a5c17')
+            '84be211755fd522f839935d2d434337de4b56f962f96e71eef9895b9f93b1566')
 validpgpkeys=(D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heirecka@exherbo.org>
 
 prepare() {
@@ -23,8 +23,7 @@ prepare() {
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
-    -DBUILD_TESTING=OFF \
-    -DCMAKE_CXX_STANDARD=17
+    -DBUILD_TESTING=OFF
   cmake --build build
 }
 
