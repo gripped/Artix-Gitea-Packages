@@ -1,9 +1,9 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Martchus <martchus@gmx.net>
 
 pkgname=qt6ct
 pkgver=0.8
-pkgrel=3
+pkgrel=5
 pkgdesc='Qt 6 Configuration Utility'
 arch=(x86_64)
 url='https://github.com/trialuser02/qt6ct'
