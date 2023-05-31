@@ -1,45 +1,26 @@
-# Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
-
-_sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
+# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=apache-runit
-pkgver=20180605
-pkgrel=3
-pkgdesc="runit service scripts for apache"
+pkgver=20220314
+pkgrel=1
+pkgdesc='runit service scripts for apache'
 arch=('any')
-url="https://artixlinux.org"
+url='https://artixlinux.org'
 license=('BSD')
 groups=('runit-world')
 depends=('apache' 'runit')
 conflicts=('init-apache')
 provides=('init-apache')
+install='apache-runit.install'
 source=("apache.run"
-        "apache.finish")
-sha256sums=('6404e115334b559c6d8e91b63a7712d381c165639a252f4de3efee260f724a2e'
-            '3c1bc2734b684c5af29871240a1532729731f7eab80171870e81b60e4ee37247')
-
-_inst_logsv() {
-    for file in run finish check; do
-        if test -f "$srcdir/log$1.$file"; then
-            install -Dm755 "$srcdir/log$1.$file" "$pkgdir/etc/runit/sv/$1/log/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/log/$file"
-        fi
-    done
-}
-
-_inst_sv() {
-    if test -f "$srcdir/$1.conf"; then
-        install -Dm644 "$srcdir/$1.conf" "$pkgdir/etc/runit/sv/$1/conf"
-    fi
-
-    for file in run finish check; do
-        if test -f "$srcdir/$1.$file"; then
-            install -Dm755 "$srcdir/$1.$file" "$pkgdir/etc/runit/sv/$1/$file"
-            sed "${_sed_args[@]}" -i "$pkgdir/etc/runit/sv/$1/$file"
-        fi
-    done
-}
+        "apache.log.run")
+b2sums=('a4c806107475204a606489d173dcbfc883a2144e2105807ae4ae709f8dfe474eeddf4c7bd5ad8b925ffff194d2a4b8b0696f186f5acd3b4e517e0ff3564cd5d3'
+        '10c6961546c622b7e3ef82e7b24d8e67c43cd966832f3125f425a4a3fbb12dfd4e399f3f3a82fd7523714b4b93b5b71f0f067a954a5ed26c8c2737b070438c31')
 
 package() {
-    _inst_sv 'apache'
+    cd "$srcdir"
+
+    install -Dm755 apache.run "$pkgdir/etc/runit/sv/apache/run"
+    install -Dm755 apache.log.run "$pkgdir/etc/runit/sv/apache/log/run"
 }
