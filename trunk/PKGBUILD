@@ -13,7 +13,7 @@ source=(https://github.com/zlib-ng/minizip-ng/archive/$pkgver/$pkgname-$pkgver.t
 sha256sums=('f9062e576de026fd5026d65597de3b05263cd4d91400cacdbbe36dfa8a642fff')
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DMZ_LIB_SUFFIX="-ng" \
     -DBUILD_SHARED_LIBS=ON
