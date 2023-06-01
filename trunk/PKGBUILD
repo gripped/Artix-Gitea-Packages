@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: pandada8 <pandada8@gmail.com>
 
 pkgname=v2ray
-pkgver=5.4.1
-_commit=9b5262855fd5bf432c5abdd24152a9089bbb874f
+pkgver=5.5.0
+_commit=c2510495683eac5979c241ef2de45f29dd5ca363
 pkgrel=1
 pkgdesc="A platform for building proxies to bypass network restrictions"
 arch=('x86_64')
