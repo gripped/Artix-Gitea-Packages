@@ -3,14 +3,14 @@
 
 pkgname=imagemagick
 pkgver=7.1.1.11
-pkgrel=1
+pkgrel=2
 _relname=ImageMagick-${pkgver%%.*}
 _tarname=ImageMagick-${pkgver%.*}-${pkgver##*.}
 pkgdesc='An image viewing/manipulation program'
 url='https://www.imagemagick.org/'
 arch=(x86_64)
 license=(custom)
-depends=(libltdl lcms2 fontconfig libxext liblqr libraqm libpng libxml2)
+depends=(libltdl lcms2 fontconfig libxext liblqr libraqm libpng libxml2 fftw)
 optdepends=('ghostscript: PS/PDF support'
             'libheif: HEIF support'
             'libjxl: JPEG XL support'
@@ -66,6 +66,7 @@ build() {
     --enable-opencl \
     --without-gslib \
     --with-djvu \
+    --with-fftw \
     --with-jxl \
     --with-lqr \
     --with-modules \
@@ -79,7 +80,6 @@ build() {
     --with-xml \
     --without-autotrace \
     --without-dps \
-    --without-fftw \
     --without-fpx \
     --without-gcc-arch \
     --without-gvc
