@@ -34,8 +34,6 @@ package() {
 	make DESTDIR="${pkgdir}" install
 
 	install -Dm644 ../ntp.conf "${pkgdir}"/etc/ntp.conf
-	install -Dm644 ../ntpd.service "${pkgdir}"/usr/lib/systemd/system/ntpd.service
-	install -Dm644 ../ntpdate.service "${pkgdir}"/usr/lib/systemd/system/ntpdate.service
 	install -Dm644 ../ntp.sysusers "${pkgdir}"/usr/lib/sysusers.d/ntp.conf
 	install -Dm644 COPYRIGHT "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
