@@ -1,46 +1,41 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: kevin <kevin@archlinux.org>
 
 pkgname=ntp
 _pkgname=ntp #-dev
-_pkgver=4.2.8p15
+_pkgver=4.2.8p16
 pkgver=${_pkgver/p/.p}
-pkgrel=3
+pkgrel=1
 pkgdesc='Network Time Protocol reference implementation'
-url='http://www.ntp.org/'
+url='https://www.ntp.org/'
 license=('custom')
 arch=('x86_64')
 depends=('openssl' 'perl' 'libcap' 'libedit')
 backup=('etc/ntp.conf')
 source=("https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/${_pkgname}-${_pkgver}.tar.gz"
-        'ntp-4.2.8_p15-glibc-2.34.patch'
         'ntp.conf'
         'ntp.sysusers')
-sha1sums=('e34e5b6f48c3ed1bbcfb03080dec1b8f91e19381'
-          '1423b8ef72a3806ed74affc1973f66ed7cfa2afb'
-          'ad1d6ee2e9aca64a84a7224c88bf6008ac6c69e1'
-          'e8d1c895eabeb45b1a5f096fa5fc3c088eb3ee71')
+sha256sums=('5225858bfd843b080fb9daa5b7370519130e5e49ac3eb0371e334bdc06c52dd7'
+            'abccefe0b3a65cd375d5071ce780be8d2d205439aa6d34bcd3c56de6e80ba821'
+            'f839a3b6d8e64fcd9332274131b4d5aa0b2c272db072dc310af1735ef286746a')
 options=('!emptydirs')
 
-prepare() {
-	cd "${srcdir}/${_pkgname}-${_pkgver}"
-	patch -Np1 -i ../ntp-4.2.8_p15-glibc-2.34.patch
-}
-
 build() {
-	cd "${srcdir}/${_pkgname}-${_pkgver}"
+	cd "${_pkgname}-${_pkgver}"
 
 	./configure --prefix=/usr --libexecdir=/usr/lib --enable-linuxcaps --enable-ntp-signd
 	make
 }
 
 package() {
-	cd "${srcdir}/${_pkgname}-${_pkgver}"
+	cd "${_pkgname}-${_pkgver}"
 
 	make DESTDIR="${pkgdir}" install
 
 	install -Dm644 ../ntp.conf "${pkgdir}"/etc/ntp.conf
+	install -Dm644 ../ntpd.service "${pkgdir}"/usr/lib/systemd/system/ntpd.service
+	install -Dm644 ../ntpdate.service "${pkgdir}"/usr/lib/systemd/system/ntpdate.service
 	install -Dm644 ../ntp.sysusers "${pkgdir}"/usr/lib/sysusers.d/ntp.conf
 	install -Dm644 COPYRIGHT "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
