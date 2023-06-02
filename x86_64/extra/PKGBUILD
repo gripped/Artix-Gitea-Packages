@@ -6,9 +6,11 @@
 
 pkgname=torsocks
 pkgver=2.4.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Wrapper to transparently torify an application"
 url="https://gitlab.torproject.org/tpo/core/torsocks"
+## File: https://gitlab.torproject.org/tpo/core/torsocks/-/blob/main/changelog
+changelog=Changelog.txt
 arch=("x86_64")
 depends=("tor")
 makedepends=(
@@ -22,10 +24,15 @@ source=(https://gitlab.torproject.org/tpo/core/$pkgname/-/archive/v$pkgver/$pkgn
 sha256sums=('c01b471d89eda9f3c8dcb85a448e8066692d0707f9ff8b2ac7e665a602291b87')
 license=('GPL2')
 
+# prepare(){
+	# cd $pkgname-v$pkgver
+
+# }
 
 build() {
 	cd $pkgname-v$pkgver
 	./autogen.sh
+	sed -i 's/| -V//g' configure
 	./configure --prefix=/usr \
 		--sysconfdir=/etc \
 		--mandir=/usr/share/man \
