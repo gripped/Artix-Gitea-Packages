@@ -24,7 +24,7 @@ pkgname=(texlive-bibtexextra
          texlive-meta)
 _rev=66594
 pkgver=2023.$_rev
-pkgrel=3
+pkgrel=4
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
@@ -61,7 +61,7 @@ source=(svn://tug.org/texlive/tags/texlive-2023.0/Master/texmf-dist#revision=$_r
         texlive-pictures.maps
         texlive-science.maps)
 sha256sums=('SKIP'
-            '38658d53224c8cdcc576fdc7bd7886000b4f00b8688984c38068a1444a304384'
+            '73553990ca05c4c58aade09027302dbef018b5bfc545bc47116f9984afa0b0e8'
             '5e79c40cf3ab93348fc89e97890198601767ea2c8fea89ea76088c17a2b35962'
             '6baf9070b96a70e78e3b8365a01fbf4637f76d70f9db2fde5d36640ee518c40a'
             '7bf4b47ed7562dc8967a532fb13aa3c1194db1b74d7725f303612fac54750da9'
@@ -362,8 +362,11 @@ package_texlive-science() {
 package_texlive-doc() {
   pkgdesc+='documentation'
 
-  mkdir -p "$pkgdir"/usr/share/doc/
+  mkdir -p "$pkgdir"/usr/share/doc
   mv texlive-doc "$pkgdir"/usr/share/doc/texlive
+# Symlink so texdoc can find it
+  mkdir -p "$pkgdir"/usr/share/texmf-dist
+  ln -s /usr/share/doc/texlive "$pkgdir"/usr/share/texmf-dist/doc
 }
 
 package_texlive-meta() {

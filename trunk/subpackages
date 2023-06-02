@@ -362,6 +362,11 @@ core=(
   metapost/threeddice
   mft
   psutils
+  scripts/make4ht/*.lua
+  scripts/make4ht/domfilters/*.lua
+  scripts/make4ht/extensions/*.lua
+  scripts/make4ht/filters/*.lua
+  scripts/make4ht/formats/*.lua
   scripts/texdoc/texdoclib*
   scripts/texlive/mktexlsr.pl
   tex/context/base
