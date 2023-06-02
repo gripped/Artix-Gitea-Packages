@@ -6,7 +6,7 @@
 
 pkgname=torsocks
 pkgver=2.4.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Wrapper to transparently torify an application"
 url="https://gitlab.torproject.org/tpo/core/torsocks"
 ## File: https://gitlab.torproject.org/tpo/core/torsocks/-/blob/main/changelog
