@@ -42,5 +42,5 @@ package() {
     rm plugins/styles/libbb10styleplugin.so # bb10 is broken
 
     make INSTALL_ROOT="${pkgdir}" install
-    install -Dm644 "$srcdir/${pkgname}.hook" "$pkgdir/usr/share/libalpm/hooks/90-${pkgname}.hook"
+    #install -Dm644 "$srcdir/${pkgname}.hook" "$pkgdir/usr/share/libalpm/hooks/90-${pkgname}.hook"
 }
