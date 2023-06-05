@@ -4,12 +4,12 @@
 
 pkgname=intel-compute-runtime
 pkgver=23.13.26032.30
-pkgrel=1
+pkgrel=2
 pkgdesc="Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver"
 arch=(x86_64)
 url="https://01.org/compute-runtime"
 license=(MIT)
-depends=(gcc12-libs intel-gmmlib intel-graphics-compiler)
+depends=(gcc-libs intel-gmmlib intel-graphics-compiler)
 makedepends=(cmake gcc12 igsc libva level-zero-headers opencl-headers)
 optdepends=('libva: for cl_intel_va_api_media_sharing'
             'libdrm: for cl_intel_va_api_media_sharing')
