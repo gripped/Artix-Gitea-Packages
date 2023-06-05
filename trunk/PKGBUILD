@@ -1,10 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgname=go-tools
 epoch=4
-pkgver=0.9.1
+pkgver=0.9.3
 pkgrel=1
 pkgdesc='Developer tools for the Go programming language'
 arch=(x86_64)
@@ -12,9 +11,9 @@ url='https://golang.org/'
 license=(BSD)
 depends=(glibc)
 makedepends=(git go)
-_commit=4609d79b05b5ef86867bd70209b7077e22d30cb2	#refs/tags/v0.9.1
+_commit=0dda7d614e545bb93966bb1410269b3cd1e65e1d	#refs/tags/v0.9.3
 source=(go-tools::git+https://go.googlesource.com/tools#commit=$_commit)
-md5sums=('SKIP')
+sha256sums=('SKIP')
 
 _tools=(benchcmp callgraph compilebench digraph eg fiximports
         go-contrib-init godex godoc goimports gomvpkg gorename gotype 
