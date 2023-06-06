@@ -20,14 +20,14 @@ depends=(
 )
 makedepends=('git')
 backup=('etc/artix-checkupdates/config')
-source=("https://gitea.artixlinux.org/artix/${pkgname}/archive/${pkgver}.tar.gz")
-b2sums=('ba87bc39996eb491c02a5eb135fdb28a9ebdc99aa561ed59bd6e3a53b8a76dd7e65f9d037e9bedac71315b74503d5309704d5723ca8d10bdc3fe848d51645df7')
+source=("git+${url}.git#tag=${pkgver}")
+b2sums=('SKIP')
 
 build() {
-  cd "${pkgname}-${pkgver}"
+  cd "${pkgname}"
   make
 }
 
 package() {
-  make -C "${_pkgbase}" DESTDIR="${pkgdir}" install
+  make -C "${pkgname}" DESTDIR="${pkgdir}" install
 }
