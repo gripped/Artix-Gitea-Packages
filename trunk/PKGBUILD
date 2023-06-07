@@ -1,11 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: Santiago Torres-Arias <santiago@archlinux.org>
 # Contributor: Sébastien "Seblu" Luttringer
 # Contributor: Iwan Timmer <irtimmer@gmail.com>
 
 pkgname=containerd
-pkgver=1.7.1
+pkgver=1.7.2
 pkgrel=1
 pkgdesc='An open and reliable container runtime'
 url='https://containerd.io/'
