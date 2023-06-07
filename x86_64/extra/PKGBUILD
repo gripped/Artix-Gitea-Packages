@@ -15,7 +15,7 @@ pkgdesc='Library for passing menus over DBus'
 url='https://launchpad.net/libdbusmenu'
 arch=('x86_64')
 license=('GPL3' 'LGPL2.1' 'LGPL3')
-makedepends=('bzr' 'gnome-common' 'gobject-introspection' 'gtk2' 'gtk3' 'intltool' 'vala')
+makedepends=('bzr' 'gnome-common' 'gobject-introspection' 'gtk2' 'gtk3' 'intltool' 'vala' 'json-glib')
 options=('!emptydirs')
 source=($pkgbase::bzr+https://code.launchpad.net/~dbusmenu-team/libdbusmenu/trunk.16.10#revision=$_bzrrev)
 sha512sums=('SKIP')
