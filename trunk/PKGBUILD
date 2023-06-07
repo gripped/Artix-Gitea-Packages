@@ -1,10 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Sébastien "Seblu" Luttringer
+# Maintainer: Sébastien "Seblu" Luttringer
 # Contributor: Carsten Feuls <archlinux@carstenfeuls.de>
 # Contributor: Gilles Hamel <hamelg at laposte dot net>
 
 pkgname=grafana
-pkgver=9.5.2
+pkgver=9.5.3
 pkgrel=1
 pkgdesc='Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB'
 url='https://grafana.com/'
@@ -67,6 +66,7 @@ package() {
   install -Dm644 grafana.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/grafana.conf"
   install -Dm644 grafana.sysusers "$pkgdir/usr/lib/sysusers.d/grafana.conf"
   cd $pkgname
+  install -Dsm755 bin/linux-amd64/grafana "$pkgdir/usr/bin/grafana"
   install -Dsm755 bin/linux-amd64/grafana-server "$pkgdir/usr/bin/grafana-server"
   install -Dsm755 bin/linux-amd64/grafana-cli "$pkgdir/usr/bin/grafana-cli"
   install -Dm640 -o207 -g207 conf/sample.ini "$pkgdir/etc/$pkgname.ini"
