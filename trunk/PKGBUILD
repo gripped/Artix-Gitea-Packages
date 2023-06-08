@@ -131,8 +131,8 @@ build() {
   )
 
   # Build only minimal debug info to reduce size
-  CFLAGS+=' -g1'
-  CXXFLAGS+=' -g1'
+  CFLAGS+=' -g1 -I /usr/lib/clang/15.0.7/include'
+  CXXFLAGS+=' -g1 -I /usr/lib/clang/15.0.7/include'
 
   artix-meson mesa-$pkgver build "${meson_options[@]}"
   meson configure build # Print config
