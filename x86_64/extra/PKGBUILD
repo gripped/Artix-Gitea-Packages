@@ -2,13 +2,14 @@
 
 pkgname=polari
 pkgver=43.0
-pkgrel=2
+pkgrel=3
 pkgdesc="An IRC Client for GNOME"
 url="https://wiki.gnome.org/Apps/Polari"
 arch=(x86_64)
 license=(GPL)
 depends=(
   gjs
+  gnome-keyring
   gtk4
   libadwaita
   libsoup3
@@ -25,7 +26,6 @@ makedepends=(
   yelp-tools
 )
 groups=(gnome-extra)
-options=(debug)
 _commit=0cf049c1c5704cf5fa0a4b80194860e2c4e433a9  # tags/43.0^0
 source=("git+https://gitlab.gnome.org/GNOME/polari.git#commit=$_commit")
 b2sums=('SKIP')
