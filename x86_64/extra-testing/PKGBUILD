@@ -90,6 +90,7 @@ validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l
 
 prepare() {
   cd mesa-$pkgver
+  cp /usr/lib/clang/15.0.7/include/opencl-c.h src/intel/vulkan/grl/include
 }
 
 _libdir=usr/lib
@@ -131,8 +132,8 @@ build() {
   )
 
   # Build only minimal debug info to reduce size
-  CFLAGS+=' -g1 -I /usr/lib/clang/15.0.7/include'
-  CXXFLAGS+=' -g1 -I /usr/lib/clang/15.0.7/include'
+  CFLAGS+=' -g1'
+  CXXFLAGS+=' -g1'
 
   artix-meson mesa-$pkgver build "${meson_options[@]}"
   meson configure build # Print config
