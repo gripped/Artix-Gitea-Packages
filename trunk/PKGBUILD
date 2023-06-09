@@ -91,6 +91,7 @@ validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l
 prepare() {
   cd mesa-$pkgver
   cp /usr/lib/clang/15.0.7/include/opencl-c.h src/intel/vulkan/grl/include
+  cp /usr/lib/clang/15.0.7/include/opencl-c-base.h src/intel/vulkan/grl/include
 }
 
 _libdir=usr/lib
