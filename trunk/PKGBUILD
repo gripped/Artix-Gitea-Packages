@@ -56,16 +56,13 @@ makedepends=(
 )
 source=(
   https://mesa.freedesktop.org/archive/mesa-${pkgver}.tar.xz{,.sig}
-  0001-llvm.patch
   LICENSE
 )
 sha256sums=('60b1f3adb1561830c158bf3c68508943674fb9d69f384c3c7289694385ab5c7e'
             'SKIP'
-            '17a40c030e383fdf20743d80d86c0718fef0513c43815c27759be582e660d6a0'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537')
 b2sums=('a98dddf9c6cd0f69ec980e1080b53c92513ac03161dfba3355b83da674d6148dbd66c7e0403795eea7c3ce28fb5ff392a96607f34e4caf68a58ac8eb157cf146'
         'SKIP'
-        'b6d5b2cb377b917505bdb01f839c62761ca532d358a00459752aebad112645371b846122b5b26841000194b2366d5839b26c1e9b19ca65b623039237411c1e30'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb')
 validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l.velikov@gmail.com>
               '946D09B5E4C9845E63075FF1D961C596A7203456'  # Andres Gomez <tanty@igalia.com>
@@ -76,7 +73,6 @@ validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l
 
 prepare() {
   cd mesa-$pkgver
-  patch -Np1 -i ../0001-llvm.patch
 }
 
 _libdir=usr/lib32
@@ -115,18 +111,18 @@ build() {
     -D video-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc
     -D vulkan-drivers=amd,intel,intel_hasvk,swrast,virtio-experimental
     -D vulkan-layers=device-select,intel-nullhw,overlay
-    -D c_link_args="-L/usr/lib32"
-    -D cpp_link_args="-L/usr/lib32"
   )
 
   # Build only minimal debug info to reduce size
   CFLAGS+=' -g1'
   CXXFLAGS+=' -g1'
+
   export CC="gcc -m32"
   export CXX="g++ -m32"
   export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
   export LLVM_CONFIG="llvm-config32"
-  meson mesa-$pkgver build "${meson_options[@]}"
+
+  artix-meson mesa-$pkgver build "${meson_options[@]}"
   meson configure build # Print config
   meson compile -C build
 
