@@ -84,7 +84,8 @@ _libdir=usr/lib32
 build() {
   local meson_options=(
     --libdir=/$_libdir
-    -D cmake_prefix_path=/usr/lib32
+    -D c_link_args='-Wl,-rpath=/usr/lib32'
+    -D cmake_prefix_path="/usr/lib32"
     -D android-libbacktrace=disabled
     -D b_ndebug=true
     -D dri3=enabled
