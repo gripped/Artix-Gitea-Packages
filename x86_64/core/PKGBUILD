@@ -1,4 +1,4 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
@@ -6,7 +6,7 @@
 
 pkgname=openssh
 pkgver=9.3p1
-pkgrel=1
+pkgrel=2
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=('x86_64')
 url='https://www.openssh.com/portable.html'
