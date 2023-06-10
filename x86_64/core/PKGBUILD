@@ -1,8 +1,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=iptables-openrc
-pkgver=20210505
-pkgrel=2
+pkgver=20230601
+pkgrel=1
 pkgdesc="OpenRC iptables init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -18,11 +18,11 @@ source=("iptables.confd"
         "iptables.initd"
         "ebtables.confd"
         "ebtables.initd")
-sha256sums=('7e2341211ca14997b7a8a1f930f94db855291af597c568f680f80031c20d45b6'
-            'c1f5bb4ea36bb7c0a7b7abeb8169cb8547f43d348faef70c61f2daa9033c318b'
-            'e5c6164a0ffa24501d5b3fa6425f0e24a2da73891b4dd62a25b083f9f5b731af'
-            'c05a6c1ba6add3881068584074681b04bfb2ad43284d7bdd67f47f3da842de58'
-            '6eb00de3cf18f36f909cb95f1aa345de16d1cd9c8b92acb944691ac720bf3cb5')
+sha256sums=('83a3c7eb1c123aab6123fb46d67949f0bfd5c909015dddff93dab17c55e2eaa9'
+            'd48695e071e17fbf011d17f7a5a370b75fdd3e7726eeee92148e6ea9ad38716b'
+            '3185a7b35f4ce3ec70256c9bbcb74346ff02c7cdaad3fe3b85f6a8bd14e568e6'
+            '23f2ef80c8fa6545d004cca022fd80ec89b33f96f44ca4d29d5fdfa28778087d'
+            '5baf35a91b1f043c33e760eb362f6477292b063025cf543199a43d50e68a8ac4')
 
 package() {
 
