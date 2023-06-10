@@ -6,7 +6,7 @@ pkgname=libtg_owt
 # https://github.com/telegramdesktop/tdesktop/blob/dev/Telegram/build/docker/centos_env/Dockerfile
 _commit=dcb5069ff76bd293e86928804208737e6cee2ccc
 pkgver=0.git22.${_commit:0:7}
-pkgrel=1
+pkgrel=1.1
 pkgdesc='WebRTC library'
 arch=('x86_64')
 url='https://github.com/desktop-app/tg_owt'
