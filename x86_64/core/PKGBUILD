@@ -6,7 +6,7 @@ _furl="https://github.com/gentoo/${_fname}/archive"
 _fver=0.19
 
 pkgname=netifrc
-pkgver=0.7.4
+pkgver=0.7.5
 pkgrel=1
 pkgdesc="Gentoo Network Interface Management Scripts"
 arch=('x86_64')
@@ -17,7 +17,7 @@ backup=('etc/conf.d/net')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
         "${_fname}-${_fver}.tar.gz::${_furl}/${_fver}.tar.gz"
         'artix.patch')
-sha256sums=('bf214cdf32c76e14fe60dbd8ff23ae84516ae60aaa960d297e023cf7ec9e1a8f'
+sha256sums=('37e84125f0544c1d835a950460dbf43c0d8b9233e248a36250985921e813ead8'
             'f65161c84874959780e332f33d6a8ac878a40dc88da4542448092be6ed9b2ffe'
             '137c9fb75874b9a584bb280dcaf251079367fa8528a186ea975a0f27b1682107')
 
