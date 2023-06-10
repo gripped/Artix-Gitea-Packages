@@ -16,7 +16,7 @@ index 8e3ca0d..4620aec 100644
  endif
  
 -llvm_libdir = dep_llvm.get_variable(cmake : 'LLVM_LIBRARY_DIR', configtool: 'libdir')
-+llvm_libdir = '/usr/lib32'
++llvm_libdir = dep_llvm.get_variable(configtool: 'libdir')
  opencl_libname = with_opencl_icd ? 'MesaOpenCL' : 'OpenCL'
  
  polly_dep = null_dep
