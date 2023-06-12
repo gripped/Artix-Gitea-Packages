@@ -3,7 +3,7 @@
 
 pkgname=liburing
 pkgver=2.4
-_commit=e9555eca3e9c4069b6351a4c5d2430e581b1f29f  # refs/tags/liburing-2.4
+_commit=298c083d75ecde5a8833366167b3b6abff0c8d39  # refs/tags/liburing-2.4
 pkgrel=1
 pkgdesc="Linux-native io_uring I/O access library"
 arch=(x86_64)
@@ -18,7 +18,7 @@ provides=(
   liburing.so
   liburing-ffi.so
 )
-source=(git+https://git.kernel.dk/liburing#tag=$_commit?signed)
+source=(git+https://git.kernel.dk/liburing#tag=$_commit)
 sha512sums=('SKIP')
 validpgpkeys=(C0FC392DCADE26D975FA5E4AF7D358FB2971E0A6)  # Jens Axboe <axboe@kernel.dk>
 
