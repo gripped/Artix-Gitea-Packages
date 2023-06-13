@@ -2,7 +2,7 @@
 
 _name=pdm
 pkgname=python-pdm
-pkgver=2.7.0
+pkgver=2.7.2
 pkgrel=1
 pkgdesc="A modern Python package manager with PEP 582 support"
 arch=(any)
@@ -11,7 +11,7 @@ license=(MIT)
 depends=(
   python
   python-blinker
-  python-cacheyou
+  python-cachecontrol
   python-certifi
   python-dotenv
   python-findpython
@@ -46,8 +46,8 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
 )
 source=(https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz)
-sha512sums=('34a2862b530650b7d00e75cd44c0683454b8af00d702e4acf9bac5ea51cfabaa3898bb2b949390580b090312ba472cd45c9f75dd40e2ac3912d524b1bf2fbf4d')
-b2sums=('d5c93714f66b8cfc434af72b3e036845ef83bd332cb5f2d08b15ffaffda7ed3e83a8372bbcfcbe56793e0784d65b91ec7a179ec32c87dde4e83af47b74730adb')
+sha512sums=('8bda97e7d626929325bdb488fe60f4416f0771ebfafffc78448f6d7482cc4788651c788f7e637e9d67b3fa0fcde7b52426c0de13b223da364b32d67a646379c9')
+b2sums=('26a84e8fc134e2b50af556fc11d277fbb2b0a7bdce192539173ad8ff986d1781b74af4a00112c0ec9c882945e869caa52ae76f2cfb53d1574e1322137acf1cb4')
 
 build() {
   cd $_name-$pkgver
@@ -61,7 +61,6 @@ check() {
     --deselect tests/cli/test_others.py::test_build_distributions
     # we don't want to run tests that require the internet
     --deselect tests/test_project.py::test_access_index_with_auth
-    --deselect tests/test_utils.py::test_find_python_in_path
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
