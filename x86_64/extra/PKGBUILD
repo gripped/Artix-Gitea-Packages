@@ -1,5 +1,4 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Arjan Timmerman <arjan@archlinux.org>
 # Contributor: Wael Nasreddine <gandalf@siemens-mobiles.org>
@@ -12,7 +11,7 @@ pkgname=(
   nm-connection-editor
 )
 pkgver=1.32.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Applet for managing network connections"
 url="https://gitlab.gnome.org/GNOME/network-manager-applet"
 arch=(x86_64)
@@ -93,7 +92,7 @@ package_network-manager-applet() {
 
 package_nm-connection-editor() {
   pkgdesc="NetworkManager GUI connection editor and widgets"
-  depends=(libnma)
+  depends=(jansson libnma)
   conflicts=('libnm-gtk<1.8.18-1')
   replaces=('libnm-gtk<1.8.18-1')
 
