@@ -1,46 +1,36 @@
-# Maintainer: Torr <torr[at]artixlinux[dot]org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=sonivox
-pkgver=3.6.11
-pkgrel=1.1
+pkgver=3.6.12
+pkgrel=1
 pkgdesc="Fork of the AOSP 'platform_external_sonivox' to use outside of Android"
-arch=("x86_64")
+arch=(x86_64)
 url="https://github.com/pedrolcl/sonivox"
-license=("Apache")
-depends=("glibc")
-makedepends=(
-	"gcc"
-	"make"
-	"cmake"
-	"gtest"
-)
-provides=("libsonivox.so")
-source=("https://github.com/pedrolcl/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=("7d7f34508c5475dc6f1c13d1facea084c17a5bca73d085ee9842dae62329a473")
+license=(Apache)
+depends=(glibc)
+makedepends=(cmake gtest)
+provides=(libsonivox.so)
+source=($pkgname-$pkgver.tar.gz::https://github.com/pedrolcl/$pkgname/archive/refs/tags/v$pkgver.tar.gz)
+sha256sums=('23a7f29c617e791dfcb50b75eef41464e4bf3fca15b19da395a64373ff5d8456')
+b2sums=('4a264474eb640dc3a335292c16bca74d942d096e3b74dd566dd9c5218417e71d8b4226342cf634f95a3bb9d624a0deb4e159b4ce03b95907a5b662708fcffc6b')
 
 build() {
-	cd "$pkgname-$pkgver"
-	cmake \
-		-B build \
-		-DCMAKE_BUILD_TYPE="None" \
-		-DCMAKE_INSTALL_PREFIX="/usr" \
-		-Wno-dev
-	cmake --build build
+  local cmake_options=(
+    -B build
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -S $pkgname-$pkgver
+    -W no-dev
+  )
+
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
 }
 
 check() {
-	cd "$pkgname-$pkgver"
-	ctest --test-dir build --output-on-failure
+  ctest --test-dir build --output-on-failure
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	DESTDIR="$pkgdir" cmake --install build
-	install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname" docs/*.pdf docs/*.html
-	install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname/JET_Authoring_Guidelines_files" \
-		docs/JET_Authoring_Guidelines_files/*
-	install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname/JET_Creator_User_Manual_files" \
-		docs/JET_Creator_User_Manual_files/*
-	install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname/JET_Programming_Manual_files" \
-		docs/JET_Programming_Manual_files/*
+  DESTDIR="$pkgdir" cmake --install build
 }
