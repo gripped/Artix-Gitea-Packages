@@ -26,16 +26,16 @@ makedepends=(
   vala
 )
 _commit=c59ec85110954d8e9a1bf31322944225e1dc6874  # tags/0.2.0^0
-source=("git+$url.git#commit=$_commit")
+source=("_libdex::git+$url.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
-  cd libdex
+  cd _libdex
   git describe --tags | sed -r 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd libdex
+  cd _libdex
 
   # Build fixes
   git cherry-pick -n dd2453dab189643a73e8 2194086a5bf83a56a5bf
@@ -47,7 +47,7 @@ build() {
     -D sysprof=true
   )
 
-  artix-meson libdex build "${meson_options[@]}"
+  artix-meson _libdex build "${meson_options[@]}"
   meson compile -C build
 }
 
