@@ -4,13 +4,13 @@
 pkgbase=libproxy
 pkgname=(libproxy libproxy-webkit)
 pkgver=0.4.18
-pkgrel=3.1
+pkgrel=3.2
 pkgdesc="Automatic proxy configuration management library"
 url="https://libproxy.github.io/libproxy/"
 arch=(x86_64)
 license=(LGPL)
 depends=(
- # dbus
+  dbus
   duktape
   gcc-libs
   glib2
@@ -22,7 +22,7 @@ makedepends=(
   ninja
   perl
   python
-#  webkit2gtk
+  webkit2gtk
 )
 _commit=caccaf28e3df6ea612d2d4b39f781c4324019fdb  # tags/0.4.18
 source=("git+https://github.com/libproxy/libproxy#commit=$_commit")
@@ -51,9 +51,9 @@ build() {
   cmake --build build
 }
 
-#check() {
- # cmake --build build --target test
-#}
+check() {
+  cmake --build build --target test
+}
 
 _pick() {
   local p="$1" f d; shift
@@ -75,14 +75,14 @@ package_libproxy() {
 
   DESTDIR="$pkgdir" cmake --install build
 
-#  _pick webkit "$pkgdir"/usr/lib/libproxy/*/modules/pacrunner_webkit.so
+  _pick webkit "$pkgdir"/usr/lib/libproxy/*/modules/pacrunner_webkit.so
 }
 
 package_libproxy-webkit() {
   pkgdesc="JavaScriptCore-based PAC proxy support for libproxy"
   depends=(libproxy webkit2gtk)
   replaces=('libproxy-mozjs<0.4.16-1')
-#  mv webkit/* "$pkgdir"
+  mv webkit/* "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
