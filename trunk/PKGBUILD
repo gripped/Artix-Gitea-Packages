@@ -66,6 +66,7 @@ prepare() {
 build() {
   local meson_options=(
     -D help=true
+    -D plugin_flatpak=false
   )
 
   artix-meson $pkgname build "${meson_options[@]}"
