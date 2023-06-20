@@ -11,9 +11,9 @@ arch=(x86_64)
 license=(GPL)
 url='https://www.r-project.org/'
 depends=(lapack libtiff pcre2 perl libxmu pango zip unzip curl icu which)
-makedepends=(jdk-openjdk gcc-fortran tk texlive-core)
+makedepends=(jdk-openjdk gcc-fortran tk texlive-latexrecommended texlive-fontsrecommended)
 optdepends=('tk: tcl/tk interface'
-            'texlive-bin: latex sty files'
+            'texlive-latex: latex sty files'
             'gcc-fortran: needed to compile some CRAN packages'
             'blas-openblas: faster linear algebra')
 backup=('etc/R/Makeconf' 'etc/R/Renviron' 'etc/R/ldpaths' 'etc/R/repositories' 'etc/R/javaconf')
