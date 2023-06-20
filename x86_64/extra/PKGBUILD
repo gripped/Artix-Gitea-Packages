@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Christian Hesse <mail@eworm.de>
+# Maintainer: Christian Hesse <mail@eworm.de>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Brad Fanella <bradfanella@archlinux.us>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
@@ -8,8 +7,8 @@
 
 pkgbase=mupdf
 pkgname=(libmupdf mupdf mupdf-gl mupdf-tools)
-pkgver=1.22.1
-pkgrel=2
+pkgver=1.22.2
+pkgrel=1
 pkgdesc='Lightweight PDF and XPS viewer'
 arch=('x86_64')
 url='https://mupdf.com/'
@@ -22,7 +21,7 @@ options=('staticlibs')
 source=("https://mupdf.com/downloads/archive/mupdf-${pkgver/_/}-source.tar.gz"
         'mupdf.desktop'
         'mupdf.xpm')
-sha256sums=('d3df26f93d6b6c628bfc8cb184378a8e22feb50198909fedeb424e977c7b339d'
+sha256sums=('54c66af4e6ef8cea9867cc0320ef925d561b42919ea0d4f89db5c9ef485bbeb7'
             'ccff66979249bd4ab4ba8918660f194eb90eb0ae231b16e36a6cecdcf471883f'
             'a435f44425f5432c074dee745d8fbaeb879038ec1f1ec64f037c74662f09aca8')
 
