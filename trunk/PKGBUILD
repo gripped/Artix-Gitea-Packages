@@ -2,12 +2,11 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.31rc0
+pkgver=0.31rc1
 pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
-groups=('artix-tools')
 makedepends=('git')
 # checkdepends=('shellcheck')
 url='https://gitea.artixlinux.org/artix/artools'
@@ -60,6 +59,7 @@ package_artools-pkg() {
                 'artix-checkupdates: updates checking'
                 'graphviz: mkdepgraph support')
     conflicts=('devtools')
+    groups=('artix-tools')
     backup=('etc/artools/artools-pkg.conf')
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_pkg
@@ -71,6 +71,7 @@ package_artools-iso() {
             'grub' 'dosfstools' 'libisoburn' 'bash' 'dosfstools'
             'e2fsprogs' 'libarchive' 'mtools' 'grep' 'sed')
     conflicts=('archiso')
+    groups=('artix-tools')
     backup=('etc/artools/artools-iso.conf')
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_iso
