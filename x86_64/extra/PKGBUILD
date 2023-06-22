@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Marcello "mereghost" Rocha <marcello.rocha@gmail.com>
 # Contributor: Gianni Vialetto <gianni at rootcube dot net>
 # Contributor: Stefan J. Betz <info at stefan-betz dot net>
@@ -10,7 +9,7 @@
 
 pkgbase=rabbitmq
 pkgname=(rabbitmq rabbitmqadmin)
-pkgver=3.11.16
+pkgver=3.12.0
 pkgrel=1
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
@@ -26,7 +25,7 @@ source=(https://github.com/rabbitmq/rabbitmq-server/releases/download/v${pkgver}
         rabbitmq.sysusers
         rabbitmq.tmpfiles
         rabbitmq.logrotate)
-sha512sums=('48d29b14cc3ca3a2c830a351cb46f57cd7fc0f5a13a60cdd2765769fafb38cbdc833ef095e9fd650971a296323a6f1a073c736ea0c913937d6de236ecab65791'
+sha512sums=('50af297e460ab1725587dd75d1c3f08eb15c1293e98bf31d8e83fc346e50bdbbf89cb04bedfcf863388c20dd92cde43084b69092617f287935f2528210de2b3a'
             'SKIP'
             '8b841e28fa0a1424dd9e57c0988e015f3cd4cccef0f73ccdb7c7b66d11ca62ba8ef3a59c7ca5e5f0c9c9d8003ac72bf53785985d98aae867961787003286e179'
             '17d33e7104172bc265d97821fec58f1402ad3103f1ea4b1f6bbabcf0dd840685708a1bdc808b48c1a60726c5c0aa7b6479395afd9360d3116b812c143c432423'
