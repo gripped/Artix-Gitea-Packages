@@ -2,24 +2,27 @@
 
 _pkgname=elogind
 pkgname=lib32-elogind
-pkgver=246.10
-pkgrel=2
+pkgver=252.9
+pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package (32-bit)"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 license=('GPL' 'LGPL2.1')
 depends=('lib32-gcc-libs' 'lib32-acl' 'lib32-libcap' 'lib32-libgcrypt' 'lib32-libxcrypt'
-         'lib32-eudev' 'elogind')
+         'lib32-eudev' 'elogind' 'lib32-util-linux' 'lib32-glibc' 'lib32-pam')
 makedepends=('git' 'gperf' 'intltool' 'lib32-bzip2'
-             'lib32-curl' 'lib32-dbus' 'lib32-gcc-libs' 'lib32-glib2'
+             'lib32-curl' 'lib32-dbus' 'lib32-glib2'
              'lib32-gnutls' 'lib32-libelf' 'lib32-libidn2' 'lib32-pcre2'
-             'libxslt' 'meson')
+             'libxslt' 'meson' 'lib32-udev' 'python-jinja')
 options=('!libtool')
-source=("${_pkgname}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz")
-sha256sums=('c490dc158c8f5bca8d00ecfcc7ad5af24d1c7b9e59990a0b3b1323996221a922')
+source=("${_pkgname}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz"
+        'elogind-252-docs.patch')
+sha256sums=('7af8caa8225a406e77fb99c9f33dba5e1f0a94f0e1277c9d91dcfc016f116d85'
+            'c4153ec89c4deee33e019c168a71b7f1052ff5b24dc747a847cf295a4b54749f')
 
 prepare() {
     cd ${_pkgname}-${pkgver}
+    patch -Np 1 -i ../elogind-252-docs.patch
 }
 
 build() {
@@ -34,7 +37,6 @@ build() {
         -Ddbuspolicydir=/usr/share/dbus-1/system.d
         -Ddocdir=/usr/share/doc/elogind
         -Ddefault-hierarchy=hybrid
-        -Dlibcryptsetup=false
         -Ddefault-kill-user-processes=false
     )
 
