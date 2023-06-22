@@ -37,7 +37,6 @@ package() {
 
   cd "$srcdir"
   install -Dm0755 openfire.sh "$pkgdir"/usr/bin/openfire
-  install -Dm0644 openfire.conf "$pkgdir"/etc/conf.d/openfire
   install -Dm0644 user.conf "$pkgdir"/usr/lib/sysusers.d/openfire.conf
   install -Dm0644 tmpfile.conf "$pkgdir"/usr/lib/tmpfiles.d/openfire.conf
 
