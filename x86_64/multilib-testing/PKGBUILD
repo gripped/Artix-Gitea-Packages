@@ -118,8 +118,8 @@ build() {
   )
 
   # Build only minimal debug info to reduce size
-  CFLAGS+=' -g1'
-  CXXFLAGS+=' -g1'
+  CFLAGS+=' -g1 -I/usr/lib32/clang/15.0.7 -I/usr/lib/clang/15.0.7'
+  CXXFLAGS+=' -g1 -I/usr/lib32/clang/15.0.7 -I/usr/lib/clang/15.0.7'
 
   export CC="gcc -m32"
   export CXX="g++ -m32"
