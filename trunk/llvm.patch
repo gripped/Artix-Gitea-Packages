@@ -5,7 +5,7 @@
  endif
  
 -llvm_libdir = dep_llvm.get_variable(cmake : 'LLVM_LIBRARY_DIR', configtool: 'libdir')
-+llvm_libdir = '/usr/include/clang' 
++llvm_libdir = '/usr/include/llvm' 
  opencl_libname = with_opencl_icd ? 'MesaOpenCL' : 'OpenCL'
  
  polly_dep = null_dep
