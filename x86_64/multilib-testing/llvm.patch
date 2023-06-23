@@ -1,0 +1,11 @@
+--- src/gallium/targets/opencl/meson.build.orig	2023-06-23 03:44:08.573253261 -0500
++++ src/gallium/targets/opencl/meson.build	2023-06-23 03:52:24.297288616 -0500
+@@ -29,7 +29,7 @@
+   opencl_link_deps += files('opencl.sym')
+ endif
+ 
+-llvm_libdir = dep_llvm.get_variable(cmake : 'LLVM_LIBRARY_DIR', configtool: 'libdir')
++llvm_libdir = '/usr/include/clang' 
+ opencl_libname = with_opencl_icd ? 'MesaOpenCL' : 'OpenCL'
+ 
+ polly_dep = null_dep
