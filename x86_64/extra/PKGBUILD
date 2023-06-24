@@ -1,12 +1,12 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Sébastien Luttringer
 # Contributor: parchd <parchd@archlinux.info>
 
 pkgname=opensmtpd
-pkgver=6.8.0p2
-pkgrel=5
+pkgver=7.3.0p0
+pkgrel=1
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
 url="https://www.opensmtpd.org/"
@@ -19,7 +19,7 @@ backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
 source=("https://www.opensmtpd.org/archives/${pkgname}-${pkgver}.tar.gz"
         opensmtpd.sysusers)
-sha256sums=('51bf05312fe56764748faab9e63170bfbb7c7d84a37c4117b62b2681eb3a4d17'
+sha256sums=('2dd7a5a8ca127be7eb491540405684acb3dd04d93ad23d7709accd2b0450cae6'
             'b38b64f1457b7227d55585edc711cce525e089516d16b093e6c44387380e6b13')
 install=${pkgname}.install
 
