@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: dorphell <dorphell@archlinux.org>
 # Contributor: Travis Willard <travis@archlinux.org>
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 
 _pkgbasename=libpng
 pkgname=lib32-$_pkgbasename
-pkgver=1.6.39
+pkgver=1.6.40
 _libversion=16
 pkgrel=1
 pkgdesc='A collection of routines used to create PNG format graphics files (32-bit)'
@@ -13,9 +13,8 @@ arch=('x86_64')
 url='http://www.libpng.org/pub/png/libpng.html'
 license=('custom')
 depends=('lib32-zlib' $_pkgbasename)
-options=('debug')
 source=("https://downloads.sourceforge.net/sourceforge/${_pkgbasename}/${_pkgbasename}-${pkgver}.tar.xz")
-sha256sums=('1f4696ce70b4ee5f85f1e1623dc1229b210029fa4b7aee573df3e2ba7b036937')
+sha256sums=('535b479b2467ff231a3ec6d92a525906fb8ef27978be4f66dbe05d3f3a01b3a1')
 
 build() {
   export CC="gcc -m32"
