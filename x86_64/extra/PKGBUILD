@@ -1,11 +1,10 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Mirco Tischler <mt-ml at gmx dot de>
 
 pkgname=ostree
-_commit=73a2e99a6deae92c34928e9a2d3719178e72a235  # tags/v2023.3
-pkgver=2023.3
+_commit=1a0fbe7ea9bee22f46da3f8b1b8a99d548a8d9b3  # tags/v2023.4
+pkgver=2023.4
 pkgrel=1
 pkgdesc="Operating system and container binary deployment and upgrades"
 url="https://ostreedev.github.io/ostree/"
@@ -105,9 +104,8 @@ build() {
   make
 }
 
-# some tests fail; skip for now
 check() {
-  make check -k -C $pkgname ||:
+  make check -k -C $pkgname
 }
 
 package() {
