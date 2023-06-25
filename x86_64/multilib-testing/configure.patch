@@ -1,0 +1,12 @@
+--- builds/unix/configure.orig	2023-06-24 23:43:56.377549563 -0500
++++ builds/unix/configure	2023-06-24 23:53:20.287589781 -0500
+@@ -10220,6 +10220,9 @@
+       hardcode_direct=yes
+       hardcode_shlibpath_var=no
+       ;;
++    linux*) 
++      hardcode_libdir_flag_spec='-Wl,-R$libdir'
++      ;;
+ 
+     hpux9*)
+       if test yes = "$GCC"; then
