@@ -1,8 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-protocol-http
-pkgver=0.24.1
-_commit=4d65d4bcd6f2482f241224630250d9fd26dbf85a
+pkgver=0.24.3
+_commit=8f8ca2db692961e90b60dea9a6d54b9ec4a70778
 pkgrel=1
 pkgdesc='Provides abstractions to handle HTTP protocols'
 arch=(any)
