@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: lod <aur@cyber-anlage.de>
 
 pkgname=amdvlk
-pkgver=2023.Q2.2
+pkgver=2023.Q2.3
 pkgrel=1
 pkgdesc="AMD's standalone Vulkan driver"
 arch=(x86_64)
@@ -14,7 +14,7 @@ makedepends=('perl-xml-xpath' 'python' 'wayland' 'libxrandr' 'xorg-server-devel'
 options=('!lto')
 source=("https://github.com/GPUOpen-Drivers/AMDVLK/archive/v-${pkgver}.tar.gz"
         cstdint.patch)
-sha256sums=('34878e1fcd4cf43dca378be7b3b9df47f665692f62e4cce965adbeb35cb86167'
+sha256sums=('0fd70d472200c98dabdf86b58a0cf7a1af1a46dd32d02d165676faa8dedf16f7'
             '4509fd9a02aa15a94317228df31402879631f567719d0588225adc2eafe61318')
             
 prepare() {
