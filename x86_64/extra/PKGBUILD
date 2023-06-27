@@ -1,9 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=6.3.0.11.realtime1
+pkgver=6.3.3.15.realtime2
 pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
@@ -31,9 +30,9 @@ source=(
   config
 )
 sha512sums=('SKIP'
-            'd6a2a0e3ce6830394309c72c5890db17c9067bec8fed807ffb5e5887fc3bf0b1780728776b770210f3cf033d4dec07eff025aa0e644b67feae91710c87ecb033')
+            'b3c946dfd1fd4da68f21fc4d3c60fb316ba03517667aaa738ccc76afda3dcc59357cd9aa09a6e0844465181d5076408095736a32271d24ab98706a2322be6e5a')
 b2sums=('SKIP'
-        'a0291bdae323e35971e99516fc05f9c7d4767a770d7dc25afe6f43eff7c89cf90333525356403855ed38010df97946bbecbf6d6732bfa5bd08c43700043673ef')
+        '6eb8b75e062c1e847b13885847d83d992eca818ac38eff08c7afd22b15b5f9aef3645738cdac34683525e95062a27e01144b3b468ddbdd73e2e66654edd941ad')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@kernel.org>
   '64254695FFF0AA4466CC19E67B96E8162A8CF5D1'  # Sebastian Andrzej Siewior
@@ -57,8 +56,7 @@ prepare() {
   echo "-$pkgrel" > localversion.10-pkgrel
   echo "${pkgbase#linux}" > localversion.20-pkgname
   make defconfig
-  # make -s kernelrelease > version  # this still appends SCM version :(((
-  echo "$pkgver-$pkgrel${pkgbase#linux}" > version
+  make -s kernelrelease > version
   make mrproper
 
   local src
