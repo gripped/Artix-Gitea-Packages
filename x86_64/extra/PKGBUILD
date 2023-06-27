@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org
 
 pkgname=artix-checkupdates
-pkgver=0.3
+pkgver=0.3.1
 pkgrel=1
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
 url="https://gitea.artixlinux.org/artix/artix-checkupdates"
-license=('GPL')
+license=('GPL3')
 groups=('artools')
 depends=(
     'brotli'
