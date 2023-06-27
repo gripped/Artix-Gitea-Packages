@@ -1,39 +1,31 @@
-# Maintainer: Dudemanguy <random342@airmail.cc>
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Luca Bennati <lucak3 AT gmail DOT com>
 # Contributor: Glaucous <glakke1 at gmail dot com>
 
 pkgname=apitrace
 pkgver=11.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Graphics API Tracing"
 arch=('x86_64')
 url="https://github.com/apitrace/apitrace"
 license=('custom')
-makedepends=('cmake' 'mesa' 'qt5-base' 'git')
-depends=('python' 'libgl' 'procps-ng' 'gtest')
+makedepends=('cmake' 'git' 'mesa' 'qt5-base')
+depends=('python' 'libgl' 'libprocps')
 optdepends=('qt5-base: GUI support')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/apitrace/apitrace/archive/${pkgver}.tar.gz")
-sha256sums=('aae2d4bd1f8e9b78d82c665d7a54ba8020797a7db98d9913ad00e35f89c6b7e4')
+source=("$pkgname-$pkgver::git+https://github.com/apitrace/apitrace.git#tag=${pkgver}")
+sha256sums=(SKIP)
 
 prepare() {
-  cd apitrace-${pkgver}/thirdparty
-  rm -rf {brotli,googletest,libbacktrace,libpng,snappy,zlib}
-  for i in brotli googletest; do
-  	git clone https://github.com/google/$i
-  done
-  mkdir gest
-  mv googletest gtest
-  git clone https://github.com/ianlancetaylor/libbacktrace
-  git clone https://github.com/glennrp/libpng
-  git clone https://github.com/google/snappy
-  git clone https://github.com/madler/zlib
-}	
+  cd apitrace-${pkgver}
+
+  git submodule update --init --depth 1 --recursive
+}
 
 build() {
   cd apitrace-${pkgver}
 
   cmake . -Bbuild -DCMAKE_INSTALL_PREFIX=/usr \
-    -DENABLE_GUI=TRUE
+    -DENABLE_GUI=TRUE 
   make -C build
 }
 
