@@ -14,7 +14,7 @@ url=https://github.com/readthedocs/sphinx_rtd_theme
 license=('MIT')
 depends=('python-sphinx' 'python-sphinxcontrib-jquery')
 makedepends=('python-setuptools-scm' 'python-build' 'python-installer' 'python-wheel')
-source=("https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz")
+source=("$pkgname-$pkgver-$pkgrel.tgz::https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz")
 sha256sums=('01c5c5a72e2d025bd23d1f06c59a4831b06e6ce6c01fdd5ebfe9986c0a880fc7')
 b2sums=('af738c99a2406daa0372171a34c78ee14e955fee589ba49811ea50fd2cdeeee431367fde4d6a34d9e4f532d1ed6d079b1cebf4bb390b573fb5fe9cfc8f02b838')
 
