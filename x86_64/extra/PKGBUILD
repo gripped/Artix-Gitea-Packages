@@ -1,11 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Maintainer: Konstantin Gizdov <arch@kge.pw>
 pkgname=(cuda cuda-tools)
 pkgbase=cuda
 pkgver=12.1.1
 _driverver=530.30.02
-pkgrel=3.1
+pkgrel=4
 pkgdesc="NVIDIA's GPU programming toolkit"
 arch=('x86_64')
 url="https://developer.nvidia.com/cuda-zone"
