@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Vesa Kaihlavirta <vegai@iki.fi>
 # Contributor: Sebastian Sareyko <public@nooms.de>
 
 pkgname=gnustep-base
 pkgver=1.29.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The GNUstep base package"
 arch=('x86_64')
 url="http://www.gnustep.org/"
