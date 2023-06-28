@@ -1,0 +1,39 @@
+ scripts/repo-add.sh.in | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/scripts/repo-add.sh.in b/scripts/repo-add.sh.in
+index 5e51a4c5..1a1c5301 100644
+--- a/scripts/repo-add.sh.in
++++ b/scripts/repo-add.sh.in
+@@ -76,6 +76,7 @@ specified on the command line from the given repo database. Multiple\n\
+ packages to remove can be specified on the command line.\n")"
+ 		printf -- "\n"
+ 		printf -- "$(gettext "Options:\n")"
++		printf -- "$(gettext "  -R, --remove      remove old package file from disk after updating database\n")"
+ 	else
+ 		printf -- "$(gettext "Please move along, there is nothing to see here.\n")"
+ 		return
+@@ -353,6 +354,11 @@ db_remove_entry() {
+ 	while [[ -n $pkgentry ]]; do
+ 		notfound=0
+
++		if (( RMEXISTING )); then
++			local oldfilename="$(sed -n '/^%FILENAME%$/ {n;p;q;}' "$pkgentry/desc")"
++			local oldfile="$(dirname "$1")/$oldfilename"
++		fi
++
+ 		msg2 "$(gettext "Removing existing entry '%s'...")" \
+ 		"${pkgentry##*/}"
+ 		rm -rf "$pkgentry"
+@@ -362,6 +368,11 @@ db_remove_entry() {
+ 		rm -rf "$filesentry"
+
+ 		pkgentry=$(find_pkgentry "$pkgname")
++		if (( RMEXISTING )); then
++			msg2 "$(gettext "Removing old package file '%s'")" "$oldfilename"
++			rm -f ${oldfile} ${oldfile}.sig
++		fi
++
+ 	done
+ 	return $notfound
+ } # end db_remove_entry
