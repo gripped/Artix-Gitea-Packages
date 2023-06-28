@@ -1,10 +1,9 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Fabian Bornschein <fabiscafe-cat-mailbox-dog-org>
 
 pkgname=gnome-builder
 pkgver=44.2
-pkgrel=2
+pkgrel=3
 pkgdesc="An IDE for writing GNOME-based software"
 url="https://wiki.gnome.org/Apps/Builder"
 arch=(x86_64)
@@ -67,6 +66,7 @@ prepare() {
 build() {
   local meson_options=(
     -D help=true
+    -D plugin_flatpak=false
   )
 
   artix-meson $pkgname build "${meson_options[@]}"
