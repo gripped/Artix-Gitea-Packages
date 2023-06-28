@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Stijn Segers <francesco dot borromini at gmail dot com>
 
 _name=FreeRDP
 pkgname=freerdp
 pkgver=2.10.0
-pkgrel=3
+pkgrel=4
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
