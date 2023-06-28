@@ -1,11 +1,11 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Fabian Bornschein <fabiscafe-cat-mailbox-dog-org>
 # Contributor: sebikul <sebikul@gmail.com>
 # Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 
 pkgname=geary
 pkgver=43.0
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='A lightweight email client for the GNOME desktop'
 arch=(x86_64)
@@ -54,7 +54,6 @@ makedepends=(
   vala
   yelp-tools
 )
-options=(debug)
 _commit=94d6bec861daffb27efea85a296f347db7a5af6d  # tags/43.0^0
 source=("git+https://gitlab.gnome.org/GNOME/geary.git#commit=$_commit")
 validpgpkeys=(3A2EF7F138557A145F2866E99FAB18747A8FC649) # Michael James Gratton <mike@vee.net>
@@ -62,6 +61,10 @@ sha256sums=('SKIP')
 
 prepare() {
   cd geary
+  # Add missing type-arguments for interfaces to fix build with newer vala
+  git cherry-pick -n 4a7ca820b1d3d6130fedf254dc5b4cd7efb58f2c
+  # Fix non-null build with newer vala 
+  git cherry-pick -n 10f9c133a2ad515127d65f3bba13a0d91b75f4af
 }
 
 pkgver() {
