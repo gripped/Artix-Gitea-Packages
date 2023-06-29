@@ -179,7 +179,6 @@ package_pipewire() {
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-protocol-simple.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-rtp-{sap,sink,source}.so
     _pick audio usr/lib/spa-0.2/{aec,alsa,audio*,avb,bluez5}
-    _pick audio usr/lib/systemd/user/filter-chain.service
     _pick audio usr/share/alsa
     _pick audio usr/share/man/man1/pw-{cat,mididump}.1
     _pick audio usr/share/pipewire/filter-chain*
