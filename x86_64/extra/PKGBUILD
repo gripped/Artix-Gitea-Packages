@@ -1,9 +1,10 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=krename
 pkgver=5.0.2
-pkgrel=4
+pkgrel=5
 pkgdesc='A very powerful batch file renamer'
 arch=(x86_64)
 url='https://www.krename.net'
