@@ -87,7 +87,6 @@ EOF
   install -dm700 "${pkgdir}"/var/lib/bluetooth
 
   # cleanup  - these libs go into bluez-libs
-  rm "${pkgdir}"/usr/lib/libbluetooth.so*
 }
 
 package_bluez-utils() {
