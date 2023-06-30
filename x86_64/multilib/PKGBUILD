@@ -9,9 +9,9 @@ pkgname=(
   lib32-pipewire-jack
   lib32-pipewire-v4l2
 )
-_commit=bd225b14bbda1a6e2dc7a52780eaf728920e0ff2  # tags/0.3.71
-pkgver=0.3.71
-pkgrel=2
+_commit=4cc22d60d2280fb3c771e6a246e79c90819fd485  # tags/0.3.72
+pkgver=0.3.72
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -22,7 +22,6 @@ makedepends=(
   lib32-alsa-lib
   lib32-dbus
   lib32-glib2
-  lib32-opus
   meson
 )
 source=("git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit")
@@ -35,10 +34,6 @@ pkgver() {
 
 prepare() {
   cd pipewire
-
-  # Fix JACK emulation
-  # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/3226
-  git cherry-pick -n ce71b37b58d5e251ae7acda0799f696688df11c2
 }
 
 build() {
@@ -60,6 +55,7 @@ build() {
     -D jack=disabled
     -D libcamera=disabled
     -D libcanberra=disabled
+    -D libffado=disabled
     -D libjack-path=/usr/lib32
     -D libmysofa=disabled
     -D libpulse=disabled
@@ -67,6 +63,7 @@ build() {
     -D systemd=disabled
     -D lv2=disabled
     -D man=disabled
+    -D opus=disabled
     -D pw-cat=disabled
     -D raop=disabled
     -D readline=disabled
@@ -112,7 +109,6 @@ package_lib32-pipewire() {
     lib32-gcc-libs
     lib32-glibc
     "lib32-libpipewire=$epoch:$pkgver-$pkgrel"
-    lib32-opus
     libasound.so
     libdbus-1.so
     libglib-2.0.so
