@@ -8,8 +8,8 @@
 
 _name=scipy
 pkgname=python-scipy
-pkgver=1.11.0
-pkgrel=2
+pkgver=1.11.1
+pkgrel=1
 pkgdesc='Open-source software for mathematics, science, and engineering'
 arch=(x86_64)
 url='https://www.scipy.org/'
@@ -19,14 +19,8 @@ provides=(scipy)
 makedepends=(gcc-fortran cython python-pythran pybind11 meson-python python-build python-installer)
 checkdepends=(python-pytest)
 optdepends=('python-pillow: for image saving module')
-source=(https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$pkgver.tar.gz
-        https://github.com/scipy/scipy/commit/b628d8b1.patch)
-sha256sums=('f9b0248cb9d08eead44cde47cbf6339f1e9aa0dfde28f5fb27950743e317bd5d'
-            '475bf2f9e21973b20d85a2f9322be3eee103ff3a1e1aa5ba83cd598d9a680866')
-
-prepare() {
-  patch -d $_name-$pkgver -p1 < b628d8b1.patch # Fix determinant of 1x1 arrays
-}
+source=(https://pypi.python.org/packages/source/${_name:0:1}/$_name/$_name-$pkgver.tar.gz)
+sha256sums=('fb5b492fa035334fd249f0973cc79ecad8b09c604b42a127a677b45a9a3d4289')
 
 build() {
   cd $_name-$pkgver
