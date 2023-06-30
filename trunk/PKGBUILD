@@ -82,9 +82,6 @@ package_bluez() {
 Name=org.bluez.obex
 Exec=/usr/lib/bluetooth/obexd
 EOF
-  
-  # fix obex file transfer - https://bugs.archlinux.org/task/45816
-  ln -fs /usr/lib/systemd/user/obex.service "${pkgdir}"/usr/lib/systemd/user/dbus-org.bluez.obex.service
 
   # FS#74157 - bluez systemd service fails without localstatedir present
   install -dm700 "${pkgdir}"/var/lib/bluetooth
