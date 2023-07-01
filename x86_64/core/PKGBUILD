@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
 
 pkgname=bison
 pkgver=3.8.2
-pkgrel=5
+pkgrel=6
 pkgdesc="The GNU general-purpose parser generator"
 arch=('x86_64')
 license=('GPL3')
