@@ -192,5 +192,4 @@ package_percona-server() {
 
 	# not needed
 	rm -r usr/share/mysql-test
-	rm usr/share/doc/percona-server/mysql.info
 }
