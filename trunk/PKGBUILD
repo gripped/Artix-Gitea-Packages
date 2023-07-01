@@ -9,7 +9,7 @@ arch=('x86_64')
 url='http://www.sfml-dev.org/'
 license=('zlib')
 depends=('libsndfile' 'libxrandr' 'openal' 'glew' 'freetype2' 'libx11' 'libxcursor')
-makedepends=('mesa' 'cmake' 'doxygen' 'systemd' 'ninja')
+makedepends=('mesa' 'cmake' 'doxygen' 'udev' 'ninja')
 provides=('libsfml-window.so' 'libsfml-network.so' 'libsfml-system.so'
           'libsfml-audio.so' 'libsfml-graphics.so')
 source=(${pkgname}-${pkgver}.tar.gz::https://github.com/SFML/SFML/archive/${pkgver}.tar.gz)
