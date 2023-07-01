@@ -11,9 +11,9 @@ pkgdesc='Resolving DNS server'
 url='https://www.powerdns.com/'
 arch=('x86_64')
 license=('GPL2')
-depends=('gcc-libs' 'boost-libs' 'libcurl.so' 'libsodium' 'systemd-libs' 'luajit' 'openssl'
+depends=('gcc-libs' 'boost-libs' 'libcurl.so' 'libsodium' 'luajit' 'openssl'
          'libboost_context.so' 'fstrm' 'net-snmp')
-makedepends=('boost' 'pandoc' 'ragel' 'systemd')
+makedepends=('boost' 'pandoc' 'ragel')
 provides=('pdns-recursor')
 conflicts=('pdns-recursor')
 backup=('etc/powerdns/recursor.conf')
@@ -38,7 +38,7 @@ build() {
     --sysconfdir=/etc/powerdns \
     --disable-silent-rules \
     --enable-reproducible \
-    --enable-systemd \
+    --disable-systemd \
     --enable-dns-over-tls \
     --with-libsodium \
     --with-lua=luajit \
