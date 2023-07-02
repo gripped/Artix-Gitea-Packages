@@ -1,6 +1,6 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_ver=6.3.9
+_ver=6.4.1
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
@@ -43,7 +43,7 @@ validpgpkeys=(
   C7E7849466FE2358343588377258734B41C31549  # David Runge <dvzrv@archlinux.org>
 )
 b2sums=('SKIP'
-        '478832b53db85a3d3060f42ddbd3d9f0c1e8bb2568cb8e21d3106100041f9f58f18291506e1fba2fa87807ad6924f206ee82966eb91e7cea9526b99e1e781103')
+        'cc7951b7180f9c05592daa94668f35c4b4b02e72c01530706161b2acf69787b0530ad79751c9a2accf0ba5f57df9c611c50dba6d8b8312cbffbf272a359b7249')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -122,7 +122,7 @@ _package() {
   echo "$pkgbase" | install -Dm644 /dev/stdin "$modulesdir/pkgbase"
 
   echo "Installing modules..."
-  _make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
+  ZSTD_CLEVEL=19 _make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
   # remove build and source links
