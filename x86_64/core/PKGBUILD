@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ignacio Galmarino <igalmarino@gmail.com>
 
 pkgname=openresolv
-pkgver=3.13.1
+pkgver=3.13.2
 pkgrel=1
 pkgdesc="resolv.conf management framework (resolvconf)"
 url="https://roy.marples.name/projects/openresolv"
@@ -14,7 +14,7 @@ makedepends=(
   git
 )
 backup=(etc/resolvconf.conf)
-_commit=1afa8e2c1c7bdd5362afb2cc482e85fb01cf5f6d  # tags/v3.13.1^0
+_commit=867a412d63a28d2c4978e02fc44fb8013f46d356  # tags/v3.13.2^0
 source=("git+https://github.com/NetworkConfiguration/openresolv#commit=$_commit")
 b2sums=('SKIP')
 
