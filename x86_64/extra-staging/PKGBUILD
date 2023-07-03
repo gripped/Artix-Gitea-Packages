@@ -2,8 +2,8 @@
 # Contributor: Fabio 'Lolix' Loli <lolix@disroot.org> -> https://github.com/FabioLolix
 
 pkgname=strawberry
-pkgver=1.0.17
-pkgrel=4
+pkgver=1.0.18
+pkgrel=2
 pkgdesc='A music player aimed at audio enthusiasts and music collectors'
 arch=(x86_64)
 url='https://www.strawbs.org/'
@@ -13,17 +13,8 @@ makedepends=(cmake boost qt6-tools)
 optdepends=('gst-libav: additional codecs'
             'gst-plugins-bad: additional codecs'
             'gst-plugins-ugly: additional codecs')
-source=(https://github.com/strawberrymusicplayer/strawberry/releases/download/$pkgver/$pkgname-$pkgver.tar.xz
-        https://github.com/strawberrymusicplayer/strawberry/commit/58278ab1.patch
-        https://github.com/strawberrymusicplayer/strawberry/commit/b52ffd09.patch)
-sha256sums=('d5a4af4202813f5b5eb81c202ba632f964493cc381730e15ee3f6106321a714a'
-            '3ea7459c53c7eb5c76d1cc00de42807adf8d1da04355dca17ff2b451eb4b6a6e'
-            '94879d430714f6e89a2a8739de7d4bfb9eae8a524d00e7fa10d40e3db72eea53')
-
-prepare() {
-  patch -d $pkgname-$pkgver -p1 < 58278ab1.patch # Fix build with protobuf 23
-  patch -d $pkgname-$pkgver -p1 < b52ffd09.patch # Fix build with protobuf 23
-}
+source=(https://github.com/strawberrymusicplayer/strawberry/releases/download/$pkgver/$pkgname-$pkgver.tar.xz)
+sha256sums=('8687463b3c5c6d4344ab295ed0946b56d279b7e45875eb4fcca521ca1218c860')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
