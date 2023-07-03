@@ -14,10 +14,13 @@ source=(https://github.com/linuxmint/xdg-desktop-portal-xapp/archive/$pkgver/$pk
 sha256sums=('81143c43e4d69dc355e64b737d4de50b0a2b0ba05a2e51090c930b426b28b901')
 
 build() {
-  artix-meson $pkgname-$pkgver build
+  arch-meson -D systemduserunitdir=/usr/lib/systemd $pkgname-$pkgver build
   meson compile -C build
 }
-
+  
 package() {
   meson install -C build --destdir "$pkgdir"
-}
+
+  #remove systemd service
+  rm -r $pkgdir/usr/lib/systemd
+  }
