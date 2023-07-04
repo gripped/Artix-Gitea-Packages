@@ -26,7 +26,6 @@ prepare() {
 }
 
 build() {
-  export CFLAGS="/usr/include"
   cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
