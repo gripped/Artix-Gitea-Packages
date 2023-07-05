@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.19.3
+pkgver=1.19.4
 pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
 arch=(x86_64)
@@ -22,8 +23,8 @@ optdepends=(
 )
 checkdepends=(openssh)
 options=(!lto)
-_tag=8ceb78caad6c06fe66b27ca7c9b4144b3602e896 # git rev-parse v${pkgver}
-source=(git+https://github.com/go-gitea/gitea.git#tag=${_tag}
+_tag=844037d27055013f7cbda803adb2cb92f94a31c3 # git rev-parse v${pkgver}
+source=(git+https://github.com/go-gitea/gitea.git#tag=${_tag}?signed
         gitea.tmpfiles
         gitea.sysusers)
 sha256sums=('SKIP'
