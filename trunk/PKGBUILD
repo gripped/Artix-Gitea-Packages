@@ -5,7 +5,7 @@ pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=11.0.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('GPL')
 url='https://mariadb.org/'
@@ -19,11 +19,13 @@ validpgpkeys=('177F4010FE56CA3336300305F1656F24C74CD1D8') # MariaDB Signing Key 
 source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"{,.asc}
         'mariadb.sysusers.conf'
         'mariadb.tmpfiles.conf'
+        '0002-MDEV-31443-FATAL-InnoDB-Unable-to-find-charset-colla.patch'
         '0001-arch-specific.patch')
 sha256sums=('3c71576cad0ea416882270e383f94cc89693b7fbcce1fa4f306fe3e931e464ae'
             'SKIP'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
+            'e4ea86c72fe0258e442cc8a2dc6cf040696535e22d70be4cb63007130e39d222'
             '3289efb3452d199aec872115f35da3f1d6fd4ce774615076690e9bc8afae1460')
 
 prepare() {
@@ -34,6 +36,10 @@ prepare() {
   #  * force preloading jemalloc for memory management
   #  * make systemd-tmpfiles create MYSQL_DATADIR
   patch -Np1 < ../0001-arch-specific.patch
+
+  # MDEV-31443 assert [FATAL] InnoDB: Unable to find charset-collation for 254 after upgrade from 10.11.4 to 11.0
+  # https://jira.mariadb.org/browse/MDEV-31443
+  patch -Np1 < ../0002-MDEV-31443-FATAL-InnoDB-Unable-to-find-charset-colla.patch
 }
 
 build() {
@@ -41,6 +47,8 @@ build() {
     # build options
     -DCOMPILATION_COMMENT="Artix Linux"
     -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    #-DCMAKE_BUILD_TYPE=Debug
+    #-DMYSQL_MAINTAINER_MODE=WARN
     -Wno-dev
 
     # file paths
