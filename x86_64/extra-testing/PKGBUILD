@@ -74,6 +74,7 @@ build() {
     -D docs=true
     -D egl_device=true
     -D installed_tests=false
+    -D systemd=false
     -D wayland_eglstream=true
   )
 
