@@ -1,9 +1,9 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=appstream-glib
 pkgver=0.8.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Objects and methods for reading and writing AppStream metadata"
 url="https://people.freedesktop.org/~hughsient/appstream-glib/"
 arch=(x86_64)
@@ -11,7 +11,6 @@ license=(LGPL)
 depends=(
   curl
   gtk3
-  json-glib
   libstemmer
   libyaml
   pacman
@@ -29,7 +28,6 @@ provides=(
 )
 conflicts=(appdata-tools)
 replaces=(appdata-tools)
-options=(debug)
 _commit=02c8ad3b66075d9b2c9094dff816cd44839a4b45  # tags/appstream_glib_0_8_2^0
 source=("git+https://github.com/hughsie/appstream-glib#commit=$_commit")
 b2sums=('SKIP')
@@ -60,6 +58,7 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
+  rm -r "$pkgdir/usr/share/installed-tests"
 }
 
 # vim:set sw=2 sts=-1 et:
