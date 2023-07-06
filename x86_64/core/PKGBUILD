@@ -18,9 +18,9 @@ _GRUB_EMU_BUILD="0"
 pkgname='grub'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 epoch=2
-_commit='e67a551a48192a04ab705fca832d82f850162b64'
-_pkgver=2.06.r499.ge67a551a4
-_unifont_ver='15.0.01'
+_commit='6425c12cd77ad51ad24be84c092aefacf0875089'
+_pkgver=2.06.r591.g6425c12cd
+_unifont_ver='15.0.06'
 pkgver=${_pkgver/-/}
 pkgrel=1
 url='https://www.gnu.org/software/grub/'
@@ -36,10 +36,10 @@ replaces=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}")
 provides=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}")
 
 makedepends=('git' 'rsync' 'xz' 'freetype2' 'ttf-dejavu' 'python' 'autogen'
-             'texinfo' 'help2man' 'gettext' 'device-mapper' 'fuse2')
+             'texinfo' 'help2man' 'gettext' 'device-mapper' 'fuse3')
 depends=('sh' 'xz' 'gettext' 'device-mapper')
 optdepends=('freetype2: For grub-mkfont usage'
-            'fuse2: For grub-mount usage'
+            'fuse3: For grub-mount usage'
             'dosfstools: For grub-mkrescue FAT FS and EFI support'
             'lzop: For grub-mkrescue LZO support'
             'efibootmgr: For grub-install EFI support'
@@ -62,19 +62,19 @@ source=("git+https://git.savannah.gnu.org/git/grub.git#commit=${_commit}"
         "https://ftp.gnu.org/gnu/unifont/unifont-${_unifont_ver}/unifont-${_unifont_ver}.bdf.gz"{,.sig}
         '0001-00_header-add-GRUB_COLOR_-variables.patch'
         '0002-10_linux-detect-archlinux-initramfs.patch'
+        '0003-support-dropins-for-default-configuration.patch'
         'grub.default'
-        'update-grub'
         'sbat.csv')
 
 sha256sums=('SKIP'
             'SKIP'
-            '1fddba900a36b8a067bf2177b05c4a2482a0f7ca1545cf531c03509f47ce1590'
+            '93cb54fa103a00e25cd3e16550b4b4eb13cbd098e515679ade3ae82cd0739f29'
             'SKIP'
             '5dee6628c48eef79812bb9e86ee772068d85e7fcebbd2b2b8d1e19d24eda9dab'
             '8488aec30a93e8fe66c23ef8c23aefda39c38389530e9e73ba3fbcc8315d244d'
+            'b5d9fcd62ffb3c3950fdeb7089ec2dc2294ac52e9861980ad90a437dedbd3d47'
             '1a8dd1d80d0eb8db0db56719694e2e6eee96d42b3e2ccbe618320d7c12ccd65c'
-            '5900d115dc66dc591468c80c9fd230ecf1b576bdc76903eeaa647992e6bf80e7'
-            '4eb2fe01694ad444beacb1e4654abc83eccf94446f5bff665bfc445906f7b242')
+            '9b2cf848ba2784cffb63ed9d2906edece1d89cf3004132b3a4958cee7482af39')
 
 _backports=(
 )
@@ -129,6 +129,8 @@ prepare() {
 	echo "Patch to detect of Arch Linux initramfs images by grub-mkconfig..."
 	patch -Np1 -i "${srcdir}/0002-10_linux-detect-archlinux-initramfs.patch"
 
+	echo "Patch to support dropins for default configuration..."
+	patch -Np1 -i "${srcdir}/0003-support-dropins-for-default-configuration.patch"
 	echo "Fix DejaVuSans.ttf location so that grub-mkfont can create *.pf2 files for starfield theme..."
 	sed 's|/usr/share/fonts/dejavu|/usr/share/fonts/dejavu /usr/share/fonts/TTF|g' -i "configure.ac"
 
@@ -319,5 +321,9 @@ package() {
 	echo "Package grub bios stuff..."
 	_package_grub-common_and_bios
 
-	install -m0755 "${srcdir}"/update-grub "${pkgdir}"/usr/bin
+
+	install -m0755 /dev/stdin "${pkgdir}"/usr/bin/update-grub <<END
+#!/bin/sh
+grub-mkconfig -o /boot/grub/grub.cfg
+END
 }
