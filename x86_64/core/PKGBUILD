@@ -3,7 +3,7 @@
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=252.9
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -86,8 +86,8 @@ package_libelogind(){
     mv -v "${srcdir}"/_libelogind/include "${pkgdir}"/usr/
     mv -v "${srcdir}"/_libelogind/man3 "${pkgdir}"/usr/share/man
 
-    ln -sfv libelogind.so "${pkgdir}"/usr/lib/libsystemd.so
-    ln -sfv libsystemd.so "${pkgdir}"/usr/lib/libsystemd.so.0
-
-    ln -sfv libelogind.pc "${pkgdir}"/usr/lib/pkgconfig/libsystemd.pc
+#     ln -sfv libelogind.so "${pkgdir}"/usr/lib/libsystemd.so
+#     ln -sfv libsystemd.so "${pkgdir}"/usr/lib/libsystemd.so.0
+#
+#     ln -sfv libelogind.pc "${pkgdir}"/usr/lib/pkgconfig/libsystemd.pc
 }
