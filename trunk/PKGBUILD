@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
 # Contributor:Francois Menning <f.menning@pm.me>
 # Contributor: gilbus <aur(AT)tinkershell.eu>
 # Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgname=thermald
 _pkgname=thermal_daemon
-pkgver=2.5.2
+pkgver=2.5.3
 pkgrel=1
 pkgdesc='The Linux Thermal Daemon program from 01.org'
 arch=('x86_64')
@@ -14,7 +14,7 @@ license=('GPL2')
 depends=('dbus-glib' 'libxml2' 'libevdev' 'upower')
 makedepends=('autoconf-archive' 'python' 'gtk-doc')
 source=("https://github.com/intel/thermal_daemon/archive/v${pkgver}/${_pkgname}-${pkgver}.tar.gz")
-b2sums=('884fbfb440a0b5e9d1d12bfd7b9173fd79f68b46c499e341f0afdf3d312e10bcd5956b14de7c4c8c0b4db1bc7b675025e3b108bc27cc3cbf236212d0bd642508')
+b2sums=('bfdd297ff703588433d749bb64d0a0cd803b54192e3ee87449433ba89b726836f4050bbb87b7233fe4519686fdbd9bd23408bbeb6a5c31bfdd8b07aa9b723a47')
 
 build() {
   cd ${_pkgname}-${pkgver}
