@@ -16,9 +16,9 @@ source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pk
         https://download.geonames.org/export/dump/admin1CodesASCII.txt
         https://download.geonames.org/export/dump/admin2Codes.txt)
 sha256sums=('09a5fdadeb3bd94ab5039a63fef6d47c534ec586f41af2517a389792e475e6d8'
-            'SKIP',
-            'SKIP',
-            'SKIP',
+            'SKIP'
+            'SKIP'
+            'SKIP'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
