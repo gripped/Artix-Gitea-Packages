@@ -3,7 +3,7 @@
 _pkgname=elogind
 pkgname=lib32-elogind
 pkgver=252.9
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package (32-bit)"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -52,7 +52,7 @@ check(){
 package() {
     DESTDIR="$pkgdir" ninja -C build install
 
-    ln -sfv libelogind.pc "${pkgdir}"/usr/lib32/pkgconfig/libsystemd.pc
+#     ln -sfv libelogind.pc "${pkgdir}"/usr/lib32/pkgconfig/libsystemd.pc
 
     rm -rf "${pkgdir}"/{etc,var}
     rm -rf "${pkgdir}"/usr/{bin,include,lib,share}
