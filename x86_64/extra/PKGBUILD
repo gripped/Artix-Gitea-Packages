@@ -8,7 +8,7 @@ pkgname=(
   gnome-desktop-4
 )
 pkgver=44.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Library with common API for various GNOME modules"
 url="https://gitlab.gnome.org/GNOME/gnome-desktop"
@@ -52,6 +52,7 @@ build() {
   local meson_options=(
     -D debug_tools=false
     -D gtk_doc=true
+    -D systemd=disabled
   )
 
   artix-meson $pkgbase build "${meson_options[@]}"
