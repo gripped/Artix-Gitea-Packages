@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.4.1.zen2
+pkgver=6.4.2.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 _srctag=v${pkgver%.*}-${pkgver##*.}
@@ -38,7 +38,7 @@ validpgpkeys=(
   C5ADB4F3FEBBCE27A3E54D7D9AE4078033F8024D  # Steven Barrett <steven@liquorix.net>
 )
 b2sums=('SKIP'
-        'f5d18ba8e9aa9f2a9f1d4870d5c8307982d223e5246929887852ca1e52df9d6e92386f3cf7021d84841468bf61cdc50fdf031ef9427c8cf0eabd0b0e7203e25a')
+        '06edb934b98208531638787c65c04d3af69be09a49cbd2039e37d37de975348c03eef028072cf73c3fb28c83d57aa4e2127704f6916801ff2b2c58747e099ca1')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -78,7 +78,8 @@ prepare() {
 
 build() {
   cd $_srcname
-  _make htmldocs all
+  _make all
+  _make htmldocs
 }
 
 _package() {
