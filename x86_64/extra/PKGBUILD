@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=pandoc-bin
-pkgver=3.1.3
+pkgver=3.1.5
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
@@ -14,8 +14,8 @@ replaces=('pandoc-static' 'pandoc-lite' "pandoc")
 source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz")
 source_x86_64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
 
-sha512sums=('312f4bd82895c89203e2537163f7e5a71fea3a2ee25ca5cdc94bac7b8c8b9561f8a1a1343fb6a0476e4e64969036e652e0f8f3839e5b2fcd391ea2dae50c0265')
-sha512sums_x86_64=('f97e62154ceeaf47c6bc2b8c28008ff4a30392b9162b387e4181097c359d0244b8c6435c88fcd587eb210612fb274d639bb2058bc565a8400c2fb6cdeda45b8a')
+sha512sums=('e1f615d65f74fa42223c3233478c13bdd04a4d9e28510084f4e966081508beb97b6b3e83e2eda8acfecae0660dffeb209e413f7258a08d7d7bfc367cba350105')
+sha512sums_x86_64=('97454c530e7fa95bc4cda90ff803422850d620c7f6452be855b9198fc71832ef2531f2350044b110b36804f745ca90c44ffb4f2013bee78fdc935f810b55ed41')
 
 package() {
   cd "${srcdir}/pandoc-${pkgver}"
