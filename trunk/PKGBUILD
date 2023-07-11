@@ -139,7 +139,8 @@ build() {
   # Build only minimal debug info to reduce size
   CFLAGS+=' -g1'
   CXXFLAGS+=' -g1'
-
+  export CMAKE_PREFIX_PATH="/usr"
+  export CMAKE_INSTALL_LIBDIR="/usr"
   artix-meson mesa-$pkgver build "${meson_options[@]}"
   meson configure build # Print config
   meson compile -C build
