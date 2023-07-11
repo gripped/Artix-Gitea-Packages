@@ -1,20 +1,21 @@
+# Maintainer: artoo <artoo@artixlinux.org>
+
 pkgname=pandoc-bin
-pkgver=2.18
+pkgver=3.1.3
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
 license=("GPL2")
 arch=('x86_64')
 provides=("pandoc")
-optdepends=('texlive-core: for pdf output')
 conflicts=("pandoc")
-replaces=('pandoc-static' 'pandoc-lite')
+replaces=('pandoc-static' 'pandoc-lite' "pandoc")
 # The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
 source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz")
 source_x86_64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
-#source_aarch64=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-arm64.tar.gz")
-sha512sums=('44f0d51a37943057385009291315de603f10a8d094fd36146ddc42fd2937413500b77e2df13d4d9d1c6b1a333895887983d3620f5ad2adfbc3b6d681920dee40')
-sha512sums_x86_64=('ec0285e9a1640e7594d5bdca3fcdc738b2139e20f4a4f75b0f49ff76d2d2f5a0e8b90912e63a93e787c57f18eb3d155f214f088e55b435ef03acb8cfbf92272b')
+
+sha512sums=('312f4bd82895c89203e2537163f7e5a71fea3a2ee25ca5cdc94bac7b8c8b9561f8a1a1343fb6a0476e4e64969036e652e0f8f3839e5b2fcd391ea2dae50c0265')
+sha512sums_x86_64=('f97e62154ceeaf47c6bc2b8c28008ff4a30392b9162b387e4181097c359d0244b8c6435c88fcd587eb210612fb274d639bb2058bc565a8400c2fb6cdeda45b8a')
 
 package() {
   cd "${srcdir}/pandoc-${pkgver}"
@@ -28,4 +29,3 @@ package() {
   cp -R data "${pkgdir}/usr/share/pandoc/"
   cp COPYRIGHT MANUAL.txt "${pkgdir}/usr/share/pandoc/"
 }
-
