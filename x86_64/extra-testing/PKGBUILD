@@ -102,8 +102,8 @@ _libdir=usr/lib
 build() {
   local meson_options=(
     --libdir=/$_libdir
-    -D c_args=-I/usr/lib/clang/15.0.7/include
-    -D cpp_args=-I/usr/lib/clang/15.0.7/include
+    -D c_args=-I/usr/include,-I/usr/lib/clang/15.0.7/include
+    -D cpp_args=-I/usr/include,-I/usr/lib/clang/15.0.7/include
     -D android-libbacktrace=disabled
     -D b_ndebug=true
     -D dri3=enabled
