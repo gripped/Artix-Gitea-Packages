@@ -6,7 +6,8 @@
 pkgbase=mesa
 pkgname=(
   'vulkan-mesa-layers'
-  'opencl-mesa'
+  'opencl-clover-mesa'
+  'opencl-rusticl-mesa'
   'vulkan-intel'
   'vulkan-radeon'
   'vulkan-swrast'
@@ -16,7 +17,7 @@ pkgname=(
   'mesa'
 )
 pkgver=23.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc="An open-source implementation of the OpenGL specification"
 url="https://www.mesa3d.org/"
 arch=('x86_64')
@@ -73,13 +74,16 @@ makedepends=(
 )
 source=(
   https://mesa.freedesktop.org/archive/mesa-${pkgver}.tar.xz{,.sig}
+  clang_resource_dir.patch
   LICENSE
 )
 sha256sums=('2f6d7381bc10fbd2d6263ad1022785b8b511046c1a904162f8f7da18eea8aed9'
             'SKIP'
+            '9ed89eee34f69d57d37bad3eb061d313a0433a22be4b6e8f82949e86592aee7d'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537')
 b2sums=('99ce2a458c049b60cf13278d5e2e04d9eebefe04d5cbfcba7ff13421724bfd7877ec24086e513d249f1e7b1d537acea90e2ae53d71ef420213a5764ce61d8c4f'
         'SKIP'
+        '40cf2bc3381d5318c95d3fdadef1bdb6bb57f3b04270e07c0a66613b6432ad617be73d34122be3280d861dde0663fc5c96bb37a9312c2e333e39e69287a9e33a'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb')
 validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l.velikov@gmail.com>
               '946D09B5E4C9845E63075FF1D961C596A7203456'  # Andres Gomez <tanty@igalia.com>
@@ -90,8 +94,7 @@ validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l
 
 prepare() {
   cd mesa-$pkgver
-  cp /usr/lib/clang/15.0.7/include/opencl-c.h src/intel/vulkan/grl/include
-  cp /usr/lib/clang/15.0.7/include/opencl-c-base.h src/intel/vulkan/grl/include
+  patch -Np1 -i ../clang_resource_dir.patch
 }
 
 _libdir=usr/lib
@@ -99,6 +102,8 @@ _libdir=usr/lib
 build() {
   local meson_options=(
     --libdir=/$_libdir
+    -D c_args=-I/usr/include,-I/usr/lib/clang/15.0.7/include
+    -D cpp_args=-I/usr/include,-I/usr/lib/clang/15.0.7/include
     -D android-libbacktrace=disabled
     -D b_ndebug=true
     -D dri3=enabled
@@ -131,11 +136,11 @@ build() {
     -D vulkan-drivers=amd,intel,intel_hasvk,swrast,virtio-experimental
     -D vulkan-layers=device-select,intel-nullhw,overlay
   )
-
   # Build only minimal debug info to reduce size
   CFLAGS+=' -g1'
   CXXFLAGS+=' -g1'
-
+  export CMAKE_PREFIX_PATH="/usr"
+  export CMAKE_INSTALL_LIBDIR="/usr"
   artix-meson mesa-$pkgver build "${meson_options[@]}"
   meson configure build # Print config
   meson compile -C build
@@ -175,8 +180,8 @@ package_vulkan-mesa-layers() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_opencl-mesa() {
-  pkgdesc="OpenCL support with clover and rusticl for mesa drivers"
+package_opencl-clover-mesa() {
+  pkgdesc="OpenCL support with clover for mesa drivers"
   depends=(
     'clang'
     'expat'
@@ -189,10 +194,35 @@ package_opencl-mesa() {
   )
   optdepends=('opencl-headers: headers necessary for OpenCL development')
   provides=('opencl-driver')
+  replaces=("mesa-opencl<=23.1.3-1")
+  conflicts=('opencl-mesa')
 
-  _install fakeinstall/etc/OpenCL
-  _install fakeinstall/$_libdir/lib*OpenCL*
+  _install fakeinstall/etc/OpenCL/vendors/mesa.icd
+  _install fakeinstall/$_libdir/libMesaOpenCL*
   _install fakeinstall/$_libdir/gallium-pipe
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_opencl-rusticl-mesa() {
+  pkgdesc="OpenCL support with rusticl for mesa drivers"
+  depends=(
+    'clang'
+    'expat'
+    'libdrm'
+    'libelf'
+    'zstd'
+
+    'libclc'
+    'spirv-llvm-translator'
+  )
+  optdepends=('opencl-headers: headers necessary for OpenCL development')
+  provides=('opencl-driver')
+  replaces=("mesa-opencl<=23.1.3-1")
+  conflicts=('opencl-mesa')
+
+  _install fakeinstall/etc/OpenCL/vendors/rusticl.icd
+  _install fakeinstall/$_libdir/libRusticlOpenCL*
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
