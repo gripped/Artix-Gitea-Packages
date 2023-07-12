@@ -9,7 +9,7 @@ pkgbase=thunderbird
 pkgname=(thunderbird)
 _release=115.0
 pkgver=115.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.mozilla.org/thunderbird/'
 arch=(x86_64)
@@ -57,6 +57,9 @@ prepare() {
   done
   sed -e 's|73114a5c28472e77082ad259113ffafb418ed602c1741f26da3e10278b0bf93e|a88d6cc10ec1322b53a8f4c782b5133135ace0fdfcf03d1624b768788e17be0f|' \
     -i third_party/rust/mp4parse/.cargo-checksum.json
+
+  # Make icon transparent
+  sed -i '/^<rect/d' comm/mail/branding/thunderbird/TB-symbolic.svg
 
   cp ../mozconfig.cfg .mozconfig
   sed "s|@PWD@|${PWD@Q}|g" -i .mozconfig
