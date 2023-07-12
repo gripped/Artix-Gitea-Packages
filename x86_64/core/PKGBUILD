@@ -5,7 +5,7 @@
 
 pkgname=pacman
 pkgver=6.0.2
-pkgrel=7
+pkgrel=7.1
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
@@ -28,7 +28,8 @@ source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.xz{,.sig
         pacman-fix-unique-source-paths.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/478af273dfe24ded197ec54ae977ddc3719d74a0.patch
         pacman-strip-include-o-files-similar-to-kernel-modules.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/de11824527ec4e2561e161ac40a5714ec943543c.patch
         pacman.conf
-        makepkg.conf)
+        makepkg.conf
+        repo-remove-r.patch)
 sha256sums=('7d8e3e8c5121aec0965df71f59bedf46052c6cf14f96365c4411ec3de0a4c1a5'
             'SKIP'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
@@ -37,7 +38,8 @@ sha256sums=('7d8e3e8c5121aec0965df71f59bedf46052c6cf14f96365c4411ec3de0a4c1a5'
             'f3d4f39ef24e312f610cbb3439fb02bc6b8829e37bcf1a50ae50cd0a69bde5d0'
             'd87d0c9957c613fda272553bee58140349d151ae399f346ddaf6d75ee5916312'
             '74e3676a824d7dd55e85fc5e6c28733b4d03538cd539849b98fcd280cbfb3289'
-            '072020e34f2c55b94a9a486829a7eadab0a830ddb4d8e759b0c4e6cf1bde73a6')
+            '072020e34f2c55b94a9a486829a7eadab0a830ddb4d8e759b0c4e6cf1bde73a6'
+            '616942bf95e3fdc0426acb0dc1cea5ebcb7cca56a7536b358576b0cfc04f0ed6')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
