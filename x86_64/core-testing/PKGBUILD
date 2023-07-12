@@ -2,7 +2,7 @@
 # Contributor:  Adrian Bacircea <adrian.bacircea@gmail.com>
 
 pkgname=libbpf
-pkgver=1.2.1
+pkgver=1.2.2
 pkgrel=1
 pkgdesc='Library for loading eBPF programs and reading and manipulating eBPF objects from user-space'
 url='https://github.com/libbpf/libbpf'
@@ -12,8 +12,8 @@ depends=('glibc' 'libelf' 'linux-api-headers')
 makedepends=('rsync')
 provides=('libbpf.so')
 source=(https://github.com/libbpf/libbpf/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('080103800808a16cab99c445add50af2656584776b360d90a8d3abbf44bcde55b64f8ff36a2577a13918375b578ca474740f333c860962fb98957d67f0ae83d9')
-b2sums=('fa384675be2d24f284d8384d23a395e9106d9f0456a9c34608bcc57b990addc85708b1aa17102044c03a0458949e494865316babc0d7e496d8ce902abf64a072')
+sha512sums=('bc7620207e6f521b9b5baab00bd81346084b8eabf81bff3ec24e5367d389f2a331a0b082798f8bb5d4fea836c3c0cc961fc881abc3a4e05d91152150bdfe47be')
+b2sums=('45a2ceabd38b3ea55f466de68d0806df6ae802b509063ca12d670ba972bac3dc5c7e518e8c9904915dbc9877c27ea892a7b857aa03d4e86016969b2d278b0b4a')
 
 build() {
   cd ${pkgname}-${pkgver}
