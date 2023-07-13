@@ -9,7 +9,7 @@ pkgbase=thunderbird
 pkgname=(thunderbird)
 _release=115.0
 pkgver=115.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.mozilla.org/thunderbird/'
 arch=(x86_64)
@@ -19,9 +19,9 @@ depends=(
   alsa-lib nss hunspell sqlite ttf-font libvpx libvpx.so zlib bzip2 libbz2.so
   botan2 libwebp libwebp.so libwebpdemux.so libevent libjpeg-turbo libffi
   libffi.so nspr gcc-libs libx11 libxrender libxfixes libxext libxcomposite
-  libxdamage pango libpango-1.0.so cairo gdk-pixbuf2 icu libicui18n.so
-  libicuuc.so freetype2 libfreetype.so fontconfig libfontconfig.so glib2
-  libglib-2.0.so pixman libpixman-1.so gnupg json-c libcanberra
+  libxdamage pango libpango-1.0.so cairo gdk-pixbuf2 freetype2 libfreetype.so 
+  fontconfig libfontconfig.so glib2 libglib-2.0.so pixman libpixman-1.so 
+  gnupg json-c libcanberra ffmpeg
 )
 makedepends=(
   unzip zip diffutils python nasm mesa libpulse libice libsm
@@ -81,6 +81,7 @@ build() {
 
 package_thunderbird() {
   optdepends=(
+    'hunspell-en_us: Spell checking, American English'
     'libotr: OTR support for active one-to-one chats'
     'libnotify: Notification integration'
   )
