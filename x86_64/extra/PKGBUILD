@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=pacman-contrib
-pkgver=1.9.0
+pkgver=1.9.1
 pkgrel=1
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=('x86_64')
@@ -15,7 +15,7 @@ optdepends=('diffutils: for pacdiff'
             'mlocate: for pacdiff --locate'
             'sudo: privilege elevation for several scripts'
             'vim: default merge program for pacdiff')
-source=("git+$url.git"
+source=("git+$url.git#tag=v$pkgver"
         rankmirrors-artix.patch)
 b2sums=('SKIP'
         'ca5d31cdd7a386241ba75a67e517bbd087f77f8740f0d7b5b53b26e2418516e395f01b7b43d09fff2430d214387e8386db679dfd2b226b1403d02135d349e469')
