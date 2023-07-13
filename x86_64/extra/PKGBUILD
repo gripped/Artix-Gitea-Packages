@@ -13,110 +13,59 @@ pkgdesc="Software system for 3D computer graphics, image processing, and visuali
 arch=(x86_64)
 url="https://www.vtk.org/"
 license=(BSD)
-depends=(
-  double-conversion
-  gcc-libs
-  glibc
-  libtiff
-  onetbb
-  pugixml
-)
-makedepends=(
-  adios2
-  boost
-  cgns
-  cli11
-  cmake
-  doxygen
-  eigen
-  expat
-  ffmpeg
-  fmt
-  freetype2
-  gdal
-  git
-  gl2ps
-  glew
-  gnuplot
-  hdf5
-  java-environment=11
-  jsoncpp
-  libharu
-  libjpeg
-  liblas
-  libogg
-  libpng
-  libtheora
-  libxml2
-  libxt
-  lz4
-  mariadb-libs
-  netcdf
-  openimagedenoise
-  openmp
-  openmpi
-  openvdb
-  openvr
-  openxr
-  ospray
-  pdal
-  postgresql-libs
-  proj
-  python-matplotlib
-  python-mpi4py
-  qt5-base
-  qt5-tools
-  qt5-declarative
-  rapidjson
-  sqlite
-  tk
-  unixodbc
-  utf8cpp
-  verdict
-  wget
-  xz
-  zfp
-  zlib
-)
+depends=(gcc-libs double-conversion pugixml tbb libtiff)
+makedepends=(adios2 cmake boost doxygen ffmpeg gdal git gnuplot java-environment=11
+             liblas libxt mariadb-libs openimagedenoise openmp openmpi openvdb
+             openvr ospray pdal postgresql-libs python-matplotlib qt5-base
+             qt5-tools qt5-declarative tk unixodbc wget
+             cgns cli11 eigen expat fmt freetype2 gl2ps glew hdf5 libjpeg
+             jsoncpp libjsoncpp.so libharu proj libxml2 lz4 xz python-mpi4py
+             netcdf libogg libpng rapidjson sqlite libtheora utf8cpp zfp zlib openxr verdict)
 # pegtl: https://gitlab.kitware.com/vtk/vtk/-/issues/18151
 # exprtk, ioss: not packaged
-optdepends=(
-  adios2
-  cgns
-  ffmpeg
-  fmt
-  gdal
-  gl2ps
-  glew
-  'gnuplot: plotting tools'
-  'graphviz: drawing tools'
+optdepends=('gnuplot: plotting tools'
+            'graphviz: drawing tools'
+            'java-runtime=11: java bindings'
+            'python: python bindings'
+            'python-mpi4py: OpenMPI python support'
+            'python-matplotlib: for Matplotlib rendering'
+            'openmpi: OpenMPI support'
+            'qt5-declarative: QML plugin'
+            'tk: tcl bindings'
+            adios2
+            cgns
+            ffmpeg
+            fmt
+            gdal
+            gl2ps
+            glew
+  hdf5
   hdf5
   'java-runtime=11: java bindings'
-  jsoncpp
-  libarchive
-  libharu
-  liblas
-  lz4
-  mariadb-libs
-  netcdf
-  openimagedenoise
-  'openmpi: OpenMPI support'
-  openvdb
-  openvr
-  openxr
-  ospray
-  pdal
-  postgresql-libs
-  proj
-  'python: python bindings'
-  'python-matplotlib: for Matplotlib rendering'
-  'python-mpi4py: OpenMPI python support'
-  'qt5-declarative: QML plugin'
+            hdf5
+  'java-runtime=11: java bindings'
+            jsoncpp
+            libarchive
+            libharu
+            liblas
+            lz4
+            mariadb-libs
+            netcdf
+            openimagedenoise
+            openvdb
+            openvr
+            openxr
+            ospray
+            pdal
+            postgresql-libs
+            proj
+  sqlite
   sqlite
   'tk: tcl bindings'
-  unixodbc
-  verdict
-)
+            sqlite
+  'tk: tcl bindings'
+            unixodbc
+            verdict)
 options=(staticlibs)
 source=(${url}/files/release/${pkgver%.*}/VTK-${pkgver}.tar.gz
         https://github.com/Kitware/VTK/commit/1233ceec.patch
@@ -140,6 +89,7 @@ build() {
   # To set tcl lib path
   local _tkver=$(echo 'puts $tcl_version' | tclsh)
   cmake -B build -S ${pkgname^^}-${pkgver} \
+    -DCMAKE_PREFIX_PATH=/usr \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_CXX_FLAGS="$CXXFLAGS -ffat-lto-objects" \
     -DCMAKE_INSTALL_PREFIX=/usr \
