@@ -9,19 +9,50 @@ pkgbase=thunderbird
 pkgname=(thunderbird)
 _release=115.0
 pkgver=115.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Standalone mail and news reader from mozilla.org'
-url='https://www.mozilla.org/thunderbird/'
+url='https://www.thunderbird.net/'
 arch=(x86_64)
 license=(MPL GPL LGPL)
 depends=(
-  glibc gtk3 libgdk-3.so libgtk-3.so mime-types dbus libdbus-1.so dbus-glib
-  alsa-lib nss hunspell sqlite ttf-font libvpx libvpx.so zlib bzip2 libbz2.so
-  botan2 libwebp libwebp.so libwebpdemux.so libevent libjpeg-turbo libffi
-  libffi.so nspr gcc-libs libx11 libxrender libxfixes libxext libxcomposite
-  libxdamage pango libpango-1.0.so cairo gdk-pixbuf2 freetype2 libfreetype.so 
-  fontconfig libfontconfig.so glib2 libglib-2.0.so pixman libpixman-1.so 
-  gnupg json-c libcanberra ffmpeg
+  glibc
+  gtk3 libgdk-3.so libgtk-3.so
+  mime-types
+  dbus libdbus-1.so
+  dbus-glib
+  alsa-lib
+  nss
+  hunspell
+  sqlite
+  ttf-font
+  libvpx libvpx.so
+  zlib
+  bzip2 libbz2.so
+  botan2
+  libwebp libwebp.so libwebpdemux.so
+  libevent
+  libjpeg-turbo
+  libffi libffi.so
+  nspr
+  gcc-libs
+  libx11
+  libxrender
+  libxfixes
+  libxext
+  libxcomposite
+  libxdamage
+  pango libpango-1.0.so
+  cairo
+  gdk-pixbuf2
+  freetype2 libfreetype.so
+  fontconfig libfontconfig.so
+  glib2 libglib-2.0.so
+  pixman libpixman-1.so
+  gnupg
+  json-c
+  libcanberra
+  ffmpeg
+  icu libicui18n.so libicuuc.so
 )
 makedepends=(
   unzip zip diffutils python nasm mesa libpulse libice libsm
