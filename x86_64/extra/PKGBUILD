@@ -4,7 +4,7 @@
 pkgname=qt5-declarative
 _basever=5.15.10
 pkgver=5.15.10+kde+r29
-pkgrel=1
+pkgrel=1.1
 _commit=3e98cdb2780d052fce3d7a3694596a690cd76aca
 arch=('x86_64')
 url='https://www.qt.io'
