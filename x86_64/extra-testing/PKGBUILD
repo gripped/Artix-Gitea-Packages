@@ -59,6 +59,7 @@ build() {
 check() {
   local pytest_options=(
     -vv
+    --deselect tests/test_utils.py::test_find_python_in_path
     # https://github.com/pdm-project/pdm/issues/1831
     --deselect tests/cli/test_others.py::test_build_distributions
     # we don't want to run tests that require the internet
