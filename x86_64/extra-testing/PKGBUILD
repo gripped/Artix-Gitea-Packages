@@ -34,7 +34,6 @@ build() {
 	cd "$pkgname-$pkgver"
 	cmake -D CMAKE_BUILD_TYPE="MinSizeRel" \
 		-D CMAKE_INSTALL_PREFIX="/usr" \
-		-D ENABLE_TESTS=1 \
 		.
 	make
 }
