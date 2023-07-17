@@ -5,7 +5,7 @@
 pkgname=matrix-synapse
 _tag=77465956405ddc71c6ff0efdf96613f1432c7e47
 pkgver=1.86.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/matrix-org/synapse"
 arch=('x86_64')
