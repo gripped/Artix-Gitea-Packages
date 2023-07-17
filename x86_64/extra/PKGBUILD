@@ -2,8 +2,8 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt-lts
-pkgver=6.1.33.11.realtime1
-pkgrel=1
+pkgver=6.1.38.12.realtime1
+pkgrel=2
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/commits/v$pkgver"
@@ -26,9 +26,9 @@ source=(
   config
 )
 sha512sums=('SKIP'
-            'cb32811ac51088c9dd4b8117538e307c38dfd21d567780904bc171ffaf59fadaba60d3786736ff86a3faee95e611a4a90c2f23468f193eb6083e3fd35bbf0197')
+            '2d509753b9313af638d43b9d0d3ecd04a9f2ca94d05d8787d497cff4b55afc8ae78254107db1947c00e78868a2efdb5fd8240fed53e44cdc097fd61854315258')
 b2sums=('SKIP'
-        '94c8c6ecdfe3669e8465fb94e4dd98e9bd9c7be5d823199cfa40b2b679a407651c53dca932c5e1dfdfbd9e733906e9279513156d3dd4c0b7b3c7f8cc9679f7f0')
+        '63b6f1a8e4724cc50c22b1523bf4845b89b094499523d1cf26159f9124a6ef4a56dd099307925f19b2add663edc0570d9a2910c913eec1fc08ceb2d9c9b7fcaa')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
   '5ED9A48FC54C0A22D1D0804CEBC26CDB5A56DE73'  # Steven Rostedt (Der Hacker) <rostedt@goodmis.org>
