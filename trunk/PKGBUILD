@@ -1,6 +1,6 @@
-# Maintainer: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
-# Contributor: artoo <artoo@artixlinux.org>
+# Maintainer: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
+# Contributor: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
 
 pkgname=jenkins-openrc
 pkgver=20230718
