@@ -1,7 +1,7 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=libplacebo
-pkgver=6.292.0
+pkgver=5.264.1
 pkgrel=1
 pkgdesc='Reusable library for GPU-accelerated video/image rendering primitives'
 url='https://github.com/haasn/libplacebo'
@@ -15,8 +15,8 @@ makedepends=(
 )
 provides=('libplacebo.so')
 source=(https://code.videolan.org/videolan/libplacebo/-/archive/v${pkgver}/libplacebo-v${pkgver}.tar.gz)
-sha512sums=('70ddd8b0b1f90b1409a0a145c165c4c05cfd779b50fb785eeaca2610f8836c13c1f9606f4491a2f28197429a062317a0cc8da26cd648679f667671df3db5f9ac')
-b2sums=('7f8da813d65305438a748da4acb2ff4a66ce3f37e4d5ab4e830df6761fb24c5587e2695d5632ed6d463658f5066ffbe7331b13240898bc83100b1aa200d03f20')
+sha512sums=('305f43b71f078f4113def43c444df667dfbdd2a6a34d3b457b15da0b3499ca97ec9a8acbd151d58c8e1a593ace3d8aa61067b32556c6bae451efbb217d60a731')
+b2sums=('421de50ef5e2270e3ba32dd85d92d816a374257442b535face6cb8501d565652aae530b86a7d717c9352c6a82ca665ff7d91c2d9768365780cbbe4f48d1d3276')
 
 build() {
   cd ${pkgbase}-v${pkgver}
