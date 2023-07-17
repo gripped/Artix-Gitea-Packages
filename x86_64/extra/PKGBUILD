@@ -10,7 +10,7 @@ for _coll in ${_collections[@]}; do
 done
 _rev=66594
 pkgver=2023.$_rev
-pkgrel=15
+pkgrel=16
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
@@ -78,6 +78,8 @@ prepare() {
         _split=`sed -e "0,/^name ${_pkg}$/d;/^$/Q" tlpkg/texlive.tlpdb`
         _files=`echo "$_split" | sed -e "0,/^runfiles/d;/^[a-z]/Q" | grep texmf-dist` || true
         for _file in $_files; do
+          # some modules include docs in runfiles
+          [[ $_file == texmf-dist/doc/* ]] && continue
           mkdir -p texlive-$_coll/$(dirname $_file)
           mv $_file texlive-$_coll/$(dirname $_file)
         done
@@ -175,8 +177,6 @@ _package() {
 
   mkdir -p "$pkgdir"/usr/share
   mv texlive-$1/texmf-dist "$pkgdir"/usr/share
-# some modules wrongly include docs in runfiles
-  rm -fr "$pkgdir"/usr/share/texmf-dist/doc
   
   [[ -d $1-bin ]] && mv $1-bin "$pkgdir"/usr/bin
 
@@ -248,9 +248,8 @@ done
 package_texlive-doc() {
   pkgdesc+='documentation'
 
-# Remove man and info pages, provided by texlive-bin
-  rm -r texmf-dist/doc/{info,man}
   mkdir -p "$pkgdir"/usr/share/doc
+  mv texmf-dist/doc/{info,man} "$pkgdir"/usr/share
   mv texmf-dist/doc "$pkgdir"/usr/share/doc/texlive
 # Symlink so texdoc can find it
   mkdir -p "$pkgdir"/usr/share/texmf-dist
