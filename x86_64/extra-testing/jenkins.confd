@@ -1,9 +1,10 @@
 # Config file for /etc/init.d/jenkins
 
 #
-# Java
+# Java binary
 #
-JAVA=/usr/lib/jvm/java-17-openjdk/jre/bin/java
+
+JAVA=/usr/lib/jvm/java-17-openjdk/bin/java
 
 #
 # Directory where Jenkins store its configuration and working
