@@ -6,13 +6,13 @@
 
 pkgname=jenkins
 pkgver=2.415
-pkgrel=1
+pkgrel=3
 _java=17
 pkgdesc='Extendable continuous integration server (latest)'
 arch=('any')
 url='https://jenkins.io'
 license=('MIT')
-depends=("java-runtime=${_java}" 'ttf-dejavu')
+depends=("java-runtime=${_java}" 'ttf-dejavu' 'fontconfig')
 makedepends=("java-environment=${_java}" 'git' 'maven')
 provides=('jenkins-ci')
 conflicts=('jenkins-ci')
