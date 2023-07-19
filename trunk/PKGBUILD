@@ -3,7 +3,7 @@
 
 pkgname=libarchive
 pkgver=3.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Multi-format archive and compression library'
 arch=('x86_64')
 url='https://libarchive.org/'
@@ -38,7 +38,5 @@ package() {
   cd "${pkgname}-${pkgver}"
 
   make DESTDIR="$pkgdir" install
-  # TODO: remove with next release
-  sed -i "s/iconv //" "$pkgdir"/usr/lib/pkgconfig/libarchive.pc
   install -Dm0644 COPYING "$pkgdir/usr/share/licenses/libarchive/COPYING"
 }
