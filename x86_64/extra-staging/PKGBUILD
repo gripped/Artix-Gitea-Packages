@@ -6,7 +6,7 @@ pkgname=intel-graphics-compiler
 pkgver=1.0.14062.11
 _llvmmaj=14
 _llvmver="${_llvmmaj}.0.5"
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='Intel Graphics Compiler for OpenCL'
 arch=('x86_64')
@@ -35,7 +35,13 @@ prepare() {
 }
 
 build() {
+    # Prevent IGC to load LLVM 15 symbols
+    CFLAGS+=" -fno-semantic-interposition"
+    CXXFLAGS+=" -fno-semantic-interposition"
+    LDFLAGS+=" -Wl,-Bsymbolic"
+
     CXXFLAGS+=" -I $srcdir/SPIRV-LLVM-Translator/include"
+
     EMAIL='builduser@archlinux.org' \
     cmake -B build -S "${pkgname}-igc-${pkgver}" \
         -G Ninja \
@@ -43,8 +49,8 @@ build() {
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib \
         -DIGC_OPTION__ARCHITECTURE_TARGET=Linux64 \
-	-DIGC_OPTION__SPIRV_TOOLS_MODE=Prebuilds \
-	-DIGC_OPTION__USE_PREINSTALLED_SPIRV_HEADERS=ON \
+        -DIGC_OPTION__SPIRV_TOOLS_MODE=Prebuilds \
+        -DIGC_OPTION__USE_PREINSTALLED_SPIRV_HEADERS=ON \
         -DIGC_OPTION__CLANG_MODE=Source \
         -DIGC_OPTION__LLD_MODE=Source \
         -DIGC_OPTION__LLVM_PREFERRED_VERSION="${_llvmver}" \
