@@ -8,7 +8,7 @@ pkgname=(
   lib32-librsvg
 )
 pkgver=2.56.3
-pkgrel=1
+pkgrel=1.1
 epoch=2
 pkgdesc="SVG rendering library (32-bit)"
 url="https://wiki.gnome.org/Projects/LibRsvg"
