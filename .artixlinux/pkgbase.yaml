@@ -1,0 +1,68 @@
+---
+pkgbase:
+  name: pulseaudio
+  version: 16.1-6
+  arch:
+    - x86_64
+  pkgname:
+    - pulseaudio
+    - libpulse
+    - pulseaudio-zeroconf
+    - pulseaudio-lirc
+    - pulseaudio-jack
+    - pulseaudio-bluetooth
+    - pulseaudio-equalizer
+    - pulseaudio-rtp
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 16.1-6
+    packages:
+      - pulseaudio-16.1-6-x86_64.pkg.tar.zst
+      - libpulse-16.1-6-x86_64.pkg.tar.zst
+      - pulseaudio-zeroconf-16.1-6-x86_64.pkg.tar.zst
+      - pulseaudio-lirc-16.1-6-x86_64.pkg.tar.zst
+      - pulseaudio-jack-16.1-6-x86_64.pkg.tar.zst
+      - pulseaudio-bluetooth-16.1-6-x86_64.pkg.tar.zst
+      - pulseaudio-equalizer-16.1-6-x86_64.pkg.tar.zst
+      - pulseaudio-rtp-16.1-6-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
