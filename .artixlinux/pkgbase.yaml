@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - iso-profiles
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 2022.09-1
+    packages:
+      - iso-profiles-2022.09-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -49,6 +50,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2022.09-1
-    packages:
-      - iso-profiles-2022.09-1-any.pkg.tar.zst
+    version: null
+    packages: []
