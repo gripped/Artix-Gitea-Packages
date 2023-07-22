@@ -1,0 +1,54 @@
+---
+pkgbase:
+  name: lib32-libasyncns
+  version: 1:0.8+r3+g68cd5af-2
+  arch:
+    - x86_64
+  pkgname:
+    - lib32-libasyncns
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: null
+    packages: []
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: 1:0.8+r3+g68cd5af-2
+    packages:
+      - lib32-libasyncns-1:0.8+r3+g68cd5af-2-x86_64.pkg.tar.zst
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
