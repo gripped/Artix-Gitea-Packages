@@ -1,0 +1,64 @@
+---
+pkgbase:
+  name: cyrus-sasl
+  version: 2.1.28-3
+  arch:
+    - x86_64
+  pkgname:
+    - cyrus-sasl
+    - cyrus-sasl-gssapi
+    - cyrus-sasl-ldap
+    - cyrus-sasl-sql
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: 2.1.28-3
+    packages:
+      - cyrus-sasl-2.1.28-3-x86_64.pkg.tar.zst
+      - cyrus-sasl-gssapi-2.1.28-3-x86_64.pkg.tar.zst
+      - cyrus-sasl-ldap-2.1.28-3-x86_64.pkg.tar.zst
+      - cyrus-sasl-sql-2.1.28-3-x86_64.pkg.tar.zst
+  world:
+    version: 2.1.28-2
+    packages:
+      - cyrus-sasl-2.1.28-2-x86_64.pkg.tar.zst
+      - cyrus-sasl-gssapi-2.1.28-2-x86_64.pkg.tar.zst
+      - cyrus-sasl-ldap-2.1.28-2-x86_64.pkg.tar.zst
+      - cyrus-sasl-sql-2.1.28-2-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
