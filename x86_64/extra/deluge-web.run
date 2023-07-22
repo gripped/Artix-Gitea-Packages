@@ -1,2 +1,0 @@
-#!/bin/sh
-exec chpst -u deluge deluge-web -d
