@@ -1,2 +1,0 @@
-#!/bin/sh
-exec atftpd --user=atftp.atftp --daemon --no-fork
