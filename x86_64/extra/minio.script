@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r /etc/dinit.d/config/minio.conf ] && . /etc/dinit.d/config/minio.conf
-exec /usr/bin/minio server ${MINIO_OPTS} ${MINIO_VOLUMES}
