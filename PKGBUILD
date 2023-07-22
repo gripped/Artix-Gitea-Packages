@@ -5,7 +5,7 @@
 
 pkgname=gitea
 pkgver=1.20.1
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
 arch=(x86_64)
 url="https://gitea.io"
@@ -23,7 +23,7 @@ optdepends=(
 )
 checkdepends=(openssh)
 options=(!lto)
-_tag=221b90d2891025b08cd083bb821d91a7f5722341 # git rev-parse v${pkgver}
+_tag=16e2841276216f9e765d31f1563b434d5663d884 # git rev-parse v${pkgver}
 source=(git+https://github.com/go-gitea/gitea.git#tag=${_tag}?signed
         gitea.tmpfiles
         gitea.sysusers)
