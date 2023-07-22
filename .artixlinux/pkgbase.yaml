@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - libarchive
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 3.7.0-2
     packages:
       - libarchive-3.7.0-2-x86_64.pkg.tar.zst
-  system:
-    version: 3.6.2-2
-    packages:
-      - libarchive-3.6.2-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
