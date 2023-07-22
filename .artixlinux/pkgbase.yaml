@@ -1,0 +1,55 @@
+---
+pkgbase:
+  name: intel-graphics-compiler
+  version: 1:1.0.14062.11-3
+  arch:
+    - x86_64
+  pkgname:
+    - intel-graphics-compiler
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: 1:1.0.14062.11-3
+    packages:
+      - intel-graphics-compiler-1:1.0.14062.11-3-x86_64.pkg.tar.zst
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 1:1.0.14062.11-1
+    packages:
+      - intel-graphics-compiler-1:1.0.14062.11-1-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
