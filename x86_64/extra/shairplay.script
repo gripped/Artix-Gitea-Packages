@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r /etc/dinit.d/config/shairplay.conf ] && . /etc/dinit.d/config/shairplay.conf
-exec /usr/bin/shairplay -a ${SHAIRPLAY_NAME:-shairplay} ${SHAIRPLAY_PASSWORD}
