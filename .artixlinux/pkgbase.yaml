@@ -1,0 +1,60 @@
+---
+pkgbase:
+  name: hunspell-en_us
+  version: 2020.12.07-5
+  arch:
+    - any
+  pkgname:
+    - hunspell-en_us
+    - hunspell-en_au
+    - hunspell-en_ca
+    - hunspell-en_gb
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 2020.12.07-5
+    packages:
+      - hunspell-en_us-2020.12.07-5-any.pkg.tar.zst
+      - hunspell-en_au-2020.12.07-5-any.pkg.tar.zst
+      - hunspell-en_ca-2020.12.07-5-any.pkg.tar.zst
+      - hunspell-en_gb-2020.12.07-5-any.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
