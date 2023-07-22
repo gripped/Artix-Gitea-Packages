@@ -1,0 +1,94 @@
+---
+pkgbase:
+  name: man-pages-cs
+  version: 4.19.0-1
+  arch:
+    - any
+  pkgname:
+    - man-pages-cs
+    - man-pages-da
+    - man-pages-de
+    - man-pages-el
+    - man-pages-es
+    - man-pages-fi
+    - man-pages-fr
+    - man-pages-hu
+    - man-pages-id
+    - man-pages-it
+    - man-pages-mk
+    - man-pages-nb
+    - man-pages-nl
+    - man-pages-pl
+    - man-pages-pt_br
+    - man-pages-ro
+    - man-pages-ru
+    - man-pages-sv
+    - man-pages-sr
+    - man-pages-uk
+    - man-pages-vi
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 4.19.0-1
+    packages:
+      - man-pages-cs-4.19.0-1-any.pkg.tar.zst
+      - man-pages-da-4.19.0-1-any.pkg.tar.zst
+      - man-pages-de-4.19.0-1-any.pkg.tar.zst
+      - man-pages-el-4.19.0-1-any.pkg.tar.zst
+      - man-pages-es-4.19.0-1-any.pkg.tar.zst
+      - man-pages-fi-4.19.0-1-any.pkg.tar.zst
+      - man-pages-fr-4.19.0-1-any.pkg.tar.zst
+      - man-pages-hu-4.19.0-1-any.pkg.tar.zst
+      - man-pages-id-4.19.0-1-any.pkg.tar.zst
+      - man-pages-it-4.19.0-1-any.pkg.tar.zst
+      - man-pages-mk-4.19.0-1-any.pkg.tar.zst
+      - man-pages-nb-4.19.0-1-any.pkg.tar.zst
+      - man-pages-nl-4.19.0-1-any.pkg.tar.zst
+      - man-pages-pl-4.19.0-1-any.pkg.tar.zst
+      - man-pages-pt_br-4.19.0-1-any.pkg.tar.zst
+      - man-pages-ro-4.19.0-1-any.pkg.tar.zst
+      - man-pages-ru-4.19.0-1-any.pkg.tar.zst
+      - man-pages-sv-4.19.0-1-any.pkg.tar.zst
+      - man-pages-sr-4.19.0-1-any.pkg.tar.zst
+      - man-pages-uk-4.19.0-1-any.pkg.tar.zst
+      - man-pages-vi-4.19.0-1-any.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
