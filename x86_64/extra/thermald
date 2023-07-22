@@ -1,5 +1,0 @@
-type            = process
-command         = /usr/bin/thermald --no-daemon --dbus-enable
-smooth-recovery = true
-logfile         = /var/log/dinit/thermald.log
-depends-on      = dbus
