@@ -1,2 +1,0 @@
-#!/bin/sh
-exec doh-server -conf /etc/dns-over-https/doh-server.conf
