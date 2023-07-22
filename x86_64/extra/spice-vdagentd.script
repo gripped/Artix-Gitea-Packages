@@ -1,3 +1,0 @@
-#!/bin/sh
-mkdir -p /run/spice-vdagentd
-exec /usr/bin/spice-vdagentd -x -d
