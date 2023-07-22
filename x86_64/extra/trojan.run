@@ -1,2 +1,0 @@
-#!/bin/sh
-exec trojan /etc/trojan/config.json
