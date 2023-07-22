@@ -1,0 +1,64 @@
+---
+pkgbase:
+  name: bluez
+  version: 5.68-1
+  arch:
+    - x86_64
+  pkgname:
+    - bluez
+    - bluez-utils
+    - bluez-libs
+    - bluez-cups
+    - bluez-hid2hci
+    - bluez-plugins
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 5.68-1
+    packages:
+      - bluez-5.68-1-x86_64.pkg.tar.zst
+      - bluez-utils-5.68-1-x86_64.pkg.tar.zst
+      - bluez-libs-5.68-1-x86_64.pkg.tar.zst
+      - bluez-cups-5.68-1-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.68-1-x86_64.pkg.tar.zst
+      - bluez-plugins-5.68-1-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
