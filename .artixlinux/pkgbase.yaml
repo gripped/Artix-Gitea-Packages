@@ -1,0 +1,55 @@
+---
+pkgbase:
+  name: broadcom-wl
+  version: 6.30.223.271-485
+  arch:
+    - x86_64
+  pkgname:
+    - broadcom-wl
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: 6.30.223.271-485
+    packages:
+      - broadcom-wl-6.30.223.271-485-x86_64.pkg.tar.zst
+  world:
+    version: 6.30.223.271-484
+    packages:
+      - broadcom-wl-6.30.223.271-484-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
