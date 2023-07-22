@@ -1,0 +1,98 @@
+---
+pkgbase:
+  name: hunspell-es_any
+  version: 1:2.7-3
+  arch:
+    - any
+  pkgname:
+    - hunspell-es_any
+    - hyphen-es
+    - mythes-es
+    - hunspell-es_ar
+    - hunspell-es_bo
+    - hunspell-es_cl
+    - hunspell-es_co
+    - hunspell-es_cr
+    - hunspell-es_cu
+    - hunspell-es_do
+    - hunspell-es_ec
+    - hunspell-es_es
+    - hunspell-es_gt
+    - hunspell-es_hn
+    - hunspell-es_mx
+    - hunspell-es_ni
+    - hunspell-es_pa
+    - hunspell-es_pe
+    - hunspell-es_pr
+    - hunspell-es_py
+    - hunspell-es_sv
+    - hunspell-es_uy
+    - hunspell-es_ve
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 1:2.7-3
+    packages:
+      - hunspell-es_any-1:2.7-3-any.pkg.tar.zst
+      - hyphen-es-1:2.7-3-any.pkg.tar.zst
+      - mythes-es-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_ar-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_bo-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_cl-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_co-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_cr-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_cu-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_do-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_ec-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_es-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_gt-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_hn-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_mx-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_ni-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_pa-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_pe-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_pr-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_py-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_sv-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_uy-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_ve-1:2.7-3-any.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
