@@ -1,0 +1,58 @@
+---
+pkgbase:
+  name: lib32-harfbuzz
+  version: 8.0.1-1
+  arch:
+    - x86_64
+  pkgname:
+    - lib32-harfbuzz
+    - lib32-harfbuzz-cairo
+    - lib32-harfbuzz-icu
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: null
+    packages: []
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: 8.0.1-1
+    packages:
+      - lib32-harfbuzz-8.0.1-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-cairo-8.0.1-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-icu-8.0.1-1-x86_64.pkg.tar.zst
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
