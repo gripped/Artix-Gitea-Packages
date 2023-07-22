@@ -1,2 +1,0 @@
-#!/bin/sh
-exec dropbear -F -P /run/dropbear.pid -R
