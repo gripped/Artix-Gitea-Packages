@@ -1,0 +1,55 @@
+---
+pkgbase:
+  name: tp_smapi
+  version: 0.43+r3+g35be4ab-7
+  arch:
+    - x86_64
+  pkgname:
+    - tp_smapi
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: 0.43+r3+g35be4ab-7
+    packages:
+      - tp_smapi-0.43+r3+g35be4ab-7-x86_64.pkg.tar.zst
+  world:
+    version: 0.43+r3+g35be4ab-6
+    packages:
+      - tp_smapi-0.43+r3+g35be4ab-6-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
