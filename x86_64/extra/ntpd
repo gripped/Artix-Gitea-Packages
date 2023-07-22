@@ -1,5 +1,0 @@
-type            = process
-command         = /usr/bin/ntpd -d
-smooth-recovery = true
-logfile         = /var/log/dinit/openntpd.log
-waits-for       = loginready
