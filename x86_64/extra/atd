@@ -1,5 +1,0 @@
-type            = process
-command         = /usr/bin/atd -d
-smooth-recovery = true
-logfile         = /var/log/dinit/atd.log
-waits-for       = setup
