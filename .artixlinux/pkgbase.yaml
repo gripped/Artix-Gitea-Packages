@@ -1,0 +1,70 @@
+---
+pkgbase:
+  name: lapack
+  version: 3.11.0-2
+  arch:
+    - x86_64
+  pkgname:
+    - lapack
+    - blas
+    - cblas
+    - lapacke
+    - lapack64
+    - blas64
+    - cblas64
+    - lapacke64
+    - lapack-doc
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 3.11.0-2
+    packages:
+      - lapack-3.11.0-2-x86_64.pkg.tar.zst
+      - blas-3.11.0-2-x86_64.pkg.tar.zst
+      - cblas-3.11.0-2-x86_64.pkg.tar.zst
+      - lapacke-3.11.0-2-x86_64.pkg.tar.zst
+      - lapack64-3.11.0-2-x86_64.pkg.tar.zst
+      - blas64-3.11.0-2-x86_64.pkg.tar.zst
+      - cblas64-3.11.0-2-x86_64.pkg.tar.zst
+      - lapacke64-3.11.0-2-x86_64.pkg.tar.zst
+      - lapack-doc-3.11.0-2-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
