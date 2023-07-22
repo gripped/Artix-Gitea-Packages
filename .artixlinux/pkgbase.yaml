@@ -1,0 +1,61 @@
+---
+pkgbase:
+  name: networkmanager
+  version: 1.42.8-1
+  arch:
+    - x86_64
+  pkgname:
+    - networkmanager
+    - libnm
+    - nm-cloud-setup
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: 1.42.8-1
+    packages:
+      - networkmanager-1.42.8-1-x86_64.pkg.tar.zst
+      - libnm-1.42.8-1-x86_64.pkg.tar.zst
+      - nm-cloud-setup-1.42.8-1-x86_64.pkg.tar.zst
+  world:
+    version: 1.42.6-1
+    packages:
+      - networkmanager-1.42.6-1-x86_64.pkg.tar.zst
+      - libnm-1.42.6-1-x86_64.pkg.tar.zst
+      - nm-cloud-setup-1.42.6-1-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
