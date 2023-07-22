@@ -1,6 +1,0 @@
-# dinit doesn't read $PATH, and lxd needs it, so we wrap it
-type            = process
-command         = /etc/dinit.d/scripts/lxd
-smooth-recovery = true
-logfile         = /var/log/dinit/lxd.log
-waits-for       = loginready
