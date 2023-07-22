@@ -1,4 +1,0 @@
-type      = scripted
-command   = /usr/bin/intel-undervolt apply
-restart   = false
-waits-for = logind
