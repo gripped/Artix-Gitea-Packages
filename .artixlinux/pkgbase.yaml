@@ -1,0 +1,134 @@
+---
+pkgbase:
+  name: texlive-doc
+  version: 2023.66594-19
+  arch:
+    - any
+  pkgname:
+    - texlive-doc
+    - texlive-meta
+    - texlive-basic
+    - texlive-bibtexextra
+    - texlive-binextra
+    - texlive-context
+    - texlive-fontsextra
+    - texlive-fontsrecommended
+    - texlive-fontutils
+    - texlive-formatsextra
+    - texlive-games
+    - texlive-humanities
+    - texlive-langarabic
+    - texlive-langchinese
+    - texlive-langcjk
+    - texlive-langcyrillic
+    - texlive-langczechslovak
+    - texlive-langenglish
+    - texlive-langeuropean
+    - texlive-langfrench
+    - texlive-langgerman
+    - texlive-langgreek
+    - texlive-langitalian
+    - texlive-langjapanese
+    - texlive-langkorean
+    - texlive-langother
+    - texlive-langpolish
+    - texlive-langportuguese
+    - texlive-langspanish
+    - texlive-latex
+    - texlive-latexextra
+    - texlive-latexrecommended
+    - texlive-luatex
+    - texlive-mathscience
+    - texlive-metapost
+    - texlive-music
+    - texlive-pictures
+    - texlive-plaingeneric
+    - texlive-pstricks
+    - texlive-publishers
+    - texlive-xetex
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 2023.66594-19
+    packages:
+      - texlive-doc-2023.66594-19-any.pkg.tar.zst
+      - texlive-meta-2023.66594-19-any.pkg.tar.zst
+      - texlive-basic-2023.66594-19-any.pkg.tar.zst
+      - texlive-bibtexextra-2023.66594-19-any.pkg.tar.zst
+      - texlive-binextra-2023.66594-19-any.pkg.tar.zst
+      - texlive-context-2023.66594-19-any.pkg.tar.zst
+      - texlive-fontsextra-2023.66594-19-any.pkg.tar.zst
+      - texlive-fontsrecommended-2023.66594-19-any.pkg.tar.zst
+      - texlive-fontutils-2023.66594-19-any.pkg.tar.zst
+      - texlive-formatsextra-2023.66594-19-any.pkg.tar.zst
+      - texlive-games-2023.66594-19-any.pkg.tar.zst
+      - texlive-humanities-2023.66594-19-any.pkg.tar.zst
+      - texlive-langarabic-2023.66594-19-any.pkg.tar.zst
+      - texlive-langchinese-2023.66594-19-any.pkg.tar.zst
+      - texlive-langcjk-2023.66594-19-any.pkg.tar.zst
+      - texlive-langcyrillic-2023.66594-19-any.pkg.tar.zst
+      - texlive-langczechslovak-2023.66594-19-any.pkg.tar.zst
+      - texlive-langenglish-2023.66594-19-any.pkg.tar.zst
+      - texlive-langeuropean-2023.66594-19-any.pkg.tar.zst
+      - texlive-langfrench-2023.66594-19-any.pkg.tar.zst
+      - texlive-langgerman-2023.66594-19-any.pkg.tar.zst
+      - texlive-langgreek-2023.66594-19-any.pkg.tar.zst
+      - texlive-langitalian-2023.66594-19-any.pkg.tar.zst
+      - texlive-langjapanese-2023.66594-19-any.pkg.tar.zst
+      - texlive-langkorean-2023.66594-19-any.pkg.tar.zst
+      - texlive-langother-2023.66594-19-any.pkg.tar.zst
+      - texlive-langpolish-2023.66594-19-any.pkg.tar.zst
+      - texlive-langportuguese-2023.66594-19-any.pkg.tar.zst
+      - texlive-langspanish-2023.66594-19-any.pkg.tar.zst
+      - texlive-latex-2023.66594-19-any.pkg.tar.zst
+      - texlive-latexextra-2023.66594-19-any.pkg.tar.zst
+      - texlive-latexrecommended-2023.66594-19-any.pkg.tar.zst
+      - texlive-luatex-2023.66594-19-any.pkg.tar.zst
+      - texlive-mathscience-2023.66594-19-any.pkg.tar.zst
+      - texlive-metapost-2023.66594-19-any.pkg.tar.zst
+      - texlive-music-2023.66594-19-any.pkg.tar.zst
+      - texlive-pictures-2023.66594-19-any.pkg.tar.zst
+      - texlive-plaingeneric-2023.66594-19-any.pkg.tar.zst
+      - texlive-pstricks-2023.66594-19-any.pkg.tar.zst
+      - texlive-publishers-2023.66594-19-any.pkg.tar.zst
+      - texlive-xetex-2023.66594-19-any.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
