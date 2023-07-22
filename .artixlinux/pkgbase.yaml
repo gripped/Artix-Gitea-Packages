@@ -1,0 +1,60 @@
+---
+pkgbase:
+  name: bullet
+  version: 3.25-3
+  arch:
+    - x86_64
+  pkgname:
+    - bullet
+    - bullet-dp
+    - bullet-docs
+    - python-pybullet
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 3.25-3
+    packages:
+      - bullet-3.25-3-x86_64.pkg.tar.zst
+      - bullet-dp-3.25-3-x86_64.pkg.tar.zst
+      - bullet-docs-3.25-3-x86_64.pkg.tar.zst
+      - python-pybullet-3.25-3-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
