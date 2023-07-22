@@ -1,2 +1,0 @@
-#!/bin/sh
-exec consul agent --config-dir=/etc/consul.d
