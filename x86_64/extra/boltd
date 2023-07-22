@@ -1,5 +1,0 @@
-#!/usr/bin/openrc-run
-
-supervisor=supervise-daemon
-pidfile=/run/boltd.pid
-command="/usr/lib/boltd"
