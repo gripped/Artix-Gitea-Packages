@@ -1,0 +1,72 @@
+---
+pkgbase:
+  name: gcc
+  version: 13.1.1-2
+  arch:
+    - x86_64
+  pkgname:
+    - gcc
+    - gcc-libs
+    - lib32-gcc-libs
+    - gcc-ada
+    - gcc-d
+    - gcc-fortran
+    - gcc-go
+    - gcc-objc
+    - lto-dump
+    - libgccjit
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: 13.1.1-2
+    packages:
+      - gcc-13.1.1-2-x86_64.pkg.tar.zst
+      - gcc-libs-13.1.1-2-x86_64.pkg.tar.zst
+      - lib32-gcc-libs-13.1.1-2-x86_64.pkg.tar.zst
+      - gcc-ada-13.1.1-2-x86_64.pkg.tar.zst
+      - gcc-d-13.1.1-2-x86_64.pkg.tar.zst
+      - gcc-fortran-13.1.1-2-x86_64.pkg.tar.zst
+      - gcc-go-13.1.1-2-x86_64.pkg.tar.zst
+      - gcc-objc-13.1.1-2-x86_64.pkg.tar.zst
+      - lto-dump-13.1.1-2-x86_64.pkg.tar.zst
+      - libgccjit-13.1.1-2-x86_64.pkg.tar.zst
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: null
+    packages: []
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
