@@ -1,0 +1,61 @@
+---
+pkgbase:
+  name: linux-lts
+  version: 6.1.39-1
+  arch:
+    - x86_64
+  pkgname:
+    - linux-lts
+    - linux-lts-headers
+    - linux-lts-docs
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: 6.1.39-1
+    packages:
+      - linux-lts-6.1.39-1-x86_64.pkg.tar.zst
+      - linux-lts-headers-6.1.39-1-x86_64.pkg.tar.zst
+      - linux-lts-docs-6.1.39-1-x86_64.pkg.tar.zst
+  system:
+    version: 6.1.38-2
+    packages:
+      - linux-lts-6.1.38-2-x86_64.pkg.tar.zst
+      - linux-lts-headers-6.1.38-2-x86_64.pkg.tar.zst
+      - linux-lts-docs-6.1.38-2-x86_64.pkg.tar.zst
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: null
+    packages: []
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
