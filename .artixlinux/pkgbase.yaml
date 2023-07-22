@@ -1,0 +1,58 @@
+---
+pkgbase:
+  name: projectm
+  version: 3.1.12-4
+  arch:
+    - x86_64
+  pkgname:
+    - projectm
+    - projectm-sdl
+    - projectm-pulseaudio
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 3.1.12-4
+    packages:
+      - projectm-3.1.12-4-x86_64.pkg.tar.zst
+      - projectm-sdl-3.1.12-4-x86_64.pkg.tar.zst
+      - projectm-pulseaudio-3.1.12-4-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
