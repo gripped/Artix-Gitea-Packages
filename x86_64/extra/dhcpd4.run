@@ -1,3 +1,0 @@
-#!/bin/sh
-touch /var/lib/dhcp/dhcpd.leases
-exec dhcpd -f -4 -q -pf /run/dhcp4.pid
