@@ -1,0 +1,56 @@
+---
+pkgbase:
+  name: vst3sdk
+  version: 3.7.8_build_34-1
+  arch:
+    - any
+  pkgname:
+    - vst3sdk
+    - vst3sdk-docs
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 3.7.8_build_34-1
+    packages:
+      - vst3sdk-3.7.8_build_34-1-any.pkg.tar.zst
+      - vst3sdk-docs-3.7.8_build_34-1-any.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
