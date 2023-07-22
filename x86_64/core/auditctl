@@ -1,4 +1,0 @@
-type         = scripted
-command      = /etc/dinit.d/scripts/auditctl start
-stop-command = /etc/dinit.d/scripts/auditctl stop
-restart      = false
