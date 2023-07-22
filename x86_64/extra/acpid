@@ -1,5 +1,0 @@
-type            = process
-command         = /usr/bin/acpid -f
-smooth-recovery = true
-depends-on      = pseudofs
-logfile         = /var/log/dinit/acpid.log
