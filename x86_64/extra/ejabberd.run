@@ -1,3 +1,0 @@
-#!/bin/sh -e
-export HOME=/var/lib/ejabberd
-exec chpst -u jabber ejabberdctl foreground --logs /dev/null 2>&1
