@@ -1,4 +1,0 @@
-type      = scripted
-command   = /etc/dinit.d/scripts/cpupower
-restart   = false
-waits-for = root-rw
