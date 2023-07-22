@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-exec shairplay -a "${SHAIRPLAY_NAME}" "${SHAIRPLAY_PASSWORD}"
