@@ -1,4 +1,0 @@
-type        = scripted
-command     = /usr/lib/apparmor/apparmor.systemd reload
-restart     = false
-waits-for   = root-rw
