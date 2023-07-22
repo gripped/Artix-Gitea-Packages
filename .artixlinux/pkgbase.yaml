@@ -1,0 +1,58 @@
+---
+pkgbase:
+  name: kitty
+  version: 0.28.1-2
+  arch:
+    - x86_64
+  pkgname:
+    - kitty
+    - kitty-terminfo
+    - kitty-shell-integration
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 0.28.1-2
+    packages:
+      - kitty-0.28.1-2-x86_64.pkg.tar.zst
+      - kitty-terminfo-0.28.1-2-x86_64.pkg.tar.zst
+      - kitty-shell-integration-0.28.1-2-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
