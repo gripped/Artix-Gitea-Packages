@@ -1,0 +1,60 @@
+---
+pkgbase:
+  name: marble-common
+  version: 23.04.3-1
+  arch:
+    - x86_64
+  pkgname:
+    - marble-common
+    - marble-qt
+    - marble-maps
+    - marble
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 23.04.3-1
+    packages:
+      - marble-common-23.04.3-1-x86_64.pkg.tar.zst
+      - marble-qt-23.04.3-1-x86_64.pkg.tar.zst
+      - marble-maps-23.04.3-1-x86_64.pkg.tar.zst
+      - marble-23.04.3-1-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
