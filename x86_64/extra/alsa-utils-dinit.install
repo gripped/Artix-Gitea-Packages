@@ -1,5 +1,0 @@
-post_install()
-{
-    echo "==> Storing ALSA driver state..."
-    /bin/alsactl store
-}
