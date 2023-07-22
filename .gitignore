@@ -32,3 +32,6 @@ src/
 
 # ---> snap
 *.snap
+*.service
+*.timer
+*.socket
