@@ -1,0 +1,58 @@
+---
+pkgbase:
+  name: podman
+  version: 4.6.0-1
+  arch:
+    - x86_64
+  pkgname:
+    - podman
+    - podman-docker
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: 4.6.0-1
+    packages:
+      - podman-4.6.0-1-x86_64.pkg.tar.zst
+      - podman-docker-4.6.0-1-x86_64.pkg.tar.zst
+  world:
+    version: 4.5.1-1
+    packages:
+      - podman-4.5.1-1-x86_64.pkg.tar.zst
+      - podman-docker-4.5.1-1-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
