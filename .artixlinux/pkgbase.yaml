@@ -1,0 +1,60 @@
+---
+pkgbase:
+  name: notmuch
+  version: 0.37-3
+  arch:
+    - x86_64
+  pkgname:
+    - notmuch
+    - notmuch-vim
+    - notmuch-mutt
+    - notmuch-runtime
+actions:
+  addRepo: null
+  removeRepo: null
+  triggersBuild: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: false
+  triggersNoCheck: false
+repos:
+  system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
+    version: null
+    packages: []
+  system:
+    version: null
+    packages: []
+  world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
+    version: 0.37-3
+    packages:
+      - notmuch-0.37-3-x86_64.pkg.tar.zst
+      - notmuch-vim-0.37-3-x86_64.pkg.tar.zst
+      - notmuch-mutt-0.37-3-x86_64.pkg.tar.zst
+      - notmuch-runtime-0.37-3-x86_64.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
