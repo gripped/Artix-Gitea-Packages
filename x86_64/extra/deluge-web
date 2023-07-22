@@ -1,6 +1,0 @@
-type            = process
-command         = /usr/bin/deluge-web -d
-smooth-recovery = true
-logfile         = /var/log/dinit/deluge-web.log
-run-as          = deluge
-waits-for       = deluged
