@@ -1,4 +1,0 @@
-type      = scripted
-command   = /usr/bin/install -d -o colord -g colord /var/lib/colord
-restart   = false
-waits-for = root-rw
