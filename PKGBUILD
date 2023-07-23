@@ -2,8 +2,8 @@
 # Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
 
 pkgname=waybar
-pkgver=0.9.20
-pkgrel=1
+pkgver=0.9.19
+pkgrel=2.1
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors'
 arch=('x86_64')
 url="https://github.com/Alexays/Waybar/"
