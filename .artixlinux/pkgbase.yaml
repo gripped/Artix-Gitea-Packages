@@ -9,11 +9,11 @@ pkgbase:
     - artix-backgrounds
 actions:
   addRepo: null
-  removeRepo: null
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -52,7 +52,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.8.6-3
-    packages:
-      - artix-icons-0.8.6-3-any.pkg.tar.zst
-      - artix-backgrounds-0.8.6-3-any.pkg.tar.zst
+    version: null
+    packages: []
