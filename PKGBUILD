@@ -47,7 +47,7 @@ optdepends=(
     'otf-font-awesome: Icons in the default configuration'
 )
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Alexays/Waybar/archive/$pkgver.tar.gz")
-sha256sums=('e300183defece4799b6dfb7aea72400492ec6e330217c22158a334f35532d014')
+sha256sums=('09695c9d6ae4cf33d8e8a2c3e4ba216e5d293e2d72d4115c64c5d2612976816d')
 
 build() {
     cd "Waybar-$pkgver"
