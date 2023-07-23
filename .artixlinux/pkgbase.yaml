@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruff
-  version: 0.0.278-1
+  version: 0.0.279-1
   arch:
     - x86_64
   pkgname:
     - ruff
     - python-ruff
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.0.278-1
+    version: 0.0.279-1
     packages:
-      - ruff-0.0.278-1-x86_64.pkg.tar.zst
-      - python-ruff-0.0.278-1-x86_64.pkg.tar.zst
+      - ruff-0.0.279-1-x86_64.pkg.tar.zst
+      - python-ruff-0.0.279-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
