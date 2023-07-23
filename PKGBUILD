@@ -18,7 +18,7 @@ sha512sums=('aa1e32be1cb99b11e158bb4d6a079a967f1b01109df76bc416cb1a11bf3628279db
 validpgpkeys=('C7BF38CE0BD442C2369AA984049128A20CE0648D') # Giuseppe Penone <giuspen [at] gmail [dot] com>
 
 build() {
-  cmake -B build -S "${pkgname}_${pkgver}" \
+  artix-cmake -B build -S "${pkgname}_${pkgver}" \
   -DINSTALL_GTEST:BOOL='OFF' \
   -DAUTO_RUN_TESTING:BOOL='OFF' \
   -DCMAKE_BUILD_TYPE='None' \
