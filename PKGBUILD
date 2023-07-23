@@ -2,12 +2,12 @@
 
 pkgname=artix-checkupdates
 pkgver=0.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
 url="https://gitea.artixlinux.org/artix/artix-checkupdates"
 license=('GPL3')
-groups=('artools')
+groups=('artix-tools')
 depends=(
     'brotli'
     'curl'
