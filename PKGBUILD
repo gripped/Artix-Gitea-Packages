@@ -2,7 +2,7 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.31
+pkgver=0.31.1
 pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
@@ -54,11 +54,10 @@ package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
     depends=('artools-base' 'awk' 'parallel' 'bash' 'rsync' 'go-yq'
             'openssh' 'diffutils' 'findutils' 'grep' 'sed' 'util-linux' 'binutils')
-    optdepends=('pacman-contrib: mkdepgraph support'
-                'artix-rebuild-order: mkdepgraph support'
+    optdepends=('pacman-contrib: pacman contrib tools support'
+                'artix-rebuild-order: artix rebuild order support'
                 'artix-checkupdates: updates checking'
-                'graphviz: mkdepgraph support')
-    conflicts=('devtools')
+                'graphviz: mkdepgraph graphviz support')
     groups=('artix-tools')
     backup=('etc/artools/artools-pkg.conf')
 
@@ -70,7 +69,6 @@ package_artools-iso() {
     depends=('artools-base' 'iso-profiles' 'squashfs-tools'
             'grub' 'dosfstools' 'libisoburn' 'bash' 'dosfstools'
             'e2fsprogs' 'libarchive' 'mtools' 'grep' 'sed')
-    conflicts=('archiso')
     groups=('artix-tools')
     backup=('etc/artools/artools-iso.conf')
 
