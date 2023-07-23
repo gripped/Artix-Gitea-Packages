@@ -1,11 +1,11 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Angel 'angvp' Velasquez <angvp@archlinux.org>
 # Contributor: Gerardo Exequiel Pozzi <vmlinuz386@gmail.com>
 # Contributor: Patrick Melo <patrick@patrickmelo.eti.br>
 
 pkgname=geany-plugins
 pkgver=1.38
-pkgrel=6
+pkgrel=7
 pkgdesc='Plugins for Geany'
 arch=(x86_64)
 url='https://plugins.geany.org/'
