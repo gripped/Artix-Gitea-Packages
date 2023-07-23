@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: aws-c-common
-  version: 0.8.23-1
+  version: 0.9.0-1
   arch:
     - x86_64
   pkgname:
     - aws-c-common
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.23-1
+    version: 0.9.0-1
     packages:
-      - aws-c-common-0.8.23-1-x86_64.pkg.tar.zst
+      - aws-c-common-0.9.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
