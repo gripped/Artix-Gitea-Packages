@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: wayland-protocols
-  version: 1.31-1
+  version: 1.32-1
   arch:
     - any
   pkgname:
     - wayland-protocols
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.31-1
+    version: 1.32-1
     packages:
-      - wayland-protocols-1.31-1-any.pkg.tar.zst
+      - wayland-protocols-1.32-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
