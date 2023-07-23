@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libwbclient
-  version: 4.18.5-1
+  version: 4.18.5-2
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - smbclient
     - samba
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.18.5-1
+    version: 4.18.5-2
     packages:
-      - libwbclient-4.18.5-1-x86_64.pkg.tar.zst
-      - smbclient-4.18.5-1-x86_64.pkg.tar.zst
-      - samba-4.18.5-1-x86_64.pkg.tar.zst
+      - libwbclient-4.18.5-2-x86_64.pkg.tar.zst
+      - smbclient-4.18.5-2-x86_64.pkg.tar.zst
+      - samba-4.18.5-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
