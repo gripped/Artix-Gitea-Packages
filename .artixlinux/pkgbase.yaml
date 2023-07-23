@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: aws-c-event-stream
-  version: 0.2.20-1
+  version: 0.3.1-1
   arch:
     - x86_64
   pkgname:
     - aws-c-event-stream
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.20-1
+    version: 0.3.1-1
     packages:
-      - aws-c-event-stream-0.2.20-1-x86_64.pkg.tar.zst
+      - aws-c-event-stream-0.3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
