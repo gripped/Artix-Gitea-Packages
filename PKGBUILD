@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
 
 pkgname=embree
 pkgver=4.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Collection of high-performance ray tracing kernels"
 arch=('x86_64')
 url="https://embree.github.io/"
@@ -26,6 +26,8 @@ build() {
       -DEMBREE_ISPC_SUPPORT=ON \
       -DEMBREE_TUTORIALS=OFF \
       -DEMBREE_MAX_ISA="AVX512SKX" \
+      -DEMBREE_RAY_MASK=ON \
+      -DEMBREE_FILTER_FUNCTION=ON \
       -DEMBREE_BACKFACE_CULLING=OFF
     ninja -C build
     # Maybe enable these later once they are out of beta:
