@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libgit2
-  version: 1:1.7.0-2
+  version: 1:1.7.0-3
   arch:
     - x86_64
   pkgname:
     - libgit2
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,9 @@ repos:
     packages:
       - libgit2-1:1.7.0-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:1.7.0-3
+    packages:
+      - libgit2-1:1.7.0-3-x86_64.pkg.tar.zst
   world:
     version: 1:1.6.4-1
     packages:
