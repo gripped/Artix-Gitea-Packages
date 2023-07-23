@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-identify
-  version: 2.5.24-1
+  version: 2.5.25-1
   arch:
     - any
   pkgname:
     - python-identify
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.5.24-1
+    version: 2.5.25-1
     packages:
-      - python-identify-2.5.24-1-any.pkg.tar.zst
+      - python-identify-2.5.25-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
