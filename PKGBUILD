@@ -6,26 +6,54 @@
 
 pkgbase=brltty
 pkgname=(brltty brltty-udev-generic)
-pkgver=6.5
-pkgrel=5
+pkgver=6.6
+pkgrel=1
 pkgdesc="Braille display driver for Linux/Unix"
 arch=(x86_64)
 url="https://brltty.app"
 license=(LGPL2.1)
-makedepends=(alsa-lib at-spi2-atk at-spi2-core atk bluez-libs cython dbus
-dracut espeak-ng expat festival gcc-libs glibc glib2 gpm icu java-environment
-liblouis libspeechd libxaw ncurses ocaml-ctypes ocaml-findlib pcre2
-polkit python-setuptools speech-dispatcher strip-nondeterminism elogind
-tcl)
+makedepends=(
+  alsa-lib
+  at-spi2-atk
+  at-spi2-core
+  atk
+  bluez-libs
+  cython
+  dbus
+  dracut
+  espeak-ng
+  expat
+  festival
+  gcc-libs
+  glibc
+  glib2
+  gpm
+  icu
+  java-environment
+  libcap
+  liblouis
+  libelogind
+  libspeechd
+  libxaw
+  ncurses
+  ocaml-ctypes
+  ocaml-findlib
+  pcre2
+  polkit
+  python-setuptools
+  speech-dispatcher
+  strip-nondeterminism
+  tcl
+)
 options=(debug !emptydirs)
 source=(
   https://brltty.app/archive/$pkgname-$pkgver.tar.bz2
   "${pkgname}-6.4-x11_autostart.patch"
   "0001-brlapi-use-elogind-instead-of-systemd.patch")
-sha512sums=('7aef484f8f719fe183ea4d83b75962ff1e1fb0002d38ee89bd41808c3cae768cbd65c63cbdcb9a27beecaddc442fb65d8fb9219e48c87a1a02dda4ecc55cc24f'
+sha512sums=('a253efe9b53c97e670bb6dc5041a007944b220d88393a6df825ac95f3e0857ce3ba940b67b9723a03e18cdc962092ce937f38bdbf28816eceda168242c3682fd'
             '4871512affefbc178f4204a1b285fc2b5a05ea2d181163195d695b760e9729b3d2d00b5f052abd71379df609c3859d7cbd64128bdefd16e898bbc4368500a9a0'
             'f0f99df714ceb7b9b1c57cc9c3a1c47b360fc0ff23bb7b183d8e57015d00801bbb4c6ec4395f0b06fd386d7047c9b16e16161d700655fe17cf324aaaf6c3b2d8')
-b2sums=('9d431c033d0963f6afe59477d2d109029c1bededf4ea333a3347ff8c4c17073af3439a827ff4db44dce08dd2245e1bc57cc2fe443bf44df6225f75ffab2fa244'
+b2sums=('28e2593aac014f67f09d4e77c0e63f591c5bc1537ecc292370ac9f51689b722f6f4064cc8e185ba9bf0bbfbd28d3097be15e587ca35ea2018eab9538fdf8da7a'
         '4ebc07a725ef8362233a83118e93901e78943e8dae08f9358b668ff13ab88a65eb9e87c49d106a8c3d87eb62007b230e199107eacb01f92dc683335076c01309'
         '8868137c75067087e8da6ce46ad2d75e30da9e6e2bc3a965d5003af9f3c06358413d706efea9810ba50db90ffc7d8a41ce5aa5a653e49365592e3e6fa77c3a88')
 
@@ -37,30 +65,48 @@ prepare() {
 }
 
 build() {
+  local configure_options=(
+    --prefix=/usr
+    --sysconfdir=/etc
+    --libexecdir=/usr/lib
+    --localstatedir=/var
+    --mandir=/usr/share/man
+    --with-scripts-directory=/usr/lib/brltty
+    --with-tables-directory=/usr/share/brltty
+    --with-writable-directory=/run/brltty
+    --enable-gpm
+    --disable-stripping
+    --without-service-package
+  )
+
   # fat-lto-objects is required for non-mangled static libs
   CFLAGS+=" -ffat-lto-objects"
 
   cd $pkgbase-$pkgver
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --mandir=/usr/share/man \
-    --with-scripts-directory=/usr/lib/brltty \
-    --with-tables-directory=/usr/share/brltty \
-    --with-writable-directory=/run/brltty \
-    --enable-gpm \
-    --disable-stripping \
-    --without-service-package
+  ./configure "${configure_options[@]}"
   make -j1
   # make brlapi.jar deterministic
   find . -type f -iname "*.jar" -exec strip-nondeterminism {} \;
 }
 
 package_brltty() {
-  depends=(bluez-libs gcc-libs glibc liblouis libspeechd libasound.so
-  libdbus-1.so libexpat.so libgio-2.0.so libglib-2.0.so libgobject-2.0.so
-  libicuuc.so libgpm.so libncursesw.so libelogind.so pcre2 polkit)
+  depends=(
+    alsa-lib libasound.so
+    bluez-libs
+    dbus libdbus-1.so
+    expat libexpat.so
+    glib2 libgio-2.0.so libglib-2.0.so libgobject-2.0.so
+    glibc
+    gpm libgpm.so
+    icu libicuuc.so
+    libcap
+    liblouis
+    libelogind libelogind.so
+    libspeechd
+    ncurses libncursesw.so
+    pcre2
+    polkit
+  )
   optdepends=(
     'at-spi2-core: X11/GNOME Apps accessibility'
     'atk: ATK bridge for X11/GNOME accessibility'
