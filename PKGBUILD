@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org
 
 pkgname=artix-checkupdates
-pkgver=0.4
-pkgrel=2
+pkgver=0.4.1
+pkgrel=1
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
 url="https://gitea.artixlinux.org/artix/artix-checkupdates"
@@ -30,4 +30,6 @@ build() {
 
 package() {
   make -C "${pkgname}" DESTDIR="${pkgdir}" install
+  ln -sfv "${pkgdir}"/usr/bin/artix-checkupdates comparepkg
+  install -D comparepkg -t "${pkgdir}"/usr/bin
 }
