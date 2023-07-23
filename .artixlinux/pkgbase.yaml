@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - mpfr
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 4.2.0.p12-1
     packages:
       - mpfr-4.2.0.p12-1-x86_64.pkg.tar.zst
-  system:
-    version: 4.2.0.p9-1
-    packages:
-      - mpfr-4.2.0.p9-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
