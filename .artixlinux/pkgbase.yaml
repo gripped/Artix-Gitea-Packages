@@ -48,17 +48,8 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 23.1.4-2
-    packages:
-      - lib32-vulkan-mesa-layers-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-opencl-clover-mesa-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-intel-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-radeon-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-swrast-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-virtio-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-libva-mesa-driver-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-mesa-vdpau-23.1.4-2-x86_64.pkg.tar.zst
-      - lib32-mesa-23.1.4-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-goblins:
     version: null
     packages: []
