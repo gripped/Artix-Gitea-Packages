@@ -2,7 +2,7 @@
 pkgname=clevis
 pkgver=19
 _commit=0bb86d3714befc29b6de5e1d4f7911635eeab56e # git rev-parse "v$pkgver^{}"
-pkgrel=1
+pkgrel=2
 pkgdesc='Automated Encryption Framework'
 arch=('x86_64')
 url='https://github.com/latchset/clevis'
@@ -17,6 +17,7 @@ optdepends=('audit: UDisks2 unlocker support'
             'dracut: dracut unlocker support'
             'glib2: UDisks2 unlocker support'
             'jansson: SSS pin and UDisks2 unlocker support'
+            'jq: LUKS edit support'
             'libpwquality: LUKS unlocker support'
             'luksmeta: LUKS and UDisks2 unlocker support'
             'nmap: dracut unlocker support'
