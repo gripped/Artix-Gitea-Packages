@@ -7,7 +7,7 @@ index bf3182736..fc13c5652 100644
  
      } else if (cred != GNUTLS_CRD_CERTIFICATE) {
 -        JAMI_ERROR("[TLS] spurious session credential ({})", cred);
-+        JAMI_ERROR("[TLS] spurious session credential ({})", (int)cred);
++        JAMI_ERROR("[TLS] spurious session credential ({})", static_cast<int>(cred));
          return TlsSessionState::SHUTDOWN;
      }
  

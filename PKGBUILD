@@ -3,7 +3,7 @@
 
 pkgname=jami-daemon
 pkgver=20230323
-pkgrel=3
+pkgrel=4
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)"
 arch=(x86_64)
 url="https://jami.net"
@@ -23,7 +23,7 @@ source=(git+https://git.jami.net/savoirfairelinux/${pkgname}.git#commit=${_commi
 noextract=(pjproject-${_pjprojectver}.tar.gz)
 sha512sums=('SKIP'
             '617f3a5cd38423a429b17553bb73ad467694ce3e899a788aaf20d0540f6a6904c06a2fc35bf9e0d1c9ab07ba821ca0e1d6d2b002e473bfa9850ff6f8b96447c0'
-            '5b5d332f92928de8b7aa15553f3027a196e409d3d4d5d730a1bc03bffe0febf02f13daeadab834045e2c6c6c9f09dbb6c6dabcc475549c343f5a18abe5df77bf')
+            'c8b75b60d513cb1a90397f7d43e247d03c135f49d0d8c7de5c0d4ba13d27ce93fcb97e990d50a716bb739635d9e0c12ba53e2c893d0950e4ab18004332e1e1d6')
 
 pkgver() {
   cd ${pkgname}
