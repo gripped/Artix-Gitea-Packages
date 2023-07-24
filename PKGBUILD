@@ -21,7 +21,7 @@ pkgname=(
 )
 _commit=a3bd0f7a0a8dec9045deeb5eb3eb92b09ff75d57  # tags/0.3.75
 pkgver=0.3.75
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -65,10 +65,11 @@ makedepends=(
 )
 checkdepends=(desktop-file-utils)
 source=("git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
+  $pkgbase-0.3.75-add_missing_header.patch
       artix-pipewire-launcher
-      pipewire.desktop
-       )
+      pipewire.desktop)
 b2sums=('SKIP'
+        'fbf3a698d61fa6f098d9560378c64f9520d2a82957fa11c8dc9a0cad075b3d68de6db70e9842eeb9275f452283ed87cd96a7cfe0bb52e758efd3df8e93bea6d5'
         '83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
         '9caf55a17f3ce30ee957371f8ebd1f115d9a9fc1f30e74ffb75b9bc3456e666755a18554237e50fb044a52b2dc449da8c487e28d5fa256b90280b947ff5d339d')
 
@@ -78,6 +79,9 @@ pkgver() {
 }
 
 prepare() {
+  # fix missing include: https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/1664
+  patch -Np1 -d $pkgbase -i ../$pkgname-0.3.75-add_missing_header.patch
+
   cd pipewire
 
   # remove export of LD_LIBRARY_PATH for pw-jack as it would add /usr/lib
@@ -383,7 +387,10 @@ package_pipewire-roc() {
 package_gst-plugin-pipewire() {
   pkgdesc="Multimedia graph framework - pipewire plugin"
   depends=(
+    glib2
+    glibc
     gst-plugins-base-libs
+    gstreamer
     libpipewire-$_ver.so
     pipewire
     pipewire-session-manager
