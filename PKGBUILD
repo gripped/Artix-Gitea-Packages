@@ -2,8 +2,8 @@
 # Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
 
 pkgname=waybar
-pkgver=0.9.19
-pkgrel=2.1
+pkgver=0.9.20
+pkgrel=2
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors'
 arch=('x86_64')
 url="https://github.com/Alexays/Waybar/"
@@ -46,12 +46,20 @@ backup=(
 optdepends=(
     'otf-font-awesome: Icons in the default configuration'
 )
-source=("$pkgname-$pkgver.tar.gz::https://github.com/Alexays/Waybar/archive/$pkgver.tar.gz")
-sha256sums=('09695c9d6ae4cf33d8e8a2c3e4ba216e5d293e2d72d4115c64c5d2612976816d')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/Alexays/Waybar/archive/$pkgver.tar.gz"
+         https://github.com/Alexays/Waybar/commit/e9b29613.patch)
+sha256sums=('e300183defece4799b6dfb7aea72400492ec6e330217c22158a334f35532d014'
+            'b5dc01bb96ad7cbe1f9e0683e3276e3fee0aebb2d824aa97e7a36d765aa3f1e4')
+
+prepare() {
+    cd Waybar-$pkgver
+    patch -p1 -i ../e9b29613.patch # Fix build with fmt 10
+}
 
 build() {
     cd "Waybar-$pkgver"
     # TODO tests depend on catch2 v3
+    CXXFLAGS+=" -std=c++20" \
     meson --prefix=/usr \
           --buildtype=plain \
           --auto-features=enabled \
