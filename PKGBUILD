@@ -3,9 +3,9 @@
 # Contributor: tobias <tobias@archlinux.org>
 
 pkgname=inkscape
-pkgver=1.2.2
-_tag='b0a8486541ac36327488da641d58a86bee2f07ad' # git rev-parse INKSCAPE_${pkgver/./_}
-pkgrel=10
+pkgver=1.3
+_tag='0e150ed6c4dbbe4e84981434eb6226bb8ce2e39f' # git rev-parse INKSCAPE_${pkgver/./_}
+pkgrel=1
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -14,7 +14,6 @@ makedepends=('cmake' 'boost' 'git')
 
 depends=(
 	'boost-libs'
-	'dbus-glib'
 	'double-conversion'
 	'gc'
 	'graphicsmagick'
@@ -31,9 +30,29 @@ depends=(
 	'poppler-glib'
 	'potrace'
 	'python'
+	'python-appdirs'
+	'python-beautifulsoup4'
+	'python-cachecontrol'
+	'python-cairo'
+	'python-certifi'
+	'python-chardet'
+	'python-coverage'
 	'python-cssselect'
+	'python-filelock'
+	'python-gobject'
+	'python-idna'
+	'python-lockfile'
 	'python-lxml'
+	'python-msgpack'
 	'python-numpy'
+	'python-packaging'
+	'python-pillow'
+	'python-pyserial'
+	'python-requests'
+	'python-six'
+	'python-urllib3'
+	'python-zstandard'
+	'scour'
 	'ttf-font'
 )
 
@@ -41,8 +60,8 @@ optdepends=(
 	'fig2dev: xfig input'
 	'gvfs: import clip art'
 	'pstoedit: latex formulas'
-	'scour: optimized SVG output, some extensions'
-	'texlive-core: latex formulas'
+	# this pulls in texlive-basic, so should suffice
+	'texlive-pstricks: latex formulas'
 )
 
 #source=("https://media.inkscape.org/dl/resources/file/${pkgname}-${pkgver}.tar.bz2")
