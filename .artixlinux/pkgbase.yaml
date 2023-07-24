@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - python-pydantic-core
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,13 +25,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 1:2.3.0-2
     packages:
       - python-pydantic-core-1:2.3.0-2-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: 1:2.1.2-1
-    packages:
-      - python-pydantic-core-1:2.1.2-1-x86_64.pkg.tar.zst
   world:
     version: 1:2.2.0-1
     packages:
