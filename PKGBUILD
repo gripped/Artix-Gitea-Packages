@@ -1,11 +1,11 @@
-# Maintainer:  <>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Firmicus <francois.archlinux.org>
 # Contributor: Tom Killian <tomk@runbox.com>
 # Contributor: FJ <joostef@gmail.com>
 
 pkgname=perl-template-toolkit
 pkgver=3.101
-pkgrel=1
+pkgrel=2
 pkgdesc="Perl template processing system"
 arch=('x86_64')
 url="https://search.cpan.org/dist/Template-Toolkit/"
