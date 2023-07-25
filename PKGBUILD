@@ -3,7 +3,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sudo
-_sudover=1.9.14p2
+_sudover=1.9.14p3
 pkgrel=1
 pkgver=${_sudover/p/.p}
 pkgdesc="Give certain users the ability to run some commands as root"
@@ -18,7 +18,7 @@ backup=('etc/pam.d/sudo'
 install=$pkgname.install
 source=(https://www.sudo.ws/sudo/dist/$pkgname-$_sudover.tar.gz{,.sig}
         sudo.pam)
-sha256sums=('15f6308db0ed4265ec929f2c61e2e13492e551750c203ee001d1fcd8104c9514'
+sha256sums=('a08318b1c4bc8582c004d4cd9ae2903abc549e7e46ba815e41fe81d1c0782b62'
             'SKIP'
             'd1738818070684a5d2c9b26224906aad69a4fea77aabd960fc2675aee2df1fa2')
 validpgpkeys=('59D1E9CCBA2B376704FDD35BA9F4C021CEA470FB')
