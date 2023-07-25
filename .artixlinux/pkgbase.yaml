@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: wine
-  version: 8.12-1
+  version: 8.13-1
   arch:
     - x86_64
   pkgname:
     - wine
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 8.12-1
+    version: 8.13-1
     packages:
-      - wine-8.12-1-x86_64.pkg.tar.zst
+      - wine-8.13-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
