@@ -1,9 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-exporter-tiny
 pkgver=1.006002
-pkgrel=1
+pkgrel=2
 pkgdesc="an exporter with the features of Sub::Exporter but only core dependencies"
 arch=('any')
 license=('PerlArtistic' 'GPL')
