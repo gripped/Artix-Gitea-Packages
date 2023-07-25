@@ -1,10 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Rémy Oudompheng <remy@archlinux.org>
+# Maintainer: Rémy Oudompheng <remy@archlinux.org>
 
 pkgname='perl-extutils-libbuilder'
 _dist="ExtUtils-LibBuilder"
 pkgver=0.08
-pkgrel=10
+pkgrel=11
 pkgdesc="A tools to build C libraries"
 arch=('any')
 license=('PerlArtistic' 'GPL')
