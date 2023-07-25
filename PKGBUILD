@@ -1,11 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=whois
-pkgver=5.5.17
+pkgver=5.5.18
 pkgrel=1
 pkgdesc="Intelligent WHOIS client"
 arch=('x86_64')
