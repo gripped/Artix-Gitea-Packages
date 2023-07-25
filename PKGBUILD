@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Moritz Bunkus <moritz@bunkus.org>
 
 pkgname=perl-cpan-meta-check
 pkgver=0.017
-pkgrel=1
+pkgrel=2
 pkgdesc="Verify requirements in a CPAN::Meta object"
 arch=('any')
 license=('PerlArtistic' 'GPL')
