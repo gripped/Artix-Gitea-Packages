@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: pzl <alsoelp _at_ gmail>
 
 pkgname=perl-devel-checklib
 pkgver=1.16
-pkgrel=1
+pkgrel=2
 pkgdesc="Module to check if other perl modules are installed"
 arch=('any')
 url='https://search.cpan.org/dist/Devel-CheckLib/'
