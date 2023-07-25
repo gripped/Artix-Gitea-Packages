@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: John D Jones III <j[nospace]n[nospace]b[nospace]e[nospace]k[nospace]1972 -_AT_- the domain name google offers a mail service at ending in dot com>
 # Generator  : CPANPLUS::Dist::Arch 1.25
 
 pkgname=perl-crypt-openssl-dsa
 pkgver=0.20
-pkgrel=4
+pkgrel=5
 pkgdesc="Digital Signature Algorithm using OpenSSL"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
