@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
 # Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 # Contributor: Valentin Hăloiu <vially.ichb+aur@gmail.com>
@@ -24,7 +24,7 @@ pkgname=(
   uwsgi-plugin-notfound
 )
 pkgver=2.0.21
-pkgrel=7
+pkgrel=8
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
 url="https://uwsgi-docs.readthedocs.io/en/latest/"
