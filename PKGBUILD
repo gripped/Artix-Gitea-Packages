@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Justin Davis (juster) <jrcd83@gmail.com>
 
 pkgname=perl-net-server
 pkgver=2.014
-pkgrel=1
+pkgrel=2
 pkgdesc='Extensible, general Perl server engine'
 arch=('any')
 url="https://metacpan.org/release/Net-Server"
