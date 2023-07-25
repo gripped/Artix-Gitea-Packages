@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vim
-  version: 9.0.1676-1
+  version: 9.0.1676-2
   arch:
     - x86_64
     - x86_64_v3
@@ -10,11 +10,11 @@ pkgbase:
     - gvim
     - vim-runtime
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 9.0.1676-2
+    packages:
+      - vim-9.0.1676-2-x86_64.pkg.tar.zst
+      - gvim-9.0.1676-2-x86_64.pkg.tar.zst
+      - vim-runtime-9.0.1676-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
