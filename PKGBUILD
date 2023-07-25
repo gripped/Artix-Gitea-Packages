@@ -1,4 +1,6 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 # Contributor: Firmicus <francois.archlinux.org>
@@ -6,7 +8,7 @@
 pkgname=perl-image-exiftool
 _srcname=Image-ExifTool
 pkgver=12.60
-pkgrel=1
+pkgrel=2
 pkgdesc="Reader and rewriter of EXIF informations that supports raw files"
 arch=('any')
 url="https://search.cpan.org/perldoc?exiftool"
