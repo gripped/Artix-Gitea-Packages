@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-netaddr-ip
 pkgver=4.079
-pkgrel=13
+pkgrel=14
 pkgdesc="Perl module to manage IP addresses and subnets"
 arch=('x86_64')
 url="https://search.cpan.org/dist/NetAddr-IP/"
