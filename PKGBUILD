@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Sarah Hay <sarah@archlinux.org>
 # Contributor: Arjan Timmerman <arjan@soulfly.nl>
 
 pkgname=perl-extutils-pkgconfig
 pkgver=1.16
-pkgrel=10
+pkgrel=11
 pkgdesc="The Perl Pkgconfig module"
 arch=('any')
 url="http://gtk2-perl.sourceforge.net/"

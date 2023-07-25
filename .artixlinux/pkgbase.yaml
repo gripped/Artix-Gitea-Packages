@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-extutils-pkgconfig
-  version: 1.16-10
+  version: 1.16-11
   arch:
     - any
   pkgname:
     - perl-extutils-pkgconfig
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.16-11
+    packages:
+      - perl-extutils-pkgconfig-1.16-11-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
