@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-crypt-openssl-random
 pkgver=0.15
-pkgrel=9
+pkgrel=10
 pkgdesc='Routines for accessing the OpenSSL pseudo-random number generator'
 arch=(x86_64)
 license=(PerlArtistic GPL)

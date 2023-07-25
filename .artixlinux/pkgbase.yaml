@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-crypt-openssl-random
-  version: 0.15-9
+  version: 0.15-10
   arch:
     - x86_64
   pkgname:
     - perl-crypt-openssl-random
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.15-10
+    packages:
+      - perl-crypt-openssl-random-0.15-10-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
