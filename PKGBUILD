@@ -1,9 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Florian Pritz <bluewind@archlinux.org>
+# Maintainer: Florian Pritz <bluewind@archlinux.org>
 
 pkgname=perl-cgi
 pkgver=4.57
-pkgrel=1
+pkgrel=2
 pkgdesc='Handle Common Gateway Interface requests and responses'
 arch=(any)
 license=(PerlArtistic GPL)
