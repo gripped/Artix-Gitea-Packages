@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-cache-memcached
-  version: 1.30-4
+  version: 1.30-5
   arch:
     - any
   pkgname:
     - perl-cache-memcached
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.30-5
+    packages:
+      - perl-cache-memcached-1.30-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
