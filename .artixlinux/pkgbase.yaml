@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-font-ttf
-  version: 1.06-4
+  version: 1.06-5
   arch:
     - any
   pkgname:
     - perl-font-ttf
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.06-5
+    packages:
+      - perl-font-ttf-1.06-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
