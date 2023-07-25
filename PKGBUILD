@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-http-date
 pkgver=6.05
-pkgrel=6
+pkgrel=7
 pkgdesc="Date conversion routines"
 arch=('any')
 url="https://search.cpan.org/dist/HTTP-Date"
