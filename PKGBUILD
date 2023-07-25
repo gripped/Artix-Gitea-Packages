@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-alien-base-modulebuild
 pkgver=1.17
-pkgrel=1
+pkgrel=2
 pkgdesc="A Module::Build subclass for building Alien:: modules and their libraries"
 arch=('any')
 license=('PerlArtistic')
