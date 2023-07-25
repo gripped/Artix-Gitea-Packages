@@ -1,12 +1,12 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Rémy Oudompheng <remy@archlinux.org>
+# Maintainer: Rémy Oudompheng <remy@archlinux.org>
 # Contributor: John D Jones III AKA jnbek <jnbek1972 -_AT_- g m a i l -_Dot_- com>
 # Generator  : CPANPLUS::Dist::Arch 1.32
 
 pkgname='perl-config-autoconf'
 _dist="Config-AutoConf"
 pkgver=0.320
-pkgrel=1
+pkgrel=3
 pkgdesc="A module to implement some of AutoConf macros in pure perl."
 arch=('any')
 license=('PerlArtistic' 'GPL')

@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-config-autoconf
-  version: 0.320-1
+  version: 0.320-3
   arch:
     - any
   pkgname:
     - perl-config-autoconf
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.320-3
+    packages:
+      - perl-config-autoconf-0.320-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
