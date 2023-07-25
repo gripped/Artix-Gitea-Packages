@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-dist-checkconflicts
-  version: 0.11-8
+  version: 0.11-9
   arch:
     - any
   pkgname:
     - perl-dist-checkconflicts
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.11-9
+    packages:
+      - perl-dist-checkconflicts-0.11-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
