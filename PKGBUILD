@@ -1,11 +1,11 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Charles Mauch <cmauch@gmail.com>
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-berkeleydb
 pkgver=0.65
-pkgrel=4
-pkgdesc="Interface to Berkeley DB version 2, 3 or 4"
+pkgrel=5
+pkgdesc="Interface to Berkeley DB"
 arch=('x86_64')
 url="https://search.cpan.org/dist/BerkeleyDB/"
 license=('GPL' 'PerlArtistic')
