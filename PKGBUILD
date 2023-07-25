@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=perl-crypt-openssl-rsa
 pkgver=0.33
-pkgrel=2
+pkgrel=3
 pkgdesc='RSA encoding and decoding, using the openSSL libraries'
 arch=(x86_64)
 license=(PerlArtistic GPL)
