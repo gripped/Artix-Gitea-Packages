@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfconf
 pkgver=4.18.1
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus-based configuration storage system"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfconf/start"
