@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname='perl-text-csv'
 _dist="Text-CSV"
 pkgver=2.02
-pkgrel=1
+pkgrel=2
 pkgdesc="comma-separated values manipulator"
 arch=('any')
 license=('PerlArtistic' 'GPL')
