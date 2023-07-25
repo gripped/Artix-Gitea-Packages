@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-algorithm-diff
-  version: 1:1.201-3
+  version: 1:1.201-4
   arch:
     - any
   pkgname:
     - perl-algorithm-diff
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:1.201-4
+    packages:
+      - perl-algorithm-diff-1:1.201-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

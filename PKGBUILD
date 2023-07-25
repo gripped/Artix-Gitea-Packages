@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Charles Mauch <cmauch@gmail.com>
 
 pkgname=perl-algorithm-diff
 epoch=1
 pkgver=1.201
-pkgrel=3
+pkgrel=4
 pkgdesc="Perl/CPAN Module Algorithm::Diff : Diff also Longest Common Subsequence"
 arch=("any")
 url="https://search.cpan.org/dist/Algorithm-Diff"
