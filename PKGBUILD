@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Justin Davis (juster) <jrcd83@gmail.com>
 
 pkgname=perl-mozilla-ca
 pkgver=20221114
-pkgrel=1
+pkgrel=2
 pkgdesc="Mozilla's CA cert bundle in PEM format (using system CA store)"
 arch=('any')
 license=('GPL2' 'LGPL2.1')
