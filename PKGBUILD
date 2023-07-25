@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=irssi
 pkgver=1.4.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Modular text mode IRC client with Perl scripting'
 url='https://irssi.org/'
 arch=('x86_64')
