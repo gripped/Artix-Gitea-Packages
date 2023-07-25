@@ -5,7 +5,7 @@
 
 pkgname=perl-mail-dkim
 pkgver=1.20230212
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Signs/verifies Internet mail with DKIM/DomainKey signatures'
 arch=(any)
 license=(PerlArtistic GPL)
