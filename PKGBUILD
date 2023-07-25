@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-lwp-mediatypes
 pkgver=6.04
-pkgrel=3
+pkgrel=4
 pkgdesc="Guess the media type of a file or a URL"
 arch=('any')
 url="https://metacpan.org/release/LWP-MediaTypes"
