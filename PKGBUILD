@@ -1,8 +1,8 @@
-# Maintainer:  <>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-alien-libxml2
 pkgver=0.19
-pkgrel=1
+pkgrel=2
 pkgdesc="Install the C libxml2 library on your system"
 arch=('any')
 license=('PerlArtistic')
