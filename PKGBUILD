@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@gmail.com>
 
 pkgname=perl-lwp-protocol-https
 pkgver=6.10
-pkgrel=4
+pkgrel=5
 pkgdesc="Provide https support for LWP::UserAgent"
 arch=('any')
 url="https://metacpan.org/release/LWP-Protocol-https"

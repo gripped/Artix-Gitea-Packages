@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-lwp-protocol-https
-  version: 6.10-4
+  version: 6.10-5
   arch:
     - any
   pkgname:
     - perl-lwp-protocol-https
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.10-5
+    packages:
+      - perl-lwp-protocol-https-6.10-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
