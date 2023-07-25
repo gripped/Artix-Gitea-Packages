@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-http-daemon
 pkgver=6.16
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple http server class"
 arch=('any')
 url='https://metacpan.org/pod/HTTP::Daemon'
