@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-datetime
 pkgver=1.59
-pkgrel=1
+pkgrel=2
 pkgdesc="A complete, easy to use date and time object"
 arch=('x86_64')
 url="https://search.cpan.org/dist/DateTime"
