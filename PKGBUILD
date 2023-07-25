@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-data-munge
 epoch=1
 pkgver=0.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Various utility functions"
 arch=('any')
 license=('PerlArtistic')
