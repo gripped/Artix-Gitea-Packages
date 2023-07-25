@@ -1,8 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Moritz Bunkus <moritz@bunkus.org>
 
 pkgname='perl-class-method-modifiers'
 pkgver=2.15
-pkgrel=1
+pkgrel=2
 pkgdesc="provides Moose-like method modifiers"
 arch=('any')
 license=('PerlArtistic' 'GPL')

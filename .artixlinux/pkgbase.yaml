@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-class-method-modifiers
-  version: 2.15-1
+  version: 2.15-2
   arch:
     - any
   pkgname:
     - perl-class-method-modifiers
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.15-2
+    packages:
+      - perl-class-method-modifiers-2.15-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
