@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-net-ip
-  version: 1.26-11
+  version: 1.26-12
   arch:
     - any
   pkgname:
     - perl-net-ip
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.26-12
+    packages:
+      - perl-net-ip-1.26-12-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

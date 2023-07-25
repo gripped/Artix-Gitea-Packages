@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@gmail.com>
 # Contributor: Kevin Piche <kevin@archlinux.org>
 
 pkgname=perl-net-ip
 _realname=Net-IP
 pkgver=1.26
-pkgrel=11
+pkgrel=12
 pkgdesc="Perl Module:  Easy manipulation of IPv4 and IPv6 addresses"
 arch=('any')
 license=('PerlArtistic')
