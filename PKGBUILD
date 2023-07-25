@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Dale Blount <dale@archlinux.org>
 # Contributor: Dale Blount <dale@archlinux.org>
 # Contributor: François Charette <francois.archlinux.org>
 
 pkgname=perl-mail-spf
 pkgver=2.9.0
-pkgrel=10
+pkgrel=11
 pkgdesc="Perl module that provides SPF support"
 arch=('any')
 license=('custom')
