@@ -1,8 +1,8 @@
-# Maintainer:  <>
+# Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-libwww
 pkgver=6.67
-pkgrel=1
+pkgrel=2
 pkgdesc="The World-Wide Web library for Perl"
 arch=('any')
 url="https://metacpan.org/release/libwww-perl"
