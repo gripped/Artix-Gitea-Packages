@@ -1,10 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: eric <eric@archlinux.org>
 # Contributor: Eric Johnson <eric@coding-zone.com>
 
 pkgname=perl-appconfig
 pkgver=1.71
-pkgrel=10
+pkgrel=11
 pkgdesc="Perl/CPAN AppConfig module - Read configuration files and parse command line arguments"
 arch=('any')
 license=('PerlArtistic' 'GPL')
