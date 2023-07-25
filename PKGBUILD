@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-crypt-ssleay
 pkgver=0.73_06
-pkgrel=3
+pkgrel=4
 pkgdesc="OpenSSL glue that provides LWP https support"
 arch=('x86_64')
 url="https://search.cpan.org/dist/Crypt-SSLeay"
