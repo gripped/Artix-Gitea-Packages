@@ -1,10 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: kevin <kevin@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=perl-digest-nilsimsa
 pkgver=0.06
-pkgrel=23
+pkgrel=24
 pkgdesc="Perl version of Nilsimsa code"
 arch=('x86_64')
 license=('LGPL')
