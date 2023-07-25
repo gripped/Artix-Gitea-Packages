@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-xml-libxml
-  version: 2.0208-1
+  version: 2.0209-1
   arch:
     - x86_64
   pkgname:
     - perl-xml-libxml
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0209-1
+    packages:
+      - perl-xml-libxml-2.0209-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
