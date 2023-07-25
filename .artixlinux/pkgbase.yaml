@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-file-copy-recursive
-  version: 0.45-5
+  version: 0.45-6
   arch:
     - any
   pkgname:
     - perl-file-copy-recursive
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.45-6
+    packages:
+      - perl-file-copy-recursive-0.45-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
