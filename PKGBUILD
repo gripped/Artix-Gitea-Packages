@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-params-validate
 pkgver=1.31
-pkgrel=1
+pkgrel=2
 pkgdesc="Validate sub params against a spec"
 arch=('x86_64')
 url="https://search.cpan.org/dist/Params-Validate"
