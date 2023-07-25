@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@gmail.com>
 # Conributor: kevin <kevin@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=perl-html-tagset
 pkgver=3.20
-pkgrel=13
+pkgrel=14
 pkgdesc="Data tables useful in parsing HTML"
 arch=('any')
 license=('PerlArtistic')
