@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-crypt-openssl-guess
-  version: 0.15-2
+  version: 0.15-3
   arch:
     - any
   pkgname:
     - perl-crypt-openssl-guess
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.15-3
+    packages:
+      - perl-crypt-openssl-guess-0.15-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
