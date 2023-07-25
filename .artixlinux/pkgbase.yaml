@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qca-qt5
-  version: 2.3.6-2
+  version: 2.3.7-1
   arch:
     - x86_64
   pkgname:
     - qca-qt5
     - qca-qt6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.3.6-2
+    version: 2.3.7-1
     packages:
-      - qca-qt5-2.3.6-2-x86_64.pkg.tar.zst
-      - qca-qt6-2.3.6-2-x86_64.pkg.tar.zst
+      - qca-qt5-2.3.7-1-x86_64.pkg.tar.zst
+      - qca-qt6-2.3.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
