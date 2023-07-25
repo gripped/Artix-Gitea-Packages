@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-digest-bubblebabble
-  version: 0.02-8
+  version: 0.02-9
   arch:
     - any
   pkgname:
     - perl-digest-bubblebabble
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.02-9
+    packages:
+      - perl-digest-bubblebabble-0.02-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
