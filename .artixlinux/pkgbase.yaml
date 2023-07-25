@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: foomatic-db-engine
-  version: 4:20220521-1
+  version: 4:20230725-1
   arch:
     - x86_64
   pkgname:
     - foomatic-db-engine
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4:20230725-1
+    packages:
+      - foomatic-db-engine-4:20230725-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

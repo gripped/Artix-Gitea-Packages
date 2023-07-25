@@ -2,7 +2,7 @@
 
 pkgname=foomatic-db-engine
 arch=('x86_64')
-pkgver=20220521
+pkgver=20230725
 pkgrel=1
 epoch=4
 url="http://www.linuxprinting.org/foomatic.html"
@@ -20,9 +20,9 @@ source=(foomatic-db-engine::git+https://github.com/OpenPrinting/foomatic-db-engi
 )
 sha256sums=('SKIP')
 
-# pkgver() {
-#   date +%Y%m%d
-# }
+pkgver() {
+  date +%Y%m%d
+}
 
 build() {
   export LIB_CUPS="/usr/lib/cups"
