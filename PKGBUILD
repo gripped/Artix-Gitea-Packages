@@ -1,10 +1,10 @@
-# Maintainer:  <>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Jason St. John <jstjohn .. purdue . edu>
 # Contributor: AUR Perl <aurperl@juster.info>
 
 pkgname=perl-file-sharedir-install
 pkgver=0.14
-pkgrel=1
+pkgrel=2
 pkgdesc="File::ShareDir::Install - Install read-only data files from a distribution"
 arch=('any')
 url="https://search.cpan.org/dist/File-ShareDir-Install"
