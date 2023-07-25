@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: Dan McGee <dan@archlinux.org>
 
 pkgname=postgresql-old-upgrade
 pkgver=14.7
 _majorver=${pkgver%.*}
-pkgrel=3
+pkgrel=4
 pkgdesc='PostgreSQL build for migrating between major versions with pg_upgrade'
 url='https://www.postgresql.org/'
 arch=('x86_64')
