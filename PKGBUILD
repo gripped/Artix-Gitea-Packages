@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: kevin <kevin@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=perl-digest-sha1
 pkgver=2.13
-pkgrel=18
+pkgrel=19
 pkgdesc="Perl interface to the SHA-1 Algorithm"
 arch=(x86_64)
 license=('PerlArtistic')
