@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-www-robotrules
 pkgver=6.02
-pkgrel=11
+pkgrel=12
 pkgdesc="Database of robots.txt-derived permissions"
 arch=('any')
 url="https://metacpan.org/release/WWW-RobotRules"
