@@ -1,10 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Thomas Dziedzic < gostrc at gmail >
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 # Contributor: Alex Dioso <adioso->gmail*com>
 
 pkgname=perl-clone
 pkgver=0.46
-pkgrel=1
+pkgrel=2
 pkgdesc='Recursive copy of nested objects.'
 arch=('x86_64')
 url='https://github.com/garu/Clone'
