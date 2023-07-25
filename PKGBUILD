@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Justin "juster" Davis <jrcd83@gmail.com>
 # Generator : pbjam 0.01
 
 pkgname=perl-http-message
 pkgver=6.44
-pkgrel=1
+pkgrel=2
 pkgdesc="HTTP style messages"
 arch=('any')
 url='https://search.cpan.org/dist/HTTP-Message'
