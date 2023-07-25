@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: curl
-  version: 8.2.0-2
+  version: 8.2.0-3
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libcurl-compat
     - libcurl-gnutls
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -21,8 +21,11 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 8.2.0-3
+    packages:
+      - curl-8.2.0-3-x86_64.pkg.tar.zst
+      - libcurl-compat-8.2.0-3-x86_64.pkg.tar.zst
+      - libcurl-gnutls-8.2.0-3-x86_64.pkg.tar.zst
   system:
     version: 8.2.0-2
     packages:
