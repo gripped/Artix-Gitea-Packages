@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
@@ -7,7 +6,7 @@
 
 pkgname=graphicsmagick
 pkgver=1.3.40
-pkgrel=3
+pkgrel=4
 pkgdesc='Image processing system'
 url='http://www.graphicsmagick.org/'
 arch=(x86_64)
