@@ -1,11 +1,12 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Mark Rosenstand <mark@borkware.net>
 # Contributor: Paul Mattal <paul@archlinux.org>
 
 pkgname=perl-locale-gettext
 _realname=Locale-gettext
 pkgver=1.07
-pkgrel=13
+pkgrel=14
 pkgdesc="Permits access from Perl to the gettext() family of functions"
 arch=('x86_64')
 license=('GPL' 'PerlArtistic')
