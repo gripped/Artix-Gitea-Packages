@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Jan de Groot
 # Contributor: Charles Mauch <cmauch@gmail.com>
 
 pkgname=perl-mime-types
 pkgver=2.24
-pkgrel=1
+pkgrel=2
 pkgdesc="Perl/CPAN Module MIME::Types : Information and processing MIME types"
 arch=('any')
 url="https://search.cpan.org/dist/MIME-Types/"
