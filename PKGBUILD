@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-inc-latest
 pkgver=0.500
-pkgrel=10
+pkgrel=11
 pkgdesc="Build, test, and install Perl modules"
 arch=('any')
 url="https://github.com/dagolden/inc-latest"
