@@ -1,11 +1,11 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Rémy Oudompheng <remy@archlinux.org>
 # Contributor: John D Jones III AKA jnbek <jnbek1972 -_AT_- g m a i l -_Dot_- com>
 # Generator  : CPANPLUS::Dist::Arch 1.32
 
 pkgname='perl-mime-charset'
 _dist="MIME-Charset"
 pkgver='1.013.1'
-pkgrel=1
+pkgrel=2
 pkgdesc="Charset Information for MIME"
 arch=('any')
 license=('PerlArtistic' 'GPL')

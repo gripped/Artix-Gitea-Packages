@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-mime-charset
-  version: 1.013.1-1
+  version: 1.013.1-2
   arch:
     - any
   pkgname:
     - perl-mime-charset
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.013.1-2
+    packages:
+      - perl-mime-charset-1.013.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
