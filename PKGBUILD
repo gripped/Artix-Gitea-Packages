@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-encode-locale
 pkgver=1.05
-pkgrel=10
+pkgrel=11
 pkgdesc="Determine the locale encoding"
 arch=('any')
 url="https://search.cpan.org/dist/Encode-Locale"
