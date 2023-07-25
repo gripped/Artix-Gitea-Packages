@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-alien-build-plugin-download-gitlab
 pkgver=0.01
-pkgrel=1
+pkgrel=2
 pkgdesc="Alien::Build plugin to download from GitLab"
 arch=('any')
 license=('PerlArtistic')
