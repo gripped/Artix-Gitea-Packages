@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-crypt-openssl-bignum
 pkgver=0.09
-pkgrel=8
+pkgrel=9
 pkgdesc="OpenSSL's multiprecision integer arithmetic"
 arch=(x86_64)
 license=(PerlArtistic GPL)
