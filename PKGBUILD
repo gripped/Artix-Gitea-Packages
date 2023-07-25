@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Charles Mauch <cmauch@gmail.com>
 
 pkgname=perl-authen-sasl
 pkgver=2.16
-pkgrel=10
+pkgrel=11
 pkgdesc="Perl/CPAN Module Authen::SASL : SASL authentication framework"
 arch=(any)
 url="https://search.cpan.org/dist/Authen-SASL"
