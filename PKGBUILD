@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Caleb Cushing <xenoterracide@gmail.com>
 
 pkgname=perl-image-info
 pkgver=1.43
-pkgrel=1
+pkgrel=2
 pkgdesc="Extract meta information from image files"
 arch=('any')
 license=('PerlArtistic' 'GPL')
