@@ -1,11 +1,11 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=perl-net-ssleay
 _cpanname=Net-SSLeay
 pkgver=1.92
-pkgrel=2
+pkgrel=3
 pkgdesc='Perl bindings for OpenSSL and LibreSSL'
 url='https://search.cpan.org/dist/Net-SSLeay/'
 arch=('x86_64')
