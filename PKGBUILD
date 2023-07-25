@@ -1,11 +1,12 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: kevin <kevin@archlinux.org>
 # Contributor: Manolis Tzanidakis
 # Contributor: Firmicus <francois.archlinux.org>
 
 pkgname=perl-html-parser
 pkgver=3.81
-pkgrel=1
+pkgrel=2
 pkgdesc="Perl HTML parser class"
 arch=('x86_64')
 license=('PerlArtistic')
