@@ -1,8 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-b-cow
 pkgver=0.007
-pkgrel=1
+pkgrel=2
 pkgdesc="B::COW additional B helpers to check COW status"
 arch=('x86_64')
 license=('PerlArtistic')
