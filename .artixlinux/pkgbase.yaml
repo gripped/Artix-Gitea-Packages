@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-parse-recdescent
-  version: 1.967015-2
+  version: 1.967015-3
   arch:
     - any
   pkgname:
     - perl-parse-recdescent
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.967015-3
+    packages:
+      - perl-parse-recdescent-1.967015-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
