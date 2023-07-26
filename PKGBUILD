@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 
 pkgname=perl-params-validationcompiler
 _pkgname=Params-ValidationCompiler
 pkgver=0.31
-pkgrel=1
+pkgrel=2
 pkgdesc="Build an optimized subroutine parameter validator once, use it forever"
 arch=('any')
 license=('PerlArtistic' 'GPL')
