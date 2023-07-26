@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-probe-perl
-  version: 0.03-5
+  version: 0.03-6
   arch:
     - any
   pkgname:
     - perl-probe-perl
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.03-6
+    packages:
+      - perl-probe-perl-0.03-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
