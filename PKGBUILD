@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-test-minimumversion
 pkgver=0.101083
-pkgrel=1
+pkgrel=2
 pkgdesc="Does your code require newer perl than you think?"
 arch=('any')
 license=('PerlArtistic')
