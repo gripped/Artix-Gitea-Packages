@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-ref-util-xs
-  version: 0.117-1
+  version: 0.117-2
   arch:
     - x86_64
   pkgname:
     - perl-ref-util-xs
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.117-2
+    packages:
+      - perl-ref-util-xs-0.117-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
