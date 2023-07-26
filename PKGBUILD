@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=Type-Tiny
 pkgname=perl-${_pkg,,}
 pkgver=1.016010
-pkgrel=1
+pkgrel=2
 pkgdesc="Tiny, yet Moo(se)-compatible type constraint"
 arch=(any)
 url="https://metacpan.org/release/${_pkg}"
