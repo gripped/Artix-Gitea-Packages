@@ -1,12 +1,12 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Guillaume Hayot <ghayot@postblue.info>
 # Contributor: Arvedui <arvedui@posteo.de>
 # Contributor: Marc Plano-Lesay <marc.planolesay@gmail.com>
 # Contributor: Joost Bremmer <toost.b@gmail.com>
 
 pkgname=python-discogs-client
-pkgver=2.6
-pkgrel=2
+pkgver=2.7
+pkgrel=1
 pkgdesc='Python Client for the Discogs API'
 arch=(any)
 url=https://github.com/joalla/discogs_client
@@ -21,7 +21,7 @@ makedepends=(
   git
   python-setuptools
 )
-_tag=25eb053a7351bafc9b05ea5948378ecceb22f744
+_tag=41aae5e0f7b2af7635d0e86f791ba66ed7568663
 source=(git+https://github.com/joalla/discogs_client.git#tag=${_tag})
 b2sums=(SKIP)
 
