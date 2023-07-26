@@ -5,7 +5,7 @@
 pkgname=inkscape
 pkgver=1.3
 _tag='0e150ed6c4dbbe4e84981434eb6226bb8ce2e39f' # git rev-parse INKSCAPE_${pkgver/./_}
-pkgrel=1
+pkgrel=2
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -20,6 +20,7 @@ depends=(
 	'gsl'
 	'gspell'
 	'gtkmm3'
+	'gtksourceview4'
 	'lcms2'
 	'lib2geom'
 	'libcdr'
