@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-io-compress-brotli
 pkgver=0.004001
-pkgrel=1
+pkgrel=2
 pkgdesc='Read/write Brotli buffers/streams'
 url="https://metacpan.org/release/IO-Compress-Brotli"
 arch=('x86_64')
