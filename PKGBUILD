@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Charles Mauch <cmauch@gmail.com>
 
 pkgname=perl-io-tty
 pkgver=1.17
-pkgrel=1
+pkgrel=2
 pkgdesc="Provide an interface to TTYs and PTYs"
 arch=('x86_64')
 url="https://search.cpan.org/dist/IO-Tty/"
