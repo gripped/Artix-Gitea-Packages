@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-gnupg
-  version: 0.5.0-2
+  version: 0.5.1-1
   arch:
     - any
   pkgname:
     - python-gnupg
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.0-2
+    version: 0.5.1-1
     packages:
-      - python-gnupg-0.5.0-2-any.pkg.tar.zst
+      - python-gnupg-0.5.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
