@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-ppix-quotelike
 pkgver=0.023
-pkgrel=1
+pkgrel=2
 pkgdesc="Parse Perl string literals and string-literal-like things"
 arch=('any')
 license=('PerlArtistic')

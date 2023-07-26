@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-ppix-quotelike
-  version: 0.023-1
+  version: 0.023-2
   arch:
     - any
   pkgname:
     - perl-ppix-quotelike
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.023-2
+    packages:
+      - perl-ppix-quotelike-0.023-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
