@@ -13,11 +13,9 @@ url='https://www.ivarch.com/programs/pv.shtml'
 license=('custom:Artistic 2.0')
 depends=('glibc')
 _archive="$pkgname-$pkgver"
-source=("${url%/*}/sources/$_archive.tar.bz2"
-        "$_archive.tar.bz2.sig::${url%/*}/sources/$_archive.tar.bz2.txt")
+source=("${url%/*}/sources/$_archive.tar.bz2")
 # source=("$_url/releases/download/v$pkgver/$_archive.tar.gz")
-sha256sums=('1372b41053881a05e2df10cb054304decc0233261c0aa0e96185842fa5a422ad'
-            'SKIP')
+sha256sums=('1372b41053881a05e2df10cb054304decc0233261c0aa0e96185842fa5a422ad')
 validpgpkeys=(2189D5C29F041F2277AFD50AC1596BA33FC56F51) # andrew.wood@ivarch.com
 
 build() {
