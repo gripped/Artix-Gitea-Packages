@@ -6,10 +6,10 @@
 
 pkgbase=curl
 pkgname=(curl libcurl-compat libcurl-gnutls)
-_tag='7d901d74d390a7e9ad7c7b3fa759cd5b9bbc7742' # git rev-parse v${_tag_name}
-_tag_name='8_2_0'
+_tag='51ca9c12f959b7e97c1e67d0bebb33aa0d1f28b2' # git rev-parse v${_tag_name}
+_tag_name='8_2_1'
 pkgver="${_tag_name//_/.}"
-pkgrel=3
+pkgrel=1
 pkgdesc='command line tool and library for transferring data with URLs'
 arch=('x86_64')
 url='https://curl.se/'
@@ -24,8 +24,6 @@ source=("git+https://github.com/bagder/curl.git#tag=${_tag}?signed")
 sha512sums=('SKIP')
 
 _backports=(
-  'c1effdfe658ae505e8ea65e5f46d810c4b8d81cb'
-  '0470577eb4524f09d245e9e6afd42ba8677a5a19'
 )
 
 _reverts=(

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: curl
-  version: 8.2.0-3
+  version: 8.2.1-1
   arch:
     - x86_64
   pkgname:
@@ -21,11 +21,11 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 8.2.0-3
+    version: 8.2.1-1
     packages:
-      - curl-8.2.0-3-x86_64.pkg.tar.zst
-      - libcurl-compat-8.2.0-3-x86_64.pkg.tar.zst
-      - libcurl-gnutls-8.2.0-3-x86_64.pkg.tar.zst
+      - curl-8.2.1-1-x86_64.pkg.tar.zst
+      - libcurl-compat-8.2.1-1-x86_64.pkg.tar.zst
+      - libcurl-gnutls-8.2.1-1-x86_64.pkg.tar.zst
   system:
     version: 8.2.0-2
     packages:
