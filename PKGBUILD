@@ -1,11 +1,12 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Maxwell Pray a.k.a. Synthead <synthead@gmail.com>
 # Contributor: Justin Davis <jrcd83@gmail.com>
 
 pkgname=perl-sub-name
 _cpanname=Sub-Name
 pkgver=0.27
-pkgrel=1
+pkgrel=2
 pkgdesc="(re)name a sub"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
