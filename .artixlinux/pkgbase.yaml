@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-module-pluggable
-  version: 5.2-8
+  version: 5.2-9
   arch:
     - any
   pkgname:
     - perl-module-pluggable
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.2-9
+    packages:
+      - perl-module-pluggable-5.2-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
