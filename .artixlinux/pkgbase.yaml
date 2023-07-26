@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: aspell-pl
-  version: 20220801-1
+  version: 20230701-1
   arch:
-    - x86_64
+    - any
   pkgname:
     - aspell-pl
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20220801-1
+    version: 20230701-1
     packages:
-      - aspell-pl-20220801-1-x86_64.pkg.tar.zst
+      - aspell-pl-20230701-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
