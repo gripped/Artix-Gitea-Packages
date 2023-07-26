@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-acme-alien-dontpanic
 pkgver=2.7200
-pkgrel=1
+pkgrel=2
 pkgdesc="Test Module for Alien::Base"
 arch=('any')
 license=('PerlArtistic')
