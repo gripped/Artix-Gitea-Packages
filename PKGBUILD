@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-pod-parser
 pkgver=1.66
-pkgrel=1
+pkgrel=2
 pkgdesc="Modules for parsing/translating POD format documents"
 arch=('any')
 license=('PerlArtistic')
