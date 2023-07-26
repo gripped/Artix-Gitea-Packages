@@ -1,9 +1,9 @@
-# Maintainer:  <>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Contributor: John D Jones III AKA jnbek <jnbek1972 -_AT_- g m a i l -_Dot_- com>
 
 pkgname='perl-scalar-list-utils'
 pkgver=1.63
-pkgrel=1
+pkgrel=2
 pkgdesc="A selection of general-utility list subroutines"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
