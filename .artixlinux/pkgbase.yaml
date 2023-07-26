@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-return-multilevel
-  version: 0.08-3
+  version: 0.08-4
   arch:
     - any
   pkgname:
     - perl-return-multilevel
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.08-4
+    packages:
+      - perl-return-multilevel-0.08-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
