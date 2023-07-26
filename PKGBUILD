@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-pod-spell
 pkgver=1.26
-pkgrel=1
+pkgrel=2
 pkgdesc="A formatter for spellchecking Pod"
 arch=('any')
 license=('PerlArtistic')
