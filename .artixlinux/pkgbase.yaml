@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-test-script
-  version: 1.29-3
+  version: 1.29-4
   arch:
     - any
   pkgname:
     - perl-test-script
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.29-4
+    packages:
+      - perl-test-script-1.29-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
