@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sébastien Luttringer
 
 pkgname=backuppc
 pkgver=4.4.0
 _xsver=0.62
 _rbpcver=3.1.3.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Enterprise-grade system for backing up Linux, Windows and MacOS PCs'
 url='https://github.com/backuppc/'
 license=('GPL2')
