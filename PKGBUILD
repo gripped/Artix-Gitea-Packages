@@ -1,4 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Kyle Keen <keenerd@gmail.com>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
@@ -7,9 +7,9 @@
 # Contributor: Chaiwat Suttipongsakul <cwt at bashell dot com>
 
 pkgname=python-markdown
-_commit='be1c2839dd587a858f91c710e56667cba9f5329d'
-pkgver=3.4.3
-pkgrel=2
+_commit='f99f176d248d0e472b0960d06a7aaf649bb1da25'
+pkgver=3.4.4
+pkgrel=1
 pkgdesc="Python implementation of John Gruber's Markdown"
 arch=('any')
 url='https://python-markdown.github.io/'
