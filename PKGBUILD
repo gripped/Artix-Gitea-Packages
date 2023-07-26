@@ -10,7 +10,7 @@
 # upstream releases a compatible version of spirv-tools, then updating the
 # spriv-tools system package and only then building glslang against that.
 pkgname=glslang
-pkgver=12.2.0
+pkgver=12.3.1
 pkgrel=1
 pkgdesc='OpenGL and OpenGL ES shader front end and validator'
 arch=('x86_64')
@@ -21,7 +21,7 @@ makedepends=('cmake' 'ninja' 'git' 'spirv-tools' 'spirv-headers' 'python')
 options=('staticlibs')
 # Get the commits from known_good.json for every release
 source=(${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/glslang/archive/${pkgver}.tar.gz)
-sha256sums=('870d17030fda7308c1521fb2e01a9e93cbe4b130bc8274e90d00e127432ab6f6')
+sha256sums=('a57836a583b3044087ac51bb0d5d2d803ff84591d55f89087fc29ace42a8b9a8')
 
 build() {
   cd ${pkgname}-${pkgver}
