@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Bruno Dupuis <lisael@lisael.org>
 # Contributor: Rafael Reggiani Manzo <rr.manzo@gmail.com>
 
 pkgname=perl-test-file
 pkgver=1.993
-pkgrel=1
+pkgrel=2
 pkgdesc="This modules provides a collection of test utilities for file attributes."
 arch=('any')
 url='https://github.com/briandfoy/test-file'
