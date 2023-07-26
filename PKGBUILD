@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Jonathan Steel <jsteel@aur.archlinux.org>
 # Contributor: Justin Davis (juster) <jrcd83@gmail.com>
 
 pkgname=perl-test-fatal
 pkgver=0.017
-pkgrel=1
+pkgrel=2
 pkgdesc="Incredibly simple helpers for testing code with exceptions"
 arch=('any')
 url="https://metacpan.org/release/Test-Fatal"
