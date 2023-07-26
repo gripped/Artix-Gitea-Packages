@@ -1,10 +1,11 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: AUR Perl <aurperl@juster.info>
 # Generator  : CPANPLUS::Dist::Arch 1.15
 
 pkgname=perl-yaml-tiny
 pkgver=1.74
-pkgrel=1
+pkgrel=2
 pkgdesc="Read/Write YAML files with as little code as possible"
 arch=('any')
 license=('PerlArtistic' 'GPL')
