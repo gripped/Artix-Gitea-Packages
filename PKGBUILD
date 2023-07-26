@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-ref-util
 pkgver=0.204
-pkgrel=1
+pkgrel=2
 pkgdesc="Utility functions for checking references"
 arch=('any')
 license=('PerlArtistic')
