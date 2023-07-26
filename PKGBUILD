@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-mail-authenticationresults
 pkgver=2.20230112
-pkgrel=1
+pkgrel=2
 pkgdesc='Object Oriented Authentication-Results Headers'
 arch=(any)
 license=(PerlArtistic GPL)
