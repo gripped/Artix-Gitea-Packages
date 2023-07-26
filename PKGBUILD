@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Alexander Fehr <pizzapunk gmail com>
@@ -6,7 +6,7 @@
 
 pkgname=('pidgin' 'libpurple' 'finch')
 pkgver=2.14.12
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://pidgin.im/"
 license=('GPL')
