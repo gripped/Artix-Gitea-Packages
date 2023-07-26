@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-net-dns-resolver-mock
 pkgver=1.20230216
-pkgrel=1
+pkgrel=2
 pkgdesc='Mock a DNS Resolver object for testing'
 arch=(any)
 license=(PerlArtistic GPL)
