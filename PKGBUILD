@@ -25,8 +25,8 @@ makedepends=(
 )
 provides=(python-pyyaml)
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('94a29924484f557c0966d485c2b70232909253f27fcea9b89e1db1462abf61f2f85d55fbae0177b2bed70eb5daa75813551e868df4df4cddfdee9a87bd08485f')
-b2sums=('0baec52a7aeede68dcddaf4c0a8fc39533287f3b65d0f6bcfc87ef2dbad347793b975e2fd6abd455f160dd4f62d9034288033b9b0c7d07269c6c588e5f20f8c1')
+sha512sums=('1c74a92a4ad7d47854dc7bcb2e89b3c8e0b14fa815c7dbfbc22b24480dbba6c81e971c77ee384c494a960914b95f06edf943d7431925a5ed674a0ba830d258e0')
+b2sums=('c34f2169f6eb6aa718aeb53dbfaf02590e11e504d16cc85a802e1a1191f296ef9aa2501db683e1a48173ce6adeaeca09f2ab989581dcf1c1ba4004831bb4cf47')
 
 build() {
   cd $_name-$pkgver
