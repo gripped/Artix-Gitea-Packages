@@ -1,11 +1,12 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Maxwell Pray a.k.a. Synthead <synthead@gmail.com>
 # Contributor: Justin Davis <jrcd83@gmail.com>
 
 pkgname="perl-variable-magic"
 _cpanname="Variable-Magic"
 pkgver=0.63
-pkgrel=1
+pkgrel=2
 pkgdesc="Associate user-defined magic to variables from Perl."
 arch=("x86_64")
 license=("PerlArtistic" "GPL")
