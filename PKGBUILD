@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: John D Jones III <j[nospace]n[nospace]b[nospace]e[nospace]k[nospace]1972 -_AT_- the domain name google offers a mail service at ending in dot com>
 # Generator  : CPANPLUS::Dist::Arch 1.28
 
 pkgname=perl-net-libidn2
 pkgver=1.02
-pkgrel=1
+pkgrel=2
 pkgdesc="Perl bindings for GNU Libidn2"
 arch=('x86_64')
 url='https://search.cpan.org/dist/Net-LibIDN2'
