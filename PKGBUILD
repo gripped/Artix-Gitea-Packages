@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-test2-tools-process
 pkgver=0.07
-pkgrel=1
+pkgrel=2
 pkgdesc="Unit tests for code that calls exit, exec, system or qx()"
 arch=('any')
 license=('PerlArtistic')
