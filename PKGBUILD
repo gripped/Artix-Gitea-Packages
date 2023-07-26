@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-perl-critic
 pkgver=1.148
-pkgrel=1
+pkgrel=2
 pkgdesc="Critique Perl source code for best-practices"
 arch=('any')
 license=('PerlArtistic')
