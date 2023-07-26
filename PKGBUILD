@@ -1,8 +1,9 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-ppix-regexp
 pkgver=0.088
-pkgrel=1
+pkgrel=2
 pkgdesc="Parse regular expressions"
 arch=('any')
 license=('PerlArtistic')
