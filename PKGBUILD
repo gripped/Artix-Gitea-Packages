@@ -1,9 +1,10 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Moritz Bunkus <moritz@bunkus.org>
 
 pkgname='perl-moo'
 pkgver=2.005005
-pkgrel=1
+pkgrel=2
 pkgdesc="Minimalist Object Orientation (with Moose compatiblity)"
 arch=('any')
 license=('PerlArtistic' 'GPL')
