@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer:
 # Contributor: Dale Blount <dale@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=razor
 pkgver=2.85
-pkgrel=18
+pkgrel=19
 pkgdesc="A distributed, collaborative, spam detection and filtering network"
 arch=('x86_64')
 url="http://razor.sourceforge.net"
