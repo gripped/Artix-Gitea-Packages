@@ -1,8 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-path-tiny
 pkgver=0.144
-pkgrel=1
+pkgrel=2
 pkgdesc='File path utility'
 arch=(any)
 license=(PerlArtistic GPL)
