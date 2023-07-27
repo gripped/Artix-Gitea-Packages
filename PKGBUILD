@@ -2,53 +2,39 @@
 # Contributor: williamh <williamh@gentoo.org>
 
 pkgname=openrc-settingsd
-pkgver=1.1.0
-pkgrel=2
+pkgver=1.4.0
+pkgrel=1
 pkgdesc="System settings D-Bus service for OpenRC"
-arch=('i686' 'x86_64')
+arch=('x86_64')
 url="https://gitlab.com/postmarketOS/openrc-settingsd"
 license=('GPL')
 groups=('openrc-world')
-depends=('libdaemon' 'openrc' 'polkit')
-optdepends=('nss-myhostname: nss-myhostname module')
-makedepends=('python' 'automake')
+depends=('gcc-libs' 'glibc' 'glib2' 'libdaemon' 'dbus' 'polkit'
+        'nss-myhostname' 'openrc')
+makedepends=('meson')
 backup=('etc/conf.d/openrc-settingsd')
 source=("https://gitlab.com/postmarketOS/openrc-settingsd/-/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz")
-sha256sums=('8be909a8a29e3661401d322ab1c390c03dc303888d44b9149dd07e4909a1a663')
+sha256sums=('9d09e02de0faf15ee9a6a742586cf9b1a314591ec50f84e2513636ecfe4f2ff3')
 
-prepare() {
-    cd "${pkgname}-v${pkgver}"
+build() {
+    local meson_options=(
+        -Dopenrc=enabled
+        -Denv-update=''
+        -Dhostname-style=default
+        -Dlocale-style=default
+    )
+    artix-meson "${pkgname}-v${pkgver}" build "${meson_options[@]}"
 
-    sed -i -e 's|/sbin/runscript|/usr/bin/openrc-run|g' data/init.d/openrc-settingsd.in
-    sed -e 's|^dbusbusconfigdir = $(sysconfdir)|dbusbusconfigdir = $(datadir)|' \
-        -i Makefile.am
-
-    autoreconf -if
+    meson compile -C build
 }
 
-build(){
-    cd "${pkgname}-v${pkgver}"
-    ./configure \
-        --sysconfdir=/etc \
-        --prefix=/usr \
-        --libdir=/usr/lib \
-        --libexecdir=/usr/lib \
-        --datarootdir=/usr/share \
-        --localstatedir=/var \
-        --sbindir=/usr/bin \
-        --with-pidfile=/run/openrc-settingsd.pid
-    make
+check(){
+    meson test -C build --print-errorlogs
 }
 
-check() {
-    cd "${pkgname}-v${pkgver}"
-    make check -k
-}
 
 package() {
-    cd "${pkgname}-v${pkgver}"
+    meson install -C build --destdir "${pkgdir}"
 
-    make DESTDIR="${pkgdir}" install
-
-    install -Dm644 ${srcdir}/${pkgname}-v${pkgver}/COPYING "$pkgdir/usr/share/licenses/${pkgname}/COPYING"
+    install -Dm644 "${pkgname}-v${pkgver}"/COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
 }
