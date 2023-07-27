@@ -2,7 +2,7 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.31.1
+pkgver=0.31.2
 pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
