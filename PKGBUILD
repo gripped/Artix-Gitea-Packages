@@ -2,8 +2,8 @@
 # Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
 
 pkgname=jami-daemon
-pkgver=20230323
-pkgrel=4
+pkgver=20230616
+pkgrel=1
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)"
 arch=(x86_64)
 url="https://jami.net"
@@ -15,7 +15,7 @@ depends=(glibc opendht gnutls nettle libgit2 libsecp256k1 libsecp256k1.so ffmpeg
 # portaudio needs a not-yet-upstream patch https://git.jami.net/savoirfairelinux/jami-daemon/-/issues/650
 makedepends=(git cmake perl asio msgpack-c msgpack-cxx restinio meson)
 checkdepends=(cppunit)
-_commit=c5bbd21e1c125f4012e2f88f485816a438ae62a7
+_commit=417447a167c52512e8c81250cc08bb5b24c6b667
 _pjprojectver=e4b83585a0bdf1523e808a4fc1946ec82ac733d0
 source=(git+https://git.jami.net/savoirfairelinux/${pkgname}.git#commit=${_commit}
         https://github.com/savoirfairelinux/pjproject/archive/${_pjprojectver}/pjproject-${_pjprojectver}.tar.gz
@@ -35,7 +35,6 @@ prepare() {
   cp ../pjproject-${_pjprojectver}.tar.gz contrib/tarballs
   mkdir contrib/native
 
-  git cherry-pick -n 315b5fbf546712f22a7b03ca750257bc92263a91 # Support opendht 2.5
   git cherry-pick -n d5e6509975bfaa67f7b3c54db72336b810454fc2 # Fix build with GCC 13
   patch -p1 -i ../fmt-10.patch # Fix build with fmt 10
 }
