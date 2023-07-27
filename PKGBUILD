@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Llewelyn Trahaearn <WoefulDerelict at GMail dot com>
 # Contributor: kokoko3k <kokoko3k at gmail dot com>
 # Contributor: Ionut Biru <ibiru at archlinux dot org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski at archlinux dot org>
 
 pkgname=lib32-libva
-pkgver=2.18.0
+pkgver=2.19.0
 pkgrel=1
 pkgdesc='Video Acceleration (VA) API for Linux (32-bit)'
 arch=(x86_64)
@@ -36,7 +36,7 @@ provides=(
   libva-x11.so
   libva.so
 )
-_tag=b06ccb323cd68bc5ce3fa9861c831766d6355d88
+_tag=807044bd0fcb944edf230052fa09acc4266790fe
 source=(git+https://github.com/intel/libva.git#tag=${_tag})
 sha256sums=('SKIP')
 
