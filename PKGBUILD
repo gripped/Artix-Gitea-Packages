@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 # Contributor: Dale Blount <dale@archlinux.org>
 # Contributor: Manolis Tzanidakis
 pkgname=spamassassin
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A mail filter to identify spam."
 arch=('x86_64')
 license=('APACHE')
