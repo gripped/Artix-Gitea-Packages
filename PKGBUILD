@@ -11,7 +11,7 @@
 # spriv-tools system package and only then building glslang against that.
 pkgname=glslang
 pkgver=12.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc='OpenGL and OpenGL ES shader front end and validator'
 arch=('x86_64')
 url='https://github.com/KhronosGroup/glslang'
@@ -20,8 +20,15 @@ depends=('gcc-libs')
 makedepends=('cmake' 'ninja' 'git' 'spirv-tools' 'spirv-headers' 'python')
 options=('staticlibs')
 # Get the commits from known_good.json for every release
-source=(${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/glslang/archive/${pkgver}.tar.gz)
-sha256sums=('a57836a583b3044087ac51bb0d5d2d803ff84591d55f89087fc29ace42a8b9a8')
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/glslang/archive/${pkgver}.tar.gz
+        https://patch-diff.githubusercontent.com/raw/KhronosGroup/glslang/pull/3283.patch)
+sha256sums=('a57836a583b3044087ac51bb0d5d2d803ff84591d55f89087fc29ace42a8b9a8'
+            '267b65a5205315e980f077f5fa401223003fdb5a38162e6ae697d38f68115137')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  patch -Np1 -i "$srcdir"/3283.patch
+}
 
 build() {
   cd ${pkgname}-${pkgver}
