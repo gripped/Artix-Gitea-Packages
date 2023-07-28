@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: nss
-  version: 3.91-1
+  version: 3.92-1
   arch:
     - x86_64
   pkgname:
     - nss
     - ca-certificates-mozilla
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.92-1
+    packages:
+      - nss-3.92-1-x86_64.pkg.tar.zst
+      - ca-certificates-mozilla-3.92-1-x86_64.pkg.tar.zst
   system:
     version: 3.91-1
     packages:
