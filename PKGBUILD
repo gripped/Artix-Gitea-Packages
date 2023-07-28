@@ -19,9 +19,9 @@ pkgname=(
   pipewire-v4l2
   pipewire-x11-bell
 )
-_commit=a3bd0f7a0a8dec9045deeb5eb3eb92b09ff75d57  # tags/0.3.75
-pkgver=0.3.75
-pkgrel=2.1
+_commit=9bcc90fdc3ece16a4e0a91446641e56332b979fd  # tags/0.3.76
+pkgver=0.3.76
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -64,12 +64,11 @@ makedepends=(
   webrtc-audio-processing
 )
 checkdepends=(desktop-file-utils)
-source=("git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
-  $pkgbase-0.3.75-add_missing_header.patch
+source=(
+  "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
       artix-pipewire-launcher
       pipewire.desktop)
 b2sums=('SKIP'
-        'fbf3a698d61fa6f098d9560378c64f9520d2a82957fa11c8dc9a0cad075b3d68de6db70e9842eeb9275f452283ed87cd96a7cfe0bb52e758efd3df8e93bea6d5'
         '83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
         '9abebce63d8e877aa9b73cabdf786e71824681328511822dfbd213e3b4c94ac073d225a3c72dcaf96f9c0fa0fcfce67160778487e711b82d452d5570c00d7405')
 
@@ -79,9 +78,6 @@ pkgver() {
 }
 
 prepare() {
-  # fix missing include: https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/1664
-  patch -Np1 -d $pkgbase -i ../$pkgname-0.3.75-add_missing_header.patch
-
   cd pipewire
 
   # remove export of LD_LIBRARY_PATH for pw-jack as it would add /usr/lib
@@ -126,6 +122,8 @@ _ver=${pkgver:0:3}
 package_pipewire() {
   license+=(LGPL)  # libspa-alsa
   depends=(
+    gcc-libs
+    glibc
     "libpipewire=$epoch:$pkgver-$pkgrel"
     libcamera-base.so
     libcamera.so
@@ -259,6 +257,10 @@ package_pipewire-audio() {
   pkgdesc+=" - Audio support"
   depends=(
     alsa-card-profiles
+    dbus
+    gcc-libs
+    glib2
+    glibc
     libasound.so
     libbluetooth.so
     libfdk-aac.so
@@ -308,6 +310,7 @@ package_pipewire-alsa() {
 package_pipewire-ffado() {
   pkgdesc+=" - FireWire support"
   depends=(
+    glibc
     libffado.so
     libpipewire-$_ver.so
     pipewire
@@ -323,6 +326,7 @@ package_pipewire-jack() {
   pkgdesc+=" - JACK support"
   license+=(GPL2)  # libjackserver
   depends=(
+    glibc
     libpipewire-$_ver.so
     pipewire
     pipewire-audio
@@ -347,6 +351,9 @@ package_pipewire-jack() {
 package_pipewire-pulse() {
   pkgdesc+=" - PulseAudio replacement"
   depends=(
+    dbus
+    gcc-libs
+    glibc
     libavahi-{client,common}.so
     libglib-2.0.so
     libpipewire-$_ver.so
@@ -372,6 +379,7 @@ package_pipewire-pulse() {
 package_pipewire-roc() {
   pkgdesc+=" - ROC streaming support"
   depends=(
+    glibc
     libpipewire-$_ver.so
     libroc.so
     pipewire
@@ -404,9 +412,12 @@ package_gst-plugin-pipewire() {
 package_pipewire-zeroconf() {
   pkgdesc+=" - Zeroconf support"
   depends=(
+    gcc-libs
+    glibc
     libavahi-{client,common}.so
     libpipewire-$_ver.so
     openssl
+    opus
     pipewire
     pipewire-audio
   )
@@ -419,6 +430,7 @@ package_pipewire-zeroconf() {
 package_pipewire-v4l2() {
   pkgdesc+=" - V4L2 interceptor"
   depends=(
+    glibc
     libpipewire-$_ver.so
     pipewire
     pipewire-session-manager
@@ -433,6 +445,7 @@ package_pipewire-v4l2() {
 package_pipewire-x11-bell() {
   pkgdesc+=" - X11 bell"
   depends=(
+    glibc
     libcanberra.so
     libpipewire-$_ver.so
     libx11
