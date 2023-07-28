@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: vst3sdk
-  version: 3.7.8_build_34-1
+  version: 3.7.8_build_34-2
   arch:
     - any
   pkgname:
     - vst3sdk
     - vst3sdk-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.7.8_build_34-2
+    packages:
+      - vst3sdk-3.7.8_build_34-2-any.pkg.tar.zst
+      - vst3sdk-docs-3.7.8_build_34-2-any.pkg.tar.zst
   world:
     version: 3.7.8_build_34-1
     packages:
