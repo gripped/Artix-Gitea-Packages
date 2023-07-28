@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Storm Dragon <stormdragon2976@gmail.com>
 # Contributor: Aaron 'venisonslurpee' Laursen <venisonslurpee@gmail.com>
 # Contributor: Christopher Rosell <chrippa@tanuki.se>
@@ -10,10 +9,10 @@
 
 pkgname=xmms2
 pkgver=0.9.3
-pkgrel=1
+pkgrel=2
 pkgdesc='X-platform Music Multiplexing System 2'
 arch=(x86_64)
-url='https://xmms2.org/'
+url='https://github.com/xmms2/wiki/wiki'
 license=(GPL LGPL)
 _depends=('alsa-lib: ALSA output'
           'avahi: announce xmms2d via bonjour/mDNS/zeroconf'
