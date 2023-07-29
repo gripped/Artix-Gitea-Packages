@@ -3,21 +3,24 @@
 pkgname=nftables
 epoch=1
 pkgver=1.0.8
-pkgrel=1
+pkgrel=2
 pkgdesc='Netfilter tables userspace tools'
 arch=('x86_64')
 url='https://netfilter.org/projects/nftables/'
 license=('GPL2')
 depends=('libmnl' 'libnftnl' 'gmp' 'readline' 'ncurses' 'jansson')
 optdepends=('python: Python bindings')
-makedepends=('asciidoc' 'python' 'python-setuptools')
+makedepends=('asciidoc' 'python' 'python-setuptools' 'python-build'
+             'python-installer' 'python-wheel')
 backup=('etc/nftables.conf')
 validpgpkeys=('37D964ACC04981C75500FB9BD55D978A8A1420E4') # Netfilter Core Team
 source=("https://netfilter.org/projects/nftables/files/nftables-$pkgver.tar.xz"{,.sig}
+        'meta-stash-context-statement-length.patch'
         'nftables.conf')
 install=nftables.install
 sha256sums=('9373740de41a82dbc98818e0a46a073faeb8a8d0689fa4fa1a74399c32bf3d50'
             'SKIP'
+            '3c428a2e5037ff5ea54be060c46a48bf659cd783c8ce5f5ee943fec6ddc61da6'
             '2aff88019097d21dbfa4713f5b54c184751c86376e458b683f8d90f3abd232a8')
 
 prepare() {
@@ -36,20 +39,26 @@ prepare() {
 
 build() {
   cd $pkgname-$pkgver
-  autoreconf -fi #FIXME: To remove with 01.patch
   ./configure \
     --prefix=/usr \
     --sbindir=/usr/bin \
     --sysconfdir=/usr/share \
     --with-json \
     --with-cli=readline \
+    --disable-python \
     --disable-debug
   make
+
+  # Building the Python module separately due to the automatic build resulting
+  # in an incorrect directory structure and unimportable module (see FS#79229)
+  cd py
+  python -m build --wheel --no-isolation
 }
 
 package() {
   pushd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
+  python -m installer --destdir="$pkgdir" py/dist/*.whl
   popd
   # basic safe firewall config
   install -Dm644 nftables.conf "$pkgdir/etc/nftables.conf"
