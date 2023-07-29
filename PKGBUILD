@@ -2,7 +2,7 @@
 
 pkgname=python-aws-sam-translator
 # https://github.com/aws/serverless-application-model/releases
-pkgver=1.71.0
+pkgver=1.72.0
 pkgrel=1
 pkgdesc='AWS Serverless Application Model (AWS SAM) prescribes rules for expressing Serverless applications on AWS'
 arch=(any)
@@ -15,10 +15,8 @@ checkdepends=(python-pytest python-pytest-rerunfailures python-yaml python-param
 # Upstream intentionally exclude tests from sdist
 # https://github.com/aws/serverless-application-model/pull/381#issuecomment-382143094
 source=("https://github.com/aws/serverless-application-model/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
-        "$pkgname-jsonschema-4.18.patch"::"https://github.com/aws/serverless-application-model/commit/6a166398277da3db7afd5aa667143f201ab63b12.patch"
         "pydantic2.diff")
-sha256sums=('8bdcc10b9dc70e8adb68b62dfed190c5112d7d628bab51ea3413b6582235f054'
-            'c17ed9ea3d5a6c1dfbc282d8d1b72c79e9fc0e45fcc3b935dfbcb650e5e1cb9a'
+sha256sums=('fa5655a1a996128ce262044be87dc90b6326818a64870a2dfd410e87cf669379'
             '42072cdbba7ff000f78effd55f97cf2768cfdd2c9bce46d0c2114cdfa222f3bb')
 
 prepare() {
@@ -28,8 +26,6 @@ prepare() {
 
   # Proposed at https://github.com/aws/serverless-application-model/pull/3249#issuecomment-1634980000
   patch -Np0 -i ../pydantic2.diff
-
-  patch -Np1 -i ../$pkgname-jsonschema-4.18.patch
 }
 
 build() {
