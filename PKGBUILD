@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=polkit
-pkgver=122
+pkgver=123
 pkgrel=1
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://gitlab.freedesktop.org/polkit/polkit"
@@ -16,16 +16,15 @@ depends=(
   pam
 )
 makedepends=(
-  meson
-  gtk-doc
-  gobject-introspection
   git
+  gobject-introspection
+  gtk-doc
+  meson
 )
 checkdepends=(python-dbusmock)
 provides=(libpolkit-{agent,gobject}-1.so)
 backup=(etc/pam.d/polkit-1)
-options=(debug)
-_commit=da87c5698019897dd731bb2cbb54ebd9c9481f52  # tags/122
+_commit=fc8b07e71d99f88a29258cde99b913b44da1846d  # tags/123^0
 source=(
   "git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
   '99-artix.rules'
@@ -65,10 +64,9 @@ check() {
 package() {
   meson install -C build --destdir "$pkgdir"
 
-  install -Dm644 "${srcdir}"/polkit/src/polkitbackend/50-default.rules \
-        "${pkgdir}"/etc/polkit-1/rules.d
-  
-  install -Dm0644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/$pkgname.conf" <<END
+  install -d -o root -g 102 -m 750 "$pkgdir"/{etc,usr/share}/polkit-1/rules.d
+
+  install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/$pkgname.conf" <<END
 u polkitd 102 "PolicyKit daemon"
 m polkitd proc
 END
@@ -76,4 +74,4 @@ END
   install -m0644 "${srcdir}"/99-artix.rules "${pkgdir}"/etc/polkit-1/rules.d
 }
 
-# vim:set sw=2 et:
+# vim:set sw=2 sts=-1 et:
