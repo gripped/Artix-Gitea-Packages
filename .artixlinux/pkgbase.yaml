@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-awscrt
-  version: 0.16.24-1
+  version: 0.17.0-1
   arch:
     - x86_64
   pkgname:
     - python-awscrt
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.16.24-1
+    version: 0.17.0-1
     packages:
-      - python-awscrt-0.16.24-1-x86_64.pkg.tar.zst
+      - python-awscrt-0.17.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
