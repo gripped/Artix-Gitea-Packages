@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-aws-sam-translator
-  version: 1.72.0-2
+  version: 1.72.0-3
   arch:
     - any
   pkgname:
     - python-aws-sam-translator
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.72.0-1
+    version: 1.72.0-3
     packages:
-      - python-aws-sam-translator-1.72.0-1-any.pkg.tar.zst
+      - python-aws-sam-translator-1.72.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
