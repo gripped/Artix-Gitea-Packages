@@ -69,7 +69,7 @@ check() {
 package() {
   meson install -C build --destdir "$pkgdir"
 
-  rm -r "$pkgdir"/{etc,usr/{include,lib,share}}
+  rm -r "$pkgdir"/{etc,usr/{include,share}}
 }
 
 # vim:set sw=2 sts=-1 et:
