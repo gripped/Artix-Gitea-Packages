@@ -37,3 +37,17 @@ index 3b96562..7a6f0a9 100644
  endif
  config_h.set('HAVE_LIBSYSTEMD', enable_logind)
  
+diff --git a/meson.build b/meson.build
+index 7a6f0a9..4abc73e 100644
+--- a/meson.build
++++ b/meson.build
+@@ -386,9 +386,6 @@ output += '        introspection:            ' + enable_introspection.to_string(
+ output += '        Distribution/OS:          ' + os_type + '\n'
+ output += '        Authentication framework: ' + auth_fw + '\n'
+ output += '        Session tracking:         ' + session_tracking + '\n'
+-if enable_logind
+-  output += '        systemdsystemunitdir:     ' + systemd_systemdsystemunitdir + '\n'
+-endif
+ output += '        polkitd user:             ' + polkitd_user + ' \n'
+ output += '        Javascript engine:        ' + js_engine + '\n'
+ output += '        PAM support:              ' + enable_pam.to_string() + '\n\n'
