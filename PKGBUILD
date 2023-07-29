@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Andrea Zucchelli <zukka77@gmail.com>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
@@ -7,7 +7,7 @@
 
 pkgname=lxc
 epoch=1
-pkgver=5.0.2
+pkgver=5.0.3
 pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
@@ -26,7 +26,7 @@ validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
 	"lxc.tmpfiles.d"
        )
-sha256sums=('bea08d2e49efcee34fa58acd2bc95c0adc64d291c07f4cfaf4ac1d8ac5a36f45'
+sha256sums=('2693a4c654dcfdafb3aa95c262051d8122afa1b6f5cef1920221ebbdee934d07'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
