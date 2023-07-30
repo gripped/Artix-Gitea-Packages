@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-net-dns-resolver-programmable
-  version: 0.009-9
+  version: 0.009-9.1
   arch:
     - any
   pkgname:
     - perl-net-dns-resolver-programmable
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.009-9
+    version: 0.009-9.1
     packages:
-      - perl-net-dns-resolver-programmable-0.009-9-any.pkg.tar.zst
+      - perl-net-dns-resolver-programmable-0.009-9.1-any.pkg.tar.zst
   world-gremlins:
     version: 0.009-9
     packages:
