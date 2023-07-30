@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-html-tagset
-  version: 3.20-14
+  version: 3.20-14.1
   arch:
     - any
   pkgname:
     - perl-html-tagset
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.20-14
+    version: 3.20-14.1
     packages:
-      - perl-html-tagset-3.20-14-any.pkg.tar.zst
+      - perl-html-tagset-3.20-14.1-any.pkg.tar.zst
   world-gremlins:
     version: 3.20-14
     packages:
