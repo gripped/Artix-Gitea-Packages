@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-test-file
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-test-file-1.993-2-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.993-2
+    packages:
+      - perl-test-file-1.993-2-any.pkg.tar.zst
   world:
     version: 1.993-1
     packages:

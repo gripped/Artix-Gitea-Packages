@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Bruno Dupuis <lisael@lisael.org>
 # Contributor: Rafael Reggiani Manzo <rr.manzo@gmail.com>
