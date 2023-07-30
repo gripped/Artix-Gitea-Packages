@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-shell-guess
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-shell-guess-0.09-6-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.09-6
+    packages:
+      - perl-shell-guess-0.09-6-any.pkg.tar.zst
   world:
     version: 0.09-5
     packages:
