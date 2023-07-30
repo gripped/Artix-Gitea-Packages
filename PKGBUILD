@@ -3,7 +3,7 @@
 
 pkgname=perl-archive-extract
 pkgver=0.88
-pkgrel=4
+pkgrel=4.1
 pkgdesc='Generic archive extracting mechanism'
 arch=(any)
 license=(PerlArtistic GPL)
