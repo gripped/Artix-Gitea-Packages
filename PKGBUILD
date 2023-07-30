@@ -2,7 +2,7 @@
 
 pkgname=perl-common-sense
 pkgver=3.75
-pkgrel=5
+pkgrel=5.1
 pkgdesc="Implements some sane defaults for Perl programs"
 arch=('any')
 url="https://search.cpan.org/dist/common-sense"
