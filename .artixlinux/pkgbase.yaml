@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-env-shellwords
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-env-shellwords-0.02-6-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.02-6
+    packages:
+      - perl-env-shellwords-0.02-6-any.pkg.tar.zst
   world:
     version: 0.02-5
     packages:
