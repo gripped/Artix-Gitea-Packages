@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lib32-llvm
-  version: 15.0.7-1.2
+  version: 15.0.7-3
   arch:
     - x86_64
   pkgname:
     - lib32-llvm
     - lib32-llvm-libs
 actions:
-  addRepo: null
+  addRepo: lib32-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -35,8 +35,10 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 15.0.7-3
+    packages:
+      - lib32-llvm-15.0.7-3-x86_64.pkg.tar.zst
+      - lib32-llvm-libs-15.0.7-3-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []

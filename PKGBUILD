@@ -1,16 +1,16 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Evangelos Foutras <foutrelis@gmail.com>
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
 
 pkgname=('lib32-llvm' 'lib32-llvm-libs')
 pkgver=15.0.7
-pkgrel=1.2
+pkgrel=3
 arch=('x86_64')
 url="https://llvm.org/"
 license=('custom:Apache 2.0 with LLVM Exception')
 makedepends=('cmake' 'ninja' 'lib32-libffi' 'lib32-zlib' 'lib32-zstd' 'python'
              'gcc-multilib' 'lib32-libxml2')
-options=('staticlibs' 'debug' '!lto') # extra/llvm has many test failures with LTO
+options=('staticlibs' '!lto') # extra/llvm has many test failures with LTO
 _source_base=https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver
 source=($_source_base/llvm-$pkgver.src.tar.xz{,.sig}
         $_source_base/cmake-$pkgver.src.tar.xz{,.sig})
@@ -21,6 +21,33 @@ sha256sums=('4ad8b2cc8003c86d0078d15d987d84e3a739f24aae9033865c027abae93ee7a4'
 validpgpkeys=('474E22316ABF4785A88C6E8EA2C794A986419D8A'  # Tom Stellard <tstellar@redhat.com>
               'D574BD5D1D0E98895E3BF90044F2485E45D59042') # Tobias Hieta <tobias@hieta.se>
 
+# Utilizing LLVM_DISTRIBUTION_COMPONENTS to avoid
+# installing static libraries; inspired by Gentoo
+_get_distribution_components() {
+  local target
+  ninja -t targets | grep -Po 'install-\K.*(?=-stripped:)' | while read -r target; do
+    case $target in
+      llvm-libraries|distribution)
+        continue
+        ;;
+      # shared libraries
+      LLVM|LLVMgold)
+        ;;
+      # libraries needed for clang-tblgen
+      LLVMDemangle|LLVMSupport|LLVMTableGen)
+        ;;
+      # exclude static libraries
+      LLVM*)
+        continue
+        ;;
+      # exclude llvm-exegesis (doesn't seem useful without libpfm)
+      llvm-exegesis)
+        continue
+        ;;
+    esac
+    echo $target
+  done
+}
 prepare() {
   mv cmake{-$pkgver.src,}
   cd llvm-$pkgver.src
@@ -58,6 +85,12 @@ build() {
     -DLLVM_TARGET_ARCH:STRING=i686
     -DLLVM_USE_PERF=ON
   )
+
+  cmake .. "${cmake_args[@]}"
+  local distribution_components=$(_get_distribution_components | paste -sd\;)
+  test -n "$distribution_components"
+  cmake_args+=(-DLLVM_DISTRIBUTION_COMPONENTS="$distribution_components")
+
   cmake .. "${cmake_args[@]}"
   ninja
 }
@@ -68,7 +101,7 @@ package_lib32-llvm() {
 
   cd llvm-$pkgver.src/build
 
-  DESTDIR="$pkgdir" ninja install
+  DESTDIR="$pkgdir" ninja install-distribution
 
   # The runtime library goes into lib32-llvm-libs
   mv "$pkgdir"/usr/lib32/lib{LLVM,LTO,Remarks}*.so* "$srcdir"
