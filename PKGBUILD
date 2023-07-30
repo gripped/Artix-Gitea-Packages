@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@gmail.com>
 # Contributor: Kevin Piche <kevin@archlinux.org>
 
