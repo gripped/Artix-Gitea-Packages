@@ -2,7 +2,7 @@
 
 pkgname=perl-xml-parser
 pkgver=2.46
-pkgrel=5
+pkgrel=5.1
 pkgdesc="Expat-based XML parser module for perl"
 arch=('x86_64')
 license=('GPL' 'PerlArtistic')
