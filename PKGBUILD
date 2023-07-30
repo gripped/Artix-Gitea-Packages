@@ -2,7 +2,7 @@
 
 pkgname=perl-http-cookies
 pkgver=6.10
-pkgrel=4
+pkgrel=4.1
 pkgdesc="HTTP cookie jars"
 arch=('any')
 url="https://search.cpan.org/dist/HTTP-Cookies"
