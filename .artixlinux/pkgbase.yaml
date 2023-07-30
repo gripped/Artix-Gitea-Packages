@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-mouse
-  version: 2.5.10-5
+  version: 2.5.10-5.1
   arch:
     - x86_64
   pkgname:
     - perl-mouse
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.5.10-5
+    version: 2.5.10-5.1
     packages:
-      - perl-mouse-2.5.10-5-x86_64.pkg.tar.zst
+      - perl-mouse-2.5.10-5.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 2.5.10-5
     packages:
