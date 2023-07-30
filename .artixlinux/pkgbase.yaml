@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-list-allutils
-  version: 0.19-2
+  version: 0.19-2.1
   arch:
     - any
   pkgname:
     - perl-list-allutils
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.19-2
+    version: 0.19-2.1
     packages:
-      - perl-list-allutils-0.19-2-any.pkg.tar.zst
+      - perl-list-allutils-0.19-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 0.19-2
     packages:
