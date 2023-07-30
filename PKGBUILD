@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Justin Davis (juster) <jrcd83@gmail.com>
 
 pkgname=perl-net-server
