@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-class-inspector
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-class-inspector-1.36-6-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.36-6
+    packages:
+      - perl-class-inspector-1.36-6-any.pkg.tar.zst
   world:
     version: 1.36-5
     packages:
