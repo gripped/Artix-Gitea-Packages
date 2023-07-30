@@ -1,4 +1,4 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer:
 
 pkgname=perl-file-listing
 pkgver=6.16
