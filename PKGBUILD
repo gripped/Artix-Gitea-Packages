@@ -7,7 +7,7 @@
 pkgname=perl-image-exiftool
 _srcname=Image-ExifTool
 pkgver=12.60
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Reader and rewriter of EXIF information that supports raw files"
 arch=('any')
 url="https://exiftool.org/"
