@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Rémy Oudompheng <remy@archlinux.org>
 
 pkgname=perl-text-bibtex
