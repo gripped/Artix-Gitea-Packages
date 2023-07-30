@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-digest-hmac
-  version: 1.04-4
+  version: 1.04-4.1
   arch:
     - any
   pkgname:
     - perl-digest-hmac
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.04-4
+    version: 1.04-4.1
     packages:
-      - perl-digest-hmac-1.04-4-any.pkg.tar.zst
+      - perl-digest-hmac-1.04-4.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.04-4
     packages:
