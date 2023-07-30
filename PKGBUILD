@@ -2,7 +2,7 @@
 
 pkgname=perl-extutils-cppguess
 pkgver=0.26
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Guess C++ compiler and flags"
 arch=('any')
 license=('PerlArtistic')
