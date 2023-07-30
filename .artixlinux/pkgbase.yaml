@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-pkgconfig
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-pkgconfig-0.25026-4-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.25026-4
+    packages:
+      - perl-pkgconfig-0.25026-4-any.pkg.tar.zst
   world:
     version: 0.25026-3
     packages:
