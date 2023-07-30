@@ -1,15 +1,21 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: birdtray
+  version: 1.9.0-2
+  arch:
+    - i686
+    - x86_64
+    - armv7h
+    - armv6h
+    - aarch64
+  pkgname:
+    - birdtray
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -47,5 +53,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.9.0-2
+    packages:
+      - birdtray-1.9.0-2-x86_64.pkg.tar.zst
