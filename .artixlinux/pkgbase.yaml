@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-role-tiny
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-role-tiny-2.002004-4-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.002004-4
+    packages:
+      - perl-role-tiny-2.002004-4-any.pkg.tar.zst
   world:
     version: 2.002004-3
     packages:
