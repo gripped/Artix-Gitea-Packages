@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-devel-stacktrace
-  version: 2.04-3
+  version: 2.04-3.1
   arch:
     - any
   pkgname:
     - perl-devel-stacktrace
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.04-3
+    version: 2.04-3.1
     packages:
-      - perl-devel-stacktrace-2.04-3-any.pkg.tar.zst
+      - perl-devel-stacktrace-2.04-3.1-any.pkg.tar.zst
   world-gremlins:
     version: 2.04-3
     packages:
