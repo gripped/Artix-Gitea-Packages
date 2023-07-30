@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-hook-lexwrap
-  version: 0.26-6
+  version: 0.26-6.1
   arch:
     - any
   pkgname:
     - perl-hook-lexwrap
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.26-6
+    version: 0.26-6.1
     packages:
-      - perl-hook-lexwrap-0.26-6-any.pkg.tar.zst
+      - perl-hook-lexwrap-0.26-6.1-any.pkg.tar.zst
   world-gremlins:
     version: 0.26-6
     packages:
