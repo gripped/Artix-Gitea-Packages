@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Caleb Cushing <xenoterracide@gmail.com>
 
