@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-dbi
-  version: 1.643-6
+  version: 1.643-6.1
   arch:
     - x86_64
   pkgname:
     - perl-dbi
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.643-6
+    version: 1.643-6.1
     packages:
-      - perl-dbi-1.643-6-x86_64.pkg.tar.zst
+      - perl-dbi-1.643-6.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.643-6
     packages:
