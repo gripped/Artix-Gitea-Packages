@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-encode-locale
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-encode-locale-1.05-11-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.05-11
+    packages:
+      - perl-encode-locale-1.05-11-any.pkg.tar.zst
   world:
     version: 1.05-10
     packages:
