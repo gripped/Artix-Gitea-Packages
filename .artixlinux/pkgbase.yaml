@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-lingua-en-inflect
-  version: 1.905-4
+  version: 1.905-4.1
   arch:
     - any
   pkgname:
     - perl-lingua-en-inflect
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.905-4
+    version: 1.905-4.1
     packages:
-      - perl-lingua-en-inflect-1.905-4-any.pkg.tar.zst
+      - perl-lingua-en-inflect-1.905-4.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.905-4
     packages:
