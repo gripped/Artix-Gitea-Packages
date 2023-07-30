@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-file-which
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-file-which-1.27-3-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.27-3
+    packages:
+      - perl-file-which-1.27-3-any.pkg.tar.zst
   world:
     version: 1.27-2
     packages:
