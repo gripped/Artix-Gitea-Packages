@@ -1,9 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sébastien Luttringer
 
 pkgname=perl-test-output
 pkgver=1.034
-pkgrel=1
+pkgrel=2
 pkgdesc='Utilities to test STDOUT and STDERR messages'
 arch=('any')
 license=('GPL' 'PerlArtistic')

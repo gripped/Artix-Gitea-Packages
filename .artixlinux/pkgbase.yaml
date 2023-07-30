@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-test-output
-  version: 1.034-1
+  version: 1.034-2
   arch:
     - any
   pkgname:
     - perl-test-output
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.033-4
+    version: 1.034-2
     packages:
-      - perl-test-output-1.033-4-any.pkg.tar.zst
+      - perl-test-output-1.034-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
