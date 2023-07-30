@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 
 pkgname=perl-params-validationcompiler
