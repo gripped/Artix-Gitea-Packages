@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-uri
-  version: 5.19-2
+  version: 5.19-2.1
   arch:
     - any
   pkgname:
     - perl-uri
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 5.19-2
+    version: 5.19-2.1
     packages:
-      - perl-uri-5.19-2-any.pkg.tar.zst
+      - perl-uri-5.19-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 5.19-2
     packages:
