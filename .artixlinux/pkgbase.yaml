@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-ppix-utilities
-  version: 1.001000-6
+  version: 1.001000-6.1
   arch:
     - any
   pkgname:
     - perl-ppix-utilities
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.001000-6
+    version: 1.001000-6.1
     packages:
-      - perl-ppix-utilities-1.001000-6-any.pkg.tar.zst
+      - perl-ppix-utilities-1.001000-6.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.001000-6
     packages:
