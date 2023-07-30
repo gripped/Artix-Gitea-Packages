@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-text-glob
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-text-glob-0.11-10-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.11-10
+    packages:
+      - perl-text-glob-0.11-10-any.pkg.tar.zst
   world:
     version: 0.11-9
     packages:
