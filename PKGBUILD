@@ -1,10 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Jonathan Steel <jsteel@aur.archlinux.org>
 # Contributor: Justin Davis <jrcd83@gmail.com>
 
 pkgname=perl-sub-exporter
 pkgver=0.990
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A sophisticated exporter for custom-built routines"
 arch=('any')
 license=('PerlArtistic' 'GPL')
