@@ -1,6 +1,6 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_ver=6.4.6
+_ver=6.4.7
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
@@ -21,6 +21,7 @@ makedepends=(
   libelf
   pahole
   perl
+  python
   tar
   xz
 
