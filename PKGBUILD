@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Emanuele Rampichini <emanuele.rampichini@gmail.com>
 
 pkgname=smb4k
-pkgver=3.2.1
+pkgver=3.2.2
 pkgrel=1
 pkgdesc='A KDE program that browses samba shares'
 arch=(x86_64)
@@ -12,7 +13,7 @@ license=(GPL)
 depends=(kparts kdnssd hicolor-icon-theme smbclient)
 makedepends=(extra-cmake-modules kdoctools plasma-framework)
 source=(https://downloads.sourceforge.net/project/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz)
-sha256sums=('a21211bd3c61a961037fe00a07bad2ee5e4ffe9b194739d8d46849a6ce023b48')
+sha256sums=('8abf76f36f475e7c3fead92f9d10ce106e24368bd91dd496792ead636ec1406d')
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
