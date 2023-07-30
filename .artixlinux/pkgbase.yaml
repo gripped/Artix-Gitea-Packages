@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-module-runtime
-  version: 0.016-3
+  version: 0.016-3.1
   arch:
     - any
   pkgname:
     - perl-module-runtime
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.016-3.1
+    packages:
+      - perl-module-runtime-0.016-3.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
