@@ -4,7 +4,7 @@
 
 pkgname='perl-yaml-libyaml'
 pkgver=0.88
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Perl YAML Serialization using XS and libyaml"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
