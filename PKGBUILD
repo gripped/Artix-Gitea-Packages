@@ -2,7 +2,7 @@
 
 pkgname=perl-io-socket-ssl
 pkgver=2.083
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Nearly transparent SSL encapsulation for IO::Socket::INET"
 arch=('any')
 license=('GPL' 'PerlArtistic')
