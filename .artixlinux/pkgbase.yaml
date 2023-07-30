@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-appconfig
-  version: 1.71-11
+  version: 1.71-11.1
   arch:
     - any
   pkgname:
     - perl-appconfig
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.71-11
+    version: 1.71-11.1
     packages:
-      - perl-appconfig-1.71-11-any.pkg.tar.zst
+      - perl-appconfig-1.71-11.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.71-11
     packages:
