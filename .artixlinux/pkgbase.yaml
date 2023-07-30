@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-ipc-run3
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-ipc-run3-0.048-11-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.048-11
+    packages:
+      - perl-ipc-run3-0.048-11-any.pkg.tar.zst
   world:
     version: 0.048-10
     packages:
