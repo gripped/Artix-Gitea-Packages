@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Maxwell Pray a.k.a. Synthead <synthead@gmail.com>
 # Contributor: Justin Davis <jrcd83@gmail.com>
