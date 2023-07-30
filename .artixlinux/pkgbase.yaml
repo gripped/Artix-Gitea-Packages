@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-sub-info
-  version: 0.002-10
+  version: 0.002-10.1
   arch:
     - any
   pkgname:
     - perl-sub-info
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.002-10
+    version: 0.002-10.1
     packages:
-      - perl-sub-info-0.002-10-any.pkg.tar.zst
+      - perl-sub-info-0.002-10.1-any.pkg.tar.zst
   world-gremlins:
     version: 0.002-10
     packages:
