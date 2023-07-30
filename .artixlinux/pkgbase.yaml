@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-b-cow
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-b-cow-0.007-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.007-2
+    packages:
+      - perl-b-cow-0.007-2-x86_64.pkg.tar.zst
   world:
     version: 0.007-1
     packages:
