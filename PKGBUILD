@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Sarah Hay <sarah@archlinux.org>
 # Contributor: Arjan Timmerman <arjan@soulfly.nl>
