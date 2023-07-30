@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-module-scandeps
-  version: 1.31-4
+  version: 1.31-4.1
   arch:
     - any
   pkgname:
     - perl-module-scandeps
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.31-4
+    version: 1.31-4.1
     packages:
-      - perl-module-scandeps-1.31-4-any.pkg.tar.zst
+      - perl-module-scandeps-1.31-4.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.31-4
     packages:
