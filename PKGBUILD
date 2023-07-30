@@ -2,7 +2,7 @@
 
 pkgname=perl-ppix-regexp
 pkgver=0.088
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Parse regular expressions"
 arch=('any')
 license=('PerlArtistic')
