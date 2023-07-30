@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-io-compress-brotli
-  version: 0.004001-2
+  version: 0.004001-2.1
   arch:
     - x86_64
   pkgname:
     - perl-io-compress-brotli
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.004001-2
+    version: 0.004001-2.1
     packages:
-      - perl-io-compress-brotli-0.004001-2-x86_64.pkg.tar.zst
+      - perl-io-compress-brotli-0.004001-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.004001-2
     packages:
