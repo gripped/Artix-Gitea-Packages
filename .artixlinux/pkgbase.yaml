@@ -1,12 +1,13 @@
 ---
 pkgbase:
-  name: lib32-vulkan-mesa-layers
-  version: 23.1.4-2.1
+  name: lib32-mesa
+  version: 23.2.0-1
   arch:
     - x86_64
   pkgname:
     - lib32-vulkan-mesa-layers
     - lib32-opencl-clover-mesa
+    - lib32-opencl-rusticl-mesa
     - lib32-vulkan-intel
     - lib32-vulkan-radeon
     - lib32-vulkan-swrast
@@ -15,7 +16,7 @@ pkgbase:
     - lib32-mesa-vdpau
     - lib32-mesa
 actions:
-  addRepo: lib32
+  addRepo: lib32-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -42,8 +43,18 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 23.2.0-1
+    packages:
+      - lib32-vulkan-mesa-layers-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-opencl-clover-mesa-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-opencl-rusticl-mesa-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-intel-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-radeon-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-swrast-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-virtio-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-libva-mesa-driver-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-mesa-vdpau-23.2.0-1-x86_64.pkg.tar.zst
+      - lib32-mesa-23.2.0-1-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
