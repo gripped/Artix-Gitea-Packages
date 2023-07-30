@@ -5,7 +5,7 @@
 pkgname="perl-variable-magic"
 _cpanname="Variable-Magic"
 pkgver=0.63
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Associate user-defined magic to variables from Perl."
 arch=("x86_64")
 license=("PerlArtistic" "GPL")
