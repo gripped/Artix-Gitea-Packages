@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-term-readline-gnu
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-term-readline-gnu-1.46-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.46-2
+    packages:
+      - perl-term-readline-gnu-1.46-2-x86_64.pkg.tar.zst
   world:
     version: 1.46-1
     packages:
