@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-mail-message
-  version: 3.012-1
+  version: 3.013-1
   arch:
     - any
   pkgname:
     - perl-mail-message
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.013-1
+    packages:
+      - perl-mail-message-3.013-1-any.pkg.tar.zst
   world:
     version: 3.012-1
     packages:
