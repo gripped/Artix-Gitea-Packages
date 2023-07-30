@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-package-stash
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-package-stash-0.40-3-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.40-3
+    packages:
+      - perl-package-stash-0.40-3-any.pkg.tar.zst
   world:
     version: 0.40-2
     packages:
