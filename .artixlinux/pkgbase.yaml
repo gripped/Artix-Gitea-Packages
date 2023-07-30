@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-moo
-  version: 2.005005-2
+  version: 2.005005-2.1
   arch:
     - any
   pkgname:
     - perl-moo
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.005005-2
+    version: 2.005005-2.1
     packages:
-      - perl-moo-2.005005-2-any.pkg.tar.zst
+      - perl-moo-2.005005-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 2.005005-2
     packages:
