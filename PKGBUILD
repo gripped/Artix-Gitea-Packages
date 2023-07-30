@@ -4,7 +4,7 @@
 
 pkgname=perl-datetime-locale
 pkgver=1.39
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Localization support for DateTime.pm "
 arch=(any)
 url="https://search.cpan.org/dist/DateTime-Locale"
