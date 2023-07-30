@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-time-modules
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-time-modules-2013.0912-9-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 2013.0912-9
+    packages:
+      - perl-time-modules-2013.0912-9-any.pkg.tar.zst
   world:
     version: 2013.0912-8
     packages:
