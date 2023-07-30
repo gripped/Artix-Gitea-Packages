@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-socket6
-  version: 0.29-8
+  version: 0.29-8.1
   arch:
     - x86_64
   pkgname:
     - perl-socket6
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.29-8
+    version: 0.29-8.1
     packages:
-      - perl-socket6-0.29-8-x86_64.pkg.tar.zst
+      - perl-socket6-0.29-8.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.29-8
     packages:
