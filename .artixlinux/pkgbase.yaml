@@ -1,19 +1,20 @@
 ---
 pkgbase:
   name: emacs
-  version: 28.2-2
+  version: 29.1-2
   arch:
     - x86_64
   pkgname:
     - emacs
     - emacs-nativecomp
     - emacs-nox
+    - emacs-wayland
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 29.1-2
+    packages:
+      - emacs-29.1-2-x86_64.pkg.tar.zst
+      - emacs-nativecomp-29.1-2-x86_64.pkg.tar.zst
+      - emacs-nox-29.1-2-x86_64.pkg.tar.zst
+      - emacs-wayland-29.1-2-x86_64.pkg.tar.zst
   world:
     version: 28.2-2
     packages:
