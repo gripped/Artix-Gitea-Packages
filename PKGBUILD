@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Florian Pritz <bluewind@xinu.at>
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
