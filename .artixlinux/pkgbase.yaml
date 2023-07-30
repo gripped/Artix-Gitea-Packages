@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-sub-info
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-sub-info-0.002-10-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.002-10
+    packages:
+      - perl-sub-info-0.002-10-any.pkg.tar.zst
   world:
     version: 0.002-9
     packages:
