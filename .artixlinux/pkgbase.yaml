@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-xml-writer
-  version: 0.900-2
+  version: 0.900-2.1
   arch:
     - any
   pkgname:
     - perl-xml-writer
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.900-2
+    version: 0.900-2.1
     packages:
-      - perl-xml-writer-0.900-2-any.pkg.tar.zst
+      - perl-xml-writer-0.900-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 0.900-2
     packages:
