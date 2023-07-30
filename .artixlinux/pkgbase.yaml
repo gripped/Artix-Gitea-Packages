@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-common-sense
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-common-sense-3.75-5-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.75-5
+    packages:
+      - perl-common-sense-3.75-5-any.pkg.tar.zst
   world:
     version: 3.75-4
     packages:
