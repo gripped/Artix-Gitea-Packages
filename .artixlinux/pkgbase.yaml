@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-perl-critic
-  version: 1.148-2
+  version: 1.148-2.1
   arch:
     - any
   pkgname:
     - perl-perl-critic
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.148-2
+    version: 1.148-2.1
     packages:
-      - perl-perl-critic-1.148-2-any.pkg.tar.zst
+      - perl-perl-critic-1.148-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.148-2
     packages:

@@ -2,7 +2,7 @@
 
 pkgname=perl-perl-critic
 pkgver=1.148
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Critique Perl source code for best-practices"
 arch=('any')
 license=('PerlArtistic')
