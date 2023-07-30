@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-sub-quote
-  version: 1:2.006008-2
+  version: 1:2.006008-2.1
   arch:
     - any
   pkgname:
     - perl-sub-quote
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:2.006008-2
+    version: 1:2.006008-2.1
     packages:
-      - perl-sub-quote-1:2.006008-2-any.pkg.tar.zst
+      - perl-sub-quote-1:2.006008-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 1:2.006008-2
     packages:
