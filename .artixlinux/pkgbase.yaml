@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-berkeleydb
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-berkeleydb-0.65-5-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.65-5
+    packages:
+      - perl-berkeleydb-0.65-5-x86_64.pkg.tar.zst
   world:
     version: 0.65-4
     packages:
