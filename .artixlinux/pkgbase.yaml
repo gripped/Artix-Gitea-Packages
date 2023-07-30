@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-list-moreutils-xs
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-list-moreutils-xs-0.430-4-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.430-4
+    packages:
+      - perl-list-moreutils-xs-0.430-4-x86_64.pkg.tar.zst
   world:
     version: 0.430-3
     packages:
