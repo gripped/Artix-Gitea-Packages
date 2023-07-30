@@ -2,7 +2,7 @@
 
 pkgname=perl-net-dns
 pkgver=1.39
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Perl Module: Interface to the DNS resolver"
 arch=('any')
 license=('PerlArtistic')
