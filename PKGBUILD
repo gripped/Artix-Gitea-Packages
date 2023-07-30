@@ -3,7 +3,7 @@
 
 pkgname=perl-image-info
 pkgver=1.43
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Extract meta information from image files"
 arch=('any')
 license=('PerlArtistic' 'GPL')
