@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-unicode-linebreak
-  version: 2019.001-6
+  version: 2019.001-6.1
   arch:
     - x86_64
   pkgname:
     - perl-unicode-linebreak
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2019.001-6
+    version: 2019.001-6.1
     packages:
-      - perl-unicode-linebreak-2019.001-6-x86_64.pkg.tar.zst
+      - perl-unicode-linebreak-2019.001-6.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 2019.001-6
     packages:
