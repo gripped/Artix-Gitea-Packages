@@ -2,8 +2,8 @@
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-test-nowarnings
-pkgver=1.06.1-3.1
-pkgrel=3
+pkgver=1.06.1
+pkgrel=3.1
 pkgdesc="Make sure you didn't emit any warnings while testing "
 arch=('any')
 url="https://search.cpan.org/dist/Test-NoWarnings"
