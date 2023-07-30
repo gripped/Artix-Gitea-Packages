@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-ipc-run
-  version: 20220807.0-1
+  version: 20220807.0-1.1
   arch:
     - any
   pkgname:
     - perl-ipc-run
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 20220807.0-1.1
+    packages:
+      - perl-ipc-run-20220807.0-1.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

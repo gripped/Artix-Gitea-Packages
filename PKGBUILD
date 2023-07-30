@@ -5,7 +5,7 @@
 
 pkgname=perl-ipc-run
 pkgver=20220807.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="IPC::Run - system() and background procs w/ piping, redirs, ptys"
 arch=('any')
 url="https://search.cpan.org/dist/IPC-Run"
