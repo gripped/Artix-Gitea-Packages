@@ -48,7 +48,7 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-  rm -rf /usr/lib/systemd
+  rm -rf "$pkgdir"/usr/lib/systemd
 }
 
 # vim:set sw=2 sts=-1 et:
