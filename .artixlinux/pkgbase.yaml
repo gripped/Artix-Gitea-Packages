@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-sgmls
-  version: 1:1.1-10
+  version: 1:1.1-10.1
   arch:
     - any
   pkgname:
     - perl-sgmls
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:1.1-10
+    version: 1:1.1-10.1
     packages:
-      - perl-sgmls-1:1.1-10-any.pkg.tar.zst
+      - perl-sgmls-1:1.1-10.1-any.pkg.tar.zst
   world-gremlins:
     version: 1:1.1-10
     packages:
