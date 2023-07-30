@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-params-util
-  version: 1.102-4
+  version: 1.102-4.1
   arch:
     - x86_64
   pkgname:
     - perl-params-util
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.102-4
+    version: 1.102-4.1
     packages:
-      - perl-params-util-1.102-4-x86_64.pkg.tar.zst
+      - perl-params-util-1.102-4.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.102-4
     packages:
