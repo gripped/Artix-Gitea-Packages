@@ -2,7 +2,7 @@
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-test-nowarnings
-pkgver=1.06
+pkgver=1.06.1
 pkgrel=3
 pkgdesc="Make sure you didn't emit any warnings while testing "
 arch=('any')
