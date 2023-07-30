@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-package-stash-xs
-  version: 0.30-2
+  version: 0.30-2.1
   arch:
     - x86_64
   pkgname:
     - perl-package-stash-xs
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.30-2
+    version: 0.30-2.1
     packages:
-      - perl-package-stash-xs-0.30-2-x86_64.pkg.tar.zst
+      - perl-package-stash-xs-0.30-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.30-2
     packages:
