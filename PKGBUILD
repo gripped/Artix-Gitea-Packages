@@ -3,7 +3,7 @@
 pkgname='perl-text-csv'
 _dist="Text-CSV"
 pkgver=2.02
-pkgrel=2
+pkgrel=2.1
 pkgdesc="comma-separated values manipulator"
 arch=('any')
 license=('PerlArtistic' 'GPL')
