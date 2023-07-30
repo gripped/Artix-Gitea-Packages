@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-test-requiresinternet
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-test-requiresinternet-0.05-9-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.05-9
+    packages:
+      - perl-test-requiresinternet-0.05-9-any.pkg.tar.zst
   world:
     version: 0.05-8
     packages:
