@@ -3,7 +3,7 @@
 
 pkgname=koko
 pkgver=23.04.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Image gallery application'
 url='https://apps.kde.org/koko/'
 arch=(x86_64)
