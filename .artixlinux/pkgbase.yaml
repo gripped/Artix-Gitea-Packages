@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-scalar-list-utils
-  version: 1.63-2
+  version: 1.63-2.1
   arch:
     - x86_64
   pkgname:
     - perl-scalar-list-utils
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.63-2
+    version: 1.63-2.1
     packages:
-      - perl-scalar-list-utils-1.63-2-x86_64.pkg.tar.zst
+      - perl-scalar-list-utils-1.63-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.63-2
     packages:
