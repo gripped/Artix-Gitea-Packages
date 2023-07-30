@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-module-build-tiny
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-module-build-tiny-0.046-2-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.046-2
+    packages:
+      - perl-module-build-tiny-0.046-2-any.pkg.tar.zst
   world:
     version: 0.046-1
     packages:
