@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-math-round
-  version: 0.07-5
+  version: 0.07-5.1
   arch:
     - any
   pkgname:
     - perl-math-round
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.07-5.1
+    packages:
+      - perl-math-round-0.07-5.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

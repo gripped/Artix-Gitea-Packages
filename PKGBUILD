@@ -3,7 +3,7 @@
 
 pkgname=perl-math-round
 pkgver=0.07
-pkgrel=5
+pkgrel=5.1
 pkgdesc="Perl extension for rounding numbers"
 arch=('any')
 url="https://search.cpan.org/dist/Math-Round"
