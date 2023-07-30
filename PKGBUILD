@@ -1,4 +1,5 @@
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 _cpanname=SGMLSpm
 pkgname=perl-sgmls
