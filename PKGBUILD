@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Mark Rosenstand <mark@borkware.net>
 # Contributor: Paul Mattal <paul@archlinux.org>
