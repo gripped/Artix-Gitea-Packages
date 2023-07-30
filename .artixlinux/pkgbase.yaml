@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libfreexl
-  version: 1.0.6-2
+  version: 2.0.0-1
   arch:
     - x86_64
   pkgname:
     - libfreexl
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.6-2
+    version: 2.0.0-1
     packages:
-      - libfreexl-1.0.6-2-x86_64.pkg.tar.zst
+      - libfreexl-2.0.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
