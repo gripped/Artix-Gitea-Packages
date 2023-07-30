@@ -2,7 +2,7 @@
 
 pkgname=perl-http-date
 pkgver=6.05
-pkgrel=7
+pkgrel=7.1
 pkgdesc="Date conversion routines"
 arch=('any')
 url="https://search.cpan.org/dist/HTTP-Date"
