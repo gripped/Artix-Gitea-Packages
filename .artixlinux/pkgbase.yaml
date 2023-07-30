@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-sub-override
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-sub-override-0.09-5-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.09-5
+    packages:
+      - perl-sub-override-0.09-5-any.pkg.tar.zst
   world:
     version: 0.09-4
     packages:
