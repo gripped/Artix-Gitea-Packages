@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-mail-authenticationresults
