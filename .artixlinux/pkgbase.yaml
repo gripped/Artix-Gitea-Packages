@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-json-xs
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-json-xs-4.03-4-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.03-4
+    packages:
+      - perl-json-xs-4.03-4-x86_64.pkg.tar.zst
   world:
     version: 4.03-3
     packages:
