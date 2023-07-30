@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-type-tiny
-  version: 1.016010-2
+  version: 1.016010-2.1
   arch:
     - any
   pkgname:
     - perl-type-tiny
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.016010-2
+    version: 1.016010-2.1
     packages:
-      - perl-type-tiny-1.016010-2-any.pkg.tar.zst
+      - perl-type-tiny-1.016010-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.016010-2
     packages:
