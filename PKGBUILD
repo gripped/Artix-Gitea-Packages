@@ -1,10 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Marcin (CTRL) Wieczorek <marcin@marcin.co>
 # Contributor: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
 
 pkgname=umockdev
-pkgver=0.17.17
+pkgver=0.17.18
 pkgrel=1
 pkgdesc="Record/mock hardware devices for bug reports and regression tests"
 arch=('x86_64')
@@ -13,7 +12,7 @@ license=('LGPL')
 depends=('udev' 'libgudev' 'libpcap')
 makedepends=('meson' 'gobject-introspection' 'gtk-doc' 'vala')
 source=(https://github.com/martinpitt/umockdev/releases/download/$pkgver/$pkgname-$pkgver.tar.xz)
-sha256sums=('20e621b1e458b32003cfea99739b67824b86652854a8bce33e26124e347fdf6c')
+sha256sums=('466ad3e0c715e56f50ea6a965165823d073a84137acb8a1e39b66573648a985f')
 
 build() {
   cd $pkgname-$pkgver
