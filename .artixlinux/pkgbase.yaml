@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-ref-util
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-ref-util-0.204-2-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.204-2
+    packages:
+      - perl-ref-util-0.204-2-any.pkg.tar.zst
   world:
     version: 0.204-1
     packages:
