@@ -1,4 +1,5 @@
-# Maintainer: dracorp aka Piotr Rogoza <piotr dot r dot public at gmail.com>
+# Maintainer:
+# Contributor: dracorp aka Piotr Rogoza <piotr dot r dot public at gmail.com>
 
 _author=N/NE/NEILB
 _perlmod=Sort-Versions

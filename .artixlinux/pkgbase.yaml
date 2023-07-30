@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-sort-versions
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-sort-versions-1.62-9-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.62-9
+    packages:
+      - perl-sort-versions-1.62-9-any.pkg.tar.zst
   world:
     version: 1.62-8
     packages:
