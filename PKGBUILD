@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: AUR Perl <aurperl@juster.info>
 # Generator  : CPANPLUS::Dist::Arch 1.15
