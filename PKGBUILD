@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Moritz Bunkus <moritz@bunkus.org>
 
