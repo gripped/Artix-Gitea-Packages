@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-sub-exporter
-  version: 0.989-2
+  version: 0.990-1
   arch:
     - any
   pkgname:
     - perl-sub-exporter
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.989-1
+    version: 0.990-1
     packages:
-      - perl-sub-exporter-0.989-1-any.pkg.tar.zst
+      - perl-sub-exporter-0.990-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
