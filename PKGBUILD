@@ -3,7 +3,7 @@
 
 pkgname=perl-datetime
 pkgver=1.59
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A complete, easy to use date and time object"
 arch=('x86_64')
 url="https://search.cpan.org/dist/DateTime"
