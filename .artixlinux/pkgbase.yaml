@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-http-negotiate
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-http-negotiate-6.01-12-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.01-12
+    packages:
+      - perl-http-negotiate-6.01-12-any.pkg.tar.zst
   world:
     version: 6.01-11
     packages:

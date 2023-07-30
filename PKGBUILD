@@ -1,4 +1,4 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer:
 
 pkgname=perl-http-negotiate
 pkgver=6.01
