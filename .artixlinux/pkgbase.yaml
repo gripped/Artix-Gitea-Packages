@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-test-exit
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-test-exit-0.11-6-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.11-6
+    packages:
+      - perl-test-exit-0.11-6-any.pkg.tar.zst
   world:
     version: 0.11-5
     packages:
