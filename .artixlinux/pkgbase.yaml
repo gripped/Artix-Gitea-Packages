@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-file-listing
-  version: 6.15-3
+  version: 6.16-1
   arch:
     - any
   pkgname:
     - perl-file-listing
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.15-2
+    version: 6.16-1
     packages:
-      - perl-file-listing-6.15-2-any.pkg.tar.zst
+      - perl-file-listing-6.16-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
