@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-log-message
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-log-message-0.08-9-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.08-9
+    packages:
+      - perl-log-message-0.08-9-any.pkg.tar.zst
   world:
     version: 0.08-8
     packages:
