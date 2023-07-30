@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Justin "juster" Davis <jrcd83@gmail.com>
 # Generator : pbjam 0.01
