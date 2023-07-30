@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-http-daemon
