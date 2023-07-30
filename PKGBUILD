@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: kevin <kevin@archlinux.org>
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
