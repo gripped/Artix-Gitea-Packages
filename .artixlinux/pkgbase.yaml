@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-sub-identify
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-sub-identify-0.14-11-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.14-11
+    packages:
+      - perl-sub-identify-0.14-11-x86_64.pkg.tar.zst
   world:
     version: 0.14-10
     packages:
