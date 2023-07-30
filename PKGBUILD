@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Maxwell Pray a.k.a. Synthead <synthead@gmail.com>
 # Contributor: Justin Davis <jrcd83@gmail.com>
