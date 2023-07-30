@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-digest-nilsimsa
-  version: 0.06-24
+  version: 0.06-24.1
   arch:
     - x86_64
   pkgname:
     - perl-digest-nilsimsa
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.06-24
+    version: 0.06-24.1
     packages:
-      - perl-digest-nilsimsa-0.06-24-x86_64.pkg.tar.zst
+      - perl-digest-nilsimsa-0.06-24.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.06-24
     packages:
