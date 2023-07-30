@@ -2,7 +2,7 @@
 
 pkgname=perl-test-mockmodule
 pkgver=0.177.0
-pkgrel=4
+pkgrel=4.1
 pkgdesc="Override subroutines in a module for unit testing"
 arch=('any')
 license=('PerlArtistic' 'GPL')
