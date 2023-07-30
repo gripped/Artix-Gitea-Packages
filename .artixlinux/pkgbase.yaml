@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-import-into
-  version: 1.002005-9
+  version: 1.002005-9.1
   arch:
     - any
   pkgname:
     - perl-import-into
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.002005-9
+    version: 1.002005-9.1
     packages:
-      - perl-import-into-1.002005-9-any.pkg.tar.zst
+      - perl-import-into-1.002005-9.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.002005-9
     packages:
