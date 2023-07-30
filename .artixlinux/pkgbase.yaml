@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-io-socket-inet6
-  version: 2.73-3.1
+  version: 2.73-3.2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.73-3.1
+    version: 2.73-3.2
     packages:
-      - perl-io-socket-inet6-2.73-3.1-any.pkg.tar.zst
+      - perl-io-socket-inet6-2.73-3.2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
