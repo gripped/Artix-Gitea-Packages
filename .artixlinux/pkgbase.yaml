@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-data-dump
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-data-dump-1.25-4-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.25-4
+    packages:
+      - perl-data-dump-1.25-4-any.pkg.tar.zst
   world:
     version: 1.25-3
     packages:
