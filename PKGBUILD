@@ -3,7 +3,7 @@
 pkgname=perl-data-munge
 epoch=1
 pkgver=0.10
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Various utility functions"
 arch=('any')
 license=('PerlArtistic')
