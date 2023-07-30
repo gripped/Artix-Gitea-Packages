@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-file-slurp-tiny
-  version: 0.004-9
+  version: 0.004-9.1
   arch:
     - any
   pkgname:
     - perl-file-slurp-tiny
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.004-9
+    version: 0.004-9.1
     packages:
-      - perl-file-slurp-tiny-0.004-9-any.pkg.tar.zst
+      - perl-file-slurp-tiny-0.004-9.1-any.pkg.tar.zst
   world-gremlins:
     version: 0.004-9
     packages:
