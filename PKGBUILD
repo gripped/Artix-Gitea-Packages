@@ -1,11 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwallet
 pkgver=5.108.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Secure and unified container for user passwords'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
