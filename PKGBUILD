@@ -2,7 +2,7 @@
 
 pkgname=perl-alien-build
 pkgver=2.80
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Build external dependencies for use in CPAN"
 arch=('any')
 license=('PerlArtistic')
