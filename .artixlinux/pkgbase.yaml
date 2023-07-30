@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-number-compare
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-number-compare-0.03-13-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.03-13
+    packages:
+      - perl-number-compare-0.03-13-any.pkg.tar.zst
   world:
     version: 0.03-12
     packages:
