@@ -1,7 +1,7 @@
 # Maintainer: Ash Berlin-Taylor <ash_archlinux@firemirror.com>
 pkgname='perl-yaml-pp'
 pkgver=0.036
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Simple configuration automation"
 arch=('any')
 license=('PerlArtistic' 'GPL')
