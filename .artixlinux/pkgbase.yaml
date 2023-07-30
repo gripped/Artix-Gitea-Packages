@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-params-validate
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-params-validate-1.31-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.31-2
+    packages:
+      - perl-params-validate-1.31-2-x86_64.pkg.tar.zst
   world:
     version: 1.31-1
     packages:
