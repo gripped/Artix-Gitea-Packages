@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-io-multiplex
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-io-multiplex-1.16-9-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.16-9
+    packages:
+      - perl-io-multiplex-1.16-9-any.pkg.tar.zst
   world:
     version: 1.16-8
     packages:
