@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - perl-crypt-openssl-guess
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - perl-crypt-openssl-guess-0.15-3-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.15-3
+    packages:
+      - perl-crypt-openssl-guess-0.15-3-any.pkg.tar.zst
   world:
     version: 0.15-2
     packages:
