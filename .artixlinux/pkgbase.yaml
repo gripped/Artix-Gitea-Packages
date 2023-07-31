@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-alien-cmake3
-  version: 0.08-4.2
+  version: 0.08-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.08-4.2
+    version: 0.08-4
     packages:
-      - perl-alien-cmake3-0.08-4.2-any.pkg.tar.zst
+      - perl-alien-cmake3-0.08-4-any.pkg.tar.zst
   world-gremlins:
     version: 0.08-4
     packages:
