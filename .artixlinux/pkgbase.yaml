@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-path-tiny
-  version: 0.144-2.1
+  version: 0.144-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.144-2.1
+    version: 0.144-2
     packages:
-      - perl-path-tiny-0.144-2.1-any.pkg.tar.zst
+      - perl-path-tiny-0.144-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.144-2
     packages:
