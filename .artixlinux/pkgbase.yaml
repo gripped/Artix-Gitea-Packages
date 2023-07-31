@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-types-serialiser
-  version: 1.01-2.1
+  version: 1.01-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.01-2.1
+    version: 1.01-2
     packages:
-      - perl-types-serialiser-1.01-2.1-any.pkg.tar.zst
+      - perl-types-serialiser-1.01-2-any.pkg.tar.zst
   world-gremlins:
     version: 1.01-2
     packages:
