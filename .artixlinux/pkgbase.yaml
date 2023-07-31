@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mailtools
-  version: 2.21-7.1
+  version: 2.21-7.2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.21-7.1
+    version: 2.21-7.2
     packages:
-      - perl-mailtools-2.21-7.1-any.pkg.tar.zst
+      - perl-mailtools-2.21-7.2-any.pkg.tar.zst
   world-gremlins:
     version: 2.21-7
     packages:
