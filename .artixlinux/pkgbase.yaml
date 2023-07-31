@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-common-sense
-  version: 3.75-5.1
+  version: 3.75-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.75-5.1
+    version: 3.75-5
     packages:
-      - perl-common-sense-3.75-5.1-any.pkg.tar.zst
+      - perl-common-sense-3.75-5-any.pkg.tar.zst
   world-gremlins:
     version: 3.75-5
     packages:
