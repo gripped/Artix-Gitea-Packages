@@ -8,11 +8,11 @@ pkgbase:
     - perl-object-realize-later
 actions:
   addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.21-6
-    packages:
-      - perl-object-realize-later-0.21-6-any.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: 0.21-6
     packages:
