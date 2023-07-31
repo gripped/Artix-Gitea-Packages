@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-homedir
-  version: 1.006-4.1
+  version: 1.006-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.006-4.1
+    version: 1.006-4
     packages:
-      - perl-file-homedir-1.006-4.1-any.pkg.tar.zst
+      - perl-file-homedir-1.006-4-any.pkg.tar.zst
   world-gremlins:
     version: 1.006-4
     packages:

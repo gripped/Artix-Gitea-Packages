@@ -2,7 +2,7 @@
 
 pkgname=perl-file-homedir
 pkgver=1.006
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Find your home and other directories on any platform"
 arch=('any')
 license=('PerlArtistic')
