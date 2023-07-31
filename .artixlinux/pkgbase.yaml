@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-package-stash
-  version: 0.40-3.1
+  version: 0.40-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.40-3.1
+    version: 0.40-3
     packages:
-      - perl-package-stash-0.40-3.1-any.pkg.tar.zst
+      - perl-package-stash-0.40-3-any.pkg.tar.zst
   world-gremlins:
     version: 0.40-3
     packages:
