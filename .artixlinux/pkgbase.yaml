@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-canary-stability
-  version: 2013-6.1
+  version: 2013-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2013-6.1
+    version: 2013-6
     packages:
-      - perl-canary-stability-2013-6.1-any.pkg.tar.zst
+      - perl-canary-stability-2013-6-any.pkg.tar.zst
   world-gremlins:
     version: 2013-6
     packages:
