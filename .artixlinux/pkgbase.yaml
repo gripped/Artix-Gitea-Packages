@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-moto
-  version: 4.1.12-1
+  version: 4.1.13-1
   arch:
     - any
   pkgname:
     - python-moto
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.12-1
+    version: 4.1.13-1
     packages:
-      - python-moto-4.1.12-1-any.pkg.tar.zst
+      - python-moto-4.1.13-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
