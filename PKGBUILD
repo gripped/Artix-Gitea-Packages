@@ -2,7 +2,7 @@
 
 pkgname=perl-return-multilevel
 pkgver=0.08
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Return across multiple call levels"
 arch=('any')
 license=('PerlArtistic')
