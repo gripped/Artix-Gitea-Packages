@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-ppix-regexp
-  version: 0.088-2.1
+  version: 0.088-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.088-2.1
+    version: 0.088-2
     packages:
-      - perl-ppix-regexp-0.088-2.1-any.pkg.tar.zst
+      - perl-ppix-regexp-0.088-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.088-2
     packages:
