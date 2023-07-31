@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: perl-test-failwarnings
+  version: 0.008-7
+  arch:
+    - any
+  pkgname:
+    - perl-test-failwarnings
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -23,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.008-7
+    packages:
+      - perl-test-failwarnings-0.008-7-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
