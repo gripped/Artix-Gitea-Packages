@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-user-identity
-  version: 1.02-2
+  version: 1.02-2.1
   arch:
     - any
   pkgname:
     - perl-user-identity
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.02-2
+    version: 1.02-2.1
     packages:
-      - perl-user-identity-1.02-2-any.pkg.tar.zst
+      - perl-user-identity-1.02-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 1.02-2
     packages:
