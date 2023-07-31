@@ -2,7 +2,7 @@
 
 pkgname=perl-ppix-utils
 pkgver=0.003
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Utility functions for PPI"
 arch=('any')
 license=('PerlArtistic')
