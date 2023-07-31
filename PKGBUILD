@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-json
 pkgver=4.10
-pkgrel=1.1
+pkgrel=1
 pkgdesc="JSON (JavaScript Object Notation) encoder/decoder"
 arch=('any')
 url="https://search.cpan.org/dist/JSON"

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-json
-  version: 4.10-1.1
+  version: 4.10-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.10-1.1
+    version: 4.10-1
     packages:
-      - perl-json-4.10-1.1-any.pkg.tar.zst
+      - perl-json-4.10-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
