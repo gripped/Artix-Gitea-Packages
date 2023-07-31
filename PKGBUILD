@@ -2,7 +2,7 @@
 
 pkgname=perl-alien-cmake3
 pkgver=0.08
-pkgrel=4.1
+pkgrel=4.2
 pkgdesc="Find or download or build cmake 3 or better"
 arch=('any')
 license=('PerlArtistic')
