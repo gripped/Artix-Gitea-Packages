@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-moo
-  version: 2.005005-2.1
+  version: 2.005005-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.005005-2.1
+    version: 2.005005-2
     packages:
-      - perl-moo-2.005005-2.1-any.pkg.tar.zst
+      - perl-moo-2.005005-2-any.pkg.tar.zst
   world-gremlins:
     version: 2.005005-2
     packages:
