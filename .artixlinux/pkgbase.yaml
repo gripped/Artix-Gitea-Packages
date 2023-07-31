@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-sub-name
-  version: 0.27-2.1
+  version: 0.27-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.27-2.1
+    version: 0.27-2
     packages:
-      - perl-sub-name-0.27-2.1-x86_64.pkg.tar.zst
+      - perl-sub-name-0.27-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.27-2
     packages:
