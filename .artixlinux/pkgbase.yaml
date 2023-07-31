@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-listing
-  version: 6.16-2.1
+  version: 6.16-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.16-2.1
+    version: 6.16-2
     packages:
-      - perl-file-listing-6.16-2.1-any.pkg.tar.zst
+      - perl-file-listing-6.16-2-any.pkg.tar.zst
   world-gremlins:
     version: 6.16-2
     packages:
