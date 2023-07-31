@@ -2,7 +2,7 @@
 
 pkgname=perl-probe-perl
 pkgver=0.03
-pkgrel=6.1
+pkgrel=6
 pkgdesc="Information about the currently running perl"
 arch=('any')
 license=('PerlArtistic')
