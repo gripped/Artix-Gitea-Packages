@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-bytes-random-secure
-  version: 0.29-11.2
+  version: 0.29-11
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.29-11.2
+    version: 0.29-11
     packages:
-      - perl-bytes-random-secure-0.29-11.2-any.pkg.tar.zst
+      - perl-bytes-random-secure-0.29-11-any.pkg.tar.zst
   world-gremlins:
     version: 0.29-11
     packages:
