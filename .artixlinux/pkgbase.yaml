@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-cgi
-  version: 4.57-2.2
+  version: 4.57-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.57-2.2
+    version: 4.57-2
     packages:
-      - perl-cgi-4.57-2.2-any.pkg.tar.zst
+      - perl-cgi-4.57-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
