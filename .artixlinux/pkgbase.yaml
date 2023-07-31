@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-archive-extract
-  version: 0.88-4.2
+  version: 0.88-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.88-4.2
+    version: 0.88-4
     packages:
-      - perl-archive-extract-0.88-4.2-any.pkg.tar.zst
+      - perl-archive-extract-0.88-4-any.pkg.tar.zst
   world-gremlins:
     version: 0.88-4
     packages:
