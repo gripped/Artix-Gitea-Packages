@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test-mockmodule
-  version: 0.177.0-4.1
+  version: 0.177.0-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.177.0-4.1
+    version: 0.177.0-4
     packages:
-      - perl-test-mockmodule-0.177.0-4.1-any.pkg.tar.zst
+      - perl-test-mockmodule-0.177.0-4-any.pkg.tar.zst
   world-gremlins:
     version: 0.177.0-4
     packages:
