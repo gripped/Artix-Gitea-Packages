@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-which
-  version: 1.27-3.1
+  version: 1.27-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.27-3.1
+    version: 1.27-3
     packages:
-      - perl-file-which-1.27-3.1-any.pkg.tar.zst
+      - perl-file-which-1.27-3-any.pkg.tar.zst
   world-gremlins:
     version: 1.27-3
     packages:
