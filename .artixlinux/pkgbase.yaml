@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-archive-zip
-  version: 1.68-8.1
+  version: 1.68-8
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.68-8.1
+    version: 1.68-8
     packages:
-      - perl-archive-zip-1.68-8.1-any.pkg.tar.zst
+      - perl-archive-zip-1.68-8-any.pkg.tar.zst
   world-gremlins:
     version: 1.68-8
     packages:
