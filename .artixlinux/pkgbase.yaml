@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-crypt-openssl-guess
-  version: 0.15-3.1
+  version: 0.15-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.15-3.1
+    version: 0.15-3
     packages:
-      - perl-crypt-openssl-guess-0.15-3.1-any.pkg.tar.zst
+      - perl-crypt-openssl-guess-0.15-3-any.pkg.tar.zst
   world-gremlins:
     version: 0.15-3
     packages:
