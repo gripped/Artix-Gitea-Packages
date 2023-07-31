@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-namespace-autoclean
-  version: 0.29-5.1
+  version: 0.29-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.29-5.1
+    version: 0.29-5
     packages:
-      - perl-namespace-autoclean-0.29-5.1-any.pkg.tar.zst
+      - perl-namespace-autoclean-0.29-5-any.pkg.tar.zst
   world-gremlins:
     version: 0.29-5
     packages:
