@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-sub-uplevel
-  version: 0.2800-4.1
+  version: 0.2800-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.2800-4.1
+    version: 0.2800-4
     packages:
-      - perl-sub-uplevel-0.2800-4.1-any.pkg.tar.zst
+      - perl-sub-uplevel-0.2800-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
