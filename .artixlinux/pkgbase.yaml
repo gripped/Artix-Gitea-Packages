@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-io-string
-  version: 1.08-12.1
+  version: 1.08-12
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.08-12.1
+    version: 1.08-12
     packages:
-      - perl-io-string-1.08-12.1-x86_64.pkg.tar.zst
+      - perl-io-string-1.08-12-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
