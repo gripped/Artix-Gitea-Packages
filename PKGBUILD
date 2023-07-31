@@ -1,11 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Florian Pritz <bluewind@xinu.at>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-mail-dkim
 pkgver=1.20230212
-pkgrel=2.2
+pkgrel=2
 pkgdesc='Signs/verifies Internet mail with DKIM/DomainKey signatures'
 arch=(any)
 license=(PerlArtistic GPL)

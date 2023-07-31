@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mail-dkim
-  version: 1.20230212-2.2
+  version: 1.20230212-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.20230212-2.2
+    version: 1.20230212-2
     packages:
-      - perl-mail-dkim-1.20230212-2.2-any.pkg.tar.zst
+      - perl-mail-dkim-1.20230212-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
