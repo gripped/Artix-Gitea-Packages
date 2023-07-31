@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-net-dns-sec
-  version: 1.21-2.1
+  version: 1.21-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.21-2.1
+    version: 1.21-2
     packages:
-      - perl-net-dns-sec-1.21-2.1-x86_64.pkg.tar.zst
+      - perl-net-dns-sec-1.21-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.21-2
     packages:
