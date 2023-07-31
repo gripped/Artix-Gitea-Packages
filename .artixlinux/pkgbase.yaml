@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-readonly
-  version: 2.05-4.1
+  version: 2.05-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.05-4.1
+    version: 2.05-4
     packages:
-      - perl-readonly-2.05-4.1-any.pkg.tar.zst
+      - perl-readonly-2.05-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
