@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-devel-checklib
-  version: 1.16-2.1
+  version: 1.16-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.16-2.1
+    version: 1.16-2
     packages:
-      - perl-devel-checklib-1.16-2.1-any.pkg.tar.zst
+      - perl-devel-checklib-1.16-2-any.pkg.tar.zst
   world-gremlins:
     version: 1.16-2
     packages:
