@@ -2,7 +2,7 @@
 
 pkgname=perl-fcgi
 pkgver=0.82
-pkgrel=3.1
+pkgrel=3
 pkgdesc='Fast CGI module'
 arch=(x86_64)
 license=(PerlArtistic GPL)

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-fcgi
-  version: 0.82-3.1
+  version: 0.82-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.82-3.1
+    version: 0.82-3
     packages:
-      - perl-fcgi-0.82-3.1-x86_64.pkg.tar.zst
+      - perl-fcgi-0.82-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.82-3
     packages:
