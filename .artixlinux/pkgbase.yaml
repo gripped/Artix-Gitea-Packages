@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-specio
-  version: 0.48-1.1
+  version: 0.48-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.48-1.1
+    version: 0.48-1
     packages:
-      - perl-specio-0.48-1.1-any.pkg.tar.zst
+      - perl-specio-0.48-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
