@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-www-robotrules
-  version: 6.02-12.1
+  version: 6.02-12
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.02-12.1
+    version: 6.02-12
     packages:
-      - perl-www-robotrules-6.02-12.1-any.pkg.tar.zst
+      - perl-www-robotrules-6.02-12-any.pkg.tar.zst
   world-gremlins:
     version: 6.02-12
     packages:
