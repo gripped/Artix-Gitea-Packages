@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-spiffy
-  version: 0.46-4.1
+  version: 0.46-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.46-4.1
+    version: 0.46-4
     packages:
-      - perl-spiffy-0.46-4.1-any.pkg.tar.zst
+      - perl-spiffy-0.46-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
