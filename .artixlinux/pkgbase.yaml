@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test-needs
-  version: 0.002010-2.1
+  version: 0.002010-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.002010-2.1
+    version: 0.002010-2
     packages:
-      - perl-test-needs-0.002010-2.1-any.pkg.tar.zst
+      - perl-test-needs-0.002010-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.002010-2
     packages:
