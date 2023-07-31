@@ -4,7 +4,7 @@
 
 pkgname=perl-crypt-openssl-dsa
 pkgver=0.20
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Digital Signature Algorithm using OpenSSL"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')

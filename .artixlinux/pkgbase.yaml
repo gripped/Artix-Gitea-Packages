@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-crypt-openssl-dsa
-  version: 0.20-5.1
+  version: 0.20-5
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.20-5.1
+    version: 0.20-5
     packages:
-      - perl-crypt-openssl-dsa-0.20-5.1-x86_64.pkg.tar.zst
+      - perl-crypt-openssl-dsa-0.20-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.20-5
     packages:
