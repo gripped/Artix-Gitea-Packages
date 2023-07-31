@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-alien-build
-  version: 2.80-2.4
+  version: 2.80-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.80-2.4
+    version: 2.80-2
     packages:
-      - perl-alien-build-2.80-2.4-any.pkg.tar.zst
+      - perl-alien-build-2.80-2-any.pkg.tar.zst
   world-gremlins:
     version: 2.80-2.3
     packages:
