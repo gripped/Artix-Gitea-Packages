@@ -8,11 +8,11 @@ pkgbase:
     - perl-test-yaml
 actions:
   addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.07-7
-    packages:
-      - perl-test-yaml-1.07-7-any.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: 1.07-7
     packages:
