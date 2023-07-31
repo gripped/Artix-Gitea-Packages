@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mail-authenticationresults
-  version: 2.20230112-2.1
+  version: 2.20230112-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.20230112-2.1
+    version: 2.20230112-2
     packages:
-      - perl-mail-authenticationresults-2.20230112-2.1-any.pkg.tar.zst
+      - perl-mail-authenticationresults-2.20230112-2-any.pkg.tar.zst
   world-gremlins:
     version: 2.20230112-2
     packages:
