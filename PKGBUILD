@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: James Hunt <lazy at brandnewmath dot com>
 
 pkgname=perl-xml-sax-base
 pkgver=1.09
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Base class SAX Drivers and Filters"
 arch=('any')
 url="https://search.cpan.org/dist/XML-SAX-Base"
