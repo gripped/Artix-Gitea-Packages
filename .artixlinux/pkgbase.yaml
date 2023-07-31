@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-net-http
-  version: 6.23-2.1
+  version: 6.23-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.23-2.1
+    version: 6.23-2
     packages:
-      - perl-net-http-6.23-2.1-any.pkg.tar.zst
+      - perl-net-http-6.23-2-any.pkg.tar.zst
   world-gremlins:
     version: 6.23-2
     packages:
