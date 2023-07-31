@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-datetime-timezone
 pkgver=2.60
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Time zone object base class and factory "
 arch=(any)
 url="https://search.cpan.org/dist/DateTime-TimeZone"
