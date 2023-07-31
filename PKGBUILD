@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-math-round
 pkgver=0.07
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Perl extension for rounding numbers"
 arch=('any')
 url="https://search.cpan.org/dist/Math-Round"
