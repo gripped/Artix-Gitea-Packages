@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-devel-symdump
-  version: 2.18-5.1
+  version: 2.18-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.18-5.1
+    version: 2.18-5
     packages:
-      - perl-devel-symdump-2.18-5.1-any.pkg.tar.zst
+      - perl-devel-symdump-2.18-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
