@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-json-xs
-  version: 4.03-4.1
+  version: 4.03-4
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.03-4.1
+    version: 4.03-4
     packages:
-      - perl-json-xs-4.03-4.1-x86_64.pkg.tar.zst
+      - perl-json-xs-4.03-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: 4.03-4
     packages:
