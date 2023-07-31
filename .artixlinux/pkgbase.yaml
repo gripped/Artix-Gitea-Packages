@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-xml-sax-expat
-  version: 0.51-7.1
+  version: 0.51-7
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.51-7.1
+    version: 0.51-7
     packages:
-      - perl-xml-sax-expat-0.51-7.1-any.pkg.tar.zst
+      - perl-xml-sax-expat-0.51-7-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
