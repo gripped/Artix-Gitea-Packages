@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mime-base32
-  version: 1.303-9.1
+  version: 1.303-9
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.303-9.1
+    version: 1.303-9
     packages:
-      - perl-mime-base32-1.303-9.1-any.pkg.tar.zst
+      - perl-mime-base32-1.303-9-any.pkg.tar.zst
   world-gremlins:
     version: 1.303-9
     packages:
