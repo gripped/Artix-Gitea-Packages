@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-io-stringy
-  version: 2.113-1.1
+  version: 2.113-1.2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.113-1.1
+    version: 2.113-1.2
     packages:
-      - perl-io-stringy-2.113-1.1-any.pkg.tar.zst
+      - perl-io-stringy-2.113-1.2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
