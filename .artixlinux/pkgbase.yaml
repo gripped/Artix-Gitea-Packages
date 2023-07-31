@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-sub-override
-  version: 0.09-5.1
+  version: 0.09-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.09-5.1
+    version: 0.09-5
     packages:
-      - perl-sub-override-0.09-5.1-any.pkg.tar.zst
+      - perl-sub-override-0.09-5-any.pkg.tar.zst
   world-gremlins:
     version: 0.09-5
     packages:
