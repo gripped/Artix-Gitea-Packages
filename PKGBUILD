@@ -2,7 +2,7 @@
 
 pkgname=perl-shell-guess
 pkgver=0.09
-pkgrel=6.1
+pkgrel=6
 pkgdesc="Make an educated guess about the shell in use"
 arch=('any')
 license=('PerlArtistic')
