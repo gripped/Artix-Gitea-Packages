@@ -3,10 +3,10 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Michal Bozon <michal.bozon__at__gmail.com>
 
-_name=PyYAML
+_name=pyyaml
 pkgname=python-yaml
 pkgver=6.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Python bindings for YAML, using fast libYAML library'
 arch=(x86_64)
 url='https://github.com/yaml/pyyaml'
