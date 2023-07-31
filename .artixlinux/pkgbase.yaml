@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-crypt-openssl-bignum
-  version: 0.09-9.1
+  version: 0.09-9
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.09-9.1
+    version: 0.09-9
     packages:
-      - perl-crypt-openssl-bignum-0.09-9.1-x86_64.pkg.tar.zst
+      - perl-crypt-openssl-bignum-0.09-9-x86_64.pkg.tar.zst
   world-gremlins:
     version: 0.09-9
     packages:
