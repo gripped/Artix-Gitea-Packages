@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-timedate
-  version: 2.33-5.1
+  version: 2.33-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.33-5.1
+    version: 2.33-5
     packages:
-      - perl-timedate-2.33-5.1-any.pkg.tar.zst
+      - perl-timedate-2.33-5-any.pkg.tar.zst
   world-gremlins:
     version: 2.33-5
     packages:
