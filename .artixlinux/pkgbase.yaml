@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-shell-config-generate
-  version: 0.34-5.1
+  version: 0.34-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.34-5.1
+    version: 0.34-5
     packages:
-      - perl-shell-config-generate-0.34-5.1-any.pkg.tar.zst
+      - perl-shell-config-generate-0.34-5-any.pkg.tar.zst
   world-gremlins:
     version: 0.34-5
     packages:

@@ -2,7 +2,7 @@
 
 pkgname=perl-shell-config-generate
 pkgver=0.34
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Portably generate config for any shell"
 arch=('any')
 license=('PerlArtistic')
