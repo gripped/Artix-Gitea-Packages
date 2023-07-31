@@ -1,8 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=perl-module-runtime
 pkgver=0.016
-pkgrel=3.1
+pkgrel=3
 pkgdesc="runtime module handling"
 arch=('any')
 url="https://search.cpan.org/dist/Module-Runtime/"
