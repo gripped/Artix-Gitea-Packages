@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-scope-guard
-  version: 0.21-6.1
+  version: 0.21-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.21-6.1
+    version: 0.21-6
     packages:
-      - perl-scope-guard-0.21-6.1-any.pkg.tar.zst
+      - perl-scope-guard-0.21-6-any.pkg.tar.zst
   world-gremlins:
     version: 0.21-6
     packages:
