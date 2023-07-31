@@ -2,7 +2,7 @@
 
 pkgname=perl-pkgconfig-libpkgconf
 pkgver=0.11
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Perl bindings for libpkgconf"
 arch=('x86_64')
 license=('PerlArtistic')
