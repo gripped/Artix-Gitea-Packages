@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-extutils-helpers
-  version: 0.026-9.1
+  version: 0.026-9
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.026-9.1
+    version: 0.026-9
     packages:
-      - perl-extutils-helpers-0.026-9.1-any.pkg.tar.zst
+      - perl-extutils-helpers-0.026-9-any.pkg.tar.zst
   world-gremlins:
     version: 0.026-9
     packages:
