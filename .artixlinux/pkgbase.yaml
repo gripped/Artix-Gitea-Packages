@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-acme-alien-dontpanic
-  version: 2.7200-2
+  version: 2.7200-2.1
   arch:
     - any
   pkgname:
     - perl-acme-alien-dontpanic
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.7200-2
+    version: 2.7200-2.1
     packages:
-      - perl-acme-alien-dontpanic-2.7200-2-any.pkg.tar.zst
+      - perl-acme-alien-dontpanic-2.7200-2.1-any.pkg.tar.zst
   world-gremlins:
     version: 2.7200-2
     packages:
