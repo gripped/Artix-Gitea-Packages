@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-class-data-inheritable
-  version: 0.09-4.1
+  version: 0.09-4
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.09-4.1
+    version: 0.09-4
     packages:
-      - perl-class-data-inheritable-0.09-4.1-x86_64.pkg.tar.zst
+      - perl-class-data-inheritable-0.09-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
