@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-error
-  version: 0.17029-5.1
+  version: 0.17029-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.17029-5.1
+    version: 0.17029-5
     packages:
-      - perl-error-0.17029-5.1-any.pkg.tar.zst
+      - perl-error-0.17029-5-any.pkg.tar.zst
   world-gremlins:
     version: 0.17029-5
     packages:
