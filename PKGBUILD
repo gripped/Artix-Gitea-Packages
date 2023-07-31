@@ -1,11 +1,11 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Jan-Erik Rediger <badboy at archlinux dot us>
 # Contributor: Gerardo Exequiel Pozzi <vmlinuz386@yahoo.com.ar>
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-ipc-run
 pkgver=20220807.0
-pkgrel=1.1
+pkgrel=1
 pkgdesc="IPC::Run - system() and background procs w/ piping, redirs, ptys"
 arch=('any')
 url="https://search.cpan.org/dist/IPC-Run"

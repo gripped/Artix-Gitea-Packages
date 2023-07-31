@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-ipc-run
-  version: 20220807.0-1.1
+  version: 20220807.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 20220807.0-1.1
+    version: 20220807.0-1
     packages:
-      - perl-ipc-run-20220807.0-1.1-any.pkg.tar.zst
+      - perl-ipc-run-20220807.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
