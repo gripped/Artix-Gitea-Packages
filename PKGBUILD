@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-datetime-format-w3cdtf
 pkgver=0.08
-pkgrel=3.1
+pkgrel=3
 pkgdesc="Parse and format W3CDTF datetime strings"
 arch=('any')
 url="https://search.cpan.org/dist/DateTime-Format-W3CDTF"
