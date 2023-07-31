@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test-warn
-  version: 0.37-1.1
+  version: 0.37-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.37-1.1
+    version: 0.37-1
     packages:
-      - perl-test-warn-0.37-1.1-any.pkg.tar.zst
+      - perl-test-warn-0.37-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

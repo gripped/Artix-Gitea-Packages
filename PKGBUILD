@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Firmicus <francois.archlinux.org>
 
 pkgname=perl-test-warn
 pkgver=0.37
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Perl extension to test methods for warnings "
 arch=(any)
 url="https://search.cpan.org/dist/Test-Warn/"
