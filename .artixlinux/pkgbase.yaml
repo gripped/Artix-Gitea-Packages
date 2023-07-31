@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-pod-coverage
-  version: 0.23-5.1
+  version: 0.23-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.23-5.1
+    version: 0.23-5
     packages:
-      - perl-pod-coverage-0.23-5.1-any.pkg.tar.zst
+      - perl-pod-coverage-0.23-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
