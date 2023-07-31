@@ -1,10 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-datetime-locale
 pkgver=1.39
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Localization support for DateTime.pm "
 arch=(any)
 url="https://search.cpan.org/dist/DateTime-Locale"

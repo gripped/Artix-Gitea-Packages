@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-datetime-locale
-  version: 1.39-1.1
+  version: 1.39-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.39-1.1
+    version: 1.39-1
     packages:
-      - perl-datetime-locale-1.39-1.1-any.pkg.tar.zst
+      - perl-datetime-locale-1.39-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
