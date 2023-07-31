@@ -2,7 +2,7 @@
 
 pkgname=perl-perl-minimumversion
 pkgver=1.40
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Find a minimum required version of perl for Perl code"
 arch=('any')
 license=('PerlArtistic')
