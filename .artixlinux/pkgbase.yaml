@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mozilla-ca
-  version: 20221114-2.1
+  version: 20221114-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 20221114-2.1
+    version: 20221114-2
     packages:
-      - perl-mozilla-ca-20221114-2.1-any.pkg.tar.zst
+      - perl-mozilla-ca-20221114-2-any.pkg.tar.zst
   world-gremlins:
     version: 20221114-2
     packages:
