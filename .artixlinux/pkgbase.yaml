@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test2-tools-process
-  version: 0.07-2.1
+  version: 0.07-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.07-2.1
+    version: 0.07-2
     packages:
-      - perl-test2-tools-process-0.07-2.1-any.pkg.tar.zst
+      - perl-test2-tools-process-0.07-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.07-2
     packages:
