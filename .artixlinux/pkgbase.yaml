@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-http-negotiate
-  version: 6.01-12.1
+  version: 6.01-12
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.01-12.1
+    version: 6.01-12
     packages:
-      - perl-http-negotiate-6.01-12.1-any.pkg.tar.zst
+      - perl-http-negotiate-6.01-12-any.pkg.tar.zst
   world-gremlins:
     version: 6.01-12
     packages:
