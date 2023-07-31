@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-copy-recursive-reduced
-  version: 0.006-7.1
+  version: 0.006-7
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.006-7.1
+    version: 0.006-7
     packages:
-      - perl-file-copy-recursive-reduced-0.006-7.1-any.pkg.tar.zst
+      - perl-file-copy-recursive-reduced-0.006-7-any.pkg.tar.zst
   world-gremlins:
     version: 0.006-7
     packages:
