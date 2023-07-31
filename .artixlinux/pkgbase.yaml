@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-digest-sha1
-  version: 2.13-19.1
+  version: 2.13-19
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.13-19.1
+    version: 2.13-19
     packages:
-      - perl-digest-sha1-2.13-19.1-x86_64.pkg.tar.zst
+      - perl-digest-sha1-2.13-19-x86_64.pkg.tar.zst
   world-gremlins:
     version: 2.13-19
     packages:
