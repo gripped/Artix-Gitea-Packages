@@ -1,10 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@gmail.com>
 # Contributor: kevin <kevin@archlinux.org>
 
 pkgname=perl-string-shellquote
 _realname=String-ShellQuote
 pkgver=1.04
-pkgrel=7.1
+pkgrel=7
 pkgdesc="Quote strings for passing through the shell"
 arch=('any')
 license=('GPL')
