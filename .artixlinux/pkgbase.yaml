@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-class-singleton
-  version: 1.6-2.1
+  version: 1.6-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.6-2.1
+    version: 1.6-2
     packages:
-      - perl-class-singleton-1.6-2.1-any.pkg.tar.zst
+      - perl-class-singleton-1.6-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
