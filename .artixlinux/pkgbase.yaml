@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-chdir
-  version: 0.1011-5.1
+  version: 0.1011-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1011-5.1
+    version: 0.1011-5
     packages:
-      - perl-file-chdir-0.1011-5.1-any.pkg.tar.zst
+      - perl-file-chdir-0.1011-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
