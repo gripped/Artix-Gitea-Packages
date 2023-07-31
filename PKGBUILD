@@ -5,7 +5,7 @@
 
 pkgname=perl-xml-libxml
 pkgver=2.0209
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Interface to the libxml library"
 arch=('x86_64')
 url="https://search.cpan.org/dist/XML-LibXML"
