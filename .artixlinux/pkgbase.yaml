@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mime-types
-  version: 2.24-2.1
+  version: 2.24-2.2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.24-2.1
+    version: 2.24-2.2
     packages:
-      - perl-mime-types-2.24-2.1-any.pkg.tar.zst
+      - perl-mime-types-2.24-2.2-any.pkg.tar.zst
   world-gremlins:
     version: 2.24-2
     packages:
