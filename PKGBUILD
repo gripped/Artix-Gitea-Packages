@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-xml-namespacesupport
 pkgver=1.12
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Generic namespace helpers (ported from SAX2)"
 arch=('any')
 url="https://search.cpan.org/dist/XML-NamespaceSupport"

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-xml-namespacesupport
-  version: 1.12-5.1
+  version: 1.12-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.12-5.1
+    version: 1.12-5
     packages:
-      - perl-xml-namespacesupport-1.12-5.1-any.pkg.tar.zst
+      - perl-xml-namespacesupport-1.12-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
