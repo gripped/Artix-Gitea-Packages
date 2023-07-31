@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-inc-latest
-  version: 0.500-11.1
+  version: 0.500-11
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.500-11.1
+    version: 0.500-11
     packages:
-      - perl-inc-latest-0.500-11.1-any.pkg.tar.zst
+      - perl-inc-latest-0.500-11-any.pkg.tar.zst
   world-gremlins:
     version: 0.500-11
     packages:
