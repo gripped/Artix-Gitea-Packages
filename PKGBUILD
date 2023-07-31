@@ -1,11 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Firmicus <francois.archlinux.org>
 
 pkgname=perl-tidy
 pkgver=20230701
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Parses and beautifies perl source"
 arch=('any')
 url="https://search.cpan.org/dist/Perl-Tidy"
