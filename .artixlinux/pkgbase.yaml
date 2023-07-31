@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mail-spf
-  version: 2.9.0-11.2
+  version: 2.9.0-11
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.9.0-11.2
+    version: 2.9.0-11
     packages:
-      - perl-mail-spf-2.9.0-11.2-any.pkg.tar.zst
+      - perl-mail-spf-2.9.0-11-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
