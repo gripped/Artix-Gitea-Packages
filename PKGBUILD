@@ -3,7 +3,7 @@
 
 pkgname=perl-file-slurp-tiny
 pkgver=0.004
-pkgrel=9.1
+pkgrel=9
 pkgdesc="A simple, sane and efficient file slurper"
 arch=('any')
 license=('PerlArtistic' 'GPL')
