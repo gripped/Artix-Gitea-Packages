@@ -1,24 +1,26 @@
 ---
 pkgbase:
   name: glibc
-  version: 2.37-3
+  version: 2.37-4
   arch:
     - x86_64
   pkgname:
     - glibc
     - lib32-glibc
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.37-4
+    packages:
+      - glibc-2.37-4-x86_64.pkg.tar.zst
+      - lib32-glibc-2.37-4-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
