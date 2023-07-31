@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - perl-socket6
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.29-8
-    packages:
-      - perl-socket6-0.29-8-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: 0.29-8
     packages:
