@@ -2,7 +2,7 @@
 
 pkgname=perl-pkgconfig
 pkgver=0.25026
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Pure-Perl Core-Only replacement for pkg-config"
 arch=('any')
 license=('PerlArtistic')

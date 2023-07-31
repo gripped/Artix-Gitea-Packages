@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-pkgconfig
-  version: 0.25026-4.1
+  version: 0.25026-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.25026-4.1
+    version: 0.25026-4
     packages:
-      - perl-pkgconfig-0.25026-4.1-any.pkg.tar.zst
+      - perl-pkgconfig-0.25026-4-any.pkg.tar.zst
   world-gremlins:
     version: 0.25026-4
     packages:
