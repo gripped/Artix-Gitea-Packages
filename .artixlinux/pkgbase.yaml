@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-list-moreutils
-  version: 0.430-4.2
+  version: 0.430-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.430-4.2
+    version: 0.430-4
     packages:
-      - perl-list-moreutils-0.430-4.2-any.pkg.tar.zst
+      - perl-list-moreutils-0.430-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
