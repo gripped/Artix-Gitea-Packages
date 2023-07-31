@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-slurper
-  version: 0.014-2.1
+  version: 0.014-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.014-2.1
+    version: 0.014-2
     packages:
-      - perl-file-slurper-0.014-2.1-any.pkg.tar.zst
+      - perl-file-slurper-0.014-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.014-2
     packages:
