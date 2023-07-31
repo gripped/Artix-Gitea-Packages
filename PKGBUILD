@@ -2,7 +2,7 @@
 
 pkgname=perl-class-tiny
 pkgver=1.008
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Minimalist class construction"
 arch=('any')
 license=('PerlArtistic')

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-class-tiny
-  version: 1.008-4.1
+  version: 1.008-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.008-4.1
+    version: 1.008-4
     packages:
-      - perl-class-tiny-1.008-4.1-any.pkg.tar.zst
+      - perl-class-tiny-1.008-4-any.pkg.tar.zst
   world-gremlins:
     version: 1.008-4
     packages:
