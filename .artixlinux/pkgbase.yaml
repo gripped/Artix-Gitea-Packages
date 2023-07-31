@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-term-readline-gnu
-  version: 1.46-2.1
+  version: 1.46-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.46-2.1
+    version: 1.46-2
     packages:
-      - perl-term-readline-gnu-1.46-2.1-x86_64.pkg.tar.zst
+      - perl-term-readline-gnu-1.46-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.46-2
     packages:
