@@ -5,7 +5,7 @@
 pkgname='perl-ipc-run3'
 _dist=IPC-Run3
 pkgver=0.048
-pkgrel=11.1
+pkgrel=11
 pkgdesc="run a subprocess with input/ouput redirection"
 arch=('any')
 license=('PerlArtistic' 'GPL')

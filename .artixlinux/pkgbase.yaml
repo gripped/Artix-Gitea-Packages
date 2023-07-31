@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-ipc-run3
-  version: 0.048-11.1
+  version: 0.048-11
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.048-11.1
+    version: 0.048-11
     packages:
-      - perl-ipc-run3-0.048-11.1-any.pkg.tar.zst
+      - perl-ipc-run3-0.048-11-any.pkg.tar.zst
   world-gremlins:
     version: 0.048-11
     packages:
