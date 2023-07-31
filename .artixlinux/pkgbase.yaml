@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-super
-  version: 1.20190531-6.1
+  version: 1.20190531-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.20190531-6.1
+    version: 1.20190531-6
     packages:
-      - perl-super-1.20190531-6.1-any.pkg.tar.zst
+      - perl-super-1.20190531-6-any.pkg.tar.zst
   world-gremlins:
     version: 1.20190531-6
     packages:
