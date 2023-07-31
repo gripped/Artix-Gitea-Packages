@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-number-compare
-  version: 0.03-13.1
+  version: 0.03-13
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.03-13.1
+    version: 0.03-13
     packages:
-      - perl-number-compare-0.03-13.1-any.pkg.tar.zst
+      - perl-number-compare-0.03-13-any.pkg.tar.zst
   world-gremlins:
     version: 0.03-13
     packages:
