@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-ppi
-  version: 1.276-2.1
+  version: 1.276-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.276-2.1
+    version: 1.276-2
     packages:
-      - perl-ppi-1.276-2.1-any.pkg.tar.zst
+      - perl-ppi-1.276-2-any.pkg.tar.zst
   world-gremlins:
     version: 1.276-2
     packages:
