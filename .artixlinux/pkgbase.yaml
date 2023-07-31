@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test-requires
-  version: 0.11-5.1
+  version: 0.11-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.11-5.1
+    version: 0.11-5
     packages:
-      - perl-test-requires-0.11-5.1-any.pkg.tar.zst
+      - perl-test-requires-0.11-5-any.pkg.tar.zst
   world-gremlins:
     version: 0.11-5
     packages:
