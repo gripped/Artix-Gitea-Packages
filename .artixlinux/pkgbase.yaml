@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-module-build
-  version: 0.4234-2.1
+  version: 0.4234-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.4234-2.1
+    version: 0.4234-2
     packages:
-      - perl-module-build-0.4234-2.1-any.pkg.tar.zst
+      - perl-module-build-0.4234-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.4234-2
     packages:
