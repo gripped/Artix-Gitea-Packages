@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-devel-globaldestruction
-  version: 0.14-9.1
+  version: 0.14-9
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.14-9.1
+    version: 0.14-9
     packages:
-      - perl-devel-globaldestruction-0.14-9.1-any.pkg.tar.zst
+      - perl-devel-globaldestruction-0.14-9-any.pkg.tar.zst
   world-gremlins:
     version: 0.14-9
     packages:
