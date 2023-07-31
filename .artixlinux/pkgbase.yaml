@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-list-someutils
-  version: 0.59-2.1
+  version: 0.59-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.59-2.1
+    version: 0.59-2
     packages:
-      - perl-list-someutils-0.59-2.1-any.pkg.tar.zst
+      - perl-list-someutils-0.59-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.59-2
     packages:
