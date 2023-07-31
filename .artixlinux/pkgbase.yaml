@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-sub-info
-  version: 0.002-10.1
+  version: 0.002-10
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.002-10.1
+    version: 0.002-10
     packages:
-      - perl-sub-info-0.002-10.1-any.pkg.tar.zst
+      - perl-sub-info-0.002-10-any.pkg.tar.zst
   world-gremlins:
     version: 0.002-10
     packages:
