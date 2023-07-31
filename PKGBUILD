@@ -2,7 +2,7 @@
 
 pkgname=perl-log-message
 pkgver=0.08
-pkgrel=9.1
+pkgrel=9
 pkgdesc='Powerful and flexible message logging mechanism'
 arch=(any)
 license=(PerlArtistic GPL)
