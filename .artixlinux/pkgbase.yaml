@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gmp
-  version: 6.2.1-2
+  version: 6.3.0-1
   arch:
     - x86_64
   pkgname:
     - gmp
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.3.0-1
+    packages:
+      - gmp-6.3.0-1-x86_64.pkg.tar.zst
   system:
     version: 6.2.1-2
     packages:
