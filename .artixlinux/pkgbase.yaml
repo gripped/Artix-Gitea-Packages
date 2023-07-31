@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-net-ip
-  version: 1.26-12.1
+  version: 1.26-12
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.26-12.1
+    version: 1.26-12
     packages:
-      - perl-net-ip-1.26-12.1-any.pkg.tar.zst
+      - perl-net-ip-1.26-12-any.pkg.tar.zst
   world-gremlins:
     version: 1.26-12
     packages:
