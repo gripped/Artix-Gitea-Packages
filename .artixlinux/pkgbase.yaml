@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-remove
-  version: 1.61-2.1
+  version: 1.61-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.61-2.1
+    version: 1.61-2
     packages:
-      - perl-file-remove-1.61-2.1-any.pkg.tar.zst
+      - perl-file-remove-1.61-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
