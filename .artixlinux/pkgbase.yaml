@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test-nowarnings
-  version: 1.06-3.2
+  version: 1.06-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.06-3.2
+    version: 1.06-3
     packages:
-      - perl-test-nowarnings-1.06-3.2-any.pkg.tar.zst
+      - perl-test-nowarnings-1.06-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

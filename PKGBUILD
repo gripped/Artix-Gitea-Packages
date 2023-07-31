@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-test-nowarnings
 pkgver=1.06
-pkgrel=3.2
+pkgrel=3
 pkgdesc="Make sure you didn't emit any warnings while testing "
 arch=('any')
 url="https://search.cpan.org/dist/Test-NoWarnings"
