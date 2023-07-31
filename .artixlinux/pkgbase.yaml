@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-io-captureoutput
-  version: 1.1105-5.1
+  version: 1.1105-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.1105-5.1
+    version: 1.1105-5
     packages:
-      - perl-io-captureoutput-1.1105-5.1-any.pkg.tar.zst
+      - perl-io-captureoutput-1.1105-5-any.pkg.tar.zst
   world-gremlins:
     version: 1.1105-5
     packages:
