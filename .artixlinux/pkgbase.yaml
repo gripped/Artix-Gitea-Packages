@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-xml-sax
-  version: 1.02-1.2
+  version: 1.02-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.02-1.2
+    version: 1.02-1
     packages:
-      - perl-xml-sax-1.02-1.2-any.pkg.tar.zst
+      - perl-xml-sax-1.02-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
