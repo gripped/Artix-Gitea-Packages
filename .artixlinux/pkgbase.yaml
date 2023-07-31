@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-sort-versions
-  version: 1.62-9.1
+  version: 1.62-9
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.62-9.1
+    version: 1.62-9
     packages:
-      - perl-sort-versions-1.62-9.1-any.pkg.tar.zst
+      - perl-sort-versions-1.62-9-any.pkg.tar.zst
   world-gremlins:
     version: 1.62-9
     packages:
