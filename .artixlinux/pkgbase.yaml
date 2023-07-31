@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-module-build-tiny
-  version: 0.046-2.1
+  version: 0.046-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.046-2.1
+    version: 0.046-2
     packages:
-      - perl-module-build-tiny-0.046-2.1-any.pkg.tar.zst
+      - perl-module-build-tiny-0.046-2-any.pkg.tar.zst
   world-gremlins:
     version: 0.046-2
     packages:
