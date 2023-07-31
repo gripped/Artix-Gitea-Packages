@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-file-find-rule
-  version: 0.34-10.1
+  version: 0.34-10
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.34-10.1
+    version: 0.34-10
     packages:
-      - perl-file-find-rule-0.34-10.1-any.pkg.tar.zst
+      - perl-file-find-rule-0.34-10-any.pkg.tar.zst
   world-gremlins:
     version: 0.34-10
     packages:
