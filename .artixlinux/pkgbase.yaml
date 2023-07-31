@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-archive-cpio
-  version: 0.10-8.1
+  version: 0.10-8
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.10-8.1
+    version: 0.10-8
     packages:
-      - perl-archive-cpio-0.10-8.1-any.pkg.tar.zst
+      - perl-archive-cpio-0.10-8-any.pkg.tar.zst
   world-gremlins:
     version: 0.10-8
     packages:
