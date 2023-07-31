@@ -5,7 +5,7 @@
 
 pkgname=perl-dbd-mysql
 pkgver=4.050
-pkgrel=9.2
+pkgrel=9
 pkgdesc='Perl/CPAN DBD::mysql module for interacting with MySQL via DBD'
 arch=('x86_64')
 license=('GPL' 'PerlArtistic')
