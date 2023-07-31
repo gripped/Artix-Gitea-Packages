@@ -2,7 +2,7 @@
 
 pkgname=perl-b-keywords
 pkgver=1.26
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Lists of reserved barewords and symbol names"
 arch=('any')
 license=('PerlArtistic')
