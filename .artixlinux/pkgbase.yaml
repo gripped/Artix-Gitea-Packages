@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-authen-sasl
-  version: 2.16-11
+  version: 2.16-11.1
   arch:
     - any
   pkgname:
     - perl-authen-sasl
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.16-11
+    version: 2.16-11.1
     packages:
-      - perl-authen-sasl-2.16-11-any.pkg.tar.zst
+      - perl-authen-sasl-2.16-11.1-any.pkg.tar.zst
   world-gremlins:
     version: 2.16-11
     packages:
