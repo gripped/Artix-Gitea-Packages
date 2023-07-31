@@ -31,7 +31,7 @@ optdepends=(
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
   https://downloads.sourceforge.net/project/scons/scons/$pkgver/$_name-$pkgver.tar.gz
-  $pkgname-4.4.0-dont_install_manpages.patch
+  https://gitlab.archlinux.org/archlinux/packaging/packages/scons/-/raw/main/scons-4.4.0-dont_install_manpages.patch
 )
 sha512sums=('aa788d9365a8b5119fef404869562f61cb854be7ceadb5f5d47523e262c07f93ea7476166b577edec25339a64dc6a1f4a6f391fa5aeeab3f086a6659fc72e1ce'
             'a9675f4b4dbedf8c7375d4d099216cd935c38944d57b0a08de2b9c133bb53184de0d5803edf5cb9f800f205b1252ceca3aaf33a10bf5d8b48eacd58866cf776c'

@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - scons
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - scons-4.5.2-1-any.pkg.tar.zst
   world:
-    version: 4.4.0-4
+    version: 4.5.2-1
     packages:
-      - scons-4.4.0-4-any.pkg.tar.zst
+      - scons-4.5.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
