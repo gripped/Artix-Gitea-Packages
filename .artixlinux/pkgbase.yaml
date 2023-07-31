@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-net-server
-  version: 2.014-2.1
+  version: 2.014-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.014-2.1
+    version: 2.014-2
     packages:
-      - perl-net-server-2.014-2.1-any.pkg.tar.zst
+      - perl-net-server-2.014-2-any.pkg.tar.zst
   world-gremlins:
     version: 2.014-2
     packages:
