@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-html-parser
-  version: 3.81-2.1
+  version: 3.81-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.81-2.1
+    version: 3.81-2
     packages:
-      - perl-html-parser-3.81-2.1-x86_64.pkg.tar.zst
+      - perl-html-parser-3.81-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 3.81-2
     packages:
