@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pydantic
-  version: 2.0.3-3
+  version: 2.1.1-1
   arch:
     - any
   pkgname:
     - python-pydantic
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.3-3
+    version: 2.1.1-1
     packages:
-      - python-pydantic-2.0.3-3-any.pkg.tar.zst
+      - python-pydantic-2.1.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
