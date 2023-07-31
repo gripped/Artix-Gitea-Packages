@@ -2,7 +2,7 @@
 
 pkgname=perl-test-script
 pkgver=1.29
-pkgrel=4.1
+pkgrel=4
 pkgdesc="Basic cross-platform tests for scripts"
 arch=('any')
 license=('PerlArtistic')
