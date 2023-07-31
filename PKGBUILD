@@ -1,9 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-test-deep
 pkgver=1.204
-pkgrel=1.1
+pkgrel=1
 pkgdesc="Extremely flexible deep comparison "
 arch=('any')
 url="https://search.cpan.org/dist/Test-Deep"
