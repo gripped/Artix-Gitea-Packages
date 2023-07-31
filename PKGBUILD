@@ -1,10 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: François Charette <firmicus ατ gmx δοτ net>
 
 pkgname=perl-config-tiny
 pkgver=2.29
-pkgrel=2.1
+pkgrel=2
 pkgdesc="Read/Write .ini style files with as little code as possible "
 arch=('any')
 url="https://search.cpan.org/dist/Config-Tiny"
