@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-test-pod
-  version: 1.52-8.1
+  version: 1.52-8
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.52-8.1
+    version: 1.52-8
     packages:
-      - perl-test-pod-1.52-8.1-any.pkg.tar.zst
+      - perl-test-pod-1.52-8-any.pkg.tar.zst
   world-gremlins:
     version: 1.52-8
     packages:
