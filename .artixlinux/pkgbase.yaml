@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-string-shellquote
-  version: 1.04-7
+  version: 1.04-7.1
   arch:
     - any
   pkgname:
     - perl-string-shellquote
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.04-7
+    version: 1.04-7.1
     packages:
-      - perl-string-shellquote-1.04-7-any.pkg.tar.zst
+      - perl-string-shellquote-1.04-7.1-any.pkg.tar.zst
   world:
     version: 1.04-7
     packages:
