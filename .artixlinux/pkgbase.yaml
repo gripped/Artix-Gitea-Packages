@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: debuginfod
-  version: 0.189-1
+  name: elfutils
+  version: 0.189-2
   arch:
     - x86_64
   pkgname:
@@ -9,17 +9,20 @@ pkgbase:
     - elfutils
     - libelf
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 0.189-2
+    packages:
+      - debuginfod-0.189-2-x86_64.pkg.tar.zst
+      - elfutils-0.189-2-x86_64.pkg.tar.zst
+      - libelf-0.189-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []

@@ -1,4 +1,4 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 # Contributor: Andrej Gelenberg <andrej.gelenberg@udo.edu>
@@ -6,7 +6,7 @@
 pkgbase=elfutils
 pkgname=(debuginfod elfutils libelf)
 pkgver=0.189
-pkgrel=1
+pkgrel=2
 pkgdesc="Handle ELF object files and DWARF debugging information"
 arch=(x86_64)
 url="https://sourceware.org/elfutils/"
