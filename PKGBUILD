@@ -2,7 +2,7 @@
 
 pkgname=perl-specio
 pkgver=0.48
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Type constraints and coercions for Perl"
 arch=('any')
 url="https://search.cpan.org/dist/Specio"
