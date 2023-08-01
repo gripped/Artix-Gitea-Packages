@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artools
-  version: 0.31.2-2
+  version: 0.31.3-1
   arch:
     - any
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.31.2-2
+    version: 0.31.3-1
     packages:
-      - artools-base-0.31.2-2-any.pkg.tar.zst
-      - artools-pkg-0.31.2-2-any.pkg.tar.zst
-      - artools-iso-0.31.2-2-any.pkg.tar.zst
+      - artools-base-0.31.3-1-any.pkg.tar.zst
+      - artools-pkg-0.31.3-1-any.pkg.tar.zst
+      - artools-iso-0.31.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

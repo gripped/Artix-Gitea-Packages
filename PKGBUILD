@@ -2,8 +2,8 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.31.2
-pkgrel=2
+pkgver=0.31.3
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
@@ -14,7 +14,6 @@ source=("git+${url}.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 _patches=(
-    a52e32d740d4ae589d16e640b53e75291de274b0
 )
 
 # pkgver() {
@@ -45,8 +44,9 @@ package_artools-base() {
             'pacman' 'util-linux' 'sed')
     optdepends=('artools-pkg: Artix package tools'
                 'artools-iso: Artix iso tools')
-    backup=('etc/artools/artools-base.conf')
     conflicts=('arch-install-scripts')
+    groups=('artix-tools')
+    backup=('etc/artools/artools-base.conf')
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_base
 }
