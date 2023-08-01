@@ -16,15 +16,18 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 13.2.1-2
     packages:
       - gcc-13.2.1-2-x86_64.pkg.tar.zst
@@ -37,19 +40,6 @@ repos:
       - gcc-objc-13.2.1-2-x86_64.pkg.tar.zst
       - lto-dump-13.2.1-2-x86_64.pkg.tar.zst
       - libgccjit-13.2.1-2-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: 13.2.1-1
-    packages:
-      - gcc-13.2.1-1-x86_64.pkg.tar.zst
-      - gcc-libs-13.2.1-1-x86_64.pkg.tar.zst
-      - lib32-gcc-libs-13.2.1-1-x86_64.pkg.tar.zst
-      - gcc-ada-13.2.1-1-x86_64.pkg.tar.zst
-      - gcc-d-13.2.1-1-x86_64.pkg.tar.zst
-      - gcc-fortran-13.2.1-1-x86_64.pkg.tar.zst
-      - gcc-go-13.2.1-1-x86_64.pkg.tar.zst
-      - gcc-objc-13.2.1-1-x86_64.pkg.tar.zst
-      - lto-dump-13.2.1-1-x86_64.pkg.tar.zst
-      - libgccjit-13.2.1-1-x86_64.pkg.tar.zst
   system:
     version: 13.1.1-2
     packages:
