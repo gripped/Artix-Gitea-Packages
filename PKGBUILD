@@ -14,6 +14,7 @@ url="https://wiki.gnome.org/Apps/Sysprof"
 license=(GPL)
 arch=(x86_64)
 depends=(
+  json-glib
   libadwaita
   polkit
 )
