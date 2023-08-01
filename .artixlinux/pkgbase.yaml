@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: jenkins
-  version: 2.416-1
+  version: 2.417-1
   arch:
     - any
   pkgname:
     - jenkins
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.417-1
+    packages:
+      - jenkins-2.417-1-any.pkg.tar.zst
   world:
     version: 2.416-1
     packages:
