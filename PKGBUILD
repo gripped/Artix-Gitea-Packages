@@ -2,7 +2,7 @@
 
 pkgname='perl-mail-message'
 pkgver=3.013
-pkgrel=1.1
+pkgrel=1
 pkgdesc="container for MIME-encoded message information"
 arch=('any')
 license=('PerlArtistic' 'GPL')
