@@ -10,12 +10,12 @@ pkgbase:
     - emacs-nox
     - emacs-wayland
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,18 +31,15 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 29.1-2
     packages:
       - emacs-29.1-2-x86_64.pkg.tar.zst
       - emacs-nativecomp-29.1-2-x86_64.pkg.tar.zst
       - emacs-nox-29.1-2-x86_64.pkg.tar.zst
       - emacs-wayland-29.1-2-x86_64.pkg.tar.zst
-  world:
-    version: 28.2-2
-    packages:
-      - emacs-28.2-2-x86_64.pkg.tar.zst
-      - emacs-nativecomp-28.2-2-x86_64.pkg.tar.zst
-      - emacs-nox-28.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
