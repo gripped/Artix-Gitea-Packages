@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Geoffroy Carrier <geoffroy.carrier@aur.archlinux.org>
 # Contributor: Eric Belanger <belanger@astro.umontreal.ca>
@@ -8,7 +8,7 @@
 pkgbase=sysprof
 pkgname=(sysprof libsysprof-capture)
 pkgver=3.48.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Kernel based performance profiler"
 url="https://wiki.gnome.org/Apps/Sysprof"
 license=(GPL)
@@ -16,7 +16,6 @@ arch=(x86_64)
 depends=(
   libadwaita
   polkit
-  json-glib
 )
 makedepends=(
   git
