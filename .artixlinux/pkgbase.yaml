@@ -9,23 +9,23 @@ pkgbase:
     - elfutils
     - libelf
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 0.189-2
     packages:
       - debuginfod-0.189-2-x86_64.pkg.tar.zst
       - elfutils-0.189-2-x86_64.pkg.tar.zst
       - libelf-0.189-2-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 0.189-1
     packages:
