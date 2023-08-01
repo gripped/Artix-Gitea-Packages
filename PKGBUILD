@@ -3,7 +3,7 @@
 
 pkgname=perl-spiffy
 pkgver=0.46
-pkgrel=4
+pkgrel=4.1
 pkgdesc="Spiffy Perl Interface Framework For You"
 arch=('any')
 url="https://search.cpan.org/dist/Spiffy"
