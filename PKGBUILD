@@ -9,7 +9,7 @@ pkgname=(
   harfbuzz-utils
   harfbuzz-docs
 )
-pkgver=8.0.1
+pkgver=8.1.0
 pkgrel=1
 pkgdesc="OpenType text shaping engine"
 url="https://www.freedesktop.org/wiki/Software/HarfBuzz"
@@ -33,7 +33,7 @@ checkdepends=(
   python-fonttools
   python-setuptools
 )
-_commit=d160d9389cb4c5b15ebea9b41eb74018c4358924  # tags/8.0.1^0
+_commit=fcb9e5915f5d20b20576612efd4ee15d9da04c8a  # tags/8.1.0^0
 source=("git+https://github.com/harfbuzz/harfbuzz#commit=$_commit")
 b2sums=('SKIP')
 
