@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: jedi-language-server
-  version: 0.40.0-4
+  version: 0.41.0-1
   arch:
     - any
   pkgname:
     - jedi-language-server
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.40.0-4
+    version: 0.41.0-1
     packages:
-      - jedi-language-server-0.40.0-4-any.pkg.tar.zst
+      - jedi-language-server-0.41.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
