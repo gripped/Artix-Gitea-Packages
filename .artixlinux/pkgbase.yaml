@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-test-memory-cycle
-  version: 1.06-2
+  version: 1.06-2.1
   arch:
     - any
   pkgname:
     - perl-test-memory-cycle
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.06-2
+    version: 1.06-2.1
     packages:
-      - perl-test-memory-cycle-1.06-2-any.pkg.tar.zst
+      - perl-test-memory-cycle-1.06-2.1-any.pkg.tar.zst
   world:
     version: 1.06-2
     packages:
