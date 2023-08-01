@@ -1,27 +1,27 @@
 ---
 pkgbase:
   name: libtool
-  version: 2.4.7+4+g1ec8fa28-5
+  version: 2.4.7+4+g1ec8fa28-6
   arch:
     - x86_64
   pkgname:
     - libtool
 actions:
   addRepo: system-gremlins
-  removeRepo: system-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 2.4.7+4+g1ec8fa28-5
+    version: 2.4.7+4+g1ec8fa28-6
     packages:
-      - libtool-2.4.7+4+g1ec8fa28-5-x86_64.pkg.tar.zst
+      - libtool-2.4.7+4+g1ec8fa28-6-x86_64.pkg.tar.zst
   system:
     version: 2.4.7+4+g1ec8fa28-4
     packages:
