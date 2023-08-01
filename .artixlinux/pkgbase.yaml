@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: neochat
-  version: 23.04.3-2
+  version: 23.04.3-3
   arch:
     - x86_64
   pkgname:
     - neochat
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.04.3-2
+    version: 23.04.3-3
     packages:
-      - neochat-23.04.3-2-x86_64.pkg.tar.zst
+      - neochat-23.04.3-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
