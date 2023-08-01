@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qt5-base
-  version: 5.15.10+kde+r135-1
+  version: 5.15.10+kde+r139-1
   arch:
     - x86_64
   pkgname:
     - qt5-base
     - qt5-xcb-private-headers
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.15.10+kde+r135-1
+    version: 5.15.10+kde+r139-1
     packages:
-      - qt5-base-5.15.10+kde+r135-1-x86_64.pkg.tar.zst
-      - qt5-xcb-private-headers-5.15.10+kde+r135-1-x86_64.pkg.tar.zst
+      - qt5-base-5.15.10+kde+r139-1-x86_64.pkg.tar.zst
+      - qt5-xcb-private-headers-5.15.10+kde+r139-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
