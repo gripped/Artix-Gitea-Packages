@@ -3,7 +3,7 @@
 
 pkgname=perl-datetime-timezone
 pkgver=2.60
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Time zone object base class and factory "
 arch=(any)
 url="https://search.cpan.org/dist/DateTime-TimeZone"

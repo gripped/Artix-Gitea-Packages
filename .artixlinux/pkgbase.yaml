@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-datetime-timezone
-  version: 2.60-1
+  version: 2.60-1.1
   arch:
     - any
   pkgname:
     - perl-datetime-timezone
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.60-1
+    version: 2.60-1.1
     packages:
-      - perl-datetime-timezone-2.60-1-any.pkg.tar.zst
+      - perl-datetime-timezone-2.60-1.1-any.pkg.tar.zst
   world:
     version: 2.60-1
     packages:
