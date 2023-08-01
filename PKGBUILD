@@ -4,7 +4,7 @@
 
 pkgname=perl-tidy
 pkgver=20230701
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Parses and beautifies perl source"
 arch=('any')
 url="https://search.cpan.org/dist/Perl-Tidy"
