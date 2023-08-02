@@ -1,10 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=Fiona
 pkgname=python-${_pkg,,}
 pkgver=1.9.3
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Read and write geographic data files"
 arch=(x86_64)
 url="https://github.com/Toblerity/Fiona"
