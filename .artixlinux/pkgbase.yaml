@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-cairo
-  version: 1.23.0-6
+  version: 1.24.0-1
   arch:
     - x86_64
   pkgname:
     - python-cairo
     - python-cairo-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.23.0-6
+    version: 1.24.0-1
     packages:
-      - python-cairo-1.23.0-6-x86_64.pkg.tar.zst
-      - python-cairo-docs-1.23.0-6-x86_64.pkg.tar.zst
+      - python-cairo-1.24.0-1-x86_64.pkg.tar.zst
+      - python-cairo-docs-1.24.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
