@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Anatol Pomozov <anatol pomozov at gmail>
 # Contributor: Johannes Dewender  arch at JonnyJD dot net
 # Contributor: Konrad <konrad AT knauber DOT name>
 # Contributor: Luka Perkov <archlinux <at> lukaperkov <dOt> net>
@@ -7,7 +7,7 @@
 
 pkgname=rpm-tools
 pkgver=4.18.1
-pkgrel=2
+pkgrel=3
 pkgdesc="RPM Package Manager - RPM.org fork, used in major RPM distros"
 arch=('x86_64')
 url='http://www.rpm.org/'
@@ -44,8 +44,8 @@ build() {
 		--sysconfdir=/etc  \
 		--localstatedir=/var \
 		--enable-python \
-		--with-external-db \
-		--with-lua \
+		--enable-ndb \
+		--enable-bdb-ro \
 		--with-cap \
 		CPPFLAGS="`pkg-config --cflags nss`" \
 		PYTHON=python
