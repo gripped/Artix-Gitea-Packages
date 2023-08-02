@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: libayatana-appindicator
+  version: 0.5.92-1
+  arch:
+    - x86_64
+  pkgname:
+    - libayatana-appindicator
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.5.92-1
+    packages:
+      - libayatana-appindicator-0.5.92-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
