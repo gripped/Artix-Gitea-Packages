@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: bootconfig
-  version: 6.3-2
+  name: linux-tools
+  version: 6.3-3
   arch:
     - x86_64
   pkgname:
@@ -17,11 +17,11 @@ pkgbase:
     - usbip
     - x86_energy_perf_policy
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -38,8 +38,19 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.3-3
+    packages:
+      - bootconfig-6.3-3-x86_64.pkg.tar.zst
+      - bpf-6.3-3-x86_64.pkg.tar.zst
+      - cgroup_event_listener-6.3-3-x86_64.pkg.tar.zst
+      - cpupower-6.3-3-x86_64.pkg.tar.zst
+      - hyperv-6.3-3-x86_64.pkg.tar.zst
+      - linux-tools-meta-6.3-3-x86_64.pkg.tar.zst
+      - perf-6.3-3-x86_64.pkg.tar.zst
+      - tmon-6.3-3-x86_64.pkg.tar.zst
+      - turbostat-6.3-3-x86_64.pkg.tar.zst
+      - usbip-6.3-3-x86_64.pkg.tar.zst
+      - x86_energy_perf_policy-6.3-3-x86_64.pkg.tar.zst
   world:
     version: 6.3-2
     packages:
