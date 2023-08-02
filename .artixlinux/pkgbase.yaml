@@ -8,12 +8,12 @@ pkgbase:
     - vst3sdk
     - vst3sdk-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.7.8_build_34-2
     packages:
       - vst3sdk-3.7.8_build_34-2-any.pkg.tar.zst
       - vst3sdk-docs-3.7.8_build_34-2-any.pkg.tar.zst
-  world:
-    version: 3.7.8_build_34-1
-    packages:
-      - vst3sdk-3.7.8_build_34-1-any.pkg.tar.zst
-      - vst3sdk-docs-3.7.8_build_34-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
