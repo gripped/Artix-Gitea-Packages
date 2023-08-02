@@ -7,13 +7,12 @@
 
 pkgname=distcc
 pkgver=3.4
-pkgrel=8
-_gccver=13.1.1 # Current GCC version, used for symlinks, ref FS#69044
+pkgrel=9
 pkgdesc='Distributed compilation service for C, C++ and Objective-C'
 arch=(x86_64)
 url='https://github.com/distcc/distcc'
 license=(GPL)
-depends=(avahi popt python "gcc=$_gccver")
+depends=(avahi popt python)
 makedepends=(git gtk3)
 optdepends=('gtk3: for distccmon')
 backup=(etc/conf.d/distccd
@@ -67,7 +66,7 @@ package() {
   install -Dm644 distccd.conf.d "$pkgdir/etc/conf.d/distccd"
   # Package symlinks
   _targets=(c++ c89 c99 cc clang clang++ cpp g++ gcc $CARCH-pc-linux-gnu-g++
-            $CARCH-pc-linux-gnu-gcc $CARCH-pc-linux-gnu-gcc-$_gccver)
+            $CARCH-pc-linux-gnu-gcc $CARCH-pc-linux-gnu-gcc-$(gcc -dumpversion))
   install -d "$pkgdir/usr/lib/$pkgname/bin"
   for bin in "${_targets[@]}"; do
     # For whitelist since version 3.3, ref FS#57978
