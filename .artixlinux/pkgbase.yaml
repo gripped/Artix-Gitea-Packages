@@ -9,29 +9,26 @@ pkgbase:
     - linux-lts-headers
     - linux-lts-docs
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 6.1.39-2
     packages:
       - linux-lts-6.1.39-2-x86_64.pkg.tar.zst
       - linux-lts-headers-6.1.39-2-x86_64.pkg.tar.zst
       - linux-lts-docs-6.1.39-2-x86_64.pkg.tar.zst
-  system:
-    version: 6.1.39-1
-    packages:
-      - linux-lts-6.1.39-1-x86_64.pkg.tar.zst
-      - linux-lts-headers-6.1.39-1-x86_64.pkg.tar.zst
-      - linux-lts-docs-6.1.39-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
