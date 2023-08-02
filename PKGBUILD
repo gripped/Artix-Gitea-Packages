@@ -1,11 +1,11 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgbase=flatpak
 pkgname=(flatpak flatpak-docs)
 pkgver=1.15.4
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Linux application sandboxing and distribution framework (formerly xdg-app)"
 url="https://flatpak.org"
@@ -27,6 +27,7 @@ depends=(
   polkit
   python
   xdg-dbus-proxy
+  xdg-utils
 )
 makedepends=(
   docbook-xsl
@@ -95,15 +96,16 @@ build() {
     -D selinux_module=disabled
     -D system_bubblewrap=bwrap
     -D system_dbus_proxy=xdg-dbus-proxy
+    -D systemd=disabled
   )
 
   artix-meson flatpak build "${meson_options[@]}"
   meson compile -C build
 }
 
-#check() {
-#  meson test -C build --print-errorlogs
-#}
+check() {
+  meson test -C build --print-errorlogs
+}
 
 _pick() {
   local p="$1" f d; shift
