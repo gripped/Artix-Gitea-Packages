@@ -3,7 +3,7 @@
 
 pkgname=liblas
 pkgver=1.8.1.r128+gded46373
-pkgrel=6
+pkgrel=6.1
 pkgdesc="C/C++ library for reading and writing the very common LAS LiDAR format"
 arch=(x86_64)
 url="https://liblas.org/"
