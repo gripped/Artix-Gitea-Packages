@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt-lts
-  version: 6.1.38.12.realtime1-2
+  version: 6.1.38.12.realtime1-3
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - linux-rt-lts-headers
     - linux-rt-lts-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.1.38.12.realtime1-3
+    packages:
+      - linux-rt-lts-6.1.38.12.realtime1-3-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.1.38.12.realtime1-3-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.1.38.12.realtime1-3-x86_64.pkg.tar.zst
   world:
     version: 6.1.38.12.realtime1-2
     packages:
