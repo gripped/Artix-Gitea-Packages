@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt
-  version: 6.3.3.15.realtime2-2
+  version: 6.3.3.15.realtime2-3
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - linux-rt-headers
     - linux-rt-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.3.3.15.realtime2-3
+    packages:
+      - linux-rt-6.3.3.15.realtime2-3-x86_64.pkg.tar.zst
+      - linux-rt-headers-6.3.3.15.realtime2-3-x86_64.pkg.tar.zst
+      - linux-rt-docs-6.3.3.15.realtime2-3-x86_64.pkg.tar.zst
   world:
     version: 6.3.3.15.realtime2-2
     packages:
