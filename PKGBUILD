@@ -31,7 +31,7 @@ makedepends=(python-setuptools)
 checkdepends=(
     python-pytest
     python-fsspec
-    python-pygeos
+    #python-pygeos
     python-pyogrio
     python-rtree
     python-matplotlib
