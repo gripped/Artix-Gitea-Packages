@@ -9,8 +9,8 @@ pkgbase:
     - elfutils
     - libelf
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -21,17 +21,14 @@ repos:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 0.189-2
     packages:
       - debuginfod-0.189-2-x86_64.pkg.tar.zst
       - elfutils-0.189-2-x86_64.pkg.tar.zst
       - libelf-0.189-2-x86_64.pkg.tar.zst
-  system:
-    version: 0.189-1
-    packages:
-      - debuginfod-0.189-1-x86_64.pkg.tar.zst
-      - elfutils-0.189-1-x86_64.pkg.tar.zst
-      - libelf-0.189-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
