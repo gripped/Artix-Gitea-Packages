@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: dejagnu
-  version: 1.6.3-5
+  version: 1.6.3-6
   arch:
     - any
   pkgname:
     - dejagnu
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.6.3-6
+    packages:
+      - dejagnu-1.6.3-6-any.pkg.tar.zst
   world:
     version: 1.6.3-5
     packages:
