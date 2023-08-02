@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: uwsgi
-  version: 2.0.21-8
+  version: 2.0.22-1
   arch:
     - x86_64
   pkgname:
@@ -20,11 +20,11 @@ pkgbase:
     - uwsgi-plugin-notfound
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -40,21 +40,21 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.0.21-8
+    version: 2.0.22-1
     packages:
-      - uwsgi-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-rack-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-psgi-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-cgi-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-python-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-pypy-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-php-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-php-legacy-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-lua51-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-mono-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-webdav-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-zabbix-2.0.21-8-x86_64.pkg.tar.zst
-      - uwsgi-plugin-notfound-2.0.21-8-x86_64.pkg.tar.zst
+      - uwsgi-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-rack-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-psgi-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-cgi-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-python-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-pypy-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-php-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-php-legacy-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-lua51-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-mono-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-webdav-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-zabbix-2.0.22-1-x86_64.pkg.tar.zst
+      - uwsgi-plugin-notfound-2.0.22-1-x86_64.pkg.tar.zst
   world:
     version: 2.0.21-7
     packages:
