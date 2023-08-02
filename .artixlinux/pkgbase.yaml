@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ldc
-  version: 3:1.32.2-1
+  version: 3:1.33.0-1
   arch:
     - x86_64
   pkgname:
     - ldc
     - liblphobos
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3:1.32.2-1
+    version: 3:1.33.0-1
     packages:
-      - ldc-3:1.32.2-1-x86_64.pkg.tar.zst
-      - liblphobos-3:1.32.2-1-x86_64.pkg.tar.zst
+      - ldc-3:1.33.0-1-x86_64.pkg.tar.zst
+      - liblphobos-3:1.33.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
