@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: embree
-  version: 4.1.0-2
+  version: 4.2.0-1
   arch:
     - x86_64
   pkgname:
     - embree
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - embree-4.1.0-2-x86_64.pkg.tar.zst
   world:
-    version: 4.1.0-1
+    version: 4.2.0-1
     packages:
-      - embree-4.1.0-1-x86_64.pkg.tar.zst
+      - embree-4.2.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

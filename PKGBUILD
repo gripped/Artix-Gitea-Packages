@@ -3,8 +3,8 @@
 # Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
 
 pkgname=embree
-pkgver=4.1.0
-pkgrel=2
+pkgver=4.2.0
+pkgrel=1
 pkgdesc="Collection of high-performance ray tracing kernels"
 arch=('x86_64')
 url="https://embree.github.io/"
@@ -12,7 +12,7 @@ license=('Apache')
 depends=('gcc-libs' 'glibc' 'intel-tbb')
 makedepends=('cmake' 'ispc' 'freeglut' 'libxmu' 'ninja')
 source=(https://github.com/embree/embree/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('117efd87d6dddbf7b164edd94b0bc057da69d6422a25366283cded57ed94738b')
+sha256sums=('b0479ce688045d17aa63ce6223c84b1cdb5edbf00d7eda71c06b7e64e21f53a0')
 
 build() {
     # Embree detects actual ISA at runtime but we have to set a high maximum
@@ -26,8 +26,6 @@ build() {
       -DEMBREE_ISPC_SUPPORT=ON \
       -DEMBREE_TUTORIALS=OFF \
       -DEMBREE_MAX_ISA="AVX512SKX" \
-      -DEMBREE_RAY_MASK=ON \
-      -DEMBREE_FILTER_FUNCTION=ON \
       -DEMBREE_BACKFACE_CULLING=OFF
     ninja -C build
     # Maybe enable these later once they are out of beta:
