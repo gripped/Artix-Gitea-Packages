@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - lib32-clang
 actions:
-  addRepo: lib32-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: lib32-gremlins
+  removeRepo: lib32-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
     version: 15.0.7-9
     packages:
       - lib32-clang-15.0.7-9-x86_64.pkg.tar.zst
-  lib32-gremlins:
-    version: null
-    packages: []
   lib32:
     version: 15.0.7-1.2
     packages:
