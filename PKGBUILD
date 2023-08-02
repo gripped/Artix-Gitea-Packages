@@ -1,10 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=pyogrio
 pkgname=python-${_pkg}
 pkgver=0.6.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Vectorized vector I/O using OGR"
 arch=(x86_64)
 url="https://pyogrio.readthedocs.io/"
