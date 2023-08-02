@@ -9,7 +9,7 @@ pkgbase:
     - linux-hardened-headers
     - linux-hardened-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.4.7.hardened1-1
+    packages:
+      - linux-hardened-6.4.7.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-headers-6.4.7.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-docs-6.4.7.hardened1-1-x86_64.pkg.tar.zst
   world:
     version: 6.4.7.hardened1-1
     packages:
