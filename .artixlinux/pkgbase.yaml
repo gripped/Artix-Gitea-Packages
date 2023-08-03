@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lvm2
-  version: 2.03.21-1
+  version: 2.03.22-1
   arch:
     - x86_64
   pkgname:
     - lvm2
     - device-mapper
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.03.22-1
+    packages:
+      - lvm2-2.03.22-1-x86_64.pkg.tar.zst
+      - device-mapper-2.03.22-1-x86_64.pkg.tar.zst
   system:
     version: 2.03.21-1
     packages:
