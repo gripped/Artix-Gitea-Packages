@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt5-base
-  version: 5.15.10+kde+r139-1
+  version: 5.15.10+kde+r145-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.15.10+kde+r139-1
+    version: 5.15.10+kde+r145-1
     packages:
-      - qt5-base-5.15.10+kde+r139-1-x86_64.pkg.tar.zst
-      - qt5-xcb-private-headers-5.15.10+kde+r139-1-x86_64.pkg.tar.zst
+      - qt5-base-5.15.10+kde+r145-1-x86_64.pkg.tar.zst
+      - qt5-xcb-private-headers-5.15.10+kde+r145-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
