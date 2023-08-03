@@ -10,7 +10,7 @@ pkgname=(
   harfbuzz-docs
 )
 pkgver=8.1.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="OpenType text shaping engine"
 url="https://www.freedesktop.org/wiki/Software/HarfBuzz"
 arch=(x86_64)
