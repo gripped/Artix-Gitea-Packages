@@ -9,12 +9,12 @@ pkgbase:
     - linux-rt-lts-headers
     - linux-rt-lts-docs
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,11 +30,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.1.38.12.realtime1-3
-    packages:
-      - linux-rt-lts-6.1.38.12.realtime1-3-x86_64.pkg.tar.zst
-      - linux-rt-lts-headers-6.1.38.12.realtime1-3-x86_64.pkg.tar.zst
-      - linux-rt-lts-docs-6.1.38.12.realtime1-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 6.1.38.12.realtime1-4
     packages:
