@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: unrar
-  version: 1:6.2.9-1
+  version: 1:6.2.10-1
   arch:
     - x86_64
   pkgname:
     - unrar
     - libunrar
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:6.2.9-1
+    version: 1:6.2.10-1
     packages:
-      - unrar-1:6.2.9-1-x86_64.pkg.tar.zst
-      - libunrar-1:6.2.9-1-x86_64.pkg.tar.zst
+      - unrar-1:6.2.10-1-x86_64.pkg.tar.zst
+      - libunrar-1:6.2.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
