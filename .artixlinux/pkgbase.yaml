@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sip
-  version: 6.7.10-1
+  version: 6.7.11-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.7.10-1
+    version: 6.7.11-1
     packages:
-      - sip-6.7.10-1-x86_64.pkg.tar.zst
+      - sip-6.7.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
