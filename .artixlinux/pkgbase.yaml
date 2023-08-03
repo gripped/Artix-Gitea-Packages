@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pynitrokey
-  version: 0.4.38-1
+  version: 0.4.39-1
   arch:
     - any
   pkgname:
     - python-pynitrokey
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.38-1
+    version: 0.4.39-1
     packages:
-      - python-pynitrokey-0.4.38-1-any.pkg.tar.zst
+      - python-pynitrokey-0.4.39-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
