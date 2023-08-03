@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lensfun
-  version: 1:0.3.4-2
+  version: 1:0.3.4-3
   arch:
     - x86_64
   pkgname:
     - lensfun
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.3.4-2
+    version: 1:0.3.4-3
     packages:
-      - lensfun-1:0.3.4-2-x86_64.pkg.tar.zst
+      - lensfun-1:0.3.4-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
