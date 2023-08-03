@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-urwid
-  version: 2.1.2.r56.gabc098c-1
+  version: 2.1.2.r63.g3c21a42-1
   arch:
     - x86_64
   pkgname:
     - python-urwid
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.2.r56.gabc098c-1
+    version: 2.1.2.r63.g3c21a42-1
     packages:
-      - python-urwid-2.1.2.r56.gabc098c-1-x86_64.pkg.tar.zst
+      - python-urwid-2.1.2.r63.g3c21a42-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
