@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pytest-mock
-  version: 3.10.0-3
+  version: 3.11.0-1
   arch:
     - any
   pkgname:
     - python-pytest-mock
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.10.0-3
+    version: 3.11.0-1
     packages:
-      - python-pytest-mock-3.10.0-3-any.pkg.tar.zst
+      - python-pytest-mock-3.11.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
