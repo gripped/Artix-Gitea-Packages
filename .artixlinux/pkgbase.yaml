@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-xml-sax
-  version: 1.02-1.1
+  version: 1.02-1.2
   arch:
     - any
   pkgname:
     - perl-xml-sax
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.02-1.1
+    version: 1.02-1.2
     packages:
-      - perl-xml-sax-1.02-1.1-any.pkg.tar.zst
+      - perl-xml-sax-1.02-1.2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
