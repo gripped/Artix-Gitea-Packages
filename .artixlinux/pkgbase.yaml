@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pytest-param-files
-  version: 0.3.5-2
+  version: 0.6.0-1
   arch:
     - any
   pkgname:
     - python-pytest-param-files
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3.5-2
+    version: 0.6.0-1
     packages:
-      - python-pytest-param-files-0.3.5-2-any.pkg.tar.zst
+      - python-pytest-param-files-0.6.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
