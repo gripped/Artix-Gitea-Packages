@@ -9,12 +9,12 @@ pkgbase:
     - linux-rt-headers
     - linux-rt-docs
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,11 +30,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.3.3.15.realtime2-3
-    packages:
-      - linux-rt-6.3.3.15.realtime2-3-x86_64.pkg.tar.zst
-      - linux-rt-headers-6.3.3.15.realtime2-3-x86_64.pkg.tar.zst
-      - linux-rt-docs-6.3.3.15.realtime2-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 6.3.3.15.realtime2-4
     packages:
