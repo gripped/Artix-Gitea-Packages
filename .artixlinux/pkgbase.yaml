@@ -11,12 +11,12 @@ pkgbase:
     - harfbuzz-utils
     - harfbuzz-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: lib32-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,13 +51,8 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 8.1.1-1
-    packages:
-      - harfbuzz-8.1.1-1-x86_64.pkg.tar.zst
-      - harfbuzz-cairo-8.1.1-1-x86_64.pkg.tar.zst
-      - harfbuzz-icu-8.1.1-1-x86_64.pkg.tar.zst
-      - harfbuzz-utils-8.1.1-1-x86_64.pkg.tar.zst
-      - harfbuzz-docs-8.1.1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32:
     version: null
     packages: []
