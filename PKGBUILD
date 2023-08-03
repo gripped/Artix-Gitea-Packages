@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Max Mehl <aur at mehl dot mx>
 # SPDX-FileCopyrightText: 2019 Max Mehl
 # SPDX-License-Identifier: CC0-1.0
 
 pkgname=python-license-expression
-pkgver=30.1.0
-pkgrel=2
+pkgver=30.1.1
+pkgrel=1
 pkgdesc='Utility to parse, normalize and compare license expressions'
 arch=('any')
 url='https://github.com/nexB/license-expression'
@@ -26,7 +26,7 @@ checkdepends=(
   'python-pytest'
   'python-pytest-xdist'
 )
-_commit='15481270d1080d18e94ad5c5e9618f07e07eb933'
+_commit='dd54f5125428fc070637b7db6ca780b2cda63ca3'
 source=("$pkgname::git+$url#commit=$_commit")
 b2sums=('SKIP')
 
