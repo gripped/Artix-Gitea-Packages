@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-sybil
-  version: 5.0.2-1
+  version: 5.0.3-1
   arch:
     - any
   pkgname:
     - python-sybil
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.2-1
+    version: 5.0.3-1
     packages:
-      - python-sybil-5.0.2-1-any.pkg.tar.zst
+      - python-sybil-5.0.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
