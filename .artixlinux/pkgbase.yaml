@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: iana-etc
-  version: 20230629-1
+  version: 20230803-1
   arch:
     - any
   pkgname:
     - iana-etc
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20230803-1
+    packages:
+      - iana-etc-20230803-1-any.pkg.tar.zst
   system:
     version: 20230629-1
     packages:
