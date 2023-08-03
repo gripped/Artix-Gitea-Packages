@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-more-itertools
-  version: 9.1.1-4
+  version: 10.0.1-1
   arch:
     - any
   pkgname:
     - python-more-itertools
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.0.1-1
+    packages:
+      - python-more-itertools-10.0.1-1-any.pkg.tar.zst
   world:
     version: 9.1.1-4
     packages:
