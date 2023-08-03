@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pytest-asyncio
-  version: 0.21.0-3
+  version: 0.21.1-1
   arch:
     - any
   pkgname:
     - python-pytest-asyncio
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.21.0-3
+    version: 0.21.1-1
     packages:
-      - python-pytest-asyncio-0.21.0-3-any.pkg.tar.zst
+      - python-pytest-asyncio-0.21.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
