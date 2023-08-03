@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pycodestyle
-  version: 2.10.0-2
+  version: 2.11.0-1
   arch:
     - any
   pkgname:
     - python-pycodestyle
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.10.0-2
+    version: 2.11.0-1
     packages:
-      - python-pycodestyle-2.10.0-2-any.pkg.tar.zst
+      - python-pycodestyle-2.11.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
