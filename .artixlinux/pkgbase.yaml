@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: dracut
-  version: 059-2
+  version: 059-3
   arch:
     - x86_64
   pkgname:
     - dracut
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 059-2
+    version: 059-3
     packages:
-      - dracut-059-2-x86_64.pkg.tar.zst
+      - dracut-059-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

@@ -1,7 +1,7 @@
 # Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
 pkgname=dracut
 pkgver=059
-pkgrel=2
+pkgrel=3
 pkgdesc="An event driven initramfs infrastructure"
 arch=('x86_64')
 url="https://github.com/dracutdevs/dracut"
