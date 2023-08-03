@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: harfbuzz
-  version: 8.1.0-1
+  version: 8.1.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,13 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 8.1.0-1
+    version: 8.1.1-1
     packages:
-      - harfbuzz-8.1.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-cairo-8.1.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-icu-8.1.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-utils-8.1.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-docs-8.1.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-8.1.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-8.1.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-8.1.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-8.1.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-8.1.1-1-x86_64.pkg.tar.zst
   world:
     version: 8.0.1-1
     packages:
