@@ -1,8 +1,8 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=libdmapsharing
-pkgver=3.9.12
+pkgver=3.9.13
 pkgrel=1
 pkgdesc="A library that implements the DMAP family of protocols"
 url="https://www.flyn.org/projects/libdmapsharing/index.html"
@@ -21,7 +21,7 @@ makedepends=(
   vala
 )
 provides=(libdmapsharing-4.0.so)
-_commit=2bcf6286fc81ff9c964e5b1bfe918c01a18e98c4  # tags/LIBDMAPSHARING_3_9_12^0
+_commit=9eadd4a2ab454201437612b54e7df760431d8e0b  # tags/LIBDMAPSHARING_3_9_13^0
 source=("git+https://gitlab.gnome.org/GNOME/libdmapsharing.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -48,6 +48,7 @@ build() {
     # GTK-docs are broken when tests are disabled
     --disable-gtk-doc
   )
+
 
   cd $pkgname
   ./configure "${configure_args[@]}"
