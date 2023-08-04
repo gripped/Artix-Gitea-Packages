@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: intel-media-sdk
-  version: 23.2.2-1
+  version: 23.2.2-2
   arch:
     - x86_64
   pkgname:
     - intel-media-sdk
     - libmfx
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.2.2-1
+    version: 23.2.2-2
     packages:
-      - intel-media-sdk-23.2.2-1-x86_64.pkg.tar.zst
-      - libmfx-23.2.2-1-x86_64.pkg.tar.zst
+      - intel-media-sdk-23.2.2-2-x86_64.pkg.tar.zst
+      - libmfx-23.2.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
