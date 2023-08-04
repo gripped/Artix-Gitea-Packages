@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: uvicorn
-  version: 0.23.1-1
+  version: 0.23.2-1
   arch:
     - any
   pkgname:
     - uvicorn
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.23.1-1
+    version: 0.23.2-1
     packages:
-      - uvicorn-0.23.1-1-any.pkg.tar.zst
+      - uvicorn-0.23.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
