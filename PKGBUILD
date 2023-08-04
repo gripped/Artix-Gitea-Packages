@@ -3,17 +3,19 @@
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.31.3
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
-makedepends=('git')
-# checkdepends=('shellcheck')
 url='https://gitea.artixlinux.org/artix/artools'
+makedepends=('git')
+groups=('artix-tools')
+# checkdepends=('shellcheck')
 source=("git+${url}.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 _patches=(
+    221cc796c0ca09afd3f725e0ab8d8d656e9be0f7
 )
 
 # pkgver() {
@@ -45,7 +47,6 @@ package_artools-base() {
     optdepends=('artools-pkg: Artix package tools'
                 'artools-iso: Artix iso tools')
     conflicts=('arch-install-scripts')
-    groups=('artix-tools')
     backup=('etc/artools/artools-base.conf')
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_base
@@ -59,7 +60,6 @@ package_artools-pkg() {
                 'artix-rebuild-order: artix rebuild order support'
                 'artix-checkupdates: updates checking'
                 'graphviz: mkdepgraph graphviz support')
-    groups=('artix-tools')
     backup=('etc/artools/artools-pkg.conf')
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_pkg
@@ -70,7 +70,6 @@ package_artools-iso() {
     depends=('artools-base' 'iso-profiles' 'squashfs-tools'
             'grub' 'dosfstools' 'libisoburn' 'bash' 'dosfstools'
             'e2fsprogs' 'libarchive' 'mtools' 'grep' 'sed')
-    groups=('artix-tools')
     backup=('etc/artools/artools-iso.conf')
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_iso
