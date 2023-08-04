@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - binutils
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 2.41-3
-    packages:
-      - binutils-2.41-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   system-gremlins:
     version: null
     packages: []
   system:
-    version: 2.41-2
+    version: 2.41-3
     packages:
-      - binutils-2.41-2-x86_64.pkg.tar.zst
+      - binutils-2.41-3-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
