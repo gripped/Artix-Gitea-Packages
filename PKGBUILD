@@ -4,8 +4,8 @@
 # Contributor: mezcal
 
 pkgname=rspamd
-pkgver=3.5
-pkgrel=3
+pkgver=3.6
+pkgrel=1
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
@@ -117,7 +117,7 @@ backup=(
   etc/rspamd/worker-proxy.inc
 )
 install=rspamd.install
-_tag=0c671194e81f702a5e26009b33612c3d36d52840
+_tag=bbb8660e55b8a842fc9c5c3d2cc57b177786778d
 source=(
   git+https://github.com/rspamd/rspamd.git#tag=${_tag}
   rspamd.tmpfiles
@@ -156,6 +156,7 @@ package() {
   install -Dm 644 rspamd.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/rspamd.conf
   install -Dm 644 rspamd.sysusers "${pkgdir}"/usr/lib/sysusers.d/rspamd.conf
   install -Dm 644 rspamd.logrotate "${pkgdir}"/etc/logrotate.d/rspamd
+  install -Dm 644 rspamd-hyperscan.hook -t "${pkgdir}"/usr/share/libalpm/hooks/
 }
 
 # vim: ts=2 sw=2 et:
