@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lxdm-s6
-  version: 20220410-1
+  version: 20230804-1
   arch:
     - any
   pkgname:
     - lxdm-s6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20220410-1
+    version: 20230804-1
     packages:
-      - lxdm-s6-20220410-1-any.pkg.tar.zst
+      - lxdm-s6-20230804-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
