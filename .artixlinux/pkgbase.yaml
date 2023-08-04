@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-pipewire
-  version: 1:0.3.76-1
+  version: 1:0.3.77-1
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - lib32-pipewire-jack
     - lib32-pipewire-v4l2
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -40,8 +40,12 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1:0.3.77-1
+    packages:
+      - lib32-pipewire-1:0.3.77-1-x86_64.pkg.tar.zst
+      - lib32-libpipewire-1:0.3.77-1-x86_64.pkg.tar.zst
+      - lib32-pipewire-jack-1:0.3.77-1-x86_64.pkg.tar.zst
+      - lib32-pipewire-v4l2-1:0.3.77-1-x86_64.pkg.tar.zst
   lib32:
     version: 1:0.3.76-1
     packages:
