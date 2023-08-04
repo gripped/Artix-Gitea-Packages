@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: emacs
-  version: 29.1-3
+  version: 29.1-4
   arch:
     - x86_64
   pkgname:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 29.1-3
+    version: 29.1-4
     packages:
-      - emacs-29.1-3-x86_64.pkg.tar.zst
-      - emacs-nativecomp-29.1-3-x86_64.pkg.tar.zst
-      - emacs-nox-29.1-3-x86_64.pkg.tar.zst
-      - emacs-wayland-29.1-3-x86_64.pkg.tar.zst
+      - emacs-29.1-4-x86_64.pkg.tar.zst
+      - emacs-nativecomp-29.1-4-x86_64.pkg.tar.zst
+      - emacs-nox-29.1-4-x86_64.pkg.tar.zst
+      - emacs-wayland-29.1-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

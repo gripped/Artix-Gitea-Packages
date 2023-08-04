@@ -6,7 +6,7 @@
 pkgbase=emacs
 pkgname=(emacs emacs-nativecomp emacs-nox emacs-wayland)
 pkgver=29.1
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 url='https://www.gnu.org/software/emacs/emacs.html'
 license=('GPL3')
@@ -37,6 +37,7 @@ depends=(
   libpng
   librsvg-2.so
   libsm
+  sqlite libsqlite3.so
   libtiff.so
   libtree-sitter.so
   libwebp.so
@@ -143,6 +144,7 @@ package_emacs-nox() {
     libdbus-1.so
     libgpm.so
     libncursesw.so
+    libtree-sitter.so
     libxml2.so
     zlib
   )
