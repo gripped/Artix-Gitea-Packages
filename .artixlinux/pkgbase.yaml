@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pipewire
-  version: 1:0.3.76-2
+  version: 1:0.3.77-1
   arch:
     - x86_64
   pkgname:
@@ -20,7 +20,7 @@ pkgbase:
     - pipewire-v4l2
     - pipewire-x11-bell
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -41,8 +41,22 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:0.3.77-1
+    packages:
+      - pipewire-1:0.3.77-1-x86_64.pkg.tar.zst
+      - libpipewire-1:0.3.77-1-x86_64.pkg.tar.zst
+      - alsa-card-profiles-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-docs-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-audio-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-alsa-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-ffado-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-jack-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-pulse-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-roc-1:0.3.77-1-x86_64.pkg.tar.zst
+      - gst-plugin-pipewire-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-zeroconf-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-v4l2-1:0.3.77-1-x86_64.pkg.tar.zst
+      - pipewire-x11-bell-1:0.3.77-1-x86_64.pkg.tar.zst
   world:
     version: 1:0.3.76-2
     packages:

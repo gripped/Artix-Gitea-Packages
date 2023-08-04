@@ -19,9 +19,9 @@ pkgname=(
   pipewire-v4l2
   pipewire-x11-bell
 )
-_commit=9bcc90fdc3ece16a4e0a91446641e56332b979fd  # tags/0.3.76
-pkgver=0.3.76
-pkgrel=2
+_commit=31cd694602cc37ada3a6d02a5a381f4e3933ecef  # tags/0.3.77
+pkgver=0.3.77
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -63,14 +63,20 @@ makedepends=(
   valgrind
   webrtc-audio-processing
 )
-checkdepends=(desktop-file-utils)
+checkdepends=(
+  desktop-file-utils
+  openal
+)
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
-      artix-pipewire-launcher
-      pipewire.desktop)
+  artix-pipewire-launcher
+  pipewire.desktop
+  0001-pipewire-jack-Disable-LD_LIBRARY_PATH-when-libjack-i.patch
+)
 b2sums=('SKIP'
         '83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
-        '9abebce63d8e877aa9b73cabdf786e71824681328511822dfbd213e3b4c94ac073d225a3c72dcaf96f9c0fa0fcfce67160778487e711b82d452d5570c00d7405')
+        '9abebce63d8e877aa9b73cabdf786e71824681328511822dfbd213e3b4c94ac073d225a3c72dcaf96f9c0fa0fcfce67160778487e711b82d452d5570c00d7405'
+        '17de92c7209e4b927f1de7cf11aa5b7b92fbdd41cea26850ecd2159c393ee8a30a93b178681ab05b408fb2fffac111c29b5eebf41119d7ad8f5bbed7122fc3f3')
 
 pkgver() {
   cd pipewire
@@ -81,14 +87,12 @@ prepare() {
   cd pipewire
 
   # remove export of LD_LIBRARY_PATH for pw-jack as it would add /usr/lib
-  sed -i '/LD_LIBRARY_PATH/d' pipewire-jack/src/pw-jack.in
+  git apply -3 ../0001-pipewire-jack-Disable-LD_LIBRARY_PATH-when-libjack-i.patch
 }
 
 build() {
   local meson_options=(
-    -D bluez5-codec-lc3=enabled
     -D bluez5-codec-lc3plus=disabled
-    -D compress-offload=enabled
     -D docs=enabled
     -D jack-devel=true
     -D jack=disabled
