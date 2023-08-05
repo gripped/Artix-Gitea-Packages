@@ -15,7 +15,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=6.3
-pkgrel=3
+pkgrel=4
 license=('GPL2')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -43,13 +43,15 @@ groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
 #        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
         'cpupower.default'
+        'fix-perf-tests.patch'
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('SKIP'
-            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
+            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f'
+            '26bce106f363fd382b5669c5098c76c127d564da827b254847c7b7e76e39f912')
 
 prepare() {
   cd linux
@@ -163,7 +165,7 @@ package_perf() {
   pkgdesc='Linux kernel performance auditing tool'
   depends=('glibc' 'perl' 'python' 'slang' 'elfutils' 'libunwind' 'binutils'
            'numactl' 'audit' 'coreutils' 'glib2' 'xz' 'zlib' 'libelf' 'bash'
-           'zstd' 'libcap' 'libtraceevent' 'openssl')
+           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so')
 
   cd linux/tools/perf
   make -f Makefile.perf \
