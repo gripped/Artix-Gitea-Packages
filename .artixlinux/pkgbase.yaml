@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: libadwaita
-  version: 1:1.3.3-1
+  version: 1:1.3.4-1
   arch:
     - x86_64
   pkgname:
     - libadwaita
-    - libadwaita-docs
     - libadwaita-demos
+    - libadwaita-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.3.3-1
+    version: 1:1.3.4-1
     packages:
-      - libadwaita-1:1.3.3-1-x86_64.pkg.tar.zst
-      - libadwaita-docs-1:1.3.3-1-x86_64.pkg.tar.zst
-      - libadwaita-demos-1:1.3.3-1-x86_64.pkg.tar.zst
+      - libadwaita-1:1.3.4-1-x86_64.pkg.tar.zst
+      - libadwaita-demos-1:1.3.4-1-x86_64.pkg.tar.zst
+      - libadwaita-docs-1:1.3.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
