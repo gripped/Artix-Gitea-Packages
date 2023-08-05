@@ -24,6 +24,8 @@ pkgver() {
 
 build() {
   export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
+  export CMAKE_PREFIX_PATH=/usr
+  export CMAKE_INSTALL_LIBDIR=/usr/lib32  
 
   cmake -B build -S ${_srcname} \
     -DBUILD_SHARED_LIBS=ON \
