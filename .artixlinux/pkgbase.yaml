@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: marisa
-  version: 0.2.6-10
+  version: 0.2.6-11
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - python-marisa
     - ruby-marisa
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.2.6-11
+    packages:
+      - marisa-0.2.6-11-x86_64.pkg.tar.zst
+      - perl-marisa-0.2.6-11-x86_64.pkg.tar.zst
+      - python-marisa-0.2.6-11-x86_64.pkg.tar.zst
+      - ruby-marisa-0.2.6-11-x86_64.pkg.tar.zst
   world:
     version: 0.2.6-10
     packages:

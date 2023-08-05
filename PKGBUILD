@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: ponsfoot <cabezon dot hashimoto at gmail dot com>
 
 pkgbase=marisa
 pkgname=('marisa' 'perl-marisa' 'python-marisa' 'ruby-marisa')
 pkgver=0.2.6
-pkgrel=10
+pkgrel=11
 arch=('x86_64')
 url="https://github.com/s-yata/marisa-trie"
 license=('BSD' 'LGPL')
