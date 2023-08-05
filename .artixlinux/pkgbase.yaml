@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-arpeggio
-  version: 2.0.0-2
+  version: 2.0.2-1
   arch:
     - any
   pkgname:
     - python-arpeggio
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.0-2
+    version: 2.0.2-1
     packages:
-      - python-arpeggio-2.0.0-2-any.pkg.tar.zst
+      - python-arpeggio-2.0.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
