@@ -1,9 +1,10 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Dumitru Ursu <dima@ceata.org>
 
 pkgname=opencolorio
 pkgver=2.2.1
-pkgrel=10
+pkgrel=11
 pkgdesc="A color management framework for visual effects and animation"
 arch=('x86_64')
 url="https://opencolorio.org"
