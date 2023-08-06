@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-mozilla-ca
-  version: 20221114-2
+  version: 20230801-1
   arch:
     - any
   pkgname:
     - perl-mozilla-ca
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 20221114-2
+    version: 20230801-1
     packages:
-      - perl-mozilla-ca-20221114-2-any.pkg.tar.zst
+      - perl-mozilla-ca-20230801-1-any.pkg.tar.zst
   world:
     version: 20221114-1
     packages:
