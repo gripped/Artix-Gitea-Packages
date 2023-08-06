@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gvfs
-  version: 1.50.5-1
+  version: 1.50.6-1
   arch:
     - x86_64
   pkgname:
@@ -14,11 +14,11 @@ pkgbase:
     - gvfs-nfs
     - gvfs-google
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -38,16 +38,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.50.5-1
+    version: 1.50.6-1
     packages:
-      - gvfs-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-smb-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-afc-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-gphoto2-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-goa-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-mtp-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-nfs-1.50.5-1-x86_64.pkg.tar.zst
-      - gvfs-google-1.50.5-1-x86_64.pkg.tar.zst
+      - gvfs-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-smb-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-afc-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-goa-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.50.6-1-x86_64.pkg.tar.zst
+      - gvfs-google-1.50.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
