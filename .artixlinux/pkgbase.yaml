@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-http-date
-  version: 6.05-7
+  version: 6.06-1
   arch:
     - any
   pkgname:
     - perl-http-date
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.05-7
+    version: 6.06-1
     packages:
-      - perl-http-date-6.05-7-any.pkg.tar.zst
+      - perl-http-date-6.06-1-any.pkg.tar.zst
   world:
     version: 6.05-6
     packages:
