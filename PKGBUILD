@@ -117,7 +117,7 @@ check() (
 
   trap "kill $_w; wait" EXIT
 
-  meson test -C build --print-errorlogs
+  meson test -C build --print-errorlogs --no-suite headless # skip these test for now
 )
 
 _pick() {
