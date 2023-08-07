@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-time-machine
+  version: 2.11.0-3
+  arch:
+    - x86_64
+  pkgname:
+    - python-time-machine
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 2.11.0-3
+    packages:
+      - python-time-machine-2.11.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
