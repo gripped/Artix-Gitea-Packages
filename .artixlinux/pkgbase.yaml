@@ -8,27 +8,25 @@ pkgbase:
     - openldap
     - libldap
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 2.6.6-1
     packages:
       - openldap-2.6.6-1-x86_64.pkg.tar.zst
       - libldap-2.6.6-1-x86_64.pkg.tar.zst
-  system:
-    version: 2.6.4-2
-    packages:
-      - openldap-2.6.4-2-x86_64.pkg.tar.zst
-      - libldap-2.6.4-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
