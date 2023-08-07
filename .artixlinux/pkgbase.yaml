@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-libldap
-  version: 2.6.4-1
+  version: 2.6.6-1
   arch:
     - x86_64
   pkgname:
     - lib32-libldap
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 2.6.6-1
+    packages:
+      - lib32-libldap-2.6.6-1-x86_64.pkg.tar.zst
   lib32:
     version: 2.6.4-1
     packages:
