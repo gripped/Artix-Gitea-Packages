@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-nest-asyncio
-  version: 1.5.6-2
+  version: 1.5.7-1
   arch:
     - any
   pkgname:
     - python-nest-asyncio
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.6-2
+    version: 1.5.7-1
     packages:
-      - python-nest-asyncio-1.5.6-2-any.pkg.tar.zst
+      - python-nest-asyncio-1.5.7-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
