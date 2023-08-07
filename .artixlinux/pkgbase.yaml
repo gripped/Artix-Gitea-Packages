@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl-number-compare
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.03-13
     packages:
       - perl-number-compare-0.03-13-any.pkg.tar.zst
-  world:
-    version: 0.03-12
-    packages:
-      - perl-number-compare-0.03-12-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
