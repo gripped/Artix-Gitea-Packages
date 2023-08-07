@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -19,13 +19,12 @@ repos:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 5.38.0-1
     packages:
       - perl-5.38.0-1-x86_64.pkg.tar.zst
-  system:
-    version: 5.36.1-2
-    packages:
-      - perl-5.36.1-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
