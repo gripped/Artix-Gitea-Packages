@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl-ppix-utils
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.003-4
     packages:
       - perl-ppix-utils-0.003-4-any.pkg.tar.zst
-  world:
-    version: 0.003-3
-    packages:
-      - perl-ppix-utils-0.003-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
