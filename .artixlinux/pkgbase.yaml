@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-keyring
-  version: 23.13.1-1
+  version: 24.2.0-1
   arch:
     - any
   pkgname:
     - python-keyring
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.13.1-1
+    version: 24.2.0-1
     packages:
-      - python-keyring-23.13.1-1-any.pkg.tar.zst
+      - python-keyring-24.2.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
