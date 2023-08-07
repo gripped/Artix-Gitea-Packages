@@ -25,7 +25,7 @@ source=("http://www.squid-cache.org/Versions/v6/$pkgname-$pkgver.tar.xz"{,.asc}
         'squid.pam'
         'squid.tmpfiles'
         'squid.sysusers')
-sha256sums=('6b029096cf531fc7bf83a305efeb0fdb2628cd42a4d20a61e0ab22e85a39c4e7'
+sha256sums=('dd759e151e997d31786d91743d327b1b4b532f1caea66bf81100ec8ba04ec4c1'
             'SKIP'
             '11fb388f8679fd6461e0de006810ea608a3686fffda16904b0ed71f412be499c'
             '495f54e51f6ec1e4dce87090d76718aea1eb37559c4439d876dd39598163062a'
