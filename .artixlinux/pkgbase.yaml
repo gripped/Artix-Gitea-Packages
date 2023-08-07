@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-psycopg2
-  version: 2.9.6-2
+  version: 2.9.7-1
   arch:
     - x86_64
   pkgname:
     - python-psycopg2
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.9.6-2
+    version: 2.9.7-1
     packages:
-      - python-psycopg2-2.9.6-2-x86_64.pkg.tar.zst
+      - python-psycopg2-2.9.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
