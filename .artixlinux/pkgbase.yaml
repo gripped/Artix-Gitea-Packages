@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl-devel-checklib
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1.16-2
     packages:
       - perl-devel-checklib-1.16-2-any.pkg.tar.zst
-  world:
-    version: 1.16-1
-    packages:
-      - perl-devel-checklib-1.16-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
