@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-virtualenv
-  version: 20.21.0-1
+  version: 20.24.2-1
   arch:
     - any
   pkgname:
     - python-virtualenv
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20.24.2-1
+    packages:
+      - python-virtualenv-20.24.2-1-any.pkg.tar.zst
   world:
     version: 20.21.0-1
     packages:
