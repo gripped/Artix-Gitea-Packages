@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl-unicode-linebreak
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 2019.001-6
     packages:
       - perl-unicode-linebreak-2019.001-6-x86_64.pkg.tar.zst
-  world:
-    version: 2019.001-5
-    packages:
-      - perl-unicode-linebreak-2019.001-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
