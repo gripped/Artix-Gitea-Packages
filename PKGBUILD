@@ -4,7 +4,7 @@
 # Contributor: Kevin Piche <kevin@archlinux.org>
 
 pkgname=squid
-pkgver=6.1
+pkgver=6.2
 pkgrel=1
 pkgdesc='Full-featured Web proxy cache server'
 arch=('x86_64')
