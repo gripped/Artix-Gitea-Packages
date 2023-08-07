@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl-ref-util-xs
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.117-2
     packages:
       - perl-ref-util-xs-0.117-2-x86_64.pkg.tar.zst
-  world:
-    version: 0.117-1
-    packages:
-      - perl-ref-util-xs-0.117-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
