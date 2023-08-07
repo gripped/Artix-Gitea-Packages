@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-pytest-freezer
+  version: 0.4.8-1
+  arch:
+    - any
+  pkgname:
+    - python-pytest-freezer
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.4.8-1
+    packages:
+      - python-pytest-freezer-0.4.8-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
