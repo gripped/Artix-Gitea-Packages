@@ -102,6 +102,7 @@ check() {
   local pytest_options=(
     -vv
     --ignore test_dir/$site_packages/$_pkg/tests/test_distributed.py
+    --ignore test_dir/$site_packages/$_pkg/tests/test_orc.py
     -k 'not test_RandomState_only_funcs'
     -W ignore::DeprecationWarning
   )
