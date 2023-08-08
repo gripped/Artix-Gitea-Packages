@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gtkmm3
-  version: 3.24.7-1
+  version: 3.24.7-1.1
   arch:
     - x86_64
   pkgname:
     - gtkmm3
     - gtkmm3-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.24.7-1.1
+    packages:
+      - gtkmm3-3.24.7-1.1-x86_64.pkg.tar.zst
+      - gtkmm3-docs-3.24.7-1.1-x86_64.pkg.tar.zst
   world:
     version: 3.24.7-1
     packages:

@@ -4,7 +4,7 @@
 pkgbase=gtkmm3
 pkgname=(gtkmm3 gtkmm3-docs)
 pkgver=3.24.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc="C++ bindings for GTK+ 3"
 url="https://www.gtkmm.org/"
 arch=(x86_64)
