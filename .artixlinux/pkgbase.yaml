@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: intel-ucode
-  version: 20230613-1
+  version: 20230808-1
   arch:
     - any
   pkgname:
     - intel-ucode
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20230808-1
+    packages:
+      - intel-ucode-20230808-1-any.pkg.tar.zst
   world:
     version: 20230613-1
     packages:
