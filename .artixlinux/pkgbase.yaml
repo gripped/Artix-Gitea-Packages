@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-hatch-fancy-pypi-readme
-  version: 22.8.0-3
+  version: 23.1.0-1
   arch:
     - any
   pkgname:
     - python-hatch-fancy-pypi-readme
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 22.8.0-3
+    version: 23.1.0-1
     packages:
-      - python-hatch-fancy-pypi-readme-22.8.0-3-any.pkg.tar.zst
+      - python-hatch-fancy-pypi-readme-23.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
