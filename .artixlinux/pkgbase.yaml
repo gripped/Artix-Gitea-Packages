@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: irssi
-  version: 1.4.4-2
+  version: 1.4.4-3
   arch:
     - x86_64
   pkgname:
     - irssi
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.4-2
+    version: 1.4.4-3
     packages:
-      - irssi-1.4.4-2-x86_64.pkg.tar.zst
+      - irssi-1.4.4-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
