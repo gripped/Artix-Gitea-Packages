@@ -1,13 +1,13 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_ver=6.4.7
+_ver=6.4.8
 _rel=1
 _tag=arch${_rel}
 _artix=artix${_rel}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=3
+pkgrel=1
 pkgdesc='Linux'
 _srctag=v${pkgver%.*}-${_tag}
 url="https://github.com/archlinux/linux/commits/$_srctag"
@@ -44,7 +44,7 @@ validpgpkeys=(
   C7E7849466FE2358343588377258734B41C31549  # David Runge <dvzrv@archlinux.org>
 )
 b2sums=('SKIP'
-        '8876d833f9bc8278964bb72aa9903032fdd97c43b036226f715f960b9c188e411bb0ad4a25c00103945e63d5d8b0744cb3a97c931b5b5e4fed6ada3c41e2a3a6')
+        '9d942be2ab189acd8f0e58adab7cc392d05406d119a66e03153a31479e7b42f1eccb8192597912c32d80e6d998c73f3932bbdefdaf059b29343e8f2d352f894b')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
