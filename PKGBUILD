@@ -3,7 +3,7 @@
 
 pkgname='virtualbox-host-modules-artix'
 pkgver=7.0.10
-pkgrel=7
+pkgrel=8
 pkgdesc='Virtualbox host kernel modules for Artix Kernel'
 arch=('x86_64')
 url='https://virtualbox.org/'
