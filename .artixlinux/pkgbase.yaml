@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: linux-firmware-whence
-  version: 20230625.ee91452d-5
+  name: linux-firmware
+  version: 20230804.7be2766d-1
   arch:
     - any
   pkgname:
@@ -16,20 +16,30 @@ pkgbase:
     - linux-firmware-qlogic
     - linux-firmware-bnx2x
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20230804.7be2766d-1
+    packages:
+      - linux-firmware-whence-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-20230804.7be2766d-1-any.pkg.tar.zst
+      - amd-ucode-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-nfp-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-mellanox-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-marvell-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-qcom-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-liquidio-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-qlogic-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-bnx2x-20230804.7be2766d-1-any.pkg.tar.zst
   system:
     version: 20230625.ee91452d-5
     packages:
