@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: upx
-  version: 4.0.2-2
+  version: 4.1.0-1
   arch:
     - x86_64
   pkgname:
     - upx
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.0.2-2
+    version: 4.1.0-1
     packages:
-      - upx-4.0.2-2-x86_64.pkg.tar.zst
+      - upx-4.1.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
