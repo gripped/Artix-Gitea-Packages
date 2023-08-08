@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: audit
-  version: 3.1.1-1
+  version: 3.1.2-1
   arch:
     - x86_64
   pkgname:
     - audit
     - python-audit
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.1.2-1
+    packages:
+      - audit-3.1.2-1-x86_64.pkg.tar.zst
+      - python-audit-3.1.2-1-x86_64.pkg.tar.zst
   system:
     version: 3.1.1-1
     packages:
