@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
 # Contributor: Anthony25 <Anthony Ruhier>
 # Contributor Jeremy "Ichimonji10" Audet <ichimonji10 at gmail dot com>
 
 _name=django-debug-toolbar
 pkgname=python-django-debug-toolbar
-pkgver=4.0.0
+pkgver=4.1
 pkgrel=1
 pkgdesc='A configurable set of panels that display various debug information about the current request/response.'
 arch=(any)
@@ -13,14 +13,11 @@ license=(BSD)
 makedepends=(python-build python-installer python-wheel python-hatchling)
 checkdepends=(python-jinja python-html5lib)
 depends=(python-django python-sqlparse)
-source=(${pkgname}-${pkgver}.tar.gz::https://github.com/jazzband/${_name}/archive/${pkgver}.tar.gz
-        drop-fautly-classifiers.patch)
-sha256sums=('3b9c02b21284a0c34562f7be9829dac06005cccf9e41cd8cadf9763b1f3f5908'
-            '0414e36d2129794effc8a1f93a920f447e2bcfb333aa01e5898d279f1424a561')
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/jazzband/${_name}/archive/${pkgver}.tar.gz)
+sha256sums=('4bdddaa742b6d8fa13ccd153a95492e422798179bf8bf898c9bbbfaf9fdae755')
 
 prepare() {
   cd "${_name}-${pkgver}"
-  patch -Np1 -i ${srcdir}/drop-fautly-classifiers.patch
 }
 
 build() {
