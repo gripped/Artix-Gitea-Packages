@@ -21,7 +21,7 @@ repos:
   system-gremlins:
     version: 20230809-1
     packages:
-      - artix-mirrorlist-20230809-1-any.pkg.tar.xz
+      - artix-mirrorlist-20230809-1-any.pkg.tar.zst
   system:
     version: 20230528-2
     packages:

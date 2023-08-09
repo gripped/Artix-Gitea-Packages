@@ -1,1 +1,1 @@
-trunk/mirrorlist
+# artix-mirrorlist
