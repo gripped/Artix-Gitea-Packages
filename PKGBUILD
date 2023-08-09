@@ -14,7 +14,7 @@
 
 pkgname=go
 epoch=2
-pkgver=1.20.7
+pkgver=1.21.0
 pkgrel=1
 pkgdesc='Core compiler tools for the Go programming language'
 arch=(x86_64)
@@ -24,9 +24,10 @@ makedepends=(git go)
 replaces=(go-pie)
 provides=(go-pie)
 options=(!strip staticlibs)
-source=(https://go.dev/dl/go${pkgver}.src.tar.gz)
+source=(https://go.dev/dl/go${pkgver}.src.tar.gz{,.asc})
 validpgpkeys=('EB4C1BFD4F042F6DDDCCEC917721F63BD38B4796')
-sha256sums=('2c5ee9c9ec1e733b0dbbc2bdfed3f62306e51d8172bf38f4f4e542b27520f597')
+sha256sums=('818d46ede85682dd551ad378ef37a4d247006f12ec59b5b755601d2ce114369a'
+            'SKIP')
 
 build() {
   export GOARCH=amd64
@@ -69,6 +70,9 @@ package() {
 
   # TODO: Figure out if really needed
   rm -rf "$pkgdir"/usr/lib/go/pkg/obj/go-build
+
+  # https://github.com/golang/go/issues/57179
+  install -Dm644 go.env "$pkgdir/usr/lib/go/go.env"
 
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
