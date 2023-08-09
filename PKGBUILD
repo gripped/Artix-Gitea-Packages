@@ -3,7 +3,7 @@
 pkgbase=shellcheck-bin
 pkgname=('shellcheck')
 pkgver=0.9.0
-pkgrel=44
+pkgrel=45
 pkgdesc='Shell script analysis tool (binary release)'
 license=(AGPL3)
 arch=(x86_64)
