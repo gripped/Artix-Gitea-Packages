@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-mirrorlist
-  version: 20230809-1
+  version: 20230809-2
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20230809-1
+    version: 20230809-2
     packages:
-      - artix-mirrorlist-20230809-1-any.pkg.tar.zst
+      - artix-mirrorlist-20230809-2-any.pkg.tar.xz
   system:
     version: 20230528-2
     packages:

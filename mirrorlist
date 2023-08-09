@@ -43,7 +43,6 @@ Server = https://mirrors.qontinuum.space/artixlinux/$repo/os/$arch
 Server = https://artix.sakamoto.pl/$repo/os/$arch
 # Sweden
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
-Server = https://mirror.linux.pizza/artix-linux/$repo/os/$arch
 # Switzerland
 Server = https://artix.kurdy.org/$repo/os/$arch
 # United Kingdom
