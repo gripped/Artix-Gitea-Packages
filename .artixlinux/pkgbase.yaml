@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: fuse-common
-  version: 3.15.1-1
+  name: fuse3
+  version: 3.16.1-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - fuse3
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.15.1-1
+    version: 3.16.1-1
     packages:
-      - fuse-common-3.15.1-1-x86_64.pkg.tar.zst
-      - fuse3-3.15.1-1-x86_64.pkg.tar.zst
+      - fuse-common-3.16.1-1-x86_64.pkg.tar.zst
+      - fuse3-3.16.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
