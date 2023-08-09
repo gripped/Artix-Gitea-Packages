@@ -6,7 +6,7 @@
 
 pkgname=artix-mirrorlist
 pkgver=20230809
-pkgrel=2
+pkgrel=3
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
 url="https://gitea.artixlinux.org/packages/artix-mirrorlist"
