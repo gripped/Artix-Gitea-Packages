@@ -8,7 +8,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.12.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -92,6 +92,10 @@ pkgver() {
 
 prepare() {
   cd gtk
+
+  # https://bugs.archlinux.org/task/79310
+  # https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6250
+  git cherry-pick -n 4d7277f72c8f4915f237e36982ffd7dfba524b15
 }
 
 build() {
