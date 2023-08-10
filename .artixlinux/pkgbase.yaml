@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: db5.3
-  version: 5.3.28-2
+  version: 5.3.28-4
   arch:
     - x86_64
   pkgname:
     - db5.3
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 5.3.28-4
+    packages:
+      - db5.3-5.3.28-4-x86_64.pkg.tar.zst
   system:
     version: 5.3.28-2
     packages:
