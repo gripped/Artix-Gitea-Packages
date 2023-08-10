@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: distcc-openrc
-  version: 20210505-1
+  version: 20230810-1
   arch:
     - any
   pkgname:
     - distcc-openrc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20210505-1
+    version: 20230810-1
     packages:
-      - distcc-openrc-20210505-1-any.pkg.tar.zst
+      - distcc-openrc-20230810-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
