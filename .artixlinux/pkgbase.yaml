@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rxvt-unicode
-  version: 9.31-4
+  version: 9.31-4.1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - rxvt-unicode-terminfo
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.31-4
+    version: 9.31-4.1
     packages:
-      - rxvt-unicode-9.31-4-x86_64.pkg.tar.zst
-      - rxvt-unicode-terminfo-9.31-4-x86_64.pkg.tar.zst
+      - rxvt-unicode-9.31-4.1-x86_64.pkg.tar.zst
+      - rxvt-unicode-terminfo-9.31-4.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
