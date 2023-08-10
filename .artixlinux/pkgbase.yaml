@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: hostapd
-  version: 2.10-2
+  version: 2.10-3
   arch:
     - x86_64
   pkgname:
     - hostapd
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.10-2
+    version: 2.10-3
     packages:
-      - hostapd-2.10-2-x86_64.pkg.tar.zst
+      - hostapd-2.10-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
