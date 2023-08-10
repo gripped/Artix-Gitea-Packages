@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-checkupdates
-  version: 0.4.3-1
+  version: 0.4.4-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.3-1
+    version: 0.4.4-1
     packages:
-      - artix-checkupdates-0.4.3-1-x86_64.pkg.tar.zst
+      - artix-checkupdates-0.4.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
