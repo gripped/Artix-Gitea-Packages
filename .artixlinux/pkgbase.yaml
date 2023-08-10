@@ -8,27 +8,25 @@ pkgbase:
     - libxml2
     - libxml2-docs
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 2.11.5-1
     packages:
       - libxml2-2.11.5-1-x86_64.pkg.tar.zst
       - libxml2-docs-2.11.5-1-x86_64.pkg.tar.zst
-  system:
-    version: 2.11.4-1
-    packages:
-      - libxml2-2.11.4-1-x86_64.pkg.tar.zst
-      - libxml2-docs-2.11.4-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
