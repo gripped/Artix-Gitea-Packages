@@ -3,7 +3,7 @@
 
 pkgname=syslog-ng
 pkgver=4.2.0
-pkgrel=1
+pkgrel=1.5
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=('x86_64')
 url="https://www.syslog-ng.com/products/open-source-log-management/"
@@ -43,7 +43,7 @@ backup=('etc/syslog-ng/scl.conf'
 source=(https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$pkgver/$pkgname-$pkgver.tar.gz
         syslog-ng.conf syslog-ng.logrotate)
 sha512sums=('85442b57b7934e8afbb4e7d8285ed1fd16aaad2a8d853e3765db4f885d88bee4910a3b5d271f1cbd100c2d3a3f81f1a4fe845bc948fe68c22d32bc9b730af04b'
-            '73239e783b6c4f8aabc30579153f531b022278aefecd84454935038274cc29f674a7093d68a3d797531e40c8f5d81e0b7e6b80d94e36fb11b60cfac6c2e93562'
+            '0dec94a5c37cccb09fe2644b08b013a0bfc47bf8eb59daec97f8fe9d4ab90ed9f934fbffcfc012a5ac5d07ac2b9014d10be97d61963cb88d9cce1358bf2ee10d'
             'cd39f545a6a855c866a466bf846e33940b2c2dd1fc2eaf50cce29c68e1a5753c7c4b56411e4f01c152f32e155104a98dd755a96319767f47c73a8853f720b2cc')
 
 
