@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - libinih
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 57-1
     packages:
       - libinih-57-1-x86_64.pkg.tar.zst
-  system:
-    version: 56-1
-    packages:
-      - libinih-56-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
