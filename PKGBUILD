@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Uroš Vampl <mobile.leecher at gmail dot com>
 
 pkgname=tigervnc
 pkgver=1.13.1
-pkgrel=1
+pkgrel=2
 _xorgver=21.1.6
 pkgdesc="Suite of VNC servers and clients. Based on the VNC 4 branch of TightVNC."
 arch=('x86_64')
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('fltk' 'pam' 'gnutls' 'libjpeg-turbo' 'libxtst' 'pixman'
 	 'xorg-xauth' 'xorg-xsetroot' 'xkeyboard-config' 'xorg-xkbcomp'
 	 'libgl' 'libgcrypt' 'perl' 'libxdamage' 'libxfont2' 'libdrm'
-	 'xorg-xinit' 'libxcvt')
+	 'xorg-xinit' 'libxcvt' 'ffmpeg')
 makedepends=('cmake' 'nasm' 'xorg-font-util' 'xorg-util-macros'
 	     'xtrans' 'xorgproto'
 	     'mesa' 'imagemagick' 'java-environment=8')
