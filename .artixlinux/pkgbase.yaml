@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libsecret
-  version: 0.20.5-2
+  version: 0.21.0-1
   arch:
     - x86_64
   pkgname:
     - libsecret
     - libsecret-docs
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.21.0-1
+    packages:
+      - libsecret-0.21.0-1-x86_64.pkg.tar.zst
+      - libsecret-docs-0.21.0-1-x86_64.pkg.tar.zst
   system:
     version: 0.20.5-2
     packages:
