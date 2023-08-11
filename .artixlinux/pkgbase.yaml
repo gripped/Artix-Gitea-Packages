@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: go-yq
-  version: 4.34.2-1
+  version: 4.35.1-1
   arch:
     - x86_64
   pkgname:
     - go-yq
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.34.2-1
+    version: 4.35.1-1
     packages:
-      - go-yq-4.34.2-1-x86_64.pkg.tar.zst
+      - go-yq-4.35.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
