@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Techlive Zheng <techlivezheng at gmail dot com>
 # Contributor: peace4all <markspost at rocketmail dot com>
 
 pkgname=dnscrypt-proxy
-pkgver=2.1.4
-_commit=8e043f435d919912e46ac9b7d2beddcfdc8aab70  # refs/tags/2.1.4
+pkgver=2.1.5
+_commit=8744c6f10da322921d1c12e24105bcfe813e42a6  # refs/tags/2.1.5
 pkgrel=2
 pkgdesc="A flexible DNS proxy, with support for encrypted DNS protocols"
 arch=(x86_64)
