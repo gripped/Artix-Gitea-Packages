@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: docker-compose
-  version: 2.20.2-1
+  version: 2.20.3-1
   arch:
     - x86_64
   pkgname:
     - docker-compose
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.20.2-1
+    version: 2.20.3-1
     packages:
-      - docker-compose-2.20.2-1-x86_64.pkg.tar.zst
+      - docker-compose-2.20.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
