@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: mitmproxy
-  version: 9.0.1-2
+  version: 10.0.0-1
   arch:
     - any
   pkgname:
     - mitmproxy
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.0.1-2
+    version: 10.0.0-1
     packages:
-      - mitmproxy-9.0.1-2-any.pkg.tar.zst
+      - mitmproxy-10.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
