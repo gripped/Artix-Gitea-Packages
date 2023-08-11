@@ -6,7 +6,7 @@ pkgname=(linux-firmware-whence linux-firmware amd-ucode
 )
 _tag=20230804
 pkgver=20230804.7be2766d
-pkgrel=1
+pkgrel=2
 pkgdesc="Firmware files for Linux"
 url="https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary"
 license=('GPL2' 'GPL3' 'custom')
@@ -18,6 +18,7 @@ sha256sums=('SKIP')
 validpgpkeys=('4CDE8575E547BF835FE15807A31B6BD72486CFD6') # Josh Boyer <jwboyer@fedoraproject.org>
 
 _backports=(
+  f2eb058afc57348cde66852272d6bf11da1eef8f  # fixes for "inception": https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7005.html
 )
 
 prepare() {

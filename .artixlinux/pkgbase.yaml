@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-firmware
-  version: 20230804.7be2766d-1
+  version: 20230804.7be2766d-2
   arch:
     - any
   pkgname:
@@ -28,18 +28,18 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20230804.7be2766d-1
+    version: 20230804.7be2766d-2
     packages:
-      - linux-firmware-whence-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-20230804.7be2766d-1-any.pkg.tar.zst
-      - amd-ucode-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-nfp-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-mellanox-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-marvell-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-qcom-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-liquidio-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-qlogic-20230804.7be2766d-1-any.pkg.tar.zst
-      - linux-firmware-bnx2x-20230804.7be2766d-1-any.pkg.tar.zst
+      - linux-firmware-whence-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-20230804.7be2766d-2-any.pkg.tar.zst
+      - amd-ucode-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-nfp-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-mellanox-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-marvell-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-qcom-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-liquidio-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-qlogic-20230804.7be2766d-2-any.pkg.tar.zst
+      - linux-firmware-bnx2x-20230804.7be2766d-2-any.pkg.tar.zst
   system:
     version: 20230625.ee91452d-5
     packages:
