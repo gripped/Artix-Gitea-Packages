@@ -15,11 +15,6 @@ sha256sums=(
 	"70c1ceb7c342ceb79b63a76caafb13ea3796a51715c742a482eb9d85277311e7"
 )
 
-# prepare() {
-	# cd "$pkgname-$pkgver"
-	# patch -Np 1 -i "$srcdir/file.patch"
-# }
-
 build() {
 	cd "$pkgname-$pkgver"
 	export CGO_CFLAGS="$CFLAGS" CGO_LDFLAGS="$LDFLAGS"
