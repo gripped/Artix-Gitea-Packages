@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: modemmanager
-  version: 1.20.6-1
+  version: 1.20.6-2
   arch:
     - x86_64
   pkgname:
     - modemmanager
     - libmm-glib
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.20.6-1
+    version: 1.20.6-2
     packages:
-      - modemmanager-1.20.6-1-x86_64.pkg.tar.zst
-      - libmm-glib-1.20.6-1-x86_64.pkg.tar.zst
+      - modemmanager-1.20.6-2-x86_64.pkg.tar.zst
+      - libmm-glib-1.20.6-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

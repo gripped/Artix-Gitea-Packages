@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=modemmanager
 pkgname=(modemmanager libmm-glib)
 pkgver=1.20.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Mobile broadband modem management service"
 url="https://www.freedesktop.org/wiki/Software/ModemManager/"
 arch=(x86_64)
@@ -38,7 +38,6 @@ build() {
     -D systemd_journal=false
     -D systemd_suspend_resume=false
     -D systemdsystemunitdir=no
-    -D plugin_qcom_soc=disabled
     -D polkit=permissive
     -D vapi=true
   )
