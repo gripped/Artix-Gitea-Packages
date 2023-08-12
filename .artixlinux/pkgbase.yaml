@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-sphinxcontrib-serializinghtml
-  version: 1.1.5-6
+  version: 1.1.7-1
   arch:
     - any
   pkgname:
     - python-sphinxcontrib-serializinghtml
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.1.5-6
+    version: 1.1.7-1
     packages:
-      - python-sphinxcontrib-serializinghtml-1.1.5-6-any.pkg.tar.zst
+      - python-sphinxcontrib-serializinghtml-1.1.7-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
