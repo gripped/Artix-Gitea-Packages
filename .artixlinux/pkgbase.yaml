@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-sphinxcontrib-applehelp
-  version: 1.0.4-3
+  version: 1.0.6-1
   arch:
     - any
   pkgname:
     - python-sphinxcontrib-applehelp
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.4-3
+    version: 1.0.6-1
     packages:
-      - python-sphinxcontrib-applehelp-1.0.4-3-any.pkg.tar.zst
+      - python-sphinxcontrib-applehelp-1.0.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
