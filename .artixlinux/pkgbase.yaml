@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-hardened
-  version: 6.4.7.hardened1-2
+  version: 6.4.9.hardened1-1
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - linux-hardened-headers
     - linux-hardened-docs
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.4.7.hardened1-2
+    version: 6.4.9.hardened1-1
     packages:
-      - linux-hardened-6.4.7.hardened1-2-x86_64.pkg.tar.zst
-      - linux-hardened-headers-6.4.7.hardened1-2-x86_64.pkg.tar.zst
-      - linux-hardened-docs-6.4.7.hardened1-2-x86_64.pkg.tar.zst
+      - linux-hardened-6.4.9.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-headers-6.4.9.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-docs-6.4.9.hardened1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
