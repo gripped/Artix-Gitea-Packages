@@ -19,7 +19,7 @@ source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodu
 sha256sums=('e7c9438b56f502b44b4e376b92ed80f1db7c2c3881d68d319b0677afd5701d9f')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
     -DCMAKE_TOOLCHAIN_FILE=/usr/lib/cmake/Qt6/qt.toolchain.cmake \
     -DQT_FEATURE_webengine_system_ffmpeg=ON \
