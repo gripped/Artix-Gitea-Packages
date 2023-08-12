@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-botocore
-  version: 1.29.162-1
+  version: 1.31.25-1
   arch:
     - any
   pkgname:
     - python-botocore
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.29.162-1
+    version: 1.31.25-1
     packages:
-      - python-botocore-1.29.162-1-any.pkg.tar.zst
+      - python-botocore-1.31.25-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
