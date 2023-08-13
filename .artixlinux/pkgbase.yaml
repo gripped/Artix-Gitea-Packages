@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: xdg-dbus-proxy
-  version: 0.1.4-1
+  version: 0.1.5-1
   arch:
     - x86_64
   pkgname:
     - xdg-dbus-proxy
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.4-1
+    version: 0.1.5-1
     packages:
-      - xdg-dbus-proxy-0.1.4-1-x86_64.pkg.tar.zst
+      - xdg-dbus-proxy-0.1.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
