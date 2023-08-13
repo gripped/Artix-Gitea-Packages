@@ -7,7 +7,7 @@
 
 pkgname=python-matplotlib
 pkgver=3.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A python plotting library, making publication quality plots"
 arch=(x86_64)
 url="https://matplotlib.org"
@@ -39,19 +39,22 @@ checkdepends=(python-pytest python-pytest-xdist python-pytest-runner python-pyte
               python-pyqt6 pyside6 python-tornado python-wxpython tk
               jupyter-nbconvert jupyter-nbformat python-ipykernel
               python-pandas python-pikepdf python-pytz python-xarray
-              noto-fonts-cjk wqy-zenhei)
+              noto-fonts-cjk wqy-zenhei python-xcffib)
 _tag=d14c8f9ec4fc9b0c726238215eaa3be31c0b041b # git rev-parse v${pkgver}
 _ftver=2.12.1
 source=(git+https://github.com/matplotlib/matplotlib.git#tag=${_tag}?signed
         https://github.com/QuLogic/mpl-images/archive/v${pkgver}-with-freetype-${_ftver}/mpl-images-${pkgver}-ft${_ftver}.tar.gz
-        freetype.patch)
+        freetype.patch
+        $pkgname-pyparsing-3.1.0.patch::https://github.com/matplotlib/matplotlib/commit/5bdac1d6a200e48b8fd9e22a7e03602dd55c8bdc.patch)
 b2sums=('SKIP'
         '073bdb905194afd124d8fa8d8dc8e0504d8cf021552efcd0a937ab42b0ec9bfff4470c608f2548b19997f59d3fdce713358a1eeb49aedd53c43a4daae9942a5b'
-        'b821f938cace434932a43b15b42b93d0f8eaffea4e28fbf1d5a7263ec947c26252bafccaea60c1a1cb2fad4c71280ca2cf62527994f270af2467a242287470bb')
+        'b821f938cace434932a43b15b42b93d0f8eaffea4e28fbf1d5a7263ec947c26252bafccaea60c1a1cb2fad4c71280ca2cf62527994f270af2467a242287470bb'
+        'e5b2170ffea480e3815830e4d4dacc6cb52e6f20ab34efb427eff87f8368c068055e6d0e7eebb735cdf36e31c17f330a0e50f8a30c81ec8bf69a23c4fd241315')
 validpgpkeys=(23CAB59E3332F94D26BEF0378D86E7FAE5EB0C10) # Elliott Sales de Andrade <quantum.analyst@gmail.com>
 
 prepare() {
   cd matplotlib
+  patch -p1 < ../$pkgname-pyparsing-3.1.0.patch
   # Fix SCM detected version
   rm -r .git
   # Don't require oldest-supported-numpy
@@ -85,7 +88,7 @@ check() {
   XDG_RUNTIME_DIR=/tmp/runtime-build \
   xvfb-run -a -s "-screen 0 640x480x24" \
     test-env/bin/python -m pytest -ra -n auto -v --color=yes --pyargs matplotlib mpl_toolkits.{axes_grid1,axisartist,mplot3d} \
-      -k 'not test_ipynb and not test_compressed1 and not test_multi_font_type3 and not test_multi_font_type42 and not test_figure_legend_outside' ||:
+      -k 'not test_ipynb and not test_compressed1 and not test_multi_font_type3 and not test_multi_font_type42 and not test_figure_legend_outside'
 }
 
 package() {
