@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-importlib_resources
-  version: 6.0.0-1
+  version: 6.0.1-1
   arch:
     - any
   pkgname:
     - python-importlib_resources
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.0.0-1
+    version: 6.0.1-1
     packages:
-      - python-importlib_resources-6.0.0-1-any.pkg.tar.zst
+      - python-importlib_resources-6.0.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
