@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: weston
-  version: 12.0.1-1
+  version: 12.0.2-1
   arch:
     - x86_64
   pkgname:
     - weston
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.0.1-1
+    version: 12.0.2-1
     packages:
-      - weston-12.0.1-1-x86_64.pkg.tar.zst
+      - weston-12.0.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
