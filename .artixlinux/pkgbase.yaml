@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: mariadb-libs
-  version: 11.0.2-2
+  name: mariadb
+  version: 11.0.3-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - mariadb
     - mytop
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 11.0.3-1
+    packages:
+      - mariadb-libs-11.0.3-1-x86_64.pkg.tar.zst
+      - mariadb-clients-11.0.3-1-x86_64.pkg.tar.zst
+      - mariadb-11.0.3-1-x86_64.pkg.tar.zst
+      - mytop-11.0.3-1-x86_64.pkg.tar.zst
   world:
     version: 11.0.2-2
     packages:
