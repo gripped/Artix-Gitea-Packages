@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: vala
-  version: 0.56.10-1
+  version: 0.56.11-1
   arch:
     - x86_64
   pkgname:
     - vala
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.56.11-1
+    packages:
+      - vala-0.56.11-1-x86_64.pkg.tar.zst
   world:
     version: 0.56.10-1
     packages:
