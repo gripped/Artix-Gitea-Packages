@@ -1,20 +1,25 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Fina Wilke <fina@felinira.net>
 
 pkgname=libcloudproviders
-pkgver=0.3.1+r8+g3a229ee
+pkgver=0.3.2
 pkgrel=1
 pkgdesc="DBus API that allows cloud storage sync clients to expose their services"
 url="https://gitlab.gnome.org/World/libcloudproviders"
 arch=(x86_64)
 license=(LGPL3)
 depends=(glib2)
-makedepends=(git gobject-introspection meson vala gtk-doc)
-options=(debug)
-_commit=3a229eee7dbdf7159fafab2f797e90fd89fdd05c  # master
+makedepends=(
+  git
+  gobject-introspection
+  gtk-doc
+  meson
+  vala
+)
+_commit=7082d9126057bdaffe9b50200283e6fe084bbf03  # tags/0.3.2^0
 source=("git+https://gitlab.gnome.org/World/libcloudproviders.git#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd $pkgname
@@ -26,7 +31,11 @@ prepare() {
 }
 
 build() {
-  artix-meson $pkgname build -D enable-gtk-doc=true
+  local meson_options=(
+    -D enable-gtk-doc=true
+  )
+
+  artix-meson $pkgname build "${meson_options[@]}"
   meson compile -C build
 }
 
