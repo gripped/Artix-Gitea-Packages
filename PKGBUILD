@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Alex Brinister <alex_brinister at yahoo dot com>
 
 pkgbase=python-cheetah3
 pkgname=('python-cheetah3' 'python-cheetah3-docs')
-pkgver=3.3.1
-pkgrel=2
+pkgver=3.3.2
+pkgrel=1
 pkgdesc='A Python powered template engine and code generator'
 arch=('x86_64')
 url='https://cheetahtemplate.org'
@@ -15,7 +15,7 @@ optdepends=(
   'python-markdown: for markdown filter'
   'python-pygments: for codehighlight filter'
 )
-_commit='074be1bb8caabf577a7dccc69eef817e32f2f305'
+_commit='b49fad1e66c291bfbe88d1b518ceda43a93eeecd'
 source=(
   "$pkgbase::git+https://github.com/CheetahTemplate3/cheetah3#commit=$_commit"
   'cheetah.1'
