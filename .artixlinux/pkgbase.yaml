@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - file
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 5.45-1
     packages:
       - file-5.45-1-x86_64.pkg.tar.zst
-  system:
-    version: 5.44-3
-    packages:
-      - file-5.44-3-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
