@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytest-mock
-  version: 3.11.0-1
+  version: 3.11.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.11.0-1
+    version: 3.11.1-1
     packages:
-      - python-pytest-mock-3.11.0-1-any.pkg.tar.zst
+      - python-pytest-mock-3.11.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
