@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-jsonschema
-  version: 4.18.4-1
+  version: 4.19.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.18.4-1
+    version: 4.19.0-1
     packages:
-      - python-jsonschema-4.18.4-1-any.pkg.tar.zst
+      - python-jsonschema-4.19.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
