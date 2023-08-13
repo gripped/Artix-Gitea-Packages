@@ -9,7 +9,7 @@ url='https://github.com/Stranger6667/pytest-click'
 license=('BSD')
 makedepends=('python-setuptools')
 checkdepends=('python-tox')
-source=("${url}/archive/refs/tags/v${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}-${pkgrel}::${url}/archive/refs/tags/v${pkgver}.tar.gz")
 sha512sums=('aed7a67477cc523789063c72b8da67ae09cfbade6d66d77a2dc098821648324b2d3caf8d187b5dcca2dbd013c2eaac173cb0a7ed8f4db0f69279cdaee4978ed6')
 
 build() {
