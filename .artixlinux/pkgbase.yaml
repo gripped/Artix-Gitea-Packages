@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: man-pages
-  version: 6.04-1
+  version: 6.05.01-1
   arch:
     - any
   pkgname:
     - man-pages
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.05.01-1
+    packages:
+      - man-pages-6.05.01-1-any.pkg.tar.zst
   system:
     version: 6.04-1
     packages:
