@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-cfn-lint
-  version: 0.79.5-1
+  version: 0.79.6-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.79.5-1
+    version: 0.79.6-1
     packages:
-      - python-cfn-lint-0.79.5-1-any.pkg.tar.zst
+      - python-cfn-lint-0.79.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
