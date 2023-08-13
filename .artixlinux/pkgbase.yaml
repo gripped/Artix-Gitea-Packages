@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: waf
-  version: 2.0.25-2
+  version: 2.0.26-1
   arch:
     - any
   pkgname:
     - waf
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.25-2
+    version: 2.0.26-1
     packages:
-      - waf-2.0.25-2-any.pkg.tar.zst
+      - waf-2.0.26-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
