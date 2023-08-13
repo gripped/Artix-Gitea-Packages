@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libphonenumber
-  version: 1:8.13.15-1
+  version: 1:8.13.18-1
   arch:
     - x86_64
   pkgname:
     - libphonenumber
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:8.13.15-1
+    version: 1:8.13.18-1
     packages:
-      - libphonenumber-1:8.13.15-1-x86_64.pkg.tar.zst
+      - libphonenumber-1:8.13.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
