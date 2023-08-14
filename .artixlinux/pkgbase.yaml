@@ -32,9 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.0-2
-    packages:
-      - embree-4.1.0-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
