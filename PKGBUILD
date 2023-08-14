@@ -1,9 +1,8 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 
-pkgbase=shellcheck-bin
-pkgname=('shellcheck')
+pkgname=shellcheck-bin
 pkgver=0.9.0
-pkgrel=45
+pkgrel=46
 pkgdesc='Shell script analysis tool (binary release)'
 license=(AGPL3)
 arch=(x86_64)
