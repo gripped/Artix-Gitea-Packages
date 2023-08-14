@@ -3,21 +3,36 @@
 # Contributor: Roman Kyrylych <roman@archlinux.org>
 
 pkgname=gnome-bluetooth-3.0
-pkgver=42.5
+pkgver=42.6
 pkgrel=1
 pkgdesc="GNOME Bluetooth Subsystem"
 url="https://wiki.gnome.org/Projects/GnomeBluetooth"
 arch=(x86_64)
-license=(GPL LGPL)
-depends=(gtk4 libadwaita libnotify bluez gsound pulseaudio-bluetooth
-         upower)
-makedepends=(gobject-introspection gtk-doc docbook-xsl git meson)
+license=(
+  GPL
+  LGPL
+)
+depends=(
+  bluez
+  gsound
+  gtk4
+  libadwaita
+  libnotify
+  pulseaudio-bluetooth
+  upower
+)
+makedepends=(
+  docbook-xsl
+  git
+  gobject-introspection
+  gtk-doc
+  meson
+)
 checkdepends=(python-dbusmock)
 provides=(libgnome-bluetooth{,-ui}-3.0.so)
-options=(debug)
-_commit=8ff1cc5f60b4855c9618d3cef75abf9a0b9c66f8  # master
+_commit=3c20e804b86775c26f0a9be370605aac5bfa230b  # tags/42.6^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-bluetooth.git#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd gnome-bluetooth
@@ -26,13 +41,14 @@ pkgver() {
 
 prepare() {
   cd gnome-bluetooth
-
-  # Fixup missing tag
-  git tag -f 42.5 8ff1cc5f60b4855c9618d3cef75abf9a0b9c66f8
 }
 
 build() {
-  artix-meson gnome-bluetooth build -D gtk_doc=true
+  local meson_options=(
+    -D gtk_doc=true
+  )
+
+  artix-meson gnome-bluetooth build "${meson_options[@]}"
   meson compile -C build
 }
 
