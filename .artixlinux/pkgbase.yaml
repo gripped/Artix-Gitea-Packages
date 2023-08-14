@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ttf-nerd-fonts-symbols
-  version: 3.0.2-1
+  version: 3.0.2-2
   arch:
     - any
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - ttf-nerd-fonts-symbols-mono
     - ttf-nerd-fonts-symbols-common
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.2-1
+    version: 3.0.2-2
     packages:
-      - ttf-nerd-fonts-symbols-3.0.2-1-any.pkg.tar.zst
-      - ttf-nerd-fonts-symbols-mono-3.0.2-1-any.pkg.tar.zst
-      - ttf-nerd-fonts-symbols-common-3.0.2-1-any.pkg.tar.zst
+      - ttf-nerd-fonts-symbols-3.0.2-2-any.pkg.tar.zst
+      - ttf-nerd-fonts-symbols-mono-3.0.2-2-any.pkg.tar.zst
+      - ttf-nerd-fonts-symbols-common-3.0.2-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
