@@ -5,7 +5,7 @@
 
 pkgname=gitea
 pkgver=1.20.2
-pkgrel=1
+pkgrel=3
 pkgdesc="Painless self-hosted Git service, community managed."
 arch=(x86_64)
 url="https://gitea.io"
@@ -23,12 +23,13 @@ optdepends=(
 )
 checkdepends=(openssh)
 options=(!lto)
+backup=('etc/gitea/app.ini')
 _tag=5fd5233ffbb5c17f310dfbdb5a9ea9ceb2c13e2b # git rev-parse v${pkgver}
 source=(git+https://github.com/go-gitea/gitea.git#tag=${_tag}?signed
         gitea.tmpfiles
         gitea.sysusers)
 sha256sums=('SKIP'
-            '9f63a517e8da6865fa6d9e87f6b08fe25ea56285304115e052809663c48dc3d7'
+            '1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba'
             '7e7b798b8ce035c1fb55993ece41c5efb6cad5922708866804fa50ada0cf9fa5')
 validpgpkeys=(
   B56E3C7437A49E136862F5DE9D8A57ADAA232E95  # Matti Ranta <matti@mdranta.net>, retrieved from https://github.com/techknowlogick.gpg
@@ -72,5 +73,5 @@ package() {
   install -Dm644 ${pkgname}/LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
   install -Dm644 ${pkgname}.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
   install -Dm644 ${pkgname}.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
-  install -D ${pkgname}/custom/conf/app.example.ini -t "${pkgdir}"/etc/gitea/
+  install -Dm644 ${pkgname}/custom/conf/app.example.ini "${pkgdir}"/etc/gitea/app.ini
 }
