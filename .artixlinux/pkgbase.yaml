@@ -8,11 +8,11 @@ pkgbase:
     - gitea-tea
 actions:
   addRepo: null
-  removeRepo: null
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.9.2-1
-    packages:
-      - gitea-tea-0.9.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
