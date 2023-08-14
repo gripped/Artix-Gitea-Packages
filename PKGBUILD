@@ -26,15 +26,15 @@ backup=(
 # NOTE: disabled until gcc is fixed to produce reproducible bytecode for go
 options=(!lto)
 source=(
+  git+$url#tag=$_commit?signed
   tmpfiles.d
   sysusers.d
-  git+https://github.com/dnscrypt/$pkgname#tag=$_commit?signed
-  $pkgname-$pkgver-configuration.patch::https://github.com/dvzrv/dnscrypt-proxy/commit/0dfd620f36c6d5e411933299d8a1481c67da827b.patch
+  $pkgname-$pkgver-configuration.patch::https://github.com/dvzrv/dnscrypt-proxy/commit/66ffcf524b55b4f06cfaf4e37c8b8c6dcc10d0df.patch
 )
-sha512sums=('005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151'
+sha512sums=('SKIP'
+            '005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151'
             '888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8'
-            'SKIP'
-            '6b70f529221a46d3ef56bf548823c08a2be5c8f57f37b61cdff7df4e18e152c5d8e269cece736254613b9824cb4bdab1bc1a3a86faa8f0124eed751d7563cef9')
+            'fa45be971c1bb401527ba8f5043312f021fad0d417bd764ab6550637d5488a00d886d966df21be48d4503f1b5e326b875bac42ee18613827326c12af5ce19359')
 validpgpkeys=('54A2B8892CC3D6A597B92B6C210627AABA709FE1') # Frank Denis (Jedi/Sector One) <pgp@pureftpd.org
 
 prepare() {
