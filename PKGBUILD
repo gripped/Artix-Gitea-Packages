@@ -5,7 +5,7 @@ pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
 _tag='7038cd60222f93f05e4844fe215568de9a67100d' # git rev-parse v${pkgver//./_}
 pkgver=2.03.22
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL2' 'LGPL2.1')
@@ -32,6 +32,10 @@ prepare() {
     git log --oneline -1 "${_c}"
     git show "${_c}" -- ':(exclude)WHATS_NEW' | git apply
   done
+
+  # install libexec scripts
+  # https://bugs.archlinux.org/task/79352
+  sed -i '/^install_lvm2:/s|$| install_libexec|' scripts/Makefile.in
 
   # prepare for non-systemd initcpio
   patch -Np1 --output='udev/69-dm-lvm-initcpio.rules.in' < ../0001-udev-initcpio.patch
@@ -64,6 +68,7 @@ build() {
     --with-default-locking-dir=/run/lock/lvm \
     --with-default-pid-dir=/run \
     --with-default-run-dir=/run/lvm \
+    --with-libexecdir=/usr/lib/lvm2 \
     --with-systemdsystemunitdir=no \
     --with-thin=internal \
     --with-udev-prefix=/usr
