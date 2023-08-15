@@ -2,8 +2,8 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.31.3
-pkgrel=2
+pkgver=0.31.4
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
@@ -15,7 +15,6 @@ source=("git+${url}.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 _patches=(
-    221cc796c0ca09afd3f725e0ab8d8d656e9be0f7
 )
 
 # pkgver() {
