@@ -7,11 +7,7 @@ pkgbase:
   pkgname:
     - shellcheck-bin
 actions:
-<<<<<<< HEAD
   addRepo: world-gremlins
-=======
-  addRepo: world
->>>>>>> 4f71a7a ([world] 'shellcheck-bin-0.9.0-46' add)
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
