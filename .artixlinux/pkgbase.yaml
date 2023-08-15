@@ -7,7 +7,11 @@ pkgbase:
   pkgname:
     - shellcheck-bin
 actions:
+<<<<<<< HEAD
   addRepo: world-gremlins
+=======
+  addRepo: world
+>>>>>>> 4f71a7a ([world] 'shellcheck-bin-0.9.0-46' add)
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +36,9 @@ repos:
     packages:
       - shellcheck-bin-0.9.0-46-x86_64.pkg.tar.zst
   world:
-    version: 0.9.0-45
+    version: 0.9.0-46
     packages:
-      - shellcheck-0.9.0-45-x86_64.pkg.tar.zst
+      - shellcheck-0.9.0-46-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
