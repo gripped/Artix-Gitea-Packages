@@ -10,12 +10,12 @@ pkgbase:
     - poppler-qt5
     - poppler-qt6
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,19 +31,15 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 23.08.0-1
     packages:
       - poppler-23.08.0-1-x86_64.pkg.tar.zst
       - poppler-glib-23.08.0-1-x86_64.pkg.tar.zst
       - poppler-qt5-23.08.0-1-x86_64.pkg.tar.zst
       - poppler-qt6-23.08.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 23.07.0-1
-    packages:
-      - poppler-23.07.0-1-x86_64.pkg.tar.zst
-      - poppler-glib-23.07.0-1-x86_64.pkg.tar.zst
-      - poppler-qt5-23.07.0-1-x86_64.pkg.tar.zst
-      - poppler-qt6-23.07.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
