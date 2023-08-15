@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: speech-dispatcher
-  version: 0.11.4-2
+  version: 0.11.5-1
   arch:
     - x86_64
   pkgname:
     - speech-dispatcher
     - libspeechd
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.11.4-2
+    version: 0.11.5-1
     packages:
-      - speech-dispatcher-0.11.4-2-x86_64.pkg.tar.zst
-      - libspeechd-0.11.4-2-x86_64.pkg.tar.zst
+      - speech-dispatcher-0.11.5-1-x86_64.pkg.tar.zst
+      - libspeechd-0.11.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
