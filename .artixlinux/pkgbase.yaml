@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: graphicsmagick
-  version: 1.3.40-4
+  version: 1.3.41-3
   arch:
     - x86_64
   pkgname:
     - graphicsmagick
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.40-4
+    version: 1.3.41-3
     packages:
-      - graphicsmagick-1.3.40-4-x86_64.pkg.tar.zst
+      - graphicsmagick-1.3.41-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
