@@ -4,7 +4,7 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.4.9.hardened1
+pkgver=6.4.10.hardened1
 pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
@@ -18,6 +18,7 @@ makedepends=(
   libelf
   pahole
   perl
+  python
   tar
   xz
 
@@ -40,11 +41,11 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
-b2sums=('87a05cae7d5dca89921801f69467ec01a871941f5dd1bd956bc9f13c4786b35a141811808b36e45471ee3bbe15d669d7114257759f3e5893d17ca38e40ebdc4b'
+b2sums=('700017448073f63880739efed3f60baba18116500737419e305b2b5e0d2532e2d40a41368c773772cba437236bc1edda85c8f16ca23a945c754e283a30184a6d'
         'SKIP'
-        '14c6b8b16294aa9ed401f8aab2b9e219ba6071b35a57abdd45b20dce983b8dd40b90900b096d774ee44b63d77168f5087beb0c1f1ca6ce1400e1c891f80e2173'
+        '566ce03d0b86c1d8e819d7e4a0e0aef889f4046c25d63aebeb891bc66efb41ccd7d6300d864727434df556eddc37394c50996558fc6875d9cfcc982340cb1760'
         'SKIP'
-        '5c222450f912263c241f865858109e38f29554145e48850c3eb24ee998d23c533e18572dbe88d937b54d0e6fd41fc3896e4399b1a43cd9dd20d07428c83807bf')
+        'f790da857bc23c2c0b14d604eceff8502b3435b05b0f7e0e6711449d86c39306261d0be053f652cfb1c1502d8a678a52ae05381dc7762e0472e65c3006d19887')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
