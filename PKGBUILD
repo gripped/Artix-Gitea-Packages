@@ -39,7 +39,7 @@ checkdepends=(python-pytest python-pytest-xdist python-pytest-runner python-pyte
               python-pyqt6 pyside6 python-tornado python-wxpython tk
               jupyter-nbconvert jupyter-nbformat python-ipykernel
               python-pandas python-pikepdf python-pytz python-xarray
-              noto-fonts-cjk wqy-zenhei python-xcffib)
+              noto-fonts-cjk wqy-zenhei)
 _tag=d14c8f9ec4fc9b0c726238215eaa3be31c0b041b # git rev-parse v${pkgver}
 _ftver=2.12.1
 source=(git+https://github.com/matplotlib/matplotlib.git#tag=${_tag}?signed
