@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pyzmq
-  version: 25.1.0-1
+  version: 25.1.1-1
   arch:
     - x86_64
   pkgname:
     - python-pyzmq
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 25.1.0-1
+    version: 25.1.1-1
     packages:
-      - python-pyzmq-25.1.0-1-x86_64.pkg.tar.zst
+      - python-pyzmq-25.1.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
