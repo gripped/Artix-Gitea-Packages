@@ -1,20 +1,36 @@
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Nikolay Rysev <mad.f3ka@gmail.com>
 
 pkgname=fprintd
 pkgver=1.94.2
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus service to access fingerprint readers"
+url="https://fprint.freedesktop.org/"
 arch=(x86_64)
-url="https://www.freedesktop.org/wiki/Software/fprint/fprintd"
 license=(GPL)
-depends=(glib2 libfprint polkit dbus dbus-glib)
-makedepends=(gtk-doc git meson pam_wrapper python-cairo python-dbus
-             python-dbusmock)
+depends=(
+  dbus
+  glib2
+  libfprint
+  polkit
+)
+makedepends=(
+  git
+  gtk-doc
+  meson
+  pam_wrapper
+  python-cairo
+  python-dbus
+  python-dbusmock
+)
 groups=(fprint)
 _commit=0d2e2a6742cbec847aa756da25afd4b73d9ec53f  # tags/v1.94.2^0
-source=("git+https://gitlab.freedesktop.org/libfprint/fprintd.git#commit=$_commit")
-sha256sums=('SKIP')
+source=(
+  "git+https://gitlab.freedesktop.org/libfprint/fprintd.git#commit=$_commit"
+  tests.diff
+)
+b2sums=('SKIP'
+        '9ba7936569a76537168274c086d7ae164d14deda3f71baa5a570cc16b0cc3c5e9eb18c84ba8b34f8185b7f1664024a9cbaeca61d016e9d60c88f1744d0877847')
 
 pkgver() {
   cd fprintd
@@ -23,18 +39,27 @@ pkgver() {
 
 prepare() {
   cd fprintd
+
+  # Unbreak tests
+  git cherry-pick -n 3633dbaa630d4734f3c63721eecbf935315cb80d \
+                     ae04fa989720279e5558c3b8ff9ebe1959b1cf36
+
+  # https://gitlab.freedesktop.org/libfprint/fprintd/-/issues/151
+  git apply -3 ../tests.diff
 }
 
 build() {
-  artix-meson fprintd build \
-    -D pam_modules_dir=/usr/lib/security \
-    -D gtk_doc=true \
-    -D systemd=false
-  ninja -C build
+  local meson_options=(
+    -D gtk_doc=true
+    -D pam_modules_dir=/usr/lib/security
+  )
+
+  artix-meson fprintd build "${meson_options[@]}"
+  meson compile -C build
 }
 
 check() {
-  meson test -C build --print-errorlogs
+  meson test -C build --print-errorlogs -t 4
 }
 
 package() {
@@ -42,3 +67,5 @@ package() {
 
   meson install -C build --destdir "$pkgdir"
 }
+
+# vim:set sw=2 sts=-1 et:
