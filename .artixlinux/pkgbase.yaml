@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-myst-parser
-  version: 1.0.0-5
+  version: 2.0.0-1
   arch:
     - any
   pkgname:
     - python-myst-parser
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.0-5
+    version: 2.0.0-1
     packages:
-      - python-myst-parser-1.0.0-5-any.pkg.tar.zst
+      - python-myst-parser-2.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
