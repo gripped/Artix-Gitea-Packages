@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gradle
-  version: 8.2.1-1
+  version: 8.3-1
   arch:
     - any
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gradle-doc
     - gradle-src
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.2.1-1
+    version: 8.3-1
     packages:
-      - gradle-8.2.1-1-any.pkg.tar.zst
-      - gradle-doc-8.2.1-1-any.pkg.tar.zst
-      - gradle-src-8.2.1-1-any.pkg.tar.zst
+      - gradle-8.3-1-any.pkg.tar.zst
+      - gradle-doc-8.3-1-any.pkg.tar.zst
+      - gradle-src-8.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
