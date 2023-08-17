@@ -51,6 +51,7 @@ prepare() {
 build() {
   local meson_options=(
     -D gtk_doc=true
+    -D pam=false
     -D pam_modules_dir=/usr/lib/security
     -D systemd=false
   )
