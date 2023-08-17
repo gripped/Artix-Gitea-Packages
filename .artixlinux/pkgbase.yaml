@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytest-param-files
-  version: 0.6.0-1
+  version: 0.6.0-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.0-1
+    version: 0.6.0-2
     packages:
-      - python-pytest-param-files-0.6.0-1-any.pkg.tar.zst
+      - python-pytest-param-files-0.6.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
