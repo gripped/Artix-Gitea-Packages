@@ -52,6 +52,7 @@ build() {
   local meson_options=(
     -D gtk_doc=true
     -D pam_modules_dir=/usr/lib/security
+    -D systemd=false
   )
 
   artix-meson fprintd build "${meson_options[@]}"
