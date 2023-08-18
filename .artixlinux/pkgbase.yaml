@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lib32-clang
-  version: 15.0.7-9
+  version: 16.0.6-1
   arch:
     - x86_64
   pkgname:
     - lib32-clang
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,8 +34,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 16.0.6-1
+    packages:
+      - lib32-clang-16.0.6-1-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
