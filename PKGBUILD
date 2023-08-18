@@ -3,7 +3,7 @@
 
 pkgname=compiler-rt
 pkgver=16.0.6
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Compiler runtime libraries for clang"
 arch=('x86_64')
 url="https://compiler-rt.llvm.org/"
@@ -37,7 +37,7 @@ build() {
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_INSTALL_PREFIX=/usr
     -DCMAKE_SKIP_RPATH=ON
-    -DCOMPILER_RT_INSTALL_PATH=/usr/lib/clang/$pkgver
+    -DCOMPILER_RT_INSTALL_PATH=/usr/lib/clang/${pkgver%%.*}
   )
   cmake .. "${cmake_args[@]}"
   ninja
