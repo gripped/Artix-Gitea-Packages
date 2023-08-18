@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: xcb-proto
-  version: 1.15.2-3
+  version: 1.16.0-1
   arch:
     - any
   pkgname:
     - xcb-proto
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.16.0-1
+    packages:
+      - xcb-proto-1.16.0-1-any.pkg.tar.zst
   world:
     version: 1.15.2-3
     packages:
