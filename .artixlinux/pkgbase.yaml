@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ghex
-  version: 44.1-1
+  version: 44.2-1
   arch:
     - x86_64
   pkgname:
     - ghex
     - ghex-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 44.1-1
+    version: 44.2-1
     packages:
-      - ghex-44.1-1-x86_64.pkg.tar.zst
-      - ghex-docs-44.1-1-x86_64.pkg.tar.zst
+      - ghex-44.2-1-x86_64.pkg.tar.zst
+      - ghex-docs-44.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
