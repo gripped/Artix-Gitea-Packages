@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: spirv-llvm-translator
-  version: 16.0.0.r9+g322fca5d-1
+  version: 16.0.0.r9+g322fca5d-1.1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 16.0.0.r9+g322fca5d-1
+    version: 16.0.0.r9+g322fca5d-1.1
     packages:
-      - spirv-llvm-translator-16.0.0.r9+g322fca5d-1-x86_64.pkg.tar.zst
+      - spirv-llvm-translator-16.0.0.r9+g322fca5d-1.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

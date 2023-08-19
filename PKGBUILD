@@ -4,7 +4,7 @@
 _srcname=SPIRV-LLVM-Translator
 pkgname=${_srcname,,}
 pkgver=16.0.0.r9+g322fca5d
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
 arch=(x86_64)
 url="https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
