@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: qt6-tools
-  version: 6.5.2-1
+  version: 6.5.2-2
   arch:
     - x86_64
   pkgname:
     - qt6-tools
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.5.2-2
+    packages:
+      - qt6-tools-6.5.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
