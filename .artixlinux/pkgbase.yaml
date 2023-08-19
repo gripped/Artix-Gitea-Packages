@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-llvm
-  version: 16.0.6-1
+  version: 16.0.6-1.1
   arch:
     - x86_64
   pkgname:
@@ -35,10 +35,10 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: 16.0.6-1
+    version: 16.0.6-1.1
     packages:
-      - lib32-llvm-16.0.6-1-x86_64.pkg.tar.zst
-      - lib32-llvm-libs-16.0.6-1-x86_64.pkg.tar.zst
+      - lib32-llvm-16.0.6-1.1-x86_64.pkg.tar.zst
+      - lib32-llvm-libs-16.0.6-1.1-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
