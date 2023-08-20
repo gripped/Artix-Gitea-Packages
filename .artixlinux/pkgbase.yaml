@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libsndfile
-  version: 1.2.0-1
+  version: 1.2.2-1
   arch:
     - x86_64
   pkgname:
     - libsndfile
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.0-1
+    version: 1.2.2-1
     packages:
-      - libsndfile-1.2.0-1-x86_64.pkg.tar.zst
+      - libsndfile-1.2.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
