@@ -4,14 +4,14 @@
 pkgname=postgresql-old-upgrade
 pkgver=14.9
 _majorver=${pkgver%.*}
-pkgrel=1
+pkgrel=2
 pkgdesc='PostgreSQL build for migrating between major versions with pg_upgrade'
 url='https://www.postgresql.org/'
 arch=('x86_64')
 license=('custom:PostgreSQL')
 depends=("postgresql-libs>=${_majorver}" 'libxml2' 'openssl>=1.0.0' 'pam'
-         'zlib' 'icu' 'libldap' 'krb5' 'llvm14-libs')
-makedepends=('python' 'perl' 'tcl>=8.6.0' 'llvm14' 'clang14')
+         'zlib' 'icu' 'libldap' 'krb5' 'llvm15-libs')
+makedepends=('python' 'perl' 'tcl>=8.6.0' 'llvm15' 'clang15')
 optdepends=('python: for PL/Python 3 support'
             'perl: for PL/Perl support'
             'tcl: for PL/Tcl support')
@@ -49,7 +49,7 @@ build() {
   # Fix static libs
   CFLAGS+=" -ffat-lto-objects"
 
-  LLVM_CONFIG=llvm-config-14 CLANG=/usr/lib/llvm14/bin/clang \
+  LLVM_CONFIG=llvm-config-15 CLANG=/usr/lib/llvm15/bin/clang \
   ./configure "${configure_options[@]}"
   make -C src all
   make -C contrib all

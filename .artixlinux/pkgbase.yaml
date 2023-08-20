@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postgresql-old-upgrade
-  version: 14.9-1
+  version: 14.9-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 14.9-1
+    version: 14.9-2
     packages:
-      - postgresql-old-upgrade-14.9-1-x86_64.pkg.tar.zst
+      - postgresql-old-upgrade-14.9-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
