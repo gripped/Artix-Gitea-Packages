@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: wasi-libc++
-  version: 15.0.7-2
+  version: 16.0.6-1
   arch:
     - any
   pkgname:
     - wasi-libc++
     - wasi-libc++abi
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 16.0.6-1
+    packages:
+      - wasi-libc++-16.0.6-1-any.pkg.tar.zst
+      - wasi-libc++abi-16.0.6-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
