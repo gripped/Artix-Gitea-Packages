@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: vc-intrinsics
-  version: 0.12.3-1
+  version: 0.13.0.r2+g910db48-1
   arch:
     - x86_64
   pkgname:
     - vc-intrinsics
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.13.0.r2+g910db48-1
+    packages:
+      - vc-intrinsics-0.13.0.r2+g910db48-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
