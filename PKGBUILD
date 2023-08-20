@@ -33,7 +33,7 @@ depends=(
   gcc
   gcc-libs
   libssh2
-  llvm-libs
+  llvm15-libs
 )
 makedepends=(
   cmake
