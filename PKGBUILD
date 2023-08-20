@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
 
 pkgname=wasi-libc
-pkgver=0+328+1dfe5c3
-_commit=1dfe5c302d1c5ab621f7abf04620fae92700fd22  # main
+pkgver=0+339+9f51a710
+_commit=9f51a7102085ec6a6ced5778f0864c9af9f50000  # main
 pkgrel=1
 epoch=1
 pkgdesc='WASI libc implementation for WebAssembly'
