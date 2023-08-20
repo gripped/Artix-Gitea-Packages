@@ -61,7 +61,8 @@ build() {
   cd "$srcdir/clang-$pkgver.src/build"
 
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
-
+  export CMAKE_PREFIX_PATH=/usr
+  export CMAKE_INSTALL_LIBDIR=/usr/lib32
   local cmake_args=(
     -G Ninja
     -DCMAKE_BUILD_TYPE=Release
