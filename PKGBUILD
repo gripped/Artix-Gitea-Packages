@@ -14,7 +14,7 @@ pkgname=(
 )
 epoch=1
 pkgver=1.71.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Systems programming language focused on safety, speed and concurrency"
 url=https://www.rust-lang.org/
 arch=(x86_64)
@@ -33,7 +33,7 @@ depends=(
   gcc
   gcc-libs
   libssh2
-  llvm15-libs
+  llvm-libs
 )
 makedepends=(
   cmake

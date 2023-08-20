@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rust
-  version: 1:1.71.1-2
+  version: 1:1.71.1-2.1
   arch:
     - x86_64
   pkgname:
@@ -29,13 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:1.71.1-2
+    version: 1:1.71.1-2.1
     packages:
-      - rust-1:1.71.1-2-x86_64.pkg.tar.zst
-      - lib32-rust-libs-1:1.71.1-2-x86_64.pkg.tar.zst
-      - rust-musl-1:1.71.1-2-x86_64.pkg.tar.zst
-      - rust-wasm-1:1.71.1-2-x86_64.pkg.tar.zst
-      - rust-src-1:1.71.1-2-x86_64.pkg.tar.zst
+      - rust-1:1.71.1-2.1-x86_64.pkg.tar.zst
+      - lib32-rust-libs-1:1.71.1-2.1-x86_64.pkg.tar.zst
+      - rust-musl-1:1.71.1-2.1-x86_64.pkg.tar.zst
+      - rust-wasm-1:1.71.1-2.1-x86_64.pkg.tar.zst
+      - rust-src-1:1.71.1-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
