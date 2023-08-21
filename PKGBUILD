@@ -4,7 +4,7 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=11.0.3
+pkgver=11.1.2
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
@@ -20,7 +20,7 @@ source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-$
         'mariadb.sysusers.conf'
         'mariadb.tmpfiles.conf'
         '0001-arch-specific.patch')
-sha256sums=('529f08a064ee7733a136ec474a4239e8ac9bd6db139b8ba70bff8a7f1303839a'
+sha256sums=('19a9e980e57fa332931f643b48ad7390528c889ff6ea8b0e16fd306aa3088238'
             'SKIP'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
@@ -224,7 +224,7 @@ package_mariadb() {
   rm usr/bin/mytop
 
   # not needed
-  rm -r usr/{mysql-test,sql-bench}
+  rm -r usr/{mariadb-test,sql-bench}
   rm usr/share/man/man1/mysql-test-run.pl.1
 }
 
