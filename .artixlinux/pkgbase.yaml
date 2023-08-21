@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kdoctools
-  version: 5.108.0-2
+  version: 5.109.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.108.0-2
+    version: 5.109.0-1
     packages:
-      - kdoctools-5.108.0-2-x86_64.pkg.tar.zst
+      - kdoctools-5.109.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
