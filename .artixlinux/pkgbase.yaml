@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: kwindowsystem
-  version: 5.108.0-1
+  version: 5.109.0-1
   arch:
     - x86_64
   pkgname:
     - kwindowsystem
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.108.0-1
+    version: 5.109.0-1
     packages:
-      - kwindowsystem-5.108.0-1-x86_64.pkg.tar.zst
+      - kwindowsystem-5.109.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
