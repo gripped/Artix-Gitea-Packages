@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: fcitx5-gtk
-  version: 5.0.23-1
+  version: 5.1.0-1
   arch:
     - x86_64
   pkgname:
     - fcitx5-gtk
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.23-1
+    version: 5.1.0-1
     packages:
-      - fcitx5-gtk-5.0.23-1-x86_64.pkg.tar.zst
+      - fcitx5-gtk-5.1.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
