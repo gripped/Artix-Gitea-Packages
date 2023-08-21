@@ -2,6 +2,7 @@
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.17.0
+_pkgver=0.17
 _commit=29cd296aa4635fe6f7b53bda2f2cb1648bdc0782
 pkgrel=1
 pkgdesc="Service monitoring/init system"
@@ -15,14 +16,14 @@ sha256sums=('f3ce6eaaabd571edc16f54907cd6062f22ed5d4b6f9ae6fc1c6533f39469b1f0'
             'SKIP')
 
 build() {
-	cd "$pkgname-$pkgver"
+	cd "$pkgname-$_pkgver"
 	make
 }
 
 package_dinit-base() {
 	pkgdesc='Service monitoring/init system -- base package'
 	install=dinit.install
-	cd "$pkgbase-$pkgver"
+	cd "$pkgbase-$_pkgver"
 	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=no install
 }
 
@@ -31,7 +32,7 @@ package_dinit() {
 	depends=('dinit-base' 'dinit-rc')
 	provides=('svc-manager')
 	conflicts=('svc-manager')
-	cd "$pkgbase-$pkgver"
+	cd "$pkgbase-$_pkgver"
 	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=yes install
 
 	# remove dinit-base pkgs
