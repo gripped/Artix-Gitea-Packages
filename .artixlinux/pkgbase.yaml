@@ -22,8 +22,8 @@ repos:
   system-gremlins:
     version: 0.17.0-1
     packages:
-      - dinit-0.17.0-1-x86_64.pkg.tar.xz
-      - dinit-base-0.17.0-1-x86_64.pkg.tar.xz
+      - dinit-0.17.0-1-x86_64.pkg.tar.zst
+      - dinit-base-0.17.0-1-x86_64.pkg.tar.zst
   system:
     version: 0.16.1-1
     packages:
