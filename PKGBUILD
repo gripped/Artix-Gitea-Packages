@@ -3,8 +3,8 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=gzip
-pkgver=1.12
-pkgrel=3
+pkgver=1.13
+pkgrel=1
 pkgdesc='GNU compression utility'
 arch=('x86_64')
 url='https://www.gnu.org/software/gzip/'
@@ -16,7 +16,7 @@ optdepends=('less: zless support'
            )
 validpgpkeys=('155D3FC500C834486D1EEA677FD9FCCB000BEEEE') # Jim Meyering
 source=("https://ftp.gnu.org/pub/gnu/gzip/gzip-$pkgver.tar.xz"{,.sig})
-sha256sums=('ce5e03e519f637e1f814011ace35c4f87b33c0bbabeec35baf5fbd3479e91956'
+sha256sums=('7454eb6935db17c6655576c2e1b0fabefd38b4d0936e0f87f48cd062ce91a057'
             'SKIP')
 prepare() {
   cd $pkgname-$pkgver
