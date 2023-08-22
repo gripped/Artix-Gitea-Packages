@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-parse
-  version: 1.19.0-4
+  version: 1.19.1-1
   arch:
     - any
   pkgname:
     - python-parse
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.19.0-4
+    version: 1.19.1-1
     packages:
-      - python-parse-1.19.0-4-any.pkg.tar.zst
+      - python-parse-1.19.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
