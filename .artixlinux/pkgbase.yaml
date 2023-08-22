@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pydantic
-  version: 2.1.1-1
+  version: 2.2.1-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.1.1-1
+    version: 2.2.1-1
     packages:
-      - python-pydantic-2.1.1-1-any.pkg.tar.zst
+      - python-pydantic-2.2.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
