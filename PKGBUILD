@@ -1,8 +1,8 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=go-ethereum
-pkgver=1.12.1
-_commit=9c216bd6cbd7f0d3ab179700907a53409beeca9b
+pkgver=1.12.2
+_commit=bed84606583893fdb698cc1b5058cc47b4dbd837
 pkgrel=1
 pkgdesc='Official Go implementation of the Ethereum protocol'
 arch=('x86_64')
@@ -13,8 +13,10 @@ makedepends=('git' 'go')
 provides=('geth')
 conflicts=('geth')
 replaces=('geth')
-source=("git+https://github.com/ethereum/go-ethereum.git#commit=${_commit}")
-sha256sums=('SKIP')
+source=("git+https://github.com/ethereum/go-ethereum.git#commit=${_commit}"
+        'geth-user.service')
+sha256sums=('SKIP'
+            '806ab43221f0c203e663a78afced694786a5adb033f06fab07d07904384d7645')
 
 build() {
     cd ${pkgname}
@@ -28,4 +30,6 @@ package() {
     cd ${pkgname}
 
     install -Dm755 -t "${pkgdir}"/usr/bin build/bin/*
+    install -Dm644 ../geth-user.service \
+        "${pkgdir}/usr/lib/systemd/user/geth.service"
 }
