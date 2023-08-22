@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: electrum
-  version: 4.4.5-1
+  version: 4.4.6-1
   arch:
     - any
   pkgname:
     - electrum
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.4.5-1
+    version: 4.4.6-1
     packages:
-      - electrum-4.4.5-1-any.pkg.tar.zst
+      - electrum-4.4.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
