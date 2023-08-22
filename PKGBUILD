@@ -2,7 +2,7 @@
 
 _name=ansible-compat
 pkgname=python-ansible-compat
-pkgver=4.1.5
+pkgver=4.1.7
 pkgrel=1
 pkgdesc="Functions that help interacting with various versions of Ansible"
 arch=(any)
@@ -27,9 +27,9 @@ checkdepends=(
   python-pytest
   python-pytest-mock
 )
-source=(https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz)
-sha256sums=('597c836a184c1131feeb6b0e23cda236c41fecdee64427375278fb6920fd2e74')
-b2sums=('b28b6e5185b29a55d452e9c72636b31a1a35c68f207cc07376fafd0a70335966d06f927a803582b715b29c090a80aa5aa2663cba54221cb4d2dbcd9a11ec5a7a')
+source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
+sha256sums=('b7a2281aba8a6de67265693de405b251bb5b969c887bf6ac5bc541374cd08b97')
+b2sums=('4cb7284363edc0fd9fee8c722cbf7959e8af18552a38053b06d5d7c60c32ec60a67b1e3bf69e7a4c5c94e25687480cb82c76f898994da07c910781205533f9c9')
 
 build() {
   cd $_name-$pkgver
