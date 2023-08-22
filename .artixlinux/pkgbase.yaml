@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-orjson
-  version: 3.9.4-1
+  version: 3.9.5-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.9.4-1
+    version: 3.9.5-1
     packages:
-      - python-orjson-3.9.4-1-x86_64.pkg.tar.zst
+      - python-orjson-3.9.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
