@@ -3,7 +3,7 @@
 
 pkgname=fprintd
 pkgver=1.94.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="D-Bus service to access fingerprint readers"
 url="https://fprint.freedesktop.org/"
 arch=(x86_64)
@@ -11,6 +11,7 @@ license=(GPL)
 depends=(
   dbus
   glib2
+  libelogind
   libfprint
   polkit
 )
@@ -44,6 +45,9 @@ prepare() {
   git cherry-pick -n 3633dbaa630d4734f3c63721eecbf935315cb80d \
                      ae04fa989720279e5558c3b8ff9ebe1959b1cf36
 
+  # libelogind support
+  git cherry-pick -n 1be0810b695a88407bca084a12063b78a719345e
+
   # https://gitlab.freedesktop.org/libfprint/fprintd/-/issues/151
   git apply -3 ../tests.diff
 }
@@ -51,9 +55,9 @@ prepare() {
 build() {
   local meson_options=(
     -D gtk_doc=true
-    -D pam=false
-    -D pam_modules_dir=/usr/lib/security
+    -D libsystemd=libelogind
     -D systemd=false
+    -D pam_modules_dir=/usr/lib/security
   )
 
   artix-meson fprintd build "${meson_options[@]}"
