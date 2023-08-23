@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: jre11-openjdk-headless
-  version: 11.0.20.u8-2
+  name: java11-openjdk
+  version: 11.0.20.1.u1-1
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - openjdk11-src
     - openjdk11-doc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 11.0.20.u8-2
+    version: 11.0.20.1.u1-1
     packages:
-      - jre11-openjdk-headless-11.0.20.u8-2-x86_64.pkg.tar.zst
-      - jre11-openjdk-11.0.20.u8-2-x86_64.pkg.tar.zst
-      - jdk11-openjdk-11.0.20.u8-2-x86_64.pkg.tar.zst
-      - openjdk11-src-11.0.20.u8-2-x86_64.pkg.tar.zst
-      - openjdk11-doc-11.0.20.u8-2-x86_64.pkg.tar.zst
+      - jre11-openjdk-headless-11.0.20.1.u1-1-x86_64.pkg.tar.zst
+      - jre11-openjdk-11.0.20.1.u1-1-x86_64.pkg.tar.zst
+      - jdk11-openjdk-11.0.20.1.u1-1-x86_64.pkg.tar.zst
+      - openjdk11-src-11.0.20.1.u1-1-x86_64.pkg.tar.zst
+      - openjdk11-doc-11.0.20.1.u1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
