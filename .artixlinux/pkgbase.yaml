@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: jre17-openjdk-headless
-  version: 17.0.8.u7-1
+  name: java17-openjdk
+  version: 17.0.8.1.u1-1
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - openjdk17-src
     - openjdk17-doc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 17.0.8.u7-1
+    version: 17.0.8.1.u1-1
     packages:
-      - jre17-openjdk-headless-17.0.8.u7-1-x86_64.pkg.tar.zst
-      - jre17-openjdk-17.0.8.u7-1-x86_64.pkg.tar.zst
-      - jdk17-openjdk-17.0.8.u7-1-x86_64.pkg.tar.zst
-      - openjdk17-src-17.0.8.u7-1-x86_64.pkg.tar.zst
-      - openjdk17-doc-17.0.8.u7-1-x86_64.pkg.tar.zst
+      - jre17-openjdk-headless-17.0.8.1.u1-1-x86_64.pkg.tar.zst
+      - jre17-openjdk-17.0.8.1.u1-1-x86_64.pkg.tar.zst
+      - jdk17-openjdk-17.0.8.1.u1-1-x86_64.pkg.tar.zst
+      - openjdk17-src-17.0.8.1.u1-1-x86_64.pkg.tar.zst
+      - openjdk17-doc-17.0.8.1.u1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
