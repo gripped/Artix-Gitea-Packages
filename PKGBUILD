@@ -1,0 +1,33 @@
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
+# Contributor: Thomas Arnhold <thomas at arnhold dot org>
+
+pkgname=liborcus
+pkgver=0.18.1
+pkgrel=2
+pkgdesc="File import filter library for spreadsheet documents."
+arch=('x86_64')
+url="https://gitlab.com/orcus/orcus/blob/master/README.md"
+license=('MPL')
+depends=('libixion' 'glibc' 'boost-libs' 'gcc-libs' 'zlib' 'python')
+makedepends=('boost' 'mdds')
+optdepends=('python-requests: in tool bugzilla')
+source=(https://kohei.us/files/orcus/src/${pkgname}-${pkgver}.tar.xz)
+# https://gitlab.com/orcus/orcus/-/releases
+sha256sums=('6006b9f1576315e313df715a7e72a17f3e0b17d7b6bd119cfa8a0b608ce971eb')
+
+build() {
+    cd "${pkgname}"-${pkgver}
+    ./configure --prefix=/usr
+    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+    make
+}
+
+check() {
+    cd "${pkgname}"-${pkgver}
+    make check
+}
+
+package() {
+    cd "${pkgname}"-${pkgver}
+    make DESTDIR="$pkgdir" install
+}
