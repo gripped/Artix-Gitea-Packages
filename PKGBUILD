@@ -3,7 +3,7 @@
 
 pkgname=mold
 pkgver=2.1.0
-pkgrel=1
+pkgrel=0.1
 _commit='d78b7486963a0a64f668ba9859c2395dca3fe3c5'
 pkgdesc='A Modern Linker'
 arch=('x86_64')
@@ -11,7 +11,7 @@ url='https://github.com/rui314/mold'
 license=('MIT')
 # xxhash is bundled
 depends=('glibc' 'gcc-libs' 'mimalloc' 'openssl' 'zlib' 'tbb' 'zstd')
-makedepends=('git' 'python' 'cmake' 'mold')
+makedepends=('git' 'python' 'cmake')
 checkdepends=('clang' 'libdwarf')
 source=("$pkgname::git+$url.git#commit=$_commit")
 b2sums=('SKIP')
@@ -31,8 +31,7 @@ build() {
   -D CMAKE_INSTALL_LIBEXECDIR='lib' \
   -D MOLD_USE_SYSTEM_MIMALLOC=ON \
   -D MOLD_USE_SYSTEM_TBB=ON \
-  -D MOLD_LTO=ON \
-  -D MOLD_USE_MOLD=ON
+  -D MOLD_LTO=ON
 
   cmake --build build
 }
