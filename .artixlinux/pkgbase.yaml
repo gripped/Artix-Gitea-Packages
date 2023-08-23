@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ttf-roboto-mono
-  version: 3.000-1
+  version: 3.000-2
   arch:
     - any
   pkgname:
     - ttf-roboto-mono
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.000-1
+    version: 3.000-2
     packages:
-      - ttf-roboto-mono-3.000-1-any.pkg.tar.zst
+      - ttf-roboto-mono-3.000-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
