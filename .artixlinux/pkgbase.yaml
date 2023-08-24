@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pv
-  version: 1.7.0-1
+  version: 1.7.24-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.0-1
+    version: 1.7.24-1
     packages:
-      - pv-1.7.0-1-x86_64.pkg.tar.zst
+      - pv-1.7.24-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
