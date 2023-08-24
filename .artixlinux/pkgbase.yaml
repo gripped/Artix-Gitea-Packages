@@ -1,17 +1,17 @@
 ---
 pkgbase:
-  name: python-django
-  version: 4.2.3-1
+  name: django
+  version: 4.2.4-1
   arch:
     - any
   pkgname:
     - python-django
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2.3-1
+    version: 4.2.4-1
     packages:
-      - python-django-4.2.3-1-any.pkg.tar.zst
+      - python-django-4.2.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
