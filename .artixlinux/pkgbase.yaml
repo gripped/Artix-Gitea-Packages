@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mutter
-  version: 44.3-1
+  version: 44.4-1
   arch:
     - x86_64
   pkgname:
     - mutter
     - mutter-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 44.3-1
+    version: 44.4-1
     packages:
-      - mutter-44.3-1-x86_64.pkg.tar.zst
-      - mutter-docs-44.3-1-x86_64.pkg.tar.zst
+      - mutter-44.4-1-x86_64.pkg.tar.zst
+      - mutter-docs-44.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
