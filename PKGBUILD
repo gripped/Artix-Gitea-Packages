@@ -14,11 +14,9 @@ url="https://www.ivarch.com/programs/$pkgname.shtml"
 license=('custom:Artistic 2.0')
 depends=(glibc)
 _archive="$pkgname-$pkgver"
-source=("${url%/*}/sources/$_archive.tar.gz"
-        "$_archive.tar.gz.sig::${url%/*}/sources/$_archive.tar.gz.txt")
+source=("${url%/*}/sources/$_archive.tar.gz")
 # source=("$_url/releases/download/v$pkgver/$_archive.tar.gz")
-sha256sums=('3bf43c5809c8d50066eaeaea5a115f6503c57a38c151975b710aa2bee857b65e'
-            'SKIP')
+sha256sums=('3bf43c5809c8d50066eaeaea5a115f6503c57a38c151975b710aa2bee857b65e')
 validpgpkeys=(2189D5C29F041F2277AFD50AC1596BA33FC56F51  # andrew.wood@ivarch.com
               4267B4F90F2678A112169BD61D1EF7581B45E9A0) # https://codeberg.org/a-j-wood.gpg
 
