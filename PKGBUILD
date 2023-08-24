@@ -19,9 +19,9 @@ pkgname=(
   pipewire-v4l2
   pipewire-x11-bell
 )
-_commit=31cd694602cc37ada3a6d02a5a381f4e3933ecef  # tags/0.3.77
-pkgver=0.3.77
-pkgrel=2
+_commit=188f784430283afb08abb8e6540ddbc674e09399  # tags/0.3.78
+pkgver=0.3.78
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
