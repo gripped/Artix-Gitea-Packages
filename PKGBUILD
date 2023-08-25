@@ -3,7 +3,7 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=nvidia
-pkgver=535.98
+pkgver=535.104.05
 pkgrel=2
 pkgdesc="NVIDIA drivers for linux"
 arch=('x86_64')
