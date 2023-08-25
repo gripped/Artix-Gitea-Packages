@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: lib32-nvidia-utils
-  version: 535.98-1
+  version: 535.104.05-1
   arch:
     - x86_64
   pkgname:
     - lib32-nvidia-utils
     - lib32-opencl-nvidia
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,8 +38,10 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 535.104.05-1
+    packages:
+      - lib32-nvidia-utils-535.104.05-1-x86_64.pkg.tar.zst
+      - lib32-opencl-nvidia-535.104.05-1-x86_64.pkg.tar.zst
   lib32:
     version: 535.98-1
     packages:
