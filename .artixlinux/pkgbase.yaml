@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tlp
-  version: 1.5.0-6
+  version: 1.6.0-1
   arch:
     - any
   pkgname:
     - tlp
     - tlp-rdw
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.0-6
+    version: 1.6.0-1
     packages:
-      - tlp-1.5.0-6-any.pkg.tar.zst
-      - tlp-rdw-1.5.0-6-any.pkg.tar.zst
+      - tlp-1.6.0-1-any.pkg.tar.zst
+      - tlp-rdw-1.6.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
