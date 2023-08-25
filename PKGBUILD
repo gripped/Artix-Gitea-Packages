@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Chih-Hsuan Yen <yan12125@archlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Jonathan Steel <jsteel at archlinux.org>
 # Contributor: Chris Severance aur.severach AatT spamgourmet.com
 
 pkgname=python-s3transfer
 # https://github.com/boto/s3transfer/blob/develop/CHANGELOG.rst
-pkgver=0.6.1
+pkgver=0.6.2
 pkgrel=1
 pkgdesc='Amazon S3 Transfer Manager for Python'
 arch=('any')
@@ -19,7 +18,7 @@ optdepends=(
   'python-awscrt'
 )
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-sha256sums=('6a633feadd70e1d1f572c34144a9cda24d98773d866767341fef9ad2e6eadeb5')
+sha256sums=('c40c2791111a19f7c6db32671cc924daf67fd577557f3bee6ec40912155d69e4')
 
 build() {
   cd s3transfer-$pkgver
