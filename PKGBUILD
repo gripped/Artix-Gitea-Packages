@@ -1,24 +1,23 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Radek Podgorny <radek@podgorny.cz>
 # Contributor: Dan Anderson <dan-anderson at cox dptnet>
 
 pkgname=mosquitto
-pkgver=2.0.15
-pkgrel=2
+pkgver=2.0.16
+pkgrel=1
 pkgdesc="An Open Source MQTT Broker"
 arch=(x86_64)
 url="https://mosquitto.org/"
 license=(BSD)
 depends=(cjson openssl util-linux-libs)
 makedepends=(c-ares cmake docbook-xsl libwebsockets uthash)
-options=(debug)
 source=(
   https://mosquitto.org/files/source/mosquitto-$pkgver.tar.gz{,.asc}
   "sysusers_mosquitto.conf"
 )
 backup=("etc/$pkgname/$pkgname.conf")
-sha512sums=('8a0c58222ea0b9304e7f096f6d13965478072baf1d1c9bc931b32a33f5ea8196c2dd54bde8d83fec7ed9cd413cb5fb115ce0a6701ca20664df52fdd7ca63ddaf'
+sha512sums=('9e54f0a19a68afd17ca9d0d9ba8a0220e883687312f973a64e09da216cc0ad89dab959863bf1a34f737338e97e54559e8d4eb4178fce5a7fc1e02965c499db97'
             'SKIP'
             '21848b890c2db258138795ec21a009e022b6a8369217eb31939f976ad434229dd9f61d33e8109ade7bc001e8668e9d42b59c1ab079753860417961e102356f0e')
 validpgpkeys=('A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7')
