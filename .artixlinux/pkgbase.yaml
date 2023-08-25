@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: texlive-bin
-  version: 2023.66984-15
+  version: 2023.66984-16
   arch:
     - x86_64
   pkgname:
     - texlive-bin
     - libsynctex
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2023.66984-15
+    version: 2023.66984-16
     packages:
-      - texlive-bin-2023.66984-15-x86_64.pkg.tar.zst
-      - libsynctex-2023.66984-15-x86_64.pkg.tar.zst
+      - texlive-bin-2023.66984-16-x86_64.pkg.tar.zst
+      - libsynctex-2023.66984-16-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
