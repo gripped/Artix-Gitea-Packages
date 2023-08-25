@@ -6,7 +6,7 @@
 
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
-pkgver=5.68
+pkgver=5.69
 pkgrel=1
 url="http://www.bluez.org/"
 arch=('x86_64')
@@ -16,7 +16,7 @@ source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,
         bluetooth.modprobe
 )
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
-sha256sums=('fc505e6445cb579a55cacee6821fe70d633921522043d322b696de0a175ff933'
+sha256sums=('bc5a35ddc7c72d0d3999a0d7b2175c8b7d57ab670774f8b5b4900ff38a2627fc'
             'SKIP'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
@@ -49,7 +49,7 @@ check() {
 
 package_bluez() {
   pkgdesc="Daemons for the bluetooth protocol stack"
-  depends=('libical' 'dbus' 'glib2' 'alsa-lib' 'json-c')
+  depends=('libical' 'dbus' 'glib2' 'alsa-lib' 'json-c' 'glibc')
   backup=('etc/bluetooth/main.conf')
   conflicts=('obexd-client' 'obexd-server')
 
@@ -84,7 +84,6 @@ Name=org.bluez.obex
 Exec=/usr/lib/bluetooth/obexd
 EOF
 
-  # FS#74157 - bluez systemd service fails without localstatedir present
   install -dm700 "${pkgdir}"/var/lib/bluetooth
 
   # cleanup  - these libs go into bluez-libs
@@ -139,7 +138,7 @@ package_bluez-libs() {
 
 package_bluez-cups() {
   pkgdesc="CUPS printer backend for Bluetooth printers"
-  depends=('cups')
+  depends=('cups' 'glib2' 'glibc' 'dbus')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR="${pkgdir}" install-cupsPROGRAMS
@@ -150,7 +149,7 @@ package_bluez-cups() {
 
 package_bluez-hid2hci() {
   pkgdesc="Put HID proxying bluetooth HCI's into HCI mode"
-  depends=('udev')
+  depends=('libudev' 'glibc')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR=${pkgdir} \
@@ -166,7 +165,7 @@ package_bluez-hid2hci() {
 
 package_bluez-plugins() {
   pkgdesc="bluez plugins (PS3 Sixaxis controller)"
-  depends=('udev')
+  depends=('libudev' 'glibc')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR="${pkgdir}" \
