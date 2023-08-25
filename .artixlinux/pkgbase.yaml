@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sqlite
-  version: 3.42.0-1
+  version: 3.43.0-1
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - lemon
     - sqlite-doc
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -23,8 +23,13 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.43.0-1
+    packages:
+      - sqlite-3.43.0-1-x86_64.pkg.tar.zst
+      - sqlite-tcl-3.43.0-1-x86_64.pkg.tar.zst
+      - sqlite-analyzer-3.43.0-1-x86_64.pkg.tar.zst
+      - lemon-3.43.0-1-x86_64.pkg.tar.zst
+      - sqlite-doc-3.43.0-1-x86_64.pkg.tar.zst
   system:
     version: 3.42.0-1
     packages:
