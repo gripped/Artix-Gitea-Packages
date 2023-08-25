@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libinput
-  version: 1.23.0-1
+  version: 1.24.0-1
   arch:
     - x86_64
   pkgname:
     - libinput
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.23.0-1
+    version: 1.24.0-1
     packages:
-      - libinput-1.23.0-1-x86_64.pkg.tar.zst
+      - libinput-1.24.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
