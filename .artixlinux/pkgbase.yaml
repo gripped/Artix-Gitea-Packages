@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: nvidia-settings
-  version: 535.98-1
+  version: 535.104.05-1
   arch:
     - x86_64
   pkgname:
     - nvidia-settings
     - libxnvctrl
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 535.104.05-1
+    packages:
+      - nvidia-settings-535.104.05-1-x86_64.pkg.tar.zst
+      - libxnvctrl-535.104.05-1-x86_64.pkg.tar.zst
   world:
     version: 535.98-1
     packages:
