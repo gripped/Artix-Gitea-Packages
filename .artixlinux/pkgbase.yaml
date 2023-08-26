@@ -16,12 +16,12 @@ pkgbase:
     - lib32-mesa-vdpau
     - lib32-mesa
 actions:
-  addRepo: lib32-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: lib32-gremlins
+  removeRepo: lib32-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -43,6 +43,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
     version: 1:23.1.6-2
     packages:
       - lib32-vulkan-mesa-layers-1:23.1.6-2-x86_64.pkg.tar.zst
@@ -55,9 +58,6 @@ repos:
       - lib32-libva-mesa-driver-1:23.1.6-2-x86_64.pkg.tar.zst
       - lib32-mesa-vdpau-1:23.1.6-2-x86_64.pkg.tar.zst
       - lib32-mesa-1:23.1.6-2-x86_64.pkg.tar.zst
-  lib32-gremlins:
-    version: null
-    packages: []
   lib32:
     version: 1:23.1.6-1
     packages:
