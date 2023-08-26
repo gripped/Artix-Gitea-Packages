@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-libxcb
-  version: 1.15-2
+  version: 1.16-1
   arch:
     - x86_64
   pkgname:
     - lib32-libxcb
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.15-2
+    version: 1.16-1
     packages:
-      - lib32-libxcb-1.15-2-x86_64.pkg.tar.zst
+      - lib32-libxcb-1.16-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
