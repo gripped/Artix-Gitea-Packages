@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: magic-wormhole
-  version: 0.12.0-9
+  version: 0.13.0-1
   arch:
     - any
   pkgname:
     - magic-wormhole
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.12.0-9
+    version: 0.13.0-1
     packages:
-      - magic-wormhole-0.12.0-9-any.pkg.tar.zst
+      - magic-wormhole-0.13.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
