@@ -1,39 +1,35 @@
-# $Id$
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 _pkgbasename=libdrm
 pkgname=lib32-$_pkgbasename
-pkgver=2.4.115
+pkgver=2.4.116
 pkgrel=1
 pkgdesc="Userspace interface to kernel DRM services (32-bit)"
 url="https://dri.freedesktop.org/"
 arch=(x86_64)
 license=('custom')
-depends=('lib32-libpciaccess' $_pkgbasename)
-makedepends=('valgrind' 'meson')
+depends=('lib32-libpciaccess' 'lib32-glibc' $_pkgbasename)
+makedepends=('meson')
 checkdepends=('lib32-cairo')
-source=(https://dri.freedesktop.org/${_pkgbasename}/${_pkgbasename}-${pkgver}.tar.xz)
-sha512sums=('0c38d3cfd76f627b899f052527c2939d5fc87a417422dceb0761839ba21e69736703a87ba170b5ba7a4aca2506a240760c8c97ca1781a7fb78468225295293bd')
-validpgpkeys=('B97BD6A80CAC4981091AE547FE558C72A67013C3') # Maarten Lankhorst <maarten.lankhorst@canonical.com>
-validpgpkeys+=('215DEE688925CCB965BE5DA97C03D7797B6E1AE2') # Damien Lespiau <damien.lespiau@intel.com>
-validpgpkeys+=('10A6D91DA1B05BD29F6DEBAC0C74F35979C486BE') # David Airlie <airlied@redhat.com>
-validpgpkeys+=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D') # Emil Velikov <emil.l.velikov@gmail.com>
-validpgpkeys+=('D6285B5E899299F3DA746184191C9B905522B045') # Rob Clark <robclark@freedesktop.org>
-validpgpkeys+=('E8EB5B34081CE1EEA26EFE195B5BDA071D49CC38') # Kenneth Graunke <kenneth.w.graunke@intel.com>
-validpgpkeys+=('FC9BAE1435A9F7F664B82057B5D62936D1FC9EE8') # Eric Anholt <eric@anholt.net>
-validpgpkeys+=('3BB639E56F861FA2E86505690FDD682D974CA72A') # Matt Turner <mattst88@gmail.com>
-validpgpkeys+=('C20F5C4490D7D64B4C9A09998CD1DF552975297B') # Robert Bragg <robert@sixbynine.org>
-validpgpkeys+=('CD47C5341A375F33BEF7BAFAFDD15D5ACEF0F2B1') # Marek Olšák <maraeo@gmail.com>
-validpgpkeys+=('A66D805F7C9329B4C5D82767CCC4F07FAC641EFF') # Daniel Stone <daniels@collabora.com>
-validpgpkeys+=('CFD0E654BCBE5DD2D030D222CFCC297C6D0A120B') # Lucas Stach <l.stach@pengutronix.de>
+source=(https://dri.freedesktop.org/${_pkgbasename}/${_pkgbasename}-${pkgver}.tar.xz{,.sig})
+sha512sums=('1287d1896deeb8cfb4532c6750eb43493dcefbfaaa598a73bbb682aa749594eaad3ed1fa2fe73d06280350f365a92a0c20cad8be76f3da2ed59b04aa008de911'
+            'SKIP')
+#validpgpkeys=('10A6D91DA1B05BD29F6DEBAC0C74F35979C486BE') # David Airlie <airlied@redhat.com>
+#validpgpkeys=('2617F6F8DEBB0A7A15C405C983FD600E340FB5FF') # Samuel Pitoiset <samuel.pitoiset@gmail.com>
+validpgpkeys=('34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48') # emersion <contact@emersion.fr>
+
+prepare() {
+  cd $_pkgbasename-$pkgver
+
+}
 
 build() {
   export CC="gcc -m32"
   export CXX="g++ -m32"
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
-  arch-meson $_pkgbasename-$pkgver build \
+  artix-meson $_pkgbasename-$pkgver build \
     --libdir=/usr/lib32 \
     -Dudev=false \
     -Dman-pages=disabled \
