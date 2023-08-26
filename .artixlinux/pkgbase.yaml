@@ -16,12 +16,12 @@ pkgbase:
     - mesa-vdpau
     - mesa
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,6 +34,9 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 1:23.1.6-2
     packages:
       - vulkan-mesa-layers-1:23.1.6-2-x86_64.pkg.tar.zst
@@ -46,9 +49,6 @@ repos:
       - libva-mesa-driver-1:23.1.6-2-x86_64.pkg.tar.zst
       - mesa-vdpau-1:23.1.6-2-x86_64.pkg.tar.zst
       - mesa-1:23.1.6-2-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 1:23.1.6-1
     packages:
