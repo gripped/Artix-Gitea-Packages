@@ -9,29 +9,26 @@ pkgbase:
     - linux-headers
     - linux-docs
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 6.4.12.artix1-1
     packages:
       - linux-6.4.12.artix1-1-x86_64.pkg.tar.zst
       - linux-headers-6.4.12.artix1-1-x86_64.pkg.tar.zst
       - linux-docs-6.4.12.artix1-1-x86_64.pkg.tar.zst
-  system:
-    version: 6.4.10.artix1-1
-    packages:
-      - linux-6.4.10.artix1-1-x86_64.pkg.tar.zst
-      - linux-headers-6.4.10.artix1-1-x86_64.pkg.tar.zst
-      - linux-docs-6.4.10.artix1-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
