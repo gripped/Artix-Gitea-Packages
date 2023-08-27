@@ -25,7 +25,8 @@ build() {
     --libexecdir=lib \
     -Dqt=true \
     -Dvapi=true \
-    -Dcompose=true
+    -Dcompose=true \
+    -Dsystemd=false
   meson compile -C build
 }
 
