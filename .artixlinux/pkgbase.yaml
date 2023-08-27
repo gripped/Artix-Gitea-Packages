@@ -9,12 +9,12 @@ pkgbase:
     - pyside6
     - pyside6-tools
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,14 +27,14 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 6.5.2-2
     packages:
       - shiboken6-6.5.2-2-x86_64.pkg.tar.zst
       - pyside6-6.5.2-2-x86_64.pkg.tar.zst
       - pyside6-tools-6.5.2-2-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 6.5.2-1
     packages:
