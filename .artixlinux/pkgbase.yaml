@@ -17,12 +17,12 @@ pkgbase:
     - usbip
     - x86_energy_perf_policy
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,6 +35,9 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 6.3-5
     packages:
       - bootconfig-6.3-5-x86_64.pkg.tar.zst
@@ -48,9 +51,6 @@ repos:
       - turbostat-6.3-5-x86_64.pkg.tar.zst
       - usbip-6.3-5-x86_64.pkg.tar.zst
       - x86_energy_perf_policy-6.3-5-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 6.3-4
     packages:
