@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: freetds
-  version: 1.3.18-1
+  version: 1.3.19-1
   arch:
     - x86_64
   pkgname:
     - freetds
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.18-1
+    version: 1.3.19-1
     packages:
-      - freetds-1.3.18-1-x86_64.pkg.tar.zst
+      - freetds-1.3.19-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
