@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-text-csv
-  version: 2.02-2
+  version: 2.03-1
   arch:
     - any
   pkgname:
     - perl-text-csv
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.02-2
+    version: 2.03-1
     packages:
-      - perl-text-csv-2.02-2-any.pkg.tar.zst
+      - perl-text-csv-2.03-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
