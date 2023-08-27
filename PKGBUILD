@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Jameson Pugh <imntreal@gmail.com>
 # Contributor: Tim Jester-Pfadt <t.jp<at>gmx.de>
 
 pkgbase=appstream
 pkgname=(appstream appstream-qt)
-pkgver=0.16.2
+pkgver=0.16.3
 pkgrel=1
 pkgdesc='Provides a standard for creating app stores across distributions'
 arch=(x86_64)
@@ -14,11 +14,10 @@ depends=(curl librsvg libyaml libxmlb)
 makedepends=(meson xmlto gobject-introspection gtk-doc qt5-tools itstool vala gperf)
 source=(https://www.freedesktop.org/software/appstream/releases/AppStream-$pkgver.tar.xz{,.asc}
         update-appstream-cache.hook)
-sha256sums=('f9cb80bd388fbf06be268afa7f2d65863c85d605ad874b905094f3982d03f232'
+sha256sums=('081c917646e94d7221c9e4aae54dacda95a27c607fa93cd8e6344a2b318b98b1'
             'SKIP'
             '3a96a1479cfd18dad36c2ca3181aabe46af9bf772c00b965d86ec5f55cd0e0eb')
 validpgpkeys=(D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB) # Matthias Klumpp <matthias@tenstral.net>
-options=(debug)
 
 build() {
   meson build AppStream-$pkgver \
@@ -26,8 +25,7 @@ build() {
     --libexecdir=lib \
     -Dqt=true \
     -Dvapi=true \
-    -Dcompose=true \
-    -Dsystemd=false
+    -Dcompose=true
   meson compile -C build
 }
 
