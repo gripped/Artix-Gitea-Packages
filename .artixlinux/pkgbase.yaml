@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: protobuf
-  version: 23.4-1
+  version: 24.2-1
   arch:
     - x86_64
   pkgname:
     - protobuf
     - python-protobuf
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 24.2-1
+    packages:
+      - protobuf-24.2-1-x86_64.pkg.tar.zst
+      - python-protobuf-24.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
