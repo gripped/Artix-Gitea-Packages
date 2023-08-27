@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: hunspell-es_any
-  version: 1:2.7-3
+  name: hunspell-es
+  version: 1:2.8-1
   arch:
     - any
   pkgname:
@@ -29,11 +29,11 @@ pkgbase:
     - hunspell-es_uy
     - hunspell-es_ve
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -53,31 +53,31 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.7-3
+    version: 1:2.8-1
     packages:
-      - hunspell-es_any-1:2.7-3-any.pkg.tar.zst
-      - hyphen-es-1:2.7-3-any.pkg.tar.zst
-      - mythes-es-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_ar-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_bo-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_cl-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_co-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_cr-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_cu-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_do-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_ec-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_es-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_gt-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_hn-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_mx-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_ni-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_pa-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_pe-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_pr-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_py-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_sv-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_uy-1:2.7-3-any.pkg.tar.zst
-      - hunspell-es_ve-1:2.7-3-any.pkg.tar.zst
+      - hunspell-es_any-1:2.8-1-any.pkg.tar.zst
+      - hyphen-es-1:2.8-1-any.pkg.tar.zst
+      - mythes-es-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_ar-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_bo-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_cl-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_co-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_cr-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_cu-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_do-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_ec-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_es-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_gt-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_hn-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_mx-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_ni-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_pa-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_pe-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_pr-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_py-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_sv-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_uy-1:2.8-1-any.pkg.tar.zst
+      - hunspell-es_ve-1:2.8-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
