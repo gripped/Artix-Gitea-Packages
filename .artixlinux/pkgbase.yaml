@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: noto-fonts-cjk
-  version: 20220126-2
+  version: 20230817-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20220126-2
+    version: 20230817-1
     packages:
-      - noto-fonts-cjk-20220126-2-any.pkg.tar.zst
+      - noto-fonts-cjk-20230817-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
