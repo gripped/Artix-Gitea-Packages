@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: wf-recorder
-  version: 0.3.0-5
+  version: 0.4.0-1
   arch:
     - x86_64
   pkgname:
     - wf-recorder
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.4.0-1
+    packages:
+      - wf-recorder-0.4.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.3.0-5
     packages:
