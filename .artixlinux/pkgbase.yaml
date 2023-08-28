@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: kde-development-environment-meta
-  version: 20221206-2
+  version: 20230827-1
   arch:
     - any
   pkgname:
     - kde-development-environment-meta
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20221206-2
+    version: 20230827-1
     packages:
-      - kde-development-environment-meta-20221206-2-any.pkg.tar.zst
+      - kde-development-environment-meta-20230827-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
