@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kcachegrind
-  version: 23.04.3-1
+  version: 23.08.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - kcachegrind-common
     - qcachegrind
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 23.08.0-1
+    packages:
+      - kcachegrind-23.08.0-1-x86_64.pkg.tar.zst
+      - kcachegrind-common-23.08.0-1-x86_64.pkg.tar.zst
+      - qcachegrind-23.08.0-1-x86_64.pkg.tar.zst
   world:
     version: 23.04.3-1
     packages:
