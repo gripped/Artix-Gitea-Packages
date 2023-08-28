@@ -9,7 +9,7 @@ arch=(x86_64)
 url='https://api.kde.org/futuresql/html/index.html'
 license=(LGPL)
 makedepends=(extra-cmake-modules qt5-base qt6-base)
-source=(https://download.kde.org/stable/$pkgname/$pkgbase-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/$pkgbase/$pkgbase-$pkgver.tar.xz{,.sig})
 sha256sums=('e44ed8d5a9618b3ca7ba2983ed9c5f7572e6e0a5b199f94868834b71ccbebd43'
             'SKIP')
 validpgpkeys=(C3D7CAFBF442353F95F69F4AA81E075ABEC80A7E) # Jonah Brüchert <jbb@kaidan.im>
