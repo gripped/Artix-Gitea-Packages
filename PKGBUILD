@@ -3,7 +3,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=k3b
-pkgver=23.04.3
+pkgver=23.08.0
 pkgrel=1
 epoch=1
 pkgdesc='Feature-rich and easy to handle CD burning application'
@@ -11,7 +11,7 @@ arch=(x86_64)
 url='https://apps.kde.org/k3b/'
 license=(GPL)
 depends=(libkcddb kcmutils knotifyconfig libmad kfilemetadata knewstuff
-         libmpcdec libdvdread libburn libsamplerate)
+         libmpcdec libdvdread libburn libsamplerate qt5-webengine)
 makedepends=(extra-cmake-modules kdoctools)
 optdepends=('cdrtools: for CD burning with cdrecord'
             'dvd+rw-tools: for DVD burning support'
@@ -21,7 +21,7 @@ optdepends=('cdrtools: for CD burning with cdrecord'
             'cdparanoia: for CD ripping support' 'transcode: for DVD ripping support')
 groups=(kde-applications kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('abd2db6a9553a20956623b440e31703804dbb4172ff3ecf9ff07697e098721cf'
+sha256sums=('e643feca11d5e6e43b05e00359aee5e01920e25b04ff0e5a126b98395ca77cff'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
