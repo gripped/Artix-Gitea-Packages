@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: kcharselect
-  version: 23.04.3-1
+  version: 23.08.0-1
   arch:
     - x86_64
   pkgname:
     - kcharselect
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 23.08.0-1
+    packages:
+      - kcharselect-23.08.0-1-x86_64.pkg.tar.zst
   world:
     version: 23.04.3-1
     packages:
