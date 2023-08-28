@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt5-connectivity
-  version: 5.15.10+kde+r5-1
+  version: 5.15.10+kde+r6-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.15.10+kde+r5-1
+    version: 5.15.10+kde+r6-1
     packages:
-      - qt5-connectivity-5.15.10+kde+r5-1-x86_64.pkg.tar.zst
+      - qt5-connectivity-5.15.10+kde+r6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
