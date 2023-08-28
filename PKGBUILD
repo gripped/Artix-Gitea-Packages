@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=ayatana-ido
-pkgver=0.10.0
+pkgver=0.10.1
 pkgrel=1
 pkgdesc="Ayatana Indicator Display Objects"
 arch=("x86_64")
@@ -15,8 +15,9 @@ depends=(
 makedepends=(
 	"gcc"
 	"make"
-	"cmake>=3.13"
 	"pkgconf"
+
+	"cmake>=3.13"
 	"gobject-introspection"
 	"vala"
 
@@ -25,7 +26,7 @@ source=(
 	"https://github.com/AyatanaIndicators/$pkgname/archive/refs/tags/$pkgver.tar.gz"
 )
 sha256sums=(
-	"d6ec310572de38c6b5c4ca9ff0979366a3c783af14bb47113cab5da7d5946fa7"
+	"26187915a6f3402195e2c78d9e8a54549112a3cd05bb2fbe2059d3e78fc0e071"
 )
 
 build() {
