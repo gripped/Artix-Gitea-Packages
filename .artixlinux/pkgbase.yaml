@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: grafana
-  version: 10.0.3-1
+  version: 10.1.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.0.3-1
+    version: 10.1.0-1
     packages:
-      - grafana-10.0.3-1-x86_64.pkg.tar.zst
+      - grafana-10.1.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
