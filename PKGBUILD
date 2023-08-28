@@ -6,7 +6,7 @@
 pkgname=kdevelop
 pkgver=23.08.0
 _clangver=16.0.6
-pkgrel=2
+pkgrel=2.1
 pkgdesc='C++ IDE using KDE technologies'
 arch=(x86_64)
 url='http://www.kdevelop.org/'
