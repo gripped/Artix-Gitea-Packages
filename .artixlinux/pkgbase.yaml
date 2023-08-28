@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kdevelop
-  version: 23.04.3-2
+  version: 23.08.0-2
   arch:
     - x86_64
   pkgname:
     - kdevelop
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - kdevelop-23.04.3-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 23.08.0-2
+    packages:
+      - kdevelop-23.08.0-2-x86_64.pkg.tar.zst
   world:
     version: 23.04.3-1
     packages:
