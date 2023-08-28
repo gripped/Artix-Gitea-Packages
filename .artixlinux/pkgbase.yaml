@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libquotient
-  version: 0.8.0-2
+  version: 0.8.1.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.0-2
+    version: 0.8.1.1-1
     packages:
-      - libquotient-0.8.0-2-x86_64.pkg.tar.zst
+      - libquotient-0.8.1.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
