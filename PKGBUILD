@@ -2,8 +2,8 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=koko
-pkgver=23.04.3
-pkgrel=2
+pkgver=23.08.0
+pkgrel=1
 pkgdesc='Image gallery application'
 url='https://apps.kde.org/koko/'
 arch=(x86_64)
@@ -11,21 +11,22 @@ license=(GPL LGPL)
 groups=(kde-applications kde-graphics)
 depends=(kirigami2 kdeclarative qt5-location kfilemetadata kquickimageeditor)
 makedepends=(extra-cmake-modules)
+# update with ./download-data
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
-        https://download.geonames.org/export/dump/cities1000.zip
-        https://download.geonames.org/export/dump/admin1CodesASCII.txt
-        https://download.geonames.org/export/dump/admin2Codes.txt)
-sha256sums=('09a5fdadeb3bd94ab5039a63fef6d47c534ec586f41af2517a389792e475e6d8'
+        https://sources.archlinux.org/other/packages/koko/cities1000-2023-07-30.zip
+        https://sources.archlinux.org/other/packages/koko/admin1CodesASCII-2023-07-30.txt
+        https://sources.archlinux.org/other/packages/koko/admin2Codes-2023-07-30.txt)
+sha256sums=('2d473afa9360e8f5bd0cc7cd0f983bb7e0e9da1cc86240c354e171d3119f27a2'
             'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
+            '7e79dd7c8deaa0c3cc05b61a0762149368ec78a412899d7c1b38cb4506022858'
+            '52f5125b29bcf8dd864ede32f8ed81fe189bc18cd21b7e20212f15686904d102'
+            'b29e85bea1b352850cb3ef04ab7c1d7df39d6467f7d2459a1748b263176ec865')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 prepare() {
-  cp -L cities1000.zip admin1CodesASCII.txt admin2Codes.txt $pkgname-$pkgver/src
+  cp -L cities1000-2023-07-30.zip admin1CodesASCII-2023-07-30.txt $pkgname-$pkgver/src
 }
 
 build() {
