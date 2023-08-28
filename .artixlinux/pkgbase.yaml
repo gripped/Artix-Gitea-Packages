@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gdal
-  version: 3.7.0-7
+  version: 3.7.1-1
   arch:
     - x86_64
   pkgname:
     - gdal
     - python-gdal
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.7.0-7
+    version: 3.7.1-1
     packages:
-      - gdal-3.7.0-7-x86_64.pkg.tar.zst
-      - python-gdal-3.7.0-7-x86_64.pkg.tar.zst
+      - gdal-3.7.1-1-x86_64.pkg.tar.zst
+      - python-gdal-3.7.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
