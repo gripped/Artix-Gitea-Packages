@@ -9,8 +9,8 @@
 
 pkgname=julia
 epoch=2
-pkgver=1.9.2
-pkgrel=3
+pkgver=1.9.3
+pkgrel=1
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
 url='https://julialang.org/'
@@ -29,7 +29,7 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         f11bfc6c.patch
         21d4c2f1.patch)
 backup=(etc/julia/startup.jl)
-sha256sums=('87063d4c2ea41c736aa2e8cbbc7c2f1a062e223955157f8404553ced764913cd'
+sha256sums=('8fc0c9dc5443a28d359bd79dda3940fa94ba2b7966b89865beb20da81123c316'
             'SKIP'
             '3c0c03eabb668e3242fcd3058c1011dfbb579cc1c5adc3ae1016531e711cc64e'
             '94e6d4fa9c68360c795807b49bcb126bbbbf4c927cf7e8358b3e0e3d2183d63e'
