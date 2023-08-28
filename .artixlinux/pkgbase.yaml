@@ -11,18 +11,21 @@ pkgbase:
     - lemon
     - sqlite-doc
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 3.43.0-1
     packages:
       - sqlite-3.43.0-1-x86_64.pkg.tar.zst
@@ -30,14 +33,6 @@ repos:
       - sqlite-analyzer-3.43.0-1-x86_64.pkg.tar.zst
       - lemon-3.43.0-1-x86_64.pkg.tar.zst
       - sqlite-doc-3.43.0-1-x86_64.pkg.tar.zst
-  system:
-    version: 3.42.0-1
-    packages:
-      - sqlite-3.42.0-1-x86_64.pkg.tar.zst
-      - sqlite-tcl-3.42.0-1-x86_64.pkg.tar.zst
-      - sqlite-analyzer-3.42.0-1-x86_64.pkg.tar.zst
-      - lemon-3.42.0-1-x86_64.pkg.tar.zst
-      - sqlite-doc-3.42.0-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
