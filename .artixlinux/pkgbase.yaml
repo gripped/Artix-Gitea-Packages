@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kde-applications-meta
-  version: 23.04-1
+  version: 23.08-1
   arch:
     - any
   pkgname:
@@ -17,14 +17,13 @@ pkgbase:
     - kde-sdk-meta
     - kde-system-meta
     - kde-utilities-meta
-    - telepathy-kde-meta
     - kdevelop-meta
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -44,22 +43,21 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.04-1
+    version: 23.08-1
     packages:
-      - kde-applications-meta-23.04-1-any.pkg.tar.zst
-      - kde-accessibility-meta-23.04-1-any.pkg.tar.zst
-      - kde-education-meta-23.04-1-any.pkg.tar.zst
-      - kde-games-meta-23.04-1-any.pkg.tar.zst
-      - kde-graphics-meta-23.04-1-any.pkg.tar.zst
-      - kde-multimedia-meta-23.04-1-any.pkg.tar.zst
-      - kde-network-meta-23.04-1-any.pkg.tar.zst
-      - kde-office-meta-23.04-1-any.pkg.tar.zst
-      - kde-pim-meta-23.04-1-any.pkg.tar.zst
-      - kde-sdk-meta-23.04-1-any.pkg.tar.zst
-      - kde-system-meta-23.04-1-any.pkg.tar.zst
-      - kde-utilities-meta-23.04-1-any.pkg.tar.zst
-      - telepathy-kde-meta-23.04-1-any.pkg.tar.zst
-      - kdevelop-meta-23.04-1-any.pkg.tar.zst
+      - kde-applications-meta-23.08-1-any.pkg.tar.zst
+      - kde-accessibility-meta-23.08-1-any.pkg.tar.zst
+      - kde-education-meta-23.08-1-any.pkg.tar.zst
+      - kde-games-meta-23.08-1-any.pkg.tar.zst
+      - kde-graphics-meta-23.08-1-any.pkg.tar.zst
+      - kde-multimedia-meta-23.08-1-any.pkg.tar.zst
+      - kde-network-meta-23.08-1-any.pkg.tar.zst
+      - kde-office-meta-23.08-1-any.pkg.tar.zst
+      - kde-pim-meta-23.08-1-any.pkg.tar.zst
+      - kde-sdk-meta-23.08-1-any.pkg.tar.zst
+      - kde-system-meta-23.08-1-any.pkg.tar.zst
+      - kde-utilities-meta-23.08-1-any.pkg.tar.zst
+      - kdevelop-meta-23.08-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

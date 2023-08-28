@@ -1,4 +1,5 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
@@ -16,9 +17,8 @@ pkgname=(kde-applications-meta
          kde-sdk-meta
          kde-system-meta
          kde-utilities-meta
-         telepathy-kde-meta
          kdevelop-meta)
-pkgver=23.04
+pkgver=23.08
 pkgrel=1
 arch=(any)
 license=(None)
@@ -123,7 +123,8 @@ package_kde-games-meta() {
 package_kde-graphics-meta() {
   pkgdesc='Meta package for KDE graphics applications'
   replaces=(kdegraphics-meta kdewebdev-meta)
-  depends=(colord-kde
+  depends=(arianna
+           colord-kde
            gwenview
            kamera
            kcolorchooser
@@ -175,7 +176,6 @@ package_kde-network-meta() {
            krfb
            ktorrent
            neochat
-           telepathy-kde-meta
            tokodon)
 }
 
@@ -194,13 +194,13 @@ package_kde-pim-meta() {
            itinerary
            kaddressbook
            kalarm
-           kalendar
            kleopatra
            kmail
            knotes
            kontact
            korganizer
            kdepim-addons
+           merkuro
            zanshin)
 }
 
@@ -230,6 +230,7 @@ package_kde-system-meta() {
            kde-inotify-survey
            khelpcenter
            kio-admin
+           kjournald
            ksystemlog
            partitionmanager)
 }
@@ -251,7 +252,6 @@ package_kde-utilities-meta() {
            keditbookmarks
            keysmith
            kfind
-           kfloppy
            kgpg
            kongress
            konsole
@@ -267,21 +267,6 @@ package_kde-utilities-meta() {
            sweeper
            telly-skout
            yakuake)
-}
-
-package_telepathy-kde-meta() {
-  pkgdesc='KDE-Telepathy meta package'
-  depends=(telepathy-kde-accounts-kcm
-           telepathy-kde-approver
-           telepathy-kde-auth-handler
-           telepathy-kde-call-ui
-           telepathy-kde-contact-runner
-           telepathy-kde-contact-list
-           telepathy-kde-desktop-applets
-           telepathy-kde-filetransfer-handler
-           telepathy-kde-integration-module
-           telepathy-kde-send-file
-           telepathy-kde-text-ui)
 }
 
 package_kdevelop-meta() {
