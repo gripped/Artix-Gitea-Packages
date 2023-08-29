@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - protobuf-c
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,16 +25,15 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.4.1-3
-    packages:
-      - protobuf-c-1.4.1-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
   world:
-    version: 1.4.1-2
+    version: 1.4.1-3
     packages:
-      - protobuf-c-1.4.1-2-x86_64.pkg.tar.zst
+      - protobuf-c-1.4.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
