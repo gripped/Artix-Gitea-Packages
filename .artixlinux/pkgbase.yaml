@@ -16,12 +16,12 @@ pkgbase:
     - mesa-vdpau
     - mesa
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,6 +37,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1:23.1.6-4
     packages:
       - vulkan-mesa-layers-1:23.1.6-4-x86_64.pkg.tar.zst
@@ -49,19 +52,6 @@ repos:
       - libva-mesa-driver-1:23.1.6-4-x86_64.pkg.tar.zst
       - mesa-vdpau-1:23.1.6-4-x86_64.pkg.tar.zst
       - mesa-1:23.1.6-4-x86_64.pkg.tar.zst
-  world:
-    version: 1:23.1.6-1
-    packages:
-      - vulkan-mesa-layers-1:23.1.6-1-x86_64.pkg.tar.zst
-      - opencl-clover-mesa-1:23.1.6-1-x86_64.pkg.tar.zst
-      - opencl-rusticl-mesa-1:23.1.6-1-x86_64.pkg.tar.zst
-      - vulkan-intel-1:23.1.6-1-x86_64.pkg.tar.zst
-      - vulkan-radeon-1:23.1.6-1-x86_64.pkg.tar.zst
-      - vulkan-swrast-1:23.1.6-1-x86_64.pkg.tar.zst
-      - vulkan-virtio-1:23.1.6-1-x86_64.pkg.tar.zst
-      - libva-mesa-driver-1:23.1.6-1-x86_64.pkg.tar.zst
-      - mesa-vdpau-1:23.1.6-1-x86_64.pkg.tar.zst
-      - mesa-1:23.1.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
