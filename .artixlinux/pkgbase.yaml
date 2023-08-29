@@ -8,8 +8,8 @@ pkgbase:
     - qtcreator
     - qtcreator-devel
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,10 +29,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 11.0.2-1
-    packages:
-      - qtcreator-11.0.2-1-x86_64.pkg.tar.zst
-      - qtcreator-devel-11.0.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 11.0.2-1
     packages:
