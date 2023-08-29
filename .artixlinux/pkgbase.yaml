@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - artix-mirrorlist
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20230809-3
     packages:
       - artix-mirrorlist-20230809-3-any.pkg.tar.zst
-  system:
-    version: 20230528-2
-    packages:
-      - artix-mirrorlist-20230528-2-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
