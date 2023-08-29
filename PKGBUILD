@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Timothée Ravier <tim@siosm.fr>
 # Contributor: Blake Imsland <blake@retroco.de>
 
 pkgname=uchardet
 pkgver=0.0.8
-pkgrel=1
+pkgrel=2
 pkgdesc='Encoding detector library ported from Mozilla'
 arch=('x86_64')
 url='https://www.freedesktop.org/wiki/Software/uchardet'
@@ -18,8 +18,7 @@ build() {
 	cd ${pkgname}-${pkgver}
 	cmake \
 		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_INSTALL_LIBDIR=lib \
-		-DCMAKE_BUILD_TYPE=Release
+		-DBUILD_STATIC=OFF
 	make
 }
 
