@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: containerd
-  version: 1.7.2-1
+  version: 1.7.5-1
   arch:
     - x86_64
     - aarch64
   pkgname:
     - containerd
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.7.5-1
+    packages:
+      - containerd-1.7.5-1-x86_64.pkg.tar.zst
   world:
     version: 1.7.2-1
     packages:
