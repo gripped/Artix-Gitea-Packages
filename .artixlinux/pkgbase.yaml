@@ -8,12 +8,12 @@ pkgbase:
     - mumble
     - mumble-server
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,18 +26,16 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.5.517-3
-    packages:
-      - mumble-1.5.517-3-x86_64.pkg.tar.zst
-      - mumble-server-1.5.517-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
   world:
-    version: 1.5.517-2
+    version: 1.5.517-3
     packages:
-      - mumble-1.5.517-2-x86_64.pkg.tar.zst
-      - mumble-server-1.5.517-2-x86_64.pkg.tar.zst
+      - mumble-1.5.517-3-x86_64.pkg.tar.zst
+      - mumble-server-1.5.517-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
