@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: freetype2
-  version: 2.13.1-1
+  version: 2.13.2-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - freetype2-demos
     - freetype2-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.13.2-1
+    packages:
+      - freetype2-2.13.2-1-x86_64.pkg.tar.zst
+      - freetype2-demos-2.13.2-1-x86_64.pkg.tar.zst
+      - freetype2-docs-2.13.2-1-x86_64.pkg.tar.zst
   world:
     version: 2.13.1-1
     packages:
