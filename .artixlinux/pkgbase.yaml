@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mumble
-  version: 1.5.517-2
+  version: 1.5.517-3
   arch:
     - x86_64
   pkgname:
     - mumble
     - mumble-server
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.5.517-3
+    packages:
+      - mumble-1.5.517-3-x86_64.pkg.tar.zst
+      - mumble-server-1.5.517-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
