@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libspatialite
-  version: 5.0.1-3
+  version: 5.1.0-1
   arch:
     - x86_64
   pkgname:
     - libspatialite
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.1-3
+    version: 5.1.0-1
     packages:
-      - libspatialite-5.0.1-3-x86_64.pkg.tar.zst
+      - libspatialite-5.1.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
