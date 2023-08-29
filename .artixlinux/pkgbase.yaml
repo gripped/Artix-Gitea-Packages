@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libva
-  version: 2.19.0-1
+  version: 2.19.0-2
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 2.19.0-1
+    version: 2.19.0-2
     packages:
-      - lib32-libva-2.19.0-1-x86_64.pkg.tar.zst
+      - lib32-libva-2.19.0-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
