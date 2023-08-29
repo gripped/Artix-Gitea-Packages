@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vala
-  version: 0.56.12-1
+  version: 0.56.13-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.56.12-1
+    version: 0.56.13-1
     packages:
-      - vala-0.56.12-1-x86_64.pkg.tar.zst
+      - vala-0.56.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
