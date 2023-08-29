@@ -6,7 +6,7 @@ pkgbase=lib32-freetype2
 pkgname=(
   lib32-freetype2
 )
-pkgver=2.13.1
+pkgver=2.13.2
 pkgrel=1
 epoch=
 pkgdesc="Font rasterization library (32-bit)"
@@ -31,14 +31,12 @@ makedepends=(
 )
 source=(
   https://download-mirror.savannah.gnu.org/releases/freetype/freetype-$pkgver.tar.xz{,.sig}
-  configure.patch
   0001-Enable-table-validation-modules.patch
   0002-Enable-subpixel-rendering.patch
   0003-Enable-long-PCF-family-names.patch
 )
-b2sums=('edadf2cdd8eb17362239cc5ab7fdff7cb1ca398908d3a9fa0547c3922b098df331cc87e939cee62ce20a78b01f14372c952c823c30af9ac227fc7da10000d37b'
+b2sums=('cebc82180d9afaeb112a65ba78903d7bf7a9295a803166a033585ad2325add6023f05066852240c4665e56285345ba503b01ecd461d48f0478a8f3f56136988e'
         'SKIP'
-        '06937976bbff552cfce8a5eae2fec9d67b8701eab8d75da125d6aab9abf737ccac39d51f37aff3eb995dda254cc317e286dc82cd477c55ba258274c0de620064'
         '2c148694e150b3faae9dc46ead824ae6d94cfe34f2918bc9066f45bab7e6b6f77b4d4b2fee00c3d466d866e1985132cea4a774dcf1bab95409b7cf55efff01e1'
         '9598d13eae0411878c1af8e5d875c3b1fc09f4e6649edfbbf3b0a819c4c585648521f0b30ffd1318f5106cfde9c899d3db70c8ffe36dac59f3f98b5fd7dab115'
         '66deb179d1f1f4e2e35f6d50acfbacce80595d5128f5fed8c1871838c210dbf1a7173a87dd937d64997844c8f478c8f81120f71e33b9d59d980e179d103ff31c')
@@ -51,18 +49,13 @@ prepare() {
   patch -Np1 -i ../0001-Enable-table-validation-modules.patch
   patch -Np1 -i ../0002-Enable-subpixel-rendering.patch
   patch -Np1 -i ../0003-Enable-long-PCF-family-names.patch
-  patch -Np0 -i ../configure.patch
 }
 
 build() {
   local meson_options=(
-    --libdir=/usr/lib32
+    --cross-file lib32
     -D default_library=shared
   )
-
-  export CC="gcc -m32"
-  export CXX="g++ -m32"
-  export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
 
   artix-meson freetype-$pkgver build "${meson_options[@]}"
   meson compile -C build
