@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - db5.3
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 5.3.28-4
     packages:
       - db5.3-5.3.28-4-x86_64.pkg.tar.zst
-  system:
-    version: 5.3.28-2
-    packages:
-      - db5.3-5.3.28-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
