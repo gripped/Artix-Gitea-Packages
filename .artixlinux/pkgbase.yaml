@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - lib32-clang
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: lib32-goblins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -37,13 +37,12 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
     version: 16.0.6-1
     packages:
       - lib32-clang-16.0.6-1-x86_64.pkg.tar.zst
-  lib32:
-    version: 15.0.7-9
-    packages:
-      - lib32-clang-15.0.7-9-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
