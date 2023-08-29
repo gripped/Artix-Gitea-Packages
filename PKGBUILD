@@ -17,7 +17,7 @@ pkgname=(
   'mesa'
 )
 pkgver=23.1.6
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc="An open-source implementation of the OpenGL specification"
 url="https://www.mesa3d.org/"
@@ -96,7 +96,7 @@ prepare() {
   # Include package release in version string so Chromium invalidates
   # its GPU cache; otherwise it can cause pages to render incorrectly.
   # https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/2020604
-  echo "$epoch:$pkgver-$pkgrel" >VERSION
+  echo "$pkgver-arch$epoch.$pkgrel" >VERSION
 }
 
 build() {
@@ -362,8 +362,6 @@ package_mesa() {
     'libomxil-bellagio'
   )
   optdepends=(
-    'libva-mesa-driver: for accelerated video playback'
-    'mesa-vdpau: for accelerated video playback'
     'opengl-man-pages: for the OpenGL API man pages'
   )
   provides=(

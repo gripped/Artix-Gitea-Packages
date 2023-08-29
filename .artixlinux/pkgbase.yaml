@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mesa
-  version: 1:23.1.6-3
+  version: 1:23.1.6-4
   arch:
     - x86_64
   pkgname:
@@ -37,18 +37,18 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1:23.1.6-3
+    version: 1:23.1.6-4
     packages:
-      - vulkan-mesa-layers-1:23.1.6-3-x86_64.pkg.tar.zst
-      - opencl-clover-mesa-1:23.1.6-3-x86_64.pkg.tar.zst
-      - opencl-rusticl-mesa-1:23.1.6-3-x86_64.pkg.tar.zst
-      - vulkan-intel-1:23.1.6-3-x86_64.pkg.tar.zst
-      - vulkan-radeon-1:23.1.6-3-x86_64.pkg.tar.zst
-      - vulkan-swrast-1:23.1.6-3-x86_64.pkg.tar.zst
-      - vulkan-virtio-1:23.1.6-3-x86_64.pkg.tar.zst
-      - libva-mesa-driver-1:23.1.6-3-x86_64.pkg.tar.zst
-      - mesa-vdpau-1:23.1.6-3-x86_64.pkg.tar.zst
-      - mesa-1:23.1.6-3-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:23.1.6-4-x86_64.pkg.tar.zst
+      - opencl-clover-mesa-1:23.1.6-4-x86_64.pkg.tar.zst
+      - opencl-rusticl-mesa-1:23.1.6-4-x86_64.pkg.tar.zst
+      - vulkan-intel-1:23.1.6-4-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:23.1.6-4-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:23.1.6-4-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:23.1.6-4-x86_64.pkg.tar.zst
+      - libva-mesa-driver-1:23.1.6-4-x86_64.pkg.tar.zst
+      - mesa-vdpau-1:23.1.6-4-x86_64.pkg.tar.zst
+      - mesa-1:23.1.6-4-x86_64.pkg.tar.zst
   world:
     version: 1:23.1.6-1
     packages:
