@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=gd
 pkgver=2.3.3
-pkgrel=6
+pkgrel=7
 pkgdesc="Library for the dynamic creation of images by programmers"
 arch=('x86_64')
 url="https://libgd.github.io/"
