@@ -1,12 +1,12 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=nsd-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for nsd"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-nsd')
 conflicts=('init-nsd')
 depends=('nsd' 's6-base')
