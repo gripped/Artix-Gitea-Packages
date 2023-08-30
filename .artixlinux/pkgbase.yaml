@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: re2c
-  version: 3.0-2
+  version: 3.1-1
   arch:
     - x86_64
   pkgname:
     - re2c
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0-2
+    version: 3.1-1
     packages:
-      - re2c-3.0-2-x86_64.pkg.tar.zst
+      - re2c-3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
