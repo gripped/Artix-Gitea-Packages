@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: doxygen
-  version: 1.9.7-1
+  version: 1.9.8-1
   arch:
     - x86_64
   pkgname:
     - doxygen
     - doxygen-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.9.8-1
+    packages:
+      - doxygen-1.9.8-1-x86_64.pkg.tar.zst
+      - doxygen-docs-1.9.8-1-x86_64.pkg.tar.zst
   world:
     version: 1.9.7-1
     packages:
