@@ -8,9 +8,9 @@ url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-mailman')
 conflicts=('init-mailman')
-depends=('mailman' 's6-base')
+depends=('mailman3' 's6-base')
 makedepends=('git')
-_commit=f8db772e97393417271f286a3c9dc136d25a959c
+_commit=8f5148af0d53c9bb9a77435c07ff8a1d8ab14632
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
