@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=dnscrypt-proxy-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for dnscrypt-proxy"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-dnscrypt-proxy')
 conflicts=('init-dnscrypt-proxy')
 depends=('dnscrypt-proxy' 's6-base')
