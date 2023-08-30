@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=at-s6
-pkgver=20210918
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for at"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-at')
 conflicts=('init-at')
 depends=('at' 's6-base')
