@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=docker-s6
-pkgver=20230512
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for docker"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-docker')
 conflicts=('init-docker')
 depends=('containerd-s6' 'docker' 's6-base')
