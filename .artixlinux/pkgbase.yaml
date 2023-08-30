@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: unbound
-  version: 1.17.1-2
+  version: 1.18.0-1
   arch:
     - x86_64
   pkgname:
     - unbound
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.18.0-1
+    packages:
+      - unbound-1.18.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.17.1-2
     packages:
