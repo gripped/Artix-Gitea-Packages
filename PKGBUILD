@@ -1,12 +1,12 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=grafana-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for grafana"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-grafana')
 conflicts=('init-grafana')
 depends=('grafana' 's6-base')
