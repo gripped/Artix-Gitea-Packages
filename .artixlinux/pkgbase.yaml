@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ddclient-s6
-  version: 20210919-1
+  version: 20230829-1
   arch:
     - any
   pkgname:
     - ddclient-s6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20210919-1
+    version: 20230829-1
     packages:
-      - ddclient-s6-20210919-1-any.pkg.tar.zst
+      - ddclient-s6-20230829-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
