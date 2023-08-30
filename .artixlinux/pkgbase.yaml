@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: i2pd-s6
-  version: 20221202-1
+  version: 20230829-1
   arch:
     - any
   pkgname:
     - i2pd-s6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20221202-1
+    version: 20230829-1
     packages:
-      - i2pd-s6-20221202-1-any.pkg.tar.zst
+      - i2pd-s6-20230829-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

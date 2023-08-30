@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=i2pd-s6
-pkgver=20221202
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for i2pd"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-i2pd')
 conflicts=('init-i2pd')
 depends=('i2pd' 's6-base')
