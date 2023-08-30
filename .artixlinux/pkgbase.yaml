@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - lib32-spirv-llvm-translator
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: lib32-goblins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -37,13 +37,12 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
     version: 16.0.0.r9+g322fca5d-1
     packages:
       - lib32-spirv-llvm-translator-16.0.0.r9+g322fca5d-1-x86_64.pkg.tar.zst
-  lib32:
-    version: 15.0.0.r10+g78ad93b9-1
-    packages:
-      - lib32-spirv-llvm-translator-15.0.0.r10+g78ad93b9-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
