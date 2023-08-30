@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributer: Nathan Owens <ndowens@artixlinux.org> 
 pkgname=tinydns-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for tinydns"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-tinydns')
 conflicts=('init-tinydns')
 depends=('tinydns' 's6-base')
