@@ -57,11 +57,6 @@ b2sums=('SKIP'
         '79a881a7f45b4d6061285257b07aa0f72aa69cedc636c74ec12dd031372b3560b4013f18d821e31b323fd73af5de811a1f5ba94ba0e32ce1b1bb940af3bad54f'
         'd5bbef78b13008a006d23730a86039b09b78e468961c3fbeddf42578a7d871a1ec12e46a3b85591f4d2d4eb7f64e9021f9c9bec7c2959ad523737f1a142269a7')
 
-pkgver() {
-  cd avahi
-  git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
-}
-
 prepare() {
   cd avahi
 
