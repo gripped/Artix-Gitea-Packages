@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libavif
-  version: 0.11.1-1
+  version: 1.0.0-1
   arch:
     - x86_64
   pkgname:
     - libavif
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.11.1-1
+    version: 1.0.0-1
     packages:
-      - libavif-0.11.1-1-x86_64.pkg.tar.zst
+      - libavif-1.0.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
