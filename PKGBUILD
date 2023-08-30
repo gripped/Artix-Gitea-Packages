@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=darkhttpd-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for darkhttpd"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-darkhttpd')
 conflicts=('init-darkhttpd')
 depends=('darkhttpd' 's6-base')
