@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org> 
 pkgname=v2ray-s6
-pkgver=20220927
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for v2ray"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-v2ray')
 conflicts=('init-v2ray')
 depends=('v2ray' 's6-base')
