@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=thermald-s6
-pkgver=20220123
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for thermald"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-thermald')
 conflicts=('init-thermald')
 depends=('thermald' 'dbus-s6' 's6-base')
