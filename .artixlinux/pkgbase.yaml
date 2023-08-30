@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: redis-s6
-  version: 20230429-1
+  version: 20230829-1
   arch:
     - any
   pkgname:
     - redis-s6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230429-1
+    version: 20230829-1
     packages:
-      - redis-s6-20230429-1-any.pkg.tar.zst
+      - redis-s6-20230829-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
