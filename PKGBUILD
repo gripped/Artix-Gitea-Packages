@@ -1,12 +1,12 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=fail2ban-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for fail2ban"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-fail2ban')
 conflicts=('init-fail2ban')
 depends=('fail2ban' 's6-base')
