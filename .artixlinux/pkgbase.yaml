@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: vlc
-  version: 3.0.18-13.1
+  version: 3.0.18-14
   arch:
     - x86_64
   pkgname:
     - vlc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.18-13.1
+    version: 3.0.18-14
     packages:
-      - vlc-3.0.18-13.1-x86_64.pkg.tar.zst
+      - vlc-3.0.18-14-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
