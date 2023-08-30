@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: qt5-declarative
-  version: 5.15.10+kde+r29-1.1
+  version: 5.15.10+kde+r31-1
   arch:
     - x86_64
   pkgname:
     - qt5-declarative
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,9 +32,9 @@ repos:
     packages:
       - qt5-declarative-5.15.10+kde+r29-1.1-x86_64.pkg.tar.zst
   world:
-    version: 5.15.10+kde+r29-1.1
+    version: 5.15.10+kde+r31-1
     packages:
-      - qt5-declarative-5.15.10+kde+r29-1.1-x86_64.pkg.tar.zst
+      - qt5-declarative-5.15.10+kde+r31-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
