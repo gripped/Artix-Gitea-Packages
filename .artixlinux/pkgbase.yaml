@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: chrony
-  version: 4.3-1
+  version: 4.4-1
   arch:
     - x86_64
   pkgname:
     - chrony
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3-1
+    version: 4.4-1
     packages:
-      - chrony-4.3-1-x86_64.pkg.tar.zst
+      - chrony-4.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
