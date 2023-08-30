@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gn
-  version: 0.2088.5a004f94-1
+  version: 0.2119.cc56a0f9-1
   arch:
     - x86_64
   pkgname:
     - gn
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2088.5a004f94-1
+    version: 0.2119.cc56a0f9-1
     packages:
-      - gn-0.2088.5a004f94-1-x86_64.pkg.tar.zst
+      - gn-0.2119.cc56a0f9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
