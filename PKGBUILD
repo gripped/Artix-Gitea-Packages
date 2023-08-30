@@ -1,12 +1,12 @@
 # Maintainer: Nathan Owens <ndowens@artixlinux.org>
 # Contributer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=opensips-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for opensips"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-opensips')
 conflicts=('init-opensips')
 backup=('etc/s6/config/opensips.conf')
