@@ -1,12 +1,12 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=fwknop-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for fwknop"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-fwknop')
 conflicts=('init-fwknop')
 depends=('fwknop' 's6-base')
