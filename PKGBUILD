@@ -16,16 +16,20 @@ makedepends=(cmake git)
 source=(
   $pkgname::git+https://github.com/nlohmann/json#commit=$_commit?signed
   json_test_data-$_test_pkgver.tar.gz::https://github.com/nlohmann/json_test_data/archive/v$_test_pkgver.tar.gz
+  gcc13_alloc.patch::https://patch-diff.githubusercontent.com/raw/nlohmann/json/pull/3895.patch
 )
 sha512sums=('SKIP'
-            'db6c411b37f2154f5dd1ed90f4e8fa0907f4a736cd0ff79943bcacf9da422285ff142bb6a7dc6022b236090083166ac1ab197be3f480d8dc50b26a91a9477821')
+            'db6c411b37f2154f5dd1ed90f4e8fa0907f4a736cd0ff79943bcacf9da422285ff142bb6a7dc6022b236090083166ac1ab197be3f480d8dc50b26a91a9477821'
+            '0e78dee7d8c4a99c68fda4b4ac69d7e4d3d432b5dac369b1b37a840e5ee8a8138e264fc66ec12fa76046c1aed5c2c0fcca3239d58cf0fc8b0c053045228616e4')
 b2sums=('SKIP'
-        '809be0728a0b9d007fcc752911bdf6f7e548d6e3ec59871ea2b16d87d8248ca4dd2f681a1d0f82c618463294188ad41d6d965b8bdc39c70fdcf4b939d4121e9c')
+        '809be0728a0b9d007fcc752911bdf6f7e548d6e3ec59871ea2b16d87d8248ca4dd2f681a1d0f82c618463294188ad41d6d965b8bdc39c70fdcf4b939d4121e9c'
+        '41d23b1b429c38ce15ddf40c1c2ec6c2aa8abb775e44b16ef0d180964e623bc4dcf80b481a54c05719df47f83c881dcefec814db7506d93459e18224ac391329')
 validpgpkeys=('797167AE41C0A6D9232E48457F3CEA63AE251B69') # Niels Lohmann <mail@nlohmann.me>
 
 prepare() {
   mkdir -vp build-test/
   mv -v json_test_data-${_test_pkgver}/ build-test/json_test_data/
+  patch -Np1 -d "$srcdir"/"$pkgname" -i "$srcdir"/gcc13_alloc.patch
 }
 
 build() {
