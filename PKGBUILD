@@ -1,11 +1,11 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=ufw-s6
-pkgver=20220123
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for ufw"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-ufw')
 conflicts=('init-ufw')
 depends=('ufw' 's6-base')
