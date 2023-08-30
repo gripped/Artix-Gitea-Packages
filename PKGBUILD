@@ -1,12 +1,12 @@
 # Maintainer: Nathan <ndownes@artixlinux.org>
 # Contributor: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=exim-s6
-pkgver=20210919
+pkgver=20230829
 pkgrel=1
 pkgdesc="s6-rc service scripts for exim"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/s6-services"
-groups=('s6-galaxy')
+groups=('s6-world')
 provides=('init-exim')
 conflicts=('init-exim')
 depends=('exim' 's6-base')
