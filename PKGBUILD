@@ -3,7 +3,7 @@
 pkgname=gegl
 _tag='c7cd8520066a05c9502dfc93a39e97a9546dc824'
 pkgver=0.4.46
-pkgrel=1
+pkgrel=2
 pkgdesc='Graph based image processing framework'
 arch=('x86_64')
 url='https://www.gegl.org/'
@@ -17,7 +17,6 @@ optdepends=('ffmpeg: FFmpeg Frame Loader and FFmpeg Frame Saver plugins'
             'graphviz: for gegl-introspect'
             'sdl2: SDL2 Display plugin')
 
-options=('debug')
 source=("git+https://gitlab.gnome.org/GNOME/gegl.git#tag=$_tag")
 sha256sums=('SKIP')
 
