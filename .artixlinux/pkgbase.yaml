@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: gmic
-  version: 3.2.6-2
+  version: 3.2.6-3
   arch:
     - x86_64
   pkgname:
     - gmic
     - gimp-plugin-gmic
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.2.6-3
+    packages:
+      - gmic-3.2.6-3-x86_64.pkg.tar.zst
+      - gimp-plugin-gmic-3.2.6-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
