@@ -1,8 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=libvips
 pkgver=8.14.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A fast image processing library with low memory needs"
 arch=('x86_64')
 license=('LGPL')
