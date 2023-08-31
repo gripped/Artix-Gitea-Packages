@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Brad Fanella <cesura@archlinux.org>
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-terminal
-pkgver=1.27.0
+pkgver=1.27.1
 pkgrel=1
 pkgdesc="The MATE Terminal Emulator"
 url="https://mate-desktop.org"
@@ -15,7 +15,7 @@ groups=('mate-extra')
 conflicts=('mate-terminal-gtk3')
 replaces=('mate-terminal-gtk3')
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('42889c98045f011b7e633c2c1706dfc379d52c9c26aef386c8d6890c09d3681b')
+sha256sums=('8d6b16ff2cac930afce4625b1b8f30c055e314e5b3dae806ac5b80c809f08dbe')
 
 build() {
 	cd "${pkgname}-${pkgver}"
