@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: opencolorio
-  version: 2.2.1-11
+  version: 2.2.1-12
   arch:
     - x86_64
   pkgname:
     - opencolorio
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.2.1-12
+    packages:
+      - opencolorio-2.2.1-12-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
