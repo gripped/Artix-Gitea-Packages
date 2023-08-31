@@ -1,8 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=maeparser
 pkgver=1.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Maestro file parser'
 arch=(x86_64)
 url='https://github.com/schrodinger/maeparser'
