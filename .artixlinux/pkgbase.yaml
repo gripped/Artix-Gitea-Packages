@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jupyter-nbconvert
-  version: 7.7.4-1
+  version: 7.8.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.7.4-1
+    version: 7.8.0-1
     packages:
-      - jupyter-nbconvert-7.7.4-1-any.pkg.tar.zst
+      - jupyter-nbconvert-7.8.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
