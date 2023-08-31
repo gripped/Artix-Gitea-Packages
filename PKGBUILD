@@ -64,7 +64,7 @@ build(){
 
 check(){
   # skip failing test with assertion on float values that are actually equal
-  ARGS="-E parquet-internals-test -E arrow-dataset-file-orc-test -E arrow-orc-adapter-test" \
+  ARGS="-E arrow-dataset-file-orc-test,arrow-orc-adapter-test" \
   PARQUET_TEST_DATA="${srcdir}"/parquet-testing/data \
   ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
   make -C build test
