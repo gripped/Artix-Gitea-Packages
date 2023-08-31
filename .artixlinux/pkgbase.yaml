@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: glib2
-  version: 2.76.4-1
+  version: 2.76.5-1
   arch:
     - x86_64
   pkgname:
     - glib2
     - glib2-docs
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.76.5-1
+    packages:
+      - glib2-2.76.5-1-x86_64.pkg.tar.zst
+      - glib2-docs-2.76.5-1-x86_64.pkg.tar.zst
   system:
     version: 2.76.4-1
     packages:
