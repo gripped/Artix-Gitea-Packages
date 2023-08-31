@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libkolabxml
 pkgver=1.2.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Kolab XML Format Schema Definitions Library"
 url='https://www.kolab.org/'
 arch=('x86_64')
