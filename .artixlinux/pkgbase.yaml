@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: z3
-  version: 4.12.1-2
+  version: 4.12.2-1
   arch:
     - x86_64
   pkgname:
     - z3
     - python-z3-solver
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.12.1-2
+    version: 4.12.2-1
     packages:
-      - z3-4.12.1-2-x86_64.pkg.tar.zst
-      - python-z3-solver-4.12.1-2-x86_64.pkg.tar.zst
+      - z3-4.12.2-1-x86_64.pkg.tar.zst
+      - python-z3-solver-4.12.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
