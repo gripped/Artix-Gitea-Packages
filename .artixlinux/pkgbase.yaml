@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: gdal
-  version: 3.7.1-3
+  version: 3.7.1-4
   arch:
     - x86_64
   pkgname:
     - gdal
     - python-gdal
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.7.1-4
+    packages:
+      - gdal-3.7.1-4-x86_64.pkg.tar.zst
+      - python-gdal-3.7.1-4-x86_64.pkg.tar.zst
   world:
     version: 3.7.1-3
     packages:
