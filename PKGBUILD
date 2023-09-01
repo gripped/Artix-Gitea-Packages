@@ -24,7 +24,7 @@ prepare() {
 
 build() {
   cd "$pkgname-$pkgver"
-
+  export CXXFLAGS="/usr/include/leatherman/vendor"
   cmake \
     -B build \
     -DCMAKE_BUILD_TYPE=None \
