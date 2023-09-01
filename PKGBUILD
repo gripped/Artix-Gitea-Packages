@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke at archlinux.org>
 # Contributor: Jonathan Steel <jsteel at archlinux.org>
@@ -10,7 +10,7 @@
 
 pkgname=facter
 pkgver=3.14.24
-pkgrel=5
+pkgrel=6
 pkgdesc="Collect and display system facts"
 arch=('x86_64')
 url="https://puppetlabs.com/facter"
@@ -83,7 +83,7 @@ build() {
 
 check(){
   cd "${srcdir}/${pkgname}-${pkgver}/build"
-  #make test
+  make test
 }
 
 package() {
