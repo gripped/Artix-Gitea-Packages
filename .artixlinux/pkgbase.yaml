@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-xml-sax-expat
-  version: 0.51-7.1
+  version: 0.51-7.2
   arch:
     - any
   pkgname:
     - perl-xml-sax-expat
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.51-7.1
+    version: 0.51-7.2
     packages:
-      - perl-xml-sax-expat-0.51-7.1-any.pkg.tar.zst
+      - perl-xml-sax-expat-0.51-7.2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
