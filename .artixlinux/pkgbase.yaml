@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: noto-fonts
-  version: 1:23.8.1-1
+  version: 1:23.9.1-1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:23.8.1-1
+    version: 1:23.9.1-1
     packages:
-      - noto-fonts-1:23.8.1-1-any.pkg.tar.zst
-      - noto-fonts-extra-1:23.8.1-1-any.pkg.tar.zst
+      - noto-fonts-1:23.9.1-1-any.pkg.tar.zst
+      - noto-fonts-extra-1:23.9.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
