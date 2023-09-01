@@ -8,7 +8,7 @@
 pkgbase=marble
 pkgname=(marble-common marble-qt marble-maps marble)
 pkgver=23.08.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Desktop Globe'
 arch=(x86_64)
 url='https://apps.kde.org/marble/'
