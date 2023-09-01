@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libcmis
-  version: 0.5.2-13
+  version: 0.5.2-14
   arch:
     - x86_64
   pkgname:
     - libcmis
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.5.2-14
+    packages:
+      - libcmis-0.5.2-14-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
