@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - openscenegraph
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.6.5-22
     packages:
       - openscenegraph-3.6.5-22-x86_64.pkg.tar.zst
-  world:
-    version: 3.6.5-21
-    packages:
-      - openscenegraph-3.6.5-21-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
