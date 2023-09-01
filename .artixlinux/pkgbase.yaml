@@ -20,12 +20,12 @@ pkgbase:
     - pipewire-v4l2
     - pipewire-x11-bell
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,6 +41,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1:0.3.79-1
     packages:
       - pipewire-1:0.3.79-1-x86_64.pkg.tar.zst
@@ -57,23 +60,6 @@ repos:
       - pipewire-zeroconf-1:0.3.79-1-x86_64.pkg.tar.zst
       - pipewire-v4l2-1:0.3.79-1-x86_64.pkg.tar.zst
       - pipewire-x11-bell-1:0.3.79-1-x86_64.pkg.tar.zst
-  world:
-    version: 1:0.3.78-1
-    packages:
-      - pipewire-1:0.3.78-1-x86_64.pkg.tar.zst
-      - libpipewire-1:0.3.78-1-x86_64.pkg.tar.zst
-      - alsa-card-profiles-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-docs-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-audio-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-alsa-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-ffado-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-jack-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-pulse-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-roc-1:0.3.78-1-x86_64.pkg.tar.zst
-      - gst-plugin-pipewire-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-zeroconf-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-v4l2-1:0.3.78-1-x86_64.pkg.tar.zst
-      - pipewire-x11-bell-1:0.3.78-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
