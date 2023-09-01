@@ -8,7 +8,7 @@
 
 pkgname='ncdu'
 pkgver=2.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Disk usage analyzer with an ncurses interface'
 url='https://dev.yorhel.nl/ncdu'
 license=('MIT')
