@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nlohmann-json
-  version: 3.11.2-1
+  version: 3.11.2-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.11.2-1
+    version: 3.11.2-2
     packages:
-      - nlohmann-json-3.11.2-1-any.pkg.tar.zst
+      - nlohmann-json-3.11.2-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

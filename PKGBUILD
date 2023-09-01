@@ -1,10 +1,10 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=nlohmann-json
 # upstream doesn't use annotated tags
 _commit=bc889afb4c5bf1c0d8ee29ef35eaaf4c8bef8a5d  # v3.11.2^{}
 pkgver=3.11.2
-pkgrel=1
+pkgrel=2
 # tests are tracked in a separate repo
 # https://github.com/nlohmann/json_test_data
 _test_pkgver=3.1.0
@@ -16,50 +16,53 @@ makedepends=(cmake git)
 source=(
   $pkgname::git+https://github.com/nlohmann/json#commit=$_commit?signed
   json_test_data-$_test_pkgver.tar.gz::https://github.com/nlohmann/json_test_data/archive/v$_test_pkgver.tar.gz
-  gcc13_alloc.patch::https://patch-diff.githubusercontent.com/raw/nlohmann/json/pull/3895.patch
 )
 sha512sums=('SKIP'
-            'db6c411b37f2154f5dd1ed90f4e8fa0907f4a736cd0ff79943bcacf9da422285ff142bb6a7dc6022b236090083166ac1ab197be3f480d8dc50b26a91a9477821'
-            '0e78dee7d8c4a99c68fda4b4ac69d7e4d3d432b5dac369b1b37a840e5ee8a8138e264fc66ec12fa76046c1aed5c2c0fcca3239d58cf0fc8b0c053045228616e4')
+            'db6c411b37f2154f5dd1ed90f4e8fa0907f4a736cd0ff79943bcacf9da422285ff142bb6a7dc6022b236090083166ac1ab197be3f480d8dc50b26a91a9477821')
 b2sums=('SKIP'
-        '809be0728a0b9d007fcc752911bdf6f7e548d6e3ec59871ea2b16d87d8248ca4dd2f681a1d0f82c618463294188ad41d6d965b8bdc39c70fdcf4b939d4121e9c'
-        '41d23b1b429c38ce15ddf40c1c2ec6c2aa8abb775e44b16ef0d180964e623bc4dcf80b481a54c05719df47f83c881dcefec814db7506d93459e18224ac391329')
+        '809be0728a0b9d007fcc752911bdf6f7e548d6e3ec59871ea2b16d87d8248ca4dd2f681a1d0f82c618463294188ad41d6d965b8bdc39c70fdcf4b939d4121e9c')
 validpgpkeys=('797167AE41C0A6D9232E48457F3CEA63AE251B69') # Niels Lohmann <mail@nlohmann.me>
 
 prepare() {
+  (
+    cd $pkgname
+    # fix issues with gcc >= 13: https://github.com/nlohmann/json/issues/3927
+    git cherry-pick -n 660d0b58565073975d6f5d94365d6cbf150a4cf8 6cec5aefc97ad219b6fd5a4132f88f7c8f6800ee
+  )
   mkdir -vp build-test/
   mv -v json_test_data-${_test_pkgver}/ build-test/json_test_data/
-  patch -Np1 -d "$srcdir"/"$pkgname" -i "$srcdir"/gcc13_alloc.patch
 }
 
 build() {
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-        -DCMAKE_BUILD_TYPE=None \
-        -DJSON_MultipleHeaders=ON \
-        -Wno-dev \
-        -B build \
-        -S $pkgname
-  make VERBOSE=1 -C build
+  local cmake_options=(
+    -B build
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D CMAKE_INSTALL_LIBDIR=/usr/lib
+    -D JSON_MultipleHeaders=ON
+    -S $pkgname
+    -W no-dev
+  )
+  local cmake_test_options=(
+    "${cmake_options[@]}"
+    -D BUILD_TESTING=ON
+    -D JSON_BuildTests=ON
+    -B build-test
+  )
 
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-        -DCMAKE_BUILD_TYPE=None \
-        -DBUILD_TESTING=ON \
-        -DJSON_BuildTests=ON \
-        -DJSON_MultipleHeaders=ON \
-        -Wno-dev \
-        -B build-test \
-        -S $pkgname
-  make VERBOSE=1 -C build-test
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
+
+  cmake "${cmake_test_options[@]}"
+  cmake --build build-test --verbose
 }
 
 check() {
-  make -k test -C build-test
+  ctest --test-dir build-test --output-on-failure
 }
 
 package() {
-  make DESTDIR="$pkgdir" install -C build
+  DESTDIR="$pkgdir" cmake --install build
   install -vDm 644 $pkgname/README.md -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 $pkgname/LICENSE.MIT -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
