@@ -11,11 +11,13 @@ arch=('x86_64')
 license=('GPL')
 depends=('xerces-c' 'boost-libs')
 makedepends=('cmake' 'boost' 'xsd' 'swig')
-source=(https://cgit.kolab.org/libkolabxml/snapshot/libkolabxml-libkolabxml-$pkgver.tar.gz)
-sha512sums=('a4967d84b57d4c637dcc36383f05dbb20fe2ba5e590235eac219ece33e15d29f5eb51e9501a4f9e277900fdec18ddd390e6dc564bf79663bb3513de07f04d39a')
+source=(http://deb.debian.org/debian/pool/main/libk/libkolabxml/libkolabxml_$pkgver.orig.tar.gz
+#https://cgit.kolab.org/libkolabxml/snapshot/libkolabxml-libkolabxml-$pkgver.tar.gz
+)
+sha512sums=('61615a433f805705eeb74436fad728b2d232215d4a274b63b8db4a0e5d6e9c2ccc2fc71205d673a9e33a16a75f24a65c7f44619f9cc8c0879ebfb5bc65c2b404')
 
 build() {
-  cmake -B build -S $pkgname-$pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_TESTS=OFF \
     -DBoost_NO_BOOST_CMAKE=ON
