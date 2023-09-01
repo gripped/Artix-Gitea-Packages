@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: hugin
-  version: 2022.0.0-10
+  version: 2022.0.0-11
   arch:
     - x86_64
   pkgname:
     - hugin
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2022.0.0-11
+    packages:
+      - hugin-2022.0.0-11-x86_64.pkg.tar.zst
   world-gremlins:
     version: 2022.0.0-10
     packages:
