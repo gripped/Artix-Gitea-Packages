@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 
 _name=pycuda
 pkgname=python-pycuda
 pkgver=2022.2.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Python wrapper for Nvidia CUDA"
 arch=(x86_64)
 url="https://documen.tician.de/pycuda/"
