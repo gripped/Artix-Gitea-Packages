@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libjxl
-  version: 0.8.2-1
+  version: 0.8.2-2
   arch:
     - x86_64
   pkgname:
     - libjxl
     - libjxl-doc
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.8.2-2
+    packages:
+      - libjxl-0.8.2-2-x86_64.pkg.tar.zst
+      - libjxl-doc-0.8.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -3,7 +3,7 @@
 pkgbase=libjxl
 pkgname=('libjxl' 'libjxl-doc')
 pkgver=0.8.2
-pkgrel=1
+pkgrel=2
 pkgdesc='JPEG XL image format reference implementation'
 arch=('x86_64')
 url='https://jpeg.org/jpegxl/'
@@ -13,7 +13,7 @@ makedepends=('git' 'cmake' 'brotli' 'gdk-pixbuf2' 'giflib' 'gimp'
              'gtest' 'java-environment' 'python' 'asciidoc' 'doxygen'
              'graphviz' 'xdg-utils')
 source=("git+https://github.com/libjxl/libjxl.git#tag=v${pkgver}"
-        '_brotli::git+https://github.com/google/brotli.git'
+        'git+https://github.com/google/brotli.git'
         'git+https://github.com/mm2/Little-CMS.git'
         'git+https://github.com/google/googletest.git'
         'git+https://github.com/webmproject/sjpeg.git'
@@ -36,7 +36,7 @@ sha256sums=('SKIP'
 prepare() {
     git -C libjxl submodule init
     local _submodule
-    for _submodule in _brotli googletest sjpeg skcms highway libpng zlib
+    for _submodule in brotli googletest sjpeg skcms highway libpng zlib
     do
         git -C libjxl config --local "submodule.third_party/${_submodule}.url" "${srcdir}/${_submodule}"
     done
