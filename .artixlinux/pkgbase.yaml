@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gstreamer
-  version: 1.22.5-1
+  version: 1.22.5-2
   arch:
     - x86_64
   pkgname:
@@ -27,11 +27,11 @@ pkgbase:
     - gst-python
     - gstreamer-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,8 +48,29 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.22.5-2
+    packages:
+      - gstreamer-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugins-bad-libs-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugins-base-libs-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugins-base-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugins-good-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugins-bad-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-gtk-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-msdk-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-opencv-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-qml6-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-qmlgl-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-qsv-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-va-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugin-wpe-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-plugins-ugly-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-libav-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-rtsp-server-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-editing-services-1.22.5-2-x86_64.pkg.tar.zst
+      - gstreamer-vaapi-1.22.5-2-x86_64.pkg.tar.zst
+      - gst-python-1.22.5-2-x86_64.pkg.tar.zst
+      - gstreamer-docs-1.22.5-2-x86_64.pkg.tar.zst
   world:
     version: 1.22.5-1
     packages:
