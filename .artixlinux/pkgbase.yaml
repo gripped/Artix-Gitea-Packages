@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: trojan
-  version: 1.16.0-9
+  version: 1.16.0-10
   arch:
     - x86_64
   pkgname:
     - trojan
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.16.0-10
+    packages:
+      - trojan-1.16.0-10-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

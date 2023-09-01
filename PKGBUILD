@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: GreaterFire <GreaterFire at protonmail dot com>
 
 pkgname=trojan
 pkgver=1.16.0
-pkgrel=9
+pkgrel=10
 pkgdesc="An unidentifiable mechanism that helps you bypass GFW"
 arch=('x86_64')
 url="https://github.com/trojan-gfw/trojan"
