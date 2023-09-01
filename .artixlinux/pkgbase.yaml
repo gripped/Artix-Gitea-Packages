@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: source-highlight
-  version: 3.1.9-10
+  version: 3.1.9-11
   arch:
     - x86_64
   pkgname:
     - source-highlight
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.1.9-11
+    packages:
+      - source-highlight-3.1.9-11-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
