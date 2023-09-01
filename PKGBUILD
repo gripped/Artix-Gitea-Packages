@@ -1,4 +1,3 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: dibblethewrecker dibblethewrecker.at.jiwe.dot.org
@@ -7,7 +6,7 @@
 pkgbase=gdal
 pkgname=(gdal python-gdal)
 pkgver=3.7.1
-pkgrel=1
+pkgrel=3
 pkgdesc="A translator library for raster and vector geospatial data formats"
 arch=(x86_64)
 url="https://gdal.org/"
