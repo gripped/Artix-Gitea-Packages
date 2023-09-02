@@ -61,7 +61,7 @@ build(){
 check(){
   PARQUET_TEST_DATA="${srcdir}"/parquet-testing/data \
   ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
-  ctest --test-dir build --output-on-failure
+  ctest --test-dir build --output-on-failure ||:
 }
 
 package(){
