@@ -9,11 +9,11 @@ pkgbase:
     - libreoffice-fresh
 actions:
   addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.5.0-1
-    packages:
-      - libreoffice-fresh-sdk-7.5.0-1-x86_64.pkg.tar.zst
-      - libreoffice-fresh-7.5.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -52,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 7.6.0-3
+    version: 7.5.0-1
     packages:
-      - libreoffice-fresh-sdk-7.6.0-3-x86_64.pkg.tar.zst
-      - libreoffice-fresh-7.6.0-3-x86_64.pkg.tar.zst
+      - libreoffice-fresh-sdk-7.5.0-1-x86_64.pkg.tar.zst
+      - libreoffice-fresh-7.5.0-1-x86_64.pkg.tar.zst
