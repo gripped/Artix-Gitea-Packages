@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: libreoffice-fresh-sdk
-  version: 7.5.0-1
+  name: libreoffice-fresh
+  version: 7.6.0-3
   arch:
     - x86_64
   pkgname:
     - libreoffice-fresh-sdk
     - libreoffice-fresh
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -52,5 +52,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 7.6.0-3
+    packages:
+      - libreoffice-fresh-sdk-7.6.0-3-x86_64.pkg.tar.zst
+      - libreoffice-fresh-7.6.0-3-x86_64.pkg.tar.zst

@@ -1,4 +1,4 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 # Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
@@ -10,9 +10,9 @@ _google_default_client_secret=0ZChLK6AxeA3Isu96MkwqDR4
 
 pkgbase=libreoffice-fresh
 pkgname=('libreoffice-fresh-sdk' 'libreoffice-fresh')
-_LOver=7.5.0.3
-pkgver=7.5.0
-pkgrel=1
+_LOver=7.6.0.3
+pkgver=7.6.0
+pkgrel=3
 arch=('x86_64')
 license=('LGPL3')
 url="https://www.libreoffice.org/"
@@ -21,8 +21,7 @@ makedepends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
 	'libxslt' 'redland' 'hyphen' 'lpsolve' 'gcc-libs' 'sh' 'graphite' 'icu' 
 	'lcms2' 'poppler>=0.24.0' 'libvisio' 'libetonyek' 'libodfgen' 'libcdr'
 	'libmspub' 'harfbuzz-icu' 'nss' 'hicolor-icon-theme'
-	'desktop-file-utils' 'shared-mime-info' 'gst-plugins-base-libs'
-	'sane' 'perl-archive-zip' 'zip' 'unzip' 'unixodbc' 'ant'
+	'gst-plugins-base-libs'	'sane' 'perl-archive-zip' 'zip' 'unzip' 'unixodbc' 'ant'
 	'gperf' 'gtk3' 'gtk4' 'qt5-base' 'plasma-framework' 'qt6-base' 'cppunit' 'beanshell' 'clucene'
 	'junit' 'libmythes' 'libwpg'  'java-environment=11' 'postgresql-libs' 'mariadb-libs' 'libgl'
 	'bluez-libs' 'gdb' 'doxygen'  'libatomic_ops'  'mdds'
@@ -48,19 +47,21 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
 	${_additional_source_url}/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip
 	${_additional_source_url}/d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip
 	${_additional_source_url}/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
-	${_additional_source_url}/pdfium-5408.tar.bz2
+	${_additional_source_url}/pdfium-5778.tar.bz2
 	${_additional_source_url}/dtoa-20180411.tgz
 	${_additional_source_url}/lxml-4.1.1.tgz
 	${_additional_source_url}/Firebird-3.0.7.33374-0.tar.bz2
-	${_additional_source_url}/skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
+	${_additional_source_url}/skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz
 	${_additional_source_url}/libcmis-0.5.2.tar.xz
         ${_additional_source_url}/dragonbox-1.1.3.tar.gz
+        ${_additional_source_url}/frozen-1.1.1.tar.gz
 	${_additional_source_url2}/8249374c274932a21846fa7629c2aa9b-officeotron-0.7.4-master.jar  # for test suite
 	${_additional_source_url2}/odfvalidator-1.2.0-incubating-SNAPSHOT-jar-with-dependencies-971c54fd38a968f5860014b44301872706f9e540.jar # for test suite
 	${_additional_source_url2}/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 	${_additional_source_url2}/185d60944ea767075d27247c3162b3bc-unowinreg.dll
 	make-pyuno-work-with-system-wide-module-install.diff
         623ea5c.diff
+        5484657.diff
 	soffice-template.desktop.in 
 	libreoffice-fresh.sh libreoffice-fresh.csh)
 noextract=(35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
@@ -71,24 +72,25 @@ noextract=(35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
            17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip
            d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip
            ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
-           pdfium-5408.tar.bz2
+           pdfium-5778.tar.bz2
            dtoa-20180411.tgz
            lxml-4.1.1.tgz
            Firebird-3.0.7.33374-0.tar.bz2
-           skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz
+           skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz
            libcmis-0.5.2.tar.xz
            dragonbox-1.1.3.tar.gz
+           frozen-1.1.1.tar.gz
            8249374c274932a21846fa7629c2aa9b-officeotron-0.7.4-master.jar  # for test suite
            odfvalidator-1.2.0-incubating-SNAPSHOT-jar-with-dependencies-971c54fd38a968f5860014b44301872706f9e540.jar  # for test suite
            f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
            185d60944ea767075d27247c3162b3bc-unowinreg.dll
 )
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha256sums=('f5120fa3ae80a7deb08150038a6e78335bcab578bd7c41ddc733c2057977003b'
+sha256sums=('07f33f11a75b72a3044749d4f2f7d02a0fd79eaed4fb73e618ec5fe3576d0c25'
             'SKIP'
-            '7e3e9542ad4bf608d12a10c8792c8905b0f2a7d4c96a30beb000a632b4fda8cd'
+            '210f18ff60e93d366856d84e714d3fd6f184f399b5163afc92b7e11155cbe768'
             'SKIP'
-            'd3584f70acf9865cc02941db55d3a129c386444bf91857b68e11cd20d9265972'
+            '667e4ffeacc01bd0f830c2edcc56e2328f924eeac224639babeb3841a44ec5f4'
             'SKIP'
             '64585ac36a81291a58269ec5347e7e3e2e8596dbacb9221015c208191333c6e1'
             '1fb458d6aab06932693cc8a9b6e4e70944ee1ff052fa63606e3131df34e21753'
@@ -98,19 +100,21 @@ sha256sums=('f5120fa3ae80a7deb08150038a6e78335bcab578bd7c41ddc733c2057977003b'
             'd30b13f4ba2e3b6a2d4f020c0dee0a9fb9fc6fbcc2d561f36b78da4bf3802370'
             '1b5b24f7bc543c0362b667692f78db8bab4ed6dafc6172f104d0bd3757d8a133'
             '233f66e8d25c5dd971716d4200203a612a407649686ef3b52075d04b4c9df0dd'
-            '7db59b1e91f2bc0ab4c5e19d1a4f881e6a47dbb0d3b7e980a7358225b12a0f35'
+            'b1052ff24e9ffb11af017c444bb0f6ad508d64c9a0fb88cacb0e8210245dde06'
             '0082d0684f7db6f62361b76c4b7faba19e0c7ce5cb8e36c4b65fea8281e711b4'
             '940caef1ec7c78e0c34b0f6b94fe42d0f2022915ffc78643d28538a5cfd0f40e'
             'acb85cedafa10ce106b1823fb236b1b3e5d942a5741e8f8435cc8ccfec0afe76'
-            'c094a6247e44104beaaa0d00c825beb6baf1a8e532dc22214747495317a65bd9'
+            '0d08a99ed46cde43b5ad2672b5d8770c8eb85d0d26cb8f1f85fd9befe1e9ceb9'
             'd7b18d9602190e10d437f8a964a32e983afd57e2db316a07d87477a79f5000a2'
             '09d63b05e9c594ec423778ab59b7a5aa1d76fdd71d25c7048b0258c4ec9c3384'
+            'f7c7075750e8fceeac081e9ef01944f221b36d9725beac8681cbd2838d26be45'
             'f2443f27561af52324eee03a1892d9f569adc8db9e7bca55614898bc2a13a770'
             '984f2a479df79e27e7b01a5815ac53ae64e07746b882262d8a64566494515504'
             'f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140'
             'eafde646a7dbe46d20c291685b0beac2382174d78d66ee990e229a1bf6e6cec6'
             'c463654a73ecfbc242ff109726fb4faecdbfb3d91affafe919b24bea65afb563'
             '440c9af5f3d1213d8ed7177282380f25cbc981cabc8b590dcb777aaae84178e5'
+            'f4a61b909460162cc0f9140020b996a2a2d7d0d42362dbb9eb42ac81fa46d6a7'
             'd0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879'
             'b43ed267643fc5ced803dca010427b12b1f10db485173ccb19efb3395e60c82e'
             '66f2cb5d2ff9909ee9633aea73d5306fc8c4ff358fa526f45d9994210d3e23ff')
@@ -136,6 +140,9 @@ prepare() {
 
         # fix build - https://gerrit.libreoffice.org/c/core/+/145421
         patch -Np1 -i "${srcdir}"/623ea5c.diff
+
+        # tdf#156209 / FS#79484 calc font size bug
+        patch -Np1 -i "${srcdir}"/5484657.diff
 
 	#use the CFLAGS but remove the LibO overridden ones
 	for i in $CFLAGS; do
@@ -163,7 +170,7 @@ build() {
 	export qt6_libexec_dirs="/usr/lib/qt6"
 
 	./autogen.sh --with-extra-buildid="${pkgver}-${pkgrel}" \
-		--with-vendor="Artix Linux" \
+		--with-vendor="Arch Linux" \
 		--enable-split-app-modules \
 		--with-parallelism=${_MAKEFLAGS/-j/} \
 		--with-external-tar="${srcdir}/ext_sources" \
@@ -242,6 +249,7 @@ build() {
 		--with-system-clucene \
 		--without-system-dragonbox \
 		--without-system-libfixmath \
+		--without-system-frozen \
 		--with-gdrive-client-id=${_google_default_client_id} \
 		--with-gdrive-client-secret=${_google_default_client_secret} \
 		--disable-dependency-tracking
@@ -260,7 +268,7 @@ build() {
 
 package_libreoffice-fresh-sdk() {
 	pkgdesc="Software Development Kit for LibreOffice Fresh"
-	depends=('libreoffice-fresh' 'gcc-libs' 'sh' 'make' 'zip' 'gcc' 'java-environment')
+	depends=('libreoffice-fresh' 'gcc-libs' 'sh' 'make' 'zip' 'gcc' 'java-environment' 'glibc')
 	provides=('libreoffice-sdk')
 	conflicts=('libreoffice-still-sdk')
 
@@ -298,8 +306,10 @@ package_libreoffice-fresh() {
 		'liblangtag' 'libexttextcat' 'liborcus' 'libwebp' # 'libfbclient' 'libcmis'
 		'libtommath' 'libzmf' 'libatomic_ops' 'xmlsec' 'libnumbertext' 'gpgme' 
 		'libfreehand' 'libstaroffice' 'libepubgen' 'libqxp' 'libepoxy' 'box2d'
-		'zxing-cpp'
-		'xdg-utils')
+		'zxing-cpp' 'xdg-utils'
+                'libldap' 'fontconfig' 'zlib' 'libpng' 'freetype2' 'raptor' 'libxml2'
+                'cairo' 'libx11' 'expat' 'glib2' 'boost-libs' 'libtiff' 'dbus' 'glibc'
+                'librevenge' 'libxext' 'openjpeg2' )
 	optdepends=('java-runtime:     adds java support'
 		'java-environment: required by extension-wiki-publisher and extension-nlpsolver'
 		'pstoedit:         translates PostScript and PDF graphics into other vector formats'
@@ -316,7 +326,7 @@ package_libreoffice-fresh() {
 		'gtk3:             for GTK3 integration'
 		'gtk4:             for GTK4 integration (experimental)'
 		'kio:              for KF5 KDE desktop integration'
-		'qt6-base:         for QT6 desktop integration')
+		'qt6-base:         for Qt6 desktop integration')
 	backup=(etc/libreoffice/sofficerc
 		etc/libreoffice/bootstraprc
 		etc/libreoffice/psprint.conf
