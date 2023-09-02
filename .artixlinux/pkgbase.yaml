@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: s6-scripts
-  version: 20220905-1
+  version: 20230902-1
   arch:
     - any
   pkgname:
     - s6-scripts
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20230902-1
+    packages:
+      - s6-scripts-20230902-1-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
