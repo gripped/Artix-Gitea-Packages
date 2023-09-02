@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: at-spi2-core
-  version: 2.48.3-2
+  version: 2.48.4-1
   arch:
     - x86_64
   pkgname:
     - at-spi2-core
     - at-spi2-core-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.48.3-2
+    version: 2.48.4-1
     packages:
-      - at-spi2-core-2.48.3-2-x86_64.pkg.tar.zst
-      - at-spi2-core-docs-2.48.3-2-x86_64.pkg.tar.zst
+      - at-spi2-core-2.48.4-1-x86_64.pkg.tar.zst
+      - at-spi2-core-docs-2.48.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
