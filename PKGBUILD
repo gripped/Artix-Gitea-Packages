@@ -8,7 +8,7 @@ pkgname=(
   dbus
   dbus-docs
 )
-pkgver=1.14.8
+pkgver=1.14.10
 pkgrel=1
 pkgdesc="Freedesktop.org message bus system"
 url="https://wiki.freedesktop.org/www/Software/dbus/"
@@ -39,13 +39,13 @@ source=(
 )
 b2sums=('SKIP'
         'c9ef41ff7b31af6cbaf28ca16974fb62aa0f2492f1c6970b41216758768d1139d2ce9aabbb3aff952d625b0decd1e8c2b25f79bb0a13c146aa9453dd4f7b5c5a')
-validpgpkeys=('DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90') # Simon McVittie <simon.mcvittie@collabora.co.uk>
+validpgpkeys=(
+  DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90  # Simon McVittie <simon.mcvittie@collabora.co.uk>
+)
 
 prepare() {
   cd dbus
-
   patch -Np 1 -i ../dbus-enable-elogind.patch
-
   NOCONFIGURE=1 ./autogen.sh
 }
 
@@ -69,7 +69,7 @@ build() {
     --enable-doxygen-docs
     --enable-ducktype-docs
     --disable-static
-    --enable-elogind \
+    --enable-elogind
     --enable-x11-autolaunch
   )
 
