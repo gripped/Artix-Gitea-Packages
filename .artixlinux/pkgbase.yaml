@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - trojan
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1.16.0-10
     packages:
       - trojan-1.16.0-10-x86_64.pkg.tar.zst
-  world:
-    version: 1.16.0-9
-    packages:
-      - trojan-1.16.0-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
