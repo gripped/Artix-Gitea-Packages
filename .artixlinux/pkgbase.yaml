@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pyfakefs
-  version: 5.2.3-1
+  version: 5.2.4-1
   arch:
     - any
   pkgname:
     - python-pyfakefs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.2.3-1
+    version: 5.2.4-1
     packages:
-      - python-pyfakefs-5.2.3-1-any.pkg.tar.zst
+      - python-pyfakefs-5.2.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
