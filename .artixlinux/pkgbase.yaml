@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: runit-rc
-  version: 20210122-1
+  version: 20230902-1
   arch:
     - x86_64
   pkgname:
     - runit-rc
 actions:
-  addRepo: null
+  addRepo: galaxy-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -44,8 +44,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 20230902-1
+    packages:
+      - runit-rc-20230902-1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
