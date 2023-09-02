@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-fiona
-  version: 1.9.3-3.1
+  version: 1.9.4.post1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.9.3-3.1
+    version: 1.9.4.post1-1
     packages:
-      - python-fiona-1.9.3-3.1-x86_64.pkg.tar.zst
+      - python-fiona-1.9.4.post1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
