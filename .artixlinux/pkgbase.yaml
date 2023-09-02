@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: jbigkit
-  version: 2.1-6
+  version: 2.1-7
   arch:
     - x86_64
   pkgname:
     - jbigkit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.1-7
+    packages:
+      - jbigkit-2.1-7-x86_64.pkg.tar.zst
   world:
     version: 2.1-6
     packages:
