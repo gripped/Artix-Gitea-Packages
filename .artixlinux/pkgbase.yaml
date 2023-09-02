@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: calamares
-  version: 3.2.62-2
+  version: 3.2.62-3
   arch:
     - x86_64
   pkgname:
     - calamares
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 3.2.62-3
+    packages:
+      - calamares-3.2.62-3-x86_64.pkg.tar.zst
   galaxy:
     version: 3.2.62-2
     packages:
