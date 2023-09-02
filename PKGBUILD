@@ -1,14 +1,15 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: lilydjwg <lilydjwg@gmail.com>
 
 pkgname=python-cffi
 pkgver=1.15.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Foreign Function Interface for Python calling C code"
 arch=('x86_64')
 url="https://cffi.readthedocs.org/"
 license=('MIT')
 depends=('python-pycparser')
+optdepends=('python-setuptools: "limited api" version checking in cffi.setuptools_ext')
 makedepends=('python-setuptools')
 checkdepends=('python-pytest-runner')
 source=("https://foss.heptapod.net/pypy/cffi/-/archive/v$pkgver/cffi-v$pkgver.tar.bz2"
