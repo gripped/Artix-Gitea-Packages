@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: geoip-database
-  version: 20230719-1
+  version: 20230901-1
   arch:
     - any
   pkgname:
     - geoip-database
     - geoip-database-extra
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230719-1
+    version: 20230901-1
     packages:
-      - geoip-database-20230719-1-any.pkg.tar.zst
-      - geoip-database-extra-20230719-1-any.pkg.tar.zst
+      - geoip-database-20230901-1-any.pkg.tar.zst
+      - geoip-database-extra-20230901-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
