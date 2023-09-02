@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-aiohttp
-  version: 3.8.4-1
+  version: 3.8.5-1
   arch:
     - x86_64
   pkgname:
     - python-aiohttp
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.8.4-1
+    version: 3.8.5-1
     packages:
-      - python-aiohttp-3.8.4-1-x86_64.pkg.tar.zst
+      - python-aiohttp-3.8.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
