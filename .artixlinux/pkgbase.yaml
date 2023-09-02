@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: php
-  version: 8.2.9-3
+  version: 8.2.10-1
   arch:
     - x86_64
   pkgname:
@@ -47,25 +47,25 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.2.9-3
+    version: 8.2.10-1
     packages:
-      - php-8.2.9-3-x86_64.pkg.tar.zst
-      - php-cgi-8.2.9-3-x86_64.pkg.tar.zst
-      - php-apache-8.2.9-3-x86_64.pkg.tar.zst
-      - php-fpm-8.2.9-3-x86_64.pkg.tar.zst
-      - php-embed-8.2.9-3-x86_64.pkg.tar.zst
-      - php-phpdbg-8.2.9-3-x86_64.pkg.tar.zst
-      - php-dblib-8.2.9-3-x86_64.pkg.tar.zst
-      - php-enchant-8.2.9-3-x86_64.pkg.tar.zst
-      - php-gd-8.2.9-3-x86_64.pkg.tar.zst
-      - php-sodium-8.2.9-3-x86_64.pkg.tar.zst
-      - php-odbc-8.2.9-3-x86_64.pkg.tar.zst
-      - php-pgsql-8.2.9-3-x86_64.pkg.tar.zst
-      - php-pspell-8.2.9-3-x86_64.pkg.tar.zst
-      - php-snmp-8.2.9-3-x86_64.pkg.tar.zst
-      - php-sqlite-8.2.9-3-x86_64.pkg.tar.zst
-      - php-tidy-8.2.9-3-x86_64.pkg.tar.zst
-      - php-xsl-8.2.9-3-x86_64.pkg.tar.zst
+      - php-8.2.10-1-x86_64.pkg.tar.zst
+      - php-cgi-8.2.10-1-x86_64.pkg.tar.zst
+      - php-apache-8.2.10-1-x86_64.pkg.tar.zst
+      - php-fpm-8.2.10-1-x86_64.pkg.tar.zst
+      - php-embed-8.2.10-1-x86_64.pkg.tar.zst
+      - php-phpdbg-8.2.10-1-x86_64.pkg.tar.zst
+      - php-dblib-8.2.10-1-x86_64.pkg.tar.zst
+      - php-enchant-8.2.10-1-x86_64.pkg.tar.zst
+      - php-gd-8.2.10-1-x86_64.pkg.tar.zst
+      - php-sodium-8.2.10-1-x86_64.pkg.tar.zst
+      - php-odbc-8.2.10-1-x86_64.pkg.tar.zst
+      - php-pgsql-8.2.10-1-x86_64.pkg.tar.zst
+      - php-pspell-8.2.10-1-x86_64.pkg.tar.zst
+      - php-snmp-8.2.10-1-x86_64.pkg.tar.zst
+      - php-sqlite-8.2.10-1-x86_64.pkg.tar.zst
+      - php-tidy-8.2.10-1-x86_64.pkg.tar.zst
+      - php-xsl-8.2.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
