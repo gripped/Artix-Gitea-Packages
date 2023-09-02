@@ -1,27 +1,29 @@
 ---
 pkgbase:
   name: python
-  version: 3.11.5-1
+  version: 3.11.5-2
   arch:
     - x86_64
   pkgname:
     - python
     - python-tests
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.11.5-2
+    packages:
+      - python-3.11.5-2-x86_64.pkg.tar.zst
+      - python-tests-3.11.5-2-x86_64.pkg.tar.zst
   system:
     version: 3.11.5-1
     packages:
