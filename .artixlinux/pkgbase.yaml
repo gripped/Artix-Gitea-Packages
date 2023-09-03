@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-dbus
-  version: 1.14.8-1
+  version: 1.14.10-1
   arch:
     - x86_64
   pkgname:
     - lib32-dbus
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1.14.10-1
+    packages:
+      - lib32-dbus-1.14.10-1-x86_64.pkg.tar.zst
   lib32:
     version: 1.14.8-1
     packages:
