@@ -7,21 +7,21 @@ pkgbase:
   pkgname:
     - s6-scripts
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 20230902-1
     packages:
       - s6-scripts-20230902-1-any.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 20220905-1
     packages:
