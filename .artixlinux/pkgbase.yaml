@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: netpbm
-  version: 10.73.43-1
+  version: 10.73.43-2
   arch:
     - x86_64
   pkgname:
     - netpbm
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.73.43-2
+    packages:
+      - netpbm-10.73.43-2-x86_64.pkg.tar.zst
   world:
     version: 10.73.43-1
     packages:
