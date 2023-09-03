@@ -8,7 +8,8 @@ pkgrel=2
 arch=('any')
 url="https://www.documentfoundation.org"
 license=('LGPL')
-_url="https://download.documentfoundation.org/libreoffice/stable"
+#_url="https://download.documentfoundation.org/libreoffice/stable"
+_url="https://mirror1.hs-esslingen.de/pub/Mirrors/tdf/libreoffice/stable"
 
 # https://wiki.documentfoundation.org/Language_Teams
 # https://wiki.documentfoundation.org/Language/Support
