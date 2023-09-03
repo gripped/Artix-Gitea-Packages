@@ -2,7 +2,7 @@
 
 pkgname=alsa-utils-dinit
 pkgver=20211025
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for alsa-utils"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,7 +13,7 @@ provides=('init-alsa-utils')
 conflicts=('init-alsa-utils')
 install=alsa-utils-dinit.install
 source=("alsa")
-sha256sums=('e6d037fb50cd1333185921651faf9304c5695465911f9bca8d39638addb87ad8')
+sha256sums=('f07ba810bb5d6dfba13ec7313c8829c87d72b54d3f4cc9f51ffd76542b08c0d3')
 
 package() {
     install -d "$pkgdir/etc/dinit.d"
