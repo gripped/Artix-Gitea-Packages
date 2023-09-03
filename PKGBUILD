@@ -8,7 +8,7 @@
 pkgbase=thunderbird
 pkgname=(thunderbird)
 pkgver=115.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
 arch=(x86_64)
@@ -60,7 +60,6 @@ makedepends=(
 )
 options=(!emptydirs !makeflags !lto)
 source=(https://archive.mozilla.org/pub/thunderbird/releases/$pkgver/source/thunderbird-$pkgver.source.tar.xz{,.asc}
-        thunderbird.desktop
         vendor-prefs.js
         distribution.ini
         mozconfig.cfg
@@ -120,7 +119,7 @@ package_thunderbird() {
 
   install -Dm 644 ../vendor-prefs.js -t "$pkgdir/usr/lib/$pkgname/defaults/pref"
   install -Dm 644 ../distribution.ini -t "$pkgdir/usr/lib/$pkgname/distribution"
-  install -Dm 644 ../thunderbird.desktop -t "$pkgdir/usr/share/applications"
+  install -Dm 644 comm/taskcluster/docker/tb-flatpak/org.mozilla.Thunderbird.desktop -t "$pkgdir/usr/share/applications"
   install -Dm 644 comm/mail/branding/thunderbird/net.thunderbird.Thunderbird.appdata.xml \
     "$pkgdir/usr/share/metainfo/net.thunderbird.Thunderbird.appdata.xml"
 
@@ -242,7 +241,6 @@ done
 
 sha512sums=('31a8b16164e3bab60b62642e1adc55b3d97fc4f20cf28207b1e599275eb5a207f60b173fd642e8c52a48e83894e2ab874cb8424c22c5c712afd7169084b0a2df'
             'SKIP'
-            'a0061fcb2a7f66061e336a8d95948592f56f4752e56467f14ba63846720ebf845cce7511d1a2637e3b80d5a1ffdaa2fb783fa37195103425ef65222d45372012'
             '6918c0de63deeddc6f53b9ba331390556c12e0d649cf54587dfaabb98b32d6a597b63cf02809c7c58b15501720455a724d527375a8fb9d757ccca57460320734'
             'f0c95fc9502cc81491684fb7556145e1e502a9b1a8a18640feffa00516722c722fe9e07b6061e5be3b7c7736b892fb14fd5225f2386c82dd5cbee80c935a6a9b'
             'f5045451184b49c31be92bc21ee2fc7d2ef38eef2af151c7782f59d6db3d4525fe342355da3e2f29bd70bc1d1b721c6239238d8547395ab4aeb7cc5e5c1080dd'
