@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: clamav
-  version: 1.0.1-1
+  version: 1.2.0-1
   arch:
     - x86_64
   pkgname:
     - clamav
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.1-1
+    version: 1.2.0-1
     packages:
-      - clamav-1.0.1-1-x86_64.pkg.tar.zst
+      - clamav-1.2.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
