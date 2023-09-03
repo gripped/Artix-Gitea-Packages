@@ -11,16 +11,19 @@ license=('APACHE')
 arch=(x86_64)
 install=openvswitch.install
 source=("http://openvswitch.org/releases/openvswitch-$pkgver.tar.gz"
+	font_cw.patch::https://patch-diff.githubusercontent.com/raw/openvswitch/ovs/pull/416.patch
 	openvswitch.tmpfiles)
 depends=('openssl' 'libcap-ng')
 makedepends=('python-six')
 optdepends=('python-six')
 sha256sums=('60489183a44d3b95a55224072217c5f6d37aa11be12a75762510cedb93a4e204'
-            'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9'
-)
+            '6edd7371675d8ed26ccaa6c80fbd248398193307f0151c2233cc267fc5b9793c'
+            'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
+  patch -Np1 -i ../font_cw.patch
+
   sed -i \
     -e 's|$(sysconfdir)/bash_completion.d|/usr/share/bash-completion/completions|g' \
     Makefile.am
