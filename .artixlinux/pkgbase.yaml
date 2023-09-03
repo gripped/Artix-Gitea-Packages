@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: metalog
-  version: 20220214-1
+  version: 20230719-1
   arch:
     - x86_64
   pkgname:
     - metalog
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20230719-1
+    packages:
+      - metalog-20230719-1-x86_64.pkg.tar.zst
   world:
     version: 20220214-1
     packages:
