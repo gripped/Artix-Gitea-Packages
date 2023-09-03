@@ -1,14 +1,15 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=bftpd
 pkgver=6.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Small, easy-to-configure FTP server'
 url='http://bftpd.sourceforge.net/'
 arch=('x86_64')
 license=('GPL')
 depends=('pam' 'zlib' 'glibc' 'libxcrypt' 'libcrypt.so')
+optdepends=('logrotate: log file administration')
 backup=(etc/bftpd.conf
         etc/logrotate.d/bftpd
         etc/pam.d/bftpd
