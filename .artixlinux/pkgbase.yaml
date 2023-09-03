@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sane
-  version: 1.2.1-4
+  version: 1.2.1-5
   arch:
     - x86_64
   pkgname:
     - sane
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.1-4
+    version: 1.2.1-5
     packages:
-      - sane-1.2.1-4-x86_64.pkg.tar.zst
+      - sane-1.2.1-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
