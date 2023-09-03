@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: zita-resampler
-  version: 1.10.1-1
+  version: 1.11.2-1
   arch:
     - x86_64
   pkgname:
     - zita-resampler
     - zita-resampler-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.10.1-1
+    version: 1.11.2-1
     packages:
-      - zita-resampler-1.10.1-1-x86_64.pkg.tar.zst
-      - zita-resampler-docs-1.10.1-1-x86_64.pkg.tar.zst
+      - zita-resampler-1.11.2-1-x86_64.pkg.tar.zst
+      - zita-resampler-docs-1.11.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
