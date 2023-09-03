@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gzip
-  version: 1.13-1
+  version: 1.13-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 1.13-1
+    version: 1.13-2
     packages:
-      - gzip-1.13-1-x86_64.pkg.tar.zst
+      - gzip-1.13-2-x86_64.pkg.tar.zst
   system:
     version: 1.12-3
     packages:

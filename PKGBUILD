@@ -4,14 +4,14 @@
 
 pkgname=gzip
 pkgver=1.13
-pkgrel=1
+pkgrel=2
 pkgdesc='GNU compression utility'
 arch=('x86_64')
 url='https://www.gnu.org/software/gzip/'
-license=('GPL3')
+license=('GPL-3.0-or-later')
 depends=('glibc' 'bash' 'coreutils' 'sed' 'grep')
 optdepends=('less: zless support'
-            'more: zmore support'
+            'util-linux: zmore support'
             'diffutils: zdiff/zcmp support'
            )
 validpgpkeys=('155D3FC500C834486D1EEA677FD9FCCB000BEEEE') # Jim Meyering
