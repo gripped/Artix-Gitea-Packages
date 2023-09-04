@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-dulwich
-  version: 0.21.5-1
+  version: 0.21.6-2
   arch:
     - x86_64
   pkgname:
     - python-dulwich
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.21.5-1
+    version: 0.21.6-2
     packages:
-      - python-dulwich-0.21.5-1-x86_64.pkg.tar.zst
+      - python-dulwich-0.21.6-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
