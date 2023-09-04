@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: wireless-regdb
-  version: 2023.05.03-1
+  version: 2023.09.01-1
   arch:
     - any
   pkgname:
     - wireless-regdb
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2023.09.01-1
+    packages:
+      - wireless-regdb-2023.09.01-1-any.pkg.tar.zst
   system:
     version: 2023.05.03-1
     packages:
