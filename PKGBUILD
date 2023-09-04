@@ -1,9 +1,8 @@
-# Maintainer: artist for Artix Linux
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: ThatOneCalculator <kainoa@t1c.dev>
 
 pkgname=hyprland
-pkgver=0.28.0
+pkgver=0.29.1
 pkgrel=1
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
@@ -30,7 +29,7 @@ depends=(cairo
          pixman
          polkit
          seatd
-         libudev
+         systemd-libs
          vulkan-icd-loader
          vulkan-validation-layers
          wayland
@@ -52,7 +51,7 @@ makedepends=(cmake
              xorgproto)
 _archive="${pkgname^}-$pkgver"
 source=("$_archive.tar.gz::$url/releases/download/v$pkgver/source-v$pkgver.tar.gz")
-sha256sums=('baf355cb4e301b27de59fa5fc503b7338eed1bc921fcf76b73629504a00ffefd')
+sha256sums=('5af3ba19c17466085f4458882a342090327ca400177aac3017aa8ccff34859d0')
 
 prepare() {
 	ln -sf hyprland-source "$_archive"
@@ -70,7 +69,7 @@ build() {
 	ninja -C build/ install
 	popd
 	pushd subprojects/udis86
-        cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -DNO_SYSTEMD:STRING=true -H./ -B./build -G Ninja
+	cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -H./ -B./build -G Ninja
 	cmake --build ./build --config Release --target all
 	popd
 	make protocols

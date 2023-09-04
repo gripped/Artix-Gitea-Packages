@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hyprland
-  version: 0.28.0-1
+  version: 0.29.1-1
   arch:
     - x86_64
     - aarch64
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.28.0-1
+    version: 0.29.1-1
     packages:
-      - hyprland-0.28.0-1-x86_64.pkg.tar.zst
+      - hyprland-0.29.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
