@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wine-staging
-  version: 8.14-1
+  version: 8.15-1
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 8.14-1
+    version: 8.15-1
     packages:
-      - wine-staging-8.14-1-x86_64.pkg.tar.zst
+      - wine-staging-8.15-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
