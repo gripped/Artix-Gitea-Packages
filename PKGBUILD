@@ -5,11 +5,11 @@
 pkgname=ostree
 _commit=cf09e9f4e8f10d772a04ebe0ca9f66698e837f6a  # tags/v2023.6
 pkgver=2023.6
-pkgrel=1
+pkgrel=3
 pkgdesc="Operating system and container binary deployment and upgrades"
 url="https://ostreedev.github.io/ostree/"
 arch=(x86_64)
-license=(custom:LGPL2)
+license=(LGPL-2.0-or-later)
 depends=(
   bash
   fuse3
@@ -88,11 +88,12 @@ build() {
     --disable-static
     --enable-experimental-api
     --enable-gtk-doc
-    --with-builtin-grub2-mkconfig
     --with-curl
-    --with-dracut
+    --with-dracut=yesbutnoconf
     --with-ed25519-libsodium
+    --with-grub2-mkconfig-path=/usr/bin/grub-mkconfig
     --with-mkinitcpio
+    --with-modern-grub
     --with-openssl
     --without-libsystemd
   )
