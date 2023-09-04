@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: v2ray-geoip
-  version: 202308240036-1
+  version: 202308310037-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 202308240036-1
+    version: 202308310037-1
     packages:
-      - v2ray-geoip-202308240036-1-any.pkg.tar.zst
+      - v2ray-geoip-202308310037-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
