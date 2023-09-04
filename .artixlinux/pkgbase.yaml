@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-net-dns
-  version: 1.39-2
+  version: 1.40-1
   arch:
     - any
   pkgname:
     - perl-net-dns
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.39-2
+    version: 1.40-1
     packages:
-      - perl-net-dns-1.39-2-any.pkg.tar.zst
+      - perl-net-dns-1.40-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
