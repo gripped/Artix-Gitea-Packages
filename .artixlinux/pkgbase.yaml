@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - licenses
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20230903-1
     packages:
       - licenses-20230903-1-any.pkg.tar.zst
-  system:
-    version: 20230729-1
-    packages:
-      - licenses-20230729-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
