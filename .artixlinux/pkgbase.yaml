@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-llvm
-  version: 16.0.6-1.1
+  version: 16.0.6-2
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - lib32-llvm-libs
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,10 +41,10 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 16.0.6-1.1
+    version: 16.0.6-2
     packages:
-      - lib32-llvm-16.0.6-1.1-x86_64.pkg.tar.zst
-      - lib32-llvm-libs-16.0.6-1.1-x86_64.pkg.tar.zst
+      - lib32-llvm-16.0.6-2-x86_64.pkg.tar.zst
+      - lib32-llvm-libs-16.0.6-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
