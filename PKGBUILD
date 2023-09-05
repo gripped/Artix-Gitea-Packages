@@ -16,7 +16,7 @@ makedepends=(
   'python-setuptools'
   'python-wheel'
 )
-source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
+source=($_name-$pkgver-$pkgrel.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
 sha512sums=('4c0e1e8dcd3f91b8b2d215b3f1e2ffaa85137fe054d07d3a2d442b1419e3b44e96fdea1620bd000bd3f4744f71b71f07280094f073df0ff008fac902af614656')
 b2sums=('cb9466f4a7f7c1d6f5b6d7ca031820ec4d3450afcaa8ba571e35387c3109ede4e2afbf2c1141a9d01d13798f55524d5efd3fa12546a9378abbda405353938d79')
 
