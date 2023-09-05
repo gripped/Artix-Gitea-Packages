@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-blinker
-  version: 1.5-2
+  version: 1.6.2-1
   arch:
     - any
   pkgname:
     - python-blinker
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5-2
+    version: 1.6.2-1
     packages:
-      - python-blinker-1.5-2-any.pkg.tar.zst
+      - python-blinker-1.6.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
