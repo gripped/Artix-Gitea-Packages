@@ -1,13 +1,13 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Danilo Bargen <gezuru@gmail.com>
 # Contributor: Simon Conseil <contact+aur at saimon dot org>
 # Contributor: Jesus Alvarez
 
 pkgname=python-jedi
-_gitcommit=eaab7060388c8f438f1dbe6502e47c6639aa9bac
-pkgver=0.18.2
-pkgrel=2
+_gitcommit=51f4a99a1e06a958e3b96b299b18bb1d49d1debe
+pkgver=0.19.0
+pkgrel=1
 pkgdesc="Awesome autocompletion for python"
 url="https://github.com/davidhalter/jedi"
 arch=('any')
