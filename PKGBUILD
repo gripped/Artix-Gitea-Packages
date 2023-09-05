@@ -30,18 +30,18 @@ source=("https://github.com/jelmer/dulwich/archive/refs/tags/dulwich-$pkgver.tar
 b2sums=('71834272a4c545a3cd254639dc9a59a81644764ee24ea5bb9a644ee67f94737745697ec3ddd889dc99327afd5cf11453ef06d99dc8750aa9f6f0e2c93e6e59a7')
 
 build() {
-  cd "$_name"
+  cd "dulwich-dulwich-$pkgver"
   python -m build --wheel --skip-dependency-check --no-isolation
 }
 
 check() {
-  cd "$_name"
+  cd "dulwich-dulwich-$pkgver"
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
   test-env/bin/python -m unittest dulwich.tests.test_suite
 }
 
 package() {
-  cd "$_name"
+  cd "dulwich-dulwich-$pkgver"
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
