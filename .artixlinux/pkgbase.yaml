@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: hwdata
-  version: 0.373-1
+  version: 0.374-1
   arch:
     - any
   pkgname:
     - hwdata
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.374-1
+    packages:
+      - hwdata-0.374-1-any.pkg.tar.zst
   system:
     version: 0.373-1
     packages:
