@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-sphinx_rtd_theme
-  version: 1.2.2-2
+  version: 1.3.0-1
   arch:
     - any
   pkgname:
     - python-sphinx_rtd_theme
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.2-2
+    version: 1.3.0-1
     packages:
-      - python-sphinx_rtd_theme-1.2.2-2-any.pkg.tar.zst
+      - python-sphinx_rtd_theme-1.3.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
