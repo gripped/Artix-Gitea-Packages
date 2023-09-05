@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-ipykernel
-  version: 6.25.1-1
+  version: 6.25.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.25.1-1
+    version: 6.25.2-1
     packages:
-      - python-ipykernel-6.25.1-1-any.pkg.tar.zst
+      - python-ipykernel-6.25.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
