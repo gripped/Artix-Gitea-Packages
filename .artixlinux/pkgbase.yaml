@@ -8,12 +8,12 @@ pkgbase:
     - ldc
     - liblphobos
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,10 +26,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3:1.33.0-4
-    packages:
-      - ldc-3:1.33.0-4-x86_64.pkg.tar.zst
-      - liblphobos-3:1.33.0-4-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
