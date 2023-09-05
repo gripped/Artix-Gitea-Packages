@@ -1,7 +1,7 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=molecule
-pkgver=5.1.0
+pkgver=6.0.1
 pkgrel=1
 pkgdesc="Aids in the development and testing of Ansible roles"
 arch=(any)
@@ -20,6 +20,7 @@ depends=(
   python-pluggy
   python-pyyaml
   python-rich
+  python-wcmatch
 )
 makedepends=(
   python-build
@@ -48,9 +49,9 @@ optdepends=(
   'python-pywinrm: for Windows support'
   'python-pytest-testinfra: for the testinfra verifier'
 )
-source=(https://files.pythonhosted.org/packages/source/${pkgname::1}/$pkgname/$pkgname-$pkgver.tar.gz)
-sha512sums=('4d025a512e3a6ac7f424318f06bb23b2c1ef1cc122d31d012430bfccf4efeeb3c7ddf2450abd78378c1c50f54fffb1fa8f366f14eebe58125f177ced8cec3ff5')
-b2sums=('55c2f3c181bef6ab848cf7b52b19649fd861dbdbd68b92d3de9e0a1330755b9b887affd8f78e92ab33145ed60e7131d3cf1ffb7b4d8f10c1c3cab8dd58288af9')
+source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
+sha512sums=('b354d9ff8b64617322e02d00bea4daf52c9a308876dd6c9ea5ec3a6bd94349cfc8b85e9dcc581744bb75a446f9b0ba962c755aec6387b0ef4b1d042918c0072b')
+b2sums=('ee0109c4f2586de47d3b7fe88138fb5916988e3e97e7f31f725abe926c5442344300ffb92075bad7af13aeee500a30ee014251b67455ac6058765ae699a25ff1')
 
 build() {
   cd $pkgname-$pkgver
@@ -65,7 +66,7 @@ check() {
   python -m installer --destdir=test_dir dist/*.whl
   export PYTHONPATH="test_dir/$site_packages:$PYTHONPATH"
   export PATH="test_dir/usr/bin:$PATH"
-  pytest -v "test_dir/$site_packages/molecule/test/unit/" -c /dev/null
+  pytest -v "test_dir/$site_packages/molecule/test/a_unit/" -c /dev/null
 }
 
 package() {
