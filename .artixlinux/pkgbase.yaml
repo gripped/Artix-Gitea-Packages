@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-asttokens
-  version: 2.3.0-1
+  version: 2.4.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.3.0-1
+    version: 2.4.0-1
     packages:
-      - python-asttokens-2.3.0-1-any.pkg.tar.zst
+      - python-asttokens-2.4.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
