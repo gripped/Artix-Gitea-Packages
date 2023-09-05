@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lynx
-  version: 2.8.9-6
+  version: 2.8.9-7
   arch:
     - x86_64
   pkgname:
     - lynx
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.8.9-6
+    version: 2.8.9-7
     packages:
-      - lynx-2.8.9-6-x86_64.pkg.tar.zst
+      - lynx-2.8.9-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
