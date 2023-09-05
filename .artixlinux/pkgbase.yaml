@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-nbxmpp
-  version: 4.3.2-1
+  version: 4.3.3-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3.2-1
+    version: 4.3.3-1
     packages:
-      - python-nbxmpp-4.3.2-1-any.pkg.tar.zst
+      - python-nbxmpp-4.3.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
