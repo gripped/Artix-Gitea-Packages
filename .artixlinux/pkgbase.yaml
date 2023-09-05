@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-typeguard
-  version: 4.1.1-1
+  version: 4.1.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.1-1
+    version: 4.1.2-1
     packages:
-      - python-typeguard-4.1.1-1-any.pkg.tar.zst
+      - python-typeguard-4.1.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
