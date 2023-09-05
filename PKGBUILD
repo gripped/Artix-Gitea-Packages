@@ -26,9 +26,8 @@ optdepends=(
   'python-pyopenssl: for HTTPS support via urllib3'
   'python-pyinotify: to watch for changes to refs'
 )
-source=("git+https://github.com/jelmer/dulwich.git#tag=dulwich-$pkgver?signed")
-b2sums=('SKIP')
-validpgpkeys=('DC837EE14A7E37347E87061700806F2BD729A457') # Jelmer Vernooĳ <jelmer@jelmer.uk>
+source=("https://github.com/jelmer/dulwich/archive/refs/tags/dulwich-$pkgver.tar.gz")
+b2sums=('71834272a4c545a3cd254639dc9a59a81644764ee24ea5bb9a644ee67f94737745697ec3ddd889dc99327afd5cf11453ef06d99dc8750aa9f6f0e2c93e6e59a7')
 
 build() {
   cd "$_name"
