@@ -20,7 +20,7 @@ makedepends=(
 )
 checkdepends=(python-hypothesis)
 source=(
-  $_name-$pkgver.tar.gz::https://github.com/binaryornot/binaryornot/archive/refs/tags/$pkgver.tar.gz
+  $_name-$pkgver-$pkgrel.tar.gz::https://github.com/binaryornot/binaryornot/archive/refs/tags/$pkgver.tar.gz
   $pkgname-0.4.4-hypothesis_tests.patch::https://github.com/audreyr/binaryornot/pull/52.patch
   $pkgname-0.4.4-set_version.patch::https://github.com/binaryornot/binaryornot/commit/cff1a0a4478c17d4f970d133c06abbf6945b6a5e.patch
 )
