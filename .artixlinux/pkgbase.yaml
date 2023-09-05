@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-elementpath
-  version: 4.1.4-1
+  version: 4.1.5-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.4-1
+    version: 4.1.5-1
     packages:
-      - python-elementpath-4.1.4-1-any.pkg.tar.zst
+      - python-elementpath-4.1.5-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
