@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: cbindgen
-  version: 0.24.6-1
+  version: 0.25.0-1
   arch:
     - x86_64
   pkgname:
     - cbindgen
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.24.6-1
+    version: 0.25.0-1
     packages:
-      - cbindgen-0.24.6-1-x86_64.pkg.tar.zst
+      - cbindgen-0.25.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
