@@ -1,0 +1,60 @@
+From 7525fd43066dba85a8e7d88c5dfe668919ed58fe Mon Sep 17 00:00:00 2001
+From: nathan <ndowens@artixlinux.org>
+Date: Mon, 4 Sep 2023 20:22:20 -0500
+Subject: [PATCH] no-systemd
+
+---
+ data/meson.build | 16 +---------------
+ meson.build      |  8 --------
+ 2 files changed, 1 insertion(+), 23 deletions(-)
+
+diff --git a/data/meson.build b/data/meson.build
+index b871572..0e2b88c 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -11,22 +11,8 @@ install_data(['org.freedesktop.Passim.png'],
+ con2 = configuration_data()
+ con2.set('libexecdir', libexecdir)
+ con2.set('localstatedir', localstatedir)
+-configure_file(
+-  input: 'passim.service.in',
+-  output: 'passim.service',
+-  configuration: con2,
+-  install: true,
+-  install_dir: systemdunitdir,
+-)
+-configure_file(
+-  input: 'org.freedesktop.Passim.service.in',
+-  output: 'org.freedesktop.Passim.service',
+-  configuration: con2,
+-  install: true,
+-  install_dir: join_paths(datadir, 'dbus-1', 'system-services'),
+-)
+ install_data(['org.freedesktop.Passim.conf'],
+-  install_dir: join_paths(datadir, 'dbus-1', 'system.d')
++  install_dir: join_paths(datadir, 'dbus-1')
+ )
+ install_data(['org.freedesktop.Passim.metainfo.xml'],
+   install_dir: join_paths(datadir, 'metainfo')
+diff --git a/meson.build b/meson.build
+index d9c21c4..4cd0019 100644
+--- a/meson.build
++++ b/meson.build
+@@ -93,14 +93,6 @@ conf.set('MAJOR_VERSION', varr[0])
+ conf.set('MINOR_VERSION', varr[1])
+ conf.set('MICRO_VERSION', varr[2])
+ 
+-systemd = dependency('systemd', version: '>= 211')
+-systemd_root_prefix = get_option('systemd_root_prefix')
+-if systemd_root_prefix == ''
+-  systemdunitdir = systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
+-else
+-  systemdunitdir = systemd.get_variable(pkgconfig: 'systemdsystemunitdir', pkgconfig_define: ['rootprefix', systemd_root_prefix])
+-endif
+-
+ # get source version, falling back to package version
+ git = find_program('git', required: false)
+ tag = false
+-- 
+2.42.0
+
