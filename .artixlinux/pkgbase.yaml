@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-whatthepatch
-  version: 1.0.4-2
+  version: 1.0.5-1
   arch:
     - any
   pkgname:
     - python-whatthepatch
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.4-2
+    version: 1.0.5-1
     packages:
-      - python-whatthepatch-1.0.4-2-any.pkg.tar.zst
+      - python-whatthepatch-1.0.5-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
