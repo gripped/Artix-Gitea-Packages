@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pytest-localserver
-  version: 0.7.1-2
+  version: 0.8.0-2
   arch:
     - any
   pkgname:
     - python-pytest-localserver
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.1-2
+    version: 0.8.0-2
     packages:
-      - python-pytest-localserver-0.7.1-2-any.pkg.tar.zst
+      - python-pytest-localserver-0.8.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
