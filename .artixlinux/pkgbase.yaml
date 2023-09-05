@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-soupsieve
-  version: 2.4.1-1
+  version: 2.5-1
   arch:
     - any
   pkgname:
     - python-soupsieve
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.4.1-1
+    version: 2.5-1
     packages:
-      - python-soupsieve-2.4.1-1-any.pkg.tar.zst
+      - python-soupsieve-2.5-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
