@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Contributor: Alexander F Rødseth <xyproto@archlinux.org>
 # Contributor: Vesa Kaihlavirta <vegai@iki.fi>
 # Contributor: Kristoffer Fossgård <kfs1@online.no>
@@ -7,7 +7,7 @@
 
 pkgname=terminus-font
 pkgver=4.49.1
-pkgrel=5
+pkgrel=6
 
 pkgdesc='Monospace bitmap font (for X11 and console)'
 url='http://terminus-font.sourceforge.net/'
@@ -56,6 +56,8 @@ package() {
   for i in *.pf2; do
     install -D -m644 $i "$pkgdir/usr/share/grub/$i"
   done
+
+  install -Dm644 README "$pkgdir/usr/share/$pkgname/README"
 }
 
 # vim:set ts=2 sw=2 et:
