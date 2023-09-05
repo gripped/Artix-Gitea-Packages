@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pyperclip
-  version: 1.8.2-5
+  version: 1.8.2-6
   arch:
     - any
   pkgname:
     - python-pyperclip
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.2-5
+    version: 1.8.2-6
     packages:
-      - python-pyperclip-1.8.2-5-any.pkg.tar.zst
+      - python-pyperclip-1.8.2-6-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
