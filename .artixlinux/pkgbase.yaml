@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openblas
-  version: 0.3.23-3
+  version: 0.3.24-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - blas-openblas
     - blas64-openblas
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.3.24-1
+    packages:
+      - openblas-0.3.24-1-x86_64.pkg.tar.zst
+      - openblas64-0.3.24-1-x86_64.pkg.tar.zst
+      - blas-openblas-0.3.24-1-x86_64.pkg.tar.zst
+      - blas64-openblas-0.3.24-1-x86_64.pkg.tar.zst
   world:
     version: 0.3.23-3
     packages:
