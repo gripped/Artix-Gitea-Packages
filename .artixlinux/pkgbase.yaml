@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: thunderbird
-  version: 115.2.0-2
+  version: 115.2.0-3
   arch:
     - x86_64
   pkgname:
@@ -91,72 +91,72 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 115.2.0-2
+    version: 115.2.0-3
     packages:
-      - thunderbird-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-af-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ar-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ast-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-be-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-bg-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-br-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ca-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cak-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cs-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cy-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-da-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-de-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-dsb-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-el-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-en-gb-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-en-us-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-es-ar-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-es-es-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-et-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-eu-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fi-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fr-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fy-nl-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ga-ie-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-gd-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-gl-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-he-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hr-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hsb-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hu-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hy-am-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-id-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-is-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-it-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ja-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ka-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-kab-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-kk-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ko-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-lt-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ms-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nb-no-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nl-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nn-no-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pa-in-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pl-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pt-br-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pt-pt-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-rm-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ro-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ru-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sk-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sl-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sq-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sr-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sv-se-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-th-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-tr-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-uk-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-uz-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-vi-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-zh-cn-115.2.0-2-x86_64.pkg.tar.zst
-      - thunderbird-i18n-zh-tw-115.2.0-2-x86_64.pkg.tar.zst
+      - thunderbird-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-af-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ar-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ast-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-be-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-bg-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-br-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ca-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cak-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cs-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cy-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-da-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-de-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-dsb-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-el-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-gb-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-us-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-ar-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-es-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-et-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-eu-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fi-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fr-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fy-nl-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ga-ie-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gd-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gl-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-he-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hr-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hsb-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hu-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hy-am-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-id-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-is-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-it-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ja-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ka-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kab-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kk-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ko-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-lt-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ms-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nb-no-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nl-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nn-no-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pa-in-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pl-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-br-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-pt-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-rm-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ro-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ru-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sk-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sl-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sq-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sr-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sv-se-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-th-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-tr-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uk-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uz-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-vi-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-cn-115.2.0-3-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-tw-115.2.0-3-x86_64.pkg.tar.zst
   world:
     version: 115.2.0-1
     packages:

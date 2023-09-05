@@ -8,7 +8,7 @@
 pkgbase=thunderbird
 pkgname=(thunderbird)
 pkgver=115.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
 arch=(x86_64)
@@ -125,7 +125,7 @@ package_thunderbird() {
 
   for i in 16 22 24 32 48 64 128 256; do
     install -Dm644 comm/mail/branding/thunderbird/default${i}.png \
-      "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/$pkgname.png"
+      "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/org.mozilla.Thunderbird.png"
   done
   install -Dm644 comm/mail/branding/thunderbird/TB-symbolic.svg \
     "$pkgdir/usr/share/icons/hicolor/symbolic/apps/thunderbird-symbolic.svg"
