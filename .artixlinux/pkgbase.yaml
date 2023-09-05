@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pdm
-  version: 2.8.2-1
+  version: 2.9.0-1
   arch:
     - any
   pkgname:
     - python-pdm
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.9.0-1
+    packages:
+      - python-pdm-2.9.0-1-any.pkg.tar.zst
   world:
     version: 2.8.2-1
     packages:
