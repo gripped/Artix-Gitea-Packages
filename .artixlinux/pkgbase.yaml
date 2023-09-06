@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pipewire
-  version: 1:0.3.79-1
+  version: 1:0.3.79-2
   arch:
     - x86_64
   pkgname:
@@ -12,6 +12,7 @@ pkgbase:
     - pipewire-audio
     - pipewire-alsa
     - pipewire-ffado
+    - pipewire-jack-client
     - pipewire-jack
     - pipewire-pulse
     - pipewire-roc
@@ -21,11 +22,11 @@ pkgbase:
     - pipewire-x11-bell
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -44,22 +45,23 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.3.79-1
+    version: 1:0.3.79-2
     packages:
-      - pipewire-1:0.3.79-1-x86_64.pkg.tar.zst
-      - libpipewire-1:0.3.79-1-x86_64.pkg.tar.zst
-      - alsa-card-profiles-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-docs-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-audio-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-alsa-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-ffado-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-jack-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-pulse-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-roc-1:0.3.79-1-x86_64.pkg.tar.zst
-      - gst-plugin-pipewire-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-zeroconf-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-v4l2-1:0.3.79-1-x86_64.pkg.tar.zst
-      - pipewire-x11-bell-1:0.3.79-1-x86_64.pkg.tar.zst
+      - pipewire-1:0.3.79-2-x86_64.pkg.tar.zst
+      - libpipewire-1:0.3.79-2-x86_64.pkg.tar.zst
+      - alsa-card-profiles-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-docs-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-audio-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-alsa-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-ffado-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-jack-client-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-jack-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-pulse-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-roc-1:0.3.79-2-x86_64.pkg.tar.zst
+      - gst-plugin-pipewire-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-zeroconf-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-v4l2-1:0.3.79-2-x86_64.pkg.tar.zst
+      - pipewire-x11-bell-1:0.3.79-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
