@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: xorg-fonts-100dpi
+  version: 1.0.4-2
+  arch:
+    - any
+  pkgname:
+    - xorg-fonts-100dpi
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.0.4-2
+    packages:
+      - xorg-fonts-100dpi-1.0.4-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
