@@ -1,0 +1,34 @@
+# Maintainer: Eric Bélanger <eric@archlinux.org>
+
+pkgname=liferea
+pkgver=1.14.6
+pkgrel=1
+pkgdesc="A desktop news aggregator for online news feeds and weblogs"
+arch=('x86_64')
+url="https://lzone.de/liferea"
+license=('GPL')
+depends=('webkit2gtk' 'libpeas' 'python-gobject')
+makedepends=('intltool' 'gobject-introspection')
+optdepends=('libsecret: for keyring plugin support'
+            'python-cairo: for the tray icon plugin'
+	    'gst-plugins-base: for media player plugin support'
+	    'gst-plugins-good: for media player plugin support'
+	    'gst-plugins-bad: for media player plugin support')
+options=('!emptydirs')
+source=(https://github.com/lwindolf/liferea/releases/download/v$pkgver/$pkgname-${pkgver}.tar.bz2)
+sha256sums=('36f28e51d26eebcbd3460c53eb5cb012855a5fc6cce6bca58103dfc06353cc72')
+
+build() {
+  cd $pkgname-${pkgver}
+  
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --disable-schemas-compile
+  make
+}
+
+package() {
+  cd $pkgname-${pkgver}
+  make DESTDIR="${pkgdir}" install
+}
