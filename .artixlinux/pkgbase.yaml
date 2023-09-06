@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libteam
-  version: 1.31-8
+  version: 1.32-1
   arch:
     - x86_64
   pkgname:
     - libteam
     - libteam-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.31-8
+    version: 1.32-1
     packages:
-      - libteam-1.31-8-x86_64.pkg.tar.zst
-      - libteam-docs-1.31-8-x86_64.pkg.tar.zst
+      - libteam-1.32-1-x86_64.pkg.tar.zst
+      - libteam-docs-1.32-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
