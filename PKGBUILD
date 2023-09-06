@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Henrik Ronellenfitsch <searinox@web.de>
 # Contributor: Alessio Sergi <sergi.alessio {at} gmail.com>
@@ -8,13 +8,13 @@
 pkgname=amule
 epoch=1
 pkgver=2.3.3
-pkgrel=6
+pkgrel=7
 pkgdesc='An eMule-like client for ed2k p2p network'
 arch=(x86_64)
 url='http://www.amule.org'
 license=(GPL)
-depends=(wxwidgets-gtk3 gd geoip libupnp crypto++)
-makedepends=(boost cmake)
+depends=(wxwidgets-gtk3 geoip libupnp crypto++)
+makedepends=(boost cmake gd)
 provides=(amule-daemon)
 source=(https://download.sourceforge.net/project/amule/aMule/$pkgver/aMule-$pkgver.tar.gz
         amule.sysusers amule.tmpfiles
@@ -56,6 +56,7 @@ build() {
     -DBUILD_WXCAS=ON \
     -DBUILD_FILEVIEW=ON \
     -DSYSTEMD=OFF \
+    -DENABLE_IP2COUNTRY=ON \
     -DENABLE_NLS=ON
   cmake --build build
 }
