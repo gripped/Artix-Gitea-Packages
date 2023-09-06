@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mtr
-  version: 0.95-3
+  version: 0.95-4
   arch:
     - x86_64
   pkgname:
     - mtr
     - mtr-gtk
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.95-3
+    version: 0.95-4
     packages:
-      - mtr-0.95-3-x86_64.pkg.tar.zst
-      - mtr-gtk-0.95-3-x86_64.pkg.tar.zst
+      - mtr-0.95-4-x86_64.pkg.tar.zst
+      - mtr-gtk-0.95-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
