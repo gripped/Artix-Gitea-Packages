@@ -1,6 +1,6 @@
 ---
 pkgbase:
-  name: virt-install
+  name: virt-manager
   version: 4.1.0-2
   arch:
     - any
@@ -8,11 +8,11 @@ pkgbase:
     - virt-install
     - virt-manager
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
