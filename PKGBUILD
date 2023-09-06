@@ -1,0 +1,42 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Florian Pritz <bluewind@xinu.at>
+# Contributor: Martchus <martchus@gmx.net>
+
+pkgname=libfilezilla
+epoch=1
+pkgver=0.44.0
+pkgrel=1
+pkgdesc='Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs'
+url='https://lib.filezilla-project.org/'
+arch=('x86_64')
+license=('GPL')
+depends=('glibc' 'gcc-libs' 'nettle' 'gnutls' 'libnettle.so' 'libhogweed.so')
+makedepends=(clang)
+checkdepends=('cppunit')
+provides=('libfilezilla.so')
+source=(https://download.filezilla-project.org/libfilezilla/libfilezilla-${pkgver}.tar.xz)
+sha512sums=('44547cfce1c2b33cbddbd3c7150613d050c9d6f1130e7969b0ad26e96d4e18a0a7251ca045e1dba1442a1d9c7f19e463b5eab7985a0cc98e652caf79809d291f')
+b2sums=('73344ef8cebdfb6334204baf37e9cb9ab4171fe7307fc186b77139e912aa7a8dd9d9970f765a1c7059d146cdae69ce81571749052cc4b981841229058225badc')
+
+build() {
+  cd ${pkgname}-${pkgver}
+  export CXX=clang++
+  export CC=clang
+  ./configure \
+    --prefix=/usr \
+    --disable-static
+  make
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  # LANG needed to fix string_test::test_conversion2
+  LANG=en_US.UTF-8 make check
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+}
+
+# vim: ts=2 sw=2 et:
