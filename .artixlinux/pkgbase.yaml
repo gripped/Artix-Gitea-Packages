@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: matrix-synapse
-  version: 1.91.0-1
+  version: 1.91.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.91.0-1
+    version: 1.91.2-1
     packages:
-      - matrix-synapse-1.91.0-1-x86_64.pkg.tar.zst
+      - matrix-synapse-1.91.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
