@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: winetricks
-  version: 20220411-1
+  version: 20220521-1
   arch:
     - x86_64
   pkgname:
     - winetricks
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 20220411-1
+    version: 20220521-1
     packages:
-      - winetricks-20220411-1-x86_64.pkg.tar.zst
+      - winetricks-20220521-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
