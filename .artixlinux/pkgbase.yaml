@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: syncthing
-  version: 1.23.6-1
+  version: 1.24.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - syncthing-discosrv
     - syncthing-relaysrv
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.23.6-1
+    version: 1.24.0-1
     packages:
-      - syncthing-1.23.6-1-x86_64.pkg.tar.zst
-      - syncthing-discosrv-1.23.6-1-x86_64.pkg.tar.zst
-      - syncthing-relaysrv-1.23.6-1-x86_64.pkg.tar.zst
+      - syncthing-1.24.0-1-x86_64.pkg.tar.zst
+      - syncthing-discosrv-1.24.0-1-x86_64.pkg.tar.zst
+      - syncthing-relaysrv-1.24.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
