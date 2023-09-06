@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: multipath-tools
-  version: 0.9.5-1
+  version: 0.9.6-1
   arch:
     - x86_64
   pkgname:
     - multipath-tools
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.5-1
+    version: 0.9.6-1
     packages:
-      - multipath-tools-0.9.5-1-x86_64.pkg.tar.zst
+      - multipath-tools-0.9.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
