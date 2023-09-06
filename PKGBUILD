@@ -8,7 +8,7 @@ arch=('x86_64')
 url="https://lzone.de/liferea"
 license=('GPL')
 depends=('webkit2gtk' 'libpeas' 'python-gobject')
-makedepends=('intltool' 'gobject-introspection')
+makedepends=('intltool' 'gobject-introspection' 'json-glib')
 optdepends=('libsecret: for keyring plugin support'
             'python-cairo: for the tray icon plugin'
 	    'gst-plugins-base: for media player plugin support'
