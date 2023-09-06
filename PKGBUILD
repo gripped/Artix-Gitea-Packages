@@ -1,9 +1,8 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
 
 pkgname=sleuthkit
-pkgver=4.12.0
+pkgver=4.12.1
 pkgrel=1
 pkgdesc='File system and media management forensic analysis tools'
 arch=('x86_64')
@@ -13,7 +12,7 @@ depends=('perl' 'libewf' 'sqlite')
 changelog=$pkgname.changelog
 source=(https://github.com/$pkgname/$pkgname/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz{,.asc})
 validpgpkeys=('0917A7EE58A9308B13D3963338AD602EC7454C8B') #Brian Carrier <carrier@sleuthkit.org>
-sha256sums=('0fae8dbcca69316a92212374272b8f81efd0a669fb93d61267cfd855b06ed23b'
+sha256sums=('6b2de0baabc6a38429a33993114ca3820329b477d5038cbf45fcf69fca8addfd'
             'SKIP')
 
 build() {
