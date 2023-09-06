@@ -5,7 +5,7 @@
 
 pkgname=audacious
 pkgver=4.3.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Lightweight, advanced audio player focused on audio quality"
 arch=('x86_64')
 url="https://audacious-media-player.org/"
@@ -25,7 +25,7 @@ build() {
 }
 
 package() {
-  depends+=('audacious-plugins')
+  #depends+=('audacious-plugins')
 
   meson install -C build --destdir "$pkgdir"
   install -Dm644 $pkgname-$pkgver/contrib/audacious.appdata.xml -t "$pkgdir/usr/share/metainfo"
