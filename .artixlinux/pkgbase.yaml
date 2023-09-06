@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: s3fs-fuse
+  version: 1.91-2
+  arch:
+    - x86_64
+  pkgname:
+    - s3fs-fuse
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.91-2
+    packages:
+      - s3fs-fuse-1.91-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
