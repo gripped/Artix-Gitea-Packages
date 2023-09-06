@@ -1,0 +1,40 @@
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Gaetan Bisson <bisson@archlinux.org>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=audacious-plugins
+pkgver=4.3.1
+pkgrel=2
+pkgdesc="Plugins for Audacious"
+arch=('x86_64')
+url="https://audacious-media-player.org/"
+license=('BSD' 'GPL')
+depends=('alsa-lib' 'curl' 'dbus-glib' 'faad2' 'ffmpeg' 'flac' 'fluidsynth'
+         'jack' 'lame' 'libcdio-paranoia' 'libcue' 'libmms' 'libmodplug'
+         'libmtp' 'libpulse' 'libnotify' 'libsamplerate' 'libsidplayfp'
+         'libvorbis' 'lirc' 'mpg123' 'neon' 'wavpack' 'libbs2b' 'libopenmpt'
+         'libcddb' 'qt5-x11extras' 'opusfile' 'libpipewire')
+makedepends=("audacious>=$pkgver" 'meson')
+source=(https://distfiles.audacious-media-player.org/$pkgname-$pkgver.tar.bz2
+        sidplay-rom-paths.patch)
+sha256sums=('2dea26e3af583a2d684df240b27b2b2932bcd653df4db500a85f4fe5d5fdc8a6'
+            'c32cd36f75dd18db082f9b9447f1c0982279703b9d648f5695295ff25c9b678d')
+
+prepare() {
+  # Set paths for ROM files from vice for sidplay
+  patch -d $pkgname-$pkgver -Np1 -i ../sidplay-rom-paths.patch
+}
+
+build() {
+  artix-meson $pkgname-$pkgver build \
+    -Dgtk=false
+  meson compile -C build
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 $pkgname-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname"
+}
+
+# vim:set ts=2 sw=2 et:
