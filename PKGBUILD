@@ -1,0 +1,44 @@
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Robin Candau <antiz@archlinux.org>
+
+pkgname=remmina
+epoch=1
+pkgver=1.4.31
+pkgrel=1
+pkgdesc="remote desktop client written in GTK+"
+url="https://www.remmina.org/"
+arch=('x86_64')
+license=('GPL')
+depends=('avahi' 'libgcrypt' 'libssh' 'vte3' 'libsodium' 'libayatana-appindicator' 'libsoup3')
+makedepends=('cmake' 'freerdp' 'libvncserver' 'spice-gtk' 'spice-protocol'
+             'harfbuzz' 'xorgproto' 'gobject-introspection' 'kwallet'
+             'webkit2gtk-4.1' 'gtk-vnc' 'ninja')
+optdepends=('freerdp: RDP plugin'
+            'libsecret: Secret plugin'
+            'libvncserver: VNC plugin'
+            'spice-gtk: Spice plugin'
+#            'pyhoca-cli: X2Go plugin'
+            'webkit2gtk-4.1: WWW plugin'
+            'gtk-vnc: GVNC plugin'
+            'kwallet: kwallet plugin'
+            'gnome-terminal: external tools')
+replaces=('remmina-plugins')
+provides=('remmina-plugins')
+source=("$pkgname-$pkgver.tar.bz2::https://gitlab.com/Remmina/Remmina/-/archive/v${pkgver/rc/-rc}/Remmina-v${pkgver/rc/-rc}.tar.bz2")
+sha512sums=('288e7fb5b5251d251e9502ec310f2bfe526f1a28a91c9dd9e79c712191c5d2b287844bd994596dc5097ec50ed8282d0af11144f6c5f0a74cb444aa4c6a8f6838')
+
+build() {
+  cmake -S Remmina-v${pkgver/rc/-rc} -B build -G Ninja \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DWITH_APPINDICATOR=ON \
+    -DWITH_NEWS=OFF \
+    -DWITH_KF5WALLET=ON \
+    -DWITH_X2GO=ON \
+    -DWITH_GVNC=ON
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
