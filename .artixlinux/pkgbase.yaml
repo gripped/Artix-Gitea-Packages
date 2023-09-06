@@ -1,6 +1,6 @@
 ---
 pkgbase:
-  name: xorg-fonts-alias-100dpi
+  name: xorg-fonts-alias
   version: 1.0.5-1
   arch:
     - any
@@ -10,11 +10,11 @@ pkgbase:
     - xorg-fonts-alias-cyrillic
     - xorg-fonts-alias-misc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
