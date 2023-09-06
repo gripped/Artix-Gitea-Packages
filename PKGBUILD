@@ -16,11 +16,8 @@ makedepends=('git' 'python-build' 'python-installer' 'python-setuptools-scm' 'py
 checkdepends=('python-pytest' 'python-jaraco.classes')
 conflicts=('python-jaraco')
 replaces=('python-jaraco')
-source=("git+https://github.com/jaraco/jaraco.functools?signed#tag=$_tag")
+source=("git+https://github.com/jaraco/jaraco.functools#tag=$_tag")
 sha512sums=('SKIP')
-validpgpkeys=(
-  'CE380CF3044959B8F377DA03708E6CB181B4C47E' # https://github.com/jaraco.gpg
-)
 
 pkgver() {
   cd jaraco.functools
