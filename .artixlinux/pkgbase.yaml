@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: github-cli
-  version: 2.33.0-1
+  version: 2.34.0-1
   arch:
     - x86_64
   pkgname:
     - github-cli
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,12 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: 2.34.0-1
+    packages:
+      - github-cli-2.34.0-1-x86_64.pkg.tar.zst
+  world:
     version: null
     packages: []
-  world:
-    version: 2.33.0-1
-    packages:
-      - github-cli-2.33.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
