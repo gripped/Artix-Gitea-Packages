@@ -1,4 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=grub-customizer
 pkgver=5.2.3
