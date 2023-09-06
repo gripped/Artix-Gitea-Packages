@@ -1,3 +1,4 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Emanuele Rampichini <emanuele.rampichini@gmail.com>
