@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - libedit
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20230828_3.1-1
     packages:
       - libedit-20230828_3.1-1-x86_64.pkg.tar.zst
-  system:
-    version: 20221030_3.1-1
-    packages:
-      - libedit-20221030_3.1-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
