@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - hwdata
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 0.374-1
     packages:
       - hwdata-0.374-1-any.pkg.tar.zst
-  system:
-    version: 0.373-1
-    packages:
-      - hwdata-0.373-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
