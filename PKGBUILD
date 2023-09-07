@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Daurnimator  <daurnimator@archlinux.org>
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Dwayne Bent <dbb@dbb.io>
 # Contributor: Tilman Vatteroth <tilman.vatteroth@uni-dortmund.de>
@@ -8,7 +8,7 @@
 
 pkgname=prosody
 epoch=1
-pkgver=0.12.3
+pkgver=0.12.4
 pkgrel=1
 pkgdesc="Lightweight and extensible Jabber/XMPP server written in Lua"
 arch=('x86_64')
@@ -34,7 +34,7 @@ source=("https://prosody.im/downloads/source/prosody-$pkgver.tar.gz"{,.asc}
         'prosody.tmpfile.d'
         'prosody.logrotated'
 	      'sysuser.conf')
-sha256sums=('35da0d031ff46040a2d638e004d4255e249b6323fe6212db9ddd76b401db2101'
+sha256sums=('47d712273c2f29558c412f6cdaec073260bbc26b7dda243db580330183d65856'
             'SKIP'
             '0753bd9260f1cfdce6e18e01a61e320b396acfe9fca8ccf3250653bfa6af997e'
             '5a2466b73bd069fb73be97a4e23b24e4c8dd1adb7db871cb8f5ab4094c1f967f'
