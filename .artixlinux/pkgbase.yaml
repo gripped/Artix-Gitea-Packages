@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ecryptfs-utils
-  version: 111-7
+  version: 111-8
   arch:
     - x86_64
   pkgname:
     - ecryptfs-utils
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 111-7
+    version: 111-8
     packages:
-      - ecryptfs-utils-111-7-x86_64.pkg.tar.zst
+      - ecryptfs-utils-111-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
