@@ -21,7 +21,6 @@ makedepends=('git' 'go')
 source=(https://github.com/syncthing/syncthing/releases/download/v$pkgver/syncthing-source-v${pkgver}.tar.gz{,.asc}
         syncthing-{disco,relay}srv.sysusers
         syncthing-{disco,relay}srv.tmpfiles
-        syncthing-{disco,relay}srv.service
         gcc-pie-segfaults-race.patch)
 validpgpkeys=('37C84554E7E0A261E4F76E1ED26E6ED000654A3E') # Syncthing Release Management
 sha256sums=('4a9459667f9b70a7d1e7d572c7c9d02431ef8f055679eef368300ce1a826608f'
@@ -30,8 +29,6 @@ sha256sums=('4a9459667f9b70a7d1e7d572c7c9d02431ef8f055679eef368300ce1a826608f'
             '6ab96a5949e223d315d49663734ad27b70c72469c691a61ac198cb7794cb5eaa'
             'a05a66efbbd13f20b5c3af56692fe219fadc967dba4eedb71494827795d2c140'
             'f899998985f2d374af57f17ef6362c37a305467858195b74d1c1def71d97273f'
-            '4dc66a098cf2f6e5bd34a48898f5c98aff74d3c8c61115313b0eff6b8d8b18f6'
-            '7c2fbc9608d81f8080f8a9102b867a52a050b61f426a0c182ccc1cb5815e4981'
             '6a58227c09a18fc7049ec38351a0fd98195688d15821d67d5af4facda401cbba')
 
 prepare() {
@@ -69,12 +66,6 @@ package_syncthing() {
   cd "${srcdir}/src/github.com/syncthing/${pkgbase}"
   install -Dm755 ${pkgname} "${pkgdir}/usr/bin/${pkgname}"
   install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-  install -Dm644 "etc/linux-systemd/system/${pkgname}-resume.service" \
-    "${pkgdir}/usr/lib/systemd/system/${pkgname}-resume.service"
-  install -Dm644 "etc/linux-systemd/system/${pkgname}@.service" \
-    "${pkgdir}/usr/lib/systemd/system/${pkgname}@.service"
-  install -Dm644 "etc/linux-systemd/user/${pkgname}.service" \
-    "${pkgdir}/usr/lib/systemd/user/${pkgname}.service"
 
   # license
   install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
@@ -110,8 +101,6 @@ package_syncthing-discosrv() {
   install -Dm644 man/stdiscosrv.1 \
     "${pkgdir}"/usr/share/man/man1/$pkgname.1
 
-  install -Dm644 "${srcdir}"/${pkgname}.service \
-    "${pkgdir}"/usr/lib/systemd/system/${pkgname}.service
   install -Dm644 "${srcdir}/${pkgname}.tmpfiles" \
     "$pkgdir/usr/lib/tmpfiles.d/${pkgname}.conf"
   install -Dm644 "${srcdir}/${pkgname}.sysusers" \
@@ -127,8 +116,6 @@ package_syncthing-relaysrv() {
   install -Dm644 man/strelaysrv.1 \
     "${pkgdir}"/usr/share/man/man1/$pkgname.1
 
-  install -Dm644 "${srcdir}"/${pkgname}.service \
-    "${pkgdir}"/usr/lib/systemd/system/${pkgname}.service
   install -Dm644 "${srcdir}/${pkgname}.tmpfiles" \
     "$pkgdir/usr/lib/tmpfiles.d/${pkgname}.conf"
   install -Dm644 "${srcdir}/${pkgname}.sysusers" \
