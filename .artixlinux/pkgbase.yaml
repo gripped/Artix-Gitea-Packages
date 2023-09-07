@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sox
-  version: 14.4.2+r182+g42b3557e-3
+  version: 14.4.2+r182+g42b3557e-4
   arch:
     - x86_64
   pkgname:
     - sox
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 14.4.2+r182+g42b3557e-3
+    version: 14.4.2+r182+g42b3557e-4
     packages:
-      - sox-14.4.2+r182+g42b3557e-3-x86_64.pkg.tar.zst
+      - sox-14.4.2+r182+g42b3557e-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
