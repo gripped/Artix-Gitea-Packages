@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xorg-xev
-  version: 1.2.5-1
+  version: 1.2.5-1.1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.5-1
+    version: 1.2.5-1.1
     packages:
-      - xorg-xev-1.2.5-1-x86_64.pkg.tar.zst
+      - xorg-xev-1.2.5-1.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
