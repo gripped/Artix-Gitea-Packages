@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: jq
-  version: 1.6-4
+  version: 1.7-1
   arch:
     - x86_64
   pkgname:
     - jq
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6-4
+    version: 1.7-1
     packages:
-      - jq-1.6-4-x86_64.pkg.tar.zst
+      - jq-1.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
