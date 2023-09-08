@@ -16,8 +16,8 @@ pkgname=(
   'mesa-vdpau'
   'mesa'
 )
-pkgver=23.1.6
-pkgrel=4
+pkgver=23.1.7
+pkgrel=1
 epoch=1
 pkgdesc="An open-source implementation of the OpenGL specification"
 url="https://www.mesa3d.org/"
@@ -74,11 +74,11 @@ source=(
   clang_resource_dir.patch
   LICENSE
 )
-sha256sums=('f4c7fd8e7b472a88da7d83e9a48f6f3bd17d4ea2cc4386f7231b796f3964157a'
+sha256sums=('409641eadf0ed1c7794797a6f5a0b0195b5580b282166e5ec5629c6bcda6acd3'
             'SKIP'
             '9ed89eee34f69d57d37bad3eb061d313a0433a22be4b6e8f82949e86592aee7d'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537')
-b2sums=('78b71ede0655e538a71d22ecbfb0bed7497c258a16ce5f7d9b627a4c9372f26292a50aec848a4923524e4862b00a6d5d3d2521b05033d9cf39d31f037bdb9254'
+b2sums=('ec688b2a5db396423e53b8798dfbff0c2034e6f0f80e3b73a27b92b0441cfa8578bb633577b5199f1a4a107bdf80af23bc4663b424324f2f71b0abcaa6c4b103'
         'SKIP'
         '40cf2bc3381d5318c95d3fdadef1bdb6bb57f3b04270e07c0a66613b6432ad617be73d34122be3280d861dde0663fc5c96bb37a9312c2e333e39e69287a9e33a'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb')
@@ -101,8 +101,8 @@ prepare() {
 
 build() {
   local meson_options=(
-    -D c_args=-I/usr/include,-I/usr/lib/clang/15.0.7/include
-    -D cpp_args=-I/usr/include,-I/usr/lib/clang/15.0.7/include
+    -D c_args=-I/usr/include,-I/usr/lib/clang/16/include
+    -D cpp_args=-I/usr/include,-I/usr/lib/clang/16/include
     -D android-libbacktrace=disabled
     -D b_ndebug=true
     -D dri3=enabled
