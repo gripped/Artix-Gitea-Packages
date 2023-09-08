@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xorg-fonts-alias
-  version: 1.0.5-1
+  version: 1.0.5-1.1
   arch:
     - any
   pkgname:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.5-1
+    version: 1.0.5-1.1
     packages:
-      - xorg-fonts-alias-100dpi-1.0.5-1-any.pkg.tar.zst
-      - xorg-fonts-alias-75dpi-1.0.5-1-any.pkg.tar.zst
-      - xorg-fonts-alias-cyrillic-1.0.5-1-any.pkg.tar.zst
-      - xorg-fonts-alias-misc-1.0.5-1-any.pkg.tar.zst
+      - xorg-fonts-alias-100dpi-1.0.5-1.1-any.pkg.tar.zst
+      - xorg-fonts-alias-75dpi-1.0.5-1.1-any.pkg.tar.zst
+      - xorg-fonts-alias-cyrillic-1.0.5-1.1-any.pkg.tar.zst
+      - xorg-fonts-alias-misc-1.0.5-1.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

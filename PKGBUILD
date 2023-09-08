@@ -4,7 +4,7 @@
 pkgbase=xorg-fonts-alias
 pkgname=('xorg-fonts-alias-100dpi' 'xorg-fonts-alias-75dpi' 'xorg-fonts-alias-cyrillic' 'xorg-fonts-alias-misc')
 pkgver=1.0.5
-pkgrel=1
+pkgrel=1.1
 arch=('any')
 url="https://xorg.freedesktop.org/"
 makedepends=('xorg-util-macros')
