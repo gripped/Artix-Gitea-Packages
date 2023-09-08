@@ -7,8 +7,8 @@ pkgbase=lib32-glib2
 pkgname=(
   lib32-glib2
 )
-pkgver=2.78.0
-pkgrel=1
+pkgver=2.76.5
+pkgrel=2
 pkgdesc="Low level core library - 32-bit"
 url="https://wiki.gnome.org/Projects/GLib"
 license=(LGPL)
@@ -38,14 +38,18 @@ checkdepends=(
 options=(
   debug
 )
-_commit=3c543ef69ffab7c78e29eaf383e7fe2c7df6cd49  # tags/2.78.0^0
+_commit=f0171c9eccdf9ebeabb074d4683fc9cfc41f4e60  # tags/2.76.5^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
+  0002-glocalfile-Sum-apparent-size-only-for-files-and-syml.patch
+  0003-tests-file-Do-not-rely-on-du-bytes-behaviour.patch
   gio-querymodules-32.hook
 )
 b2sums=('SKIP'
         'SKIP'
+        '6bcbcba60208162f7221701d6a642eabfc92c2fc6a476bcb42da5967577f8f0c75b688d149be01c9c48cd644aafa7fbdd63d9086385b8f7607fc981756d71a68'
+        '257bf37d304cc161dedcde0a2c4d01e297f8263cde48b49d3ee47ca95a8fb9ad44bbb9bf99da51ec766ffb6f9d502e0a8fdc6b86346e6755373ee515e23b9419'
         '678ea2d010fd64b6c55106510096363c54c357d65615c666e9cc3a0e280c0878257a45e646dd88f6bdd0623f7268c4afd2d4f98f82a5489bbfc028c5864252f1')
 
 pkgver() {
@@ -55,6 +59,16 @@ pkgver() {
 
 prepare() {
   cd glib
+
+  # Unbreak keyfiles with bad escapes
+  # https://bugs.archlinux.org/task/79540
+  # https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3565
+  git cherry-pick -n 4a9672764214d5fab569b774fe761ae7d2ec11d9
+
+  # fix test suite issues with coreutils >=9.2
+  # https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3358
+  git apply -3 ../0002-glocalfile-Sum-apparent-size-only-for-files-and-syml.patch
+  git apply -3 ../0003-tests-file-Do-not-rely-on-du-bytes-behaviour.patch
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
@@ -79,7 +93,7 @@ build() {
   CFLAGS+=" -g3"
   CXXFLAGS+=" -g3"
 
-  artix-meson glib build "${meson_options[@]}"
+  arch-meson glib build "${meson_options[@]}"
   meson compile -C build
 }
 
