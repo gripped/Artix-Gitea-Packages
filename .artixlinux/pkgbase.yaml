@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virt-manager
-  version: 4.1.0-2
+  version: 4.1.0-2.1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.0-2
+    version: 4.1.0-2.1
     packages:
-      - virt-install-4.1.0-2-any.pkg.tar.zst
-      - virt-manager-4.1.0-2-any.pkg.tar.zst
+      - virt-install-4.1.0-2.1-any.pkg.tar.zst
+      - virt-manager-4.1.0-2.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
