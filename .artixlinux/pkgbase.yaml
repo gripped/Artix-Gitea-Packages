@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gitea
-  version: 1.20.2-3
+  version: 1.20.4-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.20.2-3
+    version: 1.20.4-1
     packages:
-      - gitea-1.20.2-3-x86_64.pkg.tar.zst
+      - gitea-1.20.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
