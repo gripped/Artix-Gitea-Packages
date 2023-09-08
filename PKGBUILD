@@ -8,7 +8,7 @@ pkgname=(
   lib32-glib2
 )
 pkgver=2.76.5
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Low level core library - 32-bit"
 url="https://wiki.gnome.org/Projects/GLib"
 license=(LGPL)
@@ -31,10 +31,10 @@ makedepends=(
   shared-mime-info
   util-linux
 )
-#checkdepends=(
-#  desktop-file-utils
-#  lib32-glib2
-#)
+checkdepends=(
+  desktop-file-utils
+  lib32-glib2
+)
 options=(
   debug
 )
@@ -97,9 +97,9 @@ build() {
   meson compile -C build
 }
 
-#check() {
-#  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
-#}
+check() {
+  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
+}
 
 package_lib32-glib2() {
   depends+=(
