@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bemenu
-  version: 0.6.15-1
+  version: 0.6.16-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - bemenu-x11
     - bemenu-wayland
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.15-1
+    version: 0.6.16-1
     packages:
-      - bemenu-0.6.15-1-x86_64.pkg.tar.zst
-      - bemenu-ncurses-0.6.15-1-x86_64.pkg.tar.zst
-      - bemenu-x11-0.6.15-1-x86_64.pkg.tar.zst
-      - bemenu-wayland-0.6.15-1-x86_64.pkg.tar.zst
+      - bemenu-0.6.16-1-x86_64.pkg.tar.zst
+      - bemenu-ncurses-0.6.16-1-x86_64.pkg.tar.zst
+      - bemenu-x11-0.6.16-1-x86_64.pkg.tar.zst
+      - bemenu-wayland-0.6.16-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
