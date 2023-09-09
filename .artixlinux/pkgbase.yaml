@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pythran
-  version: 0.13.1-2
+  version: 0.14.0-1
   arch:
     - any
   pkgname:
     - python-pythran
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.13.1-2
+    version: 0.14.0-1
     packages:
-      - python-pythran-0.13.1-2-any.pkg.tar.zst
+      - python-pythran-0.14.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
