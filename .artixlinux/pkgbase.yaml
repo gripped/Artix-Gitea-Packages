@@ -7,17 +7,18 @@ pkgbase:
   pkgname:
     - audit-dinit
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20211031-2
+    packages:
+      - audit-dinit-20211031-2-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
