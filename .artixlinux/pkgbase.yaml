@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-debugpy
-  version: 1.6.8-2
+  version: 1.7.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.8-2
+    version: 1.7.0-1
     packages:
-      - python-debugpy-1.6.8-2-x86_64.pkg.tar.zst
+      - python-debugpy-1.7.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
