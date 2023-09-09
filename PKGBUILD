@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=brltty-dinit
-pkgver=20211030
+pkgver=20230906
 pkgrel=1
 pkgdesc="dinit service scripts for brltty"
 arch=('any')
@@ -11,11 +11,11 @@ groups=('dinit-world')
 depends=('brltty' 'dinit')
 provides=('init-brltty')
 conflicts=('init-brltty')
-source=("brltty" "brltty.script")
-sha256sums=('46433f66d7407d696167f0ba40217238b821643ba1110bb367351fc77ea52e20'
-            '8eb8b413dff0c3791c554c012a82731ce05ecf4442748a477246963753f9d717')
+source=("brltty" "brltty-pre")
+sha256sums=('9540fb42322c3ce596b295ee37896d3e6fb4425f90331f7215bafbaca52c5970'
+            'bd351f972086406540f0fb59789f0218e2d67957643b82b92f2fc4af4ab14523')
 
 package() {
-    install -Dm644 brltty        "$pkgdir/etc/dinit.d/brltty"
-    install -Dm755 brltty.script "$pkgdir/etc/dinit.d/scripts/brltty"
+    install -Dm644 brltty     "$pkgdir/etc/dinit.d/brltty"
+    install -Dm755 brltty-pre "$pkgdir/etc/dinit.d/brltty-pre"
 }

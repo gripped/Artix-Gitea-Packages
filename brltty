@@ -1,5 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/brltty
+command         = /usr/bin/brltty -n
 smooth-recovery = true
 logfile         = /var/log/dinit/brltty.log
-waits-for       = pseudofs
+after           = hwclock
