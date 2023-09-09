@@ -6,7 +6,7 @@
 
 pkgname=openssh
 pkgver=9.4p1
-pkgrel=3
+pkgrel=4
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=(x86_64)
 url='https://www.openssh.com/portable.html'
@@ -43,7 +43,7 @@ backup=(
 )
 source=(
   https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$pkgname-$pkgver.tar.gz{,.asc}
-  00-artixlinux.conf
+  99-artixlinux.conf
   sshd.conf
   sshd.pam
 )
@@ -108,7 +108,7 @@ package() {
 
   make DESTDIR="$pkgdir" install
 
-  install -vDm 644 ../00-artixlinux.conf -t "$pkgdir/etc/ssh/sshd_config.d/"
+  install -vDm 644 ../99-artixlinux.conf -t "$pkgdir/etc/ssh/sshd_config.d/"
   install -vdm 755 "$pkgdir/etc/ssh/ssh_config.d"
 
   ln -sf ssh.1.gz "$pkgdir"/usr/share/man/man1/slogin.1.gz
