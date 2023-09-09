@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/acpid -f
 smooth-recovery = true
 depends-on      = pseudofs
+after           = loginready
 logfile         = /var/log/dinit/acpid.log

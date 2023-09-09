@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: acpid-dinit
-  version: 20211026-1
+  version: 20230906-1
   arch:
     - any
   pkgname:
     - acpid-dinit
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 20230906-1
+    packages:
+      - acpid-dinit-20230906-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
