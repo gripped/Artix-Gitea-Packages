@@ -12,7 +12,7 @@ license=(EPL MIT)
 depends=(python)
 makedepends=(python-setuptools)
 source=(https://github.com/microsoft/debugpy/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('828cb2daa1aebe673281bba40772680776d2b99faf143c6c80eb6df66e3e258d')
+sha256sums=('b94e342e7e78ad2e85e2a8efd73b5c40b71030da0bbb362de1fa2706ce7bb40c')
 
 prepare() {
   cd $_pipname-$pkgver
