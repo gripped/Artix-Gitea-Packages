@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-google-auth
-  version: 2.18.1-2
+  version: 2.19.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.18.1-2
+    version: 2.19.0-1
     packages:
-      - python-google-auth-2.18.1-2-any.pkg.tar.zst
+      - python-google-auth-2.19.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
