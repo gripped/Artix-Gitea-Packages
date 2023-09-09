@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gobject-introspection
-  version: 1.76.1-3
+  version: 1.78.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gobject-introspection-runtime
     - libgirepository
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.78.0-1
+    packages:
+      - gobject-introspection-1.78.0-1-x86_64.pkg.tar.zst
+      - gobject-introspection-runtime-1.78.0-1-x86_64.pkg.tar.zst
+      - libgirepository-1.78.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.76.1-3
     packages:
