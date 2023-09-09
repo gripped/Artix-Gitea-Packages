@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: bind-dinit
-  version: 20211030-2
+  version: 20230907-1
   arch:
     - any
   pkgname:
     - bind-dinit
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 20230907-1
+    packages:
+      - bind-dinit-20230907-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
