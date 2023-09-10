@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: cronie-dinit
-  version: 20211104-3
+  version: 20211104-4
   arch:
     - any
   pkgname:
     - cronie-dinit
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20211104-4
+    packages:
+      - cronie-dinit-20211104-4-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
