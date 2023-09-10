@@ -12,7 +12,7 @@ pkgname=(
   nm-cloud-setup
 )
 pkgver=1.44.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Network connection manager and user applications"
 url="https://networkmanager.dev/"
 arch=(x86_64)
@@ -105,6 +105,10 @@ build() {
     -D more_logging=false
     -D qt=false
   )
+
+  # NM uses malloc_usable_size in code copied from systemd
+  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
   artix-meson NetworkManager build "${meson_options[@]}"
   meson compile -C build
