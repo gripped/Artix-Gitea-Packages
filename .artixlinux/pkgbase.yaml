@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cloud-init
-  version: 23.3-1
+  version: 23.3.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.3-1
+    version: 23.3.1-1
     packages:
-      - cloud-init-23.3-1-any.pkg.tar.zst
+      - cloud-init-23.3.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
