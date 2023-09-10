@@ -4,3 +4,5 @@ smooth-recovery = true
 logfile         = /var/log/dinit/connman.log
 depends-on      = dbus
 depends-on      = udevd
+depends-on      = network-pre
+before          = network
