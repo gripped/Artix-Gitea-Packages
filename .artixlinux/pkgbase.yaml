@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: musescore
-  version: 4.1.1-1
+  version: 4.1.1-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.1-1
+    version: 4.1.1-2
     packages:
-      - musescore-4.1.1-1-x86_64.pkg.tar.zst
+      - musescore-4.1.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

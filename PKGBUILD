@@ -1,12 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
 # Contributor: Cristian Maureira <saint@archlinux.cl>
 # Contributor: Dr.Egg <rwhite@archlinux.us>
 
 pkgname=musescore
 pkgver=4.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Create, play and print beautiful sheet music'
 arch=(x86_64)
 url=https://musescore.org/
@@ -69,7 +69,7 @@ build() {
     -DMUE_BUILD_CRASHPAD_CLIENT=OFF \
     -DMUE_BUILD_UNIT_TESTS=OFF \
     -DMUE_ENABLE_FILE_ASSOCIATION=ON \
-    -DMUE_INSTALL_SOUNDFONT=OFF \
+    -DMUE_INSTALL_SOUNDFONT=ON \
     -Wno-dev
   cmake --build build
 }
