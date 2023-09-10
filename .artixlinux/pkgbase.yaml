@@ -33,11 +33,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.44.0-1
-    packages:
-      - networkmanager-1.44.0-1-x86_64.pkg.tar.zst
-      - libnm-1.44.0-1-x86_64.pkg.tar.zst
-      - nm-cloud-setup-1.44.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
