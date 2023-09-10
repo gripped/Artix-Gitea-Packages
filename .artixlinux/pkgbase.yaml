@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-build
-  version: 0.10.0-4
+  version: 1.0.1-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.10.0-4
+    version: 1.0.1-1
     packages:
-      - python-build-0.10.0-4-any.pkg.tar.zst
+      - python-build-1.0.1-1-any.pkg.tar.zst
   world:
     version: 0.10.0-4
     packages:
