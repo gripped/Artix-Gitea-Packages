@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-tox
-  version: 4.5.1-1
+  version: 4.11.1-1
   arch:
     - any
   pkgname:
     - python-tox
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.11.1-1
+    packages:
+      - python-tox-4.11.1-1-any.pkg.tar.zst
   world:
     version: 4.5.1-1
     packages:
