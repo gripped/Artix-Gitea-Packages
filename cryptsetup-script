@@ -115,10 +115,9 @@ set +f
 case "$1" in
     unlock)
         unlock_devices
-        if [ -f /run/sv.d/started/lvm2 ]; then
-            vgchange --sysinit -a y >/dev/null
-        fi
-        ;;
+        # LVM-on-LUKS scenario
+        dinitctl is-started --quiet lvm2 && vgchange --sysinit -a y >/dev/null
+    ;;
     lock)
         lock_devices
         vgs="$(vgs | wc -l)"
