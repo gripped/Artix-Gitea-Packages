@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gnuplot
-  version: 5.4.8-1
+  version: 5.4.9-1
   arch:
     - x86_64
   pkgname:
     - gnuplot
     - gnuplot-demos
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.4.8-1
+    version: 5.4.9-1
     packages:
-      - gnuplot-5.4.8-1-x86_64.pkg.tar.zst
-      - gnuplot-demos-5.4.8-1-x86_64.pkg.tar.zst
+      - gnuplot-5.4.9-1-x86_64.pkg.tar.zst
+      - gnuplot-demos-5.4.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
