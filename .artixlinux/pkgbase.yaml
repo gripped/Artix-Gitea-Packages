@@ -11,8 +11,8 @@ pkgbase:
     - harfbuzz-utils
     - harfbuzz-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
