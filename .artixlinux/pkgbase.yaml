@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: luajit
-  version: 2.1.1693350652-1
+  version: 2.1.1694285958-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.1693350652-1
+    version: 2.1.1694285958-1
     packages:
-      - luajit-2.1.1693350652-1-x86_64.pkg.tar.zst
+      - luajit-2.1.1694285958-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
