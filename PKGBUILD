@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=cyrus-sasl-dinit
-pkgver=20211203
+pkgver=20230907
 pkgrel=1
 pkgdesc="dinit service scripts for cyrus-sasl"
 arch=('any')
@@ -13,14 +13,11 @@ backup=('etc/dinit.d/config/saslauthd.conf')
 conflicts=('init-cyrus-sasl')
 provides=('init-cyrus-sasl')
 source=("saslauthd"
-        "saslauthd.script"
         "saslauthd.conf")
-sha256sums=('b2ec769e5478f026596dada92e322e5fb1eccf88d374b0a0f1be49b79ac81a6c'
-            '5db8888b846a248257730ab7ff5d3fc06abe295f1415e3f0587b7b5ddbb3c95f'
-            '4754b3ebb2a3cffe5553afa9f00f170f37fb7e4041218706cc6fe1928ef2c58c')
+sha256sums=('2eb69bf7b8d2e03bd1c716fbd3106f8939346094ca2217c5c9abff12409bc18b'
+            '96364ecf3f6b3ba9de25eb176c851fc29a7d5c7d2f55da70b46e67e3cb2a2128')
 
 package() {
     install -Dm644 saslauthd        "$pkgdir/etc/dinit.d/saslauthd"
     install -Dm644 saslauthd.conf   "$pkgdir/etc/dinit.d/config/saslauthd.conf"
-    install -Dm755 saslauthd.script "$pkgdir/etc/dinit.d/scripts/saslauthd"
 }
