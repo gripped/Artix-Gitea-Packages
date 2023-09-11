@@ -2,7 +2,7 @@
 
 pkgname=device-mapper-dinit
 pkgver=20211029
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for device-mapper"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('device-mapper' 'dinit')
 provides=('init-device-mapper')
 conflicts=('init-device-mapper')
 source=("dmeventd")
-sha256sums=('e6b8c4b5a0573910a76ff8a82c1a60fe1e741ec62f6372794e0a93f112177a6e')
+sha256sums=('ede555caf6329a86f2c7934930b5d87bcd3508f9596b6f43c66f0f557ac15f3e')
 
 package() {
     install -Dm644 dmeventd "$pkgdir/etc/dinit.d/dmeventd"

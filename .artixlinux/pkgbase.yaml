@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: device-mapper-dinit
-  version: 20211029-1
+  version: 20211029-2
   arch:
     - any
   pkgname:
     - device-mapper-dinit
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20211029-2
+    packages:
+      - device-mapper-dinit-20211029-2-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []

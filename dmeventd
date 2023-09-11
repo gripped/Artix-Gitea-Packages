@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/dmeventd -f
 smooth-recovery = true
 logfile         = /var/log/dinit/dmeventd.log
-waits-for       = pseudofs
+before          = fsck
+after           = cgroups
