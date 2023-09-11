@@ -2,7 +2,7 @@
 
 pkgname=dnsmasq-dinit
 pkgver=20211206
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for dnsmasq"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('dnsmasq' 'dinit' 'dbus-dinit')
 provides=('init-dnsmasq')
 conflicts=('init-dnsmasq')
 source=("dnsmasq")
-sha256sums=('9aeb169d0e5cf67f5211a695b9fabb4b3ced4643bf536ae3eaf06426bb974e9a')
+sha256sums=('b4b793acf26672039beae1da7f7bc68c85c4ae32289add10a6b30224a975afd5')
 
 package() {
     install -Dm644 dnsmasq "$pkgdir/etc/dinit.d/dnsmasq"
