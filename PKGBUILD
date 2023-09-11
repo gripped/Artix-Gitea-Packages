@@ -12,7 +12,7 @@ depends=('dhcpcd' 'dinit')
 provides=('init-dhcpcd')
 conflicts=('init-dhcpcd')
 source=("dhcpcd")
-sha256sums=('d3ba6f74498f1a92ddbd382260a1f88794210d3ffd9a331e21681b53087f7158')
+sha256sums=('c93ff7dc88487ab5a3e2bea47ee1a0422face4aa00955ce5d29cd918600e54d7')
 
 package() {
     install -Dm644 dhcpcd "$pkgdir/etc/dinit.d/dhcpcd"
