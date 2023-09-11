@@ -1,0 +1,3 @@
+type            = scripted
+command         = /usr/bin/install -dm0755 /run/dovecot
+after           = root-rw
