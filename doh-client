@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/doh-client -verbose -conf /etc/dns-over-https/doh-client.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/doh-client.log
-waits-for       = loginready
+depends-on      = network
