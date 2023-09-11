@@ -3,9 +3,9 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-_tag=d515e36205674810a3b3a53207aff77c16ef6da4 
+_tag=9de615b3aa4f20cab182cf3822943b9465a30643
 pkgver=1.91.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/matrix-org/synapse"
 arch=('x86_64')
@@ -35,28 +35,32 @@ optdepends=('perl: sync_room_to_group.pl'
 source=("$pkgname::git+https://github.com/matrix-org/synapse.git#tag=$_tag"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
-        'tmpfiles-synapse.conf')
+        'tmpfiles-synapse.conf'
+        '0001-Most-basicest-Pydantic-V2-support.patch')
 sha256sums=('SKIP'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
-            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
+            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
+            'd8e6b2a43a8a7d8f09c643f32e789a7ffeeb2d20bb07ee88ddc6923e1ab3b0e6'
+            '4520c50b2b1d4d8243f955e946c0e0680a7f603f63289236095258d783b72b12')
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
-validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
-              '053191DFF4670330465227F7A542E4ED1B0FAC09'
-              '283F86EA415D64E7D98E085BD5804497C6468FC1'
-              '58C4E75BC67C92169A7FDD11FBCE0ACE0732186F'
-              '9323BC4F687435CA8D0F03CB922F57ACB93AABF9'
-              '93B2970FB2FD8855AD6E0229CB2B33F7C23D44C6'
-              'D79D3CA0B61429A8A760525A903ECE108A39DEDD'
-              'F124520CEEE062448FE1C8442D2EFA2F32FBE047'
-              '177B595E4DFCB510C556750833FC58F6A7113048')
+#validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
+#              '053191DFF4670330465227F7A542E4ED1B0FAC09'
+#              '283F86EA415D64E7D98E085BD5804497C6468FC1'
+#              '58C4E75BC67C92169A7FDD11FBCE0ACE0732186F'
+#              '9323BC4F687435CA8D0F03CB922F57ACB93AABF9'
+#              '93B2970FB2FD8855AD6E0229CB2B33F7C23D44C6'
+#              'D79D3CA0B61429A8A760525A903ECE108A39DEDD'
+#              'F124520CEEE062448FE1C8442D2EFA2F32FBE047'
+#              '177B595E4DFCB510C556750833FC58F6A7113048')
 
 prepare() {
 	cd $pkgname
 	# allow any poetry-core to be used
 	sed 's/poetry-core>=1.1.0,<=1.6.0/poetry-core>=1.0.0/' -i pyproject.toml
 	sed 's/setuptools_rust>=1.3,<=1.6.0/setuptools_rust>=1.3.0/' -i pyproject.toml
+        patch --forward --strip=1 --input=../0001-Most-basicest-Pydantic-V2-support.patch
 }
 
 build() {
