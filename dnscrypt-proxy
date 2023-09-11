@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 smooth-recovery = true
 logfile         = /var/log/dinit/dnscrypt-proxy.log
-waits-for       = loginready
+depends-on      = network
