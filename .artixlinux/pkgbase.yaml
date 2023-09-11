@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - dbus-dinit
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -20,9 +20,8 @@ repos:
     packages:
       - dbus-dinit-20230906-1-any.pkg.tar.zst
   system-gremlins:
-    version: 20230906-1
-    packages:
-      - dbus-dinit-20230906-1-any.pkg.tar.zst
+    version: null
+    packages: []
   system:
     version: 20211104-1
     packages:
