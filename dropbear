@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/dropbear -E -F -P /run/dropbear.pid -R
 smooth-recovery = true
 logfile         = /var/log/dinit/dropbear.log
-waits-for       = loginready
+depends-on      = network
