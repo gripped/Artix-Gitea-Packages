@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openpmix
-  version: 4.2.5-1
+  version: 4.2.6-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2.5-1
+    version: 4.2.6-1
     packages:
-      - openpmix-4.2.5-1-x86_64.pkg.tar.zst
-      - openpmix-docs-4.2.5-1-x86_64.pkg.tar.zst
+      - openpmix-4.2.6-1-x86_64.pkg.tar.zst
+      - openpmix-docs-4.2.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
