@@ -2,7 +2,7 @@
 
 pkgname=dhcpcd-dinit
 pkgver=20230205
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for dhcpcd"
 arch=('any')
 url="https://artixlinux.org"
