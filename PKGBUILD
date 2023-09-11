@@ -41,7 +41,6 @@ sha256sums=('SKIP'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
-            'd8e6b2a43a8a7d8f09c643f32e789a7ffeeb2d20bb07ee88ddc6923e1ab3b0e6'
             '4520c50b2b1d4d8243f955e946c0e0680a7f603f63289236095258d783b72b12')
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
