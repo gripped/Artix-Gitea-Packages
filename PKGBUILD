@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=dhcp-dinit
-pkgver=20211030
-pkgrel=3
+pkgver=20230906
+pkgrel=1
 pkgdesc="dinit service scripts for dhcp"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,15 +14,18 @@ conflicts=('init-dhcp')
 source=("dhclient"
         "dhcpd4"
         "dhcpd6"
-        "dhcpd.script")
-sha256sums=('dcf434609fb92e055f72177488602594ae022ce6075abfe5a11799a728720403'
-            'efb4791935385dd4390c409a5494f9221ebb1d3d01df445d1900ec66938dceaa'
-            '9946e34d945bd0391458a0ac74950f110878befe507ae9fb7655e4d7859761ae'
-            '409d1bf595debc5da9433a957c67dfba3bd0e88f7f5ce0112bde8c2abb36591b')
+        "dhcpd-pre"
+        "dhcpd-pre.script")
+sha256sums=('40c26ce54b5caa13988d382fac5cc665c22c24c88946de5cd7f01aa15c184095'
+            'acbdab442205018179652bbea3ece66df8bf41eea268ebf0dfe3999f0a119e53'
+            '169f035e0faf41271b0ad3c44df3e72f959274c9e003cc03657e7a4552255474'
+            '3ef8d1480a22ca2c71b8b55d1b008a9594f8925df12bcdba9aa5e3888af8ef57'
+            '1bb8bdbee0770a3645de4c95f322d3cef1db9c00870acbe69ed9909ffe2e37d6')
 
 package() {
-    install -Dm644 dhclient     "$pkgdir/etc/dinit.d/dhclient"
-    install -Dm644 dhcpd4       "$pkgdir/etc/dinit.d/dhcpd4"
-    install -Dm644 dhcpd6       "$pkgdir/etc/dinit.d/dhcpd6"
-    install -Dm755 dhcpd.script "$pkgdir/etc/dinit.d/scripts/dhcpd"
+    install -Dm644 dhclient         "$pkgdir/etc/dinit.d/dhclient"
+    install -Dm644 dhcpd4           "$pkgdir/etc/dinit.d/dhcpd4"
+    install -Dm644 dhcpd6           "$pkgdir/etc/dinit.d/dhcpd6"
+    install -Dm644 dhcpd-pre        "$pkgdir/etc/dinit.d/dhcpd-pre"
+    install -Dm755 dhcpd-pre.script "$pkgdir/etc/dinit.d/scripts/dhcpd-pre"
 }

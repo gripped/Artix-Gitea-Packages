@@ -1,4 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/dhcpd ipv4
+command         = /usr/bin/dhcpd -f -4 -q -pf /run/dhcpd4.pid
 smooth-recovery = true
-waits-for       = loginready
+depends-on      = network
+depends-on      = dhcpd-pre
