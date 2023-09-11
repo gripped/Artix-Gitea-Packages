@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/darkhttpd
+command         = /usr/bin/darkhttpd ${DIR:-/srv/http} --uid ${USER:-http} --gid ${GROUP:-http} --port ${PORT:-8080}
+env-file        = /etc/dinit.d/config/darkhttpd.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/darkhttpd.log
 waits-for       = loginready
