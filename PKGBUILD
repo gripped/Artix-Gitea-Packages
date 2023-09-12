@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=adios2
 pkgver=2.8.3
-pkgrel=4
+pkgrel=5
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
@@ -10,7 +10,7 @@ license=(Apache)
 depends=(blosc bzip2 glibc gcc-libs hdf5 libfabric libpng nlohmann-json
          openmpi pugixml pybind11 sz yaml-cpp zeromq zfp zlib)
 # with mgard does not build currently, not time to investigate
-makedepends=(cmake gcc-fortran gtest python python-mpi4py python-numpy adios2)
+makedepends=(cmake gcc-fortran gtest python python-mpi4py python-numpy)
 source=(https://github.com/ornladios/ADIOS2/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz
         https://github.com/ornladios/ADIOS2/commit/bc67316d.patch
         https://github.com/ornladios/ADIOS2/commit/c3967d39.patch
