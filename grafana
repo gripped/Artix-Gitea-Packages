@@ -3,4 +3,4 @@ command         = /usr/bin/grafana-server -homepath /usr/share/grafana/ -config 
 smooth-recovery = true
 logfile         = /var/log/dinit/grafana.log
 run-as          = grafana
-waits-for       = loginready
+depends-on      = network
