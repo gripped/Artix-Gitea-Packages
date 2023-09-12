@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/lvmpolld
+command         = /usr/bin/lvmpolld -t 60 -f 2>&1
 smooth-recovery = true
 logfile         = /var/log/dinit/lvmpolld.log
-waits-for       = udev-trigger
+after           = udev-settle
+depends-on      = lvmpolld-pre
