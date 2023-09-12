@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: fmt
-  version: 10.1.0-1
+  version: 10.1.1-1
   arch:
     - x86_64
   pkgname:
     - fmt
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.1.1-1
+    packages:
+      - fmt-10.1.1-1-x86_64.pkg.tar.zst
   world:
     version: 10.1.0-1
     packages:
