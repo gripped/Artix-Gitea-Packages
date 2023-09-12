@@ -1,4 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/sshd
+command         = /usr/bin/sshd -D
 smooth-recovery = true
-waits-for       = loginready
+depends-on      = ssh-keygen
+depends-on      = network
