@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: man-pages-cs
-  version: 4.19.0-1
+  name: man-pages-l10n
+  version: 4.20.0-1
   arch:
     - any
   pkgname:
@@ -27,11 +27,11 @@ pkgbase:
     - man-pages-uk
     - man-pages-vi
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -51,29 +51,29 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.19.0-1
+    version: 4.20.0-1
     packages:
-      - man-pages-cs-4.19.0-1-any.pkg.tar.zst
-      - man-pages-da-4.19.0-1-any.pkg.tar.zst
-      - man-pages-de-4.19.0-1-any.pkg.tar.zst
-      - man-pages-el-4.19.0-1-any.pkg.tar.zst
-      - man-pages-es-4.19.0-1-any.pkg.tar.zst
-      - man-pages-fi-4.19.0-1-any.pkg.tar.zst
-      - man-pages-fr-4.19.0-1-any.pkg.tar.zst
-      - man-pages-hu-4.19.0-1-any.pkg.tar.zst
-      - man-pages-id-4.19.0-1-any.pkg.tar.zst
-      - man-pages-it-4.19.0-1-any.pkg.tar.zst
-      - man-pages-mk-4.19.0-1-any.pkg.tar.zst
-      - man-pages-nb-4.19.0-1-any.pkg.tar.zst
-      - man-pages-nl-4.19.0-1-any.pkg.tar.zst
-      - man-pages-pl-4.19.0-1-any.pkg.tar.zst
-      - man-pages-pt_br-4.19.0-1-any.pkg.tar.zst
-      - man-pages-ro-4.19.0-1-any.pkg.tar.zst
-      - man-pages-ru-4.19.0-1-any.pkg.tar.zst
-      - man-pages-sv-4.19.0-1-any.pkg.tar.zst
-      - man-pages-sr-4.19.0-1-any.pkg.tar.zst
-      - man-pages-uk-4.19.0-1-any.pkg.tar.zst
-      - man-pages-vi-4.19.0-1-any.pkg.tar.zst
+      - man-pages-cs-4.20.0-1-any.pkg.tar.zst
+      - man-pages-da-4.20.0-1-any.pkg.tar.zst
+      - man-pages-de-4.20.0-1-any.pkg.tar.zst
+      - man-pages-el-4.20.0-1-any.pkg.tar.zst
+      - man-pages-es-4.20.0-1-any.pkg.tar.zst
+      - man-pages-fi-4.20.0-1-any.pkg.tar.zst
+      - man-pages-fr-4.20.0-1-any.pkg.tar.zst
+      - man-pages-hu-4.20.0-1-any.pkg.tar.zst
+      - man-pages-id-4.20.0-1-any.pkg.tar.zst
+      - man-pages-it-4.20.0-1-any.pkg.tar.zst
+      - man-pages-mk-4.20.0-1-any.pkg.tar.zst
+      - man-pages-nb-4.20.0-1-any.pkg.tar.zst
+      - man-pages-nl-4.20.0-1-any.pkg.tar.zst
+      - man-pages-pl-4.20.0-1-any.pkg.tar.zst
+      - man-pages-pt_br-4.20.0-1-any.pkg.tar.zst
+      - man-pages-ro-4.20.0-1-any.pkg.tar.zst
+      - man-pages-ru-4.20.0-1-any.pkg.tar.zst
+      - man-pages-sv-4.20.0-1-any.pkg.tar.zst
+      - man-pages-sr-4.20.0-1-any.pkg.tar.zst
+      - man-pages-uk-4.20.0-1-any.pkg.tar.zst
+      - man-pages-vi-4.20.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
