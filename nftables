@@ -2,4 +2,5 @@ type         = scripted
 command      = /usr/bin/nft -f /etc/nftables.conf
 stop-command = /usr/bin/nft flush ruleset
 restart      = false
-waits-for    = loginready
+depends-on   = network-pre
+before       = network
