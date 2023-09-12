@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/fcron -f
 smooth-recovery = true
 logfile         = /var/log/dinit/fcron.log
-waits-for       = loginready
+after           = loginready

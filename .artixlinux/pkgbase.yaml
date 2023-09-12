@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: fcron-dinit
-  version: 20211101-2
+  version: 20211101-3
   arch:
     - any
   pkgname:
     - fcron-dinit
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 20211101-3
+    packages:
+      - fcron-dinit-20211101-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
