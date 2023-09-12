@@ -1,0 +1,3 @@
+type            = scripted
+command         = /usr/bin/nsd-checkconf
+after           = loginready

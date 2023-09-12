@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/nsd
+command         = /usr/bin/nsd -d -c /etc/nsd/nsd.conf 2>&1
 smooth-recovery = true
 logfile         = /var/log/dinit/nsd.log
-waits-for       = loginready
+after           = loginready
+depends-on      = nsd-pre
