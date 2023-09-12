@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lib32-glib2
-  version: 2.76.5-2
+  version: 2.78.0-2
   arch:
     - x86_64
   pkgname:
     - lib32-glib2
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 2.78.0-2
+    packages:
+      - lib32-glib2-2.78.0-2-x86_64.pkg.tar.zst
   lib32:
     version: 2.78.0-1
     packages:
