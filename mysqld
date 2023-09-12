@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/mysqld
+command         = /usr/bin/mysqld --user=mysql
 smooth-recovery = true
 logfile         = /var/log/dinit/mysqld.log
-waits-for       = loginready
+waits-for       = network
+depends-on      = mysqld-pre
