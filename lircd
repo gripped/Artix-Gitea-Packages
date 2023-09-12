@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/lircd --nodaemon
 smooth-recovery = true
 logfile         = /var/log/dinit/lircd.log
-waits-for       = loginready
+depends-on      = mount
