@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: glibmm-2.68
-  version: 2.76.0-1
+  version: 2.78.0-1
   arch:
     - x86_64
   pkgname:
     - glibmm-2.68
     - glibmm-2.68-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.76.0-1
+    version: 2.78.0-1
     packages:
-      - glibmm-2.68-2.76.0-1-x86_64.pkg.tar.zst
-      - glibmm-2.68-docs-2.76.0-1-x86_64.pkg.tar.zst
+      - glibmm-2.68-2.78.0-1-x86_64.pkg.tar.zst
+      - glibmm-2.68-docs-2.78.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
