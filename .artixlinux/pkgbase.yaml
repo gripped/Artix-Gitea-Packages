@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: iptables-dinit
-  version: 20211029-4
+  version: 20211029-5
   arch:
     - any
   pkgname:
     - iptables-dinit
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20211029-5
+    packages:
+      - iptables-dinit-20211029-5-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []

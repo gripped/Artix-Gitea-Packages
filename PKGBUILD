@@ -2,7 +2,7 @@
 
 pkgname=iptables-dinit
 pkgver=20211029
-pkgrel=4
+pkgrel=5
 pkgdesc="dinit service scripts for iptables"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,8 +13,8 @@ provides=('init-iptables')
 conflicts=('init-iptables')
 source=("iptables"
         "ip6tables")
-sha256sums=('5b5864d3c2d5d41bdf5c43daa640087aeae9c1ff02c9503581fb5fe01d27502b'
-            'f5b2d3aed65afceeadfaadc6c669e36593aac957b8f9d7034a86ddb0c28e42b2')
+sha256sums=('cbb5656220d7c2d27cd4f60e5853957664a45cd64757b4a7c2917e4756243b79'
+            '6ef60692dfccc6a35e0b6ec35681b816f8ea6d3457f5221657587cbad97c6215')
 
 package() {
     install -Dm644 iptables  "$pkgdir/etc/dinit.d/iptables"

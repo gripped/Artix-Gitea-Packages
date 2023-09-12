@@ -1,4 +1,5 @@
-type      = scripted
-command   = /usr/bin/iptables-restore /etc/iptables/iptables.rules -w 3
-restart   = false
-waits-for = loginready
+type        = scripted
+command     = /usr/bin/iptables-restore /etc/iptables/iptables.rules -w 3
+restart     = false
+depends-on  = network-pre
+before      = network
