@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: krb5-dinit
-  version: 20211029-2
+  version: 20230907-1
   arch:
     - any
   pkgname:
     - krb5-dinit
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20230907-1
+    packages:
+      - krb5-dinit-20230907-1-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []

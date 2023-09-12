@@ -1,4 +1,5 @@
 type            = process
 command         = /usr/bin/kadmind -nofork
 smooth-recovery = true
-waits-for       = loginready
+waits-for       = network
+depends-on      = krb5kdc
