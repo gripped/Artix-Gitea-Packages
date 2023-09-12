@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=git-dinit
-pkgver=20211030
-pkgrel=2
+pkgver=20230906
+pkgrel=1
 pkgdesc="dinit service scripts for git"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,11 +12,11 @@ depends=('git' 'dinit')
 conflicts=('init-git')
 provides=('init-git')
 source=("git"
-        "git.script")
-sha256sums=('73d8101b1a043dcced2cda5332b4a7dda501df77dc91054fce1b78f74f141bc9'
-            'e19ebc1854728787d567042fd3dc7c6ae84654b05073acb332c8efcf68164f8d')
+        "git-pre")
+sha256sums=('c35fb6276b9cfdc8099b57dc13ea3eefab93cba8358ce338d7669acebdf62712'
+            '2fc6e95f08118a493aae6fa6012211828bf1587f503a95294760f9bb96f29c5c')
 
 package() {
-    install -Dm644 git        "$pkgdir/etc/dinit.d/git"
-    install -Dm755 git.script "$pkgdir/etc/dinit.d/scripts/git"
+    install -Dm644 git     "$pkgdir/etc/dinit.d/git"
+    install -Dm644 git-pre "$pkgdir/etc/dinit.d/git-pre"
 }
