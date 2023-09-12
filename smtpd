@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/smtpd -d
 smooth-recovery = true
 logfile         = /var/log/dinit/smtpd.log
-waits-for       = loginready
+depends-on      = network
