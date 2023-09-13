@@ -3,7 +3,7 @@
 
 _pipname=debugpy
 pkgname=python-$_pipname
-pkgver=1.7.0
+pkgver=1.8.0
 pkgrel=1
 pkgdesc='An implementation of the Debug Adapter Protocol for Python'
 arch=(x86_64)
@@ -12,7 +12,7 @@ license=(EPL MIT)
 depends=(python)
 makedepends=(python-setuptools)
 source=(https://github.com/microsoft/debugpy/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('b94e342e7e78ad2e85e2a8efd73b5c40b71030da0bbb362de1fa2706ce7bb40c')
+sha256sums=('0adfbfd9a7df6b21f2ef084c070c99cfd6e0bc8aeee72976ddcbcbfbac1674bb')
 
 prepare() {
   cd $_pipname-$pkgver
