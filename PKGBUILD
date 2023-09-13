@@ -2,7 +2,7 @@
 pkgbase=libpamac
 pkgname=('libpamac' 'libpamac-flatpak-plugin')
 pkgver=11.4.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Library for Pamac package manager based on libalpm"
 arch=('x86_64')
 url="https://gitlab.manjaro.org/applications/libpamac"
