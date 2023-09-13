@@ -13,7 +13,7 @@ makedepends=(pybind11 python-build python-installer python-wheel python-toml pyt
 depends=(python-lxml python-pillow python-packaging qpdf)
 checkdepends=(python-pytest-xdist python-hypothesis python-psutil)
 source=(https://github.com/pikepdf/pikepdf/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('c31cbfb125423391cb97443e421f4377e84ae4826c9d3e4adb55a63c7b5fd4af')
+sha256sums=('76147b824abd4c4b42e3bb959aac12cb8cfbfbd087fb666224c3a2ad699f5bd3')
 
 build() {
   cd pikepdf-$pkgver
