@@ -1,6 +1,7 @@
 # Contributor: Zeph <zeph33@gmail.com>
 # Maintainer: Zeph <zeph33@gmail.com>
 # https://gitlab.manjaro.org/packages/extra/libpamac
+
 ENABLE_FLATPAK=0
 ENABLE_SNAPD=0
 
