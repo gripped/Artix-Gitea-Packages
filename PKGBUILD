@@ -18,7 +18,7 @@ pkgdesc="A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstrea
 arch=('i686' 'x86_64' 'arm' 'armv6h' 'armv7h' 'aarch64')
 url="https://gitlab.manjaro.org/applications/pamac"
 license=('GPL3')
-depends=('libnotify' 'libhandy' 'libadwaita' 'gtk4' 'desktop-file-utils' 'libpamac-aur>=11.6' 'gnutls>=3.4' 'git')
+depends=('libnotify' 'libhandy' 'libadwaita' 'gtk4' 'desktop-file-utils' 'libpamac>=11.6' 'gnutls>=3.4' 'git')
 
 optdepends=('polkit-gnome: needed for authentification in Cinnamon, Gnome'
             'lxsession: needed for authentification in Xfce, LXDE etc.')
