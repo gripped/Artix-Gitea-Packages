@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
 # Contributor: Francisco Lopes
 
 pkgname=interception-tools
 pkgver=0.6.8
-pkgrel=6
+pkgrel=7
 pkgdesc='A minimal composable infrastructure on top of libudev and libevdev'
 arch=('x86_64')
 license=('GPL3')
