@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-flask-socketio
-  version: 5.3.4-1
+  version: 5.3.6-1
   arch:
     - any
   pkgname:
     - python-flask-socketio
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.3.4-1
+    version: 5.3.6-1
     packages:
-      - python-flask-socketio-5.3.4-1-any.pkg.tar.zst
+      - python-flask-socketio-5.3.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
