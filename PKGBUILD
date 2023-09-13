@@ -1,54 +1,82 @@
-# Maintainer: Chris Cromer <cromer@artixlinux.org>
-pkgbase=libpamac
-pkgname=('libpamac' 'libpamac-flatpak-plugin')
-pkgver=11.4.1
-pkgrel=1.1
-pkgdesc="Library for Pamac package manager based on libalpm"
-arch=('x86_64')
+# Contributor: Zeph <zeph33@gmail.com>
+# Maintainer: Zeph <zeph33@gmail.com>
+# https://gitlab.manjaro.org/packages/extra/libpamac
+ENABLE_FLATPAK=0
+ENABLE_SNAPD=0
+
+pkgname=libpamac
+pkgver=11.6.2
+pkgrel=1.
+_pkgfixver=$pkgver
+
+_commit='e74fe0e1c15f4fd14d02ff12650be3fde47287d7'
+sha256sums=('7b8690f8eb78c5960723b2b28185af4ca156b88547cf9e14d309b003600ab2a4'
+            '6e0c25f0fcb0076ce78845b037e32925fcc3f1cd1670062c48ed35f564a10244'
+            'b5236af02c25cd7de4b2c9c2d0f064dac3c2f54da5cc72bf72fc6236a34bd9c4')
+
+pkgdesc="Pamac package manager library based on libalpm"
+arch=('i686' 'x86_64' 'arm' 'armv6h' 'armv7h' 'aarch64')
 url="https://gitlab.manjaro.org/applications/libpamac"
 license=('GPL3')
-depends=('glib2' 'json-glib' 'libsoup' 'dbus-glib' 'polkit' 'appstream-glib' 'libalpm.so>=13' 'libalpm.so<14' 'git')
-makedepends=('gettext' 'vala' 'meson' 'ninja' 'gobject-introspection' 'flatpak' 'asciidoc')
-replaces=('pamac-common')
+depends=('glib2>=2.42' 'json-glib' 'libsoup3' 'dbus-glib' 'polkit' 'vte3>=0.38' 
+         'libnotify' 'pacman>=6.0' 'pacman<6.1' 'gnutls>=3.4' 'appstream'
+         'appstream-glib>=0.7.18-1' 'archlinux-appstream-data' 'git')
+
+makedepends=('gettext' 'itstool' 'vala>=0.46'  'asciidoc' 'meson' 'ninja' 'gobject-introspection')
+backup=('etc/pamac.conf')
+conflicts=('libpamac' 'libpamac-all')
+provides=('libpamac')
 options=(!emptydirs !strip)
-source=(https://gitlab.manjaro.org/applications/libpamac/-/archive/$pkgver/libpamac-$pkgver.tar.bz2)
-sha256sums=('f0aa76f16b3dadfd6a2c72008953e9f89488cd1da8b3d8349114bbf86ce20b5d')
+install=pamac.install
+source=("libpamac-$pkgver-$pkgrel.tar.gz::$url/-/archive/$_commit/libpamac-$_commit.tar.gz"
+        fix-appstream-data.sh fix-appstream-data.hook)
+
+define_meson=''
+if [ "${ENABLE_FLATPAK}" = 1 ]; then
+  depends+=('flatpak')
+  define_meson+=' -Denable-flatpak=true'
+fi
+
+if [ "${ENABLE_SNAPD}" = 1 ]; then
+  depends+=('snapd' 'snapd-glib')
+  define_meson+=' -Denable-snap=true'
+fi
+
+create_links() {
+  # create soname links
+  find "$pkgdir" -type f -name '*.so*' ! -path '*xorg/*' -print0 | while read -d $'\0' _lib; do
+      _soname=$(dirname "${_lib}")/$(readelf -d "${_lib}" | grep -Po 'SONAME.*: \[\K[^]]*' || true)
+      _base=$(echo ${_soname} | sed -r 's/(.*)\.so.*/\1.so/')
+      [[ -e "${_soname}" ]] || ln -s $(basename "${_lib}") "${_soname}"
+      [[ -e "${_base}" ]] || ln -s $(basename "${_soname}") "${_base}"
+  done
+}
+
+prepare() {
+  cd "$srcdir/libpamac-$_commit"
+  # adjust version string
+  sed -i -e "s|\"$_pkgfixver\"|\"$pkgver-$pkgrel\"|g" src/version.vala
+}
 
 build() {
-  cd $pkgname-$pkgver
+  cd "$srcdir/libpamac-$_commit"
   mkdir -p builddir
   cd builddir
-  meson setup --prefix=/usr \
-              --sysconfdir=/etc \
-              -Denable-flatpak=true \
-              --buildtype=release
+  meson setup --buildtype=release \
+        -Denable-aur=true -Denable-appstream=true \
+        --prefix=/usr \
+        --sysconfdir=/etc $define_meson
+  # build
   meson compile
 }
 
-package_libpamac() {
-  optdepends=('libpamac-flatpak-plugin' 'archlinux-appstream-data')
-  backup=('etc/pamac.conf')
-  install=libpamac.install
-  cd "$srcdir/libpamac-$pkgver"
-  cd builddir
-  DESTDIR="$pkgdir" meson install
-  # remove pamac-flatpak
-  rm "$pkgdir/usr/share/vala/vapi/pamac-flatpak.vapi"
-  rm "$pkgdir/usr/include/pamac-flatpak.h"
-  rm "$pkgdir/usr/lib/libpamac-flatpak.so"
-  rm "$pkgdir/usr/lib/libpamac-flatpak.so.11"
-}
+package() {
+  cd "$srcdir/libpamac-$_commit/builddir"
+  DESTDIR="$pkgdir" ninja install
+  # fix appstream issue
+  install -Dm644 "$srcdir/fix-appstream-data.hook" "$pkgdir/etc/pacman.d/hooks/fix-appstream-data.hook"
+  install -Dm755 "$srcdir/fix-appstream-data.sh" "$pkgdir/etc/pacman.d/hooks.bin/fix-appstream-data.sh"  
+  create_links
 
-package_libpamac-flatpak-plugin() {
-  pkgdesc="Flatpak plugin for Pamac"
-  depends=('flatpak' 'libpamac')
-  provides=('pamac-flatpak-plugin')
-  conflicts=('pamac-flatpak-plugin')
-  replaces=('pamac-flatpak-plugin')
-  install=libpamac-flatpak-plugin.install
-  cd "$srcdir/libpamac-$pkgver"
-  install -Dm644 "builddir/src/pamac-flatpak.vapi" "$pkgdir/usr/share/vala/vapi/pamac-flatpak.vapi"
-  install -Dm644 "builddir/src/pamac-flatpak.h" "$pkgdir/usr/include/pamac-flatpak.h"
-  install -Dm755 "builddir/src/libpamac-flatpak.so.11" "$pkgdir/usr/lib/libpamac-flatpak.so.11"
-  ln -sr "$pkgdir/usr/lib/libpamac-flatpak.so.11" "$pkgdir/usr/lib/libpamac-flatpak.so"
 }
+# vim:set ts=2 sw=2 et:
