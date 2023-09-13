@@ -6,7 +6,7 @@ ENABLE_SNAPD=0
 
 pkgname=libpamac
 pkgver=11.6.2
-pkgrel=1.
+pkgrel=1.1
 _pkgfixver=$pkgver
 
 _commit='e74fe0e1c15f4fd14d02ff12650be3fde47287d7'
