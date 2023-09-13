@@ -8,11 +8,11 @@ pkgbase:
     - python-aws-sam-translator
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.73.0-2
+    packages:
+      - python-aws-sam-translator-1.73.0-2-any.pkg.tar.zst
   world:
     version: 1.73.0-1
     packages:
