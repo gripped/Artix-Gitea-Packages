@@ -2,7 +2,7 @@
 
 _name=pydantic-extra-types
 pkgname=python-pydantic-extra-types
-pkgver=2.0.0
+pkgver=2.1.0
 pkgrel=1
 pkgdesc="Extra pydantic types"
 arch=(any)
@@ -29,8 +29,8 @@ optdepends=(
   'python-pycountry: for country code support'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('dde02fcec13431ba342a9f945b3dcd35b3d80c3f779cb75fcba9abdca51734b25fd108aff566822b68f97430fb70e2567fb2d9153107b884371eccd2d4ce31de')
-b2sums=('9551ea0e1c7338a7c6fd1b882e65d085ae8c3f746fda47eb46c4bafdd43d6bca75aeb21fda399907e266d82c8b46b9b63993dd79d6e20aa4a2c5e0b69501a35b')
+sha512sums=('f1d6ad8940f2c8a686cce9083a136b282d37afb6b465c37b4a326fb21f8601f7b2a3d672764fd84c6ef47c2ec7092f8506c799a362744d77ca72b8b76e9a78bc')
+b2sums=('90023c8d8e64b09289db6c025df5e332217357d2c2a7a1eb171e5bfd40a8f59dca404890a0b06367cd87543e7f5812bc0e4c59841a2f8ea510f3c4ca32aad1a6')
 
 build() {
   cd $_name-$pkgver
