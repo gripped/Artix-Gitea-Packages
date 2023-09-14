@@ -1,5 +1,6 @@
 type         = scripted
-command      = /etc/dinit.d/scripts/wireguard start
-stop-command = /etc/dinit.d/scripts/wireguard stop
+command      = /usr/bin/wg-quick up ${WG_INTERFACE:-wg0}
+stop-command = /usr/bin/wg-quick down ${WG_INTERFACE:-wg0}
+env-file     = /etc/dinit.d/config/wireguard.conf
 restart      = false
-waits-for    = loginready
+depends-on   = network
