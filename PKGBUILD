@@ -2,7 +2,7 @@
 
 pkgname=spamassassin-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for spamassassin"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 conflicts=('init-spamassassin')
 provides=('init-spamassassin')
 source=("spamd")
-sha256sums=('b53da898b1eb3b6ab49258efdc1f02a067e5697df94ec3a196557c88592b2987')
+sha256sums=('32154f54c4acc410bbc8f19261a89e52edbece65f9ae0034f32e726eecc4d871')
 
 package() {
     install -Dm644 spamd "$pkgdir/etc/dinit.d/spamd"
