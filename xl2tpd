@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/xl2tpd -D -c /etc/xl2tpd/xl2tpd.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/xl2tpd.log
-waits-for       = loginready
+depends-on      = network
