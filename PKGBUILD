@@ -1,17 +1,17 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=squid-dinit
 pkgver=20211102
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for squid"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-groups=('dinit-galaxy')
+groups=('dinit-world')
 depends=('squid' 'dinit')
 conflicts=('init-squid')
 provides=('init-squid')
 source=("squid")
-sha256sums=('9ee633f68d8eb8b55d938ae573866a81621ee7f639155fe1d1c74687cafbe990')
+sha256sums=('c295f483551684425d67a6d6ef95833be690f540e7ff6a1352458aad38865319')
 
 package() {
     install -Dm644 squid "$pkgdir/etc/dinit.d/squid"
