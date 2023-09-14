@@ -2,5 +2,5 @@ type            = process
 command         = /usr/lib/power-profiles-daemon -v
 smooth-recovery = true
 logfile         = /var/log/dinit/power-profiles-daemon.log
-waits-for       = loginready
+after           = loginready
 depends-on      = dbus

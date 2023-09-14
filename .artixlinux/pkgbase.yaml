@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: power-profiles-daemon-dinit
-  version: 20220514-1
+  version: 20220514-2
   arch:
     - any
   pkgname:
     - power-profiles-daemon-dinit
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 20220514-2
+    packages:
+      - power-profiles-daemon-dinit-20220514-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
