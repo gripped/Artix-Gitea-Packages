@@ -1,0 +1,5 @@
+type       = scripted
+command    = /etc/dinit.d/scripts/redis-pre
+restart    = false
+depends-on = pseudofs
+after      = mount

@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/redis
+command         = /usr/bin/redis-server /etc/redis/redis.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/redis.log
-waits-for       = loginready
+after           = loginready
+depends-on      = redis-pre
