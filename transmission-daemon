@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/transmission-daemon -f --log-error
 smooth-recovery = true
 logfile         = /var/log/dinit/transmission-daemon.log
-waits-for       = loginready
+depends-on      = network

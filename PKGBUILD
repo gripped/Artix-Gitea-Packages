@@ -2,7 +2,7 @@
 
 pkgname=transmission-dinit
 pkgver=20211030
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for transmission"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('dinit' 'transmission-cli')
 conflicts=('init-transmission')
 provides=('init-transmission')
 source=("transmission-daemon")
-sha256sums=('ccbdfb5e584d016d1e41beb4eb98997bae9ec5afb9cfc1c7afd52f36c6f181e8')
+sha256sums=('d566b33e65e6832f5e627466b53baad7c2e248a1f24c77862f6c6c11e65e15f9')
 
 package() {
     install -Dm644 transmission-daemon "$pkgdir/etc/dinit.d/transmission-daemon"
