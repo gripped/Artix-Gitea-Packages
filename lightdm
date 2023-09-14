@@ -1,7 +1,8 @@
 type            = process
-command         = /etc/dinit.d/scripts/lightdm
+command         = /usr/bin/lightdm
 smooth-recovery = true
 logfile         = /var/log/dinit/lightdm.log
 depends-on      = logind
-waits-for       = loginready
+depends-on      = lightdm-pre
+after           = loginready
 waits-for.d     = live.d
