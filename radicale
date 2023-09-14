@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/radicale -C /etc/radicale/config
 smooth-recovery = true
 logfile         = /var/log/dinit/radicale.log
-waits-for       = loginready
+waits-for       = network
