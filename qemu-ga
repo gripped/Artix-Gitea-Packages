@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/qemu-ga
 smooth-recovery = true
 logfile         = /var/log/dinit/qemu-ga.log
-waits-for       = loginready
+after           = loginready
