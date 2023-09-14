@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: samba-dinit
-  version: 20211030-2
+  version: 20211030-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 20211030-2
+    version: 20211030-3
     packages:
-      - samba-dinit-20211030-2-any.pkg.tar.zst
+      - samba-dinit-20211030-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

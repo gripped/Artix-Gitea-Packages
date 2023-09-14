@@ -2,7 +2,7 @@
 
 pkgname=samba-dinit
 pkgver=20211030
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for samba"
 arch=('any')
 url="https://artixlinux.org"
