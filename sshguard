@@ -1,4 +1,4 @@
 type            = process
 command         = /usr/bin/sshguard
 smooth-recovery = true
-waits-for       = loginready
+depends-on      = network
