@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/pdns-recursor
+command         = /usr/bin/pdns_recursor --setuid=pdns-recursor --daemon=no --disable-syslog=yes --write-pid=no --config-dir=/etc/powerdns --socket-dir=/run/pdns-recursor
 smooth-recovery = true
 logfile         = /var/log/dinit/pdns-recursor.log
-waits-for       = loginready
+after           = loginready
+depends-on      = pdns-recursor-pre

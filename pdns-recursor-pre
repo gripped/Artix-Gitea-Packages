@@ -1,0 +1,3 @@
+type    = scripted
+command = /usr/bin/install -dm755 -o pdns-recursor /run/pdns-recursor
+after   = pseudofs
