@@ -3,10 +3,10 @@
 # Maintainer: Torsten Keßler <tpkessler@archlinux.org>
 
 pkgname=intel-graphics-compiler
-pkgver=1.0.14062.11
+pkgver=1.0.14508.16
 _llvmmaj=14
 _llvmver="${_llvmmaj}.0.5"
-pkgrel=3
+pkgrel=1
 epoch=1
 pkgdesc='Intel Graphics Compiler for OpenCL'
 arch=('x86_64')
@@ -23,7 +23,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/intel/intel-graphics-compil
         "git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git#branch=llvm_release_${_llvmmaj}0"
         "git+https://github.com/intel/opencl-clang.git#branch=ocl-open-${_llvmmaj}0"
         "git+https://github.com/llvm/llvm-project.git#tag=llvmorg-${_llvmver}")
-sha256sums=('ef2678953843102d1c1d62a35c1e1634cdb087589f934bbd697f0d78aa61bd06'
+sha256sums=('28fdb1fab9a26257711d4ba1c3130313046223eac5fa2b1cc14a1f3a323b35fe'
             'SKIP'
             'SKIP'
             'SKIP'
