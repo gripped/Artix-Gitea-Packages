@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/shairplay
+command         = /usr/bin/shairplay -a ${SHAIRPLAY_NAME:-shairplay} ${SHAIRPLAY_PASSWORD:-example}
+env-file        = /etc/dinit.d/config/shairplay.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/shairplay.log
-waits-for       = loginready
+depends-on      = network
