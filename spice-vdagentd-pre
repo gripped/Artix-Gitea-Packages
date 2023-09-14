@@ -1,0 +1,4 @@
+type        = scripted
+command     = /usr/bin/mkdir -p /run/spice-vdagentd
+depends-on  = pseudofs
+after       = root-rw
