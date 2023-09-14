@@ -1,0 +1,4 @@
+type            = process
+command         = /bin/install -d -m0711 -o root -g gdm /run/gdm
+smooth-recovery = true
+after           = loginready
