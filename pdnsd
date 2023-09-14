@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/pdnsd
 smooth-recovery = true
 logfile         = /var/log/dinit/pdnsd.log
-waits-for       = loginready
+depends-on      = network
