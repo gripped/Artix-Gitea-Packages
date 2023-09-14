@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/xinetd -dontfork -syslog daemon
 smooth-recovery = true
 logfile         = /var/log/dinit/xinetd.log
-waits-for       = loginready
+depends-on      = network
