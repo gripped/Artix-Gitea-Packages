@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=postfix-dinit
-pkgver=20211030
-pkgrel=2
+pkgver=20230907
+pkgrel=1
 pkgdesc="dinit service scripts for postfix"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,11 +11,11 @@ groups=('dinit-world')
 depends=('postfix' 'dinit')
 provides=('init-postfix')
 conflicts=('init-postfix')
-source=("postfix" "postfix.script")
-sha256sums=('702640b89b7633ff86ef4714e2b506c6d7062099183ee542673111b3672a192a'
-            '1300990a332330abb3be608df3b6105024ab056901813f4bdddb8586a66a9522')
+source=("postfix" "postfix-pre")
+sha256sums=('ca14cfeae69b6434119aefff37dd448f74fa4bbd641f3c2453cf64ce11597618'
+            'b058cd7aa4c1c23672a6bcc775c4d558752dcc3ab87236c364706dcd250b0366')
 
 package() {
-    install -Dm644 postfix        "$pkgdir/etc/dinit.d/postfix"
-    install -Dm755 postfix.script "$pkgdir/etc/dinit.d/scripts/postfix"
+    install -Dm644 postfix     "$pkgdir/etc/dinit.d/postfix"
+    install -Dm644 postfix-pre "$pkgdir/etc/dinit.d/postfix-pre"
 }

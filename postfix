@@ -1,5 +1,6 @@
 type            = process
-command         = /etc/dinit.d/scripts/postfix
+command         = /usr/lib/postfix/bin/master -d
 smooth-recovery = true
 logfile         = /var/log/dinit/postfix.log
-waits-for       = loginready
+after           = loginready
+depends-on      = postfix-pre
