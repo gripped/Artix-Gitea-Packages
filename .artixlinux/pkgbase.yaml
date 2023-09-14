@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: audit-dinit
-  version: 20211031-2
+  version: 20211031-3
   arch:
     - any
   pkgname:
     - audit-dinit
 actions:
-  addRepo: null
-  removeRepo: system-goblins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20211031-3
+    packages:
+      - audit-dinit-20211031-3-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
