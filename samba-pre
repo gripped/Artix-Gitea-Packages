@@ -1,4 +1,5 @@
-type      = scripted
-command   = /usr/bin/mkdir -p /run/samba
-restart   = false
-waits-for = loginready
+type       = scripted
+command    = /usr/bin/mkdir -p /run/samba
+restart    = false
+depends-on = pseudofs
+after      = root-rw

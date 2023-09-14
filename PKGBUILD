@@ -14,9 +14,9 @@ provides=('init-samba')
 source=("smbd"
         "nmbd"
         "samba-pre")
-sha256sums=('1c0e8c1ff66fd12a4c7474d1eddba3834fb3090cca70f4875015d5e31af4c0e5'
-            'd87cd6b183b6fc09f61df84c9cd7774ed4cca4194ad23e2a8b8416807459a82b'
-            'ba176ce8ed70353b869574c5b38cf134150f2608d92e57a85a1e28f6308bfaec')
+sha256sums=('3328da37b1b4150e4b706bfd2fa8e1ade0b904d54548ea23a2240333662847a3'
+            '371cc96655681ecf22626c9a853e99d1de53c77c6338818359ae4860b661aa60'
+            '7653797db0d167a682232cc8f010ee6ed616c74c4b1af808448a34cbbbfd7553')
 
 package() {
     install -Dm644 smbd      "$pkgdir/etc/dinit.d/smbd"
