@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/vnstatd -n
 smooth-recovery = true
 logfile         = /var/log/dinit/vnstatd.log
-waits-for       = loginready
+depends-on      = network
