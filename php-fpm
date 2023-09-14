@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/php-fpm --nodaemonize
 smooth-recovery = true
 logfile         = /var/log/dinit/php-fpm.log
-waits-for       = loginready
+after           = loginready
