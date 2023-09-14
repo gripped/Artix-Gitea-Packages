@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/webhook -hooks /etc/webhook/hooks.json -verbose
 smooth-recovery = true
 logfile         = /var/log/dinit/webhook.log
-waits-for       = loginready
+waits-for       = network
