@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/unbound -dp
 smooth-recovery = true
 logfile         = /var/log/dinit/unbound.log
-waits-for       = loginready
+depends-on      = network
