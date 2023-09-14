@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/rpcbind -f
 smooth-recovery = true
 logfile         = /var/log/dinit/rpcbind.log
-waits-for       = loginready
+waits-for       = network
