@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/sndiod -dd
 smooth-recovery = true
 logfile         = /var/log/dinit/sndiod.log
-waits-for       = loginready
+after           = loginready
