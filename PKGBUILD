@@ -1,18 +1,18 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=vsftpd-dinit
 pkgver=20211103
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for vsftpd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-groups=('dinit-galaxy')
+groups=('dinit-world')
 depends=('vsftpd' 'dinit')
 conflicts=('init-vsftpd')
 provides=('init-vsftpd')
 source=("vsftpd" "vsftpd-ipv6")
-sha256sums=('9f76a2123fe9a7e87c2d1c3bbd56a0317ff35e97ba97f26b4d0ab61d1c13be05'
-            '34c6922f22077724ebc33d8db623f79d2be66fea5f5b061ba03668d50c7f9575')
+sha256sums=('a3c787d8434b63fc5215cb9e24d70402e36daebf8e7b3a1c855b2e7bf9946daf'
+            '703984237c4dbbdfa402b95ff37f2e6423a9c34387e66b61023cd74c7abf09a7')
 
 package() {
     install -Dm644 vsftpd      "$pkgdir/etc/dinit.d/vsftpd"
