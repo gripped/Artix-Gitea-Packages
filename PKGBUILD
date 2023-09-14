@@ -1,12 +1,12 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=salt-dinit
 pkgver=20211102
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for salt"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-groups=('dinit-galaxy')
+groups=('dinit-world')
 depends=('salt' 'dinit')
 conflicts=('init-salt')
 provides=('init-salt')
@@ -14,10 +14,10 @@ source=("salt-master"
         "salt-api"
         "salt-minion"
         "salt-syndic")
-sha256sums=('4b55304278f29efccddd924a192f55f91ae0bd4264c5efb595f1fe214b50776b'
-            '2ae2b1f97efe54f4fec6d7539d7642ad4446e51f170c79bbc013caa0f14bd9a7'
-            '73cafbe9eb9d8ad0cb41b66981af95a6ca4142c83aa3296fc5bdc66c96b18e98'
-            '0d2a74b299463172fb8edd77081b440b5cac9a0a483fe55d3354ab67f6177a0a')
+sha256sums=('7931f313a54d211181d614e16c0a111d3fecb0e1289c4f8fad92a55d900a4160'
+            '0cee3b4a5a131b0e4f09962dc1f739f830b71b7b52d098bbcfad61a0b4e23259'
+            '0d80ef6ac4714ab7b37fd17c357530e7b40b86c7e39f09a2e8f73a60299bf8d1'
+            '37a465cd2aba77179b8157f04ae7c72e2b40448b220a5a6b421ea94612b761dc')
 
 package() {
     install -Dm644 salt-master "$pkgdir/etc/dinit.d/salt-master"
