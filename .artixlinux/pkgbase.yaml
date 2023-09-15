@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: telegram-desktop
-  version: 4.9.7-1.1
+  version: 4.9.7-1
   arch:
     - x86_64
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: galaxy
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.9.5-1
+    version: 4.9.7-1
     packages:
-      - telegram-desktop-4.9.5-1-x86_64.pkg.tar.zst
+      - telegram-desktop-4.9.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
