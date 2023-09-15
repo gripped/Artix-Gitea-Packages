@@ -1,0 +1,3 @@
+type            = scripted
+command         = /usr/bin/chown prosody:jabber /var/lib/prosody
+depends-on      = root-rw
