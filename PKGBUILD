@@ -2,7 +2,7 @@
 # Contributor: György Balló <ballogy@freestart.hu>
 
 pkgname=geoclue
-pkgver=2.7.0
+pkgver=2.7.1
 pkgrel=1
 pkgdesc="Modular geoinformation service built on the D-Bus messaging system"
 arch=(x86_64)
@@ -15,7 +15,7 @@ provides=("geoclue2=$pkgver-$pkgrel")
 conflicts=(geoclue2)
 replaces=(geoclue2)
 backup=(etc/geoclue/geoclue.conf)
-_commit=bbfb6289dedb88cb8155d9f6868787d5432e1f90  # tags/2.7.0^0
+_commit=8a24f60969d4c235d9918796c38a6a9c42e10131  # tags/2.7.1
 source=("git+https://gitlab.freedesktop.org/geoclue/geoclue.git#commit=$_commit")
 sha256sums=('SKIP')
 
