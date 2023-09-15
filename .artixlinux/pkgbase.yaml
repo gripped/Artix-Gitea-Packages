@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - gdm-dinit
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: null
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -28,9 +28,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 20230906-1
-    packages:
-      - gdm-dinit-20230906-1-any.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 20211030-2
     packages:
