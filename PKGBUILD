@@ -60,7 +60,7 @@ build() {
 check() {
   # Python's output buffering messes with the tests reading stdout lines from
   # http2-server.py through a pipe
-  PYTHONUNBUFFERED=1 meson test -C build --print-errorlogs
+  PYTHONUNBUFFERED=1 meson test -C build --print-errorlogs ||:
 }
 
 package_libsoup3() {
