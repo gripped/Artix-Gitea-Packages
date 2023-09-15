@@ -116,7 +116,7 @@ case "$1" in
     unlock)
         unlock_devices
         # LVM-on-LUKS scenario
-        dinitctl is-started --quiet lvm2 && vgchange --sysinit -a y >/dev/null
+        dinitctl is-started --quiet lvm2 && vgchange --sysinit -a y >/dev/null || :
     ;;
     lock)
         lock_devices

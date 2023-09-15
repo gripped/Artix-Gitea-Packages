@@ -2,7 +2,7 @@
 
 pkgname=cryptsetup-dinit
 pkgver=20211025
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit stage1 script for cryptsetup"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,7 +14,7 @@ conflicts=('init-cryptsetup')
 source=('cryptsetup' 'cryptsetup-script')
 optdepends=('lvm2-dinit: LVM support for encrypted filesystems')
 sha256sums=('0593ce387724adaab6d69b87f695c7802ab3069bfe69bf45f5314b358ca2f494'
-            '6fbf1c18607f400548c030395d184c1cbb4580c983b99ba0c813b0d88e3986a7')
+            '7a48785c2f65fd9c64ca95e9b7b13b0eb21e09494fdce8ad70242fb5bee203c5')
 
 package() {
     install -Dm644 "${srcdir}/cryptsetup" "${pkgdir}/etc/dinit.d/cryptsetup"
