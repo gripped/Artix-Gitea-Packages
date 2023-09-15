@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: shaderc
-  version: 2023.4-1
+  version: 2023.4-2
   arch:
     - x86_64
   pkgname:
     - shaderc
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2023.4-2
+    packages:
+      - shaderc-2023.4-2-x86_64.pkg.tar.zst
   world:
     version: 2023.4-1
     packages:
