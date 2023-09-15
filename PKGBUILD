@@ -63,7 +63,7 @@ makedepends=(
   sbc
   sdl2
   valgrind
-  webrtc-audio-processing
+  webrtc-audio-processing-1
 )
 checkdepends=(
   desktop-file-utils
