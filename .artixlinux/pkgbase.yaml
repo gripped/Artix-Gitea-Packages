@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: xsane
-  version: 0.999-6
+  version: 0.999-6.2
   arch:
     - x86_64
   pkgname:
     - xsane
     - xsane-gimp
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -52,5 +52,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 0.999-6.2
+    packages:
+      - xsane-0.999-6.2-x86_64.pkg.tar.zst
+      - xsane-gimp-0.999-6.2-x86_64.pkg.tar.zst
