@@ -7,21 +7,21 @@ pkgbase:
   pkgname:
     - cronie-dinit
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 20211104-4
     packages:
       - cronie-dinit-20211104-4-any.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 20211104-3
     packages:
