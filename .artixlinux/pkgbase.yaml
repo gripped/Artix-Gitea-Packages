@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gvfs
-  version: 1.50.6-1
+  version: 1.52.0-1
   arch:
     - x86_64
   pkgname:
@@ -14,7 +14,7 @@ pkgbase:
     - gvfs-nfs
     - gvfs-google
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -35,8 +35,16 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.52.0-1
+    packages:
+      - gvfs-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-smb-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-afc-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-goa-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.52.0-1-x86_64.pkg.tar.zst
+      - gvfs-google-1.52.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.50.6-1
     packages:
