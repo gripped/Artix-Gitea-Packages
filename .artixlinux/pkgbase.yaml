@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: breeze-gtk
-  version: 5.27.7-1
+  version: 5.27.8-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.27.7-1
+    version: 5.27.8-1
     packages:
-      - breeze-gtk-5.27.7-1-any.pkg.tar.zst
+      - breeze-gtk-5.27.8-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
