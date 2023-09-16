@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: calamares
-  version: 3.2.62-3
+  version: 3.2.62-4
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.2.62-3
+    version: 3.2.62-4
     packages:
-      - calamares-3.2.62-3-x86_64.pkg.tar.zst
+      - calamares-3.2.62-4-x86_64.pkg.tar.zst
