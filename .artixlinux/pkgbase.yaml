@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: webkit2gtk-4.1
-  version: 2.40.5-2
+  version: 2.42.0-1
   arch:
     - x86_64
   pkgname:
     - webkit2gtk-4.1
     - webkit2gtk-4.1-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.42.0-1
+    packages:
+      - webkit2gtk-4.1-2.42.0-1-x86_64.pkg.tar.zst
+      - webkit2gtk-4.1-docs-2.42.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.40.5-2
     packages:
