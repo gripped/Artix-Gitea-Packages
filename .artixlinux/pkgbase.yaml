@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: lib32-at-spi2-core
-  version: 2.48.4-1
+  version: 2.50.0-1
   arch:
     - x86_64
   pkgname:
     - lib32-at-spi2-core
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 2.50.0-1
+    packages:
+      - lib32-at-spi2-core-2.50.0-1-x86_64.pkg.tar.zst
   lib32:
     version: 2.48.4-1
     packages:
