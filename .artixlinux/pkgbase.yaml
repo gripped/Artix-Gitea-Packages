@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: intel-media-driver
-  version: 23.3.1-1
+  version: 23.3.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.3.1-1
+    version: 23.3.3-1
     packages:
-      - intel-media-driver-23.3.1-1-x86_64.pkg.tar.zst
+      - intel-media-driver-23.3.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
