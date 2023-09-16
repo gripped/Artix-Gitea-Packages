@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-p11-kit
-  version: 0.25.0-2
+  version: 0.25.0-2.1
   arch:
     - x86_64
   pkgname:
@@ -37,9 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 0.25.0-2
+    version: 0.25.0-2.1
     packages:
-      - lib32-p11-kit-0.25.0-2-x86_64.pkg.tar.zst
+      - lib32-p11-kit-0.25.0-2.1-x86_64.pkg.tar.zst
   lib32:
     version: 0.25.0-1
     packages:

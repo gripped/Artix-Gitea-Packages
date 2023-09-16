@@ -7,7 +7,7 @@ pkgname=(
   lib32-p11-kit
 )
 pkgver=0.25.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Loads and enumerates PKCS#11 modules (32-bit library)"
 url="https://p11-glue.freedesktop.org"
 arch=(x86_64)
