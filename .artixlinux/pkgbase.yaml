@@ -49,6 +49,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.2.62-3
-    packages:
-      - calamares-3.2.62-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
