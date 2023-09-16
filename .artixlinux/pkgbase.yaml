@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-glib-networking
-  version: 2.76.1-1
+  version: 1:2.78.0-1
   arch:
     - x86_64
   pkgname:
     - lib32-glib-networking
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1:2.78.0-1
+    packages:
+      - lib32-glib-networking-1:2.78.0-1-x86_64.pkg.tar.zst
   lib32:
     version: 2.76.1-1
     packages:
