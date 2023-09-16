@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kscreen
-  version: 5.27.7-1
+  version: 5.27.8-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.27.7-1
+    version: 5.27.8-1
     packages:
-      - kscreen-5.27.7-1-x86_64.pkg.tar.zst
+      - kscreen-5.27.8-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
