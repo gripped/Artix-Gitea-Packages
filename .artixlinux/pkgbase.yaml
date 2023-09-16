@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mediainfo
-  version: 23.07-1
+  version: 23.09-1
   arch:
     - x86_64
   pkgname:
     - mediainfo
     - mediainfo-gui
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.07-1
+    version: 23.09-1
     packages:
-      - mediainfo-23.07-1-x86_64.pkg.tar.zst
-      - mediainfo-gui-23.07-1-x86_64.pkg.tar.zst
+      - mediainfo-23.09-1-x86_64.pkg.tar.zst
+      - mediainfo-gui-23.09-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
