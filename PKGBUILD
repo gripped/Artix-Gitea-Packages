@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio
-pkgver=5.109.0
+pkgver=5.110.0
 pkgrel=2
 pkgdesc='Resource and network access abstraction'
 arch=(x86_64)
@@ -17,10 +17,16 @@ optdepends=('kio-extras: extra protocols support (sftp, fish and more)'
             'kio-fuse: to mount remote filesystems via FUSE'
             'switcheroo-control: hybrid GPU support')
 groups=(kf5)
-source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f65a69ef167f5932c4f0f662ff8eb150aba36476fbcbd806744320a1049c0c62'
-            'SKIP')
+source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
+        https://invent.kde.org/frameworks/kio/-/commit/48322f44.patch)
+sha256sums=('228f9abcdfce1b23deacca97e9dd68d019e6b20607ddfe2295050333e90fc96b'
+            'SKIP'
+            'bff9696fc152c06fee2c4f21f1dc8a06c42745dbfe7fe88d47596bfb03d38220')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
+
+prepare() {
+  patch -d $pkgname-$pkgver -p1 < 48322f44.patch # Fix crashes
+}
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
