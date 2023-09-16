@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libcamera
-  version: 0.1.0-1
+  version: 0.1.0-2
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.0-1
+    version: 0.1.0-2
     packages:
-      - libcamera-0.1.0-1-x86_64.pkg.tar.zst
-      - libcamera-docs-0.1.0-1-x86_64.pkg.tar.zst
-      - libcamera-ipa-0.1.0-1-x86_64.pkg.tar.zst
-      - libcamera-tools-0.1.0-1-x86_64.pkg.tar.zst
-      - gst-plugin-libcamera-0.1.0-1-x86_64.pkg.tar.zst
+      - libcamera-0.1.0-2-x86_64.pkg.tar.zst
+      - libcamera-docs-0.1.0-2-x86_64.pkg.tar.zst
+      - libcamera-ipa-0.1.0-2-x86_64.pkg.tar.zst
+      - libcamera-tools-0.1.0-2-x86_64.pkg.tar.zst
+      - gst-plugin-libcamera-0.1.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
