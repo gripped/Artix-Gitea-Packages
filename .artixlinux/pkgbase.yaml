@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: at-spi2-core
-  version: 2.48.4-1
+  version: 2.50.0-1
   arch:
     - x86_64
   pkgname:
     - at-spi2-core
     - at-spi2-core-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.50.0-1
+    packages:
+      - at-spi2-core-2.50.0-1-x86_64.pkg.tar.zst
+      - at-spi2-core-docs-2.50.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.48.4-1
     packages:
