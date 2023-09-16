@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libshumate
-  version: 1.0.5-1
+  version: 1.1.0-1
   arch:
     - x86_64
   pkgname:
     - libshumate
     - libshumate-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.5-1
+    version: 1.1.0-1
     packages:
-      - libshumate-1.0.5-1-x86_64.pkg.tar.zst
-      - libshumate-docs-1.0.5-1-x86_64.pkg.tar.zst
+      - libshumate-1.1.0-1-x86_64.pkg.tar.zst
+      - libshumate-docs-1.1.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
