@@ -34,13 +34,11 @@ checkdepends=(
 )
 source=(
   https://mosquitto.org/files/source/mosquitto-$pkgver.tar.gz{,.asc}
-  "$pkgname.service"
   "sysusers_mosquitto.conf"
 )
 backup=("etc/$pkgname/$pkgname.conf")
 sha512sums=('0882380461bf110abe10c5487334b0ae5ce8d890a2ad8f9b419278a0f04fc821918f50408c50c843bf09741eb62d5b9a1ab10df262d46cd70aafc3e063344a9a'
             'SKIP'
-            '4789e8ee42f4a8e3ca8e7fd21cb551b5e34991e6ca1750533bbfa555260e20e8ea167bd69b99b407237bcc8969157eee792fdcf3844b839d73310a6c59e5f045'
             '21848b890c2db258138795ec21a009e022b6a8369217eb31939f976ad434229dd9f61d33e8109ade7bc001e8668e9d42b59c1ab079753860417961e102356f0e')
 validpgpkeys=('A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7')
 
