@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-fast_gettext
-  version: 2.2.0-1
+  version: 2.3.0-1
   arch:
     - any
   pkgname:
     - ruby-fast_gettext
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.2.0-1
+    version: 2.3.0-1
     packages:
-      - ruby-fast_gettext-2.2.0-1-any.pkg.tar.zst
+      - ruby-fast_gettext-2.3.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
