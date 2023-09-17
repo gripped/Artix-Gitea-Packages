@@ -13,11 +13,11 @@ license=(GPL)
 depends=(gd lua minizip qt5-base sdl2)
 makedepends=(cmake git glu mesa-libgl ninja setconf scons)
 optdepends=('ffmpeg: for recording')
-source=("git+$url#commit=34eb7601c415b81901fd02afbd5cfdc84b5047ac") # tag: v2.6.6
+source=("_$pkgname::git+$url#commit=34eb7601c415b81901fd02afbd5cfdc84b5047ac") # tag: v2.6.6
 b2sums=('SKIP')
 
 prepare() {
-  cd $pkgname
+  cd _$pkgname
   sed -i 's/-interim git//g' src/version.h
   setconf scripts/genGitHdr.sh GIT_URL "'""${source:4:34}""'"
   setconf scripts/genGitHdr.sh GIT_REV "${source#*=}"
@@ -30,14 +30,14 @@ build() {
     -D CMAKE_CXX_FLAGS="$CXXFLAGS -fPIC -w" \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -G Ninja \
-    -S $pkgname
+    -S _$pkgname
   ninja -C build
 }
 
 package() {
   DESTDIR="$pkgdir" ninja -C build install
   install -d "$pkgdir/usr/share/doc/$pkgname"
-  cp -r $pkgname/documentation/* "$pkgdir/usr/share/doc/$pkgname/"
-  install -Dm644 $pkgname/changelog.txt \
+  cp -r _$pkgname/documentation/* "$pkgdir/usr/share/doc/$pkgname/"
+  install -Dm644 _$pkgname/changelog.txt \
     "$pkgdir/usr/share/doc/$pkgname/changelog.txt"
 }
