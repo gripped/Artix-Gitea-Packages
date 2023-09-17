@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-sequel
-  version: 5.71.0-1
+  version: 5.72.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.71.0-1
+    version: 5.72.0-1
     packages:
-      - ruby-sequel-5.71.0-1-any.pkg.tar.zst
+      - ruby-sequel-5.72.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
