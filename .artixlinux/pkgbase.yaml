@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: alsa-lib
-  version: 1.2.10-1
+  version: 1.2.10-2
   arch:
     - x86_64
   pkgname:
     - alsa-lib
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.10-1
+    version: 1.2.10-2
     packages:
-      - alsa-lib-1.2.10-1-x86_64.pkg.tar.zst
+      - alsa-lib-1.2.10-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
