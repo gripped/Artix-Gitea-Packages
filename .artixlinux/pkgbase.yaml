@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-puppet-resource_api
-  version: 1.8.16-1
+  version: 1.9.0-1
   arch:
     - any
   pkgname:
     - ruby-puppet-resource_api
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.16-1
+    version: 1.9.0-1
     packages:
-      - ruby-puppet-resource_api-1.8.16-1-any.pkg.tar.zst
+      - ruby-puppet-resource_api-1.9.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
