@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-hocon
-  version: 1.3.1-4
+  version: 1.4.0-4
   arch:
     - any
   pkgname:
     - ruby-hocon
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.1-4
+    version: 1.4.0-4
     packages:
-      - ruby-hocon-1.3.1-4-any.pkg.tar.zst
+      - ruby-hocon-1.4.0-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
