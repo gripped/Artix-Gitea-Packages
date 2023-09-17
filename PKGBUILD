@@ -3,8 +3,8 @@
 # Maintainer: Torsten Keßler <tpkessler@archlinux.org>
 
 pkgname=intel-compute-runtime
-pkgver=23.22.26516.18
-pkgrel=3
+pkgver=23.26.26690.22
+pkgrel=1
 pkgdesc="Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver"
 arch=(x86_64)
 url="https://01.org/compute-runtime"
@@ -17,14 +17,11 @@ provides=(opencl-driver level-zero-driver)
 # https://github.com/intel/compute-runtime/issues/528
 options=(!lto)
 source=(https://github.com/intel/compute-runtime/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
-        $pkgname-macro-define.patch
         020-intel-compute-runtime-disable-werror.patch)
-sha256sums=('f08947806ab5e3f49b31ab3db9ad0c40fe48e90beca8433d3884eb21267cdc68'
-            'd1d044bf9c5ce70fc7f3e90e1cafd816652cdd374ca67d975095923f0a44fd5b'
+sha256sums=('3fb6d1c9c82d211370da9d4e157883d718a4a01a5a225b2da6b00fefcaadf901'
             '7c73a012264c76075c7c40e65e2d9e823f44a77e392edff78a73accf025db88c')
 
 prepare() {
-  patch -d compute-runtime-${pkgver} -Np1 -i "${srcdir}/${pkgname}-macro-define.patch"
   patch -d compute-runtime-${pkgver} -Np1 -i "${srcdir}/020-intel-compute-runtime-disable-werror.patch"
 }
 
