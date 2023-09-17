@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-rack-test
-  version: 2.0.2-2
+  version: 2.1.0-1
   arch:
     - any
   pkgname:
     - ruby-rack-test
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.2-2
+    version: 2.1.0-1
     packages:
-      - ruby-rack-test-2.0.2-2-any.pkg.tar.zst
+      - ruby-rack-test-2.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
