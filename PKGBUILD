@@ -9,16 +9,18 @@
 pkgbase=erlang
 pkgname=(erlang erlang-unixodbc)
 pkgver=26.0.2
-pkgrel=1
+pkgrel=2
 _docver=26.0
 arch=(x86_64)
 url='https://erlang.org'
 license=(Apache)
 makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl unixodbc wxwidgets-gtk3)
 options=(staticlibs)
-source=("$url/download/otp_doc_man_$_docver.tar.gz"
-        "git+https://github.com/erlang/otp#commit=b54b86ad4f1253f46fd4552a73923756660c1d53") # tag: OTP-26.1
-b2sums=('428b88d6b9c9bc80d2b8cd85a4d86ffb9dbe6eb68c1acb3e841a2fd85dff1ee9f0c20217766f64b74f454ae72f1c146d5df511b3662d399079bc2400cf8c9a26'
+source=(
+        "$url/download/otp_doc_man_$_docver.tar.gz"
+        "git+https://github.com/erlang/otp#commit=d051172925a5c84b2f21850a188a533f885f201c") # tag: OTP-26.0.2
+b2sums=(
+        '428b88d6b9c9bc80d2b8cd85a4d86ffb9dbe6eb68c1acb3e841a2fd85dff1ee9f0c20217766f64b74f454ae72f1c146d5df511b3662d399079bc2400cf8c9a26'
         'SKIP')
 
 prepare() {
