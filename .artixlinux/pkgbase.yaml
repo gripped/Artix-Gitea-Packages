@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wine
-  version: 8.15-1
+  version: 8.16-1
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 8.15-1
+    version: 8.16-1
     packages:
-      - wine-8.15-1-x86_64.pkg.tar.zst
+      - wine-8.16-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
