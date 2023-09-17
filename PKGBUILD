@@ -1,24 +1,25 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Jo Christian Bergskås <jcberg@gmail.com>
 
 pkgname=fceux
-pkgver=2.6.5
-pkgrel=2
+pkgver=2.6.6
+pkgrel=1
 pkgdesc='Fast and ultra-compatible NES/Famicom emulator'
 arch=(x86_64)
-url='https://github.com/TASEmulators/fceux.git'
+url='https://github.com/TASEmulators/fceux'
 license=(GPL)
 depends=(gd lua minizip qt5-base sdl2)
 makedepends=(cmake git glu mesa-libgl ninja setconf scons)
 optdepends=('ffmpeg: for recording')
-source=("_$pkgname::git+$url#commit=ea6ed69b874e3ae94072f1b4f14b9a8f0fdd774b") # tag: v2.6.5
+source=("git+$url#commit=34eb7601c415b81901fd02afbd5cfdc84b5047ac") # tag: v2.6.6
 b2sums=('SKIP')
 
 prepare() {
-  cd _$pkgname
+  cd $pkgname
   sed -i 's/-interim git//g' src/version.h
-  setconf scripts/genGitHdr.sh GIT_URL "'""$url""'"
+  setconf scripts/genGitHdr.sh GIT_URL "'""${source:4:34}""'"
   setconf scripts/genGitHdr.sh GIT_REV "${source#*=}"
 }
 
@@ -29,14 +30,14 @@ build() {
     -D CMAKE_CXX_FLAGS="$CXXFLAGS -fPIC -w" \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -G Ninja \
-    -S _$pkgname
+    -S $pkgname
   ninja -C build
 }
 
 package() {
   DESTDIR="$pkgdir" ninja -C build install
   install -d "$pkgdir/usr/share/doc/$pkgname"
-  cp -r _$pkgname/documentation/* "$pkgdir/usr/share/doc/$pkgname/"
-  install -Dm644 _$pkgname/changelog.txt \
+  cp -r $pkgname/documentation/* "$pkgdir/usr/share/doc/$pkgname/"
+  install -Dm644 $pkgname/changelog.txt \
     "$pkgdir/usr/share/doc/$pkgname/changelog.txt"
 }
