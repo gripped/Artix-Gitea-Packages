@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: vte-common
-  version: 0.72.2-2
+  name: vte3
+  version: 0.74.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - vte4
     - vte-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.72.2-2
+    version: 0.74.0-1
     packages:
-      - vte-common-0.72.2-2-x86_64.pkg.tar.zst
-      - vte3-0.72.2-2-x86_64.pkg.tar.zst
-      - vte4-0.72.2-2-x86_64.pkg.tar.zst
-      - vte-docs-0.72.2-2-x86_64.pkg.tar.zst
+      - vte-common-0.74.0-1-x86_64.pkg.tar.zst
+      - vte3-0.74.0-1-x86_64.pkg.tar.zst
+      - vte4-0.74.0-1-x86_64.pkg.tar.zst
+      - vte-docs-0.74.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
