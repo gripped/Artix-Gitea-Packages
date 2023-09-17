@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: abseil-cpp
-  version: 20230125.3-2
+  version: 20230125.3-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230125.3-2
+    version: 20230125.3-3
     packages:
-      - abseil-cpp-20230125.3-2-x86_64.pkg.tar.zst
+      - abseil-cpp-20230125.3-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
