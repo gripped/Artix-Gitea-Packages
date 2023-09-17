@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-markly
-  version: 0.9.1-1
+  version: 0.10.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.1-1
+    version: 0.10.0-1
     packages:
-      - ruby-markly-0.9.1-1-x86_64.pkg.tar.zst
+      - ruby-markly-0.10.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
