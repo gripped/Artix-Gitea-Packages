@@ -6,7 +6,7 @@ pkgname=(
   lib32-json-glib
 )
 pkgver=1.8.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="JSON library built on GLib (32-bit)"
 url="https://wiki.gnome.org/Projects/JsonGlib"
 arch=(x86_64)
