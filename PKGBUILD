@@ -10,7 +10,7 @@
 # Contributor: Niels Abspoel <aboe76 (at) Gmail (dot) com>
 
 pkgname=puppet
-pkgver=7.24.0
+pkgver=7.26.0
 pkgrel=1
 pkgdesc='Server automation framework and application'
 arch=('any')
@@ -46,7 +46,7 @@ source=("https://github.com/puppetlabs/puppet/archive/${pkgver}/puppet-${pkgver}
         "zone_core::git+https://github.com/puppetlabs/puppetlabs-zone_core#commit=${_zone_commit}"
         "artix.patch::https://github.com/puppetlabs/puppet/commit/b31d40b687c05ef6f6350b29f727144285b7aaab.patch"
         )
-sha512sums=('4ba01e0a433b40fbe08933fbfd885e75d5855465ac217a980bce9104b77e65a17aa5b606daddaae1aac4fa14929b307122afde0444b958ef98b075604ffddf1f'
+sha512sums=('297a744bc85c0558f853ce420c49e877525117d205805e4de652da6dd8d333fe855b5483e5d56a5941f3f3551d9a6cf916c31894482fcc86a71f33b0e7710cfd'
             'SKIP'
             'SKIP'
             'SKIP'
