@@ -61,7 +61,8 @@ build() {
 
   # Manuals
   pushd "$pkgname"
-  xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
+#  xsversion="1.79.2"
+  xsversion="$(pacman -Qi docbook-xsl| grep Version | awk '{print $3'} | cut -d- -f1)"
   make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
   pandoc man/manual.md -o man/manual.html -s --number-sections --toc
   pandoc man/reference-cfg-format.md -o man/reference-cfg-format.html -s --number-sections --toc
