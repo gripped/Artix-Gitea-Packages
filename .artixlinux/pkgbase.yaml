@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: json-glib
-  version: 1.6.6-2
+  version: 1.8.0-1
   arch:
     - x86_64
   pkgname:
     - json-glib
     - json-glib-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.6-2
+    version: 1.8.0-1
     packages:
-      - json-glib-1.6.6-2-x86_64.pkg.tar.zst
-      - json-glib-docs-1.6.6-2-x86_64.pkg.tar.zst
+      - json-glib-1.8.0-1-x86_64.pkg.tar.zst
+      - json-glib-docs-1.8.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
