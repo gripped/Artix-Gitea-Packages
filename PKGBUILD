@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kdebugsettings
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='An application to enable/disable qCDebug'
 arch=(x86_64)
@@ -12,7 +12,7 @@ depends=(kdbusaddons ki18n kitemviews kcompletion kcoreaddons kxmlgui)
 makedepends=(extra-cmake-modules)
 groups=(kde-applications kde-utilities)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('8d588a379025fe4165760d8ac959a89cecf0141bdee8424d715ecb52ac4310a9'
+sha256sums=('245bf21de95fcd9ea2c31eec9ea610b7d8a97059d5d00a42500c2192a3f04bd5'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -27,4 +27,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-
