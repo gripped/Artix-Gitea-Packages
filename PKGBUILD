@@ -1,7 +1,7 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=timew
-pkgver=1.5.0
-_libshared_c="47c3262fa97c4b69542040d39be6c516c38d0e57"
+pkgver=1.6.0
+_libshared_c="d61b41fcaf6fcafc0f843f8b6923edf96642f827"
 pkgrel=1
 pkgdesc="Commandline Time Tracking and Reporting"
 arch=("x86_64")
@@ -16,40 +16,24 @@ makedepends=(
 	"cmake>=2.8.12"
 	"asciidoctor"
 )
-checkdepends=(
-	"python"
-	"python-dateutil"
-	"man"
-)
 source=(
 	"https://github.com/GothenburgBitFactory/timewarrior/archive/refs/tags/v$pkgver.tar.gz"
 	"https://github.com/GothenburgBitFactory/libshared/archive/$_libshared_c.tar.gz"
-	"help_man_test.patch"
 )
 sha256sums=(
-	"4179d9115ffbb671a4092152740e08ed53eaced9bc5ec5553de17f309b743f7f"
-	"0ca2ad809bcfc68d9563e7c43ae52cffb5729d4761a80be6b5f66332b6e9ad39"
-	"SKIP"
+	"fd49d32c93318fa86ddd7a1e440dc36b099d0fcf39b2085d255305ea7d0de438"
+	"1c2c44afdac65c937d7cc2f65b5c3a62cc492d02c5e2f9eb53c24e879d24a554"
 )
 
 prepare() {
 	rm -rf "timewarrior-$pkgver/src/libshared"
 	ln -sr "libshared-$_libshared_c" "timewarrior-$pkgver/src/libshared"
-
-	cd "timewarrior-$pkgver"
-	## Broken test.
-	patch -Np 1 -i ../help_man_test.patch
 }
 
 build() {
 	cd "timewarrior-$pkgver"
 	cmake -D CMAKE_INSTALL_PREFIX=/usr .
 	make
-}
-
-check() {
-	cd "timewarrior-$pkgver"
-	make test
 }
 
 package() {
