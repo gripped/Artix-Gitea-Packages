@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=libkdepim
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Libraries for KDE PIM applications'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(kcompletion kconfigwidgets)
 makedepends=(extra-cmake-modules qt5-tools doxygen)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('2038f8477d40837a8c1e6da06c2aaec6914647481db192620295638a32680cee'
+sha256sums=('e4808e74427ece2b1fa4aeaf5d70ba3b895d47c53ed6018a71e3725437d813a2'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
