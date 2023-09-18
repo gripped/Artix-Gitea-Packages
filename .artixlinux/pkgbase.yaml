@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: archlinux-keyring
-  version: 20230821-2
+  version: 20230918-1
   arch:
     - any
   pkgname:
     - archlinux-keyring
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 20230918-1
+    packages:
+      - archlinux-keyring-20230918-1-any.pkg.tar.zst
   galaxy:
     version: 20230821-2
     packages:
