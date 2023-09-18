@@ -1,10 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libktorrent
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='A BitTorrent protocol implementation'
 arch=(x86_64)
@@ -13,7 +13,7 @@ license=(GPL2)
 depends=(kio qca-qt5)
 makedepends=(extra-cmake-modules boost doxygen)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0fc0ca8c2d22e07712f9b1c9653d53e9635165f041a2a76f30bcbfd8f23726f6'
+sha256sums=('cb6253f76beeb7130eb65f94a5eb2c3d49d87b97bff38580a889c5b34b6bd0e0'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
