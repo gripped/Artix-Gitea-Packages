@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kalarm
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Personal alarm scheduler'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(phonon-qt5 kmime kidletime knotifyconfig pimcommon kmailtransport kholi
 makedepends=(extra-cmake-modules kdoctools)
 groups=(kde-applications kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('deaaa46d7116160491aa33d19174ff1102faf1c40d8991d3db07ebf18ab4f071'
+sha256sums=('f2e379f497226eed50dd3aa46753ecbafe7fbb3f282fb3ec4841677299978e5c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
