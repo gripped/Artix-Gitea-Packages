@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: level-zero-headers
-  version: 1.11.0-1
+  name: level-zero
+  version: 1.14.0-1
   arch:
     - x86_64
   pkgname:
     - level-zero-headers
     - level-zero-loader
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.14.0-1
+    packages:
+      - level-zero-headers-1.14.0-1-x86_64.pkg.tar.zst
+      - level-zero-loader-1.14.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.11.0-1
     packages:
