@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=akonadiconsole
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Akonadi management and debugging console'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(calendarsupport messagelib)
 makedepends=(extra-cmake-modules kdoctools)
 groups=(kde-applications kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('de50e05a7f76401421c42af7396eeb78d5d3bf7d78ab9d11a26f17cbe5d0c0a9'
+sha256sums=('8d7c35da5383adf67f6320c8593e11a6fd045d6794253c53353344590ce2a589'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
