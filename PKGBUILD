@@ -1,10 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=parley
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Vocabulary Trainer'
 url='https://apps.kde.org/parley/'
@@ -15,7 +15,7 @@ depends=(knewstuff libkeduvocdocument qt5-webengine)
 makedepends=(extra-cmake-modules kdoctools)
 optdepends=('translate-shell: Google Translate integration')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('1c213b58e73eaece3605e08e9799d0fb08745aa36926f2783d26d80b62ad84a7'
+sha256sums=('1957ca220dc639aca051bdc33f1e5e8b8b1c7d309871e72276d29a7aadf8e06d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
