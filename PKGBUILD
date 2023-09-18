@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=knights
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Chess board by KDE with XBoard protocol support'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(libkdegames kplotting plasma-framework hicolor-icon-theme)
 optdepends=('gnuchess: for playing against the computer')
 makedepends=(extra-cmake-modules kdoctools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('a64610b28b2b2f87f0f9b02aba6fe3d3be62de6f81139a1ff126e6d8b6d654e2'
+sha256sums=('90bae88eec9cc8f86033799b0e81f117ed10d5db5e52f5da3c7dd8ec4ce472ec'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
