@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=grantlee-editor
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Editor for Grantlee themes'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(messagelib)
 makedepends=(extra-cmake-modules kdoctools)
 groups=(kde-applications kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('eb08c3ee3afcf6b4118639571d73b510960b42842e1659b69e2c541faca06d5d'
+sha256sums=('86a59467a2f09d9ffada094672478f914066c8e9804cef1ac626e417c6af3cec'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
