@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: filesystem
-  version: 2023.01.31-1
+  version: 2023.09.18-1
   arch:
-    - x86_64
+    - any
   pkgname:
     - filesystem
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2023.09.18-1
+    packages:
+      - filesystem-2023.09.18-1-any.pkg.tar.zst
   system:
     version: 2023.01.31-1
     packages:

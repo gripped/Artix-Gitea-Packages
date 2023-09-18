@@ -1,12 +1,12 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Sébastien Luttringer
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2023.01.31
+pkgver=2023.09.18
 pkgrel=1
 pkgdesc='Base Artix Linux files'
-arch=('x86_64')
-license=('GPL')
+arch=('any')
+license=('GPL-3.0-or-later')
 url='https://www.artixlinux.org'
 depends=('iana-etc')
 backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
@@ -30,12 +30,12 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             '8ca2d8eef6fb5143c9ef7e9174ccfef59ac7ad2deee243574cd10c763156cc10'
             '62855224620a1e6dcfb2373460387bf0b7870ebe0595a61bbbc74919710d7641'
             '1aa33ce150ddb33b815f0b45425948e16020fcfb0a54ecc997b49778d5643978'
-            'f86a0b98d5fee4aae0e11a61fa0a1a4061927d5ca80753329285f87376acf2b6'
+            'ad6919a8d79b8f91ad77b49fa56afeb86725659a73a32ce61c574633221c64d3'
             '5e06477834f51abf42ea4e8dc199632afc6afbfd8c44354685a271e9a48d2c0a'
             '5557d8e601b17a80d1ea7de78a9869be69637cb6a02fbfe334e22fdf64e61d4c'
             'd88be2b45b43605ff31dd83d6a138069b6c2e92bc8989b7b9ab9eba8da5f8c7b'
             '6e13705ac4d6f69cdba118c6b70c722346fd3c45224133e6bbfe28aca719563c'
-            '0d9ad0a063e74e6b88db52b2f0a93e7b8f6faf1395981edebac493a13d0b59b3'
+            'ec289c03aa0d150e90e8287f001c8e6552ab9dd54f450bdb5c2d2254e477965b'
             '89e43a0b7028f52d5c8e7fb961d962c4b4f4e9595880a6157274ddb2c7c0b6b4'
             '7a278856af667f4e8902502453c008ceb16ddfb4a7c3e553de8e4d1afde00156'
             '5d8e61479f0093852365090e84d8d95b1e7fccfab068274ee25863bde6ff3e07'
