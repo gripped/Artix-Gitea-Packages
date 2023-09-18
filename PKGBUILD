@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kpimtextedit
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='A textedit with PIM-specific features'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(kio syntax-highlighting ktextaddons)
 makedepends=(extra-cmake-modules qt5-tools doxygen)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('63367a4a173536a91b7186813aea5b6b42bf88724483e983a5b6c60e9a48b897'
+sha256sums=('9396519482bf0fa1179f24e17f14b65ca89f841581cc6b46acd47a38f9f2912d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
