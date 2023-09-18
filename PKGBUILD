@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kaddressbook
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='KDE contact manager'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(kontactinterface kdepim-runtime kuserfeedback)
 makedepends=(extra-cmake-modules kdoctools)
 groups=(kde-applications kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('21978688b6f4b220323649b8d806f121e49dd56c168746f55e8656df25ff83ab'
+sha256sums=('47506d3ac568098ffcd75b55209e74b9e9956899f9ac0c275e977e76a32f662d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
