@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=baloo-widgets
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Widgets for Baloo'
 arch=(x86_64)
@@ -12,7 +12,7 @@ license=(LGPL)
 depends=(baloo)
 makedepends=(extra-cmake-modules kdoctools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f47b6ddcded425137007c882c684dbe835057147a0ffa1b56d6865917601d65c'
+sha256sums=('39806d8df0c49b7ea772f735c7ae44769a145f9f4f698908b98868f02617b057'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -27,4 +27,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-
