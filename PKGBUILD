@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kmail-account-wizard
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='KMail account wizard'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(kmime kidentitymanagement pimcommon kmailtransport kross libkleo)
 makedepends=(extra-cmake-modules kdoctools qt5-tools knotifyconfig ktexteditor)
 groups=(kde-applications kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('ab09f8dba8e2a428649d0966e7e164c73d5ba28cc90f7420bea954503bc2c093'
+sha256sums=('206c43a656f3a18a2a3e8537f367fc578809232d3565eb89ae4fad4b45a7e490'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
