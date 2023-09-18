@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=alligator
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Kirigami-based RSS reader'
 url='https://apps.kde.org/alligator/'
@@ -12,7 +12,7 @@ groups=(kde-applications kde-network)
 depends=(kirigami-addons syndication ki18n kconfig kcoreaddons hicolor-icon-theme)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('2dcc2ec4960d81da4ab195a5d1c4be8c3d21c3f3ab75697e0d8262b5e3208d04'
+sha256sums=('922c5730953f6237348e6509c90a220bf9d40bc7f508ba55c82d384fe88bc310'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
