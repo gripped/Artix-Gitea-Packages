@@ -2,7 +2,7 @@
 
 pkgname=libblockdev
 pkgver=3.0.3
-pkgrel=2
+pkgrel=3
 pkgdesc="A library for manipulating block devices"
 arch=('x86_64')
 url="https://github.com/storaged-project/libblockdev"
@@ -17,6 +17,7 @@ depends=(
   'kmod'
   'keyutils'
   'libbytesize'
+  'libnvme'
   'mdadm'
   'nss'
   'parted'
@@ -28,7 +29,6 @@ makedepends=(
   'autoconf-archive'
   'gobject-introspection'
   'gtk-doc'
-  'libnvme'
   'ndctl'
   'python'
   'util-linux'
@@ -39,7 +39,6 @@ optdepends=(
   'exfatprogs: for exFAT filesystem support'
   'f2fs-tools: for F2FS filesystem support'
   'gobject-introspection-runtime: for Python integration'
-  'libnvme: for NVME support'
   'lvm2: LVM plugin'
   'ndctl: NVDIMM plugin'
   'nilfs-tools: for nilfs filesystem support'
