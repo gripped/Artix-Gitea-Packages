@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=incidenceeditor
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='KDE PIM incidence editor'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(eventviews pimcommon)
 makedepends=(extra-cmake-modules qt5-tools doxygen)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f6ba29f4cddd2e536e0c00ecaba5752d452406c175f3bc08068e67fa70313bdc'
+sha256sums=('5ef8c77c67a66eb0766e9dd2e4dcb7a93d532a7082c7aa9dc8c2cae2601bbc89'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
