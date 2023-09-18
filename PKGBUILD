@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kontrast
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Tool to check contrast for colors that allows verifying that your colors are correctly accessible'
 arch=(x86_64)
@@ -12,7 +12,7 @@ depends=(kirigami2 ki18n kcoreaddons qt5-svg futuresql-qt5)
 makedepends=(extra-cmake-modules kdoctools qcoro-qt5)
 groups=(kde-applications kde-accessibility)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('aa4b3beac42660e94d4fe59da3f6f88d1b2fd585590246017b578cb1d0141705'
+sha256sums=('31d94facb068e48dc8c9361e3d011fbd04b7de7e40cd33136d5c3621c74d52ec'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -27,4 +27,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-
