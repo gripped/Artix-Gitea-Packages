@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-aiohttp-openmetrics
-  version: 0.0.10-2
+  version: 0.0.12-1
   arch:
     - any
   pkgname:
     - python-aiohttp-openmetrics
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.0.10-2
+    version: 0.0.12-1
     packages:
-      - python-aiohttp-openmetrics-0.0.10-2-any.pkg.tar.zst
+      - python-aiohttp-openmetrics-0.0.12-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
