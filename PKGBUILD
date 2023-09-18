@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux,org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux,org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=krfb
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Desktop Sharing'
 url='https://apps.kde.org/krfb/'
@@ -13,7 +13,7 @@ depends=(kdnssd kxmlgui kwallet libvncserver kwayland xdg-desktop-portal kpipewi
 makedepends=(extra-cmake-modules kdoctools plasma-wayland-protocols)
 groups=(kde-applications kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('c0440fe9109578767b1513f44e165601a64a660f7b546dbcff7477b07cf9b848'
+sha256sums=('601894ff73a4c7e16782ed5d55a0c40475afcd9dd32194ffe6046ce1a96c0ecd'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
