@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=itinerary
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Itinerary and boarding pass management application'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(kitinerary kio networkmanager-qt kosmindoormap khealthcertificate qt5-l
 makedepends=(extra-cmake-modules)
 groups=(kde-applications kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('c598f620f4a9fc2107664537cf86bc85c6ec564c40ce30ac4fce342f4eab0779'
+sha256sums=('cc3b1067b405f104ab3ea6d423cf6d9c6b48632a3d5f7a764c474e0be34bb7ba'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
