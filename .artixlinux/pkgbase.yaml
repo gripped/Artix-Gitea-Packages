@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libdeflate
-  version: 1.18-1
+  version: 1.19-1
   arch:
     - x86_64
   pkgname:
     - libdeflate
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.18-1
+    version: 1.19-1
     packages:
-      - libdeflate-1.18-1-x86_64.pkg.tar.zst
+      - libdeflate-1.19-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
