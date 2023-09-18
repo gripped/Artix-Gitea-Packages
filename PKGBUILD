@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kidentitymanagement
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='KDE PIM libraries'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(kpimtextedit)
 makedepends=(extra-cmake-modules doxygen qt5-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('26e22b9cc1a3c68e1b057dca885912debc9083dc629169451d47f128985d1682'
+sha256sums=('bcf4775fbc7a2b812c8ca19e1794e9a4e1ea07b3950ebd99a735c46154f1dc84'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
