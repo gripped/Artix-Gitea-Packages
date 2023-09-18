@@ -1,10 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kjumpingcube
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='A simple tactical game'
 url='https://apps.kde.org/kjumpingcube/'
@@ -14,7 +14,7 @@ groups=(kde-applications kde-games)
 depends=(libkdegames hicolor-icon-theme)
 makedepends=(extra-cmake-modules kdoctools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('29a196d0d92ba618e2574e7590c1d4f38a1f5ca60a61ea00608ea45807cf3f3f'
+sha256sums=('cc1074faf0e30f3776940cb665a9c7a6145b47104487408ba551da61f96c6f5d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
