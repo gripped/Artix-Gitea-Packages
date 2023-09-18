@@ -1,10 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Travis Willard <travisw@wmpub.ca>
 # Contributor: Georg Grabler <ggrabler@gmail.com>
 
 pkgname=ktorrent
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='A powerful BitTorrent client for KDE'
 arch=(x86_64)
@@ -16,7 +16,7 @@ optdepends=('plasma-workspace: shutdown plugin' 'kdnssd: zeroconf plugin' 'tagli
             'syndication: syndication plugin' 'kplotting: statistics plugin')
 groups=(kde-applications kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('190858bd7a3c562a0404e756654b7b947b4541b685f17729bd61ce9423351711'
+sha256sums=('e16214736b82781fb55396f0384e5e7e4362c470ac31a709944d29da968c54c4'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
