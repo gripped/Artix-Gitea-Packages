@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdevelop-php
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='PHP language and documentation plugin for KDevelop'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(kdevelop)
 makedepends=(extra-cmake-modules kdoctools kdevelop-pg-qt)
 groups=(kde-applications kdevelop)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/kdev-php-$pkgver.tar.xz{,.sig})
-sha256sums=('6f7a737c6feabed8970375cd9264c503c17ee648c3f9ca10b071d8beee679d37'
+sha256sums=('0ef93f01591317d37de1ff9e6e4ae800975b4840bbfe56bd7f0630612eb432a7'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
