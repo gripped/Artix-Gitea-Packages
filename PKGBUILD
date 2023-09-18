@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=telly-skout
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Convergent TV guide based on Kirigami'
 url='https://apps.kde.org/telly-skout/'
@@ -12,7 +12,7 @@ groups=(kde-applications kde-utilities)
 depends=(kirigami2 kcoreaddons kconfig ki18n kcrash)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f5ab3335883fd27745af4d3f96e24a5f115e06726747d1c5cf97f9b41a1520b4'
+sha256sums=('fe24d3098bf92be4836c13fef5978e7a321dc0ab4d8767bdbf36a0be354837fa'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
