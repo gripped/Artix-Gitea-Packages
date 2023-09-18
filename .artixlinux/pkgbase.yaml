@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-uvloop
-  version: 0.17.0-2
+  version: 0.17.0-3
   arch:
     - x86_64
   pkgname:
     - python-uvloop
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.17.0-2
+    version: 0.17.0-3
     packages:
-      - python-uvloop-0.17.0-2-x86_64.pkg.tar.zst
+      - python-uvloop-0.17.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
