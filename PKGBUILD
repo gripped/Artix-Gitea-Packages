@@ -1,14 +1,14 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
 # Contributor: Balló György <ballogyor+arch at gmail dot com>
 
 pkgbase=marble
 pkgname=(marble-common marble-qt marble-maps marble)
-pkgver=23.08.0
-pkgrel=2.1
+pkgver=23.08.1
+pkgrel=1
 pkgdesc='Desktop Globe'
 arch=(x86_64)
 url='https://apps.kde.org/marble/'
@@ -16,7 +16,7 @@ license=(GPL)
 makedepends=(extra-cmake-modules gpsd kdoctools kparts krunner libwlocate phonon-qt5
              plasma-workspace qt5-serialport qt5-tools qt5-webengine shapelib protobuf)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgbase-$pkgver.tar.xz{,.sig})
-sha256sums=('a11bf99d09ce87acf3f7c997df5e77a5125582f009cf034df6785fd81af55bb6'
+sha256sums=('84354049f71a5c532495321772d28190b91c083e814415e7aed7ed1c7f417195'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
