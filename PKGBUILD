@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kmbox
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Library for accessing mail storages in MBox format'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(kmime)
 makedepends=(extra-cmake-modules doxygen qt5-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('441bbb3c13cb535a216feb411ffe5925f4ca668a679c3cc1c4260c2bf406baec'
+sha256sums=('652eb21a9cc5f4de381bc3034a4d1fd244788e11ec6c0558a60c6ec0f1647cc3'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
