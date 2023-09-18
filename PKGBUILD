@@ -5,7 +5,7 @@
 pkgname=ispc
 _commit=f925f2563441a36eff1cb7a617934253dc9c100c  # refs/tags/v1.21.0
 pkgver=1.21.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Compiler for high-performance SIMD programming on the CPU"
 arch=(x86_64)
 url="https://ispc.github.io/"
