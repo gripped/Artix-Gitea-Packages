@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-authheaders
-  version: 0.15.2-3
+  version: 0.15.3-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.15.2-3
+    version: 0.15.3-2
     packages:
-      - python-authheaders-0.15.2-3-any.pkg.tar.zst
+      - python-authheaders-0.15.3-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
