@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=pimcommon
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Common libraries for KDE PIM'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(libkdepim kimap kldap akonadi-contacts akonadi-search purpose kpimtextedit ktextaddons)
 makedepends=(extra-cmake-modules qt5-tools doxygen)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('bb81856d1bc1bb3e2fd00198f2429e6d0ace04b294b1167a61b386a294f424e0'
+sha256sums=('67993cf689bd477a9887e09b4bd8dc7742f5156695c20ff59e1835aa01a059dc'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
