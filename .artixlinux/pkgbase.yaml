@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-fields
-  version: 5.0.0-15
+  version: 5.0.0-16
   arch:
     - any
   pkgname:
     - python-fields
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.0-15
+    version: 5.0.0-16
     packages:
-      - python-fields-5.0.0-15-any.pkg.tar.zst
+      - python-fields-5.0.0-16-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
