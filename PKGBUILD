@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kmime
-pkgver=23.08.0
+pkgver=23.08.1
 pkgrel=1
 pkgdesc='Library for handling mail messages and newsgroup articles'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(LGPL)
 depends=(ki18n kcodecs)
 makedepends=(extra-cmake-modules doxygen qt5-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('e472d4e0eb4d2fd43cad17265a38ee9cdb2dd0450b3f6a596b240209709aff7c'
+sha256sums=('a6dca327e3bd0fd6c86ccbe688cc46fcab2220bc80fcbaee995d14d2e6dcbb7f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
