@@ -45,7 +45,7 @@ prepare() {
 }
 
 build() {
-  artix-meson $pkgname build
+  artix-meson $pkgname build -Dsystemd=disabled
   meson compile -C build
 }
 
