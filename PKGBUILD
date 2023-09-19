@@ -2,7 +2,7 @@
 
 pkgname=gnome-session
 pkgver=44.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The GNOME Session Handler"
 url="https://gitlab.gnome.org/GNOME/gnome-session"
 arch=(x86_64)
@@ -45,6 +45,9 @@ prepare() {
 
   # enable buidling with elogind
   git apply -3 ../0001-meson-add-elogind-support.patch
+
+  # Unbreak portals with xdg-desktop-portal 1.18.0
+  git cherry-pick -n 353a43f81877d23b347c04c30e7ebc861f39c468
 }
  
 build() {
