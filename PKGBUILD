@@ -2,7 +2,7 @@
 pkgname=timew
 pkgver=1.6.0
 _libshared_c="d61b41fcaf6fcafc0f843f8b6923edf96642f827"
-pkgrel=1
+pkgrel=2
 pkgdesc="Commandline Time Tracking and Reporting"
 arch=("x86_64")
 url="https://timewarrior.net"
