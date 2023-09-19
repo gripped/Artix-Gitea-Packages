@@ -3,13 +3,38 @@
 
 pkgname=strawberry
 pkgver=1.0.18
-pkgrel=3
+pkgrel=4
 pkgdesc='A music player aimed at audio enthusiasts and music collectors'
 arch=(x86_64)
 url='https://www.strawbs.org/'
 license=(GPL3)
-depends=(qt6-base chromaprint protobuf gst-plugins-base gst-plugins-good udisks2 libcdio libgpod libmtp fftw)
-makedepends=(cmake boost qt6-tools)
+depends=(abseil-cpp
+         alsa-lib
+         chromaprint
+         fftw
+         gcc-libs
+         gdk-pixbuf2
+         glib2
+         glibc
+         gnutls
+         gst-plugins-base
+         gst-plugins-base-libs
+         gst-plugins-good 
+         gstreamer
+         icu
+         libcdio
+         libgpod
+         libmtp
+         libpulse
+         libx11
+         protobuf
+         qt6-base
+         sqlite
+         taglib
+         udisks2)
+makedepends=(boost
+             cmake
+             qt6-tools)
 optdepends=('gst-libav: additional codecs'
             'gst-plugins-bad: additional codecs'
             'gst-plugins-ugly: additional codecs')
