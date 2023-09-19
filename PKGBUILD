@@ -1,12 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 # Contributor: Kovivchak Evgen <oneonfire@gmail.com>
 
 pkgname=jemalloc
 epoch=1
 pkgver=5.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='General-purpose scalable concurrent malloc implementation'
 arch=('x86_64')
 license=('BSD')
@@ -27,6 +26,7 @@ build() {
   export CXX=clang++
 
   ./configure \
+    --enable-prof \
     --enable-autogen \
     --prefix=/usr
   make
