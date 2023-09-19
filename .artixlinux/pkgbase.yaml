@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: percona-server
-  version: 8.0.33_25-4
+  version: 8.0.33_25-5
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - percona-server-clients
     - percona-server
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 8.0.33_25-5
+    packages:
+      - libperconaserverclient-8.0.33_25-5-x86_64.pkg.tar.zst
+      - percona-server-clients-8.0.33_25-5-x86_64.pkg.tar.zst
+      - percona-server-8.0.33_25-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
