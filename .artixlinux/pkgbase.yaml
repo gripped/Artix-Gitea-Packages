@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: tree-sitter
-  version: 0.20.10-1
+  version: 0.20.10-2
   arch:
     - x86_64
   pkgname:
     - tree-sitter
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20.10-1
+    version: 0.20.10-2
     packages:
-      - tree-sitter-0.20.10-1-x86_64.pkg.tar.zst
+      - tree-sitter-0.20.10-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
