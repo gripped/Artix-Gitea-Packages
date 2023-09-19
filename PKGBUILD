@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan Jezek <honzin.jezek@gmail.com>
 
 pkgname=tumbler
 pkgver=4.18.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Thumbnail service implementing the thumbnail management D-Bus specification"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/tumbler/start"
@@ -37,6 +38,8 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
+
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
