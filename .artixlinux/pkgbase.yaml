@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: freetds
-  version: 1.3.20-1
+  version: 1.3.20-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.20-1
+    version: 1.3.20-2
     packages:
-      - freetds-1.3.20-1-x86_64.pkg.tar.zst
+      - freetds-1.3.20-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
