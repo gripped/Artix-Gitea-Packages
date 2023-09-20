@@ -21,7 +21,7 @@ depends=(
   'mdadm'
   'nss'
   'parted'
-  'systemd-libs'
+  'libudev'
   'util-linux-libs'
   'volume_key'
 )
