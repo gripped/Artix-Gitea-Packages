@@ -1,11 +1,11 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
-# Contributor: Sébastien Luttringer <seblu@aur.archlinux.org>
+# Contributor: Sébastien Luttringer <seblu@archlinux.org>
 # Contributor: Juergen Hoetzel <juergen@archlinux.org>
 # Contributor: Damir Perisa <damir.perisa@bluewin.ch>
 
 pkgname=lua51
 pkgver=5.1.5
-pkgrel=10
+pkgrel=11
 pkgdesc='Powerful lightweight programming language designed for extending applications'
 arch=(x86_64)
 url='https://www.lua.org/'
@@ -43,7 +43,7 @@ package() {
 
   make \
     TO_BIN='lua5.1 luac5.1' \
-    TO_LIB="liblua5.1.a liblua5.1.so liblua5.1.so.5.1 liblua5.1.so.$pkgver" \
+    TO_LIB="liblua5.1.so liblua5.1.so.5.1 liblua5.1.so.$pkgver" \
     INSTALL_DATA='cp -d' \
     INSTALL_TOP="$pkgdir"/usr \
     INSTALL_INC="$pkgdir"/usr/include/lua5.1 \
