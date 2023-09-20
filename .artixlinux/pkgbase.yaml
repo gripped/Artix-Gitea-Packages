@@ -12,12 +12,12 @@ pkgbase:
     - php-legacy-grpc
     - grpc-cli
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,6 +30,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1.58.1-1
     packages:
       - grpc-1.58.1-1-x86_64.pkg.tar.zst
@@ -38,18 +44,6 @@ repos:
       - php-grpc-1.58.1-1-x86_64.pkg.tar.zst
       - php-legacy-grpc-1.58.1-1-x86_64.pkg.tar.zst
       - grpc-cli-1.58.1-1-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
-  world:
-    version: 1.58.0-1
-    packages:
-      - grpc-1.58.0-1-x86_64.pkg.tar.zst
-      - python-grpcio-1.58.0-1-x86_64.pkg.tar.zst
-      - python-grpcio-tools-1.58.0-1-x86_64.pkg.tar.zst
-      - php-grpc-1.58.0-1-x86_64.pkg.tar.zst
-      - php-legacy-grpc-1.58.0-1-x86_64.pkg.tar.zst
-      - grpc-cli-1.58.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
