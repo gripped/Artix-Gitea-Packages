@@ -1,46 +1,36 @@
-# Maintainer: Torr <torr@artixlinux.org>
-pkgname=jp2a
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+
+pkgname='jp2a'
 pkgver=1.1.1
-pkgrel=1
-pkgdesc="Simple JPEG/PNG to ASCII converter"
-arch=("x86_64")
-url="https://github.com/Talinx/jp2a"
-license=("GPL2")
-## File: https://github.com/Talinx/jp2a/blob/master/ChangeLog
-changelog=Changelog.txt
-depends=(
-	"curl"
-	"libjpeg-turbo"
-	"libpng"
-	"ncurses"
-)
-makedepends=(
-	"make"
-	"autoconf-archive"
-	"automake"
-	"gcc"
-)
-source=(
-	"https://github.com/Talinx/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
-)
-sha256sums=(
-	"332521cd4675b4a03c7080a600ccbd848eb29aebf17fce767f163d8dac141555"
-)
+pkgrel=2
+pkgdesc='A small utility for converting JPG images to ASCII'
+arch=('x86_64')
+url='https://github.com/Talinx/jp2a/'
+license=('GPL2')
+depends=('curl' 'libjpeg' 'libpng')
+makedepends=('doxygen' 'autoconf-archive' 'git')
+_commit=936795385c190202e0cac442b593f92abf2ae9dc	#refs/tags/v1.1.1
+source=("git+https://github.com/Talinx/jp2a.git#commit=${_commit}?signed")
+validpgpkeys=("5FCAE86E581E73AD91CB3235E7DBBCF6B02920CC") # Christoph Raitzig
+sha256sums=('SKIP')
 
 prepare(){
-	cd $pkgname-$pkgver
-	sed -i '/^#.*bash-completion/{N;N;N;d}' configure.ac 
+  cd "${pkgname}"
+  autoreconf -vi
 }
 
-build() {
-	cd "$pkgname-$pkgver"
-	autoreconf -vi
-	./configure --prefix=/usr
-	make
+build(){
+  cd "${pkgname}"
+  bashcompdir=/usr/share/bash-completion/completions ./configure --prefix='/usr'
+  make
 }
 
-package() {
-	cd "$pkgname-$pkgver"
-	make install DESTDIR=$pkgdir
-	install -Dm 644 completion/bash/jp2a -t "$pkgdir/usr/share/bash-completion/completions"
+check() {
+  cd "${pkgname}"
+  make check
+}
+
+package(){
+  cd "${pkgname}"
+  make DESTDIR="${pkgdir}" install
 }
