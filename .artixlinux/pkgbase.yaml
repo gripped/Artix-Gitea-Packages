@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - libblockdev
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.0.3-4.1
     packages:
       - libblockdev-3.0.3-4.1-x86_64.pkg.tar.zst
-  world:
-    version: 3.0.3-4
-    packages:
-      - libblockdev-3.0.3-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
