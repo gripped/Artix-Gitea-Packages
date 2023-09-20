@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mupdf
-  version: 1.23.3-1
+  version: 1.23.3-3
   arch:
     - x86_64
   pkgname:
@@ -10,12 +10,12 @@ pkgbase:
     - mupdf-gl
     - mupdf-tools
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.23.3-3
+    packages:
+      - libmupdf-1.23.3-3-x86_64.pkg.tar.zst
+      - mupdf-1.23.3-3-x86_64.pkg.tar.zst
+      - mupdf-gl-1.23.3-3-x86_64.pkg.tar.zst
+      - mupdf-tools-1.23.3-3-x86_64.pkg.tar.zst
   world:
     version: 1.23.3-1
     packages:
