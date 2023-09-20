@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 
 pkgname=libpano13
 pkgver=2.9.21
-pkgrel=3
+pkgrel=4
 pkgdesc="Basic library to calculate panoramical pictures - core functions of the panotools"
 arch=(x86_64)
 url="http://panotools.sourceforge.net/"
