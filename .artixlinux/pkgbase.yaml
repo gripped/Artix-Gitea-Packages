@@ -9,12 +9,12 @@ pkgbase:
     - lib32-harfbuzz-cairo
     - lib32-harfbuzz-icu
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: lib32
+  removeRepo: lib32-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -39,17 +39,14 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
     version: 8.2.1-1
     packages:
       - lib32-harfbuzz-8.2.1-1-x86_64.pkg.tar.zst
       - lib32-harfbuzz-cairo-8.2.1-1-x86_64.pkg.tar.zst
       - lib32-harfbuzz-icu-8.2.1-1-x86_64.pkg.tar.zst
-  lib32:
-    version: 8.2.0-1
-    packages:
-      - lib32-harfbuzz-8.2.0-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-cairo-8.2.0-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-icu-8.2.0-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
