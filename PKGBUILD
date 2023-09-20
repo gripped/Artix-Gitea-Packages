@@ -2,7 +2,7 @@
 
 pkgname=libblockdev
 pkgver=3.0.3
-pkgrel=3
+pkgrel=4
 pkgdesc="A library for manipulating block devices"
 arch=('x86_64')
 url="https://github.com/storaged-project/libblockdev"
@@ -21,7 +21,7 @@ depends=(
   'mdadm'
   'nss'
   'parted'
-  'libudev'
+  'systemd-libs'
   'util-linux-libs'
   'volume_key'
 )
@@ -41,7 +41,7 @@ optdepends=(
   'gobject-introspection-runtime: for Python integration'
   'lvm2: LVM plugin'
   'ndctl: NVDIMM plugin'
-  'nilfs-tools: for nilfs filesystem support'
+  'nilfs-utils: for nilfs filesystem support'
   'ntfs-3g: NTFS filesystem support'
   'python: for Python integration'
   'udftools: for UDF filesystem support'
