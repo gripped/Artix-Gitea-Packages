@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libtg_owt
-  version: 0.git23.a45d8b8-1
+  version: 0.git23.a45d8b8-2
   arch:
     - x86_64
   pkgname:
     - libtg_owt
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.git23.a45d8b8-2
+    packages:
+      - libtg_owt-0.git23.a45d8b8-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
