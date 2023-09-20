@@ -8,12 +8,12 @@ pkgbase:
     - webkit2gtk-4.1
     - webkit2gtk-4.1-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 2.42.0-1
     packages:
       - webkit2gtk-4.1-2.42.0-1-x86_64.pkg.tar.zst
       - webkit2gtk-4.1-docs-2.42.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 2.40.5-2
-    packages:
-      - webkit2gtk-4.1-2.40.5-2-x86_64.pkg.tar.zst
-      - webkit2gtk-4.1-docs-2.40.5-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
