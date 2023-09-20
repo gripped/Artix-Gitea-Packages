@@ -1,12 +1,12 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Sébastien Luttringer <seblu@archlinux.org>
+# Maintainer: Sébastien Luttringer <seblu@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Juergen Hoetzel <juergen@archlinux.org>
 # Contributor: Damir Perisa <damir.perisa@bluewin.ch>
 
 pkgname=lua
 pkgver=5.4.6
 _majorver=${pkgver%.*}
-pkgrel=1
+pkgrel=2
 pkgdesc='Powerful lightweight programming language designed for extending applications'
 arch=('x86_64')
 url='https://www.lua.org/'
@@ -44,7 +44,7 @@ package() {
   cd lua-$pkgver
 
   make \
-    TO_LIB="liblua.a liblua.so liblua.so.$_majorver liblua.so.$pkgver" \
+    TO_LIB="liblua.so liblua.so.$_majorver liblua.so.$pkgver" \
     INSTALL_DATA='cp -d' \
     INSTALL_TOP="$pkgdir"/usr \
     INSTALL_MAN="$pkgdir"/usr/share/man/man1 \
@@ -64,7 +64,7 @@ package() {
 
   cd ../lua++-$pkgver
   make \
-    TO_LIB="liblua++.a liblua++.so liblua++.so.$_majorver liblua++.so.$pkgver" \
+    TO_LIB="liblua++.so liblua++.so.$_majorver liblua++.so.$pkgver" \
     INSTALL_BIN=null INSTALL_INC=null INSTALL_MAN=../null \
     INSTALL_DATA='cp -d' \
     INSTALL_TOP="$pkgdir"/usr \
