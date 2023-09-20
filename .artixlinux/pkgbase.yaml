@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: libcups
-  version: 1:2.4.6-1
+  name: cups
+  version: 1:2.4.7-1
   arch:
     - x86_64
   pkgname:
     - libcups
     - cups
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.4.6-1
+    version: 1:2.4.7-1
     packages:
-      - libcups-1:2.4.6-1-x86_64.pkg.tar.zst
-      - cups-1:2.4.6-1-x86_64.pkg.tar.zst
+      - libcups-1:2.4.7-1-x86_64.pkg.tar.zst
+      - cups-1:2.4.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
