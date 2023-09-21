@@ -2,7 +2,7 @@
 # Contributor: Bug <bug2000@gmail.com>
 
 pkgname=xpra
-pkgver=4.4.5
+pkgver=5.0.2
 pkgrel=1
 pkgdesc="multi-platform screen and application forwarding system screen for X11"
 arch=('x86_64')
@@ -35,15 +35,11 @@ backup=('etc/xpra/xpra.conf' 'etc/xpra/xorg.conf'
         'etc/xpra/conf.d/60_server.conf'
         'etc/xpra/conf.d/65_proxy.conf'
         'etc/pam.d/xpra')
-source=($pkgname-$pkgver.tar.xz::$url/src/$pkgname-$pkgver.tar.xz
-        $pkgname-$pkgver.tar.xz.asc::$url/src/$pkgname-$pkgver.tar.xz.gpg)
+source=($pkgname-$pkgver.tar.gz::https://github.com/Xpra-org/xpra/archive/refs/tags/v$pkgver.tar.gz)
 
-md5sums=('4a52cf55611a7ca3354b0c6def020095'
-         'SKIP')
-sha1sums=('65ef63d10fd14377a3a8daa659a3fdff62176923'
-          'SKIP')
-sha256sums=('a36bc33f36568291057b4cb3363c2db8b3c73b419f59b4ac70a8ef21f4e2e91a'
-            'SKIP')
+md5sums=('7f4c28c7b371d40fd23e8a78cf0183e6')
+sha1sums=('f6175c75d91633c6029278324531f84bafae2540')
+sha256sums=('99b52399ab01ca75d8634a38ab32259986d2723461bcab1e1cb19877efbe8449')
 validpgpkeys=('C11C0A4DF702EDF6C04F458C18ADB31CF18AD6BB') # Antoine Martin <antoine@nagafix.co.uk>
 
 build() {
@@ -55,8 +51,6 @@ package() {
   cd "${srcdir}/$pkgname-$pkgver"
   python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
   sed -i 's|/build/xpra/pkg/xpra/etc/xpra/xorg.conf|/etc/xpra/xorg.conf|' "${pkgdir}"/etc/xpra/conf.d/55_server_x11.conf
-  mv "${pkgdir}"/lib/* "${pkgdir}"/usr/lib/
-  rmdir "${pkgdir}/lib"
   mkdir -p "${pkgdir}"/usr/share/dbus-1
   #Move D-BUS Policy
   mv "${pkgdir}"/{etc,usr/share}/dbus-1/system.d
