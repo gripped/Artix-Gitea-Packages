@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: yad
-  version: 13.0-1
+  version: 13.0-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 13.0-1
+    version: 13.0-2
     packages:
-      - yad-13.0-1-x86_64.pkg.tar.zst
+      - yad-13.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
