@@ -1,38 +1,32 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-semver
-pkgver=2.13.0
-pkgrel=6
+pkgver=3.0.1
+_commit=c2680608bc9b080a1f34161a36971e8331a19056
+pkgrel=1
 pkgdesc="Python helper for Semantic Versioning"
-url="https://github.com/k-bx/python-semver"
+url="https://github.com/python-semver/python-semver"
 license=('BSD')
 arch=('any')
 depends=('python')
-makedepends=('python-setuptools')
-checkdepends=('python-pytest-runner' 'python-pytest-cov')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/k-bx/python-semver/archive/$pkgver.tar.gz"
-        fix-tests-for-python-3-10.patch::https://github.com/python-semver/python-semver/commit/8d72677cf964365c8db033fbd436ff5dd342fb1b.patch)
-sha512sums=('ca0d408d8bb7305e90802ea04d935cd7b76b8f166a9ec97ed3427dbc2cf60eeca0b2d27ad0cb2f15f32f5b2589d6717a63717c463183374c5335bf79e1eec222'
-            'f603b21f848e2271dfb3d368126cf24dac31d4489e5f846884e0e56290ea310602b477eef1d72b78341de7c3c7a34023cc686bfb6bae78124e839ed83a2836bf')
-
-prepare() {
-  cd "$srcdir"/python-semver-$pkgver
-  sed -i '/tests_require/d' setup.py
-  patch -p1 <"$srcdir"/fix-tests-for-python-3-10.patch
-}
+makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-setuptools-scm'
+             'python-wheel')
+checkdepends=('python-pytest' 'python-pytest-cov')
+source=("git+https://github.com/python-semver/python-semver.git#commit=$_commit")
+sha512sums=('SKIP')
 
 build() {
-  cd "$srcdir"/python-semver-$pkgver
-  python setup.py build
+  cd python-semver
+  python -m build -nw
 }
 
 check() {
-  cd "$srcdir"/python-semver-$pkgver
-  python setup.py pytest
+  cd python-semver
+  pytest
 }
 
 package() {
-  cd python-semver-$pkgver
-  python setup.py install --root="$pkgdir" --optimize=1
-  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+  cd python-semver
+  python -m installer -d "$pkgdir" dist/*.whl
+  install -Dm644 LICENSE.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
