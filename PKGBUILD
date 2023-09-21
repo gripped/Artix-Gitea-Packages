@@ -24,9 +24,9 @@ depends=(
   'util-linux-libs'
 )
 makedepends=(
+  'elogind'
   'gobject-introspection'
   'gtk-doc'
-  'elogind'
 )
 backup=('etc/udisks2/udisks2.conf')
 source=("https://github.com/storaged-project/udisks/releases/download/udisks-$pkgver/udisks-$pkgver.tar.bz2")
@@ -42,7 +42,6 @@ build() {
     --prefix=/usr
     --sbindir=/usr/bin
     --sysconfdir=/etc
-    --with-tmpfilesdir=/usr/lib/tmpfiles.d
   )
 
   cd udisks-$pkgver
