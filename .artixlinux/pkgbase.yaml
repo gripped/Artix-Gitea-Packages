@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-oslo-concurrency
-  version: 5.0.0-2
+  version: 5.0.1-1
   arch:
     - any
   pkgname:
     - python-oslo-concurrency
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.0-2
+    version: 5.0.1-1
     packages:
-      - python-oslo-concurrency-5.0.0-2-any.pkg.tar.zst
+      - python-oslo-concurrency-5.0.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
