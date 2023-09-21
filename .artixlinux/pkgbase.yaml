@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-hypothesis
-  version: 6.86.1-1
+  version: 6.86.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.86.1-1
+    version: 6.86.2-1
     packages:
-      - python-hypothesis-6.86.1-1-any.pkg.tar.zst
+      - python-hypothesis-6.86.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
