@@ -8,7 +8,7 @@
 pkgbase=mupdf
 pkgname=(libmupdf mupdf mupdf-gl mupdf-tools)
 pkgver=1.23.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Lightweight PDF and XPS viewer'
 arch=('x86_64')
 url='https://mupdf.com/'
