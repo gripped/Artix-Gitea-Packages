@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: lua-sec
-  version: 2:1.3.1-1
+  name: luasec
+  version: 2:1.3.2-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - lua52-sec
     - lua53-sec
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 2:1.3.1-1
+    version: 2:1.3.2-1
     packages:
-      - lua-sec-2:1.3.1-1-x86_64.pkg.tar.zst
-      - lua51-sec-2:1.3.1-1-x86_64.pkg.tar.zst
-      - lua52-sec-2:1.3.1-1-x86_64.pkg.tar.zst
-      - lua53-sec-2:1.3.1-1-x86_64.pkg.tar.zst
+      - lua-sec-2:1.3.2-1-x86_64.pkg.tar.zst
+      - lua51-sec-2:1.3.2-1-x86_64.pkg.tar.zst
+      - lua52-sec-2:1.3.2-1-x86_64.pkg.tar.zst
+      - lua53-sec-2:1.3.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
