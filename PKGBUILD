@@ -1,16 +1,17 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.5.2
-_rel=1
-_tag=arch${_rel}
+_rel=2
+_ver=6.5.4
+_arch=arch${_rel}
 _artix=artix${_rel}
+_srcname=linux-${_ver}
+_srctag=v${_ver}-${_arch}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
 pkgrel=1
 pkgdesc='Linux'
-_srctag=v${pkgver%.*}-${_tag}
-url="https://github.com/archlinux/linux/commits/$_srctag"
+url='https://github.com/archlinux/linux'
 arch=(x86_64)
 license=(GPL2)
 makedepends=(
@@ -32,28 +33,25 @@ makedepends=(
   texlive-latexextra
 )
 options=('!strip')
-_srcname=archlinux-linux
 source=(
-  "$_srcname::git+https://github.com/archlinux/linux?signed#tag=$_srctag"
+  https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/$_srcname.tar.{xz,sign}
+  $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
-  C7E7849466FE2358343588377258734B41C31549  # David Runge <dvzrv@archlinux.org>
 )
-b2sums=('SKIP'
-        '9faca9e5a564fcf9d7446b01b87319c0a1e1739fceef8452e27247d5f8b8d4844e60b22d37704bd203a5a9f43fafb3e2efc6923e938672dd01450805b37bab28')
+b2sums=('99df210ee8f244de9059c9699648f7aad8e520030ce14e61971ba95365635e698e7c66074aa3f5c57bd75f1058e1c1dbaecea66d0b381202f239b3a04a396371'
+        'SKIP'
+        '7c5fd8d2160d4b94f014ea55ae8cad24c93a6360ea093186b304bf94c2f982428789d27b4924025a103af58d60ae0f087ebd57f2c81d8426442380ed9cc92f48'
+        'SKIP'
+        '66e6dc51ffe913aaf88336a1c61da4939135945e298d14fbb1ee711cf8665907c7c5dc675061b3a5ed3f2f217637bc8badc948e95eb55cb3b702e02e0657cc0f')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
-
-_make() {
-  test -s version
-  make KERNELRELEASE="$(<version)" "$@"
-}
 
 prepare() {
   cd $_srcname
@@ -61,34 +59,32 @@ prepare() {
   echo "Setting version..."
   echo "-$pkgrel" > localversion.10-pkgrel
   echo "${pkgbase#linux}" > localversion.20-pkgname
-  make defconfig
-  make -s kernelrelease > version
-  make mrproper
 
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
     src="${src##*/}"
+    src="${src%.zst}"
     [[ $src = *.patch ]] || continue
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
   done
 
-  sed -i -r "s|arch|artix|" "version"
-  sed -i -r "s|EXTRAVERSION = -${_tag}|EXTRAVERSION = -${_artix}|" "Makefile"
+  sed -i -r "s|EXTRAVERSION = -${_arch}|EXTRAVERSION = -${_artix}|" "Makefile"
 
   echo "Setting config..."
   cp ../config .config
-  _make olddefconfig
+  make olddefconfig
   diff -u ../config .config || :
 
+  make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
 }
 
 build() {
   cd $_srcname
-  _make all
-  _make htmldocs
+  make all
+  make htmldocs
 }
 
 _package() {
@@ -109,7 +105,7 @@ _package() {
   )
   replaces=(
     virtualbox-guest-modules-artix
-    wireguard-arch
+    wireguard-artix
   )
 
   cd $_srcname
@@ -118,13 +114,13 @@ _package() {
   echo "Installing boot image..."
   # systemd expects to find the kernel here to allow hibernation
   # https://github.com/systemd/systemd/commit/edda44605f06a41fb86b7ab8128dcf99161d2344
-  install -Dm644 "$(_make -s image_name)" "$modulesdir/vmlinuz"
+  install -Dm644 "$(make -s image_name)" "$modulesdir/vmlinuz"
 
   # Used by mkinitcpio to name the kernel
   echo "$pkgbase" | install -Dm644 /dev/stdin "$modulesdir/pkgbase"
 
   echo "Installing modules..."
-  ZSTD_CLEVEL=19 _make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
+  ZSTD_CLEVEL=19 make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
   # remove build and source links
@@ -232,7 +228,7 @@ _package-docs() {
   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
 }
 
-pkgname=(
+ pkgname=(
   "$pkgbase"
   "$pkgbase-headers"
   "$pkgbase-docs"
