@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: steam
-  version: 1.0.0.78-1
+  version: 1.0.0.78-2
   arch:
     - x86_64
   pkgname:
     - steam
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.0.0.78-1
+    version: 1.0.0.78-2
     packages:
-      - steam-1.0.0.78-1-x86_64.pkg.tar.zst
+      - steam-1.0.0.78-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
