@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt
-  version: 6.3.3.15.realtime2-4
+  version: 6.5.2.8.realtime1-1
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - linux-rt-headers
     - linux-rt-docs
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,5 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 6.5.2.8.realtime1-1
+    packages:
+      - linux-rt-6.5.2.8.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-headers-6.5.2.8.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-docs-6.5.2.8.realtime1-1-x86_64.pkg.tar.zst
