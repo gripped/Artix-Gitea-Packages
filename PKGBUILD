@@ -2,12 +2,11 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt-lts
-pkgver=6.1.38.12.realtime1
-pkgrel=4
+pkgver=6.1.46.13.realtime1
+pkgrel=1
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/commits/v$pkgver"
-license=(GPL2)
 makedepends=(
   bc
   git
@@ -26,9 +25,9 @@ source=(
   config
 )
 sha512sums=('SKIP'
-            '2d509753b9313af638d43b9d0d3ecd04a9f2ca94d05d8787d497cff4b55afc8ae78254107db1947c00e78868a2efdb5fd8240fed53e44cdc097fd61854315258')
+            '7cc79bf4890c14553b85919b3f44593cb486eee2b7b034c14f4f3d142d16eb6058fed3d3509c785052e12e97d40611ed8626c99189fef3642e5dd225e99db2a5')
 b2sums=('SKIP'
-        '63b6f1a8e4724cc50c22b1523bf4845b89b094499523d1cf26159f9124a6ef4a56dd099307925f19b2add663edc0570d9a2910c913eec1fc08ceb2d9c9b7fcaa')
+        'c87dc91601449b7bbbbbffaa7319fe748152e11c2b22a88c8750711ee88696212c2017e190dc3490fc49784fa6722b4a11778a13873b3d905b1b7ae0354ee292')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
   '5ED9A48FC54C0A22D1D0804CEBC26CDB5A56DE73'  # Steven Rostedt (Der Hacker) <rostedt@goodmis.org>
@@ -75,10 +74,64 @@ build() {
 
 _package() {
   pkgdesc="The $pkgdesc kernel and modules"
-  depends=(coreutils initramfs kmod)
-  optdepends=('wireless-regdb: to set the correct wireless channels of your country'
-              'linux-firmware: firmware images needed for some devices')
-  provides=(VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE KSMBD-MODULE)
+  license=(
+    'Apache-2.0 OR MIT'
+
+    'BSD-2-Clause OR GPL-2.0-or-later'
+
+    BSD-3-Clause
+    'BSD-3-Clause OR GPL-2.0-only'
+    'BSD-3-Clause OR GPL-2.0-or-later'
+    BSD-3-Clause-Clear
+
+    GPL-1.0-or-later
+    'GPL-1.0-or-later OR BSD-3-Clause'
+
+    GPL-2.0-only
+    'GPL-2.0-only OR Apache-2.0'
+    'GPL-2.0-only OR BSD-2-Clause'
+    'GPL-2.0-only OR BSD-3-Clause'
+    'GPL-2.0-only OR CDDL-1.0'
+    'GPL-2.0-only OR Linux-OpenIB'
+    'GPL-2.0-only OR MIT'
+    'GPL-2.0-only OR MPL-1.1'
+    'GPL-2.0-only OR X11'
+    'GPL-2.0-only WITH Linux-syscall-note'
+
+    GPL-2.0-or-later
+    'GPL-2.0-or-later OR BSD-2-Clause'
+    'GPL-2.0-or-later OR BSD-3-Clause'
+    'GPL-2.0-or-later OR MIT'
+    'GPL-2.0-or-later OR X11'
+    'GPL-2.0-or-later WITH GCC-exception-2.0'
+
+    ISC
+
+    LGPL-2.0-or-later
+    'LGPL-2.1-only'
+    'LGPL-2.1-only OR BSD-2-Clause'
+
+    LGPL-2.1-or-later
+
+    MIT
+    MPL-1.1
+    X11
+    Zlib
+  )
+  depends=(
+    coreutils
+    initramfs
+    kmod
+  )
+  optdepends=(
+    'wireless-regdb: to set the correct wireless channels of your country'
+    'linux-firmware: firmware images needed for some devices'
+  )
+  provides=(
+    KSMBD-MODULE
+    VIRTUALBOX-GUEST-MODULES
+    WIREGUARD-MODULE
+  )
 
   cd $pkgbase
   local kernver="$(<version)"
@@ -98,9 +151,66 @@ _package() {
 
   # remove build and source links
   rm "$modulesdir"/{source,build}
+
+  # licenses
+  install -vDm 644 LICENSES/deprecated/{GPL-1.0,ISC,Linux-OpenIB,X11,Zlib} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/preferred/{BSD,MIT}* -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/exceptions/* -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 _package-headers() {
+  license=(
+    BSD-3-Clause
+    'BSD-3-Clause OR GPL-2.0-only'
+
+    GPL-1.0-or-later
+    'GPL-1.0-or-later WITH Linux-syscall-note'
+
+    GPL-2.0-only
+    'GPL-2.0-only OR Apache-2.0'
+    'GPL-2.0-only OR BSD-2-Clause'
+    'GPL-2.0-only OR BSD-3-Clause'
+    'GPL-2.0-only OR CDDL-1.0'
+    'GPL-2.0-only OR Linux-OpenIB'
+    'GPL-2.0-only OR Linux-OpenIB OR BSD-2-Clause'
+    'GPL-2.0-only OR MIT'
+    'GPL-2.0-only OR MPL-1.1'
+    'GPL-2.0-only OR X11'
+    'GPL-2.0-only WITH Linux-syscall-note'
+    '(GPL-2.0-only WITH Linux-syscall-note) AND MIT'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR BSD-2-Clause'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR BSD-3-Clause'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR CDDL-1.0'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR Linux-OpenIB'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR MIT'
+
+    GPL-2.0-or-later
+    'GPL-2.0-or-later OR BSD-2-Clause'
+    'GPL-2.0-or-later OR BSD-3-Clause'
+    'GPL-2.0-or-later OR MIT'
+    'GPL-2.0-or-later WITH Linux-syscall-note'
+    '(GPL-2.0-or-later WITH Linux-syscall-note) OR BSD-3-Clause'
+    '(GPL-2.0-or-later WITH Linux-syscall-note) OR MIT'
+    'LGPL-2.0-or-later OR BSD-2-Clause'
+    'LGPL-2.0-or-later WITH Linux-syscall-note'
+
+    ISC
+
+    'LGPL-2.0-or-later WITH Linux-syscall-note'
+    'LGPL-2.0-or-later OR BSD-2-Clause'
+
+    LGPL-2.1-only
+    'LGPL-2.1-only OR BSD-2-Clause'
+    'LGPL-2.1-only OR MIT'
+    'LGPL-2.1-only WITH Linux-syscall-note'
+
+    LGPL-2.1-or-later
+    'LGPL-2.1-or-later OR BSD-2-Clause'
+    'LGPL-2.1-or-later WITH Linux-syscall-note'
+
+    MIT
+    Zlib
+  )
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
 
@@ -180,9 +290,36 @@ _package-headers() {
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/src"
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
+
+  # licenses
+  install -vDm 644 LICENSES/deprecated/{ISC,Linux-OpenIB,X11,Zlib} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/preferred/{BSD*,MIT} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/exceptions/* -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 _package-docs() {
+  license=(
+    BSD-3-Clause
+
+    GFDL-1.1-no-invariants-or-later
+
+    GPL-2.0-only
+    'GPL-2.0-only OR BSD-2-Clause'
+    'GPL-2.0-only OR BSD-3-Clause'
+    'GPL-2.0-only OR GFDL-1.1-no-invariants-or-later'
+    'GPL-2.0-only OR GFDL-1.2-no-invariants-only'
+    'GPL-2.0-only OR MIT'
+
+    GPL-2.0-or-later
+    'GPL-2.0-or-later OR BSD-2-Clause'
+    'GPL-2.0-or-later OR CC-BY-4.0'
+    'GPL-2.0-or-later OR MIT'
+    'GPL-2.0-or-later OR X11'
+
+    'LGPL-2.1-only OR BSD-2-Clause'
+
+    MIT
+  )
   pkgdesc="Documentation for the $pkgdesc kernel"
 
   cd $pkgbase
@@ -199,6 +336,10 @@ _package-docs() {
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/share/doc"
   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
+
+  # licenses
+  install -vDm 644 LICENSES/deprecated/X11 -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/preferred/{BSD*,MIT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")

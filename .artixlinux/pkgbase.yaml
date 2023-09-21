@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt-lts
-  version: 6.1.38.12.realtime1-4
+  version: 6.1.46.13.realtime1-1
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - linux-rt-lts-headers
     - linux-rt-lts-docs
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,5 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 6.1.46.13.realtime1-1
+    packages:
+      - linux-rt-lts-6.1.46.13.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.1.46.13.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.1.46.13.realtime1-1-x86_64.pkg.tar.zst
