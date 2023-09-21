@@ -42,6 +42,7 @@ build() {
     --prefix=/usr
     --sbindir=/usr/bin
     --sysconfdir=/etc
+    --with-tmpfilesdir=/usr/lib/tmpfiles.d
   )
 
   cd udisks-$pkgver
