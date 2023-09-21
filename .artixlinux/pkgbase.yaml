@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gnome-mahjongg
-  version: 3.40.0-1
+  version: 3.40.0+r35+g96668c5-1
   arch:
     - x86_64
   pkgname:
     - gnome-mahjongg
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.40.0-1
+    version: 3.40.0+r35+g96668c5-1
     packages:
-      - gnome-mahjongg-3.40.0-1-x86_64.pkg.tar.zst
+      - gnome-mahjongg-3.40.0+r35+g96668c5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
