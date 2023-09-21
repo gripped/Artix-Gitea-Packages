@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gumbo-parser
-  version: 0.10.1-2
+  version: 0.12.0-1
   arch:
     - x86_64
   pkgname:
     - gumbo-parser
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.12.0-1
+    packages:
+      - gumbo-parser-0.12.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
