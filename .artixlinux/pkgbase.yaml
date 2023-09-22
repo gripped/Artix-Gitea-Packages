@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-gettext
-  version: 0.21.1-1
+  version: 0.22.2-1
   arch:
     - x86_64
   pkgname:
     - lib32-gettext
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 0.21.1-1
+    version: 0.22.2-1
     packages:
-      - lib32-gettext-0.21.1-1-x86_64.pkg.tar.zst
+      - lib32-gettext-0.22.2-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
