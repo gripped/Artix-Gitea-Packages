@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: notmuch
-  version: 0.37-3
+  version: 0.38-2
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - notmuch-mutt
     - notmuch-runtime
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.37-3
+    version: 0.38-2
     packages:
-      - notmuch-0.37-3-x86_64.pkg.tar.zst
-      - notmuch-vim-0.37-3-x86_64.pkg.tar.zst
-      - notmuch-mutt-0.37-3-x86_64.pkg.tar.zst
-      - notmuch-runtime-0.37-3-x86_64.pkg.tar.zst
+      - notmuch-0.38-2-x86_64.pkg.tar.zst
+      - notmuch-vim-0.38-2-x86_64.pkg.tar.zst
+      - notmuch-mutt-0.38-2-x86_64.pkg.tar.zst
+      - notmuch-runtime-0.38-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
