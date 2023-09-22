@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: jre-openjdk-headless
-  version: 20.0.2.u9-3
+  name: java-openjdk
+  version: 21.u35-3
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - openjdk-src
     - openjdk-doc
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 21.u35-3
+    packages:
+      - jre-openjdk-headless-21.u35-3-x86_64.pkg.tar.zst
+      - jre-openjdk-21.u35-3-x86_64.pkg.tar.zst
+      - jdk-openjdk-21.u35-3-x86_64.pkg.tar.zst
+      - openjdk-src-21.u35-3-x86_64.pkg.tar.zst
+      - openjdk-doc-21.u35-3-x86_64.pkg.tar.zst
   world:
     version: 20.0.2.u9-3
     packages:
