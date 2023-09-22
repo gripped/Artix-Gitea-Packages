@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libva-utils
-  version: 2.19.0-1
+  version: 2.20.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.19.0-1
+    version: 2.20.0-1
     packages:
-      - libva-utils-2.19.0-1-x86_64.pkg.tar.zst
+      - libva-utils-2.20.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
