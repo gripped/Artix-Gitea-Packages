@@ -72,12 +72,11 @@ makedepends=(
 checkdepends=(xorg-server-xvfb)
 source=(
   "git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=$pkgver"
-  "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
+  "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"
   0001-HACK-meson-Disable-broken-tests.patch
 )
 b2sums=('SKIP'
         '20d1879ecd9b183c5b9dc315356f9c3d855e6434af575a9d6d4269c4c6fbe1e4b3d4eb49e21876c83da43cacc47dc2b0d43c96a29dbeb806069344cc5a645a6c'
-        'SKIP'
         '3e59a5ae821b83ad20f5e39e52195aa6932d5877538ef63aef7205988482e2667d6d43fc7bce2b5eaaf2c280cd4369f63a0d0d9ae39094ee70ec4ecd318a64b5')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
