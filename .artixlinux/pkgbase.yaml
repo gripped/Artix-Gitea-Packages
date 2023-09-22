@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cryptsetup-dinit
-  version: 20211025-3
+  version: 20211025-4
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20211025-3
+    version: 20211025-4
     packages:
-      - cryptsetup-dinit-20211025-3-any.pkg.tar.zst
+      - cryptsetup-dinit-20211025-4-any.pkg.tar.zst
   system:
     version: 20211025-1
     packages:
