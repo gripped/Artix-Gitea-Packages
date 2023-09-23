@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 
 pkgname=rsync
 _tag='b13e7a8ef4fa430223f66403506fb821caae5cfd' # git rev-parse v${pkgver}
 pkgver=3.2.7
-pkgrel=4
+pkgrel=5
 pkgdesc='A fast and versatile file copying tool for remote and local files'
 arch=('x86_64')
 url='https://rsync.samba.org/'
@@ -27,7 +28,7 @@ _reverts=(
 )
 
 prepare() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   local _c
   for _c in "${_backports[@]}"; do
@@ -45,7 +46,7 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   ./configure \
     --prefix=/usr \
@@ -57,13 +58,13 @@ build() {
 }
 
 check() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   make test
 }
 
 package() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   make DESTDIR="$pkgdir" install
   install -Dm0644 ../rsyncd.conf "$pkgdir/etc/rsyncd.conf"
