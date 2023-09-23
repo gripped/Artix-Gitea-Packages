@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=backlight-dinit
 pkgver=20211101
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for backlight"
 arch=('any')
 url="https://artixlinux.org"
@@ -16,5 +16,5 @@ sha256sums=('a2e99402b248f13ff61982d22060b1ccd9bcc1e21d24480647e5a0d34aa9211b'
 
 package() {
     install -Dm644 backlight        "$pkgdir/etc/dinit.d/backlight"
-    install -Dm755 backlight.script "$pkgdir/etc/dinit.d/scripts/backlight"
+    install -Dm755 backlight.script "$pkgdir/usr/lib/dinit/backlight"
 }

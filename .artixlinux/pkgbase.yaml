@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: backlight-dinit
-  version: 20211101-3
+  version: 20211101-4
   arch:
     - any
   pkgname:
     - backlight-dinit
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211101-4
+    packages:
+      - backlight-dinit-20211101-4-any.pkg.tar.zst
   world:
     version: 20211101-3
     packages:
