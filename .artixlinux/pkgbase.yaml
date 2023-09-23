@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-archinfo
-  version: 9.2.49-1
+  version: 9.2.69-1
   arch:
     - any
   pkgname:
     - python-archinfo
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.2.49-1
+    version: 9.2.69-1
     packages:
-      - python-archinfo-9.2.49-1-any.pkg.tar.zst
+      - python-archinfo-9.2.69-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
