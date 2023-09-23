@@ -12,7 +12,7 @@ depends=('clamav' 'dinit')
 conflicts=('init-clamav')
 provides=('init-clamav')
 source=("clamd" "clamd.script" "freshclam")
-sha256sums=('54cc11f24ac08a45918c9e63409c561b47552e62b10604b246cf6acafab4bd6d'
+sha256sums=('ae4670d432384a525ab0c0a8ad7ee67e92ea39e0d6790dbb57123bf2bc47b437'
             'd5a3e199debb287e24b4f6f829559a534b0b3c058b72fe5912acb2dc3f2dd47c'
             '056285ad573a940d6e0c9c07d45cf949a426b512ef9ec5b488af394ef39a3768')
 
