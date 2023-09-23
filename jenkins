@@ -1,5 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/jenkins
+command         = /usr/lib/dinit/jenkins
 smooth-recovery = true
 logfile         = /var/log/dinit/jenkins.log
 run-as          = jenkins
