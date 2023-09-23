@@ -11,7 +11,7 @@ depends=('dinit')
 conflicts=('init-backlight')
 provides=('init-backlight')
 source=("backlight" "backlight.script")
-sha256sums=('a2e99402b248f13ff61982d22060b1ccd9bcc1e21d24480647e5a0d34aa9211b'
+sha256sums=('2737894b29517c3847a0ad8ac5242580c50b0b3cfa8bc9b874205010b01d9321'
             '2af6767979264b9024c565351e26ce0570e2734a84c1eb914596e8c54d4566fb')
 
 package() {
