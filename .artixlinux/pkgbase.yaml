@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruff
-  version: 0.0.290-1
+  version: 0.0.291-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.0.290-1
+    version: 0.0.291-1
     packages:
-      - ruff-0.0.290-1-x86_64.pkg.tar.zst
-      - python-ruff-0.0.290-1-x86_64.pkg.tar.zst
+      - ruff-0.0.291-1-x86_64.pkg.tar.zst
+      - python-ruff-0.0.291-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
