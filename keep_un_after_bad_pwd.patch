@@ -1,0 +1,115 @@
+From b546eebeaa5f358442424c4e1a6a58b7f012f03c Mon Sep 17 00:00:00 2001
+From: Adam Chovanec <chovanec@tutanota.com>
+Date: Fri, 2 Jun 2023 02:31:04 +0200
+Subject: [PATCH] keep username after bad password
+
+---
+ src/greeter.rs  | 27 ++++++++++++++++++---------
+ src/ipc.rs      |  4 +++-
+ src/keyboard.rs |  2 +-
+ src/ui/util.rs  |  2 +-
+ 4 files changed, 23 insertions(+), 12 deletions(-)
+
+diff --git a/src/greeter.rs b/src/greeter.rs
+index d4609f5..1b94ff8 100644
+--- a/src/greeter.rs
++++ b/src/greeter.rs
+@@ -107,7 +107,7 @@ pub struct Greeter {
+ 
+ impl Drop for Greeter {
+   fn drop(&mut self) {
+-    self.scrub(true);
++    self.scrub(true, false);
+   }
+ }
+ 
+@@ -149,24 +149,33 @@ impl Greeter {
+     greeter
+   }
+ 
+-  fn scrub(&mut self, scrub_message: bool) {
+-    self.prompt.zeroize();
+-    self.username.zeroize();
+-    self.username_mask.zeroize();
++  fn scrub(&mut self, scrub_message: bool, soft: bool) {
+     self.answer.zeroize();
++    self.prompt.zeroize();
++
++    if !soft {
++      self.username.zeroize();
++      self.username_mask.zeroize();
++    }
+ 
+     if scrub_message {
+       self.message.zeroize();
+     }
+   }
+ 
+-  pub async fn reset(&mut self) {
+-    self.mode = Mode::Username;
+-    self.previous_mode = Mode::Username;
++  pub async fn reset(&mut self, soft: bool) {
++    if soft {
++        self.mode = Mode::Password;
++        self.previous_mode = Mode::Password;
++    } else {
++        self.mode = Mode::Username;
++        self.previous_mode = Mode::Username;
++    }
++
+     self.working = false;
+     self.done = false;
+ 
+-    self.scrub(false);
++    self.scrub(false, soft);
+     self.connect().await;
+   }
+ 
+diff --git a/src/ipc.rs b/src/ipc.rs
+index 13207f0..21c35da 100644
+--- a/src/ipc.rs
++++ b/src/ipc.rs
+@@ -135,14 +135,16 @@ impl Ipc {
+         match error_type {
+           ErrorType::AuthError => {
+             greeter.message = Some(fl!("failed"));
++            self.send(Request::CreateSession { username: greeter.username.clone() }).await;
++            greeter.reset(true).await;
+           }
+ 
+           ErrorType::Error => {
+             greeter.message = Some(description);
++            greeter.reset(false).await;
+           }
+         }
+ 
+-        greeter.reset().await;
+       }
+     }
+ 
+diff --git a/src/keyboard.rs b/src/keyboard.rs
+index e349528..eedf47f 100644
+--- a/src/keyboard.rs
++++ b/src/keyboard.rs
+@@ -40,7 +40,7 @@ pub async fn handle(greeter: Arc<RwLock<Greeter>>, events: &mut Events, ipc: Ipc
+ 
+       KeyEvent { code: KeyCode::Esc, .. } => {
+         Ipc::cancel(&mut greeter).await;
+-        greeter.reset().await;
++        greeter.reset(false).await;
+       }
+ 
+       KeyEvent { code: KeyCode::Left, .. } => greeter.cursor_offset -= 1,
+diff --git a/src/ui/util.rs b/src/ui/util.rs
+index a017fb8..92e04f2 100644
+--- a/src/ui/util.rs
++++ b/src/ui/util.rs
+@@ -26,7 +26,7 @@ pub fn get_height(greeter: &Greeter) -> u16 {
+       Some(_) => (2 * container_padding) + prompt_padding + 2,
+       None => (2 * container_padding) + 1,
+     },
+-    Mode::Users | Mode::Sessions | Mode::Power | Mode::Processing => (2 * container_padding),
++    Mode::Users | Mode::Sessions | Mode::Power | Mode::Processing => 2 * container_padding,
+   };
+ 
+   match greeter.mode {

@@ -1,0 +1,246 @@
+From b164320d75a5f7d9a06851bb18449633384555be Mon Sep 17 00:00:00 2001
+From: Isaac Mills <rooster0055@protonmail.com>
+Date: Fri, 24 Mar 2023 09:32:33 -0400
+Subject: [PATCH] Transition from tui to ratatui
+
+---
+ Cargo.lock           | 50 +++++++++++++++++++++++++++++---------------
+ Cargo.toml           |  4 ++--
+ src/main.rs          |  2 +-
+ src/ui/command.rs    |  2 +-
+ src/ui/mod.rs        |  4 ++--
+ src/ui/power.rs      |  2 +-
+ src/ui/processing.rs |  2 +-
+ src/ui/prompt.rs     |  2 +-
+ src/ui/sessions.rs   |  2 +-
+ src/ui/users.rs      |  2 +-
+ 10 files changed, 44 insertions(+), 28 deletions(-)
+
+diff --git a/Cargo.lock b/Cargo.lock
+index aba079f..1fc8c19 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -118,6 +118,22 @@ dependencies = [
+  "winapi",
+ ]
+ 
++[[package]]
++name = "crossterm"
++version = "0.26.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "a84cda67535339806297f1b331d6dd6320470d2a0fe65381e79ee9e156dd3d13"
++dependencies = [
++ "bitflags",
++ "crossterm_winapi",
++ "libc",
++ "mio",
++ "parking_lot",
++ "signal-hook",
++ "signal-hook-mio",
++ "winapi",
++]
++
+ [[package]]
+ name = "crossterm_winapi"
+ version = "0.9.0"
+@@ -706,6 +722,19 @@ dependencies = [
+  "proc-macro2",
+ ]
+ 
++[[package]]
++name = "ratatui"
++version = "0.20.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "dcc0d032bccba900ee32151ec0265667535c230169f5a011154cdcd984e16829"
++dependencies = [
++ "bitflags",
++ "cassowary",
++ "crossterm 0.26.1",
++ "unicode-segmentation",
++ "unicode-width",
++]
++
+ [[package]]
+ name = "redox_syscall"
+ version = "0.2.13"
+@@ -1025,25 +1054,12 @@ dependencies = [
+  "serde",
+ ]
+ 
+-[[package]]
+-name = "tui"
+-version = "0.18.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "96fe69244ec2af261bced1d9046a6fee6c8c2a6b0228e59e5ba39bc8ba4ed729"
+-dependencies = [
+- "bitflags",
+- "cassowary",
+- "crossterm",
+- "unicode-segmentation",
+- "unicode-width",
+-]
+-
+ [[package]]
+ name = "tuigreet"
+ version = "0.7.3"
+ dependencies = [
+  "chrono",
+- "crossterm",
++ "crossterm 0.23.2",
+  "futures",
+  "getopts",
+  "greetd_ipc",
+@@ -1051,12 +1067,12 @@ dependencies = [
+  "i18n-embed-fl",
+  "lazy_static",
+  "nix",
++ "ratatui",
+  "rust-embed",
+  "rust-ini",
+  "smart-default",
+  "textwrap",
+  "tokio",
+- "tui",
+  "unic-langid",
+  "zeroize",
+ ]
+@@ -1106,9 +1122,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "unicode-segmentation"
+-version = "1.9.0"
++version = "1.10.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7e8820f5d777f6224dc4be3632222971ac30164d4a258d595640799554ebfd99"
++checksum = "1dd624098567895118886609431a7c3b8f516e41d30e0643f03d94592a147e36"
+ 
+ [[package]]
+ name = "unicode-width"
+diff --git a/Cargo.toml b/Cargo.toml
+index 900ae7d..57ef704 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -15,12 +15,12 @@ i18n-embed = { version = "^0.13", features = ["desktop-requester", "fluent-syste
+ i18n-embed-fl = "^0.6"
+ lazy_static = "^1.4"
+ nix = "^0.24"
+-tui = { version = "^0.18", default-features = false, features = ["crossterm"] }
++ratatui = "0.20.1"
+ rust-embed = "^6.2"
+ rust-ini = "^0.18"
+ smart-default = "^0.6"
+ textwrap = "^0.15"
+-tokio = { version = "^1.2", default_features = false, features = ["macros", "rt-multi-thread", "net", "sync", "time", "process"] }
++tokio = { version = "^1.2", default-features = false, features = ["macros", "rt-multi-thread", "net", "sync", "time", "process"] }
+ unic-langid = "^0.9"
+ zeroize = "^1.3"
+ 
+diff --git a/src/main.rs b/src/main.rs
+index c26877d..8f018df 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -19,8 +19,8 @@ use crossterm::{
+   terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen},
+ };
+ use greetd_ipc::Request;
++use ratatui::{backend::CrosstermBackend, Terminal};
+ use tokio::sync::RwLock;
+-use tui::{backend::CrosstermBackend, Terminal};
+ 
+ pub use self::greeter::*;
+ use self::{event::Events, ipc::Ipc};
+diff --git a/src/ui/command.rs b/src/ui/command.rs
+index 4591a17..f9282c0 100644
+--- a/src/ui/command.rs
++++ b/src/ui/command.rs
+@@ -1,6 +1,6 @@
+ use std::error::Error;
+ 
+-use tui::{
++use ratatui::{
+   layout::{Constraint, Direction, Layout, Rect},
+   text::Span,
+   widgets::{Block, BorderType, Borders, Paragraph},
+diff --git a/src/ui/mod.rs b/src/ui/mod.rs
+index 0ee55f6..d70fede 100644
+--- a/src/ui/mod.rs
++++ b/src/ui/mod.rs
+@@ -14,8 +14,7 @@ use std::{
+ };
+ 
+ use chrono::prelude::*;
+-use tokio::sync::RwLock;
+-use tui::{
++use ratatui::{
+   backend::CrosstermBackend,
+   layout::{Alignment, Constraint, Direction, Layout},
+   style::{Modifier, Style},
+@@ -23,6 +22,7 @@ use tui::{
+   widgets::Paragraph,
+   Frame as CrosstermFrame, Terminal,
+ };
++use tokio::sync::RwLock;
+ 
+ use crate::{
+   info::capslock_status,
+diff --git a/src/ui/power.rs b/src/ui/power.rs
+index f8ba22e..476a160 100644
+--- a/src/ui/power.rs
++++ b/src/ui/power.rs
+@@ -1,7 +1,7 @@
+ use std::error::Error;
+ 
+ use lazy_static::lazy_static;
+-use tui::{
++use ratatui::{
+   layout::Rect,
+   style::{Modifier, Style},
+   text::Span,
+diff --git a/src/ui/processing.rs b/src/ui/processing.rs
+index d65c32e..03ca3bc 100644
+--- a/src/ui/processing.rs
++++ b/src/ui/processing.rs
+@@ -1,6 +1,6 @@
+ use std::error::Error;
+ 
+-use tui::{
++use ratatui::{
+   layout::{Alignment, Constraint, Direction, Layout, Rect},
+   text::Span,
+   widgets::{Block, BorderType, Borders, Paragraph},
+diff --git a/src/ui/prompt.rs b/src/ui/prompt.rs
+index 30d9ac8..995ab20 100644
+--- a/src/ui/prompt.rs
++++ b/src/ui/prompt.rs
+@@ -1,6 +1,6 @@
+ use std::error::Error;
+ 
+-use tui::{
++use ratatui::{
+   layout::{Alignment, Constraint, Direction, Layout, Rect},
+   text::{Span, Text},
+   widgets::{Block, BorderType, Borders, Paragraph},
+diff --git a/src/ui/sessions.rs b/src/ui/sessions.rs
+index 552dbc5..73a5240 100644
+--- a/src/ui/sessions.rs
++++ b/src/ui/sessions.rs
+@@ -1,6 +1,6 @@
+ use std::error::Error;
+ 
+-use tui::{
++use ratatui::{
+   layout::Rect,
+   style::{Modifier, Style},
+   text::Span,
+diff --git a/src/ui/users.rs b/src/ui/users.rs
+index ba0ad46..cc2cf18 100644
+--- a/src/ui/users.rs
++++ b/src/ui/users.rs
+@@ -1,6 +1,6 @@
+ use std::error::Error;
+ 
+-use tui::{
++use ratatui::{
+   layout::Rect,
+   style::{Modifier, Style},
+   text::Span,
