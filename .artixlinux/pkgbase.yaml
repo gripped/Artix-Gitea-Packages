@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: redis-dinit
-  version: 20230907-1
+  version: 20230907-2
   arch:
     - any
   pkgname:
     - redis-dinit
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20230907-2
+    packages:
+      - redis-dinit-20230907-2-any.pkg.tar.zst
   world:
     version: 20230907-1
     packages:
