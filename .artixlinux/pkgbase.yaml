@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-aiohttp-socks
-  version: 0.8.0-1
+  version: 0.8.2-1
   arch:
     - any
   pkgname:
     - python-aiohttp-socks
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.0-1
+    version: 0.8.2-1
     packages:
-      - python-aiohttp-socks-0.8.0-1-any.pkg.tar.zst
+      - python-aiohttp-socks-0.8.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
