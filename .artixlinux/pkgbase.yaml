@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: earlyoom-dinit
-  version: 20211101-2
+  version: 20211101-3
   arch:
     - any
   pkgname:
     - earlyoom-dinit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211101-3
+    packages:
+      - earlyoom-dinit-20211101-3-any.pkg.tar.zst
   world:
     version: 20211101-2
     packages:
