@@ -1,15 +1,15 @@
 ---
 pkgbase:
   name: nfs-utils-dinit
-  version: 20211030-1
+  version: 20211030-2
   arch:
     - any
   pkgname:
     - nfs-utils-dinit
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: false
   triggersRepoRemove: false
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20211030-2
+    packages:
+      - nfs-utils-dinit-20211030-2-any.pkg.tar.zst
   system:
     version: 20211030-1
     packages:

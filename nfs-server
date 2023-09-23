@@ -1,5 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/nfs-server
+command         = /usr/lib/dinit/nfs-server
 smooth-recovery = true
 logfile         = /var/log/dinit/nfs-server.log
 depends-on      = statd
