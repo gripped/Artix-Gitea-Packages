@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tailscale-dinit
-  version: 20211103-3
+  version: 20211103-4
   arch:
     - any
   pkgname:
     - tailscale-dinit
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211103-4
+    packages:
+      - tailscale-dinit-20211103-4-any.pkg.tar.zst
   world:
     version: 20211103-3
     packages:

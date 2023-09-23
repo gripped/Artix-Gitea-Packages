@@ -1,5 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/tailscaled
+command         = /usr/lib/dinit/tailscaled
 smooth-recovery = true
 logfile         = /var/log/dinit/tailscaled.log
-waits-for       = loginready
+after           = loginready
