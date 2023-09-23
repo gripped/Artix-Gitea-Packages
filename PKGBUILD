@@ -2,7 +2,7 @@
 
 pkgname=hdparm-dinit
 pkgver=20211029
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit stage1 script for hdparm"
 arch=('any')
 url="https://artixlinux.org"
@@ -20,5 +20,5 @@ sha256sums=('4eca166b41c932ee401a1e31a0af4ef40b1dd7b4d3227e286c8a25e03493ec2f'
 package() {
     install -Dm644 hdparm        "$pkgdir/etc/dinit.d/hdparm"
     install -Dm644 hdparm.conf   "$pkgdir/etc/dinit.d/config/hdparm.conf"
-    install -Dm755 hdparm.script "$pkgdir/etc/dinit.d/scripts/hdparm"
+    install -Dm755 hdparm.script "$pkgdir/usr/lib/dinit/hdparm"
 }
