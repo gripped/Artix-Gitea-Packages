@@ -1,5 +1,5 @@
 type            = process
-command         = /etc/dinit.d/scripts/postgres
+command         = /usr/lib/dinit/postgres
 smooth-recovery = true
 logfile         = /var/log/dinit/postgres.log
 term-signal     = INT
