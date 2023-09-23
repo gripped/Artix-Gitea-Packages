@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: minio-dinit
-  version: 20211102-2
+  version: 20211102-3
   arch:
     - any
   pkgname:
     - minio-dinit
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20211102-2
+    version: 20211102-3
     packages:
-      - minio-dinit-20211102-2-any.pkg.tar.zst
+      - minio-dinit-20211102-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
