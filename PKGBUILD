@@ -4,7 +4,7 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.4.14.hardened1
+pkgver=6.5.4.hardened1
 pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
@@ -14,20 +14,25 @@ makedepends=(
   bc
   cpio
   gettext
-  git
   libelf
   pahole
   perl
   python
   tar
   xz
+
+  # htmldocs
+  graphviz
+  imagemagick
+  python-sphinx
+  texlive-latexextra
 )
 options=('!strip')
 _srcname=linux-${pkgver%.*}
 _srctag=${pkgver%.*}-${pkgver##*.}
 source=(
-  https://www.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
-  https://github.com/anthraxx/${pkgbase}/releases/download/${_srctag}/${pkgbase}-${_srctag}.patch{,.sig}
+  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  ${url}/releases/download/${_srctag}/${pkgbase}-${_srctag}.patch{,.sig}
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -35,11 +40,17 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
-b2sums=('f81dabaef7e31b743aeb75d0dbb0a337e747d1d743fb0b38cb314498200d8d459d82f5f8bb34d6ad688842f3617fd53fd35b1b518654c845a6781580531ab1b2'
+# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
+sha256sums=('bdf76c15229b241e578046b8486106f09534d754ea4cbf105e0660e551fb1669'
+            'SKIP'
+            'd6a4f40d6677025e41b4f07c954b4bdcdceaeb5f14cdebec12559d705f0b8164'
+            'SKIP'
+            '5c24adb1dcfbb3e4cd4c934e6d05530d380b71ffd28aaef1425b884ca2202e0d')
+b2sums=('99df210ee8f244de9059c9699648f7aad8e520030ce14e61971ba95365635e698e7c66074aa3f5c57bd75f1058e1c1dbaecea66d0b381202f239b3a04a396371'
         'SKIP'
-        'd12ff8cbb4dc171167050a198a783e8341df51aa1c3579d3c3f20b9d28025847e6cae9575fc2a37dda2e0f96a10d0306ec4293edaa53ebdfe15a21892c6d2a5f'
+        '5214581f512fd564d5fc6e360a10ff0db21f4f788fd7128d02865561a3c6c6570f49734c71884ed4d934a1fa17d9d623b37c2297d4ea41534750180211bc4614'
         'SKIP'
-        'f60be61e60a36d8c8fd186ddb2ac7514a6439c413a0a563d8c3d13593aaa5e34e20a3ddeba2d0b868fffdd515678320ddda1fe843e24f90369c1d4d0c4019306')
+        '95068d07cb19e978f5203d150cd1530527eca11c864288d4f91c44198d388a3728ddaefbfe983801e632cba3758c5fccafb748dc9a53af14679b3586abb4fb12')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -56,6 +67,7 @@ prepare() {
   for src in "${source[@]}"; do
     src="${src%%::*}"
     src="${src##*/}"
+    src="${src%.zst}"
     [[ $src = *.patch ]] || continue
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
@@ -73,6 +85,7 @@ prepare() {
 build() {
   cd $_srcname
   make all
+  make htmldocs
 }
 
 _package() {
@@ -91,6 +104,8 @@ _package() {
     KSMBD-MODULE
     VIRTUALBOX-GUEST-MODULES
     WIREGUARD-MODULE
+  )
+  replaces=(
   )
 
   cd $_srcname
