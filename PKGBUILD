@@ -1,11 +1,11 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Maximilian Stein <maxarchpkgbuild@hmamail.com>
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 # Contributor: Taylor Lookabaugh <jesus.christ.i.love@gmail.com>
 
 _pkgbase=libnl
 pkgname=lib32-${_pkgbase}
-pkgver=3.7.0
+pkgver=3.8.0
 pkgrel=1
 pkgdesc="Library for applications dealing with netlink sockets (32 bit)"
 arch=('x86_64')
@@ -14,7 +14,7 @@ license=('GPL')
 depends=('lib32-glibc' "${_pkgbase}")
 makedepends=('gcc-multilib')
 source=("https://github.com/thom311/libnl/releases/download/libnl${pkgver//./_}/libnl-${pkgver}.tar.gz")
-sha512sums=('80fbbc079299c90afd2a5eda62e4d4f98bf4ef23958c3ce5101f4ed4d81d783af733213bb3bab15f218555d8460bc2394898f909f4ac024fc27281faec86a041')
+sha512sums=('a8da7e8464c5cab2807cd86f83fca53bc77f7c3bdefe43880db7be9caf5ba6bfca1b7e778b906c12fda1cf7e6f413f88cc7ad1dcc42fe8c050a8d28a6e656c02')
 
 build() {
   export CC='gcc -m32'
