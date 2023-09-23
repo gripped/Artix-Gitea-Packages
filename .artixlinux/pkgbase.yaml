@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: docker-dinit
-  version: 20211025-2
+  version: 20211025-3
   arch:
     - any
   pkgname:
     - docker-dinit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211025-3
+    packages:
+      - docker-dinit-20211025-3-any.pkg.tar.zst
   world:
     version: 20211025-2
     packages:
