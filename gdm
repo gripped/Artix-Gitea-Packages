@@ -1,7 +1,5 @@
 type            = process
-command         = /usr/bin/gdm
+command         = /usr/lib/dinit/gdm
 smooth-recovery = true
+depends-on      = logind
 after           = loginready
-depends-on      = gdm-pre
-depends-on      = dbus
-depends-ms      = logind
