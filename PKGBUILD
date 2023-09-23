@@ -3,7 +3,7 @@
 pkgname=greetd-tuigreet
 _pkgname=${pkgname#*-}
 pkgver=0.8.0
-pkgrel=4.2
+pkgrel=4.3
 pkgdesc='A console UI greeter for greetd'
 url="https://github.com/apognu/$_pkgname"
 license=(GPL3)
