@@ -9,7 +9,7 @@ pkgbase:
     - linux-hardened-headers
     - linux-hardened-docs
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.4.14.hardened1-1
+    version: 6.5.4.hardened1-1
     packages:
-      - linux-hardened-6.4.14.hardened1-1-x86_64.pkg.tar.zst
-      - linux-hardened-headers-6.4.14.hardened1-1-x86_64.pkg.tar.zst
-      - linux-hardened-docs-6.4.14.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-6.5.4.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-headers-6.5.4.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-docs-6.5.4.hardened1-1-x86_64.pkg.tar.zst
