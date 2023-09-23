@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lm_sensors-dinit
-  version: 20211030-4
+  version: 20211030-5
   arch:
     - any
   pkgname:
     - lm_sensors-dinit
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211030-5
+    packages:
+      - lm_sensors-dinit-20211030-5-any.pkg.tar.zst
   world:
     version: 20211030-4
     packages:
