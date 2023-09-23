@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - gdm-dinit
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 20211030-2
-    packages:
-      - gdm-dinit-20211030-2-any.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
