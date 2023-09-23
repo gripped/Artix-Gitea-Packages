@@ -13,7 +13,7 @@ depends=('hdparm' 'dinit-rc')
 conflicts=('init-hdparm')
 backup=('etc/dinit.d/config/hdparm.conf')
 source=('hdparm' 'hdparm.script' 'hdparm.conf')
-sha256sums=('4eca166b41c932ee401a1e31a0af4ef40b1dd7b4d3227e286c8a25e03493ec2f'
+sha256sums=('e0a85a9ae87d77c6d49627f13f8f8a54d3fff4c1ee1722528c0838dfebc873b6'
             '79d09b7e3e39de1cb0b075328d99592dfa71ac2e730f96f87f0dd9267644892f'
             'd205154cd4378428ee9977d1d525ee7774797924ba9ff0f88bec27af8aa08ecf')
 
