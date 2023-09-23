@@ -2,7 +2,7 @@
 
 pkgname=fuse-dinit
 pkgver=20211030
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for fuse"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,10 +11,10 @@ provides=('init-fuse')
 conflicts=('init-fuse')
 depends=('fuse' 'dinit')
 source=("fuse" "fuse.script")
-sha256sums=('0d7010f7f6a5f946d1daa6bc4562d378c8c78c2e52d8b4d52308e55343e4d85e'
+sha256sums=('38dd16ebb8db36e7ec5aad483171891a00b657548279dd9965c6224c6e0d319b'
             '8501b8ebac992a3fc0abba63c73b1d7f003d451cc1190fea10a9eb0b4a8a4da6')
 
 package() {
     install -Dm644 fuse        "$pkgdir/etc/dinit.d/fuse"
-    install -Dm755 fuse.script "$pkgdir/etc/dinit.d/scripts/fuse"
+    install -Dm755 fuse.script "$pkgdir/usr/lib/dinit/fuse"
 }

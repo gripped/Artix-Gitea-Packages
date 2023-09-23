@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: fuse-dinit
-  version: 20211030-1
+  version: 20211030-2
   arch:
     - any
   pkgname:
     - fuse-dinit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211030-2
+    packages:
+      - fuse-dinit-20211030-2-any.pkg.tar.zst
   world:
     version: 20211030-1
     packages:
