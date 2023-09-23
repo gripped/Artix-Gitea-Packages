@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - greetd-tuigreet
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,9 @@ repos:
     packages:
       - greetd-tuigreet-0.8.0-4-x86_64.pkg.tar.zst
   world:
-    version: null
-    packages: []
+    version: 0.8.0-4
+    packages:
+      - greetd-tuigreet-0.8.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
