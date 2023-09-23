@@ -1,4 +1,4 @@
 type      = scripted
-command   = /etc/dinit.d/scripts/cpupower
+command   = /usr/lib/dinit/cpupower
 restart   = false
 after     = root-rw
