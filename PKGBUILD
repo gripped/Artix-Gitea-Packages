@@ -2,7 +2,7 @@
 
 pkgname=clamav-dinit
 pkgver=20211030
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for clamav"
 arch=('any')
 url="https://artixlinux.org"
@@ -18,6 +18,6 @@ sha256sums=('54cc11f24ac08a45918c9e63409c561b47552e62b10604b246cf6acafab4bd6d'
 
 package() {
     install -Dm644 clamd        "$pkgdir/etc/dinit.d/clamd"
-    install -Dm755 clamd.script "$pkgdir/etc/dinit.d/scripts/clamd"
+    install -Dm755 clamd.script "$pkgdir/usr/lib/dinit/clamd"
     install -Dm644 freshclam    "$pkgdir/etc/dinit.d/freshclam"
 }
