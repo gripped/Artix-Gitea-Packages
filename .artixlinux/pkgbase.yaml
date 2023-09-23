@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: distcc-dinit
-  version: 20211101-2
+  version: 20211101-3
   arch:
     - any
   pkgname:
     - distcc-dinit
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20211101-2
+    version: 20211101-3
     packages:
-      - distcc-dinit-20211101-2-any.pkg.tar.zst
+      - distcc-dinit-20211101-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
