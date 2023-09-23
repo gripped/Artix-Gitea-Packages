@@ -2,7 +2,7 @@
 
 pkgname=audit-dinit
 pkgver=20211031
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service script for audit"
 arch=('any')
 url="https://artixlinux.org"
@@ -25,5 +25,5 @@ package() {
     install -Dm644 auditd          "$pkgdir/etc/dinit.d/auditd"
     install -Dm644 auditctl        "$pkgdir/etc/dinit.d/auditctl"
     install -Dm644 auditctl.conf   "$pkgdir/etc/dinit.d/config/auditctl.conf"
-    install -Dm755 auditctl.script "$pkgdir/etc/dinit.d/scripts/auditctl"
+    install -Dm755 auditctl.script "$pkgdir/usr/lib/dinit/auditctl"
 }
