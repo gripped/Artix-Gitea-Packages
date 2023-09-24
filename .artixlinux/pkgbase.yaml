@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: artix-dark-theme
-  version: 20201126-3
+  version: 20201126-4
   arch:
     - any
   pkgname:
     - artix-dark-theme
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20201126-3
+    version: 20201126-4
     packages:
-      - artix-dark-theme-20201126-3-any.pkg.tar.zst
+      - artix-dark-theme-20201126-4-any.pkg.tar.zst
