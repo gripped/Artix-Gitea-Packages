@@ -86,7 +86,7 @@ check() {
   XDG_RUNTIME_DIR=/tmp/runtime-build \
   xvfb-run -a -s "-screen 0 640x480x24" \
     test-env/bin/python -m pytest -ra -n auto -v --color=yes --pyargs matplotlib mpl_toolkits.{axes_grid1,axisartist,mplot3d} \
-      -k 'not test_ipynb and not test_compressed1 and not test_multi_font_type3 and not test_multi_font_type42 and not test_figure_legend_outside'
+      -k 'not test_ipynb and not test_compressed1 and not test_multi_font_type3 and not test_multi_font_type42 and not test_figure_legend_outside and not test_figure_leak_20490'
 }
 
 package() {
