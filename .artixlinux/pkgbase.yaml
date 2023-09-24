@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - artix-gtk-presets
 actions:
-  addRepo: galaxy
+  addRepo: null
   removeRepo: null
-  triggersBuild: true
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230710-1
-    packages:
-      - artix-gtk-presets-20230710-1-any.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
