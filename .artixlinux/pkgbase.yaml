@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-i3-presets
-  version: 20230924-1
+  version: 20200906-2
   arch:
     - any
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20230924-1
+    version: 20200906-2
     packages:
-      - artix-i3-presets-20230924-1-any.pkg.tar.zst
+      - artix-i3-presets-20200906-2-any.pkg.tar.zst

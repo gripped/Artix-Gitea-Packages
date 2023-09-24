@@ -2,8 +2,8 @@
          
 pkgname=artix-i3-presets
 pkgdesc="Artix Linux i3 presets"
-pkgver=20230924
-pkgrel=1
+pkgver=20200906
+pkgrel=2
 #replaces=('artix-i3-presets')
 arch=('any')
 url="https://gitea.artixlinux.org/linuxer/artix-i3-presets"
