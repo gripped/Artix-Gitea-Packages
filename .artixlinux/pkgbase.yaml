@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: yt-dlp
-  version: 2023.07.06-2
+  version: 2023.09.24-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2023.07.06-2
+    version: 2023.09.24-1
     packages:
-      - yt-dlp-2023.07.06-2-any.pkg.tar.zst
+      - yt-dlp-2023.09.24-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
