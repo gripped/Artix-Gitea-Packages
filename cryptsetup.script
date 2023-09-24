@@ -40,8 +40,8 @@ unlock_devices() {
 
         # Break on invalid crypttab.
         [ "$err" ] && {
-            stat_fail "A valid /etc/crypttab has only 4 columns. Aborting..."
-            stat_die
+            echo "A valid /etc/crypttab has only 4 columns. Aborting..."
+            exit 99
         }
 
         # Turn 'UUID=*', 'LABEL=*', 'PARTUUID=*' into device name.
@@ -68,26 +68,45 @@ unlock_devices() {
         { IFS=,; set -- $opts; unset IFS; }
 
         # Create an argument list (no other way to do this in sh).
+        # copts: common options
+        # popts: plain options
+        # lopts: LUKS options
+        # topts: TrueCrypt options
         for opt; do case "$opt" in
-            readonly|read-only) copts="$copts -r"             ;;
-            tries=*)    copts="$copts -T ${opt##*=}"          ;;
-            discard)    copts="$copts --allow-discards"       ;;
-            noauto)     copts=; continue 2                    ;;
-            plain)      copts="$copts --type plain"           ;;
-            luks)       copts="$copts --type luks"            ;;
-            swap)       copts="$copts --type plain"; swap="y" ;;
-            cipher=*)   sopts="$sopts -c ${opt##*=}"          ;;
-            size=*)     sopts="$sopts -s ${opt##*=}"          ;;
-            hash=*)     sopts="$sopts -h ${opt##*=}"          ;;
-            offset=*)   sopts="$sopts -o ${opt##*=}"          ;;
-            skip=*)     sopts="$sopts -p ${opt##*=}"          ;;
-            verify)     sopts="$sopts -y"                     ;;
-            keyfile-size=*) copts="$copts --${opt}"           ;;
-            keyfile-offset=*) copts="$copts --${opt}"         ;;
-            header=*) copts="$copts --${opt}"                 ;;
+            readonly|read-only) copts="$copts -r"              ;;
+            tries=*)    copts="$copts -T ${opt##*=}"           ;;
+            discard)    copts="$copts --allow-discards"        ;;
+            verify)     copts="$copts -y"                      ;;
+            noauto)     copts=; continue 2                     ;;
+            sector-size=*) copts="$copts --${opt}"             ;;
+            plain)      copts="$copts --type plain"; plain=y   ;;
+            luks)       copts="$copts --type luks"; luks=y     ;;
+            tcrypt)     copts="$copts --type tcrypt"; tcrypt=y ;
+                echo "WARNING: TrueCrypt support in crypttab is considered experimental!" ;;
+            bitlk)      copts="$copts --type bitlk";
+                echo "WARNING: BitLocker support in crypttab is considered experimental!" ;;
+            swap)       copts="$copts --type plain";
+                        plain=y; swap=y                        ;;
+            fvault2)    copts="$copts --type fvault2";
+                echo "WARNING: FVault2 support in crypttab is considered experimental!" ;;
+            cipher=*)   popts="$popts -c ${opt##*=}"           ;;
+            size=*)     popts="$popts -s ${opt##*=}"           ;;
+            hash=*)     popts="$popts -h ${opt##*=}"           ;;
+            offset=*)   popts="$popts -o ${opt##*=}"           ;;
+            skip=*)     popts="$popts -p ${opt##*=}"           ;;
+            veracrypt|trycrypt-veracrypt)
+                topts="$topts --veracrypt"  ;;
+            tcrypthidden|tcrypt-hidden)
+                topts="$topts --tcrypt-hidden" ;;
+            keyfile-size=*) lopts="$lopts --${opt}"            ;;
+            keyfile-offset=*) lopts="$lopts --${opt}"          ;;
+            keyslot=*|key-slot=*) lopts="$lopts ${opt##*=}"    ;;
+            header=*) lopts="$lopts --${opt}"                  ;;
         esac; done
 
-        [ "$swap" = y ] && copts="$copts $sopts"
+        [ "$plain" = y ] && copts="$copts $popts"
+        [ "$luks" = y ] && copts="$copts $lopts"
+        [ "$tcrypt" = y ] && copts="$copts $topts"
 
         # If password is 'none', '-' or empty ask for it.
         # shellcheck disable=2086
@@ -97,7 +116,8 @@ unlock_devices() {
         esac
 
         [ "$swap" = y ] && mkswap "/dev/mapper/$name"
-    copts=; sopts=; done < /etc/crypttab; exec 3>&-
+        copts=; popts=; lopts=; topts= plain=; luks=; tcrypt=;
+    done < /etc/crypttab; exec 3>&-
 }
 
 lock_devices() {
@@ -116,6 +136,7 @@ case "$1" in
     unlock)
         unlock_devices
         # LVM-on-LUKS scenario
+        # shellcheck disable=2015
         dinitctl is-started --quiet lvm2 && vgchange --sysinit -a y >/dev/null || :
     ;;
     lock)
