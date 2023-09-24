@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: artix-cinnamon-presets
-  version: 20211217-1
+  version: 20230924-1
   arch:
     - any
   pkgname:
     - artix-cinnamon-presets
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20211217-1
+    version: 20230924-1
     packages:
-      - artix-cinnamon-presets-20211217-1-any.pkg.tar.zst
+      - artix-cinnamon-presets-20230924-1-any.pkg.tar.zst

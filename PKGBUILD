@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-cinnamon-presets
-pkgver=20211217
+pkgver=20230924
 pkgrel=1
 pkgdesc='Artix Cinnamon presets'
 arch=('any')
