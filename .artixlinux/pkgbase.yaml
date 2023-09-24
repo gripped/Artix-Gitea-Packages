@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: artix-community-presets
-  version: 20230705-1
+  version: 20230924-1
   arch:
     - any
   pkgname:
     - artix-community-presets
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20230705-1
+    version: 20230924-1
     packages:
-      - artix-community-presets-20230705-1-any.pkg.tar.zst
+      - artix-community-presets-20230924-1-any.pkg.tar.zst
