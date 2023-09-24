@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: edk2
-  version: 202308-2
+  version: 202308-3
   arch:
     - any
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - edk2-ovmf
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 202308-2
+    version: 202308-3
     packages:
-      - edk2-shell-202308-2-any.pkg.tar.zst
-      - edk2-ovmf-202308-2-any.pkg.tar.zst
+      - edk2-shell-202308-3-any.pkg.tar.zst
+      - edk2-ovmf-202308-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
