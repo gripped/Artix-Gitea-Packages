@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: freerdp
-  version: 2:2.11.1-1
+  version: 2:2.11.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2:2.11.1-1
+    version: 2:2.11.2-1
     packages:
-      - freerdp-2:2.11.1-1-x86_64.pkg.tar.zst
+      - freerdp-2:2.11.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
