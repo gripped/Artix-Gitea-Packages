@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: man-db
-  version: 2.11.2-1
+  version: 2.12.0-1
   arch:
     - x86_64
   pkgname:
     - man-db
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.12.0-1
+    packages:
+      - man-db-2.12.0-1-x86_64.pkg.tar.zst
   system:
     version: 2.11.2-1
     packages:
