@@ -2,7 +2,7 @@
 
 pkgbase=artix-branding
 pkgname=artix-branding-base
-pkgver=20220215
+pkgver=20230924
 pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
