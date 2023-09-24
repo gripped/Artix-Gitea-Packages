@@ -14,7 +14,7 @@ depends=('sddm' "artix-backgrounds")
 conflicts=('artix-sddm-theme')
 replaces=('artix-sddm-theme')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('f9e82fe5f655ff30b40bf2daa9c67b0dce0777daa2c8d9a76f391068ae22247c')
+sha256sums=('7941c0e040a61b74fb71acef30d1c2dca85f41ff9bc22d1d7695b0481c025380')
 
 package() {
     cd ${pkgname} #-${pkgver}
