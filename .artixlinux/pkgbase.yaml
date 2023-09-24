@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gifski
-  version: 1.11.0-1
+  version: 1.12.2-1
   arch:
     - x86_64
   pkgname:
     - gifski
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.11.0-1
+    version: 1.12.2-1
     packages:
-      - gifski-1.11.0-1-x86_64.pkg.tar.zst
+      - gifski-1.12.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
