@@ -2,7 +2,7 @@
          
 pkgname=artix-i3-presets
 pkgdesc="Artix Linux i3 presets"
-pkgver=20200906
+pkgver=20230924
 pkgrel=1
 #replaces=('artix-i3-presets')
 arch=('any')
