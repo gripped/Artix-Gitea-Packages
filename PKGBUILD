@@ -1,11 +1,9 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_rel=2
-_ver=6.5.4
+_ver=6.5.5
+_rel=1
 _arch=arch${_rel}
 _artix=artix${_rel}
-_srcname=linux-${_ver}
-_srctag=v${_ver}-${_arch}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
@@ -18,7 +16,6 @@ makedepends=(
   bc
   cpio
   gettext
-  git
   libelf
   pahole
   perl
@@ -33,8 +30,10 @@ makedepends=(
   texlive-latexextra
 )
 options=('!strip')
+_srcname=linux-${_ver}
+_srctag=v${_ver}-${_arch}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/$_srcname.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
@@ -43,9 +42,15 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
 )
-b2sums=('99df210ee8f244de9059c9699648f7aad8e520030ce14e61971ba95365635e698e7c66074aa3f5c57bd75f1058e1c1dbaecea66d0b381202f239b3a04a396371'
+# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
+sha256sums=('8cf10379f7df8ea731e09bff3d0827414e4b643dd41dc99d0af339669646ef95'
+            'SKIP'
+            '3c1392a87b53181ffb32ad150a4f27679fe1ba4a49e56537ac8ce2302fa4a1c7'
+            'SKIP'
+            '25424b287bf93e41d36d906e4a90a632f05c3ce4d941d7f6e50310dfdd63bfdf')
+b2sums=('2152bdcd8799b89612e76c1b3794313f981e08eda23c0150e56297a07f326c85f2a7a08106eb4e4d502b2134ed69e4344263fe6a2b398af5b5d7ccd018c0899b'
         'SKIP'
-        '7c5fd8d2160d4b94f014ea55ae8cad24c93a6360ea093186b304bf94c2f982428789d27b4924025a103af58d60ae0f087ebd57f2c81d8426442380ed9cc92f48'
+        'f874eb3add9aaad46c913aa1a57c178dd5ce835e02c24692aab8fc3cf1e5c2040d381159b0b732f6fff39f9aa0e502ee2df8e82d7750ccb5f3d1c8ee391bdaf3'
         'SKIP'
         '66e6dc51ffe913aaf88336a1c61da4939135945e298d14fbb1ee711cf8665907c7c5dc675061b3a5ed3f2f217637bc8badc948e95eb55cb3b702e02e0657cc0f')
 
@@ -228,7 +233,7 @@ _package-docs() {
   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
 }
 
- pkgname=(
+pkgname=(
   "$pkgbase"
   "$pkgbase-headers"
   "$pkgbase-docs"
