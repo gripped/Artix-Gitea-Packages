@@ -1,17 +1,17 @@
 ---
 pkgbase:
-  name: sddm-theme-artix
-  version: 0.7-1
+  name: sddm-theme
+  version: 0.7-2
   arch:
     - any
   pkgname:
     - sddm-theme-artix
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.7-1
+    version: 0.7-2
     packages:
-      - sddm-theme-artix-0.7-1-any.pkg.tar.zst
+      - sddm-theme-artix-0.7-2-any.pkg.tar.zst

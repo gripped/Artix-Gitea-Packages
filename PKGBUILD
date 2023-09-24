@@ -4,7 +4,7 @@
 pkgbase=sddm-theme
 pkgname=${pkgbase}-artix
 pkgver=0.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Artix theme for SDDM"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/sddm-theme-artix"
