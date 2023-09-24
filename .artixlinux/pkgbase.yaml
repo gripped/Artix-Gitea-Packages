@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: artix-desktop-presets
-  version: 20220329-1
+  version: 20230924-1
   arch:
     - any
   pkgname:
     - artix-desktop-presets
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20220329-1
+    version: 20230924-1
     packages:
-      - artix-desktop-presets-20220329-1-any.pkg.tar.zst
+      - artix-desktop-presets-20230924-1-any.pkg.tar.zst
