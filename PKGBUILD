@@ -3,7 +3,7 @@
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfce4-notifyd
-pkgver=0.9.1
+pkgver=0.9.2
 pkgrel=1
 pkgdesc="Notification daemon for the Xfce desktop"
 arch=('x86_64')
@@ -15,7 +15,7 @@ depends=('libxfce4ui' 'libxfce4util' 'libnotify' 'xfconf' 'sqlite' 'libcanberra'
 makedepends=('intltool' 'python' 'xfce4-panel' 'xfce4-dev-tools')
 provides=('notification-daemon')
 source=(https://archive.xfce.org/src/apps/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('ecbe017515b6c5c3b2f2882451d351a0b6735d80313039c6dde207dd96534fea')
+sha256sums=('47590f0c1f5cb45652d63e17cb4202bee2b2136432ac42395a4bedd110d18789')
 
 build() {
   cd $pkgname-$pkgver
