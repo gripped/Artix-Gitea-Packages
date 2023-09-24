@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: vkd3d
-  version: 1.7.1-1
+  version: 1.9-1
   arch:
     - x86_64
   pkgname:
     - vkd3d
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.1-1
+    version: 1.9-1
     packages:
-      - vkd3d-1.7.1-1-x86_64.pkg.tar.zst
+      - vkd3d-1.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
