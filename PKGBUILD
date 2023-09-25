@@ -4,7 +4,7 @@
 pkgname=qt6-grpc
 _qtver=6.5.2
 pkgver=${_qtver/-/}
-pkgrel=4
+pkgrel=4.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -26,7 +26,7 @@ prepare() {
 }
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  artix-cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
