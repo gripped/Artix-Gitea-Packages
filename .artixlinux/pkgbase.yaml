@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: imagemagick
-  version: 7.1.1.17-1
+  version: 7.1.1.18-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.1.1.17-1
+    version: 7.1.1.18-1
     packages:
-      - imagemagick-7.1.1.17-1-x86_64.pkg.tar.zst
+      - imagemagick-7.1.1.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
