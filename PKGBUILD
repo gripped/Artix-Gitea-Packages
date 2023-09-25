@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=ktextaddons
-pkgver=1.5.1
+pkgver=1.5.2
 pkgrel=1
 pkgdesc='Various text handling addons'
 arch=(x86_64)
@@ -28,7 +28,7 @@ optdepends=('languagetool: Grammar checking'
             'grammalecte: French grammar checking'
             'libreoffice: Use autocorrection data from LibreOffice')
 source=(https://download.kde.org/stable/$pkgname/$pkgname-$pkgver.tar.xz)
-sha256sums=('a72d7c4fc9802cb96a50ad7f5668205c79566db47512029c85786e2c6519cc48')
+sha256sums=('288bbb1cefb1e8b570a383c792eba5fca291c46dd0155dbc2531f0a36684a7db')
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
