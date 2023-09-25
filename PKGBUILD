@@ -3,9 +3,12 @@
 # Maintainer: Torsten Keßler <tpkessler@archlinux.org>
 
 pkgname=intel-graphics-compiler
-pkgver=1.0.14508.16
+pkgver=1.0.14828.8
 _llvmmaj=14
 _llvmver="${_llvmmaj}.0.5"
+_vciver=0.13.0
+_spirv_llvm_commit=23f398bf369093b1fd67459db8071ffcc6b92658
+_opencl_clang_commit=cf95b338d14685e4f3402ab1828bef31d48f1fd6
 pkgrel=1
 epoch=1
 pkgdesc='Intel Graphics Compiler for OpenCL'
@@ -14,16 +17,16 @@ url='https://github.com/intel/intel-graphics-compiler/'
 license=('MIT' 'custom')
 depends=('gcc-libs' 'zlib' 'spirv-tools')
 makedepends=('git' 'cmake' 'ninja' 'python' 'spirv-headers')
-provides=('intel-opencl-clang=15.0.0')
+provides=("intel-opencl-clang=${_llvmmaj}.0.0")
 conflicts=('intel-opencl-clang')
 replaces=('intel-opencl-clang')
 options=('!emptydirs' '!lto')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/intel/intel-graphics-compiler/archive/refs/tags/igc-$pkgver.tar.gz"
-        'git+https://github.com/intel/vc-intrinsics.git'
-        "git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git#branch=llvm_release_${_llvmmaj}0"
-        "git+https://github.com/intel/opencl-clang.git#branch=ocl-open-${_llvmmaj}0"
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/intel/intel-graphics-compiler/archive/refs/tags/igc-${pkgver}.tar.gz"
+        "git+https://github.com/intel/vc-intrinsics.git#tag=v${_vciver}"
+        "git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git#commit=${_spirv_llvm_commit}"
+        "git+https://github.com/intel/opencl-clang.git#commit=${_opencl_clang_commit}"
         "git+https://github.com/llvm/llvm-project.git#tag=llvmorg-${_llvmver}")
-sha256sums=('28fdb1fab9a26257711d4ba1c3130313046223eac5fa2b1cc14a1f3a323b35fe'
+sha256sums=('c62e4d68060a4527fd5932fc8dba496fb817d86293073024a90def20801fbf73'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -40,10 +43,10 @@ build() {
     CXXFLAGS+=" -fno-semantic-interposition"
     LDFLAGS+=" -Wl,-Bsymbolic"
 
-    CXXFLAGS+=" -I $srcdir/SPIRV-LLVM-Translator/include"
+    CXXFLAGS+=" -I ${srcdir}/SPIRV-LLVM-Translator/include"
 
     EMAIL='builduser@archlinux.org' \
-    cmake -B build -S "${pkgname}-igc-${pkgver}" \
+    artix-cmake -B build -S "${pkgname}-igc-${pkgver}" \
         -G Ninja \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
@@ -73,5 +76,5 @@ package() {
     # additional files for opencl-clang
     install -D -m644 opencl-clang/common_clang.h -t "${pkgdir}/usr/include/cclang"
     install -D -m644 opencl-clang/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-opencl-clang"
-    ln -s "libopencl-clang.so.${_llvmver}" "${pkgdir}/usr/lib/libopencl-clang.so"
+    ln -s "libopencl-clang.so.${_llvmmaj}" "${pkgdir}/usr/lib/libopencl-clang.so"
 }

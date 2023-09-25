@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: intel-graphics-compiler
-  version: 1:1.0.14508.16-1
+  version: 1:1.0.14828.8-1
   arch:
     - x86_64
   pkgname:
     - intel-graphics-compiler
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1:1.0.14508.16-1
+    version: 1:1.0.14828.8-1
     packages:
-      - intel-graphics-compiler-1:1.0.14508.16-1-x86_64.pkg.tar.zst
+      - intel-graphics-compiler-1:1.0.14828.8-1-x86_64.pkg.tar.zst
   world:
     version: 1:1.0.14062.11-3
     packages:
