@@ -3,7 +3,7 @@
 
 pkgname=perl-test-deep
 pkgver=1.204
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Extremely flexible deep comparison "
 arch=('any')
 url="https://search.cpan.org/dist/Test-Deep"
