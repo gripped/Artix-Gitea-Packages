@@ -3,7 +3,7 @@
 # Maintainer: Torsten Keßler <tpkessler@archlinux.org>
 
 pkgname=intel-compute-runtime
-pkgver=23.26.26690.22
+pkgver=23.30.26918.9
 pkgrel=1
 pkgdesc="Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver"
 arch=(x86_64)
@@ -17,12 +17,12 @@ provides=(opencl-driver level-zero-driver)
 # https://github.com/intel/compute-runtime/issues/528
 options=(!lto)
 source=(https://github.com/intel/compute-runtime/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
-        020-intel-compute-runtime-disable-werror.patch)
-sha256sums=('3fb6d1c9c82d211370da9d4e157883d718a4a01a5a225b2da6b00fefcaadf901'
-            '7c73a012264c76075c7c40e65e2d9e823f44a77e392edff78a73accf025db88c')
+        010-intel-compute-runtime-disable-werror.patch)
+sha256sums=('e1479f2f8344552978e4f7417c5f4e529ec827f737f7cb9bdba89fd1264793e8'
+            '5e4985e372ff27e5ceadb9f9b59445abed84d6c4ff4815c92330ecf9c2611193')
 
 prepare() {
-  patch -d compute-runtime-${pkgver} -Np1 -i "${srcdir}/020-intel-compute-runtime-disable-werror.patch"
+  patch -d compute-runtime-${pkgver} -Np1 -i "${srcdir}/010-intel-compute-runtime-disable-werror.patch"
 }
 
 build() {
@@ -31,7 +31,7 @@ build() {
   CXXFLAGS+=' -DSANITIZER_BUILD=1'
   CFLAGS+=' -DSANITIZER_BUILD=1'
   # tests currently disabled because of https://github.com/intel/compute-runtime/issues/599
-  cmake -B build -S compute-runtime-${pkgver} \
+  artix-cmake -B build -S compute-runtime-${pkgver} \
     -G 'Unix Makefiles' \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
