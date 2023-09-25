@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-mpg123
-  version: 1.31.3-1
+  version: 1.32.1-1
   arch:
     - x86_64
   pkgname:
     - lib32-mpg123
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.31.3-1
+    version: 1.32.1-1
     packages:
-      - lib32-mpg123-1.31.3-1-x86_64.pkg.tar.zst
+      - lib32-mpg123-1.32.1-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
