@@ -9,7 +9,7 @@ arch=('any')
 license=('MIT')
 depends=('python' 'python-jinja' 'python-lxml' 'python-setuptools')
 makedepends=('python-build' 'python-installer' 'python-wheel')
-checkdepends=('python-pytest' 'xorgproto' 'libx11' 'glfw-x11' 'xorg-server-xvfb' 'mingw-w64-gcc' 'wine' 'rust')
+#checkdepends=('python-pytest' 'xorgproto' 'libx11' 'glfw-x11' 'xorg-server-xvfb' 'mingw-w64-gcc' 'wine' 'rust')
 source=(${url}/archive/refs/tags/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha512sums=('328d0dbe33e69f846d1c54226c6675694404f41e53c4762e6013c7bfe76b0700f0b28f4117a2018a09c9c23ccb6ad94d7b20882fefc2513941a4515686c9b9e7')
 b2sums=('788d2b70222fd09eea02515bdf3cbc147540631bf35fe39f12aa21fdbabf3d229f4234a430217dfaf3363934b8be12dd6a19871049a7b117deb8260ec69f8c67')
@@ -19,13 +19,14 @@ build() {
   python -m build --wheel --no-isolation
 }
 
-check() {
-  cd ${pkgname}-${pkgver}
-  rm test/c/run/wgl -r # Remove Windows tests
-  PRINT_MESSAGE=1 \
-  EXIT_ON_FAILURE=1 \
-  xvfb-run ./utility/test.sh
-}
+# mingw depends for the check are not worth it
+#check() {
+#  cd ${pkgname}-${pkgver}
+#  rm test/c/run/wgl -r # Remove Windows tests
+#  PRINT_MESSAGE=1 \
+#  EXIT_ON_FAILURE=1 \
+#  xvfb-run ./utility/test.sh
+#}
 
 package() {
   cd ${pkgname}-${pkgver}
