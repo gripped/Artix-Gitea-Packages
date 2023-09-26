@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: parallel
-  version: 20230822-1
+  version: 20230922-1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230822-1
+    version: 20230922-1
     packages:
-      - parallel-20230822-1-any.pkg.tar.zst
-      - parallel-docs-20230822-1-any.pkg.tar.zst
+      - parallel-20230922-1-any.pkg.tar.zst
+      - parallel-docs-20230922-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
