@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-poetry
-  version: 1.6.1-1
+  version: 1.6.1-2
   arch:
     - any
   pkgname:
     - python-poetry
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.1-1
+    version: 1.6.1-2
     packages:
-      - python-poetry-1.6.1-1-any.pkg.tar.zst
+      - python-poetry-1.6.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
