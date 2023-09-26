@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mpv
-  version: 1:0.36.0-2
+  version: 1:0.36.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:0.36.0-2
+    version: 1:0.36.0-1.1
     packages:
-      - mpv-1:0.36.0-2-x86_64.pkg.tar.zst
+      - mpv-1:0.36.0-1.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

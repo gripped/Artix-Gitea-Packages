@@ -7,7 +7,7 @@ pkgname=mpv
 epoch=1
 _tag='3996724d3fa1c51cc7998f3de2e22e2c99e6d270' # git rev-parse v${pkgver}
 pkgver=0.36.0
-pkgrel=2
+pkgrel=1.1
 pkgdesc='a free, open source, and cross-platform media player'
 arch=('x86_64')
 # We link against libraries that are licensed GPLv3 explicitly, so our
@@ -33,6 +33,23 @@ options=('!emptydirs')
 validpgpkeys=('145077D82501AA20152CACCE8D769208D5E31419') # sfan5 <sfan5@live.de>
 source=("git+https://github.com/mpv-player/mpv.git#tag=${_tag}?signed")
 sha256sums=('SKIP')
+
+prepare() {
+  cd mpv
+
+  # https://github.com/mpv-player/mpv/issues/12009
+  git cherry-pick -n 48eb77207bff01ae766a9fb33b4e4c35cfad62c9
+  git cherry-pick -n 221a574a503604fbda6f25f171852d99e49de06b
+
+  # fix lavfi-complex crash
+  git cherry-pick -n 65840f8889a2a19610895c8223bbd1669448f062
+
+  # https://github.com/mpv-player/mpv/issues/12031
+  git cherry-pick -n 59ac302dff06433c5fe46a3d3beeb63df18bea9e
+
+  # https://github.com/mpv-player/mpv/issues/11958
+  git cherry-pick -n 640c07fb19b7ea11f1a97784e517c38449f816d0
+}
 
 build() {
   local _meson_options=(
