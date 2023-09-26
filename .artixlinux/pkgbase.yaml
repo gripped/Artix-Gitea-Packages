@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-cookiecutter
-  version: 2.3.0-1
+  version: 2.3.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.3.0-1
+    version: 2.3.1-1
     packages:
-      - python-cookiecutter-2.3.0-1-any.pkg.tar.zst
+      - python-cookiecutter-2.3.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
