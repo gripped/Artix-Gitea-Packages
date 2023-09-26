@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.5.4.zen2
+pkgver=6.5.5.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -11,7 +11,6 @@ makedepends=(
   bc
   cpio
   gettext
-  git
   libelf
   pahole
   perl
@@ -29,7 +28,7 @@ options=('!strip')
 _srcname=linux-${pkgver%.*}
 _srctag=v${pkgver%.*}-${pkgver##*.}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/$_srcname.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
@@ -38,9 +37,15 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
 )
-b2sums=('99df210ee8f244de9059c9699648f7aad8e520030ce14e61971ba95365635e698e7c66074aa3f5c57bd75f1058e1c1dbaecea66d0b381202f239b3a04a396371'
+# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
+sha256sums=('8cf10379f7df8ea731e09bff3d0827414e4b643dd41dc99d0af339669646ef95'
+            'SKIP'
+            'f70644a1398a8db68150a9e95ff84adf036a4fe6ae3dc571c274bf6e3e51eaad'
+            'SKIP'
+            'f1b0ff9b105a4c278ab8cf20d388fe2f8312a2d654afa77b3cf7e0ec960ab673')
+b2sums=('2152bdcd8799b89612e76c1b3794313f981e08eda23c0150e56297a07f326c85f2a7a08106eb4e4d502b2134ed69e4344263fe6a2b398af5b5d7ccd018c0899b'
         'SKIP'
-        'aa6ffa211fd8927dfd00daf9e20bd8502e535145a391c04b2273dc932194069d363e0215ceeb9379ebc23f34710b6d3db0bcce8566d114da75ca8752d6b128e5'
+        '45049e77772f5df11ddb9b664d79a47dbfb9f0c3124685ac0c935638fcd6e6dfb8a0f70e4a2f249a6f46d44e46ab6a397ce8a2759cf7fdbd3b28bbd14e341308'
         'SKIP'
         '612b3d273842a059547be4ec157c4accec140e2328e20410bfda9f9f911638f2a21f7a4ac4fdb17d176035f1fa760cd5eeb215810ebe9fbf41f7ba000c6d74ee')
 
