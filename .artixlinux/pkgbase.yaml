@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - cryptsetup-dinit
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20230924-1
     packages:
       - cryptsetup-dinit-20230924-1-any.pkg.tar.zst
-  system:
-    version: 20211025-5
-    packages:
-      - cryptsetup-dinit-20211025-5-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
