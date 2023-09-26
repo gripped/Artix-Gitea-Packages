@@ -8,7 +8,7 @@ url='https://github.com/haasn/libplacebo'
 arch=('x86_64')
 license=('LGPL2.1')
 depends=('vulkan-icd-loader' 'libvulkan.so' 'glslang' 'lcms2' 'liblcms2.so' 'shaderc' 'libshaderc_shared.so'
-         'glibc' 'gcc-libs' 'libunwind' 'libdovi.so')
+         'glibc' 'gcc-libs' 'libunwind' 'libdovi.so' 'xxhash')
 makedepends=(
   'meson' 'ninja' 'vulkan-headers' 'glad' 'nuklear'
   'python' 'python-setuptools' 'python-mako' 'python-markupsafe' 'python-jinja'
