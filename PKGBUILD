@@ -27,17 +27,17 @@ sha256sums=(
 )
 
 prepare() {
-	rm -rf "timewarrior-$pkgver/src/libshared"
-	ln -sr "libshared-$_libshared_c" "timewarrior-$pkgver/src/libshared"
+	rm -rf "timewarrior-$_ver_c/src/libshared"
+	ln -sr "libshared-$_libshared_c" "timewarrior-$_ver_c/src/libshared"
 }
 
 build() {
-	cd "timewarrior-$pkgver"
+	cd "timewarrior-$_ver_c"
 	cmake -D CMAKE_INSTALL_PREFIX=/usr .
 	make
 }
 
 package() {
-	cd "timewarrior-$pkgver"
+	cd "timewarrior-$_ver_c"
 	make install DESTDIR="$pkgdir"
 }
