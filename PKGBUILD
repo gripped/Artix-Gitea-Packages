@@ -30,12 +30,12 @@ build() {
     -D d3d11=disabled \
     -D libdovi=enabled \
     -D demos=false
-  ninja -C build
+  meson compile -C build
 }
 
 check() {
   cd ${pkgbase}-v${pkgver}
-  ninja -C build test
+  meson test -C build
 }
 
 package() {
