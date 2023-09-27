@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xdg-desktop-portal
-  version: 1.18.0-1
+  version: 1.18.0-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.18.0-1
+    version: 1.18.0-2
     packages:
-      - xdg-desktop-portal-1.18.0-1-x86_64.pkg.tar.zst
+      - xdg-desktop-portal-1.18.0-2-x86_64.pkg.tar.zst
   world:
     version: 1.16.0-3
     packages:
