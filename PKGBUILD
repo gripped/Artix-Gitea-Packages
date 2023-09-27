@@ -3,7 +3,7 @@
 
 pkgname=mpg123
 pkgver=1.32.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Console based real time MPEG Audio Player for Layer 1, 2 and 3'
 url="https://sourceforge.net/projects/mpg123"
 arch=('x86_64')
@@ -15,10 +15,18 @@ optdepends=('sdl2: for sdl audio support'
             'libpulse: for pulse audio support'
             'perl: for conplay')
 provides=(libmpg123.so libout123.so)
-source=(https://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.bz2{,.sig})
+source=(https://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.bz2{,.sig}
+        symbol_fix.patch)
 sha512sums=('084f4575d3ad88373a04035778b40e4871b6da969f42b426c76d9539632baa12534d7f0f9b976be228fd313dea9c31f7a259e0a8b56d044c7e89fefdf897def2'
-            'SKIP')
+            'SKIP'
+            'a32bdc9baeec50856e586b8cd49e1485c798ed6ff1332ce4e59cb4bf45b45f8c6141089dc4a253cc8807190781bc3b95e82aff2e2a13f2b5c2d09286880d0216')
 validpgpkeys=('D021FF8ECF4BE09719D61A27231C4CBC60D5CAFE')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  # fix an ABI breakage
+  patch -Np1 -i ../symbol_fix.patch
+}
 
 build() {
   cd ${pkgname}-${pkgver}

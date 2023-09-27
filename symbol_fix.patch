@@ -1,0 +1,39 @@
+diff --git a/src/libmpg123/libmpg123.c b/src/libmpg123/libmpg123.c
+@@ -1022,7 +1022,7 @@
+ 
+ 	num will be updated to the last decoded frame number (may possibly _not_ increase, p.ex. when format changed).
+ */
+-int attribute_align_arg mpg123_decode_frame64(mpg123_handle *mh, int64_t *num, unsigned char **audio, size_t *bytes)
++int attribute_align_arg mpg123_decode_frame_64(mpg123_handle *mh, int64_t *num, unsigned char **audio, size_t *bytes)
+ {
+ 	if(bytes != NULL) *bytes = 0;
+ 	if(mh == NULL) return MPG123_BAD_HANDLE;
+diff --git a/src/libmpg123/mpg123.h b/src/libmpg123/mpg123.h
+@@ -893,7 +893,7 @@
+  *  \param bytes number of output bytes ready in the buffer
+  *  \return MPG123_OK or error/message code
+  */
+-MPG123_EXPORT int mpg123_decode_frame64( mpg123_handle *mh
++MPG123_EXPORT int mpg123_decode_frame_64( mpg123_handle *mh
+ ,	int64_t *num, unsigned char **audio, size_t *bytes );
+ 
+ /** Decode current MPEG frame to internal buffer.
+diff --git a/src/libmpg123/lfs_wrap.c b/src/libmpg123/lfs_wrap.c
+@@ -220,7 +220,7 @@
+ int attribute_align_arg mpg123_decode_frame(mpg123_handle *mh, off_t *num, unsigned char **audio, size_t *bytes)
+ {
+ 	int64_t fnum = 0;
+-	int ret = mpg123_decode_frame64(mh, &fnum, audio, bytes);
++	int ret = mpg123_decode_frame_64(mh, &fnum, audio, bytes);
+ 	OFF_CONVP(fnum, num, mh)
+ 	return ret;
+ }
+@@ -527,7 +527,7 @@
+ 
+ int attribute_align_arg mpg123_decode_frame_64(mpg123_handle *mh, off64_t *num, unsigned char **audio, size_t *bytes)
+ {
+-	return mpg123_decode_frame64(mh, (int64_t*)num, audio, bytes);
++	return mpg123_decode_frame_64(mh, (int64_t*)num, audio, bytes);
+ }
+ 
+ off64_t attribute_align_arg mpg123_timeframe_64(mpg123_handle *mh, double seconds)
