@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libreoffice-still
-  version: 7.5.6-1
+  version: 7.5.7-1
   arch:
     - x86_64
   pkgname:
@@ -52,7 +52,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 7.5.6-1
+    version: 7.5.7-1
     packages:
-      - libreoffice-still-sdk-7.5.6-1-x86_64.pkg.tar.zst
-      - libreoffice-still-7.5.6-1-x86_64.pkg.tar.zst
+      - libreoffice-still-sdk-7.5.7-1-x86_64.pkg.tar.zst
+      - libreoffice-still-7.5.7-1-x86_64.pkg.tar.zst
