@@ -1,19 +1,22 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 _pyname=traitlets
 pkgname=python-$_pyname
-pkgver=5.9.0
-pkgrel=2
+pkgver=5.10.1
+pkgrel=1
 pkgdesc='A configuration system for Python applications'
 arch=(any)
 url='https://traitlets.readthedocs.io/en/stable'
 license=(BSD)
-depends=(python-decorator)
-makedepends=(python-build python-installer python-hatchling)
-checkdepends=(python-pytest)
+depends=(python
+         python-argcomplete)
+makedepends=(python-build
+             python-hatchling
+             python-installer)
+checkdepends=(python-pytest-mock)
 source=(https://pypi.python.org/packages/source/t/traitlets/traitlets-$pkgver.tar.gz)
-sha256sums=('f6cde21a9c68cf756af02035f72d5a723bf607e862e7be33ece505abf4a3bad9')
+sha256sums=('db9c4aa58139c3ba850101913915c042bdba86f7c8a0dda1c6f7f92c5da8e542')
 
 build() {
   cd $_pyname-$pkgver
@@ -28,5 +31,5 @@ check() {
 package() {
   cd $_pyname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -Dm644 COPYING.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
 }
