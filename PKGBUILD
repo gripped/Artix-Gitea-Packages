@@ -3,7 +3,7 @@
 
 pkgname=udisks2
 pkgver=2.10.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Daemon, tools and libraries to access and manipulate disks, storage devices and technologies"
 arch=('x86_64')
 url="https://www.freedesktop.org/wiki/Software/udisks/"
@@ -13,20 +13,29 @@ license=(
 )
 depends=(
   'acl'
+  'btrfs-progs'
   'gcc-libs'
   'glib2'
   'glibc'
   'libatasmart'
   'libblockdev'
   'libgudev'
+  'lvm2'
   'polkit'
   'libelogind'
   'util-linux-libs'
 )
 makedepends=(
-  'elogind'
   'gobject-introspection'
   'gtk-doc'
+  'elogind'
+)
+optdepends=(
+  'dosfstools: FAT filesystem support'
+  'exfatprogs: exFAT filesystem support'
+  'e2fsprogs: Ext2/3/4 filesystem suport'
+  'udftools: UDF filesystem support'
+  'xfsprogs: XFS filesystem support'
 )
 backup=('etc/udisks2/udisks2.conf')
 source=("https://github.com/storaged-project/udisks/releases/download/udisks-$pkgver/udisks-$pkgver.tar.bz2")
@@ -36,12 +45,15 @@ b2sums=('41282e4dbbd93e6bda2a10a6ff2f2fb82bfc83b3ccbed9450cca7888c634cde9300fcd0
 build() {
   local configure_options=(
     --disable-static
+    --enable-btrfs
     --enable-gtk-doc
+    --enable-lvm2
     --libexecdir=/usr/lib
     --localstatedir=/var
     --prefix=/usr
     --sbindir=/usr/bin
     --sysconfdir=/etc
+    --with-systemdsystemunitdir=no
     --with-tmpfilesdir=/usr/lib/tmpfiles.d
   )
 
