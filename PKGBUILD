@@ -8,7 +8,7 @@ _vlcver=3.0.18
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=16
+pkgrel=16.1
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
@@ -19,7 +19,7 @@ depends=('a52dec' 'libdvbpsi' 'libxpm' 'libdca' 'libproxy' 'lua' 'libidn'
          'libmpeg2' 'xcb-util-keysyms' 'libtar' 'libxinerama' 'libsecret'
          'libupnp' 'libixml.so' 'libupnp.so' 'libarchive' 'qt5-base'
          'qt5-x11extras' 'qt5-svg' 'freetype2' 'fribidi' 'harfbuzz'
-         'fontconfig' 'libxml2' 'gnutls' 'libplacebo' 'aribb24')
+         'fontconfig' 'libxml2' 'gnutls' 'libplacebo5' 'aribb24')
 makedepends=('gst-plugins-base-libs' 'live-media' 'libnotify' 'libbluray'
              'flac' 'libdc1394' 'libavc1394' 'libcaca' 'gtk3'
              'librsvg' 'libgme' 'xosd' 'twolame' 'aalib' 'avahi' 'libudev'
@@ -131,14 +131,14 @@ prepare() {
 build() {
   cd ${pkgname}-${_vlcver}
 
-  export CFLAGS+=" -I/usr/include/samba-4.0 -ffat-lto-objects"
-  export CPPFLAGS+=" -I/usr/include/samba-4.0"
+  export CFLAGS+=" -I/usr/include/samba-4.0 -ffat-lto-objects -I/usr/include/libplacebo5"
+  export CPPFLAGS+=" -I/usr/include/samba-4.0 -I/usr/include/libplacebo5"
   export CXXFLAGS+=" -std=c++17"
   export PKG_CONFIG_PATH="/usr/lib/ffmpeg4.4/pkgconfig"
+  export PKG_CONFIG_PATH="/usr/lib/libplacebo5/pkgconfig:$PKG_CONFIG_PATH"
   export LUAC=/usr/bin/luac
   export LUA_LIBS="$(pkg-config --libs lua)"
   export RCC=/usr/bin/rcc-qt5
-  export PKG_CONFIG_PATH="/usr/lib/ffmpeg4.4/pkgconfig/:$PKG_CONFIG_PATH"
 
   ./configure \
     --prefix=/usr \
