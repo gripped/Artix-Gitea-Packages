@@ -1,16 +1,15 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Christoph W <c w e g e n e r at gmail dot com>
 # Contributor: Gary van der Merwe <g a r y v d m at gmail dot com>
 
 pkgname=python-requests-ntlm
 _module='requests_ntlm'
 pkgver=1.2.0
-pkgrel=1
-pkgdesc="Allows for HTTP NTLM authentication using the requests library."
+pkgrel=2
+pkgdesc="Allows for HTTP NTLM authentication using the requests library"
 url="https://github.com/requests/requests-ntlm"
-depends=('python' 'python-requests' 'python-ntlm-auth')
-makedepends=(python-setuptools)
+depends=('python' 'python-requests' 'python-ntlm-auth' 'python-pyspnego')
+makedepends=('python-setuptools')
 license=('custom:ISC License (ISCL)')
 arch=(any)
 source=("https://files.pythonhosted.org/packages/source/r/requests_ntlm/requests_ntlm-${pkgver}.tar.gz")
