@@ -9,29 +9,26 @@ pkgbase:
     - python-brotli
     - brotli-testdata
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 1.1.0-1
     packages:
       - brotli-1.1.0-1-x86_64.pkg.tar.zst
       - python-brotli-1.1.0-1-x86_64.pkg.tar.zst
       - brotli-testdata-1.1.0-1-x86_64.pkg.tar.zst
-  system:
-    version: 1.0.9-12
-    packages:
-      - brotli-1.0.9-12-x86_64.pkg.tar.zst
-      - python-brotli-1.0.9-12-x86_64.pkg.tar.zst
-      - brotli-testdata-1.0.9-12-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
