@@ -14,7 +14,8 @@ license=('Apache-2.0')
 depends=('apr' 'apr-util' 'bash' 'dbus' 'expat' 'file' 'gcc-libs' 'glibc' 'libsasl' 'libutf8proc' 'lz4' 'serf' 'sqlite'
          'zlib' )
 makedepends=('apache' 'python' 'python-py3c' 'perl' 'swig' 'java-environment>=8'
-             'libsecret' 'kwallet' 'kdelibs4support' 'ruby')
+             'libsecret' 'kwallet' 'kdelibs4support' 'ruby'
+             'autoconf' 'automake' 'libtool')
 optdepends=('libsecret: for GNOME Keyring for auth credentials'
             'kwallet: for KWallet for auth credentials'
             'bash-completion: for svn bash completion'
