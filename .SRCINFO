@@ -1,0 +1,19 @@
+pkgbase = python-regex
+	pkgdesc = Alternative python regular expression module.
+	pkgver = 2023.8.8
+	pkgrel = 1
+	url = https://github.com/mrabarnett/mrab-regex
+	arch = x86_64
+	license = Python
+	license = Apache
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = python
+	options = !emptydirs
+	source = https://files.pythonhosted.org/packages/source/r/regex/regex-2023.8.8.tar.gz
+	sha256sums = fcbdc5f2b0f1cd0f6a56cdb46fe41d2cce1e644e3b68832f3eeebc5fb0f7712e
+	b2sums = 0d0f582e42c93ec4497f82ac69aaad6a69dd4bbb482bef6e06a51340a67b8d041ec554d878d8f0dcb57dce08b708fd87762ed8451f0221019f38d8188031711b
+
+pkgname = python-regex

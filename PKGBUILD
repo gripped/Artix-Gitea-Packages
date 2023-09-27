@@ -6,7 +6,7 @@
 
 _pkgbase=regex
 pkgname=python-regex
-pkgver=2023.6.3
+pkgver=2023.8.8
 pkgrel=1
 pkgdesc="Alternative python regular expression module."
 arch=('x86_64')
@@ -16,8 +16,8 @@ depends=('python')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 options=(!emptydirs)
 source=("https://files.pythonhosted.org/packages/source/r/${_pkgbase}/${_pkgbase}-${pkgver}.tar.gz")
-sha256sums=('72d1a25bf36d2050ceb35b517afe13864865268dfb45910e2e17a84be6cbfeb0')
-b2sums=('c7735e19df80e919fd577723c54f6761698adf014dd4e936cda6a1ed745f26f083abd59ed2a772a70e16bec742f8d29a1e76a726b28e1395265c9941ff4e7b99')
+sha256sums=('fcbdc5f2b0f1cd0f6a56cdb46fe41d2cce1e644e3b68832f3eeebc5fb0f7712e')
+b2sums=('0d0f582e42c93ec4497f82ac69aaad6a69dd4bbb482bef6e06a51340a67b8d041ec554d878d8f0dcb57dce08b708fd87762ed8451f0221019f38d8188031711b')
 
 build() {
   cd "regex-${pkgver}"
