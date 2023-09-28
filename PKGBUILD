@@ -53,7 +53,7 @@ checkdepends=(git
     jupyter-notebook
 )
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('ff662ab7cae5d762645e51f81ccc065655f81f6c33cdbcb2bb4a60787e5724f4')
+sha256sums=('cb0472d8e7a8b05fb6ffbbf3558a96c648ae8ee045b24a1996061447c2c0e8bf')
 
 build() {
   cd ${_pkg}-${pkgver}
