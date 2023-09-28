@@ -3,7 +3,7 @@
 pkgbase="cups"
 pkgname=('libcups' 'cups')
 pkgver=2.4.7
-pkgrel=1
+pkgrel=2
 epoch=1
 arch=('x86_64')
 license=('Apache' 'custom')
@@ -120,7 +120,8 @@ backup=(etc/cups/cupsd.conf
 depends=('acl' 'pam' "libcups>=${pkgver}" 'cups-filters'
          'dbus' 'libudev' 'libpaper' 'hicolor-icon-theme'
          'glibc' 'gcc-libs' 'avahi' 'gnutls')
-optdepends=('libusb: for usb printer backend'
+optdepends=('cups-browsed: to browse the network for remote CUPS queues and IPP network printers'
+            'libusb: for usb printer backend'
             'ipp-usb: allows to send HTTP requests via a USB connection on devices without Ethernet or WiFi connections'
             'xdg-utils: xdg .desktop file support'
             'colord: for ICC color profile support'
@@ -150,7 +151,7 @@ optdepends=('libusb: for usb printer backend'
   # install ssl directory where to store the certs, solves some samba issues
   install -dm700 -g 209 "${pkgdir}"/etc/cups/ssl
   # remove directory from package, it will be recreated at each server start
-  rm -rf "${pkgdir}"/{,var/}run
+  rm -rf "${pkgdir}"/run
 
   # install some more configuration files that will get filled by cupsd
   touch "${pkgdir}"/etc/cups/printers.conf
