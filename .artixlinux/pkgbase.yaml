@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: cups-filters
-  version: 1.28.17-4
+  version: 2.0.0-1
   arch:
     - x86_64
   pkgname:
     - cups-filters
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.0.0-1
+    packages:
+      - cups-filters-2.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.28.17-4
     packages:
