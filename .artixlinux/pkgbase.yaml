@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artools
-  version: 0.31.5-1
+  version: 0.31.5-2
   arch:
     - any
   pkgname:
@@ -30,11 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.31.5-1
+    version: 0.31.5-2
     packages:
-      - artools-base-0.31.5-1-any.pkg.tar.zst
-      - artools-pkg-0.31.5-1-any.pkg.tar.zst
-      - artools-iso-0.31.5-1-any.pkg.tar.zst
+      - artools-base-0.31.5-2-any.pkg.tar.zst
+      - artools-pkg-0.31.5-2-any.pkg.tar.zst
+      - artools-iso-0.31.5-2-any.pkg.tar.zst
   world:
     version: 0.31.4-1
     packages:
