@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: fcitx-qt5
-  version: 1.2.7-15
+  version: 1.2.7-16
   arch:
     - x86_64
   pkgname:
     - fcitx-qt5
     - fcitx-qt6
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.2.7-16
+    packages:
+      - fcitx-qt5-1.2.7-16-x86_64.pkg.tar.zst
+      - fcitx-qt6-1.2.7-16-x86_64.pkg.tar.zst
   world:
     version: 1.2.7-15
     packages:
