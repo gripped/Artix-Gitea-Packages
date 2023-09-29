@@ -1,0 +1,11 @@
+--- a/qt6ct-qtplugin/qt6ctplatformtheme.cpp	2023-09-08 18:34:48.309999115 +0200
++++ b/qt6ct-qtplugin/qt6ctplatformtheme.cpp	2023-09-08 18:45:50.196665794 +0200
+@@ -95,7 +95,7 @@
+ const QPalette *Qt6CTPlatformTheme::palette(QPlatformTheme::Palette type) const
+ {
+     Q_UNUSED(type);
+-    return (m_usePalette && m_palette) ? m_palette : nullptr;
++    return (m_usePalette && m_palette) ? m_palette : QGenericUnixTheme::palette(type);
+ }
+ 
+ const QFont *Qt6CTPlatformTheme::font(QPlatformTheme::Font type) const
