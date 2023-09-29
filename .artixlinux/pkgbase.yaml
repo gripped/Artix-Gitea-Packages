@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: greetd-dinit
-  version: 20230923-1
+  version: 20230923-2
   arch:
     - any
   pkgname:
     - greetd-dinit
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230923-1
+    version: 20230923-2
     packages:
-      - greetd-dinit-20230923-1-any.pkg.tar.zst
+      - greetd-dinit-20230923-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
