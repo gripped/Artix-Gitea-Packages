@@ -51,7 +51,7 @@ source=("$pkgname-$pkgver.tar.gz::https://codeberg.org/smxi/$pkgname/archive/${_
 b2sums=('864258f35f50ed6d5e781c3ed6df5b11dc405ef6f4bf4e845f5c7dcf859ddd1f65eed0591d6295ae3ac24b3b43ac00d54c6b4e9fd5abef295a39d43b16ebb050')
 
 package() {
-    cd "$pkgname-${_pkgver}"
+    cd "$pkgname"
 
     install -Dm 00755 $pkgname "${pkgdir}/usr/bin/$pkgname"
     install -Dm 00644 $pkgname.1 "${pkgdir}/usr/share/man/man1/$pkgname.1"
