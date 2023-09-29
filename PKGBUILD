@@ -16,7 +16,7 @@ pkgname=(
   'lib32-mesa-vdpau'
   'lib32-mesa'
 )
-pkgver=23.1.8
+pkgver=23.2.1
 pkgrel=1
 epoch=1
 pkgdesc="An open-source implementation of the OpenGL specification (32-bit)"
@@ -45,6 +45,7 @@ makedepends=(
   'lib32-spirv-tools'
   'lib32-vulkan-icd-loader'
   'lib32-wayland'
+  'lib32-xcb-util-keysyms'
   'lib32-zstd'
 
   # shared between mesa and lib32-mesa
@@ -65,11 +66,11 @@ source=(
   clang_resource_dir.patch
   LICENSE
 )
-sha256sums=('45434ff91a709844130a3174d9c0ef39c6b50725b2bb0c13e736f36134db14ad'
+sha256sums=('64de0616fc2d801f929ab1ac2a4f16b3e2783c4309a724c8a259b20df8bbc1cc'
             'SKIP'
             '9ed89eee34f69d57d37bad3eb061d313a0433a22be4b6e8f82949e86592aee7d'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537')
-b2sums=('43825c936f0dca4bc7e954cf7f8afc9566fb26d23969a9f60279a279504464b4eee966f5db34602489fb659942d11629675a1ef44493020925047bbd8cd7f0d7'
+b2sums=('51e44c2e9b7dfe17cf4cb7252e169109d03a006caa8ec34036fb594c0c44e9278d0088170894c1a9debdea911f746470e1d256576e0635cae5c3e670ab49161b'
         'SKIP'
         '40cf2bc3381d5318c95d3fdadef1bdb6bb57f3b04270e07c0a66613b6432ad617be73d34122be3280d861dde0663fc5c96bb37a9312c2e333e39e69287a9e33a'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb')
@@ -122,7 +123,7 @@ build() {
     -D shared-glapi=enabled
     -D valgrind=disabled
     -D video-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc
-    -D vulkan-drivers=amd,intel,intel_hasvk,swrast,virtio-experimental
+    -D vulkan-drivers=amd,intel,intel_hasvk,swrast,virtio
     -D vulkan-layers=device-select,intel-nullhw,overlay
   )
 
@@ -239,6 +240,7 @@ package_lib32-vulkan-intel() {
     'lib32-libx11'
     'lib32-libxshmfence'
     'lib32-wayland'
+    'lib32-xcb-util-keysyms'
     'lib32-zstd'
   )
   optdepends=('lib32-vulkan-mesa-layers: additional vulkan layers')
@@ -259,6 +261,7 @@ package_lib32-vulkan-radeon() {
     'lib32-libxshmfence'
     'lib32-llvm-libs'
     'lib32-wayland'
+    'lib32-xcb-util-keysyms'
     'lib32-zstd'
 
     'vulkan-radeon'
@@ -282,6 +285,7 @@ package_lib32-vulkan-swrast() {
     'lib32-libxshmfence'
     'lib32-llvm-libs'
     'lib32-wayland'
+    'lib32-xcb-util-keysyms'
     'lib32-zstd'
   )
   optdepends=('lib32-vulkan-mesa-layers: additional vulkan layers')
@@ -302,6 +306,7 @@ package_lib32-vulkan-virtio() {
     'lib32-libx11'
     'lib32-libxshmfence'
     'lib32-wayland'
+    'lib32-xcb-util-keysyms'
     'lib32-zstd'
   )
   optdepends=('lib32-vulkan-mesa-layers: additional vulkan layers')
