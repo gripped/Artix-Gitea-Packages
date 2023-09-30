@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: libdbusmenu-glib
-  version: 16.04.0.r498-1
+  name: libdbusmenu
+  version: 16.04.0.r498-2
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libdbusmenu-gtk2
     - libdbusmenu-gtk3
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 16.04.0.r498-1
+    version: 16.04.0.r498-2
     packages:
-      - libdbusmenu-glib-16.04.0.r498-1-x86_64.pkg.tar.zst
-      - libdbusmenu-gtk2-16.04.0.r498-1-x86_64.pkg.tar.zst
-      - libdbusmenu-gtk3-16.04.0.r498-1-x86_64.pkg.tar.zst
+      - libdbusmenu-glib-16.04.0.r498-2-x86_64.pkg.tar.zst
+      - libdbusmenu-gtk2-16.04.0.r498-2-x86_64.pkg.tar.zst
+      - libdbusmenu-gtk3-16.04.0.r498-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
