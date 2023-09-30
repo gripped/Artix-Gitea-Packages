@@ -15,7 +15,7 @@ depends=('apr' 'apr-util' 'bash' 'dbus' 'expat' 'file' 'gcc-libs' 'glibc' 'libsa
          'zlib' )
 makedepends=('apache' 'python' 'python-py3c' 'perl' 'swig' 'java-environment>=8'
              'libsecret' 'kwallet' 'kdelibs4support' 'ruby'
-             'autoconf' 'automake' 'libtool')
+             'autoconf' 'automake' 'libtool' 'autogen' 'm4')
 optdepends=('libsecret: for GNOME Keyring for auth credentials'
             'kwallet: for KWallet for auth credentials'
             'bash-completion: for svn bash completion'
