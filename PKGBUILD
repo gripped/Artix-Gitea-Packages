@@ -33,6 +33,7 @@ source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2
         ruby-frozen-nil.patch
         subversion-1.14.1-python-3.11-build.patch
         subversion-1.14.2-swig-py-Fix-conditionals-by-SWIG-version-and-by-Pyth.patch
+        0001-libtool-path.patch
 )
 sha512sums=('20ada4688ca07d9fb8da4b7d53b5084568652a3b9418c65e688886bae950a16a3ff37710fcfc9c29ef14a89e75b2ceec4e9cf35d5876a7896ebc2b512cfb9ecc'
             '3df59e92aa0314ff6adce26e2e1162bf2872ca03ff1f78891081a60e67b521b6046b4a2f85f718dcd27f9d5709594658817a09548cdb74e3976d371dbe47e7db'
@@ -40,7 +41,8 @@ sha512sums=('20ada4688ca07d9fb8da4b7d53b5084568652a3b9418c65e688886bae950a16a3ff
             '60d538160e738eb3b3e84a3881fe5a8d75c79053d3f31c4c29ef6ace6ccc5dd4367ed712766c911bae3436e9706e4dd144b270bb45161a6c1834a37e154d0440'
             'bb772e55acd9601121ad06b254c364e8d8cf772ca59b8df0cf4c5c5ecba110d4108d0363672f121f770550cdd052802474029e57643258f398aacd2b63ccb898'
             'cad1ef6359c4eecce4fc44fb0c8a01a7b9b94cd8b1b3f9bdd9d72b3591f75bada814a9597cea039c6e045f3f07807f17bd720e27cf7d8a92640bb45faaa6a982'
-            '9885226c2eea79712f316194fd9710bd940bce517cb2d3f1fcfbcb1edb8f10ae8496e7d03cd377cb991efa7259ff6930c488c603df206611bae4aa30a62cc596')
+            '9885226c2eea79712f316194fd9710bd940bce517cb2d3f1fcfbcb1edb8f10ae8496e7d03cd377cb991efa7259ff6930c488c603df206611bae4aa30a62cc596'
+            '4b27881e3ee812cd275b990b3a35b8ba66ffe6c93d425333d36b334307e5b1106e1eb8587ec57d9775a81e3b5b473750fd4a842abb13585d2ce41a8fa7f4fb20')
 validpgpkeys=('19BBCAEF7B19B280A0E2175E62D48FAD16A0DE01'
               '8BC4DAE0C5A4D65F404401074F7DBAA99A59B973'
               'BA3C15B1337CF0FB222BD41A1BCA6586A347943F'
@@ -60,11 +62,12 @@ prepare() {
    cd ${pkgname}-${pkgver}
    patch -Np0 -i ../subversion.rpath.fix.patch
    patch -p1 -i ../ruby-frozen-nil.patch
+   patch -Np1 -i ../0001-libtool-path.patch
    rm subversion/bindings/swig/proxy/*.swg
    # fix issues with Python 3.11 and swig
    patch -Np1 -i ../subversion-1.14.1-python-3.11-build.patch
    patch -Np1 -i ../subversion-1.14.2-swig-py-Fix-conditionals-by-SWIG-version-and-by-Pyth.patch
-
+   sed -i '/CDPATH/d' autogen.sh
    ./autogen.sh
 }
 
