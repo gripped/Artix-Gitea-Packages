@@ -47,6 +47,8 @@ prepare() {
   patch -d $pkgname-$pkgver -p1 < 2e62ef1e.patch # Fix cmake config compatibility mode
   patch -d $pkgbase-$pkgver -p1 < soversion.patch # Restore soversion
   sed -e 's|c++14|c++17|' -i $pkgbase-$pkgver/python/setup.py
+
+  rm -vrf $pkgbase-$pkgver/third_party/googletest
 }
 
 build() {
@@ -71,7 +73,7 @@ build() {
 }
 
 check() {
-  ctest --test-dir build
+  ctest --test-dir build --progress --output-on-failure
 
   cd $pkgbase-$pkgver/python
   pytest -vv google/$pkgbase/internal/ || true
