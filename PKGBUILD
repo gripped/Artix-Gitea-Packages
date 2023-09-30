@@ -14,12 +14,12 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.3
-pkgrel=5
+pkgver=6.5
+pkgrel=1
 license=('GPL2')
 arch=('x86_64')
 url='https://www.kernel.org'
-options=('!strip')
+options=('!strip' '!lto')
 makedepends=('git')
 # split packages need all package dependencies set manually in makedepends
 # kernel source deps
@@ -41,7 +41,7 @@ makedepends+=('libcap')
 makedepends+=('llvm' 'clang')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
-#        "https://cdn.kernel.org/pub/linux/kernel/v5.x/patch-$pkgver.1.xz"
+        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.5.xz"
         'cpupower.default'
         'fix-perf-tests.patch'
 )
@@ -50,6 +50,7 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('SKIP'
+            '22ad68c6c5f194f879fded9c44a205e394438fd505439e5f23e13e22ae1b7fe0'
             '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f'
             '26bce106f363fd382b5669c5098c76c127d564da827b254847c7b7e76e39f912')
 
@@ -82,6 +83,7 @@ build() {
     perfexecdir=lib/perf \
     EXTRA_CFLAGS=' -Wno-error=bad-function-cast -Wno-error=declaration-after-statement -Wno-error=switch-enum' \
     NO_SDT=1 \
+    BUILD_BPF_SKEL=1 \
     PYTHON=python \
     PYTHON_CONFIG=python-config \
     DESTDIR="$pkgdir"
@@ -174,6 +176,7 @@ package_perf() {
     perfexecdir=lib/perf \
     EXTRA_CFLAGS=' -Wno-error=bad-function-cast -Wno-error=declaration-after-statement -Wno-error=switch-enum' \
     NO_SDT=1 \
+    BUILD_BPF_SKEL=1 \
     PYTHON=python \
     PYTHON_CONFIG=python-config \
     DESTDIR="$pkgdir" \
@@ -268,7 +271,7 @@ package_hyperv() {
 
 package_bpf() {
   pkgdesc='BPF tools'
-  depends=('glibc' 'readline' 'zlib' 'libelf' 'libcap' 'zstd' 'llvm-libs' 'binutils')
+  depends=('glibc' 'readline' 'zlib' 'libelf' 'libcap' 'zstd' 'llvm-libs' 'binutils' 'libsframe.so')
 
   cd linux/tools/bpf
   # skip runsqlower until disabled in build
