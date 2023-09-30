@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libnatpmp
-  version: 20150609-3
+  version: 20230423-2
   arch:
     - x86_64
   pkgname:
     - libnatpmp
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20150609-3
+    version: 20230423-2
     packages:
-      - libnatpmp-20150609-3-x86_64.pkg.tar.zst
+      - libnatpmp-20230423-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
