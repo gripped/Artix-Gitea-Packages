@@ -1,0 +1,12 @@
+post_install() {
+	printf "==> WARNING: This package is EXPLICITLY UNSUPPORTED in Artix\n"
+	printf "             as it's experimental. Treat all packages in the\n"
+	printf "             turnstile-experimental group as such.\n"
+	printf "\n"
+	printf "==> Please note that to make turnstile fully work, you need to add\n"
+	printf "    -session   optional   pam_turnstile.so\n"
+	printf "    to /etc/pam.d/system-login above pam_elogind.so\n"
+	printf "    You can install pambase-turnstile, but keep in mind that the\n"
+	printf "    package may not be updated to synchronize with pambase\n"
+	printf "    due to the experimental nature of it.\n"
+}
