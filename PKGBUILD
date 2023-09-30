@@ -1,7 +1,7 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgbase=pipewire-dinit
 pkgname=('pipewire-dinit' 'pipewire-pulse-dinit')
-pkgver=20230929
+pkgver=20230930
 pkgrel=1
 pkgdesc="dinit user service script for pipewire"
 arch=('any')
@@ -19,5 +19,6 @@ package_pipewire-dinit() {
 
 package_pipewire-pulse-dinit() {
     pkgdesc+="-pulse"
+    depends=("pipewire-dinit")
     install -Dm644 pipewire-pulse.user "$pkgdir/etc/dinit.d/user/pipewire-pulse"
 }
