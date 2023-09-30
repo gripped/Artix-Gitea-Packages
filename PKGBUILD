@@ -2,7 +2,7 @@
 # NOTE: Explicitly unsupported.
 pkgname=turnstile
 pkgver=0.1.8
-pkgrel=1
+pkgrel=2
 pkgdesc="Work-in-progress session/login tracker as a logind alternative"
 arch=("x86_64")
 url="https://github.com/chimera-linux/turnstile"
