@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: libappindicator-gtk2
-  version: 12.10.0.r298-2
+  name: libappindicator
+  version: 12.10.0.r298-3
   arch:
     - x86_64
   pkgname:
     - libappindicator-gtk2
     - libappindicator-gtk3
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.10.0.r298-2
+    version: 12.10.0.r298-3
     packages:
-      - libappindicator-gtk2-12.10.0.r298-2-x86_64.pkg.tar.zst
-      - libappindicator-gtk3-12.10.0.r298-2-x86_64.pkg.tar.zst
+      - libappindicator-gtk2-12.10.0.r298-3-x86_64.pkg.tar.zst
+      - libappindicator-gtk3-12.10.0.r298-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
