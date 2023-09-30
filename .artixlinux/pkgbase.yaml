@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: kismet
-  version: 2022_08_R1-3
+  version: 2022_08_R1-5
   arch:
     - x86_64
   pkgname:
     - kismet
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2022_08_R1-5
+    packages:
+      - kismet-2022_08_R1-5-x86_64.pkg.tar.zst
   world:
     version: 2022_08_R1-3
     packages:
