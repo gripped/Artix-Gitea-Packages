@@ -27,6 +27,9 @@ makedepends=(
   python-setuptools
   python-setuptools-gettext
   python-setuptools-rust
+  python-wheel
+  python-build
+  python-installer
 )
 optdepends=(
   'python-fastimport: Fastimport support'
@@ -47,12 +50,12 @@ pkgver() {
 
 build() {
   cd breezy
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 package() {
   cd breezy
-  python setup.py install --root="${pkgdir}" --install-data=usr/share --optimize=1 --skip-build
+  python -m installer --destdir="$pkgdir" dist/*.whl
   ln -s brz "${pkgdir}"/usr/bin/bzr # backwards compatibility
 }
 
