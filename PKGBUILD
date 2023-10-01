@@ -2,8 +2,8 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=syslog-ng
-pkgver=4.2.0
-pkgrel=1.5
+pkgver=4.4.0
+pkgrel=1
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=('x86_64')
 url="https://www.syslog-ng.com/products/open-source-log-management/"
@@ -14,12 +14,14 @@ depends=(
   'curl'
   'glib2'
   'glibc'
+  'grpc'
   'json-c'
   'libcap'
   'libnet'
   'libnsl'
   'openssl'
-  'pcre'
+  'pcre2'
+  'protobuf'
 )
 makedepends=('libxslt' 'mongo-c-driver' 'librabbitmq-c' 'python' 'libesmtp' 'hiredis'
              'libdbi' 'libmaxminddb' 'net-snmp' 'librdkafka')
@@ -37,15 +39,19 @@ optdepends=('logrotate: for rotating log files'
             'python-ply: for debugger CLI')
 conflicts=('eventlog')
 replaces=('eventlog')
+# The default scl.conf moved in 4.3.0, but it is still supported here for overrides so we keep this entry. See https://github.com/syslog-ng/syslog-ng/pull/4534 for details.
 backup=('etc/syslog-ng/scl.conf'
         'etc/syslog-ng/syslog-ng.conf'
         'etc/logrotate.d/syslog-ng')
 source=(https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$pkgver/$pkgname-$pkgver.tar.gz
         syslog-ng.conf syslog-ng.logrotate)
-sha512sums=('85442b57b7934e8afbb4e7d8285ed1fd16aaad2a8d853e3765db4f885d88bee4910a3b5d271f1cbd100c2d3a3f81f1a4fe845bc948fe68c22d32bc9b730af04b'
-            '0dec94a5c37cccb09fe2644b08b013a0bfc47bf8eb59daec97f8fe9d4ab90ed9f934fbffcfc012a5ac5d07ac2b9014d10be97d61963cb88d9cce1358bf2ee10d'
+sha512sums=('1cf18c43321e523d0f49b25a4839fd10ec301b207da1b2c407df5167dba557ac0a7781b07f1c1e5d18241376966b8099d9e41dffa55030f6a8052388139c4107'
+            '599d9d1d00a11e2d75958b314848ee31b3da9d91016e0a0e8a002346d8b969d9759bb10b631ca22e37716078c6850e638573eff24a9b20703f79cbb8b788ef0c'
             'cd39f545a6a855c866a466bf846e33940b2c2dd1fc2eaf50cce29c68e1a5753c7c4b56411e4f01c152f32e155104a98dd755a96319767f47c73a8853f720b2cc')
 
+prepare() {
+  cd $pkgname-$pkgver
+}
 
 build() {
   cd $pkgname-$pkgver
