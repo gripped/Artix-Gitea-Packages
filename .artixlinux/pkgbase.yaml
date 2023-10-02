@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: turnstile-openrc
-  version: 20231002-1
+  version: 20231002-2
   arch:
     - any
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20231002-1
+    version: 20231002-2
     packages:
-      - turnstile-openrc-20231002-1-any.pkg.tar.zst
+      - turnstile-openrc-20231002-2-any.pkg.tar.zst
