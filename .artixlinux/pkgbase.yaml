@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-stack-data
-  version: 0.6.2-5
+  version: 0.6.3-1
   arch:
     - any
   pkgname:
     - python-stack-data
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.2-5
+    version: 0.6.3-1
     packages:
-      - python-stack-data-0.6.2-5-any.pkg.tar.zst
+      - python-stack-data-0.6.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
