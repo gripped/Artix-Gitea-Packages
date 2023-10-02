@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: libpeas
-  version: 1.36.0-2
+  version: 1.36.0-3
   arch:
     - x86_64
   pkgname:
     - libpeas
+    - libpeas-demos
     - libpeas-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.36.0-2
+    version: 1.36.0-3
     packages:
-      - libpeas-1.36.0-2-x86_64.pkg.tar.zst
-      - libpeas-docs-1.36.0-2-x86_64.pkg.tar.zst
+      - libpeas-1.36.0-3-x86_64.pkg.tar.zst
+      - libpeas-demos-1.36.0-3-x86_64.pkg.tar.zst
+      - libpeas-docs-1.36.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
