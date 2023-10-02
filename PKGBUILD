@@ -1,16 +1,16 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=libnvme
-pkgver=1.5
+pkgver=1.6
 pkgrel=1
 pkgdesc="C Library for NVM Express on Linux"
 arch=('x86_64')
 url="https://github.com/linux-nvme/libnvme"
 license=('LGPL2.1')
-makedepends=('meson' 'asciidoc' 'python' 'swig')
+makedepends=('udev' 'meson' 'asciidoc' 'python' 'swig')
 depends=('json-c' 'openssl' 'keyutils' 'dbus')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/linux-nvme/${pkgname}/archive/v${pkgver}.tar.gz")
-sha256sums=('f73ba1edde059b2d5e7c1048ad4f895e6047bff241c94b34a7aff5894779d086')
+sha256sums=('0dd8ba8b655abe78c09833edb66632aa6bee82aebf117dd252ded968deaaeec7')
 
 build() {
 	cd "${pkgname}-${pkgver}"
