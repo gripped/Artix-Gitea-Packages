@@ -4,13 +4,13 @@
 
 pkgbase=podman
 pkgname=(podman podman-docker)
-pkgver=4.6.2
-_commit=5db42e86862ef42c59304c38aa583732fd80f178  #refs/tags/v4.6.2^{}
+pkgver=4.7.0
+_commit=073183fe1723d7bda826b574437891976a958c65  #refs/tags/v4.7.0^{}
 pkgrel=1
 pkgdesc='Tool and library for running OCI-based containers in pods'
 arch=(x86_64)
 url='https://github.com/containers/podman'
-license=(Apache)
+license=(Apache-2.0)
 makedepends=(
   apparmor
   btrfs-progs
@@ -21,7 +21,7 @@ makedepends=(
   go-md2man
   gpgme
   libseccomp
-  libudev
+  udev
 )
 # https://github.com/containers/podman/issues/13297
 options=(!lto)
@@ -90,6 +90,8 @@ package_podman() {
   )
 
   make install install.completions DESTDIR="$pkgdir" PREFIX=/usr LIBEXECDIR=/usr/lib -C $pkgbase
+
+  rm -rvf "$pkgdir"/usr/lib/systemd
 }
 
 package_podman-docker() {
@@ -102,5 +104,6 @@ package_podman-docker() {
   provides=(docker)
 
   make -j1 install.docker-full DESTDIR="$pkgdir" PREFIX=/usr -C $pkgbase
-  rm -rf "$pkgdir"/usr/lib/systemd
+
+  rm -rvf "$pkgdir"/usr/lib/systemd
 }
