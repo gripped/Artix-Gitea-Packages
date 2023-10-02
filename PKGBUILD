@@ -2,7 +2,7 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=docker
-pkgver=24.0.5
+pkgver=24.0.6
 pkgrel=1
 epoch=1
 pkgdesc='Pack, ship and run any application as a lightweight container'
@@ -108,6 +108,9 @@ package() {
   ### dockerd
   install -Dm755 moby/bundles/dynbinary-daemon/dockerd "$pkgdir"/usr/bin/dockerd
   install -Dm755 moby/bundles/dynbinary-daemon/docker-proxy "$pkgdir/usr/bin/docker-proxy"
+  # udev rules
+  cd "$srcdir"/moby/contrib
+  install -Dm644 'udev/80-docker.rules' "$pkgdir/usr/lib/udev/rules.d/80-docker.rules"
   install -Dm644 "$srcdir/$pkgname.sysusers" "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   ### cli
   cd "$srcdir"/cli
