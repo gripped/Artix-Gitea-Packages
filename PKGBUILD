@@ -5,19 +5,19 @@
 # Contributor: Martin Schrodt <martin@schrodt.org>
 
 pkgname=nvme-cli
-pkgver=2.5
+pkgver=2.6
 pkgrel=1
 pkgdesc="NVM-Express user space tooling for Linux"
 arch=('x86_64')
 url="https://github.com/linux-nvme/nvme-cli"
 license=('GPL')
+makedepends=('udev' 'meson' 'git' 'asciidoc' 'xmlto' 'swig')
 depends=('util-linux' 'libudev' 'libnvme')
-makedepends=('meson' 'git' 'asciidoc' 'xmlto' 'swig')
 options=(strip)
 install=nvme-cli.install
 # checkdepends=('python2-nose' 'python-nose')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/linux-nvme/${pkgname}/archive/v${pkgver}.tar.gz")
-sha256sums=('e84bdba276aadcddda8cf5d412e934cc5673af15132ea02180deb5d06af73146')
+sha256sums=('7e2f11eb7a9c1b9343d537a32ae5c78f51de20cd4a6cdddb2bc2459c259b33d6')
 
 build() {
 	cd "${pkgname}-${pkgver}"
@@ -44,6 +44,5 @@ package() {
 	cd "${pkgname}-${pkgver}"
 	DESTDIR="$pkgdir" meson install -C .build
 
-	# remove systemd service
 	rm -r "$pkgdir"/usr/lib/systemd
 }
