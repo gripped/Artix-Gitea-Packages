@@ -1,0 +1,66 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+
+pkgname=netavark
+_commit=14f36c47e9b292202187cbbdaf086cf09ea8e7e9  # refs/tags/v1.8.0
+pkgver=1.8.0
+pkgrel=1
+pkgdesc="Container network stack"
+arch=(x86_64)
+url="https://github.com/containers/netavark"
+license=(Apache-2.0)
+depends=(
+  gcc-libs
+  glibc
+)
+makedepends=(
+  cargo
+  git
+  libgit2
+  mandown
+  protobuf
+)
+optdepends=('aardvark-dns: for authorative DNS server')
+provides=(container-network-stack=2)
+source=(git+https://github.com/containers/netavark.git#tag=$_commit)
+sha256sums=('SKIP')
+# NOTE: pinning commit until upstream clarifies commitment to chain of trust:
+# https://github.com/containers/netavark/issues/231
+# validpgpkeys=('74FE091D25519980B2D84447160386BECB6F0643')  # Brent Baude <bbaude@redhat.com>
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/v//g'
+}
+
+prepare() {
+  cd $pkgname
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}
+
+build() {
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+
+  cd $pkgname
+  # generate man page directly as docs target is broken: https://github.com/containers/netavark/issues/524
+  mandown docs/$pkgname.1.md > $pkgname.1
+  # create service file manually as we are not using the Makefile
+  sed "s|@@NETAVARK@@|/usr/lib/podman/netavark|" contrib/systemd/system/netavark-dhcp-proxy.service.in > contrib/systemd/system/netavark-dhcp-proxy.service
+  cargo build --frozen --release --all-features
+}
+
+check() {
+  export RUSTUP_TOOLCHAIN=stable
+
+  cd $pkgname
+  cargo test --frozen --all-features
+}
+
+package() {
+  cd $pkgname
+  install -vDm 755 target/release/$pkgname -t "$pkgdir/usr/lib/podman/"
+  install -vDm 644 $pkgname.1 -t "$pkgdir/usr/share/man/man1/"
+  install -vDm 644 contrib/systemd/system/*.{service,socket} -t "$pkgdir/usr/lib/systemd/system/"
+  install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}
