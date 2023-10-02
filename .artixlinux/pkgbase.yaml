@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libkscreen
-  version: 5.27.8-1
+  version: 5.27.8-2
   arch:
     - x86_64
   pkgname:
     - libkscreen
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.27.8-2
+    packages:
+      - libkscreen-5.27.8-2-x86_64.pkg.tar.zst
   world:
     version: 5.27.8-1
     packages:
