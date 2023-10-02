@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: turnstile
-  version: 0.1.8-2
+  version: 0.1.8-3
   arch:
     - x86_64
   pkgname:
     - turnstile
+    - turnstile-dinit
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -49,6 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.8-2
+    version: 0.1.8-3
     packages:
-      - turnstile-0.1.8-2-x86_64.pkg.tar.zst
+      - turnstile-0.1.8-3-x86_64.pkg.tar.zst
+      - turnstile-dinit-0.1.8-3-x86_64.pkg.tar.zst

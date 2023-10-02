@@ -1,13 +1,14 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 # NOTE: Explicitly unsupported.
-pkgname=turnstile
+pkgbase=turnstile
+pkgname=('turnstile' 'turnstile-dinit')
 pkgver=0.1.8
-pkgrel=2
+pkgrel=3
 pkgdesc="Work-in-progress session/login tracker as a logind alternative"
 arch=("x86_64")
 url="https://github.com/chimera-linux/turnstile"
 license=('BSD')
-depends=("pam")
+depends=("pam" "dinit-base")
 groups=('turnstile-experimental')
 makedepends=("meson" "scdoc")
 install="turnstile.install"
@@ -27,6 +28,15 @@ build() {
     meson compile -C build
 }
 
-package() {
+package_turnstile() {
     meson install -C build --destdir "$pkgdir"
+
+    # remove dinit service as it's handled by turnstile-dinit service
+    rm -rf "$pkgdir/etc/dinit.d"
+}
+
+package_turnstile-dinit() {
+    pkgdesc="dinit service scripts for turnstile"
+    depends=('turnstile' 'dinit')
+    install -Dm644 "$pkgbase-$pkgver/data/dinit/turnstiled" "$pkgdir/etc/dinit.d/turnstiled"
 }
