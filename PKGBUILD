@@ -1,16 +1,16 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 # Contributor: Beej <beej@beej.us>
 
 pkgname=screengrab
 pkgver=2.6.0
-pkgrel=1
+pkgrel=3
 pkgdesc="Crossplatform tool for grabbing screenshots of your desktop."
 arch=("x86_64")
 groups=("lxqt")
 url="https://github.com/lxqt/screengrab"
 license=("GPL2")
-depends=("qt5-base" "qt5-x11extras" "kwindowsystem" "libqtxdg" "libx11" "libxcb" "libQt5Xdg.so")
+depends=("qt5-base" "qt5-x11extras" "kwindowsystem5" "libqtxdg" "libx11" "libxcb" "libQt5Xdg.so")
 makedepends=("cmake" "qt5-tools")
 source=(
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc}
