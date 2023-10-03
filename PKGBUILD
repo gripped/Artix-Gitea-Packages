@@ -1,9 +1,9 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=lxqt-panel
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The LXQt desktop panel"
 arch=("x86_64")
 groups=("lxqt")
@@ -11,7 +11,7 @@ url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
 depends=(
 	"libdbusmenu-qt5" "libxcomposite" "lxmenu-data" "libxtst"
-	"lxqt-globalkeys" "solid" "libxcb" "libQt5Xdg.so"
+	"lxqt-globalkeys" "solid5" "libxcb" "libQt5Xdg.so"
 )
 optdepends=(
 	"libpulse: Volume control plugin"
