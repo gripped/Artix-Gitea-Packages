@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fcitx5-configtool
-  version: 5.1.0-2
+  version: 5.1.1-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.1.0-2
+    version: 5.1.1-1
     packages:
-      - fcitx5-configtool-5.1.0-2-x86_64.pkg.tar.zst
+      - fcitx5-configtool-5.1.1-1-x86_64.pkg.tar.zst
   world:
     version: 5.1.0-1
     packages:
