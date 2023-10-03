@@ -6,7 +6,7 @@
 
 pkgname=subversion
 pkgver=1.14.2
-pkgrel=10
+pkgrel=11
 pkgdesc="A Modern Concurrent Version Control System"
 arch=('x86_64')
 url="https://subversion.apache.org/"
@@ -14,10 +14,10 @@ license=('Apache-2.0')
 depends=('apr' 'apr-util' 'bash' 'dbus' 'expat' 'file' 'gcc-libs' 'glibc' 'libsasl' 'libutf8proc' 'lz4' 'serf' 'sqlite'
          'zlib' )
 makedepends=('apache' 'python' 'python-py3c' 'perl' 'swig' 'java-environment>=8'
-             'libsecret' 'kwallet' 'kdelibs4support' 'ruby'
+             'libsecret' 'kwallet5' 'kdelibs4support' 'ruby'
              'autoconf' 'automake' 'libtool' 'autogen' 'm4')
 optdepends=('libsecret: for GNOME Keyring for auth credentials'
-            'kwallet: for KWallet for auth credentials'
+            'kwallet5: for KWallet for auth credentials'
             'bash-completion: for svn bash completion'
             'python: for some hook scripts'
             'java-environment: for Java support'
