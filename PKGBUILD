@@ -1,20 +1,20 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Ronald van Haren <ronald@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Ronald van Haren <ronald@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=digikam
 _pkgver=8.1.0
 pkgver=${_pkgver//-/} # for beta versions
-pkgrel=1
+pkgrel=2
 pkgdesc='An advanced digital photo management application'
 arch=(x86_64)
 license=(GPL)
 url='https://www.digikam.org/'
-depends=(lensfun opencv akonadi-contacts knotifyconfig libksane kfilemetadata marble-common threadweaver kcalendarcore
+depends=(lensfun opencv akonadi-contacts knotifyconfig5 libksane kfilemetadata5 marble-common threadweaver5 kcalendarcore5
          qt5-networkauth qt5-xmlpatterns imagemagick jasper glu perl-image-exiftool)
-makedepends=(extra-cmake-modules doxygen eigen boost kdoctools)
+makedepends=(extra-cmake-modules doxygen eigen boost kdoctools5)
 optdepends=('hugin: panorama tool' 'qt5-imageformats: support for additional image formats (WEBP, TIFF)'
             'rawtherapee: RAW import' 'darktable: RAW import'
             'perl: for digitaglinktree')
