@@ -1,14 +1,14 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=liblxqt
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Common base library for LXQt components"
 arch=("x86_64")
 url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
-depends=("kwindowsystem" "libxss" "polkit-qt5" "libQt5Xdg.so")
+depends=("kwindowsystem5" "libxss" "polkit-qt5" "libQt5Xdg.so")
 makedepends=("lxqt-build-tools")
 source=(
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc}
