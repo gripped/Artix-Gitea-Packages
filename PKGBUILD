@@ -1,15 +1,33 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=krename
 pkgver=5.0.2
-pkgrel=5
+pkgrel=6
 pkgdesc='A very powerful batch file renamer'
 arch=(x86_64)
 url='https://www.krename.net'
 license=(GPL)
-depends=(kio kjs exiv2 podofo taglib hicolor-icon-theme)
+depends=(exiv2
+         freetype2
+         gcc-libs
+         glibc
+         kcompletion5
+         kconfig5
+         kcoreaddons5
+         kcrash5
+         ki18n5
+         kiconthemes5
+         kitemviews5
+         kio5
+         kjobwidgets5
+         kjs
+         kwidgetsaddons5
+         kxmlgui5
+         podofo
+         qt5-base
+         taglib)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
         podofo-0.10.patch
