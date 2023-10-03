@@ -34,6 +34,7 @@ Server = https://ftp.halifax.rwth-aachen.de/artixlinux/$repo/os/$arch
 Server = https://artix.unixpeople.org/repos/$repo/os/$arch
 Server = https://mirror1.artixlinux.org/repos/$repo/os/$arch
 Server = https://eu-mirror.artixlinux.org/repos/$repo/os/$arch
+Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
 # Greece
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
 Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
