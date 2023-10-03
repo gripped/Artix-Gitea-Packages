@@ -1,9 +1,9 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=lximage-qt
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The LXQt image viewer and screenshot tool"
 arch=("x86_64")
 groups=("lxqt")
@@ -12,7 +12,7 @@ license=("GPL2")
 depends=("lxqt-themes" "libfm-qt" "qt5-svg" "libexif" "libxfixes" "libfm-qt.so")
 optdepends=(
 	"qt5-imageformats: support for additional image formats (WEBP, TIFF, etc.)"
-	"kimageformats: support for additional image formats (PCX, XCF, etc.)"
+	"kimageformats5: support for additional image formats (PCX, XCF, HEIF, etc.)"
 )
 makedepends=("lxqt-build-tools")
 source=(
