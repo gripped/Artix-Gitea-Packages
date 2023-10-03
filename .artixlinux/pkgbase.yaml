@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: kid3-common
-  version: 3.9.4-1
+  name: kid3
+  version: 3.9.4-2
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - kid3-qt
     - kid3
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.9.4-2
+    packages:
+      - kid3-common-3.9.4-2-x86_64.pkg.tar.zst
+      - kid3-qt-3.9.4-2-x86_64.pkg.tar.zst
+      - kid3-3.9.4-2-x86_64.pkg.tar.zst
   world:
     version: 3.9.4-1
     packages:
