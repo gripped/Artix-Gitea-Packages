@@ -8,8 +8,8 @@ pkgbase:
     - libreoffice-still-sdk
     - libreoffice-still
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: world-gremlins
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -32,10 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.5.6-1
-    packages:
-      - libreoffice-still-sdk-7.5.6-1-x86_64.pkg.tar.zst
-      - libreoffice-still-7.5.6-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -54,5 +52,7 @@ repos:
       - libreoffice-still-sdk-7.5.7-2-x86_64.pkg.tar.zst
       - libreoffice-still-7.5.7-2-x86_64.pkg.tar.zst
   galaxy:
-    version: null
-    packages: []
+    version: 7.5.6-1
+    packages:
+      - libreoffice-still-sdk-7.5.6-1-x86_64.pkg.tar.zst
+      - libreoffice-still-7.5.6-1-x86_64.pkg.tar.zst
