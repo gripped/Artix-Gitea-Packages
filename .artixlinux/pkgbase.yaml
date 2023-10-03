@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sslh
-  version: 1.22.c-2
+  version: 2.0.1-1
   arch:
     - x86_64
   pkgname:
     - sslh
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.22.c-2
+    version: 2.0.1-1
     packages:
-      - sslh-1.22.c-2-x86_64.pkg.tar.zst
+      - sslh-2.0.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
