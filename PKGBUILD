@@ -1,17 +1,22 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=khealthcertificate
 pkgver=23.01.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Handling of digital vaccination, test and recovery certificates'
 arch=(x86_64)
 url='https://www.kde.org'
 license=(LGPL)
-depends=(karchive kcodecs ki18n)
-makedepends=(extra-cmake-modules qt5-declarative)
+depends=(karchive5
+         kcodecs5
+         ki18n5)
+makedepends=(extra-cmake-modules
+             qt5-declarative)
 optdepends=('qt5-declarative: QML bindings')
-source=(https://download.kde.org/stable/plasma-mobile/$pkgver/$pkgname-$pkgver.tar.xz)
-sha256sums=('755dc2625c4b2ad06266ce19fa7565f87dc3df780d161830db498027477b6aa4')
+source=(https://download.kde.org/stable/plasma-mobile/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('755dc2625c4b2ad06266ce19fa7565f87dc3df780d161830db498027477b6aa4'
+            'SKIP')
 validpgpkeys=(39FFA93CAE9C6AFC212AD00202325448204E452A  # Carl Schwan <carl@carlschwan.eu>
               0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D) # Bhushan Shah (mykolab address) <bshah@mykolab.com>
 
