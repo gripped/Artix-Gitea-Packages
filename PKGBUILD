@@ -4,13 +4,13 @@
 
 pkgname=xdg-desktop-portal-lxqt
 pkgver=0.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A backend implementation for xdg-desktop-portal using Qt/KF5/libfm-qt'
 arch=(x86_64)
 groups=(lxqt)
 url='https://github.com/lxqt/xdg-desktop-portal-lxqt'
 license=(LGPL)
-depends=(qt5-base kwindowsystem xdg-desktop-portal libfm-qt)
+depends=(qt5-base kwindowsystem5 xdg-desktop-portal libfm-qt)
 makedepends=(cmake)
 provides=(xdg-desktop-portal-impl)
 source=("https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc}
