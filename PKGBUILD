@@ -1,15 +1,15 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
 # Co-Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=lxqt-notificationd
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="LXQt notification daemon and library."
 arch=("x86_64")
 groups=("lxqt")
 url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
-depends=("qt5-base" "liblxqt" "kwindowsystem" "libQt5Xdg.so")
+depends=("qt5-base" "liblxqt" "kwindowsystem5" "libQt5Xdg.so")
 makedepends=("cmake" "lxqt-build-tools")
 provides=("notification-daemon")
 source=(
