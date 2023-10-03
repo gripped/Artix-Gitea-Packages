@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=github-cli
-pkgver=2.35.0
+pkgver=2.36.0
 pkgrel=1
 pkgdesc="GitHub's official command line tool"
 arch=("x86_64")
@@ -15,7 +15,7 @@ source=(
 	"https://github.com/cli/cli/archive/refs/tags/v$pkgver.tar.gz"
 )
 sha256sums=(
-	"ea94a1444bac2f111519f96904cd981bdeea6d40dd947e27a10b7b85e7891b0c"
+	"f9be77f9c6a4abc2e14bcdf55057eb209f1ab7bda50b78dcd9ab07533ea4a58e"
 )
 
 prepare() {
