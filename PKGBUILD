@@ -4,9 +4,9 @@
 pkgbase=qt5-base
 pkgname=(qt5-base qt5-xcb-private-headers)
 _basever=5.15.10
-pkgver=5.15.10+kde+r162
+pkgver=5.15.10+kde+r165
 pkgrel=1
-_commit=9d613932ab4cbf09d162b5529199f166be2280d6
+_commit=9b7fd27c2b4a363ba4434353be2932483be99234
 arch=('x86_64')
 url='https://www.qt.io'
 license=('GPL3' 'LGPL3' 'FDL' 'custom')
@@ -26,7 +26,7 @@ optdepends=('qt5-svg: to use SVG icon themes'
             'gtk3: GTK platform plugin'
             'perl: for fixqt4headers and syncqt')
 conflicts=('qtchooser')
-groups=('qt' 'qt5')
+groups=('qt5')
 _pkgfqn=${pkgbase/5-/}
 source=(git+https://invent.kde.org/qt/qt/$_pkgfqn#commit=$_commit
         work-around-pyside2-brokenness.patch
