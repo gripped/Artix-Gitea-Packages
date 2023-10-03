@@ -1,15 +1,15 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=lxqt-admin
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="LXQt system administration tool."
 arch=("x86_64")
 groups=("lxqt")
 url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
-depends=("qt5-base" "liblxqt" "kwindowsystem" "polkit-qt5")
+depends=("qt5-base" "liblxqt" "kwindowsystem5" "polkit-qt5")
 makedepends=("cmake" "qt5-tools" "lxqt-build-tools")
 source=(
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
