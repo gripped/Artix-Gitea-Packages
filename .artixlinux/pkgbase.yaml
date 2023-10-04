@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libgedit-gtksourceview
-  version: 299.0.4-1
+  version: 299.0.4-2
   arch:
     - x86_64
   pkgname:
     - libgedit-gtksourceview
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 299.0.4-1
+    version: 299.0.4-2
     packages:
-      - libgedit-gtksourceview-299.0.4-1-x86_64.pkg.tar.zst
+      - libgedit-gtksourceview-299.0.4-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
