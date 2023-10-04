@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: geocode-glib-common
-  version: 3.26.4-3
+  name: geocode-glib
+  version: 3.26.4-4
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - geocode-glib
     - geocode-glib-2
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.26.4-4
+    packages:
+      - geocode-glib-common-3.26.4-4-x86_64.pkg.tar.zst
+      - geocode-glib-3.26.4-4-x86_64.pkg.tar.zst
+      - geocode-glib-2-3.26.4-4-x86_64.pkg.tar.zst
   world:
     version: 3.26.4-3
     packages:
