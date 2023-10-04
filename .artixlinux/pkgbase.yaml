@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xdg-desktop-portal-kde
-  version: 5.27.8-2
+  version: 5.27.8-3
   arch:
     - x86_64
   pkgname:
     - xdg-desktop-portal-kde
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - xdg-desktop-portal-kde-5.27.8-2-x86_64.pkg.tar.zst
   world:
-    version: 5.27.8-1
+    version: 5.27.8-3
     packages:
-      - xdg-desktop-portal-kde-5.27.8-1-x86_64.pkg.tar.zst
+      - xdg-desktop-portal-kde-5.27.8-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
