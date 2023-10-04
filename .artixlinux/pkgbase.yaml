@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libksysguard
-  version: 5.27.8-2
+  version: 5.27.8-2.1
   arch:
     - x86_64
   pkgname:
     - libksysguard
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - libksysguard-5.27.8-2-x86_64.pkg.tar.zst
   world:
-    version: 5.27.8-2
+    version: 5.27.8-2.1
     packages:
-      - libksysguard-5.27.8-2-x86_64.pkg.tar.zst
+      - libksysguard-5.27.8-2.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
