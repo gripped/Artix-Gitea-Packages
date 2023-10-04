@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: libreoffice-still
-  version: 7.5.7-2
+  version: 7.5.7-3
   arch:
     - x86_64
   pkgname:
     - libreoffice-still-sdk
     - libreoffice-still
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -44,8 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 7.5.7-3
+    packages:
+      - libreoffice-still-sdk-7.5.7-3-x86_64.pkg.tar.zst
+      - libreoffice-still-7.5.7-3-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: 7.5.7-2
     packages:
