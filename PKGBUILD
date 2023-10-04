@@ -5,14 +5,14 @@
 
 pkgname=cantor
 pkgver=23.08.1
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE Frontend to Mathematical Software'
 url='https://apps.kde.org/cantor/'
 arch=(x86_64)
 license=(GPL LGPL FDL)
 groups=(kde-applications kde-education)
-depends=(analitza libspectre ktexteditor knewstuff libqalculate qt5-xmlpatterns qt5-tools qt5-webengine poppler-qt5)
-makedepends=(extra-cmake-modules python kdoctools luajit r julia)
+depends=(analitza libspectre ktexteditor5 knewstuff5 libqalculate qt5-xmlpatterns qt5-tools qt5-webengine poppler-qt5)
+makedepends=(extra-cmake-modules python kdoctools5 luajit r julia)
 optdepends=('maxima: Maxima backend'
             'octave: Octave backend'
             'r: R backend'
