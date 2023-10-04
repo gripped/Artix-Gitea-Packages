@@ -6,7 +6,7 @@
 pkgname=polkit-kde-agent
 pkgver=5.27.8
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Daemon providing a polkit authentication UI for KDE'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
