@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: gettext
-  version: 0.22.2-1
+  version: 0.22.3-1
   arch:
     - x86_64
   pkgname:
     - gettext
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.22.3-1
+    packages:
+      - gettext-0.22.3-1-x86_64.pkg.tar.zst
   system:
     version: 0.22.2-1
     packages:
