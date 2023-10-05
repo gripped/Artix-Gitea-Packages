@@ -1,0 +1,26 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: tocic <tocic at protonmail dot ch>
+# Contributor: Yuki Takagi <takagiy.4dev@gmail.com>
+
+pkgname=immer
+pkgver=0.8.1
+pkgrel=1
+pkgdesc='Postmodern immutable and persistent data structures for C++'
+arch=(any)
+url='https://sinusoid.es/immer'
+license=(Boost)
+makedepends=(catch2
+             cmake)
+source=(https://github.com/arximboldi/immer/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209')
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
