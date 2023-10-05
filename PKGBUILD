@@ -2,8 +2,8 @@
 # Contributor: Ner0 <darkelfdarkelf666@yahoo.co.uk>
 
 pkgname=granite
-pkgver=7.0.0
-pkgrel=2
+pkgver=6.2.0
+pkgrel=1
 pkgdesc='Library that extends Gtk+'
 arch=(x86_64)
 url=https://github.com/elementary/granite
@@ -13,7 +13,7 @@ depends=(
   cairo
   gdk-pixbuf2
   glib2
-  gtk4
+  gtk3
   libgee
   pango
 )
@@ -23,8 +23,8 @@ makedepends=(
   meson
   vala
 )
-provides=(libgranite-7.so)
-_tag=41020886ee56f0a489b977a389da10a6ba0cd131
+provides=(libgranite.so)
+_tag=4ab145c28bb3db6372fe519e8bd79c645edfcda3
 source=(git+https://github.com/elementary/granite.git#tag=${_tag})
 sha256sums=(SKIP)
 

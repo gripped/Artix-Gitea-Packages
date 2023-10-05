@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: granite
-  version: 7.0.0-2
+  version: 6.2.0-1
   arch:
     - x86_64
   pkgname:
     - granite
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 6.2.0-1
+    packages:
+      - granite-6.2.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
