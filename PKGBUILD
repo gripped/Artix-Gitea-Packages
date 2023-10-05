@@ -26,7 +26,7 @@ depends=(exiv2
          kcoreaddons5
          kcrash5
          kguiaddons5
-         ki18n
+         ki18n5
          kitemviews5
          kwidgetsaddons5
          kwindowsystem5
