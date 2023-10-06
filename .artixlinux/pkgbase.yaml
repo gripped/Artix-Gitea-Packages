@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: podman
-  version: 4.7.0-1
+  version: 4.7.1-1
   arch:
     - x86_64
   pkgname:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 4.7.0-1
+    version: 4.7.1-1
     packages:
-      - podman-4.7.0-1-x86_64.pkg.tar.zst
-      - podman-docker-4.7.0-1-x86_64.pkg.tar.zst
+      - podman-4.7.1-1-x86_64.pkg.tar.zst
+      - podman-docker-4.7.1-1-x86_64.pkg.tar.zst
   world:
     version: 4.6.2-1
     packages:
