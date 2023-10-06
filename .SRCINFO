@@ -1,0 +1,21 @@
+pkgbase = libvirt-python
+	pkgdesc = libvirt python binding
+	pkgver = 9.8.0
+	pkgrel = 1
+	epoch = 1
+	url = https://pypi.python.org/pypi/libvirt-python
+	arch = x86_64
+	license = LGPL
+	makedepends = python
+	makedepends = python-setuptools
+	makedepends = libvirt
+	depends = python
+	depends = libvirt
+	options = emptydirs
+	source = https://libvirt.org/sources/python/libvirt-python-9.8.0.tar.gz
+	source = https://libvirt.org/sources/python/libvirt-python-9.8.0.tar.gz.asc
+	validpgpkeys = 453B65310595562855471199CA68BE8010084C9C
+	sha512sums = c9871ca2fa9d18ae42c4aa76e9a7ba9f0a026061b058072c862c8fe402c2d2325189687e1490718360a9b8f6c13d8ae2adfbe54f79a367fb6be9fbde381f4901
+	sha512sums = SKIP
+
+pkgname = libvirt-python
