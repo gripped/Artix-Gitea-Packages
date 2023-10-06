@@ -4,7 +4,7 @@
 pkgname=krita
 _pkgver=5.2.0
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
@@ -46,7 +46,7 @@ depends=(exiv2
          qt5-declarative
          qt5-svg
          qt5-x11extras
-         quazip
+         quazip-qt5
          zlib)
 makedepends=(boost
              eigen
