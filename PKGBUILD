@@ -2,17 +2,17 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt5-wayland
-_basever=5.15.10
-pkgver=5.15.10+kde+r62
+_basever=5.15.11
+pkgver=5.15.11+kde+r59
 pkgrel=1
-_commit=8167ea2432a8313ffd130e071aa31570de52e97b
+_commit=4de268cbaf6ff3b633429577f06d3d746a3b202a
 arch=('x86_64')
 url='https://www.qt.io'
 license=('GPL3' 'LGPL3' 'FDL' 'custom')
 pkgdesc='Provides APIs for Wayland'
 depends=('qt5-declarative' 'libxcomposite')
 makedepends=('vulkan-headers' 'git')
-groups=('qt' 'qt5')
+groups=('qt5')
 _pkgfqn=${pkgname/5-/}
 source=(git+https://invent.kde.org/qt/qt/$_pkgfqn#commit=$_commit)
 sha256sums=('SKIP')
