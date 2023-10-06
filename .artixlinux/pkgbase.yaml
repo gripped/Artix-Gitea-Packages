@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qt5-styleplugins
-  version: 5.0.0.20170311-38.1
+  version: 5.0.0.20170311-39
   arch:
     - x86_64
     - aarch64
   pkgname:
     - qt5-styleplugins
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.0.20170311-39
+    packages:
+      - qt5-styleplugins-5.0.0.20170311-39-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
