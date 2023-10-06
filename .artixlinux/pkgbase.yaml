@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: groovy
-  version: 4.0.12-1
+  version: 4.0.15-1
   arch:
     - any
   pkgname:
     - groovy
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.0.12-1
+    version: 4.0.15-1
     packages:
-      - groovy-4.0.12-1-any.pkg.tar.zst
+      - groovy-4.0.15-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
