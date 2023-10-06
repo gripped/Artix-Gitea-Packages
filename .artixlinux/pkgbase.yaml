@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-hardened
-  version: 6.5.5.hardened1-1
+  version: 6.5.6.hardened1-1
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - linux-hardened-headers
     - linux-hardened-docs
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.5.6.hardened1-1
+    packages:
+      - linux-hardened-6.5.6.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-headers-6.5.6.hardened1-1-x86_64.pkg.tar.zst
+      - linux-hardened-docs-6.5.6.hardened1-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
