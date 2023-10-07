@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libpeas
-  version: 1.36.0-3
+  version: 1.36.0-4
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - libpeas-demos
     - libpeas-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.36.0-4
+    packages:
+      - libpeas-1.36.0-4-x86_64.pkg.tar.zst
+      - libpeas-demos-1.36.0-4-x86_64.pkg.tar.zst
+      - libpeas-docs-1.36.0-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
