@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gala
-  version: 7.1.2-1
+  version: 7.1.2-2
   arch:
     - x86_64
   pkgname:
     - gala
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 7.1.2-2
+    packages:
+      - gala-7.1.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
