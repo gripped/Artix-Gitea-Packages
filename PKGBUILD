@@ -20,8 +20,8 @@ pkgname=(
   pipewire-v4l2
   pipewire-x11-bell
 )
-_commit=35cca08d2bef14248ac25ff2a1efb0bf274d0a6f  # tags/0.3.80
-pkgver=0.3.80
+_commit=181fbfee6d3fcc3afd3c93613f126a8346dad586  # tags/0.3.81
+pkgver=0.3.81
 pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
@@ -73,17 +73,11 @@ source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
   artix-pipewire-launcher
   pipewire.desktop
-  0001-pipewire-jack-Disable-LD_LIBRARY_PATH-when-libjack-i.patch
-  0001-ci-ShellCheck-preprocessed-scripts-separately.patch
-  0002-pipewire-jack-Disable-LD_LIBRARY_PATH-when-libjack-i.patch
 )
 b2sums=('SKIP'
         '83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
         '9abebce63d8e877aa9b73cabdf786e71824681328511822dfbd213e3b4c94ac073d225a3c72dcaf96f9c0fa0fcfce67160778487e711b82d452d5570c00d7405'
-        '17de92c7209e4b927f1de7cf11aa5b7b92fbdd41cea26850ecd2159c393ee8a30a93b178681ab05b408fb2fffac111c29b5eebf41119d7ad8f5bbed7122fc3f3'
-        'a3e0b77e7388444872c1a44ee130695ac42a71a07f49903b646a32c291940db9378e8b937f0439e5c21cdfebfe854df6a606479ccab0b3491ec091cb7f6d6da4'
-        '81b86b8a80c110ac944e608eed68ce7bbf77f68b388701eebce24c807131b30958aef16e43865dd227e1aa184e2c770c2603064edc64985aa46bda7de72861b3')
-
+)
 pkgver() {
   cd pipewire
   git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
@@ -91,11 +85,6 @@ pkgver() {
 
 prepare() {
   cd pipewire
-
-  # remove export of LD_LIBRARY_PATH for pw-jack as it would add /usr/lib
-  # https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/1674
-  git apply -3 ../0001-ci-ShellCheck-preprocessed-scripts-separately.patch
-  git apply -3 ../0002-pipewire-jack-Disable-LD_LIBRARY_PATH-when-libjack-i.patch
 }
 
 build() {
@@ -191,13 +180,15 @@ package_pipewire() {
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-avb.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-echo-cancel.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-fallback-sink.so
-    _pick audio usr/lib/pipewire-$_ver/libpipewire-module-filter-chain.so
+    _pick audio usr/lib/pipewire-$_ver/libpipewire-module-filter-chain*.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-loopback.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-netjack2-*.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-pipe-tunnel.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-protocol-simple.so
     _pick audio usr/lib/pipewire-$_ver/libpipewire-module-rtp-{sap,sink,source}.so
+    _pick audio usr/lib/pipewire-$_ver/libpipewire-module-vban-{recv,send}.so
     _pick audio usr/lib/spa-0.2/{aec,alsa,audio*,avb,bluez5}
+    _pick audio usr/lib/systemd/user/filter-chain.service
     _pick audio usr/share/alsa
     _pick audio usr/share/man/man1/pw-{cat,mididump}.1
     _pick audio usr/share/pipewire/filter-chain*
@@ -219,6 +210,7 @@ package_pipewire() {
     _pick pulse usr/bin/pipewire-pulse
     _pick pulse usr/lib/pipewire-$_ver/libpipewire-module-protocol-pulse.so
     _pick pulse usr/lib/pipewire-$_ver/libpipewire-module-pulse-tunnel.so
+    _pick pulse usr/lib/systemd/user/pipewire-pulse.*
     _pick pulse usr/share/man/man1/pipewire-pulse.1
     _pick pulse usr/share/pipewire/pipewire-pulse.conf
 
