@@ -1,7 +1,8 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-shell-extensions
-pkgver=44.0
+pkgver=45.0
 pkgrel=1
 pkgdesc="Extensions for GNOME shell, including classic mode"
 url="https://wiki.gnome.org/Projects/GnomeShell/Extensions"
@@ -11,17 +12,14 @@ depends=(gnome-shell)
 makedepends=(
   git
   meson
-  sassc
 )
 optdepends=('gnome-menus: applications menu extension')
 groups=(gnome)
-_commit=58b4b3c8d6c48432c81c4070829b29db5950a9cb  # tags/44.0^0
+_commit=ba5783ff8cf9a205874601f92932fd429ec9fb2f  # tags/45.0^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git#commit=$_commit"
-  "git+https://gitlab.gnome.org/GNOME/gnome-shell-sass.git"
 )
-sha256sums=('SKIP'
-            'SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd $pkgname
@@ -30,10 +28,6 @@ pkgver() {
 
 prepare() {
   cd $pkgname
-
-  git submodule init
-  git submodule set-url data/gnome-shell-sass "$srcdir/gnome-shell-sass"
-  git -c protocol.file.allow=always submodule update
 }
 
 build() {
