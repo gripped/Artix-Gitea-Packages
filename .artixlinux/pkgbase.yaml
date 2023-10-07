@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gnome-initial-setup
-  version: 44.0-2
+  version: 45.0-1
   arch:
     - x86_64
   pkgname:
     - gnome-initial-setup
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 45.0-1
+    packages:
+      - gnome-initial-setup-45.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
