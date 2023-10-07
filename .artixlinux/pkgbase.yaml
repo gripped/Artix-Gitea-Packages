@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: materia-kde
-  version: 20220823-1
+  version: 20220823-3
   arch:
     - any
   pkgname:
     - materia-kde
     - kvantum-theme-materia
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 20220823-1
+    version: 20220823-3
     packages:
-      - materia-kde-20220823-1-any.pkg.tar.zst
-      - kvantum-theme-materia-20220823-1-any.pkg.tar.zst
+      - materia-kde-20220823-3-any.pkg.tar.zst
+      - kvantum-theme-materia-20220823-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
