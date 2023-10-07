@@ -1,12 +1,11 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
 # Contributor: Michal Krenek <mikos@sg1.cz>
 
 pkgbase=boinc
 pkgname=(boinc boinc-nox)
-pkgver=7.22.1
-_commit=45352deb19161b74eb26c8ecebf1255040f3c69a
+pkgver=7.24.1
+_commit=292704f771e47f1e2b19843b935c17844a6abd6f
 pkgrel=1
 arch=('x86_64')
 url="https://boinc.berkeley.edu/"

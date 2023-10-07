@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: boinc
-  version: 7.22.1-1
+  version: 7.24.1-1
   arch:
     - x86_64
   pkgname:
     - boinc
     - boinc-nox
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.22.1-1
+    version: 7.24.1-1
     packages:
-      - boinc-7.22.1-1-x86_64.pkg.tar.zst
-      - boinc-nox-7.22.1-1-x86_64.pkg.tar.zst
+      - boinc-7.24.1-1-x86_64.pkg.tar.zst
+      - boinc-nox-7.24.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
