@@ -1,15 +1,18 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: libpeas-2
+  version: 2.0.0-1
+  arch:
+    - x86_64
+  pkgname:
+    - libpeas-2
+    - libpeas-2-docs
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -23,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-1
+    packages:
+      - libpeas-2-2.0.0-1-x86_64.pkg.tar.zst
+      - libpeas-2-docs-2.0.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
