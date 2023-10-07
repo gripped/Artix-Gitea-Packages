@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libpanel
-  version: 1.2.0-1
+  version: 1.4.0-1
   arch:
     - x86_64
   pkgname:
     - libpanel
     - libpanel-docs
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.4.0-1
+    packages:
+      - libpanel-1.4.0-1-x86_64.pkg.tar.zst
+      - libpanel-docs-1.4.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
