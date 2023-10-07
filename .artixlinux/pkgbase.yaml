@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nautilus
-  version: 44.2.1-1
+  version: 45.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libnautilus-extension
     - libnautilus-extension-docs
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 45.0-1
+    packages:
+      - nautilus-45.0-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-45.0-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-docs-45.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
