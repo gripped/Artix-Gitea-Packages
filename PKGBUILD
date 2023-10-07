@@ -1,0 +1,65 @@
+# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=libei
+pkgver=1.1.0
+pkgrel=1
+pkgdesc="Library for Emulated Input"
+url="https://libinput.pages.freedesktop.org/libei/"
+arch=(x86_64)
+license=(custom:X11)
+depends=(
+  libelogind
+  libevdev
+)
+makedepends=(
+  git
+  libxkbcommon
+  meson
+  python-attrs
+  python-dbusmock
+  python-jinja
+  python-pytest
+  python-structlog
+  python-yaml
+)
+checkdepends=(
+  python-pytest-xdist
+  valgrind
+)
+provides=(
+  lib{ei,eis,oeffis}.so
+)
+_commit=82cdbc9129a0e2c255fcee6bcaa7abed5578ae14  # tags/1.1.0^0
+source=(
+  "git+https://gitlab.freedesktop.org/libinput/libei.git#commit=$_commit"
+  "git+https://github.com/nemequ/munit#commit=fbbdf1467eb0d04a6ee465def2e529e4c87f2118"
+)
+b2sums=('SKIP'
+        'SKIP')
+
+pkgver() {
+  cd libei
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd libei
+  ln -sr ../munit subprojects/munit
+}
+
+build() {
+  artix-meson libei build -Dsd-bus-provider=libelogind
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir" --skip-subprojects
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 libei/COPYING
+}
+
+# vim:set sw=2 sts=-1 et:
