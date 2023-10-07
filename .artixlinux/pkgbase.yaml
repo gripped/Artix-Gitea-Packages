@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gnome-calendar
-  version: 44.1-1
+  version: 45.0-1
   arch:
     - x86_64
   pkgname:
     - gnome-calendar
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 44.1-1
+    version: 45.0-1
     packages:
-      - gnome-calendar-44.1-1-x86_64.pkg.tar.zst
+      - gnome-calendar-45.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
