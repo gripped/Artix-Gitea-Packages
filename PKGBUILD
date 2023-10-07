@@ -1,13 +1,13 @@
+# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
-# Contributor: Fabian Bornschein <fabiscafe-cat-mailbox-dog-org>
 
 pkgbase=libdex
 pkgname=(
   libdex
   libdex-docs
 )
-pkgver=0.2.0
-pkgrel=3
+pkgver=0.4.0
+pkgrel=1
 pkgdesc="A library supporting 'Deferred Execution'"
 url="https://gitlab.gnome.org/GNOME/libdex"
 arch=(x86_64)
@@ -25,20 +25,17 @@ makedepends=(
   meson
   vala
 )
-_commit=c59ec85110954d8e9a1bf31322944225e1dc6874  # tags/0.2.0^0
-source=("_libdex::git+$url.git#commit=$_commit")
+_commit=e3d85d804b0f3511bbb90965c3a202623d9ac55c  # tags/0.4.0^0
+source=("git+$url.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
-  cd _libdex
+  cd libdex
   git describe --tags | sed -r 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd _libdex
-
-  # Build fixes
-  git cherry-pick -n dd2453dab189643a73e8 2194086a5bf83a56a5bf
+  cd libdex
 }
 
 build() {
@@ -47,7 +44,7 @@ build() {
     -D sysprof=true
   )
 
-  artix-meson _libdex build "${meson_options[@]}"
+  artix-meson libdex build "${meson_options[@]}"
   meson compile -C build
 }
 

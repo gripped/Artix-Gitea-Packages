@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libdex
-  version: 0.2.0-3
+  version: 0.4.0-1
   arch:
     - x86_64
   pkgname:
     - libdex
     - libdex-docs
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.0-1
+    packages:
+      - libdex-0.4.0-1-x86_64.pkg.tar.zst
+      - libdex-docs-0.4.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
