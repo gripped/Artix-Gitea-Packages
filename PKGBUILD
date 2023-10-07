@@ -1,0 +1,44 @@
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Eric Lehmann <katyl@katyl.info>
+# Contributor: Thomas Fanninger <thomas@fanninger.at>
+# Contributor: ultraviolet <ultravioletnanokitty@gmail.com>
+# Contributor: Pablo Lezeta <prflr88@gmail.com>
+
+pkgname=iio-sensor-proxy
+pkgver=3.5
+pkgrel=1
+pkgdesc='IIO accelerometer sensor to input device proxy'
+arch=('x86_64')
+url='https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/'
+license=('GPL2')
+depends=('libgudev' 'gtk3' 'polkit')
+makedepends=('meson')
+checkdepends=('python-gobject' 'python-dbusmock' 'python-psutil' 'umockdev')
+source=("$url/-/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('2389b18a7595ff92d7e1db9409f34f4ecf57cbb9ffa2471f0cc6a182fd8838fa3448855ef6804b0eb91942cabd67f1a9a3ce5bcf5e5e844ccf0b9fec72cbf30d')
+
+build() {
+  mkdir $pkgname-$pkgver/build
+  cd $pkgname-$pkgver/build
+
+  artix-meson .. \
+    -Dsystemdsystemunitdir='' \
+    -Dudevrulesdir=/usr/lib/udev/rules.d \
+    -Dsysconfdir=/usr/share
+
+  ninja
+}
+
+check() {
+  cd $pkgname-$pkgver/build
+
+#  needs French locale
+#  ninja test
+}
+
+package() {
+  cd $pkgname-$pkgver/build
+
+  DESTDIR="$pkgdir" ninja install
+}
+
