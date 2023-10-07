@@ -1,8 +1,9 @@
+# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-session
-pkgver=44.0
-pkgrel=2
+pkgver=45.0
+pkgrel=1
 pkgdesc="The GNOME Session Handler"
 url="https://gitlab.gnome.org/GNOME/gnome-session"
 arch=(x86_64)
@@ -29,7 +30,7 @@ makedepends=(
 )
 groups=(gnome)
 options=(debug)
-_commit=ce29eaa05c68807b9cc5f19f4afb59cc4d806040  # tags/44.0^0
+_commit=998ed1d8ee2ff5396583c284230648625b4103e5  # tags/45.0^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-session.git#commit=$_commit"
         "0001-meson-add-elogind-support.patch")
 b2sums=('SKIP'
@@ -45,9 +46,6 @@ prepare() {
 
   # enable buidling with elogind
   git apply -3 ../0001-meson-add-elogind-support.patch
-
-  # Unbreak portals with xdg-desktop-portal 1.18.0
-  git cherry-pick -n 353a43f81877d23b347c04c30e7ebc861f39c468
 }
  
 build() {
