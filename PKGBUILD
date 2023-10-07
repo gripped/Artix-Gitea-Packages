@@ -209,7 +209,6 @@ package_pipewire() {
     _pick pulse usr/bin/pipewire-pulse
     _pick pulse usr/lib/pipewire-$_ver/libpipewire-module-protocol-pulse.so
     _pick pulse usr/lib/pipewire-$_ver/libpipewire-module-pulse-tunnel.so
-    _pick pulse usr/lib/systemd/user/pipewire-pulse.*
     _pick pulse usr/share/man/man1/pipewire-pulse.1
     _pick pulse usr/share/pipewire/pipewire-pulse.conf
 
