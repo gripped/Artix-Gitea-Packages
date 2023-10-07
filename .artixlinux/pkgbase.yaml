@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libportal
-  version: 0.7.1-1
+  version: 0.7.1-2
   arch:
     - x86_64
   pkgname:
@@ -11,12 +11,12 @@ pkgbase:
     - libportal-qt5
     - libportal-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.7.1-2
+    packages:
+      - libportal-0.7.1-2-x86_64.pkg.tar.zst
+      - libportal-gtk3-0.7.1-2-x86_64.pkg.tar.zst
+      - libportal-gtk4-0.7.1-2-x86_64.pkg.tar.zst
+      - libportal-qt5-0.7.1-2-x86_64.pkg.tar.zst
+      - libportal-docs-0.7.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
