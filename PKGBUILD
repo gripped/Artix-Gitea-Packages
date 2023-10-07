@@ -65,7 +65,7 @@ options=(
   !strip
 )
 source=(
-  https://archive.mozilla.org/pub/firefox/releases/$pkgver/source/firefox-$pkgver.source.tar.xz{,.asc}
+  https://archive.mozilla.org/pub/firefox/releases/$pkgver/source/firefox-$pkgver.source.tar.xz
   $pkgname.desktop
   identity-icons-brand.svg
 )
@@ -75,11 +75,9 @@ validpgpkeys=(
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
 sha256sums=('a3f4da56d13605d615a740c739e3504261649d040bc473ae2ed609336d79fd95'
-            'SKIP'
             '1f241fdc619f92a914c75aece7c7c717401d7467c9a306458e106b05f34e5044'
             'a9b8b4a0a1f4a7b4af77d5fc70c2686d624038909263c795ecc81e0aec7711e9')
 b2sums=('eef2b6f4d4f090535a8f74fa5ae3774288aa82142b8bb70c7ca913222a941ac9b7f8d9e6b6739a2ce67dff6f1bec0a9a21d11d015e3437013badf82335206b58'
-        'SKIP'
         'd07557840097dd48a60c51cc5111950781e1c6ce255557693bd11306c7a9258b2a82548329762148f117b2295145f9e66e0483a18e2fe09c5afcffed2e4b8628'
         '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34')
 
