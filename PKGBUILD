@@ -4,7 +4,7 @@
 pkgbase=openldap
 pkgname=('openldap' 'libldap')
 pkgver=2.6.6
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.openldap.org/"
 license=('custom')
@@ -140,7 +140,7 @@ package_openldap() {
   # should be in libldap package
   rm "${pkgdir}"/usr/share/man/man5/ldap.conf.5
 
-  # let tmpfiles generate this directory
+  # let etmpfiles generate this directory
   rm -r "${pkgdir}"/run
 
   # get rid of duplicate conf files
