@@ -8,7 +8,7 @@
 pkgbase=thunderbird
 pkgname=(thunderbird)
 pkgver=115.3.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
 arch=(x86_64)
@@ -55,7 +55,7 @@ depends=(
 )
 makedepends=(
   unzip zip diffutils python nasm mesa libpulse libice libsm
-  rust clang llvm cbindgen nodejs lld
+  rustup clang llvm cbindgen nodejs lld
   gawk perl findutils libotr wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi
 )
 options=(!emptydirs !makeflags !lto)
@@ -71,6 +71,8 @@ validpgpkeys=(
 
 prepare() {
   cd $pkgname-$pkgver
+
+export RUSTUP_TOOLCHAIN=1.72
 
   echo "${noextract[@]}"
 
@@ -249,8 +251,8 @@ done
 sha512sums=('e3b643cfee07d3fdd7bcc686db6dd3e81b09ecabfa9df4d34dd32acf3799b4b0b4a88e169f957d420e06aabba55c4452f3a9761db37828b025048ad5d8ef2db9'
             'SKIP'
             '6918c0de63deeddc6f53b9ba331390556c12e0d649cf54587dfaabb98b32d6a597b63cf02809c7c58b15501720455a724d527375a8fb9d757ccca57460320734'
-            '5cd3ac4c94ef6dcce72fba02bc18b771a2f67906ff795e0e3d71ce7db6d8a41165bd5443908470915bdbdb98dddd9cf3f837c4ba3a36413f55ec570e6efdbb9f'
-            'd3bccdabf0f64d9245abac4e341b1dc6ca22efd73a64f7b1ec00bed263cae878d48c2358186b993682779cae0723aaf2538303e0a72b8eff85c6b71043d4398c'
+            '81aaecc96253482cc858d3ea282a6f7b46f2177631cb0a444e471e54384b938dca3e5b548ecc4c7f627a8bf850553cb1da4155f5b3b01d3619cf3c82672b9055'
+            'f5045451184b49c31be92bc21ee2fc7d2ef38eef2af151c7782f59d6db3d4525fe342355da3e2f29bd70bc1d1b721c6239238d8547395ab4aeb7cc5e5c1080dd'
             '7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290'
             'd44bc133e333f1c85e2928196b65de3491ab9fa23a44a783ec2192a49c778cfdec71cad0c1c08e5339528a53da4f60f585cdc6c8fa920d1957dbd98d1aa681d4'
             'f9790ff5ae7a27b9d0a83ca9d2f1c1d204670a724c35fcdfb8df480a753794831278956822b4604f72358f66dbb8cecb71e0bc7fcb36021994f2ea6a477fffad'
