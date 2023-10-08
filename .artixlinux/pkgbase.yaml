@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: caja-extensions-common
-  version: 1.27.0-1
+  name: caja-extensions
+  version: 1.26.1-2
   arch:
     - x86_64
   pkgname:
@@ -12,14 +12,13 @@ pkgbase:
     - caja-share
     - caja-wallpaper
     - caja-xattr-tags
-    - caja-audio-video-properties
 actions:
-  addRepo: null
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,8 +34,15 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.26.1-2
+    packages:
+      - caja-extensions-common-1.26.1-2-x86_64.pkg.tar.zst
+      - caja-image-converter-1.26.1-2-x86_64.pkg.tar.zst
+      - caja-open-terminal-1.26.1-2-x86_64.pkg.tar.zst
+      - caja-sendto-1.26.1-2-x86_64.pkg.tar.zst
+      - caja-share-1.26.1-2-x86_64.pkg.tar.zst
+      - caja-wallpaper-1.26.1-2-x86_64.pkg.tar.zst
+      - caja-xattr-tags-1.26.1-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
