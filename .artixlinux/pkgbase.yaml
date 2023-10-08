@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: bash
-  version: 5.1.016-4
+  version: 5.2.015-5
   arch:
     - x86_64
   pkgname:
     - bash
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 5.2.015-5
+    packages:
+      - bash-5.2.015-5-x86_64.pkg.tar.zst
   system:
     version: 5.1.016-4
     packages:
