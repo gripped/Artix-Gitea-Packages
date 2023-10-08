@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Brad Fanella <cesura@archlinux.org>
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=marco
-pkgver=1.27.0
-pkgrel=1.5
+pkgver=1.26.2
+pkgrel=2
 pkgdesc="A window manager for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
@@ -15,7 +15,7 @@ groups=('mate')
 conflicts=('marco-gtk3')
 replaces=('marco-gtk3')
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('4b5cafb6e67c2f42d705f5a812e7341b188eb1dab3e74b88329794c20b3327dd')
+sha256sums=('12f1a254fe1072f0304884711e089a5682780a011593402ed38de6b9480e07a3')
 
 build() {
 	cd "${pkgname}-${pkgver}"
