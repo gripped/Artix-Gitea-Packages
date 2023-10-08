@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: mate-icon-theme
-  version: 1.27.0-1
+  version: 1.26.0-1
   arch:
     - any
   pkgname:
     - mate-icon-theme
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.27.0-1
+    version: 1.26.0-1
     packages:
-      - mate-icon-theme-1.27.0-1-any.pkg.tar.zst
+      - mate-icon-theme-1.26.0-1-any.pkg.tar.zst
   world:
     version: 1.26.0-1
     packages:
