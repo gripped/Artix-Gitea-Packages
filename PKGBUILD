@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.5.6.zen1
+pkgver=6.5.6.zen2
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -40,12 +40,12 @@ validpgpkeys=(
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 sha256sums=('78e36d4214547051c24df2140f4ce09428d6c515ad9a71b38b28e8094a95d2f6'
             'SKIP'
-            'f0e082995e14f35356f18d92ab2042f8c7cf92addd516335b42878f689e0edc1'
+            '0f56f069f257106e1eb10287abf01b9fb08950a966bb8c32ce296c176eaa53b1'
             'SKIP'
             'f1b0ff9b105a4c278ab8cf20d388fe2f8312a2d654afa77b3cf7e0ec960ab673')
 b2sums=('6fec33a0ee1700694c43c2271263d23408f3ad53f71200717ebd3843dd0aecb5235a058439e63e304da276978f1e4148ae1aac78a22166b2ca236b137a406c0f'
         'SKIP'
-        '05c16f8c5f637f3621176e9bc1e6f88fc6c48427f896933a4e102879a394d12b86f5ec52a3711301bc43ef47ec843372e7238533d488619eb1aaa2e412c7702d'
+        '8b89a213e6c164e575010f451ae04135ada3611b6eb00a18a049dce2aa9697c558e35b747827ba398bf95f8808e21b1aa72e34f5465595e72e4c6098343bc9ab'
         'SKIP'
         '612b3d273842a059547be4ec157c4accec140e2328e20410bfda9f9f911638f2a21f7a4ac4fdb17d176035f1fa760cd5eeb215810ebe9fbf41f7ba000c6d74ee')
 
