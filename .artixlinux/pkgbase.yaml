@@ -15,11 +15,11 @@ pkgbase:
     - caja-audio-video-properties
 actions:
   addRepo: null
-  removeRepo: null
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -56,13 +56,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.27.0-1
-    packages:
-      - caja-extensions-common-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-image-converter-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-open-terminal-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-sendto-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-share-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-wallpaper-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-xattr-tags-1.27.0-1-x86_64.pkg.tar.zst
-      - caja-audio-video-properties-1.27.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
