@@ -17,6 +17,12 @@ conflicts=('mate-panel-gtk3')
 replaces=('mate-panel-gtk3')
 sha256sums=('f33f10d527450ba7e98cc70ab255ac481330aa9e66dbcc7c511b6baa171de029')
 
+prepare() {
+  cd "${pkgname}-${pkgver}" 
+  sed -i 's/--keyword Name/--keyword=Name/' libmate-panel-applet/Makefile.in
+  sed -i 's/--keyword Description/--keyword=Description/' libmate-panel-applet/Makefile.in
+}
+
 build() {
     cd "${pkgname}-${pkgver}" 
     ./configure \
