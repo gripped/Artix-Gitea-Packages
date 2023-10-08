@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jiachen Yang <farseerfc@gmail.com>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Håvard Pettersson <mail@haavard.me>
 # Contributor: naxuroqa <naxuroqa at gmail.com>
@@ -9,12 +9,12 @@ pkgname=toxcore
 _pkgname=c-toxcore
 epoch=1
 pkgver=0.2.18
-pkgrel=2
+pkgrel=3
 pkgdesc='Secure, configuration-free, P2P Skype replacement backend'
 arch=('x86_64')
 url='https://tox.chat'
 license=('GPL3')
-depends=('udev' 'libconfig' 'libsodium' 'libvpx' 'opus')
+depends=('esysusers' 'etmpfiles' 'libconfig' 'libsodium' 'libvpx' 'opus')
 makedepends=('check' 'cmake')
 conflicts=("tox")
 provides=("tox")
