@@ -5,7 +5,7 @@
 
 pkgname=rspamd
 pkgver=3.6
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
@@ -136,9 +136,15 @@ pkgver() {
   git describe --tags
 }
 
+prepare() {
+  cd rspamd
+}
+
 build() {
   cmake -S rspamd -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCONFDIR=/etc/rspamd \
     -DDBDIR=/var/lib/rspamd \
     -DLOGDIR=/var/log/rspamd \
