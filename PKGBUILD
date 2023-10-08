@@ -7,12 +7,12 @@
 
 pkgname=unbound
 pkgver=1.18.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Validating, recursive, and caching DNS resolver"
 arch=(x86_64)
 url="https://unbound.net/"
 license=(BSD)
-depends=(dnssec-anchors fstrm hiredis ldns libnghttp2 libsodium)
+depends=(dnssec-anchors fstrm hiredis ldns libnghttp2 libsodium esysusers etmpfiles)
 makedepends=(expat libevent openssl protobuf-c python swig)
 optdepends=(
   'expat: for unbound-anchor'
