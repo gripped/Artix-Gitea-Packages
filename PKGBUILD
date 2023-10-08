@@ -1,19 +1,19 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Brad Fanella <cesura@archlinux.org>
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-sensors-applet
-pkgver=1.27.0
-pkgrel=1
+pkgver=1.26.0
+pkgrel=2
 pkgdesc="A MATE Panel applet to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings"
 url="https://mate-desktop.org"
 arch=('x86_64')
 license=('GPL')
-depends=('libatasmart' 'libnotify' 'libxnvctrl' 'lm_sensors' 'mate-panel' 'gettext')
+depends=('udisks2' 'libnotify' 'libxnvctrl' 'lm_sensors' 'mate-panel' 'gettext')
 makedepends=('docbook-xsl' 'itstool')
 groups=('mate-extra')
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('93834a99a726ecbff7fde60cd72da8ff0edd367943739fe25305563c532e4eb8')
+sha256sums=('4c437c3ff04488543e2cf0c4627fe265c48b4ad8f4946fd9de9845edc0c82968')
 
 build() {
 	cd "${pkgname}-${pkgver}"
