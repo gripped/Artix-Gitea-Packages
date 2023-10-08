@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=python-pynacl
 pkgver=1.4.0
-pkgrel=6
+pkgrel=7
 
 pkgdesc='Python binding to the Networking and Cryptography (NaCl) library'
 url='https://pypi.python.org/pypi/PyNaCl'
