@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: mate-menus
-  version: 1.27.0-1
+  version: 1.26.0-1
   arch:
     - x86_64
   pkgname:
     - mate-menus
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.26.0-1
+    packages:
+      - mate-menus-1.26.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.27.0-1
     packages:
