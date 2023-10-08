@@ -1,21 +1,21 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Brad Fanella <cesura@archlinux.org>
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-screensaver
-pkgver=1.27.0
-pkgrel=1
+pkgver=1.26.1
+pkgrel=2
 pkgdesc='Screensaver for MATE'
 url="https://mate-desktop.org"
 arch=('x86_64')
 license=('GPL')
-depends=('libmatekbd' 'gettext' 'libnotify' 'libxss' 'mate-desktop' 'mate-menus' 'mate-session-manager')
+depends=('mate-panel' 'libmatekbd' 'gettext' 'libnotify' 'libxss' 'mate-desktop' 'mate-menus' 'mate-session-manager')
 makedepends=('udev')
 groups=('mate-extra')
 conflicts=('mate-screensaver-gtk3')
 replaces=('mate-screensaver-gtk3')
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('33c3d4a7d364d68de0a1e55e4e41364edf3df9f7d2343684c642ef5e2f96fee5')
+sha256sums=('4fbdb21ea4a59ea8de33ea9bf776d869753e49295604664c30e220e09659b8bc')
 
 build() {
 	cd "${pkgname}-${pkgver}"
