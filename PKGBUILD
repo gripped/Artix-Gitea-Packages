@@ -3,13 +3,13 @@
 
 pkgname=keysmith
 pkgver=23.08.1
-pkgrel=1
+pkgrel=2
 pkgdesc='OTP client for Plasma Mobile and Desktop'
 url='https://apps.kde.org/keysmith/'
 arch=(x86_64)
 license=(GPL LGPL)
 groups=(kde-applications kde-utilities)
-depends=(kirigami-addons ki18n kdbusaddons kwindowsystem libsodium qt5-svg)
+depends=(kirigami-addons ki18n5 kdbusaddons5 kwindowsystem5 libsodium qt5-svg)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('52c3dff6be4987531cc851bd33fae1e0822de301b65566d1cf700690396d4c13'
