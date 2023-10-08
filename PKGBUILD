@@ -39,7 +39,7 @@ makedepends=(
   nasm
   nodejs
   python
-  rust
+  rustup
   unzip
   wasi-compiler-rt
   wasi-libc
@@ -130,6 +130,7 @@ END
 build() {
   cd firefox-$pkgver
 
+  export RUSTUP_TOOLCHAIN=1.72
   export MOZ_NOSPAM=1
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
   export MOZ_ENABLE_FULL_SYMBOLS=1
