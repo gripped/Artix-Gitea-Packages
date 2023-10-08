@@ -100,6 +100,8 @@ prepare() {
   # Make icon transparent
   sed -i '/^<rect/d' comm/mail/branding/thunderbird/TB-symbolic.svg
 
+  touch google-api-key
+  touch mozilla-api-key
   cp ../mozconfig.cfg .mozconfig
   sed "s|@PWD@|${PWD@Q}|g" -i .mozconfig
   # EVENT__SIZEOF_TIME_T does not exist on upstream libevent, see event-config.h.cmake
