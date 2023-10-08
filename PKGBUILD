@@ -3,7 +3,7 @@
 
 pkgname=zeromq
 pkgver=4.3.4
-pkgrel=4
+pkgrel=5
 pkgdesc='Fast messaging system built on sockets. C and C++ bindings. aka 0MQ, ZMQ.'
 arch=('x86_64')
 url='http://www.zeromq.org'
@@ -59,6 +59,8 @@ build() {
     -B build \
     -D CMAKE_BUILD_TYPE=None \
     -D CMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_PREFIX_PATH=/usr \
+    -D CMAKE_INSTALL_LIBDIR=/usr/lib \
     -D CMAKE_CURRENT_BINARY_DIR=/usr \
     -D BUILD_SHARED=ON \
     -D BUILD_STATIC=OFF \
