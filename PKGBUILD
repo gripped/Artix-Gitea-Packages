@@ -1,9 +1,8 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
-#
 
 pkgname=adios2
 pkgver=2.8.3
-pkgrel=5
+pkgrel=6
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
@@ -32,8 +31,10 @@ prepare() {
 }
 
 build() {
-  artix-cmake -B build -S ${pkgname^^}-${pkgver} \
+  cmake -B build -S ${pkgname^^}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCMAKE_SKIP_RPATH=ON \
     -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON \
     -DADIOS2_HAVE_HDF5_VOL=OFF \
