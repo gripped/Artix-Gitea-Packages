@@ -69,18 +69,6 @@ validpgpkeys=(
   4360FE2109C49763186F8E21EBE41E90F6F12F6D # Mozilla Software Releases <release@mozilla.com>
 )
 
-# Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
-# Note: These are for Arch Linux use ONLY. For your own distribution, please
-# get your own set of keys. Feel free to contact foutrelis@archlinux.org for
-# more information.
-_google_api_key=AIzaSyDwr302FpOSkGRpLlUpPThNTDPbXcIn_FM
-
-# Mozilla API keys (see https://location.services.mozilla.com/api)
-# Note: These are for Arch Linux use ONLY. For your own distribution, please
-# get your own set of keys. Feel free to contact heftig@archlinux.org for
-# more information.
-_mozilla_api_key=16674381-f021-49de-8622-3021c5942aff
-
 prepare() {
   cd $pkgname-$pkgver
 
@@ -100,8 +88,6 @@ prepare() {
   # Make icon transparent
   sed -i '/^<rect/d' comm/mail/branding/thunderbird/TB-symbolic.svg
 
-  touch google-api-key
-  touch mozilla-api-key
   cp ../mozconfig.cfg .mozconfig
   sed "s|@PWD@|${PWD@Q}|g" -i .mozconfig
   # EVENT__SIZEOF_TIME_T does not exist on upstream libevent, see event-config.h.cmake
@@ -264,7 +250,7 @@ sha512sums=('e3b643cfee07d3fdd7bcc686db6dd3e81b09ecabfa9df4d34dd32acf3799b4b0b4a
             'SKIP'
             '6918c0de63deeddc6f53b9ba331390556c12e0d649cf54587dfaabb98b32d6a597b63cf02809c7c58b15501720455a724d527375a8fb9d757ccca57460320734'
             '5cd3ac4c94ef6dcce72fba02bc18b771a2f67906ff795e0e3d71ce7db6d8a41165bd5443908470915bdbdb98dddd9cf3f837c4ba3a36413f55ec570e6efdbb9f'
-            'd71f5b497158b3203b5d677fd76fd773e641303df1475864b9d8ad8f2bb9ed942af280c1adefcf4bd9ed5c2926ea83c7ee8659b3d615e5734d09b20c89537d8c'
+            'd3bccdabf0f64d9245abac4e341b1dc6ca22efd73a64f7b1ec00bed263cae878d48c2358186b993682779cae0723aaf2538303e0a72b8eff85c6b71043d4398c'
             '7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290'
             'd44bc133e333f1c85e2928196b65de3491ab9fa23a44a783ec2192a49c778cfdec71cad0c1c08e5339528a53da4f60f585cdc6c8fa920d1957dbd98d1aa681d4'
             'f9790ff5ae7a27b9d0a83ca9d2f1c1d204670a724c35fcdfb8df480a753794831278956822b4604f72358f66dbb8cecb71e0bc7fcb36021994f2ea6a477fffad'
