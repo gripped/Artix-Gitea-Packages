@@ -1,11 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Andrew Simmons <andrew.simmons@gmail.com>
 
 pkgname=thunar
 pkgver=4.18.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern, fast and easy-to-use file manager for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/thunar/start"
@@ -14,7 +14,8 @@ groups=('xfce4')
 depends=('desktop-file-utils' 'libexif' 'hicolor-icon-theme' 'libnotify'
          'pcre2' 'libgudev' 'exo' 'libxfce4util' 'libxfce4ui' 'libpng')
 makedepends=('intltool' 'gobject-introspection' 'xfce4-panel')
-optdepends=('gvfs: trash support, mounting with udisk and remote filesystems'
+optdepends=('catfish: file searching'
+            'gvfs: trash support, mounting with udisk and remote filesystems'
             'tumbler: thumbnail previews'
             'thunar-volman: removable device management'
             'thunar-archive-plugin: archive creation and extraction'
@@ -43,6 +44,7 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
+
   rm -r $pkgdir/usr/lib/systemd
 }
 
