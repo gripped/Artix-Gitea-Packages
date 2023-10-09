@@ -3,7 +3,7 @@
 
 pkgname=gnome-shell-extensions
 pkgver=45.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Extensions for GNOME shell, including classic mode"
 url="https://wiki.gnome.org/Projects/GnomeShell/Extensions"
 arch=(any)
@@ -18,8 +18,10 @@ groups=(gnome)
 _commit=ba5783ff8cf9a205874601f92932fd429ec9fb2f  # tags/45.0^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git#commit=$_commit"
+  "0001-drive_menu_remove_left_over_signal_connection.patch::https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/commit/092b268823746d58a5fea737d9f1234d71a8058d.diff"
 )
-b2sums=('SKIP')
+b2sums=('SKIP'
+        'f2872b67e6a7ae916a0c5bd8c8f095a89b801fb85abee793c881227caff6352bd4e868a8a9d9903448e93d44b28cf5f44fdb773ad69b04f1c2296a68c835ca76')
 
 pkgver() {
   cd $pkgname
@@ -28,6 +30,9 @@ pkgver() {
 
 prepare() {
   cd $pkgname
+
+  # https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/commit/092b268823746d58a5fea737d9f1234d71a8058d
+  git apply -3 ../0001-drive_menu_remove_left_over_signal_connection.patch
 }
 
 build() {
