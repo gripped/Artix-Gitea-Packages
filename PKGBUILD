@@ -5,14 +5,15 @@
 # Contributor: Judd Vinet <jvinet.zeroflux.org>
 
 pkgname=dhcpcd
-pkgver=10.0.2
+pkgver=10.0.3
 pkgrel=1
 pkgdesc="DHCP/ IPv4LL/ IPv6RA/ DHCPv6 client"
 url="https://roy.marples.name/projects/dhcpcd/"
 arch=(x86_64)
-license=(BSD)
+license=(BSD-2-Clause)
 depends=(
   glibc
+  openssl
   sh
   libudev
 )
@@ -26,11 +27,11 @@ source=(
   $pkgname.sysusers
   $pkgname.tmpfiles
 )
-sha256sums=('3aa15c50be86d9595467f21dd9dc66f7115e3de1f5ab0b704b753684062b8541'
+sha256sums=('232a3f7ee41f026e644ee8c8468d4baf2d5f37ca91ade442c5a7b4bc81b3cb0f'
             'SKIP'
             '06788ad9f5f7ccb5d2a2da6f0322ff5771f8de82cfbe8b9ad954f2c38265e21b'
             '1ca593a91d537766d073e71cfab87881e6f6a2ccb5236a45531d5520b3af7a31')
-b2sums=('999033b4c0bc46943332b0b7ed3f1869ad54e2c37346523a15fbd3d9f29db1e01c1ddd0a300826021d3e20493ea06358ef47ac6a02c50331ca0d90e31a123b85'
+b2sums=('c063fbb44b4a6928ffd84c109c1ed8ae0345c81b732fc75ce1c1aebc51c190fa512de9822c1c6865794db126f4ad2aceef97c4da28d6922cca082b1aeedb4760'
         'SKIP'
         '1f4ad7d27a33ea9d317b95817898bc853bda8ef6bf1b09d86b7a5b25a0dae89c246fdb919c62b677d25148c8b4cf8c02e99cf3fa583c3a63bd04d1817bf47872'
         'fab9f56a694b2bcaa26ebd4040984778ea4a3cccd57f17a0eb724a9fc4750157d97d9d0db747932c3b386938fe2bf1d6a4ba609cc5cc3a6b0e1ae39404ba21be')
