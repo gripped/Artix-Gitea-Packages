@@ -8,8 +8,8 @@ pkgbase:
     - mutter
     - mutter-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 45.0-1
     packages:
       - mutter-45.0-1-x86_64.pkg.tar.zst
       - mutter-docs-45.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 44.5-1
-    packages:
-      - mutter-44.5-1-x86_64.pkg.tar.zst
-      - mutter-docs-44.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
