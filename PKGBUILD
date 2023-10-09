@@ -194,10 +194,10 @@ END
   _pick libnm usr/share/vala/vapi/libnm.*
 
   _pick cloud usr/lib/**/*nm-cloud-setup*
-  _pick cloud usr/share/man/*/nm-cloud-setup*
+#   _pick cloud usr/share/man/*/nm-cloud-setup*
 
   # Not actually packaged (https://bugs.archlinux.org/task/69138)
-  _pick ovs usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf
+#   _pick ovs usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf
 
   # Restore empty dir
   install -d usr/lib/NetworkManager/dispatcher.d/no-wait.d
