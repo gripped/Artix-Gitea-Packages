@@ -1,8 +1,8 @@
 pkgbase = gamescope
 	pkgdesc = SteamOS session compositing window manager
-	pkgver = 3.12.0
+	pkgver = 3.12.7
 	pkgrel = 1
-	url = https://github.com/Plagman/gamescope
+	url = https://github.com/ValveSoftware/gamescope
 	arch = x86_64
 	license = BSD
 	makedepends = benchmark
@@ -39,7 +39,11 @@ pkgbase = gamescope
 	depends = vulkan-icd-loader
 	depends = wayland
 	depends = xorg-server-xwayland
-	source = git+https://github.com/Plagman/gamescope.git#tag=318fd75952302fb8f121c0fc9a788f38c96a9dba
+	source = git+https://github.com/ValveSoftware/gamescope.git#tag=d1eb70bb1a17072b48f7545af0fcf5f16d677aee
+	source = git+https://github.com/Joshua-Ashton/reshade.git
+	source = git+https://github.com/KhronosGroup/SPIRV-Headers.git
+	b2sums = SKIP
+	b2sums = SKIP
 	b2sums = SKIP
 
 pkgname = gamescope
