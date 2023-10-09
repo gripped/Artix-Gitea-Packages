@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xterm
-  version: 385-1
+  version: 386-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 385-1
+    version: 386-1
     packages:
-      - xterm-385-1-x86_64.pkg.tar.zst
+      - xterm-386-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
