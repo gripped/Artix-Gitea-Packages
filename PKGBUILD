@@ -8,7 +8,7 @@
 
 pkgname=kmymoney
 pkgver=5.1.3
-pkgrel=9
+pkgrel=9.1
 pkgdesc="Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
 arch=('x86_64')
 url="https://kmymoney.org/"
