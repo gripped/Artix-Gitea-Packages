@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=3.27.6
+pkgver=3.27.7
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -17,13 +17,13 @@ optdepends=(
   'qt6-base: cmake-gui'
 )
 source=("https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz"
-        "artix-cmake"{,.patch}
-        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc})
-sha512sums=('268b5bd84800c37ce0e311cadf13c275a538d612844cc8687107549fe6341a6c3115560e3b9162836843016213d225f62db130bc251bf8aff50c69b9bd58e638'
+        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc}
+        "artix-cmake"{,.patch})
+sha512sums=('2e9b83dee8f8c012be4219ab74ebaa8b8438ea55d5204237a1c9feba94c732afe7baceddb9c681672903112b1e40f7b1a86b284cfceed15f46ce8f90143dbb86'
+            '5f093ed51b10f530318c8b8205ff35f91443a71064008115eecce2f7e8393a3cb3b7dd1c35e5b7b58981c49b19ee708966321085a3237ec313a0865d26948e32'
+            'SKIP'
             '08a4f8df1b005869a3497fd5090620ce54eefa09df67245e76eb6ae81171e5045f87180cd848d8a1e44ce5c4cf290efd6c9b655ccf46230967abef4941513af7'
-            '8a838312162d7792d3a3c5168629191c5c6ae61095bec157c49528b393bf4fe1573567855efd5037675bf0d0837641ed45b26da65165e45ba711f123879b156c'
-            '46c5536d7b8d8b08f97a7352d89df8c12ee9c3b28cd49bd29f91d6136bdb56481f93eb2ceb9c0391dc1284c43f36f384f7b749483b64aebb4f84c6a2cd9077d5'
-            'SKIP')
+            '8a838312162d7792d3a3c5168629191c5c6ae61095bec157c49528b393bf4fe1573567855efd5037675bf0d0837641ed45b26da65165e45ba711f123879b156c')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
