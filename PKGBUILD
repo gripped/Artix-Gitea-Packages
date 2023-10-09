@@ -22,7 +22,7 @@ _tag='bb59f566e1e5c387dbfd342bb3767f761422c744' # git rev-parse grub-${_pkgver}
 _pkgver=2.12rc1
 _unifont_ver='15.1.02'
 pkgver=${_pkgver/-/}
-pkgrel=4
+pkgrel=5
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
@@ -78,7 +78,7 @@ sha256sums=('SKIP'
             '4bdd5ceb13dbd4c41fde24163f16a0ba05447d821e74d938a0b9e5fce0431140'
             '9f8921b2bacd69bde7ab0c3aff88c678d52c2a625c89264fb92184e7427b819b'
             '1a8dd1d80d0eb8db0db56719694e2e6eee96d42b3e2ccbe618320d7c12ccd65c'
-            '9b2cf848ba2784cffb63ed9d2906edece1d89cf3004132b3a4958cee7482af39')
+            'a89ff0e8d5f0c202d61ddb3d21341ac0017ec7fb5b3f7c433d9f815bf5952952')
 
 _backports=(
 )
