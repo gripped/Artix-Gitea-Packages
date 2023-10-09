@@ -11,8 +11,8 @@ pkgname=(
   libnm
   nm-cloud-setup
 )
-pkgver=1.44.0
-pkgrel=1.1
+pkgver=1.44.2
+pkgrel=1
 pkgdesc="Network connection manager and user applications"
 url="https://networkmanager.dev/"
 arch=(x86_64)
@@ -24,7 +24,6 @@ makedepends=(
   dhclient
   dhcpcd
   dnsmasq
-  elogind
   git
   glib2-docs
   gobject-introspection
@@ -48,6 +47,7 @@ makedepends=(
   polkit
   ppp
   python-gobject
+  elogind
   vala
   vala
   wpa_supplicant
@@ -56,7 +56,7 @@ checkdepends=(
   libx11
   python-dbus
 )
-_commit=d56e49a4ecc2b03b46f3387b837afc87e99c4bfa  # tags/1.44.0^0
+_commit=8bee6ef894a27ffc8a464df3b32b03e811e1a15d  # tags/1.44.2^0
 source=("git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -193,11 +193,14 @@ END
   _pick libnm usr/share/gtk-doc/html/libnm
   _pick libnm usr/share/vala/vapi/libnm.*
 
-  _pick nm-cloud-setup "$pkgdir"/usr/lib/**/*nm-cloud-setup*
-#  _pick nm-cloud-setup "$pkgdir"/usr/share/man/*/nm-cloud-setup* (Artix)
+  _pick cloud usr/lib/**/*nm-cloud-setup*
+  _pick cloud usr/share/man/*/nm-cloud-setup*
+
+  # Not actually packaged (https://bugs.archlinux.org/task/69138)
+  _pick ovs usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf
 
   # Restore empty dir
-# mkdir "$pkgdir/usr/lib/NetworkManager/dispatcher.d/no-wait.d" (Artix)
+  install -d usr/lib/NetworkManager/dispatcher.d/no-wait.d
 }
 
 package_libnm() {
@@ -218,7 +221,7 @@ package_nm-cloud-setup() {
   pkgdesc="Automatically configure NetworkManager in cloud"
   depends=(networkmanager)
 
-  mv nm-cloud-setup/* "$pkgdir"
+  mv cloud/* "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
