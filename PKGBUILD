@@ -1,9 +1,9 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=xdg-desktop-portal-hyprland
-pkgver=1.2.1
+pkgver=1.2.2
 _protocolver=4d29e48433270a2af06b8bc711ca1fe5109746cd
-pkgrel=2
+pkgrel=1
 pkgdesc='xdg-desktop-portal backend for hyprland'
 url="https://github.com/hyprwm/$pkgname"
 arch=(x86_64)
@@ -27,8 +27,8 @@ optdepends=('grim: required for the screenshot portal to function'
 _archive="$pkgname-$pkgver"
 source=("$url/archive/v$pkgver/v$pkgver.tar.gz"
         "https://github.com/hyprwm/hyprland-protocols/archive/$_protocolver.tar.gz"
-        hyprland-portals.conf) # TODO drop on next release
-sha256sums=('7f902a954bfc60ea081a40b482be837fad558b14aa751546b1f51ac9e8daef17'
+        hyprland-portals.conf) # TODO move this to hyprland where it belongs
+sha256sums=('06cc1f8bb1b6bed06c495447534d40115cfcdb110a89507ea46056758881c80e'
             '5f6be4d870e94314f05ec7ff9c9c1f028748230ff80a7f89aeaf66c08e5c70e0'
             '20bc215211f16a361086d59fa051df7337d95f91c695a29d8c5d23d40407fad5')
 
@@ -49,7 +49,6 @@ package() {
     cd "$_archive"
     DESTDIR="$pkgdir" ninja -C build install
     install -Dm0755 -t "$pkgdir/usr/bin/" hyprland-share-picker/build/hyprland-share-picker
-    # install -Dm0644 -t "$pkgdir/usr/share/xdg-desktop-portal/" assets/hyprland-portals.conf
     install -Dm0644 -t "$pkgdir/usr/share/xdg-desktop-portal/" "${srcdir}/hyprland-portals.conf"
     install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 }
