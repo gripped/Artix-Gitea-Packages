@@ -3,7 +3,7 @@
 pkgbase=fcitx-qt5
 pkgname=(fcitx-qt5 fcitx-qt6)
 pkgver=1.2.7
-pkgrel=17
+pkgrel=18
 pkgdesc="Qt5/6 IM Module for Fcitx"
 arch=('x86_64')
 url="https://github.com/fcitx/fcitx-qt5"
@@ -16,7 +16,7 @@ sha512sums=('1deb2e6cfccaae06ec3d0f3126d463773d9977cd5616bd15b20a668a5b08ae6d0cc
 validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
 
 build() {
-  cd $pkgbase-$pkgver 
+  cd $pkgbase-$pkgver
 
   cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_LIBDIR=lib -DENABLE_QT6=On .
   make
