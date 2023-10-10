@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-setuptools-scm
-  version: 7.1.0-4
+  version: 8.0.4-1
   arch:
     - any
   pkgname:
     - python-setuptools-scm
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.0.4-1
+    packages:
+      - python-setuptools-scm-8.0.4-1-any.pkg.tar.zst
   world:
     version: 7.1.0-4
     packages:
