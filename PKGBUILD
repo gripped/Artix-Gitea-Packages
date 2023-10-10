@@ -5,7 +5,7 @@
 # Contributor: Illarion Kovalchuk <illarion.kovalchuk at gmail dot com>
 
 pkgname=jenkins
-pkgver=2.426
+pkgver=2.427
 pkgrel=1
 _java=17
 pkgdesc='Extendable continuous integration server (latest)'
@@ -17,12 +17,13 @@ makedepends=("java-environment=${_java}" 'git' 'maven')
 provides=('jenkins-ci')
 conflicts=('jenkins-ci')
 replaces=('jenkins-ci')
+backup=('etc/conf.d/jenkins')
 install='jenkins.install'
 source=("https://github.com/jenkinsci/jenkins/archive/refs/tags/jenkins-${pkgver}.tar.gz"
         'jenkins.tmpfiles'
         'jenkins.sysusers'
         'skip-failing-test.patch')
-sha512sums=('b63310c612e15ecafaf56e181f9b4951b080e170d5a4a35ac75d0a8e69d90ee12e2411e1dbfb07a1aac3980c4158b0224c724f6b3cf0aec14dc9faec07699989'
+sha512sums=('3d1857c6bb3e963b0a7d4870d2b16396a21f32ce2f2e43eee8aef6bc705500ffa1e91773c6eeeccd4bca38e6c1d94a4f8df207df717716586cd2758d2958dee6'
             'a845a7147be54affc586dfce9a188ec24c92e673e88dec0b62da386d2e597de6ecda103429008562abd897f179a52c37cf2188ebc65b8c636efd07d707e18f90'
             '896cbc64eadb2f3bb9fa7fc26dbfc527b1823d8bff3158be7f1936cc250f55eeafe89079e1ceb8f3d269041662573ccbbb36248140b4ba24144a564366f8847a'
             '876180dc1674ec56c32a4fceac7d9608f450520ace7d3ecb68cbe7ba8f1bcba31f2c063f52a9076c432b78fd31157da3febc65e98e7d9050a4134d4e0304e8bd')
