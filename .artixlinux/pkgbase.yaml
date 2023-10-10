@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ffnvcodec-headers
-  version: 12.0.16.0-1
+  version: 12.1.14.0-1
   arch:
     - any
   pkgname:
     - ffnvcodec-headers
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.0.16.0-1
+    version: 12.1.14.0-1
     packages:
-      - ffnvcodec-headers-12.0.16.0-1-any.pkg.tar.zst
+      - ffnvcodec-headers-12.1.14.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
