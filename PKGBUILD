@@ -12,7 +12,7 @@ pkgdesc='Provides access to hardware and virtual serial ports'
 depends=(gcc-libs
          glibc
          qt6-base
-         systemd-libs)
+         udev)
 makedepends=(cmake
              ninja)
 groups=(qt6)
@@ -21,7 +21,7 @@ source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodu
 sha256sums=('ecfcbbf1c47a67ff599a409bf7682fed416f797860c01c934f5a78c336da4065')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr  -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
