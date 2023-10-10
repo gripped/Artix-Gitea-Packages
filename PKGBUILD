@@ -3,7 +3,7 @@
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 
 pkgname=avahi
-pkgver=0.8+r127+g55d783d
+pkgver=0.8+r139+ge5b0bad
 pkgrel=1
 epoch=1
 pkgdesc="Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)"
@@ -47,7 +47,7 @@ backup=(
   etc/avahi/{hosts,avahi-daemon.conf,avahi-{autoip,dnsconf}d.action}
   usr/lib/avahi/service-types.db
 )
-_commit=55d783d9d11ced838d73a2757273c5f6958ccd5c  # master
+_commit=e5b0badfc725b7fa9e6069b6a3d5f278d1b96113  # master
 source=(
   "git+https://github.com/lathiat/avahi#commit=$_commit"
   0001-Fix-avahi-browse-Invalid-service-type.patch
@@ -56,6 +56,11 @@ source=(
 b2sums=('SKIP'
         '79a881a7f45b4d6061285257b07aa0f72aa69cedc636c74ec12dd031372b3560b4013f18d821e31b323fd73af5de811a1f5ba94ba0e32ce1b1bb940af3bad54f'
         'd5bbef78b13008a006d23730a86039b09b78e468961c3fbeddf42578a7d871a1ec12e46a3b85591f4d2d4eb7f64e9021f9c9bec7c2959ad523737f1a142269a7')
+
+pkgver() {
+  cd avahi
+  git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
+}
 
 prepare() {
   cd avahi
