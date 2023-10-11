@@ -3,7 +3,7 @@
 
 pkgname=mate-control-center
 pkgver=1.26.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="The Control Center for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
