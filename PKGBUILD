@@ -3,7 +3,7 @@
 
 pkgname=mate-session-manager
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The MATE Session Handler"
 url="https://mate-desktop.org"
 arch=('x86_64')
