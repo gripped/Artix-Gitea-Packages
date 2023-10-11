@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: x264
-  version: 3:0.164.r3095.baee400-4
+  version: 3:0.164.r3108.31e19f9-1
   arch:
     - x86_64
   pkgname:
     - x264
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3:0.164.r3095.baee400-4
+    version: 3:0.164.r3108.31e19f9-1
     packages:
-      - x264-3:0.164.r3095.baee400-4-x86_64.pkg.tar.zst
+      - x264-3:0.164.r3108.31e19f9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
