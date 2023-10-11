@@ -3,7 +3,7 @@
 
 pkgname=mate-polkit
 pkgver=1.26.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="PolicyKit integration for the MATE desktop"
 url="https://mate-desktop.org"
 arch=('x86_64')
