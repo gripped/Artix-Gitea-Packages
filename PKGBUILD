@@ -3,7 +3,7 @@
 
 pkgname=libmatekbd
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="MATE keyboard library"
 url="https://mate-desktop.org"
 arch=('x86_64')
