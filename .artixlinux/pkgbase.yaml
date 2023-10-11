@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lib32-libxkbcommon
-  version: 1.5.0-1
+  version: 1.6.0-1
   arch:
     - x86_64
   pkgname:
     - lib32-libxkbcommon
     - lib32-libxkbcommon-x11
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -38,8 +38,10 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1.6.0-1
+    packages:
+      - lib32-libxkbcommon-1.6.0-1-x86_64.pkg.tar.zst
+      - lib32-libxkbcommon-x11-1.6.0-1-x86_64.pkg.tar.zst
   lib32:
     version: 1.5.0-1
     packages:
