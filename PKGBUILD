@@ -1,5 +1,4 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=xdg-desktop-portal-kde
 pkgver=5.27.8
@@ -36,6 +35,4 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-
-  rm -r $pkgdir/usr/lib/systemd # remove systemd service
 }
