@@ -3,7 +3,7 @@
 
 pkgname=mate-system-monitor
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A system monitor for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
