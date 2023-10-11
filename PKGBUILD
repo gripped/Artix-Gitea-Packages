@@ -5,7 +5,7 @@
 pkgname=qt6-svg
 _qtver=6.6.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -18,8 +18,14 @@ makedepends=(cmake
              ninja)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('33da25fef51102f564624a7ea3e57cb4a0a31b7b44783d1af5749ac36d3c72de')
+source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz
+        qtbug-117944.patch::https://code.qt.io/cgit/qt/qtsvg.git/patch/?id=edc8ca7f)
+sha256sums=('33da25fef51102f564624a7ea3e57cb4a0a31b7b44783d1af5749ac36d3c72de'
+            '6f6ebbfda32d4ef699202e1ee32805ab3fb916801f4ad722528b4f3b1fd95cbe')
+
+prepare() {
+  patch -d $_pkgfn -p1 < qtbug-117944.patch # Fix crashes with malformed SVGs
+}
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
