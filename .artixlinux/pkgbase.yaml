@@ -1,7 +1,11 @@
 ---
 pkgbase:
   name: neovim
+<<<<<<< HEAD
   version: 0.9.2-1
+=======
+  version: 0.9.4-1
+>>>>>>> 195bf26 ([world] 'neovim-0.9.4-1' add)
   arch:
     - x86_64
   pkgname:
@@ -31,9 +35,15 @@ repos:
     version: null
     packages: []
   world:
+<<<<<<< HEAD
     version: 0.9.2-1
     packages:
       - neovim-0.9.2-1-x86_64.pkg.tar.zst
+=======
+    version: 0.9.4-1
+    packages:
+      - neovim-0.9.4-1-x86_64.pkg.tar.zst
+>>>>>>> 195bf26 ([world] 'neovim-0.9.4-1' add)
   lib32-goblins:
     version: null
     packages: []
