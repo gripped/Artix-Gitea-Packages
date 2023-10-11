@@ -4,7 +4,7 @@
 
 pkgname=engrampa
 pkgver=1.26.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Archive manipulator for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
