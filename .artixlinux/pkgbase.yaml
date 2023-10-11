@@ -1,13 +1,13 @@
 ---
 pkgbase:
-  name: python-pyqt6
-  version: 6.5.2-1
+  name: pyqt6
+  version: 6.5.2-3
   arch:
     - x86_64
   pkgname:
     - python-pyqt6
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.5.2-3
+    packages:
+      - python-pyqt6-6.5.2-3-x86_64.pkg.tar.zst
   world:
     version: 6.5.2-1
     packages:
