@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: qtcreator
-  version: 11.0.3-1
+  version: 11.0.3-2
   arch:
     - x86_64
   pkgname:
     - qtcreator
     - qtcreator-devel
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 11.0.3-2
+    packages:
+      - qtcreator-11.0.3-2-x86_64.pkg.tar.zst
+      - qtcreator-devel-11.0.3-2-x86_64.pkg.tar.zst
   world:
     version: 11.0.3-1
     packages:
