@@ -3,7 +3,7 @@
 
 pkgname=mate-user-share
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="User level public file sharing via WebDAV for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
