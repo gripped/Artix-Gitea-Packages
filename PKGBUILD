@@ -3,7 +3,7 @@
 
 pkgname=mate-menus
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="MATE menu specifications"
 url="https://mate-desktop.org"
 arch=('x86_64')
