@@ -4,7 +4,7 @@
 
 pkgname=mate-sensors-applet
 pkgver=1.26.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A MATE Panel applet to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings"
 url="https://mate-desktop.org"
 arch=('x86_64')
