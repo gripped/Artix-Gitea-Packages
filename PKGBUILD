@@ -3,7 +3,7 @@
 
 pkgname=mate-power-manager
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Power management tool for the MATE desktop"
 url="https://mate-desktop.org"
 arch=('x86_64')
