@@ -4,7 +4,7 @@
 
 pkgname=marco
 pkgver=1.26.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A window manager for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
