@@ -3,7 +3,7 @@
 
 pkgname=mate-netbook
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A simple window management tool"
 url="https://mate-desktop.org"
 arch=('x86_64')
