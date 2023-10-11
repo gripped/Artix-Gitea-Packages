@@ -4,7 +4,7 @@
 
 pkgname=mate-screensaver
 pkgver=1.26.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Screensaver for MATE'
 url="https://mate-desktop.org"
 arch=('x86_64')
