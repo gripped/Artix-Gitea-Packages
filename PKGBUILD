@@ -22,7 +22,7 @@ pkgname=(
 )
 _commit=181fbfee6d3fcc3afd3c93613f126a8346dad586  # tags/0.3.81
 pkgver=0.3.81
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -74,10 +74,11 @@ source=(
   artix-pipewire-launcher
   pipewire.desktop
 )
-b2sums=('SKIP'
-        '83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
+b2sums=(
+'83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
         '9abebce63d8e877aa9b73cabdf786e71824681328511822dfbd213e3b4c94ac073d225a3c72dcaf96f9c0fa0fcfce67160778487e711b82d452d5570c00d7405'
 )
+
 pkgver() {
   cd pipewire
   git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
@@ -85,6 +86,11 @@ pkgver() {
 
 prepare() {
   cd pipewire
+
+  # https://bugs.archlinux.org/task/79931
+  # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/3565
+  git cherry-pick -n a8636b04cbf5e1b22e3344630df47bf4e5ee53ea
+  git cherry-pick -n e940361c947cf8519b11c7e6792441c86fc59042
 }
 
 build() {
