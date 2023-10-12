@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libnotify
-  version: 0.8.2-1
+  version: 0.8.3-1
   arch:
     - x86_64
   pkgname:
     - libnotify
     - libnotify-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.2-1
+    version: 0.8.3-1
     packages:
-      - libnotify-0.8.2-1-x86_64.pkg.tar.zst
-      - libnotify-docs-0.8.2-1-x86_64.pkg.tar.zst
+      - libnotify-0.8.3-1-x86_64.pkg.tar.zst
+      - libnotify-docs-0.8.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
