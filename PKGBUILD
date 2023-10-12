@@ -1,5 +1,5 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Mateusz Herych <heniekk@gmail.com>
 # Contributor: Thomas Mader <thezema@gmail.com>
@@ -7,7 +7,7 @@
 # Contributor: tardo <tardo@nagi-fanboi.net>
 
 pkgname=astyle
-pkgver=3.4.5
+pkgver=3.4.8
 pkgrel=1
 pkgdesc='A free, fast and small automatic formatter for C, C++, C#, and Java source code.'
 arch=('x86_64')
@@ -16,7 +16,7 @@ license=('LGPL')
 depends=('glibc' 'gcc-libs')
 makedepends=('git' 'jdk8-openjdk')
 optdepends=('java-environment-openjdk')
-_commit='09f0e26cd5416d50fdde4bb8219dc556f7d2b773'
+_commit='44da67c6fb4478f2bcdf5a8afea4de06230ac5f4'
 source=(
   "$pkgname::git+https://gitlab.com/saalen/astyle.git#commit=$_commit"
   'simplify-makefile.patch'
