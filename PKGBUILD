@@ -2,20 +2,43 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=modemmanager
-pkgname=(modemmanager libmm-glib)
-pkgver=1.20.6
-pkgrel=2
+pkgname=(
+  modemmanager
+  libmm-glib
+)
+pkgver=1.22.0
+pkgrel=1
 pkgdesc="Mobile broadband modem management service"
 url="https://www.freedesktop.org/wiki/Software/ModemManager/"
 arch=(x86_64)
-license=(GPL2 LGPL2.1)
-depends=(libgudev polkit ppp libqmi libmbim
-         mobile-broadband-provider-info)
-makedepends=(gtk-doc gobject-introspection vala meson git bash-completion)
-checkdepends=(python-gobject python-dbus)
-_commit=6aa0ff583d04aea88b4da7a1c20049f57062dab6  # tags/1.20.6^0
+license=(
+  GPL2
+  LGPL2.1
+)
+depends=(
+  libgudev
+  libmbim
+  libqmi
+  mobile-broadband-provider-info
+  polkit
+  ppp
+)
+makedepends=(
+  bash-completion
+  git
+  gobject-introspection
+  gtk-doc
+  meson
+  vala
+  elogind
+)
+checkdepends=(
+  python-dbus
+  python-gobject
+)
+_commit=03f786ce66360d67c669f4f122f8aa458e6f01ea  # tags/1.22.0^0
 source=("git+https://gitlab.freedesktop.org/mobile-broadband/ModemManager.git#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd ModemManager
@@ -24,10 +47,6 @@ pkgver() {
 
 prepare() {
   cd ModemManager
-
-  # https://bugs.archlinux.org/task/74329
-  chmod -x plugins/fibocom/77-mm-fibocom-port-types.rules \
-           plugins/foxconn/mm-foxconn-t77w968-carrier-mapping.conf
 }
 
 build() {
@@ -36,7 +55,7 @@ build() {
     -D dist_version="\"$pkgver-$pkgrel\""
     -D gtk_doc=true
     -D systemd_journal=false
-    -D systemd_suspend_resume=false
+    -D systemd_suspend_resume=true
     -D systemdsystemunitdir=no
     -D polkit=permissive
     -D vapi=true
@@ -44,11 +63,6 @@ build() {
 
   artix-meson ModemManager build "${meson_options[@]}"
   meson compile -C build
-}
-
-check() {
-  # Tests don't work yet
-  : meson test -C build --print-errorlogs
 }
 
 _pick() {
@@ -62,9 +76,17 @@ _pick() {
 }
 
 package_modemmanager() {
-  depends+=(libmm-glib.so libg{lib,object,io,module}-2.0.so libgudev-1.0.so
-            libqmi-glib.so libmbim-glib.so)
-  optdepends=('usb_modeswitch: install if your modem shows up as a storage drive')
+  depends+=(
+    libgudev-1.0.so
+    libg{lib,object,io,module}-2.0.so
+    libmbim-glib.so
+    libmm-glib.so
+    libqmi-glib.so
+    libelogind.so
+  )
+  optdepends=(
+    'usb_modeswitch: install if your modem shows up as a storage drive'
+  )
 
   meson install -C build --destdir "$pkgdir"
 
