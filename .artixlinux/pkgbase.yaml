@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: mbedtls
-  version: 3.4.1-1
+  version: 3.5.0-1
   arch:
     - x86_64
   pkgname:
     - mbedtls
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.5.0-1
+    packages:
+      - mbedtls-3.5.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

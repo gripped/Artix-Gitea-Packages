@@ -4,7 +4,7 @@
 # Contributor: carstene1ns <arch carsten-teibes.de>
 
 pkgname=mbedtls
-pkgver=3.4.1
+pkgver=3.5.0
 pkgrel=1
 pkgdesc='An open source, portable, easy to use, readable and flexible TLS library'
 arch=(x86_64)
@@ -30,7 +30,7 @@ provides=(
 replaces=(polarssl)
 conflicts=(polarssl)
 options=(staticlibs)
-_tag=0b29872bf249f1a6b5a504ba797d7a260c471add
+_tag=1ec69067fa1351427f904362c1221b31538c8b57
 source=(git+https://github.com/ARMmbed/mbedtls.git#tag=${_tag})
 b2sums=(SKIP)
 
