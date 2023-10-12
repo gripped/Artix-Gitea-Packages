@@ -7,8 +7,8 @@
 
 pkgbase=lib32-curl
 pkgname=(lib32-curl lib32-libcurl-compat lib32-libcurl-gnutls)
-_tag='8c537ee308eca91d0a240315b24025048ae54e61' # git rev-parse v${_tag_name}
-_tag_name='8_3_0'
+_tag='817204c6e41f66dafbaa704d67f828a4288b3577' # git rev-parse v${_tag_name}
+_tag_name='8_4_0'
 pkgver="${_tag_name//_/.}"
 pkgrel=1
 pkgdesc='command line tool and library for transferring data with URLs (32-bit)'
