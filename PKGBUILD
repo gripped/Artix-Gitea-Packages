@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan De Groot <jgc@archlinux.org>
 
 pkgname=gucharmap
-pkgver=15.0.4
+pkgver=15.1.1
 pkgrel=1
 pkgdesc="Gnome Unicode Charmap"
 url="https://wiki.gnome.org/Apps/Gucharmap"
@@ -21,8 +21,8 @@ makedepends=(
   yelp-tools
 )
 provides=(libgucharmap_2_90.so)
-options=(debug !lto)
-_commit=367f957574e7d7277839e7dfc3de6890937c4e2a  # tags/15.0.4^0
+options=(!lto)
+_commit=a9a153ce73f0bf20d599d733b4a75f3b5e00fa79  # tags/15.1.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gucharmap.git#commit=$_commit")
 b2sums=('SKIP')
 
