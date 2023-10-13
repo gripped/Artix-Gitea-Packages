@@ -1,8 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=git-lfs
-pkgver=3.3.0
-pkgrel=1.1
+pkgver=3.4.0
+pkgrel=1
 pkgdesc="Git extension for versioning large files"
 arch=('x86_64' 'aarch64')
 url="https://git-lfs.github.com"
@@ -10,7 +11,8 @@ license=('MIT')
 makedepends=('go' 'ruby-ronn' 'go-tools' 'asciidoctor')
 depends=('git')
 source=("git+https://github.com/git-lfs/git-lfs.git#tag=v${pkgver}?signed")
-validpgpkeys=('88ACE9B29196305BA9947552F1BA225C0223B187') # brian m. carlson <sandals@crustytoothpaste.net>
+validpgpkeys=('88ACE9B29196305BA9947552F1BA225C0223B187'  # brian m. carlson <sandals@crustytoothpaste.net>
+              '86CD3297749375BCF8206715F54FE648088335A9') # Chris Darroch (CODE SIGNING KEY) <chrisd@apache.org>
 sha256sums=('SKIP')
 
 build(){
