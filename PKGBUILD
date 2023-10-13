@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=wireplumber
@@ -6,8 +6,8 @@ pkgname=(
   wireplumber
   libwireplumber
 )
-_commit=6d0c7f7b7f484b3cd2aaf2e2b3cc902c095b4946  # tags/0.4.14
-pkgver=0.4.14
+_commit=d67b48e595cb4612fd7fd47f97df6b8883ef7f60  # tags/0.4.15
+pkgver=0.4.15
 pkgrel=1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
@@ -23,15 +23,11 @@ makedepends=(
   lua
   meson
   pipewire
-  # python-breathe
   python-lxml
-  # python-sphinx
-  # python-sphinx_rtd_theme
 )
-depends=('libelogind')
 checkdepends=(pipewire-audio)
 source=("git+https://gitlab.freedesktop.org/pipewire/$pkgbase.git#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd $pkgbase
@@ -44,10 +40,10 @@ prepare() {
 
 build() {
   local meson_options=(
-    -D system-lua=true
     -D systemd=disabled
     -D doc=disabled
     -D elogind=enabled
+    -D system-lua=true
   )
 
   artix-meson $pkgbase build "${meson_options[@]}"
@@ -76,7 +72,6 @@ package_wireplumber() {
     lua
     pipewire
   )
-  optdepends=('wireplumber-docs: Documentation')
   provides=(pipewire-session-manager)
   conflicts=(pipewire-media-session)
 
