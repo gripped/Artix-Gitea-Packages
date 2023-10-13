@@ -3,13 +3,13 @@
 
 pkgname=kaccounts-integration
 pkgver=23.08.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Online account management system and its Plasma integration components'
 arch=(x86_64)
 url='https://www.kde.org/'
 license=(GPL)
-depends=(kcmutils signon-kwallet-extension signon-plugin-oauth2 signon-ui)
-makedepends=(extra-cmake-modules kdoctools qcoro-qt5)
+depends=(kcmutils5 signon-kwallet-extension signon-plugin-oauth2 signon-ui)
+makedepends=(extra-cmake-modules kdoctools5 qcoro-qt5)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('6874eb3e3cf5ef0a06abe83931a9b61818ec96ed3492001a357268b3d81a30ff'
             'SKIP')
