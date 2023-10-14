@@ -3,7 +3,7 @@
 # Don't manually edit the PKGBUILD, edit the upstream template instead
 
 pkgname=kde-development-environment-meta
-pkgver=20231005
+pkgver=20231014
 pkgrel=1
 pkgdesc='Metapackage to install a full KDE development environment'
 arch=(any)
@@ -62,7 +62,7 @@ depends=(akonadi-calendar
          kimap
          kinit
          kio5
-         kirigami-addons
+         kirigami-addons5
          kirigami2
          kitemmodels5
          kitemviews5

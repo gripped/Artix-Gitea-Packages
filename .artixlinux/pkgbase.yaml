@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kde-development-environment-meta
-  version: 20231005-1
+  version: 20231014-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20231005-1
+    version: 20231014-1
     packages:
-      - kde-development-environment-meta-20231005-1-any.pkg.tar.zst
+      - kde-development-environment-meta-20231014-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
