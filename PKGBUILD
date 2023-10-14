@@ -1,14 +1,15 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=libayatana-appindicator
-pkgver=0.5.92
+pkgver=0.5.93
 pkgrel=1
 pkgdesc="Ayatana Application Indicators Shared Library"
 arch=("x86_64")
 url="https://github.com/AyatanaIndicators/libayatana-appindicator"
 ## File: https://github.com/AyatanaIndicators/libayatana-appindicator/blob/master/NEWS
 changelog=Changelog.txt
-license=("LGPL3")
+license=("LGPL2.1" "LGPL3")
 depends=(
+	"gcc-libs"
 	"libayatana-indicator>=0.8.4"
 	"glib2>=2.58"
 	"gtk3>=3.24"
@@ -27,7 +28,7 @@ source=(
 	"https://github.com/AyatanaIndicators/$pkgname/archive/refs/tags/$pkgver.tar.gz"
 )
 sha256sums=(
-	"adedcf160dae7547971d475b42062cab278d54ec075537e6958ffdbf2d996857"
+	"cbefed7a918a227bf71286246e237fcd3a9c8499b3eaac4897811a869409edf0"
 )
 
 build() {
@@ -43,3 +44,4 @@ package() {
 	cd "$pkgname-$pkgver"
 	make install DESTDIR="$pkgdir"
 }
+
