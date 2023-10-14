@@ -1,0 +1,166 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Robin Broda <coderobe @ archlinux.org>
+# Contributor: Peter Wu <peter@lekensteyn.nl>
+# Contributor: Evaggelos Balaskas <eblaskas _AT_ ebalaskas _DOT_ gr>
+# Contributor: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
+# Contributor: Nikos Skalkotos <skalkoto (at) Gmail.com>
+
+pkgname=libguestfs
+pkgver=1.50.1
+pkgrel=1
+pkgdesc="Access and modify virtual machine disk images"
+arch=(x86_64)
+url="https://libguestfs.org/"
+license=(
+  GPL-2.0-or-later
+  LGPL-2.1-or-later
+)
+# NOTE: see appliance/packagelist.in
+_appliancedeps=(
+  btrfs-progs
+  debootstrap
+  dhcpcd
+  dosfstools
+  exfatprogs
+  f2fs-tools
+  gptfdisk
+  grub
+  iproute2
+  iputils
+  jfsutils
+  libldm
+  lrzip
+  lsof
+  lsscsi
+  lvm2
+  lzop
+  mdadm
+  mtools
+  multipath-tools
+  nilfs-utils
+  ntfs-3g
+  openssh
+  pciutils
+  procps-ng
+  psmisc
+  reiserfsprogs
+  rsync
+  squashfs-tools
+  strace
+  syslinux
+  vim
+  xfsprogs
+  yara
+)
+depends=(
+  augeas
+  bash
+  fuse2
+  gcc-libs
+  glib2
+  glibc
+  hivex
+  jansson
+  sleuthkit
+  libconfig
+  libtirpc
+  libvirt
+  libxml2
+  ncurses
+  pcre2
+  perl-libintl-perl
+  qemu
+  readline
+  supermin
+  "${_appliancedeps[@]}"
+)
+makedepends=(
+  bash-completion
+  cdrtools
+  cpio
+  erlang-nox
+  go
+  gobject-introspection
+  gperf
+  ocaml
+  ocaml-augeas
+  ocaml-compiler-libs
+  ocaml-findlib
+  perl-module-build
+  python
+  java-environment
+  lua
+  php
+  ruby
+  ruby-rake
+  ruby-rdoc
+  rust
+  vala
+)
+checkdepends=(
+  linux
+  ruby-test-unit
+)
+optdepends=(
+  'gobject-introspection: GObject-Introspection Bindings'
+  'java-runtime: for Java bindings'
+  'ocaml: OCaml Bindings'
+  'php: for PHP module'
+  'python: Python Bindings'
+  'ruby: for Ruby bindings'
+)
+provides=(
+  libguestfs.so
+  libguestfs-gobject-1.0.so
+)
+backup=(etc/libguestfs-tools.conf)
+source=(
+  https://download.libguestfs.org/${pkgver%.*}-stable/$pkgname-$pkgver.tar.gz{,.sig}
+  $pkgname-1.48.1-disable_php_tests.patch
+  $pkgname-1.48.6-ocaml5.patch
+)
+sha512sums=('237ef512a767a3d56f9705818ead6ebedcaf107d576acf844353730913ee4fc5f2b085bf7d647b693bf4760e986416ba71f628d7709fd859acf3b2a595f3ed10'
+            'SKIP'
+            'd59cad07e275f1fa5e82448993db5b3a6dc8cdd1fc97a8839ef0403ad3f1753a5d13df27b184d6c73fa8dda8bd75e63ad68aaad26001986682d5bc7eeb58273a'
+            'a729cdb699c7a19146e8a627e0744f4511e1dd8f3e7886eed79462d4c5ca3e1fb82ca5198e7fa766567ddc4f2a91872b6277645a05f99834a93b8ee7f4b275da')
+b2sums=('3ca8136137ffee3e4bace115e4be317e0c0545781d61c4e867084bfcf73b6af5fe4aa8fecf9c68532fdc955a03c40abaf8af1303b2f03a372d0387d28679d793'
+        'SKIP'
+        '2f7c429875d80b2b3a70286f83764ce6ed8be86055232fc059ab55ebf8393f9d29a2241401c7ab55af7ba9180ea85909647fe06ca51880f93bc66b488bcec78c'
+        '3bbd645434e31950e3632795f57994b3471714099d176a28a27802d885c8ac43ff62f9e605fa2951cd75309082b43f05e3939727201f39a37b1d9e06359b8a46')
+validpgpkeys=('F7774FB1AD074A7E8C8767EA91738F73E1B768A0') # Richard W.M. Jones <rjones@redhat.com>
+
+prepare() {
+  # disable php tests, as missing arginfo definition makes them fail: https://github.com/libguestfs/libguestfs/issues/78
+  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-1.48.1-disable_php_tests.patch
+  # fixes for OCaml >= 5
+  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-1.48.6-ocaml5.patch
+
+  cd $pkgname-$pkgver
+  autoreconf -fiv
+}
+
+build() {
+  local configure_options=(
+    --disable-haskell
+    --disable-static
+    --prefix=/usr
+    --sbindir=/usr/bin
+    --sysconfdir=/etc
+    --with-extra-packages="libldm openssh qemu"
+    --with-guestfs-path=/usr/lib/guestfs
+  )
+
+  cd $pkgname-$pkgver
+  # TODO: build haskell bindings
+  CFLAGS+=" -ffat-lto-objects" \
+  ./configure "${configure_options[@]}"
+  make
+}
+
+check() {
+  LIBGUESTFS_TRACE=1 make -k check -C $pkgname-$pkgver
+}
+
+package() {
+  make INSTALLDIRS=vendor DESTDIR="$pkgdir" install -C $pkgname-$pkgver
+}
