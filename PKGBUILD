@@ -1,10 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: tobias <tobias funnychar archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-terminal
-pkgver=1.1.0
+pkgver=1.1.1
 pkgrel=1
 pkgdesc="A modern terminal emulator primarily for the Xfce desktop environment"
 arch=('x86_64')
@@ -14,7 +14,7 @@ groups=('xfce4')
 depends=('libxfce4ui' 'vte3' 'hicolor-icon-theme')
 makedepends=('intltool')
 source=(https://archive.xfce.org/src/apps/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('40823377242b9b09749f5d4a550f41d465153c235c31f34052f804d3453ad4a3')
+sha256sums=('5ab5c9b49c00be29f0be4eee5ccfa5073b16f2456185270265a9324549080aa6')
 
 prepare() {
   cd $pkgname-$pkgver
