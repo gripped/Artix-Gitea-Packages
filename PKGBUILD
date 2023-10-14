@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=libayatana-indicator
-pkgver=0.9.3
+pkgver=0.9.4
 pkgrel=1
 pkgdesc="Ayatana Indicators Shared Library"
 arch=("x86_64")
@@ -27,7 +27,7 @@ source=(
 	"https://github.com/AyatanaIndicators/$pkgname/archive/refs/tags/$pkgver.tar.gz"
 )
 sha256sums=(
-	"09c5456fcb430b6ee0626fafdf99a32eb8746b267d56ab2bd4c8a8dd6ca731da"
+	"a18d3c682e29afd77db24366f8475b26bda22b0e16ff569a2ec71cd6eb4eac95"
 )
 
 build() {
