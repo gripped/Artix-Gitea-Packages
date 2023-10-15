@@ -1,0 +1,36 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=python-jsonschema-path
+pkgver=0.3.1
+pkgrel=1
+pkgdesc="JSONSchema Spec with object-oriented paths"
+url="https://github.com/p1c2u/jsonschema-path"
+license=('Apache')
+arch=('any')
+depends=('python-pathable' 'python-yaml' 'python-requests' 'python-referencing')
+conflicts=('python-jsonschema-spec')
+replaces=('python-jsonschema-spec')
+makedepends=('python-build' 'python-installer' 'python-poetry-core')
+checkdepends=('python-pytest' 'python-responses')
+source=("https://github.com/p1c2u/jsonschema-path/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('00aa61aacb92d3aa11be6b3f5f69f6cb70743559849c425549a6fcc0c8c6eeff9feaef5a07da70308cc03311ca48dda7e35d429fa2a5a1aba9099fe678594038')
+
+prepare() {
+  cd jsonschema-path-$pkgver
+  sed -i '/--cov/d' pyproject.toml
+}
+
+build() {
+  cd jsonschema-path-$pkgver
+  python -m build -wn
+}
+
+check() {
+  cd jsonschema-path-$pkgver
+  PYTHONPATH="$PWD" pytest
+}
+
+package() {
+  cd jsonschema-path-$pkgver
+  python -m installer -d "$pkgdir" dist/*.whl
+}
