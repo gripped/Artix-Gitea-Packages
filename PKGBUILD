@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=lager
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='C++ library for value-oriented design using the unidirectional data-flow architecture'
 arch=(any)
@@ -10,7 +10,7 @@ url='https://sinusoid.es/lager'
 license=(Boost)
 makedepends=(cmake)
 source=(https://github.com/arximboldi/$pkgname/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('bec57bddd16a35d8ebbba8b94ba90e3a7ba96d740da542025aea70c925ac8084')
+sha256sums=('9e4743c3fe2c95c1653c3fd088a2200108f09d758725697831852dc91d15d174')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
