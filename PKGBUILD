@@ -1,7 +1,7 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=xfsprogs
-pkgver=6.4.0
+pkgver=6.5.0
 pkgrel=1
 pkgdesc="XFS filesystem utilities"
 arch=('x86_64')
@@ -9,7 +9,7 @@ license=('LGPL')
 url="https://xfs.wiki.kernel.org"
 depends=('sh' 'util-linux-libs' 'device-mapper' 'libinih' 'liburcu')
 optdepends=('icu: for xfs_scrub'
-	    'python: for xfs_scrub_all script'
+            'python: for xfs_scrub_all script'
             'smtp-forwarder: for xfs_scrub_fail script')
 makedepends=('git' 'icu')
 options=('!makeflags')
