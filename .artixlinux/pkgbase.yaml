@@ -1,17 +1,17 @@
 ---
 pkgbase:
-  name: python-pyqt5
-  version: 5.15.9-2
+  name: pyqt5
+  version: 5.15.10-1
   arch:
     - x86_64
   pkgname:
     - python-pyqt5
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.15.9-2
+    version: 5.15.10-1
     packages:
-      - python-pyqt5-5.15.9-2-x86_64.pkg.tar.zst
+      - python-pyqt5-5.15.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
