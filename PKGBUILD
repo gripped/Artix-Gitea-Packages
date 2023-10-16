@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=openvkl
 pkgver=1.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Intel® Open Volume Kernel Library"
 arch=(x86_64)
 url="https://www.openvkl.org/"
@@ -26,6 +26,8 @@ build() {
   cmake -B build -S ${pkgname}-${pkgver} \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DBUILD_EXAMPLES=OFF \
     -DOpenVDB_ROOT=/usr \
     -Wno-dev
