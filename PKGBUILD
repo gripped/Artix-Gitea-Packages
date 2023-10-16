@@ -4,13 +4,14 @@
 
 pkgname=libsodium
 pkgver=1.0.19
-pkgrel=1
+pkgrel=2
 pkgdesc="P(ortable|ackageable) NaCl-based crypto library"
 arch=('x86_64')
 url="https://github.com/jedisct1/libsodium"
 license=('custom:ISC')
 depends=('glibc')
 makedepends=('minisign')
+provides=('libsodium.so')
 source=("https://download.libsodium.org/libsodium/releases/libsodium-$pkgver.tar.gz"{,.minisig})
 sha512sums=('8e9b6d796f6330e00921ce37f1b43545966094250938626ae227deef5fd1279f2fc18b5cd55e23484732a27df4d919cf0d2f07b9c2f1aa0c0ef689e668b0d439'
             '8b5993bd7e541a5913ea1659c1009c4edefd9b5907e0a7c9090fa604c23d77006ad9d9a897d66243162742d63ce9bc1f2c81091d50a584f1495dd3bd87d4451e')

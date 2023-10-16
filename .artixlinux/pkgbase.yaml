@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libsodium
-  version: 1.0.19-1
+  version: 1.0.19-2
   arch:
     - x86_64
   pkgname:
     - libsodium
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.19-1
+    version: 1.0.19-2
     packages:
-      - libsodium-1.0.19-1-x86_64.pkg.tar.zst
+      - libsodium-1.0.19-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
