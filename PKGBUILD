@@ -1,0 +1,32 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Justin Kromlinger <hashworks@archlinux.org>
+# Contributor: Gaetan Bisson <bisson@archlinux.org>
+
+pkgname=xournalpp
+pkgver=1.2.2
+_commit=09ae33339438a777e8a22a6972ed5a9c7e8c3b1a
+pkgrel=1
+pkgdesc='Handwriting notetaking software with PDF annotation support'
+url='https://github.com/xournalpp/xournalpp'
+license=('GPL2')
+arch=('x86_64')
+optdepends=('texlive-latexextra: LaTeX package')
+makedepends=('git' 'cmake' 'doxygen' 'graphviz')
+depends=('gtk3' 'poppler-glib' 'libxml2' 'portaudio' 'libsndfile' 'lua'
+         'libzip')
+source=("git+https://github.com/xournalpp/xournalpp.git#commit=$_commit")
+sha256sums=('SKIP')
+
+replaces=('xournal')
+
+build() {
+	cd "${srcdir}/${pkgname}"
+	cmake -DCMAKE_INSTALL_PREFIX=/usr
+	make translations
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}"
+	make DESTDIR="${pkgdir}" install
+}
