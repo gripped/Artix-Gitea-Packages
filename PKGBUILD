@@ -1,0 +1,31 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+_pkg=filter-rspamd
+pkgname=opensmtpd-${_pkg}
+pkgver=0.1.8
+pkgrel=1
+pkgdesc="OpenSMTPD filter integration for Rspamd"
+arch=(x86_64)
+url=https://github.com/poolpOrg/filter-rspamd
+license=(ISC)
+depends=(glibc rspamd)
+makedepends=(go)
+source=(${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('54dc5ec496251e6a223ac05909f4d940c79ce2487e40e30a430da24fcc211983c40355fd91a609e7bb109be49051ca81f092e297f5c8c1e5a3e91a188b948f04')
+
+build() {
+  cd ${_pkg}-${pkgver}
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  go build -v -ldflags "-linkmode external" -o ${_pkg}
+}
+
+package() {
+  cd ${_pkg}-$pkgver
+  install -D filter-rspamd -t "${pkgdir}"/usr/lib/smtpd/opensmtpd
+  install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
+  install -Dm644 README.md -t "${pkgdir}"/usr/share/doc/${pkgname}/
+}
