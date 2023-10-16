@@ -1,34 +1,49 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_pkg=pam-wrapper
 pkgname=pam_wrapper
-pkgver=1.1.4
-pkgrel=4
+pkgver=1.1.5
+pkgrel=1
 pkgdesc="Tool to test PAM applications and PAM modules"
 url="https://cwrap.org/pam_wrapper.html"
 arch=(x86_64)
 license=(GPL3)
-depends=(pam python)
-makedepends=(git cmake ninja cmocka doxygen graphviz)
-provides=(libpam_wrapper.so libpamtest.so)
-_commit=d938a84d88c5882a08babfb5e10f03a9135237a3  # tags/pam_wrapper-1.1.4^0
-source=("$_pkg::git+https://git.samba.org/pam_wrapper.git#commit=$_commit")
-sha256sums=('SKIP')
+depends=(
+  pam
+  python
+)
+makedepends=(
+  cmake
+  cmocka
+  doxygen
+  git
+  graphviz
+  ninja
+)
+provides=(
+  libpam_wrapper.so
+  libpamtest.so
+)
+_commit=b223df9f35e750811f812c8cfb85bc81c196102e  # tags/pam_wrapper-1.1.5^0
+source=("git+https://git.samba.org/pam_wrapper.git#commit=$_commit")
+b2sums=('SKIP')
 
 pkgver() {
-  cd $_pkg
+  cd $pkgname
   git describe --tags | sed 's/^pam_wrapper-//;s/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd $_pkg
+  cd $pkgname
 }
 
 build() {
-  cmake -S $_pkg -B build -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=None \
-    -DUNIT_TESTING=true
+  local cmake_options=(
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D CMAKE_BUILD_TYPE=None
+    -D UNIT_TESTING=true
+  )
+
+  cmake -S $pkgname -B build -G Ninja "${cmake_options[@]}"
   cmake --build build
   cmake --build build --target doc
 }
