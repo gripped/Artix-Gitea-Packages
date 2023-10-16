@@ -2,13 +2,13 @@
 # Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=pgbouncer
-pkgver=1.20.1
+pkgver=1.21.0
 pkgrel=1
 pkgdesc='Lightweight connection pooler for PostgreSQL'
 url='https://pgbouncer.github.io/'
 arch=('x86_64')
 license=('BSD')
-depends=('glibc' 'libevent' 'c-ares' 'libcares.so' 'pam' 'libpam.so' 'openssl')
+depends=('glibc' 'libevent' 'c-ares' 'libcares.so' 'esysusers' 'etmpfiles' 'pam' 'libpam.so' 'openssl')
 makedepends=('asciidoc' 'xmlto')
 checkdepends=('postgresql-libs' 'postgresql')
 backup=('etc/pgbouncer/pgbouncer.ini'
@@ -18,7 +18,7 @@ source=(https://pgbouncer.github.io/downloads/files/${pkgver}/pgbouncer-${pkgver
         pgbouncer.logrotate
         pgbouncer.tmpfiles.conf
         pgbouncer.sysusers)
-sha512sums=('7669005ac1d46d1cb5b42c853fc0fb5e495c8583c206658bf6c59f797d04eb9170a3d467a48863708ee69034ff71ac6fbbca752b239de644ef6225d46fb98e76'
+sha512sums=('881701deae508e8e664402c0da533b25027259443551cda2974867453ad033ec5cfe8027ca3dac96a5134c57faff385c3c1e5711539e1acd6815761c9e3caee8'
             '39abc7b11c9d7a2593941b4d2a82db998ac1b1e3da131ae276da73c7afc4eda7b69bbfd0acd39f7bce20ecb911baf0adba341ff58dcab1a57e419708e7c8d26f'
             '1dc86704fce211b23afe7962c947c7de80a15bef219928acbf486b915d80d44a6590fbc509fe650c97b694a508bcf95d2152663863f0c372323286e644c6d60a'
             '0757205e5cb5f679bab00bdbed2c828a536239f380d537498bc893c77162e0978308a5f38fae4cb6470f18d6ed0fe4a3ce8f00e85aef89b14bcf6e2eab05a696'
