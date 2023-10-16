@@ -1,6 +1,6 @@
 pkgbase = java-openjdk
 	pkgver = 21.u35
-	pkgrel = 5
+	pkgrel = 6
 	url = https://openjdk.java.net/
 	arch = x86_64
 	license = custom
@@ -59,7 +59,9 @@ pkgname = jre-openjdk-headless
 	optdepends = java-rhino: for some JavaScript support
 	provides = java-runtime-headless=21
 	provides = java-runtime-headless-openjdk=21
-	provides = jre21-openjdk-headless=21.u35-5
+	provides = jre21-openjdk-headless=21.u35-6
+	conflicts = jdk-openjdk
+	conflicts = jre-openjdk
 	backup = etc/java-openjdk/logging.properties
 	backup = etc/java-openjdk/management/jmxremote.access
 	backup = etc/java-openjdk/management/jmxremote.password.template
@@ -100,13 +102,12 @@ pkgname = jre-openjdk
 	optdepends = gtk3: for the Gtk+ 3 look and feel - desktop usage
 	provides = java-runtime=21
 	provides = java-runtime-openjdk=21
-	provides = jre21-openjdk=21.u35-5
+	provides = jre21-openjdk=21.u35-6
 	provides = java-runtime-headless=21
 	provides = java-runtime-headless-openjdk=21
-	provides = jre21-openjdk-headless=21.u35-5
-	conflicts = java-runtime-headless=21
-	conflicts = java-runtime-headless-openjdk=21
-	conflicts = jre21-openjdk-headless=21.u35-5
+	provides = jre21-openjdk-headless=21.u35-6
+	conflicts = jdk-openjdk
+	conflicts = jre-openjdk-headless
 	backup = etc/java-openjdk/logging.properties
 	backup = etc/java-openjdk/management/jmxremote.access
 	backup = etc/java-openjdk/management/jmxremote.password.template
@@ -161,21 +162,15 @@ pkgname = jdk-openjdk
 	optdepends = gtk3: for the Gtk+ 3 look and feel - desktop usage
 	provides = java-environment=21
 	provides = java-environment-openjdk=21
-	provides = jdk21-openjdk=21.u35-5
+	provides = jdk21-openjdk=21.u35-6
 	provides = java-runtime=21
 	provides = java-runtime-openjdk=21
-	provides = jre21-openjdk=21.u35-5
+	provides = jre21-openjdk=21.u35-6
 	provides = java-runtime-headless=21
 	provides = java-runtime-headless-openjdk=21
-	provides = jre21-openjdk-headless=21.u35-5
+	provides = jre21-openjdk-headless=21.u35-6
 	conflicts = jre-openjdk
 	conflicts = jre-openjdk-headless
-	conflicts = java-runtime=21
-	conflicts = java-runtime-openjdk=21
-	conflicts = jre21-openjdk=21.u35-5
-	conflicts = java-runtime-headless=21
-	conflicts = java-runtime-headless-openjdk=21
-	conflicts = jre21-openjdk-headless=21.u35-5
 	backup = etc/java-openjdk/logging.properties
 	backup = etc/java-openjdk/management/jmxremote.access
 	backup = etc/java-openjdk/management/jmxremote.password.template
@@ -193,10 +188,10 @@ pkgname = jdk-openjdk
 
 pkgname = openjdk-src
 	pkgdesc = OpenJDK Java 21 sources
-	depends = jdk21-openjdk=21.u35-5
-	provides = openjdk21-src=21.u35-5
+	depends = jdk21-openjdk=21.u35-6
+	provides = openjdk21-src=21.u35-6
 
 pkgname = openjdk-doc
 	pkgdesc = OpenJDK Java 21 documentation
-	depends = jdk21-openjdk=21.u35-5
-	provides = openjdk21-doc=21.u35-5
+	depends = jdk21-openjdk=21.u35-6
+	provides = openjdk21-doc=21.u35-6
