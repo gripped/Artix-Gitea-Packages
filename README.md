@@ -1,0 +1,2 @@
+# opensmtpd-filter-senderscore
+
