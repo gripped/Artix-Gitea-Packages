@@ -7,12 +7,12 @@
 
 pkgname=openntpd
 pkgver=6.8p1
-pkgrel=6
+pkgrel=7
 pkgdesc='Free, easy to use implementation of the Network Time Protocol'
 url='https://www.openntpd.org/'
 arch=('x86_64')
 license=('BSD')
-depends=('glibc' 'libretls')
+depends=('glibc' 'libretls' 'esysusers')
 conflicts=('ntp')
 options=(emptydirs)
 backup=('etc/ntpd.conf')
