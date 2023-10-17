@@ -9,9 +9,9 @@ pkgname=('virtualbox'
          'virtualbox-guest-utils'
          'virtualbox-guest-utils-nox'
          'virtualbox-ext-vnc')
-pkgver=7.0.10
+pkgver=7.0.12
 _tarver=${pkgver}
-pkgrel=2
+pkgrel=1
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL' 'custom:CDDL')
@@ -58,7 +58,6 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '60-vboxdrv.rules'
         '60-vboxguest.rules'
         'LocalConfig.kmk'
-        'vboxdrmclient.path'
         'vboxreload'
         '001-disable-update.patch'
         '004-drop-Wno-format.patch'
@@ -66,16 +65,14 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '009-properly-handle-i3wm.patch'
         '012-vbglR3GuestCtrlDetectPeekGetCancelSupport.patch'
         '013-support-building-from-dkms.patch'
-        '018-upate-xclient-script.patch'
-        '019-linux-6-4-10.patch')
-sha256sums=('0b1e6d8b7f87d017c7fae37f80586acff04f799ffc1d51e995954d6415dee371'
+        '018-upate-xclient-script.patch')
+sha256sums=('d76634c6ccf62503726a5aeae6c78a3462474c51a0ebe4942591ccc2d939890a'
             '76d98ea062fcad9e5e3fa981d046a6eb12a3e718a296544a68b66f4b65cb56db'
             '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
             'da4c49f6ca94e047e196cdbcba2c321199f4760056ea66e0fbc659353e128c9e'
             'f876e9f55243eded423fda4fc2ffe3b174dca90380a6315f7c9b3cd1c9d07206'
             '033c597e0f5285d2ddb0490868e5b6f945f45c7b1b1152a02a9e6fea438b2c95'
             '0ae014c6bb778a1b079121064f17179c27b8dde9479a37d34ce071fb3b084e25'
-            '83d8f24bff25bb925083cf39b3195236c6136105e62417712cc3f25b92e14b47'
             '4001b5927348fe669a541e80526d4f9ea91b883805f102f7d571edbb482a9b9d'
             '9ee947c9b5ec5b25f52d3e72340fc3a57ca6e65a604e15b669ac582a3fb0dc1b'
             '7675f87d31ad3137f057dc3ee3d4a2c5b2cfe8cd362adba130ddbf7a65069516'
@@ -83,8 +80,7 @@ sha256sums=('0b1e6d8b7f87d017c7fae37f80586acff04f799ffc1d51e995954d6415dee371'
             'ad0d7af1e4c94f9efbc60827abea9e605398549b3673c40f697d042bb6bfe88a'
             '81900e13d36630488accd8c0bfd2ceb69563fb2c4f0f171caba1cca59d438024'
             '00f68b86d32a1fada900c2da8dad2ab4215106cd58004f049bded99727cda2ff'
-            '87dddfd9047480e4c2b73367facf5dd3702148418c2efcd606af17c07da90fe0'
-            'd0ea2b6ee86f144d2dc7b7acccfe2a8ebfae113ee8c47e56cd6c8238c8df5423')
+            '87dddfd9047480e4c2b73367facf5dd3702148418c2efcd606af17c07da90fe0')
 
 prepare() {
     cd "VirtualBox-${pkgver}"
@@ -210,6 +206,7 @@ package_virtualbox() {
     install -D -m0644 VirtualBox-${pkgver}/COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -D -m0644 VirtualBox-${pkgver}/COPYING.CDDL "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
 
+    # install systemd stuff
     install -D -m0644 60-vboxdrv.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxdrv.rules"
     install -D -m0644 virtualbox.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox.conf"
 
@@ -293,6 +290,7 @@ package_virtualbox-guest-utils() {
         "${pkgdir}"/etc/xdg/autostart/vboxclient.desktop
     install -m0755 -D pam_vbox.so "${pkgdir}/usr/lib/security/pam_vbox.so"
     popd
+    # systemd stuff
     install -D -m0644 60-vboxguest.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxguest.rules"
     install -D -m0644 virtualbox-guest-utils.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
@@ -313,6 +311,7 @@ package_virtualbox-guest-utils-nox() {
     install -m0755 VBoxControl VBoxService "${pkgdir}/usr/bin"
     install -m0755 -D pam_vbox.so "${pkgdir}/usr/lib/security/pam_vbox.so"
     popd
+    # systemd stuff
     install -D -m0644 60-vboxguest.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxguest.rules"
     install -D -m0644 virtualbox-guest-utils.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
