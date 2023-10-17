@@ -20,12 +20,10 @@ replaces=('jenkins-ci')
 backup=('etc/conf.d/jenkins')
 install='jenkins.install'
 source=("https://github.com/jenkinsci/jenkins/archive/refs/tags/jenkins-${pkgver}.tar.gz"
-        'jenkins.conf'
         'jenkins.tmpfiles'
         'jenkins.sysusers'
         'skip-failing-test.patch')
 sha512sums=('569b4610386f6887d3df60fcbbb9fb2193616ce22ceaa1fa8ce5a316079820b12aa3a34de3868c9fcb1fdabbc318e23112d3645f01a4ec1fd14e2c883b4d3cec'
-            '482b642988027b623995e0488cc00011be5bbe9890a6d40dd6979197fa50794889ff731f798891106b367962cf60cb59b0260caadfcee9685b358a966f759553'
             'a845a7147be54affc586dfce9a188ec24c92e673e88dec0b62da386d2e597de6ecda103429008562abd897f179a52c37cf2188ebc65b8c636efd07d707e18f90'
             '896cbc64eadb2f3bb9fa7fc26dbfc527b1823d8bff3158be7f1936cc250f55eeafe89079e1ceb8f3d269041662573ccbbb36248140b4ba24144a564366f8847a'
             '876180dc1674ec56c32a4fceac7d9608f450520ace7d3ecb68cbe7ba8f1bcba31f2c063f52a9076c432b78fd31157da3febc65e98e7d9050a4134d4e0304e8bd')
