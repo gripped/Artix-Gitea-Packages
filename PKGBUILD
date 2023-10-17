@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfwm4
 pkgver=4.18.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Xfce's window manager"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfwm4/start"
