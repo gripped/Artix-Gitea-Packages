@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: qtkeychain-qt5
-  version: 0.14.1-1
+  name: qtkeychain
+  version: 0.14.1-2
   arch:
     - x86_64
   pkgname:
     - qtkeychain-qt5
     - qtkeychain-qt6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.14.1-1
+    version: 0.14.1-2
     packages:
-      - qtkeychain-qt5-0.14.1-1-x86_64.pkg.tar.zst
-      - qtkeychain-qt6-0.14.1-1-x86_64.pkg.tar.zst
+      - qtkeychain-qt5-0.14.1-2-x86_64.pkg.tar.zst
+      - qtkeychain-qt6-0.14.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
