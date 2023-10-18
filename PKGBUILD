@@ -3,7 +3,7 @@
 
 pkgname='cronie'
 pkgver=1.7.0
-pkgrel=4
+pkgrel=4.1
 pkgdesc='Daemon that runs specified programs at scheduled times and related tools'
 url='https://github.com/cronie-crond/cronie/'
 license=('custom:BSD')
@@ -14,12 +14,10 @@ optdepends=('smtp-server: send job output via email'
 conflicts=('cron')
 provides=('cron')
 source=("https://github.com/cronie-crond/cronie/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.gz"
-        '80-cronie.hook'
         'cron-deny'
         'crontab'
         'default-anacron')
 sha256sums=('6827f5a47760cc64afeef0a60d3cb5376f52569109fc9a73957dd5e9fdae7619'
-            'f85e9a68bf3bf446f8a6167f068371c06afffe11ca71935d8ee5487b38b2c9db'
             'ae6e533ecdfc1bd2dd80a9e25acb0260cbe9f00c4e4abee93d552b3660f263fc'
             '64d517a8d011b5cfa6b2433d528498e80fa8d0748c91f1b73e6ded70e776dc35'
             'c5772fd0df22d807ed6b62edf4052db529aafb626b1bfe8961229fb864039a5c')
@@ -54,7 +52,6 @@ package() {
 	install -d "${pkgdir}"/var/spool/{ana,}cron
 	install -d "${pkgdir}"/etc/cron.{d,hourly,daily,weekly,monthly}
 
-	install -Dm0644 ../80-cronie.hook "${pkgdir}"/usr/share/libalpm/hooks/80-cronie.hook
 	install -Dm0644 ../cron-deny "${pkgdir}"/etc/cron.deny
 	install -Dm0644 ../crontab "${pkgdir}"/etc/crontab
 	install -Dm0644 ../default-anacron "${pkgdir}"/etc/default/anacron
