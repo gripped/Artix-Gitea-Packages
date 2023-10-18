@@ -11,7 +11,7 @@ pkgbase=nginx
 pkgname=(nginx nginx-src)
 # update tests revision too
 pkgver=1.24.0
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url='https://nginx.org'
 license=(custom)
@@ -27,17 +27,19 @@ backup=(etc/nginx/fastcgi.conf
         etc/nginx/uwsgi_params
         etc/nginx/win-utf
         etc/logrotate.d/nginx)
-install=nginx.install
 source=($url/download/nginx-$pkgver.tar.gz{,.asc}
         hg+https://hg.nginx.org/nginx-tests#revision=24482e311749
-        logrotate)
+        logrotate
+        # https://hg.nginx.org/nginx/rev/cdda286c0f1b CVE-2023-44487
+        HTTP2_per-iteration-stream-handling-limit.patch::https://hg.nginx.org/nginx/raw-rev/cdda286c0f1b)
 # https://nginx.org/en/pgp_keys.html
 validpgpkeys=('B0F4253373F8F6F510D42178520A9993A1C052F8' # Maxim Dounin <mdounin@mdounin.ru>
               '13C82A63B603576156E30A4EA0EA981B66B0D967') # Konstantin Pavlov <thresh@nginx.com>
 sha512sums=('1114e37de5664a8109c99cfb2faa1f42ff8ac63c932bcf3780d645e5ed32c0b2ac446f80305b4465994c8f9430604968e176ae464fd80f632d1cb2c8f6007ff3'
             'SKIP'
             'SKIP'
-            '2f4dfcfa711b8bcbc5918ba635f5e430ef7132e66276261ade62bb1cba016967432c8dce7f84352cb8b07dc7c6b18f09177aa3eb92c8e358b2a106c8ca142fe9')
+            '2f4dfcfa711b8bcbc5918ba635f5e430ef7132e66276261ade62bb1cba016967432c8dce7f84352cb8b07dc7c6b18f09177aa3eb92c8e358b2a106c8ca142fe9'
+            '18b69643648119dfab45101bb9404be667aeb9d550aa3bc9706e63e7da1c2806106e9a6bbfb2d10bd57ef56b9b5b0b524059353ec30a51469b44641cb7dbd8a6')
 
 _common_flags=(
   --with-compat
@@ -76,6 +78,8 @@ _stable_flags=(
 
 prepare() {
   cp -r $pkgbase-$pkgver{,-src}
+  cd $pkgbase-$pkgver
+  patch -Np1 -i "$srcdir/HTTP2_per-iteration-stream-handling-limit.patch"
 }
 
 build() {
