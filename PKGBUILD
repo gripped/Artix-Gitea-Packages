@@ -1,13 +1,13 @@
 # Maintainer: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=lighttpd
-pkgver=1.4.71
+pkgver=1.4.72
 pkgrel=1
 pkgdesc='A secure, fast, compliant and very flexible web-server'
 license=('custom')
 arch=('x86_64')
 url="https://www.lighttpd.net/"
-depends=('pcre2' 'brotli')
+depends=('pcre2' 'etmpfiles' 'brotli')
 makedepends=('mariadb-libs' 'lua' 'libxml2' 'e2fsprogs' 'sqlite' 'pkgconfig')
 optdepends=('libxml2: mod_webdav'
             'lua: mod_cml/mod_magnet'
@@ -17,7 +17,7 @@ backup=('etc/lighttpd/lighttpd.conf' 'etc/logrotate.d/lighttpd')
 options=('emptydirs')
 source=("https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-${pkgver}.tar.xz"{,.asc}
         'lighttpd.logrotate.d' 'lighttpd.conf' 'lighttpd.tmpfiles')
-sha256sums=('b8b6915da20396fdc354df3324d5e440169b2e5ea7859e3a775213841325afac'
+sha256sums=('f7cade4d69b754a0748c01463c33cd8b456ca9cc03bb09e85a71bcbcd54e55ec'
             'SKIP'
             '41f6c0042bb61021553779f861910e335834f6c15e4411756cdc6233b31076fe'
             'fece4581bebf39768571962dedce176b2b5f487c0abb5c1cfb35395de216c01f'
