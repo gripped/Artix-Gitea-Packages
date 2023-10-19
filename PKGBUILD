@@ -1,14 +1,14 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jonathan Steel <jsteel at archlinux.org>
 # Contributor: Phillip Smith <fukawi2@NO-SPAM.gmail.com>
 # Contributor: Dale Blount <dale@archlinux.org>
 
 pkgname=nrpe
 pkgver=4.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Nagios Remote Plugin Executor"
 arch=('x86_64')
-license=('GPL')
-depends=('openssl')
+license=('GPL-2.0-or-later')
+depends=('glibc' 'openssl')
 optdepends=("monitoring-plugins: common tools for monitoring using $pkgname")
 makedepends=('procps-ng')
 install=$pkgname.install
@@ -16,8 +16,8 @@ backup=('etc/nrpe/nrpe.cfg' 'etc/xinetd.d/nrpe')
 url="https://github.com/NagiosEnterprises/nrpe"
 source=(https://github.com/NagiosEnterprises/nrpe/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz
         nrpe.sysusers)
-md5sums=('ace32f8d41e9b9138ea5d40b8beed274'
-         '079d1f8c06598303be95151a8985927b')
+sha256sums=('a1f14aa8aaf935b576cc55ab5d77b7cb9c920d7702aff44c9d18c4c841ef8ecc'
+            '9430d6c7ccf9817f9c66eda8e2126b0b0fdad93fa17dee9227627c35a4101ad3')
 
 build() {
   cd $pkgname-$pkgver
@@ -47,8 +47,6 @@ package() {
   install -Dm644 README.SSL.md "$pkgdir"/usr/share/doc/$pkgname/README.SSL.md
   install -Dm644 SECURITY.md "$pkgdir"/usr/share/doc/$pkgname/SECURITY.md
   install -Dm644 LEGAL "$pkgdir"/usr/share/licenses/$pkgname/LEGAL
-
-  # FS#52873
 
   # Tidy up
   chmod -R 755 "$pkgdir"/usr/lib/monitoring-plugins
