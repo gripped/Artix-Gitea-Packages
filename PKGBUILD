@@ -5,7 +5,7 @@
 
 _name=ki18n
 pkgname=${_name}5
-pkgver=5.110.0
+pkgver=5.111.0
 pkgrel=1
 pkgdesc='Advanced internationalization framework'
 arch=(x86_64)
@@ -16,10 +16,9 @@ makedepends=(extra-cmake-modules doxygen qt5-tools qt5-doc python)
 optdepends=('python: to compile .ts files')
 conflicts=("$_name<5.111")
 replaces=("$_name<5.111")
-provides=($_name=$pkgver)
 groups=(kf5)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$_name-$pkgver.tar.xz{,.sig})
-sha256sums=('bceaa4c861de372b77da5e850a50edf2815afe93d9d7f1b9c05f6d6667d2130f'
+sha256sums=('4d0a27bdc89c9111888930ab17cb1f8416450f0baceffb6d52571e135c85df27'
             'SKIP')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
 
