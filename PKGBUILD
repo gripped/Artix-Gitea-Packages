@@ -21,6 +21,7 @@ depends=(aom
          glibc
          libde265
          libwebp
+	 rhash
          x265)
 optdepends=('libjpeg: for heif-convert and heif-enc'
             'libpng: for heif-convert and heif-enc'
