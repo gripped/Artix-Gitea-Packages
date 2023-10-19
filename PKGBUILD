@@ -1,13 +1,19 @@
+# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kio-fuse
 pkgver=5.0.1
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
-pkgdesc="FUSE interface for KIO"
-url="https://kde.org/"
+pkgdesc='FUSE interface for KIO'
+url='https://kde.org/'
 license=(GPL)
-depends=(kio fuse3)
+depends=(fuse3
+         gcc-libs
+         glibc
+         kcoreaddons5
+         kio5
+         qt5-base)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('66679a8bf68fe60e19f31449f4110d4cf822915b3d245af3c0cd0056081466dd'
