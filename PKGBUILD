@@ -7,7 +7,7 @@ pkgname=(
   libcheese
 )
 pkgver=44.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Take photos and videos with your webcam, with fun graphical effects"
 url="https://wiki.gnome.org/Apps/Cheese"
 arch=(x86_64)
@@ -36,7 +36,6 @@ makedepends=(
   yelp-tools
 )
 checkdepends=(xorg-server-xvfb)
-options=(debug)
 _commit=1513eb4d705c71635cdc12712811e4f78b2983e9  # tags/44.1^0
 source=("git+https://gitlab.gnome.org/GNOME/cheese.git#commit=$_commit")
 b2sums=('SKIP')
@@ -79,7 +78,7 @@ _pick() {
 
 package_cheese() {
   depends+=("libcheese=$pkgver-$pkgrel")
-  groups=(gnome)
+  groups=(gnome-extra)
 
   meson install -C build --destdir "$pkgdir"
 
