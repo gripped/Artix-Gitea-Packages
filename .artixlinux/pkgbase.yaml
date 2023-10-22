@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: unrealircd
-  version: 6.1.2-1
+  version: 6.1.2.3-1
   arch:
     - x86_64
   pkgname:
     - unrealircd
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.1.2-1
+    version: 6.1.2.3-1
     packages:
-      - unrealircd-6.1.2-1-x86_64.pkg.tar.zst
+      - unrealircd-6.1.2.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
