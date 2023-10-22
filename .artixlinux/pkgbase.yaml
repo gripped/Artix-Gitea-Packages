@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-django-allauth
-  version: 0.54.0-2
+  version: 0.57.0-1
   arch:
     - any
   pkgname:
     - python-django-allauth
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.57.0-1
+    packages:
+      - python-django-allauth-0.57.0-1-any.pkg.tar.zst
   world:
     version: 0.54.0-2
     packages:

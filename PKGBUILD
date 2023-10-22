@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=django-allauth
 pkgname=python-django-allauth
-pkgver=0.54.0
-pkgrel=2
+pkgver=0.57.0
+pkgrel=1
 pkgdesc="Authentication, registration, account management and 3rd party account authentication"
 arch=(any)
 url="https://github.com/pennersr/django-allauth"
@@ -22,13 +22,20 @@ makedepends=(
   python-setuptools
   python-wheel
 )
-checkdepends=(python-pytest)
-# tests are not available in pypi sdist:
-# https://github.com/pennersr/django-allauth/issues/2439
-# source=(https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz)
+checkdepends=(
+  python-pillow
+  python-pytest
+  python-pytest-django
+  python-qrcode
+  python-saml
+)
+optdepends=(
+  'python-qrcode: for MFA support'
+  'python-saml: for SAML support'
+)
 source=($_name-$pkgver.tar.gz::https://github.com/pennersr/$_name/archive/$pkgver.tar.gz)
-sha512sums=('87914f01a788115fc70f9c221541373898af368ce7776a4db2047db1762d202e8aee0edbd247275ae01618a6d71d72e4c7eb7b7f531d1f44929ff04f659d38e3')
-b2sums=('7690e7c4d1c62f366afc8c13dfaae227dfe54cf892abb20e33d04434768f2b9c54ed34e9326edef98d6eb07fbe2e34b587a40c5ec4df9792a781349dc610ab41')
+sha512sums=('e68ccfbc7ae3be521bb6535cbab4f5aaa4809bf9183f0e9675026a07f4b2583d2b4ec5e55823c19224be6280469576101e4c5378e30b5c218ed5266879e78744')
+b2sums=('1c980a1c772059be115458879182a3b2b8a6ad8193d2d0cf5429b77fbe6190f42e0849e6850822e4d1e0657dc53b38ab6b4d8be52688f069817cceb0c15d509b')
 
 build() {
   cd $_name-$pkgver
