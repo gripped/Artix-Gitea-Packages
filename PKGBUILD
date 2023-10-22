@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-remote-desktop
-pkgver=45.0
+pkgver=45.1
 pkgrel=1
 pkgdesc="GNOME Remote Desktop server"
 url="https://wiki.gnome.org/Projects/Mutter/RemoteDesktop"
@@ -25,7 +25,6 @@ depends=(
   libxkbcommon
   pipewire
   tpm2-tss
-  wireplumber
 )
 makedepends=(
   asciidoc
@@ -39,10 +38,10 @@ checkdepends=(
   mutter
   python-dbus
   python-gobject
-  pipewire-alsa
+  wireplumber
 )
 groups=(gnome)
-_commit=a7c4f2dd87fe09389dd93268b0ce3e32a6ceb6eb  # tags/45.0^0
+_commit=df66c0e99a749058e0ee7dcee36bd97e018a3bb8  # tags/45.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git#commit=$_commit")
 b2sums=('SKIP')
 
