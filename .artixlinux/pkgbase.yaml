@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-saml
+  version: 1.16.0-1
+  arch:
+    - any
+  pkgname:
+    - python-saml
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.16.0-1
+    packages:
+      - python-saml-1.16.0-1-any.pkg.tar.zst
   world:
     version: null
     packages: []
