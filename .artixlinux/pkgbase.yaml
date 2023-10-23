@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java-openjdk
-  version: 21.u35-6
+  version: 21.u35-7
   arch:
     - x86_64
   pkgname:
@@ -32,13 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 21.u35-6
+    version: 21.u35-7
     packages:
-      - jre-openjdk-headless-21.u35-6-x86_64.pkg.tar.zst
-      - jre-openjdk-21.u35-6-x86_64.pkg.tar.zst
-      - jdk-openjdk-21.u35-6-x86_64.pkg.tar.zst
-      - openjdk-src-21.u35-6-x86_64.pkg.tar.zst
-      - openjdk-doc-21.u35-6-x86_64.pkg.tar.zst
+      - jre-openjdk-headless-21.u35-7-x86_64.pkg.tar.zst
+      - jre-openjdk-21.u35-7-x86_64.pkg.tar.zst
+      - jdk-openjdk-21.u35-7-x86_64.pkg.tar.zst
+      - openjdk-src-21.u35-7-x86_64.pkg.tar.zst
+      - openjdk-doc-21.u35-7-x86_64.pkg.tar.zst
   world:
     version: 21.u35-3
     packages:
