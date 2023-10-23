@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: usbutils
-  version: 015-3
+  version: 016-2
   arch:
     - x86_64
   pkgname:
     - usbutils
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 016-2
+    packages:
+      - usbutils-016-2-x86_64.pkg.tar.zst
   system:
     version: 015-3
     packages:
