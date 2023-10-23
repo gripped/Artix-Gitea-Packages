@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java17-openjdk
-  version: 17.0.9.u8-1
+  version: 17.0.9.u8-2
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - openjdk17-src
     - openjdk17-doc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 17.0.9.u8-2
+    packages:
+      - jre17-openjdk-headless-17.0.9.u8-2-x86_64.pkg.tar.zst
+      - jre17-openjdk-17.0.9.u8-2-x86_64.pkg.tar.zst
+      - jdk17-openjdk-17.0.9.u8-2-x86_64.pkg.tar.zst
+      - openjdk17-src-17.0.9.u8-2-x86_64.pkg.tar.zst
+      - openjdk17-doc-17.0.9.u8-2-x86_64.pkg.tar.zst
   world:
     version: 17.0.9.u8-1
     packages:
