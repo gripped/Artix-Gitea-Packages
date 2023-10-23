@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - libheif
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - libheif-1.17.1-1-x86_64.pkg.tar.zst
   world:
-    version: 1.17.0-1
+    version: 1.17.1-1
     packages:
-      - libheif-1.17.0-1-x86_64.pkg.tar.zst
+      - libheif-1.17.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
