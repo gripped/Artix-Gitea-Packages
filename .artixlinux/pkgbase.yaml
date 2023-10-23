@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: dialog
-  version: 1:1.3_20230209-1
+  version: 1:1.3_20231002-1
   arch:
     - x86_64
   pkgname:
     - dialog
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1:1.3_20231002-1
+    packages:
+      - dialog-1:1.3_20231002-1-x86_64.pkg.tar.zst
   system:
     version: 1:1.3_20230209-1
     packages:
