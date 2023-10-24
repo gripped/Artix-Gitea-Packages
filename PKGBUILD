@@ -24,12 +24,12 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
-  artix-cmake --build build
+  cmake --build build
 }
 
 package() {
-  DESTDIR="$pkgdir" artix-cmake --install build
+  DESTDIR="$pkgdir" cmake --install build
 }
