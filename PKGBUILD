@@ -5,7 +5,7 @@
 pkgname=libksysguard
 pkgver=5.27.9
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Library to retrieve information on the current status of computer hardware'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
