@@ -3,7 +3,7 @@
 
 pkgname=mate-icon-theme
 pkgver=1.26.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="MATE icon theme"
 url="https://mate-desktop.org"
 arch=('any')
