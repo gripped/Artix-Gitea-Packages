@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=apache
-pkgver=2.4.57
+pkgver=2.4.58
 pkgrel=1
 pkgdesc='A high performance Unix-based HTTP server'
 arch=('x86_64')
@@ -32,18 +32,19 @@ optdepends=(
     'uwsgi: for mod_proxy_uwsgi module'
     'lynx: apachectl status'
     'perl: for apxs and dbmmanage'
+    'logrotate: for rotating logs'
 )
 source=(
     https://www.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2{,.asc}
     apache.tmpfiles.conf
     httpd.logrotate
-    arch.layout
+    artix.layout
 )
-sha256sums=('dbccb84aee95e095edfbb81e5eb926ccd24e6ada55dcd83caecb262e5cf94d2a'
+sha256sums=('fa16d72a078210a54c47dd5bef2f8b9b8a01d94909a51453956b3ec6442ea4c5'
             'SKIP'
             '63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf'
             'd8c5465ba6490e6ee3ddeb69285a0c6a4fca8130fc0f516f2f3563bc171c8929'
-            'dda05c6e76f12624e418ca18a36f2e90ec1c5b1cc52fed7142fce6076ec413f3')
+            'ad1304d19d2e91e236d2a980ff4ee5affe9bce79011cc987e2aee6227d9604a7')
 # following keys are coming from https://downloads.apache.org/httpd/KEYS
 validpgpkeys=('A93D62ECC3C8EA12DB220EC934EA76E6791485A8' # Jim Jagielski
               'B9E8213AEFB861AF35A41F2C995E35221AD84DFF'
@@ -60,14 +61,14 @@ prepare() {
       -e 's#Group daemon#Group http#' \
       -i docs/conf/httpd.conf.in
 
-  cat "${srcdir}/arch.layout" >> config.layout
+  cat "${srcdir}/artix.layout" >> config.layout
 }
 
 build() {
   cd httpd-${pkgver}
 
   ./configure --sbindir=/usr/bin \
-      --enable-layout=Arch \
+      --enable-layout=Artix \
       --enable-mpms-shared=all \
       --enable-modules=all \
       --enable-mods-shared=all \
