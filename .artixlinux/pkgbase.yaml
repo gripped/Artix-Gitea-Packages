@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xorg-server
-  version: 21.1.8-2
+  version: 21.1.9-1
   arch:
     - x86_64
   pkgname:
@@ -12,11 +12,11 @@ pkgbase:
     - xorg-server-common
     - xorg-server-devel
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 21.1.8-2
+    version: 21.1.9-1
     packages:
-      - xorg-server-21.1.8-2-x86_64.pkg.tar.zst
-      - xorg-server-xephyr-21.1.8-2-x86_64.pkg.tar.zst
-      - xorg-server-xvfb-21.1.8-2-x86_64.pkg.tar.zst
-      - xorg-server-xnest-21.1.8-2-x86_64.pkg.tar.zst
-      - xorg-server-common-21.1.8-2-x86_64.pkg.tar.zst
-      - xorg-server-devel-21.1.8-2-x86_64.pkg.tar.zst
+      - xorg-server-21.1.9-1-x86_64.pkg.tar.zst
+      - xorg-server-xephyr-21.1.9-1-x86_64.pkg.tar.zst
+      - xorg-server-xvfb-21.1.9-1-x86_64.pkg.tar.zst
+      - xorg-server-xnest-21.1.9-1-x86_64.pkg.tar.zst
+      - xorg-server-common-21.1.9-1-x86_64.pkg.tar.zst
+      - xorg-server-devel-21.1.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

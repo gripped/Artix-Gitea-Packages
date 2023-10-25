@@ -4,8 +4,8 @@
 pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-common' 'xorg-server-devel')
-pkgver=21.1.8
-pkgrel=2
+pkgver=21.1.9
+pkgrel=1
 arch=('x86_64')
 license=('custom')
 groups=('xorg')
@@ -21,25 +21,21 @@ source=(https://xorg.freedesktop.org/releases/individual/xserver/${pkgbase}-${pk
         xvfb-run # with updates from FC master
         xvfb-run.1
         xephyr_Dont_check_for_SeatId_anymore.patch
-        0001-present-Send-a-PresentConfigureNotify-event-for-dest.patch
 )
 validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF'  # Peter Hutterer (Who-T) <office@who-t.net>
               '67DC86F2623FC5FD4BB5225D14706DBE1E4B4540'  # Olivier Fourdan <fourdan@xfce.org>
               'FD0004A26EADFE43A4C3F249C6F7AE200374452D') # Povilas Kanapickas <povilas@radix.lt>
-sha512sums=('6104b3620ed2e1e27d9a8e963388bbe8785a764585b1bc03dbf5d719a92894773dda580d377ca18ceeab353e65a5d23cc947bab84a4012f9dd1eca31cac36937'
+sha512sums=('9044e1b9222616fb63aea444b75f4ca6582edb7d899018f8ea30359e57edf04b1555e69397ebc4d288f7e36d6b82a54dde3895f11d414573d229e908ac17bfe8'
             'SKIP'
             '672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49'
             'de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22'
-            '34de52147054535256f35143d321e4d5e189baae502afca2bd3291094946dbead0829b1f196ae2a4d23bd6d0e1e04b65a387dee43f12dee55d247e37aec419d7'
-            'bc7d054bef2b4550d067b3abb14eb7c534e5022ba0b0e59e14687886fe204914757b014c31150bce705baed5d8cb1be87e8624da43cb1fe874b138ced00ee18b')
+            '34de52147054535256f35143d321e4d5e189baae502afca2bd3291094946dbead0829b1f196ae2a4d23bd6d0e1e04b65a387dee43f12dee55d247e37aec419d7')
 
 prepare() {
   cd ${pkgbase}-$pkgver
 
   # FS#73274
   patch -Np1 -i ../xephyr_Dont_check_for_SeatId_anymore.patch
-  # upstream fix (merged)
-  patch -Np1 -i ../0001-present-Send-a-PresentConfigureNotify-event-for-dest.patch
 }
 
 build() {
@@ -60,7 +56,7 @@ build() {
     -D glamor=true \
     -D udev=true \
     -D dtrace=false \
-    -D systemd_logind=true \
+    -D elogind_logind=true \
     -D suid_wrapper=true \
     -D xkb_dir=/usr/share/X11/xkb \
     -D xkb_output_dir=/var/lib/xkb \
@@ -88,7 +84,7 @@ _install() {
 
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
-  depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap libelogind)
+  depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
   _install fakeinstall/usr/share/man/man1/Xserver.1
@@ -101,7 +97,7 @@ package_xorg-server-common() {
 package_xorg-server() {
   pkgdesc="Xorg X server"
   depends=(libepoxy libxfont2 pixman xorg-server-common libunwind
-           dbus libgl xf86-input-libinput nettle elogind
+           dbus libgl xf86-input-libinput nettle
            libpciaccess libdrm libxshmfence libxcvt) # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
@@ -127,7 +123,7 @@ package_xorg-server() {
 
 package_xorg-server-xephyr() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libgl libepoxy libunwind libxv pixman xorg-server-common
+  depends=(libxfont2 libgl libepoxy libunwind libelogind libxv pixman xorg-server-common
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc)
 
@@ -140,8 +136,8 @@ package_xorg-server-xephyr() {
 
 package_xorg-server-xvfb() {
   pkgdesc="Virtual framebuffer X server"
-  depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth
-           libgl nettle libtirpc)
+  depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
+           libgl nettle libtirpc libelogind)
 
   _install fakeinstall/usr/bin/Xvfb
   _install fakeinstall/usr/share/man/man1/Xvfb.1
@@ -155,7 +151,7 @@ package_xorg-server-xvfb() {
 
 package_xorg-server-xnest() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle libtirpc)
+  depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle libtirpc libelogind)
 
   _install fakeinstall/usr/bin/Xnest
   _install fakeinstall/usr/share/man/man1/Xnest.1
