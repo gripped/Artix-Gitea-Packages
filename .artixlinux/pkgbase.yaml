@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gradle
-  version: 8.3-1
+  version: 8.4-1
   arch:
     - any
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - gradle-doc
     - gradle-src
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.4-1
+    packages:
+      - gradle-8.4-1-any.pkg.tar.zst
+      - gradle-doc-8.4-1-any.pkg.tar.zst
+      - gradle-src-8.4-1-any.pkg.tar.zst
   world:
     version: 8.3-1
     packages:
