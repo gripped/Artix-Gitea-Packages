@@ -1,6 +1,6 @@
 pkgbase = python-unearth
 	pkgdesc = A utility to fetch and download python packages
-	pkgver = 0.12.0
+	pkgver = 0.12.1
 	pkgrel = 1
 	url = https://github.com/frostming/unearth
 	arch = any
@@ -19,8 +19,8 @@ pkgbase = python-unearth
 	depends = python-requests
 	depends = python-urllib3
 	optdepends = python-keyring: use keyring for authentication
-	source = python-unearth-0.12.0.tar.gz::https://github.com/frostming/unearth/archive/refs/tags/0.12.0.tar.gz
-	sha512sums = 0fa5e0b869b0b5ba699975970a5ef8f4a785bad5a9fcb6d9adb177bd3bf376c1e6068611a0196ce1991b3d6669c79d9706c2f25fc88a3f2ad73f246bd81e1988
-	b2sums = 12c0679c1cebb50a289769ab676a6a1101de1341e05300de9901c790ee1a142d6f0ecfc6fcb3924edc457de6e6996f1b0ade082577c8f5e7e826cceecde43bf3
+	source = python-unearth-0.12.1.tar.gz::https://github.com/frostming/unearth/archive/refs/tags/0.12.1.tar.gz
+	sha512sums = 0a5b396ac162f4e462048f978ad66f35190f63b580aa8752b191956dbbec3d392223bf15ef57bdb6b7027043cf14982db2c63cec13967126e132c53b03de5501
+	b2sums = 2538966e9de25f2f2762cf7542ed4e930843e6d9e0f89b79236aad8999fad96548b36c84da094df4ac48be0acc5a9bddd55242e05086bde12503e66104db0860
 
 pkgname = python-unearth
