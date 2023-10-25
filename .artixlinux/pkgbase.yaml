@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-importlib_resources
-  version: 6.0.1-1
+  version: 6.1.0-1
   arch:
     - any
   pkgname:
     - python-importlib_resources
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.1.0-1
+    packages:
+      - python-importlib_resources-6.1.0-1-any.pkg.tar.zst
   world:
     version: 6.0.1-1
     packages:
