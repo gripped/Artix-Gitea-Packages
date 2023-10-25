@@ -56,7 +56,7 @@ build() {
     -D glamor=true \
     -D udev=true \
     -D dtrace=false \
-    -D elogind_logind=true \
+    -D systemd_logind=true \
     -D suid_wrapper=true \
     -D xkb_dir=/usr/share/X11/xkb \
     -D xkb_output_dir=/var/lib/xkb \
