@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gpgme
-  version: 1.22.0-1
+  version: 1.23.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,20 +10,24 @@ pkgbase:
     - qgpgme-qt6
     - python-gpgme
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.23.0-1
+    packages:
+      - gpgme-1.23.0-1-x86_64.pkg.tar.zst
+      - qgpgme-qt5-1.23.0-1-x86_64.pkg.tar.zst
+      - qgpgme-qt6-1.23.0-1-x86_64.pkg.tar.zst
+      - python-gpgme-1.23.0-1-x86_64.pkg.tar.zst
   system:
     version: 1.22.0-1
     packages:
