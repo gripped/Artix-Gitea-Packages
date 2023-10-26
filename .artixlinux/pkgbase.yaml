@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gnome-applets
-  version: 3.46.0-1
+  version: 3.50.0-1
   arch:
     - x86_64
   pkgname:
     - gnome-applets
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,5 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 3.50.0-1
+    packages:
+      - gnome-applets-3.50.0-1-x86_64.pkg.tar.zst
