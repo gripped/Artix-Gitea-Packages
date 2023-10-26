@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: p11-kit
-  version: 0.25.0-2
+  version: 0.25.1-1
   arch:
     - x86_64
   pkgname:
@@ -9,20 +9,23 @@ pkgbase:
     - libp11-kit
     - p11-kit-docs
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.25.1-1
+    packages:
+      - p11-kit-0.25.1-1-x86_64.pkg.tar.zst
+      - libp11-kit-0.25.1-1-x86_64.pkg.tar.zst
+      - p11-kit-docs-0.25.1-1-x86_64.pkg.tar.zst
   system:
     version: 0.25.0-2
     packages:
