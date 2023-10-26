@@ -1,9 +1,10 @@
-# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
-# Maintainer: Maxim Baz <archlinux at maximbaz dot com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+# Contributor: Maxim Baz <archlinux at maximbaz dot com>
 # Contributor: Wojciech Kępka (wojciech@wkepka.dev)
 
 pkgname=helix
-pkgver=23.05
+pkgver=23.10
 pkgrel=1
 pkgdesc="A post-modern modal text editor"
 arch=('x86_64')
@@ -34,7 +35,7 @@ optdepends=(
 )
 install="$pkgname.install"
 source=("$pkgname-$pkgver.tar.gz::https://github.com/helix-editor/helix/archive/$pkgver.tar.gz")
-sha256sums=('65da9de40ebd275a9be9a2491b7ec35f1aec9e9259e95216ad7f812d2b8627f9')
+b2sums=('167099ec0d6a2a90ecf9469e1c8764d16bebe9173796feb844f9d0794d21f26975b77812345697c9b2b4e491db12269c5b8987b01da66def06c9afa779f3fde3')
 options=('!lto')
 
 prepare() {
