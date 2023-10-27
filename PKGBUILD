@@ -1,11 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Pavel Borzenkov <pavel@voidptr.ru>
 # Contributor: aksr <aksr at t-com dot me>
 
 pkgname=criu
 pkgver=3.18
-pkgrel=1
+pkgrel=2
 pkgdesc='Utilities to checkpoint and restore processes in userspace'
 arch=('x86_64')
 url='https://criu.org'
