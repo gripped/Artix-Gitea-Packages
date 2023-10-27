@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fuse3
-  version: 3.16.1-1
+  version: 3.16.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.16.1-1
+    version: 3.16.2-1
     packages:
-      - fuse-common-3.16.1-1-x86_64.pkg.tar.zst
-      - fuse3-3.16.1-1-x86_64.pkg.tar.zst
+      - fuse-common-3.16.2-1-x86_64.pkg.tar.zst
+      - fuse3-3.16.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
