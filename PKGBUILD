@@ -13,8 +13,15 @@ depends=('evolution-data-server' 'gnome-desktop' 'gnome-menus' 'libgdm' 'libwnck
 makedepends=('itstool')
 optdepends=('alacarte: Main menu editor'
             'gnome-applets: Extra applets for the panel')
-source=("https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz")
-sha256sums=('025ec889d04262d41c95bee85be6421ba3a6050e269b9ce99f692cad49a2eb13')
+source=("https://download.gnome.org/sources/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.xz"
+        "0001-build-remove-systemd-dependency-and-code.patch")
+sha256sums=('025ec889d04262d41c95bee85be6421ba3a6050e269b9ce99f692cad49a2eb13'
+            '39c82de2bfebe7904590b1fd584f7845f9dd45c4391f86ef1864545a6050d2d6')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i ../0001-build-remove-systemd-dependency-and-code.patch
+}
 
 build() {
   cd $pkgname-$pkgver

@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - gnome-panel
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 3.50.0-1
+    packages:
+      - gnome-panel-3.50.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
