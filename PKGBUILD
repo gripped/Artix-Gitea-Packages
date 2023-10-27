@@ -5,7 +5,7 @@
 # Contributor: Illarion Kovalchuk <illarion.kovalchuk at gmail dot com>
 
 pkgname=jenkins
-pkgver=2.428
+pkgver=2.429
 pkgrel=1
 _java=17
 pkgdesc='Extendable continuous integration server (latest)'
@@ -23,7 +23,7 @@ source=("https://github.com/jenkinsci/jenkins/archive/refs/tags/jenkins-${pkgver
         'jenkins.tmpfiles'
         'jenkins.sysusers'
         'skip-failing-test.patch')
-sha512sums=('569b4610386f6887d3df60fcbbb9fb2193616ce22ceaa1fa8ce5a316079820b12aa3a34de3868c9fcb1fdabbc318e23112d3645f01a4ec1fd14e2c883b4d3cec'
+sha512sums=('f757237b6cba2e87d1d1c3c63fe4e8efcb1447a188a7034824c84432900f588349311f31fa895d96645deae3e9c15ef39b7be936c8997ac71fac1a1f10f04ba8'
             'a845a7147be54affc586dfce9a188ec24c92e673e88dec0b62da386d2e597de6ecda103429008562abd897f179a52c37cf2188ebc65b8c636efd07d707e18f90'
             '896cbc64eadb2f3bb9fa7fc26dbfc527b1823d8bff3158be7f1936cc250f55eeafe89079e1ceb8f3d269041662573ccbbb36248140b4ba24144a564366f8847a'
             '876180dc1674ec56c32a4fceac7d9608f450520ace7d3ecb68cbe7ba8f1bcba31f2c063f52a9076c432b78fd31157da3febc65e98e7d9050a4134d4e0304e8bd')
