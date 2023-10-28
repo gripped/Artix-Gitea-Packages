@@ -1,22 +1,27 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: spider-mario <spidermario@free.fr>
 # Contributor: Daniel Ehlers <danielehlers@mindeye.net>
 
 pkgname=coin-or-cgl
 pkgver=0.60.8
-pkgrel=1
+pkgrel=2
 pkgdesc='COIN-OR Cut Generation Library'
 arch=(x86_64)
 url='https://github.com/coin-or/Cgl'
 license=(EPL)
 groups=(coin-or)
-depends=(coin-or-clp)
+depends=(coin-or-clp
+         coin-or-coinutils
+         coin-or-osi
+         gcc-libs
+         glibc)
 source=($pkgname-$pkgver.tar.gz::https://github.com/coin-or/Cgl/archive/refs/tags/releases/$pkgver.tar.gz)
 sha256sums=('1482ba38afb783d124df8d5392337f79fdd507716e9f1fb6b98fc090acd1ad96')
 
 build() {
   cd Cgl-releases-$pkgver
   ./configure --prefix=/usr
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool # Fix overlinking
   make
 }
 
