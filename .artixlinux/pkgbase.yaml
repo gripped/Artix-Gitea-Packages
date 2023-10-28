@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: coin-or-mp
-  version: 1.8.4-5
+  version: 1.8.4-6
   arch:
     - x86_64
   pkgname:
     - coin-or-mp
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.4-5
+    version: 1.8.4-6
     packages:
-      - coin-or-mp-1.8.4-5-x86_64.pkg.tar.zst
+      - coin-or-mp-1.8.4-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
