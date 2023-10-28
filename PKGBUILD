@@ -6,7 +6,7 @@
 
 pkgname=minicom
 pkgver=2.9
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A serial communication program'
 arch=('x86_64')
 url='https://salsa.debian.org/minicom-team/minicom'
@@ -30,4 +30,8 @@ package() {
 
   make DESTDIR="${pkgdir}/" install
   install -Dm644 doc/minirc.dfl ${pkgdir}/etc/minirc.dfl
+
+  # Fix conflict with OpenRC's runscript
+  mv ${pkgdir}/usr/bin/runscript ${pkgdir}/usr/bin/runscript-minicom
+  echo 'pu scriptprog       runscript-minicom' >> ${pkgdir}/etc/minirc.dfl
 }
