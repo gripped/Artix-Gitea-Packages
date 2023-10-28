@@ -1,6 +1,6 @@
 post_install() {
     # Fix ownership of smtpctl for old systems
-    esysusers /usr/lib/sysusers.d/opensmtpd.conf
+    systemd-sysusers /usr/lib/sysusers.d/opensmtpd.conf
     chgrp smtpq /usr/bin/smtpctl
     chmod 2555 /usr/bin/smtpctl
 }
