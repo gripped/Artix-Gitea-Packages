@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: coin-or-cbc
-  version: 2.10.10-1
+  version: 2.10.11-1
   arch:
     - x86_64
   pkgname:
     - coin-or-cbc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.10.10-1
+    version: 2.10.11-1
     packages:
-      - coin-or-cbc-2.10.10-1-x86_64.pkg.tar.zst
+      - coin-or-cbc-2.10.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
