@@ -4,7 +4,7 @@
 
 pkgname=mate-user-guide
 pkgver=1.26.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="MATE User Guide"
 groups=('mate')
 url="https://mate-desktop.org"
