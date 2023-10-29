@@ -10,7 +10,7 @@ pkgbase:
     - linux-hardened-docs
 actions:
   addRepo: null
-  removeRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -33,11 +33,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.5.9.hardened1-1
-    packages:
-      - linux-hardened-6.5.9.hardened1-1-x86_64.pkg.tar.zst
-      - linux-hardened-headers-6.5.9.hardened1-1-x86_64.pkg.tar.zst
-      - linux-hardened-docs-6.5.9.hardened1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
