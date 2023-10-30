@@ -4,7 +4,7 @@
 # Contributor: mezcal
 
 pkgname=rspamd
-pkgver=3.7.1
+pkgver=3.7.3
 pkgrel=1
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
@@ -123,7 +123,7 @@ backup=(
   etc/rspamd/worker-proxy.inc
 )
 install=rspamd.install
-_tag=af3e90f67cc5e96238395f7b38282781f1bd64d5
+_tag=23ed02bcacbab3636e10019396c6f1b3ece49841
 source=(
   git+https://github.com/rspamd/rspamd.git#tag=${_tag}
   rspamd.tmpfiles
@@ -134,16 +134,12 @@ source=(
 b2sums=('SKIP'
         '6b1b4220444d382d01fe981acf51580c397363a873507fdb508fd5109adae2609c03e629ecdd6e48c13f068d0c3530be4d0fb55b3084c33522619dd29f70a40c'
         '5b4db27d87158609519bb0e59700ac627d447e4627b70600a70638f81a39361ad416c4784dafc392e9f9bc7b69211587ae64cbab7bec98668e75df5c4fba46ea'
-        '88c05d2ca66f3361e519226e25bf812d37916631cfca856a8129de4ff3ae48446a25b741d06b080a9aba30a1e77de83456a8f78d27e5ea9653c5a78f68d6a608'
+        '25c2253c7ecd9fba215cb6a1df93d76fab98e98ffeec380f828d7a612a78e0c4822dacc838ca37c2ceec452e54e7fc06c4c4df3290c8a6e8ee5ae869bbbb449e'
         '8a2882e4cd59eb3304acae9dfa71252c2024a8251e61cd1e75e6b84a84ec8c636e70d6702c03d7b7d0e2f7fa60d2466c6eed4f4f80f1834585185deaf7157eee')
 
 pkgver() {
   cd rspamd
   git describe --tags
-}
-
-prepare() {
-  cd rspamd
 }
 
 build() {
