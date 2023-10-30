@@ -1,13 +1,13 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
-# Maintainer: Jelle van der Waa <jelle@vdwaa.nl>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Jelle van der Waa <jelle@vdwaa.nl>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: BlackEagle < ike DOT devolder AT gmail DOT com >
 # Contributor: Preecha Patumchareonpol <yumyai at gmail.com> 
 
 pkgbase=podofo
 pkgname=(podofo{,-tools})
-pkgver=0.10.1
+pkgver=0.10.2
 pkgrel=1
 pkgdesc='A C++ library to work with the PDF file format'
 arch=(x86_64)
@@ -27,7 +27,7 @@ depends=(fontconfig
 makedepends=(cmake)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('9b2bb5d54185a547e440413ca2e9ec3ea9c522fec81dfeb9a23dbc3d65fbaa55')
+sha256sums=('565168132e8fbfcdbad4ea4c5567bcc57ebbffb4528f6273baf3f490a3cf7563')
 
 build() {
 	cd "$_archive"
