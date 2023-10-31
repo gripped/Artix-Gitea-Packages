@@ -1,17 +1,17 @@
 ---
 pkgbase:
-  name: python-pyqt6-3d
-  version: 6.5.0-2
+  name: pyqt6-3d
+  version: 6.6.0-1
   arch:
     - x86_64
   pkgname:
     - python-pyqt6-3d
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.5.0-2
+    version: 6.6.0-1
     packages:
-      - python-pyqt6-3d-6.5.0-2-x86_64.pkg.tar.zst
+      - python-pyqt6-3d-6.6.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
