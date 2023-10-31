@@ -3,7 +3,7 @@
 _name=nethsm-sdk-py
 pkgname=python-nethsm-sdk-py
 pkgver=0.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Client-side Python SDK for NetHSM"
 arch=(any)
 url="https://github.com/Nitrokey/nethsm-sdk-py"

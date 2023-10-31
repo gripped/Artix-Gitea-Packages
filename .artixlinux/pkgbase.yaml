@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-nethsm-sdk-py
-  version: 0.4.0-1
+  version: 0.4.0-1.1
   arch:
     - any
   pkgname:
     - python-nethsm-sdk-py
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.4.0-1.1
+    packages:
+      - python-nethsm-sdk-py-0.4.0-1.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
