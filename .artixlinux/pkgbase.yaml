@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - python-pdm
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,8 @@ repos:
     packages:
       - python-pdm-2.10.0-1-any.pkg.tar.zst
   world:
-    version: 2.10.0-1
-    packages:
-      - python-pdm-2.10.0-1-any.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
