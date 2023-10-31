@@ -16,11 +16,8 @@ optdepends=("python-adblock: adblocking backend"
             "python-pygments"
             "pdfjs: displaying PDF in-browser")
 options=(!emptydirs)
-source=("https://github.com/qutebrowser/qutebrowser/releases/download/v$pkgver/qutebrowser-$pkgver.tar.gz"
-        "https://github.com/qutebrowser/qutebrowser/releases/download/v$pkgver/qutebrowser-$pkgver.tar.gz.asc")
-validpgpkeys=("27F3BB4FC217EECB858578AEEF7EE4D039690B7B")
-sha256sums=('a51893de4a123519afb83723b9ced2b2d98f4ca5285278c81e9bdda91ed5bc51'
-            'SKIP')
+source=("https://github.com/qutebrowser/qutebrowser/releases/download/v$pkgver/qutebrowser-$pkgver.tar.gz")
+sha256sums=('a51893de4a123519afb83723b9ced2b2d98f4ca5285278c81e9bdda91ed5bc51')
 
 build() {
     cd "$pkgname-$pkgver"
