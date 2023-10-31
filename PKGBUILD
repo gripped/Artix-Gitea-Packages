@@ -2,7 +2,7 @@
 
 _name=django-allauth
 pkgname=python-django-allauth
-pkgver=0.58.0
+pkgver=0.58.1
 pkgrel=1
 pkgdesc="Authentication, registration, account management and 3rd party account authentication"
 arch=(any)
@@ -34,8 +34,8 @@ optdepends=(
   'python-saml: for SAML support'
 )
 source=($_name-$pkgver.tar.gz::https://github.com/pennersr/$_name/archive/$pkgver.tar.gz)
-sha512sums=('9afc7064ee5246c66dcbd523e487ac348d11d33934dac0842bf25f8d311ed7058747bbad9933b50e5ef5e6542d96c247332cb5b4b62532a0a1934271d23f5a07')
-b2sums=('9b8d39ddf0da4069f231c8930635267116f5dcc49bd11fe26681e842078fa60dc9f9b5ddbb8f4ef786b99ae21d41999fcd2314cca926a5f62bb4b7a3aed8c74b')
+sha512sums=('a8e78cd5d54f92ad7e2208aa7ed4cebd9a92cf61db105b04d654c5a95ef1598089d7030b12de247acb5d9604ed9f691cb5aafb2b715624362aae70834420e329')
+b2sums=('1e2a4485eb6d80c99b9184c66d1eafbbf09ae8e7f2137636da51f54db168523ea7a76bdf7eb618e69702722d579695a3af52515f25d74befe53a7ebeb750dac9')
 
 build() {
   cd $_name-$pkgver
