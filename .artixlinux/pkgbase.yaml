@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libyuv
-  version: r2322+3aebf69d-1
+  version: r2426+464c51a0-1
   arch:
     - x86_64
   pkgname:
     - libyuv
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: r2322+3aebf69d-1
+    version: r2426+464c51a0-1
     packages:
-      - libyuv-r2322+3aebf69d-1-x86_64.pkg.tar.zst
+      - libyuv-r2426+464c51a0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
