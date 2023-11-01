@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mutter
-  version: 45.0+r49+g8d3d8b86e5-1
+  version: 45.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.0+r49+g8d3d8b86e5-1
+    version: 45.1-1
     packages:
-      - mutter-45.0+r49+g8d3d8b86e5-1-x86_64.pkg.tar.zst
-      - mutter-docs-45.0+r49+g8d3d8b86e5-1-x86_64.pkg.tar.zst
+      - mutter-45.1-1-x86_64.pkg.tar.zst
+      - mutter-docs-45.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
