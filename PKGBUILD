@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.5.9
+_ver=6.6
 _rel=1
 _arch=arch${_rel}
 _artix=artix${_rel}
@@ -43,16 +43,16 @@ validpgpkeys=(
   A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('c6662f64713f56bf30e009c32eac15536fad5fd1c02e8a3daf62a0dc2f058fd5'
+sha256sums=('d926a06c63dd8ac7df3f86ee1ffc2ce2a3b81a2d168484e76b5b389aba8e56d0'
             'SKIP'
-            '322d1bf97a450cfd70e47f05a307e167ea44da92247e0e6cfb11d49b6daf7ed6'
+            'b64656c9e3e796b60b176e6213e2fbc92d92e3c63ea68b713bd14b6782e4ff9d'
             'SKIP'
-            'b44a309e82c7ec7f390647904dd8590d4c01a871297d8f7a037357a60ee4c6f7')
-b2sums=('fb5fcc0dc79e2f615a550283481492a8185414d65369cbe805909112735593e5fc8bdbd482a347dc4cb3dcac979bea21cd03c503932e9321856eeea685d31c65'
+            '6259fb662e1a45c2e45f8dc20bcb04cf9ecc7853d20b983a2743b850ed3ac369')
+b2sums=('5f02fd8696d42f7ec8c5fbadec8e7270bdcfcb1f9844a6c4db3e1fd461c93ce1ccda650ca72dceb4890ebcbbf768ba8fba0bce91efc49fbd2c307b04e95665f2'
         'SKIP'
-        '58f5887ac1ca6544a5dbbfa083801f91fdfabf4eac69d4763f9404ca8b4b8b5ebad094ff1ac69b1993af4c81604d7e9c019ea32392a493c7ea822c9073c9d617'
+        'a95f051f2c108fec05d560942f7d6d48fba9e45a223dbf4eb2a8c128d72873f027a4c27947afec9290656165bd70f0be93642ef4d5d4bb2f34ae702ab3b0a501'
         'SKIP'
-        '3f17111c92270d50887da360f4be111a5c4bc54cce5ce1bdfc06b0f15d7563f4eec74b70affaf4e7fdf212ed3bb7086befb0721a81a008ed15282a022ba31926')
+        '4ddc9a26906246c727be4d6e0179f258860fccdffdb12155582cb79490d4a2f8bdb4bdba79d11aca3474f78607fe24ae7c07ecb2132dcf7125cc58dbb5cde636')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -128,8 +128,8 @@ _package() {
   ZSTD_CLEVEL=19 make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
-  # remove build and source links
-  rm "$modulesdir"/{source,build}
+  # remove build link
+  rm "$modulesdir"/build
 }
 
 _package-headers() {
