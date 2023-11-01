@@ -2,11 +2,11 @@
 # Contributor: Chris Cromer <chris@cromer.cl>
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_commit=8b7d73c3988a5b42783b49cb590660aa26e0e196
+_commit=5d00408a1677e8fd46297eb3ee0865513007d798
 
 pkgname=runit-rc
 pkgver=20231101
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
 url='https://gitea.artixlinux.org/artix/runit-rc'
