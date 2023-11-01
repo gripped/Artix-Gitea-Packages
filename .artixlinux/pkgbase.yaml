@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: acpi_call
-  version: 1.2.2-163
+  version: 1.2.2-165
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.2.2-163
+    version: 1.2.2-165
     packages:
-      - acpi_call-1.2.2-163-x86_64.pkg.tar.zst
+      - acpi_call-1.2.2-165-x86_64.pkg.tar.zst
   world:
     version: 1.2.2-161
     packages:
