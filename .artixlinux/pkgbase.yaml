@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: runit-rc
-  version: 20231101-2
+  version: 20231101-3
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 20231101-2
+    version: 20231101-3
     packages:
-      - runit-rc-20231101-2-x86_64.pkg.tar.zst
+      - runit-rc-20231101-3-x86_64.pkg.tar.zst
   world:
     version: 20230902-1
     packages:
