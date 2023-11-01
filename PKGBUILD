@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.5.9.zen2
+pkgver=6.6.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -38,16 +38,16 @@ validpgpkeys=(
   A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('c6662f64713f56bf30e009c32eac15536fad5fd1c02e8a3daf62a0dc2f058fd5'
+sha256sums=('d926a06c63dd8ac7df3f86ee1ffc2ce2a3b81a2d168484e76b5b389aba8e56d0'
             'SKIP'
-            'bac46cdf763bc92931a70b09942f8b2eb364b8f3e2abdea6193012c35d9bd43f'
+            '243a351ce2a165c8101bab56f0392487af1ba295d60d64f61846ba44c9d8f70e'
             'SKIP'
-            '22cef01c043c19fa04784f076ca55d54825cc2425cfafe25d937099b5d6167af')
-b2sums=('fb5fcc0dc79e2f615a550283481492a8185414d65369cbe805909112735593e5fc8bdbd482a347dc4cb3dcac979bea21cd03c503932e9321856eeea685d31c65'
+            '125dbd935dc7270c956e20043c7a0783048e33316e5c2380aed7f16c4a32ffe2')
+b2sums=('5f02fd8696d42f7ec8c5fbadec8e7270bdcfcb1f9844a6c4db3e1fd461c93ce1ccda650ca72dceb4890ebcbbf768ba8fba0bce91efc49fbd2c307b04e95665f2'
         'SKIP'
-        'e538fda1b76ab0bbd39c628895fd4e20ba1f6c3c3887263f9c6894426fd6c4caec961bffc67596951515fece41411788eeaf256527d348f374f098aec479db8a'
+        '92f307df8a6417382c5301055d947007cf11de9f2f7ab62ba91d002d12dcea941854782052fe1b4366a9436bda3ffc87313750db6620759657cd1d5d66f1d4f7'
         'SKIP'
-        '890d55f5b300febca001bf1a715d114497a74246f49e1465f9969c6bea50d918bc0ce4599e78c9a1f49799c508bf054744600a9b0d14f3a117400540e514f4ef')
+        '95c3e511d08329ec7a4c2d380432ca5061306c29c3a5769a3e14efe943fa96998cbb7ace1ba4e66069d6828925c447dd79eb934b5b8a0df6451eef458f981dc7')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -121,8 +121,8 @@ _package() {
   ZSTD_CLEVEL=19 make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
-  # remove build and source links
-  rm "$modulesdir"/{source,build}
+  # remove build link
+  rm "$modulesdir"/build
 }
 
 _package-headers() {
