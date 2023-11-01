@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-utils
-  version: 535.113.01-2
+  version: 545.29.02-1
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - opencl-nvidia
     - nvidia-dkms
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 545.29.02-1
+    packages:
+      - nvidia-utils-545.29.02-1-x86_64.pkg.tar.zst
+      - opencl-nvidia-545.29.02-1-x86_64.pkg.tar.zst
+      - nvidia-dkms-545.29.02-1-x86_64.pkg.tar.zst
   world:
     version: 535.113.01-2
     packages:
