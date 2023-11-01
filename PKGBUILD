@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=github-cli
-pkgver=2.37.0
+pkgver=2.38.0
 pkgrel=1
 pkgdesc="GitHub's official command line tool"
 arch=("x86_64")
@@ -15,7 +15,7 @@ source=(
 	"https://github.com/cli/cli/archive/refs/tags/v$pkgver.tar.gz"
 )
 sha256sums=(
-	"527ca3aeaf6a565a0b058825748683ec5f5e199d5754466943c1f5c69a7d5bfe"
+	"8ba98b5e46526c9828507a587b429448fe9436ce1f875aa567d77ec3a8cae56c"
 )
 
 prepare() {
@@ -25,7 +25,8 @@ prepare() {
 
 build() {
 	cd "cli-$pkgver"
-	export CGO_CFLAGS="$CFLAGS" CGO_LDFLAGS="$LDFLAGS"
+	export CGO_CFLAGS="$CFLAGS" CGO_LDFLAGS="$LDFLAGS" \
+		GOPATH=/tmp/go GOCACHE=/tmp/go
 	test ! -d bin && mkdir bin
 	go build \
 		-buildmode pie \
