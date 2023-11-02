@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: luksmeta
-  version: 9-5
+  version: 9-6
   arch:
     - x86_64
   pkgname:
     - luksmeta
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9-5
+    version: 9-6
     packages:
-      - luksmeta-9-5-x86_64.pkg.tar.zst
+      - luksmeta-9-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
