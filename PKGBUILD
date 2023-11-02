@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: jepaan <jepaan at hotmail dot com>
 
 pkgname=assimp
-pkgver=5.2.5
-pkgrel=2
+pkgver=5.3.1
+pkgrel=1
 pkgdesc="Library to import various well-known 3D model formats in an uniform manner"
 arch=('x86_64')
 license=('BSD')
@@ -11,15 +11,17 @@ depends=('zlib' 'gcc-libs')
 makedepends=('cmake' 'ninja')
 url='https://github.com/assimp/assimp'
 source=("$pkgname-$pkgver.tar.gz::https://github.com/assimp/assimp/archive/v${pkgver}.tar.gz")
-sha512sums=('ac0dc4243f9d1ff077966f0037187b4374075ac97e75e1a3cd6bdc1caf5f8e4d40953d9a8a316480969c09524d87daa9d3ed75e6ac6f037dd5b1c5f25fce3afb')
+sha512sums=('49963f84ed0a8145f3af249890a533f0b12f5553ae09581289cb1f20cb49cb1a3ed3f3c4c966ceb43aa897b90deca268aa6554066b2bd34f2ac9c15041420ddb')
 
 build() {
   cd ${pkgname}-${pkgver}
 
-  artix-cmake \
+  cmake \
     -Bbuild \
     -GNinja \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCMAKE_BUILD_TYPE=Release \
     -DASSIMP_BUILD_SAMPLES=OFF \
     -DASSIMP_WARNINGS_AS_ERRORS=OFF \
