@@ -8,12 +8,15 @@ pkgname=(
   postfix
   postfix-{cdb,ldap,lmdb,mysql,pcre,pgsql,sqlite}
 )
-pkgver=3.8.2
+pkgver=3.8.3
 pkgrel=1
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
-url="http://www.postfix.org/"
-license=(EPL)
+url="https://www.postfix.org/"
+license=(
+  'EPL-2.0 OR IPL-1.0'
+  BSD-4-Clause-UC
+)
 depends=(glibc)
 makedepends=(
   db
@@ -37,12 +40,12 @@ source=(
   $pkgbase.sysusers
   $pkgbase.tmpfiles
 )
-sha512sums=('1c441c95bcadee6fc038eb5cb826a686a8bd98b0c78afbc36fdcee01ca0b1c7071036542c729ac345ef8f1e6fb42211452da802e86048967ebc77774dea7752d'
+sha512sums=('38df222cd1fca992bba9eef123ed547386244f41577f0f4eec9c055afd48773736bd9d5857166e31d94e5c55be57a4381f8ce1c8cde80e9b8779bae5e0720aef'
             'SKIP'
             '7b2785aa8120ca3ff91b405baf675e9e11f8d58b18a9b842672e7ae30932febddac10556a70823d8746fcb160bceb4dbabdee45cf46b02fc0127057656fb85c4'
             'a7f15970f613ae7b98ce1b84ca0a6034ce3cc7b2b9ce7160dad9731f740fb762f4a54f44acceb5f06f8744fa9e952b088086af8a69da388a600b742a3cda37f2'
             'd08574a6acd595fc146513c92dc1bb341c3432d67de1e93ab73a7ce60e385dd34f3a55e3d3d7aec5f358ac4aae260f028599ac47650ebc663cea3043a760a7bc')
-b2sums=('233693e088901e8ed986e34d60b55fb6b786c37868095ab914e6049c5ad6aee09f07d3b5d1f2bec64d8570e215bb15196760d30074cd8ddfaeff3897ad117b81'
+b2sums=('a656606c2a46671548cb954a65d769ba5bf68a5c8f0ccdc0e753b03386956eef3e264b696a306c586f1df1b06fb173e5f3db74c6a9e4d3686c86b8f53be585ed'
         'SKIP'
         'b5f19e0619f1fb017cd889c14e341c21146b3afe7b9eefcdb7fb1eb83a357434b899d1e92f3ab0023c78ef8f2de6ae54c4599ee0f0bd04d257f4ca0a4dc9a16c'
         'db58b7deb24cea16fb84f56680f0000683f72e11a95039969878e3819607aad5e65af9d9f50007e7710609065c0e3ebb9b30c1d929162b74eca5e74434d82cf1'
@@ -153,8 +156,8 @@ package_postfix() {
   install -vDm 755 auxiliary/collate/collate.pl "$pkgdir/usr/bin/postfix-collate.pl"
   install -vDm 755 auxiliary/collate/tlstype.pl "$pkgdir/usr/bin/postfix-tlstype.pl"
   install -vDm 644 auxiliary/collate/README* -t "$pkgdir/usr/share/doc/$pkgname/collate/"
-  # license
-  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+  # licenses
+  install -vDm 644 LICENSE COPYRIGHT -t "$pkgdir/usr/share/licenses/$pkgname/"
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   # tmpfiles.d
