@@ -9,12 +9,12 @@ pkgbase:
     - gradle-doc
     - gradle-src
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,17 +30,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 8.4-1
     packages:
       - gradle-8.4-1-any.pkg.tar.zst
       - gradle-doc-8.4-1-any.pkg.tar.zst
       - gradle-src-8.4-1-any.pkg.tar.zst
-  world:
-    version: 8.3-1
-    packages:
-      - gradle-8.3-1-any.pkg.tar.zst
-      - gradle-doc-8.3-1-any.pkg.tar.zst
-      - gradle-src-8.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
