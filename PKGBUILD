@@ -10,7 +10,7 @@ url="https://github.com/fcitx/fcitx5"
 license=('GPL')
 conflicts=('fcitx')
 groups=('fcitx5-im')
-depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'wayland'
+depends=('cairo' 'dbus' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'wayland'
          'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2')
 makedepends=('extra-cmake-modules' 'ninja' 'wayland-protocols' 'fmt')
 source=("https://download.fcitx-im.org/fcitx5/fcitx5/fcitx5-${pkgver}_dict.tar.xz"{,.sig})
