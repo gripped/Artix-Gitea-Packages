@@ -8,8 +8,8 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs
-pkgver=21.0.0
-_commit=38d0e69347de4db532a3bb6bddf51ead9ff764f8
+pkgver=21.1.0
+_commit=f4e5bebe7d83727cd64ed4762a59e1336f5f3c89
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript'
 arch=('x86_64')
