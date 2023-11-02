@@ -18,8 +18,8 @@ pkgname=('php-legacy'
          'php-legacy-sqlite'
          'php-legacy-tidy'
          'php-legacy-xsl')
-pkgver=8.1.23
-pkgrel=2
+pkgver=8.1.25
+pkgrel=1
 arch=('x86_64')
 license=('PHP')
 url='https://www.php.net/'
@@ -36,7 +36,7 @@ source=(
   'php.ini.patch'
   'php-legacy.patch'
 )
-sha256sums=('fc48422fa7e75bb45916fc192a9f9728cb38bb2b5858572c51ea15825326360c'
+sha256sums=('66fdba064aa119b1463a7969571d42f4642690275d8605ab5149bcc5107e2484'
             'SKIP'
             '2173046ac22ac50c7a6721306d3f79b2086f66a7a6ff5d8af249a474763197a1'
             'f3236ca866095d5e42e51e3fa600082ccd0afcfb7f1aecbeb286ef9d4f0dd564'
