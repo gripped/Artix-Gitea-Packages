@@ -3,7 +3,7 @@
 
 pkgbase=intel-metee
 pkgname=(intel-metee intel-metee-doc)
-pkgver=3.2.3
+pkgver=3.2.4
 pkgrel=1
 pkgdesc="Access library for Intel CSME HECI interface"
 arch=(x86_64)
@@ -11,13 +11,15 @@ url="https://github.com/intel/metee/"
 license=(Apache)
 makedepends=(cmake doxygen)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('2f98147a3e5f48877508cc11b9fd7f87ced382a3e328e823aa821f7461a0a374')
+sha256sums=('af6581beeab660a5519c3cfc751f2bc7a78eca376e43637568991a26bd66ca94')
 
 build() {
-  artix-cmake -B build -S metee-${pkgver} \
+  cmake -B build -S metee-${pkgver} \
     -G 'Unix Makefiles' \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -D CMAKE_INSTALL_LIBDIR=/usr/lib \
+    -D CMAKE_PREFIX_PATH=/usr \
     -DBUILD_SHARED_LIBS=ON \
     -Wno-dev
   cmake --build build
