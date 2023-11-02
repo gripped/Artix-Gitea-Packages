@@ -42,7 +42,7 @@ checkdepends=(python-pytest python-pytest-xdist python-pytest-runner python-pyte
               noto-fonts-cjk wqy-zenhei)
 _tag=babc9d1892ea4b223ab1dd1ff3c035471500b42e # git rev-parse v${pkgver}
 _ftver=2.13.1
-source=(git+https://github.com/matplotlib/matplotlib.git#tag=${_tag}?signed
+source=(git+https://github.com/matplotlib/matplotlib.git#tag=${_tag}
         https://github.com/QuLogic/mpl-images/archive/v${pkgver}-with-freetype-${_ftver}/mpl-images-${pkgver}-ft${_ftver}.tar.gz
         freetype.patch)
 b2sums=('SKIP'
