@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: notify-osd
-  version: 0.9.35+16.04.20160415-3
+  version: 0.9.35+20.04.20191129-1
   arch:
     - x86_64
   pkgname:
     - notify-osd
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.35+16.04.20160415-3
+    version: 0.9.35+20.04.20191129-1
     packages:
-      - notify-osd-0.9.35+16.04.20160415-3-x86_64.pkg.tar.zst
+      - notify-osd-0.9.35+20.04.20191129-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
