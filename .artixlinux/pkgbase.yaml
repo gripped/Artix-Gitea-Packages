@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libvirt-python
-  version: 1:9.8.0-1.1
+  version: 1:9.9.0-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1:9.8.0-1.1
+    version: 1:9.9.0-1
     packages:
-      - libvirt-python-1:9.8.0-1.1-x86_64.pkg.tar.zst
+      - libvirt-python-1:9.9.0-1-x86_64.pkg.tar.zst
   world:
     version: 1:9.7.0-1.1
     packages:
