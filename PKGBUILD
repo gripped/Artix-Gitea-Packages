@@ -8,7 +8,7 @@ pkgname=(
   audacity
   audacity-docs
 )
-pkgver=3.3.3
+pkgver=3.4.0
 pkgrel=1
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
@@ -22,9 +22,9 @@ makedepends=(
   ffmpeg
   flac
   gcc-libs
-  glibc
   gdk-pixbuf2
   glib2
+  glibc
   gtk3
   gtkmm3
   jack
@@ -40,38 +40,32 @@ makedepends=(
   lilv
   lv2
   mpg123
+  opusfile
   portaudio
   portmidi
   portsmf
   python
+  rapidjson
   soundtouch
   sqlite
   suil
   twolame
-  wavpack
-  wxwidgets-gtk3
   vamp-plugin-sdk
   vst3sdk
+  wavpack
+  wxwidgets-gtk3
   xcb-util
   xcb-util-cursor
   xcb-util-keysyms
 )
 source=(
   https://github.com/audacity/audacity/archive/refs/tags/$_name-$pkgver.tar.gz
-  https://github.com/$pkgbase/$pkgbase/releases/download/$_name-$pkgver/$pkgbase-manual-$pkgver.tar.gz
-  $pkgname-3.3.3-remove_obsolete_printf_specifier.patch::https://github.com/audacity/audacity/commit/e181ee115e727b4754619b04aa6e8ad872113592.patch
+  https://github.com/$pkgbase/$pkgbase/releases/download/$_name-$pkgver/$pkgbase-manual-$pkgver.zip
 )
-sha512sums=('c484e747f5207785b1872d031be2c3c50e7bbce087909c41930e593e2ab5777e0ab527a2770d90d89854bdd131e3f1f7afe3696b30420e3d8370e9f95527c937'
-            'd522b94157f091206341a05b67dbf3c776fedb5a8329f4301244a9ad9cb5f638d49dda11fbb11d376f8f5c4509f1984933d388c44830c8c2ce0c2b59ee7607f9'
-            'cabb3cf9919323ecd184b2db498f7ebd31cd456c2521368ac722e64d00fbe0ba27974ded8eb6dfc15b3d2fee666c75389e1abf745ad117bd12454150102c8a82')
-b2sums=('566aa2529f2708c80eb8e2887c3f3b2a1477d0825133b960f824d0697716d5b5e3a3ba0bcb14a20afc2eba7ac544da154339d1cd37261225b06326e8ee3f730c'
-        'b2646c84859a10e2f2d80abe44c3dc33021fda92b9e60e746fdae95ea7b32003d2a804c7ef8f88b3c3e3efdce8e0f3b2acf846753bede9d05dbbb92777c1055c'
-        '1afa0e95ac3f56f3e3edd47291094b5bd046432a92b39052a32382bacd55eedd4fa4d17fab3766f8dcd797d71d52d31fa8f8455f9916678f5728c5c38049fa81')
-
-prepare() {
-    # fixes a build failure in the translations with gettext 0.22
-    patch -d "$pkgname-$_name-$pkgver" -N -p 1 -i "${srcdir}/$pkgname-3.3.3-remove_obsolete_printf_specifier.patch"
-}
+sha512sums=('1fff66d3199591fed24a7b7a7ea3cb8b2a381c4f16d15a67949f2631a2e5ff2cac28a599b3ce28b0812de70f4984dfa51d37b3bed4e8f75deb4d5006817998d4'
+            '731b13854a7cc110145aec68fe3862c57e2962ca059e5ddbb6bbd2806d4381a6520edcf54b2f9666400229da78ce39a3efd5dffa4175eb9c375d21e097cf2c60')
+b2sums=('63f56548bee617dd20554cffe1ccf70f395441388273a1267bf030627787900018f58679da90807faf0fba83c3e79f9198d40a22c7a8c5cc220d80ea82181c95'
+        '7c21fb78f70446a2fdd3563a2f8a7c51671882bce6b191996975c66d7b059c8a6cde0401e3fe9c12100ef4363a5c16627449ce0b8316b3b0a47117ce4da8e852')
 
 build() {
   local cmake_options=(
@@ -127,10 +121,12 @@ package_audacity() {
     libx11
     lilv liblilv-0.so
     mpg123 libmpg123.so
+    opusfile
     portaudio libportaudio.so
     portmidi libportmidi.so
     portsmf libportSMF.so
     python
+    rapidjson
     soundtouch
     sqlite libsqlite3.so
     suil libsuil-0.so
@@ -163,5 +159,5 @@ package_audacity-docs() {
   pkgdesc+=" - documentation"
 
   install -vdm 755 "$pkgdir/usr/share/doc/$pkgbase/html/"
-  cp -av help/manual/* "$pkgdir/usr/share/doc/$pkgbase/html/"
+  cp -av $pkgbase-manual-$pkgver/* "$pkgdir/usr/share/doc/$pkgbase/html/"
 }
