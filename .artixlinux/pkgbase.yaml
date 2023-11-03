@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: suil
-  version: 0.10.18-1
+  version: 0.10.20-1
   arch:
     - x86_64
   pkgname:
     - suil
     - suil-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.10.20-1
+    packages:
+      - suil-0.10.20-1-x86_64.pkg.tar.zst
+      - suil-docs-0.10.20-1-x86_64.pkg.tar.zst
   world:
     version: 0.10.18-1
     packages:
