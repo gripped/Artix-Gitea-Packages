@@ -1,10 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Dan McGee <dan@archlinux.org>
 # Contributor: Michael Irwin <6d6469@gmail.com>
 
 pkgname=memcached
-pkgver=1.6.19
+pkgver=1.6.21
 pkgrel=1
 pkgdesc='Distributed memory object caching system'
 url='https://memcached.org/'
@@ -17,7 +16,7 @@ source=(https://www.memcached.org/files/${pkgname}-${pkgver}.tar.gz
         memcached.sysusers
         0001-tests-enable-drop_privileges-by-default-for-better-s.patch
         0001-seccomp-extend-syscalls-tested-on-Linux-6.1-with-gli.patch)
-sha512sums=('60d93065e0ef2b17e9da5370a497a4fbfc64c0af70e14fdfdab60c0c94c0b19e30da31d615e19565474c278141a4cb401c65fd79bd70947dd96a9fee81824a74'
+sha512sums=('9d8ba8964474e7ed40095e414747a3ce76860ee32b9d8bac19fc7932a79d4bb9947e4cbe810933b6d271f4b0ee5576e25089ca40f414b25faf9245733bfbd369'
             '960705ff74d25afed477e0b2a5872a3a4fb49ed3105a351f0d0224abc947778f9dbda81e80be94ab636da4a8411a9dd56a8fd4513e5b86a3096a14fa67f1548b'
             'e6ddcab9a6fee024072b6363ef60aa176ed258369bf3a17d475f19b1f410ffd6195b9c5737dc5b1371e8974b44bdbdaa109927acaeb54fb40302a5d67d7c13a8'
             '5da2a4fb0cdaefe9527dec67e01d881161c49a1593f11ddccf28fb55cbc25fe841ea8eca8a50387e2fef5bc304f12a5c9af4909543eafc0f8865dea39f9e8355'
