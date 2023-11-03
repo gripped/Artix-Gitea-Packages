@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: lilv
-  version: 0.24.20-2
+  version: 0.24.22-1
   arch:
     - x86_64
   pkgname:
     - lilv
     - lilv-docs
+    - python-lilv
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.24.22-1
+    packages:
+      - lilv-0.24.22-1-x86_64.pkg.tar.zst
+      - lilv-docs-0.24.22-1-x86_64.pkg.tar.zst
+      - python-lilv-0.24.22-1-x86_64.pkg.tar.zst
   world:
     version: 0.24.20-2
     packages:
