@@ -7,7 +7,7 @@
 
 pkgname=python-matplotlib
 pkgver=3.8.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A python plotting library, making publication quality plots"
 arch=(x86_64)
 url="https://matplotlib.org"
