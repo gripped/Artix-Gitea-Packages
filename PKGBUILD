@@ -23,12 +23,12 @@ pkgname=(
   uwsgi-plugin-zabbix
   uwsgi-plugin-notfound
 )
-pkgver=2.0.22
+pkgver=2.0.23
 pkgrel=1
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
 url="https://uwsgi-docs.readthedocs.io/en/latest/"
-license=(GPL2)
+license=('GPL-2.0-only WITH linking-exception')
 makedepends=(
   jansson
   libxcrypt
@@ -57,14 +57,14 @@ source=(
   uwsgi.sysusers
   uwsgi.tmpfiles
 )
-sha512sums=('28aaf786a88f034752ce980f6ae04ee5ea361443ffad7d7e9ec9a88a60dd63c649a44c2d41bb6ddc1572c321567da4c3985f907498bf250e2cd7cd11f4686303'
-            '1421cd09c95217b002333ce07b1048ad37c27ed94c8094c7c7105a8659a07822954d7cc340e4c2e7b8fb50e2305d6444857eea517acb1d301474373b43fe6599'
+sha512sums=('4060dd66f8c6309497b52a961c36a58fe2b3b3afc7e11b97cfa464757c614d1d44ccc561b18500a394b5d95e5660eae48759003a30ec07379a6f079f63f3899b'
+            '3045b54799f11bf19959ed0858c15ba9e208bdd88e41b879766585314c506a7396f3fd030c34c2e3ef821d6c32262ec87c4c4be33cd2cd4e9591b982e7386cc6'
             'd54c84838ddb2f389e115ebb81aa2583705c9e330f020e6583b496f9c271ed236b6820c2a065f2b55a79adbf13e262b9ff2428124a8044b8fa20ca29ca4930ac'
             '937878372aa1556f6ba62ad7148d1681288c94d6cff609368a9e861dd4d4524330006a08ae5993441f7d3101170e3a0a681a4c8b3c2c13b364b8b1f81cf25117'
             '9e9eab08199cf08810ec95b0697cd8817226986d1e3aeb54845c0140ea5887360580348f295060c0558fb2d6aaed26fec929ea36b28cfeaf2b3588ce40fec3df'
             '4def9dcd06cfc2c6ce554add9d9545a01f3bb2681f0a2a6fc4ba68f91011111803a955cc41b5e70832ca448b196109368fdf874e81b7ec0edee4b51f864e16f7')
-b2sums=('62d9b2fdbd597fbeb6d1a9652688075912510b25cacbcd8210176e7663a0bc9a99e9ab8a298ff56227a07fd7faebe6e27f06242abe987b46193af377c947100f'
-        '02a70673c00912c811b4a48ee06c9ed71ce7acec3d3d70feb9a42dab51597f6c51b9c9fd99653729ea0cbee984d3af156263ad5a49a3a693bd9d9a5f69989aa2'
+b2sums=('be4353ac71a5282233b0a996e74e49bff66f4c460eb2640058c7028cfeae41214661785de78cdd4aa35415bcc4595e1e340ba48db87bee413754b13d8b24a7d8'
+        '6fd3a196b15d0c40200fbf0c4be70d1ba53bd838a26c864c0ff76f8698318f97cd4f9b378dd4db9b1368c080a2d659d2d1845b31f4396066d14976591d1f1b46'
         '835a1036422e9821cd52ffdf5a6053bdd59fc700d473600bda60b6730746f6c0750c30c85f4139d3ea81c6b6dd10d6849f9406decee3179861c51aca90da6161'
         'a8b7d003f66ed5c5b1b60d57c05339af3dcdcf346eab52760810086e17f6936dd29ed7fd26281657bc86ac6721c989cbfbaa8e81f97111c807bcd06baece3bf2'
         '82e03ea95995cfa78abc4d930bd0c250f22788d9ca4dc0921cfbb44a965c0f851cbcc7a855e36ec6e6aa5bf33fbd313b4fe68a2f1c4b7935c2b297be25895324'
@@ -108,6 +108,7 @@ package_uwsgi() {
   install -vDm 644 ../uwsgi.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/uwsgi.conf
   install -vDm 644 ../uwsgi.logrotate "$pkgdir"/etc/logrotate.d/uwsgi
   install -vDm 644 ../uwsgi.sysusers "$pkgdir"/usr/lib/sysusers.d/uwsgi.conf
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-cgi() {
@@ -116,6 +117,7 @@ package_uwsgi-plugin-cgi() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 cgi_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-rack() {
@@ -124,6 +126,7 @@ package_uwsgi-plugin-rack() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 {rack,fiber,rbthreads}_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-psgi() {
@@ -132,6 +135,7 @@ package_uwsgi-plugin-psgi() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 psgi_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-python() {
@@ -145,6 +149,7 @@ package_uwsgi-plugin-python() {
   install -vDm 644 uwsgidecorators.py -t "${pkgdir}${site_packages}"
   python -m compileall "${pkgdir}${site_packages}"
   python -O -m compileall "${pkgdir}${site_packages}"
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-pypy() {
@@ -156,6 +161,7 @@ package_uwsgi-plugin-pypy() {
   install -vDm 644 uwsgidecorators.py -t "$pkgdir"/opt/pypy/site-packages/
   pypy -m compileall "$pkgdir"/opt/pypy/site-packages/
   pypy -O -m compileall "$pkgdir"/opt/pypy/site-packages/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-lua51() {
@@ -164,6 +170,7 @@ package_uwsgi-plugin-lua51() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 lua_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-php() {
@@ -172,6 +179,7 @@ package_uwsgi-plugin-php() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 php_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-php-legacy() {
@@ -180,6 +188,7 @@ package_uwsgi-plugin-php-legacy() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 php_legacy_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-mono() {
@@ -189,6 +198,7 @@ package_uwsgi-plugin-mono() {
   cd $pkgbase-$pkgver
   install -vDm 755 plugins/mono/uwsgi.dll -t "$pkgdir"/usr/lib/mono/2.0/
   install -vDm 755 mono_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-webdav() {
@@ -197,6 +207,7 @@ package_uwsgi-plugin-webdav() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 webdav_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-zabbix() {
@@ -205,6 +216,7 @@ package_uwsgi-plugin-zabbix() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 zabbix_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_uwsgi-plugin-notfound() {
@@ -213,4 +225,5 @@ package_uwsgi-plugin-notfound() {
 
   cd $pkgbase-$pkgver
   install -vDm 755 notfound_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
+  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
