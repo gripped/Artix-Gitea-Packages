@@ -7,29 +7,46 @@ pkgname=(util-linux util-linux-libs)
 _tag='d32d74bf433a419f2a8976530fb03669bde722cd' # git rev-parse v${_tag_name}
 _tag_name=2.39.2
 pkgver=${_tag_name/-/}
-pkgrel=1
+pkgrel=2
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
 makedepends=('git' 'meson' 'asciidoctor' 'bash-completion' 'libcap-ng'
              'libutempter' 'libxcrypt' 'python' 'udev' 'cryptsetup'
              'libcrypt.so' 'libmagic.so' 'libncursesw.so')
-license=('GPL2')
+license=(
+  'BSD-2-Clause'
+  'BSD-3-Clause'
+  'BSD-4-Clause-UC'
+  'GPL-2.0-only'
+  'GPL-2.0-or-later'
+  'GPL-3.0-or-later'
+  'ISC'
+  'LGPL-2.1-or-later'
+  'LicenseRef-PublicDomain'
+)
 options=('strip')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("git+https://github.com/util-linux/util-linux#tag=${_tag}?signed"
-        pam-{login,common,runuser,su}
+        $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
+        pam-{login,common,remote,runuser,su}
         'util-linux.sysusers'
         '60-rfkill.rules')
 sha256sums=('SKIP'
-            '99cd77f21ee44a0c5e57b0f3670f711a00496f198fc5704d7e44f5d817c81a0f'
+            '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
+            'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
+            '8bfbee453618ba44d60ba7fb00eced6c62edebfc592f2e75dede08e769ed8931'
             '48d6fba767631e3dd3620cf02a71a74c5d65a525d4c4ce4b5a0b7d9f41ebfea1'
             'b28f31fcafa401b0eb26bc0c710002acc4f7718f97af45b0d444e4af6dfb15a8'
             '10b0505351263a099163c0d928132706e501dd0a008dac2835b052167b14abe3'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37')
 
 _backports=(
+  # meson: install write executable with group 'tty'
+  '00f115d81146599324c454f6756db6491855f430'
+  # meson: install wall executable with group 'tty'
+  '5f3359c5c9dab9d5791d05a646b9c04c19eeb80e'
 )
 
 _reverts=(
@@ -81,13 +98,14 @@ package_util-linux() {
   conflicts=('rfkill' 'hardlink')
   provides=('rfkill' 'hardlink')
   replaces=('rfkill' 'hardlink')
-  depends=('pam' 'shadow' 'coreutils' 'libudev' 'readline' 'glibc' 'zlib'
+  depends=('glibc' 'pam' 'shadow' 'coreutils' 'libudev'
            'libcap-ng' 'libutempter' 'libxcrypt' 'libcrypt.so' 'util-linux-libs'
-           'libmagic.so' 'libncursesw.so')
+           'libmagic.so' 'libncursesw.so' 'readline' 'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
           etc/pam.d/chsh
           etc/pam.d/login
+          etc/pam.d/remote
           etc/pam.d/runuser
           etc/pam.d/runuser-l
           etc/pam.d/su
@@ -107,6 +125,7 @@ package_util-linux() {
   install -Dm0644 pam-common "${pkgdir}/etc/pam.d/chfn"
   install -m0644 pam-common "${pkgdir}/etc/pam.d/chsh"
   install -m0644 pam-login "${pkgdir}/etc/pam.d/login"
+  install -m0644 pam-remote "${pkgdir}/etc/pam.d/remote"
   install -m0644 pam-runuser "${pkgdir}/etc/pam.d/runuser"
   install -m0644 pam-runuser "${pkgdir}/etc/pam.d/runuser-l"
   install -m0644 pam-su "${pkgdir}/etc/pam.d/su"
@@ -127,6 +146,9 @@ package_util-linux() {
 
   install -Dm0644 60-rfkill.rules \
     "${pkgdir}/usr/lib/udev/rules.d/60-rfkill.rules"
+
+  install -vDm 644 $pkgbase/Documentation/licenses/COPYING.{BSD*,ISC} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 $pkgbase-BSD-2-Clause.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_util-linux-libs() {
@@ -142,4 +164,7 @@ package_util-linux-libs() {
   mv util-linux-libs/include "$pkgdir"/usr/include
   mv util-linux-libs/site-packages "$pkgdir"/"${_python_stdlib}"/site-packages
   mv util-linux-libs/man3 "$pkgdir"/usr/share/man/man3
+
+  install -vDm 644 $pkgbase/Documentation/licenses/COPYING.{BSD*,ISC} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 $pkgbase-BSD-2-Clause.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
