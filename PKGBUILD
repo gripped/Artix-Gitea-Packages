@@ -3,7 +3,7 @@
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=iproute2
-pkgver=6.5.0
+pkgver=6.6.0
 pkgrel=1
 pkgdesc='IP Routing Utilities'
 arch=('x86_64')
@@ -18,16 +18,16 @@ provides=('iproute')
 makedepends=('linux-atm')
 options=('staticlibs')
 validpgpkeys=('9F6FC345B05BE7E766B83C8F80A77F6095CDE47E') # Stephen Hemminger
-source=("https://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-${pkgver}.tar."{xz,sign}
+source=("https://www.kernel.org/pub/linux/utils/net/${pkgname}/${pkgname}-v${pkgver}.tar."{xz,sign}
         '0001-make-iproute2-fhs-compliant.patch'
         '0002-bdb-5-3.patch')
-sha256sums=('a70179085fa1b96d3c33b040c809b75e2b57563adc505a4ad05e2609df373463'
+sha256sums=('77e49171a58ae1a507d890f76336a0b4704bb5057be5bb9b4d721c4b1d199d56'
             'SKIP'
             '758b82bd61ed7512d215efafd5fab5ae7a28fbfa6161b85e2ce7373285e56a5d'
             '611c1ad7946aab226a5f4059922d9430f51b3377e33911427f8fdf7f7d31f7d6')
 
 prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}-v${pkgver}"
 
   # set correct fhs structure
   patch -Np1 -i "${srcdir}"/0001-make-iproute2-fhs-compliant.patch
@@ -41,7 +41,7 @@ prepare() {
 }
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}-v${pkgver}"
 
   export CFLAGS+=' -ffat-lto-objects'
 
@@ -50,7 +50,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}-v${pkgver}"
 
   make DESTDIR="${pkgdir}" SBINDIR="/usr/bin" install
 
