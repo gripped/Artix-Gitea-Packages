@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-open
-  version: 545.29.02-1
+  version: 545.29.02-3
   arch:
     - x86_64
   pkgname:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 545.29.02-1
+    version: 545.29.02-3
     packages:
-      - nvidia-open-545.29.02-1-x86_64.pkg.tar.zst
-      - nvidia-open-dkms-545.29.02-1-x86_64.pkg.tar.zst
+      - nvidia-open-545.29.02-3-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-545.29.02-3-x86_64.pkg.tar.zst
   world:
     version: 535.113.01-5
     packages:
