@@ -4,7 +4,7 @@
 
 pkgname=dolphin-emu
 pkgver=5.0.r19870.032c77b462
-pkgrel=1
+pkgrel=3
 epoch=1
 pkgdesc='A Gamecube / Wii / Triforce emulator'
 arch=(x86_64)
@@ -51,7 +51,7 @@ makedepends=(
   python
 )
 optdepends=('pulseaudio: PulseAudio backend')
-options=(!emptydirs)
+options=(!emptydirs !lto)
 _commit=032c77b462a220016f23c5079e71bb23e0ad2adf
 source=(
   dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#commit=${_commit}
@@ -89,10 +89,10 @@ prepare() {
   git -c protocol.file.allow=always submodule update cmake/sanitizers-cmake
 }
 
-pkgver() {
-  cd dolphin-emu
-  git describe | sed 's/-/.r/; s/-g/./'
-}
+# pkgver() {
+#   cd dolphin-emu
+#   git describe | sed 's/-/.r/; s/-g/./'
+# }
 
 build() {
   cmake -S dolphin-emu -B build -G Ninja \
