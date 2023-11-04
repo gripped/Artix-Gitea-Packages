@@ -14,7 +14,7 @@ conflicts=('init-openldap')
 source=("slapd" "slapd-pre" "slapd.conf")
 sha256sums=('dbde8a10a67754dc4a504ff6d9879e47d08b46f70fcf5dfec27d0b7c8718bd55'
             'fc129a2bbe87dd6309618b28729a51db3811417a2cfe767d7e88cfb781fead9e'
-            'b3f2b3e783089391a8a49d398a797af5e671a5774df8677aaa0856941f2a3598')
+            'fdba67b98f918054c6030e984c982d880e6b085420cbf30705305d1fdef586a7')
 
 package() {
     install -Dm644 slapd      "$pkgdir/etc/dinit.d/slapd"
