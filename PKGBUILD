@@ -3,11 +3,11 @@
 
 pkgname=bftpd
 pkgver=6.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Small, easy-to-configure FTP server'
 url='http://bftpd.sourceforge.net/'
 arch=('x86_64')
-license=('GPL')
+license=('GPL-2.0-only')
 depends=('pam' 'zlib' 'glibc' 'libxcrypt' 'libcrypt.so')
 optdepends=('logrotate: log file administration')
 backup=(etc/bftpd.conf
