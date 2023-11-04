@@ -1,14 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Laurent Carlier <lordheavym@archlinux.org>
 
 pkgname=directx-shader-compiler
 pkgdesc="A compiler for HLSL to DXIL (DirectX Intermediate Language)."
-pkgver=1.7.2212
+pkgver=1.7.2308
 pkgrel=1
 arch=('x86_64')
 url="https://github.com/microsoft/${_pkgname}"
 license=('custom')
 depends=('ncurses')
 makedepends=('git' 'cmake' 'ninja' 'python')
+options=(!lto)
 source=("directx-shader-compiler-${pkgver}::git+https://github.com/microsoft/DirectXShaderCompiler.git#tag=v${pkgver}")
 sha256sums=('SKIP')
 
@@ -23,8 +24,10 @@ prepare() {
 build() {
   cd "${pkgname}-${pkgver}"/build
 
-  artix-cmake .. -G Ninja \
+  cmake .. -G Ninja \
     -C ../cmake/caches/PredefinedParams.cmake \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCMAKE_BUILD_TYPE=Debug \
     -DLLVM_ENABLE_LTO=False
 
