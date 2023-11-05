@@ -3,7 +3,7 @@
 
 pkgname=strawberry
 pkgver=1.0.21
-pkgrel=1
+pkgrel=2
 pkgdesc='A music player aimed at audio enthusiasts and music collectors'
 arch=(x86_64)
 url='https://www.strawbs.org/'
@@ -21,6 +21,7 @@ depends=(abseil-cpp
          gst-plugins-good 
          gstreamer
          icu
+         kdsingleapplication
          libcdio
          libgpod
          libmtp
