@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libphonenumber
-  version: 1:8.13.22-2
+  version: 1:8.13.24-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:8.13.22-2
+    version: 1:8.13.24-1
     packages:
-      - libphonenumber-1:8.13.22-2-x86_64.pkg.tar.zst
+      - libphonenumber-1:8.13.24-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

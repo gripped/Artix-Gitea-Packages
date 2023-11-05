@@ -2,8 +2,8 @@
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=libphonenumber
-pkgver=8.13.22
-pkgrel=2
+pkgver=8.13.24
+pkgrel=1
 epoch=1
 pkgdesc="Google's common library for parsing, formatting, and validating international phone numbers"
 url="https://github.com/googlei18n/libphonenumber"
@@ -20,7 +20,7 @@ makedepends=(
   gtest
   jre-openjdk-headless
 )
-_commit=4189ef0fd972c8b54b8f9d25bf0d600ad9d80a9e  # tags/v8.13.22^0
+_commit=03dab581633c72226fc463c47d94688be2495b08  # tags/v8.13.24^0
 source=(
   "git+$url#commit=$_commit"
   protobuf-targets.patch
