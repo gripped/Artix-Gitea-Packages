@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: iproute2
-  version: 6.6.0-1
+  version: 6.6.0-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 6.6.0-1
+    version: 6.6.0-2
     packages:
-      - iproute2-6.6.0-1-x86_64.pkg.tar.zst
+      - iproute2-6.6.0-2-x86_64.pkg.tar.zst
   system:
     version: 6.5.0-1
     packages:
