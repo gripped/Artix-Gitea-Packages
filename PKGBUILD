@@ -3,8 +3,8 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-_tag=8e0fc89d5cbf952bd27ffffd1c2d912229a4af42
-pkgver=1.92.1
+_tag=d285600e577b0377e1115ea429ba28bc6323eb7e
+pkgver=1.94.0
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/matrix-org/synapse"
@@ -14,13 +14,12 @@ depends=('libwebp' 'python-ijson' 'python-jsonschema' 'python-twisted'
          'python-pyopenssl' 'python-yaml' 'python-pyasn1' 'python-pynacl'
          'python-bcrypt' 'python-immutabledict'
          'python-pillow' 'python-pysaml2'
-         'python-unpaddedbase64' 'python-canonicaljson'
          'python-signedjson' 'python-pymacaroons'
          'python-service-identity' 'python-msgpack'
          'python-phonenumbers' 'python-prometheus_client'
          'python-attrs' 'python-netaddr' 'python-sortedcontainers'
          'python-treq' 'python-idna' 'python-jinja' 'python-matrix-common'
-         'python-bleach' 'python-typing_extensions')
+         'python-bleach' 'python-typing_extensions' 'systemd')
 makedepends=(git python-build python-installer python-wheel python-poetry-core python-setuptools-rust)
 checkdepends=('python-pip' 'python-authlib' 'python-pyjwt' 'python-lxml' 'python-parameterized'
               'python-txredisapi' 'python-hiredis' 'postgresql' 'python-pyicu')
@@ -31,35 +30,33 @@ optdepends=('perl: sync_room_to_group.pl'
             'python-pyjwt: jwt'
             'python-txredisapi: redis'
             'python-hiredis'
-            'python-pyicu: Improve user search for international display names')
+            'python-pyicu: Improve user search for international display names'
+            'python-authlib: OpenID SSO support')
 source=("$pkgname::git+https://github.com/matrix-org/synapse.git#tag=$_tag"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
-        'tmpfiles-synapse.conf'
-        '0001-Most-basicest-Pydantic-V2-support.patch')
+        'tmpfiles-synapse.conf')
 sha256sums=('SKIP'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
-            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
-            '4520c50b2b1d4d8243f955e946c0e0680a7f603f63289236095258d783b72b12')
+            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
-#validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
-#              '053191DFF4670330465227F7A542E4ED1B0FAC09'
-#              '283F86EA415D64E7D98E085BD5804497C6468FC1'
-#              '58C4E75BC67C92169A7FDD11FBCE0ACE0732186F'
-#              '9323BC4F687435CA8D0F03CB922F57ACB93AABF9'
-#              '93B2970FB2FD8855AD6E0229CB2B33F7C23D44C6'
-#              'D79D3CA0B61429A8A760525A903ECE108A39DEDD'
-#              'F124520CEEE062448FE1C8442D2EFA2F32FBE047'
-#              '177B595E4DFCB510C556750833FC58F6A7113048')
+# validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
+#               '053191DFF4670330465227F7A542E4ED1B0FAC09'
+#               '283F86EA415D64E7D98E085BD5804497C6468FC1'
+#               '58C4E75BC67C92169A7FDD11FBCE0ACE0732186F'
+#               '9323BC4F687435CA8D0F03CB922F57ACB93AABF9'
+#               '93B2970FB2FD8855AD6E0229CB2B33F7C23D44C6'
+#               'D79D3CA0B61429A8A760525A903ECE108A39DEDD'
+#               'F124520CEEE062448FE1C8442D2EFA2F32FBE047'
+#               '177B595E4DFCB510C556750833FC58F6A7113048')
 
 prepare() {
 	cd $pkgname
 	# allow any poetry-core to be used
 	sed 's/poetry-core>=1.1.0,<=1.6.0/poetry-core>=1.0.0/' -i pyproject.toml
 	sed 's/setuptools_rust>=1.3,<=1.6.0/setuptools_rust>=1.3.0/' -i pyproject.toml
-        patch --forward --strip=1 --input=../0001-Most-basicest-Pydantic-V2-support.patch
 }
 
 build() {
@@ -67,17 +64,17 @@ build() {
 	python -m build --wheel --no-isolation
 }
 
-#check() {
-#	cd $pkgname
-#	local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
-#	python -m venv --system-site-packages test-env
-#	test-env/bin/python -m installer dist/*.whl
-#	pushd build/lib.linux-$CARCH-cpython-${python_version}
-#	ln -sv ../../tests .
-#	PYTHONPATH="$PWD" PATH="../../test-env/bin:$PATH" ../../test-env/bin/python -m twisted.trial -j$(nproc) tests
-#	rm -r tests _trial_temp
-#	popd
-#}
+check() {
+	cd $pkgname
+	local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
+	python -m venv --system-site-packages test-env
+	test-env/bin/python -m installer dist/*.whl
+	pushd build/lib.linux-$CARCH-cpython-${python_version}
+	ln -sv ../../tests .
+	PYTHONPATH="$PWD" PATH="../../test-env/bin:$PATH" ../../test-env/bin/python -m twisted.trial -j$(nproc) tests
+	rm -r tests _trial_temp
+	popd
+}
 
 package() {
 	cd $pkgname
