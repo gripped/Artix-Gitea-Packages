@@ -1,18 +1,14 @@
-From 7525fd43066dba85a8e7d88c5dfe668919ed58fe Mon Sep 17 00:00:00 2001
-From: nathan <ndowens@artixlinux.org>
-Date: Mon, 4 Sep 2023 20:22:20 -0500
-Subject: [PATCH] no-systemd
-
----
- data/meson.build | 16 +---------------
- meson.build      |  8 --------
- 2 files changed, 1 insertion(+), 23 deletions(-)
+ data/meson.build                       | 14 +++++++-------
+ data/org.freedesktop.Passim.service.in |  1 -
+ meson.build                            | 20 ++++++++++----------
+ meson_options.txt                      |  1 +
+ 4 files changed, 18 insertions(+), 18 deletions(-)
 
 diff --git a/data/meson.build b/data/meson.build
-index b871572..0e2b88c 100644
+index ff81bd2..181a559 100644
 --- a/data/meson.build
 +++ b/data/meson.build
-@@ -11,22 +11,8 @@ install_data(['org.freedesktop.Passim.png'],
+@@ -20,13 +20,13 @@ install_data(
  con2 = configuration_data()
  con2.set('libexecdir', libexecdir)
  con2.set('localstatedir', localstatedir)
@@ -23,38 +19,64 @@ index b871572..0e2b88c 100644
 -  install: true,
 -  install_dir: systemdunitdir,
 -)
--configure_file(
--  input: 'org.freedesktop.Passim.service.in',
--  output: 'org.freedesktop.Passim.service',
--  configuration: con2,
--  install: true,
--  install_dir: join_paths(datadir, 'dbus-1', 'system-services'),
--)
- install_data(['org.freedesktop.Passim.conf'],
--  install_dir: join_paths(datadir, 'dbus-1', 'system.d')
-+  install_dir: join_paths(datadir, 'dbus-1')
- )
- install_data(['org.freedesktop.Passim.metainfo.xml'],
-   install_dir: join_paths(datadir, 'metainfo')
++# configure_file(
++#   input: 'passim.service.in',
++#   output: 'passim.service',
++#   configuration: con2,
++#   install: true,
++#   install_dir: systemdunitdir,
++# )
+ configure_file(
+   input: 'org.freedesktop.Passim.service.in',
+   output: 'org.freedesktop.Passim.service',
+diff --git a/data/org.freedesktop.Passim.service.in b/data/org.freedesktop.Passim.service.in
+index 2f2911c..3cd1db4 100644
+--- a/data/org.freedesktop.Passim.service.in
++++ b/data/org.freedesktop.Passim.service.in
+@@ -3,5 +3,4 @@ Name=org.freedesktop.Passim
+ Documentation=https://github.com/hughsie/passim
+ Exec=@libexecdir@/passimd
+ User=passim
+-SystemdService=passim.service
+ AssumedAppArmorLabel=unconfined
 diff --git a/meson.build b/meson.build
-index d9c21c4..4cd0019 100644
+index 473e942..8f73946 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -93,14 +93,6 @@ conf.set('MAJOR_VERSION', varr[0])
+@@ -96,18 +96,18 @@ conf.set('MAJOR_VERSION', varr[0])
  conf.set('MINOR_VERSION', varr[1])
  conf.set('MICRO_VERSION', varr[2])
- 
+
 -systemd = dependency('systemd', version: '>= 211')
--systemd_root_prefix = get_option('systemd_root_prefix')
++# systemd = dependency('systemd', version: '>= 211')
+ systemd_root_prefix = get_option('systemd_root_prefix')
 -if systemd_root_prefix == ''
--  systemdunitdir = systemd.get_variable(pkgconfig: 'systemdsystemunitdir')
+-  pkgconfig_kwargs = {}
 -else
--  systemdunitdir = systemd.get_variable(pkgconfig: 'systemdsystemunitdir', pkgconfig_define: ['rootprefix', systemd_root_prefix])
+-  pkgconfig_kwargs = {
+-    'pkgconfig_define': ['rootprefix', systemd_root_prefix],
+-  }
 -endif
--
++# if systemd_root_prefix == ''
++#   pkgconfig_kwargs = {}
++# else
++#   pkgconfig_kwargs = {
++#     'pkgconfig_define': ['rootprefix', systemd_root_prefix],
++#   }
++# endif
+
+-systemdunitdir = systemd.get_variable(pkgconfig: 'systemdsystemunitdir', kwargs: pkgconfig_kwargs)
+-sysusersdir = systemd.get_variable(pkgconfig: 'sysusersdir', kwargs: pkgconfig_kwargs)
++#systemdunitdir = systemd.get_variable(pkgconfig: 'systemdsystemunitdir', kwargs: pkgconfig_kwargs)
++sysusersdir = get_option('sysusersdir')
+
  # get source version, falling back to package version
  git = find_program('git', required: false)
- tag = false
--- 
-2.42.0
-
+diff --git a/meson_options.txt b/meson_options.txt
+index 2246ec7..fe7138e 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -1,2 +1,3 @@
+ option('systemd_root_prefix', type: 'string', value: '', description: 'Directory to base systemd’s installation directories on')
+ option('introspection', type : 'feature', description : 'generate GObject Introspection data')
++option('sysusersdir', type: 'string', value: '', description: 'Directory to sysusersdir’s installation')
