@@ -3,7 +3,7 @@
 
 pkgname=lxqt-qtplugin
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="LXQt platform integration for Qt"
 arch=("x86_64")
 groups=("lxqt")
