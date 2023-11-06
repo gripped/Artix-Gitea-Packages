@@ -2,7 +2,7 @@
 
 pkgname=lxqt-policykit
 pkgver=1.4.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="The LXQt policykit authentication agent"
 arch=("x86_64")
 groups=("lxqt")
