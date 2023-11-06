@@ -3,7 +3,7 @@
 
 pkgname=lxqt-config
 pkgver=1.4.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="LXQt system configuration."
 arch=("x86_64")
 groups=("lxqt")
