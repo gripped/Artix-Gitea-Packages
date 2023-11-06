@@ -3,7 +3,7 @@
 
 pkgname=lximage-qt
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The LXQt image viewer and screenshot tool"
 arch=("x86_64")
 groups=("lxqt")
