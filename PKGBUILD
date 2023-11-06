@@ -1,4 +1,4 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Jerome Leclanche <jerome@leclan.ch>
 # Co-Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=lxqt-themes
