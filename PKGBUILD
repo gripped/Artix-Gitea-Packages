@@ -3,7 +3,7 @@
 
 pkgname=lxqt-runner
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The LXQt application launcher"
 arch=("x86_64")
 groups=("lxqt")
