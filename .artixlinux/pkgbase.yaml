@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: shairport-sync
-  version: 4.2-1
+  version: 4.3.2-1
   arch:
     - x86_64
   pkgname:
     - shairport-sync
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2-1
+    version: 4.3.2-1
     packages:
-      - shairport-sync-4.2-1-x86_64.pkg.tar.zst
+      - shairport-sync-4.3.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
