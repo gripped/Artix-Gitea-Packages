@@ -1,4 +1,4 @@
-# Maintainer: artist <artist@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=lxqt-build-tools
