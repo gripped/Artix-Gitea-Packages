@@ -2,7 +2,7 @@
 
 pkgname=lxqt-menu-data
 pkgver=1.4.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='LXQt menu files'
 arch=(any)
 url='https://github.com/lxqt/lxqt-menu-data'
