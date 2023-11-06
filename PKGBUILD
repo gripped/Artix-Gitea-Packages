@@ -3,7 +3,7 @@
 
 pkgname=igsc
 pkgver=0.8.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Intel graphics system controller firmware update library"
 arch=(x86_64)
 url="https://github.com/intel/igsc/"
@@ -14,10 +14,12 @@ source=(${url}/archive/V${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('63f7f240e69d6e19b89948f7eaa6f25c9003f374ebbf40c4213b6bc7fed47d8e')
 
 build() {
-  artix-cmake -B build -S ${pkgname}-${pkgver} \
+  cmake -B build -S ${pkgname}-${pkgver} \
     -G 'Unix Makefiles' \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DENABLE_WERROR=OFF \
     -Wno-dev
   cmake --build build
