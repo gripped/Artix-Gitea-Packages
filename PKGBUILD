@@ -3,7 +3,7 @@
 
 pkgname=lxqt-build-tools
 pkgver=0.13.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Various packaging tools and scripts for LXQt applications"
 arch=("any")
 url="https://github.com/lxqt/$pkgname"
