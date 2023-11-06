@@ -3,7 +3,7 @@
 
 pkgname=lxqt-powermanagement
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="LXQt power management daemon"
 arch=("x86_64")
 groups=("lxqt")
