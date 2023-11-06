@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - lxqt-menu-data
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.4.0-2
+    packages:
+      - lxqt-menu-data-1.4.0-2-any.pkg.tar.zst
   world:
     version: 1.4.0-2
     packages:
