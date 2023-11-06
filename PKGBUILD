@@ -3,7 +3,7 @@
 
 pkgname=lxqt-admin
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="LXQt system administration tool."
 arch=("x86_64")
 groups=("lxqt")
