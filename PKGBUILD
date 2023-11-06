@@ -3,7 +3,7 @@
 
 pkgname=lxqt-notificationd
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="LXQt notification daemon and library."
 arch=("x86_64")
 groups=("lxqt")
