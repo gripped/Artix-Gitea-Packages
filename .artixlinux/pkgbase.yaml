@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: base
-  version: 3-1.5
+  version: 3-1.6
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 3-1.5
+    version: 3-1.6
     packages:
-      - base-3-1.5-any.pkg.tar.zst
+      - base-3-1.6-any.pkg.tar.zst
   system:
     version: 3-1
     packages:
