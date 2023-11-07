@@ -11,6 +11,7 @@ arch=(x86_64)
 url="https://sourceware.org/elfutils/"
 license=('GPL-2.0-or-later OR LGPL-3.0-or-later')
 depends=(
+  glibc
   lib32-bzip2
   lib32-curl
   lib32-gcc-libs
