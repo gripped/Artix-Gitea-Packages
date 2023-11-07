@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java-openjdk
-  version: 21.u35-7
+  version: 21.u35-8
   arch:
     - x86_64
   pkgname:
@@ -12,11 +12,11 @@ pkgbase:
     - openjdk-doc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 21.u35-7
+    version: 21.u35-8
     packages:
-      - jre-openjdk-headless-21.u35-7-x86_64.pkg.tar.zst
-      - jre-openjdk-21.u35-7-x86_64.pkg.tar.zst
-      - jdk-openjdk-21.u35-7-x86_64.pkg.tar.zst
-      - openjdk-src-21.u35-7-x86_64.pkg.tar.zst
-      - openjdk-doc-21.u35-7-x86_64.pkg.tar.zst
+      - jre-openjdk-headless-21.u35-8-x86_64.pkg.tar.zst
+      - jre-openjdk-21.u35-8-x86_64.pkg.tar.zst
+      - jdk-openjdk-21.u35-8-x86_64.pkg.tar.zst
+      - openjdk-src-21.u35-8-x86_64.pkg.tar.zst
+      - openjdk-doc-21.u35-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
