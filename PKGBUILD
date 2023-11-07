@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: dibblethewrecker dibblethewrecker.at.jiwe.dot.org
 # Contributor: William Rea <sillywilly@gmail.com>
 
 pkgbase=gdal
 pkgname=(gdal python-gdal)
 pkgver=3.7.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A translator library for raster and vector geospatial data formats"
 arch=(x86_64)
 url="https://gdal.org/"
@@ -30,8 +29,10 @@ prepare() {
 }
 
 build() {
-  artix-cmake -B build -S $pkgbase-$pkgver \
+  cmake -B build -S $pkgbase-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCMAKE_CXX_STANDARD=17 \
     -DENABLE_IPO=ON \
     -DBUILD_PYTHON_BINDINGS=ON \
