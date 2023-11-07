@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: s6-rc
-  version: 0.5.4.1-1
+  version: 0.5.4.2-1
   arch:
     - x86_64
   pkgname:
     - s6-rc
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 0.5.4.2-1
+    packages:
+      - s6-rc-0.5.4.2-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
