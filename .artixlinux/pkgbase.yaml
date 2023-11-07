@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: execline
-  version: 2.9.3.0-1
+  version: 2.9.4.0-1
   arch:
     - x86_64
   pkgname:
     - execline
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.9.4.0-1
+    packages:
+      - execline-2.9.4.0-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
