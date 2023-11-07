@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=skalibs
-pkgver=2.13.1.1
+pkgver=2.14.0.0
 pkgrel=1
 pkgdesc="A general-purpose utility library for secure, small C development"
 url="http://www.skarnet.org/software/skalibs/"
@@ -9,7 +9,7 @@ arch=('x86_64')
 depends=('glibc')
 provides=('libskarnet.so')
 source=(http://www.skarnet.org/software/$pkgname/$pkgname-$pkgver.tar.gz)
-sha256sums=('b272a1ab799f7fac44b9b4fb5ace78a9616b2fe4882159754b8088c4d8199e33')
+sha256sums=('a745fd34cf84bec74398effa1b6f4c39c55736733939b126038e52b2d5dcc1d2')
 
 build() {
   cd ${pkgname}-${pkgver}
