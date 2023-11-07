@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: s6-linux-utils
-  version: 2.6.1.0-1
+  version: 2.6.2.0-1
   arch:
     - x86_64
   pkgname:
     - s6-linux-utils
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.6.2.0-1
+    packages:
+      - s6-linux-utils-2.6.2.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
