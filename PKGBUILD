@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Jacob Moody <moody@posixcafe.org>
 pkgname=s6-dns
-pkgver=2.3.5.5
+pkgver=2.3.6.0
 pkgrel=1
 pkgdesc="A suite of DNS client programs and libraries for UNIX systems"
 arch=('x86_64')
@@ -10,7 +10,7 @@ license=('ISC')
 depends=('skalibs' 'libskarnet.so')
 provides=('libdcache.so' 'libs6dns.so' 'libskadns.so')
 source=("https://skarnet.org/software/s6-dns/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('56979b5d5125c38071a80b5e3df0d4a6b2a7c52bb863a2410b6e3d797ffe1ee8')
+sha256sums=('01e7c7532cc5e7a6b8915461b01c2f706b7f2211782923e25eaa54ee0c6dc7c7')
 
 build() {
   cd ${pkgname}-${pkgver}
