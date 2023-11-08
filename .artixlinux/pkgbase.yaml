@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: btrfs-progs
-  version: 6.6-1
+  version: 6.6.1-1
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 6.6-1
+    version: 6.6.1-1
     packages:
-      - btrfs-progs-6.6-1-x86_64.pkg.tar.zst
+      - btrfs-progs-6.6.1-1-x86_64.pkg.tar.zst
   system:
     version: 6.5.3-2
     packages:
