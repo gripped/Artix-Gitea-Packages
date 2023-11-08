@@ -1,8 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
-pkgver=0.17.0
-_pkgver=0.17
+pkgver=0.17.1
 _commit=29cd296aa4635fe6f7b53bda2f2cb1648bdc0782
 pkgrel=1
 pkgdesc="Service monitoring/init system"
@@ -12,18 +11,18 @@ license=('Apache')
 makedepends=('git')
 source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
-sha256sums=('f3ce6eaaabd571edc16f54907cd6062f22ed5d4b6f9ae6fc1c6533f39469b1f0'
+sha256sums=('0617956ed2e8cddae5e21f6034546a2f7338364111b99dcc6cd5f3c37080301c'
             'SKIP')
 
 build() {
-	cd "$pkgname-$_pkgver"
+	cd "$pkgname-$pkgver"
 	make
 }
 
 package_dinit-base() {
 	pkgdesc='Service monitoring/init system -- base package'
 	install=dinit.install
-	cd "$pkgbase-$_pkgver"
+	cd "$pkgbase-$pkgver"
 	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=no install
 }
 
@@ -32,7 +31,7 @@ package_dinit() {
 	depends=('dinit-base' 'dinit-rc')
 	provides=('svc-manager')
 	conflicts=('svc-manager')
-	cd "$pkgbase-$_pkgver"
+	cd "$pkgbase-$pkgver"
 	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=yes install
 
 	# remove dinit-base pkgs
