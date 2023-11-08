@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: faad2
-  version: 2.10.1-1
+  version: 2.11.0-1
   arch:
     - x86_64
   pkgname:
     - faad2
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.11.0-1
+    packages:
+      - faad2-2.11.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.10.1-1
     packages:
