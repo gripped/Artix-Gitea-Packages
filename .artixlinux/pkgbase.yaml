@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia
-  version: 545.29.02-3
+  version: 545.29.02-4
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 545.29.02-3
+    version: 545.29.02-4
     packages:
-      - nvidia-545.29.02-3-x86_64.pkg.tar.zst
+      - nvidia-545.29.02-4-x86_64.pkg.tar.zst
   world:
     version: 535.113.01-5
     packages:
