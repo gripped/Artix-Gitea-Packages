@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ansible
-  version: 8.5.0-1
+  version: 8.6.0-1
   arch:
     - any
   pkgname:
     - ansible
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.6.0-1
+    packages:
+      - ansible-8.6.0-1-any.pkg.tar.zst
   world:
     version: 8.5.0-1
     packages:
