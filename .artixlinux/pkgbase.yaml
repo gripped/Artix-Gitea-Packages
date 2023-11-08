@@ -7,21 +7,21 @@ pkgbase:
   pkgname:
     - skalibs
 actions:
-  addRepo: system-goblins
-  removeRepo: null
+  addRepo: system-gremlins
+  removeRepo: system-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 2.14.0.0-1
     packages:
       - skalibs-2.14.0.0-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 2.13.1.1-1
     packages:
