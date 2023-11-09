@@ -4,23 +4,26 @@
 _pkgname=httpcore
 pkgname=python-httpcore
 # https://github.com/encode/httpcore/blob/master/CHANGELOG.md
-pkgver=0.18.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="A minimal HTTP client"
 arch=('any')
 url="https://github.com/encode/${_pkgname}"
 license=('BSD')
-depends=('python' 'python-anyio' 'python-h11' 'python-sniffio' 'python-certifi')
+depends=('python' 'python-h11' 'python-certifi')
 optdepends=(
   'python-h2: for HTTP/2 support'
   'python-socksio: for SOCKS support'
+  'python-anyio: for asyncio backend'
   'python-trio: for trio backend'
+  # Used but not listed in pyproject.toml. Probably upstream relies on transitive dependency anyio -> sniffio
+  'python-sniffio: for async support'
 )
 makedepends=('python-build' 'python-installer' 'python-hatchling' 'python-hatch-fancy-pypi-readme'
-             'python-h2')
-checkdepends=('python-pytest-httpbin' 'python-pytest-trio' 'python-socksio')
+             'python-h2' 'python-socksio' 'python-trio' 'python-anyio' 'python-sniffio')
+checkdepends=('python-pytest-httpbin' 'python-pytest-trio')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha512sums=('3dc8114bf02226fc4ac87408163e599f4e9f70f9e5663c9eb7dc9a65b2b72861f3b19ed2f87e29ac90a8b85c5dc32a3fffdaf88e83b15df838fcbd89737b1c57')
+sha512sums=('2ad177bfc4523f659e5cfac5d61c464b964192856e4c84b253e85ead47631f9aedee5248e962899248f7b745783a0bc746024310841cc844a78ba52ea1637c44')
 
 prepare() {
     cd ${_pkgname}-${pkgver}
