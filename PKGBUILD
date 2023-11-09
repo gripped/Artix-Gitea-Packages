@@ -3,17 +3,18 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgbase=zabbix
-pkgname=(zabbix-server zabbix-agent{,2} zabbix-proxy zabbix-frontend-php)
+pkgname=(zabbix-server zabbix-agent{,2} zabbix-proxy zabbix-frontend-php zabbix-web-service)
 pkgver=6.4.8
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.zabbix.com/'
 license=(GPL)
-makedepends=(postgresql-libs libxml2 unixodbc net-snmp mariadb-libs libldap libevent go pkgconfig pcre2)
+makedepends=(postgresql-libs libxml2 unixodbc net-snmp mariadb-libs libldap libevent go pkgconfig pcre2 openipmi)
 source=("https://cdn.zabbix.com/zabbix/sources/stable/${pkgver%.*}/zabbix-${pkgver}.tar.gz"
         zabbix-agent.{sysusers,tmpfiles}
         zabbix-server.{sysusers,tmpfiles}
-        zabbix-proxy.{sysusers,tmpfiles})
+        zabbix-proxy.{sysusers,tmpfiles}
+        zabbix-web-service.{sysusers,tmpfiles})
 
 sha512sums=('712e9f3fdb772475137c7238e8ca26f510180c147b7aa74b29567033f62d4beb00275b96aaf05c978fec341b08c82102ecf1976a5e8af257e848ae3974a6fec9'
             '3ab3ac1acc7e35c8896157aef601ebc30815237ac5252cbd0c1ecb26eeaf9eccf5c49938ae8c85bb79a6f95f607f082f6b80ed660829599ec03aa626cca6d3dc'
@@ -21,14 +22,16 @@ sha512sums=('712e9f3fdb772475137c7238e8ca26f510180c147b7aa74b29567033f62d4beb002
             '4254d3b13ff0d19a8e207f709c10ea59dbb6d4f333d862b1611a0fa4ced199e9a32313e88d8abadc129c1e4001b182c0545bcc84117d218116a8c524de88850e'
             'b6d548a26f845ef1a39724e3273aa521715272e20a0038144f86d377a26dfec6e3e129404cfda77632cad2f5cd6bab4a33f70a26c8c67b0d0b2abb3678ad2d83'
             '7c1072a8cd5837095f857b50124cb45d1bdbddbce108f6f067a35c3c9ebb1ad0502ef617dfa10f9c843631220177a6286a97b1c2a46539200be72fa83cb23b99'
-            '64042ddf511b56b2a5a311e34643f4e049c09d909ea65b7343a8a9637f33dc59f2b1342201290ca0774cbcbf616096b3696982047fb622b7d51afb5eceb298dd')
+            '64042ddf511b56b2a5a311e34643f4e049c09d909ea65b7343a8a9637f33dc59f2b1342201290ca0774cbcbf616096b3696982047fb622b7d51afb5eceb298dd'
+            '2766787aaeef2f48909c52deb411b47971931a972282f701c401f8315264c8817fc1f9f49a2672152c78a0ebba7d72329c18b441e134c5ec3db5f12681b6e590'
+            '309f55c8c381364eca6d31c4709a0ebb7e04cefad9e51f44173d839a58e7f8e95e3c678922f9e1fe42cff90dba5144cc7ee3a6e1c236b079b501c0e08ad2152d')
 
 prepare() {
   cd $pkgbase-$pkgver
   sed -i \
     -e '/^LogFile=.*/d' \
     -e 's/# LogType=file/LogType=system/' \
-    conf/zabbix_{agentd,proxy,server}.conf
+    conf/zabbix_{agentd,proxy,server}.conf src/go/conf/zabbix_web_service.conf
 
   autoreconf -fi
 }
@@ -51,9 +54,11 @@ build() {
     --with-libxml2
     --with-net-snmp
     --with-openssl
-	  --with-libpcre2
+    --with-libpcre2
     --with-ssh2
     --with-unixodbc
+    --with-openipmi
+    --enable-webservice
   )
 
   cd $pkgbase-$pkgver
@@ -83,9 +88,10 @@ package_zabbix-server() {
   pkgdesc='Monitoring software for networks and applications'
   depends=(net-snmp curl libxml2 unixodbc libldap libevent pcre2)
   optdepends=('postgresql-libs: for PostgreSQL support'
-              'mariadb-libs: for MariaDB support')
+              'mariadb-libs: for MariaDB support'
+              'openipmi: for IPMI support'
+              'zabbix-web-service: for scheduled PDF report generation')
   backup=(etc/zabbix/zabbix_server.conf)
-  install=zabbix-server.install
 
   cd $pkgbase-$pkgver
 
@@ -158,13 +164,15 @@ package_zabbix-agent2() {
 
   install -Dm644 man/zabbix_agent2.man \
 	"$pkgdir/usr/share/man/man8/zabbix_agent2.8"
+
 }
 
 package_zabbix-proxy() {
   pkgdesc='Data collecting proxy for Zabbix'
   depends=(net-snmp curl libxml2 sqlite unixodbc libldap pcre2 libevent)
   optdepends=('mariadb-libs: for MariaDB support'
-              'postgresql-libs: for PostgreSQL support')
+              'postgresql-libs: for PostgreSQL support'
+              'openipmi: for IPMI support')
   backup=(etc/zabbix/zabbix_proxy.conf)
 
   cd $pkgbase-$pkgver
@@ -198,4 +206,20 @@ package_zabbix-frontend-php() {
   install -d "$pkgdir/usr/share/webapps/zabbix"
   cp -a ui/* "$pkgdir/usr/share/webapps/zabbix"
   chown 33:33 ${pkgdir}/usr/share/webapps/zabbix/conf/ # write access for http user
+}
+
+package_zabbix-web-service() {
+  pkgdesc='Zabbix web service used to generate and send scheduled reports'
+  depends=(chromium)
+  backup=(etc/zabbix/zabbix_web_service.conf)
+
+  cd $pkgbase-$pkgver
+  install -Dm755 src/go/bin/zabbix_web_service "$pkgdir/usr/bin/zabbix_web_service"
+  install -Dm644 src/go/conf/zabbix_web_service.conf "$pkgdir/etc/zabbix/zabbix_web_service.conf"
+  chown 173:173 "$pkgdir/etc/zabbix/zabbix_web_service.conf"
+
+  install -Dm644 "$srcdir/zabbix-web-service.sysusers" \
+	"$pkgdir/usr/lib/sysusers.d/zabbix-web-service.conf"
+  install -Dm644 "$srcdir/zabbix-web-service.tmpfiles" \
+	"$pkgdir/usr/lib/tmpfiles.d/zabbix-web-service.conf"
 }
