@@ -1,17 +1,18 @@
 ---
 pkgbase:
   name: kdsoap
-  version: 2.1.1-1
+  version: 2.1.1-2
   arch:
     - x86_64
   pkgname:
-    - kdsoap
+    - kdsoap-qt5
+    - kdsoap-qt6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.1-1
+    version: 2.1.1-2
     packages:
-      - kdsoap-2.1.1-1-x86_64.pkg.tar.zst
+      - kdsoap-qt5-2.1.1-2-x86_64.pkg.tar.zst
+      - kdsoap-qt6-2.1.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
