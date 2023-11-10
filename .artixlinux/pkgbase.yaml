@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: avogadrolibs
-  version: 1.98.1-1
+  version: 1.98.1-1.1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.98.1-1
+    version: 1.98.1-1.1
     packages:
-      - avogadrolibs-1.98.1-1-x86_64.pkg.tar.zst
-      - avogadrolibs-qt5-1.98.1-1-x86_64.pkg.tar.zst
+      - avogadrolibs-1.98.1-1.1-x86_64.pkg.tar.zst
+      - avogadrolibs-qt5-1.98.1-1.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
