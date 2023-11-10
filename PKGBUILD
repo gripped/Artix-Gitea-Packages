@@ -35,7 +35,7 @@ prepare() {
 }
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  artix-cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_C_FLAGS="$CFLAGS -ffat-lto-objects" \
     -DCMAKE_CXX_FLAGS="$CXXFLAGS -ffat-lto-objects" \
