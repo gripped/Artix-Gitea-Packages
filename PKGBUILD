@@ -4,7 +4,7 @@
 
 pkgname=rtl-sdr
 pkgver=2.0.1
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='Driver for Realtek RTL2832U, allowing general purpose software defined radio (SDR)'
 arch=('x86_64')
@@ -33,9 +33,8 @@ prepare() {
   # ensure udev rules get installed to correct directory
   patch -p1 -i "$srcdir/fix-udev-directory.patch"
 
-  # fix udev rules
+  # fix udev rules and allow access to any logged in user
   # https://bugzilla.redhat.com/show_bug.cgi?id=815093
-  sed -e 's/plugdev/rtlsdr/g' -i rtl-sdr.rules
   sed -e 's/GROUP="plugdev"/TAG+="uaccess"/' -i rtl-sdr.rules
 }
 
