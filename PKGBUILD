@@ -15,7 +15,7 @@ depends=(
   glibc
   openssl
   sh
-  systemd-libs
+  libudev
 )
 optdepends=('openresolv: resolvconf support')
 provides=(dhcp-client)
