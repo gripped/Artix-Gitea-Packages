@@ -1,0 +1,52 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
+# Contributor: Joakim Saario <saario.joakim@gmail.com>
+
+pkgname=docker-buildx
+pkgver=0.11.2
+pkgrel=1
+pkgdesc="Docker CLI plugin for extended build capabilities with BuildKit"
+arch=('x86_64')
+url="https://github.com/docker/buildx"
+license=("Apache")
+makedepends=('go' 'git')
+options=(!lto)
+_commit=9872040b6626fb7d87ef7296fd5b832e8cc2ad17 #refs/tags/v0.11.2
+source=("git+https://github.com/docker/buildx.git#commit=${_commit}")
+sha512sums=('SKIP')
+
+pkgver() {
+  cd "buildx"
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+build() {
+  cd "buildx"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS='-buildmode=pie -trimpath -mod=readonly -modcacherw'
+  export GO111MODULE=on
+  _buildx_r=github.com/docker/buildx
+  go build -mod=vendor -o docker-buildx -ldflags "-linkmode=external \
+    -X $_buildx_r/version.Version=${pkgver} \
+    -X $_buildx_r/version.Revision=$(git rev-parse HEAD) \
+    -X $_buildx_r/version.Package=$_buildx_r" \
+    ./cmd/buildx
+}
+
+check() {
+  cd "buildx"
+  # mkdir cli-plugins
+  # cp bin/buildx cli-plugins/docker-buildx
+  # export DOCKER_CONFIG="$(PWD)"
+  go test ./... || true
+}
+
+package() {
+  cd "buildx"
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  install -Dm755 docker-buildx "$pkgdir/usr/lib/docker/cli-plugins/docker-buildx"
+}
