@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: phonon-vlc
-  version: 0.12.0-1
+  version: 0.12.0-2
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.12.0-1
+    version: 0.12.0-2
     packages:
-      - phonon-qt5-vlc-0.12.0-1-x86_64.pkg.tar.zst
-      - phonon-qt6-vlc-0.12.0-1-x86_64.pkg.tar.zst
+      - phonon-qt5-vlc-0.12.0-2-x86_64.pkg.tar.zst
+      - phonon-qt6-vlc-0.12.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
