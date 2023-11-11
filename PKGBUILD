@@ -2,12 +2,12 @@
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
-_v=1.6.1
+_v=1.6.2
 _url=https://gitea.artixlinux.org/artix/alpm-hooks
 
 pkgname=base
 pkgver=3
-pkgrel=2
+pkgrel=3
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -30,7 +30,7 @@ depends=(
 )
 optdepends=('linux: bare metal support')
 source=("alpm-hooks-$_v.tar.gz::$_url/archive/$_v.tar.gz")
-sha256sums=('caaadba463ab9e9177aa209dd259cb86405eafbe3c8251efe92d77f03ab1caa1')
+sha256sums=('b549a8dbc6865d9cf691b3743d8062ebc2beab9697f80fc9b1800ef169026a7f')
 
 package() {
     # pacman hooks
