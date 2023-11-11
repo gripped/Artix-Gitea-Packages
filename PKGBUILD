@@ -1,16 +1,15 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor:  David Runge <dvzrv@archlinux.org>
+# Maintainer:  David Runge <dvzrv@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Hugo Doria <hugo@archlinux.org>
 
 pkgname=libcap
 pkgver=2.69
-pkgrel=1
+pkgrel=2
 pkgdesc="POSIX 1003.1e capabilities"
 arch=(x86_64)
 url="https://sites.google.com/site/fullycapable/"
-license=(GPL2)
+license=('BSD-3-Clause OR GPL-2.0-only')
 depends=(
   gcc-libs
   glibc
