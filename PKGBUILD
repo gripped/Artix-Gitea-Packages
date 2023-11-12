@@ -56,6 +56,7 @@ build() {
   meson build6 AppStream-$pkgver \
     --prefix=/usr \
     --libexecdir=lib \
+    -Dsystemd=false \
     -Dqt=true
   meson compile -C build6
 }
