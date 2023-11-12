@@ -5,7 +5,7 @@
 pkgbase=flatpak
 pkgname=(flatpak flatpak-docs)
 pkgver=1.15.4
-pkgrel=1.1
+pkgrel=2
 epoch=1
 pkgdesc="Linux application sandboxing and distribution framework (formerly xdg-app)"
 url="https://flatpak.org"
@@ -36,10 +36,10 @@ makedepends=(
   gtk-doc
   meson
   python-pyparsing
-  socat
   xmlto
 )
 checkdepends=(
+  socat
   valgrind
 )
 _commit=e936e3100d406c50ba49f3ad6a0ecae455345ec0  # tags/1.15.4^0
@@ -54,6 +54,7 @@ source=(
   0002-tests-Don-t-use-g_test_message-before-g_test_init.patch
   fusermount3.diff
   flatpak-bindir.sh
+  appstream-1.0.patch
 )
 b2sums=('SKIP'
         'SKIP'
@@ -64,7 +65,8 @@ b2sums=('SKIP'
         'e143c7bb1179b3fb337b05b14e3a2506b5603d315739e38df99264f98c362113fa4cc92bb3442c47354a3d0d91fd3dc6a9d4f92c7991db725867550c3ec07ca8'
         '16e3006819ae991f676426163e69656b4340b8ca83c615668120858ec8e0a100c73e34b84ff94e6a62c6b5e7c9b95cf27ac95b9a8b33e81d53cc031364c53db3'
         '81010a49af57e6047ab57285e3f8430da3b2be8504bc5600502da9a3729e9f92bb086a314ca8a03bca446e8f203150e378f3443f7034d8d7ade9dad6f1b9db59'
-        '1c45caa65e2a1598f219977d5a81dcb8ea5d458880c43c40ba452b0c77cbbf41b36fa6911741f22c807d318e04e39e4fcc1455ed8d68faaba10162dae2570abc')
+        '1c45caa65e2a1598f219977d5a81dcb8ea5d458880c43c40ba452b0c77cbbf41b36fa6911741f22c807d318e04e39e4fcc1455ed8d68faaba10162dae2570abc'
+        'dcc10339dd82350e944ae8c8223abdff790e0c2516c721d68d3302ec8121c931d76a7cbb4ccf88115b0aba7757cd348e4de6512167c39df4208e905c741aa918')
 
 pkgver() {
   cd flatpak
@@ -81,6 +83,9 @@ prepare() {
   # Support fuse3
   # https://bugs.archlinux.org/task/75623
   git apply -3 ../fusermount3.diff
+
+  # Support appstream 1.0
+  git apply -3 ../appstream-1.0.patch
 
   git submodule init
   git submodule set-url libglnx "$srcdir/libglnx"
