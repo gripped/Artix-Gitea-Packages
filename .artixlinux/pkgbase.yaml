@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: plasma-workspace
-  version: 5.27.9.1-2
+  version: 5.27.9.1-3
   arch:
     - x86_64
   pkgname:
     - plasma-workspace
     - plasma-wayland-session
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.27.9.1-3
+    packages:
+      - plasma-workspace-5.27.9.1-3-x86_64.pkg.tar.zst
+      - plasma-wayland-session-5.27.9.1-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
