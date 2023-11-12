@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-xlsxwriter
-  version: 3.1.0-1
+  version: 3.1.9-1
   arch:
     - any
   pkgname:
     - python-xlsxwriter
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.1.0-1
+    version: 3.1.9-1
     packages:
-      - python-xlsxwriter-3.1.0-1-any.pkg.tar.zst
+      - python-xlsxwriter-3.1.9-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
