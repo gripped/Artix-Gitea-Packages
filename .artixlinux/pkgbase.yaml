@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: appstream
-  version: 1.0.0-2
+  version: 1.0.0-3
   arch:
     - x86_64
   pkgname:
     - appstream
     - appstream-qt5
-    - appstream-qt6
+    - appstream-qt
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -27,11 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.0-2
+    version: 1.0.0-3
     packages:
-      - appstream-1.0.0-2-x86_64.pkg.tar.zst
-      - appstream-qt5-1.0.0-2-x86_64.pkg.tar.zst
-      - appstream-qt6-1.0.0-2-x86_64.pkg.tar.zst
+      - appstream-1.0.0-3-x86_64.pkg.tar.zst
+      - appstream-qt5-1.0.0-3-x86_64.pkg.tar.zst
+      - appstream-qt-1.0.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

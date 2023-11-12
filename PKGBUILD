@@ -5,9 +5,9 @@
 pkgbase=appstream
 pkgname=(appstream
          appstream-qt5
-         appstream-qt6)
+         appstream-qt)
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Provides a standard for creating app stores across distributions'
 arch=(x86_64)
 url='https://distributions.freedesktop.org/wiki/AppStream'
@@ -37,11 +37,17 @@ makedepends=(gi-docgen
              vala
              xmlto)
 source=(https://www.freedesktop.org/software/appstream/releases/AppStream-$pkgver.tar.xz{,.asc}
-        update-appstream-cache.hook)
+        update-appstream-cache.hook
+        fix-qt5-link-target.patch)
 sha256sums=('ef23477a380e8b525e92cfa87687f1146b9cef74c641349a1ae11250be5401d0'
             'SKIP'
-            '3a96a1479cfd18dad36c2ca3181aabe46af9bf772c00b965d86ec5f55cd0e0eb')
+            '3a96a1479cfd18dad36c2ca3181aabe46af9bf772c00b965d86ec5f55cd0e0eb'
+            'eac31f15d1e33968ab5ca678fc32fc0cd4c09c30ecbc457cbd490a00959d4c04')
 validpgpkeys=(D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB) # Matthias Klumpp <matthias@tenstral.net>
+
+prepare() {
+  patch -d AppStream-$pkgver -p1 < fix-qt5-link-target.patch
+}
 
 build() {
   meson build AppStream-$pkgver \
@@ -86,7 +92,7 @@ package_appstream-qt5() {
   rm -r "$pkgdir"/usr/{bin,include/appstream{,-compose},lib/{appstreamcli-compose,girepository-1.0,libappstream*,pkgconfig},share}
 }
 
-package_appstream-qt6() {
+package_appstream-qt() {
   pkgdesc='Qt6 interface for AppStream'
   depends=(appstream
            gcc-libs
