@@ -2,7 +2,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=ansible
-pkgver=8.6.0
+pkgver=8.6.1
 pkgrel=1
 pkgdesc='Official assortment of Ansible collections'
 arch=('any')
@@ -26,7 +26,7 @@ optdepends=('python-argcomplete: shell completions'
             'acme-tiny: openssl_certificate module')
 makedepends=('python-setuptools')
 source=("https://pypi.python.org/packages/source/a/ansible/ansible-${pkgver}.tar.gz")
-sha512sums=('b316f1d6e8ffd4739f142d9add50f39802d8a57bac026f8ab833fd3d07c2ccd9df1d2ba5bcf68b3486db99e12943e8787203e22b16d1ecd1c4c1655a3573cf5d')
+sha512sums=('92cb3909693b54c47b88987aa92b3ca7caa1765f16a7e4c88abf0e3ff70e9d764de145fffdc56d04c40b4d4d6551775cfd7b99423373feffe6706ef80c84baa4')
 
 build() {
   cd ansible-${pkgver}
