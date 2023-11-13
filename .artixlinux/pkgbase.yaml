@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-390xx-utils
-  version: 390.157-6.1
+  version: 390.157-7
   arch:
     - x86_64
   pkgname:
@@ -51,8 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 390.157-6.1
+    version: 390.157-7
     packages:
-      - nvidia-390xx-utils-390.157-6.1-x86_64.pkg.tar.zst
-      - opencl-nvidia-390xx-390.157-6.1-x86_64.pkg.tar.zst
-      - nvidia-390xx-dkms-390.157-6.1-x86_64.pkg.tar.zst
+      - nvidia-390xx-utils-390.157-7-x86_64.pkg.tar.zst
+      - opencl-nvidia-390xx-390.157-7-x86_64.pkg.tar.zst
+      - nvidia-390xx-dkms-390.157-7-x86_64.pkg.tar.zst
