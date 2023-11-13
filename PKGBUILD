@@ -7,7 +7,7 @@ pkgname=(appstream
          appstream-qt5
          appstream-qt)
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Provides a standard for creating app stores across distributions'
 arch=(x86_64)
 url='https://distributions.freedesktop.org/wiki/AppStream'
@@ -83,8 +83,8 @@ package_appstream-qt5() {
            glib2
            glibc
            qt5-base)
-  conflicts=(appstream-qt)
-  replaces=(appstream-qt)
+  conflicts=('appstream-qt<1')
+  replaces=('appstream-qt<1')
 
   meson install --destdir "$pkgdir" -C build
 

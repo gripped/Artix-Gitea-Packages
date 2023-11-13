@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: appstream
-  version: 1.0.0-3
+  version: 1.0.0-4
   arch:
     - x86_64
   pkgname:
@@ -27,11 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.0-3
+    version: 1.0.0-4
     packages:
-      - appstream-1.0.0-3-x86_64.pkg.tar.zst
-      - appstream-qt5-1.0.0-3-x86_64.pkg.tar.zst
-      - appstream-qt-1.0.0-3-x86_64.pkg.tar.zst
+      - appstream-1.0.0-4-x86_64.pkg.tar.zst
+      - appstream-qt5-1.0.0-4-x86_64.pkg.tar.zst
+      - appstream-qt-1.0.0-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
