@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: iptables
-  version: 1:1.8.9-1
+  version: 1:1.8.10-1
   arch:
     - x86_64
   pkgname:
     - iptables
     - iptables-nft
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1:1.8.10-1
+    packages:
+      - iptables-1:1.8.10-1-x86_64.pkg.tar.zst
+      - iptables-nft-1:1.8.10-1-x86_64.pkg.tar.zst
   system:
     version: 1:1.8.9-1
     packages:
