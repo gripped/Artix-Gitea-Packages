@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-oslo-db
-  version: 12.3.1-2
+  version: 12.3.2-1
   arch:
     - any
   pkgname:
     - python-oslo-db
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.3.1-2
+    version: 12.3.2-1
     packages:
-      - python-oslo-db-12.3.1-2-any.pkg.tar.zst
+      - python-oslo-db-12.3.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
