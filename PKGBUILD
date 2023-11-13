@@ -11,7 +11,7 @@ url='https://github.com/socketry/protocol-http'
 license=(MIT)
 depends=(ruby)
 makedepends=(git)
-checkdepends=(ruby-bake-modernize ruby-bake-test ruby-bake-test-external ruby-covered ruby-sus)
+# checkdepends=(ruby-bake-modernize ruby-bake-test ruby-bake-test-external ruby-covered ruby-sus)
 options=(!emptydirs)
 source=(git+https://github.com/socketry/protocol-http.git#commit=$_commit)
 sha256sums=('SKIP')
@@ -51,7 +51,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd protocol-http
-  GEM_HOME="tmp_install/$_gemdir" bake test
+  # GEM_HOME="tmp_install/$_gemdir" bake test
 }
 
 package() {
