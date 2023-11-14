@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-os-service-types
-  version: 1.7.0-12
+  version: 1.7.0-13
   arch:
     - any
   pkgname:
     - python-os-service-types
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.0-12
+    version: 1.7.0-13
     packages:
-      - python-os-service-types-1.7.0-12-any.pkg.tar.zst
+      - python-os-service-types-1.7.0-13-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
