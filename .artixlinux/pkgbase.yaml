@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openldap-dinit
-  version: 20231104-1
+  version: 20231112-1
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20231104-1
+    version: 20231112-1
     packages:
-      - openldap-dinit-20231104-1-any.pkg.tar.zst
+      - openldap-dinit-20231112-1-any.pkg.tar.zst
   system:
     version: 20230907-1
     packages:

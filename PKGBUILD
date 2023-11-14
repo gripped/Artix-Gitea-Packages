@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=openldap-dinit
-pkgver=20231104
+pkgver=20231112
 pkgrel=1
 pkgdesc="dinit service scripts for openldap"
 arch=('any')
@@ -11,13 +11,13 @@ groups=('dinit-system')
 depends=('openldap' 'dinit')
 provides=('init-openldap')
 conflicts=('init-openldap')
-source=("slapd" "slapd-pre" "slapd.conf")
-sha256sums=('dbde8a10a67754dc4a504ff6d9879e47d08b46f70fcf5dfec27d0b7c8718bd55'
-            'fc129a2bbe87dd6309618b28729a51db3811417a2cfe767d7e88cfb781fead9e'
+source=("slapd" "slapd.script" "slapd.conf")
+sha256sums=('8ed2a7ae0f2c752c66b25168a46be3343ba4ccc9a26fa49e8023b88a10c49e34'
+            '67d680cbe866e87e2f1ec7af0e2ab3aa79dba1af7815b03a37c3598308647001'
             'fdba67b98f918054c6030e984c982d880e6b085420cbf30705305d1fdef586a7')
 
 package() {
-    install -Dm644 slapd      "$pkgdir/etc/dinit.d/slapd"
-    install -Dm644 slapd-pre  "$pkgdir/etc/dinit.d/slapd-pre"
-    install -Dm644 slapd.conf "$pkgdir/etc/dinit.d/config/slapd.conf"
+    install -Dm644 slapd        "$pkgdir/etc/dinit.d/slapd"
+    install -Dm755 slapd.script "$pkgdir/usr/lib/dinit/slapd"
+    install -Dm644 slapd.conf   "$pkgdir/etc/dinit.d/config/slapd.conf"
 }

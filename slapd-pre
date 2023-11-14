@@ -1,5 +1,0 @@
-type       = scripted
-command    = /usr/bin/slaptest -Q -u $SLAPD_OPTIONS
-env-file   = /etc/dinit.d/config/slapd.conf
-waits-for  = network
-depends-on = pseudofs

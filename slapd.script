@@ -1,0 +1,4 @@
+#!/bin/sh
+. /etc/dinit.d/config/slapd.conf
+/usr/bin/slaptest -Q -u $SLAPD_OPTIONS
+exec /usr/bin/slapd -u ldap -g ldap -h $SLAPD_URLS $SLAPD_OPTIONS
