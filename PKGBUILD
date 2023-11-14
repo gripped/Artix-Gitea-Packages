@@ -3,7 +3,7 @@
 
 pkgname=mate-session-manager
 pkgver=1.26.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="The MATE Session Handler"
 url="https://mate-desktop.org"
 arch=('x86_64')
@@ -25,7 +25,7 @@ build() {
         	--libexecdir=/usr/lib/${pkgname} \
         	--sysconfdir=/etc \
         	--localstatedir=/var \
-        	--disable-upower
+        	--with-elogind=yes
     	make
 }
 
