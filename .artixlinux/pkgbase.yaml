@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ghex
-  version: 45.0-1
+  version: 45.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.0-1
+    version: 45.1-1
     packages:
-      - ghex-45.0-1-x86_64.pkg.tar.zst
-      - ghex-docs-45.0-1-x86_64.pkg.tar.zst
+      - ghex-45.1-1-x86_64.pkg.tar.zst
+      - ghex-docs-45.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
