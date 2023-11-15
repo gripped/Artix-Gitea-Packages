@@ -17,12 +17,10 @@ optdepends=('java-runtime: needed for the GUI version'
             'libxtst: needed for the GUI version'
             'gtk3: GTK style for the GUI')
 source=(https://www.languagetool.org/download/LanguageTool-${pkgver}.zip
-        languagetool.sh
-        languagetool.service)
+        languagetool.sh)
 noextract=($pkgname-$pkgver.zip)
 sha256sums=('32f529f249b15f758b38cc00e4818af3b3478490c2a0ae2825e2b5e980473e08'
-            'e395fe51eb107365bb6e5456a2e1a144a60296e52554b8407f241e195e434359'
-            '628e59208af02dd41c678135ef6dd8b328905701301d8257316b388d36d6c52b')
+            'e395fe51eb107365bb6e5456a2e1a144a60296e52554b8407f241e195e434359')
 
 package() {
   install -d "$pkgdir"/usr/{bin,share/java/$pkgname/libs}
@@ -34,6 +32,5 @@ package() {
   mv libs/*.jar "$pkgdir"/usr/share/java/$pkgname/libs
   rm -rf libs
   install -m755 "$srcdir"/$pkgname.sh "$pkgdir"/usr/bin/$pkgname
-  mkdir -p "$pkgdir"/usr/lib/systemd/system
-  install -m644 "$srcdir"/$pkgname.service "$pkgdir"/usr/lib/systemd/system/$pkgname.service
+
 }
