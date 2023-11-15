@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: 0ad-data
+  version: a26-1
+  arch:
+    - any
+  pkgname:
+    - 0ad-data
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: a26-1
+    packages:
+      - 0ad-data-a26-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
