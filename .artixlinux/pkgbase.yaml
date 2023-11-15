@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: 0ad
+  version: a26-11
+  arch:
+    - x86_64
+  pkgname:
+    - 0ad
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: a26-11
+    packages:
+      - 0ad-a26-11-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
