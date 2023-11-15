@@ -1,23 +1,28 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libkolabxml
 pkgver=1.2.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Kolab XML Format Schema Definitions Library"
 url='https://www.kolab.org/'
 arch=('x86_64')
 license=('GPL')
 depends=('xerces-c' 'boost-libs')
-makedepends=('cmake' 'boost' 'xsd' 'swig')
-source=(http://deb.debian.org/debian/pool/main/libk/libkolabxml/libkolabxml_$pkgver.orig.tar.gz
-#https://cgit.kolab.org/libkolabxml/snapshot/libkolabxml-libkolabxml-$pkgver.tar.gz
-)
-sha512sums=('61615a433f805705eeb74436fad728b2d232215d4a274b63b8db4a0e5d6e9c2ccc2fc71205d673a9e33a16a75f24a65c7f44619f9cc8c0879ebfb5bc65c2b404')
+makedepends=('cmake' 'boost' 'libxsd' 'xsd' 'swig' 'git')
+_commit=af7c22e7ad2bf47387d00f030c1da41c292f2bee
+source=(git+https://git.kolab.org/diffusion/LKX#commit=$_commit
+        xsd-4.2.patch)
+sha512sums=('SKIP'
+            'a7febec03ccaa99f22e10fad604c66c12d35dd91f2a01287f4c96a2037237d86ee4f918aaa5b2857fce6fdf5482f7ad6bf36bec9c96473c4a711c7605448d868')
+
+prepare() {
+  patch -d LKX -p1 < xsd-4.2.patch # Fix build with XSD 4.2
+}
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S LKX \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_TESTS=OFF \
     -DBoost_NO_BOOST_CMAKE=ON
