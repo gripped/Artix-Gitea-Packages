@@ -3,7 +3,7 @@
 
 pkgname=bolt
 pkgver=0.9.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Thunderbolt 3 device manager"
 arch=('x86_64')
 url="https://gitlab.freedesktop.org/bolt/bolt"
@@ -19,7 +19,7 @@ build() {
 
   artix-meson ../build \
     -Dman=true \
-    -Dsystemd=false \
+    -Dsystemd=false
   ninja -v -C ../build
 }
 
