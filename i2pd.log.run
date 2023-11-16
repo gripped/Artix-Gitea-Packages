@@ -1,0 +1,6 @@
+#!/bin/sh
+exec 2>&1; set -e
+
+[ -d /var/log/i2pd ] || install -dm 755 /var/log/i2pd
+
+exec svlogd -tt /var/log/i2pd
