@@ -3,8 +3,8 @@
 
 pkgname=i2pd-runit
 pkgdesc="i2pd runit service script"
-pkgver=20210405
-pkgrel=2
+pkgver=20231116
+pkgrel=1
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
