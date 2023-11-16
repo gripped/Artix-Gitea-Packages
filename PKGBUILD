@@ -17,7 +17,9 @@ sha256sums=('87b442645e8dc06bc4cb3718b6ba8bff6e91401f642aeff83cc4274d633b38fe')
 build() {
   cd $pkgname-$pkgver
 
-  artix-meson ../build
+  artix-meson ../build \
+    -Dman=true \
+    -Dsystemd=false \
   ninja -v -C ../build
 }
 
