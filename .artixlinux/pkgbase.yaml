@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: mkinitcpio
-  version: 36-1
+  version: 37-1
   arch:
     - any
   pkgname:
     - mkinitcpio
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 37-1
+    packages:
+      - mkinitcpio-37-1-any.pkg.tar.zst
   system:
     version: 36-1
     packages:
