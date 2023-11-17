@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-fastapi
-  version: 0.100.0-1
+  version: 0.104.1-1
   arch:
     - any
   pkgname:
     - python-fastapi
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.104.1-1
+    packages:
+      - python-fastapi-0.104.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
