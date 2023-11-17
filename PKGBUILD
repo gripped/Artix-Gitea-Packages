@@ -8,6 +8,7 @@ url="https://github.com/gsemet/pipenv-to-requirements"
 license=('MIT')
 arch=('any')
 depends=('python-pbr' 'python-pipenv')
+makedepends=('python-setuptools')
 checkdepends=('python-pyfakefs' 'python-pytest-mock')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/gsemet/pipenv-to-requirements/archive/$pkgver.tar.gz"
         $pkgname-pipenv-2022.10.9.patch::https://github.com/gsemet/pipenv-to-requirements/pull/26.patch)
