@@ -1,7 +1,7 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=faad2
-pkgver=2.11.0
+pkgver=2.11.1
 pkgrel=1
 pkgdesc="Freeware Advanced Audio (AAC) Decoder"
 arch=(x86_64)
@@ -16,16 +16,9 @@ provides=(
 )
 source=(
   $pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz
-  $pkgname-2.11.0-build_shared_libs.patch::https://github.com/knik0/faad2/commit/92ce281311f629faa99c9e06baaf41977f431f1b.patch
 )
-sha512sums=('b85aab9b2d2afdca7096c999bcb7fabfccce4781760d9eb14d23fdd38691729927b09464708abf49a751e70c4475151ca14c5a7419b5cf4d9ec70c433dc86282'
-            '5c427ef8568def9226d3a62517c2db36f4f40b259aabfe9890db8806f4a7891e4f91236214963bdb10677b8928ca202c79500c88dc207ab057e75a38d799da41')
-b2sums=('2fdbe4b1c7743952277f699a186197adedd851650ac37ec31292eabed32693611aa75fb207e57bc814c639905285fffe092008e887ae713f5d2f84c4d1c4831a'
-        'ac740cdef10ce222c24b8482997a98444f7ba91ff3cf262e7b2415543b7ec6849575a6cbe46e45ebcb25a9e508802426487c325aedb480221c6738932421f72a')
-
-prepare() {
-  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-2.11.0-build_shared_libs.patch
-}
+sha512sums=('b8f17680610b2f47344ea52b54412a02810a85eaf9d4c91b97ca09b2c6415c62d4af1b0771bfcacb9dfee400ed34504c0bd3c28369921c0392b3809e7de46ec5')
+b2sums=('f1e58a5618bdd93ee919f2d77dd461972cf4bc930c4a1738a8b4ec949fd2572ce0662a08ea01a4caca0da5fe007ec119d00184cd76e6f9f98c3141d24a589504')
 
 build() {
   local cmake_options=(
