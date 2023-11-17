@@ -2,7 +2,7 @@
 
 pkgname=python-pipenv-to-requirements
 pkgver=0.9.0
-pkgrel=8
+pkgrel=8.1
 pkgdesc="Generate requirements[-dev].txt from Pipfile using pipenv"
 url="https://github.com/gsemet/pipenv-to-requirements"
 license=('MIT')
@@ -20,6 +20,7 @@ export PBR_VERSION=$pkgver
 prepare() {
   cd pipenv-to-requirements-$pkgver
   patch -p1 -i ../$pkgname-pipenv-2022.10.9.patch
+  sed -i 's/pipfile = Project()._lockfile/pipfile = Project().lockfile/' pipenv_to_requirements/__init__.py
 }
 
 build() {
