@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: opencascade
+  version: 1:7.7.2-2
+  arch:
+    - x86_64
+  pkgname:
+    - opencascade
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1:7.7.2-2
+    packages:
+      - opencascade-1:7.7.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
