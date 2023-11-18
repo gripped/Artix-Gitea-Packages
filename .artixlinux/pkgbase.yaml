@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pyside6
-  version: 6.6.0-1
+  version: 6.6.0-3
   arch:
     - x86_64
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.6.0-1
+    version: 6.6.0-3
     packages:
-      - pyside6-6.6.0-1-x86_64.pkg.tar.zst
-      - pyside6-tools-6.6.0-1-x86_64.pkg.tar.zst
-      - shiboken6-6.6.0-1-x86_64.pkg.tar.zst
+      - pyside6-6.6.0-3-x86_64.pkg.tar.zst
+      - pyside6-tools-6.6.0-3-x86_64.pkg.tar.zst
+      - shiboken6-6.6.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
