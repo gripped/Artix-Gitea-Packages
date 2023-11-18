@@ -7,9 +7,8 @@
 # Contributor: Thomas Dziedzic <gostrc at gmail>
 
 pkgname=vtk
-# May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.3.0
-pkgrel=2
+pkgrel=1
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org/"
@@ -54,7 +53,7 @@ makedepends=(
   lz4
   mariadb-libs
   netcdf
-  opencascade
+#  opencascade
   openimagedenoise
   openmp
   openmpi
@@ -190,6 +189,7 @@ build() {
     -DVTK_MODULE_ENABLE_VTK_DomainsMicroscopy=NO \
     -DVTK_MODULE_ENABLE_VTK_FiltersOpenTURNS=NO \
     -DVTK_MODULE_ENABLE_VTK_RenderingZSpace=NO \
+    -DVTK_MODULE_ENABLE_VTK_IOOCCT=NO \
     -DOpenGL_GL_PREFERENCE=LEGACY \
     -Wno-dev
 #    -DFIDES_USE_EXTERNAL_RAPIDJSON=ON \
