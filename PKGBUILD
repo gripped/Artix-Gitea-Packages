@@ -9,7 +9,7 @@
 
 pkgname=opencascade
 pkgver=7.7.2
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc='SDK intended for development of applications dealing with 3D CAD data'
 arch=('x86_64')
@@ -71,6 +71,8 @@ prepare() {
 }
 
 build() {
+  # TODO: Maybe remove VTK support as VTK now also depends on opencascade which
+  # gives us a circular dependency.
   cmake \
     -B build \
     -S "$pkgname" \
