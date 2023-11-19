@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-jsonschema-path
-  version: 0.3.1-1
+  version: 0.3.2-2
   arch:
     - any
   pkgname:
@@ -9,8 +9,8 @@ pkgbase:
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.3.1-1
+    version: 0.3.2-2
     packages:
-      - python-jsonschema-path-0.3.1-1-any.pkg.tar.zst
+      - python-jsonschema-path-0.3.2-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
