@@ -13,9 +13,9 @@ makedepends=('breezy')
 provides=('python-qrtools')
 conflicts=('python-qrtools')
 replaces=('python-qrtools')
-source=('qr-tools.tgz::https://bazaar.launchpad.net/~qr-tools-developers/qr-tools/trunk/tarball/${_bzrrev}'
-        'qtqr.desktop'
-        'qtqr.appdata.xml')
+source=("qr-tools.tgz::https://bazaar.launchpad.net/~qr-tools-developers/qr-tools/trunk/tarball/${_bzrrev}"
+        "qtqr.desktop"
+        "qtqr.appdata.xml")
 noextract=('qr-tools.tgz')
 sha256sums=('7b112b292564b6853d97dc9cbb9c311b7dfca26b461fb4e672a40a77d2861200'
             '67ea09222b0ad8875e4253f74c02cd88bdd796ac2609a7e594148aefd0f8f565'
