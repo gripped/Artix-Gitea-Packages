@@ -13,25 +13,32 @@ makedepends=('breezy')
 provides=('python-qrtools')
 conflicts=('python-qrtools')
 replaces=('python-qrtools')
-source=("qr-tools::bzr+$url/trunk#revision=$_bzrrev"
+source=('qr-tools.tgz::https://bazaar.launchpad.net/~qr-tools-developers/qr-tools/trunk/tarball/$_bzrrev'
         'qtqr.desktop'
         'qtqr.appdata.xml')
-sha256sums=('SKIP'
+noextract=('qr-tools.tgz')
+sha256sums=('7b112b292564b6853d97dc9cbb9c311b7dfca26b461fb4e672a40a77d2861200'
             '67ea09222b0ad8875e4253f74c02cd88bdd796ac2609a7e594148aefd0f8f565'
             '1a4739e4c61077e17fdc63b10b329c377b40080b8afd8ae9a2e269d3f5c094b0')
 
-build() {
+prepare() {
+  mkdir qr-tools
   cd qr-tools
+  tar -xvzf "$srcdir/qr-tools.tgz" --strip-components=3
+}
+
+build() {
+  cd "$srcdir/qr-tools"
   python setup.py build
 }
 
 package() {
-  cd qr-tools
+  cd "$srcdir/qr-tools"
   python setup.py install --root="$pkgdir" --optimize=1 --skip-build
 
   install -Dm755 qtqr.py "$pkgdir/usr/bin/qtqr"
   install -Dm644 -t "$pkgdir/usr/share/qt/translations" *.qm
   install -Dm644 icon.png "$pkgdir/usr/share/icons/hicolor/96x96/apps/qtqr.png"
-  install -Dm644 ../qtqr.desktop "$pkgdir/usr/share/applications/qtqr.desktop"
-  install -Dm644 ../qtqr.appdata.xml "$pkgdir/usr/share/metainfo/qtqr.appdata.xml"
+  install -Dm644 "$srcdir/qtqr.desktop" "$pkgdir/usr/share/applications/qtqr.desktop"
+  install -Dm644 "$srcdir/qtqr.appdata.xml" "$pkgdir/usr/share/metainfo/qtqr.appdata.xml"
 }
