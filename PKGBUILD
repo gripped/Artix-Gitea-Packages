@@ -2,19 +2,18 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=elogind-runit
-pkgver=20220828
-pkgrel=2
+pkgver=20231119
+pkgrel=1
 pkgdesc='runit service scripts for elogind'
 arch=(any)
 url='https://artixlinux.org'
 license=(BSD)
 depends=(dbus-runit elogind)
-provides=(init-elogind init-logind)
+provides=(init-elogind init-logind logind-runit)
 conflicts=(init-elogind init-logind)
-install=elogind.install
 source=(elogind.run elogind.check)
-sha256sums=('5de1542821c3e6c908dd689b96e957cdd8a766a3ed4144c567b90c1247e94ed2'
-            'cbdf3306817595f4b719b2cabfe0538519291e58b0ad76d908deb1f0b2596977')
+sha512sums=('7958b83f642a113e440162048b43ba961f69d6b3e6af86453bd5e90b6642f3fc7fd4990865d36425cc23aae58f7cbcebec1c58009a7f2f7d8254cc880058e125'
+            '229aacbed1ee55e49f7c26adccf521e8966527cb7bd9cb71af6ac47611e424579e77c3c289e105244bfb0647d9a19819fae085c1c72d2386e4ca4bca9f9f36a6')
 
 package() {
     install -Dm755 "$srcdir/elogind.run" "$pkgdir/etc/runit/sv/elogind/run"
