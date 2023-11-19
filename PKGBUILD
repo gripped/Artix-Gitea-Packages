@@ -4,7 +4,7 @@
 _pkgname=httpcore
 pkgname=python-httpcore
 # https://github.com/encode/httpcore/blob/master/CHANGELOG.md
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="A minimal HTTP client"
 arch=('any')
@@ -23,7 +23,7 @@ makedepends=('python-build' 'python-installer' 'python-hatchling' 'python-hatch-
              'python-h2' 'python-socksio' 'python-trio' 'python-anyio' 'python-sniffio')
 checkdepends=('python-pytest-httpbin' 'python-pytest-trio')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha512sums=('2ad177bfc4523f659e5cfac5d61c464b964192856e4c84b253e85ead47631f9aedee5248e962899248f7b745783a0bc746024310841cc844a78ba52ea1637c44')
+sha512sums=('6fc0c686b0b02b1e822550c18a7a90d2501f9d530598511877ee8cb09a0bdc4d56afe48cbb5fab5f8c1a12ea443055fe2a081b990fa4270f84db8197646b4979')
 
 prepare() {
     cd ${_pkgname}-${pkgver}
