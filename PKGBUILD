@@ -13,7 +13,7 @@ makedepends=('breezy')
 provides=('python-qrtools')
 conflicts=('python-qrtools')
 replaces=('python-qrtools')
-source=('qr-tools.tgz::https://bazaar.launchpad.net/~qr-tools-developers/qr-tools/trunk/tarball/$_bzrrev'
+source=('qr-tools.tgz::https://bazaar.launchpad.net/~qr-tools-developers/qr-tools/trunk/tarball/${_bzrrev}'
         'qtqr.desktop'
         'qtqr.appdata.xml')
 noextract=('qr-tools.tgz')
