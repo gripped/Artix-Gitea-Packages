@@ -1,0 +1,3 @@
+#!/bin/sh -eu
+
+exec chpst -u vault:vault /usr/bin/vault server -config=/etc/vault.hcl 2>&1
