@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: seatd-runit
-  version: 20220828-1
+  version: 20231119-1
   arch:
     - any
   pkgname:
     - seatd-runit
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20220828-1
+    version: 20231119-1
     packages:
-      - seatd-runit-20220828-1-any.pkg.tar.zst
+      - seatd-runit-20231119-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

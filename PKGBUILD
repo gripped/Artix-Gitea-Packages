@@ -2,19 +2,18 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=seatd-runit
-pkgver=20220828
+pkgver=20231119
 pkgrel=1
 pkgdesc='runit service script for seatd'
 arch=(any)
 url='https://artixlinux.org'
 license=(BSD)
 depends=(dbus-runit seatd)
-provides=(init-logind)
+provides=(init-logind logind-runit)
 conflicts=(init-logind init-elogind)
-install=seatd.install
 source=(seatd.run seatd.check)
-sha256sums=(dc9be620e32933e1adaa3b3074da65f5b0370e5deaeb32a5b80cddcd684926ee
-            75736610d5253b82c6901fe47c224f698c40b56015e8e1ad09b88d3ad576c8f1)
+sha512sums=('db41c681a387fa5f26b6f1251f7d21664fef5158aebb1152908693ecbf0a25117f22a4bd59e84f2e7e4f2bdaaa93d013d2a487ffa48d9e7e310b33ede82d0531'
+            'e14e57f3c19fc191ca4484ceb0f295c4815d22bdd226d3de2d4924677d0bbcb29e6f2a8287ae6ce4cd812ef24170ccfe6d0aff7c076eee9ce3c566a13599faad')
 
 package() {
     cd "$srcdir"
