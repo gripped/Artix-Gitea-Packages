@@ -3,7 +3,7 @@
 # Don't manually edit the PKGBUILD, edit the upstream template instead
 
 pkgname=kde-development-environment-meta
-pkgver=20231114
+pkgver=20231120
 pkgrel=1
 pkgdesc='Metapackage to install a full KDE development environment'
 arch=(any)
@@ -98,7 +98,7 @@ depends=(akonadi-calendar
          libakonadi
          libkcddb5
          libkcompactdisc
-         libkdcraw
+         libkdcraw5
          libkdegames
          libkdepim
          libkexiv2
