@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libheif
-  version: 1.17.3-1
+  version: 1.17.4-1
   arch:
     - x86_64
   pkgname:
     - libheif
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.17.4-1
+    packages:
+      - libheif-1.17.4-1-x86_64.pkg.tar.zst
   world:
     version: 1.17.3-1
     packages:
