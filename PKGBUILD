@@ -4,7 +4,7 @@
 pkgname=krita
 _pkgver=5.2.1
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
@@ -32,7 +32,7 @@ depends=(exiv2
          kwindowsystem5
          lcms2
          libjpeg-turbo
-         libkdcraw
+         libkdcraw5
          libpng
          libtiff
          libunibreak
