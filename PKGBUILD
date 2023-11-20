@@ -3,7 +3,7 @@
 
 pkgbase=lib32-gstreamer
 pkgname=(lib32-gstreamer lib32-gst-plugins-base-libs lib32-gst-plugins-base lib32-gst-plugins-good)
-pkgver=1.22.6
+pkgver=1.22.7
 pkgrel=1
 pkgdesc="Multimedia graph framework (32-bit)"
 url="https://gstreamer.freedesktop.org/"
@@ -65,17 +65,17 @@ build() {
     -D gstreamer:dbghelp=disabled
     -D gstreamer:gobject-cast-checks=disabled
     -D gstreamer:package-name="Arch Linux lib32-gstreamer $pkgver-$pkgrel"
-    -D gstreamer:package-origin="https://www.archlinux.org/"
+    -D gstreamer:package-origin="https://www.artixlinux.org/"
     -D gstreamer:ptp-helper-permissions=capabilities
     -D gst-plugins-base:gl-graphene=disabled
     -D gst-plugins-base:gobject-cast-checks=disabled
     -D gst-plugins-base:package-name="Arch Linux lib32-gst-plugins-base $pkgver-$pkgrel"
-    -D gst-plugins-base:package-origin="https://www.archlinux.org/"
+    -D gst-plugins-base:package-origin="https://www.artixlinux.org/"
     -D gst-plugins-base:tremor=disabled
     -D gst-plugins-good:gobject-cast-checks=disabled
     -D gst-plugins-good:lame=disabled
     -D gst-plugins-good:package-name="Arch Linux lib32-gst-plugins-good $pkgver-$pkgrel"
-    -D gst-plugins-good:package-origin="https://www.archlinux.org/"
+    -D gst-plugins-good:package-origin="https://www.artixlinux.org/"
     -D gst-plugins-good:qt6=disabled
     -D gst-plugins-good:rpicamsrc=disabled
   )
