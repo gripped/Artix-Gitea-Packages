@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: G_Syme <demichan@mail.upb.de>
 
 pkgname=libass
 pkgver=0.17.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A portable library for SSA/ASS subtitles rendering'
 arch=(x86_64)
 url=https://github.com/libass/libass/
@@ -12,10 +12,10 @@ license=(BSD)
 depends=(
   fontconfig
   fribidi
-  glib2
   glibc
   harfbuzz
   libfreetype.so
+  libunibreak
 )
 makedepends=(
   git
@@ -44,7 +44,8 @@ build() {
   cd libass
   ./configure \
     --prefix=/usr \
-    --enable-fontconfig
+    --enable-fontconfig \
+    --enable-libunibreak
   make
 }
 
