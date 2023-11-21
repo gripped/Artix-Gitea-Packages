@@ -1,4 +1,4 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: John Proctor <jproctor@prium.net>
 # Contributor: dibblethewrecker <dibblethewrecker.at.jiwe.org>
@@ -7,7 +7,7 @@
 
 pkgbase=nfs-utils
 pkgname=('nfs-utils' 'nfsidmap')
-pkgver=2.6.3
+pkgver=2.6.4
 pkgrel=1
 arch=('x86_64')
 url='http://nfs.sourceforge.net'
@@ -16,8 +16,8 @@ makedepends=('libevent' 'sqlite' 'rpcsvc-proto' 'device-mapper')
 source=(https://www.kernel.org/pub/linux/utils/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.{xz,sign}
         exports
         sysusers.d)
-# https://mirrors.edge.kernel.org/pub/linux/utils/nfs-utils/2.6.3/sha256sums.asc
-sha256sums=('38d89e853a71d3c560ff026af3d969d75e24f782ff68324e76261fe0344459e1'
+# https://mirrors.edge.kernel.org/pub/linux/utils/nfs-utils/2.6.4/sha256sums.asc
+sha256sums=('01b3b0fb9c7d0bbabf5114c736542030748c788ec2fd9734744201e9b0a1119d'
             'SKIP'
             'b8238b74179f7e1626db2b637671ddc17288a1c5b7692954ae6d2fbb1be3788d'
             '8e1b6aa59cf5539b9da13cfec217b3ca7b6c32e08df3b0a204901ed2891b2ded')
@@ -91,7 +91,7 @@ package_nfs-utils() {
   mkdir -m 555 "$pkgdir"/var/lib/nfs/rpc_pipefs
   mkdir "$pkgdir"/var/lib/nfs/v4recovery
 
-  # sysusers - FS#75536
+  # esysusers - FS#75536
   install -D -m 644 ../sysusers.d "${pkgdir}"/usr/lib/sysusers.d/rpcuser.conf
   chown -Rv 34:34 "${pkgdir}"/var/lib/nfs/statd
   chmod -R 700 "${pkgdir}"/var/lib/nfs/statd
