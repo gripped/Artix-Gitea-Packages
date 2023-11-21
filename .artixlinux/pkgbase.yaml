@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: lib32-nss
-  version: 3.94-1
+  version: 3.95-1
   arch:
     - x86_64
   pkgname:
     - lib32-nss
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 3.95-1
+    packages:
+      - lib32-nss-3.95-1-x86_64.pkg.tar.zst
   lib32:
     version: 3.94-1
     packages:
