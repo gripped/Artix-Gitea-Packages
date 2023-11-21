@@ -28,11 +28,14 @@ prepare() {
 
 build() {
   cd ${pkgname}-${pkgver}/build
-  artix-meson ..
+  artix-meson -D systemduserunitdir=/usr/lib/systemd ..
   samu
 }
 
 package() {
   cd ${pkgname}-${pkgver}/build
   DESTDIR="${pkgdir}" samu install
+
+  #remove systemd service
+  rm -r $pkgdir/usr/lib/systemd
 }
