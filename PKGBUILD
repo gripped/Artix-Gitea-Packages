@@ -1,5 +1,6 @@
-# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Martin Wimpress <code@flexion.org>
 # Contributor: Sauyon Lee <sauyonl@sauyon.com>
 # Contributor: Kevin MacMartin <prurigro@gmail.com>
@@ -10,7 +11,7 @@
 BUILDENV+=(!check)
 
 pkgname=('syncthing' 'syncthing-discosrv' 'syncthing-relaysrv')
-pkgver=1.24.0
+pkgver=1.26.1
 pkgrel=1
 pkgdesc='Open Source Continuous Replication / Cluster Synchronization Thing'
 arch=('x86_64')
@@ -23,7 +24,7 @@ source=(https://github.com/syncthing/syncthing/releases/download/v$pkgver/syncth
         syncthing-{disco,relay}srv.tmpfiles
         gcc-pie-segfaults-race.patch)
 validpgpkeys=('37C84554E7E0A261E4F76E1ED26E6ED000654A3E') # Syncthing Release Management
-sha256sums=('4a9459667f9b70a7d1e7d572c7c9d02431ef8f055679eef368300ce1a826608f'
+sha256sums=('c14de7df16f33db6e77442ee298dd836aeb40ae08339ebe27e418a1bb0ebe7bd'
             'SKIP'
             'f6e704dd7b10127b1642c889a29e95468daa75d895493b235ce1ed5e97155b70'
             '6ab96a5949e223d315d49663734ad27b70c72469c691a61ac198cb7794cb5eaa'
