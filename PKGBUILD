@@ -45,7 +45,4 @@ build() {
 package() {
   cd ${pkgname}-${pkgver}/build
   DESTDIR="${pkgdir}" samu install
-
-  #remove systemd service
-  rm -r $pkgdir/usr/lib/systemd
 }
