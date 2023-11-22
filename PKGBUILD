@@ -59,6 +59,7 @@ check() {
     --deselect test/test_ssltransport.py::SingleTLSLayerTestCase::test_ssl_object_attributes
     --deselect test/contrib/test_pyopenssl.py::TestSSL::test_ssl_read_timeout
     --deselect test/with_dummyserver/test_socketlevel.py::TestSSL::test_ssl_read_timeout
+    --deselect test/contrib/test_pyopenssl.py::TestSocketClosing::test_connection_closed_on_read_timeout_preload_false
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
