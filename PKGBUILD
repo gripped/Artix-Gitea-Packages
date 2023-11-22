@@ -28,7 +28,17 @@ prepare() {
 
 build() {
   cd ${pkgname}-${pkgver}/build
-  artix-meson -D systemduserunitdir=/usr/lib/systemd ..
+  meson setup \
+  --prefix        /usr \
+  --libexecdir    lib \
+  --sbindir       bin \
+  --buildtype     plain \
+  --wrap-mode     nodownload \
+  -D              alsa=true \
+  -D              b_lto=true \
+  -D              b_pie=true \
+  -D              python.bytecompile=1 \
+  ..
   samu
 }
 
