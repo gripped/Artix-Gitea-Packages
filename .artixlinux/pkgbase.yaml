@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-urllib3
-  version: 1.26.15-1
+  version: 1.26.18-1
   arch:
     - any
   pkgname:
     - python-urllib3
     - python-urllib3-doc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.26.15-1
+    version: 1.26.18-1
     packages:
-      - python-urllib3-1.26.15-1-any.pkg.tar.zst
-      - python-urllib3-doc-1.26.15-1-any.pkg.tar.zst
+      - python-urllib3-1.26.18-1-any.pkg.tar.zst
+      - python-urllib3-doc-1.26.18-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
