@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libheif
-  version: 1.17.5-1
+  version: 1.17.5-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.17.5-1
+    version: 1.17.5-2
     packages:
-      - libheif-1.17.5-1-x86_64.pkg.tar.zst
+      - libheif-1.17.5-2-x86_64.pkg.tar.zst
   world:
     version: 1.17.3-1
     packages:

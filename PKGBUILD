@@ -4,13 +4,14 @@
 
 pkgname=libheif
 pkgver=1.17.5
-pkgrel=1
+pkgrel=2
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
 url='https://github.com/strukturag/libheif'
 license=(GPL3)
 makedepends=(cmake
              dav1d
+             ffmpeg
              gdk-pixbuf2
              libjpeg
              libpng
@@ -25,6 +26,7 @@ depends=(aom
 optdepends=('libjpeg: for heif-convert and heif-enc'
             'libpng: for heif-convert and heif-enc'
             'dav1d: dav1d encoder'
+            'ffmpeg: hardware decode'
             'rav1e: rav1e encoder'
             'svt-av1: svt-av1 encoder')
 source=(https://github.com/strukturag/libheif/releases/download/v$pkgver/libheif-$pkgver.tar.gz)
@@ -35,6 +37,8 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DWITH_DAV1D=ON \
     -DWITH_RAV1E=ON \
+    -DWITH_FFMPEG_DECODER=ON \
+    -DWITH_FFMPEG_DECODER_PLUGIN=ON \
     -DWITH_SvtEnc=ON
   cmake --build build
 }
