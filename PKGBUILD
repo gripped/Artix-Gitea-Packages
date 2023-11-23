@@ -5,7 +5,7 @@
 # Contributor: David Rosenstrauch <darose@darose.net>
 
 pkgname=ddclient
-pkgver=3.11.1
+pkgver=3.11.2
 pkgrel=1
 pkgdesc="Update dynamic DNS entries for accounts on many dynamic DNS services"
 url="https://github.com/ddclient/ddclient"
@@ -31,15 +31,16 @@ build() {
   make
 }
 
-#check() {
-#  cd ${pkgname}
-#  make VERBOSE=1 check
-#}
+# check() {
+#   cd ${pkgname}
+#   make VERBOSE=1 check
+# }
 
 package() {
   cd ${pkgname}
   make DESTDIR="${pkgdir}" install
 
+  # install -Dm644 sample-etc_systemd.service "$pkgdir"/usr/lib/systemd/system/ddclient.service
   install -d "$pkgdir"/var/cache/ddclient
 
   install -Dm644 README.cisco "$pkgdir"/usr/share/doc/ddclient/README.cisco
