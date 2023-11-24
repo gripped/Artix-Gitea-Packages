@@ -1,6 +1,6 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
@@ -19,10 +19,10 @@ pkgname=(kde-applications-meta
          kde-utilities-meta
          kdevelop-meta)
 pkgver=23.08
-pkgrel=1
+pkgrel=1.1
 arch=(any)
 license=(None)
-url='https://www.archlinux.org/'
+url='https://www.artixlinux.org/'
 
 package_kde-applications-meta() {
   pkgdesc='Meta package for KDE Applications'
@@ -230,7 +230,6 @@ package_kde-system-meta() {
            kde-inotify-survey
            khelpcenter
            kio-admin
-           kjournald
            ksystemlog
            partitionmanager)
 }
