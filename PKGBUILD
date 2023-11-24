@@ -4,7 +4,7 @@
 
 pkgname=libheif
 pkgver=1.17.5
-pkgrel=2
+pkgrel=2.1
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
 url='https://github.com/strukturag/libheif'
