@@ -1,10 +1,9 @@
 ---
 pkgbase:
   name: containerd
-  version: 1.7.8-1
+  version: 1.7.9-1
   arch:
     - x86_64
-    - aarch64
   pkgname:
     - containerd
 actions:
@@ -32,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.8-1
+    version: 1.7.9-1
     packages:
-      - containerd-1.7.8-1-x86_64.pkg.tar.zst
+      - containerd-1.7.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
