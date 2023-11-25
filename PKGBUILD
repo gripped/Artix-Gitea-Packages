@@ -3,8 +3,8 @@
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 
 pkgname=nawk
-pkgver=20231030
-_commit=d801514094d1140dfc9f8571b9821082ddddf107 # master
+pkgver=20231124
+_commit=fbd1d5b712e27a9bb527e39ed6e9bf3b9afbb1df # master
 pkgrel=1
 pkgdesc='The one, true implementation of AWK'
 url="https://github.com/onetrueawk/awk"
