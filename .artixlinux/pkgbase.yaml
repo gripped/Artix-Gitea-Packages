@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: aws-cli
-  version: 1.29.25-1
+  version: 1.29.64-1
   arch:
     - any
   pkgname:
     - aws-cli
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.29.64-1
+    packages:
+      - aws-cli-1.29.64-1-any.pkg.tar.zst
   world:
     version: 1.29.25-1
     packages:
