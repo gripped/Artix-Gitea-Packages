@@ -18,7 +18,7 @@ pkgname=('php'
          'php-sqlite'
          'php-tidy'
          'php-xsl')
-pkgver=8.2.12
+pkgver=8.2.13
 pkgrel=1
 arch=('x86_64')
 license=('PHP')
@@ -29,7 +29,7 @@ makedepends=('apache' 'aspell' 'enchant' 'gd' 'gmp' 'icu' 'libsodium' 'libxslt' 
 checkdepends=('procps-ng')
 source=("https://php.net/distributions/${pkgbase}-${pkgver}.tar.xz"{,.asc}
         'apache.patch' 'apache.conf' 'php-fpm.patch' 'php-fpm.tmpfiles' 'php.ini.patch')
-sha256sums=('e1526e400bce9f9f9f774603cfac6b72b5e8f89fa66971ebc3cc4e5964083132'
+sha256sums=('2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
             'SKIP'
             '702b163c66c65af92dcad8d79f41bda84bcd5d863235fcf1497c33a86db9e4ca'
             '4a2add00d93fa991ccdf6356090264c1059c79935642afff6e8d4a2107fa037e'
