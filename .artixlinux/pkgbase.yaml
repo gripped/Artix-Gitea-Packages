@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: edk2
-  version: 202308-3
+  version: 202311-1
   arch:
     - any
   pkgname:
     - edk2-shell
     - edk2-ovmf
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 202311-1
+    packages:
+      - edk2-shell-202311-1-any.pkg.tar.zst
+      - edk2-ovmf-202311-1-any.pkg.tar.zst
   world:
     version: 202308-3
     packages:
