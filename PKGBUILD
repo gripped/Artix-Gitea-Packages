@@ -8,8 +8,8 @@
 
 pkgbase=mupdf
 pkgname=(libmupdf mupdf mupdf-gl mupdf-tools)
-pkgver=1.23.4
-pkgrel=4
+pkgver=1.23.6
+pkgrel=1
 pkgdesc='Lightweight PDF and XPS viewer'
 arch=('x86_64')
 url='https://mupdf.com/'
@@ -41,7 +41,7 @@ source=(
   $pkgbase.desktop
   $pkgbase.xpm
 )
-sha256sums=('deb0347a3f9ce0967611d479a8a07b57e2c730b0aaf09dce28ee41abb9ac4838'
+sha256sums=('ac11eb859dd404488e5153cdc9651bb4341e5baaf4d3b3f27e2afc82f9aadc29'
             'ccff66979249bd4ab4ba8918660f194eb90eb0ae231b16e36a6cecdcf471883f'
             'a435f44425f5432c074dee745d8fbaeb879038ec1f1ec64f037c74662f09aca8')
 
