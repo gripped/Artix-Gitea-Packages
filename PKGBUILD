@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=noto-fonts-emoji
-pkgver=2.040
+pkgver=2.041
 pkgrel=1
 epoch=1
 pkgdesc='Google Noto emoji fonts'
