@@ -4,13 +4,13 @@
 _gemname='rubocop-rspec'
 pkgname="ruby-${_gemname}"
 pkgver=2.15.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Code style checking for RSpec files. A plugin for the RuboCop code style enforcing & linting tool'
 arch=('any')
 url="https://github.com/rubocop/${_gemname}"
 license=('MIT')
 depends=('ruby' 'rubocop')
-# checkdepends=('ruby-bump' 'ruby-parallel' 'ruby-rack' 'ruby-rspec' 'ruby-rubocop-performance' 'ruby-rubocop-rake' 'ruby-yard')
+checkdepends=('ruby-bump' 'ruby-parallel' 'ruby-rack' 'ruby-rspec' 'ruby-rubocop-performance' 'ruby-rubocop-rake' 'ruby-yard')
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha512sums=('152500dc809f9026488451e9e4145c643c3da24beadfde18f4a034013bb10c7f8e693dbad16813b505234aeb064f850f0d292e9f251d79edcc4e0e9b4dd1e73f')
@@ -71,7 +71,7 @@ check() {
 
   local _gemdir="$(gem env gemdir)"
 
-  # GEM_HOME="tmp_install/${_gemdir}" rake spec
+  GEM_HOME="tmp_install/${_gemdir}" rake spec
 }
 
 package() {
