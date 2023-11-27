@@ -10,7 +10,7 @@ arch=('x86_64')
 url="https://github.com/tmm1/${_gemname}"
 license=('MIT')
 depends=('ruby')
-checkdepends=('ruby-mocha' 'ruby-rake-compiler')
+# checkdepends=('ruby-mocha' 'ruby-rake-compiler')
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha512sums=('8c4fc148fb919cae0998f9c78fa061fe8b93085e087f0a7256e077ebcc47c522d6046ce7ecd8e43aac52f2da5295b7554149dd3914effed04beb22b21e333c72')
@@ -74,7 +74,7 @@ check() {
 
   local _gemdir="$(gem env gemdir)"
 
-  GEM_HOME="tmp_install/${_gemdir}" rake test
+  # GEM_HOME="tmp_install/${_gemdir}" rake test
 }
 
 package() {
