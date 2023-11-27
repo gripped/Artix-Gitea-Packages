@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rubocop-performance
-  version: 1.15.1-1
+  version: 1.15.1-1.1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.15.1-1
+    version: 1.15.1-1.1
     packages:
-      - ruby-rubocop-performance-1.15.1-1-any.pkg.tar.zst
+      - ruby-rubocop-performance-1.15.1-1.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
