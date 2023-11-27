@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gajim
-  version: 1.8.3-1
+  version: 1.8.4-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.3-1
+    version: 1.8.4-1
     packages:
-      - gajim-1.8.3-1-any.pkg.tar.zst
+      - gajim-1.8.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
