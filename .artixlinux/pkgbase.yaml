@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: refind
-  version: 0.14.0.2-1
+  version: 0.14.0.2-2
   arch:
-    - any
+    - x86_64
   pkgname:
     - refind
     - refind-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.14.0.2-1
+    version: 0.14.0.2-2
     packages:
-      - refind-0.14.0.2-1-any.pkg.tar.zst
-      - refind-docs-0.14.0.2-1-any.pkg.tar.zst
+      - refind-0.14.0.2-2-x86_64.pkg.tar.zst
+      - refind-docs-0.14.0.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
