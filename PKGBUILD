@@ -4,20 +4,20 @@
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 
 pkgname=wine
-pkgver=8.20
+pkgver=8.21
 pkgrel=1
 
 _pkgbasever=${pkgver/rc/-rc}
 
 source=(https://dl.winehq.org/wine/source/8.x/$pkgname-$_pkgbasever.tar.xz{,.sign}
-        30-win32-aliases.conf
-        wine-binfmt.conf)
-sha512sums=('86dffc3c9e01506ff2ff75663f48bb3b18a6afaf6381fc3c43c476481cb5c0570129550d2047059f528855e454a629c63e8beb85d5c591d1fdb7a066fbca2623'
-            'SKIP'
-            '6e54ece7ec7022b3c9d94ad64bdf1017338da16c618966e8baf398e6f18f80f7b0576edf1d1da47ed77b96d577e4cbb2bb0156b0b11c183a0accf22654b0a2bb'
-            'bdde7ae015d8a98ba55e84b86dc05aca1d4f8de85be7e4bd6187054bfe4ac83b5a20538945b63fb073caab78022141e9545685e4e3698c97ff173cf30859e285')
+	30-win32-aliases.conf
+	wine-binfmt.conf)
+sha512sums=('4d04d40141d2ea5e548b76aed870ac28d8a03241ffd4e761979c795310baa19136e54a8e518c6ea9bf563c3b23d3c4eb1baefc9906d7eeca469e9942ff99dc40'
+	'SKIP'
+	'6e54ece7ec7022b3c9d94ad64bdf1017338da16c618966e8baf398e6f18f80f7b0576edf1d1da47ed77b96d577e4cbb2bb0156b0b11c183a0accf22654b0a2bb'
+	'bdde7ae015d8a98ba55e84b86dc05aca1d4f8de85be7e4bd6187054bfe4ac83b5a20538945b63fb073caab78022141e9545685e4e3698c97ff173cf30859e285')
 validpgpkeys=(5AC1A08B03BD7A313E0A955AF5E6E9EEB9461DD7
-              DA23579A74D4AD9AF9D3F945CEFAC8EAAF17519D)
+	DA23579A74D4AD9AF9D3F945CEFAC8EAAF17519D)
 
 pkgdesc="A compatibility layer for running Windows programs"
 url="https://www.winehq.org"
@@ -25,126 +25,126 @@ arch=(x86_64)
 options=(staticlibs !lto)
 license=(LGPL)
 depends=(
-  fontconfig      lib32-fontconfig
-  libxcursor      lib32-libxcursor
-  libxrandr       lib32-libxrandr
-  libxi           lib32-libxi
-  gettext         lib32-gettext
-  freetype2       lib32-freetype2
-  gcc-libs        lib32-gcc-libs
-  libpcap         lib32-libpcap
-  desktop-file-utils
+	fontconfig lib32-fontconfig
+	libxcursor lib32-libxcursor
+	libxrandr lib32-libxrandr
+	libxi lib32-libxi
+	gettext lib32-gettext
+	freetype2 lib32-freetype2
+	gcc-libs lib32-gcc-libs
+	libpcap lib32-libpcap
+	desktop-file-utils
 )
 makedepends=(autoconf bison perl gcc
-  giflib                lib32-giflib
-  gnutls                lib32-gnutls
-  libxinerama           lib32-libxinerama
-  libxcomposite         lib32-libxcomposite
-  libxxf86vm            lib32-libxxf86vm
-  v4l-utils             lib32-v4l-utils
-  libpulse              lib32-libpulse
-  alsa-lib              lib32-alsa-lib
-  libxcomposite         lib32-libxcomposite
-  mesa                  lib32-mesa
-  mesa-libgl            lib32-mesa-libgl
-  opencl-icd-loader     lib32-opencl-icd-loader
-  gst-plugins-base-libs lib32-gst-plugins-base-libs
-  vulkan-icd-loader     lib32-vulkan-icd-loader
-  sdl2                  lib32-sdl2
-  libcups               lib32-libcups
-  libgphoto2
-  sane
-  vulkan-headers
-  samba
-  opencl-headers
+	giflib lib32-giflib
+	gnutls lib32-gnutls
+	libxinerama lib32-libxinerama
+	libxcomposite lib32-libxcomposite
+	libxxf86vm lib32-libxxf86vm
+	v4l-utils lib32-v4l-utils
+	libpulse lib32-libpulse
+	alsa-lib lib32-alsa-lib
+	libxcomposite lib32-libxcomposite
+	mesa lib32-mesa
+	mesa-libgl lib32-mesa-libgl
+	opencl-icd-loader lib32-opencl-icd-loader
+	gst-plugins-base-libs lib32-gst-plugins-base-libs
+	vulkan-icd-loader lib32-vulkan-icd-loader
+	sdl2 lib32-sdl2
+	libcups lib32-libcups
+	libgphoto2
+	sane
+	vulkan-headers
+	samba
+	opencl-headers
 )
 optdepends=(
-  giflib                lib32-giflib
-  libldap               lib32-libldap
-  gnutls                lib32-gnutls
-  v4l-utils             lib32-v4l-utils
-  libpulse              lib32-libpulse
-  alsa-plugins          lib32-alsa-plugins
-  alsa-lib              lib32-alsa-lib
-  libxcomposite         lib32-libxcomposite
-  libxinerama           lib32-libxinerama
-  opencl-icd-loader     lib32-opencl-icd-loader
-  gst-plugins-base-libs lib32-gst-plugins-base-libs
-  sdl2                  lib32-sdl2
-  libgphoto2
-  sane
-  cups
-  samba           dosbox
+	giflib lib32-giflib
+	libldap lib32-libldap
+	gnutls lib32-gnutls
+	v4l-utils lib32-v4l-utils
+	libpulse lib32-libpulse
+	alsa-plugins lib32-alsa-plugins
+	alsa-lib lib32-alsa-lib
+	libxcomposite lib32-libxcomposite
+	libxinerama lib32-libxinerama
+	opencl-icd-loader lib32-opencl-icd-loader
+	gst-plugins-base-libs lib32-gst-plugins-base-libs
+	sdl2 lib32-sdl2
+	libgphoto2
+	sane
+	cups
+	samba dosbox
 )
 makedepends=(${makedepends[@]} ${depends[@]})
 
 prepare() {
-  # Allow ccache to work
-  mv $pkgname-$_pkgbasever $pkgname
+	# Allow ccache to work
+	mv $pkgname-$_pkgbasever $pkgname
 
-  # Doesn't compile without remove these flags as of 4.10
-  export CFLAGS="${CFLAGS/-fno-plt/} -ffat-lto-objects"
-  export LDFLAGS="${LDFLAGS/,-z,now/}"
+	# Doesn't compile without remove these flags as of 4.10
+	export CFLAGS="${CFLAGS/-fno-plt/} -ffat-lto-objects"
+	export LDFLAGS="${LDFLAGS/,-z,now/}"
 
-  # Get rid of old build dirs
-  rm -rf $pkgname-{32,64}-build
-  mkdir $pkgname-32-build
+	# Get rid of old build dirs
+	rm -rf $pkgname-{32,64}-build
+	mkdir $pkgname-32-build
 }
 
 build() {
-  cd "$srcdir"
+	cd "$srcdir"
 
-  msg2 "Building Wine-64..."
+	msg2 "Building Wine-64..."
 
-  mkdir $pkgname-64-build
-  cd "$srcdir/$pkgname-64-build"
-  ../$pkgname/configure \
-    --prefix=/usr \
-    --libdir=/usr/lib \
-    --with-x \
-    --with-gstreamer \
-    --enable-win64
-  # Gstreamer was disabled for FS#33655
+	mkdir $pkgname-64-build
+	cd "$srcdir/$pkgname-64-build"
+	../$pkgname/configure \
+		--prefix=/usr \
+		--libdir=/usr/lib \
+		--with-x \
+		--with-gstreamer \
+		--enable-win64
+	# Gstreamer was disabled for FS#33655
 
-  make
+	make
 
-  _wine32opts=(
-    --libdir=/usr/lib32
-    --with-wine64="$srcdir/$pkgname-64-build"
-  )
+	_wine32opts=(
+		--libdir=/usr/lib32
+		--with-wine64="$srcdir/$pkgname-64-build"
+	)
 
-  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+	export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
-  msg2 "Building Wine-32..."
-  cd "$srcdir/$pkgname-32-build"
-  ../$pkgname/configure \
-    --prefix=/usr \
-    --with-x \
-    --with-gstreamer \
-    "${_wine32opts[@]}"
+	msg2 "Building Wine-32..."
+	cd "$srcdir/$pkgname-32-build"
+	../$pkgname/configure \
+		--prefix=/usr \
+		--with-x \
+		--with-gstreamer \
+		"${_wine32opts[@]}"
 
-  make
+	make
 }
 
 package() {
-  msg2 "Packaging Wine-32..."
-  cd "$srcdir/$pkgname-32-build"
+	msg2 "Packaging Wine-32..."
+	cd "$srcdir/$pkgname-32-build"
 
-  make prefix="$pkgdir/usr" \
-    libdir="$pkgdir/usr/lib32" \
-    dlldir="$pkgdir/usr/lib32/wine" install
+	make prefix="$pkgdir/usr" \
+		libdir="$pkgdir/usr/lib32" \
+		dlldir="$pkgdir/usr/lib32/wine" install
 
-  msg2 "Packaging Wine-64..."
-  cd "$srcdir/$pkgname-64-build"
-  make prefix="$pkgdir/usr" \
-    libdir="$pkgdir/usr/lib" \
-    dlldir="$pkgdir/usr/lib/wine" install
+	msg2 "Packaging Wine-64..."
+	cd "$srcdir/$pkgname-64-build"
+	make prefix="$pkgdir/usr" \
+		libdir="$pkgdir/usr/lib" \
+		dlldir="$pkgdir/usr/lib/wine" install
 
-  # Font aliasing settings for Win32 applications
-  install -d "$pkgdir"/usr/share/fontconfig/conf.{avail,default}
-  install -m644 "$srcdir/30-win32-aliases.conf" "$pkgdir/usr/share/fontconfig/conf.avail"
-  ln -s ../conf.avail/30-win32-aliases.conf "$pkgdir/usr/share/fontconfig/conf.default/30-win32-aliases.conf"
-  install -Dm 644 "$srcdir/wine-binfmt.conf" "$pkgdir/usr/lib/binfmt.d/wine.conf"
+	# Font aliasing settings for Win32 applications
+	install -d "$pkgdir"/usr/share/fontconfig/conf.{avail,default}
+	install -m644 "$srcdir/30-win32-aliases.conf" "$pkgdir/usr/share/fontconfig/conf.avail"
+	ln -s ../conf.avail/30-win32-aliases.conf "$pkgdir/usr/share/fontconfig/conf.default/30-win32-aliases.conf"
+	install -Dm 644 "$srcdir/wine-binfmt.conf" "$pkgdir/usr/lib/binfmt.d/wine.conf"
 }
 
 # vim:set ts=8 sts=2 sw=2 et:
