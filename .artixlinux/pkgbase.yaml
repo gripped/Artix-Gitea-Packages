@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jenkins
-  version: 2.433-1
+  version: 2.434-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.433-1
+    version: 2.434-1
     packages:
-      - jenkins-2.433-1-any.pkg.tar.zst
+      - jenkins-2.434-1-any.pkg.tar.zst
   world:
     version: 2.432-1
     packages:
