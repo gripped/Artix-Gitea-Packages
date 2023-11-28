@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postgresql
-  version: 16.0-2
+  version: 16.1-1
   arch:
     - x86_64
   pkgname:
@@ -30,11 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 16.0-2
+    version: 16.1-1
     packages:
-      - postgresql-libs-16.0-2-x86_64.pkg.tar.zst
-      - postgresql-docs-16.0-2-x86_64.pkg.tar.zst
-      - postgresql-16.0-2-x86_64.pkg.tar.zst
+      - postgresql-libs-16.1-1-x86_64.pkg.tar.zst
+      - postgresql-docs-16.1-1-x86_64.pkg.tar.zst
+      - postgresql-16.1-1-x86_64.pkg.tar.zst
   world:
     version: 15.4-2
     packages:
