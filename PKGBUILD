@@ -4,7 +4,7 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=11.1.2
+pkgver=11.2.2
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
@@ -20,7 +20,7 @@ source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-$
         'mariadb.sysusers.conf'
         'mariadb.tmpfiles.conf'
         '0001-arch-specific.patch')
-sha256sums=('19a9e980e57fa332931f643b48ad7390528c889ff6ea8b0e16fd306aa3088238'
+sha256sums=('faedbd8790c7ee65b348c0169706b4bae91eb6ce7335a76b27dbd8813c42e21b'
             'SKIP'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
@@ -91,6 +91,10 @@ build() {
     -DWITH_UNIT_TESTS=OFF
     -DWITH_ZLIB=system
   )
+
+  # this uses malloc_usable_size, which is incompatible with fortification level 3
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
   mkdir build
   cd build
@@ -189,6 +193,7 @@ package_mariadb() {
   # Setup sysuser and tmpfiles
   install -Dm644 "$srcdir"/mariadb.sysusers.conf usr/lib/sysusers.d/mariadb.conf
   install -Dm644 "$srcdir"/mariadb.tmpfiles.conf usr/lib/tmpfiles.d/mariadb.conf
+
   # no SysV init, please!
   rm -r etc/logrotate.d
   rm usr/bin/rcmysql
