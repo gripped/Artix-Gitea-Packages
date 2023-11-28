@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: stk
-  version: 4.6.2-2
+  version: 5.0.1-2
   arch:
     - x86_64
   pkgname:
     - stk
     - stk-docs
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.1-2
+    packages:
+      - stk-5.0.1-2-x86_64.pkg.tar.zst
+      - stk-docs-5.0.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
