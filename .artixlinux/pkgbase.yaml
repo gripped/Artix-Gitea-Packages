@@ -8,12 +8,12 @@ pkgbase:
     - suil
     - suil-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.10.20-1
     packages:
       - suil-0.10.20-1-x86_64.pkg.tar.zst
       - suil-docs-0.10.20-1-x86_64.pkg.tar.zst
-  world:
-    version: 0.10.18-1
-    packages:
-      - suil-0.10.18-1-x86_64.pkg.tar.zst
-      - suil-docs-0.10.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
