@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=senpai
-pkgver=0.2.0
+pkgver=0.3.0
 pkgrel=1
 pkgdesc="A modern terminal IRC client."
 arch=("x86_64")
@@ -12,7 +12,7 @@ source=(
 	"https://git.sr.ht/~taiite/senpai/archive/v$pkgver.tar.gz"
 )
 sha256sums=(
-	"9786fd83f3e1067549c3c88455a1f66ec66d993fe597cee334d217a5d1cf4803"
+	"c02f63a7d76ae13ed888fc0de17fa9fd5117dcb3c9edc5670341bf2bf3b88718"
 )
 
 build() {
