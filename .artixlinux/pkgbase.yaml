@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-traitlets
-  version: 5.13.0-1
+  version: 5.14.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.13.0-1
+    version: 5.14.0-1
     packages:
-      - python-traitlets-5.13.0-1-any.pkg.tar.zst
+      - python-traitlets-5.14.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
