@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: seabios
-  version: 1.16.2-2
+  version: 1.16.3-1
   arch:
     - any
   pkgname:
     - seabios
     - seabios-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.16.3-1
+    packages:
+      - seabios-1.16.3-1-any.pkg.tar.zst
+      - seabios-docs-1.16.3-1-any.pkg.tar.zst
   world:
     version: 1.16.2-2
     packages:
