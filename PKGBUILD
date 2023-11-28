@@ -2,8 +2,8 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.31.6
-pkgrel=2
+pkgver=0.31.7
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
@@ -11,11 +11,8 @@ url='https://gitea.artixlinux.org/artix/artools'
 makedepends=('git')
 groups=('artix-tools')
 # checkdepends=('shellcheck')
-source=("git+${url}.git#tag=${pkgver}"
-        exclude-srcinfo.patch::https://gitea.artixlinux.org/artix/artools/commit/dc606af137235880512ce9f68b5ae800d7af5e3a.patch
-        )
-sha256sums=('SKIP'
-            '730f2c32e1b8603e5838cc1466e6f4f7af0374bdc87045225c84b1e2e860cbaa')
+source=("git+${url}.git#tag=${pkgver}")
+sha256sums=('SKIP')
 
 _patches=(
 )
@@ -32,7 +29,6 @@ prepare() {
         git log --oneline -1 "${_p}"
         git cherry-pick -n "${_p}"
     done
-    patch -Np 1 -i ../exclude-srcinfo.patch
 }
 
 build() {
