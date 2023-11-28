@@ -5,7 +5,7 @@
 pkgname=qt6-quick3d
 _qtver=6.6.1
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=1.3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3)
