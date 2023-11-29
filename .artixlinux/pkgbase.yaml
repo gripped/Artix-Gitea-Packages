@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: intel-media-driver
-  version: 23.3.5-1
+  version: 23.4.2-1
   arch:
     - x86_64
   pkgname:
     - intel-media-driver
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 23.4.2-1
+    packages:
+      - intel-media-driver-23.4.2-1-x86_64.pkg.tar.zst
   world:
     version: 23.3.5-1
     packages:
