@@ -1,23 +1,22 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Maintainer: Maxim Baz <archlinux at maximbaz dot com>
 # Contributor: Andrew Gallant <jamslam@gmail.com>
 pkgname=ripgrep
-pkgver=13.0.0
-pkgrel=3
+pkgver=14.0.3
+pkgrel=1
 pkgdesc="A search tool that combines the usability of ag with the raw speed of grep"
 arch=('x86_64')
 url="https://github.com/BurntSushi/ripgrep"
 license=('MIT' 'custom')
 depends=('gcc-libs' 'pcre2')
-makedepends=('cargo' 'asciidoctor')
+makedepends=('rust')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/BurntSushi/$pkgname/archive/$pkgver.tar.gz")
-sha512sums=('9321532e4bf633ecd200d98873b6773230d046d7bd075f223f09a68531cef4e4138f01c6b41e0f8697805963ae7e0d44d542c6d94025d9a06fbbef3562c17734')
+sha512sums=('ffe0a7fa619c94cb48642854f0660cc091a09e38d3b9a59baac76f54f0ba2d59a693849fc73b34a09e2fff26f3059dfe396b34a6864b9332bbd3daffe490d4b0')
 
 build() {
   cd "$pkgname-$pkgver"
 
   cargo build --release --locked --features 'pcre2'
-  find target -name ripgrep-stamp -print0 | xargs -0 ls -t | head -n1 | xargs dirname > out_dir
 }
 
 check() {
@@ -28,14 +27,20 @@ check() {
 
 package() {
   cd "$pkgname-$pkgver"
-  local OUT_DIR=$(<out_dir)
 
   install -Dm755 "target/release/rg" "$pkgdir/usr/bin/rg"
 
-  install -Dm644 "complete/_rg" "$pkgdir/usr/share/zsh/site-functions/_rg"
-  install -Dm644 "$OUT_DIR"/rg.bash "$pkgdir/usr/share/bash-completion/completions/rg"
-  install -Dm644 "$OUT_DIR"/rg.fish "$pkgdir/usr/share/fish/vendor_completions.d/rg.fish"
-  install -Dm644 "$OUT_DIR"/rg.1 "$pkgdir/usr/share/man/man1/rg.1"
+  mkdir -p "$pkgdir/usr/share/zsh/site-functions"
+  target/release/rg --generate complete-zsh > "$pkgdir/usr/share/zsh/site-functions/_rg"
+
+  mkdir -p "$pkgdir/usr/share/bash-completion/completions"
+  target/release/rg --generate complete-bash > "$pkgdir/usr/share/bash-completion/completions/rg"
+
+  mkdir -p "$pkgdir/usr/share/fish/vendor_completions.d"
+  target/release/rg --generate complete-fish > "$pkgdir/usr/share/fish/vendor_completions.d/rg.fish"
+
+  mkdir -p "$pkgdir/usr/share/man/man1"
+  target/release/rg --generate man >  "$pkgdir/usr/share/man/man1/rg.1"
 
   install -Dm644 "README.md" "$pkgdir/usr/share/doc/${pkgname}/README.md"
   install -Dm644 "COPYING" "$pkgdir/usr/share/licenses/${pkgname}/COPYING"
