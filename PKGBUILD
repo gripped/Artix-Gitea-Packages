@@ -1,8 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-unicode-display_width
 _pkgname="${pkgname#ruby-}"
-pkgver=2.4.2
+pkgver=2.5.0
 pkgrel=1
 pkgdesc='Determines the monospace display width of a string in Ruby'
 arch=('any')
@@ -12,7 +13,7 @@ depends=('ruby')
 makedepends=('git' 'ruby-rdoc')
 checkdepends=('ruby-rake' 'ruby-rspec' 'ruby-unicode-emoji')
 options=('!emptydirs')
-_commit='3362ebcfa5a25b8a780d72a75944579e84d4ba16'
+_commit='e59c4238b2eb32281b6349fcdf81d8a0169e3252'
 source=("$pkgname::git+$url#commit=$_commit")
 b2sums=('SKIP')
 
