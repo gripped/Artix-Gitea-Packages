@@ -23,6 +23,7 @@ sha256sums=('8dbe2b62e37278c83c5acdb536c3e4c313ec0bac5380d020873db692199f9c29')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
