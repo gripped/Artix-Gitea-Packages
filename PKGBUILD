@@ -28,14 +28,16 @@ makedepends=('apache' 'aspell' 'enchant' 'gd' 'gmp' 'icu' 'libsodium' 'libxslt' 
              'oniguruma' 'argon2')
 checkdepends=('procps-ng')
 source=("https://php.net/distributions/${pkgbase}-${pkgver}.tar.xz"{,.asc}
-        'apache.patch' 'apache.conf' 'php-fpm.patch' 'php-fpm.tmpfiles' 'php.ini.patch')
+        'apache.patch' 'apache.conf' 'php-fpm.patch' 'php-fpm.tmpfiles' 'php.ini.patch'
+        'libxml2-2-12-0.patch::https://github.com/php/php-src/commit/6a76e5d0a2dcf46b4ab74cc3ffcbfeb860c4fdb3.patch')
 sha256sums=('2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b'
             'SKIP'
             '702b163c66c65af92dcad8d79f41bda84bcd5d863235fcf1497c33a86db9e4ca'
             '4a2add00d93fa991ccdf6356090264c1059c79935642afff6e8d4a2107fa037e'
             '78b8074461cdfc5d4e0ba428a8387f308d60720c8ad35c6176801e5088f02090'
             '640dba0d960bfeaae9ad38d2826d3f6b5d6c175a4d3e16664eefff29141faad5'
-            '70cba88753160fe5e7fe8429ea5aa7a9f8327d7a069a8c846e3249bb88f854e1')
+            '70cba88753160fe5e7fe8429ea5aa7a9f8327d7a069a8c846e3249bb88f854e1'
+            'ccbd0a55805ee931de45933e45514f6cb7c478ebf0d3213f702bb39715e8c36a')
 validpgpkeys=('1198C0117593497A5EC5C199286AF1F9897469DC'
               '39B641343D8C104B2B146DC3F9C39DC0B9698544'
               'E60913E4DF209907D8E30D96659A97C9CF2A795A')
@@ -47,6 +49,7 @@ prepare() {
 	patch -p0 -i "${srcdir}/apache.patch"
 	patch -p0 -i "${srcdir}/php-fpm.patch"
 	patch -p0 -i "${srcdir}/php.ini.patch"
+	patch -Np1 -i "${srcdir}/libxml2-2-12-0.patch"
 	autoconf
 
 	# Disable failing tests
