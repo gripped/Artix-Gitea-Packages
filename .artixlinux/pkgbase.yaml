@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - lib32-pcsclite
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: lib32
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,9 +41,8 @@ repos:
     packages:
       - lib32-pcsclite-2.0.1-1-x86_64.pkg.tar.zst
   lib32:
-    version: 2.0.1-1
-    packages:
-      - lib32-pcsclite-2.0.1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-goblins:
     version: null
     packages: []
