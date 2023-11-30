@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: pass
-  version: 1.7.4-3
+  version: 1.7.4-4
   arch:
     - any
   pkgname:
     - pass
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.4-3
+    version: 1.7.4-4
     packages:
-      - pass-1.7.4-3-any.pkg.tar.zst
+      - pass-1.7.4-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
