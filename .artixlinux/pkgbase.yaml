@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lapack
-  version: 3.11.0-3
+  version: 3.12.0-2
   arch:
     - x86_64
   pkgname:
-    - lapack
     - blas
     - cblas
+    - lapack
     - lapacke
-    - lapack64
     - blas64
     - cblas64
+    - lapack64
     - lapacke64
     - lapack-doc
 actions:
@@ -39,17 +39,17 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.11.0-3
+    version: 3.12.0-2
     packages:
-      - lapack-3.11.0-3-x86_64.pkg.tar.zst
-      - blas-3.11.0-3-x86_64.pkg.tar.zst
-      - cblas-3.11.0-3-x86_64.pkg.tar.zst
-      - lapacke-3.11.0-3-x86_64.pkg.tar.zst
-      - lapack64-3.11.0-3-x86_64.pkg.tar.zst
-      - blas64-3.11.0-3-x86_64.pkg.tar.zst
-      - cblas64-3.11.0-3-x86_64.pkg.tar.zst
-      - lapacke64-3.11.0-3-x86_64.pkg.tar.zst
-      - lapack-doc-3.11.0-3-x86_64.pkg.tar.zst
+      - blas-3.12.0-2-x86_64.pkg.tar.zst
+      - cblas-3.12.0-2-x86_64.pkg.tar.zst
+      - lapack-3.12.0-2-x86_64.pkg.tar.zst
+      - lapacke-3.12.0-2-x86_64.pkg.tar.zst
+      - blas64-3.12.0-2-x86_64.pkg.tar.zst
+      - cblas64-3.12.0-2-x86_64.pkg.tar.zst
+      - lapack64-3.12.0-2-x86_64.pkg.tar.zst
+      - lapacke64-3.12.0-2-x86_64.pkg.tar.zst
+      - lapack-doc-3.12.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
