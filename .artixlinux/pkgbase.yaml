@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: liblas
-  version: 1.8.1.r128+gded46373-7
+  version: 1.8.1.r128+gded46373-8
   arch:
     - x86_64
   pkgname:
     - liblas
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.1.r128+gded46373-7
+    version: 1.8.1.r128+gded46373-8
     packages:
-      - liblas-1.8.1.r128+gded46373-7-x86_64.pkg.tar.zst
+      - liblas-1.8.1.r128+gded46373-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
