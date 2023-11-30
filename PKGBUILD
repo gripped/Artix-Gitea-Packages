@@ -45,8 +45,6 @@ build() {
   cd $pkgname
   # generate man page directly as docs target is broken: https://github.com/containers/netavark/issues/524
   mandown docs/$pkgname.1.md > $pkgname.1
-  # create service file manually as we are not using the Makefile
-  sed "s|@@NETAVARK@@|/usr/lib/podman/netavark|" contrib/systemd/system/netavark-dhcp-proxy.service.in > contrib/systemd/system/netavark-dhcp-proxy.service
   cargo build --frozen --release --all-features
 }
 
@@ -61,6 +59,5 @@ package() {
   cd $pkgname
   install -vDm 755 target/release/$pkgname -t "$pkgdir/usr/lib/podman/"
   install -vDm 644 $pkgname.1 -t "$pkgdir/usr/share/man/man1/"
-  install -vDm 644 contrib/systemd/system/*.{service,socket} -t "$pkgdir/usr/lib/systemd/system/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
