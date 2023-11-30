@@ -7,7 +7,7 @@
 pkgbase=akonadi
 pkgname=(akonadi libakonadi)
 pkgver=23.08.3
-pkgrel=1
+pkgrel=2
 pkgdesc='PIM layer, which provides an asynchronous API to access all kind of PIM data'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -30,6 +30,7 @@ build() {
 package_libakonadi() {
   pkgdesc='Libraries used by applications based on Akonadi'
   depends=(kitemmodels5 kaccounts-integration)
+  provides=(libakonadi5)
 
   DESTDIR="$pkgdir" cmake --install build
   rm -r "$pkgdir"/usr/bin # Provided by akonadi
