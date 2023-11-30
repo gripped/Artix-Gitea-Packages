@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: tellico
-  version: 3.5.1-1
+  version: 3.5.2-2
   arch:
     - x86_64
   pkgname:
     - tellico
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.5.1-1
+    version: 3.5.2-2
     packages:
-      - tellico-3.5.1-1-x86_64.pkg.tar.zst
+      - tellico-3.5.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
