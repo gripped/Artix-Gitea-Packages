@@ -6,7 +6,7 @@
 
 pkgname=jenkins
 pkgver=2.434
-pkgrel=1
+pkgrel=2
 _java=17
 pkgdesc='Extendable continuous integration server (latest)'
 arch=('any')
@@ -17,7 +17,6 @@ makedepends=("java-environment=${_java}" 'git' 'maven')
 provides=('jenkins-ci')
 conflicts=('jenkins-ci')
 replaces=('jenkins-ci')
-backup=('etc/conf.d/jenkins')
 install='jenkins.install'
 source=("https://github.com/jenkinsci/jenkins/archive/refs/tags/jenkins-${pkgver}.tar.gz"
         'jenkins.tmpfiles'
