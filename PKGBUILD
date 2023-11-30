@@ -2,7 +2,7 @@
 # Contributor: Romain Gautier <romain.gautier@nimamoh.com>
 
 pkgname=kotlin
-pkgver=1.9.10
+pkgver=1.9.21
 pkgrel=1
 pkgdesc='Statically typed programming language that can interoperate with Java'
 arch=(any)
@@ -11,8 +11,8 @@ license=(APACHE custom)
 depends=('java-environment>=8')
 makedepends=(setconf)
 source=("https://github.com/JetBrains/kotlin/releases/download/v${pkgver/_/-}/kotlin-compiler-${pkgver/_/-}.zip")
-sha512sums=('1a92e8e9f9e1a8cff0f1e3bd652beed67b0d3d5081800a08f7c0deba520d05c83a13a698776361f96bf7cce389171ac49fcc10d74cea56b89500e8b90a9220a4')
-b2sums=('02a73a17c0be80a83fd9ab1a6087391b62d981d452f8a6cb43c62b6f7226713c965058988b9d1fed32a5e039ef2617c5362357428d04cd92d4ec0ab04078732c')
+sha512sums=('94b1e2707c03ac88066bb8d4b4b2040842a7d0968ccb5797e66bfd648ecebdec9e36f8120bea8c7d1d0b7ee8c2d0d64f9c17931bbed0444b3e81bac8e84558a4')
+b2sums=('749f3a806087d64c7e6b2443d1dfc7cf30fa075f58453b21f1173b1640dc927b074420e8f29c22793717553e8be947fc0f2866d2af02d0e34a202b176260c132')
 
 prepare() {
   cd ${pkgname}c/bin
