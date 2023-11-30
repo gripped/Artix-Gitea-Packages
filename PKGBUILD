@@ -4,7 +4,7 @@
 pkgbase=avogadrolibs
 pkgname=(avogadrolibs avogadrolibs-qt5)
 pkgver=1.98.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Libraries that provide 3D rendering, visualization, analysis and data processing useful in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas'
 arch=(x86_64)
 url='https://www.openchemistry.org/'
@@ -61,7 +61,8 @@ package_avogadrolibs() {
            libglvnd
            molequeue
            pugixml
-           spglib)
+           spglib
+           verdict)
   optdepends=('avogadrolibs-qt5: For the VTK and Qt plugins')
 
   DESTDIR="$pkgdir" cmake --install build
