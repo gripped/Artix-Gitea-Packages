@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: pifpaf
-  version: 3.1.5-6
+  version: 3.1.5-7
   arch:
     - any
   pkgname:
     - pifpaf
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.1.5-6
+    version: 3.1.5-7
     packages:
-      - pifpaf-3.1.5-6-any.pkg.tar.zst
+      - pifpaf-3.1.5-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
