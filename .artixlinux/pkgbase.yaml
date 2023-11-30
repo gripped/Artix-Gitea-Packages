@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: zathura-pdf-mupdf
-  version: 0.4.1-9
+  version: 0.4.1-10
   arch:
     - x86_64
   pkgname:
     - zathura-pdf-mupdf
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.4.1-10
+    packages:
+      - zathura-pdf-mupdf-0.4.1-10-x86_64.pkg.tar.zst
   world:
     version: 0.4.1-9
     packages:
