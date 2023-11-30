@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Joe George <joe at externl dot com>
 # Contributor: Daniel Spies <ds20150201aur at pskx dot net>
 # Contributor: Otto Allmendinger <otto.allmendinger@gmail.com>
 
 pkgname=(zeroc-ice zeroc-ice-java)
 pkgbase=zeroc-ice
-pkgver=3.7.9
+pkgver=3.7.10
 pkgrel=1
 pkgdesc="An object-oriented middleware that provides RPC functionality"
 arch=(x86_64)
@@ -17,8 +17,8 @@ source=("ice-${pkgver}.tar.gz::https://github.com/zeroc-ice/ice/archive/v${pkgve
         "ice-packaging-${pkgver}.tar.gz::https://github.com/zeroc-ice/ice-packaging/archive/v${pkgver}.tar.gz"
         zeroc-ice.sysusers
 )
-sha256sums=('960b51bb14a0c89d60c0e65cb1d4c6b09fe94d4e4c033c50254f7cc9c862d3c0'
-            '952f33fcdb5c76a2a1c13589284f94f6cf462cab00a7692fa8a6aa7b632711e8'
+sha256sums=('b90e9015ca9124a9eadfdfc49c5fba24d3550c547f166f3c9b2b5914c00fb1df'
+            'a7d4b8f3732062de769e53531ed7b34765c9f95f60c294a09fcce65edf24703d'
             '5fdbb1ed753e84e6b49c529e171af848e74a8890fe485dfe1d2bbec3c198dd90')
 
 _make_args=(
@@ -54,7 +54,6 @@ package_zeroc-ice() {
   install -Dm644 "${srcdir}"/ice-packaging-${pkgver}/ice/rpm/glacier2router.conf "${pkgdir}"/etc/glacier2router.conf
   install -Dm644 "${srcdir}"/ice-packaging-${pkgver}/ice/rpm/icegridnode.conf "${pkgdir}"/etc/icegridnode.conf
   install -Dm644 "${srcdir}"/ice-packaging-${pkgver}/ice/rpm/icegridregistry.conf "${pkgdir}"/etc/icegridregistry.conf
-
 
   mkdir -p "${pkgdir}"/var/lib/ice/icegrid/{node1,registry}
   chown -R 101:101 "${pkgdir}"/var/lib/ice
