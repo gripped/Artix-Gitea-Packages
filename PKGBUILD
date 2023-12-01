@@ -3,13 +3,12 @@
 # Contributor: Silvio Knizek (killermoehre)
 
 pkgname=gnome-disk-utility
-pkgver=45.0
+pkgver=45.1
 pkgrel=1
 pkgdesc="Disk Management Utility for GNOME"
 url="https://gitlab.gnome.org/GNOME/gnome-disk-utility"
 arch=(x86_64)
 license=(GPL)
-groups=(gnome)
 depends=(
   gtk3
   libcanberra
@@ -27,8 +26,8 @@ makedepends=(
   git
   meson
 )
-options=(debug)
-_commit=c8b97677523e672be080b22b027f3988d9514cb2  # tags/45.0^0
+groups=(gnome)
+_commit=5208914fa4f6deebfd502353b51eef3aee65d3ba  # tags/45.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-disk-utility.git#commit=$_commit")
 b2sums=('SKIP')
 
