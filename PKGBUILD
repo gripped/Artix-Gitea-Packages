@@ -2,7 +2,7 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgname=haproxy
-pkgver=2.8.3
+pkgver=2.8.4
 pkgrel=1
 
 pkgdesc='Reliable, high performance TCP/HTTP load balancer'
@@ -14,14 +14,12 @@ depends=('openssl' 'pcre2' 'zlib' 'libxcrypt' 'libcrypt.so' 'lua')
 
 backup=('etc/haproxy/haproxy.cfg')
 
-install=haproxy.install
-
 source=(https://www.haproxy.org/download/${pkgver%.*}/src/haproxy-$pkgver.tar.gz
         haproxy.cfg
         haproxy.sysusers
         0001-Use-CFLAGS-and-LDFLAGS-when-building-admin.patch)
 
-sha256sums=('9ecc6ffe67a977d1ed279107bbdab790d73ae2a626bc38eee23fa1f6786a759e'
+sha256sums=('81bacbf50ec6d0f7ecaaad7c03e59978b00322fbdad6ed4a989dd31754b6f25d'
             'f6babef513b99a3fa0e50f2b144c73c980f1b78b119874ffa2580af1e651e7a9'
             'b02b4088205039f0979aef0ef3e22957f493dd54eabefaee7011f2d795303b3e'
             'a1e3a1c2923465081383eb431bae55ff9841d89909469311cdba4b394ec4a998')
@@ -47,6 +45,7 @@ build() {
     USE_OPENSSL=1 \
     USE_PCRE2=1 USE_PCRE2_JIT=1 \
     USE_PROMEX=1 \
+    USE_SYSTEMD=0 \
     USE_ZLIB=1
 
     make \
@@ -71,5 +70,7 @@ package() {
 
   install -D -m0644 ../haproxy.sysusers "$pkgdir"/usr/lib/sysusers.d/haproxy.conf
   install -D -m0644 ../haproxy.cfg "$pkgdir"/etc/haproxy/haproxy.cfg
+  install -D -m0644 admin/syntax-highlight/haproxy.vim \
+    "$pkgdir"/usr/share/nvim/runtime/syntax/haproxy.vim
   cp -r examples "$pkgdir"/usr/share/haproxy/examples
 }
