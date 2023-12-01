@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ibus
-  version: 1.5.29-1
+  version: 1.5.29-2
   arch:
     - x86_64
   pkgname:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.5.29-1
+    version: 1.5.29-2
     packages:
-      - ibus-1.5.29-1-x86_64.pkg.tar.zst
-      - libibus-1.5.29-1-x86_64.pkg.tar.zst
+      - ibus-1.5.29-2-x86_64.pkg.tar.zst
+      - libibus-1.5.29-2-x86_64.pkg.tar.zst
   world:
     version: 1.5.28-4
     packages:
