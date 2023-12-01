@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: telegram-desktop
-  version: 4.11.8-2.2
+  version: 4.11.8-2.3
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 4.11.8-2.2
+    version: 4.11.8-2.3
     packages:
-      - telegram-desktop-4.11.8-2.2-x86_64.pkg.tar.zst
+      - telegram-desktop-4.11.8-2.3-x86_64.pkg.tar.zst
   galaxy:
     version: 4.11.8-1
     packages:
