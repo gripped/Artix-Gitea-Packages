@@ -8,12 +8,12 @@ pkgbase:
     - qtcreator
     - qtcreator-devel
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,10 +29,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 12.0.0-2
-    packages:
-      - qtcreator-12.0.0-2-x86_64.pkg.tar.zst
-      - qtcreator-devel-12.0.0-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 12.0.0-1
     packages:
