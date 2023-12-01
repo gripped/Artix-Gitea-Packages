@@ -14,15 +14,13 @@ depends=('glibc')
 makedepends=('go' 'git' 'npm' 'nodejs' 'yamllint' 'typescript' 'yarn')
 
 options=(!lto)
-backup=('etc/prometheus/prometheus.yml' 'etc/conf.d/prometheus')
+backup=('etc/prometheus/prometheus.yml')
 
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
-        prometheus.sysusers
-        prometheus.conf)
+        prometheus.sysusers)
 
 sha256sums=('1a7981c792bdebe8a09103a3ced63375593603c2ccd39cad236037e70628b104'
-            '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f'
-            '6d32deb125381cbebac11b6953a7d9a65eb7e50f209dc1e22c63facf678a3070')
+            '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 build() {
   cd prometheus-$pkgver
@@ -64,7 +62,6 @@ check() {
 
 package() {
   install -Dm644 prometheus.sysusers "$pkgdir"/usr/lib/sysusers.d/prometheus.conf
-  install -Dm644 prometheus.conf "${pkgdir}"/etc/conf.d/prometheus
 
   cd prometheus-$pkgver
 
