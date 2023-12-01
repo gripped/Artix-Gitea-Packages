@@ -14,7 +14,7 @@ depends=(cinnamon-desktop colord dbus-glib libcanberra-pulse libcups
          libgnomekbd libgudev libnotify librsvg libwacom nss polkit
          pulseaudio-alsa upower)
 optdepends=('cinnamon-translations: i18n')
-makedepends=(meson samurai xf86-input-wacom)
+makedepends=(meson samurai xf86-input-wacom xf86-input-evdev)
 options=(!emptydirs)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha512sums=('44348765bf8c0cb941d177a6765aef10796d72f5c215dbffa4b514523956e257128d6bbbb0dcd9c3f0b2bcde24745e082ad82a7cee149125903e13b349c07200')
