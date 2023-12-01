@@ -7,7 +7,7 @@
 # Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
 
 pkgname=mlt
-pkgver=7.20.0
+pkgver=7.22.0
 pkgrel=1
 pkgdesc='An open source multimedia framework'
 arch=(x86_64)
@@ -73,7 +73,7 @@ makedepends=(cmake
              swig
              vid.stab)
 source=(https://github.com/mltframework/mlt/releases/download/v$pkgver/mlt-$pkgver.tar.gz)
-sha256sums=('7472372b31f76b2eb0ac66c756391be7cb859a3a779c97ccb7dcf7086ac9d816')
+sha256sums=('7cf4d9573a061d76902c6e12a2f09f5f461e7c697635233df82a63a3fe4d6da6')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
