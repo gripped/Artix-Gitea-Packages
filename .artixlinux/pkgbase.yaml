@@ -10,31 +10,27 @@ pkgbase:
     - qgpgme-qt6
     - python-gpgme
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 1.23.2-1
     packages:
       - gpgme-1.23.2-1-x86_64.pkg.tar.zst
       - qgpgme-qt5-1.23.2-1-x86_64.pkg.tar.zst
       - qgpgme-qt6-1.23.2-1-x86_64.pkg.tar.zst
       - python-gpgme-1.23.2-1-x86_64.pkg.tar.zst
-  system:
-    version: 1.23.1-1
-    packages:
-      - gpgme-1.23.1-1-x86_64.pkg.tar.zst
-      - qgpgme-qt5-1.23.1-1-x86_64.pkg.tar.zst
-      - qgpgme-qt6-1.23.1-1-x86_64.pkg.tar.zst
-      - python-gpgme-1.23.1-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
