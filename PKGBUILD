@@ -8,8 +8,8 @@ pkgname=(
   audacity
   audacity-docs
 )
-pkgver=3.4.0
-pkgrel=1
+pkgver=3.4.2
+pkgrel=2
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
 arch=(x86_64)
@@ -61,11 +61,19 @@ makedepends=(
 source=(
   https://github.com/audacity/audacity/archive/refs/tags/$_name-$pkgver.tar.gz
   https://github.com/$pkgbase/$pkgbase/releases/download/$_name-$pkgver/$pkgbase-manual-$pkgver.zip
+  audacity_3_4_2_update_vst3_cmake_args.patch
 )
-sha512sums=('1fff66d3199591fed24a7b7a7ea3cb8b2a381c4f16d15a67949f2631a2e5ff2cac28a599b3ce28b0812de70f4984dfa51d37b3bed4e8f75deb4d5006817998d4'
-            '731b13854a7cc110145aec68fe3862c57e2962ca059e5ddbb6bbd2806d4381a6520edcf54b2f9666400229da78ce39a3efd5dffa4175eb9c375d21e097cf2c60')
-b2sums=('63f56548bee617dd20554cffe1ccf70f395441388273a1267bf030627787900018f58679da90807faf0fba83c3e79f9198d40a22c7a8c5cc220d80ea82181c95'
-        '7c21fb78f70446a2fdd3563a2f8a7c51671882bce6b191996975c66d7b059c8a6cde0401e3fe9c12100ef4363a5c16627449ce0b8316b3b0a47117ce4da8e852')
+sha512sums=('a4a3bc68e46988e5538edbe6d8f42428b69e3f294b8d65337600e6806b516100d20a92135954f073c863d29767b904b781bd3a09cec40b8a85ee4463f52e1759'
+            'a840409a98ba570113e445264feac22555585c9a6e64191a3d90d693f55325d9bf0a028869828f0ad3074e451087563ef47064d2774348184fe62bbd88dfde5f'
+            '075ab510b28ce96be049bc62d11d4f978090268376e76865fc41424d2f76ec79f9625ab5479aee488bf357c773346fefd2e0cc3884acb5ba14083c4e79276e35')
+b2sums=('f5bcf6adb925c22b74d6bb1f9605e428f00d776715dd221ae2e2026ffe65a03410279f01690c9b671df9a4924940e5a93dc3535b6a41626663ccdda5ccf7554f'
+        '3b49bd9ac0ceb8ee36ac8506fbec159ad6ed884ed1a1b5619a7f309c951400699fd92e1e79771bd5ca23055e2b6d24138007e613eddd8cc97ed4b443da4b5f6d'
+        'c3da5f1c01f712053ada2101d489dfab0dcd2a6cafa65a29c17de12274a4373d2e63de65888b1ffaccac85b64508f260596beb301d36d7e305002cd3a76eb679')
+
+prepare() {
+    cd "$pkgname-$_name-$pkgver"
+    patch --forward --strip=1 --input="${srcdir}/audacity_3_4_2_update_vst3_cmake_args.patch"
+}
 
 build() {
   local cmake_options=(
