@@ -4,10 +4,12 @@
 pkgbase=libreoffice-fresh-i18n
 _LOver=7.6.3.2
 pkgver=7.6.3
-pkgrel=1
+pkgrel=2
 arch=('any')
 url="https://www.documentfoundation.org"
 license=('LGPL')
+options=('!strip')
+
 _url="https://download.documentfoundation.org/libreoffice/stable"
 
 # https://wiki.documentfoundation.org/Language_Teams
@@ -536,6 +538,9 @@ _package() {
   cp -R opt/libreoffice*/* "$pkgdir"/usr/lib/libreoffice
   chown root:root -R "$pkgdir"/usr/lib/libreoffice
 }
+
+pkgname=()
+source=()
 
 for _lang in "${_languages[@]}"; do
   declare -a "_langa=($_lang)"
