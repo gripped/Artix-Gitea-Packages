@@ -43,9 +43,9 @@ build() {
     USE_GETADDRINFO=1 \
     USE_LUA=1 \
     USE_OPENSSL=1 \
-    USE_PCRE2=1 USE_PCRE2_JIT=1 \
+    USE_PCRE2=1 \
+    USE_PCRE2_JIT=1 \
     USE_PROMEX=1 \
-    USE_SYSTEMD=0 \
     USE_ZLIB=1
 
     make \
