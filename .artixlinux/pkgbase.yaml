@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libetonyek
-  version: 0.1.10-3
+  version: 0.1.10-3.1
   arch:
     - x86_64
   pkgname:
     - libetonyek
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.10-3
+    version: 0.1.10-3.1
     packages:
-      - libetonyek-0.1.10-3-x86_64.pkg.tar.zst
+      - libetonyek-0.1.10-3.1-x86_64.pkg.tar.zst

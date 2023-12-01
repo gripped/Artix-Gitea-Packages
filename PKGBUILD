@@ -4,7 +4,7 @@
 
 pkgname=libetonyek
 pkgver=0.1.10
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Library and a set of tools for reading and converting Apple Keynote presentations'
 arch=('x86_64')
 url="https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
