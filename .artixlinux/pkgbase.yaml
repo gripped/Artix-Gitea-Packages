@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: liblangtag
-  version: 0.6.5-1
+  version: 0.6.6-1
   arch:
     - x86_64
   pkgname:
     - liblangtag
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.6.5-1
+    version: 0.6.6-1
     packages:
-      - liblangtag-0.6.5-1-x86_64.pkg.tar.zst
+      - liblangtag-0.6.6-1-x86_64.pkg.tar.zst
