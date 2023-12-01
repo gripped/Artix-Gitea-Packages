@@ -4,7 +4,7 @@
 # Contributor: Dan Anderson <dan-anderson at cox dptnet>
 
 pkgname=mosquitto
-pkgver=2.0.17
+pkgver=2.0.18
 pkgrel=1
 pkgdesc="An Open Source MQTT Broker"
 arch=(x86_64)
@@ -37,19 +37,22 @@ source=(
   "sysusers_mosquitto.conf"
 )
 backup=("etc/$pkgname/$pkgname.conf")
-sha512sums=('0882380461bf110abe10c5487334b0ae5ce8d890a2ad8f9b419278a0f04fc821918f50408c50c843bf09741eb62d5b9a1ab10df262d46cd70aafc3e063344a9a'
+sha512sums=('63f7e2811964bab5856848e6918627c47afc6534ff60aad5ece3d2fa330b407c9df14027610826e343ee68ff7d8d5d93f2459713061251ded478c42766946767'
             'SKIP'
             '21848b890c2db258138795ec21a009e022b6a8369217eb31939f976ad434229dd9f61d33e8109ade7bc001e8668e9d42b59c1ab079753860417961e102356f0e')
 validpgpkeys=('A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7')
 
 prepare() {
   # disable broken tests
-  sed '/06-bridge-/d; /08-ssl-connect-cert-auth-expired/d; /08-ssl-connect-cert-auth-revoked/d' -i $pkgname-$pkgver/test/broker/{Makefile,test.py}
   sed '/02-subscribe-qos1/d' -i $pkgname-$pkgver/test/lib/{Makefile,test.py}
   sed '/client test/d' -i $pkgname-$pkgver/test/Makefile
 }
 
 build() {
+  # /usr/bin/mosquitto uses malloc_usable_size, which is incompatible with fortification level 3
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
   local cmake_options=(
     -B build
     -D CMAKE_BUILD_TYPE=None
@@ -58,6 +61,7 @@ build() {
     -D CMAKE_INSTALL_SYSCONFDIR=/etc
     -D WITH_BUNDLED_DEPS=OFF
     -D WITH_SRV=ON
+    -D WITH_SYSTEMD=OFF
     -D WITH_WEBSOCKETS=ON
     -S $pkgname-$pkgver
     -W no-dev
