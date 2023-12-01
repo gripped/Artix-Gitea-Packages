@@ -2,7 +2,7 @@
 
 pkgname=qalculate-qt
 pkgver=4.9.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Qt frontend for libqalculate'
 arch=(x86_64)
 url='https://qalculate.github.io/'
