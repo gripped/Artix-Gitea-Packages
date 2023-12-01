@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6-multimedia
-  version: 6.6.1-1.1
+  version: 6.6.1-1.2
   arch:
     - x86_64
   pkgname:
@@ -30,11 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.6.1-1.1
+    version: 6.6.1-1.2
     packages:
-      - qt6-multimedia-6.6.1-1.1-x86_64.pkg.tar.zst
-      - qt6-multimedia-ffmpeg-6.6.1-1.1-x86_64.pkg.tar.zst
-      - qt6-multimedia-gstreamer-6.6.1-1.1-x86_64.pkg.tar.zst
+      - qt6-multimedia-6.6.1-1.2-x86_64.pkg.tar.zst
+      - qt6-multimedia-ffmpeg-6.6.1-1.2-x86_64.pkg.tar.zst
+      - qt6-multimedia-gstreamer-6.6.1-1.2-x86_64.pkg.tar.zst
   world:
     version: 6.6.0-1
     packages:
