@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: rssguard
-  version: 4.5.5-2
+  version: 4.5.5-2.1
   arch:
     - x86_64
   pkgname:
     - rssguard
     - rssguard-lite
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.5.5-2.1
+    packages:
+      - rssguard-4.5.5-2.1-x86_64.pkg.tar.zst
+      - rssguard-lite-4.5.5-2.1-x86_64.pkg.tar.zst
   world:
     version: 4.5.5-1
     packages:
