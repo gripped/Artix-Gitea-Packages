@@ -4,7 +4,7 @@
 
 pkgname=libetonyek
 pkgver=0.1.10
-pkgrel=3.1
+pkgrel=3.2
 pkgdesc='Library and a set of tools for reading and converting Apple Keynote presentations'
 arch=('x86_64')
 url="https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
@@ -16,7 +16,7 @@ sha256sums=('b430435a6e8487888b761dc848b7981626eb814884963ffe25eb26a139301e9a')
 
 build() {
   cd $pkgname-$pkgver
-  ./configure --prefix=/usr --with-mdds=2.0
+  ./configure --prefix=/usr --with-mdds=2.1
   make
 }
 
