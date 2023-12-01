@@ -7,12 +7,12 @@
 _pkgname=pcsclite
 pkgname=lib32-$_pkgname
 pkgver=2.0.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="PC/SC Architecture smartcard middleware library (32-bit)"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
 license=('BSD')
-depends=('libudev.so' 'libpolkit-gobject-1.so' $_pkgname)
+depends=('libpolkit-gobject-1.so' $_pkgname)
 makedepends=('lib32-polkit' 'autoconf-archive')
 provides=('libpcsclite.so' 'libpcscspy.so')
 validpgpkeys=('F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E') # Ludovic Rousseau <rousseau@debian.org>
