@@ -3,9 +3,9 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-_tag=192470f089d60952f0af6163514bd06f8c535f23
-pkgver=1.95.0
-pkgrel=1
+_tag=d75d6d65d1681889db05b077e97fc2ddf123b757
+pkgver=1.97.0
+pkgrel=0.9
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/matrix-org/synapse"
 arch=('x86_64')
@@ -40,7 +40,6 @@ sha256sums=('SKIP'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
-backup=('etc/synapse/log_config.yaml')
 install=synapse.install
 # validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
 #               '053191DFF4670330465227F7A542E4ED1B0FAC09'
@@ -55,8 +54,8 @@ install=synapse.install
 prepare() {
 	cd $pkgname
 	# allow any poetry-core to be used
-	sed 's/poetry-core>=1.1.0,<=1.6.0/poetry-core>=1.0.0/' -i pyproject.toml
-	sed 's/setuptools_rust>=1.3,<=1.6.0/setuptools_rust>=1.3.0/' -i pyproject.toml
+	sed 's/poetry-core>=1.1.0,<=1.7.0/poetry-core>=1.8.0/' -i pyproject.toml
+	#sed 's/setuptools_rust>=1.3,<=1.6.0/setuptools_rust>=1.3.0/' -i pyproject.toml
 }
 
 build() {
