@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Florian Pritz <flo@xinu.at>
@@ -11,10 +11,10 @@
 
 pkgname=asciidoc
 pkgver=10.2.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Text document format for short documents, articles, books and UNIX man pages'
 arch=('any')
-url='https://asciidoc.org/'
+url='https://asciidoc-py.github.io'
 license=('GPL')
 depends=('python' 'libxslt' 'docbook-xsl')
 checkdepends=('dblatex' 'graphviz' 'lilypond' 'python-pytest'{,-mock} 'source-highlight')
