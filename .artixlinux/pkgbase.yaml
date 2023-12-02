@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pyqt-builder
-  version: 1.15.3-1
+  version: 1.15.4-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.15.3-1
+    version: 1.15.4-1
     packages:
-      - pyqt-builder-1.15.3-1-any.pkg.tar.zst
+      - pyqt-builder-1.15.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
