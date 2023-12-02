@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - wine
 actions:
-  addRepo: null
-  removeRepo: lib32
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -37,12 +37,12 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
     version: 8.21-2
     packages:
       - wine-8.21-2-x86_64.pkg.tar.zst
-  lib32:
-    version: null
-    packages: []
   galaxy-goblins:
     version: null
     packages: []
