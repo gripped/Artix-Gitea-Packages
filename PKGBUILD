@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Leonidas Spyropoulos <artafinde@archlinux.org>
 # Contributor: Patrick Ziegler <p.ziegler96@gmail.com>
 
 pkgname=polybar
-pkgver=3.6.3
-pkgrel=3
+pkgver=3.7.1
+pkgrel=1
 pkgdesc="A fast and easy-to-use status bar"
 arch=('x86_64')
 url="https://github.com/polybar/polybar"
@@ -16,7 +16,7 @@ makedepends=("cmake" "python" "pkg-config" "python-sphinx" "python-packaging" "i
 optdepends=("i3-wm: i3 module support")
 source=("${pkgname}-${pkgver}.tar.gz::${url}/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz"
         "${pkgname}-${pkgver}.tar.gz.asc::${url}/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz.asc")
-sha256sums=('f25758573567208fc7b6f4d4115a6117a87389cbcc094cf605d079775be95fa5'
+sha256sums=('5de6ad385ba09dc453a4e5ec7054749a4882b5b21a62c17ae40bf7c90613ff0f'
             'SKIP')
 validpgpkeys=('1D5791352D51A228D4DDDBA4521E5E03AEBCA1A7') # Patrick Ziegler <p.ziegler96@gmail.com>
 
