@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Alessio 'mOLOk' Bolognino <themolok@gmail.com>
 
 pkgname=moreutils
-pkgver=0.67
-pkgrel=4
+pkgver=0.68
+pkgrel=1
 pkgdesc="A growing collection of the unix tools that nobody thought to write thirty years ago"
 arch=('x86_64')
 url="https://joeyh.name/code/moreutils/"
