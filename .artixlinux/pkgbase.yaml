@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-shell-extensions
-  version: 45.1-3
+  version: 45.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.1-3
+    version: 45.2-1
     packages:
-      - gnome-shell-extensions-45.1-3-any.pkg.tar.zst
+      - gnome-shell-extensions-45.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
