@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jiachen Yang <farseerfc@gmail.com>
 # Contributor: Stefan Tatschner <rumpelsepp@sevenbyte.org>
 # Contributor: David Runge <dave@sleepmap.de>
 
 pkgname=pelican
 pkgver=4.8.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A tool to generate a static blog, with restructured text (or markdown) input files."
 arch=('any')
 url="https://blog.getpelican.com/"
@@ -24,6 +24,7 @@ optdepends=('python-markdown: Markdown support'
             'rsync: uploading through rsync+SSH'
             'lftp: uploading through FTP'
             's3cmd: uploading through S3'
+            'python-invoke: Task parallelism'
             'python-ghp-import: uploading through gh-pages'
             'python-typogrify: typographical enhancements'
             'pandoc: for pelican-import auto convert'
