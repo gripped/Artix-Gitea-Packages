@@ -1,14 +1,14 @@
 # Maintainer: Christian Hesse <mail@eworm.de>
 
 pkgname=openvpn
-_tag='29e5246b5b9d048a77e05160d032a91167900fe1' # git rev-parse v${pkgver}
-pkgver=2.6.6
+_tag='d1a5fef390c038b0c61ee7bce0d53b90a56a567f' # git rev-parse v${pkgver}
+pkgver=2.6.8
 pkgrel=1
 pkgdesc='An easy-to-use, robust and highly configurable VPN (Virtual Private Network)'
 arch=('x86_64')
 url='https://openvpn.net/index.php/open-source.html'
 license=('custom')
-depends=('openssl' 'lzo' 'lz4' 'pkcs11-helper' 'libnl'  'libpkcs11-helper.so')
+depends=('openssl' 'lzo' 'lz4' 'pkcs11-helper' 'libpkcs11-helper.so')
 optdepends=('easy-rsa: easy CA and certificate handling'
             'pam: authenticate via PAM')
 makedepends=('git' 'python-docutils')
