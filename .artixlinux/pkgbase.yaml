@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: zeitgeist
-  version: 1.0.4-2
+  version: 1.0.4-3
   arch:
     - x86_64
   pkgname:
     - zeitgeist
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.4-2
+    version: 1.0.4-3
     packages:
-      - zeitgeist-1.0.4-2-x86_64.pkg.tar.zst
+      - zeitgeist-1.0.4-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
