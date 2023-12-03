@@ -1,6 +1,19 @@
 # /etc/conf.d/gitea: config file for /etc/init.d/gitea
 
-GITEA_USER=gitea
-GITEA_CONF=/etc/gitea/app.ini
-GITEA_WORK_DIR=/var/lib/gitea
+# Gitea configuration
+GITEA_CONF="/etc/gitea/app.ini"
+
+# Gitea user
+GITEA_USER="gitea"
+
+# Gitea group
+GITEA_GROUP="gitea"
+
+# Gitea working directory
+GITEA_WORK_DIR="/var/lib/gitea"
+
+# Gitea custom directory
+GITEA_CUSTOM="${GITEA_WORK_DIR}/custom"
+
+# Gitea log file
 GITEA_LOG_FILE=/var/log/gitea/http.log

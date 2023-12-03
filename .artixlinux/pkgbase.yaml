@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gitea-openrc
-  version: 20210505-1
+  version: 20231203-1
   arch:
     - any
   pkgname:
     - gitea-openrc
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20231203-1
+    packages:
+      - gitea-openrc-20231203-1-any.pkg.tar.zst
   world:
     version: 20210505-1
     packages:
