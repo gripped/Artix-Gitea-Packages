@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xapian-core
-  version: 1:1.4.23-1
+  version: 1:1.4.24-1
   arch:
     - x86_64
   pkgname:
     - xapian-core
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.4.23-1
+    version: 1:1.4.24-1
     packages:
-      - xapian-core-1:1.4.23-1-x86_64.pkg.tar.zst
+      - xapian-core-1:1.4.24-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
