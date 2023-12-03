@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: jupyterlab-pygments
-  version: 0.2.2-1
+  version: 0.3.0-1
   arch:
     - any
   pkgname:
     - jupyterlab-pygments
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.2-1
+    version: 0.3.0-1
     packages:
-      - jupyterlab-pygments-0.2.2-1-any.pkg.tar.zst
+      - jupyterlab-pygments-0.3.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
