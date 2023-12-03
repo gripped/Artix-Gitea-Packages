@@ -2,7 +2,7 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=6.5.2.8.realtime1
+pkgver=6.6.0.15.realtime1
 pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
@@ -28,9 +28,9 @@ source=(
   config
 )
 sha512sums=('SKIP'
-            '14173f0c6db979244b125d1ebb9a077d8b0e60631625551f570281b595625b44119d88eece77d42dc6688a0c0f918d533e4ec6efd55aff1565fb0e06ad5f26fc')
+            '2e8ebc0c178e75d40eaebdbadf08e43197c4e2ec4d9f40e4a594fb3800c23e48cf4fb9025c786887971d24a1d44cca6a0ab1d19e805c0ca727617cbb6bc0c1b8')
 b2sums=('SKIP'
-        '0e12205b30953af851db529eeb9c37a149baa8ad7faab42921e1204797c77457996572df6e7a86359ba386887f269a562077f4b485b13a8a85b757f14b1f96bf')
+        '254284e07aba1fb667ae7141afeceb337597d9130bed89558bcdfe431c143bb328513c21493420b7e144cdd2601adec886fb32d58366153b15bae78aacffed41')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@kernel.org>
   '64254695FFF0AA4466CC19E67B96E8162A8CF5D1'  # Sebastian Andrzej Siewior
@@ -54,7 +54,9 @@ prepare() {
   echo "-$pkgrel" > localversion.10-pkgrel
   echo "${pkgbase#linux}" > localversion.20-pkgname
   make defconfig
-  make -s kernelrelease > version
+  # workaround for scripts/setlocalversion trying to be too clever (and appending commit checksums where it shouldn't)
+  local kernelrelease=$(make -s kernelrelease)
+  echo "${kernelrelease/-g*/}" > version
   make mrproper
 
   local src
@@ -159,8 +161,8 @@ _package() {
   ZSTD_CLEVEL=19 _make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
-  # remove build and source links
-  rm "$modulesdir"/{source,build}
+  # remove build link
+  rm "$modulesdir"/build
 
   # licenses
   install -vDm 644 LICENSES/deprecated/{GPL-1.0,ISC,Linux-OpenIB,X11,Zlib} -t "$pkgdir/usr/share/licenses/$pkgname/"

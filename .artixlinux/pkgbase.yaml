@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt
-  version: 6.5.2.8.realtime1-1
+  version: 6.6.0.15.realtime1-1
   arch:
     - x86_64
   pkgname:
@@ -51,8 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.5.2.8.realtime1-1
+    version: 6.6.0.15.realtime1-1
     packages:
-      - linux-rt-6.5.2.8.realtime1-1-x86_64.pkg.tar.zst
-      - linux-rt-headers-6.5.2.8.realtime1-1-x86_64.pkg.tar.zst
-      - linux-rt-docs-6.5.2.8.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-6.6.0.15.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-headers-6.6.0.15.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-docs-6.6.0.15.realtime1-1-x86_64.pkg.tar.zst
