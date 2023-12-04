@@ -3,8 +3,8 @@
 # Contributor: Bart Verhagen <barrie.verhagen at gmail dot com>
 
 pkgname=catch2
-_gitcommit=62fd660583d3ae7a7886930b413c3c570e89786c
-pkgver=2.13.9
+_gitcommit=182c910b4b63ff587a3440e08f84f70497e49a81
+pkgver=2.13.10
 pkgrel=1
 pkgdesc="Modern, C++-native, header-only, test framework for unit-tests, TDD and BDD"
 arch=('any')
@@ -25,8 +25,10 @@ pkgver() {
 
 build() {
   cd ${pkgname}
-  export CFLAGS+=" ${CPPFLAGS}"
-  export CXXFLAGS+=" ${CPPFLAGS}"
+
+  # our recent default flags break test 14 (ApprovalTests)
+  unset CXXFLAGS
+
   cmake -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
