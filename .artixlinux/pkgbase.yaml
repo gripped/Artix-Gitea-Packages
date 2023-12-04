@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: liblangtag
-  version: 0.6.6-1
+  version: 0.6.7-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.6.6-1
+    version: 0.6.7-1
     packages:
-      - liblangtag-0.6.6-1-x86_64.pkg.tar.zst
+      - liblangtag-0.6.7-1-x86_64.pkg.tar.zst
