@@ -4,10 +4,10 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-_tag='d32d74bf433a419f2a8976530fb03669bde722cd' # git rev-parse v${_tag_name}
-_tag_name=2.39.2
+_tag='bc0e318941a0539be1205ea1ac1dbfa834b7d033' # git rev-parse v${_tag_name}
+_tag_name=2.39.3
 pkgver=${_tag_name/-/}
-pkgrel=2
+pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -43,10 +43,6 @@ sha256sums=('SKIP'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37')
 
 _backports=(
-  # meson: install write executable with group 'tty'
-  '00f115d81146599324c454f6756db6491855f430'
-  # meson: install wall executable with group 'tty'
-  '5f3359c5c9dab9d5791d05a646b9c04c19eeb80e'
 )
 
 _reverts=(
@@ -140,7 +136,7 @@ package_util-linux() {
   rmdir "$pkgdir"/"${_python_stdlib}"
   mv "$pkgdir"/usr/share/man/man3 util-linux-libs/man3
 
-  # install sysusers
+  # install esysusers
   install -Dm0644 util-linux.sysusers \
     "${pkgdir}/usr/lib/sysusers.d/util-linux.conf"
 
