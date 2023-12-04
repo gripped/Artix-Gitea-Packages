@@ -4,12 +4,12 @@
 pkgname=plasma-pa
 pkgver=5.27.9
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Plasma applet for audio volume management using PulseAudio'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL)
-depends=(plasma-workspace pulseaudio perl)
+depends=(plasma-workspace pulse-native-provider perl)
 makedepends=(extra-cmake-modules kdoctools5)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
