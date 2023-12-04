@@ -407,7 +407,6 @@ package_pipewire-pulse() {
     pulseaudio
     pulseaudio-bluetooth
   )
-  install=pipewire-pulse.install
 
   mv pulse/* "$pkgdir"
 
