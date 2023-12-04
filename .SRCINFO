@@ -1,7 +1,7 @@
 pkgbase = pipewire
 	pkgdesc = Low-latency audio/video router and processor
-	pkgver = 0.3.83
-	pkgrel = 1
+	pkgver = 1.0.0
+	pkgrel = 2
 	epoch = 1
 	url = https://pipewire.org
 	arch = x86_64
@@ -44,16 +44,16 @@ pkgbase = pipewire
 	makedepends = systemd
 	makedepends = valgrind
 	makedepends = webrtc-audio-processing-1
-	source = git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=6fd7f39dbec9c3a65aa2de0123c6bfbda7c53a85
+	source = git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=4debdcd40b055b3eaa83a8f4443aa990ea566bfe
 	b2sums = SKIP
 
 pkgname = pipewire
 	install = pipewire.install
 	license = MIT
-	license = LGPL
+	license = LGPL-2.1-or-later
 	depends = gcc-libs
 	depends = glibc
-	depends = libpipewire=1:0.3.83-1
+	depends = libpipewire=1:1.0.0-2
 	depends = libcamera-base.so
 	depends = libcamera.so
 	depends = libdbus-1.so
@@ -87,7 +87,7 @@ pkgname = libpipewire
 
 pkgname = alsa-card-profiles
 	pkgdesc = Low-latency audio/video router and processor - ALSA card profiles
-	license = LGPL
+	license = LGPL-2.1-or-later
 
 pkgname = pipewire-docs
 	pkgdesc = Low-latency audio/video router and processor - documentation
@@ -145,7 +145,8 @@ pkgname = pipewire-jack-client
 pkgname = pipewire-jack
 	pkgdesc = Low-latency audio/video router and processor - JACK replacement
 	license = MIT
-	license = GPL2
+	license = LGPL-2.1-or-later
+	license = GPL-2.0-only
 	depends = glibc
 	depends = libpipewire-0.3.so
 	depends = pipewire
@@ -176,6 +177,7 @@ pkgname = pipewire-pulse
 	depends = pipewire-audio
 	depends = pipewire-session-manager
 	depends = systemd-libs
+	provides = pulse-native-provider
 	provides = pulseaudio
 	provides = pulseaudio-bluetooth
 	conflicts = pulseaudio
@@ -229,3 +231,11 @@ pkgname = pipewire-x11-bell
 	depends = libxfixes
 	depends = pipewire
 	depends = pipewire-audio
+
+pkgname = pipewire-session-manager
+	pkgdesc = Session manager for PipeWire (default provider)
+	depends = wireplumber
+
+pkgname = pulse-native-provider
+	pkgdesc = PulseAudio sound server (default provider)
+	depends = pipewire-pulse
