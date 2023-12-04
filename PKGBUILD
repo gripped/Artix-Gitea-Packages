@@ -3,7 +3,7 @@
 
 _pkgname=gitea
 pkgname=gitea-openrc
-pkgver=20231203
+pkgver=20231204
 pkgrel=1
 pkgdesc="OpenRC Gitea init script"
 arch=('any')
@@ -17,7 +17,7 @@ backup=('etc/conf.d/gitea')
 source=("gitea.confd"
         "gitea.initd")
 sha256sums=('1ae952b4401b88d495106bb3d31314376ec3283e3a15d03405abda1af00397a0'
-            '32173d9b4f9a4d891c87af72b86055806298a7905a261aef466addbdc7da45af')
+            '4d88928af6d78aed295585705facd2121ccd913ead0e93c44bf2a378debf1042')
 
 package() {
   install -Dm0644 "${srcdir}/${_pkgname}.confd" "${pkgdir}/etc/conf.d/${_pkgname}"

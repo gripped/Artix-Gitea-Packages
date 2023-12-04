@@ -5,7 +5,8 @@ name=gitea
 command="/usr/bin/gitea"
 command_user="${GITEA_USER:-gitea}:${GITEA_GROUP:-gitea}"
 command_args="web --config '${GITEA_CONF:-/etc/gitea/app.ini}'"
-supervise_daemon_args="--env GITEA_WORK_DIR='${GITEA_WORK_DIR:-/var/lib/gitea}' --chdir '${GITEA_WORK_DIR:-/var/lib/gitea}' --stdout '${GITEA_LOG_FILE:-/var/log/gitea/http.log}' --stderr '${GITEA_LOG_FILE:-/var/log/gitea/http.log}' --env GITEA_CUSTOM='${GITEA_CUSTOM:-${GITEA_WORK_DIR}/custom}'"
+supervise_daemon_args="--env GITEA_WORK_DIR='${GITEA_WORK_DIR:-/var/lib/gitea}' --chdir '${GITEA_WORK_DIR:-/var/lib/gitea}' --env GITEA_CUSTOM='${GITEA_CUSTOM:-${GITEA_WORK_DIR}/custom}'"
+
 
 depend() {
         use logger dns
