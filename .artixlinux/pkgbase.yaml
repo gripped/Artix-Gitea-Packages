@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: act-runner-openrc
+  version: 20231204-1
+  arch:
+    - any
+  pkgname:
+    - act-runner-openrc
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -47,5 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 20231204-1
+    packages:
+      - act-runner-openrc-20231204-1-any.pkg.tar.zst

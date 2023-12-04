@@ -1,0 +1,10 @@
+#!/usr/bin/openrc-run
+
+description="Act Runner"
+command="/usr/bin/act_runner"
+command_args="-c /etc/act_runner/act_runner.yaml daemon"
+supervisor="supervise-daemon"
+
+depend() {
+    after gitea
+}
