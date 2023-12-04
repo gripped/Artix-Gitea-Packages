@@ -3,105 +3,106 @@
 
 pkgbase=wireplumber
 pkgname=(
-  wireplumber
-  libwireplumber
+	wireplumber
+	libwireplumber
 )
-_commit=0d249b8a13d7168fe54fa6eb1db1c4a5fcc8d3f8  # tags/0.4.16
-pkgver=0.4.16
+_commit=d3eb77b292655cef333a8f4cab4e861415bc37c2 # tags/0.4.17
+pkgver=0.4.17
 pkgrel=1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
 arch=(x86_64)
 license=(MIT)
 makedepends=(
-  doxygen
-  elogind
-  git
-  glib2
-  gobject-introspection
-  graphviz
-  lua
-  meson
-  pipewire
-  python-lxml
+	doxygen
+	elogind
+	git
+	glib2
+	gobject-introspection
+	graphviz
+	lua
+	meson
+	pipewire
+	python-lxml
 )
 checkdepends=(pipewire-audio)
 source=("git+https://gitlab.freedesktop.org/pipewire/$pkgbase.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
-  cd $pkgbase
-  git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+	cd $pkgbase
+	git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {
-  cd $pkgbase
+	cd $pkgbase
 }
 
 build() {
-  local meson_options=(
-    -D systemd=disabled
-    -D doc=disabled
-    -D elogind=enabled
-    -D system-lua=true
-  )
+	local meson_options=(
+		-D systemd=disabled
+		-D doc=disabled
+		-D elogind=enabled
+		-D system-lua=true
+	)
 
-  artix-meson $pkgbase build "${meson_options[@]}"
-  meson compile -C build
+	artix-meson $pkgbase build "${meson_options[@]}"
+	meson compile -C build
 }
 
 check() {
-  meson test -C build --print-errorlogs
+	meson test -C build --print-errorlogs
 }
 
 _pick() {
-  local p="$1" f d; shift
-  for f; do
-    d="$srcdir/$p/${f#$pkgdir/}"
-    mkdir -p "$(dirname "$d")"
-    mv "$f" "$d"
-    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
-  done
+	local p="$1" f d
+	shift
+	for f; do
+		d="$srcdir/$p/${f#$pkgdir/}"
+		mkdir -p "$(dirname "$d")"
+		mv "$f" "$d"
+		rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+	done
 }
 
 _ver=${pkgver:0:3}
 
 package_wireplumber() {
-  depends=(
-    "libwireplumber=$pkgver-$pkgrel"
-    lua
-    pipewire
-  )
-  provides=(pipewire-session-manager)
-  conflicts=(pipewire-media-session)
+	depends=(
+		"libwireplumber=$pkgver-$pkgrel"
+		lua
+		pipewire
+	)
+	provides=(pipewire-session-manager)
+	conflicts=(pipewire-media-session)
 
-  meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 
-  (
-    cd "$pkgdir"
+	(
+		cd "$pkgdir"
 
-    _pick libw usr/lib/libwireplumber-$_ver.so*
-    _pick libw usr/lib/girepository-1.0
-    _pick libw usr/lib/pkgconfig
-    _pick libw usr/include
-    _pick libw usr/share/gir-1.0
-  )
+		_pick libw usr/lib/libwireplumber-$_ver.so*
+		_pick libw usr/lib/girepository-1.0
+		_pick libw usr/lib/pkgconfig
+		_pick libw usr/include
+		_pick libw usr/share/gir-1.0
+	)
 
-  install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase/{NEWS,README}*
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
+	install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase/{NEWS,README}*
+	install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
 
 package_libwireplumber() {
-  pkgdesc+=" - client library"
-  depends=(
-    libg{lib,module,object,io}-2.0.so
-    libpipewire-0.3.so
-  )
-  provides=(libwireplumber-$_ver.so)
+	pkgdesc+=" - client library"
+	depends=(
+		libg{lib,module,object,io}-2.0.so
+		libpipewire-0.3.so
+	)
+	provides=(libwireplumber-$_ver.so)
 
-  mv libw/* "$pkgdir"
+	mv libw/* "$pkgdir"
 
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
+	install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }
 
 # vim:set sw=2 sts=-1 et:
