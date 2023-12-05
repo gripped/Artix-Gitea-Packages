@@ -3,8 +3,8 @@
 
 pkgname=python-dulwich
 _name=${pkgname#python-}
-pkgver=0.21.6
-pkgrel=2
+pkgver=0.21.7
+pkgrel=1
 pkgdesc='Pure-Python implementation of the Git file formats and protocols'
 arch=('x86_64')
 url=https://www.dulwich.io
@@ -26,22 +26,21 @@ optdepends=(
   'python-pyopenssl: for HTTPS support via urllib3'
   'python-pyinotify: to watch for changes to refs'
 )
-source=("https://github.com/jelmer/dulwich/archive/refs/tags/dulwich-$pkgver.tar.gz")
-b2sums=('71834272a4c545a3cd254639dc9a59a81644764ee24ea5bb9a644ee67f94737745697ec3ddd889dc99327afd5cf11453ef06d99dc8750aa9f6f0e2c93e6e59a7')
+source=("git+https://github.com/jelmer/dulwich.git#tag=dulwich-$pkgver?signed")
+b2sums=('SKIP')
+validpgpkeys=('DC837EE14A7E37347E87061700806F2BD729A457') # Jelmer Vernooĳ <jelmer@jelmer.uk>
 
 build() {
-  cd "dulwich-dulwich-$pkgver"
+  cd "$_name"
   python -m build --wheel --skip-dependency-check --no-isolation
 }
 
 check() {
-  cd "dulwich-dulwich-$pkgver"
-  python -m venv --system-site-packages test-env
-  test-env/bin/python -m installer dist/*.whl
-  test-env/bin/python -m unittest dulwich.tests.test_suite
+  cd "$_name"
+  PYTHONPATH="$PWD/dulwich:$PYTHONPATH" python -m unittest dulwich.tests.test_suite
 }
 
 package() {
-  cd "dulwich-dulwich-$pkgver"
+  cd "$_name"
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
