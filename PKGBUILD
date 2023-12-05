@@ -6,7 +6,7 @@
 
 pkgname=musescore
 pkgver=4.1.1
-pkgrel=2
+pkgrel=4
 pkgdesc='Create, play and print beautiful sheet music'
 arch=(x86_64)
 url=https://musescore.org/
@@ -15,6 +15,7 @@ groups=(pro-audio)
 depends=(
   gcc-libs
   glibc
+  hicolor-icon-theme
   libasound.so
   libfreetype.so
   libsndfile.so
@@ -47,8 +48,10 @@ sha256sums=(SKIP)
 
 prepare() {
   cd MuseScore
-# Fix display of scores with recent qt5-declarative
+  # Fix display of scores with recent qt5-declarative
   git cherry-pick -n c747bdbcba81109e2749015a575827b2494af971
+  # Enable use of system freetype
+  git cherry-pick -n 9ab6b32b1c3b990cfa7bb172ee8112521dc2269c
 }
 
 pkgver() {
@@ -68,6 +71,7 @@ build() {
     -DMUSESCORE_REVISION=$(git rev-parse --short=7 HEAD) \
     -DMUE_BUILD_CRASHPAD_CLIENT=OFF \
     -DMUE_BUILD_UNIT_TESTS=OFF \
+    -DMUE_COMPILE_USE_SYSTEM_FREETYPE=ON \
     -DMUE_ENABLE_FILE_ASSOCIATION=ON \
     -DMUE_INSTALL_SOUNDFONT=ON \
     -Wno-dev
