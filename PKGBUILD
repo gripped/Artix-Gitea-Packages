@@ -7,7 +7,7 @@ pkgname=(
   glib2-docs
 )
 pkgver=2.78.2
-pkgrel=1
+pkgrel=3
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL)
@@ -63,6 +63,10 @@ prepare() {
 
   # Suppress noise from glib-compile-schemas.hook
   git apply -3 ../0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
+
+  # Unbreak Firefox
+  # https://gitlab.gnome.org/GNOME/glib/-/issues/3196
+  git cherry-pick -n b097adf18aedbb13b3d0e4cf260c3fede8d8995e
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
