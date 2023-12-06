@@ -5,7 +5,7 @@
 pkgname=libksysguard
 pkgver=5.27.9
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1.3
+pkgrel=1.4
 pkgdesc='Library to retrieve information on the current status of computer hardware'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -15,7 +15,6 @@ makedepends=(extra-cmake-modules kdoctools5 qt5-tools libnl)
 conflicts=('ksysguard<5.21.90')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-install=libksysguard.install
 sha256sums=('70f4ac5eeba0ddc82ba0e5537ca1e0cbb85cd46f90e387aded36dd1cc3722176'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
