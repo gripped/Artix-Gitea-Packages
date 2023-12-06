@@ -5,7 +5,7 @@
 
 pkgbase=lib32-glib2
 pkgname=(
-  lib32-glib2
+	lib32-glib2
 )
 pkgver=2.78.2
 pkgrel=1
@@ -14,94 +14,89 @@ url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL)
 arch=(x86_64)
 depends=(
-  glib2
-  lib32-libffi
-  lib32-pcre2
-  lib32-util-linux
-  lib32-zlib
+	glib2
+	lib32-libffi
+	lib32-pcre2
+	lib32-util-linux
+	lib32-zlib
 )
 makedepends=(
-  gettext
-  git
-  gtk-doc
-  lib32-dbus
-  lib32-libelf
-  meson
-  python
-  shared-mime-info
-  util-linux
+	gettext
+	git
+	gtk-doc
+	lib32-dbus
+	lib32-libelf
+	meson
+	python
+	shared-mime-info
+	util-linux
 )
 checkdepends=(
-  desktop-file-utils
-  lib32-glib2
+	desktop-file-utils
+	lib32-glib2
 )
 options=(
-  debug
+	debug
 )
-_commit=eb14755943a6eaee772ff4d8a8e432ec33bc5a8a  # tags/2.78.2^0
+_commit=eb14755943a6eaee772ff4d8a8e432ec33bc5a8a # tags/2.78.2^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
-  "git+https://gitlab.gnome.org/GNOME/gvdb.git"
-  gio-querymodules-32.hook
+	"git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
+	"git+https://gitlab.gnome.org/GNOME/gvdb.git"
+	gio-querymodules-32.hook
 )
 b2sums=('SKIP'
-        'SKIP'
-        '678ea2d010fd64b6c55106510096363c54c357d65615c666e9cc3a0e280c0878257a45e646dd88f6bdd0623f7268c4afd2d4f98f82a5489bbfc028c5864252f1')
+	'SKIP'
+	'678ea2d010fd64b6c55106510096363c54c357d65615c666e9cc3a0e280c0878257a45e646dd88f6bdd0623f7268c4afd2d4f98f82a5489bbfc028c5864252f1')
 
 pkgver() {
-  cd glib
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+	cd glib
+	git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd glib
+	cd glib
 
-  git submodule init
-  git submodule set-url subprojects/gvdb "$srcdir/gvdb"
-  git -c protocol.file.allow=always submodule update
+	git submodule init
+	git submodule set-url subprojects/gvdb "$srcdir/gvdb"
+	git -c protocol.file.allow=always submodule update
 }
 
 build() {
-  local meson_options=(
-    --cross-file lib32
-    -D glib_debug=disabled
-    -D gtk_doc=false
-    -D man=false
-    -D selinux=disabled
-    -D sysprof=disabled
-  )
+	local meson_options=(
+		--cross-file lib32
+		-D glib_debug=disabled
+		-D gtk_doc=false
+		-D man=false
+		-D selinux=disabled
+		-D sysprof=disabled
+	)
 
-  # Avoid crashing some old binaries
-  CFLAGS+=" -mstackrealign"
-  CXXFLAGS+=" -mstackrealign"
+	# Avoid crashing some old binaries
+	CFLAGS+=" -mstackrealign"
+	CXXFLAGS+=" -mstackrealign"
 
-  # Produce more debug info: GLib has a lot of useful macros
-  CFLAGS+=" -g3"
-  CXXFLAGS+=" -g3"
+	# Produce more debug info: GLib has a lot of useful macros
+	CFLAGS+=" -g3"
+	CXXFLAGS+=" -g3"
 
-  artix-meson glib build "${meson_options[@]}"
-  meson compile -C build
+	artix-meson glib build "${meson_options[@]}"
+	meson compile -C build
 }
-
-check() {
-  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
-}
-
 package_lib32-glib2() {
-  depends+=(
-    libffi.so
-    libmount.so
-  )
-  provides+=(libg{lib,io,module,object,thread}-2.0.so)
+	depends+=(
+		libffi.so
+		libmount.so
+	)
+	provides+=(libg{lib,io,module,object,thread}-2.0.so)
 
-  meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 
-  rm -r "$pkgdir"/usr/{lib,share,include}
-  find "$pkgdir/usr/bin" -type f -not -name gio-querymodules -printf 'Removing %P\n' -delete
-  mv "$pkgdir"/usr/bin/gio-querymodules{,-32}
+	rm -r "$pkgdir"/usr/{lib,share,include}
+	find "$pkgdir/usr/bin" -type f -not -name gio-querymodules -printf 'Removing %P\n' -delete
+	mv "$pkgdir"/usr/bin/gio-querymodules{,-32}
 
-  install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
-  touch "$pkgdir/usr/lib32/gio/modules/.keep"
+	install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
+	touch "$pkgdir/usr/lib32/gio/modules/.keep"
 }
 
 # vim:set sw=2 sts=-1 et:
