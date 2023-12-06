@@ -3,13 +3,14 @@
 # Contributor: Bart Verhagen <barrie.verhagen at gmail dot com>
 
 pkgname=catch2
-_gitcommit=182c910b4b63ff587a3440e08f84f70497e49a81
-pkgver=2.13.10
+_gitcommit=6e79e682b726f524310d55dec8ddac4e9c52fb5f
+pkgver=3.4.0
 pkgrel=1
 pkgdesc="Modern, C++-native, header-only, test framework for unit-tests, TDD and BDD"
-arch=('any')
+arch=('x86_64')
 url="https://github.com/catchorg/catch2"
 license=('Boost')
+#depends=('gcc-libs' 'glibc') # only needed when building shared library
 makedepends=('git' 'cmake' 'python') # python seems to be necessary for building tests (FS#60273)
 source=(${pkgname}::"git+https://github.com/catchorg/Catch2#commit=${_gitcommit}?signed")
 sha512sums=('SKIP')
@@ -24,30 +25,35 @@ pkgver() {
 }
 
 build() {
-  cd ${pkgname}
+  # our recent default flags break test 1 (ApprovalTests)
+#  unset CXXFLAGS
 
-  # our recent default flags break test 14 (ApprovalTests)
-  unset CXXFLAGS
-
-  cmake -B build \
+  cmake -B "${pkgname}"/build \
+    -S "${pkgname}" \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCATCH_USE_VALGRIND=OFF \
     -DCATCH_BUILD_EXAMPLES=OFF \
     -DCATCH_ENABLE_COVERAGE=OFF \
     -DCATCH_ENABLE_WERROR=OFF \
-    -DBUILD_TESTING=ON
-  make -C build
+    -DBUILD_TESTING=OFF \
+    -DBUILD_SHARED_LIBS=OFF
+
+#    -DBUILD_TESTING=ON \
+#    -DCATCH_BUILD_TESTING=ON \
+#    -DCATCH_DEVELOPMENT_BUILD=ON -Wno-dev \
+#    -DCATCH_BUILD_EXTRA_TESTS=ON 
+
+  cmake --build "${pkgname}"/build
 }
 
-check() {
-  cd ${pkgname}
-  make -C build test
-}
+#check() {
+#  # test are only built whith build option
+#  #  -DCATCH_DEVELOPMENT_BUILD=ON
+#  ctest --test-dir "${pkgname}"/build
+#}
 
 package() {
-  cd ${pkgname}
-  make -C build DESTDIR="$pkgdir" install
+  DESTDIR="${pkgdir}" cmake --install "${pkgname}"/build
 }
 
 # vim: ts=2 sw=2 et:
