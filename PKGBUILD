@@ -9,7 +9,7 @@
 pkgbase=erlang
 pkgname=(erlang erlang-unixodbc)
 pkgver=26.1.2
-pkgrel=1
+pkgrel=2
 _docver=26.1
 arch=(x86_64)
 url='https://erlang.org'
@@ -24,6 +24,9 @@ b2sums=('2eed8963d425fe5ff3cd02eeacfd0eb86051225578613e374b71818a91e4f0b6953c429
 prepare() {
   # adjust how LDFLAGS are handled
   sed -i 's/^LDFLAGS = /LDFLAGS += /g' otp/lib/{odbc/c_src,megaco/src/flex}/Makefile.in
+
+  # let the Java bindings support version 11 or later, ref https://gitlab.archlinux.org/archlinux/packaging/packages/erlang/-/issues/1
+  sed -i 's/^JAVA_OPTIONS =/JAVA_OPTIONS = --release 11/g' otp/lib/jinterface/java_src/com/ericsson/otp/erlang/Makefile
 }
 
 build() {
