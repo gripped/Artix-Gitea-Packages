@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-async-rspec
-  version: 1.16.1-2
+  version: 1.17.0-1
   arch:
     - any
   pkgname:
     - ruby-async-rspec
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.16.1-2
+    version: 1.17.0-1
     packages:
-      - ruby-async-rspec-1.16.1-2-any.pkg.tar.zst
+      - ruby-async-rspec-1.17.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
