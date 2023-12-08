@@ -4,8 +4,8 @@
 # Contributor: Gabriel Fox <inbox@gabrielfox.dev>
 
 pkgname=hyprland
-pkgver=0.33.0
-pkgrel=1
+pkgver=0.33.1
+pkgrel=2
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/${pkgname^}"
@@ -30,7 +30,7 @@ depends=(cairo
          pixman
          polkit
          seatd
-         udev
+         systemd-libs
          vulkan-icd-loader
          vulkan-validation-layers
          wayland
@@ -52,7 +52,7 @@ makedepends=(cmake
              xorgproto)
 _archive="${pkgname^}-$pkgver"
 source=("$_archive.tar.gz::$url/releases/download/v$pkgver/source-v$pkgver.tar.gz")
-sha256sums=('449ffaafbf6b4442fc41947c464e38a60fb190b024a6c54ee75df850b5f5f9fe')
+sha256sums=('fe2b39ca90a4dde04159d69ea49c71315449efe5630cf2ff8bb75d4dd4589153')
 
 prepare() {
 	ln -sf hyprland-source "$_archive"
@@ -67,7 +67,7 @@ build() {
 
 package() {
 	cd "$_archive"
-	find src -name '*.hpp' -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/{}" \;
+	find src \( -name '*.h' -o -name '*.hpp' \) -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/{}" \;
 	pushd subprojects/wlroots/include
 	find . -name '*.h' -exec install -Dm0644 {} "$pkgdir/usr/include/hyprland/wlroots/{}" \;
 	popd
