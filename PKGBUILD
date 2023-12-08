@@ -7,8 +7,8 @@ pkgbase=lib32-glib2
 pkgname=(
   lib32-glib2
 )
-pkgver=2.78.2
-pkgrel=3
+pkgver=2.78.3
+pkgrel=1
 pkgdesc="Low level core library - 32-bit"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL)
@@ -38,7 +38,7 @@ checkdepends=(
 options=(
   debug
 )
-_commit=eb14755943a6eaee772ff4d8a8e432ec33bc5a8a  # tags/2.78.2^0
+_commit=03f7c1fbf3a3784cb4c3604f83ca3645e9225577  # tags/2.78.3^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
@@ -55,10 +55,6 @@ pkgver() {
 
 prepare() {
   cd glib
-
-  # Unbreak Firefox
-  # https://gitlab.gnome.org/GNOME/glib/-/issues/3196
-  git cherry-pick -n b097adf18aedbb13b3d0e4cf260c3fede8d8995e
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
