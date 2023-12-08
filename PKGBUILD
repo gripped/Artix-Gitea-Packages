@@ -30,7 +30,7 @@ depends=(cairo
          pixman
          polkit
          seatd
-         systemd-libs
+         udev
          vulkan-icd-loader
          vulkan-validation-layers
          wayland
