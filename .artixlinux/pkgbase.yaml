@@ -7,21 +7,20 @@ pkgbase:
   pkgname:
     - openldap-dinit
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 20231112-1
-    packages:
-      - openldap-dinit-20231112-1-any.pkg.tar.zst
+    version: null
+    packages: []
   system:
     version: 20230907-1
     packages:
