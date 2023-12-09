@@ -1,9 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
 _pkgname='bigarray-compat'
 pkgname="ocaml-${_pkgname}"
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Compatibility library to use Stdlib.Bigarray when possible"
 arch=(x86_64)
 url="https://github.com/mirage/bigarray-compat"
