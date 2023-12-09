@@ -1,5 +1,4 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Thomas S Hatch <thatch45@gmail.com>
 # Contributor: Sebastian Wiesner <lunaryorn@googlemail.com>
@@ -9,12 +8,12 @@
 
 pkgname=ocaml-findlib
 pkgver=1.9.6
-pkgrel=2
+pkgrel=3
 pkgdesc='OCaml package manager'
 arch=(x86_64)
 url='http://projects.camlcity.org/projects/findlib.html'
 license=(MIT)
-depends=("ocaml-compiler-libs>=5.0.0" 'ocaml>=5.0.0')
+depends=("ocaml-compiler-libs" 'ocaml')
 source=("http://download.camlcity.org/download/findlib-$pkgver.tar.gz")
 b2sums=('c9c98b9e92c0cf690e2c8794a1ed606c0288d49a016dfa08592c9f617be1020385f52bf37345a7cbcbc7f0fcb19750a6617036cbf90afef231eccdbc7132baf8')
 options=(!makeflags !strip staticlibs zipman)
@@ -22,7 +21,6 @@ options=(!makeflags !strip staticlibs zipman)
 build() {
   cd findlib-$pkgver
   ./configure \
-    -bindir /usr/bin \
     -config /etc/findlib.conf \
     -mandir /usr/share/man \
     -sitelib /usr/lib/ocaml
