@@ -1,9 +1,9 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Maxime Arthaud <maxime@arthaud.me>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Maxime Arthaud <maxime@arthaud.me>
 
 pkgname=zxing-cpp
-pkgver=2.1.0
+pkgver=2.2.0
 pkgrel=1
 pkgdesc='A C++ library to decode QRCode'
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(gcc-libs)
 makedepends=(cmake)
 checkdepends=(gtest)
 source=(https://github.com/nu-book/zxing-cpp/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('6d54e403592ec7a143791c6526c1baafddf4c0897bb49b1af72b70a0f0c4a3fe')
+sha256sums=('6df336573c777d0d826f4993d06c4feeebe5a8f97e1c8e80a6e6233fe7c62eac')
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
