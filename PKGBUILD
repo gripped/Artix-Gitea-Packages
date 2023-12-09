@@ -1,16 +1,14 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Armin K. <krejzi at email dot com>
-#
 
 pkgname=ocaml-ctypes
 pkgver=0.20.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Library for binding to C libraries using pure OCaml"
 arch=('x86_64')
 url="https://github.com/ocamllabs/ocaml-ctypes"
 license=('MIT')
-depends=('ocaml' 'libffi' 'ocaml-integers' 'ocaml-bigarray-compat' 'ocaml-stdlib-shims')
+depends=('ocaml' 'libffi' 'ocaml-integers' 'ocaml-bigarray-compat')
 makedepends=('ocaml-findlib' 'ocaml-compiler-libs')
 options=('!strip' '!makeflags')
 source=($pkgname-$pkgver.tar.gz::https://github.com/ocamllabs/ocaml-ctypes/archive/$pkgver.tar.gz)
