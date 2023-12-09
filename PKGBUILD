@@ -1,11 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Jürgen Hötzel <juergen@archlinux.org>
-#
+# Maintainer: Jürgen Hötzel <juergen@archlinux.org>
 
 _pkgname=result
 pkgname=ocaml-${_pkgname}
 pkgver=1.5
-pkgrel=8
+pkgrel=9
 pkgdesc="Compatibility Result module"
 arch=('i686' 'x86_64' 'armv7h')
 url="https://github.com/janestreet/result"

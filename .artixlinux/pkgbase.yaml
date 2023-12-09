@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ocaml-result
-  version: 1.5-8
+  version: 1.5-9
   arch:
     - i686
     - x86_64
@@ -9,11 +9,11 @@ pkgbase:
   pkgname:
     - ocaml-result
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5-8
+    version: 1.5-9
     packages:
-      - ocaml-result-1.5-8-x86_64.pkg.tar.zst
+      - ocaml-result-1.5-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
