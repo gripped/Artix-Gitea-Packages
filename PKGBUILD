@@ -1,12 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Daniel Peukert <daniel@peukert.cc>
-#
 
 _projectname='stdlib-shims'
 pkgname="ocaml-$_projectname"
 pkgver=0.3.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Shim to substitute `Pervasives` with `Stdlib` before 4.08'
 arch=('x86_64')
 url="https://github.com/ocaml/$_projectname"
