@@ -1,24 +1,26 @@
 ---
 pkgbase:
   name: boost
-  version: 1.83.0-2
+  version: 1.83.0-3
   arch:
     - x86_64
   pkgname:
     - boost
     - boost-libs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 1.83.0-3
+    packages:
+      - boost-1.83.0-3-x86_64.pkg.tar.zst
+      - boost-libs-1.83.0-3-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
