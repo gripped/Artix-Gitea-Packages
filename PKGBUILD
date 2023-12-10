@@ -2,11 +2,12 @@
 
 pkgname=artix-keyring
 pkgver=20220901
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix PGP keyring'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/artix-keyring'
 license=('GPL')
+depends=('pacman')
 install="${pkgname}.install"
 _srctarball='49bd3923-6bbc-4be8-959b-095727469154'
 _srctarballsig='38c51538-abfa-467a-8dff-aaaaddf71754'
