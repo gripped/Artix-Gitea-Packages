@@ -4,7 +4,7 @@
 
 pkgname=libqalculate
 pkgver=4.9.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Multi-purpose desktop calculator'
 arch=(x86_64)
 url='https://qalculate.github.io/'
