@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Yaron de Leeuw <me@jarondl.net>
 
 _pyname=isort
 pkgname=python-$_pyname
-pkgver=5.12.0
-pkgrel=2
+pkgver=5.13.0
+pkgrel=1
 pkgdesc='A Python utility / library to sort Python imports'
 arch=(any)
 url="https://github.com/PyCQA/$_pyname"
@@ -38,7 +38,7 @@ _pycheckdeps=(black
 #               "${_pycheckdeps[@]/#/python-}")
 _archive="$_pyname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('00eef77c312dc08606d72b6c38a5330632caca4f9bf8e86b7b373ed760ae29b8')
+sha256sums=('f48c9724898d5effdefec6fa9e9ec3634059039d813b4da4ff3ab6063b081090')
 
 prepare() {
 	cd "$_archive"

@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-isort
-  version: 5.12.0-2
+  version: 5.13.0-1
   arch:
     - any
   pkgname:
     - python-isort
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.13.0-1
+    packages:
+      - python-isort-5.13.0-1-any.pkg.tar.zst
   world:
     version: 5.12.0-2
     packages:
