@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libzmf
-  version: 0.0.2-14
+  version: 0.0.2-15
   arch:
     - x86_64
   pkgname:
     - libzmf
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.0.2-15
+    packages:
+      - libzmf-0.0.2-15-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
