@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: vmaf
-  version: 2.3.1-1
+  version: 3.0.0-1
   arch:
     - x86_64
   pkgname:
     - vmaf
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.0.0-1
+    packages:
+      - vmaf-3.0.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
