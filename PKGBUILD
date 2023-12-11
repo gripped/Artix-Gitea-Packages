@@ -5,7 +5,7 @@
 pkgname=qt6-translations
 _qtver=6.6.1
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1.2
 arch=(any)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -22,6 +22,7 @@ sha256sums=('668702e822ad7150b27e7caa2158595fd9b3b77ffbc8262e6509872a3920ee88')
 build() {
   export PATH="/usr/lib/qt6/bin:$PATH"
   cmake -B build -S $_pkgfn -G Ninja \
+    -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build -j1
 }
