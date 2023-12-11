@@ -2,7 +2,7 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=6.6.0.15.realtime1
+pkgver=6.6.5.16.realtime1
 pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
@@ -28,13 +28,12 @@ source=(
   config
 )
 sha512sums=('SKIP'
-            '2e8ebc0c178e75d40eaebdbadf08e43197c4e2ec4d9f40e4a594fb3800c23e48cf4fb9025c786887971d24a1d44cca6a0ab1d19e805c0ca727617cbb6bc0c1b8')
+            '2fd40fab751b5c8c5d10f5d04c3f866f9b953856ffa99438976d3a49460673993216276ca77c6341ed547c6f25120a7593334f649bf619b6754389ed58d732ff')
 b2sums=('SKIP'
-        '254284e07aba1fb667ae7141afeceb337597d9130bed89558bcdfe431c143bb328513c21493420b7e144cdd2601adec886fb32d58366153b15bae78aacffed41')
+        'a68500b62abf42ac275b6c409e1e32a14baaa40481a6c5ee8a1fa106f394a117cc9bffe9f08f47a2dba7d41467944e2197a556829bf25daca2585cf4c49d7478')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@kernel.org>
   '64254695FFF0AA4466CC19E67B96E8162A8CF5D1'  # Sebastian Andrzej Siewior
-  'C7E7849466FE2358343588377258734B41C31549'  # David Runge <dvzrv@archlinux.org>
   '991F6E3F0765CF6295888586139B09DA5BF0D338'  # David Runge <dvzrv@archlinux.org>
 )
 
