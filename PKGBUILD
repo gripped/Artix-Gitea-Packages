@@ -5,7 +5,7 @@
 
 pkgname=couchdb
 pkgver=3.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Document-oriented database that can be queried and indexed in a MapReduce fashion using JSON"
 arch=(x86_64)
 url="https://couchdb.apache.org"
@@ -75,7 +75,7 @@ package() {
   install -Dm644 ${pkgname}.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
 
   # Remove some cruft
-  rm -r "${pkgdir}"/usr/lib/couchdb/erts-14.0.1/{doc,include,lib,man,src}
+  rm -r "${pkgdir}"/usr/lib/couchdb/erts-*/{doc,include,lib,man,src}
   rm -rv "${pkgdir}"/usr/lib/couchdb/etc/
   rm -rv "${pkgdir}"/usr/lib/couchdb/lib/couch-${pkgver}/priv/couch_{ejson_compare,js}
 }
