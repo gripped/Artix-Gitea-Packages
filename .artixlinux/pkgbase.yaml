@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: nodejs-lts-iron
-  version: 20.10.0-1
+  version: 20.10.0-2
   arch:
     - x86_64
   pkgname:
     - nodejs-lts-iron
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 20.10.0-2
+    packages:
+      - nodejs-lts-iron-20.10.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
