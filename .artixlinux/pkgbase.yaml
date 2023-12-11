@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: postgresql-old-upgrade
-  version: 15.5-1
+  version: 15.5-2
   arch:
     - x86_64
   pkgname:
     - postgresql-old-upgrade
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 15.5-2
+    packages:
+      - postgresql-old-upgrade-15.5-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
