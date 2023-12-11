@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: qt5-base
-  version: 5.15.11+kde+r147-1
+  version: 5.15.11+kde+r147-2
   arch:
     - x86_64
   pkgname:
     - qt5-base
     - qt5-xcb-private-headers
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.15.11+kde+r147-2
+    packages:
+      - qt5-base-5.15.11+kde+r147-2-x86_64.pkg.tar.zst
+      - qt5-xcb-private-headers-5.15.11+kde+r147-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
