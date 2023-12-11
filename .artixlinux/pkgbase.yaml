@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: harfbuzz
-  version: 8.3.0-1
+  version: 8.3.0-2
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - harfbuzz-utils
     - harfbuzz-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 8.3.0-2
+    packages:
+      - harfbuzz-8.3.0-2-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-8.3.0-2-x86_64.pkg.tar.zst
+      - harfbuzz-icu-8.3.0-2-x86_64.pkg.tar.zst
+      - harfbuzz-utils-8.3.0-2-x86_64.pkg.tar.zst
+      - harfbuzz-docs-8.3.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
