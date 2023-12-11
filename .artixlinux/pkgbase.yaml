@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postgresql
-  version: 16.1-1
+  version: 16.1-2
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - postgresql-docs
     - postgresql
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 16.1-2
+    packages:
+      - postgresql-libs-16.1-2-x86_64.pkg.tar.zst
+      - postgresql-docs-16.1-2-x86_64.pkg.tar.zst
+      - postgresql-16.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
