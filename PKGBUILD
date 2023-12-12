@@ -16,12 +16,12 @@ optdepends=('tcl: modtcl module'
             'perl: modperl module'
             'cyrus-sasl: saslauth module')
 install=$pkgname.install
-source=("https://znc.in/releases/archive/$pkgname-$pkgver.tar.gz"{,.sig}
+source=("https://github.com/znc/znc/archive/refs/tags/$pkgname-$pkgver.tar.gz"
+        # "https://znc.in/releases/archive/$pkgname-$pkgver.tar.gz"{,.sig}
         "$pkgname.tmpfiles"
         "$pkgname.sysusers")
 validpgpkeys=('D5823CACB477191CAC0075555AE420CC0209989E') #Alexey Sokolov <alexey@asokolov.org>
-sha256sums=('ff238aae3f2ae0e44e683c4aee17dc8e4fdd261ca9379d83b48a7d422488de0d'
-            'SKIP'
+sha256sums=('b4ae3be351d5f87e0e63f9e395233d9bf8faff9e0db89b76d8f9d822bfebdba9'
             '8cd1b5b011c706fea9dc0c70d4daa75a53bf0966d6e96a3fce3a541777aa2771'
             '8802f1b84ab3031db7cc45678f008ceca9b08b2012412a3d4ff1ea596586bb2a')
 
