@@ -25,7 +25,7 @@ pkgname=(
 _commit=4debdcd40b055b3eaa83a8f4443aa990ea566bfe  # tags/1.0.0
 pkgver=1.0.0
 _so_ver=0.3
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -78,7 +78,7 @@ source=(
   pipewire.desktop
 )
 b2sums=('SKIP'
-        '83eed9010ff2163a867bd06cfcc0dc6877b37799cd549baa23be8c17f6afdc4381c8623b73c4588090b1de973000bc48bd9b8bf24134faff60e4871471676962'
+        'b24d6c83d6846dd9de8806ea5cd8da5745a13645cea6e0904c4ce6bfb2f018e189f698e2ff1d44e38538d1233b63fd3ad0c1492e3e3ed0d62ae78282ff696755'
         '9abebce63d8e877aa9b73cabdf786e71824681328511822dfbd213e3b4c94ac073d225a3c72dcaf96f9c0fa0fcfce67160778487e711b82d452d5570c00d7405')
 
 pkgver() {
