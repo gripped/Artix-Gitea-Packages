@@ -4,7 +4,7 @@
 # Contributor: Jake Petroules <jake.petroules@qt.io>
 
 pkgname=qbs
-pkgver=2.1.2
+pkgver=2.2.1
 pkgrel=1
 pkgdesc='Cross platform build tool'
 arch=(x86_64)
@@ -16,10 +16,10 @@ depends=(gcc-libs
          qt6-5compat)
 makedepends=(cmake)
 source=(https://download.qt.io/official_releases/qbs/$pkgver/qbs-src-$pkgver.tar.gz)
-sha256sums=('465d398ba3ac2bf157c4c32118e7ea55759050550e5e2babff091b000f2c27c9')
+sha256sums=('84dad32ff12fda91d4a57c637c86200cdedc7fa56e04daf1c544908ffdb6a2a6')
 
 build() {
-  artix-cmake -B build -S $pkgname-src-$pkgver \
+  cmake -B build -S $pkgname-src-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DWITH_TESTS=OFF \
     -DQBS_LIBEXEC_INSTALL_DIR=lib/qbs
