@@ -9,7 +9,7 @@ pkgbase:
     - plasma-wayland-session
 actions:
   addRepo: null
-  removeRepo: world-goblins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -32,10 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.27.10-2.1
-    packages:
-      - plasma-workspace-5.27.10-2.1-x86_64.pkg.tar.zst
-      - plasma-wayland-session-5.27.10-2.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
