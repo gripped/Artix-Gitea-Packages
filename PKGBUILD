@@ -8,7 +8,7 @@ pkgbase=plasma-workspace
 pkgname=(plasma-workspace plasma-wayland-session)
 pkgver=5.27.10
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=2.1
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -56,6 +56,11 @@ package_plasma-workspace() {
 
   # Split plasma-wayland scripts
   rm -r "$pkgdir"/usr/share/wayland-sessions
+
+  # fix some problems with D-BUS
+  sed -i 's/^Exec=/Exec=dbus-run-session /g' "$pkgdir"/usr/share/xsessions/plasma.desktop
+
+  rm -r $pkgdir/usr/lib/systemd    #remove systemd service
 }
 
 package_plasma-wayland-session() {
