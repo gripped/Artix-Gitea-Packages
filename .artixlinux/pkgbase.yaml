@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: qcoro-qt5
-  version: 0.9.0-1
+  name: qcoro
+  version: 0.10.0-1
   arch:
     - x86_64
   pkgname:
     - qcoro-qt5
     - qcoro-qt6
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.0-1
+    version: 0.10.0-1
     packages:
-      - qcoro-qt5-0.9.0-1-x86_64.pkg.tar.zst
-      - qcoro-qt6-0.9.0-1-x86_64.pkg.tar.zst
+      - qcoro-qt5-0.10.0-1-x86_64.pkg.tar.zst
+      - qcoro-qt6-0.10.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
