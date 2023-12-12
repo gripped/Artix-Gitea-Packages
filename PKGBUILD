@@ -3,8 +3,8 @@
 # Contributor: Maxime Arthaud <maxime@arthaud.me>
 
 pkgname=zxing-cpp
-pkgver=2.2.0
-pkgrel=2
+pkgver=2.2.1
+pkgrel=1
 pkgdesc='A C++ library to decode QRCode'
 arch=(x86_64)
 url='https://github.com/nu-book/zxing-cpp'
@@ -13,14 +13,8 @@ depends=(gcc-libs
          glibc)
 makedepends=(cmake)
 checkdepends=(gtest)
-source=(https://github.com/nu-book/zxing-cpp/archive/v$pkgver/$pkgname-$pkgver.tar.gz
-        https://github.com/zxing-cpp/zxing-cpp/commit/d3a8d5f79.patch)
-sha256sums=('6df336573c777d0d826f4993d06c4feeebe5a8f97e1c8e80a6e6233fe7c62eac'
-            'cc6720d045ee12d0020621cc572427f9e2404625861197645738c0c492bbed9e')
-
-prepare() {
-  patch -d $pkgname-$pkgver -p1 < d3a8d5f79.patch # Fix ABI break
-}
+source=(https://github.com/nu-book/zxing-cpp/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('02078ae15f19f9d423a441f205b1d1bee32349ddda7467e2c84e8f08876f8635')
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
