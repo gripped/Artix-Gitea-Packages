@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-harfbuzz
-  version: 8.3.0-1
+  version: 8.3.0-2
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - lib32-harfbuzz-cairo
     - lib32-harfbuzz-icu
 actions:
-  addRepo: lib32
+  addRepo: lib32-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -36,8 +36,11 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 8.3.0-2
+    packages:
+      - lib32-harfbuzz-8.3.0-2-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-cairo-8.3.0-2-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-icu-8.3.0-2-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
