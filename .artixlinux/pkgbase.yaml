@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: webkitgtk-6.0
-  version: 2.42.3-1
+  version: 2.42.3-2
   arch:
     - x86_64
   pkgname:
     - webkitgtk-6.0
     - webkitgtk-6.0-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.42.3-2
+    packages:
+      - webkitgtk-6.0-2.42.3-2-x86_64.pkg.tar.zst
+      - webkitgtk-6.0-docs-2.42.3-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
