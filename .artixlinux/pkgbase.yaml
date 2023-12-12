@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libksysguard
-  version: 5.27.9-1.4
+  version: 5.27.10-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.27.9-1.4
+    version: 5.27.10-1
     packages:
-      - libksysguard-5.27.9-1.4-x86_64.pkg.tar.zst
+      - libksysguard-5.27.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
