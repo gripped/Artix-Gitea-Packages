@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: plasma-meta
-  version: 5.27-3
+  version: 5.27-4
   arch:
     - any
   pkgname:
     - plasma-meta
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.27-3
+    version: 5.27-4
     packages:
-      - plasma-meta-5.27-3-any.pkg.tar.zst
+      - plasma-meta-5.27-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
