@@ -1,8 +1,8 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=kbd
-pkgver=2.6.3
-pkgrel=2
+pkgver=2.6.4
+pkgrel=1
 pkgdesc="Keytable files and keyboard utilities"
 arch=('x86_64')
 url="http://www.kbd-project.org"
@@ -38,8 +38,6 @@ prepare() {
   mv data/keymaps/i386/colemak/{en-latin9,colemak}.map
   # fix euro2 #28213
   patch -Np1 -i ../fix-euro2.patch
-  # Do not look up include files in the current working directory
-  git cherry-pick -n '8b7f70904343153b658b8640ba14fc7d583cdc57'
   autoreconf -if
 }
 
