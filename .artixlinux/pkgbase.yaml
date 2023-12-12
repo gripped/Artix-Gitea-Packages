@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: evolution-data-server
-  version: 3.50.2-1
+  version: 3.50.2-2
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - libedataserverui4
     - evolution-data-server-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.50.2-2
+    packages:
+      - evolution-data-server-3.50.2-2-x86_64.pkg.tar.zst
+      - libedataserverui4-3.50.2-2-x86_64.pkg.tar.zst
+      - evolution-data-server-docs-3.50.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
