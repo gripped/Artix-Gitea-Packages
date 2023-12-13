@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-sentry_sdk
-  version: 1.38.0-1
+  version: 1.39.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.38.0-1
+    version: 1.39.0-1
     packages:
-      - python-sentry_sdk-1.38.0-1-any.pkg.tar.zst
+      - python-sentry_sdk-1.39.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
