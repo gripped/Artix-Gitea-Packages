@@ -4,7 +4,7 @@
 
 _pyname=isort
 pkgname=python-$_pyname
-pkgver=5.13.0
+pkgver=5.13.1
 pkgrel=1
 pkgdesc='A Python utility / library to sort Python imports'
 arch=(any)
@@ -38,7 +38,7 @@ _pycheckdeps=(black
 #               "${_pycheckdeps[@]/#/python-}")
 _archive="$_pyname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('f48c9724898d5effdefec6fa9e9ec3634059039d813b4da4ff3ab6063b081090')
+sha256sums=('952589db53b91cfb2cae53fa4ad8add351746568165bd2ca3f3b253696780378')
 
 prepare() {
 	cd "$_archive"

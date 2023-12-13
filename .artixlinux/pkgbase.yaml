@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-isort
-  version: 5.13.0-1
+  version: 5.13.1-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.13.0-1
+    version: 5.13.1-1
     packages:
-      - python-isort-5.13.0-1-any.pkg.tar.zst
+      - python-isort-5.13.1-1-any.pkg.tar.zst
   world:
     version: 5.12.0-2
     packages:
