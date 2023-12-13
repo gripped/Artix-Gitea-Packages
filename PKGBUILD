@@ -7,19 +7,27 @@
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-hid2hci' 'bluez-plugins')
 pkgver=5.70
-pkgrel=1
+pkgrel=2
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL2')
-makedepends=('dbus' 'libical' 'udev' 'alsa-lib' 'json-c' 'ell' 'python-docutils')
+makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'python-docutils')
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe
+        CVE-2023-45866.patch::https://github.com/bluez/bluez/commit/25a471a83e02e1effb15d5a488b3f0085eaeb675.patch #https://gitlab.archlinux.org/archlinux/packaging/packages/bluez/-/issues/2
 )
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
 sha256sums=('37e372e916955e144cb882f888e4be40898f10ae3b7c213ddcdd55ee9c009278'
             'SKIP'
-            '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
+            '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4'
+            '933de421722c7511b5de1efd07a888328d44fa7d99f753696c6d67f938eab24c')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
+
+prepare() {
+  # Temporary patch to fix CVE-2023-45866. See https://gitlab.archlinux.org/archlinux/packaging/packages/bluez/-/issues/2
+  cd "${pkgname}"-${pkgver}
+  patch -Np1 <${srcdir}/CVE-2023-45866.patch
+}
 
 build() {
   cd "${pkgname}"-${pkgver}
@@ -30,6 +38,7 @@ build() {
           --localstatedir=/var \
           --libexecdir=/usr/lib \
           --with-dbusconfdir=/usr/share \
+          --with-udevdir=/usr/lib/udev \
           --enable-btpclient \
           --enable-midi \
           --enable-sixaxis \
@@ -75,24 +84,23 @@ package_bluez() {
   # https://bugzilla.kernel.org/show_bug.cgi?id=196621
   install -dm755 "$pkgdir"/usr/lib/modules-load.d
   echo "crypto_user" > "$pkgdir"/usr/lib/modules-load.d/bluez.conf
-  # Remove duplicate libs
-  rm -r "$pkgdir"/usr/lib/libbluetooth.so*
+
   # Artix (Don't remove) installs dbus service
   install -Dm644 /dev/stdin "$pkgdir"/usr/share/dbus-1/services/org.bluez.obex.service <<EOF
 [D-BUS Service]
 Name=org.bluez.obex
 Exec=/usr/lib/bluetooth/obexd
 EOF
-
-  install -dm700 "${pkgdir}"/var/lib/bluetooth
-
+  
   # cleanup  - these libs go into bluez-libs
+  rm "${pkgdir}"/usr/lib/libbluetooth.so*
 }
 
 package_bluez-utils() {
   pkgdesc="Development and debugging utilities for the bluetooth protocol stack"
-  depends=('dbus' 'udev' 'glib2')
-  optdepends=('ell: for btpclient')
+  depends=('dbus' 'glib2' 'glibc' 'readline')
+  optdepends=('ell: for btpclient'
+              'json-c: for mesh-cfgclient')
   backup=('etc/bluetooth/mesh-main.conf')
   conflicts=('bluez-hcidump')
   provides=('bluez-hcidump')
@@ -149,7 +157,7 @@ package_bluez-cups() {
 
 package_bluez-hid2hci() {
   pkgdesc="Put HID proxying bluetooth HCI's into HCI mode"
-  depends=('libudev' 'glibc')
+  depends=('glibc')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR=${pkgdir} \
@@ -165,7 +173,7 @@ package_bluez-hid2hci() {
 
 package_bluez-plugins() {
   pkgdesc="bluez plugins (PS3 Sixaxis controller)"
-  depends=('libudev' 'glibc')
+  depends=('glibc')
 
   cd "${pkgbase}"-${pkgver}
   make DESTDIR="${pkgdir}" \

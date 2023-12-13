@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bluez
-  version: 5.70-1
+  version: 5.70-2
   arch:
     - x86_64
   pkgname:
@@ -13,11 +13,11 @@ pkgbase:
     - bluez-plugins
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.70-1
+    version: 5.70-2
     packages:
-      - bluez-5.70-1-x86_64.pkg.tar.zst
-      - bluez-utils-5.70-1-x86_64.pkg.tar.zst
-      - bluez-libs-5.70-1-x86_64.pkg.tar.zst
-      - bluez-cups-5.70-1-x86_64.pkg.tar.zst
-      - bluez-hid2hci-5.70-1-x86_64.pkg.tar.zst
-      - bluez-plugins-5.70-1-x86_64.pkg.tar.zst
+      - bluez-5.70-2-x86_64.pkg.tar.zst
+      - bluez-utils-5.70-2-x86_64.pkg.tar.zst
+      - bluez-libs-5.70-2-x86_64.pkg.tar.zst
+      - bluez-cups-5.70-2-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.70-2-x86_64.pkg.tar.zst
+      - bluez-plugins-5.70-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
