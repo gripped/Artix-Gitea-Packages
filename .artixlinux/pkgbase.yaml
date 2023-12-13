@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: openresolv
-  version: 3.13.2-1
+  version: 3.13.2-2
   arch:
     - any
   pkgname:
     - openresolv
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.13.2-2
+    packages:
+      - openresolv-3.13.2-2-any.pkg.tar.zst
   system:
     version: 3.13.2-1
     packages:
