@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xorg-server
-  version: 21.1.9-1
+  version: 21.1.10-1
   arch:
     - x86_64
   pkgname:
@@ -12,7 +12,7 @@ pkgbase:
     - xorg-server-common
     - xorg-server-devel
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,8 +33,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 21.1.10-1
+    packages:
+      - xorg-server-21.1.10-1-x86_64.pkg.tar.zst
+      - xorg-server-xephyr-21.1.10-1-x86_64.pkg.tar.zst
+      - xorg-server-xvfb-21.1.10-1-x86_64.pkg.tar.zst
+      - xorg-server-xnest-21.1.10-1-x86_64.pkg.tar.zst
+      - xorg-server-common-21.1.10-1-x86_64.pkg.tar.zst
+      - xorg-server-devel-21.1.10-1-x86_64.pkg.tar.zst
   world:
     version: 21.1.9-1
     packages:
