@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lightdm
-  version: 1:1.32.0-4
+  version: 1:1.32.0-5
   arch:
     - x86_64
   pkgname:
     - lightdm
     - liblightdm-qt5
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.32.0-4
+    version: 1:1.32.0-5
     packages:
-      - lightdm-1:1.32.0-4-x86_64.pkg.tar.zst
-      - liblightdm-qt5-1:1.32.0-4-x86_64.pkg.tar.zst
+      - lightdm-1:1.32.0-5-x86_64.pkg.tar.zst
+      - liblightdm-qt5-1:1.32.0-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
