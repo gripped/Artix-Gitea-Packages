@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virtualbox-host-modules-artix
-  version: 7.0.12-11
+  version: 7.0.12-12
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 7.0.12-11
+    version: 7.0.12-12
     packages:
-      - virtualbox-host-modules-artix-7.0.12-11-x86_64.pkg.tar.zst
+      - virtualbox-host-modules-artix-7.0.12-12-x86_64.pkg.tar.zst
   world:
     version: 7.0.12-9
     packages:
