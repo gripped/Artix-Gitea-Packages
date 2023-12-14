@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-lcms2
-  version: 2.15-1
+  version: 2.16-1
   arch:
     - x86_64
   pkgname:
     - lib32-lcms2
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 2.15-1
+    version: 2.16-1
     packages:
-      - lib32-lcms2-2.15-1-x86_64.pkg.tar.zst
+      - lib32-lcms2-2.16-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
