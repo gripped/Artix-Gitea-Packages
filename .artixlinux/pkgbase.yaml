@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux
-  version: 6.6.6.artix1-1
+  version: 6.6.7.artix1-1
   arch:
     - x86_64
   pkgname:
@@ -21,11 +21,11 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 6.6.6.artix1-1
+    version: 6.6.7.artix1-1
     packages:
-      - linux-6.6.6.artix1-1-x86_64.pkg.tar.zst
-      - linux-headers-6.6.6.artix1-1-x86_64.pkg.tar.zst
-      - linux-docs-6.6.6.artix1-1-x86_64.pkg.tar.zst
+      - linux-6.6.7.artix1-1-x86_64.pkg.tar.zst
+      - linux-headers-6.6.7.artix1-1-x86_64.pkg.tar.zst
+      - linux-docs-6.6.7.artix1-1-x86_64.pkg.tar.zst
   system:
     version: 6.6.4.artix1-1
     packages:
