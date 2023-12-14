@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libreoffice-fresh
-  version: 7.6.4-1
+  version: 7.6.4-2
   arch:
     - x86_64
   pkgname:
     - libreoffice-fresh-sdk
     - libreoffice-fresh
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -44,8 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 7.6.4-2
+    packages:
+      - libreoffice-fresh-sdk-7.6.4-2-x86_64.pkg.tar.zst
+      - libreoffice-fresh-7.6.4-2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
