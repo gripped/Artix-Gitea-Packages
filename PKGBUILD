@@ -1,22 +1,22 @@
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=xorg-xwayland
-pkgver=23.2.2
+pkgver=23.2.3
 pkgrel=1
 arch=('x86_64')
 license=('custom')
 groups=('xorg')
 url="https://xorg.freedesktop.org"
 pkgdesc="run X clients under wayland"
-depends=('nettle' 'libepoxy' 'libelogind' 'libxfont2' 
+depends=('nettle' 'libepoxy' 'systemd-libs' 'libxfont2' 
          'pixman' 'xorg-server-common' 'libxcvt' 'mesa'
          'libglvnd' 'libxau' 'wayland' 'libdrm' 'libtirpc'
          'libxshmfence' 'glibc')
 makedepends=('meson' 'xorgproto' 'xtrans' 'libxkbfile' 'dbus'
              'xorg-font-util' 'wayland-protocols' 'mesa-libgl'
-             'elogind' 'egl-wayland')
+             'systemd' 'egl-wayland')
 source=(https://xorg.freedesktop.org/archive/individual/xserver/xwayland-$pkgver.tar.xz{,.sig})
-sha512sums=('f5b319fdace7d7c078544730ecd26afeb63b1a0c779fb097455147945df85af32d9e91501ebdb70209d48e8a3ead3b23be31e9d5118358ac17e699abb4b6ac07'
+sha512sums=('37198aa2f06313a0cb2add51cc78f81b26a42f2c9d55a0d3eecf958777107ea5560961c128f2d0af055f7460ba10fadb1b9050251c2c50f2251b40ab517e79cd'
             'SKIP')
 provides=('xorg-server-xwayland')
 conflicts=('xorg-server-xwayland')
