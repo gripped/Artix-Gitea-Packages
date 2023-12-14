@@ -134,13 +134,6 @@ build() {
 	artix-meson mesa-$pkgver build "${meson_options[@]}"
 	meson configure build # Print config
 
-	# Evil: Hack build to make proc-macro crate native
-	# Should become unnecessary with Meson 1.3
-	sed -e '/^rule rust_COMPILER$/irule rust_HACK\n command = rustc -C linker=gcc $ARGS $in\n deps = gcc\n depfile = $targetdep\n description = Compiling native Rust source $in\n' \
-		-e '/^build src\/gallium\/frontends\/rusticl\/librusticl_proc_macros\.so:/s/rust_COMPILER/rust_HACK/' \
-		-e '/^ LINK_ARGS =/s/ src\/gallium\/frontends\/rusticl\/librusticl_proc_macros\.so//' \
-		-i build/build.ninja
-
 	meson compile -C build
 
 	# fake installation to be seperated into packages
