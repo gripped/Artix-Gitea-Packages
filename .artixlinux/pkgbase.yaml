@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bbswitch
-  version: 0.8-639
+  version: 0.8-640
   arch:
     - x86_64
   pkgname:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.8-639
+    version: 0.8-640
     packages:
-      - bbswitch-0.8-639-x86_64.pkg.tar.zst
-      - bbswitch-dkms-0.8-639-x86_64.pkg.tar.zst
+      - bbswitch-0.8-640-x86_64.pkg.tar.zst
+      - bbswitch-dkms-0.8-640-x86_64.pkg.tar.zst
   world:
     version: 0.8-637
     packages:
