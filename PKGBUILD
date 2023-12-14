@@ -8,7 +8,7 @@
 
 pkgname=mpd
 pkgver=0.23.14
-pkgrel=2
+pkgrel=3
 pkgdesc="Flexible, powerful, server-side application for playing music"
 arch=(x86_64)
 url="https://www.musicpd.org/"
@@ -76,6 +76,7 @@ makedepends=(
   libpipewire
   python-sphinx
   sqlite
+  systemd
   twolame
   yajl
 )
@@ -116,7 +117,6 @@ build() {
     -D shine=disabled
     -D tremor=disabled
     -D b_ndebug=true
-    -D systemd=disabled
   )
 
   # NOTE: sndio conflicts with alsa
@@ -165,12 +165,14 @@ package() {
     openal libopenal.so
     opus libopus.so
     sqlite libsqlite3.so
+    systemd-libs libsystemd.so
     twolame libtwolame.so
     yajl libyajl.so
   )
 
   DESTDIR="$pkgdir" ninja -C build install
   install -vDm 644 $pkgname-$pkgver/doc/${pkgname}conf.example -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 $pkgname.service.override "$pkgdir/usr/lib/systemd/system/mpd.service.d/00-arch.conf"
   install -vDm 644 $pkgname.conf -t "$pkgdir/etc/"
   install -vDm 644 $pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   install -vDm 644 $pkgname.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
