@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: couchdb
-  version: 3.3.2-2
+  version: 3.3.3-1
   arch:
     - x86_64
   pkgname:
     - couchdb
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.3.2-1
+    version: 3.3.3-1
     packages:
-      - couchdb-3.3.2-1-x86_64.pkg.tar.zst
+      - couchdb-3.3.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
