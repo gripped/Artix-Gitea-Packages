@@ -1,15 +1,19 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: David Herrmann <dh.herrmann@gmail.com>
 
-pkgname=dbus-broker
-pkgver=33
+pkgbase=dbus-broker
+pkgname=(
+  dbus-broker
+)
+pkgver=34
 pkgrel=1
 pkgdesc="Linux D-Bus Message Broker"
 url="https://github.com/bus1/dbus-broker/wiki"
 arch=(x86_64)
-license=(Apache)
+license=("Apache-2.0")
 depends=(
   audit
+  libcap-ng
   expat
 )
 makedepends=(
@@ -17,26 +21,32 @@ makedepends=(
   python-docutils
 )
 source=(
-  https://github.com/bus1/dbus-broker/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz{,.asc}
+  https://github.com/bus1/dbus-broker/releases/download/v$pkgver/$pkgbase-$pkgver.tar.xz{,.asc}
 )
-sha256sums=('23713f25624749fdb274907e429080fa2d8f4dbe76acd87bb6d21a3c818c7841'
+b2sums=('9c135db01d3b8d436c39dd4cb07303b8faf2cc2651b1b0c95444fc8c5b42a2ba84e963b7e0df4668ab0584c3ac3572da295a75b718df65b13b4a96a417a35176'
+        'SKIP')
+validpgpkeys=(
+  BE5FBC8C9C1C9F60A4F0AEAE7A4F3A09EBDEFF26  # David Herrmann <dh.herrmann@gmail.com>
+)
+
+# https://github.com/bus1/dbus-broker/releases
+sha256sums=('4f5f55ba74f1f098014c97ec753ab75a2bbe92012a7afcac108783c83f39c307'
             'SKIP')
-validpgpkeys=(BE5FBC8C9C1C9F60A4F0AEAE7A4F3A09EBDEFF26) # David Herrmann <dh.herrmann@gmail.com>
 
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgbase-$pkgver
 }
 
 build() {
   local meson_options=(
     -D audit=true
     -D docs=true
-    -D launcher=false
+-   -D launcher=false
     -D linux-4-17=true
     -D system-console-users=gdm,sddm,lightdm,lxdm
   )
 
-  artix-meson $pkgname-$pkgver build "${meson_options[@]}"
+  artix-meson $pkgbase-$pkgver build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -44,7 +54,13 @@ check() {
   meson test -C build --print-errorlogs
 }
 
-package() {
+package_dbus-broker() {
+  depends+=(
+    libaudit.so
+    libcap-ng.so
+    libexpat.so
+  )
+
   meson install -C build --destdir "$pkgdir"
 }
 
