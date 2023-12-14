@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: broadcom-wl
-  version: 6.30.223.271-515
+  version: 6.30.223.271-516
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.30.223.271-515
+    version: 6.30.223.271-516
     packages:
-      - broadcom-wl-6.30.223.271-515-x86_64.pkg.tar.zst
+      - broadcom-wl-6.30.223.271-516-x86_64.pkg.tar.zst
   world:
     version: 6.30.223.271-513
     packages:
