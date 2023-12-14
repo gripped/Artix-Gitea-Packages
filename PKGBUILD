@@ -76,7 +76,6 @@ makedepends=(
   libpipewire
   python-sphinx
   sqlite
-  systemd
   twolame
   yajl
 )
@@ -165,14 +164,13 @@ package() {
     openal libopenal.so
     opus libopus.so
     sqlite libsqlite3.so
-    systemd-libs libsystemd.so
+    udev
     twolame libtwolame.so
     yajl libyajl.so
   )
 
   DESTDIR="$pkgdir" ninja -C build install
   install -vDm 644 $pkgname-$pkgver/doc/${pkgname}conf.example -t "$pkgdir/usr/share/doc/$pkgname/"
-  install -vDm 644 $pkgname.service.override "$pkgdir/usr/lib/systemd/system/mpd.service.d/00-arch.conf"
   install -vDm 644 $pkgname.conf -t "$pkgdir/etc/"
   install -vDm 644 $pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   install -vDm 644 $pkgname.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
