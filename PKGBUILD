@@ -41,7 +41,7 @@ build() {
   local meson_options=(
     -D audit=true
     -D docs=true
--   -D launcher=false
+    -D launcher=false
     -D linux-4-17=true
     -D system-console-users=gdm,sddm,lightdm,lxdm
   )
