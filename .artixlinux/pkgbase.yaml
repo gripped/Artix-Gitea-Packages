@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cudnn
-  version: 8.9.6.50-1
+  version: 8.9.7.29-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.9.6.50-1
+    version: 8.9.7.29-1
     packages:
-      - cudnn-8.9.6.50-1-x86_64.pkg.tar.zst
+      - cudnn-8.9.7.29-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
