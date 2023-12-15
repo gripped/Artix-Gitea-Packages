@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ranger
-  version: 1.9.3-9
+  version: 1.9.3-10
   arch:
     - any
   pkgname:
     - ranger
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.9.3-10
+    packages:
+      - ranger-1.9.3-10-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
