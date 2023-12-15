@@ -8,13 +8,13 @@ license=('custom')
 groups=('xorg')
 url="https://xorg.freedesktop.org"
 pkgdesc="run X clients under wayland"
-depends=('nettle' 'libepoxy' 'systemd-libs' 'libxfont2' 
+depends=('nettle' 'libepoxy' 'libelogind' 'libxfont2' 
          'pixman' 'xorg-server-common' 'libxcvt' 'mesa'
          'libglvnd' 'libxau' 'wayland' 'libdrm' 'libtirpc'
          'libxshmfence' 'glibc')
 makedepends=('meson' 'xorgproto' 'xtrans' 'libxkbfile' 'dbus'
              'xorg-font-util' 'wayland-protocols' 'mesa-libgl'
-             'systemd' 'egl-wayland')
+             'elogind' 'egl-wayland')
 source=(https://xorg.freedesktop.org/archive/individual/xserver/xwayland-$pkgver.tar.xz{,.sig})
 sha512sums=('37198aa2f06313a0cb2add51cc78f81b26a42f2c9d55a0d3eecf958777107ea5560961c128f2d0af055f7460ba10fadb1b9050251c2c50f2251b40ab517e79cd'
             'SKIP')
