@@ -2,21 +2,20 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-nibbles
-pkgver=3.38.3
+pkgver=4.0.0
 pkgrel=1
 pkgdesc="Guide a worm around a maze"
 url="https://wiki.gnome.org/Apps/Nibbles"
 arch=(x86_64)
 license=(GPL)
 depends=(
-  clutter-gtk
   gsound
   libgee
-  libgnome-games-support
-  librsvg
+  libgnome-games-support-2
+  gtk4
 )
 makedepends=(
-  appstream-glib
+  appstream
   git
   gobject-introspection
   meson
@@ -24,8 +23,7 @@ makedepends=(
   yelp-tools
 )
 groups=(gnome-extra)
-options=(debug)
-_commit=6eb6013344ab720275adadaeede5154e3d2afda2  # tags/3.38.3^0
+_commit=71980629bb1afc79473b2fa7887472a577782c90  # tags/4.0.0^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-nibbles.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -36,14 +34,10 @@ pkgver() {
 
 prepare() {
   cd $pkgname
-
-  # https://gitlab.gnome.org/GNOME/gnome-nibbles/-/issues/52
-  git cherry-pick -n 1b48446068608aff9b5edf1fdbd4b8c0d9f0be94
-  git cherry-pick -n 62964e9256fcac616109af874dbb2bd8342a9853
 }
 
 build() {
-  arch-meson $pkgname build
+  artix-meson $pkgname build
   meson compile -C build
 }
 
