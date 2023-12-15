@@ -5,7 +5,7 @@
 _name=FreeRDP
 pkgname=freerdp
 pkgver=2.11.3
-pkgrel=2
+pkgrel=2.1
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -117,7 +117,6 @@ package() {
     libusb libusb-1.0.so
     openssl libcrypto.so libssl.so
     pam libpam.so
-    systemd-libs libsystemd.so
   )
 
   DESTDIR="$pkgdir" cmake --install build
