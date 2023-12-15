@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - openrct2
 actions:
-  addRepo: galaxy
-  removeRepo: world
+  addRepo: galaxy-goblins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -25,9 +25,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.4.6-2
-    packages:
-      - openrct2-0.4.6-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
@@ -44,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.4.6-2
+    packages:
+      - openrct2-0.4.6-2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
