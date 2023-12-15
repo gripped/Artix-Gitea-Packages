@@ -5,7 +5,7 @@
 _name=FreeRDP
 pkgname=freerdp
 pkgver=2.11.3
-pkgrel=1.1
+pkgrel=2.1
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
