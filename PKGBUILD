@@ -1,0 +1,46 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=libgnome-games-support-2
+pkgver=2.0.0
+pkgrel=2
+pkgdesc="Code shared between GNOME games"
+url="https://gitlab.gnome.org/GNOME/libgnome-games-support"
+arch=(x86_64)
+license=(LGPL-3.0-or-later)
+depends=(
+  gtk4
+  libgee
+)
+makedepends=(
+  git
+  meson
+  vala
+)
+provides=("libgnome-games-support-${pkgver%%.*}.so")
+_commit=75ed95f923d77705d5cb5eea14625a655a3225c8  # tags/2.0.0^0
+source=("git+https://gitlab.gnome.org/GNOME/libgnome-games-support.git#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd libgnome-games-support
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd libgnome-games-support
+}
+
+build() {
+  artix-meson libgnome-games-support build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:
