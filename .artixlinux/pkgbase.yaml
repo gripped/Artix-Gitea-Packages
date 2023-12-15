@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: 0ad
-  version: a26-11
+  version: a26-12
   arch:
     - x86_64
   pkgname:
     - 0ad
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: a26-12
+    packages:
+      - 0ad-a26-12-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
