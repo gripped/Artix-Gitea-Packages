@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-prometheus_client
-  version: 0.18.0-1
+  version: 0.19.0-1
   arch:
     - any
   pkgname:
     - python-prometheus_client
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.19.0-1
+    packages:
+      - python-prometheus_client-0.19.0-1-any.pkg.tar.zst
   world:
     version: 0.18.0-1
     packages:
