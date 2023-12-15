@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-mss
-  version: 7.0.1-2
+  version: 9.0.1-1
   arch:
     - any
   pkgname:
     - python-mss
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.0.1-2
+    version: 9.0.1-1
     packages:
-      - python-mss-7.0.1-2-any.pkg.tar.zst
+      - python-mss-9.0.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
