@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wpewebkit
-  version: 2.42.3-2
+  version: 2.42.4-1
   arch:
     - x86_64
   pkgname:
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.42.3-2
+    version: 2.42.4-1
     packages:
-      - wpewebkit-2.42.3-2-x86_64.pkg.tar.zst
-      - wpewebkit-docs-2.42.3-2-x86_64.pkg.tar.zst
+      - wpewebkit-2.42.4-1-x86_64.pkg.tar.zst
+      - wpewebkit-docs-2.42.4-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
