@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: webkit2gtk
-  version: 2.42.3-3
+  version: 2.42.4-1
   arch:
     - x86_64
   pkgname:
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.42.3-3
+    version: 2.42.4-1
     packages:
-      - webkit2gtk-2.42.3-3-x86_64.pkg.tar.zst
-      - webkit2gtk-docs-2.42.3-3-x86_64.pkg.tar.zst
+      - webkit2gtk-2.42.4-1-x86_64.pkg.tar.zst
+      - webkit2gtk-docs-2.42.4-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
