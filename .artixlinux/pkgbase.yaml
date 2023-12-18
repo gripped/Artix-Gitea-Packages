@@ -1,13 +1,13 @@
 ---
 pkgbase:
-  name: bash-bats-support
-  version: 0.3.0-4
+  name: bats-support
+  version: 0.3.0-5
   arch:
     - any
   pkgname:
-    - bash-bats-support
+    - bats-support
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.3.0-5
+    packages:
+      - bats-support-0.3.0-5-any.pkg.tar.zst
   world:
     version: 0.3.0-4
     packages:
