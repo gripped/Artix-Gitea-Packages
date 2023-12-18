@@ -8,12 +8,12 @@ pkgbase:
     - texlive-bin
     - libsynctex
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,13 +26,13 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 2023.66984-17
     packages:
       - texlive-bin-2023.66984-17-x86_64.pkg.tar.zst
       - libsynctex-2023.66984-17-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 2023.66984-16
     packages:
