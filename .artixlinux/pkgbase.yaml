@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sudo
-  version: 1.9.15.p3-1
+  version: 1.9.15.p4-1
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 1.9.15.p3-1
+    version: 1.9.15.p4-1
     packages:
-      - sudo-1.9.15.p3-1-x86_64.pkg.tar.zst
+      - sudo-1.9.15.p4-1-x86_64.pkg.tar.zst
   system:
     version: 1.9.15.p2-1
     packages:
