@@ -3,7 +3,7 @@
 
 pkgname=mkinitcpio-openswap
 pkgver=0.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="mkinitcpio hook to open swap at boot time"
 arch=(any)
 license=('unknown')
