@@ -1,6 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Jelle van der Waa <jelle@archlinux.org>
 # Contributor: Graham Edgecombe <graham@grahamedgecombe.com>
+#
 
 pkgname=openrct2
 pkgver=0.4.6
