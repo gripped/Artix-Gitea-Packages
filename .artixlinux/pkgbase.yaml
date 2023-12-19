@@ -8,11 +8,11 @@ pkgbase:
     - kuserfeedback
 actions:
   addRepo: null
-  removeRepo: null
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.0-1
-    packages:
-      - kuserfeedback-1.2.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
