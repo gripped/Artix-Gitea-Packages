@@ -1,13 +1,14 @@
 # Maintainer: nous <nous@artixlinux.org>
 
-pkgbase=artix-branding
+_pkgname=artix-branding
+
 pkgname=artix-branding-base
-pkgver=20230924
+pkgver=20231219
 pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
-groups=($pkgbase)
-url="https://gitea.artixlinux.org/artix/$pkgbase"
+groups=('artix-branding')
+url="https://gitea.artixlinux.org/artix/artix-branding"
 depends=('neofetch')
 makedepends=('git')
 license=('GPL3')
@@ -21,13 +22,8 @@ source=("git+${url}.git")
 install=$pkgname.install
 sha256sums=('SKIP')
 
-#prepare() {
-#    cd $pkgbase
-#    git checkout refactor
-#}
-
 package() {
-    cd "$pkgbase/$pkgname"
+    cd "$_pkgname/$pkgname"
 #    git checkout ${_branch}
     install -dm755 $pkgdir/etc
     cp -r etc/* $pkgdir/etc
