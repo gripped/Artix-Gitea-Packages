@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: libqaccessibilityclient
-  version: 0.4.1-2
+  version: 0.6.0-1
   arch:
     - x86_64
   pkgname:
-    - libqaccessibilityclient
+    - libqaccessibilityclient-qt5
+    - libqaccessibilityclient-qt6
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.6.0-1
+    packages:
+      - libqaccessibilityclient-qt5-0.6.0-1-x86_64.pkg.tar.zst
+      - libqaccessibilityclient-qt6-0.6.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
