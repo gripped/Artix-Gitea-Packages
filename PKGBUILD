@@ -5,6 +5,7 @@
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
 # Contributor: Ben <ben@benmazer.net>
+#
 
 pkgname=scribus
 pkgver=1.5.8
