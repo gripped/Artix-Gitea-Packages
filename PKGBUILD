@@ -66,11 +66,6 @@ export MOZILLA_OFFICIAL=1
 export MOZ_APP_REMOTINGNAME=$pkgname
 export MOZ_APP_PROFILE="mozilla/firefox-esr"
 
-# Keys
-ac_add_options --with-google-location-service-api-keyfile=${PWD@Q}/google-api-key
-ac_add_options --with-google-safebrowsing-api-keyfile=${PWD@Q}/google-api-key
-ac_add_options --with-mozilla-api-keyfile=${PWD@Q}/mozilla-api-key
-
 # System libraries
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
