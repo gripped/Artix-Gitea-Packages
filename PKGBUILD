@@ -14,7 +14,7 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.5
+pkgver=6.6
 pkgrel=1
 license=('GPL2')
 arch=('x86_64')
@@ -41,18 +41,16 @@ makedepends+=('libcap')
 makedepends+=('llvm' 'clang')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
-        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.5.xz"
+        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.7.xz"
         'cpupower.default'
-        'fix-perf-tests.patch'
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('SKIP'
-            '22ad68c6c5f194f879fded9c44a205e394438fd505439e5f23e13e22ae1b7fe0'
-            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f'
-            '26bce106f363fd382b5669c5098c76c127d564da827b254847c7b7e76e39f912')
+            'b227017c1aba9089054a2ca8b6671225de948a6643d7a759558386540f55d1e2'
+            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
   cd linux
