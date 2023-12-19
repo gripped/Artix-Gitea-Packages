@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - mate-settings-daemon
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.26.0-1
-    packages:
-      - mate-settings-daemon-1.26.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -50,5 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.26.0-1
+    packages:
+      - mate-settings-daemon-1.26.0-1-x86_64.pkg.tar.zst
