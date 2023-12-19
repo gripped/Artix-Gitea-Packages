@@ -4,7 +4,7 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.7.0
+pkgver=4.8.0
 pkgrel=1
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
@@ -16,7 +16,7 @@ validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wo
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('8faca44e299ad2915fa000887ab1632631ea68709c62ce35f110bfe721ecf214'
+sha256sums=('820da4e384721915f4bcaf7f2bed98519da563c6e4c130c742c724760ec02a0a'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
@@ -47,7 +47,7 @@ build() {
 package() {
   cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
-  rmdir "${pkgdir}"/{tmp,run{/nsd,},var{/db{/nsd,},}}
+  rmdir "${pkgdir}"/{tmp,run{/nsd,}}
 
   rm doc/differences.pdf
   install -d "${pkgdir}"/usr/share/{doc,licenses}/"${pkgname}"
