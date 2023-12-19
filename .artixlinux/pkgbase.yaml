@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - calamares
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,10 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 3.2.62-6
     packages:
       - calamares-3.2.62-6-x86_64.pkg.tar.zst
-  galaxy:
-    version: 3.2.62-5
-    packages:
-      - calamares-3.2.62-5-x86_64.pkg.tar.zst
