@@ -1,28 +1,34 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: ice-man <icemanf@gmail.com>
 # Contributor: sergeantspoon <sergeantspoon@archlinux.us>
 
 pkgbase=libssh
-pkgname=(libssh libssh-docs)
-pkgver=0.10.5
+pkgname=(libssh
+         libssh-docs)
+pkgver=0.10.6
 pkgrel=1
 pkgdesc='Library for accessing ssh client services through C libraries'
 url='https://www.libssh.org/'
 license=(LGPL)
 arch=(x86_64)
-depends=(zlib openssl)
-makedepends=(cmake cmocka doxygen python openssh)
+depends=(glibc
+         openssl
+         zlib)
+makedepends=(cmake
+             cmocka
+             doxygen
+             openssh
+             python)
 provides=(libssh.so)
 source=("https://www.libssh.org/files/${pkgver%.*}/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('b60e2ff7f367b9eee2b5634d3a63303ddfede0e6a18dfca88c44a8770e7e4234'
+sha256sums=('1861d498f5b6f1741b6abc73e608478491edcf9c9d4b6630eef6e74596de9dc1'
             'SKIP')
 validpgpkeys=('8DFF53E18F2ABC8D8F3C92237EE0FC4DCC014E3D') # Andreas Schneider <asn@cryptomilk.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DWITH_GSSAPI=OFF \
     -DUNIT_TESTING=ON
