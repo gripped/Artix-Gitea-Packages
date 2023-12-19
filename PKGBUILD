@@ -4,7 +4,7 @@
 
 pkgname=freeradius
 pkgver=3.2.3
-pkgrel=3
+pkgrel=5
 pkgdesc='The premier open source RADIUS server'
 arch=('x86_64')
 url='https://freeradius.org/'
@@ -29,15 +29,13 @@ source=("ftp://ftp.freeradius.org/pub/radius/freeradius-server-$pkgver.tar.bz2"{
         '0001-python-3-10.patch'
         '0002-Use-accessor-function-for-PyFrameObject-members.patch'
         'freeradius-sysusers.conf'
-        'freeradius-tmpfiles.conf'
-        )
+        'freeradius-tmpfiles.conf')
 sha256sums=('4a16aeffbfa1424e1f317fdf71d17e5523a4fd9564d87c747a60595ef93c5d1f'
             'SKIP'
             'a84b6489f58083639d9b1854b1bd8610a0f672bcf2a6d902a78da0868fca1317'
             '5ae5a2860969b8f4973a873d9adde2ad3a8a2af2cf6f669627c619745d549382'
             '8ecaca94c7d0f4806b326685312dd4e543ce9c6c183d3d7ad01c1a0197bdfb94'
-            'f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc'
-            )
+            'f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc')
 
 prepare() {
   cd "$srcdir"/freeradius-server-$pkgver
