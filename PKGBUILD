@@ -9,7 +9,7 @@
 
 pkgbase=rabbitmq
 pkgname=(rabbitmq rabbitmqadmin)
-pkgver=3.12.0
+pkgver=3.12.10
 pkgrel=1
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
@@ -25,7 +25,7 @@ source=(https://github.com/rabbitmq/rabbitmq-server/releases/download/v${pkgver}
         rabbitmq.sysusers
         rabbitmq.tmpfiles
         rabbitmq.logrotate)
-sha512sums=('50af297e460ab1725587dd75d1c3f08eb15c1293e98bf31d8e83fc346e50bdbbf89cb04bedfcf863388c20dd92cde43084b69092617f287935f2528210de2b3a'
+sha512sums=('c9880bcc8a0097c75b260181fff6ae21e300da3e7d8d1d1323122c7a94d0c69a8fcebe4131b4e9db03d416201f3cfe48c4df6e18787eac15e5d238613ab89880'
             'SKIP'
             '8b841e28fa0a1424dd9e57c0988e015f3cd4cccef0f73ccdb7c7b66d11ca62ba8ef3a59c7ca5e5f0c9c9d8003ac72bf53785985d98aae867961787003286e179'
             '17d33e7104172bc265d97821fec58f1402ad3103f1ea4b1f6bbabcf0dd840685708a1bdc808b48c1a60726c5c0aa7b6479395afd9360d3116b812c143c432423'
