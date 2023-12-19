@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - mate-media
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.26.0-1.1
-    packages:
-      - mate-media-1.26.0-1.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -50,5 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.26.0-1.1
+    packages:
+      - mate-media-1.26.0-1.1-x86_64.pkg.tar.zst
