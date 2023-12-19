@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: act-runner-openrc
-  version: 20231204-1
+  version: 20231219-1
   arch:
     - any
   pkgname:
     - act-runner-openrc
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 20231219-1
+    packages:
+      - act-runner-openrc-20231219-1-any.pkg.tar.zst
   galaxy:
     version: 20231204-1
     packages:

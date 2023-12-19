@@ -1,0 +1,5 @@
+# config file for /etc/init.d/act_runner
+
+RUNNER_CONFIG="/etc/act_runner/act_runner.yaml"
+
+RUNNER_DIR="/etc/act_runner"

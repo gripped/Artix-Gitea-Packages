@@ -1,9 +1,11 @@
 #!/usr/bin/openrc-run
 
+name=$RC_SVCNAME
 description="Act Runner"
-command="/usr/bin/act_runner"
-command_args="-c /etc/act_runner/act_runner.yaml daemon"
 supervisor="supervise-daemon"
+command="/usr/bin/act_runner"
+command_args="-c ${RUNNER_CONFIG:-/etc/act_runner/act_runner.yaml} daemon"
+supervise_daemon_args=" -d ${RUNNER_DIR:-/etc/act_runner}/"
 
 depend() {
     after gitea
