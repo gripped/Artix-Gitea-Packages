@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: directx-headers
-  version: 1.610.0-1
+  version: 1.611.0-1
   arch:
     - x86_64
   pkgname:
     - directx-headers
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.610.0-1
+    version: 1.611.0-1
     packages:
-      - directx-headers-1.610.0-1-x86_64.pkg.tar.zst
+      - directx-headers-1.611.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
