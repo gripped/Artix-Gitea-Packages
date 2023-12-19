@@ -1,13 +1,13 @@
 ---
 pkgbase:
-  name: bash-bats-assert
-  version: 2.1.0-1
+  name: bats-assert
+  version: 2.1.0-2
   arch:
     - any
   pkgname:
-    - bash-bats-assert
+    - bats-assert
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.1.0-2
+    packages:
+      - bats-assert-2.1.0-2-any.pkg.tar.zst
   world:
     version: 2.1.0-1
     packages:
