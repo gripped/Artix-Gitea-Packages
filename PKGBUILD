@@ -1,8 +1,9 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=libplacebo
 pkgver=6.338.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Reusable library for GPU-accelerated video/image rendering primitives'
 url='https://github.com/haasn/libplacebo'
 arch=('x86_64')
@@ -19,7 +20,7 @@ sha512sums=('a538a26552bda77af98264abde0e721c967f0c5eba73c0ffdff3cc7f52a4505ee5b
 b2sums=('4f8df9c6f052eeb3b23cf9d22814cf6b244197d6b9c3ec529c89be3411d22b7d29ff0c9ee14af7a86f830ecfba7b1be308251dca96824f1a1eb74c3a0a3f84b3')
 
 build() {
-  cd ${pkgbase}-v${pkgver}
+  cd ${pkgname}-v${pkgver}
   CXXFLAGS+=" -I/usr/include/glslang"
   artix-meson build \
     -D tests=true \
@@ -34,12 +35,12 @@ build() {
 }
 
 check() {
-  cd ${pkgbase}-v${pkgver}
+  cd ${pkgname}-v${pkgver}
   meson test -C build
 }
 
 package() {
-  cd ${pkgbase}-v${pkgver}
+  cd ${pkgname}-v${pkgver}
   DESTDIR="${pkgdir}" ninja -C build install
   install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
