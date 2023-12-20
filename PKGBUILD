@@ -3,8 +3,8 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-panel
-pkgver=1.26.3
-pkgrel=1.1
+pkgver=1.26.4
+pkgrel=1
 pkgdesc="The MATE Panel"
 url="https://mate-desktop.org"
 arch=('x86_64')
@@ -15,13 +15,7 @@ source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}
 groups=('mate')
 conflicts=('mate-panel-gtk3')
 replaces=('mate-panel-gtk3')
-sha256sums=('f33f10d527450ba7e98cc70ab255ac481330aa9e66dbcc7c511b6baa171de029')
-
-prepare() {
-  cd "${pkgname}-${pkgver}" 
-  sed -i 's/--keyword Name/--keyword=Name/' libmate-panel-applet/Makefile.in
-  sed -i 's/--keyword Description/--keyword=Description/' libmate-panel-applet/Makefile.in
-}
+sha256sums=('2070f9d515657e5ddcda0d87ef729713dba9cb7b2ad06223bd674a21cc6b3daf')
 
 build() {
     cd "${pkgname}-${pkgver}" 
