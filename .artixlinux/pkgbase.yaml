@@ -8,10 +8,10 @@ pkgbase:
     - stk
     - stk-docs
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -31,8 +31,10 @@ repos:
       - stk-5.0.1-2-x86_64.pkg.tar.zst
       - stk-docs-5.0.1-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.1-2
+    packages:
+      - stk-5.0.1-2-x86_64.pkg.tar.zst
+      - stk-docs-5.0.1-2-x86_64.pkg.tar.zst
   world:
     version: 4.6.2-2
     packages:
