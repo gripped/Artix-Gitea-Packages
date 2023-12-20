@@ -24,7 +24,7 @@ pkgname=(
   qemu-vhost-user-gpu
   qemu-{base,desktop,emulators-full,full}
 )
-pkgver=8.1.3
+pkgver=8.2.0
 pkgrel=1
 pkgdesc="A generic and open source machine emulator and virtualizer"
 arch=(x86_64)
@@ -37,7 +37,7 @@ license=(
   GPL-1.0-or-later
   GPL-2.0-only
   GPL-2.0-or-later
-  'GPL-2.0-or-later with GCC-exception-2.0 exception'
+  'GPL-2.0-or-later WITH GCC-exception-2.0'
   LGPL-2.0-only
   LGPL-2.0-or-later
   LGPL-2.1-only
@@ -598,7 +598,7 @@ package_qemu-audio-dbus() {
 
 package_qemu-audio-jack() {
   pkgdesc="QEMU JACK audio driver"
-  depends=(glibc jack libjack.so qemu-common=$pkgver-$pkgrel)
+  depends=(gcc-libs glibc jack libjack.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
 }
 
@@ -990,7 +990,7 @@ package_qemu-ui-dbus() {
 
 package_qemu-ui-egl-headless() {
   pkgdesc="QEMU EGL headless UI driver"
-  depends=(glibc libepoxy qemu-common=$pkgver-$pkgrel qemu-ui-opengl=$pkgver-$pkgrel)
+  depends=(glibc libepoxy pixman libpixman-1.so qemu-common=$pkgver-$pkgrel qemu-ui-opengl=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
 }
 
