@@ -1,5 +1,4 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=gtk3
@@ -8,7 +7,7 @@ pkgname=(
   gtk3-demos
   gtk3-docs
 )
-pkgver=3.24.38
+pkgver=3.24.39
 pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
@@ -46,7 +45,6 @@ depends=(
   libxkbcommon
   libxrandr
   libxrender
-  mesa
   pango
   shared-mime-info
   wayland
@@ -60,24 +58,21 @@ makedepends=(
   sassc
   wayland-protocols
 )
-options=(debug)
-# workaround weirdness with clones not working
-#_commit=3e6fd55ee00d4209ce2f2af292829e4d6f674adc  # tags/3.24.38^0
+_commit=9ce32d5d7d2411032876232d86b66f9fd5f7e815  # tags/3.24.39^0
 source=(
-  "https://gitlab.gnome.org/GNOME/gtk/-/archive/${pkgver}/gtk-${pkgver}.tar.gz"
+  "git+https://gitlab.gnome.org/GNOME/gtk.git#commit=$_commit"
   gtk-query-immodules-3.0.hook
 )
-sha256sums=('6cdf7189322b8465745fbb30249044d05b792a8f006746ccce9213db671ec16d'
+sha256sums=('SKIP'
             'a0319b6795410f06d38de1e8695a9bf9636ff2169f40701671580e60a108e229')
 
-#pkgver() {
-#  cd gtk
-#  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-#}
+pkgver() {
+  cd gtk
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
 
 prepare() {
-  #cd gtk
-  cd gtk-${pkgver}
+  cd gtk
 }
 
 build() {
@@ -91,8 +86,7 @@ build() {
   )
 
   CFLAGS+=" -DG_DISABLE_CAST_CHECKS"
-  artix-meson gtk-${pkgver} build "${meson_options[@]}"
-  #artix-meson gtk build "${meson_options[@]}"
+  artix-meson gtk build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -107,6 +101,7 @@ _pick() {
 }
 
 package_gtk3() {
+  depends+=(gtk-update-icon-cache)
   optdepends=('evince: Default print preview command')
   provides=(
     gtk3-print-backends
