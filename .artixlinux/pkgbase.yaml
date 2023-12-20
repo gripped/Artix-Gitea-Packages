@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nss
-  version: 3.96-1
+  version: 3.96.1-1
   arch:
     - x86_64
   pkgname:
@@ -20,10 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 3.96-1
+    version: 3.96.1-1
     packages:
-      - nss-3.96-1-x86_64.pkg.tar.zst
-      - ca-certificates-mozilla-3.96-1-x86_64.pkg.tar.zst
+      - nss-3.96.1-1-x86_64.pkg.tar.zst
+      - ca-certificates-mozilla-3.96.1-1-x86_64.pkg.tar.zst
   system:
     version: 3.95-1
     packages:
