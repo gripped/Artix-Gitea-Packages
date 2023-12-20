@@ -1,7 +1,7 @@
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 
 pkgname=lib32-icu
-pkgver=74.1
+pkgver=74.2
 pkgrel=1
 pkgdesc="International Components for Unicode library (32 bit)"
 arch=(x86_64)
@@ -11,11 +11,13 @@ depends=('lib32-gcc-libs' 'icu')
 makedepends=('python')
 provides=(libicu{data,i18n,io,test,tu,uc}.so)
 source=(https://github.com/unicode-org/icu/releases/download/release-${pkgver//./-}/icu4c-${pkgver//./_}-src.tgz{,.asc}
-        ICU-22132.patch)
-# https://github.com/unicode-org/icu/releases/download/release-74-1/SHASUM512.txt
-sha512sums=('32c28270aa5d94c58d2b1ef46d4ab73149b5eaa2e0621d4a4c11597b71d146812f5e66db95f044e8aaa11b94e99edd4a48ab1aa8efbe3d72a73870cd56b564c2'
+        ICU-22132.patch
+        LICENSE)
+# https://github.com/unicode-org/icu/releases/download/release-74-2/SHASUM512.txt
+sha512sums=('0cbe29122370ba03a8fb5b0f1494f598748044ad2aa4d66ba65fe98ebeb88da2d73d324ad6bfc44e004846e0ab5c9a34d1fdf3d6bdb3095c0d47e929b943e6db'
             'SKIP'
-            '1178062ccfcf7ecc698c64132b3612e73f9c4b0bbfaa668ae2039f3eb4cb2722d0b08a9f45b057da10def7a308d5c8d14c0c644892e7f11092c9cc488c850ab7')
+            '1178062ccfcf7ecc698c64132b3612e73f9c4b0bbfaa668ae2039f3eb4cb2722d0b08a9f45b057da10def7a308d5c8d14c0c644892e7f11092c9cc488c850ab7'
+            'c1c3b2deaf2aeb1d90c1ca85d57db921e140e5087c1eba579dabaca94568a840a0e105145b8016f3b7269216ddc1b0ac56e1d5d1753129a99367e51e2080a6b0')
 #validpgpkeys=('BA90283A60D67BA0DD910A893932080F4FB419E3') #  "Steven R. Loomis (filfla-signing) <srloomis@us.ibm.com>"
 #validpgpkeys+=('9731166CD8E23A83BEE7C6D3ACA5DBE1FD8FABF1') #  "Steven R. Loomis (ICU Project) <srl@icu-project.org>"
 #validpgpkeys+=('FFA9129A180D765B7A5BEA1C9B432B27D1BA20D7') # "Fredrik Roubert <fredrik@roubert.name>"
@@ -52,12 +54,12 @@ build() {
 
 check() {
   cd icu/source
-  make -k check
+  make check
 }
 
 package() {
   cd icu/source
-  make -j1 DESTDIR="${pkgdir}" install
+  make DESTDIR="${pkgdir}" install
   rm -r "${pkgdir}/usr"/{include,share}
 
   # keep icu-config-32
@@ -65,5 +67,8 @@ package() {
   mv "${pkgdir}/usr/bin"/icu-config{,-32}
 
   # Install license
-  install -Dm644 "${srcdir}"/icu/LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+  # https://unicode-org.atlassian.net/browse/ICU-22601
+#  install -Dm644 "${srcdir}"/icu/LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+  install -Dm644 "${srcdir}"/LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+
 }
