@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: jupyter-server-fileid
-  version: 0.9.0-1
+  version: 0.9.1-1
   arch:
     - any
   pkgname:
     - jupyter-server-fileid
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.0-1
+    version: 0.9.1-1
     packages:
-      - jupyter-server-fileid-0.9.0-1-any.pkg.tar.zst
+      - jupyter-server-fileid-0.9.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
