@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mate-session-manager
-  version: 1.26.0-1.2
+  version: 1.26.1-1
   arch:
     - x86_64
   pkgname:
     - mate-session-manager
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.26.0-1.2
+    version: 1.26.1-1
     packages:
-      - mate-session-manager-1.26.0-1.2-x86_64.pkg.tar.zst
+      - mate-session-manager-1.26.1-1-x86_64.pkg.tar.zst
