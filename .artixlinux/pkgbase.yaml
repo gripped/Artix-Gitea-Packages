@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: iw
-  version: 5.19-2
+  version: 6.7-1
   arch:
     - x86_64
   pkgname:
     - iw
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.7-1
+    packages:
+      - iw-6.7-1-x86_64.pkg.tar.zst
   system:
     version: 5.19-2
     packages:
