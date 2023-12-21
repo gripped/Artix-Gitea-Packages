@@ -169,6 +169,7 @@ END
 
   echo "Building optimized browser..."
   cat >.mozconfig ../mozconfig - <<END
+mk_add_options MOZ_PARALLEL_BUILD=6
 ac_add_options --enable-lto=cross,full
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
