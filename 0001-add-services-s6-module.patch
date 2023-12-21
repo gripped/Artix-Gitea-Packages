@@ -1,7 +1,16 @@
- src/modules/services-s6/main.py          | 101 +++++++++++++++++++++++++++++++
+From 428a95d45c88f944cdc5f8b4022528d8158d39b3 Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Thu, 21 Dec 2023 17:50:28 +0100
+Subject: [PATCH 1/1] add services-s6 module
+
+---
+ src/modules/services-s6/main.py          | 101 +++++++++++++++++++++++
  src/modules/services-s6/module.desc      |   5 ++
- src/modules/services-s6/services-s6.conf |  33 ++++++++++
+ src/modules/services-s6/services-s6.conf |  33 ++++++++
  3 files changed, 139 insertions(+)
+ create mode 100644 src/modules/services-s6/main.py
+ create mode 100644 src/modules/services-s6/module.desc
+ create mode 100644 src/modules/services-s6/services-s6.conf
 
 diff --git a/src/modules/services-s6/main.py b/src/modules/services-s6/main.py
 new file mode 100644
@@ -160,3 +169,6 @@ index 000000000..ee612526e
 +#     - foo4
 +services: []
 +disable: []
+-- 
+2.43.0
+

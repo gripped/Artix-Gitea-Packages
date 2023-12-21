@@ -1,21 +1,30 @@
- src/modules/services-dinit/main.py             | 133 +++++++++++++++++++++++++
- src/modules/services-dinit/module.desc         |   5 +
- src/modules/services-dinit/services-dinit.conf |  41 ++++++++
- 3 files changed, 179 insertions(+)
+From 6a1a706f91a0c0e14f7dfc05f3814467d0253f3c Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Thu, 21 Dec 2023 17:49:38 +0100
+Subject: [PATCH 1/1] add services-runit module
 
-diff --git a/src/modules/services-dinit/main.py b/src/modules/services-dinit/main.py
+---
+ src/modules/services-runit/main.py            | 144 ++++++++++++++++++
+ src/modules/services-runit/module.desc        |   5 +
+ .../services-runit/services-runit.conf        |  44 ++++++
+ 3 files changed, 193 insertions(+)
+ create mode 100644 src/modules/services-runit/main.py
+ create mode 100644 src/modules/services-runit/module.desc
+ create mode 100644 src/modules/services-runit/services-runit.conf
+
+diff --git a/src/modules/services-runit/main.py b/src/modules/services-runit/main.py
 new file mode 100644
-index 000000000..4bc8d385a
+index 000000000..8b616191d
 --- /dev/null
-+++ b/src/modules/services-dinit/main.py
-@@ -0,0 +1,133 @@
++++ b/src/modules/services-runit/main.py
+@@ -0,0 +1,144 @@
 +#!/usr/bin/env python3
 +# -*- coding: utf-8 -*-
 +#
 +# === This file is part of Calamares - <https://github.com/calamares> ===
 +#
 +#   Copyright 2018-2019, Adriaan de Groot <groot@kde.org>
-+#   Copyright 2021, Artoo <artoo@artixlinux.org>
++#   Copyright 2019, Artoo <artoo@artixlinux.org>
 +#
 +#   Calamares is free software: you can redistribute it and/or modify
 +#   it under the terms of the GNU General Public License as published by
@@ -44,12 +53,12 @@ index 000000000..4bc8d385a
 +
 +
 +def pretty_name():
-+    return _("Configure Dinit services")
++    return _("Configure Runit services")
 +
 +
-+class DinitController:
++class RunitController:
 +    """
-+    This is the dinit service controller.
++    This is the runit service controller.
 +    All of its state comes from global storage and the job
 +    configuration at initialization time.
 +    """
@@ -62,43 +71,45 @@ index 000000000..4bc8d385a
 +        self.services["enable"] = libcalamares.job.configuration.get('services', [])
 +        self.services["disable"] = libcalamares.job.configuration.get('disable', [])
 +
-+        self.initdDir = libcalamares.job.configuration['initdDir']
++        self.svDir = libcalamares.job.configuration['svDir']
 +        self.runsvDir = libcalamares.job.configuration['runsvDir']
 +
 +
-+    def make_failure_description(self, state, name):
++    def make_failure_description(self, state, name, runlevel):
 +        """
 +        Returns a generic "could not <foo>" failure message, specialized
-+        for the action @p state and the specific service @p name.
++        for the action @p state and the specific service @p name in @p runlevel.
 +        """
 +        if state == "enable":
-+            description = _("Cannot enable service {name!s}.")
++            description = _("Cannot enable service {name!s} to run-level {level!s}.")
 +        elif state == "disable":
-+            description = _("Cannot disable service {name!s}.")
++            description = _("Cannot disable service {name!s} from run-level {level!s}.")
 +        else:
-+            description = _("Unknown service-action <code>{arg!s}</code> for service {name!s}.")
++            description = _("Unknown service-action <code>{arg!s}</code> for service {name!s} in run-level {level!s}.")
 +
-+        return description.format(arg=state, name=name)
++        return description.format(arg=state, name=name, level=runlevel)
 +
 +
 +    def update(self, state):
 +        """
-+        Process each service listed
++        Call sv-helper for each service listed
 +        in services for the given @p state.
 +        """
 +
 +        for svc in self.services.get(state, []):
 +            if isinstance(svc, str):
 +                name = svc
++                runlevel = "default"
 +                mandatory = False
 +            else:
 +                name = svc["name"]
++                runlevel = svc.get("runlevel", "default")
 +                mandatory = svc.get("mandatory", False)
 +
-+            service_path = self.root + self.initdDir + "/" + name
-+            runlevel_path = self.root + self.runsvDir
-+            src = self.initdDir + "/" + name
-+            dest = self.runsvDir + "/"
++            service_path = self.root + self.svDir + "/" + name
++            runlevel_path = self.root + self.runsvDir + "/" + runlevel
++            src = self.svDir + "/" + name
++            dest = self.runsvDir + "/" + runlevel + "/"
 +
 +            if state == 'enable':
 +                cmd = ["ln", "-sv", src, dest]
@@ -109,21 +120,30 @@ index 000000000..4bc8d385a
 +                if exists(runlevel_path):
 +                    ec = target_env_call(cmd)
 +                    if ec != 0:
-+                        warning("Cannot {} service {}".format(state, name))
++                        warning("Cannot {} service {} to {}".format(state, name, runlevel))
 +                        warning("{} returned error code {!s}".format(cmd, ec))
 +                        if mandatory:
 +                            title = _("Cannot modify service")
 +                            diagnostic = _("<code>cmd {arg!s}</code> call in chroot returned error code {num!s}.").format(arg=state, num=ec)
 +                            return (title,
-+                                    self.make_failure_description(state, name) + " " + diagnostic
++                                    self.make_failure_description(state, name, runlevel) + " " + diagnostic
 +                                    )
++                else:
++                    warning("Target runlevel {} does not exist for {}.".format(runlevel, name))
++                    if mandatory:
++                        title = _("Target runlevel does not exist")
++                        diagnostic = _("The path for runlevel {level!s} is <code>{path!s}</code>, which does not exist.").format(level=runlevel, path=runlevel_path)
++
++                        return (title,
++                                self.make_failure_description(state, name, runlevel) + " " + diagnostic
++                                )
 +            else:
-+                warning("Target service {} does not exist in {}.".format(name, self.initdDir))
++                warning("Target service {} does not exist in {}.".format(name, self.svDir))
 +                if mandatory:
 +                    title = _("Target service does not exist")
 +                    diagnostic = _("The path for service {name!s} is <code>{path!s}</code>, which does not exist.").format(name=name, path=service_path)
 +                    return (title,
-+                            self.make_failure_description(state, name) + " " + diagnostic
++                            self.make_failure_description(state, name, runlevel) + " " + diagnostic
 +                            )
 +
 +
@@ -141,63 +161,68 @@ index 000000000..4bc8d385a
 +    Setup services
 +    """
 +
-+    return DinitController().run()
-diff --git a/src/modules/services-dinit/module.desc b/src/modules/services-dinit/module.desc
++    return RunitController().run()
+diff --git a/src/modules/services-runit/module.desc b/src/modules/services-runit/module.desc
 new file mode 100644
-index 000000000..4237214e3
+index 000000000..29737c13e
 --- /dev/null
-+++ b/src/modules/services-dinit/module.desc
++++ b/src/modules/services-runit/module.desc
 @@ -0,0 +1,5 @@
 +---
 +type:       "job"
-+name:       "services-dinit"
++name:       "services-runit"
 +interface:  "python"
 +script:     "main.py"
-diff --git a/src/modules/services-dinit/services-dinit.conf b/src/modules/services-dinit/services-dinit.conf
+diff --git a/src/modules/services-runit/services-runit.conf b/src/modules/services-runit/services-runit.conf
 new file mode 100644
-index 000000000..dec184e15
+index 000000000..04476b107
 --- /dev/null
-+++ b/src/modules/services-dinit/services-dinit.conf
-@@ -0,0 +1,41 @@
++++ b/src/modules/services-runit/services-runit.conf
+@@ -0,0 +1,44 @@
 +# runit services module to modify service runlevels via symlinks in the chroot
 +#
 +# Services can be added (to any runlevel, or multiple runlevels) or deleted.
 +# Handle disable with care and only use it if absolutely necessary.
 +#
 +# if a service is listed in the conf but is not present/detected on the target system,
-+# it will be ignored and skipped; a warning is logged.
++# or a runlevel does not exist, it will be ignored and skipped; a warning is logged.
 +#
 +---
-+# initdDir: holds the runit service directory location
-+initdDir: /etc/dinit.d
++# svDir: holds the runit service directory location
++svDir: /etc/runit/sv
 +
 +# runsvDir: holds the runlevels directory location
-+runsvDir: /etc/dinit.d/boot.d
++runsvDir: /etc/runit/runsvdir
 +
 +# services: a list of entries to **enable**
 +# disable: a list of entries to **disable**
 +#
 +# Each entry has three fields:
 +#   - name: the service name
++#   - (optional) runlevel: can hold any runlevel present on the target
++#     system; if no runlevel is provided, "default" is assumed.
 +#   - (optional) mandatory: if set to true, a failure to modify
 +#     the service will result in installation failure, rather than just
 +#     a warning. The default is false.
 +#
 +# an entry may also be a single string, which is interpreted
-+# as the name field.
++# as the name field (runlevel "default" is assumed then, and not-mandatory).
 +#
 +# # Example services and disable settings:
-+# # - add foo1, but it must succeed
-+# # - add foo2
-+# # - remove foo3
-+# # - remove foo4
++# # - add foo1 to default, but it must succeed
++# # - add foo2 to nonetwork
++# # - remove foo3 from default
++# # - remove foo4 from default
 +# services:
 +#     - name: foo1
 +#       mandatory: true
 +#     - name: foo2
++#       runlevel: nonetwork
 +# disable:
 +#     - name: foo3
 +#     - foo4
 +services: []
 +disable: []
+-- 
+2.43.0
 
