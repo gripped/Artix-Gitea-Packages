@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tipidee
-pkgver=0.0.2.0
+pkgver=0.0.3.0
 pkgrel=1
 pkgdesc="A small and fast HTTP/1.1 server."
 arch=('x86_64')
@@ -9,7 +9,7 @@ license=('ISC')
 depends=('skalibs' 'libskarnet.so' 's6-networking' 'bearssl')
 provides=('libtipidee.so')
 source=("https://skarnet.org/software/tipidee/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('e48fbf81fbcdf2ce1b7fa3a2fb993346775678b57b9a8bf245fce7cf490d3286')
+sha256sums=('d1d93a93ce942a02768a85f91f65e881af52f92c0ccbd345acad8a10aa0dc420')
 
 build() {
   cd ${pkgname}-${pkgver}
