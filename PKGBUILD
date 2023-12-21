@@ -3,13 +3,13 @@
 
 pkgname=iso-profiles
 pkgver=2023.12
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix iso profiles'
 arch=('any')
 license=('GPL')
 url='https://gitea.artixlinux.org/artix/iso-profiles'
 makedepends=('git')
-_commit=951bcd14d983de15aafc4a3497614a246ed68107
+_commit=d041318ff34e62a020db4dc7d306eecf671df36e
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
@@ -20,5 +20,5 @@ pkgver() {
 package() {
     cd "${pkgname}"
     install -d "${pkgdir}"/usr/share/artools/iso-profiles
-    cp -a {base,common,community,cinnamon,community-gtk,community-qt,lxde,lxqt,mate,plasma,xfce} "${pkgdir}"/usr/share/artools/iso-profiles
+    cp -a {base,common,community,cinnamon,community-gtk,community-qt,lxde,lxqt,mate,plasma,xfce,netinstall} "${pkgdir}"/usr/share/artools/iso-profiles
 }
