@@ -3,18 +3,19 @@
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
 pkgver=0.32.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
 url='https://gitea.artixlinux.org/artix/artools'
 makedepends=('git')
-groups=('artix-tools')
-checkdepends=('shellcheck')
+groups=('artix-tools' 'artools')
+# checkdepends=('shellcheck')
 source=("git+${url}.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 _patches=(
+    1fd3b796c510bbe56d53fd093ffe676412bd21d5 # netstrap netinstall
 )
 
 # pkgver() {
