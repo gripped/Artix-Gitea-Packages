@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-nss
-  version: 3.96-1
+  version: 3.96.1-1
   arch:
     - x86_64
   pkgname:
@@ -37,9 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 3.96-1
+    version: 3.96.1-1
     packages:
-      - lib32-nss-3.96-1-x86_64.pkg.tar.zst
+      - lib32-nss-3.96.1-1-x86_64.pkg.tar.zst
   lib32:
     version: 3.95-1
     packages:
