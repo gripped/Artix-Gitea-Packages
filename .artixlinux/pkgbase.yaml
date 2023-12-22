@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: artixnews
-  version: 0.2.0-3
+  version: 0.2.0-4
   arch:
     - x86_64
   pkgname:
     - artixnews
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.2.0-3
+    version: 0.2.0-4
     packages:
-      - artixnews-0.2.0-3-x86_64.pkg.tar.zst
+      - artixnews-0.2.0-4-x86_64.pkg.tar.zst
