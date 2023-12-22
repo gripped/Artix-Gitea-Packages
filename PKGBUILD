@@ -3,14 +3,17 @@
 
 pkgname=ppp
 pkgver=2.5.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A daemon which implements the Point-to-Point Protocol for dial-up networking"
 arch=(x86_64)
 url="https://www.samba.org/ppp/"
 license=('GPL' 'BSD')
 depends=('glibc' 'libpcap' 'libxcrypt' 'openssl')
-backup=(etc/ppp/{chap-secrets,pap-secrets,options,ip-up,ip-down,ip-down.d/00-dns.sh,ip-up.d/00-dns.sh,ipv6-up.d/00-iface-config.sh})
+backup=(etc/ppp/{chap-secrets,ip-down,ip-down.d/00-dns.sh,ip-up,ip-up.d/00-dns.sh,ipv6-down,ipv6-up,ipv6-up.d/00-iface-config.sh,options,pap-secrets})
 source=(https://download.samba.org/pub/ppp/ppp-$pkgver.tar.gz{,.asc}
+        ppp-revert-var-lock.patch::https://github.com/ppp-project/ppp/commit/99cbf5e269994482edaf64624be8b1c806f9587c.patch
+        ppp-utils-mkdir.patch::https://github.com/ppp-project/ppp/commit/b0e7307b3569a5dad0f2606d2736cc8317851598.patch
+        ppp-create-rundir.patch::https://github.com/ppp-project/ppp/commit/3a4fec968174fd6f387d5ec872a56343f256f645.patch
         options
         ip-up
         ip-down
@@ -22,6 +25,9 @@ source=(https://download.samba.org/pub/ppp/ppp-$pkgver.tar.gz{,.asc}
         LICENSE)
 sha512sums=('094368ea2aa6c6e8dfba4443509857a7c1c7ff839bb6d6657743802477208c01e87db31593cef0932d3725c640e9c103179da6b742825034cda82bd31ddcc2ed'
             'SKIP'
+            'eaf83b5d1204032f95dce12383a45ddc8050b4f85ba45bcc77f332fcbf8b73bf5f6fcf06f97e0606d37610249a013da8b36109f42a4901a477741970711ce73b'
+            '444eb247f1d3d8a83a8180b0593f2b79005fbcddfe38d33845d76324f8aa584e17fce36906b9a03b9be9092b9afbe5ebce3365d64887c08b6b4e19069a70d1fa'
+            '1bff91daaa61d4e3dcce82095be35f63c7025f22b956bf8b9ee48307a2ca437b61b55fd9f0172c514f3f6bee16aa9c615e6a11aeca663032d6a6d6f9166d4341'
             '4324a9abe79b20735b87de2158bb73b6449415a4760f06a06b648dfb53517f8d9907b094a88d1b492b24c8720cfd9b17d491fbe236fbd51ba9042af60483b231'
             'bdaaac792dd448ff31da6da2749d8c2f9c4e0311b1d4639de7c68038fcaa333cc28e25f5a6308de0ecb24b60b2e7284a811482df990da5f54d5581a746964f3c'
             '92f3a5e383f2c888938e891ba831042e7f8c026b0ddf5ce8c3523d06ac32fa81742e638a4c665975cbc79868b98806d92574ee2ee8e034e33b065a90ee3ab28b'
@@ -33,6 +39,14 @@ sha512sums=('094368ea2aa6c6e8dfba4443509857a7c1c7ff839bb6d6657743802477208c01e87
             'ab3acd0387a7966ac3d220f2b0b6880302f827125d978991f83dd3f1a30340c2a98ca5aedf0b81ec6a9e5eb49b0b0a0a5356419f3b8415c892c2df8b52d3994a')
 validpgpkeys=('631E179E370CD727A7F2A33A9E4295D605F66CE9'  # Paul Mackerras (Signing key) <paulus@samba.org>
               'DE8E01561D8276A4DBFAEFCC040F1D49EC9DBB8C') # Paul Mackerras <paulus@ozlabs.org>
+
+prepare() {
+  cd $pkgname-$pkgver
+
+  patch -Np1 -i ../ppp-revert-var-lock.patch
+  patch -Np1 -i ../ppp-utils-mkdir.patch
+  patch -Np1 -i ../ppp-create-rundir.patch
+}
 
 build() {
   cd $pkgname-$pkgver
