@@ -9,7 +9,8 @@
 pkgbase=stk
 pkgname=(stk stk-docs)
 pkgver=5.0.1
-pkgrel=2
+_libver=5.0.0
+pkgrel=3
 pkgdesc='The Synthesis ToolKit in C++'
 arch=(x86_64)
 url="https://ccrma.stanford.edu/software/stk/"
@@ -52,7 +53,7 @@ package_stk() {
     'stk-docs: for documentation'
     'tk: for demos and samples'
   )
-  provides=("libstk-$pkgver.so")
+  provides=("libstk-$_libver.so")
 
   cd $pkgbase-$pkgver
   make DESTDIR="$pkgdir" install
