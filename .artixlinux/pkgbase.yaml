@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artixnews
-  version: 0.2.0-4
+  version: 0.2.0-5
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.2.0-4
+    version: 0.2.0-5
     packages:
-      - artixnews-0.2.0-4-x86_64.pkg.tar.zst
+      - artixnews-0.2.0-5-x86_64.pkg.tar.zst

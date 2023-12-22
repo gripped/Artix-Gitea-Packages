@@ -2,7 +2,7 @@
 
 pkgname=artixnews
 pkgver=0.2.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Utility for displaying Artixlinux news feed in console'
 arch=('x86_64')
 url='https://github.com/ryukinix/artix-news'
