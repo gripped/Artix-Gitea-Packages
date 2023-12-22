@@ -3,17 +3,23 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
 url="https://github.com/calamares/calamares"
 license=('LGPL')
-depends=('yaml-cpp' 'kpmcore>=3.1.0' 'hwinfo' 'gtk-update-icon-cache' 'qt5-location' 'kparts5'
-          'libpwquality' 'polkit-qt5' 'qt5-xmlpatterns' 'plasma-framework5' 'python-jsonschema')
+depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'parted' 'yaml-cpp'
+        'qt5-base' 'qt5-svg' 'qt5-declarative' 'qt5-location' 'qt5-xmlpatterns'
+        'kconfig5' 'kcoreaddons5' 'kcrash5' 'kparts5' 'kpackage5' 'plasma-framework5' 'kpmcore'
+        'gtk-update-icon-cache' 'polkit-qt5' 'python' # 'appstream-qt5'
+        'python-jsonschema' 'python-toml'
+        'hicolor-icon-theme'
+        'artix-icons'
+        )
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
 optdepends=('calamares-branding: Artix branding')
-source=("${url}/archive/v$pkgver.tar.gz"
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/v$pkgver.tar.gz"
         0001-add-netstrap-module.patch
         0001-add-services-dinit-module.patch
         0001-add-services-runit-module.patch
@@ -57,4 +63,7 @@ build() {
 package() {
     cd $pkgname-$pkgver/build
     make DESTDIR="$pkgdir" install
+
+    sed -e 's|Icon.*=.*|Icon=artixlinux-logo|g' \
+        -i "$pkgdir"/usr/share/applications/calamares.desktop
 }
