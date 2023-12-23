@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - calamares
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 3.3.0-3
+    packages:
+      - calamares-3.3.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -49,6 +50,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.3.0-3
-    packages:
-      - calamares-3.3.0-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
