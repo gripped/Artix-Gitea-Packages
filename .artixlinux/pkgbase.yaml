@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: iputils
-  version: 20221126-2
+  version: 20231222-1
   arch:
     - x86_64
   pkgname:
     - iputils
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20231222-1
+    packages:
+      - iputils-20231222-1-x86_64.pkg.tar.zst
   system:
     version: 20221126-2
     packages:
