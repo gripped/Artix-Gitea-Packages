@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -14,8 +14,7 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'pa
         'kconfig5' 'kcoreaddons5' 'kcrash5' 'kparts5' 'kpackage5' 'plasma-framework5' 'kpmcore'
         'gtk-update-icon-cache' 'polkit-qt5' 'python' # 'appstream-qt5'
         'python-jsonschema' 'python-toml'
-        'hicolor-icon-theme'
-        'artix-icons'
+        'hicolor-icon-theme' 'artix-icons'
         )
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
 optdepends=('calamares-branding: Artix branding')
