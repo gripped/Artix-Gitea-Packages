@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-artwork
-  version: 2023.12-1
+  version: 2023.12-2
   arch:
     - any
   pkgname:
@@ -32,13 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2023.12-1
+    version: 2023.12-2
     packages:
-      - artix-icons-2023.12-1-any.pkg.tar.zst
-      - artix-backgrounds-2023.12-1-any.pkg.tar.zst
-      - artix-wallpapers-2023.12-1-any.pkg.tar.zst
-      - artix-breeze-sddm-2023.12-1-any.pkg.tar.zst
-      - artix-grub-theme-2023.12-1-any.pkg.tar.zst
+      - artix-icons-2023.12-2-any.pkg.tar.zst
+      - artix-backgrounds-2023.12-2-any.pkg.tar.zst
+      - artix-wallpapers-2023.12-2-any.pkg.tar.zst
+      - artix-breeze-sddm-2023.12-2-any.pkg.tar.zst
+      - artix-grub-theme-2023.12-2-any.pkg.tar.zst
   world:
     version: 1-5
     packages:
