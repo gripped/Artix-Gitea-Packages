@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-artwork
-  version: 1-4
+  version: 1-5
   arch:
     - any
   pkgname:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 1-4
+    version: 1-5
     packages:
-      - artix-icons-1-4-any.pkg.tar.zst
-      - artix-backgrounds-1-4-any.pkg.tar.zst
-      - artix-wallpapers-1-4-any.pkg.tar.zst
-      - artix-breeze-sddm-1-4-any.pkg.tar.zst
+      - artix-icons-1-5-any.pkg.tar.zst
+      - artix-backgrounds-1-5-any.pkg.tar.zst
+      - artix-wallpapers-1-5-any.pkg.tar.zst
+      - artix-breeze-sddm-1-5-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
