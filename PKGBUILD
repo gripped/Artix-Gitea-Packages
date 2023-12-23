@@ -2,8 +2,8 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.32.0
-pkgrel=3
+pkgver=0.32.1
+pkgrel=1
 arch=('any')
 pkgdesc='Development tools for Artix'
 license=('GPL')
@@ -15,8 +15,6 @@ source=("git+${url}.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 _patches=(
-    1fd3b796c510bbe56d53fd093ffe676412bd21d5 # netstrap netinstall
-    736bac6dd7605d1f3f4c72636fe8d1232aea8782 # check if conf files for sed
 )
 
 # pkgver() {
