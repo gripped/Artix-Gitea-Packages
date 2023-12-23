@@ -28,4 +28,6 @@ package() {
     cd ${pkgname}
 
     install -Dm755 -t "${pkgdir}"/usr/bin build/bin/*
+    install -Dm644 ../geth-user.service \
+        "${pkgdir}/usr/lib/systemd/user/geth.service"
 }
