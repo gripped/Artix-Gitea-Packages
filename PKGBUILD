@@ -6,7 +6,7 @@ _commit=44d5d21ad1df088eb7f21e70827479a11f0856f2
 pkgbase=artix-artwork
 pkgname=('artix-icons' 'artix-backgrounds' 'artix-wallpapers' 'artix-breeze-sddm' 'artix-grub-theme')
 pkgver=2023.12
-pkgrel=3
+pkgrel=4
 pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
@@ -52,8 +52,8 @@ package_artix-breeze-sddm() {
     pkgdesc='Artix breeze sddm theme customization'
     groups=('artix-style')
 
-    install -d "$pkgdir"/usr/share/sddm/themes
-    cp -vr "$_repo"/artix-breeze-sddm "$pkgdir"/usr/share/sddm/themes/
+    install -d "$pkgdir"/usr/share/sddm/themes/breeze
+    cp -vr "$_repo"/artix-breeze-sddm/* "$pkgdir"/usr/share/sddm/themes/breeze/
 }
 
 package_artix-grub-theme() {
