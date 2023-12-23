@@ -1,12 +1,12 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _repo=artwork
-_commit=b9b1f47e1b99a650339b0075b9ac5b11ffc29a3e
+_commit=ed0896722da18c797d8183fbb23d7bbad4189e3f
 
 pkgbase=artix-artwork
-pkgname=('artix-icons' 'artix-backgrounds' 'artix-wallpapers' 'artix-breeze-sddm')
+pkgname=('artix-icons' 'artix-backgrounds' 'artix-wallpapers' 'artix-breeze-sddm' 'artix-grub-theme')
 pkgver=1
-pkgrel=5
+pkgrel=6
 pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
@@ -38,10 +38,23 @@ package_artix-wallpapers(){
     cp -rv "$_repo"/wallpapers "$pkgdir"/usr/share/
 }
 
+package_artix-grub-theme() {
+    groups=('artix-style')
+
+    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_theme
+}
+
 package_artix-breeze-sddm() {
     pkgdesc='Artix breeze sddm theme customization'
     groups=('artix-style')
 
     install -d "$pkgdir"/usr/share/sddm/themes
     cp -vr "$_repo"/artix-breeze-sddm "$pkgdir"/usr/share/sddm/themes/
+}
+
+package_artix-grub-theme() {
+    pkgdesc='Artix grub theme'
+    groups=('artix-style')
+
+    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_grub_theme
 }

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-artwork
-  version: 1-5
+  version: 1-6
   arch:
     - any
   pkgname:
@@ -9,8 +9,9 @@ pkgbase:
     - artix-backgrounds
     - artix-wallpapers
     - artix-breeze-sddm
+    - artix-grub-theme
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1-6
+    packages:
+      - artix-icons-1-6-any.pkg.tar.zst
+      - artix-backgrounds-1-6-any.pkg.tar.zst
+      - artix-wallpapers-1-6-any.pkg.tar.zst
+      - artix-breeze-sddm-1-6-any.pkg.tar.zst
+      - artix-grub-theme-1-6-any.pkg.tar.zst
   world:
     version: 1-5
     packages:
