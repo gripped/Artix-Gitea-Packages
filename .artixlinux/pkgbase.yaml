@@ -10,7 +10,7 @@ pkgbase:
     - blas-openblas
     - blas64-openblas
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,12 +38,12 @@ repos:
       - blas-openblas-0.3.25-1-x86_64.pkg.tar.zst
       - blas64-openblas-0.3.25-1-x86_64.pkg.tar.zst
   world:
-    version: 0.3.24-2
+    version: 0.3.25-1
     packages:
-      - openblas-0.3.24-2-x86_64.pkg.tar.zst
-      - openblas64-0.3.24-2-x86_64.pkg.tar.zst
-      - blas-openblas-0.3.24-2-x86_64.pkg.tar.zst
-      - blas64-openblas-0.3.24-2-x86_64.pkg.tar.zst
+      - openblas-0.3.25-1-x86_64.pkg.tar.zst
+      - openblas64-0.3.25-1-x86_64.pkg.tar.zst
+      - blas-openblas-0.3.25-1-x86_64.pkg.tar.zst
+      - blas64-openblas-0.3.25-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
