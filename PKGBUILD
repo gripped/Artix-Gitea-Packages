@@ -5,8 +5,8 @@ _commit=ed0896722da18c797d8183fbb23d7bbad4189e3f
 
 pkgbase=artix-artwork
 pkgname=('artix-icons' 'artix-backgrounds' 'artix-wallpapers' 'artix-breeze-sddm' 'artix-grub-theme')
-pkgver=1
-pkgrel=6
+pkgver=2023.12
+pkgrel=1
 pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
@@ -14,6 +14,10 @@ license=('GPL')
 makedepends=('git' 'hicolor-icon-theme')
 source=("git+https://gitea.artixlinux.org/artix/artwork.git#commit=$_commit")
 sha256sums=('SKIP')
+
+# pkgver() {
+#     date +%Y.%m
+# }
 
 package_artix-icons(){
     pkgdesc='Artix icons'
