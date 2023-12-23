@@ -1,26 +1,38 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
+_repo=artwork
+_commit=b9b1f47e1b99a650339b0075b9ac5b11ffc29a3e
+
 pkgbase=artix-artwork
-pkgname=('artix-icons' 'artix-backgrounds')
-pkgver=0.9
+pkgname=('artix-wallpapers' 'artix-icons' 'artix-backgrounds')
+pkgver=1
 pkgrel=3
+pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
-source=("${pkgbase}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")
-groups=('artix-style')
-sha256sums=('4b3b61a10fbaf3e3e9bdaf61ede39fdad9da48c34d049b9d7d08a873ec51ad9c')
+makedepends=('git')
+source=("git+https://gitea.artixlinux.org/artix/artwork.git#commit=$_commit")
+sha256sums=('SKIP')
 
-package_artix-backgrounds(){
-    pkgdesc='Artix backgrounds'
+package_artix-wallpapers(){
+    pkgdesc='Artix wallpapers'
+    groups=('artix-style')
 
-    cd artwork #-${pkgver}
-    make PREFIX=/usr DESTDIR=${pkgdir} install_backgrounds
+    install -d "$pkgdir"/usr/share
+    cp -rv "$_repo"/wallpapers "$pkgdir"/usr/share/
 }
 
 package_artix-icons(){
     pkgdesc='Artix icons'
+    groups=('artix-style')
 
-    cd artwork #-${pkgver}
-    make PREFIX=/usr DESTDIR=${pkgdir} install_icons install_logo
+    make -C "$_repo" PREFIX=/usr DESTDIR="$pkgdir" install_icons install_logo
+}
+
+package_artix-backgrounds(){
+    pkgdesc='Artix backgrounds'
+    groups=('artix-branding')
+
+    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_backgrounds
 }
