@@ -8,12 +8,12 @@ pkgbase:
     - artix-icons
     - artix-backgrounds
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: galaxy
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,8 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.9-2
+    packages:
+      - artix-icons-0.9-2-any.pkg.tar.zst
+      - artix-backgrounds-0.9-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -50,7 +52,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.9-2
-    packages:
-      - artix-icons-0.9-2-any.pkg.tar.zst
-      - artix-backgrounds-0.9-2-any.pkg.tar.zst
+    version: null
+    packages: []
