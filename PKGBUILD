@@ -1,18 +1,18 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _repo=artwork
-_commit=44d5d21ad1df088eb7f21e70827479a11f0856f2
+_commit=18d3d6f561f0c789c51277c2aee040b1735c2785
 
 pkgbase=artix-artwork
 pkgname=('artix-icons' 'artix-backgrounds' 'artix-wallpapers' 'artix-breeze-sddm' 'artix-grub-theme')
 pkgver=2023.12
-pkgrel=4
+pkgrel=5
 pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
 makedepends=('git' 'hicolor-icon-theme')
-source=("git+https://gitea.artixlinux.org/artix/artwork.git#commit=$_commit")
+source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
 # pkgver() {
@@ -45,15 +45,14 @@ package_artix-wallpapers(){
 package_artix-grub-theme() {
     groups=('artix-style')
 
-    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_theme
+    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_grub_theme
 }
 
 package_artix-breeze-sddm() {
     pkgdesc='Artix breeze sddm theme customization'
     groups=('artix-style')
 
-    install -d "$pkgdir"/usr/share/sddm/themes/breeze
-    cp -vr "$_repo"/artix-breeze-sddm/* "$pkgdir"/usr/share/sddm/themes/breeze/
+    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_sddm_theme
 }
 
 package_artix-grub-theme() {
