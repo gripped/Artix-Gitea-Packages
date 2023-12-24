@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-public_suffix
-  version: 5.0.0-1
+  version: 5.0.3-1
   arch:
     - any
   pkgname:
     - ruby-public_suffix
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.0-1
+    version: 5.0.3-1
     packages:
-      - ruby-public_suffix-5.0.0-1-any.pkg.tar.zst
+      - ruby-public_suffix-5.0.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
