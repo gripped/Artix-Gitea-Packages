@@ -2,7 +2,7 @@
 
 _name=pdm
 pkgname=python-pdm
-pkgver=2.10.4
+pkgver=2.11.1
 pkgrel=1
 pkgdesc="A modern Python package manager with PEP 582 support"
 arch=(any)
@@ -13,6 +13,7 @@ depends=(
   python-blinker
   python-cachecontrol
   python-certifi
+  python-dep-logic
   python-dotenv
   python-findpython
   python-installer
@@ -27,6 +28,7 @@ depends=(
   python-rich
   python-shellingham
   python-tomlkit
+  python-truststore
   python-unearth
   python-urllib3  # required by pdm/models/session.py
   python-virtualenv
@@ -49,8 +51,8 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('9d4fd2020e222ba0efe945f5d61edb57234244acb2e31f480dea572c5de6cab99dec55bc0b445eff89e6d83efa767a07573e312719d52f5be924356fbac30f5a')
-b2sums=('3d29244f1cd21492e09acdd7746dc905097c885164db4009dbbe1527c7c7942c448c5271492099b0aa820fd51e4f728651274d8d5397487d18427dbafa4dd308')
+sha512sums=('a60de85db490ad090a7d1cf9e8ccb7e234854b5f22b4254d8dd0e79993f602e69a72693835043aeb1cccb866d208fa203501952d0fcc7078cedae4946f54d4ae')
+b2sums=('ff9f4e8dc3d2bfb6194eca5e1123ca0050607df8ac508c96d74d87a75bc65e7e8e8e684b96460ceeaed32c518d378c9df0f42dc691abc653e47814694e484e93')
 
 build() {
   cd $_name-$pkgver
@@ -60,7 +62,6 @@ build() {
 
 check() {
   local pytest_options=(
-    --deselect tests/test_utils.py::test_find_python_in_path
     -vv
     # we don't want to run tests that require the internet
     --deselect tests/test_project.py::test_access_index_with_auth
