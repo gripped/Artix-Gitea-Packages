@@ -21,6 +21,7 @@ prepare() {
   cd ${_gemname}-${pkgver}
   sed -r 's|~>|>=|g' -i ${_gemname}.gemspec
   sed 's|git ls-files -z|find -print0|' -i ${_gemname}.gemspec
+  find . -type f -wholename '*test/*.rb' -exec sed 's|MiniTest|Minitest|' -i {} \;
 }
 
 build() {
