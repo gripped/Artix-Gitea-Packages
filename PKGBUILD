@@ -1,12 +1,12 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _repo=artwork
-_commit=18d3d6f561f0c789c51277c2aee040b1735c2785
+_commit=dd2c469eb5751f7e54a0cf5524ba8d09f5deffa2
 
 pkgbase=artix-artwork
 pkgname=('artix-icons' 'artix-backgrounds' 'artix-wallpapers' 'artix-breeze-sddm' 'artix-grub-theme')
 pkgver=2023.12
-pkgrel=5
+pkgrel=6
 pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
