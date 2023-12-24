@@ -1,8 +1,8 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=krb5
-_pkgvermajor=1.20
-pkgver=1.20.1
+_pkgvermajor=1.21
+pkgver=1.21.2
 pkgrel=2
 pkgdesc='The Kerberos network authentication system'
 url='https://web.mit.edu/kerberos/'
@@ -28,20 +28,14 @@ backup=(
   'var/lib/krb5kdc/kdc.conf'
 )
 options=('!emptydirs')
-source=(https://web.mit.edu/kerberos/dist/krb5/${_pkgvermajor}/${pkgname}-${pkgver}.tar.gz{,.asc}
-        0001-krb5-config_LDFLAGS.patch::https://github.com/krb5/krb5/commit/0bfd22feb6493f34fdc894daaf680c3a2f2e7784.patch)
-sha512sums=('6f57479f13f107cd84f30de5c758eb6b9fc59171329c13e5da6073b806755f8d163eb7bd84767ea861ad6458ea0c9eeb00ee044d3bcad01ef136e9888564b6a2'
-            'SKIP'
-            '5debf9dd2d0da84ff6a9e18887fc1bbd0530cc131ac2292ea725f89da8cc84c4b864ebbd1c92eff11d63b98643bff910da3dda40ddc9e1c43f4ce7bd2b6f54dd')
+source=(https://web.mit.edu/kerberos/dist/krb5/${_pkgvermajor}/${pkgname}-${pkgver}.tar.gz{,.asc})
+sha512sums=('4e09296b412383d53872661718dbfaa90201e0d85f69db48e57a8d4bd73c95a90c7ec7b6f0f325f6bc967f8d203b256b071c0191facf080aca0e2caec5d0ac49'
+            'SKIP')
 validpgpkeys=('2C732B1C0DBEF678AB3AF606A32F17FD0055C305'  # Tom Yu <tlyu@mit.edu>
               'C4493CB739F4A89F9852CBC20CBA08575F8372DF') # Greg Hudson <ghudson@mit.edu>
 
 prepare() {
   cd ${pkgname}-${pkgver}
-
-  # https://github.com/krb5/krb5/commit/0bfd22feb6493f34fdc894daaf680c3a2f2e7784
-  # https://krbdev.mit.edu/rt/Ticket/Display.html?id=9057
-  patch -Np1 < "${srcdir}"/0001-krb5-config_LDFLAGS.patch
 
   # FS#25384
   sed -i "/KRB5ROOT=/s/\/local//" src/util/ac_check_krb5.m4
