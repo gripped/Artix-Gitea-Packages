@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - tesseract
 actions:
-  addRepo: galaxy
-  removeRepo: world
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 5.3.3-2
+    packages:
+      - tesseract-5.3.3-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -49,6 +50,5 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 5.3.3-2
-    packages:
-      - tesseract-5.3.3-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
