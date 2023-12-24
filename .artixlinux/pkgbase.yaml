@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: subversion
-  version: 1.14.2-12
+  version: 1.14.2-13
   arch:
     - x86_64
   pkgname:
     - subversion
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.14.2-12
+    version: 1.14.2-13
     packages:
-      - subversion-1.14.2-12-x86_64.pkg.tar.zst
+      - subversion-1.14.2-13-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
