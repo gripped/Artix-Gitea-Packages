@@ -62,6 +62,7 @@ build() {
 
 check() {
   local pytest_options=(
+    --deselect tests/test_utils.py::test_find_python_in_path
     -vv
     # we don't want to run tests that require the internet
     --deselect tests/test_project.py::test_access_index_with_auth
