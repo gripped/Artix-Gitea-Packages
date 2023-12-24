@@ -1,10 +1,10 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Ysblokje <ysblokje@gmail.com>
 # Contributor: Mark Wagie <mark.wagie@tutanota.com>
 
 pkgname=gamemode
-pkgver=1.7
-pkgrel=1.1
+pkgver=1.8.1
+pkgrel=1
 pkgdesc='A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS'
 arch=(x86_64)
 url=https://github.com/FeralInteractive/gamemode
@@ -25,7 +25,7 @@ provides=(
   libgamemode.so
   libgamemodeauto.so
 )
-_tag=4dc99dff76218718763a6b07fc1900fa6d1dafd9
+_tag=5180d89e66830d87f69687b95fb86f622552b94b
 source=(git+https://github.com/FeralInteractive/gamemode.git#tag=${_tag})
 b2sums=(SKIP)
 
@@ -35,12 +35,10 @@ pkgver() {
 }
 
 build() {
-  export CFLAGS+=' -Wno-implicit-function-declaration'
   artix-meson gamemode build \
     --libexecdir /usr/lib/gamemode \
-    -Dwith-examples=false \
-    -Dwith-pam-group=gamemode \
-    -Dwith-sd-bus-provider=elogind
+    -Dwith-sd-bus-provider=elogind \
+    -Dwith-examples=false
   meson compile -C build
 }
 
