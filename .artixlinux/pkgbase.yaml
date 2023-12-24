@@ -1,15 +1,23 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: package-query
+  version: 1.12.2-1
+  arch:
+    - i686
+    - x86_64
+    - mips64el
+    - armv6h
+    - armv7h
+    - arm
+    - aarch64
+  pkgname:
+    - package-query
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -47,5 +55,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.12.2-1
+    packages:
+      - package-query-1.12.2-1-x86_64.pkg.tar.zst
