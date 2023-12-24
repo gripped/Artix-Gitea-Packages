@@ -1,9 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _pyname=pyvex
 pkgname=python-${_pyname}
-pkgver=9.2.49
+pkgver=9.2.81
 pkgrel=1
 pkgdesc="Python bindings for Valgrind's VEX IR"
 url='https://github.com/angr/pyvex'
