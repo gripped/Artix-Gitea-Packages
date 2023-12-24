@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libseccomp
-  version: 2.5.4-2
+  version: 2.5.5-1
   arch:
     - x86_64
   pkgname:
     - libseccomp
     - python-libseccomp
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.5.5-1
+    packages:
+      - libseccomp-2.5.5-1-x86_64.pkg.tar.zst
+      - python-libseccomp-2.5.5-1-x86_64.pkg.tar.zst
   system:
     version: 2.5.4-2
     packages:
