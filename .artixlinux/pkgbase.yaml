@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-i18n
-  version: 1.12.0-1
+  version: 1.14.1-1
   arch:
     - any
   pkgname:
     - ruby-i18n
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12.0-1
+    version: 1.14.1-1
     packages:
-      - ruby-i18n-1.12.0-1-any.pkg.tar.zst
+      - ruby-i18n-1.14.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
