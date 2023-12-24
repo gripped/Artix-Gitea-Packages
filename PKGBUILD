@@ -10,7 +10,7 @@
 # Contributor: Thermi <noel [at] familie-kuntze dot com>
 
 pkgname=strongswan
-pkgver=5.9.12
+pkgver=5.9.13
 pkgrel=1
 pkgdesc='Open source IPsec implementation'
 url='https://www.strongswan.org'
@@ -34,13 +34,8 @@ backup=(
   etc/strongswan.d/charon/{aesni.conf,attr-sql.conf,attr.conf,bliss.conf,chapoly.conf,cmac.conf,connmark.conf,constraints.conf,curl.conf,des.conf,dhcp.conf,dnskey.conf,eap-aka-3gpp2.conf,eap-aka.conf,eap-gtc.conf,eap-identity.conf,eap-md5.conf,eap-mschapv2.conf,eap-radius.conf,eap-sim-file.conf,eap-sim.conf,eap-simaka-pseudonym.conf,eap-simaka-reauth.conf,eap-tls.conf,ext-auth.conf,farp.conf,fips-prf.conf,forecast.conf,gmp.conf,ha.conf,hmac.conf,kernel-netlink.conf,md5.conf,mgf1.conf,nonce.conf,newhope.conf,ntru.conf,openssl.conf,pem.conf,pgp.conf,pkcs1.conf,pkcs12.conf,pkcs7.conf,pkcs8.conf,pubkey.conf,random.conf,rc2.conf,resolve.conf,revocation.conf,sha1.conf,sha2.conf,sha3.conf,socket-default.conf,sql.conf,sqlite.conf,sshkey.conf,stroke.conf,updown.conf,vici.conf,x509.conf,xauth-eap.conf,xauth-generic.conf,xcbc.conf,unity.conf,curve25519.conf,bypass-lan.conf})
 source=("https://download.strongswan.org/strongswan-${pkgver}.tar.bz2"{,.sig})
 validpgpkeys=("948F158A4E76A27BF3D07532DF42C170B34DBA77")
-sha512sums=('f8a731329e9c0e4693fe7cf7195f687e6e48c1254cc93804385b23f6e23e27fb4a235e12d8f3e77960793b951a3a7213395c4179e8d2f3891221f13b0e032e38'
+sha512sums=('a929c1fb2a5e7d3064f6cd0be76703198406dad981f4b345311a004c18aa3c12adcb49eb33705fe4c3c31daf556cef5906d8753f5d9fbff5a27b732f93d8f19f'
             'SKIP')
-
-# prepare() {
-#   cd ${pkgname}-${pkgver}
-#   autoreconf -fiv
-# }
 
 build() {
   cd ${pkgname}-${pkgver}
