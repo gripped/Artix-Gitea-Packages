@@ -1,0 +1,26 @@
+# Maintainer: BlackIkeEagle < ike DOT devolder AT gmail DOT com >
+# Contributor: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Batou <batou at cryptolab net>
+# Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
+
+pkgname=copyq
+pkgver=7.1.0
+pkgrel=2
+pkgdesc="Clipboard manager with searchable and editable history"
+url="https://github.com/hluk/${pkgname}"
+depends=('hicolor-icon-theme' 'qt5-svg' 'qt5-wayland' 'knotifications5')
+makedepends=('extra-cmake-modules' 'qt5-tools')
+license=('GPL3')
+arch=('x86_64')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('ce0265b0a86350fda7bfa1a9d4b74d794a4077551b28186012683567d6fd8158')
+
+build() {
+    cmake -B build -S CopyQ-$pkgver \
+      -DCMAKE_INSTALL_PREFIX=/usr
+    cmake --build build
+}
+
+package() {
+    DESTDIR="${pkgdir}" cmake --install build
+}
