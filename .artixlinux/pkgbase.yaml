@@ -135,8 +135,8 @@ pkgbase:
     - tesseract-data-yid
     - tesseract-data-yor
 actions:
-  addRepo: galaxy
-  removeRepo: world
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -159,24 +159,6 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
-  lib32-goblins:
-    version: null
-    packages: []
-  lib32-gremlins:
-    version: null
-    packages: []
-  lib32:
-    version: null
-    packages: []
-  galaxy-goblins:
-    version: null
-    packages: []
-  galaxy-gremlins:
-    version: null
-    packages: []
-  galaxy:
     version: 2:4.1.0-4
     packages:
       - tesseract-data-afr-2:4.1.0-4-any.pkg.tar.zst
@@ -308,3 +290,21 @@ repos:
       - tesseract-data-vie-2:4.1.0-4-any.pkg.tar.zst
       - tesseract-data-yid-2:4.1.0-4-any.pkg.tar.zst
       - tesseract-data-yor-2:4.1.0-4-any.pkg.tar.zst
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
+    version: null
+    packages: []
