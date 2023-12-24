@@ -1,5 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
-# Contributor: Alexander F Rødseth <xyproto@archlinux.org>
+# Maintainer: Alexander F Rødseth <xyproto@archlinux.org>
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Thomas Dziedzic <gostrc@gmail.com>
 # Contributor: Nicolás de la torre <ndelatorre@gmail.com>
@@ -7,7 +6,7 @@
 # Contributor: Jens Maucher <defcon@archlinux.us>
 
 pkgname=python-rope
-pkgver=1.8.0
+pkgver=1.11.0
 pkgrel=1
 pkgdesc='Refactoring library'
 arch=('any')
@@ -17,7 +16,7 @@ depends=('python-pytoolconfig')
 makedepends=('python' 'python-setuptools')
 checkdepends=('python-pytest')
 source=("https://pypi.io/packages/source/r/rope/rope-$pkgver.tar.gz")
-sha256sums=('3de1d1f1cf2412540c6a150067fe25298175e7c2b72455b6ca8395f61678da82')
+sha256sums=('ac0cbdcda5a546e1e56c54976df07ea2cb04c806f65459bc213536c5d1bc073e')
 
 build(){
   cd "rope-$pkgver"
