@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -32,7 +32,7 @@ sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76'
             'ba24130f9e37fe39658ee5c2255a0f943711f3eb170e45969c42daa6a11a31bf'
             '3e5ce753b3fdfedea440e42932d3833f34ab5a16e176627afb0b6bf33374dfc7'
             '898769505f6587c363806afc09ea7a94de01759428f7a763f05848f141a41e40'
-            'cc6c6a25ee560737a26fd4feea9b3ef02e31b069755a3a338079c5edbf59f52c')
+            '5f2152864c91793e15c8a2220faa47f9719a7b601bfbf04c5868bdca71856547')
 
 prepare() {
     cd $pkgname-$pkgver

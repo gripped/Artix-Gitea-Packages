@@ -3,7 +3,7 @@
  2 files changed, 178 insertions(+), 52 deletions(-)
 
 diff --git a/src/modules/packagechooserq/packagechooserq-qt6.qml b/src/modules/packagechooserq/packagechooserq-qt6.qml
-index d951a2ee1..97a8462ff 100644
+index d951a2ee1..c54ac68e3 100644
 --- a/src/modules/packagechooserq/packagechooserq-qt6.qml
 +++ b/src/modules/packagechooserq/packagechooserq-qt6.qml
 @@ -42,7 +42,7 @@ Item {
@@ -69,7 +69,7 @@ index d951a2ee1..97a8462ff 100644
                      height: 100
                      fillMode: Image.PreserveAspectFit
 -                    source: "images/libreoffice.jpg"
-+                    source: "images/plasma.jpg"
++                    source: "images/plasma.png"
                  }
              }
 
@@ -247,7 +247,7 @@ index d951a2ee1..97a8462ff 100644
                      wrapMode: Text.WordWrap
                  }
 diff --git a/src/modules/packagechooserq/packagechooserq.qml b/src/modules/packagechooserq/packagechooserq.qml
-index 7d1613582..29ae87fa1 100644
+index 7d1613582..23fa94f35 100644
 --- a/src/modules/packagechooserq/packagechooserq.qml
 +++ b/src/modules/packagechooserq/packagechooserq.qml
 @@ -42,7 +42,7 @@ Item {
@@ -313,7 +313,7 @@ index 7d1613582..29ae87fa1 100644
                      height: 100
                      fillMode: Image.PreserveAspectFit
 -                    source: "images/libreoffice.jpg"
-+                    source: "images/plasma.jpg"
++                    source: "images/plasma.png"
                  }
              }
 
@@ -490,4 +490,3 @@ index 7d1613582..29ae87fa1 100644
                      font.pointSize: 10
                      wrapMode: Text.WordWrap
                  }
-
