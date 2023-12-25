@@ -1,0 +1,2 @@
+# artixlinux-appstream-data
+
