@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -24,13 +24,15 @@ source=("$pkgname-$pkgver.tar.gz::${url}/archive/v$pkgver.tar.gz"
         0001-add-services-runit-module.patch
         0001-add-services-s6-module.patch
         0001-add-postcfg-module.patch
+        packagechooserq-init-select.patch
         )
 sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76'
             '8242efbc7a3763abc1d89c4164dbebc424b72a1895d1ca1fe0f7a9c0b2b29357'
             '5a6096625e9af482b01033736b39da1a1e30d4f1857e471350bf12612aea8190'
             'ba24130f9e37fe39658ee5c2255a0f943711f3eb170e45969c42daa6a11a31bf'
             '3e5ce753b3fdfedea440e42932d3833f34ab5a16e176627afb0b6bf33374dfc7'
-            '898769505f6587c363806afc09ea7a94de01759428f7a763f05848f141a41e40')
+            '898769505f6587c363806afc09ea7a94de01759428f7a763f05848f141a41e40'
+            'cc6c6a25ee560737a26fd4feea9b3ef02e31b069755a3a338079c5edbf59f52c')
 
 prepare() {
     cd $pkgname-$pkgver
@@ -40,6 +42,7 @@ prepare() {
     patch -Np 1 -i $srcdir/0001-add-services-runit-module.patch
     patch -Np 1 -i $srcdir/0001-add-services-s6-module.patch
     patch -Np 1 -i $srcdir/0001-add-postcfg-module.patch
+    patch -Np 1 -i $srcdir/packagechooserq-init-select.patch
 
     # fix appstream-qt5 until qt6 default
     for f in CMakeLists.txt ItemAppStream.cpp Config.cpp; do
