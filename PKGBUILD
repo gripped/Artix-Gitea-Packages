@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -12,8 +12,8 @@ license=('LGPL')
 depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'parted' 'yaml-cpp'
         'qt5-base' 'qt5-svg' 'qt5-declarative' 'qt5-location' 'qt5-xmlpatterns'
         'kconfig5' 'kcoreaddons5' 'kcrash5' 'kparts5' 'kpackage5' 'plasma-framework5' 'kpmcore'
-        'gtk-update-icon-cache' 'polkit-qt5' 'python' # 'appstream-qt5'
-        'python-jsonschema' 'python-toml'
+        'gtk-update-icon-cache' 'polkit-qt5' 'appstream-qt5' 'ckbcomp'
+        'python-jsonschema' 'python-toml' 'python-pyyaml'
         'hicolor-icon-theme' 'artix-icons'
         )
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
@@ -40,6 +40,12 @@ prepare() {
     patch -Np 1 -i $srcdir/0001-add-services-runit-module.patch
     patch -Np 1 -i $srcdir/0001-add-services-s6-module.patch
     patch -Np 1 -i $srcdir/0001-add-postcfg-module.patch
+
+    # fix appstream-qt5 until qt6 default
+    for f in CMakeLists.txt ItemAppStream.cpp Config.cpp; do
+        sed -e "s/AppStreamQt/AppStreamQt5/" -i src/modules/packagechooser/"$f"
+    done
+    sed -e "s/AppStreamQt/AppStreamQt5/" -i src/modules/packagechooserq/CMakeLists.txt
 }
 
 build() {
@@ -50,9 +56,12 @@ build() {
         cmake .. \
               -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_INSTALL_PREFIX=/usr \
+              -DCMAKE_PREFIX_PATH=/usr \
               -DCMAKE_INSTALL_LIBDIR=lib \
               -DINSTALL_CONFIG:BOOL=ON \
               -DINSTALL_POLKIT:BOOL=ON \
+              -DBUILD_APPDATA:BOOL=ON \
+              -DBUILD_APPSTREAM:BOOL=ON \
               -DSKIP_MODULES="initramfs \
                               initramfscfg services-systemd \
                               dummyprocess dummypython dummycpp dummypythonqt"
