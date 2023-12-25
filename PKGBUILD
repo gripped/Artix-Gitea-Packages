@@ -1,0 +1,66 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
+# Contributor: congyiwu <congyiwu AT gmail DOT com>
+
+pkgname=lib32-json-c
+pkgver=0.17
+pkgrel=1
+pkgdesc="A JSON implementation in C (32-bit)"
+url="https://github.com/json-c/json-c/wiki"
+license=(MIT)
+arch=(x86_64)
+depends=(
+  lib32-glibc
+  json-c
+)
+makedepends=(
+  cmake
+  git
+  ninja
+)
+provides=(libjson-c.so)
+_commit=b4c371fa0cbc4dcbaccc359ce9e957a22988fb34  # tags/json-c-0.17-20230812^0
+source=("git+https://github.com/json-c/json-c#commit=$_commit")
+b2sums=('SKIP')
+
+pkgver() {
+  cd json-c
+  local tag="$(git describe --tags --abbrev=0)"
+  local ver="$(git describe --tags)"
+  echo "${tag%-*}${ver#$tag}" | sed 's/^json-c-//;s/[^-]*-g/r&/;s/-/+/g'
+}
+
+prepare() {
+  cd json-c
+}
+
+build() {
+  local cmake_options=(
+    -DCMAKE_BUILD_TYPE=None
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib32
+    -DBUILD_STATIC_LIBS=OFF
+    -DENABLE_THREADING=ON
+    -DENABLE_RDRAND=OFF
+  )
+
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG_PATH="i686-pc-linux-gnu-pkg-config"
+
+  cmake -S json-c -B build -G Ninja "${cmake_options[@]}"
+  cmake --build build
+}
+
+check() {
+  cd build
+  ctest --output-on-failure --stop-on-failure -j$(nproc)
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  rm -r "$pkgdir/usr/include"
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 json-c/COPYING
+}
+
+# vim:set sw=2 sts=-1 et:
