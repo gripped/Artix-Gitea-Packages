@@ -1,0 +1,59 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+_pkgname=archlinux-appstream-data
+
+pkgname=artixlinux-appstream-data
+pkgver=20231203
+pkgrel=1
+pkgdesc='Artix Linux application database for AppStream-based software centers'
+arch=(any)
+url='https://www.artixlinux.org'
+license=(GPL)
+depends=()
+makedepends=()
+source=()
+noextract=()
+for _repo in core extra multilib; do
+    case $_repo in
+            core) _tar=system ;;
+            extra) _tar=world ;;
+            multilib) _tar=lib32 ;;
+    esac
+    source+=($_tar-$pkgver.xml.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/$_repo/Components-x86_64.xml.gz
+            $_tar-icons-48x48-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/$_repo/icons-48x48.tar.gz
+            $_tar-icons-64x64-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/$_repo/icons-64x64.tar.gz
+            $_tar-icons-128x128-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/$_repo/icons-128x128.tar.gz)
+    noextract+=($_tar.xml.gz-$pkgver $_tar-icons-{48x48,64x64,128x128}-$pkgver.tar.gz)
+done
+source+=(galaxy-$pkgver.xml.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/extra/Components-x86_64.xml.gz
+            galaxy-icons-48x48-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/extra/icons-48x48.tar.gz
+            galaxy-icons-64x64-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/extra/icons-64x64.tar.gz
+            galaxy-icons-128x128-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/extra/icons-128x128.tar.gz)
+noextract+=(galaxy.xml.gz-$pkgver galaxy-icons-{48x48,64x64,128x128}-$pkgver.tar.gz)
+sha256sums=('dd39d407d0fc7999b79e24b5c8289c0b902a0ddb5b0b8c0bb91197ec2436fd4a'
+            '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
+            'a4e2dbdcfe60076a8e870a20e4497545ccc363eff1ce68d2ddc69b4625059e54'
+            '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
+            '3f045d2505b8f3c97f88b59c314acc6a3fbf51073e66dbcc50e4671e7158266e'
+            '5c7a074cbe104f8f2d7bce7d0aa2900cef4fe13f32a482a4a49b436b03600aa9'
+            '7322bd5971b7b718af1bf0bceb229b250288147485cb8cc68833abae1ba21f4d'
+            'e2514a1d2f3dde1d8ca753b8769559811b1223a9dc050609d95f4615c8c33c8f'
+            '99c7a2b88bc82b3176d8dd4ba38b7f1e673b337c0d0f7654dd198e28207d7bdb'
+            '132810a5af221919b3d37fc6eaa68bd3b5b8dc5d2f93f6597659e82c204749fd'
+            '33eba8f6a569d8ec31f49c301151c3051a4e2aacacce8e3da49565ce79afc22e'
+            'c8b2e9c0ec30d14bc2c48392e5066c71119608612a03116638d919c81488c3b4'
+            '3f045d2505b8f3c97f88b59c314acc6a3fbf51073e66dbcc50e4671e7158266e'
+            '5c7a074cbe104f8f2d7bce7d0aa2900cef4fe13f32a482a4a49b436b03600aa9'
+            '7322bd5971b7b718af1bf0bceb229b250288147485cb8cc68833abae1ba21f4d'
+            'e2514a1d2f3dde1d8ca753b8769559811b1223a9dc050609d95f4615c8c33c8f')
+
+package() {
+    local _artix
+    mkdir -p "$pkgdir"/usr/share/swcatalog/{icons/artixlinux-artix-{system,world,galaxy,lib32}/{48x48,64x64,128x128},xml}
+    for _repo in system world galaxy lib32; do
+        tar -xzf $_repo-icons-48x48-$pkgver.tar.gz -C "$pkgdir"/usr/share/swcatalog/icons/artixlinux-artix-$_repo/48x48
+        tar -xzf $_repo-icons-64x64-$pkgver.tar.gz -C "$pkgdir"/usr/share/swcatalog/icons/artixlinux-artix-$_repo/64x64
+        tar -xzf $_repo-icons-128x128-$pkgver.tar.gz -C "$pkgdir"/usr/share/swcatalog/icons/artixlinux-artix-$_repo/128x128
+        install -m644 $_repo-$pkgver.xml.gz "$pkgdir"/usr/share/swcatalog/xml/$_repo.xml.gz
+    done
+}
