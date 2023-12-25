@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: warpinator
-  version: 1.8.1-1
+  version: 1.8.1-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.1-1
+    version: 1.8.1-2
     packages:
-      - warpinator-1.8.1-1-any.pkg.tar.zst
+      - warpinator-1.8.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
