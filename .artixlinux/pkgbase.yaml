@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dhcpcd
-  version: 10.0.5-1
+  version: 10.0.6-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.0.5-1
+    version: 10.0.6-1
     packages:
-      - dhcpcd-10.0.5-1-x86_64.pkg.tar.zst
+      - dhcpcd-10.0.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
