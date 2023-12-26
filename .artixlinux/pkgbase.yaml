@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tmuxp
-  version: 1.32.1-1
+  version: 1.34.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.32.1-1
+    version: 1.34.0-1
     packages:
-      - tmuxp-1.32.1-1-any.pkg.tar.zst
+      - tmuxp-1.34.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
