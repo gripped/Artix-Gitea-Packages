@@ -1,8 +1,8 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=timew
-pkgver=1.6.0
+pkgver=1.7.0
 _ver_c="1882058c5ee1e8b6cbcd5335536b1efca8935823"
-_libshared_c="d61b41fcaf6fcafc0f843f8b6923edf96642f827"
+_libshared_c="35e6ec09595c80bc744a27eda50e4dd34d6c7303"
 pkgrel=1
 pkgdesc="Commandline Time Tracking and Reporting"
 arch=("x86_64")
@@ -23,7 +23,7 @@ source=(
 )
 sha256sums=(
 	"e1b61a178c00cad4432100a2d3be2e2afe0b94a0a515bae4c2d4c278cac6e114"
-	"1c2c44afdac65c937d7cc2f65b5c3a62cc492d02c5e2f9eb53c24e879d24a554"
+	"1cf21842b917ac5440d4f5ba0477a097df816f6570372bbc90e043b3ec238fd3"
 )
 
 prepare() {
