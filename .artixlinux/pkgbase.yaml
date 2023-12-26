@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mate-media
-  version: 1.26.1-1
+  version: 1.26.2-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.26.1-1
+    version: 1.26.2-1
     packages:
-      - mate-media-1.26.1-1-x86_64.pkg.tar.zst
+      - mate-media-1.26.2-1-x86_64.pkg.tar.zst
