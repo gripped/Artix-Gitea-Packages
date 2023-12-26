@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=7
+pkgrel=8
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -13,7 +13,7 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'pa
         'qt5-base' 'qt5-svg' 'qt5-declarative' 'qt5-location' 'qt5-xmlpatterns'
         'kconfig5' 'kcoreaddons5' 'kcrash5' 'kparts5' 'kpackage5' 'plasma-framework5' 'kpmcore'
         'gtk-update-icon-cache' 'polkit-qt5' 'appstream-qt5' 'ckbcomp'
-        'python-jsonschema' 'python-toml' 'python-pyyaml'
+        'python-jsonschema' 'python-toml' 'python-pyyaml' 'python'
         'hicolor-icon-theme' 'artix-icons'
         )
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
@@ -24,7 +24,9 @@ source=("$pkgname-$pkgver.tar.gz::${url}/archive/v$pkgver.tar.gz"
         0001-add-services-runit-module.patch
         0001-add-services-s6-module.patch
         0001-add-postcfg-module.patch
-        packagechooserq-init-select.patch
+        0001-add-initchooserq-module.patch
+        0002-netsrap-init-select-support.patch
+        0001-fix-appstream-qt5-support.patch
         )
 sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76'
             '8242efbc7a3763abc1d89c4164dbebc424b72a1895d1ca1fe0f7a9c0b2b29357'
@@ -32,23 +34,21 @@ sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76'
             'ba24130f9e37fe39658ee5c2255a0f943711f3eb170e45969c42daa6a11a31bf'
             '3e5ce753b3fdfedea440e42932d3833f34ab5a16e176627afb0b6bf33374dfc7'
             '898769505f6587c363806afc09ea7a94de01759428f7a763f05848f141a41e40'
-            '5f2152864c91793e15c8a2220faa47f9719a7b601bfbf04c5868bdca71856547')
+            '70680688979ee32b3b224d6bbd3141d39b4a6fa2640ac15c268a8ff062c34666'
+            '5ab454aa84e8960e6037f27fc0996d9e0bf9fa529f1b47b8926af50e3bd5ba56'
+            '6ccfdd738c09e1e41030c781ee7e81b15fe693421623201f069d2758b687df9a')
 
 prepare() {
     cd $pkgname-$pkgver
     # patches here
+    patch -Np 1 -i $srcdir/0001-fix-appstream-qt5-support.patch
     patch -Np 1 -i $srcdir/0001-add-netstrap-module.patch
+    patch -Np 1 -i $srcdir/0002-netsrap-init-select-support.patch
     patch -Np 1 -i $srcdir/0001-add-services-dinit-module.patch
     patch -Np 1 -i $srcdir/0001-add-services-runit-module.patch
     patch -Np 1 -i $srcdir/0001-add-services-s6-module.patch
     patch -Np 1 -i $srcdir/0001-add-postcfg-module.patch
-    patch -Np 1 -i $srcdir/packagechooserq-init-select.patch
-
-    # fix appstream-qt5 until qt6 default
-    for f in CMakeLists.txt ItemAppStream.cpp Config.cpp; do
-        sed -e "s/AppStreamQt/AppStreamQt5/" -i src/modules/packagechooser/"$f"
-    done
-    sed -e "s/AppStreamQt/AppStreamQt5/" -i src/modules/packagechooserq/CMakeLists.txt
+    patch -Np 1 -i $srcdir/0001-add-initchooserq-module.patch
 }
 
 build() {
