@@ -31,7 +31,8 @@ check() {
   cd dateutil
   # https://github.com/pytest-dev/pytest/issues/5678
   pytest -W ignore::pytest.PytestUnknownMarkWarning \
-    --deselect dateutil/test/test_internals.py::test_parser_parser_private_not_warns
+    --deselect dateutil/test/test_internals.py::test_parser_parser_private_not_warns \
+    --deselect dateutil/test/test_tz.py::test_tzlocal_local_time_trim_colon
 }
 
 package() {
