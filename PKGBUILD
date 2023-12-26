@@ -1,13 +1,14 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: James Rayner <james@archlinux.org>
 # Contributor: Partha Chowdhury <kira.laucas@gmail.com>
 
 pkgname=conky
-pkgver=1.18.1
-_gitcommit=87858b6ae8f0b5e195faec5c79048ac4171bfc30  # refs/tags/v1.18.1
-pkgrel=2
+pkgver=1.19.6
+_gitcommit=6d985b350df9cdc0a9fab533710d04db27591bf0  # refs/tags/v1.19.6
+pkgrel=1
 pkgdesc='Light-weight system monitor for X, Wayland, and other things, too'
 url='https://github.com/brndnmtthws/conky'
 license=(
@@ -16,7 +17,7 @@ license=(
 )
 arch=('x86_64')
 makedepends=(
-  'catch2'
+  'catch2-v2'
   'cmake'
   'docbook2x'
   'docbook-xsl'
@@ -55,7 +56,7 @@ source=("git+$url.git#tag=${_gitcommit}?signed")
 sha512sums=('SKIP')
 b2sums=('SKIP')
 validpgpkeys=(
-  'EB2E847572A71BE20F59AFBEB49ABB7270D9D4FD' # Brenden Matthews
+  'AF310802C8EFA20499CF3556137B7AC2BDFD8DF0' # Brenden Matthews <github@brenden.brndn.io>
 )
 
 pkgver() {
