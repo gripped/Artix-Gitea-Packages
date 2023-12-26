@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: molecule
-  version: 6.0.2-2
+  version: 6.0.3-1
   arch:
     - any
   pkgname:
     - molecule
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.0.3-1
+    packages:
+      - molecule-6.0.3-1-any.pkg.tar.zst
   world:
     version: 6.0.2-2
     packages:
