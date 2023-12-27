@@ -2,7 +2,7 @@
 _pkgbasename=v4l-utils
 pkgname=lib32-$_pkgbasename
 pkgver=1.26.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Userspace tools and conversion library for Video 4 Linux (32-bit)"
 arch=('x86_64')
 url="https://linuxtv.org/"
@@ -10,7 +10,7 @@ provides=("lib32-libv4l=$pkgver")
 replaces=('lib32-libv4l')
 conflicts=('lib32-libv4l')
 license=('LGPL')
-depends=($_pkgbasename 'lib32-gcc-libs' 'lib32-libjpeg-turbo' 'lib32-elogind' 'lib32-libglvnd' 'lib32-json-c')
+depends=($_pkgbasename 'lib32-gcc-libs' 'lib32-libjpeg-turbo' 'lib32-udev' 'lib32-libglvnd' 'lib32-json-c')
 makedepends=('meson' 'clang' 'lib32-libbpf')
 source=(https://linuxtv.org/downloads/v4l-utils/${_pkgbasename}-${pkgver}.tar.xz
         https://linuxtv.org/downloads/v4l-utils/${_pkgbasename}-${pkgver}.tar.xz.asc)
@@ -36,5 +36,5 @@ build() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-  rm -rf "${pkgdir}"/{usr/{include,share,bin,sbin},etc,lib}
+  rm -rf "${pkgdir}"/{usr/{include,share,bin,sbin,lib},etc,lib}
 }
