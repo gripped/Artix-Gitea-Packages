@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lz4
-  version: 1:1.9.4-1
+  version: 1:1.9.4-2
   arch:
     - x86_64
   pkgname:
     - lz4
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1:1.9.4-2
+    packages:
+      - lz4-1:1.9.4-2-x86_64.pkg.tar.zst
   system:
     version: 1:1.9.4-1
     packages:
