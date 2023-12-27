@@ -4,7 +4,7 @@
 pkgname=calamares
 pkgver=3.3.0
 _tag='8e08d07afd39ae0663b01db75e8c828331924f99' # git rev-parse v${pkgver}
-pkgrel=9
+pkgrel=10
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -30,10 +30,10 @@ _patches=(
     abf3b6976688acb627db8d2e68230e386edbf1a2 # s6
     59bde93b913b7948c1d08a1f2f5ac3cc95d8a6e4 # dinit
     1eba5ba9594a8816fde0316794e7ec41aca97212 # runit
-    be510bc29af14e2f0f42ef890f540ae889d7197e # basestrap
+    861130638f1976ec9fa399069273297a9741a9f8 # basestrap
     5d88475754eb2f3d38cec3a335dd2d85fcbd9478 # appstream fix
     f640b6a4a01fa2025ce9083147433f47993b2f93 # services-artix
-    3b0843abe61ffe712773c175eb1e8e934b167c59 # packagechooserq
+    a6558c7b1de4884eed0e72679884cc6cb50f7e17 # packagechooserq
 )
 
 prepare() {
