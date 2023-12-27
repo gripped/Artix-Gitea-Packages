@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.13.0-1
+    version: 4.13.1-1
     packages:
-      - telegram-desktop-4.13.0-1-x86_64.pkg.tar.zst
+      - telegram-desktop-4.13.1-1-x86_64.pkg.tar.zst
