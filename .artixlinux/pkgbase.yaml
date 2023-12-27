@@ -1,15 +1,18 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: llvm-julia
+  version: 15.0.7.10-1
+  arch:
+    - x86_64
+  pkgname:
+    - llvm-julia
+    - llvm-julia-libs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 15.0.7.10-1
+    packages:
+      - llvm-julia-15.0.7.10-1-x86_64.pkg.tar.zst
+      - llvm-julia-libs-15.0.7.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
