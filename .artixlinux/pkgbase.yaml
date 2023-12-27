@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-settings-daemon
-  version: 45.0-2
+  version: 45.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.0-2
+    version: 45.1-1
     packages:
-      - gnome-settings-daemon-45.0-2-x86_64.pkg.tar.zst
+      - gnome-settings-daemon-45.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
