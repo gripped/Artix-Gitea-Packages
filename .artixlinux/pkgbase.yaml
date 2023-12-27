@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-aspectlib
-  version: 1.5.2-6
+  version: 1.5.2-7
   arch:
     - any
   pkgname:
     - python-aspectlib
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.2-6
+    version: 1.5.2-7
     packages:
-      - python-aspectlib-1.5.2-6-any.pkg.tar.zst
+      - python-aspectlib-1.5.2-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
