@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: meson
-  version: 1.3.0-2
+  version: 1.3.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.0-2
+    version: 1.3.1-1
     packages:
-      - meson-1.3.0-2-any.pkg.tar.zst
+      - meson-1.3.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
