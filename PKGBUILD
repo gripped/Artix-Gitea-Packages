@@ -3,7 +3,8 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=8
+_tag='8e08d07afd39ae0663b01db75e8c828331924f99' # git rev-parse v${pkgver}
+pkgrel=9
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -12,49 +13,47 @@ license=('LGPL')
 depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'parted' 'yaml-cpp'
         'qt5-base' 'qt5-svg' 'qt5-declarative' 'qt5-location' 'qt5-xmlpatterns'
         'kconfig5' 'kcoreaddons5' 'kcrash5' 'kparts5' 'kpackage5' 'plasma-framework5' 'kpmcore'
-        'gtk-update-icon-cache' 'polkit-qt5' 'appstream-qt5' 'ckbcomp'
+        'gtk-update-icon-cache' 'polkit-qt5' 'ckbcomp' #'appstream-qt5'
         'python-jsonschema' 'python-toml' 'python-pyyaml' 'python'
         'hicolor-icon-theme' 'artix-icons'
         )
-makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'git')
 optdepends=('calamares-branding: Artix branding')
-source=("$pkgname-$pkgver.tar.gz::${url}/archive/v$pkgver.tar.gz"
-        0001-add-netstrap-module.patch
-        0001-add-services-dinit-module.patch
-        0001-add-services-runit-module.patch
-        0001-add-services-s6-module.patch
-        0001-add-postcfg-module.patch
-        0001-add-initchooserq-module.patch
-        0002-netsrap-init-select-support.patch
-        0001-fix-appstream-qt5-support.patch
+source=(calamares-artix::git+https://gitea.artixlinux.org/artix/calamares.git#tag=v${pkgver}
+        initchooser-logo.patch
         )
-sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76'
-            '8242efbc7a3763abc1d89c4164dbebc424b72a1895d1ca1fe0f7a9c0b2b29357'
-            '5a6096625e9af482b01033736b39da1a1e30d4f1857e471350bf12612aea8190'
-            'ba24130f9e37fe39658ee5c2255a0f943711f3eb170e45969c42daa6a11a31bf'
-            '3e5ce753b3fdfedea440e42932d3833f34ab5a16e176627afb0b6bf33374dfc7'
-            '898769505f6587c363806afc09ea7a94de01759428f7a763f05848f141a41e40'
-            '70680688979ee32b3b224d6bbd3141d39b4a6fa2640ac15c268a8ff062c34666'
-            '5ab454aa84e8960e6037f27fc0996d9e0bf9fa529f1b47b8926af50e3bd5ba56'
-            '6ccfdd738c09e1e41030c781ee7e81b15fe693421623201f069d2758b687df9a')
+sha256sums=('SKIP'
+            '7cc905ece8a5e7de63bf1bf31fb00a1153d29948569a2c306540b4b7f9a6b798')
+
+_patches=(
+    041dcd2983190ed57d6cb57e906ae6abc9082c57 # postcfg
+    abf3b6976688acb627db8d2e68230e386edbf1a2 # s6
+    59bde93b913b7948c1d08a1f2f5ac3cc95d8a6e4 # dinit
+    1eba5ba9594a8816fde0316794e7ec41aca97212 # runit
+    be510bc29af14e2f0f42ef890f540ae889d7197e # basestrap
+    5d88475754eb2f3d38cec3a335dd2d85fcbd9478 # appstream fix
+    f640b6a4a01fa2025ce9083147433f47993b2f93 # services-artix
+    3b0843abe61ffe712773c175eb1e8e934b167c59 # packagechooserq
+)
 
 prepare() {
-    cd $pkgname-$pkgver
-    # patches here
-    patch -Np 1 -i $srcdir/0001-fix-appstream-qt5-support.patch
-    patch -Np 1 -i $srcdir/0001-add-netstrap-module.patch
-    patch -Np 1 -i $srcdir/0002-netsrap-init-select-support.patch
-    patch -Np 1 -i $srcdir/0001-add-services-dinit-module.patch
-    patch -Np 1 -i $srcdir/0001-add-services-runit-module.patch
-    patch -Np 1 -i $srcdir/0001-add-services-s6-module.patch
-    patch -Np 1 -i $srcdir/0001-add-postcfg-module.patch
-    patch -Np 1 -i $srcdir/0001-add-initchooserq-module.patch
+    cd "$pkgname"-artix
+
+    local _c
+    for _c in "${_patches[@]}"; do
+        git log --oneline -1 "${_c}"
+        git cherry-pick -n "${_c}"
+    done
+
+    git apply --binary $srcdir/initchooser-logo.patch
 }
 
 build() {
-    cd $pkgname-$pkgver
+    cd $pkgname-artix
 
     mkdir -p build
+#             -DBUILD_APPDATA:BOOL=ON \
+#             -DBUILD_APPSTREAM:BOOL=ON \
     cd build
         cmake .. \
               -DCMAKE_BUILD_TYPE=Release \
@@ -63,8 +62,6 @@ build() {
               -DCMAKE_INSTALL_LIBDIR=lib \
               -DINSTALL_CONFIG:BOOL=ON \
               -DINSTALL_POLKIT:BOOL=ON \
-              -DBUILD_APPDATA:BOOL=ON \
-              -DBUILD_APPSTREAM:BOOL=ON \
               -DSKIP_MODULES="initramfs \
                               initramfscfg services-systemd \
                               dummyprocess dummypython dummycpp dummypythonqt"
@@ -72,7 +69,7 @@ build() {
 }
 
 package() {
-    cd $pkgname-$pkgver/build
+    cd $pkgname-artix/build
     make DESTDIR="$pkgdir" install
 
     sed -e 's|Icon.*=.*|Icon=artixlinux-logo|g' \
