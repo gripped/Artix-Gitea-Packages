@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-netinstall-presets
-  version: 2023.12-1
+  version: 2023.12-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2023.12-1
+    version: 2023.12-2
     packages:
-      - artix-netinstall-presets-2023.12-1-any.pkg.tar.zst
+      - artix-netinstall-presets-2023.12-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

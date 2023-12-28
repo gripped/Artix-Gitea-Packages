@@ -2,11 +2,11 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _pkgbase=desktop-presets
-_commit=dcf94432a84fd288c731b43bfe87fd08d1c27aaa
+_commit=dbf72e9978f87ff216f29b9f4d625faa2bd4309f
 
 pkgname=artix-netinstall-presets
 pkgver=2023.12
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix netinstall presets (KDE Plasma)'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
