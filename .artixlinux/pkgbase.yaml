@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libmpdclient
-  version: 2.20-3
+  version: 2.22-1
   arch:
     - x86_64
   pkgname:
     - libmpdclient
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.20-3
+    version: 2.22-1
     packages:
-      - libmpdclient-2.20-3-x86_64.pkg.tar.zst
+      - libmpdclient-2.22-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
