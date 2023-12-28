@@ -23,7 +23,7 @@ source=("https://www.freedesktop.org/software/$pkgname/releases/$pkgname-$pkgver
         'plymouth.initcpio_install')
 sha256sums=('3d5b6a0ade2b0952c127960a330cb9cfadaffda78fb7621703ffd2f6a14c3390'
             'de852646e615e06d4125eb2e646d0528d1e349bd9e9877c08c5d32c43d288b6f'
-            '034660b71f223144aaa9b9c4a25978807e055f6170323d942c04920a63d82369')
+            '92d2a1f5392c601e400b4ebcb310837b4ba2fdc1914c7e4b4f23a509d7c82234')
 
 prepare() {
   cd $pkgname-$pkgver
