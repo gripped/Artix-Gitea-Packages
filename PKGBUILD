@@ -4,7 +4,7 @@
 pkgname=calamares
 pkgver=3.3.0
 _tag='8e08d07afd39ae0663b01db75e8c828331924f99' # git rev-parse v${pkgver}
-pkgrel=10
+pkgrel=11
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -20,20 +20,18 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'pa
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'git')
 optdepends=('calamares-branding: Artix branding')
 source=(calamares-artix::git+https://gitea.artixlinux.org/artix/calamares.git#tag=v${pkgver}
-        initchooser-logo.patch
-        )
+        packagechooser-if-img.patch)
 sha256sums=('SKIP'
-            '7cc905ece8a5e7de63bf1bf31fb00a1153d29948569a2c306540b4b7f9a6b798')
+            '8937d8f7bda17b39a86ede1c7b3222494471b5c911cccfe4b12bef0bbaf1e5f8')
 
 _patches=(
     041dcd2983190ed57d6cb57e906ae6abc9082c57 # postcfg
-    abf3b6976688acb627db8d2e68230e386edbf1a2 # s6
-    59bde93b913b7948c1d08a1f2f5ac3cc95d8a6e4 # dinit
-    1eba5ba9594a8816fde0316794e7ec41aca97212 # runit
-    861130638f1976ec9fa399069273297a9741a9f8 # basestrap
-    5d88475754eb2f3d38cec3a335dd2d85fcbd9478 # appstream fix
+    abf3b6976688acb627db8d2e68230e386edbf1a2 # services-s6
+    59bde93b913b7948c1d08a1f2f5ac3cc95d8a6e4 # services-dinit
+    1eba5ba9594a8816fde0316794e7ec41aca97212 # services-runit
+    12f98c759a34c658091d9bd72f31093d13e89098 # basestrap
     f640b6a4a01fa2025ce9083147433f47993b2f93 # services-artix
-    a6558c7b1de4884eed0e72679884cc6cb50f7e17 # packagechooserq
+    98a19d20aae5ea04a4b857b4f3c4cc52b4e31358 # packagechooser
 )
 
 prepare() {
@@ -45,7 +43,7 @@ prepare() {
         git cherry-pick -n "${_c}"
     done
 
-    git apply --binary $srcdir/initchooser-logo.patch
+    git apply --binary $srcdir/packagechooser-if-img.patch
 }
 
 build() {
