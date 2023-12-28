@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: timeshift
-  version: 23.12.1-1
+  version: 23.12.2-1
   arch:
     - x86_64
   pkgname:
     - timeshift
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.12.1-1
+    version: 23.12.2-1
     packages:
-      - timeshift-23.12.1-1-x86_64.pkg.tar.zst
+      - timeshift-23.12.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
