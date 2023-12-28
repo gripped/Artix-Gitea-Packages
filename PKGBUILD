@@ -3,13 +3,13 @@
 
 pkgname=iso-profiles
 pkgver=2023.12
-pkgrel=4
+pkgrel=5
 pkgdesc='Artix iso profiles'
 arch=('any')
 license=('GPL')
 url='https://gitea.artixlinux.org/artix/iso-profiles'
 makedepends=('git')
-_commit=3fdf7003fac232c92c28fcc41bbdb2ed29e08564
+_commit=f16ae4f8917d614a5a2b0cba0b56e0e1ef03b42c
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
