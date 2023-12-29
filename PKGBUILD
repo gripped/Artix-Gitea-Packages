@@ -1,0 +1,34 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Duck Hunt <vaporeon@tfwno.gf>
+
+pkgname=libretro-mgba
+pkgver=8799
+pkgrel=1
+pkgdesc='Nintendo Game Boy Advance core'
+arch=(x86_64)
+url=https://github.com/libretro/mgba
+license=(custom:MPL2)
+groups=(libretro)
+depends=(libretro-core-info)
+makedepends=(git)
+_commit=314bf7b676f5b820f396209eb0c7d6fbe8103486
+source=(libretro-mgba::git+https://github.com/libretro/mgba.git#commit=${_commit})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd libretro-mgba
+
+  git rev-list --count HEAD
+}
+
+build() {
+  make -C libretro-mgba -f Makefile.libretro
+}
+
+package() {
+  install -Dm 644 libretro-mgba/mgba_libretro.so -t "${pkgdir}"/usr/lib/libretro/
+  install -Dm 644 libretro-mgba/LICENSE -t "${pkgdir}"/usr/share/licenses/libretro-mgba/
+}
+
+# vim: ts=2 sw=2 et:
