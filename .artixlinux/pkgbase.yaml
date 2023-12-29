@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-setuptools-gettext
-  version: 0.1.8-1
+  version: 0.1.8-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.8-1
+    version: 0.1.8-2
     packages:
-      - python-setuptools-gettext-0.1.8-1-any.pkg.tar.zst
+      - python-setuptools-gettext-0.1.8-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
