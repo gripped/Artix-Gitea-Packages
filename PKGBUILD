@@ -1,0 +1,27 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgname=libretro-core-info
+pkgver=1.16.0.3
+pkgrel=1
+pkgdesc='Libretro core info files'
+arch=(any)
+url=https://github.com/libretro/libretro-core-info
+license=(GPL3)
+makedepends=(git)
+groups=(libretro)
+_tag=2aa595b476569472290c4ff78bbfbd630528ae62
+source=(git+https://github.com/libretro/libretro-core-info.git#tag=${_tag})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd libretro-core-info
+
+  git describe --tags | sed 's/^v//; s/-/./g'
+}
+
+package() {
+  make DESTDIR="${pkgdir}" -C libretro-core-info install
+}
+
+# vim: ts=2 sw=2 et:
