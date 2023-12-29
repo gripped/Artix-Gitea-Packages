@@ -1,17 +1,16 @@
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Daenyth <Daenyth+Arch@gmail.com>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 # Contributor: Vitaliy Berdinskikh <skipper13@root.ua>
 
 pkgname=libxmlrpc
-# Using the "super stable" version
-pkgver=1.51.08
-pkgrel=3
+pkgver=1.59.02 # latest "super stable" release from https://t.ly/6IEne
+pkgrel=1
 epoch=1
 pkgdesc='XML-RPC for C and C++'
 arch=(x86_64)
-# HTTPS is not available
-url='http://xmlrpc-c.sourceforge.net/'
+url='https://xmlrpc-c.sourceforge.net/'
 license=(custom)
 depends=(curl)
 makedepends=(libtool setconf)
@@ -19,11 +18,11 @@ conflicts=(xmlrpc-c)
 provides=(xmlrpc-c)
 replaces=(xmlrpc-c)
 options=(!emptydirs)
-source=("https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/$pkgver/xmlrpc-$pkgver.tgz")
-b2sums=('636215329996a36dc8404e95b8791779f1e6afc063f8a3457c72e04475e49c3cbf213c872934c5116a2e761d579994b7c98fe1f2ad7a6dbb38a370963b921500')
+source=("https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/$pkgver/xmlrpc-c-$pkgver.tgz")
+b2sums=('08b0756792c9b89607a601136cdbc0720ed180b0c793ee69bb9f93445f95a3dbad490a78d4fce3109f11878950f7f017f308cee0932c2e6bc40ba05d155eeab6')
 
 build() {
-  cd xmlrpc-$pkgver
+  cd xmlrpc-c-$pkgver
 
   ./configure \
     --disable-cgi-server \
@@ -42,7 +41,7 @@ build() {
 }
 
 package() {
-  cd xmlrpc-$pkgver
+  cd xmlrpc-c-$pkgver
 
   make DESTDIR="$pkgdir" install
   make DESTDIR="$pkgdir" -C tools install

@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libxmlrpc
-  version: 1:1.51.08-3
+  version: 1:1.59.02-1
   arch:
     - x86_64
   pkgname:
     - libxmlrpc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.51.08-3
+    version: 1:1.59.02-1
     packages:
-      - libxmlrpc-1:1.51.08-3-x86_64.pkg.tar.zst
+      - libxmlrpc-1:1.59.02-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
