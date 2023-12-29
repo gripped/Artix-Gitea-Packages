@@ -6,7 +6,7 @@
 pkgname=ctags
 _commit=7ad90a853a5aee974c757217c87a3b468855c2b1
 pkgver=6.1.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='Generates an index file of language objects found in source files'
 url='https://ctags.io/'
