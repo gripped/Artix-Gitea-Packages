@@ -1,0 +1,28 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgname=libretro-shaders-slang
+pkgver=1380
+pkgrel=1
+pkgdesc='Collection of shaders for libretro'
+arch=(any)
+url=https://www.libretro.com/
+license=(GPL3)
+groups=(libretro)
+provides=(libretro-shaders)
+makedepends=(git)
+_commit=2a4f904bfd19e64c3df532289e8b15c2d8d763eb
+source=(libretro-shaders-slang::git+https://github.com/libretro/slang-shaders.git#commit=${_commit})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd libretro-shaders-slang
+
+  git rev-list --count HEAD
+}
+
+package() {
+ make DESTDIR="${pkgdir}" -C libretro-shaders-slang install
+}
+
+# vim: ts=2 sw=2 et:
