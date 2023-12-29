@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-fixtures
-  version: 4.1.0-1
+  version: 4.1.0-2
   arch:
     - any
   pkgname:
     - python-fixtures
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.0-1
+    version: 4.1.0-2
     packages:
-      - python-fixtures-4.1.0-1-any.pkg.tar.zst
+      - python-fixtures-4.1.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
