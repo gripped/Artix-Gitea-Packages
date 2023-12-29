@@ -3,7 +3,7 @@
 
 pkgname=breezy
 pkgver=3.3.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A decentralized revision control system with support for Bazaar and Git file formats'
 arch=(x86_64)
 url=https://www.breezy-vcs.org/
@@ -20,16 +20,16 @@ depends=(
 makedepends=(
   cython
   git
+  python-build
   python-fastimport
   python-gpgme
+  python-installer
   python-packaging
   python-paramiko
   python-setuptools
   python-setuptools-gettext
   python-setuptools-rust
   python-wheel
-  python-build
-  python-installer
 )
 optdepends=(
   'python-fastimport: Fastimport support'
@@ -54,8 +54,7 @@ build() {
 }
 
 package() {
-  cd breezy
-  python -m installer --destdir="$pkgdir" dist/*.whl
+  python -m installer --destdir="${pkgdir}" breezy/dist/*.whl
   ln -s brz "${pkgdir}"/usr/bin/bzr # backwards compatibility
 }
 
