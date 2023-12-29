@@ -1,0 +1,26 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgname=libretro-overlays
+pkgver=263
+pkgrel=1
+pkgdesc='Collection of overlays for libretro'
+arch=(any)
+url=https://github.com/libretro/common-overlays
+license=(CCPL)
+groups=(libretro)
+makedepends=(git)
+_commit=115d8670c2e032e4a41ba45f766f5cfd9dae28b8
+source=(libretro-overlays::git+https://github.com/libretro/common-overlays.git#commit=${_commit})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd libretro-overlays
+  git rev-list --count HEAD
+}
+
+package() {
+  make DESTDIR="${pkgdir}" install -C libretro-overlays
+}
+
+# vim: ts=2 sw=2 et:
