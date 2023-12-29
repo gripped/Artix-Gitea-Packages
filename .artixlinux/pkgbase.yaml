@@ -1,15 +1,19 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: retroarch-assets
+  version: 1:489-1
+  arch:
+    - any
+  pkgname:
+    - retroarch-assets-glui
+    - retroarch-assets-ozone
+    - retroarch-assets-xmb
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -47,5 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1:489-1
+    packages:
+      - retroarch-assets-glui-1:489-1-any.pkg.tar.zst
+      - retroarch-assets-ozone-1:489-1-any.pkg.tar.zst
+      - retroarch-assets-xmb-1:489-1-any.pkg.tar.zst

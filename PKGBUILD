@@ -1,0 +1,55 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgbase=retroarch-assets
+pkgname=(
+  retroarch-assets-glui
+  retroarch-assets-ozone
+  retroarch-assets-xmb
+)
+pkgver=489
+pkgrel=1
+epoch=1
+pkgdesc='XMB menu assets for RetroArch'
+arch=(any)
+url=http://www.libretro.com/
+license=(GPL)
+groups=(libretro)
+depends=(retroarch)
+makedepends=(git)
+_commit=a6382201e29cfbfed7ea7db5ce403880152ad2a2
+source=(git+https://github.com/libretro/retroarch-assets.git#commit=${_commit})
+sha256sums=(SKIP)
+
+pkgver() {
+  cd retroarch-assets
+
+  git rev-list --count HEAD
+}
+
+package_retroarch-assets-glui() {
+  depends+=(retroarch-assets-xmb)
+
+  cd retroarch-assets
+
+  install -dm 755 "${pkgdir}"/usr/share/retroarch/assets
+  cp -dr --no-preserve=ownership glui "${pkgdir}"/usr/share/retroarch/assets/
+}
+
+package_retroarch-assets-ozone() {
+  depends+=(retroarch-assets-xmb)
+
+  cd retroarch-assets
+
+  install -dm 755 "${pkgdir}"/usr/share/retroarch/assets
+  cp -dr --no-preserve=ownership ozone "${pkgdir}"/usr/share/retroarch/assets/
+}
+
+package_retroarch-assets-xmb() {
+  cd retroarch-assets
+
+  install -dm 755 "${pkgdir}"/usr/share/retroarch/assets
+  cp -dr --no-preserve=ownership xmb "${pkgdir}"/usr/share/retroarch/assets/
+}
+
+# vim: ts=2 sw=2 et:
