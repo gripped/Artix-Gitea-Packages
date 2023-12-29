@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libaec
-  version: 1.0.6-1
+  version: 1.1.2-1
   arch:
     - x86_64
   pkgname:
     - libaec
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.6-1
+    version: 1.1.2-1
     packages:
-      - libaec-1.0.6-1-x86_64.pkg.tar.zst
+      - libaec-1.1.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
