@@ -1,0 +1,85 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+
+pkgname=libretro-dolphin
+pkgver=33042
+pkgrel=6
+pkgdesc='Nintendo GC/Wii core'
+arch=(x86_64)
+url=https://github.com/libretro/dolphin
+license=(GPL2)
+groups=(libretro)
+depends=(
+  alsa-lib
+  bluez-libs
+  bzip2
+  enet
+  fmt
+  gcc-libs
+  glibc
+  hidapi
+  libevdev
+  libgl
+  libretro-core-info
+  libusb
+  libx11
+  libxi
+  libxrandr
+  lzo
+  sfml
+  libudev.so
+  xz
+  zlib
+  zstd
+)
+makedepends=(
+  clang
+  cmake
+  git
+  libglvnd
+  mesa
+  ninja
+  python
+)
+_commit=2f4b0f7902257d40a054f60b2c670d6e314f2a04
+source=(
+  libretro-dolphin::git+https://github.com/libretro/dolphin.git#commit=${_commit}
+  libretro-dolphin-missing-headers.patch
+  fmt-10.patch
+)
+b2sums=('SKIP'
+        '5b4ca6d1dc6af7a3afd014700305616d9e3e0f139f128cfa2af6cff3194a36ef9a591faaefbb8491d71f646187ee79e6fb5f29e9f57eeaf4e82768e814516f1a'
+        'e669c2497beaa42e5bde4033ebac00b85bb4f28ebff910c952dc4354de174267fcf2a1d27d6ca8b421c5c1e81591f7375150b0954d92c172d144e7a89a884186')
+
+prepare() {
+  cd libretro-dolphin
+  patch -Np1 -i ../libretro-dolphin-missing-headers.patch
+  patch -p1 -i ../fmt-10.patch # Fix build with fmt 10
+}
+
+pkgver() {
+  cd libretro-dolphin
+  git rev-list --count HEAD
+}
+
+build() {
+  export CC=clang
+  export CXX=clang++
+  cmake -S libretro-dolphin -B build -G Ninja \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DENABLE_LTO=ON \
+    -DENABLE_NOGUI=OFF \
+    -DENABLE_QT=OFF \
+    -DENABLE_TESTS=OFF \
+    -DLIBRETRO=ON \
+    -DUSE_SHARED_ENET=ON \
+    -Wno-dev
+  cmake --build build
+}
+
+package() {
+  install -Dm 644 build/dolphin_libretro.so -t "${pkgdir}"/usr/lib/libretro/
+}
+
+# vim: ts=2 sw=2 et:
