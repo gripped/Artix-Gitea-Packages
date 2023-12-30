@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: libretro-mupen64plus-next
+  version: 1:454-1
+  arch:
+    - x86_64
+  pkgname:
+    - libretro-mupen64plus-next
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -47,5 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1:454-1
+    packages:
+      - libretro-mupen64plus-next-1:454-1-x86_64.pkg.tar.zst
