@@ -27,14 +27,25 @@ makedepends=(
 )
 replaces=(libretro-mupen64plus)
 _commit=4d270850bd09f8630110da701b73107e45a6e202
-source=(libretro-mupen64plus-next::git+https://github.com/libretro/mupen64plus-libretro-nx.git#commit=${_commit})
-sha256sums=(SKIP)
+source=(libretro-mupen64plus-next::git+https://github.com/libretro/mupen64plus-libretro-nx.git#commit=${_commit}
+        stdexcept.patch::https://github.com/libretro/mupen64plus-libretro-nx/commit/26fd1edd640ff3db49dd5ebb7e54f0de6600fc45.diff
+        cstdint.patch::https://github.com/libretro/mupen64plus-libretro-nx/commit/2c7af614ed3da27565cc5616c908134fdd908820.diff)
+sha256sums=('SKIP'
+            '4df9c237e63f0052a1dc538df3c6fd1ad362a93dccca4e1ba2ff81773ff45961'
+            '358031eb721d5fd337ada75a4dfa9511cf7ac7ceca2ca9cf63c0d15d2df88e4d')
 options=(!lto)
 
 pkgver() {
   cd libretro-mupen64plus-next
 
   git rev-list --count HEAD
+}
+
+prepare() {
+  cd libretro-mupen64plus-next
+
+  patch --strip=1 --input=../stdexcept.patch
+  patch --strip=1 --input=../cstdint.patch
 }
 
 build() {
