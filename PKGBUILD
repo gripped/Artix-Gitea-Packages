@@ -1,0 +1,120 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Wouter Wijsman <wwijsman@live.nl>
+# Contributor: Duck Hunt <vaporeon@tfwno.gf>
+
+pkgname=libretro-ppsspp
+pkgver=38911
+pkgrel=1
+pkgdesc='Sony PlayStation Portable core'
+arch=(x86_64)
+url=https://github.com/hrydgard/ppsspp
+license=(GPL2)
+groups=(libretro)
+depends=(
+  gcc-libs
+  glew
+  glibc
+  libgl
+  libpng
+  libretro-core-info
+  libzip
+  ppsspp-assets
+  sdl2
+  snappy
+  zlib
+  zstd
+)
+makedepends=(
+  cmake
+  git
+  libglvnd
+  ninja
+  python
+)
+_commit=ecab5034611d420f8d41787bf8bd572ecdc1627f
+source=(
+  libretro-ppsspp::git+https://github.com/hrydgard/ppsspp.git#commit=${_commit}
+  git+https://github.com/Kingcom/armips.git
+  git+https://github.com/google/cpu_features.git
+  git+https://github.com/hrydgard/ppsspp-ffmpeg.git
+  armips-filesystem::git+https://github.com/Kingcom/filesystem.git
+  git+https://github.com/KhronosGroup/glslang.git
+  git+https://github.com/hrydgard/ppsspp-lang.git
+  git+https://github.com/rtissera/libchdr.git
+  ppsspp-miniupnp::git+https://github.com/hrydgard/miniupnp.git
+  git+https://github.com/Tencent/rapidjson.git
+  git+https://github.com/RetroAchievements/rcheevos.git
+  git+https://github.com/KhronosGroup/SPIRV-Cross.git
+  libretro-ppsspp-assets-path.patch
+)
+b2sums=('SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'ae0f14c04d6b308b524dc47776eccb52c0f4b306a1173cee8fa7e3766da90482f4921ca2777304692121f17c55e4edcf81d937982cbb1bd0d65ae7f92e8e0640')
+
+pkgver() {
+  cd libretro-ppsspp
+  git rev-list --count HEAD
+}
+
+prepare() {
+  cd libretro-ppsspp
+
+  patch -Np1 -i ../libretro-ppsspp-assets-path.patch
+
+  git config --global protocol.file.allow always
+
+  for submodule in ffmpeg assets/lang ext/miniupnp; do
+    git submodule init ${submodule}
+    git config submodule.${submodule}.url ../ppsspp-${submodule#*/}
+    git submodule update ${submodule}
+  done
+  for submodule in ext/{armips,cpu_features,glslang,libchdr,rapidjson,rcheevos,SPIRV-Cross}; do
+    git submodule init ${submodule}
+    git config submodule.${submodule}.url ../${submodule#*/}
+    git submodule update ${submodule}
+  done
+
+  cd ext/armips
+
+  for submodule in ext/filesystem; do
+    git submodule init ${submodule}
+    git config submodule.${submodule}.url ../../../armips-${submodule#*/}
+    git submodule update ${submodule}
+  done
+}
+
+build() {
+  cmake -S libretro-ppsspp -B build -G Ninja \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_SKIP_RPATH=ON \
+    -DOpenGL_GL_PREFERENCE=GLVND \
+    -DHEADLESS=OFF \
+    -DLIBRETRO=ON \
+    -DMOBILE_DEVICE=OFF \
+    -DSIMULATOR=OFF \
+    -DUNITTEST=OFF \
+    -DUSE_SYSTEM_LIBZIP=ON \
+    -DUSE_SYSTEM_SNAPPY=ON \
+    -DUSE_SYSTEM_ZSTD=ON \
+    -DUSING_QT_UI=OFF \
+    -Wno-dev
+  cmake --build build
+}
+
+package() {
+  install -Dm 644 build/lib/ppsspp_libretro.so -t "${pkgdir}"/usr/lib/libretro/
+  install -Dm 644 libretro-ppsspp/LICENSE.TXT -t "${pkgdir}"/usr/share/licenses/libretro-ppsspp/
+}
+
+# vim: ts=2 sw=2 et:
