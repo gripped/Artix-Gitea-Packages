@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: calamares
-  version: 3.3.0-14
+  version: 3.3.0-15
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.3.0-14
+    version: 3.3.0-15
     packages:
-      - calamares-3.3.0-14-x86_64.pkg.tar.zst
+      - calamares-3.3.0-15-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

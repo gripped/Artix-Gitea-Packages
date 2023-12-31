@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=14
+pkgrel=15
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(
@@ -23,6 +23,7 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'pa
         'python-jsonschema' 'python-toml' 'python-pyyaml'
         'hicolor-icon-theme') #'appstream-qt5'
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
+provides=('libcalamares.so' 'libcalamaresui.so')
 optdepends=('calamares-extensions: Artix extensions and branding')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76')
