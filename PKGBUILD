@@ -4,13 +4,13 @@
 pkgname=calamares-extensions
 pkgver=0.1
 _commit='9e10e21381d808eb2ed24f33dd67203e6c241457' # git rev-parse v${pkgver}
-pkgrel=1
+pkgrel=2
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(GPL)
 url="https://gitea.artixlinux.org/artix/calamares-extensions"
 license=('LGPL')
-depends=('calamares')
+depends=('glibc' 'gcc-libs' 'calamares' 'libcalamaresui.so' 'libcalamares.so')
 makedepends=('extra-cmake-modules' 'qt5-tools' 'git' 'qt5-translations')
 provides=('calamares-branding')
 conflicts=('calamares-branding')
