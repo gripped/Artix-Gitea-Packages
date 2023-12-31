@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-starlette
-  version: 0.33.0-1
+  version: 0.34.0-1
   arch:
     - any
   pkgname:
     - python-starlette
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.34.0-1
+    packages:
+      - python-starlette-0.34.0-1-any.pkg.tar.zst
   world:
     version: 0.33.0-1
     packages:
