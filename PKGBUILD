@@ -3,8 +3,8 @@
 
 pkgname=calamares-extensions
 pkgver=0.1
-_commit='fe012233e38023eb4a14f82aa25bc1031fb92707' # git rev-parse v${pkgver}
-pkgrel=3
+_commit='c6e2cacd51bb945d405b94913797eca25aa88c4d' # git rev-parse v${pkgver}
+pkgrel=4
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(GPL)
@@ -26,7 +26,6 @@ build() {
             -DCMAKE_INSTALL_PREFIX=/usr \
             -DCMAKE_INSTALL_LIBDIR=/usr/lib \
             -DINSTALL_CONFIG:BOOL=ON \
-            -DINSTALL_POLKIT:BOOL=OFF \
             -DBUILD_APPDATA:BOOL=OFF \
             -DBUILD_APPSTREAM:BOOL=OFF \
             -DSKIP_MODULES="refind"
