@@ -4,7 +4,7 @@
 
 pkgname=fontconfig
 pkgver=2.15.0
-pkgrel=1
+pkgrel=2
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
