@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares-extensions
-pkgver=0.2
-_commit='25acdeceba6bcea1d2d7b62d92cde7394e4108c1' # git rev-parse v${pkgver}
+pkgver=0.3
+_commit='379f38bfe9a647cf09336e467fc80c55983bdfa7' # git rev-parse v${pkgver}
 pkgrel=1
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
@@ -17,10 +17,6 @@ conflicts=('calamares-branding')
 replaces=('calamares-branding')
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
-
-prepare() {
-sed -e 's|calamares_add_module_subdirectory( modules/packagechooserq LIST_SKIPPED_MODULES )|calamares_add_module_subdirectory( modules/packagechooserq LIST_SKIPPED_MODULES )\ncalamares_add_module_subdirectory( modules/packagechooserxq LIST_SKIPPED_MODULES )|' -i "$pkgname"/CMakeLists.txt
-}
 
 build() {
     mkdir -p "$pkgname"/build
