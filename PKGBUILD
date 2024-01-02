@@ -2,15 +2,15 @@
 # Contributor: Nathan <ndowens@artixlinux.org>
 # Contributor: linuxer
 pkgname=rsm
-pkgver=1.4.6
-pkgrel=2
+pkgver=1.4.8
+pkgrel=1
 pkgdesc="Runit service manager"
 arch=(any)
 url="https://gitea.artixlinux.org/nikolar/Runit-Service-Manager"
 license=('MIT')
 depends=('runit')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-b2sums=('24f1f7797457cfa5940f335e9521696f7467a7597780eed5ce05c9147d18c80717fd17ba7e9b0df2ef35732a304b12ccf87831b15b68b16b20ad6592dd4b2e00')
+b2sums=('e896f332d8f0fca5b92a718a73aa23fc8f90505a7c92c098685778adbe9ead5d804635a10b11934f9eab6e6684d9f536179c980b6130d2b9ff7546d48da213d4')
 
 package() {
   cd "runit-service-manager"
