@@ -2,12 +2,12 @@
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
-_v=1.6.2
 _url=https://gitea.artixlinux.org/artix/alpm-hooks
+_commit=1487bf4089163e64bf68facf85b0063f33ad7590
 
 pkgname=base
 pkgver=3
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -28,9 +28,12 @@ depends=(
   # networking, ping, etc
   'iputils' 'iproute2'
 )
+makedepends=('git')
 optdepends=('linux: bare metal support')
-source=("alpm-hooks-$_v.tar.gz::$_url/archive/$_v.tar.gz")
-sha256sums=('b549a8dbc6865d9cf691b3743d8062ebc2beab9697f80fc9b1800ef169026a7f')
+source=(
+    "git+$_url.git#commit=$_commit"
+)
+sha256sums=('SKIP')
 
 package() {
     # pacman hooks
@@ -40,7 +43,6 @@ package() {
     make -C alpm-hooks DESTDIR="${pkgdir}" install_wrapper
 
     # provide default symlink for PM file tracking
-    install -d "${pkgdir}"/usr/bin
     ln -svf openrc-init "${pkgdir}"/usr/bin/init
 }
 
