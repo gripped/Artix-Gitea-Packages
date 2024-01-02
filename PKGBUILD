@@ -3,8 +3,8 @@
 
 pkgname=calamares-extensions
 pkgver=0.3
-_commit='379f38bfe9a647cf09336e467fc80c55983bdfa7' # git rev-parse v${pkgver}
-pkgrel=1
+_commit='1d11f43ea3869676cb0a807614baee10fce6364b' # git rev-parse v${pkgver}
+pkgrel=2
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(GPL)
@@ -13,7 +13,6 @@ license=('LGPL')
 depends=('calamares' 'libcalamaresui.so' 'libcalamares.so')
 makedepends=('extra-cmake-modules' 'qt5-tools' 'git' 'qt5-translations')
 provides=('calamares-branding')
-conflicts=('calamares-branding')
 replaces=('calamares-branding')
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
@@ -27,8 +26,7 @@ build() {
             -DCMAKE_INSTALL_LIBDIR=/usr/lib \
             -DINSTALL_CONFIG:BOOL=ON \
             -DBUILD_APPDATA:BOOL=OFF \
-            -DBUILD_APPSTREAM:BOOL=OFF \
-            -DSKIP_MODULES="refind"
+            -DBUILD_APPSTREAM:BOOL=OFF
         make
 }
 
