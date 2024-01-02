@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rsm
-  version: 1.4.8-1
+  version: 1.4.9-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.8-1
+    version: 1.4.9-1
     packages:
-      - rsm-1.4.8-1-any.pkg.tar.zst
+      - rsm-1.4.9-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
