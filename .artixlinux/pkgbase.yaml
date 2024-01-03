@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: copr-cli
-  version: 1.104-1
+  version: 1.104-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.104-1
+    version: 1.104-2
     packages:
-      - copr-cli-1.104-1-any.pkg.tar.zst
+      - copr-cli-1.104-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
