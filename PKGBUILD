@@ -2,7 +2,7 @@
 
 _name=pdm
 pkgname=python-pdm
-pkgver=2.11.1
+pkgver=2.11.2
 pkgrel=1
 pkgdesc="A modern Python package manager with PEP 582 support"
 arch=(any)
@@ -51,8 +51,8 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('a60de85db490ad090a7d1cf9e8ccb7e234854b5f22b4254d8dd0e79993f602e69a72693835043aeb1cccb866d208fa203501952d0fcc7078cedae4946f54d4ae')
-b2sums=('ff9f4e8dc3d2bfb6194eca5e1123ca0050607df8ac508c96d74d87a75bc65e7e8e8e684b96460ceeaed32c518d378c9df0f42dc691abc653e47814694e484e93')
+sha512sums=('0d96aa6a8e043c15e12bf072c3f8f174f6ff6a3a814fd5f533913eb78cd92ba7db85c2fb99975063d4eaea032d0d1c95e75a62dea1ecca6a4f28b0c9b8e8db17')
+b2sums=('6ce660b43bf681af849864e706939de5a2bb4e453dc80f9f83269a1fa14509158efdd7d4c7898acbcfed31e76aca2d8dbc289c3204c352bde29254307f7da89b')
 
 build() {
   cd $_name-$pkgver
