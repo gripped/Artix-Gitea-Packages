@@ -2,7 +2,7 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=pacman-contrib
-pkgver=1.9.1
+pkgver=1.10.0
 pkgrel=1
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=('x86_64')
@@ -10,21 +10,23 @@ url=https://gitlab.archlinux.org/pacman/pacman-contrib
 license=('GPL')
 depends=('fakeroot' 'pacman' 'perl')
 makedepends=('asciidoc' 'git')
-optdepends=('diffutils: for pacdiff'
-            'findutils: for pacdiff --find'
-            'mlocate: for pacdiff --locate'
-            'sudo: privilege elevation for several scripts'
-            'vim: default merge program for pacdiff')
+optdepends=(
+  'diffutils: for pacdiff'
+  'findutils: for pacdiff --find'
+  'mlocate: for pacdiff --locate'
+  'sudo: privilege elevation for several scripts'
+  'vim: default merge program for pacdiff'
+)
 source=("git+$url.git#tag=v$pkgver"
-        rankmirrors-artix.patch)
+        'pacman-contrib-artix.patch')
 b2sums=('SKIP'
-        'ca5d31cdd7a386241ba75a67e517bbd087f77f8740f0d7b5b53b26e2418516e395f01b7b43d09fff2430d214387e8386db679dfd2b226b1403d02135d349e469')
+        '7697cb9e94eba48792210f6c0b47917e5c3fb81dc9a28b21013781061ec4a327c8b302f3ce4722b9fba9b887e40b0e736285c537eaabb9cc0130df8cb9dfff36')
 validpgpkeys=('04DC3FB1445FECA813C27EFAEA4F7B321A906AD9') # Daniel M. Capella <polyzen@archlinux.org>
 #             '5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5')  # Johannes Löthberg <johannes@kyriasis.com>
 
 prepare() {
   cd $pkgname
-  patch -Np 1 -i ../rankmirrors-artix.patch
+  patch -Np 1 -i ../pacman-contrib-artix.patch
   ./autogen.sh
 }
 
@@ -45,7 +47,6 @@ check() {
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
-  rm -fr ${pkgdir}/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:

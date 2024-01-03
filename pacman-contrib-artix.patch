@@ -1,0 +1,86 @@
+ doc/paclist.8.adoc    |  2 +-
+ src/Makefile.am       |  6 ------
+ src/paclist.sh.in     |  2 +-
+ src/rankmirrors.sh.in | 10 +++++-----
+ 4 files changed, 7 insertions(+), 13 deletions(-)
+
+diff --git a/doc/paclist.8.adoc b/doc/paclist.8.adoc
+index 141489e..38071f3 100644
+--- a/doc/paclist.8.adoc
++++ b/doc/paclist.8.adoc
+@@ -16,7 +16,7 @@ Description
+ 'paclist' will list all packages installed on the system from a given repository.
+ Useful for seeing which packages you may have installed from the testing repositories,
+ for instance.
+-Example: paclist core-testing
++Example: paclist system-gremlins
+
+
+ Options
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 4b87cc9..ef7935b 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -29,12 +29,6 @@ vim_syntax__DATA = \
+ 	vim/syntax/PKGBUILD.vim \
+ 	vim/syntax/SRCINFO.vim
+
+-systemd_dir = ${libdir}/systemd/system
+-
+-systemd__DATA = \
+-	paccache.service paccache.timer \
+-	pacman-filesdb-refresh.service pacman-filesdb-refresh.timer
+-
+ BASHSCRIPTS = \
+ 	checkupdates \
+ 	paccache \
+diff --git a/src/paclist.sh.in b/src/paclist.sh.in
+index 61fe6e2..b9d7eb6 100644
+--- a/src/paclist.sh.in
++++ b/src/paclist.sh.in
+@@ -32,7 +32,7 @@ Options:
+   -h, --help     show this help message and exit
+   -V, --version  display version information and exit
+
+-Example: ${myname} core-testing
++Example: ${myname} system-gremlins
+ EOF
+ }
+
+diff --git a/src/rankmirrors.sh.in b/src/rankmirrors.sh.in
+index 690674c..3fb6f6b 100644
+--- a/src/rankmirrors.sh.in
++++ b/src/rankmirrors.sh.in
+@@ -67,7 +67,7 @@ err() {
+ 	exit 1
+ }
+
+-# gettime fetchurl (e.g gettime http://foo.com/core/os/i686/core.db.tar.gz)
++# gettime fetchurl (e.g gettime http://foo.com/system/os/i686/system.db.tar.gz)
+ # returns the fetching time, or timeout, or unreachable
+ gettime() {
+ 	IFS=' ' read -ra output <<< "$(curl -s -m "$MAX_TIME" -w "%{time_total} %{http_code}" "$1" -o/dev/null)"
+@@ -77,10 +77,10 @@ gettime() {
+ 	return 0
+ }
+
+-# getfetchurl serverurl (e.g. getturl http://foo.com/core/os/i686)
+-# if $repo is in the line, then assumes core
++# getfetchurl serverurl (e.g. getturl http://foo.com/system/os/i686)
++# if $repo is in the line, then assumes system
+ # if $arch is in the line, then assumes $(uname -m)
+-# returns a fetchurl (e.g. http://foo.com/core/os/i686/core.db.tar.gz)
++# returns a fetchurl (e.g. http://foo.com/system/os/i686/system.db.tar.gz)
+ ARCH="$(uname -m)"
+ getfetchurl() {
+ 	local strippedurl="${1%/}"
+@@ -89,7 +89,7 @@ getfetchurl() {
+ 	local replacedurl="${strippedurl//'$arch'/$ARCH}"
+ 	if [[ ! $TARGETREPO ]]; then
+ 		# shellcheck disable=SC2016
+-		replacedurl="${replacedurl//'$repo'/core}"
++		replacedurl="${replacedurl//'$repo'/system}"
+ 		local tmp="${replacedurl%/*}"
+ 		tmp="${tmp%/*}"
+
+
