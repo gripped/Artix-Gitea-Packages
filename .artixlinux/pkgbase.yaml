@@ -9,12 +9,12 @@ pkgbase:
     - artools-pkg
     - artools-iso
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,17 +30,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.32.2-1
     packages:
       - artools-base-0.32.2-1-any.pkg.tar.zst
       - artools-pkg-0.32.2-1-any.pkg.tar.zst
       - artools-iso-0.32.2-1-any.pkg.tar.zst
-  world:
-    version: 0.32.1-2
-    packages:
-      - artools-base-0.32.1-2-any.pkg.tar.zst
-      - artools-pkg-0.32.1-2-any.pkg.tar.zst
-      - artools-iso-0.32.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
