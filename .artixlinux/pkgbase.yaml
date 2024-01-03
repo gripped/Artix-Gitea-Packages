@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-cairosvg
-  version: 2.7.1-1
+  version: 2.7.1-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.7.1-1
+    version: 2.7.1-2
     packages:
-      - python-cairosvg-2.7.1-1-any.pkg.tar.zst
+      - python-cairosvg-2.7.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
