@@ -1,9 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Sébastien Luttringer
+# Maintainer: Sébastien Luttringer
 # Contributor: Balwinder S "bsd" Dheeman (bdheeman AT gmail.com)
 
 pkgname=dkms
-pkgver=3.0.11
+pkgver=3.0.12
 pkgrel=1
 pkgdesc='Dynamic Kernel Modules System'
 arch=('any')
@@ -64,10 +63,9 @@ package() {
   # we install them outside of $pkgdir
   make \
     DESTDIR="$pkgdir" \
-    SBIN="$pkgdir/usr/bin" \
-    BASHDIR="$pkgdir/usr/share/bash-completion/completions" \
-    KCONF="$srcdir"/trash \
-    LIBDIR="$srcdir"/trash \
+    SBIN=/usr/bin \
+    KCONF=/../trash \
+    LIBDIR=/../trash \
     install
 }
 
