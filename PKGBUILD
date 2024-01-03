@@ -34,7 +34,7 @@ _srcname=linux-${_ver}
 _srctag=v${_ver}-${_arch}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
-  $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
+  $url/releases/download/$_srctag/linux-$_srctag.patch.zst
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -46,12 +46,10 @@ validpgpkeys=(
 sha256sums=('8ebc65af0cfc891ba63dce0546583da728434db0f5f6a54d979f25ec47f548b3'
             'SKIP'
             'da9d15179f3a0e1b19c57344c6e10b886d598f5256ea6f82adbe2940ccf68b34'
-            'SKIP'
             'f89da5801c3277dd4ae637dca8ffe3055a478440195936585410c4b0080ba150')
 b2sums=('c7deb1221716144b636018ee2936abe6397e15204c9bdb4cb5806f6bd303cd5d3f953a7da5865c4f211b866e4dfec4cd347c0a1a0a675f18b1a4ad197b099cec'
         'SKIP'
         'aab29beac241ad2a789c5d0f5536f3d3277e42ee3a0df2b32cdbfbe60bbf02e337c439f7bd6eb18bed266de4ad2751b859de00aab595b3f9565a34327b78fdbf'
-        'SKIP'
         'cca39b661da6afa3d1adbce85058453c233b5353082c1577fdd15fd4a0e5febdc27fc3d462521ac90f00bea26fd1b7a96b3373f5d5661cd3c57c8d6ddf3a535e')
 
 export KBUILD_BUILD_HOST=artixlinux
