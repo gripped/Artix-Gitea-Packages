@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.0
-pkgrel=16
+pkgrel=17
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(
@@ -53,13 +53,6 @@ build() {
             oemid \
             initramfs \
             initramfscfg \
-            finishedq \
-            keyboardq \
-            localeq \
-            notesqml \
-            summaryq \
-            usersq \
-            welcomeq \
             tracking \
             interactiveterminal \
             dummyprocess \
