@@ -49,7 +49,8 @@ makedepends=(cmake
              meson
              ninja
              vulkan-headers
-             xorgproto)
+             xorgproto
+             tomlplusplus)
 _archive="${pkgname^}-$pkgver"
 source=("$_archive.tar.gz::$url/releases/download/v$pkgver/source-v$pkgver.tar.gz")
 sha256sums=('234500dc726ec6cd190d95d45cf6d04766064172e75c1351ee7c49ec3405497e')
