@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: cdparanoia
-  version: 10.2-8.2
+  version: 10.2-9
   arch:
     - x86_64
   pkgname:
     - cdparanoia
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.2-8.2
+    version: 10.2-9
     packages:
-      - cdparanoia-10.2-8.2-x86_64.pkg.tar.zst
+      - cdparanoia-10.2-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
