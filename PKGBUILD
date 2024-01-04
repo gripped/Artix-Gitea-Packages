@@ -3,11 +3,11 @@
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _url=https://gitea.artixlinux.org/artix/alpm-hooks
-_commit=1487bf4089163e64bf68facf85b0063f33ad7590
+_commit=5d3cd01ffe8b3914227329d964d89ef61267b70a
 
 pkgname=base
 pkgver=3
-pkgrel=3.1
+pkgrel=3.2
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -39,7 +39,7 @@ package() {
     # pacman hooks
     make -C alpm-hooks DESTDIR="${pkgdir}" install_base
 
-    # artix-svc wrapper
+    # artix-service wrapper
     make -C alpm-hooks DESTDIR="${pkgdir}" install_wrapper
 
     # provide default symlink for PM file tracking
