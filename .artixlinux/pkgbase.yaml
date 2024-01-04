@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: timeshift
-  version: 23.12.2-1
+  version: 24.01.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.12.2-1
+    version: 24.01.1-1
     packages:
-      - timeshift-23.12.2-1-x86_64.pkg.tar.zst
+      - timeshift-24.01.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
