@@ -2,9 +2,9 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares-extensions
-pkgver=0.3
-_commit='1d11f43ea3869676cb0a807614baee10fce6364b' # git rev-parse v${pkgver}
-pkgrel=2
+pkgver=0.4
+_commit='15a16009742147a729aa1bb189ca4fb0d9621803' # git rev-parse v${pkgver}
+pkgrel=1
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(GPL)
