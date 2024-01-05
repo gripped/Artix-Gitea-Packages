@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - zathura
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,8 @@ repos:
     packages:
       - zathura-0.5.3-1-x86_64.pkg.tar.zst
   world:
-    version: 0.5.4-1
-    packages:
-      - zathura-0.5.4-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -51,5 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 0.5.4-1
+    packages:
+      - zathura-0.5.4-1-x86_64.pkg.tar.zst
