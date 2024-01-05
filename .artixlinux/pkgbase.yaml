@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wireshark
-  version: 4.2.1-1
+  version: 4.2.2-1
   arch:
     - x86_64
   pkgname:
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.2.1-1
+    version: 4.2.2-1
     packages:
-      - wireshark-cli-4.2.1-1-x86_64.pkg.tar.zst
-      - wireshark-qt-4.2.1-1-x86_64.pkg.tar.zst
+      - wireshark-cli-4.2.2-1-x86_64.pkg.tar.zst
+      - wireshark-qt-4.2.2-1-x86_64.pkg.tar.zst
