@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: qt5-wayland
-  version: 5.15.11+kde+r60-1
+  version: 5.15.12+kde+r61-1
   arch:
     - x86_64
   pkgname:
     - qt5-wayland
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.15.12+kde+r61-1
+    packages:
+      - qt5-wayland-5.15.12+kde+r61-1-x86_64.pkg.tar.zst
   world:
     version: 5.15.11+kde+r60-1
     packages:
