@@ -1,4 +1,5 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgbase=retroarch-assets

@@ -1,2 +1,2 @@
-# retroarch-assets-xmb
+# retroarch-assets
 
