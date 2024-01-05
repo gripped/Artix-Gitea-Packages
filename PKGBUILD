@@ -3,8 +3,8 @@
 _upstream=arch-rebuild-order
 
 pkgname=artix-rebuild-order
-pkgver=0.4.1
-pkgrel=2
+pkgver=0.4.2
+pkgrel=1
 pkgdesc="CLI tool to determine the rebuild order of provided package(s)"
 arch=('x86_64')
 url="https://gitlab.archlinux.org/archlinux/arch-rebuild-order"
@@ -12,13 +12,13 @@ license=('MIT')
 groups=('artix-tools')
 depends=('glibc' 'gcc-libs' 'libalpm.so')
 makedepends=('cargo' 'mandown' 'git')
-source=(git+https://gitlab.archlinux.org/archlinux/arch-rebuild-order.git#tag=v$pkgver?signed
+source=(git+$url.git#tag=v$pkgver?signed
         aro-artix.patch)
 validpgpkeys=("E499C79F53C96A54E572FEE1C06086337C50773E")
 sha256sums=('SKIP'
-            'a7177e6e04f46a0f7bc26e6c252e03d0b2dab39c3657bef923ed7858fa396c7e')
+            '13a1be99e9b2b632a2ded884fc7a32d2975ea77759adbbcf960d8bdcaeec459a')
 b2sums=('SKIP'
-        '1859587858a0b72da4e9334eb2bf68556276f3088b1f8a729656d167eea5ba5a528c003eca1712010ab322df2f0b1d1bf52551cf052e89c7a7cc19090fc0470f')
+        '87dddb81ff400999447c23ef6654756cdf7f67a58dbc53881d8882ac67455f2610b8d85a17582a9d1d134fd290dd522315e76c4516e0b07b6fc64990cea97701')
 
 prepare() {
     cd "${_upstream}"
