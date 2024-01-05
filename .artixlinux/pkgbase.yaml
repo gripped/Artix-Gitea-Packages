@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-shaders-slang
-  version: 1380-1
+  version: 1390-1
   arch:
     - any
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1380-1
+    version: 1390-1
     packages:
-      - libretro-shaders-slang-1380-1-any.pkg.tar.zst
+      - libretro-shaders-slang-1390-1-any.pkg.tar.zst
