@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - dhcpcd
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,8 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: null
-    packages: []
+    version: 10.0.6-1
+    packages:
+      - dhcpcd-10.0.6-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
@@ -31,9 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.0.6-1
-    packages:
-      - dhcpcd-10.0.6-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
