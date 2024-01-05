@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-gambatte
-  version: 1010-1
+  version: 1015-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1010-1
+    version: 1015-1
     packages:
-      - libretro-gambatte-1010-1-x86_64.pkg.tar.zst
+      - libretro-gambatte-1015-1-x86_64.pkg.tar.zst
