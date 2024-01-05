@@ -3,11 +3,12 @@
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _url=https://gitea.artixlinux.org/artix/alpm-hooks
-_commit=5d3cd01ffe8b3914227329d964d89ef61267b70a
+
+_commit=70445d2177e0fca7d5a29563ecd8b177c59a2271
 
 pkgname=base
 pkgver=3
-pkgrel=3.2
+pkgrel=4
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
