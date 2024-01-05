@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: retroarch-assets
-  version: 1:489-1
+  version: 1:495-1
   arch:
     - any
   pkgname:
@@ -51,8 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1:489-1
+    version: 1:495-1
     packages:
-      - retroarch-assets-glui-1:489-1-any.pkg.tar.zst
-      - retroarch-assets-ozone-1:489-1-any.pkg.tar.zst
-      - retroarch-assets-xmb-1:489-1-any.pkg.tar.zst
+      - retroarch-assets-glui-1:495-1-any.pkg.tar.zst
+      - retroarch-assets-ozone-1:495-1-any.pkg.tar.zst
+      - retroarch-assets-xmb-1:495-1-any.pkg.tar.zst
