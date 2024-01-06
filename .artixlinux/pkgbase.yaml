@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: catch2-v2
-  version: 2.13.10-1
+  version: 2.13.10-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.13.10-1
+    version: 2.13.10-2
     packages:
-      - catch2-v2-2.13.10-1-any.pkg.tar.zst
+      - catch2-v2-2.13.10-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
