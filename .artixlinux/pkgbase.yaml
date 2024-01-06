@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libsidplayfp
-  version: 2.5.1-1
+  version: 2.6.0-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.5.1-1
+    version: 2.6.0-1
     packages:
-      - libsidplayfp-2.5.1-1-x86_64.pkg.tar.zst
+      - libsidplayfp-2.6.0-1-x86_64.pkg.tar.zst
