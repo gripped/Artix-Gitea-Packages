@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-gevent
-  version: 22.10.2-3
+  version: 23.9.1-1
   arch:
     - x86_64
   pkgname:
     - python-gevent
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 22.10.2-3
+    version: 23.9.1-1
     packages:
-      - python-gevent-22.10.2-3-x86_64.pkg.tar.zst
+      - python-gevent-23.9.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
