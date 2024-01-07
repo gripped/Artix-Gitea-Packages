@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=btop
-pkgver=1.2.13
+pkgver=1.3.0
 pkgrel=1
 pkgdesc="A monitor of resources"
 arch=("x86_64")
@@ -19,7 +19,7 @@ source=(
 	"https://github.com/aristocratos/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
 )
 sha256sums=(
-	"668dc4782432564c35ad0d32748f972248cc5c5448c9009faeb3445282920e02"
+	"375e078ce2091969f0cd14030620bd1a94987451cf7a73859127a786006a32cf"
 )
 
 build() {
