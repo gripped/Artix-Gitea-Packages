@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xreader
-  version: 4.0.0-1
+  version: 4.0.2-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 4.0.0-1
+    version: 4.0.2-1
     packages:
-      - xreader-4.0.0-1-x86_64.pkg.tar.zst
+      - xreader-4.0.2-1-x86_64.pkg.tar.zst
   world:
     version: 4.0.0-1
     packages:
