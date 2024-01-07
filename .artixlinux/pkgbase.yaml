@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: luit
-  version: 20230201-1
+  version: 20240102-1
   arch:
     - x86_64
   pkgname:
     - luit
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230201-1
+    version: 20240102-1
     packages:
-      - luit-20230201-1-x86_64.pkg.tar.zst
+      - luit-20240102-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
