@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - qt5-styleplugins
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.0.20170311-40.2
+    packages:
+      - qt5-styleplugins-5.0.0.20170311-40.2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 5.0.0.20170311-40.2
     packages:
