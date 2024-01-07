@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - qt5-networkauth
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 5.15.12-1
     packages:
       - qt5-networkauth-5.15.12-1-x86_64.pkg.tar.zst
-  world:
-    version: 5.15.11-1
-    packages:
-      - qt5-networkauth-5.15.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
