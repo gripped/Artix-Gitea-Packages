@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - base
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 3-5
     packages:
       - base-3-5-any.pkg.tar.zst
-  system:
-    version: 3-4
-    packages:
-      - base-3-4-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
