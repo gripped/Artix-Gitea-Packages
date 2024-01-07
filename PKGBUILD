@@ -2,8 +2,8 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=inetutils
-pkgver=2.4
-pkgrel=2
+pkgver=2.5
+pkgrel=1
 pkgdesc="A collection of common network programs"
 arch=('x86_64')
 url="https://www.gnu.org/software/inetutils/"
@@ -11,25 +11,17 @@ license=('GPL-3.0-or-later')
 depends=('glibc' 'pam' 'libcap' 'readline' 'ncurses' 'libxcrypt'
 	     libpam.so libcrypt.so libreadline.so libncursesw.so)
 makedepends=('help2man')
-backup=('etc/xinetd.d/telnet' 'etc/xinetd.d/talk'
-        'etc/xinetd.d/rlogin' 'etc/xinetd.d/rsh'
-        'etc/pam.d/rlogin' 'etc/pam.d/rsh')
+backup=('etc/pam.d/rlogin' 'etc/pam.d/rsh')
 options=('!emptydirs')
 install=inetutils.install
 source=("https://ftp.gnu.org/gnu/inetutils/${pkgname}-${pkgver}.tar.xz"{,.sig}
         'inetutils.sysusers'
-        'rlogin.pam' 'rsh.pam'
-        'rlogin.xinetd' 'rsh.xinetd'
-        'talk.xinetd' 'telnet.xinetd')
-sha512sums=('e7e6a5d7e2e02f07a2a6cfc09694e3c0a4e4a8ef8a435eed41902eba13caeed329ae6d6ba94b0de8f789e307f04656d12c48c1c0217b69d162bc5efb0ff6adee'
+        'rlogin.pam' 'rsh.pam')
+sha512sums=('dc11ad6eeb5ea2c85edddbfc77630b5b09e4e1ac643629edf13b0ac0828c13cdb0885275153c072ae13a798427c96bc461037822ad646f7210369192c35bb04c'
             'SKIP'
             '00a6ff36efe63612990181f7cb37ea7d43ee7f2b6bda6b1fc23ccb2f3b19da54aabad041c2412936561dcd997f9613bd8144a96f5e04f30135a36f9ac98d8056'
             '432a45af5cd4f9f2dee4b631b45745b734e47cf631553e79db31905fa0839988914bcfed1dfcdd00d2ea6e4029b0674d46623c33ce0bd0678c2628fbaa0d1b25'
-            'c957708315ea2d873da55691bb0d0997ee3e2dcb40fb47cef19fd60c25379f1660d0605edd8fb0a477252c5af3e422b44b5e0aaa5b76220dadc90791dd526801'
-            '7091c983bb6d96da3b471fa95d6fdda02cee5b42c4abb93048f7db0d313c17f6c11356cafa835ab4ad01401a30c2169288da2d6a1c4e661c93c36496c04cf507'
-            '6f5f8b2e1ed24bccfdd08f37d2efca3750d632a5ff4188ed12a10b6cbfe84e85be996020704dfab7b427c023fcc3f328bbda23d69266eba98af0069dcb9de6ea'
-            'd440094014d13ca7c3afb4eef735d3526ed8de2cc2de98a48d9682bee9aa197ea750de916c90a6b9e9839529a30b98138fb52427d89e1ee541a87e3401d892b2'
-            '7445417b3cde6dd5a8ad5568c1272ac0b9b4a2375735c707c0cff09ad98a2ba322e6921945b5b1efd0e86212db13eacb5606bd3fa841da9515df5d40f75ad4a2')
+            'c957708315ea2d873da55691bb0d0997ee3e2dcb40fb47cef19fd60c25379f1660d0605edd8fb0a477252c5af3e422b44b5e0aaa5b76220dadc90791dd526801')
 # GNU Keyring: https://ftp.gnu.org/gnu/gnu-keyring.gpg
 validpgpkeys=(
   '4FBD67621082C4C502448E3B180551BAD95A3C35' # Alfred M. Szmidt <ams@gnu.org>
@@ -85,11 +77,6 @@ package() {
   make DESTDIR="${pkgdir}" install
 
   chmod -s "${pkgdir}"/usr/bin/{rcp,rlogin,rsh}
-
-  install -D -m644 "${srcdir}/telnet.xinetd" "${pkgdir}/etc/xinetd.d/telnet"
-  install -D -m644 "${srcdir}/talk.xinetd" "${pkgdir}/etc/xinetd.d/talk"
-  install -D -m644 "${srcdir}/rlogin.xinetd" "${pkgdir}/etc/xinetd.d/rlogin"
-  install -D -m644 "${srcdir}/rsh.xinetd" "${pkgdir}/etc/xinetd.d/rsh"
 
   install -D -m644 "${srcdir}/rlogin.pam" "${pkgdir}/etc/pam.d/rlogin"
   install -D -m644 "${srcdir}/rsh.pam" "${pkgdir}/etc/pam.d/rsh"
