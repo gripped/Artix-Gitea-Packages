@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: qt5-styleplugins
-  version: 5.0.0.20170311-40.2
+  version: 5.0.0.20170311-39.1
   arch:
     - x86_64
     - aarch64
   pkgname:
     - qt5-styleplugins
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -34,9 +34,9 @@ repos:
     packages:
       - qt5-styleplugins-5.0.0.20170311-40.2-x86_64.pkg.tar.zst
   world:
-    version: 5.0.0.20170311-39
+    version: 5.0.0.20170311-39.1
     packages:
-      - qt5-styleplugins-5.0.0.20170311-39-x86_64.pkg.tar.zst
+      - qt5-styleplugins-5.0.0.20170311-39.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
