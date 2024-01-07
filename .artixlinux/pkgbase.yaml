@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: aspell
-  version: 0.60.8-3
+  version: 0.60.8.1-1
   arch:
     - x86_64
   pkgname:
     - aspell
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.60.8-3
+    version: 0.60.8.1-1
     packages:
-      - aspell-0.60.8-3-x86_64.pkg.tar.zst
+      - aspell-0.60.8.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
