@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-configargparse
-  version: 1.5.3-3
+  version: 1.5.5-1
   arch:
     - any
   pkgname:
     - python-configargparse
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.3-3
+    version: 1.5.5-1
     packages:
-      - python-configargparse-1.5.3-3-any.pkg.tar.zst
+      - python-configargparse-1.5.5-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
