@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-sphinx-alabaster-theme
-  version: 0.7.13-4
+  version: 0.7.15-1
   arch:
     - any
   pkgname:
     - python-sphinx-alabaster-theme
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.13-4
+    version: 0.7.15-1
     packages:
-      - python-sphinx-alabaster-theme-0.7.13-4-any.pkg.tar.zst
+      - python-sphinx-alabaster-theme-0.7.15-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
