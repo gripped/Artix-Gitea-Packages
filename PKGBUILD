@@ -4,7 +4,7 @@
 # Contributor: Jakub Schmidtke <sjakub@gmail.com>
 
 pkgname=firefox
-pkgver=121.0
+pkgver=121.0.1
 pkgrel=1
 pkgdesc="Standalone web browser from mozilla.org"
 url="https://www.mozilla.org/firefox/"
@@ -74,11 +74,11 @@ validpgpkeys=(
   # https://blog.mozilla.org/security/2023/05/11/updated-gpg-key-for-signing-firefox-releases/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
-sha256sums=('edc7a5159d23ff2a23e22bf5abe22231658cee2902b93b5889ee73958aa06aa4'
+sha256sums=('b3a4216e01eaeb9a7c6ef4659d8dcd956fbd90a78a8279ee3a598881e63e49ce'
             'SKIP'
             '1f241fdc619f92a914c75aece7c7c717401d7467c9a306458e106b05f34e5044'
             'a9b8b4a0a1f4a7b4af77d5fc70c2686d624038909263c795ecc81e0aec7711e9')
-b2sums=('80905caeb208ef5dce7b62e248c86598ca786eb7032e114ad5d10812623bfceb688832f646dfbe220ef2fcecacf11cefae2afb0f1cdc0f7952647b71c58c9602'
+b2sums=('c9931d38bb9c612000409ed54b2fbb190cabcb714cd559152f2f645a8a3a82934874d31e40fc298dca765dac94e4e0927b125e14cee325484ba0f9b1ed2cdc55'
         'SKIP'
         'd07557840097dd48a60c51cc5111950781e1c6ce255557693bd11306c7a9258b2a82548329762148f117b2295145f9e66e0483a18e2fe09c5afcffed2e4b8628'
         '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34')
@@ -132,10 +132,11 @@ END
 build() {
   cd firefox-$pkgver
 
-  export MOZ_NOSPAM=1
-  export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
-  export MOZ_ENABLE_FULL_SYMBOLS=1
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
+  export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
+  export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
+  export MOZ_ENABLE_FULL_SYMBOLS=1
+  export MOZ_NOSPAM=1
 
   # malloc_usable_size is used in various parts of the codebase
   CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
@@ -169,7 +170,7 @@ END
 
   echo "Building optimized browser..."
   cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto=cross
+ac_add_options --enable-lto=cross,full
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
