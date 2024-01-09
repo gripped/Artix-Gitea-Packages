@@ -4,7 +4,7 @@
 
 pkgname=xfce4-notifyd
 pkgver=0.9.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Notification daemon for the Xfce desktop"
 arch=('x86_64')
 url="https://docs.xfce.org/apps/notifyd/start"
@@ -30,6 +30,8 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
+
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
