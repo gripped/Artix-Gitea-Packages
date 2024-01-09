@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lshw
-  version: B.02.19.2-6
+  version: B.02.20-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: B.02.19.2-6
+    version: B.02.20-1
     packages:
-      - lshw-B.02.19.2-6-x86_64.pkg.tar.zst
+      - lshw-B.02.20-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
