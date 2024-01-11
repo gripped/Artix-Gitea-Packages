@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: openpmix
-  version: 4.2.6-1
+  version: 4.2.8-1
   arch:
     - x86_64
   pkgname:
     - openpmix
     - openpmix-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.2.8-1
+    packages:
+      - openpmix-4.2.8-1-x86_64.pkg.tar.zst
+      - openpmix-docs-4.2.8-1-x86_64.pkg.tar.zst
   world:
     version: 4.2.6-1
     packages:
