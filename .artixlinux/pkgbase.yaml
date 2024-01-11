@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: memtest86+
-  version: 6.20-1
+  version: 7.00-1
   arch:
     - any
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - memtest86+-efi
     - memtest86+-iso
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.20-1
+    version: 7.00-1
     packages:
-      - memtest86+-6.20-1-any.pkg.tar.zst
-      - memtest86+-efi-6.20-1-any.pkg.tar.zst
-      - memtest86+-iso-6.20-1-any.pkg.tar.zst
+      - memtest86+-7.00-1-any.pkg.tar.zst
+      - memtest86+-efi-7.00-1-any.pkg.tar.zst
+      - memtest86+-iso-7.00-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

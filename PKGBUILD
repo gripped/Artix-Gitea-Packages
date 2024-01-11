@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgbase=memtest86+
 pkgname=('memtest86+' 'memtest86+-efi' 'memtest86+-iso')
-_tag=5dcd424ea7afb857c1171e747ef064d98d26afeb # tag/v6.20
-pkgver=6.20
+_tag=5dde13b0a1b4b23b26e627a659455016df22ad5a
+pkgver=7.00
 pkgrel=1
 pkgdesc='Advanced memory diagnostic tool'
 url='https://www.memtest.org'
