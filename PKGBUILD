@@ -14,7 +14,7 @@ makedepends=('git' 'cmake' 'brotli' 'gdk-pixbuf2' 'giflib' 'gimp'
              'gtest' 'java-environment' 'python' 'asciidoc' 'doxygen'
              'graphviz' 'xdg-utils')
 source=("git+https://github.com/libjxl/libjxl.git#tag=v${pkgver}"
-        'git+https://github.com/google/brotli.git'
+        '_brotli::git+https://github.com/google/brotli.git'
         'git+https://github.com/mm2/Little-CMS.git'
         'git+https://github.com/google/googletest.git'
         'git+https://github.com/webmproject/sjpeg.git'
@@ -39,10 +39,11 @@ sha256sums=('SKIP'
 prepare() {
     git -C libjxl submodule init
     local _submodule
-    for _submodule in brotli googletest sjpeg skcms highway libpng zlib libjpeg-turbo
+    for _submodule in googletest sjpeg skcms highway libpng zlib libjpeg-turbo
     do
         git -C libjxl config --local "submodule.third_party/${_submodule}.url" "${srcdir}/${_submodule}"
     done
+    git -C libjxl config --local "submodule.third_party/brotli.url" "${srcdir}/_brotli"
     git -C libjxl config --local submodule.third_party/lcms.url "${srcdir}/Little-CMS"
     git -C libjxl config --local submodule.third_party/testdata.url "${srcdir}/libjxl-testdata"
     git -C libjxl -c protocol.file.allow='always' submodule update
