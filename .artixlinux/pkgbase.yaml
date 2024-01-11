@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: dblatex
-  version: 0.3.12-6
+  version: 0.3.12-7
   arch:
     - any
   pkgname:
     - dblatex
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3.12-6
+    version: 0.3.12-7
     packages:
-      - dblatex-0.3.12-6-any.pkg.tar.zst
+      - dblatex-0.3.12-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
