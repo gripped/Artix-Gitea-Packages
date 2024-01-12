@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ttf-dejavu
-  version: 2.37+18+g9b5d1b2f-4
+  version: 2.37+18+g9b5d1b2f-6
   arch:
     - any
   pkgname:
     - ttf-dejavu
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.37+18+g9b5d1b2f-4
+    version: 2.37+18+g9b5d1b2f-6
     packages:
-      - ttf-dejavu-2.37+18+g9b5d1b2f-4-any.pkg.tar.zst
+      - ttf-dejavu-2.37+18+g9b5d1b2f-6-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

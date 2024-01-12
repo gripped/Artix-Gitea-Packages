@@ -1,11 +1,12 @@
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Michal Krenek <mikos@sg1.cz>
 
 pkgname=ttf-dejavu
 _commit=9b5d1b2ffeec20c7b46aa89c0223d783c02762cf # master
 pkgver=2.37+18+g9b5d1b2f
-pkgrel=4
+pkgrel=6
 pkgdesc='Font family based on the Bitstream Vera Fonts with a wider range of characters'
 arch=(any)
 url='https://dejavu-fonts.github.io'
