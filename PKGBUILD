@@ -10,10 +10,17 @@ arch=('any')
 url="https://github.com/vaab/colour"
 license=('BSD')
 depends=('python')
-makedepends=('python-setuptools' 'python-d2to1')
+makedepends=('python-setuptools')
 checkdepends=('python-nose')
-source=("https://files.pythonhosted.org/packages/source/${_pyname:0:1}/${_pyname}/${_pyname}-${pkgver}.tar.gz")
-sha256sums=('af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee')
+source=("https://files.pythonhosted.org/packages/source/${_pyname:0:1}/${_pyname}/${_pyname}-${pkgver}.tar.gz"
+	'remove-d2to1.patch')
+sha256sums=('af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee'
+            'e5ac894008cb89c7dc3dfde01826d35e47a5b4520928f63c96d467c9a6faa4dc')
+
+prepare() {
+  cd $_pyname-$pkgver
+  patch -Np1 -i ../remove-d2to1.patch
+}
 
 build() {
   cd $_pyname-$pkgver
