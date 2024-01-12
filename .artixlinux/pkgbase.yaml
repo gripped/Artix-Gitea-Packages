@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-zen
-  version: 6.6.10.zen1-1
+  version: 6.7.zen1-1
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - linux-zen-headers
     - linux-zen-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.7.zen1-1
+    packages:
+      - linux-zen-6.7.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-headers-6.7.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-docs-6.7.zen1-1-x86_64.pkg.tar.zst
   world:
     version: 6.6.10.zen1-1
     packages:
