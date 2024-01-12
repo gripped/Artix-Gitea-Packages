@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pyasn1
-  version: 0.4.8-8
+  version: 0.5.0-1
   arch:
     - any
   pkgname:
     - python-pyasn1
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.8-8
+    version: 0.5.0-1
     packages:
-      - python-pyasn1-0.4.8-8-any.pkg.tar.zst
+      - python-pyasn1-0.5.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
