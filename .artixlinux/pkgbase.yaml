@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libluv
-  version: 1.45.0_0-1
+  version: 1.47.0_0-1
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - lua52-luv
     - lua53-luv
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.45.0_0-1
+    version: 1.47.0_0-1
     packages:
-      - libluv-1.45.0_0-1-x86_64.pkg.tar.zst
-      - lua-luv-1.45.0_0-1-x86_64.pkg.tar.zst
-      - lua51-luv-1.45.0_0-1-x86_64.pkg.tar.zst
-      - lua52-luv-1.45.0_0-1-x86_64.pkg.tar.zst
-      - lua53-luv-1.45.0_0-1-x86_64.pkg.tar.zst
+      - libluv-1.47.0_0-1-x86_64.pkg.tar.zst
+      - lua-luv-1.47.0_0-1-x86_64.pkg.tar.zst
+      - lua51-luv-1.47.0_0-1-x86_64.pkg.tar.zst
+      - lua52-luv-1.47.0_0-1-x86_64.pkg.tar.zst
+      - lua53-luv-1.47.0_0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
