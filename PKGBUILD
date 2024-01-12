@@ -2,8 +2,8 @@
 # Contributor: Dale Blount <dale@archlinux.org>
 
 pkgname=net-snmp
-pkgver=5.9.1
-pkgrel=9
+pkgver=5.9.2
+pkgrel=2
 pkgdesc="A suite of applications used to implement SNMP v1, SNMP v2c and SNMP v3 using both IPv4 and IPv6"
 arch=('x86_64')
 url="http://www.net-snmp.org/"
@@ -15,7 +15,7 @@ optdepends=('perl-term-readkey: for snmpcheck application'
             'python: for the python modules')
 options=('!emptydirs' '!makeflags')
 source=(https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz{,.asc})
-sha512sums=('30989e43034e17433b885854490f2f37470a532cb7cab0d2a3beb37f5f3c2b10e803af125a5177d87fc0a36cecc266fefc016b609427b558f36567c2f1a84b20'
+sha512sums=('d67810b15c4956a28ccb4d9a3870604bc94e71247d9a8d3a9959041268122b3500cf68a7912cfb01a6cff27f3f4364cbd106629ab80c12974f694b6c548bde59'
             'SKIP')
 validpgpkeys=('8AAA779B597B405BBC329B6376CF47B8A77C5329'
               '27CAA4A32E371383A33ED0587D5F9576E0F81533'
