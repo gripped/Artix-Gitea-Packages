@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ndctl
-  version: 77-1
+  version: 78-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 77-1
+    version: 78-1
     packages:
-      - ndctl-77-1-x86_64.pkg.tar.zst
+      - ndctl-78-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
