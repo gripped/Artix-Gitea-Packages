@@ -3,20 +3,20 @@
 
 pkgbase=sdbus-cpp
 pkgname=($pkgbase $pkgbase-doc)
-pkgver=1.3.0
+pkgver=1.4.0
 pkgrel=1
 pkgdesc='a high-level C++ D-Bus library designed to provide expressive, easy-to-use API'
 url="https://github.com/Kistler-Group/$pkgbase"
 arch=(x86_64)
 license=(LGPL2.1 'custom:sdbus-c++ LGPL Exception 1.0')
 depends=(expat
-	 libelogind)
+         libelogind)
 makedepends=(cmake
              doxygen
              elogind)
 _archive="$pkgbase-$pkgver"
 source=("$url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('d44f59abdd64d8f1ca3af7db58bc6518cb081fc9ff16285c3d75a68f5c073d10')
+sha256sums=('ca7405c7f0f9ae3023dcfa37bc68974c4b8a1c9ea2909b970e0aedc3e8657ee6')
 
 build() {
 	cmake -B build -S "$_archive" \
