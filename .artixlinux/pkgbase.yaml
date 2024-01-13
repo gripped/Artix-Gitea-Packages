@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: eog
-  version: 45.1-1
+  version: 45.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.1-1
+    version: 45.2-1
     packages:
-      - eog-45.1-1-x86_64.pkg.tar.zst
-      - eog-docs-45.1-1-x86_64.pkg.tar.zst
+      - eog-45.2-1-x86_64.pkg.tar.zst
+      - eog-docs-45.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
