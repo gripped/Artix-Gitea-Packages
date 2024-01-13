@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libtracefs
-  version: 1.7.0-1
+  version: 1.8.0-1
   arch:
     - x86_64
   pkgname:
     - libtracefs
     - libtracefs-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.0-1
+    version: 1.8.0-1
     packages:
-      - libtracefs-1.7.0-1-x86_64.pkg.tar.zst
-      - libtracefs-docs-1.7.0-1-x86_64.pkg.tar.zst
+      - libtracefs-1.8.0-1-x86_64.pkg.tar.zst
+      - libtracefs-docs-1.8.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
