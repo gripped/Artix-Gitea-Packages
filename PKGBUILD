@@ -44,7 +44,7 @@ build() {
   meson compile -C build
 
   # Convert logo for the spinner theme
-  rsvg-convert '/usr/share/pixmaps/archlinux-logo-text-dark.svg' -o archlinux-logo-text-dark.png
+  rsvg-convert '/usr/share/pixmaps/artixlinux-logo-text-dark.svg' -o artixlinux-logo-text-dark.png
 }
 
 package() {
