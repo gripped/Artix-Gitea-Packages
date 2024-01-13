@@ -20,7 +20,6 @@ makedepends=(
   alsa-lib
   cmake
   qt6-tools
-  systemd-libs
 )
 source=($url/-/archive/v$pkgver/$pkgname-v$pkgver.tar.gz)
 sha512sums=('77b61cb207036a45cfcba57dc81f7fe40231453135d0eb3b8c99f392cb761fa4a8a311aab7b1c4d37139ac527c27a3df6fe7781366f88e601105054df89f2011')
@@ -46,7 +45,7 @@ check() {
 package() {
   depends+=(
     alsa-lib libasound.so
-    systemd-libs libudev.so
+    libudev.so
   )
 
   DESTDIR="$pkgdir" cmake --install build
