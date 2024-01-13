@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libpano13
-  version: 2.9.21-5
+  version: 2.9.22-1
   arch:
     - x86_64
   pkgname:
     - libpano13
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.9.21-5
+    version: 2.9.22-1
     packages:
-      - libpano13-2.9.21-5-x86_64.pkg.tar.zst
+      - libpano13-2.9.22-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
