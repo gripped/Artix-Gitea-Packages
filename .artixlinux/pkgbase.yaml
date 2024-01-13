@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: archlinux-appstream-data
-  version: 20231203-1
+  version: 20240112-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20231203-1
+    version: 20240112-1
     packages:
-      - archlinux-appstream-data-20231203-1-any.pkg.tar.zst
+      - archlinux-appstream-data-20240112-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
