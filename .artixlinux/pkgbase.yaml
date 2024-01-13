@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: samba
-  version: 4.19.3-2
+  version: 4.19.4-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - samba
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.19.3-2
+    version: 4.19.4-1
     packages:
-      - libwbclient-4.19.3-2-x86_64.pkg.tar.zst
-      - smbclient-4.19.3-2-x86_64.pkg.tar.zst
-      - samba-4.19.3-2-x86_64.pkg.tar.zst
+      - libwbclient-4.19.4-1-x86_64.pkg.tar.zst
+      - smbclient-4.19.4-1-x86_64.pkg.tar.zst
+      - samba-4.19.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
