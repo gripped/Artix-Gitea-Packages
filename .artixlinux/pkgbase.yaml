@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: scribus
-  version: 1.6.0-2
+  version: 1.6.1-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.6.0-2
+    version: 1.6.1-1
     packages:
-      - scribus-1.6.0-2-x86_64.pkg.tar.zst
+      - scribus-1.6.1-1-x86_64.pkg.tar.zst
