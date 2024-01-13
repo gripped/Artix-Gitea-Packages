@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-libpulse
-  version: 16.1-6
+  version: 17.0-1
   arch:
     - x86_64
   pkgname:
     - lib32-libpulse
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 17.0-1
+    packages:
+      - lib32-libpulse-17.0-1-x86_64.pkg.tar.zst
   lib32:
     version: 16.1-6
     packages:
