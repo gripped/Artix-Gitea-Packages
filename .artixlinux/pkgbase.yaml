@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: namcap
-  version: 3.5.0-1
+  version: 3.5.1-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.5.0-1
+    version: 3.5.1-1
     packages:
-      - namcap-3.5.0-1-any.pkg.tar.zst
+      - namcap-3.5.1-1-any.pkg.tar.zst
   world:
     version: 3.4.2-1
     packages:
