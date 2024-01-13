@@ -5,8 +5,8 @@
 # Contributor: Padfoot <padfoot@exemail.com.au>
 
 pkgname=plymouth
-pkgver=23.360.11
-pkgrel=1
+pkgver=24.004.60
+pkgrel=3
 pkgdesc='Graphical boot splash screen'
 arch=('x86_64')
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
@@ -20,10 +20,14 @@ backup=('etc/plymouth/plymouthd.conf')
 install='plymouth.install'
 source=("https://www.freedesktop.org/software/$pkgname/releases/$pkgname-$pkgver.tar.xz"
         'plymouth.initcpio_hook'
-        'plymouth.initcpio_install')
-sha256sums=('3d5b6a0ade2b0952c127960a330cb9cfadaffda78fb7621703ffd2f6a14c3390'
+        'plymouth.initcpio_install'
+        'plymouth-shutdown.initcpio_install'
+        'mkinitcpio-generate-shutdown-ramfs-plymouth.conf')
+sha256sums=('f3f7841358c98f5e7b06a9eedbdd5e6882fd9f38bbd14a767fb083e3b55b1c34'
             'de852646e615e06d4125eb2e646d0528d1e349bd9e9877c08c5d32c43d288b6f'
-            '92d2a1f5392c601e400b4ebcb310837b4ba2fdc1914c7e4b4f23a509d7c82234')
+            'e7563fc8e25c3cbc869d3ecc2acee28e225855723c90c569310e308aab86a8a7'
+            '2e63bd2460ce4ca56b9a407802c35ce69072cda40679b42889d692adf2fc656c'
+            '04af86a0ec83fc92d7339e1a7fcc0d55b86b95797a1a5f1a3b8d850996a3926c')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -40,7 +44,7 @@ build() {
   meson compile -C build
 
   # Convert logo for the spinner theme
-  rsvg-convert '/usr/share/pixmaps/artixlinux-logo-text-dark.svg' -o artixlinux-logo-text-dark.png
+  rsvg-convert '/usr/share/pixmaps/archlinux-logo-text-dark.svg' -o archlinux-logo-text-dark.png
 }
 
 package() {
@@ -50,6 +54,9 @@ package() {
   # Install mkinitcpio hook
   install -Dm644 plymouth.initcpio_hook "$pkgdir/usr/lib/initcpio/hooks/$pkgname"
   install -Dm644 plymouth.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname"
+
+  # Install mkinitcpio shutdown hook and systemd drop-in snippet
+  install -Dm644 plymouth-shutdown.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname-shutdown"
   
   # Install logo for the spinner theme
   install -Dm644 artixlinux-logo-text-dark.png "$pkgdir/usr/share/$pkgname/themes/spinner/watermark.png"

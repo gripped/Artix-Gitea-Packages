@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: plymouth
-  version: 23.360.11-1
+  version: 24.004.60-3
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 23.360.11-1
+    version: 24.004.60-3
     packages:
-      - plymouth-23.360.11-1-x86_64.pkg.tar.zst
+      - plymouth-24.004.60-3-x86_64.pkg.tar.zst
   world:
     version: 22.02.122-7.1
     packages:
