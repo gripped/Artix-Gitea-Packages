@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bluez
-  version: 5.72-1
+  version: 5.72-2
   arch:
     - x86_64
   pkgname:
@@ -9,15 +9,18 @@ pkgbase:
     - bluez-utils
     - bluez-libs
     - bluez-cups
+    - bluez-deprecated-tools
     - bluez-hid2hci
+    - bluez-mesh
+    - bluez-obex
     - bluez-plugins
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,8 +36,17 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.72-2
+    packages:
+      - bluez-5.72-2-x86_64.pkg.tar.zst
+      - bluez-utils-5.72-2-x86_64.pkg.tar.zst
+      - bluez-libs-5.72-2-x86_64.pkg.tar.zst
+      - bluez-cups-5.72-2-x86_64.pkg.tar.zst
+      - bluez-deprecated-tools-5.72-2-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.72-2-x86_64.pkg.tar.zst
+      - bluez-mesh-5.72-2-x86_64.pkg.tar.zst
+      - bluez-obex-5.72-2-x86_64.pkg.tar.zst
+      - bluez-plugins-5.72-2-x86_64.pkg.tar.zst
   world:
     version: 5.72-1
     packages:
