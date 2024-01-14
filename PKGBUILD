@@ -1,30 +1,40 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Maintainer: Christoph Drexler <chrdr at gmx dot at>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Christoph Drexler <chrdr at gmx dot at>
 
 pkgname=leptonica
-pkgver=1.83.1
+pkgver=1.84.1
 pkgrel=1
-pkgdesc="Software that is broadly useful for image processing and image analysis applications"
-arch=('x86_64')
-url="http://www.leptonica.com/"
-license=('custom')
-depends=('giflib' 'libjpeg-turbo' 'libpng' 'libtiff' 'zlib' 'libwebp' 'openjpeg2')
-source=("https://github.com/DanBloomberg/leptonica/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('4289d0a4224b614010072253531c0455a33a4d7c7a0017fe7825ed382290c0da')
+pkgdesc='Software that is broadly useful for image processing and image analysis applications'
+arch=(x86_64)
+url='http://www.leptonica.com'
+_url="https://github.com/DanBloomberg/$pkgname"
+license=(custom)
+depends=(giflib libgif.so
+         libjpeg-turbo libjpeg.so
+         libpng libpng16.so
+         libtiff libtiff.so
+         libtiff libtiff.so
+         libwebp libwebp.so libwebpmux.so libsharpyuv.so
+         openjpeg2 # libopenjp2.so
+         zlib libz.so)
+_archive="$pkgname-$pkgver"
+source=("$_url/archive/$pkgver/$_archive.tar.gz")
+sha256sums=('ecd7a868403b3963c4e33623595d77f2c87667e2cfdd9b370f87729192061bef')
 
 prepare() {
-  cd leptonica-${pkgver}
+  cd "$_archive"
   ./autogen.sh
 }
 
 build() {
-  cd leptonica-${pkgver}
+  cd "$_archive"
   ./configure --prefix=/usr
   make
 }
 
 package() {
-  cd leptonica-${pkgver}
+  cd "$_archive"
   make DESTDIR="$pkgdir" install
-  install -D leptonica-license.txt "$pkgdir"/usr/share/licenses/leptonica/leptonica-license.txt
+  install -Dm066 -t "$pkgdir/usr/share/licenses/leptonica/" leptonica-license.txt
 }
