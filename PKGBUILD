@@ -2,8 +2,8 @@
 # Maintainer: Gaetan Bisson <bisson@archlinux.org>
 
 pkgname='cronie'
-pkgver=1.7.0
-pkgrel=4.1
+pkgver=1.7.1
+pkgrel=1
 pkgdesc='Daemon that runs specified programs at scheduled times and related tools'
 url='https://github.com/cronie-crond/cronie/'
 license=('custom:BSD')
@@ -17,7 +17,7 @@ source=("https://github.com/cronie-crond/cronie/releases/download/${pkgname}-${p
         'cron-deny'
         'crontab'
         'default-anacron')
-sha256sums=('6827f5a47760cc64afeef0a60d3cb5376f52569109fc9a73957dd5e9fdae7619'
+sha256sums=('78033100c24413f0c40f93e6138774d6a4f55bc31050567b90db45a2f9f1b954'
             'ae6e533ecdfc1bd2dd80a9e25acb0260cbe9f00c4e4abee93d552b3660f263fc'
             '64d517a8d011b5cfa6b2433d528498e80fa8d0748c91f1b73e6ded70e776dc35'
             'c5772fd0df22d807ed6b62edf4052db529aafb626b1bfe8961229fb864039a5c')
