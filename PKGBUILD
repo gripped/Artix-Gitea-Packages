@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Andreas Radke <andyrtr at archlinux.org>
 # Contributor: Ben Mazer <contrasutra@myrealbox.com>
 
 pkgname=xfce4-notes-plugin
-pkgver=1.10.0
+pkgver=1.11.0
 pkgrel=1
 pkgdesc="Notes plugin for the Xfce panel"
 arch=('x86_64')
@@ -13,7 +14,7 @@ groups=('xfce4-goodies')
 depends=('xfce4-panel' 'hicolor-icon-theme')
 makedepends=('intltool')
 source=(https://archive.xfce.org/src/panel-plugins/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('2ee4406042edd352a91e166c83b60d13220ef04dce3fa6b9e0eb13636d636929')
+sha256sums=('eb38246deb0fc89535fa9ff9b953c762cece232b5585d8210fab9abbf282aae3')
 
 build() {
   cd $pkgname-$pkgver
