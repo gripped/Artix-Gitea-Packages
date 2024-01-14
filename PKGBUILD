@@ -4,7 +4,7 @@
 
 pkgname=umockdev
 pkgver=0.17.18
-pkgrel=1
+pkgrel=2
 pkgdesc="Record/mock hardware devices for bug reports and regression tests"
 arch=('x86_64')
 url="https://github.com/martinpitt/umockdev/"
