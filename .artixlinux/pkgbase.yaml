@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-fastapi
-  version: 0.108.0-1
+  version: 0.109.0-1
   arch:
     - any
   pkgname:
     - python-fastapi
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-fastapi-0.100.0-1-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.109.0-1
+    packages:
+      - python-fastapi-0.109.0-1-any.pkg.tar.zst
   world:
     version: 0.108.0-1
     packages:
