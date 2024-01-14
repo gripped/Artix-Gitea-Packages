@@ -7,7 +7,7 @@
 _name=backends
 pkgname=sane
 pkgver=1.2.1
-pkgrel=5
+pkgrel=6
 pkgdesc="Scanner Access Now Easy"
 arch=(x86_64)
 url="http://www.sane-project.org/"
@@ -42,18 +42,18 @@ optdepends=(
 provides=(libsane.so)
 source=(
   https://gitlab.com/sane-project/$_name/-/archive/$pkgver/$_name-$pkgver.tar.gz
-        "sane.xinetd"
   66-${pkgname}d.rules
   $pkgname.sysusers
+  sane.xinetd
 )
 sha512sums=('b3b803162066b563d9bafaedb7a6c8c1e9be736bb787f2e412f3f71402a42721123bc32882ae9dc39cbf12bc2c423f8841ed06f525f325857f4273186b7f3a16'
-            '8f9f18d432087e5445aa533be375a811daf320512069c108d41a79121868937e1a7ffa21ee7d33adcf9fbb670bca460ff06423ce39602f35151eccc243d9d4ec'
             'd0d1b6bd6fbb04d610e7186e26d04c2233a620cc7c731ca3acd7fb860dd033fbe99d8974ffa1dd59c8affcc4aa2664d76ab3dfd6f7b2a734b31d7e3832359c41'
-            'd8cd194b57eff2249df2b8d540a892e518aa3e3bba6387211ed21230dc235e98c49b71f262f0b1007e8c859c59776410840376244e0aec1f06363881b2c81fd8')
+            'd8cd194b57eff2249df2b8d540a892e518aa3e3bba6387211ed21230dc235e98c49b71f262f0b1007e8c859c59776410840376244e0aec1f06363881b2c81fd8'
+            '8f9f18d432087e5445aa533be375a811daf320512069c108d41a79121868937e1a7ffa21ee7d33adcf9fbb670bca460ff06423ce39602f35151eccc243d9d4ec')
 b2sums=('b12a629bab6e79d9027d9e90cfa5851ee172a7a1eb6303666c294e2a3d881e2afbef9a3cf3d3156063885a28ec64294216d0dec83c25d212af257f83bbc33721'
-        '158952a09d5b29ae848a4c1377de6ff824b61c7d1932d29f3a0d313bafdaa0c5973614c5b744f53c7d2d4acff3dd4dc8b821068b95ae07a081539fd5cabd7477'
         'c9c6ba224b9b27f4ecc6b1ded6621a8abb52b1ded2d9078e4cad31177290b788e286fad74545a5cb09e1f6726515adc22003988eb646dc986e87f1a8061a0e27'
-        '2a4ddc9849562e3a0adcaec1859391e3f37a63f25c27dbc140cabd697bd65b89a0fc812c4516cbdfb36d1f30844df34934b3c1c59650101f54fc1ac0acb3f5d9')
+        '2a4ddc9849562e3a0adcaec1859391e3f37a63f25c27dbc140cabd697bd65b89a0fc812c4516cbdfb36d1f30844df34934b3c1c59650101f54fc1ac0acb3f5d9'
+        '158952a09d5b29ae848a4c1377de6ff824b61c7d1932d29f3a0d313bafdaa0c5973614c5b744f53c7d2d4acff3dd4dc8b821068b95ae07a081539fd5cabd7477')
 
 prepare() {
   cd $_name-$pkgver
@@ -81,8 +81,8 @@ build() {
     --with-libcurl
     --with-pic
     --with-poppler-glib
+    --without-systemd
     --with-usb
-    --without-systemd \
   )
 
   cd $_name-$pkgver
@@ -121,11 +121,13 @@ package() {
   printf "\n" >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
   tools/sane-desc -m hwdb -s doc/descriptions-external/ >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
 
+  install -vDm 644 ../66-${pkgname}d.rules "$pkgdir/usr/lib/udev/rules.d/"
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
 
   # install xinetd file
   install -D -m644 "${srcdir}/sane.xinetd" "${pkgdir}/etc/xinetd.d/sane"
+
   # remove old ChangeLogs
   rm -rvf "$pkgdir/usr/share/doc/$pkgname/ChangeLogs/"
 
