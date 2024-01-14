@@ -2,7 +2,7 @@
 # Contributor: Hans-Nikolai Viessmann <hans AT viess DOT mn>
 
 pkgname=plocate
-pkgver=1.1.20
+pkgver=1.1.22
 pkgrel=1
 pkgdesc="Alternative to locate, faster and compatible with mlocate's database."
 arch=('x86_64')
@@ -17,7 +17,7 @@ source=("${url}/download/${pkgname}-${pkgver}.tar.gz"
         'plocate.sysusers'
         'plocate.tmpfiles'
         'updatedb.conf')
-sha256sums=('9b3d2842a08e69633c0ffa480c139603514ce59f1d021c263e9301324976959f'
+sha256sums=('3b7e4741b4aa2ec044e53eff06474a32a3fb1e928b9382351fe79d4c27fb0049'
             '1713a8fc8b81f4a390bf8597c4c0e917474379002dcc984aad2f44218d10c82a'
             'adda399ac42f0faa002caab5bf932777c0006ae7c4387add859c9f77321b4202'
             'd00796741e2194032d0185b40de70ff5c8a11fda416a70434eb0aa2020981f91')
@@ -26,7 +26,7 @@ build() {
     cd $pkgname-$pkgver
     artix-meson \
         -Dinstall_cron=false \
-        -Dinstall_systemd=false\
+        -Dinstall_systemd=false \
         -Dlocategroup=locate \
         ../build
     meson compile -C ../build
