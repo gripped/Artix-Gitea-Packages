@@ -12,8 +12,7 @@ depends=('lib32-glibc' $_pkgbasename)
 makedepends=('gcc-multilib' 'gettext')
 provides=('libattr.so')
 source=("https://download.savannah.gnu.org/releases/attr/attr-${pkgver}.tar.xz")
-sha256sums=('db448a626f9313a1a970d636767316a8da32aede70518b8050fa0de7947adc32'
-	'SKIP')
+sha256sums=('db448a626f9313a1a970d636767316a8da32aede70518b8050fa0de7947adc32')
 
 build() {
 	cd "${srcdir}"/attr-${pkgver}
