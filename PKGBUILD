@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.3.0
-pkgrel=17
+pkgver=3.3.1
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(
@@ -25,14 +25,8 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality' 'pa
 makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-translations')
 provides=('libcalamares.so' 'libcalamaresui.so')
 optdepends=('calamares-extensions: Artix extensions and branding')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz"
-        "headers-install-fix.patch::https://gitea.artixlinux.org/artix/calamares/commit/7d508973357917848f452be39c352e556dd694ea.patch")
-sha256sums=('252f0097e3191ffc557b022f34ef23d24b939f1141efd483db0ab1ee9dc0fb76'
-            'c00580c70be54150f52ca4b8b1334fb341efeb3d3ca146018a38acd8d4946f94')
-
-prepare() {
-    patch -d "$pkgname-$pkgver" -Np 1 -i ../headers-install-fix.patch
-}
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('af95c65d78236f67ea7181bce16483a863e304d53a2fab8403a3a9cb7544f86c')
 
 build() {
     mkdir -p "$pkgname-$pkgver"/build
