@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - lib32-pixman
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
