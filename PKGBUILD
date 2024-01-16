@@ -6,7 +6,7 @@
 
 pkgname=(libvirt libvirt-storage-gluster libvirt-storage-iscsi-direct)
 epoch=1
-pkgver=9.10.0
+pkgver=10.0.0
 pkgrel=1
 pkgdesc="API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)"
 arch=('x86_64')
@@ -15,7 +15,7 @@ license=('LGPL' 'GPL3') #libvirt_parthelper links to libparted which is GPL3 onl
 depends=('libpciaccess' 'yajl' 'fuse3' 'gnutls' 'parted' 'libssh' 'libxml2'
 'numactl' 'polkit' 'libnbd')
 makedepends=('meson' 'libxslt' 'python-docutils' 'lvm2' 'open-iscsi' 'libiscsi' 'glusterfs'
-             'bash-completion' 'rpcsvc-proto' 'dnsmasq' 'iproute2' 'qemu-base')
+             'bash-completion' 'dnsmasq' 'iproute2' 'qemu-base')
 optdepends=('libvirt-storage-gluster: Gluster storage backend'
             'libvirt-storage-iscsi-direct: iSCSI-direct storage backend'
             'gettext: required for libvirt-guests.service'
@@ -84,7 +84,7 @@ backup=(
 source=(
   "https://libvirt.org/sources/$pkgname-$pkgver.tar.xz"{,.asc}
 )
-sha256sums=('1060afc0e85a84c579bcdc91cfaf6d471918f97a780f04c5260a034ff7db7519'
+sha256sums=('8ba2e72ec8bdd2418554a1474c42c35704c30174b7611eaf9a16544b71bcf00a'
             'SKIP')
 validpgpkeys=('453B65310595562855471199CA68BE8010084C9C') # Jiří Denemark <jdenemar@redhat.com>
 
