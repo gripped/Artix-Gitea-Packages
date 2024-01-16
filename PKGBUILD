@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares-extensions
-pkgver=0.6
-_commit='cebdcaa19ac21a637fbc9da7a621f0eb08b0d846' # git rev-parse v${pkgver}
+pkgver=0.7
+_commit='e48d3912e7ac40c539649754cb5d05020cc715d9' # git rev-parse v${pkgver}
 pkgrel=1
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
@@ -24,6 +24,8 @@ build() {
             -DCMAKE_PREFIX_PATH=/usr \
             -DCMAKE_INSTALL_PREFIX=/usr \
             -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+            -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+            -DCMAKE_INSTALL_DATADIR=/usr/share \
             -DINSTALL_CONFIG:BOOL=ON \
             -DBUILD_APPDATA:BOOL=OFF \
             -DBUILD_APPSTREAM:BOOL=OFF
