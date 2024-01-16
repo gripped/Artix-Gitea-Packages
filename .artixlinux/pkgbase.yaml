@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: torbrowser-launcher
-  version: 0.3.6-3
+  version: 0.3.7-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3.6-3
+    version: 0.3.7-1
     packages:
-      - torbrowser-launcher-0.3.6-3-any.pkg.tar.zst
+      - torbrowser-launcher-0.3.7-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
