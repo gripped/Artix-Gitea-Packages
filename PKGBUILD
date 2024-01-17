@@ -1,14 +1,17 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=gcr
-pkgname=(gcr gcr-docs)
-pkgver=3.41.1
-pkgrel=4
+pkgname=(
+  gcr
+  gcr-docs
+)
+pkgver=3.41.2
+pkgrel=1
 pkgdesc="A library for bits of crypto UI and parsing"
 url="https://gitlab.gnome.org/GNOME/gcr"
 arch=(x86_64)
-license=(GPL2)
+license=(LGPL-2.1-or-later)
 depends=(
   gtk3
   libgcrypt
@@ -24,7 +27,7 @@ makedepends=(
   meson
   vala
 )
-_commit=664f8d8619cc6d661bd863107824efbac383a9bf  # tags/3.41.1^0
+_commit=cd63e8a0378e13ba0aa15c2a68d1070fa62e6532  # tags/3.41.2^0
 source=("git+https://gitlab.gnome.org/GNOME/gcr.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -38,8 +41,13 @@ prepare() {
 }
 
 build() {
-  # ssh-agent moved to gcr-4
-  artix-meson gcr build -Dssh_agent=false -Dsystemd=disabled
+  local meson_options=(
+    # ssh-agent moved to gcr-4
+    -D ssh_agent=false
+    -D systemd=disabled
+  )
+
+  artix-meson gcr build "${meson_options[@]}"
   meson compile -C build
 }
 

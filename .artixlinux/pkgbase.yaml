@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gcr
-  version: 3.41.1-4
+  version: 3.41.2-1
   arch:
     - x86_64
   pkgname:
     - gcr
     - gcr-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.41.1-4
+    version: 3.41.2-1
     packages:
-      - gcr-3.41.1-4-x86_64.pkg.tar.zst
-      - gcr-docs-3.41.1-4-x86_64.pkg.tar.zst
+      - gcr-3.41.2-1-x86_64.pkg.tar.zst
+      - gcr-docs-3.41.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
