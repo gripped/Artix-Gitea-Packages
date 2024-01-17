@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: flatpak
-  version: 1:1.15.6-1
+  version: 1:1.15.6-2
   arch:
     - x86_64
   pkgname:
     - flatpak
     - flatpak-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:1.15.6-2
+    packages:
+      - flatpak-1:1.15.6-2-x86_64.pkg.tar.zst
+      - flatpak-docs-1:1.15.6-2-x86_64.pkg.tar.zst
   world:
     version: 1:1.15.6-1
     packages:
