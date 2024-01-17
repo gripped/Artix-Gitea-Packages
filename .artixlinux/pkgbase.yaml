@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java-openjdk
-  version: 21.u35-8
+  version: 21.0.2.u13-2
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 21.u35-8
+    version: 21.0.2.u13-2
     packages:
-      - jre-openjdk-headless-21.u35-8-x86_64.pkg.tar.zst
-      - jre-openjdk-21.u35-8-x86_64.pkg.tar.zst
-      - jdk-openjdk-21.u35-8-x86_64.pkg.tar.zst
-      - openjdk-src-21.u35-8-x86_64.pkg.tar.zst
-      - openjdk-doc-21.u35-8-x86_64.pkg.tar.zst
+      - jre-openjdk-headless-21.0.2.u13-2-x86_64.pkg.tar.zst
+      - jre-openjdk-21.0.2.u13-2-x86_64.pkg.tar.zst
+      - jdk-openjdk-21.0.2.u13-2-x86_64.pkg.tar.zst
+      - openjdk-src-21.0.2.u13-2-x86_64.pkg.tar.zst
+      - openjdk-doc-21.0.2.u13-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
