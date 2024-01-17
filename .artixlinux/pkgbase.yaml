@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: chafa
-  version: 1.12.4-3
+  version: 1.14.0-1
   arch:
     - x86_64
   pkgname:
     - chafa
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12.4-3
+    version: 1.14.0-1
     packages:
-      - chafa-1.12.4-3-x86_64.pkg.tar.zst
+      - chafa-1.14.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
