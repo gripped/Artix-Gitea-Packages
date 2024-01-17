@@ -2,10 +2,10 @@
 
 _name=authheaders
 pkgname=python-authheaders
-pkgver=0.15.3
+pkgver=0.16.1
 # last updated as per https://www.psddmarc.org/registry.html
 _version=2023.09.02
-pkgrel=2
+pkgrel=1
 pkgdesc="Library for the generation of email authentication headers"
 arch=(any)
 url="https://github.com/ValiMail/authentication-headers"
@@ -21,11 +21,11 @@ depends=(
   python-dkim
   python-dnspython
   python-publicsuffix2
-  python-setuptools  # used via pkg_resources
 )
 makedepends=(
   python-build
   python-installer
+  python-setuptools
   python-wheel
 )
 checkdepends=(python-pytest)
@@ -33,10 +33,10 @@ source=(
   $url/releases/download/$pkgver/$_name-$pkgver.tar.gz{,.asc}
   psddmarc-$_version.csv::https://www.psddmarc.org/psddmarc-participants.csv
 )
-sha512sums=('e45af947faeb6416160b1b0ee270fb486c3f2d0853ce886e4e66fd57a814838213d73515417f4be25cf3d2e29faa20f183dae7e083aff14bf4c390c0ecddc2f2'
+sha512sums=('03121dae439a02c4016a25f4cc21d0b5ec4fec3f8cb9bdcc440bf4bdeaed0dbc3165202c6a2bd2a00e29be2f532cd21ba271d89eda24f51762d8ac40a4b74ba7'
             'SKIP'
             'cf1cc1de56aa41b88b5030b3589613dc9ae245d32ed3eca2434686ecf06be1ebb6a3682d98e4e10b8587dba507b3d24025606ad3b85920ca6f3855e579dc9367')
-b2sums=('aca9ff0481c0517d7b2531d7a1860bb6288b094dcceae6bb465c9cde8edb7aa6a14aba4ccf8b7ab7d3e13ada51dd2f7baaff6e4406c0d04c4898c0f9ce234c5b'
+b2sums=('e0f07ee20174d08dcfdb03962df0151740f333f9f50432c3c9eb30ac7b64489dbeae87538a3b68a279547c7129143e439d0b48e64b11f14e233625e3d209144a'
         'SKIP'
         'df8b6d4a1e6a9233964cefdeb54d14397764a31f83e3edc6383ed38bc4ad332f9ea4464dbed03151fc29fa4e31a1c7df086091ff26cefa9a3d7f57d368abab9c')
 validpgpkeys=('E7729BFFBE85400FEEEE23B178D7DEFB9AD59AF1') # Donald Scott Kitterman <scott@kitterman.com>
