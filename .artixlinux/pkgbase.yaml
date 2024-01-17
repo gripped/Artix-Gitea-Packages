@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gnome-control-center
-  version: 45.2-1
+  version: 45.2-2
   arch:
     - x86_64
   pkgname:
     - gnome-control-center
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 45.2-2
+    packages:
+      - gnome-control-center-45.2-2-x86_64.pkg.tar.zst
   world:
     version: 45.2-1
     packages:
