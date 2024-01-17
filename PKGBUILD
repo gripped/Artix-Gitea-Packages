@@ -2,8 +2,8 @@
 # Contributor: csslayer <wengxt AT gmail com>
 
 pkgname=fcitx5
-pkgver=5.1.6
-pkgrel=1
+pkgver=5.1.7
+pkgrel=2
 pkgdesc="Next generation of fcitx"
 arch=('x86_64')
 url="https://github.com/fcitx/fcitx5"
@@ -14,7 +14,7 @@ depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'elogi
          'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2')
 makedepends=('extra-cmake-modules' 'ninja' 'wayland-protocols' 'fmt')
 source=("https://download.fcitx-im.org/fcitx5/fcitx5/fcitx5-${pkgver}_dict.tar.xz"{,.sig})
-sha512sums=('8f10dfb230d4b4c7e559eb77e7a56c17964e404dc12bd3319f7dc715159a289faa1df95a342a0a1723e7d645aba808b967fd10d04ac065de2c49843a7905e7cb'
+sha512sums=('0bc11065e0c3357471c51bdfa6f752e089a6d361349002e62f4ac952c8a0f1790a27aba195d027b340103eb4a6eef0efec124b8931ac2285e8b1b69ca3487269'
             'SKIP')
 validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
 
