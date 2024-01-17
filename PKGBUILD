@@ -3,11 +3,14 @@
 
 pkgname=geoclue
 pkgver=2.7.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Modular geoinformation service built on the D-Bus messaging system"
 url="https://gitlab.freedesktop.org/geoclue/geoclue/-/wikis/home"
 arch=(x86_64)
-license=(LGPL)
+license=(
+  LGPL-2.1-or-later
+  GPL-2.0-or-later
+)
 depends=(
   avahi
   json-glib
@@ -32,12 +35,6 @@ _commit=8a24f60969d4c235d9918796c38a6a9c42e10131  # tags/2.7.1
 source=("git+https://gitlab.freedesktop.org/geoclue/geoclue.git#commit=$_commit")
 b2sums=('SKIP')
 
-# Mozilla API keys (see https://location.services.mozilla.com/api)
-# Note: These are for Arch Linux use ONLY. For your own distribution, please
-# get your own set of keys. Feel free to contact heftig@archlinux.org for
-# more information.
-_mozilla_api_key=e05d56db0a694edc8b5aaebda3f2db6a
-
 pkgver() {
   cd geoclue
   git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
@@ -51,7 +48,6 @@ build() {
   local meson_options=(
     -D dbus-srv-user=geoclue
     -D dbus-sys-dir=/usr/share/dbus-1/system.d
-    -D mozilla-api-key="$_mozilla_api_key"
   )
 
   artix-meson geoclue build "${meson_options[@]}"
@@ -70,9 +66,6 @@ package() {
 
   echo 'd /var/lib/geoclue 0755 geoclue geoclue' |
     install -Dm644 /dev/stdin "$pkgdir/usr/lib/tmpfiles.d/geoclue.conf"
-
-  # Fixup mode to match polkit
-  install -d -o root -g 102 -m 750 "$pkgdir/usr/share/polkit-1/rules.d"
 }
 
 # vim:set sw=2 sts=-1 et:
