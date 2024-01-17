@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: wine
-  version: 8.21-2
+  version: 9.0-1
   arch:
     - x86_64
   pkgname:
     - wine
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 8.21-2
+    version: 9.0-1
     packages:
-      - wine-8.21-2-x86_64.pkg.tar.zst
+      - wine-9.0-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
