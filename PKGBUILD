@@ -1,0 +1,28 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Maxime Schmitt <maxime.schmitt91@gmail.com>
+
+pkgname=nvtop
+pkgver=3.0.2
+pkgrel=1
+pkgdesc="GPUs process monitoring for AMD, Intel and NVIDIA"
+arch=('x86_64')
+url="https://github.com/Syllo/nvtop"
+license=('GPL3')
+depends=('ncurses' 'libudev')
+makedepends=('cmake' 'libdrm')
+source=("https://github.com/Syllo/nvtop/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('e5f23796c37b21f9e16f90b6aecce010239f736e60698fec22f663afef24439680132cb4bf08c56b9c05a9a69fa81421fed46c392adc06435f5209552337caed')
+
+build() {
+  cd $pkgname-$pkgver
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DNVIDIA_SUPPORT=ON -DAMDGPU_SUPPORT=ON .
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+
+  make DESTDIR="$pkgdir/" install
+}
