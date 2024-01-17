@@ -1,7 +1,7 @@
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=xorg-xwayland
-pkgver=23.2.3
+pkgver=23.2.4
 pkgrel=1
 arch=('x86_64')
 license=('MIT')
