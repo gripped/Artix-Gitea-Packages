@@ -1,4 +1,5 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgbase=gvfs
@@ -6,17 +7,17 @@ pkgname=(
   gvfs
   gvfs-{smb,afc,gphoto2,goa,mtp,nfs,google}
 )
-pkgver=1.52.2
+pkgver=1.53.1
 pkgrel=1
 pkgdesc="Virtual filesystem implementation for GIO"
 url="https://wiki.gnome.org/Projects/gvfs"
 arch=(x86_64)
-license=(LGPL)
+license=(LGPL-2.0-only)
 depends=(
   avahi
   dconf
   fuse3
-  gcr
+  gcr-4
   gsettings-desktop-schemas
   libarchive
   libbluray
@@ -32,7 +33,7 @@ makedepends=(
   docbook-xsl
   git
   gtk-doc
-  gtk3
+  gtk4
   libgdata
   libgoa
   libgphoto2
@@ -42,10 +43,11 @@ makedepends=(
   meson
   openssh
   python
+  python-packaging
   smbclient
 )
 groups=(gnome)
-_commit=d8db4325894d0ee4e77ba1e7eec595856279f69c  # tags/1.52.2^0
+_commit=2ec5b1f8185f777ef8714e3b9503e3399bee6971  # tags/1.53.1^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gvfs.git#commit=$_commit"
   gvfsd.hook
@@ -136,8 +138,6 @@ package_gvfs() {
     _pick google \
       usr/lib/gvfsd-google \
       usr/share/gvfs/mounts/google.mount
-
-    install -d -o root -g 102 -m 750 usr/share/polkit-1/rules.d
   )
 
   install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
