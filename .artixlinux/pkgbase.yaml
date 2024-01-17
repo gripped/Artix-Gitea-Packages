@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libdecor
-  version: 0.2.1-2
+  version: 0.2.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.1-2
+    version: 0.2.2-1
     packages:
-      - libdecor-0.2.1-2-x86_64.pkg.tar.zst
+      - libdecor-0.2.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
