@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=timew
-pkgver=1.7.0
+pkgver=1.7.1
 _ver_c="1882058c5ee1e8b6cbcd5335536b1efca8935823"
 _libshared_c="35e6ec09595c80bc744a27eda50e4dd34d6c7303"
 pkgrel=1
