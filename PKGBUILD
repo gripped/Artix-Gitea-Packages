@@ -1,8 +1,9 @@
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: hexchian <i at hexchain dot org>
 
 pkgname=crun
-pkgver=1.12
+pkgver=1.13
 pkgrel=1
 pkgdesc="A fast and lightweight fully featured OCI runtime and C library for running containers"
 url="https://github.com/containers/crun"
@@ -13,15 +14,14 @@ depends=('yajl' 'libudev' 'libcap' 'libseccomp' 'criu')
 makedepends=('libtool' 'python' 'go-md2man' 'udev' 'git')
 source=("https://github.com/containers/crun/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
 validpgpkeys=('AC404C1C0BF735C63FF4D562263D6DF2E163E1EA')
-sha256sums=('860f4d1972dd2fdb17e4a1aae4386c4da2989e547d1e17f909b3ca0aff135c28'
+sha256sums=('0d9423a0860abaac8f796ec5d5efce5acbcb199480fa114314aa30172f0d133a'
             'SKIP')
 
 build() {
     cd "$pkgname-$pkgver"
     ./autogen.sh
-    ./configure \
+    ./configure --disable-systemd \
         --prefix=/usr \
-        --disable-systemd \
         --enable-shared \
         --enable-dynamic \
         --with-python-bindings
