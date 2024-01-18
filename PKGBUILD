@@ -1,7 +1,7 @@
 # Maintainer: Nate Simon <njsimon10@gmail.com>
 
 pkgname=pix
-pkgver=3.0.1
+pkgver=3.2.2
 pkgrel=1
 pkgdesc="Image viewer and browser based on gthumb. X-Apps Project."
 arch=('i686' 'x86_64' 'armv7h')
@@ -38,16 +38,10 @@ provides=($pkgname)
 conflicts=('pix-git')
 url='https://github.com/linuxmint/pix'
 
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/${pkgname}/archive/${pkgver}.tar.gz"
-        "exiv2-0.28.patch")
-md5sums=('05f2f55907e3a4f2f5ce8b5addf84d81'
-         'ab9c92cde703d7d8d3ae194ae78520ca')
-
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/${pkgname}/archive/${pkgver}.tar.gz")
 
 build() {
     cd "${srcdir}"/${pkgname}-${pkgver}
-    patch -Np1 -i "${srcdir}"/exiv2-0.28.patch
-
     mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
     cd "${srcdir}"/${pkgname}-${pkgver}/build
 
@@ -63,3 +57,4 @@ package(){
     cd ${srcdir}/${pkgname}-${pkgver}/build
     DESTDIR="$pkgdir/" ninja install
 }
+sha256sums=('fec1a2750e3c903794f902b7a1f24cb6737e391e331470cc46f7bab2cbe1753a')

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pix
-  version: 3.0.1-1
+  version: 3.2.2-1
   arch:
     - i686
     - x86_64
@@ -9,11 +9,11 @@ pkgbase:
   pkgname:
     - pix
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -51,6 +51,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.0.1-1
+    version: 3.2.2-1
     packages:
-      - pix-3.0.1-1-x86_64.pkg.tar.zst
+      - pix-3.2.2-1-x86_64.pkg.tar.zst
