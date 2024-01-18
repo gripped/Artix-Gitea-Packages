@@ -3,15 +3,15 @@
 
 pkgname=fcitx5
 pkgver=5.1.7
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Next generation of fcitx"
 arch=('x86_64')
 url="https://github.com/fcitx/fcitx5"
 license=('GPL')
 conflicts=('fcitx')
 groups=('fcitx5-im')
-depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'elogind' 'wayland'
-         'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2')
+depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'wayland'
+         'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2' 'dbus' 'libuv')
 makedepends=('extra-cmake-modules' 'ninja' 'wayland-protocols' 'fmt')
 source=("https://download.fcitx-im.org/fcitx5/fcitx5/fcitx5-${pkgver}_dict.tar.xz"{,.sig})
 sha512sums=('0bc11065e0c3357471c51bdfa6f752e089a6d361349002e62f4ac952c8a0f1790a27aba195d027b340103eb4a6eef0efec124b8931ac2285e8b1b69ca3487269'
@@ -22,7 +22,8 @@ build() {
   cd $pkgname-$pkgver
 
   cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-        -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib .
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib \
+        -DUSE_SYSTEMD=off .
   ninja
 }
 
