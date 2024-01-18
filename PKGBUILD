@@ -26,8 +26,10 @@ provides=(libpolkit-gobject-1.so)
 _commit=82f0924dc0eb23b9df68e88dbaf9e07c81940a5a # tags/124
 source=(
 	"git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
+	"0001-fix-sysusers-d.patch"
 )
-b2sums=('SKIP')
+b2sums=('SKIP'
+	'360556ed06af2b8d69a9107ff91b7668b16e5bff0a1be165c60189c5631f2a4dd60341b7a409d98e978e698bb69138177d4d3dc49a5305d83fe89e2ffc79b9de')
 
 pkgver() {
 	cd polkit
@@ -36,6 +38,7 @@ pkgver() {
 
 prepare() {
 	cd polkit
+	patch -Np1 -i ../0001-fix-sysusers-d.patch
 }
 
 build() {
