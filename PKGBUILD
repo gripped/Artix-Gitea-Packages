@@ -19,7 +19,8 @@ prepare() {
 }
 
 build() {
-  cmake -S $pkgname-$pkgver -B build -G Ninja -DCMAKE_INSTALL_PREFIX='/usr'
+  cmake -S $pkgname-$pkgver -B build -G Ninja -DCMAKE_INSTALL_PREFIX='/usr' \
+    -DCMAKE_PREFIX_PATH=/usr
   cmake --build build
 }
 
