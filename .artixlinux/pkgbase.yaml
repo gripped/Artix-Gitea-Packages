@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: malcontent
-  version: 0.11.1-3
+  version: 0.11.1-4
   arch:
     - x86_64
   pkgname:
     - malcontent
     - libmalcontent
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.11.1-4
+    packages:
+      - malcontent-0.11.1-4-x86_64.pkg.tar.zst
+      - libmalcontent-0.11.1-4-x86_64.pkg.tar.zst
   world:
     version: 0.11.1-3
     packages:
