@@ -5,71 +5,64 @@
 # Contributor: GordonGR <gordongr@freemail.gr>
 
 pkgname=lib32-polkit
-pkgver=123
+pkgver=124
 pkgrel=1
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://gitlab.freedesktop.org/polkit/polkit"
 arch=(x86_64)
-license=(LGPL)
+license=(LGPL-2.0-or-later)
 depends=(
-  lib32-glib2
-  lib32-elogind
-  polkit
+	lib32-glib2
+	lib32-elogind
+	polkit
 )
 makedepends=(
-  git
-  lib32-expat
-  lib32-pam
-  meson
+	git
+	lib32-expat
+	lib32-pam
+	meson
 )
 provides=(libpolkit-gobject-1.so)
-_commit=fc8b07e71d99f88a29258cde99b913b44da1846d  # tags/123^0
+_commit=82f0924dc0eb23b9df68e88dbaf9e07c81940a5a # tags/124
 source=(
-  "git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
-  multilib.diff
+	"git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
 )
-b2sums=('SKIP'
-        '132e1817a9f7ea5a9a5776ce342f8928c11c3562e97b35583430bac2843c4e335a599a63570f75439cc0b12f2d1df9349b617ace732aa32b3a35dc885beb673f')
+b2sums=('SKIP')
 
 pkgver() {
-  cd polkit
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+	cd polkit
+	git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd polkit
-
-  # Fix post-install script with libs-only=true
-  git apply -3 ../multilib.diff
+	cd polkit
 }
 
 build() {
-  local meson_options=(
-    --libdir=/usr/lib32
-    -D introspection=false
-    -D libs-only=true
-    -D os_type=redhat
-    -D session_tracking=libelogind
-    -D systemdsystemunitdir=no
-    -D tests=true
-  )
+	local meson_options=(
+		--cross-file lib32
+		-D introspection=false
+		-D libs-only=true
+		-D os_type=redhat
+		-D session_tracking=libelogind
+		-D systemdsystemunitdir=no
+		-D polkitd_uid=102
+		-D polkitd_user=polkitd
+		-D tests=true
+	)
 
-  export CC='gcc -m32'
-  export CXX='g++ -m32'
-  export PKG_CONFIG='i686-pc-linux-gnu-pkg-config'
-
-  artix-meson polkit build "${meson_options[@]}"
-  meson compile -C build
+	artix-meson polkit build "${meson_options[@]}"
+	meson compile -C build
 }
 
 check() {
-  meson test -C build --print-errorlogs -t 3
+	meson test -C build --print-errorlogs -t 3
 }
 
 package() {
-  meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 
-  rm -r "$pkgdir"/{etc,usr/{include,share}}
+	rm -r "$pkgdir"/usr/{include,lib,share}
 }
 
 # vim:set sw=2 sts=-1 et:
