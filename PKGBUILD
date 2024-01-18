@@ -3,11 +3,11 @@
 
 pkgname=bolt
 pkgver=0.9.6
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Thunderbolt 3 device manager"
 arch=('x86_64')
 url="https://gitlab.freedesktop.org/bolt/bolt"
-license=('LGPL')
+license=('LGPL-2.1-or-later')
 depends=('polkit' 'udev')
 makedepends=('asciidoc' 'meson' 'python-setuptools' 'patch')
 checkdepends=('umockdev')
@@ -17,10 +17,8 @@ sha256sums=('87b442645e8dc06bc4cb3718b6ba8bff6e91401f642aeff83cc4274d633b38fe')
 build() {
   cd $pkgname-$pkgver
 
-  artix-meson ../build \
-    -Dman=true \
-    -Dsystemd=false
-  ninja -v -C ../build
+  artix-meson ../build
+  meson compile -v -C ../build
 }
 
 check() {
@@ -32,6 +30,5 @@ check() {
 package() {
   cd $pkgname-$pkgver
 
-  DESTDIR="${pkgdir}" meson install -C ../build
-  install -d -o root -g 102 -m 750 "$pkgdir/usr/share/polkit-1/rules.d"
+  meson install -C ../build --destdir "${pkgdir}"
 }
