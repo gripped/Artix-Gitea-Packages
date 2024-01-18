@@ -6,7 +6,7 @@
 
 pkgname=plymouth
 pkgver=24.004.60
-pkgrel=3
+pkgrel=4
 pkgdesc='Graphical boot splash screen'
 arch=('x86_64')
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
@@ -19,18 +19,23 @@ optdepends=('gtk3: x11 renderer')
 backup=('etc/plymouth/plymouthd.conf')
 install='plymouth.install'
 source=("https://www.freedesktop.org/software/$pkgname/releases/$pkgname-$pkgver.tar.xz"
+        '0001-label-freetype-fix-fallback-not-working-when-fc-matc.patch'
         'plymouth.initcpio_hook'
         'plymouth.initcpio_install'
         'plymouth-shutdown.initcpio_install'
         'mkinitcpio-generate-shutdown-ramfs-plymouth.conf')
 sha256sums=('f3f7841358c98f5e7b06a9eedbdd5e6882fd9f38bbd14a767fb083e3b55b1c34'
+            '9d5feec6980fb878b827bf8b4df236783afacf9e0d1d47daaad915b8f9702441'
             'de852646e615e06d4125eb2e646d0528d1e349bd9e9877c08c5d32c43d288b6f'
-            'e7563fc8e25c3cbc869d3ecc2acee28e225855723c90c569310e308aab86a8a7'
-            '2e63bd2460ce4ca56b9a407802c35ce69072cda40679b42889d692adf2fc656c'
+            'ecd979b70a613b6aea05443da735e95a8c7341fbc9f099da807bd82394f5d3cf'
+            '47be172735989dff66353a663ac58987719b9d8031398669dbcadf465afe7d24'
             '04af86a0ec83fc92d7339e1a7fcc0d55b86b95797a1a5f1a3b8d850996a3926c')
 
 prepare() {
   cd $pkgname-$pkgver
+  # https://gitlab.freedesktop.org/plymouth/plymouth/-/merge_requests/302
+  patch -Np1 -i ../0001-label-freetype-fix-fallback-not-working-when-fc-matc.patch
+
   # Use mkinitcpio to update initrd
   sed -i 's/^dracut -f$/mkinitcpio -P/' scripts/plymouth-update-initrd
 
