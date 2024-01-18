@@ -1,0 +1,58 @@
+ data/meson.build  | 10 ++++++++++
+ meson.build       |  3 ++-
+ meson_options.txt |  1 +
+ 3 files changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/data/meson.build b/data/meson.build
+index 74d2454..d253500 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -48,6 +48,16 @@ if session_tracking == 'libsystemd-login'
+   )
+ endif
+
++if session_tracking == 'libelogind'
++  configure_file(
++    input: 'polkit.conf.in',
++    output: '@BASENAME@',
++    configuration: service_conf,
++    install: true,
++    install_dir: systemd_sysusers_dir,
++  )
++endif
++
+ install_data(
+   'policyconfig-1.dtd',
+   install_dir: pk_datadir / 'polkit-1'
+diff --git a/meson.build b/meson.build
+index d81afa7..a143444 100644
+--- a/meson.build
++++ b/meson.build
+@@ -219,7 +219,7 @@ if enable_logind
+     systemd_systemdsystemunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
+   endif
+
+-  systemd_sysusers_dir = systemd_dep.get_pkgconfig_variable('sysusers_dir', default: '/usr/lib/sysusers.d')
++  systemd_sysusers_dir = get_option('sysusers_dir')
+ endif
+ config_h.set('HAVE_LIBSYSTEMD', enable_logind)
+
+@@ -406,6 +406,7 @@ output += '        Authentication framework: ' + auth_fw + '\n'
+ output += '        Session tracking:         ' + session_tracking + '\n'
+ if enable_logind
+   output += '        systemdsystemunitdir:     ' + systemd_systemdsystemunitdir + '\n'
++  output += '        sysusers_dir:             ' + systemd_sysusers_dir + '\n'
+ endif
+ output += '        polkitd user:             ' + polkitd_user + ' \n'
+ if polkitd_uid != '-'
+diff --git a/meson_options.txt b/meson_options.txt
+index 71588ba..8db28e7 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -1,5 +1,6 @@
+ option('session_tracking', type: 'combo', choices: ['libsystemd-login', 'libelogind', 'ConsoleKit'], value: 'ConsoleKit', description: 'session tracking (libsystemd-login/libelogind/ConsoleKit)')
+ option('systemdsystemunitdir', type: 'string', value: '', description: 'custom directory for systemd system units')
++option('sysusers_dir', type: 'string', value: '/usr/lib/sysusers.d', description: 'custom directory for sysusers.d')
+
+ option('libs-only', type: 'boolean', value: false, description: 'Only build libraries (skips building polkitd)')
+ option('polkitd_user', type: 'string', value: 'polkitd', description: 'User for running polkitd (polkitd)')

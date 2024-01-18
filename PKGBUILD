@@ -2,16 +2,17 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=polkit
-pkgver=123
+pkgver=124
 pkgrel=1
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://gitlab.freedesktop.org/polkit/polkit"
 arch=(x86_64)
-license=(LGPL)
+license=(LGPL-2.0-or-later)
 depends=(
   duktape
-  elogind
+  elogind libelogind.so
   expat
+  glibc
   glib2
   pam
 )
@@ -24,14 +25,17 @@ makedepends=(
 checkdepends=(python-dbusmock)
 provides=(libpolkit-{agent,gobject}-1.so)
 backup=(etc/pam.d/polkit-1)
-_commit=fc8b07e71d99f88a29258cde99b913b44da1846d  # tags/123^0
+_commit=82f0924dc0eb23b9df68e88dbaf9e07c81940a5a  # tags/124
 source=(
   "git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
   '99-artix.rules'
-  '0001-remove-sysd.patch')
+  0001-meson-Pass-polkitd_uid-to-meson_post_install.py.patch
+  0001-fix-sysusers-d.patch
+)
 b2sums=('SKIP'
-        'd320d928b5480b5b8143717e6f88101912709020efc9583fbb233a2cc11aff51d36226b94cf69104db06f330e04d4dcfd6e4c7b027df75a3c72c43adec625fb2'
-        'f7e2d94c79c8e1e5cf65c6c22f888f95ca9689137d30ff62759bb3ca91b43900c293afbb0cbd3954c889dc5cf3531a2a37c258b53fe0c0f866706376fcd6e37d')
+        'cacdece40f519ce2f2a4b06d31e75e92ed9496c18d4b1090b91a3c8d19f49aff41949b1bdda6e3c0b049b0ca74bbf164023044cf1ec8de6a24065bcda0d42d1f'
+        '0fc028f7c883015c38515883f91e7cd10d15540ae6cb8305d79e8e2d8d70f2228a9935eb477413b37f4b33f6d4faf86f1b6ee33b0c9d6d3d3212e8c1733a83d0'
+        '360556ed06af2b8d69a9107ff91b7668b16e5bff0a1be165c60189c5631f2a4dd60341b7a409d98e978e698bb69138177d4d3dc49a5305d83fe89e2ffc79b9de')
 
 pkgver() {
   cd polkit
@@ -40,7 +44,8 @@ pkgver() {
 
 prepare() {
   cd polkit
-  patch -Np1 -i ../0001-remove-sysd.patch
+  git apply -3 ../0001-meson-Pass-polkitd_uid-to-meson_post_install.py.patch
+  git apply -3 ../0001-fix-sysusers-d.patch
 }
 
 build() {
@@ -49,6 +54,8 @@ build() {
     -D gtk_doc=true
     -D man=true
     -D os_type=redhat
+    -D polkitd_uid=102
+    -D polkitd_user=polkitd
     -D session_tracking=libelogind
     -D tests=true
   )
@@ -63,13 +70,6 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-
-  install -d -o root -g 102 -m 750 "$pkgdir"/{etc,usr/share}/polkit-1/rules.d
-
-  install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/$pkgname.conf" <<END
-u polkitd 102 "PolicyKit daemon"
-m polkitd proc
-END
 
   install -m0644 "${srcdir}"/99-artix.rules "${pkgdir}"/etc/polkit-1/rules.d
 }
