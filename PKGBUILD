@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Daniel Bermond <dbermond@archlinux.org>
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
 
 pkgbase=libjxl
 pkgname=('libjxl' 'libjxl-doc')
-pkgver=0.9.0
+pkgver=0.9.1
 pkgrel=1
 pkgdesc='JPEG XL image format reference implementation'
 arch=('x86_64')
@@ -14,7 +13,7 @@ makedepends=('git' 'cmake' 'brotli' 'gdk-pixbuf2' 'giflib' 'gimp'
              'gtest' 'java-environment' 'python' 'asciidoc' 'doxygen'
              'graphviz' 'xdg-utils')
 source=("git+https://github.com/libjxl/libjxl.git#tag=v${pkgver}"
-        '_brotli::git+https://github.com/google/brotli.git'
+        'git+https://github.com/google/brotli.git'
         'git+https://github.com/mm2/Little-CMS.git'
         'git+https://github.com/google/googletest.git'
         'git+https://github.com/webmproject/sjpeg.git'
@@ -39,11 +38,10 @@ sha256sums=('SKIP'
 prepare() {
     git -C libjxl submodule init
     local _submodule
-    for _submodule in googletest sjpeg skcms highway libpng zlib libjpeg-turbo
+    for _submodule in brotli googletest sjpeg skcms highway libpng zlib libjpeg-turbo
     do
         git -C libjxl config --local "submodule.third_party/${_submodule}.url" "${srcdir}/${_submodule}"
     done
-    git -C libjxl config --local "submodule.third_party/brotli.url" "${srcdir}/_brotli"
     git -C libjxl config --local submodule.third_party/lcms.url "${srcdir}/Little-CMS"
     git -C libjxl config --local submodule.third_party/testdata.url "${srcdir}/libjxl-testdata"
     git -C libjxl -c protocol.file.allow='always' submodule update
@@ -80,7 +78,7 @@ package_libjxl() {
     optdepends=('gdk-pixbuf2: for gdk-pixbuf loader'
                 'gimp: for gimp plugin'
                 'java-runtime: for JNI bindings')
-    provides=('libjxl.so' 'libjxl_threads.so')
+    provides=('libjxl.so' 'libjxl_cms.so' 'libjxl_threads.so')
     
     DESTDIR="$pkgdir" cmake --install build
     install -D -m644 libjxl/{LICENSE,PATENTS} -t "${pkgdir}/usr/share/licenses/${pkgname}"
