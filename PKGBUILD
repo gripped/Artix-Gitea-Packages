@@ -88,6 +88,7 @@ optdepends=(
 makedepends=(${makedepends[@]} ${depends[@]})
 
 build() {
+	unset CFLAGS CXXFLAGS LDFLAGS
 	# Allow ccache to work
 	mv $pkgname-$_pkgbasever $pkgname
 
@@ -123,8 +124,6 @@ build() {
 		--with-x \
 		--with-gstreamer \
 		"${_wine32opts[@]}"
-
-	make CC="gcc -m32" CXX="g++ -m32"
 }
 
 package() {
