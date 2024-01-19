@@ -93,6 +93,7 @@ build() {
 
 	# Doesn't compile without remove these flags as of 4.10
 	export CFLAGS="$CFLAGS -ffat-lto-objects"
+	export LDFLAGS="${LDFLAGS/,-z,now/}"
 
 	msg2 "Building Wine-64..."
 	mkdir "$pkgname-64-build"
