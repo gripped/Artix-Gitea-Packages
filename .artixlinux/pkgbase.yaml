@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-ppsspp
-  version: 39353-1
+  version: 39481-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 39353-1
+    version: 39481-1
     packages:
-      - libretro-ppsspp-39353-1-x86_64.pkg.tar.zst
+      - libretro-ppsspp-39481-1-x86_64.pkg.tar.zst
