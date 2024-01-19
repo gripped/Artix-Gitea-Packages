@@ -1,15 +1,15 @@
-# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gjs
-pkgver=1.78.2
+pkgver=1.79.1
 pkgrel=1
 epoch=2
 pkgdesc="Javascript Bindings for GNOME"
 url="https://wiki.gnome.org/Projects/Gjs"
 arch=(x86_64)
-license=(GPL)
+license=(LGPL-2.0-or-later)
 depends=(
   cairo
   dconf
@@ -34,7 +34,7 @@ checkdepends=(
   xorg-server-xvfb
 )
 provides=(libgjs.so)
-_commit=db2a2dbfebaffd23f36a6b4ab9e6db45bf5eb8de  # tags/1.78.2^0
+_commit=113d0bce6886ed799e0566e0d2e59710858e45e6  # tags/1.79.1^0
 source=("git+https://gitlab.gnome.org/GNOME/gjs.git#commit=$_commit")
 b2sums=('SKIP')
 
