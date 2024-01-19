@@ -93,7 +93,6 @@ optdepends=(
 
 provides=("wine=$pkgver")
 conflicts=('wine')
-install=wine.install
 
 prepare() {
 	# Allow ccache to work
@@ -109,6 +108,7 @@ prepare() {
 }
 
 build() {
+	unset CFLAGS CXXFLAGS LDFLAGS
 	# Doesn't compile without remove these flags as of 4.10
 	export CFLAGS="${CFLAGS/-fno-plt/}"
 	export LDFLAGS="${LDFLAGS/,-z,now/}"
