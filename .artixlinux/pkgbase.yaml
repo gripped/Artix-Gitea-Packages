@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mbedtls
-  version: 3.5.0-1
+  version: 3.5.1-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.5.0-1
+    version: 3.5.1-1
     packages:
-      - mbedtls-3.5.0-1-x86_64.pkg.tar.zst
+      - mbedtls-3.5.1-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
