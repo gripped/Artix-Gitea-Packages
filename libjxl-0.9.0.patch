@@ -1,0 +1,219 @@
+From e10a9e0f65444fa71a3cda9b764007b9ccd587ea Mon Sep 17 00:00:00 2001
+From: "Rasyuqa A. H." <qampidh@gmail.com>
+Date: Sat, 6 Jan 2024 02:43:23 +0700
+Subject: [PATCH 1/3] libjxl: bump to 0.9.0 with the other deps
+
+highway 1.0.2 -> 1.0.7
+brotli 1.0.9 -> 1.1.0 (this also removes the need for patch)
+libjxl 0.8.2 -> 0.9.0 (need a patch for CMYK bug, see https://github.com/libjxl/libjxl/issues/3078)
+---
+ .../0001-PATCH-fix-cmyk-encoding.patch        | 14 ++++++
+ ...PATCH-revert-add-runtime-linker-path.patch | 48 -------------------
+ 3rdparty/ext_jpegxl/CMakeLists.txt            | 31 ++++++++----
+ 3 files changed, 36 insertions(+), 57 deletions(-)
+ create mode 100644 3rdparty/ext_jpegxl/0001-PATCH-fix-cmyk-encoding.patch
+ delete mode 100644 3rdparty/ext_jpegxl/0001-PATCH-revert-add-runtime-linker-path.patch
+
+diff --git a/3rdparty/ext_jpegxl/0001-PATCH-fix-cmyk-encoding.patch b/3rdparty/ext_jpegxl/0001-PATCH-fix-cmyk-encoding.patch
+new file mode 100644
+index 00000000000..8659afe3acc
+--- /dev/null
++++ b/3rdparty/ext_jpegxl/0001-PATCH-fix-cmyk-encoding.patch
+@@ -0,0 +1,14 @@
++Cherry picked from libjxl 3cac2874bb125c901f1703065f658e32e7c85cee
++
++diff --git a/lib/jxl/cms/color_encoding_cms.h b/lib/jxl/cms/color_encoding_cms.h
++index 81b32897..0ad1cbb4 100644
++--- a/lib/jxl/cms/color_encoding_cms.h
+++++ b/lib/jxl/cms/color_encoding_cms.h
++@@ -521,7 +521,6 @@ struct ColorEncoding {
++                                                 new_icc.data(), new_icc.size(),
++                                                 &external, &new_cmyk));
++     cmyk = new_cmyk;
++-    if (cmyk) return true;
++     JXL_RETURN_IF_ERROR(FromExternal(external));
++     icc = std::move(new_icc);
++     return true;
+diff --git a/3rdparty/ext_jpegxl/0001-PATCH-revert-add-runtime-linker-path.patch b/3rdparty/ext_jpegxl/0001-PATCH-revert-add-runtime-linker-path.patch
+deleted file mode 100644
+index 18ddaf45866..00000000000
+--- a/3rdparty/ext_jpegxl/0001-PATCH-revert-add-runtime-linker-path.patch
++++ /dev/null
+@@ -1,48 +0,0 @@
+-From 09b0992b6acb7faa6fd3b23f9bc036ea117230fc Mon Sep 17 00:00:00 2001
+-From: Eugene Kliuchnikov <eustas.ru@gmail.com>
+-Date: Wed, 2 Sep 2020 11:38:26 +0200
+-Subject: [PATCH] Revert "Add runtime linker path to pkg-config files (#740)"
+- (#838)
+-
+-This reverts commit 31754d4ffce14153b5c2addf7a11019ec23f51c1.
+----
+- scripts/libbrotlicommon.pc.in | 2 +-
+- scripts/libbrotlidec.pc.in    | 2 +-
+- scripts/libbrotlienc.pc.in    | 2 +-
+- 3 files changed, 3 insertions(+), 3 deletions(-)
+-
+-diff --git a/scripts/libbrotlicommon.pc.in b/scripts/libbrotlicommon.pc.in
+-index 10ca969e..2a8cf7a3 100644
+---- a/scripts/libbrotlicommon.pc.in
+-+++ b/scripts/libbrotlicommon.pc.in
+-@@ -7,5 +7,5 @@ Name: libbrotlicommon
+- URL: https://github.com/google/brotli
+- Description: Brotli common dictionary library
+- Version: @PACKAGE_VERSION@
+--Libs: -L${libdir} -R${libdir} -lbrotlicommon
+-+Libs: -L${libdir} -lbrotlicommon
+- Cflags: -I${includedir}
+-diff --git a/scripts/libbrotlidec.pc.in b/scripts/libbrotlidec.pc.in
+-index e7c3124f..6f8ef2e4 100644
+---- a/scripts/libbrotlidec.pc.in
+-+++ b/scripts/libbrotlidec.pc.in
+-@@ -7,6 +7,6 @@ Name: libbrotlidec
+- URL: https://github.com/google/brotli
+- Description: Brotli decoder library
+- Version: @PACKAGE_VERSION@
+--Libs: -L${libdir} -R${libdir} -lbrotlidec
+-+Libs: -L${libdir} -lbrotlidec
+- Requires.private: libbrotlicommon >= 1.0.2
+- Cflags: -I${includedir}
+-diff --git a/scripts/libbrotlienc.pc.in b/scripts/libbrotlienc.pc.in
+-index 4dd0811b..2098afe2 100644
+---- a/scripts/libbrotlienc.pc.in
+-+++ b/scripts/libbrotlienc.pc.in
+-@@ -7,6 +7,6 @@ Name: libbrotlienc
+- URL: https://github.com/google/brotli
+- Description: Brotli encoder library
+- Version: @PACKAGE_VERSION@
+--Libs: -L${libdir} -R${libdir} -lbrotlienc
+-+Libs: -L${libdir} -lbrotlienc
+- Requires.private: libbrotlicommon >= 1.0.2
+- Cflags: -I${includedir}
+diff --git a/3rdparty/ext_jpegxl/CMakeLists.txt b/3rdparty/ext_jpegxl/CMakeLists.txt
+index dc463b0e458..9d5ad57f5b6 100644
+--- a/3rdparty/ext_jpegxl/CMakeLists.txt
++++ b/3rdparty/ext_jpegxl/CMakeLists.txt
+@@ -13,8 +13,8 @@ endif()
+ 
+ ExternalProject_Add( ext_highway
+     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+-    URL https://github.com/google/highway/archive/refs/tags/1.0.2.tar.gz
+-    URL_HASH SHA256=e8ef71236ac0d97f12d553ec1ffc5b6375d57b5f0b860c7447dd69b6ed1072db
++    URL https://github.com/google/highway/archive/refs/tags/1.0.7.tar.gz
++    URL_HASH SHA256=5434488108186c170a5e2fca5e3c9b6ef59a1caa4d520b008a9b8be6b8abe6c5
+ 
+     INSTALL_DIR ${PREFIX_ext_jpegxl}
+     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_jpegxl} DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE} -DBUILD_TESTING=OFF -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=OFF ${GLOBAL_PROFILE} 
+@@ -24,10 +24,8 @@ ExternalProject_Add( ext_highway
+ 
+ ExternalProject_Add( ext_brotli
+     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+-    URL https://github.com/google/brotli/archive/v1.0.9.tar.gz
+-    URL_HASH SHA512=b8e2df955e8796ac1f022eb4ebad29532cb7e3aa6a4b6aee91dbd2c7d637eee84d9a144d3e878895bb5e62800875c2c01c8f737a1261020c54feacf9f676b5f5
+-
+-    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/0001-PATCH-revert-add-runtime-linker-path.patch
++    URL https://github.com/google/brotli/archive/v1.1.0.tar.gz
++    URL_HASH SHA256=e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff
+ 
+     INSTALL_DIR ${PREFIX_ext_jpegxl}
+     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_jpegxl} DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE} -DBUILD_TESTING=OFF ${GLOBAL_PROFILE} 
+@@ -37,11 +35,26 @@ ExternalProject_Add( ext_brotli
+ 
+ ExternalProject_Add( ext_jpegxl
+     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+-    URL https://github.com/libjxl/libjxl/archive/refs/tags/v0.8.2.tar.gz
+-    URL_HASH SHA256=c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
++    URL https://github.com/libjxl/libjxl/archive/refs/tags/v0.9.0.tar.gz
++    URL_HASH SHA256=d83bbe188d8fa9725bb75109c922c37fcff8c3b802808f3a6c2c14aaf8337d9f
++
++    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/0001-PATCH-fix-cmyk-encoding.patch
+ 
+     INSTALL_DIR ${PREFIX_ext_jpegxl}
+-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_jpegxl} -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE} -DJPEGXL_VERSION=0.8.2 -DJPEGXL_ENABLE_BENCHMARK=OFF -DJPEGXL_ENABLE_COVERAGE=OFF -DJPEGXL_ENABLE_EXAMPLES=OFF -DJPEGXL_ENABLE_FUZZERS=OFF -DJPEGXL_ENABLE_JNI=OFF -DJPEGXL_ENABLE_SJPEG=OFF -DJPEGXL_ENABLE_SKCMS=OFF -DJPEGXL_ENABLE_TOOLS=OFF -DJPEGXL_ENABLE_VIEWERS=OFF -DJPEGXL_ENABLE_JPEGLI_LIBJPEG=OFF "-DCMAKE_CXX_FLAGS:STRING=-DJXL_DEBUG_ON_ERROR -DJX_DEBUG_WARNING" ${GLOBAL_PROFILE}
++    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_jpegxl} -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
++        -DJPEGXL_VERSION=0.9.0
++        -DJPEGXL_ENABLE_BENCHMARK=OFF
++        -DJPEGXL_ENABLE_COVERAGE=OFF
++        -DJPEGXL_ENABLE_EXAMPLES=OFF
++        -DJPEGXL_ENABLE_FUZZERS=OFF
++        -DJPEGXL_ENABLE_JNI=OFF
++        -DJPEGXL_ENABLE_SJPEG=OFF
++        -DJPEGXL_ENABLE_SKCMS=OFF
++        -DJPEGXL_ENABLE_TOOLS=OFF
++        -DJPEGXL_ENABLE_VIEWERS=OFF
++        -DJPEGXL_ENABLE_JPEGLI_LIBJPEG=OFF
++        -DJPEGXL_ENABLE_JPEGLI=OFF
++        "-DCMAKE_CXX_FLAGS:STRING=-DJXL_DEBUG_ON_ERROR -DJX_DEBUG_WARNING" ${GLOBAL_PROFILE}
+ 
+     UPDATE_COMMAND ""
+     DEPENDS ext_brotli ext_highway ext_lcms2
+-- 
+GitLab
+
+
+From 1da5a7a6c2b2be5ec5e04c39a9a8663696d2b367 Mon Sep 17 00:00:00 2001
+From: "Rasyuqa A. H." <qampidh@gmail.com>
+Date: Sat, 6 Jan 2024 02:50:10 +0700
+Subject: [PATCH 2/3] KisFileIconCreator: add workaround for JPEG XL too
+
+KImageFormats / QImage can crash if we update libjxl to >= 0.9.0 due to API changes.
+On Krita, this can result in crash whenever the thumbnail loads in welcome screen.
+
+This patch also enables thumbnail generation for JXL as well.
+---
+ libs/ui/utils/KisFileIconCreator.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/libs/ui/utils/KisFileIconCreator.cpp b/libs/ui/utils/KisFileIconCreator.cpp
+index eadcf232576..85a56544317 100644
+--- a/libs/ui/utils/KisFileIconCreator.cpp
++++ b/libs/ui/utils/KisFileIconCreator.cpp
+@@ -108,8 +108,9 @@ bool KisFileIconCreator::createFileIcon(QString path, QIcon &icon, qreal deviceP
+             } else {
+                 return false;
+             }
+-        } else if (mimeType == "image/tiff" || mimeType == "image/x-tiff") {
++        } else if (mimeType == "image/tiff" || mimeType == "image/x-tiff" || mimeType == "image/jxl") {
+             // Workaround for a bug in Qt tiff QImageIO plugin
++            // XXX: Also for JPEG-XL if KImageFormats haven't updated to accomodate libjxl >= v0.9.0 API changes.
+             QScopedPointer<KisDocument> doc(KisPart::instance()->createTemporaryDocument());
+             doc->setFileBatchMode(true);
+             bool r = doc->openPath(path, KisDocument::DontAddToRecent);
+-- 
+GitLab
+
+
+From 546765dfd396a4bb482b98a7b6ca22f1dca809af Mon Sep 17 00:00:00 2001
+From: "Rasyuqa A. H." <qampidh@gmail.com>
+Date: Mon, 8 Jan 2024 17:48:34 +0700
+Subject: [PATCH 3/3] JPEG-XL: Disable export bug workaround for libjxl >=
+ 0.9.0
+
+---
+ plugins/impex/jxl/JPEGXLExport.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/plugins/impex/jxl/JPEGXLExport.cpp b/plugins/impex/jxl/JPEGXLExport.cpp
+index 4b4b21dabf9..7a7f96e52bb 100644
+--- a/plugins/impex/jxl/JPEGXLExport.cpp
++++ b/plugins/impex/jxl/JPEGXLExport.cpp
+@@ -832,14 +832,16 @@ KisImportExportErrorCode JPEGXLExport::convert(KisDocument *document, QIODevice
+         }();
+ 
+         // XXX: Workaround for a buggy lossless patches. Set to disable instead.
+-        // TODO Kampidh: revisit this when upstream got fixed.
++        // Patch only for libjxl under v0.9.0
+         //
+         // See: https://github.com/libjxl/libjxl/issues/2463
+         const int setPatches = [&]() -> int {
++#if JPEGXL_NUMERIC_VERSION < JPEGXL_COMPUTE_NUMERIC_VERSION(0, 9, 0)
+             if ((cfg->getInt("effort", 7) > 4) && !cfg->getBool("flattenLayers", true)) {
+                 warnFile << "Using workaround for layer exports, disabling patches option on effort > 4";
+                 return 0;
+             }
++#endif
+             return cfg->getInt("patches", -1);
+         }();
+ 
+-- 
+GitLab
+

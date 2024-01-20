@@ -74,11 +74,15 @@ optdepends=('kimageformats5: PSD support'
             'python-pyqt5: for the Python plugins')
 source=(https://download.kde.org/stable/krita/$_pkgver/$pkgname-$_pkgver.tar.gz{,.sig}
         xsimd-12.patch
-        sip-6.8.patch)
+        sip-6.8.patch
+        fix-libjxl-0.9.0.patch::https://invent.kde.org/graphics/krita/-/merge_requests/2040.patch
+        libjxl-0.9.0.patch::https://invent.kde.org/graphics/krita/-/merge_requests/2042.patch)
 sha256sums=('c1d2e4a36d7d8aa296d021e52be493cc679d3fe5e8aa4fc13c434d33e8154ce2'
             'SKIP'
             'bdf2fd09b65dfae8fd7817b302486d6b82df8c0d56fd980afac019a82d3cd716'
-            'bb3b503993030bb98a99c6a0376c65ee74d0c32c1e8932110698682eed1e3d3c')
+            'bb3b503993030bb98a99c6a0376c65ee74d0c32c1e8932110698682eed1e3d3c'
+            '4a91c3f99073be28eb386de5dea0c182e73d65e6c3c0dd0372302667c58e0e92'
+            'd8d37d5a1ce43eb68c221338a0578be3572026b43b4531be2277b13fe785ae99')
 validpgpkeys=('05D00A8B73A686789E0A156858B9596C722EA3BD'  # Boudewijn Rempt <foundation@krita.org>
               'E9FB29E74ADEACC5E3035B8AB69EB4CF7468332F'  # Dmitry Kazakov (main key) <dimula73@gmail.com>
               '064182440C674D9F8D0F6F8B4DA79EDA231C852B') # Stichting Krita Foundation <foundation@krita.org>
@@ -86,6 +90,8 @@ validpgpkeys=('05D00A8B73A686789E0A156858B9596C722EA3BD'  # Boudewijn Rempt <fou
 prepare() {
   patch -d $pkgname-$_pkgver -p1 < sip-6.8.patch
   patch -d $pkgname-$_pkgver -p1 < xsimd-12.patch
+  patch -d $pkgname-$_pkgver -p1 < fix-libjxl-0.9.0.patch
+  patch -d $pkgname-$_pkgver -p1 < libjxl-0.9.0.patch
 }
 
 build() {
