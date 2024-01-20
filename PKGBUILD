@@ -8,12 +8,8 @@ arch=('x86_64')
 url="https://unix4lyfe.org/darkhttpd/"
 license=('BSD')
 backup=('etc/conf.d/mimetypes')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/emikulic/darkhttpd/archive/v${pkgver}.tar.gz"
-        'darkhttpd.service'
-        'darkhttpd@.service')
-sha256sums=('ea48cedafbf43186f4a8d1afc99b33b671adee99519658446022e6f63bd9eda9'
-            'e53ae82993f6c996c0c54ccbbd9307811501cf01404c441b48b2c79f9384fa27'
-            '0bfbe13c93ba87d8ea08ab85745c92cebcbc6b627616e7c58d6099a234a59841')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/emikulic/darkhttpd/archive/v${pkgver}.tar.gz")
+sha256sums=('ea48cedafbf43186f4a8d1afc99b33b671adee99519658446022e6f63bd9eda9')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
