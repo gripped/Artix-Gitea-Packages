@@ -2,9 +2,25 @@
 
 pkgname=xorg-xwayland
 pkgver=23.2.4
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
-license=('MIT')
+license=(
+    LicenseRef-Adobe-Display-PostScript
+    BSD-3-Clause
+    LicenseRef-DEC-3-Clause
+    HPND
+    LicenseRef-HPND-sell-MIT-disclaimer-xserver
+    HPND-sell-variant
+    ICU
+    ISC
+    MIT
+    MIT-open-group
+    NTP
+    SGI-B-2.0
+    SMLNJ
+    X11
+    X11-distribute-modifications-variant
+)
 groups=('xorg')
 url="https://xorg.freedesktop.org"
 pkgdesc="run X clients under wayland"
