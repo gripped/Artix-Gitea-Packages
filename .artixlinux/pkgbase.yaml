@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sdl2_ttf
-  version: 2.20.2-1
+  version: 2.20.2-2
   arch:
     - x86_64
   pkgname:
     - sdl2_ttf
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.20.2-1
+    version: 2.20.2-2
     packages:
-      - sdl2_ttf-2.20.2-1-x86_64.pkg.tar.zst
+      - sdl2_ttf-2.20.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

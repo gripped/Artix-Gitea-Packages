@@ -1,8 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 
 pkgname=sdl2_ttf
 pkgver=2.20.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A library that allows you to use TrueType fonts in your SDL applications (Version 2)"
 arch=('x86_64')
 url="https://github.com/libsdl-org/SDL_ttf"
@@ -22,7 +23,7 @@ prepare() {
 build() {
   cd "${srcdir}/SDL2_ttf-${pkgver}/"
 
-  ./configure --disable-static --prefix=/usr
+  ./configure --disable-static --disable-freetype-builtin --disable-harfbuzz-builtin --prefix=/usr
   make
 }
 
