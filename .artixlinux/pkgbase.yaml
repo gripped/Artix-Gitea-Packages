@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: virtualbox-guest-iso
-  version: 7.0.12-1
+  version: 7.0.14-1
   arch:
     - any
   pkgname:
     - virtualbox-guest-iso
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 7.0.14-1
+    packages:
+      - virtualbox-guest-iso-7.0.14-1-any.pkg.tar.zst
   world:
     version: 7.0.12-1
     packages:
