@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virtualbox
-  version: 7.0.14-1
+  version: 7.0.14-2
   arch:
     - x86_64
   pkgname:
@@ -12,12 +12,12 @@ pkgbase:
     - virtualbox-guest-utils-nox
     - virtualbox-ext-vnc
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,14 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 7.0.14-2
+    packages:
+      - virtualbox-7.0.14-2-x86_64.pkg.tar.zst
+      - virtualbox-sdk-7.0.14-2-x86_64.pkg.tar.zst
+      - virtualbox-host-dkms-7.0.14-2-x86_64.pkg.tar.zst
+      - virtualbox-guest-utils-7.0.14-2-x86_64.pkg.tar.zst
+      - virtualbox-guest-utils-nox-7.0.14-2-x86_64.pkg.tar.zst
+      - virtualbox-ext-vnc-7.0.14-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
