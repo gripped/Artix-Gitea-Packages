@@ -9,7 +9,7 @@ pkgname=toxcore
 _pkgname=c-toxcore
 epoch=1
 pkgver=0.2.18
-pkgrel=3
+pkgrel=4
 pkgdesc='Secure, configuration-free, P2P Skype replacement backend'
 arch=('x86_64')
 url='https://tox.chat'
@@ -44,7 +44,6 @@ validpgpkeys=(
 
 prepare() {
   cd $_pkgname-$pkgver
-  sed -i "s|/usr/local|/usr|" other/bootstrap_daemon/tox-bootstrapd.service
   sed -i "/Rpath/d;/RPATH/d" CMakeLists.txt
 }
 
