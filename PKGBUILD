@@ -3,13 +3,13 @@
 
 pkgname=ddcutil
 pkgver=2.1.0
-pkgrel=2
+pkgrel=2.0.1
 pkgdesc='Query and change Linux monitor settings using DDC/CI and USB.'
 url='http://ddcutil.com/'
 arch=('x86_64')
 license=('GPL2')
 depends=('glib2' 'i2c-tools' 'libusb' 'libdrm' 'jansson')
-makedepends=('systemd')
+makedepends=('udev')
 source=(https://github.com/rockowitz/ddcutil/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha512sums=('d48f87427050caf8e38f6a4b0dd71c1639101762444a712d7a7d97302ebc0dc4fd7c4a5cb188b251c6a6a369b298a43dbc7d91e0eca8cdb6f51c1ae6ae7f1f4b')
 
