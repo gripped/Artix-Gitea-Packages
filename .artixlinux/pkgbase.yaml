@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - kimageformats5
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.113.0-2
-    packages:
-      - kimageformats5-5.113.0-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 5.114.0-2
     packages:
