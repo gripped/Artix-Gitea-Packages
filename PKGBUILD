@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jiachen Yang <farseerfc@gmail.com>
 # AUR Maintainer: Vlad M. <vlad@archlinux.net>
 
 pkgname=toxic
 pkgdesc='CLI Tox client'
 license=('GPL3')
 pkgver=0.11.3
-pkgrel=3
+pkgrel=4
 depends=('curl'
          'freealut'
          'libnotify'
