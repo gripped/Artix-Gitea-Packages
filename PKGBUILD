@@ -3,7 +3,7 @@
 
 pkgname=clang
 pkgver=16.0.6
-pkgrel=1.1
+pkgrel=2
 pkgdesc="C language family frontend for LLVM"
 arch=('x86_64')
 url="https://clang.llvm.org/"
@@ -22,6 +22,7 @@ source=($_source_base/clang-$pkgver.src.tar.xz{,.sig}
         $_source_base/llvm-$pkgver.src.tar.xz{,.sig}
         $_source_base/cmake-$pkgver.src.tar.xz{,.sig}
         $_source_base/third-party-$pkgver.src.tar.xz{,.sig}
+        clangd-handle-missing-ending-brace.patch::https://github.com/llvm/llvm-project/commit/9d1dada57741.patch
         enable-fstack-protector-strong-by-default.patch)
 sha256sums=('1186b6e6eefeadd09912ed73b3729e85b59f043724bb2818a95a2ec024571840'
             'SKIP'
@@ -33,6 +34,7 @@ sha256sums=('1186b6e6eefeadd09912ed73b3729e85b59f043724bb2818a95a2ec024571840'
             'SKIP'
             '15f5b9aeeba938530af977d5f9205612737a091a7f0f6c8075df8723b7713f70'
             'SKIP'
+            'c102e8a6a2adb0e8729865ffb8799b22bb8a9bdf0f421991880fa4393378370a'
             '45da5783f4e89e4507a351ed0ffbbe6ec240e21ff7070797a89c5ccf434ac612')
 validpgpkeys=('474E22316ABF4785A88C6E8EA2C794A986419D8A'  # Tom Stellard <tstellar@redhat.com>
               'D574BD5D1D0E98895E3BF90044F2485E45D59042') # Tobias Hieta <tobias@hieta.se>
@@ -66,6 +68,10 @@ prepare() {
   mv "$srcdir/clang-tools-extra-$pkgver.src" tools/extra
   patch -Np2 -i ../enable-fstack-protector-strong-by-default.patch
 
+  # https://github.com/clangd/clangd/issues/1559
+  sed 's|clang-tools-extra|clang/tools/extra|' \
+    clangd-handle-missing-ending-brace.patch | patch -Np2
+
   # Attempt to convert script to Python 3
   2to3 -wn --no-diffs \
     tools/extra/clang-include-fixer/find-all-symbols/tool/run-find-all-symbols.py
@@ -82,6 +88,8 @@ build() {
     -G Ninja
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_PREFIX_PATH=/usr
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib
     -DCMAKE_INSTALL_DOCDIR=share/doc
     -DCMAKE_SKIP_RPATH=ON
     -DCLANG_DEFAULT_PIE_ON_LINUX=ON
@@ -98,12 +106,12 @@ build() {
     -DSPHINX_WARNINGS_AS_ERRORS=OFF
   )
 
-  artix-cmake .. "${cmake_args[@]}"
+  cmake .. "${cmake_args[@]}"
   local distribution_components=$(_get_distribution_components | paste -sd\;)
   test -n "$distribution_components"
   cmake_args+=(-DLLVM_DISTRIBUTION_COMPONENTS="$distribution_components")
 
-  artix-cmake .. "${cmake_args[@]}"
+  cmake .. "${cmake_args[@]}"
   ninja
 }
 
