@@ -1,8 +1,9 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Maintainer: Sébastien Luttringer
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2023.09.18
+pkgver=2024.01.19
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('any')
@@ -26,12 +27,12 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             '4d7b647169063dfedbff5e1e22cee77bd1a4183dbcfd5e802e68939da4bbf733'
             'd9cd8a77d9e0aa5e90d7f4ed74c8745c17b525e720e28e4c44364150003c35f9'
             '9e5f1c492e6ad1c246ae71a55a4ff0eca9909bbbc2c6034fd70f31ab86c868eb'
-            'dad04a370e488aa85fb0a813a5c83cf6fd981ce01883fc59685447b092de84b5'
+            '785c6c3614a27ae6115a27c1ca55bbf333654780997c4ba7e181172b021d1bf3'
             '8ca2d8eef6fb5143c9ef7e9174ccfef59ac7ad2deee243574cd10c763156cc10'
             '62855224620a1e6dcfb2373460387bf0b7870ebe0595a61bbbc74919710d7641'
             '1aa33ce150ddb33b815f0b45425948e16020fcfb0a54ecc997b49778d5643978'
             'ad6919a8d79b8f91ad77b49fa56afeb86725659a73a32ce61c574633221c64d3'
-            '5e06477834f51abf42ea4e8dc199632afc6afbfd8c44354685a271e9a48d2c0a'
+            '13e2783884783ef46b8345fbcdf7880f0414c0a9c42e2b2fc6a2b048cbc2d86e'
             '5557d8e601b17a80d1ea7de78a9869be69637cb6a02fbfe334e22fdf64e61d4c'
             'd88be2b45b43605ff31dd83d6a138069b6c2e92bc8989b7b9ab9eba8da5f8c7b'
             '6e13705ac4d6f69cdba118c6b70c722346fd3c45224133e6bbfe28aca719563c'
@@ -96,6 +97,7 @@ package() {
   for d in {1..8}; do
     install -d -m755 usr/share/man/man$d
   done
+  install -d usr/lib/ld.so.conf.d
 
   # add lib symlinks
   ln -s usr/lib lib
@@ -118,10 +120,10 @@ package() {
   # setup sysctl
   install -D -m644 "$srcdir"/sysctl usr/lib/sysctl.d/10-artix.conf
 
-  # setup sysusers
+  # setup esysusers
   install -D -m644 "$srcdir"/sysusers usr/lib/sysusers.d/artix.conf
 
-  # setup tmpfiles
+  # setup etmpfiles
   install -D -m644 "$srcdir"/tmpfiles usr/lib/tmpfiles.d/artix.conf
 
   # add logo
