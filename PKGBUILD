@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.1.70
+pkgver=6.6.13
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
@@ -30,6 +30,8 @@ _srctag=v$pkgver
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
+  0002-skip-simpledrm-if-nvidia-drm.modeset=1-is.patch
+  0003-Default-to-maximum-amount-of-ASLR-bits.patch
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -37,14 +39,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('ed1365266456c07696a7499581aec5d851ca2296f4f6f90f23d189ea5a56afef'
+sha256sums=('88b89e7dd41ead4e3ab1e411c8bb8d592575acf815cf1df3c0dc57e2e882c0bc'
             'SKIP'
             '21195509fded29d0256abfce947b5a8ce336d0d3e192f3f8ea90bde9dd95a889'
-            '2f6fe6e14a0b9ffa56822b29decb70f78d97ef07f36d1492235d8cefb42fab12')
-b2sums=('e32727946bb9169bc903b051dfbbb1423b3fef3fe124162fe1125f1364b3ebd4ab8e4195a788f5102b056be7d23acd88e4a2d1da6f1e6c5546552bcefb1283a1'
+            '2f23be91455e529d16aa2bbf5f2c7fe3d10812749828fc752240c21b2b845849'
+            '6400a06e6eb3a24b650bc3b1bba9626622f132697987f718e7ed6a5b8c0317bc'
+            'f90f32cc95e8a63565831e15b6bebbd4e143078d237ae93ad179d923897f078d')
+b2sums=('1d644e48fa4fd3740712130b0d5756b75d70471cda2a7206083434ec89d288bd7487e633c8954ec038e3784d56d7a787e6cab1c93e5fbfcfc0b44a7b55b0debd'
         'SKIP'
         '02a10396c92ab93124139fc3e37b1d4d8654227556d0d11486390da35dfc401ff5784ad86d0d2aa7eacac12bc451aa2ff138749748c7e24deadd040d5404734c'
-        '2aca47ef177e8817f890522ccc7db9de0f368919989f65df775ac2c4ce1862d224b3d924cba04bb04fc5792f06d9f4e9653ec3089ddfdc8f432b9469714d0e12')
+        '5dc21a7a6f0b840e6a671dcf09a865e42f0e2c000d5e45d3f3202c02946a8ab2207858d0b2ef1004648b8c2963efb428298b263c8494be806dfc9b6af66d5413'
+        'ba6ebe349b3757411364a9ba2deaa30a8d71a247d518c159385977c2b4782771bda4edfc96bd954808617c9ba984d832471b63c11f5bd6003369bfe4051df31f'
+        '12fe811e1cc4701c9eb41c46dcc607487c7bb211c05b7c4436096de450dcecbef8ecead19d827d81b2c35aebd2339f1cb7bb36cba05c64d223a2cf84c0ddd166')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -117,8 +123,8 @@ _package() {
   ZSTD_CLEVEL=19 make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
-  # remove build and source links
-  rm "$modulesdir"/{source,build}
+  # remove build link
+  rm "$modulesdir"/build
 }
 
 _package-headers() {
