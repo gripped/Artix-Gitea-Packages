@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libplacebo
-  version: 6.338.1-1.1
+  version: 6.338.2-1
   arch:
     - x86_64
   pkgname:
     - libplacebo
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.338.1-1.1
+    version: 6.338.2-1
     packages:
-      - libplacebo-6.338.1-1.1-x86_64.pkg.tar.zst
+      - libplacebo-6.338.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
