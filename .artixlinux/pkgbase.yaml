@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pdm
-  version: 2.12.1-1
+  version: 2.12.2-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-pdm-2.11.1-1-any.pkg.tar.zst
   world:
-    version: 2.12.1-1
+    version: 2.12.2-1
     packages:
-      - python-pdm-2.12.1-1-any.pkg.tar.zst
+      - python-pdm-2.12.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
