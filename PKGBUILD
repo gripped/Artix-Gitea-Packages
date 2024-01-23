@@ -3,9 +3,9 @@
 
 pkgname=python-jaraco.functools
 # https://github.com/jaraco/jaraco.functools/blob/main/NEWS.rst
-pkgver=3.9.0
+pkgver=4.0.0
 # curl https://api.github.com/repos/jaraco/jaraco.functools/git/ref/tags/v$pkgver | jq -r .object.sha
-_tag=a51deece0e54c37c5811565a2997bce2a77fb0a7
+_tag=de64dd5fcf86393ebcb827e1dc9503595ff77327
 pkgrel=1
 pkgdesc='Functools like those found in stdlib'
 arch=('any')
@@ -16,8 +16,11 @@ makedepends=('git' 'python-build' 'python-installer' 'python-setuptools-scm' 'py
 checkdepends=('python-pytest' 'python-jaraco.classes')
 conflicts=('python-jaraco')
 replaces=('python-jaraco')
-source=("git+https://github.com/jaraco/jaraco.functools#tag=$_tag")
+source=("git+https://github.com/jaraco/jaraco.functools?signed#tag=$_tag")
 sha512sums=('SKIP')
+validpgpkeys=(
+  'CE380CF3044959B8F377DA03708E6CB181B4C47E' # https://github.com/jaraco.gpg
+)
 
 pkgver() {
   cd jaraco.functools
