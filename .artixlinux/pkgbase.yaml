@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mitmproxy
-  version: 10.1.5-2
+  version: 10.2.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.1.5-2
+    version: 10.2.2-1
     packages:
-      - mitmproxy-10.1.5-2-any.pkg.tar.zst
+      - mitmproxy-10.2.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
