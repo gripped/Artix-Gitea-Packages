@@ -8,7 +8,7 @@ pkgname=(
   postfix
   postfix-{cdb,ldap,lmdb,mysql,pcre,pgsql,sqlite}
 )
-pkgver=3.8.4
+pkgver=3.8.5
 pkgrel=1
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
@@ -19,7 +19,7 @@ license=(
 )
 depends=(glibc esysusers etmpfiles)
 makedepends=(
-  db
+  db5.3
   icu
   libldap
   libnsl
@@ -31,7 +31,6 @@ makedepends=(
   postgresql-libs
   sqlite
   tinycdb
-  zlib
 )
 source=(
   https://de.postfix.org/ftpmirror/official/$pkgbase-$pkgver.tar.gz
@@ -40,12 +39,12 @@ source=(
   $pkgbase.sysusers
   $pkgbase.tmpfiles
 )
-sha512sums=('5bae3d62e104714aead1fff28a595bab4315227382f53c8dae2a231f4240e31abda19c1e3befc1db4c89bc5d66c9a43830390365aadabdac5cf36b493c5c48c7'
+sha512sums=('26005da5750e7af742f4fc7596ae8320467176e069546c3487418c663b54f56734b4a6541665b8d72d94df2e0fd4f68a2bcc44c50a6d950334d5a5fb2293dff4'
             'SKIP'
             '7b2785aa8120ca3ff91b405baf675e9e11f8d58b18a9b842672e7ae30932febddac10556a70823d8746fcb160bceb4dbabdee45cf46b02fc0127057656fb85c4'
             'a7f15970f613ae7b98ce1b84ca0a6034ce3cc7b2b9ce7160dad9731f740fb762f4a54f44acceb5f06f8744fa9e952b088086af8a69da388a600b742a3cda37f2'
             'd08574a6acd595fc146513c92dc1bb341c3432d67de1e93ab73a7ce60e385dd34f3a55e3d3d7aec5f358ac4aae260f028599ac47650ebc663cea3043a760a7bc')
-b2sums=('200ce3d72444da05e42fc8627002d53d68c1b3d78b7f74b0130ac958c23d16454783ef4849a8c9a4e3cba8ae36646e921f7e94ac4fb819b597e1a5ab1a875272'
+b2sums=('0de999c47a4130eb3418ec60b23c10be405b9bc4b2a6022671f9dc4713256d2b81d3b43f01d89e02d2593f87109dcde366b0265eb0cb13cb3118d0e60e36b48b'
         'SKIP'
         'b5f19e0619f1fb017cd889c14e341c21146b3afe7b9eefcdb7fb1eb83a357434b899d1e92f3ab0023c78ef8f2de6ae54c4599ee0f0bd04d257f4ca0a4dc9a16c'
         'db58b7deb24cea16fb84f56680f0000683f72e11a95039969878e3819607aad5e65af9d9f50007e7710609065c0e3ebb9b30c1d929162b74eca5e74434d82cf1'
@@ -86,6 +85,7 @@ build() {
     '-DDEF_SENDMAIL_PATH=\"/usr/bin/sendmail\"'
     '-DDEF_README_DIR=\"/usr/share/doc/postfix\"'
     '-DDEF_MANPAGE_DIR=\"/usr/share/man\"'
+    '-DHAS_DB' '-I/usr/include/db5.3'
   )
   # NOTE: descriptions of options in makedefs
   local make_options=(
@@ -94,7 +94,7 @@ build() {
     shared=yes
     dynamicmaps=yes
     CCARGS="${ccargs[*]}"
-    AUXLIBS="$(pkgconf --libs openssl libsasl2) -lnsl"
+    AUXLIBS="$(pkgconf --libs openssl libsasl2) -lnsl -L/usr/lib/db5.3/ -ldb -Wl,-R,/usr/lib/db5.3"
     AUXLIBS_LDAP='-lldap -llber'
     AUXLIBS_LMDB="$(pkgconf --libs lmdb)"
     AUXLIBS_PCRE="$(pcre2-config --libs8)"
@@ -119,13 +119,12 @@ package_postfix() {
   local _files_dir="$pkgdir/etc/$pkgbase/$pkgbase-files.d"
 
   depends+=(
-    db
+    db5.3
     icu libicuuc.so
     libnsl libnsl.so
     libsasl libsasl2.so
     openssl libcrypto.so libssl.so
     sh
-    zlib
   )
   optdepends=(
     'perl: for postfix-collate.pl, postfix-tlstype.pl and qshape'
@@ -216,6 +215,7 @@ package_postfix-cdb() {
   pkgdesc+=' (CDB integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_postfix-ldap() {
@@ -226,6 +226,7 @@ package_postfix-ldap() {
   pkgdesc+=' (LDAP integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_postfix-lmdb() {
@@ -236,6 +237,7 @@ package_postfix-lmdb() {
   pkgdesc+=' (LMDB integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_postfix-mysql() {
@@ -246,6 +248,7 @@ package_postfix-mysql() {
   pkgdesc+=' (MySQL integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_postfix-pcre() {
@@ -256,6 +259,7 @@ package_postfix-pcre() {
   pkgdesc+=' (PCRE integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_postfix-pgsql() {
@@ -266,6 +270,7 @@ package_postfix-pgsql() {
   pkgdesc+=' (PostgreSQL integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_postfix-sqlite() {
@@ -276,4 +281,5 @@ package_postfix-sqlite() {
   pkgdesc+=' (SQLite integration)'
 
   mv -v $pkgname/* "$pkgdir"
+  install -vDm 644 $pkgbase-$pkgver/{LICENSE,COPYRIGHT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }

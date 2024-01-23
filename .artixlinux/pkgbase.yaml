@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postfix
-  version: 3.8.4-1
+  version: 3.8.5-1
   arch:
     - x86_64
   pkgname:
@@ -14,7 +14,7 @@ pkgbase:
     - postfix-pgsql
     - postfix-sqlite
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -35,8 +35,16 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.8.5-1
+    packages:
+      - postfix-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-cdb-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-ldap-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-lmdb-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-mysql-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-pcre-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-pgsql-3.8.5-1-x86_64.pkg.tar.zst
+      - postfix-sqlite-3.8.5-1-x86_64.pkg.tar.zst
   world:
     version: 3.8.4-1
     packages:
