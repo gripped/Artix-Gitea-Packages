@@ -1,27 +1,34 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Kessia 'even' Pinheiro <kessiapinheiro at gmail.com
 # Contributor: Bjorn Lindeijer <bjorn lindeijer nl>
 
 pkgname=telepathy-glib
 pkgver=0.24.2
-pkgrel=2.1
-pkgdesc="GLib bindings for the Telepathy D-Bus protocol"
-arch=(x86_64)
-url="http://telepathy.freedesktop.org"
-license=(LGPL2.1)
-depends=(dbus-glib)
-makedepends=(libxslt vala gobject-introspection python)
-source=(https://telepathy.freedesktop.org/releases/$pkgname/$pkgname-$pkgver.tar.gz)
-sha256sums=('e32097e8609d87b2de137a6418e4c4f8409886eada3bb5f6e7795cbaa0c8653c')
+pkgrel=3
+pkgdesc='GLib bindings for the Telepathy D-Bus protocol'
+arch=('x86_64')
+url='https://telepathy.freedesktop.org/'
+license=('LGPL-2.1-or-later')
+depends=('dbus' 'dbus-glib' 'glib2' 'glibc')
+makedepends=('gobject-introspection' 'vala')
+source=("https://telepathy.freedesktop.org/releases/$pkgname/$pkgname-$pkgver.tar.gz"{,.asc})
+sha256sums=('b0a374d771cdd081125f38c3abd079657642301c71a543d555e2bf21919273f0'
+            'SKIP')
+validpgpkeys=('AA33B0D27868E36C151780F0FE0B6D736B1195ED') # Alexandr Akulich <akulichalexander@gmail.com>
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr \
       --libexecdir=/usr/lib/telepathy \
-      --enable-vala-bindings \
-      --enable-static=no
+      --enable-vala-bindings
   make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  make check
 }
 
 package() {
