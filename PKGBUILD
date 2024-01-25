@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
 # Contributor: TDY <tdy@gmx.com>
 # Contributor: zhuqin <zhuqin83@gmail.com>
 
 pkgname=diffuse
-pkgver=0.8.2
+pkgver=0.9.0
 pkgrel=1
 pkgdesc='Graphical tool for merging and comparing text files'
 arch=(any)
@@ -12,7 +13,7 @@ url='https://github.com/MightyCreak/diffuse'
 license=(GPL)
 depends=(python-cairo python-gobject)
 makedepends=(git meson ninja)
-source=("git+$url#commit=c0cefac1c4ab99a309b65002e820f5c815e368e1") # tag: v0.8.2
+source=("git+$url#commit=6510966ae9ae278d811f0efc94f4b624bd66effa") # tag: v0.9.0
 b2sums=('SKIP')
 
 build() {
