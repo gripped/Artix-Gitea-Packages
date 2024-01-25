@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mgba
-  version: 0.10.2-2
+  version: 0.10.3-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - mgba-qt
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,8 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.10.2-2
+    version: 0.10.3-1
     packages:
-      - libmgba-0.10.2-2-x86_64.pkg.tar.zst
-      - mgba-sdl-0.10.2-2-x86_64.pkg.tar.zst
-      - mgba-qt-0.10.2-2-x86_64.pkg.tar.zst
+      - libmgba-0.10.3-1-x86_64.pkg.tar.zst
+      - mgba-sdl-0.10.3-1-x86_64.pkg.tar.zst
+      - mgba-qt-0.10.3-1-x86_64.pkg.tar.zst
