@@ -2,7 +2,7 @@
 # Contributor: hexchain <i@hexchain.org>
 pkgname=telegram-desktop
 pkgver=4.14.9
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
