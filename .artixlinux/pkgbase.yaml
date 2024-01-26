@@ -8,22 +8,20 @@ pkgbase:
     - glib2
     - glib2-docs
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 2.79.0+r48+g4ba14ff28-1
-    packages:
-      - glib2-2.79.0+r48+g4ba14ff28-1-x86_64.pkg.tar.zst
-      - glib2-docs-2.79.0+r48+g4ba14ff28-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   system:
     version: 2.78.3-1
     packages:
