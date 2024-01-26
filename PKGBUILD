@@ -16,36 +16,42 @@ license=('LGPL' 'MPL')
 depends=($_pkgname 'lib32-zlib' 'lib32-gcc-libs')
 makedepends=('cmake' 'utf8cpp')
 source=("https://taglib.github.io/releases/$_pkgname-$pkgver.tar.gz"
-         https://github.com/taglib/taglib/commit/dfef09f1.patch)
+	https://github.com/taglib/taglib/commit/dfef09f1.patch
+	0001-utf8cpp-path.patch)
 md5sums=('1826bf7e8486246a23fd98579f666413'
-         '8749e20e9df522f744b4b44b1a95d2bd')
+	'8749e20e9df522f744b4b44b1a95d2bd'
+	'0fdb005abd0a26e9ce60b48fd4e75091')
 sha256sums=('e36ea877a6370810b97d84cf8f72b1e4ed205149ab3ac8232d44c850f38a2859'
-            'bef9bf3cb5cb342e339612ca9fb9d9020ddd3307af15db0402507e7dcbcf35a2')
+	'bef9bf3cb5cb342e339612ca9fb9d9020ddd3307af15db0402507e7dcbcf35a2'
+	'5a2e2830efafc9cfc8be11f645df955e40d1c8ef8ba446b1a40493712aee6ddc')
 
 prepare() {
-  mkdir -p build
+	mkdir -p build
 
-  patch -d $_pkgname-$pkgver -Rp1 < dfef09f1.patch # https://github.com/taglib/taglib/issues/1211
+	patch -d $_pkgname-$pkgver -Rp1 <dfef09f1.patch # https://github.com/taglib/taglib/issues/1211
+	patch -d $_pkgname-$pkgver -p1 <0001-utf8cpp-path.patch
 }
 
 build() {
-  export CC='gcc -m32'
-  export CXX='g++ -m32'
-  export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
+	export CC='gcc -m32'
+	export CXX='g++ -m32'
+	export PKG_CONFIG_PATH='/usr/lib32/pkgconfig'
+	export CXXFLAGS="$CXXFLAGS -I/usr/include/utf8cpp"
 
-  cd build
-  cmake ../${_pkgname}-${pkgver} \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib32 \
-    -DBUILD_SHARED_LIBS=ON
-  make
+	cd build
+	cmake ../${_pkgname}-${pkgver} \
+		-DCMAKE_PREFIX_PATH=/usr \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib32 \
+		-DBUILD_SHARED_LIBS=ON
+	make
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+	cd build
+	make DESTDIR="${pkgdir}" install
 
-  cd "$pkgdir/usr"
-  rm -rf {include,share}/
-  mv bin/taglib-config{,-32}
+	cd "$pkgdir/usr"
+	rm -rf {include,share}/
+	mv bin/taglib-config{,-32}
 }
