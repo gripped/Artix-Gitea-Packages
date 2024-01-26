@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - lib32-acl
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 2.3.1-2
+    packages:
+      - lib32-acl-2.3.1-2-x86_64.pkg.tar.zst
   lib32:
     version: 2.3.1-2
     packages:
