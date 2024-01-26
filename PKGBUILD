@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=cryptsetup
-pkgver=2.6.1
-pkgrel=3
+pkgver=2.7.0
+pkgrel=1
 pkgdesc='Userspace setup tool for transparent encryption of block devices using dm-crypt'
 arch=(x86_64)
 license=('GPL')
@@ -17,7 +17,7 @@ validpgpkeys=('2A2918243FDE46648D0686F9D9B0577BD93E98FC') # Milan Broz <gmazylan
 source=("https://www.kernel.org/pub/linux/utils/cryptsetup/v${pkgver%.*}/${pkgname}-${pkgver}.tar."{xz,sign}
         'hooks-encrypt'
         'install-encrypt')
-sha256sums=('410ded65a1072ab9c8e41added37b9729c087fef4d2db02bb4ef529ad6da4693'
+sha256sums=('94003a00cd5a81944f45e8dc529e0cfd2a6ff629bd2cd21cf5e574e465daf795'
             'SKIP'
             '839e961e053512293052250b424f38c347cb46c14cbd51d7e2705b3f5378ec02'
             '2b71c6c56ef81e5bf4f49dcc08dbd1651b46bda51a8f75a0a342b344b2d0eccd')
