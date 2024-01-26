@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-taglib
-  version: 1.13.1-1
+  version: 2.0-2
   arch:
     - x86_64
   pkgname:
     - lib32-taglib
 actions:
-  addRepo: null
+  addRepo: lib32-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,8 +34,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 2.0-2
+    packages:
+      - lib32-taglib-2.0-2-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
