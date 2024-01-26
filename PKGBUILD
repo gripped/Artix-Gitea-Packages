@@ -3,303 +3,311 @@
 
 pkgbase=lib32-gstreamer
 pkgname=(
-  lib32-gstreamer
-  lib32-gst-plugins-base-libs
-  lib32-gst-plugins-base
-  lib32-gst-plugins-good
+	lib32-gstreamer
+	lib32-gst-plugins-base-libs
+	lib32-gst-plugins-base
+	lib32-gst-plugins-good
 )
-pkgver=1.22.8
-pkgrel=2
+pkgver=1.22.9
+pkgrel=1
 pkgdesc="Multimedia graph framework (32-bit)"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
 makedepends=(
-  # superproject
-  git meson
+	# superproject
+	git meson
 
-  # gstreamer
-  lib32-gtk3 lib32-libcap lib32-libelf lib32-libunwind
+	# gstreamer
+	lib32-gtk3 lib32-libcap lib32-libelf lib32-libunwind
 
-  # gst-plugins-base
-  lib32-alsa-lib lib32-cdparanoia lib32-libdrm lib32-libglvnd lib32-libgudev
-  lib32-libjpeg lib32-libpng lib32-libtheora lib32-libx11 lib32-libxi
-  lib32-libxv lib32-opus lib32-orc lib32-pango lib32-sdl2 lib32-wayland
-  lib32-zlib wayland-protocols
+	# gst-plugins-base
+	lib32-alsa-lib lib32-cdparanoia lib32-libdrm lib32-libglvnd lib32-libgudev
+	lib32-libjpeg lib32-libpng lib32-libtheora lib32-libx11 lib32-libxi
+	lib32-libxv lib32-opus lib32-orc lib32-pango lib32-sdl2 lib32-wayland
+	lib32-zlib wayland-protocols
 
-  # gst-plugins-good
-  lib32-aalib lib32-cairo lib32-flac lib32-gdk-pixbuf2 lib32-jack2
-  lib32-libavc1394 lib32-libcaca lib32-libdv lib32-libiec61883 lib32-libpulse
-  lib32-libraw1394 lib32-libshout lib32-libsoup3 lib32-libvpx lib32-mpg123
-  lib32-nettle lib32-taglib lib32-twolame lib32-v4l-utils lib32-wavpack
-  lib32-libvpx lib32-libxdamage lib32-mpg123 lib32-speex lib32-taglib
-  lib32-twolame lib32-v4l-utils lib32-wavpack
+	# gst-plugins-good
+	lib32-aalib lib32-cairo lib32-flac lib32-gdk-pixbuf2 lib32-jack2
+	lib32-libavc1394 lib32-libcaca lib32-libdv lib32-libiec61883 lib32-libpulse
+	lib32-libraw1394 lib32-libshout lib32-libsoup3 lib32-libvpx lib32-mpg123
+	lib32-nettle lib32-taglib lib32-twolame lib32-v4l-utils lib32-wavpack
+	lib32-libvpx lib32-libxdamage lib32-mpg123 lib32-speex lib32-taglib
+	lib32-twolame lib32-v4l-utils lib32-wavpack
 )
 checkdepends=(xorg-server-xvfb)
 source=(
-  "git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=$pkgver"
-  0001-HACK-meson-Disable-broken-tests.patch
+	"git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=$pkgver"
+	0001-HACK-meson-Disable-broken-tests.patch
 )
 b2sums=('SKIP'
-        '1887212e956a617130469c6afbd387a555d388dc36b467505b3e5248d0e6a273886fd0500d0977b714075604c61fe149a77ea05ce785cfe27e3eae0999eecb3f')
+	'1887212e956a617130469c6afbd387a555d388dc36b467505b3e5248d0e6a273886fd0500d0977b714075604c61fe149a77ea05ce785cfe27e3eae0999eecb3f')
 validpgpkeys=(
-  D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
+	D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
 
 prepare() {
-  cd gstreamer
+	cd gstreamer
 
-  # Disable broken tests
-  git apply -3 ../0001-HACK-meson-Disable-broken-tests.patch
+	# Disable broken tests
+	git apply -3 ../0001-HACK-meson-Disable-broken-tests.patch
 }
 
 build() {
-  local meson_options=(
-    --cross-file lib32
-    --libexecdir lib32
+	local meson_options=(
+		--cross-file lib32
+		--libexecdir lib32
 
-    # Superproject options
-    -D bad=disabled
-    -D devtools=disabled
-    -D doc=disabled
-    -D examples=disabled
-    -D ges=disabled
-    -D gobject-cast-checks=disabled
-    -D gpl=enabled
-    -D gst-examples=disabled
-    -D introspection=disabled
-    -D libav=disabled
-    -D libnice=disabled
-    -D omx=disabled
-    -D orc-source=system
-    -D package-origin="https://www.artixlinux.org/"
-    -D python=disabled
-    -D qt5=disabled
-    -D rs=disabled
-    -D rtsp_server=disabled
-    -D sharp=disabled
-    -D ugly=disabled
-    -D vaapi=disabled
+		# Superproject options
+		-D bad=disabled
+		-D devtools=disabled
+		-D doc=disabled
+		-D examples=disabled
+		-D ges=disabled
+		-D gobject-cast-checks=disabled
+		-D gpl=enabled
+		-D gst-examples=disabled
+		-D introspection=disabled
+		-D libav=disabled
+		-D libnice=disabled
+		-D omx=disabled
+		-D orc-source=system
+		-D package-origin="https://www.artixlinux.org/"
+		-D python=disabled
+		-D qt5=disabled
+		-D rs=disabled
+		-D rtsp_server=disabled
+		-D sharp=disabled
+		-D ugly=disabled
+		-D vaapi=disabled
 
-    # Package names
-    -D gstreamer:package-name="Arch Linux lib32-gstreamer $pkgver-$pkgrel"
-    -D gst-plugins-base:package-name="Arch Linux lib32-gst-plugins-base $pkgver-$pkgrel"
-    -D gst-plugins-good:package-name="Arch Linux lib32-gst-plugins-good $pkgver-$pkgrel"
+		# Package names
+		-D gstreamer:package-name="Arch Linux lib32-gstreamer $pkgver-$pkgrel"
+		-D gst-plugins-base:package-name="Arch Linux lib32-gst-plugins-base $pkgver-$pkgrel"
+		-D gst-plugins-good:package-name="Arch Linux lib32-gst-plugins-good $pkgver-$pkgrel"
 
-    # Subproject options
-    -D gstreamer:bash-completion=disabled
-    -D gstreamer:dbghelp=disabled
-    -D gstreamer:ptp-helper-permissions=capabilities
-    -D gst-plugins-base:gl-graphene=disabled
-    -D gst-plugins-base:libvisual=disabled
-    -D gst-plugins-base:tremor=disabled
-    -D gst-plugins-good:lame=disabled
-    -D gst-plugins-good:qt6=disabled
-    -D gst-plugins-good:rpicamsrc=disabled
-  )
+		# Subproject options
+		-D gstreamer:bash-completion=disabled
+		-D gstreamer:dbghelp=disabled
+		-D gstreamer:ptp-helper-permissions=capabilities
+		-D gst-plugins-base:gl-graphene=disabled
+		-D gst-plugins-base:libvisual=disabled
+		-D gst-plugins-base:tremor=disabled
+		-D gst-plugins-good:lame=disabled
+		-D gst-plugins-good:qt6=disabled
+		-D gst-plugins-good:rpicamsrc=disabled
+	)
 
-  artix-meson gstreamer build "${meson_options[@]}"
-  meson configure build  # Print config
-  meson compile -C build
+	artix-meson gstreamer build "${meson_options[@]}"
+	meson configure build # Print config
+	meson compile -C build
 }
 
 check() (
-  export XDG_RUNTIME_DIR="$PWD/runtime-dir"
-  mkdir -p -m 700 "$XDG_RUNTIME_DIR"
+	export XDG_RUNTIME_DIR="$PWD/runtime-dir"
+	mkdir -p -m 700 "$XDG_RUNTIME_DIR"
 
-  # Flaky due to timeouts
-  xvfb-run -s '-nolisten local' \
-    meson test -C build --print-errorlogs || :
+	# Flaky due to timeouts
+	xvfb-run -s '-nolisten local' \
+		meson test -C build --print-errorlogs || :
 )
 
 _install() {
-  local src dir
-  for src in "${files[@]}"; do
-    dir="$pkgdir/$(dirname "$src")"
-    mkdir -p "$dir"
-    mv -v "$src" "$dir"
-  done
+	local src dir
+	for src in "${files[@]}"; do
+		dir="$pkgdir/$(dirname "$src")"
+		mkdir -p "$dir"
+		mv -v "$src" "$dir"
+	done
 }
 
 package_lib32-gstreamer() {
-  pkgdesc+=" - core"
-  depends=(
-    lib32-glib2 lib32-libcap lib32-libelf lib32-libunwind lib32-libxml2
-    gstreamer
-  )
-  optdepends=()
-  install=lib32-gstreamer.install
+	pkgdesc+=" - core"
+	depends=(
+		lib32-glib2 lib32-libcap lib32-libelf lib32-libunwind lib32-libxml2
+		gstreamer
+	)
+	optdepends=()
+	install=lib32-gstreamer.install
 
-  meson install -C build --destdir "$srcdir/root"
+	meson install -C build --destdir "$srcdir/root"
 
-  rm -R "$srcdir"/root/usr/{share,include}
+	rm -R "$srcdir"/root/usr/{share,include}
 
-  for _i in "$srcdir"/root/usr/bin/*; do
-    mv "${_i}" "${_i}-32"
-  done
+	for _i in "$srcdir"/root/usr/bin/*; do
+		mv "${_i}" "${_i}-32"
+	done
 
-  cd root; local files=(
-    usr/lib32/libgst{reamer,base,check,controller,net}-1.0.so*
-    usr/lib32/pkgconfig/gstreamer{,-base,-check,-controller,-net}-1.0.pc
+	cd root
+	local files=(
+		usr/lib32/libgst{reamer,base,check,controller,net}-1.0.so*
+		usr/lib32/pkgconfig/gstreamer{,-base,-check,-controller,-net}-1.0.pc
 
-    usr/lib32/gstreamer-1.0/gst-ptp-helper
-    usr/lib32/gstreamer-1.0/gst-plugin-scanner
-    usr/lib32/gstreamer-1.0/libgstcoreelements.so
-    usr/lib32/gstreamer-1.0/libgstcoretracers.so
+		usr/lib32/gstreamer-1.0/gst-ptp-helper
+		usr/lib32/gstreamer-1.0/gst-plugin-scanner
+		usr/lib32/gstreamer-1.0/libgstcoreelements.so
+		usr/lib32/gstreamer-1.0/libgstcoretracers.so
 
-    usr/bin/gst-{inspect,launch,stats,tester,typefind}-1.0-32
-  ); _install
+		usr/bin/gst-{inspect,launch,stats,tester,typefind}-1.0-32
+	)
+	_install
 }
 
 package_lib32-gst-plugins-base-libs() {
-  pkgdesc+=" - base"
-  depends=(
-    "lib32-gstreamer=$pkgver"
-    lib32-libgl lib32-libgudev lib32-libxi lib32-libxv lib32-mesa lib32-orc
-    lib32-wayland
-    gst-plugins-base-libs
-  )
+	pkgdesc+=" - base"
+	depends=(
+		"lib32-gstreamer=$pkgver"
+		lib32-libgl lib32-libgudev lib32-libxi lib32-libxv lib32-mesa lib32-orc
+		lib32-wayland
+		gst-plugins-base-libs
+	)
 
-  cd root; local files=(
-    usr/lib32/libgst{allocators,app,audio,fft,gl,pbutils,riff,rtp,rtsp,sdp,tag,video}-1.0.so*
-    usr/lib32/pkgconfig/gstreamer-{allocators,app,audio,fft,gl{,-egl,-prototypes,-wayland,-x11},pbutils,riff,rtp,rtsp,sdp,tag,video}-1.0.pc
+	cd root
+	local files=(
+		usr/lib32/libgst{allocators,app,audio,fft,gl,pbutils,riff,rtp,rtsp,sdp,tag,video}-1.0.so*
+		usr/lib32/pkgconfig/gstreamer-{allocators,app,audio,fft,gl{,-egl,-prototypes,-wayland,-x11},pbutils,riff,rtp,rtsp,sdp,tag,video}-1.0.pc
 
-    usr/lib32/pkgconfig/gstreamer-plugins-base-1.0.pc
-    usr/lib32/gstreamer-1.0/include/gst/gl/gstglconfig.h
-    usr/lib32/gstreamer-1.0/libgstadder.so
-    usr/lib32/gstreamer-1.0/libgstapp.so
-    usr/lib32/gstreamer-1.0/libgstaudioconvert.so
-    usr/lib32/gstreamer-1.0/libgstaudiomixer.so
-    usr/lib32/gstreamer-1.0/libgstaudiorate.so
-    usr/lib32/gstreamer-1.0/libgstaudioresample.so
-    usr/lib32/gstreamer-1.0/libgstaudiotestsrc.so
-    usr/lib32/gstreamer-1.0/libgstcompositor.so
-    usr/lib32/gstreamer-1.0/libgstencoding.so
-    usr/lib32/gstreamer-1.0/libgstgio.so
-    usr/lib32/gstreamer-1.0/libgstoverlaycomposition.so
-    usr/lib32/gstreamer-1.0/libgstpbtypes.so
-    usr/lib32/gstreamer-1.0/libgstplayback.so
-    usr/lib32/gstreamer-1.0/libgstrawparse.so
-    usr/lib32/gstreamer-1.0/libgstsubparse.so
-    usr/lib32/gstreamer-1.0/libgsttcp.so
-    usr/lib32/gstreamer-1.0/libgsttypefindfunctions.so
-    usr/lib32/gstreamer-1.0/libgstvideoconvertscale.so
-    usr/lib32/gstreamer-1.0/libgstvideorate.so
-    usr/lib32/gstreamer-1.0/libgstvideotestsrc.so
-    usr/lib32/gstreamer-1.0/libgstvolume.so
-    usr/lib32/gstreamer-1.0/libgstximagesink.so
-    usr/lib32/gstreamer-1.0/libgstxvimagesink.so
+		usr/lib32/pkgconfig/gstreamer-plugins-base-1.0.pc
+		usr/lib32/gstreamer-1.0/include/gst/gl/gstglconfig.h
+		usr/lib32/gstreamer-1.0/libgstadder.so
+		usr/lib32/gstreamer-1.0/libgstapp.so
+		usr/lib32/gstreamer-1.0/libgstaudioconvert.so
+		usr/lib32/gstreamer-1.0/libgstaudiomixer.so
+		usr/lib32/gstreamer-1.0/libgstaudiorate.so
+		usr/lib32/gstreamer-1.0/libgstaudioresample.so
+		usr/lib32/gstreamer-1.0/libgstaudiotestsrc.so
+		usr/lib32/gstreamer-1.0/libgstcompositor.so
+		usr/lib32/gstreamer-1.0/libgstencoding.so
+		usr/lib32/gstreamer-1.0/libgstgio.so
+		usr/lib32/gstreamer-1.0/libgstoverlaycomposition.so
+		usr/lib32/gstreamer-1.0/libgstpbtypes.so
+		usr/lib32/gstreamer-1.0/libgstplayback.so
+		usr/lib32/gstreamer-1.0/libgstrawparse.so
+		usr/lib32/gstreamer-1.0/libgstsubparse.so
+		usr/lib32/gstreamer-1.0/libgsttcp.so
+		usr/lib32/gstreamer-1.0/libgsttypefindfunctions.so
+		usr/lib32/gstreamer-1.0/libgstvideoconvertscale.so
+		usr/lib32/gstreamer-1.0/libgstvideorate.so
+		usr/lib32/gstreamer-1.0/libgstvideotestsrc.so
+		usr/lib32/gstreamer-1.0/libgstvolume.so
+		usr/lib32/gstreamer-1.0/libgstximagesink.so
+		usr/lib32/gstreamer-1.0/libgstxvimagesink.so
 
-    usr/bin/gst-{device-monitor,discoverer,play}-1.0-32
-  ); _install
+		usr/bin/gst-{device-monitor,discoverer,play}-1.0-32
+	)
+	_install
 }
 
 package_lib32-gst-plugins-base() {
-  pkgdesc+=" - base plugins"
-  depends=(
-    "lib32-gst-plugins-base-libs=$pkgver"
-    lib32-alsa-lib lib32-cdparanoia lib32-libjpeg lib32-libpng lib32-libtheora
-    lib32-libvorbis lib32-opus lib32-pango
-    gst-plugins-base
-  )
+	pkgdesc+=" - base plugins"
+	depends=(
+		"lib32-gst-plugins-base-libs=$pkgver"
+		lib32-alsa-lib lib32-cdparanoia lib32-libjpeg lib32-libpng lib32-libtheora
+		lib32-libvorbis lib32-opus lib32-pango
+		gst-plugins-base
+	)
 
-  cd root; local files=(
-    usr/lib32/gstreamer-1.0/libgstalsa.so
-    usr/lib32/gstreamer-1.0/libgstcdparanoia.so
-    usr/lib32/gstreamer-1.0/libgstogg.so
-    usr/lib32/gstreamer-1.0/libgstopengl.so
-    usr/lib32/gstreamer-1.0/libgstopus.so
-    usr/lib32/gstreamer-1.0/libgstpango.so
-    usr/lib32/gstreamer-1.0/libgsttheora.so
-    usr/lib32/gstreamer-1.0/libgstvorbis.so
-  ); _install
+	cd root
+	local files=(
+		usr/lib32/gstreamer-1.0/libgstalsa.so
+		usr/lib32/gstreamer-1.0/libgstcdparanoia.so
+		usr/lib32/gstreamer-1.0/libgstogg.so
+		usr/lib32/gstreamer-1.0/libgstopengl.so
+		usr/lib32/gstreamer-1.0/libgstopus.so
+		usr/lib32/gstreamer-1.0/libgstpango.so
+		usr/lib32/gstreamer-1.0/libgsttheora.so
+		usr/lib32/gstreamer-1.0/libgstvorbis.so
+	)
+	_install
 }
 
 package_lib32-gst-plugins-good() {
-  pkgdesc+=" - good plugins"
-  depends=(
-    "lib32-gst-plugins-base-libs=$pkgver"
-    lib32-aalib lib32-cairo lib32-flac lib32-gdk-pixbuf2 lib32-libavc1394
-    lib32-libcaca lib32-libdv lib32-libgudev lib32-libiec61883 lib32-libpulse
-    lib32-libraw1394 lib32-libshout lib32-libsoup3 lib32-libvpx lib32-libxdamage
-    lib32-mpg123 lib32-nettle lib32-speex lib32-taglib lib32-twolame
-    lib32-v4l-utils lib32-wavpack
-    libjack.so
-    gst-plugins-good
-  )
+	pkgdesc+=" - good plugins"
+	depends=(
+		"lib32-gst-plugins-base-libs=$pkgver"
+		lib32-aalib lib32-cairo lib32-flac lib32-gdk-pixbuf2 lib32-libavc1394
+		lib32-libcaca lib32-libdv lib32-libgudev lib32-libiec61883 lib32-libpulse
+		lib32-libraw1394 lib32-libshout lib32-libsoup3 lib32-libvpx lib32-libxdamage
+		lib32-mpg123 lib32-nettle lib32-speex lib32-taglib lib32-twolame
+		lib32-v4l-utils lib32-wavpack
+		libjack.so
+		gst-plugins-good
+	)
 
-  cd root; local files=(
-    usr/lib32/gstreamer-1.0/libgst1394.so
-    usr/lib32/gstreamer-1.0/libgstaasink.so
-    usr/lib32/gstreamer-1.0/libgstadaptivedemux2.so
-    usr/lib32/gstreamer-1.0/libgstalaw.so
-    usr/lib32/gstreamer-1.0/libgstalpha.so
-    usr/lib32/gstreamer-1.0/libgstalphacolor.so
-    usr/lib32/gstreamer-1.0/libgstapetag.so
-    usr/lib32/gstreamer-1.0/libgstaudiofx.so
-    usr/lib32/gstreamer-1.0/libgstaudioparsers.so
-    usr/lib32/gstreamer-1.0/libgstauparse.so
-    usr/lib32/gstreamer-1.0/libgstautodetect.so
-    usr/lib32/gstreamer-1.0/libgstavi.so
-    usr/lib32/gstreamer-1.0/libgstcacasink.so
-    usr/lib32/gstreamer-1.0/libgstcairo.so
-    usr/lib32/gstreamer-1.0/libgstcutter.so
-    usr/lib32/gstreamer-1.0/libgstdebug.so
-    usr/lib32/gstreamer-1.0/libgstdeinterlace.so
-    usr/lib32/gstreamer-1.0/libgstdtmf.so
-    usr/lib32/gstreamer-1.0/libgstdv.so
-    usr/lib32/gstreamer-1.0/libgsteffectv.so
-    usr/lib32/gstreamer-1.0/libgstequalizer.so
-    usr/lib32/gstreamer-1.0/libgstflac.so
-    usr/lib32/gstreamer-1.0/libgstflv.so
-    usr/lib32/gstreamer-1.0/libgstflxdec.so
-    usr/lib32/gstreamer-1.0/libgstgdkpixbuf.so
-    usr/lib32/gstreamer-1.0/libgstgoom.so
-    usr/lib32/gstreamer-1.0/libgstgoom2k1.so
-    usr/lib32/gstreamer-1.0/libgsticydemux.so
-    usr/lib32/gstreamer-1.0/libgstid3demux.so
-    usr/lib32/gstreamer-1.0/libgstimagefreeze.so
-    usr/lib32/gstreamer-1.0/libgstinterleave.so
-    usr/lib32/gstreamer-1.0/libgstisomp4.so
-    usr/lib32/gstreamer-1.0/libgstjack.so
-    usr/lib32/gstreamer-1.0/libgstjpeg.so
-    #usr/lib32/gstreamer-1.0/libgstlame.so
-    usr/lib32/gstreamer-1.0/libgstlevel.so
-    usr/lib32/gstreamer-1.0/libgstmatroska.so
-    usr/lib32/gstreamer-1.0/libgstmonoscope.so
-    usr/lib32/gstreamer-1.0/libgstmpg123.so
-    usr/lib32/gstreamer-1.0/libgstmulaw.so
-    usr/lib32/gstreamer-1.0/libgstmultifile.so
-    usr/lib32/gstreamer-1.0/libgstmultipart.so
-    usr/lib32/gstreamer-1.0/libgstnavigationtest.so
-    usr/lib32/gstreamer-1.0/libgstoss4.so
-    usr/lib32/gstreamer-1.0/libgstossaudio.so
-    usr/lib32/gstreamer-1.0/libgstpng.so
-    usr/lib32/gstreamer-1.0/libgstpulseaudio.so
-    usr/lib32/gstreamer-1.0/libgstreplaygain.so
-    usr/lib32/gstreamer-1.0/libgstrtp.so
-    usr/lib32/gstreamer-1.0/libgstrtpmanager.so
-    usr/lib32/gstreamer-1.0/libgstrtsp.so
-    usr/lib32/gstreamer-1.0/libgstshapewipe.so
-    usr/lib32/gstreamer-1.0/libgstshout2.so
-    usr/lib32/gstreamer-1.0/libgstsmpte.so
-    usr/lib32/gstreamer-1.0/libgstsoup.so
-    usr/lib32/gstreamer-1.0/libgstspectrum.so
-    usr/lib32/gstreamer-1.0/libgstspeex.so
-    usr/lib32/gstreamer-1.0/libgsttaglib.so
-    usr/lib32/gstreamer-1.0/libgsttwolame.so
-    usr/lib32/gstreamer-1.0/libgstudp.so
-    usr/lib32/gstreamer-1.0/libgstvideo4linux2.so
-    usr/lib32/gstreamer-1.0/libgstvideobox.so
-    usr/lib32/gstreamer-1.0/libgstvideocrop.so
-    usr/lib32/gstreamer-1.0/libgstvideofilter.so
-    usr/lib32/gstreamer-1.0/libgstvideomixer.so
-    usr/lib32/gstreamer-1.0/libgstvpx.so
-    usr/lib32/gstreamer-1.0/libgstwavenc.so
-    usr/lib32/gstreamer-1.0/libgstwavpack.so
-    usr/lib32/gstreamer-1.0/libgstwavparse.so
-    usr/lib32/gstreamer-1.0/libgstximagesrc.so
-    usr/lib32/gstreamer-1.0/libgstxingmux.so
-    usr/lib32/gstreamer-1.0/libgsty4menc.so
-  ); _install
+	cd root
+	local files=(
+		usr/lib32/gstreamer-1.0/libgst1394.so
+		usr/lib32/gstreamer-1.0/libgstaasink.so
+		usr/lib32/gstreamer-1.0/libgstadaptivedemux2.so
+		usr/lib32/gstreamer-1.0/libgstalaw.so
+		usr/lib32/gstreamer-1.0/libgstalpha.so
+		usr/lib32/gstreamer-1.0/libgstalphacolor.so
+		usr/lib32/gstreamer-1.0/libgstapetag.so
+		usr/lib32/gstreamer-1.0/libgstaudiofx.so
+		usr/lib32/gstreamer-1.0/libgstaudioparsers.so
+		usr/lib32/gstreamer-1.0/libgstauparse.so
+		usr/lib32/gstreamer-1.0/libgstautodetect.so
+		usr/lib32/gstreamer-1.0/libgstavi.so
+		usr/lib32/gstreamer-1.0/libgstcacasink.so
+		usr/lib32/gstreamer-1.0/libgstcairo.so
+		usr/lib32/gstreamer-1.0/libgstcutter.so
+		usr/lib32/gstreamer-1.0/libgstdebug.so
+		usr/lib32/gstreamer-1.0/libgstdeinterlace.so
+		usr/lib32/gstreamer-1.0/libgstdtmf.so
+		usr/lib32/gstreamer-1.0/libgstdv.so
+		usr/lib32/gstreamer-1.0/libgsteffectv.so
+		usr/lib32/gstreamer-1.0/libgstequalizer.so
+		usr/lib32/gstreamer-1.0/libgstflac.so
+		usr/lib32/gstreamer-1.0/libgstflv.so
+		usr/lib32/gstreamer-1.0/libgstflxdec.so
+		usr/lib32/gstreamer-1.0/libgstgdkpixbuf.so
+		usr/lib32/gstreamer-1.0/libgstgoom.so
+		usr/lib32/gstreamer-1.0/libgstgoom2k1.so
+		usr/lib32/gstreamer-1.0/libgsticydemux.so
+		usr/lib32/gstreamer-1.0/libgstid3demux.so
+		usr/lib32/gstreamer-1.0/libgstimagefreeze.so
+		usr/lib32/gstreamer-1.0/libgstinterleave.so
+		usr/lib32/gstreamer-1.0/libgstisomp4.so
+		usr/lib32/gstreamer-1.0/libgstjack.so
+		usr/lib32/gstreamer-1.0/libgstjpeg.so
+		#usr/lib32/gstreamer-1.0/libgstlame.so
+		usr/lib32/gstreamer-1.0/libgstlevel.so
+		usr/lib32/gstreamer-1.0/libgstmatroska.so
+		usr/lib32/gstreamer-1.0/libgstmonoscope.so
+		usr/lib32/gstreamer-1.0/libgstmpg123.so
+		usr/lib32/gstreamer-1.0/libgstmulaw.so
+		usr/lib32/gstreamer-1.0/libgstmultifile.so
+		usr/lib32/gstreamer-1.0/libgstmultipart.so
+		usr/lib32/gstreamer-1.0/libgstnavigationtest.so
+		usr/lib32/gstreamer-1.0/libgstoss4.so
+		usr/lib32/gstreamer-1.0/libgstossaudio.so
+		usr/lib32/gstreamer-1.0/libgstpng.so
+		usr/lib32/gstreamer-1.0/libgstpulseaudio.so
+		usr/lib32/gstreamer-1.0/libgstreplaygain.so
+		usr/lib32/gstreamer-1.0/libgstrtp.so
+		usr/lib32/gstreamer-1.0/libgstrtpmanager.so
+		usr/lib32/gstreamer-1.0/libgstrtsp.so
+		usr/lib32/gstreamer-1.0/libgstshapewipe.so
+		usr/lib32/gstreamer-1.0/libgstshout2.so
+		usr/lib32/gstreamer-1.0/libgstsmpte.so
+		usr/lib32/gstreamer-1.0/libgstsoup.so
+		usr/lib32/gstreamer-1.0/libgstspectrum.so
+		usr/lib32/gstreamer-1.0/libgstspeex.so
+		usr/lib32/gstreamer-1.0/libgsttaglib.so
+		usr/lib32/gstreamer-1.0/libgsttwolame.so
+		usr/lib32/gstreamer-1.0/libgstudp.so
+		usr/lib32/gstreamer-1.0/libgstvideo4linux2.so
+		usr/lib32/gstreamer-1.0/libgstvideobox.so
+		usr/lib32/gstreamer-1.0/libgstvideocrop.so
+		usr/lib32/gstreamer-1.0/libgstvideofilter.so
+		usr/lib32/gstreamer-1.0/libgstvideomixer.so
+		usr/lib32/gstreamer-1.0/libgstvpx.so
+		usr/lib32/gstreamer-1.0/libgstwavenc.so
+		usr/lib32/gstreamer-1.0/libgstwavpack.so
+		usr/lib32/gstreamer-1.0/libgstwavparse.so
+		usr/lib32/gstreamer-1.0/libgstximagesrc.so
+		usr/lib32/gstreamer-1.0/libgstxingmux.so
+		usr/lib32/gstreamer-1.0/libgsty4menc.so
+	)
+	_install
 }
