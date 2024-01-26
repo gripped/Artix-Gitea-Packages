@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Andrew Simmons <andrew.simmons@gmail.com>
 
 pkgname=thunar-media-tags-plugin
 pkgver=0.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Adds special features for media files to the Thunar File Manager"
 arch=('x86_64')
 license=('GPL')

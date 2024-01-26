@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: thunar-media-tags-plugin
-  version: 0.4.0-1
+  version: 0.4.0-2
   arch:
     - x86_64
   pkgname:
     - thunar-media-tags-plugin
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.0-2
+    packages:
+      - thunar-media-tags-plugin-0.4.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
