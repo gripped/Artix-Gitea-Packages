@@ -7,7 +7,7 @@ pkgname=(
   glib2
   glib2-docs
 )
-pkgver=2.79.0+r48+g4ba14ff28
+pkgver=2.78.4
 pkgrel=1
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
@@ -24,13 +24,10 @@ makedepends=(
   dbus
   gettext
   git
-  gi-docgen
-  gobject-introspection
+  gtk-doc
   libelf
   meson
   python
-  python-docutils
-  python-packaging
   shared-mime-info
   util-linux
 )
@@ -42,7 +39,7 @@ options=(
   debug
   staticlibs
 )
-_commit=4ba14ff28de90d1a1e9e7e1fee539edf73a82c7b  # main^0
+_commit=00edb7f7453a43cff343f9e99d49f2e421e4345c  # tags/2.78.4^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
@@ -77,8 +74,7 @@ build() {
   local meson_options=(
     --default-library both
     -D glib_debug=disabled
-    -D documentation=true
-    -D introspection=enabled
+    -D gtk_doc=true
     -D man=true
     -D selinux=disabled
     -D sysprof=enabled
@@ -124,7 +120,7 @@ package_glib2() {
 
   # Split docs
   mkdir -p docs/usr/share
-  mv {"$pkgdir",docs}/usr/share/doc
+  mv {"$pkgdir",docs}/usr/share/gtk-doc
 }
 
 package_glib2-docs() {
