@@ -27,6 +27,7 @@ makedepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
+  libcamera_transform.patch
 )
 b2sums=('SKIP')
 
@@ -37,6 +38,7 @@ pkgver() {
 
 prepare() {
   cd pipewire
+  patch -Np1 -i ../libcamera_transform.patch
 }
 
 build() {
