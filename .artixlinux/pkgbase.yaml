@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: atkmm-2.36
-  version: 2.36.2-1
+  version: 2.36.3-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.36.2-1
+    version: 2.36.3-1
     packages:
-      - atkmm-2.36-2.36.2-1-x86_64.pkg.tar.zst
-      - atkmm-2.36-docs-2.36.2-1-x86_64.pkg.tar.zst
+      - atkmm-2.36-2.36.3-1-x86_64.pkg.tar.zst
+      - atkmm-2.36-docs-2.36.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
