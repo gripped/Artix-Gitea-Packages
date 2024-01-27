@@ -74,10 +74,12 @@ checkdepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
+  libcamera_transform.patch
   artix-pipewire-launcher
   pipewire.desktop
 )
 b2sums=('SKIP'
+        '6a156bde02c21130a866b481657707e778a7bad87d8d5481943f173325ef2852a39b33f258260b2f41e0f8c4a41477410846c02e53cd96df9411e16b7a07d0af'
         'b24d6c83d6846dd9de8806ea5cd8da5745a13645cea6e0904c4ce6bfb2f018e189f698e2ff1d44e38538d1233b63fd3ad0c1492e3e3ed0d62ae78282ff696755'
         '9571effe6042a51a9ef770000e65c1f35aaf56bb07eb191407b5038bdee209dd49572b5f457312ea6b6fbab1b04454468d1b9ad57d8fa7e4e0a94773e7c07197')
 
@@ -88,6 +90,7 @@ pkgver() {
 
 prepare() {
   cd pipewire
+  patch -Np1 -i ../libcamera_transform.patch
 }
 
 build() {
