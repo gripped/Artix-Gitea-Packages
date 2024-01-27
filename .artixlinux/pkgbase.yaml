@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: protobuf
-  version: 25.1-1
+  version: 25.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 25.1-1
+    version: 25.2-1
     packages:
-      - protobuf-25.1-1-x86_64.pkg.tar.zst
-      - python-protobuf-25.1-1-x86_64.pkg.tar.zst
+      - protobuf-25.2-1-x86_64.pkg.tar.zst
+      - python-protobuf-25.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
