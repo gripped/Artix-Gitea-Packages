@@ -14,12 +14,12 @@ pkgbase:
     - postfix-pgsql
     - postfix-sqlite
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,16 +35,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.8.5-1
-    packages:
-      - postfix-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-cdb-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-ldap-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-lmdb-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-mysql-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-pcre-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-pgsql-3.8.5-1-x86_64.pkg.tar.zst
-      - postfix-sqlite-3.8.5-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 3.8.5-2
     packages:
