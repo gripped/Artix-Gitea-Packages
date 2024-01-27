@@ -9,7 +9,7 @@ pkgname=(
   postfix-{cdb,ldap,lmdb,mysql,pcre,pgsql,sqlite}
 )
 pkgver=3.8.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
 url="https://www.postfix.org/"
@@ -19,7 +19,7 @@ license=(
 )
 depends=(glibc esysusers etmpfiles)
 makedepends=(
-  db5.3
+  db
   icu
   libldap
   libnsl
@@ -85,7 +85,6 @@ build() {
     '-DDEF_SENDMAIL_PATH=\"/usr/bin/sendmail\"'
     '-DDEF_README_DIR=\"/usr/share/doc/postfix\"'
     '-DDEF_MANPAGE_DIR=\"/usr/share/man\"'
-    '-DHAS_DB' '-I/usr/include/db5.3'
   )
   # NOTE: descriptions of options in makedefs
   local make_options=(
@@ -94,7 +93,7 @@ build() {
     shared=yes
     dynamicmaps=yes
     CCARGS="${ccargs[*]}"
-    AUXLIBS="$(pkgconf --libs openssl libsasl2) -lnsl -L/usr/lib/db5.3/ -ldb -Wl,-R,/usr/lib/db5.3"
+    AUXLIBS="$(pkgconf --libs openssl libsasl2) -lnsl"
     AUXLIBS_LDAP='-lldap -llber'
     AUXLIBS_LMDB="$(pkgconf --libs lmdb)"
     AUXLIBS_PCRE="$(pcre2-config --libs8)"
@@ -119,7 +118,7 @@ package_postfix() {
   local _files_dir="$pkgdir/etc/$pkgbase/$pkgbase-files.d"
 
   depends+=(
-    db5.3
+    db
     icu libicuuc.so
     libnsl libnsl.so
     libsasl libsasl2.so
