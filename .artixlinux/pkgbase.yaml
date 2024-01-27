@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jami-daemon
-  version: 20230922-1
+  version: 20231123-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230922-1
+    version: 20231123-1
     packages:
-      - jami-daemon-20230922-1-x86_64.pkg.tar.zst
+      - jami-daemon-20231123-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
