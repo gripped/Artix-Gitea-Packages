@@ -29,7 +29,8 @@ source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
   libcamera_transform.patch
 )
-b2sums=('SKIP')
+b2sums=('SKIP'
+        '6a156bde02c21130a866b481657707e778a7bad87d8d5481943f173325ef2852a39b33f258260b2f41e0f8c4a41477410846c02e53cd96df9411e16b7a07d0af')
 
 pkgver() {
   cd pipewire
