@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: pangomm-2.48
-  version: 2.50.1-1
+  version: 2.50.2-1
   arch:
     - x86_64
   pkgname:
     - pangomm-2.48
     - pangomm-2.48-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.50.1-1
+    version: 2.50.2-1
     packages:
-      - pangomm-2.48-2.50.1-1-x86_64.pkg.tar.zst
-      - pangomm-2.48-docs-2.50.1-1-x86_64.pkg.tar.zst
+      - pangomm-2.48-2.50.2-1-x86_64.pkg.tar.zst
+      - pangomm-2.48-docs-2.50.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
