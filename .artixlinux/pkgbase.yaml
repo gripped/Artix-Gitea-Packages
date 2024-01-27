@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - zathura-pdf-mupdf
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -43,12 +43,12 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
     version: 0.4.1-14
     packages:
       - zathura-pdf-mupdf-0.4.1-14-x86_64.pkg.tar.zst
-  galaxy-gremlins:
-    version: null
-    packages: []
   galaxy:
     version: 0.4.1-12.1
     packages:
