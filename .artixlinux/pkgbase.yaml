@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: cinnamon-session
-  version: 6.0.1-1
+  version: 6.0.2-1
   arch:
     - x86_64
   pkgname:
     - cinnamon-session
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.0.2-1
+    packages:
+      - cinnamon-session-6.0.2-1-x86_64.pkg.tar.zst
   world:
     version: 6.0.1-1
     packages:
