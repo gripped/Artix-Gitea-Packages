@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libcamera
-  version: 0.1.0-2
+  version: 0.2.0-1
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - libcamera-tools
     - gst-plugin-libcamera
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.2.0-1
+    packages:
+      - libcamera-0.2.0-1-x86_64.pkg.tar.zst
+      - libcamera-docs-0.2.0-1-x86_64.pkg.tar.zst
+      - libcamera-ipa-0.2.0-1-x86_64.pkg.tar.zst
+      - libcamera-tools-0.2.0-1-x86_64.pkg.tar.zst
+      - gst-plugin-libcamera-0.2.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.1.0-2
     packages:
