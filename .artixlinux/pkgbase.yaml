@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-gstreamer
-  version: 1.22.9-1
+  version: 1.22.9-2
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - lib32-gst-plugins-base
     - lib32-gst-plugins-good
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -40,8 +40,12 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1.22.9-2
+    packages:
+      - lib32-gstreamer-1.22.9-2-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-base-libs-1.22.9-2-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-base-1.22.9-2-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-good-1.22.9-2-x86_64.pkg.tar.zst
   lib32:
     version: 1.22.9-1
     packages:
