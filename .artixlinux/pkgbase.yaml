@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: arrow
-  version: 14.0.2-1
+  version: 15.0.0-1
   arch:
     - x86_64
   pkgname:
     - arrow
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 15.0.0-1
+    packages:
+      - arrow-15.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 14.0.2-1
     packages:
