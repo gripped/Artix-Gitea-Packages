@@ -4,12 +4,12 @@
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 
 pkgname=openmpi
-pkgver=4.1.6
-pkgrel=3
+pkgver=5.0.1
+pkgrel=1
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
-license=('custom:OpenMPI')
+license=('BSD-3-Clause AND LicenseRef-MPICH')
 depends=(
   gcc-libs
   glibc
@@ -18,6 +18,7 @@ depends=(
   libnl
   openpmix
   openssh
+  prrte
   zlib
 )
 makedepends=(
@@ -28,41 +29,46 @@ makedepends=(
 optdepends=(
   'cuda: cuda support'
   'gcc-fortran: fortran support'
-  'perl: for aggregate_profile.pl and profile2mat.pl'
 )
 provides=(
-  libmca_common_cuda.so
-  libmca_common_monitoring.so
-  libmca_common_ompio.so
-  libmca_common_sm.so
   libmpi.so
-  libmpi_cxx.so
   libmpi_mpifh.so
   libmpi_usempi_ignore_tkr.so
   libmpi_usempif08.so
-  libompitrace.so
   libopen-pal.so
-  libopen-rte.so
 )
 source=(
   https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/$pkgname-$pkgver.tar.bz2)
-sha256sums=('f740994485516deb63b5311af122c265179f5328a0d857a567b85db00b11e415')
-b2sums=('4f119e1ed9b8787f0f860295ab1721fe2fd5300b8e182230a9eba3a864680b02bbd30618cc6d798a693a121626fc0ad5f447144d9ba91becb734f1a530d7a23a')
+sha256sums=('e357043e65fd1b956a47d0dae6156a90cf0e378df759364936c1781f1a25ef80')
+b2sums=('4a5b1d6c1cb2c81186f1d1347aee2e78b8634e0db08053a99a10d54df31d2afa5982d64b49a351aea99fc9db64f8ab81adeab9ae427442892774f99de3602230')
+
+prepare() {
+  cd $pkgname-$pkgver
+  # workaround for https://github.com/open-mpi/ompi/issues/12257
+  sed -i 's|WRAPPER__FCFLAGS|WRAPPER_FCFLAGS|g' configure
+  sed -i 's|WRAPPER_EXTRA_FCFLAGS|WRAPPER_FCFLAGS|g' configure
+  sed -i 's|"-I/usr/include",||' opal/tools/wrappers/opal_wrapper.c
+}
 
 build() {
   local configure_options=(
     --prefix=/usr
     --enable-builtin-atomics
     --enable-memchecker
-    --enable-mpi-cxx
     --enable-mpi-fortran=all
     --enable-pretty-print-stacktrace
     --libdir=/usr/lib
     --sysconfdir=/etc/$pkgname
     --with-cuda=/opt/cuda
+    # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
+    # instead of /opt/cuda/lib/pkgconfig/cuda.pc
+    --with-cuda-libdir=/usr/lib
+    # all components that link to CUDA libraries should be run-time loadable
+    --enable-mca-dso=accelerator_cuda,rcache_gpusm,rcache_rgpusm
     --with-hwloc=external
     --with-libevent=external
     --with-pmix=external
+    --with-prrte=external
     --with-valgrind
   )
   cd $pkgname-$pkgver
@@ -72,7 +78,6 @@ build() {
   export HOSTNAME=buildhost
   export USER=builduser
 
-  # TODO: depend on prrte with openmpi >= 5
   # TODO: remove ac_cv_func_sem_open=no when there is a glibc release fixing https://sourceware.org/bugzilla/show_bug.cgi?id=30789
   ac_cv_func_sem_open=no ./configure "${configure_options[@]}"
   # prevent excessive overlinking due to libtool
