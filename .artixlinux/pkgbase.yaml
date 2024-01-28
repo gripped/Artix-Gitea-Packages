@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-python-socks
-  version: 2.4.3-1
+  version: 2.4.4-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.4.3-1
+    version: 2.4.4-1
     packages:
-      - python-python-socks-2.4.3-1-any.pkg.tar.zst
+      - python-python-socks-2.4.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
