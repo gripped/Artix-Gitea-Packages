@@ -1,15 +1,55 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
+# Contributor: Valeriy Lyasotskiy <onestep@ukr.net>
+# Contributor: Jan Willemson <janwil@hot.ee>
+# Contributor: Hugo Ideler <hugoideler@dse.nl>
+# Original PKGBUILD: Andre Naumann <anaumann@SPARCed.org>
+# See http://bbs.archlinux.org/viewtopic.php?t=9318&highlight=fpc
 
 pkgname=fpc
 pkgver=3.2.2
-pkgrel=1
+pkgrel=9
 pkgdesc="Free Pascal Compiler, Turbo Pascal 7.0 and Delphi compatible."
 arch=('x86_64')
-source=("fpc-3.2.2-x86_64.tar.xz::https://omniverse.artixlinux.org/x86_64/fpc-3.2.2-x86_64.tar.xz")
-noextract=("fpc-3.2.2-x86_64.tar.xz")
-sha512sums=('24c1aab01b46283a98ca836d84460107fdadad73c8f8b5963ecd32629f92bd7b371df7355e7ed261acc4d6a276db524881a5931be00fe76f160dcde1667eeeea')
+url="http://www.freepascal.org/"
+license=('GPL' 'LGPL' 'custom')
+backup=("etc/fpc.cfg")
+depends=('ncurses' 'zlib' 'expat' 'binutils' 'make')
+makedepends=(fpc)
+options=(zipman libtool staticlibs)
+source=("https://downloads.sourceforge.net/project/freepascal/Source/${pkgver}/fpcbuild-${pkgver}.tar.gz")
+sha512sums=('75889bb54adc70a6e2cbd291476b9b12d61c8f943a05b7d16d2024de3215c935465ff43b1400c412e128e260c7f49a9c66e35c21f86cb866e671b5b60a282d82')
 
-package() {
-  tar -xzaf ${srcdir}/fpc-3.2.2-x86_64.tar.xz -C ${pkgdir}/
+build() {
+  cd "${srcdir}"/fpcbuild-${pkgver}
+  pushd fpcsrc/compiler
+  fpcmake -Tall
+  popd
+  make build
 }
 
+package() {
+  cd "${srcdir}"/fpcbuild-${pkgver}
+
+  export HOME="${srcdir}"
+
+  make -j1 PREFIX="${pkgdir}"/usr install
+
+  export PATH="${pkgdir}"/usr/bin:$PATH
+
+  install -Dm0644 fpcsrc/rtl/COPYING.FPC "${pkgdir}"/usr/share/licenses/${pkgname}/COPYING.FPC
+
+  [ "$CARCH" = "x86_64" ] && ln -s /usr/lib/fpc/${pkgver}/ppcx64 "${pkgdir}"/usr/bin/
+
+  mkdir -p "${pkgdir}"/etc
+  "${pkgdir}"/usr/lib/fpc/${pkgver}/samplecfg "${pkgdir}/usr/lib/fpc/${pkgver}" "${pkgdir}"/etc
+  "${pkgdir}"/usr/lib/fpc/${pkgver}/samplecfg "/usr/lib/fpc/${pkgver}" "${pkgdir}"/etc
+  cp "${srcdir}/.fp/fp."{cfg,ini} "${pkgdir}/usr/lib/fpc/${pkgver}/ide/text/"
+
+  # use -fPIC by default
+  echo -e "#ifdef cpux86_64\n# for x86_64 use -fPIC by default\n-Cg\n#endif" >> "${pkgdir}/etc/fpc.cfg"
+
+  mv "${pkgdir}"/usr/man "${pkgdir}"/usr/share/
+
+  find "${pkgdir}"/etc/ -type f -exec sed -i "s|"${pkgdir}"||g" {} \;
+}

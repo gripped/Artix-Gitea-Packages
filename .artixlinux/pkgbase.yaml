@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fpc
-  version: 3.2.2-1
+  version: 3.2.2-9
   arch:
     - x86_64
   pkgname:
@@ -43,9 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 3.2.2-1
+    version: 3.2.2-9
     packages:
-      - fpc-3.2.2-1-x86_64.pkg.tar.zst
+      - fpc-3.2.2-9-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
