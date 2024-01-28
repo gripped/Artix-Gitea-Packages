@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: damir <damir@archlinux.org>
 
 pkgname=fftw
 pkgver=3.3.10
-pkgrel=4
+pkgrel=5
 pkgdesc="A library for computing the discrete Fourier transform (DFT)"
 arch=(x86_64)
 url="http://www.fftw.org/"
