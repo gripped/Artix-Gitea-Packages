@@ -2,7 +2,7 @@
 
 pkgname=ospray
 pkgver=3.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Ray Tracing Based Rendering Engine for High-Fidelity Visualization"
 arch=(x86_64)
 url="https://www.ospray.org/"
@@ -37,8 +37,6 @@ build() {
     -B build
     -DCMAKE_BUILD_TYPE=Release  # None is not supported :(
     -DCMAKE_INSTALL_PREFIX=/usr
-    -DCMAKE_PREFIX_PATH=/usr
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib
     -DCMAKE_INSTALL_LIBDIR=lib
     -DOSPRAY_BUILD_ISA=ALL
     -DOSPRAY_ENABLE_APPS_EXAMPLES=OFF
@@ -50,7 +48,7 @@ build() {
     -W no-dev
   )
 
-  cmake "${cmake_options[@]}"
+  artix-cmake "${cmake_options[@]}"
   cmake --build build --verbose
 }
 
