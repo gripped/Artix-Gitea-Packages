@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - wine
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 9.1-1
+    packages:
+      - wine-9.1-1-x86_64.pkg.tar.zst
   lib32:
     version: 9.1-1
     packages:
