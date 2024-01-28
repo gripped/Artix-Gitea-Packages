@@ -11,12 +11,12 @@ pkgbase:
     - lazarus-qt5
     - lazarus-qt6
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 3.0-2
     packages:
       - lazarus-3.0-2-x86_64.pkg.tar.zst
@@ -57,6 +60,3 @@ repos:
       - lazarus-gtk3-3.0-2-x86_64.pkg.tar.zst
       - lazarus-qt5-3.0-2-x86_64.pkg.tar.zst
       - lazarus-qt6-3.0-2-x86_64.pkg.tar.zst
-  galaxy:
-    version: null
-    packages: []
