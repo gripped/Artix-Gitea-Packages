@@ -17,7 +17,7 @@ pkgname=(
 	'mesa'
 )
 pkgver=23.3.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="An open-source implementation of the OpenGL specification"
 url="https://www.mesa3d.org/"
@@ -43,10 +43,10 @@ makedepends=(
 	'rust'
 	'spirv-llvm-translator'
 	'spirv-tools'
+	'udev'
 	'vulkan-icd-loader'
 	'wayland'
 	'xcb-util-keysyms'
-	'udev'
 	'zstd'
 
 	# shared between mesa and lib32-mesa
@@ -127,6 +127,7 @@ build() {
 		-D rust_std=2021
 		-D shared-glapi=enabled
 		-D valgrind=enabled
+		-D video-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc
 		-D vulkan-drivers=amd,intel,intel_hasvk,swrast,virtio
 		-D vulkan-layers=device-select,intel-nullhw,overlay
 	)
@@ -230,9 +231,9 @@ package_vulkan-intel() {
 		'libdrm'
 		'libx11'
 		'libxshmfence'
+		'udev'
 		'wayland'
 		'xcb-util-keysyms'
-		'udev'
 		'zstd'
 	)
 	optdepends=('vulkan-mesa-layers: additional vulkan layers')
@@ -252,9 +253,9 @@ package_vulkan-radeon() {
 		'libx11'
 		'libxshmfence'
 		'llvm-libs'
+		'udev'
 		'wayland'
 		'xcb-util-keysyms'
-		'udev'
 		'zstd'
 	)
 	optdepends=('vulkan-mesa-layers: additional vulkan layers')
@@ -275,9 +276,9 @@ package_vulkan-swrast() {
 		'libx11'
 		'libxshmfence'
 		'llvm-libs'
+		'udev'
 		'wayland'
 		'xcb-util-keysyms'
-		'udev'
 		'zstd'
 	)
 	optdepends=('vulkan-mesa-layers: additional vulkan layers')
@@ -297,9 +298,9 @@ package_vulkan-virtio() {
 		'libdrm'
 		'libx11'
 		'libxshmfence'
+		'udev'
 		'wayland'
 		'xcb-util-keysyms'
-		'udev'
 		'zstd'
 	)
 	optdepends=('vulkan-mesa-layers: additional vulkan layers')
