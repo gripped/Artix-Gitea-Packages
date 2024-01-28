@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vsftpd
-  version: 3.0.3-9
+  version: 3.0.5-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.3-9
+    version: 3.0.5-1
     packages:
-      - vsftpd-3.0.3-9-x86_64.pkg.tar.zst
+      - vsftpd-3.0.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
