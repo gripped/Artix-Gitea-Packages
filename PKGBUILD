@@ -9,7 +9,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.3.0
-pkgrel=7
+pkgrel=8
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org/"
@@ -161,6 +161,7 @@ build() {
     -DVTK_SMP_ENABLE_OPENMP=ON \
     -DVTK_SMP_IMPLEMENTATION_TYPE=TBB \
     -DVTK_PYTHON_VERSION=3 \
+    -DVTK_QT_VERSION=5 \
     -DVTK_USE_MPI=ON \
     -DVTK_USE_TK=ON \
     -DVTK_VERSIONED_INSTALL=OFF \
