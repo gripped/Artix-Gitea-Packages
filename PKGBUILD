@@ -4,15 +4,15 @@
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 
 pkgname=wine
-pkgver=9.0
+pkgver=9.1
 pkgrel=1
 
 _pkgbasever=${pkgver/rc/-rc}
 
-source=(https://dl.winehq.org/wine/source/9.0/$pkgname-$_pkgbasever.tar.xz{,.sign}
+source=(https://dl.winehq.org/wine/source/9.x/$pkgname-$_pkgbasever.tar.xz{,.sign}
 	30-win32-aliases.conf
 	wine-binfmt.conf)
-sha512sums=('838daf2c4581f83f8573b988036f517d57b84894b090a2a17433255d6d044dfa880e6724cdb83082a36c333df9d2083ab68ae53927622a620edd59f33462ada4'
+sha512sums=('12ec508b1e457a94391ab3072ed602ff07da2e5beb4bbe4f76e42d71e87f7fa11f6531f1f1c71e96e884b10a99240a9eaf999867479b8eeadf3576df46e0a73a'
 	'SKIP'
 	'6e54ece7ec7022b3c9d94ad64bdf1017338da16c618966e8baf398e6f18f80f7b0576edf1d1da47ed77b96d577e4cbb2bb0156b0b11c183a0accf22654b0a2bb'
 	'bdde7ae015d8a98ba55e84b86dc05aca1d4f8de85be7e4bd6187054bfe4ac83b5a20538945b63fb073caab78022141e9545685e4e3698c97ff173cf30859e285')
@@ -36,7 +36,7 @@ depends=(
 	libxi lib32-libxi
 	libxrandr lib32-libxrandr
 )
-makedepends=(autoconf bison perl flex
+makedepends=(autoconf bison perl flex mingw-w64-gcc
 	alsa-lib lib32-alsa-lib
 	gnutls lib32-gnutls
 	gst-plugins-base-libs lib32-gst-plugins-base-libs
@@ -86,9 +86,7 @@ optdepends=(
 	wine-mono
 )
 makedepends=(${makedepends[@]} ${depends[@]})
-
 build() {
-	unset CFLAGS CXXFLAGS LDFLAGS
 	# Allow ccache to work
 	mv $pkgname-$_pkgbasever $pkgname
 
@@ -124,6 +122,8 @@ build() {
 		--with-x \
 		--with-gstreamer \
 		"${_wine32opts[@]}"
+
+	make
 }
 
 package() {
