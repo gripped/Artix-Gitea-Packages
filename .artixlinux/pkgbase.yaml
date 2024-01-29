@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gl2ps
-  version: 1.4.2-2
+  version: 1.4.2-3
   arch:
     - x86_64
   pkgname:
     - gl2ps
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.2-2
+    version: 1.4.2-3
     packages:
-      - gl2ps-1.4.2-2-x86_64.pkg.tar.zst
+      - gl2ps-1.4.2-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
