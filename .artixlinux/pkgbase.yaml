@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: intel-compute-runtime
-  version: 23.43.27642.18-1
+  version: 23.48.27912.11-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.43.27642.18-1
+    version: 23.48.27912.11-1
     packages:
-      - intel-compute-runtime-23.43.27642.18-1-x86_64.pkg.tar.zst
+      - intel-compute-runtime-23.48.27912.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
