@@ -10,7 +10,7 @@ license=(Apache)
 depends=(blosc bzip2 glibc gcc-libs hdf5 libfabric libpng nlohmann-json
          openmpi pugixml pybind11 sz yaml-cpp zeromq zfp zlib)
 # with mgard does not build currently, not time to investigate
-makedepends=(cmake gcc-fortran gtest python python-mpi4py python-numpy)
+makedepends=(cmake gcc-fortran gtest python python-mpi4py python-numpy adios2)
 source=(https://github.com/ornladios/ADIOS2/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('78309297c82a95ee38ed3224c98b93d330128c753a43893f63bbe969320e4979')
 
