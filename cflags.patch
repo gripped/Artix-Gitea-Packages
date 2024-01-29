@@ -1,0 +1,13 @@
+diff --git a/PKGBUILD b/PKGBUILD
+index 7ac1243..cc52d35 100644
+--- a/PKGBUILD
++++ b/PKGBUILD
+@@ -91,7 +91,7 @@ build() {
+ 	mv $pkgname-$_pkgbasever $pkgname
+ 
+ 	# Doesn't compile without remove these flags as of 4.10
+-	export CFLAGS="$CFLAGS -ffat-lto-objects"
++	export CFLAGS="${CFLAGS/-fno-plt/} -ffat-lto-objects"
+ 
+ 	msg2 "Building Wine-64..."
+ 	mkdir "$pkgname-64-build"
