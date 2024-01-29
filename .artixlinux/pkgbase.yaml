@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: intel-graphics-compiler
-  version: 1:1.0.15468.11-1
+  version: 1:1.0.15610.11-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.0.15468.11-1
+    version: 1:1.0.15610.11-1
     packages:
-      - intel-graphics-compiler-1:1.0.15468.11-1-x86_64.pkg.tar.zst
+      - intel-graphics-compiler-1:1.0.15610.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
