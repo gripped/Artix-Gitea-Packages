@@ -36,7 +36,7 @@ depends=(
 	libxi lib32-libxi
 	libxrandr lib32-libxrandr
 )
-makedepends=(autoconf bison perl flex mingw-w64-gcc
+makedepends=(autoconf bison perl flex
 	alsa-lib lib32-alsa-lib
 	gnutls lib32-gnutls
 	gst-plugins-base-libs lib32-gst-plugins-base-libs
