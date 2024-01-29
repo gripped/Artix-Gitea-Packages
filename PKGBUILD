@@ -2,7 +2,7 @@
 
 pkgname=lib32-acl
 pkgver=2.3.1
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='Access control list libraries (32-bit)'
 arch=('x86_64')
 url='https://savannah.nongnu.org/projects/acl'
