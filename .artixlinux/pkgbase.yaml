@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libjpeg-turbo
-  version: 3.0.1-1
+  version: 3.0.2-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.1-1
+    version: 3.0.2-2
     packages:
-      - libjpeg-turbo-3.0.1-1-x86_64.pkg.tar.zst
+      - libjpeg-turbo-3.0.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
