@@ -2,7 +2,7 @@
 
 pkgname=imath
 pkgver=3.1.10
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A C++ and python library of 2D and 3D vector, matrix, and math operations for computer graphics'
 url='https://www.openexr.com/'
 arch=(x86_64)
@@ -18,7 +18,7 @@ source=(https://github.com/AcademySoftwareFoundation/Imath/archive/v$pkgver/$pkg
 sha256sums=('f2943e86bfb694e216c60b9a169e5356f8a90f18fbd34d7b6e3450be14f60b10')
 
 build() {
-  cmake -B build -S Imath-$pkgver \
+  artix-cmake -B build -S Imath-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DPYTHON=ON
   cmake --build build
