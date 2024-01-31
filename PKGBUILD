@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=lib32-acl
-pkgver=2.3.1
-pkgrel=2.3
+pkgver=2.3.2
+pkgrel=1
 pkgdesc='Access control list libraries (32-bit)'
 arch=('x86_64')
 url='https://savannah.nongnu.org/projects/acl'
@@ -10,31 +10,31 @@ license=('LGPL')
 depends=('acl')
 makedepends=('gcc-multilib' 'lib32-attr')
 provides=('libacl.so')
-validpgpkeys=('600CD204FBCEA418BD2CA74F154343260542DF34' # Brandon Philips <brandon@ifup.co>
-	'B902B5271325F892AC251AD441633B9FE837F581'              # Frysinger <vapier@gentoo.org>
-	'259B3792B3D6D319212CC4DCD5BF9FEB0313653A')             # Andreas Gruenbacher <andreas.gruenbacher@gmail.com>
+validpgpkeys=('600CD204FBCEA418BD2CA74F154343260542DF34'  # Brandon Philips <brandon@ifup.co>
+              'B902B5271325F892AC251AD441633B9FE837F581'  # Frysinger <vapier@gentoo.org>
+              '259B3792B3D6D319212CC4DCD5BF9FEB0313653A') # Andreas Gruenbacher <andreas.gruenbacher@gmail.com>
 source=("https://download.savannah.gnu.org/releases/acl/acl-${pkgver}.tar.gz"{,.sig})
-sha256sums=('760c61c68901b37fdd5eefeeaf4c0c7a26bdfdd8ac747a1edff1ce0e243c11af'
-	'SKIP')
+sha256sums=('5f2bdbad629707aa7d85c623f994aa8a1d2dec55a73de5205bac0bf6058a2f7c'
+            'SKIP')
 
 build() {
-	cd "${srcdir}"/acl-${pkgver}
+  cd "${srcdir}"/acl-${pkgver}
 
-	export CC="gcc -m32"
-	export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+  export CC="gcc -m32"
+  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
-	./configure \
-		--prefix=/usr \
-		--libdir=/usr/lib32 \
-		--libexecdir=/usr/lib32
-	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-	make
+  ./configure \
+    --prefix=/usr \
+    --libdir=/usr/lib32 \
+    --libexecdir=/usr/lib32
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make 
 }
 
 package() {
-	cd "${srcdir}"/acl-${pkgver}
+  cd "${srcdir}"/acl-${pkgver}
 
-	make DESTDIR="${pkgdir}" install
+  make DESTDIR="${pkgdir}" install
 
-	rm -rf "${pkgdir}"/usr/{bin,include,share}
+  rm -rf "${pkgdir}"/usr/{bin,include,share}
 }
