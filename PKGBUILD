@@ -38,7 +38,7 @@ depends=(
 	libxrandr lib32-libxrandr
 	wayland lib32-wayland
 )
-makedepends=(autoconf bison perl flex
+makedepends=(autoconf bison perl flex mingw-w64-gcc
 	alsa-lib lib32-alsa-lib
 	gnutls lib32-gnutls
 	gst-plugins-base-libs lib32-gst-plugins-base-libs
@@ -88,7 +88,6 @@ optdepends=(
 	wine-mono
 )
 makedepends=(${makedepends[@]} ${depends[@]})
-install=wine.install
 
 build() {
 	# Allow ccache to work
