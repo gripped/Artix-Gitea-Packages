@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ansible
-  version: 9.1.0-2
+  version: 9.2.0-1
   arch:
     - any
   pkgname:
     - ansible
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 9.2.0-1
+    packages:
+      - ansible-9.2.0-1-any.pkg.tar.zst
   world:
     version: 9.1.0-2
     packages:
