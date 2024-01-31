@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: cmark
-  version: 0.30.3-1
+  version: 0.31.0-2
   arch:
     - x86_64
   pkgname:
     - cmark
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.30.3-1
+    version: 0.31.0-2
     packages:
-      - cmark-0.30.3-1-x86_64.pkg.tar.zst
+      - cmark-0.31.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
