@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ansible-core
-  version: 2.16.2-2
+  version: 2.16.3-1
   arch:
     - any
   pkgname:
     - ansible-core
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.16.3-1
+    packages:
+      - ansible-core-2.16.3-1-any.pkg.tar.zst
   world:
     version: 2.16.2-2
     packages:
