@@ -5,78 +5,78 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=lib32-colord
-pkgver=1.4.6
+pkgver=1.4.7
 pkgrel=1
 pkgdesc='System daemon for managing color devices'
 arch=(x86_64)
 url=https://www.freedesktop.org/software/colord
 license=(GPL2)
 depends=(
-  libcolord
-  lib32-glib2
-  lib32-elogind
-  lib32-lcms2
+	libcolord
+	lib32-glib2
+	lib32-elogind
+	lib32-lcms2
 )
 makedepends=(
-  argyllcms
-  bash-completion
-  git
-  gobject-introspection
-  intltool
-  lib32-dbus
-  lib32-dconf
-  lib32-libgudev
-  lib32-libgusb
-  lib32-polkit
-  lib32-sqlite
-  meson
-  sane
-  vala
+	argyllcms
+	bash-completion
+	git
+	gobject-introspection
+	intltool
+	lib32-dbus
+	lib32-dconf
+	lib32-libgudev
+	lib32-libgusb
+	lib32-polkit
+	lib32-sqlite
+	meson
+	sane
+	vala
 )
 provides=(
-  libcolord.so
+	libcolord.so
 )
 options=(!emptydirs)
 source=(
-  git+https://github.com/hughsie/colord#tag=${pkgver}
+	git+https://github.com/hughsie/colord#tag=${pkgver}
 )
 sha256sums=(
-  SKIP
+	SKIP
 )
 
 prepare() {
-  cd colord
-  
-  # Allow turning off introspection
-  git cherry-pick -n e73723cabe4d5a2e2b281d2f1ea751b2d75bccc6
+	cd colord
+
+	# Allow turning off introspection
+	git cherry-pick -n e73723cabe4d5a2e2b281d2f1ea751b2d75bccc6
 }
 
 build() {
-  export CC='gcc -m32'
-  export CXX='g++ -m32'
-  export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
+	export CC='gcc -m32'
+	export CXX='g++ -m32'
+	export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
 
-  artix-meson colord build \
-    --libdir=/usr/lib32 \
-    -D docs=false \
-    -D man=false \
-    -D tests=false \
-    -D libcolordcompat=true \
-    -D sane=false \
-    -D introspection=false \
-    -D vapi=false \
-    -D print_profiles=false \
-    -D daemon_user=colord \
-    -D systemd=false
-  meson compile -C build
+	artix-meson colord build \
+		--libdir=/usr/lib32 \
+		-D docs=false \
+		-D man=false \
+		-D tests=false \
+		-D libcolordcompat=true \
+		-D sane=false \
+		-D introspection=false \
+		-D vapi=false \
+		-D print_profiles=false \
+		-D daemon_user=colord \
+		-D systemd=false
+	meson compile -C build
 }
 
 package() {
-  DESTDIR="${pkgdir}" meson install -C build
-  rm -r "${pkgdir}"/usr/{bin,include,lib,share}
-  rm -r "${pkgdir}"/usr/lib32/{colord-plugins,colord-sensors}
-  rm "${pkgdir}"/usr/lib32/libcolor{dprivate,hug}*
-  rm "${pkgdir}"/usr/lib32/pkgconfig/colorhug.pc
+	DESTDIR="${pkgdir}" meson install -C build
+	rm -r "${pkgdir}"/usr/{bin,include,lib,share}
+	rm -r "${pkgdir}"/usr/lib32/{colord-plugins,colord-sensors}
+	rm "${pkgdir}"/usr/lib32/libcolor{dprivate,hug}*
+	rm "${pkgdir}"/usr/lib32/pkgconfig/colorhug.pc
 }
 
 # vim: ts=2 sw=2 et:
