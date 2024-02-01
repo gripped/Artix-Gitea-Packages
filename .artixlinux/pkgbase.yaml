@@ -9,8 +9,8 @@ pkgbase:
     - lib32-glibc
     - glibc-locales
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -21,17 +21,14 @@ repos:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 2.38-8
     packages:
       - glibc-2.38-8-x86_64.pkg.tar.zst
       - lib32-glibc-2.38-8-x86_64.pkg.tar.zst
       - glibc-locales-2.38-8-x86_64.pkg.tar.zst
-  system:
-    version: 2.38-7
-    packages:
-      - glibc-2.38-7-x86_64.pkg.tar.zst
-      - lib32-glibc-2.38-7-x86_64.pkg.tar.zst
-      - glibc-locales-2.38-7-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
