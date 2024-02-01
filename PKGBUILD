@@ -1,22 +1,48 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=colord
-pkgname=(colord colord-sane libcolord)
-pkgver=1.4.6
+pkgname=(
+  colord
+  colord-sane
+  libcolord
+)
+pkgver=1.4.7
 pkgrel=1
 pkgdesc="System daemon for managing color devices"
 url="https://www.freedesktop.org/software/colord"
 arch=(x86_64)
-license=(GPL2)
-depends=(lcms2 libgusb polkit sqlite dconf dbus libgudev shared-mime-info udev)
-makedepends=(gobject-introspection vala sane bash-completion argyllcms git meson gtk-doc
-             docbook-xsl)
+license=(GPL-2.0-or-later)
+depends=(
+  dbus
+  dconf
+  lcms2
+  libgudev
+  libgusb
+  polkit
+  shared-mime-info
+  sqlite
+  udev
+)
+makedepends=(
+  argyllcms
+  bash-completion
+  docbook-xsl
+  git
+  gobject-introspection
+  gtk-doc
+  meson
+  sane
+  vala
+)
 options=(!emptydirs)
-_commit=43c19fd019da5f69d2ebc00a9908b1dd83129485  # tags/1.4.6^0
+_commit=1f55f64bbcdbf2283fbf2b3eed3966893870285a  # tags/1.4.7^0
 source=("git+https://github.com/hughsie/colord#commit=$_commit")
-sha256sums=('SKIP')
-validpgpkeys=('163EB50119225DB3DF8F49EA17ACBA8DFA970E17')  # Richard Hughes
+b2sums=('SKIP')
+validpgpkeys=(
+  163EB50119225DB3DF8F49EA17ACBA8DFA970E17  # Richard Hughes
+)
 
 pkgver() {
   cd colord
@@ -28,13 +54,16 @@ prepare() {
 }
 
 build() {
-  artix-meson colord build \
-    -D libcolordcompat=true \
-    -D sane=true \
-    -D vapi=true \
-    -D print_profiles=true \
-    -D systemd=false \
+  local meson_options=(
+    -D systemd=false
     -D daemon_user=colord
+    -D libcolordcompat=true
+    -D print_profiles=true
+    -D sane=true
+    -D vapi=true
+  )
+
+  artix-meson colord build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -54,8 +83,10 @@ _pick() {
 
 package_colord() {
   depends+=("libcolord=$pkgver-$pkgrel")
-  optdepends=('argyllcms: color profiling'
-              'colord-sane: SANE support')
+  optdepends=(
+    'argyllcms: color profiling'
+    'colord-sane: SANE support'
+  )
   provides=(libcolorhug.so)
   replaces=(shared-color-profiles)
 
@@ -78,15 +109,22 @@ package_colord() {
 
 package_colord-sane() {
   pkgdesc+=" (SANE support)"
-  depends=("colord=$pkgver-$pkgrel" sane)
+  depends=(
+    "colord=$pkgver-$pkgrel"
+    sane
+  )
   mv sane/* "$pkgdir"
 }
 
 package_libcolord() {
   pkgdesc+=" (client library)"
-  depends=(glib2 lcms2)
+  depends=(
+    glib2
+    lcms2
+    udev
+  )
   provides=(libcolord.so)
   mv lib/* "$pkgdir"
 }
 
-# vim:set sw=2 et:
+# vim:set sw=2 sts=-1 et:
