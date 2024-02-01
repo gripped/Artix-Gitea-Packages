@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: intel-ucode
-  version: 20231114-1
+  version: 20231114-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20231114-1
+    version: 20231114-2
     packages:
-      - intel-ucode-20231114-1-any.pkg.tar.zst
+      - intel-ucode-20231114-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
