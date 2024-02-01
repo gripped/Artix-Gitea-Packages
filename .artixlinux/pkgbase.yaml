@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: libreoffice-fresh
-  version: 7.6.4-2
+  version: 24.2.0-2
   arch:
     - x86_64
   pkgname:
     - libreoffice-fresh-sdk
     - libreoffice-fresh
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -44,8 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 24.2.0-2
+    packages:
+      - libreoffice-fresh-sdk-24.2.0-2-x86_64.pkg.tar.zst
+      - libreoffice-fresh-24.2.0-2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
