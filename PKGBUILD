@@ -9,10 +9,10 @@ pkgname=(
   lib32-pipewire-jack
   lib32-pipewire-v4l2
 )
-_commit=79b98884af80329f59596906231da5597bcdb7b6  # tags/1.0.1
-pkgver=1.0.1
+_commit=9ba18c15ae774c83a38783dc72fd8c3fa60c726f  # tags/1.0.2
+pkgver=1.0.2
 _so_ver=0.3
-pkgrel=1.2
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -27,10 +27,8 @@ makedepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
-  libcamera_transform.patch
 )
-b2sums=('SKIP'
-        '6a156bde02c21130a866b481657707e778a7bad87d8d5481943f173325ef2852a39b33f258260b2f41e0f8c4a41477410846c02e53cd96df9411e16b7a07d0af')
+b2sums=('SKIP')
 
 pkgver() {
   cd pipewire
@@ -39,12 +37,11 @@ pkgver() {
 
 prepare() {
   cd pipewire
-  patch -Np1 -i ../libcamera_transform.patch
 }
 
 build() {
   local meson_options=(
-    --libdir /usr/lib32
+    --cross-file lib32
     -D avahi=disabled
     -D avb=disabled
     -D bluez5-codec-lc3=disabled
@@ -86,10 +83,6 @@ build() {
     -D x11-xfixes=disabled
     -D x11=disabled
   )
-
-  export CC="gcc -m32"
-  export CXX="g++ -m32"
-  export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
 
   artix-meson pipewire build "${meson_options[@]}"
   meson compile -C build
