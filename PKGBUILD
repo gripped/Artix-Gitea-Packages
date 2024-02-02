@@ -1,50 +1,51 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: 3V0LU710N <db_eee-at-hotmail-dot-com>
 
 _name=libusb
 pkgname=lib32-libusb
-pkgver=1.0.26
-pkgrel=2
+pkgver=1.0.27
+pkgrel=1
 pkgdesc="A cross-platform user library to access USB devices (32-bit)"
 arch=(x86_64)
 url="http://libusb.info/"
-license=(LGPL2.1)
+_url="https://github.com/libusb/libusb"
+license=(LGPL-2.1-or-later)
 depends=(
-  lib32-glibc
-  lib32-elogind
-  libusb=$pkgver
+	lib32-glibc
+	lib32-elogind
+	libusb=$pkgver
 )
 makedepends=(gcc-multilib)
 provides=(libusb-1.0.so)
-source=(https://github.com/$_name/$_name/releases/download/v$pkgver/$_name-$pkgver.tar.bz2)
-sha512sums=('fcdb85c98f21639668693c2fd522814d440972d65883984c4ae53d0555bdbdb7e8c7a32199cd4b01113556a1eb5be7841b750cc73c9f6bda79bfe1af80914e71')
-b2sums=('0cc397ecf4de0066abbff9b286a9e4fcd48658698d5e0d6b736abf56b48c1b55a05f15fff7be53fd33f767621e0c25d87275a47e05a4bcb44c4b8ac9221cd081')
+source=($_url/releases/download/v$pkgver/$_name-$pkgver.tar.bz2)
+sha512sums=('42abbbcf2564f86cc2f05826aeefa6beb03c9f89dc9fe05bdfa351caa3dbd07713ce193daadecf29557604dd3cbc770c8031a78e1ad0a8df3627c3f551d28ff0')
+b2sums=('bec2eb053159ffa719c794d234f8e99b895a4fae336b862a3197b88deb3d307a53ebb98d2aa993a2f390f14264f796b96ac47274c19f56db30440484ee336c8a')
 
 prepare() {
-  cd $_name-$pkgver
-  autoreconf -fiv
+	cd $_name-$pkgver
+	autoreconf -fiv
 }
 
 build() {
-  local configure_options=(
-    --prefix=/usr
-    --libdir=/usr/lib32
-    --disable-static
-  )
+	local configure_options=(
+		--prefix=/usr
+		--libdir=/usr/lib32
+		--disable-static
+	)
 
-  export CC="gcc -m32"
-  export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+	export CC="gcc -m32"
+	export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
-  cd $_name-$pkgver
-  ./configure "${configure_options[@]}"
-  # prevent excessive overlinking due to libtool
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make
+	cd $_name-$pkgver
+	./configure "${configure_options[@]}"
+	# prevent excessive overlinking due to libtool
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+	make
 }
 
-package () {
-  make DESTDIR="$pkgdir" install -C $_name-$pkgver
-  rm -rf "$pkgdir"/usr/include
-  install -vDm 644 $_name-$pkgver/{AUTHORS,ChangeLog,NEWS,README,TODO} -t "$pkgdir/usr/share/doc/$pkgname/"
+package() {
+	make DESTDIR="$pkgdir" install -C $_name-$pkgver
+	rm -rf "$pkgdir"/usr/include
+	install -vDm 644 $_name-$pkgver/{AUTHORS,ChangeLog,NEWS,README,TODO} -t "$pkgdir/usr/share/doc/$pkgname/"
 }
