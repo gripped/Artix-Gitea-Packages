@@ -16,8 +16,8 @@ pkgname=(
 	'lib32-mesa-vdpau'
 	'lib32-mesa'
 )
-pkgver=23.3.4
-pkgrel=2
+pkgver=23.3.5
+pkgrel=1
 epoch=1
 pkgdesc="An open-source implementation of the OpenGL specification (32-bit)"
 url="https://www.mesa3d.org/"
@@ -43,7 +43,6 @@ makedepends=(
 	'lib32-rust-libs'
 	'lib32-spirv-llvm-translator'
 	'lib32-spirv-tools'
-	'lib32-udev'
 	'lib32-vulkan-icd-loader'
 	'lib32-wayland'
 	'lib32-xcb-util-keysyms'
@@ -66,10 +65,10 @@ source=(
 	https://mesa.freedesktop.org/archive/mesa-${pkgver}.tar.xz{,.sig}
 	LICENSE
 )
-sha256sums=('df12d765be4650fe532860b18aa18e6da1d0b07d1a21dfdfe04660e6b7bac39a'
+sha256sums=('69ccb1278641ff5bad71ca0f866188aeb1a92aadc4dbb9d35f50aebec5b8b50f'
 	'SKIP'
 	'7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537')
-b2sums=('85687793853675a43da5135f41d0512cb4729f3dd824e2ad28d9bda129258adb00dd7da1e75e76cae71c1148e6a2ede84e1efda640c11aff233e5e12b0cea554'
+b2sums=('69c7434ae9c503c14b5bf9abad9a3a26a1dd402461b098dcdb01b9da7a7e8652f897fd9681c809aa70d3ace77c448289d22400deca3854844a355eb0ac095583'
 	'SKIP'
 	'1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb')
 validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D' # Emil Velikov <emil.l.velikov@gmail.com>
@@ -227,7 +226,6 @@ package_lib32-vulkan-intel() {
 		'lib32-libdrm'
 		'lib32-libx11'
 		'lib32-libxshmfence'
-		'lib32-udev'
 		'lib32-wayland'
 		'lib32-xcb-util-keysyms'
 		'lib32-zstd'
@@ -249,7 +247,6 @@ package_lib32-vulkan-radeon() {
 		'lib32-libx11'
 		'lib32-libxshmfence'
 		'lib32-llvm-libs'
-		'lib32-udev'
 		'lib32-wayland'
 		'lib32-xcb-util-keysyms'
 		'lib32-zstd'
@@ -274,7 +271,6 @@ package_lib32-vulkan-swrast() {
 		'lib32-libx11'
 		'lib32-libxshmfence'
 		'lib32-llvm-libs'
-		'lib32-udev'
 		'lib32-wayland'
 		'lib32-xcb-util-keysyms'
 		'lib32-zstd'
@@ -296,7 +292,6 @@ package_lib32-vulkan-virtio() {
 		'lib32-libdrm'
 		'lib32-libx11'
 		'lib32-libxshmfence'
-		'lib32-udev'
 		'lib32-wayland'
 		'lib32-xcb-util-keysyms'
 		'lib32-zstd'
