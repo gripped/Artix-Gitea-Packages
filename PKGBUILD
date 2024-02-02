@@ -8,7 +8,7 @@
 pkgname=binutils
 pkgver=2.42
 _commit=48942a586ebc056bd059d3f63a5eed3a2fa46ab3
-pkgrel=1
+pkgrel=2
 pkgdesc='A set of programs to assemble and manipulate binary and object files'
 arch=(x86_64)
 url='https://www.gnu.org/software/binutils/'
@@ -55,7 +55,7 @@ build() {
     --prefix=/usr \
     --sysconfdir="${pkgdir}"/etc \
     --with-lib-path=/usr/lib:/usr/local/lib \
-    --with-bugurl=https://bugs.archlinux.org/ \
+    --with-bugurl=https://gitea.artixlinux.org/packages/binutils/issues \
     --enable-cet \
     --enable-colored-disassembly \
     --enable-default-execstack=no \
