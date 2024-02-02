@@ -14,7 +14,7 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.6
+pkgver=6.7
 pkgrel=1
 license=('GPL2')
 arch=('x86_64')
@@ -41,7 +41,7 @@ makedepends+=('libcap')
 makedepends+=('llvm' 'clang')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
-        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.7.xz"
+        #"https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.7.xz"
         'cpupower.default'
 )
 validpgpkeys=(
@@ -49,7 +49,6 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('SKIP'
-            'b227017c1aba9089054a2ca8b6671225de948a6643d7a759558386540f55d1e2'
             '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
