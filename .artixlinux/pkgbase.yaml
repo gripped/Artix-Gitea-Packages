@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: linux-api-headers
-  version: 6.4-1
+  version: 6.7-1
   arch:
     - any
   pkgname:
     - linux-api-headers
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: system-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 6.7-1
+    packages:
+      - linux-api-headers-6.7-1-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
