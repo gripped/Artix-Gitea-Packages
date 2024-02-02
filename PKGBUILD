@@ -11,7 +11,7 @@ pkgname=(gcc gcc-libs lib32-gcc-libs gcc-ada gcc-d gcc-fortran gcc-go gcc-m2 gcc
 pkgver=13.2.1
 _majorver=${pkgver%%.*}
 _commit=860b0f0ef787f756c0e293671b4c4622dff63a79
-pkgrel=4
+pkgrel=5
 pkgdesc='The GNU Compiler Collection'
 arch=(x86_64)
 license=(GPL-3.0-with-GCC-exception GFDL-1.3-or-later)
@@ -41,7 +41,7 @@ _libdir=usr/lib/gcc/$CHOST/${pkgver%%+*}
 source=(git+https://sourceware.org/git/gcc.git#commit=${_commit}
         c89 c99
         gcc-ada-repro.patch
-        https://github.com/llvm/llvm-project/commit/fb77ca05ffb4f8e666878f2f6718a9fb4d686839.patch
+        fix-asan-allocator-aslr.patch
 )
 validpgpkeys=(F3691687D867B81B51CE07D9BBE43771487328A9  # bpiotrowski@archlinux.org
               86CFFCA918CF3AF47147588051E8B148A9999C34  # evangelos@foutrelis.com
@@ -67,7 +67,7 @@ prepare() {
   patch -Np0 < "$srcdir/gcc-ada-repro.patch"
 
   #ASan: move allocator base to avoid conflict with high-entropy ASLR for x86-64 Linux'
-  patch -Np3 < "$srcdir/fb77ca05ffb4f8e666878f2f6718a9fb4d686839.patch" -d libsanitizer/
+  patch -Np3 < "$srcdir/fix-asan-allocator-aslr.patch" -d libsanitizer/
 
   mkdir -p "$srcdir/gcc-build"
   mkdir -p "$srcdir/libgccjit-build"
@@ -80,7 +80,7 @@ build() {
       --libexecdir=/usr/lib
       --mandir=/usr/share/man
       --infodir=/usr/share/info
-      --with-bugurl=https://bugs.archlinux.org/
+      --with-bugurl=https://gitea.artixlinux.org/packages/gcc/issues
       --with-build-config=bootstrap-lto
       --with-linker-hash-style=gnu
       --with-system-zlib
@@ -259,7 +259,7 @@ package_gcc() {
   make -C $CHOST/32/libsanitizer/asan DESTDIR="$pkgdir" install-nodist_toolexeclibHEADERS
 
   make -C gcc DESTDIR="$pkgdir" install-man install-info
-  rm "$pkgdir"/usr/share/man/man1/{gccgo,gfortran,lto-dump,gdc}.1
+  rm "$pkgdir"/usr/share/man/man1/{gccgo,gfortran,lto-dump,gdc,gm2}.1
   rm "$pkgdir"/usr/share/info/{gccgo,gfortran,gnat-style,gnat_rm,gnat_ugn,gdc}.info
 
   make -C libcpp DESTDIR="$pkgdir" install
@@ -463,7 +463,6 @@ package_gcc-m2() {
 
   install -Dm755 gcc/cc1gm2 "$pkgdir/$_libdir"/cc1gm2
   install -Dm755 gcc/gm2 "$pkgdir"/usr/bin/gm2
-  install -Dm644 gcc/plugin/m2rte.so "$pkgdir/$_libdir"/plugin/m2rte.so
 
   make -C $CHOST/libgm2 DESTDIR="$pkgdir" install
 
