@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-hardened
-  version: 6.7.3.hardened1-3
+  version: 6.7.3.hardened1-3.1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - linux-hardened-docs
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -48,11 +48,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 6.7.3.hardened1-3
+    version: 6.7.3.hardened1-3.1
     packages:
-      - linux-hardened-6.7.3.hardened1-3-x86_64.pkg.tar.zst
-      - linux-hardened-headers-6.7.3.hardened1-3-x86_64.pkg.tar.zst
-      - linux-hardened-docs-6.7.3.hardened1-3-x86_64.pkg.tar.zst
+      - linux-hardened-6.7.3.hardened1-3.1-x86_64.pkg.tar.zst
+      - linux-hardened-headers-6.7.3.hardened1-3.1-x86_64.pkg.tar.zst
+      - linux-hardened-docs-6.7.3.hardened1-3.1-x86_64.pkg.tar.zst
   galaxy:
     version: 6.7.3.hardened1-2
     packages:
