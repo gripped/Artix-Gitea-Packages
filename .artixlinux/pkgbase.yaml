@@ -9,12 +9,12 @@ pkgbase:
     - linux-hardened-headers
     - linux-hardened-docs
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,14 +45,14 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
     version: 6.7.3.hardened1-3
     packages:
       - linux-hardened-6.7.3.hardened1-3-x86_64.pkg.tar.zst
       - linux-hardened-headers-6.7.3.hardened1-3-x86_64.pkg.tar.zst
       - linux-hardened-docs-6.7.3.hardened1-3-x86_64.pkg.tar.zst
-  galaxy-gremlins:
-    version: null
-    packages: []
   galaxy:
     version: 6.7.3.hardened1-2
     packages:
