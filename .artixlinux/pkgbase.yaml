@@ -17,15 +17,18 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 13.2.1-5
     packages:
       - gcc-13.2.1-5-x86_64.pkg.tar.zst
@@ -39,9 +42,6 @@ repos:
       - gcc-objc-13.2.1-5-x86_64.pkg.tar.zst
       - lto-dump-13.2.1-5-x86_64.pkg.tar.zst
       - libgccjit-13.2.1-5-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 13.2.1-4
     packages:
