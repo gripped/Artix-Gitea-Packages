@@ -1,13 +1,13 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.7.1
+_ver=6.7.3
 _rel=1
 _arch=arch${_rel}
 _artix=artix${_rel}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
@@ -40,17 +40,17 @@ source=(
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
-  A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
+  83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('1ecffa568e86a2202ba5533ad9034bc263a9aa14e189597a94f09b3854ad68c3'
+sha256sums=('b7f08c652747574a3aa26e317d7a8f23ffab3fb645e1b1533b215dcfd5742b44'
             'SKIP'
-            '3ba2b1c7b113f47f48c051f86b0fe0011170e0a3d2e2f2fee799857b88864639'
-            'ff174cb2737b6472f6543b16ef54ca250b5957f56878b3b8023fc87aa48025dc')
-b2sums=('080f19034a9f5519e3212c723492849f3a2e019c310615b40e636cad39c89369fd91fd1129750266a1cf9683c0762a3ff52942045066d62f927642c443b94c76'
+            '268b0fb642718059cf9c9cf15a6a3fc41108f4d6fa85aed92e4e3318448c438c'
+            'e79acbfd86d0a2238f3fd854da1413c250924329610aaf4bb7daa1c09dd52db8')
+b2sums=('2dea0685e5c9b279beb7661f4efa91ccd662d55eb7c5a69aff52fc74bbb574fcb490a9abcc44d895583ca21b3e6860b3c5e9c35daae66b22c4fe97cab44b2a75'
         'SKIP'
-        '7b04cc10148957ea05cf62d7760b3c2744e609139c82b0046186db50a7744db25fbf8b41c4955a0be1f53a5ec0841eb3b75de6ef0a6dc811964190dd6ccd38c5'
-        '2b3d563e11b0c6cb62be7a37cc1866cbdb3db46e62694b62252b0e061c999abd2bb1a430a6a290beb549fb5be0cf2f75ebd78760c5947686620fc8b58415194a')
+        '54f72e3000c7d02a6109296db7853e140ea2c2295d33de6b865f98227241e6d0a4a753caee5709ae334a842559214e0ccb3e1fbf4fb21be8df66c84a9a2b6751'
+        '996eb2fdf90fc477997f1647fa6a193185bf3ad0774bd59ddfacdd0a75ce6ca3dfc63d5982ddedce01fcdaf209f2500926e631fca0eea635aaa2dc79bac793a4')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
