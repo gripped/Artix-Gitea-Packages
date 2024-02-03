@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-dirty-equals
-  version: 0.6.0-1
+  version: 0.7.1.post0-1
   arch:
     - any
   pkgname:
     - python-dirty-equals
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.7.1.post0-1
+    packages:
+      - python-dirty-equals-0.7.1.post0-1-any.pkg.tar.zst
   world:
     version: 0.6.0-1
     packages:
