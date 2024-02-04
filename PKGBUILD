@@ -11,12 +11,12 @@ pkgname=(
   pulseaudio-equalizer
   pulseaudio-rtp
 )
-pkgver=16.1
-pkgrel=7
+pkgver=17.0
+pkgrel=3
 pkgdesc="A featureful, general-purpose sound server"
 url="https://www.freedesktop.org/wiki/Software/PulseAudio/"
 arch=(x86_64)
-license=(GPL)
+license=(LGPL-2.1-or-later)
 makedepends=(
   alsa-lib
   attr
@@ -47,12 +47,12 @@ makedepends=(
   speexdsp
   tdb
   valgrind
-  webrtc-audio-processing
+  webrtc-audio-processing-1
   xmltoman
 )
-_commit=e5ad31e873eed62bc580a86a61177047f9e8c491  # tags/v16.1^0
+_commit=1f020889c9aa44ea0f63d7222e8c2b62c3f45f68  # tags/v17.0^0
 source=("git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=$_commit")
-sha256sums=('SKIP')
+b2sums=('SKIP')
 
 pkgver() {
   cd pulseaudio
@@ -64,15 +64,21 @@ prepare() {
 
   # Freeze version before patching
   ./git-version-gen doesnt-exist >.tarball-version
+
+  # Fix crashes with some UCM devices
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/pulseaudio/-/issues/4
+  git cherry-pick -n f5cacd94abcc47003bd88ad7ca1450de649ffb15
+  git cherry-pick -n ed3d4f0837f670e5e5afb1afa5bcfc8ff05d3407
 }
 
 build() {
   local meson_options=(
+    -D consolekit=disabled
     -D elogind=enabled
+    -D systemd=disabled
     -D pulsedsp-location='/usr/\$LIB/pulseaudio'
     -D stream-restore-clear-old-devices=true
     -D tcpwrap=disabled
-    -D systemd=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
   )
 
@@ -109,7 +115,7 @@ package_pulseaudio() {
     rtkit
     speexdsp
     tdb
-    webrtc-audio-processing
+    webrtc-audio-processing-1
   )
   optdepends=(
     'pulseaudio-alsa: ALSA configuration (recommended)'
@@ -153,8 +159,6 @@ package_pulseaudio() {
   # https://gitlab.archlinux.org/archlinux/packaging/packages/pulseaudio/-/issues/3
   mkdir -p etc/pulse/{default,system}.pa.d
 
-  rm -r etc/dbus-1
-
   # Split packages
   _pick libpulse etc/pulse/client.conf
   _pick libpulse usr/bin/pa{cat,ctl,dsp,mon,play,rec,record}
@@ -197,9 +201,9 @@ package_libpulse() {
   depends=(
     dbus
     libasyncns
-    libelogind
     libsndfile
     libxcb
+    elogind
   )
   optdepends=(
     'glib2: mainloop integration'

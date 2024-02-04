@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pulseaudio
-  version: 16.1-7
+  version: 17.0-3
   arch:
     - x86_64
   pkgname:
@@ -38,16 +38,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 16.1-7
+    version: 17.0-3
     packages:
-      - pulseaudio-16.1-7-x86_64.pkg.tar.zst
-      - libpulse-16.1-7-x86_64.pkg.tar.zst
-      - pulseaudio-zeroconf-16.1-7-x86_64.pkg.tar.zst
-      - pulseaudio-lirc-16.1-7-x86_64.pkg.tar.zst
-      - pulseaudio-jack-16.1-7-x86_64.pkg.tar.zst
-      - pulseaudio-bluetooth-16.1-7-x86_64.pkg.tar.zst
-      - pulseaudio-equalizer-16.1-7-x86_64.pkg.tar.zst
-      - pulseaudio-rtp-16.1-7-x86_64.pkg.tar.zst
+      - pulseaudio-17.0-3-x86_64.pkg.tar.zst
+      - libpulse-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-zeroconf-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-lirc-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-jack-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-bluetooth-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-equalizer-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-rtp-17.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
