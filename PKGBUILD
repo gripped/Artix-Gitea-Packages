@@ -3,8 +3,8 @@
 
 pkgname=xdg-utils
 # https://gitlab.freedesktop.org/xdg/xdg-utils/commits/master
-_commit=0f49cf5d7956076fccd599d82b85946e5e49d473 # master # 2023-12-04
-pkgver=1.2.0r25+g0f49cf5
+_commit=af2fe0d1dcbcd982d84ddf2bbd174afe90976ed9 # master # 2024-01-30
+pkgver=1.2.0+1+gaf2fe0d
 pkgrel=1
 pkgdesc="Command line tools that assist applications with a variety of desktop integration tasks"
 arch=('any')
