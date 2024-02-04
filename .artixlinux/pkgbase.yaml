@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libgssglue
-  version: 0.8-1
+  version: 0.9-1
   arch:
     - x86_64
   pkgname:
     - libgssglue
 actions:
   addRepo: world
-  removeRepo: system
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8-1
+    version: 0.9-1
     packages:
-      - libgssglue-0.8-1-x86_64.pkg.tar.zst
+      - libgssglue-0.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
