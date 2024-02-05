@@ -15,7 +15,7 @@ depends=(
   lib32-libasyncns
   lib32-libsndfile
   lib32-libxtst
-  lib32-systemd
+  lib32-udev
   libpulse
 )
 makedepends=(
@@ -74,6 +74,8 @@ build() {
     -D udevrulesdir=/usr/lib/udev/rules.d
     -D webrtc-aec=disabled
     -D zshcompletiondir=no
+    -D systemduserunitdir=no
+    -D systemd=disabled
   )
 
   export CC="gcc -m32"
