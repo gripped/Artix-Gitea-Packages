@@ -3,47 +3,48 @@
 # Contributor: Anatol Pomozov <anatol dot pomozov at gmail>
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 
-pkgname=openmpi
+pkgbase=openmpi
+pkgname=(
+  openmpi
+  openmpi-docs
+)
 pkgver=5.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
 license=('BSD-3-Clause AND LicenseRef-MPICH')
-depends=(
+makedepends=(
+  cuda
+  gcc-fortran
   gcc-libs
   glibc
   hwloc
   libevent
   libnl
-  openpmix
+  openpmix libpmix.so
   openssh
   prrte
+  valgrind
   zlib
 )
-makedepends=(
-  cuda
-  gcc-fortran
-  valgrind
-)
-optdepends=(
-  'cuda: cuda support'
-  'gcc-fortran: fortran support'
-)
-provides=(
-  libmpi.so
-  libmpi_mpifh.so
-  libmpi_usempi_ignore_tkr.so
-  libmpi_usempif08.so
-  libopen-pal.so
-)
 source=(
-  https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/$pkgname-$pkgver.tar.bz2)
+  https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/$pkgbase-$pkgver.tar.bz2)
 sha256sums=('e357043e65fd1b956a47d0dae6156a90cf0e378df759364936c1781f1a25ef80')
 b2sums=('4a5b1d6c1cb2c81186f1d1347aee2e78b8634e0db08053a99a10d54df31d2afa5982d64b49a351aea99fc9db64f8ab81adeab9ae427442892774f99de3602230')
 
+_pick() {
+  local p="$1" f d; shift
+  for f; do
+    d="$srcdir/$p/${f#$pkgdir/}"
+    mkdir -p "$(dirname "$d")"
+    mv "$f" "$d"
+    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+  done
+}
+
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgbase-$pkgver
   # workaround for https://github.com/open-mpi/ompi/issues/12257
   sed -i 's|WRAPPER__FCFLAGS|WRAPPER_FCFLAGS|g' configure
   sed -i 's|WRAPPER_EXTRA_FCFLAGS|WRAPPER_FCFLAGS|g' configure
@@ -58,7 +59,7 @@ build() {
     --enable-mpi-fortran=all
     --enable-pretty-print-stacktrace
     --libdir=/usr/lib
-    --sysconfdir=/etc/$pkgname
+    --sysconfdir=/etc/$pkgbase
     --with-cuda=/opt/cuda
     # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
@@ -71,7 +72,7 @@ build() {
     --with-prrte=external
     --with-valgrind
   )
-  cd $pkgname-$pkgver
+  cd $pkgbase-$pkgver
 
   # set environment variables for reproducible build
   # see https://github.com/open-mpi/ompi/blob/main/docs/release-notes/general.rst
@@ -86,14 +87,46 @@ build() {
 }
 
 check() {
-  make check -C $pkgname-$pkgver
+  make check -C $pkgbase-$pkgver
 }
 
-package() {
-  depends+=(libpmix.so)
+package_openmpi() {
+  depends=(
+    gcc-libs
+    glibc
+    hwloc
+    libevent
+    libnl
+    openpmix libpmix.so
+    openssh
+    prrte
+    zlib
+  )
+  optdepends=(
+    'cuda: cuda support'
+    'gcc-fortran: fortran support'
+  )
+  provides=(
+    libmpi.so
+    libmpi_mpifh.so
+    libmpi_usempi_ignore_tkr.so
+    libmpi_usempif08.so
+    libopen-pal.so
+  )
 
-  make DESTDIR="$pkgdir" install -C $pkgname-$pkgver
-  install -Dm 644 $pkgname-$pkgver/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+  make DESTDIR="$pkgdir" install -C $pkgbase-$pkgver
+  (
+    cd "$pkgdir"
+    _pick $pkgbase-docs usr/share/doc
+  )
+  install -Dm 644 $pkgbase-$pkgver/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+}
+
+package_openmpi-docs() {
+  pkgdesc+=" - documentation"
+
+  mv -v $pkgname/* "$pkgdir/"
+  install -vDm 644 $pkgbase-$pkgver/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 # vim: ts=2 sw=2 et:

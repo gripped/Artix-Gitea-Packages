@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: openmpi
-  version: 5.0.1-1
+  version: 5.0.1-2
   arch:
     - x86_64
   pkgname:
     - openmpi
+    - openmpi-docs
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.0.1-1
+    version: 5.0.1-2
     packages:
-      - openmpi-5.0.1-1-x86_64.pkg.tar.zst
+      - openmpi-5.0.1-2-x86_64.pkg.tar.zst
+      - openmpi-docs-5.0.1-2-x86_64.pkg.tar.zst
   world:
     version: 4.1.6-3
     packages:
