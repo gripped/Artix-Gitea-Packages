@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - lib32-libpulse
 actions:
-  addRepo: null
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 16.1-6
+    version: 17.0-1
     packages:
-      - lib32-libpulse-16.1-6-x86_64.pkg.tar.zst
+      - lib32-libpulse-17.0-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []

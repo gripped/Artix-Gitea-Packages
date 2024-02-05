@@ -2,7 +2,7 @@
 
 pkgbase=lib32-libpulse
 pkgname=(
-	lib32-libpulse
+  lib32-libpulse
 )
 pkgver=17.0
 pkgrel=1
@@ -11,88 +11,86 @@ url="https://www.freedesktop.org/wiki/Software/PulseAudio/"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
-	lib32-dbus
-	lib32-libasyncns
-	lib32-libsndfile
-	lib32-udev
-	lib32-libxtst
-	libpulse
+  lib32-dbus
+  lib32-libasyncns
+  lib32-libsndfile
+  lib32-libxtst
+  lib32-systemd
+  libpulse
 )
 makedepends=(
-	git
-	lib32-glib2
-	lib32-gtk3
-	lib32-speexdsp
-	meson
-	valgrind
+  git
+  lib32-glib2
+  lib32-gtk3
+  lib32-speexdsp
+  meson
+  valgrind
 )
 optdepends=(
-	'lib32-alsa-plugins: ALSA support'
-	'lib32-glib2: mainloop integration'
+  'lib32-alsa-plugins: ALSA support'
+  'lib32-glib2: mainloop integration'
 )
 provides=("lib32-pulseaudio=$pkgver")
 conflicts=(lib32-pulseaudio)
 replaces=(lib32-pulseaudio)
-_commit=1f020889c9aa44ea0f63d7222e8c2b62c3f45f68 # tags/v17.0^0
+_commit=1f020889c9aa44ea0f63d7222e8c2b62c3f45f68  # tags/v17.0^0
 source=("git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
-	cd pulseaudio
-	git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
+  cd pulseaudio
+  git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-	cd pulseaudio
+  cd pulseaudio
 
-	# Freeze version before patching
-	./git-version-gen doesnt-exist >.tarball-version
+  # Freeze version before patching
+  ./git-version-gen doesnt-exist >.tarball-version
 }
 
 build() {
-	local meson_options=(
-		--libdir /usr/lib32
-		-D avahi=disabled
-		-D bashcompletiondir=no
-		-D bluez5-gstreamer=disabled
-		-D bluez5=disabled
-		-D consolekit=disabled
-		-D daemon=false
-		-D doxygen=false
-		-D elogind=disabled
-		-D fftw=disabled
-		-D gstreamer=disabled
-		-D jack=disabled
-		-D lirc=disabled
-		-D man=false
-		-D orc=disabled
-		-D pulsedsp-location='/usr/\$LIB/pulseaudio'
-		-D soxr=disabled
-		-D stream-restore-clear-old-devices=true
-		-D tcpwrap=disabled
-		-D tests=false
-		-D udevrulesdir=/usr/lib/udev/rules.d
-		-D webrtc-aec=disabled
-		-D systemduserunitdir=no
-		-D systemd=disabled
-		-D zshcompletiondir=no
-	)
+  local meson_options=(
+    --libdir /usr/lib32
+    -D avahi=disabled
+    -D bashcompletiondir=no
+    -D bluez5-gstreamer=disabled
+    -D bluez5=disabled
+    -D consolekit=disabled
+    -D daemon=false
+    -D doxygen=false
+    -D elogind=disabled
+    -D fftw=disabled
+    -D gstreamer=disabled
+    -D jack=disabled
+    -D lirc=disabled
+    -D man=false
+    -D orc=disabled
+    -D pulsedsp-location='/usr/\$LIB/pulseaudio'
+    -D soxr=disabled
+    -D stream-restore-clear-old-devices=true
+    -D tcpwrap=disabled
+    -D tests=false
+    -D udevrulesdir=/usr/lib/udev/rules.d
+    -D webrtc-aec=disabled
+    -D zshcompletiondir=no
+  )
 
-	export CC="gcc -m32"
-	export CXX="g++ -m32"
-	export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
+  export CC="gcc -m32"
+  export CXX="g++ -m32"
+  export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
 
-	artix-meson pulseaudio build "${meson_options[@]}"
-	meson compile -C build
+  artix-meson pulseaudio build "${meson_options[@]}"
+  meson compile -C build
 }
 
 check() {
-	meson test -C build --print-errorlogs
+  meson test -C build --print-errorlogs
 }
 
 package_lib32-libpulse() {
-	meson install -C build --destdir "$pkgdir"
-	rm -r "$pkgdir/etc" "$pkgdir"/usr/{bin,include,share}
+  meson install -C build --destdir "$pkgdir"
+  rm -r "$pkgdir/etc" "$pkgdir"/usr/{bin,include,share}
 }
 
 # vim:set sw=2 et:
