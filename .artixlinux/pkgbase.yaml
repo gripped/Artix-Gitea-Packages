@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: glm
-  version: 0.9.9.8-2
+  version: 1.0.0-1
   arch:
     - any
   pkgname:
     - glm
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.0.0-1
+    packages:
+      - glm-1.0.0-1-any.pkg.tar.zst
   world:
     version: 0.9.9.8-2
     packages:
