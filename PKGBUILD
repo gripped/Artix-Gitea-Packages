@@ -3,7 +3,7 @@
 
 pkgname=libxext
 pkgver=1.3.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="X11 miscellaneous extensions library"
 arch=('x86_64')
 url="https://gitlab.freedesktop.org/xorg/lib/libxext"
