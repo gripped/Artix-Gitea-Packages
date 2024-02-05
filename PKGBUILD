@@ -5,19 +5,20 @@
 
 pkgname=pv
 pkgver=1.8.5
-pkgrel=1
+pkgrel=2
 pkgdesc='A terminal-based tool for monitoring the progress of data through a pipeline'
 arch=(x86_64)
 url="https://www.ivarch.com/programs/$pkgname.shtml"
 # _url="https://codeberg.org/a-j-wood/$pkgname"
 # _url="https://github.com/a-j-wood/$pkgname"
-license=('custom:Artistic 2.0')
+license=('GPL-3.0-or-later')
 depends=(glibc)
 _archive="$pkgname-$pkgver"
-source=("${url%/*}/sources/$_archive.tar.gz")
-#         "$_archive.tar.gz.sig::${url%/*}/sources/$_archive.tar.gz.txt")
+source=("${url%/*}/sources/$_archive.tar.gz"
+        "$_archive.tar.gz.sig::${url%/*}/sources/$_archive.tar.gz.txt")
 # source=("$_url/releases/download/v$pkgver/$_archive.tar.gz")
-sha256sums=('d22948d06be06a5be37336318de540a2215be10ab0163f8cd23a20149647b780')
+sha256sums=('d22948d06be06a5be37336318de540a2215be10ab0163f8cd23a20149647b780'
+            'SKIP')
 validpgpkeys=(2189D5C29F041F2277AFD50AC1596BA33FC56F51  # andrew.wood@ivarch.com
               4267B4F90F2678A112169BD61D1EF7581B45E9A0) # https://codeberg.org/a-j-wood.gpg
 
