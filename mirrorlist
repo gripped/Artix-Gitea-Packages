@@ -42,6 +42,8 @@ Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 Server = https://mirrors.qontinuum.space/artixlinux/$repo/os/$arch
 # Poland
 Server = https://artix.sakamoto.pl/$repo/os/$arch
+# Romania
+Server = https://hitman.go.ro/mirror/artix-linux/$repo/os/$arch
 # Sweden
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
 # Switzerland
