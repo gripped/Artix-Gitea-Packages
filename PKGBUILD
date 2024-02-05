@@ -3,7 +3,7 @@
 
 pkgname=libxvmc
 pkgver=1.0.14
-pkgrel=1
+pkgrel=1.1
 pkgdesc="X11 Video Motion Compensation extension library"
 arch=('x86_64')
 url="https://gitlab.freedesktop.org/xorg/lib/libxvmc"
