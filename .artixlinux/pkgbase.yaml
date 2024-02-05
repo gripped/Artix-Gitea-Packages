@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-orc
-  version: 0.4.34-1
+  version: 0.4.36-1
   arch:
     - x86_64
   pkgname:
     - lib32-orc
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 0.4.34-1
+    version: 0.4.36-1
     packages:
-      - lib32-orc-0.4.34-1-x86_64.pkg.tar.zst
+      - lib32-orc-0.4.36-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
