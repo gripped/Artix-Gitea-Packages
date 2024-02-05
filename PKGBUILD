@@ -2,16 +2,17 @@
 
 _pkgbasename=pixman
 pkgname=lib32-$_pkgbasename
-pkgver=0.43.0
+pkgver=0.43.2
 pkgrel=1
 pkgdesc="Pixman library (32-bit)"
 arch=('x86_64')
 url="https://xorg.freedesktop.org"
-license=('custom')
+license=('MIT')
 depends=('lib32-gcc-libs' 'lib32-glibc' $_pkgbasename)
 makedepends=('meson' 'gcc-multilib' 'lib32-libpng')
 source=(https://xorg.freedesktop.org/releases/individual/lib/${_pkgbasename}-${pkgver}.tar.xz)
-sha512sums=('a90399b8c6aec218abb2f419fb5d6894acf9f4c7acb4fd3893b0b7c805ba47c82ee7efb363be59bb1a15b6997b2dddb7dba062a165503b035e1124fff1b271c9')
+sha512sums=('1a1d21b86b3c6784c4c2606b7069723b4dbb747eac9fce95bca86516787840379ffd49abc42d11e7143e85c32c85496f33c2562c7a910ca6f963599affdc3224')
+#validpgpkeys=('') # Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
 
 build() {
   local meson_options=(
