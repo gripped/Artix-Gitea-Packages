@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: audit
-  version: 4.0-1
+  version: 4.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - python-audit
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -23,10 +23,10 @@ repos:
     version: null
     packages: []
   system:
-    version: 4.0-1
+    version: 4.0-1.1
     packages:
-      - audit-4.0-1-x86_64.pkg.tar.zst
-      - python-audit-4.0-1-x86_64.pkg.tar.zst
+      - audit-4.0-1.1-x86_64.pkg.tar.zst
+      - python-audit-4.0-1.1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []

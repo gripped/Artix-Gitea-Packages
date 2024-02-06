@@ -14,7 +14,7 @@ pkgname=(
   python-audit
 )
 pkgver=4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Userspace components of the audit framework'
 url='https://people.redhat.com/sgrubb/audit'
 arch=(x86_64)
@@ -37,16 +37,13 @@ source=(
   https://github.com/linux-audit/$_name/archive/v$pkgver/$_name-v$pkgver.tar.gz
   $pkgbase.tmpfiles
   $pkgbase-4.0-executable_paths.patch
-  no-systemd.patch
 )
 sha512sums=('f001e3f466e012dc9c41e8aefd19ffac0db73c8510cd20467e2eb78dcf7a0fdde64279ec2ff0c370ecba692cda2ae228543b8e7ecdae06863ef37f6fa3a7c7c3'
             '1750741755f58d0ae19ed2c30e136d05560dc12ec613a502bad12f47c6b70432d30b3a16f3f1574c8433ad2701428d1c1d567a4d3b55be19abac300310c831d9'
-            '5c1b524bf86234eac690cbe073e5b5459d3f74ec58ef57d50250261b0b1ca4656f295f410bf0727242ed852e725e6acd4438a4a02993c21a6fc80c132eb745b1'
-            'c10f96a58f0ac91adb046c8473e0fc4c78e7ea0b4bc814c5c750b73e4a8078fb2b804b15c2e935fd40639a3a56f18c3cc6e743ba8aadd84b4e456b028da37cf1')
+            '5c1b524bf86234eac690cbe073e5b5459d3f74ec58ef57d50250261b0b1ca4656f295f410bf0727242ed852e725e6acd4438a4a02993c21a6fc80c132eb745b1')
 b2sums=('c8ab1b241134dfc16f4a440358203b095b376a5f2042c6434a22d4127b3ae0751759b2f457bab50b81969368daa218bedbcd4cce815aec5fe6d13a62e9363d57'
         '549ebbbc9e43277d44d0dc5bfd8ca2926628322d898479171b2707dd004968d036ef792b442548af90ad56dea868a72c88b5cf3bb93ea70cb8bbed82747ad9b5'
-        '36e9c74eeccda534a019f780d7aa5337fc24118129c2766203a8bb028a81ba2bdf057cbc78194bcaeeda28c7ae9ef4ef8bb9cd34a37e47655a4ed2b64381935d'
-        'cb30ace1f2f6b4ed315607fc3cb960301959e9f02919fe3b4915a5da310624290c67192b2e137f51b1907503961947cc305124911fcf19df04479d5f7e2a1f3f')
+        '36e9c74eeccda534a019f780d7aa5337fc24118129c2766203a8bb028a81ba2bdf057cbc78194bcaeeda28c7ae9ef4ef8bb9cd34a37e47655a4ed2b64381935d')
 
 _pick() {
   local p="$1" f d; shift
@@ -61,7 +58,6 @@ _pick() {
 prepare() {
   # use /usr and /bin merge compatible paths in configs and services
   patch -Np1 -d $pkgbase-userspace-$pkgver -i ../$pkgbase-4.0-executable_paths.patch
-  patch -Np1 -d $pkgbase-userspace-$pkgver -i ../no-systemd.patch
 
   cd $_name-$pkgver
   autoreconf -fiv
@@ -135,7 +131,8 @@ package_audit() {
   # remove legacy files
   rm -frv "$pkgdir/usr/lib/audit"
 
-#   rm -rf "$pkgdir/usr/lib/systemd"
+  # remove systemd directory
+  rm -rf "$pkgdir/usr/lib/systemd"
 
   (
     cd "$pkgdir"
