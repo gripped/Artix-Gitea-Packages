@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: matrix-synapse
-  version: 1.97.0-0.9
+  version: 1.100.0-1
   arch:
     - x86_64
   pkgname:
     - matrix-synapse
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.97.0-0.9
+    version: 1.100.0-1
     packages:
-      - matrix-synapse-1.97.0-0.9-x86_64.pkg.tar.zst
+      - matrix-synapse-1.100.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
