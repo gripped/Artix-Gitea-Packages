@@ -9,7 +9,7 @@ pkgname=(curl libcurl-compat libcurl-gnutls)
 _tag='8cd1397d3c5c9b1526c8d74530266a7a9a22294b' # git rev-parse v${_tag_name}
 _tag_name='8_6_0'
 pkgver="${_tag_name//_/.}"
-pkgrel=2
+pkgrel=3
 pkgdesc='command line tool and library for transferring data with URLs'
 arch=('x86_64')
 url='https://curl.se/'
@@ -26,13 +26,14 @@ depends=('ca-certificates'
          'zstd' 'libzstd.so')
 makedepends=('git' 'patchelf')
 validpgpkeys=('27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2') # Daniel Stenberg
-source=("git+https://github.com/bagder/curl.git#tag=${_tag}?signed")
+source=("git+https://github.com/curl/curl.git#tag=${_tag}?signed")
 sha512sums=('SKIP')
 
 _backports=(
 )
 
 _reverts=(
+    '9a90c9dd64d2f03601833a70786d485851bd1b53'
 )
 
 prepare() {
