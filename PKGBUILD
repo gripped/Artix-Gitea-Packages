@@ -3,11 +3,11 @@
 
 pkgname=pacman
 pkgver=6.0.2
-pkgrel=8
+pkgrel=9
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=('bash' 'glibc' 'libarchive' 'curl' 'gpgme' 'artix-mirrorlist'
          'gettext' 'gawk' 'coreutils' 'gnupg' 'grep')
 makedepends=('meson' 'asciidoc' 'doxygen')
@@ -26,6 +26,14 @@ source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.xz{,.sig
         pacman-strip-include-o-files-similar-to-kernel-modules.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/de11824527ec4e2561e161ac40a5714ec943543c.patch
         pacman-fix-compatibility-with-bash-5.2-patsub_replacement.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/0e938f188692c710be36f9dd9ea7b94381aed1b4.patch
         pacman-fix-order-of-fakechroot-fakeroot-nesting.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/05f283b5ad8f5b8f995076e93a27c8772076f872.patch
+        pacman-change-default-checksum-from-md5-to-sha256.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/aa3a1bc3b50d797fb75278f79a83cd7dde50c66e.patch
+        pacman-sort-debuginfod-repro.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/843bf21e794c79c5b3bcf8a57e45ef9c62312fee.patch
+        pacman-split-off-strip-debug.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/7a4fff3310ba2eadd3d5428cbb92e58eb2ee853b.patch 
+        pacman-ignore-a-files.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/00d2b1f90261bf77eaaf262d2504af016562f2ac.patch
+        pacman-early-err-git.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/3aa096a74f717d31650e0eb3cf34e9a5ebadc313.patch
+        pacman-fix-gnupg-binary-data.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/86ec26b2d33372a4b3bda48f22c4a9f226c3ccce.patch
+        pacman-fix-gnupg-newsig-check.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/16a064701a30d7e1175e1185cc6da44238302fab.patch
+        pacman-check-pipes-gnupg.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/f8c2e59ec57c86827b1f1b1c2f6760dc3e59fe40.patch
         pacman.conf
         makepkg.conf
         extracolors.patch
@@ -38,8 +46,16 @@ sha256sums=('7d8e3e8c5121aec0965df71f59bedf46052c6cf14f96365c4411ec3de0a4c1a5'
             'd87d0c9957c613fda272553bee58140349d151ae399f346ddaf6d75ee5916312'
             '8641d514ef4cae9e4d1867aadf4b9c850a9e8dc9792c6c559f9d2a0e1713a5a1'
             'b11f62d4bd9557e9d3e7456bc95f63e9eabab5ecee1368f4a14a84bc94b1c8d1'
+            'cf749ad981e8f3dedd89c05a5e69a9c91d1e58ef9407e8f8e04ba9c183939623'
+            '17e7af22533984924aaf1cf36c74aa26b46b04ad140cd76b65521be906bd3ff7'
+            '94d1f3575d0c3faf8bf11fee8e5ef36c8b339ebfd24868931903ba179ffecf4e'
+            '96efb79a96abf8cdcecb9f8dc461552549cf46159f44bb4160eb073e1ea5000a'
+            '0ac6a34e6fc126a243a642e509f459f6cde20af213ab949791a5cc325cf031f9'
+            '6e81b34e6a5f312d48ce3aaca0f02ddd10b7a43325cb32acf7666b6b7ac41552'
+            '250598a27a3077ec1dfe97a30af8bb0daf449d3ab456ed6a0c7a5bea0eb58f51'
+            '94c273f07e4e28125b6002567c62e1f6c65f543597de6a8bd79e8c5bf6e4a125'
             '74e3676a824d7dd55e85fc5e6c28733b4d03538cd539849b98fcd280cbfb3289'
-            'b46bca4d3f8b41138923b7a1d7ada272b56ad8b89d0d6ce09145638bdf15185d'
+            'f2791b51588104ec6dbaafa389451056f3c61fa6c19510dcce3a9a6cc19cba29'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
             '616942bf95e3fdc0426acb0dc1cea5ebcb7cca56a7536b358576b0cfc04f0ed6')
 
@@ -82,7 +98,7 @@ package() {
 
   DESTDIR="$pkgdir" meson install -C build
 
-  # install Arch specific stuff
+  # install Artix specific stuff
   install -dm755 "$pkgdir/etc"
   install -m644 "$srcdir/pacman.conf" "$pkgdir/etc"
   install -m644 "$srcdir/makepkg.conf" "$pkgdir/etc"
