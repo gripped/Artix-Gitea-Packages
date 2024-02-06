@@ -9,7 +9,7 @@ url='http://ddcutil.com/'
 arch=('x86_64')
 license=('GPL2')
 depends=('glib2' 'i2c-tools' 'libusb' 'libdrm' 'jansson')
-makedepends=('systemd')
+makedepends=('udev')
 source=(https://github.com/rockowitz/ddcutil/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha512sums=('ed57e0d3de7c0badc0dabd81624e6425c807fb62c8e0e88660f5bd94aba954ea0a7eb2bed47cfe1d14a5917e0ccd40ca26c2b9d76c2b4b8df57d17095db7c02f')
 
