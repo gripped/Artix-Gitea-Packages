@@ -1,34 +1,30 @@
-# Maintainer: Torr <torr@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+
+# Drop GPU_SUPPORT=false and re-add optdepends when upstream ROCm 6 support is addressed:
+# - https://gitlab.archlinux.org/archlinux/packaging/packages/btop/-/issues/2
+# - https://github.com/aristocratos/btop/issues/705
+
 pkgname=btop
 pkgver=1.3.0
-pkgrel=1
-pkgdesc="A monitor of resources"
-arch=("x86_64")
-url="https://github.com/aristocratos/btop"
-## File: https://github.com/aristocratos/btop/blob/main/CHANGELOG.md
-changelog=Changelog.txt
-license=("Apache2")
-depends=("gcc-libs")
-makedepends=(
-	"gcc>=10.0.0"
-	"make"
-	"sed"
-	"coreutils"
-)
-source=(
-	"https://github.com/aristocratos/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
-)
-sha256sums=(
-	"375e078ce2091969f0cd14030620bd1a94987451cf7a73859127a786006a32cf"
-)
+pkgrel=4
+pkgdesc='A monitor of system resources, bpytop ported to C++'
+arch=(x86_64)
+url="https://github.com/aristocratos/$pkgname"
+license=(Apache)
+depends=(gcc-libs
+         glibc)
+# optdepends=('rocm-smi-lib: AMD GPU support')
+_archive="$pkgname-$pkgver"
+source=("$url/archive/v$pkgver/$_archive.tar.gz")
+sha256sums=('375e078ce2091969f0cd14030620bd1a94987451cf7a73859127a786006a32cf')
 
 build() {
-	cd "$pkgname-$pkgver"
-	make ADDFLAGS="$CXXFLAGS $LDFLAGS"
+	cd "$_archive"
+	make all GPU_SUPPORT=false
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	make install PREFIX="$pkgdir/usr"
-	make setuid PREFIX="$pkgdir/usr"
+	cd "$_archive"
+	make DESTDIR="$pkgdir" PREFIX=/usr install
 }
+
