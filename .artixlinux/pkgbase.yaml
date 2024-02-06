@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: capstone
-  version: 4.0.2-7
+  version: 5.0.1-2
   arch:
     - x86_64
   pkgname:
     - capstone
     - python-capstone
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.1-2
+    packages:
+      - capstone-5.0.1-2-x86_64.pkg.tar.zst
+      - python-capstone-5.0.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
