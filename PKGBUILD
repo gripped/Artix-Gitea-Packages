@@ -6,7 +6,7 @@
 pkgname=bluedevil
 pkgver=5.27.10
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 epoch=1
 pkgdesc='Integrate the Bluetooth technology within KDE workspace and applications'
 arch=(x86_64)
@@ -14,7 +14,8 @@ url='https://kde.org/plasma-desktop/'
 license=(GPL2)
 depends=(bluez-qt5 kdeclarative5)
 makedepends=(extra-cmake-modules plasma-framework5 kdoctools5 kcmutils5)
-optdepends=('pulseaudio-bluetooth: to connect to A2DP profile')
+optdepends=('bluez-obex: file transfer'
+            'pulseaudio-bluetooth: to connect to A2DP profile')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('771fd58c2e1945e9f375598a5d1120671d9142d95580f08ec22494dd4d7fa180'
