@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.13.5
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -51,7 +51,6 @@ depends=(
   libxrender
   pango
   shared-mime-info
-  tracker3
   wayland
 )
 makedepends=(
