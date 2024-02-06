@@ -1,10 +1,11 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-smartbookmark-plugin
 pkgver=0.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Allows you to send requests directly to your browser and perform a custom search"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-smartbookmark-plugin"
@@ -15,7 +16,7 @@ makedepends=('intltool' 'libxt')
 source=(https://archive.xfce.org/src/panel-plugins/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2
         xfce4-smartbookmark-plugin-archlinux.patch)
 sha256sums=('2a279e2f5a54518684e62ad1f3cd8ef950826505b39725f1b5d8f0c43031cdd3'
-            '077092f164317327ccea49692fe166ad1dc7ff0cbbaf9863e5f0d11ca077b7e5')
+            '07f0e70bcdf371f7d4302cecf82c59845cf7b6b77ff87befff3603feca29903d')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
