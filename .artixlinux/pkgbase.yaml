@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: filezilla
-  version: 3.66.4-2
+  version: 3.66.5-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.66.4-2
+    version: 3.66.5-1
     packages:
-      - filezilla-3.66.4-2-x86_64.pkg.tar.zst
+      - filezilla-3.66.5-1-x86_64.pkg.tar.zst
   world:
     version: 3.66.4-1
     packages:
