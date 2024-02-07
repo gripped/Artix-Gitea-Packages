@@ -30,6 +30,7 @@ build() {
   # Fix runtime error in blender
   CXXFLAGS+=' -DSANITIZER_BUILD=1'
   CFLAGS+=' -DSANITIZER_BUILD=1'
+  export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
   # tests currently disabled because of https://github.com/intel/compute-runtime/issues/599
   cmake -B build -S compute-runtime-${pkgver} \
     -G 'Unix Makefiles' \
