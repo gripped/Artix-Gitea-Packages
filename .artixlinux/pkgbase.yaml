@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-curl
-  version: 8.6.0-2
+  version: 8.6.0-3
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - lib32-libcurl-compat
     - lib32-libcurl-gnutls
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -39,8 +39,11 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 8.6.0-3
+    packages:
+      - lib32-curl-8.6.0-3-x86_64.pkg.tar.zst
+      - lib32-libcurl-compat-8.6.0-3-x86_64.pkg.tar.zst
+      - lib32-libcurl-gnutls-8.6.0-3-x86_64.pkg.tar.zst
   lib32:
     version: 8.6.0-2
     packages:
