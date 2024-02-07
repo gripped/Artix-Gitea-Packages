@@ -88,7 +88,6 @@ optdepends=(
 	wine-mono
 )
 makedepends=(${makedepends[@]} ${depends[@]})
-install=wine.install
 
 build() {
 	# Allow ccache to work
