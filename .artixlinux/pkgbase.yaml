@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: discount
-  version: 3.0.0.a-1
+  version: 3.0.0.d-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.0.a-1
+    version: 3.0.0.d-1
     packages:
-      - discount-3.0.0.a-1-x86_64.pkg.tar.zst
+      - discount-3.0.0.d-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
