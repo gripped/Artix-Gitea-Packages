@@ -5,7 +5,7 @@
 
 pkgname=wine
 pkgver=9.1
-pkgrel=2
+pkgrel=3
 
 _pkgbasever=${pkgver/rc/-rc}
 
@@ -23,7 +23,7 @@ pkgdesc="A compatibility layer for running Windows programs"
 url="https://www.winehq.org"
 arch=(x86_64)
 options=(staticlibs !lto)
-license=(LGPL)
+license=(LGPL-2.1-or-later)
 depends=(
 	desktop-file-utils
 	fontconfig lib32-fontconfig
@@ -88,13 +88,14 @@ optdepends=(
 	wine-mono
 )
 makedepends=(${makedepends[@]} ${depends[@]})
+install=wine.install
 
 build() {
 	# Allow ccache to work
 	mv $pkgname-$_pkgbasever $pkgname
 
 	# Doesn't compile without remove these flags as of 4.10
-	export CFLAGS="${CFLAGS/-fno-plt/} -ffat-lto-objects"
+	export CFLAGS="$CFLAGS -ffat-lto-objects"
 
 	msg2 "Building Wine-64..."
 	mkdir "$pkgname-64-build"
