@@ -4,8 +4,8 @@
 # Contributor: Gabriel Fox <inbox@gabrielfox.dev>
 
 pkgname=hyprland
-pkgver=0.34.0
-pkgrel=1.1
+pkgver=0.35.0
+pkgrel=1
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/${pkgname^}"
@@ -30,7 +30,8 @@ depends=(cairo
          pixman
          polkit
          seatd
-         udev
+         libelogind
+         tomlplusplus
          vulkan-icd-loader
          vulkan-validation-layers
          wayland
@@ -49,11 +50,10 @@ makedepends=(cmake
              meson
              ninja
              vulkan-headers
-             xorgproto
-             tomlplusplus)
+             xorgproto)
 _archive="${pkgname^}-$pkgver"
 source=("$_archive.tar.gz::$url/releases/download/v$pkgver/source-v$pkgver.tar.gz")
-sha256sums=('234500dc726ec6cd190d95d45cf6d04766064172e75c1351ee7c49ec3405497e')
+sha256sums=('de53d764606131c8aacc209f8a3ad6e619fdcddd16a7cdf4d8ca343816bb8c1b')
 
 prepare() {
 	ln -sf hyprland-source "$_archive"
@@ -82,7 +82,7 @@ package() {
 	popd
 	install -Dm0644 -t "$pkgdir/usr/share/pkgconfig" build/hyprland.pc
 	install -Dm0644 -t "$pkgdir/usr/share/man/man1" docs/{Hyprland,hyprctl}.1
-        install -Dm0755 -t "$pkgdir/usr/bin/" build/Hyprland build/hyprctl/hyprctl build/hyprpm/hyprpm
+	install -Dm0755 -t "$pkgdir/usr/bin/" build/Hyprland build/hyprctl/hyprctl build/hyprpm/hyprpm
 	install -Dm0644 -t "$pkgdir/usr/share/$pkgname/" assets/*.png
 	install -Dm0644 -t "$pkgdir/usr/share/wayland-sessions/" "example/$pkgname.desktop"
 	install -Dm0644 -t "$pkgdir/usr/share/$pkgname/" "example/$pkgname.conf"
