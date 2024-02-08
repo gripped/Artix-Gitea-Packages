@@ -9,12 +9,12 @@ pkgbase:
     - lib32-libcurl-compat
     - lib32-libcurl-gnutls
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: lib32
+  removeRepo: lib32-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -39,17 +39,14 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
     version: 8.6.0-3
     packages:
       - lib32-curl-8.6.0-3-x86_64.pkg.tar.zst
       - lib32-libcurl-compat-8.6.0-3-x86_64.pkg.tar.zst
       - lib32-libcurl-gnutls-8.6.0-3-x86_64.pkg.tar.zst
-  lib32:
-    version: 8.6.0-2
-    packages:
-      - lib32-curl-8.6.0-2-x86_64.pkg.tar.zst
-      - lib32-libcurl-compat-8.6.0-2-x86_64.pkg.tar.zst
-      - lib32-libcurl-gnutls-8.6.0-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
