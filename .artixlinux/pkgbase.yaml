@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qtcreator
-  version: 12.0.1-2
+  version: 12.0.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.0.1-2
+    version: 12.0.2-1
     packages:
-      - qtcreator-12.0.1-2-x86_64.pkg.tar.zst
-      - qtcreator-devel-12.0.1-2-x86_64.pkg.tar.zst
+      - qtcreator-12.0.2-1-x86_64.pkg.tar.zst
+      - qtcreator-devel-12.0.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
