@@ -15,7 +15,6 @@ depends=(
   gtk4
   libadwaita
   libnotify
-  tracker3
   upower
 )
 makedepends=(
