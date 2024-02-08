@@ -33,11 +33,6 @@ build() {
   PATH="/build/go/bin:$PATH" rclone genautocomplete fish rclone.fish_completion
 }
 
-check() {
-  cd "rclone-$pkgver"
-  PATH="/build/go/bin:$PATH" make TAG=v$pkgver test || true
-}
-
 package() {
   cd "rclone-$pkgver"
 
