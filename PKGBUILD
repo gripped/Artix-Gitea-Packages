@@ -16,7 +16,7 @@ source=(arch-repos-install.hook
         arch-repos-hook.script
         arch-release)
 sha256sums=('0f98eb7e798815d217a527f81ee59edb9499a93d2f2331cc0b7cfb2b526ef18f'
-            '7059853927941eaad963971c6fccafa1c59ae97316493b639746b2c354363277'
+            '6c2f3e20a20fe6a57376e6cd8022069a4f38ff8aad120803a5fb3b70bfce5460'
             '64b34944c9ea19083979bd05e8c05361f5f1efd13354d71f6490ddd239fb31c2')
 
 package() {
