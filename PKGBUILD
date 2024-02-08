@@ -3,15 +3,15 @@
 
 pkgname=fcitx5
 pkgver=5.1.7
-pkgrel=2.1
+pkgrel=3
 pkgdesc="Next generation of fcitx"
 arch=('x86_64')
 url="https://github.com/fcitx/fcitx5"
-license=('GPL')
+license=('LGPL-2.1-or-later AND Unicode-DFS-2016')
 conflicts=('fcitx')
 groups=('fcitx5-im')
 depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'wayland'
-         'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2' 'dbus' 'libuv')
+         'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2')
 makedepends=('extra-cmake-modules' 'ninja' 'wayland-protocols' 'fmt')
 source=("https://download.fcitx-im.org/fcitx5/fcitx5/fcitx5-${pkgver}_dict.tar.xz"{,.sig})
 sha512sums=('0bc11065e0c3357471c51bdfa6f752e089a6d361349002e62f4ac952c8a0f1790a27aba195d027b340103eb4a6eef0efec124b8931ac2285e8b1b69ca3487269'
@@ -35,4 +35,5 @@ check() {
 package() {
   cd $pkgname-$pkgver
   DESTDIR="$pkgdir" ninja install
+  install -Dm644 LICENSES/Unicode-DFS-2016.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
