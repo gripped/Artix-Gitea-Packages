@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.13.5
-pkgrel=1.1
+pkgrel=1.2
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -111,7 +111,6 @@ build() {
     -D colord=enabled
     -D documentation=true
     -D man-pages=true
-    -D tracker=enabled
   )
 
   CFLAGS+=" -DG_DISABLE_CAST_CHECKS"
