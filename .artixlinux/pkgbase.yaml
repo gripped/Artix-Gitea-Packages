@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rust
-  version: 1:1.75.0-2
+  version: 1:1.76.0-1
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - rust-wasm
     - rust-src
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:1.76.0-1
+    packages:
+      - rust-1:1.76.0-1-x86_64.pkg.tar.zst
+      - lib32-rust-libs-1:1.76.0-1-x86_64.pkg.tar.zst
+      - rust-musl-1:1.76.0-1-x86_64.pkg.tar.zst
+      - rust-wasm-1:1.76.0-1-x86_64.pkg.tar.zst
+      - rust-src-1:1.76.0-1-x86_64.pkg.tar.zst
   world:
     version: 1:1.75.0-2
     packages:
