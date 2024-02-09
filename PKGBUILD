@@ -2,13 +2,16 @@
 # Contributor: Balló György <ballogyor+arch at gmail dot com>
 
 pkgbase=libhandy
-pkgname=(libhandy libhandy-docs)
-pkgver=1.8.2
+pkgname=(
+  libhandy
+  libhandy-docs
+)
+pkgver=1.8.3
 pkgrel=1
 pkgdesc="Library full of GTK+ widgets for mobile phones"
 url="https://gitlab.gnome.org/GNOME/libhandy"
 arch=(x86_64)
-license=(LGPL)
+license=(LGPL-2.1-or-later)
 depends=(
   glib2
   gtk3
@@ -22,22 +25,25 @@ makedepends=(
   vala
 )
 checkdepends=(xorg-server-xvfb)
-options=(debug)
-_commit=48ae7ec0f7f9ee5f666da38b0e39e66874957166  # tags/1.8.2^0
-source=("libhandy-${pkgver}::git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
-sha256sums=('SKIP')
+_commit=9b0071408ce86a3ef843806fddd723a85f6f2416  # tags/1.8.3^0
+source=("git+https://gitlab.gnome.org/GNOME/libhandy.git#commit=$_commit")
+b2sums=('SKIP')
 
 pkgver() {
-  cd libhandy-${pkgver}
+  cd libhandy
   git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
-  cd libhandy-${pkgver}
+  cd libhandy
 }
 
 build() {
-  artix-meson libhandy-${pkgver} build -D gtk_doc=true
+  local meson_options=(
+    -D gtk_doc=true
+  )
+
+  artix-meson libhandy build "${meson_options[@]}"
   meson compile -C build
 }
 
