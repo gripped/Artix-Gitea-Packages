@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kimageformats5
-  version: 5.114.0-2
+  version: 5.115.0-1
   arch:
     - x86_64
   pkgname:
     - kimageformats5
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.114.0-2
+    version: 5.115.0-1
     packages:
-      - kimageformats5-5.114.0-2-x86_64.pkg.tar.zst
+      - kimageformats5-5.115.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
