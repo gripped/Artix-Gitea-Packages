@@ -1,9 +1,9 @@
-# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-maps
-pkgver=45.3
+pkgver=45.4
 pkgrel=1
 pkgdesc="A simple GNOME 3 maps application"
 url="https://wiki.gnome.org/Apps/Maps"
@@ -31,13 +31,13 @@ makedepends=(
   yelp-tools
 )
 groups=(gnome)
-_commit=4c1ba7d6d3a4882eedb0106eba8e2ce75fcf3526  # tags/v45.3^0
+_commit=dd776033d1905d5e68a9192361e605ea782d34b3  # tags/v45.4^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-maps.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
   cd $pkgname
-  git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
+  git describe --tags | sed -r 's/^v//;s/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
