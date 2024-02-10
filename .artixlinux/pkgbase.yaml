@@ -124,12 +124,12 @@ pkgbase:
     - libreoffice-fresh-zh-tw
     - libreoffice-fresh-zu
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -160,6 +160,12 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 24.2.0-1
     packages:
       - libreoffice-fresh-af-24.2.0-1-any.pkg.tar.zst
@@ -280,127 +286,3 @@ repos:
       - libreoffice-fresh-zh-cn-24.2.0-1-any.pkg.tar.zst
       - libreoffice-fresh-zh-tw-24.2.0-1-any.pkg.tar.zst
       - libreoffice-fresh-zu-24.2.0-1-any.pkg.tar.zst
-  galaxy-gremlins:
-    version: null
-    packages: []
-  galaxy:
-    version: 7.6.4-1
-    packages:
-      - libreoffice-fresh-af-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-am-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ar-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-as-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ast-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-be-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-bg-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-bn-in-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-bn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-bo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-br-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-brx-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-bs-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ca-valencia-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ca-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ckb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-cs-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-cy-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-da-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-de-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-dgo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-dsb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-dz-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-el-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-en-gb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-en-za-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-eo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-es-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-et-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-eu-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-fa-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-fi-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-fr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-fur-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-fy-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ga-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-gd-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-gl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-gu-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-gug-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-he-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-hi-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-hr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-hsb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-hu-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-id-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-is-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-it-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ja-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ka-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-kab-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-kk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-km-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-kmr-latn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-kn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ko-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-kok-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ks-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-lb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-lo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-lt-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-lv-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-mai-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-mk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ml-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-mn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-mni-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-mr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-my-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-nb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ne-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-nl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-nn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-nr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-nso-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-oc-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-om-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-or-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-pa-in-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-pl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-pt-br-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-pt-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ro-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ru-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-rw-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sa-in-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sat-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sd-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-si-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sid-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sq-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sr-latn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ss-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-st-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sv-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-sw-tz-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-szl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ta-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-te-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-tg-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-th-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-tn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-tr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ts-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-tt-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ug-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-uk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-uz-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-ve-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-vec-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-vi-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-xh-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-zh-cn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-zh-tw-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-fresh-zu-7.6.4-1-any.pkg.tar.zst
