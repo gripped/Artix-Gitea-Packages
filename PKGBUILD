@@ -8,12 +8,12 @@ _pkgname=act_runner
 
 pkgname=act-runner
 pkgver=0.2.6
-pkgrel=1
+pkgrel=2
 pkgdesc="A runner for Gitea Actions based on GitHub's Act"
 arch=('x86_64')
 url="https://gitea.com/gitea/act_runner"
 license=('MIT')
-depends=('glibc' 'docker' 'gitea')
+depends=('glibc')
 provides=('act_runner')
 makedepends=('go')
 source=("act_runner-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
