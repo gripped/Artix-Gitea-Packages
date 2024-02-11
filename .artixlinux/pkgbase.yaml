@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: perl
-  version: 5.38.1-1
+  version: 5.38.2-1
   arch:
     - x86_64
   pkgname:
     - perl
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 5.38.2-1
+    packages:
+      - perl-5.38.2-1-x86_64.pkg.tar.zst
   system:
     version: 5.38.1-1
     packages:
