@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sébastien Luttringer
 # Contributor: Chris Brannon <chris@the-brannons.com>
 # Contributor: Mark Smith <markzzzsmith@yahoo.com.au>
 
 pkgname=ndisc6
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 pkgdesc='Collection of IPv6 networking utilities'
 arch=('x86_64')
@@ -16,7 +16,7 @@ source=("https://www.remlab.net/files/ndisc6/$pkgname-$pkgver.tar.bz2"
         'resolvconf-hook')
 #Contacted by mail, Rémi was not able to provide its public key.
 #He suggested to only rely on https to trust the source.
-sha256sums=('edc431d70510d7321a5a39d243de0d0f63846dc9145b3b549c7348cc2bc96609'
+sha256sums=('1f2fb2dc1172770aa5a09d39738a44d8b753cc5e2e25e306ca78682f9fea0b4f'
             'c485bb8e5ee480dca2897f950ba9854f8b9deaf782480072536fa4f2d0152d24')
 
 prepare() {
