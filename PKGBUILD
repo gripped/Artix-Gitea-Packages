@@ -7,11 +7,11 @@
 pkgbase=brltty
 pkgname=(brltty brltty-udev-generic)
 pkgver=6.6
-pkgrel=4
+pkgrel=5
 pkgdesc="Braille display driver for Linux/Unix"
 arch=(x86_64)
 url="https://brltty.app"
-license=(LGPL2.1)
+license=(LGPL-2.1-or-later)
 makedepends=(
   alsa-lib
   at-spi2-atk
@@ -143,9 +143,6 @@ package_brltty() {
   mkdir -p "$pkgdir/usr/lib/tmpfiles.d/"
   install -vDm 644 Autostart/Systemd/sysusers "$pkgdir/usr/lib/sysusers.d/"
   install -vDm 644 Autostart/Systemd/tmpfiles "$pkgdir/usr/lib/tmpfiles.d/"
-
-  # fix directory permission and ownership
-  install -vdm 750 -o root -g 102 "$pkgdir/usr/share/polkit-1/rules.d"
 
   # move generic udev rule, as it applies too broadly
   mv -v "$pkgdir/usr/lib/udev/rules.d/90-brltty-usb-generic.rules" ../
