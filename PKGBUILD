@@ -11,7 +11,7 @@ url="https://github.com/rootless-containers/slirp4netns"
 license=(GPL2)
 depends=(glibc glib2 libcap libseccomp libslirp)
 makedepends=(git)
-source=("git+$url#commit=$_commit?signed")
+source=("git+$url#commit=$_commit")
 sha256sums=('SKIP')
 validpgpkeys=('C020EA876CE4E06C7AB95AEF49524C6F9F638F1A') # Akihiro Suda <akihiro.suda.cz@hco.ntt.co.jp>
 
