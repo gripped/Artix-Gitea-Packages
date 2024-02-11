@@ -3,7 +3,7 @@
 
 pkgname=polkit
 pkgver=124
-pkgrel=1
+pkgrel=2
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://gitlab.freedesktop.org/polkit/polkit"
 arch=(x86_64)
@@ -25,6 +25,7 @@ makedepends=(
 checkdepends=(python-dbusmock)
 provides=(libpolkit-{agent,gobject}-1.so)
 backup=(etc/pam.d/polkit-1)
+install=polkit.install
 _commit=82f0924dc0eb23b9df68e88dbaf9e07c81940a5a  # tags/124
 source=(
   "git+https://gitlab.freedesktop.org/polkit/polkit.git#commit=$_commit"
@@ -34,7 +35,7 @@ source=(
 )
 b2sums=('SKIP'
         'cacdece40f519ce2f2a4b06d31e75e92ed9496c18d4b1090b91a3c8d19f49aff41949b1bdda6e3c0b049b0ca74bbf164023044cf1ec8de6a24065bcda0d42d1f'
-        '0fc028f7c883015c38515883f91e7cd10d15540ae6cb8305d79e8e2d8d70f2228a9935eb477413b37f4b33f6d4faf86f1b6ee33b0c9d6d3d3212e8c1733a83d0'
+        '51200f8600e48fdec61403c2d16d499478dabcb8826d11bd388ab0f32a05531130b45566d4716769043695863dbd9a8e9b9f6b5222316d60bc2e1749ec93b20b'
         '360556ed06af2b8d69a9107ff91b7668b16e5bff0a1be165c60189c5631f2a4dd60341b7a409d98e978e698bb69138177d4d3dc49a5305d83fe89e2ffc79b9de')
 
 pkgver() {
