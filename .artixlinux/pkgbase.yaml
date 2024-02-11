@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - openvr
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: null
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -28,9 +28,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.2.3-1
-    packages:
-      - openvr-2.2.3-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 1.23.8-1
     packages:
