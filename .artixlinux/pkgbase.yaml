@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mesa
-  version: 1:23.3.5-1
+  version: 1:24.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -16,7 +16,7 @@ pkgbase:
     - mesa-vdpau
     - mesa
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -37,8 +37,18 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:24.0.0-1
+    packages:
+      - vulkan-mesa-layers-1:24.0.0-1-x86_64.pkg.tar.gz
+      - opencl-clover-mesa-1:24.0.0-1-x86_64.pkg.tar.gz
+      - opencl-rusticl-mesa-1:24.0.0-1-x86_64.pkg.tar.gz
+      - vulkan-intel-1:24.0.0-1-x86_64.pkg.tar.gz
+      - vulkan-radeon-1:24.0.0-1-x86_64.pkg.tar.gz
+      - vulkan-swrast-1:24.0.0-1-x86_64.pkg.tar.gz
+      - vulkan-virtio-1:24.0.0-1-x86_64.pkg.tar.gz
+      - libva-mesa-driver-1:24.0.0-1-x86_64.pkg.tar.gz
+      - mesa-vdpau-1:24.0.0-1-x86_64.pkg.tar.gz
+      - mesa-1:24.0.0-1-x86_64.pkg.tar.gz
   world:
     version: 1:23.3.5-1
     packages:
