@@ -33,6 +33,7 @@ build() {
                 -Dgtk_module=false
                 -Dpackaging_backend=alpm
                 -Dsystemd=false
+                -Doffline_update=false
         )
 
         artix-meson "PackageKit-$pkgver" build "${_meson_options[@]}"
