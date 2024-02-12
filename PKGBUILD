@@ -56,7 +56,7 @@ validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
 prepare() {
 	cd $pkgname
 	# allow any poetry-core to be used
-	sed 's/poetry-core>=1.1.0,<=1.7.0/poetry-core>=1.0.0/' -i pyproject.toml
+	sed 's/poetry-core>=1.1.0,<=1.8.1/poetry-core>=1.0.0/' -i pyproject.toml
 	sed 's/setuptools_rust>=1.3,<=1.6.0/setuptools_rust>=1.3.0/' -i pyproject.toml
 }
 
