@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gnome-tweaks
-  version: 45.0-1
+  version: 45.1-1
   arch:
     - any
   pkgname:
     - gnome-tweaks
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.0-1
+    version: 45.1-1
     packages:
-      - gnome-tweaks-45.0-1-any.pkg.tar.zst
+      - gnome-tweaks-45.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
