@@ -6,11 +6,11 @@
 
 pkgname=plymouth
 pkgver=24.004.60
-pkgrel=4.1
+pkgrel=5
 pkgdesc='Graphical boot splash screen'
 arch=('x86_64')
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
-license=('GPL2')
+license=('GPL-2.0-or-later')
 depends=('bash' 'cairo' 'cantarell-fonts' 'filesystem' 'fontconfig' 'freetype2' 'glib2' 'glibc'
          'libdrm' 'libevdev' 'libpng' 'libx11' 'libxkbcommon' 'pango'
          'xkeyboard-config')
@@ -20,14 +20,18 @@ backup=('etc/plymouth/plymouthd.conf')
 install='plymouth.install'
 source=("https://www.freedesktop.org/software/$pkgname/releases/$pkgname-$pkgver.tar.xz"
         '0001-label-freetype-fix-fallback-not-working-when-fc-matc.patch'
+        '0001-renderers-Do-not-assume-all-keyboards-have-LEDs.patch'
+        '0001-ply-boot-splash-Set-unbuffered-input-when-creating-a.patch'
         'plymouth.initcpio_hook'
         'plymouth.initcpio_install'
         'plymouth-shutdown.initcpio_install'
         'mkinitcpio-generate-shutdown-ramfs-plymouth.conf')
 sha256sums=('f3f7841358c98f5e7b06a9eedbdd5e6882fd9f38bbd14a767fb083e3b55b1c34'
             '9d5feec6980fb878b827bf8b4df236783afacf9e0d1d47daaad915b8f9702441'
+            '0c99366046ac68377ee0348263a535bb06a935cbe0457f254a9f8e2a422edf0c'
+            'a261cf07ec57d7cb230b589e7f85a3080125b89248b1fb6191bc38aefc24076e'
             'de852646e615e06d4125eb2e646d0528d1e349bd9e9877c08c5d32c43d288b6f'
-            '1d79a36dc5596228f0191ac70714ca7b35b241d8c96d982225be42735f106fc2'
+            'ecd979b70a613b6aea05443da735e95a8c7341fbc9f099da807bd82394f5d3cf'
             '47be172735989dff66353a663ac58987719b9d8031398669dbcadf465afe7d24'
             '04af86a0ec83fc92d7339e1a7fcc0d55b86b95797a1a5f1a3b8d850996a3926c')
 
@@ -35,6 +39,12 @@ prepare() {
   cd $pkgname-$pkgver
   # https://gitlab.freedesktop.org/plymouth/plymouth/-/merge_requests/302
   patch -Np1 -i ../0001-label-freetype-fix-fallback-not-working-when-fc-matc.patch
+
+  # https://gitlab.freedesktop.org/plymouth/plymouth/-/merge_requests/304
+  patch -Np1 -i ../0001-renderers-Do-not-assume-all-keyboards-have-LEDs.patch
+
+  # https://gitlab.freedesktop.org/plymouth/plymouth/-/merge_requests/303
+  patch -Np1 -i ../0001-ply-boot-splash-Set-unbuffered-input-when-creating-a.patch
 
   # Use mkinitcpio to update initrd
   sed -i 's/^dracut -f$/mkinitcpio -P/' scripts/plymouth-update-initrd
@@ -60,7 +70,7 @@ package() {
   install -Dm644 plymouth.initcpio_hook "$pkgdir/usr/lib/initcpio/hooks/$pkgname"
   install -Dm644 plymouth.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname"
 
-  # Install mkinitcpio shutdown hook and systemd drop-in snippet
+  # Install mkinitcpio shutdown hook
   install -Dm644 plymouth-shutdown.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname-shutdown"
   
   # Install logo for the spinner theme
