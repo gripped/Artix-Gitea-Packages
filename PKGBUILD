@@ -23,10 +23,6 @@ _commit=54063b0edd3242fbd7fbe53d0a8c14570126b47b # tags/0.4.37^0
 source=("git+https://gitlab.freedesktop.org/gstreamer/orc.git#commit=$_commit")
 b2sums=('SKIP')
 
-pkgver() {
-	cd orc
-}
-
 prepare() {
 	cd orc
 }
