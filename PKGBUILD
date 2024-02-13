@@ -30,10 +30,6 @@ source=(
 )
 b2sums=('SKIP')
 
-pkgver() {
-	cd libproxy
-}
-
 prepare() {
 	cd libproxy
 }
