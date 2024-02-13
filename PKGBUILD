@@ -2,25 +2,37 @@
 # Contributor: Jan De Groot <jgc@archlinux.org>
 
 pkgname=gnome-keyring
-pkgver=42.1
-pkgrel=3
+pkgver=46.0
+pkgrel=1
 epoch=1
 pkgdesc="Stores passwords and encryption keys"
 url="https://wiki.gnome.org/Projects/GnomeKeyring"
 arch=(x86_64)
-license=(GPL LGPL)
-depends=(gcr gcr-4 pam openssh)
-makedepends=(git docbook-xsl python p11-kit)
+license=(
+  GPL-2.0-or-later
+  LGPL-2.1-or-later
+)
+depends=(
+  gcr
+  gcr-4
+  openssh
+  pam
+)
+makedepends=(
+  docbook-xsl
+  git
+  p11-kit
+  python
+)
 provides=(org.freedesktop.secrets)
 groups=(gnome)
-options=(debug)
-_commit=9d562e1e359e3ce01b61f0f52c75d38b96dece7b  # tags/42.1^0
-source=("git+https://gitlab.gnome.org/GNOME/gnome-keyring.git#commit=$_commit"
-        0001-build-Use-p11_module_configs-as-default-pkcs11-confi.patch
-        0002-daemon-Add-Cinnamon-to-autostart-files.patch)
-sha256sums=('SKIP'
-            '6985e3f7c60aa8dad794b1a9466f69737f3e9b5b7176e3888252c8c56647736a'
-            '91538221b304ef951a7d6d7441f8609a2787f725e55d60788b51e81f38c9012f')
+_commit=add672ea6ad72cc67aa146c90d8e06d0f26178c5  # tags/46.0^0
+source=(
+  "git+https://gitlab.gnome.org/GNOME/gnome-keyring.git#commit=$_commit"
+  0001-daemon-Add-Cinnamon-to-autostart-files.patch
+)
+b2sums=('SKIP'
+        '584832e529ee2be98b78b128ab4271fae919a194f2d9254526943da6baccfe5eb6deb17ee03cfb54261cade4be0e93ea7fbcc91ebc77ecfacd2f25d90f9e29c4')
 
 pkgver() {
   cd $pkgname
@@ -30,26 +42,26 @@ pkgver() {
 prepare() {
   cd $pkgname
 
-  # Fix pkcs11 config dir
-  git apply -3 ../0001-build-Use-p11_module_configs-as-default-pkcs11-confi.patch
-
   # Autolaunch in Cinnamon
-  git apply -3 ../0002-daemon-Add-Cinnamon-to-autostart-files.patch
+  git apply -3 ../0001-daemon-Add-Cinnamon-to-autostart-files.patch
 
   NOCONFIGURE=1 ./autogen.sh
 }
 
 build() {
-  cd $pkgname
-  ./configure --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --libexecdir=/usr/lib \
-    --with-pam-dir=/usr/lib/security \
-    --without-libcap-ng \
-    --disable-static \
-    --disable-schemas-compile \
+  local configure_options=(
+    --prefix=/usr
+    --sysconfdir=/etc
+    --localstatedir=/var
+    --libexecdir=/usr/lib
+    --with-pam-dir=/usr/lib/security
     --without-libcap-ng
+    --disable-static
+    --disable-schemas-compile
+  )
+
+  cd $pkgname
+  ./configure "${configure_options[@]}"
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
@@ -64,3 +76,5 @@ package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
 }
+
+# vim:set sw=2 sts=-1 et:
