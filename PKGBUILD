@@ -1,14 +1,19 @@
-# Maintainer: Christian Hesse <mail@eworm.de>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
 
 pkgname=tmux
 pkgver=3.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Terminal multiplexer'
 url='https://github.com/tmux/tmux/wiki'
 arch=('x86_64')
 license=('BSD')
-depends=('ncurses' 'libevent' 'libutempter')
+depends=('libevent' 'libevent_core-2.1.so'
+         'libsixel'
+         'libutempter'
+         'ncurses' 'libncursesw.so'
+         'libudev.so')
 source=("https://github.com/tmux/tmux/releases/download/${pkgver/_/}/tmux-${pkgver/_/}.tar.gz")
 sha256sums=('551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa')
 
@@ -17,8 +22,9 @@ build() {
 
 	./configure \
 		--prefix=/usr \
-		--enable-utempter \
-		--disable-systemd
+		--enable-sixel \
+		--disable-systemd \
+		--enable-utempter
 	make
 }
 
