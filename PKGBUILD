@@ -30,10 +30,6 @@ _commit=54c5f4ec01ce9c89a590cdc7e4c2c6e3948bb029 # tags/1.51.2^0
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#commit=$_commit")
 b2sums=('SKIP')
 
-pkgver() {
-	cd pango
-}
-
 prepare() {
 	cd pango
 }
