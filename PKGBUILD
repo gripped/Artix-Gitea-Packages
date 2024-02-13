@@ -9,44 +9,43 @@ url="https://gstreamer.freedesktop.org/modules/orc.html"
 arch=(x86_64)
 license=(BSD-3-Clause)
 depends=(
-  lib32-glibc
-  orc
+	lib32-glibc
+	orc
 )
 makedepends=(
-  git
-  gtk-doc
-  meson
-  valgrind
+	git
+	gtk-doc
+	meson
+	valgrind
 )
 provides=(liborc{,-test}-${pkgver%.*}.so)
-_commit=54063b0edd3242fbd7fbe53d0a8c14570126b47b  # tags/0.4.37^0
+_commit=54063b0edd3242fbd7fbe53d0a8c14570126b47b # tags/0.4.37^0
 source=("git+https://gitlab.freedesktop.org/gstreamer/orc.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
-  cd orc
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+	cd orc
 }
 
 prepare() {
-  cd orc
+	cd orc
 }
 
 build() {
-  artix-meson orc build --cross-file lib32
-  meson compile -C build
+	artix-meson orc build --cross-file lib32
+	meson compile -C build
 }
 
 check() {
-  meson test -C build --print-errorlogs
+	meson test -C build --print-errorlogs
 }
 
 package() {
-  meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 
-  rm -r "$pkgdir"/usr/{bin,include,share}
+	rm -r "$pkgdir"/usr/{bin,include,share}
 
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 orc/COPYING
+	install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 orc/COPYING
 }
 
 # vim:set sw=2 sts=-1 et:
