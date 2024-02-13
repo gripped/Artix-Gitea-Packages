@@ -42,7 +42,7 @@ repos:
   lib32:
     version: 0.5.4-1
     packages:
-      - lib32-libproxy-0.5.4-1-x86_64.pkg.tar.gz
+      - lib32-libproxy-0.5.4-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
