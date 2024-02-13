@@ -5,7 +5,7 @@
 
 pkgbase=lib32-pango
 pkgname=(
-  lib32-pango
+	lib32-pango
 )
 pkgver=1.51.2
 pkgrel=1
@@ -15,49 +15,48 @@ url="https://www.pango.org/"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
-  lib32-cairo
-  lib32-fribidi
-  lib32-harfbuzz
-  lib32-libthai
-  lib32-libxft
-  pango
+	lib32-cairo
+	lib32-fribidi
+	lib32-harfbuzz
+	lib32-libthai
+	lib32-libxft
+	pango
 )
 makedepends=(
-  git
-  meson
+	git
+	meson
 )
-_commit=54c5f4ec01ce9c89a590cdc7e4c2c6e3948bb029  # tags/1.51.2^0
+_commit=54c5f4ec01ce9c89a590cdc7e4c2c6e3948bb029 # tags/1.51.2^0
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#commit=$_commit")
 b2sums=('SKIP')
 
 pkgver() {
-  cd pango
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+	cd pango
 }
 
 prepare() {
-  cd pango
+	cd pango
 }
 
 build() {
-  local meson_options=(
-    --cross-file lib32
-    -D introspection=disabled
-  )
+	local meson_options=(
+		--cross-file lib32
+		-D introspection=disabled
+	)
 
-  artix-meson pango build "${meson_options[@]}"
-  meson compile -C build
+	artix-meson pango build "${meson_options[@]}"
+	meson compile -C build
 }
 
 # not running checks: validation breaks when deps
 # (especially harfbuzz) don't match upstream CI
 
 package_lib32-pango() {
-  provides=(libpango{,cairo,ft2,xft}-1.0.so)
+	provides=(libpango{,cairo,ft2,xft}-1.0.so)
 
-  meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 
-  rm -r "$pkgdir"/usr/{bin,include}
+	rm -r "$pkgdir"/usr/{bin,include}
 }
 
 # vim:set sw=2 sts=-1 et:
