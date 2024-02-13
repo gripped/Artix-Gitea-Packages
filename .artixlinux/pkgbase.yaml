@@ -42,7 +42,7 @@ repos:
   lib32:
     version: 9.2-1
     packages:
-      - wine-9.2-1-x86_64.pkg.tar.gz
+      - wine-9.2-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []

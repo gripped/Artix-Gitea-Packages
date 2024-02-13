@@ -89,7 +89,7 @@ optdepends=(
 )
 makedepends=(${makedepends[@]} ${depends[@]})
 install=wine.install
-
+ 
 build() {
 	# Allow ccache to work
 	mv $pkgname-$_pkgbasever $pkgname
