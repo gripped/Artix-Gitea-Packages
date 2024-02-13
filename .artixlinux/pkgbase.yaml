@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: neovim-qt
-  version: 0.2.18-1
+  version: 0.2.18-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.18-1
+    version: 0.2.18-2
     packages:
-      - neovim-qt-0.2.18-1-x86_64.pkg.tar.zst
+      - neovim-qt-0.2.18-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
