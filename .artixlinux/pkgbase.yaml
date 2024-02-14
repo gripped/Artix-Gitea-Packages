@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-praw
-  version: 7.7.1-1
+  version: 7.7.1-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.7.1-1
+    version: 7.7.1-2
     packages:
-      - python-praw-7.7.1-1-any.pkg.tar.zst
+      - python-praw-7.7.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
