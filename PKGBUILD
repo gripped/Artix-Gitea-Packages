@@ -2,9 +2,9 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-serialport
-_qtver=6.6.1
+_qtver=6.6.2
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -12,16 +12,16 @@ pkgdesc='Provides access to hardware and virtual serial ports'
 depends=(gcc-libs
          glibc
          qt6-base
-         udev)
+         libelogind)
 makedepends=(cmake
              ninja)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('96fc233d5cbcac5048c6020dcfbd6cec8a6a8334eed0a283b33d58afc6d2aed8')
+sha256sums=('ba1e0c9caeb1ee06ce940ce32c810e6fab826124281469ad0eecff56f375459a')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr  \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
