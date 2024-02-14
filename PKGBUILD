@@ -3,9 +3,9 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt6-3d
-_qtver=6.6.1
+_qtver=6.6.2
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -24,10 +24,10 @@ optdepends=('assimp: assimp importer plugin'
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('f384aed74f14a71c68f607a3b1e859ea22746e82650e775fd40f0653c2443229')
+sha256sums=('9174ec6eac56cdf58eb928ea9df8130ef744cee3171d08c78ba1a28778a38582')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
