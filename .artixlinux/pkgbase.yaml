@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: qt6-doc
-  version: 6.6.1-2
+  version: 6.6.2-1
   arch:
     - any
   pkgname:
     - qt6-doc
     - qt6-examples
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.6.2-1
+    packages:
+      - qt6-doc-6.6.2-1-any.pkg.tar.zst
+      - qt6-examples-6.6.2-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
