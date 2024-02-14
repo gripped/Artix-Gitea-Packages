@@ -13,7 +13,7 @@ pkgdesc='A cross-platform application and UI framework (Translations)'
 depends=()
 makedepends=(cmake
              ninja
-             qt6-tools)
+             qt6-base)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
