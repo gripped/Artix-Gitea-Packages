@@ -21,7 +21,7 @@ sha256sums=('ca3ac090ef3aa12566c26b482c106f1f986c5a3444e7003f379726a550530c77')
 
 build() {
   export PATH="/usr/lib/qt6/bin:$PATH"
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build -j1
 }
