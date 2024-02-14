@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: qt6-base
-  version: 6.6.1-3
+  version: 6.6.2-1
   arch:
     - x86_64
   pkgname:
     - qt6-base
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.6.2-1
+    packages:
+      - qt6-base-6.6.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
