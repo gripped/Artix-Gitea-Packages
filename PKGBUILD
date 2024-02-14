@@ -4,8 +4,8 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.7.3.hardened1
-pkgrel=3.1
+pkgver=6.7.4.hardened1
+pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
 arch=(x86_64)
@@ -34,7 +34,6 @@ source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   ${url}/releases/download/${_srctag}/${pkgbase}-${_srctag}.patch{,.sig}
   config  # the main kernel config file
-  0001-Revert-mm-sparsemem-fix-race-in-accessing-memory_sec.patch
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
@@ -42,18 +41,16 @@ validpgpkeys=(
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('b7f08c652747574a3aa26e317d7a8f23ffab3fb645e1b1533b215dcfd5742b44'
+sha256sums=('f68d9f5ffc0a24f850699b86c8aea8b8687de7384158d5ed3bede37de098d60c'
             'SKIP'
-            'a427d149a67eec747cf070cd176033663b2bfd972b4ba114049e9aee0a644d0e'
+            'bd10802392f0ca810efdd541710058c1345c646ea838b35e2e462dddb4527cbc'
             'SKIP'
-            'be9bfde71934501cf8337a25fbfabbe51c1c612b86ee9ac4fa271ae51a37c8e0'
-            '88c88d845998b88cb9fa617b2f30e35f05b168c2bdd52537cd6a8b6aac173641')
-b2sums=('2dea0685e5c9b279beb7661f4efa91ccd662d55eb7c5a69aff52fc74bbb574fcb490a9abcc44d895583ca21b3e6860b3c5e9c35daae66b22c4fe97cab44b2a75'
+            '4693e8b6bde3c5ea01c7911764086f67a586da92f4c755dcd7493c27c8958bfe')
+b2sums=('578114990b2987e2b241a7492bd4a69c46adfd613eba9715d63fd4565c19678dfab06b5107a0ff791e9a3190cb52b75a76d231aa39d4e7fba24e79f7f18935a1'
         'SKIP'
-        '64b7a697d32582e725125d32303983d2d32bfb8591848be8e1ce7971ce0118d464264c2d3e154cb088bf4f0c614facb07c368aade40f22886d7351cec5c929b1'
+        '8052da848b12cfa7c6fad0295aac2d5f7f9f48f0b7a701b5aaabc63226f12f258304b977c0b8b61bf2b417dcd398de314f0d0f0c707abe6cb4a379bbb663d06d'
         'SKIP'
-        'c186fbbc6d8a5dbb847e84565f1d4a71c11f6822f14f04bc34752e6fba7e6b521f51c9c15c7a142a25e2684a58fefffa7ef6883d72b3d355d23847068abb0551'
-        '687419d6145974e147419d658eec47efa019064f26378081a12ff145f62a141deec42cabfbdedfe5bc27333e1e610a059d3d5584d0d1afd545d8542f9c6d44d7')
+        'd0be62aa8d4bf2beed34c43cb4f1f24c32fd356473f7a58052f949c56fd352b6bd8792ab40d96d710c58816e252afcb010f96f381a1c1d5f749c499a18cde7e0')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
