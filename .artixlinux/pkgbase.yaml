@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tmux
-  version: 3.4-2
+  version: 3.4-3
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.4-2
+    version: 3.4-3
     packages:
-      - tmux-3.4-2-x86_64.pkg.tar.zst
+      - tmux-3.4-3-x86_64.pkg.tar.zst
   world:
     version: 3.4-1
     packages:
