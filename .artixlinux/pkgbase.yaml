@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: python-cairo
-  version: 1.25.1-1
+  version: 1.26.0-1
   arch:
     - x86_64
   pkgname:
     - python-cairo
     - python-cairo-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.26.0-1
+    packages:
+      - python-cairo-1.26.0-1-x86_64.pkg.tar.zst
+      - python-cairo-docs-1.26.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.25.1-1
     packages:
