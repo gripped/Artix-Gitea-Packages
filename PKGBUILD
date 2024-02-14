@@ -3,8 +3,8 @@
 # Contributor: dnuux <dnuuxx@gmail.com>
 
 pkgname=python-faker
-pkgver=22.7.0
-_commit=6fcfed8ad7c17b669d54795466ef5c631769bc68
+pkgver=23.1.0
+_commit=17f22ba4cb5c158b63785c8e441597369dafdb61
 pkgrel=1
 pkgdesc='Faker generates fake data for you.'
 arch=('any')
