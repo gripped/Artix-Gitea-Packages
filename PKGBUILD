@@ -3,9 +3,9 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt6-declarative
-_qtver=6.6.1
+_qtver=6.6.2
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -25,7 +25,7 @@ replaces=(qt6-quickcontrols2)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('7effd7338e6658464ce9554dc88d1bf93a39d1415501be2c4b34c098b608995c')
+sha256sums=('c39ce9a7c4468f7399c9ced0fbe6ef9c8d6550efc4b893297aa3cfb965b3d84c')
 
 build() {
   export CXXFLAGS+=" -ffat-lto-objects"
