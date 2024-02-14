@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-betamax
-  version: 0.8.1-10
+  version: 0.9.0-1
   arch:
     - any
   pkgname:
     - python-betamax
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.1-10
+    version: 0.9.0-1
     packages:
-      - python-betamax-0.8.1-10-any.pkg.tar.zst
+      - python-betamax-0.9.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
