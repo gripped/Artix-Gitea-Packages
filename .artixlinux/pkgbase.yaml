@@ -39,16 +39,16 @@ repos:
   world-gremlins:
     version: 1:24.0.0-1
     packages:
-      - vulkan-mesa-layers-1:24.0.0-1-x86_64.pkg.tar.gz
-      - opencl-clover-mesa-1:24.0.0-1-x86_64.pkg.tar.gz
-      - opencl-rusticl-mesa-1:24.0.0-1-x86_64.pkg.tar.gz
-      - vulkan-intel-1:24.0.0-1-x86_64.pkg.tar.gz
-      - vulkan-radeon-1:24.0.0-1-x86_64.pkg.tar.gz
-      - vulkan-swrast-1:24.0.0-1-x86_64.pkg.tar.gz
-      - vulkan-virtio-1:24.0.0-1-x86_64.pkg.tar.gz
-      - libva-mesa-driver-1:24.0.0-1-x86_64.pkg.tar.gz
-      - mesa-vdpau-1:24.0.0-1-x86_64.pkg.tar.gz
-      - mesa-1:24.0.0-1-x86_64.pkg.tar.gz
+      - vulkan-mesa-layers-1:24.0.0-1-x86_64.pkg.tar.zst
+      - opencl-clover-mesa-1:24.0.0-1-x86_64.pkg.tar.zst
+      - opencl-rusticl-mesa-1:24.0.0-1-x86_64.pkg.tar.zst
+      - vulkan-intel-1:24.0.0-1-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:24.0.0-1-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:24.0.0-1-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:24.0.0-1-x86_64.pkg.tar.zst
+      - libva-mesa-driver-1:24.0.0-1-x86_64.pkg.tar.zst
+      - mesa-vdpau-1:24.0.0-1-x86_64.pkg.tar.zst
+      - mesa-1:24.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 1:23.3.5-1
     packages:
