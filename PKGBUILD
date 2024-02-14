@@ -2,7 +2,7 @@
 # Contributor: Jan De Groot <jgc@archlinux.org>
 
 pkgname=gnome-keyring
-pkgver=46.0
+pkgver=46.1
 pkgrel=1
 epoch=1
 pkgdesc="Stores passwords and encryption keys"
@@ -26,7 +26,7 @@ makedepends=(
 )
 provides=(org.freedesktop.secrets)
 groups=(gnome)
-_commit=add672ea6ad72cc67aa146c90d8e06d0f26178c5  # tags/46.0^0
+_commit=4e173494bf15795a1ebab6e2bbd9377fac456240  # tags/46.1^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-keyring.git#commit=$_commit"
   0001-daemon-Add-Cinnamon-to-autostart-files.patch
