@@ -4,8 +4,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=gwenview
-pkgver=23.08.4
-pkgrel=3
+pkgver=23.08.5
+pkgrel=1
 pkgdesc='A fast and easy to use image viewer'
 url='https://apps.kde.org/gwenview/'
 arch=(x86_64)
@@ -58,7 +58,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-graphics)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('48549ba76c74d7079d935bece2d3d43186384ae5d14ffde59d55b12c9bcaad05'
+sha256sums=('a4fcd1c053b750d26ea8a9183208ecb5ed1d9b281625de3393e14f8bdc169038'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
