@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6-base
-  version: 6.6.2-3
+  version: 6.6.2-4
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - qt6-xcb-private-headers
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.6.2-3
+    version: 6.6.2-4
     packages:
-      - qt6-base-6.6.2-3-x86_64.pkg.tar.zst
-      - qt6-xcb-private-headers-6.6.2-3-x86_64.pkg.tar.zst
+      - qt6-base-6.6.2-4-x86_64.pkg.tar.zst
+      - qt6-xcb-private-headers-6.6.2-4-x86_64.pkg.tar.zst
   world:
     version: 6.6.1-3
     packages:
