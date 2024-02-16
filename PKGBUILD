@@ -4,7 +4,7 @@
 pkgname=qt6-virtualkeyboard
 _qtver=6.6.2
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -24,8 +24,7 @@ sha256sums=('6142fddb88eb3ed03a97e0d86f7b3121207845b3ec84a92522a78b97886ed81e')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
-    -DQT_FEATURE_vkb_arrow_keynavigation=ON
+    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
 
