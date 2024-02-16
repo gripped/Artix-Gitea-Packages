@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libblockdev
-  version: 3.0.4-1
+  version: 3.0.4-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.4-1
+    version: 3.0.4-2
     packages:
-      - libblockdev-3.0.4-1-x86_64.pkg.tar.zst
+      - libblockdev-3.0.4-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
