@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: kimageannotator
-  version: 0.7.0-2
+  version: 0.7.0-3
   arch:
     - x86_64
   pkgname:
     - kimageannotator-qt5
     - kimageannotator-qt6
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.7.0-3
+    packages:
+      - kimageannotator-qt5-0.7.0-3-x86_64.pkg.tar.zst
+      - kimageannotator-qt6-0.7.0-3-x86_64.pkg.tar.zst
   world:
     version: 0.7.0-2
     packages:
