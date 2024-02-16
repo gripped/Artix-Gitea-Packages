@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: power-profiles-daemon
-  version: 0.13-2
+  version: 0.20-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.13-2
+    version: 0.20-1
     packages:
-      - power-profiles-daemon-0.13-2-x86_64.pkg.tar.zst
+      - power-profiles-daemon-0.20-1-x86_64.pkg.tar.zst
   world:
     version: 0.13-1
     packages:

@@ -2,35 +2,38 @@
 # Contributor: tinywrkb <tinywrkb@gmail.com>
 
 pkgname=power-profiles-daemon
-pkgver=0.13
-pkgrel=2
+pkgver=0.20
+pkgrel=1
 pkgdesc='Makes power profiles handling available over D-Bus'
-url='https://gitlab.freedesktop.org/hadess/power-profiles-daemon'
-license=(GPL3)
+url='https://gitlab.freedesktop.org/upower/power-profiles-daemon'
+license=(GPL-3.0-only)
 arch=(x86_64)
-depends=(upower polkit)
+depends=(gcc-libs
+         glib2
+         glibc
+         libgudev
+         polkit
+         upower)
 optdepends=('python-gobject: for powerprofilesctl')
-depends=('init-power-profiles-daemon')
 makedepends=(meson)
-checkdepends=(python-dbusmock python-isort python-mccabe umockdev)
-source=(https://gitlab.freedesktop.org/hadess/power-profiles-daemon/-/archive/$pkgver/$pkgname-$pkgver.tar.gz
-        power-profiles-daemon.tmpfiles
-        dbus.patch)
-b2sums=('80dba838433c7abdbc6079a8c6ff330cfda8dc1f0e8b8628125e466987238b1b7912b91af201ff120a2b1b7a5b081824c98d2a7e67a6c81d6ba7eb905d168ce4'
-        '4448feb0622ee95017b38dd0cc54a012df20132d4e409dc80ddea2137132892c3d596f752829b5644dc5f4aa420a6f0b050824e775881920982b96fdd9783ee5'
-        '64d6dcba25b94b378e0a443dca0c444fb670cfa7fb34f10b655741c4ce766873d80a995e476ad81fecd5de7ed8f9fdb190a40110ee39a9a28eb6270c84d5873a')
+checkdepends=(python-dbusmock
+              python-isort
+              python-mccabe
+              umockdev)
+source=(https://gitlab.freedesktop.org/upower/power-profiles-daemon/-/archive/$pkgver/$pkgname-$pkgver.tar.gz
+        power-profiles-daemon.tmpfiles)
+        # drop patch for testing, eventually adopt for artix-service
+        # dbus.patch)
+sha256sums=('b6d3ad1cdcdc0324d5ccaa86dd0ed465544c1e86360fdbd2b6b2b0723afb6dad'
+            'f6eeaf1b85f43c0a97480d1f1a578ef4a850850f66885ad9b6d90907df51ec1d')
 
-prepare() {
-  cd $pkgname-$pkgver
-  patch -Np1 < ../dbus.patch
-}
+# prepare() {
+#   patch -d "$pkgname-$pkgver" -Np1 -i "${srcdir}"/dbus.patch
+# }
+
 build() {
-  # set a dummy dir to avoid systemd dep
-  meson $pkgname-$pkgver build \
-    --prefix /usr \
-    --libexec lib \
-    --sysconfdir /usr/share \
-    -Dsystemdsystemunitdir=/usr/lib/systemd
+  artix-meson "$pkgname-$pkgver" build \
+    -Dsystemdsystemunitdir=''
   meson compile -C build
 }
 
@@ -40,7 +43,5 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-  rm -r $pkgdir/usr/lib/systemd
-  install -vDm 644 "${pkgname}.tmpfiles" \
-    "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
+  install -vDm 644 "$srcdir/$pkgname".tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/"$pkgname".conf
 }
