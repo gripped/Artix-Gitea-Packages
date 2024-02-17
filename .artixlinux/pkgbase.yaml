@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-scikit-learn
-  version: 1.4.0-1
+  version: 1.4.1.post1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.0-1
+    version: 1.4.1.post1-1
     packages:
-      - python-scikit-learn-1.4.0-1-x86_64.pkg.tar.zst
+      - python-scikit-learn-1.4.1.post1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
