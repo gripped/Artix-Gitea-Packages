@@ -26,7 +26,7 @@ makedepends=(
 # https://github.com/containers/podman/issues/13297
 options=(!lto)
 source=(
-  git+$url#tag=$_commit?signed
+  git+$url#tag=$_commit
   $pkgname-4.6.0-defaultinitpath.patch
 )
 # See the release-keys repository
