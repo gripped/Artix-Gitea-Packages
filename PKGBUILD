@@ -2,11 +2,13 @@
 
 _name=libtmux
 pkgname=python-libtmux
-pkgver=0.25.0
+pkgver=0.31.0.post0
+_pkgver=${pkgver/.post0/post0}
 pkgrel=1
 pkgdesc="Python api for tmux"
 arch=(any)
 url="https://libtmux.git-pull.com/"
+_url="https://github.com/tmux-python/libtmux"
 license=(MIT)
 depends=(
   python
@@ -26,18 +28,18 @@ checkdepends=(
   procps-ng
 )
 optdepends=('python-pytest: for pytest plugin')
-source=($_name-$pkgver.tar.gz::https://github.com/tmux-python/libtmux/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('72cf2a24af0407baa775f1be13490c45b573cfaabc6803b57d77cc0eac5de0ef9b8c3a8923437163d1b6b9486a86b71076df40761f302d3534d36d94c68bd6bb')
-b2sums=('ac9da378491acbb91eb8e67e47ef213206d77f618a35fd6cba1014435c70b82eca712f764ccc4f2fa14f4027001678e31743ade9b28ffbc9e5509e2592afab48')
+source=($_name-$_pkgver.tar.gz::$_url/archive/refs/tags/v$_pkgver.tar.gz)
+sha512sums=('0815c304ff4e0db909005418ced00b7ec6541902acd71733240f83f521b06afbaa93d36fa3d8fa22699077f0e5b7eb5fd5b96fa8c8d12a7bed2e63f16322fd29')
+b2sums=('172a390ce90c51d74aa113d9147ad08f0b3ac9297e087dc96abf58670b3f1f770e79b5411a972939b48116282c30b644a111cec44dce68ee8156712ca150e638')
 
 prepare() {
-  cd $_name-$pkgver
+  cd $_name-$_pkgver
   # we do not want to package python-gp-libs: https://github.com/tmux-python/libtmux/issues/496
   sed '/addopts/d' -i pyproject.toml
 }
 
 build() {
-  cd $_name-$pkgver
+  cd $_name-$_pkgver
   python -m build --wheel --skip-dependency-check --no-isolation
 }
 
@@ -48,14 +50,14 @@ check() {
   )
   local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
-  cd $_name-$pkgver
+  cd $_name-$_pkgver
   python -m installer --destdir=test_dir dist/*.whl
   export PYTHONPATH="$PWD/test_dir/$_site_packages"
   pytest "${pytest_options[@]}" tests
 }
 
 package() {
-  cd $_name-$pkgver
+  cd $_name-$_pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
   install -vDm 644 {CHANGES,README.md} -t "$pkgdir/usr/share/doc/$pkgname"
