@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-libffi
-  version: 3.4.4-1
+  version: 3.4.5-1
   arch:
     - x86_64
   pkgname:
     - lib32-libffi
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 3.4.5-1
+    packages:
+      - lib32-libffi-3.4.5-1-x86_64.pkg.tar.zst
   lib32:
     version: 3.4.4-1
     packages:
