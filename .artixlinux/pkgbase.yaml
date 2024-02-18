@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libffi
-  version: 3.4.5-1
+  version: 3.4.6-1
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 3.4.5-1
+    version: 3.4.6-1
     packages:
-      - libffi-3.4.5-1-x86_64.pkg.tar.zst
+      - libffi-3.4.6-1-x86_64.pkg.tar.zst
   system:
     version: 3.4.4-1
     packages:
