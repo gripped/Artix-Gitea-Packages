@@ -9,12 +9,12 @@ pkgbase:
     - linux-rt-headers
     - linux-rt-docs
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -48,8 +48,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.7.0.6.realtime1-1
+    packages:
+      - linux-rt-6.7.0.6.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-headers-6.7.0.6.realtime1-1-x86_64.pkg.tar.zst
+      - linux-rt-docs-6.7.0.6.realtime1-1-x86_64.pkg.tar.zst
   galaxy:
     version: 6.6.5.16.realtime1-3
     packages:
