@@ -4,7 +4,7 @@
 pkgname=rocm-llvm
 pkgdesc='Radeon Open Compute - LLVM toolchain (llvm, clang, lld)'
 pkgver=6.0.0
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc/rocmcc.html'
 license=('Apache-2.0 WITH LLVM-exception')
@@ -34,7 +34,11 @@ build() {
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_INSTALL_PREFIX='/opt/rocm/lib/llvm'
         -DLLVM_HOST_TRIPLE=$CHOST
-        -DLLVM_ENABLE_PROJECTS='llvm;clang;compiler-rt;lld'
+        -DLLVM_ENABLE_PROJECTS='llvm;clang;lld;compiler-rt;clang-tools-extra'
+        -DCLANG_ENABLE_AMDCLANG=ON
+        -DLLVM_ENABLE_RUNTIMES='libcxx;libcxxabi;libunwind'
+        -DLIBCXX_ENABLE_STATIC=ON
+        -DLIBCXXABI_ENABLE_STATIC=ON
         -DLLVM_TARGETS_TO_BUILD='AMDGPU;NVPTX;X86'
         -DCLANG_DEFAULT_LINKER=lld
         -DLLVM_INSTALL_UTILS=ON
