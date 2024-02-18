@@ -8,9 +8,9 @@ pkgname=(
   dolphin-emu-tool
 )
 pkgver=5.0.r20347.dc0814ae46
-pkgrel=1
+pkgrel=2
 epoch=1
-pkgdesc='A Gamecube / Wii / Triforce emulator'
+pkgdesc='A Gamecube and Wii emulator'
 arch=(x86_64)
 url=https://dolphin-emu.org
 license=(GPL2)
@@ -40,7 +40,6 @@ depends=(
   libx11
   libxi
   libxrandr
-  libxxhash.so
   lzo
   mbedtls2
   #minizip-ng
@@ -108,7 +107,7 @@ build() {
   cmake -S dolphin-emu -B build -G Ninja \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DDISTRIBUTOR=artuxlinux.org \
+    -DDISTRIBUTOR=artixlinux.org \
     -DENABLE_TESTS=OFF \
     -DUSE_MGBA=ON \
     -Wno-dev
