@@ -2,8 +2,8 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=6.6.5.16.realtime1
-pkgrel=3
+pkgver=6.7.0.6.realtime1
+pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/commits/v$pkgver"
@@ -28,9 +28,9 @@ source=(
   config
 )
 sha512sums=('SKIP'
-            '2fd40fab751b5c8c5d10f5d04c3f866f9b953856ffa99438976d3a49460673993216276ca77c6341ed547c6f25120a7593334f649bf619b6754389ed58d732ff')
+            'a4683fa8ca688cabc4619eb5a05c28704b0f27bd45841d76e4692bd46e549ffdcdc43b85c3f6c5fb37e6b79d6205b951a1bb957bc80f13df3d53aaa59dde45a3')
 b2sums=('SKIP'
-        'a68500b62abf42ac275b6c409e1e32a14baaa40481a6c5ee8a1fa106f394a117cc9bffe9f08f47a2dba7d41467944e2197a556829bf25daca2585cf4c49d7478')
+        'a3184b960219eb5188ed422a2d3b851a1c457561e2318335f91dcededa4b8733ad68790ea5aaccd6eba6a0618d698213fe690ea124ab618fe90411ff65b24366')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@kernel.org>
   '64254695FFF0AA4466CC19E67B96E8162A8CF5D1'  # Sebastian Andrzej Siewior
