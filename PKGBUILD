@@ -1,0 +1,49 @@
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
+
+pkgname=glycin
+pkgver=0.1.2
+pkgrel=2
+pkgdesc="Sandboxed and extendable image decoding"
+arch=(x86_64)
+url="https://gitlab.gnome.org/sophie-h/glycin"
+license=(
+  'LGPL-2.1-or-later'
+  'MPL-2.0'
+)
+depends=(
+  bubblewrap
+  cairo
+  gdk-pixbuf2
+  glib2
+  gtk4
+  libjxl
+  librsvg
+  libxml2
+  pango
+)
+makedepends=(
+  git
+  libheif
+  meson
+  rust
+)
+optdepends=(
+  'libheif: heif/heic file support'
+)
+_commit=84885234beca8185ca739bfcca229fb52b339800 # tags/0.1.2^0
+source=("git+https://gitlab.gnome.org/sophie-h/glycin.git#commit=$_commit")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed -r 's/_/./;s/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
+}
+
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir" --no-rebuild
+}
