@@ -25,6 +25,10 @@ validpgpkeys=(
 
 build() {
   cd ${pkgname}-${pkgver}
+
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
   # do not use bundled udev rules superseded by systemd
   cmake -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
