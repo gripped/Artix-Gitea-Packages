@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artools
-  version: 0.32.4-1
+  version: 0.32.5-1
   arch:
     - any
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - artools-pkg
     - artools-iso
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.32.5-1
+    packages:
+      - artools-base-0.32.5-1-any.pkg.tar.zst
+      - artools-pkg-0.32.5-1-any.pkg.tar.zst
+      - artools-iso-0.32.5-1-any.pkg.tar.zst
   world:
     version: 0.32.4-1
     packages:
