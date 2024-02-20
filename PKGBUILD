@@ -7,7 +7,7 @@
 pkgname=languagetool
 _pkgver=6.3a
 pkgver=6.3.a
-pkgrel=1
+pkgrel=2
 pkgdesc='An open source language checker'
 arch=(any)
 url='https://www.languagetool.org'
@@ -21,7 +21,7 @@ source=(https://www.languagetool.org/download/LanguageTool-$_pkgver.zip
         languagetool.sh)
 noextract=($pkgname-$_pkgver.zip)
 sha256sums=('7ef66e47270c5d10e893d473dcf85db08df34b3585a1a0ce2c621a8ca4b3394b'
-            'e395fe51eb107365bb6e5456a2e1a144a60296e52554b8407f241e195e434359')
+            'c559be1fbead8845caf1f269cf39bfde6486ce06aabcbdd4ba58d402168b61a7')
 
 package() {
   install -d "$pkgdir"/usr/{bin,share/java/$pkgname/libs}
