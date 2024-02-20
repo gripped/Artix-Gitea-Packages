@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Clint Valentine <valentine.clint@gmail.com>
 
 _pkgname=shellingham
 pkgname=python-shellingham
-pkgver=1.5.0.post1
-pkgrel=4
+pkgver=1.5.4
+pkgrel=1
 pkgdesc='Detect what shell the current Python executable is running in'
 arch=(any)
 url="https://github.com/sarugaku/${_pkgname}"
@@ -16,7 +16,7 @@ makedepends=(python-{build,installer,wheel}
 checkdepends=(python-pytest{,-mock})
 _archive="$_pkgname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('ecc836335bc77e608cd6dc7201e4adfda915f44755593d1001b869ae8caf7be6')
+sha256sums=('9efba7106b6192be290b6ea1e92f6b2fb04d8059ff364cabf9c08fba1e4dae71')
 
 build(){
 	cd "$_archive"
