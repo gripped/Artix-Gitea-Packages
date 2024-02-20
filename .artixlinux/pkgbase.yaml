@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: nvidia
-  version: 545.29.06-18
+  version: 545.29.06-19
   arch:
     - x86_64
   pkgname:
     - nvidia
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 545.29.06-19
+    packages:
+      - nvidia-545.29.06-19-x86_64.pkg.tar.zst
   world:
     version: 545.29.06-18
     packages:
