@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: dav1d
-  version: 1.3.0-1
+  version: 1.4.0-1
   arch:
     - x86_64
   pkgname:
     - dav1d
     - dav1d-doc
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.4.0-1
+    packages:
+      - dav1d-1.4.0-1-x86_64.pkg.tar.zst
+      - dav1d-doc-1.4.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.3.0-1
     packages:
