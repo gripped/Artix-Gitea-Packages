@@ -3,7 +3,7 @@
 
 pkgname=pacman
 pkgver=6.0.2
-pkgrel=9
+pkgrel=9.1
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
@@ -17,6 +17,7 @@ provides=('libalpm.so')
 backup=(etc/pacman.conf
         etc/makepkg.conf)
 options=('strip')
+install=pacman.install
 validpgpkeys=('6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD'  # Allan McRae <allan@archlinux.org>
               'B8151B117037781095514CA7BBDFFC92306B1121') # Andrew Gregory (pacman) <andrew@archlinux.org>
 source=(https://sources.archlinux.org/other/pacman/$pkgname-$pkgver.tar.xz{,.sig}
@@ -54,7 +55,7 @@ sha256sums=('7d8e3e8c5121aec0965df71f59bedf46052c6cf14f96365c4411ec3de0a4c1a5'
             '6e81b34e6a5f312d48ce3aaca0f02ddd10b7a43325cb32acf7666b6b7ac41552'
             '250598a27a3077ec1dfe97a30af8bb0daf449d3ab456ed6a0c7a5bea0eb58f51'
             '94c273f07e4e28125b6002567c62e1f6c65f543597de6a8bd79e8c5bf6e4a125'
-            '74e3676a824d7dd55e85fc5e6c28733b4d03538cd539849b98fcd280cbfb3289'
+            '43e83863a9333ddc1b8a0722f7a720317f1aa2064ddd18430b8af9e6bb6fd1da'
             'f2791b51588104ec6dbaafa389451056f3c61fa6c19510dcce3a9a6cc19cba29'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
             '616942bf95e3fdc0426acb0dc1cea5ebcb7cca56a7536b358576b0cfc04f0ed6')
@@ -75,6 +76,9 @@ prepare() {
 
 build() {
   cd "$pkgname-$pkgver"
+
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
   meson --prefix=/usr \
         --buildtype=plain \

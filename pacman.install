@@ -1,0 +1,8 @@
+pre_upgrade() {
+  if [[ $(vercmp 6.0.2-9 $2) < 1 ]]; then
+    echo "  A new [asteroids] repository has been added to artix."
+    echo "  Any perl-*, python-* and ruby-* package"
+    echo "  will be moved in the new asteroids repository."
+    echo "  Please review pacman.conf changes and merge/update it accordingly."
+  fi
+}
