@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-cbor2
-  version: 5.6.1-1
+  version: 5.6.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.6.1-1
+    version: 5.6.2-1
     packages:
-      - python-cbor2-5.6.1-1-x86_64.pkg.tar.zst
+      - python-cbor2-5.6.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
