@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: calamares-extensions
-  version: 0.9.3-2
+  version: 0.10-1
   arch:
     - x86_64
   pkgname:
     - calamares-extensions
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.10-1
+    packages:
+      - calamares-extensions-0.10-1-x86_64.pkg.tar.zst
   world:
     version: 0.9.3-2
     packages:
