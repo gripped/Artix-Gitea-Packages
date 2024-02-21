@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: fftw
-  version: 3.3.10-5
+  version: 3.3.10-6
   arch:
     - x86_64
   pkgname:
     - fftw
+    - fftw-openmpi
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.3.10-6
+    packages:
+      - fftw-3.3.10-6-x86_64.pkg.tar.zst
+      - fftw-openmpi-3.3.10-6-x86_64.pkg.tar.zst
   world:
     version: 3.3.10-5
     packages:
