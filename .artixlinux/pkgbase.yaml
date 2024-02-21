@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: audacity
-  version: 1:3.4.2-2
+  version: 1:3.4.2-3
   arch:
     - x86_64
   pkgname:
     - audacity
     - audacity-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:3.4.2-3
+    packages:
+      - audacity-1:3.4.2-3-x86_64.pkg.tar.zst
+      - audacity-docs-1:3.4.2-3-x86_64.pkg.tar.zst
   world:
     version: 1:3.4.2-2
     packages:
