@@ -9,7 +9,7 @@ pkgname=(
   openmpi-docs
 )
 pkgver=5.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
@@ -67,6 +67,8 @@ build() {
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
     --with-cuda-libdir=/usr/lib
     --with-rocm=/opt/rocm
+    # all components that link to libraries provided by optdepends must be run-time loadable
+    --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm
     --with-hwloc=external
     --with-libevent=external
     --with-pmix=external
@@ -115,6 +117,7 @@ package_openmpi() {
     libmpi_usempi_ignore_tkr.so
     libmpi_usempif08.so
     libopen-pal.so
+    liboshmem.so
   )
 
   make DESTDIR="$pkgdir" install -C $pkgbase-$pkgver
