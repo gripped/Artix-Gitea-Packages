@@ -1,4 +1,0 @@
-[ostree]
-source = "git"
-git = "https://github.com/ostreedev/ostree"
-prefix = "v"
