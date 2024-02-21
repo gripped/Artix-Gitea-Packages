@@ -8,12 +8,12 @@ pkgbase:
     - fftw
     - fftw-openmpi
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,14 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.3.10-6
     packages:
       - fftw-3.3.10-6-x86_64.pkg.tar.zst
       - fftw-openmpi-3.3.10-6-x86_64.pkg.tar.zst
-  world:
-    version: 3.3.10-5
-    packages:
-      - fftw-3.3.10-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
