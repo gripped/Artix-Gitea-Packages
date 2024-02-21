@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: extundelete
-  version: 0.2.4-2
+  version: 0.2.4-2.1
   arch:
     - any
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.2.4-2
+    version: 0.2.4-2.1
     packages:
-      - extundelete-0.2.4-2-any.pkg.tar.zst
+      - extundelete-0.2.4-2.1-any.pkg.tar.zst
