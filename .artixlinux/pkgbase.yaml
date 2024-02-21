@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ddclient
-  version: 3.11.2-3
+  version: 3.11.2-4
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.11.2-3
+    version: 3.11.2-4
     packages:
-      - ddclient-3.11.2-3-any.pkg.tar.zst
+      - ddclient-3.11.2-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
