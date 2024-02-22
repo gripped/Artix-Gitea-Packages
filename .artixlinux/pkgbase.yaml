@@ -1,13 +1,29 @@
 ---
 pkgbase:
   name: libblockdev
-  version: 3.0.4-2
+  version: 3.0.4-3
   arch:
     - x86_64
   pkgname:
     - libblockdev
+    - libblockdev-btrfs
+    - libblockdev-crypto
+    - libblockdev-dm
+    - libblockdev-fs
+    - libblockdev-loop
+    - libblockdev-lvm
+    - libblockdev-lvm-dbus
+    - libblockdev-mdraid
+    - libblockdev-mpath
+    - libblockdev-nvdimm
+    - libblockdev-nvme
+    - libblockdev-part
+    - libblockdev-swap
+    - libblockdev-tools
+    - libblockdev-utils
+    - python-libblockdev
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +44,25 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.0.4-3
+    packages:
+      - libblockdev-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-btrfs-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-crypto-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-dm-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-fs-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-loop-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-lvm-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-lvm-dbus-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-mdraid-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-mpath-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-nvdimm-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-nvme-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-part-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-swap-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-tools-3.0.4-3-x86_64.pkg.tar.zst
+      - libblockdev-utils-3.0.4-3-x86_64.pkg.tar.zst
+      - python-libblockdev-3.0.4-3-x86_64.pkg.tar.zst
   world:
     version: 3.0.4-2
     packages:
