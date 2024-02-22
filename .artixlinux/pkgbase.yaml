@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vst3sdk
-  version: 3.7.9_build_61-1
+  version: 3.7.10_build_14-1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.7.9_build_61-1
+    version: 3.7.10_build_14-1
     packages:
-      - vst3sdk-3.7.9_build_61-1-any.pkg.tar.zst
-      - vst3sdk-docs-3.7.9_build_61-1-any.pkg.tar.zst
+      - vst3sdk-3.7.10_build_14-1-any.pkg.tar.zst
+      - vst3sdk-docs-3.7.10_build_14-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
