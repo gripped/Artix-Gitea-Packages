@@ -2,13 +2,13 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=prometheus
-pkgver=2.49.1
+pkgver=2.50.0
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
 url='https://prometheus.io'
 arch=('x86_64')
-license=('Apache')
+license=('Apache-2.0')
 
 depends=('glibc')
 makedepends=('go' 'git' 'npm' 'nodejs' 'yamllint' 'typescript' 'yarn')
@@ -19,13 +19,13 @@ backup=('etc/prometheus/prometheus.yml')
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers)
 
-sha256sums=('985d7f45ed3d16e23a30eae490c17911518fae96cba0245d493eb07097a10b3b'
+sha256sums=('7bd134cd7d51457d07ca31da0ee9c310d6f2e1ac19c90f80f1f39169a3d786c6'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 build() {
   cd prometheus-$pkgver
 
-  LDFLAGS="-extldflags $LDFLAGS \
+  LDFLAGS="-extldflags '$LDFLAGS' \
     -X github.com/prometheus/common/version.Version=$pkgver \
     -X github.com/prometheus/common/version.Revision=$pkgver \
     -X github.com/prometheus/common/version.Branch=tarball \
