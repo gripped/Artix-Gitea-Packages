@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: grpc
-  version: 1.60.1-1
+  version: 1.62.0-1
   arch:
     - x86_64
   pkgname:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.60.1-1
+    version: 1.62.0-1
     packages:
-      - grpc-1.60.1-1-x86_64.pkg.tar.zst
-      - python-grpcio-1.60.1-1-x86_64.pkg.tar.zst
-      - python-grpcio-tools-1.60.1-1-x86_64.pkg.tar.zst
-      - php-grpc-1.60.1-1-x86_64.pkg.tar.zst
-      - php-legacy-grpc-1.60.1-1-x86_64.pkg.tar.zst
-      - grpc-cli-1.60.1-1-x86_64.pkg.tar.zst
+      - grpc-1.62.0-1-x86_64.pkg.tar.zst
+      - python-grpcio-1.62.0-1-x86_64.pkg.tar.zst
+      - python-grpcio-tools-1.62.0-1-x86_64.pkg.tar.zst
+      - php-grpc-1.62.0-1-x86_64.pkg.tar.zst
+      - php-legacy-grpc-1.62.0-1-x86_64.pkg.tar.zst
+      - grpc-cli-1.62.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
