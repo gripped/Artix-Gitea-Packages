@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: krusader
-  version: 2.8.0-2
+  version: 2.8.0-3
   arch:
     - x86_64
   pkgname:
     - krusader
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.8.0-3
+    packages:
+      - krusader-2.8.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

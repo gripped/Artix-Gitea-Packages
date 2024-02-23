@@ -3,7 +3,7 @@
 
 pkgname=krusader
 pkgver=2.8.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Advanced twin panel (commander style) file manager'
 arch=(x86_64)
 url='https://krusader.org/'
@@ -53,7 +53,7 @@ optdepends=('xz: LZMA and XZ archive support'
             'kompare: file contents comparison'
             'kdiff3: file contents comparison'
             'krename: advanced rename tool'
-            'konsole: terminal'
+            'konsolepart5: terminal'
             'ktexteditor5: file editing support')
 source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz)
 sha256sums=('8e4cf05a9318b0bc1b0941811b988b2f2bb0c04a0d1e37998212a9190cf2c29a')
