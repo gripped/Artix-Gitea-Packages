@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - glslang
 actions:
-  addRepo: world-goblins
-  removeRepo: null
+  addRepo: null
+  removeRepo: world-goblins
   triggersBuild: false
-  triggersRebuild: true
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 14.0.0-1
-    packages:
-      - glslang-14.0.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
