@@ -2,7 +2,7 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=conmon
-pkgver=2.1.8
+pkgver=2.1.10
 pkgrel=1
 epoch=1
 pkgdesc='OCI container runtime monitor'
@@ -11,14 +11,16 @@ url='https://github.com/containers/conmon'
 license=(APACHE)
 depends=(glibc glib2)
 makedepends=(git)
-_commit=00e08f4a9ca5420de733bf542b930ad58e1a7e7d	#refs/tags/v2.1.8
-source=("git+https://github.com/containers/conmon#commit=${_commit}")
+_commit=2dcd736e46ded79a53339462bc251694b150f870
+source=(
+  "git+https://github.com/containers/conmon#commit=${_commit}"
+)
 b2sums=('SKIP')
 
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/^v//;s/-/+/g'
-}
+# pkgver() {
+#   cd $pkgname
+#   git describe --tags | sed 's/^v//;s/-/+/g'
+# }
 
 build() {
   cd conmon
