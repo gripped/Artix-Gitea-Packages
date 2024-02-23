@@ -2,8 +2,8 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=netavark
-_commit=427eeb699f8471deb65b5eafdb1740c7937b0cce  # refs/tags/v1.10.2
-pkgver=1.10.2
+_commit=4396bdc7ba879c9d5365bb29f6129983b9decc02  # refs/tags/v1.10.3
+pkgver=1.10.3
 pkgrel=1
 pkgdesc="Container network stack"
 arch=(x86_64)
@@ -28,10 +28,10 @@ sha256sums=('SKIP')
 # https://github.com/containers/netavark/issues/231
 # validpgpkeys=('74FE091D25519980B2D84447160386BECB6F0643')  # Brent Baude <bbaude@redhat.com>
 
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/v//g'
-}
+# pkgver() {
+#   cd $pkgname
+#   git describe --tags | sed 's/v//g'
+# }
 
 prepare() {
   cd $pkgname
