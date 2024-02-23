@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ffmpeg
-  version: 2:6.1.1-5
+  version: 2:6.1.1-6
   arch:
     - x86_64
   pkgname:
     - ffmpeg
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2:6.1.1-6
+    packages:
+      - ffmpeg-2:6.1.1-6-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
