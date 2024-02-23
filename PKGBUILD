@@ -10,9 +10,9 @@ _google_default_client_secret=0ZChLK6AxeA3Isu96MkwqDR4
 
 pkgbase=libreoffice-still
 pkgname=('libreoffice-still-sdk' 'libreoffice-still')
-_LOver=7.6.4.1
-pkgver=7.6.4
-pkgrel=2
+_LOver=7.6.5.2
+pkgver=7.6.5
+pkgrel=1
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
@@ -60,7 +60,6 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
     ${_additional_source_url2}/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
     make-pyuno-work-with-system-wide-module-install.diff
     623ea5c.diff
-    fix-build-against-system-libxml-2.12.diff
     libreoffice-7.5.8.2-icu-74-compatibility.patch
     soffice-template.desktop.in
     libreoffice-still.sh libreoffice-still.csh)
@@ -85,11 +84,11 @@ noextract=(35c94d2df8893241173de1d16b6034c0-swingExSrc.zip
            f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 )
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha256sums=('13fea7b8f24c776313b9e08628aa590390bea45064be73bc70ee7b1b70aa6a1e'
+sha256sums=('90e6b92f1b8d27bd998a03751c32b2add0afc19954da96ee3c0f4f8b6f5ccbcf'
             'SKIP'
-            'ed784c014096e0e7ff86294eba624bd92ecbe5be881b01950eecd69aed7d8678'
+            '1e4ca22647522952693375e319ebf390b493e1e590cad2d7695e74307153571a'
             'SKIP'
-            '3a5a0dbe40abdc55cdd9994895f6577d7e547d26a36b20641f32f3640a3b7679'
+            '074f01bf7f2adadffd37351f6fd26f9f2709d47d03036094c1efc6a969ee8767'
             'SKIP'
             '64585ac36a81291a58269ec5347e7e3e2e8596dbacb9221015c208191333c6e1'
             '1fb458d6aab06932693cc8a9b6e4e70944ee1ff052fa63606e3131df34e21753'
@@ -112,7 +111,6 @@ sha256sums=('13fea7b8f24c776313b9e08628aa590390bea45064be73bc70ee7b1b70aa6a1e'
             'f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140'
             'c463654a73ecfbc242ff109726fb4faecdbfb3d91affafe919b24bea65afb563'
             '440c9af5f3d1213d8ed7177282380f25cbc981cabc8b590dcb777aaae84178e5'
-            '793a52abff29b3db51a1db9686b561911b9b3de70bd6dd02bbc1d78fcd960648'
             'd7b952a51e1e40d3faf2f465b68f46d56828d8c46948748fa82fe82a29af2599'
             'd0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879'
             'b43ed267643fc5ced803dca010427b12b1f10db485173ccb19efb3395e60c82e'
@@ -135,9 +133,6 @@ prepare() {
 
     # fix build - https://gerrit.libreoffice.org/c/core/+/145421
     patch -Np1 -i "${srcdir}"/623ea5c.diff
-
-    # fix build with libxml2 2.12
-    patch -Np1 -i "${srcdir}"/fix-build-against-system-libxml-2.12.diff
 
     # fix build with icu 74
     patch -Np1 -i "${srcdir}"/libreoffice-7.5.8.2-icu-74-compatibility.patch
