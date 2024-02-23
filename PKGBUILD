@@ -1,24 +1,25 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: WorMzy Tykashi <wormzy.tykashi@gmail.com>
 # Contributor: OK100 <ok100@lavabit.com>
 # Contributor: Valère Monseur <valere.monseur@ymail.com>
 
 pkgname=picom
-pkgver=10.2
+pkgver=11.2
 pkgrel=1
-pkgdesc='X compositor that may fix tearing issues'
+pkgdesc='A lightweight compositor for X11'
 arch=(x86_64)
 url='https://github.com/yshui/picom'
-license=(MIT MPL)
+license=('MPL-2.0 AND MIT')
 makedepends=(asciidoc git mesa meson ninja setconf uthash)
-depends=(hicolor-icon-theme libconfig libdbus libev libgl pcre pixman
-         xcb-util-image xcb-util-renderutil)
+depends=(hicolor-icon-theme libconfig libdbus libev libgl pcre2 pixman
+         xcb-util-image xcb-util-renderutil libepoxy)
 backup=(etc/xdg/picom.conf)
 optdepends=('dbus:          for controlling picom via D-Bus'
             'python:        for running picom-convgen.py'
             'xorg-xprop:    for picom-trans'
             'xorg-xwininfo: for picom-trans')
-source=("git+$url?signed#commit=b700a37d56ab5debdbb78be7a6b905e72f69ff2d") # tag: v10.2
+source=("git+$url?signed#commit=89c2c8530319f72394522336e483b31275d1ef7c") # tag: v11.2
 validpgpkeys=('A22F5C0F4FCF9C7C89A167462C965E9E5D45D730') # Yuxuan Shui <yshuiv7@gmail.com>
 b2sums=('SKIP')
 
