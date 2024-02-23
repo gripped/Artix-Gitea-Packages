@@ -124,12 +124,12 @@ pkgbase:
     - libreoffice-still-zh-tw
     - libreoffice-still-zu
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -281,6 +281,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 7.6.5-1
     packages:
       - libreoffice-still-af-7.6.5-1-any.pkg.tar.zst
@@ -401,124 +404,3 @@ repos:
       - libreoffice-still-zh-cn-7.6.5-1-any.pkg.tar.zst
       - libreoffice-still-zh-tw-7.6.5-1-any.pkg.tar.zst
       - libreoffice-still-zu-7.6.5-1-any.pkg.tar.zst
-  galaxy:
-    version: 7.6.4-1
-    packages:
-      - libreoffice-still-af-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-am-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ar-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-as-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ast-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-be-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-bg-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-bn-in-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-bn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-bo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-br-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-brx-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-bs-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ca-valencia-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ca-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ckb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-cs-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-cy-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-da-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-de-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-dgo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-dsb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-dz-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-el-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-en-gb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-en-za-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-eo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-es-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-et-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-eu-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-fa-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-fi-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-fr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-fur-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-fy-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ga-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-gd-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-gl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-gu-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-gug-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-he-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-hi-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-hr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-hsb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-hu-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-id-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-is-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-it-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ja-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ka-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-kab-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-kk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-km-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-kmr-latn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-kn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ko-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-kok-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ks-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-lb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-lo-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-lt-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-lv-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-mai-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-mk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ml-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-mn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-mni-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-mr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-my-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-nb-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ne-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-nl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-nn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-nr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-nso-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-oc-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-om-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-or-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-pa-in-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-pl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-pt-br-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-pt-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ro-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ru-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-rw-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sa-in-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sat-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sd-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-si-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sid-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sq-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sr-latn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ss-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-st-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sv-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-sw-tz-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-szl-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ta-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-te-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-tg-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-th-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-tn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-tr-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ts-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-tt-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ug-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-uk-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-uz-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-ve-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-vec-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-vi-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-xh-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-zh-cn-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-zh-tw-7.6.4-1-any.pkg.tar.zst
-      - libreoffice-still-zu-7.6.4-1-any.pkg.tar.zst
