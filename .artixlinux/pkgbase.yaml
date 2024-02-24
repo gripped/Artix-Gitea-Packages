@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - shaderc
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,16 +25,15 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2023.8-1
-    packages:
-      - shaderc-2023.8-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
   world:
-    version: 2023.7-2
+    version: 2023.8-1
     packages:
-      - shaderc-2023.7-2-x86_64.pkg.tar.zst
+      - shaderc-2023.8-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
