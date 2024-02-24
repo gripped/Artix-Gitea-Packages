@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bolt
-  version: 0.9.6-2
+  version: 0.9.7-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.6-2
+    version: 0.9.7-1
     packages:
-      - bolt-0.9.6-2-x86_64.pkg.tar.zst
+      - bolt-0.9.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
