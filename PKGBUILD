@@ -3,19 +3,49 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libksysguard
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Library to retrieve information on the current status of computer hardware'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(libxres qt5-webengine knewstuff5)
-makedepends=(extra-cmake-modules kdoctools5 qt5-tools)
-conflicts=('ksysguard<5.21.90')
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kauth
+         kcolorscheme
+         kconfig
+         kconfigwidgets
+         kcoreaddons
+         kdeclarative
+         kglobalaccel
+         ki18n
+         kio
+         kitemmodels
+         kjobwidgets
+         knewstuff
+         kpackage
+         kquickcharts
+         kservice
+         kwidgetsaddons
+         kwindowsystem
+         libnl
+         libpcap
+         libx11
+         libxres
+         lm_sensors
+         qt6-base
+         qt6-declarative
+         qt6-webchannel
+         qt6-webengine
+         solid
+         zlib)
+makedepends=(extra-cmake-modules
+             qt6-tools)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('17fc33b028cb272391b68c46e93b2d806d8254e6af9399d61375d49041ff3ce5'
+install=libksysguard.install
+sha256sums=('6b72ccfbed69f27bcec0d86414ed780870109801cc20c505901657c85c3644dd'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
