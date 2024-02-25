@@ -5,7 +5,7 @@
 
 pkgname=bear
 pkgver=3.1.3
-pkgrel=9
+pkgrel=9.1
 pkgdesc='A tool to generate compilation database for clang tooling'
 arch=('x86_64')
 url='https://github.com/rizsotto/Bear'
