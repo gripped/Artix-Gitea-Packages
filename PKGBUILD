@@ -207,8 +207,8 @@ package_mariadb() {
   mv usr/share/pam_user_map.so usr/lib/security/
 
   # Setup sysuser and tmpfiles
-  install -Dm644 /mariadb.sysusers.conf usr/lib/sysusers.d/mariadb.conf
-  install -Dm644 /mariadb.tmpfiles.conf usr/lib/tmpfiles.d/mariadb.conf
+  install -Dm644 $srcdir/mariadb.sysusers.conf usr/lib/sysusers.d/mariadb.conf
+  install -Dm644 $srcdir/mariadb.tmpfiles.conf usr/lib/tmpfiles.d/mariadb.conf
 
   # provided by mariadb-libs
   rm usr/bin/{mariadb{_,-},mysql_}config
