@@ -9,7 +9,7 @@ pkgname=(
   openmpi-docs
 )
 pkgver=5.0.2
-pkgrel=3
+pkgrel=6
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
@@ -25,7 +25,6 @@ makedepends=(
   libfabric
   libnl
   openpmix
-  openssh
   prrte
   valgrind
   zlib
@@ -62,6 +61,13 @@ build() {
     --enable-pretty-print-stacktrace
     --libdir=/usr/lib
     --sysconfdir=/etc/$pkgbase
+    --with-hwloc=external
+    --with-libevent=external
+    --with-pmix=external
+    --with-prrte=external
+    --with-valgrind
+    --with-ucc=/usr
+    --with-ucx=/usr
     --with-cuda=/opt/cuda
     # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
@@ -69,11 +75,9 @@ build() {
     --with-rocm=/opt/rocm
     # all components that link to libraries provided by optdepends must be run-time loadable
     --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm
-    --with-hwloc=external
-    --with-libevent=external
-    --with-pmix=external
-    --with-prrte=external
-    --with-valgrind
+    # mpirun should not warn on MCA component load failures by default - usually caused by missing optdepends, which is ok
+    # https://docs.open-mpi.org/en/main/installing-open-mpi/configure-cli-options/installation.html
+    --with-show-load-errors='^accelerator,rcache,coll/ucc'
   )
   cd $pkgbase-$pkgver
 
@@ -98,11 +102,10 @@ package_openmpi() {
     gcc-libs
     glibc
     hwloc
-    libevent
+    libevent libevent_{core,pthreads}-2.1.so
     libfabric
     libnl
     openpmix libpmix.so
-    openssh
     prrte libprrte.so
     zlib
   )
@@ -110,6 +113,7 @@ package_openmpi() {
     'cuda: cuda support'
     'hip-runtime-amd: ROCm support'
     'gcc-fortran: fortran support'
+    'openssh: for execution on remote hosts via plm_ssh_agent'
   )
   provides=(
     libmpi.so
@@ -119,6 +123,7 @@ package_openmpi() {
     libopen-pal.so
     liboshmem.so
   )
+  backup=(etc/$pkgname/$pkgname-mca-params.conf)
 
   make DESTDIR="$pkgdir" install -C $pkgbase-$pkgver
   (
