@@ -9,7 +9,7 @@ post_install() {
 post_upgrade() {
   # show for feature release: 10.1 -> 10.2 -> 10.3 -> ...
   if [ $(vercmp "${1%.*-*}" "${2%.*-*}") -ne 0 ]; then 
-    echo ":: MariaDB was updated to a new feature release. To update the data, restart service, run:"
-    echo "     # mariadb-upgrade -u root -p"
+    echo ":: MariaDB was updated to a new feature release. To update the data run:"
+    echo "     # systemctl restart mariadb.service && mariadb-upgrade -u root -p"
   fi
 }

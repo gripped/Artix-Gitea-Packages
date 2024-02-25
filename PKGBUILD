@@ -1,10 +1,10 @@
-# Maintainer: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
-# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Hesse <eworm@archlinux.org>
 
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=11.2.2
+pkgver=11.3.2
 pkgrel=1
 arch=('x86_64')
 license=('GPL')
@@ -17,14 +17,13 @@ validpgpkeys=('177F4010FE56CA3336300305F1656F24C74CD1D8') # MariaDB Signing Key 
 # rsync source via https and hope it does not hurt them too much.
 # https://mariadb.com/kb/en/library/mirror-sites-for-mariadb/
 source=("https://rsync.osuosl.org/pub/mariadb/mariadb-${pkgver}/source/mariadb-${pkgver}.tar.gz"{,.asc}
-        'mariadb.sysusers.conf'
-        'mariadb.tmpfiles.conf'
-        '0001-arch-specific.patch')
-sha256sums=('faedbd8790c7ee65b348c0169706b4bae91eb6ce7335a76b27dbd8813c42e21b'
+        '0001-arch-specific.patch'
+'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
+sha256sums=('5570778f0a2c27af726c751cda1a943f3f8de96d11d107791be5b44a0ce3fb5c'
             'SKIP'
+            '3289efb3452d199aec872115f35da3f1d6fd4ce774615076690e9bc8afae1460'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
-            '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555'
-            '3289efb3452d199aec872115f35da3f1d6fd4ce774615076690e9bc8afae1460')
+            '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
 
 prepare() {
   cd $pkgbase-$pkgver/
@@ -146,7 +145,7 @@ package_mariadb-clients() {
   pkgdesc='MariaDB client tools'
   depends=("mariadb-libs=${pkgver}" 'jemalloc' 'ncurses')
   conflicts=('mysql-clients')
-  provides=("mysql-clients=$pkgver")
+  provides=("mysql-clients=${pkgver}")
 
   make -C build/client DESTDIR="${pkgdir}" install
   
@@ -181,7 +180,7 @@ package_mariadb() {
               'python-mysqlclient: for myrocks_hotbackup'
               'xz: lzma provider')
   conflicts=('mysql')
-  provides=("mysql=$pkgver")
+  provides=("mysql=${pkgver}")
   options=('emptydirs')
 
   cd build
@@ -189,10 +188,6 @@ package_mariadb() {
   make DESTDIR="$pkgdir" install
 
   cd "$pkgdir"
-
-  # Setup sysuser and tmpfiles
-  install -Dm644 "$srcdir"/mariadb.sysusers.conf usr/lib/sysusers.d/mariadb.conf
-  install -Dm644 "$srcdir"/mariadb.tmpfiles.conf usr/lib/tmpfiles.d/mariadb.conf
 
   # no SysV init, please!
   rm -r etc/logrotate.d
@@ -211,6 +206,10 @@ package_mariadb() {
   mv usr/share/user_map.conf etc/security/
   mv usr/share/pam_user_map.so usr/lib/security/
 
+  # Setup sysuser and tmpfiles
+  install -Dm644 /mariadb.sysusers.conf usr/lib/sysusers.d/mariadb.conf
+  install -Dm644 /mariadb.tmpfiles.conf usr/lib/tmpfiles.d/mariadb.conf
+
   # provided by mariadb-libs
   rm usr/bin/{mariadb{_,-},mysql_}config
   rm -r usr/include/
@@ -221,7 +220,7 @@ package_mariadb() {
   rm usr/lib/mysql/plugin/{auth_gssapi_client,caching_sha2_password,client_ed25519,dialog,mysql_clear_password,sha256_password,zstd}.so
 
   # provided by mariadb-clients
-  for bin in $(find "${pkgdir}"/../mariadb-clients/usr/bin/ ! -type d); do
+  for bin in $(find "${pkgdir}/../${pkgbase}-clients/usr/bin/" ! -type d); do
     rm "${pkgdir}"/usr/bin/"$(basename "${bin}")" "${pkgdir}"/usr/share/man/man1/"$(basename "${bin}")".1
   done
 
