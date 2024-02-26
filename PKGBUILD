@@ -10,7 +10,7 @@
 pkgname=julia
 epoch=2
 pkgver=1.10.1
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
 url='https://julialang.org/'
@@ -46,7 +46,7 @@ backup=(etc/julia/startup.jl)
 sha256sums=('6ba58b55fc56e7d7cb854d5f3c7b8cfb6a209850d82ef74cdf76878d841612a4'
             'SKIP'
             '2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367'
-            '97efa327f1d389de59258f6047689ca7bed2b7be922088566865defd5d305ed0'
+            'b533dd999f019258cbcae1563f18715f41e42e0786b681150cb2c28f8a0da963'
             '3c0c03eabb668e3242fcd3058c1011dfbb579cc1c5adc3ae1016531e711cc64e'
             'f69afd7db3fabe4b747afa2404e1202c1dcfe0f8c5fe5238e424eea737fa2a23'
             '0fd1a0c1fcbe7f583139ed3a4a87f77963f06876d69058fa3ffbedfaec609ee7'
@@ -161,4 +161,6 @@ package() {
 
   rm "$pkgdir"/usr/lib/julia/libccalltest.so.debug # Remove debug testing library
   install -Dm644 LICENSE.md -t "$pkgdir"/usr/share/licenses/$pkgname
+
+  install -Dm644 contrib/julia.svg -t "$pkgdir"/usr/share/pixmaps
 }
