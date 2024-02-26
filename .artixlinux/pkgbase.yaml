@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: whois
-  version: 5.5.20-1
+  version: 5.5.21-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.5.20-1
+    version: 5.5.21-1
     packages:
-      - whois-5.5.20-1-x86_64.pkg.tar.zst
+      - whois-5.5.21-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
