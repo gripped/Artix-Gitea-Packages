@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pix
-  version: 3.2.2-3
+  version: 3.2.2-4
   arch:
     - i686
     - x86_64
@@ -51,6 +51,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.2.2-3
+    version: 3.2.2-4
     packages:
-      - pix-3.2.2-3-x86_64.pkg.tar.zst
+      - pix-3.2.2-4-x86_64.pkg.tar.zst
