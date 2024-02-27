@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dblatex
-  version: 0.3.12-7
+  version: 0.3.12-8
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3.12-7
+    version: 0.3.12-8
     packages:
-      - dblatex-0.3.12-7-any.pkg.tar.zst
+      - dblatex-0.3.12-8-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
