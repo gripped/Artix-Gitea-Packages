@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: iwd
-  version: 2.14-1
+  version: 2.15-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.14-1
+    version: 2.15-1
     packages:
-      - iwd-2.14-1-x86_64.pkg.tar.zst
+      - iwd-2.15-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
