@@ -1,12 +1,11 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.6.16
+pkgver=6.6.18
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
 arch=(x86_64)
-license=(GPL2)
 makedepends=(
   bc
   cpio
@@ -40,20 +39,20 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('b21d5795a3bead4f112916423222faa8a0f519e4201df343e3eb88dc9e4aaa30'
+sha256sums=('4e43d8c5fba14f7c82597838011648056487b7550fd83276ad534559e8499b1d'
             'SKIP'
             '21195509fded29d0256abfce947b5a8ce336d0d3e192f3f8ea90bde9dd95a889'
             '2f23be91455e529d16aa2bbf5f2c7fe3d10812749828fc752240c21b2b845849'
             '6400a06e6eb3a24b650bc3b1bba9626622f132697987f718e7ed6a5b8c0317bc'
             '17d8a31e96dfbf5225b12efc35dc757cc129d4d00741b9781b9cd24b1d57f2ab'
-            '5f2bff8e24f348b3b58cb304c597cfd356b6abf65331df8448d6641bff32f9b6')
-b2sums=('4fd12cdf4c11d1a4c01531acbb14748863ed15671873d49eb95c79dbc01c4dcccbfcd30318794489249868ded31059dd1ad16ad76e29db6d364ecdb331e91baa'
+            'ed4154cfb035cf111625cff18786aec0b9f586194e5135381577097eef995156')
+b2sums=('516f2b4d1c3023265a844b632cd4246bc99ed07b69d01d9d9366ded1001170f2b41f07d199d470d24dce9519148a52943b8bbc2d9c7797f6a2716d85ca85c91d'
         'SKIP'
         '02a10396c92ab93124139fc3e37b1d4d8654227556d0d11486390da35dfc401ff5784ad86d0d2aa7eacac12bc451aa2ff138749748c7e24deadd040d5404734c'
         '5dc21a7a6f0b840e6a671dcf09a865e42f0e2c000d5e45d3f3202c02946a8ab2207858d0b2ef1004648b8c2963efb428298b263c8494be806dfc9b6af66d5413'
         'ba6ebe349b3757411364a9ba2deaa30a8d71a247d518c159385977c2b4782771bda4edfc96bd954808617c9ba984d832471b63c11f5bd6003369bfe4051df31f'
         '55a20d84c052c9de3e36514a36689238f970f7956e679a425efbff6ef668fbc56ea096ff2b000f3629ea8ec32cdbcbafc44acd27e4a9dffaa885237811ddc558'
-        'ef12b535203cb8b1f6550ed795d6b497a381595b65db41ba44368e85cc1c05b73a6228880021df7a5d6e9a605631f7efab8a4cbfb33410b6e03ac166891c620c')
+        'dea6931c7957148741d0174e8aa7c823a333a84b1fc794d856eb0fc7125cd037817b7eb13bc5f73c2ab63975cb95a94eea934f0e1a1821f461de2fc0a374a5a2')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -93,6 +92,50 @@ build() {
 
 _package() {
   pkgdesc="The $pkgdesc kernel and modules"
+  license=(
+    'Apache-2.0 OR MIT'
+
+    'BSD-2-Clause OR GPL-2.0-or-later'
+
+    BSD-3-Clause
+    'BSD-3-Clause OR GPL-2.0-only'
+    'BSD-3-Clause OR GPL-2.0-or-later'
+    BSD-3-Clause-Clear
+
+    GPL-1.0-or-later
+    'GPL-1.0-or-later OR BSD-3-Clause'
+
+    GPL-2.0-only
+    'GPL-2.0-only OR Apache-2.0'
+    'GPL-2.0-only OR BSD-2-Clause'
+    'GPL-2.0-only OR BSD-3-Clause'
+    'GPL-2.0-only OR CDDL-1.0'
+    'GPL-2.0-only OR Linux-OpenIB'
+    'GPL-2.0-only OR MIT'
+    'GPL-2.0-only OR MPL-1.1'
+    'GPL-2.0-only OR X11'
+    'GPL-2.0-only WITH Linux-syscall-note'
+
+    GPL-2.0-or-later
+    'GPL-2.0-or-later OR BSD-2-Clause'
+    'GPL-2.0-or-later OR BSD-3-Clause'
+    'GPL-2.0-or-later OR MIT'
+    'GPL-2.0-or-later OR X11'
+    'GPL-2.0-or-later WITH GCC-exception-2.0'
+
+    ISC
+
+    LGPL-2.0-or-later
+    'LGPL-2.1-only'
+    'LGPL-2.1-only OR BSD-2-Clause'
+
+    LGPL-2.1-or-later
+
+    MIT
+    MPL-1.1
+    X11
+    Zlib
+  )
   depends=(
     coreutils
     initramfs
@@ -128,10 +171,67 @@ _package() {
 
   # remove build link
   rm "$modulesdir"/build
+
+  # licenses
+  install -vDm 644 LICENSES/deprecated/{GPL-1.0,ISC,Linux-OpenIB,X11,Zlib} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/preferred/{BSD,MIT}* -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/exceptions/* -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
+  license=(
+    BSD-3-Clause
+    'BSD-3-Clause OR GPL-2.0-only'
+
+    GPL-1.0-or-later
+    'GPL-1.0-or-later WITH Linux-syscall-note'
+
+    GPL-2.0-only
+    'GPL-2.0-only OR Apache-2.0'
+    'GPL-2.0-only OR BSD-2-Clause'
+    'GPL-2.0-only OR BSD-3-Clause'
+    'GPL-2.0-only OR CDDL-1.0'
+    'GPL-2.0-only OR Linux-OpenIB'
+    'GPL-2.0-only OR Linux-OpenIB OR BSD-2-Clause'
+    'GPL-2.0-only OR MIT'
+    'GPL-2.0-only OR MPL-1.1'
+    'GPL-2.0-only OR X11'
+    'GPL-2.0-only WITH Linux-syscall-note'
+    '(GPL-2.0-only WITH Linux-syscall-note) AND MIT'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR BSD-2-Clause'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR BSD-3-Clause'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR CDDL-1.0'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR Linux-OpenIB'
+    '(GPL-2.0-only WITH Linux-syscall-note) OR MIT'
+
+    GPL-2.0-or-later
+    'GPL-2.0-or-later OR BSD-2-Clause'
+    'GPL-2.0-or-later OR BSD-3-Clause'
+    'GPL-2.0-or-later OR MIT'
+    'GPL-2.0-or-later WITH Linux-syscall-note'
+    '(GPL-2.0-or-later WITH Linux-syscall-note) OR BSD-3-Clause'
+    '(GPL-2.0-or-later WITH Linux-syscall-note) OR MIT'
+    'LGPL-2.0-or-later OR BSD-2-Clause'
+    'LGPL-2.0-or-later WITH Linux-syscall-note'
+
+    ISC
+
+    'LGPL-2.0-or-later WITH Linux-syscall-note'
+    'LGPL-2.0-or-later OR BSD-2-Clause'
+
+    LGPL-2.1-only
+    'LGPL-2.1-only OR BSD-2-Clause'
+    'LGPL-2.1-only OR MIT'
+    'LGPL-2.1-only WITH Linux-syscall-note'
+
+    LGPL-2.1-or-later
+    'LGPL-2.1-or-later OR BSD-2-Clause'
+    'LGPL-2.1-or-later WITH Linux-syscall-note'
+
+    MIT
+    Zlib
+  )
   depends=(pahole)
 
   cd $_srcname
@@ -210,10 +310,37 @@ _package-headers() {
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/src"
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
+
+  # licenses
+  install -vDm 644 LICENSES/deprecated/{ISC,Linux-OpenIB,X11,Zlib} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/preferred/{BSD*,MIT} -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/exceptions/* -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 _package-docs() {
   pkgdesc="Documentation for the $pkgdesc kernel"
+  license=(
+    BSD-3-Clause
+
+    GFDL-1.1-no-invariants-or-later
+
+    GPL-2.0-only
+    'GPL-2.0-only OR BSD-2-Clause'
+    'GPL-2.0-only OR BSD-3-Clause'
+    'GPL-2.0-only OR GFDL-1.1-no-invariants-or-later'
+    'GPL-2.0-only OR GFDL-1.2-no-invariants-only'
+    'GPL-2.0-only OR MIT'
+
+    GPL-2.0-or-later
+    'GPL-2.0-or-later OR BSD-2-Clause'
+    'GPL-2.0-or-later OR CC-BY-4.0'
+    'GPL-2.0-or-later OR MIT'
+    'GPL-2.0-or-later OR X11'
+
+    'LGPL-2.1-only OR BSD-2-Clause'
+
+    MIT
+  )
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
@@ -229,6 +356,10 @@ _package-docs() {
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/share/doc"
   ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
+
+  # licenses
+  install -vDm 644 LICENSES/deprecated/X11 -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 LICENSES/preferred/{BSD*,MIT} -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 pkgname=(
