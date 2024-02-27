@@ -9,10 +9,9 @@ url="https://github.com/kergoth/tslib"
 license=(LGPL-2.1-only)
 depends=(glibc)
 makedepends=()
-source=("https://github.com/kergoth/tslib/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('9b489a54d48006201f2fe955a88c3f857535ac93b6cf8e5a16c7b166c8991dac'
-            'SKIP')
-validpgpkeys=(F2082B880F9E423934686E3F500398DF5AB387D3) # Martin Kepplinger <martink@posteo.de>
+source=("https://github.com/kergoth/tslib/releases/download/$pkgver/$pkgname-$pkgver.tar.xz") #{,.asc})
+sha256sums=('9b489a54d48006201f2fe955a88c3f857535ac93b6cf8e5a16c7b166c8991dac')
+#validpgpkeys=(F2082B880F9E423934686E3F500398DF5AB387D3) # Martin Kepplinger <martink@posteo.de>
 
 build() {
   cd $pkgname-$pkgver
