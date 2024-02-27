@@ -66,8 +66,6 @@ build() {
     --with-pmix=external
     --with-prrte=external
     --with-valgrind
-    --with-ucc=/usr
-    --with-ucx=/usr
     --with-cuda=/opt/cuda
     # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
@@ -77,7 +75,7 @@ build() {
     --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm
     # mpirun should not warn on MCA component load failures by default - usually caused by missing optdepends, which is ok
     # https://docs.open-mpi.org/en/main/installing-open-mpi/configure-cli-options/installation.html
-    --with-show-load-errors='^accelerator,rcache,coll/ucc'
+    --with-show-load-errors='^accelerator,rcache'
   )
   cd $pkgbase-$pkgver
 
