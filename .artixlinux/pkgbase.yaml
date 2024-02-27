@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: powerline
-  version: 2.8.3-2
+  version: 2.8.3-3
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.8.3-2
+    version: 2.8.3-3
     packages:
-      - powerline-2.8.3-2-x86_64.pkg.tar.zst
-      - python-powerline-2.8.3-2-x86_64.pkg.tar.zst
-      - powerline-common-2.8.3-2-x86_64.pkg.tar.zst
-      - powerline-vim-2.8.3-2-x86_64.pkg.tar.zst
-      - powerline-fonts-2.8.3-2-x86_64.pkg.tar.zst
+      - powerline-2.8.3-3-x86_64.pkg.tar.zst
+      - python-powerline-2.8.3-3-x86_64.pkg.tar.zst
+      - powerline-common-2.8.3-3-x86_64.pkg.tar.zst
+      - powerline-vim-2.8.3-3-x86_64.pkg.tar.zst
+      - powerline-fonts-2.8.3-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
