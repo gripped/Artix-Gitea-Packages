@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ethtool
-  version: 1:6.5-1
+  version: 1:6.7-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:6.5-1
+    version: 1:6.7-1
     packages:
-      - ethtool-1:6.5-1-x86_64.pkg.tar.zst
+      - ethtool-1:6.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
