@@ -1,13 +1,14 @@
 ---
 pkgbase:
   name: networkmanager
-  version: 1.44.2-3
+  version: 1.46.0-2
   arch:
     - x86_64
   pkgname:
     - networkmanager
     - libnm
     - nm-cloud-setup
+    - networkmanager-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -33,11 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.44.2-3
+    version: 1.46.0-2
     packages:
-      - networkmanager-1.44.2-3-x86_64.pkg.tar.zst
-      - libnm-1.44.2-3-x86_64.pkg.tar.zst
-      - nm-cloud-setup-1.44.2-3-x86_64.pkg.tar.zst
+      - networkmanager-1.46.0-2-x86_64.pkg.tar.zst
+      - libnm-1.46.0-2-x86_64.pkg.tar.zst
+      - nm-cloud-setup-1.46.0-2-x86_64.pkg.tar.zst
+      - networkmanager-docs-1.46.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

@@ -10,20 +10,21 @@ pkgname=(
   networkmanager
   libnm
   nm-cloud-setup
+  networkmanager-docs
 )
-pkgver=1.44.2
-pkgrel=3
+pkgver=1.46.0
+pkgrel=2
 pkgdesc="Network connection manager and user applications"
 url="https://networkmanager.dev/"
 arch=(x86_64)
-license=(GPL)
+license=(LGPL-2.1-or-later)
 makedepends=(
   audit
-  bluez-libs
   curl
   dhclient
   dhcpcd
   dnsmasq
+  elogind
   git
   glib2-docs
   gobject-introspection
@@ -47,7 +48,6 @@ makedepends=(
   polkit
   ppp
   python-gobject
-  elogind
   vala
   vala
   wpa_supplicant
@@ -56,11 +56,11 @@ checkdepends=(
   libx11
   python-dbus
 )
-_commit=8bee6ef894a27ffc8a464df3b32b03e811e1a15d  # tags/1.44.2^0
-source=("git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git#commit=$_commit"
-        0001-connectivity-Make-curl-timeout-callback-non-repeatin.patch)
-b2sums=('SKIP'
-        '51674577e4a2786b6491fdf90cc90734da3792e0a7e224f0eecc9c485a5f81b68a71bb559b23d294d52dc9065ee82c997c31f9272504c3d753e0ffe1321367e9')
+_commit=e39f48a30a2ef7b445276a859bbd5255e4c5071d  # tags/1.46.0^0
+source=(
+  "git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git#commit=$_commit"
+)
+b2sums=('SKIP')
 
 pkgver() {
   cd NetworkManager
@@ -69,12 +69,13 @@ pkgver() {
 
 prepare() {
   cd NetworkManager
-  # https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/merge_requests/1756
-  git apply -3 ../0001-connectivity-Make-curl-timeout-callback-non-repeatin.patch
 }
 
 build() {
   local meson_options=(
+    # build checks this option; injecting just via *FLAGS is broken
+    -D b_lto=true
+
     # system paths
     -D dbus_conf_dir=/usr/share/dbus-1/system.d
 
@@ -84,15 +85,15 @@ build() {
     -D suspend_resume=elogind
     -D modify_system=true
     -D selinux=false
+    -D selinux=false
     -D systemdsystemunitdir=no
     -D session_tracking=elogind
     -D systemd_journal=false
 
+
     # features
     -D iwd=true
     -D teamdctl=true
-    -D bluez5_dun=true
-    -D ebpf=true
 
     # configuration plugins
     -D config_plugins_default=keyfile
@@ -119,7 +120,7 @@ build() {
 }
 
 check() {
-  meson test -C build --print-errorlogs
+  NMTST_FORCE_REAL_ROOT=1 meson test -C build --print-errorlogs
 }
 
 _pick() {
@@ -135,7 +136,6 @@ _pick() {
 package_networkmanager() {
   depends=(
     audit
-    bluez-libs
     curl
     elogind
     iproute2
@@ -166,6 +166,9 @@ package_networkmanager() {
   )
   backup=(etc/NetworkManager/NetworkManager.conf)
 
+  # NM wants to move to LGPL only, but there's still GPL code left
+  license+=(GPL-2.0-or-later)
+
   meson install -C build --destdir "$pkgdir"
 
   cd "$pkgdir"
@@ -189,19 +192,20 @@ END
 
   shopt -s globstar
 
+  _pick docs usr/share/gtk-doc
+
   _pick libnm usr/include/libnm
   _pick libnm usr/lib/girepository-1.0/NM-*
   _pick libnm usr/lib/libnm.*
   _pick libnm usr/lib/pkgconfig/libnm.pc
   _pick libnm usr/share/gir-1.0/NM-*
-  _pick libnm usr/share/gtk-doc/html/libnm
   _pick libnm usr/share/vala/vapi/libnm.*
 
   _pick cloud usr/lib/**/*nm-cloud-setup*
-#   _pick cloud usr/share/man/*/nm-cloud-setup*
+  _pick cloud usr/share/man/*/nm-cloud-setup*
 
   # Not actually packaged (https://bugs.archlinux.org/task/69138)
-#   _pick ovs usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf
+  # _pick ovs usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf
 
   # Restore empty dir
   install -d usr/lib/NetworkManager/dispatcher.d/no-wait.d
@@ -209,7 +213,6 @@ END
 
 package_libnm() {
   pkgdesc="NetworkManager client library"
-  license=(LGPL)
   depends=(
     glib2
     nss
@@ -226,6 +229,13 @@ package_nm-cloud-setup() {
   depends=(networkmanager)
 
   mv cloud/* "$pkgdir"
+}
+
+package_networkmanager-docs() {
+  pkgdesc+=" (API documentation)"
+  depends=()
+
+  mv docs/* "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
