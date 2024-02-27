@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: moreutils
-  version: 0.68-1
+  version: 0.69-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.68-1
+    version: 0.69-1
     packages:
-      - moreutils-0.68-1-x86_64.pkg.tar.zst
+      - moreutils-0.69-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
