@@ -1,22 +1,36 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kde-gtk-config
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='GTK2 and GTK3 Configurator for KDE'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(qt5-svg kdecoration kconfigwidgets5 kdbusaddons5 kwindowsystem5)
-makedepends=(extra-cmake-modules gtk3 sassc)
-optdepends=('gtk3: GTK3 apps support' 'xsettingsd: apply settings to GTK applications on the fly')
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glib2
+         glibc
+         kcolorscheme
+         kconfig
+         kcoreaddons
+         kdbusaddons
+         kdecoration
+         kguiaddons
+         kwindowsystem
+         qt6-base
+         qt6-svg
+         sh)
+makedepends=(extra-cmake-modules
+             gtk3
+             sassc)
+optdepends=('gtk3: GTK3 apps support'
+            'xsettingsd: apply settings to GTK applications on the fly')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('6f3b3150b138b5c309ef2c47eee2ab15b0908cacf1487cbc9d561d64f0f68e6b'
+sha256sums=('60071ffcb5427818a50caa95b2272489da10805c32b975d382026c078f8d8453'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -24,7 +38,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
