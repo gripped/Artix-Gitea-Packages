@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kirigami-addons
-  version: 0.11.0-3
+  version: 1.0.1-1
   arch:
     - x86_64
   pkgname:
-    - kirigami-addons5
+    - kirigami-addons
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.0.1-1
+    packages:
+      - kirigami-addons-1.0.1-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
