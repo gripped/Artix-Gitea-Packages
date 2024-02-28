@@ -1,21 +1,32 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=polkit-kde-agent
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Daemon providing a polkit authentication UI for KDE'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(kiconthemes5 kdbusaddons5 kcrash5)
-makedepends=(extra-cmake-modules kdoctools5)
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kcoreaddons
+         kcrash
+         kdbusaddons
+         ki18n
+         kirigami
+         kwindowsystem
+         polkit-qt6
+         qt6-5compat
+         qt6-base
+         qt6-declarative)
+makedepends=(extra-cmake-modules
+             kdoctools)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-1-$pkgver.tar.xz{,.sig})
-sha256sums=('a3952a2785e468317a41bbc49ae02af816646afe3108d0612730f4f2398f8bdb'
+sha256sums=('2ccfc41a83cfef8c9b3311fe1f93ab52d062f63b0f6e5a63b08240ed1153aa4e'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -23,7 +34,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-1-$pkgver \
+  cmake -B build  -S $pkgname-1-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
@@ -32,5 +43,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -r $pkgdir/usr/lib/systemd    # remove systemd service
+  rm -fr $pkgdir/usr/lib/systemd    # remove systemd service
 }
