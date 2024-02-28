@@ -3,30 +3,52 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwallet
-pkgver=5.110.0
+pkgver=6.0.0
 pkgrel=1
 pkgdesc='Secure and unified container for user passwords'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
-license=(LGPL)
-depends=(knotifications kiconthemes kservice gpgme qca-qt5)
-makedepends=(extra-cmake-modules kdoctools boost doxygen qt5-tools qt5-doc)
+license=(LGPL-2.0-only LGPL-3.0-only)
+depends=(gcc-libs
+         glibc
+         gpgme
+         kcolorscheme
+         kconfig
+         kcoreaddons
+         kdbusaddons
+         ki18n
+         knotifications
+         kwidgetsaddons
+         kwindowsystem
+         libgcrypt
+         qca-qt6
+         qt6-base)
+makedepends=(doxygen
+             extra-cmake-modules
+             kdoctools
+             kservice
+             qt6-doc
+             qt6-tools)
 optdepends=('kwalletmanager: Configuration GUI')
 provides=(org.freedesktop.secrets)
-replaces=(kwallet-secrets)
-groups=(kf5)
+groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('1f4fbbfcc157ca9cd59e85d358a839a49a25f4d5d7f6e2fde047efbf19f2e555'
+sha256sums=('bab43823de8b1b086dc4b2ad10d10bd6c4d0d2e1f8b5fd5fdd5f7d365fb8e5cc'
             'SKIP')
-validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
+validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde.org>
+              E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_QCH=ON \
+    -DBUILD_KWALLET_QUERY=OFF
   cmake --build build
 }
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+
+# Fix conflicts for now
+  rm "$pkgdir"/usr/share/dbus-1/services/org.kde.kwalletd5.service
 }
