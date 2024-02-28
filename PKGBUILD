@@ -1,40 +1,59 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=powerdevil
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=1
 pkgdesc='Manages the power consumption settings of a Plasma Shell'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(plasma-workspace ddcutil)
-makedepends=(extra-cmake-modules kdoctools5 bluez-qt5 networkmanager-qt5)
+license=(LGPL-2.0-or-later)
+depends=(ddcutil
+         gcc-libs
+         glibc
+         plasma-activities
+         kauth
+         kcmutils
+         kconfig
+         kcoreaddons
+         kcrash
+         kdbusaddons
+         kglobalaccel
+         ki18n
+         kidletime
+         kirigami
+         kitemmodels
+         knotifications
+         ksvg
+         kwindowsystem
+         kxmlgui
+         layer-shell-qt
+         libelogind
+         libkscreen
+         libplasma
+         libxcb
+         plasma-workspace
+         qt6-base
+         qt6-declarative
+         solid)
+makedepends=(extra-cmake-modules
+             kdoctools)
 optdepends=('kinfocenter: for the Energy Information KCM'
-            'power-profiles-daemon: power profiles support'
-            'networkmanager-qt5: wireless power saving actions'
-            'bluez-qt5: wireless power saving actions')
+            'power-profiles-daemon: power profiles support')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('06c1a3c09880dd2060e3c8026189d8568d8a0f166ea33c2584669f85a04ec8f1'
+sha256sums=('126342760e1b8ca4b98fa8579abcaa415b859d7d6d1802b36a025648672cb050'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
-prepare() {
-  sed -e 's|ddca_get_display_info_list2(true|ddca_get_display_info_list2(false|' \
-    -i $pkgname-$pkgver/daemon/backends/upower/ddcutilbrightness.cpp # Fix crashes with ddcutil 2
-}
-
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
-    -DHAVE_DDCUTIL=ON \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
@@ -42,5 +61,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -r $pkgdir/usr/lib/systemd    #remove systemd service
+  rm -fr $pkgdir/usr/lib/systemd    #remove systemd service
 }
