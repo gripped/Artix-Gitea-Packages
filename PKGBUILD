@@ -1,19 +1,36 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-welcome
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='A friendly onboarding wizard for Plasma'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(kaccounts-integration kuserfeedback5 kirigami2 plasma-framework5 knewstuff5)
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kcmutils
+         kconfig
+         kcoreaddons
+         kdbusaddons
+         ki18n
+         kio
+         kirigami
+         kirigami-addons
+         kjobwidgets
+         knewstuff # org.kde.knewstuff-dialog
+         kservice
+         kuserfeedback
+         kwindowsystem
+         plasma-nm
+         qt6-5compat
+         qt6-base
+         qt6-declarative)
 makedepends=(extra-cmake-modules)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('8423e03419fb89e6f66a48bac981722748f7db6074f7a57865c71529867a1c01'
+sha256sums=('c6285518c2c72107c6827a9d7198f93a1f30aec6f99993c2a311e3137fd3e66c'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -21,7 +38,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
