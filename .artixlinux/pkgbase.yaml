@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: phonon
-  version: 4.12.0-3
+  version: 4.12.0-4
   arch:
     - x86_64
   pkgname:
     - phonon-qt5
     - phonon-qt6
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.12.0-4
+    packages:
+      - phonon-qt5-4.12.0-4-x86_64.pkg.tar.zst
+      - phonon-qt6-4.12.0-4-x86_64.pkg.tar.zst
   world:
     version: 4.12.0-3
     packages:
