@@ -5,7 +5,7 @@
 pkgname=libksysguard
 pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Library to retrieve information on the current status of computer hardware'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -13,31 +13,21 @@ license=(LGPL-2.0-or-later)
 depends=(gcc-libs
          glibc
          kauth
-         kcolorscheme
          kconfig
-         kconfigwidgets
          kcoreaddons
          kdeclarative
-         kglobalaccel
          ki18n
-         kio
+         kirigami
          kitemmodels
-         kjobwidgets
          knewstuff
          kpackage
          kquickcharts
          kservice
-         kwidgetsaddons
-         kwindowsystem
          libnl
          libpcap
-         libx11
-         libxres
          lm_sensors
          qt6-base
          qt6-declarative
-         qt6-webchannel
-         qt6-webengine
          solid
          zlib)
 makedepends=(extra-cmake-modules
@@ -53,7 +43,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
