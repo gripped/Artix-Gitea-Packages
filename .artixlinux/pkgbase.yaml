@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kuserfeedback
-  version: 1.2.0-1
+  version: 6.0.0-2
   arch:
     - x86_64
   pkgname:
     - kuserfeedback
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.0.0-2
+    packages:
+      - kuserfeedback-6.0.0-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
