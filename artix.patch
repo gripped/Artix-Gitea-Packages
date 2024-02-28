@@ -20,6 +20,6 @@ index cc8b792..b519640 100644
     AND NOT DEFINED ENV{FLATPAK_ID}
     AND NOT EXISTS "/etc/NIXOS")
    if (EXISTS "/etc/debian_version") # is this a debian system ?
--- 
+--
 2.38.1
 
