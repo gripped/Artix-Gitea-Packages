@@ -1,22 +1,27 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kglobalaccel
-pkgver=5.110.0
+pkgver=6.0.0
 pkgrel=1
 pkgdesc='Add support for global workspace shortcuts'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
-license=(LGPL)
-depends=(kdbusaddons kconfig kcrash)
-makedepends=(extra-cmake-modules doxygen qt5-tools qt5-doc)
-groups=(kf5)
+license=(LGPL-2.0-only LGPL-3.0-only)
+depends=(gcc-libs
+         glibc
+         qt6-base)
+makedepends=(doxygen
+             extra-cmake-modules
+             qt6-doc
+             qt6-tools)
+groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f75325f5f7b9e6d254e82c58ec4395091514d1759b050235fbf78099fd1682c7'
+sha256sums=('58009eb0d0b70c93dc0cb0886ae929f3756e972c841d7a3e465df8307e5b7149'
             'SKIP')
-validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
+validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde.org>
+              E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -27,7 +32,4 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-
-  #remove systemd service
-  rm -r $pkgdir/usr/lib/systemd
 }
