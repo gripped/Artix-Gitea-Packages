@@ -1,36 +1,43 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kpmcore
-pkgver=23.08.5
+pkgver=24.02.0
 pkgrel=1
 pkgdesc='Library for managing partitions'
 arch=(x86_64)
 url='https://apps.kde.org/partitionmanager/'
-license=(GPL2)
-depends=(smartmontools kcoreaddons5 kwidgetsaddons5 ki18n5 polkit-qt5)
+license=(GPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kcoreaddons
+         ki18n
+         kwidgetsaddons
+         polkit-qt6
+         qt6-base
+         smartmontools
+         util-linux-libs)
 makedepends=(extra-cmake-modules)
-optdepends=('e2fsprogs: ext2/3/4 support'
-	    'xfsprogs: XFS support'
-	    'jfsutils: JFS support'
-	    'reiserfsprogs: Reiser support'
-	    'ntfs-3g: NTFS support'
-            'dosfstools: FAT32 support'
-            'fatresize: FAT resize support'
-            'f2fs-tools: F2FS support'
+optdepends=('dosfstools: FAT32 support'
+            'e2fsprogs: ext2/3/4 support'
             'exfat-utils: exFAT support'
             'exfatprogs: exFAT support (alternative to exfat-utils)'
+            'f2fs-tools: F2FS support'
+            'fatresize: FAT resize support'
+	    'jfsutils: JFS support'
             'nilfs-utils: nilfs support'
-            'udftools: UDF support')
+            'ntfs-3g: NTFS support'
+            'reiserfsprogs: Reiser support'
+            'udftools: UDF support'
+            'xfsprogs: XFS support')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('b44a40712de593ddfe4cc5799912eb53f9c3e383544306a17279f051de85417a'
+sha256sums=('4c5c50a950aea7053616f9aa86d29c1d2e0f1bdb121c17cc31e7e1e73a62ded1'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
