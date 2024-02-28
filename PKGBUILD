@@ -1,19 +1,23 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor:Antonio Rojas <arojas@archlinux.org>
+# Maintainer:Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kwallet-pam
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='KWallet PAM integration'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(socat kwallet5)
+license=(LGPL-2.0-or-later)
+depends=(glibc
+         kwallet
+         libgcrypt
+         pam
+         sh
+         socat)
 makedepends=(extra-cmake-modules)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('ac191714d637c9f43041b08f9c946ff01ffef1b77cf80f33c7ae0f819244a1fb'
+sha256sums=('193a881da41ff151bce1e8edf3a094ab351b522fd90e37a7357d1a195ef0067a'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -21,7 +25,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib
   cmake --build build
 }
