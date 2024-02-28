@@ -1,12 +1,11 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 _name=kguiaddons
 pkgname=${_name}5
 pkgver=5.115.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Addons to QtGui'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -24,7 +23,8 @@ validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde
 build() {
   cmake -B build -S $_name-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_QCH=ON \
+    -DBUILD_GEO_SCHEME_HANDLER=OFF
   cmake --build build
 }
 
