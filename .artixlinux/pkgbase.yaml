@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: krename
-  version: 5.0.2-7
+  version: 5.0.2-9
   arch:
     - x86_64
   pkgname:
     - krename
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.2-7
+    version: 5.0.2-9
     packages:
-      - krename-5.0.2-7-x86_64.pkg.tar.zst
+      - krename-5.0.2-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
