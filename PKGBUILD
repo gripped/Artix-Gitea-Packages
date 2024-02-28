@@ -1,21 +1,20 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=oxygen-sounds
 pkgdesc='The Oxygen Sound Theme'
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 arch=(any)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
+license=(LGPL-2.0-or-later)
 depends=()
 makedepends=(extra-cmake-modules)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('23a1f090aaeee966476ff03aecad1f60b1e067d7948edd1b61c3a5d2b33bc35f'
+sha256sums=('7565ae1ecc6d395bcaf43687eff94f56eda8a4289d0c6ff5f4a5751391c6e58f'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -23,7 +22,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgbase-$pkgver
+  cmake -B build -S $pkgname-$pkgver
   cmake --build build
 }
 
