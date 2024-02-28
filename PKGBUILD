@@ -1,21 +1,28 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=milou
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='A dedicated search application built on top of Baloo'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(krunner5 kitemmodels5)
-makedepends=(extra-cmake-modules kdoctools5)
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kirigami
+         krunner
+         ksvg
+         libplasma
+         qt6-base
+         qt6-declarative)
+makedepends=(extra-cmake-modules
+             kdoctools)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('7c19dd8b16cc9bdf594118bbe49e8aa6e5cf12984665377cc8bc369d5f110ac3'
+sha256sums=('c8ea924f7c3915e1deaa5220ba007238526b3df9029b3ac98eca158e5552b34a'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -23,7 +30,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
