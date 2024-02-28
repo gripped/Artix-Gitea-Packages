@@ -1,0 +1,5 @@
+[python-pygdbmi]
+source = 'github'
+github = 'cs01/pygdbmi'
+use_max_tag = true
+prefix = 'v'
