@@ -4,7 +4,7 @@
 
 pkgname=kguiaddons
 pkgver=6.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Addons to QtGui'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -30,8 +30,7 @@ validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde
 build() {
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON \
-    -DBUILD_GEO_SCHEME_HANDLER=OFF
+    -DBUILD_QCH=ON
   cmake --build build
 }
 
