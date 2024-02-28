@@ -1,19 +1,26 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor:Antonio Rojas <arojas@archlinux.org>
+# Maintainer:Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kwayland-integration
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Provides integration plugins for various KDE frameworks for the wayland windowing system'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(kwindowsystem5 kwayland5)
-makedepends=(extra-cmake-modules wayland-protocols kidletime5)
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kwayland5
+         kwindowsystem5
+         qt5-base
+         qt5-wayland
+         wayland)
+makedepends=(extra-cmake-modules
+             plasma-wayland-protocols
+             wayland-protocols)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f37d054662b6b294faee9dae9a8a808023cf2ec5a0508b76fcaceb61b4a3bd9f'
+sha256sums=('04e2cbc45ea3c4b6f18aba16610fd2c7fa20b263ca606290b1b27546650101e9'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -21,7 +28,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
