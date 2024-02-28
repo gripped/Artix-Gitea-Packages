@@ -1,22 +1,30 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-firewall
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Control Panel for your system firewall'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(GPL LGPL)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-depends=(systemsettings)
+license=(GPL-2.0-or-later LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kauth
+         kcmutils
+         kconfig
+         kcoreaddons
+         ki18n
+         kirigami
+         qt6-base
+         qt6-declarative)
 makedepends=(extra-cmake-modules)
-optdepends=('iproute2: netstat backend'
-            'firewalld: firewalld backend'
+optdepends=('firewalld: firewalld backend'
+            'iproute2: netstat backend'
             'ufw: ufw backend')
 groups=(plasma)
-sha256sums=('755a6a00848f536e567ea9672b4fa70af958a875ab7651e2edc75bbb661c84cc'
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('32b0b4e241e67d7aab2ade5ea345670f0945850e220d65aba3c6e55f60185796'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -24,8 +32,9 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
-    -DLIBEXEC_INSTALL_DIR=lib
+  cmake -B build  -S $pkgname-$pkgver \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
+    -DBUILD_TESTING=OFF
   cmake --build build
 }
 
