@@ -1,32 +1,58 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio
-pkgver=5.110.0
-pkgrel=2
+pkgver=6.0.0
+pkgrel=1
 pkgdesc='Resource and network access abstraction'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
-license=(LGPL)
-depends=(solid kjobwidgets kbookmarks libxslt kwallet ktextwidgets kded)
-makedepends=(extra-cmake-modules kdoctools doxygen qt5-tools qt5-doc)
-optdepends=('kio-extras: extra protocols support (sftp, fish and more)'
+license=(LGPL-2.0-only LGPL-3.0-only)
+depends=(acl
+         gcc-libs
+         glibc
+         karchive
+         kauth
+         kbookmarks
+         kcolorscheme
+         kcompletion
+         kconfig
+         kconfigwidgets
+         kcoreaddons
+         kcrash
+         kdbusaddons
+         kguiaddons
+         ki18n
+         kiconthemes
+         kitemviews
+         kjobwidgets
+         kservice
+         kwallet
+         kwidgetsaddons
+         kwindowsystem
+         libxml2
+         libxslt
+         qt6-5compat
+         qt6-base
+         solid
+         util-linux-libs)
+makedepends=(doxygen
+             extra-cmake-modules
+             kdoctools
+             qt6-doc
+             qt6-tools)
+optdepends=('kded: proxy management and cookie storage'
             'kdoctools: for the help kioslave'
+            'kio-extras: extra protocols support (sftp, fish and more)'
             'kio-fuse: to mount remote filesystems via FUSE'
             'switcheroo-control: hybrid GPU support')
-groups=(kf5)
-source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
-        https://invent.kde.org/frameworks/kio/-/commit/48322f44.patch)
-sha256sums=('228f9abcdfce1b23deacca97e9dd68d019e6b20607ddfe2295050333e90fc96b'
-            'SKIP'
-            'bff9696fc152c06fee2c4f21f1dc8a06c42745dbfe7fe88d47596bfb03d38220')
-validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
-
-prepare() {
-  patch -d $pkgname-$pkgver -p1 < 48322f44.patch # Fix crashes
-}
+groups=(kf6)
+source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('4951adf043299e463803cc63ed33d5261b81bff969eb189dc13350f495cb4b42'
+            'SKIP')
+validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde.org>
+              E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
