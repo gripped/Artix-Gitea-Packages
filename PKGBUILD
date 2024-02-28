@@ -1,22 +1,37 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kde-cli-tools
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Tools based on KDE Frameworks 5 to better interact with the system'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(LGPL)
-depends=(kdesu5 kcmutils5 kactivities5 kparts5)
-makedepends=(extra-cmake-modules kdoctools5 plasma-workspace)
-optdepends=('plasma-workspace: for kcmshell5')
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kcmutils
+         kcompletion
+         kconfig
+         kcoreaddons
+         kdesu
+         ki18n
+         kiconthemes
+         kio
+         kparts
+         kservice
+         kwidgetsaddons
+         kwindowsystem
+         qt6-base
+         qt6-svg
+         sh)
+makedepends=(extra-cmake-modules
+             kdoctools)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('7baa6d899cf0e14194f935cd2f2526123c40261f6fbd86dc17cf75bbc6a04d3f'
+sha256sums=('4370c93bb5c205ef32bf48bc00f263eaa390b7f1b46df875a42fcbffbf428741'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -24,7 +39,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
@@ -33,5 +48,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  ln -s /usr/lib/kf5/kdesu "$pkgdir"/usr/bin/
+  # ln -s /usr/lib/kf6/kdesu "$pkgdir"/usr/bin/
 }
