@@ -3,7 +3,7 @@
 
 pkgname=syntax-highlighting
 pkgver=6.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Syntax highlighting engine for structured text and code'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -27,8 +27,8 @@ validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde
 build() {
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
+    -DQRC_SYNTAX=OFF \
     -DBUILD_QCH=ON
-#    -DQRC_SYNTAX=OFF \
   cmake --build build
 }
 
