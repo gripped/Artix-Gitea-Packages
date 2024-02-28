@@ -1,16 +1,16 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 _name=syntax-highlighting
 pkgname=${_name}5
 pkgver=5.115.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Syntax highlighting engine for structured text and code'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
 license=(GPL2)
-depends=(qt5-base)
+depends=(qt5-base
+         syntax-highlighting) # For syntax files
 makedepends=(extra-cmake-modules qt5-declarative qt5-xmlpatterns qt5-tools qt5-doc doxygen)
 optdepends=('qt5-declarative: QML bindings')
 conflicts=("$_name<5.111")
@@ -31,4 +31,5 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+  rm -r "$pkgdir"/usr/share/org.kde.syntax-highlighting # Provided by syntax-highlighting
 }
