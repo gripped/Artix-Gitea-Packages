@@ -1,19 +1,24 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=layer-shell-qt
-pkgver=5.27.10
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Qt component to allow applications to make use of the Wayland wl-layer-shell protocol'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
-license=(GPL LGPL)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-depends=(qt5-wayland)
-makedepends=(extra-cmake-modules wayland-protocols)
+license=(GPL-2.0-or-later LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         qt6-base
+         qt6-wayland
+         wayland)
+makedepends=(extra-cmake-modules
+             wayland-protocols)
+optdepends=('qt6-declarative: QML bindings')
 groups=(plasma)
-sha256sums=('0aed80cf2a143033c186df5343215acd638c80e419b4e854a14bd35ba3d4c3c2'
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('15a57a82d9ccb0d520b558a173f331b39775c800c0b28481da808115e1d28ab4'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -21,7 +26,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver
+  cmake -B build  -S $pkgname-$pkgver
   cmake --build build
 }
 
