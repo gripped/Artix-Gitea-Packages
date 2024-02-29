@@ -1,21 +1,29 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kdiagram
-pkgver=2.8.0
-pkgrel=1.1
-pkgdesc="Powerful libraries for creating business diagrams"
+pkgver=3.0.1
+pkgrel=3
+pkgdesc='Powerful libraries for creating business diagrams'
 arch=(x86_64)
-url="https://www.kde.org/"
+url='https://www.kde.org/'
 license=(GPL2)
-depends=(qt5-svg)
-makedepends=(extra-cmake-modules qt5-tools qt5-doc doxygen)
-source=("https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f'
+depends=(gcc-libs
+         glibc
+         qt6-base
+         qt6-svg)
+makedepends=(doxygen
+             extra-cmake-modules
+             qt6-doc
+             qt6-tools)
+source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('4659b0c2cd9db18143f5abd9c806091c3aab6abc1a956bbf82815ab3d3189c6d'
             'SKIP')
-validpgpkeys=(42A60D06F449E895F40F09C01638B8A616108B8A) # Dag Andersen <danders@get2net.dk>
+validpgpkeys=(42A60D06F449E895F40F09C01638B8A616108B8A  # Dag Andersen <danders@get2net.dk>
+              E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   cmake --build build
