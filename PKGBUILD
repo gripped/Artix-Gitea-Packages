@@ -49,7 +49,7 @@ optdepends=('icoutils: Windows executable thumbnails'
             'kactivities-stats5: recently used kioslave'
             'qt5-imageformats: thumbnails for additional image formats'
             'taglib: audio file thumbnails')
-source=(https://download.kde.org/unstable/release-service/$pkgver/src/kio-extras-kf5-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/kio-extras-kf5-$pkgver.tar.xz{,.sig})
 sha256sums=('2f1364f17175ad1ce191bc3f221685457f5864a547d46ccb72a616283d80ac53'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
