@@ -2,17 +2,29 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kopeninghours
-pkgver=23.08.5
+pkgver=24.02.0
 pkgrel=1
 pkgdesc='Library for parsing and evaluating OSM opening hours expressions'
 arch=(x86_64)
 url='https://www.kde.org'
-license=(LGPL)
-depends=(kholidays5 ki18n5)
-makedepends=(extra-cmake-modules python qt5-tools doxygen boost)
-optdepends=('boost-libs: Python bindings' 'python: Python bindings')
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         kholidays
+         ki18n
+         qt6-base)
+makedepends=(boost
+             doxygen
+             extra-cmake-modules
+             python
+             qt6-declarative
+             qt6-doc
+             qt6-tools)
+optdepends=('boost-libs: Python bindings'
+            'python: Python bindings'
+            'qt6-declarative: QML bindings')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('262c4cf75e99c3989ce2150c467196ed0c5ae803d674e9372faa70d57d931946'
+sha256sums=('095a3cc15901fc41816add0cacb98da46435667ac24be18ec55f6fba05818477'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -21,7 +33,8 @@ validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aac
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_QCH=ON \
+    -DQT_MAJOR_VERSION=6
   cmake --build build
 }
 
