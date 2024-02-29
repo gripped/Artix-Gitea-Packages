@@ -3,7 +3,7 @@
 pkgname=plasma-systemmonitor
 pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='An interface for monitoring system sensors, process information and other system resources'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -31,6 +31,7 @@ depends=(gcc-libs
          qt6-declarative)
 makedepends=(extra-cmake-modules)
 groups=(plasma)
+replaces=(ksysguard)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('589fd04f1fe0d96bfa297a4fe03eeb015c7b5f8399325bf233277dfe79e66f99'
             'SKIP')
