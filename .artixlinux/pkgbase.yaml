@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: krename
-  version: 5.0.2-9
+  version: 5.0.2-10
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.2-9
+    version: 5.0.2-10
     packages:
-      - krename-5.0.2-9-x86_64.pkg.tar.zst
+      - krename-5.0.2-10-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
