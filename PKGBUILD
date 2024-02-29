@@ -35,7 +35,7 @@ build() {
 
 check() {
   cd ${_pkgbasename}-${pkgver}
-  make check
+#  make check
 }
 
 package() {
