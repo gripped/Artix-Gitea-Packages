@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: libkscreen5
+  version: 5.27.10-2
+  arch:
+    - x86_64
+  pkgname:
+    - libkscreen5
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.27.10-2
+    packages:
+      - libkscreen5-5.27.10-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
