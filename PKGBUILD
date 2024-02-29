@@ -4,8 +4,8 @@
 # Contributor: Clayton Craft <clayton at craftyguy dot net>
 
 pkgname=python-setuptools-rust
-pkgver=1.8.1
-_commit=2aa1ca490de98631e660e87462e338023cd2c69c
+pkgver=1.9.0
+_commit=2e4ed40063c0f00bb1e3aa77a8b41ae8b67bff90
 pkgrel=1
 pkgdesc="Compile and distribute Python extensions written in rust as easily as if they were written in C."
 arch=('any')
