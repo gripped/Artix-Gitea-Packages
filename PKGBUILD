@@ -2,7 +2,7 @@
 
 pkgname=kdiagram
 pkgver=2.8.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Powerful libraries for creating business diagrams"
 arch=(x86_64)
 url="https://www.kde.org/"
@@ -15,7 +15,7 @@ sha256sums=('579dad3bd1ea44b5a20c0f133ebf47622e38960f9c7c8b3a316be30a369f431f'
 validpgpkeys=(42A60D06F449E895F40F09C01638B8A616108B8A) # Dag Andersen <danders@get2net.dk>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  artix-cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   cmake --build build
