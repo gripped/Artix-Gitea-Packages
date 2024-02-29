@@ -27,7 +27,7 @@ depends=(audit
          kxmlgui
          qt6-5compat
          qt6-base
-         systemd-libs)
+         libelogind)
 makedepends=(extra-cmake-modules
              kdoctools)
 groups=(kde-applications
