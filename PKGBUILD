@@ -1,7 +1,7 @@
 # Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 
 pkgname=darkhttpd
-pkgver=1.15
+pkgver=1.16
 pkgrel=1
 pkgdesc="A small and secure static webserver"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://unix4lyfe.org/darkhttpd/"
 license=('BSD')
 backup=('etc/conf.d/mimetypes')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/emikulic/darkhttpd/archive/v${pkgver}.tar.gz")
-sha256sums=('ea48cedafbf43186f4a8d1afc99b33b671adee99519658446022e6f63bd9eda9')
+sha256sums=('ab97ea3404654af765f78282aa09cfe4226cb007d2fcc59fe1a475ba0fef1981')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
