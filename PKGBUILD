@@ -5,20 +5,58 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=dolphin
-pkgver=23.08.5
+pkgver=24.02.0
 pkgrel=1
 pkgdesc='KDE File Manager'
 arch=(x86_64)
 url='https://apps.kde.org/dolphin/'
-license=(LGPL)
-depends=(baloo-widgets knewstuff5 kio-extras kcmutils5 kparts5 kactivities5 kuserfeedback5)
-makedepends=(extra-cmake-modules kdoctools5)
-optdepends=('kde-cli-tools: for editing file type options' 'ffmpegthumbs: video thumbnails' 'kdegraphics-thumbnailers: PDF and PS thumbnails'
-            'konsole: terminal panel' 'purpose5: share context menu'
-            'kio-admin: for managing files as administrator')
-groups=(kde-applications kde-system)
+license=(LGPL-2.0-or-later)
+depends=(baloo
+         baloo-widgets
+         gcc-libs
+         glibc
+         kbookmarks
+         kcmutils
+         kcodecs
+         kcolorscheme
+         kcompletion
+         kconfig
+         kconfigwidgets
+         kcoreaddons
+         kcrash
+         kdbusaddons
+         kfilemetadata
+         ki18n
+         kiconthemes
+         kio
+         kio-extras
+         kjobwidgets
+         knewstuff
+         knotifications
+         kparts
+         kservice
+         ktextwidgets
+         kuserfeedback
+         kwidgetsaddons
+         kwindowsystem
+         kxmlgui
+         phonon-qt6
+         plasma-activities
+         qt6-base
+         solid)
+makedepends=(extra-cmake-modules
+             kdoctools)
+optdepends=('ffmpegthumbs: video thumbnails'
+            'kde-cli-tools: for editing file type options'
+            'kdegraphics-thumbnailers: PDF and PS thumbnails'
+            'kio-admin: for managing files as administrator' 
+            'konsole: terminal panel'
+            'kio-admin: for managing files as administrator'
+            'purpose: share context menu')
+groups=(kde-applications
+        kde-system)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('6309abda566dfe890f6a3790f101198ed0f274728896054f21e24bdfc3e1f1f3'
+sha256sums=('10ef284597e28f933d8b4ead75d02759a15df4bcc928ed10b54f8065b7431257'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
