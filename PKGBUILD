@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=print-manager
-pkgver=24.02.0
+pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 epoch=1
@@ -43,7 +43,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  artix-cmake -B build  -S $pkgname-$pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
