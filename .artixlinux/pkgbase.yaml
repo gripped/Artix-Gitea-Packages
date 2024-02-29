@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: signal-desktop
-  version: 6.48.1-1
+  version: 7.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.48.1-1
+    version: 7.0.0-1
     packages:
-      - signal-desktop-6.48.1-1-x86_64.pkg.tar.zst
+      - signal-desktop-7.0.0-1-x86_64.pkg.tar.zst
