@@ -5,17 +5,62 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=kdepim-runtime
-pkgver=23.08.5
+pkgver=24.02.0
 pkgrel=1
 pkgdesc='Extends the functionality of kdepim'
 arch=(x86_64)
 url='https://kontact.kde.org'
-license=(GPL LGPL FDL)
-depends=(libkolabxml kdav5 akonadi-calendar knotifyconfig5 kmbox akonadi-notes akonadi qca-qt5 qt5-networkauth)
-makedepends=(extra-cmake-modules kdoctools5 libetebase boost kholidays5)
+license=(GPL-2.0-or-later LGPL-2.0-or-later)
+depends=(akonadi
+         akonadi-calendar
+         akonadi-contacts
+         akonadi-mime
+         akonadi-notes
+         gcc-libs
+         glibc
+         kcalendarcore
+         kcmutils
+         kcodecs
+         kcompletion
+         kconfig
+         kconfigwidgets
+         kcontacts
+         kcoreaddons
+         kdav
+         ki18n
+         kidentitymanagement
+         kimap
+         kio
+         kjobwidgets
+         kldap
+         kmailtransport
+         kmime
+         kmbox
+         knotifications
+         knotifyconfig
+         kservice
+         ktextaddons
+         ktextwidgets
+         kwallet
+         kwidgetsaddons
+         kwindowsystem
+         libakonadi
+         libkgapi
+         libkolabxml
+         libsasl
+         qca-qt6
+         qt6-base
+         qt6-networkauth
+         qt6-speech
+         qt6-webengine
+         qtkeychain-qt6)
+makedepends=(boost
+             extra-cmake-modules
+             kdoctools)
+#            libetebase)
 optdepends=('libetebase: EteSync resource')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('fe1b07d62f167bc168fc3a3590db0a7f7383687803a7d0da8b0c0e1b3ac577f7'
+sha256sums=('5cda8aa7b3d8a7bd526fbdd20df30f56a2dcf10a844d88a6f71b9122067bab35'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
