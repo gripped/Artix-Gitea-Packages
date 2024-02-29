@@ -4,26 +4,52 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kate
-pkgver=23.08.5
+pkgver=24.02.0
 pkgrel=1
 arch=(x86_64)
-license=(GPL LGPL FDL)
+license=(GPL-2.0-or-later LGPL-2.0-or-later)
 pkgdesc='Advanced text editor'
-groups=(kde-applications kde-utilities)
+groups=(kde-applications
+        kde-utilities)
 url='https://apps.kde.org/kate/'
-depends=(knewstuff5 ktexteditor5 kactivities5 kuserfeedback5 hicolor-icon-theme)
+depends=(gcc-libs
+         glibc
+         kbookmarks
+         kcolorscheme
+         kcompletion
+         kconfig
+         kconfigwidgets
+         kcoreaddons
+         kcrash
+         kdbusaddons
+         kguiaddons
+         ki18n
+         kiconthemes
+         kio
+         knewstuff
+         kparts
+         kservice
+         ktexteditor
+         ktextwidgets
+         kuserfeedback
+         kwidgetsaddons
+         kwindowsystem
+         kxmlgui
+         qt6-base
+         syntax-highlighting)
 optdepends=('konsole: open a terminal in Kate'
             'clang: C and C++ LSP support'
             'python-lsp-server: Python LSP support'
             'texlab: LaTeX LSP support'
             'rust: Rust LSP support'
             'git: git-blame plugin')
-makedepends=(extra-cmake-modules kdoctools5)
+makedepends=(extra-cmake-modules
+             kdoctools)
 conflicts=(kwrite)
 provides=(kwrite)
 replaces=(kwrite)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('683c49d9c4b2abd4b4660b607b65249a2adfdc48418b0d18ab90810d1a8f4e37'
+sha256sums=('9b1efcccf4e36efcdbc2eada6399cd8128ce187a19182400313062f75ee35f48'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
