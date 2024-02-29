@@ -2,7 +2,7 @@
 
 pkgbase=linux-zen
 pkgver=6.7.6.zen1
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
 arch=(x86_64)
@@ -42,12 +42,12 @@ sha256sums=('e489ec0e1370d089b446d565aded7a698093d2b7c4122a18f21edb6ef93d37d3'
             'SKIP'
             'c6bc98b4ca0839519bc3b497d3094df4094ab346cea90dea5d6189e2439eedb1'
             'SKIP'
-            '08174d06259be49e66d548aebfc4c464c30495202385f6d975f4f4338645f830')
+            '26aec2b88ee5b976d9088463da905b48f694103cdbe51a27cc7a886fb6bdfac7')
 b2sums=('51d6e2304e7a9188a0fec5714276589cb46948157c76a2f4ed3f5e0bf634d94a89ea75251229a86e018767a3367328c16b610d631c78d82663dcd1d904b73385'
         'SKIP'
         '804a6bfbd65c834da19bfc0e763c0c51a5bb56db27afa025f6122ca429cfa63b55ca384c45d70fe0601cd16001daf75981a55be86d71b471b005363229213c3e'
         'SKIP'
-        '25a0316b066956e07d8eb3461b7d71dafc2c2aca37157ddef4db779d59668fb1540422d26c76c91313c82fa75b539316bb35abda29571351a9ffc8f9ba62dc24')
+        'ea395cdb4bb21b30b61c4cd6e90a6518d7c179257cd49e700279b3e90cd8d28091b58071763ef0fc763371685ff0f10c4c310dcf64a2fe3d00811d6d47aa5351')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
