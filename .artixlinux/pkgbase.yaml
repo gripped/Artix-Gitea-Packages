@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kio5-extras
-  version: 24.02.0-1
+  version: 24.01.90-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 24.02.0-1
+    version: 24.01.90-2
     packages:
-      - kio5-extras-24.02.0-1-x86_64.pkg.tar.zst
+      - kio5-extras-24.01.90-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
