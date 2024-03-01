@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-panel
-  version: 3.50.0-3
+  version: 3.50.0-4
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.50.0-3
+    version: 3.50.0-4
     packages:
-      - gnome-panel-3.50.0-3-x86_64.pkg.tar.zst
+      - gnome-panel-3.50.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
