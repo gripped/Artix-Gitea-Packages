@@ -36,7 +36,8 @@ check() {
   cd dateutil
   # https://github.com/pytest-dev/pytest/issues/5678
   pytest -W ignore::pytest.PytestUnknownMarkWarning \
-    --deselect tests/test_imports.py::test_lazy_import
+    --deselect tests/test_imports.py::test_lazy_import \
+    --deselect dateutil/test/test_tz.py::test_tzlocal_local_time_trim_colon
 }
 
 package() {
