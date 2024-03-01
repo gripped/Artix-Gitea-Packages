@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kde-applications-meta
-  version: 23.08-1.1
+  version: 24.02-2
   arch:
     - any
   pkgname:
@@ -19,7 +19,7 @@ pkgbase:
     - kde-utilities-meta
     - kdevelop-meta
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -40,8 +40,21 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.02-2
+    packages:
+      - kde-applications-meta-24.02-2-any.pkg.tar.zst
+      - kde-accessibility-meta-24.02-2-any.pkg.tar.zst
+      - kde-education-meta-24.02-2-any.pkg.tar.zst
+      - kde-games-meta-24.02-2-any.pkg.tar.zst
+      - kde-graphics-meta-24.02-2-any.pkg.tar.zst
+      - kde-multimedia-meta-24.02-2-any.pkg.tar.zst
+      - kde-network-meta-24.02-2-any.pkg.tar.zst
+      - kde-office-meta-24.02-2-any.pkg.tar.zst
+      - kde-pim-meta-24.02-2-any.pkg.tar.zst
+      - kde-sdk-meta-24.02-2-any.pkg.tar.zst
+      - kde-system-meta-24.02-2-any.pkg.tar.zst
+      - kde-utilities-meta-24.02-2-any.pkg.tar.zst
+      - kdevelop-meta-24.02-2-any.pkg.tar.zst
   world:
     version: 23.08-1.1
     packages:

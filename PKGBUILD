@@ -18,8 +18,8 @@ pkgname=(kde-applications-meta
          kde-system-meta
          kde-utilities-meta
          kdevelop-meta)
-pkgver=23.08
-pkgrel=1.1
+pkgver=24.02
+pkgrel=2
 arch=(any)
 license=(None)
 url='https://www.artixlinux.org/'
@@ -171,7 +171,6 @@ package_kde-network-meta() {
            kio-zeroconf
            konqueror
            konversation
-           kopete
            krdc
            krfb
            ktorrent
@@ -239,6 +238,7 @@ package_kde-utilities-meta() {
   replaces=(kdeutils-meta)
   depends=(ark
            filelight
+           isoimagewriter
            kalk
            kate
            kbackup
@@ -261,7 +261,6 @@ package_kde-utilities-meta() {
            kwalletmanager
            kweather
            markdownpart
-           print-manager
            skanpage
            sweeper
            telly-skout
