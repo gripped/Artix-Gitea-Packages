@@ -31,6 +31,7 @@ build() {
     -S "$pkgname" \
     -D CMAKE_BUILD_TYPE='None' \
     -D CMAKE_INSTALL_PREFIX='/usr' \
+    -DCPPZMQ_BUILD_TESTS=OFF \
     -W no-dev
 
   cmake --build build
