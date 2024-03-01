@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libluv
-  version: 1.48.0_0-1
+  version: 1.48.0_1-1
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - lua52-luv
     - lua53-luv
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.48.0_1-1
+    packages:
+      - libluv-1.48.0_1-1-x86_64.pkg.tar.zst
+      - lua-luv-1.48.0_1-1-x86_64.pkg.tar.zst
+      - lua51-luv-1.48.0_1-1-x86_64.pkg.tar.zst
+      - lua52-luv-1.48.0_1-1-x86_64.pkg.tar.zst
+      - lua53-luv-1.48.0_1-1-x86_64.pkg.tar.zst
   world:
     version: 1.48.0_0-1
     packages:
