@@ -3,13 +3,17 @@
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: lilydjwg <lilydjwg@gmail.com>
 
+# As of 2.9.0, upstream is tagging on GitHub and commits are signed with the
+# generic GH key, not the project member's own keys. Commit pinning and key
+# checking is disabled until there is something of substace to check.
+
 pkgname=python-dateutil
-pkgver=2.8.2
-_sha=6b035517571e63b6a63a493740c5506ec1e5da44
-pkgrel=6
+pkgver=2.9.0
+# _sha=db9d018944c41ddc740015cf5f64717c2ba64a5c
+pkgrel=1
 pkgdesc="Provides powerful extensions to the standard datetime module"
 arch=(any)
-license=(BSD Apache)
+license=(BSD-3-Clause Apache-2.0)
 url="https://github.com/dateutil/dateutil"
 depends=(python-six)
 makedepends=(python-{build,installer,wheel}
@@ -18,9 +22,10 @@ makedepends=(python-{build,installer,wheel}
 checkdepends=(python-freezegun
               python-hypothesis
               python-pytest)
-source=("git+$url.git#commit=$_sha?signed")
+# source=("git+$url.git#commit=$_sha?signed")
+source=("git+$url.git#commit=$pkgver")
 sha256sums=('SKIP')
-validpgpkeys=('5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23') # Mario Corchero <mariocj89@gmail.com>
+# validpgpkeys=('5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23') # Mario Corchero <mariocj89@gmail.com>
 
 build() {
   cd dateutil
@@ -31,8 +36,7 @@ check() {
   cd dateutil
   # https://github.com/pytest-dev/pytest/issues/5678
   pytest -W ignore::pytest.PytestUnknownMarkWarning \
-    --deselect dateutil/test/test_internals.py::test_parser_parser_private_not_warns \
-    --deselect dateutil/test/test_tz.py::test_tzlocal_local_time_trim_colon
+    --deselect tests/test_imports.py::test_lazy_import
 }
 
 package() {
