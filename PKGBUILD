@@ -1,57 +1,74 @@
-# Maintainer: MatMoul <matmoul at the google email domain which is .com>
+# Maintainer: Artoo <artoo@artixlinux.org>
+# Contributor: MatMoul <matmoul at the google email domain which is .com>
 
-_githubuser=aarnt
-_githubrepo=octopi
-_pkgtagname=v0.15.0
+_url=https://github.com/aarnt/octopi
 
-pkgname=octopi
+pkgbase=octopi
+pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.15.0
-pkgrel=1
+pkgrel=2
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
-arch=('any')
+arch=('x86_64')
+license=('GPL-2.0-or-later')
 url="https://tintaescura.com/projects/octopi/"
-license=('GPL2')
-depends=('alpm_octopi_utils' 'qtermwidget' 'sudo')
-makedepends=('qt5-tools')
-optdepends=('octopi-notifier-qt5: Notifier for Octopi using Qt5 libs'
-            'octopi-notifier-frameworks: Notifier for Octopi with Knotifications support'
-            'pacaur: for AUR support'
+makedepends=(qt5-tools cmake knotifications5 sudo)
+depends+=(
+    glibc
+    gcc-libs
+    qt5-base
+    alpm_octopi_utils
+    qtermwidget
+    pacman
+)
+source=("$pkgbase-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('e94525d906d6ab4f5fc594cf1a267668ae5f1fa7f32e449ddfa84328dd738f30')
+
+prepare() {
+    cd "$pkgbase-$pkgver"
+    cp resources/images/octopi_green.png resources/images/octopi.png
+}
+
+
+build() {
+    cmake -S "$pkgbase-$pkgver" -B build \
+        -DCMAKE_INSTALL_PREFIX=/usr # -DUSE_QTERMWIDGET6=ON
+    cmake --build build
+}
+
+package_octopi() {
+    depends+=(
+        libalpm.so
+        libalpm_octopi_utils.so
+        sudo
+    )
+    optdepends=('pacaur: for AUR support'
             'paru: for AUR support'
             'pikaur: for AUR support'
             'trizen: for AUR support'
             'yay: for AUR support'
-            'pacmanlogviewer: to view pacman log files')
-provides=('octopi' 'octopi-repoeditor' 'octopi-cachecleaner')
-source=("${_githubrepo}::https://github.com/${_githubuser}/${_githubrepo}/archive/refs/tags/${_pkgtagname}.tar.gz")
-sha256sums=('e94525d906d6ab4f5fc594cf1a267668ae5f1fa7f32e449ddfa84328dd738f30')
+            'pacmanlogviewer: to view pacman log files'
+            'octopi-notifier-frameworks: Notifier for Octopi with Knotifications support')
+    provides=('octopi-repoeditor' 'octopi-cachecleaner')
 
-_subdirs=(helper repoeditor cachecleaner sudo)
+    DESTDIR="$pkgdir" cmake --install build
 
-prepare() {
-	cd "${_githubrepo}-${pkgver}"
-	cp resources/images/octopi_green.png resources/images/octopi.png
+    install -d _octopi-notifier/{/etc/xdg/autostart,usr/share/applications,usr/bin}
+    mv -v "$pkgdir"/etc/xdg/autostart/octopi-notifier.desktop _octopi-notifier/etc/xdg/autostart/
+    mv -v "$pkgdir"/usr/share/applications/octopi-notifier.desktop _octopi-notifier/usr/share/applications/
+    mv -v "$pkgdir"/usr/bin/octopi-notifier _octopi-notifier/usr/bin/
+    rm -rv "$pkgdir"/etc
 }
 
-build() {
-	cd "${_githubrepo}-${pkgver}"
-	echo "Starting build..."
-	qmake-qt5 PREFIX=/usr QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}" QMAKE_LFLAGS="${LDFLAGS}" octopi.pro
-	make
-	for _subdir in ${_subdirs[@]}; do
-		pushd $_subdir
-		echo "Building octopi-$_subdir..."
-		qmake-qt5 PREFIX=/usr QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}" QMAKE_LFLAGS="${LDFLAGS}" "octopi-$_subdir.pro"
-		make
-		popd
-	done
-}
+package_octopi-notifier-frameworks() {
+    pkgdesc+=' (notifier)'
+    depends+=(
+        octopi
+        libalpm.so
+        libalpm_octopi_utils.so
+        knotifications5
+    )
+    provides=('octopi-notifier')
 
-package() {
-	cd "${_githubrepo}-${pkgver}"
-	make INSTALL_ROOT="${pkgdir}" install
-	for _subdir in ${_subdirs[@]}; do
-		pushd $_subdir
-		make INSTALL_ROOT="${pkgdir}" install
-		popd
-	done
+
+    mv -v _octopi-notifier/* "$pkgdir"/
 }
