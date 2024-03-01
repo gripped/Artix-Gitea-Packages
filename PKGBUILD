@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
 # Controbutor: Baptiste Jonglez <archlinux at bitsofnetworks.org>
 # Contributor: nl6720 <nl6720@gmail.com>
 # Contributor: Andreas B. Wagner <AndreasBWagner@pointfree.net>
@@ -7,11 +7,11 @@
 
 pkgname=yodl
 pkgver=4.03.03
-pkgrel=2
+pkgrel=3
 pkgdesc='Implements a pre-document language and tools to process it.'
 arch=('x86_64')
 url='https://fbb-git.gitlab.io/yodl/'
-license=('GPL3')
+license=('AGPL-3.0-or-later')
 depends=('bash')
 makedepends=('icmake')
 source=("https://gitlab.com/fbb-git/${pkgname}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
