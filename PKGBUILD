@@ -21,7 +21,7 @@ conflicts=(kimageannotator-qt5
            kimageannotator-qt6)
 replaces=(kimageannotator-qt6)
 source=(https://github.com/ksnip/kImageAnnotator/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('79802e79074611599d5fd42be55c35832b6cb8178dcb6a6c5dec10efe38d1d7c')
+sha256sums=('2335c5be15a5dde34c3333c10a6339da114e2232e4c4642dea1793e491e09677')
 
 build() {
   artix-cmake -B build -S kImageAnnotator-$pkgver \
