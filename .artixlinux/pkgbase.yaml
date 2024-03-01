@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - kweathercore
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.7-3
+    packages:
+      - kweathercore-0.7-3-x86_64.pkg.tar.zst
   world:
     version: 0.7-3
     packages:
