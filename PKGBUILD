@@ -1,15 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
 # Contributor: Baptiste Jonglez
 # Contributor: Leen Jewel <leenjewel@gmail.com>
 # Contributor: Auguste Pop <auguste [at] gmail [dot] com>
 
 pkgname='msgpack-c'
 pkgver=5.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An efficient object serialization library'
 arch=("x86_64")
 url='https://msgpack.org/'
-license=('custom:Boost')
+license=('BSL-1.0')
 depends=('glibc')
 checkdepends=('gtest')
 makedepends=('cmake' 'doxygen' 'graphviz')
