@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: kcolorpicker
-  version: 0.3.1-1
+  version: 0.3.1-3
   arch:
     - x86_64
   pkgname:
     - kcolorpicker
+    - kcolorpicker-qt5
 actions:
   addRepo: world-gremlins
   removeRepo: null
@@ -28,9 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.3.1-1
+    version: 0.3.1-3
     packages:
-      - kcolorpicker-0.3.1-1-x86_64.pkg.tar.zst
+      - kcolorpicker-0.3.1-3-x86_64.pkg.tar.zst
+      - kcolorpicker-qt5-0.3.1-3-x86_64.pkg.tar.zst
   world:
     version: 0.3.0-3
     packages:
