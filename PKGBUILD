@@ -1,22 +1,22 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 # Contributor: feuri
 
 pkgname=dunst
-pkgver=1.9.2
+pkgver=1.10.0
 pkgrel=1
 pkgdesc="Customizable and lightweight notification-daemon"
 url="https://dunst-project.org/"
 arch=('x86_64')
 license=('BSD')
-depends=('libxinerama' 'dbus' 'wayland' 'libxss' 'pango' 'gdk-pixbuf2' 'libxrandr' 'glib2')
+depends=('libxinerama' 'dbus' 'udev' 'wayland' 'libxss' 'pango' 'gdk-pixbuf2' 'libxrandr' 'glib2')
 makedepends=('libnotify')
 optdepends=('libnotify: dunstify')
 backup=('etc/dunst/dunstrc')
 provides=('notification-daemon')
 source=("dunst-$pkgver.tar.gz::https://github.com/dunst-project/dunst/archive/v$pkgver.tar.gz")
-sha256sums=('fa6ce45c0af4bae188b0d679a5ba92f8f9b7e4301bb1bb476e82df26bce9e71a')
+sha256sums=('d1fbeba329b3801b931ad804f1fadd96a36be5edf2e49c8e30f081443079759f')
 
 build() {
   cd dunst-$pkgver
