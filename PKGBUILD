@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
 # Contributor: Kevin Brodsky <corax26 at gmail dot com>
 # Contributor: Anton Jongsma <anton@felrood.nl>
 
 _pkgname=bobcat
 pkgname="lib${_pkgname}"
 pkgver=6.02.02
-pkgrel=1
+pkgrel=2
 pkgdesc="Bobcat (Brokken's Own Base Classes And Templates) library"
 arch=('x86_64')
 url="https://fbb-git.gitlab.io/bobcat/"
