@@ -1,12 +1,12 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=dvisvgm
-pkgver=3.2
+pkgver=3.2.1
 pkgrel=1
 pkgdesc='A fast DVI, EPS, and PDF to SVG converter'
 arch=(x86_64)
 url='https://dvisvgm.de/'
-license=(GPL3)
+license=(GPL-3.0-or-later)
 depends=(brotli
          freetype2
          gcc-libs
@@ -19,7 +19,7 @@ depends=(brotli
 optdepends=('mupdf-tools: to process PDF files')
 makedepends=(python)
 source=(https://github.com/mgieseki/dvisvgm/releases/download/$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('30cc990186fd4aaf11089d439727572b65f15f219c7c6c7b3e2f9666e1a1f7e6')
+sha256sums=('74c1eac7bdd206af9f13deb9533080dc8d7c649b16564881540b86175036102a')
 
 build() {
   cd $pkgname-$pkgver
