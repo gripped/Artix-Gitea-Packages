@@ -3,10 +3,11 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Chris Brannon <cmbrannon79@gmail.com>
 # Contributor: Geoffroy Carrier <geoffroy@archlinux.org>
+# Contributor: Y <y.archlinux@paritcher.com>
 
 pkgname=luarocks
 pkgver=3.10.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Deployment and management system for Lua modules'
 backup=(etc/luarocks/config-5.{1,2,3,4}.lua)
 arch=('any')
@@ -58,9 +59,9 @@ build() {
   cd "$pkgname-$pkgver"
   ./configure --prefix=/usr --with-lua-include=/usr/include
   make ./build/luarocks ./build/luarocks-admin ./build/config-5.4.lua
-  make LUA_VERSION=5.1 LUA_INTERPRETER=lua5.1 LUA_INCDIR=/usr/include/lua5.1 ./build/config-5.1.lua
-  make LUA_VERSION=5.2 LUA_INTERPRETER=lua5.2 LUA_INCDIR=/usr/include/lua5.2 ./build/config-5.2.lua
-  make LUA_VERSION=5.3 LUA_INTERPRETER=lua5.3 LUA_INCDIR=/usr/include/lua5.3 ./build/config-5.3.lua
+  make LUA_VERSION=5.1 LUA=/usr/bin/lua5.1 LUA_INCDIR=/usr/include/lua5.1 ./build/config-5.1.lua
+  make LUA_VERSION=5.2 LUA=/usr/bin/lua5.2 LUA_INCDIR=/usr/include/lua5.2 ./build/config-5.2.lua
+  make LUA_VERSION=5.3 LUA=/usr/bin/lua5.3 LUA_INCDIR=/usr/include/lua5.3 ./build/config-5.3.lua
 }
 
 package() {

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: luarocks
-  version: 3.10.0-2
+  version: 3.10.0-3
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.10.0-2
+    version: 3.10.0-3
     packages:
-      - luarocks-3.10.0-2-any.pkg.tar.zst
+      - luarocks-3.10.0-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
