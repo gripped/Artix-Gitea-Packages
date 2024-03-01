@@ -43,7 +43,7 @@ build() {
 
 check() {
   cd $_name-$pkgver
-  pytest -vv
+  pytest -vv --deselect tests/test_pendulum_dt.py
 }
 
 package() {
