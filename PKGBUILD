@@ -1,17 +1,20 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Yejun Yang <yejunx AT gmail DOT com>
 # Contributor: Michal Krenek <mikos@sg1.cz>
 
 pkgbase=libsrtp
-pkgname=(libsrtp libsrtp-docs)
-pkgver=2.5.0
+pkgname=(
+  libsrtp
+  libsrtp-docs
+)
+pkgver=2.6.0
 pkgrel=1
 epoch=1
 pkgdesc="Library for SRTP (Secure Realtime Transport Protocol)"
 url="https://github.com/cisco/libsrtp"
 arch=(x86_64)
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(nss)
 makedepends=(
   doxygen
@@ -20,7 +23,7 @@ makedepends=(
   meson
 )
 checkdepends=(procps-ng)
-_commit=a566a9cfcd619e8327784aa7cff4a1276dc1e895  # tags/v2
+_commit=fd08747fa6800b321d53e15feb34da12dc697dee  # tags/v2
 source=("git+https://github.com/cisco/libsrtp#commit=$_commit")
 b2sums=('SKIP')
 
