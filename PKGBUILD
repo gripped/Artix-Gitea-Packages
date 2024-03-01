@@ -6,7 +6,7 @@ pkgname=(
   pango
   pango-docs
 )
-pkgver=1.51.2
+pkgver=1.52.0
 pkgrel=1
 epoch=1
 pkgdesc="A library for layout and rendering of text"
@@ -27,7 +27,7 @@ makedepends=(
   help2man
   meson
 )
-_commit=54c5f4ec01ce9c89a590cdc7e4c2c6e3948bb029  # tags/1.51.2^0
+_commit=fed7be510f58ed848f23f653f3fba45f44eb3b9c  # tags/1.52.0^0
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#commit=$_commit")
 b2sums=('SKIP')
 
