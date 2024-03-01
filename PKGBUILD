@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-objgraph
-pkgver=3.6.0
+pkgver=3.6.1
 pkgrel=1
 pkgdesc="Draws Python object reference graphs with graphviz"
 url="https://github.com/mgedmin/objgraph"
@@ -11,7 +11,7 @@ depends=('python')
 makedepends=('python-setuptools')
 checkdepends=('graphviz')
 source=("objgraph-$pkgver.tar.gz::https://github.com/mgedmin/objgraph/archive/$pkgver.tar.gz")
-sha512sums=('a0f1cea41ef17ab5bf7c5ac635c37ecb1ddb624087a520ab50817c8a5cc56762f95dd7a74bb7d59966e2b66cacbb9eabe48614087f0fa6a520265aac85cedfbc')
+sha512sums=('619be7a56add7e1ddf3edce4d153bc3592af85c36d6ef03c443a5150f35cce593eac3e50cb98384c2834059594e12fa2a236a89ee3dd0dd4ef385932bfb1da2f')
 
 build() {
   cd objgraph-$pkgver
