@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kde-development-environment-meta
-  version: 20240227-1
+  version: 20240301-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 20240227-1
+    version: 20240301-1
     packages:
-      - kde-development-environment-meta-20240227-1-any.pkg.tar.zst
+      - kde-development-environment-meta-20240301-1-any.pkg.tar.zst
   world:
     version: 20231120-1
     packages:
