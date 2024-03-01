@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org> 
+
+pkgname=isoimagewriter
+pkgver=24.02.0
+pkgrel=1
+pkgdesc='Program to write hybrid ISO files onto USB disks'
+arch=(x86_64)
+url='https://apps.kde.org/isoimagewriter/'
+license=(GPL)
+depends=(gcc-libs
+         glibc
+         gpgme
+         karchive
+         kcoreaddons
+         kcrash
+         ki18n
+         kiconthemes
+         kwidgetsaddons
+         qgpgme-qt6
+         qt6-base
+         solid)
+makedepends=(extra-cmake-modules)
+groups=(kde-applications
+        kde-utilities)
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('484bb5d99102bd74467c19c76f5a3b1336e0f5294e04a34110a1310ae7159f86'
+            'SKIP')
+validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
+              F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
+              D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
+
+build() { 
+  cmake -B build -S $pkgname-$pkgver \
+    -DBUILD_TESTING=OFF
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
