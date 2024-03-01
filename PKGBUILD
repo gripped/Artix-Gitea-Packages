@@ -1,15 +1,21 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Alexey Andreyev <aa13q@ya.ru>
 # Contributor Sefa Eyeoglu <contact@scrumplex.net>
 
 pkgname=libquotient
 pkgver=0.8.1.2
-pkgrel=1
+pkgrel=4
 pkgdesc='A Qt library to write cross-platform clients for Matrix'
 license=(LGPL)
 arch=(x86_64)
 url='https://matrix.org/docs/projects/sdk/quotient'
-depends=(qt5-multimedia qtkeychain-qt5 libolm)
+depends=(gcc-libs
+         glibc
+         libolm
+         openssl
+         qt6-base
+         qtkeychain-qt6)
 makedepends=(cmake)
 source=(https://github.com/quotient-im/libQuotient/archive/$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('5e5539fe9616c9f63985b0aabfab1858f1626e3d71a14709eeedd85af0471c7c')
@@ -19,6 +25,7 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None \
     -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_WITH_QT6=ON \
     -DQuotient_ENABLE_E2EE=ON
   cmake --build build
 }
