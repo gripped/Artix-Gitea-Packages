@@ -4,16 +4,19 @@
 
 pkgname=nsxiv
 pkgver=32
-pkgrel=2
+pkgrel=4
 pkgdesc='Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer'
 arch=('x86_64')
-license=('GPL2')
+license=('GPL-2.0-or-later')
 url='https://nsxiv.codeberg.page/'
 
-depends=('imlib2' 'libx11'                 # core dependencies
-         'libxft' 'fontconfig' 'freetype2' # status bar
-         'libexif'                         # display exif images
-         'hicolor-icon-theme')             # make icon
+depends=(
+  'glibc'
+  'imlib2' 'libx11'                 # core dependencies
+  'libxft' 'fontconfig' 'freetype2' # status bar
+  'libexif'                         # display exif images
+  'hicolor-icon-theme'              # make icon
+)
 
 source=("$pkgname-$pkgver.tar.gz"::"https://codeberg.org/nsxiv/nsxiv/archive/v$pkgver.tar.gz")
 sha256sums=('09d1d72b3cbcf17a04e26beb5e81acc9495aaba1f8f1be907bdcd8e4e3007db3')
