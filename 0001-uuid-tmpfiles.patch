@@ -1,0 +1,48 @@
+From e78610607854844e537bb0decee7a0b874e827df Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Thu, 29 Feb 2024 16:41:24 +0100
+Subject: [PATCH 1/1] uuid tmpfiles
+
+---
+ misc-utils/meson.build            | 10 ++++++++++
+ misc-utils/uuidd-tmpfiles.conf.in |  7 +++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 misc-utils/uuidd-tmpfiles.conf.in
+
+diff --git a/misc-utils/meson.build b/misc-utils/meson.build
+index 7d21d02c1..9fbbf52f9 100644
+--- a/misc-utils/meson.build
++++ b/misc-utils/meson.build
+@@ -103,6 +103,16 @@ if build_uuidd and sysvinit
+     install_dir : sysvinitrcdir)
+ endif
+ 
++if build_uuidd
++  uuidd_tmpfiles = configure_file(
++    input : 'uuidd-tmpfiles.conf.in',
++    output : 'uuidd-tmpfiles.conf',
++    configuration : conf)
++  install_data(
++    uuidd_tmpfiles,
++    install_dir : '/usr/lib/tmpfiles.d')
++endif
++
+ blkid_sources = files(
+   'blkid.c',
+ ) + \
+diff --git a/misc-utils/uuidd-tmpfiles.conf.in b/misc-utils/uuidd-tmpfiles.conf.in
+new file mode 100644
+index 000000000..159bcb68d
+--- /dev/null
++++ b/misc-utils/uuidd-tmpfiles.conf.in
+@@ -0,0 +1,7 @@
++# This file is part of uuidd.
++#
++# See tmpfiles.d(5) for details
++#
++d @runstatedir@/uuidd 2775 uuidd uuidd -
++d /var/lib/libuuid 0755 uuidd uuidd -
++
+-- 
+2.44.0
+

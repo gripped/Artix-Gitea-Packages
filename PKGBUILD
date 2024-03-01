@@ -7,7 +7,7 @@ pkgname=(util-linux util-linux-libs)
 _tag='bc0e318941a0539be1205ea1ac1dbfa834b7d033' # git rev-parse v${_tag_name}
 _tag_name=2.39.3
 pkgver=${_tag_name/-/}
-pkgrel=1
+pkgrel=2
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -31,7 +31,8 @@ source=("git+https://github.com/util-linux/util-linux#tag=${_tag}?signed"
         $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
         pam-{login,common,remote,runuser,su}
         'util-linux.sysusers'
-        '60-rfkill.rules')
+        '60-rfkill.rules'
+        0001-uuid-tmpfiles.patch)
 sha256sums=('SKIP'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
@@ -40,7 +41,8 @@ sha256sums=('SKIP'
             '48d6fba767631e3dd3620cf02a71a74c5d65a525d4c4ce4b5a0b7d9f41ebfea1'
             'b28f31fcafa401b0eb26bc0c710002acc4f7718f97af45b0d444e4af6dfb15a8'
             '10b0505351263a099163c0d928132706e501dd0a008dac2835b052167b14abe3'
-            '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37')
+            '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
+            '7fccfdbc22c215104aa0b79afa7491c100623ecbc581ff12b7a44b7ca870096f')
 
 _backports=(
 )
@@ -63,6 +65,7 @@ prepare() {
     git revert --mainline 1 --no-commit "${_c}"
   done
 
+  patch -Np 1 -i ../0001-uuid-tmpfiles.patch
   # do not mark dirty
   sed -i '/dirty=/c dirty=' tools/git-version-gen
 }
