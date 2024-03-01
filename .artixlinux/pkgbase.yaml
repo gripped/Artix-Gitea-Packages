@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: openjpeg2
-  version: 2.5.0-3
+  version: 2.5.2-1
   arch:
     - x86_64
   pkgname:
     - openjpeg2
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.5.2-1
+    packages:
+      - openjpeg2-2.5.2-1-x86_64.pkg.tar.zst
   world:
     version: 2.5.0-3
     packages:
