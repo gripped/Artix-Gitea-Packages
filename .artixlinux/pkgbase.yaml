@@ -1,11 +1,13 @@
 ---
 pkgbase:
   name: gnome-builder
-  version: 45.0-3
+  version: 45.0-4
   arch:
     - x86_64
   pkgname:
     - gnome-builder
+    - gnome-builder-clang
+    - gnome-builder-flatpak
 actions:
   addRepo: world
   removeRepo: null
@@ -31,9 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.0-3
+    version: 45.0-4
     packages:
-      - gnome-builder-45.0-3-x86_64.pkg.tar.zst
+      - gnome-builder-45.0-4-x86_64.pkg.tar.zst
+      - gnome-builder-clang-45.0-4-x86_64.pkg.tar.zst
+      - gnome-builder-flatpak-45.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
