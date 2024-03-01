@@ -3,8 +3,10 @@
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 
 pkgname=nawk
-pkgver=20231228
-_commit=908be9c222c0b7da4bcc3b8724ebb11996993a69 # master
+pkgver=20240122
+# This should be master only at points where internal version number is updated.
+# (after 20231228 we got ahead of ourselves)
+_commit=6a07a6d3bb6313714625f667470290e71545b270
 pkgrel=1
 pkgdesc='The one, true implementation of AWK'
 url="https://github.com/onetrueawk/awk"
@@ -19,7 +21,8 @@ sha256sums=('SKIP'
             'fa1bade363896033a50fbdadc8fa2f490f85a044d11afcd537f317067c70d3b5')
 
 pkgver() {
-  grep "version " awk/main.c | sed -e 's/[^"]*"\([^"]*\)".*/\1/' -e 's/^\w*\ *//'
+  grep "version " awk/main.c |
+    sed -e 's/[^"]*"\([^"]*\)".*/\1/' -e 's/^\w*\ *//'
 }
 
 prepare() {
