@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gwenview
-  version: 24.02.0-1
+  version: 24.02.0-3
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 24.02.0-1
+    version: 24.02.0-3
     packages:
-      - gwenview-24.02.0-1-x86_64.pkg.tar.zst
+      - gwenview-24.02.0-3-x86_64.pkg.tar.zst
   world:
     version: 23.08.5-1
     packages:

@@ -5,7 +5,7 @@
 
 pkgname=gwenview
 pkgver=24.02.0
-pkgrel=1
+pkgrel=3
 pkgdesc='A fast and easy to use image viewer'
 url='https://apps.kde.org/gwenview/'
 arch=(x86_64)
@@ -24,7 +24,7 @@ depends=(baloo
          kguiaddons
          ki18n
          kiconthemes
-         kimageannotator-qt6
+         kimageannotator
          kio
          kitemmodels
          kitemviews
