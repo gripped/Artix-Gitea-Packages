@@ -3,15 +3,14 @@
 
 pkgname=fcitx5-qt
 pkgver=5.1.4
-pkgrel=4
+pkgrel=5
 pkgdesc="Fcitx5 Qt Library (Qt5 & Qt6 integrations)"
 arch=('x86_64')
 url="https://github.com/fcitx/fcitx5-qt"
 license=('GPL')
 groups=('fcitx5-im')
-depends=('glibc' 'gcc-libs' 'libxcb' 'libxkbcommon' 'fcitx5' 'qt5-base' 'qt6-base' 'qt6-wayland'
-         'wayland')
-makedepends=('extra-cmake-modules' 'ninja')
+depends=('glibc' 'gcc-libs' 'libxcb' 'libxkbcommon' 'fcitx5' 'qt6-base' 'qt6-wayland' 'wayland')
+makedepends=('extra-cmake-modules' 'qt5-base' 'ninja')
 source=("https://download.fcitx-im.org/fcitx5/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig})
 sha512sums=('942999327415e3d4195c18c2fb02e12a313e3a2cf1dd1e32d0e6a7a98b625bcc1b3a7278934bb583a029dee43a271dba9bac75face42729249557f60e1146adf'
             'SKIP')
