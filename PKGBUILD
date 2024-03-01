@@ -6,13 +6,13 @@ _url=https://github.com/aarnt/octopi
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.15.0
-pkgrel=3
+pkgrel=4
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 url="https://tintaescura.com/projects/octopi/"
 makedepends=(qt5-tools cmake knotifications5 sudo)
-depends+=(
+depends=(
     glibc
     gcc-libs
     qt5-base
