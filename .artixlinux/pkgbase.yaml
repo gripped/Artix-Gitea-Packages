@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: intel-metee
-  version: 3.2.4-1
+  version: 4.0.0-1
   arch:
     - x86_64
   pkgname:
     - intel-metee
     - intel-metee-doc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.0.0-1
+    packages:
+      - intel-metee-4.0.0-1-x86_64.pkg.tar.zst
+      - intel-metee-doc-4.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 3.2.4-1
     packages:
