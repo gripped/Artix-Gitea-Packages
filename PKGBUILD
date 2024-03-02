@@ -2,26 +2,34 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: dracorp aka Piotr Rogoza <piotr.r.public at gmail.com>
 
-pkgname=kimageannotator
+pkgbase=kimageannotator
+pkgname=(kimageannotator
+         kimageannotator-qt5)
 pkgver=0.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Tool for annotating images'
 arch=(x86_64)
 url='https://github.com/ksnip/kImageAnnotator'
 license=(LGPL-3.0-only)
 depends=(gcc-libs
          glibc
-         kcolorpicker
-         libx11
-         qt6-base
-         qt6-svg)
+         libx11)
 makedepends=(cmake
+             kcolorpicker
+             kcolorpicker-qt5
+             qt5-svg
+             qt5-tools
+             qt6-svg
              qt6-tools)
-conflicts=(kimageannotator-qt5
-           kimageannotator-qt6)
-replaces=(kimageannotator-qt6)
-source=(https://github.com/ksnip/kImageAnnotator/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('2335c5be15a5dde34c3333c10a6339da114e2232e4c4642dea1793e491e09677')
+source=(https://github.com/ksnip/kImageAnnotator/archive/v$pkgver/$pkgname-$pkgver.tar.gz
+        rename-qt5-version.patch)
+sha256sums=('79802e79074611599d5fd42be55c35832b6cb8178dcb6a6c5dec10efe38d1d7c'
+            '6e50870d20b6a9fd7ae8f36fd2f2e8156f98cbf6b5c572cd138e837f83464f35')
+
+prepare() {
+  cp -r kImageAnnotator{,-qt5}-$pkgver
+  patch -d kImageAnnotator-qt5-$pkgver -p1 < rename-qt5-version.patch # Make Qt5 and Qt6 versions coinstallable
+}
 
 build() {
   artix-cmake -B build -S kImageAnnotator-$pkgver \
@@ -29,8 +37,27 @@ build() {
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_WITH_QT6=ON
   cmake --build build
+
+  artix-cmake -B build5 -S kImageAnnotator-qt5-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_SHARED_LIBS=ON
+  cmake --build build5
 }
 
-package() {
+package_kimageannotator() {
+  depends+=(kcolorpicker
+            qt6-base
+            qt6-svg)
+  conflicts=(kimageannotator-qt6)
+  replaces=(kimageannotator-qt6)
+
   DESTDIR="$pkgdir" cmake --install build
+}
+
+package_kimageannotator-qt5() {
+  depends+=(kcolorpicker-qt5
+            qt5-base
+            qt5-svg)
+ 
+  DESTDIR="$pkgdir" cmake --install build5
 }
