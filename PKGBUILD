@@ -4,7 +4,7 @@
 pkgname=krita
 _pkgver=5.2.2
 pkgver=${_pkgver/-/}
-pkgrel=5
+pkgrel=7
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
