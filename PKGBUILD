@@ -5,7 +5,7 @@
 
 pkgname=libquotient
 pkgver=0.8.1.2
-pkgrel=4
+pkgrel=5
 pkgdesc='A Qt library to write cross-platform clients for Matrix'
 license=(LGPL)
 arch=(x86_64)
@@ -17,8 +17,14 @@ depends=(gcc-libs
          qt6-base
          qtkeychain-qt6)
 makedepends=(cmake)
-source=(https://github.com/quotient-im/libQuotient/archive/$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('5e5539fe9616c9f63985b0aabfab1858f1626e3d71a14709eeedd85af0471c7c')
+source=(https://github.com/quotient-im/libQuotient/archive/$pkgver/$pkgname-$pkgver.tar.gz
+        symbol-visibility.patch)
+sha256sums=('5e5539fe9616c9f63985b0aabfab1858f1626e3d71a14709eeedd85af0471c7c'
+            'dd761aaeaaa6cefe2666859b9882d868cfba9e39a7fd6ec63344362706096a63')
+
+prepare() {
+  patch -d libQuotient-$pkgver -p1 < symbol-visibility.patch # https://invent.kde.org/network/neochat/-/merge_requests/1326
+}
 
 build() {
   cmake -B build -S libQuotient-$pkgver \
