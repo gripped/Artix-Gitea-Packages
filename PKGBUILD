@@ -1,7 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=openshadinglanguage
-pkgver=1.13.6.1
+pkgver=1.13.7.0
 pkgrel=2
 pkgdesc="Advanced shading language for production GI renderers"
 arch=('x86_64')
@@ -12,7 +12,7 @@ depends=('boost-libs' 'openimageio' 'imath' 'freetype2' 'libpng'
 makedepends=('boost' 'cmake' 'python' 'llvm' 'ninja')
 optdepends=('python: the Python module')
 source=($pkgname-$pkgver.tar.gz::https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/archive/refs/tags/v${pkgver}.tar.gz)
-sha512sums=('9f9ca21ecaa9dbeb9cc79ad3fb904c4acf8067f6aecc16acfb58eafa2873730d245a94e8ce208c2ffa340cf01dba82768c1d55de88b96269c82458e60cc11ede')
+sha512sums=('15ffc6a5eed44141672af3d7ddab5d97abacad2062cddb35ef2a8484538a9a9a86cbd7e7170deafcefd3b69df764bfd207685603ca17a2fbff4299ccd1afe569')
 
 build() {
   cd OpenShadingLanguage-$pkgver
