@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sdbus-cpp
-  version: v1.4.0+r14+g28921ad-1
+  version: 1.5.0-3
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: v1.4.0+r14+g28921ad-1
+    version: 1.5.0-3
     packages:
-      - sdbus-cpp-v1.4.0+r14+g28921ad-1-x86_64.pkg.tar.zst
-      - sdbus-cpp-doc-v1.4.0+r14+g28921ad-1-x86_64.pkg.tar.zst
+      - sdbus-cpp-1.5.0-3-x86_64.pkg.tar.zst
+      - sdbus-cpp-doc-1.5.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

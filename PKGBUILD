@@ -3,30 +3,20 @@
 
 pkgbase=sdbus-cpp
 pkgname=($pkgbase $pkgbase-doc)
-pkgver=v1.4.0+r14+g28921ad
-pkgrel=1
+pkgver=1.5.0
+pkgrel=3
 pkgdesc='a high-level C++ D-Bus library designed to provide expressive, easy-to-use API'
 url="https://github.com/Kistler-Group/$pkgbase"
 arch=(x86_64)
-license=(LGPL2.1 'custom:sdbus-c++ LGPL Exception 1.0')
+license=(LGPL-2.1-only LicenseRef-sdbus-c++-LGPL-Exception-1.0)
 depends=(expat
          libelogind)
 makedepends=(cmake
              doxygen
-             elogind
-	     git)
-#_archive="$pkgbase-$pkgver"
-#source=("$url/archive/v$pkgver/$_archive.tar.gz")
-#sha256sums=('ca7405c7f0f9ae3023dcfa37bc68974c4b8a1c9ea2909b970e0aedc3e8657ee6')
-_archive="$pkgbase"
-_commit=28921ad424de293541fe8e5787a404201d88535e # for the libsystemd refactor/fix
-source=("git+https://github.com/Kistler-Group/sdbus-cpp.git#commit=$_commit")
-sha256sums=('SKIP')
-
-pkgver() {
-	cd $_archive
-	git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+             elogind)
+_archive="$pkgbase-$pkgver"
+source=("$url/archive/v$pkgver/$_archive.tar.gz")
+sha256sums=('577986929f911320fb9ef6a3e2badd464dc38411ebc25d2966f5cb85c39f0897')
 
 build() {
 	cmake -B build -S "$_archive" \
@@ -50,7 +40,13 @@ build() {
 		  -i {} \;
 }
 
+_package_dir() {
+	install -dm755 "$pkgdir/usr/$1"
+	cp -dr --no-preserve=owner "$srcdir/fakeinstall/usr/$1/"* "$pkgdir/usr/$1"
+}
+
 package_sdbus-cpp() {
+	provides=(libsdbus-c++.so)
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgbase/" "$_archive/COPYING"*
 	for dir in lib include bin; do
 		_package_dir $dir
@@ -59,9 +55,4 @@ package_sdbus-cpp() {
 
 package_sdbus-cpp-doc() {
 	_package_dir share/doc
-}
-
-_package_dir() {
-	install -dm755 "$pkgdir/usr/$1"
-	cp -dr --no-preserve=owner "$srcdir/fakeinstall/usr/$1/"* "$pkgdir/usr/$1"
 }
