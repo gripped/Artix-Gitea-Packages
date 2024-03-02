@@ -3,7 +3,7 @@
 # Contributor: Orivej Desh <smpuj@bk.ru>
 
 pkgname=libunibreak
-pkgver=6.0
+pkgver=6.1
 pkgrel=1
 pkgdesc="An implementation of the line breaking algorithm as described in Unicode 5.2.0 Standard Annex 14, Revision 24"
 arch=("x86_64")
@@ -12,7 +12,7 @@ license=("custom:zlib/libpng")
 depends=('glibc')
 replaces=('liblinebreak')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/adah1972/libunibreak/archive/libunibreak_${pkgver//./_}.tar.gz")
-sha256sums=('09e9d2f41e1179f9cb9aec60abe768bec66290037a6d35450d2dc002d4d85dff')
+sha256sums=('890674996168ef5ba143d80d49ab8b61594a4eb70198dcac76caf6e1bd264a41')
 
 build() {
   cd "$srcdir/libunibreak-libunibreak_${pkgver//./_}"
