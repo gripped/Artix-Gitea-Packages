@@ -6,7 +6,7 @@ pkgbase=kcolorpicker
 pkgname=(kcolorpicker
          kcolorpicker-qt5)
 pkgver=0.3.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Qt based Color Picker with popup menu'
 arch=(x86_64)
 url='https://github.com/DamirPorobic/kColorPicker'
@@ -16,11 +16,18 @@ depends=(gcc-libs
 makedepends=(cmake
              qt5-base
              qt6-base)
-source=(https://github.com/ksnip/kColorPicker/archive/v$pkgver/$pkgbase-$pkgver.tar.gz)
-sha256sums=('e78c785ec4a8a22a48a91835c97601f5704b5076b154415353b0d2697dc0b4f7')
+source=(https://github.com/ksnip/kColorPicker/archive/v$pkgver/$pkgbase-$pkgver.tar.gz
+        rename-qt5-version.patch)
+sha256sums=('e78c785ec4a8a22a48a91835c97601f5704b5076b154415353b0d2697dc0b4f7'
+            'e514beef54c912a9262ff001f8d93b23ffb469e77cfcd6bb15362a746e66a867')
+
+prepare() {
+  cp -r kColorPicker{,-qt5}-$pkgver
+  patch -d kColorPicker-qt5-$pkgver -p1 < rename-qt5-version.patch # Make Qt5 and Qt6 versions coinstallable
+}
 
 build() {
-  cmake -B build5 -S kColorPicker-$pkgver \
+  cmake -B build5 -S kColorPicker-qt5-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_SHARED_LIBS=ON
   cmake --build build5
@@ -40,8 +47,7 @@ package_kcolorpicker-qt5() {
 
 package_kcolorpicker() {
   depends+=(qt6-base)
-  conflicts=(kcolorpicker-qt5
-             kcolorpicker-qt6)
+  conflicts=(kcolorpicker-qt6)
   replaces=(kcolorpicker-qt6)
 
   DESTDIR="$pkgdir" cmake --install build
