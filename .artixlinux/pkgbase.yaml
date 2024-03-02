@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libass
-  version: 0.17.1-2
+  version: 0.17.1-4
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.17.1-2
+    version: 0.17.1-4
     packages:
-      - libass-0.17.1-2-x86_64.pkg.tar.zst
+      - libass-0.17.1-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
