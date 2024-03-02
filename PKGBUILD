@@ -7,14 +7,14 @@ groups=('dlang' 'dlang-ldc')
 pkgver=1.36.0
 _pkgcommit=530d41be11e92901f797ebbbc1dc695df4af06e9
 _dversion=2.106.1
-_clangversion=17 # related to where ldc2 looks for compiler-rt sanitizers
+_clangversion=15 # related to where ldc2 looks for compiler-rt sanitizers
 epoch=3
-pkgrel=3
+pkgrel=2
 pkgdesc="A D Compiler based on the LLVM Compiler Infrastructure including D runtime and libphobos2"
 arch=('x86_64')
 url="https://github.com/ldc-developers/ldc"
 license=('BSD')
-makedepends=('git' 'cmake' 'llvm' 'lld' 'ldc' 'ninja')
+makedepends=('git' 'cmake' 'llvm15' 'lld' 'ldc' 'ninja')
 # Disable lto as linking the ldc2 binary fails
 options=(!lto)
 
@@ -62,7 +62,7 @@ check() {
 }
 
 package_ldc() {
-    depends=('liblphobos' 'llvm-libs' 'gcc' 'compiler-rt')
+    depends=('liblphobos' 'llvm15-libs' 'gcc' 'compiler-rt15')
     backup=('etc/ldc2.conf')
     provides=("d-compiler=$_dversion")
 
