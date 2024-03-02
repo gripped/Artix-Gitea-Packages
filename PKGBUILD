@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer:  Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer:  Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: TJ Vanderpoel <tj@rubyists>
 
 pkgname=musl
-pkgver=1.2.4
+pkgver=1.2.5
 pkgrel=1
 pkgdesc='Lightweight implementation of C standard library'
 arch=('x86_64')
@@ -11,8 +11,9 @@ url='https://www.musl-libc.org/'
 license=('MIT')
 options=('staticlibs' '!buildflags')
 validpgpkeys=('836489290BB6B70F99FFDA0556BCDB593020450F')
-source=(https://www.musl-libc.org/releases/musl-$pkgver.tar.gz)
-sha256sums=('7a35eae33d5372a7c0da1188de798726f68825513b7ae3ebe97aaaa52114f039')
+source=(https://www.musl-libc.org/releases/musl-$pkgver.tar.gz{,.asc})
+sha256sums=('a9a118bbe84d8764da0ea0d28b3ab3fae8477fc7e4085d90102b8596fc7c75e4'
+            'SKIP')
 
 build() {
   cd $pkgname-$pkgver
