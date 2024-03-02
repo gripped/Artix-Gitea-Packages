@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: llvm
-  version: 17.0.6-1
+  version: 17.0.6-2
   arch:
     - x86_64
   pkgname:
@@ -10,8 +10,8 @@ pkgbase:
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 17.0.6-1
+    version: 17.0.6-2
     packages:
-      - llvm-17.0.6-1-x86_64.pkg.tar.zst
-      - llvm-libs-17.0.6-1-x86_64.pkg.tar.zst
+      - llvm-17.0.6-2-x86_64.pkg.tar.zst
+      - llvm-libs-17.0.6-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
