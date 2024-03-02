@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: octopi
-  version: 0.15.0-4
+  version: 0.15.0-5
   arch:
     - x86_64
   pkgname:
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.15.0-4
+    version: 0.15.0-5
     packages:
-      - octopi-0.15.0-4-x86_64.pkg.tar.zst
-      - octopi-notifier-frameworks-0.15.0-4-x86_64.pkg.tar.zst
+      - octopi-0.15.0-5-x86_64.pkg.tar.zst
+      - octopi-notifier-frameworks-0.15.0-5-x86_64.pkg.tar.zst
