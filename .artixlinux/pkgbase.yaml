@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: msgpack-cxx
-  version: 5.0.0-1
+  version: 5.0.0-2
   arch:
     - any
   pkgname:
     - msgpack-cxx
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.0-1
+    version: 5.0.0-2
     packages:
-      - msgpack-cxx-5.0.0-1-any.pkg.tar.zst
+      - msgpack-cxx-5.0.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
