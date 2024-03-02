@@ -14,6 +14,9 @@ source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('173cd10bc8bbdd85b360c5bbdb1fd8b3df23b35ba1c23c33e061a95b5f452d87')
 
 build() {
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
   cmake -B build -S metee-${pkgver} \
     -G 'Unix Makefiles' \
     -DCMAKE_BUILD_TYPE=None \
