@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-builder
-  version: 45.0-4
+  version: 45.0-5
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - gnome-builder-clang
     - gnome-builder-flatpak
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 45.0-5
+    packages:
+      - gnome-builder-45.0-5-x86_64.pkg.tar.zst
+      - gnome-builder-clang-45.0-5-x86_64.pkg.tar.zst
+      - gnome-builder-flatpak-45.0-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
