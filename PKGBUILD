@@ -5,7 +5,7 @@
 
 pkgname=kdeconnect
 pkgver=24.02.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Adds communication between KDE and your smartphone'
 url='https://kdeconnect.kde.org/'
 arch=(x86_64)
@@ -41,7 +41,7 @@ depends=(dbus
          qqc2-desktop-style
          qt6-5compat
          qt6-base
-         qt6-connectivity
+#        qt6-connectivity
          qt6-declarative
          qt6-multimedia
          qt6-wayland
@@ -66,7 +66,8 @@ validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aac
 build() {
   artix-cmake -B build -S $pkgname-kde-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DCMAKE_INSTALL_LIBEXECDIR=lib
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
+    -DBLUETOOTH_ENABLED=OFF # https://bugs.kde.org/show_bug.cgi?id=481870
   cmake --build build
 }
 
