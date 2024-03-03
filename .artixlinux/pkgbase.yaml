@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mkinitcpio
-  version: 38-1
+  version: 38-1.1
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 38-1
+    version: 38-1.1
     packages:
-      - mkinitcpio-38-1-any.pkg.tar.zst
+      - mkinitcpio-38-1.1-any.pkg.tar.zst
   system:
     version: 37.3-1
     packages:

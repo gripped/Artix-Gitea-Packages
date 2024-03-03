@@ -1,11 +1,14 @@
  Makefile            |   6 +-
  hooks/udev          |   6 +-
  init_functions      |  11 ----
+ install/lvm2        |   8 +--
+ install/mdadm_udev  |   3 -
  install/sd-encrypt  |  67 --------------------
  install/sd-shutdown |  19 ------
  install/sd-vconsole | 119 -----------------------------------
  install/systemd     | 174 ----------------------------------------------------
- 7 files changed, 4 insertions(+), 398 deletions(-)
+ install/udev        |   4 +-
+ 10 files changed, 8 insertions(+), 409 deletions(-)
 
 diff --git a/Makefile b/Makefile
 index 824387b..f73df17 100644
@@ -74,6 +77,39 @@ index 0abfde7..e33b2a5 100644
      fi
  }
 
+diff --git a/install/lvm2 b/install/lvm2
+index c2dc8a6..42884dc 100644
+--- a/install/lvm2
++++ b/install/lvm2
+@@ -33,12 +33,8 @@ build() {
+         '95-dm-notify.rules' \
+         '/usr/lib/initcpio/udev/11-dm-initramfs.rules'
+
+-    # this udev rule is specific for systemd and non-systemd systems
+-    if declare -F add_systemd_unit &>/dev/null; then
+-        add_udev_rule '69-dm-lvm.rules'
+-    else
+-        add_udev_rule '/usr/lib/initcpio/udev/69-dm-lvm.rules'
+-    fi
++    # this udev rule is specific for non-systemd systems
++    add_udev_rule '/usr/lib/initcpio/udev/69-dm-lvm.rules'
+
+     # config file
+     add_file '/etc/lvm/lvm.conf'
+diff --git a/install/mdadm_udev b/install/mdadm_udev
+index f8ad731..af6adf6 100644
+--- a/install/mdadm_udev
++++ b/install/mdadm_udev
+@@ -15,9 +15,6 @@ build() {
+
+     # For external metadata arrays (e.g. IMSM)
+     add_binary mdmon
+-    if declare -F add_systemd_unit &>/dev/null; then
+-        add_systemd_unit 'mdmon@.service'
+-    fi
+ }
+
+ help() {
 diff --git a/install/sd-encrypt b/install/sd-encrypt
 deleted file mode 100644
 index e60d883..0000000
@@ -477,3 +513,19 @@ index 808750c..0000000
 -}
 -
 -# vim: set ft=sh ts=4 sw=4 et:
+diff --git a/install/udev b/install/udev
+index 8b51f44..9aa9ca8 100644
+--- a/install/udev
++++ b/install/udev
+@@ -2,9 +2,9 @@
+
+ build() {
+     map add_binary \
+-        '/usr/lib/systemd/systemd-udevd' \
++        '/usr/bin/udevd' \
+         '/usr/bin/udevadm' \
+-        '/usr/bin/systemd-tmpfiles' \
++        '/usr/bin/etmpfiles' \
+         '/usr/lib/udev/ata_id' \
+         '/usr/lib/udev/scsi_id'
+
