@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gcr-4
-  version: 4.2.0-1
+  version: 4.2.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2.0-1
+    version: 4.2.1-1
     packages:
-      - gcr-4-4.2.0-1-x86_64.pkg.tar.zst
-      - gcr-4-docs-4.2.0-1-x86_64.pkg.tar.zst
+      - gcr-4-4.2.1-1-x86_64.pkg.tar.zst
+      - gcr-4-docs-4.2.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
