@@ -5,11 +5,11 @@
 pkgname=ispc
 _commit=bd2c42d42e0cc3da1baf92160b82d4dc820a02ee # refs/tags/v1.22.0
 pkgver=1.22.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Compiler for high-performance SIMD programming on the CPU"
 arch=(x86_64)
 url="https://ispc.github.io/"
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(clang gcc-libs glibc llvm-libs spirv-llvm-translator onetbb)
 makedepends=(cmake git level-zero-headers level-zero-loader lib32-glibc llvm openmp python vc-intrinsics)
 checkdepends=(intel-compute-runtime)
