@@ -1,12 +1,13 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Alexander Fehr <pizzapunk gmail com>
 # Contributor: Lucien Immink <l.immink@student.fnt.hvu.nl>
 
 pkgname=('pidgin' 'libpurple' 'finch')
-pkgver=2.14.12
-pkgrel=2
+pkgver=2.14.13
+pkgrel=1
 arch=('x86_64')
 url="https://pidgin.im/"
 license=('GPL')
@@ -16,7 +17,7 @@ makedepends=('startup-notification' 'gtkspell' 'libxss' 'nss' 'libsasl' 'libsm'
              'libgnt' 'libxcrypt')
 options=('!emptydirs')
 source=(https://downloads.sourceforge.net/project/pidgin/Pidgin/$pkgver/$pkgname-$pkgver.tar.bz2{,.asc})
-sha256sums=('2b05246be208605edbb93ae9edc079583d449e2a9710db6d348d17f59020a4b7'
+sha256sums=('120049dc8e17e09a2a7d256aff2191ff8491abb840c8c7eb319a161e2df16ba8'
             'SKIP')
 validpgpkeys=('40DE1DC7288FE3F50AB938C548F66AFFD9BDB729') # Gary Kramlich <grim@reaperworld.com>
 
