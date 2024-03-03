@@ -4,7 +4,7 @@
 
 _srcname=SPIRV-LLVM-Translator
 pkgname=lib32-${_srcname,,}
-pkgver=16.0.0.r9+g322fca5d
+pkgver=17.0.0.r6+g70883514
 pkgrel=1
 pkgdesc="Tool and a library for bi-directional translation between SPIR-V and LLVM IR (32-bit)"
 arch=(x86_64)
@@ -13,7 +13,7 @@ license=(custom)
 depends=(lib32-llvm-libs lib32-spirv-tools ${pkgname#lib32-})
 makedepends=(git cmake llvm lib32-llvm spirv-headers)
 # Current point in the used LLVM branch
-_commit=322fca5d9c59bfdb80562a52ace51cdbe2a60e92
+_commit=7088351420a8f0c3e5f9be678fd1d16ae826e37f
 source=(git+${url}.git#commit=$_commit)
 sha256sums=('SKIP')
 
@@ -24,8 +24,7 @@ pkgver() {
 
 build() {
   export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
-  export CMAKE_PREFIX_PATH=/usr
-  export CMAKE_INSTALL_LIBDIR=/usr/lib32
+
   cmake -B build -S ${_srcname} \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_BUILD_TYPE=Release \
