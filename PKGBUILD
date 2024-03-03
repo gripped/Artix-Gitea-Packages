@@ -3,7 +3,7 @@
 
 pkgname=cryptsetup
 pkgver=2.7.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Userspace setup tool for transparent encryption of block devices using dm-crypt'
 arch=(x86_64)
 license=('GPL')
@@ -11,16 +11,13 @@ url='https://gitlab.com/cryptsetup/cryptsetup/'
 depends=('device-mapper' 'libdevmapper.so' 'openssl' 'popt' 'util-linux-libs'
          'libuuid.so' 'json-c' 'libjson-c.so' 'argon2' 'libargon2.so')
 makedepends=('util-linux' 'asciidoctor' 'udev')
+conflicts=('mkinitcpio<38-1')
 provides=('libcryptsetup.so')
 options=('!emptydirs')
 validpgpkeys=('2A2918243FDE46648D0686F9D9B0577BD93E98FC') # Milan Broz <gmazyland@gmail.com>
-source=("https://www.kernel.org/pub/linux/utils/cryptsetup/v${pkgver%.*}/${pkgname}-${pkgver}.tar."{xz,sign}
-        'hooks-encrypt'
-        'install-encrypt')
+source=("https://www.kernel.org/pub/linux/utils/cryptsetup/v${pkgver%.*}/${pkgname}-${pkgver}.tar."{xz,sign})
 sha256sums=('94003a00cd5a81944f45e8dc529e0cfd2a6ff629bd2cd21cf5e574e465daf795'
-            'SKIP'
-            '839e961e053512293052250b424f38c347cb46c14cbd51d7e2705b3f5378ec02'
-            '2b71c6c56ef81e5bf4f49dcc08dbd1651b46bda51a8f75a0a342b344b2d0eccd')
+            'SKIP')
 
 build() {
   cd "${srcdir}"/$pkgname-${pkgver}
@@ -42,8 +39,4 @@ package() {
 
   # install docs
   install -D -m0644 -t "${pkgdir}"/usr/share/doc/cryptsetup/ FAQ.md docs/{Keyring,LUKS2-locking}.txt
-
-  # install hook
-  install -D -m0644 "${srcdir}"/hooks-encrypt "${pkgdir}"/usr/lib/initcpio/hooks/encrypt
-  install -D -m0644 "${srcdir}"/install-encrypt "${pkgdir}"/usr/lib/initcpio/install/encrypt
 }
