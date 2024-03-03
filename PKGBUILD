@@ -6,12 +6,15 @@
 
 _name=backends
 pkgname=sane
-pkgver=1.2.1
-pkgrel=6
+pkgver=1.3.0
+pkgrel=1
 pkgdesc="Scanner Access Now Easy"
 arch=(x86_64)
-url="http://www.sane-project.org/"
-license=(GPL2)
+url="https://gitlab.com/sane-project/backends"
+license=(
+  GPL-2.0-or-later
+  LicenseRef-GPL-2.0-or-later-with-linking-exception
+)
 depends=(
   bash
   cairo
@@ -34,6 +37,7 @@ makedepends=(
   libxml2
   poppler-glib
   python
+  udev
   texlive-latexextra
 )
 optdepends=(
@@ -41,21 +45,24 @@ optdepends=(
 )
 provides=(libsane.so)
 source=(
-  https://gitlab.com/sane-project/$_name/-/archive/$pkgver/$_name-$pkgver.tar.gz
+  $url/-/archive/$pkgver/$_name-$pkgver.tar.gz
   66-${pkgname}d.rules
   $pkgname.sysusers
   sane.xinetd
 )
-sha512sums=('b3b803162066b563d9bafaedb7a6c8c1e9be736bb787f2e412f3f71402a42721123bc32882ae9dc39cbf12bc2c423f8841ed06f525f325857f4273186b7f3a16'
+sha512sums=('e1b139d2588dee2d4478b4b3001c1d164ef293bf268720c73b001fdfd5b18b0a2052c692b9af55a09c06ec4242de6a0006c7956a7da4253fc5fd1e560d3b528b'
             'd0d1b6bd6fbb04d610e7186e26d04c2233a620cc7c731ca3acd7fb860dd033fbe99d8974ffa1dd59c8affcc4aa2664d76ab3dfd6f7b2a734b31d7e3832359c41'
             'd8cd194b57eff2249df2b8d540a892e518aa3e3bba6387211ed21230dc235e98c49b71f262f0b1007e8c859c59776410840376244e0aec1f06363881b2c81fd8'
             '8f9f18d432087e5445aa533be375a811daf320512069c108d41a79121868937e1a7ffa21ee7d33adcf9fbb670bca460ff06423ce39602f35151eccc243d9d4ec')
-b2sums=('b12a629bab6e79d9027d9e90cfa5851ee172a7a1eb6303666c294e2a3d881e2afbef9a3cf3d3156063885a28ec64294216d0dec83c25d212af257f83bbc33721'
+b2sums=('f6413f374f2d05bec08c3490c03ff6d69e0b902b5907acd6d96aa6ae255865adb9d3dd68b774795d33a8a19c27b5fe337af29e239e4178e1f3882f302d6bcdd2'
         'c9c6ba224b9b27f4ecc6b1ded6621a8abb52b1ded2d9078e4cad31177290b788e286fad74545a5cb09e1f6726515adc22003988eb646dc986e87f1a8061a0e27'
         '2a4ddc9849562e3a0adcaec1859391e3f37a63f25c27dbc140cabd697bd65b89a0fc812c4516cbdfb36d1f30844df34934b3c1c59650101f54fc1ac0acb3f5d9'
         '158952a09d5b29ae848a4c1377de6ff824b61c7d1932d29f3a0d313bafdaa0c5973614c5b744f53c7d2d4acff3dd4dc8b821068b95ae07a081539fd5cabd7477')
 
 prepare() {
+  # extract custom license exception
+  sed '1,41p' $_name-$pkgver/backend/dll.c > LicenseRef-GPL-2.0-or-later-with-linking-exception.txt
+
   cd $_name-$pkgver
   # copy translation files so they become reproducible: https://gitlab.com/sane-project/backends/-/issues/647
   cp -v po/en{_GB,@quot}.po
@@ -110,6 +117,9 @@ package() {
 
   make DESTDIR="$pkgdir" install
 
+  # install custom license
+  install -vDm 644 ../LicenseRef-GPL-2.0-or-later-with-linking-exception.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
+
   # generate udev udev+hwdb
   install -vdm 755 "$pkgdir/usr/lib/udev/rules.d/"
   tools/sane-desc -m udev+hwdb -s doc/descriptions/ > "$pkgdir/usr/lib/udev/rules.d/65-$pkgname.rules"
@@ -121,6 +131,7 @@ package() {
   printf "\n" >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
   tools/sane-desc -m hwdb -s doc/descriptions-external/ >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
 
+  # udev integration
   install -vDm 644 ../66-${pkgname}d.rules "$pkgdir/usr/lib/udev/rules.d/"
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
