@@ -1,8 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-elementpath
-pkgver=4.2.1
-_commit=6795c9d5691f56d5f2548f45dc188706bf038675
+pkgver=4.3.0
+_commit=fb5270c05b0f2446dad78acdc9c21b3f3caf8069
 pkgrel=1
 pkgdesc="XPath 1.0/2.0 parsers and selectors for ElementTree and lxml"
 url="https://github.com/sissaschool/elementpath"
