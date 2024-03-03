@@ -3,26 +3,23 @@
 
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
-pkgdesc="Logical Volume Manager 2"
 #_tag='' # git rev-parse v${pkgver//./_}
 # latest release does not have a tag... :-\
 _commit='d786a8f820d54ce87a919e6af5426c333c173b11'
 pkgver=2.03.23
-pkgrel=1
+pkgrel=3
+pkgdesc="Logical Volume Manager 2 utilities"
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
-license=('GPL2' 'LGPL2.1')
-makedepends=('git' 'udev' 'libaio' 'thin-provisioning-tools'
-            'libaio.so' 'libblkid.so' 'libreadline.so' 'libudev.so')
+license=('GPL-2.0-only' 'LGPL-2.1-only')
+makedepends=('git' 'udev' 'libaio' 'readline' 'thin-provisioning-tools')
 validpgpkeys=('88437EF5C077BD113D3B7224228191C1567E2C17'  # Alasdair G Kergon <agk@redhat.com>
               'D501A478440AE2FD130A1BE8B9112431E509039F') # Marian Csontos <marian.csontos@gmail.com>
 source=("git+https://sourceware.org/git/lvm2.git#commit=${_commit}"
         '0001-udev-initcpio.patch'
-        'lvm2_install'
         '11-dm-initramfs.rules')
 sha256sums=('SKIP'
             '2b3a16ec05e2bc6678e9ebd5ffa8319ebfde29aa260ce004f79f9b8df57d73c9'
-            '11bb0396160323e09db67f18a840433686f3a9773b16de90a33d5b63ff0a5183'
             'e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0')
 
 _backports=(
@@ -93,10 +90,10 @@ package_device-mapper() {
 
 package_lvm2() {
   pkgdesc="Logical Volume Manager 2 utilities"
-  depends=('bash' "device-mapper>=${pkgver}" 'libudev'
+  depends=('bash' 'glibc' "device-mapper>=${pkgver}" 'libudev'
     'libudev.so' 'util-linux-libs' 'libblkid.so' 'readline' 'libreadline.so'
-    'thin-provisioning-tools' 'libaio' 'libaio.so' 'glibc')
-  conflicts=('lvm' 'mkinitcpio<0.7')
+    'thin-provisioning-tools' 'libaio' 'libaio.so')
+  conflicts=('lvm' 'mkinitcpio<38-1')
   backup=('etc/lvm/lvm.conf'
     'etc/lvm/lvmlocal.conf')
 
@@ -105,10 +102,6 @@ package_lvm2() {
   make DESTDIR="${pkgdir}" install_lvm2
   # /etc directories
   install -d "${pkgdir}"/etc/lvm/{archive,backup}
-  # mkinitcpio hook
-  install -D -m0644 "${srcdir}/lvm2_install" "${pkgdir}/usr/lib/initcpio/install/lvm2"
   # extra udev rule for non-systemd initramfs
   install -D -m0644 udev/69-dm-lvm-initcpio.rules "${pkgdir}/usr/lib/initcpio/udev/69-dm-lvm.rules"
-
-  sed -e 's|/usr/bin/systemd-run --no-block --property DefaultDependencies=no --unit lvm-activate-$env{LVM_VG_NAME_COMPLETE} ||' -i "${pkgdir}"/usr/lib/udev/rules.d/69-dm-lvm.rules
 }
