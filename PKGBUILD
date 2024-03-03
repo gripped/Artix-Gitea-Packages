@@ -7,7 +7,7 @@
 
 pkgname=libguestfs
 pkgver=1.52.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Access and modify virtual machine disk images"
 arch=(x86_64)
 url="https://libguestfs.org/"
@@ -152,10 +152,15 @@ build() {
   make
 }
 
-# some tests fail; just skip
-#check() {
-#  LIBGUESTFS_TRACE=1 make -k check -C $pkgname-$pkgver
-#}
+check() {
+  # disable failing `btrfs qgroup` related tests: https://github.com/libguestfs/libguestfs/issues/136
+  export SKIP_TEST_BTRFS_QGROUP_ASSIGN_0=1
+  export SKIP_TEST_BTRFS_QGROUP_CREATE_0=1
+  export SKIP_TEST_BTRFS_QGROUP_DESTROY_0=1
+  export SKIP_TEST_BTRFS_QGROUP_REMOVE_0=1
+  export SKIP_TEST_BTRFS_QGROUP_SHOW_0=1
+  LIBGUESTFS_TRACE=1 make -k check -C $pkgname-$pkgver
+}
 
 package() {
   make INSTALLDIRS=vendor DESTDIR="$pkgdir" install -C $pkgname-$pkgver
