@@ -24,7 +24,7 @@ pkgname=(
   uwsgi-plugin-notfound
 )
 pkgver=2.0.24
-pkgrel=1.1
+pkgrel=2
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
 url="https://uwsgi-docs.readthedocs.io/en/latest/"
@@ -78,9 +78,6 @@ prepare() {
   # move ruby plugin to new location and fix its name
   mv plugins/ruby{19,}
   sed -e 's/ruby19/ruby/' -i plugins/ruby/uwsgiplugin.py
-  # remove the explicit lib version from the linking stage of the PHP plugin as
-  # we do not provide /usr/lib/libphp8.so
-  sed -e "s/ + php_version//" -i plugins/php/uwsgiplugin.py
   # duplicate the php plugin, so that we can modify it
   cp -av plugins/php{,_legacy}
   # link the php_legacy plugin against libphp-legacy.so
