@@ -59,7 +59,9 @@ prepare() {
 
 build() {
   cd "$srcdir/clang-$pkgver.src/build"
-
+  
+  export CMAKE_PREFIX_PATH=/usr
+  export CMAKE_INSTALL_LIBDIR=/usr/lib32
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
   local cmake_args=(
