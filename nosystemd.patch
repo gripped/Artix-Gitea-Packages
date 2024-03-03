@@ -1,12 +1,17 @@
- Makefile       |  6 +-----
- init_functions | 11 -----------
- 2 files changed, 1 insertion(+), 16 deletions(-)
+ Makefile            |   6 +-
+ hooks/udev          |   6 +-
+ init_functions      |  11 ----
+ install/sd-encrypt  |  67 --------------------
+ install/sd-shutdown |  19 ------
+ install/sd-vconsole | 119 -----------------------------------
+ install/systemd     | 174 ----------------------------------------------------
+ 7 files changed, 4 insertions(+), 398 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 9ef0f6a..f6e322e 100644
+index 824387b..f73df17 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -17,7 +17,6 @@ DIRS = \
+@@ -22,7 +22,6 @@ DIRS = \
  	/usr/share/man/man5 \
  	/usr/share/man/man1 \
  	/usr/share/mkinitcpio \
@@ -14,7 +19,7 @@ index 9ef0f6a..f6e322e 100644
  	/usr/lib/tmpfiles.d \
  	/usr/share/libalpm/hooks \
  	/usr/share/libalpm/scripts
-@@ -57,10 +56,7 @@ install: all
+@@ -63,10 +62,7 @@ install-generator: all prepare
 
  	cp -at $(DESTDIR)/usr/lib/initcpio hooks install
  	install -m644 -t $(DESTDIR)/usr/share/mkinitcpio mkinitcpio.d/*
@@ -25,12 +30,33 @@ index 9ef0f6a..f6e322e 100644
 +
  	install -m644 tmpfiles/mkinitcpio.conf $(DESTDIR)/usr/lib/tmpfiles.d/mkinitcpio.conf
 
- 	install -m755 50-mkinitcpio.install $(DESTDIR)/usr/lib/kernel/install.d/50-mkinitcpio.install
+ 	install -m755 kernel-install/50-mkinitcpio.install $(DESTDIR)/usr/lib/kernel/install.d/50-mkinitcpio.install
+diff --git a/hooks/udev b/hooks/udev
+index 951c95e..4b67922 100644
+--- a/hooks/udev
++++ b/hooks/udev
+@@ -2,13 +2,13 @@
+
+ run_earlyhook() {
+     kmod static-nodes --format=tmpfiles --output=/run/tmpfiles.d/kmod.conf
+-    systemd-tmpfiles --prefix=/dev --create --boot
++    etmpfiles --prefix=/dev --create --boot
+     # assigned by parse_cmdline
+     # shellcheck disable=SC2154
+     if [ "${quiet}" = "y" ]; then
+-        /usr/lib/systemd/systemd-udevd --daemon --resolve-names=never >/dev/null 2>&1
++        /usr/bin/udevd --daemon --resolve-names=never >/dev/null 2>&1
+     else
+-        /usr/lib/systemd/systemd-udevd --daemon --resolve-names=never
++        /usr/bin/udevd --daemon --resolve-names=never
+     fi
+     # used externally by poll_device()
+     # shellcheck disable=SC2034
 diff --git a/init_functions b/init_functions
-index 8ad10c7..5579a49 100644
+index 0abfde7..e33b2a5 100644
 --- a/init_functions
 +++ b/init_functions
-@@ -298,17 +298,6 @@ fsck_root() {
+@@ -338,17 +338,6 @@ fsck_root() {
          elif bitfield_has_bit "$fsckret" 128; then
              err "fatal error invoking fsck"
          fi
@@ -48,3 +74,406 @@ index 8ad10c7..5579a49 100644
      fi
  }
 
+diff --git a/install/sd-encrypt b/install/sd-encrypt
+deleted file mode 100644
+index e60d883..0000000
+--- a/install/sd-encrypt
++++ /dev/null
+@@ -1,67 +0,0 @@
+-#!/bin/bash
+-
+-build() {
+-    local mod
+-
+-    add_module 'dm-crypt'
+-    add_module 'dm-integrity'
+-    if [[ -n "$CRYPTO_MODULES" ]]; then
+-        for mod in $CRYPTO_MODULES; do
+-            add_module "$mod"
+-        done
+-    else
+-        add_all_modules '/crypto/'
+-    fi
+-    add_checked_modules '/drivers/char/tpm/'
+-
+-    map add_udev_rule \
+-        '10-dm.rules' \
+-        '13-dm-disk.rules' \
+-        '60-fido-id.rules' \
+-        '95-dm-notify.rules' \
+-        '/usr/lib/initcpio/udev/11-dm-initramfs.rules'
+-
+-    map add_systemd_unit 'cryptsetup.target' \
+-        'systemd-ask-password-console.path' \
+-        'systemd-ask-password-console.service'
+-    map add_binary \
+-        '/usr/lib/systemd/system-generators/systemd-cryptsetup-generator' \
+-        '/usr/lib/systemd/systemd-cryptsetup' \
+-        '/usr/lib/systemd/systemd-makefs' \
+-        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-fido2.so' \
+-        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-pkcs11.so' \
+-        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-tpm2.so'
+-
+-    # cryptsetup calls pthread_create(), which dlopen()s libgcc_s.so.1
+-    add_binary '/usr/lib/libgcc_s.so.1'
+-
+-    # cryptsetup loads the legacy provider which is required for whirlpool
+-    add_binary '/usr/lib/ossl-modules/legacy.so'
+-
+-    # add libraries dlopen()ed by systemd-cryptsetup
+-    LC_ALL=C.UTF-8 find /usr/lib/ -maxdepth 1 -name "libfido2.so*" | while read -r -d '' FILE; do
+-        if [[ -L "${FILE}" ]]; then
+-            add_symlink "${FILE}"
+-        else
+-            add_binary "${FILE}"
+-        fi
+-    done
+-
+-    # add mkswap for creating swap space on the fly (see 'swap' in crypttab(5))
+-    add_binary 'mkswap'
+-
+-    [[ -f /etc/crypttab.initramfs ]] && add_file '/etc/crypttab.initramfs' '/etc/crypttab'
+-}
+-
+-help() {
+-    cat <<HELPEOF
+-This hook allows for an encrypted root device with systemd initramfs.
+-
+-See the manpage of systemd-cryptsetup-generator(8) for available kernel
+-command line options. Alternatively, if the file /etc/crypttab.initramfs
+-exists, it will be added to the initramfs as /etc/crypttab. See the
+-crypttab(5) manpage for more information on crypttab syntax.
+-HELPEOF
+-}
+-
+-# vim: set ft=sh ts=4 sw=4 et:
+diff --git a/install/sd-shutdown b/install/sd-shutdown
+deleted file mode 100644
+index f8aad2e..0000000
+--- a/install/sd-shutdown
++++ /dev/null
+@@ -1,19 +0,0 @@
+-#!/usr/bin/env bash
+-# SPDX-License-Identifier: GPL-2.0-only
+-
+-build() {
+-    add_binary /usr/lib/systemd/systemd-shutdown /shutdown
+-
+-    if type -P kexec >/dev/null; then
+-        add_binary kexec
+-    fi
+-}
+-
+-help() {
+-    cat <<HELPEOF
+-This hook adds systemd-shutdown to the initramfs. This is only
+-if the image is extracted to /run/initramfs before shutdown.
+-HELPEOF
+-}
+-
+-# vim: set ft=sh ts=4 sw=4 et:
+diff --git a/install/sd-vconsole b/install/sd-vconsole
+deleted file mode 100644
+index 971b264..0000000
+--- a/install/sd-vconsole
++++ /dev/null
+@@ -1,119 +0,0 @@
+-#!/usr/bin/env bash
+-# SPDX-License-Identifier: GPL-2.0-only
+-
+-build() {
+-    # prevent conflicting variables from affecting vconsole.conf values
+-    # shellcheck disable=SC2034
+-    local KEYMAP KEYMAP_TOGGLE FONT FONT_MAP FONT_UNIMAP XKBLAYOUT XKBMODEL XKBVARIANT XKBOPTIONS
+-
+-    add_systemd_unit systemd-vconsole-setup.service
+-    add_binary /usr/lib/systemd/systemd-vconsole-setup
+-    add_binary loadkeys
+-    add_binary setfont
+-    add_file /etc/vconsole.conf
+-    add_udev_rule 90-vconsole.rules
+-
+-    # subshell to avoid namespace pollution
+-    (
+-        shopt -s extglob nullglob
+-
+-        get_decompressor() {
+-            case "$1" in
+-                *.gz)
+-                    cat='zcat'
+-                    of="${1%.gz}"
+-                    ;;
+-                *.bz2)
+-                    cat='bzcat'
+-                    of="${1%.bz2}"
+-                    ;;
+-                *.zst)
+-                    cat='zstdcat'
+-                    of="${1%.zst}"
+-                    ;;
+-                *)
+-                    cat='cat'
+-                    of="$1"
+-                    ;;
+-            esac
+-        }
+-
+-        add_keymap_file() {
+-            local cat cmd rest f of
+-
+-            while read -r f; do
+-                get_decompressor "$f"
+-                while read -r cmd rest; do
+-                    if [[ "$cmd" == 'include' ]]; then
+-                        eval set "$rest"
+-                        add_keymap_file "$1"
+-                    fi
+-                done < <("$cat" "$f")
+-                add_dir "${of%/*}"
+-                "$cat" "$f" >"$BUILDROOT/$of"
+-            done < <(LC_ALL=C.UTF-8 find /usr/share/kbd/keymaps/ -type f -regex ".*/$1\(\.inc\)?\(\.gz\|\.bz2|\.zst\)?")
+-        }
+-
+-        add_font_file() {
+-            local cat file filename fontfile="$1"
+-            get_decompressor "$fontfile"
+-            add_dir "${of%/*}"
+-            "$cat" "$fontfile" >"$BUILDROOT/$of"
+-            if [[ "$(head -c 23 "$BUILDROOT/$of" | tr -d '\0')" == '# combine partial fonts' ]]; then
+-                while read -r filename; do
+-                    for file in "/usr/share/kbd/consolefonts/partialfonts/$filename"?('.gz'|'.bz2'|'.zst'); do
+-                        add_font_file "$file"
+-                    done
+-                done < <(sed '/^#/d' "$BUILDROOT/$of")
+-            fi
+-        }
+-
+-        # shellcheck disable=SC1091
+-        [[ -s /etc/vconsole.conf ]] && . /etc/vconsole.conf
+-
+-        [[ "$KEYMAP" != '@kernel' ]] && add_keymap_file "${KEYMAP:-us}.map"
+-        [[ -n "$KEYMAP_TOGGLE" ]] && add_keymap_file "${KEYMAP_TOGGLE}.map"
+-
+-        if [[ -n "$FONT_MAP" ]]; then
+-            FONT_MAP="${FONT_MAP%.trans}"
+-            if [[ -f "/usr/share/kbd/consoletrans/$FONT_MAP" ]]; then
+-                add_file "/usr/share/kbd/consoletrans/$FONT_MAP"
+-            elif [[ -f "/usr/share/kbd/consoletrans/$FONT_MAP.trans" ]]; then
+-                add_file "/usr/share/kbd/consoletrans/$FONT_MAP.trans"
+-            elif [[ -f "/usr/share/kbd/consoletrans/${FONT_MAP}_to_uni.trans" ]]; then
+-                add_file "/usr/share/kbd/consoletrans/${FONT_MAP}_to_uni.trans"
+-            else
+-                error "sd-vconsole: requested font map not found: '%s'" "$FONT_MAP"
+-                return 1
+-            fi
+-        fi
+-
+-        if [[ -n "$FONT_UNIMAP" ]]; then
+-            FONT_UNIMAP="${FONT_UNIMAP%.uni}"
+-            if [[ -f "/usr/share/kbd/unimaps/$FONT_UNIMAP.uni" ]]; then
+-                add_file "/usr/share/kbd/unimaps/$FONT_UNIMAP.uni"
+-            else
+-                error "sd-vconsole: requested font unimap not found: '%s'" "$FONT_UNIMAP"
+-                return 1
+-            fi
+-        fi
+-
+-        if [[ -n "$FONT" ]]; then
+-            for file in "/usr/share/kbd/consolefonts/$FONT"?('.psfu'|'.psf'|'.cp'|'.fnt')?('.gz'|'.bz2'|'.zst'); do
+-                add_font_file "$file"
+-                return
+-            done
+-            error "sd-vconsole: requested font not found: '%s'" "$FONT"
+-            return 1
+-        fi
+-    )
+-}
+-
+-help() {
+-    cat <<HELPEOF
+-This hook adds the keymap(s) and font specified in vconsole.conf to the image and
+-loads them during early userspace.
+-HELPEOF
+-}
+-
+-# vim: set ft=sh ts=4 sw=4 et:
+diff --git a/install/systemd b/install/systemd
+deleted file mode 100644
+index 808750c..0000000
+--- a/install/systemd
++++ /dev/null
+@@ -1,174 +0,0 @@
+-#!/bin/bash
+-
+-add_systemd_unit() {
+-    # Add a systemd unit file to the initcpio image. Hard dependencies on binaries
+-    # and other unit files will be discovered and added.
+-    #   $1: path to rules file (or name of rules file)
+-
+-    local unit key dep
+-
+-    unit=$(PATH=/usr/lib/systemd/system:/lib/systemd/system type -P "$1")
+-    if [[ -z $unit ]]; then
+-        # complain about not found unit file
+-        return 1
+-    fi
+-
+-    add_file "$unit"
+-
+-    while IFS='=' read -r key values; do
+-        read -ra values <<< "$values"
+-
+-        case $key in
+-            Requires|OnFailure)
+-                # only add hard dependencies (not Wants)
+-                map add_systemd_unit "${values[@]}"
+-                ;;
+-            Exec*)
+-                # do not add binaries unless they are required,
+-                # strip special executable prefixes
+-                case ${values[0]} in
+-                    -*)  ;;
+-                    !!*) add_binary "${values[0]#!!}" ;;
+-                    *)   add_binary "${values[0]#[@!:+]}" ;;
+-                esac
+-                ;;
+-        esac
+-
+-    done <"$unit"
+-
+-    # preserve reverse soft dependency
+-    for dep in {/usr,}/lib/systemd/system/*.wants/"${unit##*/}"; do
+-        if [[ -L $dep ]]; then
+-            add_symlink "$dep"
+-        fi
+-    done
+-
+-    # add hard dependencies
+-    if [[ -d $unit.requires ]]; then
+-        for dep in "$unit".requires/*; do
+-            add_systemd_unit "${dep##*/}"
+-        done
+-    fi
+-}
+-
+-add_systemd_drop_in() {
+-    local unit=$1
+-
+-    mkdir -p "$BUILDROOT/etc/systemd/system/$unit.d"
+-    cat >"$BUILDROOT/etc/systemd/system/$unit.d/$2.conf"
+-}
+-
+-build() {
+-    local rules unit
+-
+-    add_binary /usr/bin/kmod /usr/bin/modprobe
+-    add_binary /usr/bin/mount
+-    add_binary /usr/bin/sulogin
+-    add_binary /usr/bin/umount
+-    add_binary /usr/lib/systemd/systemd /init
+-
+-    map add_binary \
+-        /usr/bin/journalctl \
+-        /usr/bin/systemd-tmpfiles \
+-        /usr/lib/systemd/systemd-executor \
+-        /usr/lib/systemd/systemd-hibernate-resume \
+-        /usr/lib/systemd/systemd-shutdown \
+-        /usr/lib/systemd/systemd-sulogin-shell \
+-        /usr/lib/systemd/system-generators/systemd-fstab-generator \
+-        /usr/lib/systemd/system-generators/systemd-gpt-auto-generator \
+-        /usr/lib/systemd/system-generators/systemd-hibernate-resume-generator
+-
+-    # udev rules
+-    map add_udev_rule "$rules" \
+-        50-udev-default.rules \
+-        60-persistent-storage.rules \
+-        64-btrfs.rules \
+-        80-drivers.rules \
+-        99-systemd.rules
+-
+-    # systemd units
+-    map add_systemd_unit \
+-        initrd-cleanup.service \
+-        initrd-fs.target \
+-        initrd-parse-etc.service \
+-        initrd-root-fs.target \
+-        initrd-root-device.target \
+-        initrd-switch-root.service \
+-        initrd-switch-root.target \
+-        initrd-udevadm-cleanup-db.service \
+-        initrd.target \
+-        kmod-static-nodes.service \
+-        local-fs.target \
+-        local-fs-pre.target \
+-        paths.target \
+-        reboot.target \
+-        slices.target \
+-        sockets.target \
+-        swap.target \
+-        systemd-battery-check.service \
+-        systemd-bsod.service \
+-        systemd-fsck@.service \
+-        systemd-hibernate-resume.service \
+-        systemd-journald-audit.socket \
+-        systemd-journald-dev-log.socket \
+-        systemd-journald.service \
+-        systemd-modules-load.service \
+-        systemd-pcrphase-initrd.service \
+-        systemd-tmpfiles-setup-dev.service \
+-        systemd-udevd-control.socket \
+-        systemd-udevd-kernel.socket \
+-        systemd-udevd.service \
+-        systemd-udev-trigger.service \
+-        timers.target \
+-        rescue.target \
+-        emergency.target
+-
+-    # add libraries dlopen()ed (hard and optional dependencies):
+-    #  tss2-*   -> tpm2-util
+-    #  kmod     -> systemd-shared
+-    #  qrencode -> bsod
+-    for LIB in kmod tss2-{esys,rc,mu,tcti-'*'} qrencode; do
+-        LC_ALL=C.UTF-8 find /usr/lib/ -maxdepth 1 -name "lib${LIB}.so*" | while read -r -d '' FILE; do
+-            if [[ -L "${FILE}" ]]; then
+-                add_symlink "${FILE}"
+-            else
+-                add_binary "${FILE}"
+-            fi
+-        done
+-    done
+-
+-    add_symlink "/usr/lib/systemd/system/default.target" "initrd.target"
+-    add_symlink "/usr/lib/systemd/system/ctrl-alt-del.target" "reboot.target"
+-
+-    printf '%s\n' >"$BUILDROOT/etc/nsswitch.conf" \
+-        'passwd: files' \
+-        'group: files' \
+-        'shadow: files'
+-
+-    echo "root:x:0:0:root:/root:/bin/sh" >"$BUILDROOT/etc/passwd"
+-    echo 'root:*:::::::' >"$BUILDROOT/etc/shadow"
+-    getent group root audio disk input kmem kvm lp optical render sgx storage tty uucp video | awk -F: ' { print $1 ":x:" $3 ":" }' >"$BUILDROOT/etc/group"
+-
+-    add_dir "/etc/modules-load.d"
+-    (
+-      # FIXME: this should be a function in mkinitcpio
+-      # shellcheck disable=SC1091,SC2154 source=mkinitcpio.conf
+-      . "$_f_config"
+-      set -f
+-      printf '%s\n' "${MODULES[@]}" >"$BUILDROOT/etc/modules-load.d/MODULES.conf"
+-    )
+-
+-    [[ -f /etc/fstab.initramfs ]] && add_file "/etc/fstab.initramfs" "/etc/fstab"
+-}
+-
+-help() {
+-    cat <<HELPEOF
+-This will install a basic systemd setup in your initramfs, and is meant to
+-replace the 'base', 'usr', 'udev' and 'resume' hooks. Other hooks with runtime
+-components will need to be ported, and will not work as intended. You also may
+-wish to still include the 'base' hook (before this hook) to ensure that a
+-rescue shell exists on your initramfs.
+-HELPEOF
+-}
+-
+-# vim: set ft=sh ts=4 sw=4 et:
