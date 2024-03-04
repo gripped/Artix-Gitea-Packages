@@ -1,0 +1,81 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgbase=avidemux
+pkgname=('avidemux-cli' 'avidemux-qt')
+pkgver=2.8.1
+pkgrel=3
+pkgdesc='Graphical tool to edit video (filter/re-encode/split)'
+url='http://fixounet.free.fr/avidemux/'
+arch=('x86_64')
+license=('GPL2')
+makedepends=('cmake' 'libxslt' 'qt5-base' 'jack' 'libvorbis' 'libxv' 'opus' 'desktop-file-utils'
+             'alsa-lib' 'lame' 'xvidcore' 'faad2' 'faac' 'x264' 'x265' 'libsamplerate'
+             'opencore-amr' 'yasm' 'mesa' 'libvpx' 'libpulse' 'libva' 'intltool' 'sqlite'
+             'libvdpau' 'libdca' 'fribidi' 'glu' 'qt5-tools' 'twolame' 'libfdk-aac' 'libass')
+options=('!emptydirs')
+source=(https://downloads.sourceforge.net/avidemux/avidemux_${pkgver}.tar.gz
+        log.diff
+        https://github.com/FFmpeg/FFmpeg/commit/effadce6.patch)
+sha256sums=('77d9bdca8683ce57c192b69d207cfab7cf92a7759ce0f63fa37b5c8e42ad3da2'
+            '8b751d137037f22fd4ae6750709014bcf61269a18f1c32e1a91f481285c807aa'
+            '8fad5f253bcda7a17523dbfcbfcfd60b3db23783dcdb65998005cddc7c7776c3')
+sha512sums=('c8df5c0d7f20fd9003560dee7cc0964ba810fc2786cefd525c09fd9f740339dd92a42989938ca48c16aca778ed5bd93a56572b0c6397fe04e47225cc109e7d75'
+            'bbae5b4a549113b12e728c4c0ac8c1c92a0b7500be8dcecc791c16c9a913406feaa9f7bc477985970a920d2df391cc9392457512d84b9c4b829981cc072f2b2e'
+            '243553763c688f7d7c3d662061659fc650e2460c98128426a8e279c78dad412279a45340042b6db9a230564fe5c8e18915331077f9792fada936564835ca7d8f')
+
+prepare() {
+  cd ${pkgbase}_${pkgver}
+  patch -Np1 -i ../log.diff  # don't hide the build output
+  sed -i 's|../avidemux/qt4|../avidemux/qt4 -DLRELEASE_EXECUTABLE=/usr/bin/lrelease-qt5|' bootStrap.bash
+  sed -e 's|0.19|1.0|' -i avidemux_plugins/ADM_videoFilters6/ass/CMakeLists.txt
+  mv "$srcdir"/effadce6.patch avidemux_core/ffmpeg_package/patches/upstream # Fix build with binutils 2.41
+}
+
+build() {
+  cd ${pkgbase}_${pkgver}
+  bash bootStrap.bash --with-core --with-cli --with-plugins
+}
+
+package_avidemux-cli() {
+  depends=('libxml2' 'fontconfig' 'sqlite' 'libvpx' 'libva' 'libvdpau')
+  optdepends=('lame: for the corresponding audio encoder plugin'
+              'faac: for the corresponding audio encoder plugin'
+              'faad2: for the corresponding audio decoder plugin'
+              'opus: for the corresponding audio decoder plugin'
+              'opencore-amr: for the corresponding audio decoder plugin'
+              'jack: for the corresponding audio device plugin'
+              'libpulse: for the corresponding audio device plugin'
+              'x264: for the corresponding video encoder plugin'
+              'libx264: for the corresponding video encoder plugin'
+              'x265: for the corresponding video encoder plugin'
+              'xvidcore: for the corresponding video encoder plugin'
+              'qt5-base: for the QtScript scripting support'
+              'libdca: for the corresponding audio decoder plugin'
+              'libfdk-aac: for the corresponding audio decoder plugin'
+              'twolame: for the corresponding audio decoder plugin'
+              'libass: for the corresponding video filter plugin'
+              'fribidi: for the corresponding video filter plugin')
+
+  cd ${pkgbase}_${pkgver}
+  make -C buildCli DESTDIR="${pkgdir}" install
+  make -C buildCore DESTDIR="${pkgdir}" install
+  make -C buildPluginsCLI DESTDIR="${pkgdir}" install
+  make -C buildPluginsCommon DESTDIR="${pkgdir}" install
+
+  install -Dm 644 avidemux_icon.png "${pkgdir}/usr/share/pixmaps/avidemux.png"
+  install -Dm 644 man/avidemux.1 -t "${pkgdir}/usr/share/man/man1"
+}
+
+package_avidemux-qt() {
+  pkgdesc='Graphical tool to edit video (filter/re-encode/split) - Qt GUI'
+  depends=("avidemux-cli=${pkgver}" 'qt5-base' 'x264' 'x265' 'glu' 'libxv' 'desktop-file-utils')
+  replaces=('avidemux-gtk')
+
+  cd ${pkgbase}_${pkgver}
+  make -C buildQt5 DESTDIR="${pkgdir}" install
+  make -C buildPluginsQt5 DESTDIR="${pkgdir}" install
+}
+
+# vim: ts=2 sw=2 et:
