@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Christian Hesse <mail@eworm.de>
 # Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Gerhard Brauer <gerbra@archlinux.de>
 
 pkgname=nbd
-pkgver=3.25
+pkgver=3.26.1
 pkgrel=1
 pkgdesc='tools for network block devices, allowing you to use remote block devices over TCP/IP'
 arch=('x86_64')
@@ -15,7 +15,7 @@ backup=('etc/nbd-server/config')
 source=("https://github.com/NetworkBlockDevice/${pkgname}/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz"
         'config'
         'sysusers_nbd.conf')
-sha256sums=('f5c8fd0fcb57b1c926594d0e57f356432ee08678bef1d40d088f0830f0cbdd0a'
+sha256sums=('f0cf509fa5b20b1a07f7904eb637e9b47d3e30b6ed6f00075af5d8b701c78fef'
             'ee2e9fbbeb8a8b9b71d16b6f32eb41788f6def9d00cc4a47897ed3cb97cdde7c'
             '3fd98fe87d0b31b82126dc669f00355865f58fae81af3fccbc0d06504baef6cd')
 build() {
