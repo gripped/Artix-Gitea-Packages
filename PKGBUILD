@@ -1,0 +1,58 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-net-http-persistent
+pkgver=4.0.2
+pkgrel=1
+pkgdesc='Thread-safe persistent connections with Net::HTTP'
+arch=(any)
+url='https://github.com/drbrain/net-http-persistent'
+license=(MIT)
+depends=(ruby-connection_pool)
+checkdepends=(ruby-rake ruby-minitest)
+options=(!emptydirs)
+source=(https://github.com/drbrain/net-http-persistent/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('10aab67179e80159f4e080dea3b47d86742331d693a8712803fe3906b5b1f6db')
+
+prepare() {
+  cd net-http-persistent-$pkgver
+  sed 's/~>/>=/' -i net-http-persistent.gemspec
+  echo -e 'require "rake/testtask"\nRake::TestTask.new' > Rakefile
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd net-http-persistent-$pkgver
+  gem build net-http-persistent.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    net-http-persistent-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd net-http-persistent-$pkgver
+  GEM_HOME="tmp_install/$_gemdir" rake test
+}
+
+package() {
+  cd net-http-persistent-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+}

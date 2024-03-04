@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: ruby-net-http-persistent
+  version: 4.0.2-1
+  arch:
+    - any
+  pkgname:
+    - ruby-net-http-persistent
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 4.0.2-1
+    packages:
+      - ruby-net-http-persistent-4.0.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
