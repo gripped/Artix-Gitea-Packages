@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares-extensions
-pkgver=0.10
-_commit='8d56cc49dfae8f946c311ea7db5ed4cceaa3482a' # git rev-parse v${pkgver}
+pkgver=0.11
+_commit='23edb4e6851efac30898f38264e277c357b27c74' # git rev-parse v${pkgver}
 pkgrel=1
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
@@ -12,26 +12,28 @@ license=(
     'LGPL-2.1-only'
     'LGPL-3.0-or-later')
 url="https://gitea.artixlinux.org/artix/calamares-extensions"
-depends=('calamares' 'libcalamaresui.so' 'libcalamares.so' 'kdialog')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'git' 'qt5-translations')
+depends=('bash' 'gcc-libs' 'glibc' 'python' 'qt6-base' 'qt6-declarative')
+makedepends=('extra-cmake-modules' 'qt6-tools' 'git' 'qt6-translations' 'calamares' 'kdialog')
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
 build() {
-    mkdir -p "$pkgname"/build
-    cd "$pkgname"/build
-        cmake .. \
+        cmake -S "$pkgname" -B build \
             -DCMAKE_PREFIX_PATH=/usr \
             -DCMAKE_INSTALL_PREFIX=/usr \
             -DCMAKE_INSTALL_LIBDIR=/usr/lib \
             -DCMAKE_INSTALL_SYSCONFDIR=/etc \
             -DCMAKE_INSTALL_DATADIR=/usr/share \
             -DINSTALL_CONFIG:BOOL=ON \
+            -DWITH_QT6:BOOL=ON \
+            -DWITH_QML:BOOL=ON \
             -DBUILD_APPDATA:BOOL=OFF \
             -DBUILD_APPSTREAM:BOOL=OFF
-        make
+        cmake --build build
 }
 
 package() {
-    make -C "$pkgname"/build DESTDIR="$pkgdir" install
+    depends+=('calamares' 'libcalamaresui.so' 'libcalamares.so' 'kdialog')
+
+    DESTDIR="$pkgdir" cmake --install build
 }
