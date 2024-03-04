@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://github.com/calamares/calamares"
@@ -25,8 +25,14 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality'
 makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-translations')
 provides=('libcalamares.so' 'libcalamaresui.so')
 optdepends=('calamares-extensions: Artix extensions and branding')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('65b11d6bb2ba76fc74fed08faa4b6fe43d1a5bf4a2522b30fc43b44151686c47')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz"
+        cmake-appstream-helper-fix.patch)
+sha256sums=('65b11d6bb2ba76fc74fed08faa4b6fe43d1a5bf4a2522b30fc43b44151686c47'
+            '3f4860574bbffd4eca4d449bc1256fcf7e01be21cd8b31f3a608a8cd350abd82')
+
+prepare() {
+    patch -d "$pkgname-$pkgver" -Np 1 -i ../cmake-appstream-helper-fix.patch
+}
 
 build() {
     cmake -S "$pkgname-$pkgver" -B build \

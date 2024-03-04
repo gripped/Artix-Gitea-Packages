@@ -1,0 +1,15 @@
+ CMakeLists.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 53e9f494e..1e393d3c7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -662,6 +662,7 @@ install(
+         "CMakeModules/CalamaresCheckModuleSelection.cmake"
+         "CMakeModules/CMakeColors.cmake"
+         "CMakeModules/FindYAMLCPP.cmake"
++        "CMakeModules/AppStreamHelper.cmake"
+     DESTINATION "${CMAKE_INSTALL_CMAKEDIR}"
+ )
+
