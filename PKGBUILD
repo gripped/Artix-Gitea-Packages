@@ -1,0 +1,55 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: Dave Reisner <dreisner@archlinux.org>
+# Contributor: Matthias Blaicher <matthias@blaicher.com>
+# Contributor: Severen Redwood <severen@shrike.me>
+
+pkgname=capnproto
+pkgver=1.0.2
+pkgrel=1
+pkgdesc="Cap'n Proto serialization/RPC system"
+arch=(x86_64)
+url="https://capnproto.org/"
+license=(MIT)
+depends=(
+  gcc-libs
+  glibc
+  openssl
+  zlib
+)
+makedepends=(cmake)
+provides=(
+  libcapnp.so
+  libcapnp-json.so
+  libcapnp-rpc.so
+  libcapnpc.so
+  libkj-async.so
+  libkj-gzip.so
+  libkj-http.so
+  libkj-test.so
+  libkj-tls.so
+  libkj.so
+)
+source=($pkgname-$pkgver.tar.gz::https://github.com/$pkgname/$pkgname/archive/v$pkgver.tar.gz)
+sha512sums=('56551ecad52cf06e5dd52401e6d848eae41126c6ba2bb31a9ec1c82e1b47e0e6171d69db923c118c614aec0d396ddf35724081cccef3a605c39d0b5379a2c03e')
+b2sums=('c4f519ced618cd7473194fce9fae96cce22abf2ee4a30f4fd8550e82875727cb8f9c420bd8faba71190bf05870b82e4ff2e74729c7bc2e2e255163e9e764f8d3')
+
+build() {
+  local cmake_options=(
+      -B build
+      -D BUILD_SHARED_LIBS=ON
+      -D CMAKE_BUILD_TYPE=None
+      -D CMAKE_INSTALL_PREFIX=/usr
+      -S $pkgname-$pkgver
+      -W no-dev
+  )
+
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -vDm 644 $pkgname-$pkgver/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 $pkgname-$pkgver/{CONTRIBUTORS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
+# vim:set ts=2 sw=2 et:
