@@ -5,8 +5,8 @@
 pkgname=kde-gtk-config
 pkgver=6.0.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
-pkgdesc='GTK2 and GTK3 Configurator for KDE'
+pkgrel=3
+pkgdesc='Syncs KDE settings to GTK applications'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL-2.0-or-later)
@@ -22,12 +22,12 @@ depends=(gcc-libs
          kwindowsystem
          qt6-base
          qt6-svg
-         sh)
+         sh
+         xsettingsd)
 makedepends=(extra-cmake-modules
              gtk3
              sassc)
-optdepends=('gtk3: GTK3 apps support'
-            'xsettingsd: apply settings to GTK applications on the fly')
+optdepends=('gtk3: GTK3 apps support')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
         https://invent.kde.org/plasma/kde-gtk-config/-/commit/541004a3.patch)
@@ -45,7 +45,7 @@ prepare() {
 }
 
 build() {
-  cmake -B build  -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
