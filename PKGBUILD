@@ -3,7 +3,7 @@
 
 pkgname=ksnip
 pkgver=1.10.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Qt-based screenshot tool that provides many annotation features'
 arch=('x86_64')
 url='https://github.com/ksnip/ksnip'
