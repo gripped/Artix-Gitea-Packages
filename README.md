@@ -1,0 +1,2 @@
+# firefox-i18n
+
