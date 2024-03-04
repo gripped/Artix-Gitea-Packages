@@ -11,6 +11,7 @@ arch=('x86_64')
 url='https://github.com/NetworkBlockDevice/nbd/'
 license=('GPL')
 depends=('glib2' 'gnutls' 'libnl')
+makedepends=('docbook-utils' 'docbook-sgml' 'perl-sgmls' 'autoconf-archive')
 backup=('etc/nbd-server/config')
 source=("https://github.com/NetworkBlockDevice/${pkgname}/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz"
         'config'
