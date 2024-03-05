@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: zathura-ps
-  version: 0.2.7-4.1
+  version: 0.2.7-5
   arch:
     - x86_64
   pkgname:
     - zathura-ps
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -43,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.2.7-5
+    packages:
+      - zathura-ps-0.2.7-5-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
