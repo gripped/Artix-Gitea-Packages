@@ -1,0 +1,95 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# vim:set ft=sh:
+# Contributor: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
+# Contributor: (sirocco AT ngs.ru)
+
+pkgbase=doublecmd
+pkgname=('doublecmd-gtk2' 'doublecmd-qt5' 'doublecmd-qt6')
+pkgver=1.1.10
+pkgrel=2
+url="http://doublecmd.sourceforge.net/"
+arch=('x86_64')
+license=('GPL')
+provides=("$pkgbase")
+makedepends=('lazarus' 'gtk2' 'qt5pas' 'qt6pas')
+optdepends=(
+    'lua: scripting'
+    'unzip: support extracting zip archives'
+    'zip: suport packing zip archives'
+    'p7zip: support for 7zip archives'
+    'libunrar: support for rar archives'
+)
+source=(
+    "https://downloads.sourceforge.net/project/$pkgbase/Double%20Commander%20Source/$pkgbase-$pkgver-src.tar.gz"
+)
+sha512sums=('8ecdfd787bb743e86b489e05ad55c92d72682ca4d15501df92c2be190e6fc55cf7c39c43be92853bc3697246e1e43a401995df6ebd8e11bac9c0b8a0321d0ddd')
+
+prepare() {
+    cp -a /usr/lib/lazarus ./
+
+    cd "$pkgbase-$pkgver"
+    sed -e 's/LIB_SUFFIX=.*/LIB_SUFFIX=/g' -i install/linux/install.sh
+    sed -e "s@=\$(which lazbuild)@=\"\$(which lazbuild) --lazarusdir=$srcdir/lazarus\"@" -i build.sh
+    sed -e '/doublecmd.zdli/d' -i install/linux/install.sh
+}
+
+build() {
+    cd "$srcdir/$pkgbase-$pkgver"
+    ./build.sh components
+    ./build.sh plugins
+
+    cd "$srcdir"
+
+    cp -a "$pkgbase-$pkgver" "$pkgbase-gtk"
+    cp -a "$pkgbase-$pkgver" "$pkgbase-qt5"
+    cp -a "$pkgbase-$pkgver" "$pkgbase-qt6"
+
+    # build gtk
+    cd "$srcdir/$pkgbase-gtk"
+    /usr/bin/lazbuild --lazarusdir="$srcdir/lazarus" \
+        src/doublecmd.lpi \
+        --bm="NoDebug Full Optimizations" \
+        --widgetset=gtk2
+    #./build.sh beta gtk2
+
+    # build qt5
+    cd "$srcdir/$pkgbase-qt5"
+    /usr/bin/lazbuild --lazarusdir="$srcdir/lazarus" \
+        src/doublecmd.lpi \
+        --bm="NoDebug Full Optimizations" \
+        --widgetset=qt5
+    #./build.sh beta qt5
+
+    # build qt6
+    cd "$srcdir/$pkgbase-qt6"
+    /usr/bin/lazbuild --lazarusdir="$srcdir/lazarus" \
+        src/doublecmd.lpi \
+        --bm="NoDebug Full Optimizations" \
+        --widgetset=qt6
+    #./build.sh beta qt6
+}
+
+package_doublecmd-gtk2() {
+    pkgdesc="twin-panel (commander-style) file manager (GTK3)"
+    depends=('gtk2' 'desktop-file-utils' 'hicolor-icon-theme' 'shared-mime-info')
+    conflicts=('doublecmd-qt5' 'doublecmd-qt6')
+    cd "$srcdir/$pkgbase-gtk"
+    ./install/linux/install.sh --install-prefix="$pkgdir"
+}
+
+package_doublecmd-qt5() {
+    pkgdesc="twin-panel (commander-style) file manager (Qt5)"
+    depends=('qt5pas' 'desktop-file-utils' 'hicolor-icon-theme' 'shared-mime-info')
+    conflicts=('doublecmd-gtk2' 'doublecmd-qt6')
+    replaces=('doublecmd-qt' 'doublecmd-qt4')
+    cd "$srcdir/$pkgbase-qt5"
+    ./install/linux/install.sh --install-prefix="$pkgdir"
+}
+
+package_doublecmd-qt6() {
+    pkgdesc="twin-panel (commander-style) file manager (Qt6)"
+    depends=('qt6pas' 'desktop-file-utils' 'hicolor-icon-theme' 'shared-mime-info')
+    conflicts=('doublecmd-gtk2' 'doublecmd-qt5')
+    cd "$srcdir/$pkgbase-qt6"
+    ./install/linux/install.sh --install-prefix="$pkgdir"
+}
