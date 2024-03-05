@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kirigami
-  version: 6.0.0-1
+  version: 6.0.0-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.0.0-1
+    version: 6.0.0-2
     packages:
-      - kirigami-6.0.0-1-x86_64.pkg.tar.zst
+      - kirigami-6.0.0-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
