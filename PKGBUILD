@@ -1,13 +1,13 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=fire
 pkgname=python-fire
 pkgver=0.5.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A library for automatically generating command line interfaces"
 arch=(any)
 url="https://github.com/google/python-fire"
-license=(Apache)
+license=(Apache-2.0)
 depends=(
   python
   python-six
@@ -22,21 +22,25 @@ makedepends=(
 checkdepends=(
   python-hypothesis
   python-levenshtein
-  python-mock
   python-pytest
 )
 source=(
   https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz
   $pkgname-0.5.0-python3.11.patch
+  $pkgname-0.5.0-mock.patch
 )
 sha256sums=('a6b0d49e98c8963910021f92bba66f65ab440da2982b78eb1bbf95a0a34aacc6'
-            '5067d7dadb4ebc8e47dfc8080c3551d7efe9411e49c49275cdbdedf8d872fedd')
+            '5067d7dadb4ebc8e47dfc8080c3551d7efe9411e49c49275cdbdedf8d872fedd'
+            'c6522652e657dc86a2764c2857e61ebf0b7c4f6ef55b2baf887210163613ac6b')
 b2sums=('eecaceb95faba05a0f2b157560f690d9cee0a10939c2f376b8563955171299ada4b522775450443d9ff9ad31092cf4967a7fc77f7cd1eaab30c9450291a9dbeb'
-        '4a75b46429cfad6b7c55e2fb36df10875f3950858c55112c120d269f7c72d717b3c12d99d61ed15d3ec345195503cc34f42e4481e121314cac364eee72509489')
+        '4a75b46429cfad6b7c55e2fb36df10875f3950858c55112c120d269f7c72d717b3c12d99d61ed15d3ec345195503cc34f42e4481e121314cac364eee72509489'
+        '880b49315c13c5954cab9f65b6a78eecc8894022002104db8da77b659c95555bfefae1a92b67b8be3610d55ff1615d4cf60fe4c10818eaef6340f1b8e80ad872')
 
 prepare() {
   # fix for python >= 3.11: https://github.com/google/python-fire/issues/427
   patch -Np1 -d $_name-$pkgver -i ../$pkgname-0.5.0-python3.11.patch
+  # remove use of python-mock as upstream will take forever to do that: https://github.com/google/python-fire/issues/469
+  patch -Np1 -d $_name-$pkgver -i ../$pkgname-0.5.0-mock.patch
 }
 
 build() {
