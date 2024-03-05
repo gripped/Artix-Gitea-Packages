@@ -20,13 +20,11 @@ sha256sums=('f0cf509fa5b20b1a07f7904eb637e9b47d3e30b6ed6f00075af5d8b701c78fef'
             'ee2e9fbbeb8a8b9b71d16b6f32eb41788f6def9d00cc4a47897ed3cb97cdde7c'
             '3fd98fe87d0b31b82126dc669f00355865f58fae81af3fccbc0d06504baef6cd')
 
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  echo > systemd/Makefile.am
-}
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
+
+  echo > systemd/Makefile.am
 
   ./configure \
     --prefix=/usr \

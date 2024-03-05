@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - nbd
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - nbd-3.26.1-1-x86_64.pkg.tar.zst
   world:
-    version: 3.25-1
+    version: 3.26.1-1
     packages:
-      - nbd-3.25-1-x86_64.pkg.tar.zst
+      - nbd-3.26.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
