@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=python-json5
-pkgver=0.9.18
+pkgver=0.9.19
 pkgrel=1
 pkgdesc='A Python implementation of the JSON5 data format'
 arch=(any)
@@ -14,7 +14,7 @@ makedepends=(python-build
              python-wheel)
 checkdepends=(python-pytest)
 source=(https://github.com/dpranke/pyjson5/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('816a9cef1d8730cec81e1f73a2e3a3691ac96a08bf23eafe3f6ee5e7f7661d36')
+sha256sums=('8f068e0d49b62ca2577acb4ca757460489366e53fbdda503391204b542440b87')
 
 build() {
   cd pyjson5-$pkgver
