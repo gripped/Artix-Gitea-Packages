@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gtk-doc
-  version: 1.33.2-3
+  version: 1.34.0-1
   arch:
     - any
   pkgname:
     - gtk-doc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.33.2-3
+    version: 1.34.0-1
     packages:
-      - gtk-doc-1.33.2-3-any.pkg.tar.zst
+      - gtk-doc-1.34.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
