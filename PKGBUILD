@@ -6,18 +6,15 @@
 
 pkgname=girara
 pkgver=0.4.3
-pkgrel=1
-
+pkgrel=2
 pkgdesc="User interface library focused on simplicity and minimalism"
 url="https://pwmt.org/projects/girara"
 arch=('x86_64')
-license=('custom')
-
+license=('Zlib')
 provides=('girara-gtk3' 'girara-common')
 replaces=('girara-gtk3' 'girara-common')
 conflicts=('girara-gtk3' 'girara-common')
-
-depends=('gtk3' 'glib2' 'json-glib' 'pango')
+depends=('gtk3' 'glib2' 'json-glib' 'pango' 'glibc')
 makedepends=('meson' 'ninja' 'doxygen' 'check')
 checkdepends=('xorg-server-xvfb')
 
