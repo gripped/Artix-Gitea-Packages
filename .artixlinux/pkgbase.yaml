@@ -9,12 +9,12 @@ pkgbase:
     - doublecmd-qt5
     - doublecmd-qt6
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,5 +51,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.1.10-2
+    packages:
+      - doublecmd-gtk2-1.1.10-2-x86_64.pkg.tar.zst
+      - doublecmd-qt5-1.1.10-2-x86_64.pkg.tar.zst
+      - doublecmd-qt6-1.1.10-2-x86_64.pkg.tar.zst
