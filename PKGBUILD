@@ -11,12 +11,12 @@
 BUILDENV+=(!check)
 
 pkgname=('syncthing' 'syncthing-discosrv' 'syncthing-relaysrv')
-pkgver=1.27.3
+pkgver=1.27.4
 pkgrel=1
 pkgdesc='Open Source Continuous Replication / Cluster Synchronization Thing'
 arch=('x86_64')
 url="https://syncthing.net/"
-license=('MPL')
+license=('MPL-2.0')
 depends=('glibc')
 makedepends=('git' 'go')
 source=(https://github.com/syncthing/syncthing/releases/download/v$pkgver/syncthing-source-v${pkgver}.tar.gz{,.asc}
@@ -24,7 +24,7 @@ source=(https://github.com/syncthing/syncthing/releases/download/v$pkgver/syncth
         syncthing-{disco,relay}srv.tmpfiles
         gcc-pie-segfaults-race.patch)
 validpgpkeys=('37C84554E7E0A261E4F76E1ED26E6ED000654A3E') # Syncthing Release Management
-sha256sums=('3fe25b863bb3a0f74bc95a7afa71bdaa2a79971542962236be5d85f469aa897d'
+sha256sums=('6ce00ab281ee5eb0dc73c3664f36235137ca22b2911e375b8feead0038fb80a1'
             'SKIP'
             'f6e704dd7b10127b1642c889a29e95468daa75d895493b235ce1ed5e97155b70'
             '6ab96a5949e223d315d49663734ad27b70c72469c691a61ac198cb7794cb5eaa'
@@ -32,8 +32,9 @@ sha256sums=('3fe25b863bb3a0f74bc95a7afa71bdaa2a79971542962236be5d85f469aa897d'
             'f899998985f2d374af57f17ef6362c37a305467858195b74d1c1def71d97273f'
             '6a58227c09a18fc7049ec38351a0fd98195688d15821d67d5af4facda401cbba')
 
+_srcdir="src/github.com/syncthing"
+
 prepare() {
-  local _srcdir="src/github.com/syncthing"
   rm -rf "${_srcdir}"
   install -d "${_srcdir}"
   mv "${pkgbase}" "${_srcdir}/${pkgbase}"
@@ -41,21 +42,24 @@ prepare() {
 }
 
 build() {
-  export CGO_ENABLED=0
+  cd "$_srcdir/${pkgbase}"
+  export CGO_ENABLED=1
   export BUILD_HOST=archlinux
   export BUILD_USER=${pkgbase}
-  export EXTRA_LDFLAGS="-linkmode external -extldflags \"${LDFLAGS}\""
   export GOPATH="${srcdir}" GOROOT_FINAL="/usr/bin"
-  cd "${srcdir}/src/github.com/syncthing/${pkgbase}"
-  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
   go run build.go -no-upgrade -version v${pkgver} build
   go run build.go -no-upgrade -version v${pkgver} build strelaysrv
   go run build.go -no-upgrade -version v${pkgver} build stdiscosrv
 }
 
 check() {
+  cd "$_srcdir/${pkgbase}"
   export GOPATH="${srcdir}" GOROOT_FINAL="/usr/bin"
-  cd "${srcdir}/src/github.com/syncthing/${pkgbase}"
   if [ "${CARCH}" == "x86_64" ] ; then
     go run build.go -no-upgrade test
   fi
@@ -64,7 +68,7 @@ check() {
 package_syncthing() {
   install=$pkgname.install
 
-  cd "${srcdir}/src/github.com/syncthing/${pkgbase}"
+  cd "$_srcdir/${pkgbase}"
   install -Dm755 ${pkgname} "${pkgdir}/usr/bin/${pkgname}"
   install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
 
@@ -80,10 +84,7 @@ package_syncthing() {
     "${pkgdir}/usr/lib/sysctl.d/30-syncthing.conf"
 
   # man pages
-  cd "${srcdir}/src/github.com/syncthing/${pkgname}/man"
-#   for file in $(find . -name '*.1' -print); do
-#     install -Dm644 $file "${pkgdir}"/usr/share/man/man1/$file
-#   done
+  pushd man
   install -Dm644 $pkgname.1 "${pkgdir}"/usr/share/man/man1/$pkgname.1
   for file in $(find . -name '*.5' -print); do
     install -Dm644 $file "${pkgdir}"/usr/share/man/man5/$file
@@ -96,7 +97,7 @@ package_syncthing() {
 package_syncthing-discosrv() {
   pkgdesc='Discovery server for Syncthing'
 
-  cd "${srcdir}/src/github.com/syncthing/${pkgbase}"
+  cd "$_srcdir/${pkgbase}"
   install -Dm755 stdiscosrv "${pkgdir}"/usr/bin/${pkgname}
 
   install -Dm644 man/stdiscosrv.1 \
@@ -111,7 +112,7 @@ package_syncthing-discosrv() {
 package_syncthing-relaysrv() {
   pkgdesc='Relay server for Syncthing'
 
-  cd "${srcdir}/src/github.com/syncthing/${pkgbase}"
+  cd "$_srcdir/${pkgbase}"
   install -Dm755 strelaysrv "${pkgdir}"/usr/bin/${pkgname}
 
   install -Dm644 man/strelaysrv.1 \
