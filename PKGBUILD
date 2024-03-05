@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
 
 _pyname=xxhash
 pkgname="python-${_pyname}"
-pkgver=3.2.0
-pkgrel=2
+pkgver=3.4.1
+pkgrel=1
 pkgdesc='Python binding for xxHash'
 arch=('x86_64')
 url="https://github.com/ifduyue/${pkgname}"
