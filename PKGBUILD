@@ -6,7 +6,7 @@
 
 pkgname=zathura
 pkgver=0.5.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Minimalistic document viewer"
 url="https://pwmt.org/projects/zathura/"
 arch=('x86_64')
