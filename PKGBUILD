@@ -4,7 +4,7 @@ _name=HyperKitty
 pkgname=hyperkitty
 pkgver=1.3.9
 _commit=534e790241c8510df892aa5edc4037bab3f61cc9 # refs/tags/1.3.9
-pkgrel=1
+pkgrel=2
 pkgdesc="A web interface to access GNU Mailman v3 archives"
 arch=(any)
 url="https://gitlab.com/mailman/hyperkitty"
@@ -35,9 +35,7 @@ makedepends=(
   python-build
   python-installer
   python-isort
-  python-pdm
-  python-setuptools
-  python-wheel
+  python-pdm-backend
 )
 checkdepends=(
   python-beautifulsoup4
