@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libtar
-  version: 1.2.20-6
+  version: 1.2.20-7
   arch:
     - x86_64
   pkgname:
     - libtar
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.2.20-7
+    packages:
+      - libtar-1.2.20-7-x86_64.pkg.tar.zst
   world:
     version: 1.2.20-6
     packages:
