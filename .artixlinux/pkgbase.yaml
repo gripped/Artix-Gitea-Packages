@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-unittest-mixins
-  version: 1.6-9
+  version: 1.6-10
   arch:
     - any
   pkgname:
     - python-unittest-mixins
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6-9
+    version: 1.6-10
     packages:
-      - python-unittest-mixins-1.6-9-any.pkg.tar.zst
+      - python-unittest-mixins-1.6-10-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
