@@ -5,8 +5,8 @@
 # Contributor: Bumsik Kim <k.bumsik@gmail.com>
 
 pkgname=nushell
-pkgver=0.89.0
-_commit=2c1560e281d65a50d90b30c42006755b364b4928
+pkgver=0.91.0
+_commit=3016d7a64ccb2c2eac9f735f6144fc896ea724a5
 pkgrel=1
 pkgdesc='A new type of shell'
 arch=('x86_64')
@@ -33,7 +33,7 @@ pkgver() {
 prepare() {
   cd "$pkgname"
 
-  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
