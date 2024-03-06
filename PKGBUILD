@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdeplasma-addons
-pkgver=6.0.0
+pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='All kind of addons to improve your Plasma experience'
@@ -54,7 +54,7 @@ optdepends=('kirigami-addons: User list applet'
             'quota-tools: disk quota applet')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('bd0d590664464c886fe14447be38c161a927b70fb6c9ce28a7090f9090260cf7'
+sha256sums=('6458e605d258e0b2a42d6014c336802c10df1af3fe14f34d0fdbf9e931cd2b6f'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
