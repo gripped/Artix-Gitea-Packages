@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: wpewebkit
-  version: 2.42.5-2
+  version: 2.42.5-3
   arch:
     - x86_64
   pkgname:
     - wpewebkit
     - wpewebkit-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.42.5-3
+    packages:
+      - wpewebkit-2.42.5-3-x86_64.pkg.tar.zst
+      - wpewebkit-docs-2.42.5-3-x86_64.pkg.tar.zst
   world:
     version: 2.42.5-2
     packages:
