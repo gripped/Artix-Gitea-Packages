@@ -3,9 +3,9 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=plasma-desktop
-pkgver=6.0.0
+pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1.1
+pkgrel=1
 pkgdesc='KDE Plasma Desktop'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -96,7 +96,7 @@ makedepends=(extra-cmake-modules
              xorg-server-devel)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('924ce04db2c88cf7ae1a23f19b38eb452977087b6e937ed0568ce5397bcc927d'
+sha256sums=('97d740e8e3b5ff92173b9a9086567dff40ff770ca34d0cecfeb35d650808a2f1'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
