@@ -6,12 +6,19 @@ _url=https://github.com/aarnt/octopi
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.15.0
-pkgrel=6
+pkgrel=7
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 url="https://tintaescura.com/projects/octopi/"
-makedepends=(qt5-tools cmake knotifications5 sudo alpm-octopi-utils pacman)
+makedepends=(
+    qt5-tools
+    cmake
+    knotifications5
+    sudo
+    alpm-octopi-utils
+    pacman
+)
 depends=(
     glibc
     gcc-libs
@@ -29,7 +36,10 @@ prepare() {
 
 build() {
     cmake -S "$pkgbase-$pkgver" -B build \
-        -DCMAKE_INSTALL_PREFIX=/usr # -DUSE_QTERMWIDGET6=ON
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DUSE_QTERMWIDGET6=OFF \
+        -DUSE_KF5NOTIFICATIONS=ON \
+        -DUSE_KF6NOTIFICATIONS=OFF
     cmake --build build
 }
 
@@ -39,14 +49,19 @@ package_octopi() {
         alpm-octopi-utils libalpm_octopi_utils.so
         sudo
     )
-    optdepends=('pacaur: for AUR support'
-            'paru: for AUR support'
-            'pikaur: for AUR support'
-            'trizen: for AUR support'
-            'yay: for AUR support'
-            'pacmanlogviewer: to view pacman log files'
-            'octopi-notifier-frameworks: Notifier for Octopi with Knotifications support')
-    provides=('octopi-repoeditor' 'octopi-cachecleaner')
+    optdepends=(
+        'octopi-notifier-frameworks: Notifier for Octopi with Knotifications support'
+        # 'pacmanlogviewer: to view pacman log files'
+        # 'pacaur: for AUR support'
+        # 'paru: for AUR support'
+        # 'pikaur: for AUR support'
+        'trizen: for AUR support'
+        # 'yay: for AUR support'
+    )
+    provides=(
+        'octopi-repoeditor'
+        'octopi-cachecleaner'
+    )
 
     DESTDIR="$pkgdir" cmake --install build
 
@@ -66,7 +81,6 @@ package_octopi-notifier-frameworks() {
         knotifications5
     )
     provides=('octopi-notifier')
-
 
     mv -v _octopi-notifier/* "$pkgdir"/
 }
