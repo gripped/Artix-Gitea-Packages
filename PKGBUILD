@@ -6,7 +6,7 @@ _url=https://github.com/aarnt/octopi
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.15.0
-pkgrel=7
+pkgrel=8
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -18,6 +18,7 @@ makedepends=(
     sudo
     alpm-octopi-utils
     pacman
+    pacman-contrib
 )
 depends=(
     glibc
@@ -45,8 +46,9 @@ build() {
 
 package_octopi() {
     depends+=(
-        pacman libalpm.so
         alpm-octopi-utils libalpm_octopi_utils.so
+        pacman libalpm.so
+        pacman-contrib
         sudo
     )
     optdepends=(
@@ -75,9 +77,9 @@ package_octopi() {
 package_octopi-notifier-frameworks() {
     pkgdesc+=' (notifier)'
     depends+=(
-        octopi
-        pacman libalpm.so
         alpm-octopi-utils libalpm_octopi_utils.so
+        pacman libalpm.so
+        octopi
         knotifications5
     )
     provides=('octopi-notifier')
