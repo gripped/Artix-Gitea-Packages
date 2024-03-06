@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - nushell
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.89.0-1
+    version: 0.91.0-1
     packages:
-      - nushell-0.89.0-1-x86_64.pkg.tar.zst
+      - nushell-0.91.0-1-x86_64.pkg.tar.zst
