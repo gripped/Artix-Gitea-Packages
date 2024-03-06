@@ -8,7 +8,7 @@ pkgname=(oxygen
 pkgdesc='KDE Oxygen style'
 pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL-2.0-or-later)
@@ -81,6 +81,7 @@ package_oxygen5() {
            qt5-x11extras)
   conflicts=('oxygen<5.27.80')
   replaces=('oxygen<5.27.80')
+  optdepends=()
   groups=()
 
   DESTDIR="$pkgdir" cmake --install build5
