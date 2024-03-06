@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libkscreen5
-  version: 5.27.11-1
+  version: 5.27.11-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.27.11-1
+    version: 5.27.11-2
     packages:
-      - libkscreen5-5.27.11-1-x86_64.pkg.tar.zst
+      - libkscreen5-5.27.11-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
