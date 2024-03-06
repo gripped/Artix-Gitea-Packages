@@ -7,7 +7,7 @@ pkgname=(breeze
          breeze5)
 pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 pkgdesc='Artwork, styles and assets for the Breeze visual style for the Plasma Desktop'
 url='https://kde.org/plasma-desktop/'
@@ -77,8 +77,6 @@ package_breeze5() {
            kwindowsystem5
            qt5-base
            qt5-declarative)
-  conflicts=('breeze<5.27.80')
-  replaces=('breeze<5.27.80')
   optdepends=()
   groups=()
 
