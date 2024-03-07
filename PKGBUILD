@@ -7,7 +7,7 @@
 
 pkgname=kdenlive
 pkgver=24.02.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A non-linear video editor for Linux using the MLT video framework'
 arch=(x86_64)
 url='https://apps.kde.org/kdenlive/'
@@ -64,12 +64,18 @@ optdepends=('bigsh0t: VR360 effects'
             'recordmydesktop: for screen capture')
 groups=(kde-applications
         kde-multimedia)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
+        https://invent.kde.org/multimedia/kdenlive/-/commit/56cb0ef5.patch)
 sha256sums=('135a91e9918eb631feb822b678625f3557e95b6a5e86bde1d3ac1df634015146'
-            'SKIP')
+            'SKIP'
+            '5fbad0c4cec97724d789640be2595e0d7f4e2220bc8c4386bdacdbe862b1c578')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
+
+prepare() {
+  patch -d $pkgname-$pkgver -p1 < 56cb0ef5.patch # Fix crashes due to thumbnailer loading Qt5 mlt plugins
+}
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
