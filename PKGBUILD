@@ -1,16 +1,16 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pytest-sugar
 pkgver=0.9.7
 _commit=20d8ad26024521392b61f95c7ca12db0f2c4bd04
-pkgrel=2
+pkgrel=3
 pkgdesc='A plugin for py.test that changes the default look and feel of py.test'
 arch=('any')
 license=('BSD')
-url='https://pivotfinland.com/pytest-sugar/'
+url='https://github.com/Teemu/pytest-sugar'
 depends=('python-pytest' 'python-termcolor' 'python-packaging')
 makedepends=('python-setuptools')
-source=("https://github.com/Frozenball/pytest-sugar/archive/$_commit/$pkgname-$_commit.tar.gz")
+source=("https://github.com/Teemu/pytest-sugar/archive/$_commit/$pkgname-$_commit.tar.gz")
 sha512sums=('38097a6efe2e614e093c979f8a5a56bbf1e4640401c1778b4244bc1ff87d5a211c5a3e3863c0a0d90b14ed426ec50e306965516b97fdf4ab0891051906f7aac8')
 
 prepare() {
