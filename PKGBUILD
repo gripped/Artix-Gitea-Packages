@@ -1,11 +1,11 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Brian Nguyen <bhnguyen@gmail.com>
 # Original Packager: Tom K <tomk@runbox.com>
 
 pkgname=hevea
 pkgver=2.36
-pkgrel=1
+pkgrel=2
 pkgdesc="A quite complete and fast LATEX to HTML translator"
 arch=(x86_64)
 depends=('texlive-bin')
