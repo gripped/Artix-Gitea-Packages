@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-io-socket-ssl
-  version: 2.084-1
+  version: 2.085-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.084-1
+    version: 2.085-1
     packages:
-      - perl-io-socket-ssl-2.084-1-any.pkg.tar.zst
+      - perl-io-socket-ssl-2.085-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
