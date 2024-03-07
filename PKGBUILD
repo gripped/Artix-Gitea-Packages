@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=grsync
+pkgver=1.3.1
+pkgrel=1
+pkgdesc="GTK+ GUI for rsync to synchronize folders, files and make backups"
+arch=('x86_64')
+url="http://www.opbyte.it/grsync/"
+license=('GPL')
+depends=('gtk3' 'rsync')
+makedepends=('intltool')
+source=(http://www.opbyte.it/release/$pkgname-$pkgver.tar.gz
+        grsync.appdata.xml
+        use-themed-icon.patch)
+sha256sums=('33cc0e25daa62e5ba7091caea3c83a8dc74dc5d7721c4501d349f210c4b3c6d3'
+            '5dee994cafbcf8adfda34767cbd60f7eb2039bdeccab2dfd879f045bd11fb9fd'
+            '6dd0e9b483db7e9f53d69d33d0b1a4cfc528ffee5eaeb2f9defe2596c570ad2d')
+
+prepare() {
+  cd $pkgname-$pkgver
+  
+  # Use themed icon
+  patch -Np1 -i ../use-themed-icon.patch
+
+  autoreconf -fi
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --disable-unity
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -Dm644 ../$pkgname.appdata.xml "$pkgdir/usr/share/metainfo/$pkgname.appdata.xml"
+}
