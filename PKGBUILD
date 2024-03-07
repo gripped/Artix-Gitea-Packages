@@ -13,7 +13,7 @@ pkgbase=vim
 pkgname=('vim' 'gvim' 'vim-runtime')
 pkgver=9.1.0151
 _versiondir=91
-pkgrel=1
+pkgrel=2
 pkgdesc='Vi Improved, a highly configurable, improved version of the vi text editor'
 url='https://www.vim.org'
 arch=('x86_64')
@@ -139,7 +139,7 @@ package_vim-runtime() {
 }
 
 package_vim() {
-  depends=("vim-runtime=${pkgver}-${pkgrel}" 'gpm' 'acl' 'glibc' 'libgcrypt' 'zlib' 'libsodium')
+  depends=("vim-runtime=${pkgver}-${pkgrel}" 'gpm' 'acl' 'glibc' 'libgcrypt' 'zlib')
   optdepends=('python: Python language support'
               'ruby: Ruby language support'
               'lua: Lua language support'
@@ -180,7 +180,7 @@ package_vim() {
 package_gvim() {
   pkgdesc+=' (with advanced features, such as a GUI)'
   depends=("vim-runtime=${pkgver}-${pkgrel}" 'gpm' 'libxt' 'gtk3' 'glibc' 'libgcrypt'
-           'zlib' 'libcanberra' 'libsodium')
+           'zlib' 'libcanberra')
   optdepends=('python: Python language support'
               'ruby: Ruby language support'
               'lua: Lua language support'
