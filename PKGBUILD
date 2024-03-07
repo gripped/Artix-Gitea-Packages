@@ -5,7 +5,7 @@
 
 pkgname=kate
 pkgver=24.02.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 license=(GPL-2.0-or-later LGPL-2.0-or-later)
 pkgdesc='Advanced text editor'
