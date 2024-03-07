@@ -8,7 +8,7 @@
 
 pkgname=konversation
 pkgver=24.02.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A user-friendly and fully-featured IRC client'
 arch=(x86_64)
 url='https://apps.kde.org/konversation/'
@@ -53,12 +53,18 @@ makedepends=(extra-cmake-modules
              kdoctools)
 groups=(kde-applications
         kde-network)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
+        https://invent.kde.org/network/konversation/-/commit/1d554cb2.patch)
 sha256sums=('c8d754a18ff1f6894ad581c97b94c3263e4be238a17e32f9c28c96064b8182e9'
-            'SKIP')
+            'SKIP'
+            '5790d1df335fd77f1e261551b83b108f627a07b334fe8548dc2e888cd29c78b3')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
+
+prepare() {
+  patch -d $pkgname-$pkgver -p1 < 1d554cb2.patch # Fix closing the application when system tray is enabled
+}
 
 build() {
   artix-cmake -B build -S $pkgname-$pkgver \
