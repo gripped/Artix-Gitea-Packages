@@ -56,3 +56,12 @@ repos:
   galaxy:
     version: null
     packages: []
+  asteroids-goblins:
+    version: null
+    packages: []
+  asteroids-gremlins:
+    version: null
+    packages: []
+  asteroids:
+    version: null
+    packages: []
