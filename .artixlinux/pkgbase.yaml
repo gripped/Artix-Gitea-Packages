@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postfix
-  version: 3.8.5-2
+  version: 3.8.6-1
   arch:
     - x86_64
   pkgname:
@@ -14,12 +14,12 @@ pkgbase:
     - postfix-pgsql
     - postfix-sqlite
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -38,16 +38,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.8.5-2
+    version: 3.8.6-1
     packages:
-      - postfix-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-cdb-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-ldap-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-lmdb-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-mysql-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-pcre-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-pgsql-3.8.5-2-x86_64.pkg.tar.zst
-      - postfix-sqlite-3.8.5-2-x86_64.pkg.tar.zst
+      - postfix-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-cdb-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-ldap-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-lmdb-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-mysql-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-pcre-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-pgsql-3.8.6-1-x86_64.pkg.tar.zst
+      - postfix-sqlite-3.8.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
