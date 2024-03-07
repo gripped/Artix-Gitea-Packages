@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-repoze.lru
-  version: 0.7-9
+  version: 0.7-10
   arch:
     - any
   pkgname:
     - python-repoze.lru
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7-9
+    version: 0.7-10
     packages:
-      - python-repoze.lru-0.7-9-any.pkg.tar.zst
+      - python-repoze.lru-0.7-10-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
