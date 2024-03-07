@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: onionshare
-  version: 2.6-2
+  version: 2.6.1-1
   arch:
     - any
   pkgname:
     - onionshare
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.6-2
+    version: 2.6.1-1
     packages:
-      - onionshare-2.6-2-any.pkg.tar.zst
+      - onionshare-2.6.1-1-any.pkg.tar.zst
