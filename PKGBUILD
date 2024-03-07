@@ -3,7 +3,7 @@
 # Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgname=tpm2-tools
-pkgver=5.5
+pkgver=5.6
 pkgrel=1
 pkgdesc='Trusted Platform Module 2.0 tools based on tpm2-tss'
 arch=(x86_64)
@@ -30,13 +30,14 @@ checkdepends=(
 optdepends=('tpm2-abrmd: user space resource manager')
 options=(!lto)
 source=($url/releases/download/$pkgver/$pkgname-$pkgver.tar.gz{,.asc})
-sha512sums=('24f72a3e9840d531d900e96771a863baae1c71a76fcad0fda8020dff06acd8e3b65b86401ace21f034766403caf9ae97ce710ff6013bb7ed25657a6ecf325470'
+sha512sums=('14216f29ed3ecca5fbe356ed3744c8b6b25a62ff11b2aed596d11101328c8bfd29a02f6ca5a218f9a4477a5e9648c50f0ae96e71de0b4ff5ea1f98ebeeb73cd7'
             'SKIP')
-b2sums=('2225f9e0835988351f84ed06f914616e25fd65bacaa93b51d0bb04185314efb9a6f60eb3539b250f54b2c2ba590f1b76594df3e625e45c8d37e38d13371bea26'
+b2sums=('fe88722c26d62128cd6dfbdd8ef2568656a75fe27b1443fed28387d0db1f50b7d0651819d34dfa98acde785b4cfb4e7c11420b110bb5333ed2bb6b67cdd4fc70'
         'SKIP')
 validpgpkeys=(
   '5B482B8E3E19DA7C978E1D016DE2E9078E1F50C1'  # William Roberts (Bill Roberts) <william.c.roberts@intel.com>
   '6313E6DC41AAFC315A8760A414986F6944B1F72B'  # Desai, Imran (idesai-github-gpg) <imran.desai@intel.com>
+  '6F72A30EEA41B9B548570AD20D0DB2B265493E29'  # ajay kishore <ajay.kishore@intel.com>
 )
 
 build() {
