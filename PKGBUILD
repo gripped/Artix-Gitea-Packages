@@ -5,7 +5,7 @@
 
 pkgname=okular
 pkgver=24.02.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Document Viewer'
 arch=(x86_64)
 url='https://apps.kde.org/okular/'
@@ -51,8 +51,7 @@ makedepends=(ebook-tools
              extra-cmake-modules
              kdegraphics-mobipocket
              kdoctools)
-optdepends=('calligra: ODT and ODP support'
-            'ebook-tools: mobi and epub support'
+optdepends=('ebook-tools: mobi and epub support'
             'kdegraphics-mobipocket: mobi support'
             'unarchiver: Comic Book Archive support (alternative)'
             'unrar: Comic Book Archive support')
