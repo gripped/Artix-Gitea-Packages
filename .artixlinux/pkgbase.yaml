@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: artix-mirrorlist
-  version: 20240206-1
+  version: 20240307-1
   arch:
     - any
   pkgname:
     - artix-mirrorlist
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 20240206-1
+    version: 20240307-1
     packages:
-      - artix-mirrorlist-20240206-1-any.pkg.tar.zst
+      - artix-mirrorlist-20240307-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []

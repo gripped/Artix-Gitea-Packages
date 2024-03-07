@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2023-08-09
+## Generated on 2024-03-07
 ##
 
 # Artix mirrors
@@ -83,7 +83,7 @@ Server = https://mirror.freedif.org/Artix/$repo/os/$arch
 # Taiwan
 Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
 # Vietnam
-Server = https://mirrors.42tm.tech/artix-linux/$repo/os/$arch
+Server = https://mirrors.nguyenhoang.cloud/artix-linux/$repo/os/$arch
 
 ## Oceania
 # Australia
