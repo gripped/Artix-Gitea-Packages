@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: rtmpdump
-  version: 1:2.4.r99.f1b83c1-2
+  version: 1:2.4.r105.6f6bb13-1
   arch:
     - x86_64
   pkgname:
     - rtmpdump
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.4.r99.f1b83c1-2
+    version: 1:2.4.r105.6f6bb13-1
     packages:
-      - rtmpdump-1:2.4.r99.f1b83c1-2-x86_64.pkg.tar.zst
+      - rtmpdump-1:2.4.r105.6f6bb13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
