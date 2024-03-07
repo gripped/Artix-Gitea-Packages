@@ -3,9 +3,9 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=consul
-_commit=009041f807ba1d6263052fda7406bc0d9e3125af
-pkgver=1.17.3
-pkgrel=1
+_commit=349cec176db1a6067952c1708d384e56de4eb9e1
+pkgver=1.18.0
+pkgrel=2
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
 url="https://www.consul.io"
@@ -77,6 +77,8 @@ package() {
   install -Dm755 "build/consul" "${pkgdir}/usr/bin/consul"
 
   install -Dm644 "${srcdir}/consul.sysusers" "${pkgdir}/usr/lib/sysusers.d/consul.conf"
+
+  install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 
 # vim:set ts=2 sw=2 et:
