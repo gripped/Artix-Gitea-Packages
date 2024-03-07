@@ -10,7 +10,7 @@
 pkgname=python-dateutil
 pkgver=2.9.0
 # _sha=db9d018944c41ddc740015cf5f64717c2ba64a5c
-pkgrel=1
+pkgrel=2
 pkgdesc="Provides powerful extensions to the standard datetime module"
 arch=(any)
 license=(BSD-3-Clause Apache-2.0)
@@ -27,6 +27,12 @@ source=("git+$url.git#commit=$pkgver")
 sha256sums=('SKIP')
 # validpgpkeys=('5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23') # Mario Corchero <mariocj89@gmail.com>
 
+prepare() {
+  cd dateutil
+  # Download the tarball required for running tests
+  PYTHONPATH=src python updatezinfo.py
+}
+
 build() {
   cd dateutil
   python -m build -wn
@@ -35,13 +41,17 @@ build() {
 check() {
   cd dateutil
   # https://github.com/pytest-dev/pytest/issues/5678
-  pytest -W ignore::pytest.PytestUnknownMarkWarning \
-    --deselect tests/test_imports.py::test_lazy_import \
-    --deselect tests/test_tz.py::test_tzlocal_local_time_trim_colon
+  PYTHONPATH=src pytest -W ignore::pytest.PytestUnknownMarkWarning .
 }
 
 package() {
   cd dateutil
   python -m installer -d "$pkgdir" dist/*.whl
   install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+
+  # HACK: package_date is not installed via PEP517 while it should
+  # https://github.com/dateutil/dateutil/blob/1ae807774053c071acc9e7d3d27778fba0a7773e/setup.cfg#L52
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  install -Dm0644 -t "$pkgdir/usr/lib/python${python_version}/site-packages/dateutil/zoneinfo/" \
+  	"${srcdir}/dateutil/src/dateutil/zoneinfo/dateutil-zoneinfo.tar.gz"
 }
