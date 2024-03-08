@@ -1,46 +1,51 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: MatMoul <matmoul at the google email domain which is .com>
 
-_url=https://github.com/aarnt/octopi
-
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.15.0
-pkgrel=8
+pkgrel=9
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 url="https://tintaescura.com/projects/octopi/"
 makedepends=(
-    qt5-tools
+    qt6-tools
     cmake
-    knotifications5
+    kstatusnotifieritem
     sudo
     alpm-octopi-utils
     pacman
     pacman-contrib
+    git
 )
 depends=(
     glibc
     gcc-libs
-    qt5-base
-    qtermwidget
+    qt6-base
+    qtermwidget-qt6
 )
-source=("$pkgbase-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('e94525d906d6ab4f5fc594cf1a267668ae5f1fa7f32e449ddfa84328dd738f30')
+source=(
+    git+https://github.com/aarnt/octopi.git#tag=v$pkgver
+    kf6-fix.patch::https://gitea.artixlinux.org/artoo/octopi/commit/2bc37ecd570baaf0e69e878c60a93993136da40d.patch
+    window.patch::https://gitea.artixlinux.org/artoo/octopi/commit/f0b15ef621f21eb3cad1c18d0b928d37eb732b97.patch
+)
+sha256sums=('SKIP'
+            'bdd9fd77d254894147fb68962574977e4a7944304e585f8fb792a98b27c5b246'
+            '7eb66605f838ac78848fe067dded279c2d45ba0e5f1a8295cf07c0a3b333e702')
 
 prepare() {
-    cd "$pkgbase-$pkgver"
+    cd "$pkgbase"
+    git apply ../kf6-fix.patch
+    git apply ../window.patch
     cp resources/images/octopi_green.png resources/images/octopi.png
 }
 
-
 build() {
-    cmake -S "$pkgbase-$pkgver" -B build \
+    cmake -S "$pkgbase" -B build \
         -DCMAKE_INSTALL_PREFIX=/usr \
-        -DUSE_QTERMWIDGET6=OFF \
-        -DUSE_KF5NOTIFICATIONS=ON \
-        -DUSE_KF6NOTIFICATIONS=OFF
+        -DUSE_QTERMWIDGET6=ON \
+        -DUSE_KF6NOTIFICATIONS=ON
     cmake --build build
 }
 
@@ -67,7 +72,7 @@ package_octopi() {
 
     DESTDIR="$pkgdir" cmake --install build
 
-    install -d _octopi-notifier/{/etc/xdg/autostart,usr/share/applications,usr/bin}
+    install -d _octopi-notifier/{/etc/xdg/autostart,usr/{share/applications,bin}}
     mv -v "$pkgdir"/etc/xdg/autostart/octopi-notifier.desktop _octopi-notifier/etc/xdg/autostart/
     mv -v "$pkgdir"/usr/share/applications/octopi-notifier.desktop _octopi-notifier/usr/share/applications/
     mv -v "$pkgdir"/usr/bin/octopi-notifier _octopi-notifier/usr/bin/
@@ -80,7 +85,7 @@ package_octopi-notifier-frameworks() {
         alpm-octopi-utils libalpm_octopi_utils.so
         pacman libalpm.so
         octopi
-        knotifications5
+        kstatusnotifieritem
     )
     provides=('octopi-notifier')
 
