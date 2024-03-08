@@ -1,0 +1,2 @@
+# python-argparse-manpage
+
