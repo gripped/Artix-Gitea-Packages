@@ -5,25 +5,26 @@
 # Contributor: parchd <parchd@archlinux.info>
 
 pkgname=opensmtpd
-pkgver=7.4.0p1
+pkgver=7.5.0rc1
 pkgrel=1
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
 url="https://www.opensmtpd.org/"
 license=(custom)
-depends=(libevent libxcrypt openssl pam esysusers zlib)
+depends=(libevent libxcrypt openssl pam zlib)
 optdepends=('opensmtpd-filter-rspamd: rspamd integration')
 makedepends=(signify)
 provides=(smtp-server smtp-forwarder)
 conflicts=(smtp-server smtp-forwarder)
 backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
-source=("https://www.opensmtpd.org/archives/${pkgname}-${pkgver}.tar.gz"
+#"https://www.opensmtpd.org/archives/${pkgname}-${pkgver}.tar.gz"
+source=("https://github.com/OpenSMTPD/OpenSMTPD/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz"
         ${pkgname}-${pkgver}.signify::"${url}/archives/${pkgname}-${pkgver}.sum.sig"
         opensmtpd-20181026.pub
         opensmtpd.sysusers)
-sha256sums=('9e82a2ec9419e181d4ca27d8e3ebe5d129fded5ba84022ff4d11a73f8edb70b5'
-            '5099518cc33926cf112ecd1e182644f0b38830ae058adbc39094326faaca9899'
+sha256sums=('0b490e5a6a2d630bf33314435a67a82f1c30fd1fcbdbd680eb6ecd6edec71a97'
+            '20a3013dc11fdea7f3bfd34c793acc4d65fe5888a634ae7c4d0000ce81489d00'
             'b74dca53567cd5070905a0a1acd77041805b6c0c4a0e1285830ea13654e1dcd5'
             '5a6e0e2f1ceb4f6fe69aaa7871291af3b4ee1c55a96a667e72a309f961c8bd2d')
 
