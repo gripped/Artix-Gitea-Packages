@@ -5,7 +5,7 @@
 pkgbase=flatbuffers
 pkgname=(flatbuffers python-flatbuffers)
 # https://github.com/google/flatbuffers/blob/master/CHANGELOG.md
-pkgver=23.5.26
+pkgver=24.3.7
 pkgrel=1
 pkgdesc='An efficient cross platform serialization library for C++, with support for Java, C# and Go'
 arch=(x86_64)
@@ -14,7 +14,7 @@ license=(Apache)
 depends=(gcc-libs)
 makedepends=(cmake python-setuptools python-numpy)
 source=(https://github.com/google/$pkgbase/archive/v$pkgver/$pkgbase-$pkgver.tar.gz)
-sha256sums=('1cce06b17cddd896b6d73cc047e36a254fb8df4d7ea18a46acf16c4c0cd3f3f3')
+sha256sums=('bfff9d2150fcff88f844e8c608b02b2a0e94c92aea39b04c0624783464304784')
 
 prepare() {
   sed -i 's/-Werror=/-W/g;s/-Werror//g' $pkgname-$pkgver/CMakeLists.txt
@@ -22,11 +22,6 @@ prepare() {
   cd $pkgbase-$pkgver
   # Work-around missing out-of-source build support in Python tests
   sed -i 's#${test_dir}/../flatc#${test_dir}/../../build/flatc#' tests/PythonTest.sh
-  # This script no longer works for us after https://github.com/google/flatbuffers/pull/7529
-  # TODO: notify upstream about this and that the Python workflow [1] doesn't work [2]
-  # [1] https://github.com/google/flatbuffers/blob/v22.9.24/.github/workflows/build.yml#L413
-  # [2] https://github.com/google/flatbuffers/actions/runs/3103852116/jobs/5034196360
-  sed -i 's#${test_dir}/../../python#${test_dir}/../python#' tests/PythonTest.sh
 }
 
 build() {
