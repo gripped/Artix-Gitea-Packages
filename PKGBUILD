@@ -1,18 +1,19 @@
 # Maintainer: Nathan <ndowens@artixlinux.org>
 
+_pkgname=shellcheck
+
 pkgname=shellcheck-bin
-pkgver=0.9.0
-pkgrel=47
+pkgver=0.10.0
+pkgrel=1
 pkgdesc='Shell script analysis tool (binary release)'
 license=(AGPL3)
 arch=(x86_64)
 url='https://shellcheck.net'
 conflicts=('shellcheck')
 provides=('shellcheck')
-source_x86_64=(https://github.com/koalaman/"${pkgname%-bin}"/releases/download/v"$pkgver"/"${pkgname%-bin}"-v"${pkgver}".linux.x86_64.tar.xz)
-sha512sums_x86_64=('157fd8b2c18a257f3876e23015580ea63d27b12c4f13f87d625a180e8ca042e7501271d15edeb36e7b5780da73815b45386a33e063ab1c891d838f35c778a8ac')
-
+source_x86_64=(https://github.com/koalaman/"$_pkgname"/releases/download/v"$pkgver"/"$_pkgname"-v"${pkgver}".linux.x86_64.tar.xz)
+sha512sums_x86_64=('31006830087c2b9ffe9fa36c1ab4a8b11c85078cac8203265d0cfd630c70a4a506e66dd9d7ccde964360ad95045894149de457db34f10cad76708c7a4aa544ca')
 
 package() {
-    install -Dm755 "shellcheck-v${pkgver}/shellcheck" -t "${pkgdir}/usr/bin"
+    install -Dm755 "$_pkgname-v${pkgver}"/shellcheck -t "${pkgdir}"/usr/bin
 }
