@@ -2,8 +2,8 @@
 # Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=cryptsetup
-pkgver=2.7.0
-pkgrel=3
+pkgver=2.7.1
+pkgrel=1
 pkgdesc='Userspace setup tool for transparent encryption of block devices using dm-crypt'
 arch=(x86_64)
 license=('GPL')
@@ -16,7 +16,7 @@ provides=('libcryptsetup.so')
 options=('!emptydirs')
 validpgpkeys=('2A2918243FDE46648D0686F9D9B0577BD93E98FC') # Milan Broz <gmazyland@gmail.com>
 source=("https://www.kernel.org/pub/linux/utils/cryptsetup/v${pkgver%.*}/${pkgname}-${pkgver}.tar."{xz,sign})
-sha256sums=('94003a00cd5a81944f45e8dc529e0cfd2a6ff629bd2cd21cf5e574e465daf795'
+sha256sums=('da5d1419e2a86e01aa32fd79582cd54d208857cb541bca2fd426a5ff1aaabbc3'
             'SKIP')
 
 build() {
