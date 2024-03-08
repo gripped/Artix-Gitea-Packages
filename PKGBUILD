@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.7.7
+_ver=6.7.9
 _rel=1
 _arch=arch${_rel}
 _artix=artix${_rel}
@@ -11,6 +11,7 @@ pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
+license=(GPL-2.0-or-later)
 makedepends=(
   bc
   cpio
@@ -42,13 +43,13 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('256b8b44570ddbe266eb3ad0c2cba2616f1609b4a3de5014a3da5512907b14d9'
+sha256sums=('0fd733fc0778f8da1fdf66df1698d394248807de71eef83a4d1218bcb3dfd346'
             'SKIP'
-            '47208683675e5ad065c9a3821aa975fdb3c37d7d7d77222da4d6f8c3f09827d1'
+            '16b6541d9aad469faf325a354c1b7cdff5df402a8073317d548b93dd1c184a4f'
             'fcd97b47bd191bd67cdbd98a633f67cc675d939a3372427fd6e7623904a22062')
-b2sums=('ef97a036ab6cd421200b2e8f0a49c6b570d2269a5e182ea948d48d456e6414bfa61f5f6efa2bad65efbe811d2078a54a4edff9c27de609401160f3905fe27a22'
+b2sums=('2a5990e067439dcb3a6e7647832c85a2ce7faf28c48f414ebcb4d33ea37f870204c4b6bf98fca1faaf61bb59f579d6b597d8b2b29bd8cd2cc3b25afba3fe1fd8'
         'SKIP'
-        '45e0ef14e26323bbd2457f77e4c1e9fc0c2d6fb028bb24814d38c2ebfbeaa2aee29cad2f5154df372d098856cf7f3fcd585575e5b95b93cba47ee5de9f92b8e0'
+        'd8c6fb5b5438236ce0e9ed3cfbcd016dd04835ad2665190b3d9974b2491ca7fdbd4216470e3d47fc4dc7f089133f535e5cad3fd94ee67944f412712bf27ac0c7'
         '2c533307ca49949387b90ecde08facc42dd528bfb4f2c04ee3d350a81e437692d2c7d98b6e6632983aaa992f3bc1d9889f06820a3aab67c7801767aa22a67c24')
 
 export KBUILD_BUILD_HOST=artixlinux
@@ -92,50 +93,6 @@ build() {
 
 _package() {
   pkgdesc="The $pkgdesc kernel and modules"
-  license=(
-    'Apache-2.0 OR MIT'
-
-    'BSD-2-Clause OR GPL-2.0-or-later'
-
-    BSD-3-Clause
-    'BSD-3-Clause OR GPL-2.0-only'
-    'BSD-3-Clause OR GPL-2.0-or-later'
-    BSD-3-Clause-Clear
-
-    GPL-1.0-or-later
-    'GPL-1.0-or-later OR BSD-3-Clause'
-
-    GPL-2.0-only
-    'GPL-2.0-only OR Apache-2.0'
-    'GPL-2.0-only OR BSD-2-Clause'
-    'GPL-2.0-only OR BSD-3-Clause'
-    'GPL-2.0-only OR CDDL-1.0'
-    'GPL-2.0-only OR Linux-OpenIB'
-    'GPL-2.0-only OR MIT'
-    'GPL-2.0-only OR MPL-1.1'
-    'GPL-2.0-only OR X11'
-    'GPL-2.0-only WITH Linux-syscall-note'
-
-    GPL-2.0-or-later
-    'GPL-2.0-or-later OR BSD-2-Clause'
-    'GPL-2.0-or-later OR BSD-3-Clause'
-    'GPL-2.0-or-later OR MIT'
-    'GPL-2.0-or-later OR X11'
-    'GPL-2.0-or-later WITH GCC-exception-2.0'
-
-    ISC
-
-    LGPL-2.0-or-later
-    'LGPL-2.1-only'
-    'LGPL-2.1-only OR BSD-2-Clause'
-
-    LGPL-2.1-or-later
-
-    MIT
-    MPL-1.1
-    X11
-    Zlib
-  )
   depends=(
     coreutils
     initramfs
@@ -176,58 +133,6 @@ _package() {
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
-  license=(
-    BSD-3-Clause
-    'BSD-3-Clause OR GPL-2.0-only'
-
-    GPL-1.0-or-later
-    'GPL-1.0-or-later WITH Linux-syscall-note'
-
-    GPL-2.0-only
-    'GPL-2.0-only OR Apache-2.0'
-    'GPL-2.0-only OR BSD-2-Clause'
-    'GPL-2.0-only OR BSD-3-Clause'
-    'GPL-2.0-only OR CDDL-1.0'
-    'GPL-2.0-only OR Linux-OpenIB'
-    'GPL-2.0-only OR Linux-OpenIB OR BSD-2-Clause'
-    'GPL-2.0-only OR MIT'
-    'GPL-2.0-only OR MPL-1.1'
-    'GPL-2.0-only OR X11'
-    'GPL-2.0-only WITH Linux-syscall-note'
-    '(GPL-2.0-only WITH Linux-syscall-note) AND MIT'
-    '(GPL-2.0-only WITH Linux-syscall-note) OR BSD-2-Clause'
-    '(GPL-2.0-only WITH Linux-syscall-note) OR BSD-3-Clause'
-    '(GPL-2.0-only WITH Linux-syscall-note) OR CDDL-1.0'
-    '(GPL-2.0-only WITH Linux-syscall-note) OR Linux-OpenIB'
-    '(GPL-2.0-only WITH Linux-syscall-note) OR MIT'
-
-    GPL-2.0-or-later
-    'GPL-2.0-or-later OR BSD-2-Clause'
-    'GPL-2.0-or-later OR BSD-3-Clause'
-    'GPL-2.0-or-later OR MIT'
-    'GPL-2.0-or-later WITH Linux-syscall-note'
-    '(GPL-2.0-or-later WITH Linux-syscall-note) OR BSD-3-Clause'
-    '(GPL-2.0-or-later WITH Linux-syscall-note) OR MIT'
-    'LGPL-2.0-or-later OR BSD-2-Clause'
-    'LGPL-2.0-or-later WITH Linux-syscall-note'
-
-    ISC
-
-    'LGPL-2.0-or-later WITH Linux-syscall-note'
-    'LGPL-2.0-or-later OR BSD-2-Clause'
-
-    LGPL-2.1-only
-    'LGPL-2.1-only OR BSD-2-Clause'
-    'LGPL-2.1-only OR MIT'
-    'LGPL-2.1-only WITH Linux-syscall-note'
-
-    LGPL-2.1-or-later
-    'LGPL-2.1-or-later OR BSD-2-Clause'
-    'LGPL-2.1-or-later WITH Linux-syscall-note'
-
-    MIT
-    Zlib
-  )
   depends=(pahole)
 
   cd $_srcname
@@ -310,28 +215,6 @@ _package-headers() {
 
 _package-docs() {
   pkgdesc="Documentation for the $pkgdesc kernel"
-  license=(
-    BSD-3-Clause
-
-    GFDL-1.1-no-invariants-or-later
-
-    GPL-2.0-only
-    'GPL-2.0-only OR BSD-2-Clause'
-    'GPL-2.0-only OR BSD-3-Clause'
-    'GPL-2.0-only OR GFDL-1.1-no-invariants-or-later'
-    'GPL-2.0-only OR GFDL-1.2-no-invariants-only'
-    'GPL-2.0-only OR MIT'
-
-    GPL-2.0-or-later
-    'GPL-2.0-or-later OR BSD-2-Clause'
-    'GPL-2.0-or-later OR CC-BY-4.0'
-    'GPL-2.0-or-later OR MIT'
-    'GPL-2.0-or-later OR X11'
-
-    'LGPL-2.1-only OR BSD-2-Clause'
-
-    MIT
-  )
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
