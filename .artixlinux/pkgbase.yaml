@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libplist
-  version: 2.3.0-2
+  version: 2.4.0-1
   arch:
     - x86_64
   pkgname:
     - libplist
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.3.0-2
+    version: 2.4.0-1
     packages:
-      - libplist-2.3.0-2-x86_64.pkg.tar.zst
+      - libplist-2.4.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
