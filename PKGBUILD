@@ -7,7 +7,7 @@ pkgbase=lib32-pango
 pkgname=(
   lib32-pango
 )
-pkgver=1.52.0
+pkgver=1.52.1
 pkgrel=1
 epoch=1
 pkgdesc="A library for layout and rendering of text (32-bit)"
@@ -26,7 +26,7 @@ makedepends=(
   git
   meson
 )
-_commit=fed7be510f58ed848f23f653f3fba45f44eb3b9c  # tags/1.52.0^0
+_commit=089aa34fbbc09cec556b818bd634260b4d2124c6  # tags/1.52.1^0
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#commit=$_commit")
 b2sums=('SKIP')
 
