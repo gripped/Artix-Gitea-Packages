@@ -1,42 +1,57 @@
-# Maintainer: Torr <torr@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Yejun Yang yejunx AT gmail DOT com
+
 pkgname=ziproxy
 pkgver=3.3.2
-pkgrel=1
-pkgdesc="forwarding (non-caching) compressing HTTP proxy server"
-arch=("x86_64")
-url="https://ziproxy.sourceforge.net"
-## File: https://sourceforge.net/p/ziproxy/code/HEAD/tree/trunk/ziproxy-default/ChangeLog?format=raw
-changelog=Changelog.txt
-license=("GPL2")
-depends=(
-	"glibc"
-	"zlib"
-	"giflib"
-	"libjpeg-turbo"
-	"libpng"
-	"jasper"
-	"libsasl"
-)
-makedepends=(
-	"gcc"
-	"make"
-)
-source=(
-	"$pkgver.tar.xz::https://sourceforge.net/projects/$pkgname/files/$pkgname/$pkgname-$pkgver/$pkgname-$pkgver.tar.xz/download"
-)
-sha256sums=(
-	"45658965decd0b32f1065d1bb22429981b16608c89058a507a51cf3b7927fbe2"
-)
+pkgrel=5
+pkgdesc="forwarding, non-caching, compressing HTTP proxy server"
+arch=('x86_64')
+url="http://ziproxy.sourceforge.net/"
+license=('GPL-2.0-or-later')
+depends=('giflib' 'glibc' 'libpng' 'libjpeg' 'zlib' 'jasper' 'libsasl')
+backup=(etc/ziproxy/ziproxy.conf
+  etc/ziproxy/bo_exception.list
+  etc/ziproxy/http.passwd
+  etc/ziproxy/noprocess.list
+  etc/ziproxy/replace.list
+  var/lib/ziproxy/error/400.html
+  var/lib/ziproxy/error/404.html
+  var/lib/ziproxy/error/407.html
+  var/lib/ziproxy/error/408.html
+  var/lib/ziproxy/error/409.html
+  var/lib/ziproxy/error/500.html
+  var/lib/ziproxy/error/503.html)
+source=(https://downloads.sourceforge.net/project/ziproxy/ziproxy/ziproxy-$pkgver/ziproxy-$pkgver.tar.bz2
+  ziproxy.logrotate
+  ziproxy.sysusers
+  ziproxy.tmpfiles)
+sha256sums=('76a1fc62c76dfa1a8d0784193aba20a96e214dd615b7927b497ceee5059699f1'
+            '6087c75dc9a9d493365bb599bf4dcb72fab95da54ea9b75418616cf0cd9be5e3'
+            'a2aa82f37b0436e99cda917d994a728d0e8b08ffc9c3f87dd3b6e509a0b36a14'
+            '03bb3a7f5e1c1126c2c59b650f767b54ab011b0a8165efd5db85cbc52080cc0a')
+
+prepare() {
+  cd $pkgname-$pkgver
+  autoreconf -fiv
+}
 
 build() {
-	cd "$pkgname-$pkgver"
-	./configure --prefix=/usr \
-		--with-jasper
-	make
+  cd $pkgname-$pkgver
+  ./configure ./configure --prefix=/usr --with-jasper
+  make
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	make install DESTDIR="$pkgdir"
-	install -Dm 644 COPYING -t "$pkgdir/usr/share/licenses/$pkgname"
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+
+  install -d "$pkgdir"/var/lib/ziproxy/error
+  install -d "$pkgdir"/etc
+
+  sed -i 's#var/ziproxy#var/lib/ziproxy#' etc/ziproxy/ziproxy.conf
+  cp -a etc/ziproxy "$pkgdir"/etc/ziproxy
+  install -m644 var/ziproxy/error/* "$pkgdir"/var/lib/ziproxy/error
+  install -Dm0644 ../ziproxy.logrotate "$pkgdir"/etc/logrotate.d/ziproxy
+  install -Dm0644 ../ziproxy.sysusers "$pkgdir"/usr/lib/sysusers.d/ziproxy.conf
+  install -Dm0644 ../ziproxy.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/ziproxy.conf
 }
