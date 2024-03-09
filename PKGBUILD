@@ -8,7 +8,7 @@ pkgname=(oxygen-icons
          oxygen-icons-svg)
 pkgver=6.0.0
 epoch=1
-pkgrel=1
+pkgrel=2
 pkgdesc='The Oxygen Icon Theme'
 arch=(any)
 url='https://community.kde.org/Frameworks'
@@ -26,8 +26,6 @@ build() {
 }
 
 package_oxygen-icons() {
-  groups=(kf5)
-
   DESTDIR="$pkgdir" cmake --install build
 }
 
