@@ -8,7 +8,7 @@
 
 pkgname=ocaml-findlib
 pkgver=1.9.6
-pkgrel=3.1
+pkgrel=4
 pkgdesc='OCaml package manager'
 arch=(x86_64)
 url='http://projects.camlcity.org/projects/findlib.html'
@@ -21,7 +21,6 @@ options=(!makeflags !strip staticlibs zipman)
 build() {
   cd findlib-$pkgver
   ./configure \
-    -bindir /usr/bin \
     -config /etc/findlib.conf \
     -mandir /usr/share/man \
     -sitelib /usr/lib/ocaml
