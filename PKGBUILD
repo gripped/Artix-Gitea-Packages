@@ -1,21 +1,20 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
 
 _pyname=mccabe
 pkgname=python-$_pyname
 pkgver=0.7.0
-pkgrel=5
+pkgrel=6
 pkgdesc='McCabe complexity checker for Python'
 arch=(any)
 url="https://github.com/PyCQA/$_pyname"
-license=(custom:Expat)
+license=(MIT)
 depends=(python)
 makedepends=(python-{build,installer,wheel}
              python-setuptools)
 checkdepends=(python-hypothesmith
-              python-pytest
-              python-pytest-runner)
+              python-pytest)
 _archive="$_pyname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz")
 sha256sums=('f4f7fa5ed8b7f77601fea3e748d6238928323a291fcde0fddbbe6cb2d0cb2da2')
