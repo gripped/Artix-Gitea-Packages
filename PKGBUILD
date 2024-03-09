@@ -1,19 +1,23 @@
-# Maintainer:
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=a2ps
 pkgver=4.15.5
-pkgrel=1
-pkgdesc="An Any to PostScript filter"
-arch=('x86_64')
-url="https://www.gnu.org/software/a2ps/"
-license=('GPL3')
-depends=('psutils' 'imagemagick' 'perl')
-makedepends=('gperf')
-backup=('etc/a2ps/a2ps.cfg' 'etc/a2ps/a2ps-site.cfg')
-source=(https://ftp.gnu.org/gnu/a2ps/${pkgname}-${pkgver}.tar.gz{,.sig}
-        a2ps-4.13c-emacs.patch
-        a2ps-adhere-source-date-epoch.patch)
+pkgrel=2
+pkgdesc='An Any to PostScript filter'
+arch=(x86_64)
+url="https://www.gnu.org/software/$pkgname"
+license=(GPL3)
+depends=(imagemagick
+         perl
+         psutils)
+makedepends=(gperf)
+backup=('etc/a2ps/a2ps.cfg'
+        'etc/a2ps/a2ps-site.cfg')
+_archive="$pkgname-$pkgver"
+source=("https://ftp.gnu.org/gnu/$pkgname/$_archive.tar.gz"{,.sig}
+        "$pkgname-4.13c-emacs.patch"
+        "$pkgname-adhere-source-date-epoch.patch")
 sha256sums=('81bb1b4104e7c2639762451edc9786daf3dfeb3884adfc7dc6ac9d208f30da7f'
             'SKIP'
             '943739a788db47f10942477754f42c8c9b22cdaad4463bea4103c31a330de76a'
@@ -21,21 +25,25 @@ sha256sums=('81bb1b4104e7c2639762451edc9786daf3dfeb3884adfc7dc6ac9d208f30da7f'
 validpgpkeys=('24093F016FFE8602EF449BB84C8EF3DA3FD37230') # Reuben Thomas <rrt@sc3d.org>
 
 prepare() {
-  cd ${pkgname}-${pkgver}
-  patch -p1 -i "${srcdir}/a2ps-4.13c-emacs.patch"
-  patch -p1 -i "${srcdir}/a2ps-adhere-source-date-epoch.patch"
+  cd "$_archive"
+  patch -p1 -i "../$pkgname-4.13c-emacs.patch"
+  patch -p1 -i "../$pkgname-adhere-source-date-epoch.patch"
 }
 
 build() {
-  cd ${pkgname}-${pkgver}
-  libtoolize --force --copy
-  autoreconf --force --install -I m4 
-  LIBS+="-lm" ./configure --prefix=/usr --sysconfdir=/etc/a2ps \
-    --includedir=/usr/include --enable-shared --enable-nls
-  make
+	cd "$_archive"
+	libtoolize --force --copy
+	autoreconf --force --install -I m4
+	LIBS+="-lm" ./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc/a2ps \
+		--includedir=/usr/include \
+		--enable-shared \
+		--enable-nls
+	make
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
-  make DESTDIR="${pkgdir}" install
+	cd "$_archive"
+	make DESTDIR="$pkgdir" install
 }
