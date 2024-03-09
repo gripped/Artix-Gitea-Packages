@@ -6,7 +6,7 @@ pkgname=(plasma-integration
          plasma5-integration)
 pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=4
 pkgdesc='Qt Platform Theme integration plugins for the Plasma workspaces'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -21,8 +21,6 @@ depends=(gcc-libs
          kiconthemes
          ki18n
          kio
-         kjobwidgets
-         kservice
          kstatusnotifieritem
          kwidgetsaddons
          kwindowsystem
@@ -105,6 +103,7 @@ package_plasma5-integration() {
            qt5-x11extras
            wayland)
   conflicts=('plasma-integration<5.27.80')
+  replaces=('plasma-integration<5.27.80')
   groups=()
 
   DESTDIR="$pkgdir" cmake --install build5
