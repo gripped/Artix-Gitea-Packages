@@ -5,9 +5,9 @@
 # Contributor: Geoffroy Carrier <geoffroy@archlinux.org>
 
 pkgbase=bluez
-pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-deprecated-tools' 'bluez-hid2hci' 'bluez-mesh' 'bluez-obex' 'bluez-plugins')
-pkgver=5.72
-pkgrel=2
+pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-deprecated-tools' 'bluez-hid2hci' 'bluez-mesh' 'bluez-obex')
+pkgver=5.73
+pkgrel=3
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL-2.0-only')
@@ -15,7 +15,7 @@ makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'python-docutils' 'pytho
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
-sha256sums=('499d7fa345a996c1bb650f5c6749e1d929111fa6ece0be0e98687fee6124536e'
+sha256sums=('257e9075ce05c70d48c5defd254e78c418416f7584b45f9dddc884ff88e3fc53'
             'SKIP'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
@@ -75,15 +75,16 @@ package_bluez() {
   depends=('dbus' 'glib2' 'alsa-lib' 'glibc')
   backup=(etc/bluetooth/{main,input,network}.conf)
 
+  _install fakeinstall/etc/bluetooth/main.conf
+  _install fakeinstall/etc/bluetooth/input.conf
+  _install fakeinstall/etc/bluetooth/network.conf
   _install fakeinstall/usr/lib/bluetooth/bluetoothd
+  _install fakeinstall/usr/share/dbus-1/system-services/org.bluez.service
   _install fakeinstall/usr/share/dbus-1/system.d/bluetooth.conf
   _install fakeinstall/usr/share/man/man8/bluetoothd.8
 
-  # ship upstream main config files
-  install -dm555 "${pkgdir}"/etc/bluetooth
-  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/src/main.conf "${pkgdir}"/etc/bluetooth/main.conf
-  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/profiles/input/input.conf "${pkgdir}"/etc/bluetooth/input.conf
-  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/profiles/network/network.conf "${pkgdir}"/etc/bluetooth/network.conf
+  # bluetooth.service wants ConfigurationDirectoryMode=0555
+  chmod -v 555 "${pkgdir}"/etc/bluetooth
 
   # add basic documention
   install -dm755 "${pkgdir}"/usr/share/doc/"${pkgbase}"/dbus-apis
@@ -101,6 +102,8 @@ package_bluez-utils() {
   pkgdesc="Development and debugging utilities for the bluetooth protocol stack"
   depends=('dbus' 'glib2' 'glibc' 'readline')
   optdepends=('ell: for btpclient')
+  provides=('bluez-plugins')
+  replaces=('bluez-plugins')
 
   _install fakeinstall/usr/bin/{advtest,amptest,avinfo,avtest,bcmfw,bdaddr,bluemoon,bluetoothctl,bluetooth-player,bneptest,btattach,btconfig,btgatt-client,btgatt-server,btinfo,btiotest,btmgmt,btmon,btpclient,btpclientctl,btproxy,btsnoop,check-selftest,cltest,create-image,eddystone,gatt-service,hcieventmask,hcisecfilter,hex2hcd,hid2hci,hwdb,ibeacon,isotest,l2ping,l2test,mcaptest,mpris-proxy,nokfw,oobtest,rctest,rtlfw,scotest,seq2bseq,test-runner}
   _install fakeinstall/usr/share/man/man1/bluetoothctl*.1
@@ -148,14 +151,15 @@ package_bluez-mesh() {
   depends=('json-c' 'readline' 'glibc')
   backup=('etc/bluetooth/mesh-main.conf')
 
+  _install fakeinstall/etc/bluetooth/mesh-main.conf
   _install fakeinstall/usr/bin/{mesh-cfgclient,mesh-cfgtest}
   _install fakeinstall/usr/lib/bluetooth/bluetooth-meshd
+  _install fakeinstall/usr/share/dbus-1/system-services/org.bluez.mesh.service
   _install fakeinstall/usr/share/dbus-1/system.d/bluetooth-mesh.conf
   _install fakeinstall/usr/share/man/man8/bluetooth-meshd.8
 
-  # ship upstream mesh config file
-  install -dm555 "${pkgdir}"/etc/bluetooth
-  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/mesh/mesh-main.conf "${pkgdir}"/etc/bluetooth/mesh-main.conf
+  # bluetooth.service wants ConfigurationDirectoryMode=0555
+  chmod -v 555 "${pkgdir}"/etc/bluetooth
 }
 
 package_bluez-obex() {
@@ -164,24 +168,10 @@ package_bluez-obex() {
 
   _install fakeinstall/usr/bin/{obexctl,obex-client-tool,obex-server-tool}
   _install fakeinstall/usr/lib/bluetooth/obexd
+  _install fakeinstall/usr/share/dbus-1/services/org.bluez.obex.service
   _install fakeinstall/usr/share/man/man5/org.bluez.obex*.5  
-
-  # Artix (Don't remove) installs dbus service
-  install -Dm644 /dev/stdin "$pkgdir"/usr/share/dbus-1/services/org.bluez.obex.service <<EOF
-[D-BUS Service]
-Name=org.bluez.obex
-Exec=/usr/lib/bluetooth/obexd
-EOF
-}
-
-package_bluez-plugins() {
-  pkgdesc="bluez plugins (PS3 Sixaxis controller)"
-  depends=('glibc')
-
-  _install fakeinstall/usr/lib/bluetooth/plugins/sixaxis.so
 
   # make sure there are no files left to install
   rm fakeinstall/usr/lib/libbluetooth.la
-  rm fakeinstall/usr/lib/bluetooth/plugins/sixaxis.la
   find fakeinstall -depth -print0 | xargs -0 rmdir
 }
