@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: pacman
-  version: 6.0.2-9.1
+  version: 6.1.0-1
   arch:
     - x86_64
   pkgname:
     - pacman
 actions:
-  addRepo: null
-  removeRepo: system-goblins
+  addRepo: system-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRebuild: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 6.1.0-1
+    packages:
+      - pacman-6.1.0-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
