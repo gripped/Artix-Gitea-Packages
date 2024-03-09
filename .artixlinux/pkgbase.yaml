@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytest-dependency
-  version: 0.5.1-4
+  version: 0.6.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.1-4
+    version: 0.6.0-1
     packages:
-      - python-pytest-dependency-0.5.1-4-any.pkg.tar.zst
+      - python-pytest-dependency-0.6.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
