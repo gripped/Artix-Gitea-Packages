@@ -1,5 +1,5 @@
 type      = scripted
 command   = /usr/bin/vgchange --sysinit -a y
-logfile   = buffer
+log-type  = buffer
 restart   = false
 after     = udev-settle

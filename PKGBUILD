@@ -2,7 +2,7 @@
 
 pkgname=lvm2-dinit
 pkgver=20230907
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit stage1 scripts for lvm2"
 arch=('any')
 url="https://artixlinux.org"
@@ -16,7 +16,7 @@ source=("lvm2-monitor"
         "lvmpolld"
         "lvmpolld-pre")
 sha256sums=('af2ba17663d24e0117536493a446a2c9d5700c65d0407f4e23bbb3f09fb74d0f'
-            'c098d88a7f279ba416b373d5530a6c6b34ed26e1061002d20b62b6fc98fa17c4'
+            '76fc5c3af59fc10c00cacd95c649545a1f07a812ea3018091542bd422b09423d'
             '230580fa7c579518d503a374044d14de96c8bb03c53089288cf525eb4332c4a8'
             '0101dc03ee69fdccb817956f62c6ea3dd610f80caf6b7b40226d2a512897c88c')
 
