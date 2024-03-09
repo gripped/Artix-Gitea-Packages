@@ -4,7 +4,7 @@
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.15.0
-pkgrel=10
+pkgrel=11
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
