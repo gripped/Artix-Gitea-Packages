@@ -2,10 +2,12 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
-pkgname=breeze
+pkgbase=breeze
+pkgname=(breeze
+         breeze5)
 pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=4
+pkgrel=5
 arch=(x86_64)
 pkgdesc='Artwork, styles and assets for the Breeze visual style for the Plasma Desktop'
 url='https://kde.org/plasma-desktop/'
@@ -33,9 +35,8 @@ makedepends=(extra-cmake-modules
              kiconthemes5
              kirigami2
              kwindowsystem5)
-optdepends=('breeze-gtk: Breeze widget style for GTK applications')
-conflicts=(breeze5)
-replaces=(breeze5)
+optdepends=('breeze-gtk: Breeze widget style for GTK applications'
+            'breeze5: Breeze widget style for Qt5 applications')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('200482cefd066e0d48e16aa7380a9cb00e634b2ba34834cdc7354f363b60544d'
@@ -47,10 +48,40 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QT5=OFF
   cmake --build build
+
+  cmake -B build5 -S $pkgname-$pkgver \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QT6=OFF
+  cmake --build build5
 }
 
-package() {
+package_breeze() {
   DESTDIR="$pkgdir" cmake --install build
+}
+
+package_breeze5() {
+  pkgdesc='Qt5 Breeze style'
+  depends=(breeze
+           breeze-icons
+           gcc-libs
+           glibc
+           frameworkintegration5
+           kconfig5
+           kconfigwidgets5
+           kguiaddons5
+           kiconthemes5
+           kirigami2
+           kwindowsystem5
+           qt5-base
+           qt5-declarative)
+  conflicts=('breeze<5.27.80')
+  replaces=('breeze<5.27.80')
+  optdepends=()
+  groups=()
+
+  DESTDIR="$pkgdir" cmake --install build5
+  rm -r "$pkgdir"/usr/share
 }
