@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ocaml-csexp
-  version: 1.5.2-3
+  version: 1.5.2-4
   arch:
     - x86_64
   pkgname:
     - ocaml-csexp
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.5.2-4
+    packages:
+      - ocaml-csexp-1.5.2-4-x86_64.pkg.tar.zst
   world:
     version: 1.5.2-3
     packages:
