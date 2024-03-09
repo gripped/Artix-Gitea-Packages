@@ -2,7 +2,7 @@
 # Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=openshadinglanguage
 pkgver=1.13.7.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Advanced shading language for production GI renderers"
 arch=('x86_64')
 url="https://github.com/imageworks/OpenShadingLanguage"
@@ -31,6 +31,9 @@ package() {
   cd OpenShadingLanguage-$pkgver
 
   DESTDIR="$pkgdir/" ninja -C build install
+
+  # Fixup an upstream fucky (See #1)
+  rm "$pkgdir"/usr/build-scripts/serialize-bc.py
 
   install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
 }
