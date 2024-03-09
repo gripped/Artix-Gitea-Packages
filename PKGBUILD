@@ -3,7 +3,7 @@
 
 pkgname=krusader
 pkgver=2.8.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Advanced twin panel (commander style) file manager'
 arch=(x86_64)
 url='https://krusader.org/'
@@ -60,7 +60,7 @@ sha256sums=('8e4cf05a9318b0bc1b0941811b988b2f2bb0c04a0d1e37998212a9190cf2c29a')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DKDESU_PATH="/usr/lib/kf5/kdesu"
+    -DKDESU_PATH="/usr/lib/kf6/kdesu"
   cmake --build build
 }
 
