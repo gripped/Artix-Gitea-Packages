@@ -10,7 +10,7 @@ arch=('any')
 url="https://github.com/fastfloat/$pkgname"
 license=('Apache' 'Boost' 'MIT')
 makedepends=('cmake')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+source=("$pkgname-$pkgver-2.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
 b2sums=('dc0068916b3f27883a356b31e09308006c45c92b34985204294c6e954ab7efa81b95f9961db8401e91706d85ab09f0a178f442c88a26c33afcddde0375d7ce1a')
 
 build() {
