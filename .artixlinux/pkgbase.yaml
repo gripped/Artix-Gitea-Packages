@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libpamac
-  version: 11.6.2-1.1
+  version: 11.6.2-1.2
   arch:
     - i686
     - x86_64
@@ -54,6 +54,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 11.6.2-1.1
+    version: 11.6.2-1.2
     packages:
-      - libpamac-11.6.2-1.1-x86_64.pkg.tar.zst
+      - libpamac-11.6.2-1.2-x86_64.pkg.tar.zst
