@@ -75,13 +75,15 @@ package_bluez() {
   depends=('dbus' 'glib2' 'alsa-lib' 'glibc')
   backup=(etc/bluetooth/{main,input,network}.conf)
 
-  _install fakeinstall/etc/bluetooth/main.conf
-  _install fakeinstall/etc/bluetooth/input.conf
-  _install fakeinstall/etc/bluetooth/network.conf
-  _install fakeinstall/usr/lib/bluetooth/bluetoothd
-  _install fakeinstall/usr/share/dbus-1/system-services/org.bluez.service
+  _install fakeinstall/usr/lib/bluetooth/bluetoothd 
   _install fakeinstall/usr/share/dbus-1/system.d/bluetooth.conf
   _install fakeinstall/usr/share/man/man8/bluetoothd.8
+
+  # ship upstream main config files
+  install -dm555 "${pkgdir}"/etc/bluetooth
+  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/src/main.conf "${pkgdir}"/etc/bluetooth/main.conf
+  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/profiles/input/input.conf "${pkgdir}"/etc/bluetooth/input.conf
+  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/profiles/network/network.conf "${pkgdir}"/etc/bluetooth/network.conf
 
   # bluetooth.service wants ConfigurationDirectoryMode=0555
   chmod -v 555 "${pkgdir}"/etc/bluetooth
@@ -151,15 +153,14 @@ package_bluez-mesh() {
   depends=('json-c' 'readline' 'glibc')
   backup=('etc/bluetooth/mesh-main.conf')
 
-  _install fakeinstall/etc/bluetooth/mesh-main.conf
   _install fakeinstall/usr/bin/{mesh-cfgclient,mesh-cfgtest}
   _install fakeinstall/usr/lib/bluetooth/bluetooth-meshd
-  _install fakeinstall/usr/share/dbus-1/system-services/org.bluez.mesh.service
   _install fakeinstall/usr/share/dbus-1/system.d/bluetooth-mesh.conf
   _install fakeinstall/usr/share/man/man8/bluetooth-meshd.8
 
-  # bluetooth.service wants ConfigurationDirectoryMode=0555
-  chmod -v 555 "${pkgdir}"/etc/bluetooth
+  # ship upstream mesh config file
+  install -dm555 "${pkgdir}"/etc/bluetooth
+  install -Dm644 "${srcdir}"/"${pkgbase}"-${pkgver}/mesh/mesh-main.conf "${pkgdir}"/etc/bluetooth/mesh-main.conf
 }
 
 package_bluez-obex() {
@@ -168,10 +169,13 @@ package_bluez-obex() {
 
   _install fakeinstall/usr/bin/{obexctl,obex-client-tool,obex-server-tool}
   _install fakeinstall/usr/lib/bluetooth/obexd
-  _install fakeinstall/usr/share/dbus-1/services/org.bluez.obex.service
   _install fakeinstall/usr/share/man/man5/org.bluez.obex*.5  
 
-  # make sure there are no files left to install
-  rm fakeinstall/usr/lib/libbluetooth.la
-  find fakeinstall -depth -print0 | xargs -0 rmdir
+
+  # Artix (Don't remove) installs dbus service
+  install -Dm644 /dev/stdin "$pkgdir"/usr/share/dbus-1/services/org.bluez.obex.service <<EOF
+[D-BUS Service]
+Name=org.bluez.obex
+Exec=/usr/lib/bluetooth/obexd
+EOF
 }
