@@ -1,5 +1,5 @@
 type      = scripted
 command   = /usr/bin/vgchange --sysinit -a y
-logfile   = /var/log/dinit/lvm2.log
+logfile   = buffer
 restart   = false
 after     = udev-settle
