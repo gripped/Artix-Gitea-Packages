@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: expac
-  version: 10-7
+  version: 10-9
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 10-7
+    version: 10-9
     packages:
-      - expac-10-7-x86_64.pkg.tar.zst
+      - expac-10-9-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
