@@ -3,7 +3,7 @@
 _upstream=arch-rebuild-order
 
 pkgname=artix-rebuild-order
-pkgver=0.4.2
+pkgver=0.4.3
 pkgrel=1
 pkgdesc="CLI tool to determine the rebuild order of provided package(s)"
 arch=('x86_64')
@@ -23,7 +23,7 @@ b2sums=('SKIP'
 prepare() {
     cd "${_upstream}"
     patch -Np1 -i ../aro-artix.patch
-    cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+    cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
