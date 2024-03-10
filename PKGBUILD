@@ -9,7 +9,7 @@ pkgname=lib32-$_pkgname
 # https://gitlab.archlinux.org/archlinux/packaging/packages/pcsclite/-/commits/main
 # https://salsa.debian.org/rousseau/PCSC/blob/master/ChangeLog
 pkgver=2.0.3
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="PC/SC Architecture smartcard middleware library (32-bit)"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
@@ -21,7 +21,7 @@ license=(
 	'0BSD'             # src/simclist.c, src/simclist.h
 )
 depends=('libudev.so' 'libpolkit-gobject-1.so' $_pkgname)
-makedepends=('lib32-polkit' 'autoconf-archive' 'lib32-udev')
+makedepends=('lib32-polkit' 'autoconf-archive' 'lib32-libudev')
 provides=('libpcsclite.so' 'libpcscspy.so')
 validpgpkeys=('F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E') # Ludovic Rousseau <rousseau@debian.org>
 source=("https://pcsclite.apdu.fr/files/pcsc-lite-${pkgver}.tar.bz2"{,.asc}
