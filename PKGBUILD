@@ -5,7 +5,7 @@
 pkgname=kwin
 pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 pkgdesc='An easy to use, but flexible, composited Window Manager'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -76,7 +76,8 @@ makedepends=(extra-cmake-modules
              krunner
              plasma-wayland-protocols
              python
-             wayland-protocols)
+             wayland-protocols
+             xorg-xwayland)
 optdepends=('maliit-keyboard: virtual keyboard for kwin-wayland')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
