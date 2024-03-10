@@ -5,7 +5,7 @@
 pkgname=qt6-5compat
 _qtver=6.6.2
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -13,20 +13,20 @@ pkgdesc='Module that contains unsupported Qt 5 APIs'
 depends=(gcc-libs
          glibc
          icu
-         qt6-base)
+         qt6-base
+         qt6-shadertools)
 makedepends=(cmake
              ninja
              qt6-declarative
              qt6-shadertools)
-optdepends=('qt6-declarative: for QtGraphicalEffects'
-            'qt6-shadertools: for QtGraphicalEffects')
+optdepends=('qt6-declarative: for QtGraphicalEffects')
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
 sha256sums=('e07b08ab7658e4856f07e3262ab342df4ed7e7a69f2720e56bb2128729191967')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
