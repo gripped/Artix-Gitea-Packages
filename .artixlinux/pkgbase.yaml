@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-elogind
-  version: 252.9-2
+  version: 252.9-3
   arch:
     - x86_64
   pkgname:
     - lib32-elogind
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 252.9-2
+    version: 252.9-3
     packages:
-      - lib32-elogind-252.9-2-x86_64.pkg.tar.zst
+      - lib32-elogind-252.9-3-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []

@@ -3,17 +3,18 @@
 _pkgname=elogind
 pkgname=lib32-elogind
 pkgver=252.9
-pkgrel=2
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package (32-bit)"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 license=('GPL' 'LGPL2.1')
+provides=(libelogind.so)
 depends=('lib32-gcc-libs' 'lib32-acl' 'lib32-libcap' 'lib32-libgcrypt' 'lib32-libxcrypt'
-         'lib32-eudev' 'elogind' 'lib32-util-linux' 'lib32-glibc' 'lib32-pam')
+         'lib32-udev' 'elogind' 'lib32-util-linux' 'lib32-glibc' 'lib32-pam')
 makedepends=('git' 'gperf' 'intltool' 'lib32-bzip2'
              'lib32-curl' 'lib32-dbus' 'lib32-glib2'
              'lib32-gnutls' 'lib32-libelf' 'lib32-libidn2' 'lib32-pcre2'
-             'libxslt' 'meson' 'lib32-udev' 'python-jinja')
+             'libxslt' 'meson' 'python-jinja')
 options=('!libtool')
 source=("${_pkgname}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz"
         'elogind-252-docs.patch')
