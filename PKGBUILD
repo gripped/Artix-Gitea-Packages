@@ -1,0 +1,39 @@
+# Maintainer:
+
+_pyname=blosc2
+pkgname=python-$_pyname
+pkgver=2.2.5
+pkgrel=1
+pkgdesc='Wrapper for the blosc2 compressor'
+arch=(x86_64)
+url='https://github.com/Blosc/python-blosc2'
+license=(BSD)
+depends=(blosc2 python-py-cpuinfo python-msgpack python-ndindex python-rich)
+makedepends=(python-build python-installer python-setuptools python-scikit-build cmake cython0 ninja python-numpy)
+checkdepends=(python-pytest)
+source=(https://github.com/Blosc/python-blosc2/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('2b0c7c121b7fe620db66a5476d57bb37db3ffd54f7b06510cda9ce89fab95823')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -e 's|, \"cmake\", \"ninja\", \"oldest-supported-numpy\"||' -i pyproject.toml
+}
+
+build() {
+  cd $pkgname-$pkgver
+  export CMAKE_ARGS="-DUSE_SYSTEM_BLOSC2=ON"
+  python -m build --wheel --no-isolation
+}
+
+check() {
+  cd $pkgname-$pkgver
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m pytest -v
+}
+
+package() {
+  cd $pkgname-$pkgver
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 LICENSE.txt -t "$pkgdir"/usr/share/licenses/$pkgname
+}
