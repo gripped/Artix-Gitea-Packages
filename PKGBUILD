@@ -58,6 +58,10 @@ prepare() {
 build() {
   cd "$pkgname-$pkgver"
 
+  # tests fail with FORTIFY_SOURCE=3
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
   meson --prefix=/usr \
         --buildtype=plain \
         -Ddoc=enabled \
@@ -72,18 +76,7 @@ build() {
 check() {
   cd "$pkgname-$pkgver"
 
-  # conf & query tests fail
-  # 2/343 config001.py
-  # 8/343 config002.py
-  # 113/343 query002.py
-  # 115/343 query005.py
-  # 117/343 query006.py
-  # 118/343 query010.py
-  # 120/343 query011.py
-  # 121/343 query012.py
-  # 222/343 sync1100.py
-
-  meson test -C build --print-errorlog || :
+  meson test -C build
 }
 
 package() {
