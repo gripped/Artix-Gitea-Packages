@@ -1,0 +1,32 @@
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+pkgname=blosc2
+pkgver=2.12.0
+pkgrel=1
+pkgdesc="A fast, compressed, persistent binary data store library for C."
+arch=(x86_64)
+url="https://www.blosc.org"
+license=(BSD)
+depends=(lz4 zlib zstd)
+makedepends=(cmake)
+source=(https://github.com/Blosc/c-blosc2/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('dafd1e08b9d556729abf8e859324c1b4724f43c5bb5829e11a8bf9653216b3afa05436d012a1cc8ca70017e158bee38c4f4aa3d86ebf18d6d7a2712e6bb26f79')
+b2sums=('1c686994cad5df2e8e311f87df922a453ad4b111bd55bc19b9e988d93228c309835fb53ba9111213cf6e0560b172765656a1cf4c46aa1c5d709a2a92401d9072')
+
+build() {
+  cmake -B build -S c-blosc2-$pkgver \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -D PREFER_EXTERNAL_LZ4=ON \
+    -D PREFER_EXTERNAL_ZLIB=ON \
+    -D PREFER_EXTERNAL_ZSTD=ON
+  cmake --build build
+}
+
+check() {
+  ctest --test-dir build --output-on-failure
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -vDm644 c-blosc2-$pkgver/LICENSE.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
