@@ -2,18 +2,18 @@
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
-pkgver=252.9
-pkgrel=3
+pkgver=252.23
+pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
-license=('GPL' 'LGPL2.1')
+license=('GPL-1.0-only' 'LGPL-2.1-only')
 makedepends=('acl' 'libacl.so' 'audit' 'libaudit.so' 'dbus' 'pam' 'gperf' 'kexec-tools'
              'libcap' 'libcap.so' 'udev' 'util-linux' 'libmount.so'
              'docbook-xsl' 'intltool' 'meson' 'openrc' 'python-jinja' )
 source=("${pkgbase}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz"
         'elogind-252-docs.patch')
-sha256sums=('7af8caa8225a406e77fb99c9f33dba5e1f0a94f0e1277c9d91dcfc016f116d85'
+sha256sums=('d73f1b203a5d5ee9fd77f649475d1193f9dc4f2c3451ef95f5110a1a9a0e766d'
             'c4153ec89c4deee33e019c168a71b7f1052ff5b24dc747a847cf295a4b54749f')
 
 prepare() {
@@ -25,11 +25,6 @@ build() {
     local meson_options=(
         -Dshared-lib-tag="${pkgver}-${pkgrel}"
         -Dmode=release
-
-        -Dsbat-distro='artix'
-        -Dsbat-distro-summary='Artix Linux'
-        -Dsbat-distro-pkgname="${pkgname}"
-        -Dsbat-distro-version="${pkgver}"
 
         -Drootlibdir=/usr/lib
         -Drootlibexecdir=/usr/lib/elogind
