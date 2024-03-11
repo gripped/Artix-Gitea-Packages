@@ -14,7 +14,7 @@ pkgname=(
   python-audit
 )
 pkgver=4.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Userspace components of the audit framework'
 url='https://people.redhat.com/sgrubb/audit'
 arch=(x86_64)
@@ -70,6 +70,7 @@ build() {
     --enable-zos-remote
     --libexecdir=/usr/lib/audit
     --prefix=/usr
+    --runstatedir=/run
     --sbindir=/usr/bin
     --sysconfdir=/etc
     --with-apparmor=yes
