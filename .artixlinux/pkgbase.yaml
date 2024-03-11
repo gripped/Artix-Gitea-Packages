@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: audit
-  version: 4.0-1.1
+  version: 4.0.1-1
   arch:
     - x86_64
   pkgname:
     - audit
     - python-audit
 actions:
-  addRepo: system
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 4.0.1-1
+    packages:
+      - audit-4.0.1-1-x86_64.pkg.tar.zst
+      - python-audit-4.0.1-1-x86_64.pkg.tar.zst
   system:
     version: 4.0-1.1
     packages:
