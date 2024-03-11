@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: octopi
-  version: 0.15.0-13
+  version: 0.15.0-14
   arch:
     - x86_64
   pkgname:
@@ -44,10 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 0.15.0-13
+    version: 0.15.0-14
     packages:
-      - octopi-0.15.0-13-x86_64.pkg.tar.zst
-      - octopi-notifier-frameworks-0.15.0-13-x86_64.pkg.tar.zst
+      - octopi-0.15.0-14-x86_64.pkg.tar.zst
+      - octopi-notifier-frameworks-0.15.0-14-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
