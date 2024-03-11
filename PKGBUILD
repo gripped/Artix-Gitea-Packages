@@ -152,7 +152,7 @@ build() {
   make
 }
 
-# tests take too long and fail 
+# tests take too long and fail
 #check() {
   # disable failing `btrfs qgroup` related tests: https://github.com/libguestfs/libguestfs/issues/136
 #  export SKIP_TEST_BTRFS_QGROUP_ASSIGN_0=1
