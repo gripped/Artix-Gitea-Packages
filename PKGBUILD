@@ -6,7 +6,7 @@
 pkgname=plasma-workspace
 pkgver=6.0.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -96,13 +96,13 @@ depends=(accountsservice
          qt6-5compat
          qt6-base
          qt6-declarative
-         qt6-shadertools # for QtGrphicalEffects
          qt6-svg
          qt6-tools # for qdbus
          qt6-virtualkeyboard
          qt6-wayland
          sh
          solid
+         systemd-libs
          wayland
          xcb-util
          xcb-util-image
@@ -126,7 +126,8 @@ optdepends=('appmenu-gtk-module: global menu support for GTK2 and some GTK3 appl
             'kwayland-integration: Wayland integration for Qt5 applications'
             'networkmanager-qt: IP based geolocation'
             'plasma-workspace-wallpapers: additional wallpapers'
-            'plasma5-integration: use Plasma settings in Qt5 applications')
+            'plasma5-integration: use Plasma settings in Qt5 applications'
+            'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
 conflicts=(plasma-wayland-session)
 replaces=(plasma-wayland-session)
 groups=(plasma)
