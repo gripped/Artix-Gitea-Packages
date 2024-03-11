@@ -102,7 +102,6 @@ depends=(accountsservice
          qt6-wayland
          sh
          solid
-         systemd-libs
          wayland
          xcb-util
          xcb-util-image
