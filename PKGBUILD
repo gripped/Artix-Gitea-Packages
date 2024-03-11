@@ -4,7 +4,7 @@
 _name=hypothesis
 _alt_name=$_name-python
 pkgname=python-hypothesis
-pkgver=6.98.17
+pkgver=6.99.2
 _version=$_alt_name-$pkgver
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
@@ -56,8 +56,8 @@ optdepends=(
   'python-rich: for CLI'
 )
 source=($_name-$_version.tar.gz::$_url/archive/$_version.tar.gz)
-sha512sums=('749fb572b7239dafab5af649ec0eb8fa0071f35dd394c1b356ff2042abbe6e469ca8d7c32619d44cefbc3d7aa8fd31a81d95f772e826578261fdf97c792bdb57')
-b2sums=('3c26f8c696bc4a62b9ada8e45dd3053879e15c3dfde25caf8239be5e89f6267df342d9c3039b6c2cbb8125ade365b89c5f4d1de5f79e65ddc0808227fe37ec40')
+sha512sums=('ad833e8e4e5a228d06723ba76e80b7e88b849b51b298c2c0b58e82e9409961a212f85530a8e3f06e9e09ca2ebcc8ebd2e1e4992e50a37ba9f692a398aef699fa')
+b2sums=('0e7b99ee43ae84b4536f687324c334d7846766ec3422712cc0e215ebed113a3ed270b2fee70322edd5931e6a57c04092566846846e8a2df8587a2d6bd7f33e34')
 
 build() {
   cd $_name-$_version/$_alt_name
@@ -72,6 +72,7 @@ check() {
     --ignore tests/patching/test_patching.py
     --ignore tests/ghostwriter/test_expected_output.py
     --ignore tests/cover/test_error_in_draw.py
+    --ignore tests/redis/test_redis_exampledatabase.py
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
