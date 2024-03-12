@@ -6,21 +6,21 @@ ENABLE_FLATPAK=0
 ENABLE_SNAPD=0
 
 pkgname=libpamac
-pkgver=11.6.2
-pkgrel=1.2
+pkgver=11.6.4
+pkgrel=1
 _pkgfixver=$pkgver
 
-_commit='e74fe0e1c15f4fd14d02ff12650be3fde47287d7'
-sha256sums=('7b8690f8eb78c5960723b2b28185af4ca156b88547cf9e14d309b003600ab2a4'
+_commit='9108cba3ae01c60c198e996a4956474a66597a7b'
+sha256sums=('f5aabfc5b1972f444bd527d23ee33c927e4bec9fedf2e947aff3aa997afbee07'
             '6e0c25f0fcb0076ce78845b037e32925fcc3f1cd1670062c48ed35f564a10244'
             'b5236af02c25cd7de4b2c9c2d0f064dac3c2f54da5cc72bf72fc6236a34bd9c4')
 
 pkgdesc="Pamac package manager library based on libalpm"
-arch=('i686' 'x86_64' 'arm' 'armv6h' 'armv7h' 'aarch64')
+arch=('x86_64')
 url="https://gitlab.manjaro.org/applications/libpamac"
 license=('GPL3')
 depends=('glib2>=2.42' 'json-glib' 'libsoup3' 'dbus-glib' 'polkit' 'vte3>=0.38' 
-         'libnotify' 'pacman>=6.0' 'pacman<6.1' 'gnutls>=3.4' 'appstream'
+         'libnotify' 'pacman>=6.1' 'gnutls>=3.4' 'appstream'
          'appstream-glib>=0.7.18-1' 'archlinux-appstream-data' 'git')
 
 makedepends=('gettext' 'itstool' 'vala>=0.46'  'asciidoc' 'meson' 'ninja' 'gobject-introspection')
@@ -56,7 +56,7 @@ create_links() {
 prepare() {
   cd "$srcdir/libpamac-$_commit"
   # adjust version string
-  sed -i -e "s|\"$_pkgfixver\"|\"$pkgver-$pkgrel\"|g" src/version.vala
+  #sed -i -e "s|\"$_pkgfixver\"|\"$pkgver-$pkgrel\"|g" src/version.vala
 }
 
 build() {

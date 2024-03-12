@@ -1,18 +1,13 @@
 ---
 pkgbase:
   name: libpamac
-  version: 11.6.2-1.2
+  version: 11.6.4-1
   arch:
-    - i686
     - x86_64
-    - arm
-    - armv6h
-    - armv7h
-    - aarch64
   pkgname:
     - libpamac
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -48,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 11.6.4-1
+    packages:
+      - libpamac-11.6.4-1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
