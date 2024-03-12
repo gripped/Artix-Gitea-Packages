@@ -3,7 +3,7 @@
 
 pkgname=kalk
 pkgver=24.02.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A powerful cross-platform calculator application built with the Kirigami framework'
 url='https://apps.kde.org/kalk/'
 arch=(x86_64)
