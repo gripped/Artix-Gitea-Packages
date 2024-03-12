@@ -4,7 +4,7 @@
 
 pkgname=libqalculate
 pkgver=5.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Multi-purpose desktop calculator'
 arch=(x86_64)
 url='https://qalculate.github.io/'
@@ -20,8 +20,8 @@ depends=(curl
 makedepends=(doxygen
              intltool)
 optdepends=('gnuplot: for plotting support')
-source=(https://github.com/Qalculate/libqalculate/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('591598dedbcbd80119de052559873530030b3510bca2b0758f088cfb7dafb2ee')
+source=(https://github.com/Qalculate/libqalculate/releases/download/v$pkgver/$pkgname-${pkgver}b.tar.gz)
+sha256sums=('9b48688f9c57bc12730af83e59d19719e45f0a4dd13c5d42d7210d0dc83bb5ce')
 
 build() {
   cd $pkgname-$pkgver
