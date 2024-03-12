@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: tree-sitter
-  version: 0.20.10-2
+  version: 0.22.1-2
   arch:
     - x86_64
   pkgname:
     - tree-sitter
+    - tree-sitter-cli
 actions:
   addRepo: world
   removeRepo: null
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20.10-2
+    version: 0.22.1-2
     packages:
-      - tree-sitter-0.20.10-2-x86_64.pkg.tar.zst
+      - tree-sitter-0.22.1-2-x86_64.pkg.tar.zst
+      - tree-sitter-cli-0.22.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
