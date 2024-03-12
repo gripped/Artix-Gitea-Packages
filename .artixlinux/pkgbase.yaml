@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: packagekit
-  version: 1.2.8-5
+  version: 1.2.8-7
   arch:
     - x86_64
   pkgname:
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.2.8-5
+    version: 1.2.8-7
     packages:
-      - packagekit-1.2.8-5-x86_64.pkg.tar.zst
-      - libpackagekit-glib-1.2.8-5-x86_64.pkg.tar.zst
+      - packagekit-1.2.8-7-x86_64.pkg.tar.zst
+      - libpackagekit-glib-1.2.8-7-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
