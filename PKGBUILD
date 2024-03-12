@@ -2,12 +2,12 @@
 # Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
 
 pkgname=krusader
-pkgver=2.8.0
-pkgrel=4
+pkgver=2.8.1
+pkgrel=1
 pkgdesc='Advanced twin panel (commander style) file manager'
 arch=(x86_64)
 url='https://krusader.org/'
-license=(GPL)
+license=(GPL-2.0-or-later)
 depends=(acl
          gcc-libs
          glibc
@@ -55,8 +55,10 @@ optdepends=('xz: LZMA and XZ archive support'
             'krename: advanced rename tool'
             'konsolepart5: terminal'
             'ktexteditor5: file editing support')
-source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz)
-sha256sums=('8e4cf05a9318b0bc1b0941811b988b2f2bb0c04a0d1e37998212a9190cf2c29a')
+source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('37bf204519d0ab1ba40964af02741bc228f11e97f28c4c518ca05d358df18283'
+            'SKIP')
+validpgpkeys=(3381929FB59A539333042D57AD596556DFF2501F) # Nikita Melnichenko <nikita+kde@melnichenko.name>
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
