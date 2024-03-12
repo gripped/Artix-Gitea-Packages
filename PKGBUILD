@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: Joakim Saario <saario.joakim@gmail.com>
 
 pkgname=docker-buildx
-pkgver=0.13.0
+pkgver=0.13.1
 pkgrel=1
 pkgdesc="Docker CLI plugin for extended build capabilities with BuildKit"
 arch=('x86_64')
@@ -12,7 +11,7 @@ url="https://github.com/docker/buildx"
 license=("Apache-2.0")
 makedepends=('go' 'git')
 options=(!lto)
-_commit=0de5f1ce3b316d9f1fc0b4de024f49cf3b3f93ba # refs/tags/v0.13.0
+_commit=788433953af10f2a698f5c07611dddce2e08c7a0 # refs/tags/v0.13.1
 source=("git+https://github.com/docker/buildx.git#commit=${_commit}")
 sha512sums=('SKIP')
 
