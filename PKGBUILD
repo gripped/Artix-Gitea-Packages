@@ -11,7 +11,7 @@ url=https://github.com/tree-sitter/tree-sitter
 license=('MIT')
 makedepends=('git' 'rust')
 options=('!lto') # Needed for CLI build
-source=("git+$url.git#commit=$_commit?signed")
+source=("git+$url.git#commit=$_commit")
 b2sums=('SKIP')
 validpgpkeys=('FCC13F47A6900D64239FF13BE67890ADC4227273') # Amaan Qureshi <amaanq12@gmail.com>
 
