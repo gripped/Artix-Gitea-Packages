@@ -1,0 +1,5 @@
+type            = process
+command         = /usr/bin/fail2ban-client --logtarget stdout -fx start
+stop-command    = /usr/bin/fail2ban-client stop
+after           = loginready
+logfile         = /var/log/dinit/fail2ban.log

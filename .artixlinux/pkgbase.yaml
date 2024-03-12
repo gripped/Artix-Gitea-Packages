@@ -1,15 +1,17 @@
 ---
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: fail2ban-dinit
+  version: 20240312-1
+  arch:
+    - any
+  pkgname:
+    - fail2ban-dinit
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 20240312-1
+    packages:
+      - fail2ban-dinit-20240312-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
