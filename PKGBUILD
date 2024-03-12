@@ -2,11 +2,18 @@
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 
+# Upstream has a history of forgetting to tag releases even when they bump the
+# version and comment that it is a release. See e.g.:
+# https://github.com/onetrueawk/awk/issues/141
+# https://github.com/onetrueawk/awk/issues/222
+#
+# If this happens again, releases can be bumped from commits that appear in the
+# master branch at points where internal version number is updated. Uncomment
+# this for it to take effect:
+# _commit=4d46214525a3b75879ad56fb0105ee01afa7c9dd
+
 pkgname=nawk
-pkgver=20240122
-# This should be master only at points where internal version number is updated.
-# (after 20231228 we got ahead of ourselves)
-_commit=6a07a6d3bb6313714625f667470290e71545b270
+pkgver=20240311
 pkgrel=1
 pkgdesc='The one, true implementation of AWK'
 url="https://github.com/onetrueawk/awk"
@@ -15,7 +22,7 @@ arch=(x86_64)
 options=(!makeflags)
 depends=(glibc)
 makedepends=(git)
-source=("git+https://github.com/onetrueawk/awk.git#commit=${_commit}"
+source=("git+https://github.com/onetrueawk/awk.git#commit=${_commit:-$pkgver}"
         'manpage-naming.patch')
 sha256sums=('SKIP'
             'fa1bade363896033a50fbdadc8fa2f490f85a044d11afcd537f317067c70d3b5')
