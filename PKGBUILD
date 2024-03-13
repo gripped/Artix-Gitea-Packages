@@ -5,8 +5,8 @@
 
 pkgbase=ruff
 pkgname=($pkgbase python-$pkgbase)
-pkgver=0.3.1
-pkgrel=1
+pkgver=0.3.2
+pkgrel=2
 pkgdesc='An extremely fast Python linter, written in Rust'
 arch=(x86_64)
 url="https://github.com/astral-sh/$pkgbase"
@@ -23,8 +23,8 @@ makedepends=(
 options=(!lto)
 _archive="$pkgbase-$pkgver"
 source=($url/archive/refs/tags/v$pkgver/$_archive.tar.gz)
-sha512sums=('6eefa4f03ae140e59fdb227eb673aad9c5580888a7d40a48aa4c902db13a1db2e3bc2bbd6e81276bde5fea99fb649be28d0b70090684946521583c392d2bab96')
-b2sums=('503c8893e916cfe9d6b003709ca83c17dbebedfdf3e6f83350efb5432fd28b31421129eebbe3d34562a46aba9c81ad3a37e1d8be02b4d87c9dad7219d48871bf')
+sha512sums=('3505e199d631bb951c89814e7516e4a20dda602f454ce3f122902455fe07df38195605db92350543463aa60aa2558a8dccd3d68db09cc73c7682b705b90c03c7')
+b2sums=('02efcf12130f2620c2a8d428894bec83d1bdb3471a447212072c4d19f61fce9ec3bb3342b2fa019c5af203cc823bb242ec34ee862b34aff407112cb9786f4f4e')
 
 prepare() {
   cd "$_archive"
@@ -51,9 +51,10 @@ package_ruff() {
   _package_common
   local _target="target/$(rustc -vV | sed -n 's/host: //p')/release/ruff"
   install -Dm0755 -t "$pkgdir/usr/bin/" "$_target"
-  $_target generate-shell-completion bash | install -Dm0644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/$pkgbase.bash"
-  $_target generate-shell-completion fish | install -Dm0644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/$pkgbase.fish"
-  $_target generate-shell-completion zsh  | install -Dm0644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_$pkgbase"
+  $_target generate-shell-completion bash   | install -Dm0644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/$pkgbase.bash"
+  $_target generate-shell-completion elvish | install -Dm0644 /dev/stdin "$pkgdir/usr/share/elvish/lib/$pkgbase.elv"
+  $_target generate-shell-completion fish   | install -Dm0644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/$pkgbase.fish"
+  $_target generate-shell-completion zsh    | install -Dm0644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_$pkgbase"
 }
 
 package_python-ruff() {
