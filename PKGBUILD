@@ -22,8 +22,8 @@ pkgname=(
   pipewire-session-manager
   pulse-native-provider
 )
-_commit=6ab86209f23a841de7eac6bc0c1009aceb9ffd87  # tags/1.0.3
-pkgver=1.0.3
+_commit=f2874ad1c2f7f0b9a1da05cc4f402b3ea3761ee6  # tags/1.0.4
+pkgver=1.0.4
 _so_ver=0.3
 pkgrel=1
 epoch=1
@@ -74,12 +74,8 @@ checkdepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#commit=$_commit"
-  artix-pipewire-launcher
-  pipewire.desktop
 )
-b2sums=('SKIP'
-        'b24d6c83d6846dd9de8806ea5cd8da5745a13645cea6e0904c4ce6bfb2f018e189f698e2ff1d44e38538d1233b63fd3ad0c1492e3e3ed0d62ae78282ff696755'
-        '9571effe6042a51a9ef770000e65c1f35aaf56bb07eb191407b5038bdee209dd49572b5f457312ea6b6fbab1b04454468d1b9ad57d8fa7e4e0a94773e7c07197')
+b2sums=('SKIP')
 
 pkgver() {
   cd pipewire
@@ -97,7 +93,6 @@ build() {
     -D bluez5-codec-lc3plus=disabled
     -D docs=enabled
     -D jack-devel=true
-    -D systemd=disabled
     -D libjack-path=/usr/lib
     -D man=enabled
     -D rlimits-install=false
@@ -111,7 +106,7 @@ build() {
 }
 
 check() {
-  meson test -C build --print-errorlogs || :
+  meson test -C build --print-errorlogs
 }
 
 _pick() {
@@ -187,14 +182,16 @@ package_pipewire() {
     _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-fallback-sink.so
     _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-filter-chain*.so
     _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-loopback.so
-    _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-netjack2-*.so
+    _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-netjack2*.so
     _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-pipe-tunnel.so
     _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-protocol-simple.so
     _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-rtp-{sap,sink,source}.so
-    _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-vban-{recv,send}.so
+    _pick audio usr/lib/pipewire-$_so_ver/libpipewire-module-vban*.so
     _pick audio usr/lib/spa-0.2/{aec,alsa,audio*,avb,bluez5}
     _pick audio usr/share/alsa
     _pick audio usr/share/man/man1/pw-{cat,loopback,mididump}.1
+    _pick audio usr/share/man/man1/spa-{acp-tool,resample}.1
+    _pick audio usr/share/man/man5/pipewire-filter-chain.conf.5
     _pick audio usr/share/man/man7/libpipewire-module-{avb,echo-cancel,fallback-sink,filter-chain*,loopback,netjack2*,pipe-tunnel,protocol-simple,rtp-{sap,sink,source},vban*}.7
     _pick audio usr/share/pipewire/filter-chain*
     _pick audio usr/share/pipewire/pipewire-{aes67,avb}.conf
@@ -212,6 +209,7 @@ package_pipewire() {
     _pick jack usr/lib/libjack*
     _pick jack usr/lib/pkgconfig/jack.pc
     _pick jack usr/share/man/man1/pw-jack.1
+    _pick jack usr/share/man/man5/pipewire-jack.conf.5
     _pick jack usr/share/pipewire/jack.conf
 
     _pick pulse usr/bin/pipewire-pulse
@@ -233,6 +231,7 @@ package_pipewire() {
     _pick zeroconf usr/share/man/man7/libpipewire-module-{raop-*,rtp-session,zeroconf*}.7
 
     _pick v4l2 usr/bin/pw-v4l2 usr/lib/pipewire-$_so_ver/v4l2
+    _pick v4l2 usr/share/man/man1/pw-v4l2.1
 
     _pick x11-bell usr/lib/pipewire-$_so_ver/libpipewire-module-x11-bell.so
     _pick x11-bell usr/share/man/man7/libpipewire-module-x11-bell.7
@@ -240,8 +239,6 @@ package_pipewire() {
     # directories for overrides
     mkdir -p etc/pipewire/{client-rt,client,minimal,pipewire}.conf.d
   )
-  install -Dm755 "$srcdir"/artix-pipewire-launcher "$pkgdir"/usr/bin/artix-pipewire-launcher
-  install -Dm644 "$srcdir"/pipewire.desktop "$pkgdir"/usr/share/applications/pipewire.desktop
 
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
 }
