@@ -8,7 +8,7 @@
 pkgbase=mumble
 pkgname=(mumble mumble-server)
 pkgver=1.5.613
-pkgrel=1
+pkgrel=2
 pkgdesc="An Open Source, low-latency, high quality voice chat software"
 arch=(x86_64)
 url="https://www.mumble.info/"
@@ -60,17 +60,22 @@ checkdepends=(
   xorg-server-xvfb
 )
 source=(
-  https://github.com/mumble-voip/mumble/releases/download/v$pkgver/$pkgbase-$pkgver.tar.gz
+  https://github.com/mumble-voip/mumble/releases/download/v$pkgver/$pkgbase-$pkgver.tar.gz{,.sig}
   mumble-server.tmpfiles
   $pkgbase-1.5.517-config_defaults.patch
 )
 sha512sums=('91eadb6622b816fb814236726906188d03edf617cd0105567158c3c333f4f45f2e41813349b4a49a0823c5e59c86b07f6f61a1086e4723621383cdd590854f71'
+            'SKIP'
             '350575aaf26ac8b7dc567018defd59913da957983986017e82a92e53f2a6d21473d9c2566177abd7611d95858a723bcf7f8dad49e8ca18d18b9fa4e75fb15ca6'
             'c12f6269c5745532031f09fba5b9e3118e6beaf387ae0aaba6ff8380a1452b47f9f0d1cae04472a5763b3da695e03467de152a98bf03c01ae59bd6d553ec7100')
 b2sums=('faaac904173facb0cc3ee240b2eba6e183a165beff75de03ec4b5f7753855e18e035947178a5449863250bfe5c51e9ab01ec4f6a7dcb2adb1f17d0e1815ad612'
+        'SKIP'
         '476353608e794c431d9c79a54e11ad0442e3c96607b6492d3b2f5b589b96b120611e2e3dc1bb4f8e17c0911c238a9ca7b409277353fa08b9f690217f80d7dc4e'
         'c607246691e9701f54b8d133db7d424a46ab94781178d172ae8a35df8ca505da59734ddae00789b93af316de3344d7e177a1a988e1438121e1e921ff59724f24')
 # See https://github.com/mumble-voip/mumble-gpg-signatures
+validpgpkeys=(
+  '9B9ADC09AD09F76B10F87CBFCDB285AE2332CF8D'  # Mumble Automatic Build Infrastructure 2024 <mumble-auto-build-2024@mumble.info>
+)
 
 prepare() {
   # add default configuration options
@@ -100,6 +105,7 @@ build() {
     -D bundled-json=OFF
     -D bundled-rnnoise=OFF
     -D bundled-speex=OFF
+    -D rnnoise=ON
   )
   local cmake_options_server=(
     -D MUMBLE_INSTALL_ABS_SYSCONFDIR=/etc/mumble-server
