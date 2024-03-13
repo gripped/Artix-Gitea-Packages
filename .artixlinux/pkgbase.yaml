@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pyopencl
-  version: 1:2023.1-2
+  version: 1:2023.1-3
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2023.1-2
+    version: 1:2023.1-3
     packages:
-      - python-pyopencl-1:2023.1-2-x86_64.pkg.tar.zst
-      - pyopencl-headers-1:2023.1-2-x86_64.pkg.tar.zst
+      - python-pyopencl-1:2023.1-3-x86_64.pkg.tar.zst
+      - pyopencl-headers-1:2023.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
