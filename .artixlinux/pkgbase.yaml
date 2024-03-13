@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vice
-  version: 3.8-1
+  version: 3.8-2
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.8-1
+    version: 3.8-2
     packages:
-      - vice-3.8-1-x86_64.pkg.tar.zst
+      - vice-3.8-2-x86_64.pkg.tar.zst
