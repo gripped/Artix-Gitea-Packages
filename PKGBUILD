@@ -4,8 +4,8 @@
 # Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=mkinitcpio
-pkgver=38
-pkgrel=4
+pkgver=38.1
+pkgrel=1
 pkgdesc="Modular initramfs image creation utility"
 arch=('any')
 url='https://gitlab.archlinux.org/archlinux/mkinitcpio/mkinitcpio'
@@ -28,19 +28,19 @@ optdepends=('gzip: Use gzip compression for the initramfs image'
 provides=('initramfs')
 backup=('etc/mkinitcpio.conf')
 source=("https://sources.archlinux.org/other/$pkgname/$pkgname-$pkgver.tar.gz"{,.sig}
-        nosystemd.patch)
+        0001-no-systemd.patch)
 install=mkinitcpio.install
-sha512sums=('ad1a4895e5cc3a01637f71d96ddb79d7f45708ec7305ffdb874403a1eb3c1743d121f28d93273b91792298eb21bcc0c5d9ef1ab3a3773083d60da5bdaee59d6e'
+sha512sums=('e727509badc528f45f2b193b3f49c202df41d4e75067bebd44c22ebc59f635d4a9596bc671d609d8941644f3a246267f7a199946730ba474040a1f24b94f663c'
             'SKIP'
-            'ac8da9f6c54ac020ad46aaf0009a769c71c01ba1285e2e0d021cbe1e6b2bca3fb7a1e85b0f141981abfdd1d23fb686d48f952ca949c81e39ac140b0b57e946b5')
-b2sums=('4bc50da7196a69dc0ab7e7de345684baebbb655f9a07def9ac36a7f1c9aec752cf41c62134d6bbf240d8f49c6492a211f152bab062ec09457791d7ab030f1bc5'
+            '1f4e3b80985cea3651763b3e360f93dc7b226392e6caf4905b6157bdb7021137b9d6d1114d161b3abe389a9fdcd6388e04e74558ff904f26bd11fe2b5bf5f80e')
+b2sums=('625455bb1140688bcdf04c946eb6fa1da53deaa221b2c8090c173aef1d7fc617227aa0674344f3c18d5b9ab77a093725856f4f0cd3b8a33462a2ac742f0dbf11'
         'SKIP'
-        'ffa3c50f18af50323302b2804cde4eb1233b662004528ed3a98c050736c6ed2624fd38a37575737390dfee5f3928daaafb189ce67133909ddfffbea649f0cb39')
+        'fb7cf30ef8956c3cd7d3437cd20e12703457b23bc0ff59059cf790905a68bb2d2a16de71e5df07eec859fcf14b5760c46e6c030c761402d4da294fb19d6e291f')
 validpgpkeys=('ECCAC84C1BA08A6CC8E63FBBF22FB1D78A77AEAB'    # Giancarlo Razzolini
               'C100346676634E80C940FB9E9C02FF419FECBE16')   # Morten Linderud
 
 prepare() {
-  patch -d "$pkgname-$pkgver" -Np1 -i ../nosystemd.patch
+  patch -d "$pkgname-$pkgver" -Np1 -i ../0001-no-systemd.patch
 }
 
 check() {
