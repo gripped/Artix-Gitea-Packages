@@ -3,7 +3,7 @@
 
 pkgname=krusader
 pkgver=2.8.1
-pkgrel=1.1
+pkgrel=1
 pkgdesc='Advanced twin panel (commander style) file manager'
 arch=(x86_64)
 url='https://krusader.org/'
@@ -58,6 +58,7 @@ optdepends=('xz: LZMA and XZ archive support'
 source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('37bf204519d0ab1ba40964af02741bc228f11e97f28c4c518ca05d358df18283'
             'SKIP')
+validpgpkeys=(3381929FB59A539333042D57AD596556DFF2501F) # Nikita Melnichenko <nikita+kde@melnichenko.name>
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
