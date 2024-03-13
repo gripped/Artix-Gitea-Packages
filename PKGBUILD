@@ -20,6 +20,7 @@ prepare() {
 
 build() {
   cd "${pkgname}"
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   python -m build --wheel --no-isolation
 }
 
