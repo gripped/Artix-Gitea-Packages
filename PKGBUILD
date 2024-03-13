@@ -1,8 +1,8 @@
 # Maintainer : Rémy Oudompheng <remy@archlinux.org>
 
 pkgname=pyalpm
-pkgver=0.10.7
-pkgrel=4
+pkgver=0.10.8
+pkgrel=1
 pkgdesc="Python 3 bindings for libalpm"
 arch=('x86_64')
 url="https://gitlab.archlinux.org/archlinux/pyalpm"
@@ -20,7 +20,6 @@ prepare() {
 
 build() {
   cd "${pkgname}"
-  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   python -m build --wheel --no-isolation
 }
 
