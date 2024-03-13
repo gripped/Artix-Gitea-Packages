@@ -19,16 +19,17 @@ depends=(gtk3
          libsoup
          libxml2
          sqlite
-         webkit2gtk)
-optdepends=(file-roller
-            libnautilus-extension)
+         webkit2gtk
+         libnautilus-extension)
+optdepends=(file-roller)
 makedepends=(gobject-introspection
              intltool
              meson
              nautilus
              ninja
              vala
-             yelp-tools)
+             yelp-tools
+             libnautilus-extension)
 _archive="$pkgname-$pkgver"
 _url="https://github.com/FontManager/font-manager"
 source=("$_url/releases/download/$pkgver/$_archive.tar.xz")
