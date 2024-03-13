@@ -3,7 +3,7 @@
 
 pkgname=krusader
 pkgver=2.8.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Advanced twin panel (commander style) file manager'
 arch=(x86_64)
 url='https://krusader.org/'
