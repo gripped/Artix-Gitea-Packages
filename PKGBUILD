@@ -2,7 +2,7 @@
 
 _name=importlib_resources
 pkgname=python-importlib_resources
-pkgver=6.1.3
+pkgver=6.3.0
 pkgrel=1
 pkgdesc="Design and implementation for a planned importlib.resources"
 arch=(any)
@@ -27,8 +27,8 @@ checkdepends=(
 )
 provides=(python-importlib-resources)
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('5e4d45121102b3dd9bc621097b4c5502c7033c06aa0221dd77e4cd08840edc5ff35cb2bd000ba3d000fda8a8f285577ce451a01294924eabd18e6ac5235648be')
-b2sums=('1e274329b899482809139249f614b44b4bad4dd2003d5b14364342c7b8b342cb7ce3d77a49e3fcfe3359ea88e4945f08232d5fbfd3331d4e228fc32bc94113e3')
+sha512sums=('c640738067e973b9e5dda707fc2465c99e9c4904da35ff9c5164980e50be9a6ea0295f3087bc14444f2618cbfed418060174fa1229cd55b1a996f1ee24287fee')
+b2sums=('1c821552376970efe89abe36020ef5b1f5f5131f03e553fe03dc4efaa27d7d5e41bbeb1384e9c06a3ed890ed653189548e2d8e1f7aa4e1328fab9917e97e755d')
 
 build() {
   cd $_name-$pkgver
