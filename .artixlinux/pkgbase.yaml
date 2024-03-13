@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytest-sugar
-  version: 0.9.7-3
+  version: 1.0.0-3
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.7-3
+    version: 1.0.0-3
     packages:
-      - python-pytest-sugar-0.9.7-3-any.pkg.tar.zst
+      - python-pytest-sugar-1.0.0-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
