@@ -30,4 +30,4 @@ package() {
   cp -rp share "${pkgdir}"/usr/
 }
 
-sha256sums=('86e2826b784ec3ea4ef187d936ee5f15277422c4077efa0156ef67e3139ea08e')
+sha256sums=('d0778357266bc6513bb7f75a4570b29b24b2760348bbf607babfc3a6f09458cf')
