@@ -7,7 +7,7 @@
 pkgbase="lib32-sqlite"
 pkgname=('lib32-sqlite')
 _srcver=3450100
-pkgver=3.45.1
+pkgver=3.45.2
 pkgrel=1
 pkgdesc="A C library that implements an SQL database engine (32-bit)"
 arch=('x86_64')
