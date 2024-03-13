@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-pycountry
-  version: 22.3.5-2
+  version: 23.12.11-1
   arch:
     - any
   pkgname:
     - python-pycountry
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 22.3.5-2
+    version: 23.12.11-1
     packages:
-      - python-pycountry-22.3.5-2-any.pkg.tar.zst
+      - python-pycountry-23.12.11-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
