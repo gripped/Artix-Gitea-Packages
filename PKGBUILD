@@ -19,9 +19,9 @@ depends=(gtk3
          libsoup
          libxml2
          sqlite
-         webkit2gtk
-         libnautilus-extension)
-optdepends=(file-roller)
+         webkit2gtk)
+optdepends=(file-roller
+            libnautilus-extension)
 makedepends=(gobject-introspection
              intltool
              meson
@@ -37,7 +37,7 @@ sha256sums=('b6b6e7c62ce7a407f4151beb890b4dabfb1b2e446ff51f087f1b4fab986f8e79')
 
 build() {
 	artix-meson "$_archive" build \
-		-Dnautilus=true \
+		-Dnautilus=false \
 		-Dreproducible=true
 	ninja -C build
 }
