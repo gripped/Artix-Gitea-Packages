@@ -2,11 +2,11 @@
 
 pkgname=artix-checkupdates
 pkgver=0.8.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
 url="https://gitea.artixlinux.org/artix/artix-checkupdates"
-license=('GPL3')
+license=('GPL-3.0-only')
 groups=('artix-tools')
 depends=(
     'brotli'
@@ -16,12 +16,17 @@ depends=(
     'glibc'
     'libunistring'
     'keyutils'
-    'pacman'
+    'pacman' 'libalpm.so'
 )
 makedepends=('git')
 backup=('etc/artix-checkupdates/config')
 source=("git+${url}.git#tag=${pkgver}")
 b2sums=('SKIP')
+
+prepare() {
+  cd "${pkgname}"
+  git cherry-pick -n e0764a7f3351807d91f1e1347c64a39a51d884cc
+}
 
 build() {
   cd "${pkgname}"
