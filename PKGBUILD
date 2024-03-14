@@ -1,46 +1,52 @@
+# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: David Anderson <dave@natulte.net>
 
 pkgname=tailscale
-pkgver=1.60.1
+pkgver=1.62.0
 pkgrel=1
 pkgdesc="A mesh VPN that makes it easy to connect your devices, wherever they are."
 arch=("x86_64")
 url="https://tailscale.com"
 license=("MIT")
 makedepends=("git" "go")
-depends=("glibc" "iptables")
+depends=("glibc")
 backup=("etc/default/tailscaled")
 # Important: Check if the version has been published before updating
 # curl -s "https://pkgs.tailscale.com/stable/?mode=json"
-_commit=a8e06a7df8a712f095e12888ae37bfd3a270c825
+_commit=df4d4ebd41b6670c8ca371e5e32ea29e00e69708
 source=("git+https://github.com/tailscale/tailscale.git#commit=${_commit}")
 sha256sums=('SKIP')
 
+pkgver() {
+  cd "${pkgname}"
+  git describe --tags | sed 's/^[vV]//;s/-/+/g'
+}
+
 prepare() {
-	cd "${pkgname}"
-	go mod vendor
+    cd "${pkgname}"
+    go mod vendor
 }
 
 build() {
-	cd "${pkgname}"
-	export CGO_CPPFLAGS="${CPPFLAGS}"
-	export CGO_CFLAGS="${CFLAGS}"
-	export CGO_CXXFLAGS="${CXXFLAGS}"
-	export CGO_LDFLAGS="${LDFLAGS}"
-	# pacman bug
-	# export GOPATH="${srcdir}"
-	export GOFLAGS="-buildmode=pie -mod=readonly -modcacherw"
-	GO_LDFLAGS="\
+    cd "${pkgname}"
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+    export CGO_LDFLAGS="${LDFLAGS}"
+    # pacman bug
+    # export GOPATH="${srcdir}"
+    export GOFLAGS="-buildmode=pie -mod=readonly -modcacherw"
+    GO_LDFLAGS="\
         -compressdwarf=false \
         -linkmode=external \
         -X tailscale.com/version.longStamp=${pkgver} \
-        -X tailscale.com/version.shortStamp=$(cut -d+ -f1 <<<"${pkgver}") \
+        -X tailscale.com/version.shortStamp=$(cut -d+ -f1 <<< "${pkgver}") \
         -X tailscale.com/version.gitCommitStamp=${_commit}"
-	for cmd in ./cmd/tailscale ./cmd/tailscaled; do
-		go build -v -tags xversion -ldflags "$GO_LDFLAGS" "$cmd"
-	done
+    for cmd in ./cmd/tailscale ./cmd/tailscaled; do
+        go build -v -tags xversion -ldflags "$GO_LDFLAGS" "$cmd"
+    done
 }
 
 #TODO: Figure out why tests are failing
@@ -50,8 +56,10 @@ build() {
 # }
 
 package() {
-	cd "${pkgname}"
-	install -Dm755 tailscale tailscaled -t "$pkgdir/usr/bin"
-	install -Dm644 cmd/tailscaled/tailscaled.defaults "$pkgdir/etc/default/tailscaled"
-	install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+    cd "${pkgname}"
+    install -Dm755 tailscale tailscaled -t "$pkgdir/usr/bin"
+    install -Dm644 cmd/tailscaled/tailscaled.defaults "$pkgdir/etc/default/tailscaled"
+    # Artix stuff, don't remove v
+    # install -Dm644 cmd/tailscaled/tailscaled.service -t "$pkgdir/usr/lib/systemd/system"
+    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 }
