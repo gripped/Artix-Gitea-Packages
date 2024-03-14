@@ -80,6 +80,7 @@ build() {
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
+    -D systemd=disabled
   )
 
   artix-meson pipewire build "${meson_options[@]}"
