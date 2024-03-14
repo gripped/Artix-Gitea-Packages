@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: a2ps
-  version: 4.15.5-2
+  version: 4.15.6-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 4.15.5-2
+    version: 4.15.6-1
     packages:
-      - a2ps-4.15.5-2-x86_64.pkg.tar.zst
+      - a2ps-4.15.6-1-x86_64.pkg.tar.zst
   world:
     version: 4.15.5-1
     packages:
