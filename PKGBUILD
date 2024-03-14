@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=avahi-s6
-pkgver=20220123
+pkgver=20240314
 pkgrel=1
 pkgdesc="s6-rc service scripts for avahi"
 arch=('any')
@@ -12,7 +12,7 @@ conflicts=('init-avahi')
 depends=('avahi' 'dbus-s6' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/avahi.conf')
-_commit=2fff2bc2c20464f1641c4b7077d3db4a67fff3f4
+_commit=e43dbfc803de09fac34f8347ebefcb4ae9b2637c
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
