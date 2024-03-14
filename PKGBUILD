@@ -99,6 +99,7 @@ build() {
     -D selinux=disabled
     -D session-managers=[]
     -D udevrulesdir=/usr/lib/udev/rules.d
+    -D systemd=disabled
   )
 
   artix-meson pipewire build "${meson_options[@]}"
