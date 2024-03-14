@@ -7,18 +7,27 @@
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-deprecated-tools' 'bluez-hid2hci' 'bluez-mesh' 'bluez-obex')
 pkgver=5.73
-pkgrel=3
+pkgrel=4
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL-2.0-only')
 makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'python-docutils' 'python-pygments' 'cups')
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
-        bluetooth.modprobe)
+        bluetooth.modprobe
+        0001_use_bt_uhid_functions.patch)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
 sha256sums=('257e9075ce05c70d48c5defd254e78c418416f7584b45f9dddc884ff88e3fc53'
             'SKIP'
-            '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
+            '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4'
+            '24780fc689dc4041ab0c5713c8f2cb09a7038d4936812310534762592d76e2f8')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
+
+prepare() {
+  cd "${pkgname}"-${pkgver}
+  # fix DualShock 3 connection - #6
+  # https://github.com/bluez/bluez/issues/771
+  patch -Np1 -i ../0001_use_bt_uhid_functions.patch
+}
 
 build() {
   cd "${pkgname}"-${pkgver}
@@ -75,7 +84,6 @@ package_bluez() {
   depends=('dbus' 'glib2' 'alsa-lib' 'glibc')
   backup=(etc/bluetooth/{main,input,network}.conf)
 
-  _install fakeinstall/usr/lib/bluetooth/bluetoothd 
   _install fakeinstall/usr/share/dbus-1/system.d/bluetooth.conf
   _install fakeinstall/usr/share/man/man8/bluetoothd.8
 
@@ -170,7 +178,6 @@ package_bluez-obex() {
   _install fakeinstall/usr/bin/{obexctl,obex-client-tool,obex-server-tool}
   _install fakeinstall/usr/lib/bluetooth/obexd
   _install fakeinstall/usr/share/man/man5/org.bluez.obex*.5  
-
 
   # Artix (Don't remove) installs dbus service
   install -Dm644 /dev/stdin "$pkgdir"/usr/share/dbus-1/services/org.bluez.obex.service <<EOF

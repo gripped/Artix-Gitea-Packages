@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bluez
-  version: 5.73-3
+  version: 5.73-4
   arch:
     - x86_64
   pkgname:
@@ -38,16 +38,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.73-3
+    version: 5.73-4
     packages:
-      - bluez-5.73-3-x86_64.pkg.tar.zst
-      - bluez-utils-5.73-3-x86_64.pkg.tar.zst
-      - bluez-libs-5.73-3-x86_64.pkg.tar.zst
-      - bluez-cups-5.73-3-x86_64.pkg.tar.zst
-      - bluez-deprecated-tools-5.73-3-x86_64.pkg.tar.zst
-      - bluez-hid2hci-5.73-3-x86_64.pkg.tar.zst
-      - bluez-mesh-5.73-3-x86_64.pkg.tar.zst
-      - bluez-obex-5.73-3-x86_64.pkg.tar.zst
+      - bluez-5.73-4-x86_64.pkg.tar.zst
+      - bluez-utils-5.73-4-x86_64.pkg.tar.zst
+      - bluez-libs-5.73-4-x86_64.pkg.tar.zst
+      - bluez-cups-5.73-4-x86_64.pkg.tar.zst
+      - bluez-deprecated-tools-5.73-4-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.73-4-x86_64.pkg.tar.zst
+      - bluez-mesh-5.73-4-x86_64.pkg.tar.zst
+      - bluez-obex-5.73-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
