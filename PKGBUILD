@@ -6,7 +6,7 @@
 
 pkgname=skanlite
 pkgver=24.02.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Image Scanning Application'
 arch=(x86_64)
 url='https://apps.kde.org/skanlite/'
@@ -21,7 +21,7 @@ depends=(gcc-libs
          kjobwidgets5
          kxmlgui5
          kwidgetsaddons5
-         libksane
+         libksane5
          qt5-base)
 makedepends=(extra-cmake-modules
              kdoctools5)
