@@ -8,12 +8,12 @@ pkgbase:
     - libksane
     - libksane5
 actions:
-  addRepo: world-goblins
-  removeRepo: null
+  addRepo: world
+  removeRepo: world-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,17 +26,16 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.02.0-2.1
-    packages:
-      - libksane-24.02.0-2.1-x86_64.pkg.tar.zst
-      - libksane5-24.02.0-2.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
   world:
-    version: 24.02.0-1
+    version: 24.02.0-2.1
     packages:
-      - libksane-24.02.0-1-x86_64.pkg.tar.zst
+      - libksane-24.02.0-2.1-x86_64.pkg.tar.zst
+      - libksane5-24.02.0-2.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
