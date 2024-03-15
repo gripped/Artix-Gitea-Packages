@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libksane
-  version: 24.02.0-2
+  version: 24.02.0-2.1
   arch:
     - x86_64
   pkgname:
@@ -10,8 +10,8 @@ pkgbase:
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.02.0-2
+    version: 24.02.0-2.1
     packages:
-      - libksane-24.02.0-2-x86_64.pkg.tar.zst
-      - libksane5-24.02.0-2-x86_64.pkg.tar.zst
+      - libksane-24.02.0-2.1-x86_64.pkg.tar.zst
+      - libksane5-24.02.0-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -7,7 +7,7 @@ pkgbase=libksane
 pkgname=(libksane
          libksane5)
 pkgver=24.02.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='An image scanning library'
 url='https://www.kde.org/'
 arch=(x86_64)
