@@ -1,11 +1,11 @@
-# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Flamelab <panosfilip@gmail.com
 
 pkgname=gnome-shell
 pkgver=45.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Next generation desktop shell"
 url="https://wiki.gnome.org/Projects/GnomeShell"
@@ -13,22 +13,44 @@ arch=(x86_64)
 license=(GPL-3.0-or-later)
 depends=(
   accountsservice
+  at-spi2-core
+  bash
+  cairo
+  dconf
+  gcc-libs
   gcr-4
+  gdk-pixbuf2
   gjs
+  glib2
+  glibc
   gnome-autoar
+  gnome-desktop-4
   gnome-session
   gnome-settings-daemon
+  graphene
   gsettings-desktop-schemas
   gtk4
+  hicolor-icon-theme
+  json-glib
   libadwaita
   libcanberra-pulse
   libgdm
+  libgirepository
+  libglvnd
   libgweather-4
   libibus
+  libical
+  libnm
   libnma-gtk4
+  libpipewire
+  libpulse
   libsecret
   libsoup3
+  libx11
+  libxfixes
   mutter
+  pango
+  polkit
   unzip
   upower
 )
@@ -57,6 +79,7 @@ optdepends=(
   'gst-plugins-good: Screen recording'
   'power-profiles-daemon: Power profile switching'
   'python-gobject: gnome-shell-test-tool performance tester'
+  'python-simplejson: gnome-shell-test-tool performance tester'
   'switcheroo-control: Multi-GPU support'
 )
 groups=(gnome)
@@ -64,17 +87,23 @@ _commit=58522920b5ae96d2b95dad0371ce13eb4bd955ce  # tags/45.4^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-shell.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git"
+  0001-subprojects-gvc-Bump-gvc-submodule-to-newest-commit.patch
 )
 b2sums=('SKIP'
-        'SKIP')
+        'SKIP'
+        'ee7b40aefdf751feaa661de6d0aed28efcd282250f41b25b6c0413bd75503bb2cd5413fce96d33336206448a777be04b701a4465e38c799e91328fb4197d011b')
 
 pkgver() {
   cd $pkgname
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+  git describe --tags | sed -r 's/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
   cd $pkgname
+
+  # Update libgnome-volume-control
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/gnome-shell/-/issues/3
+  git apply -3 ../0001-subprojects-gvc-Bump-gvc-submodule-to-newest-commit.patch
 
   git submodule init
   git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
