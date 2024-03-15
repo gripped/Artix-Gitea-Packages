@@ -7,7 +7,7 @@
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-deprecated-tools' 'bluez-hid2hci' 'bluez-mesh' 'bluez-obex')
 pkgver=5.73
-pkgrel=4
+pkgrel=4.1
 url="http://www.bluez.org/"
 arch=('x86_64')
 license=('GPL-2.0-only')
@@ -84,6 +84,7 @@ package_bluez() {
   depends=('dbus' 'glib2' 'alsa-lib' 'glibc')
   backup=(etc/bluetooth/{main,input,network}.conf)
 
+  _install fakeinstall/usr/lib/bluetooth/bluetoothd
   _install fakeinstall/usr/share/dbus-1/system.d/bluetooth.conf
   _install fakeinstall/usr/share/man/man8/bluetoothd.8
 
