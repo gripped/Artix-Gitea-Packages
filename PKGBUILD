@@ -5,7 +5,7 @@
 
 pkgname=kolourpaint
 pkgver=24.02.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Paint Program'
 url='https://apps.kde.org/kolourpaint/'
 arch=(x86_64)
@@ -22,7 +22,7 @@ depends=(gcc-libs
          ktextwidgets5
          kwidgetsaddons5
          kxmlgui5
-         libksane
+         libksane5
          qt5-base)
 makedepends=(extra-cmake-modules
              kdoctools5)
