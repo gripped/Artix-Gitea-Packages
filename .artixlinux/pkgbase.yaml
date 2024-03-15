@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: copyq
-  version: 7.1.0-2
+  version: 8.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 7.1.0-2
+    version: 8.0.0-1
     packages:
-      - copyq-7.1.0-2-x86_64.pkg.tar.zst
+      - copyq-8.0.0-1-x86_64.pkg.tar.zst
