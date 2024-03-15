@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - run-parts
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: world
+  removeRepo: system
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -22,9 +22,8 @@ repos:
     version: null
     packages: []
   system:
-    version: 5.17-1
-    packages:
-      - run-parts-5.17-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-goblins:
     version: null
     packages: []
@@ -32,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 5.17-1
+    packages:
+      - run-parts-5.17-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
