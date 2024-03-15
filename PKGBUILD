@@ -7,7 +7,7 @@
 
 pkgname=containerd
 pkgver=1.7.14
-pkgrel=1
+pkgrel=1.1
 pkgdesc='An open and reliable container runtime'
 url='https://containerd.io/'
 depends=('runc')
