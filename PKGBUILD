@@ -3,9 +3,9 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=polkit-kde-agent
-pkgver=6.0.1
+pkgver=6.0.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 pkgdesc='Daemon providing a polkit authentication UI for KDE'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -26,7 +26,7 @@ makedepends=(extra-cmake-modules
              kdoctools)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-1-$pkgver.tar.xz{,.sig})
-sha256sums=('629817c6e56a5647c3af97d6dc960e7744460332bd3de6af809095e8b532d93d'
+sha256sums=('3e2dec7f7f2f4342c7cf8cdc64972be573509a83564ffc1af7e0d91bf57462bd'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -43,5 +43,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -fr $pkgdir/usr/lib/systemd    # remove systemd service
+  rm -fr "$pkgdir"/usr/lib/systemd
 }
