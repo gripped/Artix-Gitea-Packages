@@ -15,13 +15,10 @@ optdepends=('perl-term-readkey: for snmpcheck application'
             'python: for the python modules')
 options=('!emptydirs' '!makeflags')
 source=(https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz{,.asc}
-        0001-pcre2.patch
-        snmpd.service snmptrapd.service)
+        0001-pcre2.patch)
 sha512sums=('a510fa91a21e9ddc86a12fd1d0bc6b356e63f3ea53f184d2e31439004d41d902390664134dc40b3b828eabb4282eaf3da628a07c4d480fa00eff7e700950c423'
             'SKIP'
-            '16234f8bb66f6754d3b61752c2fd479676e504281e9857c72b44d99444aa95bb03263d0d93d1b9996daf760ed78344dcdcc7ab1f701dce9a5b51c7c7158a8f9d'
-            'f7c4bee084f5fb5a27b6447f6ac52a7e5b9541e048b53d23be5c22f2c6de5e72ba8978f381af54850f3c34fd35a9e73f1c5f58e116dbb03461035095509f5602'
-            '549f555205c303723e98d5c482abe73f20b8a6e8522ebeb5d197750752314d3930ebe08898e45fcc83646290df53d3244ae55b97779f88d206cc6179a58df606')
+            '16234f8bb66f6754d3b61752c2fd479676e504281e9857c72b44d99444aa95bb03263d0d93d1b9996daf760ed78344dcdcc7ab1f701dce9a5b51c7c7158a8f9d')
 validpgpkeys=('27CAA4A32E371383A33ED0587D5F9576E0F81533'
               '6E6718AEF1EB5C65C32D1B2A356BC0B552D53CAB'
               '8AAA779B597B405BBC329B6376CF47B8A77C5329'
