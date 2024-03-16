@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kid3
-  version: 3.9.5-2
+  version: 3.9.5-3
   arch:
     - x86_64
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.9.5-2
+    version: 3.9.5-3
     packages:
-      - kid3-common-3.9.5-2-x86_64.pkg.tar.zst
-      - kid3-qt-3.9.5-2-x86_64.pkg.tar.zst
-      - kid3-3.9.5-2-x86_64.pkg.tar.zst
+      - kid3-common-3.9.5-3-x86_64.pkg.tar.zst
+      - kid3-qt-3.9.5-3-x86_64.pkg.tar.zst
+      - kid3-3.9.5-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
