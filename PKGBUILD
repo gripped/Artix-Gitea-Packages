@@ -4,9 +4,9 @@
 # Contributor: Alexey D. <lq07829icatm at rambler.ru>
 
 pkgname=plasma-workspace
-pkgver=6.0.1
+pkgver=6.0.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=3
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -131,7 +131,7 @@ conflicts=(plasma-wayland-session)
 replaces=(plasma-wayland-session)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d4c35cb168b990487b39f1b7eb1946909c5e74f0200d0de2d317659c16f15a0c'
+sha256sums=('9cceb4e2bce045970fc177bf2847ffae58bd397806b8ccf44da5820a3bd600ce'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -149,5 +149,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -fr $pkgdir/usr/lib/systemd    #remove systemd service
+  rm -fr "$pkgdir"/usr/lib/systemd
 }
