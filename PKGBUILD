@@ -3,9 +3,9 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=powerdevil
-pkgver=6.0.1
+pkgver=6.0.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 pkgdesc='Manages the power consumption settings of a Plasma Shell'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -44,7 +44,7 @@ optdepends=('kinfocenter: for the Energy Information KCM'
             'power-profiles-daemon: power profiles support')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0ac48f23e82644384340f0639037a8424169a8e1a34b49f3f6d250533242d0af'
+sha256sums=('3188d3c8cadddf68955efc96e9e4e1292eb3d167e4da59029adc993e2151f548'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -61,5 +61,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -fr $pkgdir/usr/lib/systemd    #remove systemd service
+  rm -fr "$pkgdir"/usr/lib/systemd
 }
