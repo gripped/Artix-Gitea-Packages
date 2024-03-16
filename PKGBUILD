@@ -1,9 +1,9 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=xdg-desktop-portal-kde
-pkgver=6.0.1
+pkgver=6.0.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 pkgdesc='A backend implementation for xdg-desktop-portal using Qt/KF5'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -37,7 +37,7 @@ makedepends=(extra-cmake-modules
 provides=(xdg-desktop-portal-impl)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('da4a0b864ca176e8ce19f6e15d27c8f919323a51a0724ec82378179c3158d999'
+sha256sums=('2d7e63fcb02bfa357f325d900387456aee0193ea414b2ede98b1a159b520e765'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -54,5 +54,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -fr $pkgdir/usr/lib/systemd # remove systemd service
+  rm -fr "$pkgdir"/usr/lib/systemd
 }
