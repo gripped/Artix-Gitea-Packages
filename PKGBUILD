@@ -1,7 +1,7 @@
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=fluxbox
-_commit='9d8202f32338a3f08d3fa39057dc5eec5d97be4e'
+#_commit='9d8202f32338a3f08d3fa39057dc5eec5d97be4e'
 pkgver=1.3.7+211+g9d8202f3
 pkgrel=1
 pkgdesc='A lightweight and highly-configurable window manager'
@@ -13,7 +13,8 @@ depends=('fontconfig' 'libfontconfig.so' 'fribidi' 'libfribidi.so' 'imlib2'
 makedepends=('git')
 optdepends=('xorg-xmessage: for using the fbsetbg and fluxbox-generate_menu utilities')
 options=('!makeflags')
-source=("git+https://github.com/fluxbox/fluxbox.git#commit=${_commit}"
+#source=("git+https://github.com/fluxbox/fluxbox.git#commit=${_commit}"
+source=("git+https://github.com/fluxbox/fluxbox.git}"
         'fluxbox.desktop')
 sha256sums=('SKIP'
             '2148a90aca653b596e9632264dbdbd8c7e673d732e4b04eee66a8ac1e68b3c5d')
