@@ -4,7 +4,7 @@
 
 pkgname=freeradius
 pkgver=3.2.3
-pkgrel=5
+pkgrel=6
 pkgdesc='The premier open source RADIUS server'
 arch=('x86_64')
 url='https://freeradius.org/'
@@ -55,6 +55,7 @@ build() {
     --localstatedir=/var \
     --enable-heimdal-krb5 \
     --enable-reproducible-builds \
+    --with-regex=false \
     --with-system-libltdl \
     --with-system-libtool \
     --with-udpfromto
@@ -64,7 +65,7 @@ build() {
 package() {
   cd "$srcdir"/freeradius-server-$pkgver
 
-  make install R="$pkgdir" PACKAGE='artixlinux'
+  make install R="$pkgdir" PACKAGE='archlinux'
   chmod o+r "$pkgdir"/etc/raddb/*
   mv "$pkgdir"/etc/raddb "$pkgdir"/etc/raddb.default
   rm -rf "$pkgdir"/var/run
