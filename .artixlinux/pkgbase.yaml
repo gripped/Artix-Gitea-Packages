@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: e2fsprogs
-  version: 1.47.0-1
+  version: 1.47.0-2
   arch:
     - x86_64
   pkgname:
     - e2fsprogs
     - fuse2fs
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.47.0-2
+    packages:
+      - e2fsprogs-1.47.0-2-x86_64.pkg.tar.zst
+      - fuse2fs-1.47.0-2-x86_64.pkg.tar.zst
   system:
     version: 1.47.0-1
     packages:

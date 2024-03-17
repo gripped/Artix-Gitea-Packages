@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgbase=e2fsprogs
 pkgname=('e2fsprogs' 'fuse2fs')
 pkgver=1.47.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Ext2/3/4 filesystem utilities'
 arch=('x86_64')
 license=('GPL' 'LGPL' 'MIT')
