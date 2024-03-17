@@ -18,7 +18,7 @@ checkdepends=(mypy python-jmespath python-pylint python-pytest python-pytest-moc
 optdepends=('ansible: check official ansible collections')
 source=(git+https://github.com/ansible/ansible-lint.git#commit=$_commit
         disable_version_check.patch)
-b2sums=('2d0014fbe8b8cb6b5e88eb7649cad0fa3777137490130b4e80d2adc5d5bf7fe8228019f4225400a4daa3c2ab8cdcf3bc4923ff4c1fd7760a5a1e433ddd2643c2'
+b2sums=('SKIP'
         '98294f267ca693c0bc3921f8e076d674a219a891502cd31a0af789bc0b1447b53834b9c85853a134f6bc1ac384f31cb174cba2d55fbcc1636cae9bd3c0bd8f84')
 
 prepare() {
