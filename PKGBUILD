@@ -2,7 +2,7 @@
 
 pkgname=fluxbox
 #_commit='9d8202f32338a3f08d3fa39057dc5eec5d97be4e'
-pkgver=1.3.7+211+g9d8202f3
+pkgver=1.3.7+212+g0f95d62b
 pkgrel=1
 pkgdesc='A lightweight and highly-configurable window manager'
 arch=('x86_64')
