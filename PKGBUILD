@@ -30,7 +30,7 @@ makedepends=('xorgproto' 'pixman' 'libx11' 'mesa' 'mesa-libgl' 'xtrans'
              'libxmu' 'libxrender' 'libxi' 'libxaw' 'libxtst' 'libxres'
              'xorg-xkbcomp' 'xorg-util-macros' 'xorg-font-util' 'libepoxy'
              'xcb-util' 'xcb-util-image' 'xcb-util-renderutil' 'xcb-util-wm' 'xcb-util-keysyms'
-             'libxshmfence' 'libunwind' 'systemd' 'meson' 'git')
+             'libxshmfence' 'libunwind' 'elogind' 'meson' 'git')
 #source=(${pkgbase}-${pkgver}::git+https://gitlab.freedesktop.org/xorg/xserver.git#commit=27a0ee32ccef8d621aaa758c804fc9a5ceeb5a56
 source=(https://xorg.freedesktop.org/releases/individual/xserver/${pkgbase}-${pkgver}.tar.xz{,.sig}
         xvfb-run # with updates from FC master
@@ -108,7 +108,7 @@ package_xorg-server() {
   pkgdesc="Xorg X server"
   depends=(libepoxy libxfont2 pixman xorg-server-common libunwind
            dbus libgl xf86-input-libinput nettle
-           libxdmcp sh glibc libxau systemd-libs libtirpc
+           libxdmcp sh glibc libxau libelogind libtirpc
            libpciaccess libdrm libxshmfence libxcvt) # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
@@ -134,7 +134,7 @@ package_xorg-server() {
 
 package_xorg-server-xephyr() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libgl libepoxy libunwind systemd-libs pixman xorg-server-common
+  depends=(libxfont2 libgl libepoxy libunwind libelogind pixman xorg-server-common
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc
            xcb-util libxdmcp libx11 libxau libxshmfence glibc)
@@ -151,7 +151,7 @@ package_xorg-server-xvfb() {
   # xvfb-run is GPLv2, rest is MIT
   license=('MIT' 'GPL-2.0-only')
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
-           libgl nettle libtirpc systemd-libs
+           libgl nettle libtirpc libelogind
            libxdmcp sh glibc libxau)
 
   _install fakeinstall/usr/bin/Xvfb
@@ -167,7 +167,7 @@ package_xorg-server-xvfb() {
 package_xorg-server-xnest() {
   pkgdesc="A nested X server that runs as an X application"
   depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle
-           libtirpc systemd-libs
+           libtirpc libelogind
            libxdmcp glibc libx11 libxau)
 
   _install fakeinstall/usr/bin/Xnest
