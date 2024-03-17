@@ -4,7 +4,7 @@
 
 pkgname=xfce4-notifyd
 pkgver=0.9.3
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Notification daemon for the Xfce desktop"
 arch=('x86_64')
 url="https://docs.xfce.org/apps/notifyd/start"
@@ -20,7 +20,7 @@ sha256sums=('79ee4701e2f8715a700de2431aa33682933cab18d76938bb18e2820302bbe030')
 build() {
   cd $pkgname-$pkgver
 
-  ./configure \
+  ./configure --disable-systemd \
     --prefix=/usr \
     --sysconfdir=/etc \
     --disable-debug
@@ -30,8 +30,6 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
-
-  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
