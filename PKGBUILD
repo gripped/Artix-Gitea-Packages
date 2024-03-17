@@ -1,10 +1,10 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Robin Broda <coderobe @ archlinux.org>
 # Contributor: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
 # Contributor:  Achilleas Pipinellis <axilleas archlinux gr>
 
 pkgname=supermin
 pkgver=5.3.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Tool for creating supermin appliances"
 arch=('x86_64')
 url="http://people.redhat.com/~rjones/supermin/"
