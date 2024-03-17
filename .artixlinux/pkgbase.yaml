@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: digikam
-  version: 8.3.0-3
+  version: 8.3.0-4
   arch:
     - x86_64
   pkgname:
     - digikam
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.3.0-3
+    version: 8.3.0-4
     packages:
-      - digikam-8.3.0-3-x86_64.pkg.tar.zst
+      - digikam-8.3.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
