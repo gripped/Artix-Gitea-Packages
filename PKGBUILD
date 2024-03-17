@@ -9,18 +9,18 @@ _collections=( basic bibtexextra binextra context fontsextra fontsrecommended fo
 for _coll in ${_collections[@]}; do
   pkgname+=(texlive-$_coll)
 done
-_rev=66594
-pkgver=2023.$_rev
-pkgrel=20
+_rev=70639
+pkgver=2024.0
+pkgrel=1
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
 depends=(texlive-bin)
 makedepends=(subversion)
 url='http://tug.org/texlive/'
-source=(svn://tug.org/texlive/tags/texlive-2023.0/Master/texmf-dist#revision=$_rev
-        svn://tug.org/texlive/tags/texlive-2023.0/Master/tlpkg#revision=$_rev
-        svn://tug.org/texlive/tags/texlive-2023.0/Master/bin/x86_64-linux#revision=$_rev
+source=(texmf-dist-$pkgver::svn://tug.org/texlive/tags/texlive-$pkgver/Master/texmf-dist#revision=$_rev
+        tlpkg-$pkgver::svn://tug.org/texlive/tags/texlive-$pkgver/Master/tlpkg#revision=$_rev
+        x86_64-linux-$pkgver::svn://tug.org/texlive/tags/texlive-$pkgver/Master/bin/x86_64-linux#revision=$_rev
         09-texlive-fonts.conf
         texmf.cnf.patch
         texmfcnf.lua.patch
@@ -36,8 +36,8 @@ sha256sums=('SKIP'
             'SKIP'
             'SKIP'
             '5e79c40cf3ab93348fc89e97890198601767ea2c8fea89ea76088c17a2b35962'
-            '6baf9070b96a70e78e3b8365a01fbf4637f76d70f9db2fde5d36640ee518c40a'
-            '7bf4b47ed7562dc8967a532fb13aa3c1194db1b74d7725f303612fac54750da9'
+            '204245fb6f72091c72ad78727ce970a9d03795ef6cab35b9e5d7cf69630ed171'
+            '13932156d6c46cd8d2c19d92f574d92a7aa461928fce793fc06835714b768bc9'
             'c76f01fe2a42e5860f7d0b2f16a4fc09101e1a14ea7488985e914cda749f1a21'
             '05afeae62a5d4c9de79c838c9636e2aefe9ad1d6b787fed4e5930c13baf60eba'
             'e6d399faee55ba461cf7e617f2369f5c516de292b28afc6665c9e3fe2b821973'
@@ -49,7 +49,11 @@ sha256sums=('SKIP'
 options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
-  # Customize configuration
+  mv texmf-dist-$pkgver texmf-dist
+  mv tlpkg-$pkgver tlpkg
+  mv x86_64-linux-$pkgver x86_64-linux
+
+# Customize configuration
   patch -d texmf-dist/web2c -p0 < texmf.cnf.patch
   patch -d texmf-dist/web2c -p0 < texmfcnf.lua.patch
 
@@ -128,7 +132,7 @@ _package() {
   pkgdesc+="`cat pkgdesc-$1`"
   [[ -s depends-$1 ]] && depends+=(`cat depends-$1`)
 # jadetex depends on ulem and marvosym
-  [[ $1 == formatsextra ]] && depends+=(texlive-plaingeneric texlive-fontsrecommended)
+  [[ $1 == formatsextra ]] && depends+=(texlive-plaingeneric texlive-fontsrecommended texlive-latexrecommended)
   [[ $1 == latex || $1 == binextra ]] && depends+=(dvisvgm)
   [[ $1 == context ]] && optdepends+=('luametatex: LuaMetaTeX engine')
   [[ $1 == fontutils ]] && optdepends+=('ghostscript: for epstopdf')
