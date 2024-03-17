@@ -1,15 +1,15 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=rpcbind
 pkgver=1.2.6
-pkgrel=3
+pkgrel=4
 pkgdesc="portmap replacement which supports RPC over various protocols"
 arch=(x86_64)
 url="http://rpcbind.sourceforge.net"
-license=('custom')
-depends=('bash' 'glibc' 'libtirpc')
-options=('debug')
+license=('BSD-3-Clause')
+depends=('glibc' 'libtirpc')
+makedepends=('udev')
 replaces=('portmap')
 # see also http://git.linux-nfs.org/?p=steved/rpcbind.git;a=summary
 source=(https://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.bz2
