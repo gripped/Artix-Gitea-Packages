@@ -4,8 +4,8 @@
 # Contributor: Flamelab <panosfilip@gmail.com
 
 pkgname=gnome-shell
-pkgver=45.4
-pkgrel=2
+pkgver=45.5
+pkgrel=1
 epoch=1
 pkgdesc="Next generation desktop shell"
 url="https://wiki.gnome.org/Projects/GnomeShell"
@@ -83,15 +83,13 @@ optdepends=(
   'switcheroo-control: Multi-GPU support'
 )
 groups=(gnome)
-_commit=58522920b5ae96d2b95dad0371ce13eb4bd955ce  # tags/45.4^0
+_commit=97fa46130bc35733ea88f6591705081a343e7d18  # tags/45.5^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-shell.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git"
-  0001-subprojects-gvc-Bump-gvc-submodule-to-newest-commit.patch
 )
 b2sums=('SKIP'
-        'SKIP'
-        'ee7b40aefdf751feaa661de6d0aed28efcd282250f41b25b6c0413bd75503bb2cd5413fce96d33336206448a777be04b701a4465e38c799e91328fb4197d011b')
+        'SKIP')
 
 pkgver() {
   cd $pkgname
@@ -100,10 +98,6 @@ pkgver() {
 
 prepare() {
   cd $pkgname
-
-  # Update libgnome-volume-control
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/gnome-shell/-/issues/3
-  git apply -3 ../0001-subprojects-gvc-Bump-gvc-submodule-to-newest-commit.patch
 
   git submodule init
   git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
@@ -123,19 +117,15 @@ build() {
   meson compile -C build
 }
 
-_check() (
+check() (
   export XDG_RUNTIME_DIR="$PWD/rdir"
   mkdir -p -m 700 "$XDG_RUNTIME_DIR"
 
   export NO_AT_BRIDGE=1 GTK_A11Y=none
 
-  meson test -C build --print-errorlogs -t 3 ||: #skip failing tests
-)
-
-check() {
   dbus-run-session xvfb-run -s '-nolisten local +iglx -noreset' \
-    bash -c "$(declare -f _check); _check"
-}
+    meson test -C build --print-errorlogs -t 3 ||: #skip failing tests
+)
 
 package() {
   depends+=(libmutter-13.so)
