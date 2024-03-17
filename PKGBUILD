@@ -5,12 +5,24 @@ pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-common' 'xorg-server-devel')
 pkgver=21.1.11
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
-# license=('LicenseRef-Adobe-Display-PostScript AND BSD-3-Clause AND LicenseRef-DEC-3-Clause AND HPND AND
-# LicenseRef-HPND-sell-MIT-disclaimer-xserver AND HPND-sell-variant AND ICU AND ISC AND MIT AND MIT-open-group AND NTP AND
-# SGI-B-2.0 AND SMLNJ AND X11 AND X11-distribute-modifications-variant')
-license=('MIT')
+license=('LicenseRef-Adobe-Display-PostScript'
+         'BSD-3-Clause' 
+         'LicenseRef-DEC-3-Clause' 
+         'HPND'
+         'LicenseRef-HPND-sell-MIT-disclaimer-xserver'
+         'HPND-sell-variant' 
+         'ICU'
+         'ISC'
+         'MIT'
+         'MIT-open-group'
+         'NTP'
+         'SGI-B-2.0'
+         'SMLNJ'
+         'X11'
+         'X11-distribute-modifications-variant'
+)
 groups=('xorg')
 url="https://xorg.freedesktop.org"
 makedepends=('xorgproto' 'pixman' 'libx11' 'mesa' 'mesa-libgl' 'xtrans'
@@ -18,7 +30,7 @@ makedepends=('xorgproto' 'pixman' 'libx11' 'mesa' 'mesa-libgl' 'xtrans'
              'libxmu' 'libxrender' 'libxi' 'libxaw' 'libxtst' 'libxres'
              'xorg-xkbcomp' 'xorg-util-macros' 'xorg-font-util' 'libepoxy'
              'xcb-util' 'xcb-util-image' 'xcb-util-renderutil' 'xcb-util-wm' 'xcb-util-keysyms'
-             'libxshmfence' 'libunwind' 'elogind' 'meson' 'git')
+             'libxshmfence' 'libunwind' 'systemd' 'meson' 'git')
 #source=(${pkgbase}-${pkgver}::git+https://gitlab.freedesktop.org/xorg/xserver.git#commit=27a0ee32ccef8d621aaa758c804fc9a5ceeb5a56
 source=(https://xorg.freedesktop.org/releases/individual/xserver/${pkgbase}-${pkgver}.tar.xz{,.sig}
         xvfb-run # with updates from FC master
@@ -40,9 +52,9 @@ build() {
   # Since pacman 5.0.2-2, hardened flags are now enabled in makepkg.conf
   # With them, module fail to load with undefined symbol.
   # See https://bugs.archlinux.org/task/55102 / https://bugs.archlinux.org/task/54845
-#   export CFLAGS=${CFLAGS/-fno-plt}
-#   export CXXFLAGS=${CXXFLAGS/-fno-plt}
-#   export LDFLAGS=${LDFLAGS/,-z,now}
+  export CFLAGS=${CFLAGS/-fno-plt}
+  export CXXFLAGS=${CXXFLAGS/-fno-plt}
+  export LDFLAGS=${LDFLAGS/-Wl,-z,now}
 
   artix-meson ${pkgbase}-$pkgver build \
     -D ipv6=true \
@@ -96,6 +108,7 @@ package_xorg-server() {
   pkgdesc="Xorg X server"
   depends=(libepoxy libxfont2 pixman xorg-server-common libunwind
            dbus libgl xf86-input-libinput nettle
+           libxdmcp sh glibc libxau systemd-libs libtirpc
            libpciaccess libdrm libxshmfence libxcvt) # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
@@ -121,9 +134,10 @@ package_xorg-server() {
 
 package_xorg-server-xephyr() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libgl libepoxy libunwind libelogind libxv pixman xorg-server-common
+  depends=(libxfont2 libgl libepoxy libunwind systemd-libs pixman xorg-server-common
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
-           nettle libtirpc)
+           nettle libtirpc
+           xcb-util libxdmcp libx11 libxau libxshmfence glibc)
 
   _install fakeinstall/usr/bin/Xephyr
   _install fakeinstall/usr/share/man/man1/Xephyr.1
@@ -134,8 +148,11 @@ package_xorg-server-xephyr() {
 
 package_xorg-server-xvfb() {
   pkgdesc="Virtual framebuffer X server"
+  # xvfb-run is GPLv2, rest is MIT
+  license=('MIT' 'GPL-2.0-only')
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
-           libgl nettle libtirpc libelogind)
+           libgl nettle libtirpc systemd-libs
+           libxdmcp sh glibc libxau)
 
   _install fakeinstall/usr/bin/Xvfb
   _install fakeinstall/usr/share/man/man1/Xvfb.1
@@ -149,7 +166,9 @@ package_xorg-server-xvfb() {
 
 package_xorg-server-xnest() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle libtirpc libelogind)
+  depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle
+           libtirpc systemd-libs
+           libxdmcp glibc libx11 libxau)
 
   _install fakeinstall/usr/bin/Xnest
   _install fakeinstall/usr/share/man/man1/Xnest.1
@@ -160,7 +179,7 @@ package_xorg-server-xnest() {
 
 package_xorg-server-devel() {
   pkgdesc="Development files for the X.Org X server"
-  depends=('xorgproto' 'mesa' 'libpciaccess'
+  depends=('xorgproto' 'mesa' 'libpciaccess' 'pixman'
            # not technically required but almost every Xorg pkg needs it to build
            'xorg-util-macros')
 
