@@ -3,7 +3,7 @@
 
 pkgname=arrow
 pkgver=15.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Columnar in-memory analytics layer for big data."
 arch=(x86_64)
 url="https://arrow.apache.org"
@@ -72,7 +72,7 @@ build(){
 check(){
   PARQUET_TEST_DATA="${srcdir}"/parquet-testing/data \
   ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
-  ctest --test-dir build --output-on-failure ||:
+  ctest --test-dir build --output-on-failure || :
 }
 
 package(){
