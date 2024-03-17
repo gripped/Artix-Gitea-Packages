@@ -14,7 +14,7 @@ makedepends=('git')
 optdepends=('xorg-xmessage: for using the fbsetbg and fluxbox-generate_menu utilities')
 options=('!makeflags')
 #source=("git+https://github.com/fluxbox/fluxbox.git#commit=${_commit}"
-source=("git+https://github.com/fluxbox/fluxbox.git}"
+source=("git+https://github.com/fluxbox/fluxbox.git"
         'fluxbox.desktop')
 sha256sums=('SKIP'
             '2148a90aca653b596e9632264dbdbd8c7e673d732e4b04eee66a8ac1e68b3c5d')
