@@ -6,8 +6,8 @@
 # Contributor: Y <y.archlinux@paritcher.com>
 
 pkgname=luarocks
-pkgver=3.10.0
-pkgrel=3
+pkgver=3.11.0
+pkgrel=1
 pkgdesc='Deployment and management system for Lua modules'
 backup=(etc/luarocks/config-5.{1,2,3,4}.lua)
 arch=('any')
@@ -32,9 +32,8 @@ source=("https://luarocks.org/releases/$pkgname-$pkgver.tar.gz"{,.asc}
         "luarocks-admin.bash"
         "luarocks-admin.fish"
         "luarocks-admin.zsh"
-        "https://patch-diff.githubusercontent.com/raw/luarocks/luarocks/pull/1627.patch"
         )
-sha512sums=('4a834059b8f544274a110131d59d0647fb317078ef7709c1dc1a464513ebc38300abb71094620e21bb2f6e60193e9a1b0c06e7e0f4ad9acc2bf188bf4b599922'
+sha512sums=('bec918e98209e5ff5c498c4454b8c8182ecfeb0786cb4cd241d59149f33560e981ff2db8d49785823ccf31643366de15b5f2599c6eef0951d17ba66436b79644'
             'SKIP'
             'cd90cba877c0dd435b44328a0869e3102c52eb36ed5b764c3ee8a78de95772fe094419dc032db2e2c91d9a0aa35ab7c6e8a13e29b9feeb3a3172d7a129d005c0'
             '25b2303f39ecf8e6ce44bd6c9f59d322eb748eea89e4ca31991fe36eae46949062bd4d3c876de488b4dd7354fcb0531b5e29454dec99a7f981f3dc857776d2bb'
@@ -45,19 +44,12 @@ sha512sums=('4a834059b8f544274a110131d59d0647fb317078ef7709c1dc1a464513ebc38300a
             '4a24e6f44c13711ba42eab155d7e5699707e9b8d00158104065ce01d8cfdbe5ea9c1e4f12ed10b324caa076b6862a630a4638092827698a5455181e38d821869'
             'b43ccd818c3022b63690b6d060940bbbfd2775b1c174b9e99c8162ea0e746b276b4414c2489156e6bb9eae9ce41d83481022a5a757ea94b62074a6c8c57e9c5a'
             '6b52bd6f446586c3e7d5dbe1ba870e5e37c5bb9cdd5e5878959fa1c151b5a43d8b37c1dc43de46ff2c70c1f57c0429a85c382f53390179609a2880e5aa089497'
-            'f6ab6c65aaaa2680ce83a3277a2aec4400d234ddfc17c62f44190928a53b7146c38f8a779aedc1c71fed3dd2f1833e1ca924080e98ecf7462274b0d9acb07f90'
-            'dadb092d976d76f520fe729c75d883594a96837b5845bc6f38c846c7dca50ca989bd518229c11c4a3c55d030d4f11da0b46d151823644cf57eba7b81f2d4b931')
+            'f6ab6c65aaaa2680ce83a3277a2aec4400d234ddfc17c62f44190928a53b7146c38f8a779aedc1c71fed3dd2f1833e1ca924080e98ecf7462274b0d9acb07f90')
 validpgpkeys=('8460980B2B79786DE0C7FCC83FD8F43C2BB3C478')
-
-# https://github.com/luarocks/luarocks/pull/1627
-prepare() {
-  cd "$pkgname-$pkgver"
-  patch -p1 -i ../1627.patch
-}
 
 build() {
   cd "$pkgname-$pkgver"
-  ./configure --prefix=/usr --with-lua-include=/usr/include
+  ./configure --prefix=/usr
   make ./build/luarocks ./build/luarocks-admin ./build/config-5.4.lua
   make LUA_VERSION=5.1 LUA=/usr/bin/lua5.1 LUA_INCDIR=/usr/include/lua5.1 ./build/config-5.1.lua
   make LUA_VERSION=5.2 LUA=/usr/bin/lua5.2 LUA_INCDIR=/usr/include/lua5.2 ./build/config-5.2.lua
