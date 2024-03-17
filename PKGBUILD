@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.7.9
+_ver=6.8.1
 _rel=1
 _arch=arch${_rel}
 _artix=artix${_rel}
@@ -11,7 +11,7 @@ pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
-license=(GPL-2.0-or-later)
+license=(GPL-2.0-only)
 makedepends=(
   bc
   cpio
@@ -27,14 +27,17 @@ makedepends=(
   graphviz
   imagemagick
   python-sphinx
+  python-yaml
   texlive-latexextra
 )
-options=('!strip')
+options=(
+  !strip
+)
 _srcname=linux-${_ver}
 _srctag=v${_ver}-${_arch}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
-  $url/releases/download/$_srctag/linux-$_srctag.patch.zst
+  $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -43,14 +46,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('0fd733fc0778f8da1fdf66df1698d394248807de71eef83a4d1218bcb3dfd346'
+sha256sums=('8d0c8936e3140a0fbdf511ad7a9f21121598f3656743898f47bb9052d37cff68'
             'SKIP'
-            '16b6541d9aad469faf325a354c1b7cdff5df402a8073317d548b93dd1c184a4f'
-            'fcd97b47bd191bd67cdbd98a633f67cc675d939a3372427fd6e7623904a22062')
-b2sums=('2a5990e067439dcb3a6e7647832c85a2ce7faf28c48f414ebcb4d33ea37f870204c4b6bf98fca1faaf61bb59f579d6b597d8b2b29bd8cd2cc3b25afba3fe1fd8'
+            '376db82b4613c3942932fde99d54c3dea1e4b29ab23d8b86daa6414327e6244d'
+            'SKIP'
+            '029f1ea74b99c6c60a0a7730cad4a218822f6e7ecc495ea0c3aab18bcad1fd6c')
+b2sums=('2b518f8f39b4dcea1c580cb0664d59c165db989422fd6fd6b65d3dd1e4548bc6e0cedfc95c2584ae56f69ac1a1d3de6552ee61e77b08799a5275934a453ab929'
         'SKIP'
-        'd8c6fb5b5438236ce0e9ed3cfbcd016dd04835ad2665190b3d9974b2491ca7fdbd4216470e3d47fc4dc7f089133f535e5cad3fd94ee67944f412712bf27ac0c7'
-        '2c533307ca49949387b90ecde08facc42dd528bfb4f2c04ee3d350a81e437692d2c7d98b6e6632983aaa992f3bc1d9889f06820a3aab67c7801767aa22a67c24')
+        '632a1934bf7c194f9ddb9b21c4acf27112152c9541a68e8ca1ff02bbc1fda126031f8ab6290350e4c2cef6aac41fe7469661abad5d83a3c05015a3ee4a4652c7'
+        'SKIP'
+        '5662098394bf9f6bae9cbce30daf04714c9401cf83eb7a5b71078aeda007156e1c6981136ce9db6799028259513c4e1adf6e870f0c18290254c44a698bfd11dc')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
