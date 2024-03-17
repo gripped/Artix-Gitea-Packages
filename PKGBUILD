@@ -5,13 +5,13 @@ pkgbase=tree-sitter
 pkgname=('tree-sitter' 'tree-sitter-cli')
 _commit=1c38d34deac5ae7ea797a559f596fb4ec9008eb4
 pkgver=0.22.1
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url=https://github.com/tree-sitter/tree-sitter
 license=('MIT')
 makedepends=('git' 'rust')
 options=('!lto') # Needed for CLI build
-source=("git+$url.git#commit=$_commit")
+source=("git+$url.git#commit=$_commit?signed")
 b2sums=('SKIP')
 validpgpkeys=('FCC13F47A6900D64239FF13BE67890ADC4227273') # Amaan Qureshi <amaanq12@gmail.com>
 
@@ -22,7 +22,7 @@ prepare() {
 
 build() {
   cd $pkgbase
-  make LDFLAGS="$LDFLAGS -flto" CFLAGS="$CFLAGS -flto" CXXFLAGS="$CXXFLAGS -flto"
+  make PREFIX=/usr LDFLAGS="$LDFLAGS -flto" CFLAGS="$CFLAGS -flto" CXXFLAGS="$CXXFLAGS -flto"
 
   cd cli
   cargo build --release --locked --offline
