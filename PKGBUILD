@@ -1,13 +1,13 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Mantas Mikulėnas <grawity@gmail.com>
 
 pkgname=libverto
 pkgver=0.3.2
-pkgrel=4
+pkgrel=5
 pkgdesc="Main event loop abstraction library"
 arch=('x86_64')
 url="https://github.com/latchset/libverto"
-license=(MIT)
+license=('MIT')
 depends=('glibc' 'libevent')
 provides=('libverto.so' 'libverto-libevent.so' 'libverto-module-base')
 conflicts=("krb5<1.19.3-2" "libverto-libevent<0.3.2-4")
