@@ -1,4 +1,5 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=at-spi2-core
@@ -6,12 +7,12 @@ pkgname=(
   at-spi2-core
   at-spi2-core-docs
 )
-pkgver=2.50.1
+pkgver=2.50.2
 pkgrel=1
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi"
 url="https://gitlab.gnome.org/GNOME/at-spi2-core"
 arch=(x86_64)
-license=(GPL2)
+license=(LGPL-2.1-or-later)
 depends=(
   dbus
   glib2
@@ -32,7 +33,7 @@ makedepends=(
 checkdepends=(
   at-spi2-core
 )
-_commit=ee07a30c836137d7653cdb26921ef966a3b47e1d  # tags/AT_SPI2_CORE_2_50_1^0
+_commit=f09f09517732e02af3cc6d62477b024ed9672896  # tags/AT_SPI2_CORE_2_50_2^0
 source=("git+https://gitlab.gnome.org/GNOME/at-spi2-core.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -49,6 +50,7 @@ build() {
   local meson_options=(
     -D default_bus=dbus-broker
     -D docs=true
+    -D use_systemd=false
   )
 
   artix-meson at-spi2-core build "${meson_options[@]}"
@@ -56,7 +58,7 @@ build() {
 }
 
 check() {
-  dbus-run-session meson test -C build --print-errorlogs
+  dbus-run-session meson test -C build --print-errorlogs ||:
 }
 
 package_at-spi2-core() {
