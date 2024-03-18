@@ -11,7 +11,7 @@ for _coll in ${_collections[@]}; do
 done
 _rev=70639
 pkgver=2024.0
-pkgrel=1
+pkgrel=2
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
@@ -25,27 +25,29 @@ source=(texmf-dist-$pkgver::svn://tug.org/texlive/tags/texlive-$pkgver/Master/te
         texmf.cnf.patch
         texmfcnf.lua.patch
         70-mktexlsr.hook
-        mktexlsr.script
         71-texlive-language.hook
         texlive-language.script
         72-texlive-fmtutil.hook
         texlive-fmtutil.script
         73-texlive-updmap.hook
-        texlive-updmap.script)
+        texlive-updmap.script
+        80-mtxrun.hook
+        mtxrun.script)
 sha256sums=('SKIP'
             'SKIP'
             'SKIP'
             '5e79c40cf3ab93348fc89e97890198601767ea2c8fea89ea76088c17a2b35962'
             '204245fb6f72091c72ad78727ce970a9d03795ef6cab35b9e5d7cf69630ed171'
             '13932156d6c46cd8d2c19d92f574d92a7aa461928fce793fc06835714b768bc9'
-            'c76f01fe2a42e5860f7d0b2f16a4fc09101e1a14ea7488985e914cda749f1a21'
-            '05afeae62a5d4c9de79c838c9636e2aefe9ad1d6b787fed4e5930c13baf60eba'
+            '95f6540c49b11f1ece8010d76b53ca90efd61e1831530562bfcde4350f6c1db1'
             'e6d399faee55ba461cf7e617f2369f5c516de292b28afc6665c9e3fe2b821973'
             'c64c2a6371e94b0f67799c0ac84ea74d8edbc181b26672aa15b8132ec5fbabc3'
             'b641550fe7727422b6964d505db7dbc35b3680a9d47b8d97ac550828bdb9bac7'
             'f96e9f815fa0a4b85e677f2a9215d9106b8abe46eceb3f3e36a6c76eda3e4a85'
             '2141c0842668fb937fd21ca2fae39b642c9665656e404a0d4ee7bdc477bf51fe'
-            'ee6e76192a5ad880a2152cd7900b86c8465239fb228045a2f8360b0d7a449f4a')
+            'ee6e76192a5ad880a2152cd7900b86c8465239fb228045a2f8360b0d7a449f4a'
+            '3ee09f8dc28425322fbe066049fb7f3f92a33093ab0e30e32f4967330dba6fe4'
+            '98b730e917281227e29077ba5689ad78baee0af3859b55966b2604c6a85f1305')
 options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
@@ -204,8 +206,7 @@ _package() {
             etc/texmf/xdvi/XDvi)
     install -Dm644 09-texlive-fonts.conf -t "$pkgdir"/usr/share/fontconfig/conf.avail/
   # install pacman hooks
-    install -Dm644 *.hook -t "$pkgdir"/usr/share/libalpm/hooks/
-    install -Dm755 mktexlsr.script "$pkgdir"/usr/share/libalpm/scripts/mktexlsr
+    install -Dm644 7*.hook -t "$pkgdir"/usr/share/libalpm/hooks/
     install -Dm755 texlive-fmtutil.script "$pkgdir"/usr/share/libalpm/scripts/texlive-fmtutil
     install -Dm755 texlive-language.script "$pkgdir"/usr/share/libalpm/scripts/texlive-language
     install -Dm755 texlive-updmap.script "$pkgdir"/usr/share/libalpm/scripts/texlive-updmap
@@ -241,6 +242,13 @@ _package() {
     mkdir -p "$pkgdir"/usr/share/zsh/site-functions
     TEXMFCNF="$srcdir" \
     "$pkgdir"/usr/bin/texdoc --print-completion zsh > "$pkgdir"/usr/share/zsh/site-functions/_texdoc 2>/dev/null
+  fi
+
+  if [[ $1 == context ]]; then
+  # install pacman hooks
+    install -Dm644 80-mtxrun.hook -t "$pkgdir"/usr/share/libalpm/hooks/
+    install -Dm755 mtxrun.script "$pkgdir"/usr/share/libalpm/scripts/mtxrun
+    chmod +x "$pkgdir"/usr/share/texmf-dist/scripts/context/lua/mtxrun.lua
   fi
 
   if [[ $1 == fontutils ]]; then
