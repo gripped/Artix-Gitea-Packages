@@ -1,10 +1,11 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname=network_interface
 pkgname=ruby-${_gemname}
 pkgver=0.0.2
-pkgrel=5
+pkgrel=6
 pkgdesc='Library to get network interface information'
 url='https://github.com/rapid7/network_interface'
 arch=('x86_64')
