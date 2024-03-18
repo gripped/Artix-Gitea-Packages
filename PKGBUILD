@@ -46,7 +46,7 @@ sha256sums=('SKIP'
             'f96e9f815fa0a4b85e677f2a9215d9106b8abe46eceb3f3e36a6c76eda3e4a85'
             '2141c0842668fb937fd21ca2fae39b642c9665656e404a0d4ee7bdc477bf51fe'
             'ee6e76192a5ad880a2152cd7900b86c8465239fb228045a2f8360b0d7a449f4a'
-            '3ee09f8dc28425322fbe066049fb7f3f92a33093ab0e30e32f4967330dba6fe4'
+            'f6bb67db32d37ca15eba88bd15d8b9882c61915f98bc8d7c3c21a66c8cf8f019'
             '98b730e917281227e29077ba5689ad78baee0af3859b55966b2604c6a85f1305')
 options=(!strip) # Nothing to strip, save packaging time
 
