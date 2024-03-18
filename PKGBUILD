@@ -1,23 +1,24 @@
 # Maintainer: Chris Cromer <cromer@artixlinux.org>
+# Maintainer: nous  <nous.org>
+# Maintainer: artoo <artoo.org>
 
 pkgname=artix-keyring
-pkgver=20220901
-pkgrel=2
+pkgver=20240319
+pkgrel=1
 pkgdesc='Artix PGP keyring'
 arch=('any')
-url='https://gitea.artixlinux.org/artix/artix-keyring'
+url='https://gitea.artixlinux.org/nous/artix-keyring'
+sigurl="${url}/raw/branch/master/artix-keyring-20240319.tar.gz.signature"
 license=('GPL')
 depends=('pacman')
 install="${pkgname}.install"
-_srctarball='49bd3923-6bbc-4be8-959b-095727469154'
-_srctarballsig='38c51538-abfa-467a-8dff-aaaaddf71754'
-source=("${pkgname}-${pkgver}.tar.gz::https://gitea.artixlinux.org/attachments/${_srctarball}"
-"${pkgname}-${pkgver}.tar.gz.sig::https://gitea.artixlinux.org/attachments/${_srctarballsig}")
-sha512sums=('7a37ced42f31600fdfa9587e81fd6103891ea61caab19f1566315a5f5635e8102b274acd249dd7834969680289ab9f2e4b7ae42f023ec425769d592798839b10'
-            'SKIP')
-validpgpkeys=('A55C3F1BA61CAA63036D82BAFA91071797BEEEC2') # cromer
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
+        "${pkgname}-${pkgver}.tar.gz.sig::${sigurl}")
+sha256sums=('25c40ccb405abf9b9594bfc659276c6188c3d51743f6095bc31fb8c3fa56d6ee'
+            '21cf9a8412a88f6ecec1743e35ac20824e431139297265791feb86ed7d800311')
+validpgpkeys=('80E461C30BE40AD3EFB57E18EA690BC73A4F1094') # nous
 
 package() {
-    cd "${pkgname}-${pkgver}"
+    cd "${pkgname}"
     make PREFIX=/usr DESTDIR=${pkgdir} install
 }
