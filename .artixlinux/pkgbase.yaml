@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: svt-av1
-  version: 1.8.0-1
+  version: 2.0.0-1
   arch:
     - x86_64
   pkgname:
     - svt-av1
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-1
+    packages:
+      - svt-av1-2.0.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
