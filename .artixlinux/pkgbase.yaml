@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libnfnetlink
-  version: 1.0.2-1
+  version: 1.0.2-2
   arch:
     - x86_64
   pkgname:
     - libnfnetlink
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.0.2-2
+    packages:
+      - libnfnetlink-1.0.2-2-x86_64.pkg.tar.zst
   system:
     version: 1.0.2-1
     packages:
