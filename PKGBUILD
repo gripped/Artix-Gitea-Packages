@@ -1,16 +1,15 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Judd <jvinet@zeroflux.org>
 
 pkgname=bzip2
 pkgver=1.0.8
-pkgrel=5
+pkgrel=6
 pkgdesc="A high-quality data compression program"
 arch=('x86_64')
 license=('BSD')
 url="https://sourceware.org/bzip2/"
 depends=('glibc' 'sh')
 provides=('libbz2.so')
-options=('debug')
 source=(https://sourceware.org/pub/bzip2/$pkgname-$pkgver.tar.gz{,.sig}
         bzip2.pc)
 sha256sums=('ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269'
