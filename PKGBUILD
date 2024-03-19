@@ -7,10 +7,11 @@
 # generic GH key, not the project member's own keys. Commit pinning and key
 # checking is disabled until there is something of substace to check.
 
+# _commit=db9d018944c41ddc740015cf5f64717c2ba64a5c
+
 pkgname=python-dateutil
 pkgver=2.9.0
-# _sha=db9d018944c41ddc740015cf5f64717c2ba64a5c
-pkgrel=2
+pkgrel=3
 pkgdesc="Provides powerful extensions to the standard datetime module"
 arch=(any)
 license=(BSD-3-Clause Apache-2.0)
@@ -22,9 +23,9 @@ makedepends=(python-{build,installer,wheel}
 checkdepends=(python-freezegun
               python-hypothesis
               python-pytest)
-# source=("git+$url.git#commit=$_sha?signed")
-source=("git+$url.git#commit=$pkgver")
-sha256sums=('SKIP')
+# source=("git+$url.git?signed#commit=${_commit:-$pkgver}")
+source=("git+$url.git#commit=${_commit:-$pkgver}")
+sha256sums=('db84e1759eb51252204597504409cafee32ea9a9616e64d82d8ec769048ff00e')
 # validpgpkeys=('5DE3E0509C47EA3CF04A42D34AEE18F83AFDEB23') # Mario Corchero <mariocj89@gmail.com>
 
 prepare() {
@@ -41,8 +42,7 @@ build() {
 check() {
   cd dateutil
   # https://github.com/pytest-dev/pytest/issues/5678
-  PYTHONPATH=src pytest -W ignore::pytest.PytestUnknownMarkWarning \
-    --deselect tests/test_tz.py::test_tzlocal_local_time_trim_colon .
+  PYTHONPATH=src pytest -W ignore::pytest.PytestUnknownMarkWarning .
 }
 
 package() {
