@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: waybar
-  version: 0.10.0-1
+  version: 0.10.0-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.10.0-1
+    version: 0.10.0-2
     packages:
-      - waybar-0.10.0-1-x86_64.pkg.tar.zst
+      - waybar-0.10.0-2-x86_64.pkg.tar.zst
   world:
     version: 0.9.24-3
     packages:
