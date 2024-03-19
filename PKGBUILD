@@ -1,8 +1,9 @@
-# Maintainer: Sébastien "Seblu" Luttringer
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sébastien "Seblu" Luttringer
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=docker
-pkgver=25.0.3
+pkgver=25.0.4
 pkgrel=1
 epoch=1
 pkgdesc='Pack, ship and run any application as a lightweight container'
