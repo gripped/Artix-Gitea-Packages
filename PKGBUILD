@@ -3,12 +3,12 @@
 
 pkgname=gnome-connections
 pkgver=45.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Remote desktop client for the GNOME desktop environment'
 arch=('x86_64')
 url='https://gitlab.gnome.org/GNOME/connections'
 license=('GPL3')
-depends=('cairo' 'dconf' 'freerdp' 'fuse3' 'gdk-pixbuf2' 'glib2' 'glibc' 'gtk3'
+depends=('cairo' 'dconf' 'freerdp2' 'fuse3' 'gdk-pixbuf2' 'glib2' 'glibc' 'gtk3'
          'gtk-vnc' 'hicolor-icon-theme' 'libhandy' 'libsecret' 'libxml2')
 makedepends=('appstream-glib' 'gobject-introspection' 'itstool' 'meson' 'vala')
 groups=('gnome')
