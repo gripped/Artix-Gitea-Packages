@@ -40,7 +40,6 @@ makedepends=(
   libusb
   openssl
   pam
-  systemd
   xmlto
   xorgproto
 )
@@ -103,7 +102,6 @@ package() {
     libusb libusb-1.0.so
     openssl libcrypto.so libssl.so
     pam libpam.so
-    systemd-libs libsystemd.so
   )
 
   DESTDIR="$pkgdir" cmake --install build
