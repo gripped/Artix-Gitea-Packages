@@ -89,7 +89,6 @@ package_wireplumber() {
 	)
 	provides=(pipewire-session-manager)
 	conflicts=(pipewire-media-session)
-	install=wireplumber.install
 
 	meson install -C build --destdir "$pkgdir"
 
