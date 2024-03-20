@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artools
-  version: 0.32.5-1
+  version: 0.33rc1-1
   arch:
     - any
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - artools-pkg
     - artools-iso
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.33rc1-1
+    packages:
+      - artools-base-0.33rc1-1-any.pkg.tar.zst
+      - artools-pkg-0.33rc1-1-any.pkg.tar.zst
+      - artools-iso-0.33rc1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
