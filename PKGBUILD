@@ -5,29 +5,36 @@ pkgbase=wireplumber
 pkgname=(
 	wireplumber
 	libwireplumber
+	wireplumber-docs
 )
-_commit=d3eb77b292655cef333a8f4cab4e861415bc37c2 # tags/0.4.17
-pkgver=0.4.17
+_commit=59d190a2bd400f3b093f99b16fc0fb06f6cb2cfe # tags/0.5.0
+pkgver=0.5.0
 pkgrel=1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
 arch=(x86_64)
 license=(MIT)
 makedepends=(
-	doxygen
 	elogind
+	doxygen
+	gcc-libs
 	git
 	glib2
+	glibc
 	gobject-introspection
 	graphviz
+	libpipewire
 	lua
 	meson
 	pipewire
+	python-breathe
 	python-lxml
+	python-sphinx
+	python-sphinx_rtd_theme
 )
 checkdepends=(pipewire-audio)
 source=("git+https://gitlab.freedesktop.org/pipewire/$pkgbase.git#commit=$_commit")
-b2sums=('SKIP')
+b2sums=('9e3f574cef389749ec5c9364846f7172f8e562ea6cdb6c3919ce4ae9bfba68436a52097c3a4fd064770c6b6e8d78b502a86e762e133bdea30f1a9b99ed53a21d')
 
 pkgver() {
 	cd $pkgbase
@@ -40,10 +47,9 @@ prepare() {
 
 build() {
 	local meson_options=(
-		-D systemd=disabled
-		-D doc=disabled
-		-D elogind=enabled
 		-D system-lua=true
+		-D systemd=disabled
+		-D elogind=enabled
 	)
 
 	artix-meson $pkgbase build "${meson_options[@]}"
@@ -70,11 +76,20 @@ _ver=${pkgver:0:3}
 package_wireplumber() {
 	depends=(
 		"libwireplumber=$pkgver-$pkgrel"
+		gcc-libs
+		glibc
+		libg{lib,object,io}-2.0.so
+		libpipewire
+		libpipewire-0.3.so
 		lua
 		pipewire
 	)
+	optdepends=(
+		'wireplumber-docs: Documentation'
+	)
 	provides=(pipewire-session-manager)
 	conflicts=(pipewire-media-session)
+	install=wireplumber.install
 
 	meson install -C build --destdir "$pkgdir"
 
@@ -86,6 +101,8 @@ package_wireplumber() {
 		_pick libw usr/lib/pkgconfig
 		_pick libw usr/include
 		_pick libw usr/share/gir-1.0
+
+		_pick docs usr/share/doc
 	)
 
 	install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase/{NEWS,README}*
@@ -95,12 +112,22 @@ package_wireplumber() {
 package_libwireplumber() {
 	pkgdesc+=" - client library"
 	depends=(
+		gcc-libs
+		glibc
 		libg{lib,module,object,io}-2.0.so
 		libpipewire-0.3.so
 	)
 	provides=(libwireplumber-$_ver.so)
 
 	mv libw/* "$pkgdir"
+
+	install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
+}
+
+package_wireplumber-docs() {
+	pkgdesc+=" - documentation"
+
+	mv docs/* "$pkgdir"
 
 	install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgbase/LICENSE
 }

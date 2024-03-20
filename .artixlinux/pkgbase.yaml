@@ -1,14 +1,15 @@
 ---
 pkgbase:
   name: wireplumber
-  version: 0.4.17-1
+  version: 0.5.0-1
   arch:
     - x86_64
   pkgname:
     - wireplumber
     - libwireplumber
+    - wireplumber-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.5.0-1
+    packages:
+      - wireplumber-0.5.0-1-x86_64.pkg.tar.zst
+      - libwireplumber-0.5.0-1-x86_64.pkg.tar.zst
+      - wireplumber-docs-0.5.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.4.17-1
     packages:
