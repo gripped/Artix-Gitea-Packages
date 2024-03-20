@@ -4,9 +4,9 @@
 
 _name=FreeRDP
 pkgname=freerdp
-pkgver=3.1.0
+pkgver=3.4.0
 _libver=${pkgver/.*/}
-pkgrel=1
+pkgrel=2
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -44,7 +44,6 @@ makedepends=(
   gtk3
   icu
   krb5
-  libjpeg-turbo
   libp11
   libpulse
   libusb
@@ -63,16 +62,14 @@ provides=(
   libfreerdp-shadow-subsystem$_libver.so
   libfreerdp-shadow$_libver.so
   libfreerdp$_libver.so
-  libuwac0.so
-  librdtk0.so
   libwinpr-tools$_libver.so
   libwinpr$_libver.so
 )
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
-sha512sums=('0a463c241d09ea354fdd943c010a2ecca1ad20f6ba5ea037422884f3b668ac6c4c30f73d12077368cd54f74418ef65b267628934a050fcbb3ff1e96d84ae954e')
-b2sums=('39031026b2ff878b0e4a86907985704d0d64058bf9a2de6f3b8c4617cac3b8a5ee0d34d4e6e962e0e4388996c39d16b96a245525a51c33a533dad38e6b865a53')
+sha512sums=('aa96ad2bf30dbe09849ecfb64ec6e60ba4fd3bc2d144c7d576b1e59476ef45d9d744da37806b1c00e3a0413390b35c6d3d4401b89c07c5663122280eca39e501')
+b2sums=('d260fb47406d36b728ab24e323d06624d53c01bbdc877b3b97f3c1c159e87baaffa418279ba1cc6e4ba82f0f890deba357ddb325a54316a23f0dbfdff4609eff')
 
 build() {
   local cmake_options=(
@@ -84,7 +81,10 @@ build() {
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_SKIP_INSTALL_RPATH=ON
     -D PROXY_PLUGINDIR=/usr/lib/freerdp2/server/proxy/plugins
+    -D RDTK_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
+    -D UWAC_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
     -D WITH_ALSA=ON
+    -D WITH_BINARY_VERSIONING=ON  # prevent file conflicts with freerdp2
     -D WITH_CHANNELS=ON
     -D WITH_CLIENT_CHANNELS=ON
     -D WITH_CUPS=ON
@@ -123,7 +123,6 @@ package() {
     gtk3 libgtk-3.so
     icu libicuuc.so
     krb5 libk5crypto.so libkrb5.so
-    libjpeg-turbo libjpeg.so
     libpulse libpulse.so
     libusb libusb-1.0.so
     openssl libcrypto.so libssl.so
