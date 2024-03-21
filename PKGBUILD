@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Filipe Laíns <lains@archlinux.org>
 # Maintainer: Frederik Schwan <freswa at archlinux dot org>
 
 pkgname=fwupd-efi
-pkgver=1.4
+pkgver=1.5
 pkgrel=1
 pkgdesc='EFI Application used by uefi-capsule plugin in fwupd'
 arch=('x86_64')
@@ -10,14 +10,14 @@ url='https://github.com/fwupd/fwupd-efi'
 license=('LGPL')
 makedepends=('meson' 'gnu-efi' 'python-pefile')
 source=("https://people.freedesktop.org/~hughsient/releases/${pkgname}-${pkgver}.tar.xz"{,.asc})
-sha256sums=('27ddbc0a4e3209543eab49e69f1a014eb9ed95f93ff51f966f31082d3b7bffbc'
+sha256sums=('45d2a77931b362416dec2636dabf4eff0d1da10bc1ccca1ac980e832fedbba12'
             'SKIP')
 validpgpkeys=('163EB50119225DB3DF8F49EA17ACBA8DFA970E17') # Richard Hughes <richard@hughsie.com>
 
 build() {
   artix-meson ${pkgname}-${pkgver} build  \
     -D efi_sbat_distro_id='artix' \
-    -D efi_sbat_distro_summary='Artic Linux' \
+    -D efi_sbat_distro_summary='Artix Linux' \
     -D efi_sbat_distro_pkgname=${pkgname} \
     -D efi_sbat_distro_version=${pkgver} \
     -D efi_sbat_distro_url="https://archlinux.org/packages/community/x86_64/${pkgname}/"
