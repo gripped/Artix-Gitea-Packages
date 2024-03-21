@@ -6,7 +6,7 @@ _name=FreeRDP
 pkgname=freerdp
 pkgver=3.4.0
 _libver=${pkgver/.*/}
-pkgrel=2
+pkgrel=3
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -80,7 +80,7 @@ build() {
     -D CMAKE_INSTALL_LIBDIR=lib
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_SKIP_INSTALL_RPATH=ON
-    -D PROXY_PLUGINDIR=/usr/lib/freerdp2/server/proxy/plugins
+    -D PROXY_PLUGINDIR=/usr/lib/$pkgname/server/proxy/plugins
     -D RDTK_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
     -D UWAC_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
     -D WITH_ALSA=ON
