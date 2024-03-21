@@ -11,7 +11,7 @@ license=(GPL-2.0-or-later)
 depends=(
   cairo
   dconf
-  freerdp
+  freerdp2
   fuse3
   gcc-libs
   glib2
