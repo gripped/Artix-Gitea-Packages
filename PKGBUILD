@@ -1,27 +1,44 @@
-# Maintainer: Sébastien Luttringer
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
+# Contributor: Sébastien Luttringer
 # Contributor: Kaiting Chen <kaitocracy@gmail.com>
 # Contributor: mickael9 <mickael9 at gmail dot com>
 
 pkgname=znc
-pkgver=1.8.2
-pkgrel=19
+pkgver=1.9.0
+pkgrel=3
 pkgdesc='An IRC bouncer with modules & scripts support'
 url='https://wiki.znc.in/'
-license=('GPL2')
+license=('Apache-2.0')
 arch=('x86_64')
-depends=('libsasl' 'icu' 'boost-libs')
-makedepends=('tcl' 'python' 'perl' 'cmake' 'boost')
-optdepends=('tcl: modtcl module'
-            'python: modpython module'
-            'perl: modperl module'
-            'cyrus-sasl: saslauth module')
+depends=(
+    'libsasl'
+    'icu'
+    'boost-libs'
+    'argon2'
+)
+makedepends=(
+    'tcl'
+    'python'
+    'perl'
+    'cmake'
+    'boost'
+)
+optdepends=(
+    'tcl: modtcl module'
+    'python: modpython module & znc-buildmod script'
+    'perl: modperl module'
+    'cyrus-sasl: saslauth module'
+    'cmake: znc-buildmod script'
+)
 install=$pkgname.install
-source=(# "https://znc.in/releases/archive/$pkgname-$pkgver.tar.gz"{,.sig}
-        "https://src.fedoraproject.org/repo/pkgs/znc/znc-1.8.2.tar.gz/sha512/e821647b50698c3a82fad039e69943e030bf644d8f8e82afa87c6c11da44761bceecddd510a7a956a1b487b1cca6ee46e8ac8818ea03127f0f1ff8f5d1a1a7f9/znc-1.8.2.tar.gz"
+source=("https://znc.in/releases/archive/$pkgname-$pkgver.tar.gz"{,.sig}
         "$pkgname.tmpfiles"
         "$pkgname.sysusers")
-validpgpkeys=('D5823CACB477191CAC0075555AE420CC0209989E') #Alexey Sokolov <alexey@asokolov.org>
-sha256sums=('ff238aae3f2ae0e44e683c4aee17dc8e4fdd261ca9379d83b48a7d422488de0d'
+validpgpkeys=('D5823CACB477191CAC0075555AE420CC0209989E')  # Alexey Sokolov <alexey@asokolov.org>
+sha256sums=('8b99c9dbb21c1309705073460be9bfacb6f7b0e83a15fe5d4b7140201b39d2a1'
+            'SKIP'
             '8cd1b5b011c706fea9dc0c70d4daa75a53bf0966d6e96a3fce3a541777aa2771'
             '8802f1b84ab3031db7cc45678f008ceca9b08b2012412a3d4ff1ea596586bb2a')
 
@@ -34,9 +51,11 @@ build() {
   cmake ../$pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DWANT_PYTHON=ON \
-    -DWANT_PERL=ON \
-    -DWANT_TCL=ON
+    -DWANT_PYTHON=YES \
+    -DWANT_PERL=YES \
+    -DWANT_TCL=YES  \
+    -DWANT_ARGON=YES \
+    -DWANT_SYSTEMD=NO
   make
 }
 
