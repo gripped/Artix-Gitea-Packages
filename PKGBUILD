@@ -4,7 +4,7 @@
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.21.7
+pkgver=1.21.9
 pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
 arch=(x86_64)
@@ -24,11 +24,11 @@ optdepends=(
 checkdepends=(openssh)
 options=(!lto)
 backup=('etc/gitea/app.ini')
-_tag=2a06dba108f789ff40bda019edb00df16392cf6d # git rev-parse v${pkgver}
+_tag=819c448ebc910f50f73aa872e539d37299c48afc # git rev-parse v${pkgver}
 source=(git+https://github.com/go-gitea/gitea.git#tag=${_tag}?signed
         gitea.tmpfiles
         gitea.sysusers)
-sha256sums=('SKIP'
+sha256sums=('42dc69ee82e91d997ddaf512a827317cd94354b14f427b1b825b07b3f51d842c'
             '1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba'
             '7e7b798b8ce035c1fb55993ece41c5efb6cad5922708866804fa50ada0cf9fa5')
 validpgpkeys=(
