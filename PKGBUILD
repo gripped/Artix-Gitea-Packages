@@ -29,7 +29,6 @@ makedepends=(
   'doxygen'
   'python'
   'samba'         # for libndr-nbt headers
-  'systemd'
   'tevent'
   'ldb'
   'bc'
