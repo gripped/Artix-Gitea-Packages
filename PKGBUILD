@@ -1,21 +1,21 @@
 # Maintainer: Chris Cromer <cromer@artixlinux.org>
-# Maintainer: nous  <nous.org>
-# Maintainer: artoo <artoo.org>
+# Maintainer: nous  <nous@artixlinux.org>
+# Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=artix-keyring
-pkgver=20240319
+pkgver=20240322
 pkgrel=1
 pkgdesc='Artix PGP keyring'
 arch=('any')
-url='https://gitea.artixlinux.org/nous/artix-keyring'
-sigurl="${url}/raw/branch/master/artix-keyring-20240319.tar.gz.signature"
+url='https://gitea.artixlinux.org/artix/artix-keyring'
+sigurl="${url}/raw/branch/master/artix-keyring-${pkgver}.tar.gz.signature"
 license=('GPL')
 depends=('pacman')
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
-        "${pkgname}-${pkgver}.tar.gz.sig::${sigurl}")
-sha256sums=('25c40ccb405abf9b9594bfc659276c6188c3d51743f6095bc31fb8c3fa56d6ee'
-            '21cf9a8412a88f6ecec1743e35ac20824e431139297265791feb86ed7d800311')
+        "${sigurl}")
+sha256sums=('6c17db5d52a07373403a6c7928f6c9c4330204a6f66ea277fc00e0e542be4530'
+            '9ac171192c6a14be494d5c1ffab892cdb474faa468cbd9437fa89f6c4ebab95a')
 validpgpkeys=('80E461C30BE40AD3EFB57E18EA690BC73A4F1094') # nous
 
 package() {
