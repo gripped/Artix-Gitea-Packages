@@ -7,8 +7,8 @@ pkgname=(
   glib2
   glib2-docs
 )
-pkgver=2.78.4
-pkgrel=1
+pkgver=2.80.0
+pkgrel=2
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -24,10 +24,13 @@ makedepends=(
   dbus
   gettext
   git
-  gtk-doc
+  gi-docgen
+  gobject-introspection
   libelf
   meson
   python
+  python-docutils
+  python-packaging
   shared-mime-info
   util-linux
 )
@@ -39,7 +42,7 @@ options=(
   debug
   staticlibs
 )
-_commit=00edb7f7453a43cff343f9e99d49f2e421e4345c  # tags/2.78.4^0
+_commit=763cc3b238398614c20069fd67642730e3a6519b  # tags/2.80.0^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
@@ -47,7 +50,7 @@ source=(
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
-b2sums=('SKIP'
+b2sums=('cc3a6a7a14fef1aabc08d3bdfe98f66e3ecf3591ac054d83aa9404c8c9cd72e690a4c26c16934700d067bb2cb3d58730387482032cd9ffa04b041869426165ba'
         'SKIP'
         '94c73ca7070c239494873dd52d6ee09382bbb5b1201f7afd737cfa140b1a2fb0744b2c2831baf3943d1d072550c35888d21ce6f19f89481ff9d1a60d9a0b30e0'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
@@ -74,8 +77,9 @@ build() {
   local meson_options=(
     --default-library both
     -D glib_debug=disabled
-    -D gtk_doc=true
-    -D man=true
+    -D documentation=true
+    -D introspection=enabled
+    -D man-pages=enabled
     -D selinux=disabled
     -D sysprof=enabled
   )
@@ -101,11 +105,12 @@ package_glib2() {
     libffi.so
     libmount.so
   )
-  provides+=(libg{lib,io,module,object,thread}-2.0.so)
+  provides+=(libg{lib,io,irepository,module,object,thread}-2.0.so)
   optdepends=(
     'gvfs: most gio functionality'
     'libelf: gresource inspection tool'
     'python: gdbus-codegen, glib-genmarshal, glib-mkenums, gtester-report'
+    'python-packaging: gdbus-codegen'
   )
 
   meson install -C build --destdir "$pkgdir"
@@ -120,7 +125,7 @@ package_glib2() {
 
   # Split docs
   mkdir -p docs/usr/share
-  mv {"$pkgdir",docs}/usr/share/gtk-doc
+  mv {"$pkgdir",docs}/usr/share/doc
 }
 
 package_glib2-docs() {
