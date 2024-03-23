@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: android-tools
-  version: 34.0.5-1
+  version: 34.0.5-1.1
   arch:
     - x86_64
   pkgname:
     - android-tools
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 34.0.4-5
+    version: 34.0.5-1.1
     packages:
-      - android-tools-34.0.4-5-x86_64.pkg.tar.zst
+      - android-tools-34.0.5-1.1-x86_64.pkg.tar.zst
   world:
     version: 34.0.5-1
     packages:
