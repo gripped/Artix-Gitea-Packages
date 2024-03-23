@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - libtg_owt
 actions:
-  addRepo: null
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -46,10 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.git24.592b14d-2.2
     packages:
       - libtg_owt-0.git24.592b14d-2.2-x86_64.pkg.tar.zst
-  galaxy:
-    version: 0.git24.592b14d-2.1
-    packages:
-      - libtg_owt-0.git24.592b14d-2.1-x86_64.pkg.tar.zst
