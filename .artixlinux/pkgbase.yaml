@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libtg_owt
-  version: 0.git24.592b14d-2
+  version: 0.git24.592b14d-2.1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.git24.592b14d-2
+    version: 0.git24.592b14d-2.1
     packages:
-      - libtg_owt-0.git24.592b14d-2-x86_64.pkg.tar.zst
+      - libtg_owt-0.git24.592b14d-2.1-x86_64.pkg.tar.zst
