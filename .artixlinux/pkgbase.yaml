@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: glib2
-  version: 2.80.0-1
+  version: 2.80.0-2
   arch:
     - x86_64
   pkgname:
@@ -20,10 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 2.80.0-1
+    version: 2.80.0-2
     packages:
-      - glib2-2.80.0-1-x86_64.pkg.tar.zst
-      - glib2-docs-2.80.0-1-x86_64.pkg.tar.zst
+      - glib2-2.80.0-2-x86_64.pkg.tar.zst
+      - glib2-docs-2.80.0-2-x86_64.pkg.tar.zst
   system:
     version: 2.78.4-1
     packages:
