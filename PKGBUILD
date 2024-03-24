@@ -1,22 +1,30 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=xorg-xdm
-pkgver=1.1.14
+pkgver=1.1.15
 pkgrel=1
 pkgdesc="X Display Manager"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
-license=('custom')
-depends=('pam' 'libxaw' 'libxinerama' 'xorg-xrdb' 'xorg-sessreg' 'libxft' 'elogind' 'libxcrypt')
+license=('MIT')
+depends=('pam' 'libxaw' 'libxinerama' 'xorg-xrdb' 'xorg-sessreg' 'libxft'
+         'elogind' 'libxcrypt'
+         'libxt' 'libxpm' 'libxrender' 'libxau' 'libx11' 'libxext' 'libxmu'
+         'libxdmcp' 'sh' 'glibc')
 makedepends=('xorg-util-macros' 'xtrans')
-backup=(etc/X11/xdm/Xaccess etc/X11/xdm/Xresources etc/X11/xdm/Xservers etc/X11/xdm/xdm-config etc/pam.d/xdm etc/X11/xdm/Xsetup_0 etc/X11/xdm/Xsession)
+backup=(etc/X11/xdm/Xaccess
+        etc/X11/xdm/Xresources
+        etc/X11/xdm/Xservers
+        etc/X11/xdm/xdm-config
+        etc/pam.d/xdm etc/X11/xdm/Xsetup_0
+        etc/X11/xdm/Xsession)
 source=(${url}/releases/individual/app/xdm-${pkgver}.tar.xz{,.sig}
         Xsession-loginshell.patch
         Xsession-xsm.patch
         xdm-1.0.5-sessreg-utmp-fix-bug177890.patch
         xdm.pam
         nolisten.patch)
-sha512sums=('8ed1d2c946916c24cb4b2de9326f65629c97e53b145312c9cb9c6e4308d8b47d67d3981319fbd4feac9b3ed436b9dfb24a1c905d37d7bcf07b49c18a68c7a6e4'
+sha512sums=('b36c978b6a54e3db43f929c52cbf47ea226dc0fe018f8284d8c495c73f269af33a7441d5a5072d8e9b2a34e9c71767de9d8762bc3ed196b1bebc78b016f7d8bb'
             'SKIP'
             'cf79d5ced77568f346e0955d955438ce27dae99cca21fdd80df779c97cfc03b3b15b561d483f8a8206e1db0785434b816b3474d6cc20c5adb8072c0985254c69'
             '9ba9b515d18c595cec402c7d4f2a8c4b9b10d99ee1bb0a86f2c72c813962a325c3c6e85ea5387f11819f8c046761494d6e54df0cb33bb4ab1e87ef354dc61c5b'
@@ -69,4 +77,7 @@ package() {
   install -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/"
 
   sed -i -e 's/\/X11R6//g' "${pkgdir}"/etc/X11/xdm/*
+
+#  sed -i 's|^Alias=.*|Alias=display-manager.service|' \
+#    "$pkgdir/usr/lib/systemd/system/xdm.service"
 }
