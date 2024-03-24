@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - freerdp
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2:3.4.0-3
-    packages:
-      - freerdp-2:3.4.0-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 2:3.4.0-5
     packages:
