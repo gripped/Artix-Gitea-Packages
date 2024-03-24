@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java-openjdk
-  version: 21.0.2.u13-3
+  version: 22.u36-1
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - openjdk-src
     - openjdk-doc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 22.u36-1
+    packages:
+      - jre-openjdk-headless-22.u36-1-x86_64.pkg.tar.zst
+      - jre-openjdk-22.u36-1-x86_64.pkg.tar.zst
+      - jdk-openjdk-22.u36-1-x86_64.pkg.tar.zst
+      - openjdk-src-22.u36-1-x86_64.pkg.tar.zst
+      - openjdk-doc-22.u36-1-x86_64.pkg.tar.zst
   world:
     version: 21.0.2.u13-3
     packages:
@@ -60,3 +65,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
