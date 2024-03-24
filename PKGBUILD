@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=3.28.3
+pkgver=3.29.0
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -20,8 +20,8 @@ source=("https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz"
         "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc}
         artix-cmake.patch
         artix-cmake)
-sha512sums=('66e923925b764e1fe3d150c69dab3e0abd9e0c90d8e30cab63c3a1f70c3e37df0a5e3ff12b378eeae3bdc6608495f41399e6f81602e26b513b19fa19ff6c48fc'
-            'e596cf9290ebf3ffe88bc4715db9d2db4f013a5da3b0d433b71e1927e9386e06cb2d2d7f025195b183ab07c8dc263ce0b318f1ad38a43f01d646016ad60fd611'
+sha512sums=('abcca7a4db221d98864b77220445f0b70f87149626d3162ed49636862b87514b2640318438c0c711bfaafa1aba4d049b55f98e6ac28c44545543986c35fbd062'
+            '9a33a74a799e0ae4464a3b084b94617734b36bed2ed70260a0700bd2e8f846b6cddb279d8fa91488b08d29b14ad34d45dcea01afabc720f57a9c90e7700aa205'
             'SKIP'
             'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6'
             '08a4f8df1b005869a3497fd5090620ce54eefa09df67245e76eb6ae81171e5045f87180cd848d8a1e44ce5c4cf290efd6c9b655ccf46230967abef4941513af7')
