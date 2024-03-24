@@ -1,31 +1,36 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Maintainer: Jiachen YANG <farseerfc@archlinux.org>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Contributor: kpcyrd <git@rxv.cc>
+# Contributor: quininer <quininer@live.com>
 
-pkgname=alacritty
+pkgname='alacritty'
 pkgdesc="A cross-platform, GPU-accelerated terminal emulator"
-pkgver=0.13.1
+pkgver=0.13.2
 pkgrel=1
 arch=('x86_64')
 url="https://github.com/alacritty/alacritty"
-license=('Apache')
-makedepends=('git' 'rust' 'llvm' 'cargo' 'cmake' 'ncurses' 'desktop-file-utils' 'gdb' 'libxcb' 'scdoc')
+license=('Apache-2.0' 'MIT')
+makedepends=('git' 'rust' 'cargo' 'cmake' 'ncurses' 'desktop-file-utils' 'gdb' 'libxcb' 'scdoc')
 depends=('freetype2' 'fontconfig' 'libxi' 'libxcursor' 'libxkbcommon' 'libxkbcommon-x11' 'libxrandr')
 checkdepends=('ttf-dejavu') # for monospace fontconfig test
 optdepends=('ncurses: for alacritty terminfo database')
-source=("git+$url.git"
+source=("git+$url.git#tag=v$pkgver?signed"
         "title.patch")
 validpgpkeys=('4DAA67A9EA8B91FCC15B699C85CDAE3C164BA7B4'  # Christian Dürr <contact@christianduerr.com>
               'A56EF308A9F1256C25ACA3807EA8F8B94622A6A9') # Kirill Chibisov <contact@kchibisov.com>
-sha256sums=('SKIP'
+sha256sums=('3a6d77fb34870b9974265cc199f96923104908c9f4164ced4d29632db3d7d38f'
             '8fc4ff8fd34ebad386332c8dcb48ead836d25b9c4749918504626369de07b723')
 
 prepare() {
   cd "$pkgname"
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+  patch -Np1 -i ../title.patch
 }
 
 build(){
   cd "$pkgname"
-  patch -Np1 -i ../title.patch
   CARGO_INCREMENTAL=0 cargo build --release --locked --offline
 }
 
