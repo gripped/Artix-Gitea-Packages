@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: onionshare
-  version: 2.6.1-1
+  version: 2.6.2-1
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.6.1-1
+    version: 2.6.2-1
     packages:
-      - onionshare-2.6.1-1-any.pkg.tar.zst
+      - onionshare-2.6.2-1-any.pkg.tar.zst
+team: galaxy
