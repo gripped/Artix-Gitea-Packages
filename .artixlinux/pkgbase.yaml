@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gnome-initial-setup
-  version: 45.0-2
+  version: 46.0-1
   arch:
     - x86_64
   pkgname:
     - gnome-initial-setup
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 46.0-1
+    packages:
+      - gnome-initial-setup-46.0-1-x86_64.pkg.tar.zst
   world:
     version: 45.0-2
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
