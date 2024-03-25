@@ -148,6 +148,7 @@ pkgver() {
 build() {
   #export LDFLAGS=${LDFLAGS/-Wl,-z,pack-relative-relocs/}
   artix-cmake -S rspamd -B build -G Ninja \
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
     -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_FIND_DEBUG_MODE=1 \
     -DCMAKE_INCLUDE_PATH=/usr/include \
     -DCMAKE_INSTALL_PREFIX=/usr \
