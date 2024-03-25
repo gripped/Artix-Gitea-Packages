@@ -1,10 +1,10 @@
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
-# Maintainer: Christian Hesse <mail@eworm.de>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
 
 pkgname=yubico-c
 _shortname=libyubikey
 pkgver=1.13
-pkgrel=6
+pkgrel=7
 pkgdesc='Yubico YubiKey C library'
 arch=('x86_64')
 url='https://github.com/Yubico/yubico-c'

@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: yubico-c
-  version: 1.13-6
+  version: 1.13-7
   arch:
     - x86_64
   pkgname:
     - yubico-c
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.13-6
+    version: 1.13-7
     packages:
-      - yubico-c-1.13-6-x86_64.pkg.tar.zst
+      - yubico-c-1.13-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
