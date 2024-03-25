@@ -8,7 +8,7 @@ pkgbase:
     - openmpi
     - openmpi-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.2-6
+    packages:
+      - openmpi-5.0.2-6-x86_64.pkg.tar.zst
+      - openmpi-docs-5.0.2-6-x86_64.pkg.tar.zst
   world:
     version: 5.0.2-6
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
