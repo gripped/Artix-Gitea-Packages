@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: gnome-desktop-common
-  version: 1:44.0-1.1
+  name: gnome-desktop
+  version: 1:44.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gnome-desktop
     - gnome-desktop-4
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:44.0-1
+    packages:
+      - gnome-desktop-common-1:44.0-1-x86_64.pkg.tar.zst
+      - gnome-desktop-1:44.0-1-x86_64.pkg.tar.zst
+      - gnome-desktop-4-1:44.0-1-x86_64.pkg.tar.zst
   world:
     version: 1:44.0-1.1
     packages:
@@ -56,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

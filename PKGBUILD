@@ -8,7 +8,7 @@ pkgname=(
   gnome-desktop-4
 )
 pkgver=44.0
-pkgrel=1.1
+pkgrel=1
 epoch=1
 pkgdesc="Library with common API for various GNOME modules"
 url="https://gitlab.gnome.org/GNOME/gnome-desktop"
@@ -19,6 +19,7 @@ license=(
 )
 makedepends=(
   bubblewrap
+  elogind
   git
   gobject-introspection
   gsettings-desktop-schemas
@@ -29,12 +30,10 @@ makedepends=(
   libseccomp
   libxkbcommon
   meson
-  elogind
   xkeyboard-config
   yelp-tools
 )
 checkdepends=(xorg-server-xvfb)
-options=(debug)
 _commit=97c0344b3ba955bb6f6fe74ca03cc399a81acaa5  # tags/44.0^0
 source=("git+https://gitlab.gnome.org/GNOME/gnome-desktop.git#commit=$_commit")
 sha256sums=('SKIP')
@@ -78,14 +77,13 @@ package_gnome-desktop-common() {
   pkgdesc+=" (common files)"
   depends=(
     bubblewrap
+    elogind
     gsettings-desktop-schemas
     iso-codes
     libseccomp
     libxkbcommon
-    elogind
     xkeyboard-config
   )
-
 
   meson install -C build --destdir "$pkgdir"
 
