@@ -1,31 +1,33 @@
-# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
 
 pkgname=yubikey-personalization
 _shortname=ykpers
 pkgver=1.20.0
-pkgrel=3.1
+pkgrel=4
 pkgdesc='Yubico YubiKey Personalization library and tool'
 arch=('x86_64')
 url='https://github.com/Yubico/yubikey-personalization'
 license=('BSD')
 depends=('libusb' 'json-c' 'yubico-c-client')
+# We need udev to be installed for udev version check
 makedepends=('udev')
 provides=('ykpers')
 conflicts=('ykpers')
 validpgpkeys=('0A3B0262BCA1705307D5FF06BCA00FD4B2168C0A') # Klas Lindfors <klas@yubico.com>
 source=("https://developers.yubico.com/${pkgname}/Releases/${_shortname}-${pkgver}.tar.gz"{,.sig}
         '0001-fix-boolean-value-with-json-c-0.14.patch'
-        'fix-ykpers-args.h.patch')
+        '0002-make-header-declarations-extern.patch')
 sha256sums=('0ec84d0ea862f45a7d85a1a3afe5e60b8da42df211bb7d27a50f486e31a79b93'
             'SKIP'
             'f9b434e9570ce7d0192182aab979f767238b704f12645546e567db841bb7b5e2'
-            'a60ff2dff3fa0c765bf8dc3c0fe046047eb50964a8545afc9f574359df70a8fb')
+            '7c9ff4dd0131c5efc5917f20fff7b1e9dbd58e22f754c7ac6d010c85df1e498d')
 
 prepare() {
 	cd "${_shortname}-${pkgver}"
 
 	patch -Np1 < ../0001-fix-boolean-value-with-json-c-0.14.patch
-        patch -Np1 < ../fix-ykpers-args.h.patch
+	patch -Np1 < ../0002-make-header-declarations-extern.patch
 }
 
 build() {
@@ -50,4 +52,3 @@ package() {
 	install -D -m0644 README "${pkgdir}/usr/share/doc/yubikey-personalization/README"
 	make DESTDIR="${pkgdir}/" install
 }
-
