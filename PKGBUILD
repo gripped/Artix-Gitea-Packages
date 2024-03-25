@@ -105,6 +105,8 @@ build() {
     -DENABLE_MINIBROWSER=ON
     -DUSE_GTK4=OFF
     -DUSE_LIBBACKTRACE=OFF
+    -DUSE_SYSTEMD=OFF
+    -DENABLE_JOURNALD_LOG=OFF
   )
 
   # GCC with LTO fails to link libjavascriptcoregtk
