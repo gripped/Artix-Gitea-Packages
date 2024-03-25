@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: glibmm
-  version: 2.66.6-1
+  version: 2.66.7-1
   arch:
     - x86_64
   pkgname:
     - glibmm
     - glibmm-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.66.7-1
+    packages:
+      - glibmm-2.66.7-1-x86_64.pkg.tar.zst
+      - glibmm-docs-2.66.7-1-x86_64.pkg.tar.zst
   world:
     version: 2.66.6-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
