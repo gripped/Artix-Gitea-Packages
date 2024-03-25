@@ -146,8 +146,8 @@ pkgver() {
 
 
 build() {
-  export LDFLAGS=${LDFLAGS/-Wl,-z,pack-relative-relocs/}
-  cmake -S rspamd -B build -G Ninja \
+  #export LDFLAGS=${LDFLAGS/-Wl,-z,pack-relative-relocs/}
+  artix-cmake -S rspamd -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCONFDIR=/etc/rspamd \
     -DDBDIR=/var/lib/rspamd \
