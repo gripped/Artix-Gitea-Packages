@@ -15,12 +15,12 @@ pkgbase:
     - gvfs-google
     - gvfs-onedrive
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -36,6 +36,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1.54.0-2
     packages:
       - gvfs-1.54.0-2-x86_64.pkg.tar.zst
@@ -47,17 +50,6 @@ repos:
       - gvfs-nfs-1.54.0-2-x86_64.pkg.tar.zst
       - gvfs-google-1.54.0-2-x86_64.pkg.tar.zst
       - gvfs-onedrive-1.54.0-2-x86_64.pkg.tar.zst
-  world:
-    version: 1.52.2-1
-    packages:
-      - gvfs-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-smb-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-afc-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-gphoto2-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-goa-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-mtp-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-nfs-1.52.2-1-x86_64.pkg.tar.zst
-      - gvfs-google-1.52.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
