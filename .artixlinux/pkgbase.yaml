@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libdex
-  version: 0.4.3-1
+  version: 0.6.0-1
   arch:
     - x86_64
   pkgname:
     - libdex
     - libdex-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.6.0-1
+    packages:
+      - libdex-0.6.0-1-x86_64.pkg.tar.zst
+      - libdex-docs-0.6.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.4.3-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
