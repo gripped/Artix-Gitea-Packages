@@ -1,11 +1,12 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Oleksandr Natalenko <oleksandr@natalenko.name>
 # Contributor: Andrew Lewis <nerf@judo.za.org>
 # Contributor: mezcal
 
 pkgname=rspamd
-pkgver=3.7.5
-pkgrel=3
+pkgver=3.8.4
+pkgrel=1
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
@@ -123,7 +124,8 @@ backup=(
   etc/rspamd/worker-proxy.inc
 )
 install=rspamd.install
-_tag=8c86c16763af854f19f2fb6eae289814feab8f28
+options=(!lto)
+_tag=93fa4f6dc67f67fa1b7ce14aeb8f0841b4b0369e
 source=(
   git+https://github.com/rspamd/rspamd.git#tag=${_tag}
   rspamd.tmpfiles
@@ -131,10 +133,10 @@ source=(
   rspamd.logrotate
   rspamd-hyperscan.hook
 )
-b2sums=('SKIP'
+b2sums=('13e3f9b7fe071936791062e498f7c2cf51aa69b6dffd750be3622f7232e58dff96d0746a8bda47cd8f7a6fb9d23b853c53827a0ec19b1e97005e05ffb5aa2b4d'
         '6b1b4220444d382d01fe981acf51580c397363a873507fdb508fd5109adae2609c03e629ecdd6e48c13f068d0c3530be4d0fb55b3084c33522619dd29f70a40c'
         '5b4db27d87158609519bb0e59700ac627d447e4627b70600a70638f81a39361ad416c4784dafc392e9f9bc7b69211587ae64cbab7bec98668e75df5c4fba46ea'
-        '88c05d2ca66f3361e519226e25bf812d37916631cfca856a8129de4ff3ae48446a25b741d06b080a9aba30a1e77de83456a8f78d27e5ea9653c5a78f68d6a608'
+        '25c2253c7ecd9fba215cb6a1df93d76fab98e98ffeec380f828d7a612a78e0c4822dacc838ca37c2ceec452e54e7fc06c4c4df3290c8a6e8ee5ae869bbbb449e'
         '8a2882e4cd59eb3304acae9dfa71252c2024a8251e61cd1e75e6b84a84ec8c636e70d6702c03d7b7d0e2f7fa60d2466c6eed4f4f80f1834585185deaf7157eee')
 
 pkgver() {
@@ -142,7 +144,9 @@ pkgver() {
   git describe --tags
 }
 
+
 build() {
+  export LDFLAGS=${LDFLAGS/-Wl,-z,pack-relative-relocs/}
   artix-cmake -S rspamd -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCONFDIR=/etc/rspamd \
