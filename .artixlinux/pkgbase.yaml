@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: gnome-shell
-  version: 1:45.5-1
+  version: 1:46.0-1
   arch:
     - x86_64
   pkgname:
     - gnome-shell
+    - gnome-shell-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:46.0-1
+    packages:
+      - gnome-shell-1:46.0-1-x86_64.pkg.tar.zst
+      - gnome-shell-docs-1:46.0-1-x86_64.pkg.tar.zst
   world:
     version: 1:45.5-1
     packages:
@@ -52,3 +55,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
