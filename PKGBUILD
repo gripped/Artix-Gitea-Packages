@@ -70,10 +70,12 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#commit=$_commit"
   "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git"
   0001-subprojects-Update-gvc-to-latest-commit.patch
+  0002-sharing-fix-building-without-systemd.patch
 )
 b2sums=('d3e0c207fa2df397a9f2d0c39c68d8fbc719f1962915130e10641bf2ca765e86b05b5d512789c65d1641aad5f9986cb0bb0c21c12f36d288201cdb89c7790e73'
         'SKIP'
-        '51cfe280b938ae8c74a46432feddbafb598d7e82fec7dfbf657791cb4749a0a205d5e99decb4953272451b03c91fe7c3891df0c4e945c2070615405db3ec897c')
+        '51cfe280b938ae8c74a46432feddbafb598d7e82fec7dfbf657791cb4749a0a205d5e99decb4953272451b03c91fe7c3891df0c4e945c2070615405db3ec897c'
+        '087bc6f086e5cfb5b8e0903570db1c761166c904241c3d332efffe7b8572582bb1973701519ac0d69bdab2e14050f95c9e7284c07e4488a90682476b1b9dec1f')
 
 pkgver() {
   cd $pkgname
@@ -84,6 +86,7 @@ prepare() {
   cd $pkgname
 
   git apply -3 ../0001-subprojects-Update-gvc-to-latest-commit.patch
+  git apply -3 ../0002-sharing-fix-building-without-systemd.patch
 
   git submodule init
   git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
