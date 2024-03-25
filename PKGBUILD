@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=proxytunnel
-pkgver=1.12.1
+pkgver=1.12.2
 pkgrel=1
 pkgdesc="Stealth tunneling through HTTP(S) proxies."
 arch=("x86_64")
@@ -22,7 +22,7 @@ source=(
 	"https://github.com/proxytunnel/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
 )
 sha256sums=(
-	"acc111ba4ef47a61878eb480636941add36edb38defae22dd54288bcf036cdc4"
+	"edb33a74ba49e745b55b790f123366c8336729947225f4b5d816f1f90551ecfe"
 )
 
 
