@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nautilus
-  version: 45.2.1-1
+  version: 46.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - libnautilus-extension
     - libnautilus-extension-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 46.0-1
+    packages:
+      - nautilus-46.0-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-46.0-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-docs-46.0-1-x86_64.pkg.tar.zst
   world:
     version: 45.2.1-1
     packages:
@@ -56,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

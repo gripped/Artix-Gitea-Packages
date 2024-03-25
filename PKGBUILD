@@ -1,4 +1,4 @@
-# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
@@ -8,12 +8,12 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=45.2.1
+pkgver=46.0
 pkgrel=1
 pkgdesc="Default file manager for GNOME"
 url="https://wiki.gnome.org/Apps/Files"
 arch=(x86_64)
-license=(GPL)
+license=(GPL-3.0-or-later)
 depends=(
   cairo
   dconf
@@ -21,8 +21,9 @@ depends=(
   glib2
   gnome-autoar
   gnome-desktop-4
-  gstreamer
+  graphene
   gst-plugins-base-libs
+  gstreamer
   gtk4
   gvfs
   hicolor-icon-theme
@@ -43,15 +44,15 @@ makedepends=(
   tracker3-miners
 )
 checkdepends=(python-gobject)
-_commit=46c13f34bf1008ad79bf5f52d772afd296a58c94  # tags/45.2.1^0
+_commit=dcd221d57d0180d9d5cc0524bc6e3278d3d3a04c  # tags/46.0^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git#commit=$_commit"
 )
-b2sums=('SKIP')
+b2sums=('eb963b0b45afc66f6d331db2405bc0cb951c799f5341283dc10a5b598ba55bded847c6f88919f8391185ab57e6931d0899cf32b363066ed6f21864b0a39d7636')
 
 pkgver() {
   cd nautilus
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+  git describe --tags | sed -r 's/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
 }
 
 prepare() {
