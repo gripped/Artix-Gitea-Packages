@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: glibmm-2.68
-  version: 2.78.1-1
+  version: 2.80.0-1
   arch:
     - x86_64
   pkgname:
     - glibmm-2.68
     - glibmm-2.68-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.80.0-1
+    packages:
+      - glibmm-2.68-2.80.0-1-x86_64.pkg.tar.zst
+      - glibmm-2.68-docs-2.80.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.78.1-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
