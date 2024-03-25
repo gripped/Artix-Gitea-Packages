@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libpanel
-  version: 1.4.1-1
+  version: 1.6.0-1
   arch:
     - x86_64
   pkgname:
     - libpanel
     - libpanel-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.6.0-1
+    packages:
+      - libpanel-1.6.0-1-x86_64.pkg.tar.zst
+      - libpanel-docs-1.6.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.4.1-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
