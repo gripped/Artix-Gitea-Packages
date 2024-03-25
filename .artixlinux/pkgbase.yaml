@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gvfs
-  version: 1.53.1-1
+  version: 1.54.0-2
   arch:
     - x86_64
   pkgname:
@@ -13,6 +13,7 @@ pkgbase:
     - gvfs-mtp
     - gvfs-nfs
     - gvfs-google
+    - gvfs-onedrive
 actions:
   addRepo: world-gremlins
   removeRepo: null
@@ -35,16 +36,17 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.53.1-1
+    version: 1.54.0-2
     packages:
-      - gvfs-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-smb-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-afc-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-gphoto2-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-goa-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-mtp-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-nfs-1.53.1-1-x86_64.pkg.tar.zst
-      - gvfs-google-1.53.1-1-x86_64.pkg.tar.zst
+      - gvfs-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-smb-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-afc-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-goa-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-google-1.54.0-2-x86_64.pkg.tar.zst
+      - gvfs-onedrive-1.54.0-2-x86_64.pkg.tar.zst
   world:
     version: 1.52.2-1
     packages:
@@ -74,3 +76,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

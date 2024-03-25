@@ -5,10 +5,10 @@
 pkgbase=gvfs
 pkgname=(
   gvfs
-  gvfs-{smb,afc,gphoto2,goa,mtp,nfs,google}
+  gvfs-{smb,afc,gphoto2,goa,mtp,nfs,google,onedrive}
 )
-pkgver=1.53.1
-pkgrel=1
+pkgver=1.54.0
+pkgrel=2
 pkgdesc="Virtual filesystem implementation for GIO"
 url="https://wiki.gnome.org/Projects/gvfs"
 arch=(x86_64)
@@ -41,18 +41,19 @@ makedepends=(
   libmtp
   libnfs
   meson
+  msgraph
   openssh
   python
   python-packaging
   smbclient
 )
 groups=(gnome)
-_commit=2ec5b1f8185f777ef8714e3b9503e3399bee6971  # tags/1.53.1^0
+_commit=b22df75010588b062705b5d72bc5ca8811e62f72  # tags/1.54.0^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gvfs.git#commit=$_commit"
   gvfsd.hook
 )
-b2sums=('SKIP'
+b2sums=('4571eab5ecc717109b926448c46a63f3e55d0f7caf91c8a50dffde5bd3b96d5d6e61b8295a25c96eb06244b8d76412c0b4fcefd8a14d447fc30a24564356d6de'
         '08a830600964d2c896d7f107d9558053a32eb6b9166433d6e29b58d4c38e318cbb7fdf7b8230cf72d433df65f4698b9ad86624bf7d3c30c883db325d51335189')
 
 pkgver() {
@@ -65,9 +66,13 @@ prepare() {
 }
 
 build() {
-  artix-meson gvfs build -D man=true \
-    -D systemduserunitdir=no \
+  local meson_options=(
+    -D man=true
+    -D systemduserunitdir=no
     -D tmpfilesdir=/usr/lib/tmpfiles.d
+  )
+
+  artix-meson gvfs build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -95,6 +100,7 @@ package_gvfs() {
     'gvfs-gphoto2: gphoto2 (PTP camera/MTP media player) support'
     'gvfs-mtp: MTP device support'
     'gvfs-nfs: NFS support'
+    'gvfs-onedrive: Microsoft OneDrive support'
     'gvfs-smb: SMB/CIFS (Windows client) support'
   )
 
@@ -138,6 +144,10 @@ package_gvfs() {
     _pick google \
       usr/lib/gvfsd-google \
       usr/share/gvfs/mounts/google.mount
+
+    _pick onedrive \
+      usr/lib/gvfsd-onedrive \
+      usr/share/gvfs/mounts/onedrive.mount
   )
 
   install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
@@ -213,6 +223,16 @@ package_gvfs-google() {
   )
 
   mv google/* "$pkgdir"
+}
+
+package_gvfs-onedrive() {
+  pkgdesc+=" (Microsoft OneDrive backend)"
+  depends=(
+    "gvfs-goa=$pkgver"
+    msgraph
+  )
+
+  mv onedrive/* "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
