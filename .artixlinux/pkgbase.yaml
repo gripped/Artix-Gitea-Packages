@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - libx11
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - libx11-1.8.8-1-x86_64.pkg.tar.zst
   world:
-    version: 1.8.7-1
+    version: 1.8.8-1
     packages:
-      - libx11-1.8.7-1-x86_64.pkg.tar.zst
+      - libx11-1.8.8-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
