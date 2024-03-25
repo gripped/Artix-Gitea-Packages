@@ -1,9 +1,10 @@
-# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
 
 pkgname=yubico-c-client
 _shortname=ykclient
 pkgver=2.15
-pkgrel=5
+pkgrel=6
 pkgdesc='Yubico YubiKey client C library'
 arch=('x86_64')
 url='https://github.com/Yubico/yubico-c-client'
@@ -46,4 +47,3 @@ package() {
 	install -D -m0644 README "${pkgdir}/usr/share/doc/yubico-c-client/README"
 	make DESTDIR="${pkgdir}/" install
 }
-
