@@ -8,8 +8,8 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.13.5
-pkgrel=1.2
+pkgver=4.14.1
+pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -77,19 +77,19 @@ checkdepends=(
   weston
   wireplumber
 )
-_commit=a45b66e1cac48e2c6cae63a36a037d38a6dfcd54  # tags/4.13.5^0
+_commit=c648bb7b19bede75d3af4acaed468b922269ed05  # tags/4.14.1^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gtk.git#commit=$_commit"
   gtk-update-icon-cache.{hook,script}
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('SKIP'
+b2sums=('eba76096200b284e3eb2156d6bef8fcc7dd14135c41c6dc702759bacc00777f227cb33b669e67867a658f8a116dcb0b135de148c6779e8b1323b0d8d7f0628ee'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
         '4b90eb8d582509b09aab401313d4399cc139ad21b5dd7d45d79860d0764c7494c60714e0794e09823e51d1894ac032a994f27d79d1499abf24ee6f59bdb0c243'
-        '017e27dae284b91125e82634589451ed36c1cce49bd5bbefa2c820a6efc791cd9e42448fa4cb4197189104ceb06acdb187d06b480ccb9aab67b2982f42089b0c')
+        '07b629c15189f867fbd4a32512daf7e9b4d33e7c3218059e812b778185d974c7fea81cb7360c2edee47d0b579401ac18c00d0346f6f7440caa593d99fbc5ff16')
 
 pkgver() {
   cd gtk
@@ -129,6 +129,9 @@ check() (
 
   # Test: GTK / templates fails - ignore it for now.
   sed -i "s/{ 'name': 'templates' }/#{ 'name': 'templates' }/g" gtk/testsuite/gtk/meson.build
+
+  # Comparison tests fail, because thes depend on driver and how mesa was build
+  # https://gitlab.gnome.org/GNOME/gtk/-/issues/6383
   meson test -C build --print-errorlogs --no-suite=headless --timeout-multiplier=3 ||:
 )
 
@@ -143,7 +146,14 @@ _pick() {
 }
 
 package_gtk4() {
-  depends+=(gtk-update-icon-cache)
+  depends+=(
+    bash
+    glibc
+    gst-plugins-base-libs
+    gstreamer
+    gtk-update-icon-cache
+    vulkan-icd-loader
+    )
   optdepends=('evince: Default print preview command')
   provides=(libgtk-4.so)
 
@@ -173,13 +183,24 @@ END
   # Built by GTK 4, shared with GTK 3
   _pick guic usr/bin/gtk4-update-icon-cache
   _pick guic usr/share/man/man1/gtk4-update-icon-cache.1
-
-
 }
 
 package_gtk4-demos() {
   pkgdesc+=" (demo applications)"
-  depends=(gtk4)
+  depends=(
+    cairo
+    dconf
+    gdk-pixbuf2
+    glib2
+    glibc
+    graphene
+    gtk4
+    harfbuzz
+    hicolor-icon-theme
+    libepoxy
+    librsvg
+    pango
+    )
   mv demo/* "$pkgdir"
 }
 
@@ -191,7 +212,14 @@ package_gtk4-docs() {
 
 package_gtk-update-icon-cache() {
   pkgdesc="GTK icon cache updater"
-  depends=(gdk-pixbuf2 librsvg hicolor-icon-theme)
+  depends=(
+    bash
+    gdk-pixbuf2
+    glib2
+    glibc
+    hicolor-icon-theme
+    librsvg
+    )
 
   mv guic/* "$pkgdir"
   ln -s gtk4-update-icon-cache "$pkgdir/usr/bin/gtk-update-icon-cache"
