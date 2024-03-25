@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openmpi
-  version: 5.0.2-6
+  version: 5.0.2-7
   arch:
     - x86_64
   pkgname:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.0.2-6
+    version: 5.0.2-7
     packages:
-      - openmpi-5.0.2-6-x86_64.pkg.tar.zst
-      - openmpi-docs-5.0.2-6-x86_64.pkg.tar.zst
+      - openmpi-5.0.2-7-x86_64.pkg.tar.zst
+      - openmpi-docs-5.0.2-7-x86_64.pkg.tar.zst
   world:
     version: 5.0.2-6
     packages:
