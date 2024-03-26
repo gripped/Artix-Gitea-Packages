@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-minidump
-  version: 0.0.21-3
+  version: 0.0.23-1
   arch:
     - any
   pkgname:
     - python-minidump
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.0.21-3
+    version: 0.0.23-1
     packages:
-      - python-minidump-0.0.21-3-any.pkg.tar.zst
+      - python-minidump-0.0.23-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,12 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
