@@ -21,18 +21,13 @@ optdepends=('hddtemp: HDD temperature monitoring support'
             'python-zeroconf: for the autodiscover mode'
             'python-pystache: templating engine'
             'python-prometheus_client: for the Prometheus export module')
-source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz"
-        'glances.service')
-sha512sums=('aca140fedc2acc97ae4901722e0406acb8bea6eac5295d95499860a522e74d29ecbc4cfb28fecfd4a2879f4ee44175bd4efd2429b9d7e302b4a182caabd6a5f8'
-            '49f0d185a37a5c5837e5beb463770c943ede40b2f1b8405e338129e897e97d9fc58373a8586fabc506266e6343cfea3c91b9787ac6832cc97a1ab63d6ad058d4')
-b2sums=('510f379946eec914998cba32ffd66c6037bd85246cdae059d336b4a3330ba6e521aa3fef2099d88f08dbf3ed7e7c8537235850ad8f6882840fb811bcd8a82147'
-        'ecc44f8c06b1e8624cec92e41422a65d11e024b9fc23bae09b4e52fbedeb172a5034e5b612bbff7ba93d45189fb25eda0d54bc47b22b7f3f0acba984391e4017')
+source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz")
+sha512sums=('aca140fedc2acc97ae4901722e0406acb8bea6eac5295d95499860a522e74d29ecbc4cfb28fecfd4a2879f4ee44175bd4efd2429b9d7e302b4a182caabd6a5f8')
+b2sums=('510f379946eec914998cba32ffd66c6037bd85246cdae059d336b4a3330ba6e521aa3fef2099d88f08dbf3ed7e7c8537235850ad8f6882840fb811bcd8a82147')
 
 package() {
   cd "glances-${pkgver}"
   python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1
-  install -Dm644 "${srcdir}"/glances.service \
-    "${pkgdir}"/usr/lib/systemd/system/glances.service
 }
 
 # vim:set ts=2 sw=2 et:
