@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xorgproto
-  version: 2023.2-1
+  version: 2024.1-1
   arch:
     - any
   pkgname:
     - xorgproto
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2024.1-1
+    packages:
+      - xorgproto-2024.1-1-any.pkg.tar.zst
   world:
     version: 2023.2-1
     packages:
