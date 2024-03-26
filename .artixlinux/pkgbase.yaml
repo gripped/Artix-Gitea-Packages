@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: xf86-video-sisusb
-  version: 0.9.7-4
+  version: 0.9.7-5
   arch:
     - x86_64
   pkgname:
     - xf86-video-sisusb
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.7-4
+    version: 0.9.7-5
     packages:
-      - xf86-video-sisusb-0.9.7-4-x86_64.pkg.tar.zst
+      - xf86-video-sisusb-0.9.7-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
