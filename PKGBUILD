@@ -1,30 +1,41 @@
+# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Juergen Hoetzel <juergen@hoetzel.info>
 # Contributor: basilburn (basilburn), Paul Bredbury (brebs)
 # Contributor: lolilolicon
 
 pkgname=privoxy
 pkgver=3.0.34
-pkgrel=1
+pkgrel=2
 pkgdesc='A web proxy with advanced filtering capabilities.'
 arch=('x86_64')
 url='https://www.privoxy.org'
 license=('GPL2')
-depends=('pcre' 'zlib')
+depends=('pcre2' 'zlib')
 backup=('etc/privoxy/'{config,trust,match-all.action,{default,user}.{action,filter}}
         'etc/logrotate.d/privoxy')
 source=("https://downloads.sourceforge.net/ijbswa/${pkgname}-${pkgver}-stable-src.tar.gz"
+        '53748ca8ca3c893025be34dd4f104546fcbd0602.patch::https://www.privoxy.org/gitweb/?p=privoxy.git;a=patch;h=53748ca8ca3c893025be34dd4f104546fcbd0602'
         'privoxy.logrotate.d'
         'privoxy.sysusers')
 sha256sums=('e6ccbca1656f4e616b4657f8514e33a70f6697e9d7294356577839322a3c5d2c'
+            '61861bc3809f06eb77129d466c6e27f35972fa4aef8be2db2b6a789a3700fee8'
             '769740ea3c15228f24b559192e7b3f45b95dcf9040e2b25f15bfdfae8af86ce3'
             '6681231552f431962dda2ac49187df833b2b57544eac97ca94d1f4207b27b04c')
+
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}-stable"
+  # [PATCH] Add pcre2 support
+  patch -Np1 -i ../53748ca8ca3c893025be34dd4f104546fcbd0602.patch
+
+  autoheader
+  autoconf
+}
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}-stable"
 
-  autoheader
-  autoconf
   ./configure --prefix=/usr --sysconfdir=/etc/privoxy --enable-compression
 
   make
