@@ -1,0 +1,28 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=passt
+pkgver=2024_03_20.71dd405
+pkgrel=1
+pkgdesc="Plug A Simple Socket Transport"
+arch=(x86_64)
+url="https://passt.top/passt/about/"
+license=(
+  BSD-3-Clause
+  GPL-2.0-or-later
+)
+depends=(glibc)
+optdepends=(
+  'sh: for demo script'
+)
+source=(https://passt.top/$pkgname/snapshot/$pkgname-$pkgver.tar.zst)
+sha512sums=('a0bb089126e7e60932ea9f10f235021d4d094b54fe142e11f0cce02d0cdd39e9642260c35a645a40057bcd1599ef31e4b4c253fdb5912d1ed1cc80a7343c8c06')
+b2sums=('85f93a6db78676bce7606b970dec9415aefe039eedbfdd6270f2ba496e78fda85473d51c621be57e2156541f2767e0c687c3e08f6835546c09d31480165b042d')
+
+build() {
+  make VERSION="$pkgver" -C $pkgname-$pkgver
+}
+
+package() {
+  make DESTDIR="$pkgdir/" prefix=/usr install -C $pkgname-$pkgver
+  install -vDm 644 $pkgname-$pkgver/LICENSES/* -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

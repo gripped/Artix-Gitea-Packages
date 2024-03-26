@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: passt
+  version: 2024_03_20.71dd405-1
+  arch:
+    - x86_64
+  pkgname:
+    - passt
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 2024_03_20.71dd405-1
+    packages:
+      - passt-2024_03_20.71dd405-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
