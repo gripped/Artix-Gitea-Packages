@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: tree-sitter-markdown
+  version: 0.2.3-1
+  arch:
+    - x86_64
+  pkgname:
+    - tree-sitter-markdown
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.2.3-1
+    packages:
+      - tree-sitter-markdown-0.2.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
