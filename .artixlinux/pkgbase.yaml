@@ -8,11 +8,11 @@ pkgbase:
     - xorgproto
 actions:
   addRepo: null
-  removeRepo: null
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
