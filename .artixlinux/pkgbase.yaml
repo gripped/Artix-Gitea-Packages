@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-utils
-  version: 550.54.14-5
+  version: 550.67-1
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - opencl-nvidia
     - nvidia-dkms
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 550.67-1
+    packages:
+      - nvidia-utils-550.67-1-x86_64.pkg.tar.zst
+      - opencl-nvidia-550.67-1-x86_64.pkg.tar.zst
+      - nvidia-dkms-550.67-1-x86_64.pkg.tar.zst
   world:
     version: 550.54.14-5
     packages:
@@ -56,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
