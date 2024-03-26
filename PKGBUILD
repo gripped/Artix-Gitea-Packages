@@ -1,11 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=libmspack
-_tag='9d29d849d0b272eaf66c1e4811f573492fea035f' # rev-parse tags/v0.11alpha
 epoch=1
-pkgver=0.11alpha
-pkgrel=1.2
+pkgver=1.11
+pkgrel=1
 pkgdesc='A library for Microsoft compression formats'
 url='https://www.cabextract.org.uk/libmspack/'
 arch=('x86_64')
@@ -13,8 +12,8 @@ license=('GPL')
 depends=('glibc')
 makedepends=('git')
 provides=('libmspack.so')
-source=("git+https://github.com/kyz/libmspack#tag=$_tag")
-sha256sums=('SKIP')
+source=("git+https://github.com/kyz/libmspack#tag=v${pkgver}")
+sha256sums=('8772ea127d0e09f6ae60e7780634fbf0467e26fa0dc429bc207395b0117c447a')
 
 pkgver() {
   cd $pkgname
