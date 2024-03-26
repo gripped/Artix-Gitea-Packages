@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: nvidia-open
-  version: 550.54.14-7
+  version: 550.67-1
   arch:
     - x86_64
   pkgname:
     - nvidia-open
     - nvidia-open-dkms
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 550.67-1
+    packages:
+      - nvidia-open-550.67-1-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-550.67-1-x86_64.pkg.tar.zst
   world:
     version: 550.54.14-7
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
