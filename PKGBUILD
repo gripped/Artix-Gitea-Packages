@@ -4,12 +4,12 @@
 
 pkgname=udftools
 pkgver=2.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux tools for UDF filesystems and DVD/CD-R(W) drives'
 url='https://github.com/pali/udftools'
 arch=('x86_64')
 license=('GPL')
-depends=('ncurses' 'readline')
+depends=('readline')
 makedepends=('udev')
 source=("https://github.com/pali/$pkgname/releases/download/$pkgver/$pkgname-${pkgver}.tar.gz")
 sha256sums=('750dcf5c797765eb42265e0a56d1a99f97f94b7f6f4534263a5410503f0caf59')
