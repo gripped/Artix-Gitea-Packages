@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: act-runner
-  version: 0.2.6-2
+  version: 0.2.7-1
   arch:
     - x86_64
   pkgname:
     - act-runner
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.2.7-1
+    packages:
+      - act-runner-0.2.7-1-x86_64.pkg.tar.zst
   galaxy:
     version: 0.2.6-2
     packages:
       - act-runner-0.2.6-2-x86_64.pkg.tar.zst
+team: galaxy
