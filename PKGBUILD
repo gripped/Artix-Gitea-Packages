@@ -4,16 +4,23 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-_tag='bc0e318941a0539be1205ea1ac1dbfa834b7d033' # git rev-parse v${_tag_name}
-_tag_name=2.39.3
-pkgver=${_tag_name/-/}
-pkgrel=2
+_tag='2.40'
+pkgver="${_tag/-/}"
+pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
-makedepends=('git' 'meson' 'asciidoctor' 'bash-completion' 'libcap-ng'
-             'libutempter' 'libxcrypt' 'python' 'udev' 'cryptsetup'
-             'libcrypt.so' 'libmagic.so' 'libncursesw.so')
+makedepends=('asciidoctor'
+             'bash-completion'
+             'git'
+             'libcap-ng'
+             'libutempter'
+             'libxcrypt'
+             'meson'
+             'python'
+             'sqlite'
+             'udev'
+             'cryptsetup')
 license=(
   'BSD-2-Clause'
   'BSD-3-Clause'
@@ -27,13 +34,13 @@ license=(
 )
 options=('strip')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
-source=("git+https://github.com/util-linux/util-linux#tag=${_tag}?signed"
+source=("git+https://github.com/util-linux/util-linux#tag=v${_tag}?signed"
         $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
         pam-{login,common,remote,runuser,su}
         'util-linux.sysusers'
         '60-rfkill.rules'
-        0001-uuid-tmpfiles.patch)
-sha256sums=('SKIP'
+        '0001-util-linux-tmpfiles.patch')
+sha256sums=('153ae22d30a04e8c3ef1edbac63081f21b2d7622467dd7bf324f7f45e45b343d'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
@@ -42,7 +49,7 @@ sha256sums=('SKIP'
             'b28f31fcafa401b0eb26bc0c710002acc4f7718f97af45b0d444e4af6dfb15a8'
             '10b0505351263a099163c0d928132706e501dd0a008dac2835b052167b14abe3'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            '7fccfdbc22c215104aa0b79afa7491c100623ecbc581ff12b7a44b7ca870096f')
+            'c4d10742e2168ae86fa333bb686a6da8e5755aef5a65937da67abdd18fb5dac3')
 
 _backports=(
 )
@@ -64,8 +71,7 @@ prepare() {
     git log --oneline "${_l}" "${_c}"
     git revert --mainline 1 --no-commit "${_c}"
   done
-
-  patch -Np 1 -i ../0001-uuid-tmpfiles.patch
+  git apply ../0001-util-linux-tmpfiles.patch
   # do not mark dirty
   sed -i '/dirty=/c dirty=' tools/git-version-gen
 }
@@ -97,9 +103,19 @@ package_util-linux() {
   conflicts=('rfkill' 'hardlink')
   provides=('rfkill' 'hardlink')
   replaces=('rfkill' 'hardlink')
-  depends=('glibc' 'pam' 'shadow' 'coreutils' 'libudev'
-           'libcap-ng' 'libutempter' 'libxcrypt' 'libcrypt.so' 'util-linux-libs'
-           'libmagic.so' 'libncursesw.so' 'readline' 'zlib')
+  depends=('coreutils'
+           'file' 'libmagic.so'
+           'glibc'
+           'libcap-ng'
+           'libutempter'
+           'libxcrypt' 'libcrypt.so'
+           'ncurses' 'libncursesw.so'
+           'pam'
+           'readline'
+           'shadow'
+           'libudev'
+           'util-linux-libs'
+           'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
           etc/pam.d/chsh
@@ -151,8 +167,9 @@ package_util-linux() {
 }
 
 package_util-linux-libs() {
-  pkgdesc="util-linux runtime libraries"
-  depends=('glibc')
+  pkgdesc='util-linux runtime libraries'
+  depends=('glibc'
+           'sqlite')
   provides=('libutil-linux' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.so' 'libuuid.so')
   conflicts=('libutil-linux')
   replaces=('libutil-linux')
