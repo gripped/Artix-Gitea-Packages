@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wireplumber
-  version: 0.5.0-1
+  version: 0.5.0-2
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - libwireplumber
     - wireplumber-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.5.0-2
+    packages:
+      - wireplumber-0.5.0-2-x86_64.pkg.tar.zst
+      - libwireplumber-0.5.0-2-x86_64.pkg.tar.zst
+      - wireplumber-docs-0.5.0-2-x86_64.pkg.tar.zst
   world:
     version: 0.5.0-1
     packages:
@@ -56,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

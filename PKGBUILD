@@ -9,13 +9,12 @@ pkgname=(
 )
 _commit=59d190a2bd400f3b093f99b16fc0fb06f6cb2cfe # tags/0.5.0
 pkgver=0.5.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
 arch=(x86_64)
 license=(MIT)
 makedepends=(
-	elogind
 	doxygen
 	gcc-libs
 	git
@@ -43,6 +42,10 @@ pkgver() {
 
 prepare() {
 	cd $pkgbase
+
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/wireplumber/-/issues/2
+	# http://gitlab.freedesktop.org/pipewire/wireplumber/-/merge_requests/620
+	git cherry-pick -n 428462ddf3f812a1da63d0b499e105c6391abbf4
 }
 
 build() {
@@ -51,6 +54,9 @@ build() {
 		-D systemd=disabled
 		-D elogind=enabled
 	)
+
+	artix-meson $pkgbase build "${meson_options[@]}"
+	meson compile -C build
 
 	artix-meson $pkgbase build "${meson_options[@]}"
 	meson compile -C build
