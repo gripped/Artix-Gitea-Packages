@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-paramiko
-  version: 2.11.1-4
+  version: 3.4.0-1
   arch:
     - any
   pkgname:
     - python-paramiko
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.4.0-1
+    packages:
+      - python-paramiko-3.4.0-1-any.pkg.tar.zst
   world:
     version: 2.11.1-4
     packages:
@@ -52,12 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
