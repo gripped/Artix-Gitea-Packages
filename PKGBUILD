@@ -46,7 +46,7 @@ optdepends=(
   'python-libusb1: for pro and storage subcommands'
   'python-pyscard: for pcsclite integration'
 )
-source=("git+$url.git?signed#tag=v$pkgver")
+source=("git+$url.git#tag=v$pkgver")
 sha256sums=('c74711e8cf20fc2eaa8dddc7c73f3a4dfe6fa7e97a8c798922f15ed48be20ef7')
 validpgpkeys=(868184069239FF65DE0BCD7DD9BAE35991DE5B22  # Szczepan Zalega <szczepan@nitrokey.com> (@szszszsz)
               CC74B7120BFAA36FF42868724C1449F1C9804176  # Markus Meissner <meissner@nitrokey.com> (@daringer)
