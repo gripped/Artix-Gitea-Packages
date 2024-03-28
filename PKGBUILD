@@ -1,7 +1,7 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=github-cli
 pkgver=2.46.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="GitHub's official command line tool"
 arch=("x86_64")
 url="https://cli.github.com"
