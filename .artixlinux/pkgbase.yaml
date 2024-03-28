@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java11-openjdk
-  version: 11.0.22.u7-1
+  version: 11.0.22.u7-2
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - openjdk11-src
     - openjdk11-doc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 11.0.22.u7-2
+    packages:
+      - jre11-openjdk-headless-11.0.22.u7-2-x86_64.pkg.tar.zst
+      - jre11-openjdk-11.0.22.u7-2-x86_64.pkg.tar.zst
+      - jdk11-openjdk-11.0.22.u7-2-x86_64.pkg.tar.zst
+      - openjdk11-src-11.0.22.u7-2-x86_64.pkg.tar.zst
+      - openjdk11-doc-11.0.22.u7-2-x86_64.pkg.tar.zst
   world:
     version: 11.0.22.u7-1
     packages:
@@ -60,3 +65,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
