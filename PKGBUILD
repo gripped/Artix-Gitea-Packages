@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Christian Hesse <mail@eworm.de>
 # Contributor: andreas_baumann <abaumann@yahoo.com>
 # Contributor: zhuqin <zhuqin83@gmail.com>
 
 pkgname=gengetopt
 pkgver=2.23
-pkgrel=2
+pkgrel=3
 pkgdesc='A tool to write command line option parsing code for C programs'
 arch=('x86_64')
 url='https://www.gnu.org/software/gengetopt/gengetopt.html'
