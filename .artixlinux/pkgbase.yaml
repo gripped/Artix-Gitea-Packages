@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libpamac
-  version: 11.6.4-1
+  version: 11.6.4-2
   arch:
     - x86_64
   pkgname:
     - libpamac
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 11.6.4-2
+    packages:
+      - libpamac-11.6.4-2-x86_64.pkg.tar.zst
   galaxy:
     version: 11.6.4-1
     packages:
       - libpamac-11.6.4-1-x86_64.pkg.tar.zst
+team: galaxy
