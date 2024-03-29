@@ -1,18 +1,13 @@
 ---
 pkgbase:
   name: pamac
-  version: 11.6.0-6.1
+  version: 11.7.1-1
   arch:
-    - i686
     - x86_64
-    - arm
-    - armv6h
-    - armv7h
-    - aarch64
   pkgname:
     - pamac
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -51,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 11.7.1-1
+    packages:
+      - pamac-11.7.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: 11.6.0-6.1
     packages:
       - pamac-11.6.0-6.1-x86_64.pkg.tar.zst
+team: galaxy
