@@ -4,7 +4,7 @@
 pkgbase=libreoffice-still-i18n
 _LOver=7.6.6.3
 pkgver=7.6.6
-pkgrel=1
+pkgrel=1.1
 arch=('any')
 url="https://www.documentfoundation.org"
 license=('LGPL-3.0-or-later')
