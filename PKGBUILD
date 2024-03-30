@@ -5,9 +5,8 @@
 # Contributor: Panagiotis Papadopoulos pano_90 (AT) gmx (DOT) net
 
 pkgname=languagetool
-_pkgver=6.3a
-pkgver=6.3.a
-pkgrel=2
+pkgver=6.4
+pkgrel=1
 pkgdesc='An open source language checker'
 arch=(any)
 url='https://www.languagetool.org'
@@ -17,15 +16,15 @@ makedepends=(unzip)
 optdepends=('java-runtime: needed for the GUI version'
             'libxtst: needed for the GUI version'
             'gtk3: GTK style for the GUI')
-source=(https://www.languagetool.org/download/LanguageTool-$_pkgver.zip
+source=(https://www.languagetool.org/download/LanguageTool-$pkgver.zip
         languagetool.sh)
-noextract=($pkgname-$_pkgver.zip)
-sha256sums=('7ef66e47270c5d10e893d473dcf85db08df34b3585a1a0ce2c621a8ca4b3394b'
+noextract=($pkgname-$pkgver.zip)
+sha256sums=('d5d517335d1ca33f33412920447fa0c742ef78d645521d650e0e22628fe0d3bd'
             'c559be1fbead8845caf1f269cf39bfde6486ce06aabcbdd4ba58d402168b61a7')
 
 package() {
   install -d "$pkgdir"/usr/{bin,share/java/$pkgname/libs}
-  unzip -q LanguageTool-$_pkgver.zip -d "$pkgdir"/usr/share
+  unzip -q LanguageTool-$pkgver.zip -d "$pkgdir"/usr/share
   cd "$pkgdir"/usr/share/
   mv LanguageTool-${pkgver/.a/} $pkgname
   cd $pkgname
