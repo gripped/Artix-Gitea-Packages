@@ -8,12 +8,12 @@ pkgbase:
     - lxappearance
     - lxappearance-gtk3
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.3-4
-    packages:
-      - lxappearance-0.6.3-4-x86_64.pkg.tar.zst
-      - lxappearance-gtk3-0.6.3-4-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -52,5 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 0.6.3-4
+    packages:
+      - lxappearance-0.6.3-4-x86_64.pkg.tar.zst
+      - lxappearance-gtk3-0.6.3-4-x86_64.pkg.tar.zst
+team: galaxy
