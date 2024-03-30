@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gunicorn
-  version: 20.1.0-10
+  version: 21.2.0-1
   arch:
     - any
   pkgname:
     - gunicorn
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20.1.0-10
+    version: 21.2.0-1
     packages:
-      - gunicorn-20.1.0-10-any.pkg.tar.zst
+      - gunicorn-21.2.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
