@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: refind
-  version: 0.14.0.2-2
+  version: 0.14.1-1
   arch:
     - x86_64
   pkgname:
     - refind
     - refind-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.14.1-1
+    packages:
+      - refind-0.14.1-1-x86_64.pkg.tar.zst
+      - refind-docs-0.14.1-1-x86_64.pkg.tar.zst
   world:
     version: 0.14.0.2-2
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

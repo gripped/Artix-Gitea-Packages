@@ -2,8 +2,8 @@
 
 pkgbase=refind
 pkgname=(refind refind-docs)
-pkgver=0.14.0.2
-pkgrel=2
+pkgver=0.14.1
+pkgrel=1
 pkgdesc="An EFI boot manager"
 arch=(x86_64)  # we build architecture-specific EFI binaries
 url="https://www.rodsbooks.com/refind/"
@@ -14,8 +14,8 @@ makedepends=(
   gnu-efi
 )
 source=(https://sourceforge.net/projects/refind/files/$pkgver/$pkgname-src-$pkgver.tar.gz)
-sha512sums=('41c120c1afec37c508aa5c0ec09a6563c3047ef84932308c91701795b950431dfad17d25cf664039b490a302d475add98441b75f90ff71cadce41febedc68a9e')
-b2sums=('02019ddb872ce44d2a2119902edebd633f925d49634e3bcc6bfb2c9dedb8ce213166909395a333d3a37e95c67720e31b1f5fcf25083801c17d645372aa54a06a')
+sha512sums=('25f420970ae00d9f9b9deb52fea8f9b8307a2de15f921eaae17713e522b6fe932cf1ac5db3006e3cee82670ba67d03039987289cd1de18f1e57f743f98d983c7')
+b2sums=('35168bfc2c8db8335156c3a85cd2f6579881514368353b879efeea4697cb77b66796650a17bd931b93544a8fcac16917bfe08b822ec5aac6c4a61550f6543391')
 _arch='x64'
 
 prepare() {
