@@ -1,16 +1,23 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: linux-lts515
+  version: 5.15.152-1
+  arch:
+    - x86_64
+    - pentium4
+    - i686
+    - i486
+  pkgname:
+    - linux-lts515
+    - linux-lts515-headers
+    - linux-lts515-docs
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +55,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 5.15.152-1
+    packages:
+      - linux-lts515-5.15.152-1-x86_64.pkg.tar.zst
+      - linux-lts515-headers-5.15.152-1-x86_64.pkg.tar.zst
+      - linux-lts515-docs-5.15.152-1-x86_64.pkg.tar.zst
