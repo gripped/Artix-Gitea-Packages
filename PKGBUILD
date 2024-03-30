@@ -6,7 +6,7 @@
 pkgname=('llvm-julia' 'llvm-julia-libs')
 _pkgver=15.0.7-10
 pkgver=${_pkgver/-/.}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://julialang.org/'
 license=('custom:Apache 2.0 with LLVM Exception')
@@ -58,6 +58,7 @@ build() {
   CFLAGS=${CFLAGS/-g /-g1 }
   CXXFLAGS=${CXXFLAGS/-g /-g1 }
 
+  _symver="JL_LLVM_$(echo $pkgver | cut -d. -f1-2)"
   local cmake_args=(
     -G Ninja
     -DCMAKE_BUILD_TYPE=Release
@@ -75,6 +76,7 @@ build() {
     -DLLVM_LINK_LLVM_DYLIB=ON
     -DLLVM_USE_PERF=ON
     -DLLVM_VERSION_SUFFIX=jl
+    -DLLVM_SHLIB_SYMBOL_VERSION=$_symver
   )
 
   cmake -B build -S llvm-project-julia-$_pkgver/llvm \
