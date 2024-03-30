@@ -6,7 +6,7 @@ pkgbase=kimageannotator
 pkgname=(kimageannotator
          kimageannotator-qt5)
 pkgver=0.7.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Tool for annotating images'
 arch=(x86_64)
 url='https://github.com/ksnip/kImageAnnotator'
