@@ -3,8 +3,8 @@
 # Contributor: dnuux <dnuuxx@gmail.com>
 
 pkgname=python-faker
-pkgver=24.2.0
-_commit=250fa19baf01aa2289afe44b07225f785cf536c5
+pkgver=24.3.0
+_commit=93bfa1cba061333a7c17462c7b6e65046c891eaf
 pkgrel=1
 pkgdesc='Faker generates fake data for you.'
 arch=('any')
@@ -16,7 +16,7 @@ makedepends=('git' 'python-setuptools' 'python-pytest')
 checkdepends=('python-validators' 'python-ukpostcodeparser' 'python-freezegun' 'python-pillow'
               'python-xmltodict')
 source=("git+https://github.com/joke2k/faker.git#commit=$_commit")
-sha512sums=('9eb0225fae6398ebe0075ce141b291e9903ce729ef1e3291b35393d1f3153a49843b6b155f58a83443a7669cb2d4b310cd45c6d74de9ac206fd599ae4001aff6')
+sha512sums=('4979687e87156d399bcef897208646bb58123349bfe128b3feb0261fc46b9870fe10ff63f813c83f9a5b8393636877b1b24cdbfd942cbb34172fb899a6f9f03e')
 
 prepare() {
   sed -i -e 's/==/>=/' faker/setup.py
