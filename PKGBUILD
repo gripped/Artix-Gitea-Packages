@@ -3,21 +3,21 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-session-manager
-pkgver=1.26.1
+pkgver=1.28.0
 pkgrel=1
 pkgdesc="The MATE Session Handler"
 url="https://mate-desktop.org"
 arch=('x86_64')
 license=('GPL')
-depends=('dbus-glib' 'gettext' 'gtk3' 'libsm' 'mate-desktop' 'elogind')
-makedepends=('xtrans' 'udev' 'python')
+depends=('dbus-glib' 'gettext' 'gtk3' 'libsm' 'mate-desktop')
+makedepends=('xtrans' 'systemd' 'python')
 optdepends=('gnome-keyring: keyring support'
             'xdg-user-dirs-gtk: manage user directories')
 groups=('mate')
 conflicts=('mate-session-manager-gtk3')
 replaces=('mate-session-manager-gtk3')
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('5b8c7d6441fd9c293c863882ab67a7493c53cdf64eab27c094575f423ebd4278')
+sha256sums=('d32ce4595ba1da65290777203f2bc82bd973b214a3a04080a1ef5c68990a2d7b')
 
 build() {
 	cd "${pkgname}-${pkgver}"
@@ -26,7 +26,7 @@ build() {
 	            --libexecdir=/usr/lib/${pkgname} \
 	            --sysconfdir=/etc \
 	            --localstatedir=/var \
-		    --with-elogind=yes
+	            --with-elogind=yes
 	make
 }
 
