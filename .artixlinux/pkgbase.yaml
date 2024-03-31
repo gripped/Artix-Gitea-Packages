@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pdm
-  version: 2.12.4-1
+  version: 2.13.2-1
   arch:
     - any
   pkgname:
     - python-pdm
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.11.1-1
+    version: 2.13.2-1
     packages:
-      - python-pdm-2.11.1-1-any.pkg.tar.zst
+      - python-pdm-2.13.2-1-any.pkg.tar.zst
   world:
     version: 2.12.4-1
     packages:
@@ -53,12 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
