@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-caja
-  version: 1.27.0-2
+  version: 1.28.0-1
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1.27.0-2
+    version: 1.28.0-1
     packages:
-      - python-caja-1.27.0-2-x86_64.pkg.tar.zst
+      - python-caja-1.28.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.27.0-2
     packages:
