@@ -15,11 +15,14 @@ makedepends=('itstool')
 groups=('mate')
 conflicts=('mate-control-center-gtk3')
 replaces=('mate-control-center-gtk3')
-source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('ebf2c704fd5248dc2f9836ff29028869ef29d5054907cc615734b6383a7914bc')
+source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"
+        "systemd.patch")
+sha256sums=('ebf2c704fd5248dc2f9836ff29028869ef29d5054907cc615734b6383a7914bc'
+            '60cbebb335ef709ea8a3d0c4471fdcddc97014d50c2967121f92cb70cef96806')
 
 build() {
     cd "${pkgname}-${pkgver}"
+    patch -Np1 -i "${srcdir}/systemd.patch"
     ./configure \
         --prefix=/usr \
         --sysconfdir=/etc \
