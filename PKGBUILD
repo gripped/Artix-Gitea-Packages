@@ -15,7 +15,7 @@ license=('BSD')
 depends=('libdrm')
 makedepends=('git' 'ninja' 'unzip' 'cmake' 'protobuf' 'libxrandr' 'libxcomposite' 'openssl' 'glibc'
              'ffmpeg' 'libva' 'opus' 'yasm' 'libjpeg-turbo' 'pipewire' 'libxtst' 'libepoxy'
-             'libx11')
+             'libxdamage')
 options=('staticlibs')
 source=("git+${url}.git#commit=${_commit}"
         "git+https://chromium.googlesource.com/libyuv/libyuv/"
