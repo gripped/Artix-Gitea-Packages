@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: telegram-desktop
-  version: 4.15.6-1
+  version: 4.15.6-2
   arch:
     - x86_64
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: galaxy
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.15.6-2
+    packages:
+      - telegram-desktop-4.15.6-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
     version: 4.15.6-1
     packages:
       - telegram-desktop-4.15.6-1-x86_64.pkg.tar.zst
+team: galaxy
