@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: mate-system-monitor
-  version: 1.26.2-1
+  version: 1.28.1-1
   arch:
     - x86_64
   pkgname:
     - mate-system-monitor
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.28.1-1
+    packages:
+      - mate-system-monitor-1.28.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.26.2-1
     packages:
       - mate-system-monitor-1.26.2-1-x86_64.pkg.tar.zst
+team: galaxy
