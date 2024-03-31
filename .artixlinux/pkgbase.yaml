@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-hishel
+  version: 0.0.25-1
+  arch:
+    - any
+  pkgname:
+    - python-hishel
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.0.25-1
+    packages:
+      - python-hishel-0.0.25-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
