@@ -1,7 +1,7 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=libopenmpt
-pkgver=0.7.4
+pkgver=0.7.6
 pkgrel=1
 pkgdesc="A library to render tracker music to a PCM audio stream"
 arch=(x86_64)
@@ -26,8 +26,8 @@ makedepends=(
 )
 provides=(libopenmpt.so)
 source=($pkgname-$pkgver.tar.gz::https://lib.openmpt.org/files/libopenmpt/src/$pkgname-$pkgver+release.autotools.tar.gz)
-sha512sums=('512aa6a37b5eeb017604873bc1cbed4495116fd4bc3538bf83bc6b59e05178874ef08de11d95d30480b7081826352e00214f4713b5b75ea5593fba126d842034')
-b2sums=('46e9132984a513a452ce762cddd097a00d5dce81c7370c1b577eef1f68f91fa9c3527e018531119ba016a246ae9882330f79f61f2f8accf2f28fd9b29dceaab9')
+sha512sums=('9665d3e301bab06f363bc4376fc488ca5befcf05f580deeb01a035167f02f8d47cda0d940239d5f29a91f97da6f31a2f6f20836b4f8ef6a248c7e39e49a7aa66')
+b2sums=('022686bbb13728da134017b16c70cb9f3b47d64b0b6a889f473b5b72b5aa5cb66b84953b414075b6e9842fea947eb67b6cff2ae1130618bd0c0840f90ce88e70')
 
 prepare() {
   cd $pkgname-$pkgver+release.autotools
