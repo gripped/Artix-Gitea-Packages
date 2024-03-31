@@ -25,7 +25,8 @@ build() {
         --sysconfdir=/etc \
         --sbindir=/usr/bin \
         --localstatedir=/var \
-        --disable-update-mimedb
+        --disable-update-mimedb \
+        --disable-systemd
 
     #https://bugzilla.gnome.org/show_bug.cgi?id=656231
     sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
