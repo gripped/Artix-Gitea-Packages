@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libtg_owt
-  version: 0.git24.592b14d-2.1
+  version: 0.git24.592b14d-2.2
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.git24.592b14d-2.1
+    version: 0.git24.592b14d-2.2
     packages:
-      - libtg_owt-0.git24.592b14d-2.1-x86_64.pkg.tar.zst
+      - libtg_owt-0.git24.592b14d-2.2-x86_64.pkg.tar.zst
   galaxy:
     version: 0.git24.592b14d-2.1
     packages:
