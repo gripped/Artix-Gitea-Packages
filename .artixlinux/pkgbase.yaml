@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: caja-extensions
-  version: 1.26.1-2
+  version: 1.28.0-1
   arch:
     - x86_64
   pkgname:
@@ -12,13 +12,14 @@ pkgbase:
     - caja-share
     - caja-wallpaper
     - caja-xattr-tags
+    - caja-audio-video-properties
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -52,8 +53,16 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.28.0-1
+    packages:
+      - caja-extensions-common-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-image-converter-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-open-terminal-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-sendto-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-share-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-wallpaper-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-xattr-tags-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-audio-video-properties-1.28.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.26.1-2
     packages:
@@ -64,3 +73,4 @@ repos:
       - caja-share-1.26.1-2-x86_64.pkg.tar.zst
       - caja-wallpaper-1.26.1-2-x86_64.pkg.tar.zst
       - caja-xattr-tags-1.26.1-2-x86_64.pkg.tar.zst
+team: galaxy
