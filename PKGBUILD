@@ -4,13 +4,13 @@
 
 pkgname=mate-session-manager
 pkgver=1.28.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The MATE Session Handler"
 url="https://mate-desktop.org"
 arch=('x86_64')
 license=('GPL')
 depends=('dbus-glib' 'gettext' 'gtk3' 'libsm' 'mate-desktop')
-makedepends=('xtrans' 'systemd' 'python')
+makedepends=('xtrans' 'elogind' 'python')
 optdepends=('gnome-keyring: keyring support'
             'xdg-user-dirs-gtk: manage user directories')
 groups=('mate')
