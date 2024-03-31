@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-ruamel-yaml
-  version: 0.18.5-1
+  version: 0.18.6-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.18.5-1
+    version: 0.18.6-1
     packages:
-      - python-ruamel-yaml-0.18.5-1-any.pkg.tar.zst
+      - python-ruamel-yaml-0.18.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,12 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
