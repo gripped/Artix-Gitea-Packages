@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: solr
-  version: 9.4.1-1
+  version: 9.5.0-3
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.4.1-1
+    version: 9.5.0-3
     packages:
-      - solr-9.4.1-1-any.pkg.tar.zst
+      - solr-9.5.0-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
