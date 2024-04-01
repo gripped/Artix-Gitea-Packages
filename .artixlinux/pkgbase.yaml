@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - terminus-font
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.49.1-6
-    packages:
-      - terminus-font-4.49.1-6-any.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
