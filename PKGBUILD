@@ -11,7 +11,7 @@ arch=('x86_64')
 license=('GPL')
 depends=('mate-menus' 'mate-settings-daemon' 'marco' 'libxss' 'mate-desktop'
          'gettext' 'accountsservice' 'mate-panel' 'libcanberra' 'udisks2' 'libayatana-appindicator')
-makedepends=('itstool')
+makedepends=('itstool' 'libelogind')
 groups=('mate')
 conflicts=('mate-control-center-gtk3')
 replaces=('mate-control-center-gtk3')
@@ -21,6 +21,10 @@ source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}
 sha256sums=('ebf2c704fd5248dc2f9836ff29028869ef29d5054907cc615734b6383a7914bc'
             '05911f20e4c3b633a9acf7d26a36f7ef099801199137e1267bd93d0d3a1abdd7'
             '663f6b84fda56a0c7af356a12d7759626568458c9a1adbe1651726662d959f18')
+
+prepare() {
+    sed -i 's/"systemd/"libelogind/' configure
+}
 
 build() {
     cd "${pkgname}-${pkgver}"
