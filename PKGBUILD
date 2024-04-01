@@ -5,9 +5,8 @@
 
 pkgname=mpv
 epoch=1
-_tag='807b9343ef911d138950411cdb83c16a151d2018' # git rev-parse v${pkgver}
 pkgver=0.37.0
-pkgrel=2.1
+pkgrel=3
 pkgdesc='a free, open source, and cross-platform media player'
 arch=('x86_64')
 license=('GPL-2.0-or-later AND LGPL-2.1-or-later')
@@ -29,8 +28,8 @@ optdepends=('yt-dlp: for video-sharing websites playback'
 provides=('libmpv.so')
 options=('!emptydirs')
 validpgpkeys=('145077D82501AA20152CACCE8D769208D5E31419') # sfan5 <sfan5@live.de>
-source=("git+https://github.com/mpv-player/mpv.git#tag=${_tag}?signed")
-sha256sums=('SKIP')
+source=("git+https://github.com/mpv-player/mpv.git#tag=v${pkgver}?signed")
+sha256sums=('a60f1ffa5bbf1c17bfa380a126573ff31f1d149496fe3d32c793e0a6845fb63e')
 
 prepare() {
   cd mpv
@@ -44,6 +43,8 @@ prepare() {
   git cherry-pick -n 26a51464b68ce2571bdbe538da9c0a1c255b879f
   git cherry-pick -n b23e8b2ffb64e315b480f1b10d1a4feb3154f3e2
   git cherry-pick -n 531868fe0d2a35fbbff78d9a9ff8f96df73e69fd
+  git cherry-pick -n 9254231175b21d7a7d7a3314b6dc1bedd062448d
+  git cherry-pick -n 399a96db5b36279fc720f818b152bc8f061f33e5
 
   # https://github.com/mpv-player/mpv/issues/13077
   git cherry-pick -n 9e27b1f523071db184443d78f7144cb599dd0829
@@ -72,7 +73,7 @@ build() {
     --auto-features auto
 
     -Dlibmpv=true
-
+    -Dgl-x11=enabled
     -Dcaca=disabled
     -Dcdda=enabled
     -Ddvbin=enabled
