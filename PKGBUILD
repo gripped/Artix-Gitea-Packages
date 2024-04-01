@@ -2,7 +2,7 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt-lts
-pkgver=6.6.21.26.realtime1
+pkgver=6.6.23.28.realtime1
 pkgrel=1
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
@@ -27,10 +27,10 @@ source=(
   git+https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts.git/#tag=v$pkgver?signed
   config
 )
-sha512sums=('SKIP'
-            'cc78638d07e20fad5a54c24d6e39216cfe040f43874c116619fdeeb4ae767549862855beea2034a4e9184f8d7c0e3272eff8f26de57c8bb8867a0917686597a8')
-b2sums=('SKIP'
-        '3e0fcf78aa43a6136e7ca12e9b3d79a7e498bd73bd5320bd7244d55c4fdd73d8aa21f382967acc18bedeeabaaaf87b069be441df53a59253a5a97230cf347321')
+sha512sums=('2ec68f30bcd6987d570003baf19c8533fd021600ea4276cf1cea3c54ae47989c1a6b613c8397a7e77c1dd4185c986ba1d71db0bef452bfab7ffd638df86c2a90'
+            '69e1b40a9ec605c32e73dcf4bb41885a6c991cb9e202d9faa7929bf33e170583d1350cf30c628c420b0cc7e4caa0c31fcbe1762825fd822c3320ccdde8d8098d')
+b2sums=('ceffbacbf079b2233be766568033fef3e913cb65589539e84e6cf0d60fc5b3b67002f92b75031ef2bd432ee02b671279ed3cc3e21c3eea9d28f207df5ea1f4e4'
+        '651de87738a5db75bd99322447b07ad8c6c834ff0510d84ebf60be97a5a950fec870d7d23d4d1733ff66dcc493cdef5dc2a9d3ab250376c4299b949530e0bd79')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
   '5ED9A48FC54C0A22D1D0804CEBC26CDB5A56DE73'  # Steven Rostedt (Der Hacker) <rostedt@goodmis.org>
