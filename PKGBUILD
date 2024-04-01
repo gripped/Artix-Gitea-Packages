@@ -8,7 +8,7 @@
 pkgname='alacritty'
 pkgdesc="A cross-platform, GPU-accelerated terminal emulator"
 pkgver=0.13.2
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 url="https://github.com/alacritty/alacritty"
 license=('Apache-2.0' 'MIT')
