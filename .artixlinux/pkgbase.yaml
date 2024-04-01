@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: toxcore
-  version: 1:0.2.18-4
+  version: 1:0.2.19-1
   arch:
     - x86_64
   pkgname:
     - toxcore
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.2.18-4
+    version: 1:0.2.19-1
     packages:
-      - toxcore-1:0.2.18-4-x86_64.pkg.tar.zst
+      - toxcore-1:0.2.19-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
