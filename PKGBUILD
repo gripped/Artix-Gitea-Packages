@@ -9,7 +9,7 @@ pkgname=(
   openmpi-docs
 )
 pkgver=5.0.2
-pkgrel=8
+pkgrel=7
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
@@ -25,8 +25,6 @@ makedepends=(
   libfabric
   libnl
   openpmix
-  openucc
-  openucx
   prrte
   valgrind
   zlib
@@ -68,18 +66,16 @@ build() {
     --with-pmix=external
     --with-prrte=external
     --with-valgrind
-    --with-ucc=/usr
-    --with-ucx=/usr
     --with-cuda=/opt/cuda
     # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
     --with-cuda-libdir=/usr/lib
     --with-rocm=/opt/rocm
     # all components that link to libraries provided by optdepends must be run-time loadable
-    --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm,coll_ucc,scoll_ucc
+    --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm
     # mpirun should not warn on MCA component load failures by default - usually caused by missing optdepends, which is ok
     # https://docs.open-mpi.org/en/main/installing-open-mpi/configure-cli-options/installation.html
-    --with-show-load-errors='^accelerator,rcache,coll/ucc'
+    --with-show-load-errors='^accelerator,rcache'
   )
   cd $pkgbase-$pkgver
 
@@ -108,7 +104,6 @@ package_openmpi() {
     libfabric
     libnl
     openpmix libpmix.so
-    openucx
     prrte libprrte.so
     zlib
   )
@@ -117,7 +112,6 @@ package_openmpi() {
     'hip-runtime-amd: ROCm support'
     'gcc-fortran: fortran support'
     'openssh: for execution on remote hosts via plm_ssh_agent'
-    'openucc: for UCC accelerated collectives'
   )
   provides=(
     libmpi.so
