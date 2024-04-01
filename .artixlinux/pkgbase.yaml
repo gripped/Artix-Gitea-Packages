@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openshadinglanguage
-  version: 1.13.7.0-4
+  version: 1.13.8.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.13.7.0-4
+    version: 1.13.8.0-1
     packages:
-      - openshadinglanguage-1.13.7.0-4-x86_64.pkg.tar.zst
+      - openshadinglanguage-1.13.8.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
