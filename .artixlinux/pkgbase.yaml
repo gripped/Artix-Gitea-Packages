@@ -9,12 +9,12 @@ pkgbase:
     - linux-zen-headers
     - linux-zen-docs
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -48,15 +48,12 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 6.8.2.zen2-1
     packages:
       - linux-zen-6.8.2.zen2-1-x86_64.pkg.tar.zst
       - linux-zen-headers-6.8.2.zen2-1-x86_64.pkg.tar.zst
       - linux-zen-docs-6.8.2.zen2-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 6.8.2.zen1-1
-    packages:
-      - linux-zen-6.8.2.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-headers-6.8.2.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-docs-6.8.2.zen1-1-x86_64.pkg.tar.zst
 team: galaxy
