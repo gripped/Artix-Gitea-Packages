@@ -7,7 +7,7 @@
 pkgbase=curl
 pkgname=(curl libcurl-compat libcurl-gnutls)
 pkgver=8.7.1
-pkgrel=3
+pkgrel=4
 pkgdesc='command line tool and library for transferring data with URLs'
 arch=('x86_64')
 url='https://curl.se/'
@@ -27,13 +27,13 @@ options=(debug)
 checkdepends=('valgrind')
 validpgpkeys=('27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2') # Daniel Stenberg
 source=("git+https://github.com/curl/curl.git#tag=curl-${pkgver//./_}?signed"
-        '0001-bump-version-to-match-last-tag.patch'
-        '0002-brotli-and-others-simply-pass-through-0-length-writes.patch')
+        '0001-bump-version-to-match-last-tag.patch')
 sha512sums=('38b55dc916a64a1fd40a8af3e9a694ae918f8efb714430834491ebbe0ceeee4b58ba804afa15da966cbcf9cd7100ce373aed7b2101dff56f742996072caaf09a'
-            '51df4903eff9f1a15b1317ea4a8ee2b8537f347984f2524f42213b09344cd6109c621a4b81b37d2fcf2027387bb81cf0a744a48e96b86c4e268c43261ff86845'
-            '6bb9bf70eacef55a91ed0cec5edd8887af9a7ef6e6d819624c6c532360fe1f524aa9b2417496fcdca54e1ede22bc542c6581d420b068b5c24da932ea03426106')
+            '51df4903eff9f1a15b1317ea4a8ee2b8537f347984f2524f42213b09344cd6109c621a4b81b37d2fcf2027387bb81cf0a744a48e96b86c4e268c43261ff86845')
 
 _backports=(
+  # content_encoding: brotli and others, pass through 0-length writes
+  'b30d694a027eb771c02a3db0dee0ca03ccab7377'
 )
 
 _reverts=(
@@ -57,7 +57,6 @@ prepare() {
   done
 
   patch -Np1 < ../0001-bump-version-to-match-last-tag.patch
-  patch -Np1 < ../0002-brotli-and-others-simply-pass-through-0-length-writes.patch
 
   # no '-DEV' in version, release date from tagged commit...
   sed -i \
