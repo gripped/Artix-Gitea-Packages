@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-vobject
-  version: 0.9.7-1
+  version: 0.9.7-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.7-1
+    version: 0.9.7-2
     packages:
-      - python-vobject-0.9.7-1-any.pkg.tar.zst
+      - python-vobject-0.9.7-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
