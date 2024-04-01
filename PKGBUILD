@@ -23,6 +23,7 @@ sha256sums=('ebf2c704fd5248dc2f9836ff29028869ef29d5054907cc615734b6383a7914bc'
             '663f6b84fda56a0c7af356a12d7759626568458c9a1adbe1651726662d959f18')
 
 prepare() {
+    cd "${pkgname}-${pkgver}"
     sed -i 's/"systemd/"libelogind/' configure
 }
 
