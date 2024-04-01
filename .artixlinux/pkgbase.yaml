@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: alacritty
-  version: 0.13.2-1
+  version: 0.13.2-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.13.2-1
+    version: 0.13.2-2
     packages:
-      - alacritty-0.13.2-1-x86_64.pkg.tar.zst
+      - alacritty-0.13.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -53,3 +53,4 @@ repos:
     version: 0.13.1-1
     packages:
       - alacritty-0.13.1-1-x86_64.pkg.tar.zst
+team: galaxy
