@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mate-panel
-  version: 1.28.0-1.1
+  version: 1.28.0-2
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1.28.0-1.1
+    version: 1.28.0-2
     packages:
-      - mate-panel-1.28.0-1.1-x86_64.pkg.tar.zst
+      - mate-panel-1.28.0-2-x86_64.pkg.tar.zst
   galaxy:
     version: 1.26.4-1
     packages:
