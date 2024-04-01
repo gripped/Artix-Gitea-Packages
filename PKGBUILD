@@ -4,7 +4,7 @@ pkgbase=pyqt6
 pkgname=python-pyqt6
 pkgdesc='A set of Python bindings for the Qt6 toolkit'
 pkgver=6.6.1
-pkgrel=3
+pkgrel=3.1
 arch=(x86_64)
 url='https://riverbankcomputing.com/software/pyqt/intro'
 license=(GPL)
@@ -39,6 +39,7 @@ build() {
     --no-make \
     --qmake=/usr/bin/qmake6 \
     --api-dir /usr/share/qt6/qsci/api/python \
+    --scripts-dire=/usr/bin \
     --pep484-pyi
   cd build
   make
