@@ -4,7 +4,7 @@
 pkgname=qt6-positioning
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -25,6 +25,7 @@ sha256sums=('1d601ba43c26c8a01db81eeaaeea5943c015da98caa59d7905b86e0e9d609ddf')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
+    -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
