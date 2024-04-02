@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt6-tools
-_qtver=6.6.3
+_qtver=6.7.0
 pkgver=${_qtver/-/}
 pkgrel=1
 arch=(x86_64)
@@ -26,7 +26,7 @@ optdepends=('clang: for qdoc and lupdate'
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('aa6d4c822d8cb74066ef30ab42283ac24e5cc702f33e6d78a9ebef5b0df91bc0')
+sha256sums=('c8da6b239e82fe1e23465cbf0936c0da5a334438d3fb433e19c503cbb1abee7b')
 
 prepare() {
 # Fix build with system litehtml
