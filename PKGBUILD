@@ -2,7 +2,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-quickeffectmaker
-_qtver=6.6.3
+_qtver=6.7.0
 pkgver=${_qtver/-/}
 pkgrel=1
 arch=(x86_64)
@@ -14,10 +14,10 @@ makedepends=(cmake ninja)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('bc242a13c9ab2ef4cbe6b739e63d7b8d116058f9056f451179e4c89918282357')
+sha256sums=('3d0fec664061ca35cc69162c8eb9ae3bc49628eb417ca9def5fb8946b8bc04d5')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
     -DINSTALL_PUBLICBINDIR=usr/bin
   cmake --build build
