@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: caja-extensions
-  version: 1.28.0-1
+  version: 1.28.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -53,16 +53,16 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1.28.0-1
+    version: 1.28.0-1.1
     packages:
-      - caja-extensions-common-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-image-converter-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-open-terminal-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-sendto-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-share-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-wallpaper-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-xattr-tags-1.28.0-1-x86_64.pkg.tar.zst
-      - caja-audio-video-properties-1.28.0-1-x86_64.pkg.tar.zst
+      - caja-extensions-common-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-image-converter-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-open-terminal-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-sendto-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-share-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-wallpaper-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-xattr-tags-1.28.0-1.1-x86_64.pkg.tar.zst
+      - caja-audio-video-properties-1.28.0-1.1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.26.1-2
     packages:
