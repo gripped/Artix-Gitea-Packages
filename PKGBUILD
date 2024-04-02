@@ -12,7 +12,8 @@ license=('BSD')
 depends=('libevent' 'libevent_core-2.1.so'
          'libutempter'
          'ncurses' 'libncursesw.so'
-         'libudev.so')
+          'libudev.so')
+makedepends=('git' )
 source=("git+https://github.com/tmux/tmux.git#tag=${pkgver}")
 sha256sums=('71387cf05585836da88d9b481f98e89be5bc8f09a203600187b22aa0e00c52b0')
 
