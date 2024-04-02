@@ -5,7 +5,7 @@
 pkgbase=caja-extensions
 pkgname=(caja-extensions-common caja-image-converter caja-open-terminal caja-sendto caja-share caja-wallpaper caja-xattr-tags caja-audio-video-properties)
 pkgver=1.28.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Caja extensions"
 url="https://mate-desktop.org"
 arch=('x86_64')
