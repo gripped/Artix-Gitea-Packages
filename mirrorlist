@@ -60,12 +60,11 @@ Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://mirrors.ocf.berkeley.edu/artix-linux/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
 Server = https://us-mirror.artixlinux.org/$repo/os/$arch
+Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
 # Canada
 Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
 
 ## South America
-# Brazil
-Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
 # Chile
 Server = https://mirror1.cl.netactuate.com/artix/repos/$repo/os/$arch
 
