@@ -3,7 +3,7 @@
 
 pkgname=qt6gtk2
 pkgver=0.2
-pkgrel=3.4
+pkgrel=3.5
 pkgdesc='GTK+2.0 integration plugins for Qt6'
 arch=('any')
 url='https://github.com/trialuser02/qt6gtk2'

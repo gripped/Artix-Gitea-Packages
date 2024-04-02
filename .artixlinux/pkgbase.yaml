@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6gtk2
-  version: 0.2-3.4
+  version: 0.2-3.5
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.2-3.4
+    version: 0.2-3.5
     packages:
-      - qt6gtk2-0.2-3.4-any.pkg.tar.zst
+      - qt6gtk2-0.2-3.5-any.pkg.tar.zst
+team: galaxy
