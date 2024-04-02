@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: package-query
-  version: 1.12.2-1
+  version: 1.12.2-1.2
   arch:
     - i686
     - x86_64
@@ -55,6 +55,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.12.2-1
+    version: 1.12.2-1.2
     packages:
-      - package-query-1.12.2-1-x86_64.pkg.tar.zst
+      - package-query-1.12.2-1.2-x86_64.pkg.tar.zst
+team: galaxy
