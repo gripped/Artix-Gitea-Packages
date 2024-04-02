@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: artix-mirrorlist
-  version: 20240307-1
+  version: 20240402-1
   arch:
     - any
   pkgname:
     - artix-mirrorlist
 actions:
-  addRepo: system
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20240402-1
+    packages:
+      - artix-mirrorlist-20240402-1-any.pkg.tar.zst
   system:
     version: 20240307-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
