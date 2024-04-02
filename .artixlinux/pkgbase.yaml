@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: mkinitcpio
-  version: 38.1-1
+  version: 38.1-1.1
   arch:
     - any
   pkgname:
     - mkinitcpio
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 38.1-1.1
+    packages:
+      - mkinitcpio-38.1-1.1-any.pkg.tar.zst
   system:
     version: 38.1-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
