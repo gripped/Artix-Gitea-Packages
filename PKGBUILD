@@ -23,6 +23,7 @@ depends=('ca-certificates'
          'zlib' 'libz.so'
          'zstd' 'libzstd.so')
 makedepends=('git' 'patchelf')
+options=(debug)
 checkdepends=('valgrind')
 validpgpkeys=('27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2') # Daniel Stenberg
 source=("git+https://github.com/curl/curl.git#tag=curl-${pkgver//./_}?signed"
