@@ -1,8 +1,9 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=pqiv
-pkgver=2.13
+pkgver=2.13.1
 pkgrel=1
 pkgdesc='Powerful image viewer with minimal UI'
 arch=(x86_64)
@@ -32,7 +33,7 @@ optdepends=('ffmpeg: rudimentary video support'
             'poppler-glib: rudimentary PDF support')
 _archive="$pkgname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('5dfe9272460edcc50e512dd3fec5eae6e2344dccd35ef6ee95fb747458dd5e9d')
+sha256sums=('1db8567f75884dfc5dd41208f309b11e4e4ca48ecad537915885b64aa03857a4')
 
 build() {
 	cd "$_archive"
