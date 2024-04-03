@@ -14,14 +14,15 @@ depends=(gcc-libs
          glibc
          qt6-base)
 makedepends=(cmake
+             git
              ninja)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('3e13f967c62f0815c901e754cbc472a2e19170da0c7a505230d559615f7998af')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('537ba1f76d3a81ddc6bffc4331384fe0a331464633a9ff0fb3963f6b55de09b1')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
