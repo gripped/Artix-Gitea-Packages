@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: eclipse-ecj
-  version: 4.22-2
+  version: 4.31-1
   arch:
     - any
   pkgname:
     - eclipse-ecj
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.22-2
+    version: 4.31-1
     packages:
-      - eclipse-ecj-4.22-2-any.pkg.tar.zst
+      - eclipse-ecj-4.31-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
