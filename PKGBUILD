@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pygaljs
 pkgver=1.0.2
 _pygaljscommit=28cef7c290896fcbac8d9e269778d75d9f0a6453
-pkgrel=2
+pkgrel=3
 pkgdesc="Python package providing assets from https://github.com/Kozea/pygal.js"
 url="https://github.com/ionelmc/python-pygaljs"
 license=('LGPL')
