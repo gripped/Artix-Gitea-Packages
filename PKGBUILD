@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Sapin <simon dot sapin at exyr dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-h11
 pkgver=0.14.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 url="https://github.com/python-hyper/h11"
 license=('MIT')
