@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Padraic Fanning <fanninpm AT miamioh DOT edu>
 
 _name=flit_scm
 pkgname=python-${_name//_/-}
 pkgver=1.7.0
-pkgrel=4
+pkgrel=5
 pkgdesc='A PEP 518 backend using setuptools_scm to generate a version file, then flit to build'
 arch=(any)
 url="https://gitlab.com/WillDaSilva/$_name"
