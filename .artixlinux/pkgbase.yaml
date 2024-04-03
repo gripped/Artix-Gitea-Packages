@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: fcitx-qt5
-  version: 1.2.7-23
+  version: 1.2.7-24
   arch:
     - x86_64
   pkgname:
     - fcitx-qt5
     - fcitx-qt6
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,11 +26,15 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.7-24
+    packages:
+      - fcitx-qt5-1.2.7-24-x86_64.pkg.tar.zst
+      - fcitx-qt6-1.2.7-24-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.2.7-24
+    packages:
+      - fcitx-qt5-1.2.7-24-x86_64.pkg.tar.zst
+      - fcitx-qt6-1.2.7-24-x86_64.pkg.tar.zst
   world:
     version: 1.2.7-23
     packages:
