@@ -3,7 +3,7 @@
 
 pkgname=python-lark-parser
 pkgver=1.1.9
-pkgrel=1
+pkgrel=2
 pkgdesc='A modern parsing library'
 arch=('any')
 url='https://github.com/lark-parser/lark'
