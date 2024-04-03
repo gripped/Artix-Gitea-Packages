@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-autocommand
 pkgver=2.2.2
-pkgrel=4
+pkgrel=5
 pkgdesc="A library to create a command-line program from a function"
 url="https://github.com/Lucretiel/autocommand"
 license=('LGPL')
