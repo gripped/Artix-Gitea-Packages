@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-jaraco.context
 pkgver=4.3.0
 _commit=0e0ae08919b984e3c7cffdb2106e437d0d0891c8
-pkgrel=3
+pkgrel=4
 pkgdesc="Context managers by jaraco"
 url="https://github.com/jaraco/jaraco.context"
 license=('MIT')

@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-jaraco.context
-  version: 4.3.0-3
+  version: 4.3.0-4
   arch:
     - any
   pkgname:
     - python-jaraco.context
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.3.0-4
+    packages:
+      - python-jaraco.context-4.3.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
