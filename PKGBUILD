@@ -5,7 +5,7 @@
 pkgname=python-setuptools
 pkgver=69.0.3
 _commit=b07d2f58233f9a99a820901924e263645c57a7c6
-pkgrel=4
+pkgrel=5
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
 arch=('any')
@@ -65,9 +65,6 @@ prepare() {
   sed -e '/tag_build = .post/d' \
       -e '/tag_date = 1/d' \
       -i setup.cfg
-
-  # Fix shebang
-  sed -i -e "s|^#\!.*/usr/bin/env python|#!/usr/bin/env python3|" setuptools/command/easy_install.py
 }
 
 build() {
