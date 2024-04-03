@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=python-tomli-w
 pkgver=1.0.0
-pkgrel=6
+pkgrel=7
 pkgdesc="A lil' TOML writer"
 url=https://github.com/hukkin/tomli-w
 license=(MIT)
