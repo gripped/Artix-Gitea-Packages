@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: icasdri <icasdri at gmail dot com>
 # Contributor: hexchain <i@hexchain.org>
 
 pkgname=python-mypy_extensions
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Experimental type system extensions for programs checked with the mypy typechecker'
 url="http://www.mypy-lang.org/"
 arch=('any')
