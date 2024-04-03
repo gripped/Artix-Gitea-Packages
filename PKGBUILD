@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-validate-email
 pkgver=1.3
-pkgrel=10
+pkgrel=11
 pkgdesc="Validate_email verify if an email address is valid and really exists."
 url="https://github.com/syrusakbary/validate_email"
 license=('LGPL')
