@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sof-bin
-  version: 2023.12.1-1
+  version: 2024.03-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2023.12.1-1
+    version: 2024.03-1
     packages:
-      - sof-firmware-2023.12.1-1-x86_64.pkg.tar.zst
-      - sof-tools-2023.12.1-1-x86_64.pkg.tar.zst
+      - sof-firmware-2024.03-1-x86_64.pkg.tar.zst
+      - sof-tools-2024.03-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
