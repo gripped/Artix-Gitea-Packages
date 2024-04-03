@@ -24,8 +24,7 @@ backup=('etc/ufw/before.rules'
         'etc/default/ufw'
         'etc/ufw/user6.rules')
 source=("git+https://git.launchpad.net/ufw?signed#tag=${pkgver}")
-sha256sums=('c2b36d70d003050e54310b55a6bf6a7d17c649a8f056eba09b6a24f3500ed8c5'
-            'fdface6f4690e4748fbbd5661c02e1967a8750fdb23581d35516174017a3fe39')
+sha256sums=('c2b36d70d003050e54310b55a6bf6a7d17c649a8f056eba09b6a24f3500ed8c5')
 validpgpkeys=('4C20C06B5D8BDE688854D28A51DBDC58CC559573')
 
 prepare() {
