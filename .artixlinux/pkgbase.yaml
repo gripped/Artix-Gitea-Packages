@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6-tools
-  version: 6.7.0-1
+  version: 6.7.0-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.7.0-1
+    version: 6.7.0-2
     packages:
-      - qt6-tools-6.7.0-1-x86_64.pkg.tar.zst
+      - qt6-tools-6.7.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -5,7 +5,7 @@
 pkgname=qt6-tools
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -16,27 +16,32 @@ depends=(gcc-libs
          zstd)
 makedepends=(clang
              cmake
+             git
+             litehtml
              llvm
              ninja
              qt6-declarative)
-           # litehtml
 optdepends=('clang: for qdoc and lupdate'
+            'litehtml: for assistant'
             'qt6-declarative: for qdoc and lupdate')
-          # 'litehtml: for assistant'
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('c8da6b239e82fe1e23465cbf0936c0da5a334438d3fb433e19c503cbb1abee7b')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
+        git+https://code.qt.io/playground/qlitehtml)
+sha256sums=('fcf275b708870ab69df5b158629cfa9a00e260895a7f418d700eaba8a8ed3c9d'
+            'SKIP')
 
 prepare() {
-# Fix build with system litehtml
-  sed -e '/qt_internal_set_exceptions_flags/d' -e '/qt_disable_warnings/d' -i $_pkgfn/src/assistant/CMakeLists.txt
+  cd $_pkgfn
+  git submodule init
+  git submodule set-url src/assistant/qlitehtml "$srcdir"/qlitehtml
+  git -c protocol.file.allow=always submodule update
 }
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_PREFIX_PATH=/usr \
+-    -DCMAKE_INSTALL_PREFIX=/usr \
+-    -DCMAKE_PREFIX_PATH=/usr \
     -DINSTALL_PUBLICBINDIR=usr/bin \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
