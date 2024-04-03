@@ -31,10 +31,8 @@ repos:
       - fcitx-qt5-1.2.7-24-x86_64.pkg.tar.zst
       - fcitx-qt6-1.2.7-24-x86_64.pkg.tar.zst
   world-gremlins:
-    version: 1.2.7-24
-    packages:
-      - fcitx-qt5-1.2.7-24-x86_64.pkg.tar.zst
-      - fcitx-qt6-1.2.7-24-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 1.2.7-23
     packages:
