@@ -5,7 +5,7 @@
 pkgname=qt6-translations
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1.2
 arch=(any)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
