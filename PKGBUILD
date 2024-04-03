@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Francois Boulogne <fboulogne at april dot org>
 
 pkgname=python-watchdog
 pkgver=2.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Python API and shell utilities to monitor file system events"
 arch=('any')
 url="https://github.com/gorakhargosh/watchdog"
