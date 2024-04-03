@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xf86-video-intel
-  version: 1:2.99.917+923+gb74b67f0-2
+  version: 1:2.99.917+923+gb74b67f0-2.1
   arch:
     - x86_64
   pkgname:
     - xf86-video-intel
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:2.99.917+923+gb74b67f0-2.1
+    packages:
+      - xf86-video-intel-1:2.99.917+923+gb74b67f0-2.1-x86_64.pkg.tar.zst
   world:
     version: 1:2.99.917+923+gb74b67f0-2
     packages:
