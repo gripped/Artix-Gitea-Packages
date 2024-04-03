@@ -3,13 +3,13 @@
 
 pkgname=python-pygments
 pkgver=2.17.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Python syntax highlighter"
 arch=('any')
 url="https://pygments.org/"
 license=('BSD')
 depends=('python')
-makedepends=('python-setuptools' 'python-sphinx' 'python-wcag-contrast-ratio'
+makedepends=('python-setuptools' 'python-wcag-contrast-ratio'
              'python-build' 'python-installer' 'python-wheel'
              'python-hatchling')
 checkdepends=('python-pytest' 'python-lxml')
@@ -22,7 +22,7 @@ sha256sums=('da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367')
 build() {
   cd pygments-$pkgver
   python -m build --wheel --no-isolation
-  make -C doc html
+  # make -C doc html
 }
 
 check() {
@@ -36,9 +36,9 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 
-  mkdir -p "$pkgdir/usr/share/doc"
-  cp -rT doc/_build/html "$pkgdir/usr/share/doc/$pkgname"
-  install -Dm644 doc/pygmentize.1 -t "$pkgdir/usr/share/man/man1"
+  # mkdir -p "$pkgdir/usr/share/doc"
+  # cp -rT doc/_build/html "$pkgdir/usr/share/doc/$pkgname"
+  # install -Dm644 doc/pygmentize.1 -t "$pkgdir/usr/share/man/man1"
   install -Dm644 external/pygments.bashcomp \
     "$pkgdir/usr/share/bash-completion/completions/pygmentize"
 }
