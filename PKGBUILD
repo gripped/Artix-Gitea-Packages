@@ -1,9 +1,9 @@
-# Maintainer: qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 _name=sphinxcontrib-jsmath
 pkgname=python-sphinxcontrib-jsmath
 pkgver=1.0.1
-pkgrel=15
+pkgrel=16
 pkgdesc='Sphinx extension which renders display math in HTML via JavaScript'
 arch=('any')
 url=https://github.com/sphinx-doc/sphinxcontrib-jsmath
