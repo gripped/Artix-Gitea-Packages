@@ -1,10 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=pyproject_hooks
 pkgname=python-pyproject-hooks
 pkgver=1.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc="A low-level library for calling build-backends in pyproject.toml-based project"
 arch=(any)
 url="https://github.com/pypa/pyproject-hooks"
