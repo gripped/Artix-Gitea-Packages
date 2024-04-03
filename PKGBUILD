@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Sapin <simon dot sapin at exyr dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-semantic-version
 pkgver=2.10.0
-pkgrel=3
+pkgrel=4
 pkgdesc="A library implementing the 'SemVer' scheme."
 url="https://github.com/rbarrois/python-semanticversion"
 license=('BSD')
