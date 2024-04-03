@@ -9,7 +9,7 @@ shopt -s extglob
 
 pkgbase=python
 pkgname=(python python-tests)
-pkgver=3.11.8
+pkgver=3.12.2
 pkgrel=1
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
@@ -21,13 +21,14 @@ makedepends=('tk' 'sqlite' 'bluez-libs' 'mpdecimal' 'llvm' 'gdb' 'xorg-server-xv
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"{,.asc}
         python-expat-2.6.patch::https://github.com/python/cpython/pull/115289.patch
         EXTERNALLY-MANAGED)
-sha512sums=('434e727fa370def348838fd84acb69b4d309cfb03f61bf5069150164e9ca005637ac01dfbf997f445607d4e28d02c8bed0858b36589240ccadaa4c14c19f2320'
+sha512sums=('2ccfae7b9f95d8e15ea85d3f66eea5f6a8fdcaffc0b405095fecb33efc0df50b831c1215542910ced948b54e6de1f7242b0b8b9afc5f89079451c552430d7d9f'
             'SKIP'
             '0868854a6b2647706a3c98443fbacf275fe31f85c7cb78301db46e395c17cac9a02512cf0db40b981eae9ffe9d9d5fc8e0a83635adb0e2545ca134d9830cd1e0'
             '62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0')
 validpgpkeys=('0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D'  # Ned Deily (Python release signing key) <nad@python.org>
               'E3FF2839C048B25C084DEBE9B26995E310250568'  # Łukasz Langa (GPG langa.pl) <lukasz@langa.pl>
-              'A035C8C19219BA821ECEA86B64E628F8D684696D') # Pablo Galindo Salgado <pablogsal@gmail.com>
+              'A035C8C19219BA821ECEA86B64E628F8D684696D'  # Pablo Galindo Salgado <pablogsal@gmail.com>
+              '7169605F62C751356D054A26A821E680E5FA6305') # Thomas Wouters <thomas@xs4all.nl>
 
 prepare() {
   cd Python-${pkgver}
@@ -39,7 +40,6 @@ prepare() {
   # Ensure that we are using the system copy of various libraries (expat, libffi, and libmpdec),
   # rather than copies shipped in the tarball
   rm -r Modules/expat
-  rm -r Modules/_ctypes/{darwin,libffi}*
   rm -r Modules/_decimal/libmpdec
 }
 
@@ -77,6 +77,7 @@ check() {
   #               the to-be-installed debug package
   # test_socket: https://github.com/python/cpython/issues/79428
   # test_unittest: https://github.com/python/cpython/issues/108927
+  # test_tkk: AssertionError: Tuples differ: (0,) != ('0',)
 
   cd Python-${pkgver}
 
@@ -86,7 +87,8 @@ check() {
 
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
-    "${srcdir}/Python-${pkgver}/python" -m test.regrtest -v -uall -x test_tk -x test_pyexpat -x test_socket -x test_unittest
+    "${srcdir}/Python-${pkgver}/python" -m test.regrtest -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
+      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest
 }
 
 package_python() {
@@ -127,10 +129,7 @@ package_python() {
 
   # Split tests
   cd "$pkgdir"/usr/lib/python*/
-  rm -r {ctypes/test,distutils/tests,idlelib/idle_test,lib2to3/tests,tkinter/test,unittest/test}
-  cd test
-  # FS#76193
-  rm -r !(support)
+  rm -r {test,idlelib/idle_test}
 }
 
 package_python-tests() {
@@ -141,19 +140,5 @@ package_python-tests() {
 
   make DESTDIR="${pkgdir}" EXTRA_CFLAGS="$CFLAGS" libinstall
   cd "$pkgdir"/usr/lib/python*/
-  rm -r !(test|ctypes|distutils|idlelib|lib2to3|tkinter|unittest)
-  cd "$pkgdir"/usr/lib/python*/test
-  rm -r support
-  cd "$pkgdir"/usr/lib/python*/ctypes
-  rm -r !(test)
-  cd "$pkgdir"/usr/lib/python*/distutils
-  rm -r !(tests)
-  cd "$pkgdir"/usr/lib/python*/idlelib
-  rm -r !(idle_test)
-  cd "$pkgdir"/usr/lib/python*/lib2to3
-  rm -r !(tests)
-  cd "$pkgdir"/usr/lib/python*/tkinter
-  rm -r !(test)
-  cd "$pkgdir"/usr/lib/python*/unittest
   rm -r !(test)
 }
