@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Jelle van der Waa <jelle@vdwaa.nl>
 # Contributer: Allan McRae <allan@archlinux.org>
 
 pkgname=python-six
 pkgver=1.16.0
-pkgrel=8
+pkgrel=9
 pkgdesc="Python 2 and 3 compatibility utilities"
 arch=('any')
 url="https://pypi.python.org/pypi/six/"
