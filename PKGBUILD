@@ -40,8 +40,8 @@ prepare() {
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
--    -DCMAKE_INSTALL_PREFIX=/usr \
--    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
     -DINSTALL_PUBLICBINDIR=usr/bin \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
