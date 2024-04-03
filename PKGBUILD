@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Sapin <simon dot sapin at exyr dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-strict-rfc3339
 pkgver=0.7
-pkgrel=10
+pkgrel=11
 pkgdesc="Strict, simple, lightweight RFC3339 functions"
 url="http://www.danielrichman.co.uk/libraries/strict-rfc3339.html"
 license=('GPL')
