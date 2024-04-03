@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pybind11
-  version: 2.12.0-1
+  version: 2.12.0-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.12.0-1
+    version: 2.12.0-2
     packages:
-      - pybind11-2.12.0-1-any.pkg.tar.zst
+      - pybind11-2.12.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
