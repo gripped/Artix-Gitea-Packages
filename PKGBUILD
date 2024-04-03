@@ -3,7 +3,7 @@
 pkgname=python-attrs
 pkgver=23.2.0
 _commit=9e443b18527dc96b194e92805fa751cbf8434ba9
-pkgrel=1
+pkgrel=2
 pkgdesc="Attributes without boilerplate."
 arch=('any')
 license=('MIT')
@@ -23,7 +23,8 @@ build() {
 check() {
   cd attrs
   python -m installer -d tmp_install dist/*.whl
-  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.11/site-packages" pytest
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python${python_version}/site-packages" pytest
 }
 
 package() {
