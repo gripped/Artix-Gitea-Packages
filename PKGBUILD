@@ -4,7 +4,7 @@
 pkgname=qt6-connectivity
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -15,14 +15,15 @@ depends=(bluez-libs
          pcsclite
          qt6-base)
 makedepends=(cmake
+             git
              ninja)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('07afd6aac19ff73c8ba1471057f43d4ef2737d6a8a772393ec907988dd71244c')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('ee9ad348078f8362988674c93244ffc437599e859eb93e43fc3125dcdbe14a43')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
