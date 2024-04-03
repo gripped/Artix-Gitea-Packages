@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=python-pkgconfig
 pkgver=1.5.5
-pkgrel=5
+pkgrel=6
 pkgdesc='Python module to interface with the pkg-config command line tool'
 arch=(any)
 url='https://github.com/matze/pkgconfig'
