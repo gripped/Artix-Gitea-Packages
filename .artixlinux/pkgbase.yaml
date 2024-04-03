@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - kwin
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.0.3.1-4
+    version: 6.0.3.1-4.1
     packages:
-      - kwin-6.0.3.1-4-x86_64.pkg.tar.zst
+      - kwin-6.0.3.1-4.1-x86_64.pkg.tar.zst
   world:
     version: 6.0.3.1-4.1
     packages:
