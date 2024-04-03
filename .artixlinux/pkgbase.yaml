@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - qt6-translations
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - qt6-translations-6.7.0-1-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.7.0-1
+    packages:
+      - qt6-translations-6.7.0-1-any.pkg.tar.zst
   world:
     version: 6.6.3-1
     packages:
