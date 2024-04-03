@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: qt6-grpc
-  version: 6.7.0-1
+  version: 6.7.0-1.1
   arch:
     - x86_64
   pkgname:
     - qt6-grpc
 actions:
-  addRepo: world-goblins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -45,8 +45,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 6.7.0-1.1
+    packages:
+      - qt6-grpc-6.7.0-1.1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
