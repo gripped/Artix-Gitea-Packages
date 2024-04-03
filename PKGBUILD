@@ -3,7 +3,7 @@
 _name=annotated-types
 pkgname=python-annotated-types
 pkgver=0.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Reusable constraint types to use with typing.Annotated"
 arch=(any)
 url="https://github.com/annotated-types/annotated-types"
