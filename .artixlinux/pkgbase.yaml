@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - digikam
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.3.0-4
+    packages:
+      - digikam-8.3.0-4-x86_64.pkg.tar.zst
   world:
     version: 8.3.0-4
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
