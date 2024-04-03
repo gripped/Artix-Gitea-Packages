@@ -1,9 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Jelle van der Waa <jelle@archlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
 
 pkgname=python-pytest-pacman
 pkgver=0.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="pacman db pytest fixture"
 arch=('any')
 license=('MIT')
