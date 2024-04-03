@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-gcp-devrel-py-tools
 pkgver=0.0.16
 _commit=dbc02f5ec965a6672d47a0e8963365970d96db17
-pkgrel=6
+pkgrel=7
 pkgdesc='Tools for Cloud Platform Python libraries and samples'
 arch=('any')
 license=('Apache')
