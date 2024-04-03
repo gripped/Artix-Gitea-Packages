@@ -14,7 +14,8 @@ license=('BSD')
 # libdrm is dynamically loaded via dlopen
 depends=('libdrm')
 makedepends=('git' 'ninja' 'unzip' 'cmake' 'protobuf' 'libxrandr' 'libxcomposite' 'openssl' 'glibc'
-             'ffmpeg' 'libva' 'opus' 'yasm' 'libjpeg-turbo' 'pipewire' 'libxtst' 'libepoxy')
+             'ffmpeg' 'libva' 'opus' 'yasm' 'libjpeg-turbo' 'pipewire' 'libxtst' 'libepoxy'
+             'libxdamage')
 options=('staticlibs')
 source=("git+${url}.git#commit=${_commit}"
         "git+https://chromium.googlesource.com/libyuv/libyuv/"
