@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Alexander Duscheleit <jinks@archlinux.us>
 
 pkgname=python-colorama
 pkgver=0.4.6
-pkgrel=2
+pkgrel=3
 pkgdesc="Python API for cross-platform colored terminal text."
 arch=('any')
 url="https://pypi.python.org/pypi/colorama"
