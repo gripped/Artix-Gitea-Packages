@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-process-tests
 pkgver=2.1.2
-pkgrel=6
+pkgrel=7
 pkgdesc="Tools for testing processes"
 arch=('any')
 url="https://pypi.python.org/pypi/process-tests"
