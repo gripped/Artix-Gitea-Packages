@@ -6,7 +6,7 @@ pkgbase=qt6-base
 pkgname=(qt6-base qt6-xcb-private-headers)
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -58,6 +58,7 @@ makedepends=(alsa-lib
              cmake
              cups
              freetds
+             git
              gst-plugins-base-libs
              gtk3
              libfbclient
@@ -78,17 +79,20 @@ optdepends=('freetds: MS SQL driver'
             'qt6-wayland: to run Qt6 applications in a Wayland session'
             'unixodbc: ODBC driver')
 groups=(qt6)
-_pkgfn=${pkgbase/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz
+_pkgfn=${pkgbase/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
         qt6-base-cflags.patch
-        qt6-base-nostrip.patch)
-sha256sums=('11b2e29e2e52fb0e3b453ea13bbe51a10fdff36e1c192d8868c5a40233b8b254'
+        qt6-base-nostrip.patch
+        fix-wrong-cpp-if.patch)
+sha256sums=('ee87abbfdf2d5bb204056bcb6c53e21c03e1abd779e3669faa56db7249c5e39e'
             '5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78'
-            '4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094')
+            '4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094'
+            'b5cb3a29738a2783242a96c9d94298421875dcabec4fc2b5d8c5329b66e63070')
 
 prepare() {
   patch -d $_pkgfn -p1 < qt6-base-cflags.patch # Use system CFLAGS
   patch -d $_pkgfn -p1 < qt6-base-nostrip.patch # Don't strip binaries with qmake
+  patch -d $_pkgfn -p1 < fix-wrong-cpp-if.patch # https://bugreports.qt.io/browse/QTBUG-123937
 }
 
 build() {
