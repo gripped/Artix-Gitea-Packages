@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: xantares
 
 pkgname=python-snowballstemmer
 pkgver=2.2.0
-pkgrel=5
+pkgrel=6
 arch=('any')
 pkgdesc="Snowball stemming library collection for Python"
 url='https://snowballstem.org'
