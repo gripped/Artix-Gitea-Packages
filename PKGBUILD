@@ -5,7 +5,7 @@
 pkgname=python-typing_extensions
 _name=${pkgname#python-}
 pkgver=4.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Backported and Experimental Type Hints for Python 3.8+'
 arch=(any)
 url=https://github.com/python/typing_extensions
@@ -15,9 +15,8 @@ makedepends=(git python-build python-flit-core python-installer)
 checkdepends=(python-tests)
 provides=(python-typing-extensions)
 conflicts=(python-typing-extensions)
-_tag=ed81f2b2043f60b0c159914e264e127f5d0b4cda
-source=("git+${url}.git#tag=${_tag}")
-b2sums=(SKIP)
+source=("git+${url}.git#tag=${pkgver}")
+b2sums=('1ff6d7f08b3a46743a3252a18cbf6b41dff5f0e65f175cfd94b3fdf78b9d20872ac32d50e3f6da4c3a6ac69305ea6311f6b4df8170c286f0d5df99362929781f')
 
 pkgver() {
   cd "${_name}"
