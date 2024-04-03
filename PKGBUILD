@@ -5,13 +5,13 @@
 _pkgname=coveragepy
 pkgname=python-coverage
 pkgver=7.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A tool for measuring code coverage of Python programs"
 arch=('x86_64')
-url="https://nedbatchelder.com/code/coverage/"
+url="https://coverage.readthedocs.io/en/latest/"
 license=('Apache-2.0')
-depends=('python')
-makedepends=('python-setuptools')
+depends=('glibc' 'python')
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 checkdepends=('python-flaky' 'python-hypothesis'
               'python-pytest' 'python-pytest-xdist'
               'python-unittest-mixins' 'python-virtualenv')
@@ -21,7 +21,7 @@ b2sums=('7b402d4587ce9b4ce7dd2b57fb77abad4755aab9e30cfa6ef9e35093ff1c1557868af58
 
 build() {
   cd $_pkgname-$pkgver
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 check() {
@@ -44,8 +44,5 @@ check() {
 package() {
   cd $_pkgname-$pkgver
 
-  python setup.py install --skip-build \
-    --optimize=1 \
-    --prefix=/usr \
-    --root="$pkgdir"
+  python -m installer --destdir="$pkgdir" dist/*.whl
 }
