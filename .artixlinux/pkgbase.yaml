@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-fastapi
-  version: 0.110.0-1
+  version: 0.110.1-1
   arch:
     - any
   pkgname:
     - python-fastapi
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.110.0-1
+    version: 0.110.1-1
     packages:
-      - python-fastapi-0.110.0-1-any.pkg.tar.zst
+      - python-fastapi-0.110.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
