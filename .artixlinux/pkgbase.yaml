@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ufw
-  version: 0.36.2-2
+  version: 0.36.2-3
   arch:
     - any
   pkgname:
     - ufw
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.36.2-2
+    version: 0.36.2-3
     packages:
-      - ufw-0.36.2-2-any.pkg.tar.zst
+      - ufw-0.36.2-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
