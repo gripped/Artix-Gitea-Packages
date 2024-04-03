@@ -4,7 +4,7 @@
 pkgname=qt6-charts
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -21,7 +21,7 @@ source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodu
 sha256sums=('899d5498c91bfb01fde2ff2438c82adf4d4d9b3cf646e7ad7b0036dbf32b7ca4')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
