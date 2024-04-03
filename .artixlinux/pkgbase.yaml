@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xf86-video-amdgpu
-  version: 23.0.0-2
+  version: 23.0.0-2.1
   arch:
     - x86_64
   pkgname:
     - xf86-video-amdgpu
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 23.0.0-2.1
+    packages:
+      - xf86-video-amdgpu-23.0.0-2.1-x86_64.pkg.tar.zst
   world:
     version: 23.0.0-2
     packages:
