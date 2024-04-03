@@ -11,7 +11,7 @@
 
 pkgname=python-dateutil
 pkgver=2.9.0
-pkgrel=3
+pkgrel=5
 pkgdesc="Provides powerful extensions to the standard datetime module"
 arch=(any)
 license=(BSD-3-Clause Apache-2.0)
@@ -42,8 +42,7 @@ build() {
 check() {
   cd dateutil
   # https://github.com/pytest-dev/pytest/issues/5678
-  PYTHONPATH=src pytest -W ignore::pytest.PytestUnknownMarkWarning \
-    --deselect tests/test_tz.py::test_tzlocal_local_time_trim_colon .
+  PYTHONPATH=src pytest -W ignore::pytest.PytestUnknownMarkWarning .
 }
 
 package() {
