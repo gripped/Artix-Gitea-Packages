@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Rafael Fontenelle <rafaelff@gnome.org>
 
 _pyname=arpy
 pkgname=python-${_pyname}
 pkgver=2.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Library for accessing ar files'
 url='https://github.com/viraptor/arpy'
 arch=('any')
