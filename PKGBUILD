@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=python-sphinx-issues
 _pyname=${pkgname/python-/}
 pkgver=3.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Sphinx extension for linking to your project's issue tracker"
 url='https://github.com/sloria/sphinx-issues'
 arch=('any')
