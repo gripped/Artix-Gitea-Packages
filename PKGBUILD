@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Thomas Dziedzic < gostrc at gmail >
 # Contributor: Pierre Chapuis <catwell at archlinux dot us>
 
 _name=decorator
 pkgname=python-decorator
 pkgver=5.1.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Python Decorator module'
 arch=('any')
 url='https://pypi.python.org/pypi/decorator'
@@ -34,5 +34,5 @@ package() {
 check() {
   cd "$srcdir/${_name}-$pkgver"
 
-  python3 -m unittest discover -vs .
+  PYTHONPATH=src python -m unittest discover -vs src/tests/
 }
