@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Letu Ren <fantasquex at gmail dot com>
 
 _pyname=pyxbe
 pkgname=python-${_pyname}
 pkgver=1.0.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Library to work with XBE files, the executable file format for the original Xbox game console'
 url='https://github.com/mborgerson/pyxbe'
 arch=('any')
