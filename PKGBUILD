@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 
 pkgname=python-itsdangerous
 pkgver=2.1.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Various helpers to pass trusted data to untrusted environments'
 arch=('any')
 url='https://palletsprojects.com/p/itsdangerous/'
