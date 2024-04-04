@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _pkgname=pylev
 pkgname=python-pylev
 pkgver=1.4.0
-pkgrel=7
+pkgrel=8
 pkgdesc='A pure Python Levenshtein implementation'
 arch=(any)
 url="https://github.com/toastdriven/${_pkgname}"
