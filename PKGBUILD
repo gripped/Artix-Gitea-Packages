@@ -5,7 +5,7 @@
 pkgname=qt6-declarative
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -14,6 +14,7 @@ depends=(gcc-libs
          glibc
          qt6-base)
 makedepends=(cmake
+             git
              ninja
              python
              qt6-languageserver
@@ -23,9 +24,9 @@ conflicts=(qt6-quickcontrols2)
 provides=(qt6-quickcontrols2)
 replaces=(qt6-quickcontrols2)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('5a0c39579a74d7cca581162c866ed0887287d4f8d5abff7ab9492d4a58fa9e2c')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('cc0d77b86177ff9edb85be335337935cf5f4911aa31806a06ca62e28491bfe98')
 
 build() {
   export CXXFLAGS+=" -ffat-lto-objects"
