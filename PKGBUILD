@@ -6,7 +6,7 @@
 
 pkgname=glances
 pkgver=3.4.0.5
-pkgrel=2
+pkgrel=3
 pkgdesc='CLI curses-based monitoring tool'
 arch=('any')
 url='https://nicolargo.github.io/glances/'
@@ -32,7 +32,7 @@ build() {
 
 package() {
   cd "glances-${pkgver}"
-    python -m installer --destdir="$pkgdir" dist/*.whl
+  python -m installer --destdir="$pkgdir" dist/*.whl
 }
 
 # vim:set ts=2 sw=2 et:
