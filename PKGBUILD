@@ -2,8 +2,8 @@
 # Contributor: Mark Wagie <mark dot wagie at tutanota dot com>
 
 pkgname=python-sentry_sdk
-_pkgname=sentry-sdk
-pkgver=1.44.0
+_pkgname=sentry-python
+pkgver=1.44.1
 pkgrel=2
 pkgdesc="The official Python SDK for Sentry.io"
 arch=('any')
@@ -30,8 +30,8 @@ optdepends=('python-aiohttp: adds support for the AIOHTTP-Server Web Framework'
             'python-tornado: adds support for the Tornado Web Framework'
             'python-pure-eval: for richer stacktraces & additional variables'
             'python-executing: for richer stacktraces & better function names')
-source=("https://github.com/getsentry/sentry-python/releases/download/${pkgver}/${_pkgname}-${pkgver}.tar.gz")
-sha256sums=('f7125a9235795811962d52ff796dc032cd1d0dd98b59beaced8380371cd9c13c')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/getsentry/sentry-python/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('f41f61356eaac2bd398b6f70efc88838080141588abc069392bc7880a7f2c3c4')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
