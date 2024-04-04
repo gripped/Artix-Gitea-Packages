@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Rémy Oudompheng <remy@archlinux.org>
 
 pkgname=python-speg
 pkgver=0.3
-pkgrel=10
+pkgrel=11
 pkgdesc="A PEG-based parser interpreter with memoization"
 arch=('any')
 url="https://github.com/avakar/pyspeg"
