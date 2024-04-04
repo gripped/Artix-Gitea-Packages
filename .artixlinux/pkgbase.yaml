@@ -1,20 +1,19 @@
 ---
 pkgbase:
   name: python-urllib3
-  version: 1.26.18-1
+  version: 1.26.18-2
   arch:
     - any
   pkgname:
     - python-urllib3
-    - python-urllib3-doc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.26.18-2
+    packages:
+      - python-urllib3-1.26.18-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
