@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: digikam
-  version: 8.3.0-4
+  version: 8.3.0-5
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 8.3.0-4
+    version: 8.3.0-5
     packages:
-      - digikam-8.3.0-4-x86_64.pkg.tar.zst
+      - digikam-8.3.0-5-x86_64.pkg.tar.zst
   world:
     version: 8.3.0-4
     packages:
