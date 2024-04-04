@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Jonas Witschel <diabonas@archlinux.org>
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Daniel Müllner <muellner@math.stanford.edu>
 
 pkgname=autoconf-archive
 pkgver=2023.02.20
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="A collection of freely re-usable Autoconf macros"
 arch=('any')
