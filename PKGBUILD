@@ -4,7 +4,7 @@
 pkgname=qt6-serialbus
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -14,11 +14,12 @@ depends=(gcc-libs
          qt6-base
          qt6-serialport)
 makedepends=(cmake
+             git
              ninja)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('498193a9860664f8a55f676656c45af179ac13d48184af43fc58ddf795bb76dd')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('3efabceee8b0e2bf661751f663810e13367b8b701d414be5d425a3b50c244ba6')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
