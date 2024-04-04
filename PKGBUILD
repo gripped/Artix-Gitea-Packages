@@ -1,14 +1,14 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=py-lmdb
 pkgname=python-lmdb
 pkgver=1.4.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Universal Python binding for the LMDB Lightning Database"
 arch=(x86_64)
 url="https://github.com/jnwatson/py-lmdb/"
-license=('custom: OpenLDAP')
+license=('OLDAP-2.8')
 depends=(python python-cffi lmdb)
 makedepends=(python-build python-installer python-setuptools python-wheel)
 checkdepends=(python-pytest)
