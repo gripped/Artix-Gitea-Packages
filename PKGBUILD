@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 _pyname=jupyter_packaging
 pkgname=python-${_pyname/_/-}
 pkgver=0.12.3
-pkgrel=4
+pkgrel=5
 pkgdesc='Jupyter Packaging Utilities'
 arch=(any)
 url='https://jupyter.org/'
