@@ -4,15 +4,14 @@
 _pkgname=build
 pkgname=python-$_pkgname
 pkgver=1.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple, correct Python build frontend'
 arch=('any')
 url='https://github.com/pypa/build'
 license=('MIT')
-depends=('python-packaging' 'python-pyproject-hooks')
+depends=('python' 'python-packaging' 'python-pyproject-hooks')
 makedepends=(
   'git' 'python-build' 'python-flit-core' 'python-installer'
-  'python-sphinx' 'python-sphinx-argparse-cli' 'python-sphinx-autodoc-typehints' 'python-sphinx-furo' 'python-sphinx-issues'
 )
 checkdepends=(
   'python-pytest' 'python-pytest-mock' 'python-pytest-rerunfailures'
@@ -34,23 +33,18 @@ build() {
   cd $pkgname
 
   python -m build --wheel --skip-dependency-check --no-isolation
-
-  PYTHONPATH=src sphinx-build -b dirhtml -v docs docs-output
 }
 
 check() {
   cd $pkgname
-  # tests/test_env.py fails on server only
-  PYTHONPATH=src pytest -k 'not test_verbose_output' || :
+
+  PYTHONPATH=src pytest -k 'not test_verbose_output'
 }
 
 package() {
   cd $pkgname
 
   python -m installer --destdir="$pkgdir" dist/*.whl
-
-  install -d "$pkgdir"/usr/share/doc/$pkgname
-  cp -r docs-output/* "$pkgdir"/usr/share/doc/$pkgname
 
   # Symlink license file
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
