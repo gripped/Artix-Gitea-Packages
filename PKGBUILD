@@ -3,17 +3,17 @@
 
 pkgname=python-tornado
 pkgver=6.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc='open source version of the scalable, non-blocking web server and tools'
 arch=('x86_64')
 url='https://www.tornadoweb.org/'
-license=('Apache')
-depends=('python')
+license=('Apache-2.0')
+depends=('glibc' 'python')
 optdepends=('python-pycurl: for tornado.curl_httpclient'
+            'python-pycares: an alternative non-blocking DNS resolver'
             'python-twisted: for tornado.platform.twisted')
-            # 'python-pycares: an alternative non-blocking DNS resolver'
-makedepends=('python-setuptools')
-checkdepends=('python-pycurl' 'python-twisted')
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+checkdepends=('python-pycares' 'python-pycurl' 'python-twisted')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/tornadoweb/tornado/archive/v$pkgver.tar.gz")
 sha512sums=('dc0ad9b4c0b5597970fd43a577bb9a0883523125cf4e9780f9338431aab1014cb6fc0dda4f3deb3050df657b5acf277cc146ec2195b91154299109ff07482a5c')
 
@@ -21,14 +21,14 @@ export TORNADO_EXTENSION=1
 
 build() {
   cd tornado-$pkgver
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 check() {
   # As of 4.5.3, ignoring test failures about resolving "localhost"
   (
     cd tornado-$pkgver
-    python setup.py install --root="$PWD/tmp_install" --optimize=1
+    python -m installer --destdir=tmp_install dist/*.whl
     local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
     export PYTHONPATH="$PWD/tmp_install/usr/lib/python${python_version}/site-packages:$PYTHONPATH"
     cd tmp_install
@@ -44,5 +44,5 @@ check() {
 
 package() {
   cd tornado-$pkgver
-  python setup.py install --root="$pkgdir" --optimize=1
+  python -m installer --destdir="$pkgdir" dist/*.whl
 }
