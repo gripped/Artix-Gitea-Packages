@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Michael Schubert <mschu.dev at gmail>
 # Contributor: Panagiotis Mavrogiorgos (pmav99) <> (gmail)
 
 pkgname=python-bottleneck
 pkgver=1.3.7
-pkgrel=2
+pkgrel=3
 pkgdesc="Fast NumPy array functions written in Cython"
 arch=(x86_64)
 url="https://github.com/kwgoodman/bottleneck"
