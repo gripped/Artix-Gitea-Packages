@@ -1,4 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Alexandre Bouvier <contact AT amb DOT tf>
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 # Contributor: Tommaso Sardelli <lacapannadelloziotom AT gmail DOT com>
@@ -7,7 +7,7 @@
 pkgname=python-axolotl-curve25519
 _pkgver=0.4.1-2
 pkgver=${_pkgver//-/.}
-pkgrel=9
+pkgrel=10
 pkgdesc='Python wrapper for curve25519 library with ed25519 signatures'
 url='https://github.com/tgalal/python-axolotl-curve25519'
 arch=('x86_64')
