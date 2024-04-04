@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Modified from aur/python2-pytrie; original maintainership info:
 # Contributor: dseg
 
 pkgname=python-pytrie
 pkgver=0.4.0
-pkgrel=6
+pkgrel=7
 pkgdesc="A pure Python implementation of the trie data structure."
 url="https://github.com/gsakkis/pytrie/"
 depends=(python python-sortedcontainers)
