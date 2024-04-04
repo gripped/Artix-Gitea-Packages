@@ -1,20 +1,20 @@
 ---
 pkgbase:
   name: python-cairo
-  version: 1.26.0-1
+  version: 1.26.0-2
   arch:
     - x86_64
   pkgname:
     - python-cairo
     - python-cairo-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.26.0-2
+    packages:
+      - python-cairo-1.26.0-2-x86_64.pkg.tar.zst
+      - python-cairo-docs-1.26.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
