@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=python-tblib
 _pyname=tblib
 pkgver=1.7.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Python traceback fiddling library'
 url='https://github.com/ionelmc/python-tblib'
 arch=('any')
