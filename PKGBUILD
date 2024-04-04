@@ -9,11 +9,11 @@
 
 pkgname=tp_smapi
 pkgver=0.44
-pkgrel=44
+pkgrel=48
 pkgdesc="Modules for ThinkPad's SMAPI functionality"
 url='https://github.com/evgeni/tp_smapi'
 arch=(x86_64)
-license=(GPL)
+license=('GPL-2.0-only')
 makedepends=(
   git
   linux-headers
