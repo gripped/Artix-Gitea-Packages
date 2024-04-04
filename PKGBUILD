@@ -5,7 +5,7 @@
 pkgname=qt6-tools
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=2
+pkgrel=2.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
