@@ -4,7 +4,7 @@
 
 pkgname=namcap
 pkgver=3.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A Pacman package analyzer'
 arch=(any)
 url="https://gitlab.archlinux.org/pacman/$pkgname"
@@ -36,7 +36,6 @@ build() {
 
 check() {
   cd "$_archive"
-  # test_shebangdepends fails on server only
   env PARSE_PKGBUILD_PATH="$PWD" PATH="$PWD/scripts:$PATH" pytest || :
 }
 
