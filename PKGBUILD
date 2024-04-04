@@ -1,10 +1,10 @@
-# Maintainer: qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 _name=toml
 pkgname=python-toml
 pkgver=0.10.2
-pkgrel=9
+pkgrel=10
 pkgdesc="A Python library for parsing and creating TOML"
 arch=('any')
 url="https://github.com/uiri/toml"
