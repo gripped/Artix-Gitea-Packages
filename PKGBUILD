@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=django-sekizai
 pkgname=python-django-sekizai
 pkgver=4.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Django Template Blocks with extra functionality"
 arch=(any)
 url="https://github.com/django-cms/django-sekizai"
