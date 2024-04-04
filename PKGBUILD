@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=python-filebytes
 _pyname=${pkgname/python-/}
 pkgver=0.10.2
-pkgrel=6
+pkgrel=7
 pkgdesc='Library to read and edit executable binary files'
 url='https://github.com/sashs/filebytes'
 arch=('any')
