@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _pyname=sortedcollections
 pkgname=python-${_pyname}
 pkgver=2.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Sorted Collections Library'
 url='https://github.com/grantjenks/python-sortedcollections'
 arch=('any')
