@@ -1,4 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Contributor: Aaron DeVore <aaron.devore@gmail.com>
 # Contributor: tocer <tocer.deng@gmail.com>
 # Contributor: Piotr Beling <qwak@stud.ics.p.lodz.pl>
@@ -6,7 +6,7 @@
 
 pkgname='python-xlrd'
 pkgver=2.0.1
-pkgrel=4
+pkgrel=5
 pkgdesc='Library for developers to extract data from Excel spreadsheet files'
 arch=('any')
 url='http://www.python-excel.org/'
