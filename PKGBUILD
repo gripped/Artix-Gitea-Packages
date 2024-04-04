@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
 
 pkgname=python-sgmllib3k
 pkgver=1.0.0
-pkgrel=5
+pkgrel=6
 arch=(any)
 license=("BSD")
 pkgdesc="Python 3 smgllib port"
