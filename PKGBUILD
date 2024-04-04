@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _name=wheezy.template
 pkgname=python-wheezy-template
 pkgver=3.1.0
-pkgrel=5
+pkgrel=6
 pkgdesc="lightweight template library"
 arch=(x86_64)
 url="https://github.com/akornatskyy/wheezy.template"
