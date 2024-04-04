@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 
 pkgname=python-pytest-tornasync
 pkgver=0.6.0.post2
-pkgrel=5
+pkgrel=6
 pkgdesc='py.test plugin for testing Python 3.5+ Tornado code'
 arch=(any)
 license=(MIT)
