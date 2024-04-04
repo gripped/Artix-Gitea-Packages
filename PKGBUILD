@@ -1,4 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Thomas Dziedzic < gostrc at gmail >
 # Contributor: Paulo Matias <matiasΘarchlinux-br·org>
 # Contributor: Rafael G. Martins <rafael@rafaelmartins.com>
@@ -6,7 +6,7 @@
 
 pkgname=python-mpmath
 pkgver=1.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Python library for arbitrary-precision floating-point arithmetic.'
 arch=(any)
 url='http://mpmath.org/'
