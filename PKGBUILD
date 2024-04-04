@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Sapin <simon dot sapin at exyr dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-tinycss2
 pkgver=1.2.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Low-level CSS parser for Python"
 url="https://pypi.python.org/pypi/tinycss2"
 license=('BSD')
