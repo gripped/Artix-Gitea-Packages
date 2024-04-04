@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lapack
-  version: 3.12.0-3
+  version: 3.12.0-5
   arch:
     - x86_64
   pkgname:
@@ -15,13 +15,13 @@ pkgbase:
     - lapacke64
     - lapack-doc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -33,8 +33,17 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.12.0-5
+    packages:
+      - blas-3.12.0-5-x86_64.pkg.tar.zst
+      - cblas-3.12.0-5-x86_64.pkg.tar.zst
+      - lapack-3.12.0-5-x86_64.pkg.tar.zst
+      - lapacke-3.12.0-5-x86_64.pkg.tar.zst
+      - blas64-3.12.0-5-x86_64.pkg.tar.zst
+      - cblas64-3.12.0-5-x86_64.pkg.tar.zst
+      - lapack64-3.12.0-5-x86_64.pkg.tar.zst
+      - lapacke64-3.12.0-5-x86_64.pkg.tar.zst
+      - lapack-doc-3.12.0-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -68,3 +77,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
