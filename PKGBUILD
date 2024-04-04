@@ -4,7 +4,7 @@
 
 pkgname=meson
 pkgver=1.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc="High productivity build system"
 url="https://mesonbuild.com/"
 arch=(any)
@@ -115,7 +115,7 @@ build() {
 check() (
   cd $pkgname-$pkgver
   export LC_CTYPE=en_US.UTF-8 CPPFLAGS= CFLAGS= CXXFLAGS= LDFLAGS=
-#  ./run_tests.py --failfast
+  ./run_tests.py --failfast
 )
 
 package() {
