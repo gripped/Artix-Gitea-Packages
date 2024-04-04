@@ -5,7 +5,7 @@
 pkgname=qt6-svg
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -23,7 +23,7 @@ source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
 sha256sums=('e4e0727b0bfe6ee8c2e79c3af44971a46b6b61acca5168ef197db1d868080cfe')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja /home/sonux/workspace/artixlinux/qt6-svg/PKGBUILD \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
