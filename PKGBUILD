@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 
 _name=sphinxcontrib-spelling
 pkgname=python-$_name
 pkgver=8.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Spelling checker for Sphinx"
 arch=('any')
 url="https://sphinxcontrib-spelling.readthedocs.io/"
