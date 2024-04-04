@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-zipstream-ng
+  version: 1.7.1-2
+  arch:
+    - any
+  pkgname:
+    - python-zipstream-ng
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.7.1-2
+    packages:
+      - python-zipstream-ng-1.7.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
