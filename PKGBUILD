@@ -3,7 +3,7 @@
 
 pkgname=archivetools
 pkgver=3
-pkgrel=3.1
+pkgrel=3.2
 pkgdesc='Artix Linux Archive Tools'
 arch=('any')
 url='https://gitea.artixlinux.org/nous/archivetools'
