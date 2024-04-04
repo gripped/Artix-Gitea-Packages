@@ -4,7 +4,7 @@
 pkgname=qt6-languageserver
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -13,11 +13,12 @@ depends=(gcc-libs
          glibc
          qt6-base)
 makedepends=(cmake
+             git
              ninja)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('a99ecb342abdf7b7ac24804c89830a7991de95f9402f45a1e337ae851f76c9fc')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('7fe25677863235e28e4bb0792bef06391d9436e9ec962018b32bd028867a8af1')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
