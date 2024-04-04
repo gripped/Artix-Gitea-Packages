@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 
 pkgname=python-snappy
 pkgver=0.6.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Python bindings for the snappy compression library.'
 url='https://github.com/andrix/python-snappy'
 depends=(python snappy)
