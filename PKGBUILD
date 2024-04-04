@@ -5,19 +5,20 @@
 pkgname=qt6-translations
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=1.1
 arch=(any)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
 pkgdesc='A cross-platform application and UI framework (Translations)'
 depends=()
 makedepends=(cmake
+             git
              ninja
              qt6-base)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('26fc8047062ca4bacd1bd953be86fd39c6e0a5f5e9920c72ba9d40876cea4b56')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('4d53484ec7d0ae4e92f26bc7edf1533a1f862e3b578a08209a706dc04939e3d3')
 
 build() {
   export PATH="/usr/lib/qt6/bin:$PATH"
