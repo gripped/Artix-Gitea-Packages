@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Ashwin Vishnu <ashwinvis+arch at pr0t0nm4il dot com>
 
 pkgname=python-beniget
 pkgver=0.4.1
-pkgrel=5
+pkgrel=6
 pkgdesc='A static analyzer for Python code'
 arch=(any)
 url='https://github.com/serge-sans-paille/beniget'
