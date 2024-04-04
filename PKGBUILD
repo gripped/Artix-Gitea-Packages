@@ -3,11 +3,11 @@
 
 pkgname=python-requests
 pkgver=2.31.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Python HTTP for Humans"
 arch=('any')
 url="https://requests.readthedocs.io/"
-license=('Apache')
+license=('Apache-2.0')
 depends=('python-charset-normalizer' 'python-idna' 'python-urllib3')
 makedepends=(python-build python-installer python-setuptools python-wheel)
 checkdepends=(
