@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: Christian Rebischke <chris.rebischke[at]archlinux[dot]org>
 # Contributor: Sonic-Y3k <sonic.y3k@googlemail.com>
 
 pkgname=python-pefile
 pkgver=2023.2.7
-pkgrel=1
+pkgrel=2
 pkgdesc='Python PE parsing module'
 url='https://github.com/erocarrera/pefile'
 arch=('any')
