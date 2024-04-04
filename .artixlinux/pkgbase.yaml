@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-iterable-io
+  version: 1.0.0-1
+  arch:
+    - any
+  pkgname:
+    - python-iterable-io
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.0.0-1
+    packages:
+      - python-iterable-io-1.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
