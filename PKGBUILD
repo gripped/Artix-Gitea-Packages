@@ -1,7 +1,7 @@
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=python-setuptools-gettext
-pkgver=0.1.8
+pkgver=0.1.9
 pkgrel=2
 pkgdesc='Setuptools plugin for building .mo files'
 arch=(any)
@@ -18,7 +18,7 @@ makedepends=(
   python-installer
   python-wheel
 )
-_tag=580829c3d7b398e58f60751549028b33afa58119
+_tag=b4967159b1b6490e1941fdbd2956eb0eb57abf7b
 #source=(git+https://github.com/breezy-team/setuptools-gettext.git?signed#tag=${_tag})
 source=(git+https://github.com/breezy-team/setuptools-gettext.git#tag=${_tag})
 b2sums=(SKIP)
