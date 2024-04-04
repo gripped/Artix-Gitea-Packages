@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: Blair Bonnett <blair dot bonnett at gmail dot com>
 
 _name=sphinx-copybutton
 pkgname=python-$_name
 pkgver=0.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Sphinx extension to add a \"copy\" button to code blocks"
 arch=('any')
 url="https://github.com/executablebooks/sphinx-copybutton"
