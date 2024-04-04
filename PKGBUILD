@@ -1,10 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=python-pallets-sphinx-themes
 _pyname=${pkgname/python-/}
 pkgver=2.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Sphinx themes for Pallets and related projects'
 url='https://github.com/pallets/pallets-sphinx-themes'
 arch=('any')
