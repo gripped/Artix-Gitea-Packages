@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-ephemeral-port-reserve
-  version: 1.1.4-2
+  version: 1.1.4-4
   arch:
     - any
   pkgname:
     - python-ephemeral-port-reserve
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.1.4-4
+    packages:
+      - python-ephemeral-port-reserve-1.1.4-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
