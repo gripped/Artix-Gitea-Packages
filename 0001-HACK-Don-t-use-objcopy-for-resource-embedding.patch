@@ -7,7 +7,7 @@ The build attempts to use objcopy to link in the resource data, but
 loses the code protection flags `IBT` and `SHSTK` in the process.
 
 If we don't let it do that, it generates a C string literal for the data
-instead. This is a bit slower, but doesn't mess with the flags.
+instead. This is a bit slower to build but doesn't mess with the flags.
 
 See: https://gitlab.gnome.org/GNOME/gtk/-/issues/6153
 ---
@@ -15,7 +15,7 @@ See: https://gitlab.gnome.org/GNOME/gtk/-/issues/6153
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/meson.build b/meson.build
-index bf32c40fc25b..68107d2c5f49 100644
+index 0c251000afe6..048b3b1578a4 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -770,7 +770,7 @@ if ld.found()

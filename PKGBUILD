@@ -8,7 +8,7 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.14.1
+pkgver=4.14.2
 pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
@@ -77,24 +77,18 @@ checkdepends=(
   weston
   wireplumber
 )
-_commit=c648bb7b19bede75d3af4acaed468b922269ed05  # tags/4.14.1^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/gtk.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/gtk.git#tag=$pkgver"
   gtk-update-icon-cache.{hook,script}
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('eba76096200b284e3eb2156d6bef8fcc7dd14135c41c6dc702759bacc00777f227cb33b669e67867a658f8a116dcb0b135de148c6779e8b1323b0d8d7f0628ee'
+b2sums=('4e7ddb5200d45c99479adce9541fe088edb99e29400f6d0d6c06a0b3959767ec90252ced37f987cdf5d5ae727d88c27d20711eabf601ee68b63878ce5d56bfaa'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
         '4b90eb8d582509b09aab401313d4399cc139ad21b5dd7d45d79860d0764c7494c60714e0794e09823e51d1894ac032a994f27d79d1499abf24ee6f59bdb0c243'
-        '07b629c15189f867fbd4a32512daf7e9b4d33e7c3218059e812b778185d974c7fea81cb7360c2edee47d0b579401ac18c00d0346f6f7440caa593d99fbc5ff16')
-
-pkgver() {
-  cd gtk
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+        'ace2f8be09d5e20c3a694e6a9a397d8d87b61516601a96d998e89f7500874e98fee380b66c44fd5c8a717d3d89f99026e42f79df18a7a32feac724044e5b7341')
 
 prepare() {
   cd gtk
