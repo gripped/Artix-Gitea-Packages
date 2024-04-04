@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: spirv-llvm-translator
-  version: 17.0.0.r6+g70883514-1
+  version: 17.0.0.r6+g70883514-2
   arch:
     - x86_64
   pkgname:
     - spirv-llvm-translator
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 17.0.0.r6+g70883514-2
+    packages:
+      - spirv-llvm-translator-17.0.0.r6+g70883514-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
