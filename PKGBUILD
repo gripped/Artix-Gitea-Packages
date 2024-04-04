@@ -1,5 +1,4 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
@@ -9,7 +8,7 @@
 
 pkgname=botan2
 pkgver=2.19.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Crypto library written in C++ (legacy version)'
 arch=(x86_64)
 url='https://botan.randombit.net/'
