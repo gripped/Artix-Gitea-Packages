@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgbase=pyqt5-webengine
 pkgname=(python-pyqt5-webengine)
 pkgdesc="Python bindings for QtWebEngine"
 pkgver=5.15.6
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url="https://www.riverbankcomputing.com/software/pyqtwebengine/intro"
 license=(GPL)
