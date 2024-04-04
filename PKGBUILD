@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Angel 'angvp' Velasquez <angvp[at]archlinux.com.ve>
 # Contributor: Abhishek Dasgupta <abhidg@gmail.com>
 
 pkgname=python-distutils-extra
 pkgver=2.39
-pkgrel=11
+pkgrel=12
 pkgdesc='Enhancements to the Python build system'
 arch=('any')
 license=('GPL')
