@@ -5,7 +5,7 @@
 pkgname=qt6-imageformats
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -18,11 +18,12 @@ depends=(gcc-libs
          libwebp
          qt6-base)
 makedepends=(cmake
+             git
              ninja)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('516ce07ec8dd5a11c59816fe33ddb71d4f691d0ebbc1798ac338f23b86c029a7')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('caea6d80f8359b12772e089b92aa4da7889b7a862d6a496ab332459ad57296fb')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
