@@ -1,10 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=pytest-ordering
 pkgname=python-${_pkg}
 pkgver=0.6
-pkgrel=6
+pkgrel=7
 pkgdesc="pytest plugin to run your tests in a specific order"
 arch=(any)
 url="https://github.com/ftobia/pytest-ordering"
