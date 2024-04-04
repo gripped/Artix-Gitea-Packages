@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgbase=unicorn
 pkgname=('unicorn' 'python-unicorn' 'ruby-unicorn-engine')
 pkgver=2.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Lightweight, multi-platform, multi-architecture CPU emulator framework based on QEMU'
 url='https://www.unicorn-engine.org'
 arch=('x86_64')
