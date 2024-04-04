@@ -24,7 +24,6 @@ makedepends=(
   python-setuptools
   python-wheel
   swig
-  systemd
 )
 checkdepends=(
   python-fonttools
