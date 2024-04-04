@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=python-canonicaljson
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Canonical JSON'
 url='https://pypi.python.org/pypi/canonicaljson/'
 arch=('any')
