@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=python-daemonize
 pkgver=2.5.0
-pkgrel=6
+pkgrel=7
 
 pkgdesc='Library to enable your code run as a daemon process on Unix-like systems'
 url='https://pypi.python.org/pypi/daemonize/'
