@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-flup
 pkgver=1.0.3
-pkgrel=9
+pkgrel=10
 pkgdesc="Random assortment of WSGI servers"
 url="https://www.saddi.com/software/flup/"
 license=('BSD')
