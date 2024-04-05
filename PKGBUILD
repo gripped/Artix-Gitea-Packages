@@ -5,7 +5,7 @@
 pkgname=qt6-3d
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -15,6 +15,7 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(assimp
              cmake
+             git
              ninja
              qt6-declarative
              qt6-shadertools)
@@ -22,12 +23,12 @@ optdepends=('assimp: assimp importer plugin'
             'qt6-declarative: QML bindings'
             'qt6-shadertools: RHI renderer')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('803b82a8be8632b79f4fc717b236edba716100ab274a54349add439056896424')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('067a7f99356bcc67622e26a2b24205ad4d7acaaa23d6cbbf2e3157478f36e2ee')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
