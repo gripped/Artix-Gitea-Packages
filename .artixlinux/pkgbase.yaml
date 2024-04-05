@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-dpcontracts
-  version: 0.6.0-11
+  version: 0.6.0-12
   arch:
     - any
   pkgname:
     - python-dpcontracts
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.6.0-12
+    packages:
+      - python-dpcontracts-0.6.0-12-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,12 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
