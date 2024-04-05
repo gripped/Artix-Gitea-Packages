@@ -6,7 +6,7 @@ _pkg=arrow
 _pkgname=pyarrow
 pkgname=python-${_pkgname}
 pkgver=15.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Columnar in-memory analytics layer for big data — Python module."
 arch=(x86_64)
 url="https://arrow.apache.org"
@@ -60,7 +60,7 @@ check() {
   ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
   ARROW_HOME=/usr \
   PARQUET_HOME=/usr \
-  pytest -vv --color=yes -k 'not test_cython_api and not test_visit_strings and not test_env_var and not test_get_include and not test_pyarrow_include and not test_orc'
+  pytest -vv --color=yes -k 'not test_cython_api and not test_visit_strings and not test_env_var and not test_get_include and not test_pyarrow_include'
   mv _nopyarrow pyarrow
 }
 
