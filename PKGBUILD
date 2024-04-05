@@ -2,7 +2,7 @@
 
 pkgname=python-rtree
 pkgver=1.0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Rtree: spatial index for Python GIS"
 url="https://toblerity.github.com/rtree/"
 license=('LGPL')
