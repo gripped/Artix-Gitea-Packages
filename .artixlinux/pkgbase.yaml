@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: scribus
-  version: 1.6.1-2
+  version: 1.6.1-3
   arch:
     - x86_64
   pkgname:
     - scribus
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -43,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1.6.1-3
+    packages:
+      - scribus-1.6.1-3-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
     version: 1.6.1-2
     packages:
       - scribus-1.6.1-2-x86_64.pkg.tar.zst
+team: galaxy
