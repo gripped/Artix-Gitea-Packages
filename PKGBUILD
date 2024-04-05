@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=python-watchgod
 pkgver=0.8.2
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='Simple, modern file watching and code reload in python'
 arch=('any')
