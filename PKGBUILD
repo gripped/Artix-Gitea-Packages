@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pylons-sphinx-themes
 pkgver=1.0.13
-pkgrel=3
+pkgrel=4
 pkgdesc="Sphinx themes for Pylons Project documentation"
 url="https://pylonsproject.org"
 license=('BSD')
