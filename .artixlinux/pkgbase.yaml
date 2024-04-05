@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-sphinx-theme-builder
-  version: 0.2.0b2-2
+  version: 0.2.0b2-3
   arch:
     - any
   pkgname:
     - python-sphinx-theme-builder
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.2.0b2-3
+    packages:
+      - python-sphinx-theme-builder-0.2.0b2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

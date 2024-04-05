@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=sphinx-theme-builder
 pkgname=python-$_pkgname
 pkgver=0.2.0b2
-pkgrel=2
+pkgrel=3
 pkgdesc='Python build backend for Sphinx themes'
 arch=('any')
 url='https://github.com/pradyunsg/sphinx-theme-builder'
