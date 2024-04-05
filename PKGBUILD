@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=python-fqdn
 pkgver=1.5.1
-pkgrel=2
+pkgrel=3
 pkgdesc='RFC-compliant FQDN validation and manipulation for Python'
 arch=('any')
 url='https://github.com/ypcrts/fqdn'
