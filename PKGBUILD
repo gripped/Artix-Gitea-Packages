@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 
 pkgname=python-cchardet
 pkgver=2.1.7
-pkgrel=5
+pkgrel=6
 pkgdesc="Universal encoding detector faster than chardet."
 url="https://pypi.org/project/cchardet/"
 depends=('python')
