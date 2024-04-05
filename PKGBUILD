@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=python-django-picklefield
 pkgver=3.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A pickled object field for Django'
 arch=(any)
 url=https://github.com/gintas/django-picklefield
