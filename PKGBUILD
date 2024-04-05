@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Pieter Goetschalckx <3.14.e.ter <at> gmail <dot> com>
 
 pkgname=python-flake8-docstrings
 pkgver=1.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Plugin to flake8 to include checks provided by pydocstyle'
 arch=('any')
 url='https://github.com/pycqa/flake8-docstrings'
