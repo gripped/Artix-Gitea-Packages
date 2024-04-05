@@ -1,4 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: eolianoe <eolianoe At GoogleMAIL DoT com>
 # Contributor: Andrey Mikhaylenko <neithere at gmail dot com>
@@ -6,7 +6,7 @@
 pkgname=python-pkginfo
 _pkgname="${pkgname#python-}"
 pkgver=1.9.6
-pkgrel=2
+pkgrel=3
 pkgdesc='Query metadata from sdists / bdists / installed packages'
 arch=('any')
 url='https://pypi.python.org/pypi/pkginfo'
