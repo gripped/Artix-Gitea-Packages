@@ -4,7 +4,7 @@
 pkgname=qt6-scxml
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=1.3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
