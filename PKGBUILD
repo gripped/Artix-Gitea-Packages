@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=python-pycryptodomex
 pkgver=3.12.0
-pkgrel=2
+pkgrel=3
 
 pkgdesc='A self-contained Python package of low-level cryptographic primitives'
 url='https://www.pycryptodome.org/'
