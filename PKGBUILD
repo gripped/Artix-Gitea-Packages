@@ -2,7 +2,7 @@
 
 pkgname=apparmor
 pkgver=3.1.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Mandatory Access Control (MAC) using Linux Security Module (LSM)"
 arch=(x86_64)
 url="https://gitlab.com/apparmor/apparmor"
@@ -123,7 +123,6 @@ package() {
   make -C changehat/pam_apparmor DESTDIR="$pkgdir/usr" install
   make -C changehat/mod_apparmor DESTDIR="$pkgdir" install
   make -C binutils DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" install
-  # Don't remove install-systemd; it's is required and doesn't actually install systemd
   make -C parser -j1 DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" APPARMOR_BIN_PREFIX="$pkgdir/usr/lib/apparmor" install install-systemd
   make -C profiles DESTDIR="$pkgdir" install
   make -C utils DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" BINDIR="$pkgdir/usr/bin" VIM_INSTALL_PATH="$pkgdir/usr/share/vim/vimfiles/syntax" install
@@ -140,12 +139,9 @@ package() {
   mv -v "$pkgdir/usr/lib/ruby/"{site,vendor}_ruby
   # adding files below /etc/apparmor.d to backup array
   cd "$pkgdir"
-
-  # remove unneeded systemd files
-  if [ -d "$pkgdir"/usr/lib/systemd ]; then
-    rm -r $pkgdir/usr/lib/systemd
-  fi
   # trick extract_function_variable() in makepkg into not detecting the
   # backup array modification and adding remaining configuration files
   [[ /usr/bin/true ]] && backup=( ${backup[@]} $(find "etc/$pkgname.d/" -type f | LC_ALL=C sort) )
+
+  rm -r $pkgdir/usr/lib/systemd
 }
