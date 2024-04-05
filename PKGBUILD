@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-ukkonen
 pkgver=1.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Implementation of bounded Levenshtein distance (Ukkonen)"
 url="https://github.com/asottile/ukkonen"
 license=('MIT')
@@ -20,7 +20,8 @@ build() {
 
 check() {
   cd ukkonen-$pkgver
-  PYTHONPATH=build/lib.linux-$CARCH-cpython-311 python -m pytest
+  local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
+  PYTHONPATH=build/lib.linux-$CARCH-cpython-${python_version} python -m pytest
 }
 
 package() {
