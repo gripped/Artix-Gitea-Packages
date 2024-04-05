@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qtcreator
-  version: 12.0.2-5
+  version: 13.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - qtcreator-devel
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 12.0.2-5
+    version: 13.0.0-1
     packages:
-      - qtcreator-12.0.2-5-x86_64.pkg.tar.zst
-      - qtcreator-devel-12.0.2-5-x86_64.pkg.tar.zst
+      - qtcreator-13.0.0-1-x86_64.pkg.tar.zst
+      - qtcreator-devel-13.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 12.0.2-4
     packages:
