@@ -4,21 +4,27 @@
 pkgname=qt6-quickeffectmaker
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
 pkgdesc='Qt Quick Effect Maker (QQEM) for creating and editing custom shader effects'
-depends=(qt6-shadertools qt6-quick3d)
-makedepends=(cmake ninja)
+depends=(gcc-libs
+         glibc
+         qt6-base
+         qt6-declarative
+         qt6-quick3d
+         qt6-shadertools)
+makedepends=(cmake
+             git
+             ninja)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('3d0fec664061ca35cc69162c8eb9ae3bc49628eb417ca9def5fb8946b8bc04d5')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('fc45315aaa7b2217a1abc7d99baa57d0e594a3f18b48614dffa2c2616649da0b')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
     -DINSTALL_PUBLICBINDIR=usr/bin
   cmake --build build
