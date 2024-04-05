@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Kyle Keen <keenerd@gmail.com>
 # Contributor: Lex Black <autumn-wind at web dot de>
 # Contributor: PiC0 <guill.p.linux@gmail.com>
 
 pkgname=python-xmltodict
 pkgver=0.13.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Python module that makes working with XML feel like working with JSON"
 url="https://github.com/martinblech/xmltodict"
 arch=('any')
