@@ -5,7 +5,7 @@
 pkgname=qt6-5compat
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgrel=1.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -16,18 +16,18 @@ depends=(gcc-libs
          qt6-base
          qt6-shadertools)
 makedepends=(cmake
+             git
              ninja
              qt6-declarative
              qt6-shadertools)
 optdepends=('qt6-declarative: for QtGraphicalEffects')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('9d49d4fd8345d8a40b63e0b65cd49c1d8286e33a7f1409bf1316763f654e19f5')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('b800ed79131f1f81626fcefc45ee6f3864009119a1e0ae319af57684faf093fc')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_PREFIX_PATH=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
