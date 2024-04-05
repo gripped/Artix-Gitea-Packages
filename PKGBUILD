@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
 # Contributor: Oliver Harley <oliver.r.harley+aur (at) gmail.com>
 _pkgname=Keras_Preprocessing
 pkgname=python-keras-preprocessing
 pkgver=1.1.2
-pkgrel=7
+pkgrel=8
 pkgdesc="Preprocessing module of the Keras deep learning library"
 arch=('any')
 url="https://pypi.org/project/Keras-Preprocessing/"
