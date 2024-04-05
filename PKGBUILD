@@ -5,7 +5,7 @@
 pkgname=qt6-quick3d
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3)
@@ -19,15 +19,16 @@ depends=(gcc-libs
          zlib)
 makedepends=(assimp
              cmake
+             git
              ninja)
 optdepends=('assimp: assimp import plugin')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('8bb943bf3f65a933b74fcd93d927e22b8621484030586c15586728e2f67ed910')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('5e927593db83f13ea67ca4ebe76ad7725e5d3717344cc4ec376be729e64643cb')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
