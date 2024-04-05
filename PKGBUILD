@@ -6,7 +6,7 @@
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
 pkgver=0.33.1
-pkgrel=3
+pkgrel=4
 pkgdesc="A modern, hackable, featureful, OpenGL-based terminal emulator"
 arch=('x86_64')
 url="https://github.com/kovidgoyal/kitty"
@@ -21,8 +21,8 @@ b2sums=('6592ae99f3e05bda5367186096804175f00f21770e7112bf45fa968d161e70d2fdcf956
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
   export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  cd "$srcdir/$pkgname-$pkgver"
   export CGO_CPPFLAGS="${CPPFLAGS}"
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
