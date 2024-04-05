@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Josh Taylor <joshtaylor.mail@gmail.com>
 # Contributor: simo <simo@archlinux.org>
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
@@ -7,7 +7,7 @@
 pkgbase=pyopengl
 pkgname=('python-opengl')
 pkgver=3.1.6
-pkgrel=2
+pkgrel=3
 pkgdesc="The cross platform Python binding to OpenGL and related APIs"
 url="http://pyopengl.sourceforge.net/"
 license=('BSD')
