@@ -26,7 +26,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.24.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -69,7 +69,7 @@ makedepends=(
   libxrandr
 
   # gst-python
-  python-gobject
+  python-gobject python-setuptools
 )
 checkdepends=(xorg-server-xvfb)
 source=(
