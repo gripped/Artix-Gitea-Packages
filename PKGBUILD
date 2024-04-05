@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Douglas Soares de Andrade <dsandrade@gmail.com>
 # Contributor: Douglas Soares de Andrade <dsandrade@gmail.com>
 
 pkgname=python-pyserial
 pkgver=3.5
-pkgrel=5
+pkgrel=6
 pkgdesc="Multiplatform Serial Port Module for Python"
 arch=('any')
 url="https://github.com/pyserial/pyserial"
