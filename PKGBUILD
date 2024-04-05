@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=python-promise
 pkgver=2.3.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Ultra-performant Promise implementation in Python'
 url=https://github.com/syrusakbary/promise
 arch=(any)
