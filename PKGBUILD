@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org> 
 # Contributor: Sean Haugh <seanphaugh@gmail.com>
 
 pkgname=python-pywal
 pkgver=3.3.0
-pkgrel=8
+pkgrel=9
 pkgdesc="Generate and change colorschemes on the fly"
 arch=('any')
 url="https://github.com/dylanaraps/pywal/"
