@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Contributor: Ivan Shapovalov <intelfx100@gmail.com>
 
 pkgname=python-pymacaroons
 pkgver=0.13.0
-pkgrel=11
+pkgrel=12
 
 pkgdesc='Python implementation of Macaroons. They’re better than cookies!'
 url='https://github.com/ecordell/pymacaroons'
