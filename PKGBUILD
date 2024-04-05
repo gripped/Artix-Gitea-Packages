@@ -2,20 +2,19 @@
 
 pkgname=python-xmlsec
 pkgver=1.3.13
-_commit=b483b644b6033e539f303509f5ee85bebf178a73
-pkgrel=4
+pkgrel=5
 pkgdesc="Python bindings for the XML Security Library"
 url="https://github.com/mehcode/python-xmlsec"
 license=('MIT')
 arch=('x86_64')
-depends=('python-lxml' 'xmlsec')
+depends=('glibc' 'libxml2' 'python-lxml' 'xmlsec')
 makedepends=('git' 'python-build' 'python-installer' 'python-pkgconfig' 'python-setuptools-scm' 'python-wheel')
 checkdepends=('python-hypothesis' 'python-pytest')
-source=("git+https://github.com/mehcode/python-xmlsec.git#commit=$_commit"
+source=("git+https://github.com/mehcode/python-xmlsec.git#tag=$pkgver"
         0001-Add-compatibility-with-xmlsec-1.3.patch
         0002-Add-compatibility-with-xmlsec-1.3.3.patch
         0003-enable-python-3.11-builds.patch)
-sha512sums=('SKIP'
+sha512sums=('ec9b78e16367e25aac8ec468cb4df37b8f35d8c89041fadcd65d6fd58d9a29fbf2c5f62274b6b42fd41c8ebadc02679017d9c59b798d7a4740e5147e821c8ea9'
             '2390d1ea29d5af92833fc157d13b80818cf1bef1b599e3443936214c3b3481dfc0a54ba2fec766c086725185416aa6aecf69cd30ecb26f40d9c622e668c83f62'
             '1fbf4f856dd1c6da2805186f7b54d954a66cc1b9eaad600baaa697f6389fdecee0ed766dfd638dbdbefe3aae44d49808a3dff99509efb92dd4e17aa4c886f12c'
             'cfbfb92e7ab60790a2824aa5cad5ce5132ea9f765ccb11b2d158ffec74051df87e98c3107c57ed0617e92eb3758784eb2477e1334a90901b50bb94f7b9f8da92')
