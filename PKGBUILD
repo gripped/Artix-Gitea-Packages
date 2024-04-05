@@ -7,7 +7,7 @@ pkgname=(qt6-multimedia
          qt6-multimedia-gstreamer)
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -18,6 +18,7 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(cmake
              ffmpeg
+             git
              gst-plugins-base
              libxrandr
              ninja
@@ -25,13 +26,12 @@ makedepends=(cmake
              qt6-quick3d
              qt6-shadertools)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('f394bae49e3d4ee6a3b0c9e1e5e31bb870cc04a4b44f4cda3615baf7bd078c70')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('6d3a4986591597cf73345bcf6890a5c80263c4cc44745aab0f560c300ec5da32')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
     -DCMAKE_CXX_FLAGS="$CXXFLAGS -ffat-lto-objects"
   cmake --build build
