@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qt6pas
-  version: 6.2.7-1
+  version: 6.2.7-2
   arch:
     - x86_64
   pkgname:
     - qt6pas
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.2.7-2
+    packages:
+      - qt6pas-6.2.7-2-x86_64.pkg.tar.zst
   galaxy:
     version: 6.2.7-1
     packages:
       - qt6pas-6.2.7-1-x86_64.pkg.tar.zst
+team: galaxy
