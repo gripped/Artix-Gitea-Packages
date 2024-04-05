@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Kevin Houdebert <kevin@qwazerty.eu>
 # Contributor: Guillaume Brogi <gui-gui@netcourrier.com>
 
 pkgname=python-pywinrm
 pkgver=0.4.3
-pkgrel=2
+pkgrel=3
 pkgdesc="Python library for Windows Remote Management"
 arch=(any)
 url="https://pypi.python.org/pypi/pywinrm"
