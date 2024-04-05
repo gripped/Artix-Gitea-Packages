@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: Andy Weidenbaum <archbaum@gmail.com>
 
 pkgname=python-pyaes
 _pipname=pyaes
 pkgver=1.6.1
-pkgrel=10
+pkgrel=11
 pkgdesc="Pure-Python Implementation of the AES block-cipher and common modes of operation"
 arch=('any')
 depends=('python')
