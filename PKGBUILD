@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Adrian Sampson <adrian@radbox.org>
 
 pkgname=python-musicbrainzngs
 pkgver=0.7.1
-pkgrel=6
+pkgrel=7
 pkgdesc="Python bindings for Musicbrainz' NGS webservice"
 arch=(any)
 url=https://github.com/alastair/python-musicbrainzngs
