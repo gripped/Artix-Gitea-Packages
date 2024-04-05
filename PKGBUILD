@@ -4,7 +4,7 @@
 pkgname=qt6-webengine
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -55,6 +55,7 @@ depends=(alsa-lib
        # system libvpx disabled since https://codereview.qt-project.org/c/qt/qtwebengine/+/454908
        # libvpx pciutils re2
 makedepends=(cmake
+             git
              gperf
              jsoncpp
              libepoxy
@@ -67,12 +68,21 @@ makedepends=(cmake
              qt6-websockets)
 optdepends=('pipewire: WebRTC desktop sharing under Wayland')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('1a5ba443635dc1f439ab802ac6d761b8def5ebb24e5219bb7289288e72c147de')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
+        git+https://code.qt.io/qt/qtwebengine-chromium)
+sha256sums=('dbb5c0191c2907a405ec31c9a13b4b7010c53445ab2c76485310af9a56ffeace'
+            'SKIP')
+
+prepare() {
+  cd $_pkgfn
+  git submodule init
+  git submodule set-url src/3rdparty "$srcdir"/qtwebengine-chromium
+  git -c protocol.file.allow=always submodule update
+}
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja  -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
     -DCMAKE_TOOLCHAIN_FILE=/usr/lib/cmake/Qt6/qt.toolchain.cmake \
     -DQT_FEATURE_webengine_system_ffmpeg=ON \
