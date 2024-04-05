@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 # Contributor: Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar>
 
 pkgname=python-ndg-httpsclient
 _pkgname=ndg_httpsclient
 pkgver=0.5.1
-pkgrel=12
+pkgrel=13
 pkgdesc="Provides enhanced HTTPS support for httplib and urllib2 using PyOpenSSL"
 arch=(any)
 url="https://pypi.python.org/pypi/ndg-httpsclient"
