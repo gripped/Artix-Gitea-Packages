@@ -3,7 +3,7 @@
 
 pkgname=breezy
 pkgver=3.3.5
-pkgrel=1
+pkgrel=2
 pkgdesc='A decentralized revision control system with support for Bazaar and Git file formats'
 arch=(x86_64)
 url=https://www.breezy-vcs.org/
@@ -14,7 +14,6 @@ depends=(
   python-fastbencode
   python-merge3
   python-patiencediff
-  python-six
   python-yaml
 )
 makedepends=(
