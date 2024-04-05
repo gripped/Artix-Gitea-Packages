@@ -4,7 +4,7 @@
 
 pkgname=dblatex
 pkgver=0.3.12
-pkgrel=8
+pkgrel=9
 pkgdesc='DocBook (XML and SGML) to DVI, PDF, PostScript converter using latex.'
 arch=(any)
 url='https://dblatex.sourceforge.net/'
