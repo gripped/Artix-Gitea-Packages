@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 # Contributor: Donald Webster <fryfrog@gmail.com>
 
 pkgname=python-attrdict
 _name=${pkgname#python-}
 pkgver=2.0.1
-pkgrel=6
+pkgrel=7
 pkgdesc='A library that provides mapping objects that allow their elements to be accessed both as keys and as attributes'
 arch=(any)
 url='https://pypi.org/project/attrdict/'
