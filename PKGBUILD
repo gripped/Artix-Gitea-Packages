@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-tabview
 pkgver=1.4.4
-pkgrel=3
+pkgrel=4
 pkgdesc="A curses command-line CSV and list (tabular data) viewer"
 url="https://github.com/TabViewer/tabview"
 license=('MIT')
@@ -20,7 +20,7 @@ build() {
 
 check() {
   cd tabview-$pkgver
-  TERM=xterm unbuffer python -m unittest discover
+  unbuffer python -m unittest discover
 }
 
 package() {
