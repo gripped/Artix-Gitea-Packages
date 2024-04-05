@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=orderedmultidict
 pkgname=python-orderedmultidict
 pkgver=1.0.1
-pkgrel=10
+pkgrel=11
 pkgdesc="Ordered multivalue dictionary that retains method parity with dict."
 arch=(any)
 url="https://github.com/gruns/orderedmultidict"
