@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pytest-tornado
 pkgver=0.8.1
-pkgrel=7
+pkgrel=8
 pkgdesc='A py.test plugin providing fixtures and markers to simplify testing of asynchronous tornado applications.'
 arch=('any')
 license=('Apache')
