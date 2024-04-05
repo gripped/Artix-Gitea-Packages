@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: lib32-libnghttp2
-  version: 1.60.0-1
+  version: 1.61.0-1
   arch:
     - x86_64
   pkgname:
     - lib32-libnghttp2
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1.61.0-1
+    packages:
+      - lib32-libnghttp2-1.61.0-1-x86_64.pkg.tar.zst
   lib32:
     version: 1.60.0-1
     packages:
@@ -52,12 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: lib32
