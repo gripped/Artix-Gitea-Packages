@@ -1,12 +1,12 @@
-# Maintainer : Christian Rebischke <Chris.Rebischke@archlinux.org>
-# Maintainer : Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Christian Rebischke <Chris.Rebischke@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: lucke <lucke at o2 dot pl>
 
 pkgname=weechat
 pkgver=4.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, light and extensible IRC client (curses UI)"
 arch=('x86_64')
 url="https://www.weechat.org/"
