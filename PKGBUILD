@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=python-fastimport
 pkgver=0.9.14
-pkgrel=4
+pkgrel=5
 pkgdesc='VCS fastimport/fastexport parser'
 arch=(any)
 url=https://github.com/jelmer/python-fastimport
