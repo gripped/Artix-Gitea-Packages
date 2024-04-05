@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
 
 pkgname=python-colored-traceback
 _name=colored-traceback
 pkgver=0.3.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Automatically color Python’s uncaught exception tracebacks'
 url='https://github.com/staticshock/colored-traceback.py'
 arch=('any')
