@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: btrfs-progs
-  version: 6.8-2
+  version: 6.8-3
   arch:
     - x86_64
   pkgname:
     - btrfs-progs
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 6.8-3
+    packages:
+      - btrfs-progs-6.8-3-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
