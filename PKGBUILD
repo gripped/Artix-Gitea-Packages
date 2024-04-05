@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Andy Weidenbaum <archbaum@gmail.com>
 
 pkgname=python-requests-unixsocket
 _pkgname="${pkgname#python-}"
 pkgver=0.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Use requests to talk HTTP via a UNIX domain socket'
 arch=('any')
 url='https://github.com/msabramo/requests-unixsocket'
