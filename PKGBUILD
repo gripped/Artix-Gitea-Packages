@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pykerberos
 _name=pykerberos
 epoch=1
 pkgver=1.2.4
-pkgrel=2
+pkgrel=3
 pkgdesc="High-level interface to Kerberos"
 arch=('x86_64')
 license=('Apache')
