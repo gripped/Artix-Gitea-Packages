@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Benjamin A. Shelton <zancarius@gmail.com>
 # Contributor: p2k <Patrick.Schneider@uni-ulm.de>
 
 _pypiname=anyjson
 pkgname=python-$_pypiname
 pkgver=0.3.3
-pkgrel=18
+pkgrel=19
 pkgdesc="Wraps the best available JSON implementation available in a common interface"
 arch=(any)
 url="https://pypi.python.org/pypi/$_pypiname"
