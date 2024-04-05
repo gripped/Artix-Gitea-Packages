@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=aiopg
 pkgname=python-$_pkgname
 pkgver=1.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc='library for accessing a PostgreSQL database from the asyncio'
 arch=('any')
 url='https://github.com/aio-libs/aiopg'
