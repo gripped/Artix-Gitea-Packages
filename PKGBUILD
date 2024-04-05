@@ -4,7 +4,7 @@
 pkgname=qt6-datavis3d
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -13,16 +13,17 @@ depends=(gcc-libs
          glibc
          qt6-base)
 makedepends=(cmake
+             git
              ninja
              qt6-declarative)
 optdepends=('qt6-declarative: QML bindings')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('5a93248d1893790c5630fcbf7ba8394b7eb62411e4a80aa54d7ba8bd40091ba9')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('a2e4f4646735fd6e4485bca95de778afc3a073c5dc13cb2b13fa0baa8c6b0b16')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
