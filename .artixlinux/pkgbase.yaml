@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-reportlab
-  version: 4.1.0-1
+  version: 4.1.0-2
   arch:
     - x86_64
   pkgname:
     - python-reportlab
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.1.0-2
+    packages:
+      - python-reportlab-4.1.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,12 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
