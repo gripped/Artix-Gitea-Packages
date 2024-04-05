@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 # Contributor: Felix Yan <felixonmars@archlinux>
 
 pkgname=python-html2text
 pkgver=2020.1.16
-pkgrel=9
+pkgrel=10
 pkgdesc="A HTML to markdown-structured text converter"
 arch=('any')
 url="https://pypi.python.org/pypi/html2text/"
