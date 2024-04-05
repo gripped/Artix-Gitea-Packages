@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-purl
 pkgver=1.6
-pkgrel=4
+pkgrel=5
 pkgdesc="An immutable URL class for easy URL-building and manipulation"
 arch=('any')
 license=('MIT')
