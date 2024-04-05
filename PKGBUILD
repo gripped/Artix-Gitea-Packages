@@ -2,7 +2,7 @@
 
 pkgname=python-pastedeploy
 pkgver=3.0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Load, configure, and compose WSGI applications and servers"
 arch=('any')
 license=('MIT')
