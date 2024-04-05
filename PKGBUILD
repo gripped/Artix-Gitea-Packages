@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Contributor: Aaron DeVore <aaron.devore@gmail.com>
 # Contributor: David Moore <davidm@sjsoft.com>
 
 pkgname='python-xlwt'
 pkgver=1.3.0
-pkgrel=7
+pkgrel=8
 pkgdesc="Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files"
 arch=('any')
 url="http://www.python-excel.org/"
