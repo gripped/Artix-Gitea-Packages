@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
 
 pkgname=python-rfc3986
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Validating URI References per RFC 3986"
 arch=('any')
 license=('Apache')
