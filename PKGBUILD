@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=multipart
 pkgname=python-$_pkgname
 pkgver=0.2.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Parser for multipart/form-data'
 arch=('any')
 url='https://github.com/defnull/multipart'
