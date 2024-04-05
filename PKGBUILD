@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Contributor: lilydjwg <lilydjwg@gmail.com>
 
 pkgname=python-requests-file
 pkgver=1.5.1
-pkgrel=6
+pkgrel=7
 pkgdesc="File transport adapter for Requests"
 arch=('any')
 url="https://github.com/dashea/requests-file"
