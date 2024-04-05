@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-railroad-diagrams
 pkgver=3.0.1
 _commit=c3a16b9dcb06f5d0ae2260f8414136917871d4c5
-pkgrel=2
+pkgrel=3
 pkgdesc="Generate SVG railroad syntax diagrams, like on JSON.org."
 url="https://github.com/tabatkins/railroad-diagrams"
 license=('MIT')
