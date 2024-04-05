@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-pickleshare
 pkgver=0.7.5
-pkgrel=9
+pkgrel=10
 pkgdesc="File system based database that uses python pickles"
 arch=('any')
 url="https://github.com/pickleshare/pickleshare"
