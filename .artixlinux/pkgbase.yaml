@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-pyogrio
-  version: 0.6.0-3
+  version: 0.6.0-4
   arch:
     - x86_64
   pkgname:
     - python-pyogrio
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.6.0-4
+    packages:
+      - python-pyogrio-0.6.0-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
