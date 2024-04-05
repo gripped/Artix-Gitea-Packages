@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 
 pkgname=python-fastbencode
 pkgver=0.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Implementation of bencode with optional fast C extensions'
 arch=(x86_64)
 url='https://github.com/breezy-team/fastbencode'
