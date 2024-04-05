@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=cligj
 pkgname=python-${_pkg}
 pkgver=0.7.2
-pkgrel=4
+pkgrel=5
 pkgdesc="Click-based argument and option decorators for Python GIS command line programs"
 arch=(any)
 url="https://github.com/mapbox/cligj"
