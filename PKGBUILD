@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=python-slip
 pkgver=0.6.5
-pkgrel=8
+pkgrel=9
 pkgdesc='Convenience, extension and workaround code for Python and some Python modules'
 arch=('any')
 url='https://github.com/nphilipp/python-slip'
