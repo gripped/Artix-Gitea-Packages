@@ -4,7 +4,7 @@
 pkgname=qt6-speech
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -15,6 +15,7 @@ depends=(gcc-libs
          qt6-multimedia)
 makedepends=(cmake
              flite
+             git
              ninja
              qt6-declarative
              speech-dispatcher)
@@ -22,12 +23,12 @@ optdepends=('flite: flite TTS backend'
             'speech-dispatcher: speech-dispatcher TTS backend'
             'qt6-declarative: QML bindings')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('44768eba837d48c2233ef12aab562acf2d3c531b489f4ec70124e2bb313d1f11')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('a18f689c69070c0db245fc5ec28f4403d57b7c51005d316707a9804b8af7dcbf')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
