@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-webcolors
 pkgver=1.13
-pkgrel=2
+pkgrel=3
 pkgdesc="A library for working with color names and color value formats defined by the HTML and CSS specifications for use in documents on the Web"
 url="https://github.com/ubernostrum/webcolors"
 license=('BSD')
