@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Kevin Houdebert <kevin@qwazerty.eu>
 # Contributor: Erhan SAHIN <erhan@ssahin.net>
 
 _pkgname=monotonic
 pkgname=python-monotonic
 pkgver=1.6
-pkgrel=4
+pkgrel=5
 pkgdesc="An implementation of time.monotonic() for Python"
 url="https://pypi.python.org/pypi/monotonic"
 license=('Apache')
