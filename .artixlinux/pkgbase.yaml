@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: tree-sitter-vimdoc
-  version: 2.5.1-1
+  version: 2.5.1-2
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.5.1-1
+    version: 2.5.1-2
     packages:
-      - tree-sitter-vimdoc-2.5.1-1-x86_64.pkg.tar.zst
+      - tree-sitter-vimdoc-2.5.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
