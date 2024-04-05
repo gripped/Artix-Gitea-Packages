@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-toposort
 pkgver=1.10
-pkgrel=2
+pkgrel=3
 pkgdesc='Implements a topological sort algorithm'
 arch=('any')
 license=('Apache')
