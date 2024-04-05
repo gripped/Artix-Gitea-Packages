@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-ukpostcodeparser
 pkgver=1.1.2
-pkgrel=11
+pkgrel=12
 pkgdesc="UK Postcode parser"
 arch=('any')
 license=('MIT')
