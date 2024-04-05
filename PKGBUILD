@@ -13,19 +13,19 @@ depends=(gcc-libs
          glibc
          qt6-base)
 makedepends=(cmake
+             git
              ninja
              qt6-declarative
              qt6-serialport)
 optdepends=('qt6-declarative: QML bindings'
             'qt6-serialport: NMEA plugin')
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('1d601ba43c26c8a01db81eeaaeea5943c015da98caa59d7905b86e0e9d609ddf')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('25801cd768383f4dfc0f3d440dfc334fe2605f0dd2cdf51d80a2f5ceca4a119f')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
