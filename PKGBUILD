@@ -3,7 +3,7 @@
 _name=pywlroots
 pkgname=python-pywlroots
 pkgver=0.16.6
-pkgrel=2
+pkgrel=3
 pkgdesc="Python binding to the wlroots library using cffi"
 arch=(x86_64)
 url="https://github.com/flacjacket/pywlroots"
@@ -48,7 +48,6 @@ check() {
 }
 
 package() {
-  depends+=(libwlroots.so=11)
   cd $_name-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 README.rst -t "$pkgdir/usr/share/doc/$pkgname"
