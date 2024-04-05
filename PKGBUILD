@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=tox-current-env
 pkgname=python-$_pkgname
 pkgver=0.0.11
-pkgrel=2
+pkgrel=3
 pkgdesc='tox plugin to run tests in current Python environment'
 arch=('any')
 url='https://github.com/fedora-python/tox-current-env'
