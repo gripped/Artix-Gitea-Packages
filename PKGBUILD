@@ -8,7 +8,7 @@ pkgname=(
   python-gobject-docs
 )
 pkgver=3.48.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Python bindings for GLib/GObject/GIO/GTK"
 url="https://wiki.gnome.org/Projects/PyGObject"
 arch=(x86_64)
@@ -22,6 +22,7 @@ makedepends=(
   gobject-introspection
   meson
   python-cairo
+  python-setuptools
   python-sphinx
   python-sphinx-furo
 )
