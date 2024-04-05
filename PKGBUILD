@@ -5,7 +5,7 @@
 
 pkgname=python-sh
 pkgver=2.0.6
-pkgrel=1
+pkgrel=2
 pkgdesc='Subprocess interface that allows you to call any program as if it were a function'
 arch=('any')
 url='https://pypi.python.org/pypi/sh'
@@ -25,7 +25,7 @@ build() {
 check() {
   cd sh-$pkgver
   # export PYTHONPATH="$(pwd):${PYTHONPATH}"
-  pytest tests -k 'not test_environment' ||:
+  pytest tests -k 'not test_environment'
 }
 
 package() {
