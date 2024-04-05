@@ -3,7 +3,7 @@
 pkgname=qt6-graphs
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -14,15 +14,16 @@ depends=(gcc-libs
          qt6-declarative
          qt6-quick3d)
 makedepends=(cmake
+             git
              ninja
              qt6-shadertools)
 groups=(qt6)
-_pkgfn=${pkgname/6-/}-everywhere-src-$_qtver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/$_qtver/submodules/$_pkgfn.tar.xz)
-sha256sums=('4b35d1967e62af0f9d224c173921f22256e29fbbf62ed9de828466c5878b9495')
+_pkgfn=${pkgname/6-/}
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
+sha256sums=('72737905a5dc59031334736ad1dbfbbd8aa53290bdf0ed5c070bc66e0d440b0d')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja \
+  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
