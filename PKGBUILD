@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Christoph W <c w e g e n e r at gmail dot com>
 
 pkgname=python-ntlm-auth
 _module='ntlm-auth'
 pkgver=1.5.0
-pkgrel=7
+pkgrel=8
 pkgdesc="Creates NTLM authentication structures"
 url="https://github.com/jborean93/ntlm-auth"
 depends=('python' 'python-six' 'python-cryptography')
