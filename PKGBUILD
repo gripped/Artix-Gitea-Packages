@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Maintainer: Brett Cornwall <ainola@archlinux.org>
 # Contributor: Eduardo Parra Mazuecos <eduparra90@gmail.com>
 
 pkgname=python-odfpy
 pkgver=1.4.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Python API and tools to manipulate OpenDocument files'
 arch=('any')
 url='https://github.com/eea/odfpy'
