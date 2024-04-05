@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Gergely Imreh <imrehg(at)gmail(dot)com>
 # Contributor: Ghost of Kendo <ghostofkendo at gmail dot com>
 
 pkgname=python-netifaces
 pkgver=0.11.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Portable module to access network interface information in Python"
 arch=('x86_64')
 url="https://alastairs-place.net/netifaces/"
