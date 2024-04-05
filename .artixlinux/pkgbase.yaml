@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: uv
-  version: 0.1.29-1
+  version: 0.1.29-2
   arch:
     - x86_64
   pkgname:
     - uv
     - python-uv
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,10 +27,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1.28-2
+    version: 0.1.29-2
     packages:
-      - uv-0.1.28-2-x86_64.pkg.tar.zst
-      - python-uv-0.1.28-2-x86_64.pkg.tar.zst
+      - uv-0.1.29-2-x86_64.pkg.tar.zst
+      - python-uv-0.1.29-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
