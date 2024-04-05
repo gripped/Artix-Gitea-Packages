@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-wilderness
 pkgver=0.1.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Easy multi-level command line applications with man pages"
 url="https://github.com/GjjvdBurg/wilderness"
 license=('MIT')
