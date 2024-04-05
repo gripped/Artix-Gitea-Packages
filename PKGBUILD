@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=crcmod
 pkgname=python-crcmod
 pkgver=1.7
-pkgrel=6
+pkgrel=7
 pkgdesc="Module for generating objects that compute the Cyclic Redundancy Check (CRC)"
 arch=(x86_64)
 url="http://crcmod.sourceforge.net/"
