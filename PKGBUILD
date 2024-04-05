@@ -1,30 +1,39 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
-_name=xkbcommon
 pkgname=python-xkbcommon
 pkgver=0.8
-pkgrel=2
+pkgrel=3
 pkgdesc="Python bindings for libxkbcommon using cffi"
 arch=(x86_64)
 url="https://github.com/sde1000/python-xkbcommon"
 license=(MIT)
-depends=(python-cffi libxkbcommon)
-makedepends=(python-build python-installer python-setuptools python-wheel)
+depends=(
+  glibc
+  python
+  python-cffi
+  libxkbcommon
+)
+makedepends=(
+  python-build
+  python-installer
+  python-setuptools
+  python-wheel
+)
 checkdepends=(python-pytest)
-source=(https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz)
-sha512sums=('d6390b427f751d25fe607383cd8239fb439fed62bcaafe980e1a776dac605a474fc3be573a8450d1d52900c06ce3dd0c791c657c556a15198754f7e416dc4d67')
-b2sums=('5b4a5313ab5dc07328702d96c4228e96a00db221156f69a2a1afb2c753f82bae40c4f950c5c93b1ed2cb8b27f23f35e3bc66d027411aa8d55cbc34d8c003f3f4')
+source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
+sha512sums=('ae2640ef89e7ace0468e970762c7be4d3f608701f1abea10174f274c622db28a6e6323cdc5bbbbaaa1065d4c4ddf9f67b75d4c34bb2e9a0bb6260778b15a330a')
+b2sums=('0d2a649e3fee8baa9345ddca97dc7c77b5d9e10d7ca90cbb29bcc3531f4bba3deee39e610e147054e956310506fb79ebb43c85955b787e55046d67c12b851026')
 
 build() {
-  cd $_name-$pkgver
-  python $_name/ffi_build.py
+  cd $pkgname-$pkgver
+  python ${pkgname#python-}/ffi_build.py
   python -m build --wheel --no-isolation
 }
 
 check() {
   local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
-  cd $_name-$pkgver
+  cd $pkgname-$pkgver
   # install to temporary location, as importlib is used
   python -m installer --destdir=test_dir dist/*.whl
   export PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH"
@@ -32,7 +41,7 @@ check() {
 }
 
 package() {
-  cd $_name-$pkgver
+  cd $pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 README.rst -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
