@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Andrew Steinke <rkcf@rkcf.me>
 
 pkgname=python-astunparse
 _pkgname=astunparse
-pkgrel=7
+pkgrel=8
 pkgver=1.6.3
 pkgdesc="An AST unparser for Python"
 depends=('python' 'python-six')
