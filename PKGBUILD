@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Adrian Sampson <adrian@radbox.org>
 
 pkgname=python-munkres
 pkgver=1.1.4
-pkgrel=4
+pkgrel=5
 pkgdesc='Munkres algorithm for Python'
 arch=(any)
 url=https://github.com/bmc/munkres
