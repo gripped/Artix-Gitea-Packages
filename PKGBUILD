@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Christoph W <c w e g e n e r at gmail dot com>
 
 pkgname=python-requests-credssp
 _module='requests-credssp'
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="HTTPS CredSSP authentication with the requests library"
 url="https://github.com/jborean93/requests-credssp"
 depends=('python' 'python-pyopenssl' 'python-requests' 'python-ntlm-auth' 'python-pyspnego')
