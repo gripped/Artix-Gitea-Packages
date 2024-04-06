@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: virt-manager
-  version: 4.1.0-2.1
+  version: 4.1.0-3
   arch:
     - any
   pkgname:
     - virt-install
     - virt-manager
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.1.0-3
+    packages:
+      - virt-install-4.1.0-3-any.pkg.tar.zst
+      - virt-manager-4.1.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
