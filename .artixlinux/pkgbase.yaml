@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: gunicorn
-  version: 21.2.0-2
+  version: 21.2.0-3
   arch:
     - any
   pkgname:
     - gunicorn
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 21.2.0-3
+    packages:
+      - gunicorn-21.2.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
