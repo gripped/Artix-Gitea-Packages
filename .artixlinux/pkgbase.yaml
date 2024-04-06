@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-pip
-  version: 24.0-1
+  version: 24.0-2
   arch:
     - any
   pkgname:
     - python-pip
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 24.0-2
+    packages:
+      - python-pip-24.0-2-any.pkg.tar.zst
   world-gremlins:
     version: 24.0-1
     packages:
@@ -53,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
