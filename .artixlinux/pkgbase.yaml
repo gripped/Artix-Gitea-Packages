@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-pyee
-  version: 11.0.1-1
+  version: 11.0.1-2
   arch:
     - any
   pkgname:
     - python-pyee
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 11.0.1-2
+    packages:
+      - python-pyee-11.0.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
