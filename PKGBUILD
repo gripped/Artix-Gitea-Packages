@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-entrypoints
 _name=entrypoints
 pkgver=0.4
-pkgrel=3
+pkgrel=4
 pkgdesc="Discover and load entry points from installed packages."
 arch=('any')
 url="https://github.com/takluyver/entrypoints"
