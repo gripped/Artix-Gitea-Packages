@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: cinnamon-session
-  version: 6.0.3-1
+  version: 6.0.4-1
   arch:
     - x86_64
   pkgname:
     - cinnamon-session
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.0.4-1
+    packages:
+      - cinnamon-session-6.0.4-1-x86_64.pkg.tar.zst
   galaxy:
     version: 6.0.3-1
     packages:
