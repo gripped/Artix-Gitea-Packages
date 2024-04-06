@@ -1,5 +1,4 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: examon <examon.mail[at]gmail[dot]com>
 # Contributor: Sebastian Wiesner <lunaryorn googlemail com>
@@ -8,16 +7,15 @@
 _pkgname=pyudev
 pkgname=python-$_pkgname
 pkgver=0.24.1
-pkgrel=1
+pkgrel=2
 arch=('any')
 url='https://github.com/pyudev/pyudev'
 license=('LGPL')
 pkgdesc='Python bindings to libudev'
-depends=('python-six' 'udev')
+depends=('python-six' 'systemd')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel' 'python-sphinx')
 checkdepends=('python-pytest' 'python-docutils' 'python-hypothesis' 'python-pip')
 optdepends=('python-pyqt5: PyQt integration'
-            'pyside2: PySide integration'
             'python-wxpython: WX integration')
 source=("$_pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
 sha512sums=('68d64113a465588411e494a010e1b19f68ed0f8fabff154d6f3066a22ff38fcd52ee73b9a00be15f5e51ea38152cd97f2ff3fda406981431a6d5a6fa0484e874')
