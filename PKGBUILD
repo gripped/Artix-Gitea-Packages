@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 pkgname=python-libevdev
 pkgver=0.11
-pkgrel=2
+pkgrel=3
 arch=('any')
 url='https://gitlab.freedesktop.org/libevdev/python-libevdev'
 license=('MIT')
