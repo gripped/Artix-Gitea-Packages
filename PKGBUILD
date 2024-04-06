@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-teamcity-messages
 pkgver=1.32
-pkgrel=2
+pkgrel=3
 pkgdesc="Send test results to TeamCity continuous integration server from unittest, nose, py.test, twisted trial, behave"
 url="https://github.com/JetBrains/teamcity-messages"
 license=('Apache')
