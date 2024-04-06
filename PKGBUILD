@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Sapin <simon dot sapin at exyr dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-ldap3
 pkgver=2.9.1
-pkgrel=4
+pkgrel=5
 pkgdesc="A strictly RFC 4510 conforming LDAP V3 pure Python client library"
 url="https://github.com/cannatag/ldap3"
 license=('LGPL')
