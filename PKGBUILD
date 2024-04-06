@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pathable
 pkgver=0.4.3
-pkgrel=2
+pkgrel=3
 pkgdesc="Object-oriented paths"
 url="https://github.com/p1c2u/pathable"
 license=('Apache')
