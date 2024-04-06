@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Kyle Keen <keenerd@gmail.com>
 # Contributor: Philipp A. <flying-sheep@web.de>
 _name=testpath
 pkgname=python-testpath
 pkgver=0.6.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Test utilities for code working with files and commands'
 arch=('any')
 url="https://pypi.python.org/pypi/testpath"
