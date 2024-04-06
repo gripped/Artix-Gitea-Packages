@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Anatol Pomozov
 
 pkgname=python-txaio
 # https://github.com/crossbario/txaio/blob/master/docs/releases.rst
 pkgver=23.1.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Compatibility API between asyncio/Twisted/Trollius'
 arch=('any')
 url="https://github.com/crossbario/txaio"
