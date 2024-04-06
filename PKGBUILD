@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 _name=resolvelib
 pkgname=python-resolvelib
 pkgver=1.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Resolve abstract dependencies into concrete ones"
 url="https://github.com/sarugaku/resolvelib"
 license=(custom:ISC)
