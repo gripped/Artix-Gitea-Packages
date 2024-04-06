@@ -1,15 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Clément DEMOULINS <clement@archivel.fr>
 
 pkgname=arandr
 pkgver=0.1.11
-pkgrel=2
+pkgrel=3
 pkgdesc="Provide a simple visual front end for XRandR 1.2."
 arch=('any')
 url="https://christian.amsuess.com/tools/arandr/"
 license=('GPL3')
 depends=('gtk3' 'python-cairo' 'python-gobject' 'xorg-xrandr')
-makedepends=('python-docutils')
+makedepends=('python-docutils' 'python-setuptools')
 source=(https://christian.amsuess.com/tools/$pkgname/files/${pkgname}-$pkgver.tar.gz
         dont-compress-man-pages.patch)
 sha256sums=('e4cbbe3698bb812b395770870174be0094bbaeb391105a811f95f42eb182ae02'
