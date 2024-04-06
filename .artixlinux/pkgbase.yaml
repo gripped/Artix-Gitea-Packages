@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: rdma-core
-  version: 50.0-1
+  version: 51.0-1
   arch:
     - x86_64
   pkgname:
     - rdma-core
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 51.0-1
+    packages:
+      - rdma-core-51.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
