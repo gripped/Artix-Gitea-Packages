@@ -1,25 +1,10 @@
-From f6f7ed544efcffd7ecc9b2ca1fb9149d24f962c0 Mon Sep 17 00:00:00 2001
-From: Muhammad Herdiansyah <git@herdiansyah.id>
-Date: Fri, 10 Nov 2023 18:54:27 +0700
-Subject: [PATCH] Call the daemon from dbus using artix-svc
-
-This is equivalent of SystemdService=, but with more init freedom.
----
- data/net.hadess.PowerProfiles.service | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/data/net.hadess.PowerProfiles.service b/data/net.hadess.PowerProfiles.service
-index 724f631..8c60739 100644
---- a/data/net.hadess.PowerProfiles.service
-+++ b/data/net.hadess.PowerProfiles.service
+--- a/data/power-profiles-daemon.dbus.service.in	2024-04-06 23:32:05.641192162 +0200
++++ b/data/power-profiles-daemon.dbus.service.in	2024-04-04 01:55:02.000000000 +0200
 @@ -6,6 +6,5 @@
- 
+
  [D-BUS Service]
- Name=net.hadess.PowerProfiles
+ Name=@dbus_name@
 -Exec=/bin/false
-+Exec=/usr/share/artix/artix-svc start power-profiles-daemon
++Exec=/usr/bin/artix-service start power-profiles-daemon
  User=root
 -SystemdService=power-profiles-daemon.service
--- 
-2.42.1
-
