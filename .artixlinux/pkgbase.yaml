@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pyside6
-  version: 6.7.0git20240406-1
+  version: 6.7.0git20240406-2
   arch:
     - x86_64
   pkgname:
@@ -9,13 +9,13 @@ pkgbase:
     - pyside6-tools
     - shiboken6
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
