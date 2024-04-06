@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-zope-testing
 pkgver=5.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Zope testing helpers"
 arch=('any')
 url="https://github.com/zopefoundation/zope.testing"
