@@ -4,11 +4,11 @@
 
 pkgname=libcaca
 pkgver=0.99.beta20
-pkgrel=2
+pkgrel=3
 pkgdesc='Color ASCII art library'
 arch=('x86_64')
 url='http://caca.zoy.org/wiki/libcaca'
-license=('custom:WTFPL')
+license=('WTFPL')
 depends=('freeglut' 'gcc-libs' 'glibc' 'glu' 'imlib2' 'libglvnd' 'libx11' 'ncurses' 'slang' 'zlib')
 makedepends=('doxygen' 'pango' 'python')
 optdepends=('python: Python bindings')
