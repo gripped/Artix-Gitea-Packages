@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 
 pkgname=python-jsondiff
 _pkgname=jsondiff
 pkgver=2.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Diff JSON and JSON-like structures in Python'
 arch=(any)
 url='https://github.com/xlwings/jsondiff'
