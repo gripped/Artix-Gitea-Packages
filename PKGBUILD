@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Contributor: Laurent Soest <laurent.soest(at)gmail.com>
 
 pkgname='python-tempora'
 _pkgbase="${pkgname//python-/}"
 pkgver=5.2.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Objects and routines pertaining to date and time (tempora)."
 arch=('any')
 url="https://github.com/jaraco/tempora"
