@@ -1,15 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Alessio 'mOLOk' Bolognino <themolok@gmail.com>
 # Contributor: daniel g. siegel <dgsiegel@gmail.com>
 
 pkgname=libsmbios
 pkgver=2.4.3
-pkgrel=6
+pkgrel=7
 pkgdesc="A library for providing access to as much BIOS information as possible"
 arch=('x86_64')
 url="https://github.com/dell/libsmbios"
 license=('GPL' 'custom')
-depends=('gcc-libs')
+depends=('glibc')
 makedepends=('libxml2' 'python' 'chrpath' 'doxygen' git cppunit help2man)
 optdepends=('python: tools')
 _commit=5b72244ca0d09c7f228d571ec2d5d20183486c11  # tags/v2.4.3
