@@ -1,20 +1,20 @@
 ---
 pkgbase:
   name: python-cheetah3
-  version: 3.3.3-1
+  version: 3.3.3-2
   arch:
     - x86_64
   pkgname:
     - python-cheetah3
     - python-cheetah3-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.3.3-2
+    packages:
+      - python-cheetah3-3.3.3-2-x86_64.pkg.tar.zst
+      - python-cheetah3-docs-3.3.3-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
