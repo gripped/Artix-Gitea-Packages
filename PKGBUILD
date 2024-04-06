@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Sapin <simon dot sapin at exyr dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-mongoengine
 pkgver=0.24.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A Python Object-Document-Mapper for working with MongoDB"
 url="https://github.com/MongoEngine/mongoengine"
 license=('MIT')
