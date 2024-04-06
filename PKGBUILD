@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-astor
 pkgver=0.8.1
-pkgrel=6
+pkgrel=7
 pkgdesc="Read/rewrite/write Python ASTs"
 arch=('any')
 license=('BSD')
