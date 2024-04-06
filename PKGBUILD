@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
 pkgname=python-proxy.py
 _name=${pkgname#python-}
-pkgver=2.4.3
-pkgrel=4
+pkgver=2.4.4rc4
+pkgrel=1
 pkgdesc='Lightweight HTTP, HTTPS, HTTP2 and WebSockets proxy server'
 arch=('any')
 url='https://github.com/abhinavsingh/proxy.py'
@@ -10,12 +10,12 @@ license=('BSD')
 depends=('python' 'python-setuptools')
 makedepends=('python-build' 'python-installer' 'python-setuptools-scm'
              'python-wheel')
-checkdepends=('python-httpx' 'python-pytest' 'python-pytest-asyncio' 'python-pytest-cov' 'python-pytest-mock')
+checkdepends=('python-httpx' 'python-pytest' 'python-pytest-asyncio' 'python-pytest-cov' 'python-pytest-mock' 'python-requests')
 optdepends=('python-httpx: Cloudflare DNS resolver plugin support'
             'python-paramiko: proxy over SSH tunnel support')
 source=("https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz"
         "python-proxy.py-2.4.0_fix-asyncio-deprecationwarning.patch::$url/commit/e0cc90d057b44ef506b88362d71f2c707db11db9.patch")
-sha256sums=('6134e8f1282db1fd7fa1a4b7049e49307566851023b2ac312d9dd36e92f0c9b1'
+sha256sums=('cdb51b52a5e734d58ab3bf016a3e41cad9457e8ddd7902e58e28e923adeca7ca'
             'e7e511215189c95d96f279fde344c4d7473b846f9c96a3fc0077985856e97bcc')
 
 prepare() {
