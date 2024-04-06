@@ -5,13 +5,13 @@
 
 pkgname=libimobiledevice
 pkgver=1.3.0
-pkgrel=11
+pkgrel=12
 pkgdesc='Library to communicate with services on iOS devices using native protocols'
 arch=('x86_64')
 url='https://libimobiledevice.org/'
 license=('LGPL-2.1-or-later')
 depends=('glibc' 'libplist' 'libusbmuxd' 'openssl')
-makedepends=('cython0' 'python')
+makedepends=('cython0' 'python' 'python-setuptools')
 optdepends=('python: Python bindings')
 source=("https://github.com/libimobiledevice/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.bz2"
         'libimobiledevice-libplist-2.3.0.patch')
