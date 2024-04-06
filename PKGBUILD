@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _pkgname=crashtest
 pkgname=python-crashtest
 pkgver=0.4.1
-pkgrel=2
+pkgrel=3
 pkgdesc='supposedly makes exceptions handling and inspection easier'
 arch=(any)
 url="https://github.com/sdispater/${_pkgname}"
