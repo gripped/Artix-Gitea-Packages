@@ -1,20 +1,20 @@
 ---
-team: null
+team: world
 pkgbase:
   name: python-iterable-io
-  version: 1.0.0-1
+  version: 1.0.0-2
   arch:
     - any
   pkgname:
     - python-iterable-io
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.0.0-2
+    packages:
+      - python-iterable-io-1.0.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
