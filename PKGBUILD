@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=python-commonmark
 pkgver=0.9.1
-pkgrel=9
+pkgrel=10
 pkgdesc='Python parser for the CommonMark Markdown spec'
 url='https://pypi.org/project/commonmark/'
 arch=('any')
@@ -29,8 +29,7 @@ build() {
 check() {
   cd commonmark.py-${pkgver}
   export PYTHONPATH=.
-  python commonmark/tests/unit_tests.py
-  python -m unittest discover
+  python commonmark/tests/run_spec_tests.py
 }
 
 package() {
