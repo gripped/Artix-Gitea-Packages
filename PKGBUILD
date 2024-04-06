@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 pkgname=python-zc.lockfile
 _pkgname=${pkgname#python-}
 pkgver=3.0.post1
-pkgrel=2
+pkgrel=3
 arch=('any')
 pkgdesc="Zope testing frameworks"
 url="https://github.com/zopefoundation/$_pkgname"
