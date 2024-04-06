@@ -1,13 +1,14 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=python-sarif-om
 pkgver=1.0.4
-pkgrel=5
+pkgrel=6
 pkgdesc='Python classes for the SARIF object model'
 arch=(any)
 url='https://github.com/microsoft/sarif-python-om'
 license=(MIT)
 depends=(python-attrs python-pbr)
+makedepends=(python-setuptools)
 source=(https://github.com/microsoft/sarif-python-om/archive/$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('f95e3ea13bb8df0b30b765a668a2ad65d7f33c8a16753147adec239ba0fcd6ca')
 
