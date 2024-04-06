@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Ilya Elenskiy <elenskiy.ilya@gmail.com>
 # Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
 
 pkgname=python-reactivex
 pkgver=4.0.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Reactive Extensions for Python'
 arch=(any)
 url=http://reactivex.io
