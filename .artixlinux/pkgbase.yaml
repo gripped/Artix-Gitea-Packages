@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - qtermwidget
 actions:
-  addRepo: world-goblins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -45,8 +45,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1.4.0-2
+    packages:
+      - qtermwidget-1.4.0-2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
