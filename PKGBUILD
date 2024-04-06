@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-parver
 pkgver=0.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Parse and manipulate version numbers"
 url="https://github.com/RazerM/parver"
 license=('MIT')
