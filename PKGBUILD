@@ -19,9 +19,15 @@ optdepends=('cinnamon-translations: i18n'
             'gnome-online-accounts: for the online accounts module')
 makedepends=(meson samurai gnome-online-accounts)
 options=(!emptydirs)
-source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
+        goa.patch)
 sha256sums=('0181054ae73b8abbf3d7862f91a56df56f6d4aa9b28d28801813514a8bbdbeb6')
 b2sums=('51796dec219922f9d4639aa106963f51e33978c9415756c6195f5444a8aab7114b4110e5e23251056314284f0b7a142366404301dcd410b86b4f7eb28235916d')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  patch -Np1 -i ../goa.patch
+}
 
 build() {
   artix-meson build ${pkgname}-${pkgver}
