@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: openmpi
-  version: 5.0.2-8
+  version: 5.0.2-9
   arch:
     - x86_64
   pkgname:
     - openmpi
     - openmpi-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.2-9
+    packages:
+      - openmpi-5.0.2-9-x86_64.pkg.tar.zst
+      - openmpi-docs-5.0.2-9-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
