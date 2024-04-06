@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cinnamon
-  version: 6.0.4-1
+  version: 6.0.4-1.1
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 6.0.4-1
+    version: 6.0.4-1.1
     packages:
-      - cinnamon-6.0.4-1-x86_64.pkg.tar.zst
+      - cinnamon-6.0.4-1.1-x86_64.pkg.tar.zst
   galaxy:
     version: 6.0.4-1
     packages:
