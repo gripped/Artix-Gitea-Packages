@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 _pkgname=moreorless
 pkgname=python-moreorless
 pkgver=0.4.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Python diff wrapper'
 arch=(any)
 url="https://github.com/thatch/$_pkgname"
