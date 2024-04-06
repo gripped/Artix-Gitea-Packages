@@ -1,10 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: eolianoe <eolianoe At GoogleMAIL DoT com>
 
 pkgname=python-requests-toolbelt
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A toolbelt of useful classes and functions to be used with python-requests."
 arch=('any')
 url="https://github.com/requests/toolbelt"
