@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Jeff Mickey <jeff@archlinux.org>
 # Contributor: Pappa <jcberg@gmail.com >
 
 pkgname=python-xlib
 pkgver=0.33
-pkgrel=2
+pkgrel=3
 pkgdesc="A fully functional X client library for Python programs"
 url="https://github.com/python-xlib/python-xlib"
 arch=('any')
