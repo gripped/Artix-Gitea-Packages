@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: minus <minus@mnus.de>
 
 _pkgname=gevent-websocket
 pkgname=python-${_pkgname}
 pkgver=0.10.1
-pkgrel=9
+pkgrel=10
 pkgdesc='WebSocket library for the gevent networking library'
 url='https://www.gitlab.com/noppo/gevent-websocket'
 arch=('any')
