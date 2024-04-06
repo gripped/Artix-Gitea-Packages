@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 _pipname=pep440
 pkgname=python-$_pipname
 pkgver=0.1.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A simple package with utils to check whether versions number match PEP 440'
 arch=(any)
 url='https://github.com/Carreau/pep440'
