@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=python-adblock
 pkgver=0.6.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Brave's adblock library in Python"
 arch=("x86_64")
 url="https://github.com/ArniDagur/python-adblock"
