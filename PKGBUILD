@@ -19,7 +19,7 @@ optdepends=('cinnamon-translations: i18n'
             'gnome-online-accounts: for the online accounts module')
 makedepends=(meson samurai gnome-online-accounts git)
 options=(!emptydirs)
-source=(${pkgname}::git+${url}.git)
+source=(${pkgname}-${pkgver}::git+${url}.git)
 sha256sums=('SKIP')
 b2sums=('SKIP')
 
