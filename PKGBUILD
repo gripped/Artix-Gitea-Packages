@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Maintainer: Muflone http://www.muflone.com/contacts/english/
 # Contributor: Chris Warrick <aur@chriswarrick.com>
 
 _pkg=cloudpickle
 pkgname=python-${_pkg}
 pkgver=2.2.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Extended pickling support for Python objects"
 arch=(any)
 url="https://github.com/cloudpipe/cloudpickle"
