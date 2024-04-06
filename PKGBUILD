@@ -3,7 +3,7 @@
 pkgname=python-phonenumbers
 pkgver=8.13.33
 _commit=29dab756aceb18e0142c9c37e736a67de01e3b33
-pkgrel=1
+pkgrel=2
 pkgdesc="Python version of Google's common library for parsing, formatting, storing and validating international phone numbers"
 arch=('any')
 url="https://github.com/daviddrysdale/python-phonenumbers"
