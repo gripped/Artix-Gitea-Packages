@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Kyle Keen <keenerd@gmail.com>
 # Contributor: Matthew McGinn <mamcgi@gmail.com>
 # Contributor: Carl George < arch at cgtx dot us >
 
 _name="click-plugins"
 pkgname=python-click-plugins
 pkgver=1.1.1
-pkgrel=10
+pkgrel=11
 pkgdesc="An extension module for click to enable registering CLI commands via setuptools entry-points."
 arch=("any")
 url="https://github.com/click-contrib/click-plugins"
