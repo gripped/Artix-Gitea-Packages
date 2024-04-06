@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-flask-restful
 pkgver=0.3.9
-pkgrel=5
+pkgrel=6
 pkgdesc="Simple framework for creating REST APIs"
 url="https://github.com/flask-restful/flask-restful"
 license=('BSD')
