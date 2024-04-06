@@ -1,10 +1,10 @@
 # Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
-# Maintainer: Caleb Maclennana <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 _pkgname=MyST-Parser
 pkgname=python-myst-parser
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An extended commonmark compliant parser, with bridges to docutils/sphinx'
 arch=('any')
 url='https://github.com/executablebooks/MyST-Parser'
