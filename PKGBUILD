@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 
 _pipname=argon2-cffi-bindings
 pkgname=python-$_pipname
 pkgver=21.2.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Low-level CFFI bindings for Argon2'
 arch=(x86_64)
 url='https://github.com/hynek/argon2-cffi-bindings'
