@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _pkgname=pastel
 pkgname=python-pastel
 pkgver=0.2.1
-pkgrel=6
+pkgrel=7
 pkgdesc='Bring colors to your terminal'
 arch=(any)
 url="https://github.com/sdispater/${_pkgname}"
