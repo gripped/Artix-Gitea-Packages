@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Samuel Littley <aur@toastwaffle.com>
 # Contributor: rnons <remotenonsense at gmail dot com>
 
 pkgname=python-whoosh
 pkgver=2.7.4
-pkgrel=10
+pkgrel=11
 pkgdesc="Fast, pure-Python full text indexing, search, and spell checking library"
 arch=('any')
 url="https://github.com/mchaput/whoosh"
@@ -13,7 +13,7 @@ depends=('python')
 makedepends=('python-setuptools' 'git')
 checkdepends=('python-pytest-runner')
 source=("git+https://github.com/mchaput/whoosh#tag=v$pkgver")
-md5sums=('SKIP')
+sha256sums=('SKIP')
 
 build() {
   cd "$srcdir"/whoosh
