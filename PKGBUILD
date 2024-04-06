@@ -4,15 +4,16 @@
 
 pkgname=python-cairocffi
 pkgver=1.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc="cffi-based cairo bindings for Python"
 arch=('any')
 url="https://doc.courtbouillon.org/cairocffi"
 license=('BSD')
 depends=('python-cffi' 'cairo')
-makedepends=('python-build' 'python-installer' 'python-flit-core' 'gdk-pixbuf2')
+makedepends=('python-build' 'python-installer' 'python-flit-core' 'python-xcffib' 'gdk-pixbuf2')
 checkdepends=('python-pytest' 'python-numpy' 'python-pikepdf')
-optdepends=('gdk-pixbuf2: for cairocffi.pixbuf')
+optdepends=('gdk-pixbuf2: for cairocffi.pixbuf'
+            'python-xcffib: for cairo xcb support')
 source=("https://github.com/Kozea/cairocffi/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
 sha512sums=('80d0d9ed838eb27f769ccc2065a8d4d6772009d5a73710afeb421781440bc546599c82c2ca09df71ed67c9451062e858cf3ef6724ad2e01e776dbc66c269924e')
 
