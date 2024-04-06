@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-traitlets
-  version: 5.14.2-1
+  version: 5.14.2-2
   arch:
     - any
   pkgname:
     - python-traitlets
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.14.2-2
+    packages:
+      - python-traitlets-5.14.2-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
