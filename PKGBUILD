@@ -3,9 +3,8 @@
 
 pkgname=python-sphinx-autodoc-typehints
 _pyname=${pkgname/python-/}
-_commit=d2955c6c1750cdee28b05a2bfe35a5c5c0f8a043
-pkgver=1.25.3
-pkgrel=1
+pkgver=2.0.0
+pkgrel=3
 pkgdesc='Type hints support for the Sphinx autodoc extension'
 url='https://github.com/tox-dev/sphinx-autodoc-typehints'
 arch=('any')
@@ -25,8 +24,8 @@ checkdepends=(
   'python-typing_extensions'
 )
 optdepends=('python-nptyping: for numpydoc support')
-source=("git+$url.git#commit=${_commit}")
-sha512sums=('SKIP')
+source=("git+$url.git#tag=$pkgver")
+b2sums=('cd2a187675b04552981e88b3c51dfa9af9d50cdd996aaf4100ef038d31fe4c48dcd6ffa0df21806f80db050dea0f81b0f3686a6670f93f5080abc748ff18be5b')
 
 build() {
   cd "${_pyname}"
