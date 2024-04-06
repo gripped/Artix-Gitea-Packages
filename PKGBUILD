@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=sphinx-argparse
 _pypi_name=sphinx_argparse
 pkgname=python-sphinx-argparse
 pkgver=0.4.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Sphinx extension that automatically documents argparse commands and options"
 arch=(any)
 url="https://github.com/ashb/sphinx-argparse"
