@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=towncrier
 pkgver=22.12.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Utility to produce useful, summarised news files for your project"
 arch=('any')
 url="https://github.com/hawkowl/towncrier"
@@ -21,7 +21,8 @@ build() {
 check() {
   cd towncrier-$pkgver
   python setup.py install --root="$PWD/tmp_install" --optimize=1
-  PYTHONPATH="$PWD/tmp_install/usr/lib/python3.11/site-packages" PATH="$PWD/tmp_install/usr/bin:$PATH" trial towncrier
+  local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python${python_version}/site-packages" PATH="$PWD/tmp_install/usr/bin:$PATH" trial towncrier
 }
 
 package() {
