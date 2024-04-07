@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-lazy-object-proxy
-  version: 1.10.0-2
+  version: 1.10.0-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.10.0-2
+    version: 1.10.0-3
     packages:
-      - python-lazy-object-proxy-1.10.0-2-x86_64.pkg.tar.zst
+      - python-lazy-object-proxy-1.10.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
