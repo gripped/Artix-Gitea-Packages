@@ -2,7 +2,7 @@
 
 pkgname=adios2
 pkgver=2.9.2
-pkgrel=2
+pkgrel=3
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
@@ -10,12 +10,12 @@ license=(Apache)
 depends=(blosc bzip2 glibc gcc-libs hdf5 libfabric libpng nlohmann-json
          openmpi pugixml pybind11 sz yaml-cpp zeromq zfp zlib)
 # with mgard does not build currently, not time to investigate
-makedepends=(cmake gcc-fortran gtest python python-mpi4py python-numpy adios2)
+makedepends=(cmake gcc-fortran gtest python python-mpi4py python-numpy)
 source=(https://github.com/ornladios/ADIOS2/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('78309297c82a95ee38ed3224c98b93d330128c753a43893f63bbe969320e4979')
 
 build() {
-  artix-cmake -B build -S ${pkgname^^}-${pkgver} \
+  cmake -B build -S ${pkgname^^}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_SKIP_RPATH=ON \
     -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON \
