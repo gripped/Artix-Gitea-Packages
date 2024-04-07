@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=python-isoduration
 _pkgname="${pkgname#python-}"
 pkgver=20.11.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Operations with ISO 8601 durations'
 arch=('any')
 url='https://github.com/bolsote/isoduration'
