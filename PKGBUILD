@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
 pkgname=python-python-pkcs11
 _name=${pkgname#python-}
 pkgver=0.7.0
-pkgrel=6
+pkgrel=7
 pkgdesc='PKCS#11/Cryptoki support for Python'
 arch=('x86_64')
 url='https://github.com/danni/python-pkcs11'
