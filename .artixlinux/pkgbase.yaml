@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-ndg-httpsclient
-  version: 0.5.1-13
+  version: 0.5.1-14
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.5.1-13
+    version: 0.5.1-14
     packages:
-      - python-ndg-httpsclient-0.5.1-13-any.pkg.tar.zst
+      - python-ndg-httpsclient-0.5.1-14-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
