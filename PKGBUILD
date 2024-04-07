@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-lexicon
 pkgver=2.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Powerful dict subclass(es) with aliasing & attribute access"
 url="https://github.com/bitprophet/lexicon"
 license=('BSD')
