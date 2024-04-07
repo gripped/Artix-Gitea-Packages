@@ -4,7 +4,7 @@
 _pyname=watchfiles
 pkgname=python-$_pyname
 pkgver=0.21.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Simple, modern and high performance file watching and code reload in python'
 url='https://github.com/samuelcolvin/watchfiles'
 depends=(python
