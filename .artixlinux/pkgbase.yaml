@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-fasteners
-  version: 0.19-2
+  version: 0.19-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.19-2
+    version: 0.19-3
     packages:
-      - python-fasteners-0.19-2-any.pkg.tar.zst
+      - python-fasteners-0.19-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
