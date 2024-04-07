@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Rémy Oudompheng <remy@archlinux.org>
 
 pkgname=python-cson
 pkgver=0.8
-pkgrel=6
+pkgrel=7
 pkgdesc="A Python parser for Coffeescript Object Notation (CSON)"
 arch=('any')
 url="https://github.com/avakar/pycson"
