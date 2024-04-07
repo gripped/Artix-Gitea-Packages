@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=python-multipart
 pkgname=python-$_pkgname
 pkgver=0.0.6
-pkgrel=2
+pkgrel=3
 pkgdesc='streaming multipart parser for Python'
 arch=('any')
 url='https://github.com/andrew-d/python-multipart'
