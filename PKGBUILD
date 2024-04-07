@@ -1,16 +1,25 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Damir Perisa <damir.perisa@bluewin.ch>
 
 pkgbase=openbabel
 pkgname=(openbabel python-openbabel)
 pkgver=3.1.1
-pkgrel=7
+pkgrel=8
 pkgdesc='A library designed to interconvert between many file formats used in molecular modeling and computational chemistry'
 arch=(x86_64)
 url='https://openbabel.org/wiki/Main_Page'
 license=(GPL)
-makedepends=(cmake eigen wxwidgets-gtk3 boost python swig maeparser rapidjson coordgen)
+makedepends=(boost
+             cmake
+             coordgen
+             eigen
+             maeparser
+             python-setuptools
+             rapidjson
+             swig
+             wxwidgets-gtk3)
 source=(https://github.com/openbabel/openbabel/releases/download/openbabel-${pkgver//./-}/openbabel-$pkgver-source.tar.bz2
         https://github.com/openbabel/openbabel/commit/c0570bfe.patch)
 sha256sums=('a6ec8381d59ea32a4b241c8b1fbd799acb52be94ab64cdbd72506fb4e2270e68'
@@ -32,14 +41,17 @@ build() {
 }
 
 package_openbabel() {
-  depends=(libxml2 cairo coordgen)
+  depends=(cairo
+           coordgen
+           libxml2)
   optdepends=('wxwidgets-gtk3: GUI interface')
 
   DESTDIR="$pkgdir" cmake --install build
 }
 
 package_python-openbabel() {
-  depends=(python openbabel)
+  depends=(openbabel
+           python)
 
   DESTDIR="$pkgdir" cmake --install build/scripts
 }
