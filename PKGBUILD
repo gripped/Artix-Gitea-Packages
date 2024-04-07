@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=sphinx-argparse-cli
 pkgname=python-$_pkgname
 pkgver=1.11.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Render CLI arguments (sub-commands friendly) defined by argparse module'
 arch=('any')
 url='https://github.com/tox-dev/sphinx-argparse-cli'
