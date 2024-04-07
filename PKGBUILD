@@ -17,6 +17,8 @@ sha256sums=('78309297c82a95ee38ed3224c98b93d330128c753a43893f63bbe969320e4979')
 build() {
   cmake -B build -S ${pkgname^^}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCMAKE_SKIP_RPATH=ON \
     -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON \
     -DADIOS2_HAVE_HDF5_VOL=OFF \
