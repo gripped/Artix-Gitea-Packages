@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libieee1284
-  version: 0.2.11-15
+  version: 0.2.11-16
   arch:
     - x86_64
   pkgname:
     - libieee1284
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.2.11-16
+    packages:
+      - libieee1284-0.2.11-16-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Manolis Tzanidakis <manolis@archlinux.org>
 
 pkgname=libieee1284
 pkgver=0.2.11
 _tag=${pkgver//\./_}
-pkgrel=15
+pkgrel=16
 pkgdesc="A library to query devices connected in parallel port"
 arch=('x86_64')
 license=('GPL2')
