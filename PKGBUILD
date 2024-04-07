@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer:
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 _name=manuel
 pkgname=python-manuel
 pkgver=1.12.4
-pkgrel=4
+pkgrel=5
 pkgdesc="Manuel lets you build tested documentation"
 arch=(any)
 license=(Apache)
