@@ -18,7 +18,6 @@ build() {
   cmake -B build -S ${pkgname^^}-${pkgver} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_PREFIX_PATH=/usr \
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DCMAKE_SKIP_RPATH=ON \
     -DADIOS2_USE_EXTERNAL_DEPENDENCIES=ON \
     -DADIOS2_HAVE_HDF5_VOL=OFF \
