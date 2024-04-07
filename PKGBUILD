@@ -2,7 +2,7 @@
 
 pkgname=python-invoke
 pkgver=2.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Pythonic task execution"
 url="https://github.com/pyinvoke/invoke"
 license=('BSD')
@@ -24,7 +24,7 @@ build() {
 
 check() {
   cd invoke-$pkgver
-  PYTHONPATH="$PWD"/build/lib pytest -s tests -k 'not pty' ||: # Works locally
+  PYTHONPATH="$PWD"/build/lib pytest -s tests -k 'not pty'
 }
 
 package() {
