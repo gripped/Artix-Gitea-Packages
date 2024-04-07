@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
 
 _pkgname=fissix
 pkgname=python-fissix
 pkgver=21.11.13
-pkgrel=2
+pkgrel=3
 pkgdesc="Fork of lib2to3 with patch for Python issue33983 support"
 arch=('any')
 url="https://github.com/jreese/${_pkgname}"
