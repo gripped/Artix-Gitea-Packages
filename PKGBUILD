@@ -4,7 +4,7 @@
 
 pkgname=cppcheck
 pkgver=2.12.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A tool for static C/C++ code analysis'
 arch=('x86_64')
 url='http://cppcheck.sourceforge.net/'
@@ -61,8 +61,7 @@ build() {
 
   # Manuals
   pushd "$pkgname"
-#  xsversion="1.79.2"
-  xsversion="$(pacman -Qi docbook-xsl| grep Version | awk '{print $3'} | cut -d- -f1)"
+  xsversion=$(pacman -Qi docbook-xsl | grep ^Version | sed -e 's/.*: //' -e 's/-[0-9]$//')
   make DB2MAN=/usr/share/xml/docbook/xsl-stylesheets-${xsversion}-nons/manpages/docbook.xsl man
   pandoc man/manual.md -o man/manual.html -s --number-sections --toc
   pandoc man/reference-cfg-format.md -o man/reference-cfg-format.html -s --number-sections --toc
