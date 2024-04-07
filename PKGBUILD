@@ -1,5 +1,5 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Geoffrey Teale <tealeg@stop-squark>
 # Contributor: Mark, Huo Mian <markhuomian[at]gmail[dot]com>
 # Contributor: Biginoz <biginoz a free dot fr>
@@ -7,30 +7,33 @@
 
 pkgname=redshift
 pkgver=1.12
-pkgrel=8
+pkgrel=9
 pkgdesc='Adjusts the color temperature of your screen according to your surroundings.'
 arch=('x86_64')
 url='http://jonls.dk/redshift/'
-license=('GPL3')
+license=('GPL-3.0-only')
 depends=('libdrm' 'libxcb' 'libxxf86vm')
 optdepends=('python-gobject: for redshift-gtk'
             'python-xdg: for redshift-gtk'
             'gtk3: for redshift-gtk'
             'geoclue: for automatic location based on GeoClue2') 
 makedepends=('intltool' 'python')
-source=("https://github.com/jonls/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
-md5sums=('5d04f2413dacdf3434cb86f373842462')
-sha256sums=('d2f8c5300e3ce2a84fe6584d2f1483aa9eadc668ab1951b2c2b8a03ece3a22ba')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/jonls/redshift/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('dd816df79765f87a0838b1568fbc40c3e8bdb4aef0e77712c85623afe34a29ad')
+
+prepare() {
+	cd "${pkgname}-${pkgver}"
+	./bootstrap
+	./configure --prefix=/usr --enable-drm --enable-randr --enable-vidmode --enable-geoclue2 \
+	--with-systemduserunitdir=no
+}
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  ./configure --prefix=/usr --enable-drm --enable-randr --enable-vidmode --enable-geoclue2 \
-    --with-systemduserunitdir=no
-  make
+	cd "${pkgname}-${pkgver}"
+	make
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make DESTDIR="${pkgdir}" install
+	cd "${pkgname}-${pkgver}"
+	make DESTDIR="${pkgdir}" install
 }
