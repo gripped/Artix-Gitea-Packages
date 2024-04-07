@@ -3,7 +3,7 @@
 pkgname=python-ini2toml
 pkgver=0.13
 _commit=ed8c5f15930e503e4598e89d5f1b053315330543
-pkgrel=2
+pkgrel=3
 pkgdesc="Automatically conversion of .ini/.cfg files to TOML equivalents"
 url="https://github.com/abravalheri/ini2toml"
 license=('MPL')
