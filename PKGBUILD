@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=stdlibs
 pkgname=python-$_pkgname
 pkgver=2022.10.9
-pkgrel=2
+pkgrel=3
 pkgdesc="Simple list of top-level packages in Python's stdlib"
 arch=('any')
 url='https://github.com/omnilib/stdlibs'
