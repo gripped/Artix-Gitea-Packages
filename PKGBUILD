@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: Hilton Medeiros <medeiros.hilton@gmail.com>
 
 pkgname=python-pbkdf2
 pkgver=1.3
-pkgrel=11
+pkgrel=12
 pkgdesc='Password-based key derivation function PBKDF2'
 url='https://www.dlitz.net/software/python-pbkdf2/'
 arch=('any')
