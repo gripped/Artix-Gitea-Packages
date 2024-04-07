@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: 
 # Contributor:	Jesse Jaara	<gmail.com: jesse.jaara>
 # Contributor:	Jussi Timperi	<gmail.com: jussi.timperi>
 
 pkgname=libvoikko
 pkgver=4.3.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A spelling and grammar checker, hyphenator and collection of related linguistic data for Finnish language"
 arch=(x86_64)
 url="http://voikko.sourceforge.net"
