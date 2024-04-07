@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Filip Brcic <brcha@gna.org>
 # Contributor: Mika Fischer <mika.fischer@zoopnet.de>
 # Contributor: Gergely Imreh <imrehgATgmailDOTcom>
 
 pkgname=ninja
 pkgver=1.11.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Small build system with a focus on speed'
 arch=(x86_64)
 url='https://ninja-build.org/'
