@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=HeapDict
 pkgname=python-${_pkg,,}
 pkgver=1.0.1
-pkgrel=6
+pkgrel=7
 pkgdesc="Heap with decrease-key and increase-key operations"
 arch=(any)
 url="https://github.com/DanielStutzbach/heapdict"
@@ -22,7 +22,7 @@ build() {
 
 check() {
   cd ${_pkg}-${pkgver}
-  python test_heap.py
+  python -m unittest test_heap.py
 }
 
 package() {
