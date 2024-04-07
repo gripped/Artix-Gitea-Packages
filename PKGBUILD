@@ -1,4 +1,4 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: NicoHood <archlinux {cat} nicohood {dog} de>
 # PGP ID: 97312D5EB9D7AE7D0BD4307351DAE9B7C1AE9161
 # Contributor: Martchus <martchus@gmx.net>
 # Contributor: Nuno Araujo <nuno.araujo@russo79.com>
@@ -9,7 +9,7 @@ _pkgname=pyusb
 pkgname=python-$_pkgname
 pkgdesc='USB access on Python'
 pkgver=1.2.1
-pkgrel=4
+pkgrel=5
 arch=('any')
 url='https://github.com/pyusb/pyusb'
 license=('custom')
