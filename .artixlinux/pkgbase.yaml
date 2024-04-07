@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pymysql
-  version: 1.1.0-2
+  version: 1.1.0-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.1.0-2
+    version: 1.1.0-3
     packages:
-      - python-pymysql-1.1.0-2-any.pkg.tar.zst
+      - python-pymysql-1.1.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

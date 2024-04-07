@@ -3,7 +3,7 @@
 _name=PyMySQL
 pkgname=python-pymysql
 pkgver=1.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Pure Python MySQL Client"
 arch=(any)
 url="https://github.com/PyMySQL/PyMySQL/"
