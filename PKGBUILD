@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=spur
 pkgname=python-${_pkg}
 pkgver=0.3.23
-pkgrel=2
+pkgrel=3
 pkgdesc="Run commands and manipulate files locally or over SSH using the same interface"
 arch=(any)
 url="https://github.com/mwilliamson/spur.py"
