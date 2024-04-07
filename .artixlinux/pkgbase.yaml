@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libolm
-  version: 3.2.16-1
+  version: 3.2.16-2
   arch:
     - x86_64
   pkgname:
     - libolm
     - python-olm
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.2.16-2
+    packages:
+      - libolm-3.2.16-2-x86_64.pkg.tar.zst
+      - python-olm-3.2.16-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
