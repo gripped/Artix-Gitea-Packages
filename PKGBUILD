@@ -7,17 +7,17 @@
 
 pkgname=distcc
 pkgver=3.4
-pkgrel=9
+pkgrel=10
 pkgdesc='Distributed compilation service for C, C++ and Objective-C'
 arch=(x86_64)
 url='https://github.com/distcc/distcc'
 license=(GPL)
 depends=(avahi popt python)
-makedepends=(git gtk3)
+makedepends=(git gtk3 python-setuptools)
 optdepends=('gtk3: for distccmon')
 backup=(etc/conf.d/distccd
         etc/distcc/hosts)
-source=("git+$url#tag=v$pkgver"
+source=("git+$url?signed#tag=v$pkgver"
         distccd.conf.d
         sysusers.conf
         meson_triple.patch::https://github.com/distcc/distcc/pull/427/commits/850db9eec0d5dd7f47ade8ffca91b679081f6d85.patch)
