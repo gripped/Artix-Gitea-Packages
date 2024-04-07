@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pytest-isort
 pkgver=3.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='pytest plugin to perform isort checks (import ordering)'
 arch=('any')
 license=('BSD')
