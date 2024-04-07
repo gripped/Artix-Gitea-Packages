@@ -1,16 +1,16 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: DonVla <donvla@users.sourceforge.net>
 
 pkgname=i2c-tools
 pkgver=4.3
-pkgrel=4
+pkgrel=5
 pkgdesc="Heterogeneous set of I2C tools for Linux that used to be part of lm-sensors"
 arch=('x86_64')
 url="https://i2c.wiki.kernel.org/index.php/I2C_Tools"
 license=('GPL')
 depends=('perl')
-makedepends=('python' 'git')
+makedepends=('python-setuptools' 'git')
 optdepends=('read-edid: for decode-edid script'
             'python: for smbus module')
 source=(
