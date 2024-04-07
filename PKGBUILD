@@ -3,11 +3,11 @@
 
 pkgname=xcb-proto
 pkgver=1.16.0
-pkgrel=1
+pkgrel=2
 pkgdesc="XML-XCB protocol descriptions"
 arch=(any)
 url="https://xcb.freedesktop.org/"
-license=('custom')
+license=('X11-distribute-modifications-variant')
 makedepends=('python' 'libxml2')
 source=(https://xorg.freedesktop.org/archive/individual/proto/$pkgname-$pkgver.tar.xz{,.sig})
 sha512sums=('54906f379a7aa2cbbfbbe54764c02dbf522ca8f6c54e07d4faae471aac3aee25d0359be38c808c8da887de228aed745582a78b2f56714b023bca8f3513b24972'
