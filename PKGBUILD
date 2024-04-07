@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Muflone http://www.muflone.com/contacts/english/
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 # Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 
 pkgname=python-docopt
 _pkgname=docopt
 pkgver=0.6.2
-pkgrel=12
+pkgrel=13
 pkgdesc="Pythonic argument parser, that will make you smile"
 arch=('any')
 url="https://github.com/docopt/docopt"
