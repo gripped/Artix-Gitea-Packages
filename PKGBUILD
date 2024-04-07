@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Storm Dragon <stormdragon2976@gmail.com>
 
 
 pkgname='python-hkdf'
 pkgver=0.0.3
-pkgrel=10
+pkgrel=11
 pkgdesc="HMAC-based Extract-and-Expand Key Derivation Function"
 arch=('any')
 url="https://github.com/casebeer/python-hkdf"
