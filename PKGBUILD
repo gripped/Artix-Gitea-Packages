@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-jeepney
 pkgver=0.8.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Low-level, pure Python DBus protocol wrapper"
 url="https://gitlab.com/takluyver/jeepney"
 license=('MIT')
