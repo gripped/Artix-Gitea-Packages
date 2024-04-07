@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-dirty-equals
-  version: 0.7.1.post0-1
+  version: 0.7.1.post0-3
   arch:
     - any
   pkgname:
     - python-dirty-equals
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.7.1.post0-3
+    packages:
+      - python-dirty-equals-0.7.1.post0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
