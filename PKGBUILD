@@ -8,14 +8,14 @@
 pkgname=python-keyring
 _name=keyring
 pkgver=25.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Store and access your passwords safely'
 arch=('any')
 url='https://github.com/jaraco/keyring'
 license=('PSF' 'MIT')
-depends=('python-jaraco.classes' 'python-secretstorage' 'python-importlib-metadata' 'python-jaraco.functools' 'python-jaraco.context')
+depends=('python-jaraco.classes' 'python-secretstorage' 'python-jaraco.functools' 'python-jaraco.context')
 makedepends=('python-build' 'python-installer' 'python-setuptools-scm' 'python-wheel')
-checkdepends=('python-pytest-flake8' 'python-pytest-runner' 'python-pytest-black' 'python-pytest-cov' 'python-pytest-mypy')
+checkdepends=('python-pytest-flake8' 'python-pytest-runner' 'python-pytest-black' 'python-pytest-mypy')
 optdepends=('python-keyrings-alt: Alternative backends'
             'python-dbus: kwallet backend')
 source=(https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz)
