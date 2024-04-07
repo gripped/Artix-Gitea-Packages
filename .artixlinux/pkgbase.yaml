@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-augeas
-  version: 1.1.0-7
+  version: 1.1.0-8
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.1.0-7
+    version: 1.1.0-8
     packages:
-      - python-augeas-1.1.0-7-any.pkg.tar.zst
+      - python-augeas-1.1.0-8-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
