@@ -1,24 +1,26 @@
 ---
 pkgbase:
   name: audit
-  version: 4.0.1-2
+  version: 4.0.1-3
   arch:
     - x86_64
   pkgname:
     - audit
     - python-audit
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 4.0.1-3
+    packages:
+      - audit-4.0.1-3-x86_64.pkg.tar.zst
+      - python-audit-4.0.1-3-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
