@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=python-txrequests
 pkgver=0.9.6
-pkgrel=9
+pkgrel=10
 pkgdesc='Asynchronous Python HTTP Requests for Humans using twisted'
 license=('Apache')
 arch=(any)
