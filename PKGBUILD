@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-funcparserlib
 pkgver=1.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Recursive descent parsing library based on functional combinators"
 url="https://funcparserlib.pirx.ru"
 license=('MIT')
