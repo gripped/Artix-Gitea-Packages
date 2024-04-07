@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pytest-celery
 pkgver=0.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc='A shim pytest plugin to enable celery.contrib.pytest'
 arch=('any')
 license=('BSD')
