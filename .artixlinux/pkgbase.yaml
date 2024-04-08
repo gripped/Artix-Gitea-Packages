@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-distutils-extra
-  version: 2.39-12
+  version: 2.39-13
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.39-12
+    version: 2.39-13
     packages:
-      - python-distutils-extra-2.39-12-any.pkg.tar.zst
+      - python-distutils-extra-2.39-13-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
