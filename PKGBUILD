@@ -5,7 +5,7 @@ pkgname=nvchecker
 pkgver=2.13.1
 # curl https://api.github.com/repos/lilydjwg/nvchecker/git/ref/tags/v$pkgver | jq -r .object.sha
 _tag=7da0a64a765d5960aedc708ce02eccb67f595c3e
-pkgrel=1
+pkgrel=2
 pkgdesc="New version checker for software releases"
 arch=('any')
 url="https://github.com/lilydjwg/nvchecker"
@@ -40,6 +40,10 @@ validpgpkeys=(
 )
 
 _backports=(
+  # tests: update Debian package versions
+  'beceadddee1fc6b583c68fc9a21ed4b51d889895'
+  # tests: update Debian package versions again
+  'c306b44711dc11c4b5b49c2fe29b79d266e21733'
 )
 
 pkgver() {
