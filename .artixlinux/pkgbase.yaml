@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: botan
-  version: 3.3.0-2
+  version: 3.4.0-1
   arch:
     - x86_64
   pkgname:
     - botan
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.3.0-1
+    version: 3.4.0-1
     packages:
-      - botan-3.3.0-1-x86_64.pkg.tar.zst
+      - botan-3.4.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
