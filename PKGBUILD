@@ -1,13 +1,13 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Santiago Torres-Arias <santiago@archlinux.org>
 # Maintainer: nblock <nblock [/at\] archlinux DOT us>
 # Contributor: Thomas Conneely <tc116 at le dot ac dot uk>
 
 pkgname=python-bitstring
 pkgver=3.1.9
-pkgrel=4
+pkgrel=5
 pkgdesc='Python module designed to help make the creation, manipulation and analysis of binary data as simple and natural as possible'
 arch=('any')
-url="https://scott-griffiths.github.io/bitstring/"
+url="https://github.com/scott-griffiths/bitstring"
 license=('MIT')
 depends=('python')
 makedepends=('python-setuptools')
