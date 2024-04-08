@@ -8,7 +8,7 @@ pkgname=(
   glib2-docs
 )
 pkgver=2.80.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -42,9 +42,8 @@ options=(
   debug
   staticlibs
 )
-_commit=763cc3b238398614c20069fd67642730e3a6519b  # tags/2.80.0^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/glib.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/glib.git?signed#tag=$pkgver"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
   0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
   gio-querymodules.hook
@@ -54,13 +53,10 @@ b2sums=('cc3a6a7a14fef1aabc08d3bdfe98f66e3ecf3591ac054d83aa9404c8c9cd72e690a4c26
         'SKIP'
         '94c73ca7070c239494873dd52d6ee09382bbb5b1201f7afd737cfa140b1a2fb0744b2c2831baf3943d1d072550c35888d21ce6f19f89481ff9d1a60d9a0b30e0'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
-        'd30d349b4cb4407839d9074ce08f5259b8a5f3ca46769aabc621f17d15effdb89c4bf19bd23603f6df3d59f8d1adaded0f4bacd0333afcab782f2d048c882858')
-
-
-pkgver() {
-  cd glib
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+        'acc2f474139e535f4bdd70ac22a9150f786b3395e679b14d0d3fbb9361d511bb1b5069d95b2a7ac9c0f3d901b03a0c037eb273446ba00764191b30a777bd2bc9')
+validpgpkeys=(
+  923B7025EE03C1C59F42684CF0942E894B2EAFA0 # Philip Withnall <pwithnall@gnome.org>
+)
 
 prepare() {
   cd glib

@@ -1,24 +1,26 @@
 ---
 pkgbase:
   name: glib2
-  version: 2.80.0-2
+  version: 2.80.0-3
   arch:
     - x86_64
   pkgname:
     - glib2
     - glib2-docs
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.80.0-3
+    packages:
+      - glib2-2.80.0-3-x86_64.pkg.tar.zst
+      - glib2-docs-2.80.0-3-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
