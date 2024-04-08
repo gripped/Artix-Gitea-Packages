@@ -2,14 +2,14 @@
 
 pkgname=python-pipenv-to-requirements
 pkgver=0.9.0
-pkgrel=8.1
+pkgrel=9
 pkgdesc="Generate requirements[-dev].txt from Pipfile using pipenv"
 url="https://github.com/gsemet/pipenv-to-requirements"
 license=('MIT')
 arch=('any')
 depends=('python-pbr' 'python-pipenv')
-makedepends=('python-setuptools')
 checkdepends=('python-pyfakefs' 'python-pytest-mock')
+makedepends=('python-setuptools')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/gsemet/pipenv-to-requirements/archive/$pkgver.tar.gz"
         $pkgname-pipenv-2022.10.9.patch::https://github.com/gsemet/pipenv-to-requirements/pull/26.patch)
 sha512sums=('f89be89e120cc3d9a543c8efc1ff4c517f3d47145133a7db2f842dcbf168099588a2d281b7fb69b6ddf63439fbdebafd683b258a349cc7ad50efd454495caf14'
@@ -20,7 +20,6 @@ export PBR_VERSION=$pkgver
 prepare() {
   cd pipenv-to-requirements-$pkgver
   patch -p1 -i ../$pkgname-pipenv-2022.10.9.patch
-  sed -i 's/pipfile = Project()._lockfile/pipfile = Project().lockfile/' pipenv_to_requirements/__init__.py
 }
 
 build() {
