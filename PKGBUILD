@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgbase=keystone
 pkgname=('keystone' 'python-keystone')
 pkgver=0.9.2
-pkgrel=5
+pkgrel=6
 pkgdesc='Lightweight multi-platform, multi-architecture assembler framework'
 url='https://www.keystone-engine.org/'
 arch=('x86_64')
