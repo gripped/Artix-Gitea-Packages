@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: caribou
-  version: 0.4.21+75+g8ad9883-5
+  version: 0.4.21+75+g8ad9883-6
   arch:
     - x86_64
   pkgname:
     - caribou
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.21+75+g8ad9883-6
+    packages:
+      - caribou-0.4.21+75+g8ad9883-6-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
