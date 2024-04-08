@@ -1,12 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Christoph Zeiler <archNOSPAM_at_moonblade.dot.org>
 
 pkgbase=bullet
 pkgname=('bullet' 'bullet-dp' 'bullet-docs' 'python-pybullet')
 pkgver=3.25
 _pkgver=3.25
-pkgrel=3
+pkgrel=4
 pkgdesc="A 3D Collision Detection and Rigid Body Dynamics Library for games and animation"
 arch=('x86_64')
 url="http://www.bulletphysics.com/Bullet/"

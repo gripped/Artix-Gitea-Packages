@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bullet
-  version: 3.25-3
+  version: 3.25-4
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - bullet-docs
     - python-pybullet
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,12 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.25-4
+    packages:
+      - bullet-3.25-4-x86_64.pkg.tar.zst
+      - bullet-dp-3.25-4-x86_64.pkg.tar.zst
+      - bullet-docs-3.25-4-x86_64.pkg.tar.zst
+      - python-pybullet-3.25-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -58,3 +62,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
