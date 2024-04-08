@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-extras
 pkgver=1.0.0
-pkgrel=11
+pkgrel=12
 pkgdesc="Useful extra bits for Python - things that should be in the standard library"
 arch=('any')
 license=('MIT')
