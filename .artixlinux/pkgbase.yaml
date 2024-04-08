@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-faker
-  version: 24.4.0-2
+  version: 24.5.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.4.0-2
+    version: 24.5.0-1
     packages:
-      - python-faker-24.4.0-2-any.pkg.tar.zst
+      - python-faker-24.5.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
