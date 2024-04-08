@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pypdf
-  version: 4.2.0-1
+  version: 4.2.0-2
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.2.0-1
+    version: 4.2.0-2
     packages:
-      - python-pypdf-4.2.0-1-any.pkg.tar.zst
+      - python-pypdf-4.2.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
