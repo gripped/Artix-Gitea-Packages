@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-flexmock
-  version: 0.12.0-2
+  version: 0.12.1-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.12.0-2
+    version: 0.12.1-1
     packages:
-      - python-flexmock-0.12.0-2-any.pkg.tar.zst
+      - python-flexmock-0.12.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
