@@ -1,15 +1,15 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Douglas Soares de Andrade <dsa@aur.archlinux.br>
 
 pkgname=python-pyro
 pkgver=4.82
-pkgrel=2
+pkgrel=3
 pkgdesc='Distributed object middleware (RPC)'
 url='https://github.com/irmen/Pyro4'
 arch=(any)
 license=(MIT)
-makedepends=(git)
+makedepends=(git python-setuptools)
 depends=(python python-serpent)
 source=("git+$url#commit=40336cb0d47c326ebdd498d7e3afb9a34e1045fe") # tag: 4.82
 b2sums=('SKIP')
