@@ -9,7 +9,7 @@ arch=('any')
 url="https://github.com/jamielennox/requests-mock"
 license=('Apache')
 depends=('python-requests' 'python-six')
-makedepends=('git' 'python-pbr')
+makedepends=('git' 'python-pbr' 'python-setuptools')
 checkdepends=('python-purl' 'python-pytest' 'python-requests-futures' 'python-testtools' 'python-fixtures')
 source=("git+https://github.com/jamielennox/requests-mock.git#commit=$_commit")
 sha512sums=('SKIP')
