@@ -4,14 +4,13 @@
 _pyname=fastparquet
 pkgname=python-$_pyname
 pkgver=0.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A python implementation of the parquet format'
 url='https://github.com/dask/fastparquet'
 depends=(python python-cramjam python-pandas python-fsspec)
 makedepends=(cython python-build python-installer python-setuptools python-wheel python-numpy)
-checkdepends=(python-pytest-runner)
 optdepends=(python-s3fs)
-license=(Apache)
+license=(Apache-2.0)
 arch=(x86_64)
 source=(https://github.com/dask/fastparquet/archive/$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('591e20b128da87e369aa23178a29f2aaff4e4e69feab845be7ea456b3213fc96')
