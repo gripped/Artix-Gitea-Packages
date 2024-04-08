@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _pkgname=clikit
 pkgname=python-clikit
 pkgver=0.6.2
-pkgrel=9
+pkgrel=10
 pkgdesc='clikit allows you to create beautiful and testable command-line interfaces'
 arch=(any)
 url="https://github.com/sdispater/${_pkgname}"
