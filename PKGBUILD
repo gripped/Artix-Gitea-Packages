@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Sebastien Leduc <sebastien@sleduc.fr>
 # Contributor: Roberto Catini <roberto.catini@gmail.com>
 
 pkgname=python-requests-oauthlib
 pkgver=1.3.1
-pkgrel=3
+pkgrel=4
 pkgdesc="First-class OAuth library support for Requests"
 arch=('any')
 url="https://pypi.python.org/pypi/requests-oauthlib"
