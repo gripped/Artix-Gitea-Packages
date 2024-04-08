@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 _pkgname=TinyFPGA-Bootloader
 pkgname=tinyprog
 pkgver=1.0.23
-pkgrel=4
+pkgrel=5
 pkgdesc='TinyFPGA CLI Programmer'
 arch=('any')
 url='https://github.com/tinyfpga/TinyFPGA-Bootloader'
