@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-requests-kerberos
 pkgver=0.14.0
-pkgrel=4
+pkgrel=5
 pkgdesc="A kerberos of useful classes and functions to be used with python-requests."
 arch=('any')
 url="https://github.com/requests/requests-kerberos"
