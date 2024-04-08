@@ -1,12 +1,12 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: onny <onny@project-insanity.org>
 
 pkgname=python-passlib
 pkgver=1.7.4
-pkgrel=6
+pkgrel=7
 pkgdesc="A password hashing library for Python"
 arch=('any')
-url="https://code.google.com/p/passlib/"
+url="https://passlib.readthedocs.io/en/stable"
 license=('custom:BSD')
 depends=("python")
 optdepends=("python-fastpbkdf2: accelerate PBKDF2-based hashes"
