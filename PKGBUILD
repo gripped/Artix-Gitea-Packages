@@ -1,11 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
-# Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _name=flit
 pkgname=python-flit
 pkgver=3.9.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Simplified packaging of Python modules'
 arch=('any')
 url='https://github.com/pypa/flit'
@@ -24,7 +23,9 @@ build() {
 
 check() {
   cd $_name-$pkgver
-  pytest -vv
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m pytest -vv
 }
 
 package_python-flit() {
