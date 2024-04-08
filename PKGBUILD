@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-wand
 pkgver=0.6.11
-pkgrel=2
+pkgrel=3
 pkgdesc="Ctypes-based simple MagickWand API binding for Python"
 url="https://github.com/emcconville/wand"
 license=('MIT')
