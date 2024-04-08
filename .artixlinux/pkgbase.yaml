@@ -1,20 +1,20 @@
 ---
 pkgbase:
   name: libgit2-glib
-  version: 1.2.0-1
+  version: 1.2.0-2
   arch:
     - x86_64
   pkgname:
     - libgit2-glib
     - libgit2-glib-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.0-2
+    packages:
+      - libgit2-glib-1.2.0-2-x86_64.pkg.tar.zst
+      - libgit2-glib-docs-1.2.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
