@@ -1,20 +1,21 @@
 ---
 pkgbase:
   name: dleyna
-  version: 0.8.2-2
+  version: 0.8.3-1
   arch:
     - x86_64
   pkgname:
     - dleyna
     - dleyna-docs
+    - python-dleyna
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.8.3-1
+    packages:
+      - dleyna-0.8.3-1-x86_64.pkg.tar.zst
+      - dleyna-docs-0.8.3-1-x86_64.pkg.tar.zst
+      - python-dleyna-0.8.3-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
