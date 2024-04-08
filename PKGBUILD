@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=EasyProcess
 pkgname=python-${_pkg,,}
 pkgver=1.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Easy to use python subprocess interface"
 arch=(any)
 url="https://github.com/ponty/EasyProcess"
