@@ -3,11 +3,11 @@
 
 pkgname=gom
 pkgver=0.4
-pkgrel=7
+pkgrel=8
 pkgdesc='GObject to SQLite object mapper library'
 arch=('x86_64')
 url='https://wiki.gnome.org/Projects/Gom'
-license=('LGPL')
+license=('LGPL-2.1-or-later')
 depends=('glib2' 'glibc' 'sqlite')
 makedepends=('gdk-pixbuf2' 'gobject-introspection' 'gtk-doc' 'meson' 'python-gobject')
 source=("https://download.gnome.org/sources/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz")
