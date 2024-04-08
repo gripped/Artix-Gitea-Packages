@@ -1,6 +1,6 @@
 # Maintainer: Torr <torr@artixlinux.org>
 pkgname=ayatana-ido
-pkgver=0.10.1
+pkgver=0.10.2
 pkgrel=1
 pkgdesc="Ayatana Indicator Display Objects"
 arch=("x86_64")
@@ -26,11 +26,12 @@ source=(
 	"https://github.com/AyatanaIndicators/$pkgname/archive/refs/tags/$pkgver.tar.gz"
 )
 sha256sums=(
-	"26187915a6f3402195e2c78d9e8a54549112a3cd05bb2fbe2059d3e78fc0e071"
+	"0daf8a2e5bba51225bc3724c0e53c3b569269f28ac3a14f6bed9920b44ecc856"
 )
 
 build() {
 	cd "$pkgname-$pkgver"
+	export HOME=/tmp
 	cmake -D CMAKE_INSTALL_PREFIX="/usr" .
 }
 
