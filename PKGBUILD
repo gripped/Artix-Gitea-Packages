@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: razer <razer@neuf.fr>
 
 pkgname=python-serpent
 pkgver=1.41
-pkgrel=3
+pkgrel=4
 pkgdesc='Serializer for literal Python expressions'
 url='https://github.com/irmen/Serpent'
 arch=(any)
