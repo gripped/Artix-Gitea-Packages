@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pymupdf
-  version: 1.24.1-1
+  version: 1.24.1-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.24.1-1
+    version: 1.24.1-2
     packages:
-      - python-pymupdf-1.24.1-1-x86_64.pkg.tar.zst
+      - python-pymupdf-1.24.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
