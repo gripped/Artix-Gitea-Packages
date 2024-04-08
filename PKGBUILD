@@ -7,14 +7,14 @@
 
 pkgname=lxc
 epoch=1
-pkgver=5.0.3
+pkgver=6.0.0
 pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
 url="https://linuxcontainers.org"
 depends=('bash' 'perl' 'libseccomp' 'libcap' 'python' 'rsync' 'wget')
-makedepends=('docbook2x' 'meson' 'lua' 'python-setuptools' 'apparmor')
-optdepends=('dnsmasq'
+makedepends=('docbook2x' 'elogind' 'meson' 'lua' 'python-setuptools' 'apparmor')
+optdepends=('dnsmasq: lxc-net.service'
 	    'lua'
 	    'lua-filesystem: lxc-top'
 	    'lua-alt-getopt: lxc-top')
@@ -24,9 +24,8 @@ backup=('etc/lxc/default.conf'
 	'etc/default/lxc')
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
-	"lxc.tmpfiles.d"
-       )
-sha256sums=('2693a4c654dcfdafb3aa95c262051d8122afa1b6f5cef1920221ebbdee934d07'
+	"lxc.tmpfiles.d")
+sha256sums=('3f6981c61ff39f9e550a18cf22d6e26792cde5dd34f9d3c93badfeaaee8814b2'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
@@ -39,11 +38,10 @@ prepare() {
 build() {
   cd "$pkgname-${pkgver/_/-}"
   local options=(
-  -Dinit-script=sysvinit
-  -Dsd-bus=disabled
+    -Dinit-script=sysvinit
   )
-
   artix-meson ${options[@]} build
+  meson compile -C build -v
 }
 
 package() {
