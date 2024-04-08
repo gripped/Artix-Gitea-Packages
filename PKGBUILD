@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=entrypoint2
 pkgname=python-${_pkg}
 pkgver=1.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Easy to use command-line interface for python modules"
 arch=(any)
 url="https://github.com/ponty/entrypoint2"
