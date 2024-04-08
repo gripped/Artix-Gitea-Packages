@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-matplotlib
-  version: 3.8.3-2
+  version: 3.8.3-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.8.3-2
+    version: 3.8.3-3
     packages:
-      - python-matplotlib-3.8.3-2-x86_64.pkg.tar.zst
+      - python-matplotlib-3.8.3-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
