@@ -1,15 +1,15 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 
 pkgname=python-geoip
 pkgver=1.3.2
-pkgrel=14
+pkgrel=15
 pkgdesc="Python bindings for the GeoIP IP-to-country resolver library"
 arch=('x86_64')
 url="https://pypi.python.org/pypi/GeoIP/"
 license=('LGPL')
 depends=('python' 'geoip')
-makedepends=('python' 'geoip')
+makedepends=('python-setuptools' 'geoip')
 source=(https://pypi.python.org/packages/source/G/GeoIP/GeoIP-${pkgver}.tar.gz)
 sha256sums=('a890da6a21574050692198f14b07aa4268a01371278dfc24f71cd9bc87ebf0e6')
 
