@@ -4,7 +4,7 @@ pkgname=python-aiobotocore
 _pkgname=aiobotocore
 # https://github.com/aio-libs/aiobotocore/releases
 pkgver=2.11.2
-pkgrel=1
+pkgrel=2
 pkgdesc='asyncio support for botocore library using aiohttp'
 arch=(any)
 url='https://github.com/aio-libs/aiobotocore'
@@ -32,8 +32,7 @@ check() {
   # test_lambda uses moto.awslambda, which requires a running Docker service
   # See: https://github.com/spulec/moto/issues/3276
   pytest -m moto tests \
-      --ignore=tests/test_lambda.py \
-      -k "not test_fail_proxy_request"
+      --ignore=tests/test_lambda.py
 }
 
 package() {
