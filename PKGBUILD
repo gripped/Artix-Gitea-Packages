@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 
 pkgname=python-pylibmc
 pkgver=1.6.3
-pkgrel=2
+pkgrel=3
 
 pkgdesc='Quick and small memcached client for Python'
 url='https://pypi.python.org/pypi/pylibmc'
@@ -10,7 +10,7 @@ arch=('x86_64')
 license=('GPL')
 
 depends=('libmemcached' 'python')
-makedepends=('python' 'gcc' 'zlib')
+makedepends=('python' 'gcc' 'zlib' 'python-setuptools')
 
 source=("https://pypi.org/packages/source/p/pylibmc/pylibmc-$pkgver.tar.gz")
 
