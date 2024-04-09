@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-mysqlclient
-  version: 2.1.1-2
+  version: 2.2.4-1
   arch:
     - x86_64
   pkgname:
     - python-mysqlclient
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.2.4-1
+    packages:
+      - python-mysqlclient-2.2.4-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
