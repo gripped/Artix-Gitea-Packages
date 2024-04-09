@@ -7,7 +7,7 @@
 
 pkgname=redshift
 pkgver=1.12
-pkgrel=9
+pkgrel=10
 pkgdesc='Adjusts the color temperature of your screen according to your surroundings.'
 arch=('x86_64')
 url='http://jonls.dk/redshift/'
@@ -24,12 +24,12 @@ sha256sums=('dd816df79765f87a0838b1568fbc40c3e8bdb4aef0e77712c85623afe34a29ad')
 prepare() {
 	cd "${pkgname}-${pkgver}"
 	./bootstrap
-	./configure --prefix=/usr --enable-drm --enable-randr --enable-vidmode --enable-geoclue2 \
-	--with-systemduserunitdir=no
 }
 
 build() {
 	cd "${pkgname}-${pkgver}"
+	./configure --prefix=/usr --enable-drm --enable-randr --enable-vidmode --enable-geoclue2 \
+	--with-systemduserunitdir=no
 	make
 }
 
