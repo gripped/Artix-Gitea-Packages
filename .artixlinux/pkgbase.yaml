@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: jupyter-nbconvert
-  version: 7.16.3-1
+  version: 7.16.3-2
   arch:
     - any
   pkgname:
     - jupyter-nbconvert
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 7.16.3-2
+    packages:
+      - jupyter-nbconvert-7.16.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
