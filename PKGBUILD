@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 pkgname=usort
 pkgver=1.0.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Safe, minimal import sorting for Python projects'
 arch=('any')
 url='https://github.com/facebookexperimental/usort'
