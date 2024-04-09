@@ -4,7 +4,7 @@
 
 pkgname=keepassxc
 pkgver=2.7.7
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Cross-platform community-driven port of Keepass password manager"
 arch=(x86_64)
 url="https://keepassxc.org/"
