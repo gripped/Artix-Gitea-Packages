@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: girara
-  version: 0.4.3-2
+  version: 0.4.3-3
   arch:
     - x86_64
   pkgname:
     - girara
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.4.3-3
+    packages:
+      - girara-0.4.3-3-x86_64.pkg.tar.zst
   galaxy:
     version: 0.4.3-2
     packages:
       - girara-0.4.3-2-x86_64.pkg.tar.zst
+team: galaxy
