@@ -4,7 +4,7 @@
 pkgname=python-cliff
 pkgver=4.6.0
 _commit=b6119d504deca17e8c092b12fae209d944c6fa73
-pkgrel=2
+pkgrel=3
 pkgdesc="Command Line Interface Formulation Framework"
 arch=('any')
 url="https://docs.openstack.org/cliff/latest/"
