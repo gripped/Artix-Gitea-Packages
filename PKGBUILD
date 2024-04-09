@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 _pyname=jupyter_console
 pkgname=${_pyname/_/-}
 pkgver=6.6.3
-pkgrel=2
+pkgrel=3
 pkgdesc='An IPython-like terminal frontend for Jupyter kernels in any language'
 arch=(any)
 url='https://pypi.org/project/jupyter_console/'
