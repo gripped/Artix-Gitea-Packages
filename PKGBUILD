@@ -14,7 +14,8 @@ license=('Apache-2.0')
 depends=('apr' 'apr-util' 'bash' 'dbus' 'expat' 'file' 'gcc-libs' 'glibc' 'libsasl' 'libutf8proc' 'lz4' 'serf' 'sqlite'
          'zlib' )
 makedepends=('apache' 'python' 'python-py3c' 'perl' 'swig' 'java-environment>=8'
-             'libsecret' 'kwallet5' 'kdelibs4support' 'ruby' 'python-setuptools')
+             'libsecret' 'kwallet5' 'kdelibs4support' 'ruby' 'python-setuptools'
+             'libtool' 'autogen' 'm4')
 optdepends=('libsecret: for GNOME Keyring for auth credentials'
             'kwallet5: for KWallet for auth credentials'
             'bash-completion: for svn bash completion'
@@ -23,7 +24,7 @@ optdepends=('libsecret: for GNOME Keyring for auth credentials'
             'ruby: for some hook scripts')
 checkdepends=('ruby-test-unit')
 provides=('svn')
-backup=('etc/conf.d/svnserve')
+backup=('etc/xinetd.d/svn')
 options=('!makeflags' '!emptydirs')
 source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2{,.asc}
         svnserve.tmpfiles
@@ -31,6 +32,7 @@ source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2{,.as
         ruby-frozen-nil.patch
         subversion-1.14.1-python-3.11-build.patch
         subversion-1.14.2-swig-py-Fix-conditionals-by-SWIG-version-and-by-Pyth.patch
+        svn.xinetd
 )
 sha512sums=('20ada4688ca07d9fb8da4b7d53b5084568652a3b9418c65e688886bae950a16a3ff37710fcfc9c29ef14a89e75b2ceec4e9cf35d5876a7896ebc2b512cfb9ecc'
             'SKIP'
@@ -38,7 +40,8 @@ sha512sums=('20ada4688ca07d9fb8da4b7d53b5084568652a3b9418c65e688886bae950a16a3ff
             '60d538160e738eb3b3e84a3881fe5a8d75c79053d3f31c4c29ef6ace6ccc5dd4367ed712766c911bae3436e9706e4dd144b270bb45161a6c1834a37e154d0440'
             'bb772e55acd9601121ad06b254c364e8d8cf772ca59b8df0cf4c5c5ecba110d4108d0363672f121f770550cdd052802474029e57643258f398aacd2b63ccb898'
             'cad1ef6359c4eecce4fc44fb0c8a01a7b9b94cd8b1b3f9bdd9d72b3591f75bada814a9597cea039c6e045f3f07807f17bd720e27cf7d8a92640bb45faaa6a982'
-            '9885226c2eea79712f316194fd9710bd940bce517cb2d3f1fcfbcb1edb8f10ae8496e7d03cd377cb991efa7259ff6930c488c603df206611bae4aa30a62cc596')
+            '9885226c2eea79712f316194fd9710bd940bce517cb2d3f1fcfbcb1edb8f10ae8496e7d03cd377cb991efa7259ff6930c488c603df206611bae4aa30a62cc596'
+            '154bd09b5fcd11353a715e7abe5e6e5c047db892bbf2265294ecb5365a86ed4f134ea1f0705f87166429bbb83be7cd6ae1f0d3f4c86c1f7dadc2e543b58f4aa2')
 validpgpkeys=('19BBCAEF7B19B280A0E2175E62D48FAD16A0DE01'
               '8BC4DAE0C5A4D65F404401074F7DBAA99A59B973'
               'BA3C15B1337CF0FB222BD41A1BCA6586A347943F'
@@ -108,6 +111,10 @@ package() {
    cp -a tools/hook-scripts "${pkgdir}"/usr/share/subversion/
    rm "${pkgdir}"/usr/share/subversion/hook-scripts/*.in
 
+   # xinetd
+   install -D -m 644 "${srcdir}"/svn.xinetd "${pkgdir}"/etc/xinetd.d/svn
+
+   # ... tmpfiles
    install -D -m 644 "${srcdir}"/svnserve.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/svnserve.conf
 
    install -Dm 644 tools/client-side/bash_completion \
