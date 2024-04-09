@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: weechat
-  version: 4.2.2-2
+  version: 4.2.2-3
   arch:
     - x86_64
   pkgname:
     - weechat
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.2.1-2
+    version: 4.2.2-3
     packages:
-      - weechat-4.2.1-2-x86_64.pkg.tar.zst
+      - weechat-4.2.2-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
