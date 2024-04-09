@@ -7,7 +7,7 @@ _pkgname=aws-xray-sdk-python
 pkgver=2.12.1
 # curl https://api.github.com/repos/aws/aws-xray-sdk-python/git/ref/tags/$pkgver | jq -r .object.sha
 _commit=c50fe3e144b4e0654d36b2be40c7ae7139a3e825
-pkgrel=1
+pkgrel=2
 pkgdesc='AWS X-Ray SDK for Python'
 arch=(any)
 url='https://github.com/aws/aws-xray-sdk-python'
@@ -15,7 +15,7 @@ license=(Apache)
 depends=(python python-botocore python-wrapt)
 # See extensions in https://github.com/aws/aws-xray-sdk-python/tree/master/aws_xray_sdk/ext
 optdepends=(python-aiobotocore python-aiohttp python-bottle python-django
-            python-flask python-flask-sqlalchemy python-httpx python-mysql-connector
+            python-flask python-httpx python-mysql-connector
             python-pg8000 python-psycopg2 python-pymongo python-pymysql
             python-pynamodb python-requests python-sqlalchemy)
 makedepends=(git python-build python-installer python-setuptools python-wheel ${optdepends[@]})
@@ -57,15 +57,24 @@ check() {
   export AWS_ACCESS_KEY_ID=fake_id
 
   # * Use --asyncio-mode=auto to work-around skipped async tests
+  # * Split core and ext tests following upstream [1] due to some
+  #   conflicts
   # * the test suite for pymysql uses testing.mysqld, which is not
-  #   compatible with MariaDB [1]
+  #   compatible with MariaDB [2]
+  # * tests fail with flask_sqlalchemy > 2.5.1 and upstream explicitly
+  #   states no support [3]
   # * tests fail with pg8000 > 1.20.0 and upstream explicitly
-  #   states no support [2]
-  # [1] https://github.com/tk0miya/testing.mysqld/issues/3
-  # [2] https://github.com/aws/aws-xray-sdk-python/pull/324
+  #   states no support [4]
+  # [1] https://github.com/aws/aws-xray-sdk-python/blob/2.12.1/.github/workflows/UnitTesting.yaml#L26
+  # [2] https://github.com/tk0miya/testing.mysqld/issues/3
+  # [3] https://github.com/aws/aws-xray-sdk-python/pull/360
+  # [4] https://github.com/aws/aws-xray-sdk-python/pull/324
   pytest -v tests --asyncio-mode=auto \
-                  --ignore tests/ext/pg8000 \
-                  --ignore tests/ext/pymysql
+                  --ignore tests/ext
+  pytest -v tests/ext --asyncio-mode=auto \
+                      --ignore tests/ext/flask_sqlalchemy \
+                      --ignore tests/ext/pg8000 \
+                      --ignore tests/ext/pymysql
 }
 
 package() {
