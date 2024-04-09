@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-jupyter-server-terminals
-  version: 0.5.3-1
+  version: 0.5.3-2
   arch:
     - any
   pkgname:
     - python-jupyter-server-terminals
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.5.3-2
+    packages:
+      - python-jupyter-server-terminals-0.5.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
