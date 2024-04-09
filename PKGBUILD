@@ -3,7 +3,7 @@
 
 pkgname=ansible
 pkgver=9.4.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Official assortment of Ansible collections'
 arch=('any')
 url='https://pypi.org/project/ansible/'

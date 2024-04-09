@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ansible
-  version: 9.4.0-3
+  version: 9.4.0-4
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 9.4.0-3
+    version: 9.4.0-4
     packages:
-      - ansible-9.4.0-3-any.pkg.tar.zst
+      - ansible-9.4.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
