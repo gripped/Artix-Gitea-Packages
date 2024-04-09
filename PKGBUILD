@@ -3,7 +3,7 @@
 
 pkgname=jupyter-nbclient
 pkgver=0.10.0
-pkgrel=1.1
+pkgrel=3
 pkgdesc='A tool for running Jupyter Notebooks in different execution contexts'
 arch=(any)
 url='https://github.com/jupyter/nbclient'
@@ -32,9 +32,7 @@ build() {
 
 check() {
   cd nbclient-$pkgver
-  python -m venv --system-site-packages test-env
-  test-env/bin/python -m pip install -e .
-  test-env/bin/python -m pytest -v -k 'not test_cli_simple' -W ignore::DeprecationWarning
+  pytest -v -k 'not test_cli_simple' # fails on build server
 }
 
 package() {
