@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tint2
-  version: 17.0.2-3
+  version: 17.0.2-4
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 17.0.2-3
+    version: 17.0.2-4
     packages:
-      - tint2-17.0.2-3-x86_64.pkg.tar.zst
+      - tint2-17.0.2-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
