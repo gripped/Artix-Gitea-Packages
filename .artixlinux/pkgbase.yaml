@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: yt-dlp
-  version: 2024.03.10-2
+  version: 2024.04.09-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2024.03.10-2
+    version: 2024.04.09-2
     packages:
-      - yt-dlp-2024.03.10-2-any.pkg.tar.zst
+      - yt-dlp-2024.04.09-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
