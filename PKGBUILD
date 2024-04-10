@@ -37,6 +37,7 @@ build() {
 
 check() {
   xvfb-run --auto-servernum cmake --build build --target test
+  xvfb-run --server-num=12345 cmake --build build --target test
 }
 
 package() {
