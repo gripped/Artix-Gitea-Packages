@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: Bartlomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
@@ -8,7 +8,7 @@
 
 pkgbase=dropbear
 pkgname=(dropbear dropbear-scp)
-pkgver=2022.83
+pkgver=2024.84
 pkgrel=1
 pkgdesc='Lightweight SSH server'
 arch=(x86_64)
@@ -17,7 +17,7 @@ license=(MIT)
 options=(emptydirs)
 makedepends=(git)
 validpgpkeys=('F7347EF2EE2E07A267628CA944931494F29C6773')
-source=("git+$url#commit=a4689e25ec85904b9111f4e96d3994ff17b1c3e6" # tag: DROPBEAR_2022.83
+source=("git+$url#commit=047bdd4cb0eefcc0011f2c5ed3248a987538bcf3" # tag: DROPBEAR_2024.84
         localoptions.h)
 b2sums=('SKIP'
         '49628bbce0d26eb33598de276ede705bd592a38b7892c9db0ceebfb0598a1ee6e7e84ed03dbf255ee1adcad0c5214d38dc03e6c04176a405f59a19765cb28388')
@@ -28,20 +28,16 @@ prepare() {
 
 build() {
   cd $pkgname
-  autoconf
-  autoheader
+  autoreconf
   ./configure --bindir=/usr/bin --prefix=/usr --sbindir=/usr/bin
-  make \
-    PROGRAMS='dbclient dropbear dropbearconvert dropbearkey scp' \
-    SCPPROGRESS=1
+  make PROGRAMS='dbclient dropbear dropbearconvert dropbearkey scp' SCPPROGRESS=1
 }
 
 package_dropbear() {
   depends=(libxcrypt zlib)
   install -d "$pkgdir/etc/$pkgname"
   make -C $pkgbase install DESTDIR="$pkgdir"
-  install -Dm644 $pkgbase/LICENSE \
-    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 $pkgbase/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 
 package_dropbear-scp() {
@@ -49,7 +45,6 @@ package_dropbear-scp() {
   provides=(scp)
   conflicts=(openssh)
   make -C $pkgbase install PROGRAMS=scp DESTDIR="$pkgdir"
-  install -Dm644 $pkgbase/LICENSE \
-    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 $pkgbase/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   rmdir "$pkgdir/usr/share/man/"{man1,}
 }
