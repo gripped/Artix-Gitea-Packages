@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: aws-cli
-  version: 1.32.34-2
+  version: 1.32.34-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.32.34-2
+    version: 1.32.34-3
     packages:
-      - aws-cli-1.32.34-2-any.pkg.tar.zst
+      - aws-cli-1.32.34-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
