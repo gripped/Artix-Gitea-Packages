@@ -1,10 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Brett Cornwall <ainola@archlinux.org>
 
 pkgname=tldr
 pkgver=3.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Command line client for tldr, a collection of simplified and community-driven man pages."
 arch=('any')
 url="https://github.com/tldr-pages/tldr-python-client"
