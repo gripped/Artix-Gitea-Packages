@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-jupyterlab-server
-  version: 2.26.0-1
+  version: 2.26.0-2
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.26.0-1
+    version: 2.26.0-2
     packages:
-      - python-jupyterlab-server-2.26.0-1-any.pkg.tar.zst
+      - python-jupyterlab-server-2.26.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
