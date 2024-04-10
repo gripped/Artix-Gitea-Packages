@@ -3,8 +3,8 @@
 
 pkgname=python-sentry_sdk
 _pkgname=sentry-python
-pkgver=1.44.1
-pkgrel=2
+pkgver=1.45.0
+pkgrel=1
 pkgdesc="The official Python SDK for Sentry.io"
 arch=('any')
 url="https://sentry.io/for/python"
@@ -31,7 +31,7 @@ optdepends=('python-aiohttp: adds support for the AIOHTTP-Server Web Framework'
             'python-pure-eval: for richer stacktraces & additional variables'
             'python-executing: for richer stacktraces & better function names')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/getsentry/sentry-python/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('f41f61356eaac2bd398b6f70efc88838080141588abc069392bc7880a7f2c3c4')
+sha256sums=('98c9ff0874110c5601945d7fe7177e157506c02c40e33b8a180ec14d7ae0cde3')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
@@ -41,6 +41,5 @@ build() {
 package() {
 	cd "${_pkgname}-${pkgver}"
 	python -m installer --destdir="${pkgdir}" dist/*.whl
-
 	install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
