@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-magic-wormhole-mailbox-server
-  version: 0.4.1-10
+  version: 0.4.1-11
   arch:
     - any
   pkgname:
     - python-magic-wormhole-mailbox-server
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.1-11
+    packages:
+      - python-magic-wormhole-mailbox-server-0.4.1-11-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
