@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: miniupnpc
-  version: 2.2.7-1
+  version: 2.2.7-2
   arch:
     - x86_64
   pkgname:
     - miniupnpc
     - python-miniupnpc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.2.7-2
+    packages:
+      - miniupnpc-2.2.7-2-x86_64.pkg.tar.zst
+      - python-miniupnpc-2.2.7-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
