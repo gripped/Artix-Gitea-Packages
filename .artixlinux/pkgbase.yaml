@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-sentry_sdk
-  version: 1.45.0-1
+  version: 1.45.0-2
   arch:
     - any
   pkgname:
     - python-sentry_sdk
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.44.1-2
+    version: 1.45.0-2
     packages:
-      - python-sentry_sdk-1.44.1-2-any.pkg.tar.zst
+      - python-sentry_sdk-1.45.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -4,7 +4,7 @@
 pkgname=python-sentry_sdk
 _pkgname=sentry-python
 pkgver=1.45.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The official Python SDK for Sentry.io"
 arch=('any')
 url="https://sentry.io/for/python"
