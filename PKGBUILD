@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=locket
 pkgname=python-${_pkg}
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="File-based locks for Python"
 arch=(any)
 url="https://github.com/mwilliamson/locket.py"
