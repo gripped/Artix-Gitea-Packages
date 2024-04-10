@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-colour
-  version: 0.1.5-11
+  version: 0.1.5-12
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.5-11
+    version: 0.1.5-12
     packages:
-      - python-colour-0.1.5-11-any.pkg.tar.zst
+      - python-colour-0.1.5-12-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
