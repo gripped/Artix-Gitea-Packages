@@ -6,7 +6,7 @@
 # Contributor: leeghoofd <abcdefg@solcon.nl>
 
 pkgname=yakuake
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='A drop-down terminal emulator based on KDE konsole technology'
 arch=(x86_64)
@@ -41,14 +41,14 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications
         kde-utilities)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('6824c41e538e5a8c52a613658bc76a6ba281fddb9eb9b4f701414533cd37419c'
+sha256sums=('e45ee0d05f22543fd4565e42e8cb20b5020862d7bba6f33e645007fc60d64659'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
