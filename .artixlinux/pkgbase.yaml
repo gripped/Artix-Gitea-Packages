@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kopeninghours
-  version: 24.02.1-2
+  version: 24.02.2-2
   arch:
     - x86_64
   pkgname:
     - kopeninghours
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - kopeninghours-24.02.1-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.02.2-2
+    packages:
+      - kopeninghours-24.02.2-2-x86_64.pkg.tar.zst
   world:
     version: 24.02.1-1
     packages:
