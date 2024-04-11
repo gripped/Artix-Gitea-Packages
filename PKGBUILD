@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=libgravatar
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='KDE PIM library providing Gravatar support'
 arch=(x86_64)
@@ -22,14 +22,14 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('91f908dcb4819f5d49353fe0dd8a3b29a3793722edd8230534b37fca6ebab150'
+sha256sums=('b7df55f09b32dcfe668e549c71acba77cd62097a18713b3112befd6f4a3e5285'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   cmake --build build
