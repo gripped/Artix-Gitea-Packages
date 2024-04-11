@@ -4,7 +4,7 @@
 
 pkgname=certbot
 pkgver=2.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An ACME client'
 arch=('any')
 license=('Apache')
@@ -79,7 +79,6 @@ check() {
 }
 
 package() {
-  # systemd integration
   install -vDm644 tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
 
   cd "$_repo/$pkgname"
