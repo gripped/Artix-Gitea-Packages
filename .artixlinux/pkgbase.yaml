@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: gom
-  version: 0.4-8
+  version: 0.5.1-1
   arch:
     - x86_64
   pkgname:
     - gom
+    - gom-docs
 actions:
   addRepo: world-goblins
   removeRepo: null
@@ -25,9 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.4-8
+    version: 0.5.1-1
     packages:
-      - gom-0.4-8-x86_64.pkg.tar.zst
+      - gom-0.5.1-1-x86_64.pkg.tar.zst
+      - gom-docs-0.5.1-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
