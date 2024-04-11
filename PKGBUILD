@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Contributor: wangjiezhe <wangjiezhe AT yandex DOT com>
 
 _name=cheroot
 pkgname=python-cheroot
 pkgdesc="Highly-optimized, pure-python HTTP server"
 pkgver=9.0.0
-pkgrel=5
+pkgrel=6
 arch=('any')
 url="https://github.com/cherrypy/cheroot"
 license=('MIT')
