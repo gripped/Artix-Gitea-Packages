@@ -3,7 +3,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=akonadi-calendar-tools
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='CLI tools to manage akonadi calendars'
 arch=(x86_64)
@@ -23,14 +23,14 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('64a2855df126b64fbdd35487e50f21967355e01c5e1489bc6cea1c4d66874432'
+sha256sums=('75b6cbc6bce79a3b54a5d2c947a14d591e81220a5ecbc4294e8e4930e609b037'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
