@@ -4,7 +4,7 @@
 
 pkgname=magic-wormhole
 pkgver=0.14.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Securely transfer data between computers"
 arch=(any)
 url="https://github.com/magic-wormhole/magic-wormhole"
@@ -15,7 +15,7 @@ depends=(python-autobahn
          python-hkdf
          python-humanize
          python-idna
-         python-noiseprotocol
+         python-iterable-io
          python-pynacl
          python-pyopenssl
          python-service-identity
@@ -25,9 +25,9 @@ depends=(python-autobahn
          python-zipstream-ng)
 makedepends=(python-{build,installer,wheel}
              python-setuptools)
-checkdepends=(python-iterable-io
-              python-magic-wormhole-mailbox-server
+checkdepends=(python-magic-wormhole-mailbox-server
               python-magic-wormhole-transit-relay
+              python-noiseprotocol
               python-pytest
               python-pytest-mock)
 _archive="$pkgname-$pkgver"
