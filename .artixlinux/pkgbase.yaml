@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-sphinx-autodoc-typehints
-  version: 2.0.1-1
+  version: 2.0.1-2
   arch:
     - any
   pkgname:
     - python-sphinx-autodoc-typehints
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.0-3
+    version: 2.0.1-2
     packages:
-      - python-sphinx-autodoc-typehints-2.0.0-3-any.pkg.tar.zst
+      - python-sphinx-autodoc-typehints-2.0.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
