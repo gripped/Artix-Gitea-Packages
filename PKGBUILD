@@ -1,17 +1,17 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 _pkgname=cachy
 pkgname=python-cachy
 pkgver=0.3.0
-pkgrel=9
+pkgrel=10
 pkgdesc='simple yet effective caching library'
 arch=(any)
 url="https://github.com/sdispater/${_pkgname}"
 license=(MIT)
 depends=(python)
 makedepends=(python-{build,installer,wheel}
-             python-poetry-core python-setuptools)
+             python-poetry-core)
 _checkdeps=(flexmock pytest-mock memcached fakeredis)
 checkdepends=("${_checkdeps[@]/#/python-}"
               pifpaf
