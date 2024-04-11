@@ -3,25 +3,27 @@
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=shadow
-pkgver=4.14.3
-pkgrel=1
+pkgver=4.15.1
+pkgrel=2
 pkgdesc="Password and account management tool suite with support for shadow files and PAM"
 arch=(x86_64)
 url="https://github.com/shadow-maint/shadow"
 license=(BSD-3-Clause)
 depends=(
-  acl libacl.so
-  attr libattr.so
-  audit libaudit.so
   glibc
-  libxcrypt libcrypt.so
-  pam libpam.so libpam_misc.so
+  libelogind
 )
 makedepends=(
+  acl
+  attr
+  audit
   docbook-xsl
   itstool
   libcap
+  libxcrypt
   libxslt
+  pam
+  elogind
 )
 backup=(
   etc/default/useradd
@@ -32,7 +34,7 @@ backup=(
   etc/pam.d/passwd
 )
 options=(!emptydirs)
-# NOTE: distribution patches are taken from https://gitlab.archlinux.org/archlinux/packaging/upstream/shadow/-/commits/4.14.3.arch1
+# NOTE: distribution patches are taken from https://gitlab.archlinux.org/archlinux/packaging/upstream/shadow/-/commits/4.15.1.arch1
 source=(
   $url/releases/download/$pkgver/$pkgname-$pkgver.tar.xz{,.asc}
   0001-Disable-replaced-tools-their-man-pages-and-PAM-integ.patch
@@ -40,23 +42,26 @@ source=(
   0003-Add-Arch-Linux-defaults-for-login.defs.patch
   shadow.{sysusers,tmpfiles}
   useradd.defaults
+  0001-elogind-support.patch
 )
-sha512sums=('da5bba26ccf64535e39a4918033f76bf40da00959512424b23427511bedd9b5a4973343062cc8e415690ebc842a1d4a3ac344bca8d14a57f38281629d0bf3edd'
+sha512sums=('e3ae51bf53bfa1662d81bbe0150ada19c116514f1e56391d877045d48e16776326446561759edbf5006c0f97ab1d5f4bae63521bf1fae67e118ddda0d4a8f6cb'
             'SKIP'
-            '8d96630e9144f838edb9a5bc3dfae20158cb67aa9ddb64b07d80094123a21ebb0dd024230ab8e30ac13b64558daf8c0aad1bc301aa05fada44e26f73db2c9dc7'
-            '38b1803c991cec6dc840c71cd7b5461488bedd49d6da37c29aa97e927a8e298b728b5c7566b60d3ac83438003a23d4d2c9d409f014df81d359fb08d61bbabb57'
-            'df1a70e27fe665c02113cc8d810bbae968f88fa190314443f4ef58cb5c39c0826aae04da32d7da63eb17806414d7668d513dcfc47747e0e9a15943368805edd8'
+            '839b83a3824be89930207e635f7aaa10cf3660ba2f4a6e95b3366d083fe2c76295d1d54b108bdfe317e5ebb049a8bbbf7b5859907d201cee43af330abb2091b6'
+            'a3da00d0368a9397be00ce1fc06416e5261f2000b99f69bd83202cf56e7d0ebea34562fbf35fdf43e7cf52a82f6720f6299defed9fa1d6436648e2f29d10512b'
+            'c41e2cef30930a79a6ad4eb63a8106688fde49b3bfc22ec68833e1974d6932e856244dc5f0fbe63943dcd09c05d06db6aa71783aa09a25708f78898189436683'
             '5afac4a96b599b0b8ed7be751e7160037c3beb191629928c6520bfd3f2adcd1c55c31029c92c2ff8543e6cd9e37e2cd515ba4e1789c6d66f9c93b4e7f209ee7a'
             '97a6a57c07502e02669dc1a91bffc447dba7d98d208b798d80e07de0d2fdf9d23264453978d2d3d1ba6652ca1f2e22cdadc4309c7b311e83fa71b00ad144f877'
-            '706ba6e7fa8298475f2605a28daffef421c9fa8d269cbd5cbcf7f7cb795b40a24d52c20e8d0b73e29e6cd35cd7226b3e9738dc513703e87dde04c1d24087a69c')
-b2sums=('6707cae41a0f8478cadd94ea5eaba95cdc6b1b23896b8dd903c62c931839a82b0538f04f8c12433f148da5b23c12a033963380be81f6fc97fa0e3f9399e51b21'
+            '706ba6e7fa8298475f2605a28daffef421c9fa8d269cbd5cbcf7f7cb795b40a24d52c20e8d0b73e29e6cd35cd7226b3e9738dc513703e87dde04c1d24087a69c'
+            '355f45d6f88ae2541392db06ab5055467ed432ba0107bdc0dc6ead33d6a677e12648d8876a70dc576a58ebf29989c7a2fce1a7336f0a786871e61dcfba003643')
+b2sums=('a24f492cb2a7721b165c70237b1a9290acc0063bdf493f061752ca41d23a1154b26e16ee00dd96a19e825eff7f711391892eeb08a314d9277514d4d32a4adafe'
         'SKIP'
-        '9bfdd4d0b7ce997b4a95f9334790fd907e52afa4dd8f2104f2c1413f17c46f9d8f2c3ae9c86927b5f70cedbcae1f1ec522f3c81896f9629ad84eefdd87b0f7ce'
-        'd8c6a25b7a7a7578dfc9e4dc762e9f40d3d5e3f8a6e44c6abd1dc6d874e81830ce2cf335584c35277b69539cc1172611d2fdfa72c740247f2dd35ba77b66827a'
-        '56135cdc049ccce1f1da89f41b840cf2cd7365fec6d2e771906eb4e406b2ffe90703cf2070c52748b1035d7cfd29d90f4d9eed38b06f0fac8a58c3dd89a86ea9'
+        '8d49018484533f1e9d0a2bdc81d6550a1662b275ffb5bb6dbe3d3062aa7d25e7acd3234bcbd3eb3e00dd8cd3a480cab9753d72b6970c44dc6e814ca5b45b554c'
+        '5fa58287e123fac7ba2cde8c98e0dfd52cbff0d0d67306b359881ebc54997907fe64b59012880f8750a152d05c05063888a03e43c19eabc7a2de0590bae0b1df'
+        '0ae11bf0ded3e6d6be3d960f5b75fdc885d936f499d162944ef27f0c3997be4fd1fc4f08cba60be6f81eddefbbb576cc37aeaf13993d80bfc8d452e496d286f4'
         '511c4ad9f3be530dc17dd68f2a3387d748dcdb84192d35f296b88f82442224477e2a74b1841ec3f107b39a5c41c2d961480e396a48d0578f8fd5f65dbe8d9f04'
         'd727923dc6ed02e90ef31f10b3427df50afbfe416bd03c6de0c341857d1bb33ab6168312bd4ba18d19d0653020fb332cbcfeeb24e668ae3916add9d01b89ccb4'
-        'f743922062494fe342036b3acb8b747429eb33b1a13aa150daa4bb71a84e9c570cfcc8527a5f846e3ea7020e6f23c0b10d78cf2ba8363eea0224e4c34ea10161')
+        'f743922062494fe342036b3acb8b747429eb33b1a13aa150daa4bb71a84e9c570cfcc8527a5f846e3ea7020e6f23c0b10d78cf2ba8363eea0224e4c34ea10161'
+        '33e27ac3451731f9b896b0a4da538d685923c9b0d347fe033241b7e0a215361ba6ed7d0b5c4899155256ad865e3125bc56a9e8c3b007724fb15135d284da8476')
 validpgpkeys=(
   66D0387DB85D320F8408166DB175CFA98F192AF2  # Serge Hallyn <sergeh@kernel.org>
   A9348594CE31283A826FBDD8D57633D441E25BB5  # Alejandro Colomar <alx@kernel.org>
@@ -91,10 +96,12 @@ build() {
     --with-group-name-max-length=32
     --with-libpam  # PAM integration for chpasswd, groupmems, newusers, passwd
     --with-yescrypt
+    --without-bcrypt
     --without-libbsd  # shadow can use internal implementation for getting passphrase
     --without-nscd  # we do not ship nscd anymore
     --without-selinux
     --without-su  # su is provided by util-linux
+    --enable-logind=yes
   )
 
   cd $pkgname-$pkgver
@@ -108,6 +115,14 @@ build() {
 }
 
 package() {
+  depends+=(
+    acl libacl.so
+    attr libattr.so
+    audit libaudit.so
+    libxcrypt libcrypt.so
+    pam libpam.so libpam_misc.so
+  )
+
   cd $pkgname-$pkgver
 
   make DESTDIR="$pkgdir" install
@@ -124,7 +139,4 @@ package() {
 
   # adapt executables to match the modes used by tmpfiles.d, so that pacman does not complain:
   chmod 750 "$pkgdir/usr/bin/groupmems"
-
-  # manually add PAM config for chpasswd and newusers: https://github.com/shadow-maint/shadow/issues/810
-  install -vDm 644 etc/pam.d/{chpasswd,newusers} -t "$pkgdir/etc/pam.d/"
 }
