@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: magic-wormhole
-  version: 0.14.0-4
+  version: 0.14.0-5
   arch:
     - any
   pkgname:
     - magic-wormhole
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.14.0-3
+    version: 0.14.0-5
     packages:
-      - magic-wormhole-0.14.0-3-any.pkg.tar.zst
+      - magic-wormhole-0.14.0-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
