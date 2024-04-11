@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org> 
 
 pkgname=kaccounts-integration
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='Online account management system and its Plasma integration components'
 arch=(x86_64)
@@ -29,14 +29,14 @@ makedepends=(extra-cmake-modules
              kdoctools
              qcoro-qt6)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('e568f11a97919c6edd311de93b201b153280393ed17b8e5a1886e9abf0c6e68c'
+sha256sums=('d50b3d790d8df6a24d1afe7660fa7c6e61c38159d777380f87b813c91d06d307'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
