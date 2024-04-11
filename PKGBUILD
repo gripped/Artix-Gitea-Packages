@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=mailcommon
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='KDE PIM library providing support for mail applications'
 arch=(x86_64)
@@ -47,14 +47,14 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('cd35442943314de2db8773153c5388199312b810468cc604a060d328650af6c3'
+sha256sums=('d2e6421838376b53d7fca9aa0663083b3b94f0209eb2fc5601ad612bee421604'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   cmake --build build
