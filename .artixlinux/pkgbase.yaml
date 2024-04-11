@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: certbot-dns-route53
-  version: 2.8.0-1
+  version: 2.8.0-2
   arch:
     - any
   pkgname:
     - certbot-dns-route53
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -43,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 2.8.0-2
+    packages:
+      - certbot-dns-route53-2.8.0-2-any.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
     version: 2.8.0-1
     packages:
       - certbot-dns-route53-2.8.0-1-any.pkg.tar.zst
+team: galaxy
