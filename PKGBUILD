@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Contributor: Laurent Soest <laurent.soest(at)gmail.com>
 
 pkgname='python-portend'
 _pkgbase="${pkgname//python-/}"
 pkgver=3.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Use portend to monitor TCP ports for bound or unbound states."
 arch=('any')
 url="https://github.com/jaraco/portend"
