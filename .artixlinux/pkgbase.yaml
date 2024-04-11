@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jupyter-server
-  version: 2.13.0-2
+  version: 2.14.0-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.13.0-2
+    version: 2.14.0-2
     packages:
-      - jupyter-server-2.13.0-2-any.pkg.tar.zst
+      - jupyter-server-2.14.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
