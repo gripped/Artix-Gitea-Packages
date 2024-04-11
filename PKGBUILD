@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kmouth
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 arch=(x86_64)
 pkgdesc='Speech Synthesizer Frontend'
@@ -27,14 +27,14 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-accessibility)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('70260e624de38a3e7c59fbf5700991836c6b916ff5a54d1ce35c3ed996f2d37b'
+sha256sums=('5dc80ddaca107ed1e3aa64e39f5e1c043888a16682cd6fd4e4f491caee0cc492'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
