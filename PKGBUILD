@@ -3,7 +3,7 @@
 pkgname=jupyterlab
 _pipname=jupyterlab
 pkgver=4.1.6
-pkgrel=2
+pkgrel=2.1
 pkgdesc='JupyterLab computational environment'
 arch=(any)
 url='https://github.com/jupyterlab/jupyterlab'
