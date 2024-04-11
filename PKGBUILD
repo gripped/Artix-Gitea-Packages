@@ -3,7 +3,7 @@
 _name=pydantic-extra-types
 pkgname=python-pydantic-extra-types
 pkgver=2.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Extra pydantic types"
 arch=(any)
 url="https://github.com/pydantic/pydantic-extra-types"
@@ -43,7 +43,7 @@ build() {
 
 check() {
   cd $_name-$pkgver
-  pytest -vv --ignore tests/test_pendulum_dt.py
+  pytest -vv
 }
 
 package() {
