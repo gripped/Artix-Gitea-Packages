@@ -4,14 +4,13 @@
 pkgname=python-aws-xray-sdk
 _pkgname=aws-xray-sdk-python
 # https://github.com/aws/aws-xray-sdk-python/blob/master/CHANGELOG.rst
-pkgver=2.12.1
-# curl https://api.github.com/repos/aws/aws-xray-sdk-python/git/ref/tags/$pkgver | jq -r .object.sha
-_commit=c50fe3e144b4e0654d36b2be40c7ae7139a3e825
-pkgrel=2
+pkgver=2.13.0
+pkgrel=1
 pkgdesc='AWS X-Ray SDK for Python'
 arch=(any)
 url='https://github.com/aws/aws-xray-sdk-python'
-license=(Apache)
+# https://github.com/aws/aws-xray-sdk-python/blob/2.13.0/setup.py#L23
+license=('Apache-2.0')
 depends=(python python-botocore python-wrapt)
 # See extensions in https://github.com/aws/aws-xray-sdk-python/tree/master/aws_xray_sdk/ext
 optdepends=(python-aiobotocore python-aiohttp python-bottle python-django
@@ -21,8 +20,8 @@ optdepends=(python-aiobotocore python-aiohttp python-bottle python-django
 makedepends=(git python-build python-installer python-setuptools python-wheel ${optdepends[@]})
 checkdepends=(python-pytest python-pytest-asyncio python-pytest-aiohttp python-testing.postgresql
               python-webtest python-django-fake-model python-pytest-benchmark)
-source=("git+https://github.com/aws/aws-xray-sdk-python.git#commit=$_commit")
-sha256sums=('SKIP')
+source=("git+https://github.com/aws/aws-xray-sdk-python.git#tag=$pkgver")
+sha256sums=('b48b5e5c997c9050d52388928320ca4813dca3ced38494305daa86f15426dbba')
 
 _backports=(
 )
@@ -65,16 +64,25 @@ check() {
   #   states no support [3]
   # * tests fail with pg8000 > 1.20.0 and upstream explicitly
   #   states no support [4]
+  # * HTTP-related tests use httpbin.org, which is an unstable server
+  #   and fails from time to time
+  # * test_dburl needs a real MySQL database [5]
   # [1] https://github.com/aws/aws-xray-sdk-python/blob/2.12.1/.github/workflows/UnitTesting.yaml#L26
   # [2] https://github.com/tk0miya/testing.mysqld/issues/3
   # [3] https://github.com/aws/aws-xray-sdk-python/pull/360
   # [4] https://github.com/aws/aws-xray-sdk-python/pull/324
+  # [5] https://github.com/aws/aws-xray-sdk-python/pull/418
   pytest -v tests --asyncio-mode=auto \
                   --ignore tests/ext
   pytest -v tests/ext --asyncio-mode=auto \
+                      --ignore tests/ext/aiohttp \
                       --ignore tests/ext/flask_sqlalchemy \
+                      --ignore tests/ext/httplib \
+                      --ignore tests/ext/httpx \
                       --ignore tests/ext/pg8000 \
-                      --ignore tests/ext/pymysql
+                      --ignore tests/ext/pymysql \
+                      --ignore tests/ext/requests \
+                      --ignore tests/ext/sqlalchemy_core/test_dburl.py
 }
 
 package() {
