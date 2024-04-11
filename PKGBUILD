@@ -4,7 +4,7 @@
 
 pkgname=keepassxc
 pkgver=2.7.7
-pkgrel=2.1
+pkgrel=2
 pkgdesc="Cross-platform community-driven port of Keepass password manager"
 arch=(x86_64)
 url="https://keepassxc.org/"
@@ -26,6 +26,9 @@ validpgpkeys=(BF5A669F2272CF4324C1FDA8CFB4C2166397D0D2
               C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8)
 
 build() {
+
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
   cmake -S keepassxc-$pkgver -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
@@ -36,8 +39,7 @@ build() {
 }
 
 check() {
-  #xvfb-run --auto-servernum cmake --build build --target test
-  xvfb-run --server-num=12345 cmake --build build --target test
+  xvfb-run --auto-servernum cmake --build build --target test
 }
 
 package() {
