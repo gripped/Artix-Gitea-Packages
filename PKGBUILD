@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdegraphics-mobipocket
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='A library to handle mobipocket files'
 url='https://apps.kde.org/es/kdegraphics_mobipocket/'
@@ -16,14 +16,14 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('793deb54f47c57cb3cf9a417485cdfbd31782be519bbde2f5b2206ab02d713a8'
+sha256sums=('911156160e4ac02f3026118de3f300896230f8e0a6bd7a7fcf5c95bc416cbd2a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DQT_MAJOR_VERSION=6
   cmake --build build
