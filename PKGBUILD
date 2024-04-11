@@ -3,38 +3,54 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=pam
-pkgver=1.5.3
-pkgrel=3
+pkgver=1.6.1
+pkgrel=2
 pkgdesc="PAM (Pluggable Authentication Modules) library"
 arch=('x86_64')
-license=('GPL2')
+license=('GPL-2.0-only')
 url="http://linux-pam.org"
-depends=('glibc' 'libtirpc' 'pambase' 'audit' 'libaudit.so' 'libxcrypt' 'libcrypt.so')
-makedepends=('flex' 'w3m' 'docbook-xml>=4.4' 'docbook-xsl')
+depends=('glibc' 'libtirpc' 'pambase' 'audit' 'libaudit.so' 'libxcrypt' 'libcrypt.so' 'libnsl' 'libelogind')
+makedepends=('flex' 'w3m' 'docbook-xml>=4.4' 'docbook-xsl' 'elogind')
 provides=('libpam.so' 'libpamc.so' 'libpam_misc.so')
 backup=(etc/security/{access.conf,faillock.conf,group.conf,limits.conf,namespace.conf,namespace.init,pwhistory.conf,pam_env.conf,time.conf} etc/environment)
 source=(https://github.com/linux-pam/linux-pam/releases/download/v$pkgver/Linux-PAM-$pkgver{,-docs}.tar.xz{,.asc}
-        $pkgname.tmpfiles)
+        $pkgname.tmpfiles
+        pam-elogind-suport.patch::https://github.com/linux-pam/linux-pam/pull/787/commits/d59e00bdc9ba133ba11abeba08f80d3495501d14.patch)
 validpgpkeys=(
         '8C6BFD92EE0F42EDF91A6A736D1A7F052E5924BB' # Thorsten Kukuk
         '296D6F29A020808E8717A8842DB5BD89A340AEB7' #Dimitry V. Levin <ldv@altlinux.org>
 )
 
-sha256sums=('7ac4b50feee004a9fa88f1dfd2d2fa738a82896763050cd773b3c54b0a818283'
+sha256sums=('f8923c740159052d719dbfc2a2f81942d68dd34fcaf61c706a02c9b80feeef8e'
             'SKIP'
-            'fe7493aa0a281f8cfe81814768329f953098d0fd8073da1dc0bd64494d022d4d'
+            'fd7b13b9993c94677e78e84d12387b8da104b5ba668eda3f17360abe4277e79c'
             'SKIP'
-            '5631f224e90c4f0459361c2a5b250112e3a91ba849754bb6f67d69d683a2e5ac')
+            '5631f224e90c4f0459361c2a5b250112e3a91ba849754bb6f67d69d683a2e5ac'
+            'c1f0502551c56691184a1c6ffe01bfc6581be31b98a789221ef790adaedf685d')
 
 options=('!emptydirs')
+
+prepare() {
+  cd Linux-PAM-$pkgver
+  # apply patch from the source array (should be a pacman feature)
+  local src
+  for src in "${source[@]}"; do
+    src="${src%%::*}"
+    src="${src##*/}"
+    [[ $src = *.patch ]] || continue
+    echo "Applying patch $src..."
+    patch -Np1 < "../$src"
+  done
+  autoreconf -fi
+}
 
 build() {
   cd Linux-PAM-$pkgver
   ./configure \
     --libdir=/usr/lib \
     --sbindir=/usr/bin \
-    --enable-logind \
     --without-systemdunitdir \
+    --enable-logind=elogind \
     --disable-db
   make
 }
