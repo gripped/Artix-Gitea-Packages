@@ -3,7 +3,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=krfb
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='Desktop Sharing'
 url='https://apps.kde.org/krfb/'
@@ -35,18 +35,19 @@ depends=(gcc-libs
          xdg-desktop-portal)
 makedepends=(extra-cmake-modules
              kdoctools
+             libxdamage
              plasma-wayland-protocols)
 groups=(kde-applications
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('80e714e9ceeeec4580a37dc2200f15536a4de6b9c8be616aacbfaa939cb5e8f1'
+sha256sums=('cf92dfc7867e33604757a59ff8d288693bbf5fbb0cf0bc379c3f975d0e4e98e4'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
