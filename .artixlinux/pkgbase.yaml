@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: python-xapian-haystack
-  version: 3.1.0-1
+  version: 3.1.0-2
   arch:
     - any
   pkgname:
     - python-xapian-haystack
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.1.0-2
+    packages:
+      - python-xapian-haystack-3.1.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
