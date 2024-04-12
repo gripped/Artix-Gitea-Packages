@@ -3,9 +3,9 @@
 pkgbase=pyqt6
 pkgname=python-pyqt6
 pkgdesc='A set of Python bindings for the Qt6 toolkit'
-_pkgver=6.7.0.dev2403231455
+_pkgver=6.7.0.dev2404081550
 pkgver=${_pkgver/.dev/dev}
-pkgrel=5
+pkgrel=1
 arch=(x86_64)
 url='https://riverbankcomputing.com/software/pyqt/intro'
 license=(GPL)
@@ -32,7 +32,7 @@ makedepends=(sip pyqt-builder python-opengl dbus-python
 provides=(qt6-python-bindings)
 #source=(https://pypi.python.org/packages/source/P/PyQt6/PyQt6-$pkgver.tar.gz)
 source=(https://riverbankcomputing.com/pypi/packages/PyQt6/PyQt6-$_pkgver.tar.gz)
-sha256sums=('f4a105c6797c813fe6bc9a0fdea5dd0999b117223ded2068ab7d33a05f0a387d')
+sha256sums=('1f9a99feb9ebb8687e5154972d9c934af8da8269a58bf898abeec1688ce5d584')
 
 build() {
   cd PyQt6-$_pkgver
@@ -41,7 +41,6 @@ build() {
     --no-make \
     --qmake=/usr/bin/qmake6 \
     --api-dir /usr/share/qt6/qsci/api/python \
-    --scripts-dir=/usr/bin \
     --pep484-pyi
   cd build
   make
