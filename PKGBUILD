@@ -1,8 +1,10 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
+_tag=255.4-r1
+
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
-pkgver=255.4
+pkgver=${_tag/-r/.}
 pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
@@ -29,17 +31,23 @@ makedepends=(
     'util-linux'
 )
 source=(
-    "git+https://github.com/elogind/elogind.git#tag=v${pkgver}"
+    "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
+    elogind-meson-libexec.patch::https://github.com/elogind/elogind/pull/277/commits/374630fa964c3f7770cdd7a9af27b417d5cda9c7.patch
+
 )
-sha256sums=('34ef107a0aaf0a161eb097cb51d434079294e7425f514b92f7255a17897fc221')
+sha256sums=('1c504336f559eb87894c28019e81a320638299414b52accfa843f60c4b006f61'
+            'a075b1101830cc84f3cfd805703d9d033ce0ee3903f42af30ac132f2753979d4')
+
+prepare() {
+    cd "$pkgbase"
+    git apply ../elogind-meson-libexec.patch
+}
 
 build() {
     local meson_options=()
 
     meson_options+=(
         --libexecdir=/usr/lib/elogind
-        --sbindir=/usr/bin
-
         -Dshared-lib-tag="${pkgver}-${pkgrel}"
         -Dmode=release
 
