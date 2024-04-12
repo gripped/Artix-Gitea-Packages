@@ -5,8 +5,8 @@
 
 pkgbase=ruff
 pkgname=($pkgbase python-$pkgbase)
-pkgver=0.3.5
-pkgrel=2
+pkgver=0.3.7
+pkgrel=1
 pkgdesc='An extremely fast Python linter, written in Rust'
 arch=(x86_64)
 url="https://github.com/astral-sh/$pkgbase"
@@ -23,8 +23,8 @@ makedepends=(
 options=(!lto)
 _archive="$pkgbase-$pkgver"
 source=($url/archive/refs/tags/v$pkgver/$_archive.tar.gz)
-sha512sums=('a2376a03d029c4b5fbf5f0102262b5da978aaa00874c5f35930cffa0d05f74f116ab87430aeca57ffabd6e821b054a48655d5dc638ba5f6fd392f6cf77d978b7')
-b2sums=('b6e3e4751bdf4fc8ee6b9fe1c565c45e45bb062efa3a608a18b076c0cff01a6a1c664e59324801f7a53a2ddb9db02796c0bd29b5cb85d3f120faca4da6350d68')
+sha512sums=('88c7b31b6598a470fa5810cae572a3a955077485aa5eea5fa81d23e1180af6f3e2d32d3293770e0b6a08fe23b06383eb393db5a4734dff418e7ac2722c130197')
+b2sums=('ee6889278a163ee5af445bd6f676c8996fbc9cf30306cd00beaf759e0a5b5bb198b81b40dbc9b97007bc585e31e4fb5ee5fb9fb9d07333d6d5014049251b98d1')
 
 prepare() {
   cd "$_archive"
