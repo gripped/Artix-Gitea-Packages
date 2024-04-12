@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdesdk-kio
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='KDE SDK KIO-Slaves'
 url='https://www.kde.org/'
@@ -23,14 +23,14 @@ replaces=(kdesdk-kioslaves)
 groups=(kde-applications
         kdesdk)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('02c90ad30a8e7c477b14d83017aeba97d9041af64e559bb8e287b8132c3a2445'
+sha256sums=('22374c7309eee0ede02420cbce6a170b6967a22d4d75f20aa9e3bb191caadb7d'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DQT_MAJOR_VERSION=6
   cmake --build build
