@@ -1,8 +1,9 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=audiotube
 pkgver=24.02.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Client for YouTube Music'
 url='https://apps.kde.org/audiotube/'
 arch=(x86_64)
