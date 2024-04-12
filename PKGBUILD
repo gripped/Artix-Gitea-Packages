@@ -1,13 +1,13 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Simon Hanna <simon dot hanna AT serve-me DOT info>
 
 pkgname=python-zope-component
 pkgver=6.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Represents the core of the Zope Component Architecture"
 arch=('any')
 url="https://github.com/zopefoundation/zope.component"
-license=('ZPL')
+license=('ZPL-2.1')
 depends=(
   'python'
   'python-setuptools'
