@@ -41,6 +41,7 @@ build() {
     --no-make \
     --qmake=/usr/bin/qmake6 \
     --api-dir /usr/share/qt6/qsci/api/python \
+    --scripts-dir=/usr/bin \
     --pep484-pyi
   cd build
   make
