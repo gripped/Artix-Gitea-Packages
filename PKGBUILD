@@ -1,8 +1,9 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=falkon
 pkgver=24.02.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Cross-platform QtWebEngine browser'
 arch=(x86_64)
 url='https://www.falkon.org/'
