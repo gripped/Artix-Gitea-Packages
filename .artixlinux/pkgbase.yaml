@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-blosc2
-  version: 2.5.1-1
+  version: 2.5.1-2
   arch:
     - x86_64
   pkgname:
     - python-blosc2
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.5.1-2
+    packages:
+      - python-blosc2-2.5.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

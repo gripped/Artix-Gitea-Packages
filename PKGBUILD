@@ -3,7 +3,7 @@
 _pyname=blosc2
 pkgname=python-$_pyname
 pkgver=2.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Wrapper for the blosc2 compressor'
 arch=(x86_64)
 url='https://github.com/Blosc/python-blosc2'
@@ -29,7 +29,7 @@ makedepends=(
 checkdepends=(
   python-psutil
   python-pytest
-  python-pytorch
+  #python-pytorch
 )
 source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('f5f83d70e1b30b421370f57ba05bf8a32560c5fb274ddc882e228a2270458707')
