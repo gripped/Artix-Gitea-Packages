@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libplacebo
-  version: 6.338.2-4
+  version: 6.338.2-5
   arch:
     - x86_64
   pkgname:
     - libplacebo
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - libplacebo-6.338.2-3-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.338.2-5
+    packages:
+      - libplacebo-6.338.2-5-x86_64.pkg.tar.zst
   world:
     version: 6.338.2-4
     packages:
