@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-warlock
 pkgver=2.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Python object model built on JSON schema and JSON patch."
 arch=('any')
 license=('Apache')
