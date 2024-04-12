@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 . /etc/dinit.d/config/postgres.conf
 install -d -o postgres -g postgres /run/postgresql
 if [ "$PGROOT" != /var/lib/postgres ]; then
@@ -10,6 +10,4 @@ if [ ! -d "$PGDATA" ]; then
     mkdir -p "$PGDATA"
     chown -R postgres:postgres "$PGDATA"
     chmod 0700 "$PGDATA"
-    su - postgres -c "initdb $INITOPTS -D $PGDATA"
-    [ -f /etc/postgresql/postgresql.conf ] && ln -sf /etc/postgresql/postgresql.conf "$PGDATA/postgresql.conf"
 fi

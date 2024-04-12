@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=postgresql-dinit
-pkgver=20211030
-pkgrel=4
+pkgver=20240412
+pkgrel=1
 pkgdesc="dinit service scripts for postgresql"
 arch=('any')
 url="https://artixlinux.org"
@@ -18,10 +18,10 @@ source=("postgres"
         "postgres-pre"
         "postgres-pre.script")
 sha256sums=('24430b5ee05d23fe483fa9a0dce6e6e32f440c314dc3c700d509a04f93b23648'
-            'f00f63404f610e6d730b8b461a940e5583017e596a457221a43bbef4e5ddf6fc'
+            '8614cb03c8b9e6b6c77cb7ccabdf0f82df311b21239185ab91e964a0c881883a'
             'd22862df8410a739a311326b363e2c2be0575224ad201200de87b7c8ff1cad85'
             '7921ceded142ed84645b5a26ae846d1ed620e23b6528d2b7b949df642fb29053'
-            '44777ddbdeda2dfec690d49983f8a15835e0058e06b9a0d95830b9f8d5ced672')
+            '5118255682e896e0ab9ea1c456535f5211a83f753d8a848bbdad7aa44bb7c619')
 
 package() {
     install -Dm644 postgres            "$pkgdir/etc/dinit.d/postgres"
