@@ -4,7 +4,6 @@
 pkgbase=dbus-broker
 pkgname=(
   dbus-broker
-  dbus-broker-units
 )
 pkgver=36
 pkgrel=1

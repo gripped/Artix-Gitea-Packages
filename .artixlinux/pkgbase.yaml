@@ -6,7 +6,6 @@ pkgbase:
     - x86_64
   pkgname:
     - dbus-broker
-    - dbus-broker-units
 actions:
   addRepo: world-gremlins
   removeRepo: null
@@ -32,7 +31,6 @@ repos:
     version: 36-1
     packages:
       - dbus-broker-36-1-x86_64.pkg.tar.zst
-      - dbus-broker-units-36-1-x86_64.pkg.tar.zst
   world:
     version: 35-1
     packages:
