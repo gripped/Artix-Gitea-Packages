@@ -16,7 +16,7 @@ makedepends=(cmake
 optdepends=('gcc-libs: Fortran interface'
             'python-numpy: Python interface')
 source=(https://github.com/spglib/spglib/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('65ce1def8eade7e1aab47ad99860d5d38d5acf1d66ac15ac3bb74ece2e6f2e4c')
+sha256sums=('e33694b189c6864f719a59c31e2af55301a524fb68ba9fb65f08e95af471847d')
 
 prepare() {
   sed -e 's|TARGET Spglib_symspg|0|' -i $pkgname-$pkgver/python/CMakeLists.txt # Don't duplicate shared libs in python tree
