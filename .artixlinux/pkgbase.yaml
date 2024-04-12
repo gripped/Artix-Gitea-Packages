@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-vistir
-  version: 0.8.0-3
+  version: 0.8.0-4
   arch:
     - any
   pkgname:
     - python-vistir
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.8.0-4
+    packages:
+      - python-vistir-0.8.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
