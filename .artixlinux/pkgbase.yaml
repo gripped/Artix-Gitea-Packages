@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: snapshot
-  version: 46.1-1
+  version: 46.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 46.1-1
+    version: 46.2-1
     packages:
-      - snapshot-46.1-1-x86_64.pkg.tar.zst
+      - snapshot-46.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
