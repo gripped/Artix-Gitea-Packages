@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=konquest
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='The KDE version of Gnu-Lactic'
 url='https://apps.kde.org/konquest/'
@@ -30,14 +30,14 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-games)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('02bd27adbe153d754ab5ef3d6a67176e041d2d0ef0bf217ac95c3124f4d9427b'
+sha256sums=('e35057b2d6d3ad0d3c274099dcd937430ab42a5b07a1852e17ee2800d33aec2c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
