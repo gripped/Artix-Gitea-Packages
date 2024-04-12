@@ -1,10 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kajongg
 pkgver=24.02.2
-pkgrel=1
+pkgrel=2
 pkgdesc='The ancient Chinese board game for 4 players'
 url='https://apps.kde.org/kajongg/'
 arch=(any)
