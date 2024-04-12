@@ -2,8 +2,8 @@
 
 _pkg=distributed
 pkgname=python-${_pkg}
-pkgver=2023.8.0
-pkgrel=2
+pkgver=2024.4.1
+pkgrel=1
 pkgdesc="Distributed task scheduler for Dask"
 arch=(x86_64)
 url="https://distributed.dask.org/"
@@ -56,7 +56,7 @@ checkdepends=(ipython
 # No tests in PyPi tarballs
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/dask/distributed/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('7733597772ce4680939095ec425e4bce97049a7386472ef3416f6a929cb81150')
+sha256sums=('37908bfb644f223a15e010f33b6ff75b8c99ffa7b8a38370a8e688b4fac3b1cb')
 
 build() {
   cd ${_pkg}-${pkgver}

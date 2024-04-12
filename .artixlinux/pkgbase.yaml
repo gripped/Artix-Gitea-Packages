@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-distributed
-  version: 2023.8.0-2
+  version: 2024.4.1-1
   arch:
     - x86_64
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2023.8.0-2
+    version: 2024.4.1-1
     packages:
-      - python-distributed-2023.8.0-2-x86_64.pkg.tar.zst
+      - python-distributed-2024.4.1-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
