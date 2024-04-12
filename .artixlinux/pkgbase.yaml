@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libcap-ng
-  version: 0.8.4-3
+  version: 0.8.5-1
   arch:
     - x86_64
   pkgname:
     - libcap-ng
     - python-capng
 actions:
-  addRepo: system-goblins
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,10 +22,10 @@ repos:
       - libcap-ng-0.8.4-3-x86_64.pkg.tar.zst
       - python-capng-0.8.4-3-x86_64.pkg.tar.zst
   system-gremlins:
-    version: 0.8.4-2
+    version: 0.8.5-1
     packages:
-      - libcap-ng-0.8.4-2-x86_64.pkg.tar.zst
-      - python-capng-0.8.4-2-x86_64.pkg.tar.zst
+      - libcap-ng-0.8.5-1-x86_64.pkg.tar.zst
+      - python-capng-0.8.5-1-x86_64.pkg.tar.zst
   system:
     version: 0.8.4-1
     packages:

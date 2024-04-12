@@ -8,8 +8,8 @@ pkgname=(
   libcap-ng
   python-capng
 )
-pkgver=0.8.4
-pkgrel=3
+pkgver=0.8.5
+pkgrel=1
 pkgdesc='A library for Linux that makes using posix capabilities easy'
 arch=(x86_64)
 url='https://people.redhat.com/sgrubb/libcap-ng/'
@@ -24,12 +24,9 @@ makedepends=(
 )
 source=(
   https://github.com/stevegrubb/libcap-ng/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz
-  $pkgname-0.8.4-remove_exception_handler.patch::https://github.com/stevegrubb/libcap-ng/commit/30453b6553948cd05c438f9f509013e3bb84f25b.patch
 )
-sha512sums=('3e640ba4bfa2d5b5d0eb463abca3b2c745b10e929571c0ec32eb068bdc41fd95e19f7131893a22ceebb4d1f1083d3d87d9a32f0808442d594ac5940791152acf'
-            '74de0b06ca948d217fba18dece9072684267bc3f60d53f6c3c164af8f57c48d69d5d17df4a35fee98fdc5919146864168249a690153a95dcda97712efb3e1f7a')
-b2sums=('f4ea9780b87cdd4f9fa85d4ad3960afe654bc8aa6f5aa298ec87b7d90c87dd981f81577e5113ed76d83aa39c959160bf4deee57be9b458a98f8715e6f7b8dd33'
-        'd5a2f35354efb9adb9c45a2173a97358de2fa79fcd6ea5af8987f85a743fc3eb4a2f7f20741538c5487087db9b6f5143041ad7a85d6943b2175ec2c20dac7eb7')
+sha512sums=('3bd868c7f263b77edd2feda831470b407f1086b434618e54336fb78bbf8bf3bad53f4c006a2118fb594b16554f8f7ec2acb76e08be5586d0261684e9ba139231')
+b2sums=('70d70da50aff6423cf98cc87512d691308ec73e4143b4deb4bbc32e764db856af60d2aab2fed6ead2c5662adccb1ebf3a72bc1a8990261e104b28d2b9225cf92')
 
 _pick() {
   local p="$1" f d; shift
@@ -42,9 +39,6 @@ _pick() {
 }
 
 prepare() {
-  # backport patch for removed swig functionality: https://github.com/stevegrubb/libcap-ng/issues/48
-  patch -Np1 -d $pkgbase-$pkgver -i ../$pkgname-0.8.4-remove_exception_handler.patch
-
   cd $pkgbase-$pkgver
   # make stupid autotools happy -_-
   touch NEWS
