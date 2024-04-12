@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: cantor
-  version: 24.02.1-2
+  version: 24.02.2-1
   arch:
     - x86_64
   pkgname:
     - cantor
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.02.1-1
+    version: 24.02.2-1
     packages:
-      - cantor-24.02.1-1-x86_64.pkg.tar.zst
+      - cantor-24.02.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
