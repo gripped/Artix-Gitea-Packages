@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libkeduvocdocument
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='Common libraries for KDE Edu applications'
 url='https://www.kde.org/'
@@ -21,14 +21,14 @@ depends=(gcc-libs
 makedepends=(extra-cmake-modules
              kdoctools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('7ec15e43113fa0ffa74e8eb15837dbaa33c9b6d933b413a26d5a6a30662e18ac'
+sha256sums=('cafbfe82432fa4e206904e7ee008a4158c2ba755134de3b45fa24a43eb3c5cee'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DQT_MAJOR_VERSION=6
   cmake --build build
 }
