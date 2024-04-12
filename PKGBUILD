@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=pytest-vcr
 pkgname=python-pytest-vcr
 pkgver=1.0.2
-pkgrel=7
+pkgrel=8
 pkgdesc="Py.test plugin for managing VCR.py cassettes"
 arch=('any')
 url="https://github.com/ktosiek/pytest-vcr"
