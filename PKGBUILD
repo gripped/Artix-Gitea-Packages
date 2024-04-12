@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 _pkg=pytest-mpi
 pkgname=python-${_pkg}
 pkgver=0.6
-pkgrel=3
+pkgrel=5
 pkgdesc="pytest plugin for working with MPI"
 arch=(any)
 url="https://pytest-mpi.readthedocs.io/"
