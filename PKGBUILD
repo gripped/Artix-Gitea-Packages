@@ -25,8 +25,8 @@ pkgname=(
   gst-python
   gstreamer-docs
 )
-pkgver=1.24.1
-pkgrel=3
+pkgver=1.24.2
+pkgrel=1
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -77,10 +77,10 @@ source=(
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
 )
-b2sums=('a91e46cf3757a825a060f75fcfd974ec65fcb0d24c96039ce79b481b1ea93e82a6e226f45fd0fae6421ccd2eb356871db670c93b32b3df2cba8b105d4e00cf19'
-        '08cd34a70aa2b7afa43ab29b272d7b51f8074fc994e0c9b85b0674e38e08b451d2f2d65c89cbda311ce646ff26274fb5cd296dbf15da7fd6a89f9990d13fe4f2'
+b2sums=('b701d3804d955d217ffefb393488eecdca96e3e1275d7c6997e9bd8ec9155a2aea60faa459e40490b77a16c9031c4f89dd95e5bbb7d7ec4f4e105e090673c0ba'
+        'b67e5d8c6fb52a794e2307a3944338342ed560895f8fac6876a92d1f81326c751ff5c6f7d6a11e2dde480d981db024fdc0ee4a1638c2af763b10a119887ace95'
         'SKIP'
-        '747019db064311d364696f747008c5d85bb0dc5120e837b1647fe2a3c4fe459eadcc818cf90de8e613b57a1d356204b8c356865df562b79972622b4c16b7de4b')
+        '50a95a1a312de00f307ba642486da6e33739ec4feac8c6650ea3a0fafeb8f528287098f2dc5f256a08cf1361fcc07c951700094c450c7f67837add05c0cdab4b')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
