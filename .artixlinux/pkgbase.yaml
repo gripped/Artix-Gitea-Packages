@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kajongg
-  version: 24.02.1-2
+  version: 24.02.2-1
   arch:
     - any
   pkgname:
     - kajongg
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.02.1-1
+    version: 24.02.2-1
     packages:
-      - kajongg-24.02.1-1-any.pkg.tar.zst
+      - kajongg-24.02.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
