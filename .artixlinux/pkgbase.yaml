@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-statsmodels
-  version: 0.14.1-1
+  version: 0.14.1-2
   arch:
     - x86_64
   pkgname:
     - python-statsmodels
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.14.1-2
+    packages:
+      - python-statsmodels-0.14.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,12 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: world
