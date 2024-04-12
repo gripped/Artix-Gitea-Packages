@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-stestr
-  version: 4.1.0-2
+  version: 4.1.0-4
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.1.0-2
+    version: 4.1.0-4
     packages:
-      - python-stestr-4.1.0-2-any.pkg.tar.zst
+      - python-stestr-4.1.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
