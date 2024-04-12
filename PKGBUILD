@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=angelfish
-pkgver=24.02.1
-pkgrel=2
+pkgver=24.02.2
+pkgrel=1
 pkgdesc='Web browser for Plasma Mobile'
 url='https://apps.kde.org/angelfish/'
 arch=(x86_64)
@@ -30,7 +30,7 @@ makedepends=(corrosion
 groups=(kde-applications
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('76ea0f9a6da4f93f4b112598ea5151483aba4717e24ce766d480a55e534b5014'
+sha256sums=('5d3ab074739428b6d30f6a12d683a05f10dff61f543b0539f5a19a15fc4c83f1'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -38,7 +38,7 @@ validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aac
 options=(!lto)
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
