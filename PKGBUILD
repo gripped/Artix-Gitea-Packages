@@ -94,8 +94,6 @@ build() {
   local cmake_options=(
     -DUSE_SYSTEMD=OFF
     -DENABLE_JOURNALD_LOG=OFF
-    -DUSE_GTK4=OFF
-    -DUSE_LIBBACKTRACE=OFF
     -DPORT=GTK
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_INSTALL_PREFIX=/usr
