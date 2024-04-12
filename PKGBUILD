@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdevelop-python
-pkgver=24.02.1
-pkgrel=2
+pkgver=24.02.2
+pkgrel=1
 pkgdesc='Python language and documentation plugin for KDevelop'
 arch=(x86_64)
 url='https://www.kdevelop.org/'
@@ -27,14 +26,14 @@ optdepends=('python-pycodestyle: for Python style checking')
 groups=(kde-applications
         kdevelop)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/kdev-python-$pkgver.tar.xz{,.sig})
-sha256sums=('662b0a7e6d6afcb1a20d036a7b643b817744a96e50cfd6db2eaf16c55e205219'
+sha256sums=('f8fc7ef3db3cc74d8ec733fe4e6d6389f8187c8a7fa6585772b586a31e4a8d6a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S kdev-python-$pkgver \
+  cmake -B build -S kdev-python-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
