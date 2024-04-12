@@ -1,10 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=cantor
 pkgver=24.02.2
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE Frontend to Mathematical Software'
 url='https://apps.kde.org/cantor/'
 arch=(x86_64)
