@@ -41,7 +41,7 @@ source=(
   0001-HACK-meson-Disable-broken-tests.patch
 )
 b2sums=('a91e46cf3757a825a060f75fcfd974ec65fcb0d24c96039ce79b481b1ea93e82a6e226f45fd0fae6421ccd2eb356871db670c93b32b3df2cba8b105d4e00cf19'
-        'c32a423b7675881f795d3858b12d90bc87da42ddc03773d113f692cc0c0dfbd502c28b89bd90fbaec5a352cbd96baa3605fac1542a32dd71d20102987bb37a2c')
+        '50a95a1a312de00f307ba642486da6e33739ec4feac8c6650ea3a0fafeb8f528287098f2dc5f256a08cf1361fcc07c951700094c450c7f67837add05c0cdab4b')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
