@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=bovo
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='A Gomoku like game for two players'
 url='https://apps.kde.org/bovo/'
@@ -27,14 +27,14 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-games)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('2fe36c6b61e3322868352387907967716d159fddb0fb37135e92cbda887f8d8d'
+sha256sums=('a0522b2faacea201ea7e90c5adaadf344f257f5decfc4414070848acb78ac788'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
