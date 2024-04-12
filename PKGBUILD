@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=analitza
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='A library to add mathematical features to your program'
 url='https://www.kde.org/'
@@ -23,14 +23,14 @@ makedepends=(eigen
 conflicts=(analitza5)
 replaces=(analitza5)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('5102454c30f36ab7dc1987dd76bcefc4d57d863acef70490c9407a0632f8994f'
+sha256sums=('49d60ce43dbbedb047a281dd2df6a2818d8e9340774749d07aa7a5623f6ccc9b'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
