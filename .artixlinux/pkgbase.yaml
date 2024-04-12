@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: python-hishel
-  version: 0.0.25-1
+  version: 0.0.25-2
   arch:
     - any
   pkgname:
     - python-hishel
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.0.25-2
+    packages:
+      - python-hishel-0.0.25-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
