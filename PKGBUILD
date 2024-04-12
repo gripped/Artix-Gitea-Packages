@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=spglib
-pkgver=2.3.1
-pkgrel=2
+pkgver=2.4.0
+pkgrel=1
 pkgdesc='C library for finding and handling crystal symmetries'
 arch=(x86_64)
 url='https://spglib.readthedocs.io/en/latest/'
@@ -16,17 +15,15 @@ makedepends=(cmake
              python-numpy)
 optdepends=('gcc-libs: Fortran interface'
             'python-numpy: Python interface')
-source=(https://github.com/spglib/spglib/archive/v$pkgver/$pkgname-$pkgver.tar.gz
-        fix-duplicate-libs.patch)
-sha256sums=('6eb977053b35cd80eb2b5c3fa506a538ff2dad7092a43a612f4f0d4dc2069253'
-            '3f649edcda3fb466f2c51ab10a6b255e171826e1c695fcb98de58a9c90bbc34e')
+source=(https://github.com/spglib/spglib/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('65ce1def8eade7e1aab47ad99860d5d38d5acf1d66ac15ac3bb74ece2e6f2e4c')
 
 prepare() {
-  patch -d $pkgname-$pkgver -p1 < fix-duplicate-libs.patch # Don't duplicate shared libs in python tree
+  sed -e 's|TARGET Spglib_symspg|0|' -i $pkgname-$pkgver/python/CMakeLists.txt # Don't duplicate shared libs in python tree
 }
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DSPGLIB_WITH_Fortran=ON \
     -DSPGLIB_WITH_Python=ON
