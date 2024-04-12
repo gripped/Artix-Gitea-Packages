@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=python-blosc
 pkgver=1.11.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Python wrapper for the extremely fast Blosc compression library'
 arch=('x86_64')
 url='http://python-blosc.blosc.org/'
