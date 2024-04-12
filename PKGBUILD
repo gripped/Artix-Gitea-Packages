@@ -3,7 +3,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=k3b
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 epoch=1
 pkgdesc='Feature-rich and easy to handle CD burning application'
@@ -57,14 +57,14 @@ optdepends=('cdparanoia: for CD ripping support'
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0c52098a9b604f590aeb0d607488a8177cbfcc8c2bff84cee2a11886d824f9b6'
+sha256sums=('6047d94193ba1650ce71f4100bba0786023455f4c6a12e14c9d543058a4e8e45'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
