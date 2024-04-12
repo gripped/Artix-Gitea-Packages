@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kde-dev-utils
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='Small utilities for developers using KDE/Qt libs/frameworks'
 url='https://www.kde.org/'
@@ -26,14 +26,14 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications
         kdesdk)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('2beff16687bae43b67733b179b3f3d0d08810ad9c8c2c96addf10a5de6f5dfa0'
+sha256sums=('aa66f88d92718aa729c644ad37c692e005a63190528a1420191521329bdbdd4e'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
