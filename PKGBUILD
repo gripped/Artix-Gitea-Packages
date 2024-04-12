@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kalk
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='A powerful cross-platform calculator application built with the Kirigami framework'
 url='https://apps.kde.org/kalk/'
@@ -24,14 +24,14 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications
         kde-utilities)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d6f8707ff72829813e7f61c3d802badf05a7aac85a1da28f3d45fd480497be2e'
+sha256sums=('8bce49fc3a1f37260396ba197c0d0affa60c2051624b055b4736a47e67095163'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
