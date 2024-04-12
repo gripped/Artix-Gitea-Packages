@@ -1,9 +1,10 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdevelop-python
 pkgver=24.02.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Python language and documentation plugin for KDevelop'
 arch=(x86_64)
 url='https://www.kdevelop.org/'
