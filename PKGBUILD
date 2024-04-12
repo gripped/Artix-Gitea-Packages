@@ -4,8 +4,9 @@
 pkgbase=dbus-broker
 pkgname=(
   dbus-broker
+  dbus-broker-units
 )
-pkgver=35
+pkgver=36
 pkgrel=1
 pkgdesc="Linux D-Bus Message Broker"
 url="https://github.com/bus1/dbus-broker/wiki"
@@ -22,26 +23,30 @@ makedepends=(
 )
 source=(
   https://github.com/bus1/dbus-broker/releases/download/v$pkgver/$pkgbase-$pkgver.tar.xz{,.asc}
+  0001-units-Enable-statically.patch
 )
-b2sums=('2c270197d76ec157bf2fd8eb561b49cea2739d656fac8129c4ecdd0bbd5804f8e4e427414cb5f209eef4c22cf9559fc409170476d8df0e1d252c0b5aa2288e01'
-        'SKIP')
+b2sums=('84a805982f038f0d9fe62b7f34de8ecbbdbd9b889edba05ab182f00116612545d2bf44d6ea0c6b5e121591a5ab3d2f0f6d5fa3dd413e8c36fe3494e35ac050f3'
+        'SKIP'
+        'c6ad58146a76dbb62548029cf84403ccba355a9ce74b8e081a27a6e3bf4535809741f0621b8a1396cbcb5be55434a90c169829c9b443952477e838c1036b84af')
 validpgpkeys=(
   BE5FBC8C9C1C9F60A4F0AEAE7A4F3A09EBDEFF26  # David Herrmann <dh.herrmann@gmail.com>
 )
 
 # https://github.com/bus1/dbus-broker/releases
-sha256sums=('d50daa31ff33f48693194596ea2aeb1a925183b59cdc82a550774e5c43982252'
-            'SKIP')
+sha256sums=('d333d99bd2688135b6d6961e7ad1360099d186078781c87102230910ea4e162b'
+            'SKIP'
+            'a37cedf7fef8f513f4a79c9893c677ff68dd5184b3918a57c3ec0b0383ea6cb5')
 
 prepare() {
   cd $pkgbase-$pkgver
+  patch -Np1 -i ../0001-units-Enable-statically.patch
 }
 
 build() {
   local meson_options=(
+    -D launcher=false
     -D audit=true
     -D docs=true
-    -D launcher=false
     -D linux-4-17=true
     -D system-console-users=gdm,sddm,lightdm,lxdm
   )
@@ -54,6 +59,7 @@ check() {
   meson test -C build --print-errorlogs
 }
 
+
 package_dbus-broker() {
   depends+=(
     libaudit.so
@@ -62,6 +68,8 @@ package_dbus-broker() {
   )
 
   meson install -C build --destdir "$pkgdir"
+
 }
+
 
 # vim:set sw=2 sts=-1 et:
