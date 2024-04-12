@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-zope-schema
 pkgver=7.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="zope.interface extension for defining data schemas"
 arch=('any')
 url="https://github.com/zopefoundation/zope.schema"
