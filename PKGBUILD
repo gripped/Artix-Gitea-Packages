@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=zanshin
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='To-do management application based on Akonadi'
 arch=(x86_64)
@@ -30,14 +30,14 @@ makedepends=(boost
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('a6587697febbb14ce1dfa008d6b647b47263d014da1b50c374d0d3f9978f7e38'
+sha256sums=('4ba91dfbb0e58af5ec64f4695631356629f089c2241bb7b0c5bdc1c3b9aa27e1'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
