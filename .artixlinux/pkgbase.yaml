@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-cheroot
-  version: 9.0.0-6
+  version: 10.0.0-1
   arch:
     - any
   pkgname:
     - python-cheroot
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-cheroot-9.0.0-6-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.0.0-1
+    packages:
+      - python-cheroot-10.0.0-1-any.pkg.tar.zst
   world:
     version: 9.0.0-5
     packages:
