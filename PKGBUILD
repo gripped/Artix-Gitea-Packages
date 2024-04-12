@@ -4,7 +4,7 @@
 # Contributor: Gustavo alvarez <sl1pkn07@gmail.com>
 
 pkgname=kwave
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='A sound editor'
 arch=(x86_64)
@@ -46,14 +46,14 @@ optdepends=('opus: OGG plugin')
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('09d00453ef38b2e8ef4b9985a64ed2576462ce2a4fbecc0f1bc97dc68453097b'
+sha256sums=('aa2d10769dba6cd43faaa99ef9b8a75881772227c868d7de52933ccd91cd926c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
