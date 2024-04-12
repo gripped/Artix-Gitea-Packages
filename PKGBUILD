@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kirigami-gallery
-pkgver=24.02.1
+pkgver=24.02.2
 pkgrel=1
 pkgdesc='Gallery application built using Kirigami'
 url='https://apps.kde.org/kirigami2.gallery/'
@@ -21,14 +21,14 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kdesdk)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('a3aac5bdb3dc62f545309055ab3a3728da4945b05078ca50add39e7183d2a86d'
+sha256sums=('70bb759c62a0e4d169781c334ccdb564f4cde0abf510910bde821335ce778add'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
