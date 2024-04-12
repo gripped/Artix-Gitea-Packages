@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-zope-copy
 pkgver=4.3
-pkgrel=2
+pkgrel=3
 pkgdesc="Pluggable object copying mechanism"
 arch=('any')
 url="https://github.com/zopefoundation/zope.copy"
