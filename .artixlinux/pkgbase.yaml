@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-sphinx
-  version: 7.2.6-3
+  version: 7.2.6-5
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 7.2.6-3
+    version: 7.2.6-5
     packages:
-      - python-sphinx-7.2.6-3-any.pkg.tar.zst
+      - python-sphinx-7.2.6-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
