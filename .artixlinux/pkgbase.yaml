@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-os-service-types
-  version: 1.7.0-13
+  version: 1.7.0-14
   arch:
     - any
   pkgname:
     - python-os-service-types
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.7.0-14
+    packages:
+      - python-os-service-types-1.7.0-14-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
