@@ -8,7 +8,7 @@ pkgname=(pyside6
 _qtver=6.7.0
 _clangver=17.0.6
 pkgver=${_qtver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(LGPL)
@@ -78,7 +78,6 @@ package_shiboken6() {
 
 # Install egg-info
   export PATH="/usr/lib/qt6/bin:$PATH"
-  export SETUPTOOLS_USE_DISTUTILS=stdlib
   cd pyside-setup
   python setup.py egg_info --build-type=shiboken6
   python setup.py egg_info --build-type=shiboken6-generator
