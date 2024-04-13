@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pdm
-  version: 2.14.0-1
+  version: 2.14.0-2
   arch:
     - any
   pkgname:
     - python-pdm
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.13.3-2
+    version: 2.14.0-2
     packages:
-      - python-pdm-2.13.3-2-any.pkg.tar.zst
+      - python-pdm-2.14.0-2-any.pkg.tar.zst
   world-gremlins:
     version: 2.14.0-1
     packages:

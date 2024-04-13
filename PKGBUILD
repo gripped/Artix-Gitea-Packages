@@ -3,7 +3,7 @@
 _name=pdm
 pkgname=python-pdm
 pkgver=2.14.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A modern Python package manager with PEP 582 support"
 arch=(any)
 url="https://github.com/pdm-project/pdm"
@@ -75,7 +75,7 @@ check() {
   # install to temporary location, as importlib is used
   python -m installer --destdir=test_dir dist/*.whl
   export PYTHONPATH="$PWD/test_dir/$site_packages:$PYTHONPATH"
-  pytest "${pytest_options[@]}" || :
+  pytest "${pytest_options[@]}"
 }
 
 package() {
