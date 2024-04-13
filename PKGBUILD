@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 pkgname="python-pecan"
 _pkgname="${pkgname#python-}"
 pkgdesc='A WSGI object-dispatching web framework, designed to be lean and fast with few dependencies.'
 pkgver=1.4.2
-pkgrel=3
+pkgrel=4
 arch=('any')
 url='https://github.com/pecan/pecan'
 license=('BSD')
