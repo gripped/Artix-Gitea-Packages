@@ -7,13 +7,13 @@
 
 pkgname=python-celery
 pkgver=5.3.6
-pkgrel=1
+pkgrel=1.0
 pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
 license=('BSD')
 depends=('python-billiard' 'python-click-didyoumean' 'python-click-plugins' 'python-click-repl'
-         'python-kombu' 'python-pytz' 'python-vine' 'etmpfiles')
+         'python-kombu' 'python-pytz' 'python-vine')
 optdepends=('python-cryptography: for celery.security'
             'python-pymongo: for celery.backends.mongodb'
             'python-msgpack: for using the msgpack serializer'
@@ -23,12 +23,15 @@ optdepends=('python-cryptography: for celery.security'
             'python-boto3: for SQS transport'
             'python-yaml: for using the yaml serializer'
             'python-pyzmq: for using ZeroMQ transport')
-makedepends=('python-setuptools')
+makedepends=('python-build'
+             'python-installer'
+             'python-setuptools'
+             'python-wheel')
 # checkdepends on systemd for sysusers hook to create 'bin' user, because celery's test suite requires gid 1 to exist
 checkdepends=('python-pytest-celery' 'python-pytest-subtests' 'python-pytest-timeout' 'python-case'
               'python-cryptography' 'python-gevent' 'python-pymongo' 'python-msgpack' 'python-pyro'
               'python-redis' 'python-sqlalchemy' 'python-boto3' 'python-yaml' 'python-pyzmq'
-              'python-eventlet' 'python-moto' 'python-pytest-click' 'esysusers')
+              'python-eventlet' 'python-moto' 'python-pytest-click')
 source=("https://pypi.io/packages/source/c/celery/celery-$pkgver.tar.gz"
         celery.tmpfiles.d)
 options=('!emptydirs')
@@ -37,7 +40,7 @@ sha512sums=('169fa01c72f4d4932a255f4e7a547d1cc24f6899540414950c37e487163127bd368
 
 build() {
   cd celery-$pkgver
-  python setup.py build
+  python -m build --wheel --skip-dependency-check --no-isolation
 }
 
 check() {
@@ -53,7 +56,12 @@ check() {
 
 package() {
   cd celery-$pkgver
-  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
-  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 "$srcdir"/celery.tmpfiles.d "$pkgdir"/usr/lib/tmpfiles.d/celery.conf
+
+  # Symlink license file
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  install -d "$pkgdir"/usr/share/licenses/$pkgname
+  ln -s "$site_packages"/celery-$pkgver.dist-info/LICENSE \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
