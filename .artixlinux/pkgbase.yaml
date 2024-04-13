@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pydantic-core
-  version: 1:2.18.1-1
+  version: 1:2.18.1-2
   arch:
     - x86_64
   pkgname:
     - python-pydantic-core
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:2.16.3-2
+    version: 1:2.18.1-2
     packages:
-      - python-pydantic-core-1:2.16.3-2-x86_64.pkg.tar.zst
+      - python-pydantic-core-1:2.18.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1:2.18.1-1
     packages:
