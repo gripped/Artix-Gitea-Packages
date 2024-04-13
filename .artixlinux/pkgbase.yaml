@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: check-jsonschema
-  version: 0.28.1-2
+  version: 0.28.2-1
   arch:
     - any
   pkgname:
     - check-jsonschema
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.28.1-1
+    version: 0.28.2-1
     packages:
-      - check-jsonschema-0.28.1-1-any.pkg.tar.zst
+      - check-jsonschema-0.28.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
