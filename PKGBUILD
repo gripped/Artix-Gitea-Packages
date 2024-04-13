@@ -3,7 +3,7 @@
 _pkg=filesystem_spec
 pkgname=python-fsspec
 pkgver=2024.3.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Specification that python filesystems should adhere to."
 arch=(any)
 url="https://github.com/intake/filesystem_spec"
@@ -62,7 +62,7 @@ build() {
 check() {
   cd ${_pkg}-${pkgver}
   # These tests do not work on CI, neither on our build server
-  pytest -vv --color=yes -rs --deselect fsspec/implementations/tests/test_http.py::test_processes
+  pytest -vv --color=yes -x -rs --deselect fsspec/implementations/tests/test_http.py::test_processes
 }
 
 package() {
