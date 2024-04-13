@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-xkbcommon
-  version: 1.0-1
+  version: 1.0-2
   arch:
     - x86_64
   pkgname:
     - python-xkbcommon
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.8-3
+    version: 1.0-2
     packages:
-      - python-xkbcommon-0.8-3-x86_64.pkg.tar.zst
+      - python-xkbcommon-1.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.0-1
     packages:
