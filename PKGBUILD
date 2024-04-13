@@ -1,8 +1,8 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=python-xkbcommon
-pkgver=0.8
-pkgrel=3
+pkgver=1.0
+pkgrel=1
 pkgdesc="Python bindings for libxkbcommon using cffi"
 arch=(x86_64)
 url="https://github.com/sde1000/python-xkbcommon"
@@ -21,8 +21,8 @@ makedepends=(
 )
 checkdepends=(python-pytest)
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('ae2640ef89e7ace0468e970762c7be4d3f608701f1abea10174f274c622db28a6e6323cdc5bbbbaaa1065d4c4ddf9f67b75d4c34bb2e9a0bb6260778b15a330a')
-b2sums=('0d2a649e3fee8baa9345ddca97dc7c77b5d9e10d7ca90cbb29bcc3531f4bba3deee39e610e147054e956310506fb79ebb43c85955b787e55046d67c12b851026')
+sha512sums=('c7793d6f5517771006ff5a9c01deb9a37717157d7171af49ff459dc96b3b16a1d2d4c0f1272b5a8f683390de1e8e6a6ff92472f18828c7e38e0f2a1ee6f34f07')
+b2sums=('3106877f8e87f50453a358eec4e6431642b00a6a2bc23d3088ef22379984869ec84cd042a1ac53dd72783f3005dad1efddf3f87410204b88bfde4f9da0044c97')
 
 build() {
   cd $pkgname-$pkgver
