@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pycrdt
-  version: 0.8.18-2
+  version: 0.8.19-1
   arch:
     - x86_64
   pkgname:
     - python-pycrdt
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.18-1
+    version: 0.8.19-1
     packages:
-      - python-pycrdt-0.8.18-1-x86_64.pkg.tar.zst
+      - python-pycrdt-0.8.19-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
