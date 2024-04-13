@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-graphviz
-  version: 0.20.2-2
+  version: 0.20.3-1
   arch:
     - any
   pkgname:
     - python-graphviz
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20.2-1
+    version: 0.20.3-1
     packages:
-      - python-graphviz-0.20.2-1-any.pkg.tar.zst
+      - python-graphviz-0.20.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

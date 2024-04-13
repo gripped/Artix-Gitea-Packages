@@ -3,8 +3,8 @@
 
 _pkgname=graphviz
 pkgname=python-graphviz
-pkgver=0.20.2
-pkgrel=2
+pkgver=0.20.3
+pkgrel=1
 pkgdesc='Simple Python interface for Graphviz'
 arch=(any)
 url="https://github.com/xflr6/$_pkgname"
@@ -18,7 +18,7 @@ checkdepends=(python-pytest
 #source=("https://files.pythonhosted.org/packages/source/${_pkgname:0:1}/${_pkgname}/${_pkgname}-${pkgver}.zip")
 _archive="$_pkgname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('bcbf6965943c8b1568259349e5da15f72c7098e12c4cefb7c3a525b022c3617a')
+sha256sums=('6ae51c891c539a639b2db0862049979ce08214786b4beecc817b386596db428c')
 
 prepare() {
 	cd "$_archive"
