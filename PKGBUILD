@@ -4,13 +4,13 @@
 _pyname=cramjam
 pkgname=python-$_pyname
 pkgver=2.8.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Thin Python bindings to de/compression algorithms in Rust'
 arch=(x86_64)
 url='https://github.com/milesgranger/pyrus-cramjam'
 license=(MIT)
 depends=(python)
-checkdepends=(python-hypothesis python-memory-profiler python-pytest python-numpy)
+checkdepends=(python-hypothesis python-pytest python-numpy)
 makedepends=(python-installer maturin rust patchelf)
 source=(https://files.pythonhosted.org/packages/source/${_pyname::1}/$_pyname/$_pyname-$pkgver.tar.gz)
 sha256sums=('6b1fa0a6ea8183831d04572597c182bd6cece62d583a36cde1e6a86e72ce2389')
