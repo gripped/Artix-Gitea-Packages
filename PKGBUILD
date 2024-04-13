@@ -1,10 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Diego Nieto Cid <dnietoc@gmail.com>
 
 pkgname=python-github3py
 pkgver=4.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A comprehensive wrapper around the GitHub API (v3)"
 arch=("any")
 url="https://github.com/sigmavirus24/github3.py"
