@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-os-client-config
 pkgver=2.1.0
-pkgrel=8
+pkgrel=9
 arch=('any')
 pkgdesc='OpenStack Client Configuation Library'
 url='https://github.com/openstack/os-client-config'
