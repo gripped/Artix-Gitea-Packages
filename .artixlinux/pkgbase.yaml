@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pynetbox
-  version: 7.3.3-1
+  version: 7.3.3-2
   arch:
     - any
   pkgname:
     - python-pynetbox
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 7.3.3-2
+    packages:
+      - python-pynetbox-7.3.3-2-any.pkg.tar.zst
   world-gremlins:
     version: 7.3.3-1
     packages:
