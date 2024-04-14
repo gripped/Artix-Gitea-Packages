@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bluez
-  version: 5.73-4.1
+  version: 5.74-1
   arch:
     - x86_64
   pkgname:
@@ -14,7 +14,7 @@ pkgbase:
     - bluez-mesh
     - bluez-obex
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -35,8 +35,16 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.74-1
+    packages:
+      - bluez-5.74-1-x86_64.pkg.tar.zst
+      - bluez-utils-5.74-1-x86_64.pkg.tar.zst
+      - bluez-libs-5.74-1-x86_64.pkg.tar.zst
+      - bluez-cups-5.74-1-x86_64.pkg.tar.zst
+      - bluez-deprecated-tools-5.74-1-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.74-1-x86_64.pkg.tar.zst
+      - bluez-mesh-5.74-1-x86_64.pkg.tar.zst
+      - bluez-obex-5.74-1-x86_64.pkg.tar.zst
   world:
     version: 5.73-4.1
     packages:
@@ -66,3 +74,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
