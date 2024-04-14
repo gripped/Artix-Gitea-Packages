@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: passt
-  version: 2024_03_26.4988e2b-1
+  version: 2024_04_05.954589b-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024_03_26.4988e2b-1
+    version: 2024_04_05.954589b-1
     packages:
-      - passt-2024_03_26.4988e2b-1-x86_64.pkg.tar.zst
+      - passt-2024_04_05.954589b-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
