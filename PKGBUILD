@@ -1,8 +1,9 @@
-# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: kpcyrd <kpcyrd[at]archlinux[dot]org>
 
 pkgname=torbrowser-launcher
 pkgver=0.3.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Securely and easily download, verify, install, and launch Tor Browser in Linux"
 url="https://github.com/torproject/torbrowser-launcher"
 depends=(
