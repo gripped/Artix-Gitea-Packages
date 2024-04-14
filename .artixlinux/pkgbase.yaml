@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: syslog-ng
-  version: 4.6.0-1
+  version: 4.6.0-2
   arch:
     - x86_64
   pkgname:
     - syslog-ng
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.4.0-9
+    version: 4.6.0-2
     packages:
-      - syslog-ng-4.4.0-9-x86_64.pkg.tar.zst
+      - syslog-ng-4.6.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 4.6.0-1
     packages:
