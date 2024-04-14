@@ -17,10 +17,12 @@ optdepends=(
   'qt6-base: cmake-gui'
 )
 source=("https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz"
-        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc})
+        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc}
+        artix-cmake.patch)
 sha512sums=('0dad9e0e3ad9c1178d337cd3a14e9ce145e011175e9d9fce4961d12b8fe37091f9fdf05f4303cdd846408955b11bac3cfe5064f852833b99e31f5a7b82a9d1eb'
             'e6483779cb5f6966bbfa36bc483a78ea89a0a149d6bbf1987b5ba25e4f745b1dea17fde7217ce03636a525888283eb35b6f211a1c6f74512ee096599e7180051'
-            'SKIP')
+            'SKIP'
+            'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
