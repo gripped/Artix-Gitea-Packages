@@ -6,8 +6,8 @@
 # Contributor: Bogdan Burlacu <bogdan.burlacu AT pm.me>
 
 pkgname=onetbb
-pkgver=2021.11.0
-pkgrel=2
+pkgver=2021.12.0
+pkgrel=1
 pkgdesc='High level abstract threading library (oneAPI Threading Building Blocks)'
 arch=('x86_64')
 url='https://oneapi-src.github.io/oneTBB/'
@@ -18,7 +18,7 @@ conflicts=('intel-tbb' 'tbb')
 provides=("intel-tbb=$pkgver" "tbb=$pkgver")
 replaces=('intel-tbb' 'tbb')
 source=(https://github.com/oneapi-src/oneTBB/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha512sums=('4779141b7602f2fa3a509fdd346824ba270a3a568df3649ce8cb51264d233df5cec5e5cb67b91319dd11d3d5e054697b4ed345e07216107985ddb6e1e7ef94e5')
+sha512sums=('64022bcb61cf7b2030a1bcc11168445ef9f0d69b70290233a7febb71cc7a12cc2282dddc045f84e30893efe276342f02fd78d176706268eeaefe9aac7446d4e9')
 
 build() {
   cmake -B build -S oneTBB-$pkgver -GNinja \
