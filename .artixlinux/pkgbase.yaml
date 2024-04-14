@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rust
-  version: 1:1.77.1-2
+  version: 1:1.77.2-1
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.77.1-2
+    version: 1:1.77.2-1
     packages:
-      - rust-1:1.77.1-2-x86_64.pkg.tar.zst
-      - lib32-rust-libs-1:1.77.1-2-x86_64.pkg.tar.zst
-      - rust-musl-1:1.77.1-2-x86_64.pkg.tar.zst
-      - rust-wasm-1:1.77.1-2-x86_64.pkg.tar.zst
-      - rust-src-1:1.77.1-2-x86_64.pkg.tar.zst
+      - rust-1:1.77.2-1-x86_64.pkg.tar.zst
+      - lib32-rust-libs-1:1.77.2-1-x86_64.pkg.tar.zst
+      - rust-musl-1:1.77.2-1-x86_64.pkg.tar.zst
+      - rust-wasm-1:1.77.2-1-x86_64.pkg.tar.zst
+      - rust-src-1:1.77.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
