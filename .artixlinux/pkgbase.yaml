@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lighttpd
-  version: 1.4.75-1
+  version: 1.4.76-1
   arch:
     - x86_64
   pkgname:
     - lighttpd
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.75-1
+    version: 1.4.76-1
     packages:
-      - lighttpd-1.4.75-1-x86_64.pkg.tar.zst
+      - lighttpd-1.4.76-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
