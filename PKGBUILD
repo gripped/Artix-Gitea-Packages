@@ -2,8 +2,7 @@
 
 pkgname=mailman-web
 pkgver=0.0.9
-_commit=5659ce0128e41317f83a37dddd6f7c1cdd9857f6  # refs/tags/0.0.9
-pkgrel=1
+pkgrel=2
 pkgdesc="The web interface for Mailman 3"
 arch=(any)
 url="https://gitlab.com/mailman/mailman-web"
@@ -32,20 +31,20 @@ backup=(
 )
 options=()
 source=(
-  "git+$url#tag=$_commit?signed"
+  "git+$url?signed#tag=$pkgver"
   settings.py
   $pkgname.sysusers
   $pkgname.tmpfiles
   $pkgname.uwsgi
   $pkgname-0.0.5-fhs.patch
 )
-sha512sums=('SKIP'
+sha512sums=('5f53b7c441760d26af5cc80d6504be4f18b8d1626038f07708c752d990faa34f4d2e31650b25a7f949dd762b7411322a9485ab44c5aac2c7eaaf9b2fae71203e'
             'cf255da4028a36a21473166a44c4a104b58ed824b81a08548bd89a861f9684bf89d166c4827b8dd5d9e516a9b0a30bbf26733f9a7e3f0d85f1c5c29f3929a3db'
             '4044b2500dc63ec1cea829d0189428de590755006c38d6f82e5a51af8935409a1ea5a5fb1f676d2331ceb59383cf79730837427eff32ad82f900068684aa3b45'
             '07aa2af5f72dccdfe32f3f220d798e5e6d57ed6875566e33ad610a05a063861a84aa6bb6d4c9a172711862855e7eae68a19fd6dcd098893f4a365579bd29cf57'
             '744a0f0af9c5683b50bf43816262917edeb47e954aba1ac7c9d831eddf3c5e63e307811e35161ac3a717b08f7d9c3dface0a2703a7c2a0f6d3a9882ce445109f'
             '311b968255435f20ee3c9d4c88e7c4f122b93b6fef8b586896e5cd3bf63e95fae1b4a770cacb3e6eb35859b5a69f26f98c3cd9ca44fcfb509ef676556f2fb67e')
-b2sums=('SKIP'
+b2sums=('3d688228402189a08a9db2921a63fc1c58aa3d66f64df4993400925c5d71ad5b063fc47debe0062c20a1d98613867b27cf4f8c71d2a0725c0feedc8b6f01fb41'
         '40c2583cf72597fbcdfeecabb8aa10cb2fe1e5f9b60669bdc933e4884899325f70ba4ab9f27dc702aacf26f0b0de400b26245c7770a9b3e8cc0b0641478028d6'
         'c57e70b949947ce3d30053886620221346d87416034cd004dcd91107e55a0123fb37a6c68796168ddabaab467b0f77dd8292e650df05e2e1eed0ec4d63becc2b'
         '80ca9c95c9bb3ce42bd4e3efbea59bc6cbbdabd35c504ee5c7414b8c657d863119921577fb618e0709631d05704d24698a2575f12aed81cf1cf16cd8ce116ed9'
