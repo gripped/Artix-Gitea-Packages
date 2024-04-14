@@ -1,7 +1,8 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Maintainer : Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=openvdb
 pkgver=11.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A large suite of tools for the efficient storage and manipulation of sparse volumetric data discretized on three-dimensional grids'
 url='https://github.com/dreamworksanimation/openvdb'
 arch=('x86_64')
@@ -24,8 +25,6 @@ build() {
     -DUSE_NUMPY=ON \
     -DUSE_LOG4CPLUS=ON \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_PREFIX_PATH=/usr \
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DOPENVDB_BUILD_PYTHON_MODULE=ON \
     -DOPENVDB_BUILD_DOCS=ON \
     -DOPENVDB_BUILD_UNITTESTS=OFF
