@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=3.29.1
+pkgver=3.29.2
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -17,14 +17,10 @@ optdepends=(
   'qt6-base: cmake-gui'
 )
 source=("https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz"
-        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc}
-        artix-cmake.patch
-        artix-cmake)
-sha512sums=('3665ddb356bf973f75c9f2601f7210f7ff58c77c39926a43af8640979777a796d441df43fda5d2632548f7d15e4553829680c76f3d9376f9e763fe7bba16f3d7'
-            '78ac190968e5253a5cdef8acbddebf0f5750bf47aef92932b65fee4c75fd3c66a1fe3a366cd8105a9908b2d3324da4275b2b4f4c9e2c269818a6613b9dd21214'
-            'SKIP'
-            'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6'
-            '08a4f8df1b005869a3497fd5090620ce54eefa09df67245e76eb6ae81171e5045f87180cd848d8a1e44ce5c4cf290efd6c9b655ccf46230967abef4941513af7')
+        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc})
+sha512sums=('0dad9e0e3ad9c1178d337cd3a14e9ce145e011175e9d9fce4961d12b8fe37091f9fdf05f4303cdd846408955b11bac3cfe5064f852833b99e31f5a7b82a9d1eb'
+            'e6483779cb5f6966bbfa36bc483a78ea89a0a149d6bbf1987b5ba25e4f745b1dea17fde7217ce03636a525888283eb35b6f211a1c6f74512ee096599e7180051'
+            'SKIP')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
@@ -54,6 +50,4 @@ package() {
   rm -r "$pkgdir"/usr/share/doc/cmake/html/_sources
   emacs -batch -f batch-byte-compile "${pkgdir}"/usr/share/emacs/site-lisp/cmake-mode.el
   install -Dm644 Copyright.txt "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
-
-  install -Dm755 "$srcdir"/artix-cmake "$pkgdir"/usr/bin/artix-cmake
 }
