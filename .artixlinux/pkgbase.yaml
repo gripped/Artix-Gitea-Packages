@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: onetbb
-  version: 2021.12.0-1
+  version: 2021.12.0-2
   arch:
     - x86_64
   pkgname:
     - onetbb
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2021.11.0-2
+    version: 2021.12.0-2
     packages:
-      - onetbb-2021.11.0-2-x86_64.pkg.tar.zst
+      - onetbb-2021.12.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 2021.12.0-1
     packages:
