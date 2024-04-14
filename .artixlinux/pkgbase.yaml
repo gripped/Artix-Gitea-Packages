@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gpgme
-  version: 1.23.2-2
+  version: 1.23.2-2.1
   arch:
     - x86_64
   pkgname:
@@ -11,20 +11,20 @@ pkgbase:
     - python-gpgme
 actions:
   addRepo: system-goblins
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 1.23.2-2
+    version: 1.23.2-2.1
     packages:
-      - gpgme-1.23.2-2-x86_64.pkg.tar.zst
-      - qgpgme-qt5-1.23.2-2-x86_64.pkg.tar.zst
-      - qgpgme-qt6-1.23.2-2-x86_64.pkg.tar.zst
-      - python-gpgme-1.23.2-2-x86_64.pkg.tar.zst
+      - gpgme-1.23.2-2.1-x86_64.pkg.tar.zst
+      - qgpgme-qt5-1.23.2-2.1-x86_64.pkg.tar.zst
+      - qgpgme-qt6-1.23.2-2.1-x86_64.pkg.tar.zst
+      - python-gpgme-1.23.2-2.1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
