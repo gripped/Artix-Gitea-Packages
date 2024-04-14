@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libchewing
-  version: 0.6.0-1
+  version: 0.7.0-1
   arch:
     - x86_64
   pkgname:
     - libchewing
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.0-1
+    version: 0.7.0-1
     packages:
-      - libchewing-0.6.0-1-x86_64.pkg.tar.zst
+      - libchewing-0.7.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
