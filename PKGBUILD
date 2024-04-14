@@ -4,7 +4,7 @@
 
 pkgname=openimageio
 pkgver=2.5.9.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A library for reading and writing images, including classes, utilities, and applications"
 arch=('x86_64')
 url="http://www.openimageio.org/"
@@ -22,7 +22,7 @@ build() {
   cd OpenImageIO-$pkgver
 
   local python_version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
-  artix-cmake \
+  cmake \
     -Bbuild \
     -GNinja \
     -DUSE_PYTHON=ON \
