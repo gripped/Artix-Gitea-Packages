@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgbase=volume_key
 pkgname=(volume_key python-volume_key)
 pkgver=0.3.12
-pkgrel=8
+pkgrel=9
 pkgdesc="A library for manipulating storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases"
 arch=('x86_64')
 url="https://pagure.io/volume_key"
@@ -16,6 +16,7 @@ makedepends=(
   'nspr'
   'nss'
   'python'
+  'python-setuptools'
   'swig'
   'util-linux-libs'
 )
