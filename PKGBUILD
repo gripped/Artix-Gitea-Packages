@@ -39,6 +39,7 @@ source=(
   https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
+  docutils.patch
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
@@ -50,12 +51,14 @@ sha256sums=('9e723232d603ab45ebf043c34714c48f277ab195c29abcb8472f2a4c3a5a1995'
             'SKIP'
             'db03a8ea8ba5bb3f337c72812831dade02643b481148d3cce3a3855c9d82e53c'
             'SKIP'
-            'a6877218d8412312537f1078f8290aafc6f922c345c13174986d0faecfa00bab')
+            'a6877218d8412312537f1078f8290aafc6f922c345c13174986d0faecfa00bab'
+            '9cb73cacbb3633f207d0c30e738cae9965adcd0b0eb5ecd60563fed1394c0f38')
 b2sums=('fea25d171e8e4e0394211b5589d76fd85537094dc80c135e80fc8bd32acf0d6f4f34524c35df960e8c7ee488c8288d158fc233d6cc7a76182996a658741da71b'
         'SKIP'
         '25d58044c04e7d302de814a9e207da4a90cc66f0c497b6a6ce3d2f643ef3d757658fbe465080902ef9216f9a4a68e41e75f17ca2c381eb3fa5935be5566da8ac'
         'SKIP'
-        '25bffae453d3fbd48a949993b5480546f1318ce2e2197da300d09730cd7775825d47e4b58b4c52e88720a81364c72127d836e68469fd39ca1b5a42fa329755f8')
+        '25bffae453d3fbd48a949993b5480546f1318ce2e2197da300d09730cd7775825d47e4b58b4c52e88720a81364c72127d836e68469fd39ca1b5a42fa329755f8'
+        '0bb42a22c110f06a45e59a9adc194184a51ff97e5584d6ffabca0aa37e1e65ccaf44f43dc744eaa3861d6f6b00e299d4662bcf0c0d94478af9352b4c4f6b0ffd')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
