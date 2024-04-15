@@ -6,8 +6,8 @@
 # Contributor: Sid Karunaratne
 
 pkgname=tor
-pkgver=0.4.8.10
-pkgrel=2
+pkgver=0.4.8.11
+pkgrel=1
 pkgdesc='Anonymizing overlay network.'
 arch=('x86_64')
 url='https://www.torproject.org/download/tor/'
@@ -22,8 +22,6 @@ depends=(
   'liblzma.so'
   'libseccomp.so'
   'libssl.so'
-  'etmpfiles'
-  'esysusers'
   'libz.so'
   'libzstd.so'
 )
@@ -35,15 +33,15 @@ source=("https://dist.torproject.org/${pkgname}-${pkgver}.tar.gz"{,.sha256sum{,.
         'torrc.patch'
         'tor.sysusers'
         'tor.tmpfiles')
-sha256sums=('e628b4fab70edb4727715b23cf2931375a9f7685ac08f2c59ea498a178463a86'
-            '68eb49abb3f8aba6d417699cb333bf6cc944e8276cbf9b237402e23ff298bc83'
+sha256sums=('8f2bdf90e63380781235aa7d604e159570f283ecee674670873d8bb7052c8e07'
+            '29984578036a0a07beb0a4bee5fa9de4eaa7163f554e556ccd9909a7ae2ba97a'
             'SKIP'
             '4067f5a6589bfaa97dd2b1a20aa73a9d3f1793bb8862c602c24b4f0cefd05dc9'
             'c5c082fd1cda30c95c40043d5be96926fa81e5388a97534373bf0ce100191ade'
             '04eec05b4e61efccc58c5da657363f0c1059d7f122cb15c32331a201af2d7f94'
             '07bedb17660a3673b31b0005b6505065c90b32f2c6b28b969241da675560f926')
-b2sums=('ef470664d85e019f6cac2366e934d5dc31b8ae92f121a2b4c8c95f8267abce5ce4413d30a24affa40a069d587212364ae5a7c3cd114488e50a535f01c54c6e77'
-        '1410a5e7e486c7c33b6b217a53d250bc3e1d76c87e74ad29f6c6a67cbdacb3627521cc8936f7e8e8d72c3333078cede222d13c825b8d66df7c1d50721043f89e'
+b2sums=('b7f5bb855a6f8fe7dfd0e0efe7b48798e9d4642e401641c83554ed0f98fe238a5f303e9466e9e24a7ade63488a745b3c957ed6cc53a2f5e21f5f9c3f78f7fa78'
+        '062077991dc4ca70c457a7c1a70c815d288b5afcd54246a51dd86685454fb0cf52aa8e12974e7909ef2c0b8e764c369278113c5b7d84e866fad0a66bdff93ebc'
         'SKIP'
         'cb9fbdc4bb449975bab57ad11a188ccc0462981132ab9617108d6a92f71e22448e407afc73f252fc4f3f2f6bf9e5c211abd9cdfe6514a76ff2162ef750348b90'
         '98baf96cdac36072086f48bf4701cede6cf31eee207f4a1a4cfc81b483ba53b991082aaf4ed638e50dfd67fb006bbd915af97943ab658df29dfa51ea4aa77dd2'

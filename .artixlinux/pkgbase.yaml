@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tor
-  version: 0.4.8.10-2
+  version: 0.4.8.11-1
   arch:
     - x86_64
   pkgname:
     - tor
 actions:
   addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.8.10-2
+    version: 0.4.8.11-1
     packages:
-      - tor-0.4.8.10-2-x86_64.pkg.tar.zst
+      - tor-0.4.8.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
