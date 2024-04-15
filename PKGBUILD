@@ -3,7 +3,7 @@
 pkgname=memray
 pkgver=1.12.0
 _tag_commit=ac8ecc2e2ef0798b4e238ac11d5cef6bc19c70f5 # git show-ref -d v${_tag_name}
-pkgrel=1
+pkgrel=2
 pkgdesc="A memory profiler for Python"
 arch=('x86_64')
 url="https://github.com/bloomberg/memray"
