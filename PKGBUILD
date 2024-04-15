@@ -52,8 +52,8 @@ optdepends=(
   'python-pytest-testinfra: for the testinfra verifier'
 )
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('b7bcae1f41d48e38f96890bd9a45ffa770117490fe0afb58af98f5b90c973d597f2b9eed9c814f370692f9d6a1ae31266aeea45e41a0d076f440c8848ed1ea99')
-b2sums=('de49b0b7ca6112f7d59bff83d40307e1bf276ef2b48bccfe7d3c6a175bda620c87663188c978891db25b9ca4ad58dd76b5af04a6a315a32cb95f05c63b6f5a14')
+sha512sums=('afb65756c628c6d4f3b3ecc4d5fc86ae36c24397c62835595f713f53ffa23cd2f7c45e09ee980ba3a2edd3fa0c8a8ba107b04ba52553cd35ca44846712eacb62')
+b2sums=('0d6f9e4f66808c06f388754cbc0e99bec8ac21ab47c22ec00aee668dbddd24709f9952127fea2ddeef4b3d76b0a90057a52b7355f35e66ba987ea0a8e19b842a')
 
 build() {
   cd $pkgname-$pkgver
