@@ -1,5 +1,7 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Filipe Laíns <lains@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Filipe Laíns <lains@archlinux.org>
 # Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: Guillaume ALAUX <guillaume@archlinux.org>
 # Contributor: Florian Pritz <bluewind at jabber dot ccc dot de>
@@ -8,7 +10,7 @@
 pkgbase=wireshark
 pkgname=('wireshark-cli' 'wireshark-qt')
 pkgver=4.2.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Network traffic and protocol analyzer/sniffer'
 url='https://www.wireshark.org/'
 arch=('x86_64')
