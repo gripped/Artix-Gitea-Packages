@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hyprland
-  version: 0.38.1-1
+  version: 0.39.0-1
   arch:
     - x86_64
     - aarch64
@@ -29,9 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.38.1-1
+    version: 0.39.0-1
     packages:
-      - hyprland-0.38.1-1-x86_64.pkg.tar.zst
+      - hyprland-0.39.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.38.1-1
     packages:
