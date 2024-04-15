@@ -5,8 +5,8 @@
 
 pkgname=radicale
 _name=Radicale
-pkgver=3.1.8
-pkgrel=3
+pkgver=3.1.9
+pkgrel=1
 pkgdesc="Simple calendar (CalDAV) and contact (CardDAV) server"
 arch=(any)
 url="https://radicale.org/"
@@ -18,7 +18,6 @@ depends=(
   python-dateutil
   python-defusedxml
   python-passlib
-  python-pytz
   python-vobject
 )
 makedepends=(
@@ -28,7 +27,7 @@ makedepends=(
   python-wheel
 )
 checkdepends=(
-  python-pytest
+  python-pytest7
   python-typeguard
   python-waitress
 )
@@ -43,10 +42,10 @@ source=(
   $pkgname-sysusers.conf
   $pkgname-tmpfiles.conf
 )
-sha512sums=('5c4b55ee9cfc5060a0e0cf1f284d2c5a354bcabd7a088214e917fabb0083bcd172fd92aeb59b1f869f34e04f8c276efbed15c2a3ff2fdbc81b2220586bbaf31b'
+sha512sums=('f4d0b26149c331b4bc02f01bb637cea1d29e1d563a4133c4293ec13990f1553988181582c2e726ce33b563403a14e9ec863403f86e66b13fd8cfd62cf74439e4'
             '56dffb66e018cfbf158dc5d8fe638b3cb31229945f659aae5623f219bcd1d68ddc375f1633fa8e857a9b2f50c9e05a06efce165370137d6e116a4f187466637f'
             '9d0dd88e4a34e9f97abda1785698e4b2a5e8202063deeb91b84e13c05e00b07e45b8d4d9eca09b9241b1138bbbfdc999dba0135c18f5bc0c08d65b0cd83b367b')
-b2sums=('ec855138aa18508da5375c5bde854cee4d4110fb75437cc1472afd3b589dfa523031cdd1b8a51a0f6a74dfe819308acd068b979acde32c05941d113d9d289f1e'
+b2sums=('6d74eabd7e09b1804a6a3c556a9f629fb72c4685fdf5d96d0d53ffaf5db712968b054678be866002ab4ceafaf1d3d8ad3f52aae7a9a4ecabbc129149c96ab9b6'
         'b3af60e144ef857e42ec672e806e9600265ab7d2ea4a75011de9ab56918a008437afdacb301df210b54424fb7ff1e9a332831c67b2e58fd6bc0a0aa1eebe8909'
         '41916d62f5e3f1060bd21db0722abe837754a4cb915af218c904dafac4b06794f8fde2e34486fb7392777b4738502f3df4c1390b835050045337585b064e23bb')
 
@@ -71,12 +70,12 @@ check() {
     --deselect radicale/tests/test_web.py::TestBaseWebRequests::test_internal
     --deselect radicale/tests/test_web.py::TestBaseWebRequests::test_none
   )
-  local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
   cd $_name-$pkgver
   python -m installer --destdir=test_dir dist/*.whl
-  export PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH"
-  pytest "${pytest_options[@]}" $pkgname/tests
+  export PYTHONPATH="$PWD/test_dir/$site_packages:$PYTHONPATH"
+  pytest "${pytest_options[@]}"
 }
 
 package() {
