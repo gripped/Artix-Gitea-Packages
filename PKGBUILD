@@ -11,7 +11,7 @@
 
 pkgname=strongswan
 pkgver=5.9.13
-pkgrel=1
+pkgrel=2
 pkgdesc='Open source IPsec implementation'
 url='https://www.strongswan.org'
 license=('GPL2')
@@ -32,10 +32,18 @@ backup=(
   etc/strongswan.conf
   etc/strongswan.d/{charon-logging.conf,charon.conf,pki.conf,pool.conf,scepclient.conf,starter.conf,swanctl.conf}
   etc/strongswan.d/charon/{aesni.conf,attr-sql.conf,attr.conf,bliss.conf,chapoly.conf,cmac.conf,connmark.conf,constraints.conf,curl.conf,des.conf,dhcp.conf,dnskey.conf,eap-aka-3gpp2.conf,eap-aka.conf,eap-gtc.conf,eap-identity.conf,eap-md5.conf,eap-mschapv2.conf,eap-radius.conf,eap-sim-file.conf,eap-sim.conf,eap-simaka-pseudonym.conf,eap-simaka-reauth.conf,eap-tls.conf,ext-auth.conf,farp.conf,fips-prf.conf,forecast.conf,gmp.conf,ha.conf,hmac.conf,kernel-netlink.conf,md5.conf,mgf1.conf,nonce.conf,newhope.conf,ntru.conf,openssl.conf,pem.conf,pgp.conf,pkcs1.conf,pkcs12.conf,pkcs7.conf,pkcs8.conf,pubkey.conf,random.conf,rc2.conf,resolve.conf,revocation.conf,sha1.conf,sha2.conf,sha3.conf,socket-default.conf,sql.conf,sqlite.conf,sshkey.conf,stroke.conf,updown.conf,vici.conf,x509.conf,xauth-eap.conf,xauth-generic.conf,xcbc.conf,unity.conf,curve25519.conf,bypass-lan.conf})
-source=("https://download.strongswan.org/strongswan-${pkgver}.tar.bz2"{,.sig})
+source=("https://download.strongswan.org/strongswan-${pkgver}.tar.bz2"{,.sig}
+  'configure_ac.patch')
 validpgpkeys=("948F158A4E76A27BF3D07532DF42C170B34DBA77")
 sha512sums=('a929c1fb2a5e7d3064f6cd0be76703198406dad981f4b345311a004c18aa3c12adcb49eb33705fe4c3c31daf556cef5906d8753f5d9fbff5a27b732f93d8f19f'
-            'SKIP')
+            'SKIP'
+            '645f6e3c9df8634ac06cbafc314ad46ede45b5412140c20236d25187a7405a5a941f74c52ca3ee3cc3a8e97d7af88b22209cae854d6e99f0ad9c489db78026c4')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  patch -Np1 -i ../configure_ac.patch
+  autoreconf -fiv
+}
 
 build() {
   cd ${pkgname}-${pkgver}
