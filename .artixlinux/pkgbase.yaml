@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: speech-dispatcher
-  version: 0.11.5-1
+  version: 0.11.5-2
   arch:
     - x86_64
   pkgname:
     - speech-dispatcher
     - libspeechd
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.11.5-2
+    packages:
+      - speech-dispatcher-0.11.5-2-x86_64.pkg.tar.zst
+      - libspeechd-0.11.5-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
