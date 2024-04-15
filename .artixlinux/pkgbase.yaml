@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: dblatex
-  version: 0.3.12-10
+  version: 0.3.12-11
   arch:
     - any
   pkgname:
     - dblatex
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.3.12-9
+    version: 0.3.12-11
     packages:
-      - dblatex-0.3.12-9-any.pkg.tar.zst
+      - dblatex-0.3.12-11-any.pkg.tar.zst
   world-gremlins:
     version: 0.3.12-10
     packages:
