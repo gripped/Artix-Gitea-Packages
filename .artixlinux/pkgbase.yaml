@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - hyprland
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.38.1-1
+    packages:
+      - hyprland-0.38.1-1-x86_64.pkg.tar.zst
   world:
     version: 0.38.1-1
     packages:
