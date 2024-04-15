@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
@@ -6,7 +6,7 @@
 
 pkgname=gpsd
 pkgver=3.25
-pkgrel=2
+pkgrel=3
 pkgdesc="GPS daemon and library to support USB/serial GPS devices"
 arch=('x86_64')
 url="http://catb.org/gpsd/"
@@ -19,7 +19,7 @@ optdepends=('gtk3: GUI frontends'
             'python-gobject: GUI frontends'
             'python-pyserial: GUI frontends'
             'qt5-base: for Qgpsmm')
-makedepends=('scons' 'docbook-xsl' 'qt5-base' 'python-gobject' 'python-cairo' 'python-pyserial' 'gtk3')
+makedepends=('scons' 'docbook-xsl' 'qt5-base' 'python-gobject' 'python-cairo' 'python-pyserial' 'gtk3' 'python-setuptools')
 backup=('etc/default/gpsd')
 source=(https://download-mirror.savannah.gnu.org/releases/$pkgname/$pkgname-$pkgver.tar.gz{,.sig}
         $pkgname.conf)
@@ -35,7 +35,7 @@ build() {
   export LINKFLAGS="${LDFLAGS}"
   _pythonpath=`python -c "from sysconfig import get_path; print(get_path('platlib'))"`
   scons prefix=/usr \
-        systemd=no\
+        systemd=no \
         gpsd_group=uucp \
         python_libdir=$_pythonpath \
         sbindir=/usr/bin \
@@ -58,8 +58,6 @@ package() {
 
   sed -e 's|/local||' -i packaging/X11/*.desktop
   install -Dm644 packaging/X11/*.desktop -t "${pkgdir}"/usr/share/applications/
-
-#  install -Dm644 gpsd-$pkgver/systemd/{gpsd.service,gpsd.socket,gpsdctl@.service} -t "${pkgdir}"/usr/lib/systemd/system/
 
   install -Dm644 COPYING "${pkgdir}"/usr/share/licenses/$pkgname/LICENSE
 }
