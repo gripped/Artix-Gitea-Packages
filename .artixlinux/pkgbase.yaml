@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zabbix
-  version: 6.4.12-1
+  version: 6.4.13-1
   arch:
     - x86_64
   pkgname:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.4.12-1
+    version: 6.4.13-1
     packages:
-      - zabbix-server-6.4.12-1-x86_64.pkg.tar.zst
-      - zabbix-agent-6.4.12-1-x86_64.pkg.tar.zst
-      - zabbix-agent2-6.4.12-1-x86_64.pkg.tar.zst
-      - zabbix-proxy-6.4.12-1-x86_64.pkg.tar.zst
-      - zabbix-frontend-php-6.4.12-1-x86_64.pkg.tar.zst
-      - zabbix-web-service-6.4.12-1-x86_64.pkg.tar.zst
+      - zabbix-server-6.4.13-1-x86_64.pkg.tar.zst
+      - zabbix-agent-6.4.13-1-x86_64.pkg.tar.zst
+      - zabbix-agent2-6.4.13-1-x86_64.pkg.tar.zst
+      - zabbix-proxy-6.4.13-1-x86_64.pkg.tar.zst
+      - zabbix-frontend-php-6.4.13-1-x86_64.pkg.tar.zst
+      - zabbix-web-service-6.4.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -62,3 +62,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
