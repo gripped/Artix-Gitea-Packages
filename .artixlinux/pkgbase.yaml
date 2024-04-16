@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wireplumber
-  version: 0.5.1-1
+  version: 0.5.1-2
   arch:
     - x86_64
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.1-1
+    version: 0.5.1-2
     packages:
-      - wireplumber-0.5.1-1-x86_64.pkg.tar.zst
-      - libwireplumber-0.5.1-1-x86_64.pkg.tar.zst
-      - wireplumber-docs-0.5.1-1-x86_64.pkg.tar.zst
+      - wireplumber-0.5.1-2-x86_64.pkg.tar.zst
+      - libwireplumber-0.5.1-2-x86_64.pkg.tar.zst
+      - wireplumber-docs-0.5.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
