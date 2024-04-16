@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pyasn1
-  version: 0.5.0-2
+  version: 0.5.1-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.5.0-2
+    version: 0.5.1-1
     packages:
-      - python-pyasn1-0.5.0-2-any.pkg.tar.zst
+      - python-pyasn1-0.5.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
