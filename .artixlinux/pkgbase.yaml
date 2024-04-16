@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-mongoengine
-  version: 0.24.2-3
+  version: 0.28.2-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.24.2-3
+    version: 0.28.2-1
     packages:
-      - python-mongoengine-0.24.2-3-any.pkg.tar.zst
+      - python-mongoengine-0.28.2-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
