@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: breezy
-  version: 3.3.5-2
+  version: 3.3.7-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.3.5-2
+    version: 3.3.7-1
     packages:
-      - breezy-3.3.5-2-x86_64.pkg.tar.zst
+      - breezy-3.3.7-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
