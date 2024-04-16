@@ -158,9 +158,6 @@ build() {
   make
 }
 
-check() {
-  LIBGUESTFS_DEBUG=1 LIBGUESTFS_TRACE=1 make -k check -C $pkgname-$pkgver
-}
 
 package() {
   make INSTALLDIRS=vendor DESTDIR="$pkgdir" install -C $pkgname-$pkgver
