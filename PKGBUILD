@@ -8,7 +8,7 @@ pkgname=(pyside6
 _qtver=6.7.0
 _clangver=17.0.6
 pkgver=${_qtver/-/}
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(LGPL)
@@ -57,6 +57,7 @@ build() {
     -DCMAKE_BUILD_TYPE=None \
     -DSHIBOKEN_PYTHON_LIBRARIES=`pkgconf python3-embed --libs` \
     -DBUILD_TESTS=OFF \
+    -DFORCE_LIMITED_API=no \
     -DNO_QT_TOOLS=yes
   PYTHONPATH="$PWD"/build/sources \
   cmake --build build
