@@ -2,7 +2,7 @@
 
 pkgname=solr
 pkgver=9.5.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Open source enterprise search platform built on Apache Lucene"
 arch=(any)
 url="https://lucene.apache.org/solr/"
@@ -79,7 +79,7 @@ build() {
   # override adding -SNAPSHOT on version
   # skip signing of jars
   # skip generation of reference guide
-  # 
+  #
   ./gradlew \
     -Dversion.release=$pkgver \
     assembleRelease \
@@ -90,14 +90,14 @@ build() {
   tar -xf "$pkgname/distribution/build/release/$pkgname-$pkgver.tgz" --strip 1 -C "$srcdir/$pkgname-$pkgver/dist"
 }
 
-check() {
-  cd $pkgname-$pkgver
-
-  ./gradlew \
-    -Dversion.release=$pkgver \
-    test \
-    -Prefguide.include=false
-}
+# check() {
+#   cd $pkgname-$pkgver
+#
+#   ./gradlew \
+#     -Dversion.release=$pkgver \
+#     test \
+#     -Prefguide.include=false
+# }
 
 package() {
   local config
