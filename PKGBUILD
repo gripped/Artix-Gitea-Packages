@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
@@ -8,7 +7,7 @@
 
 pkgname=fail2ban
 pkgver=1.0.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Bans IPs after too many failed authentication attempts'
 url='https://www.fail2ban.org/'
 license=('GPL')
