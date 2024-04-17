@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pystache
-  version: 0.6.5-1
+  version: 0.6.5-2
   arch:
     - any
   pkgname:
     - python-pystache
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.6.1-3
+    version: 0.6.5-2
     packages:
-      - python-pystache-0.6.1-3-any.pkg.tar.zst
+      - python-pystache-0.6.5-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
