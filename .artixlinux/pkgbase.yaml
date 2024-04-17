@@ -1,16 +1,22 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: java21-openjdk
+  version: 21.0.3.u9-1
+  arch:
+    - x86_64
+  pkgname:
+    - jre21-openjdk-headless
+    - jre21-openjdk
+    - jdk21-openjdk
+    - openjdk21-src
+    - openjdk21-doc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +36,13 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 21.0.3.u9-1
+    packages:
+      - jre21-openjdk-headless-21.0.3.u9-1-x86_64.pkg.tar.zst
+      - jre21-openjdk-21.0.3.u9-1-x86_64.pkg.tar.zst
+      - jdk21-openjdk-21.0.3.u9-1-x86_64.pkg.tar.zst
+      - openjdk21-src-21.0.3.u9-1-x86_64.pkg.tar.zst
+      - openjdk21-doc-21.0.3.u9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
