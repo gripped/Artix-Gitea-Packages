@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fail2ban
-  version: 1.0.2-5
+  version: 1.0.2-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.2-5
+    version: 1.0.2-6
     packages:
-      - fail2ban-1.0.2-5-any.pkg.tar.zst
+      - fail2ban-1.0.2-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
