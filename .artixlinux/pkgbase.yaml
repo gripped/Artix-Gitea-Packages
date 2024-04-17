@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-regex
-  version: 2024.4.16-1
+  version: 2024.4.16-2
   arch:
     - x86_64
   pkgname:
     - python-regex
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2023.12.25-2
+    version: 2024.4.16-2
     packages:
-      - python-regex-2023.12.25-2-x86_64.pkg.tar.zst
+      - python-regex-2024.4.16-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
