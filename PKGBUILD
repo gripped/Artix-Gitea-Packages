@@ -1,31 +1,31 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pytest-ignore-flaky
-pkgver=2.1.0
-pkgrel=2
+pkgver=2.2.0
+pkgrel=1
 pkgdesc="Ignore failures from flaky tests (pytest plugin)"
 arch=('any')
 license=('MIT')
-url="https://github.com/schettino72/pytest-ignore-flaky/"
+url="https://github.com/coherent-oss/pytest-ignore-flaky/"
 depends=('python-pytest')
-makedepends=('python-setuptools')
-source=("https://github.com/schettino72/pytest-ignore-flaky/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('250413f4ca8c67c1280dacee679e7ea91b3408d6076b7dd7f4aadd7d3294229b34f5794747b7658bb08b043ba547a48af053c5c328b74e229db357025f52b839')
+makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+source=("git+https://github.com/coherent-oss/pytest-ignore-flaky.git#tag=$pkgver")
+sha512sums=('2138a4c1c379cd8a3d3b5ea40d270b5040ea53bf2ae735efb2dffce5165801c1032d8e2866932b0e121e1ba95a453a9336bfa6b2018e8a28ba15c0c9b3c9882e')
 
 build() {
-  cd pytest-ignore-flaky-$pkgver
-  python setup.py build
+  cd pytest-ignore-flaky
+  python -m build -nw
 }
 
 check() {
-  cd pytest-ignore-flaky-$pkgver
-  python setup.py egg_info
-  export PYTHONPATH="src:${PYTHONPATH}"
-  pytest
+  cd pytest-ignore-flaky
+  python -m venv --system-site-packages venv
+  venv/bin/python -m installer dist/*.whl
+  venv/bin/python -m pytest
 }
 
 package() {
-  cd pytest-ignore-flaky-$pkgver
-  python setup.py install --root="$pkgdir" --optimize=1
+  cd pytest-ignore-flaky
+  python -m installer -d "$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
