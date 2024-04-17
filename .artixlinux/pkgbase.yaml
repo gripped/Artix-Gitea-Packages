@@ -7,21 +7,20 @@ pkgbase:
   pkgname:
     - execline
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 2.9.5.0-1
-    packages:
-      - execline-2.9.5.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   system:
     version: 2.9.4.0-1
     packages:
