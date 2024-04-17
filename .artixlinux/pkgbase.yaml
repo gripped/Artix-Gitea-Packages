@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: xorg-util-macros
-  version: 1.20.0-2
+  version: 1.20.1-1
   arch:
     - any
   pkgname:
     - xorg-util-macros
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.20.1-1
+    packages:
+      - xorg-util-macros-1.20.1-1-any.pkg.tar.zst
   world:
     version: 1.20.0-2
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
