@@ -43,7 +43,7 @@ source=(
 sha256sums=('ec51501ec480284ff52f637258135d333230a7d229c3afa6f6c2f9040e321323'
             'SKIP'
             '63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf'
-            'd8c5465ba6490e6ee3ddeb69285a0c6a4fca8130fc0f516f2f3563bc171c8929'
+            '0bbbfae23a917b2fce0bf8f900f60319b50769224a96314e9301a75ccd078e16'
             'ad1304d19d2e91e236d2a980ff4ee5affe9bce79011cc987e2aee6227d9604a7')
 # following keys are coming from https://downloads.apache.org/httpd/KEYS
 validpgpkeys=('A93D62ECC3C8EA12DB220EC934EA76E6791485A8' # Jim Jagielski
