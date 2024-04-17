@@ -7,7 +7,7 @@
 
 pkgbase=thunderbird
 pkgname=(thunderbird)
-pkgver=115.9.0
+pkgver=115.10.0
 pkgrel=1
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
