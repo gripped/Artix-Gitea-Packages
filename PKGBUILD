@@ -67,6 +67,7 @@ build() {
     # https://github.com/allanmcrae/toolchain/blob/f18604d70c5933c31b51a320978711e4e6791cf1/glibc/PKGBUILD
     # remove fortify for building libraries
     # CFLAGS=${CFLAGS/-Wp,-D_FORTIFY_SOURCE=2/}
+    # export CFLAGS=${CFLAGS/-D_FORTIFY_SOURCE=3/-D_FORTIFY_SOURCE=2}
 
     "${srcdir}"/glibc/configure \
         --libdir=/usr/lib \
@@ -116,12 +117,14 @@ _skip_test() {
 check() (
   cd glibc-build
 
+  export CFLAGS=${CFLAGS/-D_FORTIFY_SOURCE=3/-D_FORTIFY_SOURCE=2}
+
   # adjust/remove buildflags that cause false-positive testsuite failures
   sed -i '/FORTIFY/d' configparms                                     # failure to build testsuite
   sed -i 's/-Werror=format-security/-Wformat-security/' config.make   # failure to build testsuite
   sed -i '/CFLAGS/s/-fno-plt//' config.make                           # 16 failures
   sed -i '/CFLAGS/s/-fexceptions//' config.make                       # 1 failure
-  LDFLAGS=${LDFLAGS/-Wl,-z,now/}                                         # 10 failures
+  sed -i '/CFLAGS/s/-D_FORTIFY_SOURCE=3/-D_FORTIFY_SOURCE=2/' config.make
 
   # The following tests fail due to restrictions in the Arch build system
   # The correct fix is to add the following to the systemd-nspawn call:
