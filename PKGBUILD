@@ -10,7 +10,7 @@
 pkgbase=samba
 pkgname=('libwbclient' 'smbclient' 'samba')
 pkgver=4.20.0
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL-3.0-or-later')
@@ -187,15 +187,15 @@ sys.path.insert(0, '/usr/lib/python${_pyver}/site-packages')" \
   chmod 700 "${pkgdir}"/etc/samba/private
 
   install -D -m644 "${srcdir}"/samba.logrotate "${pkgdir}"/etc/logrotate.d/samba
-  install -D -m644 "${srcdir}"/samba.pam "${pkgdir}"/etc/pam.d/samba 
-  
+  install -D -m644 "${srcdir}"/samba.pam "${pkgdir}"/etc/pam.d/samba
+
   # spool directory
   install -d -m1777 "${pkgdir}"/var/spool/samba
-  
+
   rm -rf "${pkgdir}"/run
   rm -rf "${pkgdir}"/var/run
   rm -rf "${pkgdir}"/etc/sysconfig
-  
+
   # copy ldap example
   install -D -m644 "${srcdir}"/samba-${pkgver}/examples/LDAP/samba.schema "${pkgdir}"/usr/share/doc/samba/examples/LDAP/samba.schema
 }
