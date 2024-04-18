@@ -3,8 +3,7 @@
 _name=HyperKitty
 pkgname=hyperkitty
 pkgver=1.3.9
-_commit=534e790241c8510df892aa5edc4037bab3f61cc9 # refs/tags/1.3.9
-pkgrel=2
+pkgrel=3
 pkgdesc="A web interface to access GNU Mailman v3 archives"
 arch=(any)
 url="https://gitlab.com/mailman/hyperkitty"
@@ -59,18 +58,18 @@ backup=(
 )
 install=$pkgname.install
 source=(
-  "git+$url#tag=$_commit?signed"
+  "git+$url?signed#tag=$pkgver"
   $pkgname-1.3.5-settings.patch
   $pkgname.sysusers
   $pkgname.tmpfiles
   $pkgname.uwsgi
 )
-sha512sums=('SKIP'
+sha512sums=('a058f7e5d6f66a079e2e61887b28037767de74edbee36c40097447cbc770321304224da1b2e5d4b53e994b39637363b4cfd21694291d3ed77a2e5b8469242be0'
             'd33a2ec2fb4547da56795c450882bbedbcce962ed2e96e26817fdaa8045859c444f215107fabcf71d62f2b76f41212f5fb49b7e2ed432ccd970eb13988f2f67d'
             '3267427109b08b8c9336b187381ed14357a07370bdcdfc24da94555020ad0424c5bbebc09e131e981e0540c51db443ffe558209e1bca7c2a1b7b1f602ed0805b'
             'c943d82b8640a513728e3f07fa44c0ddb5a3bb8ec84a3a70990e51287ca01977887f895b901688fc4643d8fcb106d524259a86a51bccaafd77c69b241f1b23ba'
             '351f40a6bc1fd1735c883408f9941808e081206927a7c02467e03228243dd156378cac21f851b498702bd4f96fde8e4c80536dbcc6f3c384bf708bed4e988971')
-b2sums=('SKIP'
+b2sums=('1a31b94770d071a648b6257bc4930348a5fe9816808bbe3de04b70cb249b2454b82d912f2e2a2a4df74b56b7a5282e8b07b57ce0e94f4514d1fa1c59f4f2c244'
         '62793fe38541dd570163ab0cd740fd6aeae9eb652164fbb066c1b958dcdba845c5ee3d5ca05770a8179ef292c584c9fbd293ad88956c58ad306ab8b352ea679c'
         'f4e912e75c5127897837d67626ba94a418ec408f0f3a9bcd1767633347e107600cc43825caa5737a84362273a353bf03097879ff5b9065663150f6db4b96238a'
         'e4fd83e38703d8ff9a714b238296e4e12791b8ce0c19446709e5c20b4012ed10b97504cafda66cdbe12e56a9f943c094147b6a02db3bd9c854e609adca38ff01'
