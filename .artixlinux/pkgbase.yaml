@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: pycups
-  version: 2.0.4-1
+  version: 2.0.4-2
   arch:
     - x86_64
   pkgname:
     - python-pycups
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.1-7
+    version: 2.0.4-2
     packages:
-      - python-pycups-2.0.1-7-x86_64.pkg.tar.zst
+      - python-pycups-2.0.4-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
