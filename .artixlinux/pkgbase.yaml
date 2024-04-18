@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: djvulibre
-  version: 3.5.28-5
+  version: 3.5.28-6
   arch:
     - x86_64
   pkgname:
     - djvulibre
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.5.28-5
+    version: 3.5.28-6
     packages:
-      - djvulibre-3.5.28-5-x86_64.pkg.tar.zst
+      - djvulibre-3.5.28-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
