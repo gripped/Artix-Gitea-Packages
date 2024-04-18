@@ -23,7 +23,7 @@ pkgname=(
   uwsgi-plugin-zabbix
   uwsgi-plugin-notfound
 )
-pkgver=2.0.24
+pkgver=2.0.25.1
 pkgrel=2
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
@@ -31,13 +31,14 @@ url="https://uwsgi-docs.readthedocs.io/en/latest/"
 license=(LicenseRef-GPL-2.0-or-later-with-linking-exception)
 makedepends=(
   jansson
+  libcap
   libxcrypt
   libxml2
   lua51
   mono
   openssl
   pam
-  pcre
+  pcre2
   perl
   php-embed
   php-legacy-embed
@@ -57,13 +58,13 @@ source=(
   uwsgi.sysusers
   uwsgi.tmpfiles
 )
-sha512sums=('55af38c1518409f8351c93a027f97958a8cdf36b1b5750dc316b9bc1cd35f9c3243c078e743c3b435c6c86d0991d5575c719326cc05ca9aad7d26dbdb78ab335'
+sha512sums=('3b2a78917b129f5a2f38f3538e30b132e4cd6e270df55365ccc0dc6b94641a262af1484c62b252d0a24121eb68417cb061210e89e2b7885992ab4ffa07092119'
             '3045b54799f11bf19959ed0858c15ba9e208bdd88e41b879766585314c506a7396f3fd030c34c2e3ef821d6c32262ec87c4c4be33cd2cd4e9591b982e7386cc6'
             'd54c84838ddb2f389e115ebb81aa2583705c9e330f020e6583b496f9c271ed236b6820c2a065f2b55a79adbf13e262b9ff2428124a8044b8fa20ca29ca4930ac'
             '937878372aa1556f6ba62ad7148d1681288c94d6cff609368a9e861dd4d4524330006a08ae5993441f7d3101170e3a0a681a4c8b3c2c13b364b8b1f81cf25117'
             '9e9eab08199cf08810ec95b0697cd8817226986d1e3aeb54845c0140ea5887360580348f295060c0558fb2d6aaed26fec929ea36b28cfeaf2b3588ce40fec3df'
             '4def9dcd06cfc2c6ce554add9d9545a01f3bb2681f0a2a6fc4ba68f91011111803a955cc41b5e70832ca448b196109368fdf874e81b7ec0edee4b51f864e16f7')
-b2sums=('20fe8222d8f8141950ce33b9d746f0b7e02b048aa8e468be14ce50fe7ba9c20c341df0db6907c4fdf8a0e52161d91ab63b4a691e6b7c9e6f45ceecd8f7a2defb'
+b2sums=('4658459c792ee5cabf0cde9959e2a83c1637b7864ee37658d646ed9340ab252fdf4f64a6f7672fd4d308544961dcaee92bef8c9a67cc2e73ba59b8e4da2af8a1'
         '6fd3a196b15d0c40200fbf0c4be70d1ba53bd838a26c864c0ff76f8698318f97cd4f9b378dd4db9b1368c080a2d659d2d1845b31f4396066d14976591d1f1b46'
         '835a1036422e9821cd52ffdf5a6053bdd59fc700d473600bda60b6730746f6c0750c30c85f4139d3ea81c6b6dd10d6849f9406decee3179861c51aca90da6161'
         'a8b7d003f66ed5c5b1b60d57c05339af3dcdcf346eab52760810086e17f6936dd29ed7fd26281657bc86ac6721c989cbfbaa8e81f97111c807bcd06baece3bf2'
@@ -94,8 +95,18 @@ build() {
 }
 
 package_uwsgi() {
-  depends=(glibc jansson libcap.so libcrypt.so libpam.so libxml2
-  libuuid.so openssl pcre zlib)
+  depends=(
+    glibc
+    jansson
+    libcap libcap.so
+    libxcrypt libcrypt.so
+    libxml2
+    openssl
+    pam libpam.so
+    pcre2
+    util-linux-libs libuuid.so
+    zlib
+  )
   backup=('etc/uwsgi/emperor.ini')
   install=uwsgi.install
 
@@ -110,7 +121,10 @@ package_uwsgi() {
 
 package_uwsgi-plugin-cgi() {
   pkgdesc+=" (CGI plugin)"
-  depends=(glibc uwsgi)
+  depends=(
+    glibc
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 cgi_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -118,7 +132,11 @@ package_uwsgi-plugin-cgi() {
 }
 
 package_uwsgi-plugin-rack() {
-  depends=(glibc ruby uwsgi)
+  depends=(
+    glibc
+    ruby
+    uwsgi
+  )
   pkgdesc="Ruby rack plugin"
 
   cd $pkgbase-$pkgver
@@ -128,7 +146,11 @@ package_uwsgi-plugin-rack() {
 
 package_uwsgi-plugin-psgi() {
   pkgdesc+=" (Perl psgi plugin)"
-  depends=(glibc perl uwsgi)
+  depends=(
+    glibc
+    perl
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 psgi_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -139,7 +161,13 @@ package_uwsgi-plugin-python() {
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
   pkgdesc+=" (Python plugin)"
-  depends=(glibc python python-gevent python-greenlet uwsgi)
+  depends=(
+    glibc
+    python
+    python-gevent
+    python-greenlet
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 {asyncio,gevent,greenlet,python}_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -151,7 +179,11 @@ package_uwsgi-plugin-python() {
 
 package_uwsgi-plugin-pypy() {
   pkgdesc+=" (PyPy plugin)"
-  depends=(glibc pypy uwsgi)
+  depends=(
+    glibc
+    pypy
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 pypy_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -163,7 +195,11 @@ package_uwsgi-plugin-pypy() {
 
 package_uwsgi-plugin-lua51() {
   pkgdesc+=" (LUA plugin)"
-  depends=(glibc lua51 uwsgi)
+  depends=(
+    glibc
+    lua51
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 lua_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -172,7 +208,11 @@ package_uwsgi-plugin-lua51() {
 
 package_uwsgi-plugin-php() {
   pkgdesc+=" (PHP plugin)"
-  depends=(glibc php-embed uwsgi)
+  depends=(
+    glibc
+    php-embed
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 php_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -181,7 +221,11 @@ package_uwsgi-plugin-php() {
 
 package_uwsgi-plugin-php-legacy() {
   pkgdesc+=" (PHP Legacy plugin)"
-  depends=(glibc php-legacy-embed uwsgi)
+  depends=(
+    glibc
+    php-legacy-embed
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 php_legacy_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -190,7 +234,11 @@ package_uwsgi-plugin-php-legacy() {
 
 package_uwsgi-plugin-mono() {
   pkgdesc+=" (mono plugin)"
-  depends=(glibc mono uwsgi)
+  depends=(
+    glibc
+    mono
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 plugins/mono/uwsgi.dll -t "$pkgdir"/usr/lib/mono/2.0/
@@ -200,7 +248,11 @@ package_uwsgi-plugin-mono() {
 
 package_uwsgi-plugin-webdav() {
   pkgdesc+=" (WebDav plugin)"
-  depends=(glibc libxml2 uwsgi)
+  depends=(
+    glibc
+    libxml2
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 webdav_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
@@ -209,7 +261,10 @@ package_uwsgi-plugin-webdav() {
 
 package_uwsgi-plugin-zabbix() {
   pkgdesc+=" (zabbix plugin)"
-  depends=(glibc uwsgi)
+  depends=(
+    glibc
+    uwsgi
+  )
 
   cd $pkgbase-$pkgver
   install -vDm 755 zabbix_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
