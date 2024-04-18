@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libtorrent-rasterbar
-  version: 1:2.0.9-3
+  version: 1:2.0.10-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.0.9-3
+    version: 1:2.0.10-1
     packages:
-      - libtorrent-rasterbar-1:2.0.9-3-x86_64.pkg.tar.zst
+      - libtorrent-rasterbar-1:2.0.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
