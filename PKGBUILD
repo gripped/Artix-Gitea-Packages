@@ -5,7 +5,7 @@
 # Contributor: Bumsik Kim <k.bumsik@gmail.com>
 
 pkgname=nushell
-pkgver=0.92.0
+pkgver=0.92.2
 pkgrel=1
 pkgdesc='A new type of shell'
 arch=('x86_64')
@@ -21,10 +21,13 @@ depends=(
 makedepends=('cargo' 'git')
 install=nushell.install
 source=("git+https://github.com/nushell/nushell.git#tag=$pkgver")
-sha256sums=('86a1ff555da386df270a19674721540084267cedd1658f8a2b1c0fe2a4d1dd1c')
+sha256sums=('60e8a6338f7603dc880649fbf7ec8f6835b7943371d0d2c210e89b4fc1374dff')
 
 prepare() {
   cd "$pkgname"
+
+  # Back off from bogus MSRV, the bug everybody is scared of "just in case" is Windows only
+  sed -i -e '/^rust-version/s/1.77.2/1.77.1/' Cargo.toml 
 
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
