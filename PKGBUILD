@@ -6,7 +6,7 @@
 pkgname=mpv
 epoch=1
 pkgver=0.38.0
-pkgrel=1
+pkgrel=2
 pkgdesc='a free, open source, and cross-platform media player'
 arch=('x86_64')
 license=('GPL-2.0-or-later AND LGPL-2.1-or-later')
@@ -19,8 +19,8 @@ depends=('alsa-lib' 'libasound.so' 'desktop-file-utils' 'ffmpeg' 'libavcodec.so'
          'libjpeg' 'libjpeg.so' 'libplacebo' 'libplacebo.so' 'libpulse' 'libpulse.so' 'libsixel'
          'libva' 'libva.so' 'libva-drm.so' 'libva-wayland.so' 'libva-x11.so' 'libvdpau' 'libx11'
          'libxext' 'libxkbcommon' 'libxkbcommon.so' 'libxpresent' 'libxrandr' 'libxss'
-         'libxv' 'luajit' 'mesa' 'mujs' 'libpipewire' 'rubberband' 'librubberband.so' 'shaderc'
-         'libshaderc_shared.so' 'openal' 'uchardet' 'vapoursynth' 'vulkan-icd-loader' 'wayland' 'zlib')
+         'libxv' 'luajit' 'mesa' 'mujs' 'libpipewire' 'rubberband' 'librubberband.so'
+         'openal' 'uchardet' 'vapoursynth' 'vulkan-icd-loader' 'wayland' 'zlib')
 makedepends=('git' 'meson' 'python-docutils' 'ladspa' 'wayland-protocols'
              'ffnvcodec-headers' 'vulkan-headers')
 optdepends=('yt-dlp: for video-sharing websites playback'
