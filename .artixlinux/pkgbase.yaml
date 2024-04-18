@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: mitmproxy
-  version: 10.2.4-1
+  version: 10.2.4-2
   arch:
     - any
   pkgname:
     - mitmproxy
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 10.2.4-2
+    packages:
+      - mitmproxy-10.2.4-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
