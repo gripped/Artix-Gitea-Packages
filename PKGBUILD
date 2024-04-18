@@ -2,7 +2,7 @@
 
 pkgname=passim
 pkgver=0.1.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A local caching server"
 arch=(x86_64)
 url="https://github.com/hughsie/passim"
@@ -34,7 +34,7 @@ validpgpkeys=(163EB50119225DB3DF8F49EA17ACBA8DFA970E17) # Richard Hughes <richar
 
 
 prepare() {
-  patch -Np1 -d $pkgname-$pkgver -i ../0001-no-systemd.patch
+  patch -Np1 -d $pkgname -i ../0001-no-systemd.patch
 }
 
 build() {
