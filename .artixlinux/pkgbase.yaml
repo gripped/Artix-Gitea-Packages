@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: cloud-init
-  version: 24.1-1
+  version: 24.1-2
   arch:
     - any
   pkgname:
     - cloud-init
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 24.1-2
+    packages:
+      - cloud-init-24.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
