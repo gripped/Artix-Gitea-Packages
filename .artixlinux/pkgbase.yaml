@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: duplicity
-  version: 2.1.4-1
+  version: 2.1.4-2
   arch:
     - x86_64
   pkgname:
     - duplicity
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.1.4-2
+    packages:
+      - duplicity-2.1.4-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
