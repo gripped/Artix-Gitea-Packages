@@ -65,6 +65,7 @@ build() {
     --disable-wt \
     --enable-overlays=mod \
     --with-cyrus-sasl \
+    --with-systemd=no \
     --with-threads
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
