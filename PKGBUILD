@@ -3,7 +3,7 @@
 
 pkgname=libpwquality
 pkgver=1.4.5
-pkgrel=4
+pkgrel=5
 pkgdesc='Library for password quality checking and generating random passwords'
 arch=('x86_64')
 url='https://github.com/libpwquality/libpwquality'
@@ -12,8 +12,20 @@ depends=('cracklib' 'glibc' 'pam')
 optdepends=('python: Python bindings')
 makedepends=('python-setuptools')
 backup=('etc/security/pwquality.conf')
-source=("https://github.com/libpwquality/$pkgname/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.bz2")
-sha256sums=('6fcf18b75d305d99d04d2e42982ed5b787a081af2842220ed63287a2d6a10988')
+source=("https://github.com/libpwquality/$pkgname/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.bz2"
+        'libpwquality-setuptools.patch')
+sha256sums=('6fcf18b75d305d99d04d2e42982ed5b787a081af2842220ed63287a2d6a10988'
+            'ca488234cca2e7883e987163dfb44a1eda1946ac05895afc7b79d19fc2c7a156')
+
+prepare() {
+  cd $pkgname-$pkgver
+
+  # Use setuptools instead of distutils
+  # https://github.com/libpwquality/libpwquality/pull/74
+  patch -Np1 -i ../libpwquality-setuptools.patch
+
+  autoreconf -fi
+}
 
 build() {
   cd $pkgname-$pkgver

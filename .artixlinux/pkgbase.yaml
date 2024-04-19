@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libpwquality
-  version: 1.4.5-4
+  version: 1.4.5-5
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.4.5-4
+    version: 1.4.5-5
     packages:
-      - libpwquality-1.4.5-4-x86_64.pkg.tar.zst
+      - libpwquality-1.4.5-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
