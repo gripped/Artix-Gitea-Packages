@@ -15,7 +15,7 @@ license=(GPL2)
 depends=(
   lib32-libtirpc
   lib32-libxcrypt
-  libnsl
+  lib32-libnsl
   libelogind
   pam
 )
