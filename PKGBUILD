@@ -39,7 +39,7 @@ b2sums=('d0e2166dc7232a9cc9f6b37b69bc8651486a85b5a98f98a9fdd39958142fec480cfc19e
         'ac1892d814c9efca38daec5b34efdee6289089df515ceeb0f675794263879506e2b59894eef6a85f52570db3bd8e62cdf15a7d980538195c5af7cba016d6a533')
 
 prepare() {
-  cd $pkgname
+  cd $pkgname 
 }
 
 build() {
