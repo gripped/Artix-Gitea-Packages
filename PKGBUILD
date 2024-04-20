@@ -8,13 +8,13 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.14.2
+pkgver=4.14.3
 pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
 arch=(x86_64)
-license=(LGPL-2.0-only)
+license=(LGPL-2.1-or-later)
 depends=(
   adwaita-icon-theme
   cairo
@@ -23,6 +23,7 @@ depends=(
   desktop-file-utils
   fontconfig
   fribidi
+  gcc-libs
   gdk-pixbuf2
   glib2
   graphene
@@ -83,12 +84,12 @@ source=(
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('4e7ddb5200d45c99479adce9541fe088edb99e29400f6d0d6c06a0b3959767ec90252ced37f987cdf5d5ae727d88c27d20711eabf601ee68b63878ce5d56bfaa'
+b2sums=('f49b3e0ae9be2b37589f49bbeaee7a7b1132c47fe9750c81b426559b9634a7ba1d64a22d87fe6e030cb49f2c4ad551cd233c6c757d32cb4f1e4a96b76cf1d750'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
         '4b90eb8d582509b09aab401313d4399cc139ad21b5dd7d45d79860d0764c7494c60714e0794e09823e51d1894ac032a994f27d79d1499abf24ee6f59bdb0c243'
-        'ace2f8be09d5e20c3a694e6a9a397d8d87b61516601a96d998e89f7500874e98fee380b66c44fd5c8a717d3d89f99026e42f79df18a7a32feac724044e5b7341')
+        '39335dc6f3809efb51a43f5791c6585e1b715c9d22f400b3b6dace407a8c32693438b4f435eae848ce3273ace6d07f9eb2c3cf52ed1ff9de8755301a1eeb5a50')
 
 prepare() {
   cd gtk

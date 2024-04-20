@@ -15,7 +15,7 @@ See: https://gitlab.gnome.org/GNOME/gtk/-/issues/6153
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/meson.build b/meson.build
-index 0c251000afe6..048b3b1578a4 100644
+index 5ac14d5e574d..5f8679539365 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -770,7 +770,7 @@ if ld.found()
