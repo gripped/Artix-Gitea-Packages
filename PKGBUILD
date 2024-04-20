@@ -68,7 +68,6 @@ package() {
 
   meson install -C build --destdir "$pkgdir"
 
-  install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
   install -d "$pkgdir/usr/share/accountsservice/interfaces"
 }
 
