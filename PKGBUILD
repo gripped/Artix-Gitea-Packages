@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: jtts <jussaar@mbnet.fi>
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 # Contributor: Janax <janax99@yahoo.com>
@@ -7,7 +6,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=lib32-pam
-pkgver=1.5.3
+pkgver=1.6.1
 pkgrel=1
 pkgdesc='Pluggable Authentication Modules'
 arch=(x86_64)
@@ -16,6 +15,8 @@ license=(GPL2)
 depends=(
   lib32-libtirpc
   lib32-libxcrypt
+  libnsl
+  libelogind
   pam
 )
 makedepends=(
@@ -24,6 +25,7 @@ makedepends=(
   git
   lib32-flex
   w3m
+  elogind
 )
 _tag=v$pkgver
 source=(git+https://github.com/linux-pam/linux-pam.git?signed#tag=${_tag})
