@@ -1,15 +1,17 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=accountsservice
 pkgver=23.13.9
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus interface for user account query and manipulation"
 url="https://gitlab.freedesktop.org/accountsservice/accountsservice"
 arch=(x86_64)
-license=(GPL3)
+license=(GPL-3.0-or-later)
 depends=(
+  gcc-libs
   glib2
+  glibc
   libxcrypt
   polkit
   shadow
@@ -20,24 +22,21 @@ makedepends=(
   gobject-introspection
   gtk-doc
   meson
+  python-packaging
   vala
   xmlto
 )
 checkdepends=(
+  glibc-locales
   python-dbusmock
   python-gobject
 )
-_commit=57e491f5e6f3da2d5a949f4f8747c8f4e8ed799d  # tags/23.13.9^0
 source=(
-  "git+https://gitlab.freedesktop.org/accountsservice/accountsservice.git#commit=$_commit"
+  "git+$url.git#tag=$pkgver"
+  accounts-daemon-restart.hook
 )
-b2sums=('SKIP')
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
-
+b2sums=('d0e2166dc7232a9cc9f6b37b69bc8651486a85b5a98f98a9fdd39958142fec480cfc19e300c7fcc4becf9436282bd8b2f0141523347c748ee074a4bfec0029c4'
+        'ac1892d814c9efca38daec5b34efdee6289089df515ceeb0f675794263879506e2b59894eef6a85f52570db3bd8e62cdf15a7d980538195c5af7cba016d6a533')
 
 prepare() {
   cd $pkgname
@@ -45,8 +44,8 @@ prepare() {
 
 build() {
   local meson_options=(
-    -D systemdsystemunitdir=no \
-    -D elogind=true \
+    -D systemdsystemunitdir=no
+    -D elogind=true
     -D admin_group=wheel
     -D docbook=true
     -D gtk_doc=true
@@ -57,8 +56,7 @@ build() {
 }
 
 check() {
-  # Tests fail: build containers lack en_GB.UTF-8
-  meson test -C build --print-errorlogs || :
+  meson test -C build --print-errorlogs
 }
 
 package() {
@@ -69,6 +67,9 @@ package() {
   provides+=(libaccountsservice.so)
 
   meson install -C build --destdir "$pkgdir"
+
+  install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 *.hook
+  install -d "$pkgdir/usr/share/accountsservice/interfaces"
 }
 
 # vim:set sw=2 sts=-1 et:
