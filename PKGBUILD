@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-maps
-pkgver=46.0
+pkgver=46.10
 pkgrel=1
 pkgdesc="A simple GNOME 3 maps application"
 url="https://wiki.gnome.org/Apps/Maps"
@@ -37,14 +37,11 @@ makedepends=(
   yelp-tools
 )
 groups=(gnome)
-_commit=8333905cec2c980fcc4fc9aabded80ecec4c776e  # tags/v46.0^0
-source=("git+https://gitlab.gnome.org/GNOME/gnome-maps.git#commit=$_commit")
-b2sums=('SKIP')
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed -r 's/^v//;s/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
-}
+source=(
+  # Can't locate the public key (ml@dfupdate.se, 7448F128A4B18AB2EF87F092FA6624580A420D5D)
+  "git+https://gitlab.gnome.org/GNOME/gnome-maps.git#tag=v${pkgver/[a-z]/.&}"
+)
+b2sums=('5e7945259f1c0b4d3065778b7fe0a42b18942e3ded1375c0ebc4fcea88794282ed282f5e82d0ad70388c3ac551498f17b760e50f1f8ca8a5ae2e9b9eb29b6986')
 
 prepare() {
   cd $pkgname
