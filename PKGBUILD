@@ -55,7 +55,7 @@ build() {
     --prefix=/usr \
     --libdir=/usr/lib32 \
     --sbindir=/usr/bin \
-    --enable-logind \
+    --enable-logind=elogind \
     --disable-db \
     --disable-doc
   make
