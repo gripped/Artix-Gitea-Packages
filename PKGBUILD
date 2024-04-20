@@ -28,7 +28,7 @@ makedepends=(
   elogind
 )
 _tag=v$pkgver
-source=(git+https://github.com/linux-pam/linux-pam.git?signed#tag=${_tag})
+source=(git+https://github.com/linux-pam/linux-pam.git?#tag=${_tag})
 validpgpkeys=(296D6F29A020808E8717A8842DB5BD89A340AEB7) # Dimitry V. Levin <ldv@altlinux.org>
 b2sums=('SKIP')
 options=(!emptydirs)
