@@ -1,16 +1,18 @@
 ---
 team: system
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: artix-cgroups
+  version: 0.1-1
+  arch:
+    - any
+  pkgname:
+    - artix-cgroups
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -18,8 +20,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.1-1
+    packages:
+      - artix-cgroups-0.1-1-any.pkg.tar.zst
   system:
     version: null
     packages: []
