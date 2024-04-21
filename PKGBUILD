@@ -5,7 +5,7 @@ _tag=255.4-r2
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -24,7 +24,7 @@ makedepends=(
     'intltool'
     'kexec-tools'
     'meson'
-    'openrc'
+    'openrc' #'cg-controller'
     'pam'
     'python-jinja'
     'udev'
@@ -35,9 +35,27 @@ source=(
 )
 sha256sums=('c14967db10db8007fc9b4aedd8073766715230c1652103583c24e8fd2716c683')
 
+_backports=(
+    ce3616c8864e56bf7efb233242f20197108a9dba # NM wakeup
+)
+
+_reverts=(
+)
+
 prepare() {
-    cd "$pkgbase"
+    cd "${pkgbase}"
+
+    local _c
+    for _c in "${_backports[@]}"; do
+        git log --oneline -1 "${_c}"
+        git cherry-pick -n "${_c}"
+    done
+    for _c in "${_reverts[@]}"; do
+        git log --oneline -1 "${_c}"
+        git revert -n "${_c}"
+    done
 }
+
 
 build() {
     local meson_options=()
@@ -47,8 +65,8 @@ build() {
         -Dshared-lib-tag="${pkgver}-${pkgrel}"
         -Dmode=release
 
-        -Ddefault-hierarchy=unified #hybrid
-        -Dcgroup-controller=openrc
+        -Ddefault-hierarchy='unified'
+        -Dcgroup-controller='openrc'
 
         -Ddefault-kill-user-processes=false
         -Dinstall-sysconfdir=true
