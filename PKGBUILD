@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Oleksandr Natalenko <oleksandr@natalenko.name>
 # Contributor: Andrew Lewis <nerf@judo.za.org>
 # Contributor: mezcal
@@ -146,11 +145,8 @@ pkgver() {
 
 
 build() {
-  #export LDFLAGS=${LDFLAGS/-Wl,-z,pack-relative-relocs/}
-  artix-cmake -S rspamd -B build -G Ninja \
-    -DCMAKE_VERBOSE_MAKEFILE=ON \
-    -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_FIND_DEBUG_MODE=1 \
-    -DCMAKE_INCLUDE_PATH=/usr/include \
+  export LDFLAGS=${LDFLAGS/-Wl,-z,pack-relative-relocs/}
+  cmake -S rspamd -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCONFDIR=/etc/rspamd \
     -DDBDIR=/var/lib/rspamd \
