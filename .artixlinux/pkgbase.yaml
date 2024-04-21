@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pep440
-  version: 0.1.2-3
+  version: 0.1.2-4
   arch:
     - any
   pkgname:
     - python-pep440
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.1.2-3
+    version: 0.1.2-4
     packages:
-      - python-pep440-0.1.2-3-any.pkg.tar.zst
+      - python-pep440-0.1.2-4-any.pkg.tar.zst
   world:
     version: 0.1.2-2
     packages:
