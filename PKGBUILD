@@ -4,7 +4,7 @@
 _name=jq.py
 pkgname=python-jq
 pkgver=1.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Python bindings for jq'
 arch=('x86_64')
 url=https://github.com/mwilliamson/jq.py
@@ -20,7 +20,7 @@ makedepends=(
 )
 checkdepends=('python-pytest')
 source=("git+$url.git#tag=$pkgver")
-b2sums=('SKIP')
+b2sums=('d9376a2b931057b8cfb3fc18a53792656644e1663e7d091ba0b3c427db1068dbc12fbd588cea2434f6b08e16a2dfb9c27c7827c39be52222f9c7bf036d205020')
 
 build() {
   cd $_name
