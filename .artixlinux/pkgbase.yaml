@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: elogind-dinit
-  version: 20240421-1
+  version: 20240421-2
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20240421-1
+    version: 20240421-2
     packages:
-      - elogind-dinit-20240421-1-any.pkg.tar.zst
+      - elogind-dinit-20240421-2-any.pkg.tar.zst
   system:
     version: 20211030-1
     packages:
