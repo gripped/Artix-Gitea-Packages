@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-shell
-  version: 1:46.0-1
+  version: 1:46.1-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gnome-shell-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:46.0-1
+    version: 1:46.1-1
     packages:
-      - gnome-shell-1:46.0-1-x86_64.pkg.tar.zst
-      - gnome-shell-docs-1:46.0-1-x86_64.pkg.tar.zst
+      - gnome-shell-1:46.1-1-x86_64.pkg.tar.zst
+      - gnome-shell-docs-1:46.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
