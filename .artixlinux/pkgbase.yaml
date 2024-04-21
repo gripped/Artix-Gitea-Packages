@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-sphinxcontrib-jsmath
-  version: 1.0.1-16
+  version: 1.0.1-17
   arch:
     - any
   pkgname:
     - python-sphinxcontrib-jsmath
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.0.1-16
+    version: 1.0.1-17
     packages:
-      - python-sphinxcontrib-jsmath-1.0.1-16-any.pkg.tar.zst
+      - python-sphinxcontrib-jsmath-1.0.1-17-any.pkg.tar.zst
   world:
     version: 1.0.1-15
     packages:
