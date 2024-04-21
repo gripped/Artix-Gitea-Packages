@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: nvchecker
-  version: 2.13.1-2
+  version: 2.14.1-1
   arch:
     - any
   pkgname:
     - nvchecker
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - nvchecker-2.13.1-2-any.pkg.tar.zst
   world:
-    version: 2.13.1-1
+    version: 2.14.1-1
     packages:
-      - nvchecker-2.13.1-1-any.pkg.tar.zst
+      - nvchecker-2.14.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
