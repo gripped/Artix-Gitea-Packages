@@ -3,7 +3,7 @@
 pkgname=python-pyproject-metadata
 _name="${pkgname#python-}"
 pkgver=0.7.1
-pkgrel=3
+pkgrel=4
 pkgdesc='PEP 621 metadata parsing'
 arch=(any)
 url='https://github.com/pypa/python-pyproject-metadata'
