@@ -8,17 +8,19 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=46.0
+pkgver=46.1
 pkgrel=1
 pkgdesc="Default file manager for GNOME"
-url="https://wiki.gnome.org/Apps/Files"
+url="https://apps.gnome.org/Nautilus/"
 arch=(x86_64)
 license=(GPL-3.0-or-later)
 depends=(
   cairo
   dconf
+  gcc-libs
   gdk-pixbuf2
   glib2
+  glibc
   gnome-autoar
   gnome-desktop-4
   graphene
@@ -44,19 +46,21 @@ makedepends=(
   tracker3-miners
 )
 checkdepends=(python-gobject)
-_commit=dcd221d57d0180d9d5cc0524bc6e3278d3d3a04c  # tags/46.0^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/nautilus.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/nautilus.git?signed#tag=${pkgver/[a-z]/.&}"
+  0001-Disable-tracker-test.patch
 )
-b2sums=('eb963b0b45afc66f6d331db2405bc0cb951c799f5341283dc10a5b598ba55bded847c6f88919f8391185ab57e6931d0899cf32b363066ed6f21864b0a39d7636')
-
-pkgver() {
-  cd nautilus
-  git describe --tags | sed -r 's/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
-}
+b2sums=('8e2d9c788788892ea72c2732d6d5ace27243abee0ec9b4232feb8b39a9ecdf14a152a73c8dcf03f91d0ebefee93917a3d01a95900831703aba666e33cfef8291'
+        'c840dc4de2f7c23b49adb0ba88b88c13ddc59ba8b10818ed3ba5ed7cda93d69da9d47d7c7f8c39153d4535c9785ff7c0fd89992a87b09e7cc6e8a5492c2d9a7f')
+validpgpkeys=(
+  6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
+)
 
 prepare() {
   cd nautilus
+
+  # Tracker test is broken in our build containers
+  git apply -3 ../0001-Disable-tracker-test.patch
 }
 
 build() {
@@ -107,6 +111,7 @@ package_libnautilus-extension() {
   depends=(
     gcc-libs
     glib2
+    glibc
   )
   provides=(libnautilus-extension.so)
 
