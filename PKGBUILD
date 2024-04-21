@@ -5,7 +5,7 @@
 _name=setuptools_scm
 pkgname=python-setuptools-scm
 pkgver=8.0.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Handles managing your python package versions in scm metadata"
 arch=('any')
 url="https://github.com/pypa/setuptools_scm"
@@ -25,7 +25,8 @@ check() {
   cd $_name
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  test-env/bin/python -m pytest -vk 'not test_not_owner'
+  # test_pyproject_support https://gitlab.archlinux.org/archlinux/packaging/packages/python-setuptools-scm/-/issues/1
+  test-env/bin/python -m pytest -vk 'not test_not_owner and not test_pyproject_support'
 }
 
 package() {
