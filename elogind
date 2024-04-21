@@ -2,3 +2,6 @@ type            = process
 command         = /usr/lib/elogind/elogind
 smooth-recovery = true
 depends-on      = dbus
+depends-on      = elogind-cg
+before          = loginready
+run-in-cgroup   = openrc.elogind
