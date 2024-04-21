@@ -1,0 +1,47 @@
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Contributor: Mubashshir <ahmubashshir@gmail.com>
+
+_name=jq.py
+pkgname=python-jq
+pkgver=1.7.0
+pkgrel=1
+pkgdesc='Python bindings for jq'
+arch=('x86_64')
+url=https://github.com/mwilliamson/jq.py
+license=('BSD-2-Clause')
+depends=('jq' 'python')
+makedepends=(
+  'cython0'
+  'git'
+  'python-build'
+  'python-installer'
+  'python-setuptools'
+  'python-wheel'
+)
+checkdepends=('python-pytest')
+source=("git+$url.git#tag=$pkgver")
+b2sums=('SKIP')
+
+build() {
+  cd $_name
+  cython -3 jq.pyx
+  JQPY_USE_SYSTEM_LIBS=1 python -m build --wheel --skip-dependency-check --no-isolation
+}
+
+check() {
+  cd $_name
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m pytest
+}
+
+package() {
+  cd $_name
+  python -m installer --destdir="$pkgdir" dist/*.whl
+
+  # Symlink license file
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  install -d "$pkgdir"/usr/share/licenses/$pkgname
+  ln -s "$site_packages"/jq-$pkgver.dist-info/LICENSE \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
