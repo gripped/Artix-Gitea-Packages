@@ -1,9 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_branch=master
-
 pkgname=artix-cgroups
-pkgver=0.2
+pkgver=0.3
 pkgrel=1
 arch=('any')
 pkgdesc='The Artix generic cgroups2 (forked from openrc)'
@@ -11,8 +9,9 @@ license=('BSD-2-Clause')
 url='https://gitea.artixlinux.org/artix/artix-cgroups'
 depends=('sh')
 makedepends=('git')
+provides=('cg-controller')
 source=("git+$url.git#tag=${pkgver}")
-sha256sums=('3b5e0d545955ab273178d03b4e0037c88ccc7fd271ea7c2bafb3be3e1dc388dc')
+sha256sums=('7218dd830b431fa9f4e54043b8de111430cff7b488de85cb77d097c08f382f2d')
 
 prepare() {
     cd "${pkgname}"
