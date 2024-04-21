@@ -2,7 +2,7 @@
 team: system
 pkgbase:
   name: artix-cgroups
-  version: 0.1-1
+  version: 0.2-1
   arch:
     - any
   pkgname:
@@ -20,9 +20,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 0.1-1
+    version: 0.2-1
     packages:
-      - artix-cgroups-0.1-1-any.pkg.tar.zst
+      - artix-cgroups-0.2-1-any.pkg.tar.zst
   system:
     version: null
     packages: []

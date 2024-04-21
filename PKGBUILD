@@ -3,7 +3,7 @@
 _branch=master
 
 pkgname=artix-cgroups
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 arch=('any')
 pkgdesc='The Artix generic cgroups2 (forked from openrc)'
@@ -12,7 +12,7 @@ url='https://gitea.artixlinux.org/artix/artix-cgroups'
 depends=('sh')
 makedepends=('git')
 source=("git+$url.git#tag=${pkgver}")
-sha256sums=('4282aaf3ab7621202d485f39f88bbf117c234a2cef950c63d663157a174f2fb6')
+sha256sums=('3b5e0d545955ab273178d03b4e0037c88ccc7fd271ea7c2bafb3be3e1dc388dc')
 
 prepare() {
     cd "${pkgname}"
