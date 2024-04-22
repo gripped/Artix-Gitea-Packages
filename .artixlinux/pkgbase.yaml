@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: opentimelineio
+  version: 0.16.0-2
+  arch:
+    - x86_64
+  pkgname:
+    - opentimelineio
 actions:
-  addRepo: null
+  addRepo: null-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,3 +52,7 @@ repos:
   galaxy:
     version: null
     packages: []
+  null-gremlins:
+    version: 0.16.0-2
+    packages:
+      - opentimelineio-0.16.0-2-x86_64.pkg.tar.zst
