@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - libdbusmenu-qt5
 actions:
-  addRepo: world
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -44,11 +44,13 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.9.3+16.04.20160218-7
+    packages:
+      - libdbusmenu-qt5-0.9.3+16.04.20160218-7-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
   galaxy:
     version: null
     packages: []
+team: world
