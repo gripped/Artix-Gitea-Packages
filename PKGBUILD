@@ -12,7 +12,7 @@ pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
 license=('BSD')
-depends=('python-billiard' 'python-click-didyoumean' 'python-click-plugins' 'python-click-repl'
+depends=('etmpfiles' 'python-billiard' 'python-click-didyoumean' 'python-click-plugins' 'python-click-repl'
          'python-kombu' 'python-pytz' 'python-vine')
 optdepends=('python-cryptography: for celery.security'
             'python-pymongo: for celery.backends.mongodb'
@@ -27,13 +27,12 @@ makedepends=('python-build'
              'python-installer'
              'python-setuptools'
              'python-wheel')
-# checkdepends on systemd for sysusers hook to create 'bin' user, because celery's test suite requires gid 1 to exist
 checkdepends=('python-pytest-celery' 'python-pytest-subtests' 'python-pytest-timeout' 'python-case'
               'python-cryptography' 'python-gevent' 'python-pymongo' 'python-msgpack' 'python-pyro'
               'python-redis' 'python-sqlalchemy' 'python-boto3' 'python-yaml' 'python-pyzmq'
-              'python-eventlet' 'python-moto' 'python-pytest-click')
+              'python-eventlet' 'python-moto' 'python-pytest-click' 'esysusers')
 source=("https://pypi.io/packages/source/c/celery/celery-$pkgver.tar.gz"
-        celery.tmpfiles.d)
+         celery.tmpfiles.d)
 options=('!emptydirs')
 sha512sums=('169fa01c72f4d4932a255f4e7a547d1cc24f6899540414950c37e487163127bd3681b9ad741e9b1375c8a0b2b566b7467448e4523c77b34d29b3873007fb6885'
             '67279b75c3b44d065811c9c90aee006296164000912d5bb97c74956b26ee4ad4f0847e846052a896d379848b869c849300367e676d3f689cf29e3a0c7ae5310b')
