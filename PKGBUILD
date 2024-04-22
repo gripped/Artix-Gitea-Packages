@@ -2,23 +2,23 @@
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=libfm-qt
-pkgver=1.4.0
-pkgrel=3
+pkgver=2.0.0
+pkgrel=1
 pkgdesc="Core library of PCManFM-Qt (Qt binding for libfm)"
 arch=("x86_64")
 url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
-depends=("menu-cache" "libexif" "qt5-x11extras" "lxqt-menu-data")
+depends=("menu-cache" "libexif" "qt6-base" "lxqt-menu-data")
 makedepends=("lxqt-build-tools")
 optdepends=(
   "org.freedesktop.secrets: allow to remember mount passwords"
 )
-provides=("libfm-qt.so")
+provides=("libfm-qt6.so")
 source=(
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
 )
-sha512sums=('d5a9bbb1f295dfbe88add760fc9c8da60771d4d49b64408b1278315b52dd071d7e24dbc9ff8354f0c68e5ad58e809e78a2dae77e2d4f52cd8e0b8409c0d7f5cb'
+sha512sums=('0f58a144ec8bcebfabef2bd083a08f04d6832cc16ec0d1093bda72495def64da3172292934aa561cda88ddc289e29d9ee13e3582a8a5a48ac20cbcf3fee57524'
             'SKIP')
 validpgpkeys=(
 	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
