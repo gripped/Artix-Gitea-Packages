@@ -3,7 +3,7 @@
 pkgname=python-attrs
 pkgver=23.2.0
 _commit=9e443b18527dc96b194e92805fa751cbf8434ba9
-pkgrel=2
+pkgrel=3
 pkgdesc="Attributes without boilerplate."
 arch=('any')
 license=('MIT')
@@ -14,6 +14,11 @@ makedepends=('git' 'python-build' 'python-installer' 'python-hatchling' 'python-
 checkdepends=('python-pytest' 'python-cloudpickle' 'python-hypothesis' 'python-zope-interface')
 source=("git+https://github.com/python-attrs/attrs.git#commit=$_commit")
 sha512sums=('SKIP')
+
+prepare() {
+  cd attrs
+  git cherry-pick -n b9084fab02c009a593b604562a69f36a5915c8e5 # Fix build with pytest 8
+}
 
 build() {
   cd attrs
