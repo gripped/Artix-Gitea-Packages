@@ -2,24 +2,24 @@
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=lximage-qt
-pkgver=1.4.0
-pkgrel=1.1
+pkgver=2.0.0
+pkgrel=1
 pkgdesc="The LXQt image viewer and screenshot tool"
 arch=("x86_64")
 groups=("lxqt")
 url="https://github.com/lxqt/$pkgname"
 license=("GPL2")
-depends=("lxqt-themes" "libfm-qt" "qt5-svg" "libexif" "libxfixes" "libfm-qt.so")
+depends=("lxqt-themes" "libfm-qt" "qt6-svg" "libexif" "libxfixes" "libfm-qt6.so")
 optdepends=(
-	"qt5-imageformats: support for additional image formats (WEBP, TIFF, etc.)"
-	"kimageformats5: support for additional image formats (PCX, XCF, HEIF, etc.)"
+	"qt6-imageformats: support for additional image formats (WEBP, TIFF, etc.)"
+	"kimageformats: support for additional image formats (PCX, XCF, HEIF, etc.)"
 )
 makedepends=("lxqt-build-tools")
 source=(
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
 )
-sha256sums=('0857650bdb32c5ba5befbd726fbff62137e45d2cf26bc88b0d32622e718cd34e'
+sha256sums=('cb9cc0691bfa5e5ec4172db13467485158e0d5433b90fd098a692b38a8f6c028'
             'SKIP')
 validpgpkeys=(
 	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
