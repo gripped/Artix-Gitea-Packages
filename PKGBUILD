@@ -65,6 +65,7 @@ build() {
 
 check() {
   cd nvchecker
+  sed -e "s|'repo': 'core'|'repo': 'system'|" -i tests/test_alpmfiles.py
   pytest
 }
 
