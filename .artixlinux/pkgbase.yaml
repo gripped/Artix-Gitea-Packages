@@ -8,7 +8,7 @@ pkgbase:
     - catfish
 actions:
   addRepo: galaxy
-  removeRepo: world
+  removeRepo: galaxy-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -43,14 +43,13 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 4.18.0-2
-    packages:
-      - catfish-4.18.0-2-any.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-gremlins:
     version: null
     packages: []
   galaxy:
-    version: 4.18.0-1
+    version: 4.18.0-2
     packages:
-      - catfish-4.18.0-1-any.pkg.tar.zst
+      - catfish-4.18.0-2-any.pkg.tar.zst
 team: galaxy
