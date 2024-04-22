@@ -1,12 +1,11 @@
 ---
 pkgbase:
   name: gpgme
-  version: 1.23.2-3
+  version: 1.23.2-4
   arch:
     - x86_64
   pkgname:
     - gpgme
-    - qgpgme-qt5
     - qgpgme-qt6
     - python-gpgme
 actions:
@@ -22,12 +21,11 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 1.23.2-3
+    version: 1.23.2-4
     packages:
-      - gpgme-1.23.2-3-x86_64.pkg.tar.zst
-      - qgpgme-qt5-1.23.2-3-x86_64.pkg.tar.zst
-      - qgpgme-qt6-1.23.2-3-x86_64.pkg.tar.zst
-      - python-gpgme-1.23.2-3-x86_64.pkg.tar.zst
+      - gpgme-1.23.2-4-x86_64.pkg.tar.zst
+      - qgpgme-qt6-1.23.2-4-x86_64.pkg.tar.zst
+      - python-gpgme-1.23.2-4-x86_64.pkg.tar.zst
   system:
     version: 1.23.2-1
     packages:
