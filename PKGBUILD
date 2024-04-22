@@ -5,7 +5,7 @@ _tag=255.4-r2
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=2
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -37,6 +37,7 @@ sha256sums=('c14967db10db8007fc9b4aedd8073766715230c1652103583c24e8fd2716c683')
 
 _backports=(
     ce3616c8864e56bf7efb233242f20197108a9dba # NM wakeup
+    5d16d94aa9a5e3afe5b51f591497149630763b24 # SIGCHLD handler
 )
 
 _reverts=(
