@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-humanfriendly
-  version: 10.0-7
+  version: 10.0-8
   arch:
     - any
   pkgname:
     - python-humanfriendly
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 10.0-7
+    version: 10.0-8
     packages:
-      - python-humanfriendly-10.0-7-any.pkg.tar.zst
+      - python-humanfriendly-10.0-8-any.pkg.tar.zst
   world:
     version: 10.0-6
     packages:
