@@ -3,7 +3,7 @@
 # Contributor: Matt Monaco <net 0x01b dgbaley27>
 
 pkgname=openvswitch
-pkgver=3.2.0
+pkgver=3.3.0
 pkgrel=1
 pkgdesc="Production Quality, Multilayer Open Virtual Switch"
 url="http://openvswitch.org"
@@ -15,12 +15,11 @@ source=("http://openvswitch.org/releases/openvswitch-$pkgver.tar.gz"
 depends=('openssl' 'libcap-ng')
 makedepends=('python-six' 'groff')
 optdepends=('python-six')
-sha256sums=('ce917e78cc0addff834af3c4f6b8d2d5071a407ecc553a71ad532d4e015914c4'
+sha256sums=('1afcb81fb947c0be885866995d6c088e61df43561115789206a2b33f7bc1b05f'
             'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
-
   sed -i \
     -e 's|$(sysconfdir)/bash_completion.d|/usr/share/bash-completion/completions|g' \
     -e '/if grep warning:/d' \
