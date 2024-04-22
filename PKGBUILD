@@ -4,7 +4,7 @@
 pkgname=python-hexdump
 _name=${pkgname/python-/}
 pkgver=3.3
-pkgrel=8
+pkgrel=9
 pkgdesc='Library and tool to work with hex and binary data'
 url='https://pypi.org/project/hexdump/'
 arch=('any')
@@ -15,6 +15,9 @@ sha512sums=('3299f6a29dcf4293616c5ea652397429ee844ca30964ee0fc784fb2a93252b75eb2
 
 package() {
   python setup.py install -O1 --root="${pkgdir}" --prefix=/usr
+  # The below seems like test data and completly in wrong place
+  rm -v "${pkgdir}/usr/data/hexfile.bin"
+  rmdir "${pkgdir}/usr/data"
 }
 
 # vim: ts=2 sw=2 et:

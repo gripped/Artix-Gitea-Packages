@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-hexdump
-  version: 3.3-8
+  version: 3.3-9
   arch:
     - any
   pkgname:
     - python-hexdump
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.3-8
+    version: 3.3-9
     packages:
-      - python-hexdump-3.3-8-any.pkg.tar.zst
+      - python-hexdump-3.3-9-any.pkg.tar.zst
   world:
     version: 3.3-7
     packages:
