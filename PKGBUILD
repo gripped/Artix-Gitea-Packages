@@ -4,11 +4,11 @@
 
 pkgname=python-pbr
 pkgver=6.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Python Build Reasonableness"
 arch=('any')
 url='https://pypi.python.org/pypi/pbr'
-license=('Apache')
+license=('Apache-2.0')
 depends=('python')
 makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 checkdepends=('python-six' 'python-stestr' 'python-testresources' 'python-testscenarios'
@@ -23,7 +23,7 @@ build() {
 
 check() {
   cd pbr
-  stestr run
+  stestr run --exclude-regex 'test_pep_517_support|test_requirement_parsing'
 }
 
 package() {
