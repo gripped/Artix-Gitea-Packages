@@ -7,7 +7,7 @@ _artix=artix${_rel}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
@@ -50,12 +50,12 @@ sha256sums=('291d1a1faf4e87b3b0ea9729080db887aafd1ff2fac1430ceca921e46bc22fae'
             'SKIP'
             'a49b47f89187d2fce6c79f263683bc06b152974b4cf8d8faee535e4bcf04adc7'
             'SKIP'
-            'aff9adfdc6dc30ced511e3988e65f3d7c0835af3f912089d2e666f4f23ab78d2')
+            '16258318c3a1aca5c81cb3288416aa94d27dddb06e16fa35a2a924f301b2b7c2')
 b2sums=('e8626a99c6c5769a8126d5ee1c7962c3df3c7a8c689193ffa864c4a4b8e72daeeaf22c3e3bb6ba5490eca3ef64c32a4a12980360a196444a53abadd791cd1855'
         'SKIP'
         'ae851de7fbe18ace280440a0125e5a0d864e4d648e1161ad03c99eaabf7d228d6c9c6869520ddd14b546c14e30b17c6a191d947ad4e9652cd8af9d9ad209eef3'
         'SKIP'
-        'dd70ca22e70b349963988d687670a8773d0adeafa43674a7a65a18f750609f648bca7c2d82b92d9ec4dc2bd593b445c518f9434cd4d962d66b954c1c2312ba3f')
+        '45286c9534ce7dec35594622d7183f55937c46e59c2dfd2d21b5355d0f10c909385553787953d0934a1fc6259a9e23c06de985c1599e5891b48ed3d961b0bd4c')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
