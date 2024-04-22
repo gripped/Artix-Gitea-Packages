@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pyjsparser
-  version: 2.7.1-12
+  version: 2.7.1-13
   arch:
     - any
   pkgname:
     - python-pyjsparser
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.7.1-12
+    version: 2.7.1-13
     packages:
-      - python-pyjsparser-2.7.1-12-any.pkg.tar.zst
+      - python-pyjsparser-2.7.1-13-any.pkg.tar.zst
   world:
     version: 2.7.1-11
     packages:
