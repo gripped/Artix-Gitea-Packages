@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python
-  version: 3.12.2-1
+  version: 3.12.3-1
   arch:
     - x86_64
   pkgname:
@@ -9,21 +9,21 @@ pkgbase:
     - python-tests
 actions:
   addRepo: system-gremlins
-  removeRepo: system-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 3.12.2-1
+    version: 3.12.3-1
     packages:
-      - python-3.12.2-1-x86_64.pkg.tar.zst
-      - python-tests-3.12.2-1-x86_64.pkg.tar.zst
+      - python-3.12.3-1-x86_64.pkg.tar.zst
+      - python-tests-3.12.3-1-x86_64.pkg.tar.zst
   system:
     version: 3.11.8-1
     packages:
