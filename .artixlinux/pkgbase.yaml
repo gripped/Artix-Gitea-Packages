@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-whoosh
-  version: 2.7.4-11
+  version: 2.7.4-12
   arch:
     - any
   pkgname:
     - python-whoosh
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.7.4-11
+    version: 2.7.4-12
     packages:
-      - python-whoosh-2.7.4-11-any.pkg.tar.zst
+      - python-whoosh-2.7.4-12-any.pkg.tar.zst
   world:
     version: 2.7.4-10
     packages:
