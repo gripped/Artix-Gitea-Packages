@@ -2,13 +2,18 @@
 
 pkgname=python-lsp-black
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="python-lsp-server plugin that adds support to black autoformatter, forked from pyls-black"
 arch=(any)
 url="https://github.com/python-lsp/python-lsp-black"
 license=(MIT)
 depends=(python-black python-lsp-server)
-makedepends=(python-setuptools)
+makedepends=(
+    python-build
+    python-installer
+    python-setuptools
+    python-wheel
+)
 checkdepends=(python-pytest)
 source=(${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz
         https://github.com/python-lsp/python-lsp-black/commit/74d7ae8d.patch)
@@ -21,7 +26,7 @@ prepare() {
 
 build() {
   cd ${pkgname}-${pkgver}
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 check() {
@@ -33,6 +38,6 @@ check() {
 
 package() {
   cd ${pkgname}-${pkgver}
-  python setup.py install --root=${pkgdir} --optimize=1 --skip-build
+  python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
