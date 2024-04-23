@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-color-manager
-  version: 3.36.0+r51+gcf7ee2b5-1
+  version: 3.36.0+r62+g82000f1d-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.36.0+r51+gcf7ee2b5-1
+    version: 3.36.0+r62+g82000f1d-1
     packages:
-      - gnome-color-manager-3.36.0+r51+gcf7ee2b5-1-x86_64.pkg.tar.zst
+      - gnome-color-manager-3.36.0+r62+g82000f1d-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
