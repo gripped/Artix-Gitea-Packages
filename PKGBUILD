@@ -4,11 +4,11 @@
 
 pkgname=jami-daemon
 pkgver=20240322
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)"
 arch=(x86_64)
 url="https://jami.net"
-license=(GPL3)
+license=(GPL-3.0-or-later)
 groups=(jami)
 depends=(glibc opendht gnutls nettle libgit2 libsecp256k1 libsecp256k1.so ffmpeg speexdsp
          fmt yaml-cpp jsoncpp zlib alsa-lib libpulse jack libupnp libnatpmp
