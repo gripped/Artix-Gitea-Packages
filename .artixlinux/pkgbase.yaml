@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-xmlsec
-  version: 1.3.13-5
+  version: 1.3.14-1
   arch:
     - x86_64
   pkgname:
     - python-xmlsec
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.3.13-5
+    version: 1.3.14-1
     packages:
-      - python-xmlsec-1.3.13-5-x86_64.pkg.tar.zst
+      - python-xmlsec-1.3.14-1-x86_64.pkg.tar.zst
   world:
     version: 1.3.13-4
     packages:
