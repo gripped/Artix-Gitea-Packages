@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - libdbusmenu-lxqt
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy-goblins
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -44,12 +44,12 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
-  galaxy-gremlins:
     version: 0.1.0-1
     packages:
       - libdbusmenu-lxqt-0.1.0-1-x86_64.pkg.tar.zst
+  galaxy-gremlins:
+    version: null
+    packages: []
   galaxy:
     version: null
     packages: []
