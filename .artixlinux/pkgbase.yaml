@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pydantic-extra-types
-  version: 2.6.0-2
+  version: 2.7.0-1
   arch:
     - any
   pkgname:
     - python-pydantic-extra-types
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-pydantic-extra-types-2.6.0-2-any.pkg.tar.zst
   world:
-    version: 2.6.0-1
+    version: 2.7.0-1
     packages:
-      - python-pydantic-extra-types-2.6.0-1-any.pkg.tar.zst
+      - python-pydantic-extra-types-2.7.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
