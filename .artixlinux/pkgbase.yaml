@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-myst-parser
-  version: 2.0.0-2
+  version: 3.0.0-1
   arch:
     - any
   pkgname:
     - python-myst-parser
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-myst-parser-2.0.0-2-any.pkg.tar.zst
   world:
-    version: 2.0.0-1
+    version: 3.0.0-1
     packages:
-      - python-myst-parser-2.0.0-1-any.pkg.tar.zst
+      - python-myst-parser-3.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
