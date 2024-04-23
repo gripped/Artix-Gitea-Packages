@@ -5,7 +5,7 @@ _tag=255.4-r2
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=4
+pkgrel=5
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -66,7 +66,7 @@ build() {
         -Dshared-lib-tag="${pkgver}-${pkgrel}"
         -Dmode=release
 
-        -Ddefault-hierarchy='hybrid'
+        -Ddefault-hierarchy='unified'
         -Dcgroup-controller='openrc'
 
         -Ddefault-kill-user-processes=false
@@ -136,7 +136,7 @@ package_libelogind(){
     pkgdesc="elogind client libraries"
     depends+=(
         'libcap.so'
-        'libudev' 'libudev.so'
+        'libudev'
     )
     provides=(
         'libelogind.so'
