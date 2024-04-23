@@ -3,11 +3,11 @@
 _pkg=distributed
 pkgname=python-${_pkg}
 pkgver=2024.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Distributed task scheduler for Dask"
 arch=(x86_64)
 url="https://distributed.dask.org/"
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(
     python
     python-click
@@ -25,7 +25,13 @@ depends=(
     python-yaml
     python-zict
 )
-makedepends=(python-setuptools python-versioneer)
+makedepends=(
+    python-build
+    python-installer
+    python-setuptools
+    python-versioneer
+    python-wheel
+    )
 checkdepends=(ipython
     python-pytest
     python-pytest-repeat
@@ -58,9 +64,13 @@ checkdepends=(ipython
 source=(https://github.com/dask/distributed/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('37908bfb644f223a15e010f33b6ff75b8c99ffa7b8a38370a8e688b4fac3b1cb')
 
+prepare() {
+  sed -i 's/, "versioneer\[toml\].*"//' ${_pkg}-${pkgver}/pyproject.toml
+}
+
 build() {
   cd ${_pkg}-${pkgver}
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 # Not collecting properly, no time to investigate
@@ -71,6 +81,6 @@ build() {
 
 package() {
   cd ${_pkg}-${pkgver}
-  python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1 --skip-build
+  python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE.txt -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
