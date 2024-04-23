@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: tmuxp
-  version: 1.47.0-1
+  version: 1.47.0-2
   arch:
     - any
   pkgname:
     - tmuxp
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.46.0-2
+    version: 1.47.0-2
     packages:
-      - tmuxp-1.46.0-2-any.pkg.tar.zst
+      - tmuxp-1.47.0-2-any.pkg.tar.zst
   world:
     version: 1.47.0-1
     packages:
