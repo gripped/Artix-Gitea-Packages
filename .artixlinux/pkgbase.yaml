@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: s6-scripts
-  version: 20240416-1
+  version: 20240423-1
   arch:
     - any
   pkgname:
     - s6-scripts
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -16,8 +16,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20240423-1
+    packages:
+      - s6-scripts-20240423-1-any.pkg.tar.zst
   system-gremlins:
     version: 20240416-1
     packages:
