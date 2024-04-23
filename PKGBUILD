@@ -4,14 +4,14 @@
 pkgname='python-portend'
 _pkgbase="${pkgname//python-/}"
 pkgver=3.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Use portend to monitor TCP ports for bound or unbound states."
 arch=('any')
 url="https://github.com/jaraco/portend"
 license=('MIT')
 depends=('python' 'python-tempora')
-makedepends=('python-setuptools' 'python-setuptools-scm' 'python-tox'
-             'python-tempora')
+makedepends=('python-setuptools' 'python-setuptools-scm'
+             'python-build' 'python-installer' 'python-wheel')
 checkdepends=('python-pytest')
 source=("https://files.pythonhosted.org/packages/source/${_pkgbase:0:1}/${_pkgbase}/${_pkgbase}-${pkgver}.tar.gz"
         'LICENSE')
@@ -36,7 +36,7 @@ build() {
     # setuptools wont find version from git tag
     export SETUPTOOLS_SCM_PRETEND_VERSION="${pkgver}"
     cd "${srcdir}/${_pkgbase}-${pkgver}"
-    python ./setup.py build
+    python -m build --wheel --no-isolation
 }
 
 check() {
@@ -47,7 +47,7 @@ check() {
 
 package() {
     cd "${srcdir}/${_pkgbase}-${pkgver}"
-    python ./setup.py install --root="${pkgdir}" --optimize=1
+    python -m installer --destdir="$pkgdir" dist/*.whl
 
     # the author has promised to include a LICENSE file in future releases:
     # https://github.com/jaraco/skeleton/issues/1
