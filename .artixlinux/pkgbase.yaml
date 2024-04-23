@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-k5test
-  version: 0.10.4-2
+  version: 0.10.4-3
   arch:
     - any
   pkgname:
     - python-k5test
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.10.4-2
+    version: 0.10.4-3
     packages:
-      - python-k5test-0.10.4-2-any.pkg.tar.zst
+      - python-k5test-0.10.4-3-any.pkg.tar.zst
   world:
     version: 0.10.4-1
     packages:
