@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
-# Contributor: Christian Heusel <gromit@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 _name=Audacity
@@ -9,7 +8,7 @@ pkgname=(
   audacity
   audacity-docs
 )
-pkgver=3.5.0
+pkgver=3.5.1
 pkgrel=1
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
@@ -65,11 +64,11 @@ source=(
   https://github.com/$pkgbase/$pkgbase/releases/download/$_name-$pkgver/$pkgbase-manual-$pkgver.tar.gz
   audacity_3_4_2_enable_tests_without_conan.patch
 )
-sha512sums=('319b9e578f7461fe34f4ae47041f5c20c2b87eb57ad493930991add0d98372f56c829526ccfe6ee629a00ebc77e447f54069a861ed954c8260dc8eb3f32188c8'
-            '763999e709c339ed3b2f53e2260cf1e9adce6fc7e0452e6c21fd5b6e9301733d0a84688827efcbdde1b5d12dcb82766a8db95b73c74d5aaf83163f35dc43b466'
+sha512sums=('053a4b81b0f61e6a3070e8517e9faac47b1597afb81c6a0d993006905dca0cd605e6a40833e85386b24d4957194d6903f025a984b624446957207c7cfde8211e'
+            '39f14c23d9ea259ba3a1db2a5fd9c98b41148db86f7803cb132be33bdcc171fc8e45cf49f66d98c65ca2a173154fc1c116bfeeb5fc1ba31690dc96c30ea2b601'
             'ab92475e599fd4345d33a7ae6cd47231ab614b92ca9a71e732a073b31ec18ad92f3d1384183b0821e75b4ba1bb4987c5369c1398604d6c4ea01a20f94fb7b976')
-b2sums=('91f1e537336fe2d4700bd1e3ec49cd0081b3d05aeeea759cba5bd62d0658c73d307739cab04a1fca69cb62edb15a48c1a079b21713f325efd2354960bee49d76'
-        '2bc57b2791c1a66f7bdd6cd8509b356b8aea03e0ac703f1581f4520e51e604748c08635a05690f5878124d5dfbb27bbab7e77e36edbc04101ef55e15ba6d7936'
+b2sums=('fddc01938e137a639eb0b27889f279706cfd0e257f720084a3e2f818cd2e678dda65a28937cc44846ab15b0095ed30bddf5b75be3f254533870303ee830c7683'
+        '7f1cf4c3e7bb30e307c3029984813f96d00dbab8afb32491777dc8fa3ec2de6b9c59273e98db3c9b232ec5363277589ae890fc2c78555f463f1ba24031558baa'
         '0c176336ca8df12f443e6935e8293afa3408e0e7b6a290417007bbbc0500c8eb8716ae3265665a80d85d689f9b369e5edf7986e8507288af77e8eea4ebedd624')
 
 prepare() {
