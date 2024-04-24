@@ -7,7 +7,7 @@
 
 pkgname=fail2ban
 pkgver=1.0.2
-pkgrel=6
+pkgrel=7
 pkgdesc='Bans IPs after too many failed authentication attempts'
 arch=('any')
 url='https://www.fail2ban.org/'
@@ -37,10 +37,13 @@ validpgpkeys=('E6C3F631FBDA716B070C6ED94141C485A81A88CB') # Sergey G. Brester (s
 
 prepare() {
   cd $pkgname
+  # Fix missing fail2ban.compat module https://gitlab.archlinux.org/archlinux/packaging/packages/fail2ban/-/issues/1
+  git cherry-pick --no-commit 77b052fdea51fe20cc6d56f3a11d59ce32e753ed
+
   sed -i 's|self.install_dir|"/usr/bin"|' setup.py
   sed -i 's/^before = paths-debian.conf/before = paths-arch.conf/' config/jail.conf
 
-  # Python 3.12 support https://github.com/fail2ban/fail2ban/issues/3487
+  # Bundle async modules removed in Python 3.12 https://github.com/fail2ban/fail2ban/issues/3487
   git cherry-pick --no-commit 054e1d89ca3fa8b767ee21db1a3368f3d890baa8
   # Fix testRepairDb for sqlite >= 3.42 https://github.com/fail2ban/fail2ban/issues/3586
   git cherry-pick --no-commit cabcc9b3f49e59e57c3909ec83de74bab9911f7f
