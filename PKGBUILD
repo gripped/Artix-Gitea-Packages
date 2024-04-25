@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
-# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
 # Contributor: Philipp Wolfer <ph.wolfer@gmail.com>
 
 pkgname=gifski
-pkgver=1.14.2
+pkgver=1.32.0
 pkgrel=1
 pkgdesc='GIF encoder based on libimagequant (pngquant). Squeezes maximum possible quality from the awful GIF format.'
 arch=('x86_64')
@@ -13,7 +12,7 @@ license=('AGPL3')
 depends=('ffmpeg')
 makedepends=('cargo' 'clang')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/ImageOptim/$pkgname/archive/$pkgver.tar.gz")
-sha512sums=('6b0fea3e170d00af9febb5b761514b3ca4e8d46547134dfc7bcf524588cd16197b5ec8623d15147eaf2c5f120ffce585bb76947781ae69fb34a5c28d54dd3799')
+sha512sums=('0088917b5080c31efe98c76193b119069c1eb8ac9d50e98b207371ed2e22a3a4203f6f2cfee4b885d99d7d85d1f0d247831002997aac4058e8eb70b647f82988')
 options=('!lto')
 
 prepare() {
