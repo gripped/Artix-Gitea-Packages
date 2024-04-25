@@ -1,30 +1,54 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _pkgname=elogind
+_tag=255.4-r2
+
 pkgname=lib32-elogind
-pkgver=252.23
+pkgver=${_tag/-r/.}
 pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package (32-bit)"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 license=('GPL' 'LGPL2.1')
-provides=(libelogind.so)
-depends=('lib32-gcc-libs' 'lib32-acl' 'lib32-libcap' 'lib32-libgcrypt' 'lib32-libxcrypt'
-         'lib32-udev' 'elogind' 'lib32-util-linux' 'lib32-glibc' 'lib32-pam')
-makedepends=('git' 'gperf' 'intltool' 'lib32-bzip2'
-             'lib32-curl' 'lib32-dbus' 'lib32-glib2'
-             'lib32-gnutls' 'lib32-libelf' 'lib32-libidn2' 'lib32-pcre2'
-             'libxslt' 'meson' 'python-jinja')
-options=('!libtool')
-source=("${_pkgname}-${pkgver}.tar.gz::https://github.com/elogind/elogind/archive/v${pkgver}.tar.gz"
-        'elogind-252-docs.patch')
-sha256sums=('d73f1b203a5d5ee9fd77f649475d1193f9dc4f2c3451ef95f5110a1a9a0e766d'
-            'c4153ec89c4deee33e019c168a71b7f1052ff5b24dc747a847cf295a4b54749f')
+provides=(
+    'libelogind.so'
+)
+depends=(
+    'lib32-gcc-libs'
+    'lib32-acl'
+    'lib32-libcap'
+    'lib32-libgcrypt'
+    'lib32-libxcrypt'
+    'lib32-udev'
+    'elogind'
+    'lib32-util-linux'
+    'lib32-glibc'
+    'lib32-pam'
+)
+makedepends=(
+    'git'
+    'gperf'
+    'intltool'
+    'lib32-bzip2'
+    'lib32-curl'
+    'lib32-dbus'
+    'lib32-glib2'
+    'lib32-gnutls'
+    'lib32-libelf'
+    'lib32-libidn2'
+    'lib32-pcre2'
+    'libxslt'
+    'meson'
+    'python-jinja'
+)
+checkdepends=(
+    'python-lxml'
+)
+source=(
+    "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
+)
+sha256sums=('c14967db10db8007fc9b4aedd8073766715230c1652103583c24e8fd2716c683')
 
-prepare() {
-    cd ${_pkgname}-${pkgver}
-    patch -Np 1 -i ../elogind-252-docs.patch
-}
 
 build() {
     export CC="gcc -m32"
@@ -32,16 +56,23 @@ build() {
     export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
 
     local meson_options=(
-        --libexecdir /usr/lib32
+        --libexecdir /usr/lib32/elogind
         --libdir /usr/lib32
-        -Daudit=false
+        -Dmode=release
+        -Dversion-tag="${pkgver}-${pkgrel}-artix"
+        -Dshared-lib-tag="${pkgver}-${pkgrel}"
+        -Daudit=disabled
+        -Dselinux=disabled
+        -Dxenctrl=disabled
+        -Dpolkit=disabled
+        -Dpam=false
         -Ddbuspolicydir=/usr/share/dbus-1/system.d
         -Ddocdir=/usr/share/doc/elogind
         -Ddefault-hierarchy=hybrid
         -Ddefault-kill-user-processes=false
     )
 
-    arch-meson "${_pkgname}-${pkgver}" build "${meson_options[@]}"
+    arch-meson "${_pkgname}" build "${meson_options[@]}"
 
     ninja -C build
 }
@@ -53,8 +84,6 @@ check(){
 package() {
     DESTDIR="$pkgdir" ninja -C build install
 
-#     ln -sfv libelogind.pc "${pkgdir}"/usr/lib32/pkgconfig/libsystemd.pc
-
     rm -rf "${pkgdir}"/{etc,var}
-    rm -rf "${pkgdir}"/usr/{bin,include,lib,share}
+    rm -rf "${pkgdir}"/usr/{bin,include,lib,lib32/elogind,share}
 }
