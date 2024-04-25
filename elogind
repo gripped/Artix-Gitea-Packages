@@ -4,4 +4,4 @@ smooth-recovery = true
 depends-on      = dbus
 depends-on      = elogind-cg
 before          = loginready
-run-in-cgroup   = openrc.elogind
+run-in-cgroup   = elogind.sv
