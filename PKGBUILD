@@ -3,7 +3,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=artix-keyring
-pkgver=20240322
+pkgver=20240425
 pkgrel=1
 pkgdesc='Artix PGP keyring'
 arch=('any')
