@@ -1,16 +1,17 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pytest-ignore-flaky
-pkgver=2.2.0
-pkgrel=2
+pkgver=2.2.1
+pkgrel=1
 pkgdesc="Ignore failures from flaky tests (pytest plugin)"
 arch=('any')
 license=('MIT')
 url="https://github.com/coherent-oss/pytest-ignore-flaky/"
 depends=('python-pytest')
-makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel')
-source=("git+https://github.com/coherent-oss/pytest-ignore-flaky.git#tag=$pkgver")
-sha512sums=('2138a4c1c379cd8a3d3b5ea40d270b5040ea53bf2ae735efb2dffce5165801c1032d8e2866932b0e121e1ba95a453a9336bfa6b2018e8a28ba15c0c9b3c9882e')
+makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-setuptools-scm'
+             'python-wheel')
+source=("git+https://github.com/coherent-oss/pytest-ignore-flaky.git#tag=v$pkgver")
+sha512sums=('55d8e0d6b1b93687608a6cb97bc2d3de77876d1408eb3240c3e1f78be022706e7a3736e45f65e5b33c7f93470c726d2c32bc2e97f6f746a2153c04e05d2d5dd5')
 
 build() {
   cd pytest-ignore-flaky
