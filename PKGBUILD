@@ -2,7 +2,7 @@
 
 pkgname=dbus-dinit
 pkgver=20240421
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for dbus"
 arch=('any')
 url="https://artixlinux.org"
@@ -15,7 +15,7 @@ groups=('dinit-system')
 _commit=d2362e98e56dfe11308d1526c40f91f717e19a24
 source=("dbus" "dbus.script" "dbus-pre" "dbus-pre.script"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
-sha256sums=('0907343ee9721f7ed59293de594ca237a603d1c2b97aba4937e97e8c683016c6'
+sha256sums=('e133d7d2d1e68dc15a83872231244e5a681a4f1617be85faee52a5749c8179b1'
             '7e7a317bf1cc7ffd988103df4651c37f075097b92261e159911e1b10e0b9f158'
             'd0e10427e88cc6223f458729272ab7d53811f02cd229d5e1ec1db8456c6e6aad'
             'c2c42de6048b2990258a2b493a1213c96c69e8532ce918b85eaa6a5ecf13a68a'

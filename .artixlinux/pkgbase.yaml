@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dbus-dinit
-  version: 20240421-1
+  version: 20240421-2
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20240421-1
+    version: 20240421-2
     packages:
-      - dbus-dinit-20240421-1-any.pkg.tar.zst
+      - dbus-dinit-20240421-2-any.pkg.tar.zst
   system:
     version: 20230906-4
     packages:
