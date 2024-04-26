@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hyprcursor
-  version: 0.1.7-1
+  version: 0.1.8-1
   arch:
     - x86_64
     - aarch64
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.7-1
+    version: 0.1.8-1
     packages:
-      - hyprcursor-0.1.7-1-x86_64.pkg.tar.zst
+      - hyprcursor-0.1.8-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
