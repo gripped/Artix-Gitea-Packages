@@ -3,8 +3,8 @@
 # Contributor: Parmjot Singh <parmjotsinghrobot at gmail dot com>
 
 pkgname=waybar
-pkgver=0.10.0
-pkgrel=4
+pkgver=0.10.2
+pkgrel=1
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors'
 arch=('x86_64')
 url="https://github.com/Alexays/Waybar/"
@@ -55,17 +55,8 @@ optdepends=(
 )
 source=(
     "$pkgname-$pkgver.tar.gz::https://github.com/Alexays/Waybar/archive/$pkgver.tar.gz"
-    0001-Update-Wireplumber-API-to-0.5.patch
 )
-b2sums=('f27a61662444cb0d91ecb5c860271939ba81813af4d005a3297f9996fab5edd54df2e4a126aa33edf9049e2d91d301a03f6352e25eb9c86ffb003b0b238e9015'
-        'eb745507d5547e8af63a52f801c1329f905363283ffcc754b841368e84f5b5d3f407b063b86811768e3bcaa27451589216ba4f8a44dde693465dc7a7ef956126')
-
-prepare() {
-    cd "Waybar-$pkgver"
-
-    # https://github.com/Alexays/Waybar/pull/2919
-    patch -Np1 -i ../0001-Update-Wireplumber-API-to-0.5.patch
-}
+b2sums=('9edcd52611999843efb22b58aafa705f089b6ed9bdb672daa41235ed477ce80d6dff8ac34ef679e333be30ecf4dc774bdc77d89e701b2a34913b4cedac6d742c')
 
 build() {
     cd "Waybar-$pkgver"
