@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dinit
-  version: 0.18.0-2
+  version: 0.18.0-3
   arch:
     - x86_64
   pkgname:
@@ -20,10 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 0.18.0-2
+    version: 0.18.0-3
     packages:
-      - dinit-0.18.0-2-x86_64.pkg.tar.zst
-      - dinit-base-0.18.0-2-x86_64.pkg.tar.zst
+      - dinit-0.18.0-3-x86_64.pkg.tar.zst
+      - dinit-base-0.18.0-3-x86_64.pkg.tar.zst
   system:
     version: 0.18.0-1
     packages:
