@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fail2ban
-  version: 1.0.2-7
+  version: 1.1.0-1
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.0.2-7
+    version: 1.1.0-1
     packages:
-      - fail2ban-1.0.2-7-any.pkg.tar.zst
+      - fail2ban-1.1.0-1-any.pkg.tar.zst
   world:
     version: 1.0.2-4
     packages:

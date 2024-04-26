@@ -6,8 +6,8 @@
 # Contributor: nbags <neilbags@gmail.com>
 
 pkgname=fail2ban
-pkgver=1.0.2
-pkgrel=7
+pkgver=1.1.0
+pkgrel=1
 pkgdesc='Bans IPs after too many failed authentication attempts'
 arch=('any')
 url='https://www.fail2ban.org/'
@@ -32,33 +32,24 @@ backup=(
   'etc/logrotate.d/fail2ban'
 )
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=$pkgver?signed")
-b2sums=('48478252ac6fcbb6581dfa1237f577e42387fa4c4c93b60b1b39ee6015e922edece6cc1afcce79d476d2bad85b8a0de976f03e57bec3a9ba26894fafef6773ff')
+b2sums=('c2859a151abd906ceadc8549a4d337b01b037793e7d9285d44f08405695bdcb1b7dc88998cb7eed0321cacdce1d3fca29e55c63f5f60dadbb15f217f6cbe92d3')
 validpgpkeys=('E6C3F631FBDA716B070C6ED94141C485A81A88CB') # Sergey G. Brester (sebres) <serg.brester@sebres.de>
 
 prepare() {
   cd $pkgname
-  # Fix missing fail2ban.compat module https://gitlab.archlinux.org/archlinux/packaging/packages/fail2ban/-/issues/1
-  git cherry-pick --no-commit 77b052fdea51fe20cc6d56f3a11d59ce32e753ed
-
   sed -i 's|self.install_dir|"/usr/bin"|' setup.py
   sed -i 's/^before = paths-debian.conf/before = paths-arch.conf/' config/jail.conf
-
-  # Bundle async modules removed in Python 3.12 https://github.com/fail2ban/fail2ban/issues/3487
-  git cherry-pick --no-commit 054e1d89ca3fa8b767ee21db1a3368f3d890baa8
-  # Fix testRepairDb for sqlite >= 3.42 https://github.com/fail2ban/fail2ban/issues/3586
-  git cherry-pick --no-commit cabcc9b3f49e59e57c3909ec83de74bab9911f7f
 }
 
 build() {
   cd $pkgname
-  ./fail2ban-2to3
   python -m build --wheel --skip-dependency-check --no-isolation
 }
 
+# Imports smtpd module that was removed in Python 3.12.
+# aiosmptd is now used in master, but the changes do not cleanly backport
 check() {
   cd $pkgname
-  # Imports smtpd module that was removed in Python 3.12.
-  # aiosmptd is now used in master, but the changes do not cleanly backport
   ./bin/fail2ban-testcases --ignore unittest.loader._FailedTest.test_smtp
 }
 
@@ -75,8 +66,8 @@ package() {
 
   install -Dm644 -t "$pkgdir"/usr/share/man/man1 man/*.1
   install -Dm644 -t "$pkgdir"/usr/share/man/man5 man/*.5
-
-
+  
+  
   cd "$pkgdir"
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   cp -rl ./"$site_packages"/{etc,usr} .
