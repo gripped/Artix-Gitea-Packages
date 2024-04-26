@@ -3,7 +3,7 @@ pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.18.0
 _commit=29cd296aa4635fe6f7b53bda2f2cb1648bdc0782
-pkgrel=2
+pkgrel=3
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
@@ -14,7 +14,7 @@ source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
         "dinit-init")
 sha256sums=('16f70d6ad3ba3ec5c709c810fbfb009f65e41c0b95d32b3725ae88e477b1c48a'
             'SKIP'
-            '90e3bf58c3c5bf4c128d5eeb70cd938956c2ac828440aa0b830eba0b77238556')
+            '8b9a5a6b1a917a4669b75a168ebd6c5b3a9734e7c11da0f2ec1c57058279195d')
 
 build() {
 	cd "$pkgname-$pkgver"
