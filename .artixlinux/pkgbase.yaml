@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: pyqt6-charts
-  version: 6.6.0-2
+  version: 6.7.0-1
   arch:
     - x86_64
   pkgname:
     - python-pyqt6-charts
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-pyqt6-charts-6.6.0-2-x86_64.pkg.tar.zst
   world:
-    version: 6.6.0-1
+    version: 6.7.0-1
     packages:
-      - python-pyqt6-charts-6.6.0-1-x86_64.pkg.tar.zst
+      - python-pyqt6-charts-6.7.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
