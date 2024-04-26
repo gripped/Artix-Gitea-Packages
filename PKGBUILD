@@ -2,8 +2,8 @@
 
 _pkg=Fiona
 pkgname=python-${_pkg,,}
-pkgver=1.9.5
-pkgrel=4
+pkgver=1.9.6
+pkgrel=1
 pkgdesc="Read and write geographic data files"
 arch=(x86_64)
 url="https://github.com/Toblerity/Fiona"
@@ -32,7 +32,7 @@ makedepends=(
 checkdepends=(python-pytest python-boto3 python-pytz python-shapely)
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/Toblerity/Fiona/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('97d29982c8a780f3a6c163472a6e4ffa8c942195adc6883b5e6282b29bad71d4')
+sha256sums=('cf96dfbca9a953594b7d42bf5f6f4a53902180474968dd25ef74b81227af228f')
 
 prepare() {
   sed -i '/oldest-supported-numpy/d' ${_pkg}-${pkgver}/pyproject.toml
