@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pycrdt-websocket
-  version: 0.12.7-2
+  version: 0.13.0-1
   arch:
     - any
   pkgname:
     - python-pycrdt-websocket
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-pycrdt-websocket-0.12.7-2-any.pkg.tar.zst
   world:
-    version: 0.12.7-1
+    version: 0.13.0-1
     packages:
-      - python-pycrdt-websocket-0.12.7-1-any.pkg.tar.zst
+      - python-pycrdt-websocket-0.13.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
