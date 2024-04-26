@@ -4,7 +4,7 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.8.0
+pkgver=4.9.1
 pkgrel=1
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
@@ -12,11 +12,12 @@ url="https://www.nlnetlabs.nl/nsd/"
 license=(BSD)
 depends=(openssl libevent fstrm protobuf-c)
 validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wouter@nlnetlabs.nl>
-              C3E356788FAD0179D872D092BA811E62E7194568)
+              C3E356788FAD0179D872D092BA811E62E7194568
+              9E32AFD129E3AB1DC5AB34DE7DE08345DE34009F) # Jeroen Koekkoek <jeroen@koekkoek.nl>
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('820da4e384721915f4bcaf7f2bed98519da563c6e4c130c742c724760ec02a0a'
+sha256sums=('a6c23a53ee8111fa71e77b7565d1b8f486ea695770816585fbddf14e4367e6df'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
