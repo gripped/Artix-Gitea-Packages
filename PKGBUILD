@@ -3,7 +3,7 @@
 # Contributor: Michael Yang
 
 pkgname=spdlog
-pkgver=1.13.0
+pkgver=1.14.0
 pkgrel=1
 pkgdesc='Very fast, header-only/compiled, C++ logging library'
 arch=('x86_64')
@@ -18,7 +18,7 @@ source=(
 provides=(
     'libspdlog.so'
 )
-sha256sums=('534f2ee1a4dcbeb22249856edfb2be76a1cf4f708a20b0ac2ed090ee24cfdbc9'
+sha256sums=('429a6b73ade8285cb21f83bacf89e2821dd1720ea7faa3cb518ffe04b4e00efc'
             'a0eb34b7c6920f0db2587460071f53372663c191cdfe34bf5ea2704c309c745f')
 
 prepare() {
