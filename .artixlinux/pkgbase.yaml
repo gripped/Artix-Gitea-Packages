@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sdbus-cpp
-  version: 1.5.0-3
+  version: 2.0.0-1
   arch:
     - x86_64
   pkgname:
     - sdbus-cpp
     - sdbus-cpp-doc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-1
+    packages:
+      - sdbus-cpp-2.0.0-1-x86_64.pkg.tar.zst
+      - sdbus-cpp-doc-2.0.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
