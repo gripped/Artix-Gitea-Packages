@@ -1,13 +1,12 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit-rc
-pkgver=0.2.6
+pkgver=0.2.7
 pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/dinit-rc"
 license=('BSD')
 depends=('udev' 'artix-cgroups')
-install=dinit-rc.install
 provides=('init-udev' 'init-rc')
 conflicts=('init-udev' 'init-rc')
 backup=('etc/dinit.d/config/console.conf'
@@ -15,7 +14,7 @@ backup=('etc/dinit.d/config/console.conf'
         'etc/dinit.d/config/rc.local'
         'etc/dinit.d/config/rc.shutdown')
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('454da7b0ede897081e48f43e62c33ff3491c360d06bc45d7a66bd09837e33075')
+sha256sums=('b9967b29ff7961c2aab738543b79eea7f28ccede5a4b3794413aaa59562af34f')
 
 build() {
 	cd "$pkgname"
