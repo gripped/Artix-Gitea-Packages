@@ -1,13 +1,11 @@
 ---
 pkgbase:
   name: glfw
-  version: 3.3.10-1
+  version: 3.4-2
   arch:
     - x86_64
   pkgname:
-    - glfw-x11
-    - glfw-wayland
-    - glfw-doc
+    - glfw
 actions:
   addRepo: world
   removeRepo: null
@@ -33,11 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.3.10-1
+    version: 3.4-2
     packages:
-      - glfw-x11-3.3.10-1-x86_64.pkg.tar.zst
-      - glfw-wayland-3.3.10-1-x86_64.pkg.tar.zst
-      - glfw-doc-3.3.10-1-x86_64.pkg.tar.zst
+      - glfw-3.4-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -56,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
