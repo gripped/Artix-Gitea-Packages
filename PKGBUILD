@@ -2,7 +2,8 @@
 # Contributor: csslayer <wengxt AT gmail com>
 
 pkgname=fcitx5
-pkgver=5.1.8
+pkgver=5.1.9
+_dictver=20121020
 pkgrel=1
 pkgdesc="Next generation of fcitx"
 arch=('x86_64')
@@ -10,30 +11,36 @@ url="https://github.com/fcitx/fcitx5"
 license=('LGPL-2.1-or-later AND Unicode-DFS-2016')
 conflicts=('fcitx')
 groups=('fcitx5-im')
-depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'wayland'
-         'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2' 'dbus' 'libuv')
-makedepends=('extra-cmake-modules' 'ninja' 'wayland-protocols' 'fmt')
-source=("https://download.fcitx-im.org/fcitx5/fcitx5/fcitx5-${pkgver}_dict.tar.xz"{,.sig})
-sha512sums=('4472b49cbc3fd20f066bbec4e107eafb5444fffd22feee7b4f5b637d324b03a16e82c950e95624629b984f72a5a62fca73087a032946c4eedb86d8a528c52a43'
-            'SKIP')
+depends=('cairo' 'enchant' 'iso-codes' 'libgl' 'libxkbcommon-x11' 'pango' 'elogind' 'libuv' 'wayland'
+         'xcb-imdkit' 'xcb-util-wm' 'libxkbfile' 'gdk-pixbuf2')
+makedepends=('git' 'extra-cmake-modules' 'ninja' 'wayland-protocols' 'fmt')
+source=("git+https://github.com/fcitx/fcitx5.git#tag=$pkgver?signed"
+        "https://download.fcitx-im.org/data/en_dict-$_dictver.tar.gz")
+noextract=("en_dict-$_dictver.tar.gz")
+sha512sums=('85f561d6c33f3da20c9fe92bc5aa1fa12e52343042c3512565cc5d8cd6b6a52c2aa7705de76d7aca33c63d11983492eda7ad29dfa360bac6e0f4a941062e29f3'
+            '8418bd02492bfd786c0fab93be4400ef027ec8e9fac02220cc1f653f5eb67f54573a6a84a15baba19bb34ab892745c87df16499d6304ea75009131e2ab3b97f2')
 validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
 
+prepare() {
+  mv en_dict-$_dictver.tar.gz fcitx5/src/modules/spell/en_dict-$_dictver.tar.gz
+}
+
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgname
 
   cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-        -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib \
-        -DUSE_SYSTEMD=off .
+        -DUSE_SYSTEMD=off \
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib .
   ninja
 }
 
 check() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   ninja test
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   DESTDIR="$pkgdir" ninja install
   install -Dm644 LICENSES/Unicode-DFS-2016.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
