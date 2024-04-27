@@ -3,8 +3,8 @@
 
 pkgname='python-portend'
 _pkgbase="${pkgname//python-/}"
-pkgver=3.1.0
-pkgrel=5
+pkgver=3.2.0
+pkgrel=1
 pkgdesc="Use portend to monitor TCP ports for bound or unbound states."
 arch=('any')
 url="https://github.com/jaraco/portend"
@@ -15,7 +15,7 @@ makedepends=('python-setuptools' 'python-setuptools-scm'
 checkdepends=('python-pytest')
 source=("https://files.pythonhosted.org/packages/source/${_pkgbase:0:1}/${_pkgbase}/${_pkgbase}-${pkgver}.tar.gz"
         'LICENSE')
-sha512sums=('017dff68ea85f48d19398f71fbd8189329ca9c27c05d8599dd5e53632eb5ddc6dea322e94c924a0653f25f042a3c8ee1cda5f8450b02f3406a72036d54cd1aaf'
+sha512sums=('56790cdb6d1619e8873acc2498f9bee758a64ad8f8e47f31e48ae1ac7b6f038fc81af5d52cbc4bc4797dd6dc25d453d391d73d454c98559b1d6a8e9061837d7f'
             '1106afed483b7258e4ae89c5d9459c3834412b31aac90169725ed62d2ab44f61f6f79e894d4c9e4d8bd99e14530ab778df2187784f0b25eaab86d312fad68944')
 
 prepare() {
