@@ -15,8 +15,8 @@ pkgbase:
     - lapacke64
     - lapack-doc
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -36,6 +36,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.12.0-5
     packages:
       - blas-3.12.0-5-x86_64.pkg.tar.zst
@@ -47,18 +50,6 @@ repos:
       - lapack64-3.12.0-5-x86_64.pkg.tar.zst
       - lapacke64-3.12.0-5-x86_64.pkg.tar.zst
       - lapack-doc-3.12.0-5-x86_64.pkg.tar.zst
-  world:
-    version: 3.12.0-3
-    packages:
-      - blas-3.12.0-3-x86_64.pkg.tar.zst
-      - cblas-3.12.0-3-x86_64.pkg.tar.zst
-      - lapack-3.12.0-3-x86_64.pkg.tar.zst
-      - lapacke-3.12.0-3-x86_64.pkg.tar.zst
-      - blas64-3.12.0-3-x86_64.pkg.tar.zst
-      - cblas64-3.12.0-3-x86_64.pkg.tar.zst
-      - lapack64-3.12.0-3-x86_64.pkg.tar.zst
-      - lapacke64-3.12.0-3-x86_64.pkg.tar.zst
-      - lapack-doc-3.12.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
