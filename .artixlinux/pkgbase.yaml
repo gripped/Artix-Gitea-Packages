@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-ntlm-auth
-  version: 1.5.0-8
+  version: 1.5.0-9
   arch:
     - any
   pkgname:
     - python-ntlm-auth
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.0-8
+    version: 1.5.0-9
     packages:
-      - python-ntlm-auth-1.5.0-8-any.pkg.tar.zst
+      - python-ntlm-auth-1.5.0-9-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
