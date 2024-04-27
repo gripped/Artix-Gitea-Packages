@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-speg
-  version: 0.3-11
+  version: 0.3-12
   arch:
     - any
   pkgname:
     - python-speg
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3-11
+    version: 0.3-12
     packages:
-      - python-speg-0.3-11-any.pkg.tar.zst
+      - python-speg-0.3-12-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
