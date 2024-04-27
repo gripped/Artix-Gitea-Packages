@@ -11,8 +11,8 @@ pkgbase:
     - powerline-vim
     - powerline-fonts
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -32,6 +32,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 2.8.3-4
     packages:
       - powerline-2.8.3-4-x86_64.pkg.tar.zst
@@ -39,14 +42,6 @@ repos:
       - powerline-common-2.8.3-4-x86_64.pkg.tar.zst
       - powerline-vim-2.8.3-4-x86_64.pkg.tar.zst
       - powerline-fonts-2.8.3-4-x86_64.pkg.tar.zst
-  world:
-    version: 2.8.3-3
-    packages:
-      - powerline-2.8.3-3-x86_64.pkg.tar.zst
-      - python-powerline-2.8.3-3-x86_64.pkg.tar.zst
-      - powerline-common-2.8.3-3-x86_64.pkg.tar.zst
-      - powerline-vim-2.8.3-3-x86_64.pkg.tar.zst
-      - powerline-fonts-2.8.3-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
