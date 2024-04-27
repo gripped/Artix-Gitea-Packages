@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - python-html2text
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 2020.1.16-10
     packages:
       - python-html2text-2020.1.16-10-any.pkg.tar.zst
-  world:
-    version: 2020.1.16-9
-    packages:
-      - python-html2text-2020.1.16-9-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
