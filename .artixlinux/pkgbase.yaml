@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: doublecmd
-  version: 1.1.12-2
+  version: 1.1.13-3
   arch:
     - x86_64
   pkgname:
@@ -51,9 +51,9 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.1.12-2
+    version: 1.1.13-3
     packages:
-      - doublecmd-gtk2-1.1.12-2-x86_64.pkg.tar.zst
-      - doublecmd-qt5-1.1.12-2-x86_64.pkg.tar.zst
-      - doublecmd-qt6-1.1.12-2-x86_64.pkg.tar.zst
+      - doublecmd-gtk2-1.1.13-3-x86_64.pkg.tar.zst
+      - doublecmd-qt5-1.1.13-3-x86_64.pkg.tar.zst
+      - doublecmd-qt6-1.1.13-3-x86_64.pkg.tar.zst
 team: galaxy
