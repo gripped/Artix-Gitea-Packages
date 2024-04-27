@@ -36,8 +36,8 @@ optdepends=(
   'python-saml: for SAML support'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-sha512sums=('b9723a67babb070a159bf9ff5fef91ba91ab970ea6ca0b1e5f2a4cf75ba57460d7d7d3d376cae4e521c9980013a034aba8f745aa2a1cec7603a236712ef3dff8')
-b2sums=('1818279892c1e220f9039248ba70e6d312f950bcae8689fd2418ae0d5e3e98e110b0bdf7e0f868c47277f6b6ac5d6e41bb95d5f5baf82d72656f1b4769cc44f0')
+sha512sums=('43aeb4e81382bf8f8a616730db365f08c5c73e607606cb38107693d5920504136e3cc66c8515d15343f74ffb7d374d1f6172deba7bc7b3407fa29343a20d95c7')
+b2sums=('1327333c759cc23b12d6eba27a5f78b9c0a4f76285adb8222d92555dcf32bc4018a9c41a42cdeae95fd29dfb7d3be0c8fba6df0e0880b3dc185a497c5e10a3de')
 
 build() {
   cd $_name-$pkgver
