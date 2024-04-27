@@ -1,7 +1,6 @@
 # Maintainer: Jelle van der Waa <jelle@archlinux.org>
 # Contributor: Anthony25 <Anthony Ruhier>
 # Contributor Jeremy "Ichimonji10" Audet <ichimonji10 at gmail dot com>
-#
 
 _name=django-debug-toolbar
 pkgname=python-django-debug-toolbar
