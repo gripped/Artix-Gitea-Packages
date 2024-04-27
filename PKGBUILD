@@ -37,9 +37,9 @@ backup=('etc/xpra/xpra.conf' 'etc/xpra/xorg.conf'
         'etc/pam.d/xpra')
 source=($pkgname-$pkgver.tar.gz::https://github.com/Xpra-org/xpra/archive/refs/tags/v$pkgver.tar.gz)
 
-md5sums=('f7887eacb8c96a92c8caff2a845d1146')
-sha1sums=('424206888ca1c8f1a830a90e153e85e71ac3a0c3')
-sha256sums=('b4246ddbe7e43d0035e4d9274d70b96cfd56b0cf2d3e71bd4ec0f307f56b6d8e')
+md5sums=('a30586177d6a81781f2f39a5c62d257e')
+sha1sums=('c0dd163d92e68d52ace9f2c8b1ffdb7557b4fe07')
+sha256sums=('f5cec743cbaa131b91e47fba3f7dd78213948dd44afab2eb6dc3b3091386ba6e')
 validpgpkeys=('C11C0A4DF702EDF6C04F458C18ADB31CF18AD6BB') # Antoine Martin <antoine@nagafix.co.uk>
 
 build() {
