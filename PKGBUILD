@@ -2,7 +2,7 @@
 # Contributor: Bug <bug2000@gmail.com>
 
 pkgname=xpra
-pkgver=5.0.6
+pkgver=5.0.8
 pkgrel=1
 pkgdesc="multi-platform screen and application forwarding system screen for X11"
 arch=('x86_64')
