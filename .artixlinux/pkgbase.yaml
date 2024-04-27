@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pt
-  version: r20231230.107.3efc26e-1
+  version: r20231230.107.3efc26e-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: r20231230.107.3efc26e-1
+    version: r20231230.107.3efc26e-2
     packages:
-      - python-pt-r20231230.107.3efc26e-1-any.pkg.tar.zst
+      - python-pt-r20231230.107.3efc26e-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
