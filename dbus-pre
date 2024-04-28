@@ -1,6 +1,6 @@
 type         = scripted
 command      = /usr/lib/dinit/pre/dbus
-stop-command = /usr/lib/artix/sv-cg.sh down dbus
+stop-command = /bin/bash /usr/lib/artix/sv-cg.sh down dbus
 depends-on   = pseudofs
 depends-on   = cgroups
 after        = setup
