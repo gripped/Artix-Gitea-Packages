@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-zipp
-  version: 3.17.0-2
+  version: 3.18.1-2
   arch:
     - any
   pkgname:
     - python-zipp
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.17.0-2
+    version: 3.18.1-2
     packages:
-      - python-zipp-3.17.0-2-any.pkg.tar.zst
+      - python-zipp-3.18.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
