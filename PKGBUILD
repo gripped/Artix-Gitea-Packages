@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Juergen Hoetzel <juergen@archlinux.org>
-# Contributor: Frederik Schwan <freswa at archlinux dot org>
+# Maintainer: Juergen Hoetzel <juergen@archlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
 # Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Renchi Raju <renchi@green.tam.uiuc.edu>
 
 pkgbase=emacs
 pkgname=(emacs emacs-nativecomp emacs-nox emacs-wayland)
 pkgver=29.3
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='https://www.gnu.org/software/emacs/emacs.html'
 license=('GPL3')
