@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: prrte
-  version: 3.0.5-2
+  version: 3.0.5-3
   arch:
     - x86_64
   pkgname:
     - prrte
     - prrte-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.0.5-3
+    packages:
+      - prrte-3.0.5-3-x86_64.pkg.tar.zst
+      - prrte-docs-3.0.5-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
