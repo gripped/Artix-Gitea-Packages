@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: openpmix
-  version: 4.2.9-1
+  version: 5.0.2-1
   arch:
     - x86_64
   pkgname:
     - openpmix
     - openpmix-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.2-1
+    packages:
+      - openpmix-5.0.2-1-x86_64.pkg.tar.zst
+      - openpmix-docs-5.0.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
