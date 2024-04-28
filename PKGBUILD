@@ -3,7 +3,7 @@
 
 pkgbase=linux-rt-lts
 pkgver=6.6.23.28.realtime1
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/commits/v$pkgver"
@@ -26,11 +26,14 @@ options=(!strip)
 source=(
   git+https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts.git/#tag=v$pkgver?signed
   config
-)
+  0006-docutils.patch
+ )
 sha512sums=('2ec68f30bcd6987d570003baf19c8533fd021600ea4276cf1cea3c54ae47989c1a6b613c8397a7e77c1dd4185c986ba1d71db0bef452bfab7ffd638df86c2a90'
-            '69e1b40a9ec605c32e73dcf4bb41885a6c991cb9e202d9faa7929bf33e170583d1350cf30c628c420b0cc7e4caa0c31fcbe1762825fd822c3320ccdde8d8098d')
+            '69e1b40a9ec605c32e73dcf4bb41885a6c991cb9e202d9faa7929bf33e170583d1350cf30c628c420b0cc7e4caa0c31fcbe1762825fd822c3320ccdde8d8098d'
+            'a5a2cdefc964803354f1acf5a61a7847e7f566bcf4471650504254fecc8d343bc65f06f7f8ee662b0b26fe2e24854e187e5c73c375d9e6522022a1a08369960b')
 b2sums=('ceffbacbf079b2233be766568033fef3e913cb65589539e84e6cf0d60fc5b3b67002f92b75031ef2bd432ee02b671279ed3cc3e21c3eea9d28f207df5ea1f4e4'
-        '651de87738a5db75bd99322447b07ad8c6c834ff0510d84ebf60be97a5a950fec870d7d23d4d1733ff66dcc493cdef5dc2a9d3ab250376c4299b949530e0bd79')
+        '651de87738a5db75bd99322447b07ad8c6c834ff0510d84ebf60be97a5a950fec870d7d23d4d1733ff66dcc493cdef5dc2a9d3ab250376c4299b949530e0bd79'
+        '0bb42a22c110f06a45e59a9adc194184a51ff97e5584d6ffabca0aa37e1e65ccaf44f43dc744eaa3861d6f6b00e299d4662bcf0c0d94478af9352b4c4f6b0ffd')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
   '5ED9A48FC54C0A22D1D0804CEBC26CDB5A56DE73'  # Steven Rostedt (Der Hacker) <rostedt@goodmis.org>
