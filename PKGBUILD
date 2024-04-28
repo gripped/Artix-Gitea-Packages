@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=rclone
-pkgver=1.65.2
+pkgver=1.66.0
 pkgrel=1
 pkgdesc="Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage"
 arch=('x86_64')
@@ -13,7 +12,7 @@ depends=('glibc')
 optdepends=('fuse3: for rclone mount')
 makedepends=('python' 'pandoc' 'go' 'git' 'fuse3')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/rclone/rclone/archive/v$pkgver.tar.gz")
-sha512sums=('31680901176749a6a6636e2d879554612575bf4bdd20012114f0f5ec8d584043c6a80c24f3879381a735c1bfb69d5d191aa926930fd32a5d5b0ca47797c13d19')
+sha512sums=('955ed1457ebe7e6ac2288484109ba263601e147f767ce71b70e14ddcf3f97659d90704de094e4e83c0820267e0f41b1950fc3db534bb3577bcf27f0a2401eb84')
 options=(!lto)
 
 prepare() {
@@ -31,6 +30,11 @@ build() {
   PATH="/build/go/bin:$PATH" rclone genautocomplete bash rclone.bash_completion
   PATH="/build/go/bin:$PATH" rclone genautocomplete zsh rclone.zsh_completion
   PATH="/build/go/bin:$PATH" rclone genautocomplete fish rclone.fish_completion
+}
+
+check() {
+  cd "rclone-$pkgver"
+  PATH="/build/go/bin:$PATH" make TAG=v$pkgver test || true
 }
 
 package() {
