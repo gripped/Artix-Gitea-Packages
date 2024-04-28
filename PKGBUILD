@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.8.7.hardened1
-pkgrel=2
+pkgver=6.8.8.hardened1
+pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
 arch=(x86_64)
@@ -39,6 +38,7 @@ source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   ${url}/releases/download/${_srctag}/${pkgbase}-${_srctag}.patch{,.sig}
   config  # the main kernel config file
+  0006-docutils.patch
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
@@ -46,16 +46,18 @@ validpgpkeys=(
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('291d1a1faf4e87b3b0ea9729080db887aafd1ff2fac1430ceca921e46bc22fae'
+sha256sums=('1c4cdcb9d560fad1fb95db2cb8afbedc922f9ead848371fe40363b13f9f631ba'
             'SKIP'
-            '9af1a4c9671b2627447d05b3c4d00abbd1b24b6aa9b5691a4dd3394b50b9a3f0'
+            '8c0da45e63ac7a45e95d10bb3bbcbd22d4cff36744fc5485553c636704f207cd'
             'SKIP'
-            '0c9f0d6c3fad06e66bc8bcf7dffddf7960c14a6ec426e7bd6517ebf7875f7078')
-b2sums=('e8626a99c6c5769a8126d5ee1c7962c3df3c7a8c689193ffa864c4a4b8e72daeeaf22c3e3bb6ba5490eca3ef64c32a4a12980360a196444a53abadd791cd1855'
+            '3fe12541bd17b42572c783bc6c7dba395d237b62510e19067a0f4c0d2e840dc0'
+            '9cb73cacbb3633f207d0c30e738cae9965adcd0b0eb5ecd60563fed1394c0f38')
+b2sums=('3c04407c6875d1547c18024db7a020c450b332b10707c847208080819fa92624281fd9b628c1fefe7c16439f60d64dcc80010726a7d4320354b682ccaadb1f35'
         'SKIP'
-        'a575cbb4042791c81d40ae2a8c43783ba656c7159a3ad6231a1acf5b21653b8b23afe7462f8502488ff3958f21ae0c4e9855111d206351f176c60b04ddcb8ddf'
+        '279cb974467f9e28a30589a0c662caa23e345751a019860c60dc655c47af753cc52202d493e00249c152df9a35b1164bf0fb97e79c29baca8673c32ae304bd73'
         'SKIP'
-        '41579026c8210c5f3857b40873b046faf7e8fdc524c4859ac3d5a263d778c697bdc18b65fe11f62953d495f10d7fc0995acfde32a263ee370bd2445907dbe4f7')
+        'f26f4d4d828e1873ba552d875f59bb3d540d9859817301928766a8bc07a338fcbfcfb817431ef774c0b89be0f4f0a29716bcfd314153b79c5fb5f8fb1226349f'
+        '0bb42a22c110f06a45e59a9adc194184a51ff97e5584d6ffabca0aa37e1e65ccaf44f43dc744eaa3861d6f6b00e299d4662bcf0c0d94478af9352b4c4f6b0ffd')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
