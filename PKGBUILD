@@ -78,7 +78,7 @@ build() {
     prefix=/usr \
     lib=lib/perf \
     perfexecdir=lib/perf \
-    EXTRA_CFLAGS=' -Wno-error=bad-function-cast -Wno-error=declaration-after-statement -Wno-error=switch-enum' \
+    WERROR=0 \
     NO_SDT=1 \
     BUILD_BPF_SKEL=1 \
     PYTHON=python \
