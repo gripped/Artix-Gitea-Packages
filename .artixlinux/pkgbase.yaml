@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-keyring
-  version: 20240425-1
+  version: 20240425-2
   arch:
     - any
   pkgname:
@@ -16,9 +16,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 20240425-1
+    version: 20240425-2
     packages:
-      - artix-keyring-20240425-1-any.pkg.tar.zst
+      - artix-keyring-20240425-2-any.pkg.tar.zst
   system-gremlins:
     version: 20240322-1
     packages:
