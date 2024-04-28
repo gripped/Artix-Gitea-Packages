@@ -3,7 +3,7 @@
 
 pkgbase=linux-rt
 pkgver=6.7.0.6.realtime1
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux RT'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/commits/v$pkgver"
@@ -26,11 +26,14 @@ options=(!strip)
 source=(
   git+https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt#tag=v$pkgver?signed
   config
-)
-sha512sums=('SKIP'
-            'a4683fa8ca688cabc4619eb5a05c28704b0f27bd45841d76e4692bd46e549ffdcdc43b85c3f6c5fb37e6b79d6205b951a1bb957bc80f13df3d53aaa59dde45a3')
-b2sums=('SKIP'
-        'a3184b960219eb5188ed422a2d3b851a1c457561e2318335f91dcededa4b8733ad68790ea5aaccd6eba6a0618d698213fe690ea124ab618fe90411ff65b24366')
+  0006-docutils.patch
+ )
+sha512sums=('a38a91f53f33c88b6a32234f7fb019a77b7361441480244eb46d5a5840f4cc9582916d74288335037d77a1f48242f83d834484ce9772543d264dd1252dbfc803'
+            'a4683fa8ca688cabc4619eb5a05c28704b0f27bd45841d76e4692bd46e549ffdcdc43b85c3f6c5fb37e6b79d6205b951a1bb957bc80f13df3d53aaa59dde45a3'
+            'a5a2cdefc964803354f1acf5a61a7847e7f566bcf4471650504254fecc8d343bc65f06f7f8ee662b0b26fe2e24854e187e5c73c375d9e6522022a1a08369960b')
+b2sums=('1aeaab5f267dc04e7f9e70323fd48370e872b16ac0d035a152a26549529e0e05294691947a2cbb0a206fbcefc75e0e4366f9eafac9172698eb8443628373db90'
+        'a3184b960219eb5188ed422a2d3b851a1c457561e2318335f91dcededa4b8733ad68790ea5aaccd6eba6a0618d698213fe690ea124ab618fe90411ff65b24366'
+        '0bb42a22c110f06a45e59a9adc194184a51ff97e5584d6ffabca0aa37e1e65ccaf44f43dc744eaa3861d6f6b00e299d4662bcf0c0d94478af9352b4c4f6b0ffd')
 validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@kernel.org>
   '64254695FFF0AA4466CC19E67B96E8162A8CF5D1'  # Sebastian Andrzej Siewior
