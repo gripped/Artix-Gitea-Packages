@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: vtk
-  version: 9.3.0-12
+  version: 9.3.0-13
   arch:
     - x86_64
   pkgname:
     - vtk
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.3.0-12
+    version: 9.3.0-13
     packages:
-      - vtk-9.3.0-12-x86_64.pkg.tar.zst
+      - vtk-9.3.0-13-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
