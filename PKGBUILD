@@ -7,17 +7,16 @@
 
 pkgname=fail2ban
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Bans IPs after too many failed authentication attempts'
 arch=('any')
 url='https://www.fail2ban.org/'
 license=('GPL')
-depends=('python-pyinotify' 'sqlite' 'whois')
+depends=('python-pyinotify' 'python-setuptools' 'sqlite' 'whois')
 makedepends=(
   'git'
   'python-build'
   'python-installer'
-  'python-setuptools'
   'python-wheel'
 )
 optdepends=(
@@ -66,8 +65,8 @@ package() {
 
   install -Dm644 -t "$pkgdir"/usr/share/man/man1 man/*.1
   install -Dm644 -t "$pkgdir"/usr/share/man/man5 man/*.5
-  
-  
+
+
   cd "$pkgdir"
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   cp -rl ./"$site_packages"/{etc,usr} .
