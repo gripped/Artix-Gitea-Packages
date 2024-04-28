@@ -54,6 +54,7 @@ makedepends=(
   'lib32-xcb-util-keysyms'
   'lib32-zlib'
   'lib32-zstd'
+  'python-packaging'
 
   # shared between mesa and lib32-mesa
   'clang'
