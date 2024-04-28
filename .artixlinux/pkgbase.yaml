@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: arrow
-  version: 15.0.2-1
+  version: 16.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 15.0.2-1
+    version: 16.0.0-1
     packages:
-      - arrow-15.0.2-1-x86_64.pkg.tar.zst
+      - arrow-16.0.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
