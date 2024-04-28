@@ -1,5 +1,6 @@
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Andrea Zucchelli <zukka77@gmail.com>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Jonathan Liu <net147@gmail.com>
@@ -8,13 +9,13 @@
 pkgname=lxc
 epoch=1
 pkgver=6.0.0
-pkgrel=2
+pkgrel=4
 pkgdesc="Linux Containers"
 arch=('x86_64')
 url="https://linuxcontainers.org"
 depends=('bash' 'perl' 'libseccomp' 'libcap' 'python' 'rsync' 'wget')
 makedepends=('docbook2x' 'elogind' 'meson' 'lua' 'python-setuptools' 'apparmor')
-optdepends=('dnsmasq: lxc-net.service'
+optdepends=('dnsmasq'
 	    'lua'
 	    'lua-filesystem: lxc-top'
 	    'lua-alt-getopt: lxc-top')
@@ -24,7 +25,8 @@ backup=('etc/lxc/default.conf'
 	'etc/default/lxc')
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
-	"lxc.tmpfiles.d")
+	"lxc.tmpfiles.d"
+)
 sha256sums=('3f6981c61ff39f9e550a18cf22d6e26792cde5dd34f9d3c93badfeaaee8814b2'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
@@ -37,10 +39,10 @@ prepare() {
 
 build() {
   cd "$pkgname-${pkgver/_/-}"
-  local options=(
-    -Dinit-script=sysvinit
-  )
-  artix-meson ${options[@]} build
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/lxc/-/issues/1
+  # lxd conflicts with tools-multicall
+#  artix-meson build -Dinit-script=sysvinit -Dtools=false -Dtools-multicall=true
+  artix-meson build -Dinit-script=sysvinit -Dtools=true -Dtools-multicall=false
   meson compile -C build -v
 }
 
