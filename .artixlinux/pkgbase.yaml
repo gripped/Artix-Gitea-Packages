@@ -17,12 +17,12 @@ pkgbase:
     - usbip
     - x86_energy_perf_policy
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,6 +35,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 6.7-3
     packages:
       - bootconfig-6.7-3-x86_64.pkg.tar.zst
@@ -48,23 +54,6 @@ repos:
       - turbostat-6.7-3-x86_64.pkg.tar.zst
       - usbip-6.7-3-x86_64.pkg.tar.zst
       - x86_energy_perf_policy-6.7-3-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
-  world:
-    version: 6.7-2
-    packages:
-      - bootconfig-6.7-2-x86_64.pkg.tar.zst
-      - bpf-6.7-2-x86_64.pkg.tar.zst
-      - cgroup_event_listener-6.7-2-x86_64.pkg.tar.zst
-      - cpupower-6.7-2-x86_64.pkg.tar.zst
-      - hyperv-6.7-2-x86_64.pkg.tar.zst
-      - linux-tools-meta-6.7-2-x86_64.pkg.tar.zst
-      - perf-6.7-2-x86_64.pkg.tar.zst
-      - tmon-6.7-2-x86_64.pkg.tar.zst
-      - turbostat-6.7-2-x86_64.pkg.tar.zst
-      - usbip-6.7-2-x86_64.pkg.tar.zst
-      - x86_energy_perf_policy-6.7-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
