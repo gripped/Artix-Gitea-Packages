@@ -44,6 +44,9 @@ prepare() {
 }
 
 build() {
+    export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+    export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
     # Prevent IGC to load LLVM 15 symbols
     CFLAGS+=" -fno-semantic-interposition"
     CXXFLAGS+=" -fno-semantic-interposition"
