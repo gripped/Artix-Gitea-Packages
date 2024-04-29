@@ -110,7 +110,7 @@ prepare() {
 
 build() {
   # Doesn't compile without remove these flags as of 4.10
-  export CFLAGS="$CFLAGS -ffat-lto-objects"
+  export CFLAGS="${CFLAGS/-fno-plt/} -ffat-lto-objects"
 
   cd "$srcdir"
 
