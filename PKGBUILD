@@ -1,5 +1,6 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 _name=Audacity
@@ -9,7 +10,7 @@ pkgname=(
   audacity-docs
 )
 pkgver=3.5.1
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
 arch=(x86_64)
