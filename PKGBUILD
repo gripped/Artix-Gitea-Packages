@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: damir <damir@archlinux.org>
 
 pkgname=netcdf
 pkgver=4.9.2
-pkgrel=2
+pkgrel=3
 pkgdesc="network Common Data Form interface for array-oriented data access and corresponding library"
 arch=(x86_64)
 url="https://www.unidata.ucar.edu/software/netcdf/"
