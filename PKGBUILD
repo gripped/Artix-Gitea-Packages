@@ -1,9 +1,10 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 
 _pkgname=CGNS
 pkgname=cgns
 pkgver=4.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Standard for recording and recovering computer data associated with the numerical solution of fluid dynamics equations"
 arch=(x86_64)
 url="https://cgns.github.io/"
