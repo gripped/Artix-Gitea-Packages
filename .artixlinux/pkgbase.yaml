@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-rdflib
-  version: 7.0.0-3
+  version: 7.0.0-4
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.0.0-3
+    version: 7.0.0-4
     packages:
-      - python-rdflib-7.0.0-3-any.pkg.tar.zst
+      - python-rdflib-7.0.0-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
