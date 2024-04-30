@@ -2,8 +2,8 @@
 
 _name=pdm
 pkgname=python-pdm
-pkgver=2.14.0
-pkgrel=2
+pkgver=2.15.1
+pkgrel=1
 pkgdesc="A modern Python package manager with PEP 582 support"
 arch=(any)
 url="https://github.com/pdm-project/pdm"
@@ -54,8 +54,8 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('3e9e653cf6cca42a6f3e90e5f1b5f4fd7a9dfe91b4760f69eeb3414729b06191d76e9f9eda8605cf596c12a8c047d3dbc3082fa8432503f51b1c9f41be0c022d')
-b2sums=('5985c3ac68c394fc8b57951c51056346df3eace0abca891889b147646c71cf2ecacaaa957da01c61a00ce1d8653e91cfefe86de1ff2fb54863e8cd68f8061eeb')
+sha512sums=('80baf58395c0bdeec18c0c0e45d616f53ef6451978074a012faee5effd884a922a4586bca64040222c383e03b05794cc7f55b880bf0bd96afd7b721618b9ab66')
+b2sums=('dde28b24ddff6582cf9dae849fda5cb80866b9b9a2ec4b68edb91a2e5deaaacc631a062d5c0603c567ab0067a22c874b863baa96649eacdf90c4c7817fc054f2')
 
 build() {
   cd $_name-$pkgver
@@ -75,7 +75,7 @@ check() {
   # install to temporary location, as importlib is used
   python -m installer --destdir=test_dir dist/*.whl
   export PYTHONPATH="$PWD/test_dir/$site_packages:$PYTHONPATH"
-  pytest "${pytest_options[@]}" || :
+  pytest "${pytest_options[@]}"
 }
 
 package() {
