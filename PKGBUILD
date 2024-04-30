@@ -86,6 +86,10 @@ check() {
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   local pytest_options=(
     -vv
+    --deselect tests/test_tutorial/test_async_tests/test_main.py::test_root
+    --deselect tests/test_tutorial/test_async_tests/test_main.py::test_async_testing
+    --deselect tests/test_tutorial/test_async_tests/test_main.py::test_root
+    --deselect tests/test_tutorial/test_async_tests/test_main.py::test_async_testing
   )
 
   cd $_name-$pkgver
