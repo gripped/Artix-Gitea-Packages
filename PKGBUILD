@@ -2,17 +2,17 @@
 # Contributor: Chris Cromer <chris@cromer.cl>
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_commit=2530c4aadd46cd1e4a44df7f595ee33fc9c4b86e
+_commit=e0c4e306e448d2ac7a8a314133995ee37bc48f92
 
 pkgname=runit-rc
 pkgver=20240415
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Artix Linux system initialization and shutdown for runit'
 arch=('x86_64')
 url='https://gitea.artixlinux.org/artix/runit-rc'
 license=('BSD')
 makedepends=('git')
-depends=('procps-ng' 'bash' 'eudev-runit')
+depends=('procps-ng' 'bash' 'eudev-runit' 'artix-cgroups')
 provides=('init-rc')
 conflicts=('init-rc')
 source=("git+${url}.git#commit=$_commit")
