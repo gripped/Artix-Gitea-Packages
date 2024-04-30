@@ -3,10 +3,8 @@
 
 pkgname=python-moto
 _pkgname=moto
-# UPDATE_BLOCKED: upstream API changes in 5.x break many packages
-# https://github.com/spulec/moto/blob/master/CHANGELOG.md
-pkgver=4.2.13
-pkgrel=3
+pkgver=5.0.6
+pkgrel=1
 pkgdesc='Moto is a library to mock out the boto library.'
 arch=(any)
 url='https://github.com/spulec/moto'
@@ -25,10 +23,9 @@ makedepends=(python-build python-installer python-setuptools python-wheel)
 # See requirements-tests.txt, excluding pytest-cov
 checkdepends=(python-pytest python-pytest-order python-freezegun)
 # Check extras_require in upstream `setup.cfg` for optional dependencies.
-# Note that ecdsa is excluded as it is pinned for jose and not used by moto.
 optdepends=(
   'python-yaml: for apigatewayv2, cloudformation, s3 and ssm'
-  'python-jose: for apigateway, cloudformation and cognitoidp'
+  'python-joserfc: for apigateway, cloudformation and cognitoidp'
   'python-openapi-spec-validator: for apigateway and cloudformation'
   # SNS and SQS still uses docker indirectly, while upstream explicitly removes them
   # https://github.com/spulec/moto/pull/4094
@@ -37,22 +34,25 @@ optdepends=(
   'python-jsondiff: for iotdata and cloudformation'
   'python-aws-xray-sdk: for xray and cloudformation'
   'python-cfn-lint: for cloudformation'
-  'python-sshpubkeys: for cloudformation, directoryservice, ebs, ec2, efs, eks and route53resolver'
   'python-pyparsing: for glue and cloudformation'
   'python-py-partiql-parser: for cloudformation and s3'
   'python-crc32c: for s3'
   'python-flask: for moto_server'
   'python-flask-cors: for moto_server'
   'python-multipart: for moto_proxy'
+  # 'python-antlr4: for stepfunctions'  # already in [extra]
+  # 'python-jsonpath-ng: for stepfunctions'  # needs to be brought from AUR
 )
-checkdepends+=(python-yaml python-jose python-openapi-spec-validator python-docker
+checkdepends+=(python-yaml python-joserfc python-openapi-spec-validator python-docker
                python-graphql-core python-jsondiff python-aws-xray-sdk
-               python-cfn-lint python-sshpubkeys python-pyparsing python-py-partiql-parser
+               python-cfn-lint python-pyparsing python-py-partiql-parser
                python-crc32c
-               python-flask python-flask-cors python-multipart)
+               python-flask python-flask-cors python-multipart
+               # python-antlr4 python-jsonpath-ng
+)
 source=("https://github.com/getmoto/moto/archive/refs/tags/$pkgver/$pkgname-$pkgver.tar.gz"
         "fix-tests.diff")
-sha256sums=('c7932fe2fad69559b7a900fe6ec5db8f4152b78b8300f273fb9a7674be8b08dd'
+sha256sums=('077324d5b4c80c0133e8cd6fc0478230c928a60ebe204de9d580a7f5719f6fdd'
             '21305cdf3d650ced1acb1d0f7dde8760b26e32a94c56a5571e798d6b6976cf5a')
 
 prepare() {
@@ -74,7 +74,8 @@ build() {
 check() {
   cd $_pkgname-$pkgver
 
-  TZ=UTC pytest tests -m 'not requires_docker'
+  # The parser for Step Functions needs more dependencies
+  TZ=UTC pytest tests --ignore tests/test_stepfunctions/parser -m 'not requires_docker'
 }
 
 package() {
