@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-py-partiql-parser
-  version: 0.5.0-2
+  version: 0.5.4-1
   arch:
     - any
   pkgname:
     - python-py-partiql-parser
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.5.4-1
+    packages:
+      - python-py-partiql-parser-0.5.4-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
