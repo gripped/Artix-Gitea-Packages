@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pdm
-  version: 2.15.1-1
+  version: 2.15.1-2
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.15.1-1
+    version: 2.15.1-2
     packages:
-      - python-pdm-2.15.1-1-any.pkg.tar.zst
+      - python-pdm-2.15.1-2-any.pkg.tar.zst
   world:
     version: 2.14.0-2
     packages:
