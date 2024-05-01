@@ -2,7 +2,7 @@
 
 pkgname=openmp
 pkgver=17.0.6
-pkgrel=1
+pkgrel=2
 pkgdesc="LLVM OpenMP Runtime Library"
 arch=('x86_64')
 url="https://openmp.llvm.org/"
@@ -36,7 +36,6 @@ build() {
     -DCMAKE_BUILD_TYPE=Release
     -DCMAKE_INSTALL_PREFIX=/usr
     -DLIBOMP_INSTALL_ALIASES=OFF
-    -DCMAKE_PREFIX_PATH=/usr
   )
   cmake .. "${cmake_args[@]}"
   ninja
