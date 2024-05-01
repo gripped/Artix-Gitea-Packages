@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: runit-rc
-  version: 20240415-1.1
+  version: 20240415-2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 20240415-1.1
+    version: 20240415-2
     packages:
-      - runit-rc-20240415-1.1-x86_64.pkg.tar.zst
+      - runit-rc-20240415-2-x86_64.pkg.tar.zst
   world:
     version: 20240415-1
     packages:
