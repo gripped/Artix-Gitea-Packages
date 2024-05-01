@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
 # Contributor: Andrew Sun  <adsun701 at gmail dot com>
 # Contributor: Kritias     <theodoridisgr at gmail dot com>
 # Contributor: sudokode    <sudokode at gmail dot com>
@@ -6,7 +6,7 @@
 
 pkgname=libisl
 pkgver=0.26
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for manipulating sets and relations of integer points bounded by linear constraints'
 arch=('x86_64')
 url='https://libisl.sourceforge.io'
