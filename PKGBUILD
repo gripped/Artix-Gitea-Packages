@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=sz
 pkgver=2.1.12.5
-pkgrel=4
+pkgrel=5
 pkgdesc="Modular parametrizable lossy compressor framework for scientific data"
 arch=(x86_64)
 url="https://szcompressor.org/"
