@@ -7,7 +7,7 @@
 _pkgname=act_runner
 
 pkgname=act-runner
-pkgver=0.2.7
+pkgver=0.2.10
 pkgrel=1
 pkgdesc="A runner for Gitea Actions based on GitHub's Act"
 arch=('x86_64')
@@ -19,7 +19,7 @@ makedepends=('go')
 backup=('etc/act_runner/act_runner.yaml')
 source=("act_runner-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
         'act_runner.yaml')
-sha256sums=('aa3f370b373571a63917a08cfa6c7c63d173d9844d8834d8f13e4cbdea66d277'
+sha256sums=('624875d8f07b0067d80bfe992074a528639ec99f7a2ffc497964c3e493d0c4a7'
             'c7daf8870a1b8ac67358b912e0511be1f815345a6b7bd9643050e9c3a48f83e9')
 
 build() {
