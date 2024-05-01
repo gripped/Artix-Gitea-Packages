@@ -5,7 +5,7 @@
 
 pkgname=mutt
 pkgver=2.2.13
-pkgrel=2.1
+pkgrel=3
 pkgdesc="Small but very powerful text-based mail client"
 arch=(x86_64)
 url="http://www.mutt.org/"
@@ -41,7 +41,7 @@ backup=(etc/$pkgname/Muttrc)
 install=$pkgname.install
 source=("git+https://gitlab.com/muttmua/mutt.git#tag=mutt-${pkgver//./-}-rel?signed")
 sha512sums=('7de4c22c08cc806b283f310460dc42a3c151ef8d77f1558e6b5b215b82c6c8eeacd99c0a40f3c81414a0584db1d3b24e82db84c034646dc81609f763bb872d7c')
-#b2sums=('1d350e8fb117e522e72af91ed96f8c9358a9d98c1e4b05bb8e69bbb036a3806e0102146d8e832cb52133e2492f0e41e70b923c24b525b812a737c294e2343b42')
+b2sums=('1d350e8fb117e522e72af91ed96f8c9358a9d98c1e4b05bb8e69bbb036a3806e0102146d8e832cb52133e2492f0e41e70b923c24b525b812a737c294e2343b42')
 validpgpkeys=('8975A9B33AA37910385C5308ADEF768480316BDA') # Kevin J. McCarthy <kevin@8t8.us>
 
 prepare() {
