@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pysol_cards
-  version: 0.16.0-1
+  version: 0.16.0-2
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.16.0-1
+    version: 0.16.0-2
     packages:
-      - python-pysol_cards-0.16.0-1-any.pkg.tar.zst
+      - python-pysol_cards-0.16.0-2-any.pkg.tar.zst
+team: galaxy
