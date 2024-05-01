@@ -1,11 +1,11 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_tag=255.4-r2
+_tag=255.5
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=5
+pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -23,8 +23,8 @@ makedepends=(
     'gperf'
     'intltool'
     'kexec-tools'
+    'libutempter'
     'meson'
-    'openrc' #'cg-controller'
     'pam'
     'python-jinja'
     'udev'
@@ -33,11 +33,9 @@ makedepends=(
 source=(
     "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
 )
-sha256sums=('c14967db10db8007fc9b4aedd8073766715230c1652103583c24e8fd2716c683')
+sha256sums=('cfd3c005adc12bb8ef5e35ea6530b1baab27d1ca02db983cc6aa08f1c606e674')
 
 _backports=(
-    ce3616c8864e56bf7efb233242f20197108a9dba # NM wakeup
-    5d16d94aa9a5e3afe5b51f591497149630763b24 # SIGCHLD handler
 )
 
 _reverts=(
@@ -56,7 +54,6 @@ prepare() {
         git revert -n "${_c}"
     done
 }
-
 
 build() {
     local meson_options=()
@@ -130,6 +127,11 @@ package_elogind() {
     mv -v "${pkgdir}"/usr/lib/pkgconfig "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
+
+    install -Dm644 /dev/stdin "${pkgdir}"/etc/elogind/sleep.conf.d/50-artix.conf <<END
+[Sleep]
+SuspendMode=deep s2idle
+END
 }
 
 package_libelogind(){
