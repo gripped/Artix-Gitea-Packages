@@ -12,7 +12,7 @@ pkgname=(
   libsysprof-capture
 )
 pkgver=46.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Kernel based performance profiler"
 url="https://wiki.gnome.org/Apps/Sysprof"
 license=(GPL-3.0-or-later)
@@ -36,18 +36,13 @@ depends=(
 makedepends=(
   git
   meson
+  python-packaging
   yelp-tools
 )
-_commit=594a3037c0e7cc1bf97f162a392aa4f8989c9dce  # tags/46.0^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/sysprof.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=${pkgver/[a-z]/.&}"
 )
-b2sums=('SKIP')
-
-pkgver() {
-  cd sysprof
-  git describe --tags | sed -r 's/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
-}
+b2sums=('d32a2a9f129a121c814b46377b6d0fee306e3d0f87dac73e7fd4ce9de85888e5e980f309faa17ce366006f0a0390475dc83739b92d4e460c2da7293ab97dcd03')
 
 prepare() {
   cd sysprof
@@ -57,8 +52,7 @@ build() {
   # Ensure static library is non-LTO compatible
   CFLAGS+=" -ffat-lto-objects"
 
-  # Dummy path for systemd service to avoid the systemd build dependency
-  artix-meson sysprof build -D systemdunitdir=/usr/lib/systemd
+  artix-meson sysprof build -Dsystemdunitdir=/usr/lib/systemd
   meson compile -C build
 }
 
@@ -90,8 +84,7 @@ package_sysprof() {
   _pick capture usr/include/sysprof-*/sysprof-{platform,version,version-macros}.h
   _pick capture usr/include/sysprof-*/sysprof-capture-{condition,cursor,reader,types,writer}.h
 
-  # remove systemd service
-  rm -r "$pkgdir"/usr/lib/systemd
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 package_libsysprof-capture() {
