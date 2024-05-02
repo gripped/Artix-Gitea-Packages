@@ -8,7 +8,7 @@ pkgname=(
   glib2-docs
 )
 pkgver=2.80.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -37,10 +37,6 @@ makedepends=(
 checkdepends=(
   desktop-file-utils
   glib2
-)
-options=(
-  debug
-  staticlibs
 )
 source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git?signed#tag=$pkgver"
@@ -108,6 +104,7 @@ package_glib2() {
     'python: gdbus-codegen, glib-genmarshal, glib-mkenums, gtester-report'
     'python-packaging: gdbus-codegen'
   )
+  options=(staticlibs)
 
   meson install -C build --destdir "$pkgdir"
 
