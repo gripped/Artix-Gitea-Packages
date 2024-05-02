@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
-# Contributor: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Andrew Simmons <andrew.simmons@gmail.com>
 
 pkgname=thunar
 pkgver=4.18.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern, fast and easy-to-use file manager for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/thunar/start"
