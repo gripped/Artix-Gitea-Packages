@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
-# Contributor: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: tobias [tobias at archlinux.org]
 
 pkgname=mousepad
 pkgver=0.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple text editor for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/apps/mousepad/start"
