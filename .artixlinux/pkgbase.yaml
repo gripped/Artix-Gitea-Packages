@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tmux
-  version: 3.4-6
+  version: 3.4-7
   arch:
     - x86_64
   pkgname:
     - tmux
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.4-6
+    version: 3.4-7
     packages:
-      - tmux-3.4-6-x86_64.pkg.tar.zst
+      - tmux-3.4-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
