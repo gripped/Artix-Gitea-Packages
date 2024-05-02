@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: fpc
-  version: 3.2.2-10
+  version: 3.2.2-11
   arch:
     - x86_64
   pkgname:
     - fpc
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 3.2.2-11
+    packages:
+      - fpc-3.2.2-11-x86_64.pkg.tar.zst
   galaxy:
     version: 3.2.2-10
     packages:
       - fpc-3.2.2-10-x86_64.pkg.tar.zst
+team: galaxy
