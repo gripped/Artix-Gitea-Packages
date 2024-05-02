@@ -10,7 +10,7 @@ pkgbase=glibc
 pkgname=(glibc lib32-glibc glibc-locales)
 pkgver=2.39
 _commit=31da30f23cddd36db29d5b6a1c7619361b271fb4
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url='https://www.gnu.org/software/libc'
 license=(GPL-2.0-or-later LGPL-2.1-or-later)
@@ -66,8 +66,7 @@ build() {
     # Credits @allanmcrae
     # https://github.com/allanmcrae/toolchain/blob/f18604d70c5933c31b51a320978711e4e6791cf1/glibc/PKGBUILD
     # remove fortify for building libraries
-    # CFLAGS=${CFLAGS/-Wp,-D_FORTIFY_SOURCE=2/}
-    # export CFLAGS=${CFLAGS/-D_FORTIFY_SOURCE=3/-D_FORTIFY_SOURCE=2}
+    CFLAGS=${CFLAGS/-Wp,-D_FORTIFY_SOURCE=3/}
 
     "${srcdir}"/glibc/configure \
         --libdir=/usr/lib \
@@ -117,14 +116,11 @@ _skip_test() {
 check() (
   cd glibc-build
 
-  export CFLAGS=${CFLAGS/-D_FORTIFY_SOURCE=3/-D_FORTIFY_SOURCE=2}
-
   # adjust/remove buildflags that cause false-positive testsuite failures
   sed -i '/FORTIFY/d' configparms                                     # failure to build testsuite
   sed -i 's/-Werror=format-security/-Wformat-security/' config.make   # failure to build testsuite
   sed -i '/CFLAGS/s/-fno-plt//' config.make                           # 16 failures
   sed -i '/CFLAGS/s/-fexceptions//' config.make                       # 1 failure
-  sed -i '/CFLAGS/s/-D_FORTIFY_SOURCE=3/-D_FORTIFY_SOURCE=2/' config.make
 
   # The following tests fail due to restrictions in the Arch build system
   # The correct fix is to add the following to the systemd-nspawn call:
@@ -191,6 +187,7 @@ package_lib32-glibc() {
   pkgdesc='GNU C Library (32-bit)'
   depends=("glibc=$pkgver")
   options+=('!emptydirs')
+  install=lib32-glibc.install
 
   cd lib32-glibc-build
 
