@@ -3,7 +3,7 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.105.1
+pkgver=1.106.0
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
@@ -36,7 +36,7 @@ source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf')
-sha256sums=('ea01f123ad74263dd3ddf1266e2705d9958bd82bbe377420d4e8c7769f47ed10'
+sha256sums=('5570c12ddae3e17569f14b1166255b4925dddc8eddad500cc9ee55f3f238172e'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
