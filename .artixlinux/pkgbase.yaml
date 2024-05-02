@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wasi-libc
-  version: 1:0+352+c5264e2b-1
+  version: 1:0+374+9e8c5423-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0+352+c5264e2b-1
+    version: 1:0+374+9e8c5423-1
     packages:
-      - wasi-libc-1:0+352+c5264e2b-1-any.pkg.tar.zst
+      - wasi-libc-1:0+374+9e8c5423-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
