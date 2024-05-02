@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: msmtp
-  version: 1.8.25-2
+  version: 1.8.26-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.25-2
+    version: 1.8.26-1
     packages:
-      - msmtp-1.8.25-2-x86_64.pkg.tar.zst
-      - msmtp-mta-1.8.25-2-x86_64.pkg.tar.zst
+      - msmtp-1.8.26-1-x86_64.pkg.tar.zst
+      - msmtp-mta-1.8.26-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
