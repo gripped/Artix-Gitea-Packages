@@ -4,7 +4,7 @@
 pkgname=qt6-positioning
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -17,7 +17,8 @@ makedepends=(cmake
              ninja
              qt6-declarative
              qt6-serialport)
-optdepends=('qt6-declarative: QML bindings'
+optdepends=('geoclue: geoclue2 plugin'
+            'qt6-declarative: QML bindings'
             'qt6-serialport: NMEA plugin')
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
@@ -25,7 +26,7 @@ source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
 sha256sums=('25801cd768383f4dfc0f3d440dfc334fe2605f0dd2cdf51d80a2f5ceca4a119f')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
