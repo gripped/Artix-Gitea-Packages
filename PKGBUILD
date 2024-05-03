@@ -1,10 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Brett Cornwall <ainola@archlinux.org>
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
 # Contributor: Solomon Choina <shlomochoina@gmail.com>
 
 pkgname=dht
 pkgver=0.27
-pkgrel=4
+pkgrel=5
 pkgdesc='BitTorrent DHT library'
 arch=(x86_64)
 url='https://github.com/jech/dht'
