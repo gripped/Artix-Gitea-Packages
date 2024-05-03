@@ -2,11 +2,11 @@
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts515
-pkgver=5.15.152
+pkgver=5.15.157
 pkgrel=1
-pkgdesc='LTS Linux 5.15.x'
+pkgdesc='Linux LTS 5.15'
 url="https://www.kernel.org/"
-arch=(x86_64 pentium4 i686 i486)
+arch=(x86_64)
 license=(GPL2)
 makedepends=(
   bc libelf pahole cpio perl tar xz python
@@ -27,11 +27,11 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('f0805225f4a5b24d0bba9302c2c2f261c04f737ac5dd931da9b112e9f3e4a47e'
+sha256sums=('aff22351d34d69a16762dcf1fd51fe228da55d4b96b67247bdd598a86cc7a414'
             'SKIP'
-            '55ea05d42e56961814af29356421fbf0ad6e1227ca6af115b3b8f347108d6305'
+            '315a35c486ee057ea23508bcc90a2a7b2c6d72c921b6aad7b313abf19b9ffefb'
             '3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd'
-            'c175fbb141c3cec013c799f694d88310375ac5456042f6a4a1adc7667836d786'
+            '2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431'
             '8357f000b2b622e73dcfd41c2bad42b5e99fffe8f7ee64f774aa771f86cef43c'
             '5c1ee81fdd5818442af6081de987f9c1a9ce3c8d183566b3dfc19a8433aa3dde'
             '067e8995fcd6f6ed25e0253e9374c0e179a000c154da3e59ce62634945ac5be9')
@@ -218,52 +218,3 @@ pkgname=(
       grep -v '^\$pkgbase-docs'
   )
 )
-
-if [ "${CARCH}" = "i486" -o  "${CARCH}" = "i686" -o "${CARCH}" = "pentium4" ]; then
-
-  # use 32-bit configuration files per subarchitecture instead of main config file
-  source_pentium4=('config.pentium4')
-  source_i686=('config.i686')
-  source_i486=('config.i486')
-  # fail if upstream's .config changes
-#  for ((i=0; i<${#sha256sums[@]}; i++)); do
-#    if [ "${sha256sums[${i}]}" = '47122c7939289ae2240bf319b986d7bcc27f7e63889537255552ba1be7ed2387' ]; then
-#    fi
-#  done
-
-  # copy architecture specific config file, not default 'config'
-  eval "$(
-    declare -f prepare | \
-      sed '
-        s,\.\./config,../config.$CARCH,
-      '
-  )"
-
-  # patch architecture when copying the kernel Makefile
-  eval "$(
-    declare -f package_linux-lts515-headers | \
-      sed '
-        \,/tools/objtool" ,d
-        \,arch/x86/Makefile, {
-          a \
-          install -t "${builddir}/arch/x86" -m644 arch/x86/Makefile_32.cpu
-        }
-      '
-  )"
-
-  # avoid using zstd compression in ultra mode (exhausts virtual memory)
-  source+=('no-ultra-zstd.patch')
-  # upstream prepare() does already do the *.patch patching
-
-  eval "$(
-    declare -f build | \
-      sed '
-        s/\bhtmldocs\b//
-      '
-  )"
-  makedepends=(${makedepends[@]//python-sphinx_rtd_theme/})
-  makedepends=(${makedepends[@]//python-sphinx/})
-  makedepends=(${makedepends[@]//graphviz/})
-  makedepends=(${makedepends[@]//imagemagick/})
-  makedepends=(${makedepends[@]//texlive-latexextra/})
-fi
