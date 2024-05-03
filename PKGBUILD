@@ -3,7 +3,7 @@
 
 pkgbase=linux-lts515
 pkgver=5.15.157
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux LTS 5.15'
 url="https://www.kernel.org/"
 arch=(x86_64)
@@ -29,7 +29,7 @@ validpgpkeys=(
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
 sha256sums=('aff22351d34d69a16762dcf1fd51fe228da55d4b96b67247bdd598a86cc7a414'
             'SKIP'
-            '315a35c486ee057ea23508bcc90a2a7b2c6d72c921b6aad7b313abf19b9ffefb'
+            '8375b7fdf5283790bcf9033419c329d5bff3663d90dcf5031202bcfcbcc07d73'
             '3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd'
             '2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431'
             '8357f000b2b622e73dcfd41c2bad42b5e99fffe8f7ee64f774aa771f86cef43c'
