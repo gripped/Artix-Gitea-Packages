@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: audacious
-  version: 4.3.1-1.3
+  version: 4.3.1-1.4
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 4.3.1-1.3
+    version: 4.3.1-1.4
     packages:
-      - audacious-4.3.1-1.3-x86_64.pkg.tar.zst
+      - audacious-4.3.1-1.4-x86_64.pkg.tar.zst
   galaxy:
     version: 4.3.1-1.2
     packages:
