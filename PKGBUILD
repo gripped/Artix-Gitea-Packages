@@ -44,7 +44,7 @@ depends=(brotli
          pcre2
          shared-mime-info
          sqlite
-         libelogind
+         systemd-libs
          tslib
          vulkan-headers
          xcb-util-cursor
