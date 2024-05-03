@@ -1,5 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Daniel Isenmann <daniel @archlinux.org>
 
 pkgbase=dhcp
@@ -8,7 +7,7 @@ pkgname=('dhcp' 'dhclient')
 # separate patch levels with a period to maintain proper versioning.
 _realver=4.4.3-P1
 pkgver=${_realver/-/.}
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('custom:isc-dhcp')
 url='https://www.isc.org/dhcp/'
