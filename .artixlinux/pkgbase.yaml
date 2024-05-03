@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: slock
-  version: 1.5-2
+  version: 1.5-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5-2
+    version: 1.5-3
     packages:
-      - slock-1.5-2-x86_64.pkg.tar.zst
+      - slock-1.5-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
