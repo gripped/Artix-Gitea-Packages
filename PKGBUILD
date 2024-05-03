@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=artix-cgroups
-pkgver=0.6
+pkgver=0.7
 pkgrel=1
 arch=('any')
 pkgdesc='The Artix generic cgroups2'
@@ -14,7 +14,7 @@ backup=(
     'etc/artix/cgroups.conf'
 )
 source=("git+$url.git#tag=${pkgver}")
-sha256sums=('8a3b476a877636d7e0f3f48a880f2389e9b10a8effe42ec250966a069f9175db')
+sha256sums=('b59867753112c77254da60668eb6dd5c1453d1f4d0821b193fc12ac490bdc4c6')
 
 prepare() {
     cd "${pkgname}"
