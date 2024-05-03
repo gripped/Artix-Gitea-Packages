@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=artix-cgroups
-pkgver=0.7
+pkgver=0.7.1
 pkgrel=1
 arch=('any')
 pkgdesc='The Artix generic cgroups2'
@@ -14,7 +14,7 @@ backup=(
     'etc/artix/cgroups.conf'
 )
 source=("git+$url.git#tag=${pkgver}")
-sha256sums=('b59867753112c77254da60668eb6dd5c1453d1f4d0821b193fc12ac490bdc4c6')
+sha256sums=('6c0b45a033f575189f3459179f42754af4c65478d1d677f61a9ceaa9f972570a')
 
 prepare() {
     cd "${pkgname}"
@@ -22,7 +22,7 @@ prepare() {
 }
 
 build() {
-    make -C "${pkgname}" PREFIX=/usr CGROUP="openrc"
+    make -C "${pkgname}" PREFIX=/usr CGROUP="artix"
 }
 
 package() {
