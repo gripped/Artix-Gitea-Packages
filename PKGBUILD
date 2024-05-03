@@ -4,7 +4,7 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.8.8.hardened1
+pkgver=6.8.9.hardened1
 pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
@@ -46,17 +46,17 @@ validpgpkeys=(
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('1c4cdcb9d560fad1fb95db2cb8afbedc922f9ead848371fe40363b13f9f631ba'
+sha256sums=('f905f1238ea7a8e85314bacf283302e8097006010d25fcea726d0de0ea5bc9b6'
             'SKIP'
-            '8c0da45e63ac7a45e95d10bb3bbcbd22d4cff36744fc5485553c636704f207cd'
+            'ae678b84723cb7d80619ebd9a9f89c9a094741e161b8f25c758eb9d69e0bad84'
             'SKIP'
-            '3fe12541bd17b42572c783bc6c7dba395d237b62510e19067a0f4c0d2e840dc0'
+            'd29773eb3d2c0565723c0e3f6f4449060528433e8da4342cb05e8ec21202da52'
             '9cb73cacbb3633f207d0c30e738cae9965adcd0b0eb5ecd60563fed1394c0f38')
-b2sums=('3c04407c6875d1547c18024db7a020c450b332b10707c847208080819fa92624281fd9b628c1fefe7c16439f60d64dcc80010726a7d4320354b682ccaadb1f35'
+b2sums=('0305b6636a4e382855a2804cedc3984f1e891b26b24412e3533b1f29a07459d39be5121d4618da20098623290e922d502b7ac1b774f39e732f23a778a4b5b5be'
         'SKIP'
-        '279cb974467f9e28a30589a0c662caa23e345751a019860c60dc655c47af753cc52202d493e00249c152df9a35b1164bf0fb97e79c29baca8673c32ae304bd73'
+        'b6fbdd782038d9566684190d288fce0e1a38d5cf70c35951b0a93eab2648584906fcbb41cf128af7b3022f89754cadd30e5cdd22d80b10b36fe326450d53c17f'
         'SKIP'
-        'f26f4d4d828e1873ba552d875f59bb3d540d9859817301928766a8bc07a338fcbfcfb817431ef774c0b89be0f4f0a29716bcfd314153b79c5fb5f8fb1226349f'
+        'fdfb165cc7f774b7ac4ed4014e509e28cfdfba1afc6778943b6b46d3978435fe43fe2e44306148da937d97aadba5c92e470a2017f80d8cc7f40297d35afe122a'
         '0bb42a22c110f06a45e59a9adc194184a51ff97e5584d6ffabca0aa37e1e65ccaf44f43dc744eaa3861d6f6b00e299d4662bcf0c0d94478af9352b4c4f6b0ffd')
 
 export KBUILD_BUILD_HOST=artixlinux
