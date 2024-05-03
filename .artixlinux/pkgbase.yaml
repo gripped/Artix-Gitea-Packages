@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virtualbox-guest-iso
-  version: 7.0.16-1
+  version: 7.0.18-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.0.16-1
+    version: 7.0.18-1
     packages:
-      - virtualbox-guest-iso-7.0.16-1-any.pkg.tar.zst
+      - virtualbox-guest-iso-7.0.18-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
