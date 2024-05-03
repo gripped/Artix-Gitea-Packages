@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libdatachannel
-  version: 0.20.3-2
+  version: 0.21.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20.3-2
+    version: 0.21.0-1
     packages:
-      - libdatachannel-0.20.3-2-x86_64.pkg.tar.zst
+      - libdatachannel-0.21.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
