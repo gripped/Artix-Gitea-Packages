@@ -10,7 +10,7 @@ arch=('x86_64')
 license=('GPL-2.0-or-later')
 depends=('python-pycups' 'python-dbus' 'libnotify'
          'python-gobject' 'gtk3' 'python-cairo' 'libusb' 
-         'pango' 'glib2' 'libcups' 'systemd-libs' 'glibc' 
+         'pango' 'glib2' 'libcups' 'libudev' 'glibc' 
          'gdk-pixbuf2' 'sh')
 makedepends=('xmlto' 'docbook-xsl' 'desktop-file-utils' 'libsecret'
              'python-setuptools' 'autoconf-archive')
@@ -36,7 +36,7 @@ build() {
   ./configure --prefix=/usr \
     --sbindir=/usr/bin \
     --sysconfdir=/etc \
-    --with-systemdsystemunitdir=no \
+    --with-udevsystemunitdir=no \
     --with-udevdir=/usr/lib/udev \
     --with-udev-rules \
     --with-cups-serverbin-dir=/usr/lib/cups
