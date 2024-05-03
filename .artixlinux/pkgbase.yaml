@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virtualbox
-  version: 7.0.16-2
+  version: 7.0.18-1
   arch:
     - x86_64
   pkgname:
@@ -13,11 +13,11 @@ pkgbase:
     - virtualbox-ext-vnc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.0.16-2
+    version: 7.0.18-1
     packages:
-      - virtualbox-7.0.16-2-x86_64.pkg.tar.zst
-      - virtualbox-sdk-7.0.16-2-x86_64.pkg.tar.zst
-      - virtualbox-host-dkms-7.0.16-2-x86_64.pkg.tar.zst
-      - virtualbox-guest-utils-7.0.16-2-x86_64.pkg.tar.zst
-      - virtualbox-guest-utils-nox-7.0.16-2-x86_64.pkg.tar.zst
-      - virtualbox-ext-vnc-7.0.16-2-x86_64.pkg.tar.zst
+      - virtualbox-7.0.18-1-x86_64.pkg.tar.zst
+      - virtualbox-sdk-7.0.18-1-x86_64.pkg.tar.zst
+      - virtualbox-host-dkms-7.0.18-1-x86_64.pkg.tar.zst
+      - virtualbox-guest-utils-7.0.18-1-x86_64.pkg.tar.zst
+      - virtualbox-guest-utils-nox-7.0.18-1-x86_64.pkg.tar.zst
+      - virtualbox-ext-vnc-7.0.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
