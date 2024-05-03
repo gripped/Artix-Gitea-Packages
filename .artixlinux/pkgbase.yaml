@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-tqdm
-  version: 4.66.2-2
+  version: 4.66.4-1
   arch:
     - any
   pkgname:
     - python-tqdm
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.66.2-2
+    version: 4.66.4-1
     packages:
-      - python-tqdm-4.66.2-2-any.pkg.tar.zst
+      - python-tqdm-4.66.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
