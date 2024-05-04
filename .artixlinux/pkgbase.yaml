@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pyaxmlparser
-  version: 0.3.30-2
+  version: 0.3.31-1
   arch:
     - any
   pkgname:
     - python-pyaxmlparser
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3.30-2
+    version: 0.3.31-1
     packages:
-      - python-pyaxmlparser-0.3.30-2-any.pkg.tar.zst
+      - python-pyaxmlparser-0.3.31-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
