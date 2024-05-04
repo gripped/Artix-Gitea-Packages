@@ -1,12 +1,12 @@
 # Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 _name=kservice
 pkgname=${_name}5
 pkgver=5.115.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Advanced plugin and service introspection'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -30,4 +30,6 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+# Drop old Plasma 5 applications.menu
+  rm -r "$pkgdir"/etc
 }
