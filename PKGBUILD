@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
-# Contributor: Christian Heusel <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Christian Heusel <dvzrv@archlinux.org>
 
 pkgbase=vst3sdk
 pkgname=(vst3sdk vst3sdk-docs)
 pkgver=3.7.11_build_10
-pkgrel=1
+pkgrel=2
 pkgdesc="VST 3 Plug-In SDK"
 arch=(any)
 url="https://github.com/steinbergmedia/vst3sdk"
