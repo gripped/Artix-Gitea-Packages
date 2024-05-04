@@ -8,7 +8,7 @@ _vlcver=3.0.20
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=${_vlcver}${_vlcfixupver//-/.r}
-pkgrel=8
+pkgrel=9
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url='https://www.videolan.org/vlc/'
 arch=('x86_64')
@@ -102,7 +102,6 @@ makedepends=(
   'libssh2'
   'libtheora'
   'libtiger'
-  'libudev'
   'libvorbis'
   'libvpx'
   'lirc'
@@ -117,6 +116,7 @@ makedepends=(
   'smbclient'
   'speex'
   'srt'
+  'libudev'
   'twolame'
   'vcdimager'
   'wayland-protocols'
@@ -188,6 +188,7 @@ optdepends=(
   'speex: Speex codec'
   'speexdsp: Speex codec'
   'srt: SRT input/output plugin'
+  'libudev: udev services discovery'
   'ttf-dejavu: subtitle font'
   'twolame: TwoLAME mpeg2 encoder plugin'
   'vcdimager: navigate VCD with libvcdinfo'
