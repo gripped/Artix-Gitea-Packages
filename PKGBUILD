@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Contributor: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
 
 pkgname=vnstat
 pkgver=2.12
-pkgrel=1
+pkgrel=2
 pkgdesc="A console-based network traffic monitor"
 arch=('x86_64')
 url="https://humdi.net/vnstat/"
