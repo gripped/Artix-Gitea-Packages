@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - libpsl
 actions:
-  addRepo: system-gremlins
-  removeRepo: world-gremlins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -19,13 +19,12 @@ repos:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 0.21.5-1
     packages:
       - libpsl-0.21.5-1-x86_64.pkg.tar.zst
-  system:
-    version: 0.21.2-1
-    packages:
-      - libpsl-0.21.2-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
@@ -53,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
