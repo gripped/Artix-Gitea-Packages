@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-libtasn1
-  version: 4.19.0-1
+  version: 4.19.0-2
   arch:
     - x86_64
   pkgname:
     - lib32-libtasn1
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 4.19.0-1
+    version: 4.19.0-2
     packages:
-      - lib32-libtasn1-4.19.0-1-x86_64.pkg.tar.zst
+      - lib32-libtasn1-4.19.0-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: lib32
