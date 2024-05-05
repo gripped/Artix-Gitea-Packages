@@ -3,7 +3,7 @@
 _pkgbasename=libgpg-error
 pkgname=lib32-$_pkgbasename
 pkgver=1.48
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Support library for libgcrypt (32-bit)"
 arch=(x86_64)
 url="https://www.gnupg.org"
