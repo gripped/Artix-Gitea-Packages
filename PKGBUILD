@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Emil Renner Berthing <esmil@users.sourceforge.net>
 
 pkgname=mktorrent
 pkgver=1.1
-pkgrel=6
+pkgrel=7
 pkgdesc="Simple command line utility to create BitTorrent metainfo files"
 arch=(x86_64)
 url="https://github.com/pobrn/mktorrent"
