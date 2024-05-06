@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: pysolfc-cardsets
-  version: 2.2-1
+  version: 3.0-1
   arch:
     - any
   pkgname:
     - pysolfc-cardsets
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.2-1
+    version: 3.0-1
     packages:
-      - pysolfc-cardsets-2.2-1-any.pkg.tar.zst
+      - pysolfc-cardsets-3.0-1-any.pkg.tar.zst
+team: galaxy
