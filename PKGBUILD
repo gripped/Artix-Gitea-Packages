@@ -6,7 +6,7 @@
 
 pkgname=plymouth
 pkgver=24.004.60
-pkgrel=6
+pkgrel=7
 pkgdesc='Graphical boot splash screen'
 arch=('x86_64')
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
@@ -33,7 +33,7 @@ sha256sums=('f3f7841358c98f5e7b06a9eedbdd5e6882fd9f38bbd14a767fb083e3b55b1c34'
             'de852646e615e06d4125eb2e646d0528d1e349bd9e9877c08c5d32c43d288b6f'
             '1d79a36dc5596228f0191ac70714ca7b35b241d8c96d982225be42735f106fc2'
             'd75b67c7c28698c1e27864a63f3f405897aea053c346c2478ee97d0caec241d5'
-            '04af86a0ec83fc92d7339e1a7fcc0d55b86b95797a1a5f1a3b8d850996a3926c')
+            '91df753b37fa33493a3fa4b966f5535e9694022a4ba083dcc504404ab25715b1')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -55,7 +55,7 @@ prepare() {
 
 build() {
   artix-meson build $pkgname-$pkgver \
-    -D logo=/usr/share/pixmaps/artixlinux-logo.png -D systemd-integration=false
+    -D logo=/usr/share/pixmaps/artixlinux-logo.png -Dsystemd-integration=false
   meson compile -C build
 
   # Convert logo for the spinner theme
@@ -70,7 +70,7 @@ package() {
   install -Dm644 plymouth.initcpio_hook "$pkgdir/usr/lib/initcpio/hooks/$pkgname"
   install -Dm644 plymouth.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname"
 
-  # Install mkinitcpio shutdown hook
+  # Install mkinitcpio shutdown hook and drop-in snippet
   install -Dm644 plymouth-shutdown.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname-shutdown"
   
   # Install logo for the spinner theme
