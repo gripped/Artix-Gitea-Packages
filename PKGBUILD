@@ -7,7 +7,7 @@ pkgname=(linux-firmware-whence linux-firmware amd-ucode
 )
 _tag=20240410
 pkgver=20240409.1addd7dc
-pkgrel=1
+pkgrel=2
 pkgdesc="Firmware files for Linux"
 url="https://gitlab.com/kernel-firmware/linux-firmware"
 license=('GPL2' 'GPL3' 'custom')
