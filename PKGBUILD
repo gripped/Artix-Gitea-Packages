@@ -4,7 +4,7 @@
 
 pkgname=libdeflate
 pkgver=1.20
-pkgrel=1
+pkgrel=2
 pkgdesc='Heavily optimized library for DEFLATE/zlib/gzip compression and decompression'
 arch=(x86_64)
 url=https://github.com/ebiggers/libdeflate
@@ -26,7 +26,7 @@ pkgver() {
 }
 
 build() {
-  artix-cmake -S libdeflate -B build -G Ninja \
+  cmake -S libdeflate -B build -G Ninja \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DLIBDEFLATE_BUILD_STATIC_LIB=OFF \
