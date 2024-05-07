@@ -5,8 +5,8 @@
 pkgbase=openblas
 pkgname=(openblas openblas64 blas-openblas blas64-openblas)
 _pkgname=OpenBLAS
-pkgver=0.3.26
-pkgrel=3
+pkgver=0.3.27
+pkgrel=1
 _blasver=3.12.0
 pkgdesc="An optimized BLAS library based on GotoBLAS2 1.13 BSD"
 arch=('x86_64')
@@ -15,7 +15,7 @@ license=('BSD')
 depends=('gcc-libs')
 makedepends=('cmake' 'perl' 'gcc-fortran')
 source=(${_pkgname}-v${pkgver}.tar.gz::https://github.com/xianyi/OpenBLAS/archive/v${pkgver}.tar.gz)
-sha512sums=('01d3a536fbfa62f276fd6b1ad0e218fb3d91f41545fc83ddc74979fa26372d8389f0baa20334badfe0adacd77bd944c50a47ac920577373fcc1d495553084373')
+sha512sums=('4accc5282244946157b7940211181e011940154ff47855702c68f57a0af2fa5a306f49e47b8c22c02eeff61760c6c220465f05a316a33ee3265bfce65ca4cb84')
 
 build() {
   # Setting FC manually to avoid picking up f95 and breaking the cmake build
@@ -24,7 +24,7 @@ build() {
   # Setting ASM flags for CET support.  Setting FFLAGS for CET support.
   # Remove ` -Wformat -Werror=format-security` not supported by gcc-fortran.
 
-  ASMFLAGS=$CFLAGS FFLAGS=${CFLAGS/ -Wformat -Werror=format-security/} FC=gfortran artix-cmake -B build -S $_pkgname-$pkgver \
+  ASMFLAGS=$CFLAGS FFLAGS=${CFLAGS/ -Wformat -Werror=format-security/} FC=gfortran cmake -B build -S $_pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_TESTING=OFF \
@@ -36,7 +36,7 @@ build() {
     -DDYNAMIC_ARCH=ON
   cmake --build build
 
-  ASMFLAGS=$CFLAGS FFLAGS=${CFLAGS/ -Wformat -Werror=format-security/} FC=gfortran artix-cmake -B build64 -S $_pkgname-$pkgver \
+  ASMFLAGS=$CFLAGS FFLAGS=${CFLAGS/ -Wformat -Werror=format-security/} FC=gfortran cmake -B build64 -S $_pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_TESTING=OFF \
