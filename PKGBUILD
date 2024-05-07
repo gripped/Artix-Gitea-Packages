@@ -3,7 +3,7 @@
 # Contributor: SaultDon <sault.don gmail>
 pkgname=pdal
 pkgver=2.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A C++ library for translating and manipulating point cloud data"
 arch=('x86_64')
 url="http://www.pdal.io"
@@ -20,7 +20,7 @@ sha512sums=('f76236f671ae3a0d43afa0c985772e75491e664b7d83563a95618e4f579aeb4ce70
 build() {
   cd "PDAL-$pkgver-src/"
 
-  artix-cmake \
+  cmake \
     -Bbuild \
     -GNinja \
     -DCMAKE_INSTALL_PREFIX=/usr \
