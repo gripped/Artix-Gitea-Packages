@@ -55,8 +55,6 @@ package() {
   cd "${srcdir}/$pkgname-$pkgver"
   python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
   sed -i 's|/build/xpra/pkg/xpra/etc/xpra/xorg.conf|/etc/xpra/xorg.conf|' "${pkgdir}"/etc/xpra/conf.d/55_server_x11.conf
-  mv "${pkgdir}"/lib/* "${pkgdir}"/usr/lib/
-  rmdir "${pkgdir}/lib"
   mkdir -p "${pkgdir}"/usr/share/dbus-1
   #Move D-BUS Policy
   mv "${pkgdir}"/{etc,usr/share}/dbus-1/system.d
