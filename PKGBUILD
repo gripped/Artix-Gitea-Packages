@@ -4,23 +4,22 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-_tag='2.40'
+_tag='2.40.1'
 pkgver="${_tag/-/}"
-pkgrel=3
+pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
 makedepends=('asciidoctor'
              'bash-completion'
+             'cryptsetup'
              'git'
              'libcap-ng'
-             'libutempter'
              'libxcrypt'
              'meson'
              'python'
              'sqlite'
-             'udev'
-             'cryptsetup')
+             'udev')
 license=(
   'BSD-2-Clause'
   'BSD-3-Clause'
@@ -39,8 +38,8 @@ source=("git+https://github.com/util-linux/util-linux#tag=v${_tag}?signed"
         pam-{login,common,remote,runuser,su}
         'util-linux.sysusers'
         '60-rfkill.rules'
-        '0001-util-linux-tmpfiles.patch')
-sha256sums=('153ae22d30a04e8c3ef1edbac63081f21b2d7622467dd7bf324f7f45e45b343d'
+        0001-util-linux-tmpfiles.patch)
+sha256sums=('c08ac20cf4fb061a0aa0d318a245b269acdfd14f7abf1f272476358878e6862a'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
@@ -71,7 +70,9 @@ prepare() {
     git log --oneline "${_l}" "${_c}"
     git revert --mainline 1 --no-commit "${_c}"
   done
+
   git apply ../0001-util-linux-tmpfiles.patch
+
   # do not mark dirty
   sed -i '/dirty=/c dirty=' tools/git-version-gen
 }
@@ -81,6 +82,7 @@ build() {
     -Dfs-search-path=/usr/bin:/usr/local/bin
 
     -Dlibuser=disabled
+    -Dlibutempter=enabled
     -Dncurses=disabled
     -Dncursesw=enabled
     -Deconf=disabled
@@ -103,18 +105,18 @@ package_util-linux() {
   conflicts=('rfkill' 'hardlink')
   provides=('rfkill' 'hardlink')
   replaces=('rfkill' 'hardlink')
-  depends=('coreutils'
+  depends=("util-linux-libs=${pkgver}"
+           'coreutils'
            'file' 'libmagic.so'
            'glibc'
            'libcap-ng'
-           'libutempter'
+           'libutempter' #'libutempter.so'
            'libxcrypt' 'libcrypt.so'
            'ncurses' 'libncursesw.so'
            'pam'
            'readline'
            'shadow'
-           'libudev'
-           'util-linux-libs'
+           'libudev' # 'libudev.so'
            'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
