@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-overlays
-  version: 275-1
+  version: 275-2
   arch:
     - any
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 275-1
+    version: 275-2
     packages:
-      - libretro-overlays-275-1-any.pkg.tar.zst
+      - libretro-overlays-275-2-any.pkg.tar.zst
 team: galaxy
