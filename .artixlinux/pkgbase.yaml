@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lxqt-notificationd
-  version: 2.0.0-1
+  version: 2.0.1-1
   arch:
     - x86_64
   pkgname:
     - lxqt-notificationd
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 2.0.0-1
+    version: 2.0.1-1
     packages:
-      - lxqt-notificationd-2.0.0-1-x86_64.pkg.tar.zst
+      - lxqt-notificationd-2.0.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.4.0-1.1
     packages:
