@@ -9,7 +9,7 @@ pkgbase:
     - avogadrolibs-qt5
 actions:
   addRepo: world
-  removeRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -26,18 +26,16 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.99.0-4
-    packages:
-      - avogadrolibs-1.99.0-4-x86_64.pkg.tar.zst
-      - avogadrolibs-qt5-1.99.0-4-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
   world:
-    version: 1.99.0-3
+    version: 1.99.0-4
     packages:
-      - avogadrolibs-1.99.0-3-x86_64.pkg.tar.zst
-      - avogadrolibs-qt5-1.99.0-3-x86_64.pkg.tar.zst
+      - avogadrolibs-1.99.0-4-x86_64.pkg.tar.zst
+      - avogadrolibs-qt5-1.99.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
