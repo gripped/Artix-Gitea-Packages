@@ -21,6 +21,7 @@ checkdepends=(gcc-fortran)
 provides=("libltdl=$pkgver" "libtool-multilib=$pkgver")
 conflicts=(libltdl libtool-multilib)
 replaces=(libltdl libtool-multilib)
+options=(debug)
 source=(
   git+https://git.savannah.gnu.org/git/libtool.git#commit=$_commit
   git+https://git.savannah.gnu.org/git/gnulib.git
