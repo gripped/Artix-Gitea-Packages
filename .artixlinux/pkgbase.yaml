@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: poco
-  version: 1.12.5p2-1
+  version: 1.13.3-1
   arch:
     - x86_64
   pkgname:
     - poco
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.13.3-1
+    packages:
+      - poco-1.13.3-1-x86_64.pkg.tar.zst
   world:
     version: 1.12.5p2-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
