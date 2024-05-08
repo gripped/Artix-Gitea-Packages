@@ -1,9 +1,10 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
 pkgver=6.7.0.6.realtime1
-pkgrel=2
+pkgrel=3
 pkgdesc='Linux RT'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/commits/v$pkgver"
