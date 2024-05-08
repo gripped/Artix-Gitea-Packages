@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt-lts
-  version: 6.6.23.28.realtime1-2
+  version: 6.6.23.28.realtime1-3
   arch:
     - x86_64
   pkgname:
@@ -51,9 +51,9 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.6.23.28.realtime1-2
+    version: 6.6.23.28.realtime1-3
     packages:
-      - linux-rt-lts-6.6.23.28.realtime1-2-x86_64.pkg.tar.zst
-      - linux-rt-lts-headers-6.6.23.28.realtime1-2-x86_64.pkg.tar.zst
-      - linux-rt-lts-docs-6.6.23.28.realtime1-2-x86_64.pkg.tar.zst
+      - linux-rt-lts-6.6.23.28.realtime1-3-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.6.23.28.realtime1-3-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.6.23.28.realtime1-3-x86_64.pkg.tar.zst
 team: galaxy
