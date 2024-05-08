@@ -98,9 +98,7 @@ source=("git+https://gitlab.com/inkscape/inkscape.git#tag=INKSCAPE_${pkgver//./_
         'inkscape-extras-extensions-gcodetools::git+https://gitlab.com/inkscape/extras/extensions-gcodetools.git'
         'inkscape-extras-extension-manager::git+https://gitlab.com/inkscape/extras/extension-manager.git'
         'inkscape-extras-inkscape-import-clipart::git+https://gitlab.com/inkscape/extras/inkscape-import-clipart.git'
-        'inkscape-extras-extension-xaml::git+https://gitlab.com/inkscape/extras/extension-xaml.git'
-        '0001-inkscape-1.3.2-poppler-24.03.patch'
-        '0002-inkscape-1.3.2-poppler-24.05.patch')
+        'inkscape-extras-extension-xaml::git+https://gitlab.com/inkscape/extras/extension-xaml.git')
 sha256sums=('31d286dff9a3e295b7f89f806300ecc91c306e08a273f29501082fe33f1ebafe'
             'SKIP'
             'SKIP'
@@ -108,13 +106,16 @@ sha256sums=('31d286dff9a3e295b7f89f806300ecc91c306e08a273f29501082fe33f1ebafe'
             'SKIP'
             'SKIP'
             'SKIP'
-            'SKIP'
-            '499bc0bd0d8600b597220f463034d5e132e69c7833108d6b766445e70e9c82ed'
-            '2cbece367bae12015292d0ead14196a30fefd2be8941bcee2cef6aaacd5723d6')
+            'SKIP')
 
 _backports=(
   # include missing header file
   '694d8ae43d06efff21adebf377ce614d660b24cd'
+
+  # Fix build with poppler >= 24.05.0
+  '96ca7a6c215aa14336b52753f56244dc8796ec43'
+  # Fix build with >=poppler-24.03.0
+  'f7e944575ea5247952d23f85dfa905cfa13f7b28'
 
   # Up C++ version to C++20.
   '1798e9c13b786f3d077ba0132592c4d5c1d1fb9b'
@@ -139,9 +140,6 @@ prepare() {
     git log --oneline -1 "${_c}"
     git cherry-pick -n "${_c}"
   done
-
-  patch -Np1 -i ../0001-inkscape-1.3.2-poppler-24.03.patch
-  patch -Np1 -i ../0002-inkscape-1.3.2-poppler-24.05.patch
 }
 
 build() {
