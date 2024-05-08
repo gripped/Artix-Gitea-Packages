@@ -44,7 +44,7 @@ depends=(brotli
          pcre2
          shared-mime-info
          sqlite
-         systemd-libs
+         libelogind
          tslib
          vulkan-headers
          xcb-util-cursor
@@ -114,7 +114,7 @@ build() {
     -DINSTALL_INCLUDEDIR=include/qt6 \
     -DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
     -DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
-    -DFEATURE_journald=ON \
+    -DFEATURE_journald=OFF \
     -DFEATURE_libproxy=ON \
     -DFEATURE_openssl_linked=ON \
     -DFEATURE_system_sqlite=ON \
