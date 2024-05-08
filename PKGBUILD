@@ -7,7 +7,7 @@ pkgname=(qt6-base
          qt6-xcb-private-headers)
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=5
+pkgrel=6
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -44,7 +44,7 @@ depends=(brotli
          pcre2
          shared-mime-info
          sqlite
-         libelogind
+         systemd-libs
          tslib
          vulkan-headers
          xcb-util-cursor
@@ -88,7 +88,7 @@ source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
 sha256sums=('ee87abbfdf2d5bb204056bcb6c53e21c03e1abd779e3669faa56db7249c5e39e'
             '5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78'
             '4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094'
-            'b5cb3a29738a2783242a96c9d94298421875dcabec4fc2b5d8c5329b66e63070')
+            '81c4821fb1c258603474771a267d450aa8b5d1d298443bc04620d70719c7eab7')
 
 prepare() {
   patch -d $_pkgfn -p1 < qt6-base-cflags.patch # Use system CFLAGS
@@ -97,6 +97,8 @@ prepare() {
   cd $_pkgfn
   git cherry-pick -n 7c4e1357e49baebdd2d20710fccb5604cbb36c0d # CVE-2024-33861
   git cherry-pick -n a8ef8ea55014546e0e835cd0eacf694919702a11 # https://bugreports.qt.io/browse/QTBUG-124386
+  git cherry-pick -n 062f701a11d2c46660f5c5edd73f245477918a47 # Fix dependencies in pc files
+  git cherry-pick -n 5ee9da89af7efe31ac45858bf1eb04e5155a3b50 # Fix dependencies in pc files
 }
 
 build() {
@@ -112,7 +114,7 @@ build() {
     -DINSTALL_INCLUDEDIR=include/qt6 \
     -DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
     -DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
-    -DFEATURE_journald=OFF \
+    -DFEATURE_journald=ON \
     -DFEATURE_libproxy=ON \
     -DFEATURE_openssl_linked=ON \
     -DFEATURE_system_sqlite=ON \
