@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: networkmanager-openvpn
-  version: 1.10.2-3
+  version: 1.10.4-1
   arch:
     - x86_64
   pkgname:
     - networkmanager-openvpn
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.10.2-3
+    version: 1.10.4-1
     packages:
-      - networkmanager-openvpn-1.10.2-3-x86_64.pkg.tar.zst
+      - networkmanager-openvpn-1.10.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
