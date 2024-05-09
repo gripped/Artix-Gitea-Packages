@@ -8,8 +8,7 @@
 
 pkgname=erlang
 pkgver=26.2.5
-pkgrel=1
-_docver=26.1
+pkgrel=2
 # https://github.com/erlang/otp/tags
 _commit=412bff5196fc0ab88a61fe37ca30e5226fc7872d # OTP-26.2.5
 arch=(x86_64)
@@ -17,9 +16,9 @@ url='https://erlang.org'
 license=(Apache)
 makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl wxwidgets-gtk3)
 options=(staticlibs)
-source=("$url/download/otp_doc_man_$_docver.tar.gz"
+source=("https://github.com/erlang/otp/releases/download/OTP-$pkgver/otp_doc_man_$pkgver.tar.gz"
         "git+https://github.com/erlang/otp#commit=$_commit")
-b2sums=('2eed8963d425fe5ff3cd02eeacfd0eb86051225578613e374b71818a91e4f0b6953c4297a06ee59803d9421730c93871660ce66150a13d808f122a6f84f74f2a'
+b2sums=('76b8298821cd0a940715aa6878bb16a8b8699194655dcf019478158881a7447c6754c1c345a1d66147457b85a64338afa32478b7af8b4094062946788b4ece88'
         'e1ea412389c94d53f749a8d9b7095a191b85b0be930ed5c9b94aaf69cc7d3a62694ada4ea1a502136840777c28f438bd8e717a1e556fa6336140696bf9179716')
 
 prepare() {
