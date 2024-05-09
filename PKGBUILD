@@ -10,8 +10,7 @@ url="https://github.com/apognu/$_pkgname"
 license=(GPL3)
 arch=(x86_64)
 depends=(gcc-libs
-         greetd
-         systemd)
+         greetd)
 provides=(greetd-greeter)
 makedepends=(cargo
              scdoc)
