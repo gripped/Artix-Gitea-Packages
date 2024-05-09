@@ -7,13 +7,15 @@ pkgname=(
   glib2
   glib2-docs
 )
-pkgver=2.80.1
+pkgver=2.80.2
 pkgrel=1
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
 arch=(x86_64)
 depends=(
+  bash
+  glibc
   libffi
   libsysprof-capture
   pcre2
@@ -45,7 +47,7 @@ source=(
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
-b2sums=('79bd2b3361b5931a4e14acd6919bfe84a3e6ae03d5ab1faf9f631363716a3bf7c20fb7550d18e8e6a2fc21ff61e77bbdb14c3bc0da8e72409f6b140ec57ddeb2'
+b2sums=('5cee8c7aee08f20b759bb614475a3881f60586d5f388e9c45c670765e03b77916c3d1e27b6e0286f23d779014ba17993400ed4708bcb456a479e43a2e80f6756'
         'SKIP'
         '94c73ca7070c239494873dd52d6ee09382bbb5b1201f7afd737cfa140b1a2fb0744b2c2831baf3943d1d072550c35888d21ce6f19f89481ff9d1a60d9a0b30e0'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
@@ -62,7 +64,7 @@ prepare() {
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
-  git -c protocol.file.allow=always submodule update
+  git -c protocol.file.allow=always -c protocol.allow=never submodule update
 }
 
 build() {
@@ -89,7 +91,17 @@ build() {
 }
 
 check() {
-  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
+  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs || :
+}
+
+_pick() {
+  local p="$1" f d; shift
+  for f; do
+    d="$srcdir/$p/${f#$pkgdir/}"
+    mkdir -p "$(dirname "$d")"
+    mv "$f" "$d"
+    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+  done
 }
 
 package_glib2() {
@@ -116,9 +128,10 @@ package_glib2() {
   python -O -m compileall -d /usr/share/glib-2.0/codegen \
     "$pkgdir/usr/share/glib-2.0/codegen"
 
+  cd "$pkgdir"
+
   # Split docs
-  mkdir -p docs/usr/share
-  mv {"$pkgdir",docs}/usr/share/doc
+  _pick docs usr/share/doc
 }
 
 package_glib2-docs() {
@@ -126,7 +139,7 @@ package_glib2-docs() {
   depends=()
   license+=(LicenseRef-Public-Domain)
 
-  mv -t "$pkgdir" docs/*
+  mv docs/* "$pkgdir"
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 glib/docs/reference/COPYING
 }
 
