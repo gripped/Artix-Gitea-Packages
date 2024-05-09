@@ -11,7 +11,7 @@ pkgname=(
   harfbuzz-docs
 )
 pkgver=8.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc="OpenType text shaping engine"
 url="https://harfbuzz.github.io/"
 arch=(x86_64)
@@ -53,6 +53,7 @@ prepare() {
 build() {
   local meson_options=(
     -D graphite2=enabled
+    -D cpp_std=c++17
   )
 
   # Harfbuzz wants no exceptions
