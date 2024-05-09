@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: brltty
-  version: 6.6-7.1
+  version: 6.6-8
   arch:
     - x86_64
   pkgname:
     - brltty
     - brltty-udev-generic
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.6-7
+    version: 6.6-8
     packages:
-      - brltty-6.6-7-x86_64.pkg.tar.zst
-      - brltty-udev-generic-6.6-7-x86_64.pkg.tar.zst
+      - brltty-6.6-8-x86_64.pkg.tar.zst
+      - brltty-udev-generic-6.6-8-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
