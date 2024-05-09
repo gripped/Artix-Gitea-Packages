@@ -2,7 +2,7 @@
 
 pkgname=xfsprogs
 pkgver=6.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc="XFS filesystem utilities"
 arch=('x86_64')
 license=('GPL-2.0-only' 'LGPL-2.1-only')
