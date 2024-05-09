@@ -1,10 +1,11 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: tobias <tobias@arhlinux.org>
 
 pkgname=exiv2
 pkgver=0.28.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Exif, Iptc and XMP metadata manipulation library and tools"
 url="https://exiv2.org"
 arch=('x86_64')
