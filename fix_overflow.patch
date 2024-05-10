@@ -1,0 +1,15 @@
+--- a/src/launcher/apps-common.c
++++ b/src/launcher/apps-common.c
+@@ -104,6 +104,10 @@
+                     q--; // To balance the q++ in the for
+                 } else if (*p == 'f' || *p == 'F') {
+-                    snprintf(q, buf_size, "%c%c", '%', *p);
+-                    q += 2;
++                    if (q+2 >= exec2+buf_size ){
++                        fprintf(stderr,"*** buffer overflow detected at %s:%04d ***\n", __FILE__, __LINE__);
++                        abort();
++                    }
++                    *q++ = '%';
++                    *q++ = *p;
+                     buf_size -= 2;
+                     q--; // To balance the q++ in the for
