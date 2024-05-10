@@ -5,7 +5,7 @@
 pkgname=qt6-5compat
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.2
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -27,7 +27,7 @@ source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
 sha256sums=('b800ed79131f1f81626fcefc45ee6f3864009119a1e0ae319af57684faf093fc')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
