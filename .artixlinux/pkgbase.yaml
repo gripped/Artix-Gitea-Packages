@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-pipewire
-  version: 1:1.0.5-1
+  version: 1:1.0.6-1
   arch:
     - x86_64
   pkgname:
@@ -43,12 +43,12 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1:1.0.5-1
+    version: 1:1.0.6-1
     packages:
-      - lib32-pipewire-1:1.0.5-1-x86_64.pkg.tar.zst
-      - lib32-libpipewire-1:1.0.5-1-x86_64.pkg.tar.zst
-      - lib32-pipewire-jack-1:1.0.5-1-x86_64.pkg.tar.zst
-      - lib32-pipewire-v4l2-1:1.0.5-1-x86_64.pkg.tar.zst
+      - lib32-pipewire-1:1.0.6-1-x86_64.pkg.tar.zst
+      - lib32-libpipewire-1:1.0.6-1-x86_64.pkg.tar.zst
+      - lib32-pipewire-jack-1:1.0.6-1-x86_64.pkg.tar.zst
+      - lib32-pipewire-v4l2-1:1.0.6-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
