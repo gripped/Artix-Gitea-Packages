@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-xml-sax
-  version: 1.02-1.2
+  version: 1.02-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.02-1.2
+    version: 1.02-2
     packages:
-      - perl-xml-sax-1.02-1.2-any.pkg.tar.zst
+      - perl-xml-sax-1.02-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
