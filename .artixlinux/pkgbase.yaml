@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libvirt-python
-  version: 1:10.2.0-2
+  version: 1:10.3.0-1
   arch:
     - x86_64
   pkgname:
     - libvirt-python
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:10.2.0-2
+    version: 1:10.3.0-1
     packages:
-      - libvirt-python-1:10.2.0-2-x86_64.pkg.tar.zst
+      - libvirt-python-1:10.3.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
