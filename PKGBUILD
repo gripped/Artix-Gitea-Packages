@@ -44,7 +44,7 @@ build() {
     -DCMAKE_PREFIX_PATH=/usr \
     -DINSTALL_PUBLICBINDIR=usr/bin \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
-    -DFEATURE_zstd=OFF
+    -DFEATURE_zstd=ON
   cmake --build build
 }
 
