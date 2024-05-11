@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ninja
-  version: 1.12.0-2
+  version: 1.12.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12.0-2
+    version: 1.12.1-1
     packages:
-      - ninja-1.12.0-2-x86_64.pkg.tar.zst
+      - ninja-1.12.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
