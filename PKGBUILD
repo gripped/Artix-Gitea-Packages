@@ -3,7 +3,7 @@
 
 pkgname=neochat
 pkgver=24.02.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A client for matrix, the decentralized communication protocol'
 url='https://apps.kde.org/neochat/'
 arch=(x86_64)
