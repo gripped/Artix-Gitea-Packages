@@ -5,7 +5,7 @@
 pkgname=qt6-tools
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=2.1
+pkgrel=2.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -40,8 +40,6 @@ prepare() {
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_PREFIX_PATH=/usr \
     -DINSTALL_PUBLICBINDIR=usr/bin \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
