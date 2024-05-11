@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=neochat
-pkgver=24.02.2
-pkgrel=1.1
+pkgver=24.04.80
+pkgrel=2
 pkgdesc='A client for matrix, the decentralized communication protocol'
 url='https://apps.kde.org/neochat/'
 arch=(x86_64)
@@ -15,6 +14,7 @@ depends=(cmark
          kcolorscheme
          kconfig
          kcoreaddons
+         kcrash
          kdbusaddons
          ki18n
          kio
@@ -24,10 +24,12 @@ depends=(cmark
          knotifications
          kquickcharts
          kquickimageeditor
+         kservice
          kstatusnotifieritem
          kwindowsystem
          libquotient
          prison
+         purpose
          qqc2-desktop-style
          qt6-base
          qt6-declarative
@@ -44,8 +46,8 @@ makedepends=(extra-cmake-modules
              qcoro-qt6)
 groups=(kde-applications
         kde-network)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('b6dce8f96be12bab0d762694f50c49cea18d6155e1e46549f0bf97046f04741e'
+source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('2098d0382d9e5d0ad136f0c9c0c596d8b2ff7ef8b7de55b62829f01c7f6c7922'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
