@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: linux-lts515
-  version: 5.15.157-2
+  version: 5.15.158-1
   arch:
     - x86_64
   pkgname:
@@ -52,8 +52,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 5.15.157-2
+    version: 5.15.158-1
     packages:
-      - linux-lts515-5.15.157-2-x86_64.pkg.tar.zst
-      - linux-lts515-headers-5.15.157-2-x86_64.pkg.tar.zst
-      - linux-lts515-docs-5.15.157-2-x86_64.pkg.tar.zst
+      - linux-lts515-5.15.158-1-x86_64.pkg.tar.zst
+      - linux-lts515-headers-5.15.158-1-x86_64.pkg.tar.zst
+      - linux-lts515-docs-5.15.158-1-x86_64.pkg.tar.zst
