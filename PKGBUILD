@@ -6,7 +6,7 @@ pkgbase=qt6-doc
 pkgname=(qt6-doc qt6-examples)
 _qtver=6.7.0
 pkgver=${_qtver/-/}
-pkgrel=1.3
+pkgrel=1.4
 arch=('any')
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -38,6 +38,7 @@ sha256sums=('bf5089912364f99cf9baf6c109de76a3172eec6267f148c69800575c47f90087')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
+    -DCMAKE_INSTALL_PREFIX=/usr \
     -DQT_HOST_PATH=/usr \
     -DINSTALL_BINDIR=lib/qt6/bin \
     -DINSTALL_DOCDIR=share/doc/qt6 \
