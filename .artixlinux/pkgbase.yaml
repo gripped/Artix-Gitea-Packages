@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libreoffice-fresh
-  version: 24.2.3-3
+  version: 24.2.3-3.1
   arch:
     - x86_64
   pkgname:
@@ -44,10 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 24.2.3-3
+    version: 24.2.3-3.1
     packages:
-      - libreoffice-fresh-sdk-24.2.3-3-x86_64.pkg.tar.zst
-      - libreoffice-fresh-24.2.3-3-x86_64.pkg.tar.zst
+      - libreoffice-fresh-sdk-24.2.3-3.1-x86_64.pkg.tar.zst
+      - libreoffice-fresh-24.2.3-3.1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
