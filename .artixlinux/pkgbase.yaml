@@ -8,7 +8,7 @@ pkgbase:
     - qt6-doc
     - qt6-examples
 actions:
-  addRepo: galaxy-goblins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.7.0-1.3
+    packages:
+      - qt6-doc-6.7.0-1.3-any.pkg.tar.zst
+      - qt6-examples-6.7.0-1.3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
