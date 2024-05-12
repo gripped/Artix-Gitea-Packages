@@ -85,6 +85,9 @@ prepare() {
 }
 
 build() {
+
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
   local cmake_options=(
     -B build
     -D CHANNEL_URBDRC_CLIENT=ON
