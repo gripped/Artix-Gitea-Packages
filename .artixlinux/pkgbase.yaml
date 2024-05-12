@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-builder
-  version: 46.1-3
+  version: 46.1-4
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - gnome-builder-clang
     - gnome-builder-flatpak
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 46.1-4
+    packages:
+      - gnome-builder-46.1-4-x86_64.pkg.tar.zst
+      - gnome-builder-clang-46.1-4-x86_64.pkg.tar.zst
+      - gnome-builder-flatpak-46.1-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
