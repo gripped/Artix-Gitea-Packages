@@ -95,7 +95,7 @@ build() {
 	mv $pkgname-$_pkgbasever $pkgname
 
 	# Doesn't compile without remove these flags as of 4.10
-	export CFLAGS="$CFLAGS -ffat-lto-objects"
+	export CFLAGS="$CFLAGS -ffat-lto-objects -fPIC"
 
 	# Apply flags for cross-compilation
 	export CROSSCFLAGS="${CFLAGS/-Werror=format-security/}"
