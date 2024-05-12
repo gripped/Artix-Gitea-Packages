@@ -1,0 +1,14 @@
+diff --git a/winpr/libwinpr/timezone/TimeZoneIanaAbbrevMap.c b/winpr/libwinpr/timezone/TimeZoneIanaAbbrevMap.c
+index 7bc28719b..0ce7e4fa1 100644
+--- a/winpr/libwinpr/timezone/TimeZoneIanaAbbrevMap.c
++++ b/winpr/libwinpr/timezone/TimeZoneIanaAbbrevMap.c
+@@ -129,7 +129,7 @@ static void iterate_subdir_recursive(const char* base, const char* bname, const
+ 	if (!path)
+ 		return;
+ 
+-	struct DIR* d = opendir(path);
++	DIR* d = opendir(path);
+ 	if (d)
+ 	{
+ 		struct dirent* dp = NULL;
+
