@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-pod-parser
-  version: 1.66-2
+  version: 1.67-1
   arch:
     - any
   pkgname:
     - perl-pod-parser
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.66-2
+    version: 1.67-1
     packages:
-      - perl-pod-parser-1.66-2-any.pkg.tar.zst
+      - perl-pod-parser-1.67-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
