@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-persistent
-  version: 5.1-2
+  version: 5.2-1
   arch:
     - x86_64
   pkgname:
     - python-persistent
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.1-2
+    version: 5.2-1
     packages:
-      - python-persistent-5.1-2-x86_64.pkg.tar.zst
+      - python-persistent-5.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
