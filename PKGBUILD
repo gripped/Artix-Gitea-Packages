@@ -1,15 +1,16 @@
-# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Andrea Zucchelli <zukka77@gmail.com>
 
 pkgname=tinyproxy
-pkgver=1.11.1
-pkgrel=3
+pkgver=1.11.2
+pkgrel=1
 pkgdesc='A light-weight HTTP proxy daemon for POSIX operating systems'
 arch=('x86_64')
 url='https://tinyproxy.github.io/'
 license=('GPL')
-depends=('glibc' 'esysusers' 'etmpfiles')
+depends=('esysusers' 'etmpfiles' 'glibc')
 makedepends=('gperf')
 backup=('etc/tinyproxy/tinyproxy.conf')
 source=(
@@ -18,11 +19,11 @@ source=(
   'tmpfiles.conf'
   'config.patch'
 )
-sha512sums=('2e3435bbfece3797c11ccce222eef494ed92e00dd82bea2c40a54e454b7e03c8abc8e09b244f2da7192209c39047369439d08974b79eebc996fb3095230d0374'
+sha512sums=('008e43b770f946965d5a3fbad1881859e30b66a3a4a97cf9982e63d81139da7a8f23937601b72f32276166cd170008cafec9231b616fc840f05cae3c1329be35'
             '5b79b2be628445650cd80b1310fa84f8e7b36a9f19291e48061d4f2ff892232df15be27aecbcb0c23cb13d97b1601979dc7781cc8b73ba3ddab7f54219564496'
             '59d1efcc996e94ae684708ef06263c61f17680a776938a90ce145cf6f0243ed253d402cd886dab7c2c287f47dbc6f02f0e34904433e7b6756cfaa18a1b766b4e'
             'd291cdc3eddbab8de0aa69aa7fb2945f5ef683390533dda212e362dcb582900069b262361f46afe07b432536e8aa875b081a1c87451db3ef094b5229e3325252')
-b2sums=('d39fa1986343af60cdfd07c6a049962e646a72874f7058fd082b9758bae3c7bc1a2288103527e0e1054ab098a3a41fc67eb3e08cd160e2bd4bd030e114326a6f'
+b2sums=('ae8f1cc0fcfa3f2a6b239ad1f0f34bf21843cbf85613643b221359904e672d5c28c69bcb6b61f0244c5a3e6fd901b0c24488c3b80a0aa1f95b87ff90b175dc62'
         '701aa231eefe2d657d4d9d1b97cd15a1e58699ab685040ad33e9ff475a70084da557067a9804e0b4671f5cc2cd4b1058721e1c894293c26e1ec1544d278c9782'
         'a4e1cf0c8cbd78360175b8260c7d83885dfc9560a78faa6fc111f8611b6dd43c3cbf9fa62e60f8333cac4d0bededbe048c626d8a85d4f3c6c1bfa1ae249c599e'
         '3e3181a5c626c6138307512d9817cc71d54bcb5f708ba5d38d07e956d898220350ee5442e7d3fbfbce70d2a54fdff04589c7b66aeb61ef353dc810e8d213d8f7')
