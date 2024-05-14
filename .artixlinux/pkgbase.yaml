@@ -1,26 +1,28 @@
 ---
 pkgbase:
   name: gvfs
-  version: 1.54.0-2
+  version: 1.54.0-3
   arch:
     - x86_64
   pkgname:
     - gvfs
-    - gvfs-smb
     - gvfs-afc
-    - gvfs-gphoto2
+    - gvfs-dnssd
     - gvfs-goa
+    - gvfs-google
+    - gvfs-gphoto2
     - gvfs-mtp
     - gvfs-nfs
-    - gvfs-google
     - gvfs-onedrive
+    - gvfs-smb
+    - gvfs-wsdd
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -36,8 +38,19 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.54.0-3
+    packages:
+      - gvfs-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-afc-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-dnssd-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-goa-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-google-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-onedrive-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-smb-1.54.0-3-x86_64.pkg.tar.zst
+      - gvfs-wsdd-1.54.0-3-x86_64.pkg.tar.zst
   world:
     version: 1.54.0-2
     packages:
