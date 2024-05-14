@@ -5,16 +5,17 @@
 # Contributor: Francois Boulogne <fboulogne at april dot org>
 
 pkgname=glances
-pkgver=4.0.1
+pkgver=4.0.2
 pkgrel=1
 pkgdesc='CLI curses-based monitoring tool'
 arch=('any')
 url='https://nicolargo.github.io/glances/'
 license=('LGPL-3.0-or-later')
 makedepends=('python-setuptools' 'python-build' 'python-installer' 'python-wheel')
-depends=('python' 'python-psutil' 'python-future' 'python-defusedxml' 'python-ujson')
+depends=('python' 'python-psutil' 'python-future' 'python-defusedxml' 'python-ujson' 'python-pydantic' 'python-packaging')
 optdepends=('hddtemp: HDD temperature monitoring support'
             'uvicorn: for WebUI / RestFull API'
+            'python-jinja: for WebUI / RestFull API'
             'python-fastapi: for WebUI / RestFull API'
             'python-docker: for the Docker monitoring support'
             'python-matplotlib: for graphical/chart support'
@@ -23,8 +24,8 @@ optdepends=('hddtemp: HDD temperature monitoring support'
             'python-pystache: templating engine'
             'python-prometheus_client: for the Prometheus export module')
 source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz")
-sha512sums=('ed8700fef142af170212c4c92bc9c2c818db94de41ad5eb35cc377a5bb067c6950908d2caac348ad9357f0ca6494fe011310b09147f37f86a9ae40355fbf6a75')
-b2sums=('24d0ba707ba16b6b2944a87485b3a052360162b4ff9f42c22b2f74c5d7fbf46daad5ba2ad4203f1ecb157399c66fea27e4ad3b2b52179b6a688d1667c947421b')
+sha512sums=('e4aac4190b27ad19f4688325b85e0d727441cde4e98de6127b4d831e4dc34b68756a9748ff9fc9264dc4b932734d8b6deb14f0b8e42a6f6b61e276e801d22eec')
+b2sums=('c6925070ef808af3d88c47b431e39f75a0267a5bcf6ca186dcadd2f21b4e41b584149b76b70753080877914443cd474d453dc533845592b5b7f95173c6195f15')
 
 build() {
   cd "glances-${pkgver}"
