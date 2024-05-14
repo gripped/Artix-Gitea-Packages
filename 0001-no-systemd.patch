@@ -1,4 +1,4 @@
-From 66120ef084ab8fd3d05df04c46a23b1b14a7efab Mon Sep 17 00:00:00 2001
+From 472974cd8b0949c9d955592527b6e3490cc701f3 Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
 Date: Sun, 5 May 2024 15:34:35 +0200
 Subject: [PATCH 1/1] no systemd patch
@@ -7,6 +7,7 @@ Subject: [PATCH 1/1] no systemd patch
  Makefile            |  13 +---
  hooks/resume        |   7 --
  hooks/udev          |   6 +-
+ init_functions      |  10 ---
  install/lvm2        |   6 +-
  install/mdadm_udev  |   3 -
  install/resume      |   7 --
@@ -16,7 +17,7 @@ Subject: [PATCH 1/1] no systemd patch
  install/systemd     | 176 --------------------------------------------
  install/udev        |   4 +-
  mkinitcpio          |   2 +-
- 12 files changed, 8 insertions(+), 420 deletions(-)
+ 13 files changed, 8 insertions(+), 430 deletions(-)
  delete mode 100644 install/sd-encrypt
  delete mode 100644 install/sd-shutdown
  delete mode 100644 install/sd-vconsole
@@ -98,6 +99,27 @@ index c6760fc..72ef811 100644
      fi
      # used externally by poll_device()
      # shellcheck disable=SC2034
+diff --git a/init_functions b/init_functions
+index 1260f84..e4456c7 100644
+--- a/init_functions
++++ b/init_functions
+@@ -351,16 +351,6 @@ fsck_root() {
+             err "fatal error invoking fsck"
+         fi
+ 
+-        # ensure that root is going to be mounted rw. Otherwise, systemd
+-        # might fsck the device again. Annoy the user so that they fix this.
+-        if [ "${rwopt:-ro}" != 'rw' ]; then
+-            echo "********************** WARNING **********************"
+-            echo "*                                                   *"
+-            echo "*  The root device is not configured to be mounted  *"
+-            echo "*  read-write! It may be fsck'd again later.        *"
+-            echo "*                                                   *"
+-            echo "*****************************************************"
+-        fi
+     fi
+ }
+ 
 diff --git a/install/lvm2 b/install/lvm2
 index e900f09..8a34cd0 100644
 --- a/install/lvm2
