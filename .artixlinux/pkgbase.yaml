@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bemenu
-  version: 0.6.20-1
+  version: 0.6.21-1
   arch:
     - x86_64
   pkgname:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.20-1
+    version: 0.6.21-1
     packages:
-      - bemenu-0.6.20-1-x86_64.pkg.tar.zst
-      - bemenu-ncurses-0.6.20-1-x86_64.pkg.tar.zst
-      - bemenu-x11-0.6.20-1-x86_64.pkg.tar.zst
-      - bemenu-wayland-0.6.20-1-x86_64.pkg.tar.zst
+      - bemenu-0.6.21-1-x86_64.pkg.tar.zst
+      - bemenu-ncurses-0.6.21-1-x86_64.pkg.tar.zst
+      - bemenu-x11-0.6.21-1-x86_64.pkg.tar.zst
+      - bemenu-wayland-0.6.21-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -58,3 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
