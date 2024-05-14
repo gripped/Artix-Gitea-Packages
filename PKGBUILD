@@ -6,7 +6,7 @@
 pkgname=plasma-workspace
 pkgver=6.0.4
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -149,5 +149,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  rm -fr "$pkgdir"/usr/lib/systemd
+  rm -fr "$pkgdir/usr/lib/systemd"
 }
