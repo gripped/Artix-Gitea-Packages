@@ -19,7 +19,7 @@ url="https://www.mozilla.org/en-US/firefox/enterprise/"
 depends=(gtk3 libxt mime-types dbus-glib ffmpeg nss ttf-font libpulse)
 makedepends=(unzip zip diffutils yasm mesa imake inetutils xorg-server-xvfb
              autoconf2.13 rustup clang llvm jack nodejs cbindgen nasm
-             python lld dump_syms
+             python lld dump_syms python-setuptools
              wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi)
 optdepends=('networkmanager: Location detection via available WiFi networks'
             'libnotify: Notification integration'
