@@ -5,7 +5,7 @@
 # Contributor: Francois Boulogne <fboulogne at april dot org>
 
 pkgname=glances
-pkgver=4.0.2
+pkgver=4.0.4
 pkgrel=1
 pkgdesc='CLI curses-based monitoring tool'
 arch=('any')
@@ -24,8 +24,8 @@ optdepends=('hddtemp: HDD temperature monitoring support'
             'python-pystache: templating engine'
             'python-prometheus_client: for the Prometheus export module')
 source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz")
-sha512sums=('e4aac4190b27ad19f4688325b85e0d727441cde4e98de6127b4d831e4dc34b68756a9748ff9fc9264dc4b932734d8b6deb14f0b8e42a6f6b61e276e801d22eec')
-b2sums=('c6925070ef808af3d88c47b431e39f75a0267a5bcf6ca186dcadd2f21b4e41b584149b76b70753080877914443cd474d453dc533845592b5b7f95173c6195f15')
+sha512sums=('d1294da7341e46b3187835817284b2ffbc277b23ecfebc3eb53b292638f6b9d9239209292aeb27e589268991e02a4b44aabd08414567f9f517eb3baebd3e4fbb')
+b2sums=('ad387f887a3f5095b8c6dea2abc676007caa7eb65dbaec7aef38f1f36602c44dea49c8bc58ef9d1745292a383c2247c08c6a6028ddf66fb9f1c5d4aeb8615a78')
 
 build() {
   cd "glances-${pkgver}"

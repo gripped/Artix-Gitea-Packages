@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: glances
-  version: 4.0.2-1
+  version: 4.0.4-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 4.0.2-1
+    version: 4.0.4-1
     packages:
-      - glances-4.0.2-1-any.pkg.tar.zst
+      - glances-4.0.4-1-any.pkg.tar.zst
   world:
     version: 3.4.0.5-3
     packages:
