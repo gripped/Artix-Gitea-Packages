@@ -36,9 +36,6 @@ prepare() {
   mkdir -p mozbuild
   cd firefox-$pkgver
 
-  # Unbreak python disutil usage
-  patch -Np1 -i ../shutil.patch
-
   echo "${noextract[@]}"
 
   echo -n "$_google_api_key" >google-api-key
