@@ -2,13 +2,13 @@
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=fastfetch
-pkgver=2.9.1
+pkgver=2.12.0
 pkgrel=1
 pkgdesc="Like Neofetch, but much faster because written in C"
 arch=('x86_64')
 url="https://github.com/fastfetch-cli/fastfetch"
 license=('MIT')
-depends=('glibc')
+depends=('glibc' 'yyjson')
 makedepends=(
   'chafa'
   'cmake'
@@ -50,18 +50,17 @@ optdepends=(
   'libdrm: Displays detection'
 )
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('f22bb197095ea80c4aa17e1d4b5e0dd6e79234f4a18f427691c7e6f93a812ac8')
+sha256sums=('0f6d797ae0c4dd14d09f18ee3f51f53c29d820d8fd65066280938efed414af9d')
 
 build() {
 	cmake -B build -S "${pkgname}-${pkgver}" \
 		-DCMAKE_BUILD_TYPE='None' \
 		-DCMAKE_INSTALL_PREFIX='/usr' \
-		-DCMAKE_BUILD_TYPE='RelWithDebInfo' \
 		-DBUILD_TESTS='ON' \
 		-DENABLE_SQLITE3='OFF' \
 		-DENABLE_RPM='OFF' \
 		-DENABLE_IMAGEMAGICK6='OFF' \
-		-DENABLE_DDCUTIL='ON' \
+		-DENABLE_SYSTEM_YYJSON='ON' \
 		-Wno-dev
 	cmake --build build
 }
