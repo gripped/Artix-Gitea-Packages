@@ -40,9 +40,9 @@ prepare() {
   cd firefox-$pkgver
 
   # Unbreak distutils
-  patch -Np1 -i 18d19413472f.patch
-  patch -Np1 -i 6af7194e2778.patch
-  patch -Np1 -i b1cc62489fae.patch
+  patch -Np1 -i ../18d19413472f.patch
+  patch -Np1 -i ../6af7194e2778.patch
+  patch -Np1 -i ../b1cc62489fae.patch
 
   echo "${noextract[@]}"
 
