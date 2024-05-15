@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kotlin
-  version: 1.9.23-1
+  version: 1.9.24-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.9.23-1
+    version: 1.9.24-1
     packages:
-      - kotlin-1.9.23-1-any.pkg.tar.zst
+      - kotlin-1.9.24-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
