@@ -19,7 +19,7 @@ url="https://www.mozilla.org/en-US/firefox/enterprise/"
 depends=(gtk3 libxt mime-types dbus-glib ffmpeg nss ttf-font libpulse)
 makedepends=(unzip zip diffutils yasm mesa imake inetutils xorg-server-xvfb
              autoconf2.13 rustup clang llvm jack nodejs cbindgen nasm
-             python lld dump_syms python-setuptools
+             python lld dump_syms python-distutils-extra
              wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi)
 optdepends=('networkmanager: Location detection via available WiFi networks'
             'libnotify: Notification integration'
@@ -29,8 +29,7 @@ optdepends=('networkmanager: Location detection via available WiFi networks'
             'xdg-desktop-portal: Screensharing with Wayland')
 options=(!emptydirs !makeflags !strip !lto !debug)
 source=(https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz{,.asc}
-        $pkgname.desktop identity-icons-brand.svg
-        shutil.patch)
+        $pkgname.desktop identity-icons-brand.svg)
 validpgpkeys=('14F26682D0916CDD81E37B6D61B7B526D98F0353') # Mozilla Software Releases <release@mozilla.com>
 
 prepare() {
@@ -433,8 +432,7 @@ sha512sums=('0f3a87c99fb008088afd509d9259f893fdd44ea6bf6a5e69806fefb8d355415e81b
             '3b2a1eb7a96921612af1d1476a487cacb27c413144189ca143ced2a5d463f16bcfb4a1ff3f2f190450f303ade026131d4d987d019145055c8a5027cf2e697ece'
             'e8e3c4f7e9bbfde77f3f70e889c4e393a016131258d47da89d75f6f8ee2ef78284ea966cd6abb61041f21b96d4d3891eaa7b0cadad8fe49d3ff220cc09416a88'
             '001b395dfa0d2776c28fd9cf8e6296637a0530ad097e1b549c088670aa798336b25d3fe4f9f93b13e398404ee74ae65d8a479cbed23e49f0879a4dae7be10053'
-            '79d7473f7ff7458f8570c0fc3fa8e192c9b355c32c6df9f8c4b2ad626e3616d56ce1d83792e53a275d83b977e8f292b56083f50154ecddd3056be7140af60eee'
-            '029c0b0682de91445a784bc0b5bfc8813b506ccfacf65ce6f33703519a8491bfd9bcfc76815e8e8718b67ccb78479cb6328538850c6ce67b1a9670d7f6f7abc1')
+            '79d7473f7ff7458f8570c0fc3fa8e192c9b355c32c6df9f8c4b2ad626e3616d56ce1d83792e53a275d83b977e8f292b56083f50154ecddd3056be7140af60eee')
 
 
 # vim:set sw=2 et:
