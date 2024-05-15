@@ -18,7 +18,7 @@ license=(MPL GPL LGPL)
 url="https://www.mozilla.org/en-US/firefox/enterprise/"
 depends=(gtk3 libxt mime-types dbus-glib ffmpeg nss ttf-font libpulse)
 makedepends=(unzip zip diffutils yasm mesa imake inetutils xorg-server-xvfb
-             autoconf2.13 rust clang llvm jack nodejs cbindgen nasm
+             autoconf2.13 rustup clang llvm jack nodejs cbindgen nasm
              python lld dump_syms
              wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi)
 optdepends=('networkmanager: Location detection via available WiFi networks'
@@ -82,8 +82,7 @@ END
 build() {
   cd firefox-$pkgver
 
-  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
-  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export RUSTUP_TOOLCHAIN=1.77
 
   export MOZ_NOSPAM=1
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
