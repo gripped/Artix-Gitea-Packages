@@ -29,12 +29,16 @@ optdepends=('networkmanager: Location detection via available WiFi networks'
             'xdg-desktop-portal: Screensharing with Wayland')
 options=(!emptydirs !makeflags !strip !lto !debug)
 source=(https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz{,.asc}
-        $pkgname.desktop identity-icons-brand.svg)
+        $pkgname.desktop identity-icons-brand.svg
+        shutil.patch)
 validpgpkeys=('14F26682D0916CDD81E37B6D61B7B526D98F0353') # Mozilla Software Releases <release@mozilla.com>
 
 prepare() {
   mkdir -p mozbuild
   cd firefox-$pkgver
+
+  # Unbreak python disutil usage
+  patch -Np1 -i ../shutil.patch
 
   echo "${noextract[@]}"
 
@@ -334,6 +338,7 @@ sha512sums=('0f3a87c99fb008088afd509d9259f893fdd44ea6bf6a5e69806fefb8d355415e81b
             'SKIP'
             '4b53ee133a4ecaf068e240f6a05a1ebf4b788d67fe9141cc5b3561e1128907c8c3edb49bf2b24ba89daf1552f94ac48adf682dbe7dd070cffe7f78d98f2b3338'
             'b579b73176c72a5ecf36e3f63bba08fdb8041ae99d54e5cab906660fed6a9cf2311f7ca1ec1649e451cc6d5a4b1e6060b974b1d7befe9c8df3c5a89c50383c17'
+            'f5bb42ec615d7307188b8e7479ef82495ebaded730afcf17eeff828c1530109782de321d9ba686526b0b52d003670bdac191ee54d5acc59b0c56f58afa993227'
             '02bb5ff090eae756f5c6a88fa1958e278bd245e3c63cd7ca6203f1494d80d603316e45972098a19f1ae60ac5b9b609cfebbe629c9d2d7cd90739dcbe024f3178'
             '4698b724b44df392ae3318ad53e2b59dfea743db9a2e98c6c35237e2dd246bfd6275a6938edecb38b7bcae19789ddde37c4d3f2f2b2a39192b43bebd258aaf87'
             'aa99343d32625e50cfb9494e494840bfc18d46391b8b43d004f2741bc9fe89dec45ea8d5d35fed4a21b6073608878a62b9fa0330418777a331922e7cb934c475'
