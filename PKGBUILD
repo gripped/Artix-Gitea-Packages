@@ -8,7 +8,7 @@ pkgname=(
 	wireplumber-docs
 )
 pkgver=0.5.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
 arch=(x86_64)
@@ -93,7 +93,6 @@ package_wireplumber() {
 	)
 	provides=(pipewire-session-manager)
 	conflicts=(pipewire-media-session)
-	install=wireplumber.install
 
 	meson install -C build --destdir "$pkgdir"
 
