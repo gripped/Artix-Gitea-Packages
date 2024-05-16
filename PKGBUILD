@@ -3,7 +3,7 @@
 
 pkgname=gnome-session
 pkgver=46.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The GNOME Session Handler"
 url="https://gitlab.gnome.org/GNOME/gnome-session"
 arch=(x86_64)
@@ -11,11 +11,11 @@ license=(GPL-2.0-or-later)
 depends=(
   bash
   dconf
-  elogind
   gcc-libs
   glib2
   glibc
   gnome-desktop
+  gnome-keyring
   gsettings-desktop-schemas
   gtk3
   json-glib
@@ -26,6 +26,8 @@ depends=(
   libx11
   libxcomposite
   libxtst
+  libelogind
+  xdg-desktop-portal-gnome
 )
 makedepends=(
   docbook-xsl
