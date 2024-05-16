@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pyrfc3339
-  version: 1.1-12
+  version: 1.1-13
   arch:
     - any
   pkgname:
     - python-pyrfc3339
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.1-12
+    version: 1.1-13
     packages:
-      - python-pyrfc3339-1.1-12-any.pkg.tar.zst
+      - python-pyrfc3339-1.1-13-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
