@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-html-parser
-  version: 3.81-2
+  version: 3.82-1
   arch:
     - x86_64
   pkgname:
     - perl-html-parser
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.81-2
+    version: 3.82-1
     packages:
-      - perl-html-parser-3.81-2-x86_64.pkg.tar.zst
+      - perl-html-parser-3.82-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
