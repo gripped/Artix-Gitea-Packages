@@ -5,8 +5,8 @@ pkgname=(
   wpewebkit
   wpewebkit-docs
 )
-pkgver=2.44.1
-pkgrel=2
+pkgver=2.44.2
+pkgrel=1
 pkgdesc="Embeddable web content engine"
 url="https://wpewebkit.org"
 arch=(x86_64)
@@ -66,9 +66,9 @@ makedepends=(
 source=(
   $url/releases/wpewebkit-$pkgver.tar.xz{,.asc}
 )
-sha256sums=('2c9fbf4fcf8884d34102283e2b008ce0b0bc2cf07de78f564a8b34347e7bc19b'
+sha256sums=('2a3d23cb4fb071ca0db3a09c5a85f27b8bcc6094a2026d3b7407bed4f99218f7'
             'SKIP')
-b2sums=('15c8a2a47d5dc836cbbb1deec81f52165f32ff7bb35332b7d03eb93d86fb548a165b76a26e233cffe5c5d31a495e202bf3a3ad653f81d68b631504227abec95c'
+b2sums=('763340adf2031f512137982e4cded0214dff90652571ae32e8badcda0c108d83b8a35588a3050c161ab0bf5cee94a7ba91c9953a22cc87450826bfbf4ac2d012'
         'SKIP')
 validpgpkeys=(
   D7FCF61CF9A2DEAB31D81BD3F3D322D0EC4582C3 # Carlos Garcia Campos <cgarcia@igalia.com>
