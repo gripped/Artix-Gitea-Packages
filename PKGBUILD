@@ -8,7 +8,7 @@ pkgname=(
   lib32-glib2
 )
 pkgver=2.80.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Low level core library - 32-bit"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
