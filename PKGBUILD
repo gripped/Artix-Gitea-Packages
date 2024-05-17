@@ -1,15 +1,17 @@
-# Maintainer: Alexander Rødseth <rodseth@gmail.com>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander Rødseth <rodseth@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
 # Contributor: Daniele Basso <d dot bass05 at proton dot me>
 # Contributor: T. Jameson Little <t.jameson.little at gmail dot com>
 # Contributor: Usagi Ito <usagi@WonderRabbitProject.net>
 # Contributor: siasia <http://pastebin.com/qsBEmNCw>
 # Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
+# Contributor: The one with the braid <info@braid.business>
 
 pkgname=dart
-pkgver=3.3.4
-_commit=d70d99a911b3316ca0d442caaf24fe57afe59893 # https://github.com/dart-lang/sdk/commits/stable/
+pkgver=3.4.0
+_commit=3ce1c7c03b61eccf54312981cc4a5f1b4782809d # https://github.com/dart-lang/sdk/commits/stable/
 pkgrel=1
 pkgdesc='The dart programming language SDK'
 arch=('x86_64')
@@ -30,7 +32,7 @@ source=(
   "git+https://chromium.googlesource.com/chromium/tools/depot_tools.git"
   "DEPS.patch"
 )
-sha256sums=('3271d79a9861d01e157cd368bf28acf7b7f664a821c984b67dfd88ff406d6881'
+sha256sums=('727ae11757960ddbe1b3e43c0247c1f422eb1ddb464f50d6561d1f2e1508670b'
             'SKIP'
             'db6576a70c6719e26795b9824546058b79fefa64158c1002d36546d826084403')
 
