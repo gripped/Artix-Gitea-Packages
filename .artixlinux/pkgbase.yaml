@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-python-pkcs11
-  version: 0.7.0-7
+  version: 0.7.0-8
   arch:
     - x86_64
   pkgname:
     - python-python-pkcs11
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.0-7
+    version: 0.7.0-8
     packages:
-      - python-python-pkcs11-0.7.0-7-x86_64.pkg.tar.zst
+      - python-python-pkcs11-0.7.0-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
