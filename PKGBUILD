@@ -1,11 +1,12 @@
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
-# Maintainer: Santiago Torres-Arias <santiago@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Santiago Torres-Arias <santiago@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Sébastien "Seblu" Luttringer
 # Contributor: Iwan Timmer <irtimmer@gmail.com>
 
 pkgname=containerd
-pkgver=1.7.16
+pkgver=1.7.17
 pkgrel=1
 pkgdesc='An open and reliable container runtime'
 url='https://containerd.io/'
@@ -16,7 +17,7 @@ arch=('x86_64')
 license=("Apache-2.0")
 source=("git+https://github.com/containerd/containerd.git#tag=v${pkgver}?signed")
 validpgpkeys=("8C7A111C21105794B0E8A27BF58C5D0A4405ACDB") # Derek McGowan
-sha256sums=('c26d6cbb7df0fe7842160e5cd8bcc9bce6770f5b5bcd41e21630ad3768adafae')
+sha256sums=('bea8c99a60d57b71818ca586e7052b230f1634e743da184a1af13e5381e4ab29')
 
 
 build() {
