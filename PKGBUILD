@@ -6,7 +6,7 @@ _name=FreeRDP
 pkgname=freerdp
 pkgver=3.5.1
 _libver=${pkgver/.*/}
-pkgrel=1
+pkgrel=2
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -71,26 +71,23 @@ provides=(
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
   0001-Use-webkit2gtk-4.1.patch
-  0002-image.patch
 )
 sha512sums=('28082ca5a714362c684f2c551b0ac5823c1708d8e929db93f0ab3911601d3b0d724bbdc06eed517542fb4bd957bb61fcdd00e34c0bda017f0019d52d59cb6b07'
-            '0bfdf8825f586a548eaef309f64fb50ea9e2598592f778aa835bbec1a0600d715b8fb28f5950aaeb5ef981a33d5f9f3f39f4fd1800bdf9e5630d9925a9fbab04'
-            'fd1f0eafe5c533e3068f54fd7d8321c543d50544c5217322d01ebbeaa00886bedbb2180791ecd080ae96b1ae2db7484b2ff629f4912decef2be4560d991c613a')
+            '0bfdf8825f586a548eaef309f64fb50ea9e2598592f778aa835bbec1a0600d715b8fb28f5950aaeb5ef981a33d5f9f3f39f4fd1800bdf9e5630d9925a9fbab04')
 b2sums=('7f243593c2da1fb8cef483cd423c3e4d1127cac16ab857eaf7d5c222deaeca6657f32010fd40e90f1b47bd925e493848a3ab6b6b1e9db01a5355d0177c42953a'
-        'bbee3975cdcd0ce421ecd8825d1b6dbdbd1565b612a51e7d9423e79226579587031b5ebe7e5251c88015e9047cd35818bad338a7048acfddac137ffe23197b71'
-        '3661d342c6e2a447ee30bb098dc03ab4549d622b8994d037e9ee3cb5e8bb54a8e9e72fe39fb80954213c679fb09f937a703f3e6b65ca4d6bea4f24b0d23a08cc')
+        'bbee3975cdcd0ce421ecd8825d1b6dbdbd1565b612a51e7d9423e79226579587031b5ebe7e5251c88015e9047cd35818bad338a7048acfddac137ffe23197b71')
 
 prepare() {
   cd $_name-$pkgver
 
   # Use the newer WebKit
   patch -Np1 < ../0001-Use-webkit2gtk-4.1.patch
-  patch -Np1 < ../0002-image.patch
 }
 
 build() {
-
-  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  # gcc14 buildfix
+  export CFLAGS+=" -Wno-incompatible-pointer-types"
+  export CXXFLAGS+=" -Wno-incompatible-pointer-types"
 
   local cmake_options=(
     -B build
