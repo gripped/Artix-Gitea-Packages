@@ -70,8 +70,8 @@ pkgbase:
     - thunderbird-i18n-zh-cn
     - thunderbird-i18n-zh-tw
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -106,6 +106,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
     version: 115.11.0-2
     packages:
       - thunderbird-115.11.0-2-x86_64.pkg.tar.zst
@@ -172,9 +175,6 @@ repos:
       - thunderbird-i18n-vi-115.11.0-2-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-cn-115.11.0-2-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-tw-115.11.0-2-x86_64.pkg.tar.zst
-  galaxy-gremlins:
-    version: null
-    packages: []
   galaxy:
     version: 115.11.0-1
     packages:
