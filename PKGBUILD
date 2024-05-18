@@ -1,4 +1,5 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: James Rayner <james@archlinux.org>
@@ -6,7 +7,7 @@
 
 pkgname=conky
 pkgver=1.20.2
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Light-weight system monitor for X, Wayland, and other things, too'
 url='https://github.com/brndnmtthws/conky'
 license=(
