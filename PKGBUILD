@@ -3,7 +3,7 @@
 
 pkgname=qtermwidget
 pkgver=2.0.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A terminal widget for Qt, used by QTerminal"
 arch=("x86_64")
 url="https://github.com/lxqt/$pkgname"
