@@ -6,14 +6,13 @@
 
 pkgname=neovim
 pkgver=0.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Fork of Vim aiming to improve user experience, plugins, and GUIs'
 arch=('x86_64')
 url='https://neovim.io'
-license=('custom:neovim')
+license=('Apache-2.0' 'LicenseRef-vim')
 depends=(
   'libluv'
-  'libtermkey'
   'libuv'
   'libvterm>0.1.4'
   'lua51-lpeg'
