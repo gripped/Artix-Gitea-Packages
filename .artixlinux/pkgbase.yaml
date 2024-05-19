@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: qterminal
-  version: 2.0.0-1
+  version: 2.0.0-1.1
   arch:
     - x86_64
   pkgname:
     - qterminal
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,7 +50,7 @@ repos:
     packages:
       - qterminal-2.0.0-1-x86_64.pkg.tar.zst
   galaxy:
-    version: 1.4.0-1
+    version: 2.0.0-1.1
     packages:
-      - qterminal-1.4.0-1-x86_64.pkg.tar.zst
+      - qterminal-2.0.0-1.1-x86_64.pkg.tar.zst
 team: galaxy

@@ -3,7 +3,7 @@
 
 pkgname=qterminal
 pkgver=2.0.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A lightweight Qt-based terminal emulator"
 arch=("x86_64")
 groups=("lxqt")
