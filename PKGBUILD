@@ -1,9 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
 
 pkgname=libmemcached-awesome
 pkgver=1.1.4
-pkgrel=2
+pkgrel=3
 pkgdesc="C/C++ client library and tools for the memcached server"
 arch=('x86_64')
 url="https://awesomized.github.io/libmemcached/"
