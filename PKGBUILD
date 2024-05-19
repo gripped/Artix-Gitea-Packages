@@ -2,9 +2,8 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=125.0.2
+pkgver=126.0
 pkgrel=1
-_pkgdlrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
 arch=(x86_64 aarch64)
@@ -70,14 +69,16 @@ _arch_git_blob=https://raw.githubusercontent.com/archlinux/svntogit-packages
 
 install='librewolf.install'
 source=(
-  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${_pkgdlrel}/librewolf-${pkgver}-${_pkgdlrel}.source.tar.gz # {,.sig} sig files are currently broken, it seems
+  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
 )
 
-sha256sums=('aafe820d94a535728bc4d247a120f3ceed2d6df49b044c60b231009ab06a1f27'
+sha256sums=('545e4d26522c4ed1a669814340dc8fee7ca8d60452a07a91f30ec28198ec072d'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
+
+validpgpkeys=('034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3') # maltej(?)
 
 # change this to false if you do not want to run a PGO build for aarch64 or x86_64
 _build_profiled_aarch64=true
@@ -85,7 +86,7 @@ _build_profiled_x86_64=true
 
 prepare() {
   mkdir -p mozbuild
-  cd librewolf-$pkgver-$_pkgdlrel
+  cd librewolf-$pkgver-$pkgrel
 
   mv mozconfig ../mozconfig
 
@@ -159,7 +160,7 @@ fi
 
 
 build() {
-  cd librewolf-$pkgver-$_pkgdlrel
+  cd librewolf-$pkgver-$pkgrel
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -246,7 +247,7 @@ END
 }
 
 package() {
-  cd librewolf-$pkgver-$_pkgdlrel
+  cd librewolf-$pkgver-$pkgrel
   DESTDIR="$pkgdir" ./mach install
 
   # mv ${pkgdir}/usr/local/lib ${pkgdir}/usr/lib/
