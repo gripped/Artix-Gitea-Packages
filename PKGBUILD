@@ -1,19 +1,22 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: MatMoul <matmoul at the google email domain which is .com>
 
+_url=https://gitea.artixlinux.org/artoo/octopi
+
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
-pkgver=0.15.0
-pkgrel=15
+pkgver=0.16.0
+pkgrel=1
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 url="https://tintaescura.com/projects/octopi/"
 makedepends=(
     qt6-tools
+    qt6-5compat
+    qt-sudo
     cmake
     kstatusnotifieritem
-    sudo
     alpm-octopi-utils
     pacman
     pacman-contrib
@@ -23,33 +26,25 @@ depends=(
     glibc
     gcc-libs
     qt6-base
-    qt6-5compat
+#     qt6-5compat
     qtermwidget
 )
 source=(
     git+https://github.com/aarnt/octopi.git#tag=v$pkgver
-    kf6-fix.patch::https://gitea.artixlinux.org/artoo/octopi/commit/2bc37ecd570baaf0e69e878c60a93993136da40d.patch
-    window.patch::https://gitea.artixlinux.org/artoo/octopi/commit/f0b15ef621f21eb3cad1c18d0b928d37eb732b97.patch
-    notifier-fix.patch::https://github.com/aarnt/octopi/commit/64e72f06c9ae9c844b92977e036865d90339b87d.patch
+    octopi-kf6-notifier-fix.patch::$_url/commit/43b96933163c2699da3150c01a155ee48f35d5d8.patch
 )
-sha256sums=('SKIP'
-            'bdd9fd77d254894147fb68962574977e4a7944304e585f8fb792a98b27c5b246'
-            '7eb66605f838ac78848fe067dded279c2d45ba0e5f1a8295cf07c0a3b333e702'
-            'e4f07a252fb966ddc703692d41d3e259f181efbe5ba5eeff0236fac954b0672f')
+sha256sums=('eab0b6cdbc2470ccd91ed589363f231d94879a07a4d1e14d14de5b48edf0f096'
+            '9f0ac3c72e93666670fdb767280c43e5f7518e97e5ecb8778ebf4ffb28da9867')
 
 prepare() {
     cd "$pkgbase"
-    git apply ../kf6-fix.patch
-    git apply ../window.patch
-    git apply ../notifier-fix.patch
+    git apply ../octopi-kf6-notifier-fix.patch
     cp resources/images/octopi_green.png resources/images/octopi.png
 }
 
 build() {
     cmake -S "$pkgbase" -B build \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DUSE_QTERMWIDGET6=ON \
-        -DUSE_KF6NOTIFICATIONS=ON
+        -DCMAKE_INSTALL_PREFIX=/usr
     cmake --build build
 }
 
@@ -58,16 +53,11 @@ package_octopi() {
         alpm-octopi-utils libalpm_octopi_utils.so
         pacman libalpm.so
         pacman-contrib
-        sudo
+        qt-sudo
     )
     optdepends=(
         'octopi-notifier-frameworks: Notifier for Octopi with Knotifications support'
-        # 'pacmanlogviewer: to view pacman log files'
-        # 'pacaur: for AUR support'
-        # 'paru: for AUR support'
-        # 'pikaur: for AUR support'
         'trizen: for AUR support'
-        # 'yay: for AUR support'
     )
     provides=(
         'octopi-repoeditor'
