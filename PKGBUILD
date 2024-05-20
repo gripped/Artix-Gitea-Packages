@@ -1,9 +1,10 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 
 pkgname=arrow
 pkgver=16.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Columnar in-memory analytics layer for big data."
 arch=(x86_64)
 url="https://arrow.apache.org"
