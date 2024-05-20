@@ -6,7 +6,7 @@ _url=https://gitea.artixlinux.org/artoo/octopi
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.16.0
-pkgrel=1
+pkgrel=2
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -32,13 +32,16 @@ depends=(
 source=(
     git+https://github.com/aarnt/octopi.git#tag=v$pkgver
     octopi-kf6-notifier-fix.patch::$_url/commit/43b96933163c2699da3150c01a155ee48f35d5d8.patch
+    octopi-qt-sudo-path-fix.patch::$_url/commit/f3ff2e68123b3aaf9885116e4543324e6f37fa80.patch
 )
 sha256sums=('eab0b6cdbc2470ccd91ed589363f231d94879a07a4d1e14d14de5b48edf0f096'
-            '9f0ac3c72e93666670fdb767280c43e5f7518e97e5ecb8778ebf4ffb28da9867')
+            '9f0ac3c72e93666670fdb767280c43e5f7518e97e5ecb8778ebf4ffb28da9867'
+            'd0f8e977faab34f63496993c8401a16cd07a8f189532f397b67993a55035e46d')
 
 prepare() {
     cd "$pkgbase"
     git apply ../octopi-kf6-notifier-fix.patch
+    git apply ../octopi-qt-sudo-path-fix.patch
     cp resources/images/octopi_green.png resources/images/octopi.png
 }
 
