@@ -31,7 +31,7 @@ provides=(
   libturbojpeg.so
 )
 source=(
-  $_url/releases/download/$pkgver/$_name-$pkgver.tar.gz{,.sig}
+  $_url/releases/download/$pkgver/$_name-$pkgver.tar.gz
 )
 sha512sums=('7c3a6660e7a54527eaa40929f5cc3d519842ffb7e961c32630ae7232b71ecaa19e89dbf5600c61038f0c5db289b607c2316fe9b6b03d482d770bcac29288d129'
             'SKIP')
