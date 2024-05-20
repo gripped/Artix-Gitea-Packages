@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ldc
-  version: 3:1.37.0-1
+  version: 3:1.38.0-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3:1.37.0-1
+    version: 3:1.38.0-1
     packages:
-      - ldc-3:1.37.0-1-x86_64.pkg.tar.zst
-      - liblphobos-3:1.37.0-1-x86_64.pkg.tar.zst
+      - ldc-3:1.38.0-1-x86_64.pkg.tar.zst
+      - liblphobos-3:1.38.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
