@@ -33,10 +33,8 @@ provides=(
 source=(
   $_url/releases/download/$pkgver/$_name-$pkgver.tar.gz
 )
-sha512sums=('7c3a6660e7a54527eaa40929f5cc3d519842ffb7e961c32630ae7232b71ecaa19e89dbf5600c61038f0c5db289b607c2316fe9b6b03d482d770bcac29288d129'
-            'SKIP')
-b2sums=('9d141dadd0dce970bf857b51352c57a8e15180438abd7d6d66f9dfd24e23889add8c6c89120b84026e40ab61611516b0567984bd1db37e9c45b41917cf32e9a6'
-        'SKIP')
+sha512sums=('7c3a6660e7a54527eaa40929f5cc3d519842ffb7e961c32630ae7232b71ecaa19e89dbf5600c61038f0c5db289b607c2316fe9b6b03d482d770bcac29288d129')
+b2sums=('9d141dadd0dce970bf857b51352c57a8e15180438abd7d6d66f9dfd24e23889add8c6c89120b84026e40ab61611516b0567984bd1db37e9c45b41917cf32e9a6')
 validpgpkeys=('0338C8D8D9FDA62CF9C421BD7EC2DBB6F4DBF434') # The libjpeg-turbo Project (Signing key for official binaries) <information@libjpeg-turbo.org>
 
 build() {
