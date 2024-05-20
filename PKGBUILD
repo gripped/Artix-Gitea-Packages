@@ -1,11 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 _name=kded
 pkgname=${_name}5
-pkgver=5.115.0
+pkgver=5.116.0
 pkgrel=1
 pkgdesc='Extensible deamon for providing system level services'
 arch=(x86_64)
@@ -17,7 +16,7 @@ conflicts=("$_name<5.111")
 replaces=("$_name<5.111")
 groups=(kf5)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$_name-$pkgver.tar.xz{,.sig})
-sha256sums=('8ac22a0031b3fc60c2f2b75db529afef879b6aa10cd882b2fee4c2494baf23b3'
+sha256sums=('5cb67255f866ad765a88a091ad864e4fa83c7bd8b59fa96717817f448e6fa03d'
             'SKIP')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
 
@@ -30,6 +29,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  #remove systemd service   <<==== Not needed for kded-5.102.0-1
-  rm -r $pkgdir/usr/lib/systemd
+  rm -fr "$pkgdir"/usr/lib/systemd
 }
