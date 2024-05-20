@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cjson
-  version: 1.7.17-1
+  version: 1.7.18-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.17-1
+    version: 1.7.18-1
     packages:
-      - cjson-1.7.17-1-x86_64.pkg.tar.zst
+      - cjson-1.7.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
