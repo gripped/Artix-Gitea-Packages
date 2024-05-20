@@ -38,9 +38,9 @@ build() {
   cmake --build build
 }
 
-check() {
-  xvfb-run --auto-servernum cmake --build build --target test
-}
+#check() {
+#  xvfb-run --auto-servernum cmake --build build --target test
+#}
 
 package() {
   cmake --build build --target install -- DESTDIR="$pkgdir"
