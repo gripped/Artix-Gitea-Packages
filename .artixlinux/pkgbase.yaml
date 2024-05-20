@@ -1,13 +1,12 @@
 ---
 pkgbase:
   name: linux-tools
-  version: 6.7-3
+  version: 6.9-1
   arch:
     - x86_64
   pkgname:
     - bootconfig
     - bpf
-    - cgroup_event_listener
     - cpupower
     - hyperv
     - linux-tools-meta
@@ -18,11 +17,11 @@ pkgbase:
     - x86_energy_perf_policy
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,19 +40,18 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.7-3
+    version: 6.9-1
     packages:
-      - bootconfig-6.7-3-x86_64.pkg.tar.zst
-      - bpf-6.7-3-x86_64.pkg.tar.zst
-      - cgroup_event_listener-6.7-3-x86_64.pkg.tar.zst
-      - cpupower-6.7-3-x86_64.pkg.tar.zst
-      - hyperv-6.7-3-x86_64.pkg.tar.zst
-      - linux-tools-meta-6.7-3-x86_64.pkg.tar.zst
-      - perf-6.7-3-x86_64.pkg.tar.zst
-      - tmon-6.7-3-x86_64.pkg.tar.zst
-      - turbostat-6.7-3-x86_64.pkg.tar.zst
-      - usbip-6.7-3-x86_64.pkg.tar.zst
-      - x86_energy_perf_policy-6.7-3-x86_64.pkg.tar.zst
+      - bootconfig-6.9-1-x86_64.pkg.tar.zst
+      - bpf-6.9-1-x86_64.pkg.tar.zst
+      - cpupower-6.9-1-x86_64.pkg.tar.zst
+      - hyperv-6.9-1-x86_64.pkg.tar.zst
+      - linux-tools-meta-6.9-1-x86_64.pkg.tar.zst
+      - perf-6.9-1-x86_64.pkg.tar.zst
+      - tmon-6.9-1-x86_64.pkg.tar.zst
+      - turbostat-6.9-1-x86_64.pkg.tar.zst
+      - usbip-6.9-1-x86_64.pkg.tar.zst
+      - x86_energy_perf_policy-6.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
