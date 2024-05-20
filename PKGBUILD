@@ -5,7 +5,7 @@
 
 pkgname=ncurses
 pkgver=6.5
-pkgrel=1
+pkgrel=2
 pkgdesc='System V Release 4.0 curses emulation library'
 arch=(x86_64)
 url='https://invisible-island.net/ncurses/ncurses.html'
@@ -26,7 +26,10 @@ provides=(
   libpanelw.so
   libncursesw.so
 )
-replaces=(alacritty-terminfo)
+replaces=(
+  alacritty-terminfo
+  wezterm-terminfo
+)
 source=(
   $pkgname::git+https://github.com/ThomasDickey/ncurses-snapshots.git?signed#tag=v${pkgver/./_}
   $pkgname-6.3-libs.patch
