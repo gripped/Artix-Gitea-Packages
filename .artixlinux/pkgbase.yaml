@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qtermwidget
-  version: 2.0.0-1.2
+  version: 2.0.0-1.3
   arch:
     - x86_64
   pkgname:
     - qtermwidget
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.0.0-1.3
+    packages:
+      - qtermwidget-2.0.0-1.3-x86_64.pkg.tar.zst
   galaxy:
     version: 2.0.0-1.2
     packages:

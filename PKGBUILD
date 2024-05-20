@@ -3,7 +3,7 @@
 
 pkgname=qtermwidget
 pkgver=2.0.0
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="A terminal widget for Qt, used by QTerminal"
 arch=("x86_64")
 url="https://github.com/lxqt/$pkgname"
@@ -16,6 +16,9 @@ makedepends=("lxqt-build-tools"
 optdepends=(
   'python: PyQt bindings'
 )
+provides=(qtermwidget-qt6)
+conflicts=(qtermwidget-qt6)
+replaces=(qtermwidget-qt6)
 source=(
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
