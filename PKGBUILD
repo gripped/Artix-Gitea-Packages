@@ -1,9 +1,10 @@
-# Maintainer: Christian Hesse <mail@eworm.de>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
 
 pkgname=tmux
 pkgver=3.4
-pkgrel=7
+pkgrel=8
 pkgdesc='Terminal multiplexer'
 url='https://github.com/tmux/tmux/wiki'
 arch=('x86_64')
