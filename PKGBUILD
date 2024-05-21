@@ -6,7 +6,7 @@
 pkgname=mpv
 epoch=1
 pkgver=0.38.0
-pkgrel=2
+pkgrel=3
 pkgdesc='a free, open source, and cross-platform media player'
 arch=('x86_64')
 license=('GPL-2.0-or-later AND LGPL-2.1-or-later')
@@ -23,8 +23,7 @@ depends=('alsa-lib' 'libasound.so' 'desktop-file-utils' 'ffmpeg' 'libavcodec.so'
          'openal' 'uchardet' 'vapoursynth' 'vulkan-icd-loader' 'wayland' 'zlib')
 makedepends=('git' 'meson' 'python-docutils' 'ladspa' 'wayland-protocols'
              'ffnvcodec-headers' 'vulkan-headers')
-optdepends=('yt-dlp: for video-sharing websites playback'
-            'youtube-dl: for video-sharing websites playback')
+optdepends=('yt-dlp: for video-sharing websites playback')
 provides=('libmpv.so')
 options=('!emptydirs')
 validpgpkeys=('145077D82501AA20152CACCE8D769208D5E31419') # sfan5 <sfan5@live.de>
