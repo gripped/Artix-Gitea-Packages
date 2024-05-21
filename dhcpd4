@@ -1,5 +1,6 @@
 type            = process
 command         = /usr/bin/dhcpd -f -4 -q -pf /run/dhcpd4.pid
 smooth-recovery = true
-depends-on      = network
+depends-on      = network.target
 depends-on      = dhcpd-pre
+before          = login.target

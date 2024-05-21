@@ -2,7 +2,7 @@
 
 pkgname=dhcp-dinit
 pkgver=20230906
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for dhcp"
 arch=('any')
 url="https://artixlinux.org"
@@ -16,10 +16,10 @@ source=("dhclient"
         "dhcpd6"
         "dhcpd-pre"
         "dhcpd-pre.script")
-sha256sums=('40c26ce54b5caa13988d382fac5cc665c22c24c88946de5cd7f01aa15c184095'
-            'acbdab442205018179652bbea3ece66df8bf41eea268ebf0dfe3999f0a119e53'
-            '169f035e0faf41271b0ad3c44df3e72f959274c9e003cc03657e7a4552255474'
-            '7979aad1db4dbeff6f40782a2dfcbf31c0ddf2301f5fd5916235e7b1d629ad87'
+sha256sums=('d679d14357e503b43f913ab9774a2f025dd1d7f25e1b1bc17c1c38ab035c3a2a'
+            '92106a2d1da616f99facb2cdf702736d22f700d53daf864b0267410cc8328c3f'
+            '13787089e7b4700ac59e40bbe10bb14d537054d04b7c004ee76025eeba1f07e7'
+            '1c1c544d6aa285da3306fb4a33dc089f166eaa4872688c4e331e01008176240a'
             '1bb8bdbee0770a3645de4c95f322d3cef1db9c00870acbe69ed9909ffe2e37d6')
 
 package() {
