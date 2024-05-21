@@ -1,5 +1,4 @@
 type       = scripted
 command    = /usr/lib/dinit/pre/redis
 restart    = false
-depends-on = pseudofs
-after      = mount
+depends-on = local.target
