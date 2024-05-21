@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=freeradius-dinit
 pkgver=20211101
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for freeradius"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('freeradius' 'dinit')
 conflicts=('init-freeradius')
 provides=('init-freeradius')
 source=("radiusd")
-sha256sums=('38a2a1bda068739c02eceecb592058b85e8305d69243dd2e170698b599c95037')
+sha256sums=('5c7d3207f4b6220d8146754ce5fba8d59075a06e810cc6dbf86fbd9d48941c45')
 
 package() {
     install -Dm644 radiusd "$pkgdir/etc/dinit.d/radiusd"
