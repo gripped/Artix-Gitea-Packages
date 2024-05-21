@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=ddclient-dinit
 pkgver=20211101
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for ddclient"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('ddclient' 'dinit')
 conflicts=('init-ddclient')
 provides=('init-ddclient')
 source=("ddclient")
-sha256sums=('166d87ddae9338974597a8212d284cb0c64b2a7d27339f5f0d426b727323d6f4')
+sha256sums=('1210f923784c1a71b5166d14ee8225a59437e60ce5c31cbefc85d476251ca205')
 
 package() {
     install -Dm644 ddclient "$pkgdir/etc/dinit.d/ddclient"

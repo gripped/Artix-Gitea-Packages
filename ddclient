@@ -1,4 +1,5 @@
 type            = process
 command         = /usr/bin/ddclient -foreground
 smooth-recovery = true
-after           = loginready
+depends-on      = network.target
+before          = login.target
