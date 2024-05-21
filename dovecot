@@ -2,5 +2,6 @@ type            = process
 command         = /usr/bin/dovecot -F
 smooth-recovery = true
 logfile         = /var/log/dinit/dovecot.log
-depends-on      = network
+depends-on      = network.target
 depends-on      = dovecot-pre
+before          = login.target
