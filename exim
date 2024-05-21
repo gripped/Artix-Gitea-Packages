@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/exim -bdf -q30m
 smooth-recovery = true
 run-as          = exim
-after           = loginready
+depends-on      = network.target
