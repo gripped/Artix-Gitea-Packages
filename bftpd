@@ -1,4 +1,4 @@
 type            = process
 command         = /usr/bin/bftpd -D
 smooth-recovery = true
-depends-on      = network
+depends-on      = network.target
