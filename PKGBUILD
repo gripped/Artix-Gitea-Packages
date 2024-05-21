@@ -4,12 +4,12 @@
 pkgbase=e2fsprogs
 pkgname=('e2fsprogs' 'fuse2fs')
 pkgver=1.47.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Ext2/3/4 filesystem utilities'
 arch=('x86_64')
 license=('GPL' 'LGPL' 'MIT')
 url='http://e2fsprogs.sourceforge.net'
-makedepends=('udev' 'util-linux' 'fuse')
+makedepends=('udev' 'util-linux' 'fuse3')
 validpgpkeys=('3AB057B7E78D945C8C5591FBD36F769BC11804F0') # Theodore Ts'o <tytso@mit.edu>
 source=("https://www.kernel.org/pub/linux/kernel/people/tytso/${pkgbase}/v${pkgver}/${pkgbase}-${pkgver}.tar."{xz,sign}
         'MIT-LICENSE')
@@ -27,9 +27,6 @@ prepare() {
 
 build() {
   cd "${srcdir}/${pkgbase}-${pkgver}"
-
-  # building fuse2fs broke with version 1.47.1
-  export CFLAGS+=' -D_FILE_OFFSET_BITS=64'
 
   ./configure \
       --prefix=/usr \
@@ -85,7 +82,7 @@ package_e2fsprogs() {
 
 package_fuse2fs() {
   pkgdesc='Ext2/3/4 filesystem driver for FUSE'
-  depends=('fuse' 'e2fsprogs')
+  depends=('fuse3' 'e2fsprogs')
 
   cd "${srcdir}/${pkgbase}-${pkgver}"
 
