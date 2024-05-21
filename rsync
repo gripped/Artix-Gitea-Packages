@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/rsync --daemon --no-detach
 smooth-recovery = true
 logfile         = /var/log/dinit/rsync.log
-waits-for       = network
+depends-on      = network.target
+before          = login.target
