@@ -2,7 +2,7 @@
 
 pkgname=git-dinit
 pkgver=20230906
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for git"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,8 +13,8 @@ conflicts=('init-git')
 provides=('init-git')
 source=("git"
         "git-pre")
-sha256sums=('c35fb6276b9cfdc8099b57dc13ea3eefab93cba8358ce338d7669acebdf62712'
-            '2fc6e95f08118a493aae6fa6012211828bf1587f503a95294760f9bb96f29c5c')
+sha256sums=('1f57fd83f5678754e4b0c3bd38176fda3a0ee0726fbfcba1e445b27e4371a49b'
+            '674a4fcf34c42f066168caa68bff02de0eb2826297c02e1e319dd028e90bf486')
 
 package() {
     install -Dm644 git     "$pkgdir/etc/dinit.d/git"

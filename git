@@ -2,5 +2,6 @@ type            = process
 command         = /usr/bin/git daemon --base-path=/srv/git --verbose
 smooth-recovery = true
 logfile         = /var/log/dinit/git.log
-depends-on      = network
+depends-on      = network.target
 depends-on      = git-pre
+before          = login.target
