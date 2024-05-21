@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=znc-dinit
 pkgver=20211103
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for znc"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('znc' 'dinit')
 conflicts=('init-znc')
 provides=('init-znc')
 source=("znc")
-sha256sums=('8cd596dbd45a09f18aadabd758307a06c71a50061a06684852f968a208ec4ddc')
+sha256sums=('6ce1849d35f8f90b1b4cafd195e22b30d0be4bb70445b8bd05f4a7cef017f7d0')
 
 package() {
     install -Dm644 znc "$pkgdir/etc/dinit.d/znc"

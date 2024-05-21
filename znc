@@ -3,4 +3,5 @@ command         = /usr/bin/znc -f -d /var/lib/znc
 smooth-recovery = true
 logfile         = /var/log/dinit/znc.log
 run-as          = znc
-depends-on      = network
+depends-on      = network.target
+before          = login.target
