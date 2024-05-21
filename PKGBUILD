@@ -4,7 +4,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|\(/usr\)\?/sbin|/usr/bin|g')
 
 pkgname=nfs-utils-dinit
 pkgver=20211030
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for nfs-utils"
 arch=('any')
 url="https://artixlinux.org"
@@ -16,9 +16,9 @@ conflicts=('init-nfs-utils')
 source=("nfs-server"
         "nfs-server.script"
         "statd")
-sha256sums=('87b12b1bbb7af2d580fdb35a86d64bdb193c282331c3690f6e42e88914fb67b8'
+sha256sums=('331bc9555ec3831abf0e757f67af610b44362d06f4c1c108f9eb85e9e8de5e7b'
             '5656eec29fc4fe0c98a9d29cafba4636ef1fcc05ba96850b8fa580b974b726ef'
-            'c5be9b37acfcc4ca2376c48d07d1c65702c23d4732b202ac7135cfd7fa253b1d')
+            'f14f28d4bbd7b45a5fb6dc3d7b8927f08db34d38c4dcb4c170a701c6a117412c')
 
 package() {
     install -Dm644 nfs-server        "$pkgdir/etc/dinit.d/nfs-server"
