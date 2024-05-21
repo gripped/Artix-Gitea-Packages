@@ -3,3 +3,4 @@ command         = /usr/bin/virtlogd
 smooth-recovery = true
 logfile         = /var/log/dinit/virtlogd.log
 depends-on      = dbus
+before          = login.target

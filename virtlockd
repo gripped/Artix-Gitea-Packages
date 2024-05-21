@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/virtlockd
 smooth-recovery = true
 logfile         = /var/log/dinit/virtlockd.log
-after           = loginready
+after           = local.target
+before          = login.target
