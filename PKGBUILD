@@ -2,7 +2,7 @@
 
 pkgname=prometheus-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service script for prometheus"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 conflicts=('init-prometheus')
 provides=('init-prometheus')
 source=("prometheus")
-sha256sums=('d6053af3d803e0ac420f48e1cec4f414858a09807a37fe8e16e893472a27177e')
+sha256sums=('fa615318f71a55bd20aedb2ac7dd257b2ee8dd2a4a7727a6887d8c31c89c1000')
 
 package() {
     install -Dm644 prometheus "$pkgdir/etc/dinit.d/prometheus"
