@@ -4,4 +4,5 @@ smooth-recovery = true
 logfile         = /var/log/dinit/matrix-synapse.log
 run-as          = synapse
 working-dir     = /var/lib/synapse
-depends-on      = network
+depends-on      = network.target
+before          = login.target
