@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=grafana-dinit
 pkgver=20211101
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for grafana"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('grafana' 'dinit')
 conflicts=('init-grafana')
 provides=('init-grafana')
 source=("grafana")
-sha256sums=('11fc194a5beaddb58ea58d0a6da238ed8520725ebbfa6e3132178069782f2fc5')
+sha256sums=('733c44d00bb3af1d3166bd9206dd2dadb611601c13782cba238e609d2d675d2e')
 
 package() {
     install -Dm644 grafana "$pkgdir/etc/dinit.d/grafana"
