@@ -2,7 +2,7 @@
 
 pkgname=colord-dinit
 pkgver=20211030
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service script for colord"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,7 +13,7 @@ conflicts=('init-colord')
 provides=('init-colord')
 source=("colord" "colord-pre" "colord-session")
 sha256sums=('e1c2dd3cecd8f310d5be458611e3cd2698fbcb005c38eec7b328a6a57048c779'
-            '2a25b9e9199d2849599f303bf10bbad11580a88086e90efc2a73b79d7be9cd64'
+            'dea67c7b2411e96bace7bd66d2e559bc21b12fd8503bcc52050153d48f369f9e'
             '91a38b745fc1841d1d2d43746181892a331228919a8b2059db78c93c7a4c00d7')
 
 package() {
