@@ -3,4 +3,5 @@ command         = /usr/bin/v2ray -config /etc/v2ray/config.json
 smooth-recovery = true
 logfile         = /var/log/dinit/v2ray.log
 run-as          = nobody
-depends-on      = network
+depends-on      = network.target
+before          = login.target
