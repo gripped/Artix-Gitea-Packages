@@ -2,7 +2,7 @@
 
 pkgname=ntp-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for ntp"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('ntp' 'dinit')
 conflicts=('init-ntp' 'init-timed' 'openntpd-dinit')
 provides=('init-ntp' 'init-timed')
 source=("ntpd")
-sha256sums=('499fd6573ba3e6cc601cc625d7b787a261386f907e64dd2b01dd5a381790f8d2')
+sha256sums=('990ded04e7116eef45da1e92016ca595cd7c041b372da7a9779ca96a4db0b7b6')
 
 package() {
     install -Dm644 ntpd "$pkgdir/etc/dinit.d/ntpd"
