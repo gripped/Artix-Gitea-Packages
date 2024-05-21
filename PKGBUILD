@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=lxdm-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for lxdm"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('lxdm' 'dinit')
 conflicts=('init-lxdm')
 provides=('init-lxdm')
 source=("lxdm")
-sha256sums=('065329c75915e5adfc6276d524762570b3af31f34bbf57c863a2517acac51346')
+sha256sums=('bb59ae41481ecd8eca9ad1dc7d0be10e76ddd0919fa8c85ea7d0820500716b1e')
 
 package() {
     install -Dm644 lxdm "$pkgdir/etc/dinit.d/lxdm"
