@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=consul-dinit
 pkgver=20211101
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for consul"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('consul' 'dinit')
 conflicts=('init-consul')
 provides=('init-consul')
 source=("consul")
-sha256sums=('847a4018d0326e7f897b847823e90e3675c3ca427964b968a8aefc18f55f18e0')
+sha256sums=('c83c701fe5860ff11330189f72319926728553a34fe7642c85cb425119c68e72')
 
 package() {
     install -Dm644 consul "$pkgdir/etc/dinit.d/consul"
