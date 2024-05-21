@@ -2,4 +2,5 @@ type            = process
 command         = /usr/lib/boltd
 smooth-recovery = true
 logfile         = /var/log/dinit/boltd.log
-after           = loginready
+after           = local.target
+before          = login.target
