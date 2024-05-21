@@ -2,7 +2,7 @@
 
 pkgname=openssh-dinit
 pkgver=20230906
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for openssh"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ provides=('init-openssh')
 conflicts=('init-openssh')
 groups=('dinit-system')
 source=("sshd" "ssh-keygen")
-sha256sums=('48b859097a607f5f895336b9a8b327c9a1e3a05a4d37b892b739da4f37f470a6'
-            '65e0b85d254a7b7bbad81af388f60f14b9cb11e7c0a709681e28ddec28ffbc47')
+sha256sums=('711a54455314ab9d0d1520633572ad48f406fcb7541b224d6e4afaad51e714b7'
+            '3a3e7faad3788ec00251ae2dd9f6d1c2339f71f29b2a53603f393c9ab51b054f')
 
 package() {
     install -Dm644 sshd       "$pkgdir/etc/dinit.d/sshd"
