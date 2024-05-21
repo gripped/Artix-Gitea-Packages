@@ -3,4 +3,5 @@ command         = /usr/lib/dinit/distcc
 smooth-recovery = true
 logfile         = /var/log/dinit/distcc.log
 run-as          = distcc
-after           = loginready
+depends-on      = local.target
+before          = login.target
