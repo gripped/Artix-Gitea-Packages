@@ -1,4 +1,4 @@
-type      = scripted
-command   = /usr/lib/dinit/pre/minio
-restart   = false
-after     = loginready
+type       = scripted
+command    = /usr/lib/dinit/pre/minio
+restart    = false
+depends-on = network.target

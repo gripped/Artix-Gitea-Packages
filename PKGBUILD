@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=minio-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for minio"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ conflicts=('init-minio')
 provides=('init-minio')
 backup=('etc/dinit.d/config/minio.conf')
 source=("minio" "minio-pre" "minio.script" "minio.conf" "minio-pre.script")
-sha256sums=('7c0ed0b6bb8f1d12c826b01876524683b27a2bc05c5d7d49b6bca77a6c312f68'
-            'a4b06800cdf6297b1bd241c46a7306f25785031b8889600450ff71add12b6385'
+sha256sums=('d515bfbf4e2247f603c9cdb66cbb18b1d296d4ed407f4c6cb1861e1b9520c980'
+            '46698292cca7c02db690efeb8b56de8e0b40b63f48b71ab07c85411d77b5713b'
             'ea51e594c571bc4b3fd01dfa8b7a4d30064c5d39cdb1c7dfa08d7c939c1f4c97'
             'c2aae7c29901bfd7ab4819228e5793ca12ad519a02f05d4429e3c292ff8f1392'
             '50186a39dc83884702b1a014c690f0d7b06d1728f70f88a5a008cdd43ec882ba')

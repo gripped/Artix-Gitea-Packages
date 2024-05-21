@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: minio-dinit
-  version: 20211102-3
+  version: 20211102-4
   arch:
     - any
   pkgname:
     - minio-dinit
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211102-4
+    packages:
+      - minio-dinit-20211102-4-any.pkg.tar.zst
   world:
     version: 20211102-3
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
