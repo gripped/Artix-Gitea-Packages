@@ -2,4 +2,5 @@ type            = process
 command         = /usr/lib/dinit/stunnel
 smooth-recovery = true
 logfile         = /var/log/dinit/stunnel.log
-after           = loginready
+depends-on      = network.target
+before          = login.target

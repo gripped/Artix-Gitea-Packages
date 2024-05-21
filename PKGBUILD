@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=stunnel-dinit
 pkgver=20211103
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for stunnel"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('stunnel' 'dinit')
 conflicts=('init-stunnel')
 provides=('init-stunnel')
 source=("stunnel" "stunnel.script")
-sha256sums=('dbd4c2ec8ea6d6ef1a008cda0488decf3d3c519fb399a062ff402fdb021be90f'
+sha256sums=('c808605c0599d6e043bab4290855a9518b3426fe7e40711773bad163fcc67e05'
             'd138a4506abb5c088398a2d241c4dda2fbf03a43b5c18a580c3395101195174e')
 
 package() {
