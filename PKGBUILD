@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=privoxy-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for privoxy"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('privoxy' 'dinit')
 conflicts=('init-privoxy')
 provides=('init-privoxy')
 source=("privoxy")
-sha256sums=('30e01aef2e8865614dbd9f2c2e8def8e461d3a2c362fbb2d70eb7c829f720e69')
+sha256sums=('3093ea61003714f435e33128a13a74a2311a7f2f79df9550650d7913cf6f45c1')
 
 package() {
     install -Dm644 privoxy "$pkgdir/etc/dinit.d/privoxy"
