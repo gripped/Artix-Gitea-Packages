@@ -2,7 +2,7 @@
 
 pkgname=sane-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for sane"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('sane' 'dinit')
 conflicts=('init-sane')
 provides=('init-sane')
 source=("saned")
-sha256sums=('5ca31be32b2296a112cdba36ec0c786bb37d0d5981a912eb90f98a69d551b30a')
+sha256sums=('62c08f8e010ac17e9f99ba634d7172bc7a252d6410387a3033fdf8702e2edeec')
 
 package() {
     install -Dm644 saned "$pkgdir/etc/dinit.d/saned"

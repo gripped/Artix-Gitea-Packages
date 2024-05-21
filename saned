@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/saned -e
 smooth-recovery = true
 logfile         = /var/log/dinit/saned.log
-after           = loginready
+depends-on      = local.target
+before          = login.target
