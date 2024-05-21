@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/svnserve -d --foreground
 smooth-recovery = true
 logfile         = /var/log/dinit/svnserve.log
-depends-on      = network
+depends-on      = network.target
+before          = login.target
