@@ -2,5 +2,5 @@ type         = scripted
 command      = /usr/lib/dinit/hdparm
 restart      = false
 options      = starts-on-console
-after        = udev-trigger
-before       = fsck
+depends-on   = early-devices.target
+before       = early-fs-pre.target
