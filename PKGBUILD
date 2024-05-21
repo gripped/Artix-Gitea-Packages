@@ -2,7 +2,7 @@
 
 pkgname=deluge-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for deluge"
 arch=('any')
 url="https://artixlinux.org"
@@ -13,7 +13,7 @@ provides=('init-deluge')
 conflicts=('init-deluge')
 source=("deluged"
         "deluge-web")
-sha256sums=('36f639df7fce62d0bf17bf138b066c43c533f3c24d05e3fb1993eeeb6967e9f3'
+sha256sums=('a38527f8dae0ba3eb2c415d9a9360bc23e39d41331e06e4ff1670610ca798925'
             'be8fd185169b6423855e83f004269e0062c491ddcfb1ff2530e519f7b70fb6b6')
 
 package() {

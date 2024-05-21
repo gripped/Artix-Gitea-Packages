@@ -3,4 +3,5 @@ command         = /usr/bin/deluged -d
 smooth-recovery = true
 logfile         = /var/log/dinit/deluged.log
 run-as          = deluge
-depends-on      = network
+depends-on      = network.target
+before          = login.target
