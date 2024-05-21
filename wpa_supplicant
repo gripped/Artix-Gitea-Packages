@@ -3,5 +3,5 @@ command         = /usr/bin/wpa_supplicant -i ${WPA_INTERFACE:-wlan0} -c /etc/wpa
 env-file        = /etc/dinit.d/config/wpa_supplicant.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/wpa_supplicant.log
-depends-on      = network-pre
-before          = network
+depends-on      = pre-network.target
+before          = network.target
