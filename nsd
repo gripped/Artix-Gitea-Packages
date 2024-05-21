@@ -2,5 +2,6 @@ type            = process
 command         = /usr/bin/nsd -d -c /etc/nsd/nsd.conf 2>&1
 smooth-recovery = true
 logfile         = /var/log/dinit/nsd.log
-after           = loginready
+depends-on      = network.target
 depends-on      = nsd-pre
+before          = login.target

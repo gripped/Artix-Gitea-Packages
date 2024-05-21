@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=nsd-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for nsd"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,8 +11,8 @@ depends=('nsd' 'dinit')
 conflicts=('init-nsd')
 provides=('init-nsd')
 source=("nsd" "nsd-pre")
-sha256sums=('6bb08e1f26607f439fe2a8403f20bbf4f727386d4086368851e9bb8ed9613e67'
-            '3319a9ac8dbc233a4dbf0b921d11b6d9cebd74c7a25edd33541a2a7928dabe6f')
+sha256sums=('1536f9919e939123d88cd9153e79321f43eabc1614a2c5c0ecddfebdcab5d2a8'
+            'a0aee81ab1de8b648a98ed0d854b800990e44393a10bf05e24e4b6aa898d581d')
 
 package() {
     install -Dm644 nsd     "$pkgdir/etc/dinit.d/nsd"
