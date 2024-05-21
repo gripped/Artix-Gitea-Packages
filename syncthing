@@ -5,4 +5,5 @@ smooth-recovery = true
 logfile         = /var/log/dinit/syncthing.log
 # Don't forget to change this if you're not running syncthing as root
 run-as          = root
-depends-on      = network
+depends-on      = network.target
+before          = login.target
