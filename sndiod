@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/sndiod -dd
 smooth-recovery = true
 logfile         = /var/log/dinit/sndiod.log
-after           = loginready
+depends-on      = local.target
+before          = login.target
