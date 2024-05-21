@@ -2,7 +2,7 @@
 
 pkgname=lm_sensors-dinit
 pkgver=20211030
-pkgrel=5
+pkgrel=6
 pkgdesc="dinit service scripts for lm_sensors"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,8 +14,8 @@ provides=('init-lm_sensors')
 source=("fancontrol"
         "lm_sensors"
         "lm_sensors.script")
-sha256sums=('034ae7f1d010dd46ff6d569e58c4845d5f4bab655a8dc50a60de258d44b13896'
-            '2d56b007f965982db5a87ad4611a3a00a76292cc3cc6607f19e3be8e0803319a'
+sha256sums=('146267350ea6664bbfd04fbb6ce8fac41b17904cafe49a46712c8135ed18a1ea'
+            '2042afeebeb43e644e1537c250a951f100d761c1109da45ad2fca22141d378ab'
             'c5da0837a079f713fdde921031a168ab9c421d206b0c92a3f4af6e05fe79e437')
 
 package() {
