@@ -2,7 +2,7 @@
 
 pkgname=avahi-dinit
 pkgver=20211026
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for avahi"
 arch=('any')
 url="https://artixlinux.org"
