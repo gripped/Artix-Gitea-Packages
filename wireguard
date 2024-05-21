@@ -3,4 +3,5 @@ command      = /usr/bin/wg-quick up ${WG_INTERFACE:-wg0}
 stop-command = /usr/bin/wg-quick down ${WG_INTERFACE:-wg0}
 env-file     = /etc/dinit.d/config/wireguard.conf
 restart      = false
-depends-on   = network
+depends-on   = network.target
+before       = login.target

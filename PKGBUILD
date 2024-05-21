@@ -2,7 +2,7 @@
 
 pkgname=wireguard-dinit
 pkgver=20230907
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for wireguard"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,7 +14,7 @@ provides=('init-wireguard')
 backup=('etc/dinit.d/config/wireguard.conf')
 source=("wireguard"
         "wireguard.conf")
-sha256sums=('451885ba338cfd49bd4d97c8bc39a00bec69d35e8dcd5cb4cfd003ee5b46919d'
+sha256sums=('32a825be9adb6dd00ffe553aff68e74feaa4f89c1b9559318ea566e3f59ed158'
             'f0c721724c2c4dbaf9b9a71654b7847660af4b1f6b505946fc4f6e19a06b67f1')
 
 package() {
