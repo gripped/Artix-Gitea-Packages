@@ -2,5 +2,5 @@ type            = process
 command         = /usr/bin/lvmpolld -t 60 -f 2>&1
 smooth-recovery = true
 logfile         = /var/log/dinit/lvmpolld.log
-after           = udev-settle
+after           = early-devices.target
 depends-on      = lvmpolld-pre

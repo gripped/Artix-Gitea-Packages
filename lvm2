@@ -1,5 +1,6 @@
-type      = scripted
-command   = /usr/bin/vgchange --sysinit -a y
-log-type  = buffer
-restart   = false
-after     = udev-settle
+type       = scripted
+command    = /usr/bin/vgchange --sysinit -a y
+log-type   = buffer
+restart    = false
+depends-on = early-devices.target
+before     = early-fs-pre.target

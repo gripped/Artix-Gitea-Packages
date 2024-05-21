@@ -1,4 +1,3 @@
 type    = scripted
 command = /usr/bin/mkdir -p /run/lvm
-after   = pseudofs
-after   = cgroups
+after   = local.target
