@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=backlight-dinit
 pkgver=20211101
-pkgrel=4
+pkgrel=5
 pkgdesc="dinit service scripts for backlight"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('dinit')
 conflicts=('init-backlight')
 provides=('init-backlight')
 source=("backlight" "backlight.script")
-sha256sums=('2737894b29517c3847a0ad8ac5242580c50b0b3cfa8bc9b874205010b01d9321'
+sha256sums=('9b65775d8a22e98e43dea85eb5493f7540a014820fdb896cc94202ecb1ef412b'
             '2af6767979264b9024c565351e26ce0570e2734a84c1eb914596e8c54d4566fb')
 
 package() {
