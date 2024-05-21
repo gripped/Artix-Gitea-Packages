@@ -1,5 +1,5 @@
 type            = process
 command         = /usr/bin/named -u named -f -c /etc/named/named.conf
 smooth-recovery = true
-depends-on      = network
+depends-on      = network.target
 depends-on      = named-pre

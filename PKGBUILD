@@ -2,7 +2,7 @@
 
 pkgname=bind-dinit
 pkgver=20230907
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for bind"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ depends=('bind' 'dinit')
 provides=('init-bind')
 conflicts=('init-bind')
 source=("named" "named-pre")
-sha256sums=('669c54876e33cbd8ae6ebacecd0e82f3444eea345b6466c74303631cc55a270c'
-            '3a14d84cfd8f407bbef0ac715787eedcfcb543002d70e63ff2edfd1ff3f0e6eb')
+sha256sums=('2bdacc412f700cd59ed4a79df9e0739ff0e4fd459147d5872a6a0236b11066d4'
+            '27aa28ae41082268b651a156f54186339a0fbf8654e6c1fd307304483144e1c0')
 
 package() {
     install -Dm644 named     "$pkgdir/etc/dinit.d/named"
