@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxdm-dinit
-  version: 20211102-4
+  version: 20211102-5
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 20211102-4
+    version: 20211102-5
     packages:
-      - lxdm-dinit-20211102-4-any.pkg.tar.zst
+      - lxdm-dinit-20211102-5-any.pkg.tar.zst
   world:
     version: 20211102-3
     packages:

@@ -1,12 +1,12 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=lxdm-dinit
 pkgver=20211102
-pkgrel=4
+pkgrel=5
 pkgdesc="dinit service scripts for lxdm"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-groups=('dinit-galaxy')
+groups=('dinit-world')
 depends=('lxdm' 'dinit')
 conflicts=('init-lxdm')
 provides=('init-lxdm')
