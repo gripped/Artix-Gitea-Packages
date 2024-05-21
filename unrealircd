@@ -3,4 +3,5 @@ command         = /usr/bin/unrealircd -F
 smooth-recovery = true
 logfile         = /var/log/dinit/unrealircd.log
 run-as          = ircd
-depends-on      = network
+depends-on      = network.target
+before          = login.target
