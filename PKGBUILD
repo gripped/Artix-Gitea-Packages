@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=cpupower-dinit
 pkgver=20211101
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for cpupower"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('cpupower' 'dinit')
 conflicts=('init-cpupower')
 provides=('init-cpupower')
 source=("cpupower" "cpupower.script")
-sha256sums=('8a69875cd99481746105b2832002ef328707519617f64aac17babd98f32725cf'
+sha256sums=('6548864d486ed7fd4cc50c0be973dc7ec302ae225f63a6b02dbf610b19d37dbb'
             '9dc13d4b12eaa7605b80c28940489cce4a56e7b22e0c2d2ba3839361af4d8485')
 
 package() {
