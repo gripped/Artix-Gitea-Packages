@@ -1,7 +1,8 @@
 type            = process
 command         = /usr/bin/prosody -F
 smooth-recovery = true
-after           = loginready
+before          = login.target
+depends-on      = network.target
 depends-on      = prosody-pre
 run-as          = prosody
 working-dir     = /var/lib/prosody

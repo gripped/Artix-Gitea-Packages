@@ -2,7 +2,7 @@
 
 pkgname=prosody-dinit
 pkgver=20230915
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for prosody"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ depends=('prosody' 'dinit')
 provides=('init-prosody')
 conflicts=('init-prosody')
 source=("prosody" "prosody-pre")
-sha256sums=('e10c3ffc2e6b00867a135aedcd8cb20b28d29040cd1d524bfefdfd21554ae359'
-            'd7e61019d1bf311274f4a5249e83f33951feaf2fe1567a4d6fb7cbd4b16addc8')
+sha256sums=('97b5a82692dcef89fd75c0feb3c84125652f6fd030e2b11ed3076c7f6cb5ce0b'
+            '5d321816d00949c20da1f493cd9fc49806eed7eed8b0387e9bc2e0b305edc07e')
 
 package() {
     install -Dm644 prosody     "$pkgdir/etc/dinit.d/prosody"
