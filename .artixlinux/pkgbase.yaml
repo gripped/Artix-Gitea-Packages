@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: interception-tools-dinit
-  version: 20211101-1
+  version: 20211101-2
   arch:
     - any
   pkgname:
     - interception-tools-dinit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211101-2
+    packages:
+      - interception-tools-dinit-20211101-2-any.pkg.tar.zst
   world:
     version: 20211101-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=interception-tools-dinit
 pkgver=20211101
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for interception-tools"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('interception-tools' 'dinit')
 conflicts=('init-interception-tools')
 provides=('init-interception-tools')
 source=("udevmon")
-sha256sums=('1b00d244bcd6f69d3f45f75009c48f2376c5446835e46d3b7dc05f47e558d362')
+sha256sums=('f0af744a24d3b5a7e563795b7bd1490678aa5f5ac9fcb5c27005a8496fc8ac40')
 
 package() {
     install -Dm644 udevmon "$pkgdir/etc/dinit.d/udevmon"
