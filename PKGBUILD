@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=syncthing-relaysrv-dinit
 pkgver=20211103
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for syncthing-relaysrv"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('syncthing-relaysrv' 'dinit')
 conflicts=('init-syncthing-relaysrv')
 provides=('init-syncthing-relaysrv')
 source=("syncthing-relaysrv")
-sha256sums=('83aa8b54e1f536ccee25afce753250bc27e2d2b61ddea82b9ad8795fc82ee52b')
+sha256sums=('024326ca001ad941c0ccb4ad79e8fec26f4091cfc630175892701a55747b38dc')
 
 package() {
     install -Dm644 syncthing-relaysrv "$pkgdir/etc/dinit.d/syncthing-relaysrv"
