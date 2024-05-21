@@ -2,4 +2,5 @@ type            = process
 command         = lighttpd-angel -D -f /etc/lighttpd/lighttpd.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/lighttpd.log
-depends-on      = network
+depends-on      = network.target
+before          = login.target
