@@ -2,7 +2,7 @@
 
 pkgname=cyrus-sasl-dinit
 pkgver=20230907
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for cyrus-sasl"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,7 +14,7 @@ conflicts=('init-cyrus-sasl')
 provides=('init-cyrus-sasl')
 source=("saslauthd"
         "saslauthd.conf")
-sha256sums=('2eb69bf7b8d2e03bd1c716fbd3106f8939346094ca2217c5c9abff12409bc18b'
+sha256sums=('69583b373abcc8afc0e8f8241b4d503c484394dae447793ede89d300e4451130'
             '96364ecf3f6b3ba9de25eb176c851fc29a7d5c7d2f55da70b46e67e3cb2a2128')
 
 package() {

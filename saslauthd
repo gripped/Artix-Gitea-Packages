@@ -3,5 +3,5 @@ command         = /usr/bin/saslauthd -a $AUTH_METHOD -d 2>&1
 env-file        = /etc/dinit.d/config/saslauthd.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/saslauthd.log
-depends-on      = network
-after           = loginready
+after           = local.target
+before          = login.target
