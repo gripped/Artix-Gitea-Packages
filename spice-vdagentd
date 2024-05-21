@@ -2,5 +2,5 @@ type            = process
 command         = /usr/bin/spice-vdagentd -x -d
 smooth-recovery = true
 logfile         = /var/log/dinit/spice-vdagentd.log
-after           = loginready
 depends-on      = spice-vdagentd-pre
+before          = login.target
