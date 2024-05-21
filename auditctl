@@ -2,4 +2,5 @@ type         = scripted
 command      = /usr/lib/dinit/auditctl start
 stop-command = /usr/lib/dinit/auditctl stop
 restart      = false
-after        = rclocal
+after        = local.target
+before       = login.target

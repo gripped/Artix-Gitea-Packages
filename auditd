@@ -1,4 +1,5 @@
 type            = process
 command         = /usr/bin/auditd -n
 smooth-recovery = true
-after           = loginready
+after           = local.target
+before          = login.target
