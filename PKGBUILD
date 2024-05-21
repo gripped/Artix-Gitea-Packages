@@ -13,36 +13,21 @@ depends=(
   glibc
 )
 makedepends=(
-  git
   meson
 )
 provides=(libfribidi.so)
-source=(
-  "git+$url?signed#tag=v$pkgver"
-  "git+https://github.com/fribidi/c2man#commit=577ed4095383ef5284225d45709e6b5f0598a064"
-)
-b2sums=('1bb9f57eae1652a7efb33bd39a2e93845f764efab5ac5b5de9d2dc2074aa514d40b26db4b5abd458013fb25d2b106f85c3ed2e71b378d2e9b16edf87908a403c'
-        '4ce1f0e039bbac3d7015eff10b9738ac4b58dc59f736a8f7ba12857d67092444f500928447a08004ae3548ffb2c788a849ac76c89924db2d82653f547cc4cc6a')
-validpgpkeys=(
-  0AD041B27CA166DDA1FE3BAEA7B3409C0CA4ED14 # Dov Grobgeld <dov.grobgeld@gmail.com>
-)
+source=("$url/releases/download/v$pkgver/fribidi-$pkgver.tar.xz")
+b2sums=('dafe1c46b5b6ee8fb67850ceb98b9832663421b7b305d9f1bb042a920faf0641046eb9b82f8d4af0cab7644b666202a1dfbbe0d8a9e2af78f824b167c7e2c219')
 
 prepare() {
-  mkdir -p path
-  cd fribidi
+  cd fribidi-$pkgver
 }
 
 build() {
   local meson_options=(
   )
 
-  cd c2man
-  ./Configure -d -e
-  make
-  cp c2man -t ../path
-  cd ..
-
-  PATH="$PWD/path:$PATH" artix-meson fribidi build "${meson_options[@]}"
+  artix-meson fribidi-$pkgver build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -55,3 +40,4 @@ package() {
 }
 
 # vim:set sw=2 sts=-1 et:
+
