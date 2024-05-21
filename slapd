@@ -2,5 +2,5 @@ type            = process
 command         = /usr/lib/dinit/slapd
 smooth-recovery = true
 logfile         = /var/log/dinit/slapd.log
-waits-for       = network
-depends-on      = pseudofs
+depends-on      = network.target
+before          = login.target
