@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/hostapd -S /etc/hostapd/hostapd.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/hostapd.log
-after           = loginready
+depends-on      = network.target
+before          = login.target
