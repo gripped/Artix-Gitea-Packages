@@ -2,5 +2,5 @@ type         = scripted
 command      = /usr/lib/dinit/fuse start
 stop-command = /usr/lib/dinit/fuse stop
 restart      = false
-after        = pseudofs
-after        = root-rw
+depends-on   = early-root-rw.target
+before       = login.target
