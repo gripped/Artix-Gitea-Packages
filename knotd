@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/knotd -v
 smooth-recovery = true
 logfile         = /var/log/dinit/knotd.log
-after           = loginready
+depends-on      = network.target
+before          = login.target
