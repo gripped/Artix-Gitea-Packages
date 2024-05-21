@@ -3,5 +3,4 @@ command         = /usr/bin/sddm
 smooth-recovery = true
 depends-on      = logind
 depends-on      = sddm-pre
-after           = loginready
-waits-for.d     = live.d
+depends-on      = login.target
