@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: lua-lpeg
-  version: 1.1.0-1
+  name: lpeg
+  version: 1.1.0-2
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - lua52-lpeg
     - lua53-lpeg
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.1.0-1
+    version: 1.1.0-2
     packages:
-      - lua-lpeg-1.1.0-1-x86_64.pkg.tar.zst
-      - lua51-lpeg-1.1.0-1-x86_64.pkg.tar.zst
-      - lua52-lpeg-1.1.0-1-x86_64.pkg.tar.zst
-      - lua53-lpeg-1.1.0-1-x86_64.pkg.tar.zst
+      - lua-lpeg-1.1.0-2-x86_64.pkg.tar.zst
+      - lua51-lpeg-1.1.0-2-x86_64.pkg.tar.zst
+      - lua52-lpeg-1.1.0-2-x86_64.pkg.tar.zst
+      - lua53-lpeg-1.1.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -58,3 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
