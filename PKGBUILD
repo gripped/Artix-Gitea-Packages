@@ -2,7 +2,7 @@
 
 pkgname=docker-dinit
 pkgver=20211025
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service script for docker"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 provides=('init-docker')
 conflicts=('init-docker')
 source=("dockerd" "dockerd.script")
-sha256sums=('8efadcca4e451349307dd988f74694ea9b9b946af5841019e6bfc48f0a5ee451'
+sha256sums=('f4a530dadbdda88104ae4e0a903e661f42690145b6f9f518ed9cca4713bb0e98'
             '7fcda58e7782fe7a846275aa26cdc0d76291f035789023774f33ced2e97021aa')
 
 package() {

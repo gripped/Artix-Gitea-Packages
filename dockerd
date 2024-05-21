@@ -2,5 +2,5 @@ type            = process
 command         = /usr/lib/dinit/dockerd
 smooth-recovery = true
 logfile         = /var/log/dinit/dockerd.log
-depends-on      = cgroups
-after           = loginready
+depends-on      = network.target
+before          = login.target
