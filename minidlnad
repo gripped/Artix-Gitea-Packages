@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/minidlnad -S
 smooth-recovery = true
 logfile         = /var/log/dinit/minidlnad.log
-after           = loginready
+before          = login.target
+depends-on      = network.target
