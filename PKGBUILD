@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=seatd-dinit
 pkgver=20230412
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for seatd"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,8 +11,8 @@ depends=('seatd' 'dinit')
 conflicts=('init-seatd' 'init-logind' 'elogind-dinit')
 provides=('init-seatd' 'init-logind' 'elogind-dinit')
 source=("seatd" "logind")
-sha256sums=('951f32306db0c062c1b7b938757dc0e172919bb5bc345c640c0780ac347111de'
-            'a5a1cb9de1c12250a7db57ca0e8f38709cad1cf9c94cad630ba2e155ff48b346')
+sha256sums=('899f1665f2ec4ef8cd365a3a791d9861264ab3b12ad7fe8d7128778b138176c7'
+            '0b9234d78851edaaae69408175f49f271aa1e1b0da7b2c3e3d32865e1d94781a')
 
 package() {
     install -Dm644 seatd  "$pkgdir/etc/dinit.d/seatd"
