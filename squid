@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/squid -N
 smooth-recovery = true
 logfile         = /var/log/dinit/squid.log
-depends-on      = network
+depends-on      = network.target
+before          = login.target
