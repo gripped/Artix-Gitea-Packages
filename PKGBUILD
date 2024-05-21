@@ -2,7 +2,7 @@
 
 pkgname=nginx-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for nginx"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('nginx' 'dinit')
 conflicts=('init-nginx')
 provides=('init-nginx')
 source=("nginx")
-sha256sums=('31355fe3eb59ce9938753608a572c0fcf8abd00a2153c2ecc9897ddbf6612fb0')
+sha256sums=('afbf0bdf7138715d245142933e355cbf64fccd8fe890366792dba8597819ec4d')
 
 package() {
     install -Dm644 nginx "$pkgdir/etc/dinit.d/nginx"
