@@ -2,7 +2,7 @@
 
 pkgname=xinetd-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for xinetd"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('xinetd' 'dinit')
 provides=('init-xinetd')
 conflicts=('init-xinetd')
 source=("xinetd")
-sha256sums=('f31948f9b7520c43d1bd0abc732ef778ca8edb92f6b0064e5e40239349c3feea')
+sha256sums=('8ca5a1e149c5c8ea4ab3d9af91b6b0ca1042ddc04624d8eb525145e3ee2260d2')
 
 package() {
     install -Dm644 xinetd "$pkgdir/etc/dinit.d/xinetd"
