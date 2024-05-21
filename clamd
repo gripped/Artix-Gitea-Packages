@@ -2,4 +2,4 @@ type            = process
 command         = /usr/lib/dinit/clamd
 smooth-recovery = true
 logfile         = /var/log/dinit/clamd.log
-waits-for       = network
+waits-for       = network.target
