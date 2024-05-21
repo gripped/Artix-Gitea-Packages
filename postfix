@@ -2,5 +2,6 @@ type            = process
 command         = /usr/lib/postfix/bin/master -d
 smooth-recovery = true
 logfile         = /var/log/dinit/postfix.log
-after           = loginready
+before          = login.target
 depends-on      = postfix-pre
+depends-on      = network.target

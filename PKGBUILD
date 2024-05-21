@@ -2,7 +2,7 @@
 
 pkgname=postfix-dinit
 pkgver=20230907
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for postfix"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ depends=('postfix' 'dinit')
 provides=('init-postfix')
 conflicts=('init-postfix')
 source=("postfix" "postfix-pre")
-sha256sums=('ca14cfeae69b6434119aefff37dd448f74fa4bbd641f3c2453cf64ce11597618'
-            'b058cd7aa4c1c23672a6bcc775c4d558752dcc3ab87236c364706dcd250b0366')
+sha256sums=('625865f405afe7d9f44613650c771a549a9a76cd83ae93f7d434c172d7f4f3f6'
+            '656af403d6d27a423a776b2cee4cf75c829b528c81a650f5cc8cb8552ff1c29d')
 
 package() {
     install -Dm644 postfix     "$pkgdir/etc/dinit.d/postfix"
