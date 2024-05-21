@@ -3,4 +3,5 @@ command         = /usr/bin/motion
 smooth-recovery = true
 logfile         = /var/log/dinit/motion.log
 run-as          = motion
-after           = loginready
+after           = local.target
+before          = login.target
