@@ -3,5 +3,5 @@ command      = /usr/bin/ufw enable
 stop-command = /usr/bin/ufw disable
 restart      = false
 logfile      = /var/log/dinit/ufw.log
-depends-on   = network-pre
-before       = network
+depends-on   = pre-local.target
+before       = pre-network.target
