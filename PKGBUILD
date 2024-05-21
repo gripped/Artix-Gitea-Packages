@@ -4,7 +4,7 @@
 
 pkgname=iniparser
 pkgver=4.2.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A free stand-alone ini file parsing library written in portable ANSI C'
 arch=('x86_64')
 url='https://github.com/ndevilla/iniparser'
