@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=lxd-dinit
 pkgver=20211121
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for lxd"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('lxd' 'dinit')
 conflicts=('init-lxd')
 provides=('init-lxd')
 source=("lxd" "lxd.script")
-sha256sums=('cb7ddc3a7e8cd0ca2a06be415acfbec1241fc57cc7f11bd12daa443fd8d7d599'
+sha256sums=('0455420380e5c2ab95e5cd5571c0878ba5bd3ee2dd1aaa578fa3283fc109628a'
             '05121a9a1c7d066a4f95a087c6791a6eafe48a624517f6de37fc0e3f81c7dbd7')
 
 package() {

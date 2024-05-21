@@ -2,4 +2,5 @@ type            = process
 command         = /usr/lib/dinit/lxd
 smooth-recovery = true
 logfile         = /var/log/dinit/lxd.log
-after           = loginready
+depends-on      = network.target
+before          = login.target
