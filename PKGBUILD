@@ -2,7 +2,7 @@
 
 pkgname=ejabberd-dinit
 pkgver=20230912
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for ejabberd"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('ejabberd' 'dinit')
 provides=('init-ejabberd')
 conflicts=('init-ejabberd')
 source=("ejabberd")
-sha256sums=('36a24861fbb4b1761ddfbf01e22cbcc411d15aad2d62dab5c3a0737eb5bf888e')
+sha256sums=('6e0e495b294ba9519db0f50c1d7d3d1cabd69334cf8462898e5439edb9e11182')
 
 package() {
     install -Dm644 ejabberd        "$pkgdir/etc/dinit.d/ejabberd"
