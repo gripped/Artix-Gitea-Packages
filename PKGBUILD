@@ -2,7 +2,7 @@
 
 pkgname=lightdm-dinit
 pkgver=20230907
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for lightdm"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ depends=('lightdm' 'dbus-dinit')
 provides=('init-lightdm' 'init-displaymanager')
 conflicts=('init-lightdm' 'init-displaymanager')
 source=("lightdm" "lightdm-pre")
-sha256sums=('a0a934aacf6cb7692aee635b54da7de8a3839d79fecbd845b8afb536634a34f5'
-            '5566576991fcd8c506b169bc08ee30f045a9f10c12279961bc10a878d4c28536')
+sha256sums=('14c6636f38c0b54f3ac1f733b7025f29667b88df5e742f2a1e006f17204b818b'
+            'a4fb1bff94a4acd115a1ee43ac2a2fde2f252650f105c108ce79a3b3bbb127b9')
 
 package() {
     install -Dm644 lightdm     "$pkgdir/etc/dinit.d/lightdm"
