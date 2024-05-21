@@ -1,5 +1,5 @@
 type            = process
-command         = /usr/bin/chronyd -d
+command         = /usr/bin/chronyd -n
 smooth-recovery = true
-logfile         = /var/log/dinit/chronyd.log
-depends-on      = network
+depends-on      = network.target
+depends-on      = local.target
