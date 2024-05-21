@@ -2,7 +2,7 @@
 
 pkgname=nvidia-utils-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for nvidia-utils"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ conflicts=('init-nvidia-utils')
 depends=('nvidia-utils' 'dinit')
 makedepends=('git')
 source=('nvidia-persistenced')
-sha256sums=('9f05efc5014241173e046562de132697df4667d3ddc6b410e50d101d96f73324')
+sha256sums=('7a34d1e857d57648970661fb52a3f1e96d45247b095fe848789d16c8cce4e4db')
 
 package() {
     install -Dm644 nvidia-persistenced "$pkgdir/etc/dinit.d/nvidia-persistenced"
