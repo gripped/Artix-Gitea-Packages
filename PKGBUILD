@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=shairport-sync-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for shairport-sync"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('shairport-sync' 'dinit')
 conflicts=('init-shairport-sync')
 provides=('init-shairport-sync')
 source=("shairport-sync")
-sha256sums=('e19292fe1f345908d1035d5fbcfc6b62a48575ddc5e4d9a74cf6fb311a325166')
+sha256sums=('a89a1dd1088882193014ea20d70b62b1a222c400f28fd6d108c52c30655ce667')
 
 package() {
     install -Dm644 shairport-sync "$pkgdir/etc/dinit.d/shairport-sync"
