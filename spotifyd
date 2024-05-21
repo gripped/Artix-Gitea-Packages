@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/spotifyd --no-daemon
 smooth-recovery = true
 logfile         = /var/log/dinit/spotifyd.log
-depends-on      = network
+depends-on      = network.target
+before          = login.target
