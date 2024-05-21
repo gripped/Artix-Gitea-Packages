@@ -2,7 +2,7 @@
 
 pkgname=samba-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for samba"
 arch=('any')
 url="https://artixlinux.org"
@@ -14,9 +14,9 @@ provides=('init-samba')
 source=("smbd"
         "nmbd"
         "samba-pre")
-sha256sums=('3328da37b1b4150e4b706bfd2fa8e1ade0b904d54548ea23a2240333662847a3'
-            '371cc96655681ecf22626c9a853e99d1de53c77c6338818359ae4860b661aa60'
-            '7653797db0d167a682232cc8f010ee6ed616c74c4b1af808448a34cbbbfd7553')
+sha256sums=('e1b4f4586e08d1043cd6707c1d02db1c815b62d692ca8d975352d55a36259332'
+            '21fccdb056b80970f4306482b0c26e51ab0e0e298ac7290054b41f527f5e3df3'
+            'e3fd62e239d6be4513dbbf3a50c7bc55bc30760e3679d23c340ede0cc7f44ffd')
 
 package() {
     install -Dm644 smbd      "$pkgdir/etc/dinit.d/smbd"

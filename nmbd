@@ -3,4 +3,5 @@ command         = /usr/bin/nmbd -F -d=1 --no-process-group
 smooth-recovery = true
 logfile         = /var/log/dinit/nmbd.log
 depends-on      = samba-pre
-depends-on      = network
+depends-on      = network.target
+before          = login.target
