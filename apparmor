@@ -1,4 +1,5 @@
 type        = scripted
 command     = /usr/lib/apparmor/apparmor.systemd reload
 restart     = false
-after       = mount
+after       = early-fs-local.target
+before      = local.target

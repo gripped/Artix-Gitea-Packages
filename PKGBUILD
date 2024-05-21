@@ -2,7 +2,7 @@
 
 pkgname=apparmor-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service script for AppArmor"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ provides=('init-apparmor')
 conflicts=('init-apparmor')
 depends=('apparmor' 'dinit')
 source=('apparmor')
-sha256sums=('cea6d78a8ccee5cbfcbce5f649e5ba0da57517346d5fc6806970a7309a6755cb')
+sha256sums=('59bfa18aaeb67c23decacd012be72a076a007421a61228d13e398833afead82a')
 
 package() {
     install -Dm644 apparmor "${pkgdir}/etc/dinit.d/apparmor"
