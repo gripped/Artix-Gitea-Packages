@@ -2,7 +2,7 @@
 
 pkgname=networkmanager-dinit
 pkgver=20230912
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for networkmanager"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('networkmanager' 'dbus-dinit')
 conflicts=('init-networkmanager')
 provides=('init-networkmanager')
 source=("NetworkManager")
-sha256sums=('dd83f7f25cd5f91b66c5835a985a0f6db2883282ae63d302d2ee6c06555cb5a3')
+sha256sums=('83b847d1ebeeae14e389e359c03b7d4ec3c8134d9e7020fe30e0e23309402923')
 
 package() {
     install -Dm644 NetworkManager "$pkgdir/etc/dinit.d/NetworkManager"
