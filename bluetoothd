@@ -3,3 +3,5 @@ command         = /usr/lib/bluetooth/bluetoothd -n
 smooth-recovery = true
 logfile         = /var/log/dinit/bluetoothd.log
 depends-on      = dbus
+depends-on      = local.target
+before          = login.target
