@@ -2,4 +2,4 @@ type            = process
 command         = /usr/bin/brltty -n
 smooth-recovery = true
 logfile         = /var/log/dinit/brltty.log
-after           = hwclock
+depends-on      = login.target

@@ -2,7 +2,7 @@
 
 pkgname=brltty-dinit
 pkgver=20230906
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for brltty"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ depends=('brltty' 'dinit')
 provides=('init-brltty')
 conflicts=('init-brltty')
 source=("brltty" "brltty-pre")
-sha256sums=('9540fb42322c3ce596b295ee37896d3e6fb4425f90331f7215bafbaca52c5970'
-            'bd351f972086406540f0fb59789f0218e2d67957643b82b92f2fc4af4ab14523')
+sha256sums=('148bf30c0be34e3a7a97915058870ce07b15335d19d7eb9be4a150f67d7dea29'
+            'b33df6d45d5e6a9996375ae9a83073e08dfffc3240aab12848a50f0db6b7a6b1')
 
 package() {
     install -Dm644 brltty     "$pkgdir/etc/dinit.d/brltty"
