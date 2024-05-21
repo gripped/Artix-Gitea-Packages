@@ -1,4 +1,5 @@
 type            = process
 command         = /usr/bin/krb5kdc -n
 smooth-recovery = true
-waits-for       = network
+depends-on      = network.target
+before          = login.target

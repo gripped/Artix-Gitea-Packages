@@ -1,6 +1,7 @@
 type            = process
 command         = /usr/bin/kpropd -D -P 754
 smooth-recovery = true
-waits-for       = network
+depends-on      = network.target
 waits-for       = krb5kdc
 waits-for       = kadmind
+before          = login.target
