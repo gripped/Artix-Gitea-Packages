@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: cups-dinit
-  version: 20211025-1
+  version: 20211025-2
   arch:
     - any
   pkgname:
     - cups-dinit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20211025-2
+    packages:
+      - cups-dinit-20211025-2-any.pkg.tar.zst
   world:
     version: 20211025-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
