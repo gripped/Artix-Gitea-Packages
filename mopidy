@@ -3,4 +3,5 @@ command         = /usr/bin/mopidy --config /usr/share/mopidy/conf.d:/etc/mopidy/
 smooth-recovery = true
 logfile         = /var/log/dinit/mopidy.log
 run-as          = mopidy
-after           = loginready
+depends-on      = local.target
+before          = login.target
