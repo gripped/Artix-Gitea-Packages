@@ -2,7 +2,7 @@
 
 pkgname=nftables-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service script for nftables"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 conflicts=('init-nftables')
 provides=('init-nftables')
 source=("nftables")
-sha256sums=('6cd24310639c4beb4157f9117eaab8681fe072c5d484473d585d7a5a5b217d87')
+sha256sums=('eed65170e4a1fe8ca317d648030b2a19c93bcefb48594ce2e781f86d94423868')
 
 package() {
     install -Dm644 nftables "$pkgdir/etc/dinit.d/nftables"
