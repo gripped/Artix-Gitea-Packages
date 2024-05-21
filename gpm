@@ -1,5 +1,6 @@
 type            = process
 command         = /usr/bin/gpm -D -m /dev/input/mice -t imps2
 smooth-recovery = true
-after           = loginready
+after           = local.target
+before          = login.target
 logfile         = /var/log/dinit/gpm.log

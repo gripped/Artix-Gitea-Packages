@@ -2,7 +2,7 @@
 
 pkgname=gpm-dinit
 pkgver=20211029
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for gpm"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('gpm' 'dinit')
 conflicts=('init-gpm')
 provides=('init-gpm')
 source=("gpm")
-sha256sums=('a5af25e71ad3493788cdf119cc89fb2fde5f218e1455fde26197b74b9e22cf96')
+sha256sums=('896ad0007cfb6f10797a6d46c5be11ed9b96b285d0662cddb66b1f007cf30300')
 
 package() {
     install -Dm644 gpm "$pkgdir/etc/dinit.d/gpm"
