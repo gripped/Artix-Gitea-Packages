@@ -2,7 +2,7 @@
 
 pkgname=elogind-dinit
 pkgver=20240421
-pkgrel=4
+pkgrel=5
 pkgdesc="dinit service scripts for elogind"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ provides=('init-elogind' 'init-logind')
 conflicts=('init-elogind' 'init-logind')
 groups=('dinit-system')
 source=("elogind" "logind")
-sha256sums=('b3758e5a3efc81dbfa957d1293cdcad20f868ffe28cbd834915672a0ed568a32'
+sha256sums=('bfa890ba3396c313c0bcc578a276fe45cc65506a7d0f59795340a753c7f8a214'
             'dd3401a038ffd16e9377fd80691210adc943a148effc5056a5424800ca00140c')
 
 package() {

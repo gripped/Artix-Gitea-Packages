@@ -1,4 +1,4 @@
 type         = scripted
 command      = /usr/lib/artix/sv-cg.sh up elogind
 stop-command = /usr/lib/artix/sv-cg.sh down elogind
-depends-on   = cgroups
+depends-on   = local.target
