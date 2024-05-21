@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=jenkins-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for jenkins"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,9 +11,9 @@ depends=('jenkins' 'dinit')
 conflicts=('init-jenkins')
 provides=('init-jenkins')
 source=("jenkins" "jenkins.script" "jenkins-pre")
-sha256sums=('97f7687d7d28914870e83575ffc60822d16865ef67269a9b4ceb5a2b472069f1'
+sha256sums=('0756fdb01331f5125accf7b78afcfa862190ca84684e7d893dac03e6f5debe7b'
             '2af7e6e3f78e73c918600ce204e9428af64d3ec3497be70859f1680c77e2af32'
-            'c04924a892e81c00352a0e53db049803d6a870d257efce9e28aea52d7ca73f67')
+            '62d89e5393c7a6011e2cc068fe35f49b16a90b48737131e4de578bb3a162bdee')
 
 package() {
     install -Dm644 jenkins        "$pkgdir/etc/dinit.d/jenkins"
