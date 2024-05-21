@@ -2,5 +2,6 @@ type            = process
 command         = /usr/bin/mysqld --user=mysql
 smooth-recovery = true
 logfile         = /var/log/dinit/mysqld.log
-waits-for       = network
+depends-on      = network.target
 depends-on      = mysqld-pre
+before          = login.target

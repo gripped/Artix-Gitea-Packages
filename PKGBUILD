@@ -2,7 +2,7 @@
 
 pkgname=mariadb-dinit
 pkgver=20230907
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for mariadb"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,8 +12,8 @@ groups=('dinit-world')
 conflicts=('init-mariadb' 'init-mysql')
 provides=('init-mariadb')
 source=("mysqld" "mysqld-pre")
-sha256sums=('b5335b8de2ef485d8a657000da91322b623a5de97a9cabe745b2dc9debc754c1'
-            '0a80f285de38eccb1cf7aa7caae876394401b6013a63555e810a0e3d6174e674')
+sha256sums=('984f87a8885e9a9dca7469bdc6bb630d6070509104cfff5ea0aad8c2dfd8bac3'
+            '715f0bd69b2b3da353fb0f5e3a163edafcdfad45d5b0d2f3abeab73135bd9af0')
 
 package() {
     install -Dm644 mysqld     "$pkgdir/etc/dinit.d/mysqld"
