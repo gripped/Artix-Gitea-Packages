@@ -3,4 +3,5 @@ command      = /usr/bin/tlp init start
 stop-command = /usr/bin/tlp init stop
 restart      = false
 logfile      = /var/log/dinit/tlp.log
-waits-for    = root-rw
+after        = local.target
+before       = login.target
