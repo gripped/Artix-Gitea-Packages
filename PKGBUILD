@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=toxcore-dinit
 pkgver=20211103
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for toxcore"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('toxcore' 'dinit')
 conflicts=('init-toxcore')
 provides=('init-toxcore')
 source=("toxbootstrapd")
-sha256sums=('0cc13295065471eebe498de599a000ed9bbf3c9e5d043f346e6bb63e7ea92a12')
+sha256sums=('e0d611f7bd1be0da1ae68080661492790a62f24ffd21d64a243e659e5fff9747')
 
 package() {
     install -Dm644 toxbootstrapd "$pkgdir/etc/dinit.d/toxbootstrapd"
