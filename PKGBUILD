@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=pptpd-dinit
 pkgver=20211105
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for pptpd"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('pptpd' 'dinit')
 conflicts=('init-pptpd')
 provides=('init-pptpd')
 source=("pptpd")
-sha256sums=('9338542cec2c51a03494f867412b3eee8318222856cd60685045f008c6d5dcea')
+sha256sums=('200943f8bc1cfb483db8630db5041272a4d4444a97898c839016c8ce67da0b68')
 
 package() {
     install -Dm644 pptpd "$pkgdir/etc/dinit.d/pptpd"
