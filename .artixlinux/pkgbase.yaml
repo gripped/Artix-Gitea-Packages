@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: postgresql-dinit
-  version: 20240412-1
+  version: 20240412-2
   arch:
     - any
   pkgname:
     - postgresql-dinit
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20240412-2
+    packages:
+      - postgresql-dinit-20240412-2-any.pkg.tar.zst
   world:
     version: 20240412-1
     packages:

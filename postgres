@@ -5,3 +5,4 @@ logfile         = /var/log/dinit/postgres.log
 term-signal     = INT
 run-as          = postgres
 depends-on      = postgres-pre
+before          = login.target
