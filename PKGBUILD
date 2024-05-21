@@ -2,7 +2,7 @@
 
 pkgname=openntpd-dinit
 pkgver=20211025
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for openntpd"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 conflicts=('init-openntpd' 'init-timed' 'ntp')
 provides=('init-openntpd' 'init-timed')
 source=("ntpd")
-sha256sums=('924efd99264be21efaf45e283d41442aa90f91d48d46f4817a1f6fb3d9e424df')
+sha256sums=('bd2658aebb50886d3b5a5e78f683d0348b366805bfa39e9c0b7602206dc045fa')
 
 package() {
     mkdir -p "$pkgdir/etc/dinit.d"

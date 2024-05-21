@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/ntpd -d
 smooth-recovery = true
 logfile         = /var/log/dinit/openntpd.log
-depends-on      = network
+depends-on      = network.target
+before          = time-sync.target
