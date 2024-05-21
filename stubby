@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/stubby
 smooth-recovery = true
 logfile         = /var/log/dinit/stubby.log
-depends-on      = network
+depends-on      = network.target
+before          = login.target

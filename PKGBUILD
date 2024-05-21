@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=stubby-dinit
 pkgver=20211103
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for stubby"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('stubby' 'dinit')
 conflicts=('init-stubby')
 provides=('init-stubby')
 source=("stubby")
-sha256sums=('4bc16fac60d6b2dfafd6104a8ba634aee2a285ef6d6d696bf33ddd47e15c9a0f')
+sha256sums=('0a323ec5eef815483f71f5d8aa537dcf03255ba73a93e4cbb69515a6482fb1d9')
 
 package() {
     install -Dm644 stubby "$pkgdir/etc/dinit.d/stubby"
