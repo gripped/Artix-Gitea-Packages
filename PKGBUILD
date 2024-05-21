@@ -2,7 +2,7 @@
 
 pkgname=usbguard-dinit
 pkgver=20211030
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service script for usbguard"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ groups=('dinit-world')
 conflicts=('init-usbguard')
 provides=('init-usbguard')
 source=("usbguard")
-sha256sums=('064ee71c726070c71c22c9f38ef6eb519c77d28053fe828bf3b9b40a59b6844a')
+sha256sums=('2bbd9fe35e0824aa6b309c4b78fc5d741d67e3f846c61ea4242f453bb7e8ed54')
 
 package() {
     install -Dm644 usbguard "$pkgdir/etc/dinit.d/usbguard"
