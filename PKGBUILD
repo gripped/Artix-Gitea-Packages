@@ -1,7 +1,7 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=matterbridge-dinit
 pkgver=20211102
-pkgrel=3
+pkgrel=4
 pkgdesc="dinit service scripts for matterbridge"
 arch=('any')
 url="https://artixlinux.org"
@@ -11,7 +11,7 @@ depends=('matterbridge' 'dinit')
 conflicts=('init-matterbridge')
 provides=('init-matterbridge')
 source=("matterbridge")
-sha256sums=('8852b2c1e4f2925890c216b4771fc883b4fe2d70d4e7671506f86eebb8f51905')
+sha256sums=('c0756433c4bbdce9276837af23b5749c075ad07d6e4b0cb0e196516cf493027a')
 
 package() {
     install -Dm644 matterbridge "$pkgdir/etc/dinit.d/matterbridge"
