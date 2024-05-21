@@ -3,4 +3,5 @@ command         = /usr/bin/fcgiwrap -s unix:/run/fcgiwrap.sock
 stop-command    = /usr/bin/rm /run/fcgiwrap.sock
 smooth-recovery = true
 logfile         = /var/log/dinit/fcgiwrap.log
-after           = loginready
+after           = local.target
+before          = login.target
