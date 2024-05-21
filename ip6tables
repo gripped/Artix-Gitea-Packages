@@ -1,5 +1,5 @@
 type        = scripted
 command     = /usr/bin/ip6tables-restore /etc/iptables/ip6tables.rules -w 3
 restart     = false
-depends-on  = network-pre
-before      = network
+depends-on  = pre-local.target
+before      = pre-network.target
