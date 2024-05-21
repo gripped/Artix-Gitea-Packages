@@ -1,6 +1,8 @@
-type         = scripted
-command      = /usr/lib/dinit/cryptsetup unlock
-restart      = false
-options      = starts-on-console
-after        = udev-settle
-after        = lvm2
+type          = scripted
+command       = /usr/lib/dinit/cryptsetup unlock
+restart       = false
+start-timeout = 0
+options       = starts-on-console
+after         = early-devices.target
+after         = lvm2
+before        = early-fs-pre.target
