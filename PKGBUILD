@@ -12,7 +12,7 @@ groups=('dinit-world')
 provides=('init-avahi')
 conflicts=('init-avahi')
 source=("avahi-daemon")
-sha256sums=('9a16f8936cc1d3c04d646bcb626073cc4aefdab728d572866e1e0c44246ea615')
+sha256sums=('e8156d88c499130957d216e67ed9f547b55884699b7e0b57a7e1125a1ffb9adf')
 
 package() {
     install -Dm644 avahi-daemon "$pkgdir/etc/dinit.d/avahi-daemon"
