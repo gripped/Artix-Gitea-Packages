@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=7.0
-pkgrel=1
+pkgrel=3
 epoch=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
@@ -24,7 +24,6 @@ depends=(
   glib2
   glibc
   gmp
-  gnutls
   gsm
   harfbuzz
   jack
@@ -34,6 +33,8 @@ depends=(
   libbluray
   libbs2b
   libdrm
+  libdvdnav
+  libdvdread
   libgl
   libiec61883
   libjxl
@@ -56,6 +57,7 @@ depends=(
   libxext
   libxml2
   libxv
+  mbedtls
   ocl-icd
   onevpl
   opencore-amr
@@ -147,7 +149,6 @@ build() {
     --enable-fontconfig \
     --enable-frei0r \
     --enable-gmp \
-    --enable-gnutls \
     --enable-gpl \
     --enable-ladspa \
     --enable-libaom \
@@ -156,6 +157,8 @@ build() {
     --enable-libbs2b \
     --enable-libdav1d \
     --enable-libdrm \
+    --enable-libdvdnav \
+    --enable-libdvdread \
     --enable-libfreetype \
     --enable-libfribidi \
     --enable-libgsm \
@@ -195,6 +198,7 @@ build() {
     --enable-libxml2 \
     --enable-libxvid \
     --enable-libzimg \
+    --enable-mbedtls \
     --enable-nvdec \
     --enable-nvenc \
     --enable-opencl \

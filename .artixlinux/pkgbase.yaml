@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ffmpeg
-  version: 2:7.0-1
+  version: 2:7.0-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2:7.0-1
+    version: 2:7.0-3
     packages:
-      - ffmpeg-2:7.0-1-x86_64.pkg.tar.zst
+      - ffmpeg-2:7.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
