@@ -2,7 +2,7 @@
 
 pkgname=gdm-dinit
 pkgver=20230923
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for gdm"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ depends=('gdm' 'dbus-dinit')
 provides=('init-gdm' 'init-displaymanager')
 conflicts=('init-gdm' 'init-displaymanager')
 source=("gdm" "gdm.script")
-sha256sums=('18af23e3aae1ad7044edc21997ae5affbec14bf21ecbba237be837b8d07bacce'
+sha256sums=('28a5767850acc87e8a2650ea9bfabb7fd969dd026cc01c28bf1c275a0e9520ed'
             'e51bcec3f62565ca173025014ed6d20537aeeda827cc6e987f6623ba0e0489e4')
 
 package() {

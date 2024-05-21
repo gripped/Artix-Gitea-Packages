@@ -1,5 +1,7 @@
 type            = process
 command         = /usr/lib/dinit/gdm
+restart         = true
 smooth-recovery = true
+depends-on      = dbus
 depends-on      = logind
-after           = loginready
+depends-on      = login.target
