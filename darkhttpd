@@ -3,4 +3,5 @@ command         = /usr/bin/darkhttpd ${DIR:-/srv/http} --uid ${USER:-http} --gid
 env-file        = /etc/dinit.d/config/darkhttpd.conf
 smooth-recovery = true
 logfile         = /var/log/dinit/darkhttpd.log
-waits-for       = loginready
+before          = login.target
+depends-on      = network.target
