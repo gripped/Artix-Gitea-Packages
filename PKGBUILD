@@ -3,9 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt6-tools
-_qtver=6.7.0
-pkgver=${_qtver/-/}
-pkgrel=2.3
+pkgver=6.7.1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -28,7 +27,7 @@ groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
         git+https://code.qt.io/playground/qlitehtml)
-sha256sums=('fcf275b708870ab69df5b158629cfa9a00e260895a7f418d700eaba8a8ed3c9d'
+sha256sums=('710927633cd429a3919822281318618d01ad632c2fd6839d36e3ed07a8b7cfab'
             'SKIP')
 
 prepare() {
@@ -40,11 +39,8 @@ prepare() {
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_PREFIX_PATH=/usr \
     -DINSTALL_PUBLICBINDIR=usr/bin \
-    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
-    -DFEATURE_zstd=ON
+    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
 
