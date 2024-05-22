@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dinit-rc
-  version: 0.3.0-1
+  version: 0.3.1-1
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 0.3.0-1
+    version: 0.3.1-1
     packages:
-      - dinit-rc-0.3.0-1-x86_64.pkg.tar.zst
+      - dinit-rc-0.3.1-1-x86_64.pkg.tar.zst
   system:
     version: 0.2.9-1
     packages:
