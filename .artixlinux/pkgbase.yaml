@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cryptsetup-dinit
-  version: 20230924-3
+  version: 20240522-1
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20230924-3
+    version: 20240522-1
     packages:
-      - cryptsetup-dinit-20230924-3-any.pkg.tar.zst
+      - cryptsetup-dinit-20240522-1-any.pkg.tar.zst
   system:
     version: 20230924-2
     packages:
