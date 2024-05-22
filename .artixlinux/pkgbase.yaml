@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: cryptsetup-scripts
+  version: 2.7.2-1
+  arch:
+    - x86_64
+  pkgname:
+    - cryptsetup-scripts
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -18,8 +20,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.7.2-1
+    packages:
+      - cryptsetup-scripts-2.7.2-1-x86_64.pkg.tar.zst
   system:
     version: null
     packages: []

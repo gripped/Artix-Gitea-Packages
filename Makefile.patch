@@ -1,0 +1,67 @@
+From 77ff191258105b7c66adb85fa4b55bc8fc539d93 Mon Sep 17 00:00:00 2001
+From: Muhammad Herdiansyah <koni@artixlinux.org>
+Date: Wed, 22 May 2024 14:11:34 +0700
+Subject: [PATCH] Makefile
+
+Adapted from Chimera Linux, but we don't really need their initramfs
+tools and the manpages
+
+---
+ Makefile | 45 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+ create mode 100644 Makefile
+
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..cf521e8
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,45 @@
++PREFIX     ?= /usr
++SYSCONFDIR ?= /etc
++BINDIR     ?= $(PREFIX)/bin
++LIBDIR     ?= $(PREFIX)/lib
++DATADIR    ?= $(PREFIX)/share
++
++VERSION ?= 2.5.0
++DATE ?= 2022-10-28
++
++BASE_CFLAGS = -Wall -Wextra -Wshadow -Wno-unused-parameter -Wno-sign-compare
++
++all: askpass passdev
++
++askpass:
++	$(CC) $(BASE_CFLAGS) $(CFLAGS) $(LDFLAGS) debian/askpass.c -o askpass
++
++passdev:
++	$(CC) $(BASE_CFLAGS) $(CFLAGS) $(LDFLAGS) debian/scripts/passdev.c -o passdev
++
++clean:
++	rm -f askpass passdev
++
++install: askpass passdev
++	# make directories
++	install -d $(DESTDIR)$(SYSCONFDIR)/default
++	install -d $(DESTDIR)$(LIBDIR)/cryptsetup/checks
++	install -d $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -d $(DESTDIR)$(BINDIR)
++	# cryptdisks
++	install -m 644 debian/cryptsetup.cryptdisks.default $(DESTDIR)$(SYSCONFDIR)/default/cryptdisks
++	install -m 755 debian/scripts/cryptdisks_start $(DESTDIR)$(BINDIR)
++	install -m 755 debian/scripts/cryptdisks_stop $(DESTDIR)$(BINDIR)
++	install -m 644 debian/cryptdisks-functions $(DESTDIR)$(LIBDIR)/cryptsetup
++	# cryptsetup
++	install -m 755 debian/scripts/decrypt_derived $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 debian/scripts/decrypt_gnupg $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 debian/scripts/decrypt_gnupg-sc $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 debian/scripts/decrypt_keyctl $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 debian/scripts/decrypt_opensc $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 debian/scripts/decrypt_ssl $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 passdev $(DESTDIR)$(LIBDIR)/cryptsetup/scripts
++	install -m 755 debian/checks/blkid $(DESTDIR)$(LIBDIR)/cryptsetup/checks
++	install -m 755 debian/checks/un_blkid $(DESTDIR)$(LIBDIR)/cryptsetup/checks
++	install -m 755 debian/functions $(DESTDIR)$(LIBDIR)/cryptsetup
++	install -m 755 askpass $(DESTDIR)$(LIBDIR)/cryptsetup
+-- 
+2.45.1
+
