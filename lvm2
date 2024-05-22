@@ -1,5 +1,5 @@
 type       = scripted
-command    = /usr/bin/vgchange --sysinit -a y
+command    = /usr/bin/vgchange --sysinit -a ay
 log-type   = buffer
 restart    = false
 depends-on = early-devices.target
