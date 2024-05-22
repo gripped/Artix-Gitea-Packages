@@ -5,7 +5,7 @@
 
 pkgname=retroarch
 pkgver=1.18.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Reference frontend for the libretro API'
 arch=(x86_64)
 url=http://www.libretro.com/
@@ -35,7 +35,6 @@ depends=(
   libxrandr
   libxxf86vm
   libxv
-  mbedtls2
   mesa
   openssl
   qt5-base
@@ -76,17 +75,16 @@ pkgver() {
 
 prepare() {
   cd RetroArch
+  git cherry-pick -n bff678c48a3d453244486b64a21fd4e00f56cbfb
   patch -Np1 -i ../retroarch-config.patch
 }
 
 build() {
   cd RetroArch
-  export CFLAGS+=' -I/usr/include/mbedtls2'
-  export LDFLAGS+=' -L/usr/lib/mbedtls2'
   ./configure \
     --prefix=/usr \
     --disable-builtinflac \
-    --disable-builtinmbedtls \
+    --enable-builtinmbedtls \
     --disable-builtinzlib \
     --disable-cg \
     --disable-jack \
