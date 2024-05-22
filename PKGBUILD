@@ -1,9 +1,8 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=qt6-graphs
-_qtver=6.7.0
-pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgver=6.7.1
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -20,10 +19,10 @@ makedepends=(cmake
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('72737905a5dc59031334736ad1dbfbbd8aa53290bdf0ed5c070bc66e0d440b0d')
+sha256sums=('02a2fdf38f9f587242fa984bddcb07a9df980235a2f5fe74eeb1336817ec5d82')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
