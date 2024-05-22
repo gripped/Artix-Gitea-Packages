@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: boromil@gmail.com
 
 pkgname=ffmpegthumbnailer
 pkgver=2.2.2
-pkgrel=5
+pkgrel=6
 pkgdesc="Lightweight video thumbnailer that can be used by file managers"
 url="https://github.com/dirkvdb/ffmpegthumbnailer"
 license=('GPL2')
