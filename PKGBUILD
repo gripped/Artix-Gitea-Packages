@@ -1,10 +1,10 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: MatMoul <matmoul at the google email domain which is .com>
 
-_url=https://gitea.artixlinux.org/artoo/qt-sudo
+_url=https://gitea.artixlinux.org/artix/qt-sudo
 
 pkgname=qt-sudo
-pkgver=1.0
+pkgver=2.0.0
 pkgrel=1
 pkgdesc='A clone of LXQt sudo tool, without LXQt libs '
 arch=('x86_64')
@@ -13,7 +13,6 @@ url="https://github.com/aarnt/qt-sudo"
 makedepends=(
     qt6-tools
     cmake
-    sudo
     git
 )
 depends=(
@@ -23,14 +22,13 @@ depends=(
 )
 source=(
     "git+$url.git"
-    "$pkgname-cmake-support.patch::$_url/commit/9beaf2505fb3defd58f3f410acd976527545bdcc.patch"
+    "$pkgname-cmake.patch::$_url/commit/ab4e3dd18ee028791218e3b8551728a0fb115c92.patch"
 )
 sha256sums=('SKIP'
-            'aa3fe399640948c0856030c260c6311f3042836901fc313a1da938d91c1378f6')
+            'f0dff2b306d853edf2e66546813bf4263c332a7390c08a2edb47fea96da49ae3')
 
 prepare() {
-    cd "$pkgname"
-    git apply ../$pkgname-cmake-support.patch
+    git -C "$pkgname" apply ../$pkgname-cmake.patch
 }
 
 build() {
