@@ -3,9 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt6-declarative
-_qtver=6.7.0
-pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgver=6.7.1
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -26,12 +25,11 @@ replaces=(qt6-quickcontrols2)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('cc0d77b86177ff9edb85be335337935cf5f4911aa31806a06ca62e28491bfe98')
+sha256sums=('ef48f4cb2507a091e956aee6bbfcdaa8dd4a676cbe8e39547841e8b85e36fbf5')
 
 build() {
   export CXXFLAGS+=" -ffat-lto-objects"
   cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_INSTALL_PREFIX=/usr \
     -DINSTALL_PUBLICBINDIR=usr/bin \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
