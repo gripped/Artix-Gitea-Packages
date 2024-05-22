@@ -2,4 +2,5 @@ type            = scripted
 command         = /usr/bin/mdadm -As
 depends-on      = early-devices.target
 depends-ms      = fsck-root
+before          = early-fs-pre.target
 options         = starts-on-console

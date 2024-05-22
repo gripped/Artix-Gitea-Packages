@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mdadm-dinit
-  version: 20240522-1
+  version: 20240522-2
   arch:
     - any
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 20240522-1
+    version: 20240522-2
     packages:
-      - mdadm-dinit-20240522-1-any.pkg.tar.zst
+      - mdadm-dinit-20240522-2-any.pkg.tar.zst
   system:
     version: 20211029-1
     packages:
