@@ -1,12 +1,13 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: MatMoul <matmoul at the google email domain which is .com>
 
-_url=https://gitea.artixlinux.org/artoo/octopi
+_url=https://gitea.artixlinux.org/artix/octopi
+_itag=1
 
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
 pkgver=0.16.0
-pkgrel=2
+pkgrel=3
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -17,7 +18,7 @@ makedepends=(
     qt-sudo
     cmake
     kstatusnotifieritem
-    alpm-octopi-utils
+    liboctopi
     pacman
     pacman-contrib
     git
@@ -26,34 +27,43 @@ depends=(
     glibc
     gcc-libs
     qt6-base
-#     qt6-5compat
     qtermwidget
 )
 source=(
-    git+https://github.com/aarnt/octopi.git#tag=v$pkgver
-    octopi-kf6-notifier-fix.patch::$_url/commit/43b96933163c2699da3150c01a155ee48f35d5d8.patch
-    octopi-qt-sudo-path-fix.patch::$_url/commit/f3ff2e68123b3aaf9885116e4543324e6f37fa80.patch
+    "git+https://github.com/aarnt/octopi.git#tag=v$pkgver"
+    "$pkgbase-$pkgver-use-liboctopi.patch::$_url/commit/685befeebea9816f7e1c323510618be75eb2d978.patch"
+    "$pkgbase-$pkgver-qt-sudo-config.patch::$_url/commit/df63eb937131e8de96d02a4e3c122c6b6aa16e54.patch"
+    "$pkgbase-$pkgver-kf6-notifier-fix-liboctopi.patch::$_url/commit/b26e9ad8b75d9564aba65f7045d5dc8849b6f5ad.patch"
+    "git+https://gitea.artixlinux.org/artix/octopi-images.git#tag=$_itag"
 )
 sha256sums=('eab0b6cdbc2470ccd91ed589363f231d94879a07a4d1e14d14de5b48edf0f096'
-            '9f0ac3c72e93666670fdb767280c43e5f7518e97e5ecb8778ebf4ffb28da9867'
-            'd0f8e977faab34f63496993c8401a16cd07a8f189532f397b67993a55035e46d')
+            '681d15db834e3d84b8f5192726cd063a3b8e499bd80e70f775d96732ba350839'
+            '3405f5bcea260af3d1549bce94572f7d13559a32bebb12b6fae79ac0f7cb5b92'
+            '049784c50f04cb4657be6a27a2cf9946eed57382fb55ea35d0fa0ba840062b37'
+            '75046d7ae2b2f46ebef0f701d1ed0a8fde4eb179b99cb52b726cfb49e194a42e')
 
 prepare() {
     cd "$pkgbase"
-    git apply ../octopi-kf6-notifier-fix.patch
-    git apply ../octopi-qt-sudo-path-fix.patch
+
+    git apply ../"$pkgbase-$pkgver"-use-liboctopi.patch
+    git apply ../"$pkgbase-$pkgver"-qt-sudo-config.patch
+    git apply ../"$pkgbase-$pkgver"-kf6-notifier-fix-liboctopi.patch
+
+    cp ../octopi-images/images/octopi_{green,red,yellow,transparent}.png resources/images/
+
     cp resources/images/octopi_green.png resources/images/octopi.png
 }
 
 build() {
     cmake -S "$pkgbase" -B build \
-        -DCMAKE_INSTALL_PREFIX=/usr
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DUSE_KF6NOTIFICATIONS=ON
     cmake --build build
 }
 
 package_octopi() {
     depends+=(
-        alpm-octopi-utils libalpm_octopi_utils.so
+        liboctopi liboctopi.so
         pacman libalpm.so
         pacman-contrib
         qt-sudo
@@ -79,7 +89,7 @@ package_octopi() {
 package_octopi-notifier-frameworks() {
     pkgdesc+=' (notifier)'
     depends+=(
-        alpm-octopi-utils libalpm_octopi_utils.so
+        liboctopi liboctopi.so
         pacman libalpm.so
         octopi
         kstatusnotifieritem
