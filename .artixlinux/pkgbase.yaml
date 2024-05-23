@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - zathura-cb
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,9 +47,8 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.1.10-7
-    packages:
-      - zathura-cb-0.1.10-7-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy:
     version: 0.1.10-6
     packages:
