@@ -2,9 +2,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-speech
-_qtver=6.7.0
-pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgver=6.7.1
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -25,10 +24,10 @@ optdepends=('flite: flite TTS backend'
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('a18f689c69070c0db245fc5ec28f4403d57b7c51005d316707a9804b8af7dcbf')
+sha256sums=('37f83aab9a333327189d08266daf2d70611461cdae3437a31b5fd5a4f856c1cd')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
