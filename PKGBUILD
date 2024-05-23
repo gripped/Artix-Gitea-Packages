@@ -2,9 +2,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-webview
-_qtver=6.7.0
-pkgver=${_qtver/-/}
-pkgrel=1.1
+pkgver=6.7.1
+pkgrel=1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -20,10 +19,10 @@ makedepends=(cmake
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('932d0c484b6ac8f696fafef29d16103a1bd18926ea150e3040b92bbb532385cf')
+sha256sums=('6bb6031683b96e9063caa167d99a28a38e381b645c4f9a8d2e6796e765323551')
 
 build() {
-  cmake -B build -S $_pkgfn -G Ninja -DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -B build -S $_pkgfn -G Ninja \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
