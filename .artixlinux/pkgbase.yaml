@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: turnstile
-  version: 0.1.8-5
+  version: 0.1.8-6
   arch:
     - x86_64
   pkgname:
     - turnstile
     - turnstile-dinit
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,8 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.1.8-6
+    packages:
+      - turnstile-0.1.8-6-x86_64.pkg.tar.zst
+      - turnstile-dinit-0.1.8-6-x86_64.pkg.tar.zst
   galaxy:
     version: 0.1.8-5
     packages:
