@@ -5,7 +5,7 @@
 pkgname=0ad
 pkgver=a26
 _pkgver=0.0.26-alpha
-pkgrel=13
+pkgrel=14
 pkgdesc="Cross-platform, 3D and historically-based real-time strategy game"
 arch=('x86_64')
 url="http://play0ad.com/"
@@ -48,7 +48,6 @@ prepare() {
 
 build() {
   # Build Python 3.11 to build bundled spidermonkey
-  # god help us
   # https://trac.wildfiregames.com/ticket/6895
   # https://gitlab.archlinux.org/archlinux/packaging/packages/0ad/-/issues/1
   cd Python-3.11.9
