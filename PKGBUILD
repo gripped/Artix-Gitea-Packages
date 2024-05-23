@@ -1,4 +1,5 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Xyne <ca dot archlinux at xyne, backwards>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 # Contributor: dorphell <dorphell@archlinux.org>
@@ -6,7 +7,7 @@
 
 pkgname=cmus
 pkgver=2.10.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Feature-rich ncurses-based music player'
 arch=('x86_64')
 url='https://cmus.github.io/'
