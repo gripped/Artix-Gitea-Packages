@@ -8,7 +8,7 @@
 # NOTE: libtool requires rebuilt with each new gcc version
 
 pkgname=(gcc gcc-libs lib32-gcc-libs gcc-ada gcc-d gcc-fortran gcc-go gcc-m2 gcc-objc gcc-rust lto-dump libgccjit)
-pkgver=14.1.1+r58+gfc9fb69ad62
+pkgver=14.1.1+r58+gfc9fb69ad624
 _commit=fc9fb69ad624fd4cc89ff31ad0a7b8d88481c1f7
 pkgrel=1
 pkgdesc='The GNU Compiler Collection'
@@ -50,10 +50,12 @@ sha256sums=('21867c99e9bb9128df18babac5f628caa610a9ec040d4cee7fe05cfc933eaf9b'
             'de48736f6e4153f03d0a5d38ceb6c6fdb7f054e8f47ddd6af0a3dbf14f27b931'
             '2513c6d9984dd0a2058557bf00f06d8d5181734e41dcfe07be7ed86f2959622a'
             '1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f')
-pkgver() {
-  cd gcc
-  echo "$(cat gcc/BASE-VER)+$(git describe --tags | sed 's/[^-]*-[^-]*-//;s/[^-]*-/r&/;s/-/+/g;s/_/./')"
-}
+
+# wtf? wrong version
+# pkgver() {
+#   cd gcc
+#   echo "$(cat gcc/BASE-VER)+$(git describe --tags | sed 's/[^-]*-[^-]*-//;s/[^-]*-/r&/;s/-/+/g;s/_/./')"
+# }
 
 prepare() {
   [[ ! -d gcc ]] && ln -s gcc-${pkgver/+/-} gcc
