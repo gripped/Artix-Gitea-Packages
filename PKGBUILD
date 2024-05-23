@@ -5,7 +5,7 @@
 pkgbase=qt6-doc
 pkgname=(qt6-doc qt6-examples)
 pkgver=6.7.1
-pkgrel=1
+pkgrel=1.1
 arch=('any')
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -32,8 +32,15 @@ makedepends=(alsa-lib
              vulkan-headers)
 groups=(qt6)
 _pkgfn=qt-everywhere-src-$pkgver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver/-/}/single/$_pkgfn.tar.xz)
-sha256sums=('38dbf2768776e875ed5cdea8cccf1a240512a29769768084430914c4a33bedc4')
+source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver/-/}/single/$_pkgfn.tar.xz
+zstd.patch)
+sha256sums=('38dbf2768776e875ed5cdea8cccf1a240512a29769768084430914c4a33bedc4'
+            '37b38e1bf85b83b84d6885853a1e66a9a3ef081d804bd9e099c7e25466911bca')
+
+prepare() {
+  cd $_pkgfn
+  patch -Np1 -i $srcdir/zstd.patch
+}
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
