@@ -3,7 +3,7 @@
 
 pkgname=qt6-webengine
 pkgver=6.7.1
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -70,10 +70,16 @@ groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
         git+https://code.qt.io/qt/qtwebengine-chromium
-        qtwebengine-6.7.0-ninja1.12.patch)
+        qtwebengine-6.7.0-ninja1.12.patch
+        ffmpeg-7.patch
+        ffmpeg-7b.patch
+        no-h264.patch)
 sha256sums=('25cba11801528f31b1e043aa29395c695189ec145b993c633ca8e557b13f34f6'
             'SKIP'
-            'c037cccc1d43bcd9d67045354ca48b405acec217149cb4b2bd3cfb7b5561cc33')
+            'c037cccc1d43bcd9d67045354ca48b405acec217149cb4b2bd3cfb7b5561cc33'
+            'b7fe6ce37b06f7f05b8ea90ab2b002c697676a1c90dfad03c34f641e518a83ad'
+            '4b326ecfe5bca4024cb0277e8ef2b8fd09708e02aa07e2f771f169d6e9a3cbbb'
+            '9b51f225dcc1d86c9fe02eb18f486673e363efcfc6b5c219ee961d73adc3340d')
 
 prepare() {
   cd $_pkgfn
@@ -82,7 +88,11 @@ prepare() {
   git -c protocol.file.allow=always submodule update
 
 # Fix build with ninja 1.12 - Gentoo patch
-  patch -Np1 -i ../qtwebengine-6.7.0-ninja1.12.patch
+  patch -p1 -i ../qtwebengine-6.7.0-ninja1.12.patch
+# Fix build with ffmpeg 7 - OpenSUSE and Chromium patches
+  patch -d src/3rdparty/chromium -p1 -i "$srcdir"/ffmpeg-7.patch
+  patch -d src/3rdparty/chromium -p1 -i "$srcdir"/ffmpeg-7b.patch
+  patch -p1 -i ../no-h264.patch
 }
 
 build() {
