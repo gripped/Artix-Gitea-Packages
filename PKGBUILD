@@ -3,7 +3,7 @@
 pkgbase=turnstile
 pkgname=('turnstile' 'turnstile-dinit')
 pkgver=0.1.8
-pkgrel=3
+pkgrel=4
 pkgdesc="Work-in-progress session/login tracker as a logind alternative"
 arch=("x86_64")
 url="https://github.com/chimera-linux/turnstile"
@@ -19,8 +19,7 @@ prepare() {
     # If https://github.com/davmac314/dinit/issues/245 is done,
     # I think we can do away with this.
     cd "$pkgname-$pkgver"
-    sed -i  -e "s/login.target/loginready/" \
-            -e "s/init-local.target/rclocal/" data/dinit/turnstiled
+    sed -i -e "s/init-local/local/" data/dinit/turnstiled
 }
 
 build() {
