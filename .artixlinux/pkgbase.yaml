@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6-multimedia
-  version: 6.7.1-2
+  version: 6.7.1-3
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - qt6-multimedia-ffmpeg
     - qt6-multimedia-gstreamer
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.7.1-3
+    packages:
+      - qt6-multimedia-6.7.1-3-x86_64.pkg.tar.zst
+      - qt6-multimedia-ffmpeg-6.7.1-3-x86_64.pkg.tar.zst
+      - qt6-multimedia-gstreamer-6.7.1-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: 6.7.1-2
     packages:
