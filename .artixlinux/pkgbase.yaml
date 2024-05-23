@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: avidemux
-  version: 2.8.1-3
+  version: 2.8.1-4
   arch:
     - x86_64
   pkgname:
     - avidemux-cli
     - avidemux-qt
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -44,8 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 2.8.1-4
+    packages:
+      - avidemux-cli-2.8.1-4-x86_64.pkg.tar.zst
+      - avidemux-qt-2.8.1-4-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
     packages:
       - avidemux-cli-2.8.1-3-x86_64.pkg.tar.zst
       - avidemux-qt-2.8.1-3-x86_64.pkg.tar.zst
+team: galaxy
