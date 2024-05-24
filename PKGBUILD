@@ -6,7 +6,7 @@ _pkg=arrow
 _pkgname=pyarrow
 pkgname=python-${_pkgname}
 pkgver=16.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Columnar in-memory analytics layer for big data — Python module."
 arch=(x86_64)
 url="https://arrow.apache.org"
@@ -15,7 +15,7 @@ depends=(arrow gcc-libs glibc python python-numpy python-setuptools-scm)
 optdepends=('python-cffi: interact with C code'
             'python-pandas: Pandas integration'
             'python-fsspec: Filesystem Spec support')
-makedepends=(git cmake cython0 python-build python-installer python-wheel python-cffi python-pandas)
+makedepends=(git cmake cython python-build python-installer python-wheel python-cffi python-pandas)
 checkdepends=(python-brotli python-hypothesis python-pandas python-pytest python-pytz)
 source=(
   https://archive.apache.org/dist/${_pkg}/${_pkg}-${pkgver}/apache-${_pkg}-${pkgver}.tar.gz{,.asc}
@@ -60,7 +60,7 @@ check() {
   ARROW_TEST_DATA="${srcdir}"/arrow-testing/data \
   ARROW_HOME=/usr \
   PARQUET_HOME=/usr \
-  pytest -vv --color=yes -k 'not test_cython_api and not test_visit_strings and not test_env_var and not test_get_include and not test_pyarrow_include and not test_dataset and not test_orc'
+  pytest -vv --color=yes -k 'not test_cython_api and not test_visit_strings and not test_env_var and not test_get_include and not test_pyarrow_include'
   mv _nopyarrow pyarrow
 }
 
