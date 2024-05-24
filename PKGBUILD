@@ -4,7 +4,7 @@
 pkgname=rdma-core
 pkgdesc="RDMA core userspace libraries and daemons"
 pkgver=51.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://github.com/linux-rdma/rdma-core"
 license=(
@@ -18,7 +18,7 @@ license=(
   'CPL-1.0 OR BSD-2-Clause OR GPL-2.0-or-later'
 )
 depends=(
-  ethtool
+  bash
   glibc
   libnl
   perl
@@ -26,7 +26,7 @@ depends=(
 )
 makedepends=(
   cmake
-  cython0
+  cython
   git
   libdrm
   ninja
@@ -34,6 +34,9 @@ makedepends=(
   python
   python-docutils
   valgrind
+)
+optdepends=(
+  'python: for the Python API (pyverbs)'
 )
 _provides=(
   ibacm
