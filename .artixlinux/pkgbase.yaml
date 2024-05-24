@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: hicolor-icon-theme
-  version: 0.17-3
+  version: 0.18-1
   arch:
     - any
   pkgname:
     - hicolor-icon-theme
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.17-3
+    version: 0.18-1
     packages:
-      - hicolor-icon-theme-0.17-3-any.pkg.tar.zst
+      - hicolor-icon-theme-0.18-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
