@@ -1,16 +1,17 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
 
 pkgname=opendht
 epoch=1
 pkgver=3.1.9
-pkgrel=2
+pkgrel=3
 pkgdesc="C++17 Distributed Hash Table (DHT) implementation"
 arch=(x86_64)
 url="https://github.com/savoirfairelinux/opendht"
 license=(GPL3)
 depends=(glibc gnutls nettle readline argon2 jsoncpp libjsoncpp.so fmt http-parser openssl)
-makedepends=(git cmake msgpack-cxx asio restinio cython0 python-setuptools)
+makedepends=(git cmake msgpack-cxx asio restinio cython python-setuptools)
 checkdepends=(cppunit)
 optdepends=('python: to use the Python bindings'
             'msgpack-cxx: linking against opendht')
