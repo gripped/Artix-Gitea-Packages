@@ -3,7 +3,7 @@
 
 pkgname=syslog-ng
 pkgver=4.6.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=('x86_64')
 url="https://www.syslog-ng.com/products/open-source-log-management/"
@@ -25,7 +25,7 @@ depends=(
 )
 makedepends=('libxslt' 'mongo-c-driver' 'librabbitmq-c' 'python' 'libesmtp' 'hiredis'
              'libdbi' 'libmaxminddb' 'net-snmp' 'librdkafka')
-checkdepends=('python-nose' 'python-ply')
+# checkdepends=('python-ply')
 optdepends=('logrotate: for rotating log files'
             'libdbi: for the SQL plugin'
             'librabbitmq-c: for the AMQP plugin'
@@ -48,6 +48,10 @@ source=(https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$pkgver
 sha512sums=('7c4fbf1ac5377240afa7a1db8d72772399d2c62657fffc3c59e82b2dea6f12031f02320c4f567f981311bd1d8bbfd98962aeb59720ca857867a51b6bf83afb4b'
             'eabd6439774e71840a86dd5870b7c912952f4b31dcd18afece4c2404005106a7cf8328c8156ab9a2218e87c4be8466f6a1d9b2cc9478c7815b0c01e977af8d94'
             'cd39f545a6a855c866a466bf846e33940b2c2dd1fc2eaf50cce29c68e1a5753c7c4b56411e4f01c152f32e155104a98dd755a96319767f47c73a8853f720b2cc')
+
+prepare() {
+  cd $pkgname-$pkgver
+}
 
 build() {
   cd $pkgname-$pkgver
