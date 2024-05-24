@@ -19,7 +19,7 @@ makedepends=(
 )
 provides=(libfribidi.so)
 source=(
-  "git+$url?signed#tag=v$pkgver"
+  "git+$url#tag=v$pkgver"
 )
 b2sums=('1bb9f57eae1652a7efb33bd39a2e93845f764efab5ac5b5de9d2dc2074aa514d40b26db4b5abd458013fb25d2b106f85c3ed2e71b378d2e9b16edf87908a403c')
 validpgpkeys=(
