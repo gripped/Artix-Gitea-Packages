@@ -7,7 +7,7 @@
 pkgname=digikam
 _pkgver=8.3.0
 pkgver=${_pkgver//-/} # for beta versions
-pkgrel=5
+pkgrel=6
 pkgdesc='An advanced digital photo management application'
 arch=(x86_64)
 license=(GPL)
@@ -84,7 +84,7 @@ prepare() {
 }
 
 build() {
-  artix-cmake -B build -S $pkgname-$_pkgver \
+  cmake -B build -S $pkgname-$_pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_WITH_QT6=ON \
     -DENABLE_KFILEMETADATASUPPORT=ON \
