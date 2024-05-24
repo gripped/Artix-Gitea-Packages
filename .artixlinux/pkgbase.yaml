@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: glm
-  version: 1.0.0-3
+  version: 1.0.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.0-3
+    version: 1.0.1-1
     packages:
-      - glm-1.0.0-3-x86_64.pkg.tar.zst
+      - glm-1.0.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
