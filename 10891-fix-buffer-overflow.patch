@@ -1,0 +1,42 @@
+From 53cdbc09aa3d1dcc83bccf2af0d9c349eb4d3c0b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jakub=20Klinkovsk=C3=BD?=
+ <1289205+lahwaacz@users.noreply.github.com>
+Date: Thu, 23 May 2024 21:05:56 +0200
+Subject: [PATCH] Fix buffer overflow in Markdown parser
+
+This fixes a buffer overflow that happened when parsing a bad Markdown
+file with an unclosed emphasis nested in other elements, such as
+
+```markdown
+> __af_err af_flip(af_array *out, const af_array in, const unsigned dim)__
+```
+
+This snippet comes from the ArrayFire repository [1]. The problem was
+found after the refactoring [2] that introduced std::string_view in the
+code. The `std::string_view::operator[]` has bounds checking enabled
+when the macro `_GLIBCXX_ASSERTIONS` is defined, which is the case of
+Arch Linux build system.
+
+[1] https://github.com/arrayfire/arrayfire/blob/0a25d36238aa1eee3b775d3584937ca65b0a1807/docs/pages/matrix_manipulation.md
+[2] https://github.com/doxygen/doxygen/commit/f4e37514325abe4aa6aeecbc96e9e3e027885aef
+---
+ src/markdown.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/markdown.cpp b/src/markdown.cpp
+index 10429edd57..f25d1b4c50 100644
+--- a/src/markdown.cpp
++++ b/src/markdown.cpp
+@@ -691,6 +691,12 @@ size_t Markdown::Private::findEmphasisChar(std::string_view data, char c, size_t
+       }
+     }
+ 
++    // avoid overflow (unclosed emph token)
++    if (i==size)
++    {
++      return 0;
++    }
++
+     // skipping a code span
+     if (data[i]=='`')
+     {
