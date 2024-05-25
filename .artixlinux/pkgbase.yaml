@@ -8,7 +8,7 @@ pkgbase:
     - lxdm-dinit
 actions:
   addRepo: null
-  removeRepo: world-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 20211102-3
-    packages:
-      - lxdm-dinit-20211102-3-any.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
