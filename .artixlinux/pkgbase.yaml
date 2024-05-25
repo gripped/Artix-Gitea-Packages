@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-domain_name
-  version: 0.6.20231109-1
+  version: 0.6.20240107-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.20231109-1
+    version: 0.6.20240107-1
     packages:
-      - ruby-domain_name-0.6.20231109-1-any.pkg.tar.zst
+      - ruby-domain_name-0.6.20240107-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
