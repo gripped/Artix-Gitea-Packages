@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=pqiv
 pkgver=2.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Powerful image viewer with minimal UI'
 arch=(x86_64)
 url="https://github.com/phillipberndt/$pkgname"
