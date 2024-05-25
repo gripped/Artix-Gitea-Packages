@@ -1,0 +1,10 @@
+type            = bgprocess
+command         = /usr/bin/mailman start -f
+stop-command    = /usr/bin/mailman stop
+pid-file        = /run/mailman/master.pid
+logfile         = /var/log/dinit/mailman.log
+run-as          = mailman
+restart         = true
+smooth-recovery = true
+depends-on      = network.target
+before          = login.target
