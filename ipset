@@ -1,0 +1,6 @@
+type         = scripted
+command      = /usr/bin/ipset -f /etc/ipset.conf restore
+stop-command = /usr/bin/ipset destroy
+before       = network-pre.target
+before       = iptables
+before       = ip6tables
