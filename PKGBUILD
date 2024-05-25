@@ -9,7 +9,7 @@ pkgname=(
   lib32-pipewire-jack
   lib32-pipewire-v4l2
 )
-pkgver=1.0.6
+pkgver=1.0.7
 _so_ver=0.3
 pkgrel=1
 epoch=1
@@ -27,12 +27,7 @@ makedepends=(
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
 )
-b2sums=('77e01e262df0b0159cc4bbc79387268798d01c6fe035e779e85937e53f486412b210f94454fb6ed78c8f073e9cb1ea4cda551f57e1129cdd30020254e4be778b')
-
-pkgver() {
-  cd pipewire
-  git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-}
+b2sums=('0f48332de9555b7eaca49f7ba1dfa6c86c9797ef161e1b3bec4c04dbf791e867e9e84e93fa6bc57426e79cdc4ee32c244a934064f4e5028d4310b5ec13a16b5d')
 
 prepare() {
   cd pipewire
@@ -68,7 +63,6 @@ build() {
     -D pw-cat=disabled
     -D raop=disabled
     -D readline=disabled
-    -D rlimits-install=false
     -D roc=disabled
     -D sdl2=disabled
     -D selinux=disabled
@@ -76,10 +70,10 @@ build() {
     -D sndfile=disabled
     -D tests=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
+    -D systemd=disabled
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
-    -D systemd=disabled
   )
 
   artix-meson pipewire build "${meson_options[@]}"
