@@ -5,7 +5,7 @@
 pkgbase=doxygen
 pkgname=(doxygen doxygen-docs)
 pkgver=1.11.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Documentation system for C++, C, Java, IDL and PHP'
 url='http://www.doxygen.nl'
 arch=(x86_64)
@@ -32,9 +32,9 @@ makedepends=(
 source=(${pkgbase}-${pkgver}.tar.gz::https://github.com/doxygen/doxygen/archive/Release_${pkgver//./_}.tar.gz
         10891-fix-buffer-overflow.patch)
 sha512sums=('68ab2c8cf570216a7e917f686ec79361179cdc9868966fcc2722ebab49032e2bc9ac60192f101793f978ad2d7236d83c461ab4d2477f7704cf32a003b87311fb'
-            '58fa168b709a5371db8fcaea4fff39809b4e81088f960d719ae05124f8fa8f574f5edc268e16cf5c3e5f5393251e467a163c9e99b1a7c719ba9b0e59a1b69518')
+            'bb48499a17254853522f58246a837113c27a3a960ecc42042f411eeab19faa46587e3d7af6dbdaaca78ec90ccccba8cd2f9e0457688a6b96eaba4c5799070455')
 b2sums=('e98254aeec8ea7cedf6ec537e3d82cb898f55d435b95e58108c433f920432789fb7feba290b9a365f90ee56eec9120376b18ff26e31b1e4219b8f89f351daa8f'
-        'c85889d6166c213b244134b668932aad8a879671e52be9e832926780a0216fbee66be331b62a84b994311c1d87bbba10c906acf1e436840fa540750e471229b5')
+        '500304f5727316ee3e6114076525100d30613de1821108c3ed805e862602252de0b9439c0384acad6ba9d175ccab2f84cccafba5942740282ef388613d9d39a5')
 
 _pick() {
   local p="$1" f d; shift
