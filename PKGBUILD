@@ -5,7 +5,7 @@
 
 pkgname=fceux
 pkgver=2.6.6
-pkgrel=1
+pkgrel=2
 pkgdesc='Fast and ultra-compatible NES/Famicom emulator'
 arch=(x86_64)
 url='https://github.com/TASEmulators/fceux'
@@ -24,7 +24,7 @@ prepare() {
 }
 
 build() {
-  artix-cmake \
+  cmake \
     -B build \
     -D CMAKE_C_FLAGS="$CFLAGS -fPIC -w" \
     -D CMAKE_CXX_FLAGS="$CXXFLAGS -fPIC -w" \
