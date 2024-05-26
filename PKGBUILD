@@ -6,7 +6,7 @@
 
 pkgname=minidlna
 pkgver=1.3.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A DLNA/UPnP-AV Media server (aka ReadyDLNA)"
 arch=('x86_64')
 url="https://sourceforge.net/projects/minidlna/"
@@ -16,15 +16,18 @@ makedepends=('git')
 backup=('etc/minidlna.conf')
 source=("minidlna::git+https://git.code.sf.net/p/minidlna/git#tag=v${pkgver//./_}"
 	minidlna.tmpfiles
-	minidlna.sysusers)
-sha512sums=('SKIP'
+	minidlna.sysusers
+        ffmpeg7.patch)
+sha512sums=('7048a86a72d6ce23de2292120427a258993028d8ec7fef68a4879c2a41ab24c07d68526d92a477a5b20c21ee8cfa1a758e5d7ed34dd666d8325eb75be37cce93'
             'c58631c20416997c538be6258ef9c13b9304d5906b19f063157df70f672b7153b452ffb9612be267a90942bd880af8d665ebe3c53a2926ffa99acc943d875d97'
-            'e3e6c46faac768b283134a47013b77c4152840c61d3503f51fbe154bf25fe8a0e585ed9a40950212254b4a844b007f674875e4d25f55af51914694213fecc420')
+            'e3e6c46faac768b283134a47013b77c4152840c61d3503f51fbe154bf25fe8a0e585ed9a40950212254b4a844b007f674875e4d25f55af51914694213fecc420'	
+            '0bff7af02ae2d6b0d6f1e4c0ee26cd18f156bfb99377a365c8ff2c3c5555a5e979c215423579a45f82e0cb1fce8628de2c1ca51a28fa07a1d336b9ecc561a7f3')
 
 prepare() {
   cd "$srcdir/$pkgname"
   sed -i 's|-Werror||g' configure.ac
   sed -i 's|#user=.*|user=minidlna|g' minidlna.conf
+  patch -p1 -i ../ffmpeg7.patch # Fix build with ffmpeg 7
 }
 
 build() {
