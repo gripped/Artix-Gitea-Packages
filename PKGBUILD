@@ -9,7 +9,7 @@
 
 pkgname=xmms2
 pkgver=0.9.3
-pkgrel=2
+pkgrel=3
 pkgdesc='X-platform Music Multiplexing System 2'
 arch=(x86_64)
 url='https://github.com/xmms2/wiki/wiki'
@@ -51,26 +51,33 @@ makedepends=("${_depends[@]%%:*}" git libpulse perl-pod-parser waf)
 optdepends=("${_depends[@]}" 'pulseaudio: PulseAudio output')
 source=(https://github.com/xmms2/xmms2-devel/releases/download/$pkgver/$pkgname-$pkgver.tar.xz
         tmpfiles.conf
-        sysusers.conf)
+        sysusers.conf
+        ffmpeg-7.patch)
 sha256sums=('fe24798db2e6cd8d8eb131ee9800d211525ffebe561c1c5c057710cd7b90a81b'
             '13e3e2720e21d048d776156f8ab17c40d05b70437823da00b3c4cc2e7f7ecf7f'
-            'a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a')
+            'a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a'
+            '86e6b2d70d03ddcfaf57a07aab30e189c35c23d67d0013959b9004351706e2af')
+
+prepare() {
+  cd xmms2-$pkgver
+  patch -p1 -i ../ffmpeg-7.patch
+}
 
 build() {
   cd xmms2-$pkgver
   export LINKFLAGS="$LDFLAGS"
-  waf configure --prefix=/usr --sbindir=/usr/bin --without-ldconfig \
+  ./waf configure --prefix=/usr --sbindir=/usr/bin --without-ldconfig \
     --with-ruby-archdir=`ruby -e 'puts RbConfig::CONFIG["vendorarchdir"]'` \
     --with-ruby-libdir=`ruby -e 'puts RbConfig::CONFIG["vendorlibdir"]'` \
     --with-perl-archdir=`perl -V:installvendorarch | cut -f2 -d\'` \
     --with-optionals=launcher,xmmsclient++,xmmsclient++-glib,perl,ruby,nycli,pixmaps,et,mdns,medialib-updater,sqlite2s4 \
     --without-optionals=python
-  waf build
+  ./waf build
 }
 
 package() {
   cd xmms2-$pkgver
-  waf --destdir="$pkgdir" install
+  ./waf --destdir="$pkgdir" install
 
   cd "$srcdir"
   install -Dm644 sysusers.conf "$pkgdir/usr/lib/sysusers.d/xmms2.conf"
