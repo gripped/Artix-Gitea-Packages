@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: opencl-headers
-  version: 2:2023.04.17-2
+  version: 2:2024.05.08-1
   arch:
     - any
   pkgname:
     - opencl-headers
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2:2023.04.17-2
+    version: 2:2024.05.08-1
     packages:
-      - opencl-headers-2:2023.04.17-2-any.pkg.tar.zst
+      - opencl-headers-2:2024.05.08-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
