@@ -11,7 +11,7 @@ pkgname=(
 )
 pkgver=1.0.7
 _so_ver=0.3
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -74,6 +74,7 @@ build() {
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
+    -D rlimits-install=false
   )
 
   artix-meson pipewire build "${meson_options[@]}"
