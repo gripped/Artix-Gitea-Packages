@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: mplayer
-  version: 38448-1
+  version: 38542-2
   arch:
     - x86_64
   pkgname:
     - mplayer
     - mencoder
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 38542-2
+    packages:
+      - mplayer-38542-2-x86_64.pkg.tar.zst
+      - mencoder-38542-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
