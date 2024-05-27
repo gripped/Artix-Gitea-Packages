@@ -3,9 +3,9 @@
 
 pkgname=python-mako
 _pkgname=${pkgname#python-}
-pkgver=1.3.3
+pkgver=1.3.4
 _pkgver=rel_${pkgver//./_}
-pkgrel=3
+pkgrel=1
 pkgdesc="A template library written in Python"
 arch=(any)
 url="https://github.com/sqlalchemy/mako"
@@ -36,7 +36,7 @@ optdepends=(
   'python-pytest: for testing utilities'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$_pkgver.tar.gz")
-sha512sums=('d8ffb04d935f47b6559e29cb22337b99c63bb6f5daeedc728d8046b772320f0baed8608bb9d36e1bc69243017a4e9e0c3d4317c98477b416a7beaabb8483983e')
+sha512sums=('3413fa7a32442d3bbda3a9bcec2c1565cd4f5735f6bfef44a217ae2ba63572fd3e3755a00f5d67b89f63e379426bed827a03db3976356424ee225f4915d89ff6')
 
 _archive="$_pkgname-$_pkgver"
 
