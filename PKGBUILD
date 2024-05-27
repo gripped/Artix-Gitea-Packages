@@ -1,8 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=elogind-dinit
-pkgver=20240421
-pkgrel=5
+pkgver=20240527
+pkgrel=1
 pkgdesc="dinit service scripts for elogind"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +12,7 @@ provides=('init-elogind' 'init-logind')
 conflicts=('init-elogind' 'init-logind')
 groups=('dinit-system')
 source=("elogind" "logind")
-sha256sums=('bfa890ba3396c313c0bcc578a276fe45cc65506a7d0f59795340a753c7f8a214'
+sha256sums=('693dd71d870b77472ed5be88022b2c0f9f0eeaca40792aa5cc886d4adeedd178'
             'dd3401a038ffd16e9377fd80691210adc943a148effc5056a5424800ca00140c')
 
 package() {
