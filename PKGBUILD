@@ -28,7 +28,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.24.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -81,11 +81,13 @@ source=(
   "git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=$pkgver"
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
+  0002-Fix-build-with-FFmpeg-7.patch
 )
 b2sums=('ba36061add5b081291b2f6a18b14e2c6cf1f2796b503bc7053e4c059f3d10620ece05b52590151f7e35f2e8919a0f2cfa3372ba24ff0a15beeb4d670c7df3ccd'
         '118ad62b9e1072a8f1399c2984c74745c2c1572b9f244bd108b23821d2957bcb1938010f37ec3ab6ac4a40989dd6e54898b5ab669fd142891d4cba4c44b6fd9f'
         'SKIP'
-        'e7c59c828883a3bb3aa47684d83b57cd4d463e1f8cffc0383f779fa60ecbe37bfa30c8a0f40e6b2a01f6e0edfbefc5b7041340837e0018741e5963671945a1f2')
+        'e7c59c828883a3bb3aa47684d83b57cd4d463e1f8cffc0383f779fa60ecbe37bfa30c8a0f40e6b2a01f6e0edfbefc5b7041340837e0018741e5963671945a1f2'
+        '696dd7a38465f96bf3e48f66c290febfdadd80a75637ee7b8a13929a773330560852cbe85c37bbf5d4cb821fec5d9ae4036e11ef528fe8cbbb93dfe16e723fdf')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
@@ -95,6 +97,9 @@ prepare() {
 
   # Disable broken tests
   git apply -3 ../0001-HACK-meson-Disable-broken-tests.patch
+
+  # Fix build with FFmpeg 7
+  patch -p1 -i ../0002-Fix-build-with-FFmpeg-7.patch
 }
 
 build() {
