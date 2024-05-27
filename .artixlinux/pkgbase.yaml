@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: appmenu-gtk-module
-  version: 24.02-1
+  version: 24.05-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.02-1
+    version: 24.05-1
     packages:
-      - appmenu-gtk-module-24.02-1-x86_64.pkg.tar.zst
+      - appmenu-gtk-module-24.05-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
