@@ -4,7 +4,7 @@
 
 pkgname=lib32-e2fsprogs
 pkgver=1.47.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Ext2/3/4 filesystem libraries (32-bit)'
 arch=('x86_64')
 license=('GPL' 'LGPL' 'MIT')
