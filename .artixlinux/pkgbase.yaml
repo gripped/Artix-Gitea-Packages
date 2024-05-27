@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: bluez-dinit
-  version: 20211026-2
+  version: 20211026-3
   arch:
     - any
   pkgname:
     - bluez-dinit
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20211026-3
+    packages:
+      - bluez-dinit-20211026-3-any.pkg.tar.zst
   system:
     version: null
     packages: []
