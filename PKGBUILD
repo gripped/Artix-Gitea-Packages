@@ -5,7 +5,7 @@
 pkgname=lib32-ncurses
 _name=${pkgname#lib32-}
 pkgver=6.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc="System V Release 4.0 curses emulation library (32-bit)"
 arch=(x86_64)
 url=https://invisible-island.net/ncurses/ncurses.html
