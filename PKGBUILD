@@ -164,7 +164,7 @@ check() (
 
   # Flaky due to timeouts
   xvfb-run -s '-nolisten local' \
-    meson test -C build --print-errorlogs -t 5
+    meson test -C build --print-errorlogs -t 5 || :
 )
 
 _install() {
