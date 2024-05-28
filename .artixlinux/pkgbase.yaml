@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: texlive-texmf
-  version: 2024.2-1
+  version: 2024.2-2
   arch:
     - any
   pkgname:
@@ -48,11 +48,11 @@ pkgbase:
     - texlive-xetex
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -71,49 +71,49 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.2-1
+    version: 2024.2-2
     packages:
-      - texlive-doc-2024.2-1-any.pkg.tar.zst
-      - texlive-meta-2024.2-1-any.pkg.tar.zst
-      - texlive-basic-2024.2-1-any.pkg.tar.zst
-      - texlive-bibtexextra-2024.2-1-any.pkg.tar.zst
-      - texlive-binextra-2024.2-1-any.pkg.tar.zst
-      - texlive-context-2024.2-1-any.pkg.tar.zst
-      - texlive-fontsextra-2024.2-1-any.pkg.tar.zst
-      - texlive-fontsrecommended-2024.2-1-any.pkg.tar.zst
-      - texlive-fontutils-2024.2-1-any.pkg.tar.zst
-      - texlive-formatsextra-2024.2-1-any.pkg.tar.zst
-      - texlive-games-2024.2-1-any.pkg.tar.zst
-      - texlive-humanities-2024.2-1-any.pkg.tar.zst
-      - texlive-langarabic-2024.2-1-any.pkg.tar.zst
-      - texlive-langchinese-2024.2-1-any.pkg.tar.zst
-      - texlive-langcjk-2024.2-1-any.pkg.tar.zst
-      - texlive-langcyrillic-2024.2-1-any.pkg.tar.zst
-      - texlive-langczechslovak-2024.2-1-any.pkg.tar.zst
-      - texlive-langenglish-2024.2-1-any.pkg.tar.zst
-      - texlive-langeuropean-2024.2-1-any.pkg.tar.zst
-      - texlive-langfrench-2024.2-1-any.pkg.tar.zst
-      - texlive-langgerman-2024.2-1-any.pkg.tar.zst
-      - texlive-langgreek-2024.2-1-any.pkg.tar.zst
-      - texlive-langitalian-2024.2-1-any.pkg.tar.zst
-      - texlive-langjapanese-2024.2-1-any.pkg.tar.zst
-      - texlive-langkorean-2024.2-1-any.pkg.tar.zst
-      - texlive-langother-2024.2-1-any.pkg.tar.zst
-      - texlive-langpolish-2024.2-1-any.pkg.tar.zst
-      - texlive-langportuguese-2024.2-1-any.pkg.tar.zst
-      - texlive-langspanish-2024.2-1-any.pkg.tar.zst
-      - texlive-latex-2024.2-1-any.pkg.tar.zst
-      - texlive-latexextra-2024.2-1-any.pkg.tar.zst
-      - texlive-latexrecommended-2024.2-1-any.pkg.tar.zst
-      - texlive-luatex-2024.2-1-any.pkg.tar.zst
-      - texlive-mathscience-2024.2-1-any.pkg.tar.zst
-      - texlive-metapost-2024.2-1-any.pkg.tar.zst
-      - texlive-music-2024.2-1-any.pkg.tar.zst
-      - texlive-pictures-2024.2-1-any.pkg.tar.zst
-      - texlive-plaingeneric-2024.2-1-any.pkg.tar.zst
-      - texlive-pstricks-2024.2-1-any.pkg.tar.zst
-      - texlive-publishers-2024.2-1-any.pkg.tar.zst
-      - texlive-xetex-2024.2-1-any.pkg.tar.zst
+      - texlive-doc-2024.2-2-any.pkg.tar.zst
+      - texlive-meta-2024.2-2-any.pkg.tar.zst
+      - texlive-basic-2024.2-2-any.pkg.tar.zst
+      - texlive-bibtexextra-2024.2-2-any.pkg.tar.zst
+      - texlive-binextra-2024.2-2-any.pkg.tar.zst
+      - texlive-context-2024.2-2-any.pkg.tar.zst
+      - texlive-fontsextra-2024.2-2-any.pkg.tar.zst
+      - texlive-fontsrecommended-2024.2-2-any.pkg.tar.zst
+      - texlive-fontutils-2024.2-2-any.pkg.tar.zst
+      - texlive-formatsextra-2024.2-2-any.pkg.tar.zst
+      - texlive-games-2024.2-2-any.pkg.tar.zst
+      - texlive-humanities-2024.2-2-any.pkg.tar.zst
+      - texlive-langarabic-2024.2-2-any.pkg.tar.zst
+      - texlive-langchinese-2024.2-2-any.pkg.tar.zst
+      - texlive-langcjk-2024.2-2-any.pkg.tar.zst
+      - texlive-langcyrillic-2024.2-2-any.pkg.tar.zst
+      - texlive-langczechslovak-2024.2-2-any.pkg.tar.zst
+      - texlive-langenglish-2024.2-2-any.pkg.tar.zst
+      - texlive-langeuropean-2024.2-2-any.pkg.tar.zst
+      - texlive-langfrench-2024.2-2-any.pkg.tar.zst
+      - texlive-langgerman-2024.2-2-any.pkg.tar.zst
+      - texlive-langgreek-2024.2-2-any.pkg.tar.zst
+      - texlive-langitalian-2024.2-2-any.pkg.tar.zst
+      - texlive-langjapanese-2024.2-2-any.pkg.tar.zst
+      - texlive-langkorean-2024.2-2-any.pkg.tar.zst
+      - texlive-langother-2024.2-2-any.pkg.tar.zst
+      - texlive-langpolish-2024.2-2-any.pkg.tar.zst
+      - texlive-langportuguese-2024.2-2-any.pkg.tar.zst
+      - texlive-langspanish-2024.2-2-any.pkg.tar.zst
+      - texlive-latex-2024.2-2-any.pkg.tar.zst
+      - texlive-latexextra-2024.2-2-any.pkg.tar.zst
+      - texlive-latexrecommended-2024.2-2-any.pkg.tar.zst
+      - texlive-luatex-2024.2-2-any.pkg.tar.zst
+      - texlive-mathscience-2024.2-2-any.pkg.tar.zst
+      - texlive-metapost-2024.2-2-any.pkg.tar.zst
+      - texlive-music-2024.2-2-any.pkg.tar.zst
+      - texlive-pictures-2024.2-2-any.pkg.tar.zst
+      - texlive-plaingeneric-2024.2-2-any.pkg.tar.zst
+      - texlive-pstricks-2024.2-2-any.pkg.tar.zst
+      - texlive-publishers-2024.2-2-any.pkg.tar.zst
+      - texlive-xetex-2024.2-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
