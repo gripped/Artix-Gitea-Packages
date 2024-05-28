@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pipewire-dinit
-  version: 20230930-2
+  version: 20240528-1
   arch:
     - any
   pkgname:
@@ -50,7 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20230930-2
+    version: 20240528-1
     packages:
-      - pipewire-dinit-20230930-2-any.pkg.tar.zst
-      - pipewire-pulse-dinit-20230930-2-any.pkg.tar.zst
+      - pipewire-dinit-20240528-1-any.pkg.tar.zst
+      - pipewire-pulse-dinit-20240528-1-any.pkg.tar.zst
+team: galaxy
