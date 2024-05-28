@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mupdf
-  version: 1.24.2-1
+  version: 1.24.2-2
   arch:
     - x86_64
   pkgname:
@@ -12,11 +12,11 @@ pkgbase:
     - python-mupdf
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.24.2-1
+    version: 1.24.2-2
     packages:
-      - libmupdf-1.24.2-1-x86_64.pkg.tar.zst
-      - mupdf-1.24.2-1-x86_64.pkg.tar.zst
-      - mupdf-gl-1.24.2-1-x86_64.pkg.tar.zst
-      - mupdf-tools-1.24.2-1-x86_64.pkg.tar.zst
-      - python-mupdf-1.24.2-1-x86_64.pkg.tar.zst
+      - libmupdf-1.24.2-2-x86_64.pkg.tar.zst
+      - mupdf-1.24.2-2-x86_64.pkg.tar.zst
+      - mupdf-gl-1.24.2-2-x86_64.pkg.tar.zst
+      - mupdf-tools-1.24.2-2-x86_64.pkg.tar.zst
+      - python-mupdf-1.24.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
