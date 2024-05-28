@@ -2,16 +2,16 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-remote-desktop
-pkgver=45.1
-pkgrel=2
+pkgver=46.2
+pkgrel=1
 pkgdesc="GNOME Remote Desktop server"
-url="https://wiki.gnome.org/Projects/Mutter/RemoteDesktop"
+url="https://gitlab.gnome.org/GNOME/gnome-remote-desktop"
 arch=(x86_64)
 license=(GPL-2.0-or-later)
 depends=(
   cairo
   dconf
-  freerdp2
+  freerdp
   fuse3
   gcc-libs
   glib2
@@ -35,6 +35,7 @@ makedepends=(
   ffnvcodec-headers
   git
   meson
+  python-packaging
 )
 checkdepends=(
   dbus-broker
@@ -45,17 +46,19 @@ checkdepends=(
   wireplumber
 )
 groups=(gnome)
-_commit=df66c0e99a749058e0ee7dcee36bd97e018a3bb8  # tags/45.1^0
-source=("git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git#commit=$_commit")
-b2sums=('1f93c905d2ed2ce821c17c3773f6e8229cead225597e24edaab606ff17d2dd9f2adebf4672c82a6f1d3e1e8d3086baf774153d171abe525ec4fc481b1f6591ea')
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+source=("git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=${pkgver/[a-z]/.&}"
+        "0001-build-fix-compiling-without-libsystemd.patch")
+b2sums=('eb0b13a0b4a37229048999fb33f7ec0b54189ee51b99708dcb35cc4dda2645b6dd8fa536347d6ef38acb64533fc6219130c204887dae6c42bf3312adba053142'
+        '2101646e459adab43d23e48dc6d21750cd25e9bc5d5653828394b61563c949c702023a26d898ac357f82d77c5e6291f1806c389ac1ff9f2b91df05472e313bbd')
+validpgpkeys=(
+  8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A # Jonas Ådahl <jadahl@gmail.com>
+  E60DADB5546D3F01AF35B87289F540EAB24513E2 # Ray Strode <rstrode@redhat.com>
+)
 
 prepare() {
   cd $pkgname
+
+  git apply -3 ../0001-build-fix-compiling-without-libsystemd.patch
 }
 
 build() {
@@ -69,7 +72,7 @@ build() {
 }
 
 check() {
-  meson test -C build --print-errorlogs -t 3 ||: # test fails skip
+  meson test -C build --print-errorlogs -t 3
 }
 
 package() {

@@ -1,0 +1,131 @@
+From 2eb2dd9d5d96f18f9fa404b751a6056ef13cfd5c Mon Sep 17 00:00:00 2001
+From: Dudemanguy <random342@airmail.cc>
+Date: Wed, 20 Mar 2024 17:17:39 -0500
+Subject: [PATCH] build: fix compiling without libsystemd
+
+The graphical remote login feature requires systemd, but this can be
+made optional so the usual headless sessions can still work.
+
+Fixes #190.
+---
+ config.h.meson   |  3 +++
+ meson.build      |  1 +
+ src/grd-daemon.c | 13 ++++++++++---
+ src/meson.build  | 17 +++++++++++------
+ 4 files changed, 25 insertions(+), 9 deletions(-)
+
+diff --git a/config.h.meson b/config.h.meson
+index 3dff24f..9942c6c 100644
+--- a/config.h.meson
++++ b/config.h.meson
+@@ -6,6 +6,9 @@
+ /* The prefix for our gettext translation domains. */
+ #mesondefine GETTEXT_PACKAGE
+ 
++/* Defined if LIBSYSTEMD is supported */
++#mesondefine HAVE_LIBSYSTEMD
++
+ /* Defined if RDP backend enabled */
+ #mesondefine HAVE_RDP
+ 
+diff --git a/meson.build b/meson.build
+index 54adb1c..cdfec4f 100644
+--- a/meson.build
++++ b/meson.build
+@@ -94,6 +94,7 @@ cdata = configuration_data()
+ cdata.set_quoted('GETTEXT_PACKAGE', 'gnome-remote-desktop')
+ cdata.set_quoted('VERSION', meson.project_version())
+ 
++cdata.set('HAVE_LIBSYSTEMD', libsystemd_dep.found())
+ cdata.set('HAVE_RDP', have_rdp)
+ cdata.set('HAVE_VNC', have_vnc)
+ 
+diff --git a/src/grd-daemon.c b/src/grd-daemon.c
+index d59bd81..af2a300 100644
+--- a/src/grd-daemon.c
++++ b/src/grd-daemon.c
+@@ -36,8 +36,6 @@
+ #include <stdlib.h>
+ 
+ #include "grd-context.h"
+-#include "grd-daemon-handover.h"
+-#include "grd-daemon-system.h"
+ #include "grd-daemon-user.h"
+ #include "grd-dbus-mutter-remote-desktop.h"
+ #include "grd-dbus-remote-desktop.h"
+@@ -48,6 +46,11 @@
+ #include "grd-utils.h"
+ #include "grd-vnc-server.h"
+ 
++#ifdef HAVE_LIBSYSTEMD
++#include "grd-daemon-handover.h"
++#include "grd-daemon-system.h"
++#endif
++
+ #define RDP_SERVER_RESTART_DELAY_MS 3000
+ #define RDP_SERVER_USER_CERT_SUBDIR "certificates"
+ #define RDP_MAX_CERTIFICATE_FILE_SIZE_BYTES (50 * 1024)
+@@ -983,7 +986,7 @@ get_daemon_dbus_connection (GrdDaemon *daemon)
+   g_autoptr (GDBusConnection) connection = NULL;
+   g_autoptr (GError) error = NULL;
+ 
+-#ifdef HAVE_RDP
++#if defined(HAVE_RDP) && defined(HAVE_LIBSYSTEMD)
+   if (GRD_IS_DAEMON_SYSTEM (daemon))
+     connection = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
+   else
+@@ -1295,12 +1298,16 @@ main (int argc, char **argv)
+     case GRD_RUNTIME_MODE_HEADLESS:
+       daemon = GRD_DAEMON (grd_daemon_user_new (runtime_mode, &error));
+       break;
++#ifdef HAVE_LIBSYSTEMD
+     case GRD_RUNTIME_MODE_SYSTEM:
+       daemon = GRD_DAEMON (grd_daemon_system_new (&error));
+       break;
+     case GRD_RUNTIME_MODE_HANDOVER:
+       daemon = GRD_DAEMON (grd_daemon_handover_new (&error));
+       break;
++#endif
++    default:
++      break;
+     }
+ 
+   if (!daemon)
+diff --git a/src/meson.build b/src/meson.build
+index d83b1b8..a4ce2bc 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -82,12 +82,6 @@ if have_rdp
+   daemon_sources += files([
+     'grd-clipboard-rdp.c',
+     'grd-clipboard-rdp.h',
+-    'grd-daemon-handover.c',
+-    'grd-daemon-handover.h',
+-    'grd-daemon-system.c',
+-    'grd-daemon-system.h',
+-    'grd-daemon-utils.c',
+-    'grd-daemon-utils.h',
+     'grd-hwaccel-nvidia.c',
+     'grd-hwaccel-nvidia.h',
+     'grd-rdp-audio-input.c',
+@@ -162,6 +156,17 @@ if have_rdp
+     'grd-session-rdp.h',
+   ])
+ 
++  if libsystemd_dep.found()
++    daemon_sources += files([
++      'grd-daemon-handover.c',
++      'grd-daemon-handover.h',
++      'grd-daemon-system.c',
++      'grd-daemon-system.h',
++      'grd-daemon-utils.c',
++      'grd-daemon-utils.h',
++    ])
++  endif
++
+   deps += [
+     cuda_dep,
+     dl_dep,
+-- 
+2.45.1
+
