@@ -1,18 +1,16 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=wireplumber-dinit
 pkgver=20240528
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit user service script for wireplumber"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('turnstile-experimental')
 depends=('pipewire-dinit')
-source=("wireplumber.user" "wireplumber.script")
-sha256sums=('48fe1ed0987668aea867f6c10dd49fb84d85e4d51a60adde251211ac754495b2'
-            '7ddda3022fdb624fad890ef3d3aa3bebf09b7d4678784a4fbdc024c31f72a1f2')
+source=("wireplumber.user")
+sha256sums=('0bcb623d1282ea79b160f2a59900536698b191301a7980642f4f99b8c5470451')
 
 package() {
     install -Dm644 wireplumber.user   "$pkgdir/etc/dinit.d/user/wireplumber"
-    install -Dm755 wireplumber.script "$pkgdir/usr/lib/dinit/user/wireplumber"
 }
