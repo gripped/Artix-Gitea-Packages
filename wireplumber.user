@@ -1,4 +1,4 @@
 type            = process
-command         = /usr/bin/wireplumber
+command         = /usr/lib/dinit/user/wireplumber
 smooth-recovery = true
 depends-on      = pipewire

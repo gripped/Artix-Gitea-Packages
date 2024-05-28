@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wireplumber-dinit
-  version: 20230929-2
+  version: 20240528-1
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20230929-2
+    version: 20240528-1
     packages:
-      - wireplumber-dinit-20230929-2-any.pkg.tar.zst
+      - wireplumber-dinit-20240528-1-any.pkg.tar.zst
+team: galaxy

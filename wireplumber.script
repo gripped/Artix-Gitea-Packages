@@ -1,0 +1,3 @@
+#!/bin/sh
+/usr/bin/sleep 1 # workaround, ugly as fuck, remove when we get readiness patch merged
+exec /usr/bin/wireplumber
