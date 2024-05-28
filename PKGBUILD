@@ -1,17 +1,17 @@
 # Maintainer: Sébastien Luttringer
 
 pkgname=ipset
-pkgver=7.20
+pkgver=7.21
 pkgrel=1
 pkgdesc='Administration tool for IP sets'
 arch=('x86_64')
 url='https://netfilter.org/projects/ipset/'
-license=('GPL2')
+license=('GPL-2.0-only')
 makedepends=('git')
 depends=('glibc' 'libmnl')
 backup=("etc/$pkgname.conf")
 source=("git://git.netfilter.org/ipset.git#tag=v$pkgver")
-sha256sums=('SKIP')
+sha256sums=('b89735eaf8aabefd73483ae096f9d845bd19f90856c5a3e6dc793a1567e687f8')
 
 prepare() {
   cd $pkgname
