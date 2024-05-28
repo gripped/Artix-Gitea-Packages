@@ -6,7 +6,7 @@ pkgbase=qt6-base
 pkgname=(qt6-base
          qt6-xcb-private-headers)
 pkgver=6.7.1
-pkgrel=2.1
+pkgrel=3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -82,20 +82,18 @@ groups=(qt6)
 _pkgfn=${pkgbase/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
         qt6-base-cflags.patch
-        qt6-base-nostrip.patch
-        zstd.patch)
+        qt6-base-nostrip.patch)
 sha256sums=('bc68440a69a331b6b79b3c36acc8346b5dc0aad1b53536fe363860af31dd494b'
             '5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78'
-            '4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094'
-            '93785984752e08d0b5445b80849250b0d76e4849be66d33b2f9119e5c9244e24')
+            '4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094')
 
 prepare() {
   patch -d $_pkgfn -p1 < qt6-base-cflags.patch # Use system CFLAGS
   patch -d $_pkgfn -p1 < qt6-base-nostrip.patch # Don't strip binaries with qmake
 
   cd $_pkgfn
-  patch -Np1 -i $srcdir/zstd.patch
   git cherry-pick -n f05cf3f11f4e42e05d069b5d9249d4b9aff41ffe # Fix locale issues
+  git cherry-pick -n a8ef8ea55014546e0e835cd0eacf694919702a11 # https://bugreports.qt.io/browse/QTBUG-124386
 }
 
 build() {
