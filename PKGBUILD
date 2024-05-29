@@ -1,6 +1,6 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit-rc
-pkgver=0.3.4
+pkgver=0.3.5
 pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
@@ -17,7 +17,7 @@ backup=('etc/dinit.d/config/console.conf'
         'etc/dinit.d/config/rc.local'
         'etc/dinit.d/config/rc.shutdown')
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('e9699d72d2e307c50d214da2649cec915e6b2b438d68c5aaa2f62f23f51ae754')
+sha256sums=('e59e9ec1b6c0e04ee653fd3642166fe5b53884b4a8dbe8b07bcc3fbb7883d3ea')
 
 build() {
 	cd "$pkgname"
