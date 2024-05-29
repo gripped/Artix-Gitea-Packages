@@ -1,16 +1,16 @@
 # Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
-# Contributor: Jan de Groot <jgc@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@artixlinux.org>
+# Contributor: Jan de Groot <jgc@artixlinux.org>
 
 pkgbase=gdm
 pkgname=(
   gdm
   libgdm
 )
-pkgver=46.0
+pkgver=46.2
 pkgrel=1
 pkgdesc="Display manager and login screen"
-url="https://wiki.gnome.org/Projects/GDM"
+url="https://gitlab.gnome.org/GNOME/gdm"
 arch=(x86_64)
 license=(GPL-2.0-or-later)
 depends=(
@@ -33,10 +33,9 @@ depends=(
   libxcb
   libxdmcp
   pam
+  elogind
+  elogind-libs
   upower
-  xorg-server
-  xorg-xhost
-  xorg-xrdb
 )
 makedepends=(
   dconf
@@ -47,20 +46,22 @@ makedepends=(
   plymouth
   python-packaging
   yelp-tools
+  xorg-server
+  xorg-xhost
+  xorg-xrdb
+)
+optdepends=(
+  'xorg-server: X session support'
+  'xorg-xhost: X session support'
+  'xorg-xrdb: X session support'
 )
 checkdepends=(check)
-_commit=a5b591cd8d1db5c5d1ebe67d10ec3fe57b9bbded  # tags/46.0^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/gdm.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/gdm.git#tag=${pkgver/[a-z]/.&}"
   0001-Xsession-Don-t-start-ssh-agent-by-default.patch
 )
-b2sums=('23f2346014a2c7f39fb53627e1531d74eeb7636027e2192d8be72a1a553126796b0445b0c02691ee104835e333275881be77883b80252f9e0bc13a37a152fe6b'
+b2sums=('a7c20a7cef158e24cda587d49d4fde0774bcdfa46e1ce7e943c63a13bfb28c547e4f5e48f6a212bf1c0b77fd669dac9efd1d1e6ec3067f7013df9f0dddbddabf'
         'f7e868fdd7cc121433de1572583eb728f4d186cd4f52c6d6c8f2ccf4a3cf781144ff71f704f13571ddb97a1ff4ec55cfa3df25d38737ad19da21e84ddc2d3ee4')
-
-pkgver() {
-  cd gdm
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
 
 prepare() {
   cd gdm
@@ -71,6 +72,10 @@ prepare() {
 
 build() {
   local meson_options=(
+    -D logind-provider=elogind
+    -D systemd-journal=false
+    -D systemdsystemunitdir=no
+    -D systemduserunitdir=no
     -D dbus-sys="/usr/share/dbus-1/system.d"
     -D default-pam-config=arch
     -D default-path="/usr/local/bin:/usr/local/sbin:/usr/bin"
@@ -78,10 +83,6 @@ build() {
     -D ipv6=true
     -D run-dir=/run/gdm
     -D selinux=disabled
-    -D logind-provider=elogind
-    -D systemd-journal=false
-    -D systemdsystemunitdir=no
-    -D systemduserunitdir=no
   )
 
   artix-meson gdm build "${meson_options[@]}"
@@ -151,6 +152,11 @@ g gdm 120 -
 u gdm 120 "Gnome Display Manager" /var/lib/gdm
 END
 
+  install -Dm644 /dev/stdin usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override <<END
+[org.gnome.login-screen]
+logo='/usr/share/pixmaps/artixlinux-logo-text-dark.svg'
+END
+
   _pick libgdm usr/include
   _pick libgdm usr/lib/{girepository-1.0,libgdm*,pkgconfig}
   _pick libgdm usr/share/{gir-1.0,glib-2.0}
@@ -164,6 +170,8 @@ package_libgdm() {
     glib2
     glibc
     libg{lib,object,io}-2.0.so
+    libelogind.so
+    elogind-libs
   )
   provides=(libgdm.so)
 
