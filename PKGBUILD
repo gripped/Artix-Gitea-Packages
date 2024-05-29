@@ -34,7 +34,7 @@ depends=(
   libxdmcp
   pam
   elogind
-  elogind-libs
+  libelogind
   upower
 )
 makedepends=(
@@ -171,7 +171,7 @@ package_libgdm() {
     glibc
     libg{lib,object,io}-2.0.so
     libelogind.so
-    elogind-libs
+    libelogind
   )
   provides=(libgdm.so)
 
