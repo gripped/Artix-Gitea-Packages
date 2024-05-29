@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kcalc
 pkgver=24.05.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Scientific Calculator'
 url='https://apps.kde.org/kcalc/'
 arch=(x86_64)
@@ -29,12 +28,18 @@ makedepends=(extra-cmake-modules
              kdoctools)
 groups=(kde-applications
         kde-utilities)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
+        https://invent.kde.org/utilities/kcalc/-/commit/1e271645.patch)
 sha256sums=('a0609181c5adcdd4ded36fcc6185e5099a97ab13846543f581c04e0c7baa8964'
-            'SKIP')
+            'SKIP'
+            '33296e68d2b55ca1100555301a476c92aa88ee801ae485eb9d6fabc8a1e04e1e')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
+
+prepare() {
+  patch -d $pkgname-$pkgver -p1 < 1e271645.patch # Fix wrong results
+}
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
