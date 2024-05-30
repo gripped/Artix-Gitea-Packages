@@ -8,12 +8,12 @@ pkgbase:
     - turnstile
     - turnstile-dinit
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: galaxy
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,8 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.1.8-7
+    packages:
+      - turnstile-0.1.8-7-x86_64.pkg.tar.zst
+      - turnstile-dinit-0.1.8-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -50,8 +52,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.8-7
-    packages:
-      - turnstile-0.1.8-7-x86_64.pkg.tar.zst
-      - turnstile-dinit-0.1.8-7-x86_64.pkg.tar.zst
-team: galaxy
+    version: null
+    packages: []
+team: world
