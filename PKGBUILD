@@ -27,8 +27,8 @@ pkgname=(
   gst-python
   gstreamer-docs
 )
-pkgver=1.24.3
-pkgrel=2
+pkgver=1.24.4
+pkgrel=1
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -81,13 +81,13 @@ source=(
   "git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=$pkgver"
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
-  0002-Fix-build-with-FFmpeg-7.patch
+  0002-libav-Fix-compatibility-with-ffmpeg-7.patch
 )
-b2sums=('ba36061add5b081291b2f6a18b14e2c6cf1f2796b503bc7053e4c059f3d10620ece05b52590151f7e35f2e8919a0f2cfa3372ba24ff0a15beeb4d670c7df3ccd'
-        '118ad62b9e1072a8f1399c2984c74745c2c1572b9f244bd108b23821d2957bcb1938010f37ec3ab6ac4a40989dd6e54898b5ab669fd142891d4cba4c44b6fd9f'
+b2sums=('37d5e65358a9b7491c6076a814595c1da1b6d5478fc6b777e53e2966ad0eaf57802477315cbc8c4518abcdc7c908687e4397bcbd535ebff655cb96793a68d8fb'
+        'e8163c2fb5206f4d100c640504d373bf0118ff90dc886168c2976429b230f4f3a154e77f46275c080f936fe3c78bc3c5018c47f21e816188dfab1df7b4c9ddce'
         'SKIP'
-        'e7c59c828883a3bb3aa47684d83b57cd4d463e1f8cffc0383f779fa60ecbe37bfa30c8a0f40e6b2a01f6e0edfbefc5b7041340837e0018741e5963671945a1f2'
-        '696dd7a38465f96bf3e48f66c290febfdadd80a75637ee7b8a13929a773330560852cbe85c37bbf5d4cb821fec5d9ae4036e11ef528fe8cbbb93dfe16e723fdf')
+        '11e4af4a3697ddfa1c671d2d965b3765e4dce7ea544b634e1062c8257d1e4777908ede233c0b021460f5e54931c48fe3666dde92c1a350cab194b414566a2239'
+        '4692623d2c7b0c6b2c81772abc11a385fad53b00476600e859b980f1c2925f43ffd71b4b8f55b0d61f3a6313530690c512f92eaa59a97b6a0aef735e1da8c8e6')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
@@ -98,8 +98,9 @@ prepare() {
   # Disable broken tests
   git apply -3 ../0001-HACK-meson-Disable-broken-tests.patch
 
-  # Fix build with FFmpeg 7
-  patch -p1 -i ../0002-Fix-build-with-FFmpeg-7.patch
+  # Fixes for FFmpeg 7
+  # https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/6505
+  git apply -3 ../0002-libav-Fix-compatibility-with-ffmpeg-7.patch
 }
 
 build() {
@@ -152,7 +153,7 @@ build() {
   export GI_SCANNER_DISABLE_CACHE=1
 
   artix-meson gstreamer build "${meson_options[@]}"
-  meson configure build  # Print config
+  meson configure build --no-pager # Print config
   meson compile -C build
 }
 
