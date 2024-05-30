@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: shairport-sync
-  version: 4.3.2-1
+  version: 4.3.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3.2-1
+    version: 4.3.3-1
     packages:
-      - shairport-sync-4.3.2-1-x86_64.pkg.tar.zst
+      - shairport-sync-4.3.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
