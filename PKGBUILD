@@ -3,7 +3,7 @@
 
 pkgbase=intel-metee
 pkgname=(intel-metee intel-metee-doc)
-pkgver=4.0.0
+pkgver=4.1.0
 pkgrel=1
 pkgdesc="Access library for Intel CSME HECI interface"
 arch=(x86_64)
@@ -11,18 +11,25 @@ url="https://github.com/intel/metee/"
 license=(Apache-2.0)
 makedepends=(cmake doxygen graphviz)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('173cd10bc8bbdd85b360c5bbdb1fd8b3df23b35ba1c23c33e061a95b5f452d87')
+sha256sums=('f50ff7e42e9a0c6a133f706f009fc3e6c3704b1291ccb499ca136825e3b3aa98')
+
+prepare() {
+    # remove obselete doxygen tags
+    doxygen -u metee-${pkgver}/include/Doxyfile.in
+}
 
 build() {
-  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
-  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
-
+  # fix error: "_FORTIFY_SOURCE" redefined [-Werror]
+  # note: upstream forces _FORTIFY_SOURCE=2
+  export CFLAGS="${CFLAGS/-Wp,-D_FORTIFY_SOURCE=?/}"
+  export CXXFLAGS="${CXXFLAGS/-Wp,-D_FORTIFY_SOURCE=?/}"
+  
   cmake -B build -S metee-${pkgver} \
     -G 'Unix Makefiles' \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -D CMAKE_INSTALL_LIBDIR=/usr/lib \
-    -D CMAKE_PREFIX_PATH=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DCMAKE_PREFIX_PATH=/usr \
     -DBUILD_DOCS=ON \
     -DBUILD_SHARED_LIBS=ON \
     -Wno-dev
