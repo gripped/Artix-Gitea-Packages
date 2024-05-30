@@ -1,10 +1,12 @@
-# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Contributor: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: kevin <kevin@archlinux.org>
 
 pkgname=ntp
 _pkgname=ntp #-dev
-_pkgver=4.2.8p17
+_pkgver=4.2.8p18
 pkgver=${_pkgver/p/.p}
 pkgrel=1
 pkgdesc='Network Time Protocol reference implementation'
@@ -14,12 +16,21 @@ arch=('x86_64')
 depends=('openssl' 'perl' 'libcap' 'libedit')
 backup=('etc/ntp.conf')
 source=("https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/${_pkgname}-${_pkgver}.tar.gz"
+        ntp-4.2.8.p18-fix-build.patch
         'ntp.conf'
         'ntp.sysusers')
-sha256sums=('103dd272e6a66c5b8df07dce5e9a02555fcd6f1397bdfb782237328e89d3a866'
+sha256sums=('cf84c5f3fb1a295284942624d823fffa634144e096cfc4f9969ac98ef5f468e5'
+            '9c4afa0daed5fd3cc9544ec808b2bb1dd959e5d40c4cae307b7025b16885903c'
             'abccefe0b3a65cd375d5071ce780be8d2d205439aa6d34bcd3c56de6e80ba821'
             'f839a3b6d8e64fcd9332274131b4d5aa0b2c272db072dc310af1735ef286746a')
 options=('!emptydirs')
+
+prepare() {
+	cd "${_pkgname}-${_pkgver}"
+
+	patch -Np1 < ../ntp-4.2.8.p18-fix-build.patch
+	autoreconf -fiv
+}
 
 build() {
 	cd "${_pkgname}-${_pkgver}"
