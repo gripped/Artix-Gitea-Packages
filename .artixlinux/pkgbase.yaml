@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - wireplumber-dinit
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: galaxy
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 20240528-2
+    packages:
+      - wireplumber-dinit-20240528-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -49,7 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20240528-2
-    packages:
-      - wireplumber-dinit-20240528-2-any.pkg.tar.zst
-team: galaxy
+    version: null
+    packages: []
+team: world
