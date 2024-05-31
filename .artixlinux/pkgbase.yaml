@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - blueman
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.4.1-2
-    packages:
-      - blueman-2.4.1-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -51,6 +50,7 @@ repos:
     packages:
       - blueman-2.4.2-1-x86_64.pkg.tar.zst
   galaxy:
-    version: null
-    packages: []
-team: world
+    version: 2.4.1-2
+    packages:
+      - blueman-2.4.1-2-x86_64.pkg.tar.zst
+team: galaxy
