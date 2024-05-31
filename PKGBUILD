@@ -32,7 +32,7 @@ build() {
   mkdir build
   cd build
 
-  artix-cmake ../ \
+  cmake ../ \
     -DENABLE_WEBENGINE=ON \
     -DCMAKE_SKIP_RPATH=YES \
     -Wno-dev
