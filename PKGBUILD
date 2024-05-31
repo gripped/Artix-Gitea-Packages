@@ -8,18 +8,18 @@
 # Contributor: Pavlo <pavlofreemen(at)gmail(dot)com>
 
 pkgname=font-manager
-pkgver=0.8.8
+pkgver=0.8.9
 pkgrel=1
 pkgdesc='A simple font management application for GTK+ Desktop Environments'
 url=https://fontmanager.github.io
 arch=(x86_64 i686)
-license=(GPL)
+license=(GPL-3.0-only)
 depends=(gtk3
          json-glib
          libsoup
          libxml2
          sqlite
-         webkit2gtk)
+         webkit2gtk-4.1)
 optdepends=(file-roller
             libnautilus-extension)
 makedepends=(gobject-introspection
@@ -28,16 +28,15 @@ makedepends=(gobject-introspection
              nautilus
              ninja
              vala
-             yelp-tools
-             libnautilus-extension)
+             yelp-tools)
 _archive="$pkgname-$pkgver"
 _url="https://github.com/FontManager/font-manager"
 source=("$_url/releases/download/$pkgver/$_archive.tar.xz")
-sha256sums=('b6b6e7c62ce7a407f4151beb890b4dabfb1b2e446ff51f087f1b4fab986f8e79')
+sha256sums=('4e17df355d2390aa8ac6833599c886bc64ad412193e020be081a077cc723a0df')
 
 build() {
 	artix-meson "$_archive" build \
-		-Dnautilus=false \
+		-Dnautilus=true \
 		-Dreproducible=true
 	ninja -C build
 }
