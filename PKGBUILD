@@ -37,7 +37,7 @@ makedepends=(
   libxml2
   poppler-glib
   python
-  systemd
+  udev
   texlive-latexextra
 )
 optdepends=(
@@ -48,19 +48,16 @@ source=(
   $url/-/archive/$pkgver/$_name-$pkgver.tar.gz
   66-${pkgname}d.rules
   $pkgname.sysusers
-  ${pkgname}d.service
-  ${pkgname}d.socket
+  sane.xinetd
 )
 sha512sums=('2b6e0ffe64386aa5856a7e4f2b1c536ad9a6376fbf10c954dcc714c1792566a2a8a85a33a947b148ef3d23c1fbfeb5d114e5a99febe0e316ff78e3ab17a4beaf'
             'd0d1b6bd6fbb04d610e7186e26d04c2233a620cc7c731ca3acd7fb860dd033fbe99d8974ffa1dd59c8affcc4aa2664d76ab3dfd6f7b2a734b31d7e3832359c41'
             'd8cd194b57eff2249df2b8d540a892e518aa3e3bba6387211ed21230dc235e98c49b71f262f0b1007e8c859c59776410840376244e0aec1f06363881b2c81fd8'
-            'baf2cf2fdff689f776973ac4f69ea02b131f2a1a754a8d52a8e8ad33b0e559ba286649a891723a7ad94b2bcb01ec88155d43c36eaeb35e47fbc8ea80c49c5d47'
-            'a23ceeeb02bd9e214702003a3165886858ecbdd93df89cd37ad5f00581745454548ccda0ab656f2dc0acbf2896a8781568c786797e64a07014be003d6140a093')
+	    '8f9f18d432087e5445aa533be375a811daf320512069c108d41a79121868937e1a7ffa21ee7d33adcf9fbb670bca460ff06423ce39602f35151eccc243d9d4ec')
 b2sums=('5939d8e7df6056b3fd4641dca325c36f8bf01d7edc2d372f920252ecc9dde5da02fa65a47ef2763d8ded00d39056619167d18acb73a475ef902c49d4d1afdcf6'
         'c9c6ba224b9b27f4ecc6b1ded6621a8abb52b1ded2d9078e4cad31177290b788e286fad74545a5cb09e1f6726515adc22003988eb646dc986e87f1a8061a0e27'
         '2a4ddc9849562e3a0adcaec1859391e3f37a63f25c27dbc140cabd697bd65b89a0fc812c4516cbdfb36d1f30844df34934b3c1c59650101f54fc1ac0acb3f5d9'
-        '272b4860dbd3f2b69eedfed4532cf8a388629c003c9a0e0ee98defbc2023e07edc26275a17f56ea9fd4d90e9b3b6532c5b10d1e2b91e6ab4df242ac44101d802'
-        '5e9f0350a1553fc75aea88ce355fb68b881e3b2194ac0e3c6f3cecdae79111fb1db1cfe3b4933eca15af5f985fc6b89e4d9af3844b6e9cfd542828b6b9e57ed9')
+	'158952a09d5b29ae848a4c1377de6ff824b61c7d1932d29f3a0d313bafdaa0c5973614c5b744f53c7d2d4acff3dd4dc8b821068b95ae07a081539fd5cabd7477')
 
 prepare() {
   # extract custom license exception
@@ -91,7 +88,7 @@ build() {
     --with-libcurl
     --with-pic
     --with-poppler-glib
-    --with-systemd
+    --without-systemd
     --with-usb
   )
 
@@ -114,7 +111,6 @@ package() {
     libusb libusb-1.0.so
     libxml2 libxml2.so
     poppler-glib libpoppler-glib.so
-    systemd-libs libsystemd.so
   )
 
   cd $_name-$pkgver
@@ -135,12 +131,13 @@ package() {
   printf "\n" >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
   tools/sane-desc -m hwdb -s doc/descriptions-external/ >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
 
-  # systemd integration
-  install -vDm 644 ../${pkgname}d.socket -t "$pkgdir/usr/lib/systemd/system/"
-  install -vDm 644 ../${pkgname}d.service "$pkgdir/usr/lib/systemd/system/${pkgname}d@.service"
+  # udev integration
   install -vDm 644 ../66-${pkgname}d.rules "$pkgdir/usr/lib/udev/rules.d/"
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
+
+  # install xinetd file
+  install -D -m644 "${srcdir}/sane.xinetd" "${pkgdir}/etc/xinetd.d/sane"
 
   # remove old ChangeLogs
   rm -rvf "$pkgdir/usr/share/doc/$pkgname/ChangeLogs/"
