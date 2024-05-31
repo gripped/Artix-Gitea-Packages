@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sequoia-sqv
-  version: 1.1.0-1
+  version: 1.2.1-1
   arch:
     - x86_64
   pkgname:
     - sequoia-sqv
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.1.0-1
+    version: 1.2.1-1
     packages:
-      - sequoia-sqv-1.1.0-1-x86_64.pkg.tar.zst
+      - sequoia-sqv-1.2.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
