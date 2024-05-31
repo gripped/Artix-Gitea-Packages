@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ansible
-  version: 9.6.0-2
+  version: 9.6.0-3
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.6.0-2
+    version: 9.6.0-3
     packages:
-      - ansible-9.6.0-2-any.pkg.tar.zst
+      - ansible-9.6.0-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
