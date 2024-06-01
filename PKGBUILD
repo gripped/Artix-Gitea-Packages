@@ -7,7 +7,7 @@
 pkgbase=brltty
 pkgname=(brltty brltty-udev-generic)
 pkgver=6.6
-pkgrel=8
+pkgrel=9
 pkgdesc="Braille display driver for Linux/Unix"
 arch=(x86_64)
 url="https://brltty.app"
@@ -47,19 +47,19 @@ makedepends=(
 )
 options=(!emptydirs)
 source=(
-  https://brltty.app/archive/$pkgname-$pkgver.tar.bz2
+  https://github.com/brltty/brltty/archive/refs/tags/${pkgbase^^}-$pkgver.tar.gz
   0001-brlapi-use-elogind-instead-of-systemd.patch
   $pkgname-6.4-x11_autostart.patch
 )
-sha512sums=('a253efe9b53c97e670bb6dc5041a007944b220d88393a6df825ac95f3e0857ce3ba940b67b9723a03e18cdc962092ce937f38bdbf28816eceda168242c3682fd'
+sha512sums=('a2cdcebd1f527aefa6dbfebcb6ec86e74bc42faa3b50130efd151a37b4e508b0da5dd1283800bead06b4f5f1f1f5a606cb1a7385fad812e02c6431e0e2943c69'
             'f0f99df714ceb7b9b1c57cc9c3a1c47b360fc0ff23bb7b183d8e57015d00801bbb4c6ec4395f0b06fd386d7047c9b16e16161d700655fe17cf324aaaf6c3b2d8'
             '4871512affefbc178f4204a1b285fc2b5a05ea2d181163195d695b760e9729b3d2d00b5f052abd71379df609c3859d7cbd64128bdefd16e898bbc4368500a9a0')
-b2sums=('28e2593aac014f67f09d4e77c0e63f591c5bc1537ecc292370ac9f51689b722f6f4064cc8e185ba9bf0bbfbd28d3097be15e587ca35ea2018eab9538fdf8da7a'
+b2sums=('04db7239ee9b2e6318eb235bc7c6a6407fc9519042d37a95dbb9661bd4cb4c4c6e6261230d963402ffcb22189ee00777a62067fe5b2677b0724a7f06cd3a774d'
         '8868137c75067087e8da6ce46ad2d75e30da9e6e2bc3a965d5003af9f3c06358413d706efea9810ba50db90ffc7d8a41ce5aa5a653e49365592e3e6fa77c3a88'
         '4ebc07a725ef8362233a83118e93901e78943e8dae08f9358b668ff13ab88a65eb9e87c49d106a8c3d87eb62007b230e199107eacb01f92dc683335076c01309')
 
 prepare() {
-  cd $pkgbase-$pkgver
+  cd $pkgbase-${pkgbase^^}-$pkgver
   patch -Np1 -i ../0001-brlapi-use-elogind-instead-of-systemd.patch
   patch -Np1 -i ../$pkgbase-6.4-x11_autostart.patch
   ./autogen
@@ -82,7 +82,7 @@ build() {
   # fat-lto-objects is required for non-mangled static libs
   CFLAGS+=" -ffat-lto-objects"
 
-  cd $pkgbase-$pkgver
+  cd $pkgbase-${pkgbase^^}-$pkgver
   ./configure "${configure_options[@]}"
   make -j1
   # make brlapi.jar deterministic
@@ -130,7 +130,7 @@ package_brltty() {
   )
   install=brltty.install
 
-  cd $pkgbase-$pkgver
+  cd $pkgbase-${pkgbase^^}-$pkgver
   # installation does not work reliably with many cores, so set jobs to 1
   make -j1 INSTALL_ROOT="$pkgdir" install
   make -j1 INSTALL_ROOT="$pkgdir" install-udev
