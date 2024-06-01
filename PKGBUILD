@@ -3,7 +3,7 @@
 
 pkgname=gnome-remote-desktop
 pkgver=46.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="GNOME Remote Desktop server"
 url="https://gitlab.gnome.org/GNOME/gnome-remote-desktop"
 arch=(x86_64)
@@ -46,10 +46,8 @@ checkdepends=(
   wireplumber
 )
 groups=(gnome)
-source=("git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=${pkgver/[a-z]/.&}"
-        "0001-build-fix-compiling-without-libsystemd.patch")
-b2sums=('eb0b13a0b4a37229048999fb33f7ec0b54189ee51b99708dcb35cc4dda2645b6dd8fa536347d6ef38acb64533fc6219130c204887dae6c42bf3312adba053142'
-        '2101646e459adab43d23e48dc6d21750cd25e9bc5d5653828394b61563c949c702023a26d898ac357f82d77c5e6291f1806c389ac1ff9f2b91df05472e313bbd')
+source=("git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=${pkgver/[a-z]/.&}")
+b2sums=('eb0b13a0b4a37229048999fb33f7ec0b54189ee51b99708dcb35cc4dda2645b6dd8fa536347d6ef38acb64533fc6219130c204887dae6c42bf3312adba053142')
 validpgpkeys=(
   8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A # Jonas Ådahl <jadahl@gmail.com>
   E60DADB5546D3F01AF35B87289F540EAB24513E2 # Ray Strode <rstrode@redhat.com>
@@ -58,7 +56,7 @@ validpgpkeys=(
 prepare() {
   cd $pkgname
 
-  git apply -3 ../0001-build-fix-compiling-without-libsystemd.patch
+  git cherry-pick -n ae2b6c9e5c19052fc4c5131a72751c17c5428dfc
 }
 
 build() {
