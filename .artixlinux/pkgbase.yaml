@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gradle
-  version: 8.7-2
+  version: 8.8-1
   arch:
     - any
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.7-2
+    version: 8.8-1
     packages:
-      - gradle-8.7-2-any.pkg.tar.zst
-      - gradle-doc-8.7-2-any.pkg.tar.zst
-      - gradle-src-8.7-2-any.pkg.tar.zst
+      - gradle-8.8-1-any.pkg.tar.zst
+      - gradle-doc-8.8-1-any.pkg.tar.zst
+      - gradle-src-8.8-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
