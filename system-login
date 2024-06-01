@@ -16,6 +16,7 @@ session    include    system-auth
 session    optional   pam_motd.so
 session    optional   pam_mail.so          dir=/var/spool/mail standard quiet
 session    optional   pam_umask.so
+-session   optional   pam_turnstile.so
 -session   optional   pam_elogind.so
 session    required   pam_env.so           user_readenv=1
 -session    optional   pam_rundir.so

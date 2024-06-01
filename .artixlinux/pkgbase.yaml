@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: pambase
-  version: 20230918-1
+  version: 20230918-2
   arch:
     - any
   pkgname:
     - pambase
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 20230918-2
+    packages:
+      - pambase-20230918-2-any.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
