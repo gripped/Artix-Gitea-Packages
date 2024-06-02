@@ -1,5 +1,5 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Alfredo Palhares <masterkorp@masterkorp.net>
@@ -8,7 +8,7 @@
 _gemname=test-unit
 pkgname="ruby-${_gemname}"
 pkgver=3.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc='An xUnit family unit testing framework for Ruby'
 arch=('any')
 url="https://github.com/${_gemname}/${_gemname}"
