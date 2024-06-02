@@ -3,7 +3,7 @@
 
 pkgname=python-mako
 _pkgname=${pkgname#python-}
-pkgver=1.3.4
+pkgver=1.3.5
 _pkgver=rel_${pkgver//./_}
 pkgrel=1
 pkgdesc="A template library written in Python"
@@ -36,7 +36,7 @@ optdepends=(
   'python-pytest: for testing utilities'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$_pkgver.tar.gz")
-sha512sums=('3413fa7a32442d3bbda3a9bcec2c1565cd4f5735f6bfef44a217ae2ba63572fd3e3755a00f5d67b89f63e379426bed827a03db3976356424ee225f4915d89ff6')
+sha512sums=('52762e7096b92f13457e151326f3635f9b0ac312e95d8638be551542785694ee06e14176b1835da0ff8dbbab7dc5eb9696853cde20c31c9787dc54c7853bebc0')
 
 _archive="$_pkgname-$_pkgver"
 
