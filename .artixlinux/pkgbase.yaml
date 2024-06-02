@@ -8,7 +8,7 @@ pkgbase:
     - blueman
 actions:
   addRepo: galaxy
-  removeRepo: world
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 2.4.2-1
     packages:
       - blueman-2.4.2-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 2.4.1-2
-    packages:
-      - blueman-2.4.1-2-x86_64.pkg.tar.zst
 team: galaxy
