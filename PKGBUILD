@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 _gemname=webrick
 pkgname=ruby-$_gemname
 pkgver=1.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc='An HTTP server toolkit that can be configured as an HTTPS server'
 arch=(any)
 url='https://github.com/ruby/webrick'
