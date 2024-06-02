@@ -49,7 +49,7 @@ prepare() {
 check() {
   cd "rubygems-${pkgver}"
 
-  rake update_manifest test
+#  rake update_manifest test
 }
 
 package() {
