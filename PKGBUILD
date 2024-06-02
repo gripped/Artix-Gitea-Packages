@@ -1,19 +1,20 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='rdoc'
 pkgname="ruby-${_gemname}"
-pkgver=6.4.0
-pkgrel=4
+pkgver=6.5.1.1
+pkgrel=1
 pkgdesc='Command-line documentation generator for Ruby projects'
 arch=('any')
 url='https://ruby.github.io/rdoc/'
-license=('RUBY')
-depends=('ruby' 'ruby-psych')
+license=('Ruby')
+depends=('ruby' 'ruby-psych' 'ruby-erb')
 makedepends=('ruby-kpeg' 'ruby-racc')
 options=('!emptydirs')
 source=("https://github.com/ruby/rdoc/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('6c6a89245ac77abdeedee70327f97f8a9b8bb596c14848a95487ff19039864dd7a5c0f5b501fe2e7b187c671cfb205c1500359c7c203beb89211addaf3ac34f7')
+sha512sums=('ed7dbfd2a085b044a311222237f7153b7b22ee34af7e6ac18826ede2fe3afdc25120546f789ff03fec952dc100d33c0f86da50c61bf9d60ba3957650318a27c9')
 
 prepare() {
   cd "${_gemname}-${pkgver}"

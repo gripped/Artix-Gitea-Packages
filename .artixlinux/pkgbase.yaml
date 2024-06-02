@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rdoc
-  version: 6.4.0-4
+  version: 6.5.1.1-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.4.0-4
+    version: 6.5.1.1-1
     packages:
-      - ruby-rdoc-6.4.0-4-any.pkg.tar.zst
+      - ruby-rdoc-6.5.1.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
