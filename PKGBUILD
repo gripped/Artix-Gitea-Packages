@@ -1,9 +1,10 @@
-# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 _gemname=rake
 pkgname=ruby-$_gemname
 pkgver=13.0.6
-pkgrel=1
+pkgrel=3
 pkgdesc='Make-like build tool implemented in Ruby'
 provides=(rake)
 arch=(any)
