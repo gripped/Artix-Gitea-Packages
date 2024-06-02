@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: re2
-  version: 1:20240401-1
+  version: 1:20240601-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:20240401-1
+    version: 1:20240601-1
     packages:
-      - re2-1:20240401-1-x86_64.pkg.tar.zst
+      - re2-1:20240601-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
