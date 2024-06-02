@@ -17,7 +17,7 @@ pkgname=(
   ruby-stdlib
 )
 pkgver=3.2.4
-pkgrel=1
+pkgrel=0
 pkgdesc='An object-oriented language for quick and easy programming'
 url='https://www.ruby-lang.org/en/'
 arch=(x86_64)
@@ -52,7 +52,7 @@ sha512sums=('fb0af37be4b6ad7b98ab9f8a508952238ee68b5828e3926331e4db52e2ebc1e6046
 b2sums=('9c2300a958b03528d51f0d74a069c8c538ca4009835d55377509a000bcfb43893a8a80d8fda57011e77c72e6283cb259281d5ba7b37444546e49f2a9ad515cf3'
         '1ee662e57f9f29b4ab29b391b38b988a8b5c199e62c815353c3a47e6eceea910344c7d9a00512916e05b6404efddf941313dfdcb0bec027f7f668443309228b9')
 
-_bootstrap=0
+_bootstrap=1
 _rubyver="${pkgver:0:3}.0"
 _bundled_gems=(
   debug
@@ -264,7 +264,6 @@ package_ruby() {
     ruby-tmpdir
     ruby-uri
   )
-  conflicts=("${replaces[@]}")
   provides+=("${_default_gems[@]/#/ruby-}")
 
   cd "ruby-${pkgver}"
@@ -285,9 +284,6 @@ package_ruby() {
     declare -n bootstrap_provides=provides
     bootstrap_provides+=("${_default_tool_gems[@]/#/ruby-}" rubygems)
     bootstrap_provides+=("${_bundled_gems[@]/#/ruby-}")
-    declare -n bootstrap_conflicts=conflicts
-    bootstrap_conflicts+=("${_default_tool_gems[@]/#/ruby-}" rubygems)
-    bootstrap_conflicts+=("${_bundled_gems[@]/#/ruby-}")
   else
     # remove de-vendored parts
     _remove_default_tool_gems
@@ -349,7 +345,6 @@ package_ruby-docs() {
 package_ruby-bundled-gems() {
   pkgdesc='Bundled gems which are part of Ruby StdLib'
   replaces=(ruby-bundledgems)
-  conflicts=(ruby-bundledgems)
   depends=("${_bundled_gems[@]/#/ruby-}")
 
   cd "ruby-${pkgver}"
