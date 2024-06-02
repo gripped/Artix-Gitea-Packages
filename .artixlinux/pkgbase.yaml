@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pyarrow
-  version: 16.0.0-2
+  version: 16.1.0-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 16.0.0-2
+    version: 16.1.0-2
     packages:
-      - python-pyarrow-16.0.0-2-x86_64.pkg.tar.zst
+      - python-pyarrow-16.1.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
