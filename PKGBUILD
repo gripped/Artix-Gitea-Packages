@@ -5,13 +5,28 @@
 _gemname='rdoc'
 pkgname="ruby-${_gemname}"
 pkgver=6.5.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Command-line documentation generator for Ruby projects'
 arch=('any')
 url='https://ruby.github.io/rdoc/'
-license=('Ruby')
-depends=('ruby' 'ruby-psych' 'ruby-erb')
-makedepends=('ruby-kpeg' 'ruby-racc')
+license=(
+	Ruby
+)
+depends=(
+  ruby
+  ruby-erb
+  ruby-psych
+)
+makedepends=(
+  ruby-bundler
+  ruby-kpeg
+  ruby-racc
+  ruby-rake
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-test-unit
+)
 options=('!emptydirs')
 source=("https://github.com/ruby/rdoc/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha512sums=('ed7dbfd2a085b044a311222237f7153b7b22ee34af7e6ac18826ede2fe3afdc25120546f789ff03fec952dc100d33c0f86da50c61bf9d60ba3957650318a27c9')
@@ -77,3 +92,5 @@ package() {
   install --verbose -D --mode=0644 LEGAL.rdoc LICENSE.rdoc --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
   install --verbose -D --mode=0644 *.md *.rdoc --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
 }
+
+# vim: ts=2 sw=2 et:
