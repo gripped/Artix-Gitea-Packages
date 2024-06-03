@@ -1,20 +1,35 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='racc'
 pkgname="ruby-${_gemname}"
-pkgver=1.6.0
-pkgrel=3
+pkgver=1.6.2
+pkgrel=1
 pkgdesc='LALR parser generator written in Ruby itself and generates ruby programs'
-arch=('x86_64')
+arch=(x86_64)
 url="https://github.com/ruby/${_gemname}"
-license=('Ruby', 'BSD')
-depends=('ruby')
-makedepends=('rubygems' 'ruby-rake' 'ruby-rake-compiler' 'ruby-rdoc')
-checkdepends=('ruby-test-unit')
+license=(
+  Ruby
+  BSD-2-Clause
+)
+depends=(
+  glibc
+  ruby
+)
+makedepends=(
+  ruby-bundler
+  ruby-rake
+  ruby-rake-compiler
+  ruby-rdoc
+  rubygems
+)
+checkdepends=(
+  ruby-test-unit
+)
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('c19b7444bfafa0dfe3448600d10a1a09319702c37632e19569aeb947e7c035cc4067da040d45ede0dab35eaa197a55eac394715aae520fba41ed6e0c01c95e3d')
+sha512sums=('ef577d0da440361702d15cf2127142e57d5af4146f120cd9d94ee8c8b4380810c8913c373a9969f09b50e0850a8ac04ffd22729c4abdab0670765c7379b549f6')
 
 build() {
   cd "${_gemname}-${pkgver}"
@@ -66,3 +81,5 @@ package() {
   install --verbose -D --mode=0644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
   install --verbose -D --mode=0644 ChangeLog README.rdoc --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
 }
+
+# vim: ts=2 sw=2 et:
