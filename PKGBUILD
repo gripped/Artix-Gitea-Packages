@@ -1,31 +1,46 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=vpnc
-_vpnc_commit=46b8335b6e0df577fd3c40e87362ed8c5724c8df
-_vpncscripts_commit=22756827315bc875303190abb3756b5b1dd147ce
-pkgver=0.5.3.r526.r213
+_vpnc_commit=d0fd23d9432d54e7f354ecf3ced1e35d92d3dbde
+_vpncscripts_commit=4ed41c21e3857f96ab935b45092bbb07c3ccd5be
+pkgver=0.5.3.r539.r239
 pkgrel=1
 epoch=1
 pkgdesc='VPN client for cisco3000 VPN Concentrators'
 url='https://github.com/streambinder/vpnc'
-arch=('x86_64')
-license=('GPL')
-depends=('libgcrypt' 'openssl' 'iproute2' 'which')
-optdepends=('perl: for pcf2vpnc')
-makedepends=('git')
-optdepends=('openresolv: Let vpnc manage resolv.conf')
-backup=('etc/vpnc/default.conf')
-source=("vpnc::git+https://github.com/streambinder/vpnc#commit=${_vpnc_commit}"
-        "vpnc-scripts::git+https://gitlab.com/openconnect/vpnc-scripts.git#commit=${_vpncscripts_commit}"
-        git+https://github.com/streambinder/vpnc.wiki.git
-        vpnc.conf)
+arch=(x86_64)
+license=(GPL-2.0-only)
+depends=(
+  bash
+  glibc
+  iproute2
+  libgcrypt
+  openssl
+  perl
+  which
+)
+makedepends=(
+  git
+)
+optdepends=(
+  'openresolv: Let vpnc manage resolv.conf'
+)
+backup=(
+  etc/vpnc/default.conf
+)
+source=(
+  "vpnc::git+https://github.com/streambinder/vpnc#commit=${_vpnc_commit}"
+  "vpnc-scripts::git+https://gitlab.com/openconnect/vpnc-scripts.git#commit=${_vpncscripts_commit}"
+  git+https://github.com/streambinder/vpnc.wiki.git
+  vpnc.conf
+)
 sha512sums=('SKIP'
             'SKIP'
             'SKIP'
             'ac70712192c01ff638a9badc5cff7105bee5c4fed5d3a3b728e9597661952d156041c82fe1e544e2bab602d193d4105d3689c79c46d964623f6ce38dd89f0ea7')
-
+            
 pkgver() {
   cd ${pkgname}
   printf "%s.r%s.r%s" "$(grep '^VERSION' Makefile|sed 's|VERSION := ||')" \
