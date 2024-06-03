@@ -4,7 +4,7 @@
 _gemname='erb'
 pkgname="ruby-${_gemname}"
 pkgver=4.0.4
-pkgrel=2
+pkgrel=3
 pkgdesc='An easy to use but powerful templating system for Ruby'
 arch=('x86_64')
 url="https://github.com/ruby/${_gemname}"
@@ -18,11 +18,15 @@ depends=(
   ruby-cgi
 )
 makedepends=(
+  ruby-rdoc
   tree
 )
 checkdepends=(
+  ruby-bundler
   ruby-rake
   ruby-rake-compiler
+  ruby-test-unit
+  ruby-test-unit-ruby-core
 )
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
