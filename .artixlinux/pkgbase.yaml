@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rubygems
-  version: 3.4.19-0
+  version: 3.4.19-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.4.19-0
+    version: 3.4.19-1
     packages:
-      - rubygems-3.4.19-0-any.pkg.tar.zst
+      - rubygems-3.4.19-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
