@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2024-05-08
+## Generated on 2024-06-03
 ##
 
 # Artix mirrors
@@ -77,6 +77,8 @@ Server = https://mirrors.aliyun.com/artixlinux/$repo/os/$arch
 Server = https://mirror.nju.edu.cn/artixlinux/$repo/os/$arch
 # India
 Server = https://mirror.albony.in/artix/$repo/os/$arch
+# Japan
+Server = https://www.miraa.jp/artix-linux/$repo/os/$arch
 # Korea, Republic of
 Server = https://mirror.funami.tech/artix/$repo/os/$arch
 # Singapore
