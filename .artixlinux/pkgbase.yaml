@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: intel-ucode
-  version: 20240514-1
+  version: 20240531-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240514-1
+    version: 20240531-1
     packages:
-      - intel-ucode-20240514-1-any.pkg.tar.zst
+      - intel-ucode-20240531-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
