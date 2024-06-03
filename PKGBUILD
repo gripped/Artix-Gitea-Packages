@@ -4,13 +4,21 @@
 _gemname='kpeg'
 pkgname="ruby-${_gemname}"
 pkgver=1.3.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple PEG library for ruby'
 arch=('any')
 url="https://github.com/evanphx/${_gemname}"
-license=('MIT')
-depends=('ruby')
-makedepends=('ruby-hoe' 'ruby-rake')
+license=(MIT)
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-hoe
+  ruby-rake
+)
+checkdepends=(
+  ruby-minitest
+)
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha512sums=('42d3de3b8f7132e073c6e4fc9af2b606c2ce98d7666b2606f5d962b9e84b306958b824752c7649684b64f957b17ce60966ab149cc358a01d435d28467b0a030b')
@@ -85,3 +93,5 @@ package() {
   install --verbose -D --mode=0644 LICENSE --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
   install --verbose -D --mode=0644 *.rdoc --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
 }
+
+# vim: ts=2 sw=2 et:
