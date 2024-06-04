@@ -4,12 +4,12 @@
 
 pkgname=ccache
 pkgver=4.10
-pkgrel=1
+pkgrel=2
 pkgdesc='Compiler cache that speeds up recompilation by caching previous compilations'
 url='https://ccache.dev/'
 arch=('x86_64')
 license=('GPL3')
-depends=('glibc' 'gcc-libs' 'hiredis' 'zstd' 'libzstd.so')
+depends=('fmt' 'glibc' 'gcc-libs' 'hiredis' 'zstd' 'libzstd.so')
 makedepends=('cmake' 'asciidoctor' 'perl')
 source=(https://github.com/ccache/ccache/releases/download/v${pkgver}/ccache-${pkgver}.tar.xz{,.asc})
 validpgpkeys=('5A939A71A46792CF57866A51996DDA075594ADB8') # Joel Rosdahl <joel@rosdahl.net>
