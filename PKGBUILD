@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:: Tim Meusel <tim@bastelfreak.de>
 
 _gemname=metaclass
 pkgname="ruby-${_gemname}"
 pkgver=0.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Dynamic inspection of the hierarchy of method definitions on a Ruby object.'
 arch=('any')
 url="https://github.com/floehopper/${_gemname}"
