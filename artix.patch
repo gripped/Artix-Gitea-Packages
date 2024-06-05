@@ -1,0 +1,193 @@
+Adjust the settings for Artix's use, and modify the dbus exec
+
+diff --git a/src/localed.c b/src/localed.c
+index ed07dba..7817b79 100644
+--- a/src/localed.c
++++ b/src/localed.c
+@@ -836,7 +836,7 @@ on_handle_set_locale_authorized_cb (GObject *source_object,
+     if (shell_parser_is_empty (locale_file_parsed)) {
+         /* Simply write the new env file */
+         shell_parser_free (locale_file_parsed);
+-        if ((locale_file_parsed = shell_parser_new_from_string (locale_file, "# Configuration file for eselect\n# This file has been automatically generated\n", &err)) == NULL) {
++        if ((locale_file_parsed = shell_parser_new_from_string (locale_file, "LANG=C.UTF-8\nLC_COLLATE=C\n", &err)) == NULL) {
+             g_dbus_method_invocation_return_gerror (data->invocation, err);
+             goto unlock;
+         }
+@@ -973,7 +973,7 @@ on_handle_set_vconsole_keyboard_authorized_cb (GObject *source_object,
+     }
+ 
+     /* We do not set vconsole_keymap_toggle because there is no good equivalent for it in OpenRC */
+-    if (!shell_parser_set_and_save (keymaps_file, &err, "keymap", NULL, data->vconsole_keymap, NULL)) {
++    if (!shell_parser_set_and_save (keymaps_file, &err, "KEYMAP", NULL, data->vconsole_keymap, NULL)) {
+         g_dbus_method_invocation_return_gerror (data->invocation, err);
+         goto unlock;
+     }
+@@ -1164,7 +1164,7 @@ on_handle_set_x11_keyboard_authorized_cb (GObject *source_object,
+             g_printerr ("Failed to find conversion entry for x11 layout '%s' in '%s'\n", data->x11_layout, filename);
+             g_free (filename);
+         } else {
+-            if (!shell_parser_set_and_save (keymaps_file, &err, "keymap", NULL, best_entry->vconsole_keymap, NULL)) {
++            if (!shell_parser_set_and_save (keymaps_file, &err, "KEYMAP", NULL, best_entry->vconsole_keymap, NULL)) {
+                 g_dbus_method_invocation_return_gerror (data->invocation, err);
+                 goto unlock;
+             }
+@@ -1288,15 +1288,17 @@ localed_init (gboolean _read_only)
+     kbd_model_map_file = g_file_new_for_path (PKGDATADIR "/kbd-model-map");
+     locale_file = g_file_new_for_path (SYSCONFDIR "/env.d/02locale");
+     keymaps_file = g_file_new_for_path (SYSCONFDIR "/conf.d/keymaps");
+-#else
+-    kbd_model_map_file = g_file_new_for_path (PKGDATADIR "/openrc-settingsd/kbd-model-map");
+-    locale_file = g_file_new_for_path (SYSCONFDIR "/profile.d/locale.sh");
+-    keymaps_file = g_file_new_for_path (SYSCONFDIR "/conf.d/loadkeys");
+-#endif
+-
+     /* See http://www.gentoo.org/doc/en/xorg-config.xml */
+     x11_gentoo_file = g_file_new_for_path (SYSCONFDIR "/X11/xorg.conf.d/30-keyboard.conf");
+     x11_systemd_file = g_file_new_for_path (SYSCONFDIR "/X11/xorg.conf.d/00-keyboard.conf");
++#else
++    kbd_model_map_file = g_file_new_for_path (PKGDATADIR "/openrc-settingsd/kbd-model-map");
++    locale_file = g_file_new_for_path (SYSCONFDIR "/locale.conf");
++    keymaps_file = g_file_new_for_path (SYSCONFDIR "/vconsole.conf");
++    /* Use systemd-style always */
++    x11_gentoo_file = g_file_new_for_path (SYSCONFDIR "/X11/xorg.conf.d/00-keyboard.conf");
++    x11_systemd_file = g_file_new_for_path (SYSCONFDIR "/X11/xorg.conf.d/00-keyboard.conf");
++#endif
+ 
+     locale = g_new0 (gchar *, g_strv_length (locale_variables) + 1);
+     locale_values = shell_parser_source_var_list (locale_file, (const gchar * const *)locale_variables, &err);
+@@ -1318,7 +1320,7 @@ localed_init (gboolean _read_only)
+         g_clear_error (&err);
+     }
+ 
+-    vconsole_keymap = shell_source_var (keymaps_file, "${keymap}", &err);
++    vconsole_keymap = shell_source_var (keymaps_file, "${KEYMAP}", &err);
+     if (vconsole_keymap == NULL)
+         vconsole_keymap = g_strdup ("");
+     if (err != NULL) {
+diff --git a/src/main.c b/src/main.c
+index 7476b2f..7d9444e 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -21,6 +21,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <syslog.h>
++#include <fcntl.h>
+ 
+ #include <glib.h>
+ #include <gio/gio.h>
+diff --git a/src/timedated.c b/src/timedated.c
+index 54636e6..78c6035 100644
+--- a/src/timedated.c
++++ b/src/timedated.c
+@@ -69,9 +69,10 @@ get_local_rtc (GError **error)
+     gchar *clock = NULL;
+     gboolean ret = FALSE;
+ 
+-    clock = shell_source_var (hwclock_file, "${clock}", error);
+-    if (!g_strcmp0 (clock, "local"))
+-        ret = TRUE;
++    if (g_file_load_contents (hwclock_file, NULL, &clock, NULL, NULL, error)) {
++        if (!g_strcmp0 (clock, "localtime"))
++            ret = TRUE;
++    }
+     g_free (clock);
+     return ret;
+ }
+@@ -92,6 +93,9 @@ set_timezone_file (const gchar *identifier,
+ 
+     g_return_val_if_fail (error != NULL, FALSE);
+ 
++    /* We don't use the timezone file */
++    return TRUE;
++
+     /* We don't actually own the timezone file, but it's something distros
+      * need to take care of installing if they use it, which not all do.
+      * So if it doesn't exist, don't create it, it's not our responsibility */
+@@ -498,7 +502,7 @@ on_handle_set_local_rtc_authorized_cb (GObject *source_object,
+     GError *err = NULL;
+     struct invoked_set_local_rtc *data;
+     gchar *clock = NULL;
+-    const gchar *clock_types[2] = { "UTC", "local" };
++    const gchar *clock_types[2] = { "UTC", "localtime" };
+ 
+     data = (struct invoked_set_local_rtc *) user_data;
+     if (!check_polkit_finish (res, &err)) {
+@@ -507,7 +511,7 @@ on_handle_set_local_rtc_authorized_cb (GObject *source_object,
+     }
+ 
+     G_LOCK (clock);
+-    clock = shell_source_var (hwclock_file, "${clock}", NULL);
++    clock = shell_source_var (hwclock_file, "${HARDWARECLOCK}", NULL);
+     if (clock != NULL || data->local_rtc)
+         if (!shell_parser_set_and_save (hwclock_file, &err, "clock", NULL, clock_types[data->local_rtc], NULL)) {
+             g_dbus_method_invocation_return_gerror (data->invocation, err);
+@@ -732,7 +736,7 @@ timedated_init (gboolean _read_only,
+     read_only = _read_only;
+     ntp_preferred_service = _ntp_preferred_service;
+ 
+-    hwclock_file = g_file_new_for_path (SYSCONFDIR "/conf.d/hwclock");
++    hwclock_file = g_file_new_for_path (SYSCONFDIR "/hwclock.conf");
+     timezone_file = g_file_new_for_path (SYSCONFDIR "/timezone");
+     localtime_file = g_file_new_for_path (SYSCONFDIR "/localtime");
+ 
+diff --git a/data/org.freedesktop.hostname1.service.in b/data/org.freedesktop.hostname1.service.in
+index 56f4a80..201818d 100644
+--- a/data/org.freedesktop.hostname1.service.in
++++ b/data/org.freedesktop.hostname1.service.in
+@@ -1,4 +1,4 @@
+ [D-BUS Service]
+ Name=org.freedesktop.hostname1
+-Exec=@libexecdir@/openrc-settingsd --update-rc-status
++Exec=@libexecdir@/openrc-settingsd
+ User=root
+\ No newline at end of file
+diff --git a/data/org.freedesktop.locale1.service.in b/data/org.freedesktop.locale1.service.in
+index 1debcbb..06d08b6 100644
+--- a/data/org.freedesktop.locale1.service.in
++++ b/data/org.freedesktop.locale1.service.in
+@@ -1,4 +1,4 @@
+ [D-BUS Service]
+ Name=org.freedesktop.locale1
+-Exec=@libexecdir@/openrc-settingsd --update-rc-status
++Exec=@libexecdir@/openrc-settingsd
+ User=root
+\ No newline at end of file
+diff --git a/data/org.freedesktop.timedate1.service.in b/data/org.freedesktop.timedate1.service.in
+index 77dd26d..13865dc 100644
+--- a/data/org.freedesktop.timedate1.service.in
++++ b/data/org.freedesktop.timedate1.service.in
+@@ -1,4 +1,4 @@
+ [D-BUS Service]
+ Name=org.freedesktop.timedate1
+-Exec=@libexecdir@/openrc-settingsd --update-rc-status
++Exec=@libexecdir@/openrc-settingsd
+ User=root
+\ No newline at end of file
+diff --git a/meson.build b/meson.build
+index f975f8f..fc07852 100644
+--- a/meson.build
++++ b/meson.build
+@@ -132,12 +132,15 @@ install_data(
+   install_dir : polkit_dep.get_pkgconfig_variable('actiondir')
+ )
+ 
++if not get_option('openrc').disabled()
++
+ install_data(
+   'data/conf.d/openrc-settingsd',
+   install_dir : get_option('sysconfdir') / 'conf.d',
+ )
+ 
+ # install_dir cannot be used in configure_file here, see https://github.com/mesonbuild/meson/issues/7675
++
+ initd_file = configure_file(
+   input : 'data/init.d/openrc-settingsd.in',
+   output : 'openrc-settingsd.initd',
+@@ -149,4 +152,6 @@ install_data(
+   install_dir : get_option('sysconfdir') / 'init.d',
+ )
+ 
++endif
++
+ install_man('data/openrc-settingsd.8')
