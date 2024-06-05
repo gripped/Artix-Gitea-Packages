@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rake
-  version: 13.0.6-3
+  version: 13.0.6-3.1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 13.0.6-3
+    version: 13.0.6-3.1
     packages:
-      - ruby-rake-13.0.6-3-any.pkg.tar.zst
+      - ruby-rake-13.0.6-3.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
