@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='scanf'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A implementation of the C function scanf(3).'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
