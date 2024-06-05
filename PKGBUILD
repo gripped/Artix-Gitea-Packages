@@ -1,11 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 # Contributor: Andy Weidenbaum <archbaum at gmail dot com>
 
 _gemname='ruby-progressbar'
 pkgname="ruby-${_gemname}"
 pkgver=1.11.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Flexible text progress bar library for Ruby'
 arch=('any')
 url="https://github.com/jfelchner/${_gemname}"
