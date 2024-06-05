@@ -5,7 +5,7 @@
 _gemname=rspec-core
 pkgname=ruby-${_gemname}
 pkgver=3.12.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc='RSpec runner and formatters'
 url='https://github.com/rspec/rspec-core'
 arch=('any')
