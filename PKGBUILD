@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=maruku
 pkgname=ruby-maruku
 pkgver=0.7.3
-pkgrel=6
+pkgrel=7
 pkgdesc='Pure-Ruby Markdown-superset interpreter'
 url='https://github.com/bhollis/maruku'
 arch=('any')
