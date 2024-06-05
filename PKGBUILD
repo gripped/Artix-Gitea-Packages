@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=manpages
 pkgname=ruby-manpages
 pkgver=0.6.1
-pkgrel=4
+pkgrel=5
 pkgdesc='Man pages support for ruby gems'
 url='https://github.com/bitboxer/manpages'
 arch=('any')
