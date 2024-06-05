@@ -5,7 +5,7 @@
 _gemname='racc'
 pkgname="ruby-${_gemname}"
 pkgver=1.6.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='LALR parser generator written in Ruby itself and generates ruby programs'
 arch=(x86_64)
 url="https://github.com/ruby/${_gemname}"
