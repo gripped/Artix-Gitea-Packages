@@ -8,7 +8,7 @@
 _gemname=diff-lcs
 pkgname=ruby-${_gemname}
 pkgver=1.5.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Diff::LCS computes the difference between two Enumerable sequences using the McIlroy-Hunt longest common subsequence (LCS) algorithm'
 url='https://github.com/halostatue/diff-lcs'
 arch=('any')
