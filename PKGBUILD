@@ -1,10 +1,11 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 
 _gemname='concurrent-ruby'
 pkgname='ruby-concurrent'
 pkgver=1.2.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Modern concurrency tools including agents, futures, promises, thread pools, actors, supervisors, and more.'
 arch=('any')
 url="https://github.com/ruby-concurrency/${_gemname}"
