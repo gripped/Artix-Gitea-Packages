@@ -4,7 +4,7 @@
 _gemname=typeprof
 pkgname="ruby-${_gemname}"
 pkgver=0.21.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc='An experimental type-level Ruby interpreter for testing and understanding Ruby code'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
