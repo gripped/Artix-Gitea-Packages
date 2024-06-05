@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='parallel'
 pkgname="ruby-${_gemname}"
 pkgver=1.22.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Run any kind of code in parallel processes'
 arch=('any')
 url="https://github.com/grosser/${_gemname}"
