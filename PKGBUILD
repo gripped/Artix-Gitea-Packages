@@ -5,7 +5,7 @@
 _gemname=rspec
 pkgname=ruby-${_gemname}
 pkgver=3.12.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='RSpec meta-gem that depends on the other components'
 url='https://github.com/rspec/rspec'
 arch=('any')
