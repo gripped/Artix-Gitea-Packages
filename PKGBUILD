@@ -1,10 +1,11 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 
 _gemname='deep_merge'
 pkgname="ruby-${_gemname}"
 pkgver=1.2.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Recursively merge Ruby hashes'
 arch=('any')
 url="https://github.com/danielsdeleo/${_gemname}"
