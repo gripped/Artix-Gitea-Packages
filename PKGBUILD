@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-unicode-version
 _pkgname="${pkgname#ruby-}"
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Returns Unicode/Emoji versions of current and previous Rubies'
 arch=('any')
 url='https://github.com/janlelis/unicode-version'
