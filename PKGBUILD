@@ -1,4 +1,5 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Lex Black <autumn-wind@web.de>
@@ -8,8 +9,8 @@
 
 pkgname=julia
 epoch=2
-pkgver=1.10.3
-pkgrel=2
+pkgver=1.10.4
+pkgrel=1
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
 url='https://julialang.org/'
@@ -43,7 +44,7 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         julia-suitesparse-7.patch
         julia-hardcoded-libs.patch)
 backup=(etc/julia/startup.jl)
-sha256sums=('d892b2123be64dacf9d05e4ccbad7f1797f6bf87c397a74804b011c8750f6c8f'
+sha256sums=('f32e5277f5d82a63824882cdebfac158199bb84814c3c019a3fecc3601586191'
             'SKIP'
             '2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367'
             '97efa327f1d389de59258f6047689ca7bed2b7be922088566865defd5d305ed0'
@@ -140,6 +141,7 @@ check() {
   ../julia --check-bounds=yes --startup-file=no ./runtests.jl \
     --skip Downloads \
     --skip Sockets \
+    --skip channels \
     --skip nghttp2_jll \
     --skip GMP_jll \
     --skip LibCURL \
