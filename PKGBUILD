@@ -4,7 +4,7 @@
 
 pkgname=qt6-translations
 pkgver=6.7.1
-pkgrel=1
+pkgrel=1.1
 arch=(any)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
