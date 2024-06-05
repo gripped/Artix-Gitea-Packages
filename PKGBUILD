@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 _gemname=rb-fsevent
 pkgname=ruby-${_gemname}
 pkgver=0.11.2
-pkgrel=1
+pkgrel=2
 pkgdesc='FSEvents API with signals handled (without RubyCocoa)'
 url='https://github.com/thibaudgg/rb-fsevent'
 arch=('any')
