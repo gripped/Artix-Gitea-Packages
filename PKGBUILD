@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jelle van der Waa <jelle@vdwaa.nl>
 
 _gemname=mustermann
 pkgname=ruby-${_gemname}
 pkgver=3.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Your personal string matching expert"
 arch=(any)
 url="https://github.com/sinatra/mustermann"
@@ -11,7 +12,7 @@ license=('MIT')
 depends=('ruby' 'ruby-ruby2_keywords')
 options=('!emptydirs')
 source=(${pkgname}-${pkgver}.tar.gz::https://github.com/sinatra/mustermann/archive/v${pkgver}.tar.gz)
-md5sums=('6c219b73546b2c74b2bd0f2249d760f5')
+sha256sums=('3727530c67d6b79f4cca30b2629121998efd5dd80ffb192f306e625fa3539066')
 
 prepare() {
   cd ${_gemname}-${pkgver}/${_gemname}
