@@ -4,7 +4,7 @@
 _gemname=rake-compiler
 pkgname=ruby-${_gemname}
 pkgver=1.2.5
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Rake-based Ruby Extension (C, Java) task generator'
 url='https://github.com/rake-compiler/rake-compiler'
 arch=('any')
