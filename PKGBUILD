@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=builder
 pkgname=ruby-${_gemname}
 pkgver=3.2.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Provide a simple way to create XML markup and data structures'
 url='http://onestepback.org/'
 arch=('any')
