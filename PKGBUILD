@@ -1,11 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Co-Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Carsten Feuls <archlinux@carstenfeuls.de>
 
 _gemname=eventmachine
 pkgname=ruby-${_gemname}
 pkgver=1.2.7
-pkgrel=6
+pkgrel=7
 pkgdesc='EventMachine: fast, simple event-processing library'
 url='http://rubyeventmachine.com'
 arch=('x86_64')
