@@ -4,7 +4,7 @@
 
 pkgname=qt6-translations
 pkgver=6.7.1
-pkgrel=1.3
+pkgrel=1.4
 arch=(any)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -13,7 +13,7 @@ depends=()
 makedepends=(cmake
              git
              ninja
-             qt6-base)
+             qt6-tools)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
