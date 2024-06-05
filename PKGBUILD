@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 
 _gemname='sync'
 pkgname="ruby-${_gemname}"
 pkgver=0.5.0
-pkgrel=6
+pkgrel=7
 pkgdesc='A Ruby module packaged as a gem that provides a two-phase lock with a counter.  Was in Ruby core until 2.7'
 arch=('any')
 url='https://github.com/ruby/sync'
