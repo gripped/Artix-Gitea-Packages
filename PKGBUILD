@@ -1,3 +1,4 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor : Tom Gundersen <teg@jklm.no>
 # Contributor : Ionut Biru <ibiru@archlinux.org>
 # Contributor : Thomas Weißschuh <thomas t-8ch de>
@@ -5,7 +6,7 @@
 
 pkgbase=transmission
 pkgname=(transmission-cli transmission-gtk transmission-qt libtransmission)
-pkgver=4.0.5
+pkgver=4.0.6
 pkgrel=1
 arch=(x86_64)
 url="http://www.transmissionbt.com/"
@@ -28,11 +29,12 @@ makedepends=(
 	qt6-base
 	qt6-svg
 	qt6-tools
+	etmpfiles esysusers
 )
 source=(https://github.com/transmission/transmission/releases/download/$pkgver/transmission-$pkgver.tar.xz
         transmission-cli.sysusers
         transmission-cli.tmpfiles)
-sha256sums=('fd68ff114a479200043c30c7e69dba4c1932f7af36ca4c5b5d2edcb5866e6357'
+sha256sums=('2a38fe6d8a23991680b691c277a335f8875bdeca2b97c6b26b598bc9c7b0c45f'
             '641310fb0590d40e00bea1b5b9c843953ab78edf019109f276be9c6a7bdaf5b2'
             '1266032bb07e47d6bcdc7dabd74df2557cc466c33bf983a5881316a4cc098451')
 
@@ -89,6 +91,7 @@ package_transmission-cli() {
 
   install -d "$pkgdir"/usr/share/transmission
   cp -a build/web/public_html/ "$pkgdir"/usr/share/transmission
+
 
   install -Dm644 COPYING "$pkgdir/usr/share/licenses/transmission-cli/COPYING"
 
