@@ -1,5 +1,6 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Dmitry Kharitonov <darksab0r@gmail.com>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: eagletmt <eagletmt@gmail.com>
@@ -7,7 +8,7 @@
 _gemname='mini_portile2'
 pkgname="ruby-${_gemname}"
 pkgver=2.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Simple autoconf builder for developers'
 url='https://github.com/flavorjones/mini_portile'
 arch=('any')
