@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: redshift
-  version: 1.12-11
+  version: 1.12-12
   arch:
     - x86_64
   pkgname:
     - redshift
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12-11
+    version: 1.12-12
     packages:
-      - redshift-1.12-11-x86_64.pkg.tar.zst
+      - redshift-1.12-12-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
