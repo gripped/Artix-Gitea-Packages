@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: esettingsd
-  version: 1.4.0-1
+  version: 1.4.0-2
   arch:
     - x86_64
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.4.0-1
+    version: 1.4.0-2
     packages:
-      - esettingsd-1.4.0-1-x86_64.pkg.tar.zst
+      - esettingsd-1.4.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
