@@ -1,8 +1,8 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org
 
 pkgname=artix-checkupdates
-pkgver=0.10
-pkgrel=2
+pkgver=0.10.1
+pkgrel=1
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
 url="https://gitea.artixlinux.org/artix/artix-checkupdates"
