@@ -4,14 +4,14 @@ _pkgbase=desktop-presets
 
 pkgname=artix-desktop-presets
 pkgver=20240608
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix common desktop presets'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
 license=('GPL')
 depends=('artix-dark-theme' 'artix-backgrounds' 'artix-icons')
 makedepends=('git')
-groups=('artix-branding')
+groups=('artix-branding' 'artix-style')
 #_commit=eb2382d9452c33833245b8ddf7216f68f9f35740
 #source=("git+$url.git#commit=${_commit}")
 #_branch='master'
