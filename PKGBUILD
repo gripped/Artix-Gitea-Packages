@@ -12,7 +12,7 @@ pkgname=('artix-icons'
         'artix-plasma-splash'
         'artix-wallpapers')
 pkgver=2024.06
-pkgrel=7
+pkgrel=1
 pkgdesc='Artix wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
