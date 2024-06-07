@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-dark-theme
-  version: 20240215-1
+  version: 20240608-1
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20240215-1
+    version: 20240608-1
     packages:
-      - artix-dark-theme-20240215-1-any.pkg.tar.zst
+      - artix-dark-theme-20240608-1-any.pkg.tar.zst
+team: galaxy
