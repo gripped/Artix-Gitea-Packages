@@ -1,14 +1,20 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-fiber-local
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides a class-level mixin to make fiber local state easy'
 arch=(any)
 url='https://github.com/socketry/fiber-local'
 license=(MIT)
-depends=(ruby)
-checkdepends=(ruby-rspec)
+depends=(
+  ruby
+)
+checkdepends=(
+  ruby-bundler
+  ruby-rspec
+)
 options=(!emptydirs)
 source=(https://github.com/socketry/fiber-local/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('6391f85334ab6bf103e0ded475cc4b59909a068dd63cc45e80bb0753cb6cc5dd')
