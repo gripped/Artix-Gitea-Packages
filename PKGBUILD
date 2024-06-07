@@ -1,7 +1,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: artoo <artoo@artixlinux.org>
 
 _repo=artwork
-_commit=ffe87aae26f9c8f29e991cf8eb875c642e995b3d
+_commit=cc591e422d7fbd4578d99912cbb7431bc7500115
 
 pkgbase=artix-artwork
 pkgname=('artix-icons'
@@ -10,7 +11,7 @@ pkgname=('artix-icons'
         'artix-grub-theme'
         'artix-plasma-splash'
         'artix-wallpapers')
-pkgver=2023.12
+pkgver=2024.06
 pkgrel=7
 pkgdesc='Artix wallpapers'
 arch=('any')
