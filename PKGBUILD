@@ -11,7 +11,7 @@ pkgrel=1.0
 pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
-license=('BSD')
+license=('BSD-3-Clause')
 depends=('etmpfiles' 'python-billiard' 'python-click-didyoumean' 'python-click-plugins' 'python-click-repl'
          'python-kombu' 'python-pytz' 'python-vine')
 optdepends=('python-cryptography: for celery.security'
