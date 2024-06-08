@@ -3,7 +3,7 @@
 pkgbase=turnstile
 pkgname=('turnstile' 'turnstile-dinit')
 pkgver=0.1.8
-pkgrel=7
+pkgrel=8
 pkgdesc="Work-in-progress session/login tracker as a logind alternative"
 arch=("x86_64")
 url="https://github.com/chimera-linux/turnstile"
@@ -21,7 +21,7 @@ sha256sums=('7eaab8c80c76ae9a9a711d7dc57ec346b9af09be99b526a5a3129a7fc9bd7a76'
 
 prepare() {
     cd "$pkgname-$pkgver"
-    sed -i -e "s/init-local/local/" data/dinit/turnstiled
+    sed -i -e "s/init-local/local/" -e "s|log/|log/dinit/|" data/dinit/turnstiled
     patch -p1 < ../dummy-ready.patch
     patch -p1 < ../rundir_late.patch
     patch -p1 < ../runit-backend.patch
