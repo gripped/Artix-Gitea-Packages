@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - s6
 actions:
-  addRepo: system-goblins
-  removeRepo: null
+  addRepo: system
+  removeRepo: system-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 2.13.0.0-1
-    packages:
-      - s6-2.13.0.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   system-gremlins:
     version: null
     packages: []
   system:
-    version: 2.12.0.4-1
+    version: 2.13.0.0-1
     packages:
-      - s6-2.12.0.4-1-x86_64.pkg.tar.zst
+      - s6-2.13.0.0-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
