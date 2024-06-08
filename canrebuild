@@ -87,8 +87,8 @@ def main(filename, verify, output_format):
             stable_handle = Handle(".", stable_tmpdir)
             staging_handle = Handle(".", staging_tmpdir)
 
-            register_dbs(stable_handle, ["system", "world", "lib32"])
-            register_dbs(staging_handle, ["system-goblins", "world-goblins", "lib32-goblins"])
+            register_dbs(stable_handle, ["core", "extra", "multilib"])
+            register_dbs(staging_handle, ["core-staging", "extra-staging", "multilib-staging"])
 
             if verify:
                 packages = compare_repos(rebuild_packages, staging_handle)
