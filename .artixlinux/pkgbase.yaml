@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-aws-xray-sdk
-  version: 2.13.1-1
+  version: 2.14.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.13.1-1
+    version: 2.14.0-1
     packages:
-      - python-aws-xray-sdk-2.13.1-1-any.pkg.tar.zst
+      - python-aws-xray-sdk-2.14.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
