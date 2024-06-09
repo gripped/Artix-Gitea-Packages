@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: openscenegraph
-  version: 3.6.5-23
+  version: 3.6.5-24
   arch:
     - x86_64
   pkgname:
     - openscenegraph
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.6.5-23
+    version: 3.6.5-24
     packages:
-      - openscenegraph-3.6.5-23-x86_64.pkg.tar.zst
+      - openscenegraph-3.6.5-24-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
