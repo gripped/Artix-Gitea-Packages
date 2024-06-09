@@ -11,7 +11,7 @@
 
 pkgname=puppet
 pkgver=7.30.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Server automation framework and application'
 arch=('any')
 url='https://www.puppet.com/community/open-source'
