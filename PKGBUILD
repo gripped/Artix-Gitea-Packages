@@ -1,14 +1,15 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Vojtěch Aschenbrenner <v@asch.cz>
 
 _gemname='locale'
 pkgname="ruby-${_gemname}"
 pkgver=2.1.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A pure ruby library which provides basic and general purpose APIs for localization.'
 arch=('any')
 url="https://github.com/ruby-gettext/locale"
-license=('RUBY' 'LGPL3')
+license=('Ruby' 'LGPL-3.0-or-later')
 makedepends=('ruby-rdoc' 'ruby-rake' 'ruby-bundler' 'ruby-yard')
 checkdepends=('ruby-test-unit' 'ruby-test-unit-rr')
 depends=('ruby')
