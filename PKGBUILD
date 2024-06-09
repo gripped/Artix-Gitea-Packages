@@ -4,7 +4,7 @@
 _gemname=optimist
 pkgname=ruby-${_gemname}
 pkgver=3.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Commandline option parser for Ruby that just gets out of your way'
 url='https://github.com/ManageIQ/optimist'
 arch=('any')
@@ -21,7 +21,6 @@ prepare() {
   cd ${_gemname}-${pkgver}
   sed -r 's|~>|>=|g' -i ${_gemname}.gemspec
   sed 's|git ls-files -z|find -print0|' -i ${_gemname}.gemspec
-  find . -type f -wholename '*test/*.rb' -exec sed 's|MiniTest|Minitest|' -i {} \;
 }
 
 build() {
@@ -31,7 +30,7 @@ build() {
 
 check() {
   cd ${_gemname}-${pkgver}
-  rake test
+  MT_COMPAT="true" rake test
 }
 
 package() {
