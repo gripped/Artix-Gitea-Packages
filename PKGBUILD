@@ -2,11 +2,11 @@
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts515
-pkgver=5.15.158
-pkgrel=2
-pkgdesc='Linux LTS 5.15'
+pkgver=5.15.160
+pkgrel=1
+pkgdesc='LTS Linux 5.15.x'
 url="https://www.kernel.org/"
-arch=(x86_64)
+arch=(x86_64 pentium4 i686 i486)
 license=(GPL2)
 makedepends=(
   bc libelf pahole cpio perl tar xz python
@@ -27,16 +27,16 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('f9071c83a4fd8b80af026b48cfc1869bfa25883f9148b92b5dc1e1e1e26dd5c6'
+sha256sums=('f41e718e33b88f269a6b6a7653e5e9824c4ba541f6ffe5bf26ecc37c540a1b05'
             'SKIP'
-            'ae9bb83f7d7faa45de9c1d4f64e2ee9dd4db634e5700dab35500b75aa56c1e16'
+            'e5e3b4cb707d5fb75f174f88e3e1ca06366a0679c07bfb5ed4ea6e028fc888de'
             '3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd'
             '2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431'
             '8357f000b2b622e73dcfd41c2bad42b5e99fffe8f7ee64f774aa771f86cef43c'
             '5c1ee81fdd5818442af6081de987f9c1a9ce3c8d183566b3dfc19a8433aa3dde'
             '067e8995fcd6f6ed25e0253e9374c0e179a000c154da3e59ce62634945ac5be9')
 
-export KBUILD_BUILD_HOST=artixlinux
+export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
