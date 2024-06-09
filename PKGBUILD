@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=minitest-sprint
 pkgname=ruby-${_gemname}
 pkgver=1.2.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Runs (Get it? It's fast!) your tests and makes it easier to rerun individual failures"
 url='https://github.com/seattlerb/minitest-sprint'
 arch=('any')
