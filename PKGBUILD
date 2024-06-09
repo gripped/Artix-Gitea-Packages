@@ -1,9 +1,10 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfce4-session
-pkgver=4.18.3
-pkgrel=1.1
+pkgver=4.18.4
+pkgrel=1
 pkgdesc="Xfce's session manager"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-session/start"
@@ -19,8 +20,8 @@ optdepends=('gnome-keyring: for keyring support when GNOME compatibility is enab
 source=(https://archive.xfce.org/src/xfce/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2
         source-system-xinitrc-scripts.patch
         xfce-polkit-gnome-authentication-agent-1.desktop)
-sha256sums=('382f93e096ec6493098719cab8cc31b93ad9bb469c0715c0c5117d75fe7394ec'
-            '6f14d529e4c4f30cd547110bd444cee8dc70c90511a397de18acb6c1fd63ea3e'
+sha256sums=('9a9c5074c7338b881a5259d3b643619bf84901360c03478e1a697938ece06516'
+            '5706e37a8ca692d66d23f478bc462c96fe173b35945020b550be36c56f310fb2'
             '74c94c5f7893d714e04ec7d8b8520c978a5748757a0cdcf5128492f09f31b643')
 
 prepare() {
