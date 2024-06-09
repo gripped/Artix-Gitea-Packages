@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: vtk
-  version: 9.3.0-16
+  version: 9.3.0-17
   arch:
     - x86_64
   pkgname:
     - vtk
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.3.0-15
+    version: 9.3.0-17
     packages:
-      - vtk-9.3.0-15-x86_64.pkg.tar.zst
+      - vtk-9.3.0-17-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
