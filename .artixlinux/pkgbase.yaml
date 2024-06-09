@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pdal
-  version: 2.7.1-2
+  version: 2.7.1-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.7.1-2
+    version: 2.7.1-3
     packages:
-      - pdal-2.7.1-2-x86_64.pkg.tar.zst
+      - pdal-2.7.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
