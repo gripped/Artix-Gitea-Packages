@@ -1,33 +1,29 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Thiago O Calsolari <marzosh@artixlinux.org>
+# Contributor: Nathan Owens <ndowens@artixlinux.org>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
 # Reference: PKGBUILD(5)
 
 pkgname=sndio
 pkgver=1.9.0
-pkgrel=1
-pkgdesc='A small audio and MIDI framework part of the OpenBSD project'
+pkgrel=2
+pkgdesc='A small audio and MIDI framework'
 arch=(x86_64)
 url='https://sndio.org'
 license=(ISC)
-
 # sndio can be built without libbsd, but there are a bunch of individual
 # ISC-licensed files by different authors to extract the licenses from
-# if done that way. Licenses are complicated.
+# if done that way.
 depends=(alsa-lib libbsd)
-
 provides=(libsndio.so)
-
+backup=(etc/default/sndiod)
 source=(
-	"https://sndio.org/sndio-$pkgver.tar.gz"
-	"https://sndio.org/sndio-$pkgver.tar.gz.asc"
+	"https://sndio.org/sndio-$pkgver.tar.gz"{,.asc}
 	"sndio.sysusers.conf"
 )
-# Checksum source: https://www.sndio.org/sndio-$pkgver.tar.gz.sha256
 sha256sums=('f30826fc9c07e369d3924d5fcedf6a0a53c0df4ae1f5ab50fe9cf280540f699a'
             'SKIP'
             '4dd07d579971c4a3b3091f109305e39b5e1a69e3bd62ead6229ef12e4384dba7')
-validpgpkeys=(6B1A7447AAF091CCDD36BAA6015E339411694A6E)
-
-backup=(etc/default/sndiod)
+validpgpkeys=('6B1A7447AAF091CCDD36BAA6015E339411694A6E') # Alexandre Ratchov <alex@caoua.org>
 
 build() {
 	cd "sndio-$pkgver"
