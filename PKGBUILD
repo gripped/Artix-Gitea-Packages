@@ -4,7 +4,7 @@
 _gemname='erb'
 pkgname="ruby-${_gemname}"
 pkgver=4.0.4
-pkgrel=3.1
+pkgrel=4
 pkgdesc='An easy to use but powerful templating system for Ruby'
 arch=('x86_64')
 url="https://github.com/ruby/${_gemname}"
@@ -23,6 +23,7 @@ makedepends=(
 )
 checkdepends=(
   ruby-bundler
+  ruby-erb
   ruby-rake
   ruby-rake-compiler
   ruby-test-unit
@@ -84,6 +85,31 @@ build() {
       -iname "gem_make.out" \
     \) \
     -delete
+
+  # copy files to default gem directory
+  local _platform="$(gem env platform | cut -d':' -f2)"
+  local _extension_api_version="$(ruby -e 'puts Gem.extension_api_version')"
+
+  install --verbose --directory --mode=0755 \
+    "tmp_install_default/gemspec/specifications/gems/${_gemname}-${pkgver}" \
+    "tmp_install_default/usr/bin" \
+    "tmp_install/usr/lib/ruby/${_extension_api_version}/${_platform}" \
+    "tmp_install${_gemdir}/specifications/default"
+
+  gem install \
+    --default \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install_default/gemspec" \
+    --bindir "tmp_install_default/usr/bin" \
+    "${_gemname}-${pkgver}.gem"
+
+  mv --verbose "tmp_install_default/gemspec/specifications/default/${_gemname}-${pkgver}.gemspec" "tmp_install${_gemdir}/specifications/default/${_gemname}-${pkgver}.gemspec"
+  mv --verbose "tmp_install${_gemdir}/gems/${_gemname}-${pkgver}/lib/${_gemname}.rb" "tmp_install/usr/lib/ruby/${_extension_api_version}/${_gemname}.rb"
+  mv --verbose "tmp_install${_gemdir}/gems/${_gemname}-${pkgver}/lib/${_gemname}" "tmp_install/usr/lib/ruby/${_extension_api_version}/${_gemname}"
+  mv --verbose "tmp_install${_gemdir}/extensions/${_platform}/${_extension_api_version}/${_gemname}-${pkgver}/${_gemname}" "tmp_install/usr/lib/ruby/${_extension_api_version}/${_platform}/${_gemname}"
 }
 
 check() {
