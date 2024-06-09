@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=rb-inotify
 pkgname=ruby-rb-inotify
 pkgver=0.10.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Thorough inotify wrapper for Ruby using FFI'
 url='https://github.com/guard/rb-inotify'
 arch=('any')
