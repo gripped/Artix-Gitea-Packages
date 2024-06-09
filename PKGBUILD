@@ -1,4 +1,5 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
 # Contributor: Hyacinthe Cartiaux <hyacinthe.cartiaux@free.fr>
@@ -6,7 +7,7 @@
 pkgname=ruby-tins
 _pkgname="${pkgname#ruby-}"
 pkgver=1.32.1
-pkgrel=1
+pkgrel=2
 pkgdesc='All the stuff that is not good/big enough for a real library'
 arch=('any')
 url='https://github.com/flori/tins'
