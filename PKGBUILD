@@ -13,7 +13,7 @@ groups=('i3')
 depends=(
   'cairo' 'libcairo.so'
   'glibc'
-  'libev' 'libev.so'
+  'libev'
   'libxcb'
   'libxkbcommon' 'libxkbcommon.so'
   'libxkbcommon-x11' 'libxkbcommon-x11.so'
