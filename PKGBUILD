@@ -7,6 +7,7 @@ arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/dinit-rc"
 license=('BSD')
 depends=('udev' 'artix-cgroups' 'dbus') # dbus dep is for dbus-wait-for
+makedepends=('scdoc')
 optdepends=('cryptsetup-dinit: Encrypted disks support'
             'lvm2-dinit: LVM support'
             'mdadm-dinit: MD devices support')
