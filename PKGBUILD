@@ -1,0 +1,50 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+
+pkgname=aardvark-dns
+pkgver=1.11.0
+pkgrel=1
+pkgdesc="Authoritative dns server for A/AAAA container records"
+arch=(x86_64)
+url="https://github.com/containers/aardvark-dns"
+license=(Apache-2.0)
+depends=(
+  gcc-libs
+  glibc
+)
+makedepends=(
+  cargo
+  git
+  libgit2
+)
+source=(git+$url#tag=v$pkgver)
+sha256sums=('00a015c3378982d81067fae7e90ebfe4d1a8ed7118f5ffd65beb943f93552f91')
+# NOTE: pinning commit until upstream clarifies commitment to chain of trust:
+# https://github.com/containers/aardvark-dns/issues/83
+# validpgpkeys=('74FE091D25519980B2D84447160386BECB6F0643')  # Brent Baude <bbaude@redhat.com>
+
+prepare() {
+  cd $pkgname
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+
+  cd $pkgname
+  cargo build --frozen --release --all-features
+}
+
+check() {
+  export RUSTUP_TOOLCHAIN=stable
+
+  cd $pkgname
+  cargo test --frozen --all-features
+}
+
+package() {
+  cd $pkgname
+  install -vDm 755 target/release/$pkgname -t "$pkgdir/usr/lib/podman/"
+  install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}
