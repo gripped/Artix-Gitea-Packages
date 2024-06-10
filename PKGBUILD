@@ -3,7 +3,7 @@
 pkgbase=dbus-dinit
 pkgname=('dbus-dinit' 'dbus-dinit-user')
 pkgver=20240610
-pkgrel=1
+pkgrel=2
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
@@ -40,7 +40,7 @@ package_dbus-dinit-user() {
     depends+=('turnstile' 'dinit-base')
     groups=('dinit-user-services')
     install -Dm644 dbus.user        "$pkgdir/etc/dinit.d/user/dbus"
-    install -Dm644 dbus.user.script "$pkgdir/usr/lib/dinit/user/dbus"
+    install -Dm755 dbus.user.script "$pkgdir/usr/lib/dinit/user/dbus"
 
     # run the user service script by default, this will make our dbus behaviour closer
     # to that of Arch (or systemd distros in general)
