@@ -1,26 +1,29 @@
 ---
 pkgbase:
   name: dbus-dinit
-  version: 20240421-4
+  version: 20240610-1
   arch:
     - any
   pkgname:
     - dbus-dinit
+    - dbus-dinit-user
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20240610-1
+    packages:
+      - dbus-dinit-20240610-1-any.pkg.tar.zst
+      - dbus-dinit-user-20240610-1-any.pkg.tar.zst
   system:
     version: 20240421-4
     packages:
