@@ -4,7 +4,7 @@
 pkgname=krita
 _pkgver=5.2.2
 pkgver=${_pkgver/-/}
-pkgrel=9
+pkgrel=10
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
@@ -62,7 +62,7 @@ makedepends=(boost
              python-pyqt5
              qt5-tools
              sip
-             xsimd
+             xsimd12
              zug)
 optdepends=('kimageformats5: PSD support'
             'krita-plugin-gmic: GMic plugin'
@@ -95,7 +95,7 @@ prepare() {
 }
 
 build() {
-  artix-cmake -B build -S $pkgname-$_pkgver \
+  cmake -B build -S $pkgname-$_pkgver \
     -DBUILD_KRITA_QT_DESIGNER_PLUGINS=ON \
     -DBUILD_TESTING=OFF
   cmake --build build
