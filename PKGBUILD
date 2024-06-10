@@ -1,6 +1,6 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=dinit-rc
-pkgver=0.3.7
+pkgver=0.4.0
 pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
@@ -12,12 +12,13 @@ optdepends=('cryptsetup-dinit: Encrypted disks support'
             'mdadm-dinit: MD devices support')
 provides=('init-udev' 'init-rc')
 conflicts=('init-udev' 'init-rc')
+install=dinit-rc.install
 backup=('etc/dinit.d/config/console.conf'
-        'etc/dinit.d/config/hwclock.conf'
-        'etc/dinit.d/config/rc.local'
-        'etc/dinit.d/config/rc.shutdown')
+        'etc/hwclock.conf'
+        'etc/rc.local'
+        'etc/rc.shutdown')
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/$pkgver.tar.gz")
-sha256sums=('b48f83ada1c4440872f4dbbfa39030a9e27332f4bcdcc66efd3dd3cdce5eafd3')
+sha256sums=('933417266030a39db99fcbbff83f21b1a7eca25a521a44984df792a703e7fe85')
 
 build() {
 	cd "$pkgname"
