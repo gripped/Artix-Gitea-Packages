@@ -6,7 +6,7 @@ you modified it previously.
 
 - /etc/dinit.d/config/hwclock.conf has been moved to /etc/hwclock.conf
 - /etc/dinit.d/config/rc.local has been moved to /etc/rc.local
-- /etc/rc.shutdown has been moved to /etc/rc.shutdown
+- /etc/dinit.d/config/rc.shutdown has been moved to /etc/rc.shutdown
 
 If you didn't modify any of these files, there shouldn't be any problem.
 Otherwise, you may want to move your configurations to reflect the new
