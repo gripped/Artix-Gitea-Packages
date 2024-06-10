@@ -8,27 +8,25 @@ pkgbase:
     - dbus-dinit
     - dbus-dinit-user
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20240610-2
     packages:
       - dbus-dinit-20240610-2-any.pkg.tar.zst
       - dbus-dinit-user-20240610-2-any.pkg.tar.zst
-  system:
-    version: 20240610-1
-    packages:
-      - dbus-dinit-20240610-1-any.pkg.tar.zst
-      - dbus-dinit-user-20240610-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
