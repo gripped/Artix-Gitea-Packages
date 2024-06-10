@@ -1,11 +1,11 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
 # Contributor: Low Kian Seong <fastmail_low@speedymail.org>
 
 pkgname=bogofilter
 pkgver=1.2.5
-pkgrel=8
+pkgrel=9
 pkgdesc="A fast Bayesian spam filtering tool"
 arch=('x86_64')
 license=('GPL3')
