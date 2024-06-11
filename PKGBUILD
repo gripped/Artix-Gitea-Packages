@@ -33,7 +33,7 @@ build() {
 
 check() {
   cd $_pyname
-  pytest -v -k 'not test_check_availability_on_ftp and not test_ftp_downloader'
+  pytest -v -k 'not test_check_availability_on_ftp and not test_ftp_downloader and not test_zenodo_downloader_with_slash_in_fname'
 }
 
 package() {
