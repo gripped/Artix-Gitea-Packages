@@ -1,6 +1,7 @@
 type            = process
 command         = /usr/bin/mpd --no-daemon 2>&1
 smooth-recovery = true
+run-as          = mpd
 logfile         = /var/log/dinit/mpd.log
 depends-on      = mpd-pre
 before          = login.target

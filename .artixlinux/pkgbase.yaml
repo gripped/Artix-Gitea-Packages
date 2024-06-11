@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: mpd-dinit
-  version: 20230907-2
+  version: 20240610-1
   arch:
     - any
   pkgname:
     - mpd-dinit
+    - mpd-dinit-user
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 20240610-1
+    packages:
+      - mpd-dinit-20240610-1-any.pkg.tar.zst
+      - mpd-dinit-user-20240610-1-any.pkg.tar.zst
 team: world
