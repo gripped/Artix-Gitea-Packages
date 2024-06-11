@@ -3,36 +3,46 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=3.29.3
-pkgrel=1
+pkgver=3.29.5
+pkgrel=2
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
 license=('custom')
-depends=('curl' 'libarchive' 'hicolor-icon-theme' 'jsoncpp' 'libjsoncpp.so' 'libuv' 'rhash' 'cppdap')
-makedepends=('qt6-base' 'python-sphinx' 'emacs' 'nlohmann-json')
+depends=(cppdap
+         curl
+         expat
+         gcc-libs
+         glibc
+         hicolor-icon-theme
+         jsoncpp
+         libarchive
+         libuv
+         ncurses
+         rhash
+         zlib)
+makedepends=(emacs
+             git
+             nlohmann-json
+             python-sphinx
+             qt6-base)
 optdepends=(
   'make: for unix Makefile generator'
   'ninja: for ninja generator'
   'qt6-base: cmake-gui'
 )
-source=("https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}.tar.gz"
-        "https://www.cmake.org/files/v${pkgver%.*}/${pkgname}-${pkgver}-SHA-256.txt"{,.asc}
+source=(git+https://gitlab.kitware.com/cmake/cmake#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('930060cf484a769992ebc798d5e81984560b2cd7e163db7053181ad842656ccd0085e7e077c9c620e719d212f78283ca0db19bec5491a355d38078bbe0bac254'
-            '118604ac64ccd02995e6b421c256cb414637471094a72ff65d0f604cc4cc9f869f64fe1d409584925b93050373e7b69966ea91e4a9fc34b98287b0ee49eeb23c'
-            'SKIP'
+sha512sums=('4f961a5c85fd7b96f6b367247f3f83e6afb3eefbb4d9a7242c8920fcdba5cd7ec69a49b84cf1445d112fc45a1f9904b816d0f56f918cf2421841d2d09e9a8d49'
             'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
-  # upstream does not provide signed tarballs, only signed checksums
-  sha256sum -c --ignore-missing "${pkgname}-${pkgver}-SHA-256.txt"
-  patch -d "$srcdir/$pkgname-$pkgver" -Np1 -i ../artix-cmake.patch
+    git -C "${pkgname}" apply  ../artix-cmake.patch
 }
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   ./bootstrap --prefix=/usr \
     --mandir=/share/man \
     --docdir=/share/doc/cmake \
@@ -46,7 +56,7 @@ build() {
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   make DESTDIR="${pkgdir}" install
 
   rm -r "$pkgdir"/usr/share/doc/cmake/html/_sources
