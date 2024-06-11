@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-passlib
-  version: 1.7.4-7
+  version: 1.7.4-8
   arch:
     - any
   pkgname:
     - python-passlib
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7.4-7
+    version: 1.7.4-8
     packages:
-      - python-passlib-1.7.4-7-any.pkg.tar.zst
+      - python-passlib-1.7.4-8-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
