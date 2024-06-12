@@ -9,7 +9,7 @@ pkgname=(
   glib2-docs
 )
 pkgver=2.80.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -25,9 +25,10 @@ depends=(
 )
 makedepends=(
   dbus
+  dconf
   gettext
-  git
   gi-docgen
+  git
   gobject-introspection
   libelf
   meson
@@ -117,9 +118,9 @@ package_glib2() {
   )
   provides+=(libg{lib,io,irepository,module,object,thread}-2.0.so)
   optdepends=(
-    'glib2-devel: development files for glib2'
+    'dconf: GSettings storage backend'
+    'glib2-devel: development tools'
     'gvfs: most gio functionality'
-    'libelf: gresource inspection tool'
   )
   options=(staticlibs)
 
