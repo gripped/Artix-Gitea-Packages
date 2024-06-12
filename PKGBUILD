@@ -5,7 +5,7 @@
 
 pkgname=tailscale
 pkgver=1.66.4
-pkgrel=2
+pkgrel=3
 pkgdesc="A mesh VPN that makes it easy to connect your devices, wherever they are."
 arch=("x86_64")
 url="https://tailscale.com"
@@ -57,4 +57,8 @@ package() {
     # Artix stuff, don't remove v
     # install -Dm644 cmd/tailscaled/tailscaled.service -t "$pkgdir/usr/lib/systemd/system"
     install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+
+  "$pkgdir/usr/bin/tailscale" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/tailscale"
+  "$pkgdir/usr/bin/tailscale" completion zsh | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_tailscale"
+  "$pkgdir/usr/bin/tailscale" completion fish | install -Dm644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/tailscale.fish"
 }
