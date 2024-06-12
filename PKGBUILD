@@ -6,8 +6,8 @@ _itag=1
 
 pkgbase=octopi
 pkgname=(octopi octopi-notifier-frameworks)
-pkgver=0.16.0
-pkgrel=3
+pkgver=0.16.1
+pkgrel=1
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -31,15 +31,13 @@ depends=(
 )
 source=(
     "git+https://github.com/aarnt/octopi.git#tag=v$pkgver"
-    "$pkgbase-$pkgver-use-liboctopi.patch::$_url/commit/685befeebea9816f7e1c323510618be75eb2d978.patch"
     "$pkgbase-$pkgver-qt-sudo-config.patch::$_url/commit/df63eb937131e8de96d02a4e3c122c6b6aa16e54.patch"
-    "$pkgbase-$pkgver-kf6-notifier-fix-liboctopi.patch::$_url/commit/b26e9ad8b75d9564aba65f7045d5dc8849b6f5ad.patch"
+    $pkgbase-$pkgver-use-liboctopi.patch::$_url//commit/25f8b1970891d0b304f3533148bf5dc849ba3da9.patch
     "git+https://gitea.artixlinux.org/artix/octopi-images.git#tag=$_itag"
 )
-sha256sums=('eab0b6cdbc2470ccd91ed589363f231d94879a07a4d1e14d14de5b48edf0f096'
-            '681d15db834e3d84b8f5192726cd063a3b8e499bd80e70f775d96732ba350839'
+sha256sums=('d0cec84cb74024bbbf5d167b39d6c57a5b172dcf2599eb1427b814af5887d801'
             '3405f5bcea260af3d1549bce94572f7d13559a32bebb12b6fae79ac0f7cb5b92'
-            '049784c50f04cb4657be6a27a2cf9946eed57382fb55ea35d0fa0ba840062b37'
+            '3006cc0775080e797aaf0a36b49a21a526971f77d57e44420b1561453cb9c4f2'
             '75046d7ae2b2f46ebef0f701d1ed0a8fde4eb179b99cb52b726cfb49e194a42e')
 
 prepare() {
@@ -47,7 +45,7 @@ prepare() {
 
     git apply ../"$pkgbase-$pkgver"-use-liboctopi.patch
     git apply ../"$pkgbase-$pkgver"-qt-sudo-config.patch
-    git apply ../"$pkgbase-$pkgver"-kf6-notifier-fix-liboctopi.patch
+#     git apply ../"$pkgbase-$pkgver"-kf6-notifier-fix-liboctopi.patch
 
     cp ../octopi-images/images/octopi_{green,red,yellow,transparent}.png resources/images/
 
@@ -79,11 +77,9 @@ package_octopi() {
 
     DESTDIR="$pkgdir" cmake --install build
 
-    install -d _octopi-notifier/{/etc/xdg/autostart,usr/{share/applications,bin}}
-    mv -v "$pkgdir"/etc/xdg/autostart/octopi-notifier.desktop _octopi-notifier/etc/xdg/autostart/
+    install -d _octopi-notifier/usr/{share/applications,bin}
     mv -v "$pkgdir"/usr/share/applications/octopi-notifier.desktop _octopi-notifier/usr/share/applications/
     mv -v "$pkgdir"/usr/bin/octopi-notifier _octopi-notifier/usr/bin/
-    rm -rv "$pkgdir"/etc
 }
 
 package_octopi-notifier-frameworks() {
