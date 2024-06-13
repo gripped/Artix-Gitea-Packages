@@ -26,6 +26,7 @@ makedepends=(
 checkdepends=(
   docbook-xml
   python
+  lib32-libxslt
 )
 source=(
   "git+https://gitlab.gnome.org/GNOME/libxslt.git#tag=v$pkgver"
