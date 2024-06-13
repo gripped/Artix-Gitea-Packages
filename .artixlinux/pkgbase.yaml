@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: puppet
-  version: 7.30.0-1
+  version: 7.31.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 7.30.0-1
+    version: 7.31.0-1
     packages:
-      - puppet-7.30.0-1-any.pkg.tar.zst
+      - puppet-7.31.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
