@@ -6,7 +6,7 @@
 # Jan de Groot <jgc@archlinux.org>
 
 pkgname=cinnamon-control-center
-pkgver=6.0.1
+pkgver=6.2.0
 pkgrel=1
 pkgdesc="The Control Center for Cinnamon"
 arch=(x86_64)
@@ -17,11 +17,11 @@ depends=(cinnamon-settings-daemon cinnamon-menus colord
 optdepends=('cinnamon-translations: i18n'
             'gnome-color-manager: for color management tasks'
             'gnome-online-accounts: for the online accounts module')
-makedepends=(meson samurai gnome-online-accounts git)
+makedepends=(meson samurai gnome-online-accounts python-packaging)
 options=(!emptydirs)
-source=(${pkgname}-${pkgver}::git+${url}.git)
-sha256sums=('SKIP')
-b2sums=('SKIP')
+source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('f3e5caf03c4d629fbaf883caa816fe799685438d650012621e51457583000d07')
+b2sums=('4ddc97e600b2643ee16477165171f5251f7004d53524a77ec5d363717b84cec61c5bd83334a6dbb261d6ef40bd927fcdf6ef779953ad549881871f2f0e70471e')
 
 build() {
   artix-meson build ${pkgname}-${pkgver}
