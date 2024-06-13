@@ -11,7 +11,7 @@ arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
 license=(GPL LGPL)
 depends=(accountsservice gtk3 libxkbfile libpulse)
-makedepends=(meson samurai glib2 gobject-introspection intltool)
+makedepends=(meson samurai glib2-devel gobject-introspection intltool)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
         config.patch)
 sha256sums=('95bb6fc16597601b1febde4bd1317ba9c3ab662119b6b8e602b49e832d3f3eb7'
