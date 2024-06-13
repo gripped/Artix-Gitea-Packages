@@ -4,7 +4,7 @@
 
 pkgname=qt6-tools
 pkgver=6.7.1
-pkgrel=2.1
+pkgrel=3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -26,18 +26,17 @@ optdepends=('clang: for qdoc and lupdate'
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver
-        git+https://code.qt.io/playground/qlitehtml
-        zstd.patch)
+        git+https://code.qt.io/playground/qlitehtml)
 sha256sums=('710927633cd429a3919822281318618d01ad632c2fd6839d36e3ed07a8b7cfab'
-            'SKIP'
-            '92f4fb6f7acee306900e25f5814ac6a50e84889e13678b5905fecb1ed973a346')
+            'SKIP')
 
 prepare() {
   cd $_pkgfn
   git submodule init
   git submodule set-url src/assistant/qlitehtml "$srcdir"/qlitehtml
   git -c protocol.file.allow=always submodule update
-  patch -Np1 -i $srcdir/zstd.patch
+
+  git cherry-pick -n 46ffaed90df8c14d67b4b16fdf5e0b87ab227c88 # Fix crash in Designer
 }
 
 build() {
