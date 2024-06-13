@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-pkgconfig-libpkgconf
-  version: 0.11-6
+  version: 0.11-7
   arch:
     - x86_64
   pkgname:
     - perl-pkgconfig-libpkgconf
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.11-6
+    version: 0.11-7
     packages:
-      - perl-pkgconfig-libpkgconf-0.11-6-x86_64.pkg.tar.zst
+      - perl-pkgconfig-libpkgconf-0.11-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
