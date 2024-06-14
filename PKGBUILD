@@ -17,7 +17,7 @@ depends=(cinnamon-settings-daemon cinnamon-menus colord
 optdepends=('cinnamon-translations: i18n'
             'gnome-color-manager: for color management tasks'
             'gnome-online-accounts: for the online accounts module')
-makedepends=(meson samurai gnome-online-accounts python-packaging)
+makedepends=(meson samurai glib2-devel gnome-online-accounts python-packaging)
 options=(!emptydirs)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('f3e5caf03c4d629fbaf883caa816fe799685438d650012621e51457583000d07')
