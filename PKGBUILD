@@ -13,7 +13,7 @@ url="https://github.com/linuxmint/${pkgname}"
 license=(GPL)
 depends=(cinnamon-desktop gobject-introspection-runtime libcanberra libinput
          libsm libxkbcommon-x11 startup-notification zenity graphene pipewire xorg-xwayland)
-makedepends=(meson intltool json-glib gobject-introspection wayland-protocols)
+makedepends=(meson intltool glib2-devel json-glib gobject-introspection wayland-protocols)
 options=(!emptydirs)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('889200ceb45334899e7568f1735ec2b15e1ae042d176821a0d45c524960bee0a')
