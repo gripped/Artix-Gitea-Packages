@@ -4,10 +4,10 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdegraphics-mobipocket
-pkgver=24.05.0
+pkgver=24.05.1
 pkgrel=1
 pkgdesc='A library to handle mobipocket files'
-url='https://apps.kde.org/es/kdegraphics_mobipocket/'
+url='https://invent.kde.org/graphics/kdegraphics-mobipocket'
 arch=(x86_64)
 license=(GPL-2.0-or-later LGPL-2.0-or-later)
 depends=(gcc-libs
@@ -16,7 +16,7 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('709467829c1b9d9f746549bd3a7894824229c0aa63052fb66f865e2a77b5ac04'
+sha256sums=('e45d8900c67aee3af0fb9b7f4ca646b7df9aeb2ac47f14be597eba01f9a124ad'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
