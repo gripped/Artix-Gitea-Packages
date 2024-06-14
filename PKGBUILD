@@ -5,7 +5,7 @@
 # Contributor: Ner0
 
 pkgname=muffin
-pkgver=6.0.1
+pkgver=6.2.0
 pkgrel=1
 pkgdesc="Cinnamon window manager based on Mutter"
 arch=(x86_64)
@@ -13,11 +13,11 @@ url="https://github.com/linuxmint/${pkgname}"
 license=(GPL)
 depends=(cinnamon-desktop gobject-introspection-runtime libcanberra libinput
          libsm libxkbcommon-x11 startup-notification zenity graphene pipewire xorg-xwayland)
-makedepends=(meson intltool gobject-introspection wayland-protocols json-glib)
+makedepends=(meson intltool json-glib gobject-introspection wayland-protocols)
 options=(!emptydirs)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('3f305c345db72e8bf14f19e56a88e466029997ff41cbc091148d16dbf20b087e')
-b2sums=('e3f28dea9f66b30805f9b98bc79f2e4a08e9e5eb6501f455f0e3c42c5d9ed14c48be75b07a97da7b671156d14ed61f3b882d8ede4f9b83dac5496fac5a0f0348')
+sha256sums=('889200ceb45334899e7568f1735ec2b15e1ae042d176821a0d45c524960bee0a')
+b2sums=('d2cf508eeea77e22c79c65404e90beced72b9eca87542dc38abbf8a411464b4afce4d48e73cddf284a4cb86d9eca420edf95e3cb0ad7a0bc6b2c93a4bd1df257')
 
 build() {
   artix-meson build ${pkgname}-${pkgver}
