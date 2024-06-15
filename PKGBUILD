@@ -7,10 +7,10 @@
 # Contributor: Ricardo Catalinas Jiménez <jimenezrick@gmail.com>
 
 pkgname=erlang
-pkgver=26.2.5
-pkgrel=2
+pkgver=27.0
+pkgrel=1
 # https://github.com/erlang/otp/tags
-_commit=412bff5196fc0ab88a61fe37ca30e5226fc7872d # OTP-26.2.5
+_commit=601a012837ea0a5c8095bf24223132824177124d # OTP-27.0
 arch=(x86_64)
 url='https://erlang.org'
 license=(Apache)
@@ -18,8 +18,8 @@ makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl wxwidge
 options=(staticlibs)
 source=("https://github.com/erlang/otp/releases/download/OTP-$pkgver/otp_doc_man_$pkgver.tar.gz"
         "git+https://github.com/erlang/otp#commit=$_commit")
-b2sums=('76b8298821cd0a940715aa6878bb16a8b8699194655dcf019478158881a7447c6754c1c345a1d66147457b85a64338afa32478b7af8b4094062946788b4ece88'
-        'e1ea412389c94d53f749a8d9b7095a191b85b0be930ed5c9b94aaf69cc7d3a62694ada4ea1a502136840777c28f438bd8e717a1e556fa6336140696bf9179716')
+b2sums=('b55614bc3c795813eb2d73dc990f740efc8408a3639d98569adb9718ee140eb04ac2289ca3cd764d2610ac2138dfd6173b50bcae58b3971b51f4819cc33420e3'
+        'c6c913b7b75feb2cec23404914bffbf016d8dbb9ec652874250e2aef930d75d62d6b1746beb7238a505e52f3aa98479d486825c41b9b4ac04437066d9e103a1f')
 
 prepare() {
   # adjust how LDFLAGS are handled
