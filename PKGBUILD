@@ -1,21 +1,31 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=freecell-solver
-pkgver=6.8.0
+pkgver=6.10.0
 pkgrel=1
 pkgdesc='A program that automatically solves layouts of Freecell and similar variants of Card Solitaire'
 arch=(x86_64)
 url='https://fc-solve.shlomifish.org'
 license=(MIT)
-depends=(bash)
-makedepends=(cmake gperf perl-moo perl-path-tiny perl-template-toolkit python-random2 python-six python-pysol_cards rinutils)
-optdepends=('python-random2: for the Python interface' 'python-six: for the Python interface'
-            'python-pysol_cards: for the Python interface')
+depends=(bash
+         glibc)
+makedepends=(cmake
+             gperf
+             perl-moo
+             perl-path-tiny
+             perl-template-toolkit
+             python-random2
+             python-pysol_cards
+             rinutils)
+optdepends=('python-pysol_cards: for the Python interface'
+            'python-random2: for the Python interface'
+            'python-six: for the Python interface')
 source=(https://fc-solve.shlomifish.org/downloads/fc-solve/$pkgname-$pkgver.tar.xz)
-sha256sums=('95f78a4b15d2fa340271fe4fcc5354065968191ba22db0d40e81b291b8d53d32')
+sha256sums=('443ba29de08be751a60faca42a817b65b342cea93188fd7651741b75048379b4')
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DFCS_WITH_TEST_SUITE=OFF \
     -DBUILD_STATIC_LIBRARY=OFF
