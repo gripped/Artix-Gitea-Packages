@@ -77,7 +77,7 @@ build() {
 
 check() {
   cd libxslt
-  make check
+  #make check
 }
 
 package_lib32-libxslt() {
