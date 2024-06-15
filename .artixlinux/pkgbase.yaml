@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libshumate
-  version: 1.2.2-1
+  version: 1.2.2-2
   arch:
     - x86_64
   pkgname:
     - libshumate
     - libshumate-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.2-2
+    packages:
+      - libshumate-1.2.2-2-x86_64.pkg.tar.zst
+      - libshumate-docs-1.2.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
