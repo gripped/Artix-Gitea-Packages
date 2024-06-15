@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: nvidia-settings
-  version: 550.78-1
+  version: 550.90.07-1
   arch:
     - x86_64
   pkgname:
     - nvidia-settings
     - libxnvctrl
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 550.90.07-1
+    packages:
+      - nvidia-settings-550.90.07-1-x86_64.pkg.tar.zst
+      - libxnvctrl-550.90.07-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
