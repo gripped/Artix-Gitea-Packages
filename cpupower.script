@@ -11,3 +11,6 @@
 [ "$perf_bias" ]     && cpupower set -b "$perf_bias"
 [ "$mc_scheduler" ]  && cpupower set -m "$mc_scheduler"
 [ "$smp_scheduler" ] && cpupower set -s "$smp_scheduler"
+
+# consider it a success regardless of whatever happened
+exit 0
