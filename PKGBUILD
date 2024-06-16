@@ -1,8 +1,8 @@
 # Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: hexchain <i@hexchain.org>
 pkgname=telegram-desktop
-pkgver=5.1.5
-pkgrel=2
+pkgver=5.1.7
+pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
@@ -11,13 +11,14 @@ depends=('hunspell' 'ffmpeg' 'hicolor-icon-theme' 'lz4' 'minizip' 'openal'
          'qt6-imageformats' 'qt6-svg' 'qt6-wayland' 'xxhash'
          'rnnoise' 'pipewire' 'libxtst' 'libxrandr' 'libxcomposite' 'libxdamage' 'abseil-cpp' 'libdispatch'
          'openssl' 'protobuf' 'glib2' 'libsigc++-3.0' 'kcoreaddons')
-makedepends=('cmake' 'glib2-devel' 'git' 'ninja' 'python' 'range-v3' 'tl-expected' 'microsoft-gsl' 'meson'
+makedepends=('cmake' 'git' 'ninja' 'python' 'range-v3' 'tl-expected' 'microsoft-gsl' 'meson'
              'extra-cmake-modules' 'wayland-protocols' 'plasma-wayland-protocols' 'libtg_owt'
-             'gobject-introspection' 'boost' 'fmt' 'mm-common' 'perl-xml-parser' 'python-packaging')
+             'gobject-introspection' 'boost' 'fmt' 'mm-common' 'perl-xml-parser' 'python-packaging'
+             'glib2-devel')
 optdepends=('webkit2gtk: embedded browser features'
             'xdg-desktop-portal: desktop integration')
 source=("https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz")
-sha512sums=('61dd2c30e6831506b120615758ec74aeb36de4dfce513ce3862f8f40e4812a2d59524dd37a09e3acbfdc5db1f16d89b15d58a81ab252a34a93215d55d8eac39c')
+sha512sums=('7d457bb1fe5f533340faf8e92853aede8a6586b0b78b0ee51780a16a49b00a99c9142403f0c89952ed4eb864faaa74bed104c8069eaadf9ccf565d01413585ca')
 
 build() {
     CXXFLAGS+=' -ffat-lto-objects'
