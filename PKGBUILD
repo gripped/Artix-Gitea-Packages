@@ -19,8 +19,8 @@ pkgdesc='An OCR program'
 arch=(x86_64)
 url="https://github.com/tesseract-ocr/tesseract"
 license=('APACHE')
-depends=(gcc-libs curl libarchive leptonica)
-makedepends=(icu pango asciidoc)
+depends=(cairo gcc-libs curl libarchive leptonica)
+makedepends=(automake icu pango asciidoc)
 optdepends=('icu: for text2image'
             'pango: for text2image')
 for _lang in "${_langs[@]}"; do
