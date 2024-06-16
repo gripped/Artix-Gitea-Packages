@@ -7,7 +7,7 @@
 
 pkgname=python-celery
 pkgver=5.3.6
-pkgrel=2
+pkgrel=1.1
 pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
@@ -27,7 +27,9 @@ makedepends=('python-build'
              'python-installer'
              'python-setuptools'
              'python-wheel')
-checkdepends=('python-pytest-celery' 'python-pytest-subtests' 'python-pytest-timeout' 'python-case'
+checkdepends=(
+    #'python-pytest-celery'
+    'python-pytest-subtests' 'python-pytest-timeout' 'python-case'
               'python-cryptography' 'python-gevent' 'python-pymongo' 'python-msgpack' 'python-pyro'
               'python-redis' 'python-sqlalchemy' 'python-boto3' 'python-yaml' 'python-pyzmq'
               'python-eventlet' 'python-moto' 'python-pytest-click' 'esysusers')
