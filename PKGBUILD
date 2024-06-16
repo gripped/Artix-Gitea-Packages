@@ -1,9 +1,9 @@
-# Maintainer:
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 
-_pyname=blosc2
-pkgname=python-$_pyname
-pkgver=2.5.1
-pkgrel=2
+pkgname=python-blosc2
+pkgver=2.6.2
+pkgrel=1
 pkgdesc='Wrapper for the blosc2 compressor'
 arch=(x86_64)
 url='https://github.com/Blosc/python-blosc2'
@@ -14,6 +14,7 @@ depends=(
   python
   python-msgpack
   python-ndindex
+  python-numexpr
   python-numpy
   python-py-cpuinfo
 )
@@ -23,38 +24,33 @@ makedepends=(
   ninja
   python-build
   python-installer
-  python-setuptools
   python-scikit-build
+  python-setuptools
 )
 checkdepends=(
   python-psutil
   python-pytest
   #python-pytorch
 )
-source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('f5f83d70e1b30b421370f57ba05bf8a32560c5fb274ddc882e228a2270458707')
-b2sums=('90865cc7293cfa1a43a6f71efc0fc1943bd354f908537fad900b11a16165a6a49e21be197dd98e137960f34f0d6942610873d136309f7d07970b2f81388111d3')
-
-prepare() {
-  # remove build dependencies that we do not need
-  sed -e 's/\"cmake\",//g;s/\"ninja\",//g;s/\"oldest-supported-numpy\"//g' -i $pkgname-$pkgver/pyproject.toml
-}
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('51fb90575443ebac7d32dede0ae1d639cc29a8fb4989a59af997c3c72789c3ed')
+b2sums=('9e90dc2c834599165ddace77cb455507a0ba19d12a4ad2269597cb7978fbd4efd227f86e8342db4bbdf962c5bb1466f74e0461cf56db2856d21dd79777754fa8')
 
 build() {
-  cd $pkgname-$pkgver
+  cd "$pkgname-$pkgver"
   export CMAKE_ARGS="-DUSE_SYSTEM_BLOSC2=ON"
-  python -m build --wheel --no-isolation
+  python -m build --wheel --no-isolation --skip-dependency-check
 }
 
 check() {
-  cd $pkgname-$pkgver
+  cd "$pkgname-$pkgver"
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
   test-env/bin/python -m pytest -v
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd "$pkgname-$pkgver"
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -Dm644 LICENSE.txt -t "$pkgdir"/usr/share/licenses/$pkgname
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.txt
 }
