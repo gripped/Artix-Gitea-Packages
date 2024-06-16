@@ -7,7 +7,7 @@
 
 pkgname=python-celery
 pkgver=5.3.6
-pkgrel=1.0
+pkgrel=2
 pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
