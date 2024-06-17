@@ -20,7 +20,7 @@ optdepends=('cinnamon-translations: i18n'
             'libreoffice: search helpers support for legacy MS Office powerpoint files'
             'odt2txt: search helpers support for LibreOffice files'
             'poppler: search helpers support for PDF')
-makedepends=(meson samurai gobject-introspection intltool libgsf glib2-devel)
+makedepends=(meson samurai glib2-devel gobject-introspection intltool libgsf glib2-devel)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha512sums=('9842d986e955b931ac199332b4f4470f7194f2ec2b151f82c63a7abe6e0458bfd347ece94c394ed618f57e31a3f8c028b2b645f98df456720e4877cc7b3899ad')
 b2sums=('262944d8fe9b7624b6926dc9b34a23b6182ef7d940eef6e1ef2b14ca6114ddb1df6a16d887c91903603ca2dd4b17d6ffab378bdc6332f2d81698b357f946b785')
