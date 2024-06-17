@@ -5,7 +5,7 @@
 
 pkgname=nemo
 pkgver=6.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
