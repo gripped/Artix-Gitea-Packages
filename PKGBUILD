@@ -1,8 +1,9 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=spglib
 pkgver=2.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc='C library for finding and handling crystal symmetries'
 arch=(x86_64)
 url='https://spglib.readthedocs.io/en/latest/'
@@ -10,20 +11,21 @@ license=(BSD-3-Clause)
 depends=(glibc)
 makedepends=(cmake
              gcc-fortran
+             git
              gtest
              python
              python-numpy)
 optdepends=('gcc-libs: Fortran interface'
             'python-numpy: Python interface')
-source=(https://github.com/spglib/spglib/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('e33694b189c6864f719a59c31e2af55301a524fb68ba9fb65f08e95af471847d')
+source=(git+https://github.com/spglib/spglib#tag=v$pkgver)
+sha256sums=('1e7692c77c9206bfa75f17a79717a24abb9eda95f31e6b94a56f80c483b47983')
 
 prepare() {
-  sed -e 's|TARGET Spglib_symspg|0|' -i $pkgname-$pkgver/python/CMakeLists.txt # Don't duplicate shared libs in python tree
+  sed -e 's|TARGET Spglib_symspg|0|' -i $pkgname/python/CMakeLists.txt # Don't duplicate shared libs in python tree
 }
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DSPGLIB_WITH_Fortran=ON \
     -DSPGLIB_WITH_Python=ON
@@ -32,5 +34,5 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-  install -Dm644 "$srcdir"/$pkgname-$pkgver/COPYING "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  install -Dm644 $pkgname/COPYING "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
