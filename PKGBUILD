@@ -1,10 +1,11 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Gordin <9ordin @t gmail dot com>
 
 _gemname=paint
 pkgname=ruby-${_gemname}
 pkgver=2.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Ruby paint manages terminal colors and effects'
 url='https://github.com/janlelis/paint'
 arch=('any')
