@@ -3,7 +3,7 @@
 # Contributor: Roman Kyrylych <Roman.Kyrylych@gmail.com>
 
 pkgname=iniparser
-pkgver=4.2.3
+pkgver=4.2.4
 pkgrel=1
 pkgdesc='A free stand-alone ini file parsing library written in portable ANSI C'
 arch=('x86_64')
@@ -13,8 +13,8 @@ depends=('glibc')
 provides=('libiniparser.so')
 makedepends=('cmake' 'doxygen')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ndevilla/iniparser/archive/v${pkgver}.tar.gz")
-md5sums=('b1b9d5e36caf68ed1d5a2eaa14f38c5c')
-sha256sums=('6eeba10548b07c054f3cd34eadfd14139e61c37d40dabec988981cc4db2e434e')
+md5sums=('2b4b70171712895cb5afdf1247a8889f')
+sha256sums=('c05bb41df87f31a029516943ebb7f38ca1f0e38ff36f3836f1163a9a529857df')
 
 build() {
   mkdir build
