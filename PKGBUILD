@@ -10,7 +10,7 @@
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf')
 pkgver=27.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
 url='https://developers.google.com/protocol-buffers/'
@@ -35,11 +35,14 @@ checkdepends=(
   python-numpy
 )
 source=(https://github.com/protocolbuffers/protobuf/archive/v$pkgver/$pkgname-$pkgver.tar.gz
+        https://github.com/protocolbuffers/protobuf/commit/2e62ef1e.patch
         soversion.patch)
 sha512sums=('a34f4830fa3ddfd6e96e98c72bead23fba8966abdd687ca1f86181af1658bc4f541c75f7ba78ab66e139b180a8398735f598a1a38bdc0668154647ce00222e77'
+            '18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd'
             'f0813a415cff5639e4709400f15b0c5565294e7907ae164e620b76258734c643115d8e5170bf0e4aee264c347fb7e01ac4be60d19be2a91c0ce9c561dad8c8e9')
 
 prepare() {
+  patch -d $pkgname-$pkgver -p1 < 2e62ef1e.patch # Fix cmake config compatibility mode
   patch -d $pkgbase-$pkgver -p1 < soversion.patch # Restore soversion
 }
 
