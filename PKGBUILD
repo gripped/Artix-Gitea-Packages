@@ -5,7 +5,7 @@
 pkgname=android-tools
 pkgver=35.0.1
 _tag=${pkgver} # https://github.com/nmeum/android-tools sometimes carries extra patch version on top of the upstream versioning
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='Android platform tools'
 arch=(x86_64)
 url='http://tools.android.com/'
@@ -18,6 +18,8 @@ sha256sums=('654030c7f96d25d7224cd6861fac14a043cf1d3980f40288cdfbe219f94ffaf9')
 
 build() {
   cd android-tools-$_tag
+
+  sed -i 's/find_package(Protobuf CONFIG)//' vendor/CMakeLists.txt
 
   cmake \
     -DCMAKE_INSTALL_PREFIX=/usr \

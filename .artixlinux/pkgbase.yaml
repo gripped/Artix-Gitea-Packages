@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: android-tools
-  version: 35.0.1-2.1
+  version: 35.0.1-2.2
   arch:
     - x86_64
   pkgname:
@@ -45,9 +45,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 35.0.1-2.1
+    version: 35.0.1-2.2
     packages:
-      - android-tools-35.0.1-2.1-x86_64.pkg.tar.zst
+      - android-tools-35.0.1-2.2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
