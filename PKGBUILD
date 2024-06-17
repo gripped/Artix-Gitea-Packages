@@ -1,0 +1,102 @@
+# Maintainer:  Orhun Parmaksız <orhun@archlinux.org>
+
+pkgname=wezterm
+pkgver=20240203.110809.5046fc22
+pkgrel=2
+pkgdesc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
+arch=('x86_64')
+url="https://github.com/wez/wezterm"
+license=('MIT')
+depends=(
+  'bash'
+  'fontconfig'
+  'gcc-libs'
+  'glib2'
+  'glibc'
+  'hicolor-icon-theme'
+  'libssh2'
+  'libx11'
+  'libxcb'
+  'libxkbcommon'
+  'libxkbcommon-x11'
+  'openssl'
+  'ttf-jetbrains-mono'
+  'ttf-roboto'
+  'wayland'
+  'xcb-util'
+  'xcb-util-image'
+  'zlib'
+)
+makedepends=('cargo' 'cmake' 'git' 'pkgconf' 'python')
+optdepends=(
+  'ncurses: for wezterm terminfo database'
+  'noto-fonts-emoji: for default fonts'
+  'python-nautilus: WezTerm context menu in Nautilus'
+  'ttf-nerd-fonts-symbols-mono: for default fonts'
+)
+conflicts=(wezterm-shell-integration)
+replaces=(wezterm-shell-integration)
+options=('!lto')
+source=(
+  "${pkgname}::git+$url.git#tag=${pkgver//./-}"
+  "${pkgname}-freetype2::git+https://github.com/wez/freetype2.git"
+  "${pkgname}-zlib::git+https://github.com/madler/zlib.git"
+  "${pkgname}-harfbuzz::git+https://github.com/harfbuzz/harfbuzz.git"
+  "${pkgname}-libpng::git+https://github.com/glennrp/libpng.git"
+  $pkgname-20240203.110809.5046fc22-from_raw_parts.patch::https://github.com/wez/wezterm/commit/67d4ba9f76470a7ff1f3e7609119cdbb9d33024c.patch
+)
+sha256sums=('4b893f15c5330ee40aee2c341028234fb0a78825e0d7207ff43dfd9aeed71799'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            '127db2053523f24012cbc215a7a9f642bc0dc18317f9540eebd17faa869f2f78')
+
+prepare() {
+  cd "$pkgname"
+  git submodule init
+
+  git config submodule."harfbuzz/harfbuzz".url "${srcdir}/${pkgname}"-harfbuzz
+  git config submodule."freetype/libpng".url "${srcdir}/${pkgname}"-libpng
+  git config submodule."deps/freetype/zlib".url "${srcdir}/${pkgname}"-zlib
+  git config submodule."freetype2".url "${srcdir}/${pkgname}"-freetype2
+
+  git -c protocol.file.allow=always submodule update --init --recursive
+
+  # fix test issue with Rust 1.78
+  patch -Np1 -i ../$pkgname-20240203.110809.5046fc22-from_raw_parts.patch
+
+  sed -i 's/"vendored-fonts", //' wezterm-gui/Cargo.toml
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname"
+  LIBSSH2_SYS_USE_PKG_CONFIG=1 cargo build --frozen --release --features distro-defaults
+}
+
+check() {
+  cd "$pkgname"
+  LIBSSH2_SYS_USE_PKG_CONFIG=1 cargo test --frozen -- --skip "e2e::sftp"
+}
+
+package() {
+  cd "$pkgname"
+  install -Dm 755 "target/release/$pkgname" -t "$pkgdir/usr/bin"
+  install -Dm 755 "target/release/$pkgname-gui" -t "$pkgdir/usr/bin"
+  install -Dm 755 "target/release/$pkgname-mux-server" -t "$pkgdir/usr/bin"
+  install -Dm 755 "target/release/strip-ansi-escapes" -t "$pkgdir/usr/bin"
+  install -Dm 644 "assets/icon/terminal.png" "$pkgdir/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.$pkgname.png"
+  install -Dm 644 "assets/$pkgname.desktop" "$pkgdir/usr/share/applications/org.wezfurlong.$pkgname.desktop"
+  install -Dm 644 "assets/$pkgname.appdata.xml" "$pkgdir/usr/share/metainfo/org.wezfurlong.$pkgname.appdata.xml"
+  install -Dm 644 "assets/$pkgname-nautilus.py" "$pkgdir/usr/share/nautilus-python/extensions/$pkgname-nautilus.py"
+  install -Dm 755 "assets/open-$pkgname-here" -t "$pkgdir/usr/bin"
+  install -Dm 644 LICENSE.md -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
+  install -Dm 644 assets/shell-completion/bash "$pkgdir/usr/share/bash-completion/completions/$pkgname"
+  install -Dm 644 assets/shell-completion/fish "$pkgdir/usr/share/fish/vendor_completions.d/$pkgname.fish"
+  install -Dm 644 assets/shell-completion/zsh "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
+  install -Dm 644 assets/shell-integration/$pkgname.sh -t "$pkgdir/etc/profile.d"
+}
+
+# vim: ts=2 sw=2 et:
