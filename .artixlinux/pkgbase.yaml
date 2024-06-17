@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-ovirt-engine-sdk
-  version: 4.5.1-3
+  version: 4.6.2-1
   arch:
     - x86_64
   pkgname:
     - python-ovirt-engine-sdk
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.5.1-3
+    version: 4.6.2-1
     packages:
-      - python-ovirt-engine-sdk-4.5.1-3-x86_64.pkg.tar.zst
+      - python-ovirt-engine-sdk-4.6.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
