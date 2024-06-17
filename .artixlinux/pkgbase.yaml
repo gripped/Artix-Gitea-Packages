@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - ruby-public_suffix
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.5-2
+    packages:
+      - ruby-public_suffix-5.0.5-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
