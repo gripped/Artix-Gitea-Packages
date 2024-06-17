@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: retroarch
-  version: 1.18.0-3
+  version: 1.19.1-2
   arch:
     - x86_64
   pkgname:
     - retroarch
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1.18.0-3
+    version: 1.19.1-2
     packages:
-      - retroarch-1.18.0-3-x86_64.pkg.tar.zst
+      - retroarch-1.19.1-2-x86_64.pkg.tar.zst
   galaxy:
     version: 1.18.0-2
     packages:
