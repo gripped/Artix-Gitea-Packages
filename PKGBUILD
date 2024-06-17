@@ -4,8 +4,8 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.9.1
-pkgrel=1
+pkgver=4.10.0
+pkgrel=2
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
 url="https://www.nlnetlabs.nl/nsd/"
@@ -17,7 +17,7 @@ validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wo
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('a6c23a53ee8111fa71e77b7565d1b8f486ea695770816585fbddf14e4367e6df'
+sha256sums=('6317d7f5e3f01c33912f313d66a33dd1ace1cdf7f19d5c590b2e430d8ca4605f'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
