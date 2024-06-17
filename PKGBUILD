@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=sass
 pkgname=ruby-sass
 pkgver=3.7.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Sass makes CSS fun again'
 url='https://sass-lang.com/'
 arch=('any')
