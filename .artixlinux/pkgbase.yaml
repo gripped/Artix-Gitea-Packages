@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: mdevd
+  version: 0.1.6.4-1
+  arch:
+    - x86_64
+  pkgname:
+    - mdevd
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -18,8 +20,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.1.6.4-1
+    packages:
+      - mdevd-0.1.6.4-1-x86_64.pkg.tar.zst
   system:
     version: null
     packages: []
