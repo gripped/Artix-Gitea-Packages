@@ -1,18 +1,18 @@
 ---
 pkgbase:
-  name: ca-certificates-utils
-  version: 20220905-1
+  name: ca-certificates
+  version: 20240618-1
   arch:
     - any
   pkgname:
     - ca-certificates-utils
     - ca-certificates
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -20,8 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20240618-1
+    packages:
+      - ca-certificates-utils-20240618-1-any.pkg.tar.zst
+      - ca-certificates-20240618-1-any.pkg.tar.zst
   system:
     version: 20220905-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
