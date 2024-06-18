@@ -4,7 +4,7 @@
 
 pkgname=ffmpegthumbs
 pkgver=24.05.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='FFmpeg-based thumbnail creator for video files'
 url='https://apps.kde.org/ffmpegthumbs/'
 arch=(x86_64)
