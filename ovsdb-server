@@ -1,0 +1,5 @@
+type       = process
+command    = /usr/bin/ovsdb-server --remote=punix:/run/openvswitch/db.sock
+logfile    = /var/log/dinit/ovsdb-server.log
+depends-on = pre-local.target
+before     = pre-network.target

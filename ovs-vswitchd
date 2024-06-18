@@ -1,0 +1,6 @@
+type            = process
+command         = /usr/bin/ovs-vswitchd
+smooth-recovery = true
+depends-on      = ovsdb-server
+logfile         = /var/log/dinit/ovs-vswitchd.log
+before          = network.target
