@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Gordin <9ordin @t gmail dot com>
 
 pkgname=lolcat
 pkgver=100.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Okay, no unicorns. But rainbows!!'
 url='https://github.com/busyloop/lolcat'
 arch=('any')
