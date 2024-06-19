@@ -1,5 +1,6 @@
-# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Thore Bödecker <foxxx0@archlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke at archlinux.org>
 # Contributor: Jonathan Steel <jsteel at archlinux.org>
 # Contributor: Greg Sutcliffe <facter_aur (at) emeraldreverie.orgr>
@@ -10,11 +11,11 @@
 
 pkgname=facter
 pkgver=3.14.24
-pkgrel=7
+pkgrel=8
 pkgdesc="Collect and display system facts"
 arch=('x86_64')
-url="https://puppetlabs.com/facter"
-license=('APACHE')
+url="https://puppetlabs.com/${pkgname}"
+license=('Apache-2.0')
 depends=('yaml-cpp' 'boost-libs' 'curl' 'libwhereami' 'libwhereami.so' 'cpp-hocon' 'libcpp-hocon.so'
          'leatherman' 'leatherman_curl.so' 'leatherman_ruby.so' 'leatherman_execution.so'
          'leatherman_file_util.so' 'leatherman_util.so' 'leatherman_logging.so' 'leatherman_locale.so'
@@ -27,7 +28,7 @@ optdepends=('java-runtime>=8: jruby support'
             'puppet: retrieve puppet facts')
 replaces=('cfacter')
 provides=('libfacter.so')
-source=("https://downloads.puppet.com/facter/facter-${pkgver}.tar.gz"
+source=("https://downloads.puppet.com/facter/facter-${pkgver}.tar.gz"{,.asc}
         'fix-shared-libwhereami-detection.patch'
         'shared_cpp_hcon.patch'
         'rapidjson-1.1-compat.patch'
@@ -36,6 +37,7 @@ source=("https://downloads.puppet.com/facter/facter-${pkgver}.tar.gz"
         'azure_rapidjson_fix.patch')
 validpgpkeys=('D6811ED3ADEEB8441AF5AA8F4528B6CD9E61EF26') # "Puppet, Inc. Release Key (Puppet, Inc. Release Key) <release@puppet.com>"
 sha512sums=('501ed89b16f58ab9ddea0234076bff50f8c0f3f48df3ab01b1acfa23315f7953ea9bb2958d7a2f07c1910d13d00a3a2a4cff64446ddf34b44e558ebe533ee8c5'
+            'SKIP'
             '1f5d2595cd6b2a63fc01c92c84eccf8f92bd9e9f0721ea1a3f59836d7d02f5ec6e6e3711b223b240d46ca55f7377f27339b7458c12d6c21564a2764c76df12b2'
             '15fdfb75bb1045e160c095b62025f10d0a04c167223340072a9b8d065a2a185e942d299f86c80449661f37be5e1807efb49e77def44b8de4a9a9f7c2cc111e1a'
             'a1fb08be2c6c9b2a4085404f1d13b13c9d41e3c1a38d35cbad1d29bbd497380492dab368a0fa7288d141f7f94ff7a7a0ae5ce271119e7074e039868682cc766f'
@@ -72,7 +74,7 @@ build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
 
   export JAVA_HOME=/usr/lib/jvm/default
-  artix-cmake \
+  cmake \
     -B build \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX:PATH=/usr \
