@@ -14,7 +14,7 @@ depends=('sane' 'runit')
 conflicts=('init-sane')
 provides=('init-sane')
 source=("saned.run")
-sha256sums=('ba8fc0fd1a080b6a7baff44cb09690b3952b05bb48c8208cb7d3706e1a58ff76')
+sha512sums=('29668ffade166e3acd9cccbdfcf163f04cacdbd24101448dd44a8fe49073f9e0c660ee54a5fb90863bb78ee6d20316da39caf0caa7c3216ff069e5fb2a1f7d52')
 
 _inst_logsv() {
     for file in run finish check; do
