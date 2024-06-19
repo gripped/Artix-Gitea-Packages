@@ -1,2 +1,2 @@
 #!/bin/sh
-exec saned -s
+exec saned -l
