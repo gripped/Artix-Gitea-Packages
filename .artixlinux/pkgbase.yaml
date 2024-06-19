@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: msgraph
-  version: 0.2.2-1
+  version: 0.2.3-2
   arch:
     - x86_64
   pkgname:
@@ -15,7 +15,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -33,10 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.2-1
+    version: 0.2.3-2
     packages:
-      - msgraph-0.2.2-1-x86_64.pkg.tar.zst
-      - msgraph-docs-0.2.2-1-x86_64.pkg.tar.zst
+      - msgraph-0.2.3-2-x86_64.pkg.tar.zst
+      - msgraph-docs-0.2.3-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
