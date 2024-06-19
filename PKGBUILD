@@ -9,7 +9,7 @@ pkgname=(
   libnautilus-extension-docs
 )
 pkgver=46.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
 arch=(x86_64)
@@ -41,6 +41,7 @@ makedepends=(
   appstream-glib
   gi-docgen
   git
+  glib2-devel
   gobject-introspection
   meson
   tracker3-miners
@@ -90,7 +91,6 @@ _pick() {
 package_nautilus() {
   depends+=(libnautilus-extension.so)
   optdepends=(
-    'nautilus-sendto: Send files via mail extension'
     'tracker3-miners: Full text search and metadata-based renaming'
   )
   groups=(gnome)
