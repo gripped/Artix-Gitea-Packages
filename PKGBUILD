@@ -24,7 +24,7 @@ pkgname=(
 )
 pkgver=1.0.7
 _so_ver=0.3
-pkgrel=2.1
+pkgrel=3
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -38,6 +38,7 @@ makedepends=(
   doxygen
   git
   glib2
+  glib2-devel
   graphviz
   gst-plugins-base
   jack2
