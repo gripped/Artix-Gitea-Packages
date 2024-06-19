@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sane-runit
-  version: 20180226-3
+  version: 20240619-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20180226-3
+    version: 20240619-1
     packages:
-      - sane-runit-20180226-3-any.pkg.tar.zst
+      - sane-runit-20240619-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

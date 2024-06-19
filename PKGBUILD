@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/service|/run/runit/service|g' -e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=sane-runit
-pkgver=20180226
-pkgrel=3
+pkgver=20240619
+pkgrel=1
 pkgdesc="runit service scripts for sane"
 arch=('any')
 url="https://artixlinux.org"
