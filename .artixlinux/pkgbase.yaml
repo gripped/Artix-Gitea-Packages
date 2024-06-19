@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libxml2
-  version: 2.13.0-5
+  version: 2.13.1-1
   arch:
     - x86_64
   pkgname:
@@ -20,10 +20,10 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 2.13.0-5
+    version: 2.13.1-1
     packages:
-      - libxml2-2.13.0-5-x86_64.pkg.tar.zst
-      - libxml2-docs-2.13.0-5-x86_64.pkg.tar.zst
+      - libxml2-2.13.1-1-x86_64.pkg.tar.zst
+      - libxml2-docs-2.13.1-1-x86_64.pkg.tar.zst
   system:
     version: 2.13.0-4
     packages:
