@@ -8,27 +8,25 @@ pkgbase:
     - ca-certificates-utils
     - ca-certificates
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20240618-1
     packages:
       - ca-certificates-utils-20240618-1-any.pkg.tar.zst
       - ca-certificates-20240618-1-any.pkg.tar.zst
-  system:
-    version: 20220905-1
-    packages:
-      - ca-certificates-utils-20220905-1-any.pkg.tar.zst
-      - ca-certificates-20220905-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
