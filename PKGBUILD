@@ -6,7 +6,7 @@
 
 pkgname=knot
 pkgver=3.3.5
-pkgrel=1
+pkgrel=2
 pkgdesc="High-performance authoritative-only DNS server"
 arch=(x86_64)
 url="https://www.knot-dns.cz/"
@@ -49,7 +49,7 @@ package() {
 
     make DESTDIR="${pkgdir}" install
 
-    # Don’t keep those empty dir, manage them with systemd-tmpfiles instead
+    # Don’t keep those empty dir, manage them with-tmpfiles instead
     rmdir "${pkgdir}"/{var/{lib/{knot/,},},run/{knot/,}}
 
     rm "${pkgdir}"/etc/knot/example.com.zone
