@@ -3,7 +3,7 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.106.0
+pkgver=1.109.0
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
@@ -35,11 +35,13 @@ optdepends=('perl: sync_room_to_group.pl'
 source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
-        'tmpfiles-synapse.conf')
-sha256sums=('5570c12ddae3e17569f14b1166255b4925dddc8eddad500cc9ee55f3f238172e'
+        'tmpfiles-synapse.conf'
+        )
+sha256sums=('c6a62ab3e67094bb3aff5898af7ec6a98808208b4b0a2ac9f48b08735641c291'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
-            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
+            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
+            )
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
 validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
