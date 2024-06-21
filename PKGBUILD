@@ -158,7 +158,6 @@ makedepends=(
   speex
   svt-av1
   svt-hevc
-  systemd-libs
   taglib
   twolame
   v4l-utils
@@ -1147,7 +1146,6 @@ package_gstreamer-vaapi() {
     libva
     libx11
     libxrandr
-    systemd-libs
     wayland
   )
 
