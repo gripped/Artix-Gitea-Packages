@@ -1,0 +1,43 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+
+pkgname=ruby-rbtree
+_pkgname="${pkgname#ruby-}"
+pkgver=0.4.6
+pkgrel=3
+pkgdesc='A sorted associative collection that is implemented with a Red-Black Tree'
+arch=('x86_64')
+url='https://rubygems.org/gems/rbtree'
+license=('MIT')
+depends=('ruby')
+options=('!emptydirs')
+source=("$pkgname-$pkgver.gem::https://rubygems.org/downloads/$_pkgname-$pkgver.gem")
+noextract=("$pkgname-$pkgver.gem")
+sha512sums=('7c9f5ac83ee78191efe3fb7fd6ef0afaa7506245191dbe92f3eb9e5f19b9fcd8157f19901d49d5ff9b4661a498a67d79e39ca86c79d8df99fcf11603b54a0158')
+b2sums=('cd44852f8de9138d9f590825c62b1863e8a4fc51a3f150317f929e200430b9a4fcc7f7b83deb0904def84cfe3debf102e7b200fe1e894422b0515297ed44baff')
+
+package() {
+  local _gemdir="$(gem env gemdir)"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "$pkgdir/$_gemdir" \
+    --bindir "$pkgdir/usr/bin" \
+    "$pkgname-$pkgver.gem"
+
+  # delete unnecessary files/folders
+  rm -rf "$pkgdir/$_gemdir/cache"
+  find "$pkgdir" \
+    -type f \
+    -name '*.o' -delete -o \
+    -name 'gem_make.out' -delete -o \
+    -name 'mkmf.log' -delete
+  rm -rf "$pkgdir/$_gemdir/gems/$_pkgname-$pkgver/$_pkgname.so"
+
+  # license
+  install -vd "$pkgdir/usr/share/licenses/$pkgname"
+  ln -sf "$_gemdir/gems/$_pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname"
+}
