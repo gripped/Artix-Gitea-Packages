@@ -1,14 +1,24 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-brass
 pkgver=1.2.1
-pkgrel=2
+pkgrel=4
 pkgdesc='Bare-Metal Ruby Assertions System Standard'
 arch=(any)
 url='https://github.com/rubyworks/brass'
 license=(BSD)
-depends=(ruby)
-checkdepends=(ruby-lemon ruby-rubytest-cli ruby-simplecov)
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-lemon
+  ruby-rubytest-cli
+  ruby-simplecov
+)
 options=(!emptydirs)
 source=(https://github.com/rubyworks/brass/archive/$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('8f3f97e35014753155ccbc91c64543012628cdfebb0593550e46abb78973ee8c')
