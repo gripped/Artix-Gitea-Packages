@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-ae
-  version: 1.8.2-2
+  version: 1.8.2-4
   arch:
     - any
   pkgname:
     - ruby-ae
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.8.2-4
+    packages:
+      - ruby-ae-1.8.2-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
