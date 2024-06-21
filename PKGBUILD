@@ -1,15 +1,17 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-regexp_property_values
 pkgver=1.3.0
 _commit=3ecdde76f4721f45ecee885b3701df7ddb70bbe6
-pkgrel=2
+pkgrel=3
 pkgdesc="Inspect property values supported by Ruby's regex engine"
 arch=(x86_64)
 url='https://github.com/jaynetics/regexp_property_values'
 license=(MIT)
 depends=(ruby)
 makedepends=(git)
+checkdepends=(ruby-character_set ruby-rake ruby-rake-compiler ruby-range_compressor ruby-rspec)
 options=(!emptydirs)
 source=(git+https://github.com/jaynetics/regexp_property_values.git#commit=$_commit)
 sha256sums=('SKIP')
@@ -51,6 +53,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd regexp_property_values
+  GEM_HOME="tmp_install/$_gemdir" rspec
 }
 
 package() {
