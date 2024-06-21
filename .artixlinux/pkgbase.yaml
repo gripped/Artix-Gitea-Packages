@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-sinatra
-  version: 2.2.2-2.1
+  version: 2.2.2-3
   arch:
     - any
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - ruby-sinatra-contrib
     - ruby-rack-protection
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -27,8 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.2.2-3
+    packages:
+      - ruby-sinatra-2.2.2-3-any.pkg.tar.zst
+      - ruby-sinatra-contrib-2.2.2-3-any.pkg.tar.zst
+      - ruby-rack-protection-2.2.2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -56,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

@@ -1,35 +1,41 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgname=(ruby-sinatra ruby-sinatra-contrib ruby-rack-protection)
 pkgver=2.2.2
-pkgrel=2.1
+pkgrel=3
 arch=('any')
 url='https://sinatrarb.com/'
 license=('MIT')
-makedepends=('ruby')
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-rdoc
+)
 checkdepends=(
-    'asciidoctor'
-    'ruby-activesupport'
-    'ruby-builder'
-    'ruby-erubi'
-    'ruby-kramdown'
-    'ruby-maruku'
-    'ruby-mustermann'
-    'ruby-nokogiri'
-    'ruby-rack'
-    'ruby-rack-protection'
-    'ruby-rack-test'
-    'ruby-rake'
-    'ruby-rdiscount'
-    'ruby-rspec'
-    'ruby-sass'
-    'ruby-sinatra-contrib'
-    'ruby-tilt'
-    # ruby-sinatra - integration tests
-    #'ruby-puma'
-    #'ruby-thin'
-    #'ruby-webrick'
+  asciidoctor
+  ruby-activesupport
+  ruby-builder
+  ruby-erubi
+  ruby-kramdown
+  ruby-maruku
+  ruby-mustermann
+  ruby-nokogiri
+  ruby-rack
+  ruby-rack-protection
+  ruby-rack-test
+  ruby-rake
+  ruby-rdiscount
+  ruby-rspec
+  ruby-sass
+  ruby-sinatra-contrib
+  ruby-tilt
+  #ruby-sinatra - integration tests
+  #ruby-puma
+  #ruby-thin
+  #ruby-webrick
 )
 options=('!emptydirs')
 source=("https://github.com/sinatra/sinatra/archive/v${pkgver}/sinatra-v${pkgver}.tar.gz")
