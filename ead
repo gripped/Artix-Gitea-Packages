@@ -1,7 +1,7 @@
 type               = process
-command            = /usr/lib/dinit/dbus-wait-for -s -f 4 -n net.connman.iwd /usr/lib/iwd/iwd
+command            = /usr/lib/dinit/dbus-wait-for -s -f 4 -n net.connman.ead /usr/lib/iwd/ead
 smooth-recovery    = true
-logfile            = /var/log/dinit/iwd.log
+logfile            = /var/log/dinit/ead.log
 depends-on         = dbus
 depends-on         = early-devices.target
 depends-on         = pre-network.target
