@@ -2,14 +2,13 @@
 
 pkgname=btop
 pkgver=1.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A monitor of system resources, bpytop ported to C++'
 arch=(x86_64)
 url="https://github.com/aristocratos/$pkgname"
 license=(Apache)
 depends=(gcc-libs
-         glibc
-	 hicolor-icon-theme)
+         glibc)
 makedepends=(rocm-smi-lib)
 optdepends=('rocm-smi-lib: AMD GPU support')
 _archive="$pkgname-$pkgver"
@@ -18,7 +17,7 @@ sha256sums=('331d18488b1dc7f06cfa12cff909230816a24c57790ba3e8224b117e3f0ae03e')
 
 build() {
 	cd "$_archive"
-	make all GPU_SUPPORT=false
+	make all
 }
 
 package() {
