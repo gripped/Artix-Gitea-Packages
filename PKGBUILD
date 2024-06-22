@@ -3,7 +3,7 @@
 
 pkgname=plasma-meta
 pkgver=6.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Meta package to install KDE Plasma'
 arch=(any)
 license=(None)
