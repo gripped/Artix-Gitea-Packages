@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kwin
-  version: 6.1.0-1
+  version: 6.1.0-4
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.1.0-1
+    version: 6.1.0-4
     packages:
-      - kwin-6.1.0-1-x86_64.pkg.tar.zst
+      - kwin-6.1.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
