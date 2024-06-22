@@ -4,7 +4,7 @@
 # Contributor: PedroHLC <root@pedrohlc.com>
 
 pkgname=gamescope
-pkgver=3.14.18
+pkgver=3.14.22
 pkgrel=1
 pkgdesc='SteamOS session compositing window manager'
 arch=(x86_64)
