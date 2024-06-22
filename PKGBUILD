@@ -5,7 +5,7 @@
 
 pkgname=gamescope
 pkgver=3.14.18
-pkgrel=2.1
+pkgrel=1
 pkgdesc='SteamOS session compositing window manager'
 arch=(x86_64)
 url=https://github.com/ValveSoftware/gamescope
@@ -16,7 +16,6 @@ depends=(
   libavif
   libcap.so
   libdecor
-  libdisplay-info.so
   libdrm
   libinput
   libpipewire-0.3.so
@@ -64,7 +63,7 @@ prepare() {
   cd gamescope
 
   # Use shared libs, remove submodules to avoid fallback
-  git rm subprojects/{libdisplay-info,openvr}
+  git rm subprojects/openvr
 
   meson subprojects download
   git submodule init src/reshade
@@ -81,7 +80,7 @@ pkgver() {
 
 build() {
   artix-meson gamescope build \
-    -Dforce_fallback_for=wlroots,libliftoff,vkroots,glm,stb \
+    -Dforce_fallback_for=wlroots,libliftoff,vkroots,glm,stb,libdisplay-info \
     -Dpipewire=enabled
   meson compile -C build
 }
