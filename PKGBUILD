@@ -4,8 +4,8 @@
 
 pkgbase=qt6-doc
 pkgname=(qt6-doc qt6-examples)
-pkgver=6.7.1
-pkgrel=1.1
+pkgver=6.7.2
+pkgrel=1
 arch=('any')
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -32,15 +32,8 @@ makedepends=(alsa-lib
              vulkan-headers)
 groups=(qt6)
 _pkgfn=qt-everywhere-src-$pkgver
-source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver/-/}/single/$_pkgfn.tar.xz
-zstd.patch)
-sha256sums=('38dbf2768776e875ed5cdea8cccf1a240512a29769768084430914c4a33bedc4'
-            '37b38e1bf85b83b84d6885853a1e66a9a3ef081d804bd9e099c7e25466911bca')
-
-prepare() {
-  cd $_pkgfn
-  patch -Np1 -i $srcdir/zstd.patch
-}
+source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver/-/}/single/$_pkgfn.tar.xz)
+sha256sums=('0aaea247db870193c260e8453ae692ca12abc1bd841faa1a6e6c99459968ca8a')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
@@ -53,7 +46,7 @@ build() {
     -DINSTALL_INCLUDEDIR=include/qt6 \
     -DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
     -DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
-    -DQT_FEATURE_journald=OFF \
+    -DQT_FEATURE_journald=ON \
     -DQT_FEATURE_openssl_linked=ON \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build --target docs
