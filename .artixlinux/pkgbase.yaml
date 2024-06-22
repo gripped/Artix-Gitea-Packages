@@ -10,8 +10,8 @@ pkgbase:
     - lib32-gst-plugins-base
     - lib32-gst-plugins-good
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: lib32-goblins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -40,12 +40,8 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 1.24.4-1
-    packages:
-      - lib32-gstreamer-1.24.4-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-base-libs-1.24.4-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-base-1.24.4-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-good-1.24.4-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32:
     version: 1.24.4-1
     packages:
