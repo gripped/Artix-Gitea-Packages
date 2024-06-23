@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=spectacle
 pkgver=24.05.1
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE screenshot capture utility'
 arch=(x86_64)
 url='https://apps.kde.org/spectacle/'
@@ -62,3 +61,4 @@ package() {
 
   rm -r $pkgdir/usr/lib/systemd
 }
+
