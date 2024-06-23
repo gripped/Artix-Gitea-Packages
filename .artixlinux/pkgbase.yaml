@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: hdf5
-  version: 1.14.4.2-6
+  version: 1.14.4.3-1
   arch:
     - x86_64
   pkgname:
     - hdf5
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.14.4.3-1
+    packages:
+      - hdf5-1.14.4.3-1-x86_64.pkg.tar.zst
   world:
     version: 1.14.4.2-6
     packages:
