@@ -3,7 +3,7 @@
 
 pkgname=python-sphinx-autodoc-typehints
 _pyname=${pkgname/python-/}
-pkgver=2.1.1
+pkgver=2.2.2
 pkgrel=1
 pkgdesc='Type hints support for the Sphinx autodoc extension'
 arch=(any)
@@ -28,7 +28,7 @@ checkdepends=(
 )
 optdepends=('python-nptyping: for numpydoc support')
 source=("git+$url.git#tag=$pkgver")
-b2sums=('52ae69598a91d0175f7d7aab87d48507a31f741635782e7c5ada9fea98d6d9e618a4d4339b25ba6f2b20ef621b1b85ad8203faaaab4e16e1c155a8f4d013eb77')
+b2sums=('e6402d4b5dc4e7f68753e5009fc3b54541105b0f9a2d6b1b4f7d547aac162b34076f23426fb2859d99ec1cd0b1d905e930f9eb7b2558eefde1e99eab608947a4')
 
 build() {
   cd "$_pyname"
