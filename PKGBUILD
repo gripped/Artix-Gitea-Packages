@@ -73,10 +73,10 @@ prepare() {
   git -c protocol.file.allow=always submodule update
 }
 
-pkgver() {
-  cd gamescope
-  git describe --tags | sed 's/-//'
-}
+#pkgver() {
+#  cd gamescope
+#  git describe --tags | sed 's/-//'
+#}
 
 build() {
   artix-meson gamescope build \
