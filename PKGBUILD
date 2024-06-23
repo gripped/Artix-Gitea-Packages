@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sequel
 pkgver=5.76.0
 _commit=44fda5ffcd36fd6f931d6a7b99c4f2a88d7c1d7a
-pkgrel=2
+pkgrel=3
 pkgdesc='Sequel: The Database Toolkit for Ruby'
 arch=(any)
 url='https://github.com/jeremyevans/sequel'
