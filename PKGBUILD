@@ -1,9 +1,10 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 
-_name=diff_cover
 pkgname=python-diff-cover
-pkgver=8.0.3
-pkgrel=3
+_pkgname=diff_cover
+pkgver=9.0.0
+pkgrel=1
 pkgdesc="Automatically find diff lines that need test coverage"
 arch=(any)
 url="https://github.com/Bachmann1234/diff_cover"
@@ -22,32 +23,39 @@ makedepends=(
   python-wheel
 )
 checkdepends=(
+  python-pycodestyle
+  python-pyflakes
+  python-pylint
   python-pytest
+  python-pytest-datadir
   python-pytest-mock
 )
 optdepends=('python-tomli: for TOML support')
-source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('0c1e67a672e6286f63bb0ceaaecbf9df364513dfd0247a512794608ced7db021497c64109646ab993d3be288963fa17f3461c63bb1ab22df740ef1979e59586e')
-b2sums=('bcb9a1b966a4d35b998e19c009bbc7b1971b76b64b9f92c064c3bde1ebc0e4e8036a3b89dd6b24f2aec98ea7403f6b40dc6ed77a9e4a0295c9d7e41313f17e62')
+source=("$_pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha512sums=('6afffe838927e53a0d53715475917e43187f485bb898116817bd2d7202e8863195f006a0406c8705c7eda79b7ad68fab3704f9d87e94514fa5ab9e3f785e3c2d')
+b2sums=('738ea8ef6f9095e64ced486027c80a07724bc572600cdeb7fc58b305c999224cdddf4d23a205089b5178dad0dee60c2e276d9a81cf07bd9eca02132ce933b05f')
+
+_archive="$_pkgname-$pkgver"
 
 build() {
-  cd $_name-$pkgver
+  cd "$_archive"
+
   python -m build --wheel --no-isolation
 }
 
 check() {
-  local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  cd "$_archive"
 
-  cd $_name-$pkgver
-  # install to temporary location, as importlib is used
-  python -m installer --destdir=test_dir dist/*.whl
-  export PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH"
-  # ignore integration and code style checks
-  pytest -vv --ignore 'tests/test_integration.py' --ignore 'tests/test_violations_reporter.py' --ignore 'tests/test_clover_violations_reporter.py'
+  python -m installer -d tmp_install dist/*.whl
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  # Deselect failing test - unsure of why it fails.
+  PYTHONPATH="$PWD/tmp_install/$site_packages" pytest \
+    --deselect 'tests/test_violations_reporter.py::TestFlake8QualityReporterTest::test_file_does_not_exist'
 }
 
 package() {
-  cd $_name-$pkgver
+  cd "$_archive"
+
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -vDm 644 README.rst -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.rst
 }
