@@ -9,7 +9,7 @@
 _name=scipy
 pkgname=python-scipy
 pkgver=1.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Open-source software for mathematics, science, and engineering'
 arch=(x86_64)
 url='https://www.scipy.org/'
@@ -35,6 +35,7 @@ checkdepends=(python-hypothesis
 optdepends=('python-pillow: for image saving module')
 source=(https://github.com/scipy/scipy/releases/download/v$pkgver/$_name-$pkgver.tar.gz)
 sha256sums=('095a87a0312b08dfd6a6155cbbd310a8c51800fc931b8c0b84003014b874ed3c')
+options=(!lto) # crashes with numpy 2.0
 
 build() {
   cd $_name-$pkgver
