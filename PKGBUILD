@@ -1,16 +1,29 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-ruby_memcheck
 pkgver=1.2.0
 _commit=f4b8fe6140fcd38747a24ea4f99a87f5f56c950a
-pkgrel=2
+pkgrel=3
 pkgdesc='Use Valgrind memcheck without going crazy'
 arch=(any)
 url='https://github.com/Shopify/ruby_memcheck'
 license=(MIT)
-depends=(valgrind ruby-nokogiri)
-makedepends=(git ruby-minitest ruby-minitest-parallel_fork ruby-rake ruby-rake-compiler
-             ruby-rspec-core ruby-rubocop)
+depends=(
+  ruby
+  ruby-nokogiri
+  valgrind
+)
+makedepends=(
+  git
+)
+checkdepends=(
+  ruby-bundler
+  ruby-minitest
+  ruby-racc
+  ruby-rake
+  ruby-rake-compiler
+  ruby-rspec-core
+)
 options=(!emptydirs)
 source=(git+https://github.com/Shopify/ruby_memcheck.git#commit=$_commit)
 sha256sums=('SKIP')
@@ -44,8 +57,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd ruby_memcheck
-  #Test requires debuginfod, skipping
-  #GEM_HOME="tmp_install/$_gemdir" rake
+  GEM_HOME="tmp_install/$_gemdir" rake
 }
 
 package() {
