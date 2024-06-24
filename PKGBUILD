@@ -1,16 +1,16 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='faraday-net_http_persistent'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='About Faraday adapter for NetHttpPersistent'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
 license=('MIT')
 depends=('ruby')
-makedepends=('ruby-rspec')
-checkdepends=('ruby-faraday' 'ruby-webmock' 'ruby-multipart-parser')
+checkdepends=('ruby-faraday' 'ruby-webmock' 'ruby-multipart-parser' 'ruby-rspec')
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz")
 sha512sums=('f198ebb42cf0aee6ee8b6c598e437112f620bd145dad609e64845e555f4f51034a8f8670ef448b46742f7f5a83bc8681943c6ba817430b1519fd683f57d0b7fa')
