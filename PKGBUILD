@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='rails-dom-testing'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Dom and Selector assertions for Rails applications'
 arch=('any')
 url='https://github.com/rails/rails-dom-testing'
