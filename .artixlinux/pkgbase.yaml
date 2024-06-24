@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-matplotlib
-  version: 3.8.4-1
+  version: 3.8.4-2
   arch:
     - x86_64
   pkgname:
     - python-matplotlib
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.8.4-1
+    version: 3.8.4-2
     packages:
-      - python-matplotlib-3.8.4-1-x86_64.pkg.tar.zst
+      - python-matplotlib-3.8.4-2-x86_64.pkg.tar.zst
   world:
     version: 3.8.3-3
     packages:
