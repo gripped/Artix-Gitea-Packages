@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Rhys Davies <rhys@johnguant.com>
 
 pkgname=ruby-multipart-post
 pkgver=2.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A multipart form post accessory for Net::HTTP'
 arch=(any)
 url='https://github.com/socketry/multipart-post'
