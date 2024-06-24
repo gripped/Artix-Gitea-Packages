@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.9.4
+_ver=6.9.6
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -46,16 +46,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('272800e0d1a7d01a78bce95a3aaf5c80816f50eb15c517d7003e58355760ecc2'
+sha256sums=('5d4366e2b89998f274abe03557ef3bc78b58e47fc62c102d51e6f49e5ed96b4b'
             'SKIP'
-            'fbd9a98f741c5793b584e8d59b65fde2fb27f40528a8a6b6db05f8a2e20a45b0'
+            'f11095f47da518ce4074be587438d30f424d98bcc5c59f7a1a8c00c58ddf5aa4'
             'SKIP'
-            'e074549ec7a68816825e51ff7dfae5a7fb601fea6cba5d0b6b4b2c3255f58162')
-b2sums=('5579aef00f38e87ee9a9878ad4340aebc9c2590d8e813e2e106af59c6739e39a37267672ab7aff56160c8519d3014d139e6c849f33b9292c6fba019bc88d09da'
+            '578d07850ad259c2cc3661e812fa9ab11c1683719537d50ca21d33d23e2cefa8')
+b2sums=('498da30f8f0c2c3812919eaca0dfa5679ab4517972182d2392e8833b9ca082b0d12777b6a35fd36228a21ac899ec4ee716e66b77e5625885415ccdab36cfb570'
         'SKIP'
-        'd9c3c74bab1b3acc3fd25825ce169b5052f8751d96d52006b8dcc2bdb9c43c6db59ebfa9f86fee9a6c5c64aae63cf03deb2acae1e595824dfcab8d254a96e3a1'
+        'a7cfa3dec239f0118600526eb1ac00a762349fd3a8c3b18a277d917e0022c927ca6d954f78d0f87d8ee3e7ba1148b741215c4ce19948665dc836419fe90c7c79'
         'SKIP'
-        'd2bf992d84208057cd148b6e7891f215a408da7ccb47f136b4593557cb8a888840e8e0974116b4232e0b46604aa9af1a49d5038515a1705f61f5c4f3eea03176')
+        'ef9e266288230c6ffa750f877ed7bb939687ba513875fda2dd67761f47919139e65d0a1c010ea96d32c5e5bd701ec7e57570af8f6550df256f9d156ba37bb412')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
