@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=i18n
 pkgname=ruby-i18n
 pkgver=1.14.1
-pkgrel=2
+pkgrel=3
 pkgdesc="New wave internationalisation support for Ruby"
 arch=(any)
 url="https://github.com/ruby-i18n/i18n"
@@ -17,9 +16,9 @@ makedepends=(ruby-rdoc)
 checkdepends=(
   ruby-activesupport
   ruby-bundler
-  ruby-json
   ruby-minitest
   ruby-mocha
+  ruby-racc
   ruby-rake
   ruby-test_declarative
 )
@@ -40,7 +39,7 @@ prepare() {
   cd $_name-$pkgver
 
   # update gemspec/Gemfile to allow newer version of the dependencies
-  sed -i -e 's|~>|>=|g' $_name.gemspec
+  sed -i -e 's|~>|>=|g' $_name.gemspec Gemfile
 }
 
 build() {
