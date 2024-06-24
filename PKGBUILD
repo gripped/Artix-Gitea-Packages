@@ -1,14 +1,29 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-covered
 pkgver=0.18.5
-pkgrel=1
+pkgrel=2
 pkgdesc='A modern approach to code coverage'
 arch=(any)
 url='https://github.com/ioquatix/covered'
 license=(MIT)
-depends=(ruby-console ruby-msgpack ruby-parser)
-checkdepends=(ruby-rspec ruby-sus ruby-trenni ruby-bake-test ruby-minitest)
+depends=(
+  ruby
+  ruby-console
+  ruby-msgpack
+  ruby-parser
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bake-test
+  ruby-minitest
+  ruby-rspec
+  ruby-sus
+  ruby-trenni
+)
 options=(!emptydirs)
 source=(https://github.com/ioquatix/covered/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('dab270768595961e4a59d7ed9a73173eccd62b87b9988acf8071e2b35972c867')
