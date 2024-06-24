@@ -1,14 +1,24 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-bake-test
 pkgver=0.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Run local test suites without knowing exactly how to run them'
 arch=(any)
 url='https://github.com/ioquatix/bake-test'
 license=(MIT)
-depends=(ruby-bake)
-checkdepends=(ruby-sus)
+depends=(
+  rake
+  ruby-bake
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bundler
+  ruby-sus
+)
 options=(!emptydirs)
 source=(https://github.com/ioquatix/bake-test/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('19834a13d42b4f83c357c9e49186428e2614511f108e65ebe1bd8d692d204b72')
