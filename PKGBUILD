@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-character_set
 pkgver=1.6.0
 _commit=6e397e267fbaf21858614a9bae250264739dd650
-pkgrel=3
+pkgrel=4
 pkgdesc='Build, read, write and compare sets of Unicode codepoints'
 arch=(x86_64)
 url='https://github.com/jaynetics/character_set'
