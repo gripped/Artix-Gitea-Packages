@@ -1,15 +1,26 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-fiber-annotation
 pkgver=0.2.0
-pkgrel=1.3
+pkgrel=2
 pkgdesc='A mechanism for annotating fibers'
 arch=(any)
 url='https://github.com/ioquatix/fiber-annotation'
 license=(MIT)
-depends=(ruby)
-checkdepends=(ruby-bake-modernize ruby-bake-test ruby-bake-test-external ruby-sus ruby-covered)
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bake-modernize
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-covered
+  ruby-sus
+)
 options=(!emptydirs)
 source=(https://github.com/ioquatix/fiber-annotation/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('95d37669c3c3b13fccf2832ba30d8bafeee455e35fc7b263cedf2e0d377f33be')
