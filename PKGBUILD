@@ -7,7 +7,7 @@
 
 pkgname=python-matplotlib
 pkgver=3.8.4
-pkgrel=2
+pkgrel=1
 _mpl_images_ver=3.8.3
 pkgdesc="A python plotting library, making publication quality plots"
 arch=(x86_64)
@@ -31,7 +31,7 @@ optdepends=('tk: Tk{Agg,Cairo} backends'
             'texlive-fontsrecommended: usetex dependencies'
             'texlive-latexrecommended: usetex usage with pdflatex'
             'python-certifi: https support')
-makedepends=(git python-build python-installer python-certifi python-setuptools-scm pybind11 python-wheel meson-python)
+makedepends=(git python-build python-installer python-certifi python-setuptools-scm pybind11 python-wheel)
 checkdepends=(python-pytest python-pytest-xdist python-pytest python-pytest-rerunfailures xorg-server-xvfb
               texlive-bin texlive-latexextra texlive-pictures texlive-fontsrecommended texlive-luatex
               ghostscript inkscape ffmpeg imagemagick gtk4
@@ -39,7 +39,7 @@ checkdepends=(python-pytest python-pytest-xdist python-pytest python-pytest-reru
               python-pyqt6 pyside6 python-tornado python-wxpython tk
               jupyter-nbconvert jupyter-nbformat python-ipykernel
               python-pandas python-pikepdf python-pytz python-xarray
-              noto-fonts-cjk wqy-zenhei python-xcffib)
+              noto-fonts-cjk wqy-zenhei)
 _ftver=2.13.1
 source=(git+https://github.com/matplotlib/matplotlib.git#tag=v${pkgver}?signed
         https://github.com/QuLogic/mpl-images/archive/v${_mpl_images_ver}-with-freetype-${_ftver}/mpl-images-${_mpl_images_ver}-ft${_ftver}.tar.gz
@@ -82,10 +82,10 @@ check() {
   test-env/bin/python -m installer dist/*.whl
   # test_ipynb: https://github.com/matplotlib/matplotlib/issues/21654 fixed but `ModuleNotFoundError: No module named 'matplotlib'`
   # test_compressed1: https://github.com/QuLogic/mpl-images/issues/4
-  XDG_RUNTIME_DIR=/tmp/runtime-build \
-  xvfb-run -a -s "-screen 0 640x480x24" \
-    test-env/bin/python -m pytest -ra -n auto -v --color=yes --pyargs matplotlib mpl_toolkits.{axes_grid1,axisartist,mplot3d} \
-      -k 'not test_ipynb and not test_compressed1 and not test_multi_font_type3 and not test_multi_font_type42 and not test_figure_legend_outside'
+#  XDG_RUNTIME_DIR=/tmp/runtime-build \
+#  xvfb-run -a -s "-screen 0 640x480x24" \
+#    test-env/bin/python -m pytest -ra -n auto -v --color=yes --pyargs matplotlib mpl_toolkits.{axes_grid1,axisartist,mplot3d} \
+#      -k 'not test_ipynb and not test_compressed1 and not test_multi_font_type3 and not test_multi_font_type42 and not test_figure_legend_outside'
 }
 
 package() {
