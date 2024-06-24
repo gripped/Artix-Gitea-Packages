@@ -1,16 +1,28 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-samovar
 pkgver=2.1.4
 _commit=4bc6ee6268c78277968c4cdca7aa41cc4653312d
-pkgrel=3
+pkgrel=4
 pkgdesc='A flexible option parser excellent support for sub-commands and help documentation'
 arch=(any)
 url='https://github.com/ioquatix/samovar'
 license=(MIT)
-depends=(ruby-console ruby-mapping)
-makedepends=(git)
-checkdepends=(ruby-covered ruby-rake ruby-rspec)
+depends=(
+  ruby
+  ruby-console
+  ruby-mapping
+)
+makedepends=(
+  git
+  ruby-bundler
+  ruby-rake
+)
+checkdepends=(
+  ruby-covered
+  ruby-rspec
+)
 options=(!emptydirs)
 source=(git+https://github.com/ioquatix/samovar.git#commit=$_commit)
 sha256sums=('SKIP')
