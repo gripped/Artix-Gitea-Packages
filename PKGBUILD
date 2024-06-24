@@ -3,14 +3,27 @@
 
 pkgname=ruby-console
 pkgver=1.23.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Beautiful logging for Ruby'
 arch=(any)
 url='https://github.com/socketry/console'
 license=(MIT)
-depends=(ruby-fiber-annotation ruby-fiber-local)
-checkdepends=(ruby-bake ruby-bake-modernize ruby-bake-test ruby-bake-test-external ruby-covered
-              ruby-sus)
+depends=(
+  ruby
+  ruby-fiber-annotation
+  ruby-fiber-local
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bake
+  ruby-bake-modernize
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-covered
+  ruby-sus
+)
 options=(!emptydirs)
 source=(https://github.com/socketry/console/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('0951b3c761226fbe92d8e20a1383ec7ab970a9be73adebbc2d88f66b4e55bffa')
