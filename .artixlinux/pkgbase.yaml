@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: procinfo-ng
-  version: 2.0.304-8.1
+  version: 2.0.304-9
   arch:
     - x86_64
   pkgname:
     - procinfo-ng
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.304-8.1
+    version: 2.0.304-9
     packages:
-      - procinfo-ng-2.0.304-8.1-x86_64.pkg.tar.zst
+      - procinfo-ng-2.0.304-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
