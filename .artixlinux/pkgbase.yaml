@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pyarrow
-  version: 16.1.0-2
+  version: 16.1.0-4
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 16.1.0-2
+    version: 16.1.0-4
     packages:
-      - python-pyarrow-16.1.0-2-x86_64.pkg.tar.zst
+      - python-pyarrow-16.1.0-4-x86_64.pkg.tar.zst
   world:
     version: 16.1.0-1
     packages:
