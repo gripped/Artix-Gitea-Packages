@@ -7,7 +7,7 @@
 
 _pyname=pylint
 pkgname=python-$_pyname
-pkgver=3.2.3
+pkgver=3.2.4
 pkgrel=1
 pkgdesc='Analyzes Python code looking for bugs and signs of poor quality'
 arch=(any)
@@ -34,7 +34,7 @@ checkdepends=(mpdecimal
 optdepends=('graphviz: Enable output formats other than dot or vcg')
 _archive="$_pyname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('0032ab7c5a1191158d8ad6e20da8aa5db6c0d4dbf2597833e07b343fb1f556ae')
+sha256sums=('fe2831d94a4bff4dd71ee34792cc79fa4ca68e1ab89729b5de6f626bbc918946')
 
 prepare() {
 	cd "$_archive"
