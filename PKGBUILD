@@ -11,7 +11,7 @@ pkgname=(qtcreator
          qtcreator-devel)
 pkgver=13.0.2
 _clangver=17.0.6
-pkgrel=2
+pkgrel=3
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
@@ -19,12 +19,15 @@ license=(GPL-3.0-only)
 depends=(clang=$_clangver
          clazy
          gcc-libs
+         glib2
          glibc
+         libelf
          litehtml
          qt6-5compat
          qt6-base
          qt6-declarative
          qt6-quick3d
+         qt6-quicktimeline
          qt6-tools
          qt6-serialport
          qt6-svg
@@ -47,9 +50,25 @@ optdepends=('qt6-doc: integrated Qt documentation'
             'valgrind: analyze support'
             'perf: performer analyzer'
             'mlocate: locator filter')
-source=(git+https://code.qt.io/qt-creator/qt-creator#tag=v$pkgver)
-sha256sums=('fb7a29e77651101817b1197733196b2fa049799a9caa3d237c9abf65a7bab31e')
+source=(git+https://code.qt.io/qt-creator/qt-creator#tag=v$pkgver
+        git+https://code.qt.io/qt-creator/perfparser
+        git+https://code.qt.io/playground/qlitehtml
+        git+https://github.com/litehtml/litehtml)
+sha256sums=('fb7a29e77651101817b1197733196b2fa049799a9caa3d237c9abf65a7bab31e'
+            'SKIP'
+            'SKIP'
+            'SKIP')
 options=(docs)
+
+prepare() {
+  cd qt-creator
+  git submodule set-url src/tools/perfparser "$srcdir"/perfparser
+  git submodule set-url src/libs/qlitehtml "$srcdir"/qlitehtml
+  git -c protocol.file.allow=always submodule update --init src/libs/qlitehtml src/tools/perfparser
+  cd src/libs/qlitehtml
+  git submodule set-url src/3rdparty/litehtml "$srcdir"/litehtml
+  git -c protocol.file.allow=always submodule update --init src/3rdparty/litehtml
+}
 
 build() {
   cmake -B build -S qt-creator \
@@ -57,7 +76,6 @@ build() {
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DWITH_DOCS=ON \
     -DBUILD_DEVELOPER_DOCS=ON \
-    -DBUILD_QBS=OFF \
     -DQTC_CLANG_BUILDMODE_MATCH=ON \
     -DCLANGTOOLING_LINK_CLANG_DYLIB=ON
   cmake --build build
