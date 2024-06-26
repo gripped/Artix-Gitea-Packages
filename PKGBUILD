@@ -1,13 +1,12 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=cpputest
 pkgver=4.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Unit testing and mocking framework for C/C++"
 arch=(x86_64)
 url="https://github.com/cpputest/cpputest"
-license=(BSD)
+license=(BSD-3-Clause)
 makedepends=(cmake)
 options=(
   !strip
