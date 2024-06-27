@@ -5,7 +5,7 @@
 
 pkgname=python-pandas
 pkgver=2.2.2
-pkgrel=1
+pkgrel=2
 pkgdesc='High-performance, easy-to-use data structures and data analysis tools for Python'
 arch=(x86_64)
 url="https://pandas.pydata.org/"
@@ -109,6 +109,11 @@ checkdepends=(
 #source=(https://github.com/pandas-dev/pandas/releases/download/v${pkgver}/pandas-${pkgver}.tar.gz)
 source=(https://github.com/pandas-dev/pandas/archive/refs/tags/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('79bc6fb5505afd27875c93fec27cece74318470c4e274ec7ef48b16f046dc006')
+
+prepare() {
+  cd pandas-${pkgver}
+  sed -e 's|2.0.0|1.0.0|' -i pandas/compat/_optional.py # Restore sqlalchemy 1.x support
+}
 
 build() {
   cd pandas-${pkgver}
