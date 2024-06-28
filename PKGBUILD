@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-tenacity
-pkgver=8.3.0
+pkgver=8.4.0
 pkgrel=1
 pkgdesc='Retry code until it succeeeds'
 arch=('any')
@@ -10,9 +10,9 @@ url='https://github.com/jd/tenacity'
 depends=('python')
 optdepends=('python-tornado: for Tornado coroutines support')
 makedepends=('git' 'python-setuptools-scm' 'python-setuptools' 'python-wheel' 'python-build' 'python-installer')
-checkdepends=('python-pytest' 'python-tornado' 'python-typeguard')
+checkdepends=('python-pytest' 'python-tornado' 'python-trio' 'python-typeguard')
 source=("git+https://github.com/jd/tenacity.git#tag=$pkgver")
-sha512sums=('d7698bfd78cb7749e10270eda95e908e1b1fe4d04f8aeb4b18020816ab2015a2095b20c0b889bb5db3f07351a75197ddffedb856ac4ebc45ca6b76b3a88d8150')
+sha512sums=('a34be009aefcf5fbc7bd06fc1c4e045c0891bdd29eac1b66d8ef9ace7387062425e9cf2220cbfc7cf8953d07470b5b4ffab6d04ee3bb56da347f134b7021e75f')
 
 build() {
   cd tenacity
