@@ -1,10 +1,11 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.9.6.hardened1
+pkgver=6.9.7.hardened1
 pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
@@ -45,16 +46,16 @@ validpgpkeys=(
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('5d4366e2b89998f274abe03557ef3bc78b58e47fc62c102d51e6f49e5ed96b4b'
+sha256sums=('e4f588cd91eef9d461e5e14fdf9415feff8a72fbcc274089a0f768a58de001f8'
             'SKIP'
-            '4d34b86df5fa97fa31b457307798c404c31025232c9368c46b34c792903a578a'
+            'a2204110fd775a7657133bbd783b149be8e08bbd4ede6bd013dad6dcef85a8bd'
             'SKIP'
-            '298e7b98b4cb4f395b6e2674ecb5592122efd0a249f199aab5b530218b1cdb65')
-b2sums=('498da30f8f0c2c3812919eaca0dfa5679ab4517972182d2392e8833b9ca082b0d12777b6a35fd36228a21ac899ec4ee716e66b77e5625885415ccdab36cfb570'
+            '77b700783207b01215caeaefaa4e244bee6556a56d3075e540a0280390e84335')
+b2sums=('67b49d64f8ceba02dc1eade59991c683c81a533eec7105466d235898de2cee692aa5730d538a33bb04f1b0260e9dcbf63b332ddfab42a7d44425c9a9d8410d77'
         'SKIP'
-        'b831c6c1017b4f3e378561e01774d31bd51bc953f76b2cca2077a12abc4ce722674085a166a0aee8f27021a6f788dd5afdea3da95a1f2dc8445c83415ffeb2c3'
+        'e734da48fc0e8723b40f8fa768ebea5562aeaad58d90041fa0f31c3767889945eae91c58ed46dacd8bd30c7c66211604455e9caf369a0260246dc0b411aedc88'
         'SKIP'
-        '07b77710c70f37be89748fdcabf7a5100d082145d11528f615b4c2a001f4d5ae86024dcb8738cf5c4fc8ffaa62153c3a88a9b0a528fb31413f3c7c2264cb33ab')
+        'a88eeee3c07dfed09c6f42f54bf6a2588f121ab40d526d8820d60d1e3ac14effb1fcad9ecc5643fb58a349a8d655c76eeefa4916c8765d1d04fd97434bdd74d2')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
