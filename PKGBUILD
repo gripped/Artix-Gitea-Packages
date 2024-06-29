@@ -7,7 +7,7 @@ pkgname=(
   libwireplumber
   wireplumber-docs
 )
-pkgver=0.5.4
+pkgver=0.5.5
 pkgrel=1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
@@ -35,7 +35,7 @@ checkdepends=(pipewire-audio)
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/$pkgbase.git#tag=$pkgver"
 )
-b2sums=('adda9f0664781f039686eb5f96ed6610d1f645661af7831178fb5d61e16bec259e35beb175bfb7874e62b25e100f4c260f75f8361226f67f3632f14a1b29e263')
+b2sums=('9217b6afead54fa30aa3ee456dd844682dcd27e13a1922b91d916239991f6a65d1ce9321ba44523edc7a3a3bfa5fd339d4320aa829434ad75d6eeef06eea9f30')
 
 prepare() {
   cd $pkgbase
