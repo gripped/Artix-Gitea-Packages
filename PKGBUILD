@@ -8,13 +8,13 @@
 
 pkgname=lxc
 epoch=1
-pkgver=6.0.0
-pkgrel=4
+pkgver=6.0.1
+pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
 url="https://linuxcontainers.org"
 depends=('bash' 'perl' 'libseccomp' 'libcap' 'python' 'rsync' 'wget')
-makedepends=('docbook2x' 'elogind' 'meson' 'lua' 'python-setuptools' 'apparmor')
+makedepends=('docbook2x' 'systemd' 'meson' 'lua' 'python-setuptools' 'apparmor')
 optdepends=('dnsmasq'
 	    'lua'
 	    'lua-filesystem: lxc-top'
@@ -27,7 +27,7 @@ validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
 	"lxc.tmpfiles.d"
 )
-sha256sums=('3f6981c61ff39f9e550a18cf22d6e26792cde5dd34f9d3c93badfeaaee8814b2'
+sha256sums=('ccb38fbcdb86a82ee8192ccc85bba47edaf824439e9a7f12ab178d51ff1f77e0'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
