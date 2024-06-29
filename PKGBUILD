@@ -14,7 +14,7 @@ pkgdesc="Linux Containers"
 arch=('x86_64')
 url="https://linuxcontainers.org"
 depends=('bash' 'perl' 'libseccomp' 'libcap' 'python' 'rsync' 'wget')
-makedepends=('docbook2x' 'systemd' 'meson' 'lua' 'python-setuptools' 'apparmor')
+makedepends=('docbook2x' 'elogind' 'meson' 'lua' 'python-setuptools' 'apparmor')
 optdepends=('dnsmasq'
 	    'lua'
 	    'lua-filesystem: lxc-top'
