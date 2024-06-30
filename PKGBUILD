@@ -2,7 +2,7 @@
 
 pkgname=wezterm
 pkgver=20240203.110809.5046fc22
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 arch=('x86_64')
 url="https://github.com/wez/wezterm"
