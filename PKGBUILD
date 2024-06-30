@@ -2,8 +2,9 @@
 # Contributor: André Klitzing <aklitzing () gmail () com>
 
 pkgname=clazy
-pkgver=1.11
-pkgrel=5
+pkgver=1.11+r302+gf90c263c
+pkgrel=1
+_commit=f90c263c49c1df57bc442fe2fafa0e9e12460e28
 pkgdesc='Qt oriented code checker based on clang framework'
 url='https://www.kdab.com/'
 license=(GPL-2.0-or-later)
@@ -13,26 +14,20 @@ depends=(clang
          llvm-libs
          sh)
 makedepends=(cmake
+             git
              llvm)
 arch=(x86_64)
-source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
-        https://github.com/KDE/clazy/commit/20fca52da739ebef.patch
-        https://github.com/KDE/clazy/commit/a05ac7eb6f6198c3.patch)
-sha256sums=('66165df33be8785218720c8947aa9099bae6d06c90b1501953d9f95fdfa0120a'
-            'SKIP'
-            '652854327c1bd48f1e7080ce834dba3fb37d8a8b1d21ebaa5c70be816d8164af'
-            'd18281a06a4fd27a90f50aa38afebd6e6d47b281382697947336b120e1013d58')
+source=(git+https://invent.kde.org/sdk/clazy#commit=$_commit)
+sha256sums=('b618c419dca274f6e95770d605fd4dcbbfbe9e52f503b24e065cdd010874e40d')
 validpgpkeys=(949014B23D24354DFD548E5457416A0ADCEF0EFE) # Sergio Martins <sergio.martins@kdab.com>
 
-prepare() {
-  patch -d $pkgname-$pkgver -p1 < 20fca52da739ebef.patch # Fix build with LLVM 15
-  patch -d $pkgname-$pkgver -p1 < a05ac7eb6f6198c3.patch # Fix build with LLVM 16
-  sed -e 's|val.countPopulation|val.popcount|' -e 's|initVal.isNullValue|initVal.isZero|' \
-    -i $pkgname-$pkgver/src/checks/manuallevel/unexpected-flag-enumerator-value.cpp # Fix build with LLVM 17
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
 }
 
 build() {
-  cmake -B build $pkgname-$pkgver \
+  cmake -B build $pkgname \
     -DCMAKE_INSTALL_PREFIX=/usr
   cmake --build build
 }
