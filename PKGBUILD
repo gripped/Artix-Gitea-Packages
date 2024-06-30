@@ -4,21 +4,21 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xapp
-pkgver=2.8.2
-pkgrel=2
+pkgver=2.8.4
+pkgrel=1
 pkgdesc="Common library for X-Apps project"
 arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
 license=(GPL)
 depends=(libdbusmenu-gtk3 libgnomekbd)
 optdepends=('python: for mate-desktop status applet')
-makedepends=(meson samurai gobject-introspection python-gobject vala)
+makedepends=(meson samurai gobject-introspection python-gobject vala glib2-devel)
 provides=(xapps)
 conflicts=(xapps)
 replaces=(xapps)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('07b00d02d2bdd93c043e370305071df80f21ded6404f7309b590a8f896e635b2')
-b2sums=('1e2fb92b976196c2e9f36e322656ee40252e4c358a13361a054ead88e6fa3df35a53f1b0ee594df4189a68c1739c4a040558fac533ace095536fcc1dca76954b')
+sha256sums=('cdcf13037451c0e74064c113d93aa438fb259d206199d023defa2690db5b9a19')
+b2sums=('7f3a17b96e236e65eca4369cc21c0f5e913d5727ef17dba03bc7e894ba62285ec9421ad4c53c0e7136ea1ba569f6894a73b11485c6629176f32b69f4dec1587f')
 
 build() {
   artix-meson ${pkgname}-${pkgver} build \
