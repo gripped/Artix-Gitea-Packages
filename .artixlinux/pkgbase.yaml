@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lldb
-  version: 17.0.6-2
+  version: 18.1.8-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 17.0.6-2
+    version: 18.1.8-1
     packages:
-      - lldb-17.0.6-2-x86_64.pkg.tar.zst
+      - lldb-18.1.8-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
