@@ -1,0 +1,29 @@
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=libxisf
+pkgver=0.2.12
+pkgrel=1
+pkgdesc='Library to load and write XISF format from PixInsight'
+url='https://gitea.nouspiro.space/nou/libXISF'
+license=(GPL3)
+arch=(x86_64)
+depends=(gcc-libs
+         glibc
+         lz4
+         pugixml
+         zlib
+         zstd)
+makedepends=(cmake)
+source=($pkgname-$pkgver.tar.gz::https://gitea.nouspiro.space/nou/libXISF/archive/v$pkgver.tar.gz)
+sha256sums=('262a63c81e673934314d967b0b550ae7bdcb4c3e623b124878dfb186f0be4854')
+
+build() {
+  cmake -B build -S $pkgname \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_BUNDLED_LIBS=OFF
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
