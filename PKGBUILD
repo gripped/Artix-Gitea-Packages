@@ -3,7 +3,7 @@
 
 pkgname=('llvm' 'llvm-libs')
 pkgver=18.1.8
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://llvm.org/"
 license=('custom:Apache 2.0 with LLVM Exception')
@@ -136,6 +136,7 @@ package_llvm() {
 package_llvm-libs() {
   pkgdesc="LLVM runtime libraries"
   depends=('gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2')
+  depends+=('llvm17-libs') # help bootstrapping crystal/ldc/rust (remove me!)
 
   install -d "$pkgdir/usr/lib"
   cp -P \
