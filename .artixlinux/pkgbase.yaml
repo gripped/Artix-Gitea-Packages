@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-http-message
-  version: 6.45-1
+  version: 6.46-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.45-1
+    version: 6.46-1
     packages:
-      - perl-http-message-6.45-1-any.pkg.tar.zst
+      - perl-http-message-6.46-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
