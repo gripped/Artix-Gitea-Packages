@@ -2,7 +2,7 @@
 
 pkgname=wezterm
 pkgver=20240203.110809.5046fc22
-pkgrel=2.1
+pkgrel=2
 pkgdesc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 arch=('x86_64')
 url="https://github.com/wez/wezterm"
@@ -21,6 +21,7 @@ depends=(
   'libxkbcommon-x11'
   'openssl'
   'ttf-jetbrains-mono'
+  'ttf-nerd-fonts-symbols-mono'
   'ttf-roboto'
   'wayland'
   'xcb-util'
@@ -32,7 +33,6 @@ optdepends=(
   'ncurses: for wezterm terminfo database'
   'noto-fonts-emoji: for default fonts'
   'python-nautilus: WezTerm context menu in Nautilus'
-  'ttf-nerd-fonts-symbols-mono: for default fonts'
 )
 conflicts=(wezterm-shell-integration)
 replaces=(wezterm-shell-integration)
