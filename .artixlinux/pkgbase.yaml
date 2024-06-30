@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-mail-spf
-  version: 2.9.0-11
+  version: 3.20240617-1
   arch:
     - any
   pkgname:
     - perl-mail-spf
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.20240617-1
+    packages:
+      - perl-mail-spf-3.20240617-1-any.pkg.tar.zst
   world:
     version: 2.9.0-11
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
