@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - python-flask-sqlalchemy
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.1.1-2
+    packages:
+      - python-flask-sqlalchemy-3.1.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
