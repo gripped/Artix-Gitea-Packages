@@ -6,11 +6,11 @@
 
 pkgname='docbook-dsssl'
 pkgver=1.79
-pkgrel=9
+pkgrel=10
 pkgdesc="DSSSL Stylesheets for DocBook"
 arch=('any')
 url="http://docbook.sourceforge.net/"
-license=('custom')
+license=("LicenseRef-$pkgname")
 depends=('sgml-common' 'perl')
 install=${pkgname}.install
 source=(https://sourceforge.net/projects/docbook/files/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.bz2
@@ -22,7 +22,7 @@ sha256sums=('2f329e120bee9ef42fbdd74ddd60e05e49786c5a7953a0ff4c680ae6bdf0e2bc'
 
 prepare() {
   cd "${pkgname}-${pkgver}"
-  cp ${srcdir}/docbook-style-dsssl.Makefile Makefile
+  cp "${srcdir}"/docbook-style-dsssl.Makefile Makefile
 }
 
 package(){
