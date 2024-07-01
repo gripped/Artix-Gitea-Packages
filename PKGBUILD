@@ -3,7 +3,7 @@
 pkgname=libreoffice-extension-texmaths
 _extname=texmaths
 pkgver=0.52.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A LaTeX equation editor for LibreOffice'
 arch=(any)
 url='http://roland65.free.fr/texmaths/'
