@@ -1,12 +1,12 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Federico Quagliata (quaqo) <quaqo@despammed.com>
 
 pkgname=cracklib
 pkgver=2.9.11
-pkgrel=1
+pkgrel=2
 pkgdesc="Password Checking Library"
 arch=('x86_64')
-license=('GPL')
+license=('GPL-2.0-or-later')
 url="https://github.com/cracklib/cracklib"
 depends=('glibc' 'zlib')
 source=(https://github.com/cracklib/cracklib/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz)
