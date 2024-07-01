@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libtasn1
-  version: 4.19.0-1
+  version: 4.19.0-2
   arch:
     - x86_64
   pkgname:
     - libtasn1
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 4.19.0-2
+    packages:
+      - libtasn1-4.19.0-2-x86_64.pkg.tar.zst
   system:
     version: 4.19.0-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
