@@ -1,4 +1,6 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Roman Kyrylych <roman@archlinux.org>
@@ -6,11 +8,11 @@
 
 pkgname=libconfig
 pkgver=1.7.3
-pkgrel=2
+pkgrel=3
 pkgdesc="C/C++ Configuration File Library"
 arch=(x86_64)
 url="https://github.com/hyperrealm/libconfig"
-license=(LGPL2.1)
+license=(LGPL-2.1-only)
 depends=(
   gcc-libs
   glibc
