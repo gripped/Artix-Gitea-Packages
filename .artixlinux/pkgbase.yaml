@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-spirv-llvm-translator
-  version: 17.0.0.r6+g70883514-1
+  version: 18.1.1.r1+g3e602b45-1
   arch:
     - x86_64
   pkgname:
@@ -34,9 +34,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: 17.0.0.r6+g70883514-1
+    version: 18.1.1.r1+g3e602b45-1
     packages:
-      - lib32-spirv-llvm-translator-17.0.0.r6+g70883514-1-x86_64.pkg.tar.zst
+      - lib32-spirv-llvm-translator-18.1.1.r1+g3e602b45-1-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
