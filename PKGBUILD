@@ -4,7 +4,7 @@
 
 pkgname=pasystray
 pkgver=0.8.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="PulseAudio system tray (a replacement for padevchooser)"
 url="https://github.com/christophgysin/pasystray"
 arch=('x86_64')
