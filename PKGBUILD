@@ -6,8 +6,8 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=openssh
-pkgver=9.7p1
-pkgrel=2
+pkgver=9.8p1
+pkgrel=1
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=(x86_64)
 url='https://www.openssh.com/portable.html'
@@ -48,14 +48,14 @@ source=(
   $pkgname.tmpfiles
   sshd.pam
 )
-sha256sums=('490426f766d82a2763fcacd8d83ea3d70798750c7bd2aff2e57dc5660f773ffd'
+sha256sums=('dd8bd002a379b5d499dfb050dd1fa9af8029e80461f4bb6c523c49973f5a39f3'
             'SKIP'
-            '78b806c38bc1e246daaa941bfe7880e6eb6f53f093bea5d5868525ae6d223d30'
+            '907a6b8012214218d2bc505fded0fde6cbf7aa863cce630048e1c9b4c9189e48'
             '975904668c3c98fff5dbf840717ae959593fa05e90e215e67bf7ee24369d6369'
             '633e24cbfcb045ba777d3e06d5f85dfaa06d44f4727d38c7fb2187c57498221d')
-b2sums=('520859fcbdf678808fc8515b64585ab9a90a8055fa869df6fbba3083cb7f73ddb81ed9ea981e131520736a8aed838f85ae68ca63406a410df61039913c5cb48b'
+b2sums=('3bf983c4ef5358054ed0104cd51d3e0069fbc2b80d8522d0df644d5508ec1d26a67bf061b1b5698d1cdf0d2cbba16b4cdca12a4ce30da24429094576a075e192'
         'SKIP'
-        '1ff8cd4ae22efed2b4260f1e518de919c4b290be4e0b5edbc8e2225ffe63788678d1961e6f863b85974c4697428ee827bcbabad371cfc91cc8b36eae9402eb97'
+        '3d195606c6ca9d254ccecad974f1e729e338c160861ba52d9e2d0f07b297618f11b93049085df960a4d06106d54d90b9a92521efa5a9a08ea7f52d0512942e68'
         '43bf32158d6b14cf298e5e92a54d93577d6a45b32b3c0fad7a3722e55a53e446fd30df10002bc945c71528904bb397aaadc4f439dd81e5a87263a31b1daa7fc2'
         '1d24cc029eccf71cee54dda84371cf9aa8d805433e751575ab237df654055dd869024b50facd8b73390717e63100c76bca28b493e0c8be9791c76a2e0d60990a')
 validpgpkeys=('7168B983815A5EEF59A4ADFD2A3F414E736060BA')  # Damien Miller <djm@mindrot.org>
