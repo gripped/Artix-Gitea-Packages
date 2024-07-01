@@ -17,10 +17,6 @@ _commit=3e602b4577ed85b4d5a48fd7d7df11c2f9b49d13
 source=(git+${url}.git#commit=$_commit)
 sha256sums=('SKIP')
 
-pkgver() {
-	cd ${_srcname}
-}
-
 build() {
 	export CMAKE_PREFIX_PATH=/usr
 	export CMAKE_INSTALL_LIBDIR=/usr/lib32
