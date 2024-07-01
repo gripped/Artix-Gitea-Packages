@@ -18,33 +18,32 @@ source=(git+${url}.git#commit=$_commit)
 sha256sums=('SKIP')
 
 pkgver() {
-  cd ${_srcname}
-  git describe --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./;s/-/+/'
+	cd ${_srcname}
 }
 
 build() {
-  export CMAKE_PREFIX_PATH=/usr
-  export CMAKE_INSTALL_LIBDIR=/usr/lib32
-  export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
+	export CMAKE_PREFIX_PATH=/usr
+	export CMAKE_INSTALL_LIBDIR=/usr/lib32
+	export PKG_CONFIG=i686-pc-linux-gnu-pkg-config
 
-  cmake -B build -S ${_srcname} \
-    -DBUILD_SHARED_LIBS=ON \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_CXX_FLAGS:STRING=-m32 \
-    -DCMAKE_C_FLAGS:STRING=-m32 \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DCMAKE_SKIP_RPATH=ON \
-    -DLLVM_CONFIG="/usr/bin/llvm-config32" \
-    -DLLVM_INCLUDE_TESTS=OFF \
-    -DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/spirv/ \
-    -DLLVM_LIBDIR_SUFFIX=32 \
-    -Wno-dev
-  make -C build
+	cmake -B build -S ${_srcname} \
+		-DBUILD_SHARED_LIBS=ON \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_CXX_FLAGS:STRING=-m32 \
+		-DCMAKE_C_FLAGS:STRING=-m32 \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+		-DCMAKE_SKIP_RPATH=ON \
+		-DLLVM_CONFIG="/usr/bin/llvm-config32" \
+		-DLLVM_INCLUDE_TESTS=OFF \
+		-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/spirv/ \
+		-DLLVM_LIBDIR_SUFFIX=32 \
+		-Wno-dev
+	make -C build
 }
 
 package() {
-  make -C build DESTDIR="${pkgdir}" install
-  rm -r "${pkgdir}"/usr/{bin,include}
-  install -Dm644 ${_srcname}/LICENSE.TXT -t "${pkgdir}"/usr/share/licenses/${pkgname}/
+	make -C build DESTDIR="${pkgdir}" install
+	rm -r "${pkgdir}"/usr/{bin,include}
+	install -Dm644 ${_srcname}/LICENSE.TXT -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
