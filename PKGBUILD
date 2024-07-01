@@ -7,9 +7,9 @@ pkgname=(
   'postgresql-libs'
   'postgresql-docs'
 )
-pkgver=16.2
+pkgver=16.3
 _majorver=${pkgver%.*}
-pkgrel=4
+pkgrel=1
 pkgdesc='Sophisticated object-relational DBMS'
 url='https://www.postgresql.org/'
 arch=('x86_64')
@@ -51,7 +51,7 @@ source=(
   postgresql.sysusers
   postgresql.tmpfiles
 )
-md5sums=('3d19d93434666db5d33e692472915ae5'
+md5sums=('68448849f923db194a07b9da9cc70a7d'
          '6ce1dab3da98a10f9190e6b3037f93aa'
          '632e22e96d6ace85b76a380487cfbf8c'
          '10123caec61006cbe316de8ab7a497bc'
@@ -59,7 +59,7 @@ md5sums=('3d19d93434666db5d33e692472915ae5'
          '96f82c38f3f540b53f3e5144900acf17'
          'da6a0dda84638d0c3463abf4bc01e621'
          '9138244e0e6b98acc770931a4b150b86')
-sha256sums=('446e88294dbc2c9085ab4b7061a646fa604b4bec03521d5ea671c2e5ad9b2952'
+sha256sums=('331963d5d3dc4caf4216a049fa40b66d6bcb8c730615859411b9518764e60585'
             '4d5a1020626d6cdd8eabbcb54e71d719a8d4cf0228f20173d16a86b374d32acd'
             'e37e54caead0568b3605b14314faa62732b6ef188ee18edf2e73459795125717'
             '94af93b53bf7772e6664c239523ef952ffc905a0de3c2c4b2dfc2fe8f3a2efed'
@@ -67,7 +67,7 @@ sha256sums=('446e88294dbc2c9085ab4b7061a646fa604b4bec03521d5ea671c2e5ad9b2952'
             '57dfd072fd7ef0018c6b0a798367aac1abb5979060ff3f9df22d1048bb71c0d5'
             '3cfe36dd202af56b3ef8e6d6a746b24e6f46f0d9e0d3fa125dbfb5e598170afb'
             'ea771830c15b24c8725ded92e6a9ba9848b13f722357c5f5857dfeb21985d54c')
-b2sums=('b863d7b7a1721df237c33a45aed788be9397a432a445f2267619496f1c0210196ff0904c44dbf07ea11f814921c643a6b9182b8a4c992f13578c4fe00868d491'
+b2sums=('3390c781631645e9f51f31885d20cfeabf64992af9d56addaf847233e0c652aac8751dcf3a7c041962972de084722aee6070437c0517f729b200baf9e4bda2a3'
         '283b5a025a3a5ed500317b7a0b8fa9af66816bc7c6a59a90d826e4e8420f9631d41b7219617d63e2c20e58e553bfe715d3b6d31dd3ed3ec07233a7f178dba368'
         '920d9601b0573e086045ecf699122afa81f02f1e88490268ccf5ab880ba4e36990b9093628db8520cf23433ae813d2ad81e692b03600f58bbc0b73a3d3e1a70b'
         '682bfab1189221d82f6cce9bcb8c40c6d37ecacbcaf0568bbaa2706503b1f102e5476d0d110dcc6240ab62c5e7c2c20a5d9af8edd4038d212327f8866b1cf15a'
@@ -82,6 +82,9 @@ prepare() {
   cd postgresql-${pkgver}
   patch -p1 < ../0001-Set-DEFAULT_PGSOCKET_DIR-to-run-postgresql.patch
   patch -p1 < ../0002-Force-RPATH-to-be-used-for-the-PL-Perl-plugin.patch
+
+  # Adjust test/regress/expected/xml.out for libxml2 2.13 (bit of a HACK!)
+  patch src/test/regress/expected/xml.out <../libxml2-2.13-test-output.patch
 }
 
 build() {
