@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: cups-pdf
-  version: 3.0.1-7
+  version: 3.0.1-8
   arch:
     - x86_64
   pkgname:
     - cups-pdf
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.1-7
+    version: 3.0.1-8
     packages:
-      - cups-pdf-3.0.1-7-x86_64.pkg.tar.zst
+      - cups-pdf-3.0.1-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

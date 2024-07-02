@@ -1,16 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr at archlinux.org>
 # Contributor: Thomas Baechler <thomas.baechler@rwth-aachen.de>
 
 pkgname=cups-pdf
 pkgver=3.0.1
-pkgrel=7
+pkgrel=8
 pkgdesc="PDF printer for cups"
 arch=(x86_64)
-depends=('cups' 'ghostscript')
+depends=('cups' 'libcups' 'ghostscript' 'glibc')
 install=cups-pdf.install
 url="https://www.cups-pdf.de/welcome.shtml"
-license=('GPL2')
-options=('debug')
+license=('GPL-2.0-or-later')
 source=(https://www.cups-pdf.de/src/cups-pdf_$pkgver.tar.gz
         remove-deprecated-ghostscript-setpdfwrite-operator.diff)
 backup=(etc/cups/cups-pdf.conf)
