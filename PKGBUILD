@@ -18,9 +18,9 @@ source=('nvidia-drm-outputclass.conf'
 	'nvidia.rules'
 	"https://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/${_pkg}.run")
 sha512sums=('de7116c09f282a27920a1382df84aa86f559e537664bb30689605177ce37dc5067748acf9afd66a3269a6e323461356592fdfc624c86523bf105ff8fe47d3770'
-            '4b3ad73f5076ba90fe0b3a2e712ac9cde76f469cd8070280f960c3ce7dc502d1927f525ae18d008075c8f08ea432f7be0a6c3a7a6b49c361126dcf42f97ec499'
-            'f8f071f5a46c1a5ce5188e104b017808d752e61c0c20de1466feb5d693c0b55a5586314411e78cc2ab9c0e16e2c67afdd358da94c0c75df1f8233f54c280762c'
-            '7a8c84c15d87d2cf5f6261b12d3d683e0a7a1847d7c5461b3995f78b8dd862272fd11be07018593a8d5ef5d8274040f15b9e6fe92e9212dcd7a97be668852433')
+	'4b3ad73f5076ba90fe0b3a2e712ac9cde76f469cd8070280f960c3ce7dc502d1927f525ae18d008075c8f08ea432f7be0a6c3a7a6b49c361126dcf42f97ec499'
+	'f8f071f5a46c1a5ce5188e104b017808d752e61c0c20de1466feb5d693c0b55a5586314411e78cc2ab9c0e16e2c67afdd358da94c0c75df1f8233f54c280762c'
+	'7a8c84c15d87d2cf5f6261b12d3d683e0a7a1847d7c5461b3995f78b8dd862272fd11be07018593a8d5ef5d8274040f15b9e6fe92e9212dcd7a97be668852433')
 
 create_links() {
 	# create soname links
@@ -226,7 +226,7 @@ package_nvidia-utils() {
 	ln -s nvidia "${pkgdir}/usr/share/doc/nvidia-utils"
 
 	# new power management support
-	install -Dm755 system-sleep/nvidia "${pkgdir}/usr/lib/elogind/system-sleep/nvidia"
+	install -Dm755 systemd/system-sleep/nvidia "${pkgdir}/usr/lib/elogind/system-sleep/nvidia"
 	install -Dm755 nvidia-powerd "${pkgdir}/usr/bin/nvidia-powerd"
 	install -Dm644 nvidia-dbus.conf "${pkgdir}"/usr/share/dbus-1/system.d/nvidia-dbus.conf
 
