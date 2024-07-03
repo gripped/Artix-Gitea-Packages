@@ -1,0 +1,78 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Chocobo1 <chocobo1 AT archlinux DOT net>
+# Contributor: Jacek Szafarkiewicz <szafar at linux dot pl>
+
+pkgname=zlib-ng
+pkgver=2.1.7
+pkgrel=1
+pkgdesc='zlib replacement with optimizations for next generation systems'
+url='https://github.com/zlib-ng/zlib-ng'
+arch=('x86_64')
+license=('custom:zlib')
+depends=(
+  glibc
+)
+makedepends=(
+  cmake
+  ninja
+)
+source=("${url}/archive/refs/tags/$pkgver/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('59e68f67cbb16999842daeb517cdd86fc25b177b4affd335cd72b76ddc2a46d8')
+b2sums=('c92a2ad481e4a10b8ec164f3974a09242118e2c16dbe51553b7f6e5c33886997dc390e73ce26f99bdb5ce0ecae3eb19322059576a83da1c3958435554773878c')
+
+
+build() {
+  cd "${pkgbase}-${pkgver}"
+
+	# WITH_UNALIGNED - unaligned access invokes undefined behaviour,
+	#   see https://github.com/gentoo/gentoo/pull/17167 for more info.
+  local _options=(
+    -G Ninja
+    -DCMAKE_BUILD_TYPE=None
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_INSTALL_LIBDIR=lib
+    -Wno-dev
+    -DWITH_GTEST=OFF
+    -DWITH_UNALIGNED=OFF
+  )
+
+  msg2 "Building zlib-ng"
+  cmake -B build \
+    "${_options[@]}"
+  cmake --build build
+
+  msg2 "Building zlib-ng-compat"
+  cmake -B build-compat \
+    "${_options[@]}" \
+    -DZLIB_COMPAT=ON
+  cmake --build build-compat
+}
+
+check() {
+  cd "${pkgbase}-${pkgver}"
+  msg2 "Checking zlib-ng"
+  ctest --output-on-failure --test-dir build
+  msg2 "Checking zlib-ng-compat"
+  ctest --output-on-failure --test-dir build-compat
+}
+
+package_zlib-ng() {
+  cd "${pkgbase}-${pkgver}"
+  DESTDIR="${pkgdir}" cmake --install build
+  install -Dm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+package_zlib-ng-compat() {
+  pkgdesc+=" (zlib compat)"
+  provides=(zlib)
+  conflicts=(zlib)
+
+  cd "${pkgbase}-${pkgver}"
+  DESTDIR="${pkgdir}" cmake --install build-compat
+  install -Dm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:
