@@ -8,7 +8,7 @@ pkgname=(
   dolphin-emu-tool
 )
 pkgver=5.0.r21582.c8ea116658
-pkgrel=1.1
+pkgrel=2
 epoch=1
 pkgdesc='A Gamecube and Wii emulator'
 arch=(x86_64)
@@ -95,10 +95,6 @@ prepare() {
   git -c protocol.file.allow=always submodule update cmake/sanitizers-cmake
 }
 
-# pkgver() {
-#   cd dolphin-emu
-#   git describe | sed 's/-/.r/; s/-g/./'
-# }
 
 build() {
   cmake -S dolphin-emu -B build -G Ninja \
