@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=slang
 pkgver=2.3.3
-pkgrel=2
+pkgrel=3
 pkgdesc="S-Lang is a powerful interpreted language"
 arch=('x86_64')
 url="https://www.jedsoft.org/slang/"
@@ -12,8 +13,9 @@ license=('GPL')
 depends=('pcre')
 backup=('etc/slsh.rc')
 options=('!makeflags')
-source=(https://www.jedsoft.org/releases/slang/${pkgname}-${pkgver}.tar.bz2)
-sha256sums=('f9145054ae131973c61208ea82486d5dd10e3c5cdad23b7c4a0617743c8f5a18')
+source=(https://www.jedsoft.org/releases/slang/${pkgname}-${pkgver}.tar.bz2{,.asc})
+sha256sums=('f9145054ae131973c61208ea82486d5dd10e3c5cdad23b7c4a0617743c8f5a18'
+            'SKIP')
 validpgpkeys=('64083373E9E1DE997EBBE7784B82D0B82930237D')  # John E. Davis
 
 build() {
@@ -25,7 +27,7 @@ build() {
 check() {
   cd ${pkgname}-${pkgver}
 
-#  [[ $CARCH = "i686" ]] || make check
+  [[ $CARCH = "i686" ]] || make check
 }
 
 package() {
