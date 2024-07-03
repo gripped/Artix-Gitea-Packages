@@ -5,7 +5,7 @@
 
 pkgname=elixir
 pkgver=1.17.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="a functional meta-programming aware language built on top of the Erlang VM"
 url="https://elixir-lang.org"
 license=('Apache-2.0')
