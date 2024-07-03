@@ -7,7 +7,7 @@
 
 pkgname=sxiv
 pkgver=26
-pkgrel=1
+pkgrel=2
 pkgdesc='Simple X Image Viewer'
 arch=('x86_64')
 license=('GPL2')
