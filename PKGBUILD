@@ -5,7 +5,7 @@
 
 pkgname=mosquitto
 pkgver=2.0.18
-pkgrel=1
+pkgrel=2
 pkgdesc="An Open Source MQTT Broker"
 arch=(x86_64)
 url="https://mosquitto.org/"
@@ -25,6 +25,7 @@ makedepends=(
   cmake
   docbook-xsl
   libwebsockets
+ 
   uthash
 )
 checkdepends=(
@@ -91,6 +92,7 @@ package() {
   depends+=(
     c-ares libcares.so
     libwebsockets libwebsockets.so
+   
   )
 
   DESTDIR="$pkgdir" cmake --install build
