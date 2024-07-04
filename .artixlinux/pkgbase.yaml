@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libetonyek
-  version: 0.1.10-3.2
+  version: 0.1.10-4
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.10-3.2
+    version: 0.1.10-4
     packages:
-      - libetonyek-0.1.10-3.2-x86_64.pkg.tar.zst
+      - libetonyek-0.1.10-4-x86_64.pkg.tar.zst
+team: galaxy
