@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=openfire
-pkgver=4.8.1
+pkgver=4.8.2
 pkgrel=1
 pkgdesc="High performance XMPP (Jabber) server."
 arch=('any')
@@ -22,7 +22,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/igniterealtime/Openfire/arc
         'openfire.sh'
         'user.conf'
         'tmpfile.conf')
-sha256sums=('5d0a3010903f997b3193b8aa79df6586a5ad36acc42d41719cbaf5e914b7e2f4'
+sha256sums=('995a69bc0304be0c26f059a930459e662f7e433cad8dd2fc6d141984d92fe320'
             'c850f376d53134ccc8d1035322dea792ba9145a5ab37f1801598c60bc70d0ed1'
             '8bfa51cf8cc88fc69547a8f6e9e3fb242926ca2a100659363e1a6b332f223ba9'
             'c63396991984a067d05e21094a664255d6aed2bf294bddd3885a7da75472b886')
