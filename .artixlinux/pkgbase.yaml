@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - libplacebo
 actions:
-  addRepo: world-goblins
-  removeRepo: null
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,12 +25,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 7.349.0-1
     packages:
       - libplacebo-7.349.0-1-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 6.338.2-7
     packages:
