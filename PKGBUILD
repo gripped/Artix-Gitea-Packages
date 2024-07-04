@@ -10,13 +10,12 @@ pkgbase=qtcreator
 pkgname=(qtcreator
          qtcreator-devel)
 pkgver=13.0.2
-_clangver=18.1.8
-pkgrel=4
+pkgrel=5
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only)
-depends=(clang=$_clangver
+depends=(clang
          clazy
          gcc-libs
          glib2
