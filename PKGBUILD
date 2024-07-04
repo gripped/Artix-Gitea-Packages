@@ -1,14 +1,14 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Alexander Baldeck <alexander@archlinux.org>
 
 pkgname=libxau
 pkgver=1.0.11
-pkgrel=2
+pkgrel=3
 pkgdesc="X11 authorisation library"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
-license=('custom')
+license=('MIT-open-group')
 depends=('glibc' 'xorgproto')
 provides=('libXau.so')
 source=(${url}/releases/individual/lib/libXau-${pkgver}.tar.xz{,.sig})
