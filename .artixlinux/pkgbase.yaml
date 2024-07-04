@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: wasi-libc++
-  version: 17.0.6-1
+  version: 18.1.8-3
   arch:
     - any
   pkgname:
     - wasi-libc++
     - wasi-libc++abi
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 18.1.8-3
+    packages:
+      - wasi-libc++-18.1.8-3-any.pkg.tar.zst
+      - wasi-libc++abi-18.1.8-3-any.pkg.tar.zst
   world:
     version: 17.0.6-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
