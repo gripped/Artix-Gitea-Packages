@@ -4,9 +4,9 @@
 
 _name=FreeRDP
 pkgname=freerdp
-pkgver=3.5.1
+pkgver=3.6.2
 _libver=${pkgver/.*/}
-pkgrel=3
+pkgrel=1
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -70,18 +70,12 @@ provides=(
 )
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
-  0001-Use-webkit2gtk-4.1.patch
 )
-sha512sums=('28082ca5a714362c684f2c551b0ac5823c1708d8e929db93f0ab3911601d3b0d724bbdc06eed517542fb4bd957bb61fcdd00e34c0bda017f0019d52d59cb6b07'
-            '0bfdf8825f586a548eaef309f64fb50ea9e2598592f778aa835bbec1a0600d715b8fb28f5950aaeb5ef981a33d5f9f3f39f4fd1800bdf9e5630d9925a9fbab04')
-b2sums=('7f243593c2da1fb8cef483cd423c3e4d1127cac16ab857eaf7d5c222deaeca6657f32010fd40e90f1b47bd925e493848a3ab6b6b1e9db01a5355d0177c42953a'
-        'bbee3975cdcd0ce421ecd8825d1b6dbdbd1565b612a51e7d9423e79226579587031b5ebe7e5251c88015e9047cd35818bad338a7048acfddac137ffe23197b71')
+sha512sums=('183bd0400b625ad6ced66f59644679b1e68e3662d3a2d6fd79af7b29f2576b9ddd6b63778aef4c2ff522ffc877b2b3a3489bc6b0a1b2618648503a6b3a698d4d')
+b2sums=('85810c05a797119c84c9483f02e46f8cd8f1d720d13deef4c4b55809b65e2e4bac2e3d70f768470b81326d22db5bbb7762d20fda34c5ce923b16a3f435edc36c')
 
 prepare() {
   cd $_name-$pkgver
-
-  # Use the newer WebKit
-  patch -Np1 < ../0001-Use-webkit2gtk-4.1.patch
 }
 
 build() {
