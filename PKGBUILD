@@ -1,19 +1,19 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributorr: Brad Fanella <cesura@archlinux.org>
 # Contributor: Andrey Vihrov <andrey.vihrov at gmail.com>
 
 pkgname=libxpresent
 pkgver=1.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="X Present Extension library"
 arch=('x86_64')
 url="https://gitlab.freedesktop.org/xorg/lib/libxpresent"
-license=('custom')
-depends=('libxfixes' 'libxrandr')
-makedepends=('xorg-util-macros' 'xorgproto')
-options=('debug')
-source=(https://xorg.freedesktop.org/archive/individual/lib/libXpresent-${pkgver}.tar.xz)
-sha512sums=('a4551f49a68f4487eb70dc5b50b7f745fbc8b6842cfa60422afe3834af41c504a37bcfddb4e7e9ee084b250df256034290776c8eb7d8838e392eb626fff55d25')
+license=('MIT')
+depends=('libxfixes' 'libxrandr' 'libxext' 'libx11' 'glibc' 'xorgproto')
+makedepends=('xorg-util-macros')
+source=(https://xorg.freedesktop.org/archive/individual/lib/libXpresent-${pkgver}.tar.xz{,.sig})
+sha512sums=('a4551f49a68f4487eb70dc5b50b7f745fbc8b6842cfa60422afe3834af41c504a37bcfddb4e7e9ee084b250df256034290776c8eb7d8838e392eb626fff55d25'
+            'SKIP')
 validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') #Alan Coopersmith <alan.coopersmith@oracle.com>
 
 build() {
