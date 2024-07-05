@@ -9,7 +9,6 @@ arch=('x86_64')
 url="https://sysstat.github.io/"
 license=('GPL')
 depends=('lm_sensors')
-makedepends=('systemd')
 optdepends=('tk: to use isag'
 	    'gnuplot: to use isag')
 options=('zipman')
