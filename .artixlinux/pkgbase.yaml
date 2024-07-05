@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mesa
-  version: 1:24.1.2-2
+  version: 1:24.1.3-1
   arch:
     - x86_64
   pkgname:
@@ -18,11 +18,11 @@ pkgbase:
     - vulkan-virtio
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -38,19 +38,19 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1:24.1.2-2
+    version: 1:24.1.3-1
     packages:
-      - mesa-1:24.1.2-2-x86_64.pkg.tar.zst
-      - libva-mesa-driver-1:24.1.2-2-x86_64.pkg.tar.zst
-      - mesa-vdpau-1:24.1.2-2-x86_64.pkg.tar.zst
-      - opencl-clover-mesa-1:24.1.2-2-x86_64.pkg.tar.zst
-      - opencl-rusticl-mesa-1:24.1.2-2-x86_64.pkg.tar.zst
-      - vulkan-intel-1:24.1.2-2-x86_64.pkg.tar.zst
-      - vulkan-mesa-layers-1:24.1.2-2-x86_64.pkg.tar.zst
-      - vulkan-nouveau-1:24.1.2-2-x86_64.pkg.tar.zst
-      - vulkan-radeon-1:24.1.2-2-x86_64.pkg.tar.zst
-      - vulkan-swrast-1:24.1.2-2-x86_64.pkg.tar.zst
-      - vulkan-virtio-1:24.1.2-2-x86_64.pkg.tar.zst
+      - mesa-1:24.1.3-1-x86_64.pkg.tar.zst
+      - libva-mesa-driver-1:24.1.3-1-x86_64.pkg.tar.zst
+      - mesa-vdpau-1:24.1.3-1-x86_64.pkg.tar.zst
+      - opencl-clover-mesa-1:24.1.3-1-x86_64.pkg.tar.zst
+      - opencl-rusticl-mesa-1:24.1.3-1-x86_64.pkg.tar.zst
+      - vulkan-intel-1:24.1.3-1-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:24.1.3-1-x86_64.pkg.tar.zst
+      - vulkan-nouveau-1:24.1.3-1-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:24.1.3-1-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:24.1.3-1-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:24.1.3-1-x86_64.pkg.tar.zst
   world:
     version: 1:24.1.2-1
     packages:
