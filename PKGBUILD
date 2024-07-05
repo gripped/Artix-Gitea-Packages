@@ -3,7 +3,7 @@
 
 pkgname=sysstat
 pkgver=12.7.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="a collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)"
 arch=('x86_64')
 url="https://sysstat.github.io/"
@@ -43,4 +43,5 @@ package() {
   make DESTDIR="${pkgdir}" install
   chown -R root:root "${pkgdir}"
   rm -rf "${pkgdir}"/etc/rc*
+  rm -rf "${pkgdir}"/usr/lib/systemd
 }
