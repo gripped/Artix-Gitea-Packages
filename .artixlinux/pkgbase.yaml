@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vapoursynth
-  version: R68-1
+  version: R69-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: R68-1
+    version: R69-1
     packages:
-      - vapoursynth-R68-1-x86_64.pkg.tar.zst
+      - vapoursynth-R69-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
