@@ -1,18 +1,23 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
+# Contributor: Dave Reisner <dreisner@archlinux.org>
 # Contributor: Stéphane Gaudreault <stephane@archlinux.us>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 # Contributor: damir <damir@archlinux.org>
 
 pkgname=time
 pkgver=1.9
-pkgrel=4
+pkgrel=5
 pkgdesc="Utility for monitoring a program's use of system resources"
 arch=('x86_64')
 url='https://www.gnu.org/software/time/'
 license=('GPL')
 depends=('glibc')
-source=(https://ftp.gnu.org/gnu/time/time-$pkgver.tar.gz)
-sha256sums=('fbacf0c81e62429df3e33bda4cee38756604f18e01d977338e23306a3e3b521e')
+source=(https://ftp.gnu.org/gnu/time/time-$pkgver.tar.gz{,.sig})
+sha256sums=('fbacf0c81e62429df3e33bda4cee38756604f18e01d977338e23306a3e3b521e'
+            'SKIP')
 validpgpkeys=('F576AAAC1B0FF849792D8CB129A794FD2272BC86')
 
 build() {
