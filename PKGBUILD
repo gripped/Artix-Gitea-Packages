@@ -1,10 +1,11 @@
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 # Contributor: Isaac Dupree <antispam@idupree.com>
 
 pkgname=sassc
 pkgver=3.6.2
-pkgrel=4
+pkgrel=5
 pkgdesc='C implementation of Sass CSS preprocessor'
 arch=(x86_64)
 url='https://sass-lang.com'
