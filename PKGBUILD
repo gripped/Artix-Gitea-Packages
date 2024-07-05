@@ -1,9 +1,10 @@
+# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Martin Devera <devik@cdi.cz>
 
 pkgname=sysstat
 pkgver=12.7.6
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="a collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)"
 arch=('x86_64')
 url="https://sysstat.github.io/"
@@ -43,5 +44,7 @@ package() {
   make DESTDIR="${pkgdir}" install
   chown -R root:root "${pkgdir}"
   rm -rf "${pkgdir}"/etc/rc*
+
+  # Artix stuff, don't delete ↓
   rm -rf "${pkgdir}"/usr/lib/systemd
 }
