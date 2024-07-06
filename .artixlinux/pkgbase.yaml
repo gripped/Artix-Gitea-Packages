@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xed
-  version: 3.4.5-1
+  version: 3.6.3-1
   arch:
     - x86_64
   pkgname:
     - xed
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,5 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 3.6.3-1
+    packages:
+      - xed-3.6.3-1-x86_64.pkg.tar.zst
+team: world
