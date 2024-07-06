@@ -7,7 +7,7 @@
 # Contributor: Robert Orzanna <orschiro at gmail dot com>
 
 pkgname=timeshift
-pkgver=24.01.1
+pkgver=24.06.2
 pkgrel=1
 pkgdesc="A system restore utility for Linux"
 arch=('x86_64')
@@ -20,7 +20,7 @@ optdepends=('btrfs-progs: For BTRFS support'
             'xorg-xhost: For authorization on Wayland')
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('a4be6ce9e3fadd1cb99284414ecbf2584f90ce9f5e15534fd5a5015bd6c05d9e')
+sha256sums=('0b96144195b23fee25fe1cd2f5391e450be554dd9b3ccc5f842fde3653126739')
 
 build() {
 	artix-meson "${pkgname}-${pkgver}" build
