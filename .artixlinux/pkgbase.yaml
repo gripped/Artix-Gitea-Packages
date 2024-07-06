@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - xreader
 actions:
-  addRepo: null
-  removeRepo: world
+  addRepo: galaxy
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -52,4 +52,4 @@ repos:
     version: 4.2.1-1
     packages:
       - xreader-4.2.1-1-x86_64.pkg.tar.zst
-team: world
+team: galaxy
