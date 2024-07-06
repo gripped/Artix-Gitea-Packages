@@ -1,18 +1,18 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xcb-util-image
 pkgver=0.4.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Utility libraries for XC Binding - Port of Xlib's XImage and XShmImage functions"
 arch=('x86_64')
 url="https://xcb.freedesktop.org"
-license=('custom')
-depends=('libxcb' 'xcb-util')
+license=('X11-distribute-modifications-variant')
+depends=('libxcb' 'xcb-util' 'glibc')
 makedepends=('xorg-util-macros' 'xorgproto')
-options=('debug')
-source=(https://xorg.freedesktop.org/archive/individual/lib/${pkgname}-${pkgver}.tar.xz)
-sha512sums=('9b47ba38b91196d76541b6ccabeaf291d3b91036f15422909cd6a79b3fd1a9786d5b1728e411bc41cfdf3d60a253485f4ef7c65ffa6ae646fa93439ec782746e')
+source=(https://xorg.freedesktop.org/archive/individual/lib/${pkgname}-${pkgver}.tar.xz{,.sig})
+sha512sums=('9b47ba38b91196d76541b6ccabeaf291d3b91036f15422909cd6a79b3fd1a9786d5b1728e411bc41cfdf3d60a253485f4ef7c65ffa6ae646fa93439ec782746e'
+            'SKIP')
 validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # Alan Coopersmith <alan.coopersmith@oracle.com>
 
 build() {
