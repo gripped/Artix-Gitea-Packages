@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: xcb-util-errors
-  version: 1.0.1-1
+  version: 1.0.1-2
   arch:
     - x86_64
   pkgname:
     - xcb-util-errors
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.1-1
+    version: 1.0.1-2
     packages:
-      - xcb-util-errors-1.0.1-1-x86_64.pkg.tar.zst
+      - xcb-util-errors-1.0.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
