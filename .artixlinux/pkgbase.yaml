@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - xed
 actions:
-  addRepo: null
-  removeRepo: world
+  addRepo: galaxy
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -52,4 +52,4 @@ repos:
     version: 3.6.3-1
     packages:
       - xed-3.6.3-1-x86_64.pkg.tar.zst
-team: world
+team: galaxy
