@@ -2,22 +2,22 @@
 # Contributor: Mark Wagie
 
 pkgname=xdg-desktop-portal-xapp
-pkgver=1.0.4
+pkgver=1.0.7
 pkgrel=1
 pkgdesc='A backend implementation for xdg-desktop-portal using GTK and various pieces of Cinnamon/MATE/Xfce4 infrastructure'
 arch=(x86_64)
 url='https://github.com/linuxmint/xdg-desktop-portal-xapp'
 license=(LGPL-2.1)
 depends=(xdg-desktop-portal xapp)
-makedepends=(meson)
+makedepends=(meson glib2-devel)
 provides=(xdg-desktop-portal-impl)
 source=(https://github.com/linuxmint/xdg-desktop-portal-xapp/archive/$pkgver/$pkgname-$pkgver.tar.gz
         xapp-portals.conf)
-sha256sums=('2ff4e541a23d83ee50b206476164c13ea24d6e8ee9ee0f85fead66a11e136b5f'
+sha256sums=('19bd959fa134347dcb9677d459171efcf69cee02d22542f4d2923d8673200f9f'
             '86f7bad3112e2bccfe07eb9345e95ed4716c126de5e9397966c6de30ae056c11')
 
 build() {
-  artix-meson -D systemduserunitdir=/usr/lib/systemd $pkgname-$pkgver build
+  artix-meson $pkgname-$pkgver build
   meson compile -C build
 }
 
@@ -25,7 +25,4 @@ package() {
   meson install -C build --destdir "$pkgdir"
   # fix detection with x-d-p 1.18
   install -Dm644 ${srcdir}/xapp-portals.conf  ${pkgdir}/usr/share/xdg-desktop-portal/xapp-portals.conf
-
-  #remove systemd service
-  rm -r $pkgdir/usr/lib/systemd
 }
