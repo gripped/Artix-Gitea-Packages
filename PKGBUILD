@@ -1,10 +1,10 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Mateusz Herych <heniekk@gmail.com>
 
 pkgname=libgadu
 pkgver=1.12.2
-pkgrel=13
+pkgrel=14
 pkgdesc="Client-side library for the Gadu-Gadu protocol"
 arch=('x86_64')
 url="https://libgadu.net/"
