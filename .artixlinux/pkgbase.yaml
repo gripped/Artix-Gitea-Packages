@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libdaemon
-  version: 0.14-5.1
+  version: 0.14-6
   arch:
     - x86_64
   pkgname:
     - libdaemon
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.14-5.1
+    version: 0.14-6
     packages:
-      - libdaemon-0.14-5.1-x86_64.pkg.tar.zst
+      - libdaemon-0.14-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
