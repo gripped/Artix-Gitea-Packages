@@ -2,7 +2,7 @@
 
 pkgname=seatd
 pkgver=0.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A minimal seat management daemon, and a universal seat management library"
 arch=(x86_64)
 url="https://sr.ht/~kennylevinsen/seatd/"
@@ -15,7 +15,9 @@ makedepends=(
     'scdoc'
     'elogind'
 )
-depends=('libelogind')
+depends=(
+		'libelogind'
+)
 source=(
     "$pkgname-$pkgver.tar.gz::https://git.sr.ht/~kennylevinsen/seatd/archive/$pkgver.tar.gz"
     "sysuser.conf"
