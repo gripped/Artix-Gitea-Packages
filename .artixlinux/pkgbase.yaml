@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: libxslt
-  version: 1.1.41-1
+  version: 1.1.42-1
   arch:
     - x86_64
   pkgname:
     - libxslt
     - libxslt-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.1.42-1
+    packages:
+      - libxslt-1.1.42-1-x86_64.pkg.tar.zst
+      - libxslt-docs-1.1.42-1-x86_64.pkg.tar.zst
   world:
     version: 1.1.41-1
     packages:
