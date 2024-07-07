@@ -62,7 +62,7 @@ build() {
     -DFORCE_LIMITED_API=no \
     -DNO_QT_TOOLS=yes
   PYTHONPATH="$PWD"/build/sources \
-  cmake --build build
+  cmake --build build -j1
 }
 
 package_shiboken6() {
