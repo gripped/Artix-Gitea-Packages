@@ -6,12 +6,12 @@ pkgbase=lib32-p11-kit
 pkgname=(
   lib32-p11-kit
 )
-pkgver=0.25.3
+pkgver=0.25.5
 pkgrel=1
 pkgdesc="Loads and enumerates PKCS#11 modules (32-bit library)"
 url="https://p11-glue.freedesktop.org"
 arch=(x86_64)
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(
   lib32-glibc
   lib32-libffi
@@ -20,6 +20,7 @@ depends=(
 )
 makedepends=(
   meson
+
 )
 checkdepends=(
   lib32-gnutls
@@ -27,12 +28,12 @@ checkdepends=(
 source=(
   https://github.com/p11-glue/p11-kit/releases/download/$pkgver/p11-kit-$pkgver.tar.xz{,.sig}
 )
-b2sums=('5c695c1ef95edf4bbbab001aa634076c433df0bc89cb8104deaec2ce00c6908640e467755b49c6900e5d7d5d81e1a3871f4978a212c6f6ae088386ac0b95289a'
-        'SKIP')
+b2sums=('96d6a9c2807586abafae4da4df89f566672733963997d6a83e00aaf83a7a0c0e2995638f505e98fb87a90c60bde28814f1e8b7d5071bf0af96bb0467105a1ddc'
+  'SKIP')
 validpgpkeys=(
-  C0F67099B808FB063E2C81117BFB1108D92765AF  # Stef Walter <stef@thewalter.net>
-  462225C3B46F34879FC8496CD605848ED7E69871  # Daiki Ueno <ueno@unixuser.org>
-  5D46CB0F763405A7053556F47A75A648B3F9220C  # Zoltan Fridrich <zfridric@redhat.com>
+  C0F67099B808FB063E2C81117BFB1108D92765AF # Stef Walter <stef@thewalter.net>
+  462225C3B46F34879FC8496CD605848ED7E69871 # Daiki Ueno <ueno@unixuser.org>
+  5D46CB0F763405A7053556F47A75A648B3F9220C # Zoltan Fridrich <zfridric@redhat.com>
 )
 
 prepare() {
