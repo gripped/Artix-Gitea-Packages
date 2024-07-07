@@ -1,9 +1,9 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: chn <g897331845@gmail.com>
 
 pkgname=libcuckoo
 pkgver=0.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A high-performance, concurrent hash table"
 arch=('any')
 url='https://github.com/efficient/libcuckoo'
