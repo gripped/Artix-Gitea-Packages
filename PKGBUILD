@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Daniel Bermond <dbermond@archlinux.org>
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
 
 pkgbase=libjxl
 pkgname=('libjxl' 'libjxl-doc')
