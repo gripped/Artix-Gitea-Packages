@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: libreoffice-extension-writer2latex
-  version: 1.6.1-3
+  version: 1.6.1-3.1
   arch:
     - any
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.6.1-3
+    version: 1.6.1-3.1
     packages:
-      - libreoffice-extension-writer2latex-1.6.1-3-any.pkg.tar.zst
+      - libreoffice-extension-writer2latex-1.6.1-3.1-any.pkg.tar.zst

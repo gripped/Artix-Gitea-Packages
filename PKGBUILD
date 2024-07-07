@@ -8,7 +8,7 @@ _exts=(w2lconfig
        writer2latex
        writer2xhtml)
 pkgver=1.6.1
-pkgrel=3
+pkgrel=3.1
 pkgdesc='A java program and collection of LibreOffice extensions for converting to and working with LaTeX in LibreOffice'
 arch=(any)
 url='https://writer2latex.sourceforge.net'
