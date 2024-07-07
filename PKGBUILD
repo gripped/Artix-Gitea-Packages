@@ -17,7 +17,7 @@ sha256sums=('19bd959fa134347dcb9677d459171efcf69cee02d22542f4d2923d8673200f9f'
             '86f7bad3112e2bccfe07eb9345e95ed4716c126de5e9397966c6de30ae056c11')
 
 build() {
-  artix-meson $pkgname-$pkgver build
+  artix-meson -D systemduserunitdir=/usr/lib/systemd $pkgname-$pkgver build
   meson compile -C build
 }
 
