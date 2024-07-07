@@ -2,15 +2,29 @@
 
 pkgname=krb5
 _pkgvermajor=1.21
-pkgver=1.21.2
-pkgrel=2
+pkgver=1.21.3
+pkgrel=1
 pkgdesc='The Kerberos network authentication system'
 url='https://web.mit.edu/kerberos/'
 arch=('x86_64')
 license=('custom')
-depends=('glibc' 'e2fsprogs' 'libldap' 'keyutils' 'libverto-module-base'
-         libkeyutils.so libss.so libcom_err.so libverto.so)
-makedepends=('perl')
+depends=(
+  bash
+  e2fsprogs
+  glibc
+  keyutils
+  libldap
+  libverto-module-base
+  openssl
+  lmdb
+  libcom_err.so
+  libkeyutils.so
+  libss.so
+  libverto.so
+)
+makedepends=(
+  perl
+)
 provides=(
   libgssapi_krb5.so
   libgssrpc.so
@@ -29,7 +43,7 @@ backup=(
 )
 options=('!emptydirs')
 source=(https://web.mit.edu/kerberos/dist/krb5/${_pkgvermajor}/${pkgname}-${pkgver}.tar.gz{,.asc})
-sha512sums=('4e09296b412383d53872661718dbfaa90201e0d85f69db48e57a8d4bd73c95a90c7ec7b6f0f325f6bc967f8d203b256b071c0191facf080aca0e2caec5d0ac49'
+sha512sums=('87bc06607f4d95ff604169cea22180703a42d667af05f66f1569b8bd592670c42820b335e5c279e8b4f066d1e7da20f1948a1e4def7c5d295c170cbfc7f49c71'
             'SKIP')
 validpgpkeys=('2C732B1C0DBEF678AB3AF606A32F17FD0055C305'  # Tom Yu <tlyu@mit.edu>
               'C4493CB739F4A89F9852CBC20CBA08575F8372DF') # Greg Hudson <ghudson@mit.edu>
@@ -56,6 +70,7 @@ build() {
                --without-tcl \
                --enable-dns-for-realm \
                --with-ldap \
+               --with-lmdb \
                --with-system-verto
    make
 }
