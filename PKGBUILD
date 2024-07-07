@@ -1,5 +1,5 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Contributor: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Stefano Facchini <stefano.facchini@gmail.com>
 # Contributor: Jonathan Lestrelin <zanko@daemontux.org>
@@ -7,7 +7,7 @@
 
 pkgname=spice-gtk
 pkgver=0.42
-pkgrel=3
+pkgrel=4
 pkgdesc="GTK+ client library for SPICE"
 arch=('x86_64')
 url="https://www.spice-space.org/"
@@ -23,9 +23,6 @@ depends=(
     'gtk3'
     'json-glib'
     'libcacard'
-    'libgtk-3.so'
-    'libjpeg.so'
-    'libopus.so'
     'libcap-ng'
     'libepoxy'
     'libjpeg-turbo'
@@ -46,6 +43,7 @@ depends=(
 )
 makedepends=(
     'gobject-introspection'
+    'glib2-devel'
     'meson'
     'python-six'
     'python-pyparsing'
@@ -56,7 +54,6 @@ makedepends=(
 provides=("spice-glib=$pkgver" "spice-gtk3=$pkgver")
 replaces=('spice-glib' 'spice-gtk3')
 install=spice-gtk.install
-options=('debug')
 source=("https://www.spice-space.org/download/gtk/$pkgname-$pkgver.tar.xz"{,.sig}
         'remove-gobject-introspection-dep.patch')
 sha256sums=('9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58'
