@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Eric Gillingham <sysrq@sysrq.tk>
 
 pkgname=libdiscid
 pkgver=0.6.4
-pkgrel=2
+pkgrel=3
 pkgdesc="A Library for creating MusicBrainz DiscIDs"
 arch=('x86_64')
 url="https://musicbrainz.org/doc/libdiscid"
