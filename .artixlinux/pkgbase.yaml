@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: musepack
-  version: 1:0.1+r475-5
+  version: 1:0.1+r475-6
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.1+r475-5
+    version: 1:0.1+r475-6
     packages:
-      - musepack-tools-1:0.1+r475-5-x86_64.pkg.tar.zst
-      - libmpcdec-1:0.1+r475-5-x86_64.pkg.tar.zst
+      - musepack-tools-1:0.1+r475-6-x86_64.pkg.tar.zst
+      - libmpcdec-1:0.1+r475-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
