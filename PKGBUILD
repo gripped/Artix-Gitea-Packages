@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Vesa Kaihlavirta <vegai@iki.fi>
 # Contributor: Sebastian Sareyko <public@nooms.de>
 
 pkgname=gnustep-make
 pkgver=2.9.1
-pkgrel=1
+pkgrel=2
 pkgdesc="The GNUstep make package"
 arch=('x86_64') # See FS#29546
 url="http://www.gnustep.org/"
