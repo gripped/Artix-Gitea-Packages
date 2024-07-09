@@ -3,7 +3,7 @@
 
 pkgname=ruby-traces
 pkgver=0.8.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Application instrumentation and tracing'
 arch=(any)
 url='https://github.com/socketry/traces'
