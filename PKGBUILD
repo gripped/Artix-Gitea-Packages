@@ -4,7 +4,7 @@
 pkgname=ruby-protocol-http
 pkgver=0.24.5
 _commit=8dbc6a1ca8c4e812cd226e1d06387940a8950697
-pkgrel=2
+pkgrel=3
 pkgdesc='Provides abstractions to handle HTTP protocols'
 arch=(any)
 url='https://github.com/socketry/protocol-http'
