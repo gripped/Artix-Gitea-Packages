@@ -3,7 +3,7 @@
 
 pkgname=ruby-build-files
 pkgver=1.9.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Abstractions for handling and mapping paths'
 arch=(any)
 url='https://github.com/ioquatix/build-files'
