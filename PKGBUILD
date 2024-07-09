@@ -1,15 +1,24 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-rspec-memory
 pkgver=1.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='RSpec helpers for checking memory allocations'
 arch=(any)
 url='https://github.com/socketry/rspec-memory'
 license=(MIT)
-depends=(ruby-rspec)
-checkdepends=(ruby-covered ruby-bake-modernize ruby-bake-test ruby-bake-test-external)
+depends=(
+  ruby
+  ruby-rspec
+)
+checkdepends=(
+  ruby-bake-modernize
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-bundler
+  ruby-covered
+)
 options=(!emptydirs)
 source=(https://github.com/socketry/rspec-memory/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('f3b25f8fe54692fe2434da2a01ffed3f4331fbc71dc456b2a2ac0496b2a4be9c')
