@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Jonas Witschel <diabonas@archlinux.org>
 pkgname=jose
 pkgver=11
