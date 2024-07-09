@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname=async
 pkgname=ruby-${_gemname}
 pkgver=1.30.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Composable asynchronous I/O'
 url='https://github.com/socketry/async'
 arch=('any')
