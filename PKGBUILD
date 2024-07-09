@@ -1,15 +1,26 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-async-pool
 pkgver=0.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A singleplex and multiplex resource pool for implementing robust clients'
 arch=(any)
 url='https://github.com/socketry/async-pool'
 license=(MIT)
-depends=(ruby-async)
-checkdepends=(ruby-bake-test ruby-bake-test-external ruby-covered ruby-sus ruby-sus-fixtures-async)
+depends=(
+  ruby
+  ruby-async
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-covered
+  ruby-sus
+)
 options=(!emptydirs)
 source=(https://github.com/socketry/async-pool/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('baa44734e7407f30a6c3d7106a62d4982bfa78f12f44afb08f6af73da1bc6f15')
