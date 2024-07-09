@@ -3,7 +3,7 @@
 
 pkgname=ruby-fiber-annotation
 pkgver=0.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A mechanism for annotating fibers'
 arch=(any)
 url='https://github.com/ioquatix/fiber-annotation'
@@ -18,6 +18,7 @@ checkdepends=(
   ruby-bake-modernize
   ruby-bake-test
   ruby-bake-test-external
+  ruby-bundler
   ruby-covered
   ruby-sus
 )
