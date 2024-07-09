@@ -4,7 +4,7 @@
 pkgname=ruby-protocol-http2
 pkgver=0.15.1
 _commit=d915a66bd161b39f30cce55396aba7fa1c6e4c1f
-pkgrel=2
+pkgrel=3
 pkgdesc='A low level implementation of the HTTP/2 protocol'
 arch=(any)
 url='https://github.com/socketry/protocol-http2'
