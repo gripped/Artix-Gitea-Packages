@@ -3,7 +3,7 @@
 
 pkgname=ruby-console
 pkgver=1.23.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Beautiful logging for Ruby'
 arch=(any)
 url='https://github.com/socketry/console'
@@ -21,6 +21,7 @@ checkdepends=(
   ruby-bake-modernize
   ruby-bake-test
   ruby-bake-test-external
+  ruby-bundler
   ruby-covered
   ruby-sus
 )
