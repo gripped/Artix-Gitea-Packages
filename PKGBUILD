@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kopeninghours
-pkgver=24.05.1
+pkgver=24.05.2
 pkgrel=1
 pkgdesc='Library for parsing and evaluating OSM opening hours expressions'
 arch=(x86_64)
@@ -24,7 +24,7 @@ optdepends=('boost-libs: Python bindings'
             'python: Python bindings'
             'qt6-declarative: QML bindings')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('c26be0fe908eef0d7e83fee246dbb785ed7bce74fe112c8c6c2fd8b9736f89a2'
+sha256sums=('648ecd8b22b4f0909674ce3a991f73167e6648b8ae35e689f816d1b0f583518c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
