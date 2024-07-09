@@ -4,7 +4,7 @@
 pkgname=ruby-sus
 pkgver=0.24.2
 _commit=31c281dcf6e83cf05b70d608222a6d91248094ec
-pkgrel=2
+pkgrel=3
 pkgdesc='A fast and scalable test runner'
 arch=(any)
 url='https://github.com/ioquatix/sus'
@@ -20,6 +20,7 @@ checkdepends=(
   ruby-bake-modernize
   ruby-bake-test
   ruby-bake-test-external
+  ruby-bundler
   ruby-covered
 )
 options=(!emptydirs)
