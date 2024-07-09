@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: yt-dlp
-  version: 2024.07.02-1
+  version: 2024.07.07-1
   arch:
     - any
   pkgname:
     - yt-dlp
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2024.07.07-1
+    packages:
+      - yt-dlp-2024.07.07-1-any.pkg.tar.zst
   world:
     version: 2024.07.02-1
     packages:
