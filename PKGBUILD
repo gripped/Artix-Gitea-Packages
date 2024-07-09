@@ -3,7 +3,7 @@
 
 pkgname=ruby-protocol-http1
 pkgver=0.15.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A low level implementation of the HTTP/1 protocol'
 arch=(any)
 url='https://github.com/socketry/protocol-http1'
@@ -16,10 +16,9 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  # ruby-async-io
-  # ruby-bake-modernize
+  ruby-bake-modernize
   ruby-bake-test
-  # ruby-bake-test-external
+  ruby-bake-test-external
   ruby-bundler
   ruby-covered
   ruby-sus
