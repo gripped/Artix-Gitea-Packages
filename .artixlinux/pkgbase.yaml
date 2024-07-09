@@ -52,4 +52,4 @@ repos:
     version: 6.12.0-1
     packages:
       - freecell-solver-6.12.0-1-x86_64.pkg.tar.zst
-team: galaxy
+team: world
