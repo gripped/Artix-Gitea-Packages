@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: ruby-protocol-http2
-  version: 0.15.1-1
+  version: 0.15.1-2
   arch:
     - any
   pkgname:
     - ruby-protocol-http2
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.15.1-2
+    packages:
+      - ruby-protocol-http2-0.15.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
