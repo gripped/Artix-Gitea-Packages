@@ -10,7 +10,7 @@ pkgname=('jre-openjdk-headless' 'jre-openjdk' 'jdk-openjdk' 'openjdk-src' 'openj
 _majorver=22
 _minorver=0
 _securityver=1
-_updatever=0
+_updatever=8
 pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
 # pkgver=${_majorver}.u${_updatever}
 pkgrel=1
@@ -19,7 +19,7 @@ _git_tag=jdk-${_majorver}.${_minorver}.${_securityver}+${_updatever}
 arch=('x86_64')
 url='https://openjdk.java.net/'
 license=('LicenseRef-Java')
-makedepends=('java-environment=22' 'cpio' 'unzip' 'zip' 'libelf' 'libcups' 'libx11'
+makedepends=('java-environment=21' 'cpio' 'unzip' 'zip' 'libelf' 'libcups' 'libx11'
              'libxrender' 'libxtst' 'libxt' 'libxext' 'libxrandr' 'alsa-lib' 'pandoc'
              'graphviz' 'freetype2' 'libjpeg-turbo' 'giflib' 'libpng' 'lcms2'
              'libnet' 'bash' 'harfbuzz' 'gcc-libs' 'glibc')
@@ -30,7 +30,7 @@ source=(https://github.com/openjdk/jdk${_majorver}u/archive/${_git_tag}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
-sha256sums=('538d5493431716f6f774506d96eae9087b574c3946570159db53615029fd6e6a'
+sha256sums=('0cfb7f2799384df43a9832df638f31c9be33a4a8650f8478f35272ee70dd7173'
             '228fb453e6c652baad71abf734430cda08c287cb8df935ad3ad6d2e9346c7fdf'
             'ed9e43756f450ca01647c495070044276ee9fa7810eb90c99d7e2a29c4a61ef2'
             '93697b752739c1f233cf98f3fa3b945fc775de4d40a31dd21afccda7d0c9d01e')
@@ -118,6 +118,7 @@ build() {
     --with-native-debug-symbols=internal \
     --enable-unlimited-crypto \
     --disable-warnings-as-errors \
+    --with-vendor-name="Arch Linux" \
     ${NUM_PROC_OPT}
     #--disable-javac-server
 
@@ -290,7 +291,7 @@ package_jdk-openjdk() {
 
   install -dm 755 "${pkgdir}${_jvmdir}"
 
-  cp -a bin demo include jmods lib release \
+  cp -a bin demo include jmods lib release\
     "${pkgdir}${_jvmdir}"
 
   rm "${pkgdir}${_jvmdir}/lib/src.zip"
