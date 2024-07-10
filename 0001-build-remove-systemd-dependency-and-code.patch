@@ -1,21 +1,21 @@
-From e4ef988503d367fc6dcfc4140485475b2c0571d2 Mon Sep 17 00:00:00 2001
-From: Dudemanguy <dudemanguy@artixlinux.org>
-Date: Fri, 27 Oct 2023 17:31:27 -0500
-Subject: [PATCH 1/1] build: remove systemd dependency and code
+From 01c5baefa4d89cdbcc6af4709522c3ea9da0b118 Mon Sep 17 00:00:00 2001
+From: Dudemanguy <random342@airmail.cc>
+Date: Wed, 10 Jul 2024 11:03:36 -0500
+Subject: [PATCH] build: remove systemd dependency and code
 
 autotools is too painful to bother doing better so just hack it in
 ---
- configure                                     | 34 -------------------
- modules/action-button/gp-lock-screen-applet.c |  5 ++-
- modules/launcher/gp-launcher-applet.c         |  5 ++-
- modules/menu/gp-menu-utils.c                  |  5 ++-
- 4 files changed, 6 insertions(+), 43 deletions(-)
+ configure.ac                                  | 4 ----
+ modules/action-button/gp-lock-screen-applet.c | 5 ++---
+ modules/launcher/gp-launcher-applet.c         | 5 ++---
+ modules/menu/gp-menu-utils.c                  | 5 ++---
+ 4 files changed, 6 insertions(+), 13 deletions(-)
 
-diff --git a/configure b/configure
-index 298b593..3c802ee 100755
---- a/configure
-+++ b/configure
-@@ -18632,7 +18632,6 @@ LIBWNCK_REQUIRED=43.0
+diff --git a/configure.ac b/configure.ac
+index 0b31cdbf0..a5c900468 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -130,7 +130,6 @@ LIBWNCK_REQUIRED=43.0
  LIBGNOME_MENU_REQUIRED=3.7.90
  LIBECAL_REQUIRED=3.33.2
  LIBEDATASERVER_REQUIRED=3.5.3
@@ -23,259 +23,32 @@ index 298b593..3c802ee 100755
  CAIRO_REQUIRED=1.0.0
  GWEATHER_REQUIRED=3.91.0
  DCONF_REQUIRED=0.13.4
-@@ -19049,14 +19048,12 @@ pkg_failed=no
+@@ -168,7 +167,6 @@ PKG_CHECK_MODULES([ACTION_BUTTON], [
    gio-unix-2.0 >= $GLIB_REQUIRED
    gtk+-3.0 >= $GTK_REQUIRED
    libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
 -  libsystemd >= $LIBSYSTEMD_REQUIRED
    x11
- " >&5
- printf %s "checking for
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- ... " >&6; }
+ ])
  
-@@ -19068,14 +19065,12 @@ if test -n "$ACTION_BUTTON_CFLAGS"; then
-   gio-unix-2.0 >= \$GLIB_REQUIRED
-   gtk+-3.0 >= \$GTK_REQUIRED
-   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
--  libsystemd >= \$LIBSYSTEMD_REQUIRED
-   x11
- \""; } >&5
-   ($PKG_CONFIG --exists --print-errors "
+@@ -180,7 +178,6 @@ PKG_CHECK_MODULES([LAUNCHER], [
    gio-unix-2.0 >= $GLIB_REQUIRED
    gtk+-3.0 >= $GTK_REQUIRED
    libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
 -  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- ") 2>&5
-   ac_status=$?
-@@ -19085,7 +19080,6 @@ if test -n "$ACTION_BUTTON_CFLAGS"; then
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- " 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
-@@ -19103,14 +19097,12 @@ if test -n "$ACTION_BUTTON_LIBS"; then
-   gio-unix-2.0 >= \$GLIB_REQUIRED
-   gtk+-3.0 >= \$GTK_REQUIRED
-   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
--  libsystemd >= \$LIBSYSTEMD_REQUIRED
-   x11
- \""; } >&5
-   ($PKG_CONFIG --exists --print-errors "
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- ") 2>&5
-   ac_status=$?
-@@ -19120,7 +19112,6 @@ if test -n "$ACTION_BUTTON_LIBS"; then
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- " 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
-@@ -19147,7 +19138,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- " 2>&1`
-         else
-@@ -19155,7 +19145,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- " 2>&1`
-         fi
-@@ -19166,7 +19155,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
-   x11
- ) were not met:
+ ])
  
-@@ -19301,13 +19289,11 @@ pkg_failed=no
+ PKG_CHECK_MODULES([MENU], [
+@@ -188,7 +185,6 @@ PKG_CHECK_MODULES([MENU], [
    gio-unix-2.0 >= $GLIB_REQUIRED
    gtk+-3.0 >= $GTK_REQUIRED
    libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
 -  libsystemd >= $LIBSYSTEMD_REQUIRED
- " >&5
- printf %s "checking for
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ... " >&6; }
+ ])
  
- if test -n "$LAUNCHER_CFLAGS"; then
-@@ -19318,13 +19304,11 @@ if test -n "$LAUNCHER_CFLAGS"; then
-   gio-unix-2.0 >= \$GLIB_REQUIRED
-   gtk+-3.0 >= \$GTK_REQUIRED
-   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
--  libsystemd >= \$LIBSYSTEMD_REQUIRED
- \""; } >&5
-   ($PKG_CONFIG --exists --print-errors "
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ") 2>&5
-   ac_status=$?
-   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -19333,7 +19317,6 @@ if test -n "$LAUNCHER_CFLAGS"; then
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-@@ -19350,13 +19333,11 @@ if test -n "$LAUNCHER_LIBS"; then
-   gio-unix-2.0 >= \$GLIB_REQUIRED
-   gtk+-3.0 >= \$GTK_REQUIRED
-   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
--  libsystemd >= \$LIBSYSTEMD_REQUIRED
- \""; } >&5
-   ($PKG_CONFIG --exists --print-errors "
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ") 2>&5
-   ac_status=$?
-   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -19365,7 +19346,6 @@ if test -n "$LAUNCHER_LIBS"; then
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-@@ -19391,14 +19371,12 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>&1`
-         else
-                 LAUNCHER_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>&1`
-         fi
-         # Put the nasty error message in config.log where it belongs
-@@ -19408,7 +19386,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ) were not met:
- 
- $LAUNCHER_PKG_ERRORS
-@@ -19449,14 +19426,12 @@ pkg_failed=no
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " >&5
- printf %s "checking for
-   gdm
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ... " >&6; }
- 
- if test -n "$MENU_CFLAGS"; then
-@@ -19468,14 +19443,12 @@ if test -n "$MENU_CFLAGS"; then
-   gio-unix-2.0 >= \$GLIB_REQUIRED
-   gtk+-3.0 >= \$GTK_REQUIRED
-   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
--  libsystemd >= \$LIBSYSTEMD_REQUIRED
- \""; } >&5
-   ($PKG_CONFIG --exists --print-errors "
-   gdm
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ") 2>&5
-   ac_status=$?
-   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -19485,7 +19458,6 @@ if test -n "$MENU_CFLAGS"; then
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-@@ -19503,14 +19475,12 @@ if test -n "$MENU_LIBS"; then
-   gio-unix-2.0 >= \$GLIB_REQUIRED
-   gtk+-3.0 >= \$GTK_REQUIRED
-   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
--  libsystemd >= \$LIBSYSTEMD_REQUIRED
- \""; } >&5
-   ($PKG_CONFIG --exists --print-errors "
-   gdm
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ") 2>&5
-   ac_status=$?
-   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -19520,7 +19490,6 @@ if test -n "$MENU_LIBS"; then
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-@@ -19547,7 +19516,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>&1`
-         else
-                 MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
-@@ -19555,7 +19523,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- " 2>&1`
-         fi
-         # Put the nasty error message in config.log where it belongs
-@@ -19566,7 +19533,6 @@ fi
-   gio-unix-2.0 >= $GLIB_REQUIRED
-   gtk+-3.0 >= $GTK_REQUIRED
-   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
--  libsystemd >= $LIBSYSTEMD_REQUIRED
- ) were not met:
- 
- $MENU_PKG_ERRORS
+ PKG_CHECK_MODULES([NOTIFICATION_AREA], [
 diff --git a/modules/action-button/gp-lock-screen-applet.c b/modules/action-button/gp-lock-screen-applet.c
-index 14ce595..f27c0b2 100644
+index 14ce595c3..350b9491b 100644
 --- a/modules/action-button/gp-lock-screen-applet.c
 +++ b/modules/action-button/gp-lock-screen-applet.c
 @@ -20,7 +20,6 @@
@@ -291,7 +64,7 @@ index 14ce595..f27c0b2 100644
  child_setup (gpointer user_data)
  {
 -  GAppInfo *info;
-+  /*GAppInfo *info;
++/*  GAppInfo *info;
    const gchar *id;
    gint stdout_fd;
    gint stderr_fd;
@@ -305,7 +78,7 @@ index 14ce595..f27c0b2 100644
  
  static void
 diff --git a/modules/launcher/gp-launcher-applet.c b/modules/launcher/gp-launcher-applet.c
-index 4d66239..112939d 100644
+index 4d66239ed..1d8a61002 100644
 --- a/modules/launcher/gp-launcher-applet.c
 +++ b/modules/launcher/gp-launcher-applet.c
 @@ -32,7 +32,6 @@
@@ -321,7 +94,7 @@ index 4d66239..112939d 100644
  child_setup (gpointer user_data)
  {
 -  GAppInfo *info;
-+  /*GAppInfo *info;
++/*  GAppInfo *info;
    const gchar *id;
    gint stdout_fd;
    gint stderr_fd;
@@ -335,7 +108,7 @@ index 4d66239..112939d 100644
  
  static void
 diff --git a/modules/menu/gp-menu-utils.c b/modules/menu/gp-menu-utils.c
-index 273db69..1c4f1e1 100644
+index 273db690b..d33159d47 100644
 --- a/modules/menu/gp-menu-utils.c
 +++ b/modules/menu/gp-menu-utils.c
 @@ -19,7 +19,6 @@
@@ -351,7 +124,7 @@ index 273db69..1c4f1e1 100644
  child_setup (gpointer user_data)
  {
 -  GAppInfo *info;
-+  /*GAppInfo *info;
++/*  GAppInfo *info;
    const gchar *id;
    gint stdout_fd;
    gint stderr_fd;
@@ -365,5 +138,5 @@ index 273db69..1c4f1e1 100644
  
  static void
 -- 
-2.42.0
+2.45.2
 

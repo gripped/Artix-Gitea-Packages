@@ -19,14 +19,12 @@ source=("git+https://gitlab.gnome.org/GNOME/$pkgname.git?signed#tag=$pkgver"
         '0001-build-remove-systemd-dependency-and-code.patch'
         'gnome-panel-60.patch'
         'gnome-panel-64.patch'
-        'gnome-panel-65.patch'
-        'gnome-panel-72.patch')
+        'gnome-panel-65.patch')
 b2sums=('c6dfba78c22870287b35e1ef24fa3b5a19fc5e1c9ce1050c0560bef22ca594c7d76d8b7a98de5df1d9cef931455e0cd5192f940cae331a6ca377cfdb705b5733'
-        'cf1b553abb26a4b96db95874685f7f15c1ab8bbc75f4ea05e94d4c4ecc81f326deb547629ffcc565e02a9bb9f3d0cea1d0cc702a65464d10a9c8d3780b7021ec'
+        '42e08a18e69e2f59b04835d6b64d0bb2dc4cd512e89d773d6c4507e5ebed43c595f270579bc3ba05124d4878863dde7461e489924856757438a1cf7d301ef8f2'
         'aefa0a36a5a9bf7ba08c53c5b8f651df24cb2e3b39c5860aebf2be545d8c733e97465824ae1d2c91cf132d0adf484dd9cbf0d36a867b1a1e570b6b3a3ab08c74'
         'ccf3f767d6072785a7c128e28d4801f17c4a76769a3cc9c47f2a583e4e62e38d3c6c6625bb21722d019396b929ca3d596a272c0c1e16db50d76cb3e85149b59a'
-        '3dc41fe465dade3d63e19ae4fc4045b06d572ea2d3123996b294bcf0eaf31553b4eeaacbcd36265a9692ed5936994802e5a0ab910ab36bb40e4b348d5064605a'
-        'e1cb02ed779df8311014110a129bad401b753a7e188c89f526e6360ea62bb859f1d0b3c27c4707a8ddb848059703cf3d694b11bbbd4aae74a2c25863558d8d64')
+        '3dc41fe465dade3d63e19ae4fc4045b06d572ea2d3123996b294bcf0eaf31553b4eeaacbcd36265a9692ed5936994802e5a0ab910ab36bb40e4b348d5064605a')
 validpgpkeys=('7B44FD78E49334EC10B3B288A3D013EC303E1894') # Alberts Muktupāvels <alberts.muktupavels@gmail.com>
 
 prepare() {
@@ -41,9 +39,6 @@ prepare() {
 
   # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/65
   patch -Np1 -i ../gnome-panel-65.patch
-
-  # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/72
-  patch -Np1 -i ../gnome-panel-72.patch
 
   autoreconf -fi
 }
