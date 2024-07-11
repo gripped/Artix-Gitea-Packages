@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pydantic
-  version: 2.8.2-1
+  version: 2.8.2-2
   arch:
     - any
   pkgname:
     - python-pydantic
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-pydantic-2.7.4-2-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.8.2-2
+    packages:
+      - python-pydantic-2.8.2-2-any.pkg.tar.zst
   world:
     version: 2.8.2-1
     packages:
