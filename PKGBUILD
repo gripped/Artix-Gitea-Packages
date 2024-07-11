@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Florian Pritz< flo@xinu.at>
 # Contributor: Dany Martineau <dany.luc.martineau@gmail.com>
 
 pkgname=qrencode
 pkgver=4.1.1
-pkgrel=2
+pkgrel=3
 pkgdesc="C library for encoding data in a QR Code symbol."
 arch=(x86_64)
 depends=('libpng')
