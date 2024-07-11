@@ -24,8 +24,7 @@ prepare() {
 
 build() {
   cd $pkgname-$pkgver
-  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --sbindir=/usr/bin \
-              --with-session-info=systemd
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --sbindir=/usr/bin
   make
 }
 
