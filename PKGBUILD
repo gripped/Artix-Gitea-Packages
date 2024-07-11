@@ -1,8 +1,10 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=ttf-roboto-mono
 pkgver=3.000
-pkgrel=2
+pkgrel=3
 _commit="4df0b673c9b316ad5e8de8fa70b0768ab66c87d6"  # Latest commit touching the robotomono tree
 pkgdesc="A monospaced addition to the Roboto type family."
 arch=("any")
@@ -40,4 +42,3 @@ package() {
 	install -m644 "$srcdir/"*.ttf "$pkgdir/usr/share/fonts/TTF/"
 	install -D -m644 "$srcdir/LICENSE.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-
