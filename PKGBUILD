@@ -8,8 +8,8 @@ pkgname=(
   glib2-devel
   glib2-docs
 )
-pkgver=2.80.3
-pkgrel=2
+pkgver=2.80.4
+pkgrel=1
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -49,7 +49,7 @@ source=(
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
-b2sums=('3b54c7e41124e26bc50c8d44ee3d960017d72332e3fbedc505221686f60690ac033410e9202d713f40dd95259fa6a6effd292bfacbe26e9f429f94980c0d4865'
+b2sums=('ec233c9dd6836fb362e45092cd8122757e9faaff2ed910818ecc9e88359777a5935a93f6ed26a649437c9014354bad1cc122716462c92335a280d685cf3ffc71'
         'SKIP'
         '94c73ca7070c239494873dd52d6ee09382bbb5b1201f7afd737cfa140b1a2fb0744b2c2831baf3943d1d072550c35888d21ce6f19f89481ff9d1a60d9a0b30e0'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
@@ -60,11 +60,6 @@ validpgpkeys=(
 
 prepare() {
   cd glib
-
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/glib2/-/issues/6
-  # https://gitlab.gnome.org/GNOME/glib/-/merge_requests/4073
-  git cherry-pick -n df2c5d925ac4b8f1708bafa5ac1d35acada05d55 \
-                     7a7137838e79e5a98e6f4eab6898e2a0dc6392cd
 
   # Suppress noise from glib-compile-schemas.hook
   git apply -3 ../0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
