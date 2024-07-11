@@ -3,7 +3,7 @@
 
 pkgname=spice-vdagent
 pkgver=0.22.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Spice agent for Linux guests"
 arch=('x86_64')
 url="https://www.spice-space.org/"
@@ -37,4 +37,6 @@ package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
   rm -r "$pkgdir/var"
+  install -dm755 "$pkgdir/etc/conf.d/"
+  echo 'SPICE_VDAGENTD_EXTRA_ARGS=""' > "$pkgdir/etc/conf.d/spice-vdagentd"
 }
