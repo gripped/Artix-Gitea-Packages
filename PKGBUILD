@@ -3,11 +3,11 @@
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
 
 pkgname=certbot
-pkgver=2.8.0
-pkgrel=2
+pkgver=2.11.0
+pkgrel=1
 pkgdesc='An ACME client'
 arch=('any')
-license=('Apache')
+license=('Apache-2.0')
 url='https://certbot.eff.org'
 depends=(
   'ca-certificates'
@@ -38,20 +38,15 @@ replaces=('letsencrypt')
 # git repository is used because certbot is a huge monorepo and it's easier to
 # share the entire repository across all certbot related packages than a few
 # hundred tarballs.
-_commit='e9225d1cc27345e65df40a624be188cd02976768'
 _repo="github.com-certbot-certbot"
 source=(
-  "$_repo::git+https://github.com/certbot/certbot#commit=$_commit"
+  "$_repo::git+https://github.com/certbot/certbot#tag=v$pkgver"
   'tmpfiles.conf'
 )
-b2sums=('SKIP'
+sha512sums=('92edffc2662902eb2617d473486301ecf2a80c129963e21236a01d4b6450fe4cc02032e4c4afe28c18a47cffc301b33e9f435eaeebc75a05d3ce776898e666d3'
+            'fbb7bb4591876aeb2e118c3f3fc8ff507b6a3127de0f921c689e1d74c70320b4f2b8bf05b488ec4f714259701f1ac54e64a9f6181475da6bd6d1e3da3a602217')
+b2sums=('feed7a8f8ad7f1709a33a1fe4f71111679b1506e48625529821edcd4a183155a4483e4e9376dc5a0f3caeb32f2cb363c0856754baee59f4b7b4f110b6b38ee45'
         '7d2c26a9953d3b5a899053bdd7bd77051c67abe6480af2bfaaee06f20a399b0b4ccccc0af35cfe9e6d2b1fc833dbff928ba46771a9127720073dda29aef9a2e0')
-
-pkgver() {
-  cd "$_repo"
-
-  git describe --tags | sed 's/^v//'
-}
 
 prepare() {
   cd "$_repo/$pkgname"
