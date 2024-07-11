@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: keepassxc
-  version: 2.7.9-1
+  version: 2.7.9-2
   arch:
     - x86_64
   pkgname:
     - keepassxc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.7.9-1
+    version: 2.7.9-2
     packages:
-      - keepassxc-2.7.9-1-x86_64.pkg.tar.zst
+      - keepassxc-2.7.9-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
