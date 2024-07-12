@@ -52,4 +52,4 @@ repos:
     version: 0.1.8-3
     packages:
       - libodfgen-0.1.8-3-x86_64.pkg.tar.zst
-team: world
+team: galaxy
