@@ -1,11 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Alad Wenter <alad@mailbox.org>
+# Contributor: Alad Wenter <alad@mailbox.org>
 # Contributor: carstene1ns <arch carsten-teibes de>
 # Contributor: Sam S. <smls75@gmail.com>
 # Contributor: Daniel Scharrer <daniel@constexpr.org>
 pkgname=innoextract
 pkgver=1.9
-pkgrel=9
+pkgrel=10
 pkgdesc="A tool to extract installers created by Inno Setup"
 url='https://constexpr.org/innoextract/'
 arch=('x86_64')
