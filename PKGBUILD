@@ -1,0 +1,129 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+
+_gemname='puma'
+pkgname="ruby-$_gemname"
+pkgver=6.4.2
+pkgrel=1
+pkgdesc='A Ruby/Rack web server built for concurrency'
+arch=('x86_64')
+url='https://puma.io/'
+license=('BSD-3-CLAUSE')
+options=(!emptydirs)
+depends=(
+  ruby
+  ruby-nio4r
+  ruby-sd_notify
+)
+makedepends=(
+  ruby-bundler
+  ruby-minitest
+  ruby-minitest-proveit
+  ruby-minitest-retry
+  ruby-minitest-stub-const
+  ruby-rack
+  ruby-rackup
+  ruby-rake
+  ruby-rake-compiler
+  ruby-rdoc
+)
+source=(
+  "https://github.com/puma/puma/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
+  "${pkgname}_fix_tests.patch"
+)
+sha512sums=('95f1aa43b019f14160c638ac04bc7648a9f49b5ad418319bcbab90fae7da0e94f122701ce71da864d27c7cc3fe5a2ff5a2ac6b88b8582ea5ce2201d54784af67'
+            '45c327aedbaa9bdaeffcb64b02dc09810d58aee92b6054ba3a06baa01f8c65f5ff57c50917ec1cc93041e79ee54b152486e22a2d7332731012dde8d0b947cb06')
+b2sums=('5d5ee194c2247eb5cf49b81bc2d32c37a52e82eefe94520a952c217663f111ca5dacc54362c522772127882a7c39da8b9ebc6851604cc719db4e170c59559784'
+        '348ba36808641101242923ca8056548465374faa8caabfe2d013a2fd66f55296be657076099b980d30beed2d8c81df04bb122199f4ffe82276e8b9e43c195ce8')
+
+prepare() {
+  cd "${_gemname}-${pkgver}"
+
+  # we built based on a tar archive, not a git repo
+  sed --in-place 's/git ls-files/find/' "${_gemname}.gemspec"
+
+  # update gemspec/Gemfile to allow newer version of the deps
+  sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec" Gemfile
+
+  # disable m. Only required for debugging during development
+  sed --in-place "/'m'/d" Gemfile
+
+  # disable localhost. Only required for self-signed certificates during development
+  sed --in-place "/localhost/d" Gemfile
+
+  # remove some tests and fix others
+  patch --verbose --strip=1 --input="../${pkgname}_fix_tests.patch"
+
+  rm --verbose \
+    test/config/ssl_self_signed_config.rb \
+    test/test_preserve_bundler_env.rb \
+    test/test_puma_localhost_authority.rb \
+    test/test_worker_gem_independence.rb
+}
+
+build() {
+  cd "${_gemname}-${pkgver}"
+
+  export PUMA_NO_RUBOCOP="true"
+
+  rake compile
+  rake build
+}
+
+# tests can be flaky with failures in TestIntegrationCluster#test_hot_restart_does_not_drop_connections_threads [test/helpers/integration.rb:490]
+# if so then just re-run the tests
+# see https://github.com/puma/puma/issues/3114
+check() {
+  cd "${_gemname}-${pkgver}"
+
+  # https://github.com/puma/puma/blob/master/CONTRIBUTING.md#file-limits
+  ulimit -Sn 5000
+
+  export PUMA_NO_RUBOCOP="true"
+
+  rake test:all
+}
+
+package() {
+  cd "${_gemname}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "${pkgdir}/${_gemdir}" \
+    --bindir "${pkgdir}/usr/bin" \
+    "pkg/${_gemname}-${pkgver}.gem"
+
+  # remove unrepreducible files
+  rm --force --recursive --verbose \
+    "${pkgdir}/${_gemdir}/cache/" \
+    "${pkgdir}/${_gemdir}/gems/${_gemname}-${pkgver}/vendor/" \
+    "${pkgdir}/${_gemdir}/doc/${_gemname}-${pkgver}/ri/ext/"
+
+  find "${pkgdir}/${_gemdir}/gems/" \
+    -type f \
+    \( \
+      -iname "*.o" -o \
+      -iname "*.c" -o \
+      -iname "*.so" -o \
+      -iname "*.time" -o \
+      -iname "gem.build_complete" -o \
+      -iname "Makefile" \
+    \) \
+    -delete
+
+  find "${pkgdir}/${_gemdir}/extensions/" \
+    -type f \
+    \( \
+      -iname "mkmf.log" -o \
+      -iname "gem_make.out" \
+    \) \
+    -delete
+
+  install -D --mode=644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -D --mode=644 *.md --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
+}
