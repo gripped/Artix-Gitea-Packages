@@ -1,10 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Maintainer: George Rawlinson <george@rawlinson.net.nz>
 # Contributor: Arthur Darcet <arthur.darcet at m4x.org>
 # Contributor: Techlive Zheng <techlivezheng at gmail.com>
 
 pkgname=libiconv
 pkgver=1.17
-pkgrel=1
+pkgrel=2
 pkgdesc='GNU charset conversion library'
 arch=('x86_64')
 url='http://www.gnu.org/software/libiconv/'
