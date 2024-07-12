@@ -3,7 +3,7 @@
 
 pkgname=ruby-covered
 pkgver=0.18.5
-pkgrel=2
+pkgrel=3
 pkgdesc='A modern approach to code coverage'
 arch=(any)
 url='https://github.com/ioquatix/covered'
@@ -18,6 +18,8 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
+  ruby-bundler
+  ruby-bake
   ruby-bake-test
   ruby-minitest
   ruby-rspec
