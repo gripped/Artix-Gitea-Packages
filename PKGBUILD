@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: N30N <archlinux@alunamation.com>
 # Contributor: linkmauve <linkmauve@linkmauve.fr>
@@ -7,7 +7,7 @@
 pkgbase=libkate
 pkgname=(libkate libkate-docs)
 pkgver=0.4.1
-pkgrel=9
+pkgrel=10
 pkgdesc="A karaoke and text codec for embedding in ogg"
 license=(BSD)
 url="https://wiki.xiph.org/OggKate"
