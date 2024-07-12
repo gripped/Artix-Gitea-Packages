@@ -1,11 +1,12 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Maintainer: Santiago Torres <santiago@archlinux.org>
 # Contributor: Alad Wenter <alad@mailbox.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 
 pkgname=cabextract
 pkgver=1.11
-pkgrel=1
+pkgrel=2
 pkgdesc='A program to extract Microsoft cabinet (.CAB) files'
 arch=(x86_64)
 license=(GPL)
