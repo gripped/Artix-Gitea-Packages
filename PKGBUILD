@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Jochen Immendörfer <jochen dot immendoerfer at gmail dot com>
 
@@ -7,7 +7,7 @@
 
 pkgname=alsa-firmware
 pkgver=1.2.4
-pkgrel=3
+pkgrel=4
 pkgdesc="Firmware binaries for loader programs in alsa-tools and hotplug firmware loader"
 arch=(any)
 url="https://alsa-project.org/"
