@@ -22,8 +22,8 @@ pkgname=(
   pipewire-session-manager
   pulse-native-provider
 )
-pkgver=1.2.0
-pkgrel=3
+pkgver=1.2.1
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -75,17 +75,10 @@ checkdepends=(
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
 )
-b2sums=('a8601fcb9fcd1408ccde0de8baca110dbd494800003274ee65b39dd47db6b9a6a88ea0936941c83232440633b3a8ff4aa9c7f239b66a39989cf5bb6099f9805a')
+b2sums=('c956faaa5caeb95ea9c802744c0584f25b251f3f7d5460f938aafe75def298df136824a9aff5ce7ecaad6241db51e88a19f39a89aa9e30e2256bd8cee21dbcbb')
 
 prepare() {
   cd pipewire
-
-  # Recommended by upstream
-  # https://gitlab.freedesktop.org/pipewire/pipewire/-/releases/1.2.0
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/pipewire/-/issues/7
-  git cherry-pick -n b8d07e40d66f12ac28aab710cfeb181bf25bc59a \
-                     e6c0014f94e995e49b72bea7ae56b960416e6b29 \
-                     525360d70ab1698afaaaf20f7e58002b8756353f
 }
 
 build() {
@@ -547,11 +540,13 @@ package_pipewire-x11-bell() {
 
 package_pipewire-session-manager() {
   pkgdesc="Session manager for PipeWire (default provider)"
+  license=(CC0-1.0)
   depends=(wireplumber)
 }
 
 package_pulse-native-provider() {
   pkgdesc="PulseAudio sound server (default provider)"
+  license=(CC0-1.0)
   depends=(pipewire-pulse)
 }
 
