@@ -1,9 +1,9 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer:
 # Contributor: mrdotx <klassiker@gmx.de>
 
 pkgname=libptytty
 pkgver=2.0
-pkgrel=4
+pkgrel=5
 pkgdesc='An offspring of rxvt-unicode that handles pty/tty/utmp/wtmp/lastlog handling in mostly OS-independent ways'
 arch=(x86_64)
 url='http://software.schmorp.de/pkg/libptytty.html'
