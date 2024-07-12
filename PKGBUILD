@@ -3,8 +3,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=consul
-_commit=bf0166d85082f384a94c5c0e6227619e63f3c644
-pkgver=1.19.0
+pkgver=1.19.1
 pkgrel=1
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
@@ -13,14 +12,14 @@ license=('BUSL-1.1')
 depends=('glibc')
 makedepends=('git' 'go' 'gox' 'go-tools')
 makedepends+=('procps-ng' 'zip' 'yarn' 'nodejs-lts-hydrogen' 'npm')  # makedepends for the UI
-source=("git+https://github.com/hashicorp/consul#commit=${_commit}"
+source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
         'consul.default'
         'consul.sysusers'
         'example.json'
         )
 install=consul.install
 backup=('etc/default/consul')
-sha512sums=('299f8f5783e3ca0cbef03c14af408f77065cef35ac5420bc69c53ffc8661b457b8ccb2d5e2bf582233b4a09bbed31cc2e210d1c790435ce469915d6726f6f9af'
+sha512sums=('c81614779e849b4a8a592277efa2ec8e1b2e99b75397bb619cf3ab97a93842064fc5e22eb904e0b8e0f911d051041329090ddd6668a00fdd73ee18c05e0c4c1d'
             'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
             'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348')
@@ -50,7 +49,7 @@ prepare() {
 }
 
 build() {
-  # https://github.com/hashicorp/consul/blob/v1.17.2/.github/workflows/build.yml#L126
+  # https://github.com/hashicorp/consul/blob/v1.19.1/.github/workflows/build.yml#L128
   cd "${srcdir}/${pkgname}/ui/packages/consul-ui"
   make build
   rm -Rf "${srcdir}/${pkgname}/agent/uiserver/dist"
