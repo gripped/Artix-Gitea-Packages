@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: tobias <tobias funnychar archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=exo
 pkgver=4.18.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Application library for the Xfce desktop environment"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/exo/start"
