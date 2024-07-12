@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=libcanberra
 pkgver=0.30+r2+gc0620e4
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc="A small and lightweight implementation of the XDG Sound Theme Specification"
 url="https://0pointer.net/lennart/projects/libcanberra/"
@@ -40,7 +40,7 @@ prepare() {
 
 build() {
   cd libcanberra
-  ./configure --sysconfdir=/etc --prefix=/usr --localstatedir=/var \
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
       --disable-static --with-builtin=dso --enable-null --disable-oss \
       --enable-alsa --enable-pulse \
       --with-systemdsystemunitdir=no --enable-gtk-doc
