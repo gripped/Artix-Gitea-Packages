@@ -1,0 +1,57 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+
+_gemname='thor'
+pkgname="ruby-${_gemname}"
+pkgver=1.3.0
+pkgrel=2
+pkgdesc='Toolkit for building powerful command-line interfaces'
+url='https://github.com/erikhuda/thor'
+arch=('any')
+license=('MIT')
+depends=('ruby')
+makedepends=('ruby-rdoc')
+checkdepends=('ruby-bundler' 'ruby-rake' 'ruby-rspec' 'ruby-webmock')
+options=('!emptydirs')
+source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
+        tests.patch)
+sha512sums=('f561f9d05264cf0d2cd836dfb689539b645fa02a39ea8d10923001bb3d510ad6b4bcbb6551739d453e7d9ac05562bc0f454b581926becbc784c0604c5449c27e'
+            '7e07d2561b3f7ae7400b3c4c1747f7488fa5561484b01a4f5d7297ff10e53d45158a5de5b9a5555044721f69dd600b9127a5f677eee7c6a16b8a3b5cc01f396a')
+
+prepare() {
+  cd "${_gemname}-${pkgver}"
+
+  # remove unused parts from tests and replace git usages
+  patch --verbose --strip=1 --input=../tests.patch
+
+  # update gemspec to allow newer version of the deps
+  sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec"
+}
+
+build() {
+  cd "${_gemname}-${pkgver}"
+
+  gem build "${_gemname}.gemspec"
+}
+
+check() {
+  cd "${_gemname}-${pkgver}"
+
+  rspec spec
+}
+
+package() {
+  cd "${_gemname}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  gem install --ignore-dependencies --no-user-install --install-dir "${pkgdir}${_gemdir}" --bindir "${pkgdir}/usr/bin" ${_gemname}-${pkgver}.gem
+
+  install -D --mode=644 *.md --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
+  install -D --mode=644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  rm "${pkgdir}/${_gemdir}/cache/${_gemname}-${pkgver}.gem"
+}
+
+# vim: ts=2 sw=2 et:
