@@ -1,0 +1,63 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
+
+_gemname='minitest-retry'
+pkgname="ruby-${_gemname}"
+pkgver=0.2.2
+pkgrel=2
+pkgdesc='re-run the test when the test fails'
+arch=('any')
+url='https://github.com/y-yagi/minitest-retry'
+license=('MIT')
+depends=(
+  ruby
+  ruby-minitest
+)
+makedepends=(
+  ruby-rake
+  ruby-bundler
+)
+options=('!emptydirs')
+source=(
+  "${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz"
+  "${pkgname}_fix_tests.patch::${url}/commit/d977b24dc0a0dd1181bc34adbd6a89d167f94b5e.patch"
+)
+sha512sums=('c49620387999894742fb92a399440756eac046f7aa179dbf084e77cc2a43260bff7f5d012c2140062da8785b9592bedf6e6b38692fbd7753dd3d15fc5ca932a1'
+            'e4841bbc0c9423dba4dc2158a586f9bced3dd90d2603e86f6c5691cc884737d3f83c2790bea80fd4fc1a6543b671938215c8b3481dff50197a220ddcd2834e36')
+b2sums=('b1afb2e362d3b77ac2008d3d5905da71f4c43c817ea0630db50105e28fe63e1eb4426befcc669455efbd56ef557f6f46a6a8bbe06858e33af2943469d4300fcd'
+        'f4c568b0d4953b57b97c01d6d6662c82a5d4117154da57d04891db293c4959a33d01ec308b0f047fbd2a5851e3a4315a9e6dde37b2018067b7c047faa8d27451')
+
+prepare() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+
+  patch --verbose --strip=1 --input="../${pkgname}_fix_tests.patch"
+
+  # allow latest dependencies
+  sed --in-place 's|`git ls-files -z`|`find . -print0`|' "${_gemname}.gemspec"
+
+  # drop useless dependency
+  sed --in-place '/bundler/d' Rakefile "${_gemname}.gemspec"
+  sed --in-place '/pry/d' Gemfile test/test_helper.rb
+}
+
+build() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  gem build "${_gemname}.gemspec"
+}
+
+check() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  rake test
+}
+
+package() {
+cd "${srcdir}/${_gemname}-${pkgver}"
+  local _gemdir="$(gem env gemdir)"
+  gem install --verbose --ignore-dependencies --no-user-install --install-dir "${pkgdir}/${_gemdir}" --bindir "${pkgdir}/usr/bin" "${_gemname}-${pkgver}.gem"
+
+  install -Dm 644 LICENSE.txt -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+  install -Dm 644 README.md CHANGELOG.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+  rm -rf "${pkgdir}/${_gemdir}/cache"
+ }
