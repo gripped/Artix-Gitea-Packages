@@ -1,10 +1,10 @@
-# Maintainer: corysanin <corysanin@artixlinux.org>
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=duktape
 pkgver=2.7.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Embeddable Javascript engine'
 url='https://duktape.org/'
 arch=(x86_64)
