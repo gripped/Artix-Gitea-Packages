@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=libgxps
 pkgver=0.3.2
-pkgrel=4
+pkgrel=5
 pkgdesc="XPS Documents library"
 url="https://wiki.gnome.org/Projects/libgxps"
 arch=(x86_64)
