@@ -1,11 +1,12 @@
-# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Jelle van der Waa <jelle@vdwaa.nl>
 # Contributor: James Rayner <james@archlinux.org>
 # Contributor: Ben <ben@benmazer.net>
 
 pkgname=dosbox
 pkgver=0.74.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Emulator with builtin DOS for running DOS Games'
 arch=('x86_64')
 url='http://dosbox.sourceforge.net/'
