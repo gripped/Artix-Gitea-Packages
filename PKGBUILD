@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgbase=libofx
 pkgname=('libofx' 'libofx-doc')
 pkgver=0.10.9
-pkgrel=1
+pkgrel=2
 pkgdesc="API for the OFX banking standard"
 arch=('x86_64')
 url="https://github.com/libofx"
