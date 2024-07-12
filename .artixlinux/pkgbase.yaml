@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: clazy
-  version: 1.11+r302+gf90c263c-1
+  version: 1.12-2
   arch:
     - x86_64
   pkgname:
     - clazy
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.11+r302+gf90c263c-1
+    version: 1.12-2
     packages:
-      - clazy-1.11+r302+gf90c263c-1-x86_64.pkg.tar.zst
+      - clazy-1.12-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
