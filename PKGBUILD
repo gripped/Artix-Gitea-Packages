@@ -1,13 +1,15 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-async-rest
 pkgver=0.12.4
-pkgrel=2
+pkgrel=3
 pkgdesc='A library for RESTful clients (and hopefully servers)'
 arch=(any)
 url='https://github.com/socketry/async-rest'
 license=(MIT)
 depends=(ruby-async-http ruby-protocol-http)
+checkdepends=(ruby-async-rspec ruby-bake ruby-covered ruby-rake ruby-rspec)
 options=(!emptydirs)
 source=(https://github.com/socketry/async-rest/archive/v$pkgver/$pkgname-$pkgver.tar.gz
         https://github.com/felixonmars/async-rest/commit/279bf0bd28c7e9a209c95fc0e1b458bf3a494b36.patch)
@@ -50,6 +52,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd async-rest-$pkgver
+  GEM_HOME="tmp_install/$_gemdir" rspec
 }
 
 package() {
