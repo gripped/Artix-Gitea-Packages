@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 # Contributor: speps <speps at aur dot archlinux dot org>
 
 pkgname=libkeybinder3
 pkgver=0.3.2
-pkgrel=4
+pkgrel=5
 pkgdesc="A library for registering global keyboard shortcuts"
 arch=('x86_64')
 url="https://github.com/engla/keybinder/tree/keybinder-3.0"
