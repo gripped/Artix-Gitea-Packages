@@ -23,7 +23,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.2.0
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -79,6 +79,13 @@ b2sums=('a8601fcb9fcd1408ccde0de8baca110dbd494800003274ee65b39dd47db6b9a6a88ea09
 
 prepare() {
   cd pipewire
+
+  # Recommended by upstream
+  # https://gitlab.freedesktop.org/pipewire/pipewire/-/releases/1.2.0
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/pipewire/-/issues/7
+  git cherry-pick -n b8d07e40d66f12ac28aab710cfeb181bf25bc59a \
+                     e6c0014f94e995e49b72bea7ae56b960416e6b29 \
+                     525360d70ab1698afaaaf20f7e58002b8756353f
 }
 
 build() {
@@ -88,12 +95,13 @@ build() {
     -D jack-devel=true
     -D libjack-path=/usr/lib
     -D man=enabled
+    -D rlimits-install=false
     -D selinux=disabled
     -D session-managers=[]
     -D snap=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
-    -D rlimits-install=false
     -D systemd=disabled
+    -D rlimits-install=false
   )
 
   artix-meson pipewire build "${meson_options[@]}"
