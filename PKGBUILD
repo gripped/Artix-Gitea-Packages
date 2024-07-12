@@ -1,10 +1,11 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 
 pkgname=nlohmann-json
 # upstream doesn't use annotated tags
 _commit=bc889afb4c5bf1c0d8ee29ef35eaaf4c8bef8a5d  # v3.11.2^{}
 pkgver=3.11.2
-pkgrel=2
+pkgrel=3
 # tests are tracked in a separate repo
 # https://github.com/nlohmann/json_test_data
 _test_pkgver=3.1.0
@@ -22,6 +23,7 @@ sha512sums=('SKIP'
 b2sums=('SKIP'
         '809be0728a0b9d007fcc752911bdf6f7e548d6e3ec59871ea2b16d87d8248ca4dd2f681a1d0f82c618463294188ad41d6d965b8bdc39c70fdcf4b939d4121e9c')
 validpgpkeys=('797167AE41C0A6D9232E48457F3CEA63AE251B69') # Niels Lohmann <mail@nlohmann.me>
+
 
 prepare() {
   (
