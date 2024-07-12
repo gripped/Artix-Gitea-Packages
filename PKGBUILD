@@ -1,9 +1,9 @@
-# Maintainer: Dudemanguy <random342@airmail.cc>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Issam E. Maghni <issam.e.maghni at mailbox dot org>
 
 pkgname=bearssl
 pkgver=0.6
-pkgrel=5
+pkgrel=6
 pkgdesc='Implementation of the SSL/TLS protocol (RFC 5246) written in C'
 arch=('x86_64')
 url='https://bearssl.org'
