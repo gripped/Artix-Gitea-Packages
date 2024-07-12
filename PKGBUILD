@@ -1,4 +1,3 @@
-# Maintainer: Torr <torr@artixlinux.org>
 pkgname=ayatana-ido
 pkgver=0.10.2
 pkgrel=1
