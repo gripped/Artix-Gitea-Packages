@@ -1,5 +1,3 @@
-# Maintainer: Torr <torr@artixlinux.org>
-
 pkgname=xorg-xlogo
 pkgver=1.0.6
 pkgrel=1
