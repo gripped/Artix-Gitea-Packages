@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Previous Maintainer: Jean Lucas <jean@4ray.co>
 # Contributor: Vladimir Tsanev <tsachev@gmail.com>
 # Contributor: MoeRT09 <https://aur.archlinux.org/account/MoeRT09>
@@ -6,7 +6,7 @@
 
 pkgname=coturn
 pkgver=4.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Open-source implementation of TURN and STUN server'
 arch=(x86_64)
 url=https://github.com/coturn/coturn
