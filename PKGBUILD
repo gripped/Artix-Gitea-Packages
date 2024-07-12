@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=beep
 pkgver=1.4.12
-pkgrel=1
+pkgrel=2
 pkgdesc='Advanced PC speaker beeping program'
 url='https://github.com/spkr-beep/beep'
 arch=('x86_64')
