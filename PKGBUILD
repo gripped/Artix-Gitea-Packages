@@ -1,16 +1,15 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
 # Contributor: Panagiotis Papadopoulos pano_90 AT gmx DOT net 
 
 pkgname=libbs2b
 pkgver=3.1.0
-pkgrel=8
+pkgrel=9
 pkgdesc="Bauer stereophonic-to-binaural DSP effect library"
 url="http://bs2b.sourceforge.net"
 arch=(x86_64)
 license=(custom:MIT)
 depends=(libsndfile gcc-libs)
-options=(debug)
 source=("https://downloads.sourceforge.net/sourceforge/bs2b/$pkgname-$pkgver.tar.lzma"
         formatsecurity.diff)
 md5sums=('00d32ffa6461dde6a632c846da3e0a13'
