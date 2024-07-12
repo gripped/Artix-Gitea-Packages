@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=alsa-oss
 pkgver=1.1.8
-pkgrel=5
+pkgrel=6
 pkgdesc="OSS compatibility library"
 arch=(x86_64)
 url="https://www.alsa-project.org"
