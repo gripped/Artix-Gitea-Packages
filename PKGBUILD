@@ -1,4 +1,3 @@
-# Maintainer: Torr <torr@artixlinux.org>
 pkgname=libayatana-indicator
 pkgver=0.9.4
 pkgrel=1
