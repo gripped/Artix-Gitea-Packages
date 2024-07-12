@@ -1,4 +1,3 @@
-# Maintainer: Torr <torr@artixlinux.org>
 pkgname=github-cli
 pkgver=2.52.0
 pkgrel=2
