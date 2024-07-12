@@ -10,7 +10,7 @@ pkgname=(
   lib32-pipewire-v4l2
 )
 pkgver=1.2.0
-pkgrel=1.1
+pkgrel=3
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -30,6 +30,13 @@ b2sums=('a8601fcb9fcd1408ccde0de8baca110dbd494800003274ee65b39dd47db6b9a6a88ea09
 
 prepare() {
   cd pipewire
+
+  # Recommended by upstream
+  # https://gitlab.freedesktop.org/pipewire/pipewire/-/releases/1.2.0
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/pipewire/-/issues/7
+  git cherry-pick -n b8d07e40d66f12ac28aab710cfeb181bf25bc59a \
+                     e6c0014f94e995e49b72bea7ae56b960416e6b29 \
+                     525360d70ab1698afaaaf20f7e58002b8756353f
 }
 
 build() {
@@ -62,6 +69,7 @@ build() {
     -D pw-cat=disabled
     -D raop=disabled
     -D readline=disabled
+    -D rlimits-install=false
     -D roc=disabled
     -D sdl2=disabled
     -D selinux=disabled
@@ -70,8 +78,8 @@ build() {
     -D sndfile=disabled
     -D tests=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
-    -D rlimits-install=false
     -D systemd=disabled
+    -D rlimits-install=false
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
