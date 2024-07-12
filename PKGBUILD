@@ -1,4 +1,3 @@
-# Maintainer: Torr <torr[at]artixlinux[dot]org>
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Nicolas Pouillard <nicolas.pouillard@gmail.com>
