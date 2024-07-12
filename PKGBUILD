@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>
 
 pkgname=libtiger
 pkgver=0.3.4
-pkgrel=7
+pkgrel=8
 pkgdesc="A rendering library for Kate streams using Pango and Cairo"
 url="https://code.google.com/archive/p/libtiger/"
 license=('LGPL')
