@@ -1,17 +1,16 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Yue
 
 pkgname=libodfgen
 pkgver=0.1.8
-pkgrel=2
+pkgrel=3
 pkgdesc='Library for generating documents in Open Document Format'
 arch=('x86_64')
 url='https://sourceforge.net/p/libwpd/wiki/libodfgen/'
-license=('MPL')
-depends=('zlib' 'librevenge' 'libxml2')
-makedepends=('boost' 'libwpg' 'libetonyek' 'doxygen')
-options=('debug')
+license=('LGPL-2.1-or-later OR MPL-2.0')
+depends=('zlib' 'librevenge' 'libxml2' 'gcc-libs' 'glibc')
+makedepends=('libwpg' 'libetonyek' 'doxygen')
 source=(https://sourceforge.net/projects/libwpd/files/libodfgen/libodfgen-$pkgver/$pkgname-$pkgver.tar.xz)
 sha1sums=('9b36d313e64c6ce1026485d521fbdeff7f47594c')
 sha256sums=('55200027fd46623b9bdddd38d275e7452d1b0ff8aeddcad6f9ae6dc25f610625')
