@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Juergen Hoetzel <juergen@archlinux.org>
 # Contributor: Paulius Palevicius <paulius@birzai.com>
 
 pkgname=catdoc
 pkgver=0.95
-pkgrel=5
+pkgrel=6
 pkgdesc='A convertor for Microsoft Word, Excel, PowerPoint and RTF Files to text'
 arch=('x86_64')
 url='https://www.wagner.pp.ru/~vitus/software/catdoc/'
