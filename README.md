@@ -1,0 +1,2 @@
+# ruby-minitest-stub-const
+
