@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: colordiff
-  version: 1.0.21-1
+  version: 1.0.21-2
   arch:
     - any
   pkgname:
     - colordiff
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.21-1
+    version: 1.0.21-2
     packages:
-      - colordiff-1.0.21-1-any.pkg.tar.zst
+      - colordiff-1.0.21-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

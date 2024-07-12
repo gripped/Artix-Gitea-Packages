@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=colordiff
 pkgver=1.0.21
-pkgrel=1
+pkgrel=2
 pkgdesc="A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting"
 arch=('any')
 url="https://www.colordiff.org/"
