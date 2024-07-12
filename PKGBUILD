@@ -1,11 +1,12 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Christian Kohlstedde <christian+arch-pkg@kohlsted.de>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Peter Wu <peter@lekensteyn.nl>
 
 pkgname=bcg729
 pkgver=1.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Encoder and decoder of the ITU G.729 Annex A/B speech codec'
 url='https://www.linphone.org/technical-corner/bcg729/overview'
 arch=('x86_64')
