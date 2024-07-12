@@ -1,4 +1,3 @@
-# Maintainer: Torr <torr@artixlinux.org>
 pkgname=go-licenses
 pkgver=1.6.0
 pkgrel=1
