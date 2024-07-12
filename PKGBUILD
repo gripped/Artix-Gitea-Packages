@@ -1,4 +1,3 @@
-# Maintainer: Torr <torr@artixlinux.org>
 pkgname=proxytunnel
 pkgver=1.12.2
 pkgrel=1
