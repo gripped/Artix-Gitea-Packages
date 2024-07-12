@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libdbi
-  version: 0.9.0-5
+  version: 0.9.0-6
   arch:
     - x86_64
   pkgname:
     - libdbi
     - libdbi-docs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.0-5
+    version: 0.9.0-6
     packages:
-      - libdbi-0.9.0-5-x86_64.pkg.tar.zst
-      - libdbi-docs-0.9.0-5-x86_64.pkg.tar.zst
+      - libdbi-0.9.0-6-x86_64.pkg.tar.zst
+      - libdbi-docs-0.9.0-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
