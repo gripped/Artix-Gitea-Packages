@@ -1,15 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=libwpd
 pkgver=0.10.3
-pkgrel=4
+pkgrel=5
 pkgdesc="Library for importing WordPerfect (tm) documents"
 arch=('x86_64')
 url="https://libwpd.sourceforge.net/"
-license=('LGPL')
-depends=('gcc-libs' 'zlib' 'librevenge')
+license=('LGPL-2.1-or-later OR MPL-2.0')
+depends=('gcc-libs' 'librevenge' 'glibc')
 makedepends=('libgsf>=1.14.26' 'doxygen' 'boost')
-options=('!emptydirs' 'debug')
+options=('!emptydirs')
 source=(https://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.xz
         libwpd-gcc11.patch)
 sha1sums=('c1254f05b2318c160d836e5583c221386db50dd2'
