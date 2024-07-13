@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: plank
-  version: 0.11.89-4
+  version: 0.11.89-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.11.89-4
+    version: 0.11.89-5
     packages:
-      - plank-0.11.89-4-x86_64.pkg.tar.zst
+      - plank-0.11.89-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
