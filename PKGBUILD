@@ -1,8 +1,8 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=radeontop
 pkgver=1.4
-pkgrel=2
+pkgrel=3
 pkgdesc="View GPU utilization for total activity percent and individual blocks"
 arch=(x86_64)
 url="https://github.com/clbr/radeontop"
