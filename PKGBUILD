@@ -1,9 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Eric Bélanger <eric@archlinux.org>
+# Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=libwmf
 pkgver=0.2.13
-pkgrel=1
+pkgrel=2
 pkgdesc="A library for reading vector images in Microsoft's native Windows Metafile Format (WMF)"
 arch=('x86_64')
 url="http://wvware.sourceforge.net/libwmf.html"
