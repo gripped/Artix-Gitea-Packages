@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: pegtl
-  version: 3.2.7-1
+  version: 3.2.7-2
   arch:
     - any
   pkgname:
     - pegtl
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.2.7-1
+    version: 3.2.7-2
     packages:
-      - pegtl-3.2.7-1-any.pkg.tar.zst
+      - pegtl-3.2.7-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

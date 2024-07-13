@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=pegtl
 _gitcommit=cf639f7f4ee125f68e1ccfba8d99ebc0de57b9fe
 pkgver=3.2.7
-pkgrel=1
+pkgrel=2
 pkgdesc='Parsing Expression Grammar Template Library'
 url='https://github.com/taocpp/PEGTL'
 arch=('any')
@@ -20,7 +21,7 @@ pkgver() {
 
 build() {
   cd ${pkgname}
-  artix-cmake -B build \
+  cmake -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None \
     -DPEGTL_INSTALL_DOC_DIR=share/doc/${pkgname} \
