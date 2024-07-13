@@ -4,7 +4,7 @@
 
 pkgname=libstatgrab
 pkgver=0.92.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A library that provides cross platform access to statistics about the system on which it's run"
 arch=('x86_64')
 url="https://www.i-scream.org/libstatgrab"
@@ -12,8 +12,10 @@ license=('LGPL' 'GPL')
 depends=('ncurses' 'perl')
 options=('!makeflags')
 changelog=$pkgname.changelog
-source=(https://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/$pkgname/$pkgname-$pkgver.tar.gz)
-sha256sums=('5688aa4a685547d7174a8a373ea9d8ee927e766e3cc302bdee34523c2c5d6c11')
+source=(https://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/$pkgname/$pkgname-$pkgver.tar.gz{,.asc})
+sha256sums=('5688aa4a685547d7174a8a373ea9d8ee927e766e3cc302bdee34523c2c5d6c11'
+            'SKIP')
+validpgpkeys=('4BD95F908A5040E8D26CD6816C226B37FDF38D55') # Tim Bishop <tim@bishnet.net>
 
 build() {
   cd "${srcdir}"/$pkgname-$pkgver
