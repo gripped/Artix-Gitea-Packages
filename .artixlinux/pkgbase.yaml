@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-mesen
-  version: 2903-2
+  version: 2903-3
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2903-2
+    version: 2903-3
     packages:
-      - libretro-mesen-2903-2-x86_64.pkg.tar.zst
+      - libretro-mesen-2903-3-x86_64.pkg.tar.zst
+team: galaxy
