@@ -4,7 +4,7 @@
 
 pkgname=libwhereami
 pkgver=0.5.0
-pkgrel=17
+pkgrel=18
 pkgdesc='Library to report hypervisor information from inside a VM'
 arch=('x86_64')
 url='https://github.com/puppetlabs/libwhereami'
@@ -20,7 +20,6 @@ sha512sums=('e9a0332f4ec0a2e6201cdf6212f2f1ced5a948e94aaa638c8d8a69f7306828b6168
 
 build() {
   cd ${pkgname}-${pkgver}
-  export CXXFLAGS="$CXXFLAGS -I/usr/include/leatherman/vendor"
   cmake \
     -B build \
     -DCMAKE_BUILD_TYPE=None \
