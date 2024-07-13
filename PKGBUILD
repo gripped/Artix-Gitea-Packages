@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Maintainer: Christian Babeux <christian.babeux@0x80.ca>
 # Contributor: Yggdrasil <tetzank at web dot de>
 
 pkgname=liburcu
 pkgver=0.14.0
-pkgrel=1
+pkgrel=2
 pkgdesc="LGPLv2.1 userspace RCU (read-copy-update) library"
 arch=('x86_64')
 url="https://lttng.org/urcu"
