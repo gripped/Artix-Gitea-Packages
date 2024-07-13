@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: aspell-it
-  version: 2.4_20070901-1
+  version: 2.4_20070901-2
   arch:
     - any
   pkgname:
     - aspell-it
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.4_20070901-1
+    version: 2.4_20070901-2
     packages:
-      - aspell-it-2.4_20070901-1-any.pkg.tar.zst
+      - aspell-it-2.4_20070901-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
