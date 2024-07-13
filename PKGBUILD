@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Yangtse <yangtsesu@gmail.com>
 # Contributor: WU Jun <quark at lihdd dot net>
 
@@ -6,7 +6,7 @@ pkgname=libpinyin
 pkgver=2.8.1
 _commit=de5bd732f9a6993938ce8fdcea9ecf7a00319c47
 _modelver=19
-pkgrel=1
+pkgrel=2
 pkgdesc="Library to deal with pinyin"
 arch=('x86_64')
 url="https://github.com/libpinyin/libpinyin"
