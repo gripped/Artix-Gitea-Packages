@@ -1,8 +1,8 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 
 pkgname=libsonic
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple library to speed up or slow down speech"
 arch=('x86_64')
 url="https://github.com/waywardgeek/sonic"
