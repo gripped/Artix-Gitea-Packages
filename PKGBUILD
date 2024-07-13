@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=libsamplerate
 pkgver=0.2.2
-pkgrel=2
+pkgrel=3
 pkgdesc="An audio sample rate conversion library"
 arch=(x86_64)
 url="https://libsndfile.github.io/libsamplerate/"
