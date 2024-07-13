@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Davorin Učakar <davorin.ucakar@gmail.com>
 
 pkgname=libsquish
 pkgver=1.15
-pkgrel=7
+pkgrel=8
 pkgdesc='DXT compression library'
 arch=(x86_64)
 url='https://sourceforge.net/projects/libsquish'
