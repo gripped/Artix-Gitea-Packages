@@ -2,7 +2,7 @@
 
 pkgname=gnome-video-effects
 pkgver=0.6.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Collection of GStreamer effects for GNOME"
 url="https://gitlab.gnome.org/GNOME/gnome-video-effects"
@@ -18,7 +18,6 @@ makedepends=(
   meson
 )
 _commit=e4ae5aa3ee136333c6481469ed1d8869307ef5e4  # tags/0.6.0^0
-groups=(gnome)
 source=("git+$url.git#commit=$_commit")
 b2sums=('SKIP')
 
