@@ -3,7 +3,7 @@
 
 pkgname=gnome-klotski
 pkgver=3.38.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Slide blocks to solve the puzzle"
 url="https://wiki.gnome.org/Apps/Klotski"
 arch=(x86_64)
@@ -25,7 +25,7 @@ prepare() {
 }
 
 build() {
-  arch-meson $pkgname build
+  artix-meson $pkgname build
   meson compile -C build
 }
 
