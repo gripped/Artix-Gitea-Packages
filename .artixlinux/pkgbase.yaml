@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: aws-c-sdkutils
-  version: 0.1.12-1
+  version: 0.1.12-2
   arch:
     - x86_64
   pkgname:
     - aws-c-sdkutils
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.12-1
+    version: 0.1.12-2
     packages:
-      - aws-c-sdkutils-0.1.12-1-x86_64.pkg.tar.zst
+      - aws-c-sdkutils-0.1.12-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
