@@ -2,7 +2,7 @@
 
 pkgname=gnome-user-share
 pkgver=43.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Easy to use user-level file sharing for GNOME"
 url="https://gitlab.gnome.org/GNOME/gnome-user-share"
 arch=(x86_64)
@@ -25,9 +25,9 @@ prepare() {
 
 build() {
   local meson_options=(
+    -D systemduserunitdir=/usr/lib/systemd
     -D httpd=/usr/bin/httpd
     -D modules_path=/usr/lib/httpd/modules
-    -D systemduserunitdir=share/gnome
   )
 
   artix-meson $pkgname build "${meson_options[@]}"
@@ -41,8 +41,7 @@ check() {
 package() {
   meson install -C build --destdir "$pkgdir"
 
-  # remove systemd service
-  rm -r "$pkgdir"/usr/share/gnome
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set sw=2 sts=-1 et:
