@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Laurent Carlier <lordheavym@archlinux.org>
 # Contributor: damir <damir@archlinux.org>
 # Contributor: TheHoff <forums>
 
 pkgname=devil
 pkgver=1.8.0
-pkgrel=8
+pkgrel=9
 pkgdesc="Library for reading several different image formats"
 arch=('x86_64')
 url="https://sourceforge.net/projects/openil/"
