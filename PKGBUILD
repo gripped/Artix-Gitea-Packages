@@ -1,11 +1,11 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=libmikmod
 pkgver=3.3.11.1
-pkgrel=6
+pkgrel=7
 pkgdesc="Module player library supporting many formats, including MOD, S3M, IT and XM"
 url="http://mikmod.sourceforge.net"
 license=(
@@ -24,7 +24,6 @@ makedepends=(
   ninja
 )
 provides=(libmikmod.so)
-options=(debug)
 source=(https://downloads.sourceforge.net/mikmod/libmikmod-$pkgver.tar.gz
         cmake-man.diff)
 md5sums=('f69d7dd06d307e888f466fc27f4f680b'
