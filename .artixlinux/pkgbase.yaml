@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mtr
-  version: 0.95-4
+  version: 0.95-5
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.95-4
+    version: 0.95-5
     packages:
-      - mtr-0.95-4-x86_64.pkg.tar.zst
-      - mtr-gtk-0.95-4-x86_64.pkg.tar.zst
+      - mtr-0.95-5-x86_64.pkg.tar.zst
+      - mtr-gtk-0.95-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
