@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.14.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -17,6 +17,7 @@ arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
   adwaita-icon-theme
+  at-spi2-core
   cairo
   cantarell-fonts
   dconf
@@ -58,7 +59,9 @@ makedepends=(
   docbook-xsl
   gi-docgen
   git
+  glib2-devel
   gobject-introspection
+  libsysprof-capture
   meson
   python-docutils
   python-gobject
@@ -106,6 +109,7 @@ build() {
     -D colord=enabled
     -D documentation=true
     -D man-pages=true
+    -D sysprof=enabled
   )
 
   CFLAGS+=" -DG_DISABLE_CAST_CHECKS"
@@ -148,7 +152,7 @@ package_gtk4() {
     gstreamer
     gtk-update-icon-cache
     vulkan-icd-loader
-    )
+  )
   optdepends=('evince: Default print preview command')
   provides=(libgtk-4.so)
 
@@ -195,7 +199,7 @@ package_gtk4-demos() {
     libepoxy
     librsvg
     pango
-    )
+  )
   mv demo/* "$pkgdir"
 }
 
@@ -214,7 +218,7 @@ package_gtk-update-icon-cache() {
     glibc
     hicolor-icon-theme
     librsvg
-    )
+  )
 
   mv guic/* "$pkgdir"
   ln -s gtk4-update-icon-cache "$pkgdir/usr/bin/gtk-update-icon-cache"
