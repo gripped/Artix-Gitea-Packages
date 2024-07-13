@@ -1,24 +1,23 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: gilbus
 
 pkgname=swayidle
 pkgver=1.8.0
-pkgrel=1
+pkgrel=2
 license=('MIT')
 pkgdesc="Idle management daemon for Wayland"
 makedepends=(
-    'elogind'
     'meson'
     'scdoc'
     'wayland-protocols'
 )
 depends=(
     'wayland'
-    'libelogind'
+    'elogind'
 )
 arch=('x86_64')
 url="https://github.com/swaywm/swayidle"
-options=(debug)
 source=(
     "https://github.com/swaywm/swayidle/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.sig}
 )
