@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: arjan <arjan@archlinux.org>
 # Contributor: Jason Chu <jchu@xentac.net>
 
 pkgname=libshout
 pkgver=2.4.6
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="Library for accessing a shoutcast/icecast server"
 arch=('x86_64')
