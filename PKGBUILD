@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor 03/08/04 <lefungus@altern.org>
 
 pkgname=libmatroska
 pkgver=1.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Matroska library'
 arch=(x86_64)
 url=https://github.com/Matroska-Org/libmatroska
