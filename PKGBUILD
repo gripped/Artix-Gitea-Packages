@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Ashish Shukla <wahjava.ml@gmail.com>
 
 pkgname=libotf
 pkgver=0.9.16
-pkgrel=4
+pkgrel=5
 pkgdesc='OpenType Font library'
 url='https://www.nongnu.org/m17n/'
 license=('LGPL')
