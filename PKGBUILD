@@ -1,12 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Brian Galey <bkgaley at gmail dot com>
 # Contributor: Pietro Zambelli <peter.zamb at gmail dot com>
 
 pkgname=libspatialite
 pkgver=5.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="SQLite extension to support spatial data types and operations"
 arch=(x86_64)
 url="https://www.gaia-gis.it/fossil/libspatialite"
