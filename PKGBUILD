@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Anatol Pomozov
 # Contributor: JSpaces <jspace@unseen.is>
 # Contributor: Triode <triode1@btinternet.com>
 
 pkgname=libsoxr
 pkgver=0.1.3
-pkgrel=3
+pkgrel=4
 pkgdesc='The SoX Resampler library that aims to give fast and high quality results for any constant resampling ratio'
 arch=(x86_64)
 url=https://sourceforge.net/p/soxr/wiki/Home/
