@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer:
 # Contributor: Simo Leone <simo@archlinux.org>
 # Contributor: Eric Johnson <eric@coding-zone.com>
 
 pkgname=aspell-fr
 pkgver=0.50.3
-pkgrel=10
+pkgrel=11
 pkgdesc="French dictionary for aspell"
 arch=('x86_64')
 url="http://aspell.net/"
