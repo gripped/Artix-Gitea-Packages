@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Paul Mattal <paul@mattal.com>
 
 pkgname=help2man
 pkgver=1.49.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Conversion tool to create man files"
 arch=('x86_64')
 url="https://www.gnu.org/software/help2man/"
