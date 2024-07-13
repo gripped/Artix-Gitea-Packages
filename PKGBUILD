@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Fly-away <flyaaway@gmail.com>
 
 pkgname=libomxil-bellagio
 pkgver=0.9.3
-pkgrel=4
+pkgrel=5
 pkgdesc="An opensource implementation of the OpenMAX Integration Layer API"
 arch=('x86_64')
 url="http://omxil.sourceforge.net"
