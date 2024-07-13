@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
@@ -15,7 +15,7 @@ _dcmajor="$(awk -F'.' '{printf "%d.%d", $1, $2}' <<< "${_dcpkgver}")"
 
 pkgname=pigeonhole
 pkgver=0.5.20
-pkgrel=1
+pkgrel=2
 
 pkgdesc='Sieve implementation for Dovecot'
 url='https://pigeonhole.dovecot.org/'
