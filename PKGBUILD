@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Samuel Fernando Mesa <samuelmesa dot linuxmail.org>
 
 pkgname=librttopo
 pkgver=1.1.0
-pkgrel=5
+pkgrel=6
 pkgdesc="RT Topology Library"
 arch=(x86_64)
 url="https://git.osgeo.org/gitea/rttopo/librttopo"
