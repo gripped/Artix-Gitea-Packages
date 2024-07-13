@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Tércio Martins <echo dGVyY2lvd2VuZGVsQGdtYWlsLmNvbQo= | base64 -d>
 # Contributor: Alexey Pavlov <alexpux@gmail.com>
 
 pkgname=pystring
 pkgver=1.1.4
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 pkgdesc="C++ functions matching the interface and behavior of python string methods with std::string"
 url="https://github.com/imageworks/pystring"
