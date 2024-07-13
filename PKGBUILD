@@ -1,10 +1,10 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgbase=libpst
 pkgname=(libpst libpst-docs)
 pkgver=0.6.76
-pkgrel=9
+pkgrel=10
 pkgdesc="Outlook .pst file converter"
 url="https://www.five-ten-sg.com/libpst/"
 arch=(x86_64)

@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libpst
-  version: 0.6.76-9
+  version: 0.6.76-10
   arch:
     - x86_64
   pkgname:
     - libpst
     - libpst-docs
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.6.76-10
+    packages:
+      - libpst-0.6.76-10-x86_64.pkg.tar.zst
+      - libpst-docs-0.6.76-10-x86_64.pkg.tar.zst
   world:
     version: 0.6.76-9
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
