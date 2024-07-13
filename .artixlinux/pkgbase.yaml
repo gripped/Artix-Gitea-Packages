@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: qqwing
-  version: 1.3.4-6
+  version: 1.3.4-7
   arch:
     - x86_64
   pkgname:
     - qqwing
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.4-6
+    version: 1.3.4-7
     packages:
-      - qqwing-1.3.4-6-x86_64.pkg.tar.zst
+      - qqwing-1.3.4-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
