@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Kaiting Chen <kaitocracy@gmail.com>
 # Contributor: Gergely Imreh <imrehgATgmailDOTcom>
 
 pkgname=libx86emu
 pkgver=3.5
-pkgrel=3
+pkgrel=4
 pkgdesc='x86 emulation library'
 arch=(x86_64)
 url='https://github.com/wfeldt/libx86emu'
