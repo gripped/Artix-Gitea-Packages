@@ -1,9 +1,10 @@
-# Maintainer: Kyle Keen <keenerd@gmail.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Kyle Keen <keenerd@gmail.com>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=macchanger
 pkgver=1.7.0
-pkgrel=5
+pkgrel=6
 pkgdesc="A small utility to change your NIC's MAC address"
 arch=('x86_64')
 #url="https://ftp.gnu.org/gnu/macchanger"
