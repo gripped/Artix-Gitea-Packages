@@ -4,7 +4,7 @@
 
 pkgname=libldm
 pkgver=0.2.5
-pkgrel=2
+pkgrel=3
 pkgdesc='A tool and library for managing Microsoft Windows Dynamic Disks'
 arch=(x86_64)
 url=https://github.com/mdbooth/libldm
@@ -19,10 +19,10 @@ depends=(
   libreadline.so
   libuuid.so
   zlib
-  udev
 )
 makedepends=(
   git
+  udev
   gtk-doc
 )
 provides=(
@@ -34,7 +34,7 @@ _tag=aa60557dc59b7aeeda5aaf694c71b7649340ab2f
 source=(
   git+https://github.com/mdbooth/libldm.git#tag=${_tag}
 )
-b2sums=('SKIP')
+b2sums=('d4df2a3da69091b360247c1390e7f609a0198737530795c6d339172e93263b0cd583a007503c00ba3241f7509837e252e13b4fbc8e5683a7f552f80f681e04e9')
 
 pkgver() {
   cd libldm
