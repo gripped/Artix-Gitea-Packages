@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-mesen-s
-  version: 916-3
+  version: 916-4
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 916-3
+    version: 916-4
     packages:
-      - libretro-mesen-s-916-3-x86_64.pkg.tar.zst
+      - libretro-mesen-s-916-4-x86_64.pkg.tar.zst
+team: galaxy
