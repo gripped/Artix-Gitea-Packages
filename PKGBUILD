@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer:
 # Contributor: Simo Leone <simo@archlinux.org>
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 
 pkgname=aspell-nl
 pkgver=0.50.2
-pkgrel=7
+pkgrel=8
 pkgdesc="Dutch dictionary for aspell"
 arch=('any')
 url="https://aspell.net/"
