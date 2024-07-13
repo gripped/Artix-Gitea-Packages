@@ -3,7 +3,7 @@
 
 pkgname=libmicrodns
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Minimal mDNS resolver library'
 url='https://github.com/videolabs/libmicrodns'
 arch=('x86_64')
@@ -17,7 +17,7 @@ b2sums=('d58cd4e91334187b4ffe54063586d24f02d705f183e41c5edd3220c7cae137294fa3728
 
 build() {
   cd ${pkgname}-${pkgver}
-  arch-meson build
+  artix-meson build
   ninja -C build
 }
 
