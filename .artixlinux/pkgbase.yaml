@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libmpack
-  version: 1.0.5-3
+  version: 1.0.5-4
   arch:
     - x86_64
   pkgname:
     - libmpack
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.0.5-4
+    packages:
+      - libmpack-1.0.5-4-x86_64.pkg.tar.zst
   world:
     version: 1.0.5-3
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
