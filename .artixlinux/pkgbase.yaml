@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mate-themes
-  version: 3.22.24-1
+  version: 3.22.24-2
   arch:
     - any
   pkgname:
     - mate-themes
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.22.24-1
+    version: 3.22.24-2
     packages:
-      - mate-themes-3.22.24-1-any.pkg.tar.zst
+      - mate-themes-3.22.24-2-any.pkg.tar.zst
+team: galaxy
