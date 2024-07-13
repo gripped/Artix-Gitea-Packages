@@ -4,7 +4,7 @@
 
 pkgname=gnome-nettool
 pkgver=42.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Graphical interface for various networking tools"
 url="https://gitlab.gnome.org/GNOME/gnome-nettool"
 arch=(x86_64)
@@ -28,7 +28,6 @@ optdepends=(
   'net-tools: Network statistics'
   'nmap: Port scanning'
 )
-options=(debug)
 _commit=5748c0fa632c9caad9e46377ca1aa330dec4b757  # tags/gnome-nettool-42-0^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-nettool.git#commit=$_commit"
