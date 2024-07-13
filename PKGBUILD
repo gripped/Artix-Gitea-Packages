@@ -1,13 +1,20 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=libnma
-pkgname=(libnma-common libnma libnma-gtk4)
+pkgname=(
+  libnma-common
+  libnma
+  libnma-gtk4
+)
 pkgver=1.10.6
-pkgrel=2
+pkgrel=3
 pkgdesc="NetworkManager GUI client library"
 url="https://gitlab.gnome.org/GNOME/libnma"
 arch=(x86_64)
-license=(GPL LGPL)
+license=(
+  GPL-2.0-or-later
+  LGPL-2.1-or-later
+)
 makedepends=(
   dconf
   gcr-4
@@ -22,7 +29,6 @@ makedepends=(
   mobile-broadband-provider-info
   vala
 )
-options=(debug)
 _commit=3e324b69d0d74c8693fb58b9ee66efe0bad6cb34  # tags/1.10.6^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/libnma.git#commit=$_commit"
@@ -94,7 +100,10 @@ package_libnma-common() {
 
 package_libnma() {
   pkgdesc+=" (GTK3)"
-  depends=(libnma-common="$pkgver-$pkgrel" gtk3)
+  depends=(
+    libnma-common="$pkgver-$pkgrel"
+    gtk3
+  )
   provides=(libnma.so)
 
   mv gtk3/* "$pkgdir"
@@ -102,7 +111,10 @@ package_libnma() {
 
 package_libnma-gtk4() {
   pkgdesc+=" (GTK4)"
-  depends=(libnma-common="$pkgver-$pkgrel" gtk4)
+  depends=(
+    libnma-common="$pkgver-$pkgrel"
+    gtk4
+  )
   provides=(libnma-gtk4.so)
 
   mv gtk4/* "$pkgdir"

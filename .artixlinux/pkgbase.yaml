@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: libnma-common
-  version: 1.10.6-2
+  name: libnma
+  version: 1.10.6-3
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libnma
     - libnma-gtk4
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.10.6-3
+    packages:
+      - libnma-common-1.10.6-3-x86_64.pkg.tar.zst
+      - libnma-1.10.6-3-x86_64.pkg.tar.zst
+      - libnma-gtk4-1.10.6-3-x86_64.pkg.tar.zst
   world:
     version: 1.10.6-2
     packages:
@@ -56,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
