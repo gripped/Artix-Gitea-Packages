@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Johannes Weiner <hannes@saeurebad.de>
 
 pkgname=libsigsegv
 pkgver=2.14
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 pkgdesc="Page fault detection library"
 url="https://www.gnu.org/software/libsigsegv/"
