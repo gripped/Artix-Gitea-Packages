@@ -3,7 +3,7 @@
 
 pkgname=gcab
 pkgver=1.6
-pkgrel=1
+pkgrel=2
 pkgdesc="A GObject library to create cabinet files"
 url="https://wiki.gnome.org/msitools"
 arch=(x86_64)
@@ -11,13 +11,13 @@ license=(LGPL)
 depends=(glib2)
 makedepends=(
   git
+  glib2-devel
   gobject-introspection
   gtk-doc
   meson
   vala
 )
 provides=(libgcab-1.0.so)
-options=(debug)
 _commit=b1a8a5867ccf0209d3e409b12986165c8f7a6fa4  # tags/v1.6^0
 source=("git+https://gitlab.gnome.org/GNOME/gcab.git#commit=$_commit")
 b2sums=('SKIP')
