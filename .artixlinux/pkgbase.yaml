@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libteam
-  version: 1.32-1
+  version: 1.32-2
   arch:
     - x86_64
   pkgname:
     - libteam
     - libteam-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.32-2
+    packages:
+      - libteam-1.32-2-x86_64.pkg.tar.zst
+      - libteam-docs-1.32-2-x86_64.pkg.tar.zst
   world:
     version: 1.32-1
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
