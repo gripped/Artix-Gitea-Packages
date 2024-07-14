@@ -1,8 +1,8 @@
-# Maintainer: Dudemanguy <random342@airmail.cc>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=valabind
 pkgver=1.8.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Tool to parse vala or vapi files to transform them into swig interface files, C++, NodeJS-ffi or GIR'
 url='https://github.com/radare/valabind'
 arch=('x86_64')
