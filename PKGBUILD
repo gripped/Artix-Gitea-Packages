@@ -1,11 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: aurelien <aurelien@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-mpc-plugin
 pkgver=0.5.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Control the Music Player Daemon from the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-mpc-plugin"
