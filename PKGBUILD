@@ -1,10 +1,11 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-eyes-plugin
 pkgver=4.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A rolling eyes (following mouse pointer) plugin for the Xfce panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-eyes-plugin"
