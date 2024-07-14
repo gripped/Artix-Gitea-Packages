@@ -6,7 +6,7 @@
 # Contributer: nightuser <nightuser.android at gmail.com>
 
 pkgname=lxd
-pkgver=5.21.0
+pkgver=6.1
 pkgrel=1
 pkgdesc="Daemon based on liblxc offering a REST API to manage containers"
 arch=('x86_64')
@@ -30,7 +30,7 @@ source=("https://github.com/canonical/lxd/releases/download/${pkgname}-${pkgver}
         "lxd.sysusers")
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67'  # Stéphane Graber <stgraber@stgraber.org>
               'ED1CA1E7A6F80E22E5CB2DA84ACE106615754614') # Thomas Parrott <tomp@tomp.uk>
-sha256sums=('be787ef099b83a583e55d00fa466e82d26c285d9f0b14f38220cb319ee25b60f'
+sha256sums=('ef073f19b5e666f306232d7c086ec1f39bbc14672237f2fd7b65d259caead1b9'
             'SKIP'
             'd0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4')
 
@@ -65,6 +65,7 @@ package() {
   # Package license
   install -v -Dm644 "COPYING"  "${pkgdir}/usr/share/licenses/${pkgname}/LICENCE"
 
+  # udev files
   install -v -Dm644 "${srcdir}/$pkgname.sysusers" "${pkgdir}/usr/lib/sysusers.d/$pkgname.conf"
 
   # logs
