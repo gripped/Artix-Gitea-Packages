@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-timer-plugin
 pkgver=1.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Plugin to track time for the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-timer-plugin"
