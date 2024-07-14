@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Merk Matthias <macem@chello.at>
 
 pkgname=xfce4-sensors-plugin
 pkgver=1.4.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Sensors plugin for the Xfce panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-sensors-plugin"
