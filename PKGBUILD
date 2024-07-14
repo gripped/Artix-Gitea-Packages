@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
 
 pkgname=embree3
 pkgver=3.13.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Collection of high-performance ray tracing kernels"
 arch=('x86_64')
 url="https://embree.github.io/"
