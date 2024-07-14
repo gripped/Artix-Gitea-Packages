@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='faraday-rack'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='About Faraday adapter for Rack'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
@@ -29,8 +30,7 @@ build() {
 
 check() {
   cd "${srcdir}/${_gemname}-${pkgver}"
-  # tests currently don't pass because we don't have net-http-persistent in the repos
-  # rspec
+  rspec
 }
 
 package() {
