@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=rubydns
 pkgname=ruby-${_gemname}
 pkgver=2.0.2
-pkgrel=5
+pkgrel=6
 pkgdesc='High-performance asynchronous DNS server and resolver'
 url='https://github.com/ioquatix/rubydns'
 arch=('any')
