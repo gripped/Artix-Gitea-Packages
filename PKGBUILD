@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='abbrev'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Calculates a set of unique abbreviations for a given set of strings'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
