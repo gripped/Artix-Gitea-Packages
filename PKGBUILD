@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: speps <speps at aur dot archlinux dot org>
 
 pkgname=zita-alsa-pcmi
 pkgver=0.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc="The successor of clalsadrv, provides easy access to ALSA PCM devices."
 arch=(x86_64)
 url="https://kokkinizita.linuxaudio.org/linuxaudio/"
@@ -11,7 +11,6 @@ license=(GPL3)
 depends=(gcc-libs glibc)
 makedepends=(alsa-lib)
 provides=(libzita-alsa-pcmi.so)
-options=(debug)
 source=(
   https://kokkinizita.linuxaudio.org/linuxaudio/downloads/$pkgname-$pkgver.tar.bz2
   $pkgname-0.5.1-apps_makefile.patch
