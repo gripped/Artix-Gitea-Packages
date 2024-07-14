@@ -1,11 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F Rødseth <xyproto@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <barthalion@gmail.com>
 # Contributor: Larry Hajali <larryhaja[at]gmail[dot]com>
 # Contributor: Hubert Grzeskowiak <arch at nemesis13 dot de>
 
 pkgname=tinyxml
 pkgver=2.6.2
-pkgrel=10
+pkgrel=11
 pkgdesc='Simple, small XML parser'
 url='http://grinninglizard.com/tinyxml/'
 arch=(x86_64)
