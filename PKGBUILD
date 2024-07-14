@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-systemload-plugin
 pkgver=1.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="System load plugin for the Xfce panel"
 arch=('x86_64')
 license=('custom')
