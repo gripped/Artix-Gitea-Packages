@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='faraday-httpclient'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Faraday adapter for HTTPClient'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
