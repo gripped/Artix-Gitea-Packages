@@ -1,8 +1,9 @@
-# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 
 pkgname=vifm
 pkgver=0.13
-pkgrel=1
+pkgrel=2
 pkgdesc="A file manager with curses interface, which provides Vi[m]-like environment"
 arch=('x86_64')
 url="https://vifm.info/"
