@@ -1,8 +1,8 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=unifdef
 pkgver=2.12
-pkgrel=3
+pkgrel=4
 pkgdesc="Remove #ifdef'ed lines"
 arch=(x86_64)
 url="https://dotat.at/prog/unifdef/"
