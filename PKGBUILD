@@ -80,6 +80,10 @@ b2sums=('d3e0c207fa2df397a9f2d0c39c68d8fbc719f1962915130e10641bf2ca765e86b05b5d5
 prepare() {
   cd $pkgname
 
+  # elgoind support
+  git cherry-pick -n 46f998d7308cb18832666bc34ee54b1d9c27739f
+  git cherry-pick -n 1a4d50f4ee611bdede6072c0bfd2a1b2e327c5fc
+
   git apply -3 ../0001-subprojects-Update-gvc-to-latest-commit.patch
 
   git submodule init
