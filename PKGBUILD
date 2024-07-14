@@ -3,7 +3,7 @@
 
 pkgname=gnome-settings-daemon
 pkgver=46.0
-pkgrel=1.1
+pkgrel=2
 pkgdesc="GNOME Settings Daemon"
 url="https://gitlab.gnome.org/GNOME/gnome-settings-daemon"
 arch=(x86_64)
@@ -50,14 +50,15 @@ depends=(
   libelogind
   upower
   wayland
+  xorg-xrdb
 )
 makedepends=(
   docbook-xsl
   git
+  glib2-devel
   libxslt
   meson
   python
-  python-packaging
   usbguard
 )
 checkdepends=(
@@ -67,9 +68,8 @@ checkdepends=(
 optdepends=('usbguard: USB protection support')
 groups=(gnome)
 backup=(etc/xdg/Xwayland-session.d/00-xrdb)
-_commit=8ff4196096efba8b2441ee31a63c8bd8cea4b1d8  # tags/46.0^0
 source=(
-  "git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#tag=$pkgver"
   "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git"
   0001-subprojects-Update-gvc-to-latest-commit.patch
 )
@@ -77,22 +77,14 @@ b2sums=('d3e0c207fa2df397a9f2d0c39c68d8fbc719f1962915130e10641bf2ca765e86b05b5d5
         'SKIP'
         '51cfe280b938ae8c74a46432feddbafb598d7e82fec7dfbf657791cb4749a0a205d5e99decb4953272451b03c91fe7c3891df0c4e945c2070615405db3ec897c')
 
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed -r 's/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
-}
-
 prepare() {
   cd $pkgname
-
-  git cherry-pick -n 46f998d7308cb18832666bc34ee54b1d9c27739f
-  git cherry-pick -n 1a4d50f4ee611bdede6072c0bfd2a1b2e327c5fc
 
   git apply -3 ../0001-subprojects-Update-gvc-to-latest-commit.patch
 
   git submodule init
   git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
-  git -c protocol.file.allow=always submodule update
+  git -c protocol.file.allow=always -c protocol.allow=never submodule update
 }
 
 build() {
