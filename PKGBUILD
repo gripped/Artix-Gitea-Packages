@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Tobias Kieslich <tobias funnychar archlinux.org>
 # Contributor: Alois Nespor alois.nespor@gmail.com
 
 pkgname=xfburn
 pkgver=0.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A simple CD/DVD burning tool based on libburnia libraries"
 arch=('x86_64')
 url="https://docs.xfce.org/apps/xfburn/start"
