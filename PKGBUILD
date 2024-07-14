@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='csv'
 pkgname="ruby-${_gemname}"
 pkgver=3.2.5
-pkgrel=4
+pkgrel=5
 pkgdesc='CSV Reading and Writing '
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
