@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='drb'
 pkgname="ruby-${_gemname}"
 pkgver=2.1.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Distributed object system for Ruby'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
