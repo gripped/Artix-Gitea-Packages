@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-netload-plugin
 pkgver=1.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A netload plugin for the Xfce panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-netload-plugin"
