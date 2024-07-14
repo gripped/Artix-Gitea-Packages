@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Abhishek Dasgupta <abhidg@gmail.com>
 
 pkgname=xfce4-time-out-plugin
 pkgver=1.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Take a break from your computer with this plugin for Xfce4"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-time-out-plugin"
