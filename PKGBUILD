@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: aurelien <aurelien@archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-battery-plugin
 pkgver=1.1.5
-pkgrel=1
+pkgrel=2
 pkgdesc="A battery monitor plugin for the Xfce panel"
 arch=('x86_64')
 license=('GPL2')
