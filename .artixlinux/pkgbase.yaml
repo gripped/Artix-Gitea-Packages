@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ruby-faraday-net_http
-  version: 2.0.1-1
+  version: 2.0.1-2
   arch:
     - any
   pkgname:
     - ruby-faraday-net_http
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.1-1
+    version: 2.0.1-2
     packages:
-      - ruby-faraday-net_http-2.0.1-1-any.pkg.tar.zst
+      - ruby-faraday-net_http-2.0.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

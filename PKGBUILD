@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='faraday-net_http'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Faraday adapter for Net::HTTP'
 arch=('any')
 url='https://github.com/lostisland/faraday-net_http'
