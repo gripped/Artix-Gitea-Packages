@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='mutex_m'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Mixin to extend objects to be handled like a Mutex'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
