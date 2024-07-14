@@ -1,9 +1,10 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-diskperf-plugin
 pkgver=2.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Displays instant disk/partition performance in the Xfce4 panel"
 arch=('x86_64')
 license=('BSD')
