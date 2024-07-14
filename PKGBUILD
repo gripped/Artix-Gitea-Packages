@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Ben <ben@benmazer.net>
 
 pkgname=xfce4-fsguard-plugin
 pkgver=1.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc="File system usage monitor plugin for the Xfce4 panel"
 arch=('x86_64')
 license=('GPL2')
