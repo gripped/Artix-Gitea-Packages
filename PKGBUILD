@@ -1,11 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfce4-appfinder
 pkgver=4.18.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Application launcher and finder"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-appfinder/start"
