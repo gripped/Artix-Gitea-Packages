@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Suzy Williams <suzanne.williams3@verizon.net>
 
 pkgname=xfce4-mailwatch-plugin
 pkgver=1.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Multi-protocol, multi-mailbox mail watcher for the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-mailwatch-plugin"
