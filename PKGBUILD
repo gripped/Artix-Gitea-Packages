@@ -1,11 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-verve-plugin
 pkgver=2.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Command line plugin for the Xfce panel"
 arch=('x86_64')
 license=('GPL2')
