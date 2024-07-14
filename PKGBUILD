@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 
 _gemname='bigdecimal'
 pkgname="ruby-${_gemname}"
 pkgver=3.1.2
-pkgrel=4
+pkgrel=5
 pkgdesc='This library provides arbitrary-precision decimal floating-point number class'
 arch=('x86_64')
 url="https://github.com/ruby/bigdecimal"
