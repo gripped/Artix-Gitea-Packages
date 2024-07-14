@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=yasm
 pkgver=1.3.0
-pkgrel=6
+pkgrel=7
 pkgdesc="A rewrite of NASM to allow for multiple syntax supported (NASM, TASM, GAS, etc.)"
 arch=('x86_64')
 url="https://www.tortall.net/projects/yasm/"
