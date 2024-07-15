@@ -1,18 +1,19 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Kyle Keen <keenerd@gmail.com>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Michael Düll <mail@akurei.me>
 # Contributor: pumbur
 
 pkgname=opus-tools
 pkgver=0.2
-pkgrel=5
+pkgrel=6
 pkgdesc='Collection of tools for Opus audio codec'
 arch=('x86_64')
 url='https://wiki.xiph.org/Opus-tools'
 license=('BSD')
 depends=('flac' 'libogg' 'opus' 'opusfile>=0.12' 'libopusenc')
 source=("https://downloads.xiph.org/releases/opus/$pkgname-$pkgver.tar.gz")
-md5sums=('ff2d0536e960cabbfb8ca7c8c1759b6c')
+sha256sums=('b4e56cb00d3e509acfba9a9b627ffd8273b876b4e2408642259f6da28fa0ff86')
 
 build(){
   cd "$pkgname-$pkgver"
