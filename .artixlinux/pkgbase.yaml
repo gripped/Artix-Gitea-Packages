@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: 0ad-data
-  version: a26-1
+  version: a26-2
   arch:
     - any
   pkgname:
     - 0ad-data
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: a26-1
+    version: a26-2
     packages:
-      - 0ad-data-a26-1-any.pkg.tar.zst
+      - 0ad-data-a26-2-any.pkg.tar.zst
+team: galaxy
