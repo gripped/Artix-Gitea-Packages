@@ -4,7 +4,7 @@
 
 pkgname=cmake
 pkgver=3.30.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
@@ -31,9 +31,15 @@ optdepends=(
   'ninja: for ninja generator'
   'qt6-base: cmake-gui'
 )
-source=(git+https://gitlab.kitware.com/cmake/cmake#tag=v$pkgver?signed)
-sha512sums=('04e6afd3c2924f67fb0a40bc590df5621f881c7caf5ea0d8be0a5b3ed7da34c271a4bb0aef4b9cacb11d4dba8cc258cbbc02fe7c0564a81ab8cd6ed62a3c9cd3')
+source=(git+https://gitlab.kitware.com/cmake/cmake#tag=v$pkgver?signed
+        artix-cmake.patch)
+sha512sums=('04e6afd3c2924f67fb0a40bc590df5621f881c7caf5ea0d8be0a5b3ed7da34c271a4bb0aef4b9cacb11d4dba8cc258cbbc02fe7c0564a81ab8cd6ed62a3c9cd3'
+            'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
+
+prepare() {
+  git -C "${pkgname}" apply ../artix-cmake.patch
+}
 
 build() {
   cd ${pkgname}
