@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: ttf-jetbrains-mono
-  version: 2.304-1
+  version: 2.304-2
   arch:
     - any
   pkgname:
     - ttf-jetbrains-mono
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.304-1
+    version: 2.304-2
     packages:
-      - ttf-jetbrains-mono-2.304-1-any.pkg.tar.zst
+      - ttf-jetbrains-mono-2.304-2-any.pkg.tar.zst
