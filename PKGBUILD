@@ -10,7 +10,7 @@ pkgname=(
   audacity-docs
 )
 pkgver=3.6.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
 arch=(x86_64)
