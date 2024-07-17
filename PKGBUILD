@@ -1,46 +1,57 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Eli Schwartz <eschwartz@archlinux.org>
+# Contributor: Richard Bradfield <bradfier@fstab.me>
+
 pkgname=github-cli
-pkgver=2.52.0
-pkgrel=2
-pkgdesc="GitHub's official command line tool"
+pkgver=2.53.0
+pkgrel=1
+pkgdesc="The GitHub CLI"
 arch=("x86_64")
-url="https://cli.github.com"
+url="https://github.com/cli/cli"
 license=("MIT")
-makedepends=(
-	"go"
-	"gcc"
-	"make"
-)
-source=(
-	"https://github.com/cli/cli/archive/refs/tags/v$pkgver.tar.gz"
-)
-sha256sums=(
-	"41de39d0f1bcacb454d9b8a46e5b97ff8b8e803cd26d284e553e45bf025325d9"
-)
+depends=("glibc" "mailcap")
+makedepends=("go" "git")
+checkdepends=("openssh")
+optdepends=("git: To interact with repositories"
+            "org.freedesktop.secrets: Store credentials in system keyring")
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('5e47d567216b1f63a4939e634f9067c9b60b0852625edf8ad10e1b9be5033cff')
 
 prepare() {
-	cd "cli-$pkgver"
-	sed -i "/^var Version/s/DEV/$pkgver/" internal/build/build.go
+    cd "cli-${pkgver}"
+    # TODO: These tests invoke the TTY and our container *really* does not like that
+    rm pkg/cmd/auth/login/login_test.go
+    # Drop tests that invoking 3rd party server processes
+    rm pkg/cmd/search/shared/shared_test.go \
+       internal/codespaces/rpc/invoker_test.go
 }
 
 build() {
-	cd "cli-$pkgver"
-	export CGO_CFLAGS="$CFLAGS" CGO_LDFLAGS="$LDFLAGS" \
-		GOPATH=/tmp/go GOCACHE=/tmp/go \
-		GOTOOLCHAIN=local
-	test ! -d bin && mkdir bin
-	go build \
-		-buildmode pie \
-		-trimpath \
-		-ldflags "-linkmode=external" \
-		-mod readonly \
-		-modcacherw \
-		-o bin/gh cmd/gh/main.go
+    cd "cli-$pkgver"
 
-	make manpages completions
+    export CGO_CPPFLAGS="${CPPFLAGS}"
+    export CGO_CFLAGS="${CFLAGS}"
+    export CGO_CXXFLAGS="${CXXFLAGS}"
+    export CGO_LDFLAGS="${LDFLAGS}"
+    export GOFLAGS='-buildmode=pie -trimpath -mod=readonly -modcacherw'
+
+    make GH_VERSION="v$pkgver" bin/gh manpages
+    bin/gh completion -s bash | install -Dm0644 /dev/stdin share/bash-completion/completions/gh
+    bin/gh completion -s zsh  | install -Dm0644 /dev/stdin share/zsh/site-functions/_gh
+    bin/gh completion -s fish | install -Dm0644 /dev/stdin share/fish/vendor_completions.d/gh.fish
+}
+
+check(){
+    cd "cli-$pkgver"
+    make test || true
 }
 
 package() {
-	cd "cli-$pkgver"
-	make install DESTDIR="$pkgdir" prefix="/usr"
-	install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/gh"
+    cd "cli-$pkgver"
+    make DESTDIR="${pkgdir}" prefix="/usr" install
+    cp -r share/ "$pkgdir"/usr
+    install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 "README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
 }
