@@ -2,7 +2,7 @@
 # Contributor: Jacob Moody <moody@posixcafe.org>
 pkgname=s6-networking
 pkgver=2.7.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A suite of small networking tools for UNIX systems."
 arch=('x86_64')
 url="https://skarnet.org/software/s6-networking/"
