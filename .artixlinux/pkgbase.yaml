@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - lib32-libudev0-shim
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1-7
+    packages:
+      - lib32-libudev0-shim-1-7-x86_64.pkg.tar.zst
   lib32:
     version: 1-7
     packages:
