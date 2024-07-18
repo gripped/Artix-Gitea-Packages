@@ -3,7 +3,7 @@
 
 pkgname=gnome-panel
 pkgver=3.52.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Panel of GNOME Flashback'
 arch=('x86_64')
 url='https://wiki.gnome.org/Projects/GnomePanel'
@@ -21,7 +21,7 @@ source=("git+https://gitlab.gnome.org/GNOME/$pkgname.git?signed#tag=$pkgver"
         'gnome-panel-64.patch'
         'gnome-panel-65.patch')
 b2sums=('c6dfba78c22870287b35e1ef24fa3b5a19fc5e1c9ce1050c0560bef22ca594c7d76d8b7a98de5df1d9cef931455e0cd5192f940cae331a6ca377cfdb705b5733'
-        '42e08a18e69e2f59b04835d6b64d0bb2dc4cd512e89d773d6c4507e5ebed43c595f270579bc3ba05124d4878863dde7461e489924856757438a1cf7d301ef8f2'
+        '064a73442407f16d4676099472a129e3d7fbda31b5963631656a667c40b928e9b41f55e5b9c2f2cec0963806d9a12dbda7e1c75a56d751ba2944b9df011560b8'
         'aefa0a36a5a9bf7ba08c53c5b8f651df24cb2e3b39c5860aebf2be545d8c733e97465824ae1d2c91cf132d0adf484dd9cbf0d36a867b1a1e570b6b3a3ab08c74'
         'ccf3f767d6072785a7c128e28d4801f17c4a76769a3cc9c47f2a583e4e62e38d3c6c6625bb21722d019396b929ca3d596a272c0c1e16db50d76cb3e85149b59a'
         '3dc41fe465dade3d63e19ae4fc4045b06d572ea2d3123996b294bcf0eaf31553b4eeaacbcd36265a9692ed5936994802e5a0ab910ab36bb40e4b348d5064605a')
@@ -29,17 +29,23 @@ validpgpkeys=('7B44FD78E49334EC10B3B288A3D013EC303E1894') # Alberts Muktupāvels
 
 prepare() {
   cd $pkgname
-  patch -Np1 -i ../0001-build-remove-systemd-dependency-and-code.patch
+
+  # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/72
+  git cherry-pick -n 569e08f292f8c29252046b9a9f932e24db592ab2
+
+  # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/73
+  git cherry-pick -n 1f625434826f3536aea03fa8dcc933db8e48850c
 
   # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/60
-  patch -Np1 -i ../gnome-panel-60.patch
+  git apply -3 ../gnome-panel-60.patch
 
   # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/64
-  patch -Np1 -i ../gnome-panel-64.patch
+  git apply -3 ../gnome-panel-64.patch
 
   # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/65
-  patch -Np1 -i ../gnome-panel-65.patch
+  git apply -3 ../gnome-panel-65.patch
 
+  git apply -3 ../0001-build-remove-systemd-dependency-and-code.patch
   autoreconf -fi
 }
 

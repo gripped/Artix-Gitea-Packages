@@ -1,6 +1,6 @@
-From 01c5baefa4d89cdbcc6af4709522c3ea9da0b118 Mon Sep 17 00:00:00 2001
+From 5b0d33bb20d633e5aa92fa17c4784e2024afaea6 Mon Sep 17 00:00:00 2001
 From: Dudemanguy <random342@airmail.cc>
-Date: Wed, 10 Jul 2024 11:03:36 -0500
+Date: Wed, 17 Jul 2024 20:23:56 -0500
 Subject: [PATCH] build: remove systemd dependency and code
 
 autotools is too painful to bother doing better so just hack it in
@@ -12,7 +12,7 @@ autotools is too painful to bother doing better so just hack it in
  4 files changed, 6 insertions(+), 13 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index 0b31cdbf0..a5c900468 100644
+index 8945b92df..094bc5f68 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -130,7 +130,6 @@ LIBWNCK_REQUIRED=43.0
@@ -23,24 +23,24 @@ index 0b31cdbf0..a5c900468 100644
  CAIRO_REQUIRED=1.0.0
  GWEATHER_REQUIRED=3.91.0
  DCONF_REQUIRED=0.13.4
-@@ -168,7 +167,6 @@ PKG_CHECK_MODULES([ACTION_BUTTON], [
-   gio-unix-2.0 >= $GLIB_REQUIRED
+@@ -169,7 +168,6 @@ PKG_CHECK_MODULES([ACTION_BUTTON], [
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
    gtk+-3.0 >= $GTK_REQUIRED
    libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
 -  libsystemd >= $LIBSYSTEMD_REQUIRED
    x11
  ])
  
-@@ -180,7 +178,6 @@ PKG_CHECK_MODULES([LAUNCHER], [
-   gio-unix-2.0 >= $GLIB_REQUIRED
+@@ -182,7 +180,6 @@ PKG_CHECK_MODULES([LAUNCHER], [
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
    gtk+-3.0 >= $GTK_REQUIRED
    libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
 -  libsystemd >= $LIBSYSTEMD_REQUIRED
  ])
  
  PKG_CHECK_MODULES([MENU], [
-@@ -188,7 +185,6 @@ PKG_CHECK_MODULES([MENU], [
-   gio-unix-2.0 >= $GLIB_REQUIRED
+@@ -191,7 +188,6 @@ PKG_CHECK_MODULES([MENU], [
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
    gtk+-3.0 >= $GTK_REQUIRED
    libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
 -  libsystemd >= $LIBSYSTEMD_REQUIRED
@@ -78,18 +78,18 @@ index 14ce595c3..350b9491b 100644
  
  static void
 diff --git a/modules/launcher/gp-launcher-applet.c b/modules/launcher/gp-launcher-applet.c
-index 4d66239ed..1d8a61002 100644
+index bf42f7226..328165e9c 100644
 --- a/modules/launcher/gp-launcher-applet.c
 +++ b/modules/launcher/gp-launcher-applet.c
-@@ -32,7 +32,6 @@
- 
+@@ -33,7 +33,6 @@
  #include <glib/gi18n-lib.h>
  #include <gmenu-tree.h>
+ #include <libgnome-desktop/gnome-systemd.h>
 -#include <systemd/sd-journal.h>
  
  #include "gp-launcher-button.h"
  #include "gp-launcher-properties.h"
-@@ -757,7 +756,7 @@ launch_animation (GpLauncherApplet *self)
+@@ -758,7 +757,7 @@ launch_animation (GpLauncherApplet *self)
  static void
  child_setup (gpointer user_data)
  {
@@ -98,7 +98,7 @@ index 4d66239ed..1d8a61002 100644
    const gchar *id;
    gint stdout_fd;
    gint stderr_fd;
-@@ -777,7 +776,7 @@ child_setup (gpointer user_data)
+@@ -778,7 +777,7 @@ child_setup (gpointer user_data)
      {
        dup2 (stderr_fd, STDERR_FILENO);
        close (stderr_fd);
@@ -108,18 +108,18 @@ index 4d66239ed..1d8a61002 100644
  
  static void
 diff --git a/modules/menu/gp-menu-utils.c b/modules/menu/gp-menu-utils.c
-index 273db690b..d33159d47 100644
+index 65bc5bb24..f8d19549c 100644
 --- a/modules/menu/gp-menu-utils.c
 +++ b/modules/menu/gp-menu-utils.c
-@@ -19,7 +19,6 @@
- 
+@@ -20,7 +20,6 @@
  #include <glib/gi18n-lib.h>
  #include <gtk/gtk.h>
+ #include <libgnome-desktop/gnome-systemd.h>
 -#include <systemd/sd-journal.h>
  
  #include "gp-menu-utils.h"
  
-@@ -261,7 +260,7 @@ get_label_if_file (GFile *file)
+@@ -262,7 +261,7 @@ get_label_if_file (GFile *file)
  static void
  child_setup (gpointer user_data)
  {
@@ -128,7 +128,7 @@ index 273db690b..d33159d47 100644
    const gchar *id;
    gint stdout_fd;
    gint stderr_fd;
-@@ -281,7 +280,7 @@ child_setup (gpointer user_data)
+@@ -282,7 +281,7 @@ child_setup (gpointer user_data)
      {
        dup2 (stderr_fd, STDERR_FILENO);
        close (stderr_fd);
