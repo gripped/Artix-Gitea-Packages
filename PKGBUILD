@@ -21,6 +21,7 @@ depends=(colord-gtk
          graphicsmagick
          iso-codes
          jasper
+         json-glib
          lensfun
          libavif
          libgphoto2
