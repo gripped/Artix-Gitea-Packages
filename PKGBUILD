@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Daniel Bermond <dbermond@archlinux.org>
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
 # Contributor: robertfoster
 # Contributor: kurych
 # Contributor: redfish
@@ -10,8 +9,8 @@
 # Contributor: r4sas
 
 pkgname=i2pd
-pkgver=2.52.0
-pkgrel=2
+pkgver=2.53.0
+pkgrel=1
 pkgdesc='A full-featured C++ implementation of the I2P router'
 arch=('x86_64')
 url='https://i2pd.website/'
@@ -28,23 +27,20 @@ source=("https://github.com/PurpleI2P/i2pd/archive/${pkgver}/${pkgname}-${pkgver
         '020-i2pd-do-not-override-config.patch'
         '040-i2pd-tunnels-d-readme.patch'
         'i2pd.sysusers'
-        'i2pd.tmpfiles'
-         https://github.com/PurpleI2P/i2pd/commit/697d8314.patch)
-sha256sums=('f5fafa700b61d0791d37bd8eee04912582ea5e3f3b1d80ec339bd8158a30995b'
+        'i2pd.tmpfiles')
+sha256sums=('a5eb7f9faa7a8b66b044841e2967b9dc0367e4e41939ce6a3223f8bd2f347da8'
             '2ddf15f1c1cdf5d747a0af667145238023fd126ab00c65f2897cacae935015b1'
             'ed1bde650139731921bf3c8091b3332620404e7700fb9c486a4a806fe34e2d3b'
-            'e98eaa783fcd8e1ab84980f68158e3bb9eb5ec101f26c748946a313152643f11'
+            '805a82f23c244afbdfae0a4f30d1707301bc0e23437f83d1c84f13c33f62ea28'
             'cfcb6b07b67aff3e3af12767f4649d88b9320dc71907b6c01b465e5c138cdaa3'
             '88b2e709228049ba11f37863f87de75ab6cde295104852871384337cfdc906a3'
-            'fe8cc2ec83cb5b5c2b2ec8cce9a989e0cb6fd347e00b84e03a17b12efd152fac'
-            '09261a8a54d75935bb79b2d61fa9d441dc24f43619fea3225e2d4821904baef6')
+            'fe8cc2ec83cb5b5c2b2ec8cce9a989e0cb6fd347e00b84e03a17b12efd152fac')
 
 prepare() {
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/005-i2pd-tests-use-arch-flags.conf"
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/010-i2pd-config.patch"
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/020-i2pd-do-not-override-config.patch"
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/040-i2pd-tunnels-d-readme.patch"
-    patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/697d8314.patch" # Fix build with miniupnpc 2.2.8
 }
 
 build() {
