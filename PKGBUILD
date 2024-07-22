@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Damir Perisa <damir.perisa@bluewin.ch>
 
 pkgname=xosd
 pkgver=2.2.14
-pkgrel=11
+pkgrel=12
 pkgdesc="Displays text on your screen. On-Screen-Display-libs for some tools"
 arch=('x86_64')
 license=('GPL2')
