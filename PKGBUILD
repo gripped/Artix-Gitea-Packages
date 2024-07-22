@@ -18,6 +18,7 @@ source=(https://downloads.sourceforge.net/lxde/$pkgname-$pkgver.tar.xz)
 sha256sums=('1e318f57d7e36b61c23a504d03d2430c78dad142c1804451061f1b3ea5441ee8')
 
 build() {
+  export CFLAGS="$CFLAGS -Wno-incompatible-pointer-types"
   cd $pkgname-$pkgver
   ./configure \
     --sysconfdir=/etc \
