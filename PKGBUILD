@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Marcus Schulderinsky <mmaacceess at gmail dot com>
 
 pkgname=lxmusic
 pkgver=0.4.7
-pkgrel=7
+pkgrel=8
 pkgdesc='Lightweight music player (XMMS2 client)'
 arch=('x86_64')
 url='https://lxde.org/'
