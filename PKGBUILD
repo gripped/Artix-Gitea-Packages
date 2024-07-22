@@ -1,10 +1,10 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
 # Contributor:  <mathieu.clabaut@gmail.com>
 
 pkgname=xdg-user-dirs
 pkgver=0.18
-pkgrel=1
+pkgrel=2
 pkgdesc="Manage user directories like ~/Desktop and ~/Music"
 url="https://www.freedesktop.org/wiki/Software/xdg-user-dirs"
 arch=(x86_64)
@@ -12,12 +12,12 @@ license=(GPL)
 depends=(sh)
 makedepends=(docbook-xsl git)
 backup=(etc/xdg/user-dirs.conf etc/xdg/user-dirs.defaults)
-options=(!emptydirs debug)
+install=xdg-user-dirs.install
+options=(!emptydirs)
 _commit=52e71ff04416f2ca3adaf6d73193de4b8b83de46  # tags/0.18^0
-source=("git+https://gitlab.freedesktop.org/xdg/xdg-user-dirs.git#commit=$_commit"
-        90-xdg-user-dirs)
+source=("git+https://gitlab.freedesktop.org/xdg/xdg-user-dirs.git#commit=$_commit")
 sha256sums=('SKIP'
-            'f0f27de23d849b2fa4ebf59e448b5a843b577d14dc2c1070e228999091fa7f5e')
+            '53c75f52d782e9492601400236bc8e5bfa76a26f0afd9bce3fe8df1740d341f0')
 
 pkgver() {
   cd $pkgname
@@ -37,6 +37,5 @@ build() {
 
 package() {
   cd $pkgname
-  install -Dm755 "${srcdir}"/90-xdg-user-dirs "${pkgdir}"/etc/X11/xinit/xinitrc.d/90-xdg-user-dirs.sh
   make DESTDIR="$pkgdir" install 
 }
