@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Thayer Williams <thayer@archlinux.org>
 # Contributor: dorphell <dorphell@archlinux.org>
 
 pkgname=ttf-bitstream-vera
 pkgver=1.10
-pkgrel=15
+pkgrel=16
 pkgdesc="Bitstream Vera fonts."
 arch=('any')
 license=('custom')
