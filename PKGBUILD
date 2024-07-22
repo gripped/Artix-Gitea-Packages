@@ -1,16 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-sessreg
 pkgver=1.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Register X sessions in system utmp/utmpx databases"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
 license=('custom')
 depends=('glibc')
 makedepends=('xorg-util-macros' 'xorgproto')
-options=('debug')
 groups=('xorg-apps' 'xorg')
 source=(https://xorg.freedesktop.org/archive/individual/app/sessreg-${pkgver}.tar.xz{,.sig})
 sha512sums=('bc1e83afc598ac5b4c6ab0861799b6c8727c123ee662c1fb9cbdd9ee926973b7a00cc62e32f6b4e462c0da3516f8b824337d9cf17587ebabd3f4753502641a60'
