@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xinit
 pkgver=1.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc="X.Org initialisation program "
 arch=('x86_64')
 license=('custom')
