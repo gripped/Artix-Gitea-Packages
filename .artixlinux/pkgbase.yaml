@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: lxtask
-  version: 0.1.10-2
+  version: 0.1.10-3
   arch:
     - x86_64
   pkgname:
     - lxtask
     - lxtask-gtk3
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.1.10-3
+    packages:
+      - lxtask-0.1.10-3-x86_64.pkg.tar.zst
+      - lxtask-gtk3-0.1.10-3-x86_64.pkg.tar.zst
   galaxy:
     version: 0.1.10-2
     packages:
