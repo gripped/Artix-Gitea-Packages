@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org> 
 # Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
