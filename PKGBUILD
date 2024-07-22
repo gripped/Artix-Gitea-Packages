@@ -1,9 +1,9 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xmodmap
 pkgver=1.0.11
-pkgrel=1
+pkgrel=2
 pkgdesc="Utility for modifying keymaps and button mappings"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
