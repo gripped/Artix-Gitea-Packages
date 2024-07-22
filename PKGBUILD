@@ -8,7 +8,7 @@ pkgdesc="X.org VMWare Mouse input driver"
 arch=(x86_64)
 license=('custom')
 url="https://xorg.freedesktop.org/"
-depends=('systemd-libs')
+depends=('libelogind')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'xorgproto')
 conflicts=('xorg-server<21.1.1' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25')
 groups=('xorg-drivers')
