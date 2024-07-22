@@ -8,12 +8,12 @@ pkgbase:
     - lxsession
     - lxsession-gtk3
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1:0.5.5-2
+    packages:
+      - lxsession-1:0.5.5-2-x86_64.pkg.tar.zst
+      - lxsession-gtk3-1:0.5.5-2-x86_64.pkg.tar.zst
   galaxy:
     version: 1:0.5.5-2
     packages:
