@@ -5,7 +5,7 @@
 
 pkgname=lxterminal
 pkgver=0.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="VTE-based terminal emulator (part of LXDE)"
 arch=('x86_64')
 url="https://lxde.org/"
