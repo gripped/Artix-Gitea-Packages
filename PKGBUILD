@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xkill
 pkgver=1.0.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Kill a client by its X resource"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
