@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: bbswitch
-  version: 0.8-680
+  version: 0.8-684
   arch:
     - x86_64
   pkgname:
     - bbswitch
     - bbswitch-dkms
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.8-684
+    packages:
+      - bbswitch-0.8-684-x86_64.pkg.tar.zst
+      - bbswitch-dkms-0.8-684-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
