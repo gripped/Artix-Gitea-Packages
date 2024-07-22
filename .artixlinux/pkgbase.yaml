@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openbox
-  version: 3.6.1-11
+  version: 3.6.1-11.1
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 3.6.1-11
+    version: 3.6.1-11.1
     packages:
-      - openbox-3.6.1-11-x86_64.pkg.tar.zst
+      - openbox-3.6.1-11.1-x86_64.pkg.tar.zst
   galaxy:
     version: 3.6.1-10
     packages:
