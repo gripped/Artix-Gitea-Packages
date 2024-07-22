@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xinput
 pkgver=1.6.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Small commandline tool to configure devices"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
