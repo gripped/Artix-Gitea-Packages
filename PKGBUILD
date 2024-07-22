@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 # Contributor: Florian pritz <bluewind@xinu.at>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Brad Fanella <bradfanella@archlinux.us>
@@ -7,7 +7,7 @@
 
 pkgname=openbox
 pkgver=3.6.1
-pkgrel=10
+pkgrel=11
 pkgdesc='Highly configurable and lightweight X11 window manager'
 arch=('x86_64')
 url='http://openbox.org'
@@ -21,7 +21,7 @@ optdepends=('plasma-workspace: for the KDE/Openbox xsession'
 groups=('lxde' 'lxde-gtk3' 'lxqt')
 backup=('etc/xdg/openbox/menu.xml' 'etc/xdg/openbox/rc.xml'
         'etc/xdg/openbox/autostart' 'etc/xdg/openbox/environment')
-source=(http://openbox.org/dist/openbox/$pkgname-$pkgver.tar.gz
+source=(http://openbox.org/dist/openbox/$pkgname-$pkgver.tar.gz{,.asc}
         openbox-3.5.0-title-matching.patch
         openbox-3.5.0-which-2.20.patch
         $pkgname-kde-paths.patch
@@ -30,6 +30,7 @@ source=(http://openbox.org/dist/openbox/$pkgname-$pkgver.tar.gz
         https://github.com/mati75/openbox-debian/raw/debian/3.6.1-8/debian/patches/917204_undecorated_maximized_no_border.patch
         https://github.com/Mikachu/openbox/commit/9ed6fdd71890c5cc43747f105382d5677e5d37e7.patch)
 md5sums=('b72794996c6a3ad94634727b95f9d204'
+         'SKIP'
          '0a11d7149da210a31ef88f8a9c717711'
          '7ca3b5244bb092d46f5bcf1e2bdf4a18'
          'f7df0df8c1d2da279e48d0fdc984fb71'
@@ -38,6 +39,7 @@ md5sums=('b72794996c6a3ad94634727b95f9d204'
          'bf629dfad2b4bef6330dd914922cae48'
          '783f40691cc84e6a9e401677e0e10d01')
 sha256sums=('8b4ac0760018c77c0044fab06a4f0c510ba87eae934d9983b10878483bde7ef7'
+            'SKIP'
             'adc0820671e6ec42ff1bb4cbb04c65e19cdf74c62bcef3a3b727adb208eb82c7'
             '988acc655cf9a0fe4252c7e76d5ec2124a3f16c3ed26072fdcfd829ae9278c26'
             '40b6feb8fd83da0c9073ffc3ee4c009b5b036d105199bcaf6aa03cb18bf0b7e0'
