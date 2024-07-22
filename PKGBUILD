@@ -1,4 +1,4 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Tobias Powalowski  <tpowa@archlinux.org>
 # Contributor: Thomas Bächler <thomas@archlinux.org>
@@ -6,7 +6,7 @@
 
 pkgname=xf86-input-synaptics
 pkgver=1.9.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Synaptics driver for notebook touchpads"
 arch=('x86_64')
 license=('MIT')
