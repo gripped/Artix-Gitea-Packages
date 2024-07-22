@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-fonts-misc
 pkgver=1.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc="X.org misc fonts"
 arch=(any)
 url="https://xorg.freedesktop.org/"
