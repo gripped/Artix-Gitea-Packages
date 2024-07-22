@@ -23,11 +23,10 @@ source=("git+https://github.com/LibVNC/x11vnc.git#commit=${_commit}?signed"
         '020-x11vnc-gcc10-fix.patch'::'https://github.com/LibVNC/x11vnc/commit/a48b0b1cd887.patch'
         '030-x11vnc-scan-limit-access-to-shared-memory'::'https://github.com/LibVNC/x11vnc/commit/69eeb9f7baa1.patch')
 validpgpkeys=('25E71D2709955ECD4D041E03421BB3B45C6067F8') # Christian Beier
-sha256sums=('SKIP'
+sha256sums=('c7130700b4ae360cee1a61ace8bc865a88a4e9501c8992856616d713d6da1b8e'
             'd39a399d7db8e942e55639ed04a51b3c4f5d31d213d4639b1e26a44d92029403'
             '2c71af4c586eabaa11744da65916f9223b928d1fba820f117243f6c8c585f16b'
-            'e9c121a0b16013059ce903ed3e7560fabc5015e3b058a3acec85d7ae7102fcf0'
-            'cfb19d44e09e960e2fdb958c9258bccf23c2677715314985f7e819f1dcedb6e4')
+            'e9c121a0b16013059ce903ed3e7560fabc5015e3b058a3acec85d7ae7102fcf0')
 
 prepare() {
 	patch -d x11vnc -Np1 -i "${srcdir}/010-x11vnc-xfc-null-ptr.patch" # FS#65851
