@@ -19,6 +19,7 @@ source=(https://downloads.sourceforge.net/lxde/${pkgname}-${pkgver}.tar.xz)
 sha256sums=('9db8748923b3fa09a82ae2210ed1fa4cdb4c45312009da9caed103d48f8e9be7')
 
 build() {
+  export CFLAGS="$CFLAGS -Wno-incompatible-pointer-types"
   cd $pkgname-$pkgver
   ./configure --sysconfdir=/etc --prefix=/usr --enable-gtk3
   make
