@@ -1,16 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xsetroot
 pkgver=1.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Classic X utility to set your root window background to a given pattern or color"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
 license=('custom')
 depends=('libxmu' 'libx11' 'libxcursor')
 makedepends=('xorg-util-macros' 'xbitmaps')
-options=('debug')
 groups=('xorg-apps' 'xorg')
 source=(https://xorg.freedesktop.org/archive/individual/app/xsetroot-${pkgver}.tar.xz{,.sig})
 sha512sums=('f333d1bfd92bb943044da36331ae2cf68a811c8f3891719d9ebc1749e2dd0c67068f86face0794c3c4ae584c4dd189bad4998dccb38fe1ac37a8921e5713e7c0'
