@@ -6,7 +6,7 @@
 pkgbase=lxsession
 pkgname=(lxsession lxsession-gtk3)
 pkgver=0.5.5
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc='Lightweight X11 session manager'
 arch=('x86_64')

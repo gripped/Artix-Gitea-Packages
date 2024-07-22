@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxsession
-  version: 1:0.5.5-2
+  version: 1:0.5.5-2.1
   arch:
     - x86_64
   pkgname:
@@ -47,10 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1:0.5.5-2
+    version: 1:0.5.5-2.1
     packages:
-      - lxsession-1:0.5.5-2-x86_64.pkg.tar.zst
-      - lxsession-gtk3-1:0.5.5-2-x86_64.pkg.tar.zst
+      - lxsession-1:0.5.5-2.1-x86_64.pkg.tar.zst
+      - lxsession-gtk3-1:0.5.5-2.1-x86_64.pkg.tar.zst
   galaxy:
     version: 1:0.5.5-2
     packages:
