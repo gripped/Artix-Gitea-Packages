@@ -1,9 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Andreas Radke <andyrtr@archlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=xorg-setxkbmap
 pkgver=1.3.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Set the keyboard using the X Keyboard Extension'
 url='https://xorg.freedesktop.org/'
 license=('custom')
