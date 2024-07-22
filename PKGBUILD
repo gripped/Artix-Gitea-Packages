@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xwininfo
 pkgver=1.1.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Command-line utility to print information about windows on an X server"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
