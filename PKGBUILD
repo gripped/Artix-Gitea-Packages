@@ -1,11 +1,11 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
 
 pkgbase=lxrandr
 pkgname=(lxrandr lxrandr-gtk3)
 pkgver=0.3.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Monitor configuration tool (part of LXDE)"
 arch=('x86_64')
 license=('GPL2')
