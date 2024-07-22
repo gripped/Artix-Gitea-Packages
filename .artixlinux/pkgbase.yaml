@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-open
-  version: 555.58.02-2
+  version: 555.58.02-3
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 555.58.02-2
+    version: 555.58.02-3
     packages:
-      - nvidia-open-555.58.02-2-x86_64.pkg.tar.zst
-      - nvidia-open-dkms-555.58.02-2-x86_64.pkg.tar.zst
+      - nvidia-open-555.58.02-3-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-555.58.02-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
