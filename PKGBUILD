@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xrandr
 pkgver=1.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Primitive command line interface to RandR extension"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
