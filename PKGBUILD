@@ -33,6 +33,7 @@ prepare() {
 }
 
 build() {
+  export CFLAGS="$CFLAGS -Wno-return-mismatch"
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --enable-gtk3
   make
