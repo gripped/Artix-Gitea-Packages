@@ -1,14 +1,14 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xf86-input-vmmouse
 pkgver=13.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="X.org VMWare Mouse input driver"
 arch=(x86_64)
 license=('custom')
 url="https://xorg.freedesktop.org/"
-depends=('libudev.so')
+depends=('systemd-libs')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'xorgproto')
 conflicts=('xorg-server<21.1.1' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25')
 groups=('xorg-drivers')
