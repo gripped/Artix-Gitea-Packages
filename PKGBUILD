@@ -5,7 +5,7 @@
 
 pkgname=lxpanel
 pkgver=0.10.1
-pkgrel=1.1.1
+pkgrel=1.1
 pkgdesc='Lightweight X11 desktop panel for LXDE'
 arch=('x86_64')
 license=('GPL2')
