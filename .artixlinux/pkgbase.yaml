@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ttf-roboto
-  version: 2.138-4
+  version: 2.138-5
   arch:
     - any
   pkgname:
     - ttf-roboto
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.138-4
+    version: 2.138-5
     packages:
-      - ttf-roboto-2.138-4-any.pkg.tar.zst
+      - ttf-roboto-2.138-5-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
