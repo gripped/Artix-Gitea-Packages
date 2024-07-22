@@ -1,15 +1,14 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: AndyRTR <andyrtr@archlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Kewl <xrjy@nygb.rh.bet(rot13)>
 # Contributor: Justin Settle <jus10 at partlycloudy dot org>
 
 pkgname=ttf-carlito
 pkgver=20230509
 _commit=3a810cab78ebd6e2e4eed42af9e8453c4f9b850a
-pkgrel=1
+pkgrel=2
 pkgdesc="Google's Carlito font"
 arch=(any)
-license=(custom:OFL)
+license=('LicenseRef-OFL')
 url='https://fonts.google.com/specimen/Carlito'
 makedepends=('git')
 provides=(google-crosextra-carlito-fonts)
