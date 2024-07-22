@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xautolock
-  version: 2.2-6
+  version: 2.2-7
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.2-6
+    version: 2.2-7
     packages:
-      - xautolock-2.2-6-x86_64.pkg.tar.zst
+      - xautolock-2.2-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
