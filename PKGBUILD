@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=xsel
 pkgver=1.2.1
 _commit=062e6d373537c60829fa9b5dcddbcd942986b3c3
-pkgrel=1
+pkgrel=2
 pkgdesc="Command-line program for getting and setting the contents of the X selection"
 arch=(x86_64)
 url="https://vergenet.net/~conrad/software/xsel/"
