@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-bdftopcf
 pkgver=1.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Convert X font from Bitmap Distribution Format to Portable Compiled Format"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
