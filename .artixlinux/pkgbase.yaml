@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ttf-hack
-  version: 3.003-6
+  version: 3.003-7
   arch:
     - any
   pkgname:
     - ttf-hack
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.003-6
+    version: 3.003-7
     packages:
-      - ttf-hack-3.003-6-any.pkg.tar.zst
+      - ttf-hack-3.003-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
