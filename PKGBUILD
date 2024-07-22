@@ -16,8 +16,7 @@ install=xdg-user-dirs.install
 options=(!emptydirs)
 _commit=52e71ff04416f2ca3adaf6d73193de4b8b83de46  # tags/0.18^0
 source=("git+https://gitlab.freedesktop.org/xdg/xdg-user-dirs.git#commit=$_commit")
-sha256sums=('SKIP'
-            '53c75f52d782e9492601400236bc8e5bfa76a26f0afd9bce3fe8df1740d341f0')
+sha256sums=('a63a58e5a5541e7fde10a458231092be65d042e651f68840049c208b831d5611')
 
 pkgver() {
   cd $pkgname
