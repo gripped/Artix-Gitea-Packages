@@ -6,7 +6,7 @@
 pkgbase=lxtask
 pkgname=(lxtask lxtask-gtk3)
 pkgver=0.1.10
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Task manager of the LXDE Desktop'
 arch=('x86_64')
 license=('GPL2')
