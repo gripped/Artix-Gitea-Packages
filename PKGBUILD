@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 
 pkgname=ttf-ubuntu-font-family
 epoch=1
 pkgver=0.83
-pkgrel=1
+pkgrel=2
 pkgdesc="Ubuntu font family"
 arch=('any')
 url="https://design.ubuntu.com/font/"
