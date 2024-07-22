@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=xorg-xcursorgen
 pkgver=1.0.8
-pkgrel=1
+pkgrel=2
 pkgdesc="Create an X cursor file from PNG images"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
