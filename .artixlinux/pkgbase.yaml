@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: lxappearance
-  version: 0.6.3-4
+  version: 0.6.3-5
   arch:
     - x86_64
   pkgname:
     - lxappearance
     - lxappearance-gtk3
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.6.3-5
+    packages:
+      - lxappearance-0.6.3-5-x86_64.pkg.tar.zst
+      - lxappearance-gtk3-0.6.3-5-x86_64.pkg.tar.zst
   galaxy:
     version: 0.6.3-4
     packages:
