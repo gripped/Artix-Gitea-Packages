@@ -27,6 +27,8 @@ prepare() {
 }
 
 build() {
+  export CFLAGS="$CFLAGS -Wno-incompatible-pointer-types"
+
   # GTK+ 2 version
   [ -d gtk2 ] || cp -r $pkgbase-$pkgver gtk2
   cd gtk2
