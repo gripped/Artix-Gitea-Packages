@@ -15,7 +15,7 @@ depends=(
 )
 provides=('logger')
 backup=('etc/metalog.conf')
-source=("https://github.com/hvisage/metalog/archive/metalog-${pkgver}.tar.gz" 'metalog.service')
+source=("https://github.com/hvisage/metalog/archive/metalog-${pkgver}.tar.gz")
 sha256sums=('563b41409ee9e396c3709f002b59ccd9aff901b7d7e3adee6344e4b599a02105'
             'd6e51d73683d2d460f9b9cf253f85118a6c63266d0d3a161100f80f148f4c430')
 
@@ -30,5 +30,4 @@ package() {
   cd $pkgname-$pkgname-${pkgver}
   make DESTDIR="$pkgdir" install
   install -D -m644 metalog.conf "$pkgdir/etc/metalog.conf"
-  install -Dm644 "${srcdir}"/metalog.service "${pkgdir}"/usr/lib/systemd/system/metalog.service
 }
