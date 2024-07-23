@@ -5,8 +5,8 @@
 
 pkgname=python-pyftpdlib
 _pkgname=${pkgname#python-}
-pkgver=1.5.9
-pkgrel=3
+pkgver=1.5.10
+pkgrel=1
 pkgdesc="Extremely fast and scalable Python FTP server library"
 arch=(any)
 url="https://github.com/giampaolo/pyftpdlib"
@@ -27,21 +27,16 @@ optdepends=(
   'python-pyopenssl: FTPS support'
   'python-psutil: to keep track of FTP server memory usage'
 )
-source=(
-  "$pkgname-$pkgver.tar.gz::$url/archive/release-$pkgver/release-$pkgver.tar.gz"
-  "regenerate-SSL-certificates-which-was-too-old-and-broke.patch"
-)
-sha256sums=(
-  '7403b762ea16e4c1e5805b81084c09cd099ba6a8f7dbbcaf3e331a889ea883fe'
-  'ba13f0e88086fce79662ceb76d05cf04709179978d74d34755b7ee9b2992a432'
-)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/release-$pkgver/release-$pkgver.tar.gz")
+sha256sums=('993a48b652c0a2ab9af898fd3acbe422e8558ba91d1451eec20db2584a0178de')
 
 _archive="$_pkgname-release-$pkgver"
 
 prepare() {
   cd "$_archive"
 
-  patch -Np1 -i "$srcdir/regenerate-SSL-certificates-which-was-too-old-and-broke.patch"
+  # Don't package tests.
+  sed -i "s/packages=\['pyftpdlib', 'pyftpdlib.test'\]/packages=['pyftpdlib']/" setup.py
 }
 
 build() {

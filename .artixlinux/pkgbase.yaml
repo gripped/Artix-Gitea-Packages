@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pyftpdlib
-  version: 1.5.9-3
+  version: 1.5.10-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.5.9-3
+    version: 1.5.10-1
     packages:
-      - python-pyftpdlib-1.5.9-3-any.pkg.tar.zst
+      - python-pyftpdlib-1.5.10-1-any.pkg.tar.zst
   world:
     version: 1.5.9-2
     packages:
