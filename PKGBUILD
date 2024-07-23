@@ -16,8 +16,7 @@ depends=(
 provides=('logger')
 backup=('etc/metalog.conf')
 source=("https://github.com/hvisage/metalog/archive/metalog-${pkgver}.tar.gz")
-sha256sums=('563b41409ee9e396c3709f002b59ccd9aff901b7d7e3adee6344e4b599a02105'
-            'd6e51d73683d2d460f9b9cf253f85118a6c63266d0d3a161100f80f148f4c430')
+sha256sums=('563b41409ee9e396c3709f002b59ccd9aff901b7d7e3adee6344e4b599a02105')
 
 build() {
   cd $pkgname-$pkgname-${pkgver}
