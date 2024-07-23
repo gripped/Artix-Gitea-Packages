@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: wasi-libc
-  version: 1:0+374+9e8c5423-2
+  version: 1:0+389+3f43ea9a-1
   arch:
     - any
   pkgname:
     - wasi-libc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0+374+9e8c5423-2
+    version: 1:0+389+3f43ea9a-1
     packages:
-      - wasi-libc-1:0+374+9e8c5423-2-any.pkg.tar.zst
+      - wasi-libc-1:0+389+3f43ea9a-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
