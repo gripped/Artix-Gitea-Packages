@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=extra-cmake-modules
-pkgver=6.3.0
+pkgver=6.4.0
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=(any)
@@ -18,7 +18,7 @@ optdepends=('python-pyxdg: to generate fastlane metadata for Android apps'
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
         artix.patch)
-sha256sums=('1368f8fba95c475a409eff05f78baf49ccd2655889d1e94902bfc886785af818'
+sha256sums=('ced3f20741ddad24185dc1280a0c0d9171ba2508f84762417d74808561295add'
             'SKIP'
             '65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f')
             
