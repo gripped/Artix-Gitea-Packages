@@ -3,7 +3,7 @@
 
 pkgname=metalog
 pkgver=20230719
-pkgrel=1
+pkgrel=2
 pkgdesc="A modern replacement for syslogd and klogd"
 url="http://metalog.sourceforge.net"
 license=('GPL-2.0-only')
@@ -15,8 +15,9 @@ depends=(
 )
 provides=('logger')
 backup=('etc/metalog.conf')
-source=("https://github.com/hvisage/metalog/archive/metalog-${pkgver}.tar.gz")
-sha256sums=('563b41409ee9e396c3709f002b59ccd9aff901b7d7e3adee6344e4b599a02105')
+source=("https://github.com/hvisage/metalog/archive/metalog-${pkgver}.tar.gz" 'metalog.service')
+sha256sums=('563b41409ee9e396c3709f002b59ccd9aff901b7d7e3adee6344e4b599a02105'
+            'd6e51d73683d2d460f9b9cf253f85118a6c63266d0d3a161100f80f148f4c430')
 
 build() {
   cd $pkgname-$pkgname-${pkgver}
@@ -29,4 +30,5 @@ package() {
   cd $pkgname-$pkgname-${pkgver}
   make DESTDIR="$pkgdir" install
   install -D -m644 metalog.conf "$pkgdir/etc/metalog.conf"
+  install -Dm644 "${srcdir}"/metalog.service "${pkgdir}"/usr/lib/systemd/system/metalog.service
 }
