@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gcc
-  version: 14.1.1+r58+gfc9fb69ad624-1
+  version: 14.1.1+r309+gbb34b7eda1f-1
   arch:
     - x86_64
   pkgname:
@@ -18,17 +18,29 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 14.1.1+r309+gbb34b7eda1f-1
+    packages:
+      - gcc-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-libs-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - lib32-gcc-libs-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-ada-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-d-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-fortran-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-go-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-m2-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-objc-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - gcc-rust-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - lto-dump-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
+      - libgccjit-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
