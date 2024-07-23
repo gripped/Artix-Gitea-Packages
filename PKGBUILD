@@ -1,4 +1,5 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: BlackIkeEagle < ike DOT devolder AT gmail DOT com >
 # Contributor: Giancarlo Razzolini <grazzolini@archlinux.org>
 # Contributor: Alexander F Rødseth <xyproto@archlinux.org>
 # Contributor: Lukas Fleischer <lfleischer@archlinux.org>
@@ -8,7 +9,7 @@
 pkgbase=projectm
 pkgname=('projectm' 'projectm-sdl' 'projectm-pulseaudio')
 pkgver=3.1.12
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 url='https://github.com/projectM-visualizer/projectm'
 license=('LGPL')
