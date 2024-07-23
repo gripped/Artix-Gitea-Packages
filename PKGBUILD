@@ -9,11 +9,11 @@
 
 pkgname=awesome
 pkgver=4.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Highly configurable framework window manager'
 url='https://awesomewm.org'
 arch=(x86_64)
-license=(GPL2)
+license=(GPL-2.0-or-later)
 depends=(cairo
          dbus
          gdk-pixbuf2
@@ -35,6 +35,7 @@ makedepends=(asciidoctor
              docbook-xsl
              doxygen
              imagemagick
+             ldoc
              ttf-font
              xmlto)
 optdepends=('rlwrap: readline support for awesome-client'
