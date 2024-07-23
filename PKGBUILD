@@ -50,10 +50,12 @@ sha256sums=('8d63594191c775835535289c482116f2f21095d54c2480999eea2d4baf098e9b'
             'de48736f6e4153f03d0a5d38ceb6c6fdb7f054e8f47ddd6af0a3dbf14f27b931'
             '2513c6d9984dd0a2058557bf00f06d8d5181734e41dcfe07be7ed86f2959622a'
             '1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f')
-pkgver() {
-  cd gcc
-  echo "$(cat gcc/BASE-VER)+$(git describe --tags | sed 's/[^-]*-[^-]*-//;s/[^-]*-/r&/;s/-/+/g;s/_/./')"
-}
+
+# wtf? wrong version
+# pkgver() {
+#   cd gcc
+#   echo "$(cat gcc/BASE-VER)+$(git describe --tags | sed 's/[^-]*-[^-]*-//;s/[^-]*-/r&/;s/-/+/g;s/_/./')"
+# }
 
 prepare() {
   [[ ! -d gcc ]] && ln -s gcc-${pkgver/+/-} gcc
