@@ -6,7 +6,7 @@ pkgname=(
   dbus-broker
 )
 pkgver=36
-pkgrel=2
+pkgrel=4
 pkgdesc="Linux D-Bus Message Broker"
 url="https://github.com/bus1/dbus-broker/wiki"
 arch=(x86_64)
@@ -69,6 +69,7 @@ package_dbus-broker() {
   meson install -C build --destdir "$pkgdir"
 
 }
+
 
 
 # vim:set sw=2 sts=-1 et:
