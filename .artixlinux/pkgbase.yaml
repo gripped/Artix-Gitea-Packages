@@ -8,8 +8,8 @@ pkgbase:
     - nvidia-open
     - nvidia-open-dkms
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 555.58.02-8
     packages:
       - nvidia-open-555.58.02-8-x86_64.pkg.tar.zst
       - nvidia-open-dkms-555.58.02-8-x86_64.pkg.tar.zst
-  world:
-    version: 555.58.02-3
-    packages:
-      - nvidia-open-555.58.02-3-x86_64.pkg.tar.zst
-      - nvidia-open-dkms-555.58.02-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
