@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-multi-writer
-  version: 3.35.90-2
+  version: 3.35.90-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.35.90-2
+    version: 3.35.90-3
     packages:
-      - gnome-multi-writer-3.35.90-2-x86_64.pkg.tar.zst
+      - gnome-multi-writer-3.35.90-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
