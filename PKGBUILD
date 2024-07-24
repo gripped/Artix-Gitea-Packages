@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kleopatra
 pkgver=24.05.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Certificate Manager and Unified Crypto GUI'
 arch=(x86_64)
 url='https://apps.kde.org/kleopatra/'
