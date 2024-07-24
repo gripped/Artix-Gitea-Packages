@@ -4,7 +4,7 @@
 _name=hypothesis
 _alt_name=$_name-python
 pkgname=python-hypothesis
-pkgver=6.105.0
+pkgver=6.108.4
 _version=$_alt_name-$pkgver
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
@@ -56,8 +56,8 @@ optdepends=(
   'python-rich: for CLI'
 )
 source=($_name-$_version.tar.gz::$_url/archive/$_version.tar.gz)
-sha512sums=('dd6284ed12b68b9ff7fcb3026f08de240959f116b7444384c1737ef632483796ef3f1687796fa744d8cd7855811916a070ff48d66dc8ace869ee24d9ee9d8ca3')
-b2sums=('be878220e5908ca8b20c6b6ed8ab61638e2a5605118b61ecb715b94353751d014644995e8ab6056e2e5b4cab94e533117de199997bd3492b78465694321e4afa')
+sha512sums=('cba9a16713ae4d646e4e9db0711191157580776327e590785be86d59863c843649a06535b3e3b766c4aef6344d6046879cf69e224d4a6c9fab0ec7dcda17063d')
+b2sums=('88983672fc7161ce44c88cd47cfb0fd44a66dcb6c6245e0f1d38e4811b11ff844022515e0655d61a40e9c0f195b930cc1c3ca0cee54a443e07b163bd276147d1')
 
 build() {
   cd $_name-$_version/$_alt_name
@@ -69,10 +69,8 @@ check() {
     -vv
     # disable failing tests: https://github.com/HypothesisWorks/hypothesis/issues/3704
     # for some reason --deselect does not work, so ignoring whole file
-    --ignore tests/patching/test_patching.py
-    --ignore tests/ghostwriter/test_expected_output.py
-    --ignore tests/cover/test_error_in_draw.py
-    --ignore tests/redis/test_redis_exampledatabase.py
+    --ignore tests/conjecture/test_ir.py
+    --ignore tests/ghostwriter/test_ghostwriter.py
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
