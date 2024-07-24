@@ -3,8 +3,8 @@
 
 _name=pynitrokey
 pkgname=python-pynitrokey
-pkgver=0.4.47
-pkgrel=4
+pkgver=0.4.48
+pkgrel=1
 pkgdesc="A command line interface for the Nitrokey FIDO2 and Nitrokey Start"
 arch=(any)
 url="https://github.com/Nitrokey/pynitrokey"
@@ -50,9 +50,9 @@ source=(
   "$_name::git+$url.git?signed#tag=v$pkgver"
   https://raw.githubusercontent.com/NordicSemiconductor/pc-nrfutil/16cb5a3d352bcc7a3ddbbf541426e3cca0f34671/nordicsemi/dfu/dfu-cc.proto
 )
-sha512sums=('573b61d5b9fa7a398f3318c6203536fc7c6a12707b8541affdb7f782ce9b6838662d32584f229b2300d830626b96700a1e1fbac68076da76c3bdaabef58c4be6'
+sha512sums=('eaf7b19eb1678f6c909d752a1208a392dd109cc1b49a276e0ca9c7182f33eebb4045bd04720b720d8010e518fb6039915eeb2bce425bf5d000c450c3fa163f2a'
             '5da1202115f2fb76f8f2d592a2a510d9815e52dcb529e245afb5bbed22571e11b3a8c6743fc3e3824fcfea5bb408373e2ed4e65e4ca43f8159c0e01e05080193')
-b2sums=('7ee09317dae350267c37a868be3aa616976a2b33e656680d4eb363e25d209c4788557c31f31e9aa8c7bba7908af580f88dabefabcaa234ceb3822329ffca94e4'
+b2sums=('2f7f9b3ee07719233a0c891fb1661dc5cd6d0f4f50d0a7f484327071bdd6c4289b03e4299c274a5a554f5b36b2e275e4fedec19771d65a1946d7867e18a923d3'
         'a999aeee79d06fe9201fdb115cbd03cb59ac84724893bc334bff8a071cd9ae13990793b889b6281df0d6e4dd229e77e5f24b73d51a69363f30d6bedf8d3cfd59')
 validpgpkeys=(
   868184069239FF65DE0BCD7DD9BAE35991DE5B22  # Szczepan Zalega <szczepan@nitrokey.com> (@szszszsz)
