@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: incron
-  version: 0.5.12-5
+  version: 0.5.12-6
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.5.12-5
+    version: 0.5.12-6
     packages:
-      - incron-0.5.12-5-x86_64.pkg.tar.zst
+      - incron-0.5.12-6-x86_64.pkg.tar.zst
