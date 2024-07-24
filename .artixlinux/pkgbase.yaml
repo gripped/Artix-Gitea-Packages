@@ -18,15 +18,18 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 14.1.1+r309+gbb34b7eda1f-1
     packages:
       - gcc-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
@@ -41,9 +44,6 @@ repos:
       - gcc-rust-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
       - lto-dump-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
       - libgccjit-14.1.1+r309+gbb34b7eda1f-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 14.1.1+r58+gfc9fb69ad624-1
     packages:
