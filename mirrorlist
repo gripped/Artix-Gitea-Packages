@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2024-06-03
+## Generated on 2024-07-24
 ##
 
 # Artix mirrors
@@ -65,6 +65,7 @@ Server = https://us-mirror.artixlinux.org/$repo/os/$arch
 Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
 # Canada
 Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
+Server = https://artix-linux.mirrors.prairievoice.ca/$repo/os/$arch
 
 ## South America
 # Chile
