@@ -1,7 +1,7 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=xdg-desktop-portal-hyprland
-pkgver=1.3.2
+pkgver=1.3.3
 _protocolver=4d29e48433270a2af06b8bc711ca1fe5109746cd
 pkgrel=2
 pkgdesc='xdg-desktop-portal backend for hyprland'
@@ -18,7 +18,6 @@ depends=(gcc-libs
          qt6-wayland
          sdbus-cpp libsdbus-c++.so
          util-linux-libs libuuid.so
-         wlroots0.17
          xdg-desktop-portal)
 makedepends=(cmake
              wayland
@@ -28,25 +27,18 @@ optdepends=('grim: required for the screenshot portal to function'
 _archive="$pkgname-$pkgver"
 source=("$url/archive/v$pkgver/$_archive.tar.gz"
         "https://github.com/hyprwm/hyprland-protocols/archive/$_protocolver.tar.gz"
-        pw1.1.82.patch::https://github.com/hyprwm/xdg-desktop-portal-hyprland/commit/c5b30938710d6c599f3f5cd99a3ffac35381fb0f.patch
         hyprland-portals.conf) # TODO move this to hyprland where it belongs
-sha256sums=('8f77a11c4d3df1b6d963f408ea1159d093e3b14ea0cb8c64094fca9821af2e26'
+sha256sums=('5a8389868287853800d58e5296be9c7fcb0bd191297bc9806c352c735d92d7b3'
             '5f6be4d870e94314f05ec7ff9c9c1f028748230ff80a7f89aeaf66c08e5c70e0'
-            'b62a1734b6ecae48b030183c3952ecb21eb65e5d9702f88b41382d691a4800a6'
             '20bc215211f16a361086d59fa051df7337d95f91c695a29d8c5d23d40407fad5')
 
 prepare() {
 	cd "$_archive/subprojects"
 	rm -rf hyprland-protocols sdbus-cpp
 	ln -sfT "$srcdir/hyprland-protocols-$_protocolver" hyprland-protocols
-
-	# fix compilation with pw >= 1.1.82
-	cd ..
-	patch -Np1 < ../pw1.1.82.patch
 }
 
 build() {
-    export PKG_CONFIG_PATH='/usr/lib/wlroots0.17/pkgconfig'
 	cd "$_archive"
 	cmake -B build \
 		-D CMAKE_INSTALL_PREFIX=/usr \
