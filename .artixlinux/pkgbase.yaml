@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: yyjson
-  version: 0.9.0-3
+  version: 0.10.0-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.9.0-3
+    version: 0.10.0-1
     packages:
-      - yyjson-0.9.0-3-x86_64.pkg.tar.zst
+      - yyjson-0.10.0-1-x86_64.pkg.tar.zst
