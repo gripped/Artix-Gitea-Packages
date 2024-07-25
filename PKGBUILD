@@ -35,7 +35,6 @@ makedepends=(asciidoctor
              docbook-xsl
              doxygen
              imagemagick
-             ldoc
              ttf-font
              xmlto)
 optdepends=('rlwrap: readline support for awesome-client'
