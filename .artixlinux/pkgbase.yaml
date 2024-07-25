@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-sqlite-anyio
-  version: 0.2.2-1
+  version: 0.2.3-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.2-1
+    version: 0.2.3-1
     packages:
-      - python-sqlite-anyio-0.2.2-1-any.pkg.tar.zst
+      - python-sqlite-anyio-0.2.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
