@@ -6,7 +6,7 @@
 
 _pyname=astroid
 pkgname=python-$_pyname
-pkgver=3.2.2
+pkgver=3.2.4
 pkgrel=1
 pkgdesc='A common base representation of python source code'
 arch=(any)
@@ -27,7 +27,7 @@ replaces=(python-logilab-astng)
 conflicts=(python-logilab-astng)
 _archive="$_pyname-$pkgver"
 source=("$url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('7ff8e7de62e56c107334c15dfa336256901711e931e0f644a366bcb91e276a42')
+sha256sums=('e668c1d31790c6dcc4ab0ec6251cb02ed3c610a860d66ffeb6f72f1811f13605')
 
 prepare() {
 	cd "$_archive"
