@@ -1,0 +1,32 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: Adrian Sausenthaler <aur@sausenthaler.de>
+
+pkgname=openpgl
+pkgver=0.6.0
+pkgrel=1
+pkgdesc="Intel Open Path Guiding Library"
+arch=('x86_64')
+url="https://github.com/openpathguidinglibrary/openpgl"
+license=('Apache')
+depends=('onetbb')
+makedepends=('cmake' 'make' 'gcc' 'ninja')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/OpenPathGuidingLibrary/openpgl/archive/refs/tags/v${pkgver}.tar.gz")
+sha512sums=('a40161d79e9f340e631eda9dedbabd9c71fb0184c65f45e0abcb64ce53289a65b7434c11678f845f76006a0ce579c4458a39200dc8caca1c455f18739488e173')
+
+build() {
+  cd openpgl-$pkgver
+  cmake \
+    -Bbuild \
+    -GNinja \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DOPENPGL_BUILD_STATIC=OFF \
+	-DCMAKE_BUILD_TYPE=Release
+
+  ninja -C build
+}
+
+package() {
+  cd openpgl-$pkgver
+  DESTDIR="$pkgdir" ninja -C build install
+}
