@@ -1,0 +1,36 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+
+pkgname=alembic
+pkgver=1.8.6
+pkgrel=3
+pkgdesc="An open framework for storing and sharing scene data"
+arch=('x86_64')
+url="http://www.alembic.io/"
+license=('BSD')
+depends=('imath' 'hdf5')
+makedepends=('cmake' 'ninja')
+source=($pkgname-$pkgver.tar.gz::https://github.com/alembic/alembic/archive/${pkgver}.tar.gz)
+sha512sums=('6371b830242be90d4ea833248df5fd42d9e713e305d15eb1383d04410319acdae5743d48d65e8f75f1cedce777d2af7d969cde095f678b17322c19f1c69f477b')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+
+  cmake \
+    -Bbuild \
+    -GNinja \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_HDF5=ON
+
+  ninja -C build
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+
+  install -Dm644 LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+
+  DESTDIR="${pkgdir}/" ninja -C build install
+}
+
+# vim:set ts=2 sw=2 et:
