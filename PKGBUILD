@@ -1,0 +1,31 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Jan Hambrecht <jaham at gmx dot net>
+
+pkgname=libspnav
+pkgver=1.1
+pkgrel=2
+pkgdesc='Alternative to the proprietary 3Dconnexion device driver and SDK for their 3D input devices'
+arch=(x86_64)
+url='https://spacenav.sourceforge.net/'
+license=(BSD-3-Clause)
+depends=(glibc
+         libx11)
+makedepends=(git)
+source=(git+https://github.com/FreeSpacenav/libspnav#tag=v$pkgver)
+sha256sums=('fb983c1a6a0eca4cc7d065884bb80b9241ac5371827a23dc34ccaddec751d97a')
+
+build() {
+  cd $pkgname
+  ./configure \
+    --prefix=/usr \
+    --disable-debug
+  make
+}
+
+package() {
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
+}
