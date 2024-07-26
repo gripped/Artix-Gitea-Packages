@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+pkgname=ptex
+pkgver=2.4.3
+pkgrel=1
+pkgdesc="Per-Face Texture Mapping for Production Rendering"
+arch=('x86_64')
+url="http://ptex.us/"
+license=('BSD')
+depends=('zlib' 'gcc-libs')
+makedepends=('git' 'doxygen' 'cmake' 'ninja')
+options=(staticlibs)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/wdas/ptex/archive/v${pkgver}.tar.gz")
+sha512sums=('34fcaf1c4fe27cb4e66d66bb729137ef17ffeea2bc2d849f2f5f543b19acc250f425633142320ce797c2a086e04bc3e0870c94928ad45d94e34faee71af36890')
+
+build() {
+    cd "$pkgname-$pkgver"
+
+    CXXFLAGS+=" -ffat-lto-objects"
+    cmake \
+        -Bbuild \
+        -GNinja \
+        -DPTEX_SHA=$_commit_sha \
+        -DPTEX_VER=$pkgver \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_PREFIX=/usr
+
+    ninja -C build
+}
+
+check() {
+    cd "$pkgname-$pkgver"
+    ninja -C build test
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+
+    DESTDIR="$pkgdir" ninja -C build install
+    install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}
