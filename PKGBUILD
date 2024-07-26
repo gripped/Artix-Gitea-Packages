@@ -8,7 +8,7 @@ arch=(x86_64)
 url="http://graphics.pixar.com/opensubdiv"
 license=('APACHE')
 depends=('ptex' 'intel-tbb' 'libxcursor' 'xorg-xrandr' 'libxinerama' 'libxi')
-makedepends=('cmake' 'doxygen' 'glfw' 'glew' 'python' 'python-pygments' 'python-docutils' 'opencl-headers' 'cuda' 'libglvnd')
+makedepends=('cmake' 'doxygen' 'glfw' 'glew' 'python' 'python-pygments' 'python-docutils' 'opencl-headers' 'libglvnd')
 source=("https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v${pkgver//./_}.tar.gz")
 sha512sums=('a976733a26e2c0f6510f59d4372b1b33f5404a9d536bcbd6ae3a1a0ffd1bba5495df7108bebc854d5c069575772c97c0d00f0f16f79e87611376ba84e9ae7a4b')
 options=(!lto)
@@ -21,22 +21,7 @@ build() {
       -DNO_EXAMPLES=ON \
       -DNO_REGRESSION=ON \
       -DNO_TUTORIALS=ON \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DOSD_CUDA_NVCC_FLAGS="-gencode=arch=compute_52,code=sm_52 \
-                             -gencode=arch=compute_53,code=sm_53 \
-                             -gencode=arch=compute_60,code=sm_60 \
-                             -gencode=arch=compute_61,code=sm_61 \
-                             -gencode=arch=compute_62,code=sm_62 \
-                             -gencode=arch=compute_70,code=sm_70 \
-                             -gencode=arch=compute_72,code=sm_72 \
-                             -gencode=arch=compute_75,code=sm_75 \
-                             -gencode=arch=compute_80,code=sm_80 \
-                             -gencode=arch=compute_86,code=sm_86 \
-                             -gencode=arch=compute_87,code=sm_87 \
-                             -gencode=arch=compute_89,code=sm_89 \
-                             -gencode=arch=compute_90,code=sm_90 \
-                             -gencode=arch=compute_90,code=compute_90" \
-      -DCUDA_HOST_COMPILER=/usr/bin/g++ \
+      -DNO_CUDA=ON \
       -DCMAKE_INSTALL_PREFIX=/usr
 
   make -C build
