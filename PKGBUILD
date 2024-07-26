@@ -1,9 +1,10 @@
-# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor : Drew DeVault <sir@cmpwn.com>
 
 pkgname=samurai
 pkgver=1.2
-pkgrel=2
+pkgrel=3
 pkgdesc="ninja-compatible build tool written in C"
 arch=('x86_64')
 url="https://github.com/michaelforney/${pkgname}"
