@@ -8,7 +8,7 @@ pkgbase:
     - python-pyopencl
     - pyopencl-headers
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -34,10 +34,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2024.1-1
+    version: 1:2024.2.6-2
     packages:
-      - python-pyopencl-1:2024.1-1-x86_64.pkg.tar.zst
-      - pyopencl-headers-1:2024.1-1-x86_64.pkg.tar.zst
+      - python-pyopencl-1:2024.2.6-2-x86_64.pkg.tar.zst
+      - pyopencl-headers-1:2024.2.6-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
