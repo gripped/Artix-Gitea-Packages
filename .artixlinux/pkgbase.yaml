@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-live
-  version: 2024.07-1
+  version: 2024.07-2
   arch:
     - any
   pkgname:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.07-1
+    version: 2024.07-2
     packages:
-      - artix-live-base-2024.07-1-any.pkg.tar.zst
-      - artix-live-openrc-2024.07-1-any.pkg.tar.zst
-      - artix-live-runit-2024.07-1-any.pkg.tar.zst
-      - artix-live-s6-2024.07-1-any.pkg.tar.zst
-      - artix-live-dinit-2024.07-1-any.pkg.tar.zst
-      - artix-grub-live-2024.07-1-any.pkg.tar.zst
+      - artix-live-base-2024.07-2-any.pkg.tar.zst
+      - artix-live-openrc-2024.07-2-any.pkg.tar.zst
+      - artix-live-runit-2024.07-2-any.pkg.tar.zst
+      - artix-live-s6-2024.07-2-any.pkg.tar.zst
+      - artix-live-dinit-2024.07-2-any.pkg.tar.zst
+      - artix-grub-live-2024.07-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
