@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: gsettings-desktop-schemas
-  version: 46.1-1
+  version: 46.1-2
   arch:
     - any
   pkgname:
     - gsettings-desktop-schemas
+    - gsettings-system-schemas
 actions:
   addRepo: world
   removeRepo: null
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 46.1-1
+    version: 46.1-2
     packages:
-      - gsettings-desktop-schemas-46.1-1-any.pkg.tar.zst
+      - gsettings-desktop-schemas-46.1-2-any.pkg.tar.zst
+      - gsettings-system-schemas-46.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
