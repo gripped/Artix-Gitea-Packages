@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: wlroots0.17
-  version: 0.17.4-1
+  version: 0.17.4-3
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.17.4-1
+    version: 0.17.4-3
     packages:
-      - wlroots0.17-0.17.4-1-x86_64.pkg.tar.zst
+      - wlroots0.17-0.17.4-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
