@@ -154,10 +154,19 @@ ac_add_options --with-system-nss
 
 # Features
 ac_add_options --enable-alsa
+ac_add_options --enable-av1
+ac_add_options --enable-eme=widevine
 ac_add_options --enable-jack
-ac_add_options --enable-crashreporter
-ac_add_options --disable-updater
+ac_add_options --enable-jxl
+ac_add_options --enable-pulseaudio
+ac_add_options --enable-raw
+ac_add_options --enable-sandbox
+ac_add_options --enable-webrtc
+ac_add_options --disable-crashreporter
+ac_add_options --disable-default-browser-agent
+ac_add_options --disable-parental-controls
 ac_add_options --disable-tests
+ac_add_options --disable-updater
 END
 }
 
@@ -205,7 +214,7 @@ END
 
   echo "Building optimized browser..."
   cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto=cross,full
+ac_add_options --enable-lto=cross
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
