@@ -1,4 +1,4 @@
-# Contributor: Florian Pritz <bluewind@xinu.at>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=syslog-ng
@@ -22,10 +22,9 @@ depends=(
   'openssl'
   'pcre2'
   'protobuf'
-  'systemd-libs'
 )
 makedepends=('libxslt' 'mongo-c-driver' 'librabbitmq-c' 'python' 'libesmtp' 'hiredis'
-             'libdbi' 'libmaxminddb' 'net-snmp' 'librdkafka' 'systemd')
+             'libdbi' 'libmaxminddb' 'net-snmp' 'librdkafka')
 # checkdepends=('python-ply')
 optdepends=('logrotate: for rotating log files'
             'libdbi: for the SQL plugin'
@@ -43,20 +42,17 @@ replaces=('eventlog')
 # The default scl.conf moved in 4.3.0, but it is still supported here for overrides so we keep this entry. See https://github.com/syslog-ng/syslog-ng/pull/4534 for details.
 backup=('etc/syslog-ng/scl.conf'
         'etc/syslog-ng/syslog-ng.conf'
-        'etc/logrotate.d/syslog-ng'
-        'etc/default/syslog-ng@default')
+        'etc/logrotate.d/syslog-ng')
 source=(https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$pkgver/$pkgname-$pkgver.tar.gz
         syslog-ng.conf syslog-ng.logrotate
         https://github.com/syslog-ng/syslog-ng/commit/6487d8d8.patch)
 sha512sums=('7c4fbf1ac5377240afa7a1db8d72772399d2c62657fffc3c59e82b2dea6f12031f02320c4f567f981311bd1d8bbfd98962aeb59720ca857867a51b6bf83afb4b'
-            '432154be20858721c2dcfee65a608cb65760479c9b78b7751fa1e00fc0276c1b34bdff8bc1bee8a6e5c0138f3034531034401fcbb9cc3c70f1b984225a9c6240'
+            'eabd6439774e71840a86dd5870b7c912952f4b31dcd18afece4c2404005106a7cf8328c8156ab9a2218e87c4be8466f6a1d9b2cc9478c7815b0c01e977af8d94'
             'cd39f545a6a855c866a466bf846e33940b2c2dd1fc2eaf50cce29c68e1a5753c7c4b56411e4f01c152f32e155104a98dd755a96319767f47c73a8853f720b2cc'
             'b662ca18085a31784b6a985724132f3619b03ef4ec936f06b50a2d10c00f78a3d20d94e5ff95eab814772e9fe7a1ab78716ca99975f3a1fa163509c90cb5ab2e')
 
 prepare() {
   cd $pkgname-$pkgver
-  sed -i -e 's,/bin/,/usr/bin/,' -e 's,/sbin/,/bin/,' contrib/systemd/syslog-ng@.service
-  sed -i -e 's|/var/run|/run|g' contrib/systemd/syslog-ng@default
   patch -p1 -i ../6487d8d8.patch # Fix build with protobuf 27
 }
 
@@ -84,7 +80,7 @@ build() {
   ./configure --prefix=/usr --sysconfdir=/etc/syslog-ng --libexecdir=/usr/lib \
     --sbindir=/usr/bin --localstatedir=/var/lib/syslog-ng --datadir=/usr/share \
     --with-pidfile-dir=/run --enable-spoof-source --enable-ipv6 \
-    --enable-systemd --with-systemdsystemunitdir=/usr/lib/systemd/system \
+    --disable-systemd --with-systemdsystemunitdir=no \
     --enable-manpages --enable-all-modules --disable-java --disable-java-modules  \
     --disable-mqtt --disable-riemann --with-python=3 --with-jsonc=system
   # prevent excessive overlinking due to libtool
@@ -103,5 +99,4 @@ package() {
   install -dm755 "$pkgdir/var/lib/syslog-ng" "$pkgdir/etc/syslog-ng/patterndb.d"
   install -Dm644 "$srcdir/syslog-ng.conf" "$pkgdir/etc/syslog-ng/syslog-ng.conf"
   install -Dm644 "$srcdir/syslog-ng.logrotate" "$pkgdir/etc/logrotate.d/syslog-ng"
-  install -Dm644 "$srcdir"/$pkgname-$pkgver/contrib/systemd/syslog-ng@default -t "$pkgdir"/etc/default
 }
