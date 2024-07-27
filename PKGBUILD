@@ -3,7 +3,7 @@
 
 pkgname=python-blosc2
 pkgver=2.7.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Wrapper for the blosc2 compressor'
 arch=('x86_64')
 url='https://github.com/Blosc/python-blosc2'
@@ -31,7 +31,7 @@ makedepends=(
 checkdepends=(
   'python-psutil'
   'python-pytest'
-  # 'python-pytorch'
+  'python-pytorch'
 )
 source=("$pkgname::git+$url#tag=v$pkgver")
 sha512sums=('29b05656c121320dc11dd03855d430efc75ab1ea495d68134c57be403941ce0f1fc7ac13755136e4131c48c4fe093a2883a5fc717a2c2092a9ef48ce2da10aba')
