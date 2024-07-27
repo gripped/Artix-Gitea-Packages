@@ -1,0 +1,219 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: Hurricane Pootis <hurricanepootis@protonmail.com>
+# Contributor: John Sowiak <john@archlinux.org>
+# Contributor: tobias <tobias@archlinux.org>
+
+# For legal reasons, we can't separately package the Optix headers so we'll
+# just build the package against them. I checked with NVIDIA and this way is
+# fine with them.
+
+pkgname=blender
+pkgver=4.2.0
+pkgrel=3
+epoch=17
+pkgdesc="A fully integrated 3D graphics creation suite"
+arch=('x86_64')
+license=(
+  Apache-2.0
+  BSD-2-Clause
+  BSD-3-Clause
+  GPL-2.0-or-later
+  GPL-3.0-or-later
+  LGPL-2.1-or-later
+  MIT
+  MPL-2.0
+  Zlib
+)
+url="https://www.blender.org"
+depends=(
+  'alembic'
+  'bash'
+  'boost-libs'
+  'draco'  # seems to use static lib and should probably only be makedepends
+  'embree'
+  'expat'
+  'ffmpeg'
+  'fftw'
+  'freetype2'
+  'gcc-libs'
+  'glew'
+  'glibc'
+  'gmp'
+  'hicolor-icon-theme'
+  'imath'
+  'intel-oneapi-compiler-dpcpp-cpp-runtime-libs'
+  'intel-oneapi-compiler-shared-runtime-libs'
+  'jack'  # dlopen'ed
+  'jemalloc'
+  'level-zero-loader'  # dlopen'ed
+  'libepoxy'
+  'libharu'
+  'libjpeg-turbo'
+  'libpng'
+  'libsndfile'
+  'libspnav'
+  'libtiff'
+  'libwebp'
+  'libx11'
+  'libxfixes'
+  'libxi'
+  'libxkbcommon'
+  'libxml2'
+  'libxrender'
+  'libxxf86vm'
+  'llvm-libs'
+  'materialx'
+  'onetbb'
+  'openal'
+  'opencollada'
+  'opencolorio'
+  'openexr'
+  'openimagedenoise'
+  'openimageio'
+  'openjpeg2'
+  'openpgl'
+  'openshadinglanguage'
+  'opensubdiv'
+  'openvdb'
+  'openxr'
+  'potrace'
+  'pugixml'
+  'pystring'
+  'python'
+  'python-numpy'
+  'python-requests'
+  'sdl2'  # dlopen'ed
+  'shared-mime-info'
+  'usd'
+  'xdg-utils'
+  'yaml-cpp'
+  'zlib'
+  'zstd'
+)
+makedepends=(
+  'boost'
+  'cmake'
+  'cuda'
+  'git'
+  'git-lfs'
+  'hip-runtime-amd'
+  'intel-oneapi-compiler-shared-runtime'
+  'intel-oneapi-dpcpp-cpp'
+  'intel-compute-runtime'
+  'level-zero-headers'
+  'libdecor'
+  'mold'
+  'llvm'
+  'mesa'
+  'ninja'
+  'subversion'
+  'wayland-protocols'
+)
+optdepends=('cuda: Cycles renderer CUDA support'
+            'intel-compute-runtime: Cycles renderer Intel OneAPI support'
+            'libdecor: wayland support')
+# We're using !lto here as otherwise we get stuff such as FS#77557
+options=('!lto')
+source=("git+https://projects.blender.org/blender/blender.git#tag=v$pkgver"
+        "git+https://projects.blender.org/blender/blender-assets#tag=v$pkgver"
+        https://developer.download.nvidia.com/redist/optix/v8.0/OptiX-8.0-Include.zip
+        force-draco1.patch
+        blender-4.11-mantaflow-python-3.12.patch
+        ffmpeg-7-1.patch
+        ffmpeg-7-2.patch)
+sha512sums=('21346666b2cc462f2d11ddfdd69fde176cd4025fa9dc39ea4c414601801030081e04e724380607784ba12fa60708cc01c521012a454740144e6935011477dd00'
+            'c66cf633fafcf93f0e570d173c0a290a5cf573888da1170949981ff878aaaf28d6274b3175ae29b16d962fabd7902e93711a0deed743a3f5f0fe9d61f08d2faf'
+            '5502d9df847de12badc702c0444bd4f1f7620460b2235026df2c3133da1e04c148af0f1fc7f345e9a0c009c32f905f66c8d427743445e8864d3a797cdce6a483'
+            'e239da4f3906f1b54265435181cf770bae3d269c8d915df9a73861e6ee71ec70bf2339426e7c81a91e5a567273b3b3742d7a99feefd3398d821b26e1ff3a56d0'
+            '59044954880ce94d7a1da78ccd03e61a9d23382281b2221ca5c9c7eec9caeecf810d10ee07940d5843b7540fa81c00df5a26e8076605410116815e73c60ab9b9'
+            'ce67f8cb4857f3cc98759f00c226e1e0f81578a656e5772bd016fd0eee387f1fc0bc8e44b54e4ddef4df226d416f4ba2f7ef9e7ad02db36c968e727c986e3c4e'
+            'e1522345d6119ad396f27293b5f67b3a6d1b7352791186a04aeb654f285eeae873937f124461ff8dc9fc8ac5ae820cd8254bd4c3b64dcc06f1e41bee45f9bbe9')
+
+prepare() {
+  cd "$pkgname"
+
+  git submodule init
+  git config submodule.release/datafiles/assets.url "$srcdir/blender-assets"
+  git -c protocol.file.allow=always submodule update
+
+  # Fetch assets from git-lfs
+  git -C release/datafiles/assets lfs install --local
+  git -C release/datafiles/assets remote add network-origin https://projects.blender.org/blender/blender-assets
+  git -C release/datafiles/assets lfs fetch network-origin
+  git -C release/datafiles/assets lfs checkout
+
+  # fix draco
+  patch -p1 -i "$srcdir"/force-draco1.patch
+
+  # fix fluid sim domain with python 3.12
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/blender/-/issues/18
+  patch -p1 -i "$srcdir"/blender-4.11-mantaflow-python-3.12.patch
+
+  # fix build with ffmpeg 7
+  patch -p1 -i ../ffmpeg-7-1.patch
+  patch -p1 -i ../ffmpeg-7-2.patch
+}
+
+_get_pyver() {
+  python -c 'import sys; print(str(sys.version_info[0]) + "." + str(sys.version_info[1]))'
+}
+
+build() {
+  # This should fix #13.
+  export CXXFLAGS=${CXXFLAGS/-Wp,-D_GLIBCXX_ASSERTIONS/}
+
+  local cmake_options=(
+    -B build
+    -C "$pkgname/build_files/cmake/config/blender_release.cmake"
+    -C "$srcdir/precache"
+    -D CMAKE_BUILD_TYPE=Release
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D WITH_LINKER_MOLD=ON
+    -D CUDA_HOST_COMPILER="$NVCC_CCBIN"
+    -D HIP_ROOT_DIR=/opt/rocm
+    # Skip targets gfx115{0,1} as they not supported by ROCm 6.0.2
+    -D CYCLES_HIP_BINARIES_ARCH="gfx900;gfx90c;gfx902;gfx1010;gfx1011;gfx1012;gfx1030;gfx1031;gfx1032;gfx1034;gfx1035;gfx1036;gfx1100;gfx1101;gfx1102;gfx1103"
+    -D OCLOC_INSTALL_DIR=/usr
+    -D OPTIX_ROOT_DIR="$srcdir"
+    -D PYTHON_VERSION="$(_get_pyver)"
+    # -D SYCL_CPP_FLAGS=--verbose  # for debugging
+    -D SYCL_ROOT_DIR=/opt/intel/oneapi/compiler/latest
+    -D SYCL_OFFLINE_COMPILER_PARALLEL_JOBS=8
+    -D USD_ROOT_DIR=/usr
+    -D WITH_CYCLES_OSL=ON
+    -D WITH_INSTALL_PORTABLE=OFF
+    -D WITH_PYTHON_INSTALL=OFF
+    -G Ninja
+    -S "$pkgname"
+    -W no-dev
+  )
+
+  # CUDA arch 90 is unsupported
+  echo 'set(CYCLES_CUDA_BINARIES_ARCH sm_52 sm_53 sm_60 sm_61 sm_62 sm_70 sm_72 sm_75 sm_80 sm_86 sm_87 sm_89 compute_89 CACHE STRING "CUDA architectures to build binaries for" FORCE)' > precache
+  echo 'mark_as_advanced(CYCLES_CUDA_BINARIES_ARCH)' >> precache
+
+  cmake "${cmake_options[@]}"
+  cmake --build build
+}
+
+package() {
+  DESTDIR="${pkgdir}" cmake --install build
+  cd "$pkgname"
+
+  install -Dm755 release/bin/blender-softwaregl "${pkgdir}/usr/bin/blender-softwaregl"
+  python -m compileall "${pkgdir}/usr/share/blender"
+  python -O -m compileall "${pkgdir}/usr/share/blender"
+
+  install -Dm644 release/freedesktop/org.blender.Blender.metainfo.xml "${pkgdir}/usr/share/metainfo/org.blender.Blender.metainfo.xml"
+
+  # Manually install draco bindings (See FS#73415)
+  mkdir -p "${pkgdir}/usr/lib/python$(_get_pyver)"/
+  mv "${pkgdir}"/usr/share/blender/4*/python/lib/* "${pkgdir}"/usr/lib/
+  rm -r "${pkgdir}"/usr/share/blender/4*/python
+
+  # Move OneAPI AOT lib to proper place
+  mv "${pkgdir}"/usr/share/blender/lib/libcycles_kernel_oneapi_aot.so "${pkgdir}"/usr/lib/
+
+  install -vDm 644 doc/license/{BSD-{2,3}-Clause,MIT,Zlib}-license.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
+}
