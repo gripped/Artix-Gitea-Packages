@@ -113,7 +113,7 @@ build() {
     --with-native-debug-symbols=internal \
     --enable-unlimited-crypto \
     --disable-warnings-as-errors \
-    --with-vendor-name="Arch Linux" \
+    --with-vendor-name="Artix Linux" \
     ${NUM_PROC_OPT}
     #--disable-javac-server
 
