@@ -7,7 +7,7 @@ pkgname=(
   liblightdm-qt5
 )
 pkgver=1.32.0
-pkgrel=6
+pkgrel=6.1
 epoch=1
 pkgdesc='A lightweight display manager'
 arch=(x86_64)
@@ -118,7 +118,7 @@ package_lightdm() {
     etc/pam.d/lightdm-autologin
     etc/pam.d/lightdm-greeter
   )
-
+  provides=(display-manager)
   cd lightdm
 
   make DESTDIR="${pkgdir}" install
