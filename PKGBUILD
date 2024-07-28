@@ -4,12 +4,12 @@
 # Contributor: PedroHLC <root@pedrohlc.com>
 
 pkgname=gamescope
-pkgver=3.14.22
+pkgver=3.14.24
 pkgrel=1
 pkgdesc='SteamOS session compositing window manager'
 arch=(x86_64)
 url=https://github.com/ValveSoftware/gamescope
-license=(BSD-2-Clause BSD-3-Clause)
+license=(BSD-2-Clause BSD-3-Clause LicenseRef-Reshade)
 depends=(
   gcc-libs
   glibc
@@ -31,7 +31,6 @@ depends=(
   libxres
   libxtst
   libxxf86vm
-  openvr
   sdl2
   seatd
   vulkan-icd-loader
@@ -42,6 +41,7 @@ depends=(
 )
 makedepends=(
   benchmark
+  cmake
   git
   glslang
   meson
@@ -49,38 +49,46 @@ makedepends=(
   vulkan-headers
   wayland-protocols
 )
-_tag=420eb91387a484fd7b1ea71449091f0480d9e538
+_tag=cf2497fd7ec83f3d0dd5cb31b69540a2d129edad
 source=(
   git+https://github.com/ValveSoftware/gamescope.git#tag=${_tag}
+  git+https://gitlab.freedesktop.org/emersion/libdisplay-info.git
+  git+https://gitlab.freedesktop.org/emersion/libliftoff.git
+  git+https://github.com/ValveSoftware/openvr.git
   git+https://github.com/Joshua-Ashton/reshade.git
   git+https://github.com/KhronosGroup/SPIRV-Headers.git
+  git+https://github.com/Joshua-Ashton/vkroots.git
+  git+https://github.com/Joshua-Ashton/wlroots.git
 )
-b2sums=('bcdfcfdb7636d10c9d4450e03b252669a6ce9d5d21d241cde12bbf29feffaaf72bb785dce96682f43c25e0797cd6e5d13677e247d7c921e63ca1c27c8af04cb0'
+b2sums=('272b4df0782c6dfe3f428e396f4e2ab93594e6b086bba25d0116995883e84944788760a24feb0d8a61d615c4d4ecee9d7648a5cdcee128620aaa9d24d2606284'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
+        'SKIP'
         'SKIP'
         'SKIP')
 
 prepare() {
   cd gamescope
 
-  # Use shared libs, remove submodules to avoid fallback
-  git rm subprojects/openvr
-
   meson subprojects download
-  git submodule init src/reshade
-  git config submodule.src/reshade.url ../reshade
-  git submodule init thirdparty/SPIRV-Headers
-  git config submodule.thirdparty/SPIRV-Headers.url ../SPIRV-Headers
+
+  for submodule in src/reshade subprojects/{libdisplay-info,libliftoff,openvr,vkroots,wlroots} thirdparty/SPIRV-Headers; do
+    git submodule init ${submodule}
+    git config submodule.${submodule}.url ../${submodule##*/}
+  done
   git -c protocol.file.allow=always submodule update
 }
 
-#pkgver() {
-#  cd gamescope
-#  git describe --tags | sed 's/-//'
-#}
+pkgver() {
+  cd gamescope
+  git describe --tags | sed 's/-//'
+}
 
 build() {
   artix-meson gamescope build \
-    -Dforce_fallback_for=wlroots,libliftoff,vkroots,glm,stb,libdisplay-info \
+    -Dforce_fallback_for=glm,stb,libdisplay-info,libliftoff,vkroots,wlroots \
     -Dpipewire=enabled
   meson compile -C build
 }
@@ -88,6 +96,7 @@ build() {
 package() {
   DESTDIR="${pkgdir}" meson install -C build \
     --skip-subprojects
+  install -Dm 644 gamescope/LICENSE -t "${pkgdir}"/usr/share/licenses/gamescope/
 }
 
 # vim: ts=2 sw=2 et:
