@@ -51,12 +51,12 @@ sha256sums=('73d8520dd9cba5acfc5e7208e76b35d9740b8aae38210a9224e32ec4c0d29b70'
             'SKIP'
             'a4efb43085bdfff93b11f26dd276859d347752958717b99c9f4a97133b857515'
             'SKIP'
-            '2d9a08ef86f7bcd2afb3db0fa89803de1b0836c58ce7123941a2381939ca91b3')
+            'a0349b7d14e35943025c63f6bd346b4acb9a5b31435495df347811a490564abc')
 b2sums=('ab1d2e79a1bb8a9b78ab5b1af93db7ef356cb5e14bba1121bbd3ae06b9589c8bfc32bab373acdd0ecf965ac132130e7eb34e70b35a9df1bd85b49dab97e2c02a'
         'SKIP'
         '9c16132af733ba448db39467d0d20df7143e2f2c1acf01653afa898a3e10f5fa170db24bdede4e7083b72064a3dc4bc4e6d616d3ac7cdc0a6b25d5725ff633fc'
         'SKIP'
-        'dea4957fe6fbae81689c30e1b8b6e6b8bbc8dbac03aadff9b6df7197b97891769cdac07e5b701deeeba32b0f7c6c603aeeccdb2136b6e9ab61d0ba2255fb7e3a')
+        '4133230d7276f17da1286426e2a0a1d0fe2cb3d0338e16544688fb4abaa4e81dabdf6ea665d5dfef9ab3440a77460c5229eb479c602f09b0b5d8c21e1dc50c7c')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
