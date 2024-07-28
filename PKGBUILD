@@ -1,13 +1,13 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.10
+_ver=6.10.2
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=2
+pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)
@@ -31,6 +31,7 @@ makedepends=(
   texlive-latexextra
 )
 options=(
+  !debug
   !strip
 )
 _srcname=linux-${_ver}
@@ -46,16 +47,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('774698422ee54c5f1e704456f37c65c06b51b4e9a8b0866f34580d86fef8e226'
+sha256sums=('73d8520dd9cba5acfc5e7208e76b35d9740b8aae38210a9224e32ec4c0d29b70'
             'SKIP'
-            'fdb6552c43bcbc465f88c6ec2e01eb26791ac21f81687ca891ac1152503f7cad'
+            'a4efb43085bdfff93b11f26dd276859d347752958717b99c9f4a97133b857515'
             'SKIP'
-            '58d4fda604bca24462ba9ac08fb2b391bc06f2d6d4fd3bc7d97cc0231d194f1b')
-b2sums=('bb243ea7493b9d63aa2df2050a3f1ae2b89ee84a20015239cf157e3f4f51c7ac5efedc8a51132b2d7482f9276ac418de6624831c8a3b806130d9c2d2124c539b'
+            '2d9a08ef86f7bcd2afb3db0fa89803de1b0836c58ce7123941a2381939ca91b3')
+b2sums=('ab1d2e79a1bb8a9b78ab5b1af93db7ef356cb5e14bba1121bbd3ae06b9589c8bfc32bab373acdd0ecf965ac132130e7eb34e70b35a9df1bd85b49dab97e2c02a'
         'SKIP'
-        '733e830c81821a4d0fe2b4af9b80e5284d7bc625221cd2308308f24c76c3fc030ddeb400e9756bb19c75d632359e9535b8218db2421bb8ef5cdbb5e782af96bd'
+        '9c16132af733ba448db39467d0d20df7143e2f2c1acf01653afa898a3e10f5fa170db24bdede4e7083b72064a3dc4bc4e6d616d3ac7cdc0a6b25d5725ff633fc'
         'SKIP'
-        '8468be80d7f9c3b3134722ee820b13649d338cedbb7733cfe3919e54679dace42ab3c78b4029bd13a0429f261820339986b7b466befcf829e85b7b211ca5aff4')
+        'dea4957fe6fbae81689c30e1b8b6e6b8bbc8dbac03aadff9b6df7197b97891769cdac07e5b701deeeba32b0f7c6c603aeeccdb2136b6e9ab61d0ba2255fb7e3a')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -77,8 +78,7 @@ prepare() {
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
   done
-
-  sed -i -r "s|EXTRAVERSION = -${_arch}|EXTRAVERSION = -${_artix}|" "Makefile"
+  sed -i -r "s/EXTRAVERSION = -${_arch}/EXTRAVERSION = -${_artix}/" "Makefile"
 
   echo "Setting config..."
   cp ../config .config
