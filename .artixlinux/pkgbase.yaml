@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: shairplay
-  version: 20180824.096b61a-4
+  version: 20180824.096b61a-5
   arch:
     - x86_64
   pkgname:
     - shairplay
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20180824.096b61a-4
+    version: 20180824.096b61a-5
     packages:
-      - shairplay-20180824.096b61a-4-x86_64.pkg.tar.zst
+      - shairplay-20180824.096b61a-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

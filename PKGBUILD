@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
 # Contributor: winlu
 
 pkgname=shairplay
 _commit=096b61a
 pkgver=20180824.096b61a
-pkgrel=4
+pkgrel=5
 pkgdesc='Apple airplay and raop protocol server'
 arch=('x86_64')
 url='https://github.com/juhovh/shairplay'
