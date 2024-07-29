@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-time-modules
-  version: 2013.0912-9
+  version: 2013.0912-10
   arch:
     - any
   pkgname:
     - perl-time-modules
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2013.0912-9
+    version: 2013.0912-10
     packages:
-      - perl-time-modules-2013.0912-9-any.pkg.tar.zst
+      - perl-time-modules-2013.0912-10-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
