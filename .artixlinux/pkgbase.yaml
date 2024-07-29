@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-b-cow
-  version: 0.007-2
+  version: 0.007-3
   arch:
     - x86_64
   pkgname:
     - perl-b-cow
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.007-2
+    version: 0.007-3
     packages:
-      - perl-b-cow-0.007-2-x86_64.pkg.tar.zst
+      - perl-b-cow-0.007-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
