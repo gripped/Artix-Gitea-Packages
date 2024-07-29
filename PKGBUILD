@@ -1,3 +1,4 @@
+# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Anatol Pomozov <anatol dot pomozov at gmail>
@@ -8,8 +9,8 @@ pkgname=(
   openmpi
   openmpi-docs
 )
-pkgver=5.0.3
-pkgrel=2
+pkgver=5.0.5
+pkgrel=1
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
@@ -32,8 +33,8 @@ makedepends=(
 )
 source=(
   https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/$pkgbase-$pkgver.tar.bz2)
-sha256sums=('990582f206b3ab32e938aa31bbf07c639368e4405dca196fabe7f0f76eeda90b')
-b2sums=('a084813f3dada12bbe77dcc6ef0ec0454980779f97ccb46f37f3d7df3bf7299e6484ec3427c2ca784e70876f62dc061a13cb7f08348e3d649e27f2bece9a09ac')
+sha256sums=('6588d57c0a4bd299a24103f4e196051b29e8b55fbda49e11d5b3d32030a32776')
+b2sums=('740e5dbc7e54b8f4eac4fa2c40fb5a0ccfba201dff15ccc84899f28dfad0147078ef6c2b0585615c93fc6edb70b665b3f7a9adea5e5e53a7563ae4c7a6ccbada')
 
 _pick() {
   local p="$1" f d; shift
