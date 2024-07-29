@@ -4,7 +4,7 @@
 
 pkgname=baloo
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A framework for searching and managing metadata'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -49,4 +49,7 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+
+  #remove systemd service
+  rm -r $pkgdir/usr/lib/systemd
 }
