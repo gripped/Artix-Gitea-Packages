@@ -1,8 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=zsh-autosuggestions
 pkgver=0.7.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Fish-like autosuggestions for zsh "
 arch=(any)
 url="https://github.com/zsh-users/zsh-autosuggestions"
