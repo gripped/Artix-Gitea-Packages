@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-term-ui
-  version: 0.50-3
+  version: 0.50-4
   arch:
     - any
   pkgname:
     - perl-term-ui
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.50-3
+    version: 0.50-4
     packages:
-      - perl-term-ui-0.50-3-any.pkg.tar.zst
+      - perl-term-ui-0.50-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
