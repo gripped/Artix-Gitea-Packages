@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-parse-yapp
-  version: 1.21-6
+  version: 1.21-7
   arch:
     - any
   pkgname:
     - perl-parse-yapp
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.21-6
+    version: 1.21-7
     packages:
-      - perl-parse-yapp-1.21-6-any.pkg.tar.zst
+      - perl-parse-yapp-1.21-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
