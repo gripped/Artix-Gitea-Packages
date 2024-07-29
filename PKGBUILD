@@ -1,10 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Sébastien Luttringer <seblu@archlinux.org>
 # Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: Sebastien Vasey sebastien dot vasey at gmail dot com
 
 pkgname=sshpass
 pkgver=1.10
-pkgrel=1
+pkgrel=2
 pkgdesc='Fool ssh into accepting an interactive password non-interactively'
 arch=('x86_64')
 url='https://sourceforge.net/projects/sshpass/'
