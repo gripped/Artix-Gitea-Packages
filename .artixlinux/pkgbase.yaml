@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-inline-filters
-  version: 0.20-6
+  version: 0.20-7
   arch:
     - any
   pkgname:
     - perl-inline-filters
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20-6
+    version: 0.20-7
     packages:
-      - perl-inline-filters-0.20-6-any.pkg.tar.zst
+      - perl-inline-filters-0.20-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
