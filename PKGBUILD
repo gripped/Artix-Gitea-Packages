@@ -3,7 +3,7 @@
 
 pkgname='virtualbox-host-modules-artix'
 pkgver=7.0.20
-pkgrel=4
+pkgrel=6
 pkgdesc='Virtualbox host kernel modules for Artix Kernel'
 arch=('x86_64')
 url='https://virtualbox.org/'
@@ -29,7 +29,7 @@ package(){
     vboxhost/${pkgver}_OSE/${_kernver}/${CARCH}/module/*
 
   # compress each module individually
-  find "$pkgdir" -name '*.ko' -exec xz -T1 {} +
+  find "${pkgdir}" -name '*.ko' -exec zstd --rm -19 {} +
 
   # systemd module loading
   printf '%s\n' vboxdrv vboxnetadp vboxnetflt |
