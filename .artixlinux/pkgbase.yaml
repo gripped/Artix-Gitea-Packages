@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-class-data-inheritable
-  version: 0.09-4
+  version: 0.09-5
   arch:
     - x86_64
   pkgname:
     - perl-class-data-inheritable
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.09-4
+    version: 0.09-5
     packages:
-      - perl-class-data-inheritable-0.09-4-x86_64.pkg.tar.zst
+      - perl-class-data-inheritable-0.09-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
