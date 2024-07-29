@@ -1,10 +1,11 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolarxlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Maxime de Roucy <maxime.deroucy@gmail.com>
 # Contributor: Darwin Bautista <djclue917@gmail.com>
 
 pkgname=gsm
 pkgver=1.0.22
-pkgrel=1
+pkgrel=2
 pkgdesc="Shared libraries for GSM 06.10 lossy speech compression"
 arch=('x86_64')
 url="https://www.quut.com/gsm/"
