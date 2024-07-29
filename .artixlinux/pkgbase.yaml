@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-package-stash
-  version: 0.40-3
+  version: 0.40-4
   arch:
     - any
   pkgname:
     - perl-package-stash
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.40-3
+    version: 0.40-4
     packages:
-      - perl-package-stash-0.40-3-any.pkg.tar.zst
+      - perl-package-stash-0.40-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
