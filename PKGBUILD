@@ -1,17 +1,18 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Benjamin Bukowski <benjamin.bukowski@gmail.com>
 # Contributor: Johannes Löthberg <demizide@gmail.com>
 
 pkgname=atftp
 pkgver=0.8.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Client/server implementation of the TFTP protocol that implements RFCs 1350, 2090, 2347, 2348, and 2349'
 arch=('x86_64')
 url='https://sourceforge.net/projects/atftp/'
 license=('GPL')
 depends=('pcre2' 'readline')
 backup=('etc/conf.d/atftpd')
-options=('debug' '!lto')
-source=("$pkgname_$pkgname.tar.gz::https://downloads.sf.net/sourceforge/atftp/atftp-${pkgver}.tar.gz"
+options=('!lto')
+source=("https://downloads.sf.net/sourceforge/atftp/atftp-${pkgver}.tar.gz"
         'sysusers.conf'
         'tmpfiles.conf')
 sha256sums=('df2aa089c7670f9eab40e5598e5d2cb6a582dc5182926ea50b4d690e4e37f316'
