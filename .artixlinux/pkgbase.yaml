@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-file-chdir
-  version: 0.1011-5
+  version: 0.1011-6
   arch:
     - any
   pkgname:
     - perl-file-chdir
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1011-5
+    version: 0.1011-6
     packages:
-      - perl-file-chdir-0.1011-5-any.pkg.tar.zst
+      - perl-file-chdir-0.1011-6-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
