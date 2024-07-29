@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: perl-text-wrapi18n
-  version: 0.06-9
+  version: 0.06-10
   arch:
     - any
   pkgname:
     - perl-text-wrapi18n
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.06-9
+    version: 0.06-10
     packages:
-      - perl-text-wrapi18n-0.06-9-any.pkg.tar.zst
+      - perl-text-wrapi18n-0.06-10-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
