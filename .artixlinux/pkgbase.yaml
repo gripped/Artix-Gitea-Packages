@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: redshift
-  version: 1.12-12
+  version: 1.12-13
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12-12
+    version: 1.12-13
     packages:
-      - redshift-1.12-12-x86_64.pkg.tar.zst
+      - redshift-1.12-13-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
