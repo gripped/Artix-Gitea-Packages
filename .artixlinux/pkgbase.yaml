@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-list-moreutils
-  version: 0.430-4
+  version: 0.430-5
   arch:
     - any
   pkgname:
     - perl-list-moreutils
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.430-4
+    version: 0.430-5
     packages:
-      - perl-list-moreutils-0.430-4-any.pkg.tar.zst
+      - perl-list-moreutils-0.430-5-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
