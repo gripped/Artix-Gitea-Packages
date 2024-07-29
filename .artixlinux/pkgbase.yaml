@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-canary-stability
-  version: 2013-6
+  version: 2013-7
   arch:
     - any
   pkgname:
     - perl-canary-stability
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2013-6
+    version: 2013-7
     packages:
-      - perl-canary-stability-2013-6-any.pkg.tar.zst
+      - perl-canary-stability-2013-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
