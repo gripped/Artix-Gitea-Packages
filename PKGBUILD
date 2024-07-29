@@ -1,11 +1,12 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolarxlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor:  Ionut Biru <ibiru@archlinux.org>
 # Contributor: Hugo Doria <hugo@archlinux.org>
 
 pkgname=lame
 pkgver=3.100
-pkgrel=4
+pkgrel=5
 pkgdesc='A high quality MPEG Audio Layer III (MP3) encoder'
 arch=(x86_64)
 url=http://lame.sourceforge.net/
@@ -13,7 +14,6 @@ license=(LGPL)
 depends=(ncurses)
 makedepends=(nasm)
 provides=(libmp3lame.so)
-options=(debug)
 source=(
   https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz
   $pkgname.pc.in
