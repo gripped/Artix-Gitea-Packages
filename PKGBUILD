@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=parted
 pkgver=3.6
-pkgrel=1
+pkgrel=2
 pkgdesc='A program for creating, destroying, resizing, checking and copying partitions'
 arch=('x86_64')
 license=('GPL3')
