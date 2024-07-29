@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-import-into
-  version: 1.002005-9
+  version: 1.002005-10
   arch:
     - any
   pkgname:
     - perl-import-into
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.002005-9
+    version: 1.002005-10
     packages:
-      - perl-import-into-1.002005-9-any.pkg.tar.zst
+      - perl-import-into-1.002005-10-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
