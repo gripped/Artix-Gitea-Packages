@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Kevin Piche <kevin@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=recode
 pkgver=3.7.14
-pkgrel=1
+pkgrel=2
 pkgdesc='Converts files between various character sets and usages'
 arch=('x86_64')
 url='https://github.com/rrthomas/recode'
