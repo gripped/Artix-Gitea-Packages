@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-crypt-ssleay
-  version: 0.73_06-4
+  version: 0.73_06-5
   arch:
     - x86_64
   pkgname:
     - perl-crypt-ssleay
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.73_06-4
+    version: 0.73_06-5
     packages:
-      - perl-crypt-ssleay-0.73_06-4-x86_64.pkg.tar.zst
+      - perl-crypt-ssleay-0.73_06-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
