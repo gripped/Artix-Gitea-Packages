@@ -1,9 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=portmidi
 pkgver=2.0.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Cross platform library for interfacing with OS MIDI I/O APIs"
 arch=(x86_64)
