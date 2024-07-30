@@ -15,11 +15,11 @@ depends=(glibc
 source=(http://www.convertlit.com/clit18src.zip
         Wformat-security.patch)
 sha256sums=('d70a85f5b945104340d56f48ec17bcf544e3bb3c35b1b3d58d230be699e557ba'
-            '7514b97fc593ca79aa517dd70d2e7c8dadd6e0223892ce38ff1deda1d15a693d')
+            '5875f296ba0316023a3281166683f99225c1ac8d0f94cd029cdec4772568c2a1')
 
 prepare() {
 # Fix build with -Wformat-security (Gentoo)
-  patch -p1 < Wformat-security.patch
+  patch --binary -p1 < Wformat-security.patch
 # Link to shared libtommath and use system LDFLAGS
   sed -e 's|../libtommath-0.30/libtommath.a|/usr/lib/libtommath.so ${LDFLAGS}|' -i clit18/Makefile
 # Use system CFLAGS
