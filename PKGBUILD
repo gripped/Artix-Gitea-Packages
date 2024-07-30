@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-pool
 pkgver=0.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A singleplex and multiplex resource pool for implementing robust clients'
 arch=(any)
 url='https://github.com/socketry/async-pool'
@@ -18,8 +18,11 @@ makedepends=(
 checkdepends=(
   ruby-bake-test
   ruby-bake-test-external
+  ruby-bundler
   ruby-covered
+  ruby-io-event
   ruby-sus
+  ruby-sus-fixtures-async
 )
 options=(!emptydirs)
 source=(https://github.com/socketry/async-pool/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
@@ -60,8 +63,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd async-pool-$pkgver
-  # https://github.com/socketry/async-pool/issues/15
-  GEM_HOME="tmp_install/$_gemdir" bake test || echo "Tests failed"
+  GEM_HOME="tmp_install/$_gemdir" bake test
 }
 
 package() {
