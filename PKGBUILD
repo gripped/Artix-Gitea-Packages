@@ -1,8 +1,9 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 
 pkgname=zopfli
 pkgver=1.0.3
-pkgrel=3
+pkgrel=4
 pkgdesc="Compression algorithm library"
 arch=(x86_64)
 url="https://github.com/google/zopfli"
@@ -42,4 +43,3 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
   install -vDm 644 $pkgname-$pkgname-$pkgver/README* -t "$pkgdir/usr/share/doc/$pkgname/"
 }
-
