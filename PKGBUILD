@@ -4,7 +4,7 @@
 
 _gemname=async
 pkgname=ruby-${_gemname}
-pkgver=2.10.2
+pkgver=2.14.2
 pkgrel=1
 pkgdesc='Composable asynchronous I/O'
 url='https://github.com/socketry/async'
@@ -21,8 +21,8 @@ makedepends=(
 )
 options=('!emptydirs')
 source=("https://github.com/socketry/async/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('8e8804ad60f68c4a7238e62e27ace99108e29fe134c8fafd00705840edf6a353c4c4d3baeda149b5dddeaca678e62fedb5499da57d5f492726b29dcd0502a0d9')
-b2sums=('2460f63a0963f0cd64ac3c23edf3398539dee9721817a59dd55baf5db01e887a5127d9e10413168550e1c4f89d4b2b14d503701c97f5a9518af449975c8ad640')
+sha512sums=('e92d2b69648f88b5f24703df9c35eb0da0413b8db312f70f1c81f02de9ebd546d88657c32f6e582148ef29af1dbc36d460029e3aeab12a333a0364272a27d20f')
+b2sums=('722c63de889144b4563491f873d618a77ea6fb98ed9132684c62ea6ccfbd040c1ff2b857f42ce66a09c1aca1ef0c648b163d34eccd759f4f4509fe7809ddc776')
 
 prepare() {
   cd ${_gemname}-${pkgver}
