@@ -15,7 +15,7 @@ depends=(glibc
 source=(http://www.convertlit.com/clit18src.zip
         Wformat-security.patch)
 sha256sums=('d70a85f5b945104340d56f48ec17bcf544e3bb3c35b1b3d58d230be699e557ba'
-            '79c587cda8d7639f362d83756508af15f8e7b24c9388eebca2df6e3956544e3a')
+            '7514b97fc593ca79aa517dd70d2e7c8dadd6e0223892ce38ff1deda1d15a693d')
 
 prepare() {
 # Fix build with -Wformat-security (Gentoo)
