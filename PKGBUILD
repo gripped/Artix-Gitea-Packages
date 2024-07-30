@@ -1,9 +1,10 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=portsmf
 pkgver=234
-pkgrel=2
+pkgrel=3
 pkgdesc="Portable library for reading/writing Standard MIDI Files"
 arch=('x86_64')
 url="https://sourceforge.net/p/portmedia/wiki/portsmf/"
