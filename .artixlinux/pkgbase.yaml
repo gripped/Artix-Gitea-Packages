@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-fiber-local
-  version: 1.0.0-2
+  version: 1.1.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.0-2
+    version: 1.1.0-1
     packages:
-      - ruby-fiber-local-1.0.0-2-any.pkg.tar.zst
+      - ruby-fiber-local-1.1.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
