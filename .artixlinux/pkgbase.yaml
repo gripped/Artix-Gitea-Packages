@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-sphinxcontrib-qthelp
-  version: 1.0.8-1
+  version: 2.0.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.8-1
+    version: 2.0.0-1
     packages:
-      - python-sphinxcontrib-qthelp-1.0.8-1-any.pkg.tar.zst
+      - python-sphinxcontrib-qthelp-2.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
