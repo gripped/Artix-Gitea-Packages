@@ -1,12 +1,13 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Giorgio Lando <lando at imap dot cc>
 # Contributor: Sergej Pupykin
 # Contributor: Thomas Bächler
 # Contributor: Sébastien Luttringer
-# Maintainer: Thorsten Töpper <atsutane-tu@freethoughts.de>
+# Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
 
 pkgname=fcron
 pkgver=3.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Feature-rich cron implementation'
 arch=(x86_64)
 url='http://fcron.free.fr'
