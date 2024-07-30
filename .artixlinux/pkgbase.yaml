@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-sphinx
-  version: 7.4.7-1
+  version: 8.0.0-1
   arch:
     - any
   pkgname:
     - python-sphinx
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.0.0-1
+    packages:
+      - python-sphinx-8.0.0-1-any.pkg.tar.zst
   world:
     version: 7.4.7-1
     packages:
