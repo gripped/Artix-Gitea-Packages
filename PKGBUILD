@@ -1,12 +1,13 @@
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=rpmextract
 pkgver=1.0
-pkgrel=9
+pkgrel=10
 pkgdesc="Script to convert or extract RPM archives (contains rpm2cpio)"
 url="http://www.archlinux.org"
 arch=('any')
-license=('GPL')
+license=('GPL-2.0-only')
 depends=('bash' 'libarchive' 'coreutils')
 source=('rpmextract.sh' 'rpm2cpio')
 sha512sums=('2769f9d7b7831ed766bf06262eccc84c938390ff84443e704ba765f9d5ddaa46836d5d3b839d4853175d613d7b1f266e5ac8a18fa6f527ed0a445cb644b592dc'
