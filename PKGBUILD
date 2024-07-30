@@ -5,7 +5,7 @@
 _gemname=async
 pkgname=ruby-${_gemname}
 pkgver=2.14.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Composable asynchronous I/O'
 url='https://github.com/socketry/async'
 arch=('any')
@@ -13,6 +13,7 @@ license=('MIT')
 depends=(
   ruby
   ruby-console
+  ruby-io-event
   ruby-nio4r
   ruby-timers
 )
