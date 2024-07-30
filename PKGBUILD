@@ -1,9 +1,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: nous <nous@artixlinux.org>
 
 _repo=artwork
-_commit=cc591e422d7fbd4578d99912cbb7431bc7500115
-
+_commit=22f17c8bbff67b32e2646cb7f132d755ee9a8199
 pkgbase=artix-artwork
 pkgname=('artix-icons'
         'artix-backgrounds'
@@ -11,9 +10,9 @@ pkgname=('artix-icons'
         'artix-grub-theme'
         'artix-plasma-splash'
         'artix-wallpapers')
-pkgver=2024.06
+pkgver=2024.07
 pkgrel=1
-pkgdesc='Artix wallpapers'
+pkgdesc='Artix icons, backgrounds and wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
