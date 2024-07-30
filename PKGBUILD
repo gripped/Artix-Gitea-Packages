@@ -1,17 +1,19 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Maintainer:  Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:  Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor:  Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Tom Killian <tomk@runbox.com>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=uptimed
 pkgver=0.4.6
-pkgrel=3
+pkgrel=4
 pkgdesc="A system uptime record daemon"
 arch=(x86_64)
 #url="http://podgorny.cz/uptimed/"
 url="https://github.com/rpodgorny/uptimed"
 license=('GPL')
 depends=()
+makedepends=('udev')
 backup=(etc/uptimed.conf)
 install=$pkgname.install
 source=("$pkgname-$pkgver.tar.gz::https://github.com/rpodgorny/uptimed/archive/v$pkgver.tar.gz")
