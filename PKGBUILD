@@ -4,7 +4,7 @@
 _gemname='faraday-httpclient'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Faraday adapter for HTTPClient'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
