@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=webhook
 pkgver=2.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A lightweight incoming webhook server to run shell commands"
 arch=('x86_64')
 url="https://github.com/adnanh/webhook"
