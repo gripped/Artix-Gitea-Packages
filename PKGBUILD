@@ -4,13 +4,21 @@
 _gemname='faraday-net_http_persistent'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc='About Faraday adapter for NetHttpPersistent'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
 license=('MIT')
-depends=('ruby')
-checkdepends=('ruby-faraday' 'ruby-webmock' 'ruby-multipart-parser' 'ruby-rspec')
+depends=(
+  ruby
+  ruby-net-http-persistent
+)
+checkdepends=(
+  ruby-faraday
+  ruby-multipart-parser
+  ruby-rspec
+  ruby-webmock
+)
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz")
 sha512sums=('f198ebb42cf0aee6ee8b6c598e437112f620bd145dad609e64845e555f4f51034a8f8670ef448b46742f7f5a83bc8681943c6ba817430b1519fd683f57d0b7fa')
