@@ -4,12 +4,12 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgbase=ruff
-pkgname=($pkgbase python-$pkgbase)
-pkgver=0.5.1
+pkgname=("$pkgbase" "python-$pkgbase")
+pkgver=0.5.5
 pkgrel=1
 pkgdesc='An extremely fast Python linter, written in Rust'
 arch=(x86_64)
-url="https://github.com/astral-sh/$pkgbase"
+url=https://github.com/astral-sh/$pkgbase
 license=(MIT)
 depends=(
   gcc-libs
@@ -17,27 +17,27 @@ depends=(
 )
 makedepends=(
   cargo
+  git
   maturin
   python-installer
 )
 options=(!lto)
-_archive="$pkgbase-$pkgver"
-source=($url/archive/refs/tags/$pkgver/$_archive.tar.gz)
-sha512sums=('6e88f5f1f36e339727dd8b37b5f771f3f22bf663e772695fb1d5a942f95b3e455ad754695af3e25ad3fc015207fe9966bd7598ccafb49f264a5d0fc6ea5205a2')
-b2sums=('585e3bb683512747b2341e6ef455b8b506ba6f55cc2e1b7574010e560da43a426a263eb2a7e7a9462a1ad1ed3481cb4ff640361c724a494a311185fa31750652')
+source=("git+$url.git#tag=$pkgver")
+sha512sums=('11260d95234d8f103e6257b70b5135c3b9644d3aea64725b46c2b0da4d0a72776b69696eb68eee508ee45ef2c54bec3d40b370fb14ac92602472ae0dc83836b9')
+b2sums=('e4d85d29034baa1863feb6273694c9430724d8a745fe775f91b085aa701d234c3ca31a6448e92fa15eba05181e8102215326efb71498031148bd590a4a1a24d1')
 
 prepare() {
-  cd "$_archive"
+  cd $pkgbase
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
-  cd "$_archive"
+  cd $pkgbase
   maturin build --locked --release --all-features --target "$(rustc -vV | sed -n 's/host: //p')" --strip
 }
 
 check() {
-  cd "$_archive"
+  cd $pkgbase
   cargo test -p ruff --frozen --all-features -- --skip display_default_settings
 }
 
@@ -47,7 +47,7 @@ _package_common() {
 }
 
 package_ruff() {
-  cd "$_archive"
+  cd $pkgbase
   _package_common
   local _target="target/$(rustc -vV | sed -n 's/host: //p')/release/ruff"
   install -Dm0755 -t "$pkgdir/usr/bin/" "$_target"
@@ -58,9 +58,12 @@ package_ruff() {
 }
 
 package_python-ruff() {
-  cd "$_archive"
-  _package_common
   depends=(python "$pkgbase")
+
+  cd $pkgbase
+  _package_common
   python -m installer -d "$pkgdir" target/wheels/*.whl
-  rm -rf "$pkgdir/usr/bin"
+
+  cd "$pkgdir"
+  rm -rf usr/bin
 }
