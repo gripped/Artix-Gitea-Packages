@@ -3,7 +3,7 @@
 
 pkgname=qastools
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A collection of desktop applications for the Linux sound system ALSA."
 arch=(x86_64)
 url="https://gitlab.com/sebholt/qastools"
@@ -46,7 +46,7 @@ check() {
 package() {
   depends+=(
     alsa-lib libasound.so
-    systemd-libs libudev.so
+    libudev libudev.so
   )
 
   DESTDIR="$pkgdir" cmake --install build
