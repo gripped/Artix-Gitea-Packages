@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - hostapd
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - hostapd-2.11-2-x86_64.pkg.tar.zst
   world:
-    version: 2.10-4
+    version: 2.11-2
     packages:
-      - hostapd-2.10-4-x86_64.pkg.tar.zst
+      - hostapd-2.11-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

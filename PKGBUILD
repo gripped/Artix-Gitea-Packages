@@ -24,8 +24,6 @@ backup=(
 source=(
   "git+https://w1.fi/$_name.git?signed#tag=${_name}_${pkgver//./_}"
   config
-  hostapd.service
-  hostapd@.service
   $pkgname.tmpfiles
   $pkgname-2.11-fhs-config.patch
 )
