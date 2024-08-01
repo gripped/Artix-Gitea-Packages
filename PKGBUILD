@@ -3,8 +3,8 @@
 
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
+_pkgver=14.1.0
 pkgver=0
-# pkgver=14.1.0
 pkgrel=1
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
@@ -14,7 +14,7 @@ license=(GPL LGPL FDL)
 depends=($_target-binutils $_target-glibc libmpc zlib libisl zstd)
 makedepends=(gmp mpfr)
 options=(!emptydirs !strip staticlibs !lto)
-source=(https://ftp.gnu.org/gnu/gcc/gcc-$pkgver/gcc-$pkgver.tar.xz{,.sig})
+source=(https://ftp.gnu.org/gnu/gcc/gcc-$_pkgver/gcc-$_pkgver.tar.xz{,.sig})
         #https://gcc.gnu.org/pub/gcc/snapshots/$_snapshot/gcc-$_snapshot.tar.xz
 sha256sums=('e283c654987afe3de9d8080bc0bd79534b5ca0d681a73a11ff2b5d3767426840'
             'SKIP')
@@ -25,13 +25,13 @@ validpgpkeys=(D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62  # Jakub Jelinek <jakub@r
 if [ -n "$_snapshot" ]; then
   _basedir=gcc-$_snapshot
 else
-  _basedir=gcc-$pkgver
+  _basedir=gcc-$_pkgver
 fi
 
 prepare() {
   cd $_basedir
 
-  echo $pkgver > gcc/BASE-VER
+  echo $_pkgver > gcc/BASE-VER
 
   # Do not run fixincludes
   sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
@@ -96,5 +96,5 @@ package() {
   # Remove files that conflict with host gcc package
   rm -r "$pkgdir"/usr/share/man/man7
   rm -r "$pkgdir"/usr/share/info
-  rm -r "$pkgdir"/usr/share/gcc-$pkgver
+  rm -r "$pkgdir"/usr/share/gcc-$_pkgver
 }
