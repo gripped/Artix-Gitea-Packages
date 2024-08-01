@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: usd
-  version: 24.05-2
+  version: 24.08-1
   arch:
     - x86_64
   pkgname:
@@ -33,10 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.05-2
+    version: 24.08-1
     packages:
-      - usd-24.05-2-x86_64.pkg.tar.zst
-      - usd-extras-24.05-2-x86_64.pkg.tar.zst
+      - usd-24.08-1-x86_64.pkg.tar.zst
+      - usd-extras-24.08-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
