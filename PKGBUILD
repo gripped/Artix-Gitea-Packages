@@ -5,8 +5,7 @@
 
 _target=riscv64-linux-gnu
 pkgname=$_target-gcc
-_pkgver=14.1.0
-pkgver=0
+pkgver=14.1.0
 pkgrel=1
 pkgdesc='Cross compiler for 32-bit and 64-bit RISC-V'
 arch=('x86_64')
@@ -15,20 +14,20 @@ license=('GPL' 'LGPL' 'FDL')
 groups=('risc-v')
 depends=("$_target-binutils" "$_target-glibc" 'libmpc' 'libisl' 'zstd')
 options=(!emptydirs !strip  staticlibs !lto)
-source=("https://gcc.gnu.org/pub/gcc/releases/gcc-$_pkgver/gcc-$_pkgver.tar.xz")
+source=("https://gcc.gnu.org/pub/gcc/releases/gcc-$pkgver/gcc-$pkgver.tar.xz")
 sha256sums=('e283c654987afe3de9d8080bc0bd79534b5ca0d681a73a11ff2b5d3767426840')
 b2sums=('7efd6574b8bca081de6e31480ec0565c6d7fb773383e8e1fdcc17e35bba2bf44b3f4f995cdbcccd001689926e96a6563ef3d099902fe3b37ab09dcf553ab0596')
 
 if [[ -n "$_snapshot" ]]; then
   _basedir=gcc-$_snapshot
 else
-  _basedir=gcc-$_pkgver
+  _basedir=gcc-$pkgver
 fi
 
 prepare() {
   cd $_basedir
 
-  echo $_pkgver > gcc/BASE-VER
+  echo $pkgver > gcc/BASE-VER
 
   # Do not run fixincludes
   sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
@@ -100,7 +99,7 @@ package() {
     -and \( -executable \) -exec strip '{}' \;
 
   # Remove files that conflict with host gcc package
-  rm -r "$pkgdir/usr/share/"{man/man7,info,"gcc-$_pkgver"}
+  rm -r "$pkgdir/usr/share/"{man/man7,info,"gcc-$pkgver"}
 }
 
 # vim: ts=2 sw=2 et:
