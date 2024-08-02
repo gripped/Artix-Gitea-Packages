@@ -1,4 +1,5 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Firmicus <francois.archlinux.org>
 # Contributor: dorphell <dorphell@archlinux.org>
@@ -6,7 +7,7 @@
 _name=urw-base35-fonts
 pkgname=gsfonts
 pkgver=20200910
-pkgrel=3
+pkgrel=4
 pkgdesc="(URW)++ base 35 font set"
 url="https://github.com/ArtifexSoftware/urw-base35-fonts"
 arch=(any)
