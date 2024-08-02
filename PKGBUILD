@@ -2,7 +2,7 @@
 
 pkgname=python-cfn-lint
 # https://github.com/aws-cloudformation/cfn-lint/blob/main/CHANGELOG.md
-pkgver=1.8.2
+pkgver=1.9.3
 pkgrel=1
 pkgdesc='CloudFormation Linter'
 arch=(any)
@@ -24,7 +24,7 @@ optdepends=(
   'python-sarif-om: for sarif formatter'
 )
 source=("git+https://github.com/aws-cloudformation/cfn-lint.git#tag=v$pkgver")
-sha256sums=('d1021c1e4609698416a300c686ebfc817fa04b0189e9104efe4d396e7dae5380')
+sha256sums=('d7cb12968cb66cfe533b5d1a52b029fec625cdf559ff29c8d568a94ffaa88a13')
 
 build() {
   cd cfn-lint
