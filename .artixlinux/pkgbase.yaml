@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sddm-theme
-  version: 0.7-2
+  version: 20240803-1
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.7-2
+    version: 20240803-1
     packages:
-      - sddm-theme-artix-0.7-2-any.pkg.tar.zst
+      - sddm-theme-artix-20240803-1-any.pkg.tar.zst
+team: galaxy
