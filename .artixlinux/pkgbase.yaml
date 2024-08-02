@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-fastapi
-  version: 0.112.0-1
+  version: 0.112.0-2
   arch:
     - any
   pkgname:
     - python-fastapi
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.111.1-2
+    version: 0.112.0-2
     packages:
-      - python-fastapi-0.111.1-2-any.pkg.tar.zst
+      - python-fastapi-0.112.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
