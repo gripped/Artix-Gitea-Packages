@@ -5,7 +5,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-gtk-presets
-pkgver=20240802
+pkgver=20240803
 pkgrel=1
 pkgdesc='Artix GTK presets (MATE, LXDE, XFCE and Cinnamon)'
 arch=('any')
