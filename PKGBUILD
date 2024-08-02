@@ -14,7 +14,7 @@ depends=('glibc')
 optdepends=('tk: for using wordview')
 options=('!makeflags')
 source=(
-  "http://ftp.wagner.pp.ru/pub/catdoc/catdoc-$pkgver.tar.gz"
+  "https://nikola.radojevic.rs/catdoc-0.95.tar.gz"
   "$pkgname-read-boolean-values.patch::https://github.com/albfan/catdoc/commit/101a9775ca3620f4a307a1159a41777115e8a04d.patch"
   "$pkgname-explicit-errors.patch::https://github.com/albfan/catdoc/commit/3613753da4cc47331f0cebd49445da357b8b5f75.patch"
 ) 
