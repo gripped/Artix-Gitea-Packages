@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: gtksourceview3
-  version: 1:3.24.11+r28+g73e57b57-1
+  version: 1:3.24.11+r28+g73e57b57-2
   arch:
     - x86_64
   pkgname:
     - gtksourceview3
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:3.24.11+r28+g73e57b57-1
+    version: 1:3.24.11+r28+g73e57b57-2
     packages:
-      - gtksourceview3-1:3.24.11+r28+g73e57b57-1-x86_64.pkg.tar.zst
+      - gtksourceview3-1:3.24.11+r28+g73e57b57-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
