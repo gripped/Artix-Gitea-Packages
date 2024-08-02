@@ -4,7 +4,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-qt-presets
-pkgver=20240726
+pkgver=20240802
 pkgrel=1
 pkgdesc='Artix Qt presets (KDE Plasma and LXQt)'
 arch=('any')
