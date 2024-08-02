@@ -1,8 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org> 
 
 pkgname=stubby
 pkgver=0.4.3
-pkgrel=1
+pkgrel=2
 pkgdesc="DNS Privacy stub resolver"
 arch=(x86_64)
 url="https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby"
@@ -12,8 +13,8 @@ depends=(getdns libyaml)
 makedepends=(cmake git)
 _tag=b9a56ea629b9abdc2aaaf5aa7d7b568143b3d9c7 # git rev-parse v${pkgver}
 source=(git+https://github.com/getdnsapi/stubby.git?signed#tag=${_tag}
-        stubby-sysusers.conf)
-sha256sums=('SKIP'
+stubby-sysusers.conf)
+sha256sums=('1f2dc0bf8e6c5b8f2a94c7d0658c053aed6932b47a3adee798cb28115f774057'
             '2b67c70aab850b76187d73d0d5ecde6bc0de182f9fcc76108d82729757183596')
 validpgpkeys=(DC34EE5DB2417BCC151E5100E5F8F8212F77A498)
 
@@ -38,6 +39,5 @@ package() {
   rmdir "${pkgdir}"/var{/run,}
   cd ${pkgname}
   install -Dm644 COPYING -t "${pkgdir}"/usr/share/licenses/${pkgname}
-  # Add sysusers conf needed for OpenRC script
   install -Dm644 "$srcdir/stubby-sysusers.conf" "$pkgdir/usr/lib/sysusers.d/stubby.conf"
 }
