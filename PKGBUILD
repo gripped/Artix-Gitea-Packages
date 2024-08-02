@@ -1,11 +1,12 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: farid abdelnour <farid at atelier-labs.org>
 # Contributor: Gustavo Alvarez <sl1pkn07 at gmail.org>
 
 pkgname=twolame
 pkgver=0.4.0
-pkgrel=3
+pkgrel=4
 pkgdesc="An optimized MPEG Audio Layer 2 (MP2) encoder"
 arch=(x86_64)
 url="http://www.twolame.org/"
