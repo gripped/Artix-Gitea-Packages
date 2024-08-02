@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: artix-gtk-presets
-  version: 20230924-1
+  version: 20240802-1
   arch:
     - any
   pkgname:
     - artix-gtk-presets
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20230924-1
+    version: 20240802-1
     packages:
-      - artix-gtk-presets-20230924-1-any.pkg.tar.zst
+      - artix-gtk-presets-20240802-1-any.pkg.tar.zst
+team: galaxy
