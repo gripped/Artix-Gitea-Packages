@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-community-presets
-  version: 20230924-1
+  version: 20240802-1
   arch:
     - any
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20230924-1
+    version: 20240802-1
     packages:
-      - artix-community-presets-20230924-1-any.pkg.tar.zst
+      - artix-community-presets-20240802-1-any.pkg.tar.zst
+team: galaxy

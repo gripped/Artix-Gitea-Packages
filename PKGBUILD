@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
-pkgver=20230924
+pkgver=20240802
 pkgrel=1
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
