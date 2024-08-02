@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: ruby-patron
+  version: 0.13.3-3
+  arch:
+    - x86_64
+  pkgname:
+    - ruby-patron
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.13.3-3
+    packages:
+      - ruby-patron-0.13.3-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
