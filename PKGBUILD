@@ -4,8 +4,8 @@
 # Reference: PKGBUILD(5)
 
 pkgname=sndio
-pkgver=1.9.0
-pkgrel=2
+pkgver=1.10.0
+pkgrel=1
 pkgdesc='A small audio and MIDI framework'
 arch=(x86_64)
 url='https://sndio.org'
@@ -20,7 +20,7 @@ source=(
 	"https://sndio.org/sndio-$pkgver.tar.gz"{,.asc}
 	"sndio.sysusers.conf"
 )
-sha256sums=('f30826fc9c07e369d3924d5fcedf6a0a53c0df4ae1f5ab50fe9cf280540f699a'
+sha256sums=('bebd3bfd01c50c9376cf3e7814b9379bed9e17d0393b5113b7eb7a3d0d038c54'
             'SKIP'
             '4dd07d579971c4a3b3091f109305e39b5e1a69e3bd62ead6229ef12e4384dba7')
 validpgpkeys=('6B1A7447AAF091CCDD36BAA6015E339411694A6E') # Alexandre Ratchov <alex@caoua.org>
