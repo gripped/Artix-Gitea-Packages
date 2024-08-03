@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sdl_image
 pkgver=1.2.12
-pkgrel=8
+pkgrel=9
 pkgdesc="A simple library to load images of various formats as SDL surfaces"
 url="https://www.libsdl.org/projects/SDL_image/"
 arch=(x86_64)
