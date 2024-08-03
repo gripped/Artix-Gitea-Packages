@@ -1,0 +1,55 @@
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Contributor: Dimitrios Vogiatzis
+# Contributor: physkets
+# Contributor: Justin Dray
+# Contributor: Bill Kolokithas
+
+pkgname=j4-dmenu-desktop
+pkgver=3.1
+pkgrel=1
+pkgdesc="Find .desktop files and offer you a menu to start an application using dmenu"
+arch=('x86_64')
+url="https://github.com/enkore/j4-dmenu-desktop"
+license=('GPL-3.0-only')
+depends=(
+    'fmt'
+    'gcc-libs'
+    'glibc'
+    'spdlog'
+)
+makedepends=(
+    'catch2'
+    'cmake'
+    'meson'
+)
+optdepends=(
+    'dmenu: The default backend'
+    'bemenu: An alternative backend'
+    'bemenu: An alternative backend'
+    'wmenu: An alternative backend'
+)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/r$pkgver.tar.gz"
+        "$pkgname-$pkgver.tar.gz.sig::$url/releases/download/r$pkgver/r$pkgver.tar.gz.sig")
+validpgpkeys=('7B0F58A5E0F1A2EA11578A731A14CB3464CBE5BF')  # Meator <meator.dev@gmail.com>
+sha256sums=('0e6cf25663cc220e3e3e2bc013fe957c3e4a44f900b5ee6a7609cd501021652d'
+            'SKIP')
+
+build() {
+    artix-meson "$pkgname-r$pkgver" build
+    meson compile -C build
+}
+
+check() {
+    meson test -C build
+}
+
+package() {
+    DESTDIR="$pkgdir" meson install -C build
+
+    cd "$pkgname-r$pkgver"
+    install -Dm0644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+    install -Dm0644 CHANGELOG -t "$pkgdir/usr/share/doc/$pkgname/"
+
+    install -dm0755 "$pkgdir/usr/share/man/man1"
+    gzip < j4-dmenu-desktop.1 > "$pkgdir/usr/share/man/man1/j4-dmenu-desktop.1.gz"
+}
