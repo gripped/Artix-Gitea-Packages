@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt5-styleplugins
-  version: 5.0.0.20170311-43
+  version: 5.0.0.20170311-44
   arch:
     - x86_64
     - aarch64
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.0.20170311-43
+    version: 5.0.0.20170311-44
     packages:
-      - qt5-styleplugins-5.0.0.20170311-43-x86_64.pkg.tar.zst
+      - qt5-styleplugins-5.0.0.20170311-44-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
