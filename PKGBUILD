@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sdl_sound
 pkgver=1.0.3
-pkgrel=11
+pkgrel=12
 pkgdesc="A library to decode several popular sound file formats, such as .WAV and .MP3"
 url="https://icculus.org/SDL_sound/"
 arch=(x86_64)
