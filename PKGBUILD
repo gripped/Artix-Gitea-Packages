@@ -1,8 +1,8 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=speexdsp
 pkgver=1.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="DSP library derived from Speex"
 url="https://www.speex.org/"
 arch=(x86_64)
@@ -10,10 +10,9 @@ license=(BSD)
 depends=(gcc-libs)
 makedepends=(git)
 provides=(libspeexdsp.so)
-options=(debug)
 _commit=1b28a0f61bc31162979e1f26f3981fc3637095c8  # tags/SpeexDSP-1.2.1^0
 source=("git+https://gitlab.xiph.org/xiph/speexdsp.git#commit=$_commit")
-b2sums=('SKIP')
+b2sums=('f44bb6a7df8606aecfe2333e3191486d77b1ea9c1ef2c0d4763133d8f0c05252429f11562df8b3a5f6e9610f150a9b0d677b92764e45d244458a6bed733b66e8')
 
 pkgver() {
   cd speexdsp
