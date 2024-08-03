@@ -3,8 +3,8 @@
 
 pkgname=calamares-extensions
 pkgver=0.13
-_commit=367995710b8b77a5a2db10631cc4477a4e7267af
-pkgrel=1
+_commit=fcdcc257382c061ab88fcbc5d9daeedbd0a5cbba
+pkgrel=2
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(
