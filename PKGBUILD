@@ -3,7 +3,7 @@
 
 pkgname=hitori
 pkgver=44.0
-pkgrel=1
+pkgrel=2
 pkgdesc="GTK+ application to generate and let you play games of Hitori"
 url="https://wiki.gnome.org/Apps/Hitori"
 arch=(x86_64)
@@ -16,7 +16,6 @@ makedepends=(
   yelp-tools
 )
 groups=(gnome-extra)
-options=(debug)
 _commit=53db1397d6a711862023d7a3070e785235a98c87  # tags/44.0^0
 source=("git+https://gitlab.gnome.org/GNOME/hitori.git#commit=$_commit")
 sha256sums=('SKIP')
