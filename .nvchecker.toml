@@ -1,0 +1,4 @@
+[limine]
+source = "git"
+git = "https://github.com/limine-bootloader/limine.git"
+prefix = "v"
