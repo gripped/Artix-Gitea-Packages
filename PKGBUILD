@@ -5,7 +5,7 @@ _pkgbase=desktop-presets
 
 pkgname=artix-qt-presets
 pkgver=20240803
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix Qt presets (KDE Plasma and LXQt)'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
@@ -14,7 +14,7 @@ provides=('desktop-presets')
 depends=('artix-desktop-presets' 'qt5-styleplugins')
 conflicts=('artix-lxqt-presets')
 replaces=('artix-lxqt-presets')
-optdepends=('qt5ct' 'qt6gtk2')
+optdepends=('qt5ct' 'qt6ct' 'qt6gtk2')
 makedepends=('git')
 groups=('artix-branding' 'artix-style')
 #_commit=e3d447cc62d6626dd6b1faf9e85811817bcf39a9
