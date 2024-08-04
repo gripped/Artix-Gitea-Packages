@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gcc
-  version: 14.1.1+r309+gbb34b7eda1f-1
+  version: 14.2.1+r26+g14fa2b2ae7f-1
   arch:
     - x86_64
   pkgname:
@@ -18,17 +18,29 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: system-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 14.2.1+r26+g14fa2b2ae7f-1
+    packages:
+      - gcc-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-libs-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - lib32-gcc-libs-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-ada-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-d-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-fortran-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-go-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-m2-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-objc-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - gcc-rust-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - lto-dump-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
+      - libgccjit-14.2.1+r26+g14fa2b2ae7f-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
