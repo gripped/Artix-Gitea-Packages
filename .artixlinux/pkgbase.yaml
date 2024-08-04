@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
