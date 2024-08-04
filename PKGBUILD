@@ -11,7 +11,7 @@ url='https://github.com/tqdm/tqdm'
 depends=('python')
 optdepends=('python-requests: telegram')
 makedepends=('git' 'python-setuptools-scm' 'python-toml' 'python-build' 'python-installer' 'python-wheel')
-checkdepends=('python-pytest' 'python-pytest-asyncio' 'python-pytest-timeout' 'python-numpy' 'python-pandas' 'python-rich' 'python-dask' 'tk' 'python-keras')
+checkdepends=('python-pytest' 'python-pytest-asyncio' 'python-pytest-timeout' 'python-numpy' 'python-pandas' 'python-rich' 'python-dask' 'tk')
 source=("git+https://github.com/tqdm/tqdm.git#commit=v${pkgver}")
 sha512sums=('10e2481f0a388dd17a6bbaee8891ac2e186e29fddc7fe4fae7e84b5a5ddaaffbb6b0d09ef3d7b835a92b3761788eed98ece5c88883f026b1e2830cd4b257ce57')
 
