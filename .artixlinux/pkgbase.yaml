@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: puppet
-  version: 7.31.0-3
+  version: 7.32.1-1
   arch:
     - any
   pkgname:
     - puppet
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - puppet-7.31.0-3-any.pkg.tar.zst
   world:
-    version: 7.31.0-2
+    version: 7.32.1-1
     packages:
-      - puppet-7.31.0-2-any.pkg.tar.zst
+      - puppet-7.32.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
