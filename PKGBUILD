@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-desktop-presets
-pkgver=20240730
+pkgver=20240804
 pkgrel=1
 pkgdesc='Artix common desktop presets'
 arch=('any')
