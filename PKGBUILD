@@ -60,7 +60,7 @@ build() {
     --prefix=/usr \
     --sysconfdir="${pkgdir}"/etc \
     --with-lib-path=/usr/lib:/usr/local/lib \
-    --with-bugurl=https://gitea.artixlinux.org/packages/binutils/issues \ 
+    --with-bugurl=https://gitea.artixlinux.org/packages/binutils/issues \
     --enable-cet \
     --enable-colored-disassembly \
     --enable-default-execstack=no \
