@@ -4,8 +4,8 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-qt-presets
-pkgver=20240803
-pkgrel=2
+pkgver=20240804
+pkgrel=1
 pkgdesc='Artix Qt presets (KDE Plasma and LXQt)'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/desktop-presets"
