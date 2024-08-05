@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: android-tools
-  version: 35.0.1-3
+  version: 35.0.1-2.4
   arch:
     - x86_64
   pkgname:
     - android-tools
 actions:
-  addRepo: galaxy-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 35.0.1-2.3
+    version: 35.0.1-2.4
     packages:
-      - android-tools-35.0.1-2.3-x86_64.pkg.tar.zst
+      - android-tools-35.0.1-2.4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
