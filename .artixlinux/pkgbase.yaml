@@ -7,21 +7,21 @@ pkgbase:
   pkgname:
     - binutils
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 2.42+r207+g8a6764d35e5-1
     packages:
       - binutils-2.42+r207+g8a6764d35e5-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 2.42+r195+g29ae8b8ea71-1
     packages:
