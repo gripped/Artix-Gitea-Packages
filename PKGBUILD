@@ -10,7 +10,7 @@
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf')
 pkgver=27.3
-pkgrel=1
+pkgrel=1.1
 # Note: libphonenumber needs a rebuild for every version bump ??
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
