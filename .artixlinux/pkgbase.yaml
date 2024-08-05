@@ -8,11 +8,11 @@ pkgbase:
     - lib32-libxcrypt
     - lib32-libxcrypt-compat
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: lib32
