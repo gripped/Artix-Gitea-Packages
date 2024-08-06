@@ -3,7 +3,7 @@
 
 pkgname=lib32-orc
 pkgver=0.4.38
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Optimized Inner Loop Runtime Compiler (32-bit)"
 url="https://gstreamer.freedesktop.org/modules/orc.html"
 arch=(x86_64)
