@@ -4,7 +4,7 @@
 
 pkgname=libgme
 pkgver=0.6.3
-pkgrel=4
+pkgrel=4.1
 pkgdesc='Video game music file emulation/playback library'
 arch=('x86_64')
 url='https://bitbucket.org/mpyne/game-music-emu'
