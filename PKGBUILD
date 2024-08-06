@@ -1,4 +1,5 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Justin Kromlinger <hashworks@archlinux.org>
 # Contributor: Ales Katona <almindor@gmail.com>
 
@@ -8,13 +9,12 @@ pkgver=3.0.5
 _ewnodecommit=dcc3d76f833a9be47a094e46a0ffa7503e28d007
 # https://github.com/almindor/etherwall/tree/v3.0.5/src/trezor
 _trezorcommit=db106e8f2766155bc72802e4dc3f9f59c90d9c3e
-pkgrel=6
+pkgrel=8
 pkgdesc="Ethereum GUI Wallet (Qt5)"
 arch=('x86_64')
 url="https://etherwall.com"
 license=('GPL3')
-depends=('qt5-base' 'qt5-declarative' 'qt5-graphicaleffects' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-websockets' 'geth' 'protobuf'
-        'libhidapi-libusb.so' 'libusb' 'libudev' 'abseil-cpp' 'glibc' 'gcc-libs')
+depends=('qt5-declarative' 'qt5-graphicaleffects' 'qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-websockets' 'geth' 'protobuf' 'libhidapi-libusb.so' 'libusb' 'systemd-libs')
 makedepends=('hidapi')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/almindor/${pkgname}/archive/v$pkgver.tar.gz"
         "ew-node-$_ewnodecommit.tar.gz::https://github.com/almindor/ew-node/archive/$_ewnodecommit.tar.gz"
