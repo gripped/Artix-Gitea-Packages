@@ -1,4 +1,4 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Konstantin Shabanov <kes.eclipse@gmail.com>
 # Contributor: Evka
 # Maintainer: Jose Riha <jose 1711 gmail com>
@@ -6,7 +6,7 @@
 pkgname=udpxy
 pkgver=1.0.25.1
 _pkgver=1.0-24.1
-pkgrel=1
+pkgrel=2
 pkgdesc="small-footprint UNIX/Linux daemon to relay multicast UDP traffic to client's TCP (HTTP) connection."
 arch=(x86_64)
 url="https://github.com/pcherenkov/udpxy"
