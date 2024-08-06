@@ -10,10 +10,8 @@ license=('GPL-2.0-only')
 makedepends=('git')
 depends=('glibc' 'libmnl')
 backup=("etc/${pkgname}.conf")
-source=("git://git.netfilter.org/ipset.git#tag=v${pkgver}"
-        "${pkgname}.service")
-sha256sums=('3226482ca66804a754696338e0933429d7bc0eaa85218ce79ecfe4530edca780'
-            '5a0e326a80fd5ab2d9545faa1189b647cc866c9568ab6a9dd0833ba5863f39ce')
+source=("git://git.netfilter.org/ipset.git#tag=v${pkgver}")
+sha256sums=('3226482ca66804a754696338e0933429d7bc0eaa85218ce79ecfe4530edca780')
 
 prepare() {
   cd "${pkgname}"
@@ -41,8 +39,6 @@ package() {
   install -Dm644 lib/libipset.pc "${pkgdir}/usr/lib/pkgconfig/libipset.pc"
   popd
   # systemd
-  install -Dm 0644 "${pkgname}.service" \
-    "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
   # default config file
   install -Dm 0644 /dev/null "${pkgdir}/etc/${pkgname}.conf"
   # bash completion
