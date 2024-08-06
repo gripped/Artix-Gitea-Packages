@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libxcrypt
-  version: 4.4.36-1
+  version: 4.4.36-2.1
   arch:
     - x86_64
   pkgname:
@@ -41,10 +41,10 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 4.4.36-1
+    version: 4.4.36-2.1
     packages:
-      - lib32-libxcrypt-4.4.36-1-x86_64.pkg.tar.zst
-      - lib32-libxcrypt-compat-4.4.36-1-x86_64.pkg.tar.zst
+      - lib32-libxcrypt-4.4.36-2.1-x86_64.pkg.tar.zst
+      - lib32-libxcrypt-compat-4.4.36-2.1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
