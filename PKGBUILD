@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor: Orivej Desh <smpuj@bk.ru>
 
 _dir=2691
 pkgname=vamp-plugin-sdk
 pkgver=2.10.0
-pkgrel=2
+pkgrel=3
 pkgdesc="The Vamp audio analysis plug-in system"
 arch=(x86_64)
 url="https://www.vamp-plugins.org/"
@@ -28,7 +28,7 @@ b2sums=('50ad1c69d497b17c03439d94be7b3f70071de0c34c02c597506290fbd0e0cd2632f0a54
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr
-  make -j1
+  make
 }
 
 package() {
