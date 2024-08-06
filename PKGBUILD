@@ -16,7 +16,7 @@ pkgdesc='Allow applications to extend a menu via Ayatana indicators in Unity, KD
 url='https://launchpad.net/libappindicator'
 arch=('x86_64')
 license=('LGPL2.1' 'LGPL3')
-makedepends=('bzr' 'dbus-glib' 'gnome-common' 'gobject-introspection' 'gtk-doc' 'libdbusmenu-gtk'{2,3} 'vala')
+makedepends=('breezy' 'dbus-glib' 'gnome-common' 'gobject-introspection' 'gtk-doc' 'libdbusmenu-gtk'{2,3} 'vala')
 options=('!emptydirs')
 source=($pkgbase::bzr+https://code.launchpad.net/~indicator-applet-developers/libappindicator/trunk#revision=$_bzrrev)
 sha512sums=('SKIP')
