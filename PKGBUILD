@@ -1,10 +1,9 @@
 # Maintainer : Ionut Biru <ibiru@archlinux.org>
-# Contributor : Ionut Biru <ibiru@archlinux.org>
 # Contributor: Gabriel Martinez < reitaka at gmail dot com >
 
 pkgname=usbmuxd
 pkgver=1.1.1
-pkgrel=3.1
+pkgrel=4
 pkgdesc="USB Multiplex Daemon"
 url="https://marcansoft.com/blog/iphonelinux/usbmuxd/"
 arch=('x86_64')
@@ -13,15 +12,15 @@ depends=('libimobiledevice' 'libusb' 'libplist')
 makedepends=('git')
 _commit=79c8b38d1488a6b07e1e68f39d8caec3f1a45622  # tags/1.1.1
 source=(
+  0001-iDevices.patch
   "git+https://github.com/libimobiledevice/usbmuxd#commit=$_commit"
   usbmuxd.sysusers
   libplist-2.3.0.diff
-  0001-iDevices.patch
 )
-b2sums=('SKIP'
+b2sums=('39a994d7d9b9bb59a04d4402656cf4f654c1110621834e6f0dfd0a03916e0a6ac14ce110b6c9d69e23b9cd2d4c38b07270d5565dc06a8b09ed5dd3f115d30ba0'
+        'afdcec9ea29596c421fb4f34937bdb955be80a3363ddb81becac741fbc5c3a1ce8dadd1971a9dbc6f470e9fa2aa6a5b0a6a1a76fddbd86111c5747c2b6260f62'
         '67a843cd95e750555d1c43c4d01cc90e325ae1b69a5b24bb0e72480b903064f81baeaaa9e1dd95758b456b1444ed869b099be903d6533bb7f5dfe88a87ca1d4e'
-        '483559477f83f59933d95a8279b21abf92a9d5ad6fe29802ff8966b4a94a79ac80d11f7fc0648846a189484b9f3a7ffa3bd8337940aa255a13ae78b61bb556f4'
-        '39a994d7d9b9bb59a04d4402656cf4f654c1110621834e6f0dfd0a03916e0a6ac14ce110b6c9d69e23b9cd2d4c38b07270d5565dc06a8b09ed5dd3f115d30ba0')
+        '483559477f83f59933d95a8279b21abf92a9d5ad6fe29802ff8966b4a94a79ac80d11f7fc0648846a189484b9f3a7ffa3bd8337940aa255a13ae78b61bb556f4')
 
 pkgver() {
   cd $pkgname
@@ -34,6 +33,7 @@ prepare() {
   # Compatibility with libplist 2.3.0
   git apply -3 ../libplist-2.3.0.diff
   git apply -3 ../0001-iDevices.patch
+
   NOCONFIGURE=1 ./autogen.sh
 }
 
@@ -44,8 +44,7 @@ check() {
 
 build() {
   cd $pkgname
-  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --sbindir=/usr/bin \
-    --without-systemd
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --sbindir=/usr/bin --without-systemd
   make
 }
 
