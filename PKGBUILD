@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Chris Brannon <chris@the-brannons.com>
 # Contributor: Kyle <kyle@gmx.ca>
 
 pkgname=espeakup
 pkgver=0.90
-pkgrel=2
+pkgrel=3
 pkgdesc="A light weight connector for espeak-ng and speakup"
 arch=(x86_64)
 url="https://github.com/linux-speakup/espeakup"
@@ -23,7 +23,7 @@ sha512sums=('0731835a04063c5eac8ed0ed37cd92cc5d2dd1c58cbd94e158b7dfbb7bc0e2f84a6
 b2sums=('f91a70bad0d985d313852b9e5f72dea4330ab23050ca6904ae5895d513088031f34d878cd64d97dcf2cf02dddc3e9fdabd0826cac98634829019ed3267e27bd8')
 
 build() {
-  artix-meson $pkgname-$pkgver build -D systemd=disabled
+  artix-meson build $pkgname-$pkgver -D systemd=disabled
   ninja -C build
 }
 
