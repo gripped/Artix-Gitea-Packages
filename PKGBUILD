@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: damir <damir.archlinux.org>
 
 pkgname=muparser
 pkgver=2.3.4
-pkgrel=1
+pkgrel=2
 pkgdesc="A fast math parser library"
 arch=('x86_64')
 url="http://muparser.sourceforge.net/"
