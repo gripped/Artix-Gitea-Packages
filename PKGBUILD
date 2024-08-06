@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Callan Barrett <wizzomafizzo@gmail.com>
@@ -8,7 +8,7 @@ _pkgname=unclutter-xfixes
 pkgname=unclutter
 epoch=1
 pkgver=1.6
-pkgrel=3
+pkgrel=4
 pkgdesc='A small program for hiding the mouse cursor'
 url="https://github.com/Airblader/${_pkgname}"
 arch=('x86_64')
