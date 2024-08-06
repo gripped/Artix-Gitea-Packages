@@ -88,6 +88,13 @@ prepare() {
   mkdir -p mozbuild
   cd librewolf-$pkgver-$pkgrel
 
+  # Backport fixes for NVIDIA crashes
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/issues/7
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=1898476
+  patch -Np1 -i ../0001-Bug-1898476-Wayland-Move-MozContainerSurfaceLock-fro.patch
+  patch -Np1 -i ../0002-Bug-1898476-Wayland-Provide-surface-lock-by-GtkCompo.patch
+  patch -Np1 -i ../0003-Bug-1898476-Wayland-Lock-Wayland-surface-before-Swap.patch
+
   mv mozconfig ../mozconfig
 
   cat >>../mozconfig <<END
