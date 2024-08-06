@@ -21,7 +21,7 @@ depends=(
   lib32-libpulse
   lib32-readline
   lib32-sdl2
-  lib32-systemd
+ 
 )
 makedepends=(
   cmake
@@ -49,6 +49,7 @@ build() {
     -D enable-portaudio=ON
     -W no-dev
     -S $_name-$pkgver
+    -D enable-systemd=off
   )
 
   export CC='gcc -m32'
