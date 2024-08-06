@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Muflone http://www.muflone.com/contacts/english/
 # Contributor: Giuseppe Calà <jiveaxe@gmail.com>
  
 pkgname=pacmanlogviewer
 pkgver=1.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Inspect pacman log files"
 arch=('x86_64')
 url='https://github.com/gcala/pacmanlogviewer/'
