@@ -3,7 +3,7 @@
 
 pkgname=trojan
 pkgver=1.16.0
-pkgrel=10
+pkgrel=11
 pkgdesc="An unidentifiable mechanism that helps you bypass GFW"
 arch=('x86_64')
 url="https://github.com/trojan-gfw/trojan"
@@ -33,6 +33,5 @@ package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
 
-  # Remove systemd
-  rm -rf "$pkgdir"/usr/lib
+  rm -r $pkgdir/usr/lib/systemd
 }
