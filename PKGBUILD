@@ -24,6 +24,7 @@ prepare() {
 }
 
 build() {
+  export CXXFLAGS="$CXXFLAGS -fpermissive"
   cmake -S libmusicbrainz-$pkgver -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None
