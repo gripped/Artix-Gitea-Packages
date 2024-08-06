@@ -1,9 +1,9 @@
-# Maintainer: Torr <torr@artixlinux.org>
+# Maintainer: Sébastien Luttringer <seblu@archlinux.org>
 # Contributor: Andreas Hauser <andy-aur@splashground.de>
 
 pkgname=nload
 pkgver=0.7.4
-pkgrel=7
+pkgrel=8
 pkgdesc='Monitors network traffic and bandwidth usage'
 url='http://www.roland-riegel.de/nload'
 license=('GPL2')
