@@ -3,23 +3,23 @@
 
 pkgname=grim
 pkgver=1.4.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Screenshot utility for Wayland'
 arch=(x86_64)
 url='https://git.sr.ht/~emersion/grim'
 license=(MIT)
 depends=(cairo libjpeg-turbo wayland)
 makedepends=(fish git meson ninja pango scdoc wayland-protocols)
-source=("_grim::git+$url#commit=7ba46364ab95141c79e0e18093aa66597256182c") # tag: v1.4.1
+source=("git+$url#commit=7ba46364ab95141c79e0e18093aa66597256182c") # tag: v1.4.1
 b2sums=('SKIP')
 
 build() {
-  artix-meson build _$pkgname
+  artix-meson build $pkgname
   ninja -C build
 }
 
 package() {
   DESTDIR="$pkgdir" ninja -C build install
-  install -Dm644 _$pkgname/LICENSE \
+  install -Dm644 $pkgname/LICENSE \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
