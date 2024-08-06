@@ -1,10 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Andri Yngvason <andri@yngvason.is>
 
 pkgname=aml
 pkgver=0.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Another Main Loop'
 arch=(x86_64)
 url=https://github.com/any1/aml
