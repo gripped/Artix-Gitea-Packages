@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Florian Walch <florian+aur@fwalch.com>
 
 pkgbase=lua-mpack
 pkgname=(lua51-mpack lua52-mpack lua53-mpack lua-mpack)
 pkgver=1.0.10
 pkgdesc="libmpack lua binding"
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://github.com/libmpack/libmpack-lua'
 depends=('libmpack')

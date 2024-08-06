@@ -1,7 +1,7 @@
 ---
 pkgbase:
-  name: lua51-mpack
-  version: 1.0.10-1
+  name: lua-mpack
+  version: 1.0.10-2
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - lua53-mpack
     - lua-mpack
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.10-1
+    version: 1.0.10-2
     packages:
-      - lua51-mpack-1.0.10-1-x86_64.pkg.tar.zst
-      - lua52-mpack-1.0.10-1-x86_64.pkg.tar.zst
-      - lua53-mpack-1.0.10-1-x86_64.pkg.tar.zst
-      - lua-mpack-1.0.10-1-x86_64.pkg.tar.zst
+      - lua51-mpack-1.0.10-2-x86_64.pkg.tar.zst
+      - lua52-mpack-1.0.10-2-x86_64.pkg.tar.zst
+      - lua53-mpack-1.0.10-2-x86_64.pkg.tar.zst
+      - lua-mpack-1.0.10-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -58,3 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
