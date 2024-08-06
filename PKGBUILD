@@ -1,9 +1,9 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Arkamririon <Arkamririon@gmx.net>
 
 pkgname=freealut
 pkgver=1.1.0
-pkgrel=8
+pkgrel=9
 pkgdesc="OpenAL Utility Toolkit (ALUT)"
 url="https://www.openal.org"
 arch=(x86_64)
