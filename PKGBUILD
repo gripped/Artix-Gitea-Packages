@@ -5,14 +5,16 @@
 
 pkgname=schroedinger
 pkgver=1.0.11
-pkgrel=6.1
+pkgrel=7
 pkgdesc='An implemenation of the Dirac video codec in ANSI C code'
 arch=('x86_64')
 url='https://launchpad.net/schroedinger'
 license=('GPL2' 'LGPL2.1' 'MPL' 'MIT')
 depends=('orc')
-source=("https://launchpad.net/schroedinger/trunk/${pkgver}/+download/schroedinger-${pkgver}.tar.gz")
-sha256sums=('1e572a0735b92aca5746c4528f9bebd35aa0ccf8619b22fa2756137a8cc9f912')
+source=("https://launchpad.net/schroedinger/trunk/${pkgver}/+download/schroedinger-${pkgver}.tar.gz"{,.asc})
+validpgpkeys=('9456AFC0814A8139E99483517FE6B095B582B0D4') # Timothy Gu
+sha256sums=('1e572a0735b92aca5746c4528f9bebd35aa0ccf8619b22fa2756137a8cc9f912'
+            'SKIP')
 
 build() {
   cd schroedinger-${pkgver}
