@@ -1,13 +1,13 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Alexander Fehr <pizzapunk gmail com>
 # Contributor: Xilon <xilonmu@gmail.com>
 
 pkgname=powertop
 pkgver=2.15
-pkgrel=1
+pkgrel=2
 pkgdesc='A tool to diagnose issues with power consumption and power management'
 arch=('x86_64')
-url='https://01.org/powertop/'
+url='https://github.com/fenrus75/powertop/'
 license=('GPL2')
 depends=('gcc-libs' 'libnl' 'ncurses' 'pciutils')
 makedepends=('autoconf-archive' 'patch')
