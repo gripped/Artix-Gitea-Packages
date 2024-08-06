@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=default-cursors
 pkgver=2
-pkgrel=1
+pkgrel=2
 pkgdesc="Default cursor set"
 url="https://archlinux.org"
 arch=(any)
