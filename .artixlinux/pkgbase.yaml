@@ -12,12 +12,12 @@ pkgbase:
     - gst-plugin-libcamera
     - python-libcamera
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,14 +33,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.3.1-1
-    packages:
-      - libcamera-0.3.1-1-x86_64.pkg.tar.zst
-      - libcamera-docs-0.3.1-1-x86_64.pkg.tar.zst
-      - libcamera-ipa-0.3.1-1-x86_64.pkg.tar.zst
-      - libcamera-tools-0.3.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-libcamera-0.3.1-1-x86_64.pkg.tar.zst
-      - python-libcamera-0.3.1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 0.3.1-2
     packages:
