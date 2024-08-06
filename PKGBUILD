@@ -4,7 +4,7 @@
 
 pkgname=nrpe
 pkgver=4.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Nagios Remote Plugin Executor"
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -12,7 +12,7 @@ depends=('glibc' 'openssl')
 optdepends=("monitoring-plugins: common tools for monitoring using $pkgname")
 makedepends=('procps-ng')
 install=$pkgname.install
-backup=('etc/nrpe/nrpe.cfg' 'etc/xinetd.d/nrpe')
+backup=('etc/nrpe/nrpe.cfg')
 url="https://github.com/NagiosEnterprises/nrpe"
 source=(https://github.com/NagiosEnterprises/nrpe/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz
         nrpe.sysusers)
@@ -39,7 +39,6 @@ package() {
   make DESTDIR="$pkgdir" install
 
   install -Dm644 sample-config/nrpe.cfg "$pkgdir"/etc/nrpe/nrpe.cfg
-  install -Dm644 startup/default-xinetd "$pkgdir"/etc/xinetd.d/nrpe
   install -Dm644 startup/tmpfile.conf "$pkgdir"/usr/lib/tmpfiles.d/nrpe.conf
   install -Dm644 "$srcdir"/nrpe.sysusers "$pkgdir"/usr/lib/sysusers.d/nrpe.conf
 
@@ -47,6 +46,8 @@ package() {
   install -Dm644 README.SSL.md "$pkgdir"/usr/share/doc/$pkgname/README.SSL.md
   install -Dm644 SECURITY.md "$pkgdir"/usr/share/doc/$pkgname/SECURITY.md
   install -Dm644 LEGAL "$pkgdir"/usr/share/licenses/$pkgname/LEGAL
+
+  # FS#52873
 
   # Tidy up
   chmod -R 755 "$pkgdir"/usr/lib/monitoring-plugins
