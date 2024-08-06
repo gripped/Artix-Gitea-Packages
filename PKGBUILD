@@ -5,30 +5,22 @@
 
 pkgname=smartmontools
 pkgver=7.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives'
 url='http://smartmontools.sourceforge.net'
 license=('GPL')
 arch=('x86_64')
-depends=('gcc-libs' 'libcap-ng' 'bash' 'libudev.so')
+depends=('gcc-libs' 'libcap-ng' 'bash' 'libudev')
 makedepends=('udev')
 optdepends=('s-nail: to get mail alerts to work')
-backup=('etc/smartd.conf')
+backup=('etc/smartd.conf'
+        'etc/conf.d/smartd')
 validpgpkeys=('0C9577FD2C4CFCB4B9A599640A30812EFF3AEFF5') # Smartmontools Signing Key (through 2025) <smartmontools-support@listi.jpberlin.de>
 source=("https://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         'smartd.conf')
 sha256sums=('e9a61f641ff96ca95319edfb17948cd297d0cd3342736b2c49c99d4716fb993d'
             'SKIP'
             'c2c0f2f6b4a3f3d76da1c7706139297aef6e3f2a705eb7fdd800544812427c74')
-
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  # make sure to use `uname -n` instead of `hostname`
-  sed -i "/^os_hostname/c os_hostname=\"'uname -n'\"" configure.ac
-
-  autoreconf -fi
-}
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
@@ -50,7 +42,9 @@ build() {
 package() {
   cd "${srcdir}/${pkgname}-${pkgver}"
 
+
   make DESTDIR="${pkgdir}" install
 
   rm -rf "${pkgdir}"/etc/rc.d
+  install -D -m0644 "${srcdir}"/smartd.conf "${pkgdir}/etc/conf.d/smartd"
 }
