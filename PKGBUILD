@@ -2,7 +2,7 @@
 # Contributor: lp76 <l.peduto@gmail.com>
 pkgname=mailgraph
 pkgver=1.14
-pkgrel=6
+pkgrel=7
 pkgdesc="A very simple mail statistics RRDtool frontend for Postfix and Sendmail"
 url="https://mailgraph.schweikert.ch/"
 arch=('any')
@@ -10,7 +10,7 @@ license=('GPL')
 options=(emptydirs)
 depends=('rrdtool' 'perl-file-tail')
 source=("https://mailgraph.schweikert.ch/pub/$pkgname-$pkgver.tar.gz")
-
+sha256sums=('50ea6ea8a33f5015926edd8b70a4d954ac27df4863514bddc5e69c948a7aac81')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -29,5 +29,3 @@ package() {
   install -D -m755 mailgraph.css "$pkgdir/$CGI_DIR/mailgraph.css"
   install -d -m755 "$pkgdir/var/lib/mailgraph"
 }
-sha256sums=('50ea6ea8a33f5015926edd8b70a4d954ac27df4863514bddc5e69c948a7aac81')
-b2sums=('a4d72a557bc7718576d85aed930a0037cb7d83edcba62397d6e9a51ec7967c6ffdf6d310e6bf9b881839313ed4cf1969e40eae1a923bbae45ac71b9593f1805f')
