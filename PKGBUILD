@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Vladimir Chizhov <jagoterr@gmail.com>
 
 pkgname=odt2txt
 pkgver=0.5
-pkgrel=5
+pkgrel=6
 _commit=de7f920f4d8fc858b448d118189c791fe8d7fbca
 pkgdesc="extracts the text out of OpenDocument Texts"
 url="https://github.com/dstosberg/odt2txt/"
