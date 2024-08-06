@@ -198,7 +198,7 @@ END
 
     echo "Profiling instrumented browser..."
 
-mk_add_options MOZ_MAKE_FLAGS="-j1"
+    echo mk_add_options MOZ_MAKE_FLAGS='"-j1"' >> ../mozconfig
 
     ./mach package
 
