@@ -1,9 +1,9 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jonathan Steel <jsteel at archlinux.org>
 # Contributor: thorsten w. <p@thorsten-wissmann.de>
 
 pkgname=herbstluftwm
 pkgver=0.9.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Manual tiling window manager for X"
 arch=('x86_64')
 url="https://herbstluftwm.org"
