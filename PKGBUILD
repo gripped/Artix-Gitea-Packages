@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Hengfu <rhfcaesar@gmail.com>
 
 pkgname=xl2tpd
 pkgver=1.3.18
-pkgrel=1
+pkgrel=2
 pkgdesc="an open source implementation of the L2TP maintained by Xelerance Corporation"
 arch=('x86_64')
 #url="https://www.xelerance.com/services/software/xl2tpd/"
