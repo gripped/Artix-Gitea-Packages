@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: sgml-common
-  version: 0.6.3-8
+  version: 0.6.3-9
   arch:
     - any
   pkgname:
     - sgml-common
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.3-8
+    version: 0.6.3-9
     packages:
-      - sgml-common-0.6.3-8-any.pkg.tar.zst
+      - sgml-common-0.6.3-9-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
