@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hidapi
-  version: 0.14.0-2
+  version: 0.14.0-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.14.0-2
+    version: 0.14.0-3
     packages:
-      - hidapi-0.14.0-2-x86_64.pkg.tar.zst
+      - hidapi-0.14.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
