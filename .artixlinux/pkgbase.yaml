@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: umurmur
-  version: 0.2.20-2
+  version: 0.2.20-3
   arch:
     - x86_64
   pkgname:
     - umurmur
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.20-2
+    version: 0.2.20-3
     packages:
-      - umurmur-0.2.20-2-x86_64.pkg.tar.zst
+      - umurmur-0.2.20-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
