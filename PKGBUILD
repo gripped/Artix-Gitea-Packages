@@ -5,7 +5,7 @@
 
 pkgname=radicale
 _name=Radicale
-pkgver=3.2.1
+pkgver=3.2.2
 pkgrel=1
 pkgdesc="Simple calendar (CalDAV) and contact (CardDAV) server"
 arch=(any)
@@ -29,7 +29,6 @@ makedepends=(
 )
 checkdepends=(
   python-pytest
-  python-typeguard
   python-waitress
 )
 backup=(
@@ -43,10 +42,10 @@ source=(
   $pkgname-sysusers.conf
   $pkgname-tmpfiles.conf
 )
-sha512sums=('ec9230d62c9b6de608cfefc224f24e0a9726806ed6fbd4c2ae784dc1ecc49200ddd8f6b8c2e8cad71b69cca78a44dd05434dd14f0e7e497d09880892f5035287'
+sha512sums=('12d1d40e6c63a5229948b9eed8d1311fcebc0b59506497966712810b8745475c3407f68cbafbf0a16b11985e1179aea4355ff2ab67ad9a8b7440443ea451cdcd'
             '56dffb66e018cfbf158dc5d8fe638b3cb31229945f659aae5623f219bcd1d68ddc375f1633fa8e857a9b2f50c9e05a06efce165370137d6e116a4f187466637f'
             '9d0dd88e4a34e9f97abda1785698e4b2a5e8202063deeb91b84e13c05e00b07e45b8d4d9eca09b9241b1138bbbfdc999dba0135c18f5bc0c08d65b0cd83b367b')
-b2sums=('a962f142c945fc5dc5c45d3b963f090eabc5a8e83a39f49b69ac26d053a290c51b2732a73b5c08b0bd0c479bc59714666fdfdfab2b5bb5062bde7cd8e0754afe'
+b2sums=('e82e59bd90275cb6f5a32479a163032e12201144b250a7c7987619bc5343a4494952d263957aafc2ff1e2983b2edb339648f5aeb7bd84718b7ae0d1d20159d0f'
         'b3af60e144ef857e42ec672e806e9600265ab7d2ea4a75011de9ab56918a008437afdacb301df210b54424fb7ff1e9a332831c67b2e58fd6bc0a0aa1eebe8909'
         '41916d62f5e3f1060bd21db0722abe837754a4cb915af218c904dafac4b06794f8fde2e34486fb7392777b4738502f3df4c1390b835050045337585b064e23bb')
 
@@ -63,6 +62,7 @@ build() {
 check() {
   local pytest_options=(
     -vv
+    -o addopts=""
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
@@ -79,6 +79,7 @@ package() {
   install -vDm 644 {config,rights,users} -t "$pkgdir/etc/$pkgname/"
   # wsgi
   install -vDm 644 $pkgname.wsgi -t "$pkgdir/usr/share/$pkgname/"
+  # systemd service
   # sysusers.d
   install -vDm 644 ../$pkgname-sysusers.conf "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   # tmpfiles.d
