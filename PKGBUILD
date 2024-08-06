@@ -64,9 +64,6 @@ options=(
   !lto
   !makeflags
 )
-_arch_git=https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/firefox/trunk
-_arch_git_blob=https://raw.githubusercontent.com/archlinux/svntogit-packages
-
 install='librewolf.install'
 source=(
   https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz # {,.sig} sig files are currently broken, it seems
@@ -92,72 +89,52 @@ prepare() {
 
   cat >>../mozconfig <<END
 
-# TODO: check things here one after another if (still) required
-ac_add_options --enable-linker=lld
+  cat >../mozconfig <<END
+ac_add_options --enable-application=browser
+mk_add_options MOZ_OBJDIR=${PWD@Q}/obj
 
 ac_add_options --prefix=/usr
-
+ac_add_options --enable-release
+ac_add_options --enable-hardening
+ac_add_options --enable-optimize
+ac_add_options --enable-rust-simd
+ac_add_options --enable-linker=lld
+ac_add_options --disable-install-strip
+ac_add_options --disable-elf-hack
 ac_add_options --disable-bootstrap
-
-export CC='clang'
-export CXX='clang++'
+ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 
 # Branding
-ac_add_options --with-app-name=${pkgname}
-# is this one required? upstream lw doesn't use it
+ac_add_options --enable-official-branding
 ac_add_options --enable-update-channel=release
-# unlear?
-# ac_add_options --with-app-basename=${_pkgname}
+ac_add_options --with-distribution-id=org.artixlinux
+ac_add_options --with-unsigned-addon-scopes=app,system
+ac_add_options --allow-addon-sideload
+export MOZILLA_OFFICIAL=1
+export MOZ_APP_REMOTINGNAME=$pkgname
 
-# needed? yep.
-export MOZ_APP_REMOTINGNAME=${pkgname}
 
 # System libraries
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
 
 # Features
-# keep alsa option in here until merged upstream
 ac_add_options --enable-alsa
+ac_add_options --enable-av1
+ac_add_options --enable-eme=widevine
 ac_add_options --enable-jack
-
-# options for ci / weaker build systems
-# mk_add_options MOZ_MAKE_FLAGS="-j4"
-# ac_add_options --enable-linker=gold
-
-# wasi
-ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
+ac_add_options --enable-jxl
+ac_add_options --enable-pulseaudio
+ac_add_options --enable-raw
+ac_add_options --enable-sandbox
+ac_add_options --enable-webrtc
+ac_add_options --disable-crashreporter
+ac_add_options --disable-default-browser-agent
+ac_add_options --disable-parental-controls
+ac_add_options --disable-updater
+ac_add_options --disable-tests
 END
-
-if [[ $CARCH == 'aarch64' ]]; then
-  cat >>../mozconfig <<END
-# taken from manjaro build:
-ac_add_options --enable-optimize="-g0 -O2"
-END
-
-  export MOZ_DEBUG_FLAGS=" "
-  export CFLAGS+=" -g0"
-  export CXXFLAGS+=" -g0"
-  export RUSTFLAGS="-Cdebuginfo=0"
-
-  # we should have more than enough RAM on the CI spot instances.
-  # ...or maybe not?
-  export LDFLAGS+=" -Wl,--no-keep-memory"
-else
-
-  cat >>../mozconfig <<END
-# Arch upstream has it in their PKGBUILD, ALARM does not for aarch64:
-ac_add_options --disable-elf-hack
-
-# might help with failing x86_64 builds?
-export LDFLAGS+=" -Wl,--no-keep-memory"
-END
-fi
-
-  # upstream Arch fixes
-
 }
-
 
 build() {
   cd librewolf-$pkgver-$pkgrel
@@ -166,86 +143,49 @@ build() {
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
   export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
   export MOZ_NOSPAM=1
-  # export PIP_NETWORK_INSTALL_RESTRICTED_VIRTUALENVS=mach # let us hope this is a working _new_ workaround for the pip env issues?
 
   # malloc_usable_size is used in various parts of the codebase
-  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2} -fno-exceptions"
-  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2} -fno-exceptions"
+  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
+  # Breaks compilation since https://bugzilla.mozilla.org/show_bug.cgi?id=1896066
+  CFLAGS="${CFLAGS/-fexceptions/}"
+  CXXFLAGS="${CXXFLAGS/-fexceptions/}"
 
   # LTO needs more open files
   ulimit -n 4096
 
   # Do 3-tier PGO
   echo "Building instrumented browser..."
-
-  if [[ $CARCH == 'aarch64' && $_build_profiled_aarch64 == true ]]; then
-
-    cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-profile-generate
-END
-
-  elif [[ $CARCH == 'x86_64' && $_build_profiled_x86_64 == true ]]; then
-
-    cat >.mozconfig ../mozconfig - <<END
+  cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-profile-generate=cross
 END
+  ./mach build --priority normal
 
-  fi
+  echo "Profiling instrumented browser..."
+  ./mach package
+  LLVM_PROFDATA=llvm-profdata \
+    JARLOG_FILE="$PWD/jarlog" \
+    xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
+    ./mach python build/pgo/profileserver.py
 
-  if [[ $CARCH == 'aarch64' && $_build_profiled_aarch64 == true || $CARCH == 'x86_64' && $_build_profiled_x86_64 == true ]]; then
+  stat -c "Profile data found (%s bytes)" merged.profdata
+  test -s merged.profdata
 
-    ./mach build
+  stat -c "Jar log found (%s bytes)" jarlog
+  test -s jarlog
 
-    echo "Profiling instrumented browser..."
+  echo "Removing instrumented browser..."
+  ./mach clobber objdir
 
-    echo mk_add_options MOZ_MAKE_FLAGS='"-j1"' >> ../mozconfig
-
-    ./mach package
-
-    # Uncomment the next line if you have an error while profiling ( thanks to mkli )
-    # LIBGL_ALWAYS_SOFTWARE=true \
-    LLVM_PROFDATA=llvm-profdata \
-      JARLOG_FILE="$PWD/jarlog" \
-      xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
-      ./mach python build/pgo/profileserver.py
-
-    stat -c "Profile data found (%s bytes)" merged.profdata
-    test -s merged.profdata
-
-    stat -c "Jar log found (%s bytes)" jarlog
-    test -s jarlog
-
-    echo "Removing instrumented browser..."
-    ./mach clobber
-
-    echo "Building optimized browser..."
-
-    if [[ $CARCH == 'aarch64' ]]; then
-
-      cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto
-ac_add_options --enable-profile-use
-ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
-ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
-END
-
-    else
-
-      cat >.mozconfig ../mozconfig - <<END
+  echo "Building optimized browser..."
+  cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-lto=cross
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
 END
-
-    fi
-  fi
-
-  if [[ $CARCH == 'aarch64' && $_build_profiled_aarch64 == false || $CARCH == 'x86_64' && $_build_profiled_x86_64 == false ]]; then
-    cat >.mozconfig ../mozconfig
-  fi
-
-  ./mach build
+  ./mach build --priority normal
 }
 
 package() {
@@ -271,14 +211,14 @@ END
   install -Dvm644 /dev/stdin "$distini" <<END
 
 [Global]
-id=io.gitlab.${pkgname}-community
+id=artixlinux
 version=1.0
-about=LibreWolf
+about=Librewolf for Artix Linux
 
 [Preferences]
-app.distributor="LibreWolf Community"
+app.distributor=artixlinux
 app.distributor.channel=$pkgname
-app.partner.librewolf=$pkgname
+app.partner.artixlinux=artixlinux
 END
 
   for i in 16 32 48 64 128; do
