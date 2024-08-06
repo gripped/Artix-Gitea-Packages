@@ -1,17 +1,17 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Alexander Rødseth
 # Contributor: Alois Nespor <alois.nespor@gmail.com>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=clucene
 pkgver=2.3.3.4
-pkgrel=14
+pkgrel=15
 pkgdesc="C++ port of the high-performance text search engine Lucene"
 arch=('x86_64')
 url="http://clucene.sourceforge.net/"
-license=('APACHE' 'LGPL')
-depends=('gcc-libs>=4.7.1-5' 'zlib')
-makedepends=('cmake' 'boost>=1.54.0')
+license=('Apache-2.0' 'LGPL-2.0-or-later')
+depends=('gcc-libs' 'zlib' 'glibc')
+makedepends=('cmake' 'boost')
 source=(https://downloads.sourceforge.net/$pkgname/$pkgname-core-$pkgver.tar.gz
         # Fedora patches
         clucene-core-2.3.3.4-pkgconfig.patch
