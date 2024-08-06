@@ -32,6 +32,4 @@ check() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
-
-  rm -r $pkgdir/usr/lib
 }
