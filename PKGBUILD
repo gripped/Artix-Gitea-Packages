@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
 # Contributor: Hugo Doria <hugo@archlinux.org>
 # Contributor: Sarah Hay <sarah@archlinux.org>
@@ -6,7 +6,7 @@
 
 pkgname=faac
 pkgver=1.30
-pkgrel=4
+pkgrel=5
 pkgdesc="Freeware Advanced Audio Coder"
 arch=(x86_64)
 url="https://www.audiocoding.com/"
