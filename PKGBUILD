@@ -214,7 +214,7 @@ END
     ./mach package
 
     # Uncomment the next line if you have an error while profiling ( thanks to mkli )
-    # LIBGL_ALWAYS_SOFTWARE=true \
+    LIBGL_ALWAYS_SOFTWARE=true \
     LLVM_PROFDATA=llvm-profdata \
       JARLOG_FILE="$PWD/jarlog" \
       xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
