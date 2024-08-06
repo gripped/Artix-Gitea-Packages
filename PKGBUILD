@@ -2,25 +2,26 @@
 
 pkgname=openjade
 pkgver=1.3.2
-pkgrel=7
+pkgrel=8
 _debpatch=13
 pkgdesc="Implementation of the DSSSL language"
 arch=('x86_64')
-url="http://openjade.sourceforge.net/"
-license=('custom')
-depends=('opensp' 'sgml-common')
+url="https://openjade.sourceforge.net/"
+license=('LicenseRef-openjade')
+depends=('opensp' 'sgml-common' 'gcc-libs' 'glibc')
 makedepends=('perl-perl4-corelibs')
 install=${pkgname}.install
 conflicts=('jade')
 provides=('jade')
-source=(http://downloads.sourceforge.net/project/${pkgname}/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.gz
-        http://ftp.debian.org/debian/pool/main/o/${pkgname}1.3/${pkgname}1.3_${pkgver}-${_debpatch}.diff.gz)
+source=(https://downloads.sourceforge.net/project/${pkgname}/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.gz
+        openjade-nola.patch
+)
 sha256sums=('1d2d7996cc94f9b87d0c51cf0e028070ac177c4123ecbfd7ac1cb8d0b7d322d1'
-            '11d90e242eae60ce06bf27fd234adbd8efd7d4a9a4a2da058faa4e8336dc423a')
+            'd177f5e18970561ff500c42759f82e91ef245dda5559459091b875b7560b5688')
 
 prepare() {
   cd ${pkgname}-$pkgver
-  patch -Np1 -i $srcdir/${pkgname}1.3_${pkgver}-${_debpatch}.diff
+  patch -Np1 -i $srcdir/openjade-nola.patch
   # https://bugs.archlinux.org/task/55331 / https://gcc.gnu.org/bugzilla/show_bug.cgi?id=69534#c9
   export CXXFLAGS+=' -fno-lifetime-dse'
 }
@@ -34,6 +35,7 @@ build() {
     --enable-html \
     --enable-http \
     --enable-mif
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
@@ -42,14 +44,14 @@ package() {
   make DESTDIR="$pkgdir/" install install-man 
   
   # add unversioned symlink
-  ln -svf openjade-${pkgver} ${pkgdir}/usr/share/sgml/openjade
+  ln -svf openjade-${pkgver} "${pkgdir}"/usr/share/sgml/openjade
   
   # openjade -> jade compat symlinks
-  ln -svf /usr/bin/openjade $pkgdir/usr/bin/jade
-  ln -svf /usr/lib/libogrove.so $pkgdir/usr/lib/libgrove.so
-  ln -svf /usr/lib/libospgrove.so $pkgdir/usr/lib/libspgrove.so
-  ln -svf /usr/lib/libostyle.so $pkgdir/usr/lib/libstyle.so
-  ln -svf /usr/share/man/man1/openjade.1.gz $pkgdir/usr/share/man/man1/jade.1.gz
+  ln -svf /usr/bin/openjade "$pkgdir"/usr/bin/jade
+  ln -svf /usr/lib/libogrove.so "$pkgdir"/usr/lib/libgrove.so
+  ln -svf /usr/lib/libospgrove.so "$pkgdir"/usr/lib/libspgrove.so
+  ln -svf /usr/lib/libostyle.so "$pkgdir"/usr/lib/libstyle.so
+  ln -svf /usr/share/man/man1/openjade.1.gz "$pkgdir"/usr/share/man/man1/jade.1.gz
   
   # license
   install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
