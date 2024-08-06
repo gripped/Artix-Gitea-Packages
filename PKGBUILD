@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=restinio
 pkgver=0.6.17
-pkgrel=1
+pkgrel=2
 pkgdesc="Header-only C++14 library that gives you an embedded HTTP/Websocket server"
 arch=(any)
 url="https://stiffstream.com/en/products/restinio.html"

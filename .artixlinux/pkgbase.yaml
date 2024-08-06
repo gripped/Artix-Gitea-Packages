@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: restinio
-  version: 0.6.17-1
+  version: 0.6.17-2
   arch:
     - any
   pkgname:
     - restinio
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.17-1
+    version: 0.6.17-2
     packages:
-      - restinio-0.6.17-1-any.pkg.tar.zst
+      - restinio-0.6.17-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
