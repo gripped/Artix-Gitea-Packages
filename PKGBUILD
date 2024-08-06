@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Juergen Hoetzel <juergen@archlinux.org>
 
 pkgname=menu-cache
 pkgver=1.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Caching mechanism for freedesktop.org compliant menus'
 arch=('x86_64')
 license=('GPL2')
