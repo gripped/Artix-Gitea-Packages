@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Paul Mattal <paul@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=enscript
 pkgver=1.6.6
-pkgrel=5
+pkgrel=6
 pkgdesc="Convert ASCII files to PostScript suitable for printing"
 arch=('x86_64')
 url="https://git.savannah.gnu.org/cgit/enscript.git"
