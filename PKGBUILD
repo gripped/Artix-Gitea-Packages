@@ -1,12 +1,13 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Juergen Hoetzel <juergen@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Juergen Hoetzel <juergen@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=kismet
 pkgver=2023_07_R1
 _realver="${pkgver//_/-}"
-pkgrel=9
+pkgrel=10
 pkgdesc="802.11 layer2 wireless network detector, sniffer, and intrusion detection system"
 url="https://www.kismetwireless.net/"
 arch=('x86_64')
