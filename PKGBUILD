@@ -198,6 +198,8 @@ END
 
     echo "Profiling instrumented browser..."
 
+mk_add_options MOZ_MAKE_FLAGS="-j1"
+
     ./mach package
 
     # Uncomment the next line if you have an error while profiling ( thanks to mkli )
