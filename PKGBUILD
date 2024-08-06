@@ -3,15 +3,14 @@
 
 pkgname=dconf
 pkgver=0.40.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Configuration database system"
 url="https://wiki.gnome.org/Projects/dconf"
 arch=(x86_64)
 license=(LGPL)
 depends=(glib2)
-makedepends=(vala dbus git gtk-doc python meson bash-completion)
+makedepends=(vala dbus git glib2-devel gtk-doc python meson bash-completion)
 provides=(libdconf.so)
-options=(debug)
 install=dconf.install
 _commit=4c0a26052efafae923eba42d14c5cb88da745de2  # tags/0.40.0^0
 source=("git+https://gitlab.gnome.org/GNOME/dconf.git#commit=$_commit"
@@ -48,8 +47,7 @@ package() {
   # packages which install files there get uninstalled
   install -Dm644 /dev/null "$pkgdir/etc/dconf/db/.placeholder"
 
-  # Remove system service file
-  rm -r "$pkgdir/usr/lib/systemd"
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set sw=2 sts=-1 et:
