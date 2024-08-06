@@ -1,11 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=asio
 pkgver=1.28.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Cross-platform C++ library for ASynchronous network I/O'
 url='https://think-async.com/Asio/'
 arch=('any')
