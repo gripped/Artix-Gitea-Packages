@@ -1,10 +1,10 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Hesse <mail@eworm.de>
 # Contributor: Thomas S Hatch <thatch45 (at) Gmail (dot) com>
 
 pkgname=virt-what
 pkgver=1.25
-pkgrel=1
+pkgrel=2
 license=('GPL')
 arch=('x86_64')
 depends=('dmidecode')
