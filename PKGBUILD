@@ -72,11 +72,17 @@ source=(
   https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
+  "0001-Bug-1898476-Wayland-Move-MozContainerSurfaceLock-fro.patch"
+  "0002-Bug-1898476-Wayland-Provide-surface-lock-by-GtkCompo.patch"
+  "0003-Bug-1898476-Wayland-Lock-Wayland-surface-before-Swap.patch"
 )
 
 sha256sums=('ee4afcfe0d42da5a3b8002ed867134ffa0ccf83a29402ecd311bbc3ccfb6517c'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
-            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
+            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
+            'f4e1db05768325bce5f38b67263c47b3aa4038cfadbdbf8a9e0cbec061a58c57'
+            '588b0b94fe188c5f0a133a8bfd88d7d60123315e6f509b119728409ff164419f'
+            'cbe19f6c95d27d50e3b6664907f8d084784162ea35d5d98fadbb91dbb77ef700')
 
 validpgpkeys=('034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3') # maltej(?)
 
