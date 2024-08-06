@@ -6,7 +6,7 @@ pkgver=8.3.0_1
 _boost_ver=1.77.0
 _pkgver=${pkgver/_/-}
 _myver=${pkgver/_rel*}
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 makedepends=('cmake' 'zlib' 'lz4' 'zstd' 'libaio' 'pam' 'numactl' 'jemalloc' 'openssl'
              'rpcsvc-proto' 'doxygen' 'graphviz' 'libevent' 'libfido2') # 'boost'
@@ -32,6 +32,9 @@ prepare() {
 	sed -r -e s@/var/run/mysqlrouter@/run/mysqlrouter@ \
 	       -e s@lib64/mysql@lib/mysql@ \
 	       -i cmake/install_layout.cmake
+
+
+
         patch -p1 -i ../gcc-14.patch # Fix build with GCC 14
 }
 
@@ -49,8 +52,6 @@ build() {
 		-DBUILD_CONFIG=mysql_release \
 		-DREPRODUCIBLE_BUILD=ON \
 		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_PREFIX_PATH=/usr \
-		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
 		-DSYSCONFDIR=/etc/mysql \
 		-DMYSQL_DATADIR=/var/lib/mysql \
 		-DMYSQL_UNIX_ADDR=/run/mysqld/mysqld.sock \
