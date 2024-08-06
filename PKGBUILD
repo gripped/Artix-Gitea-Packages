@@ -63,6 +63,7 @@ build() {
   )
 
   cd $pkgname-$pkgver
+  export CFLAGS="$CFLAGS -Wno-incompatible-pointer-types -Wno-implicit-int"
   ./configure "${configure_options[@]}"
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
