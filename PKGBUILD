@@ -1,19 +1,18 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=speex
 pkgver=1.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A free codec for free speech"
 url="https://www.speex.org/"
 arch=(x86_64)
 license=(BSD)
 depends=(gcc-libs libogg speexdsp)
 makedepends=(git)
-options=(debug)
 _commit=5dceaaf3e23ee7fd17c80cb5f02a838fd6c18e01  # tags/Speex-1.2.1^0
 source=("git+https://gitlab.xiph.org/xiph/speex.git#commit=$_commit")
-b2sums=('SKIP')
+b2sums=('62dbca5623ba37a92366d2ed19c3ae2dbce4620ac38d6d011def049541271319b9ca119ecbce315fe8f6289d5b79a3c6da4d4434cac4ed6b82b40393f6807a0e')
 
 pkgver() {
   cd speex
