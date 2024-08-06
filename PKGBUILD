@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=libzen
 pkgver=0.4.41
-pkgrel=1
+pkgrel=2
 pkgdesc='A C++ utility library'
 arch=('x86_64')
 url='https://mediaarea.net'
