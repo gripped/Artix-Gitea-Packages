@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Remi Gacogne <rgacogne@archlinux.org>
 
 pkgname=getdns
 pkgver=1.7.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern asynchronous DNS API"
 arch=(x86_64)
 url="https://getdnsapi.net"
