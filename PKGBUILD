@@ -1,13 +1,16 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=presage
 pkgver=0.9.1
-pkgrel=2
+pkgrel=3
 pkgdesc='An intelligent predictive text entry system'
 arch=(x86_64)
 url='https://presage.sourceforge.io/'
-license=(GPL2)
-depends=(sqlite)
+license=(GPL-2.0-or-later)
+depends=(gcc-libs
+         glibc
+         ncurses
+         sqlite)
 makedepends=()
 source=(https://download.sourceforge.net/project/presage/presage/$pkgver/$pkgname-$pkgver.tar.gz
         presage-gcc6.patch
@@ -27,8 +30,9 @@ prepare() {
 
 build() {
   cd $pkgname-$pkgver
-  ./configure --prefix=/usr \
-              --sysconfdir=/etc
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc
   make
 }
 
