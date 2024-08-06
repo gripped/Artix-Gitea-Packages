@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=shared-color-targets
 pkgver=0.1.7
-pkgrel=4
+pkgrel=5
 pkgdesc="Shared color targets for creating color profiles"
 url="https://github.com/hughsie/shared-color-targets"
 arch=(any)
