@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Sean Timothy Noonan <stnoonan@obsolescence.net>
 
 pkgname=postgrey
 pkgver=1.37
-pkgrel=5.1
+pkgrel=6
 pkgdesc="a Postfix policy server implementing greylisting"
 arch=('any')
 url="https://postgrey.schweikert.ch/"
