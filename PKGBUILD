@@ -23,7 +23,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.2.2
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
