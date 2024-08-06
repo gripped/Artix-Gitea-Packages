@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Jakub Schmidtke <sjakub@gmail.com>
 
@@ -96,9 +95,9 @@ sha256sums=('4b9ff955de7099f09aa1f00985e34695fa1a911e56c2d46cb4d60c3bff3d9174'
             '1f241fdc619f92a914c75aece7c7c717401d7467c9a306458e106b05f34e5044'
             '58d78ce57b3ee936bc966458d6b20ab142d02a897bbe924b3f26717af0c5bee1'
             'f4e1db05768325bce5f38b67263c47b3aa4038cfadbdbf8a9e0cbec061a58c57'
-            '37d70141e9bb9f118cfc74d4f50e7d7f5be4eee6273818a491892da926941519'
+            '588b0b94fe188c5f0a133a8bfd88d7d60123315e6f509b119728409ff164419f'
             'cbe19f6c95d27d50e3b6664907f8d084784162ea35d5d98fadbb91dbb77ef700')
-b2sums=('b717044fb0af090cca8adb03eddf9d1ba7b2e46c25d78de7aa36298d3b6466cf57b0a1c6c72ae369c5fc3484b9da9a79b902529350f3329b5f7254386dac9271'
+b2sums=('abd8b0008dfd0948234baf7c307c42051e2f58a9c7ebd07b3b0dec9bdb6d8d78e4e1ae25d552aba8685e8b307dbdeb1360d873fef98ac108671dbbbc53c2a3af'
         'SKIP'
         '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34'
         'd07557840097dd48a60c51cc5111950781e1c6ce255557693bd11306c7a9258b2a82548329762148f117b2295145f9e66e0483a18e2fe09c5afcffed2e4b8628'
@@ -154,19 +153,10 @@ ac_add_options --with-system-nss
 
 # Features
 ac_add_options --enable-alsa
-ac_add_options --enable-av1
-ac_add_options --enable-eme=widevine
 ac_add_options --enable-jack
-ac_add_options --enable-jxl
-ac_add_options --enable-pulseaudio
-ac_add_options --enable-raw
-ac_add_options --enable-sandbox
-ac_add_options --enable-webrtc
-ac_add_options --disable-crashreporter
-ac_add_options --disable-default-browser-agent
-ac_add_options --disable-parental-controls
-ac_add_options --disable-tests
+ac_add_options --enable-crashreporter
 ac_add_options --disable-updater
+ac_add_options --disable-tests
 END
 }
 
@@ -214,7 +204,7 @@ END
 
   echo "Building optimized browser..."
   cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto=cross
+ac_add_options --enable-lto=cross,full
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
