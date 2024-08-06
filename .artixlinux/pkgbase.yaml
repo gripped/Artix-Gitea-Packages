@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libmusicbrainz5
-  version: 5.1.0-5
+  version: 5.1.0-7
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.1.0-5
+    version: 5.1.0-7
     packages:
-      - libmusicbrainz5-5.1.0-5-x86_64.pkg.tar.zst
+      - libmusicbrainz5-5.1.0-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
