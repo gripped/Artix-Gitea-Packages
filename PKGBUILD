@@ -33,5 +33,5 @@ package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
 
-  rm -r $pkgdir/usr/lib/systemd
+  rm -r $pkgdir/usr/lib
 }
