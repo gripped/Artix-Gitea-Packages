@@ -1,10 +1,10 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Maintainer: JJDaNiMoTh <jjdanimoth.aur@gmail.com>
 # Contributor: zlowly <zlowly [at] archlinux.org>
 
 pkgname=wqy-zenhei
 pkgver=0.9.45
-pkgrel=9
+pkgrel=10
 pkgdesc="A Hei Ti Style (sans-serif) Chinese Outline Font."
 arch=('any')
 license=('GPL2' 'custom:"font embedding exception"')

@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: wqy-zenhei
-  version: 0.9.45-9
+  version: 0.9.45-10
   arch:
     - any
   pkgname:
     - wqy-zenhei
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.45-9
+    version: 0.9.45-10
     packages:
-      - wqy-zenhei-0.9.45-9-any.pkg.tar.zst
+      - wqy-zenhei-0.9.45-10-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
