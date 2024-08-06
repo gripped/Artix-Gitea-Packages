@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
 
 pkgname=timezonemap
 pkgver=0.4.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Gtk3 timezone map widget, forked from gnome which forked from Ubiquity"
 arch=('x86_64')
 url="https://github.com/dashea/${pkgname}"
