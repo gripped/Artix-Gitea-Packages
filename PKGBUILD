@@ -1,8 +1,8 @@
-# Maintainer: Qontinuum <qontinuum@artixlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
 # Contributor: Tom Hacohen <tom@stosb.com>
 pkgname=acme-tiny
 pkgver=5.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A tiny script to issue and renew TLS certs from Let's Encrypt"
 url="https://github.com/diafygi/acme-tiny"
 depends=('python' 'openssl')
