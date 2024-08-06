@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libgpod
-  version: 0.8.3-15
+  version: 0.8.3-16
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.3-15
+    version: 0.8.3-16
     packages:
-      - libgpod-0.8.3-15-x86_64.pkg.tar.zst
+      - libgpod-0.8.3-16-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

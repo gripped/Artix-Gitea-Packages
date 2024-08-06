@@ -1,10 +1,9 @@
 # Contributor: Daniel Isenmann <daniel@archlinux.org>
-# Contributor: Daniel Isenmann <daniel@archlinux.org>
 # Contributor: William Rea <sillywilly@gmail.com>
 
 pkgname=libgpod
 pkgver=0.8.3
-pkgrel=15
+pkgrel=16
 pkgdesc="A shared library to access the contents of an iPod"
 url="http://www.gtkpod.org/libgpod/"
 arch=(x86_64)
@@ -63,7 +62,7 @@ build() {
   )
 
   cd $pkgname-$pkgver
-  export CFLAGS="$CFLAGS -Wno-incompatible-pointer-types -Wno-implicit-int"
+  CFLAGS+=" -Wno-incompatible-pointer-types -Wno-implicit-int" \
   ./configure "${configure_options[@]}"
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
