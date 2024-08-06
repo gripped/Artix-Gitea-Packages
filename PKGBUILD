@@ -1,16 +1,16 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 shopt -s extglob
 
 pkgbase=unicode-cldr
 pkgname=(unicode-cldr unicode-cldr-annotations)
 pkgver=42.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Unicode Common Locale Data Repository"
 arch=('any')
 url="http://cldr.unicode.org/"
 license=('custom')
-source=("http://ftp.uni-kl.de/pub/linux/gentoo/distfiles/78/unicode-cldr-common-$pkgver.zip")
+source=("https://unicode.org/Public/cldr/${pkgver%.*}/cldr-common-$pkgver.zip")
 sha512sums=('315448fe6a9ac2d5a6a7fd1a27b38c5db30fed053654a803d50e3a8d06aa08ad153e8e57089fa094c561f41a54f37eecda0701b47a1813879902be71945aa38a')
 
 package_unicode-cldr-annotations() {
