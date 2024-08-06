@@ -25,7 +25,7 @@ prepare() {
 }
 
 build() {
-  artix-meson rtkit build -D installed_tests=false
+  artix-meson rtkit build -D installed_tests=false -D libsystemd=disabled
 }
 
 check() {
