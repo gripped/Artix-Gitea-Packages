@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Evgeniy Alekseev <arcanis at archlinux dot org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Simo Leone <neotuli@gmail.com>
 
 pkgname=t1utils
 pkgver=1.42
-pkgrel=2
+pkgrel=3
 pkgdesc="Utilities for manupulating Adobe Type 1 font software "
 arch=(x86_64)
 url="https://github.com/kohler/t1utils"
