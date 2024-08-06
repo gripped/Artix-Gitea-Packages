@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=txt2man
 pkgver=1.7.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Converts flat ASCII text to man page format"
 arch=('any')
 url="https://github.com/mvertes/txt2man"
