@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: David Runge <dave@sleepmap.de>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 
 pkgname=calf
 pkgver=0.90.3
-pkgrel=6
+pkgrel=7
 pkgdesc='LV2 plug-in suite and standalone Jack host'
 arch=(x86_64)
 url="https://calf-studio-gear.org"
