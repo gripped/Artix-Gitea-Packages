@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libyaml
-  version: 0.2.5-2.1
+  version: 0.2.5-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.5-2.1
+    version: 0.2.5-3
     packages:
-      - libyaml-0.2.5-2.1-x86_64.pkg.tar.zst
+      - libyaml-0.2.5-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

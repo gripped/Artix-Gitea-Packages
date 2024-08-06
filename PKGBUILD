@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Michal Bozon <michal.bozon__at__gmail.com>
 
 pkgname=libyaml
 pkgver=0.2.5
-pkgrel=2.1
+pkgrel=3
 pkgdesc="YAML 1.1 library"
 arch=('x86_64')
 url="https://pyyaml.org/wiki/LibYAML"
