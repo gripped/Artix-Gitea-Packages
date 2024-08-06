@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: l-smash
-  version: 2.14.5-3
+  version: 2.14.5-4
   arch:
     - x86_64
   pkgname:
     - l-smash
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.14.5-3
+    version: 2.14.5-4
     packages:
-      - l-smash-2.14.5-3-x86_64.pkg.tar.zst
+      - l-smash-2.14.5-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

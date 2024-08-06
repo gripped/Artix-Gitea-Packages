@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
 
 pkgname=l-smash
 pkgver=2.14.5
-pkgrel=3
+pkgrel=4
 pkgdesc='MP4 muxer and other tools'
 arch=('x86_64')
 url='https://github.com/l-smash/l-smash'
