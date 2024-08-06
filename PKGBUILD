@@ -1,12 +1,12 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr at archlinux.org>
 
 pkgname=beanshell
 pkgver=2.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Small, free, embeddable, source level Java interpreter with object based scripting language features written in Java"
 arch=('any')
 url="https://github.com/beanshell/beanshell"
-license=('Apache')
+license=('Apache-2.0')
 depends=('java-runtime')
 provides=('bsh')
 replaces=('beanshell2')
