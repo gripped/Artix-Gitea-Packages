@@ -1,15 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 # Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
 # Contributor: Paolo "PalmaWay" Palmieri <palmaway@gmx.it>
 
 pkgname=man2html
 pkgver=3.0.1
-pkgrel=9
+pkgrel=10
 pkgdesc="A Unix manpage-to-HTML converter"
 arch=('any')
 url="https://www.nongnu.org/man2html/"
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=('man' 'perl')
 # https://www.cpan.org/authors/id/E/EH/EHOOD/CHECKSUMS
 source=(#http://www.oac.uci.edu/indiv/ehood/tar/$pkgname$pkgver.tar.gz
