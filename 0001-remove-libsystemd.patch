@@ -1,0 +1,38 @@
+From e407fe481d4791c699b3f31fc2201e35ecadaf4e Mon Sep 17 00:00:00 2001
+From: Nathan <ndowens@artixlinux.org>
+Date: Tue, 6 Aug 2024 00:12:56 -0500
+Subject: [PATCH] remove libsystemd
+
+---
+ meson.build | 8 --------
+ 1 file changed, 8 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index b30f95e..49cccbb 100644
+--- a/meson.build
++++ b/meson.build
+@@ -28,7 +28,6 @@ add_project_arguments('-include', 'config.hh', '-fno-exceptions', language : 'cp
+ libpcre = dependency('libpcre', version : '>= 8.30')
+ libarchive = dependency('libarchive', version : '>= 3.2.0')
+ libcurl = dependency('libcurl')
+-libsystemd = dependency('libsystemd')
+ pthreads = dependency('threads')
+ stdcppfs = cpp.find_library('stdc++fs')
+ gtest = dependency('gtest', required : false)
+@@ -67,13 +66,6 @@ executable(
+   link_with : [libcommon],
+   install : true)
+ 
+-executable(
+-  'pkgfiled',
+-  'src/pkgfiled.cc',
+-  link_with : [libcommon],
+-  dependencies : [libsystemd, stdcppfs],
+-  install : true)
+-
+ custom_target(
+     'pkgfile.1',
+     output : 'pkgfile.1',
+-- 
+2.46.0
+
