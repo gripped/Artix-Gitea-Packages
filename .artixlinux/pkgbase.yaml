@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: espeak-ng
-  version: 1.51.1-2
+  version: 1.51.1-4
   arch:
     - x86_64
   pkgname:
     - espeak-ng
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.51.1-2
+    version: 1.51.1-4
     packages:
-      - espeak-ng-1.51.1-2-x86_64.pkg.tar.zst
+      - espeak-ng-1.51.1-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
