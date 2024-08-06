@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=openfec
 pkgver=1.4.2.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Open Forward Erasure Codecs"
 arch=(x86_64)
 url="http://openfec.org/"
