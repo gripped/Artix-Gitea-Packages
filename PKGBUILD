@@ -9,7 +9,7 @@
 pkgname=prosody
 epoch=1
 pkgver=0.12.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Lightweight and extensible Jabber/XMPP server written in Lua"
 arch=('x86_64')
 url="https://prosody.im/"
@@ -33,7 +33,7 @@ validpgpkeys=('32A9EDDE3609931EB98CEAC315907E8E7BDD6BFE'
 source=("https://prosody.im/downloads/source/prosody-$pkgver.tar.gz"{,.asc}
         'prosody.tmpfile.d'
         'prosody.logrotated'
-	      'sysuser.conf')
+        'sysuser.conf')
 sha256sums=('47d712273c2f29558c412f6cdaec073260bbc26b7dda243db580330183d65856'
             'SKIP'
             '0753bd9260f1cfdce6e18e01a61e320b396acfe9fca8ccf3250653bfa6af997e'
@@ -48,6 +48,17 @@ prepare() {
   sed -i s/"error = "/"-- error = "/g prosody.cfg.lua.dist
   sed -i s/"--\ \"\*syslog\"\;"/"info = \"*syslog\"\;"/g prosody.cfg.lua.dist
 
+  # add pidfile and daemonize
+  # daemonize is important for systemd!
+  mv prosody.cfg.lua.dist prosody.cfg.lua.old
+
+  echo --Important for systemd >> prosody.cfg.lua.dist
+  echo -- daemonize is important for systemd. if you set this to false the systemd startup will freeze. >> prosody.cfg.lua.dist
+  echo daemonize = true >> prosody.cfg.lua.dist
+  echo 'pidfile = "/run/prosody/prosody.pid"'>> prosody.cfg.lua.dist
+  echo "" >> prosody.cfg.lua.dist
+  cat prosody.cfg.lua.old >> prosody.cfg.lua.dist
+  rm prosody.cfg.lua.old
 
   #sed -i 's|sock, err = socket.udp();|sock, err = (socket.udp4 or socket.udp)();|g' net/dns.lua
 }
@@ -73,8 +84,8 @@ package() {
   make DESTDIR="${pkgdir}" install
   make DESTDIR="${pkgdir}" install -C tools/migration
 
-  install -Dm 0644 "$srcdir"/prosody.tmpfile.d "${pkgdir}"/usr/lib/tmpfiles.d/prosody.conf
-  install -Dm644 "$srcdir"/sysuser.conf "$pkgdir"/usr/lib/sysusers.d/prosody.conf
+  install -Dm644 "${srcdir}"/prosody.tmpfile.d "${pkgdir}"/usr/lib/tmpfiles.d/prosody.conf
+  install -Dm644 "${srcdir}"/sysuser.conf "${pkgdir}"/usr/lib/sysusers.d/prosody.conf
 
   for i in tools/*.lua; do
     install -Dm644 "${i}" "${pkgdir}/usr/share/prosody/${i}"
