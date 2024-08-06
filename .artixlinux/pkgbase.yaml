@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: strongswan
-  version: 5.9.13-2
+  version: 5.9.14-1
   arch:
     - x86_64
   pkgname:
     - strongswan
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.9.13-2
+    version: 5.9.14-1
     packages:
-      - strongswan-5.9.13-2-x86_64.pkg.tar.zst
+      - strongswan-5.9.14-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
