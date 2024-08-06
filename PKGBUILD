@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=wpebackend-fdo
 pkgver=1.14.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Freedesktop.org backend for WPE WebKit"
 url="https://wpewebkit.org"
 arch=(x86_64)
