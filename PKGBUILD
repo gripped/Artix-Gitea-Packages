@@ -4,7 +4,7 @@
 
 pkgname=arrow
 pkgver=17.0.0
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Columnar in-memory analytics layer for big data."
 arch=(x86_64)
 url="https://arrow.apache.org"
