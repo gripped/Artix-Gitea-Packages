@@ -4,7 +4,7 @@ post_install() {
 
 post_upgrade() {
 	if  [ "$(vercmp $2 3.4)" -lt 0 ]; then
-		echo '/var/lib/spamassassin is now owned by the spamd user.'
+		echo '/var/lib/spamassassin is now owned by the spamd user. spamassassin.service'
 		echo 'will also run under that user. You may need to adjust your setup.'
 	fi
 
