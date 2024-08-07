@@ -3,7 +3,7 @@
 _pkgbasename=tdb
 pkgname=lib32-$_pkgbasename
 pkgver=1.4.10
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A Trivial Database similar to GDBM but allows simultaneous commits (32-bit)"
 arch=(x86_64)
 license=('GPL3')
