@@ -13,6 +13,7 @@ depends=(cdrkit
          sh)
 source=(https://downloads.sourceforge.net/sourceforge/movix/$pkgname-$pkgver.tar.gz)
 sha256sums=('96b84843ed80d31df5c07f6ee972362f7a0629a9b181afeb4a99b2127c07ff57')
+options=(!makeflags)
 
 build() {
   cd $pkgname-$pkgver
