@@ -2,7 +2,7 @@
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=fastfetch
-pkgver=2.19.1
+pkgver=2.21.0
 pkgrel=1
 pkgdesc="Like Neofetch, but much faster because written in C"
 arch=('x86_64')
@@ -17,7 +17,6 @@ makedepends=(
   'ddcutil'
   'directx-headers'
   'imagemagick'
-  'libnm'
   'libpulse'
   'libxcb'
   'libxrandr'
@@ -38,7 +37,6 @@ optdepends=(
   'directx-headers: GPU detection in WSL'
   'glib2: Output for values that are only stored in GSettings'
   'imagemagick: Image output using sixel or kitty graphics protocol'
-  'libnm: Wifi detection'
   'libpulse: Sound detection'
   'mesa: Needed by the OpenGL module for gl context creation.'
   'libxrandr: Multi monitor support'
@@ -50,7 +48,7 @@ optdepends=(
   'libdrm: Displays detection'
 )
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('0d2c53d4ba9801af2a7dbc6e0f1e4a301aaf28651c19c413f45659e6aa8aa1a1')
+sha256sums=('21d085a612b6bd9ab0f4e7bffe2632e313e6f67d432251cfd5a7f877b7194733')
 
 build() {
 	cmake -B build -S "${pkgname}-${pkgver}" \
