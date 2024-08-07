@@ -59,7 +59,7 @@ makedepends=(
   nodejs
   pciutils
   python
-  rustup
+  rust
   unzip
   'wasi-compiler-rt>15'
   'wasi-libc++>15'
@@ -100,7 +100,7 @@ sha256sums=('df1033b7d825da65e1892f599e65525e8d138374f75c5ebb76ee13ab818b4020'
 validpgpkeys=('034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3') # maltej(?)
 
 # change this to false if you do not want to run a PGO build for aarch64 or x86_64
-_build_profiled_aarch64=true
+#_build_profiled_aarch64=true
 _build_profiled_x86_64=true
 
 prepare() {
@@ -118,18 +118,22 @@ ac_add_options --prefix=/usr
 
 ac_add_options --disable-bootstrap
 
-export CC='clang'
-export CXX='clang++'
+
+ac_add_options --enable-application=browser
+ac_add_options --enable-hardening
+ac_add_options --enable-optimize
+ac_add_options --enable-rust-simd
+
 
 # Branding
-ac_add_options --with-app-name=${pkgname}
+#ac_add_options --with-app-name=${pkgname}
 # is this one required? upstream lw doesn't use it
 ac_add_options --enable-update-channel=release
 # unlear?
 # ac_add_options --with-app-basename=${_pkgname}
 
 # needed? yep.
-export MOZ_APP_REMOTINGNAME=${pkgname}
+#export MOZ_APP_REMOTINGNAME=${pkgname}
 
 # System libraries
 ac_add_options --with-system-nspr
@@ -138,7 +142,19 @@ ac_add_options --with-system-nss
 # Features
 # keep alsa option in here until merged upstream
 ac_add_options --enable-alsa
+ac_add_options --enable-av1
+ac_add_options --enable-eme=widevine
 ac_add_options --enable-jack
+ac_add_options --enable-jxl
+ac_add_options --enable-pulseaudio
+ac_add_options --enable-raw
+ac_add_options --enable-sandbox
+ac_add_options --enable-webrtc
+ac_add_options --disable-crashreporter
+ac_add_options --disable-default-browser-agent
+ac_add_options --disable-parental-controls
+ac_add_options --disable-updater
+ac_add_options --disable-tests
 
 # options for ci / weaker build systems
 # mk_add_options MOZ_MAKE_FLAGS="-j4"
@@ -157,7 +173,6 @@ END
   export MOZ_DEBUG_FLAGS=" "
   export CFLAGS+=" -g0"
   export CXXFLAGS+=" -g0"
-  export RUSTFLAGS="-Cdebuginfo=0"
 
   # we should have more than enough RAM on the CI spot instances.
   # ...or maybe not?
@@ -180,9 +195,6 @@ fi
 
 build() {
   cd librewolf-$pkgver-$pkgrel
-
-export RUSTUP_TOOLCHAIN=1.77.2
-rustup update
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -207,7 +219,7 @@ rustup update
   if [[ $CARCH == 'aarch64' && $_build_profiled_aarch64 == true ]]; then
 
     cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-profile-generate
+ac_add_options --enable-profile-generate=cross
 END
 
   elif [[ $CARCH == 'x86_64' && $_build_profiled_x86_64 == true ]]; then
