@@ -66,6 +66,7 @@ makedepends=(
   'wasi-libc++abi>15'
   'wasi-libc>=1:0+314+a1c7c2c'
   xorg-server-xvfb
+  xorg-xdpyinfo
   yasm
   zip
 ) # pciutils: only to avoid some PGO warning
@@ -100,7 +101,7 @@ sha256sums=('df1033b7d825da65e1892f599e65525e8d138374f75c5ebb76ee13ab818b4020'
 validpgpkeys=('034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3') # maltej(?)
 
 # change this to false if you do not want to run a PGO build for aarch64 or x86_64
-#_build_profiled_aarch64=true
+_build_profiled_aarch64=false
 _build_profiled_x86_64=true
 
 prepare() {
@@ -184,7 +185,7 @@ else
 ac_add_options --disable-elf-hack
 
 # might help with failing x86_64 builds?
-export LDFLAGS+=" -Wl,--no-keep-memory"
+#export LDFLAGS+=" -Wl,--no-keep-memory"
 END
 fi
 
@@ -238,11 +239,20 @@ END
 
     ./mach package
 
+    #emulate display
+    echo "Starting xvfb on :99..."
+    Xvfb -ac :99 -screen 0 1280x1024x16 &
+    export DISPLAY=:99
+
+    echo "Checking that xvfb started ok..."
+    xdpyinfo -display :99 >/dev/null 2>&1 && echo "xvfb is using :99" || echo "xvfb is not using :99, it's free."
+
+    echo "running xvfb"
     # Uncomment the next line if you have an error while profiling ( thanks to mkli )
     # LIBGL_ALWAYS_SOFTWARE=true \
     LLVM_PROFDATA=llvm-profdata \
       JARLOG_FILE="$PWD/jarlog" \
-      xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
+      xvfb-run -a --server-args="-screen 0, 1024x768x16 -nolisten local" \
       ./mach python build/pgo/profileserver.py
 
     stat -c "Profile data found (%s bytes)" merged.profdata
