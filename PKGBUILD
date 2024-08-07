@@ -252,7 +252,7 @@ END
     # LIBGL_ALWAYS_SOFTWARE=true \
     LLVM_PROFDATA=llvm-profdata \
       JARLOG_FILE="$PWD/jarlog" \
-      xvfb-run -a --server-args="-screen 0, 1024x768x16 -nolisten local" \
+      xvfb-run -a --server-args="-screen 0 1280x1024x24 -ac -nolisten tcp -nolisten unix" \
       ./mach python build/pgo/profileserver.py
 
     stat -c "Profile data found (%s bytes)" merged.profdata
