@@ -59,7 +59,7 @@ makedepends=(
   nodejs
   pciutils
   python
-  rust
+  rustup
   unzip
   'wasi-compiler-rt>15'
   'wasi-libc++>15'
