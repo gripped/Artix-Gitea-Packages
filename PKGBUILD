@@ -1,0 +1,78 @@
+# Maintainer: Anatol Pomozov
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Contributor: Alad Wenter <alad (at) archlinux.info>
+# Contributor: Jochen Schalanda <jochen+aur (at) schalanda.name>
+# Contributor: C. Dominik Bódi <dominik.bodi@gmx.de>
+# Contributor: Pierre Carrier <pierre@spotify.com>
+# Contributor: Thomas Dziedzic <gostrc (at) gmail>
+# Contributor: Chris Giles <Chris.G.27 (at) Gmail.com>
+# Contributor: seblu <seblu+arch (at) seblu.net>
+# Contributor: squiddo <squiddo (at) intheocean.net>
+# Contributor: dront78 <dront78 (at) gmail.com>
+# Contributor: hugelgupf <ckoch (at) cs.nmt.edu>
+
+pkgname=dpkg
+pkgver=1.22.11
+pkgrel=1
+pkgdesc='The Debian Package Manager tools'
+arch=('x86_64')
+url="https://tracker.debian.org/pkg/dpkg"
+license=('GPL-2.0-or-later')
+depends=(
+    'bzip2'
+    'gcc-libs'
+    'glibc'
+    'libmd'
+    'perl'
+    'xz'
+    'zlib'
+    'zstd'
+)
+makedepends=(
+    'git'
+    'perl-io-string'
+    'perl-timedate'
+)
+checkdepends=(
+    'perl-io-string'
+    'perl-test-pod'
+)
+options=('!emptydirs')
+install=dpkg.install
+source=("git+https://git.dpkg.org/git/dpkg/dpkg.git?signed#tag=$pkgver"
+        origin.archlinux)
+sha256sums=('f1afa9c0831072af60be3ae60d42befda9d991eecc6538f80369e36abd00ca63'
+            '9cfd50f65f1fb52adccf48ea859871259a549f24620b52466c890931919b7e04')
+validpgpkeys=('4F3E74F436050C10F5696574B972BF3EA4AE57A3') # Guillem Jover <guillem@hadrons.org>
+
+prepare() {
+    cd $pkgname
+    ./autogen
+}
+
+build() {
+    cd $pkgname
+    CFLAGS+=' -ffat-lto-objects' \
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --sbindir=/usr/bin \
+        --libexecdir=/usr/lib \
+        --disable-start-stop-daemon
+    make
+}
+
+check() {
+    cd $pkgname
+    make check
+}
+
+package() {
+    cd $pkgname
+    make DESTDIR="$pkgdir" install
+    install -vDm644 /dev/null "$pkgdir/var/lib/dpkg/status"
+    install -vDm644 /dev/null "$pkgdir/var/lib/dpkg/available"
+    install -vDm644 "$srcdir/origin.archlinux" "$pkgdir/etc/dpkg/origins/archlinux"
+    ln -vsf archlinux "$pkgdir/etc/dpkg/origins/default"
+}
