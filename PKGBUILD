@@ -114,6 +114,7 @@ package() {
     -e "s|$pkgdir||g" \
     -e "s|Group=.*|Group=jabber|g" \
     -e "s|User=.*|User=jabber|g" \
+    ejabberd.service
   sed -i -e "s|$pkgdir||g" "$pkgdir"/usr/bin/ejabberdctl
 
 
