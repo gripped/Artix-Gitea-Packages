@@ -2,14 +2,14 @@
 
 pkgname=rocm-core
 _rocm_major=6
-_rocm_minor=1
-_rocm_patch=2
-_pkgver_magic=119
+_rocm_minor=2
+_rocm_patch=0
+_pkgver_magic=66
 pkgver=$_rocm_major.$_rocm_minor.$_rocm_patch
-pkgrel=1
+pkgrel=2
 pkgdesc='AMD ROCm core package (version files)'
 license=('Unlicense')
-arch=('x86_64')
+arch=('any')
 source=('LICENSE'
         'rocm-ld.conf'
         'rocm-profile.sh')

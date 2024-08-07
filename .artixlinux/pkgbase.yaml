@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: rocm-core
-  version: 6.1.2-1
+  version: 6.2.0-2
   arch:
-    - x86_64
+    - any
   pkgname:
     - rocm-core
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.1.2-1
+    version: 6.2.0-2
     packages:
-      - rocm-core-6.1.2-1-x86_64.pkg.tar.zst
+      - rocm-core-6.2.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
