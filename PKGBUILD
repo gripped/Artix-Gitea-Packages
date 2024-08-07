@@ -1,29 +1,17 @@
 # Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
-pkgname=rocm-llvm
-pkgdesc='Radeon Open Compute - LLVM toolchain (llvm, clang, lld)'
-pkgver=6.0.2
+pkgbase=rocm-llvm
+pkgname=(rocm-llvm rocm-device-libs comgr hipcc)
+pkgver=6.2.0
 pkgrel=1
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
-license=('Apache-2.0 WITH LLVM-exception')
-depends=('rocm-core' 'perl' 'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit'
-         'ncurses' 'libxml2')
-makedepends=('cmake' 'python' 'ninja')
-_git='https://github.com/ROCm/llvm-project'
-source=("${pkgname}-${pkgver}.tar.gz::$_git/archive/rocm-$pkgver.tar.gz"
-        "${pkgname}-fix-segfault.patch")
-sha256sums=('7d35acc84de1adee65406f92a369a30364703f84279241c444cd93a48c7eeb76'
-            '4d3f198c5422e9987f442c20963223c39b1548ffa00b6c9db81af5070278ce03')
+makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
+             'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2')
+source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver")
+sha256sums=('6b759a71ce0014db5c9e2e27c2596a93ba1b55c024dbfe6b094e7b8f964134b0')
 options=(staticlibs !lto)
-_dirname="$(basename "$_git")-$(basename "${source[0]}" .tar.gz)"
-
-prepare() {
-    cd "$_dirname"
-    # https://github.com/ROCm/ROCm/issues/2918
-    patch -Np1 -i ../"${pkgname}-fix-segfault.patch"
-}
 
 build() {
     # Build only minimal debug info to reduce size
@@ -33,7 +21,7 @@ build() {
     local cmake_args=(
         -G Ninja
         -B build
-        -S "$_dirname/llvm"
+        -S "$pkgbase/llvm"
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_INSTALL_PREFIX='/opt/rocm/lib/llvm'
         -DLLVM_HOST_TRIPLE=$CHOST
@@ -57,12 +45,49 @@ build() {
         -DCLANG_INCLUDE_TESTS=OFF
         -DLLVM_BINUTILS_INCDIR=/usr/include
     )
-    
     cmake "${cmake_args[@]}"
     cmake --build build
+
+    local cmake_device_libs_args=(
+        -Wno-dev
+        -S "$pkgbase/amd/device-libs"
+        -B build-device-libs
+        -D CMAKE_BUILD_TYPE=None
+        -D CMAKE_INSTALL_PREFIX=/opt/rocm
+        -D CMAKE_PREFIX_PATH="$srcdir/build"
+    )
+    cmake "${cmake_device_libs_args[@]}"
+    cmake --build build-device-libs
+
+    local cmake_comgr_args=(
+        -Wno-dev
+        -S "$pkgbase/amd/comgr"
+        -B build-comgr
+        -D CMAKE_BUILD_TYPE=None
+        -D CMAKE_INSTALL_PREFIX=/opt/rocm
+        -D BUILD_TESTING=OFF
+        -D CMAKE_PREFIX_PATH="$srcdir/build;$srcdir/build-device-libs"
+    )
+    cmake "${cmake_comgr_args[@]}"
+    cmake --build build-comgr
+
+    local cmake_hipcc_args=(
+        -Wno-dev
+        -S "$pkgbase/amd/hipcc"
+        -B build-hipcc
+        -D CMAKE_BUILD_TYPE=None
+        -D CMAKE_INSTALL_PREFIX=/opt/rocm
+    )
+    cmake "${cmake_hipcc_args[@]}"
+    cmake --build build-hipcc
 }
 
-package() {
+package_rocm-llvm() {
+    pkgdesc='Radeon Open Compute - LLVM toolchain (llvm, clang, lld)'
+    license=('Apache-2.0 WITH LLVM-exception')
+    depends=('rocm-core' 'perl' 'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit'
+             'ncurses' 'libxml2')
+
     DESTDIR="$pkgdir" cmake --install build
 
     # Provide symlink to old LLVM location, pre ROCm 6.0.0
@@ -72,10 +97,46 @@ package() {
     install -d "$pkgdir/opt/rocm/lib/llvm/lib/bfd-plugins"
     ln -s /opt/rocm/lib/llvm/lib/LLVMgold.so "$pkgdir/opt/rocm/lib/llvm/lib/bfd-plugins/LLVMgold.so"
 
-    cd "$_dirname"
+    cd "$pkgbase"
     install -Dm644 llvm/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/llvm-LICENSE"
     install -Dm644 clang/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/clang-LICENSE"
     install -Dm644 clang-tools-extra/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/clang-tools-extra-LICENSE"
     install -Dm644 compiler-rt/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/compiler-rt-LICENSE"
     install -Dm644 lld/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/lld-LICENSE"
+}
+
+package_rocm-device-libs() {
+    pkgdesc='AMD specific device-side language runtime libraries'
+    license=('NCSA')
+    depends=('rocm-core')
+
+    DESTDIR="$pkgdir" cmake --install build-device-libs
+    cd "$pkgbase/amd/device-libs"
+    install -Dm644 LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+package_comgr() {
+    pkgdesc='AMDGPU GPU Code Object Manager'
+    license=('NCSA')
+    depends=('glibc' 'gcc-libs' 'zstd' 'zlib' 'ncurses'
+             'rocm-core' 'rocm-llvm' 'rocm-device-libs')
+
+    DESTDIR="$pkgdir" cmake --install build-comgr
+    cd "$pkgbase/amd/comgr"
+    install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+package_hipcc() {
+    pkgdesc="HIP compiler driver"
+    license=('MIT')
+    depends=('glibc' 'gcc-libs')
+    optdepends=('rocm-llvm: Compiler backend for AMD hardware'
+                'rocm-device-libs: Compiler backend for AMD hardware'
+                'comgr: Compiler backend for AMD hardware'
+                'cuda: Compiler backend for NVIDIA hardware')
+
+    DESTDIR="$pkgdir" cmake --install build-hipcc
+    cd "$pkgbase/amd/hipcc"
+    install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
 }

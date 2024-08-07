@@ -1,18 +1,21 @@
 ---
 pkgbase:
   name: rocm-llvm
-  version: 6.0.2-1
+  version: 6.2.0-1
   arch:
     - x86_64
   pkgname:
     - rocm-llvm
+    - rocm-device-libs
+    - comgr
+    - hipcc
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +28,12 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.2.0-1
+    packages:
+      - rocm-llvm-6.2.0-1-x86_64.pkg.tar.zst
+      - rocm-device-libs-6.2.0-1-x86_64.pkg.tar.zst
+      - comgr-6.2.0-1-x86_64.pkg.tar.zst
+      - hipcc-6.2.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
@@ -52,3 +59,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
