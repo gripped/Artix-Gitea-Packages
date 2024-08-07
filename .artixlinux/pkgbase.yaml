@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: junit
-  version: 4.13.2-1
+  version: 4.13.2-3
   arch:
     - any
   pkgname:
     - junit
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.13.2-3
+    packages:
+      - junit-4.13.2-3-any.pkg.tar.zst
   world:
     version: 4.13.2-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
