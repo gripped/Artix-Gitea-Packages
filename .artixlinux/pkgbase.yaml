@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-google-api-python-client
-  version: 2.123.0-2
+  version: 2.140.0-1
   arch:
     - any
   pkgname:
     - python-google-api-python-client
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.123.0-2
+    version: 2.140.0-1
     packages:
-      - python-google-api-python-client-2.123.0-2-any.pkg.tar.zst
+      - python-google-api-python-client-2.140.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
