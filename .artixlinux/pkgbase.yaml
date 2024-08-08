@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-rope
-  version: 1.12.0-2
+  version: 1.13.0-1
   arch:
     - any
   pkgname:
     - python-rope
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12.0-2
+    version: 1.13.0-1
     packages:
-      - python-rope-1.12.0-2-any.pkg.tar.zst
+      - python-rope-1.13.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
