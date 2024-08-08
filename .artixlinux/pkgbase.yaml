@@ -1,16 +1,23 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: quassel
+  version: 0.14.0-3
+  arch:
+    - x86_64
+  pkgname:
+    - quassel-core
+    - quassel-client
+    - quassel-client-qt
+    - quassel-monolithic
+    - quassel-monolithic-qt
+    - quassel-common
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +55,11 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 0.14.0-3
+    packages:
+      - quassel-core-0.14.0-3-x86_64.pkg.tar.zst
+      - quassel-client-0.14.0-3-x86_64.pkg.tar.zst
+      - quassel-client-qt-0.14.0-3-x86_64.pkg.tar.zst
+      - quassel-monolithic-0.14.0-3-x86_64.pkg.tar.zst
+      - quassel-monolithic-qt-0.14.0-3-x86_64.pkg.tar.zst
+      - quassel-common-0.14.0-3-x86_64.pkg.tar.zst
