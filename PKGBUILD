@@ -20,7 +20,7 @@ depends=(gcc-libs # libstdc++.so libgcc_s.so
          pixman
          pugixml
          seatd libseat.so
-         systemd-libs libudev.so
+         libudev libudev.so
          wayland libwayland-client.so
          wayland-protocols)
 makedepends=(cmake)
