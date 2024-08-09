@@ -2,7 +2,7 @@
 
 pkgname=xsettingsd
 pkgver=1.0.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Provides settings to X11 applications via the XSETTINGS specification"
 arch=('x86_64')
 url="https://github.com/derat/xsettingsd"
