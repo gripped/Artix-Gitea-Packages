@@ -3,7 +3,8 @@
 
 pkgname=python-moto
 _pkgname=moto
-pkgver=5.0.11
+# https://github.com/getmoto/moto/blob/master/CHANGELOG.md
+pkgver=5.0.12
 pkgrel=1
 pkgdesc='Moto is a library to mock out the boto library.'
 arch=(any)
@@ -52,7 +53,7 @@ checkdepends+=(python-yaml python-joserfc python-openapi-spec-validator python-d
 )
 source=("https://github.com/getmoto/moto/archive/refs/tags/$pkgver/$pkgname-$pkgver.tar.gz"
         "fix-tests.diff")
-sha256sums=('5e865aa521fc99810d4bbf8f5ad277f9786d574fcf2445650c4db8867412d7cf'
+sha256sums=('530ef30112652ebf062418edefef8283fe33ff295aea5aec52baed87c68db7cb'
             '21305cdf3d650ced1acb1d0f7dde8760b26e32a94c56a5571e798d6b6976cf5a')
 
 prepare() {
@@ -74,8 +75,14 @@ build() {
 check() {
   cd $_pkgname-$pkgver
 
-  # The parser for Step Functions needs more dependencies
-  TZ=UTC pytest tests --ignore tests/test_stepfunctions/parser -m 'not requires_docker'
+  local pytest_args=(
+    # The parser for Step Functions needs more dependencies
+    --ignore tests/test_stepfunctions/parser
+    # Needs a new package python-pycognito
+    --ignore tests/test_cognitoidp/test_cognitoidp.py
+    -m 'not requires_docker'
+  )
+  TZ=UTC pytest tests "${pytest_args[@]}"
 }
 
 package() {
