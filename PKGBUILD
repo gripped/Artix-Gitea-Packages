@@ -9,7 +9,7 @@
 
 pkgname=chrony
 pkgver=4.5
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Lightweight NTP client and server'
 url=https://chrony-project.org/
 arch=('x86_64')
