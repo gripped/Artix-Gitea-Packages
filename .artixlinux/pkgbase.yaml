@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: blueman
-  version: 2.4.3-1.1
+  version: 2.4.3-1.2
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.4.3-1.1
+    version: 2.4.3-1.2
     packages:
-      - blueman-2.4.3-1.1-x86_64.pkg.tar.zst
+      - blueman-2.4.3-1.2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
