@@ -5,7 +5,7 @@
 
 pkgname=blueman
 pkgver=2.4.3
-pkgrel=1.4
+pkgrel=1.5
 pkgdesc="GTK+ Bluetooth Manager"
 url="https://github.com/blueman-project/blueman"
 arch=('x86_64')
@@ -40,4 +40,6 @@ build() {
 package() {
 	cd "${pkgname}-${pkgver}"
 	make DESTDIR="${pkgdir}" install
+
+	rm -r $pkgdir/usr/lib/systemd
 }
