@@ -40,7 +40,6 @@ prepare() {
     -e 's|server bar.example.net|server 1.arch.pool.ntp.org|g' \
     -e 's|server baz.example.net|server 3.arch.pool.ntp.org|g' \
     examples/chrony.conf.example*
-  sed 's|/usr/sbin|/usr/bin|g' -i examples/*.service
   echo $pkgver > version.txt
 }
 
@@ -69,11 +68,9 @@ package() {
 
   install -Dm 644 "${srcdir}/chrony.sysusers" "${pkgdir}/usr/lib/sysusers.d/chrony.conf"
   install -Dm 644 "${srcdir}/chrony.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/chrony.conf"
-  install -Dm 644 examples/{chronyd,chrony-wait}.service -t "${pkgdir}/usr/lib/systemd/system"
   install -Dm 644 examples/chrony.logrotate "${pkgdir}/etc/logrotate.d/chrony"
   install -Dm 644 README NEWS -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dm 644 examples/* -t "${pkgdir}/usr/share/doc/${pkgname}/examples"
-  echo "chronyd.service" | install -Dm 644 /dev/stdin "${pkgdir}/usr/lib/systemd/ntp-units.d/50-chrony.list"
 
   install -Dm 644 examples/chrony.conf.example3 "${pkgdir}/etc/chrony.conf"
   sed -i \
