@@ -2,7 +2,7 @@
 
 pkgname=xsettingsd
 pkgver=1.0.2
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Provides settings to X11 applications via the XSETTINGS specification"
 arch=('x86_64')
 url="https://github.com/derat/xsettingsd"
@@ -21,4 +21,6 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
   install -Dm644 $pkgname-$pkgver/COPYING -t "$pkgdir"/usr/share/licenses/$pkgname
+
+  rm -r $pkgdir/usr/lib/systemd
 }
