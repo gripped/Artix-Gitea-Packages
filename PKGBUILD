@@ -1,0 +1,61 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-cucumber-tag-expressions
+pkgver=5.0.6
+pkgrel=2
+pkgdesc="Cucumber tag expressions for ruby"
+arch=(any)
+url='https://github.com/cucumber/tag-expressions'
+license=(MIT)
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-rake
+  ruby-rspec
+)
+checkdepends=(
+  ruby-bundler
+)
+options=(!emptydirs)
+source=(https://github.com/cucumber/tag-expressions/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('b8c24625c3ba29208d614d949dce57aa11960bc27f23bc713877e39c7fea918d')
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd tag-expressions-$pkgver/ruby
+  gem build cucumber-tag-expressions.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    cucumber-tag-expressions-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd tag-expressions-$pkgver/ruby
+  GEM_HOME="tmp_install/$_gemdir" rake
+}
+
+package() {
+  cd tag-expressions-$pkgver/ruby
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 ../LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
