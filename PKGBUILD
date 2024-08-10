@@ -1,0 +1,46 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
+
+_gemname='jwt'
+pkgname="ruby-${_gemname}"
+pkgver=2.8.2
+pkgrel=1
+pkgdesc='A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard'
+arch=('any')
+url="https://github.com/jwt/${pkgname}"
+license=('MIT')
+depends=('ruby')
+makedepends=('ruby-rdoc' 'ruby-rake' 'ruby-rspec' 'ruby-bundler')
+checkdepends=('ruby-rubocop' 'ruby-simplecov')
+options=('!emptydirs')
+source=("${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz" 'drop-ci-dependencies.patch')
+sha512sums=('d92cfe8c5196c3efd4cc42751cef956cf35758e980a959f554b61e148dfcaddfd9fc3d05bb57a043eca4c03f8240086951ad24bc676fb7d0f29a677dab4b270e'
+            '7b4767085a99dcfc84a875aacfb70dc8bce52ae1ff0f9d4d34cbacb9ff0452f8203dcc528f4a104e506dae9da5526ca92fe60d75246bd306ab2925bc9e46a40d')
+
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  rm Gemfile
+  patch -p1 -N -i "${srcdir}/drop-ci-dependencies.patch"
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  gem build "${pkgname}.gemspec"
+}
+
+check() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  rake test --trace
+}
+
+package() {
+cd "${srcdir}/${pkgname}-${pkgver}"
+  local _gemdir="$(gem env gemdir)"
+  gem install --verbose --ignore-dependencies --no-user-install --install-dir "${pkgdir}/${_gemdir}" --bindir "${pkgdir}/usr/bin" "${_gemname}-${pkgver}.gem"
+
+  install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+  install -Dm 644 README.md AUTHORS CHANGELOG.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+  rm -rf "${pkgdir}/${_gemdir}/cache"
+}
