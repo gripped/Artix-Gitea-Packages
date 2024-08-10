@@ -1,0 +1,76 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-cucumber-html-formatter
+pkgver=21.4.0
+pkgrel=2
+pkgdesc="HTML formatter for Cucumber"
+arch=(any)
+url='https://github.com/cucumber/html-formatter/tree/main/ruby'
+license=(MIT)
+depends=(
+  ruby
+  ruby-cucumber-messages
+)
+makedepends=(
+  npm
+  ruby-bundler
+  ruby-rake
+  ruby-rspec
+  ruby-cucumber-compatibility-kit
+)
+options=(!emptydirs)
+source=(
+  "https://github.com/cucumber/html-formatter/archive/v$pkgver/cucumber-html-formatter-$pkgver.tar.gz"
+  "${pkgname}_fix_tests.patch"
+)
+sha512sums=('6b3a9a8169c7bf6b0453edb043bedd98a6795a95e890e911a4e16f2292efc40ec4e2f82b826c6a391056cf4e1f40738922bed8193a93c8a484f51a4d8baacf5a'
+            '9f6092519185d5c89fc6cf5ef284e0e19502c9ebf13b1a6510309d21830379c54c6ca2532867ac5c971dba6b67bb5299cb0a80c712c4882605951e713f5d56f1')
+b2sums=('161782c0332ada043713a0f8ff36e5bafb395e19f14b47b0bdc811eb14e0867e440ba922b67bedba722b77a37fc6044648e4968cb57b9925ec261f28f1dab1ce'
+        'c1a81dbf7d8e272fcbe027d0a868651d9a142fcd90252ee3bf4707b8c8f5971b0f426256c0ed60d264094a057f133dc88ca192d1d81a848e26307fce0659ad00')
+
+prepare() {
+  cd html-formatter-$pkgver
+  patch --verbose --strip=1 --input="../${pkgname}_fix_tests.patch"
+  cd ruby
+  sed -r -e 's|~>|>=|g' -e "s/, '< 25'//" -i cucumber-html-formatter.gemspec
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd html-formatter-$pkgver
+  make prepare
+  cd ruby
+  gem build cucumber-html-formatter.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    cucumber-html-formatter-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd html-formatter-$pkgver/ruby
+  GEM_HOME="tmp_install/$_gemdir" rake
+}
+
+package() {
+  cd html-formatter-$pkgver/ruby
+  cp -a tmp_install/* "$pkgdir"/
+}
