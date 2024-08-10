@@ -1,0 +1,111 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-cucumber
+pkgver=9.2.0
+pkgrel=1
+pkgdesc="Behaviour Driven Development with elegance and joy"
+arch=(any)
+url='https://github.com/cucumber/cucumber-ruby'
+license=(MIT)
+depends=(
+  ruby
+  ruby-builder
+  ruby-cucumber-ci-environment
+  ruby-cucumber-core
+  ruby-cucumber-cucumber-expressions
+  ruby-cucumber-gherkin
+  ruby-cucumber-html-formatter
+  ruby-cucumber-messages
+  ruby-diff-lcs
+  ruby-mime-types
+  ruby-mini_mime
+  ruby-multi_test
+  ruby-sys-uname
+)
+makedepends=(
+  ruby-cucumber-compatibility-kit
+  ruby-nokogiri
+  ruby-octokit
+  ruby-pry
+  ruby-rack-test
+  ruby-rake
+  ruby-rspec
+  ruby-simplecov
+  ruby-sinatra
+  ruby-syntax
+  ruby-test-unit
+  ruby-webrick
+)
+checkdepends=(
+  ruby-bundler
+)
+options=(!emptydirs)
+source=(
+  "https://github.com/cucumber/cucumber-ruby/archive/v$pkgver/cucumber-cucumber-ruby-$pkgver.tar.gz"
+)
+sha512sums=('4685647167268621488fc0144f24f44cc4dd684206298cd20b9a2efbbbcc43f5b05223e4d1e9c8b6b29c552eac31d8471c12c59d5fec7463a28c8f8ebd20159a')
+b2sums=('4bbd9b0ecf2d3e3a06d9ca36f512b67b7f776185c1888987cd247fdf457150f96a30b1d33d2b76605efe71a51e1866ae595b77458dcf63eabac2974db0932027')
+
+prepare() {
+  cd cucumber-ruby-$pkgver
+
+  sed -i \
+    -e '/capybara/d' \
+    -e 's|~>|>=|' \
+    -e "s/, '< [0-9]\+'//" \
+    cucumber.gemspec
+  sed -i '/[rR]ubo[cC]op/d' Rakefile
+
+  rm Gemfile
+
+  sed -i -e 's/bundle exec //' gem_tasks/cck.rake compatibility/cck_spec.rb
+  sed -i \
+    -e "s/Cucumber::Messages::TimeConversion/Cucumber::Messages::Helpers::TimeConversion/" \
+    -e "s/Cucumber::Messages::IdGenerator::Incrementing/Cucumber::Messages::Helpers::IdGenerator::Incrementing/" \
+    -e "s/Cucumber::Messages::IdGenerator::UUID/Cucumber::Messages::Helpers::IdGenerator::UUID/" \
+    -e "s/require 'cucumber\/messages\/id_generator'/require 'cucumber\/messages\/helpers\/id_generator'/" \
+    lib/cucumber/configuration.rb \
+    lib/cucumber/formatter/message_builder.rb \
+    spec/cucumber/formatter/message_spec.rb \
+    spec/cucumber/runtime/hooks_examples.rb
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd cucumber-ruby-$pkgver
+  gem build cucumber.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    cucumber-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd cucumber-ruby-$pkgver
+  # cck disabled: "ci" is not supported in latest cucumber-messages
+  PATH="$PWD/tmp_install/usr/bin:$PATH" GEM_HOME="tmp_install/$_gemdir" rake spec cucumber
+}
+
+package() {
+  cd cucumber-ruby-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
