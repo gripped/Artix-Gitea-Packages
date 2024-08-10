@@ -6,7 +6,7 @@
 
 pkgbase=firefox-i18n
 pkgver=129.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Language pack for Firefox"
 url="https://www.mozilla.org/firefox/"
 arch=(any)
