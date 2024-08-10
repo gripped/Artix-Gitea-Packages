@@ -4,7 +4,7 @@
 
 pkgname=tigervnc
 pkgver=1.14.0
-pkgrel=1
+pkgrel=1.1
 _xorgver=21.1.13
 pkgdesc="Suite of VNC servers and clients based on the VNC 4 branch of TightVNC"
 arch=('x86_64')
@@ -74,4 +74,6 @@ package() {
   cd unix/xserver/hw/vnc
   make DESTDIR="$pkgdir" install
   install -Dm0755 "$srcdir"/Xsession "$pkgdir"/etc/X11/tigervnc/Xsession
+
+  sed -i '/systemd/Id' "$pkgdir"/etc/pam.d/tigervnc
 }
