@@ -1,0 +1,63 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-cucumber-cucumber-expressions
+pkgver=17.1.0
+_commit=b5dcaa533ae6d2ed36a486bdaabbdcc6e6f46777
+pkgrel=1
+pkgdesc="Cucumber Expressions - a simpler alternative to Regular Expressions"
+arch=(any)
+url='https://github.com/cucumber/cucumber-expressions/tree/main/ruby'
+license=(MIT)
+depends=(
+  ruby
+)
+makedepends=(
+  git
+  ruby-rake
+  ruby-rspec
+)
+checkdepends=(
+  ruby-bundler
+)
+options=(!emptydirs)
+source=(git+https://github.com/cucumber/cucumber-expressions.git#commit=$_commit)
+sha256sums=('SKIP')
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd cucumber-expressions/ruby
+  gem build cucumber-cucumber-expressions.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    cucumber-cucumber-expressions-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd cucumber-expressions/ruby
+  GEM_HOME="tmp_install/$_gemdir" rake
+}
+
+package() {
+  cd cucumber-expressions/ruby
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 ../LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
