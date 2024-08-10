@@ -1,0 +1,78 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-cucumber-gherkin
+pkgver=28.0.0
+pkgrel=2
+pkgdesc="Gherkin for Ruby"
+arch=(any)
+url='https://github.com/cucumber/gherkin/blob/main/ruby'
+license=(MIT)
+depends=(
+  ruby
+  ruby-cucumber-messages
+)
+makedepends=(
+  ruby-rake
+  ruby-rspec
+)
+checkdepends=(
+  ruby-bundler
+)
+options=(!emptydirs)
+source=(
+  "https://github.com/cucumber/gherkin/archive/v$pkgver/cucumber-gherkin-$pkgver.tar.gz"
+  "${pkgname}_fix_tests.patch"
+)
+sha512sums=('97e107ec1b8bb37e1e72db840481423f9726ab0220e72a1132cba51d24ceb7405ad04cc6ac0a7d7595467606b5af3b35d080efa3114e11989fb4524663d29f30'
+            '457d34a5e48698089be8be4edc59d399d164785fee2e496d514b101693da47df2f2a42caa98c5e1027e07b72b92c078e0540e698dca7882a93b76a63c645b632')
+b2sums=('1362d2b3ccae0ccb725dcad104d1950e37317edf6b3356d903feb7212ec83b494b3190762bd56272d2b835d72c323b32226eb3ea8d5729477a72965ce8346995'
+        '8be83b1fcc70013e291790fbb54c2f1d3aeb553f90d305dd575b5622bd45e86be8e7f3229e45f533c47e09d3c6bc0be93fb9d3fb53600ee8e78aa5dd0c5eea53')
+
+prepare() {
+  cd gherkin-$pkgver
+
+  patch --verbose --strip=1 --input="../${pkgname}_fix_tests.patch"
+
+  cd ruby
+
+  sed -r -e 's|~>|>=|g' -e "s/, '< 24'//" -i cucumber-gherkin.gemspec
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd gherkin-$pkgver/ruby
+  gem build cucumber-gherkin.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    cucumber-gherkin-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd gherkin-$pkgver/ruby
+  GEM_HOME="tmp_install/$_gemdir" rake
+}
+
+package() {
+  cd gherkin-$pkgver/ruby
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 ../LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
