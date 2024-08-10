@@ -1,0 +1,82 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-cucumber-core
+pkgver=13.0.3
+pkgrel=1
+pkgdesc="Core library for the Cucumber BDD app"
+arch=(any)
+url='https://github.com/cucumber/cucumber-ruby-core'
+license=(MIT)
+depends=(
+  ruby
+  ruby-cucumber-gherkin
+  ruby-cucumber-messages
+  ruby-cucumber-tag-expressions
+)
+makedepends=(
+  ruby-rake
+  ruby-rdoc
+  ruby-rspec
+  ruby-unindent
+)
+checkdepends=(
+  ruby-bundler
+  ruby-simplecov
+)
+options=(!emptydirs)
+source=("https://github.com/cucumber/cucumber-ruby-core/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('32c09e0a60c05babc0c463a7cc86ca2ee5f6992aaf0c8add5e4cb2c7a88b9b5163d9ca1c635a241203c02aaeaeba7cc87a91f931633221eaf34ab9d36018ffa8')
+b2sums=('c2f11440a083225b409814de7248dd908b8763ae7b632a75699297627c97b6e4f8300eb4a49ac78084b30db764936e7b096517dfe1009a883a59e2947067c56b')
+
+prepare() {
+  cd cucumber-ruby-core-$pkgver
+
+  sed -i -r -e 's|~>|>=|g' cucumber-core.gemspec
+  sed -i -e "s/, '< 28'//" -e "s/, '< 23'//" -e "s/, '< 7'//" cucumber-core.gemspec
+  sed -i '/[rR]ubo[cC]op/d' cucumber-core.gemspec Rakefile
+  sed -i \
+    -e "s/require 'cucumber\/messages\/time_conversion'/require 'cucumber\/messages\/helpers\/time_conversion'/" \
+    -e "s/Cucumber::Messages::TimeConversion/Cucumber::Messages::Helpers::TimeConversion/" \
+    -e "s/Cucumber::Messages::IdGenerator::UUID/Cucumber::Messages::Helpers::IdGenerator::UUID/" \
+    lib/cucumber/core/compiler.rb \
+    lib/cucumber/core/test/result.rb
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd cucumber-ruby-core-$pkgver
+  gem build cucumber-core.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    cucumber-core-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd cucumber-ruby-core-$pkgver
+  GEM_HOME="tmp_install/$_gemdir" rake spec spec:slow
+}
+
+package() {
+  cd cucumber-ruby-core-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
