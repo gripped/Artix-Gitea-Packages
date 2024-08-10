@@ -1,0 +1,53 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor: Roberto Valentini <valantin89 [at] gmail [dot] com>
+
+_gemname='json-schema'
+pkgname="ruby-${_gemname}"
+pkgver=4.3.0
+pkgrel=2
+pkgdesc='Interface for validating JSON objects against a JSON schema conforming to JSON Schema Draft 4.'
+arch=('any')
+url='https://github.com/voxpupuli/json-schema'
+license=('MIT')
+makedepends=('ruby-rdoc' 'ruby-bundler')
+checkdepends=('ruby-rake' 'ruby-minitest' 'ruby-test-unit' 'ruby-webmock' 'ruby-rubocop')
+depends=('ruby' 'ruby-addressable')
+options=(!emptydirs)
+source=("${url}/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz")
+sha512sums=('6d3269d837c60061751428e66b2dc82204c9b0a4b1c92f79d965365666cc968b8c2f819686ff5eed24395c7bbc31c4372bffb81caf4afc952531caac5e273763')
+
+prepare() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+
+  # replace upper version boundaries for ruby gems
+  sed --in-place 's|~>|>=|g' "${_gemname}.gemspec"
+
+  # disable tests that try to download fixtures from dead upstream websites
+  #patch --forward --verbose --strip=1 --input=../disable_tests_with_external_fixtures.patch
+
+}
+
+build() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  gem build "${_gemname}.gemspec"
+}
+
+check() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  rake test
+}
+
+package() {
+  cd "${srcdir}/${_gemname}-${pkgver}"
+  local _gemdir="$(gem env gemdir)"
+  gem install --verbose --ignore-dependencies --no-user-install --install-dir "${pkgdir}/${_gemdir}" --bindir "${pkgdir}/usr/bin" "${_gemname}-${pkgver}.gem"
+
+  install -Dm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+  install -Dm 644 CHANGELOG.md CONTRIBUTING.md CONTRIBUTORS.md README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+  rm -rf "${pkgdir}/${_gemdir}/cache"
+}
+
+# vim: ts=2 sw=2 et:
