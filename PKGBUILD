@@ -3,7 +3,7 @@
 
 pkgname=rtkit
 pkgver=0.13
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Realtime Policy and Watchdog Daemon"
 url="https://github.com/heftig/rtkit"
 arch=(x86_64)
@@ -41,4 +41,6 @@ package() {
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 rtkit/LICENSE
   sed -ne '4,25p' rtkit/rtkit.c |
     install -Dm644 /dev/stdin "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+
+  rm -r $pkgdir/usr/lib/systemd
 }
