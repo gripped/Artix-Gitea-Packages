@@ -1,0 +1,59 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-vcr
+pkgver=6.2.0
+pkgrel=2
+pkgdesc="Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests."
+arch=(any)
+url='https://benoittgt.github.io/vcr'
+license=(MIT)
+depends=(ruby)
+makedepends=(ruby-rspec ruby-test-unit ruby-rake ruby-pry)
+options=(!emptydirs)
+source=(https://github.com/vcr/vcr/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('65ea6b40a15f1895b27efdfce98ff5ffa6cae008679bc20e8d2e174322bf5a93')
+
+prepare() {
+  cd vcr-$pkgver
+  sed -i 's|~>|>=|' -i vcr.gemspec
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd vcr-$pkgver
+  gem build vcr.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    vcr-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+# Disabled: revisit after a lot more gems are packaged
+# check() {
+#   local _gemdir="$(gem env gemdir)"
+#   cd vcr-$pkgver
+#   GEM_HOME="tmp_install/$_gemdir" rake
+# }
+
+package() {
+  cd vcr-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
