@@ -1,0 +1,106 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+_gemname=octokit
+_archivename=octokit.rb
+pkgname="ruby-${_gemname}"
+pkgver=9.1.0
+pkgrel=1
+pkgdesc='Simple wrapper for the GitHub API'
+arch=(any)
+url="https://github.com/octokit/${_archivename}"
+license=(MIT)
+depends=(
+  ruby
+  ruby-faraday
+  ruby-sawyer
+)
+checkdepends=(
+  ruby-bundler
+  ruby-faraday-multipart
+  ruby-faraday-retry
+  ruby-jwt
+  ruby-mime-types
+  ruby-netrc
+  ruby-rake
+  ruby-rbnacl
+  ruby-rspec
+  ruby-rss
+  ruby-simplecov
+  ruby-test-queue
+  ruby-vcr
+  ruby-webmock
+)
+options=(!emptydirs)
+source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('8e7c40ba73562c0facabc4c313fef731bc21c2bb8cb95460379eef17fd369485fa8119cc8ac9545137a6da2a358522dee94987bfc0f52378d94b6e55dc88f9d7')
+b2sums=('73558de152f3ab4c06564e5c076def7799a7b52676229d49ecb552ef3a9356e047500a7fc50f56c97115c64062ee519bec5a13d1025b59aaac66f1db83f83f66')
+
+prepare() {
+  cd "${_archivename}-${pkgver}"
+
+  # update gemspec/Gemfile to allow newer version of the dependencies
+  sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec"
+}
+
+build() {
+  cd "${_archivename}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  gem build --verbose "${_gemname}.gemspec"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install${_gemdir}" \
+    --bindir "tmp_install/usr/bin" \
+    "${_gemname}-${pkgver}.gem"
+
+  # remove unrepreducible files
+  rm --force --recursive --verbose \
+    "tmp_install${_gemdir}/cache/" \
+    "tmp_install${_gemdir}/gems/${_gemname}-${pkgver}/vendor/" \
+    "tmp_install${_gemdir}/doc/${_gemname}-${pkgver}/ri/ext/"
+
+  find "tmp_install${_gemdir}/gems/" \
+    -type f \
+    \( \
+      -iname "*.o" -o \
+      -iname "*.c" -o \
+      -iname "*.so" -o \
+      -iname "*.time" -o \
+      -iname "gem.build_complete" -o \
+      -iname "Makefile" \
+    \) \
+    -delete
+
+  find "tmp_install${_gemdir}/extensions/" \
+    -type f \
+    \( \
+      -iname "mkmf.log" -o \
+      -iname "gem_make.out" \
+    \) \
+    -delete
+}
+
+check() {
+  cd "${_archivename}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  GEM_HOME="tmp_install${_gemdir}" rake test
+}
+
+package() {
+  cd "${_archivename}-${pkgver}"
+
+  cp --archive --verbose tmp_install/* "${pkgdir}"
+
+  install --verbose -D --mode=0644 LICENSE* --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
+  install --verbose -D --mode=0644 *.md --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: tabstop=2 shiftwidth=2 expandtab:
