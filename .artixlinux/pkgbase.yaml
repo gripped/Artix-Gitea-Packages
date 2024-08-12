@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: nvidia
-  version: 555.58.02-13
+  version: 555.58.02-15
   arch:
     - x86_64
   pkgname:
     - nvidia
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 555.58.02-13
+    version: 555.58.02-15
     packages:
-      - nvidia-555.58.02-13-x86_64.pkg.tar.zst
+      - nvidia-555.58.02-15-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
