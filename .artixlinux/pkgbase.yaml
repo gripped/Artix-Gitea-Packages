@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gpgme
-  version: 1.23.2-6
+  version: 1.23.2-6.2
   arch:
     - x86_64
   pkgname:
@@ -21,11 +21,11 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 1.23.2-6
+    version: 1.23.2-6.2
     packages:
-      - gpgme-1.23.2-6-x86_64.pkg.tar.zst
-      - qgpgme-qt6-1.23.2-6-x86_64.pkg.tar.zst
-      - python-gpgme-1.23.2-6-x86_64.pkg.tar.zst
+      - gpgme-1.23.2-6.2-x86_64.pkg.tar.zst
+      - qgpgme-qt6-1.23.2-6.2-x86_64.pkg.tar.zst
+      - python-gpgme-1.23.2-6.2-x86_64.pkg.tar.zst
   system:
     version: 1.23.2-4
     packages:
