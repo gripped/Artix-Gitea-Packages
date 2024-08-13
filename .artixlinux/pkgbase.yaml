@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: automake
-  version: 1.16.5-2
+  version: 1.17-1
   arch:
     - any
   pkgname:
     - automake
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.17-1
+    packages:
+      - automake-1.17-1-any.pkg.tar.zst
   system:
     version: 1.16.5-2
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
