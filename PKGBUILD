@@ -3,7 +3,7 @@
 
 pkgname=ziproxy
 pkgver=3.3.2
-pkgrel=5
+pkgrel=6
 pkgdesc="forwarding, non-caching, compressing HTTP proxy server"
 arch=('x86_64')
 url="http://ziproxy.sourceforge.net/"
@@ -46,11 +46,12 @@ package() {
   make DESTDIR="$pkgdir" install
 
   install -d "$pkgdir"/var/lib/ziproxy/error
-  install -d "$pkgdir"/etc
+  install -d "$pkgdir"/etc/conf.d
 
   sed -i 's#var/ziproxy#var/lib/ziproxy#' etc/ziproxy/ziproxy.conf
   cp -a etc/ziproxy "$pkgdir"/etc/ziproxy
   install -m644 var/ziproxy/error/* "$pkgdir"/var/lib/ziproxy/error
+  echo "ZIPROXY_ARGS=\"-c /etc/ziproxy/ziproxy.conf\"" >"$pkgdir"/etc/conf.d/ziproxy
   install -Dm0644 ../ziproxy.logrotate "$pkgdir"/etc/logrotate.d/ziproxy
   install -Dm0644 ../ziproxy.sysusers "$pkgdir"/usr/lib/sysusers.d/ziproxy.conf
   install -Dm0644 ../ziproxy.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/ziproxy.conf
