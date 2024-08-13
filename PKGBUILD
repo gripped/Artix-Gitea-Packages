@@ -3,11 +3,11 @@
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=btrfs-progs
-pkgver=6.9.2
+pkgver=6.10
 pkgrel=1
 pkgdesc='Btrfs filesystem utilities'
 arch=('x86_64')
-makedepends=('git' 'asciidoc' 'xmlto' 'udev' 'python' 'python-setuptools' 'e2fsprogs'
+makedepends=('git' 'asciidoc' 'xmlto' 'udev' 'python' 'python-setuptools' 'e2fsprogs' 
              'reiserfsprogs' 'python-sphinx' 'python-sphinx_rtd_theme')
 depends=('glibc' 'util-linux-libs' 'lzo' 'zlib' 'zstd' 'libgcrypt' 'libudev')
 optdepends=('python: libbtrfsutil python bindings'
@@ -23,12 +23,13 @@ source=("https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-
         'initcpio-install-btrfs'
         'initcpio-hook-btrfs'
       )
-install=btrfs-progs.install
 options=(!staticlibs)
 sha256sums=('SKIP'
-            '43865bb272dc0ab2585de3605434d81ba217578f0897bf700cd36c14ac40652a'
+            '3382a84e3fcfe1ffdea07a61ab3f4e86665d38fa35f1f34548d5df867423e0df'
             'bbe60b35d1b1e2efc1308a8f54f1fdc6808240a81c5f5b4d75321b7ee86e41f4'
-            '35efeee8590d6d60c711ae9cdc918e4841ab61d10cb02359e65e36ebff95ffc5')
+            '35efeee8590d6d60c711ae9cdc918e4841ab61d10cb02359e65e36ebff95ffc5'
+            'eaa7af92d28bfa8940bb551560fd7be777f9f175292eaa72b5f6ef00fb240252'
+            '9a0b6cc23f7bd97b83b6c38dd2b4e4373fead8bd3ccfb82a47c72971e9d6f8ad')
 
 prepare() {
   cd $pkgname-v$pkgver
@@ -65,6 +66,8 @@ package() {
   cd "$srcdir"
   install -Dm644 initcpio-install-btrfs "$pkgdir/usr/lib/initcpio/install/btrfs"
   install -Dm644 initcpio-hook-btrfs "$pkgdir/usr/lib/initcpio/hooks/btrfs"
+
+  # install scrub service/timer
 }
 
 # vim:set ts=2 sw=2 ft=sh et:
