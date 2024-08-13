@@ -167,7 +167,6 @@ ac_add_options --enable-raw
 ac_add_options --enable-sandbox
 ac_add_options --enable-webrtc
 ac_add_options --disable-crashreporter
-ac_add_options --disable-services-healthreport
 ac_add_options --disable-telemetry-reporting
 ac_add_options --disable-default-browser-agent
 ac_add_options --disable-parental-controls
