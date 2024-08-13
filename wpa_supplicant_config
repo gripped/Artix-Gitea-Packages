@@ -1,4 +1,4 @@
-# Artix Linux wpa_supplicant build time configuration
+# Arch Linux wpa_supplicant build time configuration
 #
 # This file lists the configuration options that are used when building the
 # wpa_supplicant binary. All lines starting with # are ignored. Configuration
