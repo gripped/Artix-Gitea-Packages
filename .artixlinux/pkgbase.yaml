@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: argon2
-  version: 20190702-5
+  version: 20190702-6
   arch:
     - x86_64
   pkgname:
     - argon2
 actions:
-  addRepo: null
+  addRepo: system
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 20190702-5
+    version: 20190702-6
     packages:
-      - argon2-20190702-5-x86_64.pkg.tar.zst
+      - argon2-20190702-6-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system

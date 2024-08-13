@@ -1,8 +1,8 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
 
 pkgname=argon2
 pkgver=20190702
-pkgrel=5
+pkgrel=6
 pkgdesc='A password-hashing function (reference C implementation)'
 arch=('x86_64')
 url='https://github.com/P-H-C/phc-winner-argon2'
