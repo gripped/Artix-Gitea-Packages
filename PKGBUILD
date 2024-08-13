@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nvidia-utils-s6
-pkgver=20210919
+pkgver=20240813
 pkgrel=1
 pkgdesc="s6-rc service scripts for nvidia-utils"
 arch=('any')
@@ -11,7 +11,7 @@ conflicts=('init-nvidia-utils')
 depends=('nvidia-utils' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/nvidia-utils.conf')
-_commit=f8db772e97393417271f286a3c9dc136d25a959c
+_commit=d6243bf4266313ec9287bad8ddf37e090009ad5c
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
 sha256sums=('SKIP')
 
