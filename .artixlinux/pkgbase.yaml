@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - lz4
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:1.10.0-2
+    packages:
+      - lz4-1:1.10.0-2-x86_64.pkg.tar.zst
   world:
     version: 1:1.10.0-2
     packages:
@@ -53,4 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
-team: system
+team: world
