@@ -8,7 +8,7 @@ pkgbase:
     - plasma-integration
     - plasma5-integration
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,10 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.1.3-2
+    version: 6.1.4-2
     packages:
-      - plasma-integration-6.1.3-2-x86_64.pkg.tar.zst
-      - plasma5-integration-6.1.3-2-x86_64.pkg.tar.zst
+      - plasma-integration-6.1.4-2-x86_64.pkg.tar.zst
+      - plasma5-integration-6.1.4-2-x86_64.pkg.tar.zst
   world:
     version: 6.1.4-2
     packages:
