@@ -3,18 +3,18 @@
 
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
-pkgver=2.03.24
-pkgrel=1
+pkgver=2.03.25
+pkgrel=2
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
-license=('GPL-2.0-only' 'LGPL-2.1-only')
-makedepends=('git' 'udev' 'libaio' 'readline' 'thin-provisioning-tools')
+license=('GPL2' 'LGPL2.1')
+makedepends=('git' 'udev' 'libaio' 'thin-provisioning-tools')
 validpgpkeys=('88437EF5C077BD113D3B7224228191C1567E2C17'  # Alasdair G Kergon <agk@redhat.com>
               'D501A478440AE2FD130A1BE8B9112431E509039F') # Marian Csontos <marian.csontos@gmail.com>
 source=("git+https://sourceware.org/git/lvm2.git#tag=v${pkgver//./_}?signed"
         '0001-udev-initcpio.patch'
         '11-dm-initramfs.rules')
-sha256sums=('74e2aa5ddcec64835ca8dac2cb8b7b35e193de5ce7030440726f853abc3877c7'
+sha256sums=('0870ee6d5929274c18be6bfde1e6c24a499ed6a9659114a15c6062dfec924ae8'
             '2b3a16ec05e2bc6678e9ebd5ffa8319ebfde29aa260ce004f79f9b8df57d73c9'
             'e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0')
 
@@ -32,6 +32,7 @@ prepare() {
 
   # prepare for non-systemd initcpio
   patch -Np1 --output='udev/69-dm-lvm-initcpio.rules.in' < ../0001-udev-initcpio.patch
+
 }
 
 build() {
@@ -73,7 +74,7 @@ build() {
 package_device-mapper() {
   pkgdesc="Device mapper userspace library and tools"
   url="http://sourceware.org/dm/"
-  depends=('glibc' 'gcc-libs' 'libudev' 'libudev.so' 'bash')
+  depends=('glibc' 'libudev' 'libudev.so')
   provides=('libdevmapper.so'
     'libdevmapper-event.so')
 
@@ -87,7 +88,7 @@ package_device-mapper() {
 package_lvm2() {
   pkgdesc="Logical Volume Manager 2 utilities"
   depends=('bash' "device-mapper>=${pkgver}" 'libudev'
-    'util-linux-libs' 'libblkid.so' 'readline' 'libreadline.so'
+    'libudev.so' 'util-linux-libs' 'libblkid.so' 'readline' 'libreadline.so'
     'thin-provisioning-tools' 'libaio' 'libaio.so')
   conflicts=('lvm' 'mkinitcpio<38-1')
   backup=('etc/lvm/lvm.conf'
