@@ -17,12 +17,6 @@ case ${TERM} in
     ;;
 esac
 
-for sh in /etc/bash/bashrc.d/*.bashrc ; do
-    if [[ -r ${sh} ]]; then
-        . "${sh}"
-    fi
-done
-
 if [[ -r /usr/share/bash-completion/bash_completion ]]; then
   . /usr/share/bash-completion/bash_completion
 fi

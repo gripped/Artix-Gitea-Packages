@@ -1,14 +1,14 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Giancarlo Razzolini <grazzolini@archlinux.org>
 # Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=bash
 _basever=5.2
-_patchlevel=026
+_patchlevel=032
 pkgver=${_basever}.${_patchlevel}
-pkgrel=5
+pkgrel=1
 pkgdesc='The GNU Bourne Again shell'
 arch=(x86_64)
 license=('GPL-3.0-or-later')
@@ -23,7 +23,7 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz{,.sig}
         bash-5.2_p15-random-ub.patch
         bash-5.2_p21-configure-strtold.patch
         bash-5.2_p21-wpointer-to-int.patch
-        bash-5.2_p26-memory-leaks.patch
+        bash-5.2_p32-memory-leaks.patch
         dot.bashrc
         dot.bash_profile
         dot.bash_logout
@@ -43,12 +43,12 @@ b2sums=('51b196e710794ebad8eac28c31c93eb99ac1a7db30919a13271e39e1cb66a0672f242df
         'adab09c3f2ce3697e3659e01266120155714b80263bd125808edf556a354291af615540189553b1c32a2d462ac41e28a9df8fb9f7d963a3ca3629d297a46e62d'
         '83ec6ff756543ee44c18902f2d30dd662a84237b9594a7e0cfc21a1c16fce49e37cf67729b3a17d59cc978cb6675e04457e3b6b0909d94cb234a1dde96f7c9ea'
         '0c7f5eb5b697abf15c1d17888a973e44d0ead1f095778b41841a6a1937a5b9e7ce5fa6a05e4404504990b0a244fdecfc12ce7c33ee7d67b4c837435e9bfe2b57'
-        '1b9f08054b28fa0e73b7b3d4da2674efd75b3ce11392a078d5072ba8e466f4a9c504892f9a1f2f62e4dc39b22050e68d42bcbae8ebe537df699d0c884c89a0b9'
+        '373aa3be1f0a6bc65403cde63cbc4dcd612336e86b1cae918670a99e8ca639c665ac7efb467ec8823a62cec0a71c485bd3fda4bbf058d759498377f5cfe90f51'
         '93e55e4e1b7e133c0d03733121bb12ba9c64230ff328280ac68a5d1fca0f83637159c0861bca0c30eda61ca14d5a319cd38424959e84344e188c0349cd159ba7'
         '2d53f99e485218ed47f2e40907023645594ac8ffcf00d0569050d54a8f4dabe0a2bdcab515a45b663283c2e6299d805b923ea7b7b789c6a4150c37a98a5b117c'
         'dbfe5c1aaea94419305c1f8c9b54b94eab515260910f2309360ff702a27032faa34514e70b31adbb1e41bd912d4e43a610939cb07565f43e05dd19813a81752e'
-        '03251662eec28d73f2de16e5a215486588ade53c747a55fbebfe107c00d045179b03f2b83faee8808ceb4803f026bcf211d7b237cea9b26e016f6d65dabc201f'
-        'fc924345d5dab10f1ae328bca3cf1053ddff557e074a6e6dff771bd813b93838980ed5d0f20d3a0584cbd1994332fcacc8a6b0e98f7aa376139198ea6a4d6f5a'
+        'e6feba8eadf1c3ce024592a0d65b85d222318c17d3dc07b2f28dd4075782e7b2a6f38ad124d601b7d695714333b1c4114de65293120746f0b36171addfbbe26e'
+        'eed9da98cd4b7cf9db720e9820cf809a9168cb84a8466127ff588d041badc66cc3fd657e897c702cf0b6d19aefc7b880d976aead003594a2e980d98b17ff886f'
         '830d042bc0b3473260844e9aa3bca3e14d4ae60264b1f7760f69168cd4db9d0d5b41c1887463b23663e52e9a6a611ef8a99be82c737f0760eaaaf97f7eec35db'
         'd00a8b4fb3babf52c67a3e345158c1f70b5b45e5a54100a6671d96f9cfbf893143d5a23df7e7c5f4d5c0bd650519fb0c447b2304db2d6e0751dfffa651a7cf49'
         'SKIP'
@@ -101,6 +101,18 @@ b2sums=('51b196e710794ebad8eac28c31c93eb99ac1a7db30919a13271e39e1cb66a0672f242df
         '5d18e00cc44710f078037f25c61741a078bb0fc906d6d5555e581e093d9e99be71f7f06fc0d139f4f25d40f5f854378031aff6e63d26ead55fe6cca626df50bd'
         'SKIP'
         'ebe3bc47dadf5d689258c5ccf9883838d3383dc43bec68d2a6767b6348cf1515a98ec9e445c3110e8eb0d87e742c20a0d4ddb70649ec94217f55aad7d18552af'
+        'SKIP'
+        'b76ce03456e064f17db00e9026aa53656a063c195faa02c7d51da8d173f7525fe5411bf526f19ee9e717ee1ec957de7e73f5af851a68d5cb554f2c4492ab3844'
+        'SKIP'
+        '58fdeecf6dd685103c7dc0e7c200cae65206e5fb3360d798b9cec05fc935ebae139bdf142f6018c9837d1780eb7c5cecff0a945369c14fa575e6801c46a15a31'
+        'SKIP'
+        '01ddb0acc5b6067e729320692284d61735ace62eeede81a74b7628fe6899da61d921a11bd0d22d0e6f2e241e7b0cb64591654a34a33916739e35e23d5cc6f5bd'
+        'SKIP'
+        'd0cf114642393eb2e2d060eac339674c8ce10af4d54bbcee0f450854d27373ede9dd159caf6d05fc69429ad357d666b47f6781ef590287f33a535b2c26d8754d'
+        'SKIP'
+        'dac378115906e21fc754267c42e129e2374c9b63f879d1717d79930589618d4d8d17821b2f529d1851db7567d3efdfb0410c18e6869047e3d87443b29d507289'
+        'SKIP'
+        '55aab849da0fcc69ab3516d9d7ff2858b5f15cbeaddf66282f43f272b52d646c2c41c2ceef632a2ae8f13c25d92e85f49fbc6de989ed4f6ac4bb7bea7fc59a5d'
         'SKIP')
 
 prepare() {
@@ -115,7 +127,7 @@ prepare() {
   patch -Np0 -i ../bash-5.2_p15-random-ub.patch
   patch -Np0 -i ../bash-5.2_p21-configure-strtold.patch
   patch -Np0 -i ../bash-5.2_p21-wpointer-to-int.patch
-  patch -Np0 -i ../bash-5.2_p26-memory-leaks.patch
+  patch -Np0 -i ../bash-5.2_p32-memory-leaks.patch
 }
 
 build() {
@@ -147,9 +159,9 @@ package() {
   ln -s bash "$pkgdir/usr/bin/rbash"
 
   # system-wide configuration files
+  install -Dm644 artix.bashrc "$pkgdir/etc/bash/bashrc.d/artix.bashrc"
   install -Dm644 system.bashrc "$pkgdir/etc/bash/bashrc"
   install -Dm644 system.bash_logout "$pkgdir/etc/bash/bash_logout"
-  install -Dm644 artix.bashrc "$pkgdir/etc/bash/bashrc.d/artix.bashrc"
 
   # user configuration file skeletons
   install -dm755 "$pkgdir/etc/skel/"
