@@ -1,15 +1,16 @@
-# Maintainer: Sébastien "Seblu" Luttringer <seblu@archlinux.org>
+# Contributor: Sébastien "Seblu" Luttringer <seblu@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=gzip
 pkgver=1.13
-pkgrel=2
+pkgrel=4
 pkgdesc='GNU compression utility'
 arch=('x86_64')
 url='https://www.gnu.org/software/gzip/'
 license=('GPL-3.0-or-later')
 depends=('glibc' 'bash' 'coreutils' 'sed' 'grep')
+makedepends=('less')
 optdepends=('less: zless support'
             'util-linux: zmore support'
             'diffutils: zdiff/zcmp support'
