@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: readline
-  version: 8.2.010-1
+  version: 8.2.013-1
   arch:
     - x86_64
   pkgname:
     - readline
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 8.2.010-1
+    version: 8.2.013-1
     packages:
-      - readline-8.2.010-1-x86_64.pkg.tar.zst
+      - readline-8.2.013-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
