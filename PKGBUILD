@@ -1,4 +1,4 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor: Xavier D. <magicrhesus@ouranos.be>
 # Contributor: Zarra <zarraxx@gmail.com>
@@ -7,7 +7,7 @@ pkgname=dbus-c++
 _pkgname=lib$pkgname
 _upstream=dbus-cplusplus
 pkgver=0.9.0
-pkgrel=11
+pkgrel=12
 pkgdesc="A C++ API for D-BUS"
 arch=(x86_64)
 url="https://sourceforge.net/projects/dbus-cplusplus/"
