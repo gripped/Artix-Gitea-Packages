@@ -8,7 +8,7 @@ pkgbase:
     - libxcrypt
     - libxcrypt-compat
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +31,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.4.36-2
+    packages:
+      - libxcrypt-4.4.36-2-x86_64.pkg.tar.zst
+      - libxcrypt-compat-4.4.36-2-x86_64.pkg.tar.zst
   world:
     version: 4.4.36-2
     packages:
@@ -56,4 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
-team: system
+team: world
