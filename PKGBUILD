@@ -8,7 +8,7 @@
 
 pkgname=gnupg
 pkgver=2.4.5
-pkgrel=1
+pkgrel=4
 pkgdesc='Complete and free implementation of the OpenPGP standard'
 arch=(x86_64)
 url='https://www.gnupg.org/'
@@ -25,24 +25,26 @@ license=(
   Unicode-TOU
 )
 depends=(
-  bzip2 libbz2.so
   glibc
   gnutls
   libgcrypt
   libgpg-error
   libksba
-  libassuan libassuan.so
   libldap
   libusb
-  npth libnpth.so
   pinentry
-  readline libreadline.so
   sh
   sqlite
   tpm2-tss
   zlib
 )
-makedepends=(pcsclite)
+makedepends=(
+  bzip2
+  libassuan
+  npth
+  pcsclite
+  readline
+)
 checkdepends=(openssh)
 optdepends=(
   'pcsclite: for using scdaemon not with the gnupg internal card driver'
@@ -121,12 +123,21 @@ check() {
 }
 
 package() {
+  depends+=(
+    bzip2 libbz2.so
+    libassuan libassuan.so
+    npth libnpth.so
+    readline libreadline.so
+  )
+
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
   ln -s gpg "$pkgdir"/usr/bin/gpg2
   ln -s gpgv "$pkgdir"/usr/bin/gpgv2
 
   install -vDm 644 {BSD-{2,3,4}-Clause,MIT,Unicode-TOU}.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
+
+
 }
 
 # vim: ts=2 sw=2 et:
