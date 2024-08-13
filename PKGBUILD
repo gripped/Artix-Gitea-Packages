@@ -13,13 +13,9 @@ makedepends=('git')
 provides=('libgpm.so')
 options=('!makeflags')
 source=("git+https://github.com/telmich/gpm.git#commit=${_commit}"
-        'gpm.sh'
-        'gpm.path'
-        'gpm.service')
-sha256sums=('SKIP'
-            'f41e90dcf6c0c6c4b8eff1c69039a20eb6b38ea851ffd1fa47ba311bf83d6ed8'
-            '1b8712650c70fd139f844fa754e288bfe05a8ed8044d118fda75a47d66034d23'
-            'dbce5688b3ba1d5bc9c4f38bcc2d89a6d68d51b30fb5d6d29a02d0c011d3688e')
+        'gpm.sh')
+sha256sums=('7db4089030c128d9ee5fb1afb08251d328f8f8835e4716ff41c6c08c1a90bed2'
+            'f41e90dcf6c0c6c4b8eff1c69039a20eb6b38ea851ffd1fa47ba311bf83d6ed8')
 
 pkgver() {
   cd "${srcdir}/${pkgname}"
@@ -52,8 +48,6 @@ package() {
 
   make DESTDIR="${pkgdir}" install
   install -D -m0644 ../gpm.sh "${pkgdir}/etc/profile.d/gpm.sh"
-  install -D -m0644 ../gpm.path "${pkgdir}/usr/lib/systemd/system/gpm.path"
-  install -D -m0644 ../gpm.service "${pkgdir}/usr/lib/systemd/system/gpm.service"
 
 # library fixes
   cd "${pkgdir}/usr/lib/"
