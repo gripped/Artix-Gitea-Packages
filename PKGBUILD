@@ -2,8 +2,8 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=128.0.3
-pkgrel=2
+pkgver=129.0
+pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
 arch=(x86_64 aarch64)
@@ -66,7 +66,6 @@ makedepends=(
   'wasi-libc++abi>15'
   'wasi-libc>=1:0+314+a1c7c2c'
   xorg-server-xvfb
-  xorg-xdpyinfo
   yasm
   zip
 ) # pciutils: only to avoid some PGO warning
@@ -94,7 +93,7 @@ source=(
   "default192x192.png"
 )
 
-sha256sums=('df1033b7d825da65e1892f599e65525e8d138374f75c5ebb76ee13ab818b4020'
+sha256sums=('ff03845699e62aa68f31fb7b17193636e9e8a63dd824011f3d84059574c9b09d'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
 
@@ -119,22 +118,18 @@ ac_add_options --prefix=/usr
 
 ac_add_options --disable-bootstrap
 
-
-ac_add_options --enable-application=browser
-ac_add_options --enable-hardening
-ac_add_options --enable-optimize
-ac_add_options --enable-rust-simd
-
+export CC='clang'
+export CXX='clang++'
 
 # Branding
-#ac_add_options --with-app-name=${pkgname}
+ac_add_options --with-app-name=${pkgname}
 # is this one required? upstream lw doesn't use it
 ac_add_options --enable-update-channel=release
 # unlear?
 # ac_add_options --with-app-basename=${_pkgname}
 
 # needed? yep.
-#export MOZ_APP_REMOTINGNAME=${pkgname}
+export MOZ_APP_REMOTINGNAME=${pkgname}
 
 # System libraries
 ac_add_options --with-system-nspr
@@ -143,19 +138,7 @@ ac_add_options --with-system-nss
 # Features
 # keep alsa option in here until merged upstream
 ac_add_options --enable-alsa
-ac_add_options --enable-av1
-ac_add_options --enable-eme=widevine
 ac_add_options --enable-jack
-ac_add_options --enable-jxl
-ac_add_options --enable-pulseaudio
-ac_add_options --enable-raw
-ac_add_options --enable-sandbox
-ac_add_options --enable-webrtc
-ac_add_options --disable-crashreporter
-ac_add_options --disable-default-browser-agent
-ac_add_options --disable-parental-controls
-ac_add_options --disable-updater
-ac_add_options --disable-tests
 
 # options for ci / weaker build systems
 # mk_add_options MOZ_MAKE_FLAGS="-j4"
@@ -174,6 +157,7 @@ END
   export MOZ_DEBUG_FLAGS=" "
   export CFLAGS+=" -g0"
   export CXXFLAGS+=" -g0"
+  export RUSTFLAGS="-Cdebuginfo=0"
 
   # we should have more than enough RAM on the CI spot instances.
   # ...or maybe not?
@@ -185,7 +169,7 @@ else
 ac_add_options --disable-elf-hack
 
 # might help with failing x86_64 builds?
-#export LDFLAGS+=" -Wl,--no-keep-memory"
+export LDFLAGS+=" -Wl,--no-keep-memory"
 END
 fi
 
@@ -220,7 +204,7 @@ build() {
   if [[ $CARCH == 'aarch64' && $_build_profiled_aarch64 == true ]]; then
 
     cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-profile-generate=cross
+ac_add_options --enable-profile-generate
 END
 
   elif [[ $CARCH == 'x86_64' && $_build_profiled_x86_64 == true ]]; then
@@ -239,20 +223,11 @@ END
 
     ./mach package
 
-    #emulate display
-    echo "Starting xvfb on :99..."
-    Xvfb -ac :99 -screen 0 1280x1024x16 &
-    export DISPLAY=:99
-
-    echo "Checking that xvfb started ok..."
-    xdpyinfo -display :99 >/dev/null 2>&1 && echo "xvfb is using :99" || echo "xvfb is not using :99, it's free."
-
-    echo "running xvfb"
     # Uncomment the next line if you have an error while profiling ( thanks to mkli )
     # LIBGL_ALWAYS_SOFTWARE=true \
     LLVM_PROFDATA=llvm-profdata \
       JARLOG_FILE="$PWD/jarlog" \
-      xvfb-run -a --server-args="-screen 0 1280x1024x24 -ac -nolisten tcp -nolisten unix" \
+      xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
       ./mach python build/pgo/profileserver.py
 
     stat -c "Profile data found (%s bytes)" merged.profdata
