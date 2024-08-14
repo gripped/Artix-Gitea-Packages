@@ -5,7 +5,7 @@ pkgname=(
   wpewebkit
   wpewebkit-docs
 )
-pkgver=2.44.2
+pkgver=2.44.3
 pkgrel=1
 pkgdesc="Embeddable web content engine"
 url="https://wpewebkit.org"
@@ -53,6 +53,7 @@ makedepends=(
   clang
   cmake
   gi-docgen
+  glib2-devel
   gobject-introspection
   gperf
   gst-plugins-bad
@@ -60,19 +61,21 @@ makedepends=(
   ninja
   python
   ruby
+  ruby-stdlib
   unifdef
   wayland-protocols
 )
 source=(
   $url/releases/wpewebkit-$pkgver.tar.xz{,.asc}
 )
-sha256sums=('2a3d23cb4fb071ca0db3a09c5a85f27b8bcc6094a2026d3b7407bed4f99218f7'
+sha256sums=('55c639879eaa5f070fb1c11fccb968cd85ca21680cc8cd0cd638135ca24433bb'
             'SKIP')
-b2sums=('763340adf2031f512137982e4cded0214dff90652571ae32e8badcda0c108d83b8a35588a3050c161ab0bf5cee94a7ba91c9953a22cc87450826bfbf4ac2d012'
+b2sums=('9ec256150f34b2ca17517f5e5608b0b7e0ff34c6950d444dba2bbe7bb6415c5721a8173b9fa8eda0b3f749b3df4a7afd45aec27b7829cff09e0e9d75f62b55e9'
         'SKIP')
 validpgpkeys=(
-  D7FCF61CF9A2DEAB31D81BD3F3D322D0EC4582C3 # Carlos Garcia Campos <cgarcia@igalia.com>
+  # https://wpewebkit.org/release/verify/
   5AA3BC334FD7E3369E7C77B291C559DBE4C9123B # Adrián Pérez de Castro <aperez@igalia.com>
+  013A0127AC9C65B34FFA62526C1009B693975393 # Carlos Garcia Campos <cgarcia@igalia.com>
 )
 
 prepare() {
