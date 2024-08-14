@@ -32,7 +32,7 @@ checkdepends=(
   python-trustme
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('a9d8b250bf646252de7ada32c96e289ed8853fb72a28f9bec64ba78220d11539')
+sha256sums=('55ae88fe51aa9698b71dcfa9d00ca2653d7b0c3f6e2bb160a8db0738499cf676')
 
 build() {
   cd $_pkgname-$pkgver
