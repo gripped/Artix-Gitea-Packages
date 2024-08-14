@@ -14,7 +14,7 @@ license=(LGPL-2.0-or-later)
 depends=(
   lib32-glib2
   lib32-glibc
-  lib32-systemd
+  lib32-elogind
   polkit
 )
 makedepends=(
@@ -23,7 +23,7 @@ makedepends=(
   glib2-devel
   lib32-pam
   meson
-  systemd
+  elogind
 )
 checkdepends=(python-dbusmock)
 provides=(libpolkit-{agent,gobject}-1.so)
@@ -42,6 +42,8 @@ build() {
     -D introspection=false
     -D libs-only=true
     -D os_type=redhat
+    -D session_tracking=libelogind
+    -D systemdsystemunitdir=no
     -D polkitd_uid=102
     -D polkitd_user=polkitd
     -D session_tracking=logind
