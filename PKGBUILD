@@ -3,7 +3,7 @@
 
 pkgname=rpcbind
 pkgver=1.2.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc="portmap replacement which supports RPC over various protocols"
 arch=(x86_64)
 url="http://rpcbind.sourceforge.net"
@@ -54,8 +54,6 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
-  # install rpcbind config file
-  install -D -m644 "$srcdir"/rpcbind.conf "$pkgdir"/etc/conf.d/rpcbind
   # install missing man page - https://bugs.archlinux.org/task/21271
   install -m644 man/rpcinfo.8 "$pkgdir"/usr/share/man/man8/
   # systemd sysusers/tempfile
