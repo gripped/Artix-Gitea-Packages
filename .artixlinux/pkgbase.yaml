@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: bash
-  version: 5.2.032-1
+  version: 5.2.032-1.1
   arch:
     - x86_64
   pkgname:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 5.2.032-1
+    version: 5.2.032-1.1
     packages:
-      - bash-5.2.032-1-x86_64.pkg.tar.zst
+      - bash-5.2.032-1.1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
