@@ -34,7 +34,6 @@ b2sums=('3a3d10173937bd7d869e1125878bec0b6f6ac565ffea7bbf61a05634cfbe85471dc6238
 
 prepare() {
   cd polkit
-  patch -Np1 -i ../0001-remove-systemd-dep.patch
 }
 
 build() {
