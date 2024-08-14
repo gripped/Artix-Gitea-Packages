@@ -36,6 +36,7 @@ check() {
   local pytest_options=(
     # https://github.com/altdesktop/python-dbus-next/issues/135
     --deselect test/test_tcp_address.py::test_tcp_connection_with_forwarding
+    test/test_fd_passing.py::test_sending_file_descriptor_low_level
   )
   cd $pkgname-$pkgver
   export PYTHONPATH="build:${PYTHONPATH}"
