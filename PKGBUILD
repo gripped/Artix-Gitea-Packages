@@ -4,7 +4,7 @@
 # Contributor: Ranieri Althoff <ranisalt+aur at gmail.com>
 
 pkgname=rocm-cmake
-pkgver=6.0.2
+pkgver=6.2.0
 pkgrel=1
 pkgdesc='CMake modules for common build tasks needed for the ROCm software stack'
 arch=('any')
@@ -14,7 +14,7 @@ depends=('rocm-core' 'cmake')
 checkdepends=('git' 'rocm-llvm')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/rocm-$pkgver.tar.gz"
         "${pkgname}-old-policy-cmp0079.patch")
-sha256sums=('7bd3ff971b1a898b8cf06b0ed9fac45891e2523ae651c3194ba36050ab45f869'
+sha256sums=('7b6aaa1bb616669636aa2cd5dbc7fdb7cd05642a8dcc61138e0efb7d0dc7e1a3'
             '7c8d8351a8e85a0d122421d02ad967c75d4dd8442192662c1a1a68bacdfad67d')
 _dirname="$(basename "$url")-$(basename "${source[0]}" .tar.gz)"
 
@@ -27,8 +27,9 @@ prepare() {
     # As we don't package it, disable also this test
     rm test/pass/doc-sphinxdoxygen.cmake
 
+    cd share/rocmcmakebuildtools
     # With cmake 3.28.1+ setting cmp0079 to old results in a deprecation error
-    patch -Np1 -i "$srcdir/$pkgname-old-policy-cmp0079.patch"
+    patch -Np3 -i "$srcdir/$pkgname-old-policy-cmp0079.patch"
 }
 
 build() {
