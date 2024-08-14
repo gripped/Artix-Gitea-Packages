@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - lz4
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -19,13 +19,12 @@ repos:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 1:1.10.0-2.1
     packages:
       - lz4-1:1.10.0-2.1-x86_64.pkg.tar.zst
-  system:
-    version: 1:1.9.4-3
-    packages:
-      - lz4-1:1.9.4-3-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
