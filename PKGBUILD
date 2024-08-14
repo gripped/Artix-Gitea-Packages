@@ -2,7 +2,7 @@
 
 pkgname=firefox
 pkgver=129.0.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -125,7 +125,6 @@ prepare() {
   patch -Np1 -i ../0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch
 
   echo -n "$_google_api_key" >google-api-key
-  echo -n "$_mozilla_api_key" >mozilla-api-key
 
   cat >../mozconfig <<END
 ac_add_options --enable-application=browser
