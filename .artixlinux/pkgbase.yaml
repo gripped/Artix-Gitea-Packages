@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libnl
-  version: 3.10.0-1
+  version: 3.10.0-1.1
   arch:
     - x86_64
   pkgname:
     - libnl
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: system
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 3.9.0-1
+    version: 3.10.0-1.1
     packages:
-      - libnl-3.9.0-1-x86_64.pkg.tar.zst
+      - libnl-3.10.0-1.1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
@@ -52,4 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
-team: world
+team: system
