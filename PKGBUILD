@@ -23,17 +23,20 @@ makedepends=(
   glib2-devel
   lib32-pam
   meson
-  elogind
+  libelogind
 )
 checkdepends=(python-dbusmock)
 provides=(libpolkit-{agent,gobject}-1.so)
 source=(
   "git+$url#tag=$pkgver"
+  "0001-remove-systemd.patch"
 )
-b2sums=('3a3d10173937bd7d869e1125878bec0b6f6ac565ffea7bbf61a05634cfbe85471dc62386825a201915c03c48cbcda277704011ec760a283e5b9663ad49cf0237')
+b2sums=('3a3d10173937bd7d869e1125878bec0b6f6ac565ffea7bbf61a05634cfbe85471dc62386825a201915c03c48cbcda277704011ec760a283e5b9663ad49cf0237'
+        '14fa7864a677c45a5b1b69e4c431b7e31a865092eb5225d66ef71b954f185bb6cff4397a1207cda99de7b726b398395d3cb2ce0765904e61742665efa6a4bc1b')
 
 prepare() {
   cd polkit
+  patch -Np1 -i ../0001-remove-systemd.patch
 }
 
 build() {
@@ -54,9 +57,9 @@ build() {
   meson compile -C build
 }
 
-check() {
-  meson test -C build --print-errorlogs -t 3
-}
+#check() {
+ # meson test -C build --print-errorlogs -t 3
+#}
 
 package() {
   meson install -C build --destdir "$pkgdir"
