@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hostapd
-  version: 2.11-2
+  version: 2.11-2.1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.11-2
+    version: 2.11-2.1
     packages:
-      - hostapd-2.11-2-x86_64.pkg.tar.zst
+      - hostapd-2.11-2.1-x86_64.pkg.tar.zst
   world:
     version: 2.11-2
     packages:
