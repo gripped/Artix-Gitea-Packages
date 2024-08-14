@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-character_set
-  version: 1.6.0-4
+  version: 1.7.0-1
   arch:
     - x86_64
   pkgname:
     - ruby-character_set
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.0-4
+    version: 1.7.0-1
     packages:
-      - ruby-character_set-1.6.0-4-x86_64.pkg.tar.zst
+      - ruby-character_set-1.7.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
