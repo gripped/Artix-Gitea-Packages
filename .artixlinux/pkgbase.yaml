@@ -1,27 +1,29 @@
 ---
 pkgbase:
   name: libxcrypt
-  version: 4.4.36-2
+  version: 4.4.36-2.1
   arch:
     - x86_64
   pkgname:
     - libxcrypt
     - libxcrypt-compat
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 4.4.36-2.1
+    packages:
+      - libxcrypt-4.4.36-2.1-x86_64.pkg.tar.zst
+      - libxcrypt-compat-4.4.36-2.1-x86_64.pkg.tar.zst
   system:
     version: 4.4.36-1
     packages:
@@ -54,4 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
-team: world
+team: system
