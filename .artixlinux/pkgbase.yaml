@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-polkit
-  version: 125-1
+  version: 125-1.1
   arch:
     - x86_64
   pkgname:
@@ -37,9 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 125-1
+    version: 125-1.1
     packages:
-      - lib32-polkit-125-1-x86_64.pkg.tar.zst
+      - lib32-polkit-125-1.1-x86_64.pkg.tar.zst
   lib32:
     version: 124-1
     packages:

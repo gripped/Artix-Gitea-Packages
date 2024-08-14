@@ -6,7 +6,7 @@
 
 pkgname=lib32-polkit
 pkgver=125
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://github.com/polkit-org/polkit"
 arch=(x86_64)
@@ -46,7 +46,6 @@ build() {
     -D libs-only=true
     -D os_type=redhat
     -D session_tracking=elogind
-    -D systemdsystemunitdir=no
     -D polkitd_uid=102
     -D polkitd_user=polkitd
     -D session_tracking=logind
