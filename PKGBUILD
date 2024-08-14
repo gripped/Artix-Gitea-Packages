@@ -3,7 +3,7 @@
 
 pkgname=rdma-core
 pkgdesc="RDMA core userspace libraries and daemons"
-pkgver=52.0
+pkgver=53.0
 pkgrel=1
 arch=(x86_64)
 url="https://github.com/linux-rdma/rdma-core"
@@ -22,7 +22,7 @@ depends=(
   glibc
   libnl
   perl
-  udev
+  libudev
 )
 makedepends=(
   cmake
@@ -62,7 +62,7 @@ conflicts=("${_provides[@]}")
 replaces=("${_provides[@]}")
 backup=(etc/rdma/{rdma.conf,mlx4.conf})
 source=("https://github.com/linux-rdma/rdma-core/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('aae49f8b30d96902e3bb49d74168061e1e318876460a713ca7758455a049770e1f15139583a8bb5112856c5843155afd352a9d3122a6525070b1fea2c1286eae')
+sha512sums=('8a746c92d4bf16e634703a52113b357d9b9eb35a7c36a1dffbb9a92443098b133ceeae8bbe240723e5f7ad37908f01cab8a4875753f0964a54ed2972106cd069')
 
 prepare() {
     cd $pkgname-$pkgver
@@ -94,7 +94,7 @@ check() {
 package() {
     DESTDIR="$pkgdir" cmake --install build
 
-    rm -vr "$pkgdir"/etc/init.d "$pkgdir/usr/lib/systemd/"
+    rm -vr "$pkgdir"/etc/init.d
     rm -vr "$pkgdir"/usr/share/doc/$pkgname/tests
 
     cd "$srcdir"/$pkgname-$pkgver/redhat
@@ -112,4 +112,6 @@ package() {
     install -vDm 644 providers/ipathverbs/COPYING -t "$pkgdir"/usr/share/licenses/$pkgname/providers/ipathverbs/
     install -vDm 644 ccan/LICENSE.CCO -t "$pkgdir"/usr/share/licenses/$pkgname/ccan/
     install -vDm 644 ccan/LICENSE.MIT -t "$pkgdir"/usr/share/licenses/$pkgname/ccan/
+
+    rm -vr $pkgdir/usr/lib/systemd
 }
