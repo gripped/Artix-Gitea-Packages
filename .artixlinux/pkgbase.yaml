@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virt-viewer
-  version: 11.0-2
+  version: 11.0-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 11.0-2
+    version: 11.0-3
     packages:
-      - virt-viewer-11.0-2-x86_64.pkg.tar.zst
+      - virt-viewer-11.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
