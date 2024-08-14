@@ -9,7 +9,7 @@ pkgbase:
     - libxcrypt-compat
 actions:
   addRepo: null
-  removeRepo: world-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -34,10 +34,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.4.36-2
-    packages:
-      - libxcrypt-4.4.36-2-x86_64.pkg.tar.zst
-      - libxcrypt-compat-4.4.36-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
