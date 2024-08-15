@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-mesa
-  version: 1:24.1.5-2
+  version: 1:24.1.6-1
   arch:
     - x86_64
   pkgname:
@@ -50,19 +50,19 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1:24.1.5-2
+    version: 1:24.1.6-1
     packages:
-      - lib32-mesa-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-libva-mesa-driver-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-mesa-vdpau-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-opencl-clover-mesa-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-opencl-rusticl-mesa-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-intel-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-mesa-layers-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-nouveau-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-radeon-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-swrast-1:24.1.5-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-virtio-1:24.1.5-2-x86_64.pkg.tar.zst
+      - lib32-mesa-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-libva-mesa-driver-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-mesa-vdpau-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-opencl-clover-mesa-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-opencl-rusticl-mesa-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-intel-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-mesa-layers-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-nouveau-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-radeon-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-swrast-1:24.1.6-1-x86_64.pkg.tar.zst
+      - lib32-vulkan-virtio-1:24.1.6-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
