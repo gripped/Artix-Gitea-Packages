@@ -2,9 +2,9 @@
 
 _name=pdm
 pkgname=python-pdm
-pkgver=2.17.3
+pkgver=2.18.0
 pkgrel=1
-pkgdesc="A modern Python package manager with PEP 582 support"
+pkgdesc="A modern Python package and dependency manager supporting the latest PEP standards"
 arch=(any)
 url="https://github.com/pdm-project/pdm"
 license=(MIT)
@@ -41,10 +41,12 @@ makedepends=(
   python-wheel
 )
 checkdepends=(
-  python-setuptools
   python-pytest
   python-pytest-httpserver
   python-pytest-mock
+  python-pytest-rerunfailures
+  python-pytest-xdist
+  python-setuptools
 )
 optdepends=(
   'python-cookiecutter: for using cookiecutter when generating project'
@@ -54,8 +56,8 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('74df9241fc66c383765b65ab786658ac470b2ad15eb0674fcf8c74159b37a010e5cd2aef8e734048cf8bd3dc388650b7aa23348e66426b61304cafaf14443bff')
-b2sums=('cfcd43b57918980df29e52bdf8d6d2e5ee63f11db7eac54b86d9459028a64367f990d20f69e3e5683a0e7206e69c10288e24fc34b7fe39cdcbc9c570050c060b')
+sha512sums=('fa46f979866ed9e186466cce9c69c8bfccc74e6a6f73908d0d71dcae539c7589ebc5de46000626de674f6938bec4df96f3f6fb1ae949fd7688852253deabaa6e')
+b2sums=('5605014e3ee055fb1193d78563e5f01b915bf5dc10bd1f7f40486f74d0371140304190dde3e30d6d067e9483cbedd83f250b1108ac0a9adb35d8e2850db0fda4')
 
 build() {
   cd $_name-$pkgver
@@ -70,6 +72,10 @@ check() {
     --deselect tests/test_project.py::test_access_index_with_auth
     # unclear issue with no isolation build
     --deselect tests/cli/test_build.py::test_build_with_no_isolation
+    # failing keyring mocks: https://github.com/pdm-project/pdm/issues/3110
+    --deselect tests/cli/test_config.py::test_config_password_save_into_keyring
+    --deselect tests/cli/test_config.py::test_keyring_operation_error_disables_itself
+    --deselect tests/cli/test_publish.py::test_repository_get_credentials_from_keyring
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
