@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: libsasl
-  version: 2.1.28-4
+  version: 2.1.28-5
   arch:
     - x86_64
   pkgname:
     - libsasl
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.1.28-5
+    packages:
+      - libsasl-2.1.28-5-x86_64.pkg.tar.zst
   system:
     version: 2.1.28-4
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
