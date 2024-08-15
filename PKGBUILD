@@ -11,10 +11,10 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=11.4.3
+pkgver=11.5.2
 pkgrel=1
 arch=('x86_64')
-license=('GPL')
+license=('GPL-2.0-only')
 url='https://mariadb.org/'
 makedepends=('git' 'boost' 'bzip2' 'cmake' 'cracklib' 'curl' 'jemalloc' 'judy' 'krb5' 'liburing'
              'libxcrypt' 'libxml2' 'lz4' 'openssl' 'pcre2' 'zlib' 'zstd' 'xz')
@@ -28,14 +28,14 @@ source=("mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-${pkgver
         'git+https://github.com/mariadb-corporation/mariadb-columnstore-engine.git'
         '0001-arch-specific.patch'
 'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
-sha256sums=('3f182bc2011b7419df613308cb969374389b9ca8aa81539c515e3ba9c8695d07'
+sha256sums=('da69a53d27a52b64c15b5c665c2d48d7ed362ae51d01f32edd0b29f69b8f8e96'
             'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
-            '966ddd4fa21068e6ab5b560d69f607aa9291790fb15c3be424c20962a26032f9'
+            '08c2c661159f4a7c54a764bb13459e37cbccdf98a93c2cf151d53f600f1fa35d'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
 
