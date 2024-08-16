@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-cfn-lint
-  version: 1.9.6-1
+  version: 1.10.2-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.9.6-1
+    version: 1.10.2-1
     packages:
-      - python-cfn-lint-1.9.6-1-any.pkg.tar.zst
+      - python-cfn-lint-1.10.2-1-any.pkg.tar.zst
   world:
     version: 0.87.9-1
     packages:
