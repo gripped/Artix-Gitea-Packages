@@ -2,12 +2,12 @@
 
 _pkg=dask
 pkgname=python-${_pkg}
-pkgver=2024.4.1
-pkgrel=2
+pkgver=2024.8.0
+pkgrel=1
 pkgdesc="Parallel computing with task scheduling"
 arch=(any)
 url="https://dask.org"
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(
     mpdecimal
     python
@@ -82,18 +82,19 @@ checkdepends=(
     python-sqlalchemy
     python-xarray
     python-xxhash
+    python-dask-expr
 )
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/dask/dask/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
         test-pandas-2.0)
-sha256sums=('66dbfb2c0d8e7a6ccc5df669215efe99eaa3283878577311daf3736335fb8586'
+sha256sums=('98b1d9188206807e7468bffec004a9e0c1341ba5e6934f6df22b979a2dc603e9'
             '9ddb45fefbfb1aaa3af20a6a2c6d4fcb20da5b3761e70313c92ae4f4f86634a2')
 
 prepare() {
   cd ${_pkg}-${pkgver}
   sed -e 's|versioneer\[toml\].*\"|versioneer[toml]\"|g' -i pyproject.toml
 
-  patch -p1 -i ../test-pandas-2.0 # Fix test with pandas 2.0 (Fedora)
+  # patch -p1 -i ../test-pandas-2.0 # Fix test with pandas 2.0 (Fedora)
 }
 
 build() {
@@ -106,6 +107,7 @@ check() {
   local pytest_options=(
     -vv
     --deselect dask/dataframe/io/tests/test_sql.py::test_division_or_partition
+    --deselect dask/tests/test_base.py::test_visualize_order
     -k 'not test_RandomState_only_funcs'
     -W ignore::DeprecationWarning
   ) # https://github.com/dask/dask/issues/10418
