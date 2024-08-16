@@ -1,13 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Johannes Löthberg <johannes@kyriasis.com>
-# Contributor: Daniel M. Capella <polyzen@archlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 # Contributor: feuri
 
 pkgname=dunst
 pkgver=1.11.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Customizable and lightweight notification-daemon"
 url="https://dunst-project.org/"
 arch=('x86_64')
@@ -17,8 +15,16 @@ makedepends=('libnotify')
 optdepends=('libnotify: dunstify')
 backup=('etc/dunst/dunstrc')
 provides=('notification-daemon')
-source=("dunst-$pkgver.tar.gz::https://github.com/dunst-project/dunst/archive/v$pkgver.tar.gz")
-sha256sums=('31c0eb749ca83dab7f5af33beb951c9f9a8451263fcee6cbcf8ba3dedbf2e1f1')
+source=("dunst-$pkgver.tar.gz::https://github.com/dunst-project/dunst/archive/v$pkgver.tar.gz"
+        "notification.patch")
+sha256sums=('31c0eb749ca83dab7f5af33beb951c9f9a8451263fcee6cbcf8ba3dedbf2e1f1'
+            'c8ecd159ede72fab33612c3d39511a1bd4113180d5470e32257e16451920ee6c')
+
+prepare() {
+  cd dunst-$pkgver
+
+  patch -Np1 -i ../notification.patch
+}
 
 build() {
   cd dunst-$pkgver

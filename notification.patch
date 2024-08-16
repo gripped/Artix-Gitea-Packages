@@ -1,0 +1,12 @@
+--- a/src/notification.c	2024-06-28 21:59:57.379529263 +0200
++++ b/src/notification.c	2024-06-29 14:10:41.611729100 +0200
+@@ -533,7 +533,8 @@
+         notification_format_message(n);
+ 
+         /* Update timeout: dbus_timeout has priority over timeout */
+-        if (n->dbus_timeout >= 0)
++        /* artist */
++        if (n->dbus_timeout >= 0 && !settings.ignore_dbusclose)
+                 n->timeout = n->dbus_timeout;
+ 
+ }
