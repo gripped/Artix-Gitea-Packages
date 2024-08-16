@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-crypt-openssl-random
-  version: 0.15-11
+  version: 0.17-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.15-11
+    version: 0.17-1
     packages:
-      - perl-crypt-openssl-random-0.15-11-x86_64.pkg.tar.zst
+      - perl-crypt-openssl-random-0.17-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
