@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mail-authenticationresults
-  version: 2.20230112-3
+  version: 2.20231031-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.20230112-3
+    version: 2.20231031-1
     packages:
-      - perl-mail-authenticationresults-2.20230112-3-any.pkg.tar.zst
+      - perl-mail-authenticationresults-2.20231031-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
