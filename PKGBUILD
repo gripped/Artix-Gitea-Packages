@@ -8,8 +8,8 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.14.4
-pkgrel=2
+pkgver=4.14.5
+pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -87,12 +87,12 @@ source=(
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('c90ab13a1708bfa3f32d130ba84e327e26432ef3a188c8e8a8d2ad7951b0ecb7d24e04f80e9d333317490f543a64d3dee7b0c5cc6d702a4e59fa88767a465602'
+b2sums=('51e7731e0006dce39132921004d76177d9cf5a4b8ff1de0efdae79258acd0ed2c5791b059cde8801ec6746b6e6cfe2c896c0e3f5912a5f1d7bacba829eb327ea'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
         '4b90eb8d582509b09aab401313d4399cc139ad21b5dd7d45d79860d0764c7494c60714e0794e09823e51d1894ac032a994f27d79d1499abf24ee6f59bdb0c243'
-        '46b2e6ae4a6103670444f659730fd6371b7d507c8c98534e85a4e4813e44b79de5d8065cee547f86c94221677a509e3a457bca1608ee37b199f62db5fff7ce36')
+        'd4b7e6f0a3df65de5716af0267a95429f77bf8a750740cb1f660fb62bfe1aae527ef9f018be1ea4f6dc4a962230e4751fab96f3d0bf64d3ceda96484b52ee002')
 
 prepare() {
   cd gtk
@@ -221,11 +221,13 @@ package_gtk-update-icon-cache() {
   )
 
   mv guic/* "$pkgdir"
-  ln -s gtk4-update-icon-cache "$pkgdir/usr/bin/gtk-update-icon-cache"
-  ln -s gtk4-update-icon-cache.1 "$pkgdir/usr/share/man/man1/gtk-update-icon-cache.1"
+
+  ln -sr "$pkgdir"/usr/bin/gtk{4,}-update-icon-cache
+  ln -sr "$pkgdir"/usr/share/man/man1/gtk{4,}-update-icon-cache.1
 
   install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 gtk-update-icon-cache.hook
-  install -D gtk-update-icon-cache.script "$pkgdir/usr/share/libalpm/scripts/gtk-update-icon-cache"
+  install -D gtk-update-icon-cache.script \
+    "$pkgdir/usr/share/libalpm/scripts/gtk-update-icon-cache"
 }
 
 # vim:set sw=2 sts=-1 et:
