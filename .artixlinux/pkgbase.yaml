@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytables
-  version: 3.10.0-1
+  version: 3.10.1-1
   arch:
     - x86_64
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.10.0-1
+    version: 3.10.1-1
     packages:
-      - python-pytables-3.10.0-1-x86_64.pkg.tar.zst
+      - python-pytables-3.10.1-1-x86_64.pkg.tar.zst
   world:
     version: 3.9.2-6
     packages:

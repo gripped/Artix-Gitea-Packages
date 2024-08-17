@@ -5,7 +5,7 @@
 
 pkgname=python-pytables
 _pkgname=PyTables
-pkgver=3.10.0
+pkgver=3.10.1
 pkgrel=1
 pkgdesc="A Python package to manage extremely large amounts of data"
 arch=(x86_64)
@@ -37,7 +37,7 @@ source=(
   "git+https://github.com/PyTables/PyTables.git#tag=v$pkgver"
   "git+https://github.com/Blosc/c-blosc.git"
 )
-sha256sums=('f14bd300e063f5d3bf606da5e01197e55fb941152a6177e3c926b8d53df47910'
+sha256sums=('6cb9e63cdd8acab4fab2526d6e6d525a67324d80c6d18e36101f7cb594066b61'
             'SKIP')
 
 prepare() {
