@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - ruby-parallel
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - ruby-parallel-1.26.1-1-any.pkg.tar.zst
   world:
-    version: 1.22.1-2
+    version: 1.26.1-1
     packages:
-      - ruby-parallel-1.22.1-2-any.pkg.tar.zst
+      - ruby-parallel-1.26.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
