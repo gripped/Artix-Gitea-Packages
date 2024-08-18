@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - ruby-rspec-rerun
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,8 +33,9 @@ repos:
     packages:
       - ruby-rspec-rerun-1.1.0-1-any.pkg.tar.zst
   world:
-    version: null
-    packages: []
+    version: 1.1.0-1
+    packages:
+      - ruby-rspec-rerun-1.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
