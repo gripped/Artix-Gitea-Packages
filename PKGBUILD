@@ -1,0 +1,41 @@
+# Maintainer: Daurnimator <daurnimator@archlinux.org>
+# Contributor: Jaron Kent-Dobias <jaron@kent-dobias.com>
+# Contributor: arcnmx <arcnmx@gmail.com>
+
+pkgname=passff-host
+pkgver=1.2.4
+pkgrel=1
+epoch=1
+pkgdesc="PassFF native messaging host application for Firefox, Chromium, Chrome, Vivaldi"
+url="https://github.com/passff/passff-host"
+license=(GPL2)
+depends=('pass' 'python')
+optdepends=('pass-otp')
+arch=('any')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/passff/passff-host/archive/${pkgver}.tar.gz")
+sha256sums=('02e9bcd31d85582ff9cbb3d902e4cf4bcf9b503d175f6d466a545e4120514a26')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+
+  sed -i -e "s/_VERSIONHOLDER_/${pkgver}/g" 'src/passff.py'
+  sed -i -e 's/PLACEHOLDER/\/usr\/share\/passff\/passff.py/' 'src/passff.json'
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+
+  install -Dm 755 "src/passff.py" "${pkgdir}/usr/share/passff/passff.py"
+  python -O -m compileall "${pkgdir}/usr/share/passff/passff.py"
+
+  install -Dm 644 "src/passff.json" "${pkgdir}/usr/share/passff/passff.json"
+  for d in \
+    '/etc/chromium/native-messaging-hosts' \
+    '/etc/opt/chrome/native-messaging-hosts' \
+    '/usr/lib/mozilla/native-messaging-hosts' \
+    '/etc/vivaldi/native-messaging-hosts' \
+  ; do
+    mkdir -p "${pkgdir}/${d}/"
+    ln -s '/usr/share/passff/passff.json' "${pkgdir}/${d}/passff.json"
+  done
+}
