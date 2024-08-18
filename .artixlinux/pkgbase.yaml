@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: tigervnc-openrc
-  version: 20210505-1
+  version: 20240818-1
   arch:
     - any
   pkgname:
     - tigervnc-openrc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20210505-1
+    version: 20240818-1
     packages:
-      - tigervnc-openrc-20210505-1-any.pkg.tar.zst
+      - tigervnc-openrc-20240818-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
