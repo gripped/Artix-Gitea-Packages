@@ -2,7 +2,7 @@
 
 pkgname=ly-runit
 pkgver=20240818
-pkgrel=1
+pkgrel=2
 pkgdesc='Runit service script for ly'
 arch=(any)
 url='https://artixlinux.org'
@@ -19,9 +19,9 @@ sha512sums=('9a1468fbf1973902ca9ef91aa960139802c245596d321f1af9a2e9406f38e464e26
 
 package() {
     cd "$srcdir"
-    install -Dm755 ly.run "$pkgdir/etc/runit/sv/ly/ly.run"
-    install -Dm755 log.run "$pkgdir/etc/runit/sv/ly/ly.log.run"
-    install -Dm755 ly.finish "$pkgdir/etc/runit/sv/ly/ly.finish"
+    install -Dm755 ly.run "$pkgdir/etc/runit/sv/ly/run"
+    install -Dm755 ly.finish "$pkgdir/etc/runit/sv/ly/finish"
+    install -Dm755 log.run "$pkgdir/etc/runit/sv/ly/log/run"
     install -Dm755 conf "$pkgdir/etc/runit/sv/ly/log/conf"
 }
 
