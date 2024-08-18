@@ -3,13 +3,13 @@
 _pkgname=artix-branding
 
 pkgname=artix-branding-base
-pkgver=20240818
+pkgver=20240819
 pkgrel=1
 pkgdesc="Base branding for Artix ISOs"
 arch=('any')
 groups=('artix-branding')
 url="https://gitea.artixlinux.org/artix/artix-branding"
-depends=('fastfetch')
+optdepends=('fastfetch')
 makedepends=('git')
 license=('GPL3')
 backup=('etc/rc.local')
