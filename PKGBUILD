@@ -2,7 +2,7 @@
 
 pkgname=webrtc-audio-processing
 pkgver=0.3.1
-pkgrel=4.1
+pkgrel=5
 pkgdesc="AudioProcessing library based on Google's implementation of WebRTC"
 url="https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/"
 arch=(x86_64)
@@ -12,7 +12,7 @@ makedepends=(git)
 provides=(libwebrtc_audio_processing.so)
 _commit=e882a5442ac22c93648e12837248d651d18b9247  # tags/v0.3.1^0
 source=("git+https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing.git#commit=$_commit")
-b2sums=('SKIP')
+b2sums=('5ebffa25cd06b1ebefb84d05e7698b0f1cd1f25355480953742bd95b13bb6348e6f0fa2aa019ce5017783eec6919debf7a98a5425bfa6e403dc8c0a4c5773b98')
 
 pkgver() {
   cd $pkgname
