@@ -8,9 +8,9 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgbase='protobuf'
-pkgname=('protobuf' 'python-protobuf')
+pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
 pkgver=27.3
-pkgrel=1.1
+pkgrel=2
 # Note: libphonenumber needs a rebuild for every version bump ??
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
@@ -30,18 +30,26 @@ makedepends=(
   'python-installer'
   'python-setuptools'
   'python-wheel'
+  'ruby'
+  'ruby-rake'
+  'ruby-rake-compiler'
 )
 checkdepends=(
   python-pytest
   python-numpy
 )
 source=(https://github.com/protocolbuffers/protobuf/archive/v$pkgver/$pkgname-$pkgver.tar.gz
-        https://github.com/protocolbuffers/protobuf/commit/2e62ef1e.patch)
+        https://github.com/protocolbuffers/protobuf/commit/2e62ef1e.patch
+        $pkgbase-25.3-ruby-disable-LTO.patch) # https://github.com/protocolbuffers/protobuf/issues/11935
 sha512sums=('a3a555f17a069dd4aa0d683d3126915077fe4211ae6532a4947fb76a9eeb1ed7d25d29ada8dc372435a08aad1aa14374d88e92ac7c195510f57609efaf9d341d'
-            '18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd')
+            'f42d9bd702abe2c7fc4dcb07d050376287ac60b0b7e2fde0d7a9e9df24a620866bee5fd7de2e3b216095376de47e1fe7443cca74c9a9e85c1a0bc42e8973a280'
+            '1ebdea4e533ee0f71baf1b3fe2623ca723b36a08c6b97475ea5996b10aeb6873cf94d9120596ddd1216bd2f6feb991f8c33078e8104008a5078ace5be5431efd')
+
+_gemname=google-protobuf
 
 prepare() {
   patch -d $pkgname-$pkgver -p1 < 2e62ef1e.patch # Fix cmake config compatibility mode
+  patch -d $pkgbase-$pkgver -p1 < $pkgbase-25.3-ruby-disable-LTO.patch
 }
 
 build() {
@@ -63,6 +71,51 @@ build() {
 
   cd "$pkgbase-$pkgver"
   bazel build //python/dist:binary_wheel
+
+  cd ruby
+  local _gemdir="$(gem env gemdir)"
+  local _gemver=4.$pkgver
+
+  PROTOC="$srcdir"/build/protoc \
+  rake genproto
+  rake copy_third_party
+
+  gem build --verbose "${_gemname}.gemspec"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install${_gemdir}" \
+    --bindir "tmp_install/usr/bin" \
+    "${_gemname}-${_gemver}.gem"
+
+  # remove unrepreducible files
+  rm --force --recursive --verbose \
+    "tmp_install${_gemdir}/cache/" \
+    "tmp_install${_gemdir}/gems/${_gemname}-${_gemver}/vendor/" \
+    "tmp_install${_gemdir}/doc/${_gemname}-${_gemver}/ri/ext/"
+
+  find "tmp_install${_gemdir}/gems/" \
+    -type f \
+    \( \
+      -iname "*.o" -o \
+      -iname "*.c" -o \
+      -iname "*.so" -o \
+      -iname "*.time" -o \
+      -iname "gem.build_complete" -o \
+      -iname "Makefile" \
+    \) \
+    -delete
+
+  find "tmp_install${_gemdir}/extensions/" \
+    -type f \
+    \( \
+      -iname "mkmf.log" -o \
+      -iname "gem_make.out" \
+    \) \
+    -delete
 }
 
 check() {
@@ -92,4 +145,16 @@ package_python-protobuf() {
 
   python -m installer --destdir="$pkgdir" "$pkgbase-$pkgver"/bazel-bin/python/dist/*.whl
   install -vDm 644 $pkgbase-$pkgver/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+}
+
+package_ruby-google-protobuf() {
+  pkgdesc='Ruby bindings for Google Protocol Buffers'
+  depends=(
+    'ruby'
+  )
+
+  cp -a $pkgbase-$pkgver/ruby/tmp_install/* "$pkgdir"
+
+  install -vDm 644 $pkgbase-$pkgver/LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -Dm 0644 $pkgbase-$pkgver/ruby/*.md -t "$pkgdir/usr/share/doc/${pkgname}"
 }
