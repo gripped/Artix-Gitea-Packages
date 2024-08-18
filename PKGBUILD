@@ -4,13 +4,13 @@
 pkgbase=sddm-theme
 pkgname=${pkgbase}-artix
 pkgver=20240803
-pkgrel=1
+pkgrel=2
 pkgdesc="Artix theme for SDDM"
 arch=('any')
 url="https://gitea.artixlinux.org/artix/sddm-theme-artix"
 license=('GPL')
 makedepends=('git')
-depends=('sddm' "artix-backgrounds")
+depends=('sddm' 'qt5-declarative' 'artix-backgrounds')
 conflicts=('artix-sddm-theme')
 replaces=('artix-sddm-theme')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
