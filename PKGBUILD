@@ -2,7 +2,7 @@
 
 pkgname=python-cfn-lint
 # https://github.com/aws-cloudformation/cfn-lint/blob/main/CHANGELOG.md
-pkgver=1.10.2
+pkgver=1.10.3
 pkgrel=1
 pkgdesc='CloudFormation Linter'
 arch=(any)
@@ -13,7 +13,9 @@ license=('MIT-0')
 depends=(python python-yaml python-aws-sam-translator
          python-jsonpatch python-networkx
          python-sympy python-regex
-         python-typing_extensions)
+         python-typing_extensions
+         # Not listed in pyproject.toml, maybe upstream relies on the transitive dependency jsonpath -> jsonpointer ?
+         python-jsonpointer)
 makedepends=(git python-build python-installer python-setuptools python-wheel)
 checkdepends=(python-pytest python-defusedxml
               python-pydot python-junit-xml python-jschema-to-python python-sarif-om)
@@ -24,7 +26,7 @@ optdepends=(
   'python-sarif-om: for sarif formatter'
 )
 source=("git+https://github.com/aws-cloudformation/cfn-lint.git#tag=v$pkgver")
-sha256sums=('eeeddf9a38bc886a64aff383eeb51e0135224cc80e16fd475362bd3fb20c0485')
+sha256sums=('efe51071afd1a580b2537e0a6ebaf0c238bbe1aeec06af6b1e60114f9a11e805')
 
 build() {
   cd cfn-lint
