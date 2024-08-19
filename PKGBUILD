@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-artix
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc='Programs and Themes for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -21,7 +21,6 @@ depends=(edi
          mint-x-icons
          moksha
          moksha-arandr
-         moksha-artix
          moksha-help
          moksha-icon-themes
          moksha-menu
