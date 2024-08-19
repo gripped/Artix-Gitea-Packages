@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: moksha-module-productivity
+  version: 0.1.1-3.n
+  arch:
+    - x86_64
+  pkgname:
+    - moksha-module-productivity
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.1.1-3.n
+    packages:
+      - moksha-module-productivity-0.1.1-3.n-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
