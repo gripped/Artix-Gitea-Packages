@@ -1,0 +1,43 @@
+# Maintainer: artist for Artix Linux
+
+pkgname=moksha-modules-extra
+pkgver=1
+pkgrel=1
+pkgdesc='Extra Modules for Moksha Desktop on Artix Linux'
+url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
+arch=('x86_64')
+license=('GPL')
+options=('!debug')
+depends=(
+  moksha-module-alarm
+  moksha-module-calendar
+  moksha-module-compton
+  moksha-module-cpu
+  moksha-module-deskshow
+  moksha-module-desktitle
+  moksha-module-dictionary
+  moksha-module-diskio
+  moksha-module-emprint
+  moksha-module-engage
+  moksha-module-extramenu
+  moksha-module-flame
+  moksha-module-forecasts
+  moksha-module-mail
+  moksha-module-mem
+  moksha-module-net
+  moksha-module-news
+  moksha-module-penguins
+  moksha-module-photo
+  moksha-module-productivity
+  moksha-module-rain
+  moksha-module-screenshot
+  moksha-module-slideshow
+  moksha-module-snow
+  moksha-module-spellchecker
+  moksha-module-stickynotes
+  moksha-module-tclock
+  moksha-module-trash
+  moksha-module-wincontrol
+  moksha-module-winlist-ng
+  moksha-module-winselector
+)
