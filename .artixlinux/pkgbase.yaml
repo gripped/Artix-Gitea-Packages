@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: elementary-icon-theme
-  version: 8.0.0-1
+  version: 8.0.0-1.2
   arch:
     - any
   pkgname:
     - elementary-icon-theme
 actions:
-  addRepo: world
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,9 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 8.0.0-1.2
+    packages:
+      - elementary-icon-theme-8.0.0-1.2-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []
-team: galaxy
+team: world

@@ -1,17 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
-# Contributor: Diego Principe <cdprincipe@gmail.com>
-# Contributor: paterbrown <paterbrown@silberhelme.de>
-# Contributor: Josip <josipponjavic@gmail.com>
+# Maintainer: artist for Artix Linux
 
 pkgname=elementary-icon-theme
 pkgver=8.0.0
-pkgrel=1
+pkgrel=1.2
 pkgdesc='Named, vector icons for elementary OS'
 arch=(any)
 url=https://github.com/elementary/icons
 license=(GPL3)
-groups=(pantheon)
 depends=(hicolor-icon-theme)
 makedepends=(
   git
@@ -19,18 +14,11 @@ makedepends=(
   meson
   xorg-xcursorgen
 )
-_tag=3d5dd03c505aaee68a4b2904ae0d00cbcf141e91
-source=(elementary-icon-theme::git+https://github.com/elementary/icons.git#tag=${_tag})
-sha256sums=('7cbc6f63b7459bf2d5b44447a97dc0485ea017e025fc3fcba600941f153e84a3')
-
-pkgver() {
-  cd elementary-icon-theme
-
-  git describe --tags
-}
+source=($pkgname::git+https://github.com/elementary/icons.git)
+sha256sums=('SKIP')
 
 build() {
-  artix-meson elementary-icon-theme build \
+  arch-meson $pkgname build \
     -Dvolume_icons=false
   ninja -C build
 }
@@ -39,4 +27,3 @@ package() {
   DESTDIR="${pkgdir}" ninja -C build install
 }
 
-# vim: ts=2 sw=2 et:
