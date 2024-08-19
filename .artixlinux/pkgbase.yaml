@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: rlottie
+  version: 0.2-4.1
+  arch:
+    - x86_64
+  pkgname:
+    - rlottie
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.2-4.1
+    packages:
+      - rlottie-0.2-4.1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
