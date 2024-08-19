@@ -18,4 +18,4 @@ package() {
   install -Dm644 -t"$pkgdir/usr/share/doc/$pkgname/" CREDITS README.md
 }
 
-sha256sums=('7757b2a352238151616c503e120defdfa6994b0d6bff6da656d0a3e4eb086b3a')
+sha256sums=('SKIP')
