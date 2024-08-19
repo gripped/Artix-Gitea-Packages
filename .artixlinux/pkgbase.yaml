@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: artix-archlinux-support
-  version: 3-1
+  version: 4-1
   arch:
     - any
   pkgname:
     - artix-archlinux-support
+    - lib32-artix-archlinux-support
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -49,6 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3-1
+    version: 4-1
     packages:
-      - artix-archlinux-support-3-1-any.pkg.tar.zst
+      - artix-archlinux-support-4-1-any.pkg.tar.zst
+      - lib32-artix-archlinux-support-4-1-any.pkg.tar.zst
+team: galaxy
