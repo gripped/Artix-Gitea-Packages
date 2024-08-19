@@ -1,0 +1,2 @@
+# faenza-icon-theme
+
