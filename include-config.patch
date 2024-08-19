@@ -1,0 +1,11 @@
+--- a/src/e_mod_main.c	2024-07-06 15:46:07.261504311 +0200
++++ b/src/e_mod_main.c	2024-07-06 15:46:55.972473404 +0200
+@@ -17,7 +17,7 @@
+ 
+ #include <e.h>
+ #include "e_mod_main.h"
+-#include "config.h"
++#include "e_config.h"
+ 
+ static int  _extramenu_new(const char *file);
+ static void _extramenu_prepare_menu(void *data, E_Menu *em);
