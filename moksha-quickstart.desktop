@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Moksha Quickstart
+Comment=Moksha Quickstart
+Keywords=documentation;information;manual;help;
+Exec=/usr/bin/moksha-help -q
+Icon=help-about
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=System;

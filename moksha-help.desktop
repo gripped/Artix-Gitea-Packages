@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Artix Moksha Help
+Comment=Moksha on Artix Help
+Keywords=documentation;information;manual;help;
+Exec=/usr/bin/moksha-help
+Icon=help-faq
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=System;

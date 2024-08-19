@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# artist for Artix Linux
+
+langcode() {
+if [ "$LANG" = "pt_BR.UTF-8" ]; then
+  LNGCD=PT_BR
+else
+  LNGCD=$(echo "${LANG%%_*}" | tr '[:lower:]' '[:upper:]')
+fi
+if [ ! -d "/usr/share/bodhi/quickstart/quickstart${langcode}" ]; then
+  LNGCD=EN
+fi
+echo $LNGCD
+}
+
+case "$1" in
+  "")   url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
+        ;;
+  "-i")  url="https://www.bodhilinux.com/w/moksha-guide/"
+        ;;
+  "-q")  url="file:///usr/share/moksha-help/quickstart/quickstart$(langcode)/moksha.html"
+        ;;
+  *)    echo "Unknown parameter $1"
+        ;;
+esac
+
+xdg-open $url &
+
