@@ -2,7 +2,7 @@
 
 pkgname=pacifica-icon-theme
 pkgver=0.4.1
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Pacifica icon theme by bokehlicia"
 url="http://bokehlicia.deviantart.com/art/Pacifica-Icons-402508559"
 source=("https://github.com/fsvh/pacifica-icon-theme/archive/refs/heads/master.zip")
