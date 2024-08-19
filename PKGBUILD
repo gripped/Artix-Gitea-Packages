@@ -11,8 +11,10 @@ url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
 makedepends=('git')
-source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
-sha256sums=('SKIP')
+source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git"
+        "README")
+sha256sums=('SKIP'
+            '6069b18ff13bf9154c0cfc7e39f081ad40ab5c6acf506920eaa25d1951e1dfe5')
 
 prepare() {
   cp README "${srcdir}/${_group}/modules/${_module}/"
