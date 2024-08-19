@@ -1,0 +1,24 @@
+--- a/setup.py	2017-05-08 06:12:15.000000000 +0200
++++ b/setup.py	2024-07-08 12:40:23.426666762 +0200
+@@ -59,14 +59,13 @@
+             sources.extend( os.path.join(root, name) for name in files )
+ 
+         edj_file = os.path.join('data', 'themes', '%s.edj' % name)
+-        if distutils.dep_util.newer_group(sources, edj_file):
+-            info('compiling theme "%s" from edc file: "%s"' % (name, edc_file))
+-            cmd = ['edje_cc', '-v',
+-                   '-id', theme_dir, '-id', os.path.join(theme_dir, 'images'),
+-                   '-fd', theme_dir, '-fd', os.path.join(theme_dir, 'fonts'),
+-                   '-sd', theme_dir, '-sd', os.path.join(theme_dir, 'sounds'),
+-                   edc_file, edj_file]
+-            self.spawn(cmd)
++        info('compiling theme "%s" from edc file: "%s"' % (name, edc_file))
++        cmd = ['edje_cc', '-v',
++               '-id', theme_dir, '-id', os.path.join(theme_dir, 'images'),
++               '-fd', theme_dir, '-fd', os.path.join(theme_dir, 'fonts'),
++               '-sd', theme_dir, '-sd', os.path.join(theme_dir, 'sounds'),
++               edc_file, edj_file]
++        self.spawn(cmd)
+ 
+         info("changing mode of %s to 644", edj_file)
+         os.chmod(edj_file, 0o0644) # stupid edje_cc create files as 0600 :/
