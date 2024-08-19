@@ -2,7 +2,7 @@
 
 pkgname=firefox
 pkgver=129.0.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -164,7 +164,6 @@ ac_add_options --enable-jxl
 ac_add_options --enable-pulseaudio
 ac_add_options --enable-raw
 ac_add_options --enable-sandbox
-ac_add_options --disable-webrtc
 ac_add_options --disable-crashreporter
 ac_add_options --disable-default-browser-agent
 ac_add_options --disable-parental-controls
