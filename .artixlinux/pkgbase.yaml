@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: edi
-  version: 0.8.0.r28.ge9d30f6-1
+  version: 0.8.0.r28.ge9d30f6-1.1
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.8.0.r28.ge9d30f6-1
+    version: 0.8.0.r28.ge9d30f6-1.1
     packages:
-      - edi-0.8.0.r28.ge9d30f6-1-x86_64.pkg.tar.zst
+      - edi-0.8.0.r28.ge9d30f6-1.1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []

@@ -2,7 +2,7 @@
 
 pkgname=edi
 pkgver=0.8.0.r28.ge9d30f6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="EFL based IDE"
 arch=('x86_64')
 url="https://www.enlightenment.org/about-edi"
