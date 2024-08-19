@@ -11,7 +11,6 @@ makedepends=('git' 'meson')
 depends=('efl' 'clang' 'check')
 options=('!libtool' '!debug' '!strip')
 source=("edi::git+https://git.enlightenment.org/enlightenment/edi.git")
-sha256sums=('SKIP')
 
 pkgver() {
   cd "$pkgname"
@@ -36,3 +35,4 @@ package() {
   DESTDIR="$pkgdir/" ninja -C build/ install
 }
 
+sha256sums=('SKIP')
