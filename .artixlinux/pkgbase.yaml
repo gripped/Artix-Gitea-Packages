@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: pacifica-icon-theme
+  version: 0.4.1-1.2
+  arch:
+    - any
+  pkgname:
+    - pacifica-icon-theme
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.4.1-1.2
+    packages:
+      - pacifica-icon-theme-0.4.1-1.2-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []
