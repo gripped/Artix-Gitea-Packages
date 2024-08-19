@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: moksha-theme-e17gtk
+  version: 0.2-1.1
+  arch:
+    - any
+  pkgname:
+    - moksha-theme-e17gtk
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.2-1.1
+    packages:
+      - moksha-theme-e17gtk-0.2-1.1-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []
