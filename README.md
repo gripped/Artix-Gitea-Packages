@@ -1,0 +1,2 @@
+# pacifica-icon-theme
+
