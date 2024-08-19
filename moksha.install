@@ -1,0 +1,20 @@
+post_upgrade() {
+if [ -f /sbin/init ] && [ $(readlink /sbin/init) = "dinit-init" ] ; then
+  if $(grep -i -q 'shutdown -h now' /usr/etc/enlightenment/sysactions.conf) ; then
+    sed -i 's/shutdown -h now/shutdown -p/' /usr/etc/enlightenment/sysactions.conf
+  fi
+  if $(grep -i -q 'shutdown -r now' /usr/etc/enlightenment/sysactions.conf) ; then
+    sed -i 's/shutdown -r now/shutdown -r/' /usr/etc/enlightenment/sysactions.conf
+  fi
+fi
+}
+
+post_install() {
+  post_upgrade
+  echo "--"
+  echo "With some display managers (DM) extraneous messages from Moksha Desktop's module 'EINA' can"
+  echo "be shown at logout or shutdown. These can be ignored, or prevented by adding the following"
+  echo "to the DM service script or custom procedure before the command that starts the DM:"
+  echo "source /etc/profile.d/eina-log.sh"
+  echo "--"
+}

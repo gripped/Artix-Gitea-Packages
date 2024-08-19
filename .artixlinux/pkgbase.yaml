@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: moksha
+  version: 0.4.1-13
+  arch:
+    - x86_64
+  pkgname:
+    - moksha
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.4.1-13
+    packages:
+      - moksha-0.4.1-13-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
