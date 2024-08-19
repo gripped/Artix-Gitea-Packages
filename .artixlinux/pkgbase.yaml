@@ -2,7 +2,7 @@
 team: null
 pkgbase:
   name: moksha-help
-  version: 0.0.2-1.4
+  version: 0.0.2-1.5
   arch:
     - any
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.0.2-1.4
+    version: 0.0.2-1.5
     packages:
-      - moksha-help-0.0.2-1.4-any.pkg.tar.zst
+      - moksha-help-0.0.2-1.5-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []

@@ -2,7 +2,7 @@
 
 pkgname=moksha-help
 pkgver=0.0.2
-pkgrel=1.4
+pkgrel=1.5
 pkgdesc="Help for Moksha"
 arch=('any')
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -61,7 +61,7 @@ package() {
   cd $srcdir
   unzip -q -j $srcdir/bodhi7packages.zip bodhi7packages-main/bodhi/bodhi-quickstart/usr/share/doc/bodhi-quickstart/copyright
 }
-sha256sums=('9271ba311cecc4536aaea61441f352abe7fe1c3f08f6158903494b9324bcb83e'
+sha256sums=('855c23f21a6573885510b34c7dbee1364b4432b66f57aa08f3dc7486dd81c856'
             'f293fb4d621ff504531fe9cd4d8ff7439d7d47e5a73278af0726448da05c979a'
             '51edeafebc211b453dfb26c0f0c518177b33a52df884c5610817532e4e48315f'
             'f025bbf2e63fd664c3280b23a223867c881ef630c6c9b683b793da440de7eb1d')
