@@ -3,7 +3,7 @@
 _module='alarm'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=5.2
+pkgrel=5.3
 pkgdesc="A module which allows you to set popup reminders."
 _group=('moksha-modules-extra')
 arch=('x86_64')

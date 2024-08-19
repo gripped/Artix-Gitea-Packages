@@ -2,7 +2,7 @@
 team: null
 pkgbase:
   name: moksha-module-alarm
-  version: 0.1.1-5.2
+  version: 0.1.1-5.3
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.1.1-5.2
+    version: 0.1.1-5.3
     packages:
-      - moksha-module-alarm-0.1.1-5.2-x86_64.pkg.tar.zst
+      - moksha-module-alarm-0.1.1-5.3-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
