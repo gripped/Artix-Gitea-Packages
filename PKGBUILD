@@ -116,7 +116,7 @@ optdepends=('cuda: Cycles renderer CUDA support'
 # We're using !lto here as otherwise we get stuff such as FS#77557
 options=('!lto')
 source=("git+https://projects.blender.org/blender/blender.git#tag=v$pkgver"
-        "blender-assets-v$pkgver::git+https://projects.blender.org/blender/blender-assets#tag=v$pkgver"
+        "git+https://projects.blender.org/blender/blender-assets#tag=v$pkgver"
         https://developer.download.nvidia.com/redist/optix/v8.0/OptiX-8.0-Include.zip
         force-draco1.patch
         force-draco2.patch
@@ -136,7 +136,7 @@ prepare() {
   cd "$pkgname"
 
   git submodule init
-  git config submodule.release/datafiles/assets.url "$srcdir/blender-assets-v$pkgver"
+  git config submodule.release/datafiles/assets.url "$srcdir/blender-assets"
   git -c protocol.file.allow=always submodule update
 
   # Fetch assets from git-lfs
