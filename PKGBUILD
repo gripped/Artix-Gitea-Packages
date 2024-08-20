@@ -13,8 +13,8 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.9
-pkgrel=2
+pkgver=6.10
+pkgrel=1
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -47,7 +47,7 @@ validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('0ac1ad026d8eba3a745239e50259b8c4b78892b3c30d742cb1ed5b6988512519'
+sha256sums=('e7ef67dfdf83e23ca49bb679dd32782c6d06088696bfa3b3a626705f51635d29'
             '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
@@ -116,7 +116,7 @@ build() {
 
   echo ':: hv'
   pushd linux/tools/hv
-  CFLAGS+=' -DKVP_SCRIPTS_PATH=\"/usr/lib/hyperv/kvp_scripts/\"' make
+  CFLAGS+=' -DKVP_SCRIPTS_PATH=\"/usr/lib/hypervkvpd/\"' make
   popd
 
   echo ':: bpf'
@@ -214,7 +214,7 @@ package_x86_energy_perf_policy() {
 
 package_usbip() {
   pkgdesc='An USB device sharing system over IP network'
-  depends=('glibc' 'glib2' 'sysfsutils' 'libudev.so')
+  depends=('glibc' 'glib2' 'sysfsutils' 'libudev')
 
   pushd linux/tools/usb/usbip
   make install DESTDIR="$pkgdir"
@@ -245,10 +245,7 @@ package_hyperv() {
   depends=('glibc')
 
   cd linux/tools/hv
-  for _p in hv_fcopy_daemon hv_kvp_daemon hv_vss_daemon; do
-    install -Dm755 "$_p" "$pkgdir/usr/bin/$_p"
-  done
-  install -dm755 "$pkgdir/usr/lib/hyperv/kvp_scripts"
+  make install DESTDIR="$pkgdir" sbindir=/usr/bin libexecdir=/usr/lib
 }
 
 package_bpf() {
