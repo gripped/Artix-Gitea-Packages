@@ -5,7 +5,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgbase=firefox-i18n
-pkgver=129.0.1
+pkgver=129.0.2
 pkgrel=1
 pkgdesc="Language pack for Firefox"
 url="https://www.mozilla.org/firefox/"
