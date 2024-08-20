@@ -2,13 +2,13 @@
 
 pkgname=faenza-icon-theme
 pkgver=1.3.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Square shaped, colorful icons for desktops'
 url='https://launchpad.net/~tiheum/+archive/equinox'
 license=('GPL3')
 arch=('any')
 options=(!strip)
-source=("https://github.com/rbrito/pkg-faenza-icon-theme/archive/refs/heads/master.zip"
+source=("$pkgname.zip::https://github.com/rbrito/pkg-faenza-icon-theme/archive/refs/heads/master.zip"
         "copyright"
         "changelog")
 sha512sums=('735c61735281ab5cb8b14981961aaeaa3437ede79d7550c7975694c84003693020230470175bc8c0daed4a6fc088f0d41a20f13511ecca5cb7f08b55eca43619'
