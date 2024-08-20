@@ -1,5 +1,5 @@
 ---
-team: null
+team: galaxy
 pkgbase:
   name: moksha-menu
   version: 1.0-3
@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - moksha-menu
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 1.0-3
     packages:
       - moksha-menu-1.0-3-any.pkg.tar.zst
-  galaxy:
-    version: null
-    packages: []
