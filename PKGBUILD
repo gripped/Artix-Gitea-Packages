@@ -2,7 +2,7 @@
 
 pkgname=efl
 pkgver=1.27.0
-pkgrel=1
+pkgrel=3
 _commit="248d62bf5e13ca8800a73b6cf3e8759443468282"
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
