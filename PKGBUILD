@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=evisum
-pkgver=0.5.11
-pkgrel=1.1
+pkgver=0.6.0
+pkgrel=2
 pkgdesc="Process monitor like top based on EFL"
 arch=('x86_64')
 url="https://www.enlightenment.org/about-evisum"
