@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-image-exiftool
-  version: 12.92-1
+  version: 12.93-1
   arch:
     - any
   pkgname:
     - perl-image-exiftool
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 12.93-1
+    packages:
+      - perl-image-exiftool-12.93-1-any.pkg.tar.zst
   world:
     version: 12.92-1
     packages:
