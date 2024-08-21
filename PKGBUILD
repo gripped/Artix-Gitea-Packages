@@ -4,7 +4,7 @@
 pkgname=xournalpp
 pkgver=1.2.3
 _commit=c6970f47c5204c0a81d45d3cf5d30f8b7ae8e3a6
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Handwriting notetaking software with PDF annotation support'
 url='https://github.com/xournalpp/xournalpp'
 license=('GPL-2.0-or-later')
@@ -20,7 +20,8 @@ replaces=('xournal')
 
 build() {
 	cd "${srcdir}/${pkgname}"
-	cmake -DCMAKE_INSTALL_PREFIX=/usr
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+		  -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	make translations
 	make
 }
