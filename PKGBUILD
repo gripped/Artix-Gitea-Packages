@@ -1,10 +1,10 @@
-# Maintainer: Florian Pritz <bluewind@xinu.at>
 # Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Florian Pritz <bluewind@xinu.at>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgbase=zabbix
 pkgname=(zabbix-server zabbix-agent{,2} zabbix-proxy zabbix-frontend-php zabbix-web-service)
-pkgver=7.0.2
+pkgver=7.0.3
 pkgrel=1
 arch=(x86_64)
 url='https://www.zabbix.com/'
@@ -16,7 +16,7 @@ source=("https://cdn.zabbix.com/zabbix/sources/stable/${pkgver%.*}/zabbix-${pkgv
         zabbix-proxy.{sysusers,tmpfiles}
         zabbix-web-service.{sysusers,tmpfiles})
 
-sha512sums=('3f5aca53d767630b5bb48a1075ddbb841b2052eb63a775e8aae8eed749f521b397f648c5dca918e3c56680f280aef99280c129c2ab1073794257ff074afadfd8'
+sha512sums=('22149415712017c2fb504972c9673623ea710842611644a934a9f555685a73e516ecbad566048b5ec05ba6404000687feee0815e7b2c8a04fb8fd154c9539671'
             '3ab3ac1acc7e35c8896157aef601ebc30815237ac5252cbd0c1ecb26eeaf9eccf5c49938ae8c85bb79a6f95f607f082f6b80ed660829599ec03aa626cca6d3dc'
             'ca6b4779de23829dfdd80ee21e924fbe4e2754f4e693bed4b1a2aa846cd87d150e399b1169d7fe58d30c50ed837c1b8254e580de420267d0a1834d6dc409c43d'
             '4254d3b13ff0d19a8e207f709c10ea59dbb6d4f333d862b1611a0fa4ced199e9a32313e88d8abadc129c1e4001b182c0545bcc84117d218116a8c524de88850e'
