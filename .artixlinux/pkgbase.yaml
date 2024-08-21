@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: hostapd
-  version: 2.11-3
+  version: 2.11-4
   arch:
     - x86_64
   pkgname:
     - hostapd
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.11-3
+    version: 2.11-4
     packages:
-      - hostapd-2.11-3-x86_64.pkg.tar.zst
+      - hostapd-2.11-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
