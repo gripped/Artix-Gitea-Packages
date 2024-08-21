@@ -2,7 +2,7 @@
 
 _name=pdm
 pkgname=python-pdm
-pkgver=2.18.0
+pkgver=2.18.1
 pkgrel=1
 pkgdesc="A modern Python package and dependency manager supporting the latest PEP standards"
 arch=(any)
@@ -56,8 +56,8 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('fa46f979866ed9e186466cce9c69c8bfccc74e6a6f73908d0d71dcae539c7589ebc5de46000626de674f6938bec4df96f3f6fb1ae949fd7688852253deabaa6e')
-b2sums=('5605014e3ee055fb1193d78563e5f01b915bf5dc10bd1f7f40486f74d0371140304190dde3e30d6d067e9483cbedd83f250b1108ac0a9adb35d8e2850db0fda4')
+sha512sums=('96362bbff09145f5e383fc5226c6d261e94753e9c04764fdf0572409864be25be7815a00b2430fe28049fe696579d7a5dc6f9ad8f8ba07fdcbb0c1bf6c731bf3')
+b2sums=('b5625f6632c878412beaa27b7df8955c283ffe7148265b795d83aa8cb1c27a4bca048f78b45ba26b855bf697ed23f8047f73d3d79f165f573b65be632d01f413')
 
 build() {
   cd $_name-$pkgver
@@ -72,10 +72,6 @@ check() {
     --deselect tests/test_project.py::test_access_index_with_auth
     # unclear issue with no isolation build
     --deselect tests/cli/test_build.py::test_build_with_no_isolation
-    # failing keyring mocks: https://github.com/pdm-project/pdm/issues/3110
-    --deselect tests/cli/test_config.py::test_config_password_save_into_keyring
-    --deselect tests/cli/test_config.py::test_keyring_operation_error_disables_itself
-    --deselect tests/cli/test_publish.py::test_repository_get_credentials_from_keyring
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
