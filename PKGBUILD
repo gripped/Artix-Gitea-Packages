@@ -1,24 +1,25 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Andrew Cook <ariscop@gmail.com>
 
 pkgname=libbluray
 pkgver=1.3.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Library to access Blu-Ray disks for video playback'
 arch=(x86_64)
 url=https://www.videolan.org/developers/libbluray.html
-license=(LGPL2.1)
+license=(LGPL-2.1-only)
 depends=(
   fontconfig
+  glibc
   libfreetype.so
   libxml2
 )
 makedepends=(
   apache-ant
   git
-  java-environment
+  java-environment=17
 )
 optdepends=('java-runtime: BD-J library')
 provides=(libbluray.so)
@@ -39,11 +40,10 @@ pkgver() {
 
 prepare() {
   cd libbluray
-  git config --global protocol.file.allow always
   for submodule in contrib/libudfread; do
     git submodule init ${submodule}
     git config submodule.${submodule}.url ../${submodule#*/}
-    git submodule update ${submodule}
+    git -c protocol.file.allow=always submodule update ${submodule}
   done
   autoreconf -fiv
 }
