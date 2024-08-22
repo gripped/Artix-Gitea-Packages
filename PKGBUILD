@@ -4,7 +4,7 @@
 
 pkgname=ejabberd
 pkgver=24.07
-pkgrel=1
+pkgrel=3
 pkgdesc="Jabber server written in Erlang"
 arch=('x86_64')
 url="https://www.ejabberd.im/"
@@ -78,7 +78,7 @@ sha256sums=('c0fb746acba81a5db41de97c03968c1f681a13b1b6c1a895b7182e33820c18d9'
             'SKIP'
             'SKIP'
             'SKIP'
-            '31780cac78736d285e46f445f8c8463a70f2aeb2683280c259129db11832ddd2'
+            '7fec550709ccb499ff608ecbfa5c60926d3e77875badf880bb168b665cb1b0cf'
             '68de8fd4df6e4f0e21a241dcd2b7075bdff495876646dd726c7054bf5780e3c6')
 
 prepare() {
@@ -115,24 +115,24 @@ package() {
     -e "s|Group=.*|Group=jabber|g" \
     -e "s|User=.*|User=jabber|g" \
     ejabberd.service
-  sed -i -e "s|$pkgdir||g" "$pkgdir"/usr/bin/ejabberdctl
+  sed -i \
+    -e "s|$pkgdir||g" \
+    -e "s|INSTALLUSER=\"\"|INSTALLUSER=\"jabber\"|g" \
+    "$pkgdir"/usr/bin/ejabberdctl
 
 
-#  install -Dm04750 deps/epam/priv/bin/epam "$pkgdir"/usr/lib/ejabberd-$pkgver/priv/bin/epam
   install -d "$pkgdir/var/lib/$pkgname"
   install -D -m0644 "$srcdir/$pkgname.logrotate" "$pkgdir/etc/logrotate.d/$pkgname"
   chmod ug+r "$pkgdir/etc/$pkgname/"*
-#  chmod a+rx "$pkgdir/usr/bin/ejabberdctl" "$pkgdir/usr/lib/ejabberd-$pkgver/priv/bin/captcha.sh"
   chmod a+rx "$pkgdir/usr/bin/ejabberdctl"
   rm -rf "$pkgdir/var/lock"
   install -Dm644 "$srcdir"/sysuser.conf "$pkgdir"/usr/lib/sysusers.d/ejabberd.conf
   install -Dm644 tools/ejabberdctl.bc "$pkgdir"/usr/share/bash-completion/completions/ejabberdctl
 
-  # workaround
- # ln -s mod_configure.beam "$pkgdir"/usr/lib/ejabberd-$pkgver/ebin/configure.beam
-#  rm -f "$pkgdir"/usr/bin/{elixir,iex,mix}
-
-  echo -e "\n\n# home dir workaround\nHOME=/var/lib/ejabberd" >>"$pkgdir"/etc/ejabberd/ejabberdctl.cfg
+  cat <<EOF >>"$pkgdir"/etc/ejabberd/ejabberdctl.cfg
+# home dir workaround
+HOME=/var/lib/ejabberd
+EOF
 
   # /usr/lib/ejabberd symlink follows to ejabberd version
   (cd "$pkgdir"/usr/lib/ && ln -s ejabberd-* ejabberd)
@@ -143,7 +143,6 @@ package() {
     "$pkgdir"/etc/ejabberd/ejabberd.yml \
     "$pkgdir"/etc/ejabberd/ejabberdctl.cfg \
     "$pkgdir"/etc/ejabberd
-#    "$pkgdir"/usr/lib/ejabberd/priv/bin/epam
 
   # fix eimp
   chmod a+x "$pkgdir"/usr/lib/eimp-*/priv/bin/eimp
