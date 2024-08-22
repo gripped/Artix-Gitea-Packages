@@ -11,7 +11,8 @@ arch=(x86_64)
 url='https://pdfgrep.org'
 # url='https://gitlab.com/pdfgrep/pdfgrep'
 license=(GPL-2.0-or-later)
-depends=(pcre2
+depends=(libgcrypt
+         pcre2
          poppler)
 _archive="$pkgname-$pkgver"
 source=("$url/download/$_archive.tar.gz")
