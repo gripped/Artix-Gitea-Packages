@@ -3,7 +3,7 @@
 pkgname=egl-wayland
 pkgver=1.1.13.1
 pkgrel=1
-epoch=3
+epoch=4
 pkgdesc="EGLStream-based Wayland external platform"
 url="https://github.com/NVIDIA/egl-wayland"
 arch=(x86_64)
