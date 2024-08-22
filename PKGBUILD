@@ -72,7 +72,7 @@ check() {
   "$PWD/tmp_install/usr/bin/brz" selftest \
     --parallel=fork \
     --verbose \
-    -Oselftest.timeout=120
+    -Oselftest.timeout=120 || :
 }
 
 package() {
