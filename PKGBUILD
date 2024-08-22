@@ -1,4 +1,4 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Sébastien Luttringer
 # Contributor: xduugu
 # Contributor: Manolis Tzanidakis
@@ -6,7 +6,7 @@
 
 pkgname=acpid
 pkgver=2.0.34
-pkgrel=1
+pkgrel=2
 pkgdesc='A daemon for delivering ACPI power management events with netlink support'
 arch=('x86_64')
 url='https://sourceforge.net/projects/acpid2/'
@@ -35,6 +35,7 @@ package() {
   # default config
   install -Dm644 ../anything "$pkgdir/etc/acpi/events/anything"
   install -Dm755 ../handler.sh "$pkgdir/etc/acpi/handler.sh"
+
 }
 
 # vim:set ts=2 sw=2 et:
