@@ -1,17 +1,17 @@
 ---
 pkgbase:
-  name: dvd+rw-tools
-  version: 7.1-9
+  name: dvd-rw-tools
+  version: 7.1-10
   arch:
     - x86_64
   pkgname:
     - dvd+rw-tools
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.1-9
+    version: 7.1-10
     packages:
-      - dvd+rw-tools-7.1-9-x86_64.pkg.tar.zst
+      - dvd+rw-tools-7.1-10-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
