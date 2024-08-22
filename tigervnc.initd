@@ -68,7 +68,7 @@ start() {
 	for display in $FREEDISPLAYS; do
 		[ -n "${TIGERVNC_XSESSION_FILE}" ] && export TIGERVNC_XSESSION_FILE
 		ebegin "Starting TigerVNC server :${display}"
-		start-stop-daemon --start --pidfile=/run/vncsession-":${display}".pid /usr/libexec/vncsession-start -- ":${display}"
+		start-stop-daemon --start --pidfile=/run/vncsession-":${display}".pid /usr/lib/vncsession-start -- ":${display}"
 		eend $?
 	done
 }

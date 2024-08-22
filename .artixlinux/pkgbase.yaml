@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tigervnc-openrc
-  version: 20240818-1
+  version: 20240822-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240818-1
+    version: 20240822-1
     packages:
-      - tigervnc-openrc-20240818-1-any.pkg.tar.zst
+      - tigervnc-openrc-20240822-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
