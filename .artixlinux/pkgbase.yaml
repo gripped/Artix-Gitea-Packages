@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-nvidia-utils
-  version: 555.58.02-1
+  version: 560.35.03-1
   arch:
     - x86_64
   pkgname:
@@ -38,10 +38,10 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 555.58.02-1
+    version: 560.35.03-1
     packages:
-      - lib32-nvidia-utils-555.58.02-1-x86_64.pkg.tar.zst
-      - lib32-opencl-nvidia-555.58.02-1-x86_64.pkg.tar.zst
+      - lib32-nvidia-utils-560.35.03-1-x86_64.pkg.tar.zst
+      - lib32-opencl-nvidia-560.35.03-1-x86_64.pkg.tar.zst
   lib32:
     version: 555.58.02-1
     packages:
