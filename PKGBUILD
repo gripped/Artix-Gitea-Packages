@@ -14,13 +14,9 @@ depends=(glibc openssl zlib sqlite)
 makedepends=(tcl)
 optdepends=(tcl)
 source=(
-  fossil.socket
-  fossil.service
   https://fossil-scm.org/home/tarball/$_tag/fossil-src-$pkgver.tar.gz
 )
-sha256sums=('f885e17998dc1eece1688a75e516663462fe72a7f4f132def4132055777c7ff8'
-            'c4973079facf209d3757db81df08f8d0843ede242f2a0c12281720da65e3b166'
-            'e6f5a559369bf16baf539e69e6d0cea5a6410efa9a6e7f160c7a4932080413be')
+sha256sums=('e6f5a559369bf16baf539e69e6d0cea5a6410efa9a6e7f160c7a4932080413be')
 
 build() {
   cd fossil-src-$pkgver
@@ -31,9 +27,6 @@ build() {
 }
 
 package() {
-  install -Dm644 fossil.socket "$pkgdir"/usr/lib/systemd/system/fossil.socket
-  install -Dm644 fossil.service "$pkgdir"/usr/lib/systemd/system/fossil@.service
-
   cd fossil-src-$pkgver
   install -Dm755 fossil "$pkgdir"/usr/bin/fossil
   install -Dm644 tools/fossil-autocomplete.bash "$pkgdir"/usr/share/bash-completion/completions/fossil
