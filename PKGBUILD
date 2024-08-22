@@ -33,7 +33,7 @@ prepare() {
 }
 
 build() {
-  artix-meson $pkgname build
+  artix-meson $pkgname build 
   meson compile -C build
 }
 
