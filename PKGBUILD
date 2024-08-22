@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 # Original TU: Jeff Mickey <j@codemac.net>
@@ -6,11 +6,11 @@
 
 pkgname=squashfs-tools
 pkgver=4.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Tools for squashfs, a highly compressed read-only filesystem for Linux'
 arch=(x86_64)
 url='https://github.com/plougher/squashfs-tools'
-license=(GPL2)
+license=(GPL-2.0-or-later)
 depends=(
   glibc
   gcc-libs
