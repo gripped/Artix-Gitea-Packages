@@ -244,9 +244,6 @@ package_nvidia-utils() {
     # new power management support
     install -Dm755 systemd/system-sleep/nvidia "${pkgdir}/usr/lib/elogind/system-sleep/nvidia"
     install -Dm755 systemd/nvidia-sleep.sh "${pkgdir}/usr/bin/nvidia-sleep.sh"
-    install -Dm755 system-sleep/nvidia "${pkgdir}/usr/lib/elogind/system-sleep/nvidia"
-    install -Dm755/system-sleep/nvidia "${pkgdir}/usr/lib/systemd/system-sleep/nvidia"
-    install -Dm755/nvidia-sleep.sh "${pkgdir}/usr/bin/nvidia-sleep.sh"
     install -Dm755 nvidia-powerd "${pkgdir}/usr/bin/nvidia-powerd"
     install -Dm644 nvidia-dbus.conf "${pkgdir}"/usr/share/dbus-1/system.d/nvidia-dbus.conf
 
