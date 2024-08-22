@@ -5,7 +5,7 @@
 pkgbase=nvidia-settings
 pkgname=('nvidia-settings' 'libxnvctrl')
 pkgver=560.31.02
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Tool for configuring the NVIDIA graphics driver'
 url='https://github.com/NVIDIA/nvidia-settings'
 arch=('x86_64')
