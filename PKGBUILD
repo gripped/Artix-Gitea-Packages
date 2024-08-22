@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=debootstrap
-pkgver=1.0.135
+pkgver=1.0.137
 pkgrel=1
 pkgdesc="Bootstrap a basic Debian system"
 arch=('any')
@@ -15,7 +15,7 @@ optdepends=('gnupg: check release signatures'
             'debian-archive-keyring: check release signatures for Debian'
             'debian-ports-archive-keyring: check release signatures for Debian Ports'
             'ubuntu-keyring: check release signatures for Ubuntu')
-sha512sums=('3cc473110ee9bb4f1aea3cd928a9f3ffe5099e6fedbcef7332e7ce4231430e6ad0c0fbde4024d2ed4739e399c395ae69df9296636b2367d74c63bafb5930d5ae'
+sha512sums=('7eb537510c6b05751a413ef32d255f7479dbbccc6702e503ecf00d71cfa17e225981fb6f04c851f5ec9b162df8631d29e3dd75789d0c3d63493375b179496986'
             'b1fdff6142326c2a5075e457181a85cb2a37848c777f128f4c0eb3740980784d25d4f143a76b97c90ef252463cc5d8bd0797b2544c27b6dd8e05a6258a6b0c02')
 
 prepare() {
