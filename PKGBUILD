@@ -1,13 +1,13 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
 
 pkgname=clang
 pkgver=18.1.8
-pkgrel=1
+pkgrel=2
 pkgdesc="C language family frontend for LLVM"
 arch=('x86_64')
 url="https://clang.llvm.org/"
-license=('custom:Apache 2.0 with LLVM Exception')
+license=('Apache-2.0 WITH LLVM-exception')
 depends=('llvm-libs' 'gcc' 'compiler-rt')
 makedepends=('llvm' 'cmake' 'ninja' 'python-sphinx' 'python-myst-parser')
 optdepends=('openmp: OpenMP support in clang with -fopenmp'
@@ -45,9 +45,6 @@ _get_distribution_components() {
   ninja -t targets | grep -Po 'install-\K.*(?=-stripped:)' | while read -r target; do
     case $target in
       clang-libraries|distribution)
-        continue
-        ;;
-      clang-tidy-headers)
         continue
         ;;
       clang|clangd|clang-*)
