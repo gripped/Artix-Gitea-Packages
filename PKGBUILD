@@ -20,7 +20,7 @@ sha512sums=('7eb537510c6b05751a413ef32d255f7479dbbccc6702e503ecf00d71cfa17e22598
 
 prepare() {
   cd debootstrap
-
+ 
   sed -i 's/sbin/bin/g' Makefile
 
   # Debian defaults
