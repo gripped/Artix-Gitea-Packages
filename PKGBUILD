@@ -11,14 +11,16 @@ pkgname=(
   cyrus-sasl-{gssapi,ldap,sql}
 )
 pkgver=2.1.28
-pkgrel=3
+pkgrel=4
 pkgdesc="Cyrus Simple Authentication Service Layer (SASL) library"
 arch=(x86_64)
 url="https://www.cyrusimap.org/sasl/"
-license=(custom)
+_url=https://github.com/cyrusimap/cyrus-sasl
+license=(BSD-3-Clause-Attribution)
 makedepends=(
   gdbm
   glibc
+  git
   krb5
   libldap
   libsasl=$pkgver
@@ -30,14 +32,12 @@ makedepends=(
   sqlite
 )
 source=(
-  https://github.com/cyrusimap/$pkgbase/releases/download/$pkgbase-$pkgver/$pkgbase-$pkgver.tar.gz{,.sig}
+  $pkgbase::git+$_url.git?signed#tag=$pkgbase-$pkgver
   tmpfiles.conf
 )
-sha512sums=('db15af9079758a9f385457a79390c8a7cd7ea666573dace8bf4fb01bb4b49037538d67285727d6a70ad799d2e2318f265c9372e2427de9371d626a1959dd6f78'
-            'SKIP'
+sha512sums=('a055876910be34d59c6e1c8891244975d213490ba6aa0924e5f018094f3ef01871f627b076d6a6ad9547f77ad528f0ac20b3c0efd391cac97bb9e024de037271'
             '2cee9d6626aa16b6b51a5f48ad2c162564ce97dabc367738b4d6af654fcd5845e0d2cd78e5c9fb2378dfba2fd67f32fdbfd42321dc59c9a1222369860312d0a7')
-b2sums=('6cca8c26cebb9c2ee5d539c43797d30b6309a476ec4233225789978e1d7315c4ea5d2abbc7f5464be0f3c0de5fd9212706b43fbc92f40b76cd0b1013cc00f823'
-        'SKIP'
+b2sums=('c4d417139a81ffb1ade5456ecd14be77bd2e0ff0e59cf818206dc3df78a4d4be1ee5b0988d3a3edbb1542041b9f3b921d855075df5d86b0458b99020192170d1'
         'e7f38d8c42d48a08b5ca810e237899111856d57635260a5c440cbe8d01ed3dc89541fe7e4d8b84b9d54b1328f17f2c1ea9cf7b6a4a1f37b962bbb6e3cc916da8')
 validpgpkeys=(
   '829F339F8C296FE80F409D93E3D7C118C7B9F46A'  # Partha Susarla <mail@spartha.org>
@@ -45,7 +45,20 @@ validpgpkeys=(
 )
 
 prepare() {
-  cd $pkgbase-$pkgver
+  local commit
+  local cherry_picks=(
+    2d2e97b0eb53fa7f87a3bf1529d8f712dd954480  # fix for CVE-2022-24407
+    266f0acf7f5e029afbb3e263437039e50cd6c262  # fix issues with time.h detection https://github.com/cyrusimap/cyrus-sasl/issues/859
+    887dbc0435056ec58ee48c4d803f110ade1e4c39  # openssl 3.0 support: https://github.com/cyrusimap/cyrus-sasl/pull/653
+    dfaa62392e7caecc6ecf0097b4d73738ec4fc0a8  # openssl 3.0 support: https://github.com/cyrusimap/cyrus-sasl/pull/653
+    c2bd3afbca57f176d8c650670ce371444bb7fcc0  # openssl 3.0 support: https://github.com/cyrusimap/cyrus-sasl/pull/653
+  )
+
+  cd $pkgbase
+  for commit in "${cherry_picks[@]}"; do
+    git cherry-pick -n "$commit"
+  done
+
   autoreconf -fiv
 }
 
@@ -87,7 +100,7 @@ build() {
     --with-sqlite3=/usr/lib
   )
 
-  cd $pkgbase-$pkgver
+  cd $pkgbase
   ./configure "${configure_options[@]}"
   # prevent excessive overlinking by libtool
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
@@ -95,7 +108,7 @@ build() {
 }
 
 check() {
-  make -k check -C $pkgbase-$pkgver
+  make -k check -C $pkgbase
 }
 
 package_cyrus-sasl() {
@@ -110,23 +123,27 @@ package_cyrus-sasl() {
     pam libpam.so
   )
   pkgdesc="Cyrus saslauthd SASL authentication daemon"
-  backup=(etc/conf.d/saslauthd)
+  backup=(usr/lib/tmpfiles.d/saslauthd.conf)
 
-  make DESTDIR="$pkgdir" install -C $pkgbase-$pkgver/saslauthd
-  make DESTDIR="$pkgdir" install-data-local -C $pkgbase-$pkgver/saslauthd
-  install -vDm 644 $pkgbase-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  make DESTDIR="$pkgdir" install -C $pkgbase/saslauthd
+  make DESTDIR="$pkgdir" install-data-local -C $pkgbase/saslauthd
+  install -vDm 644 $pkgbase/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
 
   install -vDm 644 tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/saslauthd.conf"
 }
 
 package_cyrus-sasl-gssapi() {
   pkgdesc="GSSAPI authentication mechanism for Cyrus SASL"
-  depends=(glibc krb5 libgssapi_krb5.so libsasl=$pkgver)
+  depends=(
+    glibc
+    krb5 libgssapi_krb5.so
+    libsasl=$pkgver
+  )
   replaces=('cyrus-sasl-plugins')
 
   install -vdm 755 "$pkgdir/usr/lib/sasl2"
-  cp -av $pkgbase-$pkgver/plugins/.libs/libgs{,sapiv}2.so* "$pkgdir/usr/lib/sasl2/"
-  install -vDm 644 $pkgbase-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  cp -av $pkgbase/plugins/.libs/libgs{,sapiv}2.so* "$pkgdir/usr/lib/sasl2/"
+  install -vDm 644 $pkgbase/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_cyrus-sasl-ldap() {
@@ -139,8 +156,8 @@ package_cyrus-sasl-ldap() {
   replaces=('cyrus-sasl-plugins')
 
   install -vdm 755 "$pkgdir/usr/lib/sasl2"
-  cp -av $pkgbase-$pkgver/plugins/.libs/libldapdb.so* "$pkgdir/usr/lib/sasl2/"
-  install -vDm 644 $pkgbase-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  cp -av $pkgbase/plugins/.libs/libldapdb.so* "$pkgdir/usr/lib/sasl2/"
+  install -vDm 644 $pkgbase/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 package_cyrus-sasl-sql() {
@@ -155,6 +172,6 @@ package_cyrus-sasl-sql() {
   replaces=('cyrus-sasl-plugins')
 
   install -vdm 755 "$pkgdir/usr/lib/sasl2"
-  cp -av $pkgbase-$pkgver/plugins/.libs/libsql.so* "$pkgdir/usr/lib/sasl2/"
-  install -vDm 644 $pkgbase-$pkgver/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  cp -av $pkgbase/plugins/.libs/libsql.so* "$pkgdir/usr/lib/sasl2/"
+  install -vDm 644 $pkgbase/COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
 }

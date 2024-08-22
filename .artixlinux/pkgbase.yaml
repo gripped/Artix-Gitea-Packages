@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cyrus-sasl
-  version: 2.1.28-3
+  version: 2.1.28-4
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - cyrus-sasl-sql
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.28-3
+    version: 2.1.28-4
     packages:
-      - cyrus-sasl-2.1.28-3-x86_64.pkg.tar.zst
-      - cyrus-sasl-gssapi-2.1.28-3-x86_64.pkg.tar.zst
-      - cyrus-sasl-ldap-2.1.28-3-x86_64.pkg.tar.zst
-      - cyrus-sasl-sql-2.1.28-3-x86_64.pkg.tar.zst
+      - cyrus-sasl-2.1.28-4-x86_64.pkg.tar.zst
+      - cyrus-sasl-gssapi-2.1.28-4-x86_64.pkg.tar.zst
+      - cyrus-sasl-ldap-2.1.28-4-x86_64.pkg.tar.zst
+      - cyrus-sasl-sql-2.1.28-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -58,3 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
