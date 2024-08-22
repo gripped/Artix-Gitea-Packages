@@ -33,7 +33,7 @@ build() {
   patch -p0 -i "${srcdir}/dvd+rw-tools-7.0-wctomb.patch"
   patch -p1 -i "${srcdir}/dvd+rw-tools-7.0-wexit.patch"
   patch -p1 -i "${srcdir}/dvd+rw-tools-7.1-layerbreaksetup.patch"
-  patch -p1 -i ../dvd+rw-tools-7.1-minor-major.patch # Fix build with glibc 2.29
+  patch -p1 -i ../dvd+rw-tools-7.1-minor-major.patch # Fix build with glibc 2.29 
   make
 }
 
