@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: perl-regexp-common
+  version: 2024080801-1
+  arch:
+    - any
+  pkgname:
+    - perl-regexp-common
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 2024080801-1
+    packages:
+      - perl-regexp-common-2024080801-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
