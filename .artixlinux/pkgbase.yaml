@@ -8,7 +8,7 @@ pkgbase:
     - lib32-nvidia-utils
     - lib32-opencl-nvidia
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,8 +38,10 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 555.58.02-1
+    packages:
+      - lib32-nvidia-utils-555.58.02-1-x86_64.pkg.tar.zst
+      - lib32-opencl-nvidia-555.58.02-1-x86_64.pkg.tar.zst
   lib32:
     version: 555.58.02-1
     packages:
