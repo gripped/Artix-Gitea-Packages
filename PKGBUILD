@@ -54,6 +54,4 @@ package() {
 	export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
 	DESTDIR="$pkgdir" meson install -C .build
-
-	rm -r $pkgdir/usr/lib/systemd
 }
