@@ -7,25 +7,24 @@
 # Contributor: Ricardo Catalinas Jiménez <jimenezrick@gmail.com>
 
 pkgname=erlang
-pkgver=27.0
+pkgver=27.0.1
+_docver=27.0
 pkgrel=1
 # https://github.com/erlang/otp/tags
-_commit=601a012837ea0a5c8095bf24223132824177124d # OTP-27.0
+_commit=ee9628e7ed09ef02e767994a6da5b7a225316aaa # OTP-27.0.1
 arch=(x86_64)
 url='https://erlang.org'
 license=(Apache)
 makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl wxwidgets-gtk3)
 options=(staticlibs)
-source=("https://github.com/erlang/otp/releases/download/OTP-$pkgver/otp_doc_man_$pkgver.tar.gz"
-        "git+https://github.com/erlang/otp#commit=$_commit")
-b2sums=('b55614bc3c795813eb2d73dc990f740efc8408a3639d98569adb9718ee140eb04ac2289ca3cd764d2610ac2138dfd6173b50bcae58b3971b51f4819cc33420e3'
-        'c6c913b7b75feb2cec23404914bffbf016d8dbb9ec652874250e2aef930d75d62d6b1746beb7238a505e52f3aa98479d486825c41b9b4ac04437066d9e103a1f')
+source=("git+https://github.com/erlang/otp#commit=$_commit")
+b2sums=('99300d27abe6fc6a5c1ace5315569b4abf17913488aafa7937fcc57138cc44cf7d0e28f6590b0e97c4018d55aa00aae84295aa4f1161ef036f47b6edb5113510')
 
 prepare() {
-  # adjust how LDFLAGS are handled
+  # Adjust how LDFLAGS are handled
   sed -i 's/^LDFLAGS = /LDFLAGS += /g' otp/lib/megaco/src/flex/Makefile.in
 
-  # let the Java bindings support version 11 or later, ref https://gitlab.archlinux.org/archlinux/packaging/packages/erlang/-/issues/1
+  # Let the Java bindings support version 11 or later, ref https://gitlab.archlinux.org/archlinux/packaging/packages/erlang/-/issues/1
   sed -i 's/^JAVA_OPTIONS =/JAVA_OPTIONS = --release 11/g' otp/lib/jinterface/java_src/com/ericsson/otp/erlang/Makefile
 }
 
@@ -56,12 +55,8 @@ package_erlang() {
   export PATH="$srcdir/bin:$PATH"
   make -C otp DESTDIR="$pkgdir" DOC_TARGETS=chunks install install-docs
 
-  # readme and licenses
-  install -Dm644 otp/README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
-  install -Dm644 otp/LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm644 otp/CONTRIBUTING.md "$pkgdir/usr/share/doc/$pkgname/CONTRIBUTING.md"
-  install -Dm644 otp/AUTHORS "$pkgdir/usr/share/doc/$pkgname/AUTHORS"
 
-  # man pages
-  cp -r -v man "$pkgdir/usr/lib/erlang/"
+
+  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname" otp/{AUTHORS,CONTRIBUTING.md,README.md}
+  install -Dm644 otp/LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
