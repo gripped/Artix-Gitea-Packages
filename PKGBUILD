@@ -23,6 +23,7 @@ sha256sums=('0661e531e4c0ef097959aa1c9773796585db39c72c84a02ff87d2c3637c620cb'
 prepare() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
 	patch -u < ../../0000-libcrypt-resolution.patch
+	autoreconf -fiv
 }
 
 build() {
