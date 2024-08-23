@@ -6,7 +6,7 @@
 pkgname=lsb-release
 pkgver=2.0.r53.a86f885
 _commit=a86f885597a91cd41837d706bf6a08d4c239a54b
-pkgrel=2.1
+pkgrel=2
 pkgdesc="LSB version query program"
 arch=('any')
 url="https://refspecs.linuxfoundation.org/lsb.shtml"
@@ -17,8 +17,8 @@ source=("git+https://github.com/LinuxStandardBase/lsb-samples.git#commit=$_commi
         'lsb-release'
         'lsb_release_description.patch'
         'lsb_release_make_man_page_reproducible.patch')
-sha512sums=('SKIP'
-            'c4fb9d1026b6cc362b95d8b6662709ec18c0c8cb642d3a811d75bbb0e2fda93e1281accce40b7e7d5cde162144486a29d4c34ccbffcdd8f18e0ff51aef83db97'
+sha512sums=('ef5b7723397156b6f797170d762a4e2607ccd486e88e910b0814aa638a730a49655f8935733d22e9eb62afb2d8dc928251335bda21b5abc34f2712cb9de387e5'
+            '4dd7e3bf57bd901761484d17159eec9b69c71fc1deca528d2f574b5f6055605e5b2a39349053d18dd9545176f38b00c8ebeabd2e7225b814f3d0a2f1b930b805'
             '145ef64f90f5e6cc59075679e640cf7c1ad02617c12eff17f10b05c1cc219591fdba1b27be2b2c8480742aed24ce81d6a7badcbaca6772faea4ebc6a55695b62'
             'ab64a1d236d00a30a48e3af2c5bdfa0aad0183ebe0df4f2b0c6af58530c2a1fdac1b0a5cdd8a1800d5f8405f44562603cddf28eb318b5badaabd49a82e0b7e83')
 
