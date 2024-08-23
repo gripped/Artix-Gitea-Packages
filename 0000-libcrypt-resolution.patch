@@ -1,0 +1,20 @@
+--- src/pdfgrep-2.2.0/configure.ac	2024-03-25 11:57:48.000000000 +0100
++++ configure.ac	2024-08-23 11:54:38.716908997 +0200
+@@ -56,12 +56,11 @@
+ AC_SUBST(poppler_cpp_LIBS)
+ 
+ dnl gcrypt library for SHA1
+-AM_PATH_LIBGCRYPT([1.0.0], [
+-  AC_SUBST(LIBGCRYPT_LIBS)
+-  AC_SUBST(LIBGCRYPT_CFLAGS)
+-], [
+-  AC_MSG_ERROR([*** libgcrypt not found!])
+-])
++LIBGCRYPT_VERSION=`$PKG_CONFIG --modver libgcrypt`
++LIBGCRYPT_CFLAGS=`$PKG_CONFIG --cflags libgcrypt`
++LIBGCRYPT_LIBS=`$PKG_CONFIG --libs libgcrypt`
++AC_SUBST(LIBGCRYPT_LIBS)
++AC_SUBST(LIBGCRYPT_CFLAGS)
+ 
+ dnl PCRE (optional)
+ AC_ARG_WITH([libpcre],
