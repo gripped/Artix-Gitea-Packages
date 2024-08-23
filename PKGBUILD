@@ -18,7 +18,12 @@ _archive="$pkgname-$pkgver"
 source=("$url/download/$_archive.tar.gz"
         '0000-libcrypt-resolution.patch')
 sha256sums=('0661e531e4c0ef097959aa1c9773796585db39c72c84a02ff87d2c3637c620cb'
-            'fb1e936a54e3c4a1054f985288e84a5734c5821b70de201244515a91aea3956f')
+            '34ee6f7a15b2e9c9cfc5881a809bc659292fe3cd919d2ad2f413997b866acf40')
+
+prepare() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	patch -u < ../../0000-libcrypt-resolution.patch
+}
 
 build() {
 	cd "$_archive"
