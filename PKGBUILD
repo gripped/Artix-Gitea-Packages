@@ -59,7 +59,7 @@ package() {
   #Move D-BUS Policy
   mv "${pkgdir}"/{etc,usr/share}/dbus-1/system.d
   mv "${pkgdir}/usr/libexec/xpra" "${pkgdir}/usr/lib/"
-  rmdir "${pkgdir}/usr/libexex"
+  rmdir "${pkgdir}/usr/libexec"
   #Fix for FS#69804
   chmod +x "${pkgdir}"/usr/bin/*
 }
