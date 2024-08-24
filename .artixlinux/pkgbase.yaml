@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ly-openrc
-  version: 20240824-1
+  version: 20240824-2
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240824-1
+    version: 20240824-2
     packages:
-      - ly-openrc-20240824-1-any.pkg.tar.zst
+      - ly-openrc-20240824-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
