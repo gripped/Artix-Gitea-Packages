@@ -2,7 +2,7 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=129.0.1
+pkgver=129.0.2
 pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
@@ -88,13 +88,15 @@ _arch_git=https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/ra
 
 install='librewolf.install'
 source=(
-  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz # {,.sig} sig files are currently broken, it seems
+  #https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz   # {,.sig} sig files are currently broken, it seems
+  https://gitlab.com/librewolf-community/browser/source/-/archive/${pkgver}-${pkgrel}/source-${pkgver}-${pkgrel}.tar.gz
+  #https://codeberg.org/librewolf/source/archive/129.0.2-1.tar.gz
   $pkgname.desktop
   "default192x192.png"
   '0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch'
 )
 
-sha256sums=('8868128bf1681eb7cc6df0abe33b6bd44de73ba38ad0528ee1ee90ddc8a94fdf'
+sha256sums=('acbbc5b0f4dcc200c722777f901049cf116b43dd17b5ddfd3e2ba108336e4158'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
             'dd2aba1c02c21b89ceed0713a6aa0241365fe79b1e3a4d21cdcd7231db6fab5e')
