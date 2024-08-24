@@ -2,8 +2,8 @@
 
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
-pkgver=0.36.0
-pkgrel=1.1
+pkgver=0.36.1
+pkgrel=1
 pkgdesc="Modern, hackable, featureful, OpenGL based terminal emulator"
 arch=(x86_64)
 url="https://sw.kovidgoyal.net/kitty/"
@@ -14,7 +14,7 @@ makedepends=(python-setuptools libxinerama libxcursor libxrandr libxkbcommon mes
              wayland-protocols python-sphinx python-sphinx-copybutton
              python-sphinx-inline-tabs python-sphinxext-opengraph python-sphinx-furo go
              ttf-roboto ttf-nerd-fonts-symbols-mono xxhash simde)
-source=(https://github.com/kovidgoyal/kitty/releases/download/v${pkgver}/kitty-0.36.0.tar.xz{,.sig})
+source=(https://github.com/kovidgoyal/$pkgname/releases/download/v${pkgver}/$pkgname-$pkgver.tar.xz{,.sig})
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal
 
 build() {
@@ -67,5 +67,5 @@ package_kitty-shell-integration() {
   cp -r "$srcdir/$pkgbase-$pkgver/shell-integration" "$pkgdir/usr/lib/kitty/"
 }
 
-sha256sums=('41f29f42e260975a87433b0b72fc74360cfb77b153b63d35cabc0420fdbca550'
+sha256sums=('48081e9d8c3110a961dde27012ae3992a44f7ef0b2fe86295d45b24bd772d911'
             'SKIP')
