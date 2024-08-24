@@ -4,7 +4,7 @@
 
 pkgname=tigervnc
 pkgver=1.14.0
-pkgrel=1.2
+pkgrel=1.3
 _xorgver=21.1.13
 pkgdesc="Suite of VNC servers and clients based on the VNC 4 branch of TightVNC"
 arch=('x86_64')
@@ -32,7 +32,7 @@ sha256sums=('70f47b0fcd5d698e7e504cc02eeeb54a5ffec9468ab4f7716052628456373623'
             '63620c5faf0f76d6f52ee5aed57f3bc739a7868dac9379a1a7e36df6375540a0'
             'c9276f6ea277cf9654fb2cc3bc9dadbb2e596b5cf8ca867ee906c0080cf7f810'
             'df7d5ac0b16781ba50963833f1bdd4603f1cdfcc24b1727f563ae800508c9dc0'
-            'b5da49ee5f10dd40945df9c8563066c5523a24ac0ad934c7efcb41d0847b94ed')
+            '4a0a76288b0292d9d2ba5c3c3d1e012889c683e5ad85102ba3324dc890f0db84')
 
 prepare() {
   cd ${pkgname}
