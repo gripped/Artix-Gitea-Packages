@@ -1,8 +1,7 @@
-# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
-# Contributor: Bug <bug2000@gmail.com>
+# Maintainer: artist for Artix Linux
 
 pkgname=xpra
-pkgver=6.0
+pkgver=6.0.2
 pkgrel=1
 pkgdesc="multi-platform screen and application forwarding system screen for X11"
 arch=('x86_64')
@@ -25,7 +24,7 @@ backup=('etc/xpra/xpra.conf' 'etc/xpra/xorg.conf'
         'etc/xpra/conf.d/12_ssl.conf'
         'etc/xpra/conf.d/15_file_transfers.conf'
         'etc/xpra/conf.d/16_printing.conf'
-        'etc/xpra/conf.d/20_sound.conf'
+        'etc/xpra/conf.d/20_audio.conf'
         'etc/xpra/conf.d/30_picture.conf'
         'etc/xpra/conf.d/35_webcam.conf'
         'etc/xpra/conf.d/40_client.conf'
@@ -38,26 +37,29 @@ backup=('etc/xpra/xpra.conf' 'etc/xpra/xorg.conf'
 source=($pkgname-$pkgver.tar.xz::$url/src/$pkgname-$pkgver.tar.xz
         $pkgname-$pkgver.tar.xz.asc::$url/src/$pkgname-$pkgver.tar.xz.gpg)
 
-md5sums=('5c592302d52b28ca69cbb97d9c489adb'
+md5sums=('8de385953b03ad20bb6cb62754de5ec8'
          'SKIP')
-sha1sums=('e2e3e95a92ae69fa73c2b8e6b5e68a57b86ffc77'
+sha1sums=('a97368e6fafb6744cc7db179c7359c7ec7c3a293'
           'SKIP')
-sha256sums=('98be7324b95a1a9f48dd83a5560b63ff0bdc748429fb6c1f25356ec8c54c08b6'
+sha256sums=('c743f63c37614690704982989da9bcf4f60d45cc662b0e844dc67aef53944325'
             'SKIP')
 validpgpkeys=('B4993B57323148E37977E5D873254CAD17978FAF') # Xpra <xpra@xpra.org>
 
 build() {
   cd "${srcdir}/$pkgname-$pkgver"
-  python setup.py build
+  python setup.py build --without-cuda_kernels --without-cuda_rebuild
 }
 
 package() {
   cd "${srcdir}/$pkgname-$pkgver"
-  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+  #python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+  python setup.py install --root="${pkgdir}" --skip-build
   sed -i 's|/build/xpra/pkg/xpra/etc/xpra/xorg.conf|/etc/xpra/xorg.conf|' "${pkgdir}"/etc/xpra/conf.d/55_server_x11.conf
   mkdir -p "${pkgdir}"/usr/share/dbus-1
   #Move D-BUS Policy
   mv "${pkgdir}"/{etc,usr/share}/dbus-1/system.d
+  mv "${pkgdir}/usr/libexec/xpra" "${pkgdir}/usr/lib/"
+  rmdir "${{pkgdir}/usr/libexex"
   #Fix for FS#69804
   chmod +x "${pkgdir}"/usr/bin/*
 }
