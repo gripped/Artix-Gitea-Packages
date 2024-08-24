@@ -1,0 +1,17 @@
+--- a/unix/vncserver/tigervnc.pam	2024-08-24 15:19:27.112001557 +0200
++++ b/unix/vncserver/tigervnc.pam	2024-08-24 15:20:45.933501765 +0200
+@@ -3,13 +3,10 @@
+ # THIS IS AN EXAMPLE CONFIGURATION
+ # MODIFY AS NEEDED FOR YOUR DISTRIBUTION
+ 
+-# pam_selinux.so close should be the first session rule
+--session   required     pam_selinux.so close
++session    required     pam_elogind.so
+ session    required     pam_loginuid.so
+--session   required     pam_selinux.so open
+ session    required     pam_namespace.so
+ session    optional     pam_keyinit.so force revoke
+ session    required     pam_limits.so
+--session   optional     pam_systemd.so
+ session    required     pam_unix.so
+ -session   optional     pam_reauthorize.so prepare

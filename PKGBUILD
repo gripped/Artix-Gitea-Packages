@@ -27,7 +27,7 @@ source=(git+https://github.com/TigerVNC/tigervnc.git#tag=v${pkgver}
         git+https://gitlab.freedesktop.org/xorg/xserver.git?#tag=xorg-server-${_xorgver}
 	Xsession
 	more-xsessions.patch
-	remove-selinux.patch)
+	fix-pam.patch)
 sha256sums=('70f47b0fcd5d698e7e504cc02eeeb54a5ffec9468ab4f7716052628456373623'
             '63620c5faf0f76d6f52ee5aed57f3bc739a7868dac9379a1a7e36df6375540a0'
             'c9276f6ea277cf9654fb2cc3bc9dadbb2e596b5cf8ca867ee906c0080cf7f810'
@@ -37,7 +37,7 @@ sha256sums=('70f47b0fcd5d698e7e504cc02eeeb54a5ffec9468ab4f7716052628456373623'
 prepare() {
   cd ${pkgname}
   patch -p1 -i "$srcdir"/more-xsessions.patch
-  patch -p1 -i "$srcdir"/remove-selinux.patch
+  patch -p1 -i "$srcdir"/fix-pam.patch
 
   cd unix/xserver
   cp -r "$srcdir"/xserver/* .
