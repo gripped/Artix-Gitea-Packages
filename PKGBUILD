@@ -10,14 +10,13 @@ license=("GPL3")
 depends=(
 	"gtk3>=3.24"
 	"glib2>=2.37"
-
 	"ayatana-ido"
 )
 makedepends=(
 	"gcc"
 	"make"
 	"pkgconf"
-
+        "glib2-devel"
 	"cmake>=3.13"
 	"vala"
 	"gobject-introspection"
@@ -40,4 +39,6 @@ build() {
 package() {
 	cd "$pkgname-$pkgver"
 	make install DESTDIR="$pkgdir"
+        mv "${pkgdir}/usr/libexec/libayatana-indicator" "${pkgdir}/usr/lib/"
+        rmdir "${pkgdir}/usr/libexec"
 }
