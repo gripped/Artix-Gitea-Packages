@@ -2,7 +2,7 @@
 
 pkgname=efl
 pkgver=1.27.0
-pkgrel=3
+pkgrel=4
 _commit="248d62bf5e13ca8800a73b6cf3e8759443468282"
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
@@ -38,7 +38,7 @@ build() {
     -Dpulseaudio=true \
     -Dglib=true \
     -Dsystemd=false \
-    -Dnetwork-backend=none \
+    -Dnetwork-backend=connman \
     -Dfb=true \
     -Ddrm=true \
     -Dwl=true \
