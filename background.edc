@@ -1,0 +1,14 @@
+group { name: "e/desktop/background";
+   images.image: "Artix_dna_spiral_dark_bw-4K.png" COMP;
+   parts {
+      part { name: "bg";
+         description { state: "default" 0.0;
+            image.normal: "Artix_dna_spiral_dark_bw-4K.png";
+            image.scale_hint: STATIC;
+            fill.smooth: 0;
+            ASPECT_FILL((1024/653))
+         }
+      }
+   }
+}
+
