@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=mimetreeparser
-pkgver=24.05.2
+pkgver=24.08.0
 pkgrel=1
 pkgdesc='Parser for MIME trees'
 arch=(x86_64)
@@ -27,7 +27,7 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('892957157b76b090d45c36204b0ddf79de4aa6223c2d7ce75eb62b8a15a75a8c'
+sha256sums=('bc0401a7d4dbae4b18cead7d788b54bd6b27b460850b299b01f07b47069db05e'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
