@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - massif-visualizer
 actions:
-  addRepo: null-gremlins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.08.0-1
+    packages:
+      - massif-visualizer-24.08.0-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
