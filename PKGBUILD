@@ -3,7 +3,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=mbox-importer
-pkgver=24.05.2
+pkgver=24.08.0
 pkgrel=1
 pkgdesc='Import mbox files to KMail'
 arch=(x86_64)
@@ -12,9 +12,11 @@ license=(GPL-2.0-or-later)
 depends=(gcc-libs
          glibc
          kconfig
+         kconfigwidgets
          kcoreaddons
          kcrash
          ki18n
+         kiconthemes
          kidentitymanagement
          kwidgetsaddons
          libakonadi
@@ -25,7 +27,7 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0228ea111805e339978cf9a05c92635f13e44c377fcc05e49ceba55f2f0a7403'
+sha256sums=('559a112c0dbc73ca152d1d237a4149dea98ce97ecb75566fbdef36a7e1b21c36'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
