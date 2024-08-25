@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=merkuro
-pkgver=24.05.2
+pkgver=24.08.0
 pkgrel=1
 pkgdesc='A calendar application using Akonadi to sync with external services'
 arch=(x86_64)
@@ -25,22 +25,24 @@ depends=(akonadi-calendar
          kdepim-runtime
          ki18n
          kidentitymanagement
-         kio
          kirigami
          kirigami-addons
          kitemmodels
          kmailtransport
          kmbox
          kmime
+         knotifications
+         ksvg
          kwidgetsaddons
          kwindowsystem
-         kxmlgui
          libakonadi
+         libkdepim
          libkleo
          libplasma
          mailcommon
          messagelib
          mimetreeparser
+         pimcommon
          prison
          qqc2-desktop-style 
          qt6-5compat
@@ -54,7 +56,7 @@ replaces=(kalendar)
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d0d174fc0a79466c87ba1fd0a33c2230e89e781c7303af8ce9b493670052d658'
+sha256sums=('726070bef38453eadd3dee68b68fb294dc215107b98c1a8edb461bad1c9fbdae'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
