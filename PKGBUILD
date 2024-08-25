@@ -2,11 +2,11 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kweathercore
-pkgver=0.8.0
-pkgrel=2
+pkgver=24.08.0
+pkgrel=1
 pkgdesc='Library to facilitate retrieval of weather information including forecasts and alerts'
 arch=(x86_64)
-license=(GPL)
+license=(GPL-2.0-or-later)
 url='https://invent.kde.org/libraries/kweathercore'
 depends=(gcc-libs
          glibc
@@ -17,14 +17,15 @@ depends=(gcc-libs
 makedepends=(doxygen
              extra-cmake-modules
              qt6-tools)
-source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('9bcac13daf98705e2f0d5b06b21a1a8694962078fce1bf620dbbc364873a0efe'
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('ada469144f2cd75f70c6d474b965e3d5cf49c80c4f3270fad36399889126b1b2'
             'SKIP')
-validpgpkeys=(0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D  # Bhushan Shah (mykolab address) <bshah@mykolab.com>
-              E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
+validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
+              F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
+              D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   cmake --build build
