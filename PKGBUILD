@@ -2,7 +2,7 @@
 
 pkgname=moksha
 pkgver=0.4.1
-pkgrel=13
+pkgrel=13.1
 _commit="470f1d3e840416678d6e61c13603b50f118c2b5e"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -32,7 +32,8 @@ source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=$
         "eina-log.sh"
         "80-local.rules"
         "sysactions.patch"
-        "Artix_black-clean.png"
+        "Artix_dna_spiral_dark_bw-4K.png"
+        "background.edc"
         "artix-icon.png"
         "e.cfg-mixer_disabled")
 
@@ -45,11 +46,12 @@ prepare() {
   sed -i 's/About Operating System/Moksha Desktop/g' po/*.po*
   sed -i 's/Bodhi/Artix/g' config/bodhi/profile.desktop
   cp "$srcdir/artix-icon.png" config/bodhi/icon.png
+  cp "$srcdir/Artix_dna_spiral_dark_bw-4K.png" data/themes/img/
+  cp "$srcdir/background.edc" data/themes/edc/
 }
 
 build() {
   cd "$srcdir/${pkgname}"
-  cp "$srcdir/Artix_black-clean.png" data/themes/img/bg_radgrad.png
   ./autogen.sh
   ./configure --prefix=/usr --disable-bodhi
   make
@@ -75,6 +77,7 @@ sha256sums=('0f2e70dcebbd18d89290befa7c80d53d8475b315b0098100e1a79f400ac8cae4'
             '0bd52f4d66bd5f964996f88b379e6b8f50fcf457151ff30083d2d1b13f27dc36'
             '67a67d03fbfb59edecafc6bd3311e258e79da12726dcb1a44f037d54f31a1797'
             '8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c'
-            '0d9ecc6b60ccd2b49e86258cb7a7e228b384af005aaff5f3b7d4a153d34155aa'
+            '1b6f11541e730b1a8c28d32ce058f0c4129940f917a8952e9f80b27dec956c11'
+            '6e44b16c0a4cddea98dafe9e922d9157bc1ec10c997f5c026b6d633eb1c06831'
             'd3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95'
             '1b1a574cdb919a4460892cd9c1ed8650878df7d29486965aafcabd7df4eb3904')
