@@ -6,23 +6,44 @@
 
 pkgname=plymouth
 pkgver=24.004.60
-pkgrel=8
+pkgrel=9
 pkgdesc='Graphical boot splash screen'
-arch=('x86_64')
+arch=(x86_64)
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
-license=('GPL-2.0-or-later')
-depends=('bash' 'cairo' 'cantarell-fonts' 'filesystem' 'fontconfig' 'freetype2' 'glib2' 'glibc'
-         'libdrm' 'libevdev' 'libpng' 'libx11' 'libxkbcommon' 'pango'
-         'xkeyboard-config')
-makedepends=('git' 'gtk3' 'docbook-xsl' 'meson')
+license=(GPL-2.0-or-later)
+depends=(
+  bash
+  cairo
+  cantarell-fonts
+  filesystem
+  fontconfig
+  freetype2
+  glib2
+  glibc
+  libdrm
+  libevdev
+  libpng
+  libx11
+  libxkbcommon
+  pango
+  xkeyboard-config
+)
+makedepends=(
+  docbook-xsl
+  git
+  gtk3
+  meson
+)
 optdepends=('gtk3: x11 renderer')
-backup=('etc/plymouth/plymouthd.conf')
+backup=(etc/plymouth/plymouthd.conf)
 install='plymouth.install'
-source=("git+https://gitlab.freedesktop.org/plymouth/$pkgname.git#tag=$pkgver"
-        'plymouth.initcpio_hook'
-        'plymouth.initcpio_install'
-        'plymouth-shutdown.initcpio_install'
-        'mkinitcpio-generate-shutdown-ramfs-plymouth.conf')
+source=(
+  "git+https://gitlab.freedesktop.org/plymouth/$pkgname.git#tag=$pkgver"
+  plymouth.initcpio_hook
+  plymouth.initcpio_install
+  plymouth-shutdown.initcpio_install
+  mkinitcpio-generate-shutdown-ramfs-plymouth.conf
+)
 b2sums=('a3d55f4f7be81bdf2ddd5c2b74a3fdb4e368c31fc41e12ab100ce2a7986cb418151b3df0d0316011710dd0e1ae99631166eecf80bc1dd5cc9054a4685266afed'
         'afb2449b542aa3e971eab6b953c907347fdf4e499b4140a5e6736a7c99557c0d8d2fed28dbee56d84c8c619335c59bd382457d85e51145884ad0616e9095f232'
         'a943399b666d3ac34fd8a3736d4aaf02882512c22b7d06d8a482c712832dae2d2becdcaf9f7b4771d27137efea081b1ef37a7b451e254e5730f2a97e9096509e'
@@ -33,7 +54,7 @@ prepare() {
   cd $pkgname
 
   # Various fixes from upstream
-  git cherry-pick -n -m 1 24.004.60..3ce6441aa066545f44624025b3d27d691bbda2a9
+  git cherry-pick -n -m 1 24.004.60..c08a22599f595915e39a1a900c5eb86c967a15e5
 
   # Use mkinitcpio to update initrd
   sed -i 's/^dracut -f$/mkinitcpio -P/' scripts/plymouth-update-initrd
@@ -43,7 +64,7 @@ prepare() {
 }
 
 build() {
-  artix-meson build $pkgname \
+  artix-meson $pkgname build \
     -D logo=/usr/share/pixmaps/artixlinux-logo.png -Dsystemd-integration=false
   meson compile -C build
 
@@ -59,7 +80,6 @@ package() {
   install -Dm644 plymouth.initcpio_hook "$pkgdir/usr/lib/initcpio/hooks/$pkgname"
   install -Dm644 plymouth.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname"
 
-  # Install mkinitcpio shutdown hook and drop-in snippet
   install -Dm644 plymouth-shutdown.initcpio_install "$pkgdir/usr/lib/initcpio/install/$pkgname-shutdown"
   
   # Install logo for the spinner theme
