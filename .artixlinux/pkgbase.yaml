@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - elementary-icon-theme
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: null
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.0.0-1
-    packages:
-      - elementary-icon-theme-8.0.0-1-any.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
