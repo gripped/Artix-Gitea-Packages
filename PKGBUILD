@@ -2,13 +2,14 @@
 
 pkgname=moksha-themes
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc='Themes for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
 arch=('x86_64')
 license=('GPL')
 options=('!debug')
 depends=(
+  moksha-background-artix-classic
   moksha-theme-arc
   moksha-theme-arc-dark
   moksha-theme-arc-green
