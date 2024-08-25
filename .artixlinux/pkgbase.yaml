@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: massif-visualizer
+  version: 24.08.0-1
+  arch:
+    - x86_64
+  pkgname:
+    - massif-visualizer
 actions:
-  addRepo: null
+  addRepo: null-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,3 +52,7 @@ repos:
   galaxy:
     version: null
     packages: []
+  null-gremlins:
+    version: 24.08.0-1
+    packages:
+      - massif-visualizer-24.08.0-1-x86_64.pkg.tar.zst
