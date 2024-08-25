@@ -18,7 +18,7 @@ pkgname=(kde-applications-meta
          kde-system-meta
          kde-utilities-meta
          kdevelop-meta)
-pkgver=24.05
+pkgver=24.08
 pkgrel=1
 arch=(any)
 license=(None)
@@ -130,6 +130,7 @@ package_kde-graphics-meta() {
            gwenview
            kamera
            kcolorchooser
+           kgraphviewer
            kimagemapeditor
            koko
            kolourpaint
@@ -198,7 +199,6 @@ package_kde-pim-meta() {
            kalarm
            kleopatra
            kmail
-           knotes
            kontact
            korganizer
            kdepim-addons
@@ -219,6 +219,7 @@ package_kde-sdk-meta() {
            kirigami-gallery
            kompare
            lokalize
+           massif-visualizer
            poxml
            kdesdk-thumbnailers
            umbrello)
