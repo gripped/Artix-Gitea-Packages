@@ -8,7 +8,7 @@ pkgname=(
   glib2-devel
   glib2-docs
 )
-pkgver=2.80.4
+pkgver=2.80.5
 pkgrel=1
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
@@ -49,7 +49,7 @@ source=(
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
-b2sums=('ec233c9dd6836fb362e45092cd8122757e9faaff2ed910818ecc9e88359777a5935a93f6ed26a649437c9014354bad1cc122716462c92335a280d685cf3ffc71'
+b2sums=('fbda547a8b941dd877fb704406b78e16856c0337a71102d0041b6276d648d0f90fc70a7a0c25c0d9a5b3d1cdc9c3f1599d44f386d77698ea76c24a143fa76622'
         'SKIP'
         '94c73ca7070c239494873dd52d6ee09382bbb5b1201f7afd737cfa140b1a2fb0744b2c2831baf3943d1d072550c35888d21ce6f19f89481ff9d1a60d9a0b30e0'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
