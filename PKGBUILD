@@ -4,13 +4,20 @@
 pkgbase='packagekit'
 pkgname=('packagekit' 'libpackagekit-glib')
 pkgver=1.2.8
-pkgrel=8
+pkgrel=9
 pkgdesc='A system designed to make installation and updates of packages easier'
 arch=('x86_64')
 url='https://www.freedesktop.org/software/PackageKit/'
 license=('GPL-2.0-or-later')
-makedepends=('polkit' 'sqlite' 'gobject-introspection' 'intltool'
-             'bash-completion' 'vala' 'meson')
+makedepends=('bash-completion'
+             'glib2-devel'
+             'gobject-introspection'
+             'intltool'
+             'meson'
+             'polkit'
+             'python-setuptools'
+             'sqlite'
+             'vala')
 options=('!emptydirs')
 validpgpkeys=('163EB50119225DB3DF8F49EA17ACBA8DFA970E17'        # Richard Hughes <richard@hughsie.com>
               'EC60AABDF42AAE8FB062640480858FA38F62AF74')       # Kalev Lember <klember@redhat.com>
@@ -26,13 +33,13 @@ prepare() {
 
 build() {
         local _meson_options=(
+                -Dsystemd=false
+                -Doffline_update=false
                 -Dcron=false
                 -Dgstreamer_plugin=false
                 -Dgtk_doc=false
                 -Dgtk_module=false
                 -Dpackaging_backend=alpm
-                -Dsystemd=false
-                -Doffline_update=false
         )
 
         artix-meson "PackageKit-$pkgver" build "${_meson_options[@]}"
