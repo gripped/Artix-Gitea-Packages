@@ -3,7 +3,7 @@
 
 pkgname=merkuro
 pkgver=24.08.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A calendar application using Akonadi to sync with external services'
 arch=(x86_64)
 url='https://apps.kde.org/merkuro.calendar/'
@@ -50,7 +50,8 @@ depends=(akonadi-calendar
          qt6-declarative
          qt6-location
          qt6-positioning)
-makedepends=(extra-cmake-modules)
+makedepends=(extra-cmake-modules
+             patchelf)
 conflicts=(kalendar)
 replaces=(kalendar)
 groups=(kde-applications
@@ -70,4 +71,7 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+# Workaround breakage with --as-needed https://bugs.kde.org/show_bug.cgi?id=491808
+  patchelf --add-needed libmerkuro_contact_plugin.so.6 "$pkgdir"/usr/bin/merkuro-calendar
+  patchelf --add-needed libmerkuro_contact_plugin.so.6 "$pkgdir"/usr/bin/merkuro-contact
 }
