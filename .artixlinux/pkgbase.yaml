@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: vice
-  version: 3.8-2
+  version: 3.8-3
   arch:
     - x86_64
   pkgname:
     - vice
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 3.8-3
+    packages:
+      - vice-3.8-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
