@@ -3,71 +3,79 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt-lts
-pkgver=6.6.23.28.realtime1
-pkgrel=7
+pkgver=6.6.44.rt39.artix1
+pkgrel=1
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
-url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/commits/v$pkgver"
+url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts"
 makedepends=(
   bc
   cpio
   gettext
-  git
   graphviz
   imagemagick
   libelf
   pahole
   perl
+  python
   python-sphinx
+  python-yaml
   tar
   texlive-latexextra
   xz
 )
-options=(!strip)
+options=(
+  !debug
+  !strip
+)
+_pre_rt_ver=${pkgver%.*}
+_upstream_ver=${_pre_rt_ver%.*}
+_rt_ver=${_pre_rt_ver%.*}-${_pre_rt_ver##*.}
+_srcname=linux-${_upstream_ver}
+_srctag=v${_rt_ver}-${pkgver##*.}
 source=(
-  git+https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts.git/#tag=v$pkgver?signed
+  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/projects/rt/${_upstream_ver%.*}/patch-${_rt_ver}.patch.{xz,sign}
+  $url/-/releases/${_srctag}/downloads/$pkgbase-${_srctag}.patch{,.sig}
   config
-  0006-docutils.patch
  )
-sha512sums=('2ec68f30bcd6987d570003baf19c8533fd021600ea4276cf1cea3c54ae47989c1a6b613c8397a7e77c1dd4185c986ba1d71db0bef452bfab7ffd638df86c2a90'
-            '69e1b40a9ec605c32e73dcf4bb41885a6c991cb9e202d9faa7929bf33e170583d1350cf30c628c420b0cc7e4caa0c31fcbe1762825fd822c3320ccdde8d8098d'
-            'a5a2cdefc964803354f1acf5a61a7847e7f566bcf4471650504254fecc8d343bc65f06f7f8ee662b0b26fe2e24854e187e5c73c375d9e6522022a1a08369960b')
-b2sums=('ceffbacbf079b2233be766568033fef3e913cb65589539e84e6cf0d60fc5b3b67002f92b75031ef2bd432ee02b671279ed3cc3e21c3eea9d28f207df5ea1f4e4'
-        '651de87738a5db75bd99322447b07ad8c6c834ff0510d84ebf60be97a5a950fec870d7d23d4d1733ff66dcc493cdef5dc2a9d3ab250376c4299b949530e0bd79'
-        '0bb42a22c110f06a45e59a9adc194184a51ff97e5584d6ffabca0aa37e1e65ccaf44f43dc744eaa3861d6f6b00e299d4662bcf0c0d94478af9352b4c4f6b0ffd')
+sha512sums=('75ea5973af1d9994c5bc7d4538a314100ffb9daf40c98cbd7eb4f409ceb5d007abc257cd7017221817f2a8d8f097558e7498a90b88ec2f3b4a611eda8b794fb4'
+            'SKIP'
+            '4ba4f6b1da0effd0ad6dc0829d7ae1e2bdd82884acd073dc26736af8545d5034cbc57b522f39229dca228120bcebe7910f263dac043e874376f5ced125dd1be1'
+            'SKIP'
+            '5400c3e0d71f0c856606a43f3ffb9197388c2a24b11ea1089d30226b5492f25b3d6cb6c12854b0feea2f68c58eaaf17f0d1b498be90dd80ea3760e3866b1e958'
+            'SKIP'
+            'beefd4873d5536e096afc914ac745aaa71c93847a5880b5560fa291255d7877b335491483703db918a7a83c053427e9d33a41aa30025d4aefc8dd9c96bbb8e0a')
+b2sums=('52c7e474021f4288175477b613e04490471fc365809c48f25effe7a625db61e3599dc8c46036b250d0ff25c990eb9d9591f59f07a81ff73c83df81ccce751250'
+        'SKIP'
+        '04786dee4fd0f0a4978ed926868d53293fa7ec66d77aba3f5106b1845ba438354e92590d6fcd23b22583dc26cb32358108628c363405ed500ee5eb3bcaede9f6'
+        'SKIP'
+        'd551c48454a6163bc465d010b2a736e740f444369671dc2f2e7dc569d0c5ff0c7071cf758422bc0276a80fb75d01de5060e50b3e050f91c74cd6b9c8cb6a64f0'
+        'SKIP'
+        '8c775e406eef8e9ec2696f22d26fa620a7e0706dea460105531581db7f21c99697c922b7a633dcd3828b4e8ca4f0fffcd539495998c5dc1c3870f886a36f0b79')
 validpgpkeys=(
-  '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-  '5ED9A48FC54C0A22D1D0804CEBC26CDB5A56DE73'  # Steven Rostedt (Der Hacker) <rostedt@goodmis.org>
-  '991F6E3F0765CF6295888586139B09DA5BF0D338'  # David Runge <dvzrv@archlinux.org>
+  647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+  D5653EA39C8675DA4BD5971C13B55DD07C53B851  # Clark Williams (Kernel Correspondence) <clrkwllms@kernel.org>
+  991F6E3F0765CF6295888586139B09DA5BF0D338  # David Runge <dvzrv@archlinux.org>
 )
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
-_make() {
-  test -s version
-  make KERNELRELEASE="$(<version)" "$@"
-}
-
 prepare() {
-  cd $pkgbase
+  cd $_srcname
 
   echo "Setting version..."
   echo "-$pkgrel" > localversion.10-pkgrel
   echo "${pkgbase#linux}" > localversion.20-pkgname
-  make defconfig
-  # workaround for scripts/setlocalversion trying to be too clever (and appending commit checksums where it shouldn't)
-  local kernelrelease=$(make -s kernelrelease)
-  echo "${kernelrelease/-g*/}" > version
-  make mrproper
 
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
     src="${src##*/}"
-    # allow to pick up the RT patch
-    src="${src//patch.xz/patch}"
+    src="${src%.xz}"
+    src="${src%.zst}"
     [[ $src = *.patch ]] || continue
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
@@ -75,34 +83,32 @@ prepare() {
 
   echo "Setting config..."
   cp ../config .config
-  _make olddefconfig
+  make olddefconfig
   # make nconfig
   diff -u ../config .config || :
 
+  make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
 }
 
 build() {
-  cd $pkgbase
-  _make all
-  _make htmldocs
+  cd $_srcname
+  make all
+  make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
+  make htmldocs
 }
 
 _package() {
   pkgdesc="The $pkgdesc kernel and modules"
   license=(
     'Apache-2.0 OR MIT'
-
     'BSD-2-Clause OR GPL-2.0-or-later'
-
     BSD-3-Clause
     'BSD-3-Clause OR GPL-2.0-only'
     'BSD-3-Clause OR GPL-2.0-or-later'
     BSD-3-Clause-Clear
-
     GPL-1.0-or-later
     'GPL-1.0-or-later OR BSD-3-Clause'
-
     GPL-2.0-only
     'GPL-2.0-only OR Apache-2.0'
     'GPL-2.0-only OR BSD-2-Clause'
@@ -113,22 +119,17 @@ _package() {
     'GPL-2.0-only OR MPL-1.1'
     'GPL-2.0-only OR X11'
     'GPL-2.0-only WITH Linux-syscall-note'
-
     GPL-2.0-or-later
     'GPL-2.0-or-later OR BSD-2-Clause'
     'GPL-2.0-or-later OR BSD-3-Clause'
     'GPL-2.0-or-later OR MIT'
     'GPL-2.0-or-later OR X11'
     'GPL-2.0-or-later WITH GCC-exception-2.0'
-
     ISC
-
     LGPL-2.0-or-later
     'LGPL-2.1-only'
     'LGPL-2.1-only OR BSD-2-Clause'
-
     LGPL-2.1-or-later
-
     MIT
     MPL-1.1
     X11
@@ -149,19 +150,19 @@ _package() {
     WIREGUARD-MODULE
   )
 
-  cd $pkgbase
+  cd $_srcname
   local modulesdir="$pkgdir/usr/lib/modules/$(<version)"
 
   echo "Installing boot image..."
   # systemd expects to find the kernel here to allow hibernation
   # https://github.com/systemd/systemd/commit/edda44605f06a41fb86b7ab8128dcf99161d2344
-  install -Dm644 "$(_make -s image_name)" "$modulesdir/vmlinuz"
+  install -Dm644 "$(make -s image_name)" "$modulesdir/vmlinuz"
 
   # Used by mkinitcpio to name the kernel
   echo "$pkgbase" | install -Dm644 /dev/stdin "$modulesdir/pkgbase"
 
   echo "Installing modules..."
-  ZSTD_CLEVEL=19 _make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
+  ZSTD_CLEVEL=19 make INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 \
     DEPMOD=/doesnt/exist modules_install  # Suppress depmod
 
   # remove build link
@@ -178,10 +179,8 @@ _package-headers() {
   license=(
     BSD-3-Clause
     'BSD-3-Clause OR GPL-2.0-only'
-
     GPL-1.0-or-later
     'GPL-1.0-or-later WITH Linux-syscall-note'
-
     GPL-2.0-only
     'GPL-2.0-only OR Apache-2.0'
     'GPL-2.0-only OR BSD-2-Clause'
@@ -199,7 +198,6 @@ _package-headers() {
     '(GPL-2.0-only WITH Linux-syscall-note) OR CDDL-1.0'
     '(GPL-2.0-only WITH Linux-syscall-note) OR Linux-OpenIB'
     '(GPL-2.0-only WITH Linux-syscall-note) OR MIT'
-
     GPL-2.0-or-later
     'GPL-2.0-or-later OR BSD-2-Clause'
     'GPL-2.0-or-later OR BSD-3-Clause'
@@ -209,32 +207,27 @@ _package-headers() {
     '(GPL-2.0-or-later WITH Linux-syscall-note) OR MIT'
     'LGPL-2.0-or-later OR BSD-2-Clause'
     'LGPL-2.0-or-later WITH Linux-syscall-note'
-
     ISC
-
     'LGPL-2.0-or-later WITH Linux-syscall-note'
     'LGPL-2.0-or-later OR BSD-2-Clause'
-
     LGPL-2.1-only
     'LGPL-2.1-only OR BSD-2-Clause'
     'LGPL-2.1-only OR MIT'
     'LGPL-2.1-only WITH Linux-syscall-note'
-
     LGPL-2.1-or-later
     'LGPL-2.1-or-later OR BSD-2-Clause'
     'LGPL-2.1-or-later WITH Linux-syscall-note'
-
     MIT
     Zlib
   )
   depends=(pahole)
 
-  cd $pkgbase
+  cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing build files..."
   install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
-    localversion.* version vmlinux
+    localversion.* version vmlinux tools/bpf/bpftool/vmlinux.h
   install -Dt "$builddir/kernel" -m644 kernel/Makefile
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
@@ -316,28 +309,23 @@ _package-docs() {
   pkgdesc="Documentation for the $pkgdesc kernel"
   license=(
     BSD-3-Clause
-
     GFDL-1.1-no-invariants-or-later
-
     GPL-2.0-only
     'GPL-2.0-only OR BSD-2-Clause'
     'GPL-2.0-only OR BSD-3-Clause'
     'GPL-2.0-only OR GFDL-1.1-no-invariants-or-later'
     'GPL-2.0-only OR GFDL-1.2-no-invariants-only'
     'GPL-2.0-only OR MIT'
-
     GPL-2.0-or-later
     'GPL-2.0-or-later OR BSD-2-Clause'
     'GPL-2.0-or-later OR CC-BY-4.0'
     'GPL-2.0-or-later OR MIT'
     'GPL-2.0-or-later OR X11'
-
     'LGPL-2.1-only OR BSD-2-Clause'
-
     MIT
   )
 
-  cd $pkgbase
+  cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   echo "Installing documentation..."
