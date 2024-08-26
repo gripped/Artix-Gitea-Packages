@@ -4,7 +4,7 @@ _upstream=arch-rebuild-order
 
 pkgname=artix-rebuild-order
 pkgver=0.4.3
-pkgrel=1
+pkgrel=2
 pkgdesc="CLI tool to determine the rebuild order of provided package(s)"
 arch=('x86_64')
 url="https://gitlab.archlinux.org/archlinux/arch-rebuild-order"
