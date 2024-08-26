@@ -3,7 +3,7 @@
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 
 pkgname=freeradius
-pkgver=3.2.5
+pkgver=3.2.6
 pkgrel=1
 pkgdesc='The premier open source RADIUS server'
 arch=('x86_64')
@@ -28,7 +28,7 @@ validpgpkeys=('BF2384EC6938B9744B03E2A620E37C25995B4F85') # FreeRADIUS - Package
 source=("https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${pkgver//./_}/freeradius-server-${pkgver}.tar.bz2"{,.sig}
         'freeradius-sysusers.conf'
         'freeradius-tmpfiles.conf')
-sha256sums=('0fe4f57b28b942c5e5955f48a88769817ca287a830b939d7120ffcff3fcdba88'
+sha256sums=('18bbb2318448f13918897ae7a38b36afd3db7dd5c66f78ad24d2e0051269d9b2'
             'SKIP'
             '8ecaca94c7d0f4806b326685312dd4e543ce9c6c183d3d7ad01c1a0197bdfb94'
             'f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc')
@@ -44,7 +44,9 @@ build() {
     --localstatedir=/var \
     --enable-heimdal-krb5 \
     --enable-reproducible-builds \
+    --without-rlm_python \
     --with-regex=false \
+    --with-rlm_python3 \
     --with-system-libltdl \
     --with-system-libtool \
     --with-udpfromto
