@@ -49,8 +49,6 @@ check() {
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
-
-  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
