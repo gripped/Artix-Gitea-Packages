@@ -4,6 +4,7 @@
 
 pkgbase=linux-rt
 pkgver=6.10.2.rt14.artix1
+archpkgver=6.10.2.rt14.arch1
 pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
@@ -28,13 +29,13 @@ options=(
   !debug
   !strip
 )
-_pre_rt_ver=${pkgver%.*}
+_pre_rt_ver=${archpkgver%.*}
 _upstream_ver=${_pre_rt_ver%.*}
 _rt_ver=${_pre_rt_ver%.*}-${_pre_rt_ver##*.}
 _srcname=linux-${_upstream_ver}
-_srctag=v${_rt_ver}-${pkgver##*.}
+_srctag=v${_rt_ver}-${archpkgver##*.}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/v${archpkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   https://cdn.kernel.org/pub/linux/kernel/projects/rt/${_upstream_ver%.*}/patch-${_rt_ver}.patch.{xz,sign}
   $url/-/releases/${_srctag}/downloads/$pkgbase-${_srctag}.patch{,.sig}
   config
