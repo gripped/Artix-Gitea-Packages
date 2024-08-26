@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: perl-parallel-forkmanager
-  version: 2.02-6
+  version: 2.03-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.02-6
+    version: 2.03-1
     packages:
-      - perl-parallel-forkmanager-2.02-6-any.pkg.tar.zst
+      - perl-parallel-forkmanager-2.03-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
