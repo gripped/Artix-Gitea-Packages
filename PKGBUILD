@@ -3,7 +3,7 @@
 
 pkgname=pacman-contrib
 pkgver=1.10.6
-pkgrel=1
+pkgrel=2
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=('x86_64')
 url=https://gitlab.archlinux.org/pacman/pacman-contrib
@@ -50,7 +50,7 @@ package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
 
-  rm -fr $pkgdir/usr/lib/systemd
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
