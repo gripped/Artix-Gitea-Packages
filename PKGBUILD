@@ -2,7 +2,7 @@
 
 pkgname=ephoto
 pkgver=1.6.5
-pkgrel=1
+pkgrel=2
 pkgdesc="A light image viewer based on EFL"
 arch=('x86_64')
 url="http://www.enlightenment.org"
