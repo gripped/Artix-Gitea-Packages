@@ -5,7 +5,7 @@
 _gemname=ronn-ng
 pkgname=ruby-$_gemname
 pkgver=0.10.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Manual page formatter that generates man pages from markdown'
 arch=(any)
 url='https://github.com/apjanke/ronn-ng'
@@ -17,6 +17,7 @@ depends=(
   ruby-kramdown
   ruby-kramdown-parser-gfm
   ruby-nokogiri
+  ruby-erb
 )
 makedepends=(
   ruby-rdoc
