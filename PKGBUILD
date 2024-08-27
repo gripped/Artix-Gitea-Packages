@@ -1,6 +1,6 @@
 pkgname=libayatana-indicator
 pkgver=0.9.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Ayatana Indicators Shared Library"
 arch=("x86_64")
 url="https://github.com/AyatanaIndicators/libayatana-indicator"
