@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - termshark
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -51,5 +51,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 2.4.0-2.1
+    packages:
+      - termshark-2.4.0-2.1-x86_64.pkg.tar.zst
