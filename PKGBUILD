@@ -10,7 +10,7 @@ url='http://pallini.di.uniroma1.it/'
 license=(Apache-2.0)
 depends=(glibc)
 source=(http://pallini.di.uniroma1.it/nauty${pkgver//./_}.tar.gz)
-sha256sums=('9ac46554c5bb7ecd99601f3c8b4d7857b178059b3eb3a58676ccfdb9d959f403')
+sha256sums=('c97ab42bf48796a86a598bce3e9269047ca2b32c14fc23e07208a244fe52c4ee')
  
 build() {
   cd nauty${pkgver//./_}
