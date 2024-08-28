@@ -111,7 +111,7 @@ prepare() {
 build() {
   # Doesn't compile without remove these flags as of 4.10
   # incompatible-pointer-types: https://bugs.gentoo.org/919758
-  export CFLAGS="$CFLAGS -ffat-lto-objects -Wno-error=incompatible-pointer-types"
+  export CLFAGS="$CFLAGS -fPIC -ffat-lto-objects -Wno-error=incompatible-pointer-types"
 
   # Apply flags for cross-compilation
   export CROSSCFLAGS="-O2 -pipe"
