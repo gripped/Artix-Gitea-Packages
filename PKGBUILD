@@ -132,7 +132,7 @@ build() {
     --enable-win64 \
     --with-xattr
 
-  make
+  make CFLAGS+=" -Wno-error"
 
   msg2 "Building Wine-32..."
 
@@ -147,7 +147,7 @@ build() {
     --libdir=/usr/lib32 \
     --with-wine64="$srcdir/$pkgname-64-build"
 
-  make
+  make CFLAGS+=" -Wno-error"
 }
 
 package() {
