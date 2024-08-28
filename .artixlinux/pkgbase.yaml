@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: bash
-  version: 5.2.032-1.1
+  version: 5.2.032-2
   arch:
     - x86_64
   pkgname:
     - bash
 actions:
-  addRepo: system
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 5.2.032-2
+    packages:
+      - bash-5.2.032-2-x86_64.pkg.tar.zst
   system:
     version: 5.2.032-1.1
     packages:

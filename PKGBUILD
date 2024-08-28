@@ -8,7 +8,7 @@ pkgname=bash
 _basever=5.2
 _patchlevel=032
 pkgver=${_basever}.${_patchlevel}
-pkgrel=1.1
+pkgrel=2
 pkgdesc='The GNU Bourne Again shell'
 arch=(x86_64)
 license=('GPL-3.0-or-later')
@@ -24,6 +24,7 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz{,.sig}
         bash-5.2_p21-configure-strtold.patch
         bash-5.2_p21-wpointer-to-int.patch
         bash-5.2_p32-memory-leaks.patch
+        bash-5.2_p32-read-delimiter-in-invalid-mbchar.patch
         dot.bashrc
         dot.bash_profile
         dot.bash_logout
@@ -44,6 +45,7 @@ b2sums=('51b196e710794ebad8eac28c31c93eb99ac1a7db30919a13271e39e1cb66a0672f242df
         '83ec6ff756543ee44c18902f2d30dd662a84237b9594a7e0cfc21a1c16fce49e37cf67729b3a17d59cc978cb6675e04457e3b6b0909d94cb234a1dde96f7c9ea'
         '0c7f5eb5b697abf15c1d17888a973e44d0ead1f095778b41841a6a1937a5b9e7ce5fa6a05e4404504990b0a244fdecfc12ce7c33ee7d67b4c837435e9bfe2b57'
         '373aa3be1f0a6bc65403cde63cbc4dcd612336e86b1cae918670a99e8ca639c665ac7efb467ec8823a62cec0a71c485bd3fda4bbf058d759498377f5cfe90f51'
+        'ab7fe139630be59b26a72f92f22e4a2b556594d341d82b0f15f99880724f5ea5cfd912a8de6b6e1db902c14d65395c74a03379e3e01ce69bb4512c681518301d'
         '93e55e4e1b7e133c0d03733121bb12ba9c64230ff328280ac68a5d1fca0f83637159c0861bca0c30eda61ca14d5a319cd38424959e84344e188c0349cd159ba7'
         '2d53f99e485218ed47f2e40907023645594ac8ffcf00d0569050d54a8f4dabe0a2bdcab515a45b663283c2e6299d805b923ea7b7b789c6a4150c37a98a5b117c'
         'dbfe5c1aaea94419305c1f8c9b54b94eab515260910f2309360ff702a27032faa34514e70b31adbb1e41bd912d4e43a610939cb07565f43e05dd19813a81752e'
@@ -128,6 +130,7 @@ prepare() {
   patch -Np0 -i ../bash-5.2_p21-configure-strtold.patch
   patch -Np0 -i ../bash-5.2_p21-wpointer-to-int.patch
   patch -Np0 -i ../bash-5.2_p32-memory-leaks.patch
+  patch -Np0 -i ../bash-5.2_p32-read-delimiter-in-invalid-mbchar.patch
 }
 
 build() {
