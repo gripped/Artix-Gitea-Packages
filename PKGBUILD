@@ -132,7 +132,7 @@ build() {
     --enable-win64 \
     --with-xattr
 
-  make CFLAGS+=" -Wno-error=incompatible-pointer-types"
+  make CFLAGS+=" -Wno-error=incompatible-pointer-types -fPIC"
 
   msg2 "Building Wine-32..."
 
@@ -147,7 +147,7 @@ build() {
     --libdir=/usr/lib32 \
     --with-wine64="$srcdir/$pkgname-64-build"
 
-  make CFLAGS+=" -Wno-error=incompatible-pointer-types"
+  make CFLAGS+=" -Wno-error=incompatible-pointer-types -fPIC"
 }
 
 package() {
