@@ -228,8 +228,8 @@ END
 
     ./mach package
 
-    # Uncomment the next line if you have an error while profiling ( thanks to mkli )
-    export LIBGL_ALWAYS_INDIRECT=true
+    export LIBGL_ALWAYS_SOFTWARE=true
+    export GALLIUM_DRIVER=softpipe
     LLVM_PROFDATA=llvm-profdata \
       JARLOG_FILE="$PWD/jarlog" \
       xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
