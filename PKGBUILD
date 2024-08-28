@@ -5,7 +5,7 @@
 
 pkgname=python-zope-interface
 _pkgname=zope.interface
-pkgver=7.0.2
+pkgver=7.0.3
 pkgrel=1
 pkgdesc='Zope Interfaces for Python 3.x'
 arch=('x86_64')
@@ -26,7 +26,7 @@ checkdepends=(
   'python-zope-testing'
 )
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('e2fe472cc6a4cc2bdf5b12dda0bb73b2dc4ee239b49d1154c3b4e0a2494d5aba12d3b6d262f3c2de1f1761e2661f368514db3e8f99f16be06527c8f4021d7816')
+sha512sums=('c25b144753cb99686274ff491a8d6b34bd6382c7bd5666376d4244fec49bc4ef6f389012afd74274fdcf400b34e83edbdc8db8b00db8191a8addc4db9664286c')
 
 build() {
   cd $_pkgname-$pkgver
