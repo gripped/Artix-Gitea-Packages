@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby
-  version: 3.2.4-1.2
+  version: 3.2.5-1
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - ruby-bundled-gems
     - ruby-stdlib
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.2.5-1
+    packages:
+      - ruby-3.2.5-1-x86_64.pkg.tar.zst
+      - ruby-docs-3.2.5-1-x86_64.pkg.tar.zst
+      - ruby-default-gems-3.2.5-1-x86_64.pkg.tar.zst
+      - ruby-bundled-gems-3.2.5-1-x86_64.pkg.tar.zst
+      - ruby-stdlib-3.2.5-1-x86_64.pkg.tar.zst
   world:
     version: 3.2.4-1.2
     packages:
