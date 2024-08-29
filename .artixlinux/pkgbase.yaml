@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mc
-  version: 4.8.31-3
+  version: 4.8.32-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.8.31-3
+    version: 4.8.32-1
     packages:
-      - mc-4.8.31-3-x86_64.pkg.tar.zst
+      - mc-4.8.32-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
