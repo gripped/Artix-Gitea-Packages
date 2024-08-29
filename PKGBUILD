@@ -1,11 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 # Contributor: Marcel Huber <marcelhuberfoo at gmail dott com>
 # Contributor: Illarion Kovalchuk <illarion.kovalchuk at gmail dot com>
 
 pkgname=jenkins
-pkgver=2.473
+pkgver=2.474
 pkgrel=1
 _java=17
 pkgdesc='Extendable continuous integration server (latest)'
@@ -22,7 +22,7 @@ source=("https://github.com/jenkinsci/jenkins/archive/refs/tags/jenkins-${pkgver
         'jenkins.tmpfiles'
         'jenkins.sysusers'
         'skip-failing-test.patch')
-sha512sums=('7b47d5b15913ad242b7067e50f9bce7c9999e9d46a44705bec3b7088653ba2c6757d47e4563987396d6474635a3064f5cd75f53967ded9d98ad79ecd98e09224'
+sha512sums=('1dcea9a9d1d449e953db8da43c7cc8f57667c4afac001a5da8eeddceb4ad9a086ea3dd7398863396d8f5fad4bc8575c3d06f0408a4453297ff8c24ecc58c0df5'
             'a845a7147be54affc586dfce9a188ec24c92e673e88dec0b62da386d2e597de6ecda103429008562abd897f179a52c37cf2188ebc65b8c636efd07d707e18f90'
             '896cbc64eadb2f3bb9fa7fc26dbfc527b1823d8bff3158be7f1936cc250f55eeafe89079e1ceb8f3d269041662573ccbbb36248140b4ba24144a564366f8847a'
             '876180dc1674ec56c32a4fceac7d9608f450520ace7d3ecb68cbe7ba8f1bcba31f2c063f52a9076c432b78fd31157da3febc65e98e7d9050a4134d4e0304e8bd')
