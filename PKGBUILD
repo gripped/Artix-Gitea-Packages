@@ -4,64 +4,57 @@
 
 pkgname=pam
 pkgver=1.6.1
-pkgrel=2
+pkgrel=3
 pkgdesc="PAM (Pluggable Authentication Modules) library"
 arch=('x86_64')
 license=('GPL-2.0-only')
 url="http://linux-pam.org"
 depends=('glibc' 'libtirpc' 'pambase' 'audit' 'libaudit.so' 'libxcrypt' 'libcrypt.so' 'libnsl' 'libelogind')
-makedepends=('flex' 'w3m' 'docbook-xml>=4.4' 'docbook-xsl' 'elogind')
+makedepends=('git' 'flex' 'w3m' 'libxslt' 'docbook-xml' 'docbook5-xml' 'docbook-xsl' 'fop')
 provides=('libpam.so' 'libpamc.so' 'libpam_misc.so')
 backup=(etc/security/{access.conf,faillock.conf,group.conf,limits.conf,namespace.conf,namespace.init,pwhistory.conf,pam_env.conf,time.conf} etc/environment)
-source=(https://github.com/linux-pam/linux-pam/releases/download/v$pkgver/Linux-PAM-$pkgver{,-docs}.tar.xz{,.asc}
-        $pkgname.tmpfiles
+source=("pam::git+https://github.com/linux-pam/linux-pam?signed#tag=v${pkgver}"
+        "${pkgname}.tmpfiles"
         pam-elogind-suport.patch::https://github.com/linux-pam/linux-pam/pull/787/commits/d59e00bdc9ba133ba11abeba08f80d3495501d14.patch)
 validpgpkeys=(
         '8C6BFD92EE0F42EDF91A6A736D1A7F052E5924BB' # Thorsten Kukuk
-        '296D6F29A020808E8717A8842DB5BD89A340AEB7' #Dimitry V. Levin <ldv@altlinux.org>
+        '296D6F29A020808E8717A8842DB5BD89A340AEB7' # Dimitry V. Levin <ldv@altlinux.org>
 )
-
-sha256sums=('f8923c740159052d719dbfc2a2f81942d68dd34fcaf61c706a02c9b80feeef8e'
-            'SKIP'
-            'fd7b13b9993c94677e78e84d12387b8da104b5ba668eda3f17360abe4277e79c'
-            'SKIP'
-            '5631f224e90c4f0459361c2a5b250112e3a91ba849754bb6f67d69d683a2e5ac'
-            'c1f0502551c56691184a1c6ffe01bfc6581be31b98a789221ef790adaedf685d')
-
+b2sums=('12891f9064ce7f00d22452d8ff39c14af87c24f9fbf3eab65e475a7d2a592d2b1c1d585f3718b2fa72f277a8ad1faa17149fe0a911bfabdaa4a2957c32e29fe3'
+        '36582c80020008c3810b311a2e126d2fb4ffc94e565ea4c0c0ab567fdb92943e269781ffa548550742feb685847c26c340906c7454dcc31df4e1e47d511d8d6f'
+        '868cd9b237f1f77d5b1b298a0c3607e4a0580d0bad94027e162e4f3b5b677ad7fb3428a9dec102281862540b1109923e5dda025c80f3371ccfa8e9f855d9d7ea')
 options=('!emptydirs')
 
 prepare() {
-  cd Linux-PAM-$pkgver
+  cd "${pkgname}"
+  ./autogen.sh
   # apply patch from the source array (should be a pacman feature)
   local src
   for src in "${source[@]}"; do
     src="${src%%::*}"
     src="${src##*/}"
     [[ $src = *.patch ]] || continue
-    echo "Applying patch $src..."
-    patch -Np1 < "../$src"
+    echo "Applying patch ${src}..."
+    patch -Np1 < "../${src}"
   done
-  autoreconf -fi
 }
 
 build() {
-  cd Linux-PAM-$pkgver
-  ./configure \
+  cd "${pkgname}"
+  ./configure --without-systemdunitdir \
     --libdir=/usr/lib \
     --sbindir=/usr/bin \
-    --without-systemdunitdir \
     --enable-logind=elogind \
     --disable-db
   make
 }
 
 package() {
-  install -Dm 644 $pkgname.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/$pkgname.conf
-  cd Linux-PAM-$pkgver
-  make DESTDIR="$pkgdir" SCONFIGDIR=/etc/security install
+  install -Dm 644 $pkgname.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
+  cd "${pkgname}"
+  make DESTDIR="${pkgdir}" SCONFIGDIR=/etc/security install
 
   # set unix_chkpwd uid
-  chmod +s "$pkgdir"/usr/bin/unix_chkpwd
+  chmod +s "${pkgdir}"/usr/bin/unix_chkpwd
 }
 
-# vim: ts=2 sw=2 et:
