@@ -2,9 +2,8 @@
 team: galaxy
 pkgbase:
   name: mokutil
-  version: 0.7.0-1
+  version: 0.7.2-2
   arch:
-    - i686
     - x86_64
   pkgname:
     - mokutil
@@ -51,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.7.0-1
+    version: 0.7.2-2
     packages:
-      - mokutil-0.7.0-1-x86_64.pkg.tar.zst
+      - mokutil-0.7.2-2-x86_64.pkg.tar.zst
