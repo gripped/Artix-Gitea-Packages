@@ -3,7 +3,7 @@
 
 pkgname=snapper
 pkgver=0.11.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A tool for managing BTRFS and LVM snapshots. It can create, diff and restore snapshots and provides timelined auto-snapping."
 arch=('x86_64')
 url="http://snapper.io"
@@ -45,7 +45,7 @@ build() {
               --with-pam-security=/usr/lib/security \
               --disable-zypp \
               --disable-silent-rules \
-	          --disable-systemd
+	      --disable-systemd
   make
 }
 
