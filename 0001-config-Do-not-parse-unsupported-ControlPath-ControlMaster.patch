@@ -1,9 +1,10 @@
-From ffc5a07da36445442e46390d3968c9499ff51c9d Mon Sep 17 00:00:00 2001
+From 82b363f294dc318c9a20ffcbfe16dfa3e082cfed Mon Sep 17 00:00:00 2001
 From: Jakub Jelen <jjelen@redhat.com>
 Date: Wed, 14 Aug 2024 10:27:24 +0200
 Subject: [PATCH] config: Do not parse unsupported ControlPath/ControlMaster
 
 Signed-off-by: Jakub Jelen <jjelen@redhat.com>
+Reviewed-by: Andreas Schneider <asn@cryptomilk.org>
 ---
  src/config.c                      | 4 ++--
  tests/unittests/torture_config.c  | 6 +++---
