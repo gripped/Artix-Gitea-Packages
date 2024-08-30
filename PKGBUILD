@@ -1,10 +1,10 @@
-# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Thore Bödecker <foxxx0@archlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 
 pkgname=libwhereami
 pkgver=0.5.0
-pkgrel=18
+pkgrel=19
 pkgdesc='Library to report hypervisor information from inside a VM'
 arch=('x86_64')
 url='https://github.com/puppetlabs/libwhereami'
