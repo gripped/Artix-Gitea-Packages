@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: usd
-  version: 24.08-2
+  version: 24.08-3
   arch:
     - x86_64
   pkgname:
     - usd
     - usd-extras
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 24.08-3
+    packages:
+      - usd-24.08-3-x86_64.pkg.tar.zst
+      - usd-extras-24.08-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
