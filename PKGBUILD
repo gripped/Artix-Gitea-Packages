@@ -2,7 +2,7 @@
 # Contributor: Sergej Pupykin <sergej@aur.archlinux.org>
 
 pkgname=man-db
-pkgver=2.12.1
+pkgver=2.13.0
 pkgrel=1
 pkgdesc="A utility for reading man pages"
 arch=('x86_64')
@@ -18,11 +18,10 @@ replaces=('man')
 install=${pkgname}.install
 source=(#https://savannah.nongnu.org/download/man-db/$pkgname-$pkgver.tar.xz{,.asc}
         # fallback should be used within first 24h after a release
-        https://download-mirror.savannah.gnu.org/releases/man-db/$pkgname-$pkgver.tar.xz{,.asc}
-        convert-mans
-)
+        https://download-mirror.savannah.gnu.org/releases/man-db/$pkgname-$pkgver.tar.xz{,.asc} 
+        convert-mans)
 validpgpkeys=('AC0A4FF12611B6FCCF01C111393587D97D86500B') # Colin Watson <cjwatson@debian.org>
-sha512sums=('0f79f4205ce116c3148dc6caf561c1b7d793aac234188ef8edd1b1f5aaaebcca32c65ef403dff65896920535077fb63ddc2e9cb293efdb6ef3037c33916aa329'
+sha512sums=('612ce39bb1e11aa7797e8e3a26f06a7154c48a13b2d74217c2c6701e0d33fa8f77ae2b8c9ee84353e364d16918f884115f2dfbf3cd743edd4ed32b763b87f723'
             'SKIP'
             '0b159285da20008f0fc0afb21f1eaebd39e8df5b0594880aa0e8a913b656608b8d16bb8d279d9e62d7aae52f62cb9b2fc49e237c6711f4a5170972b38d345535')
 
@@ -54,7 +53,6 @@ package() {
   # part of groff pkg
   rm -f ${pkgdir}/usr/bin/zsoelim
 
-  # script from LFS to convert manpages, see
-  # http://www.linuxfromscratch.org/lfs/view/6.4/chapter06/man-db.html
+
   install -D -m755 ${srcdir}/convert-mans  ${pkgdir}/usr/bin/convert-mans
 }
