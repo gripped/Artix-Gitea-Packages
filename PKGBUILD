@@ -5,7 +5,7 @@
 _gemname='rubocop-ast'
 pkgname="ruby-${_gemname}"
 pkgver=1.30.0
-pkgrel=1
+pkgrel=2
 pkgdesc="RuboCop's AST extensions and NodePattern functionality"
 arch=('any')
 url="https://github.com/rubocop/${_gemname}"
@@ -15,12 +15,10 @@ depends=(
   ruby-parser
 )
 makedepends=(
-  ruby-bump
   ruby-bundler
   ruby-oedipus_lex
   ruby-rake
   ruby-rspec
-  ruby-simplecov
 )
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
@@ -31,8 +29,11 @@ prepare() {
   cd "${_gemname}-${pkgver}"
 
   # update gemspec/Gemfile to allow newer version of the dependencies
-  sed --in-place --regexp-extended "s|gem 'simplecov', '~> 0.10', '< 0.18'|gem 'simplecov', '>= 0.10'|g" Gemfile
   sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec" Gemfile
+
+  # Remove dependency on bump and simplecov
+  sed --in-place --regexp-extended '/bump|simplecov/d' Gemfile
+  rm tasks/cut_release.rake
 
   # we don't build from a git checkout
   sed --in-place --regexp-extended 's|git ls-files|find|' "${_gemname}.gemspec"
