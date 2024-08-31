@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='rubocop-rspec'
 pkgname="ruby-${_gemname}"
 pkgver=2.15.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Code style checking for RSpec files. A plugin for the RuboCop code style enforcing & linting tool'
 arch=('any')
 url="https://github.com/rubocop/${_gemname}"
@@ -13,7 +14,6 @@ depends=(
   rubocop
 )
 checkdepends=(
-  ruby-bump
   ruby-bundler
   ruby-parallel
   ruby-rack
@@ -33,6 +33,10 @@ prepare() {
 
   # update gemspec/Gemfile to allow newer version of the dependencies
   sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec"
+
+  # Remove dependency on bump
+  sed --in-place --regexp-extended '/bump/d' Gemfile
+  rm tasks/cut_release.rake
 }
 
 build() {
