@@ -5,7 +5,7 @@
 
 pkgname=netcdf
 pkgver=4.9.2
-pkgrel=4
+pkgrel=6
 pkgdesc="network Common Data Form interface for array-oriented data access and corresponding library"
 arch=(x86_64)
 url="https://www.unidata.ucar.edu/software/netcdf/"
@@ -28,6 +28,7 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_BUILD_TYPE=Release \
+    -DPLUGIN_INSTALL_DIR=/usr/lib/netcdf/plugin \
     -DENABLE_BYTERANGE=ON \
     -DENABLE_CDF5=ON \
     -DENABLE_DAP_LONG_TESTS=ON \
