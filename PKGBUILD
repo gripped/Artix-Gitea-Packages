@@ -3,7 +3,7 @@
 _name=HyperKitty
 pkgname=hyperkitty
 pkgver=1.3.11
-pkgrel=1
+pkgrel=2
 pkgdesc="A web interface to access GNU Mailman v3 archives"
 arch=(any)
 url="https://gitlab.com/mailman/hyperkitty"
