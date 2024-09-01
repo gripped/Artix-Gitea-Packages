@@ -10,7 +10,7 @@ pkgname=(
   audacity-docs
 )
 pkgver=3.6.1
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
 arch=(x86_64)
@@ -64,18 +64,22 @@ source=(
   https://github.com/audacity/audacity/archive/refs/tags/$_name-$pkgver.tar.gz
   https://github.com/$pkgbase/$pkgbase/releases/download/$_name-$pkgver/$pkgbase-manual-$pkgver.tar.gz
   audacity_3_4_2_enable_tests_without_conan.patch
+  waveformcacheoob.patch::https://patch-diff.githubusercontent.com/raw/audacity/audacity/pull/6955.diff
 )
 sha512sums=('f820560de316a4d0a4bcd76ee16d1913efd6c6fa2d013f9213a27f1327e6dffb425afc157ad96ce8dc219724019380709b8ac54900196b20865c9897aa2a2e69'
             'cf6e2f24b1bd8a6f76a53efdc1b1919c869cc91f623dbcabb3d17a849ce3b5dd7e7d208548f9dd690079ae9bd91e425fedbb61131214ac020a0d3e6979920652'
-            'ab92475e599fd4345d33a7ae6cd47231ab614b92ca9a71e732a073b31ec18ad92f3d1384183b0821e75b4ba1bb4987c5369c1398604d6c4ea01a20f94fb7b976')
+            'ab92475e599fd4345d33a7ae6cd47231ab614b92ca9a71e732a073b31ec18ad92f3d1384183b0821e75b4ba1bb4987c5369c1398604d6c4ea01a20f94fb7b976'
+            'df9a8024be2f9739653d34b360ba65ca43919ddc9a506d9fb975761e00cbcc85071cbeda9675681b2ed6cbc59a00e70d3be8ebd3981babb52047a5a731aed856')
 b2sums=('b3c4f98cae4156e2608a69d3b75d66c81c522a63215f26386eb681ef067fe79bc722ca3abdf0144118b4ecad3ac333db4991d33f0e5fe8cc0381bd05a7bb7089'
         'eb28a2885493b473e5c215329e954513fbe8a4318c51996e300b6a34bf04f23e5550dda8ecd00740b06330913b91f7f20c71b006fd0358cd3915a37c7a6a2c11'
-        '0c176336ca8df12f443e6935e8293afa3408e0e7b6a290417007bbbc0500c8eb8716ae3265665a80d85d689f9b369e5edf7986e8507288af77e8eea4ebedd624')
+        '0c176336ca8df12f443e6935e8293afa3408e0e7b6a290417007bbbc0500c8eb8716ae3265665a80d85d689f9b369e5edf7986e8507288af77e8eea4ebedd624'
+        '76f1e3695205739a071e419d23d607e4cec1f392f2251b5c1c180bd4ad6fbd6e8beb6a9eea1c3297f629713c36cc59c6ee3455227d19e2244cdcffc2adc8d2fe')
 
 prepare() {
     cd "$pkgname-$_name-$pkgver"
     # https://github.com/audacity/audacity/discussions/5841#discussioncomment-8138725
     patch --forward --strip=1 --input="${srcdir}/audacity_3_4_2_enable_tests_without_conan.patch"
+    patch --forward --strip=1 --input="${srcdir}/waveformcacheoob.patch"
 }
 
 build() {
