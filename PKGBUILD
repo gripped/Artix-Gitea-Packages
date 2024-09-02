@@ -4,7 +4,7 @@ pkgname=backuppc
 pkgver=4.4.0
 _xsver=0.62
 _rbpcver=3.1.3.0
-pkgrel=7
+pkgrel=8
 pkgdesc='Enterprise-grade system for backing up Linux, Windows and MacOS PCs'
 url='https://github.com/backuppc/'
 license=('GPL2')
@@ -57,6 +57,7 @@ prepare() {
 build() {
   echo 'rsync-bpc'
   cd "$srcdir"/rsync-bpc-$_rbpcver
+  CFLAGS+=" -Wno-implicit-function-declaration" \
   ./configure --prefix=/usr/share/backuppc
   make
 }
@@ -103,7 +104,6 @@ package() {
     --bin-path rrdtool=/usr/bin/rrdtool \
     --
   cd "$srcdir"
-  # nosystemd
   install -D -m 644 $pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   install -D -m 644 $pkgname.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
   # install shell profiles
