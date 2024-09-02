@@ -1,24 +1,26 @@
 ---
 pkgbase:
   name: openldap
-  version: 2.6.8-1
+  version: 2.6.8-2
   arch:
     - x86_64
   pkgname:
     - openldap
     - libldap
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.6.8-2
+    packages:
+      - openldap-2.6.8-2-x86_64.pkg.tar.zst
+      - libldap-2.6.8-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []

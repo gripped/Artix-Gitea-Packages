@@ -4,7 +4,7 @@
 pkgbase=openldap
 pkgname=('openldap' 'libldap')
 pkgver=2.6.8
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.openldap.org/"
 license=('custom')
@@ -41,12 +41,14 @@ prepare() {
   sed -i 's|#define LDAPI_SOCK LDAP_RUNDIR LDAP_DIRSEP "run" LDAP_DIRSEP "ldapi"|#define LDAPI_SOCK LDAP_DIRSEP "run" LDAP_DIRSEP "openldap" LDAP_DIRSEP "ldapi"|' include/ldap_defaults.h
   sed -i 's|%LOCALSTATEDIR%/run|/run/openldap|' servers/slapd/slapd.{conf,ldif}
   sed -i 's|-$(MKDIR) $(DESTDIR)$(localstatedir)/run|-$(MKDIR) $(DESTDIR)/run/openldap|' servers/slapd/Makefile.in
+
+  # modify upstream service
 }
 
 build() {
   cd ${pkgbase}-${pkgver}
   autoconf
-  ./configure \
+  ./configure --with-systemd=no \
     --prefix=/usr \
     --libexecdir=/usr/lib \
     --sysconfdir=/etc \
@@ -65,7 +67,6 @@ build() {
     --disable-wt \
     --enable-overlays=mod \
     --with-cyrus-sasl \
-    --with-systemd=no \
     --with-threads
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
@@ -141,7 +142,7 @@ package_openldap() {
   # should be in libldap package
   rm "${pkgdir}"/usr/share/man/man5/ldap.conf.5
 
-  # let etmpfiles generate this directory
+  # let-tmpfiles generate this directory
   rm -r "${pkgdir}"/run
 
   # get rid of duplicate conf files
