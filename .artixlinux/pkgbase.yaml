@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-variable-magic
-  version: 0.64-1
+  version: 0.64-2
   arch:
     - x86_64
   pkgname:
     - perl-variable-magic
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.64-2
+    packages:
+      - perl-variable-magic-0.64-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
