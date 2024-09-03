@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-pegex
-  version: 0.75-5
+  version: 0.75-6
   arch:
     - any
   pkgname:
     - perl-pegex
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.75-6
+    packages:
+      - perl-pegex-0.75-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
