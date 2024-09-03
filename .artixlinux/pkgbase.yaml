@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: riscv64-linux-gnu-linux-api-headers
-  version: 6.8-1
+  version: 6.10-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.8-1
+    version: 6.10-1
     packages:
-      - riscv64-linux-gnu-linux-api-headers-6.8-1-any.pkg.tar.zst
+      - riscv64-linux-gnu-linux-api-headers-6.10-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
