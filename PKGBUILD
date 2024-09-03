@@ -1,0 +1,62 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Thayne McCombs <astrothayne@gmail.com>
+
+pkgname=dart-sass
+pkgver=1.77.8
+pkgrel=1
+pkgdesc='Sass makes CSS fun again'
+arch=('x86_64')
+url='http://sass-lang.com/'
+license=('MIT')
+depends=('glibc')
+makedepends=('git' 'dart' 'buf')
+options=('!strip')
+provides=('sass')
+conflicts=('ruby-sass')
+_sass_version=2.7.1
+source=(
+  "$pkgname::git+https://github.com/sass/dart-sass.git#tag=$pkgver"
+  "github.com-sass-sass::git+https://github.com/sass/sass.git#tag=embedded-protocol-$_sass_version"
+)
+sha512sums=('7c45e77ab83e6e35a39d688e8dc113a5f5e377e3fdd7ed78af277d0f82961e3ed8740ddde6c533b6d70ad361f92dfd79eed0cf7699603b2a5295ddcec2bf83cc'
+            'a1a20703416a8c60d5287a2eac5da684883d35525b7b53e89165416266d07e42558f6e8a3cc31a763583fd4b5c458d1b33146e14e98f05f131b5ca43b8c215cb')
+b2sums=('2adb7008279fc1009ab8edc7f571186ae8cd3b36aa9bf11bf739836ae108752464da7ba86e628ed4d5098ed5741923854d64cbf560f8250057ec59152e6ff74f'
+        'd1a1795d34a2876132917b0a05639de4bb4c09199132c95f719c677d292d066e838f9d6663370202760d27f3bdad7d200b43b4e5a0a81a0768020f4bfd4edd14')
+
+prepare() {
+  cd "$pkgname"
+
+  mkdir -p build
+  ln -sf "$srcdir/github.com-sass-sass" build/language
+
+  # disable analytics
+  dart --disable-analytics
+
+  # download dependencies
+  dart pub get
+}
+
+build() {
+  cd "$pkgname"
+
+  UPDATE_SASS_PROTOCOL=false dart run grinder protobuf
+  dart compile exe \
+    -Dversion=$pkgver \
+    -Dprotocol-version=$(cat build/language/spec/EMBEDDED_PROTOCOL_VERSION) \
+    -o sass \
+    bin/sass.dart
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" sass
+
+  # embedded-protocol protobuf file
+  install -vDm644 -t "$pkgdir/usr/share/$pkgname" build/language/spec/embedded_sass.proto
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
