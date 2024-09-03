@@ -1,0 +1,74 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-protocol-rack
+pkgver=0.2.6
+pkgrel=2
+pkgdesc='An implementation of the Rack protocol/specification'
+arch=(any)
+url='https://github.com/socketry/protocol-rack'
+license=(MIT)
+depends=(
+  ruby
+  ruby-protocol-http
+  ruby-rack
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-async-http
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-bundler
+  ruby-covered
+  ruby-sus
+  ruby-sus-fixtures-async-http
+)
+options=(!emptydirs)
+source=(https://github.com/socketry/protocol-rack/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('6f145a577816c81ef5caf68566fab12df43af01f36f648ae3010586f92639df5')
+
+prepare() {
+  cd protocol-rack-$pkgver
+  sed -r -e 's|~>|>=|g' -e '/signing_key/d' -i protocol-rack.gemspec
+  sed -i '/bake-modernize/d;/bake-gem/d;/utopia-project/d' gems.rb
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd protocol-rack-$pkgver
+  gem build protocol-rack.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    protocol-rack-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd protocol-rack-$pkgver
+  GEM_HOME="tmp_install/$_gemdir" bake test
+}
+
+package() {
+  cd protocol-rack-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 license.md -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
