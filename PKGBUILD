@@ -1,8 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer:
 
 pkgname=perl-http-cookiejar
 pkgver=0.014
-pkgrel=2
+pkgrel=3
 pkgdesc='A minimalist HTTP user agent cookie jar'
 _dist='HTTP-CookieJar'
 arch=(any)
