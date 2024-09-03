@@ -27,7 +27,7 @@ checkdepends=(python-hypothesis
               python-psutil
               python-pytest-xdist)
 source=(git+https://github.com/pikepdf/pikepdf#tag=v$pkgver)
-sha256sums=('ebab35b652e3390d7ff18b25d0a2eb21f4aa939097d8d637ffd32ea235f53b91')
+sha256sums=('SKIP')
 
 build() {
   cd pikepdf
