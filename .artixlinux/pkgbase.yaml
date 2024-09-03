@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-artix
-  version: 2-1
+  version: 2-2
   arch:
     - x86_64
   pkgname:
     - moksha-artix
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2-2
+    packages:
+      - moksha-artix-2-2-x86_64.pkg.tar.zst
   galaxy:
     version: 2-1
     packages:
