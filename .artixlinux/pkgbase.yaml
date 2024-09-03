@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-django-q2
-  version: 1.6.2-3
+  version: 1.6.2-4
   arch:
     - any
   pkgname:
     - python-django-q2
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.6.2-4
+    packages:
+      - python-django-q2-1.6.2-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
