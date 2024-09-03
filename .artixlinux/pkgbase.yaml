@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-text-charwidth
-  version: 0.04-23
+  version: 0.04-24
   arch:
     - x86_64
   pkgname:
     - perl-text-charwidth
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.04-24
+    packages:
+      - perl-text-charwidth-0.04-24-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
