@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-list-moreutils
-  version: 0.430-5
+  version: 0.430-6
   arch:
     - any
   pkgname:
     - perl-list-moreutils
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.430-6
+    packages:
+      - perl-list-moreutils-0.430-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
