@@ -25,7 +25,7 @@ optdepends=('pulseaudio: Pulse Audio'
             'gst-plugins-ugly: Video and thumbnail codecs'
             'gst-libav: Video and thumbnails with ffmpeg/libav'
             'libreoffice: Office document thumbnails')
-source=("{pkgname}::git+https://git.enlightenment.org/enlightenment/$pkgname.git#commit=$_commit"
+source=("${pkgname}::git+https://git.enlightenment.org/enlightenment/$pkgname.git#commit=$_commit"
         "moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git")
 sha256sums=('bb70b7c1c92e150a6676199ede30f74c13b61bc6c59bfa8924ae345085baf7cf'
             'SKIP')
