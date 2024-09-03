@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: perl-sub-prototype
-  version: 0.03-1
+  version: 0.03-2
   arch:
     - x86_64
   pkgname:
     - perl-sub-prototype
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.03-2
+    packages:
+      - perl-sub-prototype-0.03-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
