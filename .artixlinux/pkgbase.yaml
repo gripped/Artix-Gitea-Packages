@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-xarray
-  version: 2023.09.0-1
+  version: 2024.07.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2023.09.0-1
+    version: 2024.07.0-1
     packages:
-      - python-xarray-2023.09.0-1-any.pkg.tar.zst
+      - python-xarray-2024.07.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
