@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-sub-override
-  version: 0.11-1
+  version: 0.12-1
   arch:
     - any
   pkgname:
     - perl-sub-override
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.12-1
+    packages:
+      - perl-sub-override-0.12-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
