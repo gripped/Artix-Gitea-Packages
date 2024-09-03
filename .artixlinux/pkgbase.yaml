@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-super
-  version: 1.20190531-7
+  version: 1.20190531-8
   arch:
     - any
   pkgname:
     - perl-super
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.20190531-8
+    packages:
+      - perl-super-1.20190531-8-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
