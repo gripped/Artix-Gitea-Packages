@@ -1,9 +1,8 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Florian Pritz <bluewind@xinu.at>
 
 pkgname=perl-test-failwarnings
 pkgver=0.008
-pkgrel=8
+pkgrel=9
 pkgdesc='Add test failures if warnings are caught'
 arch=(any)
 license=(PerlArtistic GPL)
