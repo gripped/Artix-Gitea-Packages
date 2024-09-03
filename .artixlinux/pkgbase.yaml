@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: perl-parallel-forkmanager
-  version: 2.03-1
+  version: 2.03-2
   arch:
     - any
   pkgname:
     - perl-parallel-forkmanager
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.03-2
+    packages:
+      - perl-parallel-forkmanager-2.03-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
