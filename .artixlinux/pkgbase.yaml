@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-sort-versions
-  version: 1.62-10
+  version: 1.62-11
   arch:
     - any
   pkgname:
     - perl-sort-versions
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.62-11
+    packages:
+      - perl-sort-versions-1.62-11-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
