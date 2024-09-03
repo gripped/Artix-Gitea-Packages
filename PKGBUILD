@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=marknote
+pkgver=1.3.0
+pkgrel=2
+pkgdesc='A simple markdown note management app'
+url='https://apps.kde.org/marknote/'
+arch=(x86_64)
+license=(GPL-2.0-or-later)
+depends=(breeze-icons
+         gcc-libs
+         glibc
+         kcolorscheme
+         kconfig
+         kconfigwidgets
+         kcoreaddons
+         kcrash
+         ki18n
+         kiconthemes
+         kirigami
+         kirigami-addons
+         kmime
+         kxmlgui
+         md4c
+         qt6-base
+         qt6-declarative)
+makedepends=(extra-cmake-modules)
+source=(https://download.kde.org/stable/$pkgname/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('ff99598415a6cca5900cb4d10d2b72a6f392eafe07874b6e2eb42e9f7ab3bd28'
+            'SKIP')
+validpgpkeys=(39FFA93CAE9C6AFC212AD00202325448204E452A) # Carl Schwan <carl@carlschwan.eu>
+
+build() {
+  cmake -B build -S $pkgname-$pkgver
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
