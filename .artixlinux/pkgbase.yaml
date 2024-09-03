@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-file-copy-recursive-reduced
-  version: 0.008-2
+  version: 0.008-3
   arch:
     - any
   pkgname:
     - perl-file-copy-recursive-reduced
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.008-3
+    packages:
+      - perl-file-copy-recursive-reduced-0.008-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
