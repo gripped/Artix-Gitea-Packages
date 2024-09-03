@@ -25,8 +25,10 @@ optdepends=('pulseaudio: Pulse Audio'
             'gst-plugins-ugly: Video and thumbnail codecs'
             'gst-libav: Video and thumbnails with ffmpeg/libav'
             'libreoffice: Office document thumbnails')
-source=("git+https://git.enlightenment.org/enlightenment/$pkgname.git#commit=$_commit")
-sha256sums=('bb70b7c1c92e150a6676199ede30f74c13b61bc6c59bfa8924ae345085baf7cf')
+source=("git+https://git.enlightenment.org/enlightenment/$pkgname.git#commit=$_commit"
+        "git+https://gitea.artixlinux.org/artix/moksha-artix.git")
+sha256sums=('bb70b7c1c92e150a6676199ede30f74c13b61bc6c59bfa8924ae345085baf7cf'
+            'SKIP')
 
 build() {
   cd $pkgname
@@ -57,6 +59,7 @@ package() {
 
   DESTDIR="$pkgdir" ninja -C build install
 
+  install -Dm644 -t "$pkgdir/usr/share/elementary/config/standard/" "$srcdir/moksha-artix/defaults/base.cfg"
   install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname/" README.md
   install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COMPLIANCE COPYING
 }
