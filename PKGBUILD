@@ -3,28 +3,35 @@
 pkgbase=libportal
 pkgname=(
   libportal
+  libportal-docs
   libportal-gtk3
   libportal-gtk4
   libportal-qt5
-  libportal-docs
+  libportal-qt6
 )
-pkgver=0.7.1
-pkgrel=3
+pkgver=0.8.0
+pkgrel=1
 pkgdesc="GIO-style async APIs for most Flatpak portals"
 url="https://github.com/flatpak/libportal"
 arch=(x86_64)
 license=(LGPL-3.0-only)
 makedepends=(
+  gcc-libs
   gi-docgen
   git
   gjs
+  glib2
   glib2-devel
+  glibc
   gobject-introspection
   gtk3
   gtk4
   meson
   qt5-base
+  qt5-tools
   qt5-x11extras
+  qt6-base
+  qt6-tools
   vala
 )
 checkdepends=(
@@ -32,20 +39,14 @@ checkdepends=(
   python-pytest
   xorg-server-xvfb
 )
-_commit=e9ed3a50cdde321eaf42361212480a66eb94a57a  # tags/0.7.1^0
-source=("git+https://github.com/flatpak/libportal#commit=$_commit")
-b2sums=('SKIP')
-
-pkgver() {
-  cd libportal
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+source=("git+https://github.com/flatpak/libportal#tag=$pkgver")
+b2sums=('b16a9930a33f094d4c8dbf4da0de2ebfa1d20a4e3254c7a98dd8a75e8494a6c0f3a80a401e0043f8760f3213e27eefb66c7a1b86b0658c7359cbfb9ab0e28315')
 
 prepare() {
   cd libportal
 
-  # Fix tests with with dbusmock 0.30.0
-  git cherry-pick -n 6cd7c2ab82575b76f876ee2bd2d31f6cb77f022f
+  # Test fixes
+  git cherry-pick -n ..ffcc47b3dbd97a0365be62fa8ce535b410180be3
 }
 
 build() {
@@ -70,34 +71,50 @@ _pick() {
 
 package_libportal() {
   depends=(
+    gcc-libs
+    glib2
+    glibc
     libg{lib,object,io}-2.0.so
   )
-  optdepends=('xdg-desktop-portal: Portal service')
+  optdepends=(
+    'libportal-docs: API documentation'
+    'libportal-gtk3: GTK 3 backend'
+    'libportal-gtk4: GTK 4 backend'
+    'libportal-qt5: Qt 5 backend'
+    'libportal-qt6: Qt 6 backend'
+    'xdg-desktop-portal: Portal service'
+  )
   provides=(libportal.so)
 
   meson install -C build --destdir "$pkgdir"
 
   cd "$pkgdir"
 
-  _pick gtk3 usr/include/libportal-gtk3
-  _pick gtk3 usr/lib{,/pkgconfig}/libportal-gtk3.*
-  _pick gtk3 {usr/lib/girepository-1.0,usr/share/gir-1.0}/XdpGtk3-1.0.*
-  _pick gtk3 usr/share/vala/vapi/libportal-gtk3.*
-
-  _pick gtk4 usr/include/libportal-gtk4
-  _pick gtk4 usr/lib{,/pkgconfig}/libportal-gtk4.*
-  _pick gtk4 {usr/lib/girepository-1.0,usr/share/gir-1.0}/XdpGtk4-1.0.*
-  _pick gtk4 usr/share/vala/vapi/libportal-gtk4.*
-
-  _pick qt5 usr/include/libportal-qt5
-  _pick qt5 usr/lib{,/pkgconfig}/libportal-qt5.*
-
   _pick docs usr/share/doc
+
+  local x
+  for x in gtk3 gtk4 qt5 qt6; do
+    _pick $x usr/include/libportal-$x
+    _pick $x usr/lib{,/pkgconfig}/libportal-$x.*
+
+    if [[ $x == gtk* ]]; then
+      _pick $x {usr/lib/girepository-1.0,usr/share/gir-1.0}/Xdp${x^}-1.0.*
+      _pick $x usr/share/vala/vapi/libportal-$x.*
+    fi
+  done
+}
+
+package_libportal-docs() {
+  pkgdesc+=" - API documentation"
+
+  mv docs/* "$pkgdir"
 }
 
 package_libportal-gtk3() {
   pkgdesc+=" - GTK 3 backend"
   depends=(
+    gcc-libs
+    glib2
     libg{d,t}k-3.so
     libportal
   )
@@ -109,6 +126,8 @@ package_libportal-gtk3() {
 package_libportal-gtk4() {
   pkgdesc+=" - GTK 4 backend"
   depends=(
+    gcc-libs
+    glib2
     libgtk-4.so
     libportal
   )
@@ -120,6 +139,9 @@ package_libportal-gtk4() {
 package_libportal-qt5() {
   pkgdesc+=" - Qt 5 backend"
   depends=(
+    gcc-libs
+    glib2
+    glibc
     libportal
     qt5-base
     qt5-x11extras
@@ -129,10 +151,18 @@ package_libportal-qt5() {
   mv qt5/* "$pkgdir"
 }
 
-package_libportal-docs() {
-  pkgdesc+=" - documentation"
+package_libportal-qt6() {
+  pkgdesc+=" - Qt 6 backend"
+  depends=(
+    gcc-libs
+    glib2
+    glibc
+    libportal
+    qt6-base
+  )
+  provides=(libportal-qt6.so)
 
-  mv docs/* "$pkgdir"
+  mv qt6/* "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
