@@ -1,0 +1,77 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-sus-fixtures-async-http
+pkgver=0.7.0
+_commit=fbd66aeccd0cf9b1af4924c771fdc9d22d5016a9
+pkgrel=2
+pkgdesc='Test fixtures for running in Async::HTTP'
+arch=(any)
+url='https://github.com/socketry/sus-fixtures-async-http'
+license=(MIT)
+depends=(
+  ruby
+  ruby-async-http
+  ruby-async-io
+  ruby-sus
+  ruby-sus-fixtures-async
+)
+makedepends=(
+  git
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-covered
+  ruby-bake-modernize
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-bundler
+)
+options=(!emptydirs)
+source=(git+https://github.com/socketry/sus-fixtures-async-http.git#commit=$_commit)
+sha256sums=('SKIP')
+
+prepare() {
+  cd sus-fixtures-async-http
+  sed -r -e 's|~>|>=|g' -e '/signing_key/d' -i sus-fixtures-async-http.gemspec
+  sed -i '/bake-gem/d;/utopia-project/d' gems.rb
+  sed -i 's/be < 60/be <= 60/' test/sus/fixtures/async/http/server_context.rb
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd sus-fixtures-async-http
+  gem build sus-fixtures-async-http.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    sus-fixtures-async-http-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd sus-fixtures-async-http
+  GEM_HOME="tmp_install/$_gemdir" bake test
+}
+
+package() {
+  cd sus-fixtures-async-http
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 license.md -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
