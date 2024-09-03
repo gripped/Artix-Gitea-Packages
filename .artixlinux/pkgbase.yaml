@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: perl-exporter-tiny
-  version: 1.006002-3
+  version: 1.006002-4
   arch:
     - any
   pkgname:
     - perl-exporter-tiny
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.006002-4
+    packages:
+      - perl-exporter-tiny-1.006002-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
