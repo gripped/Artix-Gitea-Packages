@@ -1,0 +1,94 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-falcon
+pkgver=0.42.3
+pkgrel=4
+pkgdesc='A fast, asynchronous, rack-compatible web server'
+arch=(any)
+url='https://github.com/socketry/falcon'
+license=(MIT)
+depends=(
+  ruby
+  ruby-async
+  ruby-async-container
+  ruby-async-http
+  ruby-async-http-cache
+  ruby-async-io
+  ruby-build-environment
+  ruby-localhost
+  ruby-process-metrics
+  ruby-protocol-rack
+  ruby-rackup
+  ruby-samovar
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-async-process
+  ruby-async-rspec
+  ruby-async-websocket
+  ruby-bake
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-bundler
+  ruby-covered
+  ruby-puma
+  ruby-rspec
+)
+options=(!emptydirs)
+source=(https://github.com/socketry/falcon/archive/v$pkgver/$pkgname-$pkgver.tar.gz
+        ruby-falcon-0.42.3-ruby-rack-3.patch)
+sha512sums=('2086beb1ffe5f776d6b9a322a1648e4e55a5b5615c1f8c58418e84ff84cf581e8ab8cc76d4461c5c924ef4291b486cb274f0fa4bb7f4eeff3b73f7f5cc752a9d'
+            'a07e7756e0a71c314504339f7c2fbfe9d69e6b52168059beb86861c9682cc0a97f904c389b96c0a073525ffc1068879b6fced087dd0fb98c061f90ecb3742adc')
+b2sums=('63b0b1cd28346140ddaf32e1ff2535760f85f603f24138bdd5c69e878a9226f49d03b1a11219eda4d03fe14b420636f7eaa24612eb29b42e6adc1aa05bccbfdb'
+        '425b9395a799942c0df40570e966163bc3aa88ac3dec587ccf48c2e48d06571cbef7e81a5c288b728361cde00b88962ea25f28ecdfe53923c4e846a7ecfb6da0')
+
+prepare() {
+  cd falcon-$pkgver
+  patch -Np1 -i ../ruby-falcon-0.42.3-ruby-rack-3.patch
+  sed -r -e 's|~>|>=|g' -e '/signing_key/d' -i falcon.gemspec
+  sed -i \
+    -e '/group :maintenance/,/end/d' \
+    -e '/group :development/,/end/d' \
+    gems.rb
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd falcon-$pkgver
+  gem build falcon.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    falcon-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd falcon-$pkgver
+  GEM_HOME="tmp_install/$_gemdir" bake test
+}
+
+package() {
+  cd falcon-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 license.md -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
