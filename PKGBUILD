@@ -40,18 +40,15 @@ backup=('etc/connman/main.conf')
 source=(
   "$pkgname-$pkgver.tar.xz::https://www.kernel.org/pub/linux/network/$pkgname/$pkgname-$pkgver.tar.xz"
   "$pkgname-$pkgver.tar.sign::https://www.kernel.org/pub/linux/network/$pkgname/$pkgname-$pkgver.tar.sign"
-  "https://sources.debian.org/data/main/c/connman/1.42-5/debian/patches/03-Add-libppp-compat.h.patch"
   "allow_group_network.diff"
 )
 sha512sums=('3289525cf764313700c520d3159431cdf719029096a1001d60ebdbda6406888699bc86336e7de890bf2c34a0624f3ba3081b0b57838a962b3c90bb5cd3484b38'
             'SKIP'
-            'ede0e6976bbadb92b976bc308a5b2765b97850e9b800de9b052fa42c9757556b7a8aebdcbccf4357baef3c89bbb9cccedb7f238d7d8241df704d26d30a353d54'
             '06dd5867d460f1c3cf6c359e650ca2ef24495493a99cd03dbd17f23e587e9066d9bc98758d85d5c690d1ae21fa77ad8da5e2fa83d0b52c95d7a535784c5c4964')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
 
 prepare() {
   cd $pkgname-$pkgver
-  patch -Np1 -i "$srcdir/03-Add-libppp-compat.h.patch"
   patch -Np1 -i "$srcdir/allow_group_network.diff"
 }
 
