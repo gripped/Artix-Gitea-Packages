@@ -88,10 +88,7 @@ options=(
 source=(
   https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz{,.asc}
   $pkgname.desktop identity-icons-brand.svg
-  0001-Bug-1898476-Wayland-Move-MozContainerSurfaceLock-fro.patch
-  0002-Bug-1898476-Wayland-Provide-surface-lock-by-GtkCompo.patch
-  0003-Bug-1898476-Wayland-Lock-Wayland-surface-before-Swap.patch
-  0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch
+  0001-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -103,16 +100,9 @@ prepare() {
   mkdir -p mozbuild
   cd firefox-$pkgver
 
-  # Backport fixes for NVIDIA crashes
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/issues/7
-  # https://bugzilla.mozilla.org/show_bug.cgi?id=1898476
-  patch -Np1 -i ../0001-Bug-1898476-Wayland-Move-MozContainerSurfaceLock-fro.patch
-  patch -Np1 -i ../0002-Bug-1898476-Wayland-Provide-surface-lock-by-GtkCompo.patch
-  patch -Np1 -i ../0003-Bug-1898476-Wayland-Lock-Wayland-surface-before-Swap.patch
-
   # Fix build with cinbdgen 0.27.0
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1912663
-  patch -Np1 -i ../0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch
+  patch -Np1 -i ../0001-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch
 
   echo "${noextract[@]}"
 
@@ -408,9 +398,6 @@ sha512sums=('9a689929f6f86d795ea2c0318bb78f77f72a552f40715a1108dbd6361b0dedc3aaf
             'SKIP'
             '4b53ee133a4ecaf068e240f6a05a1ebf4b788d67fe9141cc5b3561e1128907c8c3edb49bf2b24ba89daf1552f94ac48adf682dbe7dd070cffe7f78d98f2b3338'
             'b579b73176c72a5ecf36e3f63bba08fdb8041ae99d54e5cab906660fed6a9cf2311f7ca1ec1649e451cc6d5a4b1e6060b974b1d7befe9c8df3c5a89c50383c17'
-            '8d1e68b8c355d08b62ed586e7eab19c636db44a939b4416f3c76a9be6985ddd43dce802a3e185659973e19cc0832a6700b9e51cbb0d00c512101bda2f3311267'
-            '7f88e5e2c3bce9e21b430ae48b669604dbfc6eab1061dd26645f46abb1061e690750f66370187eef613ad151150314f3574e752e163c8b25d4d17573af63417b'
-            'be36a2bb3fe32ae3058731e4355a2d1092ff809229885d7e35c9c1653d45465c89632e1633312a376d2e6e7c49e5864ff3758b15d5492b79b3a8babe3d1739e9'
             '3fa88f533728bf007ec7dd180985172743c8f0b8ccc30b85399c0e8a15e4b4fc2ffbca34ac0a07861c146a1fd6f43eb4613c93c0f45ae35a1b5cf432947560fd'
             '688b8fdb84a6bf069650a65218615d605cd9cbd52435261f3f4fcae749cd67373fb1ce34c24bd3d0712c5e9416a2c111e2bd245050130423c944b64ca9092c1b'
             '70bfdc67a3f2ad213de61387f611bd9f6231eabc7012f190b84020ee3c75d70579d88db5cc1995f86fe1eeae72c31438f64019824c4ea28ed589b39cc12b9dd9'
