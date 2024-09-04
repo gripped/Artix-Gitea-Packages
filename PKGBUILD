@@ -9,8 +9,8 @@ pkgname=(
   audacity
   audacity-docs
 )
-pkgver=3.6.1
-pkgrel=2.1
+pkgver=3.6.2
+pkgrel=1
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
 arch=(x86_64)
@@ -64,22 +64,18 @@ source=(
   https://github.com/audacity/audacity/archive/refs/tags/$_name-$pkgver.tar.gz
   https://github.com/$pkgbase/$pkgbase/releases/download/$_name-$pkgver/$pkgbase-manual-$pkgver.tar.gz
   audacity_3_4_2_enable_tests_without_conan.patch
-  waveformcacheoob.patch::https://patch-diff.githubusercontent.com/raw/audacity/audacity/pull/6955.diff
 )
-sha512sums=('f820560de316a4d0a4bcd76ee16d1913efd6c6fa2d013f9213a27f1327e6dffb425afc157ad96ce8dc219724019380709b8ac54900196b20865c9897aa2a2e69'
-            'cf6e2f24b1bd8a6f76a53efdc1b1919c869cc91f623dbcabb3d17a849ce3b5dd7e7d208548f9dd690079ae9bd91e425fedbb61131214ac020a0d3e6979920652'
-            'ab92475e599fd4345d33a7ae6cd47231ab614b92ca9a71e732a073b31ec18ad92f3d1384183b0821e75b4ba1bb4987c5369c1398604d6c4ea01a20f94fb7b976'
-            'df9a8024be2f9739653d34b360ba65ca43919ddc9a506d9fb975761e00cbcc85071cbeda9675681b2ed6cbc59a00e70d3be8ebd3981babb52047a5a731aed856')
-b2sums=('b3c4f98cae4156e2608a69d3b75d66c81c522a63215f26386eb681ef067fe79bc722ca3abdf0144118b4ecad3ac333db4991d33f0e5fe8cc0381bd05a7bb7089'
-        'eb28a2885493b473e5c215329e954513fbe8a4318c51996e300b6a34bf04f23e5550dda8ecd00740b06330913b91f7f20c71b006fd0358cd3915a37c7a6a2c11'
-        '0c176336ca8df12f443e6935e8293afa3408e0e7b6a290417007bbbc0500c8eb8716ae3265665a80d85d689f9b369e5edf7986e8507288af77e8eea4ebedd624'
-        '76f1e3695205739a071e419d23d607e4cec1f392f2251b5c1c180bd4ad6fbd6e8beb6a9eea1c3297f629713c36cc59c6ee3455227d19e2244cdcffc2adc8d2fe')
+sha512sums=('7127b1f10e2060277e9c65dd114fda50a30e569363cf43f57dec15169f81cfb5cd1f0ba47c14a07ea5166cef0922b7bc2c0b33513a95c8105efa823223fd6c3d'
+            'a37fc03645046489642b81aa9505e70a1afa762b2c66c2cc497db10dc6cdd115c041eb2df6941c85dfe65f80673a2ede1ff1563c93abf2e2d4ac327886c83f9f'
+            'ab92475e599fd4345d33a7ae6cd47231ab614b92ca9a71e732a073b31ec18ad92f3d1384183b0821e75b4ba1bb4987c5369c1398604d6c4ea01a20f94fb7b976')
+b2sums=('e352bfececc6ecfded1d30046b758dfafaea535445f3abad5ac40add96cdd6868b7fbb5df2135b48bddcb76bf7149a022690e015d022957c3c91c0217e3c0c80'
+        'e5bd8a042f4ab60076aa73fba538cc76f4daaf8a61147ad86edd3254a8133b90f3de01ca36f3744c18e47e09bf07f315f86d972da57f54b9abfcf625a65d1f92'
+        '0c176336ca8df12f443e6935e8293afa3408e0e7b6a290417007bbbc0500c8eb8716ae3265665a80d85d689f9b369e5edf7986e8507288af77e8eea4ebedd624')
 
 prepare() {
     cd "$pkgname-$_name-$pkgver"
     # https://github.com/audacity/audacity/discussions/5841#discussioncomment-8138725
     patch --forward --strip=1 --input="${srcdir}/audacity_3_4_2_enable_tests_without_conan.patch"
-    patch --forward --strip=1 --input="${srcdir}/waveformcacheoob.patch"
 }
 
 build() {
