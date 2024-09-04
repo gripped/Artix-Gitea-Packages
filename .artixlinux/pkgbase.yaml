@@ -8,7 +8,7 @@ pkgbase:
     - perl-net-dns
 actions:
   addRepo: null
-  removeRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -25,9 +25,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.46-1
-    packages:
-      - perl-net-dns-1.46-1-any.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
