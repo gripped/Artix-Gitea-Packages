@@ -15,7 +15,7 @@ pkgname=(
   vim-powerline
 )
 pkgver=2.8.4
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Statuslines and prompts for several applications including vim, zsh, bash, tmux, IPython, Awesome, i3 and Qtile"
 arch=(x86_64)
 url="https://github.com/powerline/powerline"
@@ -84,6 +84,10 @@ package_powerline() {
     powerline-common
   )
   replaces=(
+    powerline-common
+    python-powerline
+  )
+  conflicts=(
     powerline-common
     python-powerline
   )
