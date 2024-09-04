@@ -90,13 +90,11 @@ source=(
   # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
-  '0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch'
 )
 
 sha256sums=('c4f134a7d61c2236695e525c6996210a0eb7fba5722d1e72a5108d02bf810d5e'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
-            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
-            'dd2aba1c02c21b89ceed0713a6aa0241365fe79b1e3a4d21cdcd7231db6fab5e')
+            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
 
 validpgpkeys=('034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3') # maltej(?)
 
@@ -107,10 +105,6 @@ _build_profiled_x86_64=true
 prepare() {
   mkdir -p mozbuild
   cd librewolf-$pkgver-$pkgrel
-
-  # Fix build with cinbdgen 0.27.0
-  # https://bugzilla.mozilla.org/show_bug.cgi?id=1912663
-  patch -Np1 -i ../0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch
 
   mv mozconfig ../mozconfig
 
