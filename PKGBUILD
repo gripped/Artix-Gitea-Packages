@@ -2,7 +2,7 @@
 
 pkgname=moksha
 pkgver=0.4.1
-pkgrel=13.2
+pkgrel=13.3
 _commit="470f1d3e840416678d6e61c13603b50f118c2b5e"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -68,7 +68,7 @@ package() {
   install -D -m755 "$srcdir/eina-log.sh" -t "$pkgdir/etc/profile.d"
   install -D -m644 "$srcdir/80-local.rules" -t "$pkgdir/etc/udev/rules.d"
   install -D -m664 "$srcdir/moksha-artix/defaults/e.cfg" "$pkgdir/usr/share/enlightenment/data/config/bodhi"
-  install -D -m664 "$srcdir/moksha-artix/defaults/e.cfg" "$pkgdir/usr/share/enlightenment/data/config/defaults"
+  install -D -m664 "$srcdir/moksha-artix/defaults/e.cfg" "$pkgdir/usr/share/enlightenment/data/config/default"
   install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COPYING
 }
 
