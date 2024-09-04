@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cheese
-  version: 44.1-2
+  version: 44.1-3
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 44.1-2
+    version: 44.1-3
     packages:
-      - cheese-44.1-2-x86_64.pkg.tar.zst
-      - libcheese-44.1-2-x86_64.pkg.tar.zst
+      - cheese-44.1-3-x86_64.pkg.tar.zst
+      - libcheese-44.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
