@@ -2,7 +2,7 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=129.0.2
+pkgver=130.0
 pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
@@ -93,7 +93,7 @@ source=(
   '0004-Bug-1912663-Fix-some-build-issues-with-cbindgen-0.27.patch'
 )
 
-sha256sums=('7308bf8765201746babca8638177b81252d85831b20ab721bc02dd4f83c032f1'
+sha256sums=('c4f134a7d61c2236695e525c6996210a0eb7fba5722d1e72a5108d02bf810d5e'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
             'dd2aba1c02c21b89ceed0713a6aa0241365fe79b1e3a4d21cdcd7231db6fab5e')
