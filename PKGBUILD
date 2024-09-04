@@ -129,4 +129,3 @@ package_vim-powerline() {
     powerline/bindings/vim/plugin/powerline.vim
   install -vDm644 -t "$pkgdir/usr/share/licenses/vim-powerline" LICENSE
 }
-
