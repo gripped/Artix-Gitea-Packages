@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia
-  version: 560.35.03-2
+  version: 560.35.03-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 560.35.03-2
+    version: 560.35.03-3
     packages:
-      - nvidia-560.35.03-2-x86_64.pkg.tar.zst
+      - nvidia-560.35.03-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
