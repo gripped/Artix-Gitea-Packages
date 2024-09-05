@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - perl-canary-stability
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 2013-8
     packages:
       - perl-canary-stability-2013-8-any.pkg.tar.zst
-  world:
-    version: 2013-7
-    packages:
-      - perl-canary-stability-2013-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
