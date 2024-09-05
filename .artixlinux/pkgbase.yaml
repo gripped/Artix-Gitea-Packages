@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mailman-web
-  version: 0.0.9-2
+  version: 0.0.9-3
   arch:
     - any
   pkgname:
     - mailman-web
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.0.9-3
+    packages:
+      - mailman-web-0.0.9-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
