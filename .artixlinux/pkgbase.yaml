@@ -1,20 +1,21 @@
 ---
 pkgbase:
   name: udisks2
-  version: 2.10.1-4
+  version: 2.10.1-5
   arch:
     - x86_64
   pkgname:
     - udisks2
     - udisks2-btrfs
     - udisks2-lvm2
+    - udisks2-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.10.1-4
+    version: 2.10.1-5
     packages:
-      - udisks2-2.10.1-4-x86_64.pkg.tar.zst
-      - udisks2-btrfs-2.10.1-4-x86_64.pkg.tar.zst
-      - udisks2-lvm2-2.10.1-4-x86_64.pkg.tar.zst
+      - udisks2-2.10.1-5-x86_64.pkg.tar.zst
+      - udisks2-btrfs-2.10.1-5-x86_64.pkg.tar.zst
+      - udisks2-lvm2-2.10.1-5-x86_64.pkg.tar.zst
+      - udisks2-docs-2.10.1-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -56,3 +58,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
