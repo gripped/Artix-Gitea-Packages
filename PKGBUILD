@@ -1,15 +1,16 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: mathieui <mathieui@mathieui.net>
 # Contributor: jiribb <jiribb@gmail.com>
 
 pkgname=ldns
 pkgver=1.8.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Fast DNS library supporting recent RFCs'
 url='https://www.nlnetlabs.nl/projects/ldns/'
 license=('custom:BSD')
 arch=('x86_64')
 depends=('openssl' 'dnssec-anchors')
+provides=('drill' 'libldns.so')
 optdepends=('libpcap: ldns-dpa tool')
 makedepends=('libpcap')
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc})

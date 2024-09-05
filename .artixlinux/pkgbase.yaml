@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: ldns
-  version: 1.8.3-2
+  version: 1.8.3-3
   arch:
     - x86_64
   pkgname:
     - ldns
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.8.3-3
+    packages:
+      - ldns-1.8.3-3-x86_64.pkg.tar.zst
   system:
     version: 1.8.3-2
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
