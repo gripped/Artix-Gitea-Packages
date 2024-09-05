@@ -1,4 +1,5 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Sébastien Luttringer
 # Contributor: Angel Velasquez <angvp@archlinux.org>
@@ -8,7 +9,7 @@
 pkgbase=rxvt-unicode
 pkgname=('rxvt-unicode' 'rxvt-unicode-terminfo')
 pkgver=9.31
-pkgrel=5
+pkgrel=6
 arch=('x86_64')
 url='http://software.schmorp.de/pkg/rxvt-unicode.html'
 license=('GPL')
