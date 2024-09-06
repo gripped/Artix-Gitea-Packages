@@ -1,0 +1,2 @@
+# ruby-mkmf-lite
+
