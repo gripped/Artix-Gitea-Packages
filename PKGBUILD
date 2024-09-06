@@ -2,7 +2,7 @@
 
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
-pkgver=0.36.1
+pkgver=0.36.2
 pkgrel=1
 pkgdesc="Modern, hackable, featureful, OpenGL based terminal emulator"
 arch=(x86_64)
@@ -67,5 +67,5 @@ package_kitty-shell-integration() {
   cp -r "$srcdir/$pkgbase-$pkgver/shell-integration" "$pkgdir/usr/lib/kitty/"
 }
 
-sha256sums=('48081e9d8c3110a961dde27012ae3992a44f7ef0b2fe86295d45b24bd772d911'
+sha256sums=('16db7fba5541f322ecc35f15755bc5dc0b4ab3d02156778317f541c44447fb62'
             'SKIP')
