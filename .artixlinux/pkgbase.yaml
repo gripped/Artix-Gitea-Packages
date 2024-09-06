@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: aspell-pl
-  version: 20230701-1
+  version: 20240901-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20230701-1
+    version: 20240901-1
     packages:
-      - aspell-pl-20230701-1-any.pkg.tar.zst
+      - aspell-pl-20240901-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
