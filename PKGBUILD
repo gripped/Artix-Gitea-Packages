@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 
 _pkgbasename=libxcomposite
 pkgname=lib32-$_pkgbasename
 pkgver=0.4.6
-pkgrel=1
+pkgrel=2
 pkgdesc="X11 Composite extension library (32-bit)"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
