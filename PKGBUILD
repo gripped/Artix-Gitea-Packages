@@ -11,7 +11,7 @@ arch=(x86_64)
 license=(LGPL2.1)
 depends=(
   lib32-glib2
-  lib32-systemd
+  lib32-elogind
   libgudev
 )
 makedepends=(
