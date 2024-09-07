@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Maximilian Stein <theoddbird@posteo.org>
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 
 pkgbase=lib32-libsoup
 pkgname=(lib32-libsoup)
 pkgver=2.74.3
-pkgrel=1
+pkgrel=2
 pkgdesc="HTTP client/server library for GNOME (32-bit)"
 url="https://wiki.gnome.org/Projects/libsoup"
 arch=(x86_64)
@@ -22,6 +22,7 @@ depends=(
 )
 makedepends=(
   git
+  glib2-devel
   meson
   samba
 )
@@ -29,7 +30,6 @@ checkdepends=(
   apache
   php-apache
 )
-options=(debug)
 _commit=4a6b9178ded85e269872ffedfb2b18f2754a75d9  # tags/2.74.3^0
 source=("git+https://gitlab.gnome.org/GNOME/libsoup.git#commit=$_commit"
         disable-flaky-test.diff)
