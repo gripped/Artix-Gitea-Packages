@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: speps <speps at aur dot archlinux dot org>
 
 _name=jack2
 pkgname=lib32-jack2
 pkgver=1.9.22
 _commit=80149e552b56d6d57d754dc04d119b8170d27313  # refs/tags/v1.9.22
-pkgrel=1
+pkgrel=2
 pkgdesc="The JACK low-latency audio server (32 bit)"
 arch=(x86_64)
 url="https://github.com/jackaudio/jack2"
@@ -14,17 +14,17 @@ depends=(lib32-gcc-libs lib32-glibc lib32-opus jack2=$pkgver)
 makedepends=(git lib32-alsa-lib lib32-dbus lib32-expat lib32-libsamplerate waf)
 conflicts=(lib32-jack)
 provides=(lib32-jack libjack.so libjackserver.so libjacknet.so)
-source=($pkgname::git+$url#tag=$_commit?signed)
+source=(git+$url#tag=$_commit?signed)
 sha512sums=('SKIP')
 validpgpkeys=('62B11043D2F6EB6672D93103CDBAA37ABC74FBA0') # falkTX <falktx@falktx.com>
 
 prepare() {
   # remove custom waflib, as we are using system provided waf
-  rm -rv $pkgname/waflib
+  rm -rv $_name/waflib
 }
 
 build() {
-  cd $pkgname
+  cd $_name
   export LINKFLAGS="$LDFLAGS"
   export PYTHONPATH="$PWD:$PYTHONPATH"
   export CC="gcc -m32"
@@ -45,7 +45,7 @@ package() {
     libsamplerate libsamplerate.so
   )
 
-  cd $pkgname
+  cd $_name
   export PYTHONPATH="$PWD:$PYTHONPATH"
   waf install --destdir="$pkgdir"
   # remove all files provided by jack2
