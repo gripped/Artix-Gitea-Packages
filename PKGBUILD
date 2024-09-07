@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: carstene1ns <arch.carsten@teibes.de>
 
 _name=ladspa
 pkgname=lib32-ladspa
 pkgver=1.17
-pkgrel=2
+pkgrel=3
 pkgdesc="Linux Audio Developer's Simple Plugin API"
 arch=(x86_64)
 url="https://www.ladspa.org/"
