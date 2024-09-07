@@ -10,7 +10,7 @@ url="https://github.com/anholt/libepoxy"
 arch=(x86_64)
 license=(MIT)
 depends=(lib32-glibc)
-makedepends=(git meson lib32-libgl lib32-systemd)
+makedepends=(git meson lib32-libgl lib32-elogind)
 checkdepends=(xorg-server-xvfb)
 _commit=c84bc9459357a40e46e2fec0408d04fbdde2c973  # tags/1.5.10^0
 source=("git+https://github.com/anholt/libepoxy#commit=$_commit")
