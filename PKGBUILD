@@ -1,18 +1,19 @@
 # Maintainer: Florian Pritz <bluewind@xinu.at>
 # Contributor: Dan McGee <dan@archlinux.org>
 
-pkgname=archlinux-mirrorlist
-pkgver=20230820
+pkgname=pacman-mirrorlist
+pkgver=20240717
 pkgrel=1
 pkgdesc="Arch Linux mirror list for use by pacman"
 arch=('any')
 url="https://www.archlinux.org/mirrorlist/"
 license=('GPL')
-backup=(etc/pacman.d/mirrorlist-arch)
+backup=(etc/pacman.d/mirrorlist)
 source=(mirrorlist)
+md5sums=('b275439b1695e2f7db9c251554d6cd0f')
+sha256sums=('a62f64c8e6e87a55f939475a5d3fa3f73b78c15cf6e1e135c21c08eb3e5ba294')
 
 # NOTE on building this package:
-# * Go to the trunk/ directory
 # * Run bash -c ". PKGBUILD; updatelist"
 # * Update the checksums, update pkgver
 # * Build the package
@@ -24,8 +25,5 @@ updatelist() {
 
 package() {
   mkdir -p "$pkgdir/etc/pacman.d"
-  install -m644 "$srcdir/mirrorlist" "$pkgdir/etc/pacman.d/mirrorlist-arch"
+  install -m0644 "$srcdir/mirrorlist" "$pkgdir/etc/pacman.d/"
 }
-
-md5sums=('c581e9051a30c4f729e9c54afc63c318')
-sha256sums=('5f16faf02b36599bfe344b2ff363659e4e8a947a58959f59cb8bc021478c2b4b')
