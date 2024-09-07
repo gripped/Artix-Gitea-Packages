@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 _pkgbasename=libxshmfence
 pkgname=lib32-$_pkgbasename
 pkgver=1.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="a library that exposes a event API on top of Linux futexes (32-bit)"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
