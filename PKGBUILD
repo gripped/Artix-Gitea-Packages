@@ -1,16 +1,15 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 
 _pkgbasename=libxdamage
 pkgname=lib32-$_pkgbasename
 pkgver=1.1.6
-pkgrel=1
+pkgrel=2
 pkgdesc="X11 damaged region extension library (32-bit)"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
 license=('custom')
 depends=('lib32-libxfixes>=4.0.4' $_pkgbasename)
 makedepends=('xorgproto')
-options=('debug')
 source=(${url}/releases/individual/lib/libXdamage-${pkgver}.tar.xz)
 sha256sums=('52733c1f5262fca35f64e7d5060c6fcd81a880ba8e1e65c9621cf0727afb5d11')
 
