@@ -1,21 +1,22 @@
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: FadeMind <fademind@gmail.com>
-# Contributor: Evangelos Foutras <evangelos@foutrelis.com>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
 
 pkgname=lib32-libgudev
 pkgver=238
-pkgrel=1.1
+pkgrel=2
 pkgdesc="GObject bindings for libudev"
 url="https://wiki.gnome.org/Projects/libgudev"
 arch=(x86_64)
 license=(LGPL2.1)
 depends=(
   lib32-glib2
-  lib32-elogind
+  lib32-systemd
   libgudev
 )
 makedepends=(
   git
+  glib2-devel
   meson
 )
 _commit=df7c9c9940160307aaeb31347f4776a46f8736a9  # tags/238^0
@@ -49,7 +50,7 @@ build() {
 }
 
 package() {
-  depends+=(libg{lib,object}-2.0.so)
+  depends+=(libg{lib,object}-2.0.so libudev.so)
   provides+=(libgudev-1.0.so)
 
   meson install -C build --destdir "$pkgdir"
