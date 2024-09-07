@@ -4,15 +4,14 @@
 
 pkgname=lib32-libepoxy
 pkgver=1.5.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Library handling OpenGL function pointer management"
 url="https://github.com/anholt/libepoxy"
 arch=(x86_64)
 license=(MIT)
 depends=(lib32-glibc)
-makedepends=('git' 'lib32-libgl' 'lib32-elogind' 'meson')
+makedepends=(git meson lib32-libgl lib32-systemd)
 checkdepends=(xorg-server-xvfb)
-options=(debug)
 _commit=c84bc9459357a40e46e2fec0408d04fbdde2c973  # tags/1.5.10^0
 source=("git+https://github.com/anholt/libepoxy#commit=$_commit")
 sha256sums=('SKIP')
