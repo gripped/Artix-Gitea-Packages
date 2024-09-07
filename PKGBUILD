@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Corrado Primier <bardo@aur.archlinux.org>
 # Contributor: Eric Belanger <belanger@astro.umontreal.ca>
 # Contributor: William Rea <sillywilly@gmail.com>
@@ -6,7 +6,7 @@
 
 pkgname=lib32-libasyncns
 pkgver=0.8+r3+g68cd5af
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="A C library for executing name service queries asynchronously (32-bit)"
 url="https://0pointer.net/lennart/projects/libasyncns/"
@@ -14,7 +14,6 @@ arch=(x86_64)
 license=(LGPL)
 depends=(lib32-glibc libasyncns)
 makedepends=(git lynx)
-options=(debug)
 _commit=68cd5aff1467638c086f1bedcc750e34917168e4  # master
 source=("git+https://git.0pointer.net/clone/libasyncns.git#commit=$_commit")
 sha256sums=('SKIP')
