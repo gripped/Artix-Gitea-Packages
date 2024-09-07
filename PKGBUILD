@@ -1,15 +1,14 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=lib32-speex
 pkgver=1.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A free codec for free speech (32-bit)"
 url="https://www.speex.org/"
 arch=(x86_64)
 license=(BSD)
 depends=(lib32-gcc-libs speex)
 makedepends=(git)
-options=(debug)
 _commit=5dceaaf3e23ee7fd17c80cb5f02a838fd6c18e01  # tags/Speex-1.2.1^0
 source=("git+https://gitlab.xiph.org/xiph/speex.git#commit=$_commit")
 b2sums=('SKIP')
