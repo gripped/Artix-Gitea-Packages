@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 _pkgbasename=libxft
 pkgname=lib32-$_pkgbasename
 pkgver=2.3.8
-pkgrel=1
+pkgrel=2
 pkgdesc="FreeType-based font drawing library for X (32-bit)"
 arch=('x86_64')
 license=('custom')
