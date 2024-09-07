@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=libinstpatch
 pkgname=lib32-libinstpatch
 pkgver=1.1.6
-pkgrel=2
+pkgrel=3
 pkgdesc="Instrument file software library"
 arch=(x86_64)
 url="https://github.com/swami/libinstpatch"
@@ -15,6 +15,7 @@ depends=(
 )
 makedepends=(
   cmake
+  glib2-devel
   lib32-glib2
   lib32-libsndfile
   python
