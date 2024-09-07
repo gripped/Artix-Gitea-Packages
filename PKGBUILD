@@ -1,10 +1,11 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Alexander 'dma147' Mieland <dma147@linux-stats.org>
 # Contributor: Simon Morgan <simon@16hz.net>
 
 pkgname=chmlib
 pkgver=0.40
-pkgrel=7
+pkgrel=8
 pkgdesc="Library for dealing with Microsoft ITSS/CHM format files"
 arch=('x86_64')
 url="http://www.jedrea.com/chmlib/"
@@ -16,6 +17,7 @@ sha256sums=('3449d64b0cf71578b2c7e3ddc048d4af3661f44a83941ea074a7813f3a59ffa3')
 build() {
   cd "${srcdir}"/${pkgname}-${pkgver}
 
+  CFLAGS+=" -Wno-implicit-function-declaration"
   ./configure --prefix=/usr \
               --enable-examples=yes
   make
