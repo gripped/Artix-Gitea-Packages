@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@gmail.com>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 # Contributor: Xavius <xavierelf@gmail.com>
@@ -6,7 +6,7 @@
 _name=portaudio
 pkgname=lib32-portaudio
 pkgver=19.7.0
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='A free, cross-platform, open source, audio I/O library (32 bit)'
 arch=(x86_64)
