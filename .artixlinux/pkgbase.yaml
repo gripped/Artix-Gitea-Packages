@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libsndfile
-  version: 1.2.2-1
+  version: 1.2.2-2
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.2.2-1
+    version: 1.2.2-2
     packages:
-      - lib32-libsndfile-1.2.2-1-x86_64.pkg.tar.zst
+      - lib32-libsndfile-1.2.2-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: lib32
