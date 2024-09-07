@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: GordonGR <ntheo1979@gmail.com>
 # Contributor: josephgbr <rafael.f.f1@gmail.com>
 
 _pkgname=libraw1394
 pkgname=lib32-${_pkgname}
 pkgver=2.1.2
-pkgrel=4
+pkgrel=5
 pkgdesc="Provides an API to the Linux IEEE1394 (FireWire) driver (32 bit)"
 arch=('x86_64')
 url="https://ieee1394.wiki.kernel.org/index.php/Main_Page"
