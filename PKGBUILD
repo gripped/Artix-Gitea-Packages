@@ -1,8 +1,8 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@gmail.com>
 
 pkgname=lib32-cdparanoia
 pkgver=10.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Compact Disc Digital Audio extraction tool'
 arch=(x86_64)
 url=https://www.xiph.org/paranoia/
