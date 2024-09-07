@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
 # Contributor: Jaroslaw Swierczynski <swiergot@juvepoland.com>
@@ -7,7 +7,7 @@
 _pkgname=libiec61883
 pkgname=lib32-${_pkgname}
 pkgver=1.2.0
-pkgrel=4
+pkgrel=5
 pkgdesc="A higher level API for streaming DV, MPEG-2 and audio over Linux IEEE 1394 (32 bit)"
 arch=('x86_64')
 url="https://www.kernel.org/pub/linux/libs/ieee1394/"
