@@ -1,9 +1,9 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=libavtp
 pkgname=lib32-libavtp
 pkgver=0.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Open source implementation of Audio Video Transport Protocol"
 arch=(x86_64)
 url="https://github.com/Avnu/libavtp"
