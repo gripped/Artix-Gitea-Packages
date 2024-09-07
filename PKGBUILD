@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 _pkgbasename=libxi
 pkgname=lib32-$_pkgbasename
 pkgver=1.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc="X11 Input extension library (32-bit)"
 arch=('x86_64')
 url="https://xorg.freedesktop.org"
