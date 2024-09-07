@@ -1,11 +1,11 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Denommus <yuridenommus@gmail.com>
 # Contributor: Bill Fraser <wfraser@codewise.org>
 # Contributor: Felipe Contreras <felipe.contreras@gmail.com>
 
 pkgname=lib32-flex
 pkgver=2.6.4
-pkgrel=4
+pkgrel=5
 pkgdesc='A tool for generating text-scanning programs'
 arch=('x86_64')
 url='http://flex.sourceforge.net'
