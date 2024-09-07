@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=lib32-xcb-util-keysyms
 _pkgname=xcb-util-keysyms
 pkgver=0.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Utility libraries for XC Binding - Standard X key constants and conversion to/from keycodes"
 arch=('x86_64')
 url="https://xcb.freedesktop.org"
