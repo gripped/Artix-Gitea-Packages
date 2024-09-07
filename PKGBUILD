@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Chaiwat Suttipongsakul <cwt114@gmail.com>
 
 pkgname=lib32-libthai
 pkgver=0.1.29
-pkgrel=2
+pkgrel=3
 pkgdesc='Thai language support routines'
 url='https://linux.thai.net/projects/libthai'
 arch=('x86_64')
@@ -12,7 +12,6 @@ license=('LGPL')
 depends=('lib32-libdatrie')
 makedepends=('autoconf-archive' 'git')
 provides=('libthai.so')
-options=('debug')
 source=("git+https://github.com/tlwg/libthai.git#tag=v${pkgver}")
 sha256sums=('SKIP')
 
