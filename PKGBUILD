@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Alexander Baldeck <alexander@archlinux.org>
 
 _pkgbasename=libxinerama
 pkgname=lib32-$_pkgbasename
 pkgver=1.1.5
-pkgrel=1
+pkgrel=2
 pkgdesc="X11 Xinerama extension library (32-bit)"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
