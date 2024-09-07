@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: lib32-libshout
-  version: 2.4.6-3
+  version: 2.4.6-4
   arch:
     - x86_64
   pkgname:
     - lib32-libshout
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 2.4.6-3
+    version: 2.4.6-4
     packages:
-      - lib32-libshout-2.4.6-3-x86_64.pkg.tar.zst
+      - lib32-libshout-2.4.6-4-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: lib32
