@@ -1,4 +1,4 @@
-# Maintainer: Nathan Owens <ndowens@artixlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Arthur Zamarin <arthurzam@gmail.com>
 # Contributor: trya <tryagainprod@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
@@ -8,7 +8,7 @@
 
 pkgname=lib32-libpng12
 pkgver=1.2.59
-pkgrel=2
+pkgrel=3
 pkgdesc='A collection of routines used to create PNG format graphics files'
 arch=('x86_64')
 url='http://www.libpng.org/pub/png/libpng.html'
