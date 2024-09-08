@@ -3,7 +3,7 @@
 
 pkgname=base-devel
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc='Basic tools to build Artix Linux packages'
 url='https://www.artixlinux.org'
 arch=('any')
