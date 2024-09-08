@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-django-allauth
-  version: 64.2.1-1
+  version: 64.2.1-2
   arch:
     - any
   pkgname:
     - python-django-allauth
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 64.2.0-2
+    version: 64.2.1-2
     packages:
-      - python-django-allauth-64.2.0-2-any.pkg.tar.zst
+      - python-django-allauth-64.2.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
