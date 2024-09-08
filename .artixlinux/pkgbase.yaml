@@ -8,7 +8,7 @@ pkgbase:
     - libreoffice-fresh-sdk
     - libreoffice-fresh
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -44,8 +44,10 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 24.8.0-4.1
+    packages:
+      - libreoffice-fresh-sdk-24.8.0-4.1-x86_64.pkg.tar.zst
+      - libreoffice-fresh-24.8.0-4.1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: 24.8.0-4.1
     packages:
