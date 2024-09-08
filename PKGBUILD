@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=1.43.0
+pkgver=1.44.0
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -54,13 +54,13 @@ optdepends=(
   'python-scipy: embeddings'
 )
 # Defined in .stats.yml
-_openai_openapi_spec=1dbac0e95bdb5a89a0dd3d93265475a378214551b7d8c22862928e0d87ace94b
+_openai_openapi_spec=85a85e0c08de456441431c0ae4e9c078cc8f9748c29430b9a9058340db6389ee
 source=(
   "${_name}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
   "https://storage.googleapis.com/stainless-sdk-openapi-specs/openai-${_openai_openapi_spec}.yml"
 )
-sha256sums=('2bab16eb11be6b5233f379f00416d806b7784978d32eeba3423552e6d9dadbac'
-            '1dbac0e95bdb5a89a0dd3d93265475a378214551b7d8c22862928e0d87ace94b')
+sha256sums=('b57e08605c636eebf5d03e908b8a469e9d84fe329185a4ca0d4a08cd5af28399'
+            '85a85e0c08de456441431c0ae4e9c078cc8f9748c29430b9a9058340db6389ee')
 
 prepare() {
   cd "${_name}-${pkgver}"
