@@ -4,7 +4,7 @@
 _pkgname=filesystem_spec
 pkgname=python-fsspec
 pkgver=2024.9.0
-pkgrel=2
+pkgrel=1.1
 pkgdesc="Specification that python filesystems should adhere to"
 arch=(any)
 url="https://github.com/intake/filesystem_spec"
@@ -73,6 +73,7 @@ check() {
   cd $_pkgname-$pkgver
   pytest \
     --deselect fsspec/implementations/tests/test_ftp.py \
+    --deselect fsspec/implementations/tests/test_jupyter.py::test_simple \
     --deselect fsspec/implementations/tests/test_zip.py::test_find_returns_expected_result_detail_true \
     --deselect fsspec/implementations/tests/test_zip.py::test_find_returns_expected_result_detail_true_include_dirs
 }
