@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ant
-  version: 1.10.14-2
+  version: 1.10.15-1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.10.14-2
+    version: 1.10.15-1
     packages:
-      - ant-1.10.14-2-any.pkg.tar.zst
-      - ant-doc-1.10.14-2-any.pkg.tar.zst
+      - ant-1.10.15-1-any.pkg.tar.zst
+      - ant-doc-1.10.15-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
