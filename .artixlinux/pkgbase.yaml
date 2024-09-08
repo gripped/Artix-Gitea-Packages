@@ -5,7 +5,7 @@ pkgbase:
   arch:
     - any
   pkgname:
-    - pacman-mirrorlist
+    - archlinux-mirrorlist
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -51,5 +51,5 @@ repos:
   galaxy:
     version: 20240717-1
     packages:
-      - pacman-mirrorlist-20240717-1-any.pkg.tar.zst
+      - archlinux-mirrorlist-20240717-1-any.pkg.tar.zst
 team: galaxy
