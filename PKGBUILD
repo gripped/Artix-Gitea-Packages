@@ -1,9 +1,9 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
-_pkgname=filesystem_spec
+_pkg=filesystem_spec
 pkgname=python-fsspec
-pkgver=2024.9.0
+pkgver=2024.6.1
 pkgrel=1.1
 pkgdesc="Specification that python filesystems should adhere to"
 arch=(any)
@@ -17,35 +17,33 @@ makedepends=(
   python-installer
   python-wheel
 )
-checkdepends=(
-  git
-  jupyter-notebook
+checkdepends=(git
+  python-pytest
+  python-pytest-asyncio
+  python-pytest-mock
+  python-pytest-vcr
   python-aiohttp
-  python-cloudpickle
   python-dask
   python-distributed
   python-fastparquet
   # python-fusepy
-  python-jinja
   python-libarchive-c
+  python-paramiko
+  python-pyarrow
+  python-pygit2
+  python-requests
+  python-smbprotocol
+  python-cloudpickle
+  python-jinja
   python-lz4
   python-msgpack
   python-numpy
   python-pandas
-  python-paramiko
-  python-pyarrow
   python-pyftpdlib
-  python-pygit2
-  python-pytest
-  python-pytest-asyncio
-  python-pytest-mock
-  python-pytest-rerunfailures
-  python-pytest-vcr
-  python-requests
-  python-smbprotocol
   python-snappy
   python-tqdm
   python-zstandard
+  jupyter-notebook
 )
 optdepends=(
   'python-aiohttp: HTTP support'
@@ -60,26 +58,25 @@ optdepends=(
   'python-snappy: snappy compression support'
   'python-zstandard: zstandard (zstd) compression support'
 )
-source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('c02c956b0f89ff1f5dc3c78d1298d45264b3ac1a517ff92008c9e866ca34cf0f')
+source=("${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('0fa8a4f6eee6d6c4e66c4e7ba892ffbbb96edb5db6cb30356169518af470f7dc')
 
 build() {
-  cd $_pkgname-$pkgver
+  cd "$_pkg-$pkgver"
+
   export SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver
   python -m build --wheel --no-isolation
 }
 
 check() {
-  cd $_pkgname-$pkgver
-  pytest \
-    --deselect fsspec/implementations/tests/test_ftp.py \
-    --deselect fsspec/implementations/tests/test_jupyter.py::test_simple \
-    --deselect fsspec/implementations/tests/test_zip.py::test_find_returns_expected_result_detail_true \
-    --deselect fsspec/implementations/tests/test_zip.py::test_find_returns_expected_result_detail_true_include_dirs
+  cd "$_pkg-$pkgver"
+
+  pytest
 }
 
 package() {
-  cd $_pkgname-$pkgver
+  cd "$_pkg-$pkgver"
+
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }

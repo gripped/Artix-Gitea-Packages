@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-fsspec
-  version: 2024.9.0-1.1
+  version: 2024.6.1-1.1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-fsspec-2024.9.0-2-any.pkg.tar.zst
   world:
-    version: 2024.9.0-1.1
+    version: 2024.6.1-1.1
     packages:
-      - python-fsspec-2024.9.0-1.1-any.pkg.tar.zst
+      - python-fsspec-2024.6.1-1.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
