@@ -4,7 +4,7 @@
 
 pkgname=spdlog
 pkgver=1.14.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Very fast, header-only/compiled, C++ logging library'
 arch=('x86_64')
 url='https://github.com/gabime/spdlog'
@@ -14,16 +14,20 @@ makedepends=('cmake')
 source=(
     "$pkgname-$pkgver.tar.gz::https://github.com/gabime/spdlog/archive/v$pkgver.tar.gz"
     "spdlog_fmt_external.patch"
+    "fix_build_with_fmt11.patch::https://github.com/gabime/spdlog/commit/d276069a6e916b1e1fd45885b15b72bd8ee000a7.patch"
 )
 provides=(
     'libspdlog.so'
 )
 sha256sums=('1586508029a7d0670dfcb2d97575dcdc242d3868a259742b69f100801ab4e16b'
-            'a0eb34b7c6920f0db2587460071f53372663c191cdfe34bf5ea2704c309c745f')
+            'a0eb34b7c6920f0db2587460071f53372663c191cdfe34bf5ea2704c309c745f'
+            '9208168114b0996d6c4b74cfbdf145ed3209680bef258b9306467c39f1149202')
 
 prepare() {
     cd "$pkgname-$pkgver"
     patch -p1 <../spdlog_fmt_external.patch
+    # Temporary upstream patch to fix build with fmt 11
+    patch -p1 <../fix_build_with_fmt11.patch
 }
 
 build() {
