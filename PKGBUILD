@@ -10,7 +10,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -125,10 +125,12 @@ optdepends=(
 options=(staticlibs)
 source=(${url}/files/release/${pkgver%.*}/VTK-${pkgver}.tar.gz
         vtk-occt.patch
-        ospray-3.patch)
+        ospray-3.patch
+        fmt-11.patch)
 sha256sums=('8354ec084ea0d2dc3d23dbe4243823c4bfc270382d0ce8d658939fd50061cab8'
             'df958eabc7dc4f5b33383ce0fb0f90a3ba202c1c2a24d3b5b9e7cfb1fb38b011'
-            'faf3fd2eea2f73a07f5dcbd67920161a07ae554e008ad1e4099153fec2882278')
+            'faf3fd2eea2f73a07f5dcbd67920161a07ae554e008ad1e4099153fec2882278'
+            '8161d4e184a3f2d075be26605c0d38f04314a8e26146ab5b1c33f87dabc2b0d2')
 
 prepare() {
   cd ${pkgname^^}-${pkgver}
@@ -137,6 +139,7 @@ prepare() {
 
   patch -Np1 -i "$srcdir"/vtk-occt.patch
   patch -Np1 -i ../ospray-3.patch # Fix build with ospray 3.0
+  patch -p1 -i ../fmt-11.patch # Fix build with fmt 11
 }
 
 build() {
