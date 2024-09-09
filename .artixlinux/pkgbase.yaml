@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: level-zero
-  version: 1.17.19-2
+  version: 1.17.19-3
   arch:
     - x86_64
   pkgname:
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.17.19-2
+    version: 1.17.19-3
     packages:
-      - level-zero-headers-1.17.19-2-x86_64.pkg.tar.zst
-      - level-zero-loader-1.17.19-2-x86_64.pkg.tar.zst
+      - level-zero-headers-1.17.19-3-x86_64.pkg.tar.zst
+      - level-zero-loader-1.17.19-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
