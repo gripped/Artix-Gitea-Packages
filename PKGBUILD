@@ -21,24 +21,24 @@ sha512sums=('93d0d993e8f854c038aa87842f300d1ea6328a6aef2c8688e5e38b5b0d4b577ef1d
 validpgpkeys=("E499C79F53C96A54E572FEE1C06086337C50773E")
 
 prepare() {
-  cd ${pkgname}
+  cd "${_upstream}" 
   patch -Np1 -i ../aro-artix.patch
   patch -Np1 -i ../pacman-7.patch
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
-  cd ${pkgname}
+  cd "${_upstream}" 
   cargo build --frozen --release --all-features
 }
 
 check() {
-  cd ${pkgname}
+  cd "${_upstream}" 
   cargo test --frozen --all-features
 }
 
 package() {
-  cd ${pkgname}
+  cd "${_upstream}" 
   make install DESTDIR="$pkgdir" PREFIX=/usr
   ln -sfv arch-rebuild-order "${pkgdir}"/usr/bin/artix-rebuild-order
 
