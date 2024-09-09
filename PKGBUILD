@@ -4,13 +4,20 @@
 
 pkgname=spdlog
 pkgver=1.14.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Very fast, header-only/compiled, C++ logging library'
 arch=('x86_64')
 url='https://github.com/gabime/spdlog'
 license=('MIT')
-depends=('libfmt.so')
-makedepends=('cmake')
+depends=(
+    'gcc-libs'
+    'glibc'
+    'libfmt.so'
+)
+makedepends=(
+    'cmake'
+    'catch2'
+)
 source=(
     "$pkgname-$pkgver.tar.gz::https://github.com/gabime/spdlog/archive/v$pkgver.tar.gz"
     "spdlog_fmt_external.patch"
@@ -31,26 +38,23 @@ prepare() {
 }
 
 build() {
-    export CFLAGS+=" ${CPPFLAGS}"
-    export CXXFLAGS+=" ${CPPFLAGS}"
-    # FIXME: Stop -DSPDLOG_BUILD_TESTS=ON from downloading bundled catch2
     cmake -B build -S "$pkgname-$pkgver" \
         -DSPDLOG_BUILD_BENCH=OFF \
         -DSPDLOG_FMT_EXTERNAL=ON \
         -DSPDLOG_BUILD_SHARED=ON \
+        -DSPDLOG_BUILD_TESTS=ON \
         -DCMAKE_BUILD_TYPE=None \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBDIR=lib \
         -Wno-dev
-    make -C build
+    cmake --build build
 }
 
-# See FIXME above
-#check() {
-#    make -C build test
-#}
+check() {
+    cmake --build build --target test
+}
 
 package() {
-    make -C build DESTDIR="$pkgdir" install
-    install -Dm644 "$pkgname-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
+    DESTDIR="$pkgdir" cmake --install build
+    install -vDm644 "$pkgname-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
