@@ -1,4 +1,5 @@
-# Maintainer: Campbell Jones <arch at serebit dot com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Campbell Jones <arch at serebit dot com>
 # Co-Maintainer: George Rawlinson <george@rawlinson.net.nz>
 # Contributor: Ranieri Althoff <ranisalt+aur at gmail dot com>
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
@@ -6,7 +7,7 @@ _pkgname=MangoHud
 pkgname=mangohud
 _pkgver=0.7.2
 pkgver="${_pkgver%-*}"
-pkgrel=1
+pkgrel=2
 pkgdesc="A Vulkan overlay layer for monitoring FPS, temperatures, CPU/GPU load and more."
 arch=('x86_64')
 url="https://github.com/flightlessmango/MangoHud"
