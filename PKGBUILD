@@ -8,21 +8,21 @@
 # Contributor: Dhananjay Sathe <dhananjaysathe@gmail.com>
 
 pkgbase=samba
-pkgname=('libwbclient' 'smbclient' 'samba')
+pkgname=('libwbclient' 'ldb' 'smbclient' 'samba')
 pkgver=4.21.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL-3.0-or-later')
 makedepends=(
   acl
+  dateutils
   dbus
   docbook-xsl
   glusterfs
   gnutls
   jansson
   krb5
-  ldb
   libbsd
   libcap
   libcups
@@ -45,11 +45,18 @@ makedepends=(
   tdb
   tevent
 )
+#checkdepends=(
+#  git
+#  python-cryptography
+#  python-iso8601
+#  python-pyasn1
+#)
 optdepends=(
   'python-dnspython: samba_dnsupdate and samba_upgradedns in AD setup'
   'python-markdown: for samba-tool domain schemeupgrade'
   'glusterfs: for vfs_glusterfs support'
 )
+epoch=2
 source=(
   https://us1.samba.org/samba/ftp/stable/${pkgbase}-${pkgver}.tar{.gz,.asc}
   samba.logrotate
@@ -68,12 +75,12 @@ b2sums=('0889f2be3b78affee88250114397de87a77da77d9674815ec5605780a6bb3e2e28dbbae
 # (This is so RPATHS and symlinks are generated correctly via
 # make install, but the otherwise unsplit pieces can be split)
 build() {
-_pkgsrc="${srcdir}"/samba-pkg
 _samba4_idmap_modules=idmap_ad,idmap_rid,idmap_adex,idmap_hash,idmap_tdb2
 _samba4_pdb_modules=pdb_tdbsam,pdb_ldap,pdb_ads,pdb_smbpasswd,pdb_wbc_sam,pdb_samba4
 _samba4_auth_modules=auth_unix,auth_wbc,auth_server,auth_netlogond,auth_script,auth_samba4
+_pkgsrc="${srcdir}"/samba-pkg
   rm -rf ${_pkgsrc}
-  cd samba-${pkgver}
+  cd ${pkgbase}-${pkgver}
   ./configure --enable-fhs \
     --prefix=/usr \
     --sysconfdir=/etc \
@@ -92,8 +99,9 @@ _samba4_auth_modules=auth_unix,auth_wbc,auth_server,auth_netlogond,auth_script,a
     --without-systemd \
     --with-pam \
     --with-pammodulesdir=/usr/lib/security \
-    --bundled-libraries=!tdb,!talloc,!pytalloc-util,!tevent,!popt,!ldb,!pyldb-util \
-    --with-shared-modules=${_samba4_idmap_modules},${_samba4_pdb_modules},${_samba4_auth_modules},vfs_io_uring \
+    --private-libraries='!ldb' \
+    --bundled-libraries='!tdb,!talloc,!pytalloc-util,!tevent,!popt,!pyldb-util' \
+    --with-shared-modules="${_samba4_idmap_modules},${_samba4_pdb_modules},${_samba4_auth_modules},vfs_io_uring" \
     --disable-rpath-install \
     --with-profiling-data
   # Add this to the options once it's working...
@@ -108,11 +116,16 @@ _samba4_auth_modules=auth_unix,auth_wbc,auth_server,auth_netlogond,auth_script,a
   fi
 }
 
+# --enable-selftest for checks
+#check() {
+# cd samba-${pkgver}
+# make check
+#}
+
 package_libwbclient() {
 pkgdesc="winbind client library"
 depends=('libbsd')
 _pkgsrc="${srcdir}"/samba-pkg
-
   install -d -m755 "${pkgdir}"/usr/lib
   for lib in "${_pkgsrc}"/usr/lib/libwbclient.so*; do
     mv ${lib} "${pkgdir}"/usr/lib/
@@ -121,6 +134,66 @@ _pkgsrc="${srcdir}"/samba-pkg
   mv "${_pkgsrc}"/usr/lib/pkgconfig/wbclient.pc "${pkgdir}"/usr/lib/pkgconfig/
   install -d -m755 "${pkgdir}"/usr/include/samba-4.0
   mv "${_pkgsrc}"/usr/include/samba-4.0/wbclient.h "${pkgdir}"/usr/include/samba-4.0/
+}
+
+package_ldb() {
+pkgdesc='Schema-less, ldap like, API and database'
+url="https://ldb.samba.org/"
+depends=(
+  libtevent.so
+  lmdb
+  popt
+  talloc
+  tdb
+  libtdb.so
+)
+optdepends=(
+  'python: for python bindings'
+)
+_ldb_bins=(
+  ldbadd
+  ldbdel
+  ldbedit
+  ldbmodify
+  ldbrename
+  ldbsearch
+)
+_ldb_headers=(
+  ldb.h
+  ldb_errors.h
+  ldb_handlers.h
+  ldb_module.h
+  ldb_version.h
+)
+provides=(libldb.so)
+_pkgsrc="${srcdir}"/samba-pkg
+
+  install -d -m755 "${pkgdir}"/usr/bin
+  for bin in ${_ldb_bins[@]}; do
+    mv "${_pkgsrc}"/usr/bin/${bin} "${pkgdir}"/usr/bin/
+  done
+  install -d -m755 "${pkgdir}"/usr/lib
+  for lib in "${_pkgsrc}"/usr/lib/libldb*; do
+    mv ${lib} "${pkgdir}"/usr/lib/
+  done
+  install -d -m755 "${pkgdir}"/usr/lib/samba
+  mv "${_pkgsrc}"/usr/lib/samba/ldb "${pkgdir}"/usr/lib/samba
+  install -d -m755 "${pkgdir}"/usr/lib/pkgconfig
+  mv "${_pkgsrc}"/usr/lib/pkgconfig/ldb.pc "${pkgdir}"/usr/lib/pkgconfig/
+  install -d -m755 "${pkgdir}"/usr/include/samba-4.0
+  for headers in ${_ldb_headers[@]}; do
+    mv "${_pkgsrc}"/usr/include/samba-4.0/${headers} "${pkgdir}"/usr/include/samba-4.0/
+  done
+  install -d -m755 "${pkgdir}"/usr/lib/python3.12/site-packages/
+  mv "${_pkgsrc}"/usr/lib/python3.12/site-packages/{_ldb_text.py,ldb.cpython-312-x86_64-linux-gnu.so} \
+    "${pkgdir}"/usr/lib/python3.12/site-packages/
+
+  install -d -m755 "${pkgdir}"/usr/share/man/man1
+  for bin in ${_ldb_bins[@]}; do
+    mv "${_pkgsrc}"/usr/share/man/man1/${bin}.1 "${pkgdir}"/usr/share/man/man1/
+  done
+  mv "${_pkgsrc}"/usr/share/man/man3 "${pkgdir}"/usr/share/man/
+
 }
 
 package_smbclient() {
@@ -161,6 +234,7 @@ _smbclient_bins=(
   smbtar
 )
 _pkgsrc="${srcdir}"/samba-pkg
+
   install -d -m755 "${pkgdir}"/usr/bin
   for bin in ${_smbclient_bins[@]}; do
     mv "${_pkgsrc}"/usr/bin/${bin} "${pkgdir}"/usr/bin/
@@ -235,6 +309,7 @@ backup=(
 )
 install=samba.install
 
+_pkgsrc="${srcdir}"/samba-pkg
   # Everything that libwbclient and smbclient didn't install goes
   # into the samba package...
   mv "${_pkgsrc}"/* "${pkgdir}"
