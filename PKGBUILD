@@ -5,7 +5,7 @@
 pkgbase=caja-extensions
 pkgname=(caja-extensions-common caja-image-converter caja-open-terminal caja-sendto caja-share caja-wallpaper caja-xattr-tags caja-audio-video-properties)
 pkgver=1.28.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Set of extensions for Caja, the MATE file manager"
 url="https://mate-desktop.org"
 arch=('x86_64')
