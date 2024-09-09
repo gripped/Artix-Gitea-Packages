@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-fsspec
-  version: 2024.6.1-1.1
+  version: 2024.9.0-2
   arch:
     - any
   pkgname:
     - python-fsspec
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
