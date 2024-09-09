@@ -9,7 +9,7 @@ pkgbase:
     - python-protobuf
     - ruby-google-protobuf
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,11 +38,11 @@ repos:
       - python-protobuf-28.0-1-x86_64.pkg.tar.zst
       - ruby-google-protobuf-28.0-1-x86_64.pkg.tar.zst
   world:
-    version: 27.3-2
+    version: 28.0-1
     packages:
-      - protobuf-27.3-2-x86_64.pkg.tar.zst
-      - python-protobuf-27.3-2-x86_64.pkg.tar.zst
-      - ruby-google-protobuf-27.3-2-x86_64.pkg.tar.zst
+      - protobuf-28.0-1-x86_64.pkg.tar.zst
+      - python-protobuf-28.0-1-x86_64.pkg.tar.zst
+      - ruby-google-protobuf-28.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

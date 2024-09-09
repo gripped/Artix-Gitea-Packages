@@ -41,7 +41,7 @@ source=(https://github.com/protocolbuffers/protobuf/archive/v$pkgver/$pkgname-$p
         https://github.com/protocolbuffers/protobuf/commit/2e62ef1e.patch
         $pkgbase-25.3-ruby-disable-LTO.patch) # https://github.com/protocolbuffers/protobuf/issues/11935
 sha512sums=('8745f625ac781f3bbefe9494cbf570143d38aecc1521edef7a52ffb403b8be24df2c71f4f2410b5a5b78a0f3e8a38a7d19be2cf916b1b9125349d2da18262cd1'
-            'f42d9bd702abe2c7fc4dcb07d050376287ac60b0b7e2fde0d7a9e9df24a620866bee5fd7de2e3b216095376de47e1fe7443cca74c9a9e85c1a0bc42e8973a280'
+            '18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd'
             '1ebdea4e533ee0f71baf1b3fe2623ca723b36a08c6b97475ea5996b10aeb6873cf94d9120596ddd1216bd2f6feb991f8c33078e8104008a5078ace5be5431efd')
 
 options=(!lto)
