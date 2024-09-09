@@ -1,8 +1,9 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgname=liblas
 pkgver=1.8.1.r128+gded46373
-pkgrel=9
+pkgrel=10
 pkgdesc="C/C++ library for reading and writing the very common LAS LiDAR format"
 arch=(x86_64)
 url="https://liblas.org/"
