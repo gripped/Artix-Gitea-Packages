@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libretro-gambatte
-  version: 1045-1
+  version: 1049-1
   arch:
     - x86_64
   pkgname:
     - libretro-gambatte
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -43,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1049-1
+    packages:
+      - libretro-gambatte-1049-1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
