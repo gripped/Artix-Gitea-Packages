@@ -1,0 +1,29 @@
+# Maintainer: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor:  Thomas Weißschuh <thomas t-8ch de>
+
+pkgname=pinentry-bemenu
+pkgver=0.13.0
+pkgrel=2
+pkgdesc="Pinentry based on bemenu"
+arch=("x86_64")
+url="https://github.com/t-8ch/pinentry-bemenu"
+license=("GPL2")
+provides=("pinentry")
+depends=("bemenu" "libassuan" "libgpg-error" "popt")
+makedepends=("meson" "ninja" "cmake" "pkgconf" "popt")
+source=(
+	pinentry-bemenu-$pkgver.tar.gz::https://github.com/t-8ch/$pkgname/archive/refs/tags/v$pkgver.tar.gz
+)
+sha512sums=('fb1a80c2654241807263e493e488ec87a9f4b4e16a931f3b643ec809e5053fe388c2820df4dab9ebffe6f74069073f1539602558cac8175bd92bb2a76ca6211e')
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	artix-meson build
+	cd build
+	ninja
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}/build"
+	DESTDIR="$pkgdir" ninja install
+}
