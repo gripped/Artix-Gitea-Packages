@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - libretro-play
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -43,14 +43,13 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 8320-1
-    packages:
-      - libretro-play-8320-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-gremlins:
     version: null
     packages: []
   galaxy:
-    version: 8292-1
+    version: 8320-1
     packages:
-      - libretro-play-8292-1-x86_64.pkg.tar.zst
+      - libretro-play-8320-1-x86_64.pkg.tar.zst
 team: galaxy
