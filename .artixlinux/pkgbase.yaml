@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-gtk2
-  version: 2.24.33-3
+  version: 2.24.33-5
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 2.24.33-3
+    version: 2.24.33-5
     packages:
-      - lib32-gtk2-2.24.33-3-x86_64.pkg.tar.zst
+      - lib32-gtk2-2.24.33-5-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
