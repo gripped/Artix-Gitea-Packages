@@ -12,7 +12,7 @@
 
 pkgname=puppet
 pkgver=7.32.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Server automation framework and application'
 arch=('any')
 url='https://www.puppet.com/community/open-source'
@@ -21,6 +21,7 @@ depends=(
   facter
   hiera
   ruby
+  ruby-augeas
   ruby-concurrent
   ruby-deep_merge
   ruby-erb
