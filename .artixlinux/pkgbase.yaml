@@ -7,21 +7,21 @@ pkgbase:
   pkgname:
     - pacman
 actions:
-  addRepo: system-goblins
-  removeRepo: null
+  addRepo: system-gremlins
+  removeRepo: system-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 7.0.0.r1.g7cf2b01-1
     packages:
       - pacman-7.0.0.r1.g7cf2b01-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 6.1.0-3
     packages:
