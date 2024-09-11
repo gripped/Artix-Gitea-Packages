@@ -3,7 +3,7 @@
 
 pkgname=sssd
 pkgver=2.9.5
-pkgrel=4
+pkgrel=5
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -92,6 +92,7 @@ build() {
     --with-files-provider                         \
     --without-selinux                             \
     --without-semanage                            \
+    --with-ldb-lib-dir=/usr/lib/samba/ldb \
     ;
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
   make
