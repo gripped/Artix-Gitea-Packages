@@ -57,6 +57,7 @@ package_moksha() {
               'terminology: EFL based terminal emulator'
               'acpid: power events on laptop lid close and backight'
               'connman: modular network connection manager'
+              'lm_sensors: for Moksha temperature indicator'
               'volumeicon: volume control for the system tray')
   install="$pkgname.install"
   conflicts=("enlightenment")
