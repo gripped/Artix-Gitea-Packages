@@ -1,0 +1,40 @@
+From 9f0c74432d83d177bcb16751ab72cd6fbaefaccf Mon Sep 17 00:00:00 2001
+From: zeljan1 <zeljko@holobit.hr>
+Date: Wed, 11 Sep 2024 15:46:02 +0200
+Subject: [PATCH] Qt5,Qt6: allow paste text if mime type contains charset
+ attribute
+
+---
+ lcl/interfaces/qt5/qtobjects.pas | 2 +-
+ lcl/interfaces/qt6/qtobjects.pas | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lcl/interfaces/qt5/qtobjects.pas b/lcl/interfaces/qt5/qtobjects.pas
+index aa9811e34e2..f9c5e9f4060 100644
+--- a/lcl/interfaces/qt5/qtobjects.pas
++++ b/lcl/interfaces/qt5/qtobjects.pas
+@@ -4120,7 +4120,7 @@ begin
+   if (MimeType = 'text/plain') then // do not translate
+   begin
+     QGuiApplication_platformName(@WStr);
+-    if CompareText(Copy(UTF16ToUTF8(WStr), 1, 7),'wayland') = 0 then  // do not translate
++    if (WStr = 'xcb') or (CompareText(Copy(UTF16ToUTF8(WStr), 1, 7),'wayland') = 0) then  // do not translate
+     begin
+       AFormats := QStringList_Create;
+       QMimeData_formats(QtMimeData, AFormats);
+diff --git a/lcl/interfaces/qt6/qtobjects.pas b/lcl/interfaces/qt6/qtobjects.pas
+index 768442a6a49..79a7045f149 100644
+--- a/lcl/interfaces/qt6/qtobjects.pas
++++ b/lcl/interfaces/qt6/qtobjects.pas
+@@ -4281,7 +4281,7 @@ begin
+   if (MimeType = 'text/plain') then // do not translate
+   begin
+     QGuiApplication_platformName(@WStr);
+-    if CompareText(Copy(UTF16ToUTF8(WStr), 1, 7),'wayland') = 0 then  // do not translate
++    if (WStr = 'xcb') or (CompareText(Copy(UTF16ToUTF8(WStr), 1, 7),'wayland') = 0) then  // do not translate
+     begin
+       AFormats := QStringList_Create;
+       QMimeData_formats(QtMimeData, AFormats);
+-- 
+GitLab
+
