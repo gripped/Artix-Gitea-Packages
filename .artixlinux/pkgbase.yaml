@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gc
-  version: 8.2.6-1
+  version: 8.2.8-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 8.2.6-1
+    version: 8.2.8-2
     packages:
-      - gc-8.2.6-1-x86_64.pkg.tar.zst
+      - gc-8.2.8-2-x86_64.pkg.tar.zst
   system:
     version: 8.2.4-1
     packages:
@@ -53,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
