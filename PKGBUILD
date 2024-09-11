@@ -1,31 +1,16 @@
 # Maintainer: artist for Artix Linux
 
-pkgname=moksha
+pkgbase=moksha
+pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=13.3
+pkgrel=13.4
 _commit="470f1d3e840416678d6e61c13603b50f118c2b5e"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
 license=('BSD')
-depends=('efl>=1.27.0' 'moksha-menu' 'moksha-arandr' 'moksha-help' 'desktop-file-utils' 'xclip'
-         'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy' 'xcb-util-keysyms' 'openssl-1.1'
-         'lm_sensors' 'rrdtool' 'libpulse')
-makedepends=('git' 'glib2' 'libpng' 'harfbuzz' 'fribidi' 'fontconfig' 'luajit' 'bullet'
-             'libxcb' 'automake' 'libx11' 'alsa-lib' 'udisks2' 'libsndfile')
-optdepends=('moksha-extra-modules: additional modules for Moksha'
-            'moksha-themes: additional themes for Moksha'
-            'moksha-icon-themes-basic: basic additional themes for Moksha'
-            'moksha-icon-themes-extra: extra additional themes for Moksha'
-            'terminology: EFL based terminal emulator'
-            'acpid: power events on laptop lid close and backight'
-            'connman: modular network connection manager'
-            'pavucontrol: pulse audio mixer'
-            'volumeicon: volume control for the system tray'
-            'wpa-cute: graphical wpa_supplicant front end, fork of wpa_supplicant_gui')
-install="$pkgname.install"
-conflicts=("enlightenment")
-backup=(etc/enlightenment/sysactions.conf)
+makedepends=('git' 'efl>=1.27.0' 'glib2' 'libpng' 'harfbuzz' 'fribidi' 'fontconfig' 'luajit' 'bullet'
+             'libxcb' 'automake' 'libx11' 'xcb-util-keysyms' 'alsa-lib' 'udisks2' 'libsndfile')
 options=('lto')
 source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=${_commit}"
         "moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git"
@@ -61,14 +46,42 @@ check() {
   make -k check
 }
 
-package() {
+package_moksha() {
+  depends=('efl>=1.27.0' 'moksha-menu' 'moksha-arandr' 'moksha-help' 'desktop-file-utils' 'xclip'
+           'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy' 'xcb-util-keysyms' 'openssl-1.1' 'rrdtool')
+  optdepends=('moksha-module-mixer: Moksha pulse audio mixer'
+              'moksha-extra-modules: additional modules for Moksha'
+              'moksha-themes: additional themes for Moksha'
+              'moksha-icon-themes-basic: basic additional themes for Moksha'
+              'moksha-icon-themes-extra: extra additional themes for Moksha'
+              'terminology: EFL based terminal emulator'
+              'acpid: power events on laptop lid close and backight'
+              'connman: modular network connection manager'
+              'volumeicon: volume control for the system tray')
+  install="$pkgname.install"
+  conflicts=("enlightenment")
+  backup=(etc/enlightenment/sysactions.conf)
   cd "$srcdir/${pkgname}"
   make DESTDIR="$pkgdir" install
   mv "$pkgdir/usr/etc" "$pkgdir"
   install -D -m755 "$srcdir/eina-log.sh" -t "$pkgdir/etc/profile.d"
   install -D -m644 "$srcdir/80-local.rules" -t "$pkgdir/etc/udev/rules.d"
   install -D -m664 "$srcdir/moksha-artix/defaults/e.cfg" "$pkgdir/usr/share/enlightenment/data/config/bodhi"
-  install -D -m664 "$srcdir/moksha-artix/defaults/e.cfg" "$pkgdir/usr/share/enlightenment/data/config/default"
+  install -D -m664 "$srcdir/moksha-artix/defaults/e.cfg" "$pkgdir/usr/share/enlightenment/data/config/defaults"
+  install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COPYING
+
+  mkdir "$srcdir/mixer-module"
+  mv "$pkgdir/usr/lib/enlightenment/modules/mixer/linux-gnu-x86_64/module.so" "$srcdir/mixer-module/"
+  mv "$pkgdir/usr/lib/enlightenment/modules/mixer/e-module-mixer.edj" "$srcdir/mixer-module/"
+  mv "$pkgdir/usr/lib/enlightenment/modules/mixer/module.desktop" "$srcdir/mixer-module/"
+}
+
+package_moksha-module-mixer() {
+  depends=('moksha' 'pulseaudio')
+  cd "$srcdir/${pkgbase}"
+  install -D -m755 -t "$pkgdir/usr/lib/enlightenment/modules/mixer/linux-gnu-x86_64/" "$srcdir/mixer-module/module.so"
+  install -D -m644 "$srcdir/mixer-module/e-module-mixer.edj" "$pkgdir/usr/lib/enlightenment/modules/mixer"
+  install -m644 "$srcdir/mixer-module/module.desktop" "$pkgdir/usr/lib/enlightenment/modules/mixer"
   install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COPYING
 }
 
