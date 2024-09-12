@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-passion
-  version: 2.6.13-1.3.1
+  version: 2.6.13-1.4
   arch:
     - any
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 2.6.13-1.3.1
+    version: 2.6.13-1.4
     packages:
-      - moksha-theme-passion-2.6.13-1.3.1-any.pkg.tar.zst
+      - moksha-theme-passion-2.6.13-1.4-any.pkg.tar.zst
   galaxy:
     version: 2.6.13-1.3
     packages:
