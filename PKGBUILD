@@ -1,0 +1,63 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Bruno Pagani <archange@archlinux.org
+# Contributor: Doug Newgard <scimmia at archlinux dot org>
+# Contributor: XavierCLL <xavier.corredor.llano (a) gmail.com>
+# Contributor: SaultDon <sault.don gmail>
+# Contributor: Lantald < lantald at gmx.com >
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: dibblethewrecker dibblethewrecker.at.jiwe.dot.org
+# Contributor: Gerardo Exequiel Pozzi <vmlinuz386@yahoo.com.ar>
+# Contributor: Eric Forgeot < http://esclinux.tk >
+
+pkgname=qgis
+pkgver=3.38.2
+pkgrel=2
+pkgdesc="Geographic Information System (GIS) that supports vector, raster & database formats"
+arch=(x86_64)
+url="https://qgis.org/"
+license=(GPL)
+depends=(ocl-icd proj geos gdal expat spatialindex qwt libzip sqlite3 protobuf
+         zlib exiv2 postgresql-libs libspatialite zstd pdal
+         qt5-base qt5-svg qt5-serialport qt5-location qt5-3d qt5-declarative qt5-multimedia qt5-webengine
+         qscintilla-qt5 qtkeychain-qt5 qca-qt5 gsl python-pyqt5 python-qscintilla-qt5
+         hdf5 netcdf libxml2 draco) # laz-perf
+makedepends=(cmake ninja opencl-clhpp fcgi qt5-tools sip pyqt-builder)
+optdepends=('fcgi: Map server'
+            'gpsbabel: GPS Tools plugin')
+source=(
+  https://qgis.org/downloads/$pkgname-$pkgver.tar.bz2
+)
+sha256sums=('38abdf9c858e24190caac56171ad1bdea50b30f726144f224a0b7f32c96950d8')
+
+build() {
+  cmake -S $pkgname-$pkgver -B build -G Ninja \
+    -DCMAKE_INSTALL_PREFIX='/usr' \
+    -DWITH_3D=TRUE \
+    -DWITH_QUICK=TRUE \
+    -DWITH_SERVER=TRUE \
+    -DWITH_CUSTOM_WIDGETS=TRUE \
+    -DBINDINGS_GLOBAL_INSTALL=TRUE \
+    -DQGIS_MANUAL_SUBDIR=share/man \
+    -DWITH_QTWEBKIT=FALSE \
+    -DWITH_QWTPOLAR=TRUE \
+    -DQWTPOLAR_LIBRARY=/usr/lib/libqwt.so \
+    -DQWTPOLAR_INCLUDE_DIR=/usr/include/qwt \
+    -DCMAKE_CXX_FLAGS="${CXXFLAGS} -DQWT_POLAR_VERSION=0x060200" \
+    -DWITH_INTERNAL_QWTPOLAR=FALSE \
+    -DWITH_PDAL=TRUE \
+    -DHAS_KDE_QT5_PDF_TRANSFORM_FIX=TRUE \
+    -DHAS_KDE_QT5_SMALL_CAPS_FIX=TRUE \
+    -DHAS_KDE_QT5_FONT_STRETCH_FIX=TRUE
+    # https://github.com/qgis/QGIS/issues/48374
+    #-DWITH_INTERNAL_LAZPERF=FALSE \
+    # https://github.com/qgis/QGIS/issues/35440
+    #-DWITH_PY_COMPILE=TRUE \
+
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 $pkgname-$pkgver/rpm/sources/qgis-mime.xml "$pkgdir/usr/share/mime/packages/qgis.xml"
+}
