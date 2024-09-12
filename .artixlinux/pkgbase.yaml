@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-arc-dark
-  version: 0.8.8-1.1.1
+  version: 0.8.8-1.2
   arch:
     - any
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.8.8-1.1.1
+    version: 0.8.8-1.2
     packages:
-      - moksha-theme-arc-dark-0.8.8-1.1.1-any.pkg.tar.zst
+      - moksha-theme-arc-dark-0.8.8-1.2-any.pkg.tar.zst
   galaxy:
     version: 0.8.8-1.1
     packages:
