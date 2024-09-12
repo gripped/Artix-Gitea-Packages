@@ -30,8 +30,8 @@ checkdepends=(
   python-pytest-mock
 )
 source=(git+$url.git#tag=v$pkgver)
-sha256sums=('8f111db5f19b0d1742104afc889b99ee8a9e73b2822efa3dee95b764cdf088bb')
-b2sums=('21d1308268359563ac6cbcf43fa8e8f012711a83f3b4e684e3692b082a7790cd7c8accf449a590fbcbe0d974c062dad704d5d3848075220667f4777ff16c5073')
+sha256sums=('SKIP')
+b2sums=('SKIP')
 
 build() {
   cd $_name
