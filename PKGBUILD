@@ -17,7 +17,7 @@ pkgname=(
   ruby-stdlib
 )
 pkgver=3.2.5
-pkgrel=1
+pkgrel=2
 pkgdesc='An object-oriented language for quick and easy programming'
 url='https://www.ruby-lang.org/en/'
 arch=(x86_64)
@@ -50,6 +50,7 @@ b2sums=('a37c92a0f751e81dcae328b8944c4ecf10f6aee4f4468d6d08bb924c9808c8556c5febb
 _bootstrap=0
 _rubyver="${pkgver:0:3}.0"
 _bundled_gems=(
+  debug
   matrix
   minitest
   net-ftp
@@ -176,6 +177,7 @@ build() {
     --with-dbm-type=gdbm_compat
 
   make
+  make rdoc capi
 }
 
 check() {
@@ -336,7 +338,6 @@ package_ruby-bundled-gems() {
   replaces=(ruby-bundledgems)
   conflicts=(ruby-bundledgems)
   depends=("${_bundled_gems[@]/#/ruby-}")
-  optdepends=(ruby-debug)
 
   cd "ruby-${pkgver}"
   install --verbose -D --mode=0644 BSDL COPYING --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
