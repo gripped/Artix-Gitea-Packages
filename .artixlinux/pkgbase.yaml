@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-dimensions
-  version: 0.0.1-7.5.1
+  version: 0.0.1-7.6
   arch:
     - any
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.0.1-7.5.1
+    version: 0.0.1-7.6
     packages:
-      - moksha-theme-dimensions-0.0.1-7.5.1-any.pkg.tar.zst
+      - moksha-theme-dimensions-0.0.1-7.6-any.pkg.tar.zst
   galaxy:
     version: 0.0.1-7.5
     packages:
