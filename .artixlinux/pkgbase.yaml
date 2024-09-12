@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - android-tools
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 35.0.2-2
+    version: 35.0.2-3.2
     packages:
-      - android-tools-35.0.2-2-x86_64.pkg.tar.zst
+      - android-tools-35.0.2-3.2-x86_64.pkg.tar.zst
   world:
     version: 35.0.2-1
     packages:
