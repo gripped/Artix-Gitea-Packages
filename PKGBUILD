@@ -1,0 +1,44 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+
+pkgname=qwt
+pkgver=6.3.0
+pkgrel=1
+pkgdesc='Qt Widgets for Technical Applications'
+url='https://qwt.sourceforge.io/'
+arch=('x86_64')
+depends=('qt5-base' 'qt5-svg')
+optdepends=('qt5-tools: For Designer plugin')
+makedepends=('qt5-tools')
+provides=('qwtpolar')
+replaces=('qwtpolar')
+license=("custom:${pkgname}")
+source=(https://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.bz2)
+sha512sums=('fa90686058f5008f6d0365d24a74481bd642e9126d82291f27a5218b684bdcf008ef5e9293b52c5c7d85e9b42027459527be373726e8376a3f707ec85e483064')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+
+  sed -e '/^\s*QWT_INSTALL_PREFIX/ s|=.*|= /usr|' \
+      -e '/^QWT_INSTALL_DOCS/ s|/doc|/share/doc/qwt|' \
+      -e '/^QWT_INSTALL_HEADERS/ s|include|&/qwt|' \
+      -e '/^QWT_INSTALL_PLUGINS/ s|plugins/designer|lib/qt/&|' \
+      -e '/^QWT_INSTALL_FEATURES/ s|features|lib/qt/mkspecs/&|' \
+      -i qwtconfig.pri
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+  qmake-qt5 qwt.pro
+  make
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make INSTALL_ROOT="${pkgdir}" install
+
+  install -Dm 644 COPYING -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:
