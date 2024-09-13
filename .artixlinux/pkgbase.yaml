@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - persepolis
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
