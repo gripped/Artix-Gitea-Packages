@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: opencv
-  version: 4.10.0-8
+  version: 4.10.0-9
   arch:
     - x86_64
   pkgname:
@@ -31,12 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 4.10.0-8
+    version: 4.10.0-9
     packages:
-      - opencv-4.10.0-8-x86_64.pkg.tar.zst
-      - opencv-samples-4.10.0-8-x86_64.pkg.tar.zst
-      - python-opencv-4.10.0-8-x86_64.pkg.tar.zst
-      - opencv-cuda-4.10.0-8-x86_64.pkg.tar.zst
+      - opencv-4.10.0-9-x86_64.pkg.tar.zst
+      - opencv-samples-4.10.0-9-x86_64.pkg.tar.zst
+      - python-opencv-4.10.0-9-x86_64.pkg.tar.zst
+      - opencv-cuda-4.10.0-9-x86_64.pkg.tar.zst
   world:
     version: 4.10.0-7
     packages:
