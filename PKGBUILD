@@ -18,7 +18,7 @@ conflicts=('qtchooser')
 _pkgfqn=${pkgname/5-/}
 source=(kde-$_pkgfqn::git+https://invent.kde.org/qt/qt/$_pkgfqn#commit=$_commit
         {assistant,designer,linguist,qdbusviewer}.desktop)
-sha256sums=('0af01c5dee5c2534ac89cf082bd6049bb662ecf6bc07524793ae4a4a40aac1cb'
+sha256sums=('3d5394d7b228f53bb710ed7de1cf2610d5b574fa2afa667834d43108b896c331'
             'f1ae05a739879a79f5754d08047800217cf97351b328e9a6c5213ca06bbd4871'
             '692e9dcf4004ba9f273cf86f0faf83c325956d0037ec4348eb21d8ed7e15bb7c'
             'a1ce14940138609397a43cc4b0c06d76a0ff927051cdd38a9cdfde7df41d184b'
