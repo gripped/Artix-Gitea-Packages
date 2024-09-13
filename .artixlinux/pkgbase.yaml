@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: gspell
-  version: 1.12.2-3
+  version: 1.14.0-1
   arch:
     - x86_64
   pkgname:
     - gspell
+    - gspell-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.12.2-3
+    version: 1.14.0-1
     packages:
-      - gspell-1.12.2-3-x86_64.pkg.tar.zst
+      - gspell-1.14.0-1-x86_64.pkg.tar.zst
+      - gspell-docs-1.14.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
