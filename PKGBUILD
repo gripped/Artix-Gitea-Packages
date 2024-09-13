@@ -21,7 +21,7 @@ epoch=2
 _pkgver=2.12
 _unifont_ver='16.0.01'
 pkgver=${_pkgver/-/}
-pkgrel=3
+pkgrel=3.1
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
@@ -114,7 +114,7 @@ b2sums=('a6cec7271c3ea54a99f02ee6bc0a5825c8be657af68ba9a32b39a5fe8bcb571fb1ba392
         '992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b'
         'b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3'
         'a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c'
-        '5e42db2161e8f594b82005b26e590a20a0e8d32b01119bdd7b1a7f7c4b0f3360e8730a3ecdd5912a4dc7af5bd9aed1c3e780965ad6747d831b470158da19388d'
+        'cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc'
         '052b55f53ec82d805f952afcd485bfc21623e0e427fc449f29208fecf5c321b9503d33e9025fef34ef3211b60043acfe5db08b057baaf72542a1c48cdc89b3c2')
 
 _backports=(
@@ -362,4 +362,9 @@ package() {
 
   echo "Package grub bios stuff..."
   _package_grub-common_and_bios
+
+  install -m0755 /dev/stdin "${pkgdir}"/usr/bin/update-grub <<END
+#!/bin/sh
+grub-mkconfig -o /boot/grub/grub.cfg
+END
 }
