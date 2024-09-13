@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - persepolis
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.0-1
+    packages:
+      - persepolis-5.0.0-1-any.pkg.tar.zst
   world:
     version: 5.0.0-1
     packages:
