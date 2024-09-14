@@ -3,7 +3,7 @@
 pkgname=python-elastic-transport
 _pkgname=elastic-transport-python
 pkgver=8.15.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Transport classes and utilities shared among Python Elastic client libraries"
 arch=(any)
 url="https://github.com/elastic/elastic-transport-python"
@@ -15,7 +15,6 @@ depends=(
   python-httpx
   python-orjson
   python-requests
-  python-typing_extensions
   python-urllib3
 )
 makedepends=(
@@ -28,6 +27,7 @@ checkdepends=(
   python-pytest
   python-pytest-asyncio
   python-pytest-httpserver
+  python-pytest-rerunfailures
   python-respx
   python-trustme
 )
@@ -41,8 +41,13 @@ build() {
 
 check() {
   cd $_pkgname-$pkgver
-  # OpenTelemetry not in Arch repos (yet)
-  pytest --override-ini="addopts=" --ignore tests/test_otel.py
+  # The calls to httpbin.org, and as such the tests, are flaky when running on
+  # build.archlinux.org.
+  # OpenTelemetry not in Arch repos (yet).
+  pytest --override-ini="addopts=" \
+    --reruns 1 \
+    --reruns-delay 1 \
+    --ignore tests/test_otel.py
 }
 
 package() {
