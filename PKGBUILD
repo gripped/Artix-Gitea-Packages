@@ -6,14 +6,14 @@
 pkgname=python-pyftpdlib
 _pkgname=${pkgname#python-}
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Extremely fast and scalable Python FTP server library"
 arch=(any)
 url="https://github.com/giampaolo/pyftpdlib"
 license=(MIT)
 depends=(
   python
-  python-asynchat
+  python-pyasynchat
   python-pyasyncore
 )
 makedepends=(
