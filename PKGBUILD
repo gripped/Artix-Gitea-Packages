@@ -10,7 +10,7 @@ url="https://mate-desktop.org"
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 depends=('gtkmm3' 'libgtop' 'libwnck3' 'gettext' 'polkit')
-makedepends=('autoconf-archive' 'glib2-devel' 'itstool' 'mate-common' 'python' 'yelp-tools')
+makedepends=('autoconf-archive' 'glib2-devel' 'itstool' 'mate-common' 'python' 'yelp-tools' 'elogind')
 conflicts=('mate-system-monitor-gtk3')
 replaces=('mate-system-monitor-gtk3')
 groups=('mate-extra')
@@ -19,6 +19,7 @@ sha256sums=('284f310e2c50b23a3852c4905996a0f74223e5b7681913e54af339940289e75e')
 
 prepare() {
 	cd "${pkgname}-${pkgver}"
+	sed -i 's/libsystemd/libelogind/g' configure.ac
 	./autogen.sh
 }
 

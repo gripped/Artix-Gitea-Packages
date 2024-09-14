@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - mate-system-monitor
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,7 +50,7 @@ repos:
     packages:
       - mate-system-monitor-1.28.1-2-x86_64.pkg.tar.zst
   galaxy:
-    version: 1.28.1-1
+    version: 1.28.1-2
     packages:
-      - mate-system-monitor-1.28.1-1-x86_64.pkg.tar.zst
+      - mate-system-monitor-1.28.1-2-x86_64.pkg.tar.zst
 team: galaxy
