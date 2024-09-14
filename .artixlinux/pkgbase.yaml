@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-scikit-build-core
-  version: 0.9.3-1
+  version: 0.10.6-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.3-1
+    version: 0.10.6-1
     packages:
-      - python-scikit-build-core-0.9.3-1-any.pkg.tar.zst
+      - python-scikit-build-core-0.10.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
