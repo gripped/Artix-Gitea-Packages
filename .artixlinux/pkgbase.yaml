@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: liboctopi
-  version: 1.0-1
+  version: 1.0-2
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.0-1
+    version: 1.0-2
     packages:
-      - liboctopi-1.0-1-x86_64.pkg.tar.zst
+      - liboctopi-1.0-2-x86_64.pkg.tar.zst
