@@ -3,44 +3,39 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-control-center
-pkgver=1.28.0
-pkgrel=1.1
+pkgver=1.28.1
+pkgrel=1
 pkgdesc="The Control Center for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=('mate-menus' 'mate-settings-daemon' 'marco' 'libxss' 'mate-desktop'
          'gettext' 'accountsservice' 'mate-panel' 'libcanberra' 'udisks2' 'libayatana-appindicator')
-makedepends=('itstool' 'libelogind')
+makedepends=('autoconf-archive' 'glib2-devel' 'mate-common' 'itstool' 'yelp-tools' 'libelogind')
 groups=('mate')
 conflicts=('mate-control-center-gtk3')
 replaces=('mate-control-center-gtk3')
-source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"
-        "systemd1.patch"
-        "systemd2.patch")
-sha256sums=('ebf2c704fd5248dc2f9836ff29028869ef29d5054907cc615734b6383a7914bc'
-            '05911f20e4c3b633a9acf7d26a36f7ef099801199137e1267bd93d0d3a1abdd7'
-            '663f6b84fda56a0c7af356a12d7759626568458c9a1adbe1651726662d959f18')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/mate-desktop/mate-control-center/archive/refs/tags/v${pkgver}.tar.gz")
+
+sha256sums=('0890c1bafc10a77ae7aea4edc37951fa69cbce2552ce199a7e49cb55de8af71b')
 
 prepare() {
     cd "${pkgname}-${pkgver}"
+    sed -i 's/libsystemd/libelogind/g' configure.ac
+    ./autogen.sh
     sed -i 's/"systemd/"libelogind/' configure
 }
 
 build() {
     cd "${pkgname}-${pkgver}"
-    patch -Np1 -i "${srcdir}/systemd1.patch"
-    patch -Np1 -i "${srcdir}/systemd2.patch"
+
     ./configure \
         --prefix=/usr \
         --sysconfdir=/etc \
         --sbindir=/usr/bin \
         --localstatedir=/var \
-        --disable-update-mimedb
-
-    #https://bugzilla.gnome.org/show_bug.cgi?id=656231
-    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
+        --disable-update-mimedb \
+        --disable-systemd
     make
 }
 
