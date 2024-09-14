@@ -20,7 +20,6 @@ makedepends=(
   cmocka
   doxygen
   libtpms
-  systemd
 )
 checkdepends=(
   iproute2
