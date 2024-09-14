@@ -3,14 +3,14 @@
 pkgname=python-pyasynchat
 _pkgname=${pkgname#python-}
 pkgver=1.0.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Make asynchat available for Python 3.12 onwards"
 arch=(any)
 url="https://github.com/simonrob/pyasynchat"
 license=(PSF-2.0)
 depends=(
   python
-  python-asyncore
+  python-pyasyncore
 )
 makedepends=(
   python-build
