@@ -10,7 +10,7 @@
 pkgbase=samba
 pkgname=('libwbclient' 'ldb' 'smbclient' 'samba')
 pkgver=4.21.0
-pkgrel=2
+pkgrel=2.1
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL-3.0-or-later')
@@ -185,7 +185,7 @@ _pkgsrc="${srcdir}"/samba-pkg
     mv "${_pkgsrc}"/usr/include/samba-4.0/${headers} "${pkgdir}"/usr/include/samba-4.0/
   done
   install -d -m755 "${pkgdir}"/usr/lib/python3.12/site-packages/
-  mv "${_pkgsrc}"/usr/lib/python3.12/site-packages/{_ldb_text.py,ldb.cpython-312-x86_64-linux-gnu.so} \
+  mv "${_pkgsrc}"/usr/lib/python3.12/site-packages/{_ldb_text.py,ldb.cpython-312-$CARCH-linux-gnu.so} \
     "${pkgdir}"/usr/lib/python3.12/site-packages/
 
   install -d -m755 "${pkgdir}"/usr/share/man/man1
