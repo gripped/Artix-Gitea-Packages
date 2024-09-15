@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wayland
-  version: 1.23.0-1
+  version: 1.23.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.23.0-1
+    version: 1.23.1-1
     packages:
-      - wayland-1.23.0-1-x86_64.pkg.tar.zst
-      - wayland-docs-1.23.0-1-x86_64.pkg.tar.zst
+      - wayland-1.23.1-1-x86_64.pkg.tar.zst
+      - wayland-docs-1.23.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
