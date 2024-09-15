@@ -5,7 +5,7 @@
 
 pkgname=plantuml
 pkgver=1.2024.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Component that allows to quickly write uml diagrams"
 arch=(any)
 url="https://plantuml.com/"
