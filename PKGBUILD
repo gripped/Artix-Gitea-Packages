@@ -11,8 +11,8 @@
 # Contributor: Niels Abspoel <aboe76 (at) Gmail (dot) com>
 
 pkgname=puppet
-pkgver=7.32.1
-pkgrel=4
+pkgver=7.33.0
+pkgrel=1
 pkgdesc='Server automation framework and application'
 arch=('any')
 url='https://www.puppet.com/community/open-source'
@@ -72,7 +72,6 @@ source=("https://github.com/puppetlabs/puppet/archive/${pkgver}/puppet-${pkgver}
         "yumrepo_core::git+https://github.com/puppetlabs/puppetlabs-yumrepo_core#commit=${_yumrepo_commit}"
         "zfs_core::git+https://github.com/puppetlabs/puppetlabs-zfs_core#commit=${_zfs_commit}"
         "zone_core::git+https://github.com/puppetlabs/puppetlabs-zone_core#commit=${_zone_commit}"
-        "https://github.com/bastelfreak/puppet-1/commit/2608b3e803e6c5708e1c56f54618b11261b7531b.patch" # https://github.com/puppetlabs/puppet/pull/9442
         "artix.patch::https://github.com/puppetlabs/puppet/commit/b31d40b687c05ef6f6350b29f727144285b7aaab.patch"
         )
 sha512sums=('8d39e5a7ad7cd324d64925d3ae1c5b035894392f39f9e8ded342011e1c4fe0e31e0f2f937267c5b70222046ec56a34a58d5be75d0bcb11c1707ff5f50737695a'
@@ -95,7 +94,6 @@ prepare() {
 
   # FS#45044: fix file location
   sed -i 's_/opt/puppetlabs/puppet_/usr_' ext/systemd/puppet.service
-  patch --forward --verbose --strip=1 --input='../2608b3e803e6c5708e1c56f54618b11261b7531b.patch'
   patch --strip=1 --input=../artix.patch
 }
 
@@ -123,9 +121,6 @@ package() {
 
   echo 'u puppet 52 "Puppet" /var/lib/puppet' > "$pkgdir"/usr/lib/sysusers.d/$pkgname.conf
   echo "d /run/puppetlabs 0755 $pkgname $pkgname -" > "$pkgdir"/usr/lib/tmpfiles.d/$pkgname.conf
-
-  # systemd
-  install -Dm644 "${srcdir}/$pkgname-${pkgver}/ext/systemd/${pkgname}.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
 
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 
