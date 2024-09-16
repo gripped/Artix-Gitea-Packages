@@ -33,7 +33,7 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('22be4c1e7255b16c8cf2b0378ea3e6aac4cb960eab86eb1a9e408e74e64d725909a70fda0af75d2f0cc945ea0f7162d9f85db6cf4f02592a2c1fd93084d7b8f5'
+sha512sums=('SKIP'
             'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
