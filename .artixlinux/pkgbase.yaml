@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: jsoncpp
-  version: 1.9.5-3
+  version: 1.9.6-3
   arch:
     - x86_64
   pkgname:
     - jsoncpp
     - jsoncpp-doc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.9.6-3
+    packages:
+      - jsoncpp-1.9.6-3-x86_64.pkg.tar.zst
+      - jsoncpp-doc-1.9.6-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
