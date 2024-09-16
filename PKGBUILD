@@ -14,7 +14,7 @@ license=(MIT)
 depends=(glibc)
 makedepends=(git)
 provides=(libsecp256k1.so)
-source=(git+https://github.com/bitcoin-core/secp256k1.git?signed#tag=v${pkgver})
+source=(git+https://github.com/bitcoin-core/secp256k1.git#tag=v${pkgver})
 sha256sums=('841cf5f94360385281cd18fbab269bfc12f7bfc1aeb29f4d8236d0a2dc317bbc')
 validpgpkeys=('09E03F871092E40E106E902B33BC86AB80FF5516' # Tim Ruffing
               '133EAC179436F14A5CF1B794860FEB804E669320' # Pieter Wuille
