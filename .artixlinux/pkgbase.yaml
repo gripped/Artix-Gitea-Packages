@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ffmpegthumbnailer
-  version: 2.2.2-6
+  version: 2.2.3-1
   arch:
     - x86_64
   pkgname:
     - ffmpegthumbnailer
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.2.2-6
+    version: 2.2.3-1
     packages:
-      - ffmpegthumbnailer-2.2.2-6-x86_64.pkg.tar.zst
+      - ffmpegthumbnailer-2.2.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
