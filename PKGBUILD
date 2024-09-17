@@ -13,7 +13,7 @@ depends=(
   lib32-dbus
   lib32-gcc-libs
   lib32-glibc
-  lib32-systemd
+  lib32-elogind
 )
 makedepends=(
   git
