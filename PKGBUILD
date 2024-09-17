@@ -7,7 +7,7 @@ pkgname=(
   at-spi2-core
   at-spi2-core-docs
 )
-pkgver=2.52.0
+pkgver=2.54.0
 pkgrel=1
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi"
 url="https://gitlab.gnome.org/GNOME/at-spi2-core"
@@ -19,33 +19,26 @@ depends=(
   glib2
   glibc
   gsettings-desktop-schemas
-  libei
   libx11
   libxi
-  libxkbcommon
-  libxml2
   libxtst
   xorg-xprop
 )
 makedepends=(
-  dbus-broker
+  dbus-daemon
   gi-docgen
   git
+  glib2-devel
   gobject-introspection
+  libxml2
   meson
   python-sphinx
 )
 checkdepends=(
   at-spi2-core
 )
-_commit=46c8de80022d28eef2da58f1054b5bff745ed7e0  # tags/AT_SPI2_CORE_2_52_0^0
-source=("git+https://gitlab.gnome.org/GNOME/at-spi2-core.git#commit=$_commit")
-b2sums=('SKIP')
-
-pkgver() {
-  cd at-spi2-core
-  git describe --tags | sed 's/^AT_SPI2_CORE_//;s/_/./g;s/-/+/g'
-}
+source=("git+https://gitlab.gnome.org/GNOME/at-spi2-core.git#tag=AT_SPI2_CORE_${pkgver//./_}")
+b2sums=('3b1b575634dfa5269b98469f761ea5ae9621302121fa243c532a537894fdc7ee9a16ce631093afbd9c3648272084b87a3dd5b4c2263c50fcd48791a16ab0de76')
 
 prepare() {
   cd at-spi2-core
@@ -53,9 +46,9 @@ prepare() {
 
 build() {
   local meson_options=(
+    -D use_systemd=false
     -D default_bus=dbus-daemon
     -D docs=true
-    -D use_systemd=false
   )
 
   artix-meson at-spi2-core build "${meson_options[@]}"
@@ -67,7 +60,6 @@ check() {
 }
 
 package_at-spi2-core() {
-  optdepends=('dbus-broker: Alternative bus implementation')
   provides=(
     "at-spi2-atk=$pkgver-$pkgrel"
     "atk=$pkgver-$pkgrel"
@@ -86,11 +78,10 @@ package_at-spi2-core() {
 
   meson install -C build --destdir "$pkgdir"
 
-  # remove systemd service
-  rm -r "$pkgdir"/usr/lib/systemd
-
   mkdir -p doc/usr/share
   mv {"$pkgdir",doc}/usr/share/doc
+
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 package_at-spi2-core-docs() {
