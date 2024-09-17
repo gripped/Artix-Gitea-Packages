@@ -3,55 +3,56 @@
 # Contributor: Mark Wagie <mark.wagie@tutanota.com>
 
 pkgname=lib32-gamemode
-pkgver=1.8.1
+pkgver=1.8.2
 pkgrel=1
 pkgdesc='A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS'
 arch=(x86_64)
 url=https://github.com/FeralInteractive/gamemode
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(
-	lib32-dbus
-	lib32-glibc
-	lib32-elogind
+  lib32-dbus
+  lib32-gcc-libs
+  lib32-glibc
+  lib32-systemd
 )
 makedepends=(
-	git
-	meson
+  git
+  meson
 )
 checkdepends=(appstream)
 provides=(
-	libgamemode.so
-	libgamemodeauto.so
+  libgamemode.so
+  libgamemodeauto.so
 )
-_tag=5180d89e66830d87f69687b95fb86f622552b94b
+_tag=c54d6d4243b0dd0afcb49f2c9836d432da171a2b
 source=(git+https://github.com/FeralInteractive/gamemode.git#tag=${_tag})
-b2sums=(SKIP)
+b2sums=('4be672cdc658341d5911e45289883fd8466648752ba7c30ba9428a214319383d4058e282614be8d82d2af310fc99b276950e31bc1d26b60da74bc7af3774cc93')
 
 pkgver() {
-	cd gamemode
-	git describe --tags
+  cd gamemode
+  git describe --tags
 }
 
 build() {
-	export CC='gcc -m32'
-	export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
-	artix-meson gamemode build \
-		--libdir /usr/lib32 \
-		-Dwith-examples=false \
-		-Dwith-sd-bus-provider=no-daemon \
-		-Dwith-util=false
-	meson compile -C build
+  export CC='gcc -m32'
+  export PKG_CONFIG_PATH=/usr/lib32/pkgconfig
+  artix-meson gamemode build \
+    --libdir /usr/lib32 \
+    -Dwith-examples=false \
+    -Dwith-sd-bus-provider=no-daemon \
+    -Dwith-util=false
+  meson compile -C build
 }
 
 check() {
-	meson test -C build
+  meson test -C build
 }
 
 package() {
-	DESTDIR="${pkgdir}" meson install -C build
-	rm -rf "${pkgdir}"/{etc,usr/include}
-	install -dm 755 "${pkgdir}"/usr/share/licenses
-	ln -s gamemode "${pkgdir}"/usr/share/licenses/lib32-gamemode
+  DESTDIR="${pkgdir}" meson install -C build
+  rm -rf "${pkgdir}"/{etc,usr/include}
+  install -dm 755 "${pkgdir}"/usr/share/licenses
+  ln -s gamemode "${pkgdir}"/usr/share/licenses/lib32-gamemode
 }
 
-# vim: set ts=4 sw=4 tw=0 et :
+# vim: ts=2 sw=2 et:
