@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: orca
-  version: 47rc-1
+  version: 47.0-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 47rc-1
+    version: 47.0-1
     packages:
-      - orca-47rc-1-any.pkg.tar.zst
+      - orca-47.0-1-any.pkg.tar.zst
   world:
     version: 46.2-1
     packages:
