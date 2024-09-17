@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libreoffice-fresh
-  version: 24.8.1-1
+  version: 24.8.1-2
   arch:
     - x86_64
   pkgname:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 24.8.1-1
+    version: 24.8.1-2
     packages:
-      - libreoffice-fresh-sdk-24.8.1-1-x86_64.pkg.tar.zst
-      - libreoffice-fresh-24.8.1-1-x86_64.pkg.tar.zst
+      - libreoffice-fresh-sdk-24.8.1-2-x86_64.pkg.tar.zst
+      - libreoffice-fresh-24.8.1-2-x86_64.pkg.tar.zst
 team: galaxy
