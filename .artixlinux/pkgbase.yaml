@@ -1,18 +1,27 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: dotnet-core
+  version: 7.0.7.sdk107-1
+  arch:
+    - x86_64
+  pkgname:
+    - dotnet-host
+    - dotnet-runtime
+    - aspnet-runtime
+    - dotnet-sdk
+    - netstandard-targeting-pack
+    - dotnet-targeting-pack
+    - aspnet-targeting-pack
+    - dotnet-source-built-artifacts
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -27,8 +36,16 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 7.0.7.sdk107-1
+    packages:
+      - dotnet-host-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - netstandard-targeting-pack-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-7.0.7.sdk107-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
