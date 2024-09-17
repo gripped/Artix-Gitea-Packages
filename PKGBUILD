@@ -56,7 +56,7 @@ b2sums=('67a57a85088496c614f3c0c8d8a1074ba005328e2a38efe3aa530ede65bd51f28c11dab
 prepare() {
   cd gedit
 
-  git submodule init
+  git submodule init 
   git submodule set-url subprojects/libgd "$srcdir/libgd"
   git -c protocol.file.allow=always submodule update
 }
