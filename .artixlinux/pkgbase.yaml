@@ -5,7 +5,7 @@ pkgbase:
   arch:
     - x86_64
   pkgname:
-    - arch-rebuild-order
+    - artix-rebuild-order
 actions:
   addRepo: world
   removeRepo: null
@@ -33,7 +33,7 @@ repos:
   world:
     version: 0.4.4-1
     packages:
-      - arch-rebuild-order-0.4.4-1-x86_64.pkg.tar.zst
+      - artix-rebuild-order-0.4.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
