@@ -8,7 +8,7 @@ pkgname=(
   glib2-devel
   glib2-docs
 )
-pkgver=2.80.5
+pkgver=2.82.0
 pkgrel=1
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
@@ -49,12 +49,13 @@ source=(
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
-b2sums=('fbda547a8b941dd877fb704406b78e16856c0337a71102d0041b6276d648d0f90fc70a7a0c25c0d9a5b3d1cdc9c3f1599d44f386d77698ea76c24a143fa76622'
+b2sums=('9dee8619918d1bf85d853ddc661c4702046b5361bd3fde105d0b3c550f5dbdbaa6578557107588053bb4e980a21e83b95c2c9e9c7868fb89ca852bc950ac3dba'
         'SKIP'
-        '94c73ca7070c239494873dd52d6ee09382bbb5b1201f7afd737cfa140b1a2fb0744b2c2831baf3943d1d072550c35888d21ce6f19f89481ff9d1a60d9a0b30e0'
+        '47cd08ba7e4b3ca0cd19f6dc20e4d73e30cf90f2b78c3d620ee0c7a4d8a4b325a5e88ec2dcc3a63402c16cc1ce8061130afc313e3cbfcd220dff3e642b113a69'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
         'acc2f474139e535f4bdd70ac22a9150f786b3395e679b14d0d3fbb9361d511bb1b5069d95b2a7ac9c0f3d901b03a0c037eb273446ba00764191b30a777bd2bc9')
 validpgpkeys=(
+  53EF3DC3B63E2899271BD26322E8091EEA11BBB7 # Emmanuele Bassi <ebassi@gnome.org>
   923B7025EE03C1C59F42684CF0942E894B2EAFA0 # Philip Withnall <pwithnall@gnome.org>
 )
 
@@ -72,12 +73,14 @@ prepare() {
 build() {
   local meson_options=(
     --default-library both
-    -D glib_debug=disabled
     -D documentation=true
+    -D dtrace=disabled
+    -D glib_debug=disabled
     -D introspection=enabled
     -D man-pages=enabled
     -D selinux=disabled
     -D sysprof=enabled
+    -D systemtap=disabled
   )
 
   # Produce more debug info: GLib has a lot of useful macros
