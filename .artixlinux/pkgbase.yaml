@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - js128
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 128.2.0-1
+    packages:
+      - js128-128.2.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
