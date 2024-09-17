@@ -1,16 +1,18 @@
 ---
 team: null
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: js128
+  version: 128.2.0-1
+  arch:
+    - x86_64
+  pkgname:
+    - js128
 actions:
   addRepo: null
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,3 +52,7 @@ repos:
   galaxy:
     version: null
     packages: []
+  "null":
+    version: 128.2.0-1
+    packages:
+      - js128-128.2.0-1-x86_64.pkg.tar.zst
