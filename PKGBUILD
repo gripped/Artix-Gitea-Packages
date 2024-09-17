@@ -22,7 +22,7 @@ url=https://www.microsoft.com/net/core
 license=(MIT)
 makedepends=(
   bash
-  clang
+  clang14
   cmake
   #dotnet-sdk
   #dotnet-source-built-artifacts
