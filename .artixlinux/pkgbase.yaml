@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: adwaita-icon-theme
-  version: 46.2-1
+  version: 47.0-1
   arch:
     - any
   pkgname:
     - adwaita-icon-theme
     - adwaita-cursors
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 47.0-1
+    packages:
+      - adwaita-icon-theme-47.0-1-any.pkg.tar.zst
+      - adwaita-cursors-47.0-1-any.pkg.tar.zst
   world:
     version: 46.2-1
     packages:
