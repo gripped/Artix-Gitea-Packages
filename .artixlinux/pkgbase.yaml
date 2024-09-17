@@ -1,5 +1,5 @@
 ---
-team: null
+team: world
 pkgbase:
   name: js128
   version: 128.2.0-1
@@ -52,7 +52,3 @@ repos:
   galaxy:
     version: null
     packages: []
-  "null":
-    version: 128.2.0-1
-    packages:
-      - js128-128.2.0-1-x86_64.pkg.tar.zst
