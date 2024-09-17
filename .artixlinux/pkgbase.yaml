@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: gsettings-desktop-schemas
-  version: 46.1-2
+  version: 47.1-1
   arch:
     - any
   pkgname:
     - gsettings-desktop-schemas
     - gsettings-system-schemas
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 47.1-1
+    packages:
+      - gsettings-desktop-schemas-47.1-1-any.pkg.tar.zst
+      - gsettings-system-schemas-47.1-1-any.pkg.tar.zst
   world:
     version: 46.1-2
     packages:
