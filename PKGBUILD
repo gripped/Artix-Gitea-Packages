@@ -3,8 +3,8 @@
 # Contributor: Igor Dyatlov <dyatlov.igor@gmail.com>
 
 pkgname=gnome-console
-pkgver=46.0
-pkgrel=2
+pkgver=47.0
+pkgrel=1
 pkgdesc="A simple user-friendly terminal emulator for the GNOME desktop"
 url="https://gitlab.gnome.org/GNOME/console"
 arch=(x86_64)
@@ -24,18 +24,12 @@ depends=(
 makedepends=(
   appstream
   git
+  glib2-devel
   meson
-  python-packaging
 )
 groups=(gnome)
-_commit=a3fc3ef59162272a536cc0f0b2af05a394e22b47  # tags/46.0^0
-source=("$pkgname::git+https://gitlab.gnome.org/GNOME/console.git#commit=$_commit")
-b2sums=('dbb7de1cab2749ca447e4a9f7670b3865a5b1a87a87cd154f46abb65cc2df58783270bb5258b4982d4f4d5c899b5d4b5b78c898288ed46a0784ffeddc342fcf2')
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed -r 's/\.([a-z])/\1/;s/([a-z])\./\1/;s/[^-]*-g/r&/;s/-/+/g'
-}
+source=("$pkgname::git+https://gitlab.gnome.org/GNOME/console.git#tag=${pkgver/[a-z]/.&}")
+b2sums=('cceec462135a72c11c4daa094bfcc04c7c7c55fe46f75180d4a0d5b9dc66cba6c71e3977e237fe1fbbff7a33acc50a1dc87be528fc939c8e710540d4f3ce43c0')
 
 prepare() {
   cd $pkgname
