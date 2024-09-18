@@ -8,7 +8,7 @@ pkgbase:
     - eog
     - eog-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 45.4-1
+    packages:
+      - eog-45.4-1-x86_64.pkg.tar.zst
+      - eog-docs-45.4-1-x86_64.pkg.tar.zst
   world:
     version: 45.4-1
     packages:
