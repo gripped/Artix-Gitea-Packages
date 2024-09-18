@@ -8,7 +8,7 @@
 pkgname='alacritty'
 pkgdesc="A cross-platform, GPU-accelerated terminal emulator"
 pkgver=0.13.2
-pkgrel=2.1
+pkgrel=3
 arch=('x86_64')
 url="https://github.com/alacritty/alacritty"
 license=('Apache-2.0' 'MIT')
@@ -16,17 +16,14 @@ makedepends=('git' 'rust' 'cargo' 'cmake' 'ncurses' 'desktop-file-utils' 'gdb' '
 depends=('freetype2' 'fontconfig' 'libxi' 'libxcursor' 'libxkbcommon' 'libxkbcommon-x11' 'libxrandr')
 checkdepends=('ttf-dejavu') # for monospace fontconfig test
 optdepends=('ncurses: for alacritty terminfo database')
-source=("git+$url.git#tag=v$pkgver?signed"
-        "title.patch")
+source=("git+$url.git#tag=v$pkgver?signed")
 validpgpkeys=('4DAA67A9EA8B91FCC15B699C85CDAE3C164BA7B4'  # Christian Dürr <contact@christianduerr.com>
               'A56EF308A9F1256C25ACA3807EA8F8B94622A6A9') # Kirill Chibisov <contact@kchibisov.com>
-sha256sums=('3a6d77fb34870b9974265cc199f96923104908c9f4164ced4d29632db3d7d38f'
-            '8fc4ff8fd34ebad386332c8dcb48ead836d25b9c4749918504626369de07b723')
+sha256sums=('3a6d77fb34870b9974265cc199f96923104908c9f4164ced4d29632db3d7d38f')
 
 prepare() {
   cd "$pkgname"
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
-  patch -Np1 -i ../title.patch
 }
 
 build(){
@@ -51,7 +48,7 @@ package() {
           "$pkgdir/usr/share/man/man1/alacritty-msg.1"
   scdoc < "extra/man/alacritty-bindings.5.scd" | install -D -m644 /dev/stdin \
           "$pkgdir/usr/share/man/man5/alacritty-bindings.5"
-  install -D -m644 "extra/linux/org.alacritty.Alacritty.appdata.xml" "$pkgdir/usr/share/appdata/org.alacritty.Alacritty.appdata.xml"
+  install -D -m644 "extra/linux/org.alacritty.Alacritty.appdata.xml" "$pkgdir/usr/share/metainfo/org.alacritty.Alacritty.appdata.xml"
   install -D -m644 "extra/completions/alacritty.bash" "$pkgdir/usr/share/bash-completion/completions/alacritty"
   install -D -m644 "extra/completions/_alacritty" "$pkgdir/usr/share/zsh/site-functions/_alacritty"
   install -D -m644 "extra/completions/alacritty.fish" "$pkgdir/usr/share/fish/vendor_completions.d/alacritty.fish"
