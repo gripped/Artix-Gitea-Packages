@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: bmake
-  version: 20240808-1
+  version: 20240909-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240808-1
+    version: 20240909-1
     packages:
-      - bmake-20240808-1-x86_64.pkg.tar.zst
+      - bmake-20240909-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
