@@ -25,7 +25,7 @@ depends=(
   xorg-xprop
 )
 makedepends=(
-  dbus-daemon
+  dbus-broker
   gi-docgen
   git
   glib2-devel
