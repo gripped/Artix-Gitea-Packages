@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: gnome-control-center
-  version: 46.4-1
+  version: 47.0.1-1
   arch:
     - x86_64
   pkgname:
     - gnome-control-center
     - gnome-keybindings
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 47.0.1-1
+    packages:
+      - gnome-control-center-47.0.1-1-x86_64.pkg.tar.zst
+      - gnome-keybindings-47.0.1-1-x86_64.pkg.tar.zst
   world:
     version: 46.4-1
     packages:
