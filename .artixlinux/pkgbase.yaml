@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: adwaita-icon-theme-legacy
-  version: 46.2-2
+  version: 46.2-3
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 46.2-2
+    version: 46.2-3
     packages:
-      - adwaita-icon-theme-legacy-46.2-2-any.pkg.tar.zst
+      - adwaita-icon-theme-legacy-46.2-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
