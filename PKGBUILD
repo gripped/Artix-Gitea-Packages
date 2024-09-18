@@ -8,7 +8,7 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=46.2
+pkgver=47.0
 pkgrel=2
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
@@ -34,8 +34,11 @@ depends=(
   libgexiv2
   libportal
   libportal-gtk4
+  libx11
+  localsearch
   pango
-  tracker3
+  tinysparql
+  wayland
 )
 makedepends=(
   appstream-glib
@@ -44,17 +47,17 @@ makedepends=(
   glib2-devel
   gobject-introspection
   meson
-  tracker3-miners
 )
 checkdepends=(python-gobject)
 source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git?signed#tag=${pkgver/[a-z]/.&}"
   0001-Disable-tracker-test.patch
 )
-b2sums=('eb4731ec4236e9e385d0658ebc94ed56dcca6a3b4b425aedba8c0f9019b1be2e785b76a43a642c9d45e899712cfc0c935663153b2ea74716a1fed398340eb122'
-        'c840dc4de2f7c23b49adb0ba88b88c13ddc59ba8b10818ed3ba5ed7cda93d69da9d47d7c7f8c39153d4535c9785ff7c0fd89992a87b09e7cc6e8a5492c2d9a7f')
+b2sums=('01773ab8f39b700977a3798a4fd1de07b87d966083d6cfea6e9576065bcec958b17832f46ada17b84122aaba5b86871b11d51f17f0b89f6a1ec3ed301497528f'
+        '1c81c3b736abdda0d59d5b798cd83dd5a794e64e7e052f65e1c1e27b2b1b52afbee06907fd9645950fb0acfb17c1f64c7a9e42ba59368720235e2fbd8df32fb5')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
+  550660707A6F40376B9B9F8D504A78811E6160CC # Corey Berla <corey@berla.me>
 )
 
 prepare() {
@@ -90,9 +93,6 @@ _pick() {
 
 package_nautilus() {
   depends+=(libnautilus-extension.so)
-  optdepends=(
-    'tracker3-miners: Full text search and metadata-based renaming'
-  )
   groups=(gnome)
 
   meson install -C build --destdir "$pkgdir"
