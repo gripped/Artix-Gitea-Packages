@@ -1,0 +1,7 @@
+[gnome-maps]
+source = "git"
+git = "https://gitlab.gnome.org/GNOME/gnome-maps.git"
+include_regex = 'v\d+(\.\d+)*'
+from_pattern = '\.([a-z])'
+to_pattern = '\1'
+prefix = "v"
