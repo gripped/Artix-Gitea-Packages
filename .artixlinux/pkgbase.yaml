@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: strip-nondeterminism
-  version: 1.13.1-1
+  version: 1.13.1-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.13.1-1
+    version: 1.13.1-2
     packages:
-      - strip-nondeterminism-1.13.1-1-any.pkg.tar.zst
+      - strip-nondeterminism-1.13.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
