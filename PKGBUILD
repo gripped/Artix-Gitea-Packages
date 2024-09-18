@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=7.0.2
-pkgrel=2
+pkgrel=3
 epoch=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
@@ -79,6 +79,7 @@ depends=(
   x265
   xvidcore
   xz
+  zeromq
   zimg
   zlib
 )
@@ -141,6 +142,7 @@ pkgver() {
 }
 
 build() {
+  export PKG_CONFIG_PATH='/usr/lib/mbedtls2/pkgconfig'
   cd ffmpeg
   ./configure \
     --prefix=/usr \
@@ -204,6 +206,7 @@ build() {
     --enable-libxml2 \
     --enable-libxvid \
     --enable-libzimg \
+    --enable-libzmq \
     --enable-nvdec \
     --enable-nvenc \
     --enable-opencl \
@@ -242,6 +245,7 @@ package() {
     libx265.so
     libxvidcore.so
     libzimg.so
+    libzmq.so
   )
 
   make DESTDIR="${pkgdir}" -C ffmpeg install install-man
