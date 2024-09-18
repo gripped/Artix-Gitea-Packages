@@ -63,7 +63,7 @@ makedepends=(
 )
 options=(!emptydirs)
 source=("git+https://gitlab.gnome.org/GNOME/evolution.git#tag=$pkgver")
-b2sums=('bfd879f7a9baa3f7cd61edfaca9ca80833389a41b95cdc09ff5f61e22c812666b4787c5d6e9eb39d9aee09026fb64a5d84cfb4382d3121d3bee60da25c1e1351')
+b2sums=('SKIP')
 
 prepare() {
   cd $pkgbase
