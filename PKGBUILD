@@ -53,7 +53,7 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git?signed#tag=${pkgver/[a-z]/.&}"
   0001-Disable-tracker-test.patch
 )
-b2sums=('01773ab8f39b700977a3798a4fd1de07b87d966083d6cfea6e9576065bcec958b17832f46ada17b84122aaba5b86871b11d51f17f0b89f6a1ec3ed301497528f'
+b2sums=('SKIP'
         '1c81c3b736abdda0d59d5b798cd83dd5a794e64e7e052f65e1c1e27b2b1b52afbee06907fd9645950fb0acfb17c1f64c7a9e42ba59368720235e2fbd8df32fb5')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
