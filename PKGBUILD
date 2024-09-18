@@ -4,8 +4,8 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.10.0
-pkgrel=2
+pkgver=4.10.1
+pkgrel=1
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
 url="https://www.nlnetlabs.nl/nsd/"
@@ -17,7 +17,7 @@ validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wo
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('6317d7f5e3f01c33912f313d66a33dd1ace1cdf7f19d5c590b2e430d8ca4605f'
+sha256sums=('c0190f923f0095995f2e6331dacd92c6e1f4d578b880d61690602b43a5acfd84'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
@@ -54,6 +54,7 @@ package() {
   install -d "${pkgdir}"/usr/share/{doc,licenses}/"${pkgname}"
   install -m644 doc/* "${pkgdir}"/usr/share/doc/"${pkgname}"
   ln -s ../../doc/"${pkgname}"/LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+  install -Dm644 ../nsd.service -t "${pkgdir}"/usr/lib/systemd/system/
   install -Dm644 ../nsd.sysusers "${pkgdir}"/usr/lib/sysusers.d/nsd.conf
   install -Dm644 ../nsd.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/nsd.conf
 }
