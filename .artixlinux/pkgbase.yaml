@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: libspelling
-  version: 0.2.1-2
+  version: 0.4.0-1
   arch:
     - x86_64
   pkgname:
@@ -30,10 +30,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.2.1-2
+    version: 0.4.0-1
     packages:
-      - libspelling-0.2.1-2-x86_64.pkg.tar.zst
-      - libspelling-docs-0.2.1-2-x86_64.pkg.tar.zst
+      - libspelling-0.4.0-1-x86_64.pkg.tar.zst
+      - libspelling-docs-0.4.0-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
