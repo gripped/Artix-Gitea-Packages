@@ -7,7 +7,7 @@ pkgname=(
   lib32-gdk-pixbuf2
 )
 pkgver=2.42.12
-pkgrel=1
+pkgrel=1.1
 pkgdesc="An image loading library (32-bit)"
 url="https://wiki.gnome.org/Projects/GdkPixbuf"
 arch=(x86_64)
