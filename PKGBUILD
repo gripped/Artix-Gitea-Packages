@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kpublictransport
-pkgver=24.08.0
+pkgver=24.08.1
 pkgrel=1
 pkgdesc='Library to assist with accessing public transport timetables and other data'
 arch=(x86_64)
@@ -21,15 +21,13 @@ makedepends=(doxygen
              qt6-tools)
 optdepends=('kirigami: QML bindings')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('e91445d37d4ce0f6bb9aa0c039ea73f2709f65712bd11c72f3a83aadbc038c96'
+sha256sums=('cb7305cff8d6058f1773b84f7e2ced82614c976854c13b455fab49732ad656a7'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-# Fix FTBFS with Qt 6.8 https://bugs.kde.org/show_bug.cgi?id=490863
-  CXXFLAGS+=" -I $PWD/$pkgname-$pkgver/src/lib/models -I $PWD/$pkgname-$pkgver/src/lib/datatypes"
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON \
