@@ -8,7 +8,7 @@ pkgname=(
   eog-docs
 )
 pkgver=45.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Eye of Gnome: An image viewing and cataloging program"
 url="https://wiki.gnome.org/Apps/EyeOfGnome"
 arch=(x86_64)
