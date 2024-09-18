@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kosmindoormap
-pkgver=24.08.0
-pkgrel=2
+pkgver=24.08.1
+pkgrel=3
 pkgdesc='OSM multi-floor indoor map renderer'
 arch=(x86_64)
 url='https://www.kde.org'
@@ -26,15 +26,13 @@ makedepends=(extra-cmake-modules
 optdepends=('kcontacts: QML bindings'
             'qt6-declarative: QML bindings')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('b74c78e8e2038f75165dc9899a16498e524580c9ae687269a38d6c5a582ab299'
+sha256sums=('d2ecf62b097f869da0d158e4a00a08bb060e74a0af9e34b7a1af3fdacc15575a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-# Workaround FTBFS with Qt 6.8 https://bugs.kde.org/show_bug.cgi?id=490864
-  CXXFLAGS+=" -I $PWD/$pkgname-$pkgver/src/map/content -I $PWD/$pkgname-$pkgver/src/map/loader -I $PWD/$pkgname-$pkgver/src/map/scene"
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON \
