@@ -54,7 +54,6 @@ package() {
   install -d "${pkgdir}"/usr/share/{doc,licenses}/"${pkgname}"
   install -m644 doc/* "${pkgdir}"/usr/share/doc/"${pkgname}"
   ln -s ../../doc/"${pkgname}"/LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
-  install -Dm644 ../nsd.service -t "${pkgdir}"/usr/lib/systemd/system/
   install -Dm644 ../nsd.sysusers "${pkgdir}"/usr/lib/sysusers.d/nsd.conf
   install -Dm644 ../nsd.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/nsd.conf
 }
