@@ -59,6 +59,7 @@ prepare() {
 
 build() {
   local meson_options=(
+    -D systemd_user_services=false
     -D landlock=enabled
     -D network_manager=disabled # Used only if miner_rss enabled
     -D tests_tap_protocol=true
