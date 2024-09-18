@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Justin Kromlinger <hashworks@archlinux.org>
 # Contributor: Ales Katona <almindor@gmail.com>
 
@@ -9,7 +8,7 @@ pkgver=3.0.5
 _ewnodecommit=dcc3d76f833a9be47a094e46a0ffa7503e28d007
 # https://github.com/almindor/etherwall/tree/v3.0.5/src/trezor
 _trezorcommit=db106e8f2766155bc72802e4dc3f9f59c90d9c3e
-pkgrel=8
+pkgrel=10
 pkgdesc="Ethereum GUI Wallet (Qt5)"
 arch=('x86_64')
 url="https://etherwall.com"
