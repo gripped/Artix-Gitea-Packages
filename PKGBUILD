@@ -2,7 +2,7 @@
 # Contributor: tinywrkb <tinywrkb@gmail.com>
 
 pkgname=power-profiles-daemon
-pkgver=0.21
+pkgver=0.23
 pkgrel=1
 pkgdesc='Makes power profiles handling available over D-Bus'
 url='https://gitlab.freedesktop.org/upower/power-profiles-daemon'
@@ -15,32 +15,21 @@ depends=(gcc-libs
          polkit
          upower)
 optdepends=('python-gobject: for powerprofilesctl')
-makedepends=(meson)
+makedepends=(git
+             glib2-devel
+             meson)
 checkdepends=(python-dbusmock
               python-isort
               python-mccabe
               umockdev)
-source=(https://gitlab.freedesktop.org/upower/power-profiles-daemon/-/archive/$pkgver/$pkgname-$pkgver.tar.gz
-        "$pkgname".tmpfiles
-        dbus.patch)
-sha256sums=('c15a368a59f2cae1474bdfccdd9357f06b0abc9eb7638a87f68c091aaf570349'
-            'f6eeaf1b85f43c0a97480d1f1a578ef4a850850f66885ad9b6d90907df51ec1d'
-            'a7da5c1272ab0bab2896025b500f43eec5923abdf5694a228f7ec541cf15ff37')
-
-# prepare() {
-#     patch -d "$pkgname-$pkgver" -Np 1 -i ../dbus.patch
-# }
+source=(git+https://gitlab.freedesktop.org/upower/$pkgname#tag=$pkgver)
+sha256sums=('ffa0951d6c008239539c2a51150ad454b283c4b4b0e1910920b6afed3d143a3f')
 
 build() {
-  local _meson_options=()
-  _meson_options+=(
-     -Dsystemdsystemunitdir=
-     -Dpylint=disabled
-     -Dmanpage=disabled
-     -Dbashcomp=disabled
-     --sysconfdir=/usr/share
-  )
-  artix-meson "$pkgname-$pkgver" build "${_meson_options[@]}"
+  meson $pkgname build \
+    --prefix /usr \
+    --libexec lib \
+    --sysconfdir /usr/share
   meson compile -C build
 }
 
@@ -50,6 +39,4 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-
-  install -vDm 644 "$srcdir/$pkgname".tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/"$pkgname".conf
 }
