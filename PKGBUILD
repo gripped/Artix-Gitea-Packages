@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jelle van der Waa <jelle@archlinux.org>
-# Contributor: Frederik Schwan <freswa at archlinux dot org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Sander Boom <sanderboom@gmail.com>
 
 pkgname=ansible-lint
-pkgver=24.7.0
+pkgver=24.9.0
 pkgrel=1
 pkgdesc="Checks playbooks for practices and behaviour that could potentially be improved."
 arch=('any')
@@ -19,7 +18,7 @@ optdepends=('ansible: check official ansible collections')
 source=(git+https://github.com/ansible/ansible-lint.git#tag=v$pkgver
         disable_version_check.patch
         ignore_yamllint_unknown_option.patch)
-b2sums=('3af99ba0c98c75be2ed6f9b5b8be693cefb7da119b172604930faeec7c44832eecc2114a71cf6e5d7686df2d6b50a424fe631754dac31ac3bee759ce95a5ee15'
+b2sums=('38172070a5fec556b45cffe61f2dac98202ce237b63cdea2a864b6722688a0b68fb8526e60e4fc670f717e3478a24156f39c5e8cb9fd0f5fd2023ecaf2b83cc3'
         '98294f267ca693c0bc3921f8e076d674a219a891502cd31a0af789bc0b1447b53834b9c85853a134f6bc1ac384f31cb174cba2d55fbcc1636cae9bd3c0bd8f84'
         '8e419c65642bdbd60aa81d1e204139e69fc4c86aaddde4131fbfe3c21f5751e608a5a635d3ec4f518d3d5dc9d254a84b302e09bb4f873e21628e2f014b151516')
 
