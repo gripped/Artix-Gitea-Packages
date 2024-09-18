@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gnome-user-docs
-  version: 46.4-1
+  version: 47.0-1
   arch:
     - any
   pkgname:
     - gnome-user-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 47.0-1
+    packages:
+      - gnome-user-docs-47.0-1-any.pkg.tar.zst
   world:
     version: 46.4-1
     packages:
