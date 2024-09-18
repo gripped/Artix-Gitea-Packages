@@ -20,6 +20,7 @@ depends=(
   lib32-libpng
   lib32-libtiff
   shared-mime-info
+  glib2-devel
 )
 makedepends=(
   git
