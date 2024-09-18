@@ -1,10 +1,10 @@
-# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 
 pkgname=aspell-pt
 _pkgverPT=20220621
 _pkgverBR=20131030-12
 pkgver=$_pkgverPT
-pkgrel=1
+pkgrel=2
 pkgdesc="Portuguese and Brazilian Portuguese dictionary for aspell"
 arch=('x86_64')
 url="http://aspell.net/"
