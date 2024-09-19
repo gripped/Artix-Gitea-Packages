@@ -5,19 +5,25 @@
 pkgname=pdnsd
 pkgver=1.2.9.a
 _pkgver=${pkgver/.a/a}
-pkgrel=14.2
+pkgrel=15
 pkgdesc="Proxy DNS server with permanent caching"
 arch=(x86_64)
 url="http://members.home.nl/p.a.rombouts/pdnsd/"
 license=('GPL')
 depends=('glibc')
-source=(https://fossies.org/linux/misc/dns/pdnsd-1.2.9a-par.tar.gz
-        pdnsd.sysusers
-        pdnsd.tmpfiles)
-sha512sums=('4fde296642306aa986ddb7cad0b5991bcd397656d93ef4962706276848c7fa62c664a40198e807d029637f116e8000c237d98b91cbbfec5c08b134d8bb3adf81'
+source=(https://repo.p5n.pp.ru/~sergej/dl/2024/pdnsd-${_pkgver}.tar.xz
+	build-fix.patch
+	pdnsd.sysusers
+	pdnsd.tmpfiles)
+sha512sums=('e41e7127900c02ea9f36eefa48e78b1382f3d8eb8be64085163d55c5100485178e538d34cdf269c707d7dcbdfa8dacfc06ae90767ae44b11ab79a52133f3e216'
+            '251e81089aeac517693deaef837e56af752bccddff452906fee3bae01eb4af0dcc8706c3a791bdb3f55678ae7ab96a32e89a2730b9d4d3012458cb8c1641053d'
             '6ebedaa481a8b9f8a0263d42fba06a74933f23593dc9fc0745e4036e0cfe40e208a414fb92a32a15382aff572950e07e93dfa4b896600cebe10f70a15f4fc6f6'
             'dbd30b02c8cc21531133573e10704e02ceea5d5cee18c96542398a815ea8b1292aa025664f0cd2c10d248578058e0afb9b0215f6c421a501c2555940d56d4373')
-validpgpkeys=(21EC7442EE80FB0594E317612C4C1357A484EE22)
+
+prepare() {
+  cd "$srcdir/$pkgname-$_pkgver"
+  patch -p1 <../build-fix.patch
+}
 
 build() {
   cd "$srcdir/$pkgname-$_pkgver"
