@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libxfce4util
-  version: 4.18.2-1
+  version: 4.18.2-2
   arch:
     - x86_64
   pkgname:
     - libxfce4util
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.18.2-2
+    packages:
+      - libxfce4util-4.18.2-2-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
