@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: firefox
-  version: 130.0-1
+  version: 130.0.1-1
   arch:
     - x86_64
   pkgname:
@@ -50,7 +50,7 @@ repos:
     packages:
       - firefox-130.0-1-x86_64.pkg.tar.zst
   galaxy:
-    version: 130.0-1
+    version: 130.0.1-1
     packages:
-      - firefox-130.0-1-x86_64.pkg.tar.zst
+      - firefox-130.0.1-1-x86_64.pkg.tar.zst
 team: galaxy
