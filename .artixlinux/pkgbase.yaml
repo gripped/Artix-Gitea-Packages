@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gnome-session
-  version: 47.0-1
+  version: 47.0.1-1
   arch:
     - x86_64
   pkgname:
     - gnome-session
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - gnome-session-47.0-1-x86_64.pkg.tar.zst
   world:
-    version: 46.0-2
+    version: 47.0.1-1
     packages:
-      - gnome-session-46.0-2-x86_64.pkg.tar.zst
+      - gnome-session-47.0.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
