@@ -4,7 +4,7 @@
 
 pkgname=libxfce4util
 pkgver=4.18.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Basic utility non-GUI functions for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4util/start"
