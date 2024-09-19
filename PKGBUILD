@@ -3,7 +3,7 @@
 
 pkgname=glycin
 pkgver=1.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Sandboxed and extendable image decoding"
 arch=(x86_64)
 url="https://gitlab.gnome.org/sophie-h/glycin"
@@ -78,7 +78,7 @@ build() {
 }
 
 check() {
-  RUST_BACKTRACE=full meson test -v -C build --print-errorlogs --no-rebuild ||:
+  RUST_BACKTRACE=full meson test -v -C build --print-errorlogs --no-rebuild
 }
 
 package() {
