@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnustep-base
-  version: 1.29.0-4
+  version: 1.30.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.29.0-4
+    version: 1.30.0-1
     packages:
-      - gnustep-base-1.29.0-4-x86_64.pkg.tar.zst
+      - gnustep-base-1.30.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
