@@ -11,7 +11,7 @@ url="https://blogs.gnome.org/clutter/"
 arch=(x86_64)
 license=(LGPL)
 depends=(gtk3 cogl libinput)
-makedepends=(gobject-introspection gtk-doc git glib2-devel)
+makedepends=(gobject-introspection json-glib gtk-doc git glib2-devel)
 _commit=fd85623d34a54b3f5607011086cf19cb2c756a6a  # tags/1.26.4^0
 source=("git+https://gitlab.gnome.org/GNOME/clutter.git#commit=$_commit")
 sha256sums=('SKIP')
