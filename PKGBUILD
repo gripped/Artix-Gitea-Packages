@@ -22,14 +22,16 @@ checkdepends=(python-dbusmock
               python-isort
               python-mccabe
               umockdev)
-source=(git+https://gitlab.freedesktop.org/upower/$pkgname#tag=$pkgver)
-sha256sums=('ffa0951d6c008239539c2a51150ad454b283c4b4b0e1910920b6afed3d143a3f')
+source=(git+https://gitlab.freedesktop.org/upower/$pkgname#tag=$pkgver
+        power-profiles-daemon.tmpfiles)
+sha256sums=('ffa0951d6c008239539c2a51150ad454b283c4b4b0e1910920b6afed3d143a3f'
+            'f6eeaf1b85f43c0a97480d1f1a578ef4a850850f66885ad9b6d90907df51ec1d')
 
 build() {
   meson $pkgname build \
     --prefix /usr \
     --libexec lib \
-    --sysconfdir /usr/share
+    -Dsystemdsystemunitdir="" --sysconfdir /usr/share
   meson compile -C build
 }
 
@@ -39,4 +41,6 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
+
+  install -vDm 644 "$srcdir/$pkgname".tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/"$pkgname".conf
 }
