@@ -6,22 +6,22 @@
 
 pkgname=minidlna
 pkgver=1.3.3
-pkgrel=2
+pkgrel=3
 pkgdesc="A DLNA/UPnP-AV Media server (aka ReadyDLNA)"
 arch=('x86_64')
 url="https://sourceforge.net/projects/minidlna/"
 license=('GPL')
-depends=('libexif' 'libjpeg' 'libid3tag' 'flac' 'libvorbis' 'ffmpeg' 'sqlite')
+depends=('libexif' 'libjpeg-turbo' 'libid3tag' 'flac' 'libvorbis' 'ffmpeg' 'sqlite')
 makedepends=('git')
 backup=('etc/minidlna.conf')
 source=("minidlna::git+https://git.code.sf.net/p/minidlna/git#tag=v${pkgver//./_}"
-	minidlna.tmpfiles
-	minidlna.sysusers
-        ffmpeg7.patch)
+        ffmpeg7.patch
+        minidlna.sysusers
+        minidlna.tmpfiles)
 sha512sums=('7048a86a72d6ce23de2292120427a258993028d8ec7fef68a4879c2a41ab24c07d68526d92a477a5b20c21ee8cfa1a758e5d7ed34dd666d8325eb75be37cce93'
-            'c58631c20416997c538be6258ef9c13b9304d5906b19f063157df70f672b7153b452ffb9612be267a90942bd880af8d665ebe3c53a2926ffa99acc943d875d97'
-            'e3e6c46faac768b283134a47013b77c4152840c61d3503f51fbe154bf25fe8a0e585ed9a40950212254b4a844b007f674875e4d25f55af51914694213fecc420'	
-            '0bff7af02ae2d6b0d6f1e4c0ee26cd18f156bfb99377a365c8ff2c3c5555a5e979c215423579a45f82e0cb1fce8628de2c1ca51a28fa07a1d336b9ecc561a7f3')
+            '0bff7af02ae2d6b0d6f1e4c0ee26cd18f156bfb99377a365c8ff2c3c5555a5e979c215423579a45f82e0cb1fce8628de2c1ca51a28fa07a1d336b9ecc561a7f3'
+            'e3e6c46faac768b283134a47013b77c4152840c61d3503f51fbe154bf25fe8a0e585ed9a40950212254b4a844b007f674875e4d25f55af51914694213fecc420'
+            'c58631c20416997c538be6258ef9c13b9304d5906b19f063157df70f672b7153b452ffb9612be267a90942bd880af8d665ebe3c53a2926ffa99acc943d875d97')
 
 prepare() {
   cd "$srcdir/$pkgname"
@@ -44,9 +44,10 @@ build() {
 package() {
   cd "$srcdir/$pkgname"
   DESTDIR="$pkgdir" make install
-  install -Dm644 minidlna.conf "$pkgdir"/etc/minidlna.conf
-  install -Dm0644 "$srcdir"/minidlna.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/minidlna.conf
+
   install -Dm0644 "$srcdir"/minidlna.sysusers "$pkgdir"/usr/lib/sysusers.d/minidlna.conf
+  install -Dm0644 "$srcdir"/minidlna.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/minidlna.conf
+
   install -Dm644 "$srcdir"/$pkgname/minidlna.conf.5 "$pkgdir"/usr/share/man/man5/minidlna.conf.5
   install -Dm644 "$srcdir"/$pkgname/minidlnad.8 "$pkgdir"/usr/share/man/man8/minidlnad.8
 }
