@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-console
-  version: 47.0-1
+  version: 47.1-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 47.0-1
+    version: 47.1-1
     packages:
-      - gnome-console-47.0-1-x86_64.pkg.tar.zst
+      - gnome-console-47.1-1-x86_64.pkg.tar.zst
   world:
     version: 46.0-2
     packages:
