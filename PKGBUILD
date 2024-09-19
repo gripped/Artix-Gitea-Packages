@@ -3,15 +3,16 @@
 
 pkgname=plocate
 pkgver=1.1.22
-pkgrel=1
+pkgrel=3
 pkgdesc="Alternative to locate, faster and compatible with mlocate's database."
 arch=('x86_64')
 url="https://plocate.sesse.net"
-license=('GPL2')
+license=('GPL-2.0-or-later' 'GPL-2.0-only')
 depends=('zstd' 'liburing')
 makedepends=('meson')
 conflicts=('mlocate')
 provides=('mlocate' 'locate')
+replaces=('mlocate')
 backup=('etc/updatedb.conf')
 source=("${url}/download/${pkgname}-${pkgver}.tar.gz"
         'plocate.sysusers'
@@ -21,6 +22,10 @@ sha256sums=('3b7e4741b4aa2ec044e53eff06474a32a3fb1e928b9382351fe79d4c27fb0049'
             '1713a8fc8b81f4a390bf8597c4c0e917474379002dcc984aad2f44218d10c82a'
             'adda399ac42f0faa002caab5bf932777c0006ae7c4387add859c9f77321b4202'
             'd00796741e2194032d0185b40de70ff5c8a11fda416a70434eb0aa2020981f91')
+
+prepare() {
+    cd $pkgname-$pkgver
+}
 
 build() {
     cd $pkgname-$pkgver
@@ -44,4 +49,5 @@ package() {
     install -Dm644 ../updatedb.conf "${pkgdir}/etc/updatedb.conf"
     ln -sf /usr/bin/plocate "$pkgdir/usr/bin/mlocate"
     ln -sf /usr/bin/plocate "$pkgdir/usr/bin/locate"
+
 }
