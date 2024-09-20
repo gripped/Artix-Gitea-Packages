@@ -1,8 +1,8 @@
-# Maintainer: ohfp/lsf <lsf at pfho dot net>
+# Maintainer: artist for Artix Linux
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=130.0
+pkgver=130.0.1
 pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
@@ -92,7 +92,7 @@ source=(
   "default192x192.png"
 )
 
-sha256sums=('c4f134a7d61c2236695e525c6996210a0eb7fba5722d1e72a5108d02bf810d5e'
+sha256sums=('f3b8932b383ae89074ecd76498c94dd3742dd59ab02eec58901bd35fe02c3f5c'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
 
