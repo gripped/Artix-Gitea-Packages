@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hugin
-  version: 2023.0.0-3
+  version: 2023.0.0-4
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - hugin-2023.0.0-3-x86_64.pkg.tar.zst
   world:
-    version: 2023.0.0-3
+    version: 2023.0.0-4
     packages:
-      - hugin-2023.0.0-3-x86_64.pkg.tar.zst
+      - hugin-2023.0.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
