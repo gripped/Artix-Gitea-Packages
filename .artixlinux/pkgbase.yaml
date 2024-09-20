@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: jose
-  version: 11-3
+  version: 11-4
   arch:
     - x86_64
   pkgname:
     - jose
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - jose-11-3-x86_64.pkg.tar.zst
   world:
-    version: 11-2
+    version: 11-4
     packages:
-      - jose-11-2-x86_64.pkg.tar.zst
+      - jose-11-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
