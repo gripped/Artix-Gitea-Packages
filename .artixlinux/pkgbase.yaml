@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: garcon
-  version: 4.18.2-1
+  version: 4.18.2-2
   arch:
     - x86_64
   pkgname:
     - garcon
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 4.18.2-2
+    packages:
+      - garcon-4.18.2-2-x86_64.pkg.tar.zst
   galaxy:
     version: 4.18.2-1
     packages:
