@@ -8,7 +8,7 @@ pkgname=(
   at-spi2-core-docs
 )
 pkgver=2.54.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi"
 url="https://gitlab.gnome.org/GNOME/at-spi2-core"
 arch=(x86_64)
