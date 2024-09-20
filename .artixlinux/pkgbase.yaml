@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: boinc
-  version: 8.0.2-1
+  version: 8.0.2-2
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.0.2-1
+    version: 8.0.2-2
     packages:
-      - boinc-8.0.2-1-x86_64.pkg.tar.zst
-      - boinc-nox-8.0.2-1-x86_64.pkg.tar.zst
+      - boinc-8.0.2-2-x86_64.pkg.tar.zst
+      - boinc-nox-8.0.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
