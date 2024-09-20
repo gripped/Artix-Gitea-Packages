@@ -20,7 +20,7 @@ makedepends=(cmake
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('f471c73e6321faab12d52f5baf0009c6706a49b9774cb39a8d0ae4a32f3f802e')
+sha256sums=('SKIP')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
