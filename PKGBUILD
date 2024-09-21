@@ -1,7 +1,7 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=solr
-pkgver=9.6.1
+pkgver=9.7.0
 pkgrel=1
 pkgdesc="Open source enterprise search platform built on Apache Lucene"
 arch=(any)
@@ -20,7 +20,7 @@ backup=(
   etc/$pkgname/zoo.cfg
 )
 source=(
-  https://archive.apache.org/dist/$pkgname/$pkgname/$pkgver/$pkgname-$pkgver-src.tgz #{,.asc}
+  https://archive.apache.org/dist/$pkgname/$pkgname/$pkgver/$pkgname-$pkgver-src.tgz
   $pkgname.sysusers
   $pkgname.tmpfiles
   support-reproducible-builds.patch
@@ -28,14 +28,14 @@ source=(
   skip-checks-for-git-repo.patch
   allow-using-system-gradle.patch
 )
-sha512sums=('cbed4b00fe96bcd590e3bdebc37ff96f34c0a3df53354d7b8f90aa2d64d4032f93bf817e750632b456ab3e1aa9a58b0b57fb4bc7e4795216cabcd5e1b16d2f34'
+sha512sums=('5d8bdd2a5ce4745bc0c37a9341bbb78ccb02064be31e4e6dbc524c9608a904befbdb0a95e20e8585e268527de43ca27e084ebfeafa541941e9b0b98a4f0f7f59'
             '06e5e40b96d2b6668790e4b166fc2867b9e694a2c72fd57eec702526e009b8b0495acbe16a5a27e259827477f4783ce87742f1f806254d8a2baec23b0b317058'
             '97252d1ba1e4e211a6b5a038981cbc9d6663a0d7a980b23484f838eebb2f8194571a3f34ea6b92ed0efd4b7f862e020b5e3e8478ad1de1c6832e232d0b20ff6d'
             'cda14703a9144e0add93d6f7a32691a80e2cadbb738c0c752122e6e27bbf1441a48a1a2ee146f10dd4f0ba4e5f5e38a46b45c1e01ff8c79bd477f3030a7c265d'
             '8daad1f07686984d59c459317936a73dfc35599b4e50f0c2bab769b42950117aae56e775f028c5241c877c771241d9fc5666cc57500a4e94576bfd30be421fe9'
             '1ad7eb67116fc58e7ad38926a696e76f9bc10447101e95ddfb0da914cb7a9916aeab47ad498fec3ff18285827f21d8855c1854778ce09c8e70dc9ce1576b57d1'
             '5e45fcd63be50484dbdd7b909f187d4d90a89639b80571bd93c432599b2064498344d4168dd06dfc45368ce043a873ae6be804d3ff1a3c42746b045c215cab92')
-b2sums=('f97c09f864410b857215555740ab4b6282d02ed28922fb57620bee58da3d492b79da1c624fcd1abae262e691817646ad6a7d3eab3fd5af5068356cd36291063a'
+b2sums=('b65836653bbf4070da77107c7a68dec0a626b0a08c5eec9b9fe70013523dc46f7ee27f2bc76e6faa5aaf055a126c3925744e0ee509115f7a75656b1bd541febf'
         '60ff37059a4ab8362551518d56ee105e7d19199727605d5ad6f3236bd31dde1cc5fa37ffa37009820ee3115da36ae64df4754454cef1db51d1c13cac039245cb'
         '37ab5d9af1da1178fcc58ce39654fdecb842b24d4e2264a2eec95c10223e7d003f27a6b2957a267a17ce0fa72258d96642d5b909963576a5a7d13e4e05c47a51'
         '60b0b2124ff8e4e2faa9323a0156fa02ea606c5779f7b80e42a05de78fa7e67546e33a444c5b1b4d61aaf2dcd067430022091449da386c310b8a99ce75eb1d3c'
@@ -63,6 +63,7 @@ validpgpkeys=(
   515EA995ED1DD799FA1422E5CA7514D8385D790B  # David Smiley (CODE SIGNING KEY) <dsmiley@apache.org>
   E05FDF113D89E7FB4A2DF4B2684D544160392455  # Jason Gerlowski (Release Signing Key) <gerlowskija@apache.org>
   1CF0DAD1470504C4EA95C697140BC45803B03F7F  # Patrick Gustav Heck (CODE SIGNING KEY) <gus@apache.org>
+  EDF961FF03E647F9CA8A9C2C758051CCA3A13A7F  # Anshum Gupta <anshumg@apple.com>
 )
 
 prepare() {
@@ -80,7 +81,7 @@ build() {
   # override adding -SNAPSHOT on version
   # skip signing of jars
   # skip generation of reference guide
-  #
+  # 
   ./gradlew \
     -Dversion.release=$pkgver \
     assembleRelease \
@@ -93,16 +94,6 @@ build() {
   tar -xf "$pkgname/distribution/build/release/$pkgname-$pkgver.tgz" --strip 1 -C "$srcdir/$pkgname-$pkgver/dist"
 }
 
-# check() {
-#   cd $pkgname-$pkgver
-#
-#   ./gradlew \
-#     -Dversion.release=$pkgver \
-#     test \
-#     -Prefguide.include=false \
-#     --parallel \
-#     --daemon
-# }
 
 package() {
   local config
@@ -143,7 +134,6 @@ package() {
   # docs
   install -vDm 644 dist/{CHANGES,NOTICE}.txt -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
-  # install -vDm 644 ../$pkgname.service -t "$pkgdir/usr/lib/systemd/system/"
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   install -vDm 644 ../$pkgname.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
 }
