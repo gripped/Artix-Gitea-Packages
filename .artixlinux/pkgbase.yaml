@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xfce4-notifyd
-  version: 0.9.6-1
+  version: 0.9.6-2
   arch:
     - x86_64
   pkgname:
     - xfce4-notifyd
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.9.6-2
+    packages:
+      - xfce4-notifyd-0.9.6-2-x86_64.pkg.tar.zst
   galaxy:
     version: 0.9.6-1
     packages:
