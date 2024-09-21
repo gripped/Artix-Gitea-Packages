@@ -7,13 +7,13 @@
 
 pkgbase=podofo
 pkgname=(podofo{,-tools})
-pkgver=0.10.3
+pkgver=0.10.4
 pkgrel=1
 pkgdesc='A C++ library to work with the PDF file format'
 arch=(x86_64)
 url="http://$pkgname.sourceforge.net"
 _url="https://github.com/$pkgname/$pkgname"
-license=(LGPL2.1)
+license=(LGPL-2.1-only)
 depends=(fontconfig
          freetype2
          libidn
@@ -27,7 +27,7 @@ depends=(fontconfig
 makedepends=(cmake)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('4be2232643f9e9dd7fbb02894d5a0394c3ca2826aab179654c2cc751074825ec')
+sha256sums=('8800e16b8bd77cdb8881efca9d516976ec839cf736d27940977cc7f72d6d09d3')
 
 build() {
 	cd "$_archive"
