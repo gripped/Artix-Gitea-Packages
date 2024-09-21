@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xfce4-verve-plugin
-  version: 2.0.3-2
+  version: 2.0.3-3
   arch:
     - x86_64
   pkgname:
     - xfce4-verve-plugin
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.0.3-3
+    packages:
+      - xfce4-verve-plugin-2.0.3-3-x86_64.pkg.tar.zst
   galaxy:
     version: 2.0.3-2
     packages:
