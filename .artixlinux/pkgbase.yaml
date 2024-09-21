@@ -70,11 +70,11 @@ pkgbase:
     - thunderbird-i18n-zh-cn
     - thunderbird-i18n-zh-tw
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: null
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
