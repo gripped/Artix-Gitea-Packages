@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xfce4-screenshooter
-  version: 1.11.1-1
+  version: 1.11.1-2
   arch:
     - x86_64
   pkgname:
     - xfce4-screenshooter
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.11.1-2
+    packages:
+      - xfce4-screenshooter-1.11.1-2-x86_64.pkg.tar.zst
   galaxy:
     version: 1.11.1-1
     packages:
