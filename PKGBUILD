@@ -27,7 +27,7 @@ depends=(fontconfig
 makedepends=(cmake)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/$pkgver/$_archive.tar.gz")
-sha256sums=('8800e16b8bd77cdb8881efca9d516976ec839cf736d27940977cc7f72d6d09d3')
+sha256sums=('6b1b13cdfb2ba5e8bbc549df507023dd4873bc946211bc6942183b8496986904')
 
 build() {
 	cd "$_archive"
