@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-nbxmpp
-  version: 5.0.3-1
+  version: 5.0.4-1
   arch:
     - any
   pkgname:
     - python-nbxmpp
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.4-1
+    packages:
+      - python-nbxmpp-5.0.4-1-any.pkg.tar.zst
   world:
     version: 5.0.3-1
     packages:
