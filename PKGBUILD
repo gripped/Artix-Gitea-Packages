@@ -1,8 +1,10 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Jakub Schmidtke <sjakub@gmail.com>
 
 pkgname=firefox
 pkgver=130.0.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -96,7 +98,6 @@ b2sums=('2d6496a4f476a5a276b70de43f5d58ce2a44007b754e05fcf757d4c1a1cdfcab910493f
         '2ce33432f8a73a4f1a412b7a065d3c124e1ca9f6bdf3fad0407e897efc0840f8ef43eeeb1b9bef4a102d9fac0b2c4a2ef205726b817f83fe9c3742d076778b14')
 
 
-
 prepare() {
   mkdir mozbuild
   cd firefox-$pkgver
@@ -134,16 +135,8 @@ ac_add_options --with-system-nss
 
 # Features
 ac_add_options --enable-alsa
-ac_add_options --enable-av1
-ac_add_options --enable-eme=widevine
 ac_add_options --enable-jack
-ac_add_options --enable-jxl
-ac_add_options --enable-pulseaudio
-ac_add_options --enable-raw
-ac_add_options --enable-sandbox
-ac_add_options --disable-crashreporter
-ac_add_options --disable-default-browser-agent
-ac_add_options --disable-parental-controls
+ac_add_options --enable-crashreporter
 ac_add_options --disable-updater
 ac_add_options --disable-tests
 END
@@ -177,8 +170,8 @@ END
 
   echo "Profiling instrumented browser..."
   ./mach package
-  LLVM_PROFDATA=llvm-profdata \
-    JARLOG_FILE="$PWD/jarlog" \
+  LLVM_PROFDATA=llvm-profdata JARLOG_FILE="$PWD/jarlog" \
+    dbus-run-session \
     xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
     ./mach python build/pgo/profileserver.py
 
@@ -221,6 +214,10 @@ pref("extensions.autoDisableScopes", 11);
 
 // Enable GNOME Shell search provider
 pref("browser.gnome-search-provider.enabled", true);
+
+// Use our own captive portal detection
+pref("captivedetect.canonicalURL", "http://ping.archlinux.org/nm-check.txt");
+pref("captivedetect.canonicalContent", "NetworkManager is online\\n");
 END
 
   local distini="$pkgdir/usr/lib/$pkgname/distribution/distribution.ini"
