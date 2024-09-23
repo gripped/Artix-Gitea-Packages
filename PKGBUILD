@@ -1,12 +1,13 @@
-# Maintainer: Ronald van Haren <ronald.archlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
 # Contributor: damir <damir@archlinux.org>
 # Contributor: Tom K <tomk@runbox.com>
 
 pkgname=hdf5
 pkgver=1.14.4.3
-pkgrel=1
+pkgrel=2
 pkgdesc="General purpose library and file format for storing scientific data"
 arch=(x86_64)
 url="https://www.hdfgroup.org/hdf5"
@@ -86,5 +87,5 @@ package() {
     # Fix version numbers in pkg-config files
     sed -i '/Requires/ s/-/ = /g' "${pkgdir}"/usr/lib/pkgconfig/*.pc
     # Fix bogus include path
-    sed -e "s|-I/build/hdf5/src/hdf5-$pkgver/src/H5FDsubfiling||g" -i "${pkgdir}"/usr/lib/libhdf5.settings -i "${pkgdir}"/usr/bin/*
+    sed -re "s|-I/build/hdf5/src/hdf5.*/src/H5FDsubfiling||g" -i "${pkgdir}"/usr/lib/libhdf5.settings -i "${pkgdir}"/usr/bin/*
 }
