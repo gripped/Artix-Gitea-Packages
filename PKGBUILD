@@ -51,7 +51,7 @@ checkdepends=(
   python-scipy
 )
 source=(git+https://github.com/numba/numba#tag=$pkgver)
-sha256sums=('2ee47f97464e36b6118fd9c6b57db901930b8b9d5294a7dfcddbd5a8b2b05873')
+sha256sums=('SKIP')
 
 prepare() {
   cd numba
