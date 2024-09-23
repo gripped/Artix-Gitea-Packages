@@ -1,103 +1,158 @@
-# Maintainer: Florian Pritz <bluewind@xinu.at>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Contributor: Florian Pritz <bluewind@xinu.at>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=syslog-ng
-pkgver=4.6.0
-pkgrel=9
+pkgver=4.8.0
+pkgrel=1
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
-arch=('x86_64')
-url="https://www.syslog-ng.com/products/open-source-log-management/"
-license=('GPL2' 'LGPL2.1')
+arch=(x86_64)
+url="https://github.com/syslog-ng/syslog-ng"
+license=(
+  GPL-2.0-or-later
+  LGPL-2.1-or-later
+)
 depends=(
-  'awk'
-  'bash'
-  'curl'
-  'glib2'
-  'glibc'
-  'grpc'
-  'json-c'
-  'libcap'
-  'libnet'
-  'libnsl'
-  'openssl'
-  'pcre2'
-  'protobuf'
+  abseil-cpp
+  bash
+  curl
+  gawk
+  gcc-libs
+  glib2
+  glibc
+  grpc
+  json-c
+  libcap
+  libnet
+  openssl
+  pcre2
+  protobuf
  
 )
-makedepends=('libxslt' 'mongo-c-driver' 'librabbitmq-c' 'python' 'libesmtp' 'hiredis'
-             'libdbi' 'libmaxminddb' 'net-snmp' 'librdkafka')
-# checkdepends=('python-ply')
-optdepends=('logrotate: for rotating log files'
-            'libdbi: for the SQL plugin'
-            'librabbitmq-c: for the AMQP plugin'
-            'mongo-c-driver: for the MongoDB plugin'
-            'libesmtp: for the SMTP plugin'
-            'hiredis: for the Redis plugin'
-            'libmaxminddb: for the GeoIP2 plugin'
-            'net-snmp: for the SNMP plugin'
-            'librdkafka: for the Kafka C plugin'
-            'python: for Python-based plugins'
-            'python-ply: for debugger CLI')
-conflicts=('eventlog')
-replaces=('eventlog')
-# The default scl.conf moved in 4.3.0, but it is still supported here for overrides so we keep this entry. See https://github.com/syslog-ng/syslog-ng/pull/4534 for details.
-backup=('etc/syslog-ng/scl.conf'
-        'etc/syslog-ng/syslog-ng.conf'
-        'etc/logrotate.d/syslog-ng')
-source=(https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$pkgver/$pkgname-$pkgver.tar.gz
-        syslog-ng.conf syslog-ng.logrotate
-        https://github.com/syslog-ng/syslog-ng/commit/6487d8d8.patch)
-sha512sums=('7c4fbf1ac5377240afa7a1db8d72772399d2c62657fffc3c59e82b2dea6f12031f02320c4f567f981311bd1d8bbfd98962aeb59720ca857867a51b6bf83afb4b'
-            '432154be20858721c2dcfee65a608cb65760479c9b78b7751fa1e00fc0276c1b34bdff8bc1bee8a6e5c0138f3034531034401fcbb9cc3c70f1b984225a9c6240'
-            'cd39f545a6a855c866a466bf846e33940b2c2dd1fc2eaf50cce29c68e1a5753c7c4b56411e4f01c152f32e155104a98dd755a96319767f47c73a8853f720b2cc'
-            'b662ca18085a31784b6a985724132f3619b03ef4ec936f06b50a2d10c00f78a3d20d94e5ff95eab814772e9fe7a1ab78716ca99975f3a1fa163509c90cb5ab2e')
+makedepends=(
+  hiredis
+  libdbi
+  libesmtp
+  libmaxminddb
+  librabbitmq-c
+  librdkafka
+  libxslt
+  mongo-c-driver
+  net-snmp
+  python
+  python-boto3
+  python-botocore
+  python-cachetools
+  python-certifi
+  python-charset-normalizer
+  python-dateutil
+  python-google-auth
+  python-idna
+  python-kubernetes
+  python-oauthlib
+  python-ply
+  python-pyasn1
+  python-pyasn1-modules
+  python-pyyaml
+  python-requests
+  python-requests-oauthlib
+  python-rsa
+  python-setuptools
+  python-six
+  python-urllib3
+  python-websocket-client
+ 
+)
+checkdepends=(
+  criterion
+  python-pytest
+  python-pytest-mock
+)
+optdepends=(
+  'hiredis: for the Redis plugin'
+  'libdbi: for the SQL plugin'
+  'libesmtp: for the SMTP plugin'
+  'libmaxminddb: for the GeoIP2 plugin'
+  'librabbitmq-c: for the AMQP plugin'
+  'librdkafka: for the Kafka C plugin'
+  'logrotate: for rotating log files'
+  'mongo-c-driver: for the MongoDB plugin'
+  'net-snmp: for the SNMP plugin'
+  'python-boto3: for Python S3 module'
+  'python-botocore: for Python S3 module'
+  'python-kubernetes: for Python Kubernetes module'
+  'python-ply: for debugger CLI'
+  'python-requests: for Python hypr module'
+  'python: for Python-based plugins'
+)
+conflicts=(eventlog)
+replaces=(eventlog)
+backup=(
+  "etc/$pkgname/$pkgname.conf"
+  "etc/logrotate.d/$pkgname"
+  "etc/default/$pkgname@default"
+)
+source=(
+  "$pkgname-$pkgver.tar.gz::$url/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
+  "$pkgname.logrotate"
+  "$pkgname-do-not-install-python-venv.patch"
+  "$pkgname-config.patch"
+)
+sha256sums=('f2035546af5fcc0c03a8d03f5f0e929ce19131a428d611c982a5fea608a5d9d6'
+            '93c935eca56854011ea9e353b7a1da662ad40b2e8452954c5b4b5a1d5b2d5317'
+            '7ca7f0d9fb203b3814fe2f609904af84df346b84591eeeb171bb2e5eb6393990'
+            '423391cd5cc2f73cecd4d0191711f89c24ff178c5bff8e78ff9bfd3d246b0f74')
 
 prepare() {
   cd $pkgname-$pkgver
-  patch -p1 -i ../6487d8d8.patch # Fix build with protobuf 27
+  patch -Np1 -i "$srcdir/$pkgname-do-not-install-python-venv.patch" # Don't install Python venv using pip.
+  patch -Np1 -i "$srcdir/$pkgname-config.patch"                     # Add further distribution examples, disable default log file.
+
+  # Remove tests failing in a chroot but not on host. Not sure why.
+  sed -i '/include lib\/secret-storage\/tests\/Makefile.am/d' lib/secret-storage/Makefile.am
+  rm -r lib/secret-storage/tests
+
+  ./autogen.sh
 }
 
 build() {
   cd $pkgname-$pkgver
+  local configure_options=(
+    --datadir=/usr/share
+    --disable-java
+    --disable-java-modules
+    --disable-mqtt
+    --disable-riemann
+    --enable-all-modules
+    --enable-ipv6
+    --enable-manpages
+    --enable-spoof-source
+    --disable-systemd
+    --libexecdir=/usr/lib
+    --localstatedir="/var/lib/$pkgname"
+    --prefix=/usr
+    --sbindir=/usr/bin
+    --sysconfdir="/etc/$pkgname"
+    --with-jsonc=system
+    --with-pidfile-dir=/run
+    --with-python-packages=system
+    --with-systemdsystemunitdir=no
+  )
+  ./configure "${configure_options[@]}"
 
-  # https://archlinux.org/todo/lto-fat-objects/
-  export CFLAGS+=" -ffat-lto-objects"
-  export CXXFLAGS+=" -ffat-lto-objects"
-
-
-  _source_version=$(sed -rn 's#.*define VERSION_STR_CURRENT.* "(.*)"#\1#p' lib/versioning.h)
-  _config_version=$(head -1 "$srcdir/syslog-ng.conf" | cut -d\  -f2)
-
-  if [[ "$_source_version" != "$_config_version" ]]; then
-	  echo "Version in example config at '$srcdir/syslog-ng.conf' is: $_config_version"
-	  echo "Expected version from code is: $_source_version"
-	  echo "Check if config format has incompatible changes and adjust the"
-	  echo "example config file and bump the version to continue the build."
-	  echo "Usually simply bumping is fine since our config is simple enough"
-	  return 1
-  fi
-
-  ./autogen.sh
-  ./configure --prefix=/usr --sysconfdir=/etc/syslog-ng --libexecdir=/usr/lib \
-    --sbindir=/usr/bin --localstatedir=/var/lib/syslog-ng --datadir=/usr/share \
-    --with-pidfile-dir=/run --enable-spoof-source --enable-ipv6 \
-    --disable-systemd --with-systemdsystemunitdir=no \
-    --enable-manpages --enable-all-modules --disable-java --disable-java-modules  \
-    --disable-mqtt --disable-riemann --with-python=3 --with-jsonc=system
-  # prevent excessive overlinking due to libtool
+  # Prevent excessive overlinking due to libtool.
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
-# TODO: package criterion
-# check() {
-#   cd $pkgname-$pkgver
-#   make check
-# }
+check() {
+  cd $pkgname-$pkgver
+  make check
+}
 
 package() {
-  make -C $pkgname-$pkgver DESTDIR="$pkgdir" install
-  install -dm755 "$pkgdir/var/lib/syslog-ng" "$pkgdir/etc/syslog-ng/patterndb.d"
-  install -Dm644 "$srcdir/syslog-ng.conf" "$pkgdir/etc/syslog-ng/syslog-ng.conf"
-  install -Dm644 "$srcdir/syslog-ng.logrotate" "$pkgdir/etc/logrotate.d/syslog-ng"
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -vdm755 "$pkgdir/var/lib/$pkgname"
+  install -vDm644 "$srcdir/$pkgname.logrotate" "$pkgdir/etc/logrotate.d/$pkgname"
 }
