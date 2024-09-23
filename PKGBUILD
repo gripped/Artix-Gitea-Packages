@@ -22,7 +22,7 @@ optdepends=(
 replaces=('newsbeuter')
 options=('!makeflags' '!lto')
 source=("git+https://github.com/newsboat/newsboat.git#tag=r${pkgver}")
-sha256sums=('8b7827e3b124636e6c64d7a443958daf521aa60c7283207e1e6ed5b6d61f6b02')
+sha256sums=('SKIP')
 #validpgpkeys=('B8B1756A0DDBF0760CE67CCF4ED6CD61932B9EBE') # Newsboat project <newsboat@googlegroups.com>
 
 prepare() {
