@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.16.1
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -97,6 +97,9 @@ b2sums=('a39b06dde6dfe3c7cccf21f9f2e75299ecf42196ff870f36521b40f27b4c9c35162cbc9
 
 prepare() {
   cd gtk
+
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/gtk4/-/issues/4
+  git cherry-pick -n 60b149609100038866fab29c391192fb82630663
 
   # Allow -fcf-protection to work
   # https://gitlab.gnome.org/GNOME/gtk/-/issues/6153
