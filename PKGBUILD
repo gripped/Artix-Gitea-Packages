@@ -11,7 +11,7 @@
 # Contributor: Niels Abspoel <aboe76 (at) Gmail (dot) com>
 
 pkgname=puppet
-pkgver=7.33.0
+pkgver=8.9.0
 pkgrel=1
 pkgdesc='Server automation framework and application'
 arch=('any')
@@ -72,9 +72,8 @@ source=("https://github.com/puppetlabs/puppet/archive/${pkgver}/puppet-${pkgver}
         "yumrepo_core::git+https://github.com/puppetlabs/puppetlabs-yumrepo_core#commit=${_yumrepo_commit}"
         "zfs_core::git+https://github.com/puppetlabs/puppetlabs-zfs_core#commit=${_zfs_commit}"
         "zone_core::git+https://github.com/puppetlabs/puppetlabs-zone_core#commit=${_zone_commit}"
-        "artix.patch::https://github.com/puppetlabs/puppet/commit/b31d40b687c05ef6f6350b29f727144285b7aaab.patch"
         )
-sha512sums=('1b7bfe3854daa46a5acd5ea312b89d3ed4db4c07fe0a937e7041486e0ab3bbb1183a9bf3932896ea76d31efd43ef786b01b3e8699c6156edc6d7bd6d3c8e7753'
+sha512sums=('33d3f849d327b552d412750c68ccda7af9ce3ecc9a8769360d42e2fdd6b71742d687c2ac608d403747d85d2ae671581fee2521b362b113c18d21a418e28e18f9'
             '6ebc4603db2e702623070f1703d3e82a25c689b8c149c3328660ab43d74bfa49c5853aa14d267b48c9f91d12bd4a96579bcf3184f8881a57748763484892bf90'
             '584093f64216becfeeb45514c9308c7df6819b39b93489790656f6e206c52abb7ed7077a9630c3f0aa2a6b9a6e57502f84cb1a862c03df325f2d97772773c4ce'
             '2bcb93ea1d9d6312205aa1975b1e233414d7bd9c713fb2e59a04f2f3ca436b89dde5b3070b3899fc0a3b5259866c6f3039c06517041d56d73dba08926e7afbec'
@@ -83,8 +82,7 @@ sha512sums=('1b7bfe3854daa46a5acd5ea312b89d3ed4db4c07fe0a937e7041486e0ab3bbb1183
             '9d458354a95206b998a148bf9b459c8a792051ddaf03672f0ea4c161721ac405c00523ecc065e6acfa610cb9b61e7940a1611b08bb2395c8d3d5a620c6c3662a'
             '6203781a13142747827ee658db3e428ed97732abf356f88224a7f780bfa046ddafcdd69f1e551b3dbe1ad5b00d9a78248a1ba7e97c58fbac636500a95c5e3b7e'
             'cf73509b4b66f307bfe5027814ec7b26173773f568f3b98286b8d1b8334b3f539f62151ac8fb7036be44b84e9d20c1805cd86177ffe1ab0924ed53407e4538ab'
-            '47fafc95cc9aba258cfd8919707366072a50f8a99b59f540c2531e1a367e8c9230070f8b9e7ae5c9ed4f536e05116234ed02ea431b6e48f61c82ce6dd92ebd9b'
-            '2e12f6155acb3e065372cde456add7abf8335341a70d89ac3c3e28c370a4eecb1a062f7751cb4f05bf49225b31e70c882deb8fa3b7e31bd5d669a7e471242276')
+            '47fafc95cc9aba258cfd8919707366072a50f8a99b59f540c2531e1a367e8c9230070f8b9e7ae5c9ed4f536e05116234ed02ea431b6e48f61c82ce6dd92ebd9b')
 conflicts=('puppet5' 'puppet6')
 provides=('puppet')
 
@@ -93,7 +91,6 @@ prepare() {
 
   # FS#45044: fix file location
   sed -i 's_/opt/puppetlabs/puppet_/usr_' ext/systemd/puppet.service
-  patch --strip=1 --input=../artix.patch
 }
 
 # check() {
@@ -120,6 +117,9 @@ package() {
 
   echo 'u puppet 52 "Puppet" /var/lib/puppet' > "$pkgdir"/usr/lib/sysusers.d/$pkgname.conf
   echo "d /run/puppetlabs 0755 $pkgname $pkgname -" > "$pkgdir"/usr/lib/tmpfiles.d/$pkgname.conf
+
+  # systemd
+  install -Dm644 "${srcdir}/$pkgname-${pkgver}/ext/systemd/${pkgname}.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
 
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 
