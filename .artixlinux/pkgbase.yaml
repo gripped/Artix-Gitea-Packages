@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-inline-snapshot
-  version: 0.13.1-1
+  version: 0.13.3-1
   arch:
     - any
   pkgname:
     - python-inline-snapshot
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.13.1-1
+    version: 0.13.3-1
     packages:
-      - python-inline-snapshot-0.13.1-1-any.pkg.tar.zst
+      - python-inline-snapshot-0.13.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
