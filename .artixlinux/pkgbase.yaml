@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-ndindex
-  version: 1.8-3
+  version: 1.9.1-1
   arch:
-    - any
+    - x86_64
   pkgname:
     - python-ndindex
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8-3
+    version: 1.9.1-1
     packages:
-      - python-ndindex-1.8-3-any.pkg.tar.zst
+      - python-ndindex-1.9.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
