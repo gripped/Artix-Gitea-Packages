@@ -3,10 +3,10 @@
 pkgname=rocm-core
 _rocm_major=6
 _rocm_minor=2
-_rocm_patch=0
-_pkgver_magic=66
+_rocm_patch=1
+_pkgver_magic=112
 pkgver=$_rocm_major.$_rocm_minor.$_rocm_patch
-pkgrel=2
+pkgrel=1
 pkgdesc='AMD ROCm core package (version files)'
 license=('Unlicense')
 arch=('any')

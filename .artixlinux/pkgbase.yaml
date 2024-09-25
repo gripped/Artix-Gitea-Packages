@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rocm-core
-  version: 6.2.0-2
+  version: 6.2.1-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.2.0-2
+    version: 6.2.1-1
     packages:
-      - rocm-core-6.2.0-2-any.pkg.tar.zst
+      - rocm-core-6.2.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
