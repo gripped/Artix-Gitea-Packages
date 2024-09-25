@@ -4,7 +4,7 @@
 
 pkgname=filesystem
 pkgver=2024.04.07
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Base Artix Linux files'
 arch=('any')
 license=('GPL-3.0-or-later')
@@ -61,8 +61,8 @@ source=(
 sha256sums=('01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
             '5e18ee2e133c8129648af0e4e276a04722f6443977d2b1b552560e10d6e95b1e'
             '901f30173e8044f489b6224dde41fb6d15244968abad17c37763b5c063834a4e'
-            '9bc8bee1285a8688440f587a5f57de2371f2ba22c3268d33379073482cc492f1'
-            '9bc8bee1285a8688440f587a5f57de2371f2ba22c3268d33379073482cc492f1'
+            '4dce805a82da31f3fd7f58356b8661dd4f8eba00a2308b4d8d1a2c9b4b55a6bd'
+            '4dce805a82da31f3fd7f58356b8661dd4f8eba00a2308b4d8d1a2c9b4b55a6bd'
             'e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'e54626e74ed8fee4173b62a545ab1c3a3a069e4217a0ee8fc398d9933e9c1696'
             '244f0718ee2a9d6862ae59d6c18c1dd1568651eada91a704574fa527fbac2b3a'
