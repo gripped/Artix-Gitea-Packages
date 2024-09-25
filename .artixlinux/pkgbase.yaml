@@ -8,12 +8,12 @@ pkgbase:
     - vlc
     - libvlc
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,10 +26,8 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.0.21-5
-    packages:
-      - vlc-3.0.21-5-x86_64.pkg.tar.zst
-      - libvlc-3.0.21-5-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: 3.0.21-6
     packages:
