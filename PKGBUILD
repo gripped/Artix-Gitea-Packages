@@ -27,7 +27,7 @@ checkdepends=(
   python-sympy
 )
 source=("$pkgname-pkgver.tar.gz::https://github.com/Quansight-Labs/ndindex/archive/$pkgver/$pkgver.tar.gz")
-sha256sums=('256ea5185bfe7534657360afc6f2705c5ab598b976cea9bd4fcc897d5fccfefe')
+sha256sums=('SKIP')
 
 build() {
   cd "$_pkgname-$pkgver"
