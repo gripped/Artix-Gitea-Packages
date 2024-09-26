@@ -7,23 +7,21 @@
 # Contributor: Ricardo Catalinas Jiménez <jimenezrick@gmail.com>
 
 pkgname=erlang
-pkgver=27.0.1
+pkgver=27.1
 _docver=27.0
 pkgrel=1
 # https://github.com/erlang/otp/tags
-_commit=ee9628e7ed09ef02e767994a6da5b7a225316aaa # OTP-27.0.1
+_commit= # OTP-27.1
 arch=(x86_64)
 url='https://erlang.org'
 license=(Apache)
 makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl wxwidgets-gtk3)
 options=(staticlibs)
-source=("git+https://github.com/erlang/otp#commit=$_commit")
-b2sums=('99300d27abe6fc6a5c1ace5315569b4abf17913488aafa7937fcc57138cc44cf7d0e28f6590b0e97c4018d55aa00aae84295aa4f1161ef036f47b6edb5113510')
+source=("git+https://github.com/erlang/otp#tag=OTP-$pkgver")
+b2sums=('5541b940a3b5bfa478ddc96488bc91758357721a0019d2e70c5f90d14c6fb1706e8adc6a8a22d01ac961d3d3a62e7a9fecec912aa00cdb6312080e704a5273be')
 
 prepare() {
-  # Adjust how LDFLAGS are handled
   sed -i 's/^LDFLAGS = /LDFLAGS += /g' otp/lib/megaco/src/flex/Makefile.in
-
   # Let the Java bindings support version 11 or later, ref https://gitlab.archlinux.org/archlinux/packaging/packages/erlang/-/issues/1
   sed -i 's/^JAVA_OPTIONS =/JAVA_OPTIONS = --release 11/g' otp/lib/jinterface/java_src/com/ericsson/otp/erlang/Makefile
 }
@@ -32,6 +30,7 @@ build() {
   cd otp
 
   export CFLAGS+=' -ffat-lto-objects'
+
   ./otp_build autoconf
   ./configure \
     --enable-threads \
