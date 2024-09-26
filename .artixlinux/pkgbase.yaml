@@ -9,12 +9,12 @@ pkgbase:
     - lib32-harfbuzz-cairo
     - lib32-harfbuzz-icu
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,11 +30,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 10.0.1-1
-    packages:
-      - lib32-harfbuzz-10.0.1-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-cairo-10.0.1-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-icu-10.0.1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: null
     packages: []
