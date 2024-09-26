@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jenkins
-  version: 2.477-1
+  version: 2.478-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.477-1
+    version: 2.478-1
     packages:
-      - jenkins-2.477-1-any.pkg.tar.zst
+      - jenkins-2.478-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
