@@ -11,7 +11,7 @@
 
 pkgname=facter
 pkgver=4.8.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Collect and display system facts"
 arch=('x86_64')
 url="https://github.com/puppetlabs/${pkgname}"
@@ -20,7 +20,8 @@ depends=('dmidecode' 'pciutils' 'ruby-hocon' 'ruby-sys-filesystem' 'ruby-thor' '
 makedepends=('git' 'ruby-rdoc')
 checkdepends=('rubocop' 'ruby-bundler' 'ruby-rake' 'ruby-rubocop-performance' 'ruby-rubocop-rspec' 'ruby-rspec' 'ruby-simplecov' 'ruby-octokit' 'ruby-webmock' 'ruby-yard')
 optdepends=('puppet: retrieve puppet facts')
-replaces=('cfacter')
+conflicts=('libwhereami' 'cpp-hocon' 'leatherman')
+replaces=('libwhereami' 'cpp-hocon' 'leatherman')
 source=("https://downloads.puppet.com/$pkgname/$pkgname-$pkgver.gem"{,.asc}
         "git+https://github.com/puppetlabs/facter.git#tag=$pkgver")
 validpgpkeys=('D6811ED3ADEEB8441AF5AA8F4528B6CD9E61EF26') # "Puppet, Inc. Release Key (Puppet, Inc. Release Key) <release@puppet.com>"
