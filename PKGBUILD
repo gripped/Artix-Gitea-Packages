@@ -1,45 +1,51 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Campbell Jones <serebit at archlinux dot org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Maxim Baz <archlinux at maximbaz dot com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: Fabio 'Lolix' Loli <lolix@disroot.org> -> https://github.com/FabioLolix
+# Contributor: Maximilian Kindshofer <maximilian@kindshofer.net>
 
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
-pkgver=0.36.2
-pkgrel=1.1
-pkgdesc="Modern, hackable, featureful, OpenGL based terminal emulator"
-arch=(x86_64)
-url="https://sw.kovidgoyal.net/kitty/"
-license=(GPL3)
-depends=('python>=3.8' 'harfbuzz>=2.2.0' zlib libpng freetype2 fontconfig openssl libx11 libxi
-         libgl libcanberra dbus lcms2 libxkbcommon-x11 librsync hicolor-icon-theme libxcursor)
-makedepends=(python-setuptools libxinerama libxrandr libxkbcommon mesa
-             wayland-protocols python-sphinx python-sphinx-copybutton
-             python-sphinx-inline-tabs python-sphinxext-opengraph python-sphinx-furo go
-             ttf-roboto ttf-nerd-fonts-symbols-mono xxhash simde)
-source=(https://github.com/kovidgoyal/$pkgname/releases/download/v${pkgver}/$pkgname-$pkgver.tar.xz{,.sig})
+pkgver=0.36.3
+pkgrel=1
+pkgdesc="A modern, hackable, featureful, OpenGL-based terminal emulator"
+arch=('x86_64')
+url="https://github.com/kovidgoyal/kitty"
+license=('GPL-3.0-only')
+depends=('python3' 'freetype2'  'fontconfig' 'wayland' 'libx11' 'libxkbcommon-x11' 'libxcursor' 'libxi'
+         'hicolor-icon-theme' 'libgl' 'dbus' 'lcms2' 'librsync' 'xxhash')
+makedepends=('libxinerama' 'libxrandr' 'wayland-protocols' 'go' 'simde' 'ttf-nerd-fonts-symbols-mono')
+options=("!lto")
+source=("${pkgname}-${pkgver}.tar.xz::https://github.com/kovidgoyal/${pkgbase}/releases/download/v${pkgver}/${pkgbase}-${pkgver}.tar.xz"
+        "${pkgname}-${pkgver}.tar.xz.sig::https://github.com/kovidgoyal/${pkgbase}/releases/download/v${pkgver}/${pkgbase}-${pkgver}.tar.xz.sig")
+b2sums=('0ed7c8ea92c8fedae64a1059b21f120fab3141607be27c74116f34ee637fc33899dc240954d47757f36ec487bba40f7856423777d756014a3dd5221329403293'
+        'SKIP')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal
 
 build() {
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   cd "$srcdir/$pkgname-$pkgver"
-
-  sed -i "s|if (e) PyErr_SetObject(PyExc_OSError, e);||" kitty/systemd.c
-
   export CGO_CPPFLAGS="${CPPFLAGS}"
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_LDFLAGS="${LDFLAGS}"
   export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
-
-  python3 setup.py linux-package --update-check-interval=0 --systemd-library="/usr/lib/libelogind.so.0.30.0"
+  python3 setup.py linux-package --update-check-interval=0
 }
 
 package_kitty() {
   depends+=('kitty-terminfo' 'kitty-shell-integration')
   optdepends=('imagemagick: viewing images with icat'
-              'python-pygments: syntax highlighting in kitty +kitten diff')
+              'python-pygments: syntax highlighting in kitty +kitten diff'
+              'libcanberra: playing "bell" sound on terminal bell')
 
   cd "$srcdir/$pkgname-$pkgver"
 
   cp -r linux-package "${pkgdir}"/usr
 
+  # completions
   linux-package/bin/kitten __complete__ setup bash | install -Dm644 /dev/stdin "${pkgdir}"/usr/share/bash-completion/completions/kitty
   linux-package/bin/kitten __complete__ setup fish | install -Dm644 /dev/stdin "${pkgdir}"/usr/share/fish/vendor_completions.d/kitty.fish
   linux-package/bin/kitten __complete__ setup zsh  | install -Dm644 /dev/stdin "${pkgdir}"/usr/share/zsh/site-functions/_kitty
@@ -66,6 +72,3 @@ package_kitty-shell-integration() {
   mkdir -p "$pkgdir/usr/lib/kitty/"
   cp -r "$srcdir/$pkgbase-$pkgver/shell-integration" "$pkgdir/usr/lib/kitty/"
 }
-
-sha256sums=('16db7fba5541f322ecc35f15755bc5dc0b4ab3d02156778317f541c44447fb62'
-            'SKIP')
