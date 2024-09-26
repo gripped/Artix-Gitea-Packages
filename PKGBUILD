@@ -4,7 +4,7 @@
 
 pkgname=firefox
 pkgver=130.0.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -45,7 +45,6 @@ makedepends=(
   clang
   diffutils
   imake
-  inetutils
   jack
   lld
   llvm
@@ -97,6 +96,11 @@ b2sums=('2d6496a4f476a5a276b70de43f5d58ce2a44007b754e05fcf757d4c1a1cdfcab910493f
         '2c7936949ef922307fb593bd0480a13bde2eab8ae24fc89071d809d6659384705f9b7838b1ae8bc46b98a152ba01fcffad606d4c84796ad9bfaaf20166f0a0fd'
         '2ce33432f8a73a4f1a412b7a065d3c124e1ca9f6bdf3fad0407e897efc0840f8ef43eeeb1b9bef4a102d9fac0b2c4a2ef205726b817f83fe9c3742d076778b14')
 
+# Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
+# Note: These are for Arch Linux use ONLY. For your own distribution, please
+# get your own set of keys. Feel free to contact foutrelis@archlinux.org for
+# more information.
+_google_api_key=AIzaSyDwr302FpOSkGRpLlUpPThNTDPbXcIn_FM
 
 prepare() {
   mkdir mozbuild
@@ -122,12 +126,15 @@ ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 # Branding
 ac_add_options --enable-official-branding
 ac_add_options --enable-update-channel=release
-ac_add_options --with-distribution-id=org.artixlinux
+ac_add_options --with-distribution-id=org.archlinux
 ac_add_options --with-unsigned-addon-scopes=app,system
 ac_add_options --allow-addon-sideload
 export MOZILLA_OFFICIAL=1
 export MOZ_APP_REMOTINGNAME=$pkgname
 
+# Keys
+ac_add_options --with-google-location-service-api-keyfile=${PWD@Q}/google-api-key
+ac_add_options --with-google-safebrowsing-api-keyfile=${PWD@Q}/google-api-key
 
 # System libraries
 ac_add_options --with-system-nspr
@@ -214,23 +221,19 @@ pref("extensions.autoDisableScopes", 11);
 
 // Enable GNOME Shell search provider
 pref("browser.gnome-search-provider.enabled", true);
-
-// Use our own captive portal detection
-pref("captivedetect.canonicalURL", "http://ping.archlinux.org/nm-check.txt");
-pref("captivedetect.canonicalContent", "NetworkManager is online\\n");
 END
 
   local distini="$pkgdir/usr/lib/$pkgname/distribution/distribution.ini"
   install -Dvm644 /dev/stdin "$distini" <<END
 [Global]
-id=artixlinux
+id=archlinux
 version=1.0
-about=Mozilla Firefox for Artix Linux
+about=Mozilla Firefox for Arch Linux
 
 [Preferences]
-app.distributor=artixlinux
+app.distributor=archlinux
 app.distributor.channel=$pkgname
-app.partner.artixlinux=artixlinux
+app.partner.archlinux=archlinux
 END
 
   local i theme=official
