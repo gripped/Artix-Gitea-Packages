@@ -4,10 +4,10 @@
 
 pkgname=qt6-quick3d
 pkgver=6.7.3
-pkgrel=1.3
+pkgrel=1.4
 arch=(x86_64)
-url='https://www.qt.io'
-license=(GPL3 LGPL3 FDL custom)
+url="https://www.qt.io"
+license=("MIT")
 pkgdesc='Qt module and API for defining 3D content in Qt Quick'
 depends=(gcc-libs
          glibc
