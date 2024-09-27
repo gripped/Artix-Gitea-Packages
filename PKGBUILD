@@ -28,7 +28,7 @@ depends=(
   'xcb-util-image'
   'zlib'
 )
-makedepends=('cargo' 'cmake' 'git' 'pkgconf' 'python')
+makedepends=('rustup' 'cargo' 'cmake' 'git' 'pkgconf' 'python')
 optdepends=(
   'ncurses: for wezterm terminfo database'
   'noto-fonts-emoji: for default fonts'
