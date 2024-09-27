@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: facter
-  version: 4.8.0-3
+  version: 4.9.0-1
   arch:
     - x86_64
   pkgname:
     - facter
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.8.0-3
+    version: 4.9.0-1
     packages:
-      - facter-4.8.0-3-x86_64.pkg.tar.zst
+      - facter-4.9.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
