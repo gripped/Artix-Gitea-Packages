@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: wezterm
-  version: 20240922.091625.5a594f51-3
+  version: 20240922.151228.2b76c63b-1
   arch:
     - x86_64
     - i686
@@ -45,9 +45,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 20240922.091625.5a594f51-3
+    version: 20240922.151228.2b76c63b-1
     packages:
-      - wezterm-20240922.091625.5a594f51-3-x86_64.pkg.tar.zst
+      - wezterm-20240922.151228.2b76c63b-1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
