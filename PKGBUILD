@@ -10,7 +10,7 @@ pkgname=(
   lib32-harfbuzz-icu
 )
 pkgver=10.0.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="OpenType text shaping engine - 32-bit"
 url="https://harfbuzz.github.io/"
 arch=(x86_64)
