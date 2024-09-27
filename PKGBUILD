@@ -100,4 +100,3 @@ package() {
   install -Dm 644 assets/shell-integration/$pkgname.sh -t "$pkgdir/etc/profile.d"
 }
 
-# vim: ts=2 sw=2 et:
