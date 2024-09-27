@@ -5,11 +5,11 @@
 
 pkgname=tinyproxy
 pkgver=1.11.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A light-weight HTTP proxy daemon for POSIX operating systems'
 arch=('x86_64')
 url='https://tinyproxy.github.io/'
-license=('GPL')
+license=('GPL-2.0-only')
 depends=('esysusers' 'etmpfiles' 'glibc')
 makedepends=('gperf')
 backup=('etc/tinyproxy/tinyproxy.conf')
