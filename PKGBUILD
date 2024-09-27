@@ -34,6 +34,7 @@ makedepends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
     'libepubgen' 'libfreehand' 'libqxp' 'libstaroffice'  'boost' 'libnumbertext'
     'abseil-cpp' 'clang' 'zxing-cpp'
     'libffi' 'git' 'python-setuptools'
+  'java-hamcrest '
 )
 options=('!lto') # using --enable-lto (for parallel link-time optimization)
 _mirror="https://download.documentfoundation.org/libreoffice/src/${pkgver}"
