@@ -4,7 +4,7 @@
 
 pkgname=firefox
 pkgver=130.0.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
