@@ -5,7 +5,7 @@
 # Contributor: Panagiotis Papadopoulos pano_90 (AT) gmx (DOT) net
 
 pkgname=languagetool
-pkgver=6.4
+pkgver=6.5
 pkgrel=1
 pkgdesc='An open source language checker'
 arch=(any)
@@ -19,7 +19,7 @@ optdepends=('java-runtime: needed for the GUI version'
 source=(https://www.languagetool.org/download/LanguageTool-$pkgver.zip
         languagetool.sh)
 noextract=($pkgname-$pkgver.zip)
-sha256sums=('d5d517335d1ca33f33412920447fa0c742ef78d645521d650e0e22628fe0d3bd'
+sha256sums=('27f3ae5a29efbc8267a5a266908dfec205d16d312af8516e0b5bcec871edea0b'
             'c559be1fbead8845caf1f269cf39bfde6486ce06aabcbdd4ba58d402168b61a7')
 
 package() {
