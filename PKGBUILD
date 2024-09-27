@@ -12,7 +12,7 @@
 
 pkgname=puppet
 pkgver=8.9.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Server automation framework and application'
 arch=('any')
 url='https://www.puppet.com/community/open-source'
@@ -83,8 +83,9 @@ sha512sums=('33d3f849d327b552d412750c68ccda7af9ce3ecc9a8769360d42e2fdd6b71742d68
             '6203781a13142747827ee658db3e428ed97732abf356f88224a7f780bfa046ddafcdd69f1e551b3dbe1ad5b00d9a78248a1ba7e97c58fbac636500a95c5e3b7e'
             'cf73509b4b66f307bfe5027814ec7b26173773f568f3b98286b8d1b8334b3f539f62151ac8fb7036be44b84e9d20c1805cd86177ffe1ab0924ed53407e4538ab'
             '47fafc95cc9aba258cfd8919707366072a50f8a99b59f540c2531e1a367e8c9230070f8b9e7ae5c9ed4f536e05116234ed02ea431b6e48f61c82ce6dd92ebd9b')
-conflicts=('puppet5' 'puppet6')
+conflicts=('puppet5' 'puppet6' 'hiera')
 provides=('puppet')
+replaces=('hiera')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
