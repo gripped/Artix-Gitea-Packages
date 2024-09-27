@@ -432,3 +432,4 @@ package_libreoffice-still() {
     'sid','sk','sl','sq','sv','ta','tg','tr','ug','uk','vi','zh-CN','zh-TW'])" \
         > "${pkgdir}"/usr/lib/libreoffice/help/languages.js
 }
+
