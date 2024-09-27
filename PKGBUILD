@@ -71,6 +71,7 @@ prepare() {
 }
 
 build() {
+  export RUSTUP_TOOLCHAIN=1.79
   cd "$pkgname"
   LIBSSH2_SYS_USE_PKG_CONFIG=1 cargo build --frozen --release --features distro-defaults
 }
