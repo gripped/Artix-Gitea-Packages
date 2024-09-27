@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: wezterm
-  version: 20240203.110809.5046fc22-2
+  version: 20240203.110809.5046fc22-2.1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 20240203.110809.5046fc22-2
+    version: 20240203.110809.5046fc22-2.1
     packages:
-      - wezterm-20240203.110809.5046fc22-2-x86_64.pkg.tar.zst
+      - wezterm-20240203.110809.5046fc22-2.1-x86_64.pkg.tar.zst
