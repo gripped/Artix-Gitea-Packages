@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: qt6-quick3d
-  version: 6.7.3-1.5
+  version: 6.7.3-1.6
   arch:
     - x86_64
   pkgname:
     - qt6-quick3d
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,9 +29,9 @@ repos:
     packages:
       - qt6-quick3d-6.7.3-1.5-x86_64.pkg.tar.zst
   world-gremlins:
-    version: 6.7.3-1.4
+    version: 6.7.3-1.6
     packages:
-      - qt6-quick3d-6.7.3-1.4-x86_64.pkg.tar.zst
+      - qt6-quick3d-6.7.3-1.6-x86_64.pkg.tar.zst
   world:
     version: 6.7.2-1.1
     packages:

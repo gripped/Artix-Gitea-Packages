@@ -4,7 +4,7 @@
 
 pkgname=qt6-quick3d
 pkgver=6.7.3
-pkgrel=1.5
+pkgrel=1.6
 arch=(x86_64)
 url="https://www.qt.io"
 license=("MIT")
