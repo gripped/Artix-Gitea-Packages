@@ -9,12 +9,12 @@ pkgbase:
   pkgname:
     - wezterm
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,13 +45,12 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 20240922.151228.2b76c63b-1
-    packages:
-      - wezterm-20240922.151228.2b76c63b-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-gremlins:
     version: null
     packages: []
   galaxy:
-    version: 20240203.110809.5046fc22-2.1
+    version: 20240922.151228.2b76c63b-1
     packages:
-      - wezterm-20240203.110809.5046fc22-2.1-x86_64.pkg.tar.zst
+      - wezterm-20240922.151228.2b76c63b-1-x86_64.pkg.tar.zst
