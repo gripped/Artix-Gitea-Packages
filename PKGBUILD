@@ -94,6 +94,7 @@ build() {
     -D session-managers=[]
     -D snap=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
+    -D logind-provider=libelogind
     -D systemd=disabled
     -D rlimits-install=false
   )
