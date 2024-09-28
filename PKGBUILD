@@ -6,8 +6,8 @@
 pkgname=syslinux
 pkgver=6.04.pre2.r11.gbf6db5b4
 #_tag=syslinux-$pkgver
-_commit=bf6db5b4
-pkgrel=4
+_commit=bf6db5b48ec25f83939f1fdebb59028bc3c40b00
+pkgrel=5
 pkgdesc='Collection of boot loaders that boot from FAT, ext2/3/4 and btrfs filesystems, from CDs and via PXE'
 url='https://www.syslinux.org/'
 arch=(x86_64)
@@ -41,9 +41,11 @@ source=(git+https://repo.or.cz/syslinux.git#commit=$_commit
         0025-reproducible-build.patch
         0005-Workaround-multiple-definition-of-symbol-errors.patch
         0006-Replace-builtin-strlen-that-appears-to-get-optimized.patch
+        0026-include.patch
+        0027-cast.patch
 )
-sha256sums=('SKIP'
-            '3577281d3fa70e1ad17b212f189bb0c9057aff1b79b463356a261ab8fb91cdf0'
+sha256sums=('68114f20d8cd35803053d8633d2ada641b264978d6fcf46ee132ad9447a727bd'
+            'b9692be0cce43811c1b04053072ac50dd7b39bbc2ba7bcbe0e4387668af8df08'
             '5f86b5813465c48ba7bd178389aacb5149ff0b5f2467ab1772a4f862c5b15d41'
             'd1fe9084ce2526619f94b8a07b89fb0194e874beef9f202f8b974879d77f2e1a'
             '8610959df6c01568ff478ca1eb4aac301f3ba1f5bd4739daaec072865e8be2d7'
@@ -53,7 +55,9 @@ sha256sums=('SKIP'
             '755cd7062fe8495f6f62053ce664451c12ae65dba9fb5c75062a495fbe040fb1'
             '9a76f6f75a42485bc337163ba38068b09f7889bdc1a4e191408898f10de36662'
             '7e41e17e8cbc7287d6c3c9eb0a7b682cd8d3252030856b338050c21dff9bf05a'
-            'd7410d0ff89a15e2a100faf1546d730e043dde15c295974564144e00a93f03a3')
+            'd7410d0ff89a15e2a100faf1546d730e043dde15c295974564144e00a93f03a3'
+            'a33897c9aa687482e5daa501ed4e30e6057d3b4f3e356e61ccffbf43ef7a37e6'
+            '0f44310f5fae3e08e21190784bfc19bf0f87cf0f79962df7713510281d166e60')
 
 _targets='bios efi64 efi32'
 
@@ -78,6 +82,9 @@ prepare() {
 
   patch -p1 < ../0005-Workaround-multiple-definition-of-symbol-errors.patch
   patch -p1 < ../0006-Replace-builtin-strlen-that-appears-to-get-optimized.patch
+
+  patch -p1 < ../0026-include.patch
+  patch -p1 < ../0027-cast.patch
 
   # do not swallow efi compilation output to make debugging easier
   sed 's|> /dev/null 2>&1||' -i efi/check-gnu-efi.sh

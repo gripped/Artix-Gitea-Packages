@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: syslinux
-  version: 6.04.pre2.r11.gbf6db5b4-4
+  version: 6.04.pre2.r11.gbf6db5b4-5
   arch:
     - x86_64
   pkgname:
     - syslinux
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.04.pre2.r11.gbf6db5b4-5
+    packages:
+      - syslinux-6.04.pre2.r11.gbf6db5b4-5-x86_64.pkg.tar.zst
   system:
     version: 6.04.pre2.r11.gbf6db5b4-4
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
