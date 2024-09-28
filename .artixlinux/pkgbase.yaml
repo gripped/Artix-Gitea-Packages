@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - libfm-qt
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -47,11 +47,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 2.0.2-4
     packages:
       - libfm-qt-2.0.2-4-x86_64.pkg.tar.zst
-  galaxy:
-    version: 2.0.2-3
-    packages:
-      - libfm-qt-2.0.2-3-x86_64.pkg.tar.zst
 team: galaxy
