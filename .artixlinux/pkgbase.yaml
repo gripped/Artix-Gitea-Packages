@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: net-tools
-  version: 2.10-2
+  version: 2.10-3
   arch:
     - x86_64
   pkgname:
     - net-tools
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.10-3
+    packages:
+      - net-tools-2.10-3-x86_64.pkg.tar.zst
   system:
     version: 2.10-2
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system

@@ -1,9 +1,9 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=net-tools
 pkgver=2.10
-pkgrel=2
+pkgrel=3
 pkgdesc="Configuration tools for Linux networking"
 arch=('x86_64')
 license=('GPL2')
