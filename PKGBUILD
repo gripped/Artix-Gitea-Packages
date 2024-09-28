@@ -4,7 +4,7 @@
 
 pkgname=syslog-ng
 pkgver=4.8.0
-pkgrel=1
+pkgrel=3
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=(x86_64)
 url="https://github.com/syslog-ng/syslog-ng"
@@ -27,9 +27,11 @@ depends=(
   openssl
   pcre2
   protobuf
- 
 )
 makedepends=(
+  autoconf-archive
+  docbook-xsl
+  git
   hiredis
   libdbi
   libesmtp
@@ -61,10 +63,10 @@ makedepends=(
   python-six
   python-urllib3
   python-websocket-client
- 
 )
 checkdepends=(
   criterion
+  gperf
   python-pytest
   python-pytest-mock
 )
@@ -93,18 +95,30 @@ backup=(
   "etc/default/$pkgname@default"
 )
 source=(
-  "$pkgname-$pkgver.tar.gz::$url/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
+  "git+$url.git#tag=$pkgname-$pkgver"
+  "git+https://github.com/buytenh/ivykis.git"
+  "git+https://github.com/open-telemetry/opentelemetry-proto.git"
+  "git+https://github.com/Thalhammer/jwt-cpp.git"
   "$pkgname.logrotate"
   "$pkgname-do-not-install-python-venv.patch"
   "$pkgname-config.patch"
 )
-sha256sums=('f2035546af5fcc0c03a8d03f5f0e929ce19131a428d611c982a5fea608a5d9d6'
+sha256sums=('ade2a9e82c455b9af59d05c899cd854d4789e848888f238fef77b0a90fa39375'
+            'SKIP'
+            'SKIP'
+            'SKIP'
             '93c935eca56854011ea9e353b7a1da662ad40b2e8452954c5b4b5a1d5b2d5317'
             '7ca7f0d9fb203b3814fe2f609904af84df346b84591eeeb171bb2e5eb6393990'
             '423391cd5cc2f73cecd4d0191711f89c24ff178c5bff8e78ff9bfd3d246b0f74')
 
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgname
+  git submodule init
+  git config submodule.lib/ivykis.url "$srcdir/ivykis"
+  git config submodule.modules/grpc/protos/opentelemetry-proto.url "$srcdir/opentelemetry-protos"
+  git config submodule.modules/cloud-auth/jwt-cpp.url "$srcdir/jwt-cpp"
+  git -c protocol.file.allow=always submodule update
+
   patch -Np1 -i "$srcdir/$pkgname-do-not-install-python-venv.patch" # Don't install Python venv using pip.
   patch -Np1 -i "$srcdir/$pkgname-config.patch"                     # Add further distribution examples, disable default log file.
 
@@ -116,8 +130,10 @@ prepare() {
 }
 
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   local configure_options=(
+    --disable-systemd
+    --with-systemdsystemunitdir=no
     --datadir=/usr/share
     --disable-java
     --disable-java-modules
@@ -127,7 +143,6 @@ build() {
     --enable-ipv6
     --enable-manpages
     --enable-spoof-source
-    --disable-systemd
     --libexecdir=/usr/lib
     --localstatedir="/var/lib/$pkgname"
     --prefix=/usr
@@ -136,7 +151,6 @@ build() {
     --with-jsonc=system
     --with-pidfile-dir=/run
     --with-python-packages=system
-    --with-systemdsystemunitdir=no
   )
   ./configure "${configure_options[@]}"
 
@@ -146,12 +160,12 @@ build() {
 }
 
 check() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   make check
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   make DESTDIR="$pkgdir" install
   install -vdm755 "$pkgdir/var/lib/$pkgname"
   install -vDm644 "$srcdir/$pkgname.logrotate" "$pkgdir/etc/logrotate.d/$pkgname"
