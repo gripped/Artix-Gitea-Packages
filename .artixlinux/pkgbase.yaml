@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia
-  version: 560.35.03-7
+  version: 560.35.03-8
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 560.35.03-7
+    version: 560.35.03-8
     packages:
-      - nvidia-560.35.03-7-x86_64.pkg.tar.zst
+      - nvidia-560.35.03-8-x86_64.pkg.tar.zst
   world:
     version: 560.35.03-6
     packages:
