@@ -3,8 +3,8 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=3.30.3
-pkgrel=2
+pkgver=3.30.4
+pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
@@ -33,7 +33,7 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('SKIP'
+sha512sums=('1fe426c44ddefa9c5bd8269fc620b0b76eac4901c53ee5faccd06cba8328de688d68e0886b2bb9e3ef65122a594bfe754eb6ed43fc88757ea93847de4a9d446a'
             'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
