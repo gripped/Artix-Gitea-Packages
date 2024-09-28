@@ -4,8 +4,8 @@
 
 pkgbase=qt6-doc
 pkgname=(qt6-doc qt6-examples)
-pkgver=6.7.2
-pkgrel=1.1
+pkgver=6.7.3
+pkgrel=1
 arch=('any')
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -33,11 +33,10 @@ makedepends=(alsa-lib
 groups=(qt6)
 _pkgfn=qt-everywhere-src-$pkgver
 source=(https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver/-/}/single/$_pkgfn.tar.xz)
-sha256sums=('0aaea247db870193c260e8453ae692ca12abc1bd841faa1a6e6c99459968ca8a')
+sha256sums=('a3f1d257cbb14c6536585ffccf7c203ce7017418e1a0c2ed7c316c20c729c801')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_PREFIX_PATH=/usr \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DQT_HOST_PATH=/usr \
     -DINSTALL_BINDIR=lib/qt6/bin \
