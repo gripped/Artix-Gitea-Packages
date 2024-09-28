@@ -26,7 +26,7 @@ makedepends=(
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
 )
-b2sums=('18748114daa9ba3e18ba8af2accf81c3db041e20606ba3e1451cf796c11e368be4df96baeee72a52a7a99f203d26bb6fb6684908b5caa2d2829d0800a1e6a0bd')
+b2sums=('SKIP')
 
 prepare() {
   cd pipewire
@@ -56,6 +56,7 @@ build() {
     -D libmysofa=disabled
     -D libpulse=disabled
     -D libusb=disabled
+    -D logind-provider=libelogind
     -D lv2=disabled
     -D man=disabled
     -D opus=disabled
