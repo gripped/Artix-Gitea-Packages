@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libqtxdg
-  version: 4.0.0-3
+  version: 4.0.0-4
   arch:
     - x86_64
   pkgname:
     - libqtxdg
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.0.0-4
+    packages:
+      - libqtxdg-4.0.0-4-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
