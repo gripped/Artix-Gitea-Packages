@@ -4,7 +4,7 @@
 
 pkgname=qt6-declarative
 pkgver=6.7.3
-pkgrel=1.1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -19,9 +19,6 @@ makedepends=(cmake
              qt6-languageserver
              qt6-shadertools)
 optdepends=('qt6-languageserver: for qmlls')
-conflicts=(qt6-quickcontrols2)
-provides=(qt6-quickcontrols2)
-replaces=(qt6-quickcontrols2)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
