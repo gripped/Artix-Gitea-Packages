@@ -156,7 +156,7 @@ build() {
 
   # Prevent excessive overlinking due to libtool.
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make
+  make 
 }
 
 check() {
