@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: syslog-ng
-  version: 4.8.0-3
+  version: 4.8.0-4
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - syslog-ng-4.8.0-1-x86_64.pkg.tar.zst
   world:
-    version: 4.8.0-3
+    version: 4.8.0-4
     packages:
-      - syslog-ng-4.8.0-3-x86_64.pkg.tar.zst
+      - syslog-ng-4.8.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
