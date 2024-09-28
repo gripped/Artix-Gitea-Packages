@@ -8,12 +8,12 @@ pkgbase:
     - qt6-doc
     - qt6-examples
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.7.2-1
+    packages:
+      - qt6-doc-6.7.2-1-any.pkg.tar.zst
+      - qt6-examples-6.7.2-1-any.pkg.tar.zst
   world:
     version: 6.7.2-1
     packages:

@@ -46,7 +46,7 @@ build() {
     -DINSTALL_INCLUDEDIR=include/qt6 \
     -DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
     -DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
-    -DQT_FEATURE_journald=OFF \
+    -DQT_FEATURE_journald=ON \
     -DQT_FEATURE_openssl_linked=ON \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build --target docs
