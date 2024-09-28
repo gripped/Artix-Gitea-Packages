@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: world-gremlins
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 5.5.5-3
+    packages:
+      - telegram-desktop-5.5.5-3-x86_64.pkg.tar.zst
   galaxy:
     version: 5.5.5-2
     packages:
