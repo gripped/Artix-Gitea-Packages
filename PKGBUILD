@@ -16,7 +16,7 @@ makedepends=(
   'doctest'
   'git'
 )
-source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/archive/v$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
 b2sums=('eb9833f7bff6e6086db1525fcc71231c5cc8f47985aa4c71078d896afb5fea20c41bfdb55de6c1e8c9cfa6c9b842331f340115590683e1d9e6a3ba40f4148870')
 
 build() {
