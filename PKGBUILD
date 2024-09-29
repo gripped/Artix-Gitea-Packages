@@ -4,7 +4,7 @@
 
 pkgname=syslog-ng
 pkgver=4.8.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=(x86_64)
 url="https://github.com/syslog-ng/syslog-ng"
@@ -94,6 +94,7 @@ backup=(
   "etc/logrotate.d/$pkgname"
   "etc/default/$pkgname@default"
 )
+install=$pkgname.install
 source=(
   "git+$url.git#tag=$pkgname-$pkgver"
   "git+https://github.com/buytenh/ivykis.git"
@@ -156,7 +157,7 @@ build() {
 
   # Prevent excessive overlinking due to libtool.
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make 
+  make
 }
 
 check() {
