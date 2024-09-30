@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fast_float
-  version: 6.1.6-1
+  version: 6.1.6-2
   arch:
     - any
   pkgname:
@@ -9,8 +9,8 @@ pkgbase:
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.1.6-1
+    version: 6.1.6-2
     packages:
-      - fast_float-6.1.6-1-any.pkg.tar.zst
+      - fast_float-6.1.6-2-any.pkg.tar.zst
   world:
     version: 6.1.0-2
     packages:

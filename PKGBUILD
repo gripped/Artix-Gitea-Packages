@@ -6,7 +6,7 @@
 
 pkgname=fast_float
 pkgver=6.1.6
-pkgrel=1
+pkgrel=2
 pkgdesc='Fast and exact implementation of the C++ from_chars functions for float and double types'
 arch=('any')
 url="https://github.com/fastfloat/$pkgname"
