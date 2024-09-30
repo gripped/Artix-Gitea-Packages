@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.16.2
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -37,7 +37,7 @@ depends=(
   libegl
   libepoxy
   libgl
-  libjpeg
+  libjpeg-turbo
   libpng
   librsvg
   libtiff
