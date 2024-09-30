@@ -5,8 +5,8 @@
 # Contributor: Valère Monseur <valere.monseur@ymail.com>
 
 pkgname=picom
-pkgver=12
-pkgrel=1
+pkgver=12.1
+pkgrel=3
 pkgdesc="A lightweight compositor for X11"
 url="https://picom.app"
 arch=('x86_64')
@@ -22,7 +22,7 @@ optdepends=('dbus: for controlling picom via D-Bus'
 backup=('etc/xdg/picom.conf')
 source=("git+https://github.com/yshui/picom.git?signed#tag=v${pkgver}")
 validpgpkeys=('A22F5C0F4FCF9C7C89A167462C965E9E5D45D730') # Yuxuan Shui <yshuiv7@gmail.com>
-b2sums=('6a4cdf010b5314516ff14b1b9cf1d00fe2e9876642e4c0bf4cfb8912925f6837973cda56b5b08e226245e3f112ebd597f73ef0d777fe69032b20be29df8fced3')
+b2sums=('91ae49db5581023adbb221b80a9b710c7c432cf371c34e568c18932518887688d7280e4c27e6fd72b65dbc0c76b06259e279284ab3f5570d6530b303670204e9')
 
 prepare() {
 	cd "${pkgname}"
@@ -31,6 +31,8 @@ prepare() {
 	setconf picom.sample.conf 'inactive-opacity=0.95;'
 	# Improve performance (recommended option)
 	setconf -u picom.sample.conf 'glx-no-stencil=true;'
+	# Force xrender as the default backend (default upstream value)
+	setconf -u picom.sample.conf 'backend="xrender"'
 }
 
 build() {
