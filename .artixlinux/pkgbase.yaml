@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-common-sense
-  version: 3.75-7
+  version: 3.75-8
   arch:
     - any
   pkgname:
     - perl-common-sense
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.75-7
+    version: 3.75-8
     packages:
-      - perl-common-sense-3.75-7-any.pkg.tar.zst
+      - perl-common-sense-3.75-8-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
