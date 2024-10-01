@@ -4,7 +4,7 @@
 
 pkgname=rubygems
 pkgver=3.5.16
-pkgrel=0
+pkgrel=1
 pkgdesc='Package management framework for Ruby'
 arch=('any')
 url='https://rubygems.org/'
