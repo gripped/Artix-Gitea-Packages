@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby
-  version: 3.3.5-0
+  version: 3.3.5-1
   arch:
     - x86_64
   pkgname:
@@ -29,13 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.3.5-0
+    version: 3.3.5-1
     packages:
-      - ruby-3.3.5-0-x86_64.pkg.tar.zst
-      - ruby-docs-3.3.5-0-x86_64.pkg.tar.zst
-      - ruby-default-gems-3.3.5-0-x86_64.pkg.tar.zst
-      - ruby-bundled-gems-3.3.5-0-x86_64.pkg.tar.zst
-      - ruby-stdlib-3.3.5-0-x86_64.pkg.tar.zst
+      - ruby-3.3.5-1-x86_64.pkg.tar.zst
+      - ruby-docs-3.3.5-1-x86_64.pkg.tar.zst
+      - ruby-default-gems-3.3.5-1-x86_64.pkg.tar.zst
+      - ruby-bundled-gems-3.3.5-1-x86_64.pkg.tar.zst
+      - ruby-stdlib-3.3.5-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
