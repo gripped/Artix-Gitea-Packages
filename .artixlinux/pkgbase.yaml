@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - aws-cli
 actions:
-  addRepo: world
+  addRepo: null
   removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
