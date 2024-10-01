@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: ruby-power_assert
-  version: 2.0.3-3.1
+  version: 2.0.3-4
   arch:
     - any
   pkgname:
     - ruby-power_assert
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.3-4
+    packages:
+      - ruby-power_assert-2.0.3-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
