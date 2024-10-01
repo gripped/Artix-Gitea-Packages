@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: libgsf
-  version: 1.14.52-1
+  version: 1.14.53-1
   arch:
     - x86_64
   pkgname:
     - libgsf
+    - libgsf-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.14.52-1
+    version: 1.14.53-1
     packages:
-      - libgsf-1.14.52-1-x86_64.pkg.tar.zst
+      - libgsf-1.14.53-1-x86_64.pkg.tar.zst
+      - libgsf-docs-1.14.53-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
