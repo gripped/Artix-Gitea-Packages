@@ -35,7 +35,7 @@ print_repo_help() {
     else
         add_repo 'extra-testing' '#'
     fi
-    if [ "$has_stable" -ne 1 ]; then
+    if [ "$has_stable" -eq 1 ]; then
         add_repo "extra"
     fi
     if [ "$has_multi_testing" -eq 1 ]; then
