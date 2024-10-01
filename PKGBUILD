@@ -4,7 +4,7 @@
 _gemname='erb'
 pkgname="ruby-${_gemname}"
 pkgver=4.0.4
-pkgrel=4
+pkgrel=5
 pkgdesc='An easy to use but powerful templating system for Ruby'
 arch=('x86_64')
 url="https://github.com/ruby/${_gemname}"
