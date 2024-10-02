@@ -6,7 +6,7 @@
 _gemname='ruby-progressbar'
 pkgname="ruby-${_gemname}"
 pkgver=1.13.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Flexible text progress bar library for Ruby'
 arch=('any')
 url="https://github.com/jfelchner/${_gemname}"
