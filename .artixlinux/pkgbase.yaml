@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-net-ftp
-  version: 0.3.5-2
+  version: 0.3.5-3
   arch:
     - any
   pkgname:
     - ruby-net-ftp
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.3.5-3
+    packages:
+      - ruby-net-ftp-0.3.5-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
