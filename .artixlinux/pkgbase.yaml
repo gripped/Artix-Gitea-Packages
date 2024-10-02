@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-test-unit-rr
-  version: 1.0.5-7.1
+  version: 1.0.5-8
   arch:
     - any
   pkgname:
     - ruby-test-unit-rr
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.0.5-8
+    packages:
+      - ruby-test-unit-rr-1.0.5-8-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
