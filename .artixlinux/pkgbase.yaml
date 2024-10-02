@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-io-event
-  version: 1.6.5-3
+  version: 1.6.5-4
   arch:
     - x86_64
   pkgname:
     - ruby-io-event
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.6.5-4
+    packages:
+      - ruby-io-event-1.6.5-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
