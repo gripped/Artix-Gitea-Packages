@@ -4,7 +4,7 @@
 _gemname='rr'
 pkgname="ruby-${_gemname}"
 pkgver=3.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='RR is a test double framework that features a rich selection of double techniques and a terse syntax'
 arch=('any')
 url='https://github.com/rr/rr'
