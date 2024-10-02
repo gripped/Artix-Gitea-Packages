@@ -4,7 +4,7 @@
 
 pkgname=lolcat
 pkgver=100.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Okay, no unicorns. But rainbows!!'
 url='https://github.com/busyloop/lolcat'
 arch=('any')
