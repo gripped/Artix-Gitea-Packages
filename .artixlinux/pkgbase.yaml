@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-webrick
-  version: 1.8.2-0
+  version: 1.8.2-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.8.2-0
+    version: 1.8.2-1
     packages:
-      - ruby-webrick-1.8.2-0-any.pkg.tar.zst
+      - ruby-webrick-1.8.2-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
