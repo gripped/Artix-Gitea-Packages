@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-erb
-  version: 4.0.4-5
+  version: 4.0.4-6
   arch:
     - x86_64
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.0.4-5
+    version: 4.0.4-6
     packages:
-      - ruby-erb-4.0.4-5-x86_64.pkg.tar.zst
+      - ruby-erb-4.0.4-6-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
