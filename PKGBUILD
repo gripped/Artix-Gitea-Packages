@@ -4,7 +4,7 @@
 _gemname=async-dns
 pkgname=ruby-${_gemname}
 pkgver=1.2.6
-pkgrel=2
+pkgrel=3
 pkgdesc='Asynchronous DNS resolver and server'
 url='https://github.com/socketry/async-dns'
 arch=('any')
