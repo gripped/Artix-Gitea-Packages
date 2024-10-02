@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-matrix
-  version: 0.4.2-1
+  version: 0.4.2-2
   arch:
     - any
   pkgname:
     - ruby-matrix
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.2-2
+    packages:
+      - ruby-matrix-0.4.2-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
