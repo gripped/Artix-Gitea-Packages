@@ -5,7 +5,7 @@
 _gemname='irb'
 pkgname="ruby-${_gemname}"
 pkgver=1.13.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Interactive Ruby command-line tool for REPL (Read Eval Print Loop).'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
@@ -23,6 +23,7 @@ checkdepends=(
   ruby-rake
   ruby-test-unit
   ruby-test-unit-ruby-core
+  ruby-tracer
 )
 options=('!emptydirs')
 source=(
