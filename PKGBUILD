@@ -10,7 +10,7 @@
 pkgname=lib32-libltdl
 pkgver=2.5.3
 _commit=94dd1a2094911d6ed3cf0df37b836c837b4e3800
-pkgrel=1.1
+pkgrel=1.2
 _gccver=14.2.1
 pkgdesc='A generic library support script (32-bit)'
 arch=(x86_64)
