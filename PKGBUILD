@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 _gemname=debug
 pkgname=ruby-${_gemname}
-pkgver=1.7.1
-pkgrel=1.3
+pkgver=1.9.1
+pkgrel=1
 pkgdesc='Debugging functionality for Ruby'
 url='https://github.com/ruby/debug'
 arch=(x86_64)
@@ -24,7 +24,7 @@ checkdepends=(
 )
 options=('!emptydirs')
 source=(${pkgname}::git+"${url}#tag=v${pkgver}")
-sha512sums=('888cff32b1497235a53719dfb46a46e3360b6b2e6b4b177937c5ed1d80774af845cf91d29f33833490aa4720d8cbc513e5a50f7648b320bb4174e733c0d1fb70')
+sha512sums=('a6378ec57eed45a39a5fcfbba1ead7bfece141ae8c241250ee33d50f3158d6bc2ee8d983c0a182a887c469be9e620faba30a6daa3280f63de0b666e029d0b6a7')
 
 prepare() {
   cd ${pkgname}
