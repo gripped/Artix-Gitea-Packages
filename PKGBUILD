@@ -5,7 +5,7 @@
 _gemname=rspec-support
 pkgname=ruby-${_gemname}
 pkgver=3.13.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Common code needed by the other RSpec gems. Not intended for direct use'
 url='https://github.com/rspec/rspec-support'
 arch=('any')
@@ -13,6 +13,9 @@ license=('MIT')
 depends=(
   git
   ruby
+)
+makedepends=(
+  ruby-rdoc
 )
 checkdepends=(
   rubocop
@@ -47,15 +50,6 @@ b2sums=('4489f8af10b565e032f56ff5cc514fa4a52d9e53c4158a6021db73f7d06a571906e8588
         '862ca7049f44eda75ba1ec2a52a47693fdbb492e3904865758dd247be462995a088e5ecd2e51d53d51e5a321e499140db22604798d59084adfd9e9b838616f67')
 
 prepare() {
-  for c in core mocks expectations; do
-    if [[ "$(git -C rspec-${c} describe)" != "v$(gem list rspec-${c} | sed 's/.*(\(.*\)).*/\1/')" ]] then
-      echo rspec-${c} "$(git -C rspec-${c} describe)" does not match expected version "v$(gem list rspec-${c} | sed 's/.*(\(.*\)).*/\1/')"
-      false
-    fi
-
-    ln -s "../rspec-${c}" "${_gemname}/rspec-${c}"
-  done
-
   cd "${_gemname}"
 
   patch --verbose --strip=1 --input="../${pkgname}_no_version_constraints.patch"
@@ -105,6 +99,15 @@ build() {
 }
 
 check() {
+  for c in core mocks expectations; do
+    if [[ "$(git -C rspec-${c} describe)" != "v$(gem list rspec-${c} | sed 's/.*(\(.*\)).*/\1/')" ]] then
+      echo rspec-${c} "$(git -C rspec-${c} describe)" does not match expected version "v$(gem list rspec-${c} | sed 's/.*(\(.*\)).*/\1/')"
+      false
+    fi
+
+    ln -s "../rspec-${c}" "${_gemname}/rspec-${c}"
+  done
+
   cd "${_gemname}"
 
   local _gemdir="$(gem env gemdir)"
