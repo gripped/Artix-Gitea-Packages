@@ -4,14 +4,13 @@
 # Contributor: Keshav Amburay <(the ddoott ridikulus ddoott rat) (aatt) (gemmaeiil) (ddoott) (ccoomm)>
 
 pkgname=syslinux
-pkgver=6.04.pre2.r11.gbf6db5b4
+pkgver=6.04.pre3.r3.g05ac953c
 #_tag=syslinux-$pkgver
-_commit=bf6db5b48ec25f83939f1fdebb59028bc3c40b00
-pkgrel=5
+_commit='05ac953c23f90b2328d393f7eecde96e41aed067'
+pkgrel=2
 pkgdesc='Collection of boot loaders that boot from FAT, ext2/3/4 and btrfs filesystems, from CDs and via PXE'
 url='https://www.syslinux.org/'
 arch=(x86_64)
-backup=(boot/syslinux/syslinux.cfg)
 install=syslinux.install
 license=(GPL2)
 # syslinux build system is a mess of submakes that does not work with -jN
@@ -41,12 +40,12 @@ source=(git+https://repo.or.cz/syslinux.git#commit=$_commit
         0025-reproducible-build.patch
         0005-Workaround-multiple-definition-of-symbol-errors.patch
         0006-Replace-builtin-strlen-that-appears-to-get-optimized.patch
-        0026-include.patch
-        0027-cast.patch
+        0026-add-missing-include.patch
+        0027-use-correct-type-for-size.patch
 )
-sha256sums=('68114f20d8cd35803053d8633d2ada641b264978d6fcf46ee132ad9447a727bd'
+sha256sums=('deec61086a2cb73163d50e150d1ef32bd56c8a3faa1fc4322d11080ba0cbe63a'
             'b9692be0cce43811c1b04053072ac50dd7b39bbc2ba7bcbe0e4387668af8df08'
-            '5f86b5813465c48ba7bd178389aacb5149ff0b5f2467ab1772a4f862c5b15d41'
+            '6b7a1dae92052226d4958f28f8302b8bf7725ce75895986105d4799234efcbbe'
             'd1fe9084ce2526619f94b8a07b89fb0194e874beef9f202f8b974879d77f2e1a'
             '8610959df6c01568ff478ca1eb4aac301f3ba1f5bd4739daaec072865e8be2d7'
             '5b017ba5eae77caa09fa5af6ecfa0df1e7e22776b2b13c8744c6cb7ecd7ad0e9'
@@ -54,10 +53,10 @@ sha256sums=('68114f20d8cd35803053d8633d2ada641b264978d6fcf46ee132ad9447a727bd'
             '7facb5c2abc71c9bfe01bf4db388306ed7b7abf6654009af336262839527f962'
             '755cd7062fe8495f6f62053ce664451c12ae65dba9fb5c75062a495fbe040fb1'
             '9a76f6f75a42485bc337163ba38068b09f7889bdc1a4e191408898f10de36662'
-            '7e41e17e8cbc7287d6c3c9eb0a7b682cd8d3252030856b338050c21dff9bf05a'
+            'a3b5ee376f9ab56313932ce7fb363cd702fe503276ab84702ae0bb7eef10eb91'
             'd7410d0ff89a15e2a100faf1546d730e043dde15c295974564144e00a93f03a3'
-            'a33897c9aa687482e5daa501ed4e30e6057d3b4f3e356e61ccffbf43ef7a37e6'
-            '0f44310f5fae3e08e21190784bfc19bf0f87cf0f79962df7713510281d166e60')
+            'e16e051d17ead7e6457a479a1e2226160ca9aae3d607c0c25fa3677522aa9280'
+            '7f2ce9e16ddcca1a55b32bddfd39c7f190eed9d8df4319bbd6b07e0a2607e662')
 
 _targets='bios efi64 efi32'
 
@@ -83,8 +82,8 @@ prepare() {
   patch -p1 < ../0005-Workaround-multiple-definition-of-symbol-errors.patch
   patch -p1 < ../0006-Replace-builtin-strlen-that-appears-to-get-optimized.patch
 
-  patch -p1 < ../0026-include.patch
-  patch -p1 < ../0027-cast.patch
+  patch -p1 < ../0026-add-missing-include.patch
+  patch -p1 < ../0027-use-correct-type-for-size.patch
 
   # do not swallow efi compilation output to make debugging easier
   sed 's|> /dev/null 2>&1||' -i efi/check-gnu-efi.sh
@@ -112,6 +111,6 @@ package() {
   install -d "$pkgdir"/usr/lib/syslinux/bios
   mv "$pkgdir"/usr/lib/syslinux/{*.bin,*.c32,*.0,memdisk} "$pkgdir"/usr/lib/syslinux/bios 
 
-  install -D -m0644 ../syslinux.cfg "$pkgdir"/boot/syslinux/syslinux.cfg
+  install -D -m0644 ../syslinux.cfg "$pkgdir"/usr/share/syslinux/syslinux.cfg
   install -D -m0755 ../syslinux-install_update "$pkgdir"/usr/bin/syslinux-install_update
 }

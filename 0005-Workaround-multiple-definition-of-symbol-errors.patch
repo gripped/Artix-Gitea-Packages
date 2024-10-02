@@ -72,7 +72,7 @@ index 46cb037c..f0cfcbe9 100644
 @@ -156,7 +156,7 @@ LDSCRIPT = $(SRC)/$(ARCH)/syslinux.ld
  NASM_ELF = elf
  
- %.elf: %.o $(LIBDEP) $(LDSCRIPT) $(AUXLIBS)
+ %.elf: %.o %-c.o lib%.a $(LIBDEP) $(LDSCRIPT)
 -	$(LD) $(LDFLAGS) -pie -Bsymbolic \
 +	$(LD) $(LDFLAGS) -z muldefs -pie -Bsymbolic \
  		-T $(LDSCRIPT) \
