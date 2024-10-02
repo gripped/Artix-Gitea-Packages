@@ -4,7 +4,7 @@
 _gemname='tracer'
 pkgname="ruby-${_gemname}"
 pkgver=0.2.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A Ruby tracer'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
@@ -12,8 +12,15 @@ license=('Ruby' 'BSD-2-Caluse')
 depends=(
   ruby
 )
-makedepends=()
-checkdepends=()
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bundler
+  ruby-irb
+  ruby-rake
+  ruby-test-unit
+)
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha512sums=('89a8e7a5762c1e5e2d24e19d56a6ad6f754333a8c32a929b2fbd016b95bf4d97d98205b270492228838d4c23c59b514006fb64ca33a7162474b20ae360cb8fb0')
