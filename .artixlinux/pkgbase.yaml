@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-net-imap
-  version: 0.4.12-1
+  version: 0.4.12-3
   arch:
     - any
   pkgname:
     - ruby-net-imap
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.12-3
+    packages:
+      - ruby-net-imap-0.4.12-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
