@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: ruby-fiber-storage
-  version: 0.1.2-1
+  version: 0.1.2-2
   arch:
     - any
   pkgname:
     - ruby-fiber-storage
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.2-2
+    packages:
+      - ruby-fiber-storage-0.1.2-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
