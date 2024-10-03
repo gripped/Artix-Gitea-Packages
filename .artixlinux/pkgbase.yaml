@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: marisa
-  version: 0.2.6-14
+  version: 0.2.6-15
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - python-marisa
     - ruby-marisa
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,12 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.2.6-15
+    packages:
+      - marisa-0.2.6-15-x86_64.pkg.tar.zst
+      - perl-marisa-0.2.6-15-x86_64.pkg.tar.zst
+      - python-marisa-0.2.6-15-x86_64.pkg.tar.zst
+      - ruby-marisa-0.2.6-15-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
