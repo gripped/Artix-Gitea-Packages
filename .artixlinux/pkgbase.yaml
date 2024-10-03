@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-vcr
-  version: 6.2.0-2
+  version: 6.2.0-3
   arch:
     - any
   pkgname:
     - ruby-vcr
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.2.0-3
+    packages:
+      - ruby-vcr-6.2.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
