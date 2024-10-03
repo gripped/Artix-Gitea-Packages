@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-ruby_memcheck
 pkgver=1.2.0
 _commit=f4b8fe6140fcd38747a24ea4f99a87f5f56c950a
-pkgrel=3
+pkgrel=4
 pkgdesc='Use Valgrind memcheck without going crazy'
 arch=(any)
 url='https://github.com/Shopify/ruby_memcheck'
