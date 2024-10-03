@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-json-schema
-  version: 5.0.0-2
+  version: 5.0.0-1
   arch:
     - any
   pkgname:
     - ruby-json-schema
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3.0-2
+    version: 5.0.0-1
     packages:
-      - ruby-json-schema-4.3.0-2-any.pkg.tar.zst
+      - ruby-json-schema-5.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
