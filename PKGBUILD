@@ -5,7 +5,7 @@
 _gemname='nokogiri'
 pkgname="ruby-${_gemname}"
 pkgver=1.16.7
-pkgrel=1
+pkgrel=2
 pkgdesc='Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser'
 arch=('x86_64')
 url='https://nokogiri.org'
