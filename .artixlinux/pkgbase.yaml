@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-cucumber-compatibility-kit
-  version: 15.0.0-2
+  version: 15.0.0-3
   arch:
     - any
   pkgname:
     - ruby-cucumber-compatibility-kit
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 15.0.0-3
+    packages:
+      - ruby-cucumber-compatibility-kit-15.0.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
