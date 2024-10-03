@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-syntax
-  version: 1.2.2-2
+  version: 1.2.2-3
   arch:
     - any
   pkgname:
     - ruby-syntax
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.2-3
+    packages:
+      - ruby-syntax-1.2.2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
