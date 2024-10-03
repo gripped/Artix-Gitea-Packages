@@ -5,7 +5,7 @@
 _gemname='docile'
 pkgname="ruby-${_gemname}"
 pkgver=1.4.0
-pkgrel=5
+pkgrel=6
 pkgdesc="keeps your Ruby DSLs tame and well-behaved"
 arch=('any')
 url='https://ms-ati.github.io/docile'
