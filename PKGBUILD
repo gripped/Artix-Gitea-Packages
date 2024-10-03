@@ -3,7 +3,7 @@
 
 pkgname=python-aiohappyeyeballs
 _name=${pkgname#python-}
-pkgver=2.3.6
+pkgver=2.4.3
 pkgrel=1
 pkgdesc='Happy Eyeballs for asyncio'
 arch=(any)
@@ -21,7 +21,7 @@ checkdepends=(
   python-pytest-asyncio
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('e2da21fe75057a590a4424a7b7b6aa0f70b640255e1b67c1e7a38b8718ed6f749561bb1848b077ea9f652c6a973f98e8332829d8513dd345019d15ce922561bb')
+b2sums=('b27eb3fb949fb8f2b7fd91cc29b9fa6cb4aec29b75d10fa12ab882163617032b41e157d0b4ee486b4e2f24c116494970600a386b30e88e9114a6ce30033f225a')
 
 build() {
   cd "$_name"
@@ -35,12 +35,11 @@ check() {
 }
 
 package() {
-  cd "$_name"
-  python -m installer --destdir="$pkgdir" dist/*.whl
-
-  # Symlink license file
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   install -d "$pkgdir"/usr/share/licenses/$pkgname
   ln -s "$site_packages"/"$_name"-$pkgver.dist-info/LICENSE \
     "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  cd "$_name"
+  python -m installer --destdir="$pkgdir" dist/*.whl
 }
