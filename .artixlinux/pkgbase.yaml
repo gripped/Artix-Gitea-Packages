@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-json-schema
-  version: 5.0.0-1
+  version: 5.0.0-2
   arch:
     - any
   pkgname:
     - ruby-json-schema
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
