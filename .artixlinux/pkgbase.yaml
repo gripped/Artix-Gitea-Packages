@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: ruby-fiber-annotation
-  version: 0.2.0-3
+  version: 0.2.0-4
   arch:
     - any
   pkgname:
     - ruby-fiber-annotation
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.2.0-4
+    packages:
+      - ruby-fiber-annotation-0.2.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
