@@ -4,7 +4,7 @@
 
 pkgname=gegl
 pkgver=0.4.48
-pkgrel=4
+pkgrel=5
 pkgdesc='Graph based image processing framework'
 arch=('x86_64')
 url='https://www.gegl.org/'
