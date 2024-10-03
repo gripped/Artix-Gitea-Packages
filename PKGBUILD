@@ -2,15 +2,15 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgbase=rocm-llvm
-pkgname=(rocm-llvm rocm-device-libs comgr hipcc)
-pkgver=6.2.0
+pkgname=(rocm-llvm rocm-device-libs comgr)
+pkgver=6.2.2
 pkgrel=1
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
              'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2')
 source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver")
-sha256sums=('6b759a71ce0014db5c9e2e27c2596a93ba1b55c024dbfe6b094e7b8f964134b0')
+sha256sums=('ba31afb2b041b766e2c59ad03328363b549eefbe7f1e9b235a70181538165d3e')
 options=(staticlibs !lto)
 
 build() {
@@ -70,16 +70,6 @@ build() {
     )
     cmake "${cmake_comgr_args[@]}"
     cmake --build build-comgr
-
-    local cmake_hipcc_args=(
-        -Wno-dev
-        -S "$pkgbase/amd/hipcc"
-        -B build-hipcc
-        -D CMAKE_BUILD_TYPE=None
-        -D CMAKE_INSTALL_PREFIX=/opt/rocm
-    )
-    cmake "${cmake_hipcc_args[@]}"
-    cmake --build build-hipcc
 }
 
 package_rocm-llvm() {
@@ -124,19 +114,4 @@ package_comgr() {
     DESTDIR="$pkgdir" cmake --install build-comgr
     cd "$pkgbase/amd/comgr"
     install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}
-
-package_hipcc() {
-    pkgdesc="HIP compiler driver"
-    license=('MIT')
-    depends=('glibc' 'gcc-libs')
-    optdepends=('rocm-llvm: Compiler backend for AMD hardware'
-                'rocm-device-libs: Compiler backend for AMD hardware'
-                'comgr: Compiler backend for AMD hardware'
-                'cuda: Compiler backend for NVIDIA hardware')
-
-    DESTDIR="$pkgdir" cmake --install build-hipcc
-    cd "$pkgbase/amd/hipcc"
-    install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-
 }
