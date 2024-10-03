@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: rocprofiler-register
-  version: 6.2.0-1
+  version: 6.2.2-1
   arch:
     - x86_64
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.2.0-1
+    version: 6.2.2-1
     packages:
-      - rocprofiler-register-6.2.0-1-x86_64.pkg.tar.zst
+      - rocprofiler-register-6.2.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
