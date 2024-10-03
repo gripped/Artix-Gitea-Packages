@@ -1,7 +1,7 @@
 # Maintainer: Christian Hesse <eworm@archlinux.org>
 
 pkgname='virtualbox-host-modules-artix'
-pkgver=7.1.0
+pkgver=7.1.2
 pkgrel=3
 pkgdesc='Virtualbox host kernel modules for Artix Kernel'
 arch=('x86_64')
@@ -34,5 +34,3 @@ package(){
   printf '%s\n' vboxdrv vboxnetadp vboxnetflt |
     install -D -m0644 /dev/stdin "$pkgdir/usr/lib/modules-load.d/$pkgname.conf"
 }
-
-
