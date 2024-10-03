@@ -5,18 +5,33 @@
 
 _gemname='json-schema'
 pkgname="ruby-${_gemname}"
-pkgver=4.3.0
+pkgver=5.0.0
 pkgrel=2
 pkgdesc='Interface for validating JSON objects against a JSON schema conforming to JSON Schema Draft 4.'
 arch=('any')
 url='https://github.com/voxpupuli/json-schema'
 license=('MIT')
-makedepends=('ruby-rdoc' 'ruby-bundler')
-checkdepends=('ruby-rake' 'ruby-minitest' 'ruby-test-unit' 'ruby-webmock' 'ruby-rubocop')
-depends=('ruby' 'ruby-addressable')
+depends=(
+  ruby
+  ruby-addressable
+)
+makedepends=(
+  ruby-bundler
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-minitest
+  ruby-rake
+  ruby-test-unit
+  ruby-webmock
+)
 options=(!emptydirs)
-source=("${url}/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz")
-sha512sums=('6d3269d837c60061751428e66b2dc82204c9b0a4b1c92f79d965365666cc968b8c2f819686ff5eed24395c7bbc31c4372bffb81caf4afc952531caac5e273763')
+source=(
+  "${url}/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz"
+  "${pkgname}_remove-rubocop.patch"
+)
+sha512sums=('2f8c7aaa6b5e53b73c804ebccff1d5b33057d3a27d5de02392a51f0d563376fca6de24d23df659b7afce1f0bb719e5fbcae515043bebd8225586f010ca8b0962'
+            'b02d99c1773ebe61275be07558a53e0e7087db9c9e8aa9d2738d07b5aabff6fd11936b166d55d72496da16626f1e1e87fa9ce9483ba52b461a8c4bb86c2e2a04')
 
 prepare() {
   cd "${srcdir}/${_gemname}-${pkgver}"
@@ -24,9 +39,7 @@ prepare() {
   # replace upper version boundaries for ruby gems
   sed --in-place 's|~>|>=|g' "${_gemname}.gemspec"
 
-  # disable tests that try to download fixtures from dead upstream websites
-  #patch --forward --verbose --strip=1 --input=../disable_tests_with_external_fixtures.patch
-
+  patch --verbose --strip=1 --input="../${pkgname}_remove-rubocop.patch"
 }
 
 build() {
