@@ -4,7 +4,7 @@
 pkgname=ruby-samovar
 pkgver=2.3.0
 _commit=2669b7ad1252c3ec6ee3d9090c96419ec4abdd7c
-pkgrel=1
+pkgrel=2
 pkgdesc='A flexible option parser excellent support for sub-commands and help documentation'
 arch=(any)
 url='https://github.com/ioquatix/samovar'
