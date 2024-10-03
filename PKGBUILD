@@ -1,9 +1,10 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 
 _name=i18n
 pkgname=ruby-i18n
 pkgver=1.14.1
-pkgrel=3
+pkgrel=4
 pkgdesc="New wave internationalisation support for Ruby"
 arch=(any)
 url="https://github.com/ruby-i18n/i18n"
