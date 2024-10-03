@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-http
 pkgver=0.59.5
-pkgrel=3
+pkgrel=4
 pkgdesc='A HTTP client and server library'
 arch=(any)
 url='https://github.com/socketry/async-http'
