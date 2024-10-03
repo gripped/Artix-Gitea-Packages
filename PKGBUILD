@@ -4,7 +4,7 @@
 pkgname=ruby-benchmark-ips
 _pkgname="${pkgname#ruby-}"
 pkgver=2.12.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Provides iteration per second benchmarking for Ruby'
 arch=('any')
 url='https://github.com/evanphx/benchmark-ips'
