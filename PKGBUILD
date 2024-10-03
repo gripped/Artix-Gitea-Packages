@@ -4,7 +4,7 @@
 _gemname=rb-inotify
 pkgname=ruby-rb-inotify
 pkgver=0.10.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Thorough inotify wrapper for Ruby using FFI'
 url='https://github.com/guard/rb-inotify'
 arch=('any')
