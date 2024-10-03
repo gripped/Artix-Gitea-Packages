@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gala
-  version: 7.1.3.r184.48249e8e-2
+  version: 8.0.1-1
   arch:
     - x86_64
   pkgname:
     - gala
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.1.3.r184.48249e8e-2
+    version: 8.0.1-1
     packages:
-      - gala-7.1.3.r184.48249e8e-2-x86_64.pkg.tar.zst
+      - gala-8.0.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
