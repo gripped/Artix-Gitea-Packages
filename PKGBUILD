@@ -5,7 +5,7 @@
 
 pkgname=audacious-plugins
 pkgver=4.4.1
-pkgrel=2
+pkgrel=1
 pkgdesc="Plugins for Audacious"
 arch=('x86_64')
 url="https://audacious-media-player.org/"
