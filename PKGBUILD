@@ -7,8 +7,8 @@ pkgdesc='GTK3-based panel for the Wayfire compositor'
 url=https://wayfire.org
 arch=(x86_64)
 license=(MIT)
-depends=(wf-config gtkmm3 gtk-layer-shell libdbusmenu-gtk3 libpulse)
-makedepends=(wayland wayfire wayland-protocols wlroots meson ninja cmake gobject-introspection glib2-devel)
+depends=(wayland wayland-protocols wayfire wlroots wf-config gtkmm3 gtk-layer-shell libdbusmenu-gtk3 libpulse)
+makedepends=(meson ninja cmake gobject-introspection glib2-devel)
 source=("${pkgname}::https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
 sha512sums=('SKIP')
 
