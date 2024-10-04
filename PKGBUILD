@@ -2,8 +2,8 @@
 
 pkgname=nftables
 epoch=1
-pkgver=1.1.0
-pkgrel=2
+pkgver=1.1.1
+pkgrel=1
 pkgdesc='Netfilter tables userspace tools'
 arch=('x86_64')
 url='https://netfilter.org/projects/nftables/'
@@ -15,12 +15,10 @@ makedepends=('asciidoc' 'python' 'python-setuptools' 'python-build'
 backup=('etc/nftables.conf')
 validpgpkeys=('37D964ACC04981C75500FB9BD55D978A8A1420E4') # Netfilter Core Team
 source=("https://netfilter.org/projects/nftables/files/nftables-$pkgver.tar.xz"{,.sig}
-        '0001-Revert-cache-recycle-existing-cache-with-incremental.patch'
         'nftables.conf')
 install=nftables.install
-sha256sums=('ef3373294886c5b607ee7be82c56a25bc04e75f802f8e8adcd55aac91eb0aa24'
+sha256sums=('6358830f3a64f31e39b0ad421d7dadcd240b72343ded48d8ef13b8faf204865a'
             'SKIP'
-            '0c49e931a9546f1d6bbf17d1cc1b6799e9f685259530e0bb7a630e6825c904e5'
             'f83d6f2f99f306866850c60ff0e343bbd9bc0c989d333ebe288563f7be4afe20')
 
 prepare() {
@@ -62,7 +60,6 @@ package() {
   popd
   # basic safe firewall config
   install -Dm644 nftables.conf "$pkgdir/etc/nftables.conf"
-  # systemd
 }
 
 # vim:set ts=2 sw=2 et:
