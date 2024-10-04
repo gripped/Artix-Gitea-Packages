@@ -2,11 +2,11 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sus
-pkgver=0.24.3
-pkgrel=1
+pkgver=0.31.0
+pkgrel=0
 pkgdesc='A fast and scalable test runner'
 arch=(any)
-url='https://github.com/ioquatix/sus'
+url='https://github.com/socketry/sus'
 license=(MIT)
 depends=(
   ruby
@@ -21,15 +21,24 @@ checkdepends=(
   ruby-bake-test-external
   ruby-bundler
   ruby-covered
+  ruby-decode
 )
 options=(!emptydirs)
-source=(git+https://github.com/ioquatix/sus.git#tag=v$pkgver)
-sha256sums=('16a59e948f48896449379e46970e7f235a9279f7a90924fd9647f6b335d371ee')
+source=(git+https://github.com/socketry/sus.git#tag=v$pkgver)
+sha256sums=('62e0a0256ecc76d6b4df8e629ac06c9ba389455e9385e62cc1d3bca99ea9a6f6')
 
 prepare() {
   cd sus
-  sed -r -e 's|~>|>=|g' -e '/signing_key/d' -i sus.gemspec
-  sed -i '/bake-gem/d;/utopia-project/d' gems.rb
+
+  sed -r \
+    -e 's|~>|>=|g' \
+    -e '/signing_key/d' \
+    -i sus.gemspec
+
+  sed -i \
+    -e '/bake-gem/d;/utopia-project/d' \
+    -e '/rubocop/d' \
+    gems.rb
 }
 
 build() {
