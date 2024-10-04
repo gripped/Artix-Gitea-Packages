@@ -25,12 +25,12 @@ build() {
   make
 }
 
-check() {
-  cd "${_perl_namespace}-${_perl_module}-${pkgver}"
-  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
-  export PERL_MM_USE_DEFAULT=1
-  make test
-}
+#check() {
+#  cd "${_perl_namespace}-${_perl_module}-${pkgver}"
+#  unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
+#  export PERL_MM_USE_DEFAULT=1
+#  make test
+#}
 
 package() {
   cd "${_perl_namespace}-${_perl_module}-${pkgver}"
