@@ -8,7 +8,7 @@
 _gemname='faraday'
 pkgname="ruby-${_gemname}"
 pkgver=2.10.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='HTTP/REST API client library.'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
