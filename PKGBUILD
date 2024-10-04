@@ -13,8 +13,7 @@ source=("${pkgname}::https://github.com/WayfireWM/${pkgname}/releases/download/v
 sha512sums=('SKIP')
 
 build () {
-	rm -rf build
-	artix-meson "${pkgname}" build -Dpulse=enabled
+	artix-meson "${pkgname}-${pkgver}" build -Dpulse=enabled
 	ninja -C build
 }
 
