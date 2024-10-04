@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-pry
-  version: 0.14.2-3
+  version: 0.14.2-4
   arch:
     - any
   pkgname:
     - ruby-pry
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.14.2-4
+    packages:
+      - ruby-pry-0.14.2-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
