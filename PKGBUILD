@@ -9,7 +9,7 @@ url="https://github.com/WayfireWM/wf-config"
 license=('MIT')
 depends=('libevdev' 'libxml2')
 makedepends=('wlroots' 'meson' 'ninja' 'wayland-protocols' 'glm' 'doctest' 'cmake')
-source=("${pkgname}::https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
+source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
 
 build() {
   cd "${pkgname}-${pkgver}"
