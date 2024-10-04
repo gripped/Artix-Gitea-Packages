@@ -1,0 +1,73 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-redcloth
+pkgver=4.3.4
+pkgrel=2
+pkgdesc='Textile parser for Ruby'
+arch=(x86_64)
+url='https://github.com/jgarber/redcloth'
+license=(MIT)
+depends=(
+  ruby
+)
+makedepends=(
+  ragel
+  ruby-bundler
+  ruby-diff-lcs
+  ruby-rake
+  ruby-rake-compiler
+  ruby-rspec
+)
+options=(!emptydirs)
+source=(https://github.com/jgarber/redcloth/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('e7243fe50625390eb9667527c0ca540cea28070c172631f337e492f05aa7884d')
+
+prepare() {
+  cd redcloth-$pkgver
+  sed -r -e 's|~>|>=|' -i redcloth.gemspec Gemfile
+  sed -i '/rvm/d' Gemfile
+  rm tasks/rvm.rake
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd redcloth-$pkgver
+  # Avoid building twice by faking a "make".
+  # This situation is unfortunate, because RagelExtensionTask extends ExtensionTask and generates
+  # the needed source files, but it could only be triggered by the compile task.
+  MAKE=true rake compile || :
+  gem build redcloth.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    RedCloth-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd redcloth-$pkgver
+  GEM_HOME="tmp_install/$_gemdir" rspec
+}
+
+package() {
+  cd redcloth-$pkgver
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 COPYING -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
