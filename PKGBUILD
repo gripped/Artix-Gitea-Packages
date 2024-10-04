@@ -6,8 +6,8 @@
 # Contributor: apkawa <apkawa@gmail.com>
 
 pkgname=python-celery
-pkgver=5.3.6
-pkgrel=3
+pkgver=5.4.0
+pkgrel=1
 pkgdesc='Distributed Asynchronous Task Queue'
 arch=('any')
 url='http://celeryproject.org/'
@@ -27,14 +27,14 @@ makedepends=('python-build'
              'python-installer'
              'python-setuptools'
              'python-wheel')
-checkdepends=('python-pytest-celery' 'python-pytest-subtests' 'python-pytest-timeout' 'python-case'
+checkdepends=('python-pytest-celery' 'python-pytest-subtests' 'python-pytest-timeout'
               'python-cryptography' 'python-gevent' 'python-pymongo' 'python-msgpack' 'python-pyro'
               'python-redis' 'python-sqlalchemy' 'python-boto3' 'python-yaml' 'python-pyzmq'
               'python-eventlet' 'python-moto' 'python-pytest-click' 'esysusers')
 source=("https://pypi.io/packages/source/c/celery/celery-$pkgver.tar.gz"
          celery.tmpfiles.d)
 options=('!emptydirs')
-sha512sums=('169fa01c72f4d4932a255f4e7a547d1cc24f6899540414950c37e487163127bd3681b9ad741e9b1375c8a0b2b566b7467448e4523c77b34d29b3873007fb6885'
+sha512sums=('e59b62878f7da0af79be13df816e899c948f71f1063643baaabc1244dd44fd3114a5b3d724c010307ca8091c6b4343a4322213bc6154b843b79893b8f772476c'
             '67279b75c3b44d065811c9c90aee006296164000912d5bb97c74956b26ee4ad4f0847e846052a896d379848b869c849300367e676d3f689cf29e3a0c7ae5310b')
 
 build() {
@@ -46,9 +46,11 @@ check() {
   cd celery-$pkgver
   # t/unit/apps/test_multi.py & t/unit/bin/test_multi.py: needs write permission to /var/run/celery
   # t/unit/backends/test_mongodb.py and t/unit/concurrency/test_eventlet.py: https://github.com/celery/celery/discussions/8422
+  # t/unit/backends/test_gcs.py: needs https://aur.archlinux.org/packages/python-google-cloud-storage, --ignore instead of --deselect to avoid ModuleNotFoundError
   python -m pytest \
     --deselect t/unit/apps/test_multi.py \
     --deselect t/unit/bin/test_multi.py \
+    --ignore t/unit/backends/test_gcs.py \
     --deselect t/unit/backends/test_mongodb.py \
     --deselect t/unit/concurrency/test_eventlet.py
 }
