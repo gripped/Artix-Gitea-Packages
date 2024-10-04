@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: glib-perl
+  version: 1.329.4-2
+  arch:
+    - x86_64
+  pkgname:
+    - glib-perl
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.329.4-2
+    packages:
+      - glib-perl-1.329.4-2-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
