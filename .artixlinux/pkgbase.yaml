@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-json-schema
-  version: 5.0.0-2
+  version: 5.0.1-1
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 5.0.0-2
+    version: 5.0.1-1
     packages:
-      - ruby-json-schema-5.0.0-2-any.pkg.tar.zst
+      - ruby-json-schema-5.0.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
