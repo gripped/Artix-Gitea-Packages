@@ -8,7 +8,7 @@ arch=(x86_64 aarch64)
 url=https://wayfire.org
 license=(MIT)
 depends=(cairo pango "wf-config>=${pkgver%.*}.0" libjpeg libinput wlroots0.17)
-makedepends=(meson ninja wayland-protocols wlrots17.0 glm cmake doctest nlohmann-json)
+makedepends=(meson ninja wayland-protocols wlroots17.0 glm cmake doctest nlohmann-json)
 source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
 sha256sums=('dd0c9c08b8a72a2d8c3317c8be6c42b17a493c25abab1d02ac09c24eaa95229d')
 b2sums=('d7f07d7ff8a54437dc5b69e27dcfadecbd3426993e88f68f4af376bbbde08c8ea76646a361d4228ae8ee21e03c3ebe5562b80ec9d3aecde03fb653135fec8645')
