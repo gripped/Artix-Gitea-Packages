@@ -2,37 +2,49 @@
 
 pkgname=wayfire
 pkgver=0.9.0
-pkgrel=1.2
+pkgrel=2
 pkgdesc="3D wayland compositor"
-arch=(x86_64 aarch64)
-url=https://wayfire.org
+arch=('x86_64')
+url="https://github.com/WayfireWM/wayfire"
 license=(MIT)
-depends=(cairo pango "wf-config>=${pkgver%.*}.0" libjpeg libinput wlroots0.17)
-makedepends=(meson ninja wayland-protocols glm cmake doctest nlohmann-json)
-source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('dd0c9c08b8a72a2d8c3317c8be6c42b17a493c25abab1d02ac09c24eaa95229d')
-b2sums=('d7f07d7ff8a54437dc5b69e27dcfadecbd3426993e88f68f4af376bbbde08c8ea76646a361d4228ae8ee21e03c3ebe5562b80ec9d3aecde03fb653135fec8645')
+depends=(
+  'cairo' 'pango' 'libdrm' 'libevdev' 'libglvnd' 'libjpeg' 'libpng' 'libxkbcommon'
+  'pixman' 'polkit' 'seatd' 'xorg-xwayland' 'wayland' 'wf-config'
+  'glm' 'glslang' 'libinput' 'libdisplay-info' 'libxcb' 'opengl-driver'
+  'xcb-util-errors' 'xcb-util-renderutil' 'xcb-util-wm' 'libpixman-1.so' 'libseat.so'
+  'libudev.so' 'libvulkan.so' 'libwayland-client.so' 'libwayland-server.so' 'libxkbcommon.so'
+)
+makedepends=('meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
+             'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2'
+)
+optdepends=('xorg-xeyes')
+
+source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz"
+        'decor_title_font_scale.patch')
 
 build() {
-	rm -rf build
-	PKG_CONFIG_PATH=/usr/lib/wlroots0.17/pkgconfig \
-	artix-meson "${pkgname}-${pkgver}" build \
-		--auto-features=disabled \
-		-Duse_system_wfconfig=enabled \
-		-Duse_system_wlroots=enabled \
-		-Dxwayland=enabled \
-		-Dtests=enabled
-	ninja -C build
-}
-
-check () {
-	meson test -C build
+  cd "${pkgname}-${pkgver}"
+  patch -Np1 -i ../decor_title_font_scale.patch
+  artix-meson \
+    --buildtype=release \
+    -Dxwayland=auto \
+    -Duse_system_wlroots=disabled \
+    -Duse_system_wfconfig=enabled \
+    -Db_lto=true \
+    -Db_pie=true \
+    build
+  sed "/WF_SRC_DIR/d" -i build/config.h
+  ninja -C build
 }
 
 package() {
-	DESTDIR="${pkgdir}/" ninja -C build install
-	cd "${pkgname}-${pkgver}"
-	install -Dm644 wayfire.desktop "${pkgdir}/usr/share/wayland-sessions/wayfire.desktop"
-	install -Dm644 wayfire.ini "${pkgdir}/usr/share/doc/${pkgname}/wayfire.ini"
-	install -Dm645 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  cd "${pkgname}-${pkgver}"
+  DESTDIR="$pkgdir/" ninja -C build install
+  install -Dm644 wayfire.desktop $pkgdir/usr/share/wayland-sessions/wayfire.desktop
+  cp wayfire.ini $pkgdir/usr/share
+  install -Dm644 "LICENSE" \
+  "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+sha256sums=('dd0c9c08b8a72a2d8c3317c8be6c42b17a493c25abab1d02ac09c24eaa95229d'
+            '93f5d78348618acf95dfba9490d1e529fb3a281b5ab61edb923dc5fdcbc14e70')
+
