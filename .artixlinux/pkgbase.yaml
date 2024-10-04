@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: ruby-shoulda-context
+  version: 2.0.0-6
+  arch:
+    - any
+  pkgname:
+    - ruby-shoulda-context
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-6
+    packages:
+      - ruby-shoulda-context-2.0.0-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
