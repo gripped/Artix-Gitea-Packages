@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: wf-config
-  version: 0.9.0-2
+  version: 0.9.0-2.1
   arch:
     - x86_64
     - aarch64
@@ -48,9 +48,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.9.0-2
+    version: 0.9.0-2.1
     packages:
-      - wf-config-0.9.0-2-x86_64.pkg.tar.zst
+      - wf-config-0.9.0-2.1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []

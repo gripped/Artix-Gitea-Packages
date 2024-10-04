@@ -1,7 +1,8 @@
-# Maintainer: Adrian Perez de Castro <aperez@igalia.com>
+# Maintainer: artist for Artix Linux
+
 pkgname=wf-config
 pkgver=0.9.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A library for managing configuration files, written for wayfire"
 arch=(x86_64 aarch64)
 url=https://wayfire.org
@@ -14,7 +15,7 @@ b2sums=('5f3b529f829f6fc6bdfe974633467707bba501eddca1a9d32f62c1d4ea6398e74ae9bc6
 
 build() {
 	rm -rf build
-	arch-meson "${pkgname}-${pkgver}" build \
+	artix-meson "${pkgname}-${pkgver}" build \
 		--auto-features=disabled \
 		-Dtests=enabled
 	ninja -C build
