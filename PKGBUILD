@@ -11,12 +11,12 @@ depends=('wayland' 'wayland-protocols')
 source=("${url}/archive/v${pkgver}.tar.gz")
 
 build() {
-  cd "${pkgname}-${pkgver}"
+  cd "${pkgname}-v${pkgver}"
   make PREFIX='/usr' DESTDIR="$pkgdir"
 }
 
 package() {
-  cd "${pkgname}-${pkgver}"
+  cd "${pkgname}-v${pkgver}"
   make install PREFIX='/usr' DESTDIR="$pkgdir"
 }
 
