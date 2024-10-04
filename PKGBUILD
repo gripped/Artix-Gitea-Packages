@@ -8,7 +8,7 @@ url=https://wayfire.org
 arch=(x86_64)
 license=(MIT)
 depends=(wf-config gtkmm3 gtk-layer-shell libdbusmenu-gtk3 libpulse)
-makedepends=(wayland wayfire wayland-protocols meson ninja cmake gobject-introspection glib2-devel)
+makedepends=(wayland wayfire wayland-protocols wlroots meson ninja gobject-introspection glib2-devel)
 source=("${pkgname}::https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
 sha512sums=('SKIP')
 
