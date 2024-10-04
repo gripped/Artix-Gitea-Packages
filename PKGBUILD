@@ -1,0 +1,47 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Ian Brunelli <ian@brunelli.me>
+
+pkgname=wofi
+pkgver=1.4.1
+pkgrel=1
+pkgdesc='launcher for wlroots-based wayland compositors'
+arch=('x86_64')
+url='https://hg.sr.ht/~scoopta/wofi'
+license=('GPL-3.0-or-later')
+depends=(
+  'glibc'
+)
+makedepends=(
+  'cairo'
+  'gdk-pixbuf2'
+  'glib2'
+  'gtk3'
+  'meson'
+  'pango'
+  'wayland'
+)
+source=("${pkgname}-v${pkgver}.tar.gz::$url/archive/v${pkgver}.tar.gz")
+sha512sums=('a84aa9c7ae1d454a7e419e81d54dd266fb97eae6c0c8961f1631f403484f1226a6dac8d85c7bd942558b845486e4351aa8d981f021461bc336520bdc7f429944')
+b2sums=('fffd3aab79c6d86452a7e80e2e301f70718080d00bc1ac94d7549f90500fe3643deac4d39d366d0df5d18d156c98c9cd329fbcaa9f963bd4c1dc10538c1597ea')
+
+build() {
+  artix-meson $pkgname-v$pkgver build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  depends+=(
+    cairo libcairo.so
+    gdk-pixbuf2 libgdk_pixbuf-2.0.so
+    glib2 libgio-2.0.so libglib-2.0.so libgobject-2.0.so
+    gtk3 libgdk-3.so libgtk-3.so
+    pango libpango-1.0.so
+    wayland libwayland-client.so
+  )
+
+  meson install -C build --destdir "$pkgdir"
+}
