@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas Radke <andyrtr@archlinux.org>
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=mesa-demos
 pkgname=('mesa-demos' 'mesa-utils')
 pkgver=9.0.0
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 url="https://www.mesa3d.org/"
 license=('MIT')
@@ -53,8 +52,10 @@ package_mesa-demos() {
 
   DESTDIR="$pkgdir" meson install -C build
 
-  # rename linktest to avoid fileconflict with haskell-tidal-link - FS#75919
-  mv "$pkgdir"/usr/bin/linktest "$pkgdir"/usr/bin/linktest-mesa
+  # rename binaries to avoid file conflicts with other packages
+  mv "$pkgdir"/usr/bin/identity "$pkgdir"/usr/bin/identity-mesa # conflicts with identity
+  mv "$pkgdir"/usr/bin/linktest "$pkgdir"/usr/bin/linktest-mesa # conflicts with haskell-tidal-link - FS#75919
+  mv "$pkgdir"/usr/bin/poly "$pkgdir"/usr/bin/poly-mesa         # conflicts with polyml
 
   # remove utils
   rm "${pkgdir}"/usr/bin/{glxinfo,glxgears,\
