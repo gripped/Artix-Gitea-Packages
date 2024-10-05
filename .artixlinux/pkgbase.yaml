@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: dolphin-emu
-  version: 1:2409-1.1
+  version: 1:2409-2
   arch:
     - x86_64
   pkgname:
     - dolphin-emu
     - dolphin-emu-tool
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:2409-2
+    packages:
+      - dolphin-emu-1:2409-2-x86_64.pkg.tar.zst
+      - dolphin-emu-tool-1:2409-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
