@@ -8,8 +8,8 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.16.2
-pkgrel=2
+pkgver=4.16.3
+pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -88,7 +88,7 @@ source=(
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('41e7c8c534ed928bb1b97874066c0414edabc75d9d77882619edffd3a4a43096b55b6121e8124ee1aa82e0b1537fe73398f6857ecddd69920dd0a61a24a9187a'
+b2sums=('51fc2424e1025547d28045120d944a2f2dc2062b5108f071e5a43c82e4740228236ad56b496e162a00bb9c4d76966bb27f5e95586ed0524ed438d3fbd041cf5b'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
