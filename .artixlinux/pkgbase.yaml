@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: enblend-enfuse
-  version: 4.2.r1546+hb66125418f7d-4
+  version: 4.2.r1546+hb66125418f7d-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2.r1546+hb66125418f7d-4
+    version: 4.2.r1546+hb66125418f7d-5
     packages:
-      - enblend-enfuse-4.2.r1546+hb66125418f7d-4-x86_64.pkg.tar.zst
+      - enblend-enfuse-4.2.r1546+hb66125418f7d-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
