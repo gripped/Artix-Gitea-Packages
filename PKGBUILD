@@ -3,7 +3,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=gajim
-pkgver=1.9.3
+pkgver=1.9.5
 pkgrel=1
 pkgdesc="Full featured and easy to use XMPP (Jabber) client"
 url="https://gajim.org/"
@@ -29,21 +29,13 @@ optdepends=('python-dbus: to have gajim-remote working'
             'libxss: for idle time checking on X11'
             'python-gnupg: encrypting chat messages with OpenPGP'
             'emoji-font: for emojis support')
-source=("https://dev.gajim.org/gajim/gajim/-/archive/${pkgver}/gajim-${pkgver}.tar.gz"
-        disable-failing-test.patch)
-sha512sums=('19a4dfed6116e62b2cd692192b472f0cc2965364d6d14c053d25816bb55a03a9d552b3ef239ba19c07ca3bc3b74fd53d32cc1d075d1a3c7e6d58cf2edf74a1c4'
-            '6244bf8738baf57e391140a7df7f270394b05055ebdf57acd5f30ffd0afec542ccd4348e59a7c64a1ecfb7b7d29ef21e2f823ea765a5281eba63692b9ab488f3')
-b2sums=('69366379d4c928197f6553378c28cd92e120a9006e8aa1de4c1dbd63efe688124d3e1213b801f478b8326ba5e3ef12e2562348de1340db5d3c939ee02ebd7923'
-        '4bcc5859ea58bee9fabb2888172aed80bfe240bc5888c9795e382ddc511b51b7f0f5b63e6c207370e182ed41bc08242f8f38574dddf26803c30fda465924870c')
-
-prepare() {
-	cd "${pkgname}-${pkgver}"
-	patch -p1 -i ../disable-failing-test.patch # Disable test that fails with pango
-}
+source=("https://dev.gajim.org/gajim/gajim/-/archive/${pkgver}/gajim-${pkgver}.tar.gz")
+sha512sums=('63138537a384d0914c05ad42d1fa2b4e06805c59180a286fca91fd57ab78ed04f6deaef74ba7285a63c91c750bc94e66c39dfe7f33f3a48f9637aae5428cd3a4')
+b2sums=('35d46dac13f71fc2f07a098ff041e6d785742c569448606f0021fca3e3c1607fd911079873dfb0bd58dd300239ee19569ae36aa3c11ca25f8b97c6ef7f5d3b6b')
 
 build() {
 	cd "${pkgname}-${pkgver}"
-	./pep517build/build_metadata.py -o dist/metadata
+	./make.py build --dist unix
 	python -m build --wheel --no-isolation
 }
 
@@ -55,5 +47,5 @@ check() {
 package() {
 	cd "${pkgname}-${pkgver}"
 	python -m installer --destdir="${pkgdir}" dist/*.whl
-	./pep517build/install_metadata.py dist/metadata --prefix="${pkgdir}/usr"
+	./make.py install --dist unix --prefix="${pkgdir}/usr"
 }
