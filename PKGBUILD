@@ -9,6 +9,8 @@ pkgname=(
   gst-plugins-base
   gst-plugins-good
   gst-plugins-bad
+  gst-plugins-ugly
+  gst-libav
   gst-plugin-gtk
   gst-plugin-msdk
   gst-plugin-opencv
@@ -17,8 +19,6 @@ pkgname=(
   gst-plugin-qsv
   gst-plugin-va
   gst-plugin-wpe
-  gst-plugins-ugly
-  gst-libav
   gst-devtools-libs
   gst-devtools
   gst-rtsp-server
@@ -28,7 +28,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.24.8
-pkgrel=1
+pkgrel=2
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -82,7 +82,7 @@ makedepends=(
   libgme
   libgudev
   libiec61883
-  libjpeg
+  libjpeg-turbo
   liblc3
   libldac
   liblrdf
@@ -105,6 +105,7 @@ makedepends=(
   libva
   libvpl
   libvpx
+  libwpe
   libx11
   libxcb
   libxdamage
@@ -170,6 +171,7 @@ makedepends=(
   wayland-protocols
   webrtc-audio-processing-1
   wildmidi
+  wpebackend-fdo
   wpewebkit
   x264
   zbar
@@ -183,12 +185,14 @@ source=(
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
   0002-ges-Fix-name-of-GESFrameCompositionMeta-API-type.patch
+  0003-x265enc-Unbreak-build-with-x265-4.0.patch
 )
 b2sums=('ecdcf29ad346dc4aff966b34b4c68ac9e742b29bac86a33b289f06f213d563ac3c9264768a409c70c032694ccbfd246f772b67097456647c96c869aecd56ff96'
         '5330ad9313cfcfbdd0514f8f8164440c4eb3605a1e17dda8b7a024f3c986a97042575fedd3e54d4c1b0a1476918cdbb1d1d1ee46b173d235f5e3ed34d40bf39a'
         'SKIP'
         '9e277b0373c024d9ec0175e7a036f85152ce145b40d62105e660ca4f466ee0a2d70c68c11c4e6929e46117380482c70957e08e3bf6b5aca1ea0e2c7d4360f317'
-        'ac31a75ad3086e26045d02d917fd1c0f155b9e1a6ea82aa8aaf9687500a129b80be82947f6a07928399570920bdbc829d6ff1b79d0b30538606d056a76aaab05')
+        'ac31a75ad3086e26045d02d917fd1c0f155b9e1a6ea82aa8aaf9687500a129b80be82947f6a07928399570920bdbc829d6ff1b79d0b30538606d056a76aaab05'
+        '23596f6e5ba9628629f9fca36e3518427ffacdc54505224b4a6e6f039bb3fc168e20093c645b1c093ceb8280fe549a2f6d2af857afad55c28fcc5f9f26917e44')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
@@ -199,8 +203,11 @@ prepare() {
   # Disable broken tests
   git apply -3 ../0001-HACK-meson-Disable-broken-tests.patch
 
-  # Fix build
+  # Fix build of GES
   git apply -3 ../0002-ges-Fix-name-of-GESFrameCompositionMeta-API-type.patch
+
+  # Fix build with x265 4.0
+  git apply -3 ../0003-x265enc-Unbreak-build-with-x265-4.0.patch
 }
 
 build() {
@@ -520,7 +527,7 @@ package_gst-plugins-base() {
     glib2
     glibc
     graphene
-    libjpeg
+    libjpeg-turbo
     libogg
     libpng
     libtheora
@@ -561,7 +568,7 @@ package_gst-plugins-good() {
     libdv
     libgudev
     libiec61883
-    libjpeg
+    libjpeg-turbo
     libpng
     libpulse
     libraw1394
@@ -811,6 +818,54 @@ package_gst-plugins-bad() {
   ); _install
 }
 
+package_gst-plugins-ugly() {
+  pkgdesc+=" - ugly plugins"
+  depends=(
+    "gst-plugins-base-libs=$pkgver-$pkgrel"
+    "gstreamer=$pkgver-$pkgrel"
+    a52dec
+    glib2
+    glibc
+    libcdio
+    libdvdread
+    libmpeg2
+    orc
+    x264
+  )
+
+  cd root; local files=(
+    usr/lib/gstreamer-1.0/libgsta52dec.so
+    usr/lib/gstreamer-1.0/libgstasf.so
+    usr/lib/gstreamer-1.0/libgstcdio.so
+    usr/lib/gstreamer-1.0/libgstdvdlpcmdec.so
+    usr/lib/gstreamer-1.0/libgstdvdread.so
+    usr/lib/gstreamer-1.0/libgstdvdsub.so
+    usr/lib/gstreamer-1.0/libgstmpeg2dec.so
+    usr/lib/gstreamer-1.0/libgstrealmedia.so
+    usr/lib/gstreamer-1.0/libgstx264.so
+
+    usr/share/gstreamer-1.0/presets/GstX264Enc.prs
+
+    usr/share/locale/*/LC_MESSAGES/gst-plugins-ugly-1.0.mo
+  ); _install
+}
+
+package_gst-libav() {
+  pkgdesc+=" - libav plugin"
+  depends=(
+    "gst-plugins-base-libs=$pkgver-$pkgrel"
+    "gstreamer=$pkgver-$pkgrel"
+    ffmpeg
+    glib2
+    glibc
+  )
+  provides=("gst-ffmpeg=$pkgver-$pkgrel")
+
+  cd root; local files=(
+    usr/lib/gstreamer-1.0/libgstlibav.so
+  ); _install
+}
+
 package_gst-plugin-gtk() {
   pkgdesc+=" - gtk plugin"
   depends=(
@@ -849,6 +904,7 @@ package_gst-plugin-msdk() {
   ); _install
 }
 
+
 package_gst-plugin-opencv() {
   pkgdesc+=" - opencv plugin"
   depends=(
@@ -867,7 +923,6 @@ package_gst-plugin-opencv() {
     usr/lib/gstreamer-1.0/libgstopencv.so
   ); _install
 }
-
 
 package_gst-plugin-qml6() {
   pkgdesc+=" - qml6 plugin"
@@ -964,54 +1019,6 @@ package_gst-plugin-wpe() {
   cd root; local files=(
     usr/lib/gstreamer-1.0/libgstwpe.so
     usr/lib/gst-plugins-bad/wpe-extension/libgstwpeextension.so
-  ); _install
-}
-
-package_gst-plugins-ugly() {
-  pkgdesc+=" - ugly plugins"
-  depends=(
-    "gst-plugins-base-libs=$pkgver-$pkgrel"
-    "gstreamer=$pkgver-$pkgrel"
-    a52dec
-    glib2
-    glibc
-    libcdio
-    libdvdread
-    libmpeg2
-    orc
-    x264
-  )
-
-  cd root; local files=(
-    usr/lib/gstreamer-1.0/libgsta52dec.so
-    usr/lib/gstreamer-1.0/libgstasf.so
-    usr/lib/gstreamer-1.0/libgstcdio.so
-    usr/lib/gstreamer-1.0/libgstdvdlpcmdec.so
-    usr/lib/gstreamer-1.0/libgstdvdread.so
-    usr/lib/gstreamer-1.0/libgstdvdsub.so
-    usr/lib/gstreamer-1.0/libgstmpeg2dec.so
-    usr/lib/gstreamer-1.0/libgstrealmedia.so
-    usr/lib/gstreamer-1.0/libgstx264.so
-
-    usr/share/gstreamer-1.0/presets/GstX264Enc.prs
-
-    usr/share/locale/*/LC_MESSAGES/gst-plugins-ugly-1.0.mo
-  ); _install
-}
-
-package_gst-libav() {
-  pkgdesc+=" - libav plugin"
-  depends=(
-    "gst-plugins-base-libs=$pkgver-$pkgrel"
-    "gstreamer=$pkgver-$pkgrel"
-    ffmpeg
-    glib2
-    glibc
-  )
-  provides=("gst-ffmpeg=$pkgver-$pkgrel")
-
-  cd root; local files=(
-    usr/lib/gstreamer-1.0/libgstlibav.so
   ); _install
 }
 
