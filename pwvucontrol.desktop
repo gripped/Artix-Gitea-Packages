@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name[nb]=pwvucontrol
+Name[nl]=pwvucontrol
+Name[ru]=pwvucontrol
+Name=pwvucontrol
+Comment=Adjust the volume level
+Exec=pwvucontrol
+Icon=com.saivert.pwvucontrol
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Mixer
+Keywords[nl]=GTK
+Keywords[ru]=GTK
+Keywords=GTK;pwvucontrol;Pipewire;Microphone;Volume;Balance;Headset;Speakers;Headphones;Audio;Playback;Recording;System Sounds;Sound Card
+StartupNotify=true
