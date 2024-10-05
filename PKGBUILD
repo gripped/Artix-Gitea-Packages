@@ -3,7 +3,7 @@
 
 pkgname=pacman
 pkgver=7.0.0.r3.g7736133
-pkgrel=1
+pkgrel=1.1
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
 _git_tag=7.0.0
 _git_patch_level_commit=77361331ae3864c6ea880e715c5864d59336f275
@@ -53,7 +53,7 @@ source=("git+https://gitlab.archlinux.org/pacman/pacman.git#tag=v${_git_tag}?sig
         extracolors.patch)
 sha256sums=('06d082c3ce6f0811ca728515aa82d69d372800bd3ada99f5c445ef9429b6e3a6'
             'b3bce9d662e189e8e49013b818f255d08494a57e13fc264625f852f087d3def2'
-            '74e3676a824d7dd55e85fc5e6c28733b4d03538cd539849b98fcd280cbfb3289'
+            '03b3165fde80c3a5889ea5f9d3de190704825a262478f64a0b5d12a50deda9f3'
             '06ec1332f835a33de2b26ae4517ffc00fbabe3abf311bd0c0d86e8f7c99575dd'
             'c8760d7ebb6c9817d508c691c67084be251cd9c8811ee1ccf92c1278bad74c1c'
             '59a8bbdc32830c90dbce5ead9f90074a2bb31cd85ec92bc5f92251bb4bcf8a1d'
