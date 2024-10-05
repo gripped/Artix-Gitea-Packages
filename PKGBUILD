@@ -3,7 +3,7 @@
 # Contributor: Gilles Hamel <hamelg at laposte dot net>
 
 pkgname=grafana
-pkgver=11.2.1
+pkgver=11.2.2
 pkgrel=1
 pkgdesc='Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB'
 url='https://grafana.com/'
@@ -18,7 +18,7 @@ source=("git+https://github.com/grafana/grafana.git#tag=v$pkgver"
         '0001-Fix-panic-with-golang-1.23.patch'
        )
 install=$pkgname.install
-sha512sums=('1912228b1f37e35f68ced0f812f9b9eabca344fc7fe42e612bfd4b1729a03436bb2959ac5a02b8f21714698ec281d5c028b05f27e58682a097222dbe3fc5e338'
+sha512sums=('74c732a60d512cd072fe523d98499b39f7b109795b93ec47c9dd7fff2f77620405c41858951a575ea0de5aaf88ec3ad175e38ca66210351c9bcd9d5d8a1abe76'
             '38b46d953837a7afa5a654dfeef163b210d56cad57d937018531d00cd63b5341d6f9cd777299bdc7a994d0cb7df09b8157aad0f166e76ad47564e1ad6d5441d4'
             'c1724bfc7cbd6a406f17acb661efca0f1e57e2c30cc1841f4cb7ccfc420adc40cc61cb1c023d00444827b2c40e9caa4c2fefbfd503419848c74a0b455b2375ab'
             '0b7da1c990b9237cc166fcf63909881706759bdb61157086d7465eba1273dfc42465b222e0568d85be3e9ed5edd0d08e2d904deeb76714d0f7c4d0b1af06c2e6')
