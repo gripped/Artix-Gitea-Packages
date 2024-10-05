@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: wayfire
-  version: 0.9.0-2
+  version: 0.9.0-3
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.9.0-2
+    version: 0.9.0-3
     packages:
-      - wayfire-0.9.0-2-x86_64.pkg.tar.zst
+      - wayfire-0.9.0-3-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []

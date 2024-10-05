@@ -2,7 +2,7 @@
 
 pkgname=wayfire
 pkgver=0.9.0
-pkgrel=2
+pkgrel=3
 pkgdesc="3D wayland compositor"
 arch=('x86_64')
 url="https://github.com/WayfireWM/wayfire"
@@ -20,11 +20,13 @@ makedepends=('meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
 optdepends=('xorg-xeyes')
 
 source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz"
-        'decor_title_font_scale.patch')
+        'decor_title_font_scale.patch'
+        'add-session-lock-config.patch')
 
 build() {
   cd "${pkgname}-${pkgver}"
   patch -Np1 -i ../decor_title_font_scale.patch
+  patch -Np1 -i ../add-session-lock-config.patch
   artix-meson \
     --buildtype=release \
     -Dxwayland=auto \
