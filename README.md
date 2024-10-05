@@ -1,0 +1,2 @@
+# wayfire-plugins-extra
+
