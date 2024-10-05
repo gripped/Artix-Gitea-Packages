@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libyuv
-  version: r2426+464c51a0-1
+  version: r2426+464c51a03-1
   arch:
     - x86_64
   pkgname:
     - libyuv
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: r2426+464c51a03-1
+    packages:
+      - libyuv-r2426+464c51a03-1-x86_64.pkg.tar.zst
   world:
     version: r2426+464c51a0-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
