@@ -48,5 +48,6 @@ package() {
   "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 sha256sums=('dd0c9c08b8a72a2d8c3317c8be6c42b17a493c25abab1d02ac09c24eaa95229d'
-            '93f5d78348618acf95dfba9490d1e529fb3a281b5ab61edb923dc5fdcbc14e70')
+            '93f5d78348618acf95dfba9490d1e529fb3a281b5ab61edb923dc5fdcbc14e70'
+            '5608b9c7d4e2dcd662b3553e1c50b5ce88a7848e29018c9446f47c28257f862c')
 
