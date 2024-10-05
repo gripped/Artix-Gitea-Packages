@@ -9,6 +9,7 @@ arch=(x86_64)
 license=(GPL-3.0-only)
 
 depends=(glib2 gtk4 libadwaita wireplumber libwireplumber-4.0-compat)
+makedepends=(rust clang meson cmake git)
 
 source=(
   "git+https://github.com/saivert/pwvucontrol.git"
