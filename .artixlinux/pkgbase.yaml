@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: ruby-sus-fixtures-console
+  version: 0.3.1-1
+  arch:
+    - any
+  pkgname:
+    - ruby-sus-fixtures-console
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.3.1-1
+    packages:
+      - ruby-sus-fixtures-console-0.3.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
