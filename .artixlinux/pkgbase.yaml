@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pycountry
-  version: 24.6.1-1
+  version: 24.6.1-2
   arch:
     - any
   pkgname:
     - python-pycountry
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.6.1-2
+    packages:
+      - python-pycountry-24.6.1-2-any.pkg.tar.zst
   world:
     version: 24.6.1-1
     packages:
