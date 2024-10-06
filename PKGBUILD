@@ -2,7 +2,7 @@
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=fastfetch
-pkgver=2.23.0
+pkgver=2.27.1
 pkgrel=1
 pkgdesc="An actively maintained, feature-rich and performance oriented, neofetch like system information tool"
 arch=('x86_64')
@@ -36,20 +36,21 @@ optdepends=(
   'ddcutil: Brightness detection of external displays'
   'directx-headers: GPU detection in WSL'
   'glib2: Output for values that are only stored in GSettings'
+  'hwdata: GPU output'
   'imagemagick: Image output using sixel or kitty graphics protocol'
+  'libdrm: Displays detection'
   'libelf: st term font detection and fast path of systemd version detection'
   'libpulse: Sound detection'
-  'mesa: Needed by the OpenGL module for gl context creation.'
   'libxrandr: Multi monitor support'
+  'mesa: Needed by the OpenGL module for gl context creation.'
   'ocl-icd: OpenCL module'
-  'hwdata: GPU output'
+  'python: Needed for zsh and fish completions'
   'vulkan-icd-loader: Vulkan module & fallback for GPU output'
   'xfconf: Needed for XFWM theme and XFCE Terminal font'
   'zlib: Faster image output when using kitty graphics protocol'
-  'libdrm: Displays detection'
 )
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('3c92dd2cb15faf55d87846eda8d14456af2d0e0938998434144074c695c57529')
+sha256sums=('de12f8cdb52bc1f123aa9b37813f009eeb09f15cbf43b033693c2936716e2626')
 
 build() {
 	cmake -B build -S "${pkgname}-${pkgver}" \
@@ -60,6 +61,22 @@ build() {
 		-DENABLE_RPM='OFF' \
 		-DENABLE_IMAGEMAGICK6='OFF' \
 		-DENABLE_SYSTEM_YYJSON='ON' \
+		-DPACKAGES_DISABLE_APK='ON' \
+		-DPACKAGES_DISABLE_DPKG='ON' \
+		-DPACKAGES_DISABLE_EMERGE='ON' \
+		-DPACKAGES_DISABLE_EOPKG='ON' \
+		-DPACKAGES_DISABLE_GUIX='ON' \
+		-DPACKAGES_DISABLE_LINGLONG='ON' \
+		-DPACKAGES_DISABLE_LPKG='ON' \
+		-DPACKAGES_DISABLE_LPKGBUILD='ON' \
+		-DPACKAGES_DISABLE_OPKG='ON' \
+		-DPACKAGES_DISABLE_PACSTALL='ON' \
+		-DPACKAGES_DISABLE_PALUDIS='ON' \
+		-DPACKAGES_DISABLE_PKG='ON' \
+		-DPACKAGES_DISABLE_PKGTOOL='ON' \
+		-DPACKAGES_DISABLE_RPM='ON' \
+		-DPACKAGES_DISABLE_SORCERY='ON' \
+		-DPACKAGES_DISABLE_XBPS='ON' \
 		-Wno-dev
 	cmake --build build
 }
