@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-cmd2
-  version: 2.4.3-3
+  version: 2.4.3-4
   arch:
     - any
   pkgname:
     - python-cmd2
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.4.3-4
+    packages:
+      - python-cmd2-2.4.3-4-any.pkg.tar.zst
   world:
     version: 2.4.3-3
     packages:
