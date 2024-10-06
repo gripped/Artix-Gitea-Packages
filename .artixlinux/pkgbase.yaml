@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-sortedcollections
-  version: 2.1.0-3
+  version: 2.1.0-4
   arch:
     - any
   pkgname:
     - python-sortedcollections
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.0-3
+    version: 2.1.0-4
     packages:
-      - python-sortedcollections-2.1.0-3-any.pkg.tar.zst
+      - python-sortedcollections-2.1.0-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
