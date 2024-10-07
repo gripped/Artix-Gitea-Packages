@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: retro-gtk
-  version: 1.0.2-4
+  version: 1.0.2-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.2-4
+    version: 1.0.2-5
     packages:
-      - retro-gtk-1.0.2-4-x86_64.pkg.tar.zst
+      - retro-gtk-1.0.2-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
