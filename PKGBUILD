@@ -3,7 +3,7 @@
 
 pkgname=ruby-protocol-http1
 pkgver=0.27.0
-pkgrel=1
+pkgrel=0
 pkgdesc='A low level implementation of the HTTP/1 protocol'
 arch=(any)
 url='https://github.com/socketry/protocol-http1'
