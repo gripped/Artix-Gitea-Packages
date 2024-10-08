@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-async
-  version: 2.14.2-3
+  version: 2.17.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.14.2-3
+    version: 2.17.0-1
     packages:
-      - ruby-async-2.14.2-3-any.pkg.tar.zst
+      - ruby-async-2.17.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
