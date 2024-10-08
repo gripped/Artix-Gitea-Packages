@@ -4,7 +4,7 @@
 _gemname='fiber-storage'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Provides a compatibility shim for fiber storage'
 arch=('any')
 url="https://github.com/ioquatix/${_gemname}"
