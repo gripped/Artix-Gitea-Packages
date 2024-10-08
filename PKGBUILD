@@ -1,0 +1,61 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: Eric Berquist <eric dot berquist at gmail dot com>
+
+pkgname=markdownlint
+_pkgname=mdl
+pkgver=0.13.0
+pkgrel=3
+pkgdesc='A lint tool to check markdown files and flag style issues'
+arch=('any')
+url='https://github.com/markdownlint/markdownlint'
+license=('MIT')
+depends=(
+  'ruby'
+  'ruby-kramdown'
+  'ruby-kramdown-parser-gfm'
+  'ruby-mixlib-cli'
+  'ruby-mixlib-config'
+  'ruby-mixlib-shellout'
+)
+makedepends=('git' 'ruby-rdoc')
+provides=('ruby-mdl')
+replaces=('ruby-mdl')
+options=('!emptydirs')
+source=("$pkgname::git+$url#tag=v$pkgver")
+b2sums=('879c33bc5a299e05359ac81c416ae6d98ee17f7e3790d417b2df5e6ae912488d619e72bfd2ac901b23f853a1e375e3a26ec8d47479d28361a17c7518545524cc')
+
+prepare() {
+  cd "$pkgname"
+
+  # we do not do version pinning
+  sed --regexp-extended 's,~>,>=,g' --in-place *.gemspec Gemfile Rakefile
+}
+
+build() {
+  cd "$pkgname"
+
+  gem build "$_pkgname.gemspec"
+}
+
+package() {
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --no-document \
+    --install-dir "$pkgdir/$_gemdir" \
+    --bindir "$pkgdir/usr/bin" \
+    "$pkgname/$_pkgname-$pkgver.gem"
+
+  # delete cache
+  rm -vrf "$pkgdir/$_gemdir/cache"
+
+  # license
+  install -vd "$pkgdir/usr/share/licenses/$pkgname"
+  ln -sf "$_gemdir/gems/$_pkgname-$pkgver/LICENSE.txt" "$pkgdir/usr/share/licenses/$pkgname"
+}
