@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-simplecov-html
-  version: 0.13.1-2
+  version: 0.13.1-3
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.13.1-2
+    version: 0.13.1-3
     packages:
-      - ruby-simplecov-html-0.13.1-2-any.pkg.tar.zst
+      - ruby-simplecov-html-0.13.1-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
