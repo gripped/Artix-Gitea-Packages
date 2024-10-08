@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-rspec-rerun
-  version: 1.1.0-2
+  version: 1.1.0-3
   arch:
     - any
   pkgname:
     - ruby-rspec-rerun
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.1.0-3
+    packages:
+      - ruby-rspec-rerun-1.1.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
