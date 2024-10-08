@@ -100,7 +100,7 @@ check() {
   cd "${_gemname}-${pkgver}"
 
   # https://github.com/puma/puma/blob/master/CONTRIBUTING.md#file-limits
-  ulimit -Sn 5000
+  ulimit -Sn 4096
 
   export PUMA_NO_RUBOCOP="true"
 
