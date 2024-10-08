@@ -1,0 +1,45 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+
+pkgname=ruby-chef-utils
+_pkgname="${pkgname#ruby-}"
+pkgver=19.0.15
+pkgrel=2
+pkgdesc='Basic utility functions for Core Chef Infra development'
+arch=('any')
+url='https://github.com/chef/chef'
+license=('Apache-2.0')
+depends=('ruby' 'ruby-concurrent')
+makedepends=('git' 'ruby-rdoc' 'ruby-rake' 'ruby-bundler')
+options=('!emptydirs')
+source=("$pkgname::git+$url#tag=v$pkgver")
+sha512sums=('19c1c53179cd34340b771c68dd6005b67b564738eb3ded331a3037f2ae811b3984410c90e1cb94aadf4677f3781d9be78a6561e49ce1fa505e5fd137a860ad6c')
+b2sums=('39a1764a56a627a19897442ac2ebd1f10d2eaaf9a6dc7b42e04cc011247b090dafc21c60e68f80eed3a43c81fb07554329c64d8db11ff063cd0df0e316357e2e')
+
+build() {
+  cd "$pkgname/$_pkgname"
+
+  rake build
+}
+
+package() {
+  cd "$pkgname/$_pkgname"
+
+  local _gemdir="$(gem env gemdir)"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "$pkgdir/$_gemdir" \
+    --bindir "$pkgdir/usr/bin" \
+    "pkg/$_pkgname-$pkgver.gem"
+
+  # delete cache
+  rm -rf "$pkgdir/$_gemdir/cache"
+
+  # license
+  install -vd "$pkgdir/usr/share/licenses/$pkgname"
+  ln -sf "$_gemdir/gems/$_pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname"
+}
