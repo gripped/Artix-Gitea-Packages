@@ -4,7 +4,7 @@
 _gemname='simplecov_json_formatter'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.4
-pkgrel=4
+pkgrel=5
 pkgdesc='JSON formatter for SimpleCov'
 arch=('any')
 url="https://github.com/codeclimate-community/${_gemname}"

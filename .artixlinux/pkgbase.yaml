@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-simplecov_json_formatter
-  version: 0.1.4-4
+  version: 0.1.4-5
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1.4-4
+    version: 0.1.4-5
     packages:
-      - ruby-simplecov_json_formatter-0.1.4-4-any.pkg.tar.zst
+      - ruby-simplecov_json_formatter-0.1.4-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
