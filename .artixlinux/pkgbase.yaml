@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-async-pool
-  version: 0.4.0-4
+  version: 0.8.1-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.4.0-4
+    version: 0.8.1-1
     packages:
-      - ruby-async-pool-0.4.0-4-any.pkg.tar.zst
+      - ruby-async-pool-0.8.1-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
