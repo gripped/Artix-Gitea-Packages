@@ -4,7 +4,7 @@
 pkgname=ruby-regexp_property_values
 pkgver=1.3.0
 _commit=3ecdde76f4721f45ecee885b3701df7ddb70bbe6
-pkgrel=4
+pkgrel=5
 pkgdesc="Inspect property values supported by Ruby's regex engine"
 arch=(x86_64)
 url='https://github.com/jaynetics/regexp_property_values'
