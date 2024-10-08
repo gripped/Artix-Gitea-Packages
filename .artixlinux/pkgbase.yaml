@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-nokogiri
-  version: 1.16.7-2
+  version: 1.16.7-3
   arch:
     - x86_64
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.16.7-2
+    version: 1.16.7-3
     packages:
-      - ruby-nokogiri-1.16.7-2-x86_64.pkg.tar.zst
+      - ruby-nokogiri-1.16.7-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
