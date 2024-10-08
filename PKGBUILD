@@ -64,7 +64,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd localhost
-  sed -e 's|bound_url|"http://localhost:4039"|g'
+  sed -e 's|bound_url|"http://localhost:92729"|g'
   GEM_HOME="tmp_install/$_gemdir" bake test
 }
 
