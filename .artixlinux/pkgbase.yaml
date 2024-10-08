@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-protocol-rack
-  version: 0.2.6-2
+  version: 0.10.0-1
   arch:
     - any
   pkgname:
     - ruby-protocol-rack
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.10.0-1
+    packages:
+      - ruby-protocol-rack-0.10.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
