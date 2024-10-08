@@ -2,8 +2,9 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-async-websocket
-pkgver=0.30.0
-pkgrel=1
+pkgver=0.25.1
+_commit=06ff17dc3bf2af9f5af1ca0ff1e0751b5dfb0446
+pkgrel=3
 pkgdesc='An async websocket library on top of websocket-driver'
 arch=(any)
 url='https://github.com/socketry/async-websocket'
@@ -11,6 +12,7 @@ license=(MIT)
 depends=(
   ruby
   ruby-async-http
+  ruby-async-io
   ruby-protocol-rack
   ruby-protocol-websocket
 )
@@ -19,27 +21,23 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-bake
+  ruby-bake-modernize
   ruby-bake-test
   ruby-bake-test-external
   ruby-bundler
   ruby-covered
-  ruby-decode
   ruby-rack
   ruby-sus
   ruby-sus-fixtures-async-http
 )
 options=(!emptydirs)
-source=("git+${url}.git#tag=v${pkgver}")
-sha256sums=('b93a924219105e4cf44ede10319da5417d26e472fe652d27aa490b6c58226c05')
+source=(git+https://github.com/socketry/async-websocket.git#commit=$_commit)
+sha256sums=('SKIP')
 
 prepare() {
   cd async-websocket
   sed -r -e 's|~>|>=|g' -e '/signing_key/d' -i async-websocket.gemspec
-  sed --in-place \
-    --expression '/group :maintenance/,/end/d' \
-    --expression '/rubocop/d' \
-    gems.rb
+  sed -i '/bake-gem/d;/utopia-project/d' gems.rb
 }
 
 build() {
