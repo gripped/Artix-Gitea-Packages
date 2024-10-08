@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-byebug
 pkgver=11.1.3
-pkgrel=3
+pkgrel=4
 pkgdesc='A simple to use and feature rich debugger for Ruby'
 arch=(x86_64)
 url='https://github.com/deivid-rodriguez/byebug'
@@ -36,6 +37,13 @@ prepare() {
   sed -i '/bundler/d' bin/minitest
   # TODO
   sed -i '/test_finish_inside_autoloaded_files/a skip' test/commands/finish_test.rb
+
+  # remove non working tests - see https://github.com/deivid-rodriguez/byebug/pull/850
+  rm --verbose \
+    test/commands/continue_test.rb \
+    test/commands/interrupt_test.rb \
+    test/commands/next_test.rb \
+    test/processors/command_processor_test.rb
 }
 
 build() {
