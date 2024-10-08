@@ -3,7 +3,7 @@
 
 pkgname=ruby-bake
 pkgver=0.18.2
-pkgrel=5
+pkgrel=6
 pkgdesc='A replacement for rake with a simpler syntax'
 arch=(any)
 url='https://github.com/ioquatix/bake'

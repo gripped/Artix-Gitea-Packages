@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-bake
-  version: 0.18.2-5
+  version: 0.18.2-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.18.2-5
+    version: 0.18.2-6
     packages:
-      - ruby-bake-0.18.2-5-any.pkg.tar.zst
+      - ruby-bake-0.18.2-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
