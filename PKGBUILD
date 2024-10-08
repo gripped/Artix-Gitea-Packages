@@ -1,10 +1,11 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='rubocop-rake'
 pkgname="ruby-${_gemname}"
 pkgver=0.6.0
-pkgrel=3
+pkgrel=4
 pkgdesc='A RuboCop plugin for Rake'
 arch=('any')
 url="https://github.com/rubocop/${_gemname}"
