@@ -4,7 +4,7 @@
 _gemname='puma'
 pkgname="ruby-$_gemname"
 pkgver=6.4.2
-pkgrel=3
+pkgrel=2
 pkgdesc='A Ruby/Rack web server built for concurrency'
 arch=('x86_64')
 url='https://puma.io/'
