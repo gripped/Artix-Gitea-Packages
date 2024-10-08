@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-ruby_memcheck
-  version: 1.2.0-3.1
+  version: 1.2.0-4
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.2.0-3.1
+    version: 1.2.0-4
     packages:
-      - ruby-ruby_memcheck-1.2.0-3.1-any.pkg.tar.zst
+      - ruby-ruby_memcheck-1.2.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
