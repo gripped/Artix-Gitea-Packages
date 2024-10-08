@@ -4,7 +4,7 @@
 pkgname=ruby-ice_nine
 _pkgname="${pkgname#ruby-}"
 pkgver=0.11.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Deep freeze Ruby objects'
 arch=('any')
 url='https://github.com/dkubb/ice_nine'
