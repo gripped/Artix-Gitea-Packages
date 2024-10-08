@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sus-fixtures-async
-pkgver=0.2.0
-pkgrel=1
+pkgver=0.1.4
+pkgrel=2
 pkgdesc='Test fixtures for running in Async'
 arch=(any)
 url='https://github.com/socketry/sus-fixtures-async'
@@ -25,7 +25,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/socketry/sus-fixtures-async.git#tag=v$pkgver)
-sha256sums=('6f2687e532ee54d0c99194fd546cb8cf5720eab3cacd5c986a2cc65870794a11')
+sha256sums=('f88105c660701de22f1900dd9b50ddac418baa5e32c6ba931769e9f76225b9ae')
 
 prepare() {
   cd sus-fixtures-async
