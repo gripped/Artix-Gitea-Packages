@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-rails-dom-testing
-  version: 2.0.3-3
+  version: 2.0.3-4
   arch:
     - any
   pkgname:
     - ruby-rails-dom-testing
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.3-4
+    packages:
+      - ruby-rails-dom-testing-2.0.3-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
