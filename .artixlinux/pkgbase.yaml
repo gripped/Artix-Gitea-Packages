@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-sus-fixtures-async
-  version: 0.1.4-2
+  version: 0.2.0-1
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1.4-2
+    version: 0.2.0-1
     packages:
-      - ruby-sus-fixtures-async-0.1.4-2-any.pkg.tar.zst
+      - ruby-sus-fixtures-async-0.2.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
