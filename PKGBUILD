@@ -3,7 +3,7 @@
 
 pkgname=ruby-cucumber
 pkgver=9.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Behaviour Driven Development with elegance and joy"
 arch=(any)
 url='https://github.com/cucumber/cucumber-ruby'
@@ -24,21 +24,14 @@ depends=(
   ruby-sys-uname
 )
 makedepends=(
-  ruby-cucumber-compatibility-kit
-  ruby-nokogiri
-  ruby-octokit
-  ruby-pry
-  ruby-rack-test
-  ruby-rake
-  ruby-rspec
-  ruby-simplecov
-  ruby-sinatra
-  ruby-syntax
-  ruby-test-unit
-  ruby-webrick
+  ruby-rdoc
 )
 checkdepends=(
   ruby-bundler
+  ruby-nokogiri
+  ruby-rake
+  ruby-rspec
+  ruby-webrick
 )
 options=(!emptydirs)
 source=(
