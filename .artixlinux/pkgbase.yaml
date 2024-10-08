@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: ruby-mixlib-shellout
+  version: 3.2.7-4
+  arch:
+    - any
+  pkgname:
+    - ruby-mixlib-shellout
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.2.7-4
+    packages:
+      - ruby-mixlib-shellout-3.2.7-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
