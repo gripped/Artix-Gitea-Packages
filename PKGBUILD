@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-minitest-parallel_fork
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Fork-based parallelization for minitest'
 arch=(any)
 url='https://github.com/jeremyevans/minitest-parallel_fork'
@@ -14,6 +15,7 @@ depends=(
 makedepends=(
   ruby-minitest-global_expectations
   ruby-minitest-hooks
+  ruby-rdoc
 )
 checkdepends=(
   ruby-rake
