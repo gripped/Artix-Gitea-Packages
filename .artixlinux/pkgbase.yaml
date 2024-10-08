@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-rbtree
-  version: 0.4.6-3
+  version: 0.4.6-4
   arch:
     - x86_64
   pkgname:
     - ruby-rbtree
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.6-4
+    packages:
+      - ruby-rbtree-0.4.6-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
