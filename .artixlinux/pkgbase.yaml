@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: ruby-sequel
-  version: 5.77.0-1
+  version: 5.77.0-1.1
   arch:
     - any
   pkgname:
     - ruby-sequel
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.77.0-1.1
+    packages:
+      - ruby-sequel-5.77.0-1.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
