@@ -26,6 +26,7 @@ checkdepends=(
   ruby-bundler
   ruby-covered
   ruby-decode
+  ruby-io-stream
 )
 options=(!emptydirs)
 source=("git+${url}.git#tag=v${pkgver}")
