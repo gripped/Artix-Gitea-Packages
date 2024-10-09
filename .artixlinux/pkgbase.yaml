@@ -109,11 +109,11 @@ pkgbase:
     - firefox-i18n-zh-cn
     - firefox-i18n-zh-tw
 actions:
-  addRepo: galaxy
+  addRepo: null
   removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
