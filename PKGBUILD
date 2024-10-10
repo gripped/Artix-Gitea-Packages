@@ -4,7 +4,7 @@
 _gemname='rubocop-rspec'
 pkgname="ruby-${_gemname}"
 pkgver=2.15.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Code style checking for RSpec files. A plugin for the RuboCop code style enforcing & linting tool'
 arch=('any')
 url="https://github.com/rubocop/${_gemname}"
