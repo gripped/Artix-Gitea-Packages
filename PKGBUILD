@@ -7,18 +7,17 @@
 # Contributor: Ricardo Catalinas Jiménez <jimenezrick@gmail.com>
 
 pkgname=erlang
-pkgver=27.1
+pkgver=27.1.1
 _docver=27.0
 pkgrel=1
 # https://github.com/erlang/otp/tags
-_commit= # OTP-27.1
 arch=(x86_64)
 url='https://erlang.org'
 license=(Apache)
-makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl wxwidgets-gtk3)
+makedepends=(fop git glu java-environment libxslt lksctp-tools mesa perl unixodbc wxwidgets-gtk3)
 options=(staticlibs)
 source=("git+https://github.com/erlang/otp#tag=OTP-$pkgver")
-b2sums=('5541b940a3b5bfa478ddc96488bc91758357721a0019d2e70c5f90d14c6fb1706e8adc6a8a22d01ac961d3d3a62e7a9fecec912aa00cdb6312080e704a5273be')
+b2sums=('b3249eae170d3e35a0e099eba7aba69d4b504e329fac112429e1975d3970d0018adf8cdceb16661020286e674b3196d80c7ae1051076666a8ab634db0b50a80f')
 
 prepare() {
   sed -i 's/^LDFLAGS = /LDFLAGS += /g' otp/lib/megaco/src/flex/Makefile.in
@@ -37,7 +36,7 @@ build() {
     --enable-shared-zlib \
     --enable-ssl=dynamic-ssl-lib \
     --prefix=/usr \
-    --without-odbc
+    --with-odbc
 
   DOC_TARGETS=chunks make all
   DOC_TARGETS=chunks make docs
@@ -45,7 +44,7 @@ build() {
 
 package_erlang() {
   pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
-  depends=(glu ncurses openssl webkit2gtk wxwidgets-gtk3)
+  depends=(glu ncurses openssl unixodbc webkit2gtk wxwidgets-gtk3)
   optdepends=('java-environment: for Java support'
               'lksctp-tools: for SCTP support')
   provides=(erlang-nox)
