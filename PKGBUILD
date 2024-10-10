@@ -27,6 +27,7 @@ checkdepends=(
   ruby-covered
   ruby-decode
   ruby-io-stream
+  ruby-io-endpoint
 )
 options=(!emptydirs)
 source=("git+${url}.git#tag=v${pkgver}")
