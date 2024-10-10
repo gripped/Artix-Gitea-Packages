@@ -4,14 +4,15 @@
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Reza Jahanbakhshi <reza.jahanbakhshi@gmail.com>
+# Contributor: Vladislav Nepogodin <nepogodin.vlad@gmail.com>
 
 pkgname=distcc
 pkgver=3.4
-pkgrel=10
+pkgrel=11
 pkgdesc='Distributed compilation service for C, C++ and Objective-C'
 arch=(x86_64)
 url='https://github.com/distcc/distcc'
-license=(GPL)
+license=(GPL-2.0-only)
 depends=(avahi popt python)
 makedepends=(git gtk3 python-setuptools)
 optdepends=('gtk3: for distccmon')
@@ -21,7 +22,7 @@ source=("git+$url?signed#tag=v$pkgver"
         distccd.conf.d
         sysusers.conf
         meson_triple.patch::https://github.com/distcc/distcc/pull/427/commits/850db9eec0d5dd7f47ade8ffca91b679081f6d85.patch)
-b2sums=('SKIP'
+b2sums=('8843f1d2ad3cb8d761644ffd19fa2868843c2f0c6b3dc5471c88ed34de0425b78193a3f01539c5c581eaf7c947a39e87f2bace80571cc54e7e0201ad5004e3cc'
         'c48a6daea2cae5e5865c488e612c819e6f9bf4a1b205e2cd264b795de3450d40b0fe05264fbd8a3fe861f03e38d91e7e791ad67e22da5b5d0b43bcb380b8b4c9'
         'd1b057ce49994ac61e9d5a861c1c770452102300d47a9c396b3272d7f5afbd3fe3e865e6db11c046e73ae3b6886bc8970a10624650731d55132362436904f989'
         '9e2fcd16070837f45852f4f8be6fc1a53d2f4c70a4058260d97ebde7d6bc58a6557d90a71b69a6a17d53e68c2b4d55b94afaf10b34610cac9ecf925298a02799')
@@ -42,6 +43,9 @@ build() {
 
   # ref https://github.com/distcc/distcc/issues/454#issuecomment-1087865811
   export CFLAGS+=' -DPY_SSIZE_T_CLEAN -fcommon'
+
+  # causes buffer overflow check to occur
+  export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
   # ref FS#78400
   export NATIVE_COMPILER_TRIPLE=x86_64-pc-linux-gnu-gcc
