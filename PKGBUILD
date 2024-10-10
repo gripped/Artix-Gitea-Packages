@@ -4,7 +4,7 @@
 _gemname='puma'
 pkgname="ruby-$_gemname"
 pkgver=6.4.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A Ruby/Rack web server built for concurrency'
 arch=('x86_64')
 url='https://puma.io/'
@@ -100,7 +100,7 @@ check() {
   cd "${_gemname}-${pkgver}"
 
   # https://github.com/puma/puma/blob/master/CONTRIBUTING.md#file-limits
-  ulimit -Sn 4096
+  ulimit -Sn 5000
 
   export PUMA_NO_RUBOCOP="true"
 
