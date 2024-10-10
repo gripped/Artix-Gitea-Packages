@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-http
 pkgver=0.80.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A HTTP client and server library'
 arch=(any)
 url='https://github.com/socketry/async-http'
@@ -11,8 +11,9 @@ license=(MIT)
 depends=(
   ruby
   ruby-async
-  ruby-async-io
   ruby-async-pool
+  ruby-io-endpoint
+  ruby-io-stream
   ruby-protocol-http
   ruby-protocol-http1
   ruby-protocol-http2
@@ -33,8 +34,6 @@ checkdepends=(
   ruby-bundler
   ruby-covered
   ruby-decode
-  ruby-io-endpoint
-  ruby-io-stream
   ruby-localhost
   ruby-rack-test
   ruby-rspec
