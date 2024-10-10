@@ -4,7 +4,7 @@
 
 pkgname=(ruby-sinatra ruby-sinatra-contrib ruby-rack-protection)
 pkgver=4.0.0
-pkgrel=2
+pkgrel=3
 arch=('any')
 url='https://sinatrarb.com/'
 license=('MIT')
