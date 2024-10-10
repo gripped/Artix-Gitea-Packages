@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: freerdp2
-  version: 2.11.7-1
+  version: 2.11.7-2
   arch:
     - x86_64
   pkgname:
     - freerdp2
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.11.7-2
+    packages:
+      - freerdp2-2.11.7-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
