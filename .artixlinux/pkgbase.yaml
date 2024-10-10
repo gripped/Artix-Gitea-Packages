@@ -8,13 +8,13 @@ pkgbase:
   pkgname:
     - ruby-async-http-cache
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersRepoRemove: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,12 +26,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 0.4.3-4
     packages:
       - ruby-async-http-cache-0.4.3-4-any.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 0.4.3-3
     packages:
