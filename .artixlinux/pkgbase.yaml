@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tmux
-  version: 3.5-1
+  version: 3.5_a-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.5-1
+    version: 3.5_a-1
     packages:
-      - tmux-3.5-1-x86_64.pkg.tar.zst
+      - tmux-3.5_a-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
