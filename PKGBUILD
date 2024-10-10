@@ -6,18 +6,19 @@ pkgname=(
   tree-sitter
   tree-sitter-cli
 )
-pkgver=0.23.2
+pkgver=0.24.3
 pkgrel=1
 arch=(x86_64)
 url=https://github.com/tree-sitter/tree-sitter
 license=(MIT)
 makedepends=(
+  cmake
   git
   rust
 )
 options=(!lto) # Needed for CLI build
 source=("git+$url.git#commit=v$pkgver")
-b2sums=('216156115a190270b23075d6e5f155def32444bdfea8a7832bbb4fc1752bb66a374209f18ba9e002807e6a95dab1917cfa46ae5fc34ff697559d6369930ec823')
+b2sums=('31f6e9ec2e5417fab8867127d0f07de08df85b932544eab4ddf3b96fe4cf6ffc58a5b52214a718c316fe5858c0cc8c25ba09938dc13ae6ed18529baba9e2b1d0')
 validpgpkeys=(FCC13F47A6900D64239FF13BE67890ADC4227273) # Amaan Qureshi <amaanq12@gmail.com>
 
 prepare() {
@@ -27,7 +28,10 @@ prepare() {
 
 build() {
   cd $pkgbase
-  make PREFIX=/usr LDFLAGS="$LDFLAGS -flto" CFLAGS="$CFLAGS -flto" CXXFLAGS="$CXXFLAGS -flto"
+  cmake -S lib -B build \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON # Enable LTO
+  cmake --build build
 
   cd cli
   cargo build --release --locked --offline
@@ -38,7 +42,7 @@ package_tree-sitter() {
   provides=(libtree-sitter.so)
 
   cd $pkgbase
-  make DESTDIR="$pkgdir" PREFIX=/usr install
+  DESTDIR="$pkgdir" cmake --install build
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgbase
 }
 
