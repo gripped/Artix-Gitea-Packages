@@ -7,7 +7,7 @@ pkgname=syslinux
 pkgver=6.04.pre3.r3.g05ac953c
 #_tag=syslinux-$pkgver
 _commit='05ac953c23f90b2328d393f7eecde96e41aed067'
-pkgrel=2
+pkgrel=3
 pkgdesc='Collection of boot loaders that boot from FAT, ext2/3/4 and btrfs filesystems, from CDs and via PXE'
 url='https://www.syslinux.org/'
 arch=(x86_64)
@@ -53,7 +53,7 @@ sha256sums=('deec61086a2cb73163d50e150d1ef32bd56c8a3faa1fc4322d11080ba0cbe63a'
             '7facb5c2abc71c9bfe01bf4db388306ed7b7abf6654009af336262839527f962'
             '755cd7062fe8495f6f62053ce664451c12ae65dba9fb5c75062a495fbe040fb1'
             '9a76f6f75a42485bc337163ba38068b09f7889bdc1a4e191408898f10de36662'
-            'a3b5ee376f9ab56313932ce7fb363cd702fe503276ab84702ae0bb7eef10eb91'
+            '7e41e17e8cbc7287d6c3c9eb0a7b682cd8d3252030856b338050c21dff9bf05a'
             'd7410d0ff89a15e2a100faf1546d730e043dde15c295974564144e00a93f03a3'
             'e16e051d17ead7e6457a479a1e2226160ca9aae3d607c0c25fa3677522aa9280'
             '7f2ce9e16ddcca1a55b32bddfd39c7f190eed9d8df4319bbd6b07e0a2607e662')
@@ -67,6 +67,8 @@ pkgver() {
 
 prepare() {
   cd syslinux
+
+  git revert -n 458a54133ecdf1685c02294d812cb562fe7bf4c3
 
   patch -p1 < ../0002-gfxboot-menu-label.patch
   patch -p1 < ../0017-single-load-segment.patch
