@@ -25,6 +25,8 @@ checkdepends=(
   ruby-decode
   ruby-sus
   ruby-sus-fixtures-async-http
+  ruby-io-stream
+  ruby-io-endpoint
 )
 options=(!emptydirs)
 source=(https://github.com/socketry/protocol-rack/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
