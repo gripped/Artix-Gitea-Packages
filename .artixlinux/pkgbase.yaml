@@ -21,12 +21,12 @@ pkgbase:
     - libblockdev-swap
     - python-libblockdev
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -42,6 +42,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.2.0-1
     packages:
       - libblockdev-3.2.0-1-x86_64.pkg.tar.zst
@@ -59,23 +62,6 @@ repos:
       - libblockdev-smart-3.2.0-1-x86_64.pkg.tar.zst
       - libblockdev-swap-3.2.0-1-x86_64.pkg.tar.zst
       - python-libblockdev-3.2.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 3.1.1-2
-    packages:
-      - libblockdev-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-btrfs-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-crypto-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-dm-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-fs-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-loop-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-lvm-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-mdraid-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-mpath-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-nvdimm-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-nvme-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-part-3.1.1-2-x86_64.pkg.tar.zst
-      - libblockdev-swap-3.1.1-2-x86_64.pkg.tar.zst
-      - python-libblockdev-3.1.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
