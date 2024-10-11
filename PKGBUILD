@@ -24,7 +24,6 @@ makedepends=(
   bash
   clang
   cmake
-  dotnet-sdk
   git
   icu
   krb5
