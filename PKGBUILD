@@ -1,237 +1,40 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Contributor: Kristian Mosegaard <kristian@mosen.me>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Max Liebkies <mail@maxliebkies.de>
-# Contributor: Krzysztof Bogacki <krzysztof.bogacki@leancode.pl>
 
 pkgbase=dotnet-core
-pkgname=(
- dotnet-host
- dotnet-runtime
- aspnet-runtime
- dotnet-sdk
- netstandard-targeting-pack
- dotnet-targeting-pack
- aspnet-targeting-pack
- dotnet-source-built-artifacts
-)
-pkgver=7.0.7.sdk107
-_bootstrap=true
-pkgrel=1
-arch=(x86_64)
-url=https://www.microsoft.com/net/core
-license=(MIT)
-makedepends=(
-  bash
-  clang14
-  cmake
-  #dotnet-sdk
-  #dotnet-source-built-artifacts
-  git
-  icu
-  inetutils
-  krb5
-  libgit2
-  libunwind
-  libxml2
-  lldb
-  llvm
-  lttng-ust2.12
-  nodejs
-  openssl
-  udev
-  zlib
-)
-optdepends=('bash-completion: Bash completion support')
-options=(
-  !lto
-  staticlibs
-)
-_tag=bf72c06963e2bb23c1abfd97a9ed50e47e155027
-source=(
-  dotnet-installer::git+https://github.com/dotnet/installer.git#tag=${_tag}
-  https://github.com/dotnet/runtime/commit/31e4f404c218eae7ba999c4df5346d30f971451c.patch
-  dotnet.sh
-)
-b2sums=('SKIP'
-        '36e3dcba3be4d6c3a77cdb92287acaaae681078730d9e94dce3025e926b9691c4439a8b790ca4ece643b8162bdcd7d93d2a3860610841f0b282e8e21c0873446'
-        '4a64e3ee550e296bdde894f9202c6f372934cc29154f47d302599b4c368825a96a7b786faa6109a24a1101ff130fd9e4d0ccba094ec91e7f2ca645725bf71b34')
-
-prepare() {
-  # fix bootstrap
-  cd dotnet-installer
-  git remote set-url origin https://github.com/dotnet/installer.git
-}
-
-pkgver() {
-  cd dotnet-installer
-
-  if [[ $(git describe --tags) != v7.0.* ]]; then
-    msg "Invalid SDK version"
-    exit 1
-  fi
-
-  local _standardver=$(xmllint --xpath "//*[local-name()='NETStandardLibraryRefPackageVersion']/text()" eng/Versions.props)
-
-  if [[ $_standardver != 2.1.0 ]]; then
-    msg "Invalid Standard version '$_standardver'"
-    exit 1
-  fi
-
-  local _sdkver=$(xmllint --xpath "//*[local-name()='VersionSDKMinor']/text()" eng/Versions.props)$(xmllint --xpath "//*[local-name()='VersionFeature']/text()" eng/Versions.props)
-  local _runtimever=$(xmllint --xpath "//*[local-name()='MicrosoftNETCoreAppRuntimewinx64PackageVersion']/text()" eng/Versions.props)
-
-  echo "${_runtimever}.sdk${_sdkver}"
-}
-
-build() {
-  export COMPlus_LTTng=0
-  export VERBOSE=1
-  export OPENSSL_ENABLE_SHA1_SIGNATURES=1
-
-  CFLAGS=$(echo $CFLAGS  | sed -e 's/-fstack-clash-protection//' )
-  CXXFLAGS=$(echo $CXXFLAGS  | sed -e 's/-fstack-clash-protection//' )
-  export EXTRA_CFLAGS="$CFLAGS"
-  export EXTRA_CXXFLAGS="$CXXFLAGS"
-  export EXTRA_LDFLAGS="$LDFLAGS"
-  unset CFLAGS
-  unset CXXFLAGS
-  unset LDFLAGS
-
-  cd dotnet-installer
-
-  ./build.sh \
-    /p:ArcadeBuildTarball=true \
-    /p:TarballDir="${srcdir}"/sources
-
-  cd ../sources
-
-  pushd src/runtime
-  sed -i -E 's|( /p:BuildDebPackage=false)|\1 /p:EnablePackageValidation=false|' eng/SourceBuild.props
-  sed -i -E 's|( /p:BuildDebPackage=false)|\1 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=TRUE|' eng/SourceBuild.props
-  # https://github.com/dotnet/runtime/issues/79196
-  patch -Np1 -i "${srcdir}"/31e4f404c218eae7ba999c4df5346d30f971451c.patch
-  popd
-
-  if [[ $_bootstrap ]]; then
-    ./prep.sh --bootstrap
-  else
-    cp -r /usr/share/dotnet .dotnet
-    ln -sf /usr/share/dotnet/source-built-artifacts/Private.SourceBuilt.Artifacts.*.tar.gz packages/archive/
-  fi
-  ./build.sh \
-    -- \
-    /v:n \
-    /p:ContinueOnPrebuiltBaselineError=true \
-    /p:LogVerbosity=n \
-    /p:MinimalConsoleLogOutput=false \
-    /p:PrebuiltPackagesPath="${srcdir}"/sources/packages \
-    /p:SkipPortableRuntimeBuild=true
-}
+pkgname=('dotnet-host' 'dotnet-runtime')
+pkgver=2.0.0
+pkgrel=2
+arch=('x86_64')
+url='https://www.microsoft.com/net/core'
+license=('MIT')
+depends=('gcc-libs' 'glibc')
+options=('staticlibs')
+source=("https://download.microsoft.com/download/5/F/0/5F0362BD-7D0A-4A9D-9BF9-022C6B15B04D/dotnet-runtime-${pkgver}-linux-x64.tar.gz")
+sha256sums=('69ecad24bce4f2132e0db616b49e2c35487d13e3c379dabc3ec860662467b714')
 
 package_dotnet-host() {
   pkgdesc='A generic driver for the .NET Core Command Line Interface'
-  depends=(
-    gcc-libs
-    glibc
-  )
-  optdepends=('bash-completion: Bash completion support')
 
-  install -dm 755 "${pkgdir}"/{etc/profile.d,usr/{bin,lib,share/{dotnet,licenses/dotnet-host}}}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner dotnet host
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/licenses/dotnet-host/ --no-same-owner LICENSE.txt ThirdPartyNotices.txt
-  ln -s /usr/share/dotnet/dotnet "${pkgdir}"/usr/bin/dotnet
-  ln -s /usr/share/dotnet/host/fxr/${pkgver%.sdk*}/libhostfxr.so "${pkgdir}"/usr/lib/libhostfxr.so
-  install -Dm 644 sources/src/sdk/scripts/register-completions.bash "${pkgdir}"/usr/share/bash-completion/completions/dotnet
-  install -Dm 644 sources/src/sdk/scripts/register-completions.zsh "${pkgdir}"/usr/share/zsh/site-functions/_dotnet
-  install -Dm 644 dotnet.sh -t "${pkgdir}"/etc/profile.d/
+  install -dm 755 "${pkgdir}"/{opt/dotnet,usr/bin,usr/share/licenses/dotnet-host}
+
+  cp -dr --no-preserve='ownership' dotnet host "${pkgdir}"/opt/dotnet/
+  install -m 644 *.txt -t "${pkgdir}"/usr/share/licenses/dotnet-host/
+  ln -s /opt/dotnet/dotnet "${pkgdir}"/usr/bin/
 }
 
 package_dotnet-runtime() {
   pkgdesc='The .NET Core runtime'
-  depends=(
-    dotnet-host
-    gcc-libs
-    glibc
-    icu
-    krb5
-    libunwind
-    zlib
-    openssl
-  )
-  optdepends=('lttng-ust2.12: CoreCLR tracing')
-  provides=(dotnet-runtime-7.0)
-  conflicts=(dotnet-runtime-7.0)
+  depends+=('dotnet-host' 'icu' 'krb5' 'libunwind'  'lldb' 'lttng-ust' 'openssl-1.0' 'zlib'
+            'libcurl.so' 'libuuid.so')
+  provides=('dotnet-runtime-2.0')
+  conflicts=('dotnet-runtime-2.0')
 
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.NETCore.App
+  install -dm 755 "${pkgdir}"/{opt/dotnet,usr/share/licenses}
+
+  cp -dr --no-preserve='ownership' shared "${pkgdir}"/opt/dotnet/
   ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-runtime
 }
 
-package_aspnet-runtime() {
-  pkgdesc='The ASP.NET Core runtime'
-  depends=(dotnet-runtime)
-  provides=(aspnet-runtime-7.0)
-  conflicts=(aspnet-runtime-7.0)
-
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.AspNetCore.App
-  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/aspnet-runtime
-}
-
-package_dotnet-sdk() {
-  pkgdesc='The .NET Core SDK'
-  depends=(
-    dotnet-runtime
-    dotnet-targeting-pack
-    glibc
-    gcc-libs
-    netstandard-targeting-pack
-  )
-  optdepends=('aspnet-targeting-pack: Build ASP.NET Core applications')
-  provides=(dotnet-sdk-7.0)
-  conflicts=(dotnet-sdk-7.0)
-
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner sdk sdk-manifests templates
-  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-sdk
-}
-
-package_netstandard-targeting-pack() {
-  pkgdesc='The .NET Standard targeting pack'
-  provides=(netstandard-targeting-pack-2.1)
-  conflicts=(netstandard-targeting-pack-2.1)
-
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/NETStandard.Library.Ref
-  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/netstandard-targeting-pack
-}
-
-package_dotnet-targeting-pack() {
-  pkgdesc='The .NET Core targeting pack'
-  depends=(netstandard-targeting-pack)
-  provides=(dotnet-targeting-pack-7.0)
-  conflicts=(dotnet-targeting-pack-7.0)
-
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.NETCore.App.{Host.arch-x64,Ref}
-  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-targeting-pack
-}
-
-package_aspnet-targeting-pack() {
-  pkgdesc='The ASP.NET Core targeting pack'
-  depends=(dotnet-targeting-pack)
-  provides=(aspnet-targeting-pack-7.0)
-  conflicts=(aspnet-targeting-pack-7.0)
-
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf sources/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.AspNetCore.App.Ref
-  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/aspnet-targeting-pack
-}
-
-package_dotnet-source-built-artifacts() {
-  pkgdesc='Internal package for building the .NET Core SDK'
-
-  install -Dm 644 sources/artifacts/x64/Release/Private.SourceBuilt.Artifacts.*.tar.gz -t "${pkgdir}"/usr/share/dotnet/source-built-artifacts/
-}
-
-# vim: ts=2 sw=2 et:
+# vim:set ts=2 sw=2 et:
