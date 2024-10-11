@@ -2,12 +2,17 @@
 team: world
 pkgbase:
   name: dotnet-core
-  version: 2.0.0-2
+  version: 7.0.0.sdk100-1
   arch:
     - x86_64
   pkgname:
     - dotnet-host
     - dotnet-runtime
+    - aspnet-runtime
+    - dotnet-sdk
+    - netstandard-targeting-pack
+    - dotnet-targeting-pack
+    - aspnet-targeting-pack
 actions:
   addRepo: world-gremlins
   removeRepo: null
@@ -30,10 +35,15 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.0.0-2
+    version: 7.0.0.sdk100-1
     packages:
-      - dotnet-host-2.0.0-2-x86_64.pkg.tar.zst
-      - dotnet-runtime-2.0.0-2-x86_64.pkg.tar.zst
+      - dotnet-host-7.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-7.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-7.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-7.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - netstandard-targeting-pack-7.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-7.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-7.0.0.sdk100-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
