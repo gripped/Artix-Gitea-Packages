@@ -25,7 +25,6 @@ makedepends=(
   clang
   cmake
   dotnet-sdk
-  dotnet-source-built-artifacts
   git
   icu
   krb5
@@ -56,7 +55,7 @@ prepare() {
   git remote set-url origin https://github.com/dotnet/dotnet.git
 
   local _bootstrapver=$(xmllint --xpath "//*[local-name()='PrivateSourceBuiltArtifactsPackageVersion']/text()" src/installer/eng/Versions.props)
-  local _previousver=$(pacman -Q dotnet-source-built-artifacts | sed -r 's/.*([0-9]+\.[0-9]+)\.[0-9]+\.sdk([0-9]+)-.*/\1.\2/')
+  local _previousver=0
 
   if [[ $_bootstrapver == $_previousver ]]; then
     cp -r /usr/share/dotnet .dotnet
