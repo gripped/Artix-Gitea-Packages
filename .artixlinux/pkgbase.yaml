@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: picom
-  version: 12.1-3
+  version: 12.2-1
   arch:
     - x86_64
   pkgname:
     - picom
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.1-3
+    version: 12.2-1
     packages:
-      - picom-12.1-3-x86_64.pkg.tar.zst
+      - picom-12.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
