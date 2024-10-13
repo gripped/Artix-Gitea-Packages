@@ -3,7 +3,7 @@
 pkgname=xdg-desktop-portal-kde
 pkgver=6.2.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A backend implementation for xdg-desktop-portal using Qt/KF5'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
