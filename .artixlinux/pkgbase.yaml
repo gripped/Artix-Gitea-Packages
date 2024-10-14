@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xmms2
-  version: 0.9.4-1
+  version: 0.9.4-2
   arch:
     - x86_64
   pkgname:
     - xmms2
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.9.3-6
+    version: 0.9.4-2
     packages:
-      - xmms2-0.9.3-6-x86_64.pkg.tar.zst
+      - xmms2-0.9.4-2-x86_64.pkg.tar.zst
   world:
     version: 0.9.4-1
     packages:
