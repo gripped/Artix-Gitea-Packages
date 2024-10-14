@@ -28,7 +28,6 @@ package() {
     # compress each module individually
     find "$pkgdir" -name '*.ko' -exec zstd --rm -19 {} +
 
-    install -Dm644 /usr/share/licenses/nvidia-open-dkms/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 
 # vim:set sw=2 et:
