@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: materialx
-  version: 1.38.10-4
+  version: 1.38.10-5
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.38.10-4
+    version: 1.38.10-5
     packages:
-      - materialx-1.38.10-4-x86_64.pkg.tar.zst
+      - materialx-1.38.10-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
