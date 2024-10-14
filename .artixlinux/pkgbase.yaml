@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dracut
-  version: 104-1
+  version: 105-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 104-1
+    version: 105-1
     packages:
-      - dracut-104-1-x86_64.pkg.tar.zst
+      - dracut-105-1-x86_64.pkg.tar.zst
   world:
     version: 103-2
     packages:
