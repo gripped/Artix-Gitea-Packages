@@ -5,7 +5,7 @@
 # Contributor: mezcal
 
 pkgname=rspamd
-pkgver=3.9.1
+pkgver=3.10.0
 pkgrel=1
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
@@ -125,7 +125,7 @@ backup=(
 )
 install=rspamd.install
 options=(!lto)
-_tag=82f43560fe9d76f787391cb04c7711a0c3a1729a
+_tag=eab554ec1a27f3047f54ab59b242c051ec0df706
 source=(
   git+https://github.com/rspamd/rspamd.git#tag=${_tag}
   rspamd.tmpfiles
@@ -133,7 +133,7 @@ source=(
   rspamd.logrotate
   rspamd-hyperscan.hook
 )
-b2sums=('0d3fe2f6b0a303f8255a61c80c7d5105316dd726fefcfd6ab038d441ee52a2d307296c7b1f01e22c37547ac27a51c8b5df65ed953cbe1a52f9a166fad2af6632'
+b2sums=('cba5519a25c0ecfceab6f691b3e17fbad0c76f25b81f24f4cae388ae0cf83b83ba0a0967c6fca9d3ded22db72f537506d9240ca576acd32d99f1c1f0738efd54'
         '6b1b4220444d382d01fe981acf51580c397363a873507fdb508fd5109adae2609c03e629ecdd6e48c13f068d0c3530be4d0fb55b3084c33522619dd29f70a40c'
         '5b4db27d87158609519bb0e59700ac627d447e4627b70600a70638f81a39361ad416c4784dafc392e9f9bc7b69211587ae64cbab7bec98668e75df5c4fba46ea'
         '88c05d2ca66f3361e519226e25bf812d37916631cfca856a8129de4ff3ae48446a25b741d06b080a9aba30a1e77de83456a8f78d27e5ea9653c5a78f68d6a608'
