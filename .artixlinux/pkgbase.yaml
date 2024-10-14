@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: noto-fonts-emoji
-  version: 1:2.042-1
+  version: 1:2.047-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.042-1
+    version: 1:2.047-1
     packages:
-      - noto-fonts-emoji-1:2.042-1-any.pkg.tar.zst
+      - noto-fonts-emoji-1:2.047-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
