@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: openimageio
-  version: 2.5.15.0-2
+  version: 2.5.16.0-1
   arch:
     - x86_64
   pkgname:
     - openimageio
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.5.16.0-1
+    packages:
+      - openimageio-2.5.16.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.5.15.0-2
     packages:
