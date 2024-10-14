@@ -1,7 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=openshadinglanguage
-pkgver=1.13.10.0
+pkgver=1.13.11.0
 pkgrel=2
 pkgdesc="Advanced shading language for production GI renderers"
 arch=('x86_64')
@@ -12,7 +12,7 @@ depends=('boost-libs' 'openimageio' 'imath' 'freetype2' 'libpng'
 makedepends=('boost' 'cmake' 'python' 'llvm' 'ninja')
 optdepends=('python: the Python module')
 source=($pkgname-$pkgver.tar.gz::https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/archive/refs/tags/v${pkgver}.tar.gz)
-sha512sums=('f005b8797a7bb882bcdf4fd644551d42c150956baa8dd9deff39ff1121321f33b8e144a9a96ac940ae6bf60985c6131457131baa87c73c2b498298aaa77c3c7d')
+sha512sums=('1ab1f3fd7b0a4e40afd2775ccc74229ca257e9c32e9d4ddf054daa456c17a0e65842cde6f8ffa469bc0fb2dc71f60a993545d446e9615b5ca5e90f7537785571')
 
 build() {
   cd OpenShadingLanguage-$pkgver
@@ -34,6 +34,9 @@ package() {
 
   # Fixup an upstream fucky (See #1)
   rm "$pkgdir"/usr/build-scripts/serialize-bc.py
+  rmdir "$pkgdir"/usr/build-scripts
+  rm "$pkgdir"/usr/cmake/llvm_macros.cmake
+  rmdir "$pkgdir"/usr/cmake
 
   install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
 }
