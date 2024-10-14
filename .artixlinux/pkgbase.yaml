@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: poppler
-  version: 24.09.0-2
+  version: 24.09.0-3
   arch:
     - x86_64
   pkgname:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.09.0-2
+    version: 24.09.0-3
     packages:
-      - poppler-24.09.0-2-x86_64.pkg.tar.zst
-      - poppler-glib-24.09.0-2-x86_64.pkg.tar.zst
-      - poppler-qt5-24.09.0-2-x86_64.pkg.tar.zst
-      - poppler-qt6-24.09.0-2-x86_64.pkg.tar.zst
+      - poppler-24.09.0-3-x86_64.pkg.tar.zst
+      - poppler-glib-24.09.0-3-x86_64.pkg.tar.zst
+      - poppler-qt5-24.09.0-3-x86_64.pkg.tar.zst
+      - poppler-qt6-24.09.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
