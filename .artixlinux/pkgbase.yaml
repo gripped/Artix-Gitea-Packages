@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mgba
-  version: 0.10.3-2
+  version: 0.10.3-3
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - mgba-sdl
     - mgba-qt
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,8 +45,11 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.10.3-3
+    packages:
+      - libmgba-0.10.3-3-x86_64.pkg.tar.zst
+      - mgba-sdl-0.10.3-3-x86_64.pkg.tar.zst
+      - mgba-qt-0.10.3-3-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []

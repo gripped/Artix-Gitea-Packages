@@ -1,11 +1,12 @@
-# Maintainer:  Jonathan Steel <jsteel at archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:  Jonathan Steel <jsteel at archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Duck Hunt <vaporeon@tfwno.gf>
 
 pkgbase=mgba
 pkgname=('libmgba' 'mgba-sdl' 'mgba-qt')
 pkgver=0.10.3
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='http://mgba.io'
 license=('custom:MPL2')
