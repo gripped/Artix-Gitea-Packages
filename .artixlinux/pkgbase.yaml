@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-beetle-psx
-  version: 2729-1
+  version: 2733-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libretro-beetle-psx-hw
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2729-1
+    version: 2733-1
     packages:
-      - libretro-beetle-psx-2729-1-x86_64.pkg.tar.zst
-      - libretro-beetle-psx-hw-2729-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-2733-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-hw-2733-1-x86_64.pkg.tar.zst
 team: galaxy
