@@ -5,7 +5,7 @@
 
 pkgname=fceux
 pkgver=2.6.6
-pkgrel=2
+pkgrel=3
 pkgdesc='Fast and ultra-compatible NES/Famicom emulator'
 arch=(x86_64)
 url='https://github.com/TASEmulators/fceux'
@@ -13,14 +13,17 @@ license=(GPL)
 depends=(gd lua minizip qt5-base sdl2)
 makedepends=(cmake git glu mesa-libgl ninja setconf scons)
 optdepends=('ffmpeg: for recording')
-source=("$pkgname-$pkgver::git+$url#commit=34eb7601c415b81901fd02afbd5cfdc84b5047ac") # tag: v2.6.6
-b2sums=('SKIP')
+source=("git+$url#commit=34eb7601c415b81901fd02afbd5cfdc84b5047ac" # tag: v2.6.6
+         x265-4.0.patch)
+b2sums=('df1b8706f3639c52ec5905a542052ee0eb7c5a727c9ee27af7c9f53b2b9f97b0445c6c6ff9f9504cef51a90cddc97b08b7f92ee7882de1bfb2baf879eac613c1'
+        'cba322a2d9aa02c1440dad5f91dfff219778b79f1373716f4f32b55a98198242ff191e43239d6bff2d9bcc52161b6e7b08356b11ee02c1c599578dc18ec7f8b2')
 
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   sed -i 's/-interim git//g' src/version.h
   setconf scripts/genGitHdr.sh GIT_URL "'""${source:4:34}""'"
   setconf scripts/genGitHdr.sh GIT_REV "${source#*=}"
+  patch -p1 -i ../x265-4.0.patch # Fix build with x265 4.0
 }
 
 build() {
@@ -30,14 +33,14 @@ build() {
     -D CMAKE_CXX_FLAGS="$CXXFLAGS -fPIC -w" \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -G Ninja \
-    -S $pkgname-$pkgver
+    -S $pkgname
   ninja -C build
 }
 
 package() {
   DESTDIR="$pkgdir" ninja -C build install
   install -d "$pkgdir/usr/share/doc/$pkgname"
-  cp -r $pkgname-$pkgver/documentation/* "$pkgdir/usr/share/doc/$pkgname/"
-  install -Dm644 $pkgname-$pkgver/changelog.txt \
+  cp -r $pkgname/documentation/* "$pkgdir/usr/share/doc/$pkgname/"
+  install -Dm644 $pkgname/changelog.txt \
     "$pkgdir/usr/share/doc/$pkgname/changelog.txt"
 }
