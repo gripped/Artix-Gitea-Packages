@@ -8,8 +8,8 @@
 # Contributor: Xilon <xilon@gmail.com>
 
 pkgname=xmms2
-pkgver=0.9.3
-pkgrel=6
+pkgver=0.9.4
+pkgrel=1
 pkgdesc='X-platform Music Multiplexing System 2'
 arch=(x86_64)
 url='https://github.com/xmms2/wiki/wiki'
@@ -51,17 +51,10 @@ makedepends=("${_depends[@]%%:*}" git libpulse perl-pod-parser waf)
 optdepends=("${_depends[@]}" 'pulseaudio: PulseAudio output')
 source=(https://github.com/xmms2/xmms2-devel/releases/download/$pkgver/$pkgname-$pkgver.tar.xz
         tmpfiles.conf
-        sysusers.conf
-        ffmpeg-7.patch)
-sha256sums=('fe24798db2e6cd8d8eb131ee9800d211525ffebe561c1c5c057710cd7b90a81b'
+        sysusers.conf)
+sha256sums=('100a35d2467006fe1828988043a9202e804ed8b0e94326addf32bb27645cb42a'
             '13e3e2720e21d048d776156f8ab17c40d05b70437823da00b3c4cc2e7f7ecf7f'
-            'a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a'
-            '86e6b2d70d03ddcfaf57a07aab30e189c35c23d67d0013959b9004351706e2af')
-
-prepare() {
-  cd xmms2-$pkgver
-  patch -p1 -i ../ffmpeg-7.patch
-}
+            'a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a')
 
 build() {
   cd xmms2-$pkgver

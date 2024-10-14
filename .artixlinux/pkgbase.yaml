@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xmms2
-  version: 0.9.3-6
+  version: 0.9.4-1
   arch:
     - x86_64
   pkgname:
     - xmms2
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     packages:
       - xmms2-0.9.3-6-x86_64.pkg.tar.zst
   world:
-    version: 0.9.3-5
+    version: 0.9.4-1
     packages:
-      - xmms2-0.9.3-5-x86_64.pkg.tar.zst
+      - xmms2-0.9.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
