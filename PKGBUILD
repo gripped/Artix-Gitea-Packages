@@ -3,8 +3,8 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt-lts
-pkgver=6.6.48.rt40.artix1
-archpkgver=6.6.48.rt40.arch1
+pkgver=6.6.52.rt43.artix1
+archpkgver=6.6.52.rt43.arch1
 pkgrel=1
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
@@ -36,24 +36,24 @@ _srcname=linux-${_upstream_ver}
 _srctag=v${_rt_ver}-${archpkgver##*.}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${archpkgver%%.*}.x/${_srcname}.tar.{xz,sign}
-  https://cdn.kernel.org/pub/linux/kernel/projects/rt/${_upstream_ver%.*}/patch-${_rt_ver}.patch.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/projects/rt/${_upstream_ver%.*}/older/patch-${_rt_ver}.patch.{xz,sign}
   $url/-/releases/${_srctag}/downloads/$pkgbase-${_srctag}.patch{,.sig}
   config
  )
-sha512sums=('4ed450e554218d971e64df0d934cf6e90740f0953376faf2ce20ea09857ff23c7ae144164d2bd10e93b67c22601fd2b9d64e27162235c6cc4cce932dd60d1cb9'
+sha512sums=('3fb7b4e6e19e87c4012037ea32dc4e28a30b75fa4260530edb7686c39b0c6fb6c4e35550a97c0e40c604513a0ba5f26490a6a74da21de08226d54fda73d316a0'
             'SKIP'
-            'de207b19b5dd9f8cc16c777d2b524ae72cd1902a0d091274ced2b81448ba2148e01efeab3a874e029879d45ca88ecd9d1ac820d9e4e3085c86ed526cea217623'
+            '7c81d15e6e602d6bb43dd4c00603b5bb87a090171d401608a10695b8cc418ca75fe7a20fa6c9821176aa615c23b42839ddfd1bfe9aa461c2d557df06b2c3281e'
             'SKIP'
-            '4b746a4d4a8a10e2fcc8f5eeace55481f9a732d0fcbcdd789d0ca803f7d88412b08de3e6f4548e174d30295c1abb77970deeac5020be8adf52c9ef49bc1454cc'
+            'c1eadc2c4faf1c56577a2b5462413fbe4d1d7819e4433ce22ece4af0b7c37479cbd79a36f4c2495758e7c5654888ed7c0c0a46612ccaf274858946f9fcd5aaa6'
             'SKIP'
-            'd4e8b57df73654867bb23d3235a0a31221a1560fb02f32807c4f904d5bce18b68f2888d2df393c532b8abebe8586426ae6c54761e09c5ac25563e4482bda2614')
-b2sums=('8c6435fbd16ae3fa8bc4703ddf6d57e8b12ea1fced14385a35e08750331de21e1709139517343fa71f018eb65658cde61c653c5b75d02add4599d6026040620a'
+            'dcfcf8427ac215ff890e908d0708fa2c441c9068208c44624b9a693f23c924d0ce370b24e162750cf26c04ae2d75d88d115d5cc2d0979e604ebf7dae56702616')
+b2sums=('f42461ea587b2027ce4e096dd7188d4d5bc8aa559eb037afbb2250493900988925d69e2882356739ac3b9d028f833a63578ed9087f7bd9ee44dc096b4608d352'
         'SKIP'
-        '0a4ff841c85db1b7e53520a00b22fe466a5cc51d52bb9baebd0a80d5aa4e69aa67d0214f03d8803e420663b431f417d990267db0b5328a2d7083f929b0dcb7d7'
+        'f6ab53ea125f668e190e45e9bb04f8bb4e9d47bd13b415fb4f5217398b26b3538ab5b1387187a43e83378a6c4ce221b1b126b585b2daebb14ca22674254f9853'
         'SKIP'
-        'f0790a59860e4da568a45e7a2339ac2809b0bcc5bf1d0f52b8ce4d5194e069e57f2edb093b942dc8136aa3db60ea3ca7034d7ca747bf9f2395f3adccbef4a532'
+        'a7daf2c72f2ac35fe43ef59019f5c13d3f54b8a87d8aa7b47a58013c2ed947f3d6b415578dfa916c532aec6fff0fd6da4a01bc766989a506729a58a8ce3ce53d'
         'SKIP'
-        '3b3eb47c60a6f8c64528efb2209958ed8f6b25f587826c9c95749290becec15b2426d8901a9f7188ec577bd8f1c87d8197a3fcd729ce92bb3dfbb6172a318adc')
+        'f70777cec4b60a69dd5073f74b4065c9b4447f916855102ec81ab1f3b60c820a2ee4ce4656d3b672ae55072f952e54da1c1e2f4f5f386d67d228eb12548f99ec')
 validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
   D5653EA39C8675DA4BD5971C13B55DD07C53B851  # Clark Williams (Kernel Correspondence) <clrkwllms@kernel.org>

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt-lts
-  version: 6.6.48.rt40.artix1-1
+  version: 6.6.52.rt43.artix1-1
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - linux-rt-lts-headers
     - linux-rt-lts-docs
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,9 +54,9 @@ repos:
       - linux-rt-lts-headers-6.6.48.rt40.artix1-1-x86_64.pkg.tar.zst
       - linux-rt-lts-docs-6.6.48.rt40.artix1-1-x86_64.pkg.tar.zst
   galaxy:
-    version: 6.6.23.28.realtime1-7
+    version: 6.6.52.rt43.artix1-1
     packages:
-      - linux-rt-lts-6.6.23.28.realtime1-7-x86_64.pkg.tar.zst
-      - linux-rt-lts-headers-6.6.23.28.realtime1-7-x86_64.pkg.tar.zst
-      - linux-rt-lts-docs-6.6.23.28.realtime1-7-x86_64.pkg.tar.zst
+      - linux-rt-lts-6.6.52.rt43.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.6.52.rt43.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.6.52.rt43.artix1-1-x86_64.pkg.tar.zst
 team: galaxy
