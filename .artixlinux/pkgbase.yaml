@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: llvm-julia
-  version: 15.0.7.10-2
+  version: 16.0.6.3-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 15.0.7.10-2
+    version: 16.0.6.3-1
     packages:
-      - llvm-julia-15.0.7.10-2-x86_64.pkg.tar.zst
-      - llvm-julia-libs-15.0.7.10-2-x86_64.pkg.tar.zst
+      - llvm-julia-16.0.6.3-1-x86_64.pkg.tar.zst
+      - llvm-julia-libs-16.0.6.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
