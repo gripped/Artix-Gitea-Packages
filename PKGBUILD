@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=xpra
-pkgver=6.0.2
+pkgver=6.1.3
 pkgrel=1
 pkgdesc="multi-platform screen and application forwarding system screen for X11"
 arch=('x86_64')
@@ -37,11 +37,11 @@ backup=('etc/xpra/xpra.conf' 'etc/xpra/xorg.conf'
 source=($pkgname-$pkgver.tar.xz::$url/src/$pkgname-$pkgver.tar.xz
         $pkgname-$pkgver.tar.xz.asc::$url/src/$pkgname-$pkgver.tar.xz.gpg)
 
-md5sums=('8de385953b03ad20bb6cb62754de5ec8'
+md5sums=('9b110981868e14d794535812c93cfebe'
          'SKIP')
-sha1sums=('a97368e6fafb6744cc7db179c7359c7ec7c3a293'
+sha1sums=('d6997b219b4579f3c513d48276f7be8d1875680d'
           'SKIP')
-sha256sums=('c743f63c37614690704982989da9bcf4f60d45cc662b0e844dc67aef53944325'
+sha256sums=('d0f76421af910c28dc88ed500e50c79ecf8f26ffb4eebde45037de0b3ea419f5'
             'SKIP')
 validpgpkeys=('B4993B57323148E37977E5D873254CAD17978FAF') # Xpra <xpra@xpra.org>
 
