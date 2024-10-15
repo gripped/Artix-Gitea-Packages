@@ -9,7 +9,7 @@ pkgname=('usd' 'usd-extras')
 _pkgname='OpenUSD'
 pkgbase=usd
 pkgver=24.08
-pkgrel=3
+pkgrel=5
 arch=(x86_64)
 url='https://openusd.org'
 pkgdesc='3D VFX pipeline interchange file format'
@@ -184,9 +184,9 @@ package_usd() {
   sed -i 's/_IMPORT_PREFIX ""/_IMPORT_PREFIX "\/usr"/' \
         "$pkgdir/usr/lib/cmake/pxr/pxrTargets.cmake"
 
-  install -Dm644 "$srcdir/$_pkgname/NOTICE.txt" "$pkgdir/usr/share/doc/usd"
-  install -Dm644 "$srcdir/$_pkgname/README.md" "$pkgdir/usr/share/doc/usd"
-  install -Dm644 "$srcdir/$_pkgname/LICENSE.txt" "$pkgdir/usr/share/doc/licenses/usd"
+  install -Dm644 -t "$pkgdir/usr/share/doc/usd" "$srcdir/$_pkgname/NOTICE.txt"
+  install -Dm644 -t "$pkgdir/usr/share/doc/usd" "$srcdir/$_pkgname/README.md"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/usd" "$srcdir/$_pkgname/LICENSE.txt"
 }
 
 package_usd-extras() {
