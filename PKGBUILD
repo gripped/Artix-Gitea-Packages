@@ -5,7 +5,7 @@
 pkgname=qt6-declarative
 _pkgver=6.8.0
 pkgver=6.8.0
-pkgrel=1
+pkgrel=2.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
