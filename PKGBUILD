@@ -3,7 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt6-declarative
-pkgver=6.7.3
+_pkgver=6.8.0
+pkgver=6.8.0
 pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
@@ -18,17 +19,16 @@ makedepends=(cmake
              python
              qt6-languageserver
              qt6-shadertools)
-optdepends=('qt6-languageserver: for qmlls')
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
-source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('229444a49d233ddbe3295574b549e2f765e4f414d618423c51c34d3dd48f56a9')
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver)
+sha256sums=('89b497818a0e36bf08f5a42324dcde1b441b5a0ee1c9b6cfa38fb281479de3ed')
 
 build() {
-  export CXXFLAGS+=" -ffat-lto-objects"
   cmake -B build -S $_pkgfn -G Ninja \
     -DINSTALL_PUBLICBINDIR=usr/bin \
-    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
+    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
+    -DCMAKE_CXX_FLAGS="$CXXFLAGS -ffat-lto-objects"
   cmake --build build
 }
 
