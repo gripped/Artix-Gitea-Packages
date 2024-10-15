@@ -4,24 +4,19 @@
 
 pkgbase=lazarus
 pkgname=('lazarus' 'lazarus-gtk2' 'lazarus-gtk3' 'lazarus-qt5' 'lazarus-qt6')
-_lazarus_tag=3_4
-pkgver=3.4
-pkgrel=1.2
+_lazarus_tag=3_6
+pkgver=3.6
+pkgrel=1
 url='http://www.lazarus.freepascal.org/'
 license=('GPL2' 'MPL' 'custom:modifiedLGPL')
 arch=('x86_64')
 makedepends=('fpc' 'fpc-src' 'gtk2' 'gtk3' 'qt5pas' 'qt6pas' 'rsync')
 options=(!makeflags libtool staticlibs !strip)
-source=("https://gitlab.com/freepascal.org/lazarus/lazarus/-/archive/lazarus_${_lazarus_tag}/lazarus-lazarus_${_lazarus_tag}.tar.bz2"
-        "paste-mimetype-check-fix.patch")
-sha512sums=('4cca953741f024fa6ca9a34491940937cc617ae8914606d300a4426c8dadbe9e71b9742a66f6aad9ae3176a4e6caf34a58ef594a179d573d7976e5894fa502d7'
-            'cce9883c8e5a4f3d3d4f3f48353870021ac0651f87bba1a8a718bfbf32df5d9b763c96d9545de96030d796e2a793eaba678e264db33f41d436053d78f4f0684f')
+source=("https://gitlab.com/freepascal.org/lazarus/lazarus/-/archive/lazarus_${_lazarus_tag}/lazarus-lazarus_${_lazarus_tag}.tar.bz2")
+sha512sums=('07caf0b16214f18be9e66c2caa7cc904c17acd55641757451d7eca3b494f6e4c8e2f2c784866a8a609625a2b838be6101e368159b636bd2ee4bd6b799839c2bf')
 
 build() {
   cd "lazarus-lazarus_${_lazarus_tag}"
-
-  # artist :
-  patch -Np1 -i ../paste-mimetype-check-fix.patch
 
   # build GTK2 IDE
   make FPC=/usr/bin/fpc OPT='-gl -gw -Crtoi' LCL_PLATFORM=gtk2 clean bigide
