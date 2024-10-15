@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: telegram-desktop
-  version: 5.5.5-3
+  version: 5.6.2-1
   arch:
     - x86_64
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.5.5-3
+    version: 5.6.2-1
     packages:
-      - telegram-desktop-5.5.5-3-x86_64.pkg.tar.zst
+      - telegram-desktop-5.6.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
