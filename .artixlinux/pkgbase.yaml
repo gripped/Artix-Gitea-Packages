@@ -9,11 +9,11 @@ pkgbase:
     - qt6-multimedia-ffmpeg
     - qt6-multimedia-gstreamer
 actions:
-  addRepo: world
-  removeRepo: world-goblins
+  addRepo: null
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
