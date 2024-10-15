@@ -9,7 +9,7 @@ pkgname=(
   libnautilus-extension-docs
 )
 pkgver=47.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
 arch=(x86_64)
@@ -39,6 +39,7 @@ depends=(
   pango
   tinysparql
   wayland
+  xdg-user-dirs-gtk
 )
 makedepends=(
   appstream-glib
@@ -53,7 +54,7 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git?signed#tag=${pkgver/[a-z]/.&}"
   0001-Disable-tracker-test.patch
 )
-b2sums=('SKIP'
+b2sums=('01773ab8f39b700977a3798a4fd1de07b87d966083d6cfea6e9576065bcec958b17832f46ada17b84122aaba5b86871b11d51f17f0b89f6a1ec3ed301497528f'
         '1c81c3b736abdda0d59d5b798cd83dd5a794e64e7e052f65e1c1e27b2b1b52afbee06907fd9645950fb0acfb17c1f64c7a9e42ba59368720235e2fbd8df32fb5')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
@@ -65,6 +66,10 @@ prepare() {
 
   # Tracker test is broken in our build containers
   git apply -3 ../0001-Disable-tracker-test.patch
+
+  # Nautilus-tag-manager: Drop tinysparql 2to3 migration
+  # https://gitlab.gnome.org/GNOME/nautilus/-/commit/215eb277dbbf81ddde31295691f864e83ea8ea81
+  git cherry-pick --no-commit 215eb277dbbf81ddde31295691f864e83ea8ea81
 }
 
 build() {
