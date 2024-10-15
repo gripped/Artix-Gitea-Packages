@@ -5,9 +5,9 @@ pkgbase=pyside6
 pkgname=(pyside6
          pyside6-tools
          shiboken6)
-_qtver=6.7.2
+_qtver=6.8.0
 pkgver=${_qtver/-/}
-pkgrel=3
+pkgrel=4
 arch=(x86_64)
 url='https://www.qt.io'
 license=(LGPL)
@@ -43,12 +43,12 @@ makedepends=(clang
              qt6-websockets)
 source=(git+https://code.qt.io/pyside/pyside-setup#tag=v$pkgver
         fix-build.patch)
-sha256sums=('f2413b5bbcf80f2ed58722f4d4f3b1d2cbac5a6310908c4c55ba1b454fa60803'
+sha256sums=('64179fd95435d14504cf0b31247142b6c4f60df16f0e1b46f359ba813657b119'
             '77b83cb164ea87d826259864f6a81fb33199510e1948d6daaf5c8d5ab55735a7')
 
 prepare() {
   cd pyside-setup
-  git cherry-pick -n 556bc8d158b06546343ae2f51b05f555d47442c0 # Fix star imports (PYSIDE-2675)
+  git cherry-pick -n 2a2d01399ad837db17cae3c2d00446b88338a627 # Fix crashes (PYSIDE-2888)
   patch -p1 < ../fix-build.patch
 }
 
@@ -62,7 +62,7 @@ build() {
     -DFORCE_LIMITED_API=no \
     -DNO_QT_TOOLS=yes
   PYTHONPATH="$PWD"/build/sources \
-  cmake --build build -j1
+  cmake --build build
 }
 
 package_shiboken6() {
@@ -131,6 +131,8 @@ package_pyside6() {
 
 # Install pyi files
   install -Dm644 "$srcdir"/build/sources/pyside6/PySide6/*.pyi -t "$pkgdir"/usr/lib/python*/site-packages/PySide6
+# Install missing doc files
+  cp -r "$srcdir"/pyside-setup/sources/pyside6/PySide6/doc "$pkgdir"/usr/share/PySide6/
 }
 
 package_pyside6-tools() {
