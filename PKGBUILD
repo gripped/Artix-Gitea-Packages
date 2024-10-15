@@ -2,8 +2,9 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-languageserver
-pkgver=6.7.3
-pkgrel=1.1
+_pkgver=6.8.0
+pkgver=6.8.0
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL3 LGPL3 FDL custom)
@@ -16,12 +17,13 @@ makedepends=(cmake
              ninja)
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
-source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$pkgver)
-sha256sums=('d1af92272405814f3f26d35e48e52a27a39eb83c97f8e9b7abeff6bafe69151a')
+source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver)
+sha256sums=('bb191b12fe92cf9c2ba4f11adc96b89bf9592c39e1821684afc8ab96002884db')
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
-    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
+    -DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
+    -DCMAKE_CXX_FLAGS="$CXXFLAGS -ffat-lto-objects"
   cmake --build build
 }
 
