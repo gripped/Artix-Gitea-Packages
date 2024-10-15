@@ -6,7 +6,7 @@
 # Contributor: Iwan Timmer <irtimmer@gmail.com>
 
 pkgname=containerd
-pkgver=1.7.22
+pkgver=1.7.23
 pkgrel=1
 pkgdesc='An open and reliable container runtime'
 url='https://containerd.io/'
@@ -18,12 +18,8 @@ license=("Apache-2.0")
 source=("git+https://github.com/containerd/containerd.git#tag=v${pkgver}?signed")
 validpgpkeys=("8C7A111C21105794B0E8A27BF58C5D0A4405ACDB" # Derek McGowan
               "910C28608D33DDE689C03290997C5A3CD3167CB5") # Samuel Karp
-sha256sums=('70a887297d452f05bbd389eebe643812a91fbc67363944739ec04a94e1148b20')
+sha256sums=('ba5d74562996acdabf77fb9997e8e12edd1c58519e2baac7e524528ff0408a23')
 
-prepare() {
-  # fix paths in service
-  sed -i 's,/sbin,/usr/bin,;s,/usr/local,/usr,' $pkgname/containerd.service
-}
 
 build() {
   cd "${pkgname}" 
@@ -41,7 +37,6 @@ check() {
 package() {
   cd "${pkgname}" 
   make PREFIX=/usr DESTDIR="$pkgdir/" install
-  install -Dm644 containerd.service "$pkgdir"/usr/lib/systemd/system/containerd.service
   install -Dm644 man/*.8 -t "$pkgdir/usr/share/man/man8"
   install -Dm644 man/*.5 -t "$pkgdir/usr/share/man/man5"
   install -Dm644 contrib/autocomplete/ctr "$pkgdir"/usr/share/bash-completion/completions/ctr
