@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rocm-llvm
-  version: 6.2.2-1
+  version: 6.2.2-2
   arch:
     - x86_64
   pkgname:
@@ -27,11 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.2.2-1
+    version: 6.2.2-2
     packages:
-      - rocm-llvm-6.2.2-1-x86_64.pkg.tar.zst
-      - rocm-device-libs-6.2.2-1-x86_64.pkg.tar.zst
-      - comgr-6.2.2-1-x86_64.pkg.tar.zst
+      - rocm-llvm-6.2.2-2-x86_64.pkg.tar.zst
+      - rocm-device-libs-6.2.2-2-x86_64.pkg.tar.zst
+      - comgr-6.2.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

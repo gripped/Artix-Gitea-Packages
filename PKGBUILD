@@ -4,11 +4,11 @@
 pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-device-libs comgr)
 pkgver=6.2.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
-             'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2')
+             'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
 source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver")
 sha256sums=('ba31afb2b041b766e2c59ad03328363b549eefbe7f1e9b235a70181538165d3e')
 options=(staticlibs !lto)
@@ -82,6 +82,10 @@ package_rocm-llvm() {
 
     # Provide symlink to old LLVM location, pre ROCm 6.0.0
     ln -s /opt/rocm/lib/llvm "$pkgdir/opt/rocm/llvm"
+
+    # Fix rpath to avoid error when running amdclang and friends
+    # (error while loading shared libraries: libunwind.so.1: cannot open shared object file: No such file or directory)
+    patchelf --set-rpath '$ORIGIN' "$pkgdir/opt/rocm/lib/llvm/lib/libc++abi.so"
 
     # https://bugs.archlinux.org/task/28479
     install -d "$pkgdir/opt/rocm/lib/llvm/lib/bfd-plugins"
