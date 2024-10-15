@@ -24,7 +24,7 @@ makedepends=(cmake
              ninja
              python)
 options=(!lto) # https://github.com/llvm/llvm-project/issues/57740
-source=(git+https://github.com/JuliaLang/llvm-project#tag=julia-$_pkgver)
+source=(llvm-project-j::git+https://github.com/JuliaLang/llvm-project#tag=julia-$_pkgver)
 sha256sums=('6591971f0e4bcff0255d99676c55f9495f3c22c078ea982d10c5211bb53b41f5')
 
 # Utilizing LLVM_DISTRIBUTION_COMPONENTS to avoid
@@ -81,7 +81,7 @@ build() {
     -DLLVM_SHLIB_SYMBOL_VERSION=$_symver
   )
 
-  cmake -B build -S llvm-project/llvm \
+  cmake -B build -S llvm-project-j/llvm \
      "${cmake_args[@]}"
   pushd build
     local distribution_components=$(_get_distribution_components | paste -sd\;)
@@ -89,7 +89,7 @@ build() {
     cmake_args+=(-DLLVM_DISTRIBUTION_COMPONENTS="$distribution_components")
   popd
 
-  cmake -B build -S llvm-project/llvm \
+  cmake -B build -S llvm-project-j/llvm \
     "${cmake_args[@]}"
   cmake --build build
 }
@@ -104,7 +104,7 @@ package_llvm-julia() {
   mv -f "$pkgdir"/usr/lib/llvm-julia/lib/libLLVM-{16,${pkgver%.*}}jl.so .
   mv -f "$pkgdir"/usr/lib/llvm-julia/lib/LLVMgold.so "$srcdir/"
 
-  install -Dm644 llvm-project/llvm/LICENSE.TXT "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  install -Dm644 llvm-project-j/llvm/LICENSE.TXT "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
 
 package_llvm-julia-libs() {
@@ -120,5 +120,5 @@ package_llvm-julia-libs() {
   ln -s ../../libLLVM-16jl.so "$pkgdir/usr/lib/llvm-julia/lib/libLLVM-${pkgver}jl.so"
   cp -P LLVMgold.so "$pkgdir/usr/lib/llvm-julia/lib/"
 
-  install -Dm644 llvm-project/llvm/LICENSE.TXT "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  install -Dm644 llvm-project-j/llvm/LICENSE.TXT "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
