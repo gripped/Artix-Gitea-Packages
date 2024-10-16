@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kfilemetadata
-  version: 6.7.0-2
+  version: 6.7.0-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.7.0-2
+    version: 6.7.0-1
     packages:
-      - kfilemetadata-6.7.0-2-x86_64.pkg.tar.zst
+      - kfilemetadata-6.7.0-1-x86_64.pkg.tar.zst
   world:
     version: 6.6.0-2
     packages:
