@@ -1,0 +1,54 @@
+# Maintainer: artist for Artix Linux
+
+_orgname=ReGreet
+pkgname="greetd-${_orgname,,}"
+pkgver=0.1.1
+pkgrel=3
+pkgdesc='Clean and customizable greeter for greetd'
+url="https://github.com/rharish101/$_orgname"
+license=(GPL-3.0-or-later)
+arch=(x86_64)
+depends=(wayland-compositor
+         greetd
+         cairo
+         gcc-libs
+         gdk-pixbuf2
+         glib2
+         glibc
+         gtk4
+         pango)
+makedepends=(cargo)
+provides=(greetd-greeter)
+backup=("etc/greetd/${_orgname,,}.toml")
+install=$pkgname.install
+source=("$url/archive/$pkgver/${pkgname}-${pkgver}.tar.gz"
+        "${_orgname,,}.toml")
+sha256sums=('a658c91cdf242dfea814f0bfd0c4d877bd39e3af498d36e5024061e3d07ea76b'
+            '7780028e5774347793e8073c86bde7f38b70a9736dc7c5b0566d93aa7f0c252b')
+
+prepare() {
+  cd "${_orgname}-${pkgver}"
+  sed -i -e 's|systemctl|loginctl|' regreet.sample.toml
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}
+
+build() {
+  export REBOOT_CMD="loginctl reboot"
+  export POWEROFF_CMD="loginctl shutdown"
+  cd "${_orgname}-${pkgver}"
+  cargo build --frozen --release --all-features
+}
+
+check() {
+  cd "${_orgname}-${pkgver}"
+  cargo test --frozen --all-features
+}
+
+package() {
+  cd "${_orgname}-${pkgver}"
+  install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/${_orgname,,}"
+  install -Dm0644 -t "$pkgdir/etc/greetd/" ../"${_orgname,,}.toml"
+  install -Dm0644 -t "$pkgdir/usr/share/doc/$_pkgname/" "${_orgname,,}.sample.toml"
+  install -Dm0644 systemd-tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/${_orgname,,}.conf"
+}
+
