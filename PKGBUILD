@@ -4,7 +4,7 @@
 
 pkgname=kded
 pkgver=6.7.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Extensible deamon for providing system level services'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -36,4 +36,7 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+
+  #remove systemd service
+  rm -r $pkgdir/usr/lib/systemd
 }
