@@ -3,7 +3,7 @@
 pkgname=krdp
 pkgver=6.2.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Library and examples for creating an RDP server'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -44,4 +44,7 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+
+  #remove systemd service
+  rm -r $pkgdir/usr/lib/systemd
 }
