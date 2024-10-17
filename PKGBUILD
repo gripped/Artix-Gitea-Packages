@@ -6,8 +6,8 @@
 
 pkgbase=brltty
 pkgname=(brltty brltty-udev-generic)
-pkgver=6.6
-pkgrel=11
+pkgver=6.7
+pkgrel=1
 pkgdesc="Braille display driver for Linux/Unix"
 arch=(x86_64)
 url="https://brltty.app"
@@ -50,22 +50,18 @@ source=(
   https://github.com/brltty/brltty/archive/refs/tags/${pkgbase^^}-$pkgver.tar.gz
   0001-brlapi-use-elogind-instead-of-systemd.patch
   $pkgname-6.4-x11_autostart.patch
-  https://github.com/brltty/brltty/commit/e6707d5e.patch
 )
-sha512sums=('a2cdcebd1f527aefa6dbfebcb6ec86e74bc42faa3b50130efd151a37b4e508b0da5dd1283800bead06b4f5f1f1f5a606cb1a7385fad812e02c6431e0e2943c69'
+sha512sums=('693188317f01d1a1a63aed9fa17925b0cd21e76b4e69838893eee926aceab095034ccb0c25614ce5bbc7c54b5bd5a1af86f3a89f17cb9e1b9eb6cdd706ec8fc0'
             'f0f99df714ceb7b9b1c57cc9c3a1c47b360fc0ff23bb7b183d8e57015d00801bbb4c6ec4395f0b06fd386d7047c9b16e16161d700655fe17cf324aaaf6c3b2d8'
-            '4871512affefbc178f4204a1b285fc2b5a05ea2d181163195d695b760e9729b3d2d00b5f052abd71379df609c3859d7cbd64128bdefd16e898bbc4368500a9a0'
-            'a7419af607daf70dac2192cae5a3efa3af275024ec6b371f2d108c2c7a29b1df6864e9668b86e69e2a172eeb0e27acb3f4c3c0d56574d54f990694cadfe89252')
-b2sums=('04db7239ee9b2e6318eb235bc7c6a6407fc9519042d37a95dbb9661bd4cb4c4c6e6261230d963402ffcb22189ee00777a62067fe5b2677b0724a7f06cd3a774d'
+            '4871512affefbc178f4204a1b285fc2b5a05ea2d181163195d695b760e9729b3d2d00b5f052abd71379df609c3859d7cbd64128bdefd16e898bbc4368500a9a0')
+b2sums=('b19b104ffd6f6482e253b11f47e26352716592ab6a90effb87d51083e55f45478e79ed5819863d000d38d4eb5f248b077fbd1366887b3db3a8290544a8414bfb'
         '8868137c75067087e8da6ce46ad2d75e30da9e6e2bc3a965d5003af9f3c06358413d706efea9810ba50db90ffc7d8a41ce5aa5a653e49365592e3e6fa77c3a88'
-        '4ebc07a725ef8362233a83118e93901e78943e8dae08f9358b668ff13ab88a65eb9e87c49d106a8c3d87eb62007b230e199107eacb01f92dc683335076c01309'
-        'ad794586a149587511a3e1fb47ecbb2b881a3c078ed10a37cf25007459773a2bafc4c3bb500d4db8ee62e9c5c908e82f5bce593b8cfd2563fcc553e0defb6980')
+        '4ebc07a725ef8362233a83118e93901e78943e8dae08f9358b668ff13ab88a65eb9e87c49d106a8c3d87eb62007b230e199107eacb01f92dc683335076c01309')
 
 prepare() {
   cd $pkgbase-${pkgbase^^}-$pkgver
   patch -Np1 -i ../0001-brlapi-use-elogind-instead-of-systemd.patch
   patch -Np1 -i ../$pkgbase-6.4-x11_autostart.patch
-  patch -p1 -i ../e6707d5e.patch # Fix crash when compiled with cython 3
   ./autogen
 }
 
@@ -88,7 +84,7 @@ build() {
 
   cd $pkgbase-${pkgbase^^}-$pkgver
   ./configure "${configure_options[@]}"
-  make -j1
+  make
   # make brlapi.jar deterministic
   find . -type f -iname "*.jar" -exec strip-nondeterminism {} \;
 }
@@ -113,7 +109,6 @@ package_brltty() {
   )
   optdepends=(
     'at-spi2-core: X11/GNOME Apps accessibility'
-    'atk: ATK bridge for X11/GNOME accessibility'
     'brltty-udev-generic: for initializing brltty with generic USB devices'
     'espeak-ng: espeak-ng driver'
     'java-runtime: Java support'
