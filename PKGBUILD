@@ -216,10 +216,6 @@ END
 
   if [[ $CARCH == 'aarch64' && $_build_profiled_aarch64 == true || $CARCH == 'x86_64' && $_build_profiled_x86_64 == true ]]; then
 
-
-    export LIBGL_ALWAYS_SOFTWARE=true
-    export GALLIUM_DRIVER=softpipe
-
     ./mach build --priority normal
 
     echo "Profiling instrumented browser..."
@@ -229,6 +225,7 @@ END
     LLVM_PROFDATA=llvm-profdata \
       JARLOG_FILE="$PWD/jarlog" \
       xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
+      dbus-run-session \
       ./mach python build/pgo/profileserver.py
 
     stat -c "Profile data found (%s bytes)" merged.profdata
