@@ -22,10 +22,12 @@ depends=(
 makedepends=(
   cmake
   benchmark
+  git
   glu
   gtest
   level-zero-headers
   level-zero-loader
+  make
 )
 optdepends=('benchmark: benchmarks'
             'gtest: tests suite')
