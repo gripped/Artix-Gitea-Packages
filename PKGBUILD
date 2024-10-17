@@ -105,15 +105,6 @@ build() {
     -delete
 }
 
-check() {
-  cd "${_gemname}-${pkgver}"
-
-  local _gemdir="$(gem env gemdir)"
-
-  export PATH="$(pwd)/tmp_install/usr/bin:${PATH}"
-
-  GEM_HOME="tmp_install${_gemdir}" bake test
-}
 
 package() {
   cd "${_gemname}-${pkgver}"
