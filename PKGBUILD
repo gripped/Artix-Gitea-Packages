@@ -3,7 +3,7 @@
 
 pkgname=tokodon
 pkgver=24.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A Mastodon client for Plasma'
 url='https://apps.kde.org/tokodon/'
 arch=(x86_64)
@@ -13,6 +13,7 @@ depends=(gcc-libs
          kcolorscheme
          kconfig
          kcoreaddons
+         kcrash
          kdbusaddons
          kdeclarative
          ki18n
@@ -22,8 +23,10 @@ depends=(gcc-libs
          kitemmodels
          knotifications
          kservice
+         kunifiedpush
          kwindowsystem
          mpvqt
+         openssl
          purpose
          qqc2-desktop-style
          qt6-base
