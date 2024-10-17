@@ -12,7 +12,7 @@ pkgbase=libreoffice-still
 pkgname=('libreoffice-still-sdk' 'libreoffice-still')
 _LOver=24.2.6.2
 pkgver=24.2.6
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
@@ -25,7 +25,7 @@ makedepends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
     'gperf' 'gtk3' 'gtk4' 'cppunit' 'beanshell' 'clucene'
     'qt5-base' 'qt5-x11extras'
     'qt6-base' 'kio' 'kconfig' 'kcoreaddons' 'kwindowsystem' 'ki18n' 'kcoreaddons'
-    'junit' 'libmythes' 'libwpg'  'java-environment=17' 'postgresql-libs' 'mariadb-libs' 'libgl'
+    'libmythes' 'libwpg'  'java-environment=17' 'postgresql-libs' 'mariadb-libs' 'libgl'
     'bluez-libs' 'gdb' 'doxygen'  'libatomic_ops'  'mdds'
     'ttf-liberation' 'ttf-dejavu' 'ttf-carlito' 'libxinerama' 'libpagemaker' 'glm'
     'libabw' 'libmwaw' 'libe-book' 'coin-or-mp' 'liblangtag' 'liborcus'
@@ -34,7 +34,6 @@ makedepends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
     'libepubgen' 'libfreehand' 'libqxp' 'libstaroffice'  'boost' 'libnumbertext'
     'abseil-cpp' 'clang' 'zxing-cpp'
     'libffi' 'git' 'python-setuptools'
-  'java-hamcrest'
 )
 options=('!lto') # using --enable-lto (for parallel link-time optimization)
 _mirror="https://download.documentfoundation.org/libreoffice/src/${pkgver}"
@@ -255,6 +254,7 @@ build() {
         --with-system-mythes \
         --with-system-headers \
         --without-system-hsqldb \
+        --without-junit \
         --with-system-clucene \
         --without-system-box2d \
         --without-system-dragonbox \
@@ -433,4 +433,3 @@ package_libreoffice-still() {
     'sid','sk','sl','sq','sv','ta','tg','tr','ug','uk','vi','zh-CN','zh-TW'])" \
         > "${pkgdir}"/usr/lib/libreoffice/help/languages.js
 }
-
