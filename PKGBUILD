@@ -5,9 +5,9 @@ pkgbase=linux-firmware
 pkgname=(linux-firmware-whence linux-firmware amd-ucode
          linux-firmware-{nfp,mellanox,marvell,qcom,liquidio,qlogic,bnx2x}
 )
-_tag=20240909
-_commit=c979a06518069901e4c43e0019d3a15b435b7e16
-pkgver=20240928.c979a065
+_tag=20241017
+#_commit=c979a06518069901e4c43e0019d3a15b435b7e16
+pkgver=20241017.22a6c7dc
 pkgrel=1
 pkgdesc="Firmware files for Linux"
 url="https://gitlab.com/kernel-firmware/linux-firmware"
@@ -21,13 +21,14 @@ arch=('any')
 makedepends=(
   git
   rdfind
+  python
 )
 options=(
   !strip
   !debug
 )
-source=("git+$url.git#commit=${_commit}")
-b2sums=('1736dcad67a446e9e583d29547234ceeb0a054afd1c49d5e7cc339d37c7dc6c254cdc6c10c70cf4b4fdc722b7a199934dbe3b9092d9d8f1a98aa6276f9935b50')
+source=("git+$url.git?signed#tag=${_tag}")
+b2sums=('8befc4883f6c69682a6b7c603aff6ca80e7e79277ac3ad698e731a904b22cdfd55c7d32a661621ef47a88d7298be960535b7ebcc100d847eea79cda3124ab8f5')
 validpgpkeys=('4CDE8575E547BF835FE15807A31B6BD72486CFD6') # Josh Boyer <jwboyer@fedoraproject.org>
 
 _backports=(
@@ -177,5 +178,3 @@ package_linux-firmware-bnx2x() {
 
   mv -v linux-firmware-bnx2x/* "${pkgdir}"
 }
-
-# vim:set sw=2 et:
