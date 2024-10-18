@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: virtualbox-host-modules-artix
-  version: 7.1.4-1
+  version: 7.1.4-2
   arch:
     - x86_64
   pkgname:
     - virtualbox-host-modules-artix
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 7.1.4-2
+    packages:
+      - virtualbox-host-modules-artix-7.1.4-2-x86_64.pkg.tar.zst
   world:
     version: 7.1.4-1
     packages:
