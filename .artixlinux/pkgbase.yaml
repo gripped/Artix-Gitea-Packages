@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: qt6-webengine
-  version: 6.8.0-5
+  version: 6.8.0-6
   arch:
     - x86_64
   pkgname:
     - qt6-webengine
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.8.0-4
+    version: 6.8.0-6
     packages:
-      - qt6-webengine-6.8.0-4-x86_64.pkg.tar.zst
+      - qt6-webengine-6.8.0-6-x86_64.pkg.tar.zst
   world-gremlins:
     version: 6.8.0-5
     packages:
