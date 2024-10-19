@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-open
-  version: 560.35.03-16
+  version: 560.35.03-17
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 560.35.03-16
+    version: 560.35.03-17
     packages:
-      - nvidia-open-560.35.03-16-x86_64.pkg.tar.zst
+      - nvidia-open-560.35.03-17-x86_64.pkg.tar.zst
   world:
     version: 560.35.03-14
     packages:
