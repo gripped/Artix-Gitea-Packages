@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - tpm2-tss
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 4.1.3-1
     packages:
       - tpm2-tss-4.1.3-1-x86_64.pkg.tar.zst
-  system:
-    version: 4.0.1-1
-    packages:
-      - tpm2-tss-4.0.1-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
