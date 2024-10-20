@@ -1,10 +1,10 @@
-# Maintainer: Justin Kromlinger <hashworks@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Justin Kromlinger <hashworks@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 
 pkgname=xournalpp
-pkgver=1.2.3
-_commit=c6970f47c5204c0a81d45d3cf5d30f8b7ae8e3a6
-pkgrel=1.1
+pkgver=1.2.4
+pkgrel=1
 pkgdesc='Handwriting notetaking software with PDF annotation support'
 url='https://github.com/xournalpp/xournalpp'
 license=('GPL-2.0-or-later')
@@ -13,15 +13,14 @@ optdepends=('texlive-latexextra: LaTeX package')
 makedepends=('git' 'cmake' 'doxygen' 'graphviz')
 depends=('gtk3' 'poppler-glib' 'libxml2' 'portaudio' 'libsndfile' 'lua'
          'libzip')
-source=("git+https://github.com/xournalpp/xournalpp.git#commit=$_commit")
-sha256sums=('b527889ed5c23595794c11885906d425cf7706ec206545497e7263c4e9d283f5')
+source=("git+https://github.com/xournalpp/xournalpp.git#tag=v${pkgver}")
+sha256sums=('5d668948a6d456c5e736b27c2d8043fe93beb73ebc432071c0c66046f54364e1')
 
 replaces=('xournal')
 
 build() {
 	cd "${srcdir}/${pkgname}"
-	cmake -DCMAKE_INSTALL_PREFIX=/usr \
-		  -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cmake -DCMAKE_INSTALL_PREFIX=/usr
 	make translations
 	make
 }
