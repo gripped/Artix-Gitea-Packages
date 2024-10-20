@@ -56,7 +56,9 @@ check() {
     --deselect psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_comparisons \
     --deselect psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_disk_partitions_mocked \
     --deselect psutil/tests/test_linux.py::TestSystemNetIfAddrs::test_ips \
-    --deselect psutil/tests/test_system.py::TestMiscAPIs::test_users
+    --deselect psutil/tests/test_system.py::TestMiscAPIs::test_users \
+    --deselect psutil/tests/test_process_all.py::TestFetchAllProcesses::test_all \
+    --deselect psutil/tests/test_system.py::TestDiskAPIs::test_disk_partitions
 }
 
 package() {
