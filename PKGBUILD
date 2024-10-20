@@ -5,7 +5,7 @@
 # Contributor: Andy Weidenbaum <archbaum@gmail.com>
 
 pkgname=electrum
-pkgver=4.5.5
+pkgver=4.5.6
 pkgrel=1
 pkgdesc="Lightweight Bitcoin wallet"
 arch=('any')
@@ -46,17 +46,19 @@ optdepends=(
   'python-btchip: BTChip hardware wallet support'
   'python-hidapi: Digital Bitbox hardware wallet support'
   'python-matplotlib: plot transaction history in graphical mode'
-  'zbar: QR code reading support'
-  'python-rpyc: send commands to Electrum Python console from an external script'
-  'python-qdarkstyle: optional dark theme in graphical mode'
   'python-pycryptodomex: use PyCryptodome AES implementation instead of pyaes'
+  'python-qdarkstyle: optional dark theme in graphical mode'
+  'python-rpyc: send commands to Electrum Python console from an external script'
+  'python-pyqt6: QML GUI'
+  'qt6-declarative: QML GUI'
+  'zbar: QR code reading support'
 )
 source=(
   "git+https://github.com/spesmilo/electrum.git#tag=$pkgver?signed"
   "git+https://github.com/spesmilo/electrum-locale.git"
   "git+https://github.com/spesmilo/electrum-http.git"
 )
-sha512sums=('3ff5ca9d339ba6106f579268d9b24523aa6c041da5bd2471a51646b09edd12fc69108929a3ce8adb6c536bfbbb5cda91b63b53e4600428b56a2f1f0ecb7c7fd3'
+sha512sums=('76728708f0867bf9d300ce7c12e0ae7d885486edd87dfb3782508b7495897d1436afce5150199758b0a4e6f722c277f43fe53ba5678a52fd12418eda4506d4dc'
             'SKIP'
             'SKIP')
 validpgpkeys=('6694D8DE7BE8EE5631BED9502BD5824B7F9470E6') # Thomas Voegtlin (https://electrum.org) <thomasv@electrum.org>
