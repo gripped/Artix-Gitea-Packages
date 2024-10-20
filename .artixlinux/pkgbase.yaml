@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wine-staging
-  version: 9.19-1
+  version: 9.20-1
   arch:
     - x86_64
   pkgname:
@@ -37,9 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 9.19-1
+    version: 9.20-1
     packages:
-      - wine-staging-9.19-1-x86_64.pkg.tar.zst
+      - wine-staging-9.20-1-x86_64.pkg.tar.zst
   lib32:
     version: 8.21-1
     packages:
