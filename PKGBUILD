@@ -9,7 +9,7 @@
 
 pkgname=font-manager
 pkgver=0.9.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='A simple font management application for GTK+ Desktop Environments'
 url=https://fontmanager.github.io
 arch=(x86_64 i686)
@@ -34,11 +34,18 @@ _url="https://github.com/FontManager/font-manager"
 source=("$_url/releases/download/$pkgver/$_archive.tar.xz")
 sha256sums=('1dd711ea8d8fd99a6801037465dda0b129ba66185bfbf272a8f9a906c4e28d6c')
 
+# fix for Wayfire WM
+prepare() { 
+    cd "${pkgname}-${pkgver}"/data
+    sed -i 's/DBusActivatable=true/DBusActivatable=false/' com.github.FontManager.FontManager.desktop.in.in
+    sed -i 's/DBusActivatable=true/DBusActivatable=false/' com.github.FontManager.FontViewer.desktop.in.in
+}
+
 build() {
 	artix-meson "$_archive" build \
 		-Dnautilus=true \
-		-Dreproducible=true
-	ninja -C build
+		-Dreproducible=true 
+		ninja -C build
 }
 
 package() {
