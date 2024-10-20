@@ -7,7 +7,7 @@
 pkgbase=nvidia-utils
 pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-dkms' 'nvidia-open-dkms')
 pkgver=560.35.03
-pkgrel=16
+pkgrel=16.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -175,7 +175,6 @@ package_nvidia-utils() {
     conflicts=('nvidia-libgl')
     provides=('vulkan-driver' 'opengl-driver' 'nvidia-libgl')
     replaces=('nvidia-libgl')
-    install="${pkgname}.install"
 
     cd "${_pkg}"
 
