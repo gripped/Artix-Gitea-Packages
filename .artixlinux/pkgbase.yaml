@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: docbook-xsl
-  version: 1.79.2-8
+  version: 1.79.2-9
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.79.2-8
+    version: 1.79.2-9
     packages:
-      - docbook-xsl-1.79.2-8-any.pkg.tar.zst
+      - docbook-xsl-1.79.2-9-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
