@@ -1,16 +1,18 @@
 ---
 team: lib32
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: lib32-libarchive
+  version: 3.7.7-1
+  arch:
+    - x86_64
+  pkgname:
+    - lib32-libarchive
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -39,8 +41,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: null
-    packages: []
+    version: 3.7.7-1
+    packages:
+      - lib32-libarchive-3.7.7-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
