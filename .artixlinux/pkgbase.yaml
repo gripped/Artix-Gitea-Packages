@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-osc-lib
-  version: 3.0.1-2
+  version: 3.1.0-1
   arch:
     - any
   pkgname:
     - python-osc-lib
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.0.1-2
+    version: 3.1.0-1
     packages:
-      - python-osc-lib-3.0.1-2-any.pkg.tar.zst
+      - python-osc-lib-3.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
