@@ -3,7 +3,8 @@
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 pkgname=python-setuptools
-pkgver=69.5.1
+_name=${pkgname#python-}
+pkgver=75.2.0
 pkgrel=1
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
@@ -12,13 +13,13 @@ url="https://pypi.org/project/setuptools/"
 license=('PSF')
 groups=(python-build-backend)
 depends=(
+  'python-jaraco.collections'
+  'python-jaraco.functools'
   'python-jaraco.text'
   'python-more-itertools'
-  'python-ordered-set'
   'python-packaging'
   'python-platformdirs'
-  'python-tomli'
-  'python-validate-pyproject'
+  'python-wheel'
 )
 makedepends=(
   'git'
@@ -29,56 +30,37 @@ checkdepends=(
   'python-ini2toml'
   'python-jaraco.envs'
   'python-jaraco.path'
+  'python-jaraco.test'
+  'python-path'
   'python-pip'
-  'python-pytest-enabler'
   'python-pytest-home'
   'python-pytest-timeout'
-  'python-sphinx'
+  'python-tests'
   'python-tomli-w'
   'python-wheel'
 )
 provides=('python-distribute')
 replaces=('python-distribute')
 source=(
-  "git+https://github.com/pypa/setuptools.git#tag=v$pkgver?signed"
-  system-validate-pyproject.patch
-  add-dependency.patch
+  "git+https://github.com/pypa/setuptools.git#tag=v$pkgver"
   build-no-isolation.patch
 )
-sha512sums=('206fd64c775c0e9723c59dd512741a98006a835dd1846068af0da23922ccb181a9feb77bce43f19e3744183739a251f333b58070c958e8cd79c7cfce60fb3577'
-            '91bcd7ff2cadc83e9ba9582a31954998f23d6d124f84bd746dc518f01870da7e7f7e7fc69a423dc95165499c2d6dfd3669909660e6a59fcdaca57805362af709'
-            '9c5d80c753e78bf613572fb789a234984087d0ce96d0bad22b5ed731d83c77bf6d8acfa65c78f6c78f9063be7819c2b58988fdf8e7fc89b55339f94a87b3b21f'
-            '9f334d6fceda637058257e425b26b2dc1ab276a62a0c12618c62c43183f32e7c0c36a88639fcad7ecbf2f12261f2f43875042795bc49cb2daf4e093b77479509')
-validpgpkeys=('CE380CF3044959B8F377DA03708E6CB181B4C47E') # Jason R. Coombs <jaraco@jaraco.com>
+sha512sums=('b7284200451eff5afb1394701de5f3749b7b23a43c4fd859a59aeed0bb662b1a5c30ee120c0f8b15a1c3706561bd772d12b683bd08188969d06121fb5d53e074'
+            '701b4364736344951d945df624f58973dfbca56eeda708aeed928df10f5598509e3acf87074ab30d84bb652fc8e307157184bfe43bb81ee83159966430c58e51')
+#validpgpkeys=('CE380CF3044959B8F377DA03708E6CB181B4C47E') # Jason R. Coombs <jaraco@jaraco.com>
 
 prepare() {
-  cd setuptools
+  cd "$_name"
+  # Populate dependencies list for devendored deps
+  sed '/^core =/,/]/!d' pyproject.toml > ../requirements.txt
+  sed -i '1d;$d' ../requirements.txt
+  sed -i '/^dependencies =/ {
+r ../requirements.txt
+s/^core =/dependencies =/
+}' pyproject.toml
 
-  # https://github.com/pypa/setuptools/issues/4334
-  git cherry-pick -n 4a0a9ce587515edce83ab97aa5c7943c045ac180
-
-  patch -p1 -i ../system-validate-pyproject.patch
-
-  rm -r {pkg_resources,setuptools}/{extern,_vendor} setuptools/config/_validate_pyproject
-
-  # Upstream devendoring logic is badly broken, see:
-  # https://bugs.archlinux.org/task/58670
-  # https://github.com/pypa/pip/issues/5429
-  # https://github.com/pypa/setuptools/issues/1383
-  # The simplest fix is to simply rewrite import paths to use the canonical
-  # location in the first place
-  for _module in setuptools pkg_resources '' ; do
-      find . -name \*.py -exec sed -i \
-          -e 's/from '$_module.extern' import/import/' \
-          -e 's/from '$_module.extern'\./from /' \
-          -e 's/import '$_module.extern'\./import /' \
-          -e "s/__import__('$_module.extern./__import__('/" \
-          -e 's/from \.\.extern\./from /' \
-          {} +
-  done
-
-  # Add the devendored dependencies into metadata of setuptools
-  patch -p1 -i ../add-dependency.patch
+  # Keep validate-pyproject as it also includes the generated validations
+  rm -r "$_name"/_vendor
 
   # Fix tests invoking python-build
   patch -p1 -i ../build-no-isolation.patch
@@ -90,8 +72,9 @@ prepare() {
 }
 
 build() {
-  cd setuptools
   export SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES=0
+
+  cd "$_name"
   python setup.py build
 }
 
@@ -102,24 +85,26 @@ check() { (
   # https://github.com/pypa/setuptools/pull/810
   export PYTHONDONTWRITEBYTECODE=1
 
-  cd setuptools
-  # 1,4: subtle difference introduced by devendoring
-  # 2: pip failures related to devendoring,
-  # 3,5: TODO
-  # 6: jaraco.develop is not packaged
-  # 7,8: failing already prior to Python 3.12 rebuild
-  PYTHONPATH="$PWD"/build/lib python -m pytest \
-    --deselect setuptools/tests/config/test_apply_pyprojecttoml.py::test_apply_pyproject_equivalent_to_setupcfg \
-    --deselect setuptools/tests/test_virtualenv.py \
-    --deselect setuptools/tests/test_editable_install.py::test_editable_with_prefix \
-    --deselect setuptools/_normalization.py::setuptools._normalization.safe_version \
-    --deselect setuptools/tests/test_easy_install.py::TestSetupRequires::test_setup_requires_honors_fetch_params \
-    --ignore tools/finalize.py \
-    --deselect 'setuptools/tests/config/test_apply_pyprojecttoml.py::TestPresetField::test_not_listed_in_dynamic[install_requires-dependencies-value0]' \
-    --deselect setuptools/tests/test_editable_install.py::test_debugging_tips
+  cd "$_name"
+  local pytest_args=(
+    --verbose
+    --ignore tools/finalize.py # jaraco.develop is not packaged
+    --ignore tools/vendored.py # jaraco.packaging is not packaged
+    # devendoring
+    --deselect "$_name"/tests/test_"$_name".py::test_wheel_includes_vendored_metadata
+    --deselect "$_name"/tests/test_virtualenv.py::test_no_missing_dependencies
+    # system site packages
+    --deselect "$_name"/tests/test_virtualenv.py::test_pip_upgrade_from_source
+    # pytest-subprocess not packaged, fixture 'fp' not found
+    --deselect "$_name"/tests/test_packageindex.py::TestPackageIndex
+  )
+
+  PYTHONPATH=build/lib python -m pytest "${pytest_args[@]}"
 )}
 
 package() {
-  cd setuptools
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  cd "$_name"
   python setup.py install --prefix=/usr --root="$pkgdir" --optimize=1 --skip-build
+  rm "$pkgdir/$site_packages/$_name"/*.exe
 }

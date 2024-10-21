@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-setuptools
-  version: 1:69.5.1-1
+  version: 1:75.2.0-1
   arch:
     - any
   pkgname:
     - python-setuptools
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:75.2.0-1
+    packages:
+      - python-setuptools-1:75.2.0-1-any.pkg.tar.zst
   world:
     version: 1:69.5.1-1
     packages:
