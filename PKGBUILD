@@ -1,8 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-trove-classifiers
-pkgver=2024.10.11
-pkgrel=2
+pkgver=2024.10.13
+pkgrel=1
 pkgdesc="Canonical source for classifiers on PyPI (pypi.org)"
 url="https://github.com/pypa/trove-classifiers"
 license=('Apache-2.0')
@@ -11,7 +11,7 @@ depends=('python')
 makedepends=('git' 'python-calver' 'python-setuptools' 'python-wheel' 'python-build' 'python-installer')
 checkdepends=('python-pytest')
 source=("git+https://github.com/pypa/trove-classifiers.git#tag=$pkgver")
-sha512sums=('c27c9ebaa03ce74e823d89e8c61ed4356de9750047d2a8d6198dd0c56b5135035dc81d710136b043d4ef06d8719835bccfc53cf755491f47cc5421c299a9f46f')
+sha512sums=('4ccad52a36d17f2c701ccfda52c9996679d3bcc75fc7864407f4f97d143a21aac5f29ce94c65e1aa0e278aa2ea2cf65db29a17f06064c26fd9f2a01aba805762')
 
 prepare() {
   cd trove-classifiers
