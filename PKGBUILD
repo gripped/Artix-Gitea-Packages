@@ -1,16 +1,17 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 pkgname=python-setuptools
 _name=${pkgname#python-}
 pkgver=75.2.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
 arch=('any')
 url="https://pypi.org/project/setuptools/"
-license=('PSF')
+license=('MIT')
 groups=(python-build-backend)
 depends=(
   'python-jaraco.collections'
@@ -45,8 +46,8 @@ source=(
   "git+https://github.com/pypa/setuptools.git#tag=v$pkgver"
   build-no-isolation.patch
 )
-sha512sums=('b7284200451eff5afb1394701de5f3749b7b23a43c4fd859a59aeed0bb662b1a5c30ee120c0f8b15a1c3706561bd772d12b683bd08188969d06121fb5d53e074'
-            '701b4364736344951d945df624f58973dfbca56eeda708aeed928df10f5598509e3acf87074ab30d84bb652fc8e307157184bfe43bb81ee83159966430c58e51')
+b2sums=('54e13a8fe1afb5d74fbd14688e1d01507d477f7f10c70d72a318bba2eae4bacda3a0b417a9ba60d469fe860dd7ea9d91edc934d61d12fe887dffa1f6e270e1ca'
+        'ff0caf384def8ba8aa1c7fbb29077f2bc14c42935f7f81b6c4993ebe835053207b6773865158ad3143147234b311b95033b266f9b4c34a78a67f0b7e83bb5537')
 #validpgpkeys=('CE380CF3044959B8F377DA03708E6CB181B4C47E') # Jason R. Coombs <jaraco@jaraco.com>
 
 prepare() {
@@ -104,6 +105,11 @@ check() { (
 
 package() {
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+
+  install -d "$pkgdir"/usr/share/licenses/$pkgname
+  ln -s "$site_packages/$_name"-$pkgver.dist-info/LICENSE \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
   cd "$_name"
   python setup.py install --prefix=/usr --root="$pkgdir" --optimize=1 --skip-build
   rm "$pkgdir/$site_packages/$_name"/*.exe
