@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=gtklock
-pkgver=3.0.0
-pkgrel=2
+pkgver=4.0.0
+pkgrel=1
 pkgdesc="GTK-based lockscreen for Wayland"
 arch=('x86_64')
 url="https://github.com/jovanlanik/gtklock"
