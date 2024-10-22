@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-zopfli
-  version: 0.2.3-2
+  version: 0.2.3.post1-1
   arch:
     - x86_64
   pkgname:
     - python-zopfli
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.3-2
+    version: 0.2.3.post1-1
     packages:
-      - python-zopfli-0.2.3-2-x86_64.pkg.tar.zst
+      - python-zopfli-0.2.3.post1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
