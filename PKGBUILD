@@ -5,7 +5,7 @@
 # Contributor: Andy Weidenbaum <archbaum@gmail.com>
 
 pkgname=electrum
-pkgver=4.5.7
+pkgver=4.5.8
 pkgrel=1
 pkgdesc="Lightweight Bitcoin wallet"
 arch=('any')
@@ -58,7 +58,7 @@ source=(
   "git+https://github.com/spesmilo/electrum-locale.git"
   "git+https://github.com/spesmilo/electrum-http.git"
 )
-sha512sums=('d5f5965f37c28375d91adc950e859c441ebd9486d66685b314ac62ede9c9a383fe5f306b325261c9ecd228de3a9ab4c9308f2753fd59f9c74c7a69879771faf9'
+sha512sums=('874a9cfc117103fdccce0b2658201e8cad9705705daa45bae27881bf775c51dae26466f3d7411573182d3919aaa1d53f93c1418813c4e733fd04ee322a8039e0'
             'SKIP'
             'SKIP')
 validpgpkeys=(
