@@ -8,8 +8,8 @@ pkgbase:
     - sdbus-cpp
     - sdbus-cpp-doc
 actions:
-  addRepo: world-goblins
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -26,13 +26,13 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 2.0.0-1
     packages:
       - sdbus-cpp-2.0.0-1-x86_64.pkg.tar.zst
       - sdbus-cpp-doc-2.0.0-1-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 1.5.0-3
     packages:
