@@ -1,4 +1,4 @@
-# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=libspelling
@@ -6,7 +6,7 @@ pkgname=(
   libspelling
   libspelling-docs
 )
-pkgver=0.4.0
+pkgver=0.4.4
 pkgrel=1
 pkgdesc="Spellcheck library for GTK 4"
 url="https://gitlab.gnome.org/chergert/libspelling"
@@ -29,8 +29,17 @@ makedepends=(
   meson
   vala
 )
+checkdepends=(
+  aspell
+  aspell-en
+  enchant
+  hspell
+  hunspell
+  nuspell
+  libvoikko
+)
 source=("git+https://gitlab.gnome.org/chergert/libspelling.git#tag=$pkgver")
-b2sums=('32cfe8eeb44c1bcfca5a76b0dc29c61ff05c99e58eea667c1e4410a3151634e375a49132dc631a63f3526940da5477ea3666aed9b3a5f32f2d41978fb2f06f45')
+b2sums=('b63702a03f3467eb03099febcb955ac21adcc88a37a656ab7f019f0ef873ec71e7f32d13935a87668135269c53bae9a7fccb12b2a92b5f2e0bf5921111f6d38b')
 
 build() {
   artix-meson $pkgname build
@@ -38,7 +47,7 @@ build() {
 }
 
 check() {
-  meson test -C build --print-errorlogs ||:
+  meson test -C build --print-errorlogs
 }
 
 package_libspelling() {
