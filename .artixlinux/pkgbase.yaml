@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-berkeleydb
-  version: 0.65-7
+  version: 0.66-1
   arch:
     - x86_64
   pkgname:
     - perl-berkeleydb
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.65-7
+    version: 0.66-1
     packages:
-      - perl-berkeleydb-0.65-7-x86_64.pkg.tar.zst
+      - perl-berkeleydb-0.66-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
