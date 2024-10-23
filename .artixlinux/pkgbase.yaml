@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: i2c-tools
-  version: 4.3-6
+  version: 4.4-1
   arch:
     - x86_64
   pkgname:
     - i2c-tools
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3-6
+    version: 4.4-1
     packages:
-      - i2c-tools-4.3-6-x86_64.pkg.tar.zst
+      - i2c-tools-4.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
