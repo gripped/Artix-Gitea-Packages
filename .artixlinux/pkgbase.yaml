@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: breezy
-  version: 3.3.8-1
+  version: 3.3.9-1
   arch:
     - x86_64
   pkgname:
     - breezy
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.3.9-1
+    packages:
+      - breezy-3.3.9-1-x86_64.pkg.tar.zst
   world:
     version: 3.3.8-1
     packages:
