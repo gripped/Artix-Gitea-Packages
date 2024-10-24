@@ -2,8 +2,8 @@
 # Maintainer: Mantas M. <grawity@gmail.com>
 
 pkgname=sssd
-pkgver=2.9.5
-pkgrel=5.1
+pkgver=2.10.0
+pkgrel=1
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -43,12 +43,9 @@ checkdepends=(
 )
 options=('!lto')
 backup=('etc/logrotate.d/sssd')
-source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc}
-        "https://github.com/SSSD/sssd/commit/9efd79b010dbb46d9968c3d3ab073b8e585cb2ad.patch" # setuptools
-       )
-sha512sums=('d219f12ffc75af233f0e4ffc62c0442acc6da3cd94ed4eab7102a78821af5257c8e4ba0d06b2c99c08e06502f8d0d0bcc80540d63823dbe0f52eb0432ae7e14d'
-            'SKIP'
-            '8433f4a7ed7064690ce67cf209b9e7ab97d509a27df29374bbb86e3489b42154b34e7361418de8a1741d91e8b12a68b139bc365c58037e58263bd8f3494e9e73')
+source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc})
+sha512sums=('d237ff135fb21bcd1040787d6dfe8fa383290fbae1f15c6917284beb38dd95ecf6418335302e26be40c65e44e8b44135499eec0b98119ea53a38098ac0bc1e2c'
+            'SKIP')
 validpgpkeys=('C13CD07FFB2DB1408E457A3CD3D21B2910CF6759')
 
 prepare() {
@@ -90,6 +87,9 @@ build() {
     --with-python3-bindings                       \
     --with-syslog=syslog                          \
     --with-files-provider                         \
+    --with-sssd-user=sssd                         \
+    --with-subid                                  \
+    --with-passkey                                \
     --without-selinux                             \
     --without-semanage                            \
     --with-ldb-lib-dir=/usr/lib/samba/ldb \

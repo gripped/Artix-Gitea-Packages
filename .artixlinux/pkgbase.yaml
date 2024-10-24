@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: sssd
-  version: 2.9.5-5.1
+  version: 2.10.0-1
   arch:
     - x86_64
   pkgname:
     - sssd
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.9.5-5.1
+    version: 2.10.0-1
     packages:
-      - sssd-2.9.5-5.1-x86_64.pkg.tar.zst
+      - sssd-2.10.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
