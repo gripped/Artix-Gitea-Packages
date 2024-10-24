@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postfix
-  version: 3.9.0-3
+  version: 3.9.0-4
   arch:
     - x86_64
   pkgname:
@@ -15,12 +15,12 @@ pkgbase:
     - postfix-pgsql
     - postfix-sqlite
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -36,8 +36,17 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.9.0-4
+    packages:
+      - postfix-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-cdb-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-ldap-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-lmdb-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-mongodb-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-mysql-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-pcre-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-pgsql-3.9.0-4-x86_64.pkg.tar.zst
+      - postfix-sqlite-3.9.0-4-x86_64.pkg.tar.zst
   world:
     version: 3.9.0-3
     packages:
