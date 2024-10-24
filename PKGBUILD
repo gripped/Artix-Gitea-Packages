@@ -9,8 +9,8 @@ pkgname=(
   lib32-pipewire-jack
   lib32-pipewire-v4l2
 )
-pkgver=1.2.5
-pkgrel=1.1
+pkgver=1.2.6
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -26,7 +26,7 @@ makedepends=(
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
 )
-b2sums=('SKIP')
+b2sums=('fb72384b2f62b26d65d935118388f204542eeb1fe173e1c0b70e17ac1786c7533cf15ce2f05c9447ff0ea1a9d8dcf19a9bdbfea6d31fc6558d7762df92865cec')
 
 prepare() {
   cd pipewire
@@ -56,7 +56,6 @@ build() {
     -D libmysofa=disabled
     -D libpulse=disabled
     -D libusb=disabled
-    -D logind-provider=libelogind
     -D lv2=disabled
     -D man=disabled
     -D opus=disabled
@@ -74,6 +73,7 @@ build() {
     -D udevrulesdir=/usr/lib/udev/rules.d
     -D systemd=disabled
     -D rlimits-install=false
+    -D logind-provider=libelogind
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
