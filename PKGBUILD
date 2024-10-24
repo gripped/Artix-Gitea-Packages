@@ -40,6 +40,7 @@ checkdepends=(
   'libfaketime'
   'openssh'
   'softhsm'
+  'valgrind'
 )
 options=('!lto')
 backup=('etc/logrotate.d/sssd')
