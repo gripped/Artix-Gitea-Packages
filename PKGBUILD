@@ -3,7 +3,7 @@
 
 pkgname=limine
 pkgver=8.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="An advanced, portable, multiprotocol bootloader"
 arch=('x86_64')
 url="https://limine-bootloader.org/"
