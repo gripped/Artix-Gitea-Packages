@@ -3,7 +3,7 @@
 
 pkgname='perl-scalar-list-utils'
 pkgver=1.68
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A selection of general-utility list subroutines"
 arch=('x86_64')
 license=('Artistic-1.0-Perl' 'GPL-1.0-or-later')
