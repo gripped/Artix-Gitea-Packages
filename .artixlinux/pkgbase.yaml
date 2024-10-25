@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: dotnet-core
-  version: 7.0.7.sdk107-1
+  version: 8.0.8.sdk108-0
   arch:
     - x86_64
   pkgname:
@@ -17,8 +17,8 @@ pkgbase:
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -36,16 +36,16 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 7.0.7.sdk107-1
+    version: 8.0.8.sdk108-0
     packages:
-      - dotnet-host-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - netstandard-targeting-pack-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-7.0.7.sdk107-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-7.0.7.sdk107-1-x86_64.pkg.tar.zst
+      - dotnet-host-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - dotnet-runtime-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - aspnet-runtime-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - dotnet-sdk-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - netstandard-targeting-pack-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-8.0.8.sdk108-0-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-8.0.8.sdk108-0-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
