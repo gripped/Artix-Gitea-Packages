@@ -3,7 +3,7 @@
 
 pkgname=sssd
 pkgver=2.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -44,9 +44,11 @@ checkdepends=(
 )
 options=('!lto')
 backup=('etc/logrotate.d/sssd')
-source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc})
+source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc}
+        "sssd-perms.tmpfile")
 sha512sums=('d237ff135fb21bcd1040787d6dfe8fa383290fbae1f15c6917284beb38dd95ecf6418335302e26be40c65e44e8b44135499eec0b98119ea53a38098ac0bc1e2c'
-            'SKIP')
+            'SKIP'
+            '4ef54f47a04e83236b93790995e289afd95bfc9e465a038b5750e81bf15c186371ea4bc7b9bd302ab1a4b104b20ef7b6124c0634aea85febb6483c87da078ea3')
 validpgpkeys=('C13CD07FFB2DB1408E457A3CD3D21B2910CF6759')
 
 prepare() {
@@ -92,7 +94,7 @@ build() {
     --with-subid                                  \
     --with-passkey                                \
     --without-selinux                             \
-    --without-semanage                            \
+    --with-tmpfilesdir=/usr/lib/tmpfiles.d        \
     --with-ldb-lib-dir=/usr/lib/samba/ldb \
     ;
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
@@ -114,10 +116,13 @@ package() {
   find "$pkgdir"/usr -depth -type d \
     -exec rmdir --ignore-fail-on-non-empty {} \;
 
-  install -Dm0644 src/examples/logrotate "$pkgdir/etc/logrotate.d/sssd"
+  install -Dm0644 src/examples/logrotate "$pkgdir"/etc/logrotate.d/sssd
+  install -Dm0644 contrib/sssd.sysusers "$pkgdir"/usr/lib/sysusers.d/sssd.conf
+  install -Dm0644 "$srcdir"/sssd-perms.tmpfile "$pkgdir"/usr/lib/tmpfiles.d/sssd-perms.conf
 
   cd "$srcdir"
   rm -rf "$pkgdir/etc/systemd" # remove the drop-in
+  rm -rf "$pkgdir/var/run"
 }
 
 # vim: ts=2:sw=2:et:nowrap
