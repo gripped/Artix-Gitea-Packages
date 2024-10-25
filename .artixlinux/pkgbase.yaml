@@ -10,12 +10,12 @@ pkgbase:
     - nvidia-dkms
     - nvidia-open-dkms
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 560.35.03-16.1
+    packages:
+      - nvidia-utils-560.35.03-16.1-x86_64.pkg.tar.zst
+      - opencl-nvidia-560.35.03-16.1-x86_64.pkg.tar.zst
+      - nvidia-dkms-560.35.03-16.1-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-560.35.03-16.1-x86_64.pkg.tar.zst
   world:
     version: 560.35.03-16.1
     packages:
