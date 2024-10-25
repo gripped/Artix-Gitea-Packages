@@ -6,7 +6,7 @@
 
 pkgname=c-ares
 pkgver=1.34.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A C library for asynchronous DNS requests"
 arch=(x86_64)
 url="https://c-ares.org/"
