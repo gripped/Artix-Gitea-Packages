@@ -4,7 +4,7 @@
 
 pkgname=yt-dlp
 pkgver=2024.10.22
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A youtube-dl fork with additional features and fixes'
 arch=(any)
 url='https://github.com/yt-dlp/yt-dlp'
