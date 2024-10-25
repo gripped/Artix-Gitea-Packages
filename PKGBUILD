@@ -6,7 +6,7 @@
 
 pkgname=isync
 pkgver=1.5.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="IMAP and MailDir mailbox synchronizer"
 arch=('x86_64')
 url="https://isync.sourceforge.io/"
