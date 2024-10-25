@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kpipewire
-  version: 6.2.1-2
+  version: 6.2.2-2
   arch:
     - x86_64
   pkgname:
     - kpipewire
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - kpipewire-6.2.1-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.2.2-2
+    packages:
+      - kpipewire-6.2.2-2-x86_64.pkg.tar.zst
   world:
     version: 6.2.1-1
     packages:
