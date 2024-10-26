@@ -8,7 +8,7 @@
 
 pkgname=cloud-init
 pkgver=24.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Cloud instance initialization"
 arch=(any)
 url="https://cloud-init.io"
@@ -17,6 +17,7 @@ license=('GPL-3.0-only OR Apache-2.0')
 depends=(
   bash
   dhclient
+  openbsd-netcat
   python
   python-configobj
   python-jinja
