@@ -28,7 +28,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.24.8
-pkgrel=2
+pkgrel=3
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -37,12 +37,14 @@ makedepends=(
   a52dec
   aalib
   alsa-lib
+  aom
   bash-completion
   bluez-libs
   bzip2
   cairo
   cdparanoia
   chromaprint
+  curl
   faac
   faad2
   ffmpeg
@@ -51,6 +53,7 @@ makedepends=(
   gcc-libs
   gdk-pixbuf2
   git
+  glib2
   glib2-devel
   glibc
   gobject-introspection
@@ -59,16 +62,20 @@ makedepends=(
   gtk3
   hicolor-icon-theme
   imath
+  iso-codes
   jack2
   json-glib
   ladspa
   lame
+  lcms2
+  libass
   libavc1394
   libavtp
   libbs2b
   libcaca
   libcap
   libcdio
+  libdc1394
   libdca
   libde265
   libdrm
@@ -97,14 +104,19 @@ makedepends=(
   libpng
   libpulse
   libraw1394
+  librsvg
   libshout
+  libsndfile
   libsoup3
   libsrtp
   libtheora
   libunwind
+  libusb
   libva
+  libvorbis
   libvpl
   libvpx
+  libwebp
   libwpe
   libx11
   libxcb
@@ -130,6 +142,11 @@ makedepends=(
   openal
   opencore-amr
   opencv
+  openexr
+  openh264
+  openjpeg2
+  openmpi
+  openssl
   opentimelineio
   opus
   orc
@@ -145,6 +162,7 @@ makedepends=(
   qt5-tools
   qt5-wayland
   qt5-x11extras
+  qt6-base
   qt6-declarative
   qt6-shadertools
   qt6-tools
@@ -157,6 +175,7 @@ makedepends=(
   soundtouch
   spandsp
   speex
+  srt
   svt-av1
   svt-hevc
   taglib
@@ -174,6 +193,7 @@ makedepends=(
   wpebackend-fdo
   wpewebkit
   x264
+  x265
   zbar
   zlib
   zvbi
@@ -229,7 +249,6 @@ build() {
     -D gst-plugins-bad:isac=disabled
     -D gst-plugins-bad:magicleap=disabled
     -D gst-plugins-bad:mfx_api=oneVPL
-    -D gst-plugins-bad:openh264=disabled
     -D gst-plugins-bad:openni2=disabled
     -D gst-plugins-bad:opensles=disabled
     -D gst-plugins-bad:qt6d3d11=disabled
@@ -729,6 +748,7 @@ package_gst-plugins-bad() {
     nettle
     openal
     openexr
+    openh264
     openjpeg2
     openssl
     opus
@@ -788,6 +808,7 @@ package_gst-plugins-bad() {
     usr/lib/gstreamer-1.0/libgstopenal.so
     usr/lib/gstreamer-1.0/libgstopenaptx.so
     usr/lib/gstreamer-1.0/libgstopenexr.so
+    usr/lib/gstreamer-1.0/libgstopenh264.so
     usr/lib/gstreamer-1.0/libgstopenjpeg.so
     usr/lib/gstreamer-1.0/libgstopenmpt.so
     usr/lib/gstreamer-1.0/libgstopusparse.so
