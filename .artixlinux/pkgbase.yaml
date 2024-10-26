@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libreoffice-extension-texmaths
-  version: 0.52.2-1
+  version: 0.52.3-1
   arch:
     - any
   pkgname:
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.52.2-1
+    version: 0.52.3-1
     packages:
-      - libreoffice-extension-texmaths-0.52.2-1-any.pkg.tar.zst
+      - libreoffice-extension-texmaths-0.52.3-1-any.pkg.tar.zst
 team: galaxy
