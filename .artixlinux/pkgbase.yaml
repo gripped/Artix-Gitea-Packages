@@ -7,10 +7,10 @@ pkgbase:
   pkgname:
     - bear
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - bear-3.1.5-1-x86_64.pkg.tar.zst
   world:
-    version: 3.1.4-7
+    version: 3.1.5-1
     packages:
-      - bear-3.1.4-7-x86_64.pkg.tar.zst
+      - bear-3.1.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
