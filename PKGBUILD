@@ -37,7 +37,7 @@ makedepends=(
   lttng-ust2.12
   nodejs
   openssl
-  systemd
+  udev
   zlib
 )
 optdepends=('bash-completion: Bash completion support')
