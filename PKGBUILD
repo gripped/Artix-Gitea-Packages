@@ -1,11 +1,12 @@
 # Maintainer: Brett Cornwall <ainola@archlinux.org>
-# Contributor Maxim Baz <archlinux at maximbaz dot com>
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Maxim Baz <archlinux at maximbaz dot com>
 # Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 
 pkgname=sway
-pkgver=1.9
+pkgver=1.10
 epoch=1
-pkgrel=5
+pkgrel=1
 pkgdesc='Tiling Wayland compositor and replacement for the i3 window manager'
 arch=(x86_64)
 url='https://swaywm.org/'
@@ -24,7 +25,7 @@ depends=(
   'pango'
   'pcre2'
   'ttf-font'
-  'wlroots0.17'
+  'wlroots'
   'xcb-util-wm'
 )
 makedepends=(meson ninja scdoc setconf wayland-protocols libelogind)
@@ -33,9 +34,10 @@ backup=(
   etc/sway/config
 )
 optdepends=(
-  'dmenu: dmenu_path support (used alongside wmenu in default $menu)'
+  'brightnessctl: Brightness adjustment tool used in the default configuration'
   'foot: Terminal emulator used in the default configuration'
   'i3status: Status line generation'
+  'libpulse: Volume adjustment tool (pactl) used in the default configuration'
   'mako: Lightweight notification daemon'
   'polkit: System privilege control. Required if not using seatd service'
   'swaybg: Wallpaper tool for sway'
@@ -52,7 +54,7 @@ source=("https://github.com/swaywm/sway/releases/download/$pkgver/sway-$pkgver.t
         "https://github.com/swaywm/sway/releases/download/$pkgver/sway-$pkgver.tar.gz.sig"
         "sway-portals.conf")
 install=sway.install
-sha512sums=('1d2a47bb8b838573a32f3719a7329fd744119c2c7efc5e5a4168b2bacfb09a3901a569177e5e10c129141fafe00e823ab78c04b76b502d23caa7621bbccd5919'
+sha512sums=('f75a80506d2dcae722ea64c47fa423b9713bcfaa6541ffc353abd413238abb9ab7c88490d54e30ef09dc003215aa6a0005e5b425c9c943f982d5ff3c7cfad440'
             'SKIP'
             '4f9576b7218aef8152eb60e646985e96b13540b7a4fd34ba68fdc490199cf7a7b46bbee85587e41bffe81fc730222cf408d5712e6251edc85a0a0b0408c1a2df')
 validpgpkeys=('34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48'  # Simon Ser
@@ -65,7 +67,6 @@ prepare() {
 }
 
 build() {
-  export PKG_CONFIG_PATH='/usr/lib/wlroots0.17/pkgconfig'
   mkdir -p build
   artix-meson build "$pkgname-$pkgver" -D sd-bus-provider=libelogind -D werror=false -D b_ndebug=true
   ninja -C build
