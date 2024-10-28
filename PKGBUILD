@@ -5,7 +5,7 @@
 # Contributor: Dr.Egg <rwhite@archlinux.us>
 
 pkgname=musescore
-pkgver=4.4.2
+pkgver=4.4.3
 pkgrel=1
 pkgdesc='Create, play and print beautiful sheet music'
 arch=(x86_64)
@@ -43,9 +43,9 @@ makedepends=(
 )
 optdepends=('lame: MP3 export')
 options=(!lto)
-_tag=3130f97be7135b5f3c7c669af51a692a691613be
+_tag=eb6b367549f94d195704c77bfc68fae95a517e3c
 source=(git+https://github.com/musescore/MuseScore.git#tag=${_tag})
-sha256sums=('3b061e90a6e2acfd67b3c02115d5ca87759674ea1df26bedfb073506edec2e4b')
+sha256sums=('927a14da23ad2cbc295ead7ba36a76ced7880349aef315ee5c88910920d26585')
 
 pkgver() {
   cd MuseScore
