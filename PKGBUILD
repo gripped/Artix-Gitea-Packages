@@ -10,7 +10,7 @@
 
 pkgname=nodejs
 pkgver=23.1.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Evented I/O for V8 javascript'
 arch=('x86_64')
 url='https://nodejs.org/'
@@ -68,7 +68,7 @@ build() {
 }
 
 check() {
-  cd node
+  cd node || :
   make test
 }
 
