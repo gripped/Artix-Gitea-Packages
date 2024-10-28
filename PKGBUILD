@@ -25,7 +25,7 @@ provides=(
   libpsx.so
 )
 # NOTE: we rely on a specific tagging scheme to verify with the latest signing key: https://bugzilla.kernel.org/show_bug.cgi?id=218860#c3
-source=(git+$_url?signed#tag=sig-$_name-$pkgver)
+source=(git+$_url#tag=sig-$_name-$pkgver)
 sha512sums=('63ce3d8625e989070604c10c90696a732347b4335017693925592f3cdba17d098d44dec704a8bf0dc32bcf51502b922d4c4f765552ee1d4a6a1d94dd759a5fc0')
 b2sums=('f1f86559c673d89ce4bc13fdb90e1051e3bf8562571f686845e46b513d804680e00db738736d4d5d118e828c6e98144f40ff19d1d9bec003a946cd6f63a97d8d')
 validpgpkeys=(
