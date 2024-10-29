@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - mpd
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,11 +47,10 @@ repos:
     packages:
       - mpd-0.23.15-9-x86_64.pkg.tar.zst
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.23.15-8
     packages:
       - mpd-0.23.15-8-x86_64.pkg.tar.zst
-  galaxy:
-    version: 0.23.15-6
-    packages:
-      - mpd-0.23.15-6-x86_64.pkg.tar.zst
 team: galaxy
