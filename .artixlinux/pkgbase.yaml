@@ -70,11 +70,11 @@ pkgbase:
     - thunderbird-i18n-zh-cn
     - thunderbird-i18n-zh-tw
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: null
+  removeRepo: galaxy-goblins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -106,72 +106,8 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 131.0-1
-    packages:
-      - thunderbird-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-af-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ar-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ast-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-be-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-bg-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-br-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ca-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cak-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cs-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cy-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-da-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-de-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-dsb-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-el-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-en-gb-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-en-us-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-es-ar-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-es-es-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-et-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-eu-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fi-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fr-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fy-nl-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ga-ie-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-gd-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-gl-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-he-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hr-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hsb-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hu-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hy-am-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-id-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-is-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-it-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ja-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ka-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-kab-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-kk-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ko-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-lt-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ms-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nb-no-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nl-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nn-no-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pa-in-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pl-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pt-br-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pt-pt-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-rm-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ro-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ru-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sk-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sl-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sq-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sr-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sv-se-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-th-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-tr-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-uk-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-uz-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-vi-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-zh-cn-131.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-zh-tw-131.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-gremlins:
     version: null
     packages: []
