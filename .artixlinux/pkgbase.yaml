@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nsxiv
-  version: 32-4
+  version: 32-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 32-4
+    version: 32-5
     packages:
-      - nsxiv-32-4-x86_64.pkg.tar.zst
+      - nsxiv-32-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
