@@ -6,12 +6,12 @@
 # Contributor: Ben <contrasutra@myrealbox.com>
 
 pkgname=elinks
-pkgver=0.17.0
+pkgver=0.17.1.1
 pkgrel=1
 pkgdesc='Advanced feature-rich text-mode web browser'
 arch=('x86_64')
 url='https://github.com/rkd77/elinks'
-license=('GPL')
+license=('GPL-2.0-only')
 depends=(
   'glibc'
   'brotli'
@@ -38,14 +38,9 @@ makedepends=(
   'gc'
   'cmake'
 )
-source=("$pkgname::git+$url#tag=v$pkgver"
-    libdom-fix.patch::https://github.com/rkd77/elinks/commit/2fdb04a6ab5523b94c4bd5c0062b0701686e127f.patch)
-b2sums=('SKIP'
-        'd69e57aa1cc8483118e340decfcfb0f5ce9e98ae7d9628e27bf4a7cea034232381ac3649d35c351c5b51820184a0850ac498ad51ceb85276eb2b7ae19ea44230')
-
-prepare() {
-    patch -d "$pkgname" -Np 1 -i ../libdom-fix.patch
-}
+source=("$pkgname::git+$url#tag=v$pkgver")
+sha512sums=('d31e4561d0397dfe1ad3993d4ef3ad3fd5a7a3fb704cd1b1624d50639bf6dd16d490135bbd6e54b3d570698db2e6b3b1e262f2838ff234e050ad8f3a79948797')
+b2sums=('e7095511f01c397910b63ba29711160d030fa7bbfab7780404df3da942ef376fd529edc3bf63925842ee0d31d0ddee929138340a88d7bed4ee6ab27195ca9288')
 
 build() {
   artix-meson \
