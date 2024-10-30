@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: hwinfo
-  version: 23.2-2
+  version: 23.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.2-2
+    version: 23.3-1
     packages:
-      - hwinfo-23.2-2-x86_64.pkg.tar.zst
+      - hwinfo-23.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
