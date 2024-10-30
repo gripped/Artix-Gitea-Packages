@@ -1,26 +1,25 @@
-# Maintainer: BlackIkeEagle < ike DOT devolder AT gmail DOT com >
-# Contributor: Maxim Baz <$pkgname at maximbaz dot com>
-# Contributor: Batou <batou at cryptolab net>
-# Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
+# Maintainer: artist for Artix Linux
 
 pkgname=copyq
-pkgver=9.0.0
+pkgver=9.1.0
 pkgrel=1
 pkgdesc="Clipboard manager with searchable and editable history"
 url="https://github.com/hluk/${pkgname}"
-depends=('hicolor-icon-theme' 'qt5-svg' 'qt5-wayland' 'knotifications5')
-makedepends=('extra-cmake-modules' 'qt5-tools')
+depends=('hicolor-icon-theme' 'qt6-svg' 'qt6-wayland' 'knotifications' 'kstatusnotifieritem')
+makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-base' 'qt6-declarative')
 license=('GPL3')
 arch=('x86_64')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-sha256sums=('6f8cce371cda8edb87e2a8d2f9de27022720b7b8fae51f67ee7d69b73526f432')
+sha256sums=('SKIP')
 
 build() {
     cmake -B build -S CopyQ-$pkgver \
-      -DCMAKE_INSTALL_PREFIX=/usr
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DWITH_QT6=ON
     cmake --build build
 }
 
 package() {
     DESTDIR="${pkgdir}" cmake --install build
 }
+
