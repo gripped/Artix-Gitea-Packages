@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-dbus-deviation
-  version: 0.6.1-7
+  version: 0.6.1-8
   arch:
     - any
   pkgname:
     - python-dbus-deviation
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.6.1-8
+    packages:
+      - python-dbus-deviation-0.6.1-8-any.pkg.tar.zst
   world:
     version: 0.6.1-7
     packages:
