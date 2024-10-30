@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xf86-input-evdev
-  version: 2.10.6-4
+  version: 2.11.0-1
   arch:
     - x86_64
   pkgname:
     - xf86-input-evdev
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.11.0-1
+    packages:
+      - xf86-input-evdev-2.11.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.10.6-4
     packages:
