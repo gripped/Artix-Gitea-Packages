@@ -3,7 +3,7 @@
 
 pkgname=sssd
 pkgver=2.10.0
-pkgrel=2
+pkgrel=5
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -48,7 +48,7 @@ source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pk
         "sssd-perms.tmpfile")
 sha512sums=('d237ff135fb21bcd1040787d6dfe8fa383290fbae1f15c6917284beb38dd95ecf6418335302e26be40c65e44e8b44135499eec0b98119ea53a38098ac0bc1e2c'
             'SKIP'
-            '4ef54f47a04e83236b93790995e289afd95bfc9e465a038b5750e81bf15c186371ea4bc7b9bd302ab1a4b104b20ef7b6124c0634aea85febb6483c87da078ea3')
+            '21646ea5900340c1b0a69c79fc72b0d3e360d56e04dc0daf7947024a420d214a931365e684e8f7cfd37c959327e6909ad4c0d6c3a8186153bca870f508dad486')
 validpgpkeys=('C13CD07FFB2DB1408E457A3CD3D21B2910CF6759')
 
 prepare() {
@@ -80,6 +80,7 @@ build() {
     --sbindir=/usr/bin                            \
     --sysconfdir=/etc                             \
     --localstatedir=/var                          \
+    --runstatedir=/run                            \
     --libexecdir=/usr/lib/sssd                    \
     --datadir=/usr/share                          \
     --enable-pammoddir=/usr/lib/security          \
@@ -119,6 +120,10 @@ package() {
   install -Dm0644 src/examples/logrotate "$pkgdir"/etc/logrotate.d/sssd
   install -Dm0644 contrib/sssd.sysusers "$pkgdir"/usr/lib/sysusers.d/sssd.conf
   install -Dm0644 "$srcdir"/sssd-perms.tmpfile "$pkgdir"/usr/lib/tmpfiles.d/sssd-perms.conf
+
+  setcap cap_chown,cap_dac_override,cap_setuid,cap_setgid=ep "$pkgdir"/usr/lib/sssd/sssd/krb5_child
+  setcap cap_chown,cap_dac_override,cap_setuid,cap_setgid=ep "$pkgdir"/usr/lib/sssd/sssd/ldap_child
+  setcap cap_dac_read_search=p "$pkgdir"/usr/lib/sssd/sssd/sssd_pam
 
   cd "$srcdir"
   rm -rf "$pkgdir/etc/systemd" # remove the drop-in
