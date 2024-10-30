@@ -9,12 +9,12 @@ pkgbase:
     - linux-rt-headers
     - linux-rt-docs
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -48,11 +48,8 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 6.10.2.rt14.artix1-1
-    packages:
-      - linux-rt-6.10.2.rt14.artix1-1-x86_64.pkg.tar.zst
-      - linux-rt-headers-6.10.2.rt14.artix1-1-x86_64.pkg.tar.zst
-      - linux-rt-docs-6.10.2.rt14.artix1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy:
     version: 6.10.2.rt14.artix1-2
     packages:
