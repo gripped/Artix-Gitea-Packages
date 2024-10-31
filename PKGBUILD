@@ -27,8 +27,8 @@ pkgname=(
   gst-python
   gstreamer-docs
 )
-pkgver=1.24.8
-pkgrel=3
+pkgver=1.24.9
+pkgrel=1
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -204,14 +204,12 @@ source=(
   "git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=$pkgver"
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
-  0002-ges-Fix-name-of-GESFrameCompositionMeta-API-type.patch
-  0003-x265enc-Unbreak-build-with-x265-4.0.patch
+  0002-x265enc-Unbreak-build-with-x265-4.0.patch
 )
-b2sums=('ecdcf29ad346dc4aff966b34b4c68ac9e742b29bac86a33b289f06f213d563ac3c9264768a409c70c032694ccbfd246f772b67097456647c96c869aecd56ff96'
-        '5330ad9313cfcfbdd0514f8f8164440c4eb3605a1e17dda8b7a024f3c986a97042575fedd3e54d4c1b0a1476918cdbb1d1d1ee46b173d235f5e3ed34d40bf39a'
+b2sums=('53c72d3d88d48ab5bfe114f0d5ae8e224469811552000cba8952b8f64e8b283266bc6a397fc72586acce94439baba1a4b0ede17190e07eae83c2104ef6117461'
+        '45a454b6b53a16b89cf1e9bac5928f7886e666b0c82fa0cc9610a09bf35871424f291e8bdd1ae4f7fba6e18a8c98c846a2d8024b9df3ce3043e8074b912e58ff'
         'SKIP'
-        '9e277b0373c024d9ec0175e7a036f85152ce145b40d62105e660ca4f466ee0a2d70c68c11c4e6929e46117380482c70957e08e3bf6b5aca1ea0e2c7d4360f317'
-        'ac31a75ad3086e26045d02d917fd1c0f155b9e1a6ea82aa8aaf9687500a129b80be82947f6a07928399570920bdbc829d6ff1b79d0b30538606d056a76aaab05'
+        'b58019ca02e388925af02a98d6cc7b2c7f67692bb25b7d947f0759669c13027a069cbadd20c1119b98020085341199b5a7085ba32cc28777ed60bd2a2647d845'
         '23596f6e5ba9628629f9fca36e3518427ffacdc54505224b4a6e6f039bb3fc168e20093c645b1c093ceb8280fe549a2f6d2af857afad55c28fcc5f9f26917e44')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
@@ -223,11 +221,8 @@ prepare() {
   # Disable broken tests
   git apply -3 ../0001-HACK-meson-Disable-broken-tests.patch
 
-  # Fix build of GES
-  git apply -3 ../0002-ges-Fix-name-of-GESFrameCompositionMeta-API-type.patch
-
   # Fix build with x265 4.0
-  git apply -3 ../0003-x265enc-Unbreak-build-with-x265-4.0.patch
+  git apply -3 ../0002-x265enc-Unbreak-build-with-x265-4.0.patch
 }
 
 build() {
