@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - intel-compute-runtime
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 24.39.31294.12-1
     packages:
       - intel-compute-runtime-24.39.31294.12-1-x86_64.pkg.tar.zst
-  world:
-    version: 24.35.30872.22-2
-    packages:
-      - intel-compute-runtime-24.35.30872.22-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
