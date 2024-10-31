@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: renameutils
-  version: 0.12.0-7
+  version: 0.12.0-7.1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.12.0-7
+    version: 0.12.0-7.1
     packages:
-      - renameutils-0.12.0-7-x86_64.pkg.tar.zst
+      - renameutils-0.12.0-7.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

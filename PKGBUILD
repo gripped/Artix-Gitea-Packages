@@ -3,7 +3,7 @@
 
 pkgname=renameutils
 pkgver=0.12.0
-pkgrel=7
+pkgrel=7.1
 pkgdesc="A set of programs designed to make renaming of files faster and less cumbersome"
 arch=('x86_64')
 url="https://www.nongnu.org/renameutils/"
