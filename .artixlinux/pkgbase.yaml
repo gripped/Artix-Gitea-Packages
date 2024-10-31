@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: nvidia-open
-  version: 560.35.03-19
+  version: 565.57.01-1
   arch:
     - x86_64
   pkgname:
     - nvidia-open
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 565.57.01-1
+    packages:
+      - nvidia-open-565.57.01-1-x86_64.pkg.tar.zst
   world:
     version: 560.35.03-19
     packages:
