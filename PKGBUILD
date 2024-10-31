@@ -5,7 +5,7 @@
 pkgname=lib32-libcap
 _name=${pkgname#lib32-}
 pkgver=2.71
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="POSIX 1003.1e capabilities (32-bit)"
 arch=(x86_64)
 url="https://sites.google.com/site/fullycapable/"
