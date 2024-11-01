@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-settings
-  version: 560.35.03-1
+  version: 565.57.01-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 560.35.03-1
+    version: 565.57.01-1
     packages:
-      - nvidia-settings-560.35.03-1-x86_64.pkg.tar.zst
-      - libxnvctrl-560.35.03-1-x86_64.pkg.tar.zst
+      - nvidia-settings-565.57.01-1-x86_64.pkg.tar.zst
+      - libxnvctrl-565.57.01-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
