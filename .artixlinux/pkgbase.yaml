@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: oxygen-icons
-  version: 1:6.0.0-2
+  version: 1:6.1.0-2
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:6.0.0-2
+    version: 1:6.1.0-2
     packages:
-      - oxygen-icons-1:6.0.0-2-any.pkg.tar.zst
-      - oxygen-icons-svg-1:6.0.0-2-any.pkg.tar.zst
+      - oxygen-icons-1:6.1.0-2-any.pkg.tar.zst
+      - oxygen-icons-svg-1:6.1.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
