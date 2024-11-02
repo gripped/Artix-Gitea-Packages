@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xfce4-panel
-  version: 4.18.6-2
+  version: 4.18.6-3
   arch:
     - x86_64
   pkgname:
     - xfce4-panel
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.18.6-2
+    version: 4.18.6-3
     packages:
-      - xfce4-panel-4.18.6-2-x86_64.pkg.tar.zst
+      - xfce4-panel-4.18.6-3-x86_64.pkg.tar.zst
 team: galaxy
