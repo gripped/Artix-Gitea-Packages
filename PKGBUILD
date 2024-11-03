@@ -3,7 +3,7 @@
 pkgbase=libteam
 pkgname=(libteam libteam-docs)
 pkgver=1.32
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Library for controlling team network device"
 url="http://libteam.org/"
 arch=(x86_64)
@@ -61,7 +61,6 @@ package_libteam() {
   cd libteam
   make DESTDIR="$pkgdir" install
 
-  install -Dt "$pkgdir/usr/lib/systemd/system" -m644 teamd/redhat/systemd/teamd@.service
   install -Dt "$pkgdir/usr/share/dbus-1/system.d" -m644 teamd/dbus/teamd.conf
 }
 
