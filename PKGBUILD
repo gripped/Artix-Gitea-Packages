@@ -3,7 +3,7 @@
 # Contributor: Konstantin Shalygin <k0ste@k0ste.ru>
 
 pkgname=xmrig
-pkgver=6.22.1
+pkgver=6.22.2
 pkgrel=1
 pkgdesc='RandomX, KawPow, CryptoNight, AstroBWT and GhostRider unified CPU/GPU miner and RandomX benchmark'
 url='https://github.com/xmrig/xmrig'
@@ -19,7 +19,7 @@ makedepends=('cmake')
 backup=("etc/${pkgname}/${pkgname}.conf")
 source=(https://github.com/xmrig/${pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz
         xmrig.sysusers)
-sha256sums=('189e4bf604f8b569cd15894439a4ad0209b64184c8ccb5a2119a4f07c16da448'
+sha256sums=('34759ca9c1b2486ecb7b6bc267c76a6f365d401b2b6de6d667e0a13ae30882a2'
             'd8f499302fb2b642fe02586c81c410a299e0a6e133aef1cc1c783bcdcb3f44f6')
 
 prepare() {
