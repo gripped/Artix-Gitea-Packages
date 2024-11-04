@@ -1,19 +1,21 @@
 ---
 pkgbase:
   name: edk2
-  version: 202311-1
+  version: 202408-1
   arch:
     - any
   pkgname:
+    - edk2-arm
+    - edk2-aarch64
     - edk2-shell
     - edk2-ovmf
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 202408-1
+    packages:
+      - edk2-arm-202408-1-any.pkg.tar.zst
+      - edk2-aarch64-202408-1-any.pkg.tar.zst
+      - edk2-shell-202408-1-any.pkg.tar.zst
+      - edk2-ovmf-202408-1-any.pkg.tar.zst
   world:
     version: 202311-1
     packages:
@@ -54,3 +60,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
