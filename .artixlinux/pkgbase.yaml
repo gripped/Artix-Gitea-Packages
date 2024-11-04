@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-sphinx-hawkmoth
-  version: 0.18.0-2
+  version: 0.19.0-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.18.0-2
+    version: 0.19.0-1
     packages:
-      - python-sphinx-hawkmoth-0.18.0-2-x86_64.pkg.tar.zst
+      - python-sphinx-hawkmoth-0.19.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
