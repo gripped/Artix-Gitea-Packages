@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: hip-runtime
-  version: 6.2.2-1
+  version: 6.2.2-2
   arch:
     - x86_64
   pkgname:
@@ -27,10 +27,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.2.2-1
+    version: 6.2.2-2
     packages:
-      - hip-runtime-amd-6.2.2-1-x86_64.pkg.tar.zst
-      - hip-runtime-nvidia-6.2.2-1-x86_64.pkg.tar.zst
+      - hip-runtime-amd-6.2.2-2-x86_64.pkg.tar.zst
+      - hip-runtime-nvidia-6.2.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -3,7 +3,7 @@
 pkgbase=hip-runtime
 pkgname=(hip-runtime-amd hip-runtime-nvidia)
 pkgver=6.2.2
-pkgrel=1
+pkgrel=2
 _pkgdesc="Heterogeneous Interface for Portability"
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/HIP/en/latest/'
@@ -104,6 +104,8 @@ package_hip-runtime-amd() {
   depends=("${_amd_depends[@]}")
   optdepends=('inetutils: Print hostname in hipconfig'
               'cuda: Cross compile for nvidia')
+  replaces=("hip")
+  provides=("hip=${pkgver}")
   DESTDIR="$pkgdir" cmake --install build-amd
   install -Dm644 "$srcdir/$_dirhip/LICENSE.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
