@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gdb
-  version: 15.2-2
+  version: 15.2-3
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gdb-common
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 15.2-2
+    version: 15.2-3
     packages:
-      - gdb-15.2-2-x86_64.pkg.tar.zst
-      - gdb-common-15.2-2-x86_64.pkg.tar.zst
+      - gdb-15.2-3-x86_64.pkg.tar.zst
+      - gdb-common-15.2-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
