@@ -1,5 +1,5 @@
 post_upgrade() {
-  if (( $(vercmp "$2" '202408-1')" < 0 )); then
+  if (( $(vercmp "$2" '202408-2') < 0 )); then
     cat <<END
 
 >>> The CSM support has been removed upstream in version 202402.
