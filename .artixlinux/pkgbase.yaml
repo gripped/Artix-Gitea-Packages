@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - telegram-desktop
 actions:
-  addRepo: galaxy-goblins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 5.7.1-1
+    version: 5.7.1-2
     packages:
-      - telegram-desktop-5.7.1-1-x86_64.pkg.tar.zst
+      - telegram-desktop-5.7.1-2-x86_64.pkg.tar.zst
 team: galaxy
