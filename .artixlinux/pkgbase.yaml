@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rubberband
-  version: 3.3.0-2
+  version: 4.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - rubberband-lv2
     - rubberband-vamp
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.0.0-1
+    packages:
+      - rubberband-4.0.0-1-x86_64.pkg.tar.zst
+      - rubberband-ladspa-4.0.0-1-x86_64.pkg.tar.zst
+      - rubberband-lv2-4.0.0-1-x86_64.pkg.tar.zst
+      - rubberband-vamp-4.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 3.3.0-2
     packages:
