@@ -5,7 +5,7 @@
 
 pkgname=hyprland
 pkgver=0.44.1
-pkgrel=2
+pkgrel=3
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/${pkgname^}"
@@ -39,7 +39,6 @@ depends=(cairo # libcairo.so
          libelogind libelogind.so
          tomlplusplus libtomlplusplus.so libudev.so
          vulkan-icd-loader
-         vulkan-validation-layers
          wayland libwayland-client.so libwayland-server.so
          wayland-protocols
          xcb-proto
@@ -61,6 +60,7 @@ makedepends=(cmake
 optdepends=('cmake: to build and install plugins using hyprpm'
             'cpio: to build and install plugins using hyprpm'
             'meson: to build and install plugins using hyprpm')
+provides=(wayland-compositor)
 _archive="${pkgname^}-$pkgver"
 source=("$_archive.tar.gz::$url/releases/download/v$pkgver/source-v$pkgver.tar.gz")
 sha256sums=('a901b9ce5dac48a2b92f287d902c5dc33a05e9946fd082c43142f205246dfc63')
