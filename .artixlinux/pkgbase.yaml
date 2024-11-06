@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ffmpeg
-  version: 2:7.1-1
+  version: 2:7.1-2
   arch:
     - x86_64
   pkgname:
     - ffmpeg
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2:7.1-1
+    version: 2:7.1-2
     packages:
-      - ffmpeg-2:7.1-1-x86_64.pkg.tar.zst
+      - ffmpeg-2:7.1-2-x86_64.pkg.tar.zst
   world:
     version: 2:7.0.2-3
     packages:
