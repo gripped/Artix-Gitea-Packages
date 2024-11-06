@@ -1,27 +1,28 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=pwvucontrol
-pkgver=0.4.6
+pkgver=0.4.7
 pkgrel=1
 pkgdesc="Pipewire volume control"
-url="https://github.com/saivert/pwvucontrol"
+url="https://github.com/saivert/$pkgname"
 arch=(x86_64)
 license=(GPL-3.0-only)
 
 depends=(glib2 gtk4 libadwaita wireplumber libwireplumber-4.0-compat)
-makedepends=(rust clang meson cmake git)
+makedepends=(rust clang meson cmake)
 
 source=(
-  "git+https://github.com/saivert/pwvucontrol.git"
+  "$url/archive/refs/tags/$pkgver.tar.gz"
   "pwvucontrol.desktop"
 )
 
-b2sums=('SKIP'
+b2sums=('555570ea793a7d7edbecde71a3978a2b74803612666340f8d8c3b00c674f55ffd33a0554fd2c0b7d1e542e66b43f4ba1001889ae2375c49da631e688dee7f0cc'
         'fcc137332b78c9a80232df0c2023c833319b09152d1a29d078d82226c5e7638d3f1ffed7dbeab9f4cd6869556a417d84b3c5f10e17ba1cb56b632cfe22662be7')
 
 build() {
-  artix-meson --reconfigure $pkgname build
-  meson install -C build --destdir mydestdir
+  meson setup --prefix=/usr --buildtype=plain $pkgname-$pkgver build
+  meson compile -C build
+  meson install -C build --destdir installdir
 }
 
 check() {
@@ -29,8 +30,8 @@ check() {
 }
 
 package() {
-  cp -rv build/mydestdir/usr "${pkgdir}"
-  install -Dm644 "${pkgname}/COPYING" "${pkgdir}/usr/share/licenses/$pkgname/COPYING"
+  cp -rv build/installdir/usr "${pkgdir}"
+  install -Dm644 "${pkgname}-${pkgver}/COPYING" "${pkgdir}/usr/share/licenses/$pkgname/COPYING"
   install -Dm644 pwvucontrol.desktop "${pkgdir}/usr/share/applications/com.saivert.pwvucontrol.desktop"
 }
 
