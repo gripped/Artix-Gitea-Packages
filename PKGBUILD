@@ -7,7 +7,7 @@
 pkgbase=curl
 pkgname=(curl libcurl-compat libcurl-gnutls)
 pkgver=8.11.0
-pkgrel=1
+pkgrel=3
 pkgdesc='command line tool and library for transferring data with URLs'
 arch=('x86_64')
 url='https://curl.se/'
@@ -29,7 +29,10 @@ source=("git+https://github.com/curl/curl.git#tag=curl-${pkgver//./_}?signed")
 sha512sums=('d438f215b2e6023104af52961a8a8de9082bd8ceaf9a557f353b3b754b18510cccf37f33476eb896744559ccf26eadf6e1411c5f8f04fa9526af04df6439a7d8')
 
 _backports=(
-  '3eec5afbd0b6377eca893c392569b2faf094d970' # https://github.com/curl/curl/issues/14344
+  # duphandle: also init netrc
+  'f5c616930b5cf148b1b2632da4f5963ff48bdf88'
+  # netrc: support large file, longer lines, longer tokens
+  '0cdde0fdfbeb8c35420f6d03fa4b77ed73497694'
 )
 
 _reverts=(
@@ -126,7 +129,7 @@ check() {
   # -p: print logs if test fails
   # -j: parallelization
   # disable test 433, since it requires the glibc debug info
-  make TFLAGS="-v -a -k -p -j$(nproc) !433 !537" test-nonflaky ||:
+  make TFLAGS="-v -a -k -p -j$(nproc) !433" test-nonflaky
 }
 
 package_curl() {
