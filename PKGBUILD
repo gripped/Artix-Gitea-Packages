@@ -6,7 +6,7 @@
 pkgname=cudnn
 pkgver=9.5.1.17
 _cudaver=12
-pkgrel=1
+pkgrel=1.1
 pkgdesc="NVIDIA CUDA Deep Neural Network library"
 arch=('x86_64')
 url="https://developer.nvidia.com/cuDNN"
