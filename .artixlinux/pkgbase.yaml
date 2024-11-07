@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: blender
-  version: 17:4.2.3-3
+  version: 17:4.2.3-5
   arch:
     - x86_64
   pkgname:
@@ -44,9 +44,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 17:4.2.3-3
+    version: 17:4.2.3-5
     packages:
-      - blender-17:4.2.3-3-x86_64.pkg.tar.zst
+      - blender-17:4.2.3-5-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
