@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-virtualenv
-  version: 20.26.2-1
+  version: 20.27.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20.26.2-1
+    version: 20.27.1-1
     packages:
-      - python-virtualenv-20.26.2-1-any.pkg.tar.zst
+      - python-virtualenv-20.27.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
