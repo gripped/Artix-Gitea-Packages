@@ -1,4 +1,5 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Hurricane Pootis <hurricanepootis@protonmail.com>
 # Contributor: John Sowiak <john@archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
@@ -9,7 +10,7 @@
 
 pkgname=blender
 pkgver=4.2.3
-pkgrel=2
+pkgrel=3
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -65,7 +66,6 @@ depends=(
   'materialx'
   'onetbb'
   'openal'
-  'opencollada'
   'opencolorio'
   'openexr'
   'openimagedenoise'
