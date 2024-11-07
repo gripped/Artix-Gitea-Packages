@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-pkg-config
-  version: 1.5.6-3
+  version: 1.5.7-1
   arch:
     - any
   pkgname:
     - ruby-pkg-config
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.6-3
+    version: 1.5.7-1
     packages:
-      - ruby-pkg-config-1.5.6-3-any.pkg.tar.zst
+      - ruby-pkg-config-1.5.7-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
