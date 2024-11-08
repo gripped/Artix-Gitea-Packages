@@ -1,11 +1,11 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-passion
-pkgver=2.6.13
+pkgver=2.6.15
 _pkgname1=moksha-theme-redpassion
 _pkgname2=MokshaRedPassion
 _pkgname3=MokshaPassion
-pkgrel=1.4
+pkgrel=1
 pkgdesc="Moksha Passion theme"
 arch=('any')
 url="https://github.com/thewaiter"
