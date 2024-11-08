@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-blingbling
-pkgver=0.10.0.5
+pkgver=0.10.0.7
 _pkgname2=etheme-blingbling-e20
 _pkgname3=MokshaBlingBling
 _pkgname4=blingbling

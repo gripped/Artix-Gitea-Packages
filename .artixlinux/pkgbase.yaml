@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-blingbling
-  version: 0.10.0.5-1.3
+  version: 0.10.0.7-1.3
   arch:
     - any
   pkgname:
     - moksha-theme-blingbling
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.10.0.7-1.3
+    packages:
+      - moksha-theme-blingbling-0.10.0.7-1.3-any.pkg.tar.zst
   galaxy:
     version: 0.10.0.5-1.3
     packages:
