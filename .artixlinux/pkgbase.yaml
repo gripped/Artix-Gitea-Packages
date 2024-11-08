@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - audacious-plugins
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 4.4.2-2
     packages:
       - audacious-plugins-4.4.2-2-x86_64.pkg.tar.zst
-  galaxy:
-    version: 4.4.2-1
-    packages:
-      - audacious-plugins-4.4.2-1-x86_64.pkg.tar.zst
 team: galaxy
