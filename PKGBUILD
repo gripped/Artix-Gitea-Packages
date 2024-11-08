@@ -1,10 +1,10 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-forum
-pkgver=0.7.4.5
+pkgver=0.7.4.7
 _pkgname2=MokshaForum
 _pkgname3=forum-moksha
-pkgrel=1.3
+pkgrel=1
 pkgdesc="Moksha Forum theme"
 arch=('any')
 url="https://github.com/thewaiter"
