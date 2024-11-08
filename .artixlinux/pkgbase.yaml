@@ -8,8 +8,8 @@ pkgbase:
     - avidemux-cli
     - avidemux-qt
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -47,13 +47,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 2.8.1-5
     packages:
       - avidemux-cli-2.8.1-5-x86_64.pkg.tar.zst
       - avidemux-qt-2.8.1-5-x86_64.pkg.tar.zst
-  galaxy:
-    version: 2.8.1-4
-    packages:
-      - avidemux-cli-2.8.1-4-x86_64.pkg.tar.zst
-      - avidemux-qt-2.8.1-4-x86_64.pkg.tar.zst
 team: galaxy
