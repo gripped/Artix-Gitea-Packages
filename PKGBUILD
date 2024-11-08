@@ -1,10 +1,10 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-detour
-pkgver=0.12.7
+pkgver=0.12.9
 _pkgname2=MokshaDetour
 _pkgname3=MokshaDetourious
-pkgrel=1.6
+pkgrel=1
 pkgdesc="Moksha Detour theme"
 arch=('any')
 url="https://github.com/thewaiter"
