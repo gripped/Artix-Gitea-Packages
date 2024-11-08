@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ell
-  version: 0.69-1
+  version: 0.70-1
   arch:
     - x86_64
   pkgname:
     - ell
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.70-1
+    packages:
+      - ell-0.70-1-x86_64.pkg.tar.zst
   world:
     version: 0.69-1
     packages:
