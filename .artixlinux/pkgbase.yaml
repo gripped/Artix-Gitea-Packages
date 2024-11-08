@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-dimensions
-  version: 0.0.1-7.6
+  version: 0.0.1-9
   arch:
     - any
   pkgname:
     - moksha-theme-dimensions
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.0.1-9
+    packages:
+      - moksha-theme-dimensions-0.0.1-9-any.pkg.tar.zst
   galaxy:
     version: 0.0.1-7.6
     packages:
