@@ -20,7 +20,7 @@ optdepends=('webkit2gtk: embedded browser features'
 source=("https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
         $pkgname-28611.patch::https://patch-diff.githubusercontent.com/raw/telegramdesktop/tdesktop/pull/28611.patch)
 sha512sums=('55fa4f20ceae71f2b869c00abdcf6a27f505156f7b254e38a68a97ea34b09e2e9deeef1fec6c5633e93043fb2e9e9ea72502ec9daeed319c8de65cbe825ca916'
-            'a2ece7e7cefcb7beab66ff3365b943f1d9dcb36baace300cfe2ead887e345d33294db67523fc97afd124a17c70ef522f8408c16d9f6db80e51fafd728ab414dd')
+            'b959fd3d26734e4361f8f567eacc874cd753b347b55fa0fc2640d10b65f1a6788b677967c601b1f92f636831c8aafe7681145ab35c69c983960ec3b78707f321')
 
 prepare() {
   patch -Np1 -d tdesktop-$pkgver-full -i "$srcdir"/$pkgname-28611.patch
