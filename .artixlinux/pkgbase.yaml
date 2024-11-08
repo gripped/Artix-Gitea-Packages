@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-blueelectric
-  version: 0.5.14-1.2
+  version: 0.5.16-1.2
   arch:
     - any
   pkgname:
     - moksha-theme-blueelectric
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.5.16-1.2
+    packages:
+      - moksha-theme-blueelectric-0.5.16-1.2-any.pkg.tar.zst
   galaxy:
     version: 0.5.14-1.2
     packages:
