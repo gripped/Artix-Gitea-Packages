@@ -4,7 +4,7 @@
 
 pkgname=inkscape
 pkgver=1.4
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
