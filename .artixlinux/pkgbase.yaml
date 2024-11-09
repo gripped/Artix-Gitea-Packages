@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-regress
-  version: 2024.8.1-1
+  version: 2024.11.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.8.1-1
+    version: 2024.11.1-1
     packages:
-      - python-regress-2024.8.1-1-x86_64.pkg.tar.zst
+      - python-regress-2024.11.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
