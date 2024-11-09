@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - inkscape
 actions:
-  addRepo: world
-  removeRepo: world-goblins
+  addRepo: null
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4-2
-    packages:
-      - inkscape-1.4-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
