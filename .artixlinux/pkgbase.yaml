@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xtrans
-  version: 1.5.1-1
+  version: 1.5.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.1-1
+    version: 1.5.2-1
     packages:
-      - xtrans-1.5.1-1-any.pkg.tar.zst
+      - xtrans-1.5.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
