@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Xyne <ca dot archlinux at xyne, backwards>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
@@ -6,8 +5,8 @@
 # Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 
 pkgname=cmus
-pkgver=2.11.0
-pkgrel=2
+pkgver=2.12.0
+pkgrel=1
 pkgdesc='Feature-rich ncurses-based music player'
 arch=('x86_64')
 url='https://cmus.github.io/'
@@ -47,7 +46,7 @@ optdepends=('alsa-lib: for ALSA output plugin support'
             'opusfile: for opus input plugin support'
             'wavpack: for wavpack input plugin support')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/cmus/cmus/archive/v${pkgver}.tar.gz")
-sha256sums=('2bbdcd6bbbae301d734214eab791e3755baf4d16db24a44626961a489aa5e0f7')
+sha256sums=('44b96cd5f84b0d84c33097c48454232d5e6a19cd33b9b6503ba9c13b6686bfc7')
 
 build() {
   cd "$pkgname-$pkgver"
