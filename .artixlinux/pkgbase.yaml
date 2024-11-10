@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-opt_einsum
-  version: 3.3.0-8
+  version: 3.3.0-8.1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.3.0-8
+    version: 3.3.0-8.1
     packages:
-      - python-opt_einsum-3.3.0-8-any.pkg.tar.zst
+      - python-opt_einsum-3.3.0-8.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
