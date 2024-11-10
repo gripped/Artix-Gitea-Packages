@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: limine
-  version: 8.3.1-1
+  version: 8.4.0-1
   arch:
     - x86_64
   pkgname:
     - limine
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.4.0-1
+    packages:
+      - limine-8.4.0-1-x86_64.pkg.tar.zst
   world:
     version: 8.3.1-1
     packages:
