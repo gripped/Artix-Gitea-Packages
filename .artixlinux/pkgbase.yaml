@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - moksha-theme-crema
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,10 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.10.0-8
     packages:
       - moksha-theme-crema-0.10.0-8-any.pkg.tar.zst
-  galaxy:
-    version: 0.10.0-6.2
-    packages:
-      - moksha-theme-crema-0.10.0-6.2-any.pkg.tar.zst
