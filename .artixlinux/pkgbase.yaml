@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: wine-staging
-  version: 9.20-1
+  version: 9.21-1
   arch:
     - x86_64
   pkgname:
     - wine-staging
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,8 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 9.21-1
+    packages:
+      - wine-staging-9.21-1-x86_64.pkg.tar.zst
   lib32:
     version: 9.20-1
     packages:
