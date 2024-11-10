@@ -1,0 +1,89 @@
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+
+pkgname='pre-commit'
+pkgver=4.0.1
+pkgrel=1
+pkgdesc="A framework for managing and maintaining multi-language pre-commit hooks"
+url="https://github.com/pre-commit/pre-commit"
+license=('MIT')
+arch=('any')
+depends=(
+    'python-cfgv'
+    'python-identify'
+    'python-nodeenv'
+    'python-toml'
+    'python-virtualenv'
+    'python-yaml'
+)
+makedepends=('python-setuptools')
+checkdepends=(
+    # 'cabal-install'
+    'git'
+    # 'ghc'
+    'go'
+    'luarocks'
+    'nodejs'
+    'npm'
+    'python-pytest'
+    'python-pytest-env'
+    'python-re-assert'
+    'r'
+    'rubygems'
+    'rust'
+)
+provides=('python-pre-commit')
+replaces=('python-pre-commit')
+source=("https://github.com/pre-commit/pre-commit/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('93c01e4d64aa1010bdaac6e1774497fe38f757cc6b67b7546332c5fe3846583fc5ac71f70bb257e5bbe24062e060307b49abdcb539538ccedeb2cdf2243908a4')
+b2sums=('2d38ef4ad06744e11a75a9faddcf90f1fbb60f597d85782bf8065e90e746e62de0f7396ad09e3d03502208114ed75ed57f05ae143470b349a9b1dd6860ba72bd')
+
+build() {
+  cd pre-commit-$pkgver
+  python setup.py build
+}
+
+# check() {
+#   cd pre-commit-$pkgver
+#   git init
+#   git config user.email "pony@arch"
+#   git config user.name "Lucky Pony"
+#   git config --global protocol.file.allow always
+#   export GIT_AUTHOR_NAME="Lucky Pony"
+#   export GIT_COMMITTER_NAME="Lucky Pony"
+#   export GIT_AUTHOR_EMAIL="pony@arch"
+#   export GIT_COMMITTER_EMAIL="pony@arch"
+#   export VIRTUALENV_NO_DOWNLOAD=1
+#   export PRE_COMMIT_NO_CONCURRENCY=1
+#
+#   # Empty venv so that `importlib` picks up the local "pre-commit" package
+#   python -m venv --system-site-packages venv
+#   source "$PWD/venv/bin/activate"
+#   python setup.py develop
+#
+#   # Deselect conda because we don't have it!
+#   # Deselect coursier because we don't have it!
+#   # Deselect dart because it doesn't support 3.x.x!
+#   # Deselect swift because we don't have it!
+#   # test_install_ruby_with_version,test_run_a_ruby_hook: https://github.com/pre-commit/pre-commit/issues/1368
+#   python -m pytest --deselect tests/languages/conda_test.py \
+#                    --deselect tests/languages/coursier_test.py \
+#                    --deselect tests/languages/dart_test.py \
+#                    --deselect tests/languages/docker_image_test.py \
+#                    --deselect tests/languages/docker_test.py \
+#                    --deselect tests/languages/dotnet_test.py \
+#                    --deselect tests/languages/haskell_test.py::test_run_dep \
+#                    --deselect tests/languages/haskell_test.py::test_run_example_executable \
+#                    --deselect tests/languages/swift_test.py \
+#                    --deselect tests/languages/ruby_test.py::test_install_ruby_with_version \
+#                    --deselect tests/languages/ruby_test.py::test_ruby_hook_language_version \
+#                    --deselect tests/languages/ruby_test.py::test_ruby_with_bundle_disable_shared_gems \
+#                    --deselect tests/languages/rust_test.py::test_language_version_with_rustup
+#   deactivate
+# }
+
+package() {
+  cd pre-commit-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
