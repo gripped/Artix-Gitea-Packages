@@ -2,33 +2,29 @@
 # Co-Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=lxqt-themes
-pkgver=2.0.0
+pkgver=2.1.0
 pkgrel=1
 pkgdesc="LXQt themes, graphics and icons."
 arch=("any")
 groups=("lxqt")
 url="https://github.com/lxqt/$pkgname"
-license=("LGPL2.1")
+# https://github.com/lxqt/lxqt-themes/blob/2.0.0/AUTHORS#L9
+license=("LGPL-2.1-or-later")
 depends=("hicolor-icon-theme")
-makedepends=("lxqt-build-tools")
+makedepends=("git" "lxqt-build-tools")
 replaces=("lxqt-common")
 source=(
-	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
-	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
+	"git+https://github.com/lxqt/$pkgname.git#tag=$pkgver"
 )
-sha256sums=('927aa0bd8ecf718c4a91e820277af12a24d329b99e9e7ca4868311c1de76911d'
-            'SKIP')
+sha256sums=('ec107d9d2ae5168e43cfa012c4459a6e8d20909b0fb24fe3d31ae2672dadcaca')
 validpgpkeys=(
-	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
-	"7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3"  # Alf Gaida <agaida@siduction.org>
 	"19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # Pedram Pourang <tsujan2000@gmail.com>
 )
-
 
 build() {
 	mkdir -p build
 	cd build
-	cmake "$srcdir/$pkgname-$pkgver" \
+	cmake "$srcdir/$pkgname" \
 		-DCMAKE_INSTALL_PREFIX=/usr
 	make
 }
