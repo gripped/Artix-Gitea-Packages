@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: librewolf
-  version: 132.0-1
+  version: 132.0.1-1
   arch:
     - x86_64
     - aarch64
@@ -51,7 +51,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 132.0-1
+    version: 132.0.1-1
     packages:
-      - librewolf-132.0-1-x86_64.pkg.tar.zst
+      - librewolf-132.0.1-1-x86_64.pkg.tar.zst
 team: galaxy
