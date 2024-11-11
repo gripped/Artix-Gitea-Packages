@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: lxqt-openssh-askpass
-  version: 2.0.1-1
+  version: 2.1.0-1
   arch:
     - x86_64
   pkgname:
     - lxqt-openssh-askpass
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.1.0-1
+    packages:
+      - lxqt-openssh-askpass-2.1.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 2.0.1-1
     packages:
