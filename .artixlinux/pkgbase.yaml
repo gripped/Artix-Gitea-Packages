@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xdg-desktop-portal-lxqt
-  version: 1.0.2-1
+  version: 1.1.0-1
   arch:
     - x86_64
   pkgname:
     - xdg-desktop-portal-lxqt
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.1.0-1
+    packages:
+      - xdg-desktop-portal-lxqt-1.1.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.0.2-1
     packages:
