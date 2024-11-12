@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openexr
-  version: 3.3.1-1
+  version: 3.3.2-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.3.1-1
+    version: 3.3.2-1
     packages:
-      - openexr-3.3.1-1-x86_64.pkg.tar.zst
+      - openexr-3.3.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

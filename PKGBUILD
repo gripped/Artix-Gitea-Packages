@@ -1,7 +1,7 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=openexr
-pkgver=3.3.1
+pkgver=3.3.2
 pkgrel=1
 pkgdesc='A high dynamic-range image file format library'
 url='https://www.openexr.com/'
@@ -14,7 +14,7 @@ depends=(gcc-libs
 makedepends=(cmake
              git)
 source=(git+https://github.com/openexr/openexr#tag=v$pkgver)
-sha256sums=('5c60e410e60bc424a27c1a7865b26a1f8eaacb46ecc643f925c521a8f922fa64')
+sha256sums=('549c95f71f36f7e6164828f6646b1ec1c4efff6994431416d9a7884345c5ab55')
 
 build() {
   cmake -B build -S $pkgname \
