@@ -5,105 +5,105 @@
 
 pkgname=waybar
 pkgver=0.11.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors'
 arch=('x86_64')
 url="https://github.com/Alexays/Waybar/"
 license=('MIT')
 depends=(
-    'atkmm'
-    'cairomm'
-    'fmt'
-    'gcc-libs'
-    'glib2'
-    'glibc'
-    'glibmm'
-    'gtk-layer-shell'
-    'gtk3'
-    'gtkmm3'
-    'jack'
-    'jsoncpp'
-    'libdbusmenu-gtk3'
-    'libevdev'
-    'libinput'
-    'libmpdclient'
-    'libnl'
-    'libpipewire'
-    'libpulse'
-    'libsigc++'
-    'libwireplumber'
-    'libxkbcommon'
-    'playerctl'
-    'sndio'
-    'spdlog'
-    'libudev'
-    'upower'
-    'wayland'
+  'atkmm'
+  'cairomm'
+  'fmt'
+  'gcc-libs'
+  'glib2'
+  'glibc'
+  'glibmm'
+  'gtk-layer-shell'
+  'gtk3'
+  'gtkmm3'
+  'jack'
+  'jsoncpp'
+  'libdbusmenu-gtk3'
+  'libevdev'
+  'libinput'
+  'libmpdclient'
+  'libnl'
+  'libpipewire'
+  'libpulse'
+  'libsigc++'
+  'libwireplumber'
+  'libxkbcommon'
+  'playerctl'
+  'sndio'
+  'spdlog'
+  'libudev'
+  'upower'
+  'wayland'
 )
 makedepends=(
-    'catch2'
-    'cmake'
-    'meson'
-    'glib2-devel' # gdbus-codegen
-    'scdoc' # For generating manpages
-    'wayland-protocols'
+  'catch2'
+  'cmake'
+  'meson'
+  'glib2-devel' # gdbus-codegen
+  'scdoc'       # For generating manpages
+  'wayland-protocols'
 )
 backup=(
-    etc/xdg/waybar/config.jsonc
-    etc/xdg/waybar/style.css
+  etc/xdg/waybar/config.jsonc
+  etc/xdg/waybar/style.css
 )
 optdepends=(
-    'otf-font-awesome: Icons in the default configuration'
+  'otf-font-awesome: Icons in the default configuration'
 )
 source=(
-    "$pkgname-$pkgver.tar.gz::https://github.com/Alexays/Waybar/archive/$pkgver.tar.gz"
-    "fix-systray.patch::https://github.com/Alexays/Waybar/commit/0d02f6877d88551ea2be0cd151c1e6354e208b1c.patch"
+  "$pkgname-$pkgver.tar.gz::https://github.com/Alexays/Waybar/archive/$pkgver.tar.gz"
+  "fix-systray.patch::https://github.com/Alexays/Waybar/commit/0d02f6877d88551ea2be0cd151c1e6354e208b1c.patch"
 )
 b2sums=('f2407335e00f02cbf946d95cfcd409dd148917839fd73d52bec1a0c77e041022e81ad7efcde2bd4394356d92686a25b2ca345319fee5ac393202a483db339f93'
-        'e99cdecc0736ba8e424caa70aca552acb34cec38b3be0952d73b6cd6b04b3b8161387d9798b088440a9effc0ae059fbbd310b372f3bfccb197f8c5888c550367')
+  'e99cdecc0736ba8e424caa70aca552acb34cec38b3be0952d73b6cd6b04b3b8161387d9798b088440a9effc0ae059fbbd310b372f3bfccb197f8c5888c550367')
 
 prepare() {
-    cd "Waybar-$pkgver"
-    # Temporary patch to fix system tray
-    # See https://github.com/Alexays/Waybar/issues/3597
-    patch -p1 < "${srcdir}/fix-systray.patch"
+  cd "Waybar-$pkgver"
+  # Temporary patch to fix system tray
+  # See https://github.com/Alexays/Waybar/issues/3597
+  patch -p1 <"${srcdir}/fix-systray.patch"
 }
 
 build() {
-    cd "Waybar-$pkgver"
-    meson --prefix=/usr \
-          --buildtype=plain \
-          --auto-features=enabled \
-          --wrap-mode=nodownload \
-          -Dsystemd=disabled \
-          -Dcpp_std=c++20 \
-          -Dexperimental=true \
-          -Dcava=disabled \
-          -Dtests=enabled \
-          build
-    meson compile -C build
+  cd "Waybar-$pkgver"
+  meson --prefix=/usr \
+    --buildtype=plain \
+    --auto-features=enabled \
+    --wrap-mode=nodownload \
+    -Dsystemd=disabled \
+    -Dcpp_std=c++20 \
+    -Dexperimental=true \
+    -Dcava=disabled \
+    -Dtests=enabled \
+    build
+  meson compile -C build
 }
 
 check() {
-    cd "Waybar-$pkgver"
-    meson test -C build --print-errorlogs --no-rebuild --suite waybar
+  cd "Waybar-$pkgver"
+  meson test -C build --print-errorlogs --no-rebuild --suite waybar
 }
 
 package() {
-    depends+=(
-      'libatkmm-1.6.so'
-      'libcairomm-1.0.so'
-      'libgtk-3.so'
-      'libjack.so'
-      'libjsoncpp.so'
-      'libpipewire-0.3.so'
-      'libsndio.so'
-      'libspdlog.so'
-      'libudev.so'
-      'libupower-glib.so'
-    )
+  depends+=(
+    'libatkmm-1.6.so'
+    'libcairomm-1.0.so'
+    'libgtk-3.so'
+    'libjack.so'
+    'libjsoncpp.so'
+    'libpipewire-0.3.so'
+    'libsndio.so'
+    'libspdlog.so'
+    'libudev.so'
+    'libupower-glib.so'
+  )
 
-    cd "Waybar-$pkgver"
-    meson install -C build --destdir "$pkgdir"
-    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+  cd "Waybar-$pkgver"
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
