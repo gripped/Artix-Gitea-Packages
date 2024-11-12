@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mosh
-  version: 1.4.0-15
+  version: 1.4.0-15.1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.0-15
+    version: 1.4.0-15.1
     packages:
-      - mosh-1.4.0-15-x86_64.pkg.tar.zst
+      - mosh-1.4.0-15.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
