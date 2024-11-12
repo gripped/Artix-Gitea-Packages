@@ -3,8 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kded
-pkgver=6.7.0
-pkgrel=1.1
+pkgver=6.8.0
+pkgrel=1
 pkgdesc='Extensible deamon for providing system level services'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -21,7 +21,7 @@ makedepends=(extra-cmake-modules
              kdoctools)
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('22aa1b6543b40e094346138516131c0f7eb78a70e87296938457fd1386680a2f'
+sha256sums=('529263fb1a97aa55828e2e0c781118700a6121df49adbed1ee56e879c8ec5121'
             'SKIP')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
               E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
@@ -37,6 +37,6 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  #remove systemd service
+  remove systemd service
   rm -r $pkgdir/usr/lib/systemd
 }
