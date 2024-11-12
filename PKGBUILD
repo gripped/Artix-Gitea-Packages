@@ -37,6 +37,6 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  remove systemd service
+  #remove systemd service
   rm -r $pkgdir/usr/lib/systemd
 }
