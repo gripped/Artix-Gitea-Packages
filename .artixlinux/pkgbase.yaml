@@ -2,13 +2,14 @@
 team: world
 pkgbase:
   name: zlib-ng
-  version: 2.2.2-1
+  version: 2.2.2-2
   arch:
     - x86_64
   pkgname:
     - zlib-ng
+    - zlib-ng-compat
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +30,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.2.2-2
+    packages:
+      - zlib-ng-2.2.2-2-x86_64.pkg.tar.zst
+      - zlib-ng-compat-2.2.2-2-x86_64.pkg.tar.zst
   world:
     version: 2.2.2-1
     packages:
