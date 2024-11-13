@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libkcddb
-pkgver=24.08.2
+pkgver=24.08.3
 pkgrel=1
 pkgdesc='KDE CDDB library'
 url='https://www.kde.org/'
@@ -25,7 +24,7 @@ makedepends=(extra-cmake-modules
              kdoctools)
 conflicts=('libkcddb5<24')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('a9d653001e611b4764e4fa959f10a73320e475e232b21bedc657bdcf0245f47d'
+sha256sums=('c4275d94a4cb864cde5061017b523a220ca953a636ba9755bd635d9def941b19'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -41,3 +40,4 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
+
