@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: thunderbird
-  version: 128.4.2-1
+  version: 128.4.3-1
   arch:
     - x86_64
   pkgname:
@@ -70,12 +70,12 @@ pkgbase:
     - thunderbird-i18n-zh-cn
     - thunderbird-i18n-zh-tw
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -109,8 +109,72 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 128.4.3-1
+    packages:
+      - thunderbird-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-af-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ar-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ast-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-be-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-bg-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-br-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ca-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cak-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cs-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cy-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-da-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-de-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-dsb-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-el-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-gb-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-us-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-ar-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-es-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-et-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-eu-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fi-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fr-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fy-nl-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ga-ie-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gd-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gl-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-he-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hr-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hsb-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hu-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hy-am-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-id-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-is-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-it-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ja-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ka-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kab-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kk-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ko-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-lt-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ms-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nb-no-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nl-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nn-no-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pa-in-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pl-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-br-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-pt-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-rm-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ro-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ru-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sk-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sl-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sq-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sr-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sv-se-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-th-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-tr-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uk-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uz-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-vi-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-cn-128.4.3-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-tw-128.4.3-1-x86_64.pkg.tar.zst
   galaxy:
     version: 128.4.2-1
     packages:
