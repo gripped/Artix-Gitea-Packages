@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: picom
-  version: 12.4-1
+  version: 12.5-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.4-1
+    version: 12.5-1
     packages:
-      - picom-12.4-1-x86_64.pkg.tar.zst
+      - picom-12.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
