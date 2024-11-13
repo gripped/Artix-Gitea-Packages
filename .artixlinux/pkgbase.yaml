@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: opensmtpd
-  version: 7.5.0rc1-1
+  version: 7.6.0p1-1
   arch:
     - x86_64
   pkgname:
     - opensmtpd
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.5.0rc1-1
+    version: 7.6.0p1-1
     packages:
-      - opensmtpd-7.5.0rc1-1-x86_64.pkg.tar.zst
+      - opensmtpd-7.6.0p1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
