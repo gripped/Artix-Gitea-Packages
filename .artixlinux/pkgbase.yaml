@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: accessibility-inspector
-  version: 24.08.2-1
+  version: 24.08.3-1
   arch:
     - x86_64
   pkgname:
     - accessibility-inspector
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.08.3-1
+    packages:
+      - accessibility-inspector-24.08.3-1-x86_64.pkg.tar.zst
   world:
     version: 24.08.2-1
     packages:
