@@ -37,7 +37,6 @@ depends=(gcc-libs
          syntax-highlighting5)
 makedepends=(extra-cmake-modules
              julia
-             llvm-julia
              kdoctools5
              luajit
              python
