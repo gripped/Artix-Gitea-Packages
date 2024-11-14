@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Giovanni Scafora <giovanni@archlinux.org>
 
 pkgname=kdevelop
-pkgver=24.08.2
+pkgver=24.08.3
 pkgrel=1
 pkgdesc='C++ IDE using KDE technologies'
 arch=(x86_64)
@@ -91,7 +90,7 @@ optdepends=('apr: SVN support'
 groups=(kde-applications
         kdevelop)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('3dfc388f3598a193d69555446f917f44181e02dea3800ff0e6a0b9e8081d0a0c'
+sha256sums=('a1690c9672e08064510e4d9c422a214b6d11a54cea5656e29c9445701af4cf71'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
