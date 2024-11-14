@@ -3,7 +3,7 @@
 
 pkgname=minuet
 pkgver=24.08.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A KDE Software for Music Education'
 url='https://apps.kde.org/minuet/'
 arch=(x86_64)
