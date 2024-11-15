@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - print-manager
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
