@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - print-manager
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - print-manager-1:6.2.3-1-x86_64.pkg.tar.zst
   world:
-    version: 1:6.2.2-1
+    version: 1:6.2.3-1
     packages:
-      - print-manager-1:6.2.2-1-x86_64.pkg.tar.zst
+      - print-manager-1:6.2.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
