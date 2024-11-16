@@ -2,7 +2,7 @@
 
 pkgname=python-ubjson
 pkgver=0.16.1
-pkgrel=7
+pkgrel=8
 pkgdesc='Universal Binary JSON draft-12 serializer for Python'
 arch=(x86_64)
 url='https://github.com/Iotic-Labs/py-ubjson'
@@ -20,10 +20,10 @@ makedepends=(python-build python-installer python-setuptools python-wheel)
 depends=(python)
 source=("https://files.pythonhosted.org/packages/source/p/py-ubjson/py-ubjson-$pkgver.tar.gz"
         "py-ubjson-$pkgver.tar.gz.asc"
-        "py312.patch")
+        "py312.diff")
 sha256sums=('b9bfb8695a1c7e3632e800fb83c943bf67ed45ddd87cd0344851610c69a5a482'
             'SKIP'
-            'c146862cdb9fcafd6c38d7111183e7b022e7da03ee4cc7edb018a5242a9d92d3')
+            '9309c5337ebdcb206deedf2dc46d98f4b32df3fda414c4bd98f15c85c8bcd3f1')
 validpgpkeys=(
   'A262040D27F5F4700D097A02CF651F44EF65072E'  # Iotic Labs Ltd (Software release signing key) <info@iotic-labs.com>
 )
@@ -31,7 +31,7 @@ validpgpkeys=(
 prepare() {
   cd py-ubjson-$pkgver
   # Part of https://github.com/Iotic-Labs/py-ubjson/pull/19 (unmerged)
-  patch -Np1 -i ../py312.patch
+  patch -Np1 -i ../py312.diff
 }
 
 build() {
