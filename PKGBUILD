@@ -1,11 +1,11 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: David Runge <dave@sleepmap.de>
 # Contributor: Peter Baldwin <bald_pete@hotmail.com>
 
 pkgname=python-jinja
 _name="${pkgname#python-}"
 pkgver=3.1.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="A simple pythonic template language written in Python"
 arch=('any')
@@ -15,12 +15,15 @@ depends=('python' 'python-markupsafe')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel'
              'python-flit-core')
 optdepends=('python-babel: for i18n support')
-checkdepends=('python-pytest')
-source=($_name-$pkgver.tar.gz::https://github.com/pallets/jinja/archive/refs/tags/$pkgver.tar.gz)
-sha256sums=('ed06f67abd2c8b7697dfb714f80715903ab0507e3c5acc11e92477e4ea51033b')
+checkdepends=('python-pytest' 'python-trio')
+source=($_name-$pkgver.tar.gz::https://github.com/pallets/jinja/archive/refs/tags/$pkgver.tar.gz
+        python3.13.patch)
+sha256sums=('ed06f67abd2c8b7697dfb714f80715903ab0507e3c5acc11e92477e4ea51033b'
+            '084466f1d3db4cf51336b8a01e6260624960f0f73de701c54f7890d1dd540d6d')
 
 prepare() {
   cd $_name-$pkgver
+  patch -Np1 -i ${srcdir}/python3.13.patch
 }
 
 build() {
