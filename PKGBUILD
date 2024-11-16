@@ -1,11 +1,11 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
-_bootstrap=1
+_bootstrap=0
 _bootstrap_version=3.13.0
 pkgname=python-pyproject-hooks
 _name=${pkgname#python-}
 pkgver=1.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A low-level library for calling build-backends in pyproject.toml-based project"
 arch=(any)
 url="https://github.com/pypa/pyproject-hooks"
@@ -42,22 +42,8 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-sha512sums=('5757ae70da9b52c571e4cd65585ec7ab4f7471eec7bf261a0d8dd2a5429284cfbe2a471292f7479d7c6c82c94ec846615cd382aa6c574d6be79dd9becc83a2ec'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
-b2sums=('735732dab41dd5f16f7f0536f393f5c2b07a5a444b7541c6875f16b701bd8bee9f19220dcc8d112ed821e03b2705b50789d1ccbdd36eb755a3346ddfe7a39a56'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP')
+sha512sums=('c198624ca278001922e07039333aa623a87bd9ef9f38ec98346d6d49f19dec422f788f6737623b461d76586bc8fa752518906bc7501e822429803881700ce701')
+b2sums=('cb4503a1e79bd338a14ec1583b3755c7135258ce318cb804527ea83dc032d14462654e9bfa3c1f8bb5f099d72dc2dffc2bd9bb41d1591d8b3d77a2c49e217176')
 
 prepare() {
   if (( _bootstrap == 0 )); then
