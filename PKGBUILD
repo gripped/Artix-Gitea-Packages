@@ -3,12 +3,12 @@
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
-_bootstrap=1
+_bootstrap=0
 _bootstrap_version=3.13.0
 pkgname=python-setuptools
 _name=${pkgname#python-}
 pkgver=75.2.0
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
 arch=('any')
@@ -70,14 +70,8 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-b2sums=('735732dab41dd5f16f7f0536f393f5c2b07a5a444b7541c6875f16b701bd8bee9f19220dcc8d112ed821e03b2705b50789d1ccbdd36eb755a3346ddfe7a39a56'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP')
+b2sums=('54e13a8fe1afb5d74fbd14688e1d01507d477f7f10c70d72a318bba2eae4bacda3a0b417a9ba60d469fe860dd7ea9d91edc934d61d12fe887dffa1f6e270e1ca'
+        'ff0caf384def8ba8aa1c7fbb29077f2bc14c42935f7f81b6c4993ebe835053207b6773865158ad3143147234b311b95033b266f9b4c34a78a67f0b7e83bb5537')
 #validpgpkeys=('CE380CF3044959B8F377DA03708E6CB181B4C47E') # Jason R. Coombs <jaraco@jaraco.com>
 
 prepare() {
