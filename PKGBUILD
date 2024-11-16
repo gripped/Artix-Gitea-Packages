@@ -1,12 +1,12 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
-_bootstrap=1
+_bootstrap=0
 _bootstrap_version=3.13.0
 _parent_name=flit
 _name=flit_core
 pkgname=python-flit-core
 pkgver=3.10.1
-pkgrel=2
+pkgrel=3
 pkgdesc="A PEP 517 build backend for packages using Flit"
 arch=(any)
 url="https://github.com/pypa/flit/tree/main/flit_core"
@@ -42,22 +42,8 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-sha512sums=('5757ae70da9b52c571e4cd65585ec7ab4f7471eec7bf261a0d8dd2a5429284cfbe2a471292f7479d7c6c82c94ec846615cd382aa6c574d6be79dd9becc83a2ec'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
-b2sums=('735732dab41dd5f16f7f0536f393f5c2b07a5a444b7541c6875f16b701bd8bee9f19220dcc8d112ed821e03b2705b50789d1ccbdd36eb755a3346ddfe7a39a56'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP')
+sha512sums=('51f797f480102fe89cd69f3fbd91c614b2390a37659c589622f2c7938cc64bc223f710e07365766159b6833d7afdafef4461a92667b6e3ae786df5137a877ee1')
+b2sums=('c69769b27da424c361a419a69ed21587bc11b8c256450f4546dd49015894995286edb7bfd18105de15af1ce1cc8d427746bd258aa08f3b64a2192ae3a1863ee0')
 
 prepare() {
   if (( _bootstrap == 0 )); then
