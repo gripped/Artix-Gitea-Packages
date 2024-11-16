@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-packaging
-  version: 24.2-2
+  version: 24.2-3
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.2-2
+    version: 24.2-3
     packages:
-      - python-packaging-24.2-2-any.pkg.tar.zst
+      - python-packaging-24.2-3-any.pkg.tar.zst
   world-gremlins:
     version: 24.2-1
     packages:
