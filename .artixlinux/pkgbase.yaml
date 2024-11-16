@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-sphinxcontrib-applehelp
-  version: 2.0.0-1
+  version: 2.0.0-3
   arch:
     - any
   pkgname:
     - python-sphinxcontrib-applehelp
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-3
+    packages:
+      - python-sphinxcontrib-applehelp-2.0.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
