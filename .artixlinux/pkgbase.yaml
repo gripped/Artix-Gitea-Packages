@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-ghp-import
-  version: 2.1.0-2
+  version: 2.1.0-4
   arch:
     - any
   pkgname:
     - python-ghp-import
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.1.0-4
+    packages:
+      - python-ghp-import-2.1.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
