@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-magic-filter
-  version: 1.0.12-3
+  version: 1.0.12-4
   arch:
     - any
   pkgname:
     - python-magic-filter
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.0.12-4
+    packages:
+      - python-magic-filter-1.0.12-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
