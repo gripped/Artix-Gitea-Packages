@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pytest-expect
-  version: 1.1.0-11
+  version: 1.1.0-12
   arch:
     - any
   pkgname:
     - python-pytest-expect
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.1.0-12
+    packages:
+      - python-pytest-expect-1.1.0-12-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
