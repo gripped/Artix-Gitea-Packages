@@ -1,24 +1,26 @@
 ---
 pkgbase:
   name: python
-  version: 3.12.7-1
+  version: 3.13.0-1
   arch:
     - x86_64
   pkgname:
     - python
     - python-tests
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 3.13.0-1
+    packages:
+      - python-3.13.0-1-x86_64.pkg.tar.zst
+      - python-tests-3.13.0-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
