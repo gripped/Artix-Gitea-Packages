@@ -4,7 +4,7 @@
 pkgname=python-jaraco.functools
 # https://github.com/jaraco/jaraco.functools/blob/main/NEWS.rst
 pkgver=4.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Functools like those found in stdlib'
 arch=('any')
 url='https://github.com/jaraco/jaraco.functools'
