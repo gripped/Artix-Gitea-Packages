@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: openscenegraph
-  version: 3.6.5-25
+  version: 3.6.5-26
   arch:
     - x86_64
   pkgname:
     - openscenegraph
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.6.5-26
+    packages:
+      - openscenegraph-3.6.5-26-x86_64.pkg.tar.zst
   world:
     version: 3.6.5-25
     packages:
