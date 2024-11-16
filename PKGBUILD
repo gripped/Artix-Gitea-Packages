@@ -1,8 +1,7 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
 pkgname=hexer-hobu
 pkgver=1.4.0
-pkgrel=12
+pkgrel=13
 pkgdesc="LAS and OGR hexagonal density and boundary surface generation"
 arch=('x86_64')
 url="https://github.com/hobu/hexer"
