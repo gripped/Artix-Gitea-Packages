@@ -3,7 +3,7 @@
 _pkgname=auditwheel
 pkgname=python-$_pkgname
 pkgver=6.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Auditing and relabeling cross-distribution Linux wheels'
 arch=('any')
 url='https://github.com/pypa/auditwheel'
