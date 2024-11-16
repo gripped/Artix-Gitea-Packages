@@ -4,7 +4,7 @@
 
 pkgname=python-pefile
 pkgver=2023.2.7
-pkgrel=2
+pkgrel=3
 pkgdesc='Python PE parsing module'
 url='https://github.com/erocarrera/pefile'
 arch=('any')
