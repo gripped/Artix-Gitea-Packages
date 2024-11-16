@@ -2,7 +2,7 @@
 
 pkgname=python-bleach
 pkgver=6.1.0
-pkgrel=2
+pkgrel=3
 
 pkgdesc="An easy whitelist-based HTML-sanitizing tool"
 url="https://pypi.org/project/bleach/"
