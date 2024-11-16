@@ -3,7 +3,7 @@
 _pkg=whatthepatch
 pkgname=python-${_pkg}
 pkgver=1.0.5
-pkgrel=2
+pkgrel=3
 pkgdesc="A Python patch parsing library"
 arch=(any)
 url="https://github.com/cscorley/whatthepatch"
