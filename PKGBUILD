@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: dibblethewrecker dibblethewrecker.at.jiwe.dot.org
 # Contributor: William Rea <sillywilly@gmail.com>
 
 pkgname=postgis
 pkgver=3.4.2
-pkgrel=4
+pkgrel=5
 pkgdesc="A spatial database extender for PostgreSQL"
 arch=(x86_64)
 url="https://postgis.net/"
