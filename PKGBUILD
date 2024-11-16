@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: SaultDon <sault.don gmail>
 pkgname=pdal
 pkgver=2.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A C++ library for translating and manipulating point cloud data"
 arch=('x86_64')
 url="http://www.pdal.io"
