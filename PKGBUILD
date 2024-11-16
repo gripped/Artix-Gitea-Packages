@@ -4,7 +4,7 @@
 pkgname=python-docstring-to-markdown
 _name=${pkgname#python-}
 pkgver=0.15
-pkgrel=2
+pkgrel=3
 pkgdesc='On the fly conversion of Python docstrings to markdown'
 arch=('any')
 url=https://github.com/python-lsp/docstring-to-markdown
@@ -28,7 +28,8 @@ build() {
 
 check() {
   cd "$_name"
-  PYTHONPATH="$PWD/$_name:$PYTHONPATH" pytest -c /dev/null --pyargs tests
+  # Override addopts as they invoke coverage testing
+  PYTHONPATH="$PWD/$_name:$PYTHONPATH" pytest --override-ini="addopts="
 }
 
 package() {
