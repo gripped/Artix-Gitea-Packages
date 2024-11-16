@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-fiona
-  version: 1.9.6-3
+  version: 1.9.6-4
   arch:
     - x86_64
   pkgname:
     - python-fiona
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.9.6-4
+    packages:
+      - python-fiona-1.9.6-4-x86_64.pkg.tar.zst
   world:
     version: 1.9.6-3
     packages:
