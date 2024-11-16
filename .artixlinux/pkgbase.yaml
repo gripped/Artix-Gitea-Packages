@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-hypothesis-fspaths
-  version: 0.1.0-10
+  version: 0.1.0-11
   arch:
     - any
   pkgname:
     - python-hypothesis-fspaths
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.0-11
+    packages:
+      - python-hypothesis-fspaths-0.1.0-11-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
