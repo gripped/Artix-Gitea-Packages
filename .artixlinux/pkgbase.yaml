@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-pasta
-  version: 0.2.0-8
+  version: 0.2.0-9
   arch:
     - any
   pkgname:
     - python-pasta
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.2.0-9
+    packages:
+      - python-pasta-0.2.0-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
