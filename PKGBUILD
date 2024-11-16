@@ -3,7 +3,7 @@
 _name=dbus_next
 pkgname=python-dbus-next
 pkgver=0.2.3
-pkgrel=5
+pkgrel=6
 pkgdesc="The next great DBus library for Python with asyncio support"
 arch=(any)
 url="https://github.com/altdesktop/python-dbus-next"
@@ -36,7 +36,6 @@ check() {
   local pytest_options=(
     # https://github.com/altdesktop/python-dbus-next/issues/135
     --deselect test/test_tcp_address.py::test_tcp_connection_with_forwarding
-    test/test_fd_passing.py::test_sending_file_descriptor_low_level
   )
   cd $pkgname-$pkgver
   export PYTHONPATH="build:${PYTHONPATH}"
