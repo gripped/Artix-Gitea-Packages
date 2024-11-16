@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-cram
-  version: 0.7-11
+  version: 0.7-12
   arch:
     - any
   pkgname:
     - python-cram
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.7-12
+    packages:
+      - python-cram-0.7-12-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
