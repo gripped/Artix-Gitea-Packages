@@ -1,12 +1,12 @@
 # Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
-_bootstrap=1
+_bootstrap=0
 _bootstrap_version=3.13.0
 _pkgname=installer
 pkgname=python-$_pkgname
 pkgver=0.7.0
-pkgrel=9
+pkgrel=10
 pkgdesc='Low-level library for installing a Python package from a wheel distribution'
 arch=('any')
 url='https://github.com/pypa/installer'
@@ -36,14 +36,7 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-sha512sums=('5757ae70da9b52c571e4cd65585ec7ab4f7471eec7bf261a0d8dd2a5429284cfbe2a471292f7479d7c6c82c94ec846615cd382aa6c574d6be79dd9becc83a2ec'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
+sha512sums=('a509c6ea9d88b8527cce0428ca6109077820cb9aa352967a389012bac40f8ec04039ab73710f4fb32b32ed20affd520ce0ba16ba18d9d380ce0af1f51fe8e2c6')
 
 prepare() {
   if (( _bootstrap == 0 )); then

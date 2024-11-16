@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-installer
-  version: 0.7.0-9
+  version: 0.7.0-10
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.7.0-9
+    version: 0.7.0-10
     packages:
-      - python-installer-0.7.0-9-any.pkg.tar.zst
+      - python-installer-0.7.0-10-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
