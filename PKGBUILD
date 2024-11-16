@@ -2,12 +2,12 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Lance Chen <cyen0312@gmail.com>
 
-_bootstrap=1
+_bootstrap=0
 _bootstrap_version=3.13.0
 pkgname=python-wheel
 _name=${pkgname#python-}
 pkgver=0.45.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A built-package format for Python"
 arch=(any)
 url="https://pypi.python.org/pypi/wheel"
@@ -43,14 +43,8 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-sha512sums=('5757ae70da9b52c571e4cd65585ec7ab4f7471eec7bf261a0d8dd2a5429284cfbe2a471292f7479d7c6c82c94ec846615cd382aa6c574d6be79dd9becc83a2ec'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
+sha512sums=('b5610405ae6aa387d4597821793e82115873137bd24d9e07f4b68680089e93f595ecdf42c8e290b2daaca2b9687afe02a0255baf32d1ee60870b1e9f0a9dd644'
+            'b9e705f1ca4f71332cd20b404d3eaae13a0785958a021078d786177b161e789c370d20dd0411246e53890235d8dc527c72a4cc8023c0bcff8921135422b98173')
 
 prepare() {
   if (( _bootstrap == 0 )); then
