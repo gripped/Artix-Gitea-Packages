@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-pyasynchat
-  version: 1.0.4-3
+  version: 1.0.4-4
   arch:
     - any
   pkgname:
     - python-pyasynchat
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.0.4-4
+    packages:
+      - python-pyasynchat-1.0.4-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
