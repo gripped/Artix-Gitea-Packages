@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-pylatexenc
-  version: 2.10-4
+  version: 2.10-5
   arch:
     - any
   pkgname:
     - python-pylatexenc
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.10-5
+    packages:
+      - python-pylatexenc-2.10-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
