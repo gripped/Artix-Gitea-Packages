@@ -3,7 +3,7 @@
 _pyname=xxhash
 pkgname="python-${_pyname}"
 pkgver=3.4.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Python binding for xxHash'
 arch=('x86_64')
 url="https://github.com/ifduyue/${pkgname}"
