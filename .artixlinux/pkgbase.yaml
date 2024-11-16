@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-fields
-  version: 5.0.0-17
+  version: 5.0.0-18
   arch:
     - any
   pkgname:
     - python-fields
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.0.0-18
+    packages:
+      - python-fields-5.0.0-18-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
