@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-gherkin
+  version: 30.0.4-1
+  arch:
+    - any
+  pkgname:
+    - python-gherkin
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 30.0.4-1
+    packages:
+      - python-gherkin-30.0.4-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
