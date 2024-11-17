@@ -21,7 +21,7 @@ makedepends=(
   glib2
   intltool
   python
-  systemd
+  udev
 )
 optdepends=(
   'python-gobject: for gammastep-indicator'
