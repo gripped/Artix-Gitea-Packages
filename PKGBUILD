@@ -17,7 +17,7 @@ makedepends=('cmake' 'lxqt-build-tools')
 source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
-  cmake -B build -S "${srcdir}/${pkgname}" \
+  cmake -B build -S "${srcdir}/${pkgname}-${pkgver}" \
     -DCMAKE_INSTALL_PREFIX=/usr
   make -C build
 }
