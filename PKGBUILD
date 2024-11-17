@@ -24,7 +24,7 @@ build() {
 
 package() {
   make -C build DESTDIR="${pkgdir}" install
-  install -Dm644 $pkgname/LICENSE.* -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm644 $pkgname-$pkgver/LICENSE.* -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
 
 sha256sums=('c30f93b7cea82be9ff3105a0c217645172e878170a5e0e8a8e348bb1789138b9')
