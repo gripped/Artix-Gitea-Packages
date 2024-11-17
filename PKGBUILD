@@ -6,7 +6,7 @@
 pkgbase=libseccomp
 pkgname=(libseccomp python-libseccomp)
 pkgver=2.5.5
-pkgrel=3
+pkgrel=4
 pkgdesc='Enhanced seccomp library'
 arch=('x86_64')
 license=('LGPL2.1')
@@ -39,7 +39,7 @@ build() {
 
 check() {
   cd ${pkgbase}-${pkgver}
-  make check || :
+  make check
 }
 
 package_libseccomp() {
