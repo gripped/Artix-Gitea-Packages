@@ -2,7 +2,7 @@
 
 pkgname=gammastep
 pkgver=2.0.9
-pkgrel=4
+pkgrel=5
 pkgdesc="Adjust the color temperature of your screen according to your surroundings."
 arch=(x86_64)
 url="https://gitlab.com/chinstrap/gammastep"
@@ -21,7 +21,7 @@ makedepends=(
   glib2
   intltool
   python
-  udev
+  systemd
 )
 optdepends=(
   'python-gobject: for gammastep-indicator'
