@@ -28,7 +28,8 @@ optdepends=('qt6-tools: QtHelp, QtDesigner bindings'
             'dbus-python: for python-dbus mainloop support')
 makedepends=(sip pyqt-builder python-opengl dbus-python
              qt6-tools qt6-svg qt6-declarative qt6-quick3d qt6-shadertools qt6-multimedia qt6-remoteobjects
-             qt6-positioning qt6-sensors qt6-serialport qt6-webchannel qt6-websockets qt6-connectivity qt6-speech qt6-webengine)
+             qt6-positioning qt6-sensors qt6-serialport qt6-webchannel qt6-websockets qt6-connectivity qt6-speech qt6-webengine
+             sip)
 provides=(qt6-python-bindings)
 source=(https://riverbankcomputing.com/pypi/packages/PyQt6/PyQt6-$_pkgver.tar.gz)
 sha256sums=('cb390cd6746c53428ecfb97578507aba753f342f1679edbabf27480d3640ef4c')
