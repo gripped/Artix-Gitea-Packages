@@ -4,7 +4,7 @@
 pkgname=rdma-core
 pkgdesc="RDMA core userspace libraries and daemons"
 pkgver=54.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://github.com/linux-rdma/rdma-core"
 license=(
