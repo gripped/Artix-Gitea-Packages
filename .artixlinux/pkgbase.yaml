@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tinycompress
-  version: 1.2.11-3
+  version: 1.2.13-1
   arch:
     - x86_64
   pkgname:
     - tinycompress
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.11-3
+    version: 1.2.13-1
     packages:
-      - tinycompress-1.2.11-3-x86_64.pkg.tar.zst
+      - tinycompress-1.2.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
