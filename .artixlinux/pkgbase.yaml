@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - sssd
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - sssd-2.10.0-5-x86_64.pkg.tar.zst
   world:
-    version: 2.10.0-2
+    version: 2.10.0-5
     packages:
-      - sssd-2.10.0-2-x86_64.pkg.tar.zst
+      - sssd-2.10.0-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
