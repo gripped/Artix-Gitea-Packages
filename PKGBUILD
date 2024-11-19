@@ -3,7 +3,7 @@
 _name=binaryornot
 pkgname=python-binaryornot
 pkgver=0.4.4
-pkgrel=10
+pkgrel=11
 pkgdesc="Ultra-lightweight pure Python package to check if a file is binary or text"
 arch=(any)
 url="https://github.com/binaryornot/binaryornot"
@@ -20,7 +20,7 @@ makedepends=(
 )
 checkdepends=(python-hypothesis)
 source=(
-  $_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz
+  $_name-$pkgver-$pkgrel.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz
   $pkgname-0.4.4-hypothesis_tests.patch::$url/pull/52.patch
   $pkgname-0.4.4-set_version.patch::$url/commit/cff1a0a4478c17d4f970d133c06abbf6945b6a5e.patch
 )
