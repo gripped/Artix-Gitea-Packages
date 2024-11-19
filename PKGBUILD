@@ -3,7 +3,7 @@
 _pkgname=ruff-api
 pkgname=python-$_pkgname
 pkgver=0.0.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Experimental Python API for Ruff'
 arch=('x86_64')
 url='https://github.com/amyreese/ruff-api'

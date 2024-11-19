@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-ruff-api
-  version: 0.0.5-1
+  version: 0.0.5-2
   arch:
     - x86_64
   pkgname:
     - python-ruff-api
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.0.5-2
+    packages:
+      - python-ruff-api-0.0.5-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
