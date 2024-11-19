@@ -1,8 +1,8 @@
 # Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: hexchain <i@hexchain.org>
 pkgname=telegram-desktop
-pkgver=5.7.2
-pkgrel=3.1
+pkgver=5.8.1
+pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
@@ -17,14 +17,8 @@ makedepends=('cmake' 'git' 'ninja' 'python' 'range-v3' 'tl-expected' 'microsoft-
              'glib2-devel')
 optdepends=('webkit2gtk: embedded browser features'
             'xdg-desktop-portal: desktop integration')
-source=("https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
-        $pkgname-28611.patch::https://patch-diff.githubusercontent.com/raw/telegramdesktop/tdesktop/pull/28611.patch)
-sha512sums=('55fa4f20ceae71f2b869c00abdcf6a27f505156f7b254e38a68a97ea34b09e2e9deeef1fec6c5633e93043fb2e9e9ea72502ec9daeed319c8de65cbe825ca916'
-            'b959fd3d26734e4361f8f567eacc874cd753b347b55fa0fc2640d10b65f1a6788b677967c601b1f92f636831c8aafe7681145ab35c69c983960ec3b78707f321')
-
-prepare() {
-  patch -Np1 -d tdesktop-$pkgver-full -i "$srcdir"/$pkgname-28611.patch
-}
+source=("https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz")
+sha512sums=('68c8cb704520f0825b2f1054822e157fcb708e115e67f5cc5906dfda6bac75f27ec931c7d287ffd5f36e87d3f07194017a8dfbf70ec540462d1cbb41511b36a5')
 
 build() {
   CXXFLAGS+=' -ffat-lto-objects'
