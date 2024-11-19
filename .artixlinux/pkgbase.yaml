@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-jq
-  version: 1.8.0-1
+  version: 1.8.0-2
   arch:
     - x86_64
   pkgname:
     - python-jq
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.8.0-2
+    packages:
+      - python-jq-1.8.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
