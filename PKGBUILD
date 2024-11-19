@@ -4,7 +4,7 @@
 pkgname=python-cramjam
 _pkgname=${pkgname#python-}
 pkgver=2.9.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Thin Python bindings to de/compression algorithms in Rust"
 arch=(x86_64)
 url="https://github.com/milesgranger/cramjam"
