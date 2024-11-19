@@ -4,8 +4,8 @@
 # Contributor: Alexander Diana <alexander@rouk.org>
 
 pkgname=python-bcrypt
-pkgver=4.1.3
-pkgrel=1
+pkgver=4.2.0
+pkgrel=2
 pkgdesc="Modern password hashing for your software and your servers"
 arch=('x86_64')
 url="https://github.com/pyca/bcrypt"
@@ -14,7 +14,7 @@ depends=('python')
 makedepends=('python-build' 'python-installer' 'python-setuptools-rust' 'python-wheel')
 checkdepends=('python-pytest')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/pyca/bcrypt/archive/$pkgver.tar.gz")
-sha512sums=('59a5aafc729a6e7ac61121469bbca73809d87cafc1b16dcb0701c33fccc6298eff1071680c364042c46f91d701830a414e6ecf0bff4bee9500e4ce146dcad974')
+sha512sums=('5c1b3f19530338b421a76122c9f29f1397d1315234db025530b71254f7dd021c6406ee4a58668c28959afc86a59535c4230f5bce8bfddc8fea3064996ef5b7d7')
 
 build() {
   cd bcrypt-$pkgver
