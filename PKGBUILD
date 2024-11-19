@@ -1,8 +1,9 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=libmsym
 pkgver=0.2.3
-pkgrel=9
+pkgrel=10
 pkgdesc='Molecular point group symmetry lib'
 arch=(x86_64)
 url='http://www.openchemistry.org/'
