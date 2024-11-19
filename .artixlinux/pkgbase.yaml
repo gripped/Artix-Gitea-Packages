@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-pyyaml-env-tag
-  version: 0.1-1
+  version: 0.1-2
   arch:
     - any
   pkgname:
     - python-pyyaml-env-tag
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1-2
+    packages:
+      - python-pyyaml-env-tag-0.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
