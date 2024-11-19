@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-pygraphviz
-  version: 1.13-2
+  version: 1.13-3
   arch:
     - x86_64
   pkgname:
     - python-pygraphviz
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.13-3
+    packages:
+      - python-pygraphviz-1.13-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
