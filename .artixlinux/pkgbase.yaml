@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-sphinx-reredirects
-  version: 0.1.5-1
+  version: 0.1.5-2
   arch:
     - any
   pkgname:
     - python-sphinx-reredirects
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.5-2
+    packages:
+      - python-sphinx-reredirects-0.1.5-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
