@@ -1,7 +1,7 @@
 
 pkgname=python-django-q2
 pkgver=1.7.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A multiprocessing distributed task queue for Django'
 arch=(any)
 url=https://github.com/django-q2/django-q2
