@@ -3,7 +3,7 @@
 pkgname=python-pycares
 _name=${pkgname#python-}
 pkgver=4.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Python interface for c-ares'
 arch=('x86_64')
 url=https://github.com/saghul/pycares
