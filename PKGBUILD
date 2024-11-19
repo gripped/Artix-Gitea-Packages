@@ -3,7 +3,7 @@
 _pkgname=python-multipart
 pkgname=python-$_pkgname
 pkgver=0.0.16
-pkgrel=1
+pkgrel=2
 pkgdesc='streaming multipart parser for Python'
 arch=('any')
 url='https://github.com/andrew-d/python-multipart'
