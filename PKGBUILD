@@ -5,7 +5,7 @@
 
 pkgname=python-bottleneck
 pkgver=1.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast NumPy array functions written in Cython"
 arch=(x86_64)
 url="https://github.com/kwgoodman/bottleneck"
@@ -15,7 +15,7 @@ makedepends=(python-setuptools python-build python-installer python-wheel python
 checkdepends=(python-pytest)
 #source=(${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
 source=($pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz) # https://bugs.archlinux.org/task/77683
-sha256sums=('038705c79187efb877289b36870d576119286ff419ef3a1d0247745e3d046409')
+sha256sums=('104c6548f9cb266a6bb0345e7f254383833c273fc3f14c2aaacf48a1c4ba4743')
 
 prepare() {
   cd bottleneck-${pkgver}
