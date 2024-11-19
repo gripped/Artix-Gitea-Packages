@@ -4,7 +4,7 @@
 pkgname=python-aiohappyeyeballs
 _name=${pkgname#python-}
 pkgver=2.4.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Happy Eyeballs for asyncio'
 arch=(any)
 url=https://github.com/aio-libs/aiohappyeyeballs
