@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=libblastrampoline
-pkgver=5.11.1
+pkgver=5.12.0
 pkgrel=1
 pkgdesc='Using PLT trampolines to provide a BLAS and LAPACK demuxing library'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(MIT)
 depends=(glibc)
 makedepends=(git)
 source=(git+https://github.com/JuliaLinearAlgebra/libblastrampoline#tag=v$pkgver)
-sha256sums=('5bc8926f18e18f2da876fbce16d47b1c99f574ef03d6ff5b01b8ea9dcd3b0f17')
+sha256sums=('ad564955a936a02f7c7f71c4f9337971affb0cbe01669f9398a92b1932b86bee')
 options=(!lto)
 
 build() {
