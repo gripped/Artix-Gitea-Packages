@@ -4,7 +4,7 @@
 
 pkgname=namcap
 pkgver=3.5.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A Pacman package analyzer'
 arch=(any)
 url="https://gitlab.archlinux.org/pacman/$pkgname"
@@ -19,7 +19,7 @@ depends=(binutils
          python-pyelftools)
 checkdepends=(python-pytest
               python-six
-              elogind)
+              systemd)
 makedepends=(python-{build,installer,wheel}
             python-setuptools)
 _archive="$pkgname-$pkgver"
@@ -36,7 +36,7 @@ build() {
 
 check() {
   cd "$_archive"
-  env PARSE_PKGBUILD_PATH="$PWD" PATH="$PWD/scripts:$PATH" pytest || :
+  env PARSE_PKGBUILD_PATH="$PWD" PATH="$PWD/scripts:$PATH" pytest
 }
 
 package() {
