@@ -4,7 +4,7 @@
 _pkgname=humanize
 pkgname=python-$_pkgname
 pkgver=4.9.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Common humanization utilities for Python'
 arch=(any)
 url="https://github.com/$pkgname/$_pkgname"
