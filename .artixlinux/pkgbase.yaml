@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: maturin
-  version: 1.7.4-1
+  version: 1.7.4-2
   arch:
     - x86_64
   pkgname:
     - maturin
     - python-maturin
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.7.4-2
+    packages:
+      - maturin-1.7.4-2-x86_64.pkg.tar.zst
+      - python-maturin-1.7.4-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
