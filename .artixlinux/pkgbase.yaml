@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-aiosqlite
-  version: 0.20.0-1
+  version: 0.20.0-2
   arch:
     - any
   pkgname:
     - python-aiosqlite
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.20.0-2
+    packages:
+      - python-aiosqlite-0.20.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
