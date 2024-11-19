@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pysolr
-  version: 3.10.0-1
+  version: 3.10.0-2
   arch:
     - any
   pkgname:
     - python-pysolr
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.10.0-2
+    packages:
+      - python-pysolr-3.10.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
