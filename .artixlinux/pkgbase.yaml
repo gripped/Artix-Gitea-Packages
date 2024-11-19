@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: evisum
-  version: 0.6.1-1
+  version: 0.6.1-3
   arch:
     - x86_64
   pkgname:
     - evisum
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -44,8 +44,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.6.1-3
+    packages:
+      - evisum-0.6.1-3-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []

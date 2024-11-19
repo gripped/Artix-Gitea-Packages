@@ -2,7 +2,7 @@
 
 pkgname=evisum
 pkgver=0.6.1
-pkgrel=1
+pkgrel=3
 pkgdesc="Process monitor like top based on EFL"
 arch=('x86_64')
 url="https://www.enlightenment.org/about-evisum"
