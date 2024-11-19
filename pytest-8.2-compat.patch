@@ -1,0 +1,47 @@
+From 17e7b23618fa90fe2a514798c332b97a6ff785b4 Mon Sep 17 00:00:00 2001
+From: John Litborn <11260241+jakkdl@users.noreply.github.com>
+Date: Tue, 5 Nov 2024 16:23:36 +0100
+Subject: [PATCH] fix compatibility with pytest 8.2 by restoring deleted
+ finalizers (#278)
+
+Co-authored-by: Michael Howitz <icemac@gmx.net>
+---
+ src/pytest_rerunfailures.py | 12 +++++++++++-
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/src/pytest_rerunfailures.py b/src/pytest_rerunfailures.py
+index 75afc48..d11e1bc 100644
+--- a/src/pytest_rerunfailures.py
++++ b/src/pytest_rerunfailures.py
+@@ -468,6 +468,9 @@ def _get(self, i: str, k: str) -> int:
+         return int(self._sock_recv(self.sock))
+ 
+ 
++suspended_finalizers = {}
++
++
+ def pytest_runtest_teardown(item, nextitem):
+     reruns = get_reruns_count(item)
+     if reruns is None:
+@@ -490,13 +493,20 @@ def pytest_runtest_teardown(item, nextitem):
+         and any(_test_failed_statuses.values())
+         and not any(item._terminal_errors.values())
+     ):
+-        # clean cashed results from any level of setups
++        # clean cached results from any level of setups
+         _remove_cached_results_from_failed_fixtures(item)
+ 
+         if item in item.session._setupstate.stack:
+             for key in list(item.session._setupstate.stack.keys()):
+                 if key != item:
++                    # only the first finalizer contains the correct teardowns
++                    if key not in suspended_finalizers:
++                        suspended_finalizers[key] = item.session._setupstate.stack[key]
+                     del item.session._setupstate.stack[key]
++    else:
++        # restore suspended finalizers
++        item.session._setupstate.stack.update(suspended_finalizers)
++        suspended_finalizers.clear()
+ 
+ 
+ @pytest.hookimpl(hookwrapper=True)
