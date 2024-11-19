@@ -8,7 +8,7 @@
 
 pkgname=thrift
 pkgver=0.21.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Scalable cross-language services framework for IPC/RPC'
 arch=(x86_64)
 url='https://thrift.apache.org'
