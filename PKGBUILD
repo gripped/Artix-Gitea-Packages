@@ -3,7 +3,7 @@
 pkgname=python-opt_einsum
 _name="${pkgname#python-}"
 pkgver=3.3.0
-pkgrel=8.1
+pkgrel=9
 pkgdesc="Optimizing einsum functions in NumPy, Tensorflow, Dask, and more with contraction order optimization"
 url="https://github.com/dgasmith/opt_einsum"
 license=(MIT)

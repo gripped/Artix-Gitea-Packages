@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-opt_einsum
-  version: 3.3.0-8.1
+  version: 3.3.0-9
   arch:
     - any
   pkgname:
     - python-opt_einsum
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.3.0-9
+    packages:
+      - python-opt_einsum-3.3.0-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
