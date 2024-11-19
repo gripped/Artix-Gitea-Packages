@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: povray
-  version: 2:3.7.0.10-13
+  version: 2:3.7.0.10-14
   arch:
     - x86_64
   pkgname:
     - povray
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2:3.7.0.10-13
+    version: 2:3.7.0.10-14
     packages:
-      - povray-2:3.7.0.10-13-x86_64.pkg.tar.zst
+      - povray-2:3.7.0.10-14-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
