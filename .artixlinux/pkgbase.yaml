@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-et-xmlfile
-  version: 2.0.0-1
+  version: 2.0.0-2
   arch:
     - any
   pkgname:
     - python-et-xmlfile
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-2
+    packages:
+      - python-et-xmlfile-2.0.0-2-any.pkg.tar.zst
   world-gremlins:
     version: 2.0.0-1
     packages:
