@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-libevdev
-  version: 0.11-4
+  version: 0.11-5
   arch:
     - any
   pkgname:
     - python-libevdev
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.11-5
+    packages:
+      - python-libevdev-0.11-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
