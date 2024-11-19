@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-strictyaml
-  version: 1.7.3-3
+  version: 1.7.3-4
   arch:
     - any
   pkgname:
     - python-strictyaml
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.7.3-4
+    packages:
+      - python-strictyaml-1.7.3-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
