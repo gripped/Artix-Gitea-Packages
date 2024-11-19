@@ -9,7 +9,7 @@ pkgbase:
     - zlib-ng
     - zlib-ng-compat
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -35,9 +35,10 @@ repos:
       - zlib-ng-2.2.2-2-x86_64.pkg.tar.zst
       - zlib-ng-compat-2.2.2-2-x86_64.pkg.tar.zst
   world:
-    version: 2.2.2-1
+    version: 2.2.2-2
     packages:
-      - zlib-ng-2.2.2-1-x86_64.pkg.tar.zst
+      - zlib-ng-2.2.2-2-x86_64.pkg.tar.zst
+      - zlib-ng-compat-2.2.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
