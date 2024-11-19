@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-dask
-  version: 2024.8.2-2
+  version: 2024.11.2-1
   arch:
     - any
   pkgname:
     - python-dask
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2024.11.2-1
+    packages:
+      - python-dask-2024.11.2-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
