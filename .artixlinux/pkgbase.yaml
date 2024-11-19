@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-ml-dtypes
-  version: 0.4.0-2
+  version: 0.4.0-3
   arch:
     - x86_64
   pkgname:
     - python-ml-dtypes
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.0-3
+    packages:
+      - python-ml-dtypes-0.4.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
