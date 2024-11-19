@@ -4,7 +4,7 @@
 
 pkgname=python-psutil
 pkgver=6.1.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 pkgdesc='A cross-platform process and system utilities module for Python'
 url='https://github.com/giampaolo/psutil'
@@ -56,9 +56,7 @@ check() {
     --deselect psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_comparisons \
     --deselect psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_disk_partitions_mocked \
     --deselect psutil/tests/test_linux.py::TestSystemNetIfAddrs::test_ips \
-    --deselect psutil/tests/test_system.py::TestMiscAPIs::test_users \
-    --deselect psutil/tests/test_process_all.py::TestFetchAllProcesses::test_all \
-    --deselect psutil/tests/test_system.py::TestDiskAPIs::test_disk_partitions
+    --deselect psutil/tests/test_system.py::TestMiscAPIs::test_users
 }
 
 package() {
