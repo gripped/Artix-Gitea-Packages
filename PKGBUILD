@@ -4,7 +4,7 @@
 pkgname=python-arrow
 _name="${pkgname#python-}"
 pkgver=1.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Better dates and times for Python'
 arch=(any)
 url=https://arrow.readthedocs.io
