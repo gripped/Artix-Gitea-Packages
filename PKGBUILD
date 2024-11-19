@@ -2,22 +2,22 @@
 
 pkgname=python-trustme
 _pyname=${pkgname/python-/}
-pkgver=1.1.0
-pkgrel=3
+pkgver=1.2.0
+pkgrel=2
 pkgdesc='Library for fake certificate authority (CA) to generate fake TLS certs'
 url='https://trustme.readthedocs.io'
 arch=('any')
 license=('MIT')
 depends=('python' 'python-cryptography' 'python-idna' 'python-pyopenssl')
-makedepends=('python-setuptools')
+makedepends=('python-build' 'python-installer' 'python-hatchling' 'python-wheel')
 checkdepends=('python-pytest' 'python-service-identity')
 source=(https://github.com/python-trio/trustme/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('74577cdb6cb4fdf7d6bb10d34f19f199fe5a0cc889eeed36077be23817e5d80ca8656633d9123e1171a9f61f8352558d43ca0a7d75eed85449e815869f47fa38')
-b2sums=('deceabea4e20c252c5cab51929a30e223b7118f8fba6cfcd699f590783f16cc3c43aab0c0ad1e84ea4ac690e429b0a670a78d6688431e433c652378e768d21da')
+sha512sums=('c9b7098083720e65a7c23cecf5034ac7e4cdc5ab4ec39009ca200b885da23c76985f3812f85ee206393599213d7af6cc3df322eecd1651fcae1a3ef73daf0e9c')
+b2sums=('096a60542645430e79ee545f8d91a69eae6a6f61fabac42a55cc958b5e283e4428ca7e80cd7840b921da1a39db654805eaacace5db986eac3628169037b018f2')
 
 build() {
   cd ${_pyname}-${pkgver}
-  python setup.py build
+  python -m build --wheel --skip-dependency-check --no-isolation
 }
 
 check() {
@@ -28,9 +28,14 @@ check() {
 
 package() {
   cd ${_pyname}-${pkgver}
-  python setup.py install -O1 --root="${pkgdir}" --skip-build
-  install -Dm 644 LICENSE.MIT -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  python -m installer --destdir="${pkgdir}" dist/*.whl
   install -Dm 644 README.rst -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+  # Symlink license file
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  install -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  ln -s "${site_packages}/${_pyname}-${pkgver}.dist-info/LICENSE.MIT" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.MIT"
 }
 
 # vim: ts=2 sw=2 et:
