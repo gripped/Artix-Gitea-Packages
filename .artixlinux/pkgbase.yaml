@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-scikit-build-core
-  version: 0.10.6-1
+  version: 0.10.6-2
   arch:
     - any
   pkgname:
     - python-scikit-build-core
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.10.6-2
+    packages:
+      - python-scikit-build-core-0.10.6-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
