@@ -2,7 +2,7 @@
 
 pkgname=python-rpds-py
 pkgver=0.19.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Python bindings to the Rust rpds crate for persistent data structures'
 arch=('x86_64')
 url='https://github.com/crate-py/rpds'
@@ -26,7 +26,7 @@ prepare() {
   cd "$pkgname"
 
   # download dependencies
-  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
