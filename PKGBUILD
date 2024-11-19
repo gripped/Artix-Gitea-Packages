@@ -3,7 +3,7 @@
 pkgname=python-anyio
 # https://github.com/agronholm/anyio/blob/master/docs/versionhistory.rst
 pkgver=4.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='High level compatibility layer for multiple asynchronous event loop implementations'
 arch=(any)
 url='https://github.com/agronholm/anyio'
@@ -19,9 +19,13 @@ optdepends=(
   'python-pytest: pytest plugin'
 )
 source=(https://github.com/agronholm/anyio/archive/$pkgver/anyio-$pkgver.tar.gz
-        no-exceptiongroup.diff)
+        no-exceptiongroup.diff
+	fix-failing-test_properties-python3.13.patch
+	add-missing-properties-python3.13.patch)
 sha256sums=('3df2b985706beedb4306bcf04545d09e18e7171b14076c0326f9a18c830534f4'
-            '4d44828f163d98e6e27861f96493c9684980abe193ece5eb8cd649553f6e2a37')
+            '4d44828f163d98e6e27861f96493c9684980abe193ece5eb8cd649553f6e2a37'
+            '4180b95a4afe4d3fbc53c4fc02b1e286fcf358fc62081c93b1b2daa53f998360'
+            'e8d50e9ed1c37cc4f48184bb7b4254bca7964e218a52ac1bf76eb4ce5f6f89ae')
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver
 
@@ -35,6 +39,11 @@ prepare() {
   # [1] https://gitlab.archlinux.org/archlinux/packaging/state/-/commit/de33ab36729b786b80bf314f4e0296fc0cefec5b
   # [2] https://github.com/agronholm/exceptiongroup?tab=readme-ov-file#catching-exceptions
   patch -Np1 -i ../no-exceptiongroup.diff
+
+  # https://github.com/agronholm/anyio/commit/1a64bfb20eb774894893cee276b82d313d195ad0
+  patch -Np1 -i ../fix-failing-test_properties-python3.13.patch
+  # https://github.com/agronholm/anyio/commit/0558fbba9eb172194f48c81a6ac38ed03e6e197b
+  patch -Np1 -i ../add-missing-properties-python3.13.patch
 }
 
 build() {

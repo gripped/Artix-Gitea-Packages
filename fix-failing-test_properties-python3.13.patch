@@ -1,0 +1,21 @@
+From 1a64bfb20eb774894893cee276b82d313d195ad0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Alex=20Gr=C3=B6nholm?= <alex.gronholm@nextday.fi>
+Date: Sat, 12 Oct 2024 14:52:53 +0300
+Subject: [PATCH] Fixed failing test_properties() test on Python 3.13
+
+---
+ tests/test_fileio.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/tests/test_fileio.py b/tests/test_fileio.py
+index ff9178e0..f72c30cb 100644
+--- a/tests/test_fileio.py
++++ b/tests/test_fileio.py
+@@ -93,6 +93,7 @@ async def test_properties(self) -> None:
+         stdlib_properties.discard("__class_getitem__")
+         stdlib_properties.discard("__enter__")
+         stdlib_properties.discard("__exit__")
++        stdlib_properties.discard("__firstlineno__")
+ 
+         async_path = Path(path)
+         anyio_properties = {
