@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: aubio
-  version: 0.4.9-20
+  version: 0.4.9-21
   arch:
     - x86_64
   pkgname:
     - aubio
     - python-aubio
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.9-21
+    packages:
+      - aubio-0.4.9-21-x86_64.pkg.tar.zst
+      - python-aubio-0.4.9-21-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
