@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - python-moto
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,13 +29,12 @@ repos:
     packages:
       - python-moto-5.0.20-1-any.pkg.tar.zst
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 5.0.19-1
     packages:
       - python-moto-5.0.19-1-any.pkg.tar.zst
-  world:
-    version: 5.0.18-1
-    packages:
-      - python-moto-5.0.18-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
