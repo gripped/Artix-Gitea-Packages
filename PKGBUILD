@@ -22,7 +22,7 @@ sha256sums=('786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199')
 build() {
   cd pygments-$pkgver
   python -m build --wheel --no-isolation
-  make -C doc html
+#  make -C doc html
 }
 
 check() {
