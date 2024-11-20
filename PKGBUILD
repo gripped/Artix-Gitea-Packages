@@ -5,7 +5,7 @@
 pkgname=python-pytest
 _name=${pkgname#python-}
 pkgver=8.3.3
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc="Simple powerful testing with Python"
 arch=(any)

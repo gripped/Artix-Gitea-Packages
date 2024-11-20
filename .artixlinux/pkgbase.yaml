@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytest
-  version: 1:8.3.3-2
+  version: 1:8.3.3-2.1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1:8.3.3-2
+    version: 1:8.3.3-2.1
     packages:
-      - python-pytest-1:8.3.3-2-any.pkg.tar.zst
+      - python-pytest-1:8.3.3-2.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
