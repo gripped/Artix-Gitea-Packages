@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: blender
-  version: 17:4.2.3-6
+  version: 17:4.3.0-1
   arch:
     - x86_64
   pkgname:
     - blender
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 17:4.3.0-1
+    packages:
+      - blender-17:4.3.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 17:4.2.3-6
     packages:
