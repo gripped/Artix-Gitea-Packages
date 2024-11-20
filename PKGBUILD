@@ -4,7 +4,7 @@
 
 pkgname=btrfs-progs
 pkgver=6.11
-pkgrel=1
+pkgrel=2
 pkgdesc='Btrfs filesystem utilities'
 arch=('x86_64')
 makedepends=(
@@ -76,7 +76,7 @@ check() {
   # remove all tests, which requires real root 
   rm -r $(dirname $(rg -t sh -l -e SUDO_HELPER -e mount -e prepare_test) | rg 'tests/')
   # -j1 for running tests chronological
-  make -j1 -C tests test ||:
+  make -j1 -C tests test
 }
 
 package() {
