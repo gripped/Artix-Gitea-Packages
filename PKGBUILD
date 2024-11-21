@@ -26,7 +26,7 @@ makedepends=('asciidoctor'
              'meson'
              'python'
              'sqlite'
-             'systemd')
+             'udev')
 license=(
   'BSD-2-Clause'
   'BSD-3-Clause'
@@ -45,8 +45,7 @@ source=("git+https://github.com/util-linux/util-linux#tag=v${_tag}?signed"
         pam-{login,common,remote,runuser,su}
         'util-linux.sysusers'
         '60-rfkill.rules'
-        'rfkill-unblock_.service'
-        'rfkill-block_.service')
+        0001-util-linux-tmpfiles.patch)
 sha256sums=('ccae05afaddd61119bbf35173f7045d1c8e98cc42c1355f5e9072433ebc42ee1'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
@@ -56,8 +55,7 @@ sha256sums=('ccae05afaddd61119bbf35173f7045d1c8e98cc42c1355f5e9072433ebc42ee1'
             '3f54249ac2db44945d6d12ec728dcd0d69af0735787a8b078eacd2c67e38155b'
             '10b0505351263a099163c0d928132706e501dd0a008dac2835b052167b14abe3'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            '8ccec10a22523f6b9d55e0d6cbf91905a39881446710aa083e935e8073323376'
-            'a22e0a037e702170c7d88460cc9c9c2ab1d3e5c54a6985cd4a164ea7beff1b36')
+            'c4d10742e2168ae86fa333bb686a6da8e5755aef5a65937da67abdd18fb5dac3')
 
 _backports=(
 )
@@ -81,15 +79,16 @@ prepare() {
   done
 
   # do not mark dirty
-  sed -i '/dirty=/c dirty=' tools/git-version-gen
+  git apply ../0001-util-linux-tmpfiles.patch; sed -i '/dirty=/c dirty=' tools/git-version-gen
 }
 
 build() {
   local _meson_options=(
+    -Dsystemd=disabled
     -Dfs-search-path=/usr/bin:/usr/local/bin
 
     -Dlibuser=disabled
-    -Dlibutempter=disabled
+    -Dlibutempter=enabled
     -Dncurses=disabled
     -Dncursesw=enabled
     -Deconf=disabled
@@ -121,7 +120,7 @@ package_util-linux() {
            'pam'
            'readline'
            'shadow'
-           'systemd-libs' 'libsystemd.so' 'libudev.so'
+           'libudev' 'libudev.so' 'libudev.so'
            'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
@@ -154,7 +153,6 @@ package_util-linux() {
   install -m0644 pam-su "${pkgdir}/etc/pam.d/su-l"
 
   # TODO(dreisner): offer this upstream?
-  sed -i '/ListenStream/ aRuntimeDirectory=uuidd' "${pkgdir}/usr/lib/systemd/system/uuidd.socket"
 
   # runtime libs are shipped as part of util-linux-libs
   install -d -m0755 util-linux-libs/lib/
@@ -165,17 +163,13 @@ package_util-linux() {
   rmdir "$pkgdir"/"${_python_stdlib}"
   mv "$pkgdir"/usr/share/man/man3 util-linux-libs/man3
 
-  # install systemd-sysusers
+  # install esysusers
   install -Dm0644 util-linux.sysusers \
     "${pkgdir}/usr/lib/sysusers.d/util-linux.conf"
 
   install -Dm0644 60-rfkill.rules \
     "${pkgdir}/usr/lib/udev/rules.d/60-rfkill.rules"
 
-  install -Dm0644 rfkill-unblock_.service \
-    "${pkgdir}/usr/lib/systemd/system/rfkill-unblock@.service"
-  install -Dm0644 rfkill-block_.service \
-    "${pkgdir}/usr/lib/systemd/system/rfkill-block@.service"
 
   install -vDm 644 $pkgbase/Documentation/licenses/COPYING.{BSD*,ISC} -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 $pkgbase-BSD-2-Clause.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
