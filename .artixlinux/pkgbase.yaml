@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mercurial
-  version: 6.8.2-2
+  version: 6.9-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.8.2-2
+    version: 6.9-2
     packages:
-      - mercurial-6.8.2-2-x86_64.pkg.tar.zst
+      - mercurial-6.9-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
