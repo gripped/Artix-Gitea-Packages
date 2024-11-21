@@ -20,6 +20,7 @@ url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
 makedepends=('asciidoctor'
              'bash-completion'
+             'cryptsetup'
              'git'
              'libcap-ng'
              'libxcrypt'
