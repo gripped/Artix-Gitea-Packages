@@ -5,7 +5,7 @@
 
 pkgname=meld
 pkgver=3.22.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Compare files, directories and working copies"
 url="https://meldmerge.org/"
 license=(GPL-2.0-or-later)
