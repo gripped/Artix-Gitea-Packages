@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=3.31.0
+pkgver=3.31.1
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -31,9 +31,9 @@ optdepends=(
   'ninja: for ninja generator'
   'qt6-base: cmake-gui'
 )
-source=(git+https://gitlab.kitware.com/cmake/cmake#tag=v$pkgver?signed
+source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('97902c31c5276f8cf047b78b9e8138384bd7631f2e76226364cb38fcad139d6786f307a8c99c6111591e7daa2973b66757033a48e42d2a5768dcc0f9d0f41d7c'
+sha512sums=('c872dfc68b66c88e805f3997d53da01672397d91e7d7cd0997dda371078ea5318cdde48c58f4264d106fc306d4e26a9bb20f5080cb0b02a841ac7c801fa69c4d'
             'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
