@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: librewolf
-  version: 132.0.1-1
+  version: 132.0.2-1
   arch:
     - x86_64
     - aarch64
   pkgname:
     - librewolf
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 132.0.1-1
+    version: 132.0.2-1
     packages:
-      - librewolf-132.0.1-1-x86_64.pkg.tar.zst
+      - librewolf-132.0.2-1-x86_64.pkg.tar.zst
 team: galaxy
