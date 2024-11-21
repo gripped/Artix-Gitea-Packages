@@ -19,7 +19,7 @@ depends=(binutils
          python-pyelftools)
 checkdepends=(python-pytest
               python-six
-              systemd)
+              elogind)
 makedepends=(python-{build,installer,wheel}
             python-setuptools)
 _archive="$pkgname-$pkgver"
