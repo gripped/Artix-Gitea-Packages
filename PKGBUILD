@@ -19,7 +19,7 @@ sha512sums=('96dce219e00d3837b2b0083af9fe6d94ed4e3cd029e3da564263ad8656dcb9c5244
             '041963448d15d2f6349af4e40779b5ba7abb6c1c83c5b03ffc3fea7003ab1dc258d98fd36994791cab057594dfdabb944007843113abf1e979c30e1d3bcda7ef')
 
 prepare() {
-  cd nodeenv-$pkgver
+  cd nodeenv-$pkgver 
   patch -Np1 -i ${srcdir}/replace-removed-pipes-import.patch
   patch -Np1 -i ${srcdir}/fix-sys-import.patch
 }
