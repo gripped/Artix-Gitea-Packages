@@ -4,7 +4,7 @@
 
 pkgname=avahi
 pkgver=0.8+r194+g3f79789
-pkgrel=2.1
+pkgrel=3
 epoch=1
 pkgdesc="Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)"
 url="https://github.com/avahi/avahi"
@@ -21,6 +21,7 @@ depends=(
 makedepends=(
   doxygen
   git
+  glib2-devel
   gobject-introspection
   graphviz
   gtk3
@@ -55,10 +56,6 @@ source=(
 b2sums=('SKIP'
         'a15b00c05cce3b6a1479d88b1393cd955a80c669fed03be5f624a8e8701f22fe327bbd42f7563a532ae8ebc39408f3aedfc982c42a2b6141ccc22af96f16293c')
 
-# pkgver() {
-#   cd avahi
-#   git describe --tags | sed 's/^v//;s/[^-]*-g/r&/;s/-/+/g'
-# }
 
 prepare() {
   cd avahi
@@ -71,6 +68,8 @@ prepare() {
 
 build() {
   local configure_options=(
+    --with-systemdsystemunitdir=no
+    --disable-libsystemd
     --prefix=/usr
     --sysconfdir=/etc
     --localstatedir=/var
@@ -82,8 +81,6 @@ build() {
     --with-autoipd-user=avahi
     --with-avahi-priv-access-group=network
     --with-distro=archlinux
-    --with-systemdsystemunitdir=no
-    --disable-libsystemd
     with_dbus_sys=/usr/share/dbus-1/system.d
   )
 
