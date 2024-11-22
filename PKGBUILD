@@ -1,8 +1,8 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org
 
 pkgname=python-stevedore
 pkgver=5.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Manage dynamic plugins for Python applications"
 arch=('any')
 url="https://github.com/openstack/stevedore"
