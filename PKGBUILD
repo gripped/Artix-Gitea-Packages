@@ -8,7 +8,7 @@ pkgname=(
   tinysparql
   tinysparql-docs
 )
-pkgver=3.8.0
+pkgver=3.8.1
 pkgrel=1
 pkgdesc="Low-footprint RDF triple store with SPARQL 1.1 interface"
 url="https://tinysparql.org/"
@@ -59,7 +59,7 @@ build() {
 }
 
 check() {
-  dbus-run-session meson test -C build --print-errorlogs -t 3 ||:
+  dbus-run-session meson test -C build --print-errorlogs -t 3
 }
 
 package_tinysparql() {
