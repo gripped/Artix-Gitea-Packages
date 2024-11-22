@@ -22,7 +22,7 @@ makedepends=(
   libsamplerate
   ncurses
   python-docutils
-  systemd
+  udev
   xmlto
 )
 optdepends=(
@@ -52,7 +52,7 @@ build() {
     --disable-alsaconf
     --sbindir=/usr/bin
     --with-udev-rules-dir=/usr/lib/udev/rules.d
-    --with-systemdsystemunitdir=/usr/lib/systemd/system
+    --with-systemdsystemunitdir=no
   )
 
   cd $pkgname-$pkgver
