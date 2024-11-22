@@ -9,7 +9,7 @@ pkgbase=pyqt5
 pkgname=('python-pyqt5')
 pkgdesc="A set of Python bindings for the Qt5 toolkit"
 pkgver=5.15.11
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://riverbankcomputing.com/software/pyqt/intro"
 license=('GPL')
@@ -47,7 +47,6 @@ build() {
     --confirm-license \
     --no-make \
     --api-dir /usr/share/qt/qsci/api/python \
-    --scripts-dir=/usr/bin \
     --pep484-pyi
   cd build
   make
