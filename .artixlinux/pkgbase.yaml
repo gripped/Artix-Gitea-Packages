@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-astroid
-  version: 3.3.5-1
+  version: 3.3.5-2
   arch:
     - any
   pkgname:
     - python-astroid
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.3.5-2
+    packages:
+      - python-astroid-3.3.5-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
