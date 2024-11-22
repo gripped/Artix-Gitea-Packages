@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: certbot
-  version: 3.0.0-3
+  version: 3.0.0-2
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -43,9 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 3.0.0-3
+    version: 3.0.0-2
     packages:
-      - certbot-3.0.0-3-any.pkg.tar.zst
+      - certbot-3.0.0-2-any.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
