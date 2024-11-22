@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.12
+_ver=6.12.1
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -47,16 +47,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('b1a2562be56e42afb3f8489d4c2a7ac472ac23098f1ef1c1e40da601f54625eb'
+sha256sums=('0193b1d86dd372ec891bae799f6da20deef16fc199f30080a4ea9de8cef0c619'
             'SKIP'
-            '01ec2cb2dfa8877a900420076c06f58956f9fa1f570e5e7057d20c3f0fe9fc67'
+            '518f473f291a71006299a17ce376fa0d587c2e8995ecc7be143b06a2ce5423b3'
             'SKIP'
-            'b3b82797d34730fffef47e771232cf02365f8bb7e14dd1ff179fb3a4e6a80b50')
-b2sums=('b2ec2fc69218cacabbbe49f78384a5d259ca581b717617c12b000b16f4a4c59ee348ea886b37147f5f70fb9a7a01c1e2c8f19021078f6b23f5bc62d1c48d5e5e'
+            '6fed62a7c397f31df17d57309497a8a68093fbf17b25763e40a9cb0691401410')
+b2sums=('de3f4dec2fc7e36711c68683d6564d0c3ce6fe728ffa6a629604e2fa9e489dbab45fd6676343f6e68bafbd202a3e814e82a1448b46844e34046b9f82f819b8f4'
         'SKIP'
-        '5e9bc2bb11b5af108e1b821afaeb0103220b2615d125a0942a23415dbd3fabebbee389012852688351d78f05e00d4ab43ad13af94115c15b82d56398af7f3fbb'
+        '6e1d77f20b961ef0fc7fa999ba5d9cbbf8a0dd415c84d43274924938077915e879d19591ccb1a32e839b625a125dde64cd891142c1cecf24621fa4a559b3dbf0'
         'SKIP'
-        '04a194b6c93288dd510f1e444db5c9e48da8ada18e90eb0ae3b17ee785531a44a198dd74b014d68879580eb0fd52c06a03d1c9cff2410648fd84fe127be47e7a')
+        '2b78004489156476ad38fed00d9f5486dc7878b3f18e81d7d944d1c155c9857fc620c19b613740050160193624f7997f58e1e1a53b22efc7a2f4ca5145a783e4')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -104,8 +104,9 @@ _package() {
     kmod
   )
   optdepends=(
-    'wireless-regdb: to set the correct wireless channels of your country'
     'linux-firmware: firmware images needed for some devices'
+    'scx-scheds: to use sched-ext schedulers'
+    'wireless-regdb: to set the correct wireless channels of your country'
   )
   provides=(
     KSMBD-MODULE
