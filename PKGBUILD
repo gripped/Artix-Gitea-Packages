@@ -8,7 +8,7 @@ pkgname=(
   libgdm
 )
 pkgver=47.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Display manager and login screen"
 url="https://gitlab.gnome.org/GNOME/gdm"
 arch=(x86_64)
@@ -154,6 +154,7 @@ END
 
   install -Dm644 /dev/stdin usr/share/glib-2.0/schemas/org.gnome.login-screen.gschema.override <<END
 [org.gnome.login-screen]
+enable-smartcard-authentication=false
 logo='/usr/share/pixmaps/artixlinux-logo-text-dark.svg'
 END
 
