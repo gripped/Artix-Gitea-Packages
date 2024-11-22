@@ -2,7 +2,7 @@
 
 pkgname=python-incremental
 pkgver=22.10.0
-pkgrel=7
+pkgrel=6
 pkgdesc='A small library that versions your Python projects'
 arch=('any')
 license=('MIT')
