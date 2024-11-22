@@ -6,7 +6,7 @@
 
 pkgname=python-redis
 pkgver=5.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='The Python interface to the Redis key-value store'
 arch=('any')
 url='https://github.com/redis/redis-py'
@@ -131,14 +131,14 @@ check() {
   # replica on :6380.
   pytest \
     -m "not onlycluster and not ssl" \
-    "${pytest_deselect_args[@]}" ||:
+    "${pytest_deselect_args[@]}"
 
   # Run cluster tests suite - targets the Redis cluster running on
   # :16379-:16384.
   pytest \
     --redis-url="redis://localhost:16379/0" \
     -m "not onlynoncluster and not redismod and not ssl" \
-    "${pytest_deselect_args[@]}" ||:
+    "${pytest_deselect_args[@]}"
 }
 
 package() {
