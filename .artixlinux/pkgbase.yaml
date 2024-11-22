@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-respx
-  version: 0.21.1-1
+  version: 0.21.1-2
   arch:
     - any
   pkgname:
     - python-respx
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.21.1-2
+    packages:
+      - python-respx-0.21.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
