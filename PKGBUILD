@@ -7,7 +7,7 @@
 _name=tox
 pkgname=python-tox
 pkgver=4.12.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Python virtualenv management and testing tool'
 arch=('any')
 url='https://tox.readthedocs.io'
