@@ -4,7 +4,7 @@
 
 pkgname=python-magic-wormhole-mailbox-server
 pkgver=0.4.1
-pkgrel=11
+pkgrel=12
 pkgdesc="the rendezvous/mailbox server for magic-wormhole clients "
 arch=('any')
 url="https://github.com/magic-wormhole/magic-wormhole-mailbox-server"
