@@ -29,7 +29,7 @@ makedepends=(
   'python-sphinx'
   'python-sphinx_rtd_theme'
 )
-checkdepends=('python-pytest')
+checkdepends=('python-pytest' 'python-chardet')
 optdepends=(
   'certbot-apache: Apache plugin for Let’s Encrypt client'
   'certbot-nginx: Nginx plugin for Let’s Encrypt client'
