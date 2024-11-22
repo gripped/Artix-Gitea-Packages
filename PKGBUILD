@@ -3,7 +3,7 @@
 pkgbase=pyqt6-networkauth
 pkgname=(python-pyqt6-networkauth)
 pkgver=6.7.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Python bindings for QtNetworkAuth'
 arch=(x86_64)
 url='https://www.riverbankcomputing.com/software/pyqtnetworkauth/intro'
