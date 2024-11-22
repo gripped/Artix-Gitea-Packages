@@ -3,7 +3,7 @@
 pkgname=python-nitrokey
 _name="${pkgname#python-}-sdk-py"
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Python SDK for Nitrokey devices"
 arch=(any)
 url="https://github.com/nitrokey/nitrokey-sdk-py"
