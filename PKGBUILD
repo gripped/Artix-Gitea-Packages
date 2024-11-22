@@ -2,7 +2,7 @@
 
 pkgname=python-jaraco.test
 pkgver=5.4.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Testing support by jaraco"
 url="https://github.com/jaraco/jaraco.test"
 license=('MIT')
