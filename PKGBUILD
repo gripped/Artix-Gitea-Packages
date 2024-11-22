@@ -4,7 +4,7 @@
 
 pkgname=certbot
 pkgver=3.0.0
-pkgrel=1
+pkgrel=3
 pkgdesc='An ACME client'
 arch=('any')
 license=('Apache-2.0')
