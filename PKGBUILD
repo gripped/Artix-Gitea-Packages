@@ -30,3 +30,4 @@ package() {
     install -m0644 -D "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     find "$pkgdir" -type f -name test_iso8601.py -delete
 }
+
