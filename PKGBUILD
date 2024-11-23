@@ -48,3 +48,4 @@ package() {
   ln -s "$site_packages"/$_pkgname-$pkgver.dist-info/LICENSE \
     "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
+
