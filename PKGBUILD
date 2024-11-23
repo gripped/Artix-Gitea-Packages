@@ -3,7 +3,7 @@
 
 pkgname=certbot-dns-rfc2136
 pkgver=3.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='RFC2136 DNS Authenticator plugin for Certbot'
 arch=('any')
 license=('Apache-2.0')
@@ -19,7 +19,7 @@ makedepends=(
   'python-wheel'
   'python-installer'
 )
-checkdepends=('python-pytest')
+checkdepends=('python-pytest' 'python-chardet')
 # git repository is used because certbot is a huge monorepo and it's easier to
 # share the entire repository across all certbot related packages than a few
 # hundred tarballs.
