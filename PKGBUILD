@@ -36,3 +36,4 @@ package() {
   cd ini2toml
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
