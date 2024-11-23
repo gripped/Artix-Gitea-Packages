@@ -1,35 +1,35 @@
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
 
 pkgname=vnstat
 pkgver=2.12
-pkgrel=2
+pkgrel=3
 pkgdesc="A console-based network traffic monitor"
 arch=('x86_64')
 url="https://humdi.net/vnstat/"
 license=('GPL')
 depends=('bash' 'sqlite')
-makedepends=('gd')
+makedepends=('gd' 'git')
 optdepends=('gd: image output')
 backup=(etc/vnstat.conf)
-source=(https://humdi.net/vnstat/$pkgname-$pkgver.tar.gz{,.asc}
+source=(git+https://github.com/vergoh/vnstat.git#tag=v${pkgver}
 vnstatd.tmpfile vnstatd.sysusers)
-sha256sums=('b7386b12fc1fc6f47fab31f208b12eda61862e63e229e84e95a6fa80406d2852'
-            'SKIP'
+sha256sums=('515ef3f47745b37961e563ac7ef2387e03003e738da091943690183d341baf96'
 '91c9577f36c7f7ec32bb2963035a6ac49e7556ac6adc41564c033db8889b669e'
 'b9c3af7c6e8dc42aa6be0b52988aba8d64646116c211a1d055a17262c1d32edf')
-validpgpkeys=(23EF1DD76E65248FB055201ADAFE84E63D140114) # Teemu Toivola
+#validpgpkeys=(23EF1DD76E65248FB055201ADAFE84E63D140114) # Teemu Toivola
 
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc
   make
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   make DESTDIR="$pkgdir" install
   install -Dm0755 examples/vnstat.cgi -t "$pkgdir"/usr/share/doc/vnstat/examples
   # Artix
