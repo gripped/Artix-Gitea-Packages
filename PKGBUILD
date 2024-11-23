@@ -31,3 +31,4 @@ package() {
   python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
   install -Dm644 LICENSE.rst -t "${pkgdir}"/usr/share/licenses/${pkgname}
 }
+
