@@ -52,3 +52,4 @@ package() {
   install -vDm 644 {AUTHORS,CHANGES,README.rst} -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 ../*.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
+
