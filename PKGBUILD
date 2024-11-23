@@ -35,3 +35,4 @@ package() {
   cd $_name-$pkgver
   python3 -m installer --destdir="$pkgdir" dist/*.whl
 }
+
