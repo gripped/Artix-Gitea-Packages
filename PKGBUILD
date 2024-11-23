@@ -38,3 +38,4 @@ package_python-breathe() {
   python -m installer --destdir="$pkgdir" "breathe-${pkgver}/dist"/*.whl
   install -D -m644 "breathe-${pkgver}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
+
