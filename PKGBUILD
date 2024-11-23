@@ -29,3 +29,4 @@ check() {
 
 # getver: raw.githubusercontent.com/linsomniac/python-memcached/master/ChangeLog
 # vim:set ts=2 sw=2 et:
+
