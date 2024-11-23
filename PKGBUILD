@@ -22,7 +22,7 @@ makedepends=(
   'python-wheel'
   'python-installer'
 )
-checkdepends=('python-pytest')
+checkdepends=('python-pytest' 'python-chardet')
 # git repository is used because certbot is a huge monorepo and it's easier to
 # share the entire repository across all certbot related packages than a few
 # hundred tarballs.
