@@ -29,4 +29,3 @@ package() {
   python setup.py install --root="$pkgdir" --optimize=1
   install -Dm644 docs/license.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
-
