@@ -28,3 +28,4 @@ package() {
   cd autopage-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
