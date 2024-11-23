@@ -49,3 +49,4 @@ package() {
   rm -r "$pkgdir/$site_packages/ndindex/tests"
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
+
