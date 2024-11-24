@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-textual
-  version: 0.86.3-1
+  version: 0.86.3-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.86.3-1
+    version: 0.86.3-2
     packages:
-      - python-textual-0.86.3-1-any.pkg.tar.zst
+      - python-textual-0.86.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
