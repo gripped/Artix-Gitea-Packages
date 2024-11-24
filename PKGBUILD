@@ -2,7 +2,7 @@
 
 pkgname=pyqt-builder
 pkgver=1.16.4
-pkgrel=2
+pkgrel=2.1
 pkgdesc='The PEP 517 compliant PyQt build system'
 arch=(any)
 url='https://pypi.org/project/PyQt-builder/'
