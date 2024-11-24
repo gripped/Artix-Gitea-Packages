@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: samba
-  version: 2:4.21.1-1
+  version: 2:4.21.1-2
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - smbclient
     - samba
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,12 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2:4.21.1-2
+    packages:
+      - libwbclient-2:4.21.1-2-x86_64.pkg.tar.zst
+      - ldb-2:4.21.1-2-x86_64.pkg.tar.zst
+      - smbclient-2:4.21.1-2-x86_64.pkg.tar.zst
+      - samba-2:4.21.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

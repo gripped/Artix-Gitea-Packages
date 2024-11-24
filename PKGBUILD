@@ -10,7 +10,7 @@
 pkgbase=samba
 pkgname=('libwbclient' 'ldb' 'smbclient' 'samba')
 pkgver=4.21.1
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL-3.0-or-later')
@@ -168,6 +168,7 @@ _ldb_headers=(
 provides=(libldb.so)
 _pkgsrc="${srcdir}"/samba-pkg
 
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   install -d -m755 "${pkgdir}"/usr/bin
   for bin in ${_ldb_bins[@]}; do
     mv "${_pkgsrc}"/usr/bin/${bin} "${pkgdir}"/usr/bin/
@@ -184,9 +185,9 @@ _pkgsrc="${srcdir}"/samba-pkg
   for headers in ${_ldb_headers[@]}; do
     mv "${_pkgsrc}"/usr/include/samba-4.0/${headers} "${pkgdir}"/usr/include/samba-4.0/
   done
-  install -d -m755 "${pkgdir}"/usr/lib/python3.12/site-packages/
-  mv "${_pkgsrc}"/usr/lib/python3.12/site-packages/{_ldb_text.py,ldb.cpython-312-$CARCH-linux-gnu.so} \
-    "${pkgdir}"/usr/lib/python3.12/site-packages/
+  install -d -m755 "${pkgdir}${site_packages}/"
+  mv "${_pkgsrc}${site_packages}/"{_ldb_text.py,ldb.cpython-$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')-$CARCH-linux-gnu.so} \
+    "${pkgdir}${site_packages}/"
 
   install -d -m755 "${pkgdir}"/usr/share/man/man1
   for bin in ${_ldb_bins[@]}; do
@@ -309,6 +310,7 @@ backup=(
 )
 install=samba.install
 
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 _pkgsrc="${srcdir}"/samba-pkg
   # Everything that libwbclient and smbclient didn't install goes
   # into the samba package...
@@ -319,7 +321,7 @@ _pkgsrc="${srcdir}"/samba-pkg
   for script in bin/samba_dnsupdate bin/samba_kcc bin/samba_spnupdate \
                 bin/samba_upgradedns bin/samba-tool
   do
-    sed -i "/^sys\.path\.insert/ asys.path.insert(0, '/usr/lib/python${_pyver}/site-packages')" \
+    sed -i "/^sys\.path\.insert/ asys.path.insert(0, '$site_packages')" \
       "${pkgdir}"/usr/${script}
   done
 
