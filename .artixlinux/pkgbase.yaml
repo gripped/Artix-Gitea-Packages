@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-humanize
-  version: 4.9.0-3
+  version: 4.11.0-2
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.9.0-3
+    version: 4.11.0-2
     packages:
-      - python-humanize-4.9.0-3-any.pkg.tar.zst
+      - python-humanize-4.11.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
