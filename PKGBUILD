@@ -4,7 +4,7 @@
 
 pkgname=pam
 pkgver=1.7.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="PAM (Pluggable Authentication Modules) library"
 arch=('x86_64')
 license=('GPL-2.0-only')
@@ -71,7 +71,7 @@ build() {
     -Deconf=disabled \
     -Dselinux=disabled \
     -Dpam_userdb=disabled \
-    -Dsystemdunitdir=no \
+    -Dsystemdunitdir=/usr/lib/systemd \
     build
   meson compile -C build
 }
@@ -86,5 +86,7 @@ package() {
 
   # set unix_chkpwd uid
   chmod +s "${pkgdir}"/usr/bin/unix_chkpwd
+
+  rm -r ${pkgdir}/usr/lib/systemd
 }
 
