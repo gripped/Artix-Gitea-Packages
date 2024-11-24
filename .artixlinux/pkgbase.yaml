@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kvirc
-  version: 5.2.4-3
+  version: 5.2.6-1
   arch:
     - x86_64
   pkgname:
     - kvirc
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.2.4-2
+    version: 5.2.6-1
     packages:
-      - kvirc-5.2.4-2-x86_64.pkg.tar.zst
+      - kvirc-5.2.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
