@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-filelock
-  version: 3.16.1-1.1
+  version: 3.16.1-2
   arch:
     - any
   pkgname:
     - python-filelock
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.16.1-1
+    version: 3.16.1-2
     packages:
-      - python-filelock-3.16.1-1-any.pkg.tar.zst
+      - python-filelock-3.16.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
