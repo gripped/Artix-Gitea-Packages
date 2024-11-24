@@ -35,3 +35,4 @@ package() {
   python -m installer -d "$pkgdir" dist/*.whl
   install -Dm644 ../$pkgname-LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
+
