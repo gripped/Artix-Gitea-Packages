@@ -48,3 +48,4 @@ package() {
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname" docs/*.md
 }
+
