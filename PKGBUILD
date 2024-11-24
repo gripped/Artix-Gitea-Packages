@@ -29,3 +29,4 @@ package() {
   cd requests-mock
   python setup.py install --root="$pkgdir" --optimize=1
 }
+
