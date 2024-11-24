@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-magic-wormhole-transit-relay
-  version: 0.2.1-11
+  version: 0.4.0-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.2.1-11
+    version: 0.4.0-2
     packages:
-      - python-magic-wormhole-transit-relay-0.2.1-11-any.pkg.tar.zst
+      - python-magic-wormhole-transit-relay-0.4.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
