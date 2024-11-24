@@ -35,3 +35,4 @@ package() {
   cd openapi-spec-validator-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
