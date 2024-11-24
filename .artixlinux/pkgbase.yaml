@@ -1,18 +1,20 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-filetype
+  version: 1.2.0-4
+  arch:
+    - any
+  pkgname:
+    - python-filetype
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.0-4
+    packages:
+      - python-filetype-1.2.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
