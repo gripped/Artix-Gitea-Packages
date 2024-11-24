@@ -50,3 +50,4 @@ package() {
   ln -s "$site_packages/jsonschema_specifications-$pkgver.dist-info/licenses/COPYING" \
     "$pkgdir/usr/share/licenses/$pkgname/COPYING"
 }
+
