@@ -36,7 +36,7 @@ provides=(qt5-python-bindings)
 makedepends=('sip' 'pyqt-builder' 'python-opengl' 'python-dbus'
              'qt5-connectivity' 'qt5-multimedia' 'qt5-tools' 'qt5-serialport' 'qt5-speech' 'qt5-svg'
              'qt5-websockets' 'qt5-x11extras' 'qt5-xmlpatterns' 'qt5-remoteobjects' 'qt5-quick3d'
-             'qt5-sensors' 'qt5-webchannel' 'qt5-location')
+             'qt5-sensors' 'qt5-webchannel' 'qt5-location' 'python-wheel')
 conflicts=('pyqt5-common')
 source=("https://pypi.python.org/packages/source/P/PyQt5/PyQt5-$pkgver.tar.gz")
 sha256sums=('fda45743ebb4a27b4b1a51c6d8ef455c4c1b5d610c90d2934c7802b5c1557c52')
