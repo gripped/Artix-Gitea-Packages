@@ -81,3 +81,4 @@ package() {
   ln -s "$site_packages/${pkgname#python-}-$pkgver.dist-info/licenses/COPYING" \
     "$pkgdir/usr/share/licenses/$pkgname/COPYING"
 }
+
