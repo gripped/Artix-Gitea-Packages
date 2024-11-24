@@ -4,7 +4,7 @@
 _pkgname=zipstream-ng
 pkgname=python-$_pkgname
 pkgver=1.8.0
-pkgrel=1
+pkgrel=4
 pkgdesc='A modern and easy to use streamable zip file generator'
 arch=(any)
 url="https://github.com/pR0Ps/$_pkgname"
@@ -27,3 +27,4 @@ package() {
 	cd "$_archive"
 	python -m installer -d "$pkgdir" dist/*.whl
 }
+
