@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-sentry_sdk
-  version: 2.18.0-2
+  version: 2.19.0-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.18.0-2
+    version: 2.19.0-2
     packages:
-      - python-sentry_sdk-2.18.0-2-any.pkg.tar.zst
+      - python-sentry_sdk-2.19.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
