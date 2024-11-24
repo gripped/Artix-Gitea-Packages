@@ -25,3 +25,4 @@ package()  {
   cd PyQt5_sip-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
