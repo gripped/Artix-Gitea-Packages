@@ -3,7 +3,7 @@
 
 pkgname=python-tornado
 pkgver=6.4.1
-pkgrel=1
+pkgrel=3
 pkgdesc='open source version of the scalable, non-blocking web server and tools'
 arch=('x86_64')
 url='https://www.tornadoweb.org/'
@@ -46,3 +46,4 @@ package() {
   cd tornado-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
