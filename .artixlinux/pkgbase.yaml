@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-gherkin
-  version: 30.0.4-1
+  version: 30.0.4-2
   arch:
     - any
   pkgname:
@@ -14,7 +14,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 30.0.4-1
+    version: 30.0.4-2
     packages:
-      - python-gherkin-30.0.4-1-any.pkg.tar.zst
+      - python-gherkin-30.0.4-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
