@@ -37,3 +37,4 @@ package() {
     --root="$pkgdir" \
     --skip-build
 }
+
