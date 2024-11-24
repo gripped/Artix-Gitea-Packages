@@ -32,3 +32,4 @@ package() {
   cd fixtures-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
