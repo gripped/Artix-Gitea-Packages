@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-virtualenv
-  version: 20.27.1-3
+  version: 20.27.1-4
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 20.27.1-3
+    version: 20.27.1-4
     packages:
-      - python-virtualenv-20.27.1-3-any.pkg.tar.zst
+      - python-virtualenv-20.27.1-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
