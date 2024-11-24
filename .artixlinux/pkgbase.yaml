@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-toolz
-  version: 1.0.0-2
+  version: 1.0.0-1
   arch:
     - any
   pkgname:
     - python-toolz
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.12.1-2
+    version: 1.0.0-1
     packages:
-      - python-toolz-0.12.1-2-any.pkg.tar.zst
+      - python-toolz-1.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
