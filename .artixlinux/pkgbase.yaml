@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: persepolis
-  version: 5.0.0-1
+  version: 5.0.1-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - persepolis-5.0.0-1-any.pkg.tar.zst
   world:
-    version: 5.0.0-1
+    version: 5.0.1-1
     packages:
-      - persepolis-5.0.0-1-any.pkg.tar.zst
+      - persepolis-5.0.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
