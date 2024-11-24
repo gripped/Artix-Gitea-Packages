@@ -2,8 +2,8 @@
 
 _pkg=smbprotocol
 pkgname=python-${_pkg}
-pkgver=1.12.0
-pkgrel=4
+pkgver=1.15.0
+pkgrel=2
 pkgdesc="SMBv2 and v3 client"
 arch=(any)
 url="https://github.com/jborean93/smbprotocol"
@@ -17,7 +17,7 @@ _commit=190667f41c5c8856db741efc133c27a624a7a2bf # git rev-parse v${pkgver}
 #source=(git+${url}.git#commit=${_commit}?signed)
 # 1.9.0 was signed using GitHub key
 source=(git+${url}.git#commit=${_commit})
-sha256sums=('SKIP')
+sha256sums=('f675c3d7da954954cb1e51e35e638cb2c4734fa3df16e17586c2f0e7cd4a8fb1')
 validpgpkeys=(A03A0E13C2EFFD384B1EC39A2AAC89085FBBDAB5) # Jordan Borean <jborean93@gmail.com>
 
 build() {
@@ -35,4 +35,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}
 }
-

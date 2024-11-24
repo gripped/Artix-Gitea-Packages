@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-smbprotocol
-  version: 1.12.0-4
+  version: 1.15.0-2
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.12.0-4
+    version: 1.15.0-2
     packages:
-      - python-smbprotocol-1.12.0-4-any.pkg.tar.zst
+      - python-smbprotocol-1.15.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
