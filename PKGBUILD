@@ -29,4 +29,3 @@ package() {
 	cd "python-caja-${pkgver}"
 	make DESTDIR="${pkgdir}" install
 }
-

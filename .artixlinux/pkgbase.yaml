@@ -7,13 +7,13 @@ pkgbase:
   pkgname:
     - python-caja
 actions:
-  addRepo: world-goblins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -44,8 +44,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1.28.0-3
+    packages:
+      - python-caja-1.28.0-3-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
