@@ -49,3 +49,4 @@ package() {
   install -Dm644 examples/jupyter-completion.bash "$pkgdir"/usr/share/bash-completion/completions/jupyter
   install -Dm644 examples/completions-zsh "$pkgdir"/usr/share/zsh/site-functions/_jupyter
 }
+
