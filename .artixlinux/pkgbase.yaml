@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: pre-commit
-  version: 4.0.1-1
+  version: 4.0.1-2
   arch:
     - any
   pkgname:
     - pre-commit
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.0.1-2
+    packages:
+      - pre-commit-4.0.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
