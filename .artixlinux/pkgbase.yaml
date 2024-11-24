@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: ruff
-  version: 0.8.0-1
+  version: 0.8.0-2
   arch:
     - x86_64
   pkgname:
     - ruff
     - python-ruff
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.7.4-2
+    version: 0.8.0-2
     packages:
-      - ruff-0.7.4-2-x86_64.pkg.tar.zst
-      - python-ruff-0.7.4-2-x86_64.pkg.tar.zst
+      - ruff-0.8.0-2-x86_64.pkg.tar.zst
+      - python-ruff-0.8.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
