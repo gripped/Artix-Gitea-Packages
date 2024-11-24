@@ -29,3 +29,4 @@ package() {
   cd debtcollector-$pkgver
   python setup.py install --root="$pkgdir" --optimize=1
 }
+
