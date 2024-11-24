@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-pikepdf
-  version: 9.4.2-1
+  version: 9.4.2-2
   arch:
     - x86_64
   pkgname:
     - python-pikepdf
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
