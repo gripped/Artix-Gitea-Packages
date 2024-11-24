@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: featherpad
-  version: 1.5.1-1
+  version: 1.5.2-1
   arch:
     - x86_64
   pkgname:
     - featherpad
 actions:
-  addRepo: galaxy
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.5.2-1
+    packages:
+      - featherpad-1.5.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
