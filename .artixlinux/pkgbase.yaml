@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-secretstorage
-  version: 3.3.3-5
+  version: 3.3.3-6
   arch:
     - any
   pkgname:
     - python-secretstorage
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.3.3-6
+    packages:
+      - python-secretstorage-3.3.3-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
