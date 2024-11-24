@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - python-dask
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.8.2-2
+    version: 2024.11.2-1
     packages:
-      - python-dask-2024.8.2-2-any.pkg.tar.zst
+      - python-dask-2024.11.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
