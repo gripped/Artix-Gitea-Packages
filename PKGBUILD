@@ -10,7 +10,7 @@ arch=('any')
 url="https://doc.courtbouillon.org/cairocffi"
 license=('BSD')
 depends=('python-cffi' 'cairo')
-makedepends=('python-build' 'python-installer' 'python-flit-core' 'python-xcffib' 'gdk-pixbuf2')
+makedepends=('python-build' 'python-installer' 'python-flit-core' 'gdk-pixbuf2')
 checkdepends=('python-pytest' 'python-numpy' 'python-pikepdf')
 optdepends=('gdk-pixbuf2: for cairocffi.pixbuf'
             'python-xcffib: for cairo xcb support')
@@ -32,4 +32,3 @@ package() {
   python -m installer -d "$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
-
