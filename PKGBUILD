@@ -2,7 +2,7 @@
 
 pkgname=jedi-language-server
 pkgver=0.41.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Language server for Jedi'
 arch=('any')
 url=https://github.com/pappasam/jedi-language-server
@@ -16,12 +16,6 @@ makedepends=('git' 'python-build' 'python-installer' 'python-poetry-core')
 checkdepends=('python-lsp-jsonrpc' 'python-pyhamcrest' 'python-pytest')
 source=("git+$url.git#tag=v$pkgver")
 b2sums=('46890caee2822a7528c70382516ec943493c39f9d912d94325979ac54d086633691dea814ca39a9ac46e3ef6d5a6c4eb0923f921eab691cdb232984c4bd555ad')
-
-prepare() {
-  cd $pkgname
-  # Remove include list https://github.com/pypa/wheel/issues/92
-  sed -i '/include = \["README.md"\]/d' pyproject.toml
-}
 
 build() {
   cd $pkgname
