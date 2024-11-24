@@ -2,7 +2,7 @@
 
 pkgname=python-anyio
 # https://github.com/agronholm/anyio/blob/master/docs/versionhistory.rst
-pkgver=4.4.0
+pkgver=4.6.2.post1
 pkgrel=2
 pkgdesc='High level compatibility layer for multiple asynchronous event loop implementations'
 arch=(any)
@@ -11,7 +11,8 @@ license=(MIT)
 depends=(python python-idna python-sniffio)
 makedepends=(python-build python-installer python-setuptools python-setuptools-scm python-wheel
              python-uvloop python-trio)
-checkdepends=(python-pytest python-trustme python-hypothesis python-pytest-mock python-psutil)
+checkdepends=(python-pytest python-trustme python-hypothesis python-pytest-mock python-psutil
+              python-truststore)
 optdepends=(
   'python-trio: trio backend'
   'python-outcome: trio backend'
@@ -20,12 +21,10 @@ optdepends=(
 )
 source=(https://github.com/agronholm/anyio/archive/$pkgver/anyio-$pkgver.tar.gz
         no-exceptiongroup.diff
-	fix-failing-test_properties-python3.13.patch
-	add-missing-properties-python3.13.patch)
-sha256sums=('3df2b985706beedb4306bcf04545d09e18e7171b14076c0326f9a18c830534f4'
-            '4d44828f163d98e6e27861f96493c9684980abe193ece5eb8cd649553f6e2a37'
-            '4180b95a4afe4d3fbc53c4fc02b1e286fcf358fc62081c93b1b2daa53f998360'
-            'e8d50e9ed1c37cc4f48184bb7b4254bca7964e218a52ac1bf76eb4ce5f6f89ae')
+        python-3.12.diff)
+sha256sums=('aae56b725ba03ba3005f47b27c1d8c70c9d89d30f706ce9624a9b89edcf25308'
+            '72658edd045a382790a3218736c641d2b6e16e4b464137b4fb01e488112ca609'
+            '9cd05959ecc9408653e6a96be2bcd27104a430f5426b86edf22ef257b68139d4')
 
 export SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver
 
@@ -40,10 +39,9 @@ prepare() {
   # [2] https://github.com/agronholm/exceptiongroup?tab=readme-ov-file#catching-exceptions
   patch -Np1 -i ../no-exceptiongroup.diff
 
-  # https://github.com/agronholm/anyio/commit/1a64bfb20eb774894893cee276b82d313d195ad0
-  patch -Np1 -i ../fix-failing-test_properties-python3.13.patch
-  # https://github.com/agronholm/anyio/commit/0558fbba9eb172194f48c81a6ac38ed03e6e197b
-  patch -Np1 -i ../add-missing-properties-python3.13.patch
+  # Partial revert of https://github.com/agronholm/anyio/commit/4e9f18dfaa6e7db55231a35fcd93e18c343519a4
+  # Don't fail tests with features that require uvloop 0.21
+  patch -Np1 -i ../python-3.12.diff
 }
 
 build() {
