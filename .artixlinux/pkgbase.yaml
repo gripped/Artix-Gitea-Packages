@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-billiard
-  version: 4.2.0-5
+  version: 4.2.1-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.2.0-5
+    version: 4.2.1-2
     packages:
-      - python-billiard-4.2.0-5-x86_64.pkg.tar.zst
+      - python-billiard-4.2.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
