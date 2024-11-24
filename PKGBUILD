@@ -2,7 +2,7 @@
 
 pkgname=python-pytest-tornado
 pkgver=0.8.1
-pkgrel=8
+pkgrel=9
 pkgdesc='A py.test plugin providing fixtures and markers to simplify testing of asynchronous tornado applications.'
 arch=('any')
 license=('Apache')
@@ -31,3 +31,4 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
+
