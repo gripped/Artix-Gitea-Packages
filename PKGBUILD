@@ -60,3 +60,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.md
 }
+
