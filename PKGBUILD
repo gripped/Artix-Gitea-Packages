@@ -32,3 +32,4 @@ package() {
   cd warlock-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
