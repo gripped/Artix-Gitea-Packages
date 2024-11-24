@@ -3,7 +3,7 @@
 
 pkgname=qtermwidget
 pkgver=2.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A terminal widget for Qt, used by QTerminal"
 arch=("x86_64")
 url="https://github.com/lxqt/qtermwidget"
@@ -39,3 +39,4 @@ package() {
 
   python -m installer --destdir="$pkgdir" "$srcdir"/qtermwidget/pyqt/*.whl
 }
+
