@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: deluge
-  version: 1:2.1.1-6
+  version: 1:2.1.1-7
   arch:
     - any
   pkgname:
     - deluge
     - deluge-gtk
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:2.1.1-7
+    packages:
+      - deluge-1:2.1.1-7-any.pkg.tar.zst
+      - deluge-gtk-1:2.1.1-7-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
