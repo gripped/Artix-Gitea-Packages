@@ -2,12 +2,12 @@
 
 pkgname=onboard
 pkgver=1.4.1
-pkgrel=9
+pkgrel=10
 pkgdesc="On-screen keyboard useful on tablet PCs or for mobility impaired users"
 arch=('x86_64')
 url="https://launchpad.net/onboard"
 license=('GPL')
-depends=('gtk3' 'hunspell' 'iso-codes' 'libcanberra' 'libxkbfile' 'python-cairo' 'python-dbus' 'python-gobject' 'udev')
+depends=('gtk3' 'hunspell' 'iso-codes' 'libcanberra' 'libxkbfile' 'python-cairo' 'python-dbus' 'python-gobject' 'systemd')
 makedepends=('python-distutils-extra')
 optdepends=('mousetweaks: hover click with mouse')
 source=(https://launchpad.net/$pkgname/${pkgver%.*}/$pkgver/+download/$pkgname-$pkgver.tar.gz{,.asc}
