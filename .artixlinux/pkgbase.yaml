@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zsh-autosuggestions
-  version: 0.7.0-3
+  version: 0.7.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.0-3
+    version: 0.7.1-1
     packages:
-      - zsh-autosuggestions-0.7.0-3-any.pkg.tar.zst
+      - zsh-autosuggestions-0.7.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
