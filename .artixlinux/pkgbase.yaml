@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: autoconf-archive
-  version: 1:2023.02.20-2
+  version: 1:2024.10.16-2
   arch:
     - any
   pkgname:
     - autoconf-archive
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2023.02.20-2
+    version: 1:2024.10.16-2
     packages:
-      - autoconf-archive-1:2023.02.20-2-any.pkg.tar.zst
+      - autoconf-archive-1:2024.10.16-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
