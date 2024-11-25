@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kde-development-environment-meta
-  version: 20240301-1
+  version: 20241108-1
   arch:
     - any
   pkgname:
     - kde-development-environment-meta
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240301-1
+    version: 20241108-1
     packages:
-      - kde-development-environment-meta-20240301-1-any.pkg.tar.zst
+      - kde-development-environment-meta-20241108-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
