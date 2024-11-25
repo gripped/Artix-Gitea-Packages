@@ -1,0 +1,39 @@
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Chris Severance aur.severach aATt spamgourmet dott com
+# Contributor: speps <speps at aur dot archlinux dot org>
+# Contributor: Bastien Dejean <baskerville@lavabit.com>
+# Contributor: Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>
+
+pkgname=lhasa
+pkgver=0.4.0
+pkgrel=1
+pkgdesc='Free LZH/LHA archive tool'
+url='https://github.com/fragglet/lhasa'
+arch=('x86_64')
+license=('custom:ISC')
+depends=('glibc')
+conflicts=('lha')
+provides=('lha')
+source=(https://github.com/fragglet/lhasa/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz{,.asc})
+sha512sums=('55d11a9a23e6a9c847166f963bc11dcc7aba0db1e68c44ae6d0ee40e40494484ff797b649a386bea76ea9b4ff8096722283c82b9ad253d784488366c9d73c127'
+            'SKIP')
+validpgpkeys=('6D2C117E0310664497AA9546F6C2EE9C23354344') # Simon Howard <fraggle@soulsphere.org>
+
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+check() {
+  cd ${pkgname}-${pkgver}
+  make check
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm 644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
+# vim: ts=2 sw=2 et:
