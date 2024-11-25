@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libbobcat
-  version: 6.02.02-2
+  version: 6.06.02-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.02.02-2
+    version: 6.06.02-1
     packages:
-      - libbobcat-6.02.02-2-x86_64.pkg.tar.zst
+      - libbobcat-6.06.02-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
