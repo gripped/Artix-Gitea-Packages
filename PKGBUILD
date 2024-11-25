@@ -1,40 +1,35 @@
+# Maintainer:
+# Contributor: Robert Tari <robert at tari dot in>
+
 pkgname=ayatana-ido
-pkgver=0.10.2
+pkgver=0.10.4
 pkgrel=1
-pkgdesc="Ayatana Indicator Display Objects"
-arch=("x86_64")
-url="https://github.com/AyatanaIndicators/ayatana-ido"
-## File: https://github.com/AyatanaIndicators/ayatana-ido/blob/main/NEWS
-changelog=Changelog.txt
-license=("LGPL3")
-depends=(
-	"gtk3>=3.24"
-	"glib2>=2.58"
-)
-makedepends=(
-	"gcc"
-	"make"
-	"pkgconf"
-
-	"cmake>=3.13"
-	"gobject-introspection"
-	"vala"
-
-)
-source=(
-	"https://github.com/AyatanaIndicators/$pkgname/archive/refs/tags/$pkgver.tar.gz"
-)
-sha256sums=(
-	"0daf8a2e5bba51225bc3724c0e53c3b569269f28ac3a14f6bed9920b44ecc856"
-)
+pkgdesc='Ayatana Indicator Display Objects'
+arch=(x86_64)
+url='https://github.com/AyatanaIndicators/ayatana-ido'
+license=(LGPL-2.1-or-later
+         LGPL-3.0-or-later)
+depends=(cairo
+         gdk-pixbuf2
+         glib2
+         glibc
+         gtk3
+         pango)
+makedepends=(cmake
+             git
+             glib2-devel
+             gtest
+             gobject-introspection
+             vala)
+source=(git+https://github.com/AyatanaIndicators/$pkgname#tag=$pkgver)
+sha256sums=('7358770ad5aca5d8a2c389a48c83a9f694ddd28034390da7042277d5c92a6538')
 
 build() {
-	cd "$pkgname-$pkgver"
-	export HOME=/tmp
-	cmake -D CMAKE_INSTALL_PREFIX="/usr" .
+  cmake -B build -S $pkgname \
+    -DCMAKE_INSTALL_PREFIX=/usr  
+  cmake --build build
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	make install DESTDIR="$pkgdir"
+  DESTDIR="$pkgdir" cmake --install build
 }
