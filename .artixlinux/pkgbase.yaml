@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libsmbios
-  version: 2.4.3-7
+  version: 2.4.3-8
   arch:
     - x86_64
   pkgname:
     - libsmbios
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.4.3-8
+    packages:
+      - libsmbios-2.4.3-8-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
