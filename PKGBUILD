@@ -1,34 +1,49 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+
 pkgname=go-licenses
 pkgver=1.6.0
-pkgrel=1
-pkgdesc="Lightweight tool to report on the licenses used by a Go package and its dependencies."
-arch=("x86_64")
+pkgrel=2
+pkgdesc="Reports on the licenses used by a Go package and its dependencies"
 url="https://github.com/google/go-licenses"
-license=("Apache2")
-depends=("glibc")
-makedepends=("go")
-source=(
-	"https://github.com/google/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
+arch=('x86_64')
+license=('Apache-2.0')
+depends=(
+  'glibc'
 )
-sha256sums=(
-	"70c1ceb7c342ceb79b63a76caafb13ea3796a51715c742a482eb9d85277311e7"
+makedepends=(
+  'go'
 )
+# we can not use LTO as otherwise we get no reproducible package with full RELRO
+options=(!lto)
+source=(${pkgname}-${pkgver}.tar.gz::https://github.com/google/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz)
+sha256sums=('70c1ceb7c342ceb79b63a76caafb13ea3796a51715c742a482eb9d85277311e7')
+b2sums=('a37d2e12d0400c18d74ff05d9dfef3354774b374045274457d1be7aff53901f1524fcce973eba53e3be827d868addd54411fcefb32fa14d30daa9d6f7a833036')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  go mod download
+}
 
 build() {
-	cd "$pkgname-$pkgver"
-	export CGO_CFLAGS="$CFLAGS" CGO_LDFLAGS="$LDFLAGS"
-	go build \
-		-buildmode pie \
-		-trimpath \
-		-ldflags "-linkmode=external" \
-		-mod readonly \
-		-modcacherw \
-		-buildvcs=false \
-		-o $pkgname
+  cd ${pkgname}-${pkgver}
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export CGO_REQUIRED="1"
+
+  go build \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags '-compressdwarf=false -linkmode=external' \
+    .
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	install -Dm 755 $pkgname -t "$pkgdir/usr/bin"
-	install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+  cd ${pkgname}-${pkgver}
+  install -Dm755 ${pkgname} "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
+
+# vim: ts=2 sw=2 et:
