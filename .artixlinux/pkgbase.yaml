@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libgit2-glib
-  version: 1.2.0-4
+  version: 1.2.0-5
   arch:
     - x86_64
   pkgname:
     - libgit2-glib
     - libgit2-glib-docs
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.0-5
+    packages:
+      - libgit2-glib-1.2.0-5-x86_64.pkg.tar.zst
+      - libgit2-glib-docs-1.2.0-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.2.0-4
     packages:
