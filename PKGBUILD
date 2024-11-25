@@ -12,7 +12,7 @@ url="https://www.lirc.org/"
 license=('GPL')
 depends=('alsa-lib' 'libx11' 'libftdi' 'libusb-compat')
 makedepends=('help2man' 'alsa-lib' 'libx11' 'libxslt' 'python' 'python-setuptools'
-             'python-yaml' 'systemd')
+             'python-yaml' 'udev')
 optdepends=('python: for lirc-setup, irdb-get and pronto2lirc'
             'python-gobject: for lirc-setup and irdb-get'
             'python-yaml: for lirc-setup and irdb-get')
