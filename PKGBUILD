@@ -1,31 +1,49 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=copr-cli
-pkgver=1.105
-pkgrel=2
+pkgver=2.0
+pkgrel=1
 pkgdesc="CLI tool to run copr"
 url="https://github.com/fedora-copr/copr"
 license=('GPL-2.0-or-later')
 arch=('any')
-depends=('python-copr' 'python-humanize' 'python-simplejson' 'python-jinja' 'python-setuptools'
-         'python-future')
-makedepends=('python-build' 'python-installer' 'python-wheel')
-checkdepends=('python-pytest' 'python-responses')
-source=("https://github.com/fedora-copr/copr/archive/copr-cli-$pkgver-1.tar.gz")
-sha512sums=('76ce84a9300ac9f68732a0c8d4421d1e6007a4d92dacac4182b5687aa3f5c256a06dcc877a86d087ca737db29e53cafce470f62c8974b481f4e42cb30cb4e8ad')
+depends=(
+  'python'
+  'python-copr'
+  'python-humanize'
+  'python-jinja'
+  'python-requests'
+  'python-setuptools'
+  'python-six'
+)
+makedepends=(
+  'asciidoc'
+  'git'
+  'python-build'
+  'python-installer'
+  'python-wheel'
+)
+checkdepends=(
+  'python-pytest'
+  'python-responses'
+)
+source=("git+$url.git#tag=copr-cli-$pkgver-1")
+sha512sums=('142033867dc8c417db0ad0a577a7d8c4f7fc35b0fc1627e7908e4347fab3a8b75134c1a016ede311375deb8945558937a020cd59068c5f9fd6565aad5d15287c')
 
 build() {
-  cd copr-copr-cli-$pkgver-1/cli
+  cd copr/cli
   python -m build --wheel --no-isolation
+  a2x -d manpage -f manpage man/copr-cli.1.asciidoc
 }
 
 check() {
-  cd copr-copr-cli-$pkgver-1/cli
+  cd copr/cli
   python -m pytest
 }
 
 package() {
-  cd copr-copr-cli-$pkgver-1/cli
+  cd copr/cli
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -Dm644 man/*.1 -t "$pkgdir"/usr/share/man/man1/
+  install -vDm644 -t "$pkgdir/usr/share/man/man1" man/*.1
 }
