@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: sugar-datastore
-  version: 0.120-2
+  version: 0.121-1
   arch:
     - x86_64
   pkgname:
     - sugar-datastore
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.120-2
+    version: 0.121-1
     packages:
-      - sugar-datastore-0.120-2-x86_64.pkg.tar.zst
+      - sugar-datastore-0.121-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
