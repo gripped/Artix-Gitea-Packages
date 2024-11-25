@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Paul Mattal <paul@archlinux.org>
 
 pkgname=lirc
 _pkgver=0.10.2
 [[ $_pkgver =~ [a-z]$ ]] && pkgver="${_pkgver:0:-1}.${_pkgver: -1}" || pkgver="$_pkgver"
-pkgrel=4
+pkgrel=5
 epoch=1
 pkgdesc="Linux Infrared Remote Control utilities"
 arch=('x86_64')
@@ -12,7 +12,7 @@ url="https://www.lirc.org/"
 license=('GPL')
 depends=('alsa-lib' 'libx11' 'libftdi' 'libusb-compat')
 makedepends=('help2man' 'alsa-lib' 'libx11' 'libxslt' 'python' 'python-setuptools'
-             'python-yaml')
+             'python-yaml' 'systemd')
 optdepends=('python: for lirc-setup, irdb-get and pronto2lirc'
             'python-gobject: for lirc-setup and irdb-get'
             'python-yaml: for lirc-setup and irdb-get')
