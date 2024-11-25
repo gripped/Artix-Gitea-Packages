@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: twine
-  version: 5.0.0-3
+  version: 5.1.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.0-3
+    version: 5.1.0-1
     packages:
-      - twine-5.0.0-3-any.pkg.tar.zst
+      - twine-5.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
