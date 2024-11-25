@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-safe_yaml
-  version: 1.0.5-3
+  version: 1.0.5-4
   arch:
     - any
   pkgname:
     - ruby-safe_yaml
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.5-3
+    version: 1.0.5-4
     packages:
-      - ruby-safe_yaml-1.0.5-3-any.pkg.tar.zst
+      - ruby-safe_yaml-1.0.5-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
