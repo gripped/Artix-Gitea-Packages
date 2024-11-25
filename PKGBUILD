@@ -16,8 +16,9 @@ depends=(python
 makedepends=(pandoc
              python-build
              python-hatchling
-             python-installer)
-checkdepends=(python-pytest)
+             python-installer
+             python-pytest)
+# checkdepends=(python-pytest)
 optdepends=('ffmpeg: for video post-processing'
             'rtmpdump: for rtmp streams support'
             'atomicparsley: for embedding thumbnails into m4a files'
