@@ -2,30 +2,36 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=lightsoff
-pkgver=40.0.1
-pkgrel=1
+pkgver=46.0
+pkgrel=2
 pkgdesc="Turn off all the lights"
 url="https://wiki.gnome.org/Apps/Lightsoff"
 arch=(x86_64)
-license=(GPL)
-depends=(gtk3 librsvg)
-makedepends=(yelp-tools vala git meson)
+license=(GPL-2.0-or-later)
+depends=(
+  dconf
+  glib2
+  glibc
+  gtk3
+  hicolor-icon-theme
+  librsvg
+)
+makedepends=(
+  git
+  meson
+  vala
+  yelp-tools
+)
 groups=(gnome-extra)
-_commit=ca05a49ff447a6d7fdfadd1921288e2d720f5c09  # tags/40.0.1^0
-source=("git+https://gitlab.gnome.org/GNOME/lightsoff.git#commit=$_commit")
-sha256sums=('SKIP')
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/-/+/g'
-}
+source=("git+https://gitlab.gnome.org/GNOME/lightsoff.git#tag=${pkgver/[a-z]/.&}")
+b2sums=('e1706c329479c65f4e0abbfbd504f54e4ec35f2e991f413cbe3e91c5821883e47f9d6de8aefb1c90d9534c0840b2dacc5a70a7ecfd261012919e4b5d14cbfb8e')
 
 prepare() {
   cd $pkgname
 }
 
 build() {
-  arch-meson $pkgname build
+  artix-meson $pkgname build
   meson compile -C build
 }
 
@@ -34,5 +40,7 @@ check() {
 }
 
 package() {
-  DESTDIR="$pkgdir" meson install -C build
+  meson install -C build --destdir "$pkgdir"
 }
+
+# vim:set sw=2 sts=-1 et:
