@@ -1,0 +1,59 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler@archlinux.org>
+# Contributor: HurricanePootis <hurricanepootis@protonmail.com>
+pkgname=hiprt
+pkgver=2.3.bd75b7c.rc7
+pkgrel=1
+pkgdesc="Ray Tracing Library for HIP"
+arch=('x86_64')
+url="https://gpuopen.com/hiprt/"
+license=('MIT')
+depends=('hip-runtime-amd' 'glibc' 'gcc-libs')
+makedepends=('git' 'python' 'cmake')
+source=("$pkgname-$pkgver::git+https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT#tag=$pkgver"
+		"disable-cuda.patch")
+sha256sums=('a8906e845346f93902f7d1cafb170816c399222113cdb1500a4b6b3255895ebd'
+            '6e80236b57577e7e8455feb7eb103a184058d7279c2c69a5d513b7341fd57dec')
+
+prepare() {
+	cd "$pkgname-$pkgver"
+	patch -Np1 -i ../disable-cuda.patch
+	chmod 755 contrib/easy-encryption/bin/linux/ee64
+}
+
+build() {
+	local cmake_args=(
+		-Wno-dev
+		-S "$pkgname-$pkgver"
+		-B build
+		-D CMAKE_BUILD_TYPE=None
+		-D HIP_PATH=/opt/rocm
+		-D BAKE_KERNEL=OFF
+		-D BAKE_COMPILED_KERNEL=OFF
+		-D BITCODE=ON
+		-D PRECOMPILE=ON
+		-D NO_UNITTEST=ON
+		-D CMAKE_INSTALL_PREFIX=/opt/rocm
+	)
+	cmake "${cmake_args[@]}"
+	cmake --build build
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+
+	# HIPRT library is installed to bin folder,
+	# so we have to move to lib manually.
+	install -dm755 "$pkgdir"/opt/rocm/lib
+	mv "$pkgdir"/opt/rocm/bin/* "$pkgdir"/opt/rocm/lib
+	rmdir "$pkgdir"/opt/rocm/bin
+	
+	# GPU files are generated at build time by python scripts and put into the
+	# source folder. Move them to the package folder
+	local file
+	for file in "$pkgname-$pkgver"/scripts/bitcodes/*.{bc,hipfb}; do
+		install -Dm644 "$file" "$pkgdir"/opt/rocm/lib/"$(basename "$file")"
+	done
+
+	install -Dm644 "$pkgname-$pkgver"/license.txt "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
+}
