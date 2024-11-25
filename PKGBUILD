@@ -6,12 +6,18 @@
 
 pkgname=gpsd
 pkgver=3.25
-pkgrel=3
+pkgrel=5
 pkgdesc="GPS daemon and library to support USB/serial GPS devices"
 arch=('x86_64')
 url="http://catb.org/gpsd/"
 license=('BSD')
-depends=('python' 'libusb' 'bluez-libs' 'pps-tools')
+depends=('dbus'
+         'gcc-libs'
+         'glibc'
+         'python'
+         'libusb'
+         'bluez-libs'
+         'pps-tools')
 optdepends=('gtk3: GUI frontends'
             'php: generate a PHP status page for your GPS'
             'php-gd: image support for the PHP status page'
@@ -35,7 +41,7 @@ build() {
   export LINKFLAGS="${LDFLAGS}"
   _pythonpath=`python -c "from sysconfig import get_path; print(get_path('platlib'))"`
   scons prefix=/usr \
-        systemd=no \
+        systemd=yes \
         gpsd_group=uucp \
         python_libdir=$_pythonpath \
         sbindir=/usr/bin \
@@ -58,6 +64,8 @@ package() {
 
   sed -e 's|/local||' -i packaging/X11/*.desktop
   install -Dm644 packaging/X11/*.desktop -t "${pkgdir}"/usr/share/applications/
+
+  install -Dm644 gpsd-$pkgver/systemd/{gpsd.service,gpsd.socket,gpsdctl@.service} -t "${pkgdir}"/usr/lib/systemd/system/
 
   install -Dm644 COPYING "${pkgdir}"/usr/share/licenses/$pkgname/LICENSE
 }
