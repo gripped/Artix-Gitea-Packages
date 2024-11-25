@@ -2,14 +2,19 @@
 
 pkgname=darkhttpd
 pkgver=1.16
-pkgrel=1
-pkgdesc="A small and secure static webserver"
+pkgrel=2
+pkgdesc='A small and secure static webserver'
 arch=('x86_64')
-url="https://unix4lyfe.org/darkhttpd/"
-license=('BSD')
+url='https://unix4lyfe.org/darkhttpd/'
+license=('ISC')
+depends=('glibc')
 backup=('etc/conf.d/mimetypes')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/emikulic/darkhttpd/archive/v${pkgver}.tar.gz")
-sha256sums=('ab97ea3404654af765f78282aa09cfe4226cb007d2fcc59fe1a475ba0fef1981')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/emikulic/darkhttpd/archive/v${pkgver}.tar.gz"
+        'darkhttpd.service'
+        'darkhttpd@.service')
+sha256sums=('ab97ea3404654af765f78282aa09cfe4226cb007d2fcc59fe1a475ba0fef1981'
+            'e53ae82993f6c996c0c54ccbbd9307811501cf01404c441b48b2c79f9384fa27'
+            '0bfbe13c93ba87d8ea08ab85745c92cebcbc6b627616e7c58d6099a234a59841')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -21,8 +26,11 @@ package() {
   cd "$srcdir/$pkgname-$pkgver"
 
   # install darkhttpd
-  install -Dm755 "$srcdir/$pkgname-$pkgver/darkhttpd" "$pkgdir/usr/bin/darkhttpd"
+  install -Dm0755 "$srcdir/$pkgname-$pkgver/darkhttpd" "$pkgdir/usr/bin/darkhttpd"
 
+  # install systemd files
+  install -Dm0644 "$srcdir/darkhttpd.service" "$pkgdir/usr/lib/systemd/system/darkhttpd.service"
+  install -Dm0644 "$srcdir/darkhttpd@.service" "$pkgdir/usr/lib/systemd/system/darkhttpd@.service"
   install -dm0755 "$pkgdir"/etc/conf.d/
   touch "$pkgdir"/etc/conf.d/mimetypes
 
