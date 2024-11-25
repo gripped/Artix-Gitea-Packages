@@ -3,8 +3,8 @@
 # Contributor: Konstantin Plotnikov <kostyapl at gmail dot com>
 
 pkgname=fossil
-pkgver=2.24
-_tag=8be0372c1051043761320c8ea8669c3cf320c406e5fe18ad36b7be5f844ca73b
+pkgver=2.25
+_tag=8f798279d5f7c3288099915f2ea88c57b6d6039f3f05eac5e237897af33376dc
 pkgrel=1
 pkgdesc='Simple, high-reliability, distributed software configuration management'
 arch=(x86_64)
@@ -16,7 +16,7 @@ optdepends=(tcl)
 source=(
   https://fossil-scm.org/home/tarball/$_tag/fossil-src-$pkgver.tar.gz
 )
-sha256sums=('e6f5a559369bf16baf539e69e6d0cea5a6410efa9a6e7f160c7a4932080413be')
+sha256sums=('611cfa50d08899eb993a5f475f988b4512366cded82688c906cf913e5191b525')
 
 build() {
   cd fossil-src-$pkgver
