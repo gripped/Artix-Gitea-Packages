@@ -39,7 +39,6 @@ makedepends=(
   python
   rpmextract
   squashfs-tools
-  unace
   unrar
   unzip
   yelp-tools
