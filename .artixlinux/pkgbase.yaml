@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-tox
-  version: 4.12.1-3
+  version: 4.23.2-2
   arch:
     - any
   pkgname:
     - python-tox
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.12.1-3
+    version: 4.23.2-2
     packages:
-      - python-tox-4.12.1-3-any.pkg.tar.zst
+      - python-tox-4.23.2-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
