@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
