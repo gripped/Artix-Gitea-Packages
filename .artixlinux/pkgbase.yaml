@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gammastep
-  version: 2.0.9-7
+  version: 2.0.9-6
   arch:
     - x86_64
   pkgname:
     - gammastep
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false

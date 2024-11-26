@@ -3,7 +3,7 @@
 
 pkgname=gammastep
 pkgver=2.0.9
-pkgrel=7
+pkgrel=6
 pkgdesc="Adjust the color temperature of your screen according to your surroundings."
 arch=(x86_64)
 url="https://gitlab.com/chinstrap/gammastep"
@@ -21,7 +21,7 @@ makedepends=(
   glib2
   intltool
   python
-  systemd
+  udev
 )
 optdepends=(
   'geoclue: for automatic location based on GeoClue2'
