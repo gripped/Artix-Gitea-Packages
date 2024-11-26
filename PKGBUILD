@@ -3,12 +3,13 @@
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
 pkgname=hiprt
 pkgver=2.3.bd75b7c.rc7
-pkgrel=1
+_libver=02003
+pkgrel=2
 pkgdesc="Ray Tracing Library for HIP"
 arch=('x86_64')
 url="https://gpuopen.com/hiprt/"
 license=('MIT')
-depends=('hip-runtime-amd' 'glibc' 'gcc-libs')
+depends=('rocm-core' 'hip-runtime-amd' 'glibc' 'gcc-libs')
 makedepends=('git' 'python' 'cmake')
 source=("$pkgname-$pkgver::git+https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT#tag=$pkgver"
 		"disable-cuda.patch")
@@ -42,18 +43,19 @@ build() {
 package() {
 	DESTDIR="$pkgdir" cmake --install build
 
-	# HIPRT library is installed to bin folder,
-	# so we have to move to lib manually.
-	install -dm755 "$pkgdir"/opt/rocm/lib
-	mv "$pkgdir"/opt/rocm/bin/* "$pkgdir"/opt/rocm/lib
-	rmdir "$pkgdir"/opt/rocm/bin
-	
 	# GPU files are generated at build time by python scripts and put into the
 	# source folder. Move them to the package folder
 	local file
 	for file in "$pkgname-$pkgver"/scripts/bitcodes/*.{bc,hipfb}; do
-		install -Dm644 "$file" "$pkgdir"/opt/rocm/lib/"$(basename "$file")"
+		install -v -Dm644 "$file" "$pkgdir"/opt/rocm/lib/"$(basename "$file")"
 	done
+
+	# HIPRT library is installed to the bin folder,
+	# so we have to move it manually.
+	install -dm755 "$pkgdir"/opt/rocm/lib
+	mv -v "$pkgdir"/opt/rocm/bin/* "$pkgdir"/opt/rocm/lib
+	rmdir "$pkgdir"/opt/rocm/bin
+	ln -vs /opt/rocm/lib/libhiprt${_libver}64.so "${pkgdir}"/opt/rocm/lib/libhiprt64.so
 
 	install -Dm644 "$pkgname-$pkgver"/license.txt "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
 }
