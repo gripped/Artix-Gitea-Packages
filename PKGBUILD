@@ -7,7 +7,7 @@
 
 pkgname=python-matplotlib
 pkgver=3.9.2
-pkgrel=1
+pkgrel=2
 _mpl_images_ver=3.9.1
 pkgdesc="A python plotting library, making publication quality plots"
 arch=(x86_64)
@@ -39,12 +39,12 @@ checkdepends=(python-pytest python-pytest-xdist python-pytest python-pytest-reru
               python-pyqt6 pyside6 python-tornado python-wxpython tk
               jupyter-nbconvert jupyter-nbformat python-ipykernel
               python-pandas python-pikepdf python-pytz python-xarray
-              noto-fonts-cjk wqy-zenhei)
+              noto-fonts-cjk wqy-zenhei python-xcffib)
 _ftver=2.13.1
 source=(git+https://github.com/matplotlib/matplotlib.git#tag=v${pkgver}?signed
         https://github.com/QuLogic/mpl-images/archive/v${_mpl_images_ver}-with-freetype-${_ftver}/mpl-images-${_mpl_images_ver}-ft${_ftver}.tar.gz
         freetype.patch)
-b2sums=('32d283d87c52608bd9ef61ee9fbeb15ced4e0fd575395a8d1eeeeaddb18ed07530cf30cb791709ad74c381e2f4efe93da5af4970a88ac64d0b2ec4c3166e37f5'
+b2sums=('d6a7bc714040ae896a040a0a159b4a6732ebe6e39bd11573af299d048d37e0a4b2dd67e01fbad0d134f25737076aef6cfed25dd093ea7f7db79739c7d6723c89'
         '91726a2a3e76cb46f9fec612f6193b4c55f0b4b21f0089520c3733521887f083b4ec16d17906f9eba57dcde3d2015e429de7b7a236de2ab58eebd88187f6bf5c'
         '824c69807b13853ad8be20ded60eca18260af50b652a317dc8235d5828c060982363d2aa6feb98d5340e86dab5b87c7f6e7dd1f4c050e2e3613266209e633a60')
 validpgpkeys=(23CAB59E3332F94D26BEF0378D86E7FAE5EB0C10  # Elliott Sales de Andrade <quantum.analyst@gmail.com>
