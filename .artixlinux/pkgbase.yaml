@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - python-inline-snapshot
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.13.3-1
+    version: 0.14.0-1
     packages:
-      - python-inline-snapshot-0.13.3-1-any.pkg.tar.zst
+      - python-inline-snapshot-0.14.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
