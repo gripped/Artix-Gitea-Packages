@@ -4,7 +4,7 @@
 pkgname=python-jiter
 _pkgname=${pkgname#python-}
 pkgver=0.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast iterable JSON parser"
 arch=(x86_64)
 url="https://github.com/pydantic/jiter"
