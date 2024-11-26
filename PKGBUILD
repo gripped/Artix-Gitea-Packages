@@ -2,7 +2,7 @@
 
 pkgname=audiotube
 pkgver=24.08.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Client for YouTube Music'
 url='https://apps.kde.org/audiotube/'
 arch=(x86_64)
