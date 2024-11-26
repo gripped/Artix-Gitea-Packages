@@ -2,7 +2,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=prometheus
-pkgver=2.55.1
+pkgver=3.0.0
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -20,7 +20,7 @@ source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/ar
         prometheus.sysusers
         )
 
-sha256sums=('f48251f5c89eea6d3b43814499d558bacc4829265419ee69be49c5af98f79573'
+sha256sums=('7279a012eb12fc91a6887dd6cf09c3e4b68985b8726a78567493bb84902e8bc8'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f'
             )
 
@@ -41,6 +41,10 @@ build() {
   # Build the react app
   make ui-install # run install first as otherwise the makefile has a race condition......
   make assets
+  make npm_licenses
+  make assets-compress
+
+  go generate -tags plugins ./plugins
 
   go build \
     -buildmode=pie \
@@ -77,6 +81,4 @@ package() {
 
   # Examples
   install -Dm644 -t "$pkgdir"/usr/share/doc/prometheus/examples documentation/examples/prometheus*.yml
-  cp -R consoles console_libraries "$pkgdir"/usr/share/doc/prometheus/examples
-
 }
