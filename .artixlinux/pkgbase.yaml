@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - python-pycrdt
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.10.6-1
+    version: 0.10.6-2
     packages:
-      - python-pycrdt-0.10.6-1-x86_64.pkg.tar.zst
+      - python-pycrdt-0.10.6-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
