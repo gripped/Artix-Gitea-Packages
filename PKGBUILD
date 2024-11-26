@@ -35,3 +35,4 @@ package() {
   cd jsonschema-path-$pkgver
   python -m installer -d "$pkgdir" dist/*.whl
 }
+
