@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - qqc2-breeze-style
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false

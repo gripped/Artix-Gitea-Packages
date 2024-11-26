@@ -18,7 +18,7 @@ depends=(gcc-libs
          kquickcharts
          qt6-base
          qt6-declarative)
-makedepends=(extra-cmake-modules)
+makedepends=(extra-cmake-modules kcoreaddons)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('dcb2473ca60b1db9c6b81778eb31e13c5980ffc11d6e6a2048ca2ee4f2b9d952'
