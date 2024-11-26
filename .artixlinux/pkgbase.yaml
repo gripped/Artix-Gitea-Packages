@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-cfn-lint
-  version: 1.18.3-1
+  version: 1.18.3-2
   arch:
     - any
   pkgname:
     - python-cfn-lint
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.18.3-2
+    packages:
+      - python-cfn-lint-1.18.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
