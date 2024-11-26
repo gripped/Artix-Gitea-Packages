@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-black
-  version: 24.10.0-2
+  version: 24.10.0-3
   arch:
     - any
   pkgname:
     - python-black
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.10.0-2
+    version: 24.10.0-3
     packages:
-      - python-black-24.10.0-2-any.pkg.tar.zst
+      - python-black-24.10.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
