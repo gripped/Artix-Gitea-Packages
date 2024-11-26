@@ -4,7 +4,7 @@
 _name=alsa-lib
 pkgname=lib32-alsa-lib
 pkgver=1.2.13
-pkgrel=1
+pkgrel=1.1
 pkgdesc="An alternative implementation of Linux sound support (32 bit)"
 arch=(x86_64)
 url="https://www.alsa-project.org"
