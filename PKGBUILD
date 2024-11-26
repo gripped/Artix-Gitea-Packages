@@ -3,7 +3,7 @@
 _pyname=pycrdt
 pkgname=python-$_pyname
 pkgver=0.10.6
-pkgrel=2
+pkgrel=3
 pkgdesc='CRDTs based on Yrs'
 arch=(x86_64)
 url='https://github.com/jupyter-server/pycrdt'
