@@ -10,7 +10,7 @@
 
 pkgname=blender
 pkgver=4.3.0
-pkgrel=2
+pkgrel=3
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -97,6 +97,7 @@ makedepends=(
   'git'
   'git-lfs'
   'hip-runtime-amd'
+  'hiprt'
   'intel-oneapi-compiler-shared-runtime'
   'intel-oneapi-dpcpp-cpp'
   'intel-compute-runtime'
@@ -111,6 +112,8 @@ makedepends=(
 )
 optdepends=('cuda: Cycles renderer CUDA support'
             'intel-compute-runtime: Cycles renderer Intel OneAPI support'
+            'hip-runtime-amd: Cycles renderer AMD ROCm support'
+            'hiprt: Ray tracing AMD ROCm support'
             'libdecor: wayland support')
 # We're using !lto here as otherwise we get stuff such as FS#77557
 options=('!lto')
@@ -174,8 +177,10 @@ build() {
     -D WITH_LINKER_MOLD=ON
     -D CUDA_HOST_COMPILER="$NVCC_CCBIN"
     -D HIP_ROOT_DIR=/opt/rocm
-    # Skip targets gfx115{0,1} as they not supported by ROCm 6.0.2
-    -D CYCLES_HIP_BINARIES_ARCH="gfx900;gfx90c;gfx902;gfx1010;gfx1011;gfx1012;gfx1030;gfx1031;gfx1032;gfx1034;gfx1035;gfx1036;gfx1100;gfx1101;gfx1102;gfx1103"
+    -D WITH_CYCLES_HIP_BIANRIES=ON
+    -D WITH_CYCLES_DEVICE_HIPRT=ON
+    -D HIPRT_INCLUDE_DIR=/opt/rocm/include
+    -D HIP_LINKER_EXECUTABLE=/opt/rocm/lib/llvm/bin/clang++
     -D OCLOC_INSTALL_DIR=/usr
     -D OPTIX_ROOT_DIR="$srcdir"
     -D PYTHON_VERSION="$(_get_pyver)"
