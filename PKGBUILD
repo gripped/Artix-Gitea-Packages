@@ -4,7 +4,7 @@
 pkgname=python-watchfiles
 _name=${pkgname#python-}
 pkgver=0.24.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Simple, modern and high performance file watching and code reload in python'
 arch=(x86_64)
 url='https://github.com/samuelcolvin/watchfiles'
