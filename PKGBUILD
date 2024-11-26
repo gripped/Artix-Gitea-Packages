@@ -23,6 +23,7 @@ depends=(gcc-libs
          qt6-declarative
          qt6-multimedia)
 makedepends=(extra-cmake-modules
+             kconfigwidgets
              kdoctools)
 groups=(kde-applications
         kde-education)
