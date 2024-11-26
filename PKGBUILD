@@ -34,3 +34,4 @@ package() {
   cd yapf-$pkgver
   python -m installer -d "$pkgdir" dist/*.whl
 }
+
