@@ -27,3 +27,4 @@ package() {
   cd python-digitalocean-$pkgver
   python setup.py install --root="$pkgdir" --optimize=1
 }
+
