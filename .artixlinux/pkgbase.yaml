@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: shaderc
-  version: 2024.2-1
+  version: 2024.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.2-1
+    version: 2024.3-1
     packages:
-      - shaderc-2024.2-1-x86_64.pkg.tar.zst
+      - shaderc-2024.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
