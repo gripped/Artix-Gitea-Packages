@@ -15,7 +15,7 @@ optdepends=('qrencode: for displaying QR code after DPP is started')
 source=(https://www.kernel.org/pub/linux/network/wireless/iwd-${pkgver}.tar{.xz,.sign}
         0001-use-network-group-for-unprivileged-access.diff)
 # https://mirrors.edge.kernel.org/pub/linux/network/wireless/sha256sums.asc
-sha256sums=('21f5a8e29a41ff301045f36eed97a4e540262adfdc003db847fe0c7dce874e15'
+sha256sums=('a2b6d21315fdd0e060d5f75f5a0cc55018ea9d112a080f2ccd6dae2e1d923ac5'
             'SKIP'
             'd5fb4fb864b7a0632117aa2039df535ab5c1d024ae618a1f09e34dfab8ee0cc7')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659')
