@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: muffin
-  version: 6.2.0-2
+  version: 6.4.0-1
   arch:
     - x86_64
   pkgname:
     - muffin
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.4.0-1
+    packages:
+      - muffin-6.4.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 6.2.0-2
     packages:
