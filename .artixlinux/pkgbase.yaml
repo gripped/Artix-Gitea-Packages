@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: mkdocstrings
-  version: 0.26.1-2
+  version: 0.27.0-2
   arch:
     - any
   pkgname:
     - mkdocstrings
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.27.0-2
+    packages:
+      - mkdocstrings-0.27.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
