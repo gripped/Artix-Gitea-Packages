@@ -1,5 +1,6 @@
-# Maintainer: Balló György <ballogyor+arch at gmail dot com>
-# Maintainer: Bruno Pagani <archange@archlinux.org
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Bruno Pagani <archange@archlinux.org
 # Contributor: Doug Newgard <scimmia at archlinux dot org>
 # Contributor: XavierCLL <xavier.corredor.llano (a) gmail.com>
 # Contributor: SaultDon <sault.don gmail>
@@ -10,8 +11,8 @@
 # Contributor: Eric Forgeot < http://esclinux.tk >
 
 pkgname=qgis
-pkgver=3.40.0
-pkgrel=3
+pkgver=3.40.1
+pkgrel=1
 pkgdesc="Geographic Information System (GIS) that supports vector, raster & database formats"
 arch=(x86_64)
 url="https://qgis.org/"
@@ -27,7 +28,7 @@ optdepends=('fcgi: Map server'
 source=(
   https://qgis.org/downloads/$pkgname-$pkgver.tar.bz2
 )
-sha256sums=('14a6c224ad6519b807f4c2cbdd3697c40fd1e114d439eef8b3ed11e7dc5260c3')
+sha256sums=('53110464c9f5ba5562c437e1563ab36dad2f218e6e7d1c0cfbe5b6effe241c8e')
 
 build() {
   cmake -S $pkgname-$pkgver -B build -G Ninja \
