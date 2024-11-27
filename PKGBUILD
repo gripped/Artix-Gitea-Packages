@@ -6,7 +6,7 @@
 pkgbase=openbabel
 pkgname=(openbabel python-openbabel)
 pkgver=3.1.1
-pkgrel=8
+pkgrel=9
 pkgdesc='A library designed to interconvert between many file formats used in molecular modeling and computational chemistry'
 arch=(x86_64)
 url='https://openbabel.org/wiki/Main_Page'
@@ -30,7 +30,7 @@ prepare() {
 }
 
 build() {
-  artix-cmake -B build -S openbabel-$pkgver \
+  cmake -B build -S openbabel-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DRUN_SWIG=ON \
     -DPYTHON_BINDINGS=ON
