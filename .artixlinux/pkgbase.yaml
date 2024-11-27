@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: alsa-utils
-  version: 1.2.13-1
+  version: 1.2.13-2
   arch:
     - x86_64
   pkgname:
     - alsa-utils
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.2.13-2
+    packages:
+      - alsa-utils-1.2.13-2-x86_64.pkg.tar.zst
 team: world
