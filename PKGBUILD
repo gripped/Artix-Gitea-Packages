@@ -6,8 +6,8 @@
 # Contributor: Dominik Ryba <domryba@post.pl>
 
 pkgname=hugin
-pkgver=2023.0.0
-pkgrel=4
+pkgver=2024.0.1
+pkgrel=1
 pkgdesc="Panorama photo stitcher"
 arch=(x86_64)
 url="http://hugin.sourceforge.net/"
@@ -45,7 +45,7 @@ optdepends=('darktable: RAW import using darktable'
             'rawtherapee: RAW import using rawtherapee')
 _archive="$pkgname-$pkgver"
 source=("https://downloads.sourceforge.net/$pkgname/$_archive.tar.bz2")
-sha256sums=('04a39fccc6017e0544c639bd22309472c574d35b3455cbade1fc3870e631632b')
+sha256sums=('13ec0cdeeb4eb63149c833768d3e374e7cf5a6a8d8d02d50885ce496f05ba7e4')
 
 prepare() {
 # Fix build with boost 1.85
