@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: cinnamon-translations
-  version: 6.2.2-1
+  version: 6.4.0-1
   arch:
     - any
   pkgname:
     - cinnamon-translations
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.4.0-1
+    packages:
+      - cinnamon-translations-6.4.0-1-any.pkg.tar.zst
   galaxy:
     version: 6.2.2-1
     packages:
