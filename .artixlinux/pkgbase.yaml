@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: distro-info
-  version: 1.7-4
+  version: 1.10-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.7-4
+    version: 1.10-1
     packages:
-      - distro-info-1.7-4-x86_64.pkg.tar.zst
+      - distro-info-1.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
