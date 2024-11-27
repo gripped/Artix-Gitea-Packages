@@ -11,7 +11,7 @@ pkgname=('virtualbox'
          'virtualbox-ext-vnc')
 pkgver=7.1.4
 _tarver=${pkgver}
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL' 'custom:CDDL')
@@ -70,7 +70,7 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '018-upate-xclient-script.patch'
         '020-python-3-12.patch')
 sha256sums=('872e7a42b41f8558abbf887f1bdc7aac932bb88b2764d07cbce270cab57e3b5e'
-            '76d98ea062fcad9e5e3fa981d046a6eb12a3e718a296544a68b66f4b65cb56db'
+            '14f57374567f91332c072e0cb54cb0730cf726f39028aa0b6466b32913254a79'
             '07fe5c8b313cd7f01505eb9721357269a288ccd0c04e6467afb954038d6f46df'
             '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
             'da4c49f6ca94e047e196cdbcba2c321199f4760056ea66e0fbc659353e128c9e'
