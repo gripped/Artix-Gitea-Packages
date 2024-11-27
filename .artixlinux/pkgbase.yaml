@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-json5
-  version: 0.9.28-2
+  version: 0.10.0-2
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.9.28-2
+    version: 0.10.0-2
     packages:
-      - python-json5-0.9.28-2-any.pkg.tar.zst
+      - python-json5-0.10.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
