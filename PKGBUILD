@@ -4,7 +4,7 @@
 _name=catalyst
 pkgname=paraview-catalyst
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="API specification developed for simulations (and other scientific data producers) to analyze and visualize data in situ"
 arch=(x86_64)
 url="https://gitlab.kitware.com/paraview/catalyst"
