@@ -1,8 +1,8 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=mkdocs-material
-pkgver=9.5.37
-pkgrel=1
+pkgver=9.5.44
+pkgrel=2
 pkgdesc="Documentation that simply works"
 arch=(any)
 url="https://github.com/squidfunk/mkdocs-material"
@@ -11,8 +11,12 @@ depends=(
   mkdocs
   python
   python-babel
+  python-colorama
   python-jinja
   python-markdown
+  # python-paginate # Not packaged
+  python-regex
+  python-requests
   python-yaml
 )
 makedepends=(
@@ -24,7 +28,7 @@ makedepends=(
   python-wheel
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('5785017ed8a1828a63581b42dba8a9f4463f5c9b9addee1140ac8dce9b08aacc')
+sha256sums=('8b873fafddacbe9506c17718bd5755f52c2ce0408b84b8f73d6109ba52635fc3')
 
 build() {
   cd $pkgname-$pkgver

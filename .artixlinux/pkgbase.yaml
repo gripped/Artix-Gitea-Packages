@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: mkdocs-material
-  version: 9.5.37-1
+  version: 9.5.44-2
   arch:
     - any
   pkgname:
     - mkdocs-material
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 9.5.44-2
+    packages:
+      - mkdocs-material-9.5.44-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
