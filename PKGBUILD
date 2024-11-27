@@ -4,7 +4,7 @@
 pkgbase=ibus
 pkgname=(ibus libibus)
 pkgver=1.5.31
-pkgrel=1
+pkgrel=2
 pkgdesc="Intelligent input bus for Linux/Unix"
 arch=('x86_64')
 url="https://github.com/ibus/ibus/wiki"
@@ -59,7 +59,6 @@ build() {
         --disable-memconf \
         --enable-ui \
         --disable-python2 \
-        --disable-systemd-services \
         --with-python=python3 \
         --with-ucd-dir=/usr/share/unicode/
     sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
