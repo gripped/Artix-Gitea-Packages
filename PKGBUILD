@@ -39,7 +39,7 @@ checkdepends=(python-pytest python-pytest-xdist python-pytest python-pytest-reru
               python-pyqt6 pyside6 python-tornado python-wxpython tk
               jupyter-nbconvert jupyter-nbformat python-ipykernel
               python-pandas python-pikepdf python-pytz python-xarray
-              noto-fonts-cjk wqy-zenhei python-xcffib)
+              noto-fonts-cjk wqy-zenhei)
 _ftver=2.13.1
 source=(git+https://github.com/matplotlib/matplotlib.git#tag=v${pkgver}?signed
         https://github.com/QuLogic/mpl-images/archive/v${_mpl_images_ver}-with-freetype-${_ftver}/mpl-images-${_mpl_images_ver}-ft${_ftver}.tar.gz
