@@ -20,7 +20,6 @@ depends=(
   libsodium libsodium.so
   mgard
   openmpi libmpi.so
-  openucx libucp.so libucs.so
   paraview-catalyst
   pugixml
   python
