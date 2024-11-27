@@ -2,7 +2,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname='jp2a'
-pkgver=1.3.1
+pkgver=1.3.2
 pkgrel=1
 pkgdesc='A small utility for converting JPG images to ASCII'
 arch=('x86_64')
@@ -21,15 +21,8 @@ makedepends=(
   'doxygen'
   'git'
 )
-_commit=b32577dfaea0873ed811fe68ca420229fd7e3380 #refs/tags/v1.3.0
 source=("git+https://github.com/Talinx/jp2a.git#tag=v${pkgver}")
-sha256sums=('0e25ddb3a20cfefe3c4e9099e48ff785246bd4a394506e606b624fc143eebe74')
-validpgpkeys=("5FCAE86E581E73AD91CB3235E7DBBCF6B02920CC") # Christoph Raitzig
-
-pkgver() {
-  cd "${pkgname}"
-  git describe --tags | sed 's/v//'
-}
+sha256sums=('519b2a651b0e639bffe18f6fa77229b34f8402699e322992bab1c9ef43dd28d0')
 
 prepare() {
   cd "${pkgname}"
