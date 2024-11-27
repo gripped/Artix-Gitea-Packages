@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pyarrow
-  version: 17.0.0-2
+  version: 17.0.0-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 17.0.0-2
+    version: 17.0.0-3
     packages:
-      - python-pyarrow-17.0.0-2-x86_64.pkg.tar.zst
+      - python-pyarrow-17.0.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
