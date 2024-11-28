@@ -4,7 +4,7 @@
 
 pkgname=alsa-utils
 pkgver=1.2.13
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Advanced Linux Sound Architecture - Utilities"
 arch=(x86_64)
 url="https://www.alsa-project.org"
