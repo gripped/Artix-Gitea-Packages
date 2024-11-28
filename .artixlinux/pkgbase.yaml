@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-libsass
-  version: 0.23.0-4
+  version: 0.23.0-3
   arch:
     - x86_64
   pkgname:
     - python-libsass
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,8 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.23.0-3
+    packages:
+      - python-libsass-0.23.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
