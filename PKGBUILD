@@ -1,5 +1,6 @@
-# Maintainer: Bruno Pagani <archange at archlinux dot org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange at archlinux dot org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Evgeniy Alekseev <arcanis at archlinux dot org>
 # Contributor: Michael Migliore <mcmigliore+aur@gmail.com>
 # Contributor: Ray Rashif <schiv at archlinux dot org>
@@ -9,7 +10,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.3.1
-pkgrel=9
+pkgrel=10
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -54,6 +55,7 @@ makedepends=(
   lz4
   mariadb-libs
   netcdf
+  nlohmann-json
   opencascade
   openimagedenoise
   openmp
