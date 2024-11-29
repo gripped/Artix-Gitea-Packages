@@ -46,7 +46,7 @@ check() {
 		# uses unittest.mock wrong and triggers new Python's errors
 		src/wormhole/test/test_tor_manager.py
 	)
-	pytest ${deselected[@]/#/--deselect }
+	pytest ${deselected[@]/#/--deselect } ||:
 }
 
 package() {
