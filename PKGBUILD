@@ -3,7 +3,7 @@
 pkgname=python-inline-snapshot
 _pkgname=${pkgname#python-}
 pkgver=0.14.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Create and update inline snapshots in your python tests"
 arch=(any)
 url="https://github.com/15r10nk/inline-snapshot"
