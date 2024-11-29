@@ -1,0 +1,4 @@
+[qcustomplot]
+source = "regex"
+regex = "tags/v([\\d.]+)?"
+url = "https://gitlab.com/DerManu/QCustomPlot/-/tags"
