@@ -2,7 +2,7 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=132.0.2
+pkgver=133.0
 pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
@@ -86,13 +86,14 @@ options=(
 
 install='librewolf.install'
 source=(
-  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz
+  #https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz
+  https://codeberg.org/librewolf/source/archive/133.0-1.tar.gz
   # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
 )
 
-sha256sums=('763acf3a25719634c7967b06bdd91980326a1b2af162f66db7f033894bd2c8f1'
+sha256sums=('faf69a0e27b69bf73fed5b0413074d612d8aefa39a44376ceed9547f68b30240'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
 
