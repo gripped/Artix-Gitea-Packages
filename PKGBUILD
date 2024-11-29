@@ -87,7 +87,7 @@ options=(
 install='librewolf.install'
 source=(
   #https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz
-  $_pkgname-$pkgver::https://codeberg.org/librewolf/source/archive/133.0-1.tar.gz
+  https://codeberg.org/librewolf/source/archive/133.0-1.tar.gz
   # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
@@ -104,6 +104,7 @@ _build_profiled_aarch64=false
 _build_profiled_x86_64=true
 
 prepare() {
+  mv source librewolf-$pkgver-$pkgrel
   mkdir -p mozbuild
   cd librewolf-$pkgver-$pkgrel
 
