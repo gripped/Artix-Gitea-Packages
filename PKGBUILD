@@ -6,40 +6,31 @@
 
 pkgname=opensmtpd
 pkgver=7.6.0p1
-pkgrel=1
+pkgrel=2
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
-url="https://www.opensmtpd.org/"
+url="https://www.opensmtpd.org"
 license=(custom)
 depends=(libevent libxcrypt openssl pam zlib)
 optdepends=('opensmtpd-filter-rspamd: rspamd integration')
-makedepends=(signify)
+makedepends=(git)
 provides=(smtp-server smtp-forwarder)
 conflicts=(smtp-server smtp-forwarder)
 backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
-#"https://www.opensmtpd.org/archives/${pkgname}-${pkgver}.tar.gz"
-source=("https://github.com/OpenSMTPD/OpenSMTPD/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz"
-        ${pkgname}-${pkgver}.signify::"${url}/archives/${pkgname}-${pkgver}.sum.sig"
-        opensmtpd-20181026.pub
-        opensmtpd.sysusers)
-sha256sums=('b27c806982a6653a2637f810ae7a45372b9a7ff99350ee1003746503ff0e4a97'
-            '61f6362c6457ac11cf7c1d737303759e96f6962de4465a9ad35cbaaae18f52f2'
-            'b74dca53567cd5070905a0a1acd77041805b6c0c4a0e1285830ea13654e1dcd5'
-            '5a6e0e2f1ceb4f6fe69aaa7871291af3b4ee1c55a96a667e72a309f961c8bd2d')
+source=("git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=${pkgver}"
+  opensmtpd.sysusers)
+sha256sums=('fc8a888ef5a7a3024ab95b1679d46b3f93b7ba97ee3b3fe561656af70dddb022'
+  '5a6e0e2f1ceb4f6fe69aaa7871291af3b4ee1c55a96a667e72a309f961c8bd2d')
 
 prepare() {
-  signify -Cp ${pkgname}-20181026.pub \
-           -x ${pkgname}-${pkgver}.signify \
-              ${pkgname}-${pkgver}.tar.gz
-
-  cd ${pkgname}-${pkgver}
+  cd OpenSMTPD
   sed -ri 's,/etc/mail,/etc/smtpd,g' usr.sbin/smtpd/smtpd.conf
   autoreconf -vfi
 }
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd OpenSMTPD
 
   ./configure \
     --prefix=/usr \
@@ -60,7 +51,7 @@ build() {
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
+  cd OpenSMTPD
 
   make DESTDIR="${pkgdir}" install SMTPD_QUEUE_USER=92
 

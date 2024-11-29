@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: opensmtpd
-  version: 7.6.0p1-1
+  version: 7.6.0p1-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.6.0p1-1
+    version: 7.6.0p1-2
     packages:
-      - opensmtpd-7.6.0p1-1-x86_64.pkg.tar.zst
+      - opensmtpd-7.6.0p1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
