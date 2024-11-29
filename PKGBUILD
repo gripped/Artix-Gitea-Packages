@@ -1,0 +1,67 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Douglas Soares de Andrade <dsandrade@gmail.com>
+# Contributor: Michael Fellinger <m.fellinger@gmail.com>
+# Contributor: Steffen Jaeckel <arch-pkgs@jaeckel.eu>
+
+pkgname=sqlitebrowser
+_gitcommit=v3.12.2
+pkgver=3.12.2
+pkgrel=4
+pkgdesc='SQLite Database browser is a light GUI editor for SQLite databases, built on top of Qt'
+url='https://sqlitebrowser.org/'
+arch=(x86_64)
+license=(GPL3)
+depends=(
+  qt5-base hicolor-icon-theme sqlcipher qcustomplot qhexedit2 qscintilla-qt5
+  libqcustomplot.so libqhexedit.so
+)
+makedepends=(git cmake ninja qt5-tools)
+source=("git+https://github.com/sqlitebrowser/sqlitebrowser#tag=${_gitcommit}?signed")
+sha256sums=('1ba86cb884c3dac5f2fb5fbbbd7334c6a1409c1f67ec02a8cdad4c036472c4d8')
+validpgpkeys=(
+  '05E463FDB5802C3D00257F9C79EAD0AB3BD7DD2C' # Justin Clift (GPG key for signing git commits) <justin@postgresql.org>
+)
+
+pkgver() {
+  cd ${pkgname}
+  git describe --tags --match 'v*' | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+  cd ${pkgname}
+  rm -r libs/{qcustomplot-source,qhexedit,qscintilla}
+  # fix qhexedit2 detection
+  git cherry-pick --no-commit 4e7669bd0c6d9ca2c57b597f7d67df0e96bd12de
+  git cherry-pick --no-commit 93b16bdad08e685d3b6fc1981dc50e92cfd4d0c3
+  git cherry-pick --no-commit 07f1d7aa9d6fbbea9d8fc24197850ea3859b8162
+}
+
+build() {
+  cd ${pkgname}
+  cmake -B build \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None \
+    -DBUILD_STABLE_VERSION=ON \
+    -DENABLE_TESTING=ON \
+    -DFORCE_INTERNAL_QCUSTOMPLOT=OFF \
+    -DFORCE_INTERNAL_QSCINTILLA=OFF \
+    -DFORCE_INTERNAL_QHEXEDIT=OFF \
+    -Dsqlcipher=1 \
+    -Wno-dev \
+    -G Ninja
+  ninja -C build
+}
+
+check() {
+  cd ${pkgname}/build
+  ctest -V
+}
+
+package() {
+  cd ${pkgname}
+  DESTDIR="${pkgdir}" ninja -C build install
+}
+
+# vim: ts=2 sw=2 et:
