@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-zipp
-  version: 3.19.2-2
+  version: 3.21.0-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.19.2-2
+    version: 3.21.0-2
     packages:
-      - python-zipp-3.19.2-2-any.pkg.tar.zst
+      - python-zipp-3.21.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
