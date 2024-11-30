@@ -28,7 +28,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.24.9
-pkgrel=3
+pkgrel=4
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -205,12 +205,14 @@ source=(
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
   0002-x265enc-Unbreak-build-with-x265-4.0.patch
+  0003-meson-Drop-max-version-bound-from-neon.patch
 )
 b2sums=('53c72d3d88d48ab5bfe114f0d5ae8e224469811552000cba8952b8f64e8b283266bc6a397fc72586acce94439baba1a4b0ede17190e07eae83c2104ef6117461'
         '45a454b6b53a16b89cf1e9bac5928f7886e666b0c82fa0cc9610a09bf35871424f291e8bdd1ae4f7fba6e18a8c98c846a2d8024b9df3ce3043e8074b912e58ff'
         'SKIP'
         'b58019ca02e388925af02a98d6cc7b2c7f67692bb25b7d947f0759669c13027a069cbadd20c1119b98020085341199b5a7085ba32cc28777ed60bd2a2647d845'
-        '23596f6e5ba9628629f9fca36e3518427ffacdc54505224b4a6e6f039bb3fc168e20093c645b1c093ceb8280fe549a2f6d2af857afad55c28fcc5f9f26917e44')
+        '7b431619dfe1ce506f6b7302abcb8800d321b2db6f6ecef8959f60b0484121d86a951d4c2c8172733fbea9a0b25dccd69609cb23d8fb54e84b8172dda1774407'
+        '9d6aee40cc1302a12c4db64a4eec216852bef009887fd5eccdb911a9b4daa99d038bed6bec020b3d7786ae51126f68d136a1f7bc5f28d32015caf8c6cd2f43a5')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
 )
@@ -223,6 +225,9 @@ prepare() {
 
   # Fix build with x265 4.0
   git apply -3 ../0002-x265enc-Unbreak-build-with-x265-4.0.patch
+
+  # Fix build with neon 0.34.0
+  git apply -3 ../0003-meson-Drop-max-version-bound-from-neon.patch
 }
 
 build() {
