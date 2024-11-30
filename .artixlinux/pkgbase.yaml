@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-spirv-tools
-  version: 2024.2-1
+  version: 2024.4.rc1-1
   arch:
     - x86_64
   pkgname:
@@ -37,9 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 2024.2-1
+    version: 2024.4.rc1-1
     packages:
-      - lib32-spirv-tools-2024.2-1-x86_64.pkg.tar.zst
+      - lib32-spirv-tools-2024.4.rc1-1-x86_64.pkg.tar.zst
   lib32:
     version: 2024.2-1
     packages:
