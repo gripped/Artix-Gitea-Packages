@@ -4,7 +4,7 @@
 
 pkgname=pelican
 pkgver=4.9.1
-pkgrel=2
+pkgrel=3
 pkgdesc="A tool to generate a static blog, with restructured text (or markdown) input files."
 arch=('any')
 url="https://blog.getpelican.com/"
