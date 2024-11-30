@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: matrix-synapse
-  version: 1.119.0-1
+  version: 1.120.0-1
   arch:
     - x86_64
   pkgname:
     - matrix-synapse
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,9 +29,9 @@ repos:
     packages:
       - matrix-synapse-1.119.0-1-x86_64.pkg.tar.zst
   world-gremlins:
-    version: 1.118.0-1
+    version: 1.120.0-1
     packages:
-      - matrix-synapse-1.118.0-1-x86_64.pkg.tar.zst
+      - matrix-synapse-1.120.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.117.0-1
     packages:
