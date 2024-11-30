@@ -1,31 +1,56 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Chih-Hsuan Yen <base64_decode("eXUzYWN0eHQydHR0ZmlteEBjaHllbi5jYwo=")>
 
 pkgname=lxqt-wayland-session
-pkgver=0.1.0
-pkgrel=2.2
-pkgdesc='LXQt Wayland Session support'
-arch=('x86_64')
-url="https://github.com/lxqt/${pkgname}"
-license=('LGPL-2.1')
+pkgver=0.1.1
+pkgrel=1
+pkgdesc='Files needed for the LXQt Wayland Session'
+arch=('any')
+url='https://github.com/lxqt/lxqt-wayland-session'
+# see https://github.com/lxqt/lxqt-wayland-session/blob/master/LICENSE for more details
+license=(
+  'LGPL-2.1-only'       # most files
+  'MIT'                 # files adapted from sway and wayfire
+  'GPL-2.0-only'        # files adapted from labwc https://github.com/labwc/labwc/blob/0.8.0/meson.build#L5
+  'GPL-3.0-only'        # files adapted from river (https://codeberg.org/river/river/src/tag/v0.3.5#licensing) and labwc-themes
+  'GPL-3.0-or-later'    # files adopted from niri (https://github.com/YaLTeR/niri/blob/v0.1.9/Cargo.toml#L8)
+  'BSD-3-Clause'        # files adapted from hyprland
+  'CC-BY-SA-4.0'        # wallpapers
+)
 depends=(
-  'wayland-compositor'
+  'sh'
   'lxqt-session'
+  # Allow to use xdg-utils under LXQt, similar to https://github.com/lxqt/lxqt-session/blob/2.0.0/CHANGELOG#L27
+  # startlxqtwayland sets XDG_CURRENT_DESKTOP
   'qtxdg-tools'
+  # For applications that need layer-shell-qt (ex: lxqt-panel)
   'layer-shell-qt'
 )
-makedepends=('cmake' 'lxqt-build-tools')
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
+optdepends=(
+  # See upstream README.md for supported compositors
+  # Dependencies that are not official packages are commented out
+  # 'labwc'
+  # 'wayfire'
+  'kwin'
+  'hyprland'
+  'niri'
+  'river'
+  'sway'
+)
+makedepends=('git' 'cmake' 'qt6-tools' 'lxqt-build-tools')
+source=("git+https://github.com/lxqt/$pkgname.git?signed#tag=$pkgver")
+sha256sums=('7e99686ff967b734c77f2e9df2ec79624963176109f8f2fb99a42ed9cd58e918')
+validpgpkeys=(
+  "19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # https://github.com/tsujan
+)
 
 build() {
-  cmake -B build -S "${srcdir}/${pkgname}-${pkgver}" \
+  cmake -B build -S "$srcdir/$pkgname" \
     -DCMAKE_INSTALL_PREFIX=/usr
   make -C build
 }
 
 package() {
-  make -C build DESTDIR="${pkgdir}" install
-  install -Dm644 $pkgname-$pkgver/LICENSE.* -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  make -C build DESTDIR="$pkgdir" install
+
+  install -Dm644 $pkgname/{COPYING.LESSER,COPYING,LICENSE.MIT,LICENSE.GPLv2,LICENSE.BSD} -t "$pkgdir"/usr/share/licenses/$pkgname
 }
-
-sha256sums=('c30f93b7cea82be9ff3105a0c217645172e878170a5e0e8a8e348bb1789138b9')
-
