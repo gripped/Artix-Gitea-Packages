@@ -58,8 +58,9 @@ build() {
     cd lang/python/
     # add symlinks for the "gpg" module and header files so that the wheel build process can find it
     ln -sv ./src gpg
-    ln -sv ../../conf/config.h config.h
-    ln -sv ../../src/data.h data.h
+    # artist: links already exist:
+    #ln -sv ../../conf/config.h config.h
+    #ln -sv ../../src/data.h data.h
     top_builddir="$srcdir/$pkgbase-$pkgver" python -m build --wheel --no-isolation
   )
 }
