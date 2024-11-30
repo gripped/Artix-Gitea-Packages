@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-adal
-  version: 1.2.7-5
+  version: 1.2.7-6
   arch:
     - any
   pkgname:
     - python-adal
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.7-6
+    packages:
+      - python-adal-1.2.7-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
