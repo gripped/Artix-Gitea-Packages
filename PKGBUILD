@@ -5,8 +5,8 @@
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=subversion
-pkgver=1.14.3
-pkgrel=3
+pkgver=1.14.4
+pkgrel=1
 pkgdesc="A Modern Concurrent Version Control System"
 arch=('x86_64')
 url="https://subversion.apache.org/"
@@ -24,12 +24,12 @@ optdepends=('libsecret: for GNOME Keyring for auth credentials'
 checkdepends=('ruby-test-unit')
 provides=('svn')
 options=('!makeflags' '!emptydirs')
-source=(https://www.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2{,.asc}
+source=(https://archive.apache.org/dist/subversion/subversion-${pkgver}.tar.bz2{,.asc}
         svnserve.tmpfiles
         subversion.rpath.fix.patch
         ruby-frozen-nil.patch
 )
-sha512sums=('40b172492005fd3b0cd9e457b4444af8ea5d8ff8fc161a9a0c6dc3a7314c6ad4ff75a4676f68a1919ae6273ae03e34d04eba8c1c37b8c0b4ec70d6731b527b41'
+sha512sums=('f5e104ef20c96f2605965fafeb9245b03c722734031c2c8d2b6f996979624566ac0a5dadc2d37274a360f2b1dbecb9f7149d0a43c23c2616b9176d0b9367c924'
             'SKIP'
             '7775f4da5003970c9ebdc2f696ba090df194a77d9daed791875488c943f72ae496b5f9cc6f3ff9f3f4de9f352a3b518137babdea38947d1a2d5dd16aa1844036'
             '92087b9a70722f4d39b75345463c1b04c9db30faf9eb6fe9b911416e73570c7930dd74d3b6136c00da6adeb2a263cac75f3520ccc08ecdb56d88a8a256172af4'
