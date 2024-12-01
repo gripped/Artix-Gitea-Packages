@@ -4,7 +4,7 @@
 
 pkgname=glslang
 pkgver=15.0.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='OpenGL and OpenGL ES shader front end and validator'
 arch=('x86_64')
 url='https://github.com/KhronosGroup/glslang'
