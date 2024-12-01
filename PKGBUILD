@@ -18,11 +18,8 @@ package() {
   install -Dm644 archive.conf "$pkgdir/etc/archive.conf"
   install -Dm755 archive.sh "$pkgdir/usr/bin/archive"
   install -Dm755 archive-cleaner -t "$pkgdir/usr/bin"
-  install -Dm755 archive-compact.sh -t "$pkgdir/usr/bin"
-
   install -Dm644 archive.sysusers "$pkgdir/usr/lib/sysusers.d/archive.conf"
   install -Dm644 archive.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/archive.conf"
 }
 
 # vim:set ts=2 sw=2 et:
-
