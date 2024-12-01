@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pylibmc
-  version: 1.6.3-4
+  version: 1.6.3-5
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.6.3-4
+    version: 1.6.3-5
     packages:
-      - python-pylibmc-1.6.3-4-x86_64.pkg.tar.zst
+      - python-pylibmc-1.6.3-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
