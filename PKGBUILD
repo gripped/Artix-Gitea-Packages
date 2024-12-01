@@ -4,7 +4,7 @@
 
 pkgname=magic-wormhole
 pkgver=0.17.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Securely transfer data between computers"
 arch=(any)
 url="https://github.com/magic-wormhole/magic-wormhole"
@@ -46,7 +46,7 @@ check() {
 		# uses unittest.mock wrong and triggers new Python's errors
 		src/wormhole/test/test_tor_manager.py
 	)
-	pytest ${deselected[@]/#/--deselect } ||:
+	pytest ${deselected[@]/#/--deselect }
 }
 
 package() {
