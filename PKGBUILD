@@ -3,8 +3,8 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=btrfs-progs
-pkgver=6.11
-pkgrel=2
+pkgver=6.12
+pkgrel=1
 pkgdesc='Btrfs filesystem utilities'
 arch=('x86_64')
 makedepends=(
@@ -47,7 +47,7 @@ source=(
   initcpio-install-btrfs
   initcpio-hook-btrfs
 )
-b2sums=('d4088c8d55f642cae584b7c83e9c6e5d7358795844c2ccb66f7453c5fd93bd43812f4c80e3cbd0851080685a9dcff3c35f8a42c63aa1903042cd56f9d6aaba9c'
+b2sums=('d177be360101c6d28f2fa1ac75a694d09171115ccc677b6833470a50fb86d9c0e783789b5c4dd03525e72352a03a57a08ddb9e2115b43a8dd1de67773b8fbb33'
         '75659665a24f92bba1175a2fcae942d9851495c9cff88570b88a98dced4eb98fcc9879de044bfc7d560dbe1c71a20d7ae51ca4b7c2649f90d646b414e0864b6e'
         '0d3c25d0cb6fdb8e8777723b5e199835fac25573bc8f7fcb248ccfeea7268752b7100dd2c8284529812f0b1d3943eceb5785f119959f89bffedcf30472a915db')
 
