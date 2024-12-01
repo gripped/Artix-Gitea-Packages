@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: filezilla
-  version: 3.67.1-2
+  version: 3.68.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.67.1-2
+    version: 3.68.1-1
     packages:
-      - filezilla-3.67.1-2-x86_64.pkg.tar.zst
+      - filezilla-3.68.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
