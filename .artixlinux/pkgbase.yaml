@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: virt-manager
-  version: 4.1.0-4
+  version: 5.0.0-1
   arch:
     - any
   pkgname:
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.1.0-4
+    version: 5.0.0-1
     packages:
-      - virt-install-4.1.0-4-any.pkg.tar.zst
-      - virt-manager-4.1.0-4-any.pkg.tar.zst
+      - virt-install-5.0.0-1-any.pkg.tar.zst
+      - virt-manager-5.0.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
