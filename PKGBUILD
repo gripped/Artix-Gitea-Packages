@@ -4,13 +4,13 @@
 
 pkgname=python-pyproj
 pkgver=3.6.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Python interfaces to PROJ.4 library"
 arch=(x86_64)
 url="https://github.com/pyproj4/pyproj"
 license=(custom)
 depends=(proj python-certifi)
-makedepends=(python-setuptools cython)
+makedepends=(python-setuptools python-wheel python-build python-installer cython)
 checkdepends=(python-pytest python-numpy python-pandas python-shapely python-xarray)
 source=(https://github.com/pyproj4/pyproj/archive/$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('33b4f865d370e37d290591b13985016e98fa9038a1a5bde5d0c208307ed5221d')
@@ -23,7 +23,7 @@ prepare() {
 build() {
   export PROJ_DIR=/usr
   cd pyproj-$pkgver
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 # Import issues, no time to investigate
@@ -35,6 +35,6 @@ build() {
 
 package() {
   cd pyproj-$pkgver
-  python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1 --skip-build
+  python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE_proj "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
