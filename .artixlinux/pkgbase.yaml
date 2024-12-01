@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-crispy-bootstrap3
-  version: 2024.1-4
+  version: 2024.1-5
   arch:
     - any
   pkgname:
     - python-crispy-bootstrap3
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2024.1-5
+    packages:
+      - python-crispy-bootstrap3-2024.1-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
