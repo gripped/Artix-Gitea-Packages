@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: gdb
-  version: 15.2-3
+  version: 15.2-4
   arch:
     - x86_64
   pkgname:
     - gdb
     - gdb-common
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 15.2-4
+    packages:
+      - gdb-15.2-4-x86_64.pkg.tar.zst
+      - gdb-common-15.2-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
