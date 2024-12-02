@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pyqt6
-  version: 6.8.0dev2410211537-3
+  version: 6.8.0dev2411221125-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.8.0dev2410211537-3
+    version: 6.8.0dev2411221125-2
     packages:
-      - python-pyqt6-6.8.0dev2410211537-3-x86_64.pkg.tar.zst
+      - python-pyqt6-6.8.0dev2411221125-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
