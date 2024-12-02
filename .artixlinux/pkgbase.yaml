@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-crispy-bootstrap3
-  version: 2024.1-5
+  version: 2024.1-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2024.1-5
+    version: 2024.1-6
     packages:
-      - python-crispy-bootstrap3-2024.1-5-any.pkg.tar.zst
+      - python-crispy-bootstrap3-2024.1-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
