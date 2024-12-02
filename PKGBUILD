@@ -5,7 +5,7 @@ pkgbase=python-pyopencl
 _name="${pkgbase#python-}"
 pkgname=('python-pyopencl' 'pyopencl-headers')
 pkgver=2024.2.6
-pkgrel=2.1
+pkgrel=3
 epoch=1
 pkgdesc="A complete, object-oriented language binding of OpenCL to Python"
 arch=('x86_64')
@@ -30,8 +30,6 @@ makedepends=(
     'python-numpy'
     'python-platformdirs'
     'python-scikit-build-core'
-    'python-pip'
-    'python-devtools'
 )
 # NOTE: we install all available OpenCL drivers so that tests don't fail on PLATFORM_NOT_FOUND_KHR
 checkdepends=(
@@ -54,7 +52,6 @@ sha256sums=('12898a9c815268b746689a9a0b0cad22cb7b8097d53c26f2e7392a1d15a4eb23'
 
 prepare() {
     cd $_name
-    git cherry-pick -n 9f505f78e9a545d87ca2f8d9083897286a51495d
     git submodule init
     git config submodule.pyopencl/compyte.url ../compyte
     git -c protocol.file.allow=always submodule update
@@ -71,7 +68,19 @@ prepare() {
 
 build() {
     cd $_name
-    pip wheel -w dist/ . pyopencl
+    python -m build --wheel --no-isolation
+}
+
+check(){
+    local pytest_options=(
+        -vv
+    )
+    local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+
+    cd $_name
+    python -m installer --destdir=test_dir dist/*.whl
+    export PYTHONPATH="$PWD/test_dir/$site_packages:$PYTHONPATH"
+    pytest "${pytest_options[@]}" test
 }
 
 package_python-pyopencl() {
@@ -89,7 +98,9 @@ package_python-pyopencl() {
     )
 
     cd $_name
-    pip install --no-deps dist/pyopencl* --prefix="${pkgdir}/usr"
+    python -m installer --destdir="$pkgdir" dist/*.whl
+
+    rm -fr "${pkgdir}"/usr/include
 
     install -vDm644 ../*.txt -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }

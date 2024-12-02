@@ -1,20 +1,20 @@
 ---
 pkgbase:
   name: python-pyopencl
-  version: 1:2024.2.6-2.1
+  version: 1:2024.2.6-3
   arch:
     - x86_64
   pkgname:
     - python-pyopencl
     - pyopencl-headers
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:2024.2.6-3
+    packages:
+      - python-pyopencl-1:2024.2.6-3-x86_64.pkg.tar.zst
+      - pyopencl-headers-1:2024.2.6-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
