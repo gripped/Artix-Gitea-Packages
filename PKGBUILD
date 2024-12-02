@@ -42,23 +42,13 @@ groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
 #        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.2.xz"
         'cpupower.default'
-        'cpupower.systemd'
-        'cpupower.service'
-        'usbipd.service'
-        'hv_kvp_daemon.service'
-        'hv_vss_daemon.service'
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('267bab84f30e3ce4a88b6441aeee777b114fd58041b43cabfe50fdf0c0a97321'
-            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f'
-            'b692f4859ed3fd9831a058a450a84d8c409bf7e3e45aac1c2896a14bb83f3d7a'
-            '42d2ec9f1d9cc255ee7945a27301478364ef482f5a6ddfc960189f03725ccec2'
-            '2e187734d8aec58a3046d79883510d779aa93fb3ab20bd3132c1a607ebe5498f'
-            'b1315cb77a35454e1af9172f821a52e2a0cb18561be05a340d21cf337b01ae61'
-            '2d5e2f8d40b6f19bf2e1dead57ca105d72098fb0b418c09ff2e0cb91089710af')
+            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
   cd linux
@@ -211,8 +201,6 @@ package_cpupower() {
   popd
   # install startup scripts
   install -Dm 644 $pkgname.default "$pkgdir/etc/default/$pkgname"
-  install -Dm 644 $pkgname.service "$pkgdir/usr/lib/systemd/system/$pkgname.service"
-  install -Dm 755 $pkgname.systemd "$pkgdir/usr/lib/systemd/scripts/$pkgname"
 }
 
 package_x86_energy_perf_policy() {
@@ -226,7 +214,7 @@ package_x86_energy_perf_policy() {
 
 package_usbip() {
   pkgdesc='An USB device sharing system over IP network'
-  depends=('glibc' 'glib2' 'sysfsutils' 'systemd-libs')
+  depends=('glibc' 'glib2' 'sysfsutils' 'libudev')
 
   pushd linux/tools/usb/usbip
   make install DESTDIR="$pkgdir"
@@ -234,8 +222,6 @@ package_usbip() {
   # module loading
   install -Dm 644 /dev/null "$pkgdir/usr/lib/modules-load.d/$pkgname.conf"
   printf 'usbip-core\nusbip-host\n' > "$pkgdir/usr/lib/modules-load.d/$pkgname.conf"
-  # systemd
-  install -Dm 644 usbipd.service "$pkgdir/usr/lib/systemd/system/usbipd.service"
 }
 
 package_tmon() {
@@ -260,9 +246,6 @@ package_hyperv() {
 
   cd linux/tools/hv
   make install DESTDIR="$pkgdir" sbindir=/usr/bin libexecdir=/usr/lib
-  for _p in hv_kvp_daemon hv_vss_daemon; do
-    install -Dm644 "$srcdir/$_p.service" "$pkgdir/usr/lib/systemd/system/$_p.service"
-  done
 }
 
 package_bpf() {
