@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6-translations
-  version: 6.8.1-1
+  version: 6.8.1-1.1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.8.1-1
+    version: 6.8.1-1.1
     packages:
-      - qt6-translations-6.8.1-1-any.pkg.tar.zst
+      - qt6-translations-6.8.1-1.1-any.pkg.tar.zst
   world:
     version: 6.8.0-1
     packages:
