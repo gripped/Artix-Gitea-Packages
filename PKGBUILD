@@ -3,7 +3,7 @@
 
 pkgname=nvchecker
 pkgver=2.16
-pkgrel=1
+pkgrel=2
 pkgdesc="New version checker for software releases"
 arch=('any')
 url="https://github.com/lilydjwg/nvchecker"
@@ -65,7 +65,6 @@ build() {
 
 check() {
   cd nvchecker
-  sed -e "s|'repo': 'core'|'repo': 'system'|" -i tests/test_alpmfiles.py
   pytest
 }
 
