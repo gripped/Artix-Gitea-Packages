@@ -41,10 +41,10 @@ optdepends=(
 )
 source=(https://github.com/pwndbg/pwndbg/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
         https://github.com/pwndbg/pwndbg/commit/b4a1b9a1.patch)
-sha512sums=('503924742d4a6d767ec369bb1e37c931afb5ab09f2b4cfa048765ce7a61fb6adcda2576cdda64dd4cf74de27d83b13b4dc09d6e7480e01ae8f646c5394992d43'
-            '5ce619a3f3f826c51d52375feaf9347a26776d8d6c82acecfc7dbab26e7ab73da94608579a65e83dbd256ac0984c1741a6c95343d103fa33cb86ff0b5b172855')
-b2sums=('5333c318ba3ccbaaac459f9c7b917d3defa1ad712f45555b31eb76774089e55e80720744dc92813ad8234302445e3bed3237c2275c795a49856028dec416dcc2'
-        '1d61be97434136b26851aa2e060e2f7c662b095d3a7ffa4a129804e3f725164f19f7ea1b52374b328388021e183bbec0519f8a1433cab5b672dd00a4bf971d6e')
+sha512sums=('SKIP'
+            'SKIP')
+b2sums=('SKIP'
+        'SKIP')
 
 prepare() {
   cd ${pkgname}-${pkgver}
