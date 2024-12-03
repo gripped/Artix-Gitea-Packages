@@ -32,6 +32,7 @@ makedepends=(
   autoconf-archive
   docbook-xsl
   git
+  gperf
   hiredis
   libdbi
   libesmtp
