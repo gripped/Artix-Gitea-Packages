@@ -4,7 +4,7 @@
 
 pkgname=zeitgeist
 pkgver=1.0.4
-pkgrel=4.1
+pkgrel=5
 pkgdesc="Service logging user activities and events"
 url="https://launchpad.net/zeitgeist/"
 arch=(x86_64)
@@ -94,6 +94,7 @@ check() {
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
+
   rm -r $pkgdir/usr/lib/systemd
 }
 
