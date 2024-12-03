@@ -37,7 +37,6 @@ makedepends=(
   'open-iscsi'
   'python-docutils'
   'qemu-base'
-  'systemd'
 )
 optdepends=(
   'dmidecode: DMI system info support'
