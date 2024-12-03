@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-pymupdf
-  version: 1.24.14-1
+  version: 1.24.14-2
   arch:
     - x86_64
   pkgname:
     - python-pymupdf
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.24.14-1
+    version: 1.24.14-2
     packages:
-      - python-pymupdf-1.24.14-1-x86_64.pkg.tar.zst
+      - python-pymupdf-1.24.14-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
