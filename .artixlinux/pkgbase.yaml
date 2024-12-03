@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: wireshark
-  version: 4.4.2-1
+  version: 4.4.2-3
   arch:
     - x86_64
   pkgname:
     - wireshark-cli
     - wireshark-qt
 actions:
-  addRepo: null
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.4.2-1
+    version: 4.4.2-3
     packages:
-      - wireshark-cli-4.4.2-1-x86_64.pkg.tar.zst
-      - wireshark-qt-4.4.2-1-x86_64.pkg.tar.zst
+      - wireshark-cli-4.4.2-3-x86_64.pkg.tar.zst
+      - wireshark-qt-4.4.2-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,4 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
-team: galaxy
+team: world
