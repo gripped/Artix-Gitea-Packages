@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-durationpy
-  version: 0.9-1
+  version: 0.9-1.1
   arch:
     - any
   pkgname:
     - python-durationpy
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.9-1.1
+    packages:
+      - python-durationpy-0.9-1.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
