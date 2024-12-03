@@ -2,7 +2,7 @@
 
 pkgname=rst2pdf
 pkgver=0.102
-pkgrel=1
+pkgrel=2
 pkgdesc="Use a text editor. Make a PDF"
 arch=(any)
 url="https://github.com/rst2pdf/rst2pdf"
@@ -61,7 +61,6 @@ check() {
     -vv
     # https://github.com/rst2pdf/rst2pdf/issues/1067
     --deselect tests/input/test_raw_html.rst::test_raw_html
-    --deselect tests/input/test_uml_extension.rst::test_uml_extension
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
