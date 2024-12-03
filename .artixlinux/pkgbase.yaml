@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: opencv
-  version: 4.10.0-15
+  version: 4.10.0-16
   arch:
     - x86_64
   pkgname:
@@ -11,13 +11,13 @@ pkgbase:
     - opencv-cuda
     - python-opencv-cuda
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -29,8 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.10.0-16
+    packages:
+      - opencv-4.10.0-16-x86_64.pkg.tar.zst
+      - opencv-samples-4.10.0-16-x86_64.pkg.tar.zst
+      - python-opencv-4.10.0-16-x86_64.pkg.tar.zst
+      - opencv-cuda-4.10.0-16-x86_64.pkg.tar.zst
+      - python-opencv-cuda-4.10.0-16-x86_64.pkg.tar.zst
   world-gremlins:
     version: 4.10.0-15
     packages:
