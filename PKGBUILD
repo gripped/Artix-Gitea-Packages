@@ -9,13 +9,13 @@ pkgname=('usd' 'usd-extras')
 _pkgname='OpenUSD'
 pkgbase=usd
 pkgver=24.08
-pkgrel=5
+pkgrel=6
 arch=(x86_64)
 url='https://openusd.org'
 pkgdesc='3D VFX pipeline interchange file format'
 license=(Apache-2.0)
 depends=(alembic # libAlembic.so
-         boost-libs libboost_python312.so # https://gitlab.archlinux.org/archlinux/packaging/packages/boost/-/issues/1
+         boost-libs libboost_python313.so # https://gitlab.archlinux.org/archlinux/packaging/packages/boost/-/issues/1
          dos2unix
          draco # libdraco.so
          embree # libembree4.so
@@ -42,11 +42,13 @@ depends=(alembic # libAlembic.so
 makedepends=(cmake help2man boost git)
 source=("git+https://github.com/PixarAnimationStudios/$_pkgname.git#tag=v$pkgver"
         https://openusd.org/images/USDLogoUnsized.svg
+        usd-3392.patch::https://patch-diff.githubusercontent.com/raw/PixarAnimationStudios/OpenUSD/pull/3392.patch
         "usd-embree42.patch"
         "usd-defaultfonts.patch"
         "org.openusd.usdview.desktop")
 sha256sums=('e92e2a427d32fbed5dda8822d0da34cca4bf1cf1e358b6280a506ae987624b50'
             '529dea685836be7de95800d9688db4e1df6a8a3f341130069abdd2b5b1572128'
+            '5bcfb527940b957f5c7831c8b626f9c018b575a730fc2967dd869e678492fa42'
             'd8c5e831edb5bdc1eacb37961a72fa5dbcc05c447d503e7b2f32e0a3650f8082'
             '3408ad2877d547f60d2db6b28983837119b8800b62ae1cdc23b37dbe31e17f1c'
             '6b880a1dc44ee3286a19b3347f65be5337192d00bccd55fa549598db90a887da')
@@ -60,6 +62,7 @@ prepare() {
 
   patch -Np1 -i "$srcdir/usd-defaultfonts.patch"
   patch -Np1 -i "$srcdir/usd-embree42.patch"
+  patch -Np1 -i "$srcdir/usd-3392.patch"
 
   # Change directories to standard
   sed -i 's|plugin/usd|lib/usd/plugin|g' \
