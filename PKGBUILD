@@ -171,3 +171,4 @@ package() {
   install -vdm755 "$pkgdir/var/lib/$pkgname"
   install -vDm644 "$srcdir/$pkgname.logrotate" "$pkgdir/etc/logrotate.d/$pkgname"
 }
+
