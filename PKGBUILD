@@ -40,9 +40,9 @@ depends=(clang
 # syntax-highlighting
 makedepends=(cmake
              git
-             llvm)
-optdepends=('qt6-doc: integrated Qt documentation'
-            'qt6-examples: welcome page examples'
+             llvm
+             qt6-doc)
+optdepends=('qt6-examples: welcome page examples'
             'gdb: debugger'
             'cmake: cmake project support'
             'x11-ssh-askpass: ssh support'
