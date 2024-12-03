@@ -8,7 +8,7 @@ pkgbase:
     - vigra
     - python-vigra
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.12.1-3
+    packages:
+      - vigra-1.12.1-3-x86_64.pkg.tar.zst
+      - python-vigra-1.12.1-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.12.1-3
     packages:
