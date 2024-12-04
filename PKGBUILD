@@ -4,8 +4,8 @@
 
 pkgbase=gpgme
 pkgname=(gpgme qgpgme-qt6 python-gpgme)
-pkgver=1.24.0
-pkgrel=2
+pkgver=1.24.1
+pkgrel=1
 pkgdesc='A C wrapper library for GnuPG'
 arch=('x86_64')
 url='https://www.gnupg.org/related_software/gpgme/'
@@ -29,7 +29,7 @@ makedepends=(
 validpgpkeys=('6DAA6E64A76D2840571B4902528897B826403ADA'  # Werner Koch (dist signing 2020)
               'AC8E115BF73E2D8D47FA9908E98E9B2D19C6C8BD') # Niibe Yutaka (GnuPG Release Key)
 source=("https://www.gnupg.org/ftp/gcrypt/${pkgbase}/${pkgbase}-${pkgver}.tar.bz2"{,.sig})
-sha256sums=('61e3a6ad89323fecfaff176bc1728fb8c3312f2faa83424d9d5077ba20f5f7da'
+sha256sums=('ea05d0258e71061d61716584ec34cef59330a91340571edc46b78374973ba85f'
             'SKIP')
 
 prepare() {
@@ -58,9 +58,8 @@ build() {
     cd lang/python/
     # add symlinks for the "gpg" module and header files so that the wheel build process can find it
     ln -sv ./src gpg
-    # artist: links already exist:
-    #ln -sv ../../conf/config.h config.h
-    #ln -sv ../../src/data.h data.h
+    ln -sv ../../conf/config.h config.h
+    ln -sv ../../src/data.h data.h
     top_builddir="$srcdir/$pkgbase-$pkgver" python -m build --wheel --no-isolation
   )
 }
