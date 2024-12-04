@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-kubernetes
-  version: 31.0.0-1
+  version: 31.0.0-2
   arch:
     - any
   pkgname:
     - python-kubernetes
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 31.0.0-1
+    version: 31.0.0-2
     packages:
-      - python-kubernetes-31.0.0-1-any.pkg.tar.zst
+      - python-kubernetes-31.0.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
