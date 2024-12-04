@@ -5,7 +5,7 @@
 pkgbase=gpgme
 pkgname=(gpgme qgpgme-qt6 python-gpgme)
 pkgver=1.24.1
-pkgrel=2
+pkgrel=1
 pkgdesc='A C wrapper library for GnuPG'
 arch=('x86_64')
 url='https://www.gnupg.org/related_software/gpgme/'
@@ -58,8 +58,6 @@ build() {
     cd lang/python/
     # add symlinks for the "gpg" module and header files so that the wheel build process can find it
     ln -sv ./src gpg
-    ln -sv ../../conf/config.h config.h
-    ln -sv ../../src/data.h data.h
     top_builddir="$srcdir/$pkgbase-$pkgver" python -m build --wheel --no-isolation
   )
 }
