@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ansible-core
-  version: 2.18.1-1
+  version: 2.18.1-2
   arch:
     - any
   pkgname:
     - ansible-core
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.18.0-2
+    version: 2.18.1-2
     packages:
-      - ansible-core-2.18.0-2-any.pkg.tar.zst
+      - ansible-core-2.18.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
