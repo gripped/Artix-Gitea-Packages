@@ -4,7 +4,7 @@
 _pkg=dask
 pkgname=python-${_pkg}
 pkgver=2024.11.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Parallel computing with task scheduling"
 arch=(any)
 url="https://dask.org"
@@ -18,7 +18,7 @@ depends=(
     python-importlib-metadata
     python-packaging
     python-partd
-    python-pyyaml
+    python-yaml
     python-toolz
 )
 makedepends=(
