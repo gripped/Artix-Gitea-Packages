@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gpgme
-  version: 1.24.1-1
+  version: 1.24.1-2
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - qgpgme-qt6
     - python-gpgme
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -18,8 +18,11 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 1.24.1-2
+    packages:
+      - gpgme-1.24.1-2-x86_64.pkg.tar.zst
+      - qgpgme-qt6-1.24.1-2-x86_64.pkg.tar.zst
+      - python-gpgme-1.24.1-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: 1.24.1-1
     packages:
