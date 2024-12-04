@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-fastparquet
-  version: 2024.11.0-1
+  version: 2024.11.0-2
   arch:
     - x86_64
   pkgname:
     - python-fastparquet
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2024.11.0-1
+    version: 2024.11.0-2
     packages:
-      - python-fastparquet-2024.11.0-1-x86_64.pkg.tar.zst
+      - python-fastparquet-2024.11.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
