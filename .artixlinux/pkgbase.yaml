@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: liboctopi
-  version: 1.0-3
+  version: 1.0.1-1
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1.0-3
+    version: 1.0.1-1
     packages:
-      - liboctopi-1.0-3-x86_64.pkg.tar.zst
+      - liboctopi-1.0.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.0-2
     packages:

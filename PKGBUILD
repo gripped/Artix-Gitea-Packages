@@ -1,8 +1,8 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 
 pkgname=liboctopi
-pkgver=1.0
-pkgrel=3
+pkgver=1.0.1
+pkgrel=1
 pkgdesc="Alpm utils for Octopi (alpm_octopi_utils fork)"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/liboctopi"
@@ -30,11 +30,8 @@ replaces=(
     alpm_octopi_utils
     alpm-octopi-utils
 )
-source=(
-    # "git+$url.git#tag=$pkgver"
-    "git+$url.git#branch=liboctopi"
-)
-sha256sums=('SKIP')
+source=("git+$url.git#tag=$pkgver")
+sha256sums=('6976f79a0796398b46cff03b34d46018c99a2add42ffa02c6d7ecc8d5bf51697')
 
 build() {
     cmake -S "$pkgname" -B build \
