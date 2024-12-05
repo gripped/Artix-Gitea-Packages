@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-jupyter-ydoc
-  version: 3.0.2-1
+  version: 3.0.2-2
   arch:
     - any
   pkgname:
     - python-jupyter-ydoc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.0.1-2
+    version: 3.0.2-2
     packages:
-      - python-jupyter-ydoc-3.0.1-2-any.pkg.tar.zst
+      - python-jupyter-ydoc-3.0.2-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
