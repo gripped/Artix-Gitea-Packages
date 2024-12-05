@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mopidy
-  version: 3.4.2-3
+  version: 4.0.0a2-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.4.2-3
+    version: 4.0.0a2-1
     packages:
-      - mopidy-3.4.2-3-any.pkg.tar.zst
+      - mopidy-4.0.0a2-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
