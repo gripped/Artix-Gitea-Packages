@@ -3,65 +3,58 @@
 
 _fname=gentoo-functions
 _furl="https://github.com/gentoo/${_fname}/archive"
-_fver=0.19
+_fver=1.7.3
 
 pkgname=netifrc
-pkgver=0.7.8
+pkgver=0.7.12
 pkgrel=1
 pkgdesc="Gentoo Network Interface Management Scripts"
 arch=('x86_64')
 url="https://github.com/gentoo/netifrc"
 license=('BSD2')
 depends=('glibc' 'udev' 'sh')
+makedepends=('meson')
 backup=('etc/conf.d/net')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
-        "${_fname}-${_fver}.tar.gz::${_furl}/${_fver}.tar.gz"
-        'artix.patch')
-sha256sums=('45a48648e72a79e35335761500962ef759f90828a13b64607e158c2b0dd3918b'
-            'f65161c84874959780e332f33d6a8ac878a40dc88da4542448092be6ed9b2ffe'
-            '137c9fb75874b9a584bb280dcaf251079367fa8528a186ea975a0f27b1682107')
+        "${_fname}-${_fver}.tar.gz::${_furl}/${_fname}-${_fver}.tar.gz")
+sha256sums=('54d6e92227fb736bf037ebfb22ba515ccc8953df685d0db5ba8e7c18ee0e2dac'
+            'a77a9f3dd3993e6c286a84422fafb37b3418c39d6bfd3e7d055592dd37fffcd6')
 
-_nargs=(
+_args=(
     SYSCONFDIR=/etc
     PREFIX=/usr
     SBINDIR=/usr/bin
     LIBEXECDIR=/usr/lib/"${pkgname}"
 )
 
-_fargs=(
-    ROOTPREFIX=/usr
-    ROOTSBINDIR=/usr/bin
-    ROOTLIBEXECDIR=/usr/lib/artix
-)
-
 prepare() {
-    cd "${pkgname}-${pkgver}"
-    patch -Np 1 -i ../artix.patch
+    # todo: use a patch
+    sed -e "s|genfun_prefix=|genfun_prefix=/usr|" \
+        -e "s|lib/gentoo|lib/artix|g" -i "${_fname}-${_fname}-${_fver}"/functions.sh
+    sed -e "s|lib/gentoo|lib/artix|g" -i "${_fname}-${_fname}-${_fver}"/meson.build
 }
 
 build(){
     # make netifrc
-    cd "${pkgname}-${pkgver}"
-    make "${_nargs[@]}"
-    cd ${srcdir}/${_fname}-${_fver}
-    make "${_fargs[@]}"
+    make -C "${pkgname}-${pkgver}" "${_args[@]}"
+
+    artix-meson "${_fname}-${_fname}-${_fver}" build
+    meson compile -C build
 }
 
 package() {
-    cd "${pkgname}-${pkgver}"
 
-    make DESTDIR="${pkgdir}" "${_nargs[@]}" install
+    make -C "${pkgname}-${pkgver}" DESTDIR="${pkgdir}" "${_args[@]}" install
 
-    install -Dm 644 doc/net.example "${pkgdir}"/etc/conf.d/net
+    install -Dm 644 "${pkgname}-${pkgver}"/doc/net.example "${pkgdir}"/etc/conf.d/net
 
     install -d "${pkgdir}"/etc/runlevels/boot
     ln -svf /etc/init.d/net.lo "${pkgdir}"/etc/runlevels/boot/net.lo
 
-    install -Dm644 LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+    install -Dm644 "${pkgname}-${pkgver}"/LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
 
-    cd "${srcdir}/${_fname}-${_fver}"
-    make DESTDIR="${pkgdir}" "${_fargs[@]}" install
+    meson install -C build --destdir "${pkgdir}"
 
-    # rm systemd wrapper
+    # rm systemd & portage wrapper
     rm -fv "${pkgdir}"/usr/lib/netifrc/sh/systemd-wrapper.sh
 }
