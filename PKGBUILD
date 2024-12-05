@@ -4,90 +4,90 @@
 
 pkgbase=virtualbox
 pkgname=('virtualbox'
-  'virtualbox-sdk'
-  'virtualbox-host-dkms'
-  'virtualbox-guest-utils'
-  'virtualbox-guest-utils-nox'
-  'virtualbox-ext-vnc')
+         'virtualbox-sdk'
+         'virtualbox-host-dkms'
+         'virtualbox-guest-utils'
+         'virtualbox-guest-utils-nox'
+         'virtualbox-ext-vnc')
 pkgver=7.1.4
 _tarver=${pkgver}
-pkgrel=3
+pkgrel=3.1
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL' 'custom:CDDL')
 makedepends=('alsa-lib'
-  'cdrkit'
-  'curl'
-  'device-mapper'
-  'git'
-  'glu'
-  'gsoap'
-  'glslang'
-  'iasl'
-  'jdk8-openjdk'
-  'libidl2'
-  'liblzf'
-  'libpulse'
-  'libtpms'
-  'libvncserver'
-  'libvpx'
-  'libxcomposite'
-  'libxcursor'
-  'libxinerama'
-  'libxml2'
-  'libxmu'
-  'libxrandr'
-  'libxslt'
-  'libxtst'
-  'linux-headers'
-  'mesa'
-  'python'
-  'python-setuptools'
-  'qt6-base'
-  'qt6-scxml'
-  'qt6-tools'
-  'sdl'
-  'sdl_ttf'
-  'vde2'
-  'xorgproto'
-  'xorg-server-devel'
-  'yasm')
+             'cdrkit'
+             'curl'
+             'device-mapper'
+             'git'
+             'glu'
+             'gsoap'
+             'glslang'
+             'iasl'
+             'jdk8-openjdk'
+             'libidl2'
+             'liblzf'
+             'libpulse'
+             'libtpms'
+             'libvncserver'
+             'libvpx'
+             'libxcomposite'
+             'libxcursor'
+             'libxinerama'
+             'libxml2'
+             'libxmu'
+             'libxrandr'
+             'libxslt'
+             'libxtst'
+             'linux-headers'
+             'mesa'
+             'python'
+             'python-setuptools'
+             'qt6-base'
+             'qt6-scxml'
+             'qt6-tools'
+             'sdl'
+             'sdl_ttf'
+             'vde2'
+             'xorgproto'
+             'xorg-server-devel'
+             'yasm')
 source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarver}.tar.bz2"
-  'virtualbox-host-dkms.conf'
-  'virtualbox.modprobe'
-  'virtualbox.sysusers'
-  'virtualbox-guest-utils.sysusers'
-  '60-vboxdrv.rules'
-  '60-vboxguest.rules'
-  'LocalConfig.kmk'
-  'vboxreload'
-  '001-disable-update.patch'
-  '004-drop-Wno-format.patch'
-  '008-no-vboxvideo.patch'
-  '009-properly-handle-i3wm.patch'
-  '012-vbglR3GuestCtrlDetectPeekGetCancelSupport.patch'
-  '013-support-building-from-dkms.patch'
-  '018-upate-xclient-script.patch'
-  '020-python-3-12.patch'
-  '021-python-3-13.patch')
+        'virtualbox-host-dkms.conf'
+        'virtualbox.modprobe'
+        'virtualbox.sysusers'
+        'virtualbox-guest-utils.sysusers'
+        '60-vboxdrv.rules'
+        '60-vboxguest.rules'
+        'LocalConfig.kmk'
+        'vboxreload'
+        '001-disable-update.patch'
+        '004-drop-Wno-format.patch'
+        '008-no-vboxvideo.patch'
+        '009-properly-handle-i3wm.patch'
+        '012-vbglR3GuestCtrlDetectPeekGetCancelSupport.patch'
+        '013-support-building-from-dkms.patch'
+        '018-upate-xclient-script.patch'
+        '020-python-3-12.patch'
+        '021-python-3-13.patch')
 sha256sums=('872e7a42b41f8558abbf887f1bdc7aac932bb88b2764d07cbce270cab57e3b5e'
-  '14f57374567f91332c072e0cb54cb0730cf726f39028aa0b6466b32913254a79'
-  '07fe5c8b313cd7f01505eb9721357269a288ccd0c04e6467afb954038d6f46df'
-  '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
-  'da4c49f6ca94e047e196cdbcba2c321199f4760056ea66e0fbc659353e128c9e'
-  'f876e9f55243eded423fda4fc2ffe3b174dca90380a6315f7c9b3cd1c9d07206'
-  '033c597e0f5285d2ddb0490868e5b6f945f45c7b1b1152a02a9e6fea438b2c95'
-  '476202f87a4a461af6b73a7709e91f868a65ff7306494227e0d7b264fa3f919e'
-  '4001b5927348fe669a541e80526d4f9ea91b883805f102f7d571edbb482a9b9d'
-  '483a043ddfe32c4c5001a8de0a94a0ea884f34d3dbd817b492b9c97fba3ab5e0'
-  'ffd30d1d5c41909518571da02c797102d459ba6dec22fe335b4778db264275e1'
-  'd0ca7e240b7bc19b4630998d943d095c733cbdb27b343269f2f602a8f1088974'
-  'd76b52d955215a72c296aa36d173897bcaa357528bf5a73347c52ccec8654ced'
-  '8c64b3617e597390dd25cf85c9afac0ebbe369d620349d7f5c8056d834acb6c6'
-  '00f68b86d32a1fada900c2da8dad2ab4215106cd58004f049bded99727cda2ff'
-  '73ed7ef243c975227660b9bbe7c576018f2c0216b3a3b5efcc4cc56c44c90914'
-  'ddb2092a5a000aa6ef854796f39dcdf86e72c06d53b24bac3835350571182df6'
-  '70245fc3abafbd3b191d87e2910f0f004050672f2d0d056db029a062e80e73bc')
+            'f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04'
+            '07fe5c8b313cd7f01505eb9721357269a288ccd0c04e6467afb954038d6f46df'
+            '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
+            'da4c49f6ca94e047e196cdbcba2c321199f4760056ea66e0fbc659353e128c9e'
+            'f876e9f55243eded423fda4fc2ffe3b174dca90380a6315f7c9b3cd1c9d07206'
+            '033c597e0f5285d2ddb0490868e5b6f945f45c7b1b1152a02a9e6fea438b2c95'
+            '476202f87a4a461af6b73a7709e91f868a65ff7306494227e0d7b264fa3f919e'
+            '4001b5927348fe669a541e80526d4f9ea91b883805f102f7d571edbb482a9b9d'
+            '483a043ddfe32c4c5001a8de0a94a0ea884f34d3dbd817b492b9c97fba3ab5e0'
+            'ffd30d1d5c41909518571da02c797102d459ba6dec22fe335b4778db264275e1'
+            'd0ca7e240b7bc19b4630998d943d095c733cbdb27b343269f2f602a8f1088974'
+            'd76b52d955215a72c296aa36d173897bcaa357528bf5a73347c52ccec8654ced'
+            '8c64b3617e597390dd25cf85c9afac0ebbe369d620349d7f5c8056d834acb6c6'
+            '00f68b86d32a1fada900c2da8dad2ab4215106cd58004f049bded99727cda2ff'
+            '73ed7ef243c975227660b9bbe7c576018f2c0216b3a3b5efcc4cc56c44c90914'
+            'ddb2092a5a000aa6ef854796f39dcdf86e72c06d53b24bac3835350571182df6'
+            '70245fc3abafbd3b191d87e2910f0f004050672f2d0d056db029a062e80e73bc')
 
 prepare() {
   cd "VirtualBox-${pkgver}"
@@ -132,13 +132,13 @@ build() {
 package_virtualbox() {
   pkgdesc='Powerful x86 virtualization for enterprise as well as home use'
   depends=('curl' 'gcc-libs' 'glibc' 'liblzf' 'libpng' 'libtpms' 'libvpx' 'libx11' 'libxcursor'
-    'libxext' 'libxinerama' 'libxml2' 'libxmu' 'libxt' 'openssl' 'procps-ng' 'python'
-    'qt6-base' 'qt6-scxml' 'qt6-tools' 'sdl' 'shared-mime-info' 'zlib'
-    'VIRTUALBOX-HOST-MODULES')
+           'libxext' 'libxinerama' 'libxml2' 'libxmu' 'libxt' 'openssl' 'procps-ng' 'python'
+           'qt6-base' 'qt6-scxml' 'qt6-tools' 'sdl' 'shared-mime-info' 'zlib'
+           'VIRTUALBOX-HOST-MODULES')
   optdepends=('vde2: Virtual Distributed Ethernet support'
-    'virtualbox-guest-iso: Guest Additions CD image'
-    'virtualbox-ext-vnc: VNC server support'
-    'virtualbox-sdk: Developer kit')
+              'virtualbox-guest-iso: Guest Additions CD image'
+              'virtualbox-ext-vnc: VNC server support'
+              'virtualbox-sdk: Developer kit')
   backup=('etc/vbox/vbox.cfg')
   replaces=('virtualbox-ose')
   conflicts=('virtualbox-ose')
@@ -280,15 +280,15 @@ package_virtualbox-host-dkms() {
 package_virtualbox-guest-utils() {
   pkgdesc='VirtualBox Guest userspace utilities'
   depends=('glibc' 'pam' 'libx11' 'libxcomposite' 'libxdamage' 'libxext'
-    'libxfixes' 'libxmu' 'libxt' 'xorg-xrandr' 'xf86-video-vmware'
-    'VIRTUALBOX-GUEST-MODULES')
+           'libxfixes' 'libxmu' 'libxt' 'xorg-xrandr' 'xf86-video-vmware'
+           'VIRTUALBOX-GUEST-MODULES')
   replaces=('virtualbox-archlinux-additions'
-    'virtualbox-guest-additions'
-    'virtualbox-guest-dkms')
+            'virtualbox-guest-additions'
+            'virtualbox-guest-dkms')
   conflicts=('virtualbox-archlinux-additions'
-    'virtualbox-guest-additions'
-    'virtualbox-guest-utils-nox'
-    'virtualbox-guest-dkms')
+             'virtualbox-guest-additions'
+             'virtualbox-guest-utils-nox'
+             'virtualbox-guest-dkms')
 
   source "VirtualBox-${pkgver}/env.sh"
   pushd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/bin/additions"
@@ -313,7 +313,7 @@ package_virtualbox-guest-utils-nox() {
   depends=('glibc' 'pam' 'VIRTUALBOX-GUEST-MODULES')
   replaces=('virtualbox-guest-dkms')
   conflicts=('virtualbox-guest-utils'
-    'virtualbox-guest-dkms')
+             'virtualbox-guest-dkms')
 
   source "VirtualBox-${pkgver}/env.sh"
   pushd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/bin/additions"
