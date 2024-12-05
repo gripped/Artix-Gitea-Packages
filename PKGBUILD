@@ -2,7 +2,7 @@
 # Maintainer: Igor <f2404@yandex.ru>
 pkgname=package-query
 pkgver=1.12.2
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Query ALPM and AUR"
 arch=('i686' 'x86_64' 'mips64el' 'armv6h' 'armv7h' 'arm' 'aarch64')
 url="https://github.com/archlinuxfr/package-query"
