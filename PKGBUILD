@@ -27,8 +27,17 @@ makedepends=(
   'rapidfuzz-cpp'
 )
 checkdepends=('python-pytest')
-source=("$_name-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('cb3bb55b37b5bfa8dc95d78dc6898154b4d4240c27348c6e03b13cdaa2c8ff19d1e8f2bf3d6b4fcc5c77be917afaa391276e93dcac24c2c19e1b285653a45c72')
+source=("$_name-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz"
+        'fix_backend.patch')
+b2sums=('cb3bb55b37b5bfa8dc95d78dc6898154b4d4240c27348c6e03b13cdaa2c8ff19d1e8f2bf3d6b4fcc5c77be917afaa391276e93dcac24c2c19e1b285653a45c72'
+        'e166301b612375d60087af4d0e8e3cb80d8b5a43f1164d67951f30fb19224be7373a4547d059f6445f5c00723fd3fe8e3a60bb7a44103dc5bb6c86984eb3561e')
+
+prepare() {
+
+  # fix backend_patch
+  cd "$_name"-"$pkgver"/_custom_build
+  patch backend.py < ../../fix_backend.patch
+}
 
 build() {
   cd "$_name-$pkgver"

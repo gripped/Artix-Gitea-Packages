@@ -1,0 +1,11 @@
+--- backend.py	2024-12-05 18:37:40.000000000 -0300
++++ fix_backend.py	2024-12-05 18:47:26.308951311 -0300
+@@ -51,7 +51,7 @@
+ 
+ def _cmake_required():
+     try:
+-        if _version.parse(_get_cmake_version()) >= _version.parse("3.12"):
++        if _version.parse(_get_cmake_version().split("-")[0]) >= _version.parse("3.12"):
+             print("Using System version of cmake")
+             return False
+     except _SKBuildError:
