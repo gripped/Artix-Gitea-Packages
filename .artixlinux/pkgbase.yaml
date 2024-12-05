@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-fonttools
-  version: 4.55.1-1.1
+  version: 4.55.1-2
   arch:
     - x86_64
   pkgname:
     - python-fonttools
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.55.1-1
+    version: 4.55.1-2
     packages:
-      - python-fonttools-4.55.1-1-x86_64.pkg.tar.zst
+      - python-fonttools-4.55.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
