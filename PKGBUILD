@@ -5,7 +5,7 @@
 pkgname=python-types-python-dateutil
 _name=${pkgname#python-}
 pkgver=2.9.0.20241003
-pkgrel=1
+pkgrel=2
 pkgdesc="Typing stubs for python-dateutil"
 arch=(any)
 url="https://pypi.org/project/types-python-dateutil/"
