@@ -28,9 +28,11 @@ _commit='26917be34e943fd082f13f3106b84b4c27a7f56a'
 source=(
   "$pkgname::git+$url#commit=$_commit"
   'github.com-taskflow-taskflow::git+https://github.com/taskflow/taskflow'
+  fix_backend.patch
 )
 b2sums=('SKIP'
-        'SKIP')
+        'SKIP'
+        'e166301b612375d60087af4d0e8e3cb80d8b5a43f1164d67951f30fb19224be7373a4547d059f6445f5c00723fd3fe8e3a60bb7a44103dc5bb6c86984eb3561e')
 
 pkgver() {
   cd "$pkgname"
@@ -45,6 +47,11 @@ prepare() {
   git submodule init extern/taskflow
   git config submodule.extern/taskflow.url "$srcdir/github.com-taskflow-taskflow"
   git -c protocol.file.allow=always submodule update
+  
+  # fix backend_patch
+  cd _custom_build
+  patch backend.py < ../../fix_backend.patch
+
 }
 
 build() {
