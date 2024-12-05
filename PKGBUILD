@@ -4,10 +4,10 @@
 
 _url=https://gitea.artixlinux.org/artix
 _extras=1.2
-_alpm=1.4
+_alpm=1.7
 
 pkgname=openrc
-pkgver=0.54
+pkgver=0.55.1
 pkgrel=1
 pkgdesc="Gentoo's universal init system"
 arch=('x86_64')
@@ -59,13 +59,13 @@ source=(
     "git+${_url}/openrc-extra.git#tag=${_extras}"
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
 )
-sha256sums=('c84ff1d8e468c043fe136d11d3d34d6bb28328267d1352526a5d18cdf4c60fb0'
+sha256sums=('102e53825031361e4d96a5c0a7eb192bd64b0a6b227bb0568651efc8f5972952'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             'e8f5374e4efd64db07a8f352a10da065e9393761faf64b7f26aba1928d4286af'
             '3924bfe28ef14f2d20c03675f246ffb4fdc83f6a5b80f4b3bda0d5e7a14303ef'
             '88c2ddad5ac5d347962ce9805a0ed7a4f1737aaafa3d6a8c0a7a55009ce5fef1'
-            '8cd1cb0f89c4afe85cd286a10647f18e4443faed58f663ec3da39fa4cd807512')
+            '6b89db32c61731ae970a7043907c08c51df3aa6b0fb9a527e70a2b6346150511')
 
 prepare() {
     cd "${pkgname}-${pkgver}"
