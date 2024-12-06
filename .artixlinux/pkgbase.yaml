@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: apache-openrc
-  version: 20210505-2
+  version: 20241206-1
   arch:
     - any
   pkgname:
     - apache-openrc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20210505-2
+    version: 20241206-1
     packages:
-      - apache-openrc-20210505-2-any.pkg.tar.zst
+      - apache-openrc-20241206-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

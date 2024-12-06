@@ -1,8 +1,8 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: artist for Artix Linux
 
 pkgname=apache-openrc
-pkgver=20210505
-pkgrel=2
+pkgver=20241206
+pkgrel=1
 pkgdesc="OpenRC apache init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -14,8 +14,8 @@ conflicts=('init-apache')
 backup=('etc/conf.d/httpd')
 source=("httpd.initd"
 	"httpd.confd")
-sha256sums=('c3011deea0fe26fb7cf9a9b2b37b595e78227ba6baf2a0689c41dcfa52e32c42'
-            'add98ad7786a5037828f61fb5e26072552eb3f9b1b0f77a5d67cc419020bb66e')
+sha256sums=('583f7e0ad6b66429768ee4bbd923dc10a9ab1e6b5c1ae7fbddd30871ba33ec83'
+            '30c5396e16cfa7648dd72dcafe025b15949bae6c248d9048100c7c2dc64a0d5d')
 
 package() {
 	install -Dm755 "${srcdir}"/httpd.initd "${pkgdir}"/etc/init.d/httpd
