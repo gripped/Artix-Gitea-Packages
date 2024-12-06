@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-psycopg2
-  version: 2.9.9-3
+  version: 2.9.9-4
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.9.9-3
+    version: 2.9.9-4
     packages:
-      - python-psycopg2-2.9.9-3-x86_64.pkg.tar.zst
+      - python-psycopg2-2.9.9-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
