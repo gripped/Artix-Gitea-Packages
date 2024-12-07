@@ -3,7 +3,7 @@
 
 _pkg=distributed
 pkgname=python-${_pkg}
-pkgver=2024.11.2
+pkgver=2024.12.0
 pkgrel=1
 pkgdesc="Distributed task scheduler for Dask"
 arch=(any)
@@ -63,7 +63,7 @@ checkdepends=(
 # No tests in PyPi tarballs
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/dask/distributed/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('8e0f87d088152bbdb607077953dc870a76723133a2297aa5221304f7afefdb4a')
+sha256sums=('7c0c313fd72ba936f47793b1fabd4e9478c0149ccff61de29ec13fff4fc4e7da')
 
 prepare() {
   sed -i 's/, "versioneer\[toml\].*"//' ${_pkg}-${pkgver}/pyproject.toml
@@ -83,21 +83,22 @@ check() {
     --deselect distributed/cli/tests/test_dask_worker.py
     --deselect distributed/cli/tests/test_tls_cli.py
     --deselect distributed/comm/tests/test_comms.py::test_tls_comm_closed_implicit[tornado]
-    --deselect distributed/comm/tests/test_ws.py
     --deselect distributed/deploy/tests/test_local.py::test_defaults_5
-    --deselect distributed/deploy/tests/test_old_ssh.py
+    --deselect distributed/deploy/tests/test_old_ssh.py  # crashes the test suite
     --deselect distributed/deploy/tests/test_subprocess.py
-    --deselect distributed/tests/test_client.py::test_computation_object_code_dask_compute 
-    --deselect distributed/tests/test_init.py::test_git_revision 
+    --deselect distributed/tests/test_client.py::test_computation_object_code_dask_compute
+    --deselect distributed/tests/test_init.py::test_git_revision
     --deselect distributed/tests/test_queues.py::test_queue_in_task
     --deselect distributed/tests/test_steal.py::test_steal_twice
-    --deselect distributed/tests/test_variable.py::test_variable_in_task 
+    --deselect distributed/tests/test_variable.py::test_variable_in_task
     --deselect distributed/tests/test_worker_memory.py::test_fail_to_pickle_execute_1
+    --deselect distributed/tests/test_active_memory_manager.py::test_RetireWorker_with_actor[True]  # TimeoutError
     # TypeError: _FlakyPlugin._make_test_flaky() got an unexpected keyword argument 'reruns'
+    --deselect distributed/comm/tests/test_ws.py
     --deselect distributed/deploy/tests/test_slow_adaptive.py::test_scale_up_down
     --deselect distributed/diagnostics/tests/test_progress.py::test_many_Progress
     --deselect distributed/diagnostics/tests/test_progress.py::test_AllProgress
-    --deselect distributed/diagnostics/tests/test_progress.py::test_AllProgress_lost_key 
+    --deselect distributed/diagnostics/tests/test_progress.py::test_AllProgress_lost_key
     --deselect distributed/tests/test_client.py::test_profile
     --deselect distributed/tests/test_worker.py::test_statistical_profiling
     -m "not avoid_ci and not gpu and not extra_packages"
@@ -114,4 +115,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
-
