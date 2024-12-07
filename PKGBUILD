@@ -105,14 +105,11 @@ makedepends=(
 )
 source=(
   $url/releases/webkitgtk-$pkgver.tar.xz{,.asc}
-  1cfbdd74e97ea29636ce442322b5399b43937401.patch
 )
 sha256sums=('0eff5f0ab0a2872ec87df62bc32e3289c8af625716ac71e94b298d74e0374176'
-            'SKIP'
-            'd8cd9eb896dcfe4e79c28fe8314bd16e4ef8b298c3d074840408ff981407fb5e')
+            'SKIP')
 b2sums=('df837d4acf53fc404e0ed4de074756c9585238cb8696f4627a7c720bc8d9bff7483ae19b41f564044ebe4bfc8ce0a8673c3773a8f2fe8cea689c214f62f4a645'
-        'SKIP'
-        '4e055a7ed0bc1f2d9da261bcc33a569e9c817751d9ad2472b8e9f9b383cb806dde9fab615625317b4b1fbdb96b7774ae1f4724d812d96fd692e85b7791fae4bf')
+        'SKIP')
 validpgpkeys=(
   # https://www.webkitgtk.org/verifying.html
   5AA3BC334FD7E3369E7C77B291C559DBE4C9123B # Adrián Pérez de Castro <aperez@igalia.com>
@@ -121,7 +118,6 @@ validpgpkeys=(
 
 prepare() {
   cd webkitgtk-$pkgver
-  patch -Np1 -i ../1cfbdd74e97ea29636ce442322b5399b43937401.patch
 }
 
 build() {
