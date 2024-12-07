@@ -3,8 +3,8 @@
 
 _pkg=dask
 pkgname=python-${_pkg}
-pkgver=2024.11.2
-pkgrel=2
+pkgver=2024.12.0
+pkgrel=1
 pkgdesc="Parallel computing with task scheduling"
 arch=(any)
 url="https://dask.org"
@@ -87,7 +87,7 @@ checkdepends=(
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/dask/dask/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
         test-pandas-2.0)
-sha256sums=('eb3d53b85527d8d64504f2c2f8aa599d90f93edfb12d8abac131e0f5618fd3ac'
+sha256sums=('4a33230cb140141e4e0d231ad0726766919850e2821deb6ee696db3e5876b3d4'
             '9ddb45fefbfb1aaa3af20a6a2c6d4fcb20da5b3761e70313c92ae4f4f86634a2')
 
 prepare() {
