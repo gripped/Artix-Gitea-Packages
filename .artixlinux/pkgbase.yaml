@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-coverage
-  version: 7.6.8-2
+  version: 7.6.9-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 7.6.8-2
+    version: 7.6.9-1
     packages:
-      - python-coverage-7.6.8-2-x86_64.pkg.tar.zst
+      - python-coverage-7.6.9-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
