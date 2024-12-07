@@ -5,7 +5,7 @@ _name=pydantic
 pkgname=python-$_name
 # WARNING: upstream pins pydantic-core down to the patch-level and using other versions breaks tests! only update in lock-step with python-pydantic-core!
 pkgver=2.9.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Data parsing and validation using Python type hints'
 arch=(any)
 url="https://github.com/pydantic/pydantic"
@@ -27,7 +27,6 @@ makedepends=(
 checkdepends=(
   python-ansi2html
   python-cloudpickle
-  python-devtools
   python-dirty-equals
   python-email-validator
   python-faker
@@ -80,4 +79,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
-
