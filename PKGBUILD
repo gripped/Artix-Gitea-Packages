@@ -5,13 +5,13 @@
 
 pkgname=python-bottle
 pkgver=0.12.25
-pkgrel=5
+pkgrel=6
 pkgdesc="A fast and simple micro-framework for small web-applications"
 arch=(any)
 url="https://bottlepy.org"
 license=('MIT')
 options=(!emptydirs)
-depends=('python')
+depends=('python' 'python-cgi') # TODO: remove cgi dependency when upgrading bottle to 0.13
 makedepends=('git' 'python-build' 'python-installer' 'python-setuptools'
              'python-wheel')
 checkdepends=('python-mako' 'python-jinja' 'python-cherrypy' 'python-twisted'
