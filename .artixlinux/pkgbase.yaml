@@ -8,12 +8,12 @@ pkgbase:
     - wpewebkit
     - wpewebkit-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,10 +34,8 @@ repos:
       - wpewebkit-2.46.4-1-x86_64.pkg.tar.zst
       - wpewebkit-docs-2.46.4-1-x86_64.pkg.tar.zst
   world:
-    version: 2.46.3-1
-    packages:
-      - wpewebkit-2.46.3-1-x86_64.pkg.tar.zst
-      - wpewebkit-docs-2.46.3-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
