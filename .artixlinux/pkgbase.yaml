@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: hwdata
-  version: 0.389-1
+  version: 0.390-1
   arch:
     - any
   pkgname:
     - hwdata
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 0.389-1
+    version: 0.390-1
     packages:
-      - hwdata-0.389-1-any.pkg.tar.zst
+      - hwdata-0.390-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
