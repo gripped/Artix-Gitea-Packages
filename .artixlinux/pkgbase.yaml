@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - cmake
 actions:
-  addRepo: world-gremlins
-  removeRepo: system-gremlins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.31.2-1
     packages:
       - cmake-3.31.2-1-x86_64.pkg.tar.zst
-  world:
-    version: 3.31.1-1
-    packages:
-      - cmake-3.31.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
