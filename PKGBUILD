@@ -2,8 +2,8 @@
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 pkgname=('python-zstandard')
 _pkgname='zstandard'
-pkgver=0.22.0
-pkgrel=3
+pkgver=0.23.0
+pkgrel=1
 pkgdesc="Python bindings to the Zstandard (zstd) compression library"
 url="https://github.com/indygreg/python-zstandard"
 depends=('python')
@@ -13,7 +13,7 @@ optdepends=('python-cffi')
 license=('BSD')
 arch=('x86_64')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/indygreg/python-zstandard/archive/$pkgver.tar.gz")
-sha256sums=('34ce7ef020afca1344c538a778e2a2e30dc43b11509aa4cb5cf076228d959ca7')
+sha256sums=('f29233338bcef11f233737eb58aba85074f0fd3163bec1a20303de1270e6fb16')
 
 build() {
     cd "${srcdir}/${pkgname}-${pkgver}"
