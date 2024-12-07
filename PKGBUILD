@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-modules-extra
-pkgver=1
+pkgver=2
 pkgrel=1
 pkgdesc='Extra Modules for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -31,6 +31,7 @@ depends=(
   moksha-module-productivity
   moksha-module-rain
   moksha-module-screenshot
+  moksha-module-separator
   moksha-module-slideshow
   moksha-module-snow
   moksha-module-spellchecker
