@@ -9,7 +9,7 @@ pkgbase:
     - wpewebkit-docs
 actions:
   addRepo: null
-  removeRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -29,10 +29,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.46.4-1
-    packages:
-      - wpewebkit-2.46.4-1-x86_64.pkg.tar.zst
-      - wpewebkit-docs-2.46.4-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: null
     packages: []
