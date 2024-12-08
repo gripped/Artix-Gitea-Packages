@@ -97,11 +97,14 @@ makedepends=(
 )
 source=(
   $url/releases/wpewebkit-$pkgver.tar.xz{,.asc}
+  56fd192099634e34c420e7a88aee0a668d46e069.patch
 )
 sha256sums=('a22f6acf5574f9415f5007c6e79c5f8527363d1ae1dbd8d786e67a935ef56d8b'
-            'SKIP')
+            'SKIP'
+            '1ce5ea314e14cfd037cc42b7b924ec5f58c87c087be4e0b614b5f435a0f54378')
 b2sums=('98fa286ea734f698ab3f8a945c343251caca0a65523d3bea8797ef2d66805a6105f7ab34257b0acd41e18e8b381a3bf0d4c40b0ef82d8c8639f6d20b10ce67b1'
-        'SKIP')
+        'SKIP'
+        'a4111477c87beef95665af5f67aef333b94eb4ce0202e987923dd09e2bc67fdad89e7bd3fd8868d39f9195ea2667232b9288f992440e2036ab314bcea04237fe')
 validpgpkeys=(
   # https://wpewebkit.org/release/verify/
   5AA3BC334FD7E3369E7C77B291C559DBE4C9123B # Adrián Pérez de Castro <aperez@igalia.com>
@@ -110,6 +113,7 @@ validpgpkeys=(
 
 prepare() {
   cd wpewebkit-$pkgver
+  patch -Np1 -i ../56fd192099634e34c420e7a88aee0a668d46e069.patch
 }
 
 build() {
