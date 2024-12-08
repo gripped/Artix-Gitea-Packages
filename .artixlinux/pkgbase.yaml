@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: byacc
-  version: 20240109-1
+  version: 20240109-2
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240109-1
+    version: 20240109-2
     packages:
-      - byacc-20240109-1-x86_64.pkg.tar.zst
+      - byacc-20240109-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
