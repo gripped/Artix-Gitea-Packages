@@ -6,7 +6,7 @@ pkgname=(
   webkit2gtk-4.1
   webkit2gtk-4.1-docs
 )
-pkgver=2.46.3
+pkgver=2.46.4
 pkgrel=1
 pkgdesc="Web content engine for GTK"
 url="https://webkitgtk.org"
@@ -105,11 +105,14 @@ makedepends=(
 )
 source=(
   $url/releases/webkitgtk-$pkgver.tar.xz{,.asc}
+  56fd192099634e34c420e7a88aee0a668d46e069.patch
 )
-sha256sums=('85e09fa6ff9fea49678ba9975dbc64ea3242833f8f8a7d6a8937b2f292fcb28d'
-            'SKIP')
-b2sums=('5a842aaece518bc5754dac0da53a169b1438f6811f55978de4718ddf89d603d56c5c3615386af3a5e921feacb0c843383077acc688b4d33cd75d426760559028'
-        'SKIP')
+sha256sums=('0eff5f0ab0a2872ec87df62bc32e3289c8af625716ac71e94b298d74e0374176'
+            'SKIP'
+            'aa9ff3b90f3d850ee8966ef33733ffa64d1606e12ada805eda0277216f1c7a3f')
+b2sums=('df837d4acf53fc404e0ed4de074756c9585238cb8696f4627a7c720bc8d9bff7483ae19b41f564044ebe4bfc8ce0a8673c3773a8f2fe8cea689c214f62f4a645'
+        'SKIP'
+        '5b9d2c97eeedce37032d633d50e2bdf2fcba6aa603b799d297129e995bfc91d45119a0c79d91d21a8223b4df9061c80199e21b757a285b86b3a3642d9c6a9074')
 validpgpkeys=(
   # https://www.webkitgtk.org/verifying.html
   5AA3BC334FD7E3369E7C77B291C559DBE4C9123B # Adrián Pérez de Castro <aperez@igalia.com>
@@ -118,6 +121,7 @@ validpgpkeys=(
 
 prepare() {
   cd webkitgtk-$pkgver
+  patch -Np1 -i ../56fd192099634e34c420e7a88aee0a668d46e069.patch
 }
 
 build() {
