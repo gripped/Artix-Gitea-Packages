@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: liblouis
-  version: 3.32.0-1
+  version: 3.32.0-2
   arch:
     - x86_64
   pkgname:
     - liblouis
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.31.0-2
+    version: 3.32.0-2
     packages:
-      - liblouis-3.31.0-2-x86_64.pkg.tar.zst
+      - liblouis-3.32.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
