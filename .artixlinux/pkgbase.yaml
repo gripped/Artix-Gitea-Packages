@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libdrm
-  version: 2.4.123-1
+  version: 2.4.124-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.4.123-1
+    version: 2.4.124-1
     packages:
-      - libdrm-2.4.123-1-x86_64.pkg.tar.zst
+      - libdrm-2.4.124-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
