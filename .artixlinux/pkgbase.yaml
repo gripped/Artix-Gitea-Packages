@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - yt-dlp
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.11.04-1
+    version: 2024.12.03-2
     packages:
-      - yt-dlp-2024.11.04-1-any.pkg.tar.zst
+      - yt-dlp-2024.12.03-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
