@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pulseaudio
-  version: 17.0-3
+  version: 17.0+r43+g3e2bb8a1e-1
   arch:
     - x86_64
   pkgname:
@@ -38,16 +38,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 17.0-3
+    version: 17.0+r43+g3e2bb8a1e-1
     packages:
-      - pulseaudio-17.0-3-x86_64.pkg.tar.zst
-      - libpulse-17.0-3-x86_64.pkg.tar.zst
-      - pulseaudio-zeroconf-17.0-3-x86_64.pkg.tar.zst
-      - pulseaudio-lirc-17.0-3-x86_64.pkg.tar.zst
-      - pulseaudio-jack-17.0-3-x86_64.pkg.tar.zst
-      - pulseaudio-bluetooth-17.0-3-x86_64.pkg.tar.zst
-      - pulseaudio-equalizer-17.0-3-x86_64.pkg.tar.zst
-      - pulseaudio-rtp-17.0-3-x86_64.pkg.tar.zst
+      - pulseaudio-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - libpulse-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - pulseaudio-zeroconf-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - pulseaudio-lirc-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - pulseaudio-jack-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - pulseaudio-bluetooth-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - pulseaudio-equalizer-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
+      - pulseaudio-rtp-17.0+r43+g3e2bb8a1e-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -66,3 +66,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
