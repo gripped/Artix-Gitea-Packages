@@ -9,7 +9,7 @@
 
 pkgname=tp_smapi
 pkgver=0.44
-pkgrel=98
+pkgrel=102
 pkgdesc="Modules for ThinkPad's SMAPI functionality"
 url='https://github.com/evgeni/tp_smapi'
 arch=(x86_64)
@@ -44,7 +44,7 @@ package() {
 
   find . -name "*.ko" -exec install -Dt "$pkgdir$extradir" {} +
   find "$pkgdir" -name "*.ko" -exec strip --strip-debug {} +
-  find "$pkgdir" -name "*.ko" -exec xz {} +
+  find "$pkgdir" -name '*.ko' -exec zstd --rm -19 {} +
 
   # load module on startup
   echo tp_smapi | install -Dm644 /dev/stdin "$pkgdir/usr/lib/modules-load.d/$pkgname.conf"
