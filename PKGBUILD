@@ -5,7 +5,7 @@ pkgname=(
   lib32-libpulse
 )
 pkgver=17.0+r43+g3e2bb8a1e
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A featureful, general-purpose sound server (32-bit client libraries)"
 url="https://www.freedesktop.org/wiki/Software/PulseAudio/"
 arch=(x86_64)
