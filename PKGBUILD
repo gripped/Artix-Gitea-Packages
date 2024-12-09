@@ -18,8 +18,8 @@ depends=(
   lib32-libasyncns
   lib32-libsndfile
   lib32-libxcb
-  lib32-systemd
   libpulse
+  lib32-udev
 )
 makedepends=(
   git
