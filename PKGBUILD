@@ -91,6 +91,7 @@ build() {
   local meson_options=(
     -D consolekit=disabled
     -D elogind=enabled
+    -D systemd=disabled
     -D pulsedsp-location='/usr/\$LIB/pulseaudio'
     -D stream-restore-clear-old-devices=true
     -D tcpwrap=disabled
