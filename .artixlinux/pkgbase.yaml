@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: cinnamon
-  version: 6.4.0-2
+  version: 6.4.2-1
   arch:
     - x86_64
   pkgname:
     - cinnamon
 actions:
-  addRepo: galaxy-goblins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.4.0-1
+    version: 6.4.2-1
     packages:
-      - cinnamon-6.4.0-1-x86_64.pkg.tar.zst
+      - cinnamon-6.4.2-1-x86_64.pkg.tar.zst
 team: galaxy
