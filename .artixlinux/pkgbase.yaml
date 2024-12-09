@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xapp
-  version: 2.8.6-2
+  version: 2.8.7-2
   arch:
     - x86_64
   pkgname:
     - xapp
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,7 +50,7 @@ repos:
     packages:
       - xapp-2.8.6-2-x86_64.pkg.tar.zst
   galaxy:
-    version: 2.8.6-1
+    version: 2.8.7-2
     packages:
-      - xapp-2.8.6-1-x86_64.pkg.tar.zst
+      - xapp-2.8.7-2-x86_64.pkg.tar.zst
 team: galaxy
