@@ -2,7 +2,7 @@
 
 pkgname='virtualbox-host-modules-artix'
 pkgver=7.1.4
-pkgrel=11
+pkgrel=15
 pkgdesc='Virtualbox host kernel modules for Artix Kernel'
 arch=('x86_64')
 url='https://virtualbox.org/'
@@ -25,7 +25,7 @@ package(){
   _kernver="$(</usr/src/linux/version)"
 
   install -Dt "$pkgdir/usr/lib/modules/$_kernver/extramodules" -m0644 \
-    vboxhost/${pkgver}_OSE/${_kernver}/${CARCH}/module/*
+    vboxhost/${pkgver}_OSE/${_kernver}/${CARCH}/module/*.ko
 
   # compress each module individually
   find "${pkgdir}" -name '*.ko' -exec zstd --rm -19 {} +
