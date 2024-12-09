@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gedit
-  version: 48.1-1
+  version: 48.1-2
   arch:
     - x86_64
   pkgname:
     - gedit
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 48.0-2
+    version: 48.1-2
     packages:
-      - gedit-48.0-2-x86_64.pkg.tar.zst
+      - gedit-48.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
