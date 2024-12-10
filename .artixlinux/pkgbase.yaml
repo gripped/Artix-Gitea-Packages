@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jupyterlab
-  version: 4.3.2-2
+  version: 4.3.3-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.3.2-2
+    version: 4.3.3-2
     packages:
-      - jupyterlab-4.3.2-2-any.pkg.tar.zst
+      - jupyterlab-4.3.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
