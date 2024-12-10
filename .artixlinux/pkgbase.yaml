@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-playwright
-  version: 1.49.0-2
+  version: 1.49.1-2
   arch:
     - any
   pkgname:
@@ -14,7 +14,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.49.0-2
+    version: 1.49.1-2
     packages:
-      - python-playwright-1.49.0-2-any.pkg.tar.zst
+      - python-playwright-1.49.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
