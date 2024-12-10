@@ -11,13 +11,16 @@ license=('Apache-2.0 OR MIT')
 depends=('udev' 'pam')
 makedepends=('cargo')
 backup=('etc/lemurs/config.toml')
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('a366595602c75ed723e7b527ce1b8be33bdb998f5faa824605b97fb4b9e810f4')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz"
+		"rust-stable.patch")
+sha256sums=('a366595602c75ed723e7b527ce1b8be33bdb998f5faa824605b97fb4b9e810f4'
+            '971a83317740066cb96186c6d2be8bfb8beaf3866750fb131ff1923d1fdb602d')
 
 prepare() {
 	cd "${pkgname}-${pkgver}"
 	export RUSTUP_TOOLCHAIN=stable
 	cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+	patch --strip=1 --input=../rust-stable.patch
 }
 
 build() {
