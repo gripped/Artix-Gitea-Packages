@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-httpx-ws
-  version: 0.7.0-1
+  version: 0.7.0-2
   arch:
     - any
   pkgname:
     - python-httpx-ws
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.6.2-2
+    version: 0.7.0-2
     packages:
-      - python-httpx-ws-0.6.2-2-any.pkg.tar.zst
+      - python-httpx-ws-0.7.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
