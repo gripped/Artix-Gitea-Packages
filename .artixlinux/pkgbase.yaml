@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gedit-plugins
-  version: 48.1-1
+  version: 48.1-2
   arch:
     - x86_64
   pkgname:
     - gedit-plugins
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
