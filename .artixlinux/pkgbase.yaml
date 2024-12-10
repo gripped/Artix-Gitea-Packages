@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-scikit-build
-  version: 0.17.6-4
+  version: 0.18.1-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.17.6-4
+    version: 0.18.1-2
     packages:
-      - python-scikit-build-0.17.6-4-any.pkg.tar.zst
+      - python-scikit-build-0.18.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
