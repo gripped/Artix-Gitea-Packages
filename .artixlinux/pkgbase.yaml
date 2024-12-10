@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-django-q2
-  version: 1.7.3-2
+  version: 1.7.4-1
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.7.3-2
+    version: 1.7.4-1
     packages:
-      - python-django-q2-1.7.3-2-any.pkg.tar.zst
+      - python-django-q2-1.7.4-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
