@@ -8,12 +8,12 @@ pkgbase:
     - jsonrpc-glib
     - jsonrpc-glib-docs
 actions:
-  addRepo: lib32
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: lib32
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -43,10 +43,8 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 3.44.1-1
-    packages:
-      - jsonrpc-glib-3.44.1-1-x86_64.pkg.tar.zst
-      - jsonrpc-glib-docs-3.44.1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy-goblins:
     version: null
     packages: []
