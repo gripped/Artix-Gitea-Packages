@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lib32-libelf
-  version: 0.192-1
+  version: 0.192-2
   arch:
     - x86_64
   pkgname:
     - lib32-libelf
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 0.192-1
+    version: 0.192-2
     packages:
-      - lib32-libelf-0.192-1-x86_64.pkg.tar.zst
+      - lib32-libelf-0.192-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
