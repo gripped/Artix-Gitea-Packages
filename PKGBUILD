@@ -2,7 +2,7 @@
 
 pkgname=python-dbusmock
 pkgver=0.32.2
-pkgrel=2
+pkgrel=1
 pkgdesc="Mock D-Bus objects for tests"
 url="https://github.com/martinpitt/python-dbusmock"
 arch=(any)
