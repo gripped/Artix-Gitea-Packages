@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zabbix
-  version: 7.0.6-1
+  version: 7.2.0-1
   arch:
     - x86_64
   pkgname:
@@ -12,12 +12,12 @@ pkgbase:
     - zabbix-frontend-php
     - zabbix-web-service
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,8 +33,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 7.2.0-1
+    packages:
+      - zabbix-server-7.2.0-1-x86_64.pkg.tar.zst
+      - zabbix-agent-7.2.0-1-x86_64.pkg.tar.zst
+      - zabbix-agent2-7.2.0-1-x86_64.pkg.tar.zst
+      - zabbix-proxy-7.2.0-1-x86_64.pkg.tar.zst
+      - zabbix-frontend-php-7.2.0-1-x86_64.pkg.tar.zst
+      - zabbix-web-service-7.2.0-1-x86_64.pkg.tar.zst
   world:
     version: 7.0.6-1
     packages:
