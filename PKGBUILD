@@ -4,7 +4,7 @@
 
 pkgname=breezy
 pkgver=3.3.9
-pkgrel=1
+pkgrel=3
 pkgdesc='A decentralized revision control system with support for Bazaar and Git file formats'
 arch=(x86_64)
 url=https://www.breezy-vcs.org/
@@ -51,10 +51,17 @@ replaces=(bzr)
 source=(
   "https://launchpad.net/brz/${pkgver%.*}/$pkgver/+download/breezy-$pkgver.tar.gz"
   "https://launchpad.net/brz/${pkgver%.*}/$pkgver/+download/breezy-$pkgver.tar.gz.asc"
+  "0001-Adapt-to-GPGME-handling-invalid-GPG-data-in-signatur.patch"
 )
 sha256sums=('c2588bf217c8a4056987ecf6599f0ad9fb8484285953b2e61905141f43c3d5d8'
-            'SKIP')
+            'SKIP'
+            '3a1176252ec763983fa017d9fc70fcee38ecff5f2438b81dd3dbef66772b8c19')
 validpgpkeys=('DC837EE14A7E37347E87061700806F2BD729A457') # Jelmer Vernooĳ <jelmer@jelmer.uk>
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i ../0001-Adapt-to-GPGME-handling-invalid-GPG-data-in-signatur.patch
+}
 
 build() {
   cd $pkgname-$pkgver
@@ -63,14 +70,17 @@ build() {
 
 check() {
   cd $pkgname-$pkgver
-  python -m installer -d tmp_install dist/*.whl
+  python -m installer --destdir=tmp_install dist/*.whl
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   export PYTHONPATH="$PWD/tmp_install/$site_packages"
-  export BRZ_PLUGIN_PATH=-site:-user
+  # Excluded tests are flaky, failing with the following error, at least when
+  # run in parallel:
+  # ssl.SSLError: [SYS] unknown error (_ssl.c:2570)
   "$PWD/tmp_install/usr/bin/brz" selftest \
     --parallel=fork \
     --verbose \
-    -Oselftest.timeout=120 ||:
+    --exclude="breezy.bzr.tests.test_read_bundle.TestReadMergeableBundleFromURL" \
+    -Oselftest.timeout=120
 }
 
 package() {
