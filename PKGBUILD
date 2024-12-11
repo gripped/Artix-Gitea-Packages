@@ -7,7 +7,7 @@ pkgname=(
   json-glib-docs
 )
 pkgver=1.10.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="JSON library built on GLib"
 url="https://gnome.pages.gitlab.gnome.org/json-glib/"
 arch=(x86_64)
