@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pypandoc
-  version: 1.13-3
+  version: 1.14-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.13-3
+    version: 1.14-2
     packages:
-      - python-pypandoc-1.13-3-any.pkg.tar.zst
+      - python-pypandoc-1.14-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
