@@ -3,10 +3,10 @@
 
 pkgbase="sqlite"
 pkgname=('sqlite' 'sqlite-tcl' 'sqlite-analyzer' 'lemon' 'sqlite-doc')
-_srcver=3470100
+_srcver=3470200
 _docver=${_srcver}
 #_docver=3440000
-pkgver=3.47.1
+pkgver=3.47.2
 pkgrel=1
 pkgdesc="A C library that implements an SQL database engine"
 arch=('x86_64')
@@ -19,8 +19,8 @@ source=(https://www.sqlite.org/2024/sqlite-src-${_srcver}.zip
         sqlite-lemon-system-template.patch
         license.txt)
 # upstream now switched to sha3sums - currently not supported by makepkg
-sha256sums=('572457f02b03fea226a6cde5aafd55a0a6737786bcb29e3b85bfb21918b52ce7'
-            'f9dec8e563db0de0a8171a107f58f71456c16913048082934951d25fddfe4dad'
+sha256sums=('e6a471f1238225f34c2c48c5601b54024cc538044368230f59ff0672be1fc623'
+            '6dcca89a6749029fba81bc0f4188cbd4f78acb48d6a3eadc6d548af9117c3f41'
             '55746d93b0df4b349c4aa4f09535746dac3530f9fd6de241c9f38e2c92e8ee97'
             '4e57d9ac979f1c9872e69799c2597eeef4c6ce7224f3ede0bf9dc8d217b1e65d')
 
@@ -64,7 +64,7 @@ build() {
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
   # build additional tools
-  make showdb showjournal showstat4 showwal sqldiff sqlite3_analyzer
+  make showdb showjournal showstat4 showwal sqldiff sqlite3_analyzer sqlite3_rsync
 }
 
 package_sqlite() {
@@ -77,7 +77,7 @@ package_sqlite() {
   cd sqlite-src-$_srcver
   make DESTDIR="${pkgdir}" install
 
-  install -m755 showdb showjournal showstat4 showwal sqldiff "${pkgdir}"/usr/bin/
+  install -m755 showdb showjournal showstat4 showwal sqldiff sqlite3_rsync "${pkgdir}"/usr/bin/
 
   # install manpage
   install -m755 -d "${pkgdir}"/usr/share/man/man1
