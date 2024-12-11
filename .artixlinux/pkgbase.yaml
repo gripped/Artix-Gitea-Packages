@@ -1,16 +1,19 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: llvm15
+  version: 15.0.7-2
+  arch:
+    - x86_64
+  pkgname:
+    - llvm15
+    - llvm15-libs
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 15.0.7-2
+    packages:
+      - llvm15-15.0.7-2-x86_64.pkg.tar.zst
+      - llvm15-libs-15.0.7-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
