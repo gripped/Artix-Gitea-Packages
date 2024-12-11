@@ -4,7 +4,7 @@
 
 pkgname=matrix-synapse
 pkgver=1.121.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
 arch=('x86_64')
