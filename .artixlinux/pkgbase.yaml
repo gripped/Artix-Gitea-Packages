@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vulkan-tools
-  version: 1.4.303-1
+  version: 1.4.303-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.303-1
+    version: 1.4.303-2
     packages:
-      - vulkan-tools-1.4.303-1-x86_64.pkg.tar.zst
+      - vulkan-tools-1.4.303-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
