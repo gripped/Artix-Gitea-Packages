@@ -9,7 +9,7 @@ pkgname=(
   glib2-docs
 )
 pkgver=2.82.3
-pkgrel=2
+pkgrel=3
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -46,12 +46,14 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/glib.git?signed#tag=$pkgver"
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
   0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
+  0002-Revert-gdbus-Fix-leak-of-method-invocation-when-regi.patch
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
 b2sums=('9abb7878311f0df50affd3e308aa157ff711e8789e9f12b6b95f9cab198e3d662528fa1f8a48d5e489bfb1925886e9c5b1bcc5161d65e6323d04c5f3351df831'
         'SKIP'
         '47cd08ba7e4b3ca0cd19f6dc20e4d73e30cf90f2b78c3d620ee0c7a4d8a4b325a5e88ec2dcc3a63402c16cc1ce8061130afc313e3cbfcd220dff3e642b113a69'
+        'bf1bc7b461724ab110249c677a8da6a2f71bcb3544a1256e462674af3a760b342df65ec4be37416997d3604cd424b5a9f3a2f653b53b12272d708d370264dfc5'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
         'acc2f474139e535f4bdd70ac22a9150f786b3395e679b14d0d3fbb9361d511bb1b5069d95b2a7ac9c0f3d901b03a0c037eb273446ba00764191b30a777bd2bc9')
 validpgpkeys=(
@@ -68,6 +70,9 @@ prepare() {
 
   # Suppress noise from glib-compile-schemas.hook
   git apply -3 ../0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
+
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/glib2/-/issues/9
+  git apply -3 ../0002-Revert-gdbus-Fix-leak-of-method-invocation-when-regi.patch
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
