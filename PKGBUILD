@@ -2,7 +2,7 @@
 
 pkgname=python-numba
 pkgver=0.61.0rc1
-pkgrel=1
+pkgrel=2
 pkgdesc="JIT compiler that translates a subset of Python and NumPy code into fast machine code"
 url="https://numba.pydata.org/"
 arch=(x86_64)
@@ -52,6 +52,11 @@ checkdepends=(
 )
 source=(git+https://github.com/numba/numba#tag=$pkgver)
 sha256sums=('d64f11b5a6621f7da63e315b043e95143e26fce55a7e10a8a73bbdd14efbcaa2')
+
+prepare() {
+  cd numba
+  git revert -n 5e917b96ae7033e994f185cb37329a07e56d51b6 # Drop numpy version constraint
+}
 
 build() {
   cd numba

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-numba
-  version: 0.61.0rc1-1
+  version: 0.61.0rc1-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.61.0rc1-1
+    version: 0.61.0rc1-2
     packages:
-      - python-numba-0.61.0rc1-1-x86_64.pkg.tar.zst
+      - python-numba-0.61.0rc1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
