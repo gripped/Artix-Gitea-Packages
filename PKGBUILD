@@ -8,8 +8,8 @@ pkgname=(
   glib2-devel
   glib2-docs
 )
-pkgver=2.82.2
-pkgrel=2
+pkgver=2.82.3
+pkgrel=1
 pkgdesc="Low level core library"
 url="https://gitlab.gnome.org/GNOME/glib"
 license=(LGPL-2.1-or-later)
@@ -49,7 +49,7 @@ source=(
   gio-querymodules.hook
   glib-compile-schemas.hook
 )
-b2sums=('3ff7ea88d69b945524b28211cd11373856e78813ea2795c6aff040fb264d6323edcd2fd2782d827936bdee34238a6995b2c7a6b51eeac49de583a21a0072a2d2'
+b2sums=('9abb7878311f0df50affd3e308aa157ff711e8789e9f12b6b95f9cab198e3d662528fa1f8a48d5e489bfb1925886e9c5b1bcc5161d65e6323d04c5f3351df831'
         'SKIP'
         '47cd08ba7e4b3ca0cd19f6dc20e4d73e30cf90f2b78c3d620ee0c7a4d8a4b325a5e88ec2dcc3a63402c16cc1ce8061130afc313e3cbfcd220dff3e642b113a69'
         '14c9211c0557f6d8d9a914f1b18b7e0e23f79f4abde117cb03ab119b95bf9fa9d7a712aa0a29beb266468aeb352caa3a9e4540503cfc9fe0bbaf764371832a96'
@@ -124,7 +124,7 @@ package_glib2() {
     'glib2-devel: development tools'
     'gvfs: most gio functionality'
   )
-  options=(staticlibs)
+  options+=(staticlibs)
 
   meson install -C build --destdir "$pkgdir"
 
