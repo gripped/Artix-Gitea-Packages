@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kdevelop-python
-  version: 24.08.3-2
+  version: 24.12.0-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.08.3-2
+    version: 24.12.0-2
     packages:
-      - kdevelop-python-24.08.3-2-x86_64.pkg.tar.zst
+      - kdevelop-python-24.12.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
