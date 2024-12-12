@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-scikit-build-core
-  version: 0.10.6-2
+  version: 0.10.7-2
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.10.6-2
+    version: 0.10.7-2
     packages:
-      - python-scikit-build-core-0.10.6-2-any.pkg.tar.zst
+      - python-scikit-build-core-0.10.7-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
