@@ -14,7 +14,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=6.12
-pkgrel=2
+pkgrel=3
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -25,7 +25,7 @@ makedepends=('git')
 makedepends+=('asciidoc' 'xmlto')
 # perf deps
 makedepends+=('perl' 'python' 'python-setuptools' 'slang' 'elfutils' 'libunwind'
-  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang')
+  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang' 'llvm-libs')
 # cpupower deps
 makedepends+=('pciutils')
 # usbip deps
@@ -157,7 +157,7 @@ package_perf() {
   pkgdesc='Linux kernel performance auditing tool'
   depends=('glibc' 'perl' 'python' 'slang' 'elfutils' 'libunwind' 'binutils'
            'numactl' 'audit' 'coreutils' 'glib2' 'xz' 'zlib' 'libelf' 'bash'
-           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so')
+           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm-libs')
 
   cd linux/tools/perf
   make -f Makefile.perf \
