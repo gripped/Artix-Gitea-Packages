@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: glib2
-  version: 2.82.4-1
+  version: 2.82.4-2
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - glib2-devel
     - glib2-docs
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -18,11 +18,11 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 2.82.3-4
+    version: 2.82.4-2
     packages:
-      - glib2-2.82.3-4-x86_64.pkg.tar.zst
-      - glib2-devel-2.82.3-4-x86_64.pkg.tar.zst
-      - glib2-docs-2.82.3-4-x86_64.pkg.tar.zst
+      - glib2-2.82.4-2-x86_64.pkg.tar.zst
+      - glib2-devel-2.82.4-2-x86_64.pkg.tar.zst
+      - glib2-docs-2.82.4-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: 2.82.4-1
     packages:
