@@ -3,7 +3,7 @@
 _module='stickynotes'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=7.1
+pkgrel=8
 pkgdesc="Sticky Notes module for the E/Moksha desktop"
 _group=('moksha-modules-extra')
 arch=('x86_64')
