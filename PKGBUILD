@@ -3,7 +3,7 @@
 _module='dictionary'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=3.1
+pkgrel=4
 pkgdesc="Launcher Dictionary Frontend, use 'd  ' as trigger."
 _group=('moksha-modules-extra')
 arch=('x86_64')
