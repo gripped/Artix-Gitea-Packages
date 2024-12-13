@@ -25,7 +25,6 @@ build() {
 package() {
   cd "${srcdir}/${_group}/modules/${_module}"
   DESTDIR="${pkgdir}" ninja -C build install
-  install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}/" "README"
   install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" "AUTHORS" "COPYING"
 }
 
