@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pyqt6-charts
-  version: 6.7.0-4
+  version: 6.8.0-2
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.7.0-4
+    version: 6.8.0-2
     packages:
-      - python-pyqt6-charts-6.7.0-4-x86_64.pkg.tar.zst
+      - python-pyqt6-charts-6.8.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
