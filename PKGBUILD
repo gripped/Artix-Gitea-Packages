@@ -9,7 +9,7 @@ _group=('moksha-modules-extra')
 arch=('x86_64')
 url="http://mokshadesktop.org"
 license=('BSD')
-depends=('moksha')
+depends=('moksha' 'aspell')
 makedepends=('git' 'meson>=0.58.0' cmake moksha efl)
 source=("${_module}::git+https://github.com/rbtylee/launcher-${_module}.git")
 sha256sums=('SKIP')
