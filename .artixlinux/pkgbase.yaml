@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: sip
-  version: 6.9.1-1
+  version: 6.9.1-2
   arch:
     - any
   pkgname:
     - sip
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.9.0-2
+    version: 6.9.1-2
     packages:
-      - sip-6.9.0-2-any.pkg.tar.zst
+      - sip-6.9.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
