@@ -4,9 +4,9 @@
 
 _name=FreeRDP
 pkgname=freerdp
-pkgver=3.9.0
+pkgver=3.10.0
 _libver=${pkgver/.*/}
-pkgrel=4
+pkgrel=1
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -65,16 +65,9 @@ provides=(
 )
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
-  $pkgname-3.9.0-fix-overlapping-check.patch::https://github.com/FreeRDP/FreeRDP/commit/d8dc2956e5df589ca0766d88797f1cd4dbb10882.patch
 )
-sha512sums=('c73428975dbe5763cdd7c3334d3482c49f0bc091cab6e9e52b708d132435baa4f60b0a29ced4ace5cd72fc99daa60bd43e33d271d0516b7c05b69d04f348ae52'
-            '3980f3eff7a2b9754b9af83b1cad56683b982acd3a0ece96d57d3f602aef412d731233f517c080f13837d5c3ec6bb8d7829a06cd5534f4c00ae46f9de576bb3e')
-b2sums=('2e20c141a9e9892a748fc6e825c33351d38e73d1e8058dd2c54103b94c69a04783d563d1555ec73c3214851fe915609f4e69b3c6e63f478bd3548ec61d976d67'
-        'ea0149f7e15f227a62feb1aad5bdf84d43edc09dc5ce709525d5a88d614c7c3a08eb58afc3c27801f3e16961a5a2fccc2ac27f82fc7886a829747398129cc055')
-
-prepare() {
-  patch -Np1 -d $_name-$pkgver -i ../$pkgname-3.9.0-fix-overlapping-check.patch
-}
+sha512sums=('9823bd79f7bd3fd5754176a1586bfc5f34e2696667b89ea02c0b7f808846d1bad36fa6a7e0e683bf981fff61c662247dade7b10adf89d35bbad6f6b659d1eeb1')
+b2sums=('33648c3913a8f4cd925d9ff2a1be42e50edd1603979f671b7395f937bd56516ea9c1403efdac603667383c34c9842a47eb5e71c688426ca87ae8e39334ab850f')
 
 build() {
   # gcc14 buildfix
@@ -86,7 +79,7 @@ build() {
     -D CHANNEL_URBDRC_CLIENT=ON
     -D CMAKE_INSTALL_PREFIX=/usr
     -D CMAKE_INSTALL_LIBDIR=lib
-    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_BUILD_TYPE=Release
     -D CMAKE_SKIP_INSTALL_RPATH=ON
     -D PROXY_PLUGINDIR=/usr/lib/$pkgname/server/proxy/plugins
     -D RDTK_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
@@ -108,6 +101,7 @@ build() {
     -D WITH_SYSTEMD=OFF
     -D WITH_SWSCALE=ON
     -D WITH_WAYLAND=ON
+    -D WITH_VERBOSE_WINPR_ASSERT=OFF
     -D WITH_WINPR_TOOLS=ON
     -D WITH_X11=ON
     -D WINPR_UTILS_IMAGE_PNG=ON
