@@ -3,7 +3,7 @@
 _module='calendar'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=4.1
+pkgrel=5
 pkgdesc="Calendar sheet showing the current day."
 _group=('moksha-modules-extra')
 arch=('x86_64')
