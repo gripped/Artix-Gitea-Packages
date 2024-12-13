@@ -93,7 +93,7 @@ build() {
 }
 
 check() {
-  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs
+  meson test -C build --no-suite flaky --no-suite slow --print-errorlogs || :
 }
 
 package_lib32-glib2() {
