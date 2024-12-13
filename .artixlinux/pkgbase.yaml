@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rdma-core
-  version: 54.0-2
+  version: 55.0-1
   arch:
     - x86_64
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 54.0-2
+    version: 55.0-1
     packages:
-      - rdma-core-54.0-2-x86_64.pkg.tar.zst
+      - rdma-core-55.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
