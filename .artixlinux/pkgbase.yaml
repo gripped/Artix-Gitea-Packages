@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cvs
-  version: 1.11.23-15
+  version: 1.11.23-16
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.11.23-15
+    version: 1.11.23-16
     packages:
-      - cvs-1.11.23-15-x86_64.pkg.tar.zst
+      - cvs-1.11.23-16-x86_64.pkg.tar.zst
+team: galaxy
