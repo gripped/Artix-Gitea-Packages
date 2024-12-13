@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-archlinux-support
-  version: 4.1-1
+  version: 4.2-1
   arch:
     - any
   pkgname:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.1-1
+    version: 4.2-1
     packages:
-      - artix-archlinux-support-4.1-1-any.pkg.tar.zst
-      - lib32-artix-archlinux-support-4.1-1-any.pkg.tar.zst
+      - artix-archlinux-support-4.2-1-any.pkg.tar.zst
+      - lib32-artix-archlinux-support-4.2-1-any.pkg.tar.zst
 team: galaxy

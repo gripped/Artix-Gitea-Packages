@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=(artix-archlinux-support lib32-artix-archlinux-support)
-pkgver=4.1
+pkgver=4.2
 pkgrel=1
 arch=('any')
 pkgdesc='Add arch linux repo support'
@@ -26,8 +26,8 @@ package_artix-archlinux-support() {
 
     # compat symlinks
     install -d ${pkgdir}/usr/bin
-    ln -snf /usr/bin/sysusers "${pkgdir}"/usr/bin/systemd-sysusers
-    ln -snf /usr/bin/tmpfiles "${pkgdir}"/usr/bin/systemd-tmpfiles
+    ln -snf /usr/bin/esysusers "${pkgdir}"/usr/bin/systemd-sysusers
+    ln -snf /usr/bin/etmpfiles "${pkgdir}"/usr/bin/systemd-tmpfiles
 
     install -Dm644 arch-release "${pkgdir}"/etc/arch-release
 }
