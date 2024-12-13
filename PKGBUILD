@@ -15,6 +15,8 @@ source=($pkgname-$pkgver.tar.gz::https://github.com/Dushistov/$pkgname/archive/v
 sha256sums=('4d2519e8f8479b9301dc91e9cda3e1eefef19970ece0e8c05f0c7b7ade5dc94b')
 
 build() {
+  export CXXFLAGS+=" -fpermissive"
+
   cd "${srcdir}"/$pkgname-$pkgver
 
   install -d build
