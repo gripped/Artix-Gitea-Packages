@@ -10,37 +10,22 @@ arch=('x86_64')
 url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
-makedepends=('git')
+makedepends=('git' 'meson>=0.58.0' cmake moksha efl)
 source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
 sha256sums=('SKIP')
 options=(!strip)   # Required!
 
 build() {
-    unset CFLAGS   # Required!
-    cd "${srcdir}/${_group}/modules/${_module}"
-    chmod +x autogen.sh
-    if [[ -f configure ]]; then
-      chmod +x configure
-    fi
-    ./autogen.sh \
-      --prefix=/usr
-    make
-
+  cd "$srcdir/$_module"
+  meson --prefix=/usr . build
+  meson configure build
+  ninja -C build
 }
 
 package() {
-
-  cd "${srcdir}/${_group}/modules/${_module}"
-  make DESTDIR="${pkgdir}" install
-
-#  install text files
-  [[ -e ChangeLog ]] && install -Dm644 ChangeLog "${pkgdir}/usr/share/doc/${pkgname}/ChangeLog" || true
-  [[ -e NEWS ]] && install -Dm644 NEWS "${pkgdir}/usr/share/doc/${pkgname}/NEWS" || true
-  [[ -e README ]] && install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README" || true
-
-#  install license files
-  [[ -e AUTHORS ]] && install -Dm644 AUTHORS "${pkgdir}/usr/share/licenses/$pkgname/AUTHORS" || true
-  [[ -e COPYING ]] && install -Dm644 COPYING "${pkgdir}/usr/share/licenses/$pkgname/COPYING" || true
-  [[ -e COPYING-PLAIN ]] && install -Dm644 COPYING-PLAIN "${pkgdir}/usr/share/licenses/$pkgname/COPYING-PLAIN" || true
+  cd "$srcdir/$_module"
+  DESTDIR="${pkgdir}" ninja -C build install
+  install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}/" "README"
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" "AUTHORS" "COPYING"
 }
 
