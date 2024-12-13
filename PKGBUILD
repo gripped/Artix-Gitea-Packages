@@ -3,7 +3,7 @@
 _module='desktitle'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=5.1
+pkgrel=6
 pkgdesc="Gadget to display the current desktop's name."
 _group=('moksha-modules-extra')
 arch=('x86_64')
