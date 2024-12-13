@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-module-desktitle
-  version: 0.1.1-6
+  version: 0.1.1-6.1
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.1.1-6
+    version: 0.1.1-6.1
     packages:
-      - moksha-module-desktitle-0.1.1-6-x86_64.pkg.tar.zst
+      - moksha-module-desktitle-0.1.1-6.1-x86_64.pkg.tar.zst
   galaxy:
     version: 0.1.1-5.1
     packages:

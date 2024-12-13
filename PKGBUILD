@@ -3,7 +3,7 @@
 _module='desktitle'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=6
+pkgrel=6.1
 pkgdesc="Gadget to display the current desktop's name."
 _group=('moksha-modules-extra')
 arch=('x86_64')
@@ -24,6 +24,7 @@ build() {
 package() {
   cd "$srcdir/$_module"
   DESTDIR="${pkgdir}" ninja -C build install
+  install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}/" "README.md"
   install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" "AUTHORS" "COPYING"
 }
 
