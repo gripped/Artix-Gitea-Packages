@@ -15,7 +15,7 @@ pkgname=(
   'intel-speed-select'
 )
 pkgver=6.12
-pkgrel=7
+pkgrel=8
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
