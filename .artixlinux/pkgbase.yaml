@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kdepim-runtime
-  version: 24.12.0-1
+  version: 24.12.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 24.12.0-1
+    version: 24.12.0-1.1
     packages:
-      - kdepim-runtime-24.12.0-1-x86_64.pkg.tar.zst
+      - kdepim-runtime-24.12.0-1.1-x86_64.pkg.tar.zst
   world:
     version: 24.08.3-1
     packages:

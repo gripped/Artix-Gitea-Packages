@@ -6,7 +6,7 @@
 
 pkgname=kdepim-runtime
 pkgver=24.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Extends the functionality of kdepim'
 arch=(x86_64)
 url='https://kontact.kde.org'
