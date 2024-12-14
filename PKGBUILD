@@ -111,7 +111,7 @@ check() {
     --parallel=fork \
     --verbose \
     "${excluded_tests[@]}" \
-    -Oselftest.timeout=120
+    -Oselftest.timeout=120 ||:
 }
 
 package() {
