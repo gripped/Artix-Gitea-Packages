@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=libksieve
-pkgver=24.08.3
+pkgver=24.12.0
 pkgrel=1
 pkgdesc='KDE PIM library for managing sieves'
 arch=(x86_64)
@@ -13,7 +13,6 @@ depends=(gcc-libs
          kcolorscheme
          kcompletion
          kconfig
-         kconfigwidgets
          kcoreaddons
          ki18n
          kiconthemes
@@ -36,7 +35,7 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('7ba274cb2dda9b1dbe539b4b4ab75d0a140267547d8114f7b0f563c547d3ae99'
+sha256sums=('c48699eaafe04d09a0acd134e8c3d10f3db8ef3a017923923499b25d12035272'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
