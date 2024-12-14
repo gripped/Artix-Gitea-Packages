@@ -12,9 +12,10 @@ pkgname=(
   'turbostat'
   'usbip'
   'x86_energy_perf_policy'
+  'intel-speed-select'
 )
 pkgver=6.12
-pkgrel=4
+pkgrel=7
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -25,7 +26,7 @@ makedepends=('git')
 makedepends+=('asciidoc' 'xmlto')
 # perf deps
 makedepends+=('perl' 'python' 'python-setuptools' 'slang' 'elfutils' 'libunwind'
-  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang' 'llvm-libs')
+  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang' 'llvm-libs' 'libpfm')
 # cpupower deps
 makedepends+=('pciutils')
 # usbip deps
@@ -38,6 +39,8 @@ makedepends+=('readline' 'zlib' 'libelf' 'libcap' 'python-docutils')
 makedepends+=('libcap')
 # bpftool
 makedepends+=('llvm' 'clang')
+# intel-speed-select
+makedepends+=('libnl')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
 #        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.2.xz"
@@ -81,7 +84,9 @@ build() {
     NO_SDT=1 \
     BUILD_BPF_SKEL=1 \
     PYTHON=python \
+    NO_LIBLLVM=1 \
     PYTHON_CONFIG=python-config \
+    LIBPFM4=1 \
     DESTDIR="$pkgdir"
   popd
 
@@ -132,6 +137,11 @@ build() {
   pushd linux/tools/bootconfig
   make
   popd
+
+  echo ':: intel-speed-select'
+  pushd linux/tools/power/x86/intel-speed-select
+  make
+  popd
 }
 
 package_linux-tools-meta() {
@@ -147,6 +157,7 @@ package_linux-tools-meta() {
     'turbostat'
     'usbip'
     'x86_energy_perf_policy'
+    'intel-speed-select'
   )
   conflicts=(
     'acpidump'
@@ -157,7 +168,7 @@ package_perf() {
   pkgdesc='Linux kernel performance auditing tool'
   depends=('glibc' 'perl' 'python' 'slang' 'elfutils' 'libunwind' 'binutils'
            'numactl' 'audit' 'coreutils' 'glib2' 'xz' 'zlib' 'libelf' 'bash'
-           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm-libs')
+           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm-libs' 'libpfm')
 
   cd linux/tools/perf
   make -f Makefile.perf \
@@ -168,8 +179,10 @@ package_perf() {
     NO_SDT=1 \
     BUILD_BPF_SKEL=1 \
     PYTHON=python \
+    NO_LIBLLVM=1 \
     PYTHON_CONFIG=python-config \
     DESTDIR="$pkgdir" \
+    LIBPFM4=1 \
     install install-python_ext
   cd "$pkgdir"
   # add linker search path
@@ -268,6 +281,14 @@ package_bootconfig() {
 
   cd linux/tools/bootconfig
   install -dm755 "$pkgdir/usr/bin"
+  make install DESTDIR="$pkgdir"
+}
+
+package_intel-speed-select() {
+  pkgdesc='Intel Speed Select'
+  depends=('libnl')
+
+  cd linux/tools/power/x86/intel-speed-select
   make install DESTDIR="$pkgdir"
 }
 
