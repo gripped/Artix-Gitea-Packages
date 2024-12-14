@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libxau
-  version: 1.0.11-3
+  version: 1.0.12-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.11-3
+    version: 1.0.12-1
     packages:
-      - libxau-1.0.11-3-x86_64.pkg.tar.zst
+      - libxau-1.0.12-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
