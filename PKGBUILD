@@ -1,10 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kig
-pkgver=24.08.3
-pkgrel=2
+pkgver=24.12.0
+pkgrel=1
 pkgdesc='Interactive Geometry'
 url='https://apps.kde.org/kig/'
 arch=(x86_64)
@@ -34,7 +35,7 @@ makedepends=(boost
 groups=(kde-applications
         kde-education)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('c8eed09076aa0b2f1e0712a9088f4aa4d09018f274306c2c5754024bdea3cf38'
+sha256sums=('99ec248a49c0c2a0e94020db6fa06f1fc9d2811b3a46b5fc3ddcca197abeb397'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
