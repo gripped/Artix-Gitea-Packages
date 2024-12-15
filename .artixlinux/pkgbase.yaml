@@ -1,9 +1,9 @@
 ---
 pkgbase:
   name: python-reportlab
-  version: 4.2.2-2
+  version: 4.2.2-3
   arch:
-    - x86_64
+    - any
   pkgname:
     - python-reportlab
 actions:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.2.2-2
+    version: 4.2.2-3
     packages:
-      - python-reportlab-4.2.2-2-x86_64.pkg.tar.zst
+      - python-reportlab-4.2.2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
