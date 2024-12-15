@@ -52,3 +52,4 @@ repos:
     version: 0.6.7-1
     packages:
       - liblangtag-0.6.7-1-x86_64.pkg.tar.zst
+team: world
