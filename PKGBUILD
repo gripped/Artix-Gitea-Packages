@@ -3,8 +3,8 @@
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 
 pkgname=python-pyproj
-pkgver=3.6.1
-pkgrel=3
+pkgver=3.7.0
+pkgrel=2
 pkgdesc="Python interfaces to PROJ.4 library"
 arch=(x86_64)
 url="https://github.com/pyproj4/pyproj"
@@ -13,7 +13,7 @@ depends=(proj python-certifi)
 makedepends=(python-setuptools python-wheel python-build python-installer cython)
 checkdepends=(python-pytest python-numpy python-pandas python-shapely python-xarray)
 source=(https://github.com/pyproj4/pyproj/archive/$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('33b4f865d370e37d290591b13985016e98fa9038a1a5bde5d0c208307ed5221d')
+sha256sums=('4e0bf878dff967d3aba107870ecb1551507e255bdf5b7bde122d54b63c32e1bc')
 
 prepare() {
   # Remove RPATH
