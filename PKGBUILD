@@ -4,7 +4,7 @@
 
 pkgname=python-pillow
 pkgver=11.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Python Imaging Library (PIL) fork'
 arch=('x86_64')
 url='https://python-pillow.org'
@@ -41,6 +41,7 @@ optdepends=(
   'tk: for the ImageTK module'
   'python-olefile: OLE2 file support'
   'python-pyqt6: for the ImageQt module'
+  'python-defusedxml: for reading XMP tags'
 )
 source=(
   "$pkgname::git+https://github.com/python-pillow/Pillow#tag=$pkgver"
