@@ -1,0 +1,91 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+
+pkgname=calligra
+pkgdesc='A set of applications for productivity and creative usage'
+pkgver=24.12.0
+pkgrel=1
+arch=(x86_64)
+url='https://www.calligra-suite.org/'
+license=(GPL-2.0-only)
+depends=(cauchy
+         fontconfig
+         freetype2
+         gcc-libs
+         glibc
+         gsl
+         imath
+         karchive
+         kcolorscheme
+         kcompletion
+         kconfigwidgets
+         kcoreaddons
+         kdbusaddons
+         kdiagram
+         kcmutils
+         kconfig
+         kcrash
+         kguiaddons
+         ki18n
+         kiconthemes
+         kio
+         kitemviews
+         knotifications
+         knotifyconfig
+         ktextwidgets
+         kwidgetsaddons
+         kwindowsystem
+         kxmlgui
+         libodfgen
+         librevenge
+         openssl
+         phonon-qt6
+         qca-qt6
+         qt6-base
+         qt6-declarative
+         qt6-svg
+         qtkeychain-qt6
+         sonnet
+         zlib)
+makedepends=(boost
+             eigen
+             extra-cmake-modules
+             kdoctools
+             libetonyek
+             libvisio
+             libwpg
+             libwps
+             okular
+             pstoedit
+             qt6-webengine
+             vc)
+optdepends=('libetonyek: Apple Keynote import filter'
+            'libvisio: Microsoft Visio import filter'
+            'libwpg: Corel WordPerfect Graphics image importer'
+            'libwps: Microsoft Works file word processor format import'
+            'poppler: PDF to SVG filter'
+            'pstoedit: EPS to SVG filter'
+            'qt6-webengine: Braindump web shape')
+groups=(kde-applications
+        kde-office)
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('71b89f1e8121b8f88ee43376acf7cb7a88cb6d9a078e8ba3f102389f9a1f6097'
+            'SKIP')
+validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
+              F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
+              D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DRELEASE_BUILD=ON \
+    -DPRODUCTSET=DESKTOP \
+    -DBUILD_TESTING=OFF
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
