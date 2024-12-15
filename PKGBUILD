@@ -10,7 +10,7 @@ pkgname=(
   debuginfod
 )
 pkgver=0.192
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Handle ELF object files and DWARF debugging information"
 arch=(x86_64)
 url="https://sourceware.org/elfutils/"
@@ -99,7 +99,7 @@ package_elfutils() {
   make DESTDIR="$pkgdir" install -C $pkgbase
 
   # set the default DEBUGINFOD_URLS environment variable to the distribution's debuginfod URL
-  echo "https://debuginfod.archlinux.org" > "$pkgdir/etc/debuginfod/archlinux.urls"
+  echo "https://debuginfod.artixlinux.org" > "$pkgdir/etc/debuginfod/artixlinux.urls"
 
   (
     cd "$pkgdir"
