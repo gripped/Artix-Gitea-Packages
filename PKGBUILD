@@ -2,8 +2,8 @@
 # Contributor: williamh <williamh@gentoo.org>
 
 pkgname=openrc-settingsd
-pkgver=1.4.0
-pkgrel=2
+pkgver=1.5.0
+pkgrel=1
 pkgdesc="System settings D-Bus service for OpenRC"
 arch=('x86_64')
 url="https://gitlab.com/postmarketOS/openrc-settingsd"
@@ -14,7 +14,7 @@ depends=('gcc-libs' 'glibc' 'glib2' 'libdaemon' 'dbus' 'polkit'
 makedepends=('meson' 'python-packaging')
 backup=('etc/conf.d/openrc-settingsd')
 source=("https://gitlab.com/postmarketOS/openrc-settingsd/-/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz")
-sha256sums=('9d09e02de0faf15ee9a6a742586cf9b1a314591ec50f84e2513636ecfe4f2ff3')
+sha256sums=('f4a74262e0012783047ec1d12dfdf4ef3a983e9abaeb436e17703d6881f72292')
 
 build() {
     local meson_options=(
