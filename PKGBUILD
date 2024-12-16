@@ -6,7 +6,7 @@ pkgname=(
   ostra-cg
 )
 pkgver=1.28
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Pahole and other DWARF utils"
 url="https://git.kernel.org/pub/scm/devel/pahole/pahole.git"
