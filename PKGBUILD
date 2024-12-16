@@ -17,7 +17,7 @@ sha512sums=('bb09474c0d6d4bc00844e7a1ede882f0834d0810804b70b8f8607f2e764f72cc9da
 validpgpkeys=('DAF3A6FDB26B62912D0E8E3FBE86EBB415104FDF') # Daniel P. Berrange <dan@berrange.com>
 
 build() {
-  # artix-meson $pkgname-$pkgver build
+  artix-meson $pkgname-$pkgver build
   meson compile -C build
 }
 
