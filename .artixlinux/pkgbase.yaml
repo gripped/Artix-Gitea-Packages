@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: neomutt
-  version: 20241114-2
+  version: 20241212-1
   arch:
     - x86_64
   pkgname:
     - neomutt
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - neomutt-20241114-2-x86_64.pkg.tar.zst
   world:
-    version: 20241114-1
+    version: 20241212-1
     packages:
-      - neomutt-20241114-1-x86_64.pkg.tar.zst
+      - neomutt-20241212-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
