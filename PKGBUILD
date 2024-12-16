@@ -1,0 +1,34 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
+# Contributor: damir <damir@archlinux.org>
+# Contributor: Tobias Powalowski <t.powa@gmx.de>
+
+pkgname=pstoedit
+pkgver=4.02
+pkgrel=1
+pkgdesc="Translates PostScript and PDF graphics into other vector formats"
+arch=('x86_64')
+url="http://www.pstoedit.net/"
+license=('GPL')
+depends=('gcc-libs' 'plotutils' 'gd' 'imagemagick')
+makedepends=('ghostscript')
+source=("https://downloads.sourceforge.net/sourceforge/pstoedit/pstoedit-${pkgver}.tar.gz")
+sha512sums=('87aab77833354457511c7de6c624cccf838e6cb3ff45cd9690268b28e7d62f19c102a9afaf20faab72d726bbbaf3ed6dc6809edb0efc4c8f1ebfeefb553b87cc')
+
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  sed -e 's|ImageMagick++|Magick++|' -i configure.ac
+  autoreconf -vi
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+}
