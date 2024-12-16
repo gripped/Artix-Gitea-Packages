@@ -10,7 +10,7 @@
 
 pkgname=lilypond
 pkgver=2.24.4
-pkgrel=2
+pkgrel=4
 pkgdesc="Music engraving program, devoted to producing the highest-quality sheet music possible"
 arch=(x86_64)
 url="https://lilypond.org"
@@ -23,7 +23,7 @@ depends=(fontconfig libfontconfig.so
          glib2 libgobject-2.0.so
          glibc libglib-2.0.so
          gsfonts
-         guile2.2 libguile-2.2.so
+         guile
          harfbuzz libharfbuzz.so
          pango libpango-1.0.so libpangoft2-1.0.so
          )

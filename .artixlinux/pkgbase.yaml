@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: lilypond
-  version: 2.24.4-2
+  version: 2.24.4-4
   arch:
     - x86_64
   pkgname:
     - lilypond
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - lilypond-2.24.4-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.24.4-4
+    packages:
+      - lilypond-2.24.4-4-x86_64.pkg.tar.zst
   world:
     version: 2.24.4-1
     packages:
