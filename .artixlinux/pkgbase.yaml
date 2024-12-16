@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-perl-critic
-  version: 1.152-2
+  version: 1.156-1
   arch:
     - any
   pkgname:
     - perl-perl-critic
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.152-2
+    version: 1.156-1
     packages:
-      - perl-perl-critic-1.152-2-any.pkg.tar.zst
+      - perl-perl-critic-1.156-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
