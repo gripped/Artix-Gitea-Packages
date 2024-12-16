@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-test-utf8
-  version: 1.02-4
+  version: 1.03-1
   arch:
     - any
   pkgname:
     - perl-test-utf8
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.02-4
+    version: 1.03-1
     packages:
-      - perl-test-utf8-1.02-4-any.pkg.tar.zst
+      - perl-test-utf8-1.03-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
