@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pytest-cov
-  version: 5.0.0-2
+  version: 6.0.0-1
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 5.0.0-2
+    version: 6.0.0-1
     packages:
-      - python-pytest-cov-5.0.0-2-any.pkg.tar.zst
+      - python-pytest-cov-6.0.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
