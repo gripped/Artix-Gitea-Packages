@@ -4,7 +4,7 @@
 
 pkgname=dtc
 pkgver=1.7.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Device Tree Compiler'
 url='https://www.devicetree.org/'
 arch=(x86_64)
@@ -13,7 +13,6 @@ depends=(
   bash
   glibc
   libyaml
-  python
 )
 makedepends=(
   git
@@ -22,6 +21,7 @@ makedepends=(
   swig
 )
 checkdepends=(valgrind)
+optdepends=('python: Python bindings')
 source=("git+git://git.kernel.org/pub/scm/utils/dtc/dtc.git#tag=v$pkgver")
 sha256sums=('3e28d3c2d3e069331d8e4799892933ab667ffec71164fdefd0b390d25a69e0b8')
 
