@@ -4,7 +4,7 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.10.1
+pkgver=4.11.0
 pkgrel=1
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
@@ -13,11 +13,12 @@ license=(BSD)
 depends=(openssl libevent fstrm protobuf-c)
 validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wouter@nlnetlabs.nl>
               C3E356788FAD0179D872D092BA811E62E7194568
-              9E32AFD129E3AB1DC5AB34DE7DE08345DE34009F) # Jeroen Koekkoek <jeroen@koekkoek.nl>
+              9E32AFD129E3AB1DC5AB34DE7DE08345DE34009F # Jeroen Koekkoek <jeroen@koekkoek.nl>
+              DC34EE5DB2417BCC151E5100E5F8F8212F77A498) # Willem Toorop
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('c0190f923f0095995f2e6331dacd92c6e1f4d578b880d61690602b43a5acfd84'
+sha256sums=('93956d90d45ffa9f84f8ca2f718a42105e4236d094ce032211849f1a12cdc158'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
