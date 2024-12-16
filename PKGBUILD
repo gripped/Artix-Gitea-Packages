@@ -11,7 +11,7 @@ license=('GPL-1.0-only')
 groups=('openrc-world')
 depends=('gcc-libs' 'glibc' 'glib2' 'libdaemon' 'dbus' 'polkit'
         'nss-myhostname' 'openrc')
-makedepends=('meson' 'python-packaging')
+makedepends=('meson' 'python-packaging' 'glib2-devel')
 backup=('etc/conf.d/openrc-settingsd')
 source=("https://gitlab.com/postmarketOS/openrc-settingsd/-/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz")
 sha256sums=('f4a74262e0012783047ec1d12dfdf4ef3a983e9abaeb436e17703d6881f72292')
