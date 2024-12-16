@@ -2,8 +2,8 @@
 # Maintainer: Mantas M. <grawity@gmail.com>
 
 pkgname=sssd
-pkgver=2.10.0
-pkgrel=6
+pkgver=2.10.1
+pkgrel=3
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -45,9 +45,11 @@ checkdepends=(
 options=('!lto')
 backup=('etc/logrotate.d/sssd')
 source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc}
+        "sssd-perms.service"
         "sssd-perms.tmpfile")
-sha512sums=('d237ff135fb21bcd1040787d6dfe8fa383290fbae1f15c6917284beb38dd95ecf6418335302e26be40c65e44e8b44135499eec0b98119ea53a38098ac0bc1e2c'
+sha512sums=('001ff9cd60aa510ead11e418a1b96714136cc270b29551027cb12c340744890b358da5900a10863d4df649ad073f14f6f26c28e3f973b1cd5c2ab61f2a2a045b'
             'SKIP'
+            'aec6bac39318db2b66ebdbae5fb78db758951f53f0f3385b33b4a6d16341f11296faed147520b2d60f1b25e0cb7ca78565ffbdc27b2102f1f28c2250f1b63582'
             '21646ea5900340c1b0a69c79fc72b0d3e360d56e04dc0daf7947024a420d214a931365e684e8f7cfd37c959327e6909ad4c0d6c3a8186153bca870f508dad486')
 validpgpkeys=('C13CD07FFB2DB1408E457A3CD3D21B2910CF6759')
 
@@ -80,18 +82,22 @@ build() {
     --sbindir=/usr/bin                            \
     --sysconfdir=/etc                             \
     --localstatedir=/var                          \
+    --runstatedir=/run                            \
     --libexecdir=/usr/lib/sssd                    \
     --datadir=/usr/share                          \
     --enable-pammoddir=/usr/lib/security          \
     --enable-pac-responder                        \
     --with-os=fedora                              \
-    --with-pid-path=/run                          \
     --without-python2-bindings                    \
     --with-python3-bindings                       \
-    --with-syslog=syslog                          \
+    --with-syslog=journald                        \
     --with-files-provider                         \
+    --with-sssd-user=sssd                         \
+    --with-subid                                  \
+    --with-passkey                                \
     --without-selinux                             \
     --without-semanage                            \
+    --with-tmpfilesdir=/usr/lib/tmpfiles.d        \
     --with-ldb-lib-dir=/usr/lib/samba/ldb \
     ;
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
@@ -117,8 +123,8 @@ package() {
   install -Dm0644 contrib/sssd.sysusers "$pkgdir"/usr/lib/sysusers.d/sssd.conf
   install -Dm0644 "$srcdir"/sssd-perms.tmpfile "$pkgdir"/usr/lib/tmpfiles.d/sssd-perms.conf
 
-  setcap cap_chown,cap_dac_override,cap_setuid,cap_setgid=ep "$pkgdir"/usr/lib/sssd/sssd/krb5_child
-  setcap cap_chown,cap_dac_override,cap_setuid,cap_setgid=ep "$pkgdir"/usr/lib/sssd/sssd/ldap_child
+  setcap cap_dac_read_search,cap_setgid,cap_setuid=p "$pkgdir"/usr/lib/sssd/sssd/krb5_child
+  setcap cap_dac_read_search=p "$pkgdir"/usr/lib/sssd/sssd/ldap_child
   setcap cap_dac_read_search=p "$pkgdir"/usr/lib/sssd/sssd/sssd_pam
 
   cd "$srcdir"
