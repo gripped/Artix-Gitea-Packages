@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-module-pluggable
-  version: 5.2-11
+  version: 6.2-1
   arch:
     - any
   pkgname:
     - perl-module-pluggable
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.2-11
+    version: 6.2-1
     packages:
-      - perl-module-pluggable-5.2-11-any.pkg.tar.zst
+      - perl-module-pluggable-6.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
