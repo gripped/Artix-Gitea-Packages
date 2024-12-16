@@ -2,7 +2,7 @@
 # Contributor: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=git-lfs
-pkgver=3.5.1
+pkgver=3.6.0
 pkgrel=1
 pkgdesc="Git extension for versioning large files"
 arch=('x86_64' 'aarch64')
@@ -39,4 +39,10 @@ package() {
   install -Dm644 LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
   install -Dm644 -t "$pkgdir"/usr/share/man/man1 man/man1/*.1
   install -Dm644 -t "$pkgdir"/usr/share/man/man5 man/man5/*.5
+  "${pkgname}" completion bash | install -Dm644 /dev/stdin \
+    "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+  "${pkgname}" completion fish | install -Dm644 /dev/stdin \
+    "${pkgdir}/usr/share/fish/vendor_completions.d/${pkgname}.fish"
+  "${pkgname}" completion zsh | install -Dm644 /dev/stdin \
+    "${pkgdir}/usr/share/zsh/site-functions/_${pkgname}"
 }
