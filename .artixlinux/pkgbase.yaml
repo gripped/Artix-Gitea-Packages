@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-gevent
-  version: 24.2.1-4
+  version: 24.11.1-1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.2.1-4
+    version: 24.11.1-1
     packages:
-      - python-gevent-24.2.1-4-x86_64.pkg.tar.zst
+      - python-gevent-24.11.1-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
