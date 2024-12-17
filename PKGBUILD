@@ -1,10 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 
 _pkgname=poetry-plugin-export
 pkgname=python-poetry-plugin-export
 pkgver=1.8.0
-pkgrel=3
+pkgrel=2
 pkgdesc="Poetry plugin to export the dependencies to various formats "
 url="https://github.com/python-poetry/poetry-plugin-export"
 license=('MIT')
