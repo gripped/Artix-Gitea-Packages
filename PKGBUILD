@@ -3,7 +3,7 @@
 _pyname=pysol_cards
 pkgname=python-$_pyname
 pkgver=0.18.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Deal PySol FC Cards'
 arch=(any)
 url='https://pypi.org/project/pysol-cards/'
