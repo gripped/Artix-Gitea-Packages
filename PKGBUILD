@@ -1,0 +1,161 @@
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+
+pkgname=opensnitch
+pkgver=1.6.6
+pkgrel=3
+pkgdesc='A GNU/Linux application firewall'
+arch=('x86_64')
+url='https://github.com/evilsocket/opensnitch'
+license=('GPL-3.0-or-later')
+depends=(
+  'glibc'
+  'hicolor-icon-theme'
+  'libnetfilter_queue'
+  'libnfnetlink'
+  'python'
+  'python-grpcio'
+  'python-protobuf'
+  'python-slugify'
+  'python-pyqt5'
+  'python-pyinotify'
+  'python-notify2'
+)
+makedepends=(
+  'git'
+  'go'
+  'python-grpcio-tools'
+  'python-build'
+  'python-installer'
+  'python-wheel'
+  'python-setuptools'
+  'python-jaraco.text'
+  'qt5-tools'
+)
+optdepends=(
+  'logrotate: logfile rotation'
+  'python-qt-material: extra ui themes'
+  'python-pyasn: display network name of IP'
+)
+backup=(
+  'etc/opensnitchd/default-config.json'
+  'etc/opensnitchd/system-fw.json'
+)
+options=('!lto')
+source=(
+  "$pkgname::git+$url#tag=v$pkgver"
+  'remove-debian-path.patch'
+  'fix-setup.py.patch'
+  'add-generated-protobuf-files.patch'
+  'use-system-python-packages.patch'
+  'add-translations.patch'
+  'template-version-strings.patch'
+  'tmpfiles.conf'
+)
+sha512sums=('ca6839728da55e6f7349426eb7eada89fe865ee43b3b3f2c8f2ce175d9f920d12e7797707e974db001483fd846a3aa48b500ee146d8069c9be2b136b67456552'
+            '36b6056cdc0a24c8899a1daafd9983f1feb44df0ec3972e7e1759a3d5d6486d7c977d8e6ce9edb5456e57231266d3473547219ed32983671f151e4d02979c1f0'
+            '3cd3c82c046646426793dbbb8197f40d8a155c78607c65e5cf0a645a93202119b0cc686b555463e013d5032c82ee804a2bd743197fe67236e26ff4cdb04d971b'
+            'eff98be7897103e267bd95e837946126a16e29b22dfc3d1ccb5eba6b1fa7b2efac0c7c59f71175ae5cd1283ecbdd9fc2806b480b92e8b5b83e702fa3d57a9748'
+            '5f9df8a8e4efe63b94dc86068d79b23925a2c2e586f33548f8bb2b68144803886402839b6d0923df4bb313c667346d512f4e200abec9554a9143adf0d052a1a8'
+            '06e6d40658b51bb5254c2ea06cd6ebef139b2d144ea1060e5b2fa7231fb6ecc13c29b8c10b0f59f4d5470775d2ecea13fb171a9c745633a80a9f1d74d1ded493'
+            '94e83cfd6957475c3667900ade91a69491c3e2b7c86f75540d13ebc84953d6bc63abf5e7f6b277a1ec4124593ab8e0222c2167b25a7939dc04e22ccc280f2f19'
+            '11c20c25693bb5a41114e1a37ca159a6c89db70ecfdcc8b4ff0f4d1f1af1fd4fecf5315508261fa860663da4742f4115e10734ce42da2891db4df57e9c1ac79b')
+b2sums=('609440a38ad6c87b2ff638cfb6e3d91a03e38ef12bad3dc3627905f356542612ff54868718f4a77103bed25e5936853df39432f2b6953c9d27a40581cbe33170'
+        'a632dc8cc86a96e569a990ae1f869c3d03766828d7bfd672f2376bc0a5e8eacea8c09e3e889307ccc6138485dbde8a3e154103646cbaa80ffa4d9010abcc426d'
+        '452ac64cc42c818ff8cbd4f0c52c7747b23e7ebcb480f0450d3794725590f3301fa16f634c043b9b394c0868dfd99b1d4bbe8721fdece1c761d44f1ef9b119fb'
+        '0d36bd5aa6ffe769172107134c098aa996c9123e42e8de35391f02dc0ab08b4d43b1a0145ffb33ce40bdc44c55ab7f82396757ff9ba4bba4bc989a4207d4eadb'
+        'cb63b2d3e2f3ed2d31003bbc81fe95a6bdb69d5a952c38e1735b3c24b51c96e391498c56069bd1cd4efdf212294949b77d505f7b2b566f7a7db54c7330d942f2'
+        '5b1ed289ccfb6598941667065a4e533631f374a43793765044ee9f655ac2331595670e383821cf6b7a4114f117905de4895ba2bb430408011cc384821d53355c'
+        '3735659ecc3fc3c1f12ff7b1e910801f3d121e22d86d1e3c025077a2ee8346487991a2daa87ca439c139f02f8e398ea54722f925b36aed6793e641eacfa087d3'
+        '093ecf4398ffcd9f4077b41174e93707ba90cef717fa7e35a44557a52969d356216b08f6a4ce38fc93a7ba4e8cb14c7c2a4368ba0b023527d1ee93879728b30d'
+        '81dbb6ba72d5bf5a0d9fa3dea33b87f03604c1a2537a4ca47b45923ab186e68d5c24b043691a857948ae404409dc3cc66a7ef004ee20dc2451aa5190fe6479bb')
+
+prepare() {
+  cd "$pkgname"
+
+  # TODO file an upstream bug
+  # * fix an issue with setup.py installing to python's site-packages instead
+  # of /usr
+  # * prefer scaled SVG instead of pixellated 48x48 PNG
+  patch -p1 -i "$srcdir/fix-setup.py.patch"
+
+  # add generated protobuf files
+  # required for reproducible builds & to side-step
+  # requirement of protoc-gen-go{,-grpc} binaries
+  patch -p1 -i "$srcdir/add-generated-protobuf-files.patch"
+
+  # use system python packages
+  patch -p1 -i "$srcdir/use-system-python-packages.patch"
+
+  # add generated translation files
+  # required for reproducible builds
+  git apply "$srcdir/add-translations.patch"
+
+  # TODO file an upstream bug
+  # remove Debian-specific path from sys.path
+  patch -p1 -i "$srcdir/remove-debian-path.patch"
+
+  # version strings are currently out of date
+  # template-ify version strings for easier sed invocation (1/2)
+  #patch -p1 -i "$srcdir/template-version-strings.patch"
+
+  # download dependencies
+  cd daemon
+  export GOPATH="${srcdir}"
+  go mod download
+}
+
+build() {
+  cd "$pkgname"
+
+  # template-ify version strings for easier sed invocation (2/2)
+  #sed -e "s/@VERSION@/$pkgver/" -i daemon/core/version.go
+  #sed -e "s/@VERSION@/$pkgver/" -i ui/opensnitch/version.py
+
+  # set Go flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOPATH="${srcdir}"
+
+  # build daemon with debug info
+  pushd daemon
+  go build -v \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-compressdwarf=false \
+    -linkmode external \
+    -extldflags \"${LDFLAGS}\"" \
+    -o opensnitchd \
+    .
+  popd
+
+  # build python package
+  pushd ui
+  python -m build --wheel --no-isolation
+  popd
+}
+
+package() {
+  cd "$pkgname"
+
+  # daemon
+  install -vDm755 -t "$pkgdir/usr/bin" daemon/opensnitchd
+
+  # system integration
+  install -vDm644 "$srcdir/tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
+
+  # configuration
+  install -vDm644 -t "$pkgdir/etc/opensnitchd" daemon/{default-config,system-fw}.json
+
+  # logrotate
+  install -vDm644 utils/packaging/daemon/deb/debian/opensnitch.logrotate "$pkgdir/etc/logrotate.d/$pkgname"
+
+  # python ui
+  python -m installer --destdir="$pkgdir" ui/dist/*.whl
+
+  # TODO file an upstream bug
+  # tests are in site-packages, big no-no
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  rm -rf "$pkgdir/$site_packages/tests"
+}

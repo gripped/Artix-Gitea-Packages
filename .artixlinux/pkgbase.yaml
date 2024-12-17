@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: opensnitch
+  version: 1.6.6-3
+  arch:
+    - x86_64
+  pkgname:
+    - opensnitch
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -27,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.6.6-3
+    packages:
+      - opensnitch-1.6.6-3-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
