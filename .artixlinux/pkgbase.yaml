@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-license-expression
-  version: 30.3.0-2
+  version: 30.4.0-1
   arch:
     - any
   pkgname:
     - python-license-expression
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-license-expression-30.3.0-2-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 30.4.0-1
+    packages:
+      - python-license-expression-30.4.0-1-any.pkg.tar.zst
   world:
     version: 30.3.0-1
     packages:
