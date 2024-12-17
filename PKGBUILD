@@ -1,0 +1,38 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+
+pkgname=chess-tui
+pkgver=1.6.0
+pkgrel=1
+pkgdesc="Play chess in your terminal"
+arch=('x86_64')
+url="https://github.com/thomas-mauran/chess-tui"
+license=('MIT')
+depends=('gcc-libs')
+makedepends=('cargo')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+sha512sums=('67c71caa04871df74e01cd95e129c6cdbde60e63f7b43f00e123dbdb1f2fc6f02c23b601b8e73aaa8640696752d13a06873f99d109d53ba0e45389db16b7af1a')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --frozen
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm 755 "target/release/$pkgname" -t "$pkgdir/usr/bin"
+  install -Dm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
+  install -Dm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
+
+# vim: ts=2 sw=2 et:
