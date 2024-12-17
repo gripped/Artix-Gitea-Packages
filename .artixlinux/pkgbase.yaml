@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-dunamai
-  version: 1.22.0-2
+  version: 1.23.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.22.0-2
+    version: 1.23.0-1
     packages:
-      - python-dunamai-1.22.0-2-any.pkg.tar.zst
+      - python-dunamai-1.23.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
