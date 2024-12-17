@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-tins
-  version: 1.32.1-3
+  version: 1.37.1-1
   arch:
     - any
   pkgname:
     - ruby-tins
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.32.1-3
+    version: 1.37.1-1
     packages:
-      - ruby-tins-1.32.1-3-any.pkg.tar.zst
+      - ruby-tins-1.37.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
