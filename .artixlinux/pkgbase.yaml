@@ -1,9 +1,9 @@
 ---
 pkgbase:
   name: python-genshi
-  version: 0.7.7-4
+  version: 0.7.9-1
   arch:
-    - any
+    - x86_64
   pkgname:
     - python-genshi
 actions:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.7.7-4
+    version: 0.7.9-1
     packages:
-      - python-genshi-0.7.7-4-any.pkg.tar.zst
+      - python-genshi-0.7.9-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
