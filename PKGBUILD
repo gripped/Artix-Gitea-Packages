@@ -9,8 +9,8 @@
 
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
-pkgver=28.3
-pkgrel=2
+pkgver=29.1
+pkgrel=1
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
 url='https://developers.google.com/protocol-buffers/'
@@ -40,7 +40,7 @@ checkdepends=(
 source=(https://github.com/protocolbuffers/protobuf/archive/v$pkgver/$pkgname-$pkgver.tar.gz
         protobuf-fix-build-type-none.patch
         $pkgbase-25.3-ruby-disable-LTO.patch) # https://github.com/protocolbuffers/protobuf/issues/11935
-sha512sums=('a91e175fed7eb01c4240842a5af73a7d3cefccbb10885434bceeb7bc89ab6c56a74912cee290bf46e81d4026f3c9c2b10faad5545816064e215c4bae7908263d'
+sha512sums=('eb604b473e09a5a001bf451ccd417cdb8732ebd3c2075fa46f3d0e48b7ed4d458f05d2e09eedc71c0f4252ba18d3161837efb7a2eed46d78b9eb3cc9b45f96ff'
             '18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd'
             '1ebdea4e533ee0f71baf1b3fe2623ca723b36a08c6b97475ea5996b10aeb6873cf94d9120596ddd1216bd2f6feb991f8c33078e8104008a5078ace5be5431efd')
 
