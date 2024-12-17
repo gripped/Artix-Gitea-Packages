@@ -4,8 +4,8 @@
 # Contributor: Tobias Kieslich <tobias funnychar archlinux.org>
 
 pkgname=xfce4-power-manager
-pkgver=4.18.4
-pkgrel=3
+pkgver=4.20.0
+pkgrel=1
 pkgdesc="Power Manager for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-power-manager/start"
@@ -14,7 +14,7 @@ groups=('xfce4')
 depends=('libxfce4ui' 'upower' 'libnotify' 'xfce4-notifyd' 'hicolor-icon-theme')
 makedepends=('git' 'glib2-devel' 'intltool' 'xfce4-dev-tools' 'xfce4-panel')
 source=("git+https://gitlab.xfce.org/xfce/xfce4-power-manager.git#tag=$pkgname-$pkgver")
-sha256sums=('bbd3b3f584ec8838132fbd79b3815563cf3d478ba3895f7118203d1c7039f0dc')
+sha256sums=('9798ac882a57b1752295d06151104b84741820d665dd0eab734279089bd912aa')
 
 prepare() {
   cd $pkgname
