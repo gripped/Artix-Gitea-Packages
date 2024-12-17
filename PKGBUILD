@@ -5,8 +5,8 @@
 # Contributor: Jan Jezek <honzin.jezek@gmail.com>
 
 pkgname=tumbler
-pkgver=4.18.2
-pkgrel=3
+pkgver=4.20.0
+pkgrel=1
 pkgdesc="Thumbnail service implementing the thumbnail management D-Bus specification"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/tumbler/start"
@@ -23,7 +23,7 @@ optdepends=('ffmpegthumbnailer: video thumbnails'
             'freetype2: font thumbnails')
 backup=('etc/xdg/tumbler/tumbler.rc')
 source=("git+https://gitlab.xfce.org/xfce/tumbler.git#tag=$pkgname-$pkgver")
-sha256sums=('83eb70ba554f701883c1fab8b5d0d1a1b29d9f931717bab9391e92d028017d1c')
+sha256sums=('2ea50e67730c515cd566a1117d66b538ce4680c131ee0533440edc6e434f52d7')
 
 prepare() {
   cd $pkgname
