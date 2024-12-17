@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: python-pyenchant
-  version: 3.2.2-4
+  version: 3.2.2-5
   arch:
     - any
   pkgname:
     - python-pyenchant
+    - python-pyenchant-docs
 actions:
   addRepo: world-goblins
   removeRepo: null
@@ -13,7 +14,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.2.2-4
+    version: 3.2.2-5
     packages:
-      - python-pyenchant-3.2.2-4-any.pkg.tar.zst
+      - python-pyenchant-3.2.2-5-any.pkg.tar.zst
+      - python-pyenchant-docs-3.2.2-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
