@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: girara
-  version: 0.4.4-1
+  version: 0.4.5-1
   arch:
     - x86_64
   pkgname:
     - girara
 actions:
-  addRepo: world
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.4.5-1
+    packages:
+      - girara-0.4.5-1-x86_64.pkg.tar.zst
   world:
     version: 0.4.4-1
     packages:
