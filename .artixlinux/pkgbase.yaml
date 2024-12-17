@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - python-xarray
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -25,12 +25,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 2024.11.0-2
     packages:
       - python-xarray-2024.11.0-2-any.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 2024.11.0-1
     packages:
