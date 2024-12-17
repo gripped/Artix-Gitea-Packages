@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-xmltodict
-  version: 0.13.0-5
+  version: 0.14.2-1
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.13.0-5
+    version: 0.14.2-1
     packages:
-      - python-xmltodict-0.13.0-5-any.pkg.tar.zst
+      - python-xmltodict-0.14.2-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
