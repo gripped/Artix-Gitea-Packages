@@ -3,16 +3,16 @@
 # Contributor: Robin Candau <antiz@archlinux.org>
 
 pkgname=libxfce4windowing
-pkgver=4.19.3
-pkgrel=4
+pkgver=4.20.0
+pkgrel=2
 pkgdesc="Windowing concept abstraction library for X11 and Wayland"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4windowing/start"
 license=('LGPL-2.1-only')
-depends=('gdk-pixbuf2' 'glib2' 'gtk3' 'libwnck3' 'libx11' 'wayland')
-makedepends=('gobject-introspection' 'gtk-doc')
+depends=('gdk-pixbuf2' 'glib2' 'gtk3' 'libwnck3' 'libdisplay-info' 'libx11' 'wayland')
+makedepends=('glib2-devel' 'gobject-introspection' 'gtk-doc' 'wayland-protocols' 'xfce4-dev-tools')
 source=(https://archive.xfce.org/src/xfce/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('3bf6ce5511ef7fb04ddcea79dfdec7a500d8e0b4b7566b28b4cd662adc74bb5a')
+sha256sums=('56f29b1d79606fb00a12c83ef4ece12877d2b22bf1acaaff89537fbe8e939f68')
 
 build() {
   cd $pkgname-$pkgver
