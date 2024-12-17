@@ -5,8 +5,8 @@
 # Contributor: Andrew Simmons <andrew.simmons@gmail.com>
 
 pkgname=thunar
-pkgver=4.18.11
-pkgrel=3
+pkgver=4.20.0
+pkgrel=1
 pkgdesc="Modern, fast and easy-to-use file manager for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/thunar/start"
@@ -22,7 +22,7 @@ optdepends=('catfish: file searching'
             'thunar-archive-plugin: archive creation and extraction'
             'thunar-media-tags-plugin: view/edit ID3/OGG tags')
 source=("git+https://gitlab.xfce.org/xfce/thunar.git#tag=$pkgname-$pkgver")
-sha256sums=('b83537f800a4a86ad06498fdbc475a8e42d9c668a5c9e2121947ce5c79542b6a')
+sha256sums=('b5e97ca9f601ad591c4524f616eea8359291ce17eeb530153af3c8bf9416690e')
 
 prepare() {
   cd $pkgname
