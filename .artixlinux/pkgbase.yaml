@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-dask
-  version: 2024.12.0-0
+  version: 2024.12.0-1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2024.12.0-0
+    version: 2024.12.0-1
     packages:
-      - python-dask-2024.12.0-0-any.pkg.tar.zst
+      - python-dask-2024.12.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
