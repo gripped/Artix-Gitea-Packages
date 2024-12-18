@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-diff-cover
-  version: 9.2.0-2
+  version: 9.2.1-1
   arch:
     - any
   pkgname:
     - python-diff-cover
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 9.2.0-2
+    version: 9.2.1-1
     packages:
-      - python-diff-cover-9.2.0-2-any.pkg.tar.zst
+      - python-diff-cover-9.2.1-1-any.pkg.tar.zst
   world:
     version: 9.2.0-1
     packages:
