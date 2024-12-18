@@ -4,8 +4,8 @@
 # Contributor: Gabriel Fox <inbox@gabrielfox.dev>
 
 pkgname=hyprland
-pkgver=0.45.2
-pkgrel=3
+pkgver=0.46.1
+pkgrel=1
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/${pkgname^}"
@@ -14,9 +14,10 @@ depends=(cairo # libcairo.so
          aquamarine libaquamarine.so
          gcc-libs # libgcc_s.so libstdc++.so
          glibc # libc.so libm.so
-         glib2 libgobject-2.0.so
+         glib2 libgio-2.0.so libgobject-2.0.so
          glslang
          hyprcursor libhyprcursor.so
+         hyprgraphics libhyprgraphics.so
          hyprlang libhyprlang.so
          hyprutils libhyprutils.so
          hyprwayland-scanner
@@ -28,7 +29,7 @@ depends=(cairo # libcairo.so
          libx11
          libxcb # libxcb-dri3.so libxcb-present.so libxcb-render.so libxcb-res.so libxcb-shm.so libxcb.so libxcb-xfixes.so libxcb-xinput.so
          libxcomposite # libxcb-composite.so
-         libxcursor
+         libxcursor # libXcursor.so
          libxfixes
          libxkbcommon libxkbcommon.so
          libxrender
@@ -36,9 +37,11 @@ depends=(cairo # libcairo.so
          opengl-driver
          pango libpango-1.0.so libpangocairo-1.0.so
          pixman libpixman-1.so
+         re2 libre2.so
          seatd libseat.so
          libelogind libelogind.so
          tomlplusplus libtomlplusplus.so libudev.so
+         util-linux-libs libuuid.so
          vulkan-icd-loader
          wayland libwayland-client.so libwayland-server.so
          wayland-protocols
@@ -61,7 +64,7 @@ optdepends=('cmake: to build and install plugins using hyprpm'
 provides=(wayland-compositor)
 _archive="${pkgname^}-$pkgver"
 source=("$_archive.tar.gz::$url/releases/download/v$pkgver/source-v$pkgver.tar.gz")
-sha256sums=('d70231021f44980ef1c587e3adcb13471cface8ae580f0b503628b0391a716cb')
+sha256sums=('8a37e3548e390a7d24e149f62232fc8a58b89eb14af1b188cc40f238e6673dc6')
 
 prepare() {
 	ln -sf hyprland-source "$_archive"
