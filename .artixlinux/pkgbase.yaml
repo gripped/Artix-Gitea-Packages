@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: meson
-  version: 1.6.0-5
+  version: 1.6.1-1
   arch:
     - any
   pkgname:
     - meson
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.6.0-5
+    version: 1.6.1-1
     packages:
-      - meson-1.6.0-5-any.pkg.tar.zst
+      - meson-1.6.1-1-any.pkg.tar.zst
   world:
     version: 1.6.0-4
     packages:
