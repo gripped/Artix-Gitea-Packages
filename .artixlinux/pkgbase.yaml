@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-fakeredis
-  version: 2.26.1-2
+  version: 2.26.2-2
   arch:
     - any
   pkgname:
     - python-fakeredis
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.26.1-2
+    version: 2.26.2-2
     packages:
-      - python-fakeredis-2.26.1-2-any.pkg.tar.zst
+      - python-fakeredis-2.26.2-2-any.pkg.tar.zst
   world:
     version: 2.26.1-1
     packages:
