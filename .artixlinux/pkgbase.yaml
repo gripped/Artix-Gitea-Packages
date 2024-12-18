@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-fissix
-  version: 21.11.13-4
+  version: 24.4.24-1
   arch:
     - any
   pkgname:
     - python-fissix
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 21.11.13-4
+    version: 24.4.24-1
     packages:
-      - python-fissix-21.11.13-4-any.pkg.tar.zst
+      - python-fissix-24.4.24-1-any.pkg.tar.zst
   world:
     version: 21.11.13-3
     packages:
