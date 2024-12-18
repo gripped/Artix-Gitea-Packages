@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: mkdocs-material
-  version: 9.5.44-2
+  version: 9.5.49-1
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 9.5.44-2
+    version: 9.5.49-1
     packages:
-      - mkdocs-material-9.5.44-2-any.pkg.tar.zst
+      - mkdocs-material-9.5.49-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
