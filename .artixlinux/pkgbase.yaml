@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pytest-examples
-  version: 0.0.13-2
+  version: 0.0.15-1
   arch:
     - any
   pkgname:
     - python-pytest-examples
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.0.13-2
+    version: 0.0.15-1
     packages:
-      - python-pytest-examples-0.0.13-2-any.pkg.tar.zst
+      - python-pytest-examples-0.0.15-1-any.pkg.tar.zst
   world:
     version: 0.0.13-1
     packages:
