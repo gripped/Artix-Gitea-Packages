@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mediainfo
-  version: 24.06-1
+  version: 24.12-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.06-1
+    version: 24.12-1
     packages:
-      - mediainfo-24.06-1-x86_64.pkg.tar.zst
-      - mediainfo-gui-24.06-1-x86_64.pkg.tar.zst
+      - mediainfo-24.12-1-x86_64.pkg.tar.zst
+      - mediainfo-gui-24.12-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
