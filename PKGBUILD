@@ -4,7 +4,7 @@
 
 pkgname=syslog-ng
 pkgver=4.8.1
-pkgrel=4
+pkgrel=5
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=(x86_64)
 url="https://github.com/syslog-ng/syslog-ng"
@@ -32,7 +32,6 @@ makedepends=(
   autoconf-archive
   docbook-xsl
   git
-  gperf
   hiredis
   libdbi
   libesmtp
