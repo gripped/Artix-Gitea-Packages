@@ -3,8 +3,8 @@
 
 pkgname=python-cramjam
 _pkgname=${pkgname#python-}
-pkgver=2.9.0
-pkgrel=2
+pkgver=2.9.1
+pkgrel=1
 pkgdesc="Thin Python bindings to de/compression algorithms in Rust"
 arch=(x86_64)
 url="https://github.com/milesgranger/cramjam"
@@ -30,7 +30,7 @@ checkdepends=(
 )
 options=(!lto)
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('403df705878dfcb7c7e324685bc2fbbfa20163f9996545c842ff10ef087bab5d')
+sha256sums=('12cb9e3a483f5b12ffece71cd207f1d70f7e661ca27d1d26aeaaf56d65c009ee')
 
 build() {
   cd "$_pkgname-$pkgver"
