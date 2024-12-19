@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zathura-pdf-mupdf
-  version: 0.4.4-10
+  version: 0.4.4-10.1
   arch:
     - x86_64
   pkgname:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.4.4-10
+    version: 0.4.4-10.1
     packages:
-      - zathura-pdf-mupdf-0.4.4-10-x86_64.pkg.tar.zst
+      - zathura-pdf-mupdf-0.4.4-10.1-x86_64.pkg.tar.zst
   galaxy:
     version: 0.4.4-6
     packages:
