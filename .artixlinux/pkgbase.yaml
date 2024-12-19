@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zathura-ps
-  version: 0.2.8-4
+  version: 0.2.8-5
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.2.8-4
+    version: 0.2.8-5
     packages:
-      - zathura-ps-0.2.8-4-x86_64.pkg.tar.zst
+      - zathura-ps-0.2.8-5-x86_64.pkg.tar.zst
   world:
     version: 0.2.8-2
     packages:
