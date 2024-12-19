@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kismet
-  version: 2023_07_R1-16
+  version: 2023_07_R1-17
   arch:
     - x86_64
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2023_07_R1-16
+    version: 2023_07_R1-17
     packages:
-      - kismet-2023_07_R1-16-x86_64.pkg.tar.zst
+      - kismet-2023_07_R1-17-x86_64.pkg.tar.zst
   world-gremlins:
     version: 2023_07_R1-15
     packages:
