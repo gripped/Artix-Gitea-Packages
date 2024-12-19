@@ -9,8 +9,8 @@
 # fine with them.
 
 pkgname=blender
-pkgver=4.3.1
-pkgrel=2
+pkgver=4.3.2
+pkgrel=1
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -127,7 +127,7 @@ source=("git+https://projects.blender.org/blender/blender.git#tag=v$pkgver"
         ffmpeg-7-1.patch
         ffmpeg-7-2.patch
         hiprt-lib-path.patch)
-sha512sums=('502e8e03156216f7dfe762e801b1c6282833749ea9c7678f4199c01f620c6794ff0eb2d645ad0ef75cc0dd2245699855a269c2215b5d05f0470cc9fe63fba111'
+sha512sums=('c19e26326cebd8afe4f8c6ca2bbeed15092c53a0bfceec5b6ac226fe2ebd48e701830c840b8e44a6142da95bbf6ddbe9da93aa1afc5f1d379848a38bd06d1f93'
             '88be713847bca183f78efd5dccb049e1d40e366b48bfdfb5ef781832f235dedaae84a109b04ce3c2b7d379c38e49daa340e8cd1f1a87e2ee4929e489b5d10dc3'
             '5502d9df847de12badc702c0444bd4f1f7620460b2235026df2c3133da1e04c148af0f1fc7f345e9a0c009c32f905f66c8d427743445e8864d3a797cdce6a483'
             '69eb94cb77e7be10bf95f34edf753f038417077df45e15f2e27171d6cdea258e3a90dcca278b84118fe2e3f710a3011527769cff595127dae324a7aeb92056e6'
