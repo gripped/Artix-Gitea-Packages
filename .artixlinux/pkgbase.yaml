@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: jemalloc
-  version: 1:5.3.0-4
+  version: 1:5.3.0-5
   arch:
     - x86_64
   pkgname:
     - jemalloc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:5.3.0-5
+    packages:
+      - jemalloc-1:5.3.0-5-x86_64.pkg.tar.zst
   world:
     version: 1:5.3.0-4
     packages:
