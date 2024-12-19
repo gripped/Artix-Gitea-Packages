@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pytest-rerunfailures
-  version: 14.0-3
+  version: 15.0-1
   arch:
     - any
   pkgname:
     - python-pytest-rerunfailures
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 14.0-3
+    version: 15.0-1
     packages:
-      - python-pytest-rerunfailures-14.0-3-any.pkg.tar.zst
+      - python-pytest-rerunfailures-15.0-1-any.pkg.tar.zst
   world:
     version: 14.0-2
     packages:
