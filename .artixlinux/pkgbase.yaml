@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: jupyter-nbclient
-  version: 0.10.1-2
+  version: 0.10.1-1
   arch:
     - any
   pkgname:
     - jupyter-nbclient
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
