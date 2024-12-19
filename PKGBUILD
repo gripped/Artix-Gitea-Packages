@@ -3,13 +3,14 @@
 
 pkgname=lxqt-session
 pkgver=2.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc="The LXQt session manager"
 arch=("x86_64")
 groups=("lxqt")
 url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
-depends=("liblxqt" "qtxdg-tools" "xdg-user-dirs"  "libx11" "udev" "kwindowsystem" "libQt6Xdg.so" "procps-ng" "libproc2.so" "layer-shell-qt")
+depends=("liblxqt" "qtxdg-tools" "xdg-user-dirs"  "libx11" "udev" "kwindowsystem" "libQt6Xdg.so" "procps-ng" "libproc2.so" "layer-shell-qt"
+         "ttf-font")
 makedepends=("cmake" "lxqt-build-tools")
 optdepends=(
 	"breeze-icons: Default icon theme"
