@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: jupyterlab
-  version: 4.3.3-2
+  version: 4.3.4-2
   arch:
     - any
   pkgname:
     - jupyterlab
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 4.3.3-2
+    version: 4.3.4-2
     packages:
-      - jupyterlab-4.3.3-2-any.pkg.tar.zst
+      - jupyterlab-4.3.4-2-any.pkg.tar.zst
   world:
     version: 4.3.2-1
     packages:
