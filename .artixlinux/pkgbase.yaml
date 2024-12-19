@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: jupyter-nbclient
-  version: 0.10.2-1
+  version: 0.10.2-2
   arch:
     - any
   pkgname:
     - jupyter-nbclient
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.10.1-2
+    version: 0.10.2-2
     packages:
-      - jupyter-nbclient-0.10.1-2-any.pkg.tar.zst
+      - jupyter-nbclient-0.10.2-2-any.pkg.tar.zst
   world:
     version: 0.10.2-1
     packages:
