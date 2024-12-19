@@ -5,7 +5,7 @@
 # Contributor: ML <neldoreth>
 
 pkgname=zathura
-pkgver=0.5.10
+pkgver=0.5.11
 pkgrel=1
 pkgdesc="Minimalistic document viewer"
 url="https://pwmt.org/projects/zathura/"
@@ -20,7 +20,7 @@ optdepends=('zathura-djvu: DjVu support'
             'zathura-ps: PostScript support'
             'zathura-cb: Comic book support')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/pwmt/${pkgname}/archive/refs/tags/${pkgver}.tar.gz")
-sha512sums=('78eeec3c4575d2a14282d71ad91b6adc355d28e38d8c28b0a60438e4c732b298f41a987049d0665d75c33de1400a3c77f6f6f9cccdf79cf0c2720f73d7096f53')
+sha512sums=('cf7e83c21c7910df4cb1edc29296a4989c4b374cea340d0725f090640c9e58c84732051cab5fe63aa6dda3aae283fa6f92baf46fe733e9003f1b9553eda63613')
 
 build() {
         cd "${pkgname}-${pkgver}"
