@@ -2,8 +2,8 @@
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=jupyter-nbclient
-pkgver=0.10.1
-pkgrel=2
+pkgver=0.10.2
+pkgrel=1
 pkgdesc='A tool for running Jupyter Notebooks in different execution contexts'
 arch=(any)
 url='https://github.com/jupyter/nbclient'
@@ -23,15 +23,8 @@ checkdepends=(jupyter-nbconvert
               python-pytest-asyncio
               python-testpath
               python-xmltodict)
-source=(git+https://github.com/jupyter/nbclient#tag=v$pkgver
-        python-3.13.patch)
-sha256sums=('b5832ad491b77af8688246fd6797190b41258d02589b732a2918ad155daaab93'
-            '98b8c0ea25a02de822e1f3b1a96e677dac729e23397bf9674383e83f145ee5d5')
-
-prepare() {
-  cd nbclient
-  patch -p1 -i ../python-3.13.patch
-}
+source=(git+https://github.com/jupyter/nbclient#tag=v$pkgver)
+sha256sums=('c92255950decb930edb0b95a657ecc4e9f999b5be19b8242f556afcba8b783b0')
 
 build() {
   cd nbclient
