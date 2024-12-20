@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mgard
-  version: 1.5.2-3
+  version: 1.5.2-4
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.5.2-3
+    version: 1.5.2-4
     packages:
-      - mgard-1.5.2-3-x86_64.pkg.tar.zst
+      - mgard-1.5.2-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
