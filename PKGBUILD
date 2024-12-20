@@ -18,23 +18,15 @@ provides=(procps sysvinit-tools libproc2.so)
 replaces=(procps sysvinit-tools)
 options=('!emptydirs')
 validpgpkeys=('5D2FB320B825D93904D205193938F96BDF50FEA5') # Craig Small <csmall@debian.org>
-source=("https://downloads.sourceforge.net/project/$pkgname/Production/${pkgname}-${pkgver}.tar.xz"{,.asc}
-        0001-build-sys-Add-systemd-elogind-to-w.patch
-        0002-ps-Don-t-crash-when-using-short-option.patch)
+source=("https://downloads.sourceforge.net/project/$pkgname/Production/${pkgname}-${pkgver}.tar.xz"{,.asc})
 sha256sums=('c2e6d193cc78f84cd6ddb72aaf6d5c6a9162f0470e5992092057f5ff518562fa'
-            'SKIP'
-            '77ed82ad684c71319704080a09c7d65efa1b06db4f35b240de7c30fef4caafc5'
-            '2331953f1c859b4973b2f99fbc84495b03a2d5e584370da66adbd45cbbf7825a')
+            'SKIP')
 b2sums=('4b273ac7737202147fbf392995da1c5ff385df2b53ad84180b6412dc45c2a671e81d7659c0a5824c0d8c19fa37cbf2e58b0545841c74399b3717a9f27fd26c23'
-        'SKIP'
-        '021b64fac3b48175ec67d180fc294c674088ece483f0ab358c2cfbdbd519ac6dea13274a66624beda79b00c0c770441e7f8369f3a75a90f7cafd469508a81e16'
-        '74a40306c3a1c09d1ad26ae34157803e48e95906febcd4730ac27221e5c6184b9fe1eb7ade77e2da193d4c3491d719b1a1b01f75424722a63602f914aa9db9a8')
+        'SKIP')
 
 prepare() {
   cd procps-ng-$pkgver
   sed 's:<ncursesw/:<:g' -i src/watch.c
-  patch -Np1 < ../0001-build-sys-Add-systemd-elogind-to-w.patch
-  patch -Np1 < ../0002-ps-Don-t-crash-when-using-short-option.patch
   autoreconf -fi
 }
 
