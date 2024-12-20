@@ -3,90 +3,85 @@
 
 pkgbase=lib32-dbus
 pkgname=(
-	lib32-dbus
+  lib32-dbus
 )
-pkgver=1.14.10
-pkgrel=2.1
+pkgver=1.16.0
+pkgrel=1
 pkgdesc="Freedesktop.org message bus system - 32-bit"
-url="https://wiki.freedesktop.org/www/Software/dbus/"
+url="https://www.freedesktop.org/wiki/Software/dbus/"
 arch=(x86_64)
 license=("AFL-2.1 OR GPL-2.0-or-later")
 depends=(
-	dbus
-	lib32-elogind
+  dbus
+  lib32-glibc
+  lib32-elogind
 )
 makedepends=(
-	lib32-expat
-	lib32-glib2
+  lib32-glib2
+  meson
+  python
+  elogind
 )
 source=(
-	https://dbus.freedesktop.org/releases/dbus/dbus-$pkgver.tar.xz{,.asc}
+  https://dbus.freedesktop.org/releases/dbus/dbus-$pkgver.tar.xz{,.asc}
+  0001-Arch-Linux-tweaks-lib32.patch
 )
-b2sums=('f605b0810dcde6a0753384927131e7f4675be737ad7506a51261717c2622e74b99ac33cc2c199b98e5aa6b9d7c68ef692b8ee9f684f6fdab8d06c6fa861a6f6b'
-	'SKIP')
+b2sums=('a5a3ebe777c1c0296ba7240f9ed29ad329a6578a05baf10a469ce8c7d243791d35aca42a70d04cdd88feea238d081c3c8b0db444df24abcf7ce5ffe9187a0440'
+        'SKIP'
+        'f0a08dee0ad5841b41ff5dd5d4c581113d6078739dd5442ec76f4e1e02882a5d95194adc21804495f8f129e69be911db3b56c6dfa6ff5fb66359f0483679b7c8')
 validpgpkeys=(
-	DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90 # Simon McVittie <simon.mcvittie@collabora.co.uk>
+  DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90  # Simon McVittie <simon.mcvittie@collabora.co.uk>
 )
 
 prepare() {
-	cd dbus-$pkgver
+  cd dbus-$pkgver
+  patch -Np1 -i ../0001-Arch-Linux-tweaks-lib32.patch
 }
 
 build() {
-	local configure_options=(
-		--prefix=/usr
-		--sysconfdir=/etc
-		--localstatedir=/var
-		--libdir=/usr/lib32
-		--libexecdir=/usr/lib/dbus-1.0
-		--runstatedir=/run
-		--with-console-auth-dir=/run/console/
-		--with-dbus-user=dbus
-		--with-system-pid-file=/run/dbus/pid
-		--with-system-socket=/run/dbus/system_bus_socket
-		--without-systemdsystemunitdir
-		--enable-inotify
-		--disable-libaudit
-		--disable-systemd
-		--enable-user-session
-		--disable-xml-docs
-		--disable-doxygen-docs
-		--disable-ducktype-docs
-		--disable-static
-		--without-x
-	)
+  local meson_options=(
+    --cross-file lib32
+    -D apparmor=disabled
+    -D dbus_user=dbus
+    -D doxygen_docs=disabled
+    -D ducktype_docs=disabled
+    -D kqueue=disabled
+    -D launchd=disabled
+    -D libaudit=disabled
+    -D message_bus=false
+    -D qt_help=disabled
+    -D relocation=disabled
+    -D selinux=disabled
+    -D tools=false
+    -D x11_autolaunch=disabled
+    -D xml_docs=disabled
+  )
 
-	export CC="gcc -m32 -mstackrealign"
-	export CXX="g++ -m32 -mstackrealign"
-	export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
-
-	cd dbus-$pkgver
-	./configure "${configure_options[@]}"
-	make
+  artix-meson dbus-$pkgver build "${meson_options[@]}"
+  meson compile -C build
 }
 
 check() {
-	make -C dbus-$pkgver -j1 check
+  meson test -C build --print-errorlogs
 }
 
 package_lib32-dbus() {
-	depends+=(
-		libelogind.so
-	)
-	provides=(
-		lib32-libdbus
-		libdbus-1.so
-	)
-	conflicts=(lib32-libdbus)
-	replaces=(lib32-libdbus)
+  depends+=(
+    libelogind.so
+  )
+  provides=(
+    lib32-libdbus
+    libdbus-1.so
+  )
+  conflicts=(lib32-libdbus)
+  replaces=(lib32-libdbus)
 
-	cd dbus-$pkgver
-	DESTDIR="$pkgdir" make install
+  meson install -C build --destdir "$pkgdir"
 
-	rm -r "$pkgdir"/{etc,var}
-	rm -r "$pkgdir"/usr/{bin,include,lib,share}
+  rm -r "$pkgdir/usr/include"
 
-	install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 COPYING
+  mkdir -p "$pkgdir/usr/share/licenses"
+  ln -s dbus "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 # vim:set sw=2 sts=-1 et:
