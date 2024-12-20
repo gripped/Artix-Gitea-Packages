@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tp_smapi
-  version: 0.44-104
+  version: 0.44-105
   arch:
     - x86_64
   pkgname:
     - tp_smapi
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.44-104
+    version: 0.44-105
     packages:
-      - tp_smapi-0.44-104-x86_64.pkg.tar.zst
+      - tp_smapi-0.44-105-x86_64.pkg.tar.zst
   world:
     version: 0.44-102
     packages:
