@@ -9,9 +9,9 @@ pkgbase:
 actions:
   addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: true
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
