@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: broadcom-wl
-  version: 6.30.223.271-595
+  version: 6.30.223.271-596
   arch:
     - x86_64
   pkgname:
     - broadcom-wl
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.30.223.271-595
+    version: 6.30.223.271-596
     packages:
-      - broadcom-wl-6.30.223.271-595-x86_64.pkg.tar.zst
+      - broadcom-wl-6.30.223.271-596-x86_64.pkg.tar.zst
   world:
     version: 6.30.223.271-593
     packages:
