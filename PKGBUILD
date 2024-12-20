@@ -5,19 +5,26 @@
 
 pkgname=xfce4-power-manager
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Power Manager for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-power-manager/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('libxfce4ui' 'upower' 'libnotify' 'xfce4-notifyd' 'hicolor-icon-theme')
-makedepends=('git' 'glib2-devel' 'intltool' 'xfce4-dev-tools' 'xfce4-panel')
-source=("git+https://gitlab.xfce.org/xfce/xfce4-power-manager.git#tag=$pkgname-$pkgver")
-sha256sums=('9798ac882a57b1752295d06151104b84741820d665dd0eab734279089bd912aa')
+makedepends=('git' 'glib2-devel' 'intltool' 'xfce4-dev-tools' 'xfce4-panel' 'wayland-protocols')
+source=("git+https://gitlab.xfce.org/xfce/xfce4-power-manager.git#tag=$pkgname-$pkgver"
+        git+https://gitlab.freedesktop.org/wlroots/wlr-protocols.git)
+sha256sums=('9798ac882a57b1752295d06151104b84741820d665dd0eab734279089bd912aa'
+            'SKIP')
 
 prepare() {
   cd $pkgname
+
+  git submodule init
+  git config submodule.mate-submodules.url "$srcdir/protocols/wlr-protocols"
+  git -c protocol.file.allow=always submodule update
+
   NOCONFIGURE=1 ./autogen.sh
 }
 
@@ -28,6 +35,8 @@ build() {
     --sysconfdir=/etc \
     --sbindir=/usr/bin \
     --localstatedir=/var \
+    --enable-x11 \
+    --enable-wayland \
     --disable-network-manager \
     --enable-polkit \
     --disable-debug \

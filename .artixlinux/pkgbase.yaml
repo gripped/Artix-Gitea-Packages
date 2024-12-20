@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xfce4-power-manager
-  version: 4.20.0-1
+  version: 4.20.0-2
   arch:
     - x86_64
   pkgname:
     - xfce4-power-manager
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,9 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 4.20.0-1
+    version: 4.20.0-2
     packages:
-      - xfce4-power-manager-4.20.0-1-x86_64.pkg.tar.zst
+      - xfce4-power-manager-4.20.0-2-x86_64.pkg.tar.zst
   galaxy:
     version: 4.18.4-3
     packages:
