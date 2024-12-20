@@ -55,6 +55,7 @@ build() {
     -D tools=false
     -D x11_autolaunch=disabled
     -D xml_docs=disabled
+    -D systemd=disabled
   )
 
   artix-meson dbus-$pkgver build "${meson_options[@]}"
