@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux
-  version: 6.12.5.artix1-1
+  version: 6.12.6.artix1-1
   arch:
     - x86_64
   pkgname:
@@ -10,22 +10,22 @@ pkgbase:
     - linux-docs
 actions:
   addRepo: system-gremlins
-  removeRepo: system-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 6.12.5.artix1-1
+    version: 6.12.6.artix1-1
     packages:
-      - linux-6.12.5.artix1-1-x86_64.pkg.tar.zst
-      - linux-headers-6.12.5.artix1-1-x86_64.pkg.tar.zst
-      - linux-docs-6.12.5.artix1-1-x86_64.pkg.tar.zst
+      - linux-6.12.6.artix1-1-x86_64.pkg.tar.zst
+      - linux-headers-6.12.6.artix1-1-x86_64.pkg.tar.zst
+      - linux-docs-6.12.6.artix1-1-x86_64.pkg.tar.zst
   system:
     version: 6.12.4.artix1-1
     packages:
