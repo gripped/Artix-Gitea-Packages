@@ -6,7 +6,7 @@
 
 pkgname=xfce4-settings
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Xfce's Configuration System"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-settings/start"
@@ -43,6 +43,8 @@ build() {
     --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
+    --enable-x11 \
+    --enable-wayland \
     --enable-xrandr \
     --enable-xcursor \
     --enable-libnotify \
