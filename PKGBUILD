@@ -5,13 +5,13 @@
 
 pkgname=xfce4-panel
 pkgver=4.20.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Panel for the Xfce desktop environment"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-panel/start"
 license=('LGPL-2.1-only')
 groups=('xfce4')
-depends=('exo' 'garcon' 'libxfce4ui' 'xfconf' 'libwnck3' 'libdbusmenu-gtk3'
+depends=('exo' 'garcon' 'gtk-layer-shell' 'libxfce4ui' 'xfconf' 'libwnck3' 'libdbusmenu-gtk3'
          'libxfce4windowing' 'hicolor-icon-theme' 'desktop-file-utils')
 makedepends=('git' 'glib2-devel' 'intltool' 'gobject-introspection' 'vala' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/xfce/xfce4-panel.git#tag=$pkgname-$pkgver")
@@ -28,6 +28,8 @@ build() {
     --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
+    --enable-x11 \
+    --enable-wayland \
     --enable-gio-unix \
     --enable-gtk-doc \
     --disable-debug \
