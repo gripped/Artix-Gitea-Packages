@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-jupyter-events
-  version: 0.10.0-3
+  version: 0.11.0-1
   arch:
     - any
   pkgname:
     - python-jupyter-events
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.10.0-3
+    version: 0.11.0-1
     packages:
-      - python-jupyter-events-0.10.0-3-any.pkg.tar.zst
+      - python-jupyter-events-0.11.0-1-any.pkg.tar.zst
   world:
     version: 0.10.0-2
     packages:

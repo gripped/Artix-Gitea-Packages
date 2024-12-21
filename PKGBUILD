@@ -2,8 +2,8 @@
 
 _pyname=jupyter_events
 pkgname=python-jupyter-events
-pkgver=0.10.0
-pkgrel=3
+pkgver=0.11.0
+pkgrel=1
 pkgdesc='Configurable event system for Jupyter applications and extensions'
 arch=(any)
 url='https://jupyter.org/'
@@ -25,7 +25,7 @@ checkdepends=(python-pytest-asyncio
               python-rfc3339-validator
               python-rfc3986-validator)
 source=(git+https://github.com/jupyter/jupyter_events#tag=v$pkgver)
-sha256sums=('72525739c61b23cd4d027bc00b0b8523e7836f169195b6525d9d4f1c100919fa')
+sha256sums=('90d59501fd34544d631c6141481f2224311a20b50901f967160b7d841d16e4b6')
 
 build() {
   cd $_pyname
@@ -46,4 +46,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
 }
-
