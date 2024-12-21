@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-dbus
-  version: 1.16.0-1
+  version: 1.16.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -37,9 +37,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 1.16.0-1
+    version: 1.16.0-1.1
     packages:
-      - lib32-dbus-1.16.0-1-x86_64.pkg.tar.zst
+      - lib32-dbus-1.16.0-1.1-x86_64.pkg.tar.zst
   lib32:
     version: 1.14.10-2.1
     packages:

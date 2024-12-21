@@ -6,7 +6,7 @@ pkgname=(
   lib32-dbus
 )
 pkgver=1.16.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Freedesktop.org message bus system - 32-bit"
 url="https://www.freedesktop.org/wiki/Software/dbus/"
 arch=(x86_64)
