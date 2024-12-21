@@ -1,7 +1,7 @@
 # Maintainer: Sébastien Luttringer
 
 pkgname=ipset
-pkgver=7.22
+pkgver=7.23
 pkgrel=1
 pkgdesc='Administration tool for IP sets'
 arch=('x86_64')
@@ -11,7 +11,7 @@ makedepends=('git')
 depends=('glibc' 'libmnl')
 backup=("etc/${pkgname}.conf")
 source=("git://git.netfilter.org/ipset.git#tag=v${pkgver}")
-sha256sums=('3226482ca66804a754696338e0933429d7bc0eaa85218ce79ecfe4530edca780')
+sha256sums=('c550b2c4b88033b1329607dbd5a5775aad5ddb2e6d7feb37c81fe39544941980')
 
 prepare() {
   cd "${pkgname}"
