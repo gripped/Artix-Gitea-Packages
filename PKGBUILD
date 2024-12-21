@@ -4,18 +4,29 @@
 
 pkgname=libxfce4windowing
 pkgver=4.20.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Windowing concept abstraction library for X11 and Wayland"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4windowing/start"
 license=('LGPL-2.1-only')
 depends=('gdk-pixbuf2' 'glib2' 'gtk3' 'libwnck3' 'libdisplay-info' 'libx11' 'wayland')
-makedepends=('glib2-devel' 'gobject-introspection' 'gtk-doc' 'wayland-protocols' 'xfce4-dev-tools')
-source=(https://archive.xfce.org/src/xfce/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha256sums=('56f29b1d79606fb00a12c83ef4ece12877d2b22bf1acaaff89537fbe8e939f68')
+makedepends=('git' 'glib2-devel' 'gobject-introspection' 'gtk-doc' 'wayland-protocols' 'xfce4-dev-tools')
+source=("git+https://gitlab.xfce.org/xfce/libxfce4windowing.git#tag=$pkgname-$pkgver"
+        git+https://gitlab.freedesktop.org/wlroots/wlr-protocols.git)
+sha256sums=('0bc7718c7eb665c29564aeb5a9bd0254a66300f4fc1a35b7c5723018f213b3d8'
+            'SKIP')
+
+prepare() {
+  cd $pkgname
+
+  git submodule init
+  git config submodule.mate-submodules.url "$srcdir/protocols/wlr-protocols"
+  git -c protocol.file.allow=always submodule update
+  NOCONFIGURE=1 ./autogen.sh
+}
 
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgname
 
   ./configure \
     --prefix=/usr \
@@ -28,7 +39,8 @@ build() {
 }
 
 package() {
-  cd $pkgname-$pkgver
+  cd $pkgname
+
   make DESTDIR="$pkgdir" install
 }
 
