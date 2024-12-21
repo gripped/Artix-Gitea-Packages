@@ -5,7 +5,7 @@
 
 pkgname=libxfce4ui
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Widgets library for the Xfce desktop environment"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4ui/start"
@@ -30,6 +30,8 @@ build() {
     --prefix=/usr \
     --sysconfdir=/etc \
     --localstatedir=/var \
+    --enable-x11 \
+    --enable-wayland \
     --disable-debug \
     --enable-gtk-doc \
     --with-vendor-info='Artix Linux' \
