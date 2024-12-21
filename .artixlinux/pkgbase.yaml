@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ipython
-  version: 8.29.0-2
+  version: 8.31.0-1
   arch:
     - any
   pkgname:
     - ipython
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 8.29.0-2
+    version: 8.31.0-1
     packages:
-      - ipython-8.29.0-2-any.pkg.tar.zst
+      - ipython-8.31.0-1-any.pkg.tar.zst
   world:
     version: 8.29.0-1
     packages:
