@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: crun
-  version: 1.19.1-1
+  version: 1.19.1-2
   arch:
     - x86_64
   pkgname:
     - crun
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.19-2
+    version: 1.19.1-2
     packages:
-      - crun-1.19-2-x86_64.pkg.tar.zst
+      - crun-1.19.1-2-x86_64.pkg.tar.zst
   world:
     version: 1.19.1-1
     packages:
