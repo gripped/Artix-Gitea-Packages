@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: granite7
-  version: 7.5.0-1
+  version: 7.6.0-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.5.0-1
+    version: 7.6.0-1
     packages:
-      - granite7-7.5.0-1-x86_64.pkg.tar.zst
+      - granite7-7.6.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
