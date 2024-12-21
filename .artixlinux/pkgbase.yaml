@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-dulwich
-  version: 0.22.6-2
+  version: 0.22.7-1
   arch:
     - x86_64
   pkgname:
     - python-dulwich
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.22.6-2
+    version: 0.22.7-1
     packages:
-      - python-dulwich-0.22.6-2-x86_64.pkg.tar.zst
+      - python-dulwich-0.22.7-1-x86_64.pkg.tar.zst
   world:
     version: 0.22.5-1
     packages:
