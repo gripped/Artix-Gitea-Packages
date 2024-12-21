@@ -1,9 +1,4 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
-# Contributor: Ionut Biru <ibiru@archlinux.org>
-# Contributor: Alexander Baldeck <alexander@archlinux.org>
-# Contributor: Dale Blount <dale@archlinux.org>
-# Contributor: Anders Bostrom <anders.bostrom@home.se>
+# Maintainer: artist for Artix Linux
 
 pkgbase=thunderbird
 pkgname=(thunderbird)
