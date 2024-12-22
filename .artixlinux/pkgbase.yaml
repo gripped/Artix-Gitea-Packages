@@ -124,12 +124,12 @@ pkgbase:
     - libreoffice-fresh-zh-tw
     - libreoffice-fresh-zu
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -160,6 +160,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
     version: 24.8.4-1
     packages:
       - libreoffice-fresh-af-24.8.4-1-any.pkg.tar.zst
@@ -280,9 +283,6 @@ repos:
       - libreoffice-fresh-zh-cn-24.8.4-1-any.pkg.tar.zst
       - libreoffice-fresh-zh-tw-24.8.4-1-any.pkg.tar.zst
       - libreoffice-fresh-zu-24.8.4-1-any.pkg.tar.zst
-  galaxy-gremlins:
-    version: null
-    packages: []
   galaxy:
     version: 24.8.3-1
     packages:
