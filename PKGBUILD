@@ -3,7 +3,7 @@
 
 pkgname=lldb
 pkgver=18.1.8
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Next generation, high-performance debugger"
 arch=('x86_64')
 url="https://lldb.llvm.org/"
