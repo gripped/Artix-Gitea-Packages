@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - python-pbs-installer
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,13 +29,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 2024.10.16-2
     packages:
       - python-pbs-installer-2024.10.16-2-any.pkg.tar.zst
-  world:
-    version: 2024.10.16-1
-    packages:
-      - python-pbs-installer-2024.10.16-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
