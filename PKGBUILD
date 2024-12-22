@@ -16,7 +16,7 @@ depends=(
 )
 makedepends=(
   git
-  pyproject_hooks
+  python-pyproject-hooks
   python-build
   python-installer
   python-setuptools
