@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: uv
-  version: 0.5.9-2
+  version: 0.5.11-1
   arch:
     - x86_64
   pkgname:
     - uv
     - python-uv
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,10 +35,10 @@ repos:
       - uv-0.5.9-2-x86_64.pkg.tar.zst
       - python-uv-0.5.9-2-x86_64.pkg.tar.zst
   world:
-    version: 0.5.9-1
+    version: 0.5.11-1
     packages:
-      - uv-0.5.9-1-x86_64.pkg.tar.zst
-      - python-uv-0.5.9-1-x86_64.pkg.tar.zst
+      - uv-0.5.11-1-x86_64.pkg.tar.zst
+      - python-uv-0.5.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
