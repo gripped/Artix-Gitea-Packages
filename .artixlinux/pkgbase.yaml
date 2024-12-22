@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-aioresponses
-  version: 0.7.6-4
+  version: 0.7.7-1
   arch:
     - any
   pkgname:
     - python-aioresponses
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.7.6-4
+    version: 0.7.7-1
     packages:
-      - python-aioresponses-0.7.6-4-any.pkg.tar.zst
+      - python-aioresponses-0.7.7-1-any.pkg.tar.zst
   world:
     version: 0.7.6-3
     packages:
