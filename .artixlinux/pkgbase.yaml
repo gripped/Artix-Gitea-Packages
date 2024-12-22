@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - kdeclarative
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - kdeclarative-6.9.0-1-x86_64.pkg.tar.zst
   world:
-    version: 6.8.0-1
+    version: 6.9.0-1
     packages:
-      - kdeclarative-6.8.0-1-x86_64.pkg.tar.zst
+      - kdeclarative-6.9.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
