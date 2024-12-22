@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kapidox
-  version: 6.9.0-2
+  version: 6.9.0-1
   arch:
     - any
   pkgname:
     - kapidox
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.8.0-1
+    version: 6.9.0-1
     packages:
-      - kapidox-6.8.0-1-any.pkg.tar.zst
+      - kapidox-6.9.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
