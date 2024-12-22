@@ -14,6 +14,7 @@ makedepends=(
     'python-installer'
     'python-setuptools'  # Set in pyproject.toml build
     'python-sphinx-argparse'
+    'python-tzlocal'
     'python-wheel'
 )
 checkdepends=('python-pytest')
