@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - python-scikit-build
 actions:
-  addRepo: null
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.18.1-3
     packages:
       - python-scikit-build-0.18.1-3-any.pkg.tar.zst
-  world:
-    version: 0.17.6-3
-    packages:
-      - python-scikit-build-0.17.6-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
