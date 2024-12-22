@@ -8,8 +8,8 @@ pkgbase:
     - libcap-ng
     - python-capng
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -20,15 +20,13 @@ repos:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 0.8.5-3
     packages:
       - libcap-ng-0.8.5-3-x86_64.pkg.tar.zst
       - python-capng-0.8.5-3-x86_64.pkg.tar.zst
-  system:
-    version: 0.8.5-2
-    packages:
-      - libcap-ng-0.8.5-2-x86_64.pkg.tar.zst
-      - python-capng-0.8.5-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
