@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - python-rpds-py
 actions:
-  addRepo: null
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.22.3-1
     packages:
       - python-rpds-py-0.22.3-1-x86_64.pkg.tar.zst
-  world:
-    version: 0.19.0-1
-    packages:
-      - python-rpds-py-0.19.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
