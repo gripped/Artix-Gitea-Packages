@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kguiaddons
-  version: 6.9.0-3
+  version: 6.9.0-3.1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - kguiaddons-6.9.0-3-x86_64.pkg.tar.zst
   world:
-    version: 6.9.0-3
+    version: 6.9.0-3.1
     packages:
-      - kguiaddons-6.9.0-3-x86_64.pkg.tar.zst
+      - kguiaddons-6.9.0-3.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
