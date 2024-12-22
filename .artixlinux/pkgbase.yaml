@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - python-jupyter-packaging
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.12.3-6
     packages:
       - python-jupyter-packaging-0.12.3-6-any.pkg.tar.zst
-  world:
-    version: 0.12.3-5
-    packages:
-      - python-jupyter-packaging-0.12.3-5-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
