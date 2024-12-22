@@ -8,7 +8,7 @@ pkgbase:
     - zathura-ps
 actions:
   addRepo: galaxy
-  removeRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,9 +28,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.2.8-5.1
-    packages:
-      - zathura-ps-0.2.8-5.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: null
     packages: []
@@ -50,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.2.8-2
+    version: 0.2.8-5.1
     packages:
-      - zathura-ps-0.2.8-2-x86_64.pkg.tar.zst
+      - zathura-ps-0.2.8-5.1-x86_64.pkg.tar.zst
 team: galaxy
