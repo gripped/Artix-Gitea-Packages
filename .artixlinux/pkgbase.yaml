@@ -8,8 +8,8 @@ pkgbase:
     - flatbuffers
     - python-flatbuffers
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 24.3.25-3
     packages:
       - flatbuffers-24.3.25-3-x86_64.pkg.tar.zst
       - python-flatbuffers-24.3.25-3-x86_64.pkg.tar.zst
-  world:
-    version: 24.3.25-2
-    packages:
-      - flatbuffers-24.3.25-2-x86_64.pkg.tar.zst
-      - python-flatbuffers-24.3.25-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
