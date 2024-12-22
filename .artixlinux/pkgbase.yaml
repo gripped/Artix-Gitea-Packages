@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-beetle-psx
-  version: 2733-1
+  version: 2747-1
   arch:
     - x86_64
   pkgname:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2733-1
+    version: 2747-1
     packages:
-      - libretro-beetle-psx-2733-1-x86_64.pkg.tar.zst
-      - libretro-beetle-psx-hw-2733-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-2747-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-hw-2747-1-x86_64.pkg.tar.zst
 team: galaxy
