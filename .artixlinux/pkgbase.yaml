@@ -9,12 +9,12 @@ pkgbase:
     - onnx
     - python-onnx
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,15 +27,13 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 1:1.16.1-10
     packages:
       - onnx-1:1.16.1-10-x86_64.pkg.tar.zst
       - python-onnx-1:1.16.1-10-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: 1:1.16.1-8
-    packages:
-      - onnx-1:1.16.1-8-x86_64.pkg.tar.zst
-      - python-onnx-1:1.16.1-8-x86_64.pkg.tar.zst
   world:
     version: 1:1.16.1-7
     packages:
