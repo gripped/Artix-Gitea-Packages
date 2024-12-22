@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: arrow
-  version: 17.0.0-9
+  version: 17.0.0-11
   arch:
     - x86_64
   pkgname:
     - arrow
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 17.0.0-11
+    packages:
+      - arrow-17.0.0-11-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
