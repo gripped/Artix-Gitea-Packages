@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-jupyter-events
-  version: 0.11.0-1
+  version: 0.11.0-3
   arch:
     - any
   pkgname:
@@ -13,7 +13,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.11.0-1
+    version: 0.11.0-3
     packages:
-      - python-jupyter-events-0.11.0-1-any.pkg.tar.zst
+      - python-jupyter-events-0.11.0-3-any.pkg.tar.zst
   world:
     version: 0.10.0-2
     packages:
