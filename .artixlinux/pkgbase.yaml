@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - python-pymacaroons
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 0.13.0-13
     packages:
       - python-pymacaroons-0.13.0-13-any.pkg.tar.zst
-  world:
-    version: 0.13.0-12
-    packages:
-      - python-pymacaroons-0.13.0-12-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
