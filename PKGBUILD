@@ -9,12 +9,12 @@
 pkgname=povray
 epoch=2
 pkgver=3.7.0.10
-pkgrel=14
+pkgrel=15
 _v=${pkgver%.*.*} # 3.7
 pkgdesc='Script based raytracer for creating 3D graphics'
 arch=(x86_64)
 license=(AGPL3)
-url='https://povray.org/'
+url='https://www.povray.org/'
 depends=(boost-libs imath libpng libtiff openexr)
 makedepends=(boost git glu)
 backup=(etc/povray/$_v/povray.conf
@@ -36,10 +36,10 @@ prepare() {
 build() {
   cd $pkgname-$pkgver
   ./configure \
-    LIBS="-lboost_system -lboost_thread" \
-    COMPILED_BY='Arch Linux' \
     --prefix=/usr \
-    --sysconfdir=/etc
+    --sysconfdir=/etc \
+    COMPILED_BY='Artix Linux' \
+    LIBS="-lboost_system -lboost_thread"
   make CXXFLAGS+='-std=c++11 -lboost_system -lboost_thread -DBOOST_BIND_GLOBAL_PLACEHOLDERS=1 -w'
 }
 
@@ -53,5 +53,3 @@ package() {
   install -Dm644 povray.ini "$pkgdir/etc/povray/$_v/povray.ini"
   install -Dm644 povray.1 "$pkgdir/usr/share/man/man1/povray.1"
 }
-
-# getver: povray.org/documentation
