@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - libxfce4util
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 4.20.0-1
     packages:
       - libxfce4util-4.20.0-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 4.18.2-3
-    packages:
-      - libxfce4util-4.18.2-3-x86_64.pkg.tar.zst
 team: galaxy
