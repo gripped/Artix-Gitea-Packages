@@ -1,10 +1,7 @@
-# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
-# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
-# Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
-# Contributor: feuri
+# Maintainer: artist for Artix Linux
 
 pkgname=dunst
-pkgver=1.12.0
+pkgver=1.12.1
 pkgrel=1
 pkgdesc="Customizable and lightweight notification-daemon"
 url="https://dunst-project.org/"
