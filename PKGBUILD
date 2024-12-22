@@ -1,4 +1,5 @@
-# Maintainer: Timothy Redaelli <timothy.redaelli@gmail.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Timothy Redaelli <timothy.redaelli@gmail.com>
 # Contributor: Michael P <ptchinster@archlinux.us>
 # Contributor: Roberto Alsina <ralsina@kde.org>
 # Contributor: Will Chappell <mr.chapendi@gmail.com>
@@ -7,15 +8,16 @@
 
 pkgname=ragel
 pkgver=6.10
-pkgrel=3.1
+pkgrel=4
 pkgdesc="Compiles finite state machines from regular languages into executable C, C++, Objective-C, or D code."
 arch=('x86_64')
-url="http://www.complang.org/ragel/"
-license=('GPL')
+url="https://www.colm.net/open-source/ragel/"
+license=('GPL-2.0-only')
 depends=('gcc-libs')
-source=(https://www.colm.net/files/$pkgname/$pkgname-$pkgver.tar.gz)
+source=(https://www.colm.net/files/$pkgname/$pkgname-$pkgver.tar.gz{,.asc})
 validpgpkeys=(C3260F001EE3780F1BC3D4F650FE47277DC196FB)
-md5sums=('748cae8b50cffe9efcaa5acebc6abf0d')
+sha256sums=('5f156edb65d20b856d638dd9ee2dfb43285914d9aa2b6ec779dac0270cd56c3f'
+            'SKIP')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
