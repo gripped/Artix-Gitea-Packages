@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.16.7
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -101,13 +101,6 @@ prepare() {
   # Allow -fcf-protection to work
   # https://gitlab.gnome.org/GNOME/gtk/-/issues/6153
   git apply -3 ../0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
-
-  # Cursor scaling fixes
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/gtk4/-/merge_requests/3
-  # https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/7749
-  git cherry-pick -n 403da9a2d5355c199682b7ba4b8b26e45312e5aa
-  # https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/7760
-  git cherry-pick -n e42014573a89be8b24f911f504780719f65c45ab 3768c751c5799a03459a7969fbb88d1046fe1c95
 }
 
 build() {
