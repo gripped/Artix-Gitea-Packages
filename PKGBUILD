@@ -4,7 +4,7 @@
 
 pkgname=kwidgetsaddons
 pkgver=6.9.0
-pkgrel=4
+pkgrel=4.1
 pkgdesc='Addons to QtWidgets'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'

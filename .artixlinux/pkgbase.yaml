@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kwidgetsaddons
-  version: 6.9.0-4
+  version: 6.9.0-4.1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - kwidgetsaddons-6.9.0-4-x86_64.pkg.tar.zst
   world:
-    version: 6.9.0-4
+    version: 6.9.0-4.1
     packages:
-      - kwidgetsaddons-6.9.0-4-x86_64.pkg.tar.zst
+      - kwidgetsaddons-6.9.0-4.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
