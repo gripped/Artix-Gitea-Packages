@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - torbrowser-launcher
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.3.7-3
     packages:
       - torbrowser-launcher-0.3.7-3-any.pkg.tar.zst
-  galaxy:
-    version: 0.3.7-2
-    packages:
-      - torbrowser-launcher-0.3.7-2-any.pkg.tar.zst
 team: galaxy
