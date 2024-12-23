@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kapidox
-  version: 6.9.0-2
+  version: 6.9.0-2.1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.9.0-2
+    version: 6.9.0-2.1
     packages:
-      - kapidox-6.9.0-2-any.pkg.tar.zst
+      - kapidox-6.9.0-2.1-any.pkg.tar.zst
   world:
     version: 6.9.0-2
     packages:

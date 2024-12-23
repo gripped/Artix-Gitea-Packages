@@ -4,7 +4,7 @@
 
 pkgname=kapidox
 pkgver=6.9.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Frameworks API Documentation Tools'
 arch=(any)
 url='https://community.kde.org/Frameworks'
