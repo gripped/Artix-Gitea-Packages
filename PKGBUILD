@@ -3,7 +3,7 @@
 
 pkgname=lxqt-session
 pkgver=2.1.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="The LXQt session manager"
 arch=("x86_64")
 groups=("lxqt")
