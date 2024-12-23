@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: aquamarine
-  version: 0.5.1-1
+  version: 0.5.1-2
   arch:
     - x86_64
     - aarch64
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.1-1
+    version: 0.5.1-2
     packages:
-      - aquamarine-0.5.1-1-x86_64.pkg.tar.zst
+      - aquamarine-0.5.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
