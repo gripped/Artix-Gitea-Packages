@@ -4,7 +4,7 @@
 
 pkgname=python-psutil
 pkgver=6.1.1
-pkgrel=1
+pkgrel=1.1
 arch=('x86_64')
 pkgdesc='A cross-platform process and system utilities module for Python'
 url='https://github.com/giampaolo/psutil'
