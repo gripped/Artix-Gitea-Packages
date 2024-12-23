@@ -3,7 +3,7 @@
 
 _pkg=dask
 pkgname=python-${_pkg}
-pkgver=2024.12.0
+pkgver=2024.12.1
 pkgrel=1
 pkgdesc="Parallel computing with task scheduling"
 arch=(any)
@@ -87,7 +87,7 @@ checkdepends=(
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/dask/dask/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
         test-pandas-2.0)
-sha256sums=('4a33230cb140141e4e0d231ad0726766919850e2821deb6ee696db3e5876b3d4'
+sha256sums=('fe4dfcb46e74e7b3c3c9572b010a47323d907f66b0ed8b894cba2b0035d0de64'
             '9ddb45fefbfb1aaa3af20a6a2c6d4fcb20da5b3761e70313c92ae4f4f86634a2')
 
 prepare() {
@@ -103,7 +103,6 @@ build() {
 }
 
 check() {
-  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   local pytest_options=(
     -vv
     --override-ini="addopts="
