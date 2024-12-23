@@ -3,7 +3,7 @@
 
 _pkg=distributed
 pkgname=python-${_pkg}
-pkgver=2024.12.0
+pkgver=2024.12.1
 pkgrel=1
 pkgdesc="Distributed task scheduler for Dask"
 arch=(any)
@@ -63,7 +63,7 @@ checkdepends=(
 # No tests in PyPi tarballs
 #source=(https://files.pythonhosted.org/packages/source/${_pkg::1}/${_pkg}/${_pkg}-${pkgver}.tar.gz)
 source=(https://github.com/dask/distributed/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('7c0c313fd72ba936f47793b1fabd4e9478c0149ccff61de29ec13fff4fc4e7da')
+sha256sums=('d4340561e8cfc773f4558b031e0aee358fd044025eba599047027b2f2c55ffca')
 
 prepare() {
   sed -i 's/, "versioneer\[toml\].*"//' ${_pkg}-${pkgver}/pyproject.toml
