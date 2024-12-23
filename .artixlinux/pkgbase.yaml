@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - exo
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 4.20.0-1
     packages:
       - exo-4.20.0-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 4.18.0-4
-    packages:
-      - exo-4.18.0-4-x86_64.pkg.tar.zst
 team: galaxy
