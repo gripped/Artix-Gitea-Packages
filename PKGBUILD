@@ -10,7 +10,7 @@
 pkgbase=samba
 pkgname=('libwbclient' 'ldb' 'smbclient' 'samba')
 pkgver=4.21.2
-pkgrel=3.1
+pkgrel=3.2
 arch=(x86_64)
 url="https://www.samba.org"
 license=('GPL-3.0-or-later')
@@ -343,6 +343,7 @@ _pkgsrc="${srcdir}"/samba-pkg
   rm -rf "${pkgdir}"/run
   rm -rf "${pkgdir}"/var/run
   rm -rf "${pkgdir}"/etc/sysconfig
+  rm "${pkgdir}"/usr/lib/python3.13/site-packages/*.{py,so}
   
   # copy ldap example
   install -D -m644 "${srcdir}"/samba-${pkgver}/examples/LDAP/samba.schema \
