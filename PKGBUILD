@@ -7,7 +7,7 @@ pkgname=(
   libhandy-docs
 )
 pkgver=1.8.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="GTK 3 UI elements for mobile devices"
 url="https://gitlab.gnome.org/GNOME/libhandy"
 arch=(x86_64)
