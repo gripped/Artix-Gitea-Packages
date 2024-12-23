@@ -82,5 +82,6 @@ depends=(edi
          papirus-icon-theme
          python-efl
          rlottie
+         sdcv
          terminology)
 
