@@ -35,6 +35,7 @@ validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde
               90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1) # Nicolas Fella <nicolas.fella@kde.org>              )
 
 build() {
+  export FORCE_LIMITED_API=1
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
