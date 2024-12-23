@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: endeavour
-  version: 43.0-4
+  version: 43.0-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 43.0-4
+    version: 43.0-5
     packages:
-      - endeavour-43.0-4-x86_64.pkg.tar.zst
+      - endeavour-43.0-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
