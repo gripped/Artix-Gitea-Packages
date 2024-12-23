@@ -3,7 +3,7 @@
 
 pkgname=rapidfuzz-cpp
 pkgver=3.1.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Rapid fuzzy string matching in C++ using the Levenshtein Distance'
 arch=('any')
 url='https://github.com/maxbachmann/rapidfuzz-cpp'
