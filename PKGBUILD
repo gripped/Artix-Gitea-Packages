@@ -12,7 +12,7 @@ pkgname=(
   nm-cloud-setup
   networkmanager-docs
 )
-pkgver=1.50.0
+pkgver=1.50.1
 pkgrel=1
 pkgdesc="Network connection manager and user applications"
 url="https://networkmanager.dev/"
@@ -24,7 +24,6 @@ makedepends=(
   curl
   dhcpcd
   dnsmasq
-  elogind
   gcc-libs
   git
   glib2
@@ -53,6 +52,9 @@ makedepends=(
   ppp
   python-gobject
   readline
+  elogind
+  libelogind
+  vala
   vala
   wpa_supplicant
 )
@@ -63,7 +65,7 @@ checkdepends=(
 source=(
   "git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git?signed#tag=$pkgver"
 )
-b2sums=('0e2288926395b2d92938b60a5815bce6ea322603795dc7956c7e23d91533860a95002767ac92c8feab818e9a3743abb9883316398d18f3100a9ce84f9185cd63')
+b2sums=('316b1a2e8dfe4d7c0c0fab36f506a8315bf4045f11c5820fb41ea4735dc0a248c04367b3bd37299ef915311ab12e8f6731a8299eb7d9b85d2e216c4253e69ce8')
 validpgpkeys=(
   3D10AD045AB4AAFF8E8F36AF9B980AC2FB874FEB # Ana Cabral <acabral@redhat.com>
   F07F7C1EABD382F81CBFBA3B998D4828CD7E1656 # Beniamino Galvani <bgalvani@redhat.com>
@@ -91,9 +93,6 @@ build() {
     -D suspend_resume=elogind
     -D modify_system=true
     -D selinux=false
-    -D systemdsystemunitdir=no
-    -D session_tracking=elogind
-    -D systemd_journal=false
 
     # features
     -D iwd=true
@@ -137,7 +136,6 @@ package_networkmanager() {
   depends=(
     audit
     curl
-    elogind
     gcc-libs
     glib2
     glibc
@@ -153,6 +151,7 @@ package_networkmanager() {
     nspr
     nss
     readline
+    libelogind
     wpa_supplicant
   )
   optdepends=(
@@ -184,9 +183,6 @@ package_networkmanager() {
   install -m644 /dev/stdin etc/NetworkManager/NetworkManager.conf <<END
 # Configuration file for NetworkManager.
 # See "man 5 NetworkManager.conf" for details.
-[main]
-plugins=keyfile
-hostname-mode=none
 END
 
   # packaged configuration
