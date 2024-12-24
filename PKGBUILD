@@ -2,21 +2,22 @@
 # Contributor: Pekka Ristola <pekkarr [at] protonmail [dot] com>
 
 pkgname=rapidfuzz-cpp
-pkgver=3.1.1
-pkgrel=1.1
+pkgver=3.2.0
+pkgrel=1
 pkgdesc='Rapid fuzzy string matching in C++ using the Levenshtein Distance'
 arch=('any')
-url='https://github.com/maxbachmann/rapidfuzz-cpp'
+url='https://github.com/rapidfuzz/rapidfuzz-cpp'
 license=('MIT')
 depends=('cmake')
-makedepends=('catch2')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('2227b61c56a37854336698e0649e8db6f0c5432f60f4501805cd16add3c6324f203788006d92e0271ec67a74916c5ac5a6290edbc7437ba2014fd25e6a0e415f')
+makedepends=('git' 'catch2')
+source=("$pkgname::git+$url#tag=v$pkgver")
+sha512sums=('6a2a0892134db27b821480e4493a221e5d9370bc1f81efdd3a5a614a890fed12502c0a57e6c498f3b99e1e15a1e7320f5f8a7996b422cb7ab3443a157c742d34')
+b2sums=('4335e4f70a15895f123ff3d7de9505e247e33bb44441ae2b5561106c83205b5cf2e4925b82443ee1f61bef9a469c2477d4db85b896129c08d44c9379ba9e0ec2')
 
 build() {
   cmake \
     -B build \
-    -S "$pkgname-$pkgver" \
+    -S "$pkgname" \
     -D RAPIDFUZZ_BUILD_TESTING=ON \
     -D RAPIDFUZZ_ENABLE_LINTERS=ON \
     -D CMAKE_BUILD_TYPE=None \
@@ -34,5 +35,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 
   # license
-  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" "$pkgname-$pkgver/LICENSE"
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" "$pkgname/LICENSE"
 }
