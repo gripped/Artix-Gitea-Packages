@@ -9,7 +9,7 @@ pkgname=(
   dbus-docs
 )
 pkgver=1.16.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Freedesktop.org message bus system"
 url="https://www.freedesktop.org/wiki/Software/dbus/"
 arch=(x86_64)
@@ -101,6 +101,9 @@ package_dbus() {
 
   _pick docs "$pkgdir"/usr/share/doc
 
+  # We have a pre-assigned uid (81)
+  echo 'u dbus 81 "System Message Bus"' |
+    install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/dbus.conf"
 
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 \
     dbus-$pkgver/COPYING dbus-$pkgver/LICENSES/AFL-2.1.txt
