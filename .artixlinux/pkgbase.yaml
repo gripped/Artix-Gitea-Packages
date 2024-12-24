@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xfce4-mount-plugin
-  version: 1.1.6-4
+  version: 1.1.7-1
   arch:
     - x86_64
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.1.6-4
+    version: 1.1.7-1
     packages:
-      - xfce4-mount-plugin-1.1.6-4-x86_64.pkg.tar.zst
+      - xfce4-mount-plugin-1.1.7-1-x86_64.pkg.tar.zst
 team: galaxy
