@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: hypridle
-  version: 0.1.5-1
+  version: 0.1.5-2
   arch:
     - x86_64
     - aarch64
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.5-1
+    version: 0.1.5-2
     packages:
-      - hypridle-0.1.5-1-x86_64.pkg.tar.zst
+      - hypridle-0.1.5-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
