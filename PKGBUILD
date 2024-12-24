@@ -24,6 +24,7 @@ makedepends=(
   curl
   dhcpcd
   dnsmasq
+  elogind
   gcc-libs
   git
   glib2
@@ -52,9 +53,6 @@ makedepends=(
   ppp
   python-gobject
   readline
-  elogind
-  libelogind
-  vala
   vala
   wpa_supplicant
 )
@@ -93,6 +91,9 @@ build() {
     -D suspend_resume=elogind
     -D modify_system=true
     -D selinux=false
+    -D systemdsystemunitdir=no
+    -D session_tracking=elogind
+    -D systemd_journal=false
 
     # features
     -D iwd=true
@@ -136,6 +137,7 @@ package_networkmanager() {
   depends=(
     audit
     curl
+    elogind
     gcc-libs
     glib2
     glibc
@@ -151,7 +153,6 @@ package_networkmanager() {
     nspr
     nss
     readline
-    libelogind
     wpa_supplicant
   )
   optdepends=(
@@ -183,6 +184,9 @@ package_networkmanager() {
   install -m644 /dev/stdin etc/NetworkManager/NetworkManager.conf <<END
 # Configuration file for NetworkManager.
 # See "man 5 NetworkManager.conf" for details.
+[main]
+plugins=keyfile
+hostname-mode=none
 END
 
   # packaged configuration
