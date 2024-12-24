@@ -1,22 +1,21 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: aurelien <aurelien@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-mpc-plugin
-pkgver=0.5.3
-pkgrel=4
+pkgver=0.5.4
+pkgrel=1
 pkgdesc="Control the Music Player Daemon from the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-mpc-plugin/start"
 license=('BSD-1-Clause')
 groups=('xfce4-goodies')
 depends=('xfce4-panel' 'libmpd')
-makedepends=('git' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('c161e1c227b841359f701a86dfe961abef12c1765bec469759d85dbc4754d7a5')
+sha256sums=('ff9f283ad94167e3fb84b40207ca6311d062c662abed183908d420112538cca1')
 
 prepare() {
   cd $pkgname
