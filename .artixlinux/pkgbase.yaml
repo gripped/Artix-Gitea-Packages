@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xfce4-clipman-plugin
-  version: 1.6.6-3
+  version: 1.6.7-1
   arch:
     - x86_64
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.6.6-3
+    version: 1.6.7-1
     packages:
-      - xfce4-clipman-plugin-1.6.6-3-x86_64.pkg.tar.zst
+      - xfce4-clipman-plugin-1.6.7-1-x86_64.pkg.tar.zst
 team: galaxy
