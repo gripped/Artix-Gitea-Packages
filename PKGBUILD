@@ -4,7 +4,7 @@
 
 pkgname=intel-compute-runtime
 pkgver=24.45.31740.9
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver"
 arch=(x86_64)
 url="https://01.org/compute-runtime"
