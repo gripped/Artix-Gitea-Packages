@@ -51,3 +51,4 @@ package() {
   install -vDm 640 $_name.cfg -t "$pkgdir/etc/"
   install -vDm 644 ../$pkgname.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
 }
+
