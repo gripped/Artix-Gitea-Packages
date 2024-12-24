@@ -9,8 +9,8 @@ pkgbase:
     - profanity
     - profanity-gtk
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -48,12 +48,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 1:0.14.0-3
     packages:
       - profanity-1:0.14.0-3-x86_64.pkg.tar.zst
       - profanity-gtk-1:0.14.0-3-x86_64.pkg.tar.zst
-  galaxy:
-    version: 1:0.14.0-2
-    packages:
-      - profanity-1:0.14.0-2-x86_64.pkg.tar.zst
-      - profanity-gtk-1:0.14.0-2-x86_64.pkg.tar.zst
