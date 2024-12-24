@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mypy
-  version: 1.13.0-2
+  version: 1.14.0-1
   arch:
     - any
   pkgname:
     - mypy
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.13.0-2
+    version: 1.14.0-1
     packages:
-      - mypy-1.13.0-2-any.pkg.tar.zst
+      - mypy-1.14.0-1-any.pkg.tar.zst
   world:
     version: 1.12.1-1.1
     packages:
