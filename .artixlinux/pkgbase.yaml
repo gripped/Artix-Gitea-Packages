@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - pysolfc
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 3.1.0-2
     packages:
       - pysolfc-3.1.0-2-any.pkg.tar.zst
-  galaxy:
-    version: 3.1.0-1
-    packages:
-      - pysolfc-3.1.0-1-any.pkg.tar.zst
 team: galaxy
