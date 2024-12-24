@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: scummvm
-  version: 2.8.1-1
+  version: 2.9.0-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.8.1-1
+    version: 2.9.0-1
     packages:
-      - scummvm-2.8.1-1-x86_64.pkg.tar.zst
+      - scummvm-2.9.0-1-x86_64.pkg.tar.zst
+team: galaxy
