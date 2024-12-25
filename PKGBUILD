@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: tobias <tobias funnychar archlinux.org>
 # Contributor: Corrado Primier <bardo@aur.archlinux.org>
 
 pkgname=xfce4-settings
 pkgver=4.20.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Xfce's Configuration System"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-settings/start"
@@ -14,7 +13,7 @@ license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('exo' 'garcon' 'libxfce4ui' 'xfconf' 'libnotify' 'libcanberra'
          'colord' 'libxklavier' 'elementary-icon-theme' 'gnome-themes-extra')
-makedepends=('git' 'glib2-devel' 'intltool' 'xfce4-dev-tools' 'xf86-input-libinput')
+makedepends=('git' 'glib2-devel' 'xfce4-dev-tools' 'xf86-input-libinput')
 optdepends=('python: xfce4-compose-mail -- "mailto:" URI handling'
             'xiccd: for displays support in xfce4-color-settings'
             'cups: for printers support in xfce4-color-settings'
