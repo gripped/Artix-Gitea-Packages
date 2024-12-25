@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-fiona
-  version: 1.9.6-5
+  version: 1.10.1-1
   arch:
     - x86_64
   pkgname:
     - python-fiona
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.9.6-5
+    version: 1.10.1-1
     packages:
-      - python-fiona-1.9.6-5-x86_64.pkg.tar.zst
+      - python-fiona-1.10.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
