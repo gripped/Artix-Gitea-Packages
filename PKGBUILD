@@ -54,8 +54,8 @@ optdepends=('ffmpegthumbs: video thumbnails'
             'purpose: share context menu')
 groups=(kde-applications
         kde-system)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-24.12.0.tar.xz{,.sig})
-sha256sums=('39d6a42c790021a0c44a18b74fab633874063727d46795746a665060cf4593a3'
+source=(https://download.kde.org/stable/release-service/24.12.0/src/$pkgname-24.12.0.tar.xz{,.sig})
+sha256sums=('421f02f9699b609d7e66e0aae9fa1fd735ba0a92a56febe75880ecbeb8dfc513'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -72,3 +72,4 @@ package() {
 
   rm -r $pkgdir/usr/lib/systemd
 }
+
