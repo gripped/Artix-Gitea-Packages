@@ -1,21 +1,20 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-wavelan-plugin
-pkgver=0.6.3
-pkgrel=4
+pkgver=0.6.4
+pkgrel=1
 pkgdesc="Plugin to monitor wifi connectivity for the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-wavelan-plugin/start"
 license=('BSD-2-Clause')
 groups=('xfce4-goodies')
 depends=('xfce4-panel')
-makedepends=('git' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-wavelan-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('be53ea5bdfad55cd22ad8004b7501fe9e4c0d4ea34e5f2839dfc71a662d88b7f')
+sha256sums=('3993a074d9e6dbba3f33827b7182dea181ba6d85741d9bbb2249f3863e043053')
 
 prepare() {
   cd $pkgname

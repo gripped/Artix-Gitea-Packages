@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xfce4-wavelan-plugin
-  version: 0.6.3-4
+  version: 0.6.4-1
   arch:
     - x86_64
   pkgname:
     - xfce4-wavelan-plugin
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.6.4-1
+    packages:
+      - xfce4-wavelan-plugin-0.6.4-1-x86_64.pkg.tar.zst
   galaxy:
     version: 0.6.3-4
     packages:
