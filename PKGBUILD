@@ -5,7 +5,7 @@ pkgname=python-moto
 _pkgname=moto
 # https://github.com/getmoto/moto/blob/master/CHANGELOG.md
 pkgver=5.0.24
-pkgrel=1
+pkgrel=2
 pkgdesc='Moto is a library to mock out the boto library.'
 arch=(any)
 url='https://github.com/spulec/moto'
