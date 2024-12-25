@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xfce4-mpc-plugin
-  version: 0.5.4-1
+  version: 0.5.5-1
   arch:
     - x86_64
   pkgname:
     - xfce4-mpc-plugin
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.5.5-1
+    packages:
+      - xfce4-mpc-plugin-0.5.5-1-x86_64.pkg.tar.zst
   galaxy:
     version: 0.5.4-1
     packages:
