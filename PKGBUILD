@@ -253,4 +253,3 @@ package_networkmanager-docs() {
 
   mv docs/* "$pkgdir"
 }
-
