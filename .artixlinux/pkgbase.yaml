@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: thunar-media-tags-plugin
-  version: 0.4.0-4
+  version: 0.4.0-5
   arch:
     - x86_64
   pkgname:
     - thunar-media-tags-plugin
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.4.0-5
+    packages:
+      - thunar-media-tags-plugin-0.4.0-5-x86_64.pkg.tar.zst
   galaxy:
     version: 0.4.0-4
     packages:
