@@ -254,4 +254,3 @@ package_networkmanager-docs() {
   mv docs/* "$pkgdir"
 }
 
-# vim:set sw=2 sts=-1 et:
