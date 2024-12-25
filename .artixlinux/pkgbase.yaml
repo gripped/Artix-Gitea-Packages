@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libopenshot-audio
-  version: 0.3.3-1
+  version: 0.4.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libopenshot-audio-docs
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.3.3-1
+    version: 0.4.0-1
     packages:
-      - libopenshot-audio-0.3.3-1-x86_64.pkg.tar.zst
-      - libopenshot-audio-docs-0.3.3-1-x86_64.pkg.tar.zst
+      - libopenshot-audio-0.4.0-1-x86_64.pkg.tar.zst
+      - libopenshot-audio-docs-0.4.0-1-x86_64.pkg.tar.zst
 team: galaxy
