@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: T.J. Townsend <blakkheim@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Andrew Simmons <andrew.simmons@gmail.com>
 
 pkgname=thunar
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern, fast and easy-to-use file manager for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/thunar/start"
@@ -14,7 +13,7 @@ license=('GPL-2.0-or-later' 'LGPL-2.1-only')
 groups=('xfce4')
 depends=('desktop-file-utils' 'libexif' 'hicolor-icon-theme' 'libnotify'
          'pcre2' 'libgudev' 'exo' 'libxfce4util' 'libxfce4ui' 'libpng')
-makedepends=('git' 'glib2-devel' 'intltool' 'gobject-introspection' 'xfce4-panel' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'gobject-introspection' 'xfce4-panel' 'xfce4-dev-tools')
 optdepends=('catfish: file searching'
             'gvfs: trash support, mounting with udisk and remote filesystems'
             'tumbler: thumbnail previews'
