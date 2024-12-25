@@ -1,19 +1,18 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan Jezek <honzin.jezek@gmail.com>
 
 pkgname=tumbler
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Thumbnail service implementing the thumbnail management D-Bus specification"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/tumbler/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('libxfce4util' 'gdk-pixbuf2')
-makedepends=('git' 'glib2-devel' 'intltool' 'python' 'ffmpegthumbnailer' 'poppler-glib'
+makedepends=('git' 'glib2-devel' 'python' 'ffmpegthumbnailer' 'poppler-glib'
              'libgsf' 'libgepub' 'libopenraw' 'freetype2' 'xfce4-dev-tools')
 optdepends=('ffmpegthumbnailer: video thumbnails'
             'poppler-glib: PDF thumbnails'
