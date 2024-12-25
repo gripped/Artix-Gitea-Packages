@@ -1,19 +1,18 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=xfce4-taskmanager
-pkgver=1.5.7
-pkgrel=3
+pkgver=1.5.8
+pkgrel=1
 pkgdesc="Easy to use task manager"
 arch=('x86_64')
 url="https://docs.xfce.org/apps/xfce4-taskmanager/start"
 license=('GPL-2.0-or-later')
 depends=('libxfce4ui' 'xfconf' 'libxmu' 'libwnck3')
-makedepends=('git' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'xfce4-dev-tools')
 groups=('xfce4-goodies')
 source=("git+https://gitlab.xfce.org/apps/xfce4-taskmanager.git#tag=$pkgname-$pkgver")
-sha256sums=('82709b5ce3968d98c9498817d60e1ce9c9ba296c5acd5f6072daf32880a6a0ac')
+sha256sums=('48f9453b01e066c78bd3e9c3779fe972e3ea45984cd13bf81f99653ec3ed1b46')
 
 prepare() {
   cd $pkgname

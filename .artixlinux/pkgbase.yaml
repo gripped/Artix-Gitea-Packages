@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xfce4-taskmanager
-  version: 1.5.7-3
+  version: 1.5.8-1
   arch:
     - x86_64
   pkgname:
     - xfce4-taskmanager
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.5.8-1
+    packages:
+      - xfce4-taskmanager-1.5.8-1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.5.7-3
     packages:
