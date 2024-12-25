@@ -1,18 +1,17 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=thunar-volman
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Automatic management of removable drives and media for Thunar"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/thunar/thunar-volman"
 license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('thunar' 'libxfce4ui' 'hicolor-icon-theme')
-makedepends=('git' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/xfce/thunar-volman.git#tag=$pkgname-$pkgver")
 sha256sums=('95450936f179c5c15775ee492c97d3cededc10f10eaa9af782da28cfd871e9d6')
 
