@@ -1,29 +1,28 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-smartbookmark-plugin
-pkgver=0.5.2
-pkgrel=4
+pkgver=0.5.3
+pkgrel=1
 pkgdesc="Allows you to send requests directly to your browser and perform a custom search"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-smartbookmark-plugin/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4-goodies')
 depends=('xfce4-panel')
-makedepends=('git' 'intltool' 'libxt' 'xfce4-dev-tools')
-source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-smartbookmark-plugin.git#tag=$pkgver"
+makedepends=('git' 'libxt' 'xfce4-dev-tools')
+source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-smartbookmark-plugin.git#tag=$pkgname-$pkgver"
         xfce4-smartbookmark-plugin-archlinux.patch)
-sha256sums=('07b99e22a8e3331fd539654c97cfd2a79b134a4e99184e30995e3df0d6cc9e55'
+sha256sums=('ff32dabc708b180f4db53ac51c6fb3bfbcbab6d119957bfd1d169b798452876c'
             '07f0e70bcdf371f7d4302cecf82c59845cf7b6b77ff87befff3603feca29903d')
 
 prepare() {
   cd $pkgname
 
-  # Replace Debian URLs by Arch ones 
-  patch -Np1 -i "$srcdir/xfce4-smartbookmark-plugin-archlinux.patch"
+  # Replace Debian URLs by Arch ones
+  patch -Np1 -i ../xfce4-smartbookmark-plugin-archlinux.patch
 
   NOCONFIGURE=1 ./autogen.sh
 }
