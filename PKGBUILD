@@ -5,6 +5,7 @@
 
 pkgname=dolphin
 pkgver=24.12.0.1
+_pkgver=24.12.0
 pkgrel=1
 pkgdesc='KDE File Manager'
 arch=(x86_64)
@@ -54,7 +55,7 @@ optdepends=('ffmpegthumbs: video thumbnails'
             'purpose: share context menu')
 groups=(kde-applications
         kde-system)
-source=(https://download.kde.org/stable/release-service/24.12.0/src/$pkgname-24.12.0.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgver.tar.xz{,.sig})
 sha256sums=('421f02f9699b609d7e66e0aae9fa1fd735ba0a92a56febe75880ecbeb8dfc513'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
@@ -62,7 +63,7 @@ validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aac
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$_pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
