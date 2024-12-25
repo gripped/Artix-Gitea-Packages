@@ -1,18 +1,17 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfconf
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus-based configuration storage system"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfconf/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('libxfce4util')
-makedepends=('git' 'glib2-devel' 'intltool' 'gobject-introspection' 'vala' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'gobject-introspection' 'vala' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/xfce/xfconf.git#tag=$pkgname-$pkgver")
 sha256sums=('be231e33ce8ce45800f05407843c598b55ec33714931bdc92202ab96bb40b38a')
 
