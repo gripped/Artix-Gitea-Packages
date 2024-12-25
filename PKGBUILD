@@ -2,7 +2,7 @@
 
 pkgname=python-apispec
 pkgver=6.0.2
-pkgrel=5
+pkgrel=6
 pkgdesc="A pluggable API specification generator. Currently supports the OpenAPI Specification."
 url="https://github.com/marshmallow-code/apispec"
 license=('MIT')
@@ -33,4 +33,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
-
