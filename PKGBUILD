@@ -1,17 +1,16 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias funnychar archlinux.org>
 
 pkgname=xfce4-dev-tools
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Xfce developer tools"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-dev-tools/start"
 license=('GPL-2.0-or-later')
-depends=('glib2' 'intltool' 'gtk-doc')
+depends=('glib2' 'gtk-doc')
 makedepends=('git' 'meson')
 optdepends=('docker: xfce-build helper script')
 source=("git+https://gitlab.xfce.org/xfce/xfce4-dev-tools.git#tag=$pkgname-$pkgver")
