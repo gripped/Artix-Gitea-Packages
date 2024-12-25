@@ -1,17 +1,16 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Christian Hesse <mail@eworm.de>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=xfce4-screensaver
 pkgver=4.18.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Xfce Screensaver'
 arch=('x86_64')
 url='https://docs.xfce.org/apps/screensaver/start'
 license=('LGPL-2.1-only')
 groups=('xfce4-goodies')
 depends=('libxss' 'libxklavier' 'libwnck3' 'garcon' 'dbus-glib' 'python' 'python-gobject')
-makedepends=('git' 'glib2-devel' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'xfce4-dev-tools')
 backup=('etc/pam.d/xfce4-screensaver')
 source=("git+https://gitlab.xfce.org/apps/xfce4-screensaver.git#tag=$pkgname-$pkgver")
 sha256sums=('0b349a446dc768712c052348d68cf624f7bc162859124504081c3124ba966666')
