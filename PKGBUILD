@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfce4-session
 pkgver=4.20.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Xfce's session manager"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-session/start"
@@ -13,7 +12,7 @@ license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('libxfce4ui' 'libwnck3' 'libxfce4windowing' 'xfconf' 'libsm' 'polkit' 'gtk-layer-shell'
          'xorg-iceauth' 'xorg-xinit' 'xorg-xrdb' 'polkit-gnome' 'hicolor-icon-theme')
-makedepends=('git' 'glib2-devel' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'xfce4-dev-tools')
 optdepends=('gnome-keyring: for keyring support when GNOME compatibility is enabled'
             'xfce4-screensaver: for locking screen with xflock4'
             'xscreensaver: for locking screen with xflock4'
