@@ -4,7 +4,7 @@
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-eyes-plugin
-pkgver=4.6.1
+pkgver=4.6.2
 pkgrel=1
 pkgdesc="A rolling eyes (following mouse pointer) plugin for the Xfce panel"
 arch=('x86_64')
@@ -14,7 +14,7 @@ groups=('xfce4-goodies')
 depends=('xfce4-panel' 'hicolor-icon-theme')
 makedepends=('git' 'perl-xml-parser' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-eyes-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('c5afff8a7c4ff3fe1f94e34ed746eda394ddc47e9428a85e60559e5516fafb8a')
+sha256sums=('900505bce430f76495a47e29f8f2f536c48e0314d58820056b1a92ee164a48f0')
 
 prepare() {
   cd $pkgname
