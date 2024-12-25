@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: NicoHood <archlinux {cat} nicohood {dog} de>
 # Contributor: <alcasa dot mz at gmail dot com>
@@ -8,14 +7,14 @@
 
 pkgname=xfce4-pulseaudio-plugin
 pkgver=0.4.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Pulseaudio plugin for the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-pulseaudio-plugin/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4-goodies')
 depends=('xfce4-panel' 'libpulse' 'libkeybinder3' 'libnotify' 'libcanberra')
-makedepends=('git' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'xfce4-dev-tools')
 optdepends=('pavucontrol: default pulseaudio mixer')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-pulseaudio-plugin.git#tag=$pkgname-$pkgver")
 sha256sums=('b686b469b699c073e838e04382bab2282aff13cb1a2086065b38c8c5f673d934')
