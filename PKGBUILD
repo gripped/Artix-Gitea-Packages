@@ -8,7 +8,8 @@ pkgname=(
   dbus
   dbus-docs
 )
-pkgver=1.16.0
+pkgver=1.16.1
+_pkgver=1.14.10
 pkgrel=1.2
 pkgdesc="Freedesktop.org message bus system"
 url="https://wiki.freedesktop.org/www/Software/dbus/"
@@ -32,10 +33,10 @@ makedepends=(
   yelp-tools
 )
 source=(
-  https://dbus.freedesktop.org/releases/dbus/dbus-$pkgver.tar.xz{,.asc}
+  https://dbus.freedesktop.org/releases/dbus/dbus-$_pkgver.tar.xz{,.asc}
   dbus-enable-elogind.patch
 )
-b2sums=('a5a3ebe777c1c0296ba7240f9ed29ad329a6578a05baf10a469ce8c7d243791d35aca42a70d04cdd88feea238d081c3c8b0db444df24abcf7ce5ffe9187a0440'
+b2sums=('f605b0810dcde6a0753384927131e7f4675be737ad7506a51261717c2622e74b99ac33cc2c199b98e5aa6b9d7c68ef692b8ee9f684f6fdab8d06c6fa861a6f6b'
         'SKIP'
         'c9ef41ff7b31af6cbaf28ca16974fb62aa0f2492f1c6970b41216758768d1139d2ce9aabbb3aff952d625b0decd1e8c2b25f79bb0a13c146aa9453dd4f7b5c5a')
 validpgpkeys=(
@@ -43,7 +44,7 @@ validpgpkeys=(
 )
 
 prepare() {
-  cd dbus-$pkgver
+  cd dbus-$_pkgver
   patch -Np 1 -i ../dbus-enable-elogind.patch
   NOCONFIGURE=1 ./autogen.sh
 }
@@ -72,13 +73,13 @@ build() {
     --enable-x11-autolaunch
   )
 
-  cd dbus-$pkgver
+  cd dbus-$_pkgver
   ./configure "${configure_options[@]}"
   make
 }
 
 check() {
-  make -C dbus-$pkgver -j1 check
+  make -C dbus-$_pkgver -j1 check
 }
 
 _pick() {
@@ -105,7 +106,7 @@ package_dbus() {
   conflicts=(libdbus)
   replaces=(libdbus)
 
-  cd dbus-$pkgver
+  cd dbus-$_pkgver
   DESTDIR="$pkgdir" make install
 
   rm -r "$pkgdir"/{etc,var}
