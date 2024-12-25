@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-auditwheel
-  version: 6.0.0-3
+  version: 6.1.0-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.0.0-3
+    version: 6.1.0-1
     packages:
-      - python-auditwheel-6.0.0-3-any.pkg.tar.zst
+      - python-auditwheel-6.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
