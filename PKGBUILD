@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: tobias <tobias funnychar archlinux.org>
 
 pkgname=xfwm4
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Xfce's window manager"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfwm4/start"
@@ -13,7 +12,7 @@ license=('GPL-2.0-or-later')
 groups=('xfce4')
 depends=('libxfce4ui' 'xfconf' 'libwnck3' 'libepoxy' 'libxpresent'
          'hicolor-icon-theme')
-makedepends=('git' 'intltool' 'xfce4-dev-tools')
+makedepends=('git' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/xfce/xfwm4.git#tag=$pkgname-$pkgver")
 sha256sums=('68691593f06659f1ba1a0363be161b2cd50a84016612394c909bce1485a75cff')
 
