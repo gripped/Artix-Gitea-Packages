@@ -1,18 +1,17 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Xavier Devlamynck <magicrhesus@ouranos.be>
 
 pkgname=garcon
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Freedesktop.org compliant menu library"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/garcon/start"
 license=('LGPL-2.0-only')
 groups=('xfce4')
 depends=('libxfce4ui')
-makedepends=('git' 'glib2-devel' 'intltool' 'python' 'gobject-introspection' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'python' 'gobject-introspection' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/xfce/garcon.git#tag=$pkgname-$pkgver")
 sha256sums=('2febf44d472e9d597a722f5082458ad612e05b167f7a2f9a5b56d4633bdc99cc')
 
