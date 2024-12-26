@@ -74,7 +74,7 @@ check() {
   test-env/bin/python -m pytest -vv --pyargs pyarrow
 }
 
-package(){
+package() {
   cd apache-$_pkg-$pkgver/python
   python -m installer --destdir="$pkgdir" dist/*.whl
 
