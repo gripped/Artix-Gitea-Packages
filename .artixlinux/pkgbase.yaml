@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tk
-  version: 8.6.15-1
+  version: 8.6.16-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.6.15-1
+    version: 8.6.16-1
     packages:
-      - tk-8.6.15-1-x86_64.pkg.tar.zst
+      - tk-8.6.16-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
