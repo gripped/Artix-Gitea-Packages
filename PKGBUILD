@@ -1,18 +1,17 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Xavier Devlamynck <magicrhesus@ouranos.be>
 
 pkgname=libxfce4ui
 pkgver=4.20.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Widgets library for the Xfce desktop environment"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4ui/start"
 license=('GPL-2.0-only')
 depends=('libxfce4util' 'gtk3' 'xfconf' 'libsm' 'startup-notification'
          'libgtop' 'libepoxy' 'hicolor-icon-theme')
-makedepends=('git' 'glib2-devel' 'intltool' 'gobject-introspection' 'vala' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'gobject-introspection' 'vala' 'xfce4-dev-tools' 'intltool')
 source=("git+https://gitlab.xfce.org/xfce/libxfce4ui.git#tag=$pkgname-$pkgver")
 sha256sums=('297e45740a44abd05f4f35bab4e097e6399c9dd1b88baac78f42ceacb2ed185f')
 
