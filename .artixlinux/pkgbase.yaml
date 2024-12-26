@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: parole
-  version: 4.18.1-4
+  version: 4.18.2-1
   arch:
     - x86_64
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.18.1-4
+    version: 4.18.2-1
     packages:
-      - parole-4.18.1-4-x86_64.pkg.tar.zst
+      - parole-4.18.2-1-x86_64.pkg.tar.zst
 team: galaxy

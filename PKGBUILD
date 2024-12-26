@@ -1,24 +1,23 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Balló György <ballogyor+arch at gmail dot com>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: TDY <tdy@gmx.com>
 
 pkgname=parole
-pkgver=4.18.1
-pkgrel=4
+pkgver=4.18.2
+pkgrel=1
 pkgdesc="Modern media player based on the GStreamer framework"
 arch=('x86_64')
 url="https://docs.xfce.org/apps/parole/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4-goodies')
 depends=('dbus-glib' 'gst-plugins-base' 'gst-plugins-good' 'libnotify' 'libxfce4ui')
-makedepends=('git' 'glib2-devel' 'intltool' 'python' 'xfce4-dev-tools')
+makedepends=('git' 'glib2-devel' 'python' 'xfce4-dev-tools' 'intltool')
 optdepends=('gst-libav: Extra media codecs'
 	    'gst-plugins-bad: Extra media codecs'
 	    'gst-plugins-ugly: Extra media codecs')
 source=("git+https://gitlab.xfce.org/apps/parole.git#tag=$pkgname-$pkgver")
-sha256sums=('20806cc8fe54c3e626999958c19e7fdaf0158de64dbeea9771ff9882970ab8eb')
+sha256sums=('c639f4c33bbd6e645fd434fec2f793a25f331c31ef70e8dfd082bc331c2f34c8')
 
 prepare() {
   cd $pkgname
