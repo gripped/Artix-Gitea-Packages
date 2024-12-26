@@ -2,7 +2,7 @@
 
 pkgname=sdcv
 pkgver=0.5.5
-pkgrel=2
+pkgrel=2.1
 pkgdesc="StarDict Console Version"
 arch=('x86_64')
 url="https://dushistov.github.io/sdcv/"
@@ -32,3 +32,4 @@ package() {
 
   make DESTDIR="${pkgdir}" install
 }
+
