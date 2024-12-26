@@ -58,7 +58,7 @@ build() {
 
 check() {
   cd icu/source
-  make check
+  make check -k
 }
 
 package() {
