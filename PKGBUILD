@@ -4,13 +4,13 @@
 
 pkgname=libxfce4util
 pkgver=4.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Basic utility non-GUI functions for Xfce"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4util/start"
 license=('GPL-2.0-only')
 depends=('glib2')
-makedepends=('git' 'intltool' 'gobject-introspection' 'vala' 'xfce4-dev-tools')
+makedepends=('git' 'gobject-introspection' 'vala' 'xfce4-dev-tools' 'intltool')
 source=("git+https://gitlab.xfce.org/xfce/libxfce4util.git#tag=$pkgname-$pkgver")
 sha256sums=('106c5c1bc9d4b0859db372348ab207247626e0323a470cbdfc00699790905dec')
 
