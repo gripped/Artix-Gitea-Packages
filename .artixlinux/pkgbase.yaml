@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: netpbm
-  version: 10.86.43-1
+  version: 10.86.44-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.86.43-1
+    version: 10.86.44-1
     packages:
-      - netpbm-10.86.43-1-x86_64.pkg.tar.zst
+      - netpbm-10.86.44-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
