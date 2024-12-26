@@ -5,7 +5,7 @@ pkgname=(
   dbus
   dbus-docs
 )
-pkgver=1.16.0
+pkgver=1.16.1
 pkgrel=1.3
 pkgdesc="Freedesktop.org message bus system"
 url="https://wiki.freedesktop.org/www/Software/dbus/"
