@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libp11
-  version: 0.4.12-3
+  version: 0.4.13-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.12-3
+    version: 0.4.13-1
     packages:
-      - libp11-0.4.12-3-x86_64.pkg.tar.zst
+      - libp11-0.4.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
