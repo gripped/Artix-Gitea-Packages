@@ -15,7 +15,7 @@ pkgbase:
     - aspnet-targeting-pack
     - dotnet-source-built-artifacts
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -36,16 +36,16 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 8.0.10.sdk110-1
+    version: 8.0.11.sdk111-1
     packages:
-      - dotnet-host-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - netstandard-targeting-pack-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-8.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-8.0.10.sdk110-1-x86_64.pkg.tar.zst
+      - dotnet-host-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - netstandard-targeting-pack-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-8.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-8.0.11.sdk111-1-x86_64.pkg.tar.zst
   world:
     version: 8.0.11.sdk111-1
     packages:
