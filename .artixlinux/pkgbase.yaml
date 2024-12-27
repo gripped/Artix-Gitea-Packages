@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libretro-dolphin
-  version: 33044-2
+  version: 33044-3
   arch:
     - x86_64
   pkgname:
     - libretro-dolphin
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 33044-3
+    packages:
+      - libretro-dolphin-33044-3-x86_64.pkg.tar.zst
   galaxy:
     version: 33044-2
     packages:
