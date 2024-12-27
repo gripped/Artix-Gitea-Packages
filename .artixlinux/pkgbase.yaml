@@ -9,7 +9,7 @@ pkgbase:
     - libsfdo
 actions:
   addRepo: null
-  removeRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
