@@ -1,15 +1,15 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: loqs
 # Contributor: Jorge Araya Navarro <jorgejavieran@yahoo.com.mx>
 # Contributor: Cristian Porras <porrascristian@gmail.com>
 # Contributor: Matthew Bentley <matthew@mtbentley.us>
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
+# Contributor: Toolybird <toolybird at tuta dot io>
 
 pkgbase=godot
 pkgname=(godot godot-mono)
 pkgver=4.3
-pkgrel=4
+pkgrel=5
 pkgdesc='Advanced cross-platform 2D and 3D game engine'
 url='https://godotengine.org/'
 license=(MIT)
@@ -91,6 +91,7 @@ build() {
     builtin_zlib=no
     builtin_zstd=no
     colored=yes
+    disable_exceptions=false
     platform=linuxbsd
     production=yes
     pulseaudio=yes

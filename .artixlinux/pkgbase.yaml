@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: godot
-  version: 4.3-4
+  version: 4.3-5
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3-4
+    version: 4.3-5
     packages:
-      - godot-4.3-4-x86_64.pkg.tar.zst
-      - godot-mono-4.3-4-x86_64.pkg.tar.zst
+      - godot-4.3-5-x86_64.pkg.tar.zst
+      - godot-mono-4.3-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
