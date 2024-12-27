@@ -29,17 +29,13 @@ sha256sums=('ecdcf1099bac3e7b1198bdee7542150d378ee333a644c49095e974d819b8d1c3'
             'e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db')
 
 build() {
-  cd "${pkgname}-${pkgver}"
-  ./configure --prefix=/usr \
-              --enable-golang \
-              --sysconfdir=/etc \
-              --libexecdir=/usr/lib
-  make
+  arch-meson ${pkgname}-${pkgver} build -Dmandoc=true -Dgolang=true --prefix=/usr --libexecdir=/usr/lib
+  meson compile -C build  
 }
 
 package() {
+  DESTDIR="${pkgdir}" meson install -C build
   cd "${pkgname}-${pkgver}"
-  make DESTDIR="${pkgdir}/" install
   install -d "${pkgdir}/usr/share/doc/fvwm3"
   install -D -m644 ../fvwm3.desktop "${pkgdir}/usr/share/xsessions/fvwm3.desktop"
   install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
