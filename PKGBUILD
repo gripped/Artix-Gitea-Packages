@@ -4,7 +4,7 @@
 _name=pytest-socket
 pkgname=python-pytest-socket
 pkgver=0.7.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Pytest Plugin to disable socket calls during tests'
 arch=(any)
 license=(MIT)
@@ -56,4 +56,3 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
-
