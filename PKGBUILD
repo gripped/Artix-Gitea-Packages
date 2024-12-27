@@ -5,7 +5,7 @@ pkgname=(
   wpewebkit
   wpewebkit-docs
 )
-pkgver=2.46.4
+pkgver=2.46.5
 pkgrel=1
 pkgdesc="Embeddable web content engine"
 url="https://wpewebkit.org"
@@ -97,14 +97,11 @@ makedepends=(
 )
 source=(
   $url/releases/wpewebkit-$pkgver.tar.xz{,.asc}
-  56fd192099634e34c420e7a88aee0a668d46e069.patch
 )
-sha256sums=('a22f6acf5574f9415f5007c6e79c5f8527363d1ae1dbd8d786e67a935ef56d8b'
-            'SKIP'
-            '1ce5ea314e14cfd037cc42b7b924ec5f58c87c087be4e0b614b5f435a0f54378')
-b2sums=('98fa286ea734f698ab3f8a945c343251caca0a65523d3bea8797ef2d66805a6105f7ab34257b0acd41e18e8b381a3bf0d4c40b0ef82d8c8639f6d20b10ce67b1'
-        'SKIP'
-        'a4111477c87beef95665af5f67aef333b94eb4ce0202e987923dd09e2bc67fdad89e7bd3fd8868d39f9195ea2667232b9288f992440e2036ab314bcea04237fe')
+sha256sums=('2efd4831efcf86e29546c028d6f17a7b775b61b6499ed62399a00da8f06ea456'
+            'SKIP')
+b2sums=('4e6964a64c5cd97f6763e0a16b883995fc9c0e966e42e7fb9633270bec43c8117c07692678cb60a3422c9033019fe9d30880a06e4bd6fec7f08c22783ee4c748'
+        'SKIP')
 validpgpkeys=(
   # https://wpewebkit.org/release/verify/
   5AA3BC334FD7E3369E7C77B291C559DBE4C9123B # Adrián Pérez de Castro <aperez@igalia.com>
@@ -113,7 +110,6 @@ validpgpkeys=(
 
 prepare() {
   cd wpewebkit-$pkgver
-  patch -Np1 -i ../56fd192099634e34c420e7a88aee0a668d46e069.patch
 }
 
 build() {
