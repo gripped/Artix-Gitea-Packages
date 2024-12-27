@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sfml
-  version: 2.6.2-1
+  version: 3.0.0-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2.6.2-1
+    version: 3.0.0-1
     packages:
-      - sfml-2.6.2-1-x86_64.pkg.tar.zst
+      - sfml-3.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 2.6.2-1
     packages:
