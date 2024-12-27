@@ -4,7 +4,7 @@
 pkgname=krita
 _pkgver=5.2.6
 pkgver=${_pkgver/-/}
-pkgrel=4
+pkgrel=5
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
@@ -70,6 +70,7 @@ optdepends=('kimageformats5: PSD support'
             'libjxl: JPEG-XL filter'
             'libmypaint: support for MyPaint brushes'
             'poppler-qt5: PDF filter'
+            'python-legacy-cgi: for the Python plugins'
             'python-pyqt5: for the Python plugins')
 source=(https://download.kde.org/stable/krita/$_pkgver/$pkgname-$_pkgver.tar.gz{,.sig}
         sip-6.8.patch
