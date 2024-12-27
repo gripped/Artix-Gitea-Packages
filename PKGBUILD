@@ -29,7 +29,7 @@ sha256sums=('ecdcf1099bac3e7b1198bdee7542150d378ee333a644c49095e974d819b8d1c3'
             'e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db')
 
 build() {
-  artix-meson ${pkgname}-${pkgver} build -Dmandoc=true -Dgolang=true --prefix=/usr --libexecdir=/usr/lib
+  artix-meson ${pkgname}-${pkgver} build -Dmandoc=true -Dgolang=enabled --prefix=/usr --libexecdir=/usr/lib
   meson compile -C build  
 }
 
