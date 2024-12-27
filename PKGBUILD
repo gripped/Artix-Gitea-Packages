@@ -23,8 +23,7 @@ optdepends=('hddtemp: HDD temperature monitoring support'
             'python-zeroconf: for the autodiscover mode'
             'python-pystache: templating engine'
             'python-prometheus_client: for the Prometheus export module')
-source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz"
-        'glances.service')
+source=("${pkgname}-${pkgver}-${pkgrel}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz")
 sha512sums=('d2b2346be9a17a41d690f3f7d9b4e0c003f025d3a0cfbefa4c106d9bafb4ee88e19b626dbd51c8bf05d16fa4dbb6bf28f6613a51695fc89f609dc7073283dc78'
             '49f0d185a37a5c5837e5beb463770c943ede40b2f1b8405e338129e897e97d9fc58373a8586fabc506266e6343cfea3c91b9787ac6832cc97a1ab63d6ad058d4')
 b2sums=('697eabaceba73743069b3a574b795945e6e970bb9ce25219cc190dd3a4e6cb4d39f6d37e11f4dcb52ad7f7ef58637f9b26aab397a508e53bc3f367e3f8b65c07'
