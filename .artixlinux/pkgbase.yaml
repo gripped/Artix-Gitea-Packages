@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mpg123
-  version: 1.32.9-1
+  version: 1.32.10-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.32.9-1
+    version: 1.32.10-1
     packages:
-      - mpg123-1.32.9-1-x86_64.pkg.tar.zst
+      - mpg123-1.32.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
