@@ -8,7 +8,7 @@ arch=('x86_64')
 url="https://www.fvwm.org"
 license=('GPL' 'custom')
 depends=('libevent' 'libx11' 'libxft' 'libxrender' 'libxt' 'python' 'libxrandr' 'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
-makedepends=('meson' 'cmake' 'go' 'xtrans' 'librsvg' 'libxcursor' 'libxpm')
+makedepends=('meson' 'cmake' 'go' 'xtrans' 'librsvg' 'libxcursor' 'libxpm' 'asciidoctor')
 optdepends=('freetype2: Font rasterization library'
             'asciidoctor: An implementation of AsciiDoc in Ruby'
             'fribidi: A Free Implementation of the Unicode Bidirectional Algorithm'
