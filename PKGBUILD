@@ -4,7 +4,7 @@
 
 pkgname=python-hatch
 pkgver=1.13.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A modern project, package, and virtual env manager"
 arch=('any')
 url="https://github.com/pypa/hatch"
