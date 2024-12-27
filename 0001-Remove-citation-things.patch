@@ -124,8 +124,8 @@
 -	 "If you use programs that use GNU Parallel to process data for an article in a",
 -	 "scientific publication, please cite:",
 -	 "",
--	 "  Tange, O. (2024, November 22). GNU Parallel 20241122 ('Ahoo Daryaei').",
--	 "  Zenodo. https://doi.org/10.5281/zenodo.14207479",
+-	 "  Tange, O. (2024, December 22). GNU Parallel 20241222 ('Bashar').",
+-	 "  Zenodo. https://doi.org/10.5281/zenodo.14550073",
 -	 "",
 -	 # Before changing these lines,  please read
 -	 # https://www.gnu.org/software/parallel/parallel_design.html#citation-notice
@@ -157,8 +157,8 @@
 -	     "If you use programs that use GNU Parallel to process data for an article in a",
 -	     "scientific publication, please cite:",
 -	     "",
--	     "  Tange, O. (2024, November 22). GNU Parallel 20241122 ('Ahoo Daryaei').",
--	     "  Zenodo. https://doi.org/10.5281/zenodo.14207479",
+-	     "  Tange, O. (2024, December 22). GNU Parallel 20241222 ('Bashar').",
+-	     "  Zenodo. https://doi.org/10.5281/zenodo.14550073",
 -	     "",
 -	     # Before changing these line,   please read
 -	     # https://www.gnu.org/software/parallel/parallel_design.html#citation-notice and
@@ -227,20 +227,20 @@
 -	"If you use programs that use GNU Parallel to process data for an article in a",
 -	"scientific publication, please cite:",
 -	"",
--	"\@software{tange_2024_14207479,",
+-	"\@software{tange_2024_14550073,",
 -	"      author       = {Tange, Ole},",
--	"      title        = {GNU Parallel 20241122 ('Ahoo Daryaei')},",
--	"      month        = Nov,",
+-	"      title        = {GNU Parallel 20241222 ('Bashar')},",
+-	"      month        = Dec,",
 -	"      year         = 2024,",
 -	"      note         = {{GNU Parallel is a general parallelizer to run",
 -	"                       multiple serial command line programs in parallel",
 -	"                       without changing them.}},",
 -	"      publisher    = {Zenodo},",
--	"      doi          = {10.5281/zenodo.14207479},",
--	"      url          = {https://doi.org/10.5281/zenodo.14207479}",
+-	"      doi          = {10.5281/zenodo.14550073},",
+-	"      url          = {https://doi.org/10.5281/zenodo.14550073}",
 -	"}",
 -	"",
--	"(Feel free to use \\nocite{tange_2024_14207479})",
+-	"(Feel free to use \\nocite{tange_2024_14550073})",
 -	"",
 -	# Before changing these lines, please read
 -	# https://www.gnu.org/software/parallel/parallel_design.html#citation-notice and

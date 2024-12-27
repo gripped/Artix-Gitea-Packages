@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: parallel
-  version: 20241122-1
+  version: 20241222-1
   arch:
     - any
   pkgname:
     - parallel
     - parallel-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20241222-1
+    packages:
+      - parallel-20241222-1-any.pkg.tar.zst
+      - parallel-docs-20241222-1-any.pkg.tar.zst
   world:
     version: 20241122-1
     packages:
