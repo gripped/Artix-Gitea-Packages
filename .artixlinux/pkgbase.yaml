@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: catfish
-  version: 4.18.0-4
+  version: 4.20.0-2
   arch:
     - any
   pkgname:
     - catfish
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.18.0-4
+    version: 4.20.0-2
     packages:
-      - catfish-4.18.0-4-any.pkg.tar.zst
+      - catfish-4.20.0-2-any.pkg.tar.zst
 team: galaxy
