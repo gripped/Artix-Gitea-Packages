@@ -79,4 +79,3 @@ package() {
   install -Dm644 sample_config.toml -t "$pkgdir"/usr/share/doc/$pkgname/
   install -Dm644 docs/_build/man/nvchecker.1 -t "$pkgdir"/usr/share/man/man1/
 }
-
