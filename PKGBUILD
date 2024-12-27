@@ -4,7 +4,7 @@
 
 pkgname=xfce4-session
 pkgver=4.20.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Xfce's session manager"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfce4-session/start"
@@ -16,7 +16,8 @@ makedepends=('git' 'glib2-devel' 'xfce4-dev-tools')
 optdepends=('gnome-keyring: for keyring support when GNOME compatibility is enabled'
             'xfce4-screensaver: for locking screen with xflock4'
             'xscreensaver: for locking screen with xflock4'
-            'light-locker: for locking screen with xflock4')
+            'light-locker: for locking screen with xflock4'
+            'labwc: recommended compositor for the experimental Wayland session')
 source=("git+https://gitlab.xfce.org/xfce/xfce4-session.git#tag=$pkgname-$pkgver"
         source-system-xinitrc-scripts.patch
         xfce-polkit-gnome-authentication-agent-1.desktop)
