@@ -7,8 +7,8 @@ pkgdesc="A highly customizable virtual desktop window manager with small memory 
 arch=('x86_64')
 url="https://www.fvwm.org"
 license=('GPL' 'custom')
-depends=('libevent' 'libx11' 'libxft' 'libxrender' 'libxt' 'python' 'libxrandr' 'fontconfig')
-makedepends=('meson' 'cmake' 'go' 'xtrans' 'libxkbcommon' 'libxslt')
+depends=('libevent' 'libx11' 'libxft' 'libxrender' 'libxt' 'python' 'libxrandr' 'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
+makedepends=('meson' 'cmake' 'go' 'xtrans' 'librsvg')
 optdepends=('freetype2: Font rasterization library'
             'asciidoctor: An implementation of AsciiDoc in Ruby'
             'fribidi: A Free Implementation of the Unicode Bidirectional Algorithm'
