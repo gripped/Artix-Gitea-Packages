@@ -80,4 +80,3 @@ package() {
   install -Dm644 docs/_build/man/nvchecker.1 -t "$pkgdir"/usr/share/man/man1/
 }
 
-# vim:set ts=2 sw=2 et:
