@@ -4,7 +4,7 @@
 
 pkgname=adios2
 pkgver=2.10.2
-pkgrel=5
+pkgrel=6
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
@@ -20,6 +20,7 @@ depends=(
   libsodium libsodium.so
   mgard
   openmpi libmpi.so
+  openucx libucp.so libucs.so
   paraview-catalyst
   pugixml
   python
@@ -60,8 +61,11 @@ build() {
   # Valid values can be discovered from nvcc --help
   local cuda_archs="50;52;53;60;61;62;70;72;75;80;86;87;89;90;90a;90a-virtual"
 
-  local cmake_flags=(
-    -B build -S ${pkgname^^}-${pkgver} -G Ninja
+  local cmake_options=(
+    -B build
+    -S ${pkgname^^}-${pkgver}
+    -G Ninja
+    -W no-dev
     -DCMAKE_INSTALL_PREFIX=/usr
     -DCMAKE_CUDA_ARCHITECTURES="$cuda_archs"
     # Compile source code for supported GPU archs in parallel
@@ -72,9 +76,8 @@ build() {
     -DADIOS2_HAVE_HDF5_VOL=OFF
     -DADIOS2_BUILD_EXAMPLES=OFF
     -DADIOS2_USE_Derived_Variables=ON
-    -Wno-dev
   )
-  cmake "${cmake_flags[@]}"
+  cmake "${cmake_options[@]}"
   cmake --build build
 }
 
