@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=python-dbusmock
-pkgver=0.34.1
+pkgver=0.34.2
 pkgrel=1
 pkgdesc="Mock D-Bus objects for tests"
 url="https://github.com/martinpitt/python-dbusmock"
@@ -22,7 +22,7 @@ makedepends=(
   python-wheel
 )
 source=("git+https://github.com/martinpitt/python-dbusmock#tag=$pkgver")
-b2sums=('f20c52064607e1db07bdb86548247e6be5fa1f16d154dc5243b5dda7593a4eeb42733add8bebbf6a8de3c76b0a285ece9149602dd681383b27e82a6f5086caa1')
+b2sums=('00076fa1265b1a654259e8967f70188e6445c59a2ad191403617397f33a49200de026e83191ee6059d42cb4938d5345c42d4631910772de7252e38ac12e964e5')
 validpgpkeys=(
   3DB46B55EFA59D40E6232148D14EF15DAFE11347 # Martin Pitt <martin@piware.de>
 )
