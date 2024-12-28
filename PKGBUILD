@@ -5,12 +5,13 @@
 
 pkgname=python-configobj
 pkgver=5.0.9
-pkgrel=2
+pkgrel=4
 pkgdesc='Simple config file reader and writer'
 arch=(any)
 url='https://github.com/DiffSK/configobj'
 license=(BSD)
-depends=(python-six)
+depends=(python)
+checkdepends=(python-pytest)
 makedepends=(git python-setuptools)
 source=("git+$url#tag=v$pkgver")
 b2sums=('a741249a7116b42f099caea58ab4081f38ee34a449d6f082064e379d54b2d394c977a2f5a10d879a19b9717fe1c71afc36b8c4b9467c33e5c643f9556fdc923a')
@@ -20,6 +21,11 @@ prepare() {
   # Avoid the need for a local configobj install just for VERSION
   local _version=$(grep -oP "__version__ = '\K[^']+" src/configobj/_version.py)
   sed -i "/from validate/d;s/VERSION/\"$_version\"/" setup_validate.py
+}
+
+check() {
+  cd configobj
+  PYTHONPATH=src pytest src/tests
 }
 
 package() {
