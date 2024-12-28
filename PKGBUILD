@@ -1,18 +1,19 @@
-# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Andreas Radke <andyrtr at archlinux.org>
 # Contributor: Ben Mazer <contrasutra@myrealbox.com>
 
 pkgname=xfce4-notes-plugin
 pkgver=1.11.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Notes plugin for the Xfce panel"
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 url="https://docs.xfce.org/panel-plugins/xfce4-notes-plugin/start"
 groups=('xfce4-goodies')
 depends=('xfce4-panel' 'hicolor-icon-theme')
-makedepends=('git' 'vala' 'xfce4-dev-tools' 'intltool')
+makedepends=('git' 'intltool' 'vala' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-notes-plugin.git#tag=$pkgname-$pkgver")
 sha256sums=('418f90365e069b9318cf3bef21fd16d6121886453d723ff5ba1bb67ef2c537c4')
 
