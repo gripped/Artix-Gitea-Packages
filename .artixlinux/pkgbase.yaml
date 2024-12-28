@@ -2,17 +2,16 @@
 team: world
 pkgbase:
   name: usd
-  version: 24.11-1.1
+  version: 24.11-4
   arch:
     - x86_64
   pkgname:
     - usd
-    - usd-extras
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -30,10 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 24.08-6
+    version: 24.11-4
     packages:
-      - usd-24.08-6-x86_64.pkg.tar.zst
-      - usd-extras-24.08-6-x86_64.pkg.tar.zst
+      - usd-24.11-4-x86_64.pkg.tar.zst
   world:
     version: 24.11-1.1
     packages:
