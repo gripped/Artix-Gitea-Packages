@@ -3,7 +3,7 @@
 
 pkgname=libsfdo
 pkgver=0.1.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc='collection of libraries which implement some of the freedesktop.org specifications'
 url="https://gitlab.freedesktop.org/vyivel/libsfdo"
 arch=('x86_64')
