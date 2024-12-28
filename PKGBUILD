@@ -2,7 +2,7 @@
 
 pkgname=lxqt-wayland-session
 pkgver=0.1.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Files needed for the LXQt Wayland Session'
 arch=('any')
 url='https://github.com/lxqt/lxqt-wayland-session'
@@ -32,6 +32,7 @@ optdepends=(
   # 'wayfire'
   'kwin'
   'hyprland'
+  'labwc'
   'niri'
   'river'
   'sway'
