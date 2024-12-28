@@ -6,7 +6,7 @@ pkgname=(
   maturin
   python-maturin
 )
-pkgver=1.7.8
+pkgver=1.8.0
 pkgrel=1
 pkgdesc="Build and publish crates with pyo3, rust-cpython and cffi bindings"
 url="https://github.com/PyO3/maturin"
@@ -27,8 +27,8 @@ makedepends=(
 # disable LTO until ring can be built with it: https://github.com/briansmith/ring/issues/1444
 options=(!lto)
 source=($url/archive/v$pkgver/$pkgname-v$pkgver.tar.gz)
-sha512sums=('11dd229bc0a240fe915ae4aa69d5dd10032ea41782cb2bf76e77e58a8d474543b133a78d6b24a0383ef281f83122f34e1e0c332227720643b63226c18e318445')
-b2sums=('0fcd40dbf20cd961aa97e936b58ea79aceddfe6175ba4c1d1b413c224c889f393719dffe583859c35894173801cbd5303093802c5a4986038eb00a1f4ff3f3d4')
+sha512sums=('35756bb850204d4d2451d6a88e56d9519a359b00c3984c43bdde5013e2c4bd2598ed8fea234ecd99e84f4f5dcaf042d6783f11541403e6c41de15cd30930e3ab')
+b2sums=('2dd6adfc33c2a0f4b4ad1dd06844a56e88886e871b9715ae0bb6cc593632ce036fd3f8accf3a1abb5abdc37fd88583b34a6504ed031c18b698021179f42a95bd')
 
 _pick() {
   local p="$1" f d; shift
