@@ -8,12 +8,12 @@ pkgbase:
     - parallel
     - parallel-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,15 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 20241222-1
     packages:
       - parallel-20241222-1-any.pkg.tar.zst
       - parallel-docs-20241222-1-any.pkg.tar.zst
-  world:
-    version: 20241122-1
-    packages:
-      - parallel-20241122-1-any.pkg.tar.zst
-      - parallel-docs-20241122-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
