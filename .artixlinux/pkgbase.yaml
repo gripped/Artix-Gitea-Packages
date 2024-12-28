@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-aiohttp-socks
-  version: 0.9.0-3
+  version: 0.10.1-1
   arch:
     - any
   pkgname:
     - python-aiohttp-socks
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-aiohttp-socks-0.9.0-3-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.10.1-1
+    packages:
+      - python-aiohttp-socks-0.10.1-1-any.pkg.tar.zst
   world:
     version: 0.9.0-3
     packages:
