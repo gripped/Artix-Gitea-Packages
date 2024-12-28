@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: python-starlette
-  version: 0.43.0-4
+  version: 0.44.0-1
   arch:
     - any
   pkgname:
     - python-starlette
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.43.0-3
+    version: 0.44.0-1
     packages:
-      - python-starlette-0.43.0-3-any.pkg.tar.zst
+      - python-starlette-0.44.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
