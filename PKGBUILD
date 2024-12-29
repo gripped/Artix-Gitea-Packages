@@ -1,0 +1,38 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+
+pkgname=dino
+pkgver=0.4.4
+pkgrel=1
+pkgdesc="Modern XMPP (Jabber) chat client written in Vala"
+url="https://dino.im"
+arch=('x86_64')
+license=('GPL-3.0-only')
+depends=(glib2 glib-networking gtk4 libadwaita gpgme libgee libgcrypt libsignal-protocol-c
+         libsoup3 sqlite qrencode gspell libnice gstreamer gst-plugin-gtk
+         gst-plugins-base gst-plugins-good libsrtp webrtc-audio-processing gdk-pixbuf2)
+makedepends=(git cmake vala ninja)
+source=(https://github.com/dino/dino/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz{,.asc})
+sha256sums=('31894ce7fa9aa8bfa7c43986a5369f384801f336e89fc0e2e2ab2443f1f67dff'
+            'SKIP')
+validpgpkeys=(A32134DD19952FB12EC43E4501FABCC83FEA225E)
+
+build() {
+	CFLAGS+=' -Wno-error=implicit-function-declaration' # 'implicit-function-declaration' is now an error in GCC 14, making the build fails
+	cmake -G Ninja -B build -S "${pkgname}-${pkgver}" \
+	  -DBUILD_TESTS='ON' \
+	  -DCMAKE_BUILD_TYPE='None' \
+	  -DCMAKE_INSTALL_PREFIX='/usr' \
+	  -Wno-dev
+	ninja -C build
+}
+
+check() {
+	build/xmpp-vala-test
+	build/signal-protocol-vala-test
+}
+
+package() {
+	DESTDIR="${pkgdir}" ninja -C build install
+}
