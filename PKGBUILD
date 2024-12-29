@@ -6,7 +6,7 @@
 
 pkgname=mc
 pkgver=4.8.32
-pkgrel=1
+pkgrel=2
 pkgdesc='A file manager that emulates Norton Commander'
 arch=('x86_64')
 url='https://midnight-commander.org/'
@@ -44,6 +44,7 @@ optdepends=(
   'unarj: uarj extfs'
   'unrar: urar extfs'
   'unzip: open zip archives'
+  'rpm-tools: open rpm packages'
   'zip: uzip extfs'
 )
 backup=(
