@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: fmt
-  version: 11.0.2-1
+  version: 11.1.1-2
   arch:
     - x86_64
   pkgname:
     - fmt
+    - fmt-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 11.1.1-2
+    packages:
+      - fmt-11.1.1-2-x86_64.pkg.tar.zst
+      - fmt-docs-11.1.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
