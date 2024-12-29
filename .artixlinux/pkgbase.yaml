@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: rng-tools
-  version: 6.17-2
+  version: 6.17-3
   arch:
     - x86_64
   pkgname:
     - rng-tools
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.17-2
+    version: 6.17-3
     packages:
-      - rng-tools-6.17-2-x86_64.pkg.tar.zst
+      - rng-tools-6.17-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
