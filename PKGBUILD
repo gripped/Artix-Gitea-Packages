@@ -4,8 +4,8 @@
 
 pkgbase=doxygen
 pkgname=(doxygen doxygen-docs)
-pkgver=1.12.0
-pkgrel=3
+pkgver=1.13.0
+pkgrel=1
 pkgdesc='Documentation system for C++, C, Java, IDL and PHP'
 url='http://www.doxygen.nl'
 arch=(x86_64)
@@ -29,12 +29,11 @@ makedepends=(
   texlive-latexextra
   texlive-plaingeneric
 )
-source=(${pkgbase}-${pkgver}.tar.gz::https://github.com/doxygen/doxygen/archive/Release_${pkgver//./_}.tar.gz
-        https://github.com/doxygen/doxygen/commit/7857c88d.patch)
-sha512sums=('be2bbbfca619dac78096d54378b95ecc786b9ff23b801c2be52c3536d067e4a299d96952ff92ec1fad13751b77f494ab9971435411dd7b40537d0b0f3797dedc'
-            '7e1c018ba1cd57f10c24deb496e79a182a250603473986ef7feb3fc2c1ced1fc6fe270a15c489301fe762eb83a192bc31935935ef2418415d36ec347f064765c')
-b2sums=('566082eef7abd0f6750eac1f0ae0cc310752a14c6f1a512c84b5423125f0312a6258f2d5c7c3028fa475c33314985daac68b02f8e1482015dd6f9f8f664ff9e3'
-        'fb6c70cf899f96457fbedb582b4cd5bc196d0e809212ccd099aebacde698327f91abb1d32539c096620d303b516b3654881e4a380670df521892511966e23f97')
+source=(
+  ${pkgbase}-${pkgver}.tar.gz::https://github.com/doxygen/doxygen/archive/Release_${pkgver//./_}.tar.gz
+)
+sha512sums=('b48956e049d2beea6b60d9c1237494fefaf5a00a83ea5367cc5cc7ec072722cde0b1f3fce546c116683e15dc4d30ed5bc19e81c9fe3544e9aac76feabde88658')
+b2sums=('1f1afb4ad928a845a480edf9fabd18a42fab2fdfe4ccc732cbdce7cd7cd35f78742de74a19487107312917007c72fe83da0fbf4209ef478d99aae1c8d884d6ba')
 
 _pick() {
   local p="$1" f d; shift
@@ -46,21 +45,21 @@ _pick() {
   done
 }
 
-prepare() {
-  cd $pkgbase-Release_${pkgver//./_}
-  patch -p1 -i ../7857c88d.patch # Fix build with fmt 11
-}
-
 build() {
-  cmake -B build -S $pkgbase-Release_${pkgver//./_} \
-    -DCMAKE_BUILD_TYPE:STRING=None \
-    -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-    -DDOC_INSTALL_DIR:PATH=share/doc/doxygen \
-    -Dbuild_doc:BOOL=ON \
-    -Dbuild_wizard:BOOL=ON \
-    -Duse_sys_spdlog:BOOL=ON \
-    -Duse_sys_sqlite3:BOOL=ON \
+  local cmake_options=(
+    -B build
+    -S $pkgbase-Release_${pkgver//./_}
+    -W no-dev
+    -DCMAKE_BUILD_TYPE:STRING=None
+    -DCMAKE_INSTALL_PREFIX:PATH=/usr
+    -DDOC_INSTALL_DIR:PATH=share/doc/doxygen
+    -Dbuild_doc:BOOL=ON
+    -Dbuild_wizard:BOOL=ON
+    -Duse_sys_spdlog:BOOL=ON
+    -Duse_sys_sqlite3:BOOL=ON
     -Duse_libclang:BOOL=ON
+  )
+  cmake "${cmake_options[@]}"
   cmake --build build --verbose
   cmake --build build --target docs
 }
