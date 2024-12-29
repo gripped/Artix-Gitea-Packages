@@ -5,7 +5,7 @@
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-xkb-plugin
-pkgver=0.8.4
+pkgver=0.8.5
 pkgrel=1
 pkgdesc="Plugin to switch keyboard layouts for the Xfce4 panel"
 arch=('x86_64')
@@ -17,7 +17,7 @@ makedepends=('git' 'xfce4-dev-tools')
 optdepends=('xfce4-notifyd: show notifications on layout change')
 install=$pkgname.install
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-xkb-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('75b60b711df4e4eff8bc4be3f0f6bd34cf4c3eff109f73d8c6400a662cfbdf76')
+sha256sums=('47eac24533720ccd9aa526dee093eb7c93c21bfbb47a7d180a197c62ee59f300')
 
 prepare() {
   cd $pkgname
