@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: doxygen
-  version: 1.13.0-1
+  version: 1.13.0-2
   arch:
     - x86_64
   pkgname:
     - doxygen
     - doxygen-docs
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.13.0-2
+    packages:
+      - doxygen-1.13.0-2-x86_64.pkg.tar.zst
+      - doxygen-docs-1.13.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.13.0-1
     packages:
