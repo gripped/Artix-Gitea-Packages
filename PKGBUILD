@@ -18,7 +18,7 @@ source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/archive/$pkgver-$pkgrel.tar.gz")
 sha256sums=('e2eb459299ca3de5fc2e87ba34fae71caba76d2614ceb26370e9c71b3adb399a')
 
 package() {
-  cd $pkgname
+  cd archivetools
   install -Dm644 archive.conf "$pkgdir/etc/archive.conf"
   install -Dm755 archive.sh "$pkgdir/usr/bin/archive"
   install -Dm755 archive-cleaner -t "$pkgdir/usr/bin"
