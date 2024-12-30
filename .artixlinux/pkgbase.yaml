@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: opencascade
-  version: 1:7.8.1-2
+  version: 1:7.8.1-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:7.8.1-2
+    version: 1:7.8.1-3
     packages:
-      - opencascade-1:7.8.1-2-x86_64.pkg.tar.zst
+      - opencascade-1:7.8.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
