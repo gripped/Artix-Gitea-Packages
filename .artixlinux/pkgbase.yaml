@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-recipes
-  version: 2.0.4-11
+  version: 2.0.4-12
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.4-11
+    version: 2.0.4-12
     packages:
-      - gnome-recipes-2.0.4-11-x86_64.pkg.tar.zst
+      - gnome-recipes-2.0.4-12-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
