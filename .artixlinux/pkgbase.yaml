@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: doxygen
-  version: 1.13.0-2
+  version: 1.13.0-3
   arch:
     - x86_64
   pkgname:
@@ -26,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.13.0-2
+    version: 1.13.0-3
     packages:
-      - doxygen-1.13.0-2-x86_64.pkg.tar.zst
-      - doxygen-docs-1.13.0-2-x86_64.pkg.tar.zst
+      - doxygen-1.13.0-3-x86_64.pkg.tar.zst
+      - doxygen-docs-1.13.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.13.0-1
     packages:
