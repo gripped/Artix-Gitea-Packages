@@ -1,12 +1,12 @@
-# Maintainer: Antonio Rojas <arojas@archlinux,org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux,org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=dolphin
 pkgver=24.12.0.1
-_pkgver=24.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='KDE File Manager'
 arch=(x86_64)
 url='https://apps.kde.org/dolphin/'
@@ -55,15 +55,15 @@ optdepends=('ffmpegthumbs: video thumbnails'
             'purpose: share context menu')
 groups=(kde-applications
         kde-system)
-source=(https://download.kde.org/stable/release-service/$_pkgver/src/$pkgname-$_pkgver.tar.xz{,.sig})
-sha256sums=('421f02f9699b609d7e66e0aae9fa1fd735ba0a92a56febe75880ecbeb8dfc513'
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('39d6a42c790021a0c44a18b74fab633874063727d46795746a665060cf4593a3'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
 
 build() {
-  cmake -B build -S $pkgname-$_pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
@@ -73,4 +73,3 @@ package() {
 
   rm -r $pkgdir/usr/lib/systemd
 }
-
