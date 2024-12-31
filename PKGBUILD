@@ -6,7 +6,7 @@ pkgname=(
   maturin
   python-maturin
 )
-pkgver=1.8.0
+pkgver=1.8.1
 pkgrel=1
 pkgdesc="Build and publish crates with pyo3, rust-cpython and cffi bindings"
 url="https://github.com/PyO3/maturin"
@@ -24,11 +24,12 @@ makedepends=(
   python-wheel
   rust
 )
-# disable LTO until ring can be built with it: https://github.com/briansmith/ring/issues/1444
+# Disable LTO until ring can be built with it:
+# https://github.com/briansmith/ring/issues/1444
 options=(!lto)
-source=($url/archive/v$pkgver/$pkgname-v$pkgver.tar.gz)
-sha512sums=('35756bb850204d4d2451d6a88e56d9519a359b00c3984c43bdde5013e2c4bd2598ed8fea234ecd99e84f4f5dcaf042d6783f11541403e6c41de15cd30930e3ab')
-b2sums=('2dd6adfc33c2a0f4b4ad1dd06844a56e88886e871b9715ae0bb6cc593632ce036fd3f8accf3a1abb5abdc37fd88583b34a6504ed031c18b698021179f42a95bd')
+source=("$url/archive/v$pkgver/$pkgname-v$pkgver.tar.gz")
+sha512sums=('2f07ced149fd59035c3acddbc4449cdfa59f8680d1784a68fbb71414a8a6309d3e138b10a7aeb3ca1f35f52ffe04c0e557e4636c84b7d8c60cd012798e3ec041')
+b2sums=('0ded1146c03d1139cc826bff520dbed4f27f4c0d2fa58a1336b075d222bb73881ec455d9b8480206c9f25756d6680a3918db4b4043fb6a63a023d94d23c5ea48')
 
 _pick() {
   local p="$1" f d; shift
@@ -47,7 +48,8 @@ prepare() {
 
 build() {
   cd $pkgbase-$pkgver
-  MATURIN_SETUP_ARGS="--all-features" python -m build --wheel --no-isolation
+  MATURIN_SETUP_ARGS="--frozen --all-features" \
+    python -m build --wheel --no-isolation
 }
 
 package_maturin() {
@@ -74,11 +76,12 @@ package_python-maturin() {
   pkgdesc+=" - Python bindings"
   groups=(python-build-backend)
   depends=(
-    maturin=$pkgver
+    "maturin=$pkgver"
     python
   )
 
-  mv -v $pkgname/* "$pkgdir"
+  mv -v "$pkgname/"* "$pkgdir"
 
-  install -vDm 644 $pkgbase-$pkgver/license-mit -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 -t "$pkgdir/usr/share/licenses/$pkgname/" \
+    $pkgbase-$pkgver/license-mit
 }
