@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gettext
-  version: 0.23.1-1
+  version: 0.23.1-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 0.23.1-1
+    version: 0.23.1-2
     packages:
-      - gettext-0.23.1-1-x86_64.pkg.tar.zst
+      - gettext-0.23.1-2-x86_64.pkg.tar.zst
   system:
     version: 0.23-1
     packages:
