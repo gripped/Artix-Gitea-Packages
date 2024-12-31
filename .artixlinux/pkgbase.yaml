@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-discogs-client
-  version: 2.7-3
+  version: 2.7-4
   arch:
     - any
   pkgname:
     - python-discogs-client
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.7-3
+    version: 2.7-4
     packages:
-      - python-discogs-client-2.7-3-any.pkg.tar.zst
+      - python-discogs-client-2.7-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
