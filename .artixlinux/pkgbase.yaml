@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-hatch
-  version: 1.13.0-3
+  version: 1.14.0-1
   arch:
     - any
   pkgname:
     - python-hatch
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.14.0-1
+    packages:
+      - python-hatch-1.14.0-1-any.pkg.tar.zst
   world:
     version: 1.13.0-3
     packages:
