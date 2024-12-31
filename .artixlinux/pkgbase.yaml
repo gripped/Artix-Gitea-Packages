@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: lib32-libxcrypt
-  version: 4.4.36-2.1
+  version: 4.4.37-1
   arch:
     - x86_64
   pkgname:
     - lib32-libxcrypt
     - lib32-libxcrypt-compat
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,8 +38,10 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 4.4.37-1
+    packages:
+      - lib32-libxcrypt-4.4.37-1-x86_64.pkg.tar.zst
+      - lib32-libxcrypt-compat-4.4.37-1-x86_64.pkg.tar.zst
   lib32:
     version: 4.4.36-2.1
     packages:
