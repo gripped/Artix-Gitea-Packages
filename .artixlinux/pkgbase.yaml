@@ -7,13 +7,13 @@ pkgbase:
   pkgname:
     - python-httpcore
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersRepoRemove: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,17 +25,16 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.7-2
-    packages:
-      - python-httpcore-1.0.7-2-any.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: 1.0.7-1
     packages:
       - python-httpcore-1.0.7-1-any.pkg.tar.zst
   world:
-    version: 1.0.5-2
+    version: 1.0.7-2
     packages:
-      - python-httpcore-1.0.5-2-any.pkg.tar.zst
+      - python-httpcore-1.0.7-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
