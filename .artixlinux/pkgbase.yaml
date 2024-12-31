@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: gnulib-l10n
+  version: 20241231-1
+  arch:
+    - any
+  pkgname:
+    - gnulib-l10n
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -18,8 +20,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20241231-1
+    packages:
+      - gnulib-l10n-20241231-1-any.pkg.tar.zst
   system:
     version: null
     packages: []
