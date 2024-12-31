@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-arandr
-  version: 0.1.11-2.1
+  version: 0.1.11-3
   arch:
     - any
   pkgname:
     - moksha-arandr
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.11-2.1
+    version: 0.1.11-3
     packages:
-      - moksha-arandr-0.1.11-2.1-any.pkg.tar.zst
+      - moksha-arandr-0.1.11-3-any.pkg.tar.zst

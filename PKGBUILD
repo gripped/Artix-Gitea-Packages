@@ -3,7 +3,7 @@
 pkgname=moksha-arandr
 conflicts=(arandr moksha-arandr-git)
 pkgver=0.1.11
-pkgrel=2.1
+pkgrel=3
 pkgdesc="Visual front end for XRandR 1.2"
 arch=('any')
 url="https://christian.amsuess.com/tools/arandr/"
