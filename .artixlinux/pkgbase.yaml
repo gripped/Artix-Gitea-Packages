@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-bake-test-external
-  version: 0.3.3-5
+  version: 0.4.0-1
   arch:
     - any
   pkgname:
     - ruby-bake-test-external
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.3.3-5
+    version: 0.4.0-1
     packages:
-      - ruby-bake-test-external-0.3.3-5-any.pkg.tar.zst
+      - ruby-bake-test-external-0.4.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
