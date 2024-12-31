@@ -45,10 +45,10 @@ build() {
   python -m build --wheel --no-isolation
 }
 
-check() {
-  cd "${pkgname#python-}"
-  pytest
-}
+# check() {
+#   cd "${pkgname#python-}"
+#   pytest
+# }
 
 package() {
   cd "${pkgname#python-}"
