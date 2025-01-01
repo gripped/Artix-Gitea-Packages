@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: archlinux-mirrorlist
-  version: 20240717-1.1
+  version: 20250101-1
   arch:
     - any
   pkgname:
     - archlinux-mirrorlist
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 20250101-1
+    packages:
+      - archlinux-mirrorlist-20250101-1-any.pkg.tar.zst
   galaxy:
     version: 20240717-1.1
     packages:
