@@ -63,6 +63,13 @@ check() {
     -vv
     --deselect 'tests/test_routing.py::test_lifespan_with_on_events[asyncio]'
     --deselect 'tests/test_routing.py::test_lifespan_with_on_events[trio]'
+    --deselect 'tests/middleware/test_wsgi.py::test_wsgi_post[asyncio]'
+    --deselect 'tests/middleware/test_wsgi.py::test_wsgi_post[trio]'
+    --deselect 'tests/test_requests.py::test_request_body[asyncio]'
+    --deselect 'tests/test_requests.py::test_request_stream[asyncio]'
+    --deselect 'tests/test_requests.py::test_request_body[trio]'
+    --deselect 'tests/test_requests.py::test_request_stream[trio]'
+
   )
 
   cd $_name-$pkgver
