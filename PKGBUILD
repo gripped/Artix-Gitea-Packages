@@ -10,7 +10,7 @@ url="https://www.archlinux.org/mirrorlist/"
 license=('GPL-2.0-or-later')
 backup=(etc/pacman.d/mirrorlist-arch)
 source=(mirrorlist)
-b2sums=('a95f87692211de30df69103cf095ae6acb4f0b9c364e161caf804e1fbfbc4b671ce239d2bfbc9e663e52b660850a6b67c5a9cdb4261f12dc635fad9842e1696a')
+b2sums=('1e92bc95e80b34e119aafb8321d6f2d6605b8d7b320e4afdc02a79f8aedd3bf8ab49f435af01dd7972740636329842f49d6c151b624031430032adb7dcaa0bcb')
 
 # NOTE on building this package:
 # * Run bash -c ". PKGBUILD; updatelist"
