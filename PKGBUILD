@@ -1,9 +1,14 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Alexander Baldeck <alexander@archlinux.org>
+# Contributor: Dale Blount <dale@archlinux.org>
+# Contributor: Anders Bostrom <anders.bostrom@home.se>
 
 pkgbase=thunderbird
 pkgname=(thunderbird)
 pkgver=128.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
 arch=(x86_64)
@@ -61,6 +66,7 @@ source=(https://archive.mozilla.org/pub/thunderbird/releases/${pkgver}esr/source
         metainfo.patch
         org.mozilla.Thunderbird.desktop
         thunderbird-system-icu-74.patch # https://bugzilla.mozilla.org/show_bug.cgi?id=1862601
+        D231480.patch # https://hg.mozilla.org/releases/mozilla-esr128/rev/e270c9ac0dbb
 )
 validpgpkeys=(
   14F26682D0916CDD81E37B6D61B7B526D98F0353 # Mozilla Software Releases <release@mozilla.com>
@@ -265,6 +271,7 @@ sha512sums=('cbfd4b1a7245c2a2f6ef9b2cf69d95a8095eba855755d00fd397351b21ad5047330
             '7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290'
             'fffeb73e2055408c5598439b0214b3cb3bb4e53dac3090b880a55f64afcbc56ba5d32d1187829a08ef06d592513d158ced1fde2f20e2f01e967b5fbd3b2fafd4'
             '9897cb0ababc8e1a0001c4e1f70e0b39f5cdb9c08c69e3afd42088dfd001aa1fc6996cd83df0db1fb57ee0a80686c35c8df783108408dbe9191602cddd1e3c65'
+            '5e0b884764fc0558109b6b26fdd049ca7d7fbfd9ef8eda336fa02da4f841922331f54cfabbf2dbab63d9240938a1648bf44416feff333041600c84a272bb955b'
             '26898351b3b7d27cd3c990a6d17b6f28eaf70aa2736166705ad5034f233cca4701d9e4f27389e698db29d7ba461e9fb7d976ced5fbbfc2d354502e2cb61bc5d5'
             '43a8eb7122432805cf16a636a4ff390ec04ca14fd4cce9dcd76f853e65caf955d36fcdd3577370a2b8ecbffad29aa0a41c0ad92fa1ff3aefc6a4cddb3ba1e69a'
             '2fbb37d6611a4abcd4a84648683896c8f1de015c12afc33e04b17e2339a29dac6317033f31175694869ceec65bee8fa07090d756fc5851da477d5141f501572a'
@@ -329,3 +336,4 @@ sha512sums=('cbfd4b1a7245c2a2f6ef9b2cf69d95a8095eba855755d00fd397351b21ad5047330
             'fa77d6463508e0da35852625072326ee95d2bb66cc8a184c99187c7facc05a642b3097c6a03ba19e10a793c5f4bad51c6fd7adb3c44ccb96cbb06adbcc625f4a'
             'fb6e0c3cfe49494d678252b7d0eb8ef6d19a85502979c3c6965da76cae2c1f8dc1aafa0df1a15c39c9a26f0ecb4a335acdf4d6539a2ed0b35a625eda84994f62')
 
+# vim:set sw=2 et:
