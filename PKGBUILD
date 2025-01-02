@@ -5,7 +5,7 @@
 # Contributor: Carlos Torres <torr@artixlinux.org>
 
 pkgname=artix-mirrorlist
-pkgver=2025-01-02
+pkgver=20250102
 pkgrel=1
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
