@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ppsspp
-  version: 1.17.1-1
+  version: 1.18.1-2
   arch:
     - x86_64
   pkgname:
@@ -50,7 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.17.1-1
+    version: 1.18.1-2
     packages:
-      - ppsspp-1.17.1-1-x86_64.pkg.tar.zst
-      - ppsspp-assets-1.17.1-1-x86_64.pkg.tar.zst
+      - ppsspp-1.18.1-2-x86_64.pkg.tar.zst
+      - ppsspp-assets-1.18.1-2-x86_64.pkg.tar.zst
+team: galaxy
