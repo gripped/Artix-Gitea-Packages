@@ -8,7 +8,7 @@
 pkgname='usd'
 pkgbase=usd
 pkgver=24.11
-pkgrel=4
+pkgrel=5
 arch=(x86_64)
 url='https://openusd.org'
 pkgdesc='3D VFX pipeline interchange file format'
@@ -42,12 +42,14 @@ source=("git+https://github.com/PixarAnimationStudios/OpenUSD.git#tag=v$pkgver"
         usd-3392.patch::https://patch-diff.githubusercontent.com/raw/PixarAnimationStudios/OpenUSD/pull/3392.patch
         usd-embree42.patch::https://patch-diff.githubusercontent.com/raw/PixarAnimationStudios/OpenUSD/pull/2266.patch
         cmake-find-dependency.patch::https://patch-diff.githubusercontent.com/raw/PixarAnimationStudios/OpenUSD/pull/3205.patch
+        usd-find-dependency-OpenGL.patch
         "org.openusd.usdview.desktop")
 sha256sums=('0b8147dada1807e7574f4a76030b475be4a9fe2d5a38c078b1f174d9b1932aa6'
             '529dea685836be7de95800d9688db4e1df6a8a3f341130069abdd2b5b1572128'
             '5bcfb527940b957f5c7831c8b626f9c018b575a730fc2967dd869e678492fa42'
             '4f5e6d3a4346d2ff67cca42d89e14850d57b0c475a52004f1af297a699e4a891'
             '112a2735309ba5d39e016c41e164e0e4a0ba5d11a967d462689a5f318649d63b'
+            '1cf9b9e4d902cecce278457af3092e8a180438388044939d3ab89e3a4520efc5'
             '6b880a1dc44ee3286a19b3347f65be5337192d00bccd55fa549598db90a887da')
 replaces=('usd-extras')
 provides=('usd-extras')
@@ -60,6 +62,7 @@ prepare() {
   patch -Np1 -i "$srcdir/usd-embree42.patch"
   patch -Np1 -i "$srcdir/usd-3392.patch"
   patch -Np1 -i "$srcdir/cmake-find-dependency.patch"
+  patch -Np1 -i "$srcdir/usd-find-dependency-OpenGL.patch"
 
   # Change directories to standard
   sed -i 's|plugin/usd|lib/usd/plugin|g' \
