@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2024-07-24
+## Generated on 2025-01-02
 ##
 
 # Artix mirrors
@@ -20,7 +20,7 @@ Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 Server = https://mirror.group.one/artix/$repo/os/$arch
 # France
-Server = https://artix.cccp.io/$repo/os/$arch
+Server = https://artix.toret.fr/$repo/os/$arch
 Server = https://ftp.crifo.org/artix/repos/$repo/os/$arch
 Server = https://mirror.opensrv.org/artixlinux/$repo/os/$arch
 # Hungary
