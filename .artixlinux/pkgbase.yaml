@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: transmission
-  version: 4.0.6-2
+  version: 4.0.6-3
   arch:
     - x86_64
   pkgname:
@@ -10,10 +10,10 @@ pkgbase:
     - transmission-qt
     - libtransmission
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.0.6-3
+    packages:
+      - transmission-cli-4.0.6-3-x86_64.pkg.tar.zst
+      - transmission-gtk-4.0.6-3-x86_64.pkg.tar.zst
+      - transmission-qt-4.0.6-3-x86_64.pkg.tar.zst
+      - libtransmission-4.0.6-3-x86_64.pkg.tar.zst
   world:
     version: 4.0.6-2
     packages:

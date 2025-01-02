@@ -7,7 +7,7 @@
 pkgbase=transmission
 pkgname=(transmission-cli transmission-gtk transmission-qt libtransmission)
 pkgver=4.0.6
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url="http://www.transmissionbt.com/"
 license=(GPL)
@@ -19,6 +19,7 @@ makedepends=(
 	gtk4
 	gtkmm-4.0
 	intltool
+	libayatana-indicator
 	libb64
 	libdeflate
 	libevent
@@ -110,7 +111,7 @@ package_transmission-cli() {
 
 package_transmission-gtk() {
   pkgdesc='Fast, easy, and free BitTorrent client (GTK+ GUI)'
-  depends=(curl libevent gtk4 hicolor-icon-theme libb64 miniupnpc libnatpmp libdeflate gtkmm-4.0)
+  depends=(curl libevent gtk4 hicolor-icon-theme libayatana-indicator libb64 miniupnpc libnatpmp libdeflate gtkmm-4.0)
   optdepends=('libnotify: Desktop notification support'
               'transmission-cli: daemon and web support')
 
@@ -124,7 +125,7 @@ package_transmission-gtk() {
 
 package_transmission-qt() {
   pkgdesc='Fast, easy, and free BitTorrent client (Qt GUI)'
-  depends=(curl qt6-base qt6-svg libevent libb64 miniupnpc libnatpmp libdeflate)
+  depends=(curl qt6-base qt6-svg libayatana-indicator libevent libb64 miniupnpc libnatpmp libdeflate)
   optdepends=('transmission-cli: daemon and web support')
 
   cd $pkgbase-$pkgver
