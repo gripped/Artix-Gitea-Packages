@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xfce4-whiskermenu-plugin
-  version: 2.8.3-2
+  version: 2.8.4-1
   arch:
     - x86_64
   pkgname:
     - xfce4-whiskermenu-plugin
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: galaxy-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.8.4-1
+    packages:
+      - xfce4-whiskermenu-plugin-2.8.4-1-x86_64.pkg.tar.zst
   galaxy:
     version: 2.8.3-2
     packages:
