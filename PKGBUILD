@@ -4,8 +4,8 @@
 
 pkgbase=doxygen
 pkgname=(doxygen doxygen-docs)
-pkgver=1.13.0
-pkgrel=3
+pkgver=1.13.1
+pkgrel=1
 pkgdesc='Documentation system for C++, C, Java, IDL and PHP'
 url='http://www.doxygen.nl'
 arch=(x86_64)
@@ -31,12 +31,9 @@ makedepends=(
 )
 source=(
   ${pkgbase}-${pkgver}.tar.gz::https://github.com/doxygen/doxygen/archive/Release_${pkgver//./_}.tar.gz
-  fix-regression-1.13.0.patch
 )
-sha512sums=('b48956e049d2beea6b60d9c1237494fefaf5a00a83ea5367cc5cc7ec072722cde0b1f3fce546c116683e15dc4d30ed5bc19e81c9fe3544e9aac76feabde88658'
-            '05ff9a60e6b021973f9997724a1e9a5aa68e901dce93967e329610aecd2d6b0a3174aee0728b166f8619a8eb87f4a2e9945d8a2aaa2cc3fe1841158c523ba08b')
-b2sums=('1f1afb4ad928a845a480edf9fabd18a42fab2fdfe4ccc732cbdce7cd7cd35f78742de74a19487107312917007c72fe83da0fbf4209ef478d99aae1c8d884d6ba'
-        '8ab349226ea5e7251a69a87d12d41d7c9f12b00cb382440538d5fb967547dc7252b8b2d18cbc22e6af8b01687afb6c41bad9e2f2d31cf7bb7a8dbfbd50b09f64')
+sha512sums=('9688958a3104a73b13c23ec44359647b366a1721134361b19518650cb9cb814e32507b472f5f0b37ac7107e667b891193744ae64d5f27e4cd84c099878750514')
+b2sums=('c73fa721cb9de860e2797bfcee8858056472698d88040f153e71572b82f708b035b3e66594e76ed58b8bcb8f7ede1cd0525ea704f35c0de9f5b93cf72f7f2b1d')
 
 _pick() {
   local p="$1" f d; shift
@@ -46,13 +43,6 @@ _pick() {
     mv "$f" "$d"
     rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
   done
-}
-
-prepare() {
-  cd $pkgbase-Release_${pkgver//./_}
-
-  # Fix regression in 1.13.0 https://github.com/doxygen/doxygen/issues/11299
-  patch -Np1 -i ../fix-regression-1.13.0.patch
 }
 
 build() {
