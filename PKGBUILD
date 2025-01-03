@@ -4,7 +4,7 @@
 
 pkgname=freeradius
 pkgver=3.2.6
-pkgrel=4
+pkgrel=5
 pkgdesc='The premier open source RADIUS server'
 arch=('x86_64')
 url='https://freeradius.org/'
@@ -30,7 +30,7 @@ source=("https://github.com/FreeRADIUS/freeradius-server/releases/download/relea
         'freeradius-tmpfiles.conf')
 sha256sums=('18bbb2318448f13918897ae7a38b36afd3db7dd5c66f78ad24d2e0051269d9b2'
             'SKIP'
-            '8ecaca94c7d0f4806b326685312dd4e543ce9c6c183d3d7ad01c1a0197bdfb94'
+            '717e0cbf090d023dde5f8aba6850ce9b25da29aa28dd6b5b4f98535b5872f14f'
             'f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc')
 
 build() {
