@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: elementary-icon-theme
-  version: 8.0.0-1.2
+  version: 8.1.0-1
   arch:
     - any
   pkgname:
     - elementary-icon-theme
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 8.0.0-1.2
+    version: 8.1.0-1
     packages:
-      - elementary-icon-theme-8.0.0-1.2-any.pkg.tar.zst
+      - elementary-icon-theme-8.1.0-1-any.pkg.tar.zst
 team: galaxy
