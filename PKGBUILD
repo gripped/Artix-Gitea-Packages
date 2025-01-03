@@ -6,7 +6,7 @@
 
 pkgname=bind
 pkgver=9.20.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A complete, highly portable implementation of the DNS protocol'
 url='https://www.isc.org/software/bind/'
 license=('MPL2')
@@ -33,7 +33,7 @@ source=("git+https://gitlab.isc.org/isc-projects/bind9.git#tag=v${pkgver}"
         '127.0.0.zone')
 sha256sums=('9581ea49349a127d3e9668e8a4c34928fbef4cd0de2cbcaeabe98c35564509a0'
             'f0423c4ee8495da487e07e9144bec1d25f46a0cd2dfa7cfd7a761ef15bfefc98'
-            '7c0acefcfcc3ae093550caed7ec90fe84bec8f7477459ffa7e71dda76bcbdb2c'
+            'c968019a5f040a4a8f9ed13d82d4ba597652224b42f7cff123d8125af2c5108c'
             'e08a01d41b18bdb771d534daca99642314939aafdb088e5cfcf0ef2d33f8e7eb'
             '0011708e516128647dd25b59b6ebc465f36e85bbe0a8fbdc3eb04b7f28c2197f'
             'c06fc270e32a843c8b6d86335a2ec607d405dfba6875de8d8a9abde39a9e2c17'
