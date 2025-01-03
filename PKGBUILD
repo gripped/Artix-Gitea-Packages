@@ -5,29 +5,22 @@
 
 pkgname=pdfgrep
 pkgver=2.2.0
-pkgrel=4.1
+pkgrel=5
 pkgdesc='A tool to search text in PDF files'
 arch=(x86_64)
 url='https://pdfgrep.org'
 # url='https://gitlab.com/pdfgrep/pdfgrep'
 license=(GPL-2.0-or-later)
-depends=('libgcrypt>=1.0.0'
-         pcre2
-         poppler)
+depends=(pcre2
+         poppler
+	 libgcrypt)
 _archive="$pkgname-$pkgver"
-source=("$url/download/$_archive.tar.gz"
-        '0000-libcrypt-resolution.patch')
-sha256sums=('0661e531e4c0ef097959aa1c9773796585db39c72c84a02ff87d2c3637c620cb'
-            '34ee6f7a15b2e9c9cfc5881a809bc659292fe3cd919d2ad2f413997b866acf40')
-
-prepare() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-	patch -u < ../0000-libcrypt-resolution.patch
-	autoreconf -fiv
-}
+source=("$url/download/$_archive.tar.gz")
+sha256sums=('0661e531e4c0ef097959aa1c9773796585db39c72c84a02ff87d2c3637c620cb')
 
 build() {
 	cd "$_archive"
+	./autogen.sh
 	./configure --prefix=/usr
 	make
 }
