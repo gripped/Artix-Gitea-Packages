@@ -7,7 +7,7 @@ pkgname=('dhcp' 'dhclient')
 # separate patch levels with a period to maintain proper versioning.
 _realver=4.4.3-P1
 pkgver=${_realver/-/.}
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 license=('custom:isc-dhcp')
 url='https://www.isc.org/dhcp/'
@@ -21,7 +21,7 @@ source=("https://downloads.isc.org/isc/${pkgbase}/${_realver}/${pkgbase}-${_real
 sha256sums=('0ac416bb55997ca8632174fd10737fd61cdb8dba2752160a335775bc21dc73c7'
             'SKIP'
             '559ed9ce6318f1a3700f8b879552bd22844c7c5b96622202dbf3164cd99c444e'
-            'b16083e6bb572ffacaa7cd97e7fde5fcfa1b6dbeb166f162e2ec6e8ec4b928d6'
+            '62335e1043e40ea96a7447db499eafcb9b5a262356c5d9951a43ca4bc981fecc'
             'abcd30e9e8428e34d22ab4d3074ef4bd84c2b11f5868597111b47d6f56d204da')
 
 prepare() {
