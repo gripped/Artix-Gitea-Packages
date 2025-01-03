@@ -4,7 +4,7 @@
 
 pkgname=atftp
 pkgver=0.8.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Client/server implementation of the TFTP protocol that implements RFCs 1350, 2090, 2347, 2348, and 2349'
 arch=('x86_64')
 url='https://sourceforge.net/projects/atftp/'
@@ -13,10 +13,12 @@ depends=('pcre2' 'readline')
 backup=('etc/conf.d/atftpd')
 options=('!lto')
 source=("https://downloads.sf.net/sourceforge/atftp/atftp-${pkgver}.tar.gz"
+        'atftpd.conf'
         'sysusers.conf'
         'tmpfiles.conf')
 sha256sums=('df2aa089c7670f9eab40e5598e5d2cb6a582dc5182926ea50b4d690e4e37f316'
-            'e56f601bcdf0d64bf98813cd4a1be323541e33921c7d4f350168f62b56e66d11'
+            '0b28125099ffdd6869c6fbcb3167e93ccd71a0c6e465b1b62c7dedf9f628dd4e'
+            '9a0f81ed10ffa35466e3ff35b82dad181aadacb4a05917f580681ffbb5a597e6'
             '2096272445c736ba05529af628cc2d46d0236c8f1ecbd50bb1db6dc6c4a972c5')
 
 prepare() {
@@ -42,6 +44,7 @@ package() {
 
   make DESTDIR="$pkgdir" install
 
+  install -D -m0644 ../atftpd.conf "$pkgdir"/etc/conf.d/atftpd
   install -D -m0644 ../sysusers.conf "$pkgdir"/usr/lib/sysusers.d/atftp.conf
   install -D -m0644 ../tmpfiles.conf "$pkgdir"/usr/lib/tmpfiles.d/atftp.conf
 
