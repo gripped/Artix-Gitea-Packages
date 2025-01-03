@@ -7,7 +7,7 @@
 
 pkgname=openntpd
 pkgver=6.8p1
-pkgrel=8
+pkgrel=9
 pkgdesc='Free, easy to use implementation of the Network Time Protocol'
 url='https://www.openntpd.org/'
 arch=('x86_64')
@@ -20,7 +20,7 @@ source=(https://cdn.openbsd.org/pub/OpenBSD/OpenNTPD/${pkgname}-${pkgver}.tar.gz
         openntpd.sysusers)
 sha512sums=('200056bedb9c757aae1ce5d3f6655175ec058cb479429fe4704955f3a3fa15e8a9cb578ae4898ddb4cfc08c9742bbab6a7c92b5e569f06a148e40c448360b58f'
             'SKIP'
-            'b6bb4f39eb435ce6c3314ea4a31430a1f8b70898d17d1fe07fa487bec0e79c022b004d3c11366f0f994546f454e5418caf5b3d7e6e1a205598d2bc8140417f7a')
+            '2d709ce7ce83a799125158dc55b4ebb319e04d5ab6c133f0d8f7dd93503d670ff50e492059ad208e0272fdde5de407c685e18c6d7a328a2ce5901ec4e72108ed')
 validpgpkeys=('A1EB079B8D3EB92B4EBD3139663AF51BD5E4D8D5') # Brent Cook <bcook@openbsd.org>
 
 prepare() {
