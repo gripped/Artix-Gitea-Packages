@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org
 
 pkgname=artix-checkupdates
-pkgver=0.10.4
+pkgver=0.10.5
 pkgrel=1
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
@@ -21,7 +21,7 @@ depends=(
 makedepends=('git')
 backup=('etc/artix-checkupdates/config')
 source=("git+${url}.git#tag=${pkgver}")
-b2sums=('7947a3d6566a26fd7ae75e462601fa302cf05c1de43ee36efd2f80d8257775c4bdd428a9eac3ad5f9b978e4db27728daffa6e1c523fd427c9c8262c991451f33')
+b2sums=('d1ae246b26043ce055fdb74513f36c01f264fcb12dc5a340ee3e7259ca8197ef2fe8e55d52e19639c5af8381876dfa2246fa80824570383f35bf8353e51096e0')
 
 build() {
   cd "${pkgname}"
