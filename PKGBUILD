@@ -5,9 +5,10 @@
 pkgname=('lib32-llvm' 'lib32-llvm-libs')
 pkgver=18.1.8
 pkgrel=1
+epoch=1
 arch=('x86_64')
 url="https://llvm.org/"
-license=('custom:Apache 2.0 with LLVM Exception')
+license=('Apache-2.0 WITH LLVM-exception')
 makedepends=('cmake' 'ninja' 'lib32-libffi' 'lib32-zlib' 'lib32-zstd' 'python'
              'gcc-multilib' 'lib32-libxml2')
 options=('staticlibs' '!lto') # tools/llvm-shlib/typeids.test fails with LTO
