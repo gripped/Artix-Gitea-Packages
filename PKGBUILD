@@ -3,8 +3,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=artix-keyring
-pkgver=20240425
-pkgrel=2
+pkgver=20250105
+pkgrel=1
 pkgdesc='Artix PGP keyring'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/artix-keyring'
@@ -14,8 +14,8 @@ depends=('pacman')
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
         "${sigurl}")
-sha256sums=('4eaedb9d0766600851810c62f3cb7a5df166f9e0ffd54e7ba72bf0bdd2a7f8a5'
-            '9ac171192c6a14be494d5c1ffab892cdb474faa468cbd9437fa89f6c4ebab95a')
+sha256sums=('607b89cb2fcff3dcad1abc2f1f2bf1a7619e3f14dd275f1c86569b298cd1f019'
+            'bc2fc04735ce5b2a6f627775e043383fde95a4a3c45d4e1d1757665f1d1f8a27')
 validpgpkeys=('80E461C30BE40AD3EFB57E18EA690BC73A4F1094') # nous
 
 package() {
