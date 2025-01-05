@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: znc
-  version: 1.9.1-4
+  version: 1.9.1-5
   arch:
     - x86_64
   pkgname:
     - znc
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.9.1-5
+    packages:
+      - znc-1.9.1-5-x86_64.pkg.tar.zst
   world:
     version: 1.9.1-4
     packages:
