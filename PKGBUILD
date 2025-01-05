@@ -32,7 +32,8 @@ build() {
     --sysconfdir=/etc \
     --enable-syslog
 
-  sed -i 's|automake-1.16|automake-1.17|' Makefile
+  sed -i 's|automake-1.16|automake-1.17|' Makefile */Makefile
+  autoreconf -f
   make
 }
 
