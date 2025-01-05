@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-configobj
-  version: 5.0.9-4
+  version: 5.0.9-5
   arch:
     - any
   pkgname:
     - python-configobj
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.9-5
+    packages:
+      - python-configobj-5.0.9-5-any.pkg.tar.zst
   world:
     version: 5.0.9-4
     packages:
