@@ -25,7 +25,7 @@ prepare() {
 build() {
   cd ${pkgname}-${pkgver::-2}
   /usr/lib/qt6/bin/lrelease qpdfview.pro
-  qmake-qt6 qpdfview.pro
+  qmake6 qpdfview.pro
   make
 }
 
