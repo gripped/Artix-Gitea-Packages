@@ -3,7 +3,7 @@
 
 pkgname=rpcbind
 pkgver=1.2.7
-pkgrel=1.2
+pkgrel=2
 pkgdesc="portmap replacement which supports RPC over various protocols"
 arch=(x86_64)
 url="http://rpcbind.sourceforge.net"
@@ -21,12 +21,12 @@ source=(https://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.
 sha1sums=('7457d744b3f7d250aed0852ea01f4d563ab75b75'
           '1b997ce76f9727efc8c72fc5f97189591c9a60e2'
           'eb8b7375a4ca31b3f61fa726f387884d5e4ca7a3'
-          '97fed152572790a44e972114cbb436ca517254f9'
+          'b81b2d3798fc88359aaa0f08b2d3c2f809a19fc1'
           '38044ce8f3376a0b69da8e078e988fd1645bd435')
 sha256sums=('f6edf8cdf562aedd5d53b8bf93962d61623292bfc4d47eedd3f427d84d06f37e'
             '7a32111c74e708ad431b7114580c60d7405c591273e6cc00baf5baff05952573'
             '08b04f4da12b34d66cc8fefa0a6dcac239019b0de0090e08d61cb18cc36a6045'
-            '288edf4d317dbeb6607a049d4451ae7e708ab2ad284c674bed19f444036d55c1'
+            '392ee0af235f58b48bca068ea71a29aad912001e57d68184a03bf6c15bc2587e'
             'bfb7f022b44ca83309dec6dfcb1ff4a5e0b0a40078e3688a2c7ceaaaa19a9686')
 
 prepare() {
@@ -51,6 +51,8 @@ build() {
 package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
+  # install rpcbind config file
+  # install -D -m644 "$srcdir"/rpcbind.conf "$pkgdir"/etc/conf.d/rpcbind
   # install missing man page - https://bugs.archlinux.org/task/21271
   install -m644 man/rpcinfo.8 "$pkgdir"/usr/share/man/man8/
   # systemd sysusers/tempfile
