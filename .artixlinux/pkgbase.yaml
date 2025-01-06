@@ -7,21 +7,21 @@ pkgbase:
   pkgname:
     - artix-keyring
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 20250105-1
     packages:
       - artix-keyring-20250105-1-any.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 20240425-2
     packages:
