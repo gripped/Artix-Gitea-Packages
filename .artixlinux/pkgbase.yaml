@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: nettle
-  version: 3.10-1
+  version: 3.10.1-1
   arch:
     - x86_64
   pkgname:
     - nettle
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.10.1-1
+    packages:
+      - nettle-3.10.1-1-x86_64.pkg.tar.zst
   system:
     version: 3.10-1
     packages:
