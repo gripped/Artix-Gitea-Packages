@@ -88,9 +88,6 @@ options=(
 source=(
   https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz{,.asc}
   $pkgname.desktop identity-icons-brand.svg
-  7a8dbd4de3c70d6a6ac98469a9b92e4877019e0c.patch
-  049b4a90def317fe595d227b5ed193424b9991f6.patch
-  62e0dd5ec3d511e55137da634460d31b9214e24a.patch
   d12754638c687fb1faccb217c2a44a5b66806c37.patch
 )
 validpgpkeys=(
@@ -104,9 +101,6 @@ prepare() {
   cd firefox-$pkgver
 
   # Fix pipes usage for python 3.13
-  patch -Np1 -i ../7a8dbd4de3c70d6a6ac98469a9b92e4877019e0c.patch
-  patch -Np1 -i ../049b4a90def317fe595d227b5ed193424b9991f6.patch
-  patch -Np1 -i ../62e0dd5ec3d511e55137da634460d31b9214e24a.patch
   patch -Np1 -i ../d12754638c687fb1faccb217c2a44a5b66806c37.patch
 
   echo "${noextract[@]}"
@@ -403,9 +397,6 @@ sha512sums=('49bce966e062766861712bd65cca46a438b339fe31598f69e4fe64da78ef6f8b458
             'SKIP'
             '4b53ee133a4ecaf068e240f6a05a1ebf4b788d67fe9141cc5b3561e1128907c8c3edb49bf2b24ba89daf1552f94ac48adf682dbe7dd070cffe7f78d98f2b3338'
             'b579b73176c72a5ecf36e3f63bba08fdb8041ae99d54e5cab906660fed6a9cf2311f7ca1ec1649e451cc6d5a4b1e6060b974b1d7befe9c8df3c5a89c50383c17'
-            'ebf4cff03bea26b7db1f3cc19d4e24f563409f7149c9d7abee73cc40a92f2338c624aeb4408074ba2b8d70392a9d100dcd3d343ec2a1e54afd428d8727f9fed5'
-            'ee025afe24beda9bc9ea320ac90ea83c9c5b2a7f7533fa589232bbe09c040ffc66191dee4b3f0436b649ff9478fb0cbc47169404601a8be374d8659a5dce67bd'
-            '0eb3942e8e6e32f1e2ef88291265b49438324e361378ed93ce653eff29a81494effad059773829911657c57844bf04552e26bb45e64e62edb7b076b49607ef12'
             '816bc8d17c12e4f641cebe19195c2700e0e63ad6999d4970d61279373a90c3a88b63df3083e68c3f5fbe19ff0ac88246a6e826030e6133722798a04adc33f571'
             'c3d2ff31056794ab936fe3bb9cf8f83517a2366a03018d2cf8852e07f1fd2a0249362d5c010e24db63670811142c90bb10bd3375cb6904686bbe5b361392bda3'
             '24904f5d1344482625c94fdff3b54dc93307aa394b65d07418677805eaf58744ad0e9c2efb93936e1e0113ea32bf2645f65319c3d5c633f7051b746bac7a8fe0'
