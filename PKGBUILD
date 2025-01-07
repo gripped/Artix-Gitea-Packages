@@ -21,8 +21,8 @@ source=(
     "OpenSans.ttf::${_raw}/OpenSans%5Bwdth%2Cwght%5D.ttf"
 )
 
-sha256sums=('fe269381e992f32e135801740998544d6235061e37c93ec067ad2be3edd5b17b'
-            '36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878')
+sha256sums=('SKIP'
+            'SKIP')
 
 package() {
   install -dm 755 "${pkgdir}/usr/share/fonts/TTF"
