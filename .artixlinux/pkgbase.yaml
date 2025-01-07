@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ttf-opensans
-  version: 1.101-4
+  version: 1.101-5
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.101-4
+    version: 1.101-5
     packages:
-      - ttf-opensans-1.101-4-any.pkg.tar.zst
+      - ttf-opensans-1.101-5-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
