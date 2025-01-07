@@ -1,16 +1,24 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: aws-sdk-cpp
+  version: 1.11.478-3
+  arch:
+    - x86_64
+  pkgname:
+    - aws-sdk-cpp
+    - aws-sdk-cpp-core
+    - aws-sdk-cpp-ec2
+    - aws-sdk-cpp-firehose
+    - aws-sdk-cpp-iam
+    - aws-sdk-cpp-kinesis
+    - aws-sdk-cpp-s3
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +38,15 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.11.478-3
+    packages:
+      - aws-sdk-cpp-1.11.478-3-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-core-1.11.478-3-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-ec2-1.11.478-3-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-firehose-1.11.478-3-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-iam-1.11.478-3-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-kinesis-1.11.478-3-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-s3-1.11.478-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

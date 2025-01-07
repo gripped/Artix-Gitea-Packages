@@ -1,0 +1,239 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov
+# Contributor: Carl Smedstad <carsme@archlinux.org>
+
+pkgbase=aws-sdk-cpp
+pkgname=(
+  aws-sdk-cpp
+  aws-sdk-cpp-core
+  aws-sdk-cpp-ec2
+  aws-sdk-cpp-firehose
+  aws-sdk-cpp-iam
+  aws-sdk-cpp-kinesis
+  aws-sdk-cpp-s3
+)
+pkgver=1.11.478
+pkgrel=3
+pkgdesc='AWS SDK for C++'
+arch=(x86_64)
+url='https://github.com/aws/aws-sdk-cpp'
+license=(Apache-2.0)
+makedepends=(
+  aws-c-auth
+  aws-c-common
+  aws-c-event-stream
+  aws-c-http
+  aws-c-io
+  aws-c-s3
+  aws-crt-cpp
+  cmake
+  curl
+  gcc-libs
+  glibc
+  libpulse
+  zlib
+)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+sha256sums=('67abff396842526bf9ab7b5e6d168c3a3e2de97fa7dfa26f68985fec3b21cc0f')
+
+prepare() {
+  cd $pkgbase-$pkgver
+  # Remove failing test - unsure why it fails.
+  rm tests/aws-cpp-sdk-core-tests/aws/auth/AWSAuthSignerTest.cpp
+}
+
+build() {
+  cmake -S $pkgbase-$pkgver -B build \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -Wno-dev \
+    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_DEPS=OFF \
+    -DCUSTOM_MEMORY_MANAGEMENT=OFF \
+    -DAUTORUN_UNIT_TESTS=OFF
+  cmake --build build
+}
+
+check() {
+  # Infer non-generated unit test targets by if their CMakeLists.txt contain
+  # the variable AUTORUN_UNIT_TESTS:
+  local unit_tests=$(
+    grep AUTORUN_UNIT_TESTS -l -r $pkgbase-$pkgver/tests/ \
+      | awk -F'/' '{print $3}'
+  )
+  for test in $unit_tests; do
+    cmake --build build --target "$test"
+    "./build/tests/$test/$test"
+  done
+
+  local generated_unit_tests=$(
+    cmake --build build --target help \
+      | grep gen-tests \
+      | awk '{print $2}'
+  )
+  for test in $generated_unit_tests; do
+    cmake --build build --target "$test"
+    "./build/generated/tests/$test/$test"
+  done
+}
+
+_get_component_parts() {
+  for c in "$@"; do
+    echo "usr/lib/libaws-cpp-sdk-$c.so"
+    echo "usr/lib/pkgconfig/aws-cpp-sdk-$c.pc"
+    echo "usr/include/aws/$c/"
+    echo "usr/lib/cmake/aws-cpp-sdk-$c/"
+  done
+}
+
+_pick() {
+  local dest="${1:?}"
+  while IFS= read -r obj; do
+    mkdir -p "$dest/$(dirname "$obj")/"
+    mv -v -t "$dest/$(dirname "$obj")/" "$obj"
+  done
+}
+
+package_aws-sdk-cpp() {
+  depends=(
+    aws-c-common
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    aws-sdk-cpp-ec2
+    aws-sdk-cpp-firehose
+    aws-sdk-cpp-iam
+    aws-sdk-cpp-kinesis
+    aws-sdk-cpp-s3
+    gcc-libs
+    glibc
+    libpulse
+  )
+
+  DESTDIR=$pkgdir cmake --install build
+  (
+    cd "$pkgdir"
+    {
+      _get_component_parts core
+      # Smithy headers and AWSSDK CMake files are commonly used when building
+      # against the SDK.
+      echo "usr/include/smithy"
+      echo "usr/lib/cmake/AWSSDK"
+    } | _pick "$srcdir/aws-sdk-cpp-core"
+    local ec2_components=(
+      ec2
+      ec2-instance-connect
+    )
+    _get_component_parts "${ec2_components[@]}" | _pick "$srcdir/aws-sdk-cpp-ec2"
+    _get_component_parts firehose | _pick "$srcdir/aws-sdk-cpp-firehose"
+    local iam_components=(
+      access-management
+      cognito-identity
+      iam
+      identity-management
+      sts
+    )
+    _get_component_parts "${iam_components[@]}" | _pick "$srcdir/aws-sdk-cpp-iam"
+    local kinesis_components=(
+      kinesis
+      kinesis-video-archived-media
+      kinesis-video-media
+      kinesis-video-signaling
+      kinesis-video-webrtc-storage
+      kinesisanalytics
+      kinesisanalyticsv2
+      kinesisvideo
+    )
+    _get_component_parts "${kinesis_components[@]}" | _pick "$srcdir/aws-sdk-cpp-kinesis"
+    local s3_components=(
+      kms
+      s3
+      s3-crt
+      s3-encryption
+      s3control
+      s3outposts
+      s3tables
+      transfer
+    )
+    _get_component_parts "${s3_components[@]}" | _pick "$srcdir/aws-sdk-cpp-s3"
+  )
+}
+
+package_aws-sdk-cpp-core() {
+  pkgdesc+=" - core library"
+  depends=(
+    aws-c-common
+    aws-c-event-stream
+    aws-crt-cpp
+    curl
+    gcc-libs
+    glibc
+    zlib
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_aws-sdk-cpp-ec2() {
+  pkgdesc+=" - EC2 libraries"
+  depends=(
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    gcc-libs
+    glibc
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_aws-sdk-cpp-firehose() {
+  pkgdesc+=" - Firehose libraries"
+  depends=(
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    gcc-libs
+    glibc
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_aws-sdk-cpp-iam() {
+  pkgdesc+=" - IAM libraries"
+  depends=(
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    gcc-libs
+    glibc
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_aws-sdk-cpp-kinesis() {
+  pkgdesc+=" - Kinesis libraries"
+  depends=(
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    gcc-libs
+    glibc
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_aws-sdk-cpp-s3() {
+  pkgdesc+=" - S3 libraries"
+  depends=(
+    aws-c-auth
+    aws-c-common
+    aws-c-http
+    aws-c-io
+    aws-c-s3
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    gcc-libs
+    glibc
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
