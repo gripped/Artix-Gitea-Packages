@@ -6,6 +6,7 @@ pkgbase=aws-sdk-cpp
 pkgname=(
   aws-sdk-cpp
   aws-sdk-cpp-core
+  aws-sdk-cpp-config
   aws-sdk-cpp-ec2
   aws-sdk-cpp-firehose
   aws-sdk-cpp-iam
@@ -13,7 +14,7 @@ pkgname=(
   aws-sdk-cpp-s3
 )
 pkgver=1.11.478
-pkgrel=3
+pkgrel=4
 pkgdesc='AWS SDK for C++'
 arch=(x86_64)
 url='https://github.com/aws/aws-sdk-cpp'
@@ -99,6 +100,7 @@ package_aws-sdk-cpp() {
     aws-c-common
     aws-crt-cpp
     aws-sdk-cpp-core
+    aws-sdk-cpp-config
     aws-sdk-cpp-ec2
     aws-sdk-cpp-firehose
     aws-sdk-cpp-iam
@@ -119,6 +121,7 @@ package_aws-sdk-cpp() {
       echo "usr/include/smithy"
       echo "usr/lib/cmake/AWSSDK"
     } | _pick "$srcdir/aws-sdk-cpp-core"
+    _get_component_parts config | _pick "$srcdir/aws-sdk-cpp-config"
     local ec2_components=(
       ec2
       ec2-instance-connect
@@ -168,6 +171,18 @@ package_aws-sdk-cpp-core() {
     gcc-libs
     glibc
     zlib
+  )
+
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_aws-sdk-cpp-config() {
+  pkgdesc+=" - config library"
+  depends=(
+    aws-crt-cpp
+    aws-sdk-cpp-core
+    gcc-libs
+    glibc
   )
 
   cp -va -t "$pkgdir" "$pkgname/"*
