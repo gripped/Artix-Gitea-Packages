@@ -43,4 +43,3 @@ package() {
   python setup.py install --root="${pkgdir}" --optimize=1 --xfce-integration
 }
 
-# vim: ts=2 sw=2 et:
