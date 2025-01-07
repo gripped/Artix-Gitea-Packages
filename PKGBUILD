@@ -28,3 +28,4 @@ package() {
   install -dm 755 "${pkgdir}/usr/share/fonts/TTF"
   install -m 644 *.ttf "${pkgdir}/usr/share/fonts/TTF/"
 }
+
