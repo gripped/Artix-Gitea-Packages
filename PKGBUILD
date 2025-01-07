@@ -2,7 +2,7 @@
 
 pkgname=minizip-ng
 pkgver=4.0.7
-pkgrel=2
+pkgrel=4
 pkgdesc='Fork of the popular zip manipulation library found in the zlib distribution'
 arch=(x86_64)
 url='https://github.com/zlib-ng/minizip-ng'
