@@ -2,13 +2,12 @@
 team: world
 pkgbase:
   name: aws-sdk-cpp
-  version: 1.11.478-4
+  version: 1.11.480-1
   arch:
     - x86_64
   pkgname:
     - aws-sdk-cpp
     - aws-sdk-cpp-core
-    - aws-sdk-cpp-config
     - aws-sdk-cpp-ec2
     - aws-sdk-cpp-firehose
     - aws-sdk-cpp-iam
@@ -17,8 +16,8 @@ pkgbase:
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -36,16 +35,15 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.11.478-4
+    version: 1.11.480-1
     packages:
-      - aws-sdk-cpp-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-core-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-config-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-ec2-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-firehose-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-iam-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-kinesis-1.11.478-4-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-s3-1.11.478-4-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-1.11.480-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-core-1.11.480-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-ec2-1.11.480-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-firehose-1.11.480-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-iam-1.11.480-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-kinesis-1.11.480-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-s3-1.11.480-1-x86_64.pkg.tar.zst
   world:
     version: 1.11.478-3
     packages:

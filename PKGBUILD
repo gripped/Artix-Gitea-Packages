@@ -1,20 +1,18 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Anatol Pomozov
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Anatol Pomozov
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgbase=aws-sdk-cpp
 pkgname=(
   aws-sdk-cpp
   aws-sdk-cpp-core
-  aws-sdk-cpp-config
   aws-sdk-cpp-ec2
   aws-sdk-cpp-firehose
   aws-sdk-cpp-iam
   aws-sdk-cpp-kinesis
   aws-sdk-cpp-s3
 )
-pkgver=1.11.478
-pkgrel=4
+pkgver=1.11.480
+pkgrel=1
 pkgdesc='AWS SDK for C++'
 arch=(x86_64)
 url='https://github.com/aws/aws-sdk-cpp'
@@ -35,7 +33,7 @@ makedepends=(
   zlib
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('67abff396842526bf9ab7b5e6d168c3a3e2de97fa7dfa26f68985fec3b21cc0f')
+sha256sums=('7d6a2e4ba851d773236745ac399a5120bcb04e8122e45b589742bd45ebc72a7f')
 
 prepare() {
   cd $pkgbase-$pkgver
@@ -91,7 +89,7 @@ _pick() {
   local dest="${1:?}"
   while IFS= read -r obj; do
     mkdir -p "$dest/$(dirname "$obj")/"
-    mv -v -t "$dest/$(dirname "$obj")/" "$obj"
+    mv -v -t "$dest/$(dirname "$obj")/" "$pkgdir/$obj"
   done
 }
 
@@ -100,7 +98,6 @@ package_aws-sdk-cpp() {
     aws-c-common
     aws-crt-cpp
     aws-sdk-cpp-core
-    aws-sdk-cpp-config
     aws-sdk-cpp-ec2
     aws-sdk-cpp-firehose
     aws-sdk-cpp-iam
@@ -112,53 +109,49 @@ package_aws-sdk-cpp() {
   )
 
   DESTDIR=$pkgdir cmake --install build
-  (
-    cd "$pkgdir"
-    {
-      _get_component_parts core
-      # Smithy headers and AWSSDK CMake files are commonly used when building
-      # against the SDK.
-      echo "usr/include/smithy"
-      echo "usr/lib/cmake/AWSSDK"
-    } | _pick "$srcdir/aws-sdk-cpp-core"
-    _get_component_parts config | _pick "$srcdir/aws-sdk-cpp-config"
-    local ec2_components=(
-      ec2
-      ec2-instance-connect
-    )
-    _get_component_parts "${ec2_components[@]}" | _pick "$srcdir/aws-sdk-cpp-ec2"
-    _get_component_parts firehose | _pick "$srcdir/aws-sdk-cpp-firehose"
-    local iam_components=(
-      access-management
-      cognito-identity
-      iam
-      identity-management
-      sts
-    )
-    _get_component_parts "${iam_components[@]}" | _pick "$srcdir/aws-sdk-cpp-iam"
-    local kinesis_components=(
-      kinesis
-      kinesis-video-archived-media
-      kinesis-video-media
-      kinesis-video-signaling
-      kinesis-video-webrtc-storage
-      kinesisanalytics
-      kinesisanalyticsv2
-      kinesisvideo
-    )
-    _get_component_parts "${kinesis_components[@]}" | _pick "$srcdir/aws-sdk-cpp-kinesis"
-    local s3_components=(
-      kms
-      s3
-      s3-crt
-      s3-encryption
-      s3control
-      s3outposts
-      s3tables
-      transfer
-    )
-    _get_component_parts "${s3_components[@]}" | _pick "$srcdir/aws-sdk-cpp-s3"
+  {
+    _get_component_parts core
+    # Smithy headers and AWSSDK CMake files are commonly used when building
+    # against the SDK.
+    echo "usr/include/smithy"
+    echo "usr/lib/cmake/AWSSDK"
+  } | _pick "$srcdir/aws-sdk-cpp-core"
+  local ec2_components=(
+    ec2
+    ec2-instance-connect
   )
+  _get_component_parts "${ec2_components[@]}" | _pick "$srcdir/aws-sdk-cpp-ec2"
+  _get_component_parts firehose | _pick "$srcdir/aws-sdk-cpp-firehose"
+  local iam_components=(
+    access-management
+    cognito-identity
+    iam
+    identity-management
+    sts
+  )
+  _get_component_parts "${iam_components[@]}" | _pick "$srcdir/aws-sdk-cpp-iam"
+  local kinesis_components=(
+    kinesis
+    kinesis-video-archived-media
+    kinesis-video-media
+    kinesis-video-signaling
+    kinesis-video-webrtc-storage
+    kinesisanalytics
+    kinesisanalyticsv2
+    kinesisvideo
+  )
+  _get_component_parts "${kinesis_components[@]}" | _pick "$srcdir/aws-sdk-cpp-kinesis"
+  local s3_components=(
+    kms
+    s3
+    s3-crt
+    s3-encryption
+    s3control
+    s3outposts
+    s3tables
+    transfer
+  )
+  _get_component_parts "${s3_components[@]}" | _pick "$srcdir/aws-sdk-cpp-s3"
 }
 
 package_aws-sdk-cpp-core() {
@@ -171,18 +164,6 @@ package_aws-sdk-cpp-core() {
     gcc-libs
     glibc
     zlib
-  )
-
-  cp -va -t "$pkgdir" "$pkgname/"*
-}
-
-package_aws-sdk-cpp-config() {
-  pkgdesc+=" - config library"
-  depends=(
-    aws-crt-cpp
-    aws-sdk-cpp-core
-    gcc-libs
-    glibc
   )
 
   cp -va -t "$pkgdir" "$pkgname/"*
