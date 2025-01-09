@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gnome-builder
-  version: 47.2-3
+  version: 47.2-4
   arch:
     - x86_64
   pkgname:
     - gnome-builder
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 47.2-2
+    version: 47.2-4
     packages:
-      - gnome-builder-47.2-2-x86_64.pkg.tar.zst
+      - gnome-builder-47.2-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: 47.2-3
     packages:
