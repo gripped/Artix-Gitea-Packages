@@ -2,8 +2,8 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=calamares
-pkgver=3.3.7
-pkgrel=2
+pkgver=3.3.13
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://github.com/calamares/calamares"
@@ -27,7 +27,7 @@ provides=('libcalamares.so' 'libcalamaresui.so')
 optdepends=('calamares-extensions: Artix extensions and branding')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz"
         cmake-appstream-helper-fix.patch)
-sha256sums=('d7fa8a370630e344bdb6364293ebda2e75f11ad9239e32a6b1be045996d3ae99'
+sha256sums=('18094f5dd473c67ff1098a906f8bec4875852026c278dfd911c2819e3656625b'
             '3f4860574bbffd4eca4d449bc1256fcf7e01be21cd8b31f3a608a8cd350abd82')
 
 prepare() {
