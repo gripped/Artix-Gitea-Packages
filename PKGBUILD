@@ -1,12 +1,13 @@
-# Maintainer: Ronald van Haren <ronald@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Ronald van Haren <ronald@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=digikam
 _pkgver=8.5.0
 pkgver=${_pkgver//-/} # for beta versions
-pkgrel=1
+pkgrel=2
 pkgdesc='An advanced digital photo management application'
 arch=(x86_64)
 license=(GPL-2.0-or-later)
