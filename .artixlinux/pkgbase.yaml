@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: winetricks
-  version: 20240105-1
+  version: 20250102-1
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 20240105-1
+    version: 20250102-1
     packages:
-      - winetricks-20240105-1-x86_64.pkg.tar.zst
+      - winetricks-20250102-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: lib32
