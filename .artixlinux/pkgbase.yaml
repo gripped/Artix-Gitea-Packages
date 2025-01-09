@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-gnupg
-  version: 0.5.4-1
+  version: 0.5.4-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.4-1
+    version: 0.5.4-2
     packages:
-      - python-gnupg-0.5.4-1-any.pkg.tar.zst
+      - python-gnupg-0.5.4-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
