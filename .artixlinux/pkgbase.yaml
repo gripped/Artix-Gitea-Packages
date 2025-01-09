@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: opencv
-  version: 4.10.0-18
+  version: 4.11.0-1
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.10.0-18
+    version: 4.11.0-1
     packages:
-      - opencv-4.10.0-18-x86_64.pkg.tar.zst
-      - opencv-samples-4.10.0-18-x86_64.pkg.tar.zst
-      - python-opencv-4.10.0-18-x86_64.pkg.tar.zst
-      - opencv-cuda-4.10.0-18-x86_64.pkg.tar.zst
-      - python-opencv-cuda-4.10.0-18-x86_64.pkg.tar.zst
+      - opencv-4.11.0-1-x86_64.pkg.tar.zst
+      - opencv-samples-4.11.0-1-x86_64.pkg.tar.zst
+      - python-opencv-4.11.0-1-x86_64.pkg.tar.zst
+      - opencv-cuda-4.11.0-1-x86_64.pkg.tar.zst
+      - python-opencv-cuda-4.11.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
