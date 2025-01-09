@@ -3,7 +3,7 @@
 
 pkgname=compiler-rt
 pkgver=19.1.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Compiler runtime libraries for clang"
 arch=('x86_64')
 url="https://compiler-rt.llvm.org/"
