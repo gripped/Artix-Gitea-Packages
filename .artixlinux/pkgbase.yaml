@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: level-zero
-  version: 1.18.5-2
+  version: 1.18.5-3
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.18.5-2
+    version: 1.18.5-3
     packages:
-      - level-zero-headers-1.18.5-2-x86_64.pkg.tar.zst
-      - level-zero-loader-1.18.5-2-x86_64.pkg.tar.zst
+      - level-zero-headers-1.18.5-3-x86_64.pkg.tar.zst
+      - level-zero-loader-1.18.5-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
