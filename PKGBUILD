@@ -5,7 +5,7 @@
 
 pkgname=kwordquiz
 pkgver=24.12.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Flash Card Trainer'
 url='https://apps.kde.org/kwordquiz/'
 arch=(x86_64)
@@ -21,6 +21,7 @@ depends=(gcc-libs
          kirigami-addons
          knewstuff
          libkeduvocdocument
+         qqc2-desktop-style
          qt6-base
          qt6-declarative
          qt6-multimedia)
