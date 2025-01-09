@@ -9,7 +9,7 @@ arch=('x86_64')
 license=('Apache-2.0 WITH LLVM-exception AND BSD-3-Clause AND Zlib AND BSD-2-Clause')
 url="https://openprinting.github.io/cups/"
 makedepends=('acl' 'pam' 'gnutls' 'cups-filters' 'colord' 
-             'libusb' 'avahi'  'systemd' 'libpaper')
+             'libusb' 'avahi'  'libpaper')
 #checkdepends=('valgrind')
 source=(https://github.com/OpenPrinting/cups/releases/download/v${pkgver}/cups-${pkgver}-source.tar.gz{,.sig}
         cups.logrotate
@@ -61,8 +61,8 @@ build() {
   # The build system uses only DSOFLAGS but not LDFLAGS to build some libraries.
   export DSOFLAGS=${LDFLAGS}
 
-  # use fixed cups user (id 209) since systemd adds "lp" group without a fixed id
-  ./configure --prefix=/usr \
+  # use fixed cups user (id 209) since adds "lp" group without a fixed id
+  ./configure --disable-systemd --prefix=/usr \
      --sysconfdir=/etc \
      --localstatedir=/var \
      --sbindir=/usr/bin \
@@ -117,7 +117,7 @@ backup=(etc/cups/cupsd.conf
         etc/logrotate.d/cups
         etc/pam.d/cups)
 depends=('acl' 'pam' "libcups>=${pkgver}" 'cups-filters'
-         'dbus' 'systemd' 'systemd-libs' 'libpaper' 'hicolor-icon-theme'
+         'dbus' 'libudev' 'libpaper' 'hicolor-icon-theme'
          'glibc' 'gcc-libs' 'avahi' 'gnutls')
 optdepends=('cups-browsed: to browse the network for remote CUPS queues and IPP network printers'
             'libusb: for usb printer backend'
