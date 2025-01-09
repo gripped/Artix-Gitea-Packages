@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: python-pytest-subprocess
+  version: 1.5.3-2
+  arch:
+    - any
+  pkgname:
+    - python-pytest-subprocess
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -27,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.5.3-2
+    packages:
+      - python-pytest-subprocess-1.5.3-2-any.pkg.tar.zst
   world:
     version: null
     packages: []
