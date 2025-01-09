@@ -6,7 +6,7 @@ pkgname=(
   jsonrpc-glib-docs
 )
 pkgver=3.44.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="JSON-RPC / GVariant RPC library for GLib"
 url="https://gitlab.gnome.org/GNOME/jsonrpc-glib"
 arch=(x86_64)
