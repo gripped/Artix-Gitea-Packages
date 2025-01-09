@@ -4,7 +4,7 @@
 
 pkgbase=zabbix
 pkgname=(zabbix-server zabbix-agent{,2} zabbix-proxy zabbix-frontend-php zabbix-web-service)
-pkgver=7.2.1
+pkgver=7.2.2
 pkgrel=1
 arch=(x86_64)
 url='https://www.zabbix.com/'
@@ -16,14 +16,14 @@ source=("https://cdn.zabbix.com/zabbix/sources/stable/${pkgver%.*}/zabbix-${pkgv
         zabbix-proxy.{sysusers,tmpfiles}
         zabbix-web-service.{sysusers,tmpfiles})
 
-sha512sums=('ff36705e74100c23e8667f9ebc3f2b3228867dd1348c68496656c6ecc2003fc2295ec50cd9dbf9b718003383bf54e49626f0d73acc175e831d6fd15de1115c04'
-            '3ab3ac1acc7e35c8896157aef601ebc30815237ac5252cbd0c1ecb26eeaf9eccf5c49938ae8c85bb79a6f95f607f082f6b80ed660829599ec03aa626cca6d3dc'
+sha512sums=('98e4a21c4235dee36e050cfc1506cbef5cd5c9409ee6bb3cac663346826a80dd2c59c6f5e6cfaeb770975785b19689d4775b0eee407093a12ed6f1169621aa1f'
+            '7a04f644e32f337794d5cba778ad755b6390830b5598ddfbc135fcb1646f63f0b136a484fbd9238634d3bf43d3ff8e5b17f4d34a8079f72b67f5c9985d664f7f'
             'ca6b4779de23829dfdd80ee21e924fbe4e2754f4e693bed4b1a2aa846cd87d150e399b1169d7fe58d30c50ed837c1b8254e580de420267d0a1834d6dc409c43d'
-            '4254d3b13ff0d19a8e207f709c10ea59dbb6d4f333d862b1611a0fa4ced199e9a32313e88d8abadc129c1e4001b182c0545bcc84117d218116a8c524de88850e'
+            '50012749cb7c5d7d2f8361a64bcbb10e70f90688b1f55917c0f19b045506427b32b891aac930c2576cae4f6e6da5ab45d3be093399e442e440ffe15aef663a36'
             'b6d548a26f845ef1a39724e3273aa521715272e20a0038144f86d377a26dfec6e3e129404cfda77632cad2f5cd6bab4a33f70a26c8c67b0d0b2abb3678ad2d83'
-            '7c1072a8cd5837095f857b50124cb45d1bdbddbce108f6f067a35c3c9ebb1ad0502ef617dfa10f9c843631220177a6286a97b1c2a46539200be72fa83cb23b99'
+            'b52ab5099a74d851c2de521230929523fc8a9aa6fea3face9a3b97b24b09e78f2e3ec5c186393bd8d86ab1af3a554b9c01c173beef283551c27ae43b3365bb2c'
             '64042ddf511b56b2a5a311e34643f4e049c09d909ea65b7343a8a9637f33dc59f2b1342201290ca0774cbcbf616096b3696982047fb622b7d51afb5eceb298dd'
-            '2766787aaeef2f48909c52deb411b47971931a972282f701c401f8315264c8817fc1f9f49a2672152c78a0ebba7d72329c18b441e134c5ec3db5f12681b6e590'
+            '985da35f11eb29cb134fb9e1facfe55e69be6a10ccc70e98fafc36e6e8498bdc85881b1726d3c47b454e638584ec75082f5eb6b1b815a1574bd670d630a8c79f'
             '309f55c8c381364eca6d31c4709a0ebb7e04cefad9e51f44173d839a58e7f8e95e3c678922f9e1fe42cff90dba5144cc7ee3a6e1c236b079b501c0e08ad2152d')
 
 prepare() {
@@ -109,6 +109,7 @@ package_zabbix-server() {
   install -Dm644 conf/zabbix_server.conf "$pkgdir/etc/zabbix/zabbix_server.conf"
   chown 170:170 "$pkgdir/etc/zabbix/zabbix_server.conf"
 
+
   install -Dm644 "$srcdir/zabbix-server.sysusers" \
 	"$pkgdir/usr/lib/sysusers.d/zabbix-server.conf"
   install -Dm644 "$srcdir/zabbix-server.tmpfiles" \
@@ -163,6 +164,7 @@ package_zabbix-agent2() {
 
   install -Dm644 man/zabbix_agent2.man \
 	"$pkgdir/usr/share/man/man8/zabbix_agent2.8"
+
 }
 
 package_zabbix-proxy() {
@@ -182,6 +184,7 @@ package_zabbix-proxy() {
   done
   install -Dm644 conf/zabbix_proxy.conf "$pkgdir/etc/zabbix/zabbix_proxy.conf"
   chown 171:171 "$pkgdir/etc/zabbix/zabbix_proxy.conf"
+
 
   install -Dm644 "$srcdir/zabbix-proxy.sysusers" \
 	"$pkgdir/usr/lib/sysusers.d/zabbix-proxy.conf"
