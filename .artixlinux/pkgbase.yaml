@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kdevelop
-  version: 24.12.0-2
+  version: 24.12.1-2
   arch:
     - x86_64
   pkgname:
     - kdevelop
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 24.12.0-2
+    version: 24.12.1-2
     packages:
-      - kdevelop-24.12.0-2-x86_64.pkg.tar.zst
+      - kdevelop-24.12.1-2-x86_64.pkg.tar.zst
   world:
     version: 24.12.0-1
     packages:
