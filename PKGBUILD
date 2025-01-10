@@ -6,7 +6,7 @@ pkgname=(
   pango
   pango-docs
 )
-pkgver=1.54.0
+pkgver=1.56.0
 pkgrel=1
 epoch=1
 pkgdesc="A library for layout and rendering of text"
@@ -30,12 +30,14 @@ depends=(
 makedepends=(
   gi-docgen
   git
+  glib2-devel
   gobject-introspection
   help2man
   meson
+  python-docutils
 )
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#tag=$pkgver")
-b2sums=('365a31b09d9e11eda15f79339fde4cd635cd4f24c7b80f883020c95ee27f7d4074495e74531c727ea1b4d4f89e32641003758e388c54a5473be00527526645e5')
+b2sums=('221364424576d66b2e2fa36e57a3bd0e67bbe52382a7106bf61ed8ff7a470b030eba89c17cdc02f61ddc8a9027c6519676bb63cbc136738d13beb8390ad0c17e')
 
 prepare() {
   cd pango
@@ -44,6 +46,7 @@ prepare() {
 build() {
   local meson_options=(
     -D documentation=true
+    -D man-pages=true
     -D sysprof=enabled
   )
 
