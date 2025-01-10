@@ -4,68 +4,65 @@
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.22.6
-pkgrel=2
+pkgver=1.23.1
+pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
-arch=(x86_64)
 url="https://gitea.io"
-license=(MIT)
-depends=(git)
-makedepends=(go nodejs npm)
-optdepends=(
-  'mariadb: MariaDB support'
-  'memcached: MemCached support'
-  'openssh: GIT over SSH support'
-  'pam: Authentication via PAM support'
-  'postgresql: PostgreSQL support'
-  'redis: Redis support'
-  'sqlite: SQLite support'
-)
-checkdepends=(openssh)
-options=(!lto)
-backup=('etc/gitea/app.ini')
-source=(git+https://github.com/go-gitea/gitea.git#tag=v${pkgver}?signed
-        gitea.tmpfiles
-        gitea.sysusers)
-sha256sums=('578261020381d7995dd7f948cf31dee17f376f76707693ad3b0ea681842e4c26'
+arch=('x86_64')
+license=('MIT')
+depends=('git')
+makedepends=('go' 'nodejs' 'npm')
+optdepends=('mariadb: MariaDB support'
+            'memcached: MemCached support'
+	    'openssh: GIT over SSH support'
+	    'pam: Authentication via PAM support'
+	    'postgresql: PostgreSQL support'
+	    'redis: Redis support'
+	    'sqlite: SQLite support')
+checkdepends=('openssh')
+options=('!lto')
+backup=("etc/${pkgname}/app.ini")
+source=("git+https://github.com/go-gitea/gitea.git#tag=v${pkgver}?signed"
+        "${pkgname}.tmpfiles"
+        "${pkgname}.sysusers")
+sha256sums=('3172175bcc1081e04c57851a90c37da3500432991d3b04e1591fbe9a6a7b8181'
             '1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba'
             'e29dcc74b2f52e32d3931103d03f202d1cafe18e7eb9a271da0f50ef61dc8446')
-validpgpkeys=(
-  B56E3C7437A49E136862F5DE9D8A57ADAA232E95  # Matti Ranta <matti@mdranta.net>, retrieved from https://github.com/techknowlogick.gpg
-  D8F9672D77C0BB60A024C23EDFDE60A0093EB926  # Lauris Bukšis-Haberkorns <lauris@nix.lv>, retrieved from https://github.com/lafriks.gpg
-  BA66F67FD73F7058D712D308C3B7C91B632F738A  # Lunny Xiao <xiaolunwen@gmail.com>, retrieved from https://github.com/lunny.gpg
-  8722B61D72341082553B201CB8BE6D610E61C862  # '6543' <6543@obermui.de>, retrieved from https://github.com/6543.gpg
-  D2CF76DA95F201E9901532AB3CDE74631F13A748  # Andrew Thornton <art27@cantab.net>, retrieved from https://github.com/zeripath.gpg
-  82A110A44DF1A28D50C093BFB853ADA5DA7BBF7A  # jolheiser <john@jolheiser.com>, retrieved from https://github.com/jolheiser.gpg
-  FE7C3EAEB8CD8290390B12AD3DECE05F6D9A647C  # delvh <dev.lh@web.de>, retrieved from https://github.com/delvh.gpg
-)
+validpgpkeys=(B56E3C7437A49E136862F5DE9D8A57ADAA232E95  # Matti Ranta <matti@mdranta.net>, retrieved from https://github.com/techknowlogick.gpg
+              D8F9672D77C0BB60A024C23EDFDE60A0093EB926  # Lauris Bukšis-Haberkorns <lauris@nix.lv>, retrieved from https://github.com/lafriks.gpg
+              BA66F67FD73F7058D712D308C3B7C91B632F738A  # Lunny Xiao <xiaolunwen@gmail.com>, retrieved from https://github.com/lunny.gpg
+              8722B61D72341082553B201CB8BE6D610E61C862  # '6543' <6543@obermui.de>, retrieved from https://github.com/6543.gpg
+              D2CF76DA95F201E9901532AB3CDE74631F13A748  # Andrew Thornton <art27@cantab.net>, retrieved from https://github.com/zeripath.gpg
+              82A110A44DF1A28D50C093BFB853ADA5DA7BBF7A  # jolheiser <john@jolheiser.com>, retrieved from https://github.com/jolheiser.gpg
+              FE7C3EAEB8CD8290390B12AD3DECE05F6D9A647C) # delvh <dev.lh@web.de>, retrieved from https://github.com/delvh.gpg
 
 prepare() {
-  cd ${pkgname}
-  make deps-frontend deps-backend deps-tools
+	cd "${pkgname}"
+	make deps-frontend deps-backend deps-tools
 }
 
 build() {
-  cd ${pkgname}
-  export CGO_CPPFLAGS="${CPPFLAGS}"
-  export CGO_CFLAGS="${CFLAGS}"
-  export CGO_CXXFLAGS="${CXXFLAGS}"
-  export CGO_LDFLAGS="${LDFLAGS}"
-  export EXTRA_GOFLAGS="-buildmode=pie -mod=readonly -modcacherw"
-  export LDFLAGS="-linkmode=external -compressdwarf=false -X 'code.gitea.io/gitea/modules/setting.AppWorkPath=/var/lib/gitea/' -X 'code.gitea.io/gitea/modules/setting.CustomConf=/etc/gitea/app.ini'"
-  export TAGS="bindata sqlite sqlite_unlock_notify pam"
-  make -j1
+	cd "${pkgname}"
+	export CGO_CPPFLAGS="${CPPFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CXXFLAGS="${CXXFLAGS}"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export EXTRA_GOFLAGS="-buildmode=pie -mod=readonly -modcacherw"
+	export LDFLAGS="-linkmode=external -compressdwarf=false -X 'code.gitea.io/gitea/modules/setting.AppWorkPath=/var/lib/gitea/' -X 'code.gitea.io/gitea/modules/setting.CustomConf=/etc/gitea/app.ini'"
+	export TAGS="bindata sqlite sqlite_unlock_notify pam"
+	make -j1
 }
 
 check() {
-  cd ${pkgname}
-  make test
+	cd "${pkgname}"
+	make test
 }
 
 package() {
-  install -Dm755 ${pkgname}/${pkgname} -t "${pkgdir}"/usr/bin/
-  install -Dm644 ${pkgname}/LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
-  install -Dm644 ${pkgname}.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
-  install -Dm644 ${pkgname}.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
-  install -Dm644 ${pkgname}/custom/conf/app.example.ini "${pkgdir}"/etc/gitea/app.ini
+	cd "${pkgname}"
+	install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+	install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm 644 custom/conf/app.example.ini "${pkgdir}/etc/${pkgname}/app.ini"
+	install -Dm 644 "${srcdir}/${pkgname}.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
+	install -Dm 644 "${srcdir}/${pkgname}.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
 }
