@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Daniel M. Capella <polyzen@archlinux.org>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Bruno Galeotti <bgaleotti at gmail dot com>
 
 _name=TypeScript
 pkgname=typescript
-pkgver=5.7.2
+pkgver=5.7.3
 pkgrel=1
 pkgdesc='JavaScript with syntax for types'
 arch=(any)
@@ -18,7 +17,7 @@ makedepends=(
   rsync
 )
 source=("git+https://github.com/microsoft/$_name.git#tag=v$pkgver")
-b2sums=('c0361e8140820040a5a10adc43dbd2aaf29bff8a1da04993a33c967b11b9ac841b7c3ff2d24764ffff2316ab8f18f66e563fe20f6f70ae7edf86b75b8d4d8938')
+b2sums=('c1e2efee1aedf71a12d46c1f1e6dd47f3e1ce2c56a5c2ff1c68a03cf9abf0b8f955e4c9e1448cc1b8bb8e44d75c1272b1099efb251c9b167ca6b3b2592b66332')
 
 prepare() {
   cd $_name
