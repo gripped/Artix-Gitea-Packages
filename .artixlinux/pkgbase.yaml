@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - lib32-nettle
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: lib32
+  removeRepo: lib32-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,9 +37,8 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 3.10.1-1
-    packages:
-      - lib32-nettle-3.10.1-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32:
     version: 3.10.1-1
     packages:
