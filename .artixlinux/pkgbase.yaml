@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kcoreaddons
-  version: 6.9.0-3.1
+  version: 6.10.0-1
   arch:
     - x86_64
   pkgname:
     - kcoreaddons
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.9.0-3
+    version: 6.10.0-1
     packages:
-      - kcoreaddons-6.9.0-3-x86_64.pkg.tar.zst
+      - kcoreaddons-6.10.0-1-x86_64.pkg.tar.zst
   world:
     version: 6.9.0-3.1
     packages:
