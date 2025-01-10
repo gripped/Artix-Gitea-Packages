@@ -3,7 +3,7 @@
 
 pkgname=('llvm' 'llvm-libs')
 pkgver=19.1.6
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url="https://llvm.org/"
 license=('Apache-2.0 WITH LLVM-exception')
@@ -140,7 +140,6 @@ package_llvm() {
 package_llvm-libs() {
   pkgdesc="LLVM runtime libraries"
   depends=('gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'libxml2')
-  depends+=('llvm18-libs') # help bootstrapping crystal/ldc/rust (remove me!)
 
   install -d "$pkgdir/usr/lib"
   cp -P \
