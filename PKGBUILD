@@ -4,7 +4,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kmines
-pkgver=24.12.0
+pkgver=24.12.1
 pkgrel=1
 pkgdesc='The classic Minesweeper game'
 url='https://apps.kde.org/kmines/'
@@ -28,7 +28,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-games)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('6c80d9afaad3d5c8a0361a0f758d4abbd7f386aa728f146e22dc7674d0b5c75b'
+sha256sums=('9696918539eb35bbe7f3669c7fa0a6d0db846f9d936e9392a4936a10e472a6c8'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
