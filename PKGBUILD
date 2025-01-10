@@ -3,7 +3,7 @@
 
 pkgname=lld
 pkgver=19.1.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Linker from the LLVM project"
 arch=('x86_64')
 url="https://lld.llvm.org/"
