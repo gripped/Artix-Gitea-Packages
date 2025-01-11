@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pyside6
-  version: 6.8.1.1-2.1
+  version: 6.8.1.1-3
   arch:
     - x86_64
   pkgname:
@@ -9,12 +9,12 @@ pkgbase:
     - pyside6-tools
     - shiboken6
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.8.1.1-3
+    packages:
+      - pyside6-6.8.1.1-3-x86_64.pkg.tar.zst
+      - pyside6-tools-6.8.1.1-3-x86_64.pkg.tar.zst
+      - shiboken6-6.8.1.1-3-x86_64.pkg.tar.zst
   world:
     version: 6.8.1.1-2.1
     packages:
