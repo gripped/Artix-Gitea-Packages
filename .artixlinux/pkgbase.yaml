@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-openapi-schema-validator
-  version: 0.6.2-3
+  version: 0.6.3-1
   arch:
     - any
   pkgname:
     - python-openapi-schema-validator
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.2-3
+    version: 0.6.3-1
     packages:
-      - python-openapi-schema-validator-0.6.2-3-any.pkg.tar.zst
+      - python-openapi-schema-validator-0.6.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
