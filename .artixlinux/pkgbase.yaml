@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-cfn-lint
-  version: 1.22.3-1
+  version: 1.22.4-1
   arch:
     - any
   pkgname:
     - python-cfn-lint
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.22.3-1
+    version: 1.22.4-1
     packages:
-      - python-cfn-lint-1.22.3-1-any.pkg.tar.zst
+      - python-cfn-lint-1.22.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
