@@ -2,7 +2,7 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgname=haproxy
-pkgver=3.1.1
+pkgver=3.1.2
 pkgrel=1
 
 pkgdesc='Reliable, high performance TCP/HTTP load balancer'
@@ -17,17 +17,17 @@ backup=('etc/haproxy/haproxy.cfg')
 
 install=haproxy.install
 
-validpgpkeys=('0C9568FA554656551590C5E44E386D9C9C61702F'  # Willy Tarreau <w@1wt.eu>
-              '07D5F18D201984D7D13FB7AAF5F936267AA4B280') # Christopher Faulet <christopher.faulet@capflam.org>
+validpgpkeys=('0C9568FA554656551590C5E44E386D9C9C61702F' # Willy Tarreau <w@1wt.eu>
+  '07D5F18D201984D7D13FB7AAF5F936267AA4B280')            # Christopher Faulet <christopher.faulet@capflam.org>
 source=("git+https://git.haproxy.org/git/haproxy-${pkgver%.*}.git#tag=v${pkgver}?signed"
-        'haproxy.cfg'
-        'haproxy.sysusers'
-        '0001-Use-CFLAGS-and-LDFLAGS-when-building-admin.patch')
+  'haproxy.cfg'
+  'haproxy.sysusers'
+  '0001-Use-CFLAGS-and-LDFLAGS-when-building-admin.patch')
 
-sha256sums=('19a34a4fa4a6d5cd49861ffa89aea105505ea17204881db382d73e0b582d9c54'
-            'f6babef513b99a3fa0e50f2b144c73c980f1b78b119874ffa2580af1e651e7a9'
-            'b02b4088205039f0979aef0ef3e22957f493dd54eabefaee7011f2d795303b3e'
-            'a1e3a1c2923465081383eb431bae55ff9841d89909469311cdba4b394ec4a998')
+sha256sums=('189f77c5a6b09153c221e2c3a4f15594bccb16ae8e2e7aff3709e7a64179e61e'
+  'f6babef513b99a3fa0e50f2b144c73c980f1b78b119874ffa2580af1e651e7a9'
+  'c6e716ea59272a8e871af53703726dd2a75b56c82dacf097d4bf08ac5e841a0d'
+  'a1e3a1c2923465081383eb431bae55ff9841d89909469311cdba4b394ec4a998')
 
 prepare() {
   cd "haproxy-${pkgver%.*}"
@@ -52,12 +52,12 @@ build() {
     USE_PROMEX=1 \
     USE_ZLIB=1
 
-    make \
-      SBINDIR=/usr/bin \
-      OPTIMIZE= \
-      CFLAGS="$CFLAGS" \
-      LDFLAGS="$LDFLAGS" \
-      admin/{halog/halog,iprange/ip{,6}range}
+  make \
+    SBINDIR=/usr/bin \
+    OPTIMIZE= \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS" \
+    admin/{halog/halog,iprange/ip{,6}range}
 }
 
 package() {
