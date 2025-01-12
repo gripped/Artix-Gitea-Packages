@@ -15,10 +15,11 @@ checkdepends=('python-pytest')
 source=(
   "git+$url.git#tag=v$pkgver"
   # https://github.com/abravalheri/validate-pyproject/pull/225
-  "fix-tests.patch::$url/commit/7e3db65608d811d792960c9320a8775fc9e03b0e.patch"
+  # "fix-tests.patch::$url/commit/7e3db65608d811d792960c9320a8775fc9e03b0e.patch"
+  "fix-tests.patch"
 )
 sha512sums=('f4497c1da0bf9097d4daf69c406e0eee973d67b6803e1b8052ecb1e3d8f5a800d48db5999b97b652c9e3ce1fd2b201df87a1141c31399f22d6787b9b482eac94'
-            'SKIP')
+            '4a562557695923a1ce451a0359173ac243a61cf7f2b770e20f7530d207cbe12705688046fe066d683478c555a2b090a6fd393b2291f2e16324f2dc379a33be12')
 
 prepare() {
   cd validate-pyproject
