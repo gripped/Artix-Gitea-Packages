@@ -3,7 +3,7 @@
 # Maintainer: Tom Gundersen <teg@jklm.no>
 
 _pkgbase=systemd
-_tag=256.9
+_tag='257.2'
 
 pkgname=lib32-udev
 pkgver="${_tag/[-~]/}"
@@ -46,8 +46,8 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
               '5C251B5FC54EB2F80F407AAAC54CA336CFEB557E') # Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-artix-standalone-install.patch)
-sha512sums=('2f85fc1889e402ab185a6aef5a301a70370da8b0d5e505c6190e215e9d78e56119241a24df351cdac751c59239f691c8997dfda7661d2e7d6c98b868d0eaaef4'
-            'eeec570ad899f44ab895f1462190d380885ad862e6cd1325817022fe663b0ca8d9c5c4dd2b2a7b445ae17adc2fffed4de48e42c50fcd4217ba1e49f41a939688')
+sha512sums=('60e09576738abf1d328d06daae8981780a9a4facc5b09e2a3ae24b8461e23d3be2a192a2261ec0e85f004a89eb77e76c4483b268f3d4d918146baf5b201fa49d'
+            'c2d1b85f3cd5948333edca36b590dad19d5045424f0145b64fe9abdf6fe7e2c3a0fca6c1901e9bfaa26b4e6fc98ff0ec8d9c825845f778fe77d681075cc47eb2')
 
 _backports=(
 )
@@ -116,7 +116,7 @@ build() {
         -Dsysvinit-path=
         -Dsysvrcnd-path=
         -Ddefault-dnssec=no
-
+256.9
         -Ddefault-llmnr=no
         -Ddefault-mdns=no
 
