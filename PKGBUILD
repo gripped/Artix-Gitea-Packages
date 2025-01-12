@@ -11,7 +11,7 @@ pkgname=('virtualbox'
          'virtualbox-ext-vnc')
 pkgver=7.1.4
 _tarver=${pkgver}
-pkgrel=3.2
+pkgrel=4
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL' 'custom:CDDL')
