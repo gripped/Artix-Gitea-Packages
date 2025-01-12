@@ -12,7 +12,7 @@ pkgname=(
   aws-sdk-cpp-s3
 )
 pkgver=1.11.480
-pkgrel=1
+pkgrel=1.1
 pkgdesc='AWS SDK for C++'
 arch=(x86_64)
 url='https://github.com/aws/aws-sdk-cpp'
