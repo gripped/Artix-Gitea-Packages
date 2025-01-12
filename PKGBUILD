@@ -3,19 +3,18 @@
 # Contributor: Matt Monaco <net 0x01b dgbaley27>
 
 pkgname=openvswitch
-pkgver=3.3.0
+pkgver=3.4.1
 pkgrel=1
 pkgdesc="Production Quality, Multilayer Open Virtual Switch"
 url="http://openvswitch.org"
-license=('APACHE')
+license=('Apache-2.0')
 arch=(x86_64)
 install=openvswitch.install
 source=("http://openvswitch.org/releases/openvswitch-$pkgver.tar.gz"
-	openvswitch.tmpfiles)
-depends=('openssl' 'libcap-ng')
-makedepends=('python-six' 'groff')
-optdepends=('python-six')
-sha256sums=('1afcb81fb947c0be885866995d6c088e61df43561115789206a2b33f7bc1b05f'
+	    openvswitch.tmpfiles)
+depends=('openssl' 'libcap-ng' 'dpdk')
+makedepends=('python')
+sha256sums=('6e97ec7dfdda5b40b5103946d53e4f8b11edf66049fedbdcb323e1af67133de8'
             'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9')
 
 prepare() {
