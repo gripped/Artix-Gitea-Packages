@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: wasi-libc++
-  version: 18.1.8-4
+  version: 19.1.6-2
   arch:
     - any
   pkgname:
     - wasi-libc++
     - wasi-libc++abi
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 19.1.6-2
+    packages:
+      - wasi-libc++-19.1.6-2-any.pkg.tar.zst
+      - wasi-libc++abi-19.1.6-2-any.pkg.tar.zst
   world:
     version: 18.1.8-4
     packages:
