@@ -8,7 +8,7 @@ pkgbase:
     - lxqt-panel
 actions:
   addRepo: null
-  removeRepo: world-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.4-1
-    packages:
-      - lxqt-panel-2.1.4-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
