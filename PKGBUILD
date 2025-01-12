@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org> 
 
 pkgname=isoimagewriter
-pkgver=24.12.0
+pkgver=24.12.1
 pkgrel=1
 pkgdesc='Program to write hybrid ISO files onto USB disks'
 arch=(x86_64)
@@ -24,7 +24,7 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications
         kde-utilities)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('8b1687e963666e1de8f8cea647702cc168d6632e9361d4062e5b16faa7a64c64'
+sha256sums=('9a6bbc545b5d007be0cba9b4531e3e0a223d1f34f222ea6f3801c1dbed80b18f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
