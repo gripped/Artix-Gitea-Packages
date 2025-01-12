@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: wasi-compiler-rt
-  version: 18.1.8-2
+  version: 19.1.6-1
   arch:
     - any
   pkgname:
     - wasi-compiler-rt
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 19.1.6-1
+    packages:
+      - wasi-compiler-rt-19.1.6-1-any.pkg.tar.zst
   world:
     version: 18.1.8-2
     packages:
