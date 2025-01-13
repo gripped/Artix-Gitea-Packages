@@ -12,7 +12,7 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-_tag='2.40.3'
+_tag='2.40.4'
 pkgver="${_tag/-/}"
 pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
@@ -47,7 +47,7 @@ source=("git+https://github.com/util-linux/util-linux#tag=v${_tag}?signed"
         'util-linux.sysusers'
         '60-rfkill.rules'
         0001-util-linux-tmpfiles.patch)
-sha256sums=('47f46d24d67f42a7a1e2ae1ff8f4175307426cfcd70c544484ec5a235a77311f'
+sha256sums=('32b88bea337aa283e4a84a20eb70fe8df5db6c09cfd99bc133e2503e2e6b53d6'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
@@ -59,6 +59,8 @@ sha256sums=('47f46d24d67f42a7a1e2ae1ff8f4175307426cfcd70c544484ec5a235a77311f'
             'c4d10742e2168ae86fa333bb686a6da8e5755aef5a65937da67abdd18fb5dac3')
 
 _backports=(
+  # build-sys: release++ (v2.40.4)
+  "v${pkgver}..dbcc687f6ab1568982cdf3fe391c0beb818b7e28"
 )
 
 _reverts=(
