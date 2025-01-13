@@ -12,8 +12,7 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-_tag='2.40.4'
-pkgver="${_tag/-/}"
+pkgver='2.40.4'
 pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
@@ -41,7 +40,7 @@ license=(
 )
 options=('strip')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
-source=("git+https://github.com/util-linux/util-linux#tag=v${_tag}?signed"
+source=("git+https://github.com/util-linux/util-linux#tag=v${pkgver/rc/-rc}?signed"
         $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
         pam-{login,common,remote,runuser,su}
         'util-linux.sysusers'
@@ -59,8 +58,6 @@ sha256sums=('32b88bea337aa283e4a84a20eb70fe8df5db6c09cfd99bc133e2503e2e6b53d6'
             'c4d10742e2168ae86fa333bb686a6da8e5755aef5a65937da67abdd18fb5dac3')
 
 _backports=(
-  # build-sys: release++ (v2.40.4)
-  "v${pkgver}..dbcc687f6ab1568982cdf3fe391c0beb818b7e28"
 )
 
 _reverts=(
@@ -123,7 +120,7 @@ package_util-linux() {
            'pam'
            'readline'
            'shadow'
-           'libudev' 'libudev.so' 'libudev.so'
+           'libudev' #'libudev.so'
            'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
