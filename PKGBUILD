@@ -9,8 +9,8 @@ pkgname=(
   openmpi
   openmpi-docs
 )
-pkgver=5.0.5
-pkgrel=2
+pkgver=5.0.6
+pkgrel=1
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
@@ -27,14 +27,20 @@ makedepends=(
   libfabric
   libnl
   openpmix
+  # openucc
+  # openucx
   prrte
   valgrind
   zlib
 )
 source=(
-  https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/$pkgbase-$pkgver.tar.bz2)
-sha256sums=('6588d57c0a4bd299a24103f4e196051b29e8b55fbda49e11d5b3d32030a32776')
-b2sums=('740e5dbc7e54b8f4eac4fa2c40fb5a0ccfba201dff15ccc84899f28dfad0147078ef6c2b0585615c93fc6edb70b665b3f7a9adea5e5e53a7563ae4c7a6ccbada')
+  https://www.open-mpi.org/software/ompi/v${pkgver%.*}/downloads/$pkgbase-$pkgver.tar.bz2
+  fix-cuda-build.patch
+)
+sha256sums=('bd4183fcbc43477c254799b429df1a6e576c042e74a2d2f8b37d537b2ff98157'
+            '7acee1f8fd6b592b5e3ff09ed0f059a49387c0d00418430a67e5e6d849c8fbea')
+b2sums=('72418c4d2cdc0628214e0c2db2e8d2dd52234a3888d7344eff23576b19de94d4cb74b168120d72cedeea8c835db363d83b61319fcdf13277c541003606f4558a'
+        '51c5dfd4d7ca5b3f650efab4f0d8b383f8767ecfdb192272c796b00608cb412c7cc5ad1231af27be639b238d1e55be34e411aa40efbb37a6a3a99b83e3c2a1f9')
 
 _pick() {
   local p="$1" f d; shift
@@ -52,6 +58,9 @@ prepare() {
   sed -i 's|WRAPPER__FCFLAGS|WRAPPER_FCFLAGS|g' configure
   sed -i 's|WRAPPER_EXTRA_FCFLAGS|WRAPPER_FCFLAGS|g' configure
   sed -i 's|"-I/usr/include",||' opal/tools/wrappers/opal_wrapper.c
+
+  # fix regression in 5.0.6 https://github.com/open-mpi/ompi/issues/12924
+  patch -Np1 -i ../fix-cuda-build.patch
 }
 
 build() {
@@ -68,16 +77,18 @@ build() {
     --with-pmix=external
     --with-prrte=external
     --with-valgrind
+    # --with-ucc=/usr
+    # --with-ucx=/usr
     --with-cuda=/opt/cuda
     # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
     --with-cuda-libdir=/usr/lib
     --with-rocm=/opt/rocm
     # all components that link to libraries provided by optdepends must be run-time loadable
-    --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm
+    --enable-mca-dso=accelerator_cuda,accelerator_rocm,btl_smcuda,rcache_gpusm,rcache_rgpusm #,coll_ucc,scoll_ucc
     # mpirun should not warn on MCA component load failures by default - usually caused by missing optdepends, which is ok
     # https://docs.open-mpi.org/en/main/installing-open-mpi/configure-cli-options/installation.html
-    --with-show-load-errors='^accelerator,rcache'
+    --with-show-load-errors='^accelerator,rcache' #,coll/ucc'
   )
   cd $pkgbase-$pkgver
 
@@ -86,8 +97,7 @@ build() {
   export HOSTNAME=buildhost
   export USER=builduser
 
-  # TODO: remove ac_cv_func_sem_open=no when there is a glibc release fixing https://sourceware.org/bugzilla/show_bug.cgi?id=30789
-  ac_cv_func_sem_open=no ./configure "${configure_options[@]}"
+  ./configure "${configure_options[@]}"
   # prevent excessive overlinking due to libtool
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make V=1
@@ -106,6 +116,7 @@ package_openmpi() {
     libfabric
     libnl
     openpmix libpmix.so
+    # openucx
     prrte
     zlib
   )
@@ -114,6 +125,7 @@ package_openmpi() {
     'hip-runtime-amd: ROCm support'
     'gcc-fortran: fortran support'
     'openssh: for execution on remote hosts via plm_ssh_agent'
+    # 'openucc: for UCC accelerated collectives'
   )
   provides=(
     libmpi.so
