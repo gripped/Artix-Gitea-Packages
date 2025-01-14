@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-shell
-  version: 1:47.2-1
+  version: 1:47.3-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:47.2-1
+    version: 1:47.3-1
     packages:
-      - gnome-shell-1:47.2-1-x86_64.pkg.tar.zst
-      - gnome-shell-docs-1:47.2-1-x86_64.pkg.tar.zst
+      - gnome-shell-1:47.3-1-x86_64.pkg.tar.zst
+      - gnome-shell-docs-1:47.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
