@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xonsh
-  version: 0.19.0-1
+  version: 0.19.1-1
   arch:
     - any
   pkgname:
     - xonsh
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.19.0-1
+    version: 0.19.1-1
     packages:
-      - xonsh-0.19.0-1-any.pkg.tar.zst
+      - xonsh-0.19.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
