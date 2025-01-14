@@ -15,10 +15,11 @@ depends=(
   lib32-glib2
   lib32-glibc
   polkit
-)
-makedepends=(
   libelogind
   dbus
+)
+makedepends=(
+  elogind
   git
   glib2-devel
   lib32-pam
