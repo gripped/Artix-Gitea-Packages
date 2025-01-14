@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mutter
-  version: 47.3-1
+  version: 47.4-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 47.3-1
+    version: 47.4-1
     packages:
-      - mutter-47.3-1-x86_64.pkg.tar.zst
-      - mutter-docs-47.3-1-x86_64.pkg.tar.zst
+      - mutter-47.4-1-x86_64.pkg.tar.zst
+      - mutter-docs-47.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
