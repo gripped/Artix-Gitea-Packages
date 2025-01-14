@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: memtest86+
-  version: 7.00-1
+  version: 7.20-2
   arch:
     - any
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.00-1
+    version: 7.20-2
     packages:
-      - memtest86+-7.00-1-any.pkg.tar.zst
-      - memtest86+-efi-7.00-1-any.pkg.tar.zst
-      - memtest86+-iso-7.00-1-any.pkg.tar.zst
+      - memtest86+-7.20-2-any.pkg.tar.zst
+      - memtest86+-efi-7.20-2-any.pkg.tar.zst
+      - memtest86+-iso-7.20-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -56,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
