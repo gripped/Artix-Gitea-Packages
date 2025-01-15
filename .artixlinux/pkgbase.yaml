@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: brltty
-  version: 6.7-2
+  version: 6.7-3
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - brltty-udev-generic
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.7-2
+    version: 6.7-3
     packages:
-      - brltty-6.7-2-x86_64.pkg.tar.zst
-      - brltty-udev-generic-6.7-2-x86_64.pkg.tar.zst
+      - brltty-6.7-3-x86_64.pkg.tar.zst
+      - brltty-udev-generic-6.7-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
