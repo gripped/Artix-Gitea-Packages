@@ -69,6 +69,8 @@ prepare() {
   patch -p1 -i ../julia-libgit2-1.9.patch
 # Don't hardcode library names
   patch -p1 -i ../julia-hardcoded-libs.patch
+# Fix test that fails in Artix's build pipeline
+  patch -p1 -i ../localhost.patch
 # Fix segfaults with curl 1.10
   cd stdlib/srccache
   _SAsha=89d3c7dded535a77551e763a437a6d31e4d9bf84
@@ -78,8 +80,6 @@ prepare() {
   tar -czf Downloads-$_SAsha.tar.gz JuliaLang-Downloads.jl-${_SAsha:0:7}
   md5sum Downloads-$_SAsha.tar.gz | cut -d ' ' -f 1 > ../../deps/checksums/Downloads-$_SAsha.tar.gz/md5
   sha512sum Downloads-$_SAsha.tar.gz | cut -d ' ' -f 1 > ../../deps/checksums/Downloads-$_SAsha.tar.gz/sha512
-# Fix test that fails in Artix's build pipeline
-  patch -p1 -i ../localhost.patch
 }
 
 _make() {
