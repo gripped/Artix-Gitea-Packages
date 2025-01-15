@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lapack
-  version: 3.12.0-5
+  version: 3.12.1-2
   arch:
     - x86_64
   pkgname:
@@ -16,11 +16,11 @@ pkgbase:
     - lapack-doc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -39,17 +39,17 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.12.0-5
+    version: 3.12.1-2
     packages:
-      - blas-3.12.0-5-x86_64.pkg.tar.zst
-      - cblas-3.12.0-5-x86_64.pkg.tar.zst
-      - lapack-3.12.0-5-x86_64.pkg.tar.zst
-      - lapacke-3.12.0-5-x86_64.pkg.tar.zst
-      - blas64-3.12.0-5-x86_64.pkg.tar.zst
-      - cblas64-3.12.0-5-x86_64.pkg.tar.zst
-      - lapack64-3.12.0-5-x86_64.pkg.tar.zst
-      - lapacke64-3.12.0-5-x86_64.pkg.tar.zst
-      - lapack-doc-3.12.0-5-x86_64.pkg.tar.zst
+      - blas-3.12.1-2-x86_64.pkg.tar.zst
+      - cblas-3.12.1-2-x86_64.pkg.tar.zst
+      - lapack-3.12.1-2-x86_64.pkg.tar.zst
+      - lapacke-3.12.1-2-x86_64.pkg.tar.zst
+      - blas64-3.12.1-2-x86_64.pkg.tar.zst
+      - cblas64-3.12.1-2-x86_64.pkg.tar.zst
+      - lapack64-3.12.1-2-x86_64.pkg.tar.zst
+      - lapacke64-3.12.1-2-x86_64.pkg.tar.zst
+      - lapack-doc-3.12.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
