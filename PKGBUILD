@@ -41,7 +41,8 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         julia-libgit2-1.8.patch
         julia-libgit2-1.9.patch
         julia-metainfo.patch
-        julia-curl-1.10.patch)
+        julia-curl-1.10.patch
+        localhost.patch)
 backup=(etc/julia/startup.jl)
 sha256sums=('a7365b969944f27df0d8563716ca9769e07f3f77b9f9fbb48bcd114ddf752ca4'
             'SKIP'
@@ -50,7 +51,8 @@ sha256sums=('a7365b969944f27df0d8563716ca9769e07f3f77b9f9fbb48bcd114ddf752ca4'
             '3ba9a85464e874c8ac4caeba155a217e34c3e78e85eccaeb3c2a331ed83882b3'
             '6b4a88fdfddd4c78c23cd8c26f5db1ca89ed6f1ae5558cf458a40482f6c64f98'
             '074690d913b9544bef11468454fbf5f52005b2a12160123340cfacc91d4daf9f'
-            'f9953782524471c5a8ce819bf00bd47f8272cea17058d15f24522d01b5e827e5')
+            'f9953782524471c5a8ce819bf00bd47f8272cea17058d15f24522d01b5e827e5'
+            'fc94d316bd56902f1720da55c331d43d315ce487d6b4cc7e5ffcb207cf9a8299')
 validpgpkeys=('3673DF529D9049477F76B37566E3C7DC03D6E495') # Julia (Binary signing key) <buildbot@julialang.org>
 options=(!lto)
 
@@ -76,6 +78,8 @@ prepare() {
   tar -czf Downloads-$_SAsha.tar.gz JuliaLang-Downloads.jl-${_SAsha:0:7}
   md5sum Downloads-$_SAsha.tar.gz | cut -d ' ' -f 1 > ../../deps/checksums/Downloads-$_SAsha.tar.gz/md5
   sha512sum Downloads-$_SAsha.tar.gz | cut -d ' ' -f 1 > ../../deps/checksums/Downloads-$_SAsha.tar.gz/sha512
+# Fix test that fails in Artix's build pipeline
+  patch -p1 -i ../localhost.patch
 }
 
 _make() {
