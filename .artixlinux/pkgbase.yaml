@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: camlp-streams
-  version: 5.0.1-7
+  version: 5.0.1-8
   arch:
     - x86_64
   pkgname:
     - camlp-streams
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.1-7
+    version: 5.0.1-8
     packages:
-      - camlp-streams-5.0.1-7-x86_64.pkg.tar.zst
+      - camlp-streams-5.0.1-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
