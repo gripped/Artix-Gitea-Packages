@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ocaml-result
-  version: 1.5-12
+  version: 1.5-13
   arch:
     - i686
     - x86_64
@@ -10,11 +10,11 @@ pkgbase:
     - ocaml-result
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5-12
+    version: 1.5-13
     packages:
-      - ocaml-result-1.5-12-x86_64.pkg.tar.zst
+      - ocaml-result-1.5-13-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
