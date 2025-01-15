@@ -12,7 +12,11 @@ depends=('acl' 'libacl.so' 'lz4' 'openssl' 'popt' 'xxhash' 'libxxhash.so'
          'zlib' 'zstd')
 optdepends=('python: for rrsync')
 makedepends=('git' 'python-commonmark')
-backup=('etc/rsyncd.conf')
+checkdepends=('rsync')
+backup=(
+    'etc/rsyncd.conf'
+    'etc/xinetd.d/rsync'
+)
 validpgpkeys=('0048C8B026D4C96F0E589C2F6C859FB14B96A8C5'  # Wayne Davison <wayned@users.sourceforge.net>
               '9FEF112DCE19A0DC7E882CB81BB24997A8535F6F') # Andrew Tridgell <andrew@tridgell.net
 source=("git+https://github.com/RsyncProject/rsync.git#tag=v${pkgver}?signed"
@@ -61,13 +65,12 @@ check() {
   cd ${pkgname}
 
   # check for IPv6 support
-  # https://gitlab.archlinux.org/archlinux/packaging/packrsync                            world            3.3.0-2                          extra            3.4.0-1                          Artooages/rsync/-/commit/8936e33b245da170e7b5488b4ca35727ac9c4b68
   if rsync -V | grep -q 'no IPv6'; then
     echo 'Built without IPv6 support!' >&2
     exit 1
   fi
 
-  make testrsync                            world            3.3.0-2                          extra            3.4.0-1                          Artoo
+  make test
 
 }
 
@@ -76,4 +79,5 @@ package() {
 
   make DESTDIR="$pkgdir" install
   install -Dm0644 ../rsyncd.conf "$pkgdir/etc/rsyncd.conf"
+  install -Dm0644 packaging/lsb/rsync.xinetd "$pkgdir/etc/xinetd.d/rsync"
 }
