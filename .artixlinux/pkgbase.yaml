@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ocaml-topkg
-  version: 1.0.7-4
+  version: 1.0.7-5
   arch:
     - x86_64
   pkgname:
     - ocaml-topkg
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.7-4
+    version: 1.0.7-5
     packages:
-      - ocaml-topkg-1.0.7-4-x86_64.pkg.tar.zst
+      - ocaml-topkg-1.0.7-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
