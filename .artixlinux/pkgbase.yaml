@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ocaml-integers
-  version: 0.7.0-7
+  version: 0.7.0-8
   arch:
     - x86_64
   pkgname:
     - ocaml-integers
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.0-7
+    version: 0.7.0-8
     packages:
-      - ocaml-integers-0.7.0-7-x86_64.pkg.tar.zst
+      - ocaml-integers-0.7.0-8-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
