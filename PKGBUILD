@@ -2,8 +2,8 @@
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 
 pkgname=rsync
-pkgver=3.3.0
-pkgrel=2
+pkgver=3.4.0
+pkgrel=1
 pkgdesc='A fast and versatile file copying tool for remote and local files'
 arch=('x86_64')
 url='https://rsync.samba.org/'
@@ -12,12 +12,12 @@ depends=('acl' 'libacl.so' 'lz4' 'openssl' 'popt' 'xxhash' 'libxxhash.so'
          'zlib' 'zstd')
 optdepends=('python: for rrsync')
 makedepends=('git' 'python-commonmark')
-backup=('etc/rsyncd.conf'
-        'etc/xinetd.d/rsync')
-validpgpkeys=('0048C8B026D4C96F0E589C2F6C859FB14B96A8C5') # Wayne Davison <wayned@users.sourceforge.net>
+backup=('etc/rsyncd.conf')
+validpgpkeys=('0048C8B026D4C96F0E589C2F6C859FB14B96A8C5'  # Wayne Davison <wayned@users.sourceforge.net>
+              '9FEF112DCE19A0DC7E882CB81BB24997A8535F6F') # Andrew Tridgell <andrew@tridgell.net
 source=("git+https://github.com/RsyncProject/rsync.git#tag=v${pkgver}?signed"
         'rsyncd.conf')
-sha256sums=('110fff983288a09e4cedc754ea8f6cecb5c3d7a7a3c8291cc979be93b5c6b777'
+sha256sums=('f14621c42d88d42bc020a1cadfa82c4fa2a842df92caa4e41ca33d996f9bf23c'
             '733ccb571721433c3a6262c58b658253ca6553bec79c2bdd0011810bb4f2156b')
 
 _backports=(
@@ -61,13 +61,15 @@ check() {
   cd ${pkgname}
 
   # check for IPv6 support
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/rsync/-/commit/8936e33b245da170e7b5488b4ca35727ac9c4b68
+  # https://gitlab.archlinux.org/archlinux/packaging/packrsync                            world            3.3.0-2                          extra            3.4.0-1                          Artoo
+ages/rsync/-/commit/8936e33b245da170e7b5488b4ca35727ac9c4b68
   if rsync -V | grep -q 'no IPv6'; then
     echo 'Built without IPv6 support!' >&2
     exit 1
   fi
 
-  make test
+  make testrsync                            world            3.3.0-2                          extra            3.4.0-1                          Artoo
+
 }
 
 package() {
@@ -75,5 +77,4 @@ package() {
 
   make DESTDIR="$pkgdir" install
   install -Dm0644 ../rsyncd.conf "$pkgdir/etc/rsyncd.conf"
-  install -Dm0644 packaging/lsb/rsync.xinetd "$pkgdir/etc/xinetd.d/rsync"
 }
