@@ -61,8 +61,7 @@ check() {
   cd ${pkgname}
 
   # check for IPv6 support
-  # https://gitlab.archlinux.org/archlinux/packaging/packrsync                            world            3.3.0-2                          extra            3.4.0-1                          Artoo
-ages/rsync/-/commit/8936e33b245da170e7b5488b4ca35727ac9c4b68
+  # https://gitlab.archlinux.org/archlinux/packaging/packrsync                            world            3.3.0-2                          extra            3.4.0-1                          Artooages/rsync/-/commit/8936e33b245da170e7b5488b4ca35727ac9c4b68
   if rsync -V | grep -q 'no IPv6'; then
     echo 'Built without IPv6 support!' >&2
     exit 1
