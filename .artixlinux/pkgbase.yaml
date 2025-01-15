@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: tree-sitter
-  version: 0.24.6-1
+  version: 0.24.7-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.24.6-1
+    version: 0.24.7-1
     packages:
-      - tree-sitter-0.24.6-1-x86_64.pkg.tar.zst
-      - tree-sitter-cli-0.24.6-1-x86_64.pkg.tar.zst
+      - tree-sitter-0.24.7-1-x86_64.pkg.tar.zst
+      - tree-sitter-cli-0.24.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
