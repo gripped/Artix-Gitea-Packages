@@ -6,7 +6,7 @@ pkgname=(
   libsecret
   libsecret-docs
 )
-pkgver=0.21.4
+pkgver=0.21.5
 pkgrel=1
 pkgdesc="Library for storing and retrieving passwords and other secrets"
 url="https://gnome.pages.gitlab.gnome.org/libsecret/"
@@ -14,6 +14,7 @@ arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
   glib2
+  glibc
   libgcrypt
   tpm2-tss
 )
@@ -21,6 +22,7 @@ makedepends=(
   bash-completion
   gi-docgen
   git
+  glib2-devel
   gobject-introspection
   meson
   vala
@@ -32,17 +34,17 @@ checkdepends=(
   swtpm
   tpm2-abrmd
 )
-_commit=6b5a6c28afc6dd93c232a4907a87c881079ff91b  # tags/0.21.4^0
-source=("git+https://gitlab.gnome.org/GNOME/libsecret.git#commit=$_commit")
-b2sums=('SKIP')
-
-pkgver() {
-  cd $pkgbase
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+source=("git+https://gitlab.gnome.org/GNOME/libsecret.git?signed#tag=$pkgver")
+b2sums=('86f2330d6c80d37c4e5eb92a28a707bf0b646b2566c857295b11f1834c7b8e4b23c31e58b67ab372911c8afebc9331dfeebe3171d877cec65ebbb00f36fc4d33')
+validpgpkeys=(
+  A7C626E13F9AD776776BD9CA1D8A57CF2E8D36A3 # Niels De Graef <nielsdegraef@gmail.com>
+)
 
 prepare() {
   cd $pkgbase
+
+  # Use our test dbus-run-session; needed for communication with Tabrmd
+  git revert -n 35381ee638ed9c7e01cdacd24230ca39a6e6b96c
 
   # Secure memory tests fail in containers
   sed -i '/test-secmem/d' egg/meson.build
