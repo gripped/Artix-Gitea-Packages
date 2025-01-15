@@ -3,7 +3,7 @@
 
 pkgname=polkit
 pkgver=126
-pkgrel=1
+pkgrel=2
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://github.com/polkit-org/polkit"
 arch=(x86_64)
@@ -38,7 +38,7 @@ source=(
   0003-meson-elogind-build-fix.patch
 )
 b2sums=('20659c1a622208e1db7d5f65c5ab75a6a35c55472b5abdadc5405fb83f678e7eb9fe4ac32b1947f6956cc1204f5caa2cad2f5db81de7ea49cdb13bd309c94fa4'
-        'b891682aa88beab15cd90a7681060168c5cb4de7c3d75dd9dba13a8281eb8de6ea81436b2dc8ddf404c5016eba422519fc9f28ecd2648c7ac811330196eb4a7d'
+        'a9d5b0cc874abfb5a26f1a70230dc681213703c5eb44f1cf8c59550f7120d077f33c6ef0a0a509b4b878067e38c8a4446e778a7c6d287d5ca28f52e107f73fc4'
         'fbb1daedbb06d28011ff661378bca6162c52695cac2056bba30d585e79614c787535a3d917fc88ecddf5aef0b32eccf8a33688a1f0d5e76551b7c06fa2f9ea8f'
         'cacdece40f519ce2f2a4b06d31e75e92ed9496c18d4b1090b91a3c8d19f49aff41949b1bdda6e3c0b049b0ca74bbf164023044cf1ec8de6a24065bcda0d42d1f'
         'c09efe9dac0a842ea4eb053c0668d4ad13a4c699dc279674766bbf9f9028a90934afe92de5aed6b215ecd52dbf47ae46754c49e10a4c4f1d6f652bfb89f4e6d7'
