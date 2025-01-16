@@ -4,16 +4,17 @@
 
 pkgname=lib32-fontconfig
 pkgver=2.15.0
-pkgrel=1
+pkgrel=3
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
 arch=(x86_64)
-license=(custom)
+license=('HPND AND Unicode-DFS-2016')
 depends=(
   fontconfig
-  lib32-expat
   lib32-freetype2
+  lib32-glibc
+  lib32-libxml2
 )
 makedepends=(
   git
@@ -21,30 +22,29 @@ makedepends=(
   meson
 )
 install=fontconfig-32.install
-_commit=72b9a48f57de6204d99ce1c217b5609ee92ece9b  # tags/2.15.0^0
 source=(
-  "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#commit=$_commit"
+  # Signed with a newer key (ECFFBC3A6B365E721E5BD79830757AA21971A672) that cannot be found
+  "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#tag=$pkgver"
   fontconfig-32.hook
 )
-b2sums=('SKIP'
+b2sums=('a598b917c0b55834c87b8593a66eee90276e94b7a7ad8942765699323ed382a4645c83fe2b45ed1ff7545d437831609cb07045a77c1fa8d119f23d07639b9997'
         '1cba71810c9bde6ecb6fac124e458fb7260be3ea72ade82b836e0e8e1eaa7c7df31e6e92e405fa420325cec0ce14d0f19630e777308032b0c26ec96a3d668d93')
 validpgpkeys=(
-  F77A64C4B5B45FF8763A278F65755979B34E1294  # Akira TAGOH <akira@tagoh.org>
+  F77A64C4B5B45FF8763A278F65755979B34E1294 # Akira TAGOH <akira@tagoh.org>
 )
 
 prepare() {
   cd fontconfig
-}
 
-pkgver() {
-  cd fontconfig
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+  # libxml2 support
+  git cherry-pick -n b112572140082b54ba88415d76c37bbe6ac56ce2
 }
 
 build() {
   local meson_options=(
     --cross-file lib32
     -D doc=disabled
+    -D xml-backend=libxml2
   )
 
   artix-meson fontconfig build "${meson_options[@]}"
@@ -57,8 +57,8 @@ check() {
 
 package() {
   depends+=(
-    libexpat.so
     libfreetype.so
+    libxml2.so
   )
   provides+=(libfontconfig.so)
 
