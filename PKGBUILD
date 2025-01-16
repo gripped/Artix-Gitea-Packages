@@ -1,0 +1,21 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Doug Newgard <scimmia at archlinux dot info>
+
+pkgname=python-owslib
+pkgver=0.32.0
+pkgrel=1
+pkgdesc='Python package for client programming with Open Geospatial Consortium (OGC) web service interface standards, and their related content models'
+arch=(any)
+url='https://geopython.github.io/OWSLib/'
+license=(BSD)
+depends=(python-dateutil python-pyproj python-pytz python-requests)
+makedepends=(python-setuptools)
+source=(https://github.com/geopython/OWSLib/archive/$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('994742cee416e099965115b8ea47c5fc1c8d9445899f2dad98c25d13ba68e0dc')
+
+package() {
+  cd OWSLib-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+}
