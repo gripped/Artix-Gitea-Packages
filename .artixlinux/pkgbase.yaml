@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: nitrokey-udev-rules
+  version: 1.1.0-1
+  arch:
+    - any
+  pkgname:
+    - nitrokey-udev-rules
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -24,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.1.0-1
+    packages:
+      - nitrokey-udev-rules-1.1.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
