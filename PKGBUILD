@@ -6,7 +6,7 @@ pkgname=(
   libsecret
   libsecret-docs
 )
-pkgver=0.21.5
+pkgver=0.21.6
 pkgrel=1
 pkgdesc="Library for storing and retrieving passwords and other secrets"
 url="https://gnome.pages.gitlab.gnome.org/libsecret/"
@@ -35,7 +35,7 @@ checkdepends=(
   tpm2-abrmd
 )
 source=("git+https://gitlab.gnome.org/GNOME/libsecret.git?signed#tag=$pkgver")
-b2sums=('86f2330d6c80d37c4e5eb92a28a707bf0b646b2566c857295b11f1834c7b8e4b23c31e58b67ab372911c8afebc9331dfeebe3171d877cec65ebbb00f36fc4d33')
+b2sums=('6e3820bd3d92f7eb5700ae8a365ac4aa61e5c6beb23072a805674ac98fed22b33d82c54addb92f88c02d90df2926ddb2cac41bc6df945c0864641800df8f9aed')
 validpgpkeys=(
   A7C626E13F9AD776776BD9CA1D8A57CF2E8D36A3 # Niels De Graef <nielsdegraef@gmail.com>
 )
@@ -44,6 +44,7 @@ prepare() {
   cd $pkgbase
 
   # Use our test dbus-run-session; needed for communication with Tabrmd
+  git revert -n 8ab88d18af05d2c9c79244166f8e4ff3d6cae051
   git revert -n 35381ee638ed9c7e01cdacd24230ca39a6e6b96c
 
   # Secure memory tests fail in containers
@@ -60,8 +61,8 @@ build() {
 }
 
 _check() (
-  mkdir -p "${TPM_PATH:=$PWD/tpm}"
-  export TPM_PATH
+  export TPM_PATH="$PWD/tpm"
+  mkdir -p "$TPM_PATH"
 
   swtpm_setup --create-config-files
   swtpm_setup --tpm2 --tpm-state "$TPM_PATH" --createek --allow-signing \
