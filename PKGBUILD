@@ -1,9 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=efl
-pkgver=1.27.0
-pkgrel=5
-_commit="248d62bf5e13ca8800a73b6cf3e8759443468282"
+pkgver=1.28.0
+pkgrel=1
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="http://www.enlightenment.org"
@@ -18,23 +17,33 @@ depends=('curl' 'fontconfig' 'fribidi' 'harfbuzz'
          'ttf-font' 'scim' 'wayland' 'libxkbcommon-x11'
          'libavif' 'libheif' 'libjxl' 'rlottie')
 makedepends=('git' 'meson' 'ninja' 'gcc' 'binutils' 'procps-ng' 'wayland-protocols' 'pulseaudio' 'doxygen')
-optdepends=('pulseaudio: Pulse Audio'
-            'gst-plugins-base: Video and thumbnail codecs'
+optdepends=('gst-plugins-base: Video and thumbnail codecs'
             'gst-plugins-good: Video and thumbnail codecs'
             'gst-plugins-bad: Video and thumbnail codecs'
             'gst-plugins-ugly: Video and thumbnail codecs'
             'gst-libav: Video and thumbnails with ffmpeg/libav'
-            'libreoffice: Office document thumbnails')
-source=("${pkgname}::git+https://git.enlightenment.org/enlightenment/$pkgname.git#commit=$_commit"
+            'libraw: RAW image loader'
+            'libreoffice: Office document loader'
+            'librsvg: SVG loader'
+            'libspectre: PostScript loader'
+            'poppler: PDF loader'
+            'scim: IM module for SCIM')
+options=('!emptydirs')
+source=("https://download.enlightenment.org/rel/libs/${pkgname}/$pkgname-$pkgver.tar.xz"
         "moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git")
-sha256sums=('bb70b7c1c92e150a6676199ede30f74c13b61bc6c59bfa8924ae345085baf7cf'
+sha256sums=('f09a43d6b4861be06cc0e2849c53296413d4e52c8e31f52fc95e9ea5f1c59a36'
             'SKIP')
 
 build() {
-  cd $pkgname
+  cd "${srcdir}/${pkgname}-${pkgver}"
 
   export CFLAGS="$CFLAGS -fvisibility=hidden"
   export CXXFLAGS="$CXXFLAGS -fvisibility=hidden"
+
+  if [ -d build ]; then
+    rm -rf build
+  fi
+  mkdir -p build
 
   meson setup --prefix=/usr --buildtype=release \
     -Dpulseaudio=true \
@@ -55,7 +64,7 @@ build() {
 }
 
 package() {
-  cd $pkgname
+  cd "${srcdir}/${pkgname}-${pkgver}"
 
   DESTDIR="$pkgdir" ninja -C build install
 
