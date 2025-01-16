@@ -4,15 +4,17 @@
 
 pkgname=fontconfig
 pkgver=2.15.0
-pkgrel=2
+pkgrel=3
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
 arch=(x86_64)
-license=(custom)
+license=('HPND AND Unicode-DFS-2016')
 depends=(
-  expat
+  bash
   freetype2
+  glibc
+  libxml2
 )
 makedepends=(
   docbook-sgml
@@ -27,28 +29,26 @@ conflicts=(fontconfig-docs)
 replaces=('fontconfig-docs<2:2.13.93-1')
 backup=(etc/fonts/fonts.conf)
 install=fontconfig.install
-_commit=72b9a48f57de6204d99ce1c217b5609ee92ece9b  # tags/2.15.0^0
 source=(
-  "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#commit=$_commit"
+  # Signed with a newer key (ECFFBC3A6B365E721E5BD79830757AA21971A672) that cannot be found
+  "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#tag=$pkgver"
   40-fontconfig-config.script
   40-fontconfig-config.hook
   fontconfig.hook
 )
-b2sums=('SKIP'
+b2sums=('a598b917c0b55834c87b8593a66eee90276e94b7a7ad8942765699323ed382a4645c83fe2b45ed1ff7545d437831609cb07045a77c1fa8d119f23d07639b9997'
         '7fb63e76ab126bc0a7decfd74c53429ad1ce6d13de2f14037259616d8d4150b8fa4601c7f02b75918ccd5995d424816dc9d01a5fe7e39dc3dd1fcc83dfdb0fe8'
         'b06b3f2b8c0c38139a9247c26a641e6dc01d50b530478dd14133175a603f60b0af901af16c9fcf1ce73d23786ea14bfdbacd39f1dcfd88f6382965ad22be1411'
         'dfbf47c069c88da7687511356cef5bb94b7190e558a6f08390d6976fa7065ba7137ccb0a5ca1defdef655091afe74eb8a3d33fb9f3e0633409aa79f753ad276d')
 validpgpkeys=(
-  F77A64C4B5B45FF8763A278F65755979B34E1294  # Akira TAGOH <akira@tagoh.org>
+  F77A64C4B5B45FF8763A278F65755979B34E1294 # Akira TAGOH <akira@tagoh.org>
 )
 
 prepare() {
   cd fontconfig
-}
 
-pkgver() {
-  cd fontconfig
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+  # libxml2 support
+  git cherry-pick -n b112572140082b54ba88415d76c37bbe6ac56ce2
 }
 
 build() {
@@ -58,7 +58,9 @@ build() {
     -D doc-html=enabled
     -D doc-pdf=disabled
     -D doc-txt=disabled
+    -D xml-backend=libxml2
   )
+
   artix-meson fontconfig build "${meson_options[@]}"
   meson compile -C build
 }
@@ -69,8 +71,8 @@ check() {
 
 package() {
   depends+=(
-    libexpat.so
     libfreetype.so
+    libxml2.so
   )
   provides+=(libfontconfig.so)
 
