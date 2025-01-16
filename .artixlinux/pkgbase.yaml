@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-tools
-  version: 6.12-10
+  version: 6.12-11
   arch:
     - x86_64
   pkgname:
@@ -9,20 +9,21 @@ pkgbase:
     - bpf
     - cpupower
     - hyperv
+    - intel-speed-select
+    - kcpuid
     - linux-tools-meta
     - perf
     - tmon
     - turbostat
     - usbip
     - x86_energy_perf_policy
-    - intel-speed-select
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,19 +42,20 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.12-10
+    version: 6.12-11
     packages:
-      - bootconfig-6.12-10-x86_64.pkg.tar.zst
-      - bpf-6.12-10-x86_64.pkg.tar.zst
-      - cpupower-6.12-10-x86_64.pkg.tar.zst
-      - hyperv-6.12-10-x86_64.pkg.tar.zst
-      - linux-tools-meta-6.12-10-x86_64.pkg.tar.zst
-      - perf-6.12-10-x86_64.pkg.tar.zst
-      - tmon-6.12-10-x86_64.pkg.tar.zst
-      - turbostat-6.12-10-x86_64.pkg.tar.zst
-      - usbip-6.12-10-x86_64.pkg.tar.zst
-      - x86_energy_perf_policy-6.12-10-x86_64.pkg.tar.zst
-      - intel-speed-select-6.12-10-x86_64.pkg.tar.zst
+      - bootconfig-6.12-11-x86_64.pkg.tar.zst
+      - bpf-6.12-11-x86_64.pkg.tar.zst
+      - cpupower-6.12-11-x86_64.pkg.tar.zst
+      - hyperv-6.12-11-x86_64.pkg.tar.zst
+      - intel-speed-select-6.12-11-x86_64.pkg.tar.zst
+      - kcpuid-6.12-11-x86_64.pkg.tar.zst
+      - linux-tools-meta-6.12-11-x86_64.pkg.tar.zst
+      - perf-6.12-11-x86_64.pkg.tar.zst
+      - tmon-6.12-11-x86_64.pkg.tar.zst
+      - turbostat-6.12-11-x86_64.pkg.tar.zst
+      - usbip-6.12-11-x86_64.pkg.tar.zst
+      - x86_energy_perf_policy-6.12-11-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
