@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: julia
-  version: 2:1.11.2-2
+  version: 2:1.11.2-2.1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2:1.11.2-2
+    version: 2:1.11.2-2.1
     packages:
-      - julia-2:1.11.2-2-x86_64.pkg.tar.zst
+      - julia-2:1.11.2-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
