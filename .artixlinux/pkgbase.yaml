@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: font-manager
-  version: 0.9.0-2.1
+  version: 0.9.1-2.1
   arch:
     - x86_64
     - i686
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.0-2.1
+    version: 0.9.1-2.1
     packages:
-      - font-manager-0.9.0-2.1-x86_64.pkg.tar.zst
+      - font-manager-0.9.1-2.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

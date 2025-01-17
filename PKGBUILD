@@ -8,7 +8,7 @@
 # Contributor: Pavlo <pavlofreemen(at)gmail(dot)com>
 
 pkgname=font-manager
-pkgver=0.9.0
+pkgver=0.9.1
 pkgrel=2.1
 pkgdesc='A simple font management application for GTK+ Desktop Environments'
 url=https://fontmanager.github.io
