@@ -7,7 +7,7 @@ pkgname=libgit2
 # NOTE: add the following packages to rebuild TODOs on soname change (although they do not link against libgit2.so):
 # julia
 pkgver=1.9.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="A linkable library for Git"
 arch=(x86_64)
@@ -16,7 +16,7 @@ license=(LicenseRef-GPL-2.0-only-with-linking-exception)
 depends=(
   gcc-libs
   glibc
-  http-parser
+  llhttp
   zlib
 )
 makedepends=(
@@ -37,13 +37,11 @@ build() {
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
     -D REGEX_BACKEND=pcre2
-    # NOTE: may require further consolidation: https://github.com/libgit2/libgit2/issues/6923
-    -D USE_HTTP_PARSER=http-parser
+    -D USE_HTTP_PARSER=llhttp
     -D USE_SSH=ON
     -S $pkgname-$pkgver
     -W no-dev
   )
-
   cmake "${cmake_options[@]}"
   cmake --build build --verbose
 }
