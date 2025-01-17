@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openvpn
-  version: 2.6.12-3
+  version: 2.6.13-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.6.12-3
+    version: 2.6.13-1
     packages:
-      - openvpn-2.6.12-3-x86_64.pkg.tar.zst
+      - openvpn-2.6.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
