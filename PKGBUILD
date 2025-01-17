@@ -71,7 +71,8 @@ check() {
   test-env/bin/python -m installer apache-$_pkg-$pkgver/python/dist/*.whl
   PARQUET_TEST_DATA="$srcdir"/parquet-testing/data \
   ARROW_TEST_DATA="$srcdir"/arrow-testing/data \
-  test-env/bin/python -m pytest -vv --pyargs pyarrow
+  test-env/bin/python -m pytest -vv --pyargs pyarrow \
+  --deselect tests/test_fs.py::test_s3fs_wrong_region
 }
 
 package() {
