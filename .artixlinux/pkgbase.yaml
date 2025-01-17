@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xdp-tools
-  version: 1.5.0-1
+  version: 1.5.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.0-1
+    version: 1.5.1-1
     packages:
-      - xdp-tools-1.5.0-1-x86_64.pkg.tar.zst
-      - libxdp-1.5.0-1-x86_64.pkg.tar.zst
+      - xdp-tools-1.5.1-1-x86_64.pkg.tar.zst
+      - libxdp-1.5.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
