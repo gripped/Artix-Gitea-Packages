@@ -72,7 +72,7 @@ check() {
   PARQUET_TEST_DATA="$srcdir"/parquet-testing/data \
   ARROW_TEST_DATA="$srcdir"/arrow-testing/data \
   test-env/bin/python -m pytest -vv --pyargs pyarrow \
-  --deselect tests/test_fs.py::test_s3fs_wrong_region
+  --ignore tests/test_fs.py::test_s3fs_wrong_region
 }
 
 package() {
