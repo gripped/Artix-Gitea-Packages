@@ -79,7 +79,7 @@ sha256sums=('22b15ab9be8f0ac4b7a5a7a48cd59c282c87f17b038017b960c15cfd314689f2'
             'SKIP'
             'SKIP'
             '7fec550709ccb499ff608ecbfa5c60926d3e77875badf880bb168b665cb1b0cf'
-            '68de8fd4df6e4f0e21a241dcd2b7075bdff495876646dd726c7054bf5780e3c6')
+            '5d1a53834697beb02ac0555c713b5798f5745b165d9235eb08fc15affe8b11a7')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
