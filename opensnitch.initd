@@ -1,0 +1,7 @@
+#!/usr/bin/openrc-run
+# 2024, nous@artixlinux.org
+
+supervisor=supervise-daemon
+command="/usr/bin/opensnitchd"
+command_args="${OPENSNITCHD_OPTS}"
+command_background=true

@@ -1,0 +1,3 @@
+# /etc/conf.d/opensnitch: config file for /etc/init.d/opensnitch
+
+OPENSNITCHD_OPTS="-rules-path /etc/opensnitchd/rules"
