@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: neomutt
-  version: 20241212-1
+  version: 20250113-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - neomutt-20241114-2-x86_64.pkg.tar.zst
   world:
-    version: 20241212-1
+    version: 20250113-1
     packages:
-      - neomutt-20241212-1-x86_64.pkg.tar.zst
+      - neomutt-20250113-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
