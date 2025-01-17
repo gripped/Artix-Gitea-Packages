@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libopenmpt
-  version: 0.7.11-1
+  version: 0.7.13-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.11-1
+    version: 0.7.13-1
     packages:
-      - libopenmpt-0.7.11-1-x86_64.pkg.tar.zst
+      - libopenmpt-0.7.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
