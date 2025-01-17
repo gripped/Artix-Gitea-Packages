@@ -17,18 +17,18 @@ pkgname=('php'
          'php-sqlite'
          'php-tidy'
          'php-xsl')
-pkgver=8.4.2
+pkgver=8.4.3
 pkgrel=1
 arch=('x86_64')
 license=('PHP-3.01')
 url='https://www.php.net/'
-makedepends=('apache' 'enchant' 'gd' 'gmp' 'icu' 'libsodium' 'libxslt' 'libzip' 'net-snmp'
+makedepends=('apache' 'enchant' 'gd' 'gmp' 'icu' 'libsodium' 'libxslt' 'libzip' 'net-snmp' 'argon2'
              'postgresql-libs' 'sqlite' 'tidy' 'unixodbc' 'curl' 'libtool' 'postfix' 'freetds' 'pcre2'
              'oniguruma' 'argon2')
 checkdepends=('procps-ng')
 source=("https://php.net/distributions/${pkgbase}-${pkgver}.tar.xz"{,.asc}
         'apache.patch' 'apache.conf' 'php-fpm.patch' 'php-fpm.tmpfiles' 'php.ini.patch')
-sha256sums=('92636453210f7f2174d6ee6df17a5811368f556a6c2c2cbcf019321e36456e01'
+sha256sums=('5c42173cbde7d0add8249c2e8a0c19ae271f41d8c47d67d72bdf91a88dcc7e4b'
             'SKIP'
             '74d33ad3e9fa2f0aaf6ceeddd59ec78d35e66673db74b1053cc3e6105478ba8a'
             '4a2add00d93fa991ccdf6356090264c1059c79935642afff6e8d4a2107fa037e'
