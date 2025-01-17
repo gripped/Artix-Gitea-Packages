@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - font-manager
 actions:
-  addRepo: galaxy
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.9.0-2.1
+    packages:
+      - font-manager-0.9.0-2.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
