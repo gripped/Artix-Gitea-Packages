@@ -2,7 +2,7 @@
 
 pkgname=libnfs
 pkgver=6.0.2
-pkgrel=1
+pkgrel=3
 pkgdesc="client library for accessing NFS shares"
 arch=('x86_64')
 url="https://github.com/sahlberg/libnfs"
