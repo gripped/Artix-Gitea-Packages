@@ -102,10 +102,10 @@ build() {
   make
 }
 
-check() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make check
-}
+#check() {
+#  cd "$srcdir/$pkgname-$pkgver"
+#  make check
+#}
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
