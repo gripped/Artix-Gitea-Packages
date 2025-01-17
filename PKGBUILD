@@ -32,7 +32,7 @@ makedepends=(gobject-introspection
 _archive="$pkgname-$pkgver"
 _url="https://github.com/FontManager/font-manager"
 source=("$_url/releases/download/$pkgver/$_archive.tar.xz")
-sha256sums=('1dd711ea8d8fd99a6801037465dda0b129ba66185bfbf272a8f9a906c4e28d6c')
+sha256sums=('a83c294322cabaa424b35efa8a20a28f04d379dcf7701ee860a29725e50e5e72')
 
 # fix for Wayfire WM
 prepare() { 
