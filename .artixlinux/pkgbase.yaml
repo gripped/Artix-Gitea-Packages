@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: pangomm-2.48
-  version: 2.54.0-1
+  version: 2.56.1-1
   arch:
     - x86_64
   pkgname:
     - pangomm-2.48
     - pangomm-2.48-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.56.1-1
+    packages:
+      - pangomm-2.48-2.56.1-1-x86_64.pkg.tar.zst
+      - pangomm-2.48-docs-2.56.1-1-x86_64.pkg.tar.zst
   world:
     version: 2.54.0-1
     packages:
