@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: strawberry
-  version: 1.2.4-1
+  version: 1.2.5-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.4-1
+    version: 1.2.5-1
     packages:
-      - strawberry-1.2.4-1-x86_64.pkg.tar.zst
+      - strawberry-1.2.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
