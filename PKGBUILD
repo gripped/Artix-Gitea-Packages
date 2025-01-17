@@ -36,7 +36,7 @@ depends=(
     'playerctl'
     'sndio'
     'spdlog'
-    'systemd-libs'
+    'libelogind'
     'upower'
     'wayland'
 )
