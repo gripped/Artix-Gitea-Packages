@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pdfjs
-  version: 4.9.124-1
+  version: 4.10.38-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.9.124-1
+    version: 4.10.38-1
     packages:
-      - pdfjs-4.9.124-1-any.pkg.tar.zst
+      - pdfjs-4.10.38-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
