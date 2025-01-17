@@ -1,0 +1,2 @@
+# opensnitch-openrc
+
