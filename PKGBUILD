@@ -1,0 +1,79 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+_name=igbinary
+pkgbase=php-igbinary
+pkgname=(php-igbinary php-legacy-igbinary)
+pkgver=3.2.16
+pkgrel=2
+pkgdesc="A drop in replacement for the standard php serializer"
+arch=(x86_64)
+url="https://github.com/igbinary/igbinary"
+license=(BSD-3-Clause)
+depends=(glibc)
+makedepends=(php-legacy php)
+source=($pkgname-$pkgver.tar.gz::https://github.com/$_name/$_name/archive/$pkgver.tar.gz)
+sha512sums=('d4599ee18e2202a56e955b37153e1e7d4d303aadc26f1f152cb64029e03f79760162a422793e319861b95a801a2fb18261216c080c2d400dd94d34e951e53cca')
+b2sums=('5a4d654f8672c199d7e5cf662975d127de66835298fe286f806ad721d4bc1652eb542353402bb56822ca4c33ab26e3d9ca9ed91f2ad42d817b1ab996234ad726')
+
+prepare() {
+  mv -v $_name-$pkgver $pkgbase-$pkgver
+  # disable the extension by default
+  sed 's/extension/;extension/g' -i $pkgbase-$pkgver/$_name.php.ini
+
+  cp -av $pkgbase-$pkgver ${pkgname[1]}-$pkgver
+  (
+    cd $pkgbase-$pkgver
+    # remove deprecated error level
+    sed 's/E_ALL|E_STRICT/E_ALL/g' -i tests/igbinary_009b_php8.phpt
+    phpize
+  )
+  (
+    cd ${pkgname[1]}-$pkgver
+    phpize-legacy
+  )
+}
+
+build() {
+  local configure_options=(
+    --prefix=/usr
+    --enable-igbinary
+  )
+
+  (
+    cd $pkgbase-$pkgver
+    ./configure "${configure_options[@]}"
+    make
+  )
+  (
+    cd ${pkgname[1]}-$pkgver
+    ./configure "${configure_options[@]}"
+    make
+  )
+}
+
+check() {
+  NO_INTERACTION=1 make -k test -C $pkgbase-$pkgver
+  NO_INTERACTION=1 make -k test -C ${pkgname[1]}-$pkgver
+}
+
+package_php-igbinary() {
+  depends+=(php)
+  backup=(etc/php/conf.d/$_name.ini)
+
+  cd $pkgname-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+  install -vDm 644 $_name.php.ini "$pkgdir/etc/php/conf.d/$_name.ini"
+  install -vDm 644 COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 {CREDITS,NEWS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
+
+package_php-legacy-igbinary() {
+  depends+=(php-legacy)
+  backup=(etc/php-legacy/conf.d/$_name.ini)
+
+  cd $pkgname-$pkgver
+  make INSTALL_ROOT="$pkgdir" install
+  install -vDm 644 "$_name.php.ini" "$pkgdir/etc/php-legacy/conf.d/$_name.ini"
+  install -vDm 644 COPYING -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 {CREDITS,NEWS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
