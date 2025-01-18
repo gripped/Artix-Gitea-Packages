@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ttf-opensans
-  version: 1.101-5
+  version: 3.003-1
   arch:
     - any
   pkgname:
     - ttf-opensans
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.003-1
+    packages:
+      - ttf-opensans-3.003-1-any.pkg.tar.zst
   world:
     version: 1.101-5
     packages:
