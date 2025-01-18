@@ -1,16 +1,19 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: php-redis
+  version: 6.1.0-3
+  arch:
+    - x86_64
+  pkgname:
+    - php-redis
+    - php-legacy-redis
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 6.1.0-3
+    packages:
+      - php-redis-6.1.0-3-x86_64.pkg.tar.zst
+      - php-legacy-redis-6.1.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
