@@ -1,16 +1,19 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: php-memcache
+  version: 8.2-5
+  arch:
+    - x86_64
+  pkgname:
+    - php-memcache
+    - php-legacy-memcache
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 8.2-5
+    packages:
+      - php-memcache-8.2-5-x86_64.pkg.tar.zst
+      - php-legacy-memcache-8.2-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
