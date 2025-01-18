@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-s3transfer
-  version: 0.10.4-1
+  version: 0.11.1-1
   arch:
     - any
   pkgname:
     - python-s3transfer
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.11.1-1
+    packages:
+      - python-s3transfer-0.11.1-1-any.pkg.tar.zst
   world:
     version: 0.10.4-1
     packages:
