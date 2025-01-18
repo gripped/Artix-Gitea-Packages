@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: openmp
-  version: 19.1.6-2
+  version: 19.1.7-1
   arch:
     - x86_64
   pkgname:
     - openmp
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 19.1.7-1
+    packages:
+      - openmp-19.1.7-1-x86_64.pkg.tar.zst
   world:
     version: 19.1.6-2
     packages:
