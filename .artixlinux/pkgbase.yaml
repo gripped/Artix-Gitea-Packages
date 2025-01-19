@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fontconfig
-  version: 2:2.15.0-3
+  version: 2:2.16.0-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 2:2.15.0-3
+    version: 2:2.16.0-1
     packages:
-      - fontconfig-2:2.15.0-3-x86_64.pkg.tar.zst
+      - fontconfig-2:2.16.0-1-x86_64.pkg.tar.zst
   world:
     version: 2:2.15.0-2
     packages:

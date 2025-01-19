@@ -3,8 +3,8 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=fontconfig
-pkgver=2.15.0
-pkgrel=3
+pkgver=2.16.0
+pkgrel=1
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
@@ -36,7 +36,7 @@ source=(
   40-fontconfig-config.hook
   fontconfig.hook
 )
-b2sums=('a598b917c0b55834c87b8593a66eee90276e94b7a7ad8942765699323ed382a4645c83fe2b45ed1ff7545d437831609cb07045a77c1fa8d119f23d07639b9997'
+b2sums=('839b16dbb95da285518bbbe303e2acdf3537be96bd161e20501409cb9891d824c65e9f98ee038310b7ab3857745993138f21a91f193120d782e289ec3206d94e'
         '7fb63e76ab126bc0a7decfd74c53429ad1ce6d13de2f14037259616d8d4150b8fa4601c7f02b75918ccd5995d424816dc9d01a5fe7e39dc3dd1fcc83dfdb0fe8'
         'b06b3f2b8c0c38139a9247c26a641e6dc01d50b530478dd14133175a603f60b0af901af16c9fcf1ce73d23786ea14bfdbacd39f1dcfd88f6382965ad22be1411'
         'dfbf47c069c88da7687511356cef5bb94b7190e558a6f08390d6976fa7065ba7137ccb0a5ca1defdef655091afe74eb8a3d33fb9f3e0633409aa79f753ad276d')
@@ -46,9 +46,6 @@ validpgpkeys=(
 
 prepare() {
   cd fontconfig
-
-  # libxml2 support
-  git cherry-pick -n b112572140082b54ba88415d76c37bbe6ac56ce2
 }
 
 build() {
