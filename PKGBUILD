@@ -1,6 +1,6 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_tag=255.5
+_tag=255.17
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
@@ -33,7 +33,7 @@ makedepends=(
 source=(
     "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
 )
-sha256sums=('cfd3c005adc12bb8ef5e35ea6530b1baab27d1ca02db983cc6aa08f1c606e674')
+sha256sums=('7a0b15b558daabac5adcf8c66ed0905ef79fc426cb0eceddf86d05f6adf7d2d1')
 
 _backports=(
 )
@@ -128,10 +128,10 @@ package_elogind() {
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
 
-    install -Dm644 /dev/stdin "${pkgdir}"/etc/elogind/sleep.conf.d/50-artix.conf <<END
-[Sleep]
-SuspendMode=deep s2idle
-END
+#     install -Dm644 /dev/stdin "${pkgdir}"/etc/elogind/sleep.conf.d/50-artix.conf <<END
+# [Sleep]
+# SuspendMode=deep s2idle
+# END
 }
 
 package_libelogind(){
