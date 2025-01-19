@@ -3,8 +3,8 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=lib32-fontconfig
-pkgver=2.15.0
-pkgrel=3
+pkgver=2.16.0
+pkgrel=1
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
@@ -27,7 +27,7 @@ source=(
   "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#tag=$pkgver"
   fontconfig-32.hook
 )
-b2sums=('a598b917c0b55834c87b8593a66eee90276e94b7a7ad8942765699323ed382a4645c83fe2b45ed1ff7545d437831609cb07045a77c1fa8d119f23d07639b9997'
+b2sums=('839b16dbb95da285518bbbe303e2acdf3537be96bd161e20501409cb9891d824c65e9f98ee038310b7ab3857745993138f21a91f193120d782e289ec3206d94e'
         '1cba71810c9bde6ecb6fac124e458fb7260be3ea72ade82b836e0e8e1eaa7c7df31e6e92e405fa420325cec0ce14d0f19630e777308032b0c26ec96a3d668d93')
 validpgpkeys=(
   F77A64C4B5B45FF8763A278F65755979B34E1294 # Akira TAGOH <akira@tagoh.org>
@@ -35,9 +35,6 @@ validpgpkeys=(
 
 prepare() {
   cd fontconfig
-
-  # libxml2 support
-  git cherry-pick -n b112572140082b54ba88415d76c37bbe6ac56ce2
 }
 
 build() {
