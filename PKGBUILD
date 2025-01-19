@@ -2,7 +2,7 @@
 
 pkgname=rdiff-backup
 pkgver=2.2.6
-pkgrel=2
+pkgrel=3
 pkgdesc="Reverse differential backup tool"
 url="https://rdiff-backup.net/"
 arch=("x86_64")
@@ -13,6 +13,8 @@ source=(https://github.com/"${pkgname}"/"${pkgname}"/releases/download/v"${pkgve
 
 package() {
   cd "${srcdir}"/"${pkgname}"-"${pkgver}"
+
+  export CFLAGS="${CFLAGS/-Wp,-D_FORTIFY_SOURCE=?/}"
 
   mkdir "${srcdir}"/builddir
   pip install --target="${srcdir}"/builddir --root-user-action=ignore "${pkgname}" -r requirements.txt

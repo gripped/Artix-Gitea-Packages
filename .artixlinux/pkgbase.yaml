@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rdiff-backup
-  version: 2.2.6-2
+  version: 2.2.6-3
   arch:
     - x86_64
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.2.6-2
+    version: 2.2.6-3
     packages:
-      - rdiff-backup-2.2.6-2-x86_64.pkg.tar.zst
+      - rdiff-backup-2.2.6-3-x86_64.pkg.tar.zst
 team: galaxy
