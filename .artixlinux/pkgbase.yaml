@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gvfs
-  version: 1.56.1-1
+  version: 1.56.1-2
   arch:
     - x86_64
   pkgname:
@@ -17,7 +17,7 @@ pkgbase:
     - gvfs-smb
     - gvfs-wsdd
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -35,8 +35,19 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.56.1-2
+    packages:
+      - gvfs-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-afc-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-dnssd-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-goa-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-google-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-onedrive-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-smb-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-wsdd-1.56.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
