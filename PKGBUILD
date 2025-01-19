@@ -6,7 +6,7 @@ pkgname=(
   pango
   pango-docs
 )
-pkgver=1.56.0
+pkgver=1.56.1
 pkgrel=1
 epoch=1
 pkgdesc="A library for layout and rendering of text"
@@ -37,7 +37,7 @@ makedepends=(
   python-docutils
 )
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#tag=$pkgver")
-b2sums=('221364424576d66b2e2fa36e57a3bd0e67bbe52382a7106bf61ed8ff7a470b030eba89c17cdc02f61ddc8a9027c6519676bb63cbc136738d13beb8390ad0c17e')
+b2sums=('5bf9287131a7e2197a6badfa12525a9c0923c578b8594f774024a401e058b32fc4f5c5f5516f4124b21b79ae4261219123ccedbae5f771c689f971f742e92e5e')
 
 prepare() {
   cd pango
