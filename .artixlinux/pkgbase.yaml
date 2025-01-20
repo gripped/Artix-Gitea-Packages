@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nawk
-  version: 20240728-1
+  version: 20250116-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240728-1
+    version: 20250116-1
     packages:
-      - nawk-20240728-1-x86_64.pkg.tar.zst
+      - nawk-20250116-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
