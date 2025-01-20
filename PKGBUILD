@@ -9,8 +9,8 @@ pkgdesc="Compiler for high-performance SIMD programming on the CPU"
 arch=(x86_64)
 url="https://ispc.github.io/"
 license=(BSD-3-Clause)
-depends=(clang gcc-libs glibc llvm-libs spirv-llvm-translator onetbb)
-makedepends=(cmake git level-zero-headers level-zero-loader lib32-glibc llvm openmp python vc-intrinsics)
+depends=(clang gcc-libs glibc llvm18-libs spirv-llvm-translator onetbb)
+makedepends=(cmake git level-zero-headers level-zero-loader lib32-glibc llvm18 openmp python vc-intrinsics)
 checkdepends=(intel-compute-runtime)
 optdepends=(
     'intel-compute-runtime: GPU support'
