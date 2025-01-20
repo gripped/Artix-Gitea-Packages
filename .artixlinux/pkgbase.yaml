@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: highlight
-  version: 4.14-1
+  version: 4.15-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.14-1
+    version: 4.15-1
     packages:
-      - highlight-4.14-1-x86_64.pkg.tar.zst
-      - highlight-gui-4.14-1-x86_64.pkg.tar.zst
+      - highlight-4.15-1-x86_64.pkg.tar.zst
+      - highlight-gui-4.15-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
