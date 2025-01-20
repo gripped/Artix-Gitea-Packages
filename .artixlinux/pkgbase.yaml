@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - featherpad
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.2-1
-    packages:
-      - featherpad-1.5.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
@@ -51,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.5.1-1
+    version: 1.5.2-1
     packages:
-      - featherpad-1.5.1-1-x86_64.pkg.tar.zst
+      - featherpad-1.5.2-1-x86_64.pkg.tar.zst
