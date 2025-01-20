@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: pptpd
-  version: 1.4.0-3
+  version: 1.5.0-1
   arch:
     - x86_64
   pkgname:
     - pptpd
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.0-3
+    version: 1.5.0-1
     packages:
-      - pptpd-1.4.0-3-x86_64.pkg.tar.zst
+      - pptpd-1.5.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
