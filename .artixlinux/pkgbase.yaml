@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: distcc
-  version: 3.4-12
+  version: 3.4-13
   arch:
     - x86_64
   pkgname:
     - distcc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.4-12
+    version: 3.4-13
     packages:
-      - distcc-3.4-12-x86_64.pkg.tar.zst
+      - distcc-3.4-13-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
