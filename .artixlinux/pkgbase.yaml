@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: vokoscreen
-  version: 4.3.0-1
+  version: 4.4.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3.0-1
+    version: 4.4.2-1
     packages:
-      - vokoscreen-4.3.0-1-x86_64.pkg.tar.zst
+      - vokoscreen-4.4.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
