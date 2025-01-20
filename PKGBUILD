@@ -2,7 +2,7 @@
 
 pkgname=swtpm
 pkgver=0.10.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Libtpms-based TPM emulator with socket, character device, and Linux CUSE interface'
 arch=('x86_64')
 url='https://github.com/stefanberger/swtpm'
@@ -35,8 +35,8 @@ source=(
   "$pkgname.tmpfiles"
 )
 sha512sums=('90ca3afa851804a4a5245fd8c0b2291753ef14011e9dc4ac62c1fe9dc8ac77710d85e14223f02cab28a3a1d1714c2bd879f31ce866e3789bbd517f530473621f'
-  '4b316aa2947c31f0a34a1f84335e3b9bf8e6c033d1cb562022ff49d0297ed4855491e23f549671655143e8e1288a5ad1e215a25868cf7f0c6963d3dced55e890'
-  '2e770313011ca07d3e3c534274897f835e3fa271586d0489f314d25bf2a4ab17f6ee1cfc9539865c0e51ca61f62ae1afd90885bd1ad5144fd4ee1f127a08984d')
+            '4b316aa2947c31f0a34a1f84335e3b9bf8e6c033d1cb562022ff49d0297ed4855491e23f549671655143e8e1288a5ad1e215a25868cf7f0c6963d3dced55e890'
+            '2e770313011ca07d3e3c534274897f835e3fa271586d0489f314d25bf2a4ab17f6ee1cfc9539865c0e51ca61f62ae1afd90885bd1ad5144fd4ee1f127a08984d')
 validpgpkeys=('B818B9CADF9089C2D5CEC66B75AD65802A0B4211') # Stefan Berger <stefanb@linux.vnet.ibm.com>
 
 prepare() {
@@ -53,6 +53,7 @@ build() {
   cd "$pkgname"
   ./configure \
     --prefix=/usr \
+    --libexecdir=/usr/lib \
     --with-cuse \
     --with-gnutls \
     --with-seccomp
