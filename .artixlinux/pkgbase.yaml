@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libvirt
-  version: 1:10.10.0-2
+  version: 1:11.0.0-2
   arch:
     - x86_64
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:10.10.0-2
+    version: 1:11.0.0-2
     packages:
-      - libvirt-1:10.10.0-2-x86_64.pkg.tar.zst
-      - libvirt-storage-gluster-1:10.10.0-2-x86_64.pkg.tar.zst
-      - libvirt-storage-iscsi-direct-1:10.10.0-2-x86_64.pkg.tar.zst
+      - libvirt-1:11.0.0-2-x86_64.pkg.tar.zst
+      - libvirt-storage-gluster-1:11.0.0-2-x86_64.pkg.tar.zst
+      - libvirt-storage-iscsi-direct-1:11.0.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
