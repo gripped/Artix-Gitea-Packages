@@ -2,7 +2,7 @@
 
 pkgname=efl
 pkgver=1.28.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="http://www.enlightenment.org"
@@ -45,19 +45,27 @@ build() {
   fi
   mkdir -p build
 
-  meson setup --prefix=/usr --buildtype=release \
-    -Dpulseaudio=true \
-    -Dglib=true \
+  meson setup --prefix=/usr \
     -Dsystemd=false \
-    -Dnetwork-backend=connman \
-    -Dfb=true \
-    -Ddrm=true \
     -Dwl=true \
-    -Dlua-interpreter=lua \
-    -Dbindings= \
+    -Dbuildtype=plain \
+    -Dlibdir=lib/x86_64-linux-gnu \
+    -Dlocalstatedir=/var \
+    -Dprefix=/usr \
+    -Dsysconfdir=/etc \
+    -Dwrap_mode=nodownload \
+    -Dbindings=['lua', 'cxx'] \
     -Dbuild-tests=false \
-    -Dbuild-examples=false \
     -Ddocs=true \
+    -Ddrm=false \
+    -Delua=true \
+    -Dembedded-lz4=false \
+    -Devas-loaders-disabler=['json', 'avif', 'jxl'] \
+    -Dfb=true \
+    -Dnetwork-backend=none \
+    -Dopengl=full \
+    -Dtslib=false \
+    -Dxpresent=true \
     . build
 
   ninja -C build
