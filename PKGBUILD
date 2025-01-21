@@ -19,14 +19,14 @@ build() {
   export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
          -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
          -fstack-clash-protection -fcf-protection"
-  cd "$srcdir/$_module"
-  meson --prefix=/usr . build
+  cd "$srcdir/$_group/$_module"
+  meson setup --prefix=/usr . build
   meson configure build
   ninja -C build
 }
 
 package() {
-  cd "$srcdir/$_module"
+  cd "$srcdir/$_group/$_module"
   DESTDIR="${pkgdir}" ninja -C build install
   install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" "AUTHORS" "COPYING"
 }
