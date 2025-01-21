@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: 0ad
-  version: a26-19
+  version: a26-20
   arch:
     - x86_64
   pkgname:
     - 0ad
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -43,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: a26-20
+    packages:
+      - 0ad-a26-20-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: a26-19
     packages:

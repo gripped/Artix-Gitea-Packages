@@ -5,7 +5,7 @@
 pkgname=0ad
 pkgver=a26
 _pkgver=0.0.26-alpha
-pkgrel=19
+pkgrel=20
 pkgdesc="Cross-platform, 3D and historically-based real-time strategy game"
 arch=('x86_64')
 url="http://play0ad.com/"
