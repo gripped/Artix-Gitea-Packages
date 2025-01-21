@@ -54,7 +54,7 @@ build() {
     -Dprefix=/usr \
     -Dsysconfdir=/etc \
     -Dwrap_mode=nodownload \
-    -Dbindings=['lua', 'cxx'] \
+    -Dbindings=lua,cxx \
     -Dbuild-tests=false \
     -Ddocs=true \
     -Ddrm=false \
