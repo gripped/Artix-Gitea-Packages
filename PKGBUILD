@@ -5,7 +5,7 @@ _tag=255.17
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -116,6 +116,8 @@ package_elogind() {
     backup=(
         'etc/elogind/logind.conf'
         'etc/elogind/sleep.conf'
+        'etc/elogind/logind.conf.d/10-elogind.conf'
+        'etc/elogind/sleep.conf.d/10-elogind.conf'
     )
     license=('GPL-2.0-only' 'LGPL-2.1-only')
 
