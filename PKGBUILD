@@ -45,7 +45,7 @@ build() {
   fi
   mkdir -p build
 
-  meson setup --prefix=/usr \
+  meson \
     -Dsystemd=false \
     -Dwl=true \
     -Dbuildtype=plain \
