@@ -12,15 +12,25 @@
 
 pkgname=('boost' 'boost-libs')
 pkgver=1.87.0
-pkgrel=1
+pkgrel=2
 _srcname=boost_${pkgver//./_}
 pkgdesc="Free peer-reviewed portable C++ source libraries"
 arch=('x86_64')
 url="https://www.boost.org/"
 license=('BSL-1.0')
 makedepends=('icu' 'python' 'python-numpy' 'bzip2' 'zlib' 'openmpi' 'zstd')
-source=(https://archives.boost.io/release/$pkgver/source/$_srcname.tar.bz2)
-sha256sums=('af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89')
+source=(https://archives.boost.io/release/$pkgver/source/$_srcname.tar.bz2
+        $pkgname-fix-smart-pointer-output.patch::https://github.com/boostorg/smart_ptr/commit/e7433ba54596da97cb7859455cd37ca140305a9c.patch)
+sha256sums=('af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89'
+            '22aab67d550b7f57e361d1c2ea8492a6e4efc5e1b650c8267de52cc5a0c0e46d')
+
+prepare() {
+  cd $_srcname
+
+  # fix the smartpointer prints (https://github.com/boostorg/smart_ptr/issues/115)
+  # also see https://github.com/luceneplusplus/LucenePlusPlus/issues/208
+  patch -Np4 -d boost/smart_ptr < ../$pkgname-fix-smart-pointer-output.patch
+}
 
 build() {
   local JOBS="$(sed 's/.*\(-j *[0-9]\+\).*/\1/' <<<$MAKEFLAGS)"
