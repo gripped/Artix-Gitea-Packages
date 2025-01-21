@@ -15,7 +15,7 @@ depends=('curl' 'fontconfig' 'fribidi' 'harfbuzz'
          'libpng' 'libtiff' 'giflib' 'lz4' 'zlib' 'libelogind' 'udev' 'openssl'
          'glibc' 'libutil-linux' 'dbus' 'shared-mime-info' 'mailcap'
          'ttf-font' 'scim' 'wayland' 'libxkbcommon-x11'
-         'libavif' 'libheif' 'libjxl' 'rlottie')
+         'libavif' 'libheif' 'libjxl' 'rlottie' 'libxpresent')
 makedepends=('git' 'meson' 'ninja' 'gcc' 'binutils' 'procps-ng' 'wayland-protocols' 'pulseaudio' 'doxygen')
 optdepends=('gst-plugins-base: Video and thumbnail codecs'
             'gst-plugins-good: Video and thumbnail codecs'
@@ -45,7 +45,7 @@ build() {
   fi
   mkdir -p build
 
-  meson \
+  meson setup \
     -Dsystemd=false \
     -Dwl=true \
     -Dbuildtype=plain \
