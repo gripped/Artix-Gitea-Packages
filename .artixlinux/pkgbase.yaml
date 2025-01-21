@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: efl
-  version: 1.28.0-1
+  version: 1.28.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 1.28.0-1
+    version: 1.28.0-1.1
     packages:
-      - efl-1.28.0-1-x86_64.pkg.tar.zst
+      - efl-1.28.0-1.1-x86_64.pkg.tar.zst
   galaxy:
     version: 1.27.0-5
     packages:
