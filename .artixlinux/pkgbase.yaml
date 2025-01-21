@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-fonttools
-  version: 4.55.3-2
+  version: 4.55.4-1
   arch:
     - x86_64
   pkgname:
     - python-fonttools
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.55.3-2
+    version: 4.55.4-1
     packages:
-      - python-fonttools-4.55.3-2-x86_64.pkg.tar.zst
+      - python-fonttools-4.55.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
