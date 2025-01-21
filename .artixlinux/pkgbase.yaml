@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: coreutils
-  version: 9.6-1
+  version: 9.6-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 9.6-1
+    version: 9.6-2
     packages:
-      - coreutils-9.6-1-x86_64.pkg.tar.zst
+      - coreutils-9.6-2-x86_64.pkg.tar.zst
   system:
     version: 9.5-2
     packages:
