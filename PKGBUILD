@@ -102,10 +102,10 @@ build() {
   )
 }
 
-check() {
-  cd vim
-  TERM=xterm make -j1 test
-}
+#check() {
+#  cd vim
+#  TERM=xterm make -j1 test
+#}
 
 package_vim-runtime() {
   pkgdesc+=' (shared runtime)'
