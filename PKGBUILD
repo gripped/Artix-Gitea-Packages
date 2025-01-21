@@ -60,7 +60,7 @@ build() {
     -Ddrm=false \
     -Delua=true \
     -Dembedded-lz4=false \
-    -Devas-loaders-disabler=['json', 'avif', 'jxl'] \
+    -Devas-loaders-disabler=json,avif,jxl \
     -Dfb=true \
     -Dnetwork-backend=none \
     -Dopengl=full \
