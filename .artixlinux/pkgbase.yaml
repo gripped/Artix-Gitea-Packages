@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: flatbuffers
-  version: 24.12.23-1
+  version: 25.1.21-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.12.23-1
+    version: 25.1.21-1
     packages:
-      - flatbuffers-24.12.23-1-x86_64.pkg.tar.zst
-      - python-flatbuffers-24.12.23-1-x86_64.pkg.tar.zst
+      - flatbuffers-25.1.21-1-x86_64.pkg.tar.zst
+      - python-flatbuffers-25.1.21-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
