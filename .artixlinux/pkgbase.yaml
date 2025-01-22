@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java11-openjdk
-  version: 11.0.25.u9-1
+  version: 11.0.26.u4-1
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 11.0.25.u9-1
+    version: 11.0.26.u4-1
     packages:
-      - jre11-openjdk-headless-11.0.25.u9-1-x86_64.pkg.tar.zst
-      - jre11-openjdk-11.0.25.u9-1-x86_64.pkg.tar.zst
-      - jdk11-openjdk-11.0.25.u9-1-x86_64.pkg.tar.zst
-      - openjdk11-src-11.0.25.u9-1-x86_64.pkg.tar.zst
-      - openjdk11-doc-11.0.25.u9-1-x86_64.pkg.tar.zst
+      - jre11-openjdk-headless-11.0.26.u4-1-x86_64.pkg.tar.zst
+      - jre11-openjdk-11.0.26.u4-1-x86_64.pkg.tar.zst
+      - jdk11-openjdk-11.0.26.u4-1-x86_64.pkg.tar.zst
+      - openjdk11-src-11.0.26.u4-1-x86_64.pkg.tar.zst
+      - openjdk11-doc-11.0.26.u4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
