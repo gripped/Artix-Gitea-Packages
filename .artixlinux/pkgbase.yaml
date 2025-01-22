@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java-openjdk
-  version: 23.0.1.u0-2
+  version: 23.0.2.u7-1
   arch:
     - x86_64
   pkgname:
@@ -12,11 +12,11 @@ pkgbase:
     - openjdk-doc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.0.1.u0-2
+    version: 23.0.2.u7-1
     packages:
-      - jre-openjdk-headless-23.0.1.u0-2-x86_64.pkg.tar.zst
-      - jre-openjdk-23.0.1.u0-2-x86_64.pkg.tar.zst
-      - jdk-openjdk-23.0.1.u0-2-x86_64.pkg.tar.zst
-      - openjdk-src-23.0.1.u0-2-x86_64.pkg.tar.zst
-      - openjdk-doc-23.0.1.u0-2-x86_64.pkg.tar.zst
+      - jre-openjdk-headless-23.0.2.u7-1-x86_64.pkg.tar.zst
+      - jre-openjdk-23.0.2.u7-1-x86_64.pkg.tar.zst
+      - jdk-openjdk-23.0.2.u7-1-x86_64.pkg.tar.zst
+      - openjdk-src-23.0.2.u7-1-x86_64.pkg.tar.zst
+      - openjdk-doc-23.0.2.u7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
