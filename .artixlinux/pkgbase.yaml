@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-module-cpu
-  version: 0.1.1-7
+  version: 0.1.2-7
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.1.1-7
+    version: 0.1.2-7
     packages:
-      - moksha-module-cpu-0.1.1-7-x86_64.pkg.tar.zst
+      - moksha-module-cpu-0.1.2-7-x86_64.pkg.tar.zst
   galaxy:
     version: 0.1.1-6.1
     packages:
