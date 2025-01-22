@@ -10,7 +10,7 @@ arch=('x86_64')
 url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
-makedepends=('git' 'meson>=0.58.0' cmake moksha efl)
+makedepends=('git' 'meson>=0.58.0')
 source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
 sha256sums=('SKIP')
 
