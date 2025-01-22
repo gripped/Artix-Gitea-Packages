@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ocaml-augeas
-  version: 0.6-6
+  version: 0.6-7
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6-6
+    version: 0.6-7
     packages:
-      - ocaml-augeas-0.6-6-x86_64.pkg.tar.zst
+      - ocaml-augeas-0.6-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
