@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Guillaume ALAUX <guillaume@archlinux.org>
 
 pkgbase=java-common
 pkgname=('java-runtime-common' 'java-environment-common')
 pkgver=3
-pkgrel=5
+pkgrel=6
 pkgdesc='Common files for Java Runtime Environments'
 url='https://www.archlinux.org/packages/extra/any/java-common/'
 arch=('any')
