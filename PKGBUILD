@@ -3,45 +3,31 @@
 _module='tclock'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=7.1
+pkgrel=8
 pkgdesc="A digital clock gadget."
 _group=('moksha-modules-extra')
 arch=('x86_64')
 url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
-makedepends=('git')
+makedepends=('git' 'meson>=0.58.0')
 source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
 sha256sums=('SKIP')
 
 build() {
-    export LDFLAGS=-Wl,--allow-multiple-definition
-    export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
-           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
-           -fstack-clash-protection -fcf-protection"
-    cd "${srcdir}/${_group}/modules/${_module}"
-    chmod +x autogen.sh
-    if [[ -f configure ]]; then
-      chmod +x configure
-    fi
-    ./autogen.sh \
-      --prefix=/usr
-    make
+  export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,--allow-multiple-definition"
+  export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
+         -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
+         -fstack-clash-protection -fcf-protection"
+  cd "$srcdir/$_group/modules/$_module"
+  meson setup --prefix=/usr . build
+  meson configure build
+  ninja -C build
 }
 
 package() {
-
-  cd "${srcdir}/${_group}/modules/${_module}"
-  make DESTDIR="${pkgdir}" install
-
-#  install text files
-  [[ -e ChangeLog ]] && install -Dm644 ChangeLog "${pkgdir}/usr/share/doc/${pkgname}/ChangeLog" || true
-  [[ -e NEWS ]] && install -Dm644 NEWS "${pkgdir}/usr/share/doc/${pkgname}/NEWS" || true
-  [[ -e README ]] && install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README" || true
-
-#  install license files
-  [[ -e AUTHORS ]] && install -Dm644 AUTHORS "${pkgdir}/usr/share/licenses/$pkgname/AUTHORS" || true
-  [[ -e COPYING ]] && install -Dm644 COPYING "${pkgdir}/usr/share/licenses/$pkgname/COPYING" || true
-  [[ -e COPYING-PLAIN ]] && install -Dm644 COPYING-PLAIN "${pkgdir}/usr/share/licenses/$pkgname/COPYING-PLAIN" || true
+  cd "$srcdir/$_group/modules/$_module"
+  DESTDIR="${pkgdir}" ninja -C build install
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" "AUTHORS" "COPYING"
 }
 
