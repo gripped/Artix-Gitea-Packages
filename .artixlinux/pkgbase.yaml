@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qt5-connectivity
-  version: 5.15.16+kde+r1-3
+  version: 5.15.16+kde+r2-1
   arch:
     - x86_64
   pkgname:
     - qt5-connectivity
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.15.16+kde+r1-3
+    version: 5.15.16+kde+r2-1
     packages:
-      - qt5-connectivity-5.15.16+kde+r1-3-x86_64.pkg.tar.zst
+      - qt5-connectivity-5.15.16+kde+r2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
