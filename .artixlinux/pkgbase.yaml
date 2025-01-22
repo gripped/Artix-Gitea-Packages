@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ocaml-topkg
-  version: 1.0.7-5
+  version: 1.0.7-6
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.7-5
+    version: 1.0.7-6
     packages:
-      - ocaml-topkg-1.0.7-5-x86_64.pkg.tar.zst
+      - ocaml-topkg-1.0.7-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
