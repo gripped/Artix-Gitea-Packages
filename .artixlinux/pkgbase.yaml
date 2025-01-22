@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: brltty
-  version: 6.7-3
+  version: 6.7-4
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.7-3
+    version: 6.7-4
     packages:
-      - brltty-6.7-3-x86_64.pkg.tar.zst
-      - brltty-udev-generic-6.7-3-x86_64.pkg.tar.zst
+      - brltty-6.7-4-x86_64.pkg.tar.zst
+      - brltty-udev-generic-6.7-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
