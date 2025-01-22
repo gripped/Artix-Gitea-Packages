@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: camlp-streams
-  version: 5.0.1-8
+  version: 5.0.1-9
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.1-8
+    version: 5.0.1-9
     packages:
-      - camlp-streams-5.0.1-8-x86_64.pkg.tar.zst
+      - camlp-streams-5.0.1-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
