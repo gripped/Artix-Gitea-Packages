@@ -25,7 +25,7 @@ optdepends=(
 source=(
     "https://downloads.sourceforge.net/project/$pkgbase/Double%20Commander%20Source/$pkgbase-$pkgver-src.tar.gz"
 )
-sha512sums=('768b466254a1652ba577ebcbae2248066a6dafeacc8861afbdfd86241e7ceaacde5ffddd8f3515424fb1b84e86a693ca6168db39973547ce29d935da3de322d3')
+sha512sums=('bf083bb8296385370068542ae5f3273b291b6b32ea8e9cd2810572a6bcb2bbb7238a8b34d5527636c6cd5da1bd4357c8fb3652540a7b36bdaed7b386b8ec9bfe')
 
 prepare() {
     cp -a /usr/lib/lazarus ./
