@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: avogadro-molecules
-  version: 1.99.0-1
+  version: 1.100.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.99.0-1
+    version: 1.100.0-1
     packages:
-      - avogadro-molecules-1.99.0-1-any.pkg.tar.zst
+      - avogadro-molecules-1.100.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
