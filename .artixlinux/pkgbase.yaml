@@ -8,27 +8,25 @@ pkgbase:
     - elogind
     - libelogind
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 255.17-2
     packages:
       - elogind-255.17-2-x86_64.pkg.tar.zst
       - libelogind-255.17-2-x86_64.pkg.tar.zst
-  system:
-    version: 255.17-1
-    packages:
-      - elogind-255.17-1-x86_64.pkg.tar.zst
-      - libelogind-255.17-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
