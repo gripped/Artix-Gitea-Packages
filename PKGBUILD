@@ -12,7 +12,7 @@ url="https://spamassassin.apache.org"
 depends=('openssl' 'zlib' 're2c' 'perl-net-dns' 'perl-io-socket-ssl'
          'perl-libwww' 'perl-mail-spf' 'perl-http-message' 'perl-net-http'
          'perl-io-socket-inet6' 'perl-mail-dkim')
-makedepends=('razor' 'perl-dbi')
+makedepends=('razor' 'perl-dbi' 'perl-crypt-ssleay')
 checkdepends=('perl-text-diff')
 optdepends=('razor: to identify collaborately-flagged spam'
             'make: to use sa-compile'
