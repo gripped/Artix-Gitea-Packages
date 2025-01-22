@@ -2,16 +2,16 @@
 team: world
 pkgbase:
   name: usd
-  version: 25.02-1
+  version: 25.02-2
   arch:
     - x86_64
   pkgname:
     - usd
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.11-6
+    version: 25.02-2
     packages:
-      - usd-24.11-6-x86_64.pkg.tar.zst
+      - usd-25.02-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: 25.02-1
     packages:
