@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ocaml-integers
-  version: 0.7.0-8
+  version: 0.7.0-9
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.0-8
+    version: 0.7.0-9
     packages:
-      - ocaml-integers-0.7.0-8-x86_64.pkg.tar.zst
+      - ocaml-integers-0.7.0-9-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
