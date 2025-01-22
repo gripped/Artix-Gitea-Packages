@@ -2,7 +2,7 @@
 
 pkgname=efl
 pkgver=1.28.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="http://www.enlightenment.org"
@@ -49,7 +49,7 @@ build() {
     -Dsystemd=false \
     -Dwl=true \
     -Dbuildtype=plain \
-    -Dlibdir=lib/x86_64-linux-gnu \
+    -Dlibdir=lib \
     -Dlocalstatedir=/var \
     -Dprefix=/usr \
     -Dsysconfdir=/etc \
