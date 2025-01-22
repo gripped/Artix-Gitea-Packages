@@ -15,7 +15,7 @@ source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
 sha256sums=('SKIP')
 
 build() {
-  export LDFLAGS+=-Wl,--allow-multiple-definition
+  export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now,--allow-multiple-definition"
   export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
          -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
          -fstack-clash-protection -fcf-protection"
