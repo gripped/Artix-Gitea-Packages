@@ -2,8 +2,8 @@
 
 _module='cpu'
 pkgname="moksha-module-${_module}"
-pkgver=0.1.2
-pkgrel=7
+pkgver=0.1.1
+pkgrel=7.1
 pkgdesc="Used to monitor CPU utilization."
 _group=('moksha-modules-extra')
 arch=('x86_64')
