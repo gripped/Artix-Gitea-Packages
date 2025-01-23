@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-openai
-  version: 1.59.9-1
+  version: 1.60.0-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.59.9-1
+    version: 1.60.0-1
     packages:
-      - python-openai-1.59.9-1-any.pkg.tar.zst
+      - python-openai-1.60.0-1-any.pkg.tar.zst
   world:
     version: 1.59.8-1
     packages:
