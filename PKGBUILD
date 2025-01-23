@@ -5,7 +5,7 @@
 pkgname=qt6-tools
 _pkgver=6.8.1
 pkgver=6.8.1
-pkgrel=2
+pkgrel=2.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
