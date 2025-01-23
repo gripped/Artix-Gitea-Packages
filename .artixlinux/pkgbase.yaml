@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libutf8proc
-  version: 2.9.0-1
+  version: 2.10.0-1
   arch:
     - x86_64
   pkgname:
     - libutf8proc
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.9.0-1
+    version: 2.10.0-1
     packages:
-      - libutf8proc-2.9.0-1-x86_64.pkg.tar.zst
+      - libutf8proc-2.10.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
