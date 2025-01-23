@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-image-exiftool
-  version: 13.12-1
+  version: 13.15-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 13.12-1
+    version: 13.15-1
     packages:
-      - perl-image-exiftool-13.12-1-any.pkg.tar.zst
+      - perl-image-exiftool-13.15-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
