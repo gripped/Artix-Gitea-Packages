@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-crypt-random-seed
-  version: 0.03-10
+  version: 0.03-11
   arch:
     - any
   pkgname:
     - perl-crypt-random-seed
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.03-10
+    version: 0.03-11
     packages:
-      - perl-crypt-random-seed-0.03-10-any.pkg.tar.zst
+      - perl-crypt-random-seed-0.03-11-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
