@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: musl
-  version: 1.2.5-2
+  version: 1.2.5-3
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - musl-aarch64
     - musl-riscv64
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.2.5-3
+    packages:
+      - musl-1.2.5-3-x86_64.pkg.tar.zst
+      - musl-aarch64-1.2.5-3-x86_64.pkg.tar.zst
+      - musl-riscv64-1.2.5-3-x86_64.pkg.tar.zst
   world:
     version: 1.2.5-2
     packages:
