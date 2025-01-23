@@ -2,16 +2,16 @@
 team: world
 pkgbase:
   name: hyprutils
-  version: 0.3.3-1
+  version: 0.4.0-1
   arch:
     - x86_64
   pkgname:
     - hyprutils
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.4.0-1
+    packages:
+      - hyprutils-0.4.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.3.3-1
     packages:
