@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - ispc
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
