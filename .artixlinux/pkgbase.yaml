@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sddm
-  version: 0.21.0-4.10
+  version: 0.21.0-6
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.21.0-4.10
+    version: 0.21.0-6
     packages:
-      - sddm-0.21.0-4.10-x86_64.pkg.tar.zst
+      - sddm-0.21.0-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
