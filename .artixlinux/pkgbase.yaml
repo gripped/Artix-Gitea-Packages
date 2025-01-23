@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: wpa_supplicant
-  version: 2:2.11-2
+  version: 2:2.11-3
   arch:
     - x86_64
   pkgname:
     - wpa_supplicant
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2:2.11-3
+    packages:
+      - wpa_supplicant-2:2.11-3-x86_64.pkg.tar.zst
   system:
     version: 2:2.11-2
     packages:
