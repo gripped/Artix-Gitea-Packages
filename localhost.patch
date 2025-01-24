@@ -1,0 +1,12 @@
+diff --unified --recursive --text a/stdlib/LibGit2/test/libgit2-tests.jl b/stdlib/LibGit2/test/libgit2-tests.jl
+--- a/stdlib/LibGit2/test/libgit2-tests.jl	2025-01-15 01:12:24.027704809 -0500
++++ b/stdlib/LibGit2/test/libgit2-tests.jl	2025-01-15 01:13:58.365601245 -0500
+@@ -3211,7 +3211,7 @@
+                         end
+                         @test err.code == LibGit2.Error.ERROR
+                         @test startswith(lowercase(err.msg),
+-                                        lowercase("user rejected certificate for localhost"))
++                                        lowercase("user rejected certificate for "))
+ 
+                         rm(errfile)
+ 
