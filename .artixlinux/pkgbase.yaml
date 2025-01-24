@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: mint-themes
-  version: 2.0.9-1
+  version: 2.2.3-1
   arch:
     - any
   pkgname:
     - mint-themes
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.0.9-1
+    version: 2.2.3-1
     packages:
-      - mint-themes-2.0.9-1-any.pkg.tar.zst
+      - mint-themes-2.2.3-1-any.pkg.tar.zst
+team: galaxy

@@ -1,7 +1,7 @@
 # Maintainer: Chris Cromer <cromer@artixlinux.org>
 
 pkgname=mint-themes
-pkgver=2.0.9
+pkgver=2.2.3
 pkgrel=1
 pkgdesc='A collection of Mint themes. Includes GTK2, GTK3, Cinnamon and Xfce components.'
 arch=('any')
@@ -22,7 +22,7 @@ optdepends=(
     mint-x-icons
 )
 source=("${pkgname}_${pkgver}.tar.xz::${url}/${pkgname}_${pkgver}.tar.xz")
-sha256sums=('f481faf1026ea84776999d930454da0840ae978bfb368b8f7fc040bf58e5cc63')
+sha256sums=('9751ccd489c16497e5d5c067b582c0106193045a04b8368fcbfee08655c06b5b')
 
 build() {
 	cd "${pkgname}"
