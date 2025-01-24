@@ -2,7 +2,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=aws-c-common
-pkgver=0.10.6
+pkgver=0.10.7
 pkgrel=1
 pkgdesc='Core c99 package for AWS SDK for C. Includes cross-platform primitives, configuration, data structures, and error handling'
 arch=(x86_64)
@@ -11,7 +11,7 @@ license=(Apache-2.0)
 depends=(glibc)
 makedepends=(cmake)
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('d0acbabc786035d41791c3a2f45dbeda31d9693521ee746dc1375d6380eb912b')
+sha256sums=('29440e1db8fe9c7a217a2948d7755ceb91b6b2617f73c99592a55aa32a21fb19')
 
 build() {
   cd $pkgname-$pkgver
