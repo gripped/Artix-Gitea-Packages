@@ -1,0 +1,28 @@
+From f42ef85058fee087d3f5e565f34a7657aad11240 Mon Sep 17 00:00:00 2001
+From: Julian Smith <julian.smith@artifex.com>
+Date: Wed, 22 Jan 2025 17:30:30 +0000
+Subject: [PATCH] src/__init__.py: fix for calling pdf_rearrange_pages2() with
+ mupdf >= 1.25.3.
+
+---
+ src/__init__.py | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/src/__init__.py b/src/__init__.py
+index 5d330e032..0fc6dfe63 100644
+--- a/src/__init__.py
++++ b/src/__init__.py
+@@ -5642,7 +5642,12 @@ def select(self, pyliste):
+         pdf = _as_pdf_document(self)
+         # create page sub-pdf via pdf_rearrange_pages2().
+         #
+-        mupdf.pdf_rearrange_pages2(pdf, pyliste)
++        if mupdf_version_tuple >= (1, 25, 3):
++            # We use PDF_CLEAN_STRUCTURE_KEEP otherwise we lose structure tree
++            # which, for example, breaks test_3705.
++            mupdf.pdf_rearrange_pages2(pdf, pyliste, mupdf.PDF_CLEAN_STRUCTURE_KEEP)
++        else:
++            mupdf.pdf_rearrange_pages2(pdf, pyliste)
+ 
+         # remove any existing pages with their kids
+         self._reset_page_refs()

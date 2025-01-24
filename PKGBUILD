@@ -4,7 +4,7 @@
 _name=PyMuPDF
 pkgname=python-pymupdf
 pkgver=1.25.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Python bindings for MuPDF's rendering library"
 arch=(x86_64)
 url="https://github.com/pymupdf/PyMuPDF"
@@ -40,11 +40,14 @@ optdepends=(
 source=(
   $_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz
   remove-clang-and-swig-dependencies.patch
+  fix-tests-with-mupdf-1.25.3.patch
 )
 sha512sums=('ce3ea6f3bdfdd528307d7ab58ac3376cbbe7d37cb6a3c37fd8eb4c25122075e59fd131ee62317fb13c9476c5ff5ac150b7a7c018abcf3daa8d11dad820cabc54'
-            'e92face12865334f6730438c5d6973583f6fee18714a3e4d3e76ac6717fa1aad3416e400858c8dda319717facbf37b2b22793781342afeff6eb6183d97d9de63')
+            'e92face12865334f6730438c5d6973583f6fee18714a3e4d3e76ac6717fa1aad3416e400858c8dda319717facbf37b2b22793781342afeff6eb6183d97d9de63'
+            '3719a9f4accb5d12f32ab074863dd9d56a9a2be0d0fcea3be07d6606d5145efaeb8d4d8e65d0dc663244e33ad120c8130bb7ea54568bcf5d320cc56a566bafa1')
 b2sums=('01d2e3697b764f8170413131c8bc1211b6e73b256837f2dfe130c07221e909d2692dd5b8b5973e9471fd60624bf1fb14d6f67ad6ca9bb8e4149e8a6a73e5f6e9'
-        '3aa763d6b203a04eafdfaa0b89d89411af8b9d7b9631f4ad46c6f88a8310b683e8ff20f6c8cd03c2ab42dc3fcc6f21bf937ee0db9037ac54aa2442291e2fe332')
+        '3aa763d6b203a04eafdfaa0b89d89411af8b9d7b9631f4ad46c6f88a8310b683e8ff20f6c8cd03c2ab42dc3fcc6f21bf937ee0db9037ac54aa2442291e2fe332'
+        '1e062ce52e35e7ac146cfec7f9ebdf97c0f6233cc958e4b1925e2cec41eea70d65f3bcec087365590b74e643ba5f4cdb3dea35cdbfe164c3fc2b3696c700722d')
 
 prepare() {
   # remove bundled mupdf sources
@@ -52,6 +55,9 @@ prepare() {
   # we package clang and swig and don't need python-clang or python-swig
   cd $_name-$pkgver
   patch -Np1 < $srcdir/remove-clang-and-swig-dependencies.patch
+  # temporary patch to fix tests with mupdf >= 1.25.3
+  # see https://github.com/pymupdf/PyMuPDF/commit/f42ef85058fee087d3f5e565f34a7657aad11240
+  patch -Np1 < $srcdir/fix-tests-with-mupdf-1.25.3.patch
 }
 
 build() {
