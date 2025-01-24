@@ -2,17 +2,20 @@
 extra_stopped_commands="setup"
 
 retry="60"
-pidfile="/run/mysqld/$RC_SVCNAME.pid"
-command="/usr/bin/mysqld_safe"
+piddir="/run/mysqld"
+pidfile="$piddir/$RC_SVCNAME.pid"
+command="/usr/bin/mariadbd-safe"
 command_args="--syslog --nowatch --pid-file=$pidfile"
 
 depend() {
-	use net
+	use net.lo
 	need localmount
+	keyword -timeout
 }
 
 start_pre() {
 	required_dirs=$(getconf datadir "/var/lib/mysql")
+	checkpath -d --owner mysql:mysql --mode 0755 "$piddir"
 
 	if [ ! -d $required_dirs/mysql ]; then
 		eerror "Datadir '$required_dirs' is empty or invalid."
@@ -26,7 +29,7 @@ start_post() {
 
 setup() {
 	ebegin "Creating a new MySQL database"
-	mysql_install_db --user=mysql --datadir=/var/lib/mysql
+	mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 	eend $?
 }
 

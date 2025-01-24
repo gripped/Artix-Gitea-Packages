@@ -4,17 +4,20 @@ supervisor=supervise-daemon
 #healthcheck_timer=10
 
 retry="60"
-pidfile="/run/mysqld/$RC_SVCNAME.pid"
-command="/usr/bin/mysqld"
+piddir="/run/mysqld"
+pidfile="$piddir/$RC_SVCNAME.pid"
+command="/usr/bin/mariadbd"
 command_args="--basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --user=mysql --pid-file=/run/mysqld/mariadb.pid"
 
 depend() {
-	use net
+	use net.lo
 	need localmount
+	keyword -timeout
 }
 
 start_pre() {
 	required_dirs=$(getconf datadir "/var/lib/mysql")
+	checkpath -d --owner mysql:mysql --mode 0755 "$piddir"
 
 	if [ ! -d $required_dirs/mysql ]; then
 		eerror "Datadir '$required_dirs' is empty or invalid."
@@ -28,7 +31,7 @@ start_post() {
 
 setup() {
 	ebegin "Creating a new MySQL database"
-	mysql_install_db --user=mysql --datadir=/var/lib/mysql
+	mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 	eend $?
 }
 

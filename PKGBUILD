@@ -1,11 +1,11 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 pkgname=mariadb-openrc
-pkgver=20210505
-pkgrel=2
+pkgver=20250124
+pkgrel=1
 pkgdesc="OpenRC mariadb init script"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+url="https://gitea.artixlinux.org/packages/mariadb-openrc"
 license=('GPL2')
 groups=('openrc-world')
 provides=('mysql-openrc' 'init-mariadb')
@@ -13,8 +13,8 @@ depends=('mariadb' 'openrc')
 conflicts=('init-mariadb')
 replaces=('mysql-openrc')
 source=('mariadb.initd' 'mariadb-supervise.initd')
-sha256sums=('e047da01dcf47692f01daf0f37eba2e9669f459bba265bd75337f187f097e40c'
-            'bb5281b04e7a8dd6048b8e7756969d683c6fa2231434615b540cf5310e63efb8')
+sha256sums=('60b513205e767eaca9766e0d85ffd8489c3f9916bf9828dcef480e88731f5e80'
+            'ca0dd5ba7c34c6213e769bac94ad06d5f851669928074974f6c63fdaced2a715')
 
 package() {
     install -Dm755 "${srcdir}"/mariadb.initd "${pkgdir}"/etc/init.d/mariadb

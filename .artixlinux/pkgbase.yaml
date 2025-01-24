@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: mariadb-openrc
-  version: 20210505-2
+  version: 20250124-1
   arch:
     - any
   pkgname:
     - mariadb-openrc
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20210505-2
+    version: 20250124-1
     packages:
-      - mariadb-openrc-20210505-2-any.pkg.tar.zst
+      - mariadb-openrc-20250124-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
