@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-tools
-  version: 6.12-11
+  version: 6.13-1
   arch:
     - x86_64
   pkgname:
@@ -18,7 +18,7 @@ pkgbase:
     - usbip
     - x86_energy_perf_policy
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -39,8 +39,20 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.13-1
+    packages:
+      - bootconfig-6.13-1-x86_64.pkg.tar.zst
+      - bpf-6.13-1-x86_64.pkg.tar.zst
+      - cpupower-6.13-1-x86_64.pkg.tar.zst
+      - hyperv-6.13-1-x86_64.pkg.tar.zst
+      - intel-speed-select-6.13-1-x86_64.pkg.tar.zst
+      - kcpuid-6.13-1-x86_64.pkg.tar.zst
+      - linux-tools-meta-6.13-1-x86_64.pkg.tar.zst
+      - perf-6.13-1-x86_64.pkg.tar.zst
+      - tmon-6.13-1-x86_64.pkg.tar.zst
+      - turbostat-6.13-1-x86_64.pkg.tar.zst
+      - usbip-6.13-1-x86_64.pkg.tar.zst
+      - x86_energy_perf_policy-6.13-1-x86_64.pkg.tar.zst
   world:
     version: 6.12-11
     packages:

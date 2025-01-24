@@ -15,8 +15,8 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.12
-pkgrel=11
+pkgver=6.13
+pkgrel=1
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -46,15 +46,13 @@ groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
 #        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.2.xz"
         'cpupower.default'
-        'fix-buildid.patch'
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('267bab84f30e3ce4a88b6441aeee777b114fd58041b43cabfe50fdf0c0a97321'
-            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f'
-            'b0271b2757bb2cb05a1fd5560a732959cf28db82bb114aadcf7341b71ce127ea')
+sha256sums=('27aaa9e0a5326c003444cbffcb0ab8a0b444b6e7546e15aa44bc8caa84d97046'
+            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
   cd linux
