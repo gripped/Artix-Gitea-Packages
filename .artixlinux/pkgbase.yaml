@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: abseil-cpp
-  version: 20240116.2-3
+  version: 20240722.1-1
   arch:
     - x86_64
   pkgname:
     - abseil-cpp
 actions:
-  addRepo: world
-  removeRepo: world-goblins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20240722.1-1
+    packages:
+      - abseil-cpp-20240722.1-1-x86_64.pkg.tar.zst
   world:
     version: 20240722.0-1
     packages:
