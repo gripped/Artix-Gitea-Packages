@@ -4,7 +4,7 @@
 
 pkgname=obs-studio
 pkgver=31.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
@@ -20,6 +20,7 @@ optdepends=('libfdk-aac: FDK AAC codec support'
             'luajit: scripting support'
             'python: scripting support'
             'sndio: Sndio input client'
+            'qrcodegencpp-cmake: websocket support'
             'v4l2loopback-dkms: virtual camera support')
 source=($pkgname-$pkgver.tar.gz::https://github.com/obsproject/obs-studio/releases/download/$pkgver/OBS-Studio-$pkgver-Sources.tar.gz)
 sha256sums=('d9b280b5d0a1a958e0017ef47049492e336b7b98acbd0bfd372a7ad923c6f660')
