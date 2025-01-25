@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vte3
-  version: 0.78.2-1
+  version: 0.78.3-1
   arch:
     - x86_64
   pkgname:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.78.2-1
+    version: 0.78.3-1
     packages:
-      - vte-common-0.78.2-1-x86_64.pkg.tar.zst
-      - vte3-0.78.2-1-x86_64.pkg.tar.zst
-      - vte4-0.78.2-1-x86_64.pkg.tar.zst
-      - vte-docs-0.78.2-1-x86_64.pkg.tar.zst
+      - vte-common-0.78.3-1-x86_64.pkg.tar.zst
+      - vte3-0.78.3-1-x86_64.pkg.tar.zst
+      - vte4-0.78.3-1-x86_64.pkg.tar.zst
+      - vte-docs-0.78.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
