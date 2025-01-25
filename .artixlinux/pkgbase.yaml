@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: unicorn
-  version: 2.0.1.post1-4
+  version: 2.1.1-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - ruby-unicorn-engine
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.0.1.post1-4
+    version: 2.1.1-1
     packages:
-      - unicorn-2.0.1.post1-4-x86_64.pkg.tar.zst
-      - python-unicorn-2.0.1.post1-4-x86_64.pkg.tar.zst
-      - ruby-unicorn-engine-2.0.1.post1-4-x86_64.pkg.tar.zst
+      - unicorn-2.1.1-1-x86_64.pkg.tar.zst
+      - python-unicorn-2.1.1-1-x86_64.pkg.tar.zst
+      - ruby-unicorn-engine-2.1.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
