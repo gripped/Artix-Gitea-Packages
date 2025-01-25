@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: pwndbg
-  version: 2024.08.29-3
+  version: 2025.01.20-1
   arch:
     - any
   pkgname:
     - pwndbg
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.08.29-3
+    version: 2025.01.20-1
     packages:
-      - pwndbg-2024.08.29-3-any.pkg.tar.zst
+      - pwndbg-2025.01.20-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

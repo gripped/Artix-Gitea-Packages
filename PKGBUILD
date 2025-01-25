@@ -1,8 +1,8 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=pwndbg
-pkgver=2024.08.29
-pkgrel=3
+pkgver=2025.01.20
+pkgrel=1
 pkgdesc='Makes debugging with GDB suck less'
 url='https://github.com/pwndbg/pwndbg'
 arch=('any')
@@ -39,17 +39,13 @@ optdepends=(
   'radare2: radare2 command support'
   'rizin: rizin command support'
 )
-source=(https://github.com/pwndbg/pwndbg/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
-        https://github.com/pwndbg/pwndbg/commit/b4a1b9a1.patch)
-sha512sums=('SKIP'
-            'SKIP')
-b2sums=('SKIP'
-        'SKIP')
+source=(https://github.com/pwndbg/pwndbg/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha512sums=('b619b8b3727a4a23a3146f2bb0f3475ad788e82712cb669d233d88ce546546f114882162df6e5d0b357e9fa143a6829f7387132ee2a7f922dc4e669a215d8d51')
+b2sums=('58c2c6139d8d96c939c602f694519167d4722f7ed05a92a5c38e55e0a894ffd930813d583e07bc70d0114abdcf8e34e7e859ceeb1113fc0cd00dd4af513f213b')
 
 prepare() {
   cd ${pkgname}-${pkgver}
   rm -rf caps profiling
-  patch -Rp1 < ../b4a1b9a1.patch # Revert dependency on unreleased pwntools
 }
 
 build() {
