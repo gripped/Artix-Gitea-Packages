@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lm_sensors
-  version: 1:3.6.0.r41.g31d1f125-3
+  version: 1:3.6.0.r41.g31d1f125-3.1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:3.6.0.r41.g31d1f125-3
+    version: 1:3.6.0.r41.g31d1f125-3.1
     packages:
-      - lm_sensors-1:3.6.0.r41.g31d1f125-3-x86_64.pkg.tar.zst
+      - lm_sensors-1:3.6.0.r41.g31d1f125-3.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

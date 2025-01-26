@@ -6,7 +6,7 @@ pkgname=lm_sensors
 pkgver=3.6.0.r41.g31d1f125
 _commit=31d1f125d8076f1c8c8f3224b31d240e6e6a1763
 #_pkgver=${pkgver//./-}
-pkgrel=3
+pkgrel=3.1
 epoch=1
 pkgdesc="Collection of user space tools for general SMBus access and hardware monitoring"
 arch=('x86_64')
@@ -31,6 +31,11 @@ pkgver() {
   cd "${srcdir}"/lm-sensors*
 
   git describe --long --tags | sed 's/V//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+  cd "${srcdir}"/lm-sensors*
+  sed -i 's|/etc/sysconfig|/etc/conf.d|' prog/detect/sensors-detect
 }
 
 build() {
