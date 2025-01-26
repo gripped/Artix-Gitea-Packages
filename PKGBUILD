@@ -7,7 +7,7 @@
 # Contributor: Ricardo Catalinas Jiménez <jimenezrick@gmail.com>
 
 pkgname=erlang
-pkgver=27.1.3
+pkgver=27.2.1
 _docver=27.0
 pkgrel=1
 arch=(x86_64)
@@ -19,7 +19,7 @@ options=(staticlibs)
 source=("git+https://github.com/erlang/otp#tag=OTP-$pkgver"
         "https://github.com/erlang/otp/releases/download/OTP-$_docver/otp_doc_man_$_docver.tar.gz"
         epmd.conf)
-b2sums=('9e230d7ec2a13523e6d9aa38e46efb75d1c2e67de51ce1960fe3a88a9cc0704dcef623e9f8d0d9a10c9d816f9d57e752a5805371a7d6aa0cee4d5f45ddda21b5'
+b2sums=('cd4adfc17a9253b988a3add4017c384c8c2474b24711ef67e120aea130652fe6a00c7ba55dc580a6d47c5199f6170a3ba72392e98d1a8dad5d7197789ac01106'
         'b55614bc3c795813eb2d73dc990f740efc8408a3639d98569adb9718ee140eb04ac2289ca3cd764d2610ac2138dfd6173b50bcae58b3971b51f4819cc33420e3'
         '1675ac9bf948ab19e8b63077d870ccf356fcdbce14de2777f00b3488aa1ce34a5e0a5cdc0428707f744dee5940b12653a44e0ded0554de95ebb31bce4676ff87')
 
