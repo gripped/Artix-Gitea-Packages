@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.6.72
+pkgver=6.12.11
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
@@ -21,16 +21,19 @@ makedepends=(
   graphviz
   imagemagick
   python-sphinx
+  python-yaml
   texlive-latexextra
 )
-options=('!strip')
+options=(
+  !strip
+)
 _srcname=linux-$pkgver
 _srctag=v$pkgver
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
-  0002-skip-simpledrm-if-nvidia-drm.modeset=1-is.patch
-  0003-Default-to-maximum-amount-of-ASLR-bits.patch
+  0002-Default-to-maximum-amount-of-ASLR-bits.patch
+  0003-skip-simpledrm-if-nvidia-drm.modeset\=1-is.patch
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -38,18 +41,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('feb9e514930d5968daa0b8b5486d3295d1fb2b34accf876207641884d4baef39'
+sha256sums=('475172fdbd87a153f123a57952672e773bdb6daf5b58a417d1a5e419fcfeec49'
             'SKIP'
-            '21195509fded29d0256abfce947b5a8ce336d0d3e192f3f8ea90bde9dd95a889'
-            '2f23be91455e529d16aa2bbf5f2c7fe3d10812749828fc752240c21b2b845849'
-            '6400a06e6eb3a24b650bc3b1bba9626622f132697987f718e7ed6a5b8c0317bc'
-            'ba458505798d9b5f4ff3854577a136d9ee757b4c9eb0f176a6bb0ddbe06e60b3')
-b2sums=('6214a72d784a7b11a3407d5065dc8596c3a15bc0be4401e8fa22c70e268349dcf2a824949d258a6fee276109185b7d5de4ca4eae08cfb39c98ffa98940a10e76'
+            '3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c'
+            '423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e'
+            '596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1'
+            'c21eca67b9389643e3eaded8757bdf3475fd5f0846e58b27d4e23a2580f4caaf')
+b2sums=('8f31f2aed810d1fe724142011731f361a543da301a1a14c92b852c8cf81f7c4bdce1b74783e0dd965d7bf225dc6006b44eed622bf6dff09312265ce3cae1ea32'
         'SKIP'
-        '02a10396c92ab93124139fc3e37b1d4d8654227556d0d11486390da35dfc401ff5784ad86d0d2aa7eacac12bc451aa2ff138749748c7e24deadd040d5404734c'
-        '5dc21a7a6f0b840e6a671dcf09a865e42f0e2c000d5e45d3f3202c02946a8ab2207858d0b2ef1004648b8c2963efb428298b263c8494be806dfc9b6af66d5413'
-        'ba6ebe349b3757411364a9ba2deaa30a8d71a247d518c159385977c2b4782771bda4edfc96bd954808617c9ba984d832471b63c11f5bd6003369bfe4051df31f'
-        '238d8760b90db977225dfc31b51e5bc779ab79b3405c4fd645e963be28a5bf21668b7fd4c9038f38c875e9f4131f7dd1369183361b2242a400adbb4cfc7a8fab')
+        'b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918'
+        '01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5'
+        '410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea'
+        '821292c548a394ef4537e767fa13bf61cbf4afc675af035ef0f38765eb57cefcbbdf1bd53d0f54c7d903040ab3199213ad1dd0e3b7b45138ca211eae4ecee559')
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
@@ -86,6 +89,7 @@ build() {
   make htmldocs &
   local pid_docs=$!
   make all
+  make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
   wait "${pid_docs}"
 }
 
@@ -143,6 +147,7 @@ _package() {
   optdepends=(
     'wireless-regdb: to set the correct wireless channels of your country'
     'linux-firmware: firmware images needed for some devices'
+    'scx-scheds: to use sched-ext schedulers'
   )
   provides=(
     KSMBD-MODULE
@@ -238,10 +243,11 @@ _package-headers() {
 
   echo "Installing build files..."
   install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
-    localversion.* version vmlinux
+    localversion.* version vmlinux tools/bpf/bpftool/vmlinux.h
   install -Dt "$builddir/kernel" -m644 kernel/Makefile
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
+  ln -srt "$builddir" "$builddir/scripts/gdb/vmlinux-gdb.py"
 
   # required when STACK_VALIDATION is enabled
   install -Dt "$builddir/tools/objtool" tools/objtool/objtool
