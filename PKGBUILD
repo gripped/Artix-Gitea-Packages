@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.13
-pkgrel=2
+pkgrel=3
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://github.com/calamares/calamares"
@@ -22,20 +22,34 @@ depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality'
         'gtk-update-icon-cache' 'ckbcomp' 'python'
         'python-jsonschema' 'python-toml' 'python-pyyaml'
         'hicolor-icon-theme') #'appstream-qt6'
-makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-translations')
+makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-translations' 'git')
 provides=('libcalamares.so' 'libcalamaresui.so')
 optdepends=('calamares-extensions: Artix extensions and branding')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz"
-        cmake-appstream-helper-fix.patch)
-sha256sums=('18094f5dd473c67ff1098a906f8bec4875852026c278dfd911c2819e3656625b'
-            '3f4860574bbffd4eca4d449bc1256fcf7e01be21cd8b31f3a608a8cd350abd82')
+source=(
+        "git+https://github.com/calamares/calamares.git#tag=v$pkgver"
+        # "$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz"
+        # cmake-appstream-helper-fix.patch
+        0001-packagechooser-customize-qrc.patch
+        0002-if-license.patch
+        0003-packagechooser-add-if-png.patch
+
+        )
+sha256sums=('8d0146ddc8af4368496fc6d965d7e30dcb55cbb9c2cef0c79a08d24c35094676'
+            '893e55d56557bc422cab095f9d303863240d883797e3920ff5a165b3618bb29d'
+            'f95255cd446a8887d41698c6da7d3d5147afa98ba775930f1cce64c21300b7ba'
+            '9cc8e5172171681eec810ce7d259995a9e3bcabe9ef46772c8f1c35040f8f5fd')
 
 prepare() {
-    patch -d "$pkgname-$pkgver" -Np 1 -i ../cmake-appstream-helper-fix.patch
+    cd $pkgname
+    git apply ../0001-packagechooser-customize-qrc.patch
+    git apply ../0002-if-license.patch
+    git apply ../0003-packagechooser-add-if-png.patch
+
+    # patch -d "$pkgname-$pkgver" -Np 1 -i ../cmake-appstream-helper-fix.patch
 }
 
 build() {
-    cmake -S "$pkgname-$pkgver" -B build \
+    cmake -S "$pkgname" -B build \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_PREFIX_PATH=/usr \
@@ -46,8 +60,6 @@ build() {
         -DBUILD_APPSTREAM:BOOL=OFF \
         -DWITH_QT6:BOOL=ON \
         -DSKIP_MODULES="\
-            packagechooser \
-            packagechooserq \
             services-systemd \
             oemid \
             initramfs \
@@ -65,5 +77,5 @@ build() {
 package() {
     DESTDIR="$pkgdir" cmake --install build
 
-    install -Dm644 "$pkgname-$pkgver"/LICENSES/{MIT,BSD-2-Clause}.txt -t "$pkgdir"/usr/share/licenses/"$pkgname"
+    install -Dm644 "$pkgname"/LICENSES/{MIT,BSD-2-Clause}.txt -t "$pkgdir"/usr/share/licenses/"$pkgname"
 }

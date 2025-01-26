@@ -1,0 +1,21 @@
+From 16e2157976d397183374aa1e8b497954bd1add30 Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Sun, 26 Jan 2025 00:35:19 +0100
+Subject: [PATCH 2/3] if license
+
+---
+ src/modules/packagechooser/images/if.png.license | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 src/modules/packagechooser/images/if.png.license
+
+diff --git a/src/modules/packagechooser/images/if.png.license b/src/modules/packagechooser/images/if.png.license
+new file mode 100644
+index 000000000..ef0e9d7cd
+--- /dev/null
++++ b/src/modules/packagechooser/images/if.png.license
+@@ -0,0 +1,2 @@
++SPDX-FileCopyrightText: 2014 Uri Herrera <uri_herrera@nitrux.in> and others
++SPDX-License-Identifier:  LGPL-3.0-or-later
+-- 
+2.48.1
+
