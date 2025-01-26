@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: webrtc-audio-processing-0.3
+  version: 0.3.1-6
+  arch:
+    - x86_64
+  pkgname:
+    - webrtc-audio-processing-0.3
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -27,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.3.1-6
+    packages:
+      - webrtc-audio-processing-0.3-0.3.1-6-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
