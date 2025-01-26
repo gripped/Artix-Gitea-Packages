@@ -4,7 +4,7 @@
 pkgname=calamares-extensions
 pkgver=0.14
 _commit=d24d23902c97a7205cdf4cb663fcc63f0e39f788
-pkgrel=2
+pkgrel=3
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(
@@ -33,7 +33,7 @@ build() {
 }
 
 package() {
-    depends+=('calamares' 'libcalamaresui.so' 'libcalamares.so' 'kdialog')
+    depends+=('calamares' 'kdialog')
 
     DESTDIR="$pkgdir" cmake --install build
 }
