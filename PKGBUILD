@@ -11,7 +11,7 @@ pkgname=(
   aws-sdk-cpp-kinesis
   aws-sdk-cpp-s3
 )
-pkgver=1.11.491
+pkgver=1.11.492
 pkgrel=1
 pkgdesc='AWS SDK for C++'
 arch=(x86_64)
@@ -33,7 +33,7 @@ makedepends=(
   zlib
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('1e2ef6015938aa91a0397ef6bcf18f1f73f067d33c1b1e3edb8d7d1682f21ce3')
+sha256sums=('5ba570efe5066c6aff0b1df7707db815353ae24ef66eb29f4404fbae33c982ba')
 
 prepare() {
   cd $pkgbase-$pkgver
@@ -172,6 +172,7 @@ package_aws-sdk-cpp-core() {
 package_aws-sdk-cpp-ec2() {
   pkgdesc+=" - EC2 libraries"
   depends=(
+    aws-c-common
     aws-crt-cpp
     aws-sdk-cpp-core
     gcc-libs
@@ -184,6 +185,7 @@ package_aws-sdk-cpp-ec2() {
 package_aws-sdk-cpp-firehose() {
   pkgdesc+=" - Firehose libraries"
   depends=(
+    aws-c-common
     aws-crt-cpp
     aws-sdk-cpp-core
     gcc-libs
@@ -208,6 +210,7 @@ package_aws-sdk-cpp-iam() {
 package_aws-sdk-cpp-kinesis() {
   pkgdesc+=" - Kinesis libraries"
   depends=(
+    aws-c-common
     aws-crt-cpp
     aws-sdk-cpp-core
     gcc-libs
