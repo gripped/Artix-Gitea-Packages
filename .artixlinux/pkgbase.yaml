@@ -15,12 +15,12 @@ pkgbase:
     - aspnet-targeting-pack
     - dotnet-source-built-artifacts
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -36,6 +36,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 9.0.1.sdk102-1
     packages:
       - dotnet-host-9.0.1.sdk102-1-x86_64.pkg.tar.zst
@@ -46,17 +49,6 @@ repos:
       - dotnet-targeting-pack-9.0.1.sdk102-1-x86_64.pkg.tar.zst
       - aspnet-targeting-pack-9.0.1.sdk102-1-x86_64.pkg.tar.zst
       - dotnet-source-built-artifacts-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-  world:
-    version: 8.0.11.sdk111-1
-    packages:
-      - dotnet-host-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - netstandard-targeting-pack-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-8.0.11.sdk111-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-8.0.11.sdk111-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
