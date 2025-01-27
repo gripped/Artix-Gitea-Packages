@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: libxisf
-  version: 0.2.12-1
+  version: 0.2.13-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.12-1
+    version: 0.2.13-1
     packages:
-      - libxisf-0.2.12-1-x86_64.pkg.tar.zst
+      - libxisf-0.2.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
