@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: passt
-  version: 2024_12_11.09478d5-1
+  version: 2025_01_21.4f2c8e7-1
   arch:
     - x86_64
   pkgname:
     - passt
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024_12_11.09478d5-1
+    version: 2025_01_21.4f2c8e7-1
     packages:
-      - passt-2024_12_11.09478d5-1-x86_64.pkg.tar.zst
+      - passt-2025_01_21.4f2c8e7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
