@@ -1,4 +1,5 @@
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: loqs
 # Contributor: Jorge Araya Navarro <jorgejavieran@yahoo.com.mx>
 # Contributor: Cristian Porras <porrascristian@gmail.com>
@@ -9,7 +10,7 @@
 pkgbase=godot
 pkgname=(godot godot-mono)
 pkgver=4.3
-pkgrel=5
+pkgrel=6
 pkgdesc='Advanced cross-platform 2D and 3D game engine'
 url='https://godotengine.org/'
 license=(MIT)
