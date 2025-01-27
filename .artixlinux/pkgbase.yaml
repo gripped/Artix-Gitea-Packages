@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: libstaroffice
-  version: 0.0.7-3
+  version: 0.0.7-4
   arch:
     - x86_64
   pkgname:
     - libstaroffice
+    - libstaroffice-doc
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,7 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.0.7-3
+    version: 0.0.7-4
     packages:
-      - libstaroffice-0.0.7-3-x86_64.pkg.tar.zst
+      - libstaroffice-0.0.7-4-x86_64.pkg.tar.zst
+      - libstaroffice-doc-0.0.7-4-x86_64.pkg.tar.zst
 team: galaxy
