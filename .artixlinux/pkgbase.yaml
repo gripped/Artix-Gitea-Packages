@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: jami-daemon
-  version: 20240812-3
+  version: 20240812-4
   arch:
     - x86_64
   pkgname:
     - jami-daemon
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20240812-4
+    packages:
+      - jami-daemon-20240812-4-x86_64.pkg.tar.zst
   world:
     version: 20240812-3
     packages:
