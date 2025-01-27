@@ -1,11 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 
 pkgname=artix-metro
-pkgver=3.0.0
+pkgver=3.0.1
 pkgrel=1
 pkgdesc="Artix package pushing automation tool"
 arch=('any')
-url="https://gitea.artixlinux.org/corysanin"
+url="https://gitea.artixlinux.org/corysanin/artix-metro"
 license=('MIT')
 depends=(
     'nodejs'
@@ -15,7 +15,7 @@ depends=(
 makedepends=('npm')
 source=("https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz")
 noextract=($pkgname-$pkgver.tgz)
-sha512sums=('6658f2133f9b8f3df3842892a0c1af041cca31a6d893813331265bc89a859d2c50081d833b996d8f47039ac5efa89c8b4afd14cdfa2faae7ce8b7695da547d58')
+sha512sums=('b57c79792c6f2142edc9134376c38b70ca1bf96cc706f01c708855a80652eab987dc5a6c117754153bee29e35e6c90d88dc5f105ef2cf77ba32e73b716f08890')
 options=("!strip")
 
 package() {
@@ -31,4 +31,11 @@ package() {
 
     install -d "$pkgdir"/usr/share/licenses/$pkgname
     ln -s /usr/lib/node_modules/$pkgname/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+    # install completions
+    install -Dm644 "$pkgdir"/usr/lib/node_modules/artix-metro/completion/bash \
+        "$pkgdir"/usr/share/bash-completion/completions/artix-metro
+    install -Dm644 "$pkgdir"/usr/lib/node_modules/artix-metro/completion/zsh \
+        "$pkgdir"/usr/share/zsh/site-functions/_artix-metro
+
 }
