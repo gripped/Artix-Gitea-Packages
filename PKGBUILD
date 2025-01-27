@@ -14,7 +14,7 @@
 
 pkgname=valgrind
 pkgver=3.24.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Tool to help find memory-management problems in programs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -29,7 +29,7 @@ optdepends=(
 )
 provides=('valgrind-multilib')
 replaces=('valgrind-multilib')
-options=('!emptydirs' '!strip')
+options=('!emptydirs' '!strip' 'debug')
 source=(https://sourceware.org/pub/valgrind/valgrind-${pkgver}.tar.bz2{,.asc}
         valgrind-3.7.0-respect-flags.patch)
 validpgpkeys=(
