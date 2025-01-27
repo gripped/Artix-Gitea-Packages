@@ -8,19 +8,17 @@ pkgbase:
     - boost
     - boost-libs
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-goblins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 1.87.0-2
-    packages:
-      - boost-1.87.0-2-x86_64.pkg.tar.zst
-      - boost-libs-1.87.0-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   system-gremlins:
     version: null
     packages: []
@@ -28,10 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.87.0-1
+    version: 1.87.0-2
     packages:
-      - boost-1.87.0-1-x86_64.pkg.tar.zst
-      - boost-libs-1.87.0-1-x86_64.pkg.tar.zst
+      - boost-1.87.0-2-x86_64.pkg.tar.zst
+      - boost-libs-1.87.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
