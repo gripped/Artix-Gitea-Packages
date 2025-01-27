@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artix-live
-  version: 2025.01-2
+  version: 2025.01-3
   arch:
     - any
   pkgname:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 2025.01-2
+    version: 2025.01-3
     packages:
-      - artix-live-base-2025.01-2-any.pkg.tar.zst
-      - artix-live-openrc-2025.01-2-any.pkg.tar.zst
-      - artix-live-runit-2025.01-2-any.pkg.tar.zst
-      - artix-live-s6-2025.01-2-any.pkg.tar.zst
-      - artix-live-dinit-2025.01-2-any.pkg.tar.zst
-      - artix-grub-live-2025.01-2-any.pkg.tar.zst
+      - artix-live-base-2025.01-3-any.pkg.tar.zst
+      - artix-live-openrc-2025.01-3-any.pkg.tar.zst
+      - artix-live-runit-2025.01-3-any.pkg.tar.zst
+      - artix-live-s6-2025.01-3-any.pkg.tar.zst
+      - artix-live-dinit-2025.01-3-any.pkg.tar.zst
+      - artix-grub-live-2025.01-3-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
