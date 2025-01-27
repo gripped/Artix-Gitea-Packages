@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: js128
-  version: 128.5.1-1
+  version: 128.6.0-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 128.5.1-1
+    version: 128.6.0-1
     packages:
-      - js128-128.5.1-1-x86_64.pkg.tar.zst
+      - js128-128.6.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
