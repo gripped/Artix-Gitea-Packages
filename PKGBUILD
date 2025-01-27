@@ -10,13 +10,13 @@ pkgname=('artix-live-base'
         'artix-live-dinit'
         'artix-grub-live')
 pkgver=2025.01
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix live session'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artix-live"
 license=('GPL')
 makedepends=('git' 'bash' 'artools-base')
-_commit=82eaa0abe9adf6d402602ffb8aa90f4537a6b4bc
+_commit=67be036faa9bb1814b5f34fae064c91804e0d437
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
