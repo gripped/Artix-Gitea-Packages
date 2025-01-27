@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: artix-metro
-  version: 3.0.1-1
+  version: 3.0.2-1
   arch:
     - any
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.0.1-1
+    version: 3.0.2-1
     packages:
-      - artix-metro-3.0.1-1-any.pkg.tar.zst
+      - artix-metro-3.0.2-1-any.pkg.tar.zst
