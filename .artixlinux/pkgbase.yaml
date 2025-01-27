@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-extutils-libbuilder
-  version: 0.08-13
+  version: 0.09-1
   arch:
     - any
   pkgname:
     - perl-extutils-libbuilder
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.08-13
+    version: 0.09-1
     packages:
-      - perl-extutils-libbuilder-0.08-13-any.pkg.tar.zst
+      - perl-extutils-libbuilder-0.09-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
