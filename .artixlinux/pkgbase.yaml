@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-text-bibtex
-  version: 0.89-4
+  version: 0.90-1
   arch:
     - x86_64
   pkgname:
     - perl-text-bibtex
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.89-4
+    version: 0.90-1
     packages:
-      - perl-text-bibtex-0.89-4-x86_64.pkg.tar.zst
+      - perl-text-bibtex-0.90-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
