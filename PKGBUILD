@@ -5,8 +5,8 @@
 # Contributor: jlkon13 <internet@devpi.de>
 
 pkgname=coturn
-pkgver=4.6.2
-pkgrel=2
+pkgver=4.6.3
+pkgrel=1
 pkgdesc='Open-source implementation of TURN and STUN server'
 arch=(x86_64)
 url=https://github.com/coturn/coturn
@@ -16,8 +16,8 @@ backup=(etc/turnserver/turnserver.conf)
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz
         turnserver.sysusers.d
         turnserver.tmpfiles.d)
-sha256sums=('13f2a38b66cffb73d86b5ed24acba4e1371d738d758a6039e3a18f0c84c176ad'
-            '92e51ecd664ab53031baa0aeee615fa7c4e73f79c5a3ebc49ac8e0919e4d23fd'
+sha256sums=('dc3a529fd9956dc8771752a7169c5ad4c18b9deef3ec96049de30fabf1637704'
+            '11514a04ca93195502d48374d6163e8e17f6f00043d92b20180fa8f570f2e25a'
             'd765d14ff3a6527498257e4dc9e76231742cd41d8fe658004e171b8937db6a75')
 
 build() {

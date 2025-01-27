@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: coturn
-  version: 4.6.2-2
+  version: 4.6.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.6.2-2
+    version: 4.6.3-1
     packages:
-      - coturn-4.6.2-2-x86_64.pkg.tar.zst
+      - coturn-4.6.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
