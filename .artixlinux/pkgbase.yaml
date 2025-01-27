@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: libetonyek
-  version: 0.1.12-1
+  version: 0.1.12-2
   arch:
     - x86_64
   pkgname:
     - libetonyek
+    - libetonyek-doc
 actions:
   addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.12-1
+    version: 0.1.12-2
     packages:
-      - libetonyek-0.1.12-1-x86_64.pkg.tar.zst
+      - libetonyek-0.1.12-2-x86_64.pkg.tar.zst
+      - libetonyek-doc-0.1.12-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
