@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: libwps
-  version: 0.4.14-2
+  version: 0.4.14-3
   arch:
     - x86_64
   pkgname:
     - libwps
+    - libwps-doc
 actions:
   addRepo: world
   removeRepo: null
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.14-2
+    version: 0.4.14-3
     packages:
-      - libwps-0.4.14-2-x86_64.pkg.tar.zst
+      - libwps-0.4.14-3-x86_64.pkg.tar.zst
+      - libwps-doc-0.4.14-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
