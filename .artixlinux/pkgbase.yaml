@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: five-or-more
-  version: 3.32.3-3
+  version: 3.32.3-4
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.32.3-3
+    version: 3.32.3-4
     packages:
-      - five-or-more-3.32.3-3-x86_64.pkg.tar.zst
+      - five-or-more-3.32.3-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
