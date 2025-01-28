@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-screenshot
-  version: 41.0+r39+ga362197-2
+  version: 41.0+r39+ga362197-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 41.0+r39+ga362197-2
+    version: 41.0+r39+ga362197-3
     packages:
-      - gnome-screenshot-41.0+r39+ga362197-2-x86_64.pkg.tar.zst
+      - gnome-screenshot-41.0+r39+ga362197-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
