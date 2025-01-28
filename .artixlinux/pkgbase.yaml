@@ -1,21 +1,20 @@
 ---
 pkgbase:
   name: transmission
-  version: 4.0.6-4
+  version: 4.0.6-6
   arch:
     - x86_64
   pkgname:
     - transmission-cli
     - transmission-gtk
     - transmission-qt
-    - libtransmission
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,12 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.0.6-4
+    version: 4.0.6-6
     packages:
-      - transmission-cli-4.0.6-4-x86_64.pkg.tar.zst
-      - transmission-gtk-4.0.6-4-x86_64.pkg.tar.zst
-      - transmission-qt-4.0.6-4-x86_64.pkg.tar.zst
-      - libtransmission-4.0.6-4-x86_64.pkg.tar.zst
+      - transmission-cli-4.0.6-6-x86_64.pkg.tar.zst
+      - transmission-gtk-4.0.6-6-x86_64.pkg.tar.zst
+      - transmission-qt-4.0.6-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
