@@ -55,6 +55,7 @@ depends=(cairo # libcairo.so
          xcb-util-wm # libxcb-ewmh.so  libxcb-icccm.so 
          xorg-xwayland)
 makedepends=(cmake
+             glaze
              meson
              ninja
              vulkan-headers
