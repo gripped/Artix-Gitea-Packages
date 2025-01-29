@@ -13,7 +13,7 @@ makedepends=('python-sphinx' 'python-setuptools')
 checkdepends=('python-pytest')
 backup=('etc/sshuttle/tunnel.conf' 'etc/sshuttle/prefixes.conf')
 source=("https://github.com/sshuttle/$pkgname/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
-        'sshuttle.service' 'prefixes.conf' 'tunnel.conf')
+        'prefixes.conf' 'tunnel.conf')
 sha512sums=('c24a6490c1877b9ded8f5f4f44571953c4c204c33f0238c709ca32c7a581ddc919bfc48beb4fafd3a4d346cccd9b02dc7051b6233ff989a0ad329d55c1c5ec47'
             'cc5a5dee7991c7641fa8a4fb356e1977aa9d1cbfed63cb5ebf8732c4de76be841f66d9267472e70578b176f528d8cfb4f75e634d5d915f4c8bcdc0b801db8a13'
             'acd3d0024d4604cc6a96609286c3f27bce2f0b70a068f58a2110dacc235b22ba7cd83c8989f46d0a9391eda7d272040bb3b1b2c547ae3fa0c9f61bef0a187dda')
