@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-parallel-n64
-  version: 5251-1
+  version: 5259-1
   arch:
     - x86_64
   pkgname:
@@ -49,6 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 5251-1
+    version: 5259-1
     packages:
-      - libretro-parallel-n64-5251-1-x86_64.pkg.tar.zst
+      - libretro-parallel-n64-5259-1-x86_64.pkg.tar.zst
+team: galaxy
