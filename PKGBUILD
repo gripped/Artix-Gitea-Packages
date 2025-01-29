@@ -1,11 +1,12 @@
-# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
 # Contributor: László Várady <laszlo.varady93@gmail.com>
 # Contributor: Snaipe
 
 pkgname=criterion
 _pkgname=Criterion
 pkgver=2.4.2
-pkgrel=3
+pkgrel=6
 pkgdesc="A cross-platform C and C++ unit testing framework for the 21st century"
 arch=(x86_64)
 url="https://github.com/Snaipe/Criterion"
@@ -51,6 +52,7 @@ check() {
 
 package() {
   cd $_pkgname-$pkgver
+  depends+=(libgit2.so)
   meson install -C build --destdir "$pkgdir"
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
