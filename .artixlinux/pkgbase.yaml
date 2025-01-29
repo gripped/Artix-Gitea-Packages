@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: aquamarine
-  version: 0.7.1-2
+  version: 0.7.1-3
   arch:
     - x86_64
     - aarch64
   pkgname:
     - aquamarine
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.7.1-3
+    packages:
+      - aquamarine-0.7.1-3-x86_64.pkg.tar.zst
   world:
     version: 0.7.1-2
     packages:
