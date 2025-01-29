@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zabbix
-  version: 7.2.2-1
+  version: 7.2.3-1
   arch:
     - x86_64
   pkgname:
@@ -36,14 +36,14 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.2.2-1
+    version: 7.2.3-1
     packages:
-      - zabbix-server-7.2.2-1-x86_64.pkg.tar.zst
-      - zabbix-agent-7.2.2-1-x86_64.pkg.tar.zst
-      - zabbix-agent2-7.2.2-1-x86_64.pkg.tar.zst
-      - zabbix-proxy-7.2.2-1-x86_64.pkg.tar.zst
-      - zabbix-frontend-php-7.2.2-1-x86_64.pkg.tar.zst
-      - zabbix-web-service-7.2.2-1-x86_64.pkg.tar.zst
+      - zabbix-server-7.2.3-1-x86_64.pkg.tar.zst
+      - zabbix-agent-7.2.3-1-x86_64.pkg.tar.zst
+      - zabbix-agent2-7.2.3-1-x86_64.pkg.tar.zst
+      - zabbix-proxy-7.2.3-1-x86_64.pkg.tar.zst
+      - zabbix-frontend-php-7.2.3-1-x86_64.pkg.tar.zst
+      - zabbix-web-service-7.2.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
