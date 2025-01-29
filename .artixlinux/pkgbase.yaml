@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gegl
-  version: 0.4.52-1
+  version: 0.4.52-2
   arch:
     - x86_64
   pkgname:
     - gegl
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.52-1
+    version: 0.4.52-2
     packages:
-      - gegl-0.4.52-1-x86_64.pkg.tar.zst
+      - gegl-0.4.52-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
