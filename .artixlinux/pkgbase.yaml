@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libshumate
-  version: 1.3.1-1
+  version: 1.3.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.1-1
+    version: 1.3.2-1
     packages:
-      - libshumate-1.3.1-1-x86_64.pkg.tar.zst
-      - libshumate-docs-1.3.1-1-x86_64.pkg.tar.zst
+      - libshumate-1.3.2-1-x86_64.pkg.tar.zst
+      - libshumate-docs-1.3.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
