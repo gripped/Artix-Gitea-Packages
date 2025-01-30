@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: geoip-database
-  version: 20241116-1
+  version: 20250129-1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 20241116-1
+    version: 20250129-1
     packages:
-      - geoip-database-20241116-1-any.pkg.tar.zst
-      - geoip-database-extra-20241116-1-any.pkg.tar.zst
+      - geoip-database-20250129-1-any.pkg.tar.zst
+      - geoip-database-extra-20250129-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
