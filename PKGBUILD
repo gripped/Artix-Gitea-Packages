@@ -1,0 +1,25 @@
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: l0gic <l0gic@invalid.invalid>
+
+pkgname=hyprland-protocols
+pkgver=0.6.1
+pkgrel=1
+pkgdesc='Wayland protocol extensions for Hyprland'
+arch=(x86_64 aarch64)
+url="https://github.com/hyprwm/$pkgname"
+license=(BSD-3-Clause)
+makedepends=(meson)
+_archive="$pkgname-$pkgver"
+source=("$url/archive/v$pkgver/$_archive.tar.gz")
+sha256sums=('c6b6a4ab2cc4fc487d25545fcf2079ccbd05dd2954864b7fa359b412f47bf1f3')
+
+build() {
+	artix-meson "$_archive" build
+	meson compile -C build
+}
+
+package() {
+	DESTDIR="$pkgdir" meson install -C build
+	cd "$_archive"
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
