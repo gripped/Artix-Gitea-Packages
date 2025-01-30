@@ -109,6 +109,7 @@ build() {
     -D shine=disabled
     -D tremor=disabled
     -D b_ndebug=true
+    -D systemd=disabled
   )
 
   # NOTE: sndio conflicts with alsa
