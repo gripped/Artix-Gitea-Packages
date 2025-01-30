@@ -5,7 +5,7 @@
 pkgbase=linux-rt
 pkgver=6.10.2.rt14.artix1
 archpkgver=6.10.2.rt14.arch1
-pkgrel=3
+pkgrel=4
 pkgdesc='Linux RT'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt"
