@@ -6,41 +6,68 @@
 # Contributor: Tom Burdick <thomas.burdick@wrightwoodtech.com>
 # Contributor: Ricardo Catalinas Jiménez <jimenezrick@gmail.com>
 
-pkgname=erlang
+pkgbase=erlang
+pkgname=(
+  erlang
+  erlang-core
+  erlang-asn1
+  erlang-common_test
+  erlang-debugger
+  erlang-dialyzer
+  erlang-diameter
+  erlang-edoc
+  erlang-eldap
+  erlang-erl_interface
+  erlang-et
+  erlang-eunit
+  erlang-ftp
+  erlang-inets
+  erlang-jinterface
+  erlang-megaco
+  erlang-mnesia
+  erlang-observer
+  erlang-odbc
+  erlang-os_mon
+  erlang-parsetools
+  erlang-public_key
+  erlang-reltool
+  erlang-runtime_tools
+  erlang-sasl
+  erlang-snmp
+  erlang-ssh
+  erlang-ssl
+  erlang-syntax_tools
+  erlang-tftp
+  erlang-tools
+  erlang-wx
+  erlang-xmerl
+)
 pkgver=27.2.1
-pkgrel=2
+pkgrel=3
 pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
 arch=(x86_64)
 url='https://erlang.org/'
 license=(Apache-2.0)
-depends=(
+makedepends=(
   gcc-libs
+  git
   glib2
   glibc
   glu
+  java-environment
   libglvnd
+  libxslt
+  lksctp-tools
+  mesa
   ncurses
   openssl
+  perl
   unixodbc
   webkit2gtk-4.1
   wxwidgets-common
   wxwidgets-gtk3
   zlib
 )
-makedepends=(
-  fop
-  git
-  java-environment
-  libxslt
-  lksctp-tools
-  mesa
-  perl
-)
-optdepends=(
-  'java-environment: for Java support'
-  'lksctp-tools: for SCTP support'
-)
-provides=(erlang-nox)
 conflicts=(erlang-nox)
 options=(staticlibs)
 source=(
@@ -75,16 +102,437 @@ build() {
   make DOC_TARGETS="chunks man" docs
 }
 
-package() {
+_pick() {
+  local dest="$1"
+  shift
+  for obj in "$@"; do
+    mkdir -p "$dest/$(dirname "$obj")/"
+    mv -v -t "$dest/$(dirname "$obj")/" "$obj"
+  done
+}
+
+package_erlang() {
+  depends=(
+    erlang-asn1
+    erlang-common_test
+    erlang-core
+    erlang-debugger
+    erlang-dialyzer
+    erlang-diameter
+    erlang-edoc
+    erlang-eldap
+    erlang-erl_interface
+    erlang-et
+    erlang-eunit
+    erlang-ftp
+    erlang-inets
+    erlang-jinterface
+    erlang-megaco
+    erlang-mnesia
+    erlang-observer
+    erlang-odbc
+    erlang-os_mon
+    erlang-parsetools
+    erlang-public_key
+    erlang-reltool
+    erlang-runtime_tools
+    erlang-sasl
+    erlang-snmp
+    erlang-ssh
+    erlang-ssl
+    erlang-syntax_tools
+    erlang-tftp
+    erlang-tools
+    erlang-wx
+    erlang-xmerl
+  )
+}
+
+package_erlang-core() {
+  pkgdesc='Erlang core compenents (compiler, crypto, erts, kernel, stdlib)'
+  depends=(
+    gcc-libs
+    glibc
+    lksctp-tools
+    ncurses
+    openssl
+    zlib
+  )
+
   install -vDm644 epmd.conf "$pkgdir/etc/conf.d/epmd"
 
   cd otp
   make DESTDIR="$pkgdir" install install-docs \
     DOC_TARGETS="chunks man" \
     RELSYS_MANDIR="$pkgdir/usr/share/man"
-
-  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" \
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgbase" \
     AUTHORS CONTRIBUTING.md README.md
 
-  rm -v "$pkgdir/usr/lib/erlang/Install" "$pkgdir/usr/share/man/man1/.gitignore"
+  # Remove unwanted files
+  rm -v \
+    "$pkgdir/usr/lib/erlang/Install" \
+    "$pkgdir/usr/share/man/man1/.gitignore" \
+    "$pkgdir/usr/lib/erlang/misc/format_man_pages" \
+    "$pkgdir/usr/share/man/man1/erlsrv.1" \
+    "$pkgdir/usr/share/man/man1/werl.1"
+
+  cd "$pkgdir"
+  _pick "$srcdir/erlang-asn1" usr/lib/erlang/lib/asn1-*
+  _pick "$srcdir/erlang-common_test" \
+    usr/bin/ct_run \
+    usr/lib/erlang/bin/ct_run \
+    usr/lib/erlang/erts-*/bin/ct_run \
+    usr/lib/erlang/lib/common_test-* \
+    usr/share/man/man1/ct_run.1
+  _pick "$srcdir/erlang-debugger" usr/lib/erlang/lib/debugger-*
+  _pick "$srcdir/erlang-diameter" \
+    usr/lib/erlang/lib/diameter-* \
+    usr/share/man/man1/diameterc.1
+  _pick "$srcdir/erlang-dialyzer" \
+    usr/bin/dialyzer \
+    usr/bin/typer \
+    usr/lib/erlang/bin/dialyzer \
+    usr/lib/erlang/bin/typer \
+    usr/lib/erlang/erts-*/bin/dialyzer \
+    usr/lib/erlang/erts-*/bin/typer \
+    usr/lib/erlang/lib/dialyzer-* \
+    usr/share/man/man1/typer.1
+  _pick "$srcdir/erlang-edoc" \
+    usr/lib/erlang/lib/edoc-* \
+    usr/share/man/man1/edoc.1
+  _pick "$srcdir/erlang-eldap" usr/lib/erlang/lib/eldap-*
+  _pick "$srcdir/erlang-erl_interface" \
+    usr/lib/erlang/lib/erl_interface-* \
+    usr/lib/erlang/bin/erl_call \
+    usr/lib/erlang/erts-*/bin/erl_call \
+    usr/share/man/man1/erl_call.1
+  _pick "$srcdir/erlang-et" usr/lib/erlang/lib/et-*
+  _pick "$srcdir/erlang-eunit" usr/lib/erlang/lib/eunit-*
+  _pick "$srcdir/erlang-ftp" usr/lib/erlang/lib/ftp-*
+  _pick "$srcdir/erlang-inets" usr/lib/erlang/lib/inets-*
+  _pick "$srcdir/erlang-jinterface" usr/lib/erlang/lib/jinterface-*
+  _pick "$srcdir/erlang-megaco" usr/lib/erlang/lib/megaco-*
+  _pick "$srcdir/erlang-mnesia" usr/lib/erlang/lib/mnesia-*
+  _pick "$srcdir/erlang-observer" \
+    usr/lib/erlang/lib/observer-* \
+    usr/share/man/man1/cdv.1
+  _pick "$srcdir/erlang-odbc" usr/lib/erlang/lib/odbc-*
+  _pick "$srcdir/erlang-os_mon" usr/lib/erlang/lib/os_mon-*
+  _pick "$srcdir/erlang-parsetools" usr/lib/erlang/lib/parsetools-*
+  _pick "$srcdir/erlang-public_key" usr/lib/erlang/lib/public_key-*
+  _pick "$srcdir/erlang-reltool" usr/lib/erlang/lib/reltool-*
+  _pick "$srcdir/erlang-runtime_tools" usr/lib/erlang/lib/runtime_tools-*
+  _pick "$srcdir/erlang-sasl" usr/lib/erlang/lib/sasl-*
+  _pick "$srcdir/erlang-snmp" \
+    usr/lib/erlang/lib/snmp-* \
+    usr/share/man/man1/snmpc.1
+  _pick "$srcdir/erlang-ssh" usr/lib/erlang/lib/ssh-*
+  _pick "$srcdir/erlang-ssl" usr/lib/erlang/lib/ssl-*
+  _pick "$srcdir/erlang-syntax_tools" usr/lib/erlang/lib/syntax_tools-*
+  _pick "$srcdir/erlang-tftp" usr/lib/erlang/lib/tftp-*
+  _pick "$srcdir/erlang-tools" usr/lib/erlang/lib/tools-*
+  _pick "$srcdir/erlang-wx" usr/lib/erlang/lib/wx-*
+  _pick "$srcdir/erlang-xmerl" usr/lib/erlang/lib/xmerl-*
+}
+
+package_erlang-asn1() {
+  pkgdesc='Provides support for Abstract Syntax Notation One'
+  depends=(
+    erlang-core
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-common_test() {
+  pkgdesc='A portable framework for automatic testing'
+  depends=(
+    erlang-core
+    erlang-debugger
+    erlang-inets
+    erlang-observer
+    erlang-runtime_tools
+    erlang-sasl
+    erlang-snmp
+    erlang-ssh
+    erlang-syntax_tools
+    erlang-tools
+    erlang-xmerl
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-debugger() {
+  pkgdesc='A debugger for debugging and testing of Erlang programs'
+  depends=(
+    erlang-core
+    erlang-wx
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-dialyzer() {
+  pkgdesc='A DIscrepancy AnaLYZer for ERlang programs'
+  depends=(
+    erlang-core
+    erlang-syntax_tools
+    erlang-wx
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-diameter() {
+  pkgdesc='Diameter (RFC 3588) library'
+  depends=(
+    erlang-core
+    erlang-runtime_tools
+    erlang-ssl
+    erlang-syntax_tools
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-edoc() {
+  pkgdesc='A utility used to generate documentation out of tags in source files'
+  depends=(
+    erlang-core
+    erlang-inets
+    erlang-syntax_tools
+    erlang-xmerl
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-eldap() {
+  pkgdesc='Erlang LDAP library'
+  depends=(
+    erlang-asn1
+    erlang-core
+    erlang-ssl
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-erl_interface() {
+  pkgdesc='Low level interface to C'
+  depends=(
+    erlang-core
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-et() {
+  pkgdesc='An event tracer for Erlang programs'
+  depends=(
+    erlang-core
+    erlang-runtime_tools
+    erlang-wx
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-eunit() {
+  pkgdesc='Support for unit testing'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-ftp() {
+  pkgdesc='FTP client'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-inets() {
+  pkgdesc='A set of services such as a Web server and a HTTP client etc'
+  depends=(
+    erlang-core
+    erlang-mnesia
+    erlang-runtime_tools
+    erlang-ssl
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-jinterface() {
+  pkgdesc='A library for accessing Java from Erlang'
+  depends=(
+    erlang-core
+    java-runtime
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-megaco() {
+  pkgdesc='Megaco/H.248 support library'
+  depends=(
+    erlang-asn1
+    erlang-core
+    erlang-debugger
+    erlang-et
+    erlang-runtime_tools
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-mnesia() {
+  pkgdesc='A heavy duty real-time distributed database'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-observer() {
+  pkgdesc='A set of tools for tracing and investigation of distributed systems'
+  depends=(
+    erlang-core
+    erlang-et
+    erlang-inets
+    erlang-runtime_tools
+    erlang-wx
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-odbc() {
+  pkgdesc='A library for unixODBC support in Erlang'
+  depends=(
+    erlang-core
+    glibc
+    unixodbc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-os_mon() {
+  pkgdesc='A monitor which allows inspection of the underlying operating system'
+  depends=(
+    erlang-core
+    erlang-mnesia
+    erlang-sasl
+    erlang-snmp
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-parsetools() {
+  pkgdesc='A set of parsing and lexical analysis tools'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-public_key() {
+  pkgdesc='API to public key infrastructure'
+  depends=(
+    erlang-asn1
+    erlang-core
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-reltool() {
+  pkgdesc='A release management tool'
+  depends=(
+    erlang-core
+    erlang-sasl
+    erlang-tools
+    erlang-wx
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-runtime_tools() {
+  pkgdesc='A set of tools to include in a production system'
+  depends=(
+    erlang-core
+    erlang-mnesia
+    glibc
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-sasl() {
+  pkgdesc='The System Architecture Support Libraries'
+  depends=(
+    erlang-core
+    erlang-tools
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-snmp() {
+  pkgdesc='Simple Network Management Protocol (SNMP) support'
+  depends=(
+    erlang-core
+    erlang-mnesia
+    erlang-runtime_tools
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-ssh() {
+  pkgdesc='Secure Shell application with sftp and ssh support'
+  depends=(
+    erlang-core
+    erlang-public_key
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-ssl() {
+  pkgdesc='Secure Socket Layer support'
+  depends=(
+    erlang-core
+    erlang-inets
+    erlang-public_key
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-syntax_tools() {
+  pkgdesc='A set of tools for dealing with erlang sources'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-tftp() {
+  pkgdesc='TFTP client'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-tools() {
+  pkgdesc='A set of programming tools including a coverage analyzer etc'
+  depends=(
+    erlang-core
+    erlang-inets
+    erlang-runtime_tools
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-wx() {
+  pkgdesc='A library for wxWidgets support in Erlang'
+  depends=(
+    erlang-core
+    gcc-libs
+    glib2
+    glibc
+    glu
+    libglvnd
+    webkit2gtk-4.1
+    wxwidgets-common
+    wxwidgets-gtk3
+  )
+  cp -va -t "$pkgdir" "$pkgname/"*
+}
+
+package_erlang-xmerl() {
+  pkgdesc='Provides support for XML 1.0'
+  depends=(erlang-core)
+  cp -va -t "$pkgdir" "$pkgname/"*
 }
