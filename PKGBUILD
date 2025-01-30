@@ -43,7 +43,7 @@ pkgname=(
   erlang-xmerl
 )
 pkgver=27.2.1
-pkgrel=3
+pkgrel=4
 pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
 arch=(x86_64)
 url='https://erlang.org/'
@@ -157,6 +157,13 @@ package_erlang-core() {
     ncurses
     openssl
     zlib
+  )
+  provides=(
+    erlang-compiler
+    erlang-crypto
+    erlang-erts
+    erlang-kernel
+    erlang-stdlib
   )
 
   install -vDm644 epmd.conf "$pkgdir/etc/conf.d/epmd"
