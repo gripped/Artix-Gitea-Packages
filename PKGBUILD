@@ -10,7 +10,7 @@ pkgname=(
   debuginfod
 )
 pkgver=0.192
-pkgrel=2.1
+pkgrel=3
 pkgdesc="Handle ELF object files and DWARF debugging information"
 arch=(x86_64)
 url="https://sourceware.org/elfutils/"
@@ -28,7 +28,7 @@ makedepends=(
   zlib
   zstd
 )
-options=(staticlibs)
+options=(staticlibs debug)
 source=(git+$_url?signed#tag=$pkgbase-$pkgver)
 sha512sums=('ac5f968fc855bd1a504d8b0c676601d9ec7095efe85bb6e2d29980dee9399a921d707a93c16667f979649a166cc3c86e5192898318c5b572f9bf4d3e7229f754')
 b2sums=('fdd1d3857ea5061562e91f17e08ebc1b556fb092fd5e32040b9176b7799583d716b31ef5c2652b4ddcd71ec46fa7ddd852e253f9f4f2a21c5e0425f77a3e8310')
