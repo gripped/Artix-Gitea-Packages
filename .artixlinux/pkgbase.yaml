@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: b43-fwcutter
-  version: 019-5
+  version: 019-6
   arch:
     - x86_64
   pkgname:
     - b43-fwcutter
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 019-6
+    packages:
+      - b43-fwcutter-019-6-x86_64.pkg.tar.zst
   system:
     version: 019-5
     packages:
