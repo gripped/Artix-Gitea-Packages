@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libslirp
-  version: 4.8.0-1
+  version: 4.9.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.8.0-1
+    version: 4.9.0-1
     packages:
-      - libslirp-4.8.0-1-x86_64.pkg.tar.zst
+      - libslirp-4.9.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
