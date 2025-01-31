@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: 0ad
-  version: a27-2
+  version: a27-1
   arch:
     - x86_64
   pkgname:
@@ -50,7 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: a27-2
+    version: a27-1
     packages:
-      - 0ad-a27-2-x86_64.pkg.tar.zst
+      - 0ad-a27-1-x86_64.pkg.tar.zst
 team: galaxy
