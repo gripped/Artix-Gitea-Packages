@@ -1,0 +1,29 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: revel <revelΘmuub·net>
+# Contributor: Marcos J. S. Magalhaes <mjsmagalhaes ^dot^ insc _at_ gmail ~dot~ com>
+
+pkgname=premake
+pkgver=5.0beta4
+_pkgver=5.0.0-beta4
+pkgrel=1
+pkgdesc="A simple build configuration and project generation tool"
+arch=('x86_64')
+url="https://premake.github.io/"
+license=('BSD-3-Clause')
+depends=('glibc' 'util-linux-libs')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/premake/premake-core/archive/refs/tags/v${_pkgver}.tar.gz")
+sha512sums=('a826e8bed95eb94ea1cfab8f072f7381f9ec23e4065f8a54ac002cce9b006bff2ad9abadf8255ec5827154f0daa8f8731489cd75019705b08a21cf40ed6a0261')
+
+build() {
+  cd "premake-core-$_pkgver"
+
+  make -f Bootstrap.mak linux
+}
+
+package() {
+  cd "premake-core-$_pkgver"
+
+  install -Dm755 "bin/release/premake5" "${pkgdir}/usr/bin/premake5"
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
