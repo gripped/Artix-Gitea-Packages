@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-wavpack
-  version: 5.7.0-1
+  version: 5.8.1-1
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 5.7.0-1
+    version: 5.8.1-1
     packages:
-      - lib32-wavpack-5.7.0-1-x86_64.pkg.tar.zst
+      - lib32-wavpack-5.8.1-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
@@ -52,12 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: lib32
