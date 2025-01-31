@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: iio-sensor-proxy
-  version: 3.5-2
+  version: 3.6-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.5-2
+    version: 3.6-1
     packages:
-      - iio-sensor-proxy-3.5-2-x86_64.pkg.tar.zst
+      - iio-sensor-proxy-3.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
