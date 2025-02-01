@@ -1,0 +1,67 @@
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+# Contributor: Pig Fang <g-plane@hotmail.com>
+# Contributor: SandaruKasa <sandarukasa+aur@ya.ru>
+# Contributor: Evine Deng <evinedeng@hotmail.com>
+
+pkgname=yazi
+pkgver=0.4.2
+pkgrel=2
+pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
+url="https://github.com/sxyazi/yazi"
+arch=("x86_64")
+license=('MIT')
+depends=('gcc-libs' 'ttf-nerd-fonts-symbols')
+optdepends=(
+	'jq: for JSON preview'
+	'7zip: for archive preview'
+	'ffmpeg: for video thumbnails'
+	'fd: for file searching'
+	'ripgrep: for file content searching'
+	'fzf: for directory jumping'
+	'poppler: for PDF preview'
+	'zoxide: for directory jumping'
+	'imagemagick: for previewing fonts'
+	'chafa: for previewing images'
+)
+makedepends=('cargo' 'imagemagick')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/sxyazi/$pkgname/archive/v$pkgver.tar.gz")
+sha256sums=('88995c90954d140f455cf9ca4f87f9ca36390717377be86b0672456e1eb5f65f')
+options=('!lto')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  VERGEN_GIT_SHA="Arch Linux" YAZI_GEN_COMPLETIONS=true cargo build --release --frozen --no-default-features
+  YAZI_GEN_COMPLETIONS=true cargo build --release -p "$pkgname-cli"
+}
+
+check() {
+  cd "$pkgname"-$pkgver
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm755 "target/release/ya" "$pkgdir/usr/bin/ya"
+  install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENCE"
+  install -Dm644 "README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 "assets/yazi.desktop" "$pkgdir/usr/share/applications/yazi.desktop"
+
+  local r
+  for r in 16 24 32 48 64 128 256; do
+    install -dm755 "$pkgdir/usr/share/icons/hicolor/${r}x${r}/apps"
+    convert assets/logo.png -resize "${r}x${r}" "$pkgdir/usr/share/icons/hicolor/${r}x${r}/apps/yazi.png"
+  done
+
+  cd "$pkgname-boot/completions"
+  install -Dm644 "$pkgname.bash" "$pkgdir/usr/share/bash-completion/completions/$pkgname"
+  install -Dm644 "$pkgname.fish" -t "$pkgdir/usr/share/fish/vendor_completions.d/"
+  install -Dm644 "_$pkgname" -t "$pkgdir/usr/share/zsh/site-functions/"
+}
+
+# vim: ts=2 sw=2 et:
