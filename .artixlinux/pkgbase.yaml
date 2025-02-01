@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: tree-sitter
-  version: 0.24.7-1
+  version: 0.25.0-1
   arch:
     - x86_64
   pkgname:
     - tree-sitter
     - tree-sitter-cli
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.25.0-1
+    packages:
+      - tree-sitter-0.25.0-1-x86_64.pkg.tar.zst
+      - tree-sitter-cli-0.25.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
