@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zenity
-  version: 4.0.3-1
+  version: 4.0.5-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.0.3-1
+    version: 4.0.5-1
     packages:
-      - zenity-4.0.3-1-x86_64.pkg.tar.zst
+      - zenity-4.0.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
