@@ -2,7 +2,7 @@
 
 pkgname=efl
 pkgver=1.28.0
-pkgrel=1.2
+pkgrel=3
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="http://www.enlightenment.org"
@@ -15,7 +15,7 @@ depends=('curl' 'fontconfig' 'fribidi' 'harfbuzz'
          'libpng' 'libtiff' 'giflib' 'lz4' 'zlib' 'libelogind' 'udev' 'openssl'
          'glibc' 'libutil-linux' 'dbus' 'shared-mime-info' 'mailcap'
          'ttf-font' 'scim' 'wayland' 'libxkbcommon-x11'
-         'libavif' 'libheif' 'libjxl' 'rlottie' 'libxpresent')
+         'libavif' 'libheif' 'libjxl' 'rlottie')
 makedepends=('git' 'meson' 'ninja' 'gcc' 'binutils' 'procps-ng' 'wayland-protocols' 'pulseaudio' 'doxygen')
 optdepends=('gst-plugins-base: Video and thumbnail codecs'
             'gst-plugins-good: Video and thumbnail codecs'
@@ -45,27 +45,19 @@ build() {
   fi
   mkdir -p build
 
-  meson setup \
+  meson setup --prefix=/usr --buildtype=release \
+    -Dpulseaudio=true \
+    -Dglib=true \
     -Dsystemd=false \
-    -Dwl=true \
-    -Dbuildtype=plain \
-    -Dlibdir=lib \
-    -Dlocalstatedir=/var \
-    -Dprefix=/usr \
-    -Dsysconfdir=/etc \
-    -Dwrap_mode=nodownload \
-    -Dbindings=lua,cxx \
-    -Dbuild-tests=false \
-    -Ddocs=true \
-    -Ddrm=false \
-    -Delua=true \
-    -Dembedded-lz4=false \
-    -Devas-loaders-disabler=json,avif,jxl \
+    -Dnetwork-backend=connman \
     -Dfb=true \
-    -Dnetwork-backend=none \
-    -Dopengl=full \
-    -Dtslib=false \
-    -Dxpresent=true \
+    -Ddrm=true \
+    -Dwl=true \
+    -Dlua-interpreter=lua \
+    -Dbindings= \
+    -Dbuild-tests=false \
+    -Dbuild-examples=false \
+    -Ddocs=true \
     . build
 
   ninja -C build
