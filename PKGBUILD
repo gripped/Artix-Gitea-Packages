@@ -5,7 +5,7 @@
 pkgname=qt6-tools
 _pkgver=6.8.2
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -39,11 +39,14 @@ prepare() {
   git submodule init
   git submodule set-url src/assistant/qlitehtml "$srcdir"/qlitehtml
   git -c protocol.file.allow=always submodule update
+
+  git cherry-pick -n 9cbd235f7e9dd5baea2f55a6fe1c29a7abd7255b # Add desktop and metainfo files for GUI tools
 }
 
 build() {
   cmake -B build -S $_pkgfn -G Ninja \
     -DINSTALL_PUBLICBINDIR=usr/bin \
+    -DQT_INSTALL_XDG_DESKTOP_ENTRIES=ON \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
 }
