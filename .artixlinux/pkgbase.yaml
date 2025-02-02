@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - aws-crt-cpp
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.29.10-1
-    packages:
-      - aws-crt-cpp-0.29.10-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 0.30.1-1
     packages:
