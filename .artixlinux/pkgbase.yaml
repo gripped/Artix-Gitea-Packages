@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: aws-c-s3
-  version: 0.7.10-1
+  version: 0.7.11-1
   arch:
     - x86_64
   pkgname:
     - aws-c-s3
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - aws-c-s3-0.7.10-1-x86_64.pkg.tar.zst
   world:
-    version: 0.7.9-1
+    version: 0.7.11-1
     packages:
-      - aws-c-s3-0.7.9-1-x86_64.pkg.tar.zst
+      - aws-c-s3-0.7.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
