@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt5-tools
-  version: 5.15.16+kde+r3-5
+  version: 5.15.16+kde+r3-6
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.15.16+kde+r3-5
+    version: 5.15.16+kde+r3-6
     packages:
-      - qt5-tools-5.15.16+kde+r3-5-x86_64.pkg.tar.zst
+      - qt5-tools-5.15.16+kde+r3-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
