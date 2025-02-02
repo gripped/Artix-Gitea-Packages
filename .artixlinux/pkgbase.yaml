@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: emacs
-  version: 29.4-3
+  version: 29.4-4
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - emacs-nox
     - emacs-wayland
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,12 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 29.4-4
+    packages:
+      - emacs-29.4-4-x86_64.pkg.tar.zst
+      - emacs-nativecomp-29.4-4-x86_64.pkg.tar.zst
+      - emacs-nox-29.4-4-x86_64.pkg.tar.zst
+      - emacs-wayland-29.4-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
