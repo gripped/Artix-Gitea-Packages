@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: aws-crt-cpp
-  version: 0.29.10-1
+  version: 0.30.1-1
   arch:
     - x86_64
   pkgname:
     - aws-crt-cpp
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,9 +33,9 @@ repos:
     packages:
       - aws-crt-cpp-0.29.10-1-x86_64.pkg.tar.zst
   world:
-    version: 0.29.9-1
+    version: 0.30.1-1
     packages:
-      - aws-crt-cpp-0.29.9-1-x86_64.pkg.tar.zst
+      - aws-crt-cpp-0.30.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
