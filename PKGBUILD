@@ -2,22 +2,22 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=npm
-pkgver=11.0.0
-pkgrel=1
+pkgver=11.1.0
+pkgrel=2
 pkgdesc='JavaScript package manager'
 arch=(any)
 url=https://www.npmjs.com
 license=(Artistic-2.0)
 depends=(
   node-gyp
-  nodejs
+  'nodejs>=20.17.0'
   nodejs-nopt
   semver
 )
 makedepends=(git)
 optdepends=("git: for dependencies using Git URL's")
 source=("npm-cli::git+https://github.com/npm/cli.git#tag=v$pkgver")
-b2sums=('45d379a1b8eb7d8249ce6327cfb00b14aa0e3d396278a308954df1d5b20873999f073dc922dd51111cc3d0f1a017deba351c419c656c63b9c8550c60149c3ef4')
+b2sums=('a2aad19ba18107274ac6ff414c17eda72e4f68461473e5891b04c391dde9af6ee2473067499f4e3ae27ea38c36f85c1878652283b2879d6d4e1d9e2c1a25deea')
 
 build() {
   cd npm-cli
