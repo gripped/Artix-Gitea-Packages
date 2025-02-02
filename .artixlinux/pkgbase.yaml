@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-gstreamer
-  version: 1.24.11-1
+  version: 1.24.12-1
   arch:
     - x86_64
   pkgname:
@@ -43,12 +43,12 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.24.11-1
+    version: 1.24.12-1
     packages:
-      - lib32-gstreamer-1.24.11-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-base-libs-1.24.11-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-base-1.24.11-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-good-1.24.11-1-x86_64.pkg.tar.zst
+      - lib32-gstreamer-1.24.12-1-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-base-libs-1.24.12-1-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-base-1.24.12-1-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-good-1.24.12-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
