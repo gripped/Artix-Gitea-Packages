@@ -85,6 +85,9 @@ _google_api_key=AIzaSyDwr302FpOSkGRpLlUpPThNTDPbXcIn_FM
 _mozilla_api_key=16674381-f021-49de-8622-3021c5942aff
 
 prepare() {
+
+  export RUSTUP_TOOLCHAIN=1.83
+
   cd $pkgname-$pkgver
 
   echo "${noextract[@]}"
