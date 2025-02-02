@@ -1,12 +1,12 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: artist for Artix Linux
 
 # we really need our own apptrem tars
 # this is a temporary and messy solution
 _pkgname=archlinux-appstream-data
 
 pkgname=artixlinux-appstream-data
-pkgver=20231203
-pkgrel=2
+pkgver=20250202
+pkgrel=1
 pkgdesc='Artix Linux application database for AppStream-based software centers'
 arch=(any)
 url='https://www.artixlinux.org'
@@ -34,22 +34,22 @@ source+=(galaxy-$pkgver.xml.gz::https://sources.archlinux.org/other/packages/$_p
             galaxy-icons-128x128-$pkgver.tar.gz::https://sources.archlinux.org/other/packages/$_pkgname/$pkgver/extra/icons-128x128.tar.gz)
 # noextract+=(galaxy.xml.gz-$pkgver galaxy-icons-{48x48,64x64,128x128}-$pkgver.tar.gz)
 noextract+=(galaxy-icons-{48x48,64x64,128x128}-$pkgver.tar.gz)
-sha256sums=('dd39d407d0fc7999b79e24b5c8289c0b902a0ddb5b0b8c0bb91197ec2436fd4a'
+sha256sums=('536f61750c62a05ea9b5714c03183f121a5d95e5b05e2c89463031061137e7e1'
             '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
-            'a4e2dbdcfe60076a8e870a20e4497545ccc363eff1ce68d2ddc69b4625059e54'
+            'df6236ceed933a247c639621345c1f325ba5d76197a6d4f1c2174a714f6ad9bb'
             '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
-            '3f045d2505b8f3c97f88b59c314acc6a3fbf51073e66dbcc50e4671e7158266e'
-            '5c7a074cbe104f8f2d7bce7d0aa2900cef4fe13f32a482a4a49b436b03600aa9'
-            '7322bd5971b7b718af1bf0bceb229b250288147485cb8cc68833abae1ba21f4d'
-            'e2514a1d2f3dde1d8ca753b8769559811b1223a9dc050609d95f4615c8c33c8f'
-            '99c7a2b88bc82b3176d8dd4ba38b7f1e673b337c0d0f7654dd198e28207d7bdb'
-            '132810a5af221919b3d37fc6eaa68bd3b5b8dc5d2f93f6597659e82c204749fd'
-            '33eba8f6a569d8ec31f49c301151c3051a4e2aacacce8e3da49565ce79afc22e'
-            'c8b2e9c0ec30d14bc2c48392e5066c71119608612a03116638d919c81488c3b4'
-            '3f045d2505b8f3c97f88b59c314acc6a3fbf51073e66dbcc50e4671e7158266e'
-            '5c7a074cbe104f8f2d7bce7d0aa2900cef4fe13f32a482a4a49b436b03600aa9'
-            '7322bd5971b7b718af1bf0bceb229b250288147485cb8cc68833abae1ba21f4d'
-            'e2514a1d2f3dde1d8ca753b8769559811b1223a9dc050609d95f4615c8c33c8f')
+            'e530eca2718a74c6436b06130a13b3cc394142c4c9bfaae55313a23bdbd2051e'
+            'a9b9073ad9ee20257d2bff50c6ecdfd42fe14cc866ca00013a4a208d5a13bcba'
+            'a8d6a43fe1b886152c6b6c9613ca8997632ee15341e8acfecd276f2392cc2185'
+            '5becd14ba6bd6c7bf0a7d93094181ce2febaa5303f1e5aed1a0382c9753a4a67'
+            'd39e7a4176bbcbc8be096031eaa436e88c23a74fe27c734ac73093ddfe167f1f'
+            'b5e96af95d7bc2f208ffd73ba7862075443bdd60f0aca44457b1c97077f722ee'
+            'cb2318f13fdfff2dca063cf27075e7e2087a785bcdad7b8b93def4b9660f479f'
+            'b12e2bf47cd2f4ca4ba56ea3c56fbccf35c00fb0a89c014362a295a690d36881'
+            'e530eca2718a74c6436b06130a13b3cc394142c4c9bfaae55313a23bdbd2051e'
+            'a9b9073ad9ee20257d2bff50c6ecdfd42fe14cc866ca00013a4a208d5a13bcba'
+            'a8d6a43fe1b886152c6b6c9613ca8997632ee15341e8acfecd276f2392cc2185'
+            '5becd14ba6bd6c7bf0a7d93094181ce2febaa5303f1e5aed1a0382c9753a4a67')
 
 prepare() {
     local _a

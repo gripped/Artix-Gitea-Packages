@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: artixlinux-appstream-data
-  version: 20231203-2
+  version: 20250202-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20231203-2
+    version: 20250202-1
     packages:
-      - artixlinux-appstream-data-20231203-2-any.pkg.tar.zst
+      - artixlinux-appstream-data-20250202-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
