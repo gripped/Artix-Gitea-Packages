@@ -1,8 +1,8 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.12.11
-pkgrel=2
+pkgver=6.12.12
+pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
 arch=(x86_64)
@@ -25,6 +25,7 @@ makedepends=(
   texlive-latexextra
 )
 options=(
+  !debug
   !strip
 )
 _srcname=linux-$pkgver
@@ -41,18 +42,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('475172fdbd87a153f123a57952672e773bdb6daf5b58a417d1a5e419fcfeec49'
+sha256sums=('e98942d17ef7063b3f2d6d7692bf24899e2e021cf832d19b55308ec8e8e08eff'
             'SKIP'
             '3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c'
             '423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e'
             '596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1'
-            'c21eca67b9389643e3eaded8757bdf3475fd5f0846e58b27d4e23a2580f4caaf')
-b2sums=('8f31f2aed810d1fe724142011731f361a543da301a1a14c92b852c8cf81f7c4bdce1b74783e0dd965d7bf225dc6006b44eed622bf6dff09312265ce3cae1ea32'
+            '923921341ce8423b36caa5aba460bb6982f903f93c3505992b595df327cc59a0')
+b2sums=('e32d607f2732c5ad719aa2f31c7f42f6243d7e9d52447dc923563d2982a68a3bed836acac116e1e30f15e4eceb87671a96db507a7019d00eaf52f36c9340b07f'
         'SKIP'
         'b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918'
         '01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5'
         '410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea'
-        '821292c548a394ef4537e767fa13bf61cbf4afc675af035ef0f38765eb57cefcbbdf1bd53d0f54c7d903040ab3199213ad1dd0e3b7b45138ca211eae4ecee559')
+        'e67a1dcd4a5e9d8b8053cbc581cca46f9366e597809c0e9ee163e374d3fed0e7e94424c3547bc711b1856f0b394134c357d7d471af50242ed3b99939fc07a8fd')
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
