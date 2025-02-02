@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: aws-c-common
-  version: 0.10.9-1
+  version: 0.11.0-1
   arch:
     - x86_64
   pkgname:
     - aws-c-common
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - aws-c-common-0.10.9-1-x86_64.pkg.tar.zst
   world:
-    version: 0.10.8-1
+    version: 0.11.0-1
     packages:
-      - aws-c-common-0.10.8-1-x86_64.pkg.tar.zst
+      - aws-c-common-0.11.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
