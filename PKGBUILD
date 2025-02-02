@@ -1,12 +1,13 @@
 # Maintainer:
 # Contributor: Jonas Witschel <diabonas@archlinux.org>
+
 pkgname=python-proxy.py
 _name=${pkgname#python-}
-pkgver=2.4.4rc5
-pkgrel=3
+pkgver=2.4.9
+pkgrel=1
 pkgdesc='Lightweight HTTP, HTTPS, HTTP2 and WebSockets proxy server'
 arch=(any)
-url='https://github.com/abhinavsingh/proxy.py'
+url=https://github.com/abhinavsingh/proxy.py
 license=(BSD-3-Clause)
 depends=(
   python
@@ -31,13 +32,13 @@ optdepends=(
 )
 source=(
   # may have unreproducible tarballs until issue is solved: https://github.com/abhinavsingh/proxy.py/issues/1394
-  $pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz
+  "$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz"
 )
-sha512sums=('c59a44cef9fefd7ade6c0643f6dea1850664c39c0a435b0fce53f36e1758a75a68d238137e59872dcd8886cb444a2b81eb8d9f86f6975f4029206f2c7b2554f6')
-b2sums=('39719f2554e2a70bfa0c0a788456b0cbdf521a03d752450f9ed458a5efc18059d1879762b98876828a6f3e1006acf9876a9a95a1497063c2551486afb32913e4')
+sha512sums=('ff3806598534b4ca8fbf0c13e2ab6a917bd3b2b6b2392642bfd775ce9c49d1437e2871848133f15f9f80686fa91e5032be2926c747c33efe584704b78c0a34d2')
+b2sums=('a0c7474cf6007b5171c9129af483ce785c1bcb1b76aedd448e697b38ffb4b7d84e096a1d8c44624c5bc9b2c1f513ee48b96adfc7399e24b549c310f0d24c9106')
 
 build() {
-  cd $_name-$pkgver
+  cd "$_name"-$pkgver
   python -m build --wheel --no-isolation
 }
 
@@ -82,15 +83,16 @@ check() {
     --deselect tests/plugin/test_http_proxy_plugins_with_tls_interception.py::TestHttpProxyPluginExamplesWithTlsInterception::test_man_in_the_middle_plugin
   )
 
-  cd $_name-$pkgver
+  cd "$_name"-$pkgver
   pytest "${pytest_options[@]}"
 }
 
 package() {
-  cd $_name-$pkgver
+  cd "$_name"-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
 
   # Remove entry point usr/bin/proxy to avoid conflict with libproxy (FS#73325)
-  rm -r "$pkgdir/usr/bin"
+  cd "$pkgdir"
+  rm -r usr/bin
 }
