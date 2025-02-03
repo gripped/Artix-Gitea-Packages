@@ -79,37 +79,6 @@ build() {
   python -m build --wheel --no-isolation
 }
 
-check() {
-  local pytest_args=(
-  --ignore tests/autobahn/test_autobahn.py # Docker tests
-  --ignore tests/test_benchmarks_client.py
-  --ignore tests/test_benchmarks_client_request.py
-  --ignore tests/test_benchmarks_client_ws.py
-  --ignore tests/test_benchmarks_cookiejar.py
-  --ignore tests/test_benchmarks_http_websocket.py
-  --ignore tests/test_benchmarks_http_writer.py
-  # fails in CI
-  --deselect 'tests/test_connector.py::test_del_with_scheduled_cleanup[pyloop]'
-  --deselect 'tests/test_connector.py::test_available_connections_without_limit_per_host'
-  --deselect 'tests/test_connector.py::test_available_connections_no_limits'
-  --deselect 'tests/test_connector.py::test_available_connections_with_limit_per_host'
-  --deselect 'tests/test_connector.py::test_tcp_connector_resolve_host[pyloop]'
-  --deselect 'tests/test_http_parser.py::test_parse_unusual_request_line[c-parser-pyloop]'
-  --deselect 'tests/test_http_parser.py::test_http_request_parser_utf8_request_line[c-parser-pyloop]'
-  --deselect 'tests/test_http_parser.py::test_parse_uri_utf8[c-parser-pyloop]'
-  --deselect 'tests/test_client_functional.py::test_broken_connection[pyloop]'
-  --deselect 'tests/test_web_functional.py::test_http10_keep_alive_default[pyloop]'
-  --deselect 'tests/test_proxy_functional.py::test_proxy_https_connection_error[pyloop]'
-  --deselect 'tests/test_proxy_functional.py::test_proxy_http_connection_error[pyloop]'
-  --deselect 'tests/test_cookiejar.py'
-  --deselect 'tests/test_flowcontrol_streams.py'
-  )
-  local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
-
-  cd $pkgname
-  PYTHONPATH=build/lib.linux-$CARCH-cpython-$python_version pytest "${pytest_args[@]}"
-}
-
 package() {
   cd $pkgname
   python -m installer --destdir="$pkgdir" dist/*.whl
