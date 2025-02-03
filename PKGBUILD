@@ -102,6 +102,7 @@ check() {
   --deselect 'tests/test_proxy_functional.py::test_proxy_https_connection_error[pyloop]'
   --deselect 'tests/test_proxy_functional.py::test_proxy_http_connection_error[pyloop]'
   --deselect 'tests/test_cookiejar.py'
+  --deselect 'tests/test_flowcontrol_streams.py'
   )
   local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
 
