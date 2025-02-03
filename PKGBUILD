@@ -3,7 +3,7 @@
 
 pkgname=kongress
 pkgver=24.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Companion application for conferences'
 url='https://apps.kde.org/kongress/'
 arch=(x86_64)
@@ -12,6 +12,7 @@ depends=(gcc-libs
          glibc
          kcalendarcore
          kconfig
+         kcontacts
          kcoreaddons
          kcrash
          kdbusaddons
@@ -20,6 +21,7 @@ depends=(gcc-libs
          kirigami-addons
          knotifications
          kosmindoormap
+         qqc2-desktop-style
          qt6-base
          qt6-declarative
          qt6-location
