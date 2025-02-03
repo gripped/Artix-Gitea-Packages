@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: intel-metee
-  version: 4.3.0-1
+  version: 4.3.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3.0-1
+    version: 4.3.1-1
     packages:
-      - intel-metee-4.3.0-1-x86_64.pkg.tar.zst
-      - intel-metee-doc-4.3.0-1-x86_64.pkg.tar.zst
+      - intel-metee-4.3.1-1-x86_64.pkg.tar.zst
+      - intel-metee-doc-4.3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
