@@ -6,7 +6,7 @@
 pkgbase=zlib-ng
 pkgname=(zlib-ng zlib-ng-compat)
 pkgver=2.2.3
-pkgrel=1
+pkgrel=2
 pkgdesc='zlib replacement with optimizations for next generation systems'
 url='https://github.com/zlib-ng/zlib-ng'
 arch=('x86_64')
@@ -33,6 +33,7 @@ build() {
     -DCMAKE_INSTALL_LIBDIR=lib
     -Wno-dev
     -DWITH_GTEST=OFF
+    -DBUILD_SHARED_LIBS=ON
   )
 
   echo "Building zlib-ng"
