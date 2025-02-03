@@ -7,7 +7,7 @@
 
 pkgname=libguestfs
 pkgver=1.54.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Access and modify virtual machine disk images"
 arch=(x86_64)
 url="https://libguestfs.org/"
@@ -77,7 +77,7 @@ makedepends=(
   bash-completion
   cdrtools
   cpio
-  erlang-nox
+  erlang-erl_interface
   # ghc  # TODO: build haskell bindings
   go
   gobject-introspection
