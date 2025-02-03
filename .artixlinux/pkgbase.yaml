@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha
-  version: 0.4.1-18.3
+  version: 0.4.1-18.4
   arch:
     - x86_64
   pkgname:
@@ -51,7 +51,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.4.1-18.3
+    version: 0.4.1-18.4
     packages:
-      - moksha-0.4.1-18.3-x86_64.pkg.tar.zst
-      - moksha-module-mixer-0.4.1-18.3-x86_64.pkg.tar.zst
+      - moksha-0.4.1-18.4-x86_64.pkg.tar.zst
+      - moksha-module-mixer-0.4.1-18.4-x86_64.pkg.tar.zst

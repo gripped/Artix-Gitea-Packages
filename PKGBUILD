@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=18.3
+pkgrel=18.4
 _commit="632bc8ec1477cd2e0a758daeb5e78fa2c987ecc9"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -32,6 +32,7 @@ prepare() {
   cp "$srcdir/artix-icon.png" config/bodhi/icon.png
   cp "$srcdir/Artix_dna_spiral_dark_bw-4K.png" data/themes/img/
   cp "$srcdir/background.edc" data/themes/edc/
+  git cherry-pick -n 91cd788f0f29b111ac41bf862636cb28ca31db65
 }
 
 build() {
