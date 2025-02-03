@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: squid
-  version: 6.12-1
+  version: 6.13-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.12-1
+    version: 6.13-1
     packages:
-      - squid-6.12-1-x86_64.pkg.tar.zst
+      - squid-6.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
