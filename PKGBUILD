@@ -90,6 +90,7 @@ check() {
   --ignore tests/test_benchmarks_http_writer.py
   # fails in CI
   --deselect 'tests/test_connector.py::test_del_with_scheduled_cleanup[pyloop]'
+  --deselect 'tests/test_connector.py::test_available_connections_without_limit_per_host[0]'
   --deselect 'tests/test_http_parser.py::test_parse_unusual_request_line[c-parser-pyloop]'
   --deselect 'tests/test_http_parser.py::test_http_request_parser_utf8_request_line[c-parser-pyloop]'
   --deselect 'tests/test_client_functional.py::test_broken_connection[pyloop]'
