@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pyqt6-sip
-  version: 13.9.1-1
+  version: 13.10.0-1
   arch:
     - x86_64
   pkgname:
     - python-pyqt6-sip
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 13.9.1-2
+    version: 13.10.0-1
     packages:
-      - python-pyqt6-sip-13.9.1-2-x86_64.pkg.tar.zst
+      - python-pyqt6-sip-13.10.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
