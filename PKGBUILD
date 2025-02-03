@@ -3,7 +3,7 @@
 
 pkgname=francis
 pkgver=24.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Track your time'
 url='https://apps.kde.org/francis/'
 arch=(x86_64)
@@ -18,6 +18,7 @@ depends=(gcc-libs
          kirigami
          kirigami-addons
          knotifications
+         qqc2-desktop-style
          qt6-base
          qt6-declarative)
 makedepends=(extra-cmake-modules)
