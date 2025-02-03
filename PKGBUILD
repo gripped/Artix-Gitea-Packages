@@ -3,7 +3,7 @@
 
 pkgname=plasmatube
 pkgver=24.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Kirigami YouTube video player based on QtMultimedia and youtube-dl'
 url='https://apps.kde.org/plasmatube/'
 arch=(x86_64)
@@ -13,6 +13,7 @@ depends=(gcc-libs
          kconfig
          kcoreaddons
          kdbusaddons
+         kdeclarative
          ki18n
          kirigami
          kirigami-addons
@@ -21,6 +22,7 @@ depends=(gcc-libs
          kwindowsystem
          mpvqt
          purpose
+         qqc2-desktop-style
          qt6-base
          qt6-declarative
          qtkeychain-qt6)
