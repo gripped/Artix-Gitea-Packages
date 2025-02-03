@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xsd
-  version: 4.2.0-1
+  version: 4.2.0-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2.0-1
+    version: 4.2.0-2
     packages:
-      - xsd-4.2.0-1-x86_64.pkg.tar.zst
+      - xsd-4.2.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world

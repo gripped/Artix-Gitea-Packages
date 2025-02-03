@@ -1,9 +1,10 @@
-# Maintainer:
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:
 # Contributor: kevku <kevku@gmx.com>
 
 pkgname=xsd
 pkgver=4.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An open-source, cross-platform W3C XML Schema to C++ data binding compiler'
 arch=(x86_64)
 url='https://www.codesynthesis.com/products/xsd'
