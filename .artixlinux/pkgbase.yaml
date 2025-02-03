@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-rackup
-  version: 2.1.0-3
+  version: 2.2.1-1
   arch:
     - any
   pkgname:
     - ruby-rackup
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.2.1-1
+    packages:
+      - ruby-rackup-2.2.1-1-any.pkg.tar.zst
   world:
     version: 2.1.0-3
     packages:
