@@ -1,9 +1,10 @@
-# Maintainer:
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:
 
 pkgname=libxsd-frontend
 pkgver=2.1.0
 _xsdver=4.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A compiler frontend for the W3C XML Schema definition language'
 arch=(x86_64)
 url='https://www.codesynthesis.com/projects/libxsd-frontend/'
