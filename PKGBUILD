@@ -3,7 +3,7 @@
 
 pkgname=kasts
 pkgver=24.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Kirigami-based podcast player'
 url='https://apps.kde.org/kasts/'
 arch=(x86_64)
@@ -17,6 +17,7 @@ depends=(gcc-libs
          ki18n
          kirigami
          kirigami-addons
+         qqc2-desktop-style
          qt6-base
          qt6-declarative
          qt6-multimedia
