@@ -3,7 +3,7 @@
 
 pkgname=kweather
 pkgver=24.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Weather application for Plasma Mobile'
 url='https://apps.kde.org/kweather/'
 arch=(x86_64)
@@ -18,6 +18,7 @@ depends=(gcc-libs
          kirigami-addons
          kweathercore
          libplasma
+         qqc2-desktop-style
          qt6-base
          qt6-charts
          qt6-declarative)
