@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: dart-sass
-  version: 1.82.0-1
+  version: 1.83.4-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.82.0-1
+    version: 1.83.4-1
     packages:
-      - dart-sass-1.82.0-1-x86_64.pkg.tar.zst
+      - dart-sass-1.83.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
