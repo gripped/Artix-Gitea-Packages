@@ -7,7 +7,7 @@ _fver=1.7.3
 
 pkgname=netifrc
 pkgver=0.7.12
-pkgrel=1
+pkgrel=2
 pkgdesc="Gentoo Network Interface Management Scripts"
 arch=('x86_64')
 url="https://github.com/gentoo/netifrc"
@@ -32,6 +32,7 @@ prepare() {
     sed -e "s|genfun_prefix=|genfun_prefix=/usr|" \
         -e "s|lib/gentoo|lib/artix|g" -i "${_fname}-${_fname}-${_fver}"/functions.sh
     sed -e "s|lib/gentoo|lib/artix|g" -i "${_fname}-${_fname}-${_fver}"/meson.build
+    sed -e "s|/usr/libexec/|/usr/lib/|g" -i "${pkgname}-${pkgver}"/net/iwd.sh
 }
 
 build(){
