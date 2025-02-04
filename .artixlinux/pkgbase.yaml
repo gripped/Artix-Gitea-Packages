@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-chef-utils
-  version: 19.0.71-1
+  version: 19.0.82-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 19.0.71-1
+    version: 19.0.82-1
     packages:
-      - ruby-chef-utils-19.0.71-1-any.pkg.tar.zst
+      - ruby-chef-utils-19.0.82-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
