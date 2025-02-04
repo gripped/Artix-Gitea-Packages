@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: cudnn
-  version: 9.5.1.17-1.1
+  version: 9.7.0.66-1
   arch:
     - x86_64
   pkgname:
     - cudnn
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 9.7.0.66-1
+    packages:
+      - cudnn-9.7.0.66-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
