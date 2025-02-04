@@ -6,7 +6,7 @@
 
 pkgname=dhcpcd
 pkgver=10.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="DHCP/ IPv4LL/ IPv6RA/ DHCPv6 client"
 url="https://roy.marples.name/projects/dhcpcd/"
 arch=(x86_64)
@@ -24,21 +24,26 @@ backup=(etc/$pkgname.conf)
 options=(emptydirs)
 source=(
   https://github.com/NetworkConfiguration/$pkgname/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz{,.asc}
+  glibc-2.41.patch::https://github.com/NetworkConfiguration/dhcpcd/commit/e9e40400003db2e4f12dba85acabbaf2212a520f.patch
   $pkgname.sysusers
   $pkgname.tmpfiles
 )
 sha256sums=('abc307c63853da3199baa5c1e15fd5ede9d68d068b2a59ca14c5a6768e9cc3b7'
             'SKIP'
+            'caca03c07a91233ae9df0641fa68d85ff3281db8b934e1206d6d6c933c6e0d05'
             '06788ad9f5f7ccb5d2a2da6f0322ff5771f8de82cfbe8b9ad954f2c38265e21b'
             '1ca593a91d537766d073e71cfab87881e6f6a2ccb5236a45531d5520b3af7a31')
 b2sums=('9d47ae8b97ba082f980966a2c3f688c6a8addb10989c166dafebdb6491793815c4caddc3016334f6549923632fd01fc8ce0987eca31af01948b0f4a643f88b38'
         'SKIP'
+        '1e0c7a5ee02d4af20366497d1b9596c719dda9f41ee1d30424740594c1109c136ab7e9f49fefd2fc69abd6c7900476bdd8922f2632d07d24100be99c3a2ff54a'
         '1f4ad7d27a33ea9d317b95817898bc853bda8ef6bf1b09d86b7a5b25a0dae89c246fdb919c62b677d25148c8b4cf8c02e99cf3fa583c3a63bd04d1817bf47872'
         'fab9f56a694b2bcaa26ebd4040984778ea4a3cccd57f17a0eb724a9fc4750157d97d9d0db747932c3b386938fe2bf1d6a4ba609cc5cc3a6b0e1ae39404ba21be')
 validpgpkeys=('A785ED2755955D9E93EA59F6597F97EA9AD45549')  # Roy Marples (NetBSD) <roy@NetBSD.org>
 
 prepare() {
   printf "# Do not attempt to obtain an IPv4LL address if we failed to get one via DHCP. See RFC 3927.\nnoipv4ll\n" >> $pkgname-$pkgver/src/$pkgname.conf
+  cd $pkgname-$pkgver
+  patch -Np1 < ../glibc-2.41.patch
 }
 
 build() {
