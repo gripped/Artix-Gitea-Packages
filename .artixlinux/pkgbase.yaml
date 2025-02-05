@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nautilus
-  version: 47.1-2
+  version: 47.2-1
   arch:
     - x86_64
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 47.1-2
+    version: 47.2-1
     packages:
-      - nautilus-47.1-2-x86_64.pkg.tar.zst
-      - libnautilus-extension-47.1-2-x86_64.pkg.tar.zst
-      - libnautilus-extension-docs-47.1-2-x86_64.pkg.tar.zst
+      - nautilus-47.2-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-47.2-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-docs-47.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

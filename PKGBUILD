@@ -8,8 +8,8 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=47.1
-pkgrel=2
+pkgver=47.2
+pkgrel=1
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
 arch=(x86_64)
@@ -53,11 +53,9 @@ checkdepends=(python-gobject)
 source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=${pkgver/[a-z]/.&}"
   0001-Disable-tracker-test.patch
-  0002-check-for-NULL-pointer-in-finish_info_provider-and-i.patch
 )
-b2sums=('abec4401ee2f599b9cb1bfbff6b111d2da965356da0c567f6c5bce97e1f6411862454400810a33424fd77afb50f8a3a70552b0e3bc57cfd4bee32462b83492a9'
-        '8befc868af7e4dc776c50c10d0c6852d237f41b1f4adf8c15e0c378a9ff035e38b2cd22926d313850babcd6c96b6dd2be95fa9e1299383e686ad5a0ff36b957f'
-        '891563c79b758ae19bd9610b8dbc309badb10ca50fffe072692124b0c021ac8e9ddb72d66b560c7f00f8ce5d2715d2e50d05b1ca85f3c925ed77c660fc72da55')
+b2sums=('e7dfef5988ef05f9c5e692b82d66267ae66bd7d094ab9e87a0cb7173d252db495bcd574c8361a25a1884a1c134b19e5a9b4a3423055fe23b5242000f9e164080'
+        '8befc868af7e4dc776c50c10d0c6852d237f41b1f4adf8c15e0c378a9ff035e38b2cd22926d313850babcd6c96b6dd2be95fa9e1299383e686ad5a0ff36b957f')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
   550660707A6F40376B9B9F8D504A78811E6160CC # Corey Berla <corey@berla.me>
@@ -68,11 +66,6 @@ prepare() {
 
   # Tracker test is broken in our build containers
   git apply -3 ../0001-Disable-tracker-test.patch
-
-  # Plugin crash fix
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/nautilus/-/merge_requests/1
-  # https://gitlab.gnome.org/GNOME/nautilus/-/merge_requests/1662
-  git apply -3 ../0002-check-for-NULL-pointer-in-finish_info_provider-and-i.patch
 }
 
 build() {
