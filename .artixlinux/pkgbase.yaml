@@ -10,12 +10,12 @@ pkgbase:
     - nvidia-dkms
     - nvidia-open-dkms
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,19 +31,15 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 570.86.16-2
     packages:
       - nvidia-utils-570.86.16-2-x86_64.pkg.tar.zst
       - opencl-nvidia-570.86.16-2-x86_64.pkg.tar.zst
       - nvidia-dkms-570.86.16-2-x86_64.pkg.tar.zst
       - nvidia-open-dkms-570.86.16-2-x86_64.pkg.tar.zst
-  world:
-    version: 565.77-3
-    packages:
-      - nvidia-utils-565.77-3-x86_64.pkg.tar.zst
-      - opencl-nvidia-565.77-3-x86_64.pkg.tar.zst
-      - nvidia-dkms-565.77-3-x86_64.pkg.tar.zst
-      - nvidia-open-dkms-565.77-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
