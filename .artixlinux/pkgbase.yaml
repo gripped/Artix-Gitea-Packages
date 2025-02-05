@@ -18,18 +18,21 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 14.2.1+r730+gc061ad5a36ba-1
     packages:
       - gcc-14.2.1+r730+gc061ad5a36ba-1-x86_64.pkg.tar.zst
@@ -44,21 +47,6 @@ repos:
       - gcc-rust-14.2.1+r730+gc061ad5a36ba-1-x86_64.pkg.tar.zst
       - lto-dump-14.2.1+r730+gc061ad5a36ba-1-x86_64.pkg.tar.zst
       - libgccjit-14.2.1+r730+gc061ad5a36ba-1-x86_64.pkg.tar.zst
-  system:
-    version: 14.2.1+r134+gab884fffe3fc-2
-    packages:
-      - gcc-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-libs-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - lib32-gcc-libs-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-ada-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-d-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-fortran-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-go-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-m2-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-objc-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - gcc-rust-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - lto-dump-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
-      - libgccjit-14.2.1+r134+gab884fffe3fc-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
