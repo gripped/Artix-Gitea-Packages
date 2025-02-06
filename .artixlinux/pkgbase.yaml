@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pillow
-  version: 11.0.0-3
+  version: 11.1.0-1
   arch:
     - x86_64
   pkgname:
     - python-pillow
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 11.0.0-3
+    version: 11.1.0-1
     packages:
-      - python-pillow-11.0.0-3-x86_64.pkg.tar.zst
+      - python-pillow-11.1.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
