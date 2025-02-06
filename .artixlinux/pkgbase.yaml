@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - usd
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -26,12 +26,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 25.02-2
     packages:
       - usd-25.02-2-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 25.02-1
     packages:
