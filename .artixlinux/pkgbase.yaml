@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: passim
-  version: 0.1.8-1
+  version: 0.1.9-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.8-1
+    version: 0.1.9-1
     packages:
-      - passim-0.1.8-1-x86_64.pkg.tar.zst
+      - passim-0.1.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
