@@ -2,13 +2,13 @@
 
 pkgname=basu
 pkgver=0.2.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The sd-bus library, extracted from systemd."
 url="https://git.sr.ht/~emersion/basu"
-license=('LGPL2.1')
+license=('LGPL-2.1-or-later')
 arch=('x86_64')
-makedepends=('meson' 'gperf' 'glibc' 'libcap')
-
+makedepends=('meson' 'gperf')
+depends=('glibc' 'gcc-libs' 'libcap')
 source=("${url}/refs/download/v${pkgver}/basu-${pkgver}.tar.gz")
 
 build() {
