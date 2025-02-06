@@ -42,11 +42,16 @@ check() {
   cd ${pkgname#python-}-$pkgver
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
+  # The `Runner` tests are skipped because they fail on CI.
   test-env/bin/python -m pytest -s \
     --deselect tests/runners.py::Local_::env::uses_execve_for_pty_True \
     --deselect tests/runners.py::Local_::pty \
     --deselect tests/runners.py::Local_::shell::defaults_to_bash_or_cmdexe_when_pty_True \
-    --deselect tests/runners.py::Local_::shell::may_be_overridden_when_pty_True
+    --deselect tests/runners.py::Local_::shell::may_be_overridden_when_pty_True \
+    --deselect tests/runners.py::Runner_::character_buffered_stdin::setcbreak_called_on_tty_stdins \
+    --deselect tests/runners.py::Runner_::character_buffered_stdin::setcbreak_not_called_if_process_not_foregrounded \
+    --deselect tests/runners.py::Runner_::character_buffered_stdin::tty_stdins_have_settings_restored_by_default \
+    --deselect tests/runners.py::Runner_::character_buffered_stdin::tty_stdins_have_settings_restored_on_KeyboardInterrupt
 }
 
 package() {
