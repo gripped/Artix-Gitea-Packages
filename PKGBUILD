@@ -4,7 +4,7 @@
 
 _name=FreeRDP
 pkgname=freerdp
-pkgver=3.10.3
+pkgver=3.11.0
 _libver=${pkgver/.*/}
 pkgrel=1
 epoch=2
@@ -66,8 +66,8 @@ provides=(
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
-sha512sums=('b3cbdbefe0aaa3ad533fd1b2959aeb3dd9bfa7fba56e47db2fd711741a25d1875c8191b43330b2aaf10e21787df16ec6eb8888e7cff3d59429fe6298a26f1ecd')
-b2sums=('c0171bd8d6994d07deb11e00becf5824893c5ad90252a05ef22b58f197fde529558ad3a8d1a108d3f06e0543ba1f278932a69cf777570f36d934e569e1612bc8')
+sha512sums=('9cebda9778d9d45bd3b2aaac03f3dd278ef6930960d001a9f3a72e96376623e7acd0cac2c73411148ae0a1762491a874b5f207a7f408847eced15be272630c34')
+b2sums=('4b0439dc25611c055039b464383f5b60450bcdfea889dcc5466f20ee1e5b2150b32199c0b6cf838a825a68b5fcc2cd8956949898f8f36ca3fec1a687c2b8cb07')
 
 build() {
   # gcc14 buildfix
@@ -107,6 +107,7 @@ build() {
     -D WINPR_UTILS_IMAGE_PNG=ON
     -D WINPR_UTILS_IMAGE_JPEG=ON
     -D WINPR_UTILS_IMAGE_WEBP=ON
+    -D WITH_CLIENT_SDL3=OFF
     -S $_name-$pkgver
     -W no-dev
   )
