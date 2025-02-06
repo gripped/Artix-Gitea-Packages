@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - blender
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -44,12 +44,12 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
     version: 17:4.3.2-8
     packages:
       - blender-17:4.3.2-8-x86_64.pkg.tar.zst
-  galaxy-gremlins:
-    version: null
-    packages: []
   galaxy:
     version: 17:4.3.2-7
     packages:
