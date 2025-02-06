@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rsync
-  version: 3.4.1-1
+  version: 3.4.1-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.4.1-1
+    version: 3.4.1-2
     packages:
-      - rsync-3.4.1-1-x86_64.pkg.tar.zst
+      - rsync-3.4.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
