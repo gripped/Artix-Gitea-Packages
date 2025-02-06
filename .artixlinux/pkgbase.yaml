@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-python-socks
-  version: 2.7.0-1
+  version: 2.7.1-1
   arch:
     - any
   pkgname:
     - python-python-socks
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-python-socks-2.5.3-2-any.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.7.1-1
+    packages:
+      - python-python-socks-2.7.1-1-any.pkg.tar.zst
   world:
     version: 2.7.0-1
     packages:
