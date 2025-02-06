@@ -3,11 +3,8 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
-_name=hypothesis
-_alt_name=$_name-python
 pkgname=python-hypothesis
-pkgver=6.124.7
-_version=$_alt_name-$pkgver
+pkgver=6.124.9
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -20,6 +17,7 @@ depends=(
   python-sortedcontainers
 )
 makedepends=(
+  git
   python-build
   python-installer
   python-setuptools
@@ -57,12 +55,18 @@ optdepends=(
   'python-redis: for redis support'
   'python-rich: for CLI'
 )
-source=("$_name-$_version.tar.gz::$_url/archive/$_version.tar.gz")
-sha512sums=('c9c699d830082ccfb056c42817592ad3736b3e1c2294bed889d9e581dc8d4b093a86a949b24e3fa842941daf18933c55c6a479cd6768c30cde0cecb94777a620')
-b2sums=('d0160dedfd78443724a7388020fa093ba95e8621403f4fa69f04c324a5be8d49b51c3cae4cca488a86046818b6762a3f9703b1963186ae82daed2c8cdf0f8f70')
+source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
+sha512sums=('2d8a2e25bbc5c37d92b472877d652cb4ebc94f14e0a1a2fac500e6664012d38493e69eb7bc8defe630807401c11cea00383ad9dad5248f725584a2f0464af531')
+b2sums=('40cab81645daf03cd06fd2e455e03da091c6e7600c150c8c76d6f9154e1b17b2e2f4f4fe299e338cf88ec03ae005461a6f7aa9a4c0e665c88359becb6c6a0492')
+
+prepare() {
+  cd $pkgname/hypothesis-python
+  # Fix test failing due to trailing comma diff
+  sed -i 's/],/]/' tests/ghostwriter/recorded/union_sequence_parameter.txt
+}
 
 build() {
-  cd $_name-$_version/$_alt_name
+  cd $pkgname/hypothesis-python
   python -m build -nw
 }
 
@@ -75,7 +79,7 @@ check() {
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
-  cd $_name-$_version/$_alt_name
+  cd $pkgname/hypothesis-python
   # install to temporary location, as importlib is used
   python -m installer --destdir=test_dir dist/*.whl
   export PYTHONPATH="$PWD/test_dir/$site_packages"
@@ -84,6 +88,6 @@ check() {
 }
 
 package() {
-  cd $_name-$_version/$_alt_name
+  cd $pkgname/hypothesis-python
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
