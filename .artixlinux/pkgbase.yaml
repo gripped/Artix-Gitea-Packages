@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: rabbitmq
-  version: 4.0.5-2
+  version: 4.0.5-3
   arch:
     - any
   pkgname:
     - rabbitmq
     - rabbitmqadmin
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.0.5-3
+    packages:
+      - rabbitmq-4.0.5-3-any.pkg.tar.zst
+      - rabbitmqadmin-4.0.5-3-any.pkg.tar.zst
   world:
     version: 4.0.5-2
     packages:
