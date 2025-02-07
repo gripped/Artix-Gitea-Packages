@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ropgadget
-  version: 7.4-3
+  version: 7.6-1
   arch:
     - any
   pkgname:
     - ropgadget
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.4-3
+    version: 7.6-1
     packages:
-      - ropgadget-7.4-3-any.pkg.tar.zst
+      - ropgadget-7.6-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
