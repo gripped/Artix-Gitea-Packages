@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-modules-extra
-pkgver=2
+pkgver=3
 pkgrel=1
 pkgdesc='Extra Modules for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -17,6 +17,7 @@ depends=(
   moksha-module-desktitle
   moksha-module-dictionary
   moksha-module-diskio
+  moksha-module-drawer
   moksha-module-emprint
   moksha-module-engage
   moksha-module-extramenu
