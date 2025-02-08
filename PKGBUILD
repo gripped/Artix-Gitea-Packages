@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=fvwm3
-pkgver=1.1.1
+pkgver=1.1.2
 pkgrel=1
 pkgdesc="A highly customizable virtual desktop window manager with small memory footprint."
 arch=('x86_64')
@@ -25,7 +25,7 @@ optdepends=('freetype2: Font rasterization library'
 options=('!emptydirs' '!makeflags')
 source=("https://github.com/fvwmorg/fvwm3/releases/download/${pkgver}/fvwm3-${pkgver}.tar.gz"
         "fvwm3.desktop")
-sha256sums=('ecdcf1099bac3e7b1198bdee7542150d378ee333a644c49095e974d819b8d1c3'
+sha256sums=('fde449c21678e059d16278da3ac69f3786aed96cac90962163e72bf59e840421'
             'e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db')
 
 build() {
