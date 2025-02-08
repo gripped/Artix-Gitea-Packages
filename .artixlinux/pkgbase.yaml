@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lximage-qt
-  version: 2.1.0-1
+  version: 2.1.1-1
   arch:
     - x86_64
   pkgname:
     - lximage-qt
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.1.0-1
+    version: 2.1.1-1
     packages:
-      - lximage-qt-2.1.0-1-x86_64.pkg.tar.zst
+      - lximage-qt-2.1.1-1-x86_64.pkg.tar.zst
 team: galaxy
