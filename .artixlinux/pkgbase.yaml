@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libxml2
-  version: 2.13.5-4
+  version: 2.13.5-3
   arch:
     - x86_64
   pkgname:
@@ -17,10 +17,10 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 2.13.5-4
+    version: 2.13.5-3
     packages:
-      - libxml2-2.13.5-4-x86_64.pkg.tar.zst
-      - libxml2-docs-2.13.5-4-x86_64.pkg.tar.zst
+      - libxml2-2.13.5-3-x86_64.pkg.tar.zst
+      - libxml2-docs-2.13.5-3-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
