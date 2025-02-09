@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: kunifiedpush
-  version: 24.12.1-1
+  version: 24.12.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.12.1-1
+    version: 24.12.2-1
     packages:
-      - kunifiedpush-24.12.1-1-x86_64.pkg.tar.zst
+      - kunifiedpush-24.12.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
