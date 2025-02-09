@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-mime-types-data
-  version: 3.2025.0107-1
+  version: 3.2025.0204-1
   arch:
     - any
   pkgname:
     - ruby-mime-types-data
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.2025.0107-1
+    version: 3.2025.0204-1
     packages:
-      - ruby-mime-types-data-3.2025.0107-1-any.pkg.tar.zst
+      - ruby-mime-types-data-3.2025.0204-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
