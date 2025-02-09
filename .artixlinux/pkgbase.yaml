@@ -7,10 +7,10 @@ pkgbase:
   pkgname:
     - fast_float
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - fast_float-8.0.0-1-any.pkg.tar.zst
   world:
-    version: 7.0.0-1
+    version: 8.0.0-1
     packages:
-      - fast_float-7.0.0-1-any.pkg.tar.zst
+      - fast_float-8.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
