@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: icu
-  version: 75.1-2
+  version: 76.1-1
   arch:
     - x86_64
   pkgname:
     - icu
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: system-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 76.1-1
+    packages:
+      - icu-76.1-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
