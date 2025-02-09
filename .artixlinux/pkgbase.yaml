@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: binutils
-  version: 2.43_1+r186+g61f8adadd6db-1
+  version: 2.44-1
   arch:
     - x86_64
   pkgname:
     - binutils
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.44-1
+    packages:
+      - binutils-2.44-1-x86_64.pkg.tar.zst
   system:
     version: 2.43_1+r186+g61f8adadd6db-1
     packages:
