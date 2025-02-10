@@ -10,17 +10,18 @@ pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
 url="https://www.nlnetlabs.nl/nsd/"
 license=(BSD)
-depends=(openssl libevent fstrm protobuf-c systemd-libs)
-makedepends=(systemd)
+depends=(openssl libevent fstrm protobuf-c)
 validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wouter@nlnetlabs.nl>
               C3E356788FAD0179D872D092BA811E62E7194568
               9E32AFD129E3AB1DC5AB34DE7DE08345DE34009F # Jeroen Koekkoek <jeroen@koekkoek.nl>
               DC34EE5DB2417BCC151E5100E5F8F8212F77A498) # Willem Toorop
 source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
+        nsd.service
         nsd.sysusers
         nsd.tmpfiles)
 sha256sums=('696e50052008de4fa7ab1d818d5b77eb63247eea2f0575114c9592ff9188a614'
             'SKIP'
+            '51dcf15195be0f6a4154a29ad882eabe180b2413e6b3cadbb1535885ff0d4dfa'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
 install=nsd.install
@@ -42,7 +43,7 @@ build() {
     --enable-relro-now \
     --enable-pie \
     --enable-dnstap \
-    --disable-systemd \
+    --enable-systemd \
     --enable-tcp-fastopen
   make
 }
