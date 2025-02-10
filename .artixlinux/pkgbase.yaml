@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: liburing
-  version: 2.8-1
+  version: 2.9-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.8-1
+    version: 2.9-1
     packages:
-      - liburing-2.8-1-x86_64.pkg.tar.zst
+      - liburing-2.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
