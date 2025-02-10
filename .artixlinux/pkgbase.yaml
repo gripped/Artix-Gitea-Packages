@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: pidgin
-  version: 2.14.13-2
+  version: 2.14.14-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - finch
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.14.13-2
+    version: 2.14.14-1
     packages:
-      - pidgin-2.14.13-2-x86_64.pkg.tar.zst
-      - libpurple-2.14.13-2-x86_64.pkg.tar.zst
-      - finch-2.14.13-2-x86_64.pkg.tar.zst
+      - pidgin-2.14.14-1-x86_64.pkg.tar.zst
+      - libpurple-2.14.14-1-x86_64.pkg.tar.zst
+      - finch-2.14.14-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
