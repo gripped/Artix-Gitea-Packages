@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: sratom
-  version: 0.6.16-1
+  version: 0.6.18-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - sratom-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.16-1
+    version: 0.6.18-1
     packages:
-      - sratom-0.6.16-1-x86_64.pkg.tar.zst
-      - sratom-docs-0.6.16-1-x86_64.pkg.tar.zst
+      - sratom-0.6.18-1-x86_64.pkg.tar.zst
+      - sratom-docs-0.6.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
