@@ -10,12 +10,8 @@ arch=('x86_64')
 license=('LicenseRef-IPerf')
 url='https://sourceforge.net/projects/iperf2/'
 depends=('glibc' 'gcc-libs')
-source=("https://downloads.sourceforge.net/iperf2/iperf-$pkgver.tar.gz"
-        'iperf-tcp.service'
-        'iperf-udp.service')
-sha256sums=('754ab0a7e28033dbea81308ef424bc7df4d6e2fe31b60cc536b61b51fefbd8fb'
-            '5bfeaf4b7fc9bcc424cfc2257c6eefd21ed491bd140e9ae5562b270dcf84d794'
-            'fec34a6f352619caaf4ed3bc23f75a3ffb6b3ab5c2947cd2c24c6be36851738c')
+source=("https://downloads.sourceforge.net/iperf2/iperf-$pkgver.tar.gz")
+sha256sums=('754ab0a7e28033dbea81308ef424bc7df4d6e2fe31b60cc536b61b51fefbd8fb')
 
 build() {
   cd $pkgname-$pkgver

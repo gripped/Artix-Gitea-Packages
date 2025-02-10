@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - iperf
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -33,9 +33,9 @@ repos:
     packages:
       - iperf-2.2.1-1-x86_64.pkg.tar.zst
   world:
-    version: 2.2.0-1
+    version: 2.2.1-1
     packages:
-      - iperf-2.2.0-1-x86_64.pkg.tar.zst
+      - iperf-2.2.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
