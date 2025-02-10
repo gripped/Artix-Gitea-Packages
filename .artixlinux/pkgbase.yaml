@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: memcached
-  version: 1.6.35-1
+  version: 1.6.36-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.6.35-1
+    version: 1.6.36-1
     packages:
-      - memcached-1.6.35-1-x86_64.pkg.tar.zst
+      - memcached-1.6.36-1-x86_64.pkg.tar.zst
   world:
     version: 1.6.34-2
     packages:
