@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libe-book
-  version: 0.1.3-17
+  version: 0.1.3-17.1
   arch:
     - x86_64
   pkgname:
     - libe-book
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -43,8 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.1.3-17.1
+    packages:
+      - libe-book-0.1.3-17.1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
