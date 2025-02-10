@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-yaml-libyaml
-  version: 0.89-2
+  version: 0.903.0-1
   arch:
     - x86_64
   pkgname:
     - perl-yaml-libyaml
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.89-2
+    version: 0.903.0-1
     packages:
-      - perl-yaml-libyaml-0.89-2-x86_64.pkg.tar.zst
+      - perl-yaml-libyaml-0.903.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
