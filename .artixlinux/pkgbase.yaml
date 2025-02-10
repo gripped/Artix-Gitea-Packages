@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: sysstat
-  version: 12.7.6-1.2
+  version: 12.7.7-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 12.7.6-1.2
+    version: 12.7.7-1
     packages:
-      - sysstat-12.7.6-1.2-x86_64.pkg.tar.zst
+      - sysstat-12.7.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
