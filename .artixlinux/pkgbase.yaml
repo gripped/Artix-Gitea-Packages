@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: molecule
-  version: 25.2.0-1
+  version: 25.2.0-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 25.2.0-1
+    version: 25.2.0-2
     packages:
-      - molecule-25.2.0-1-any.pkg.tar.zst
+      - molecule-25.2.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
