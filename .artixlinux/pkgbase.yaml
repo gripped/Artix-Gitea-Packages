@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-sub-name
-  version: 0.27-4
+  version: 0.28-1
   arch:
     - x86_64
   pkgname:
     - perl-sub-name
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.27-4
+    version: 0.28-1
     packages:
-      - perl-sub-name-0.27-4-x86_64.pkg.tar.zst
+      - perl-sub-name-0.28-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
