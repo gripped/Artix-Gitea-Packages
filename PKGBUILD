@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.124.9
+pkgver=6.125.2
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -56,18 +56,18 @@ optdepends=(
   'python-rich: for CLI'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('2d8a2e25bbc5c37d92b472877d652cb4ebc94f14e0a1a2fac500e6664012d38493e69eb7bc8defe630807401c11cea00383ad9dad5248f725584a2f0464af531')
-b2sums=('40cab81645daf03cd06fd2e455e03da091c6e7600c150c8c76d6f9154e1b17b2e2f4f4fe299e338cf88ec03ae005461a6f7aa9a4c0e665c88359becb6c6a0492')
+sha512sums=('13d09f623d33eab3446c5804b2e6f687999ac52aed326abf2cc968f69328d882cd186f468eff129b323eec215780ab0bc32fa4ee6ab0f6698c85a471622eab21')
+b2sums=('70543e237eb885475822d50e8b0e6b768087f13467259eeac600b7e717e00174abd916a136707dee94d6cab99098448fc5e0a61a9b2fc0c7a4b23bb079017cf2')
 
 prepare() {
   cd $pkgname/hypothesis-python
-  # Fix test failing due to trailing comma diff
-  sed -i 's/],/]/' tests/ghostwriter/recorded/union_sequence_parameter.txt
+  # Fix test failing due to trailing space diff
+  sed -i 's/def      /def/' tests/cover/test_reflection.py
 }
 
 build() {
   cd $pkgname/hypothesis-python
-  python -m build -nw
+  python -m build --wheel --no-isolation
 }
 
 check() {
