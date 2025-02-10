@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-calmjs.parse
-  version: 1.3.2-2
+  version: 1.3.3-1
   arch:
     - any
   pkgname:
     - python-calmjs.parse
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.3.2-2
+    version: 1.3.3-1
     packages:
-      - python-calmjs.parse-1.3.2-2-any.pkg.tar.zst
+      - python-calmjs.parse-1.3.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
