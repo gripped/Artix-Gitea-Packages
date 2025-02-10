@@ -41,7 +41,7 @@ build() {
     --enable-relro-now \
     --enable-pie \
     --enable-dnstap \
-    --enable-systemd \
+    --disable-systemd \
     --enable-tcp-fastopen
   make
 }
