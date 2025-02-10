@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-module-pluggable
-  version: 6.2-1
+  version: 6.3-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.2-1
+    version: 6.3-1
     packages:
-      - perl-module-pluggable-6.2-1-any.pkg.tar.zst
+      - perl-module-pluggable-6.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
