@@ -289,7 +289,7 @@ package_libreoffice-fresh() {
     pkgdesc="LibreOffice branch which contains new features and program enhancements"
     depends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
         'neon>=0.28.6' 'pango' 'nspr' 'libjpeg-turbo' 'libxrandr' 'libgl'
-        'redland' 'hyphen' 'lpsolve' 'gcc-libs' 'sh' 'graphite' 'icu' 'libxslt'
+        'redland' 'hyphen' 'lpsolve' 'gcc-libs' 'sh' 'graphite' 'icu>=1.76' 'libxslt'
         'lcms2' 'poppler' 'libvisio' 'libetonyek' 'libodfgen' 'libcdr'
         'libmspub' 'harfbuzz-icu' 'nss' 'clucene' 'hicolor-icon-theme'
         'desktop-file-utils' 'shared-mime-info' 'libpagemaker'
