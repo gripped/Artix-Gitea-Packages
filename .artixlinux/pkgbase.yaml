@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-mail-box
-  version: 3.009-2
+  version: 3.010-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.009-2
+    version: 3.010-1
     packages:
-      - perl-mail-box-3.009-2-any.pkg.tar.zst
+      - perl-mail-box-3.010-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
