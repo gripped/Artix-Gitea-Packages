@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - perl-extutils-pkgconfig
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: null
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -50,7 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.16-13
-    packages:
-      - perl-extutils-pkgconfig-1.16-13-any.pkg.tar.zst
+    version: null
+    packages: []
 team: galaxy
