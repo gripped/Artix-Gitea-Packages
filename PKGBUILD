@@ -3,7 +3,7 @@
 
 pkgname=python-zope-testrunner
 _pkgname=zope.testrunner
-pkgver=6.6.1
+pkgver=6.7
 pkgrel=1
 pkgdesc="Zope testrunner script"
 arch=('any')
@@ -20,18 +20,16 @@ makedepends=(
   'python-installer'
   'python-wheel'
 )
+# NOTE: Causes circular dependency as python-zope-testing depends on this
+# package.
 checkdepends=('python-zope-testing')
-source=(
-  "$url/archive/$pkgver/$pkgname-$pkgver.tar.gz"
-  "dont-package-tests.patch"
-)
-sha512sums=('343a34af5335eec43dd1bc46792a5d676a9ebd3645a1db29f6e8c6ed8494ebe23bcb10d00a713738a54a042de1756150dea123433f47b2bc14a766dcab6dace7'
-            '46be2d2002c45e9e5fa9ea60e1b5832fae29e0438c07fd47017043a662a4c943b24535c9bce49ed215065866f6a5651b5b79a4a4e09484707b81347f7b2ab1df')
+source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
+sha512sums=('ee3464667786e21a2b86bb1723c3ac96e0d667d446aef51832301e7e714beca1065cc27a9bdf300d80f9e52059a91b69c5c94cfdb1c996ce6f9a3de80ebe1d59')
 
 prepare() {
   cd $_pkgname-$pkgver
-  patch -Np1 -i ../dont-package-tests.patch
-  sed -i 's/setuptools<74/setuptools/' pyproject.toml
+  # Remove test file with invalid Python syntax, breaks installation.
+  rm src/zope/testrunner/tests/testrunner-ex/sample2/badsyntax.py
 }
 
 build() {
@@ -41,17 +39,12 @@ build() {
 
 check() {
   cd $_pkgname-$pkgver
-  python -m installer --destdir=tmp_install dist/*.whl
-  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  cp -r src/zope/testrunner/tests "$PWD/tmp_install/$site_packages/zope/testrunner"
-  export PYTHONPATH="$PWD/tmp_install/$site_packages"
-  ./tmp_install/usr/bin/zope-testrunner \
-    --test-path="$PWD/tmp_install/$site_packages" -vc
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/zope-testrunner -vc --test-path src/
 }
 
 package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
-
-# vim:set ts=2 sw=2 et:
