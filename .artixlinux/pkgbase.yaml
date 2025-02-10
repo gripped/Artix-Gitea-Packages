@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: astromenace
-  version: 1.4.2-3
+  version: 1.4.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.2-3
+    version: 1.4.3-1
     packages:
-      - astromenace-1.4.2-3-x86_64.pkg.tar.zst
+      - astromenace-1.4.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
