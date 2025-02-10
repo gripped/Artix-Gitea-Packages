@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-dep-logic
-  version: 0.4.9-2
+  version: 0.4.10-1
   arch:
     - any
   pkgname:
     - python-dep-logic
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.9-2
+    version: 0.4.10-1
     packages:
-      - python-dep-logic-0.4.9-2-any.pkg.tar.zst
+      - python-dep-logic-0.4.10-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
