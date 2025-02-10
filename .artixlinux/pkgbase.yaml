@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: atool
+  version: 0.39.0-10
+  arch:
+    - any
+  pkgname:
+    - atool
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 0.39.0-10
+    packages:
+      - atool-0.39.0-10-any.pkg.tar.zst
