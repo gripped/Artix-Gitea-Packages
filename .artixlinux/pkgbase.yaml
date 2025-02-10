@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: php
-  version: 8.4.3-1
+  version: 8.4.3-2
   arch:
     - x86_64
   pkgname:
@@ -22,12 +22,12 @@ pkgbase:
     - php-tidy
     - php-xsl
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -40,8 +40,24 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 8.4.3-2
+    packages:
+      - php-8.4.3-2-x86_64.pkg.tar.zst
+      - php-cgi-8.4.3-2-x86_64.pkg.tar.zst
+      - php-apache-8.4.3-2-x86_64.pkg.tar.zst
+      - php-fpm-8.4.3-2-x86_64.pkg.tar.zst
+      - php-embed-8.4.3-2-x86_64.pkg.tar.zst
+      - php-phpdbg-8.4.3-2-x86_64.pkg.tar.zst
+      - php-dblib-8.4.3-2-x86_64.pkg.tar.zst
+      - php-enchant-8.4.3-2-x86_64.pkg.tar.zst
+      - php-gd-8.4.3-2-x86_64.pkg.tar.zst
+      - php-sodium-8.4.3-2-x86_64.pkg.tar.zst
+      - php-odbc-8.4.3-2-x86_64.pkg.tar.zst
+      - php-pgsql-8.4.3-2-x86_64.pkg.tar.zst
+      - php-snmp-8.4.3-2-x86_64.pkg.tar.zst
+      - php-sqlite-8.4.3-2-x86_64.pkg.tar.zst
+      - php-tidy-8.4.3-2-x86_64.pkg.tar.zst
+      - php-xsl-8.4.3-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
