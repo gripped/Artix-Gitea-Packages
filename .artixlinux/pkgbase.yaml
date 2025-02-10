@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tevent
-  version: 1:0.16.1-4
+  version: 1:0.16.2-1
   arch:
     - x86_64
   pkgname:
     - tevent
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.16.1-4
+    version: 1:0.16.2-1
     packages:
-      - tevent-1:0.16.1-4-x86_64.pkg.tar.zst
+      - tevent-1:0.16.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
