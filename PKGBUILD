@@ -5,8 +5,8 @@
 # Contributor: Thorsten Töpper <atsutane-tu@freethoughts.de>
 
 pkgname=vnstat
-pkgver=2.12
-pkgrel=3
+pkgver=2.13
+pkgrel=1
 pkgdesc="A console-based network traffic monitor"
 arch=('x86_64')
 url="https://humdi.net/vnstat/"
@@ -17,7 +17,7 @@ optdepends=('gd: image output')
 backup=(etc/vnstat.conf)
 source=(git+https://github.com/vergoh/vnstat.git#tag=v${pkgver}
 vnstatd.tmpfile vnstatd.sysusers)
-sha256sums=('515ef3f47745b37961e563ac7ef2387e03003e738da091943690183d341baf96'
+sha256sums=('ce4a9fee6bffc7960ba138991c68f5d8c0ad0bc375ed6f949f8d8c6e18b38335'
 '91c9577f36c7f7ec32bb2963035a6ac49e7556ac6adc41564c033db8889b669e'
 'b9c3af7c6e8dc42aa6be0b52988aba8d64646116c211a1d055a17262c1d32edf')
 #validpgpkeys=(23EF1DD76E65248FB055201ADAFE84E63D140114) # Teemu Toivola
