@@ -6,21 +6,21 @@
 
 pkgname=fast_float
 pkgver=8.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Fast and exact implementation of the C++ from_chars functions for float and double types'
 arch=('any')
-url="https://github.com/fastfloat/$pkgname"
+url="https://github.com/fastfloat/fast_float"
 license=('Apache-2.0 OR BSL-1.0 OR MIT')
 makedepends=(
   'cmake'
   'doctest'
   'git'
 )
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-b2sums=('69b73e33b91ce24563f0931a02847d0e3d0253e457ca827f2224f80e4c390dcc639364e9fc8994d4e41489b0a2a9fa36cedbda45ea1c0ff1c8489c2f0b63f72e')
+source=("git+$url.git#tag=v$pkgver")
+b2sums=('492e029994959dfccc2ffb67d67a8c462baddcc6d6cb313d86a9da5978f9c29b401605f0503b7fdffb444702893bafc661fc36137f0f2bc23283acdbbaacdc8b')
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -Wno-dev \
@@ -35,5 +35,5 @@ check() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" $pkgname-$pkgver/LICENSE-MIT
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" $pkgname/LICENSE-MIT
 }
