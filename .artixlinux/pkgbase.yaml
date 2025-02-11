@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-rt-lts
-  version: 6.6.52.rt43.artix1-3
+  version: 6.6.52.rt43.artix1-4
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - linux-rt-lts-docs
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,9 +51,9 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.6.52.rt43.artix1-3
+    version: 6.6.52.rt43.artix1-4
     packages:
-      - linux-rt-lts-6.6.52.rt43.artix1-3-x86_64.pkg.tar.zst
-      - linux-rt-lts-headers-6.6.52.rt43.artix1-3-x86_64.pkg.tar.zst
-      - linux-rt-lts-docs-6.6.52.rt43.artix1-3-x86_64.pkg.tar.zst
+      - linux-rt-lts-6.6.52.rt43.artix1-4-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.6.52.rt43.artix1-4-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.6.52.rt43.artix1-4-x86_64.pkg.tar.zst
 team: galaxy

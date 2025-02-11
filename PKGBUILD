@@ -5,7 +5,7 @@
 pkgbase=linux-rt-lts
 pkgver=6.6.52.rt43.artix1
 archpkgver=6.6.52.rt43.arch1
-pkgrel=3
+pkgrel=4
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts"
