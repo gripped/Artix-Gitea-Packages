@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: octave
-  version: 9.3.0-1
+  version: 9.4.0-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 9.3.0-1
+    version: 9.4.0-1
     packages:
-      - octave-9.3.0-1-x86_64.pkg.tar.zst
+      - octave-9.4.0-1-x86_64.pkg.tar.zst
