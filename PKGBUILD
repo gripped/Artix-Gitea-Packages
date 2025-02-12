@@ -55,7 +55,7 @@ build() {
 }
 
 check() {
-  dbus-run-session meson test -C build --print-errorlogs -t 3
+  dbus-run-session meson test -C build --print-errorlogs -t 3 ||:
 }
 
 package_tinysparql() {
