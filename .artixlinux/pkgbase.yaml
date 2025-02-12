@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: accerciser
-  version: 3.44.1-2
+  version: 3.46.2-1
   arch:
     - any
   pkgname:
     - accerciser
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.44.1-2
+    version: 3.46.2-1
     packages:
-      - accerciser-3.44.1-2-any.pkg.tar.zst
+      - accerciser-3.46.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
