@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: tree-sitter-c
-  version: 0.23.4-1
+  version: 0.23.5-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.23.4-1
+    version: 0.23.5-1
     packages:
-      - tree-sitter-c-0.23.4-1-x86_64.pkg.tar.zst
+      - tree-sitter-c-0.23.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
