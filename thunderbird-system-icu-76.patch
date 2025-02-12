@@ -10,3 +10,4 @@ diff -ru thunderbird-128.7.0.orig/js/moz.configure thunderbird-128.7.0/js/moz.co
  
  
  @depends(enable_system_icu_option)
+
