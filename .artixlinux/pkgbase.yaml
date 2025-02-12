@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: entr
-  version: 5.6-1
+  version: 5.7-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.6-1
+    version: 5.7-1
     packages:
-      - entr-5.6-1-x86_64.pkg.tar.zst
+      - entr-5.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
