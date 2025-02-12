@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: hip-runtime
-  version: 6.2.4-1
+  version: 6.3.2-1
   arch:
     - x86_64
   pkgname:
     - hip-runtime-amd
     - hip-runtime-nvidia
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,8 +27,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.3.2-1
+    packages:
+      - hip-runtime-amd-6.3.2-1-x86_64.pkg.tar.zst
+      - hip-runtime-nvidia-6.3.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
