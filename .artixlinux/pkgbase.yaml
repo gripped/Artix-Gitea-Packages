@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: dejagnu
-  version: 1.6.3-11
+  version: 1.6.3-12
   arch:
     - any
   pkgname:
     - dejagnu
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.3-11
+    version: 1.6.3-12
     packages:
-      - dejagnu-1.6.3-11-any.pkg.tar.zst
+      - dejagnu-1.6.3-12-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
