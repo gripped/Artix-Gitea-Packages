@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xkeyboard-config
-  version: 2.43-1
+  version: 2.44-1
   arch:
     - any
   pkgname:
     - xkeyboard-config
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.44-1
+    packages:
+      - xkeyboard-config-2.44-1-any.pkg.tar.zst
   world:
     version: 2.43-1
     packages:
