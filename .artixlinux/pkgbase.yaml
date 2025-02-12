@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: github-cli
-  version: 2.66.1-1
+  version: 2.67.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.66.1-1
+    version: 2.67.0-1
     packages:
-      - github-cli-2.66.1-1-x86_64.pkg.tar.zst
+      - github-cli-2.67.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
