@@ -4,7 +4,7 @@
 
 _name=FreeRDP
 pkgname=freerdp
-pkgver=3.11.0
+pkgver=3.11.1
 _libver=${pkgver/.*/}
 pkgrel=1
 epoch=2
@@ -66,8 +66,8 @@ provides=(
 source=(
   https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
-sha512sums=('9cebda9778d9d45bd3b2aaac03f3dd278ef6930960d001a9f3a72e96376623e7acd0cac2c73411148ae0a1762491a874b5f207a7f408847eced15be272630c34')
-b2sums=('4b0439dc25611c055039b464383f5b60450bcdfea889dcc5466f20ee1e5b2150b32199c0b6cf838a825a68b5fcc2cd8956949898f8f36ca3fec1a687c2b8cb07')
+sha512sums=('c0f6988ba1236060d906177948ab568428193f6e42d08d0e57ea5dc908b86441710961a4b3762f331ab9855c49577dffbd9a4c110a16943ce6bdda9642c549cf')
+b2sums=('8596ea065defaa4d4b1d75ba6268de83e7ce7e25dae3e40b178ece3a33a415fe28515e4e3a5228dcae18c0f7d931b9031a6492bf3957c02c714cc29d41b8de99')
 
 build() {
   # gcc14 buildfix
