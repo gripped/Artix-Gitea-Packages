@@ -7,13 +7,13 @@ pkgbase:
   pkgname:
     - rocm-cmake
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.2.4-1
+    packages:
+      - rocm-cmake-6.2.4-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
