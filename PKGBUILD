@@ -9,7 +9,7 @@
 
 pkgname=mpd
 pkgver=0.23.17
-pkgrel=1
+pkgrel=2
 pkgdesc="Flexible, powerful, server-side application for playing music"
 arch=(x86_64)
 url="https://www.musicpd.org/"
@@ -79,6 +79,7 @@ makedepends=(
   twolame
   yajl
 )
+checkdepends=(gtest)
 backup=(etc/$pkgname.conf)
 source=(
   $pkgname::git+https://github.com/MusicPlayerDaemon/MPD.git#tag=v${pkgver}?signed
@@ -109,6 +110,7 @@ build() {
     -D shine=disabled
     -D tremor=disabled
     -D b_ndebug=true
+    -D test=true
     -D systemd=disabled
   )
 
