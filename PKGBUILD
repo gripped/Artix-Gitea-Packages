@@ -1,7 +1,7 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=fractal
-pkgver=10
+pkgver=10.1
 pkgrel=1
 pkgdesc="Matrix group messaging app"
 arch=(x86_64)
@@ -18,6 +18,7 @@ depends=(
   graphene
   gst-plugins-bad-libs
   gst-plugins-base-libs
+  gst-plugin-gtk4
   gstreamer
   gtk4
   gtksourceview5
@@ -44,8 +45,8 @@ makedepends=(
 source=(
   $url/-/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
-sha512sums=('c4f9a24c6cbd8f109c107185703301219f2d2a9749b4c7efd0994bd8e8d3054f4f643496c7caa7d8069776d523ced295df9f1d1f74cea663c6361007c1536dd0')
-b2sums=('19fd65aa7696e3ad1ad8f551171d6e1d534f7a3a47d3121da8184b1ae015e6540f274102a397771c2d9bb959d4d61c5d9a1fa42d140cfeed46cddf96f97c117f')
+sha512sums=('93793a9d6e6f8999a488655ee0b6dbad7b96e1eef33801dc0b0d885afe1820baf35e97c2e0fed6ca46ad119bfa86a8e56435fa7daf3d03c0734409c56a3618c7')
+b2sums=('c5899533ae062adb946580ab70e48e9f580da8a3b72a1aa5e11c33969a5c1abd55755202cf0e78d8af187faef349ea36b13761d7e4d8a7c1fb6d19e1d0ddf3b1')
 
 prepare() {
   # NOTE: usptream uses a custom CARGO_HOME from within meson
