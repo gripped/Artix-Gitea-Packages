@@ -8,7 +8,7 @@
 
 pkgname=scribus
 pkgver=1.6.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Desktop publishing software"
 arch=(x86_64)
 url="https://www.scribus.net/"
@@ -65,6 +65,16 @@ prepare() {
     # And https://github.com/scribusproject/scribus/commit/44745297bd70a25b1d88ed922bdcb2d90a2fb435
     # patch -Np1 < "$srcdir/fix_build_with_poppler_24.12.0.patch"
     # patch -Np1 < "$srcdir/fix_build_with_poppler_25.01.0.patch"
+}
+
+pkgver() {
+        # People regularly flag this OOD pointing to development releases, avoid mistakenly packaging them
+	if [[ $pkgver =~ ^[0-9]+\.[13579]+\.[0-9]+$ ]]; then
+		echo 'Odd-numbered minor version segments indicate development versions.' >&2
+		exit 1
+	else
+		echo "$pkgver"
+	fi
 }
 
 build() {
