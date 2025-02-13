@@ -2,7 +2,7 @@
 
 pkgname=python-inline-snapshot
 _pkgname=${pkgname#python-}
-pkgver=0.20.1
+pkgver=0.20.2
 pkgrel=1
 pkgdesc="Create and update inline snapshots in your python tests"
 arch=(any)
@@ -35,7 +35,7 @@ checkdepends=(
   python-time-machine
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('c498d425fc76ee24d07dac29ba0489a4055f4d444739499f9bb6c952cc75e596')
+sha256sums=('93ed283d7f4e1d9957b0a7e772d5b839c9bdecdef8a2bd03254c3a251c28c427')
 
 build() {
   cd "$_pkgname-$pkgver"
