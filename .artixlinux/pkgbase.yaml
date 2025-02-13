@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: aws-c-event-stream
-  version: 0.5.1-1
+  version: 0.5.2-1
   arch:
     - x86_64
   pkgname:
     - aws-c-event-stream
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.5.2-1
+    packages:
+      - aws-c-event-stream-0.5.2-1-x86_64.pkg.tar.zst
   world:
     version: 0.5.1-1
     packages:
