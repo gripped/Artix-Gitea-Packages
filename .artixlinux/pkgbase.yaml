@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-pysol_cards
-  version: 0.18.0-3
+  version: 0.18.1-1
   arch:
     - any
   pkgname:
     - python-pysol_cards
 actions:
   addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.18.0-3
+    version: 0.18.1-1
     packages:
-      - python-pysol_cards-0.18.0-3-any.pkg.tar.zst
+      - python-pysol_cards-0.18.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
