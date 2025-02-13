@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-zope-testrunner
-  version: 6.7-1
+  version: 7.0-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.7-1
+    version: 7.0-1
     packages:
-      - python-zope-testrunner-6.7-1-any.pkg.tar.zst
+      - python-zope-testrunner-7.0-1-any.pkg.tar.zst
   world:
     version: 6.6.1-1
     packages:
