@@ -6,7 +6,7 @@
 pkgname=plasma-workspace
 pkgver=6.3.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=2.1
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
