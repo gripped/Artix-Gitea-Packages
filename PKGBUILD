@@ -16,7 +16,7 @@ makedepends=('autoconf-archive' 'python' 'gtk-doc')
 source=(
   "https://github.com/intel/thermal_daemon/archive/v${pkgver}/${_pkgname}-${pkgver}.tar.gz"
 )
-b2sums=('6033a4b65a596780656ba585b7581650e2ee72a292985140eecee1abd43c84f098a200ef02f03be342ebe0d1ef746f34a3f731f0931d51c595992d8ae73d1783')
+b2sums=('200609171070bae818f15505d75c5f3aefd265ff6ceca73e846b7efa25a73fc6c8635c59dcbb07c276e7547318ec8b232b00bacd4be936c3384e579c5c7823bc')
 
 build() {
   cd ${_pkgname}-${pkgver}
