@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gvfs
-  version: 1.56.1-2
+  version: 1.56.1-3
   arch:
     - x86_64
   pkgname:
@@ -18,11 +18,11 @@ pkgbase:
     - gvfs-wsdd
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,19 +41,19 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.56.1-2
+    version: 1.56.1-3
     packages:
-      - gvfs-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-afc-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-dnssd-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-goa-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-google-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-gphoto2-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-mtp-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-nfs-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-onedrive-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-smb-1.56.1-2-x86_64.pkg.tar.zst
-      - gvfs-wsdd-1.56.1-2-x86_64.pkg.tar.zst
+      - gvfs-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-afc-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-dnssd-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-goa-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-google-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-onedrive-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-smb-1.56.1-3-x86_64.pkg.tar.zst
+      - gvfs-wsdd-1.56.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
