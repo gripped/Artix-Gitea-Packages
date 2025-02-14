@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fcitx5-mozc
-  version: 2.31.5712.102.g9dc8247-1
+  version: 2.31.5712.102.g9dc8247-3
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.31.5712.102.g9dc8247-1
+    version: 2.31.5712.102.g9dc8247-3
     packages:
-      - fcitx5-mozc-2.31.5712.102.g9dc8247-1-x86_64.pkg.tar.zst
+      - fcitx5-mozc-2.31.5712.102.g9dc8247-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
