@@ -3,7 +3,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=consul
-pkgver=1.20.2
+pkgver=1.20.3
 pkgrel=1
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
@@ -13,19 +13,19 @@ depends=('glibc')
 makedepends=('git' 'go' 'gox' 'go-tools')
 makedepends+=('procps-ng' 'zip' 'yarn' 'nodejs-lts-iron' 'npm') # makedepends for the UI
 source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
-  'consul.default'
-  'consul.sysusers'
-  'example.json'
-  # Switch to NodeJS LTS 20 "Iron"
-  'https://github.com/hashicorp/consul/commit/3ecdb19cc69396a3232bdb74116f30b7b3a72d04.patch'
+        'consul.default'
+        'consul.sysusers'
+        'example.json'
+        # Switch to NodeJS LTS 20 "Iron"
+        'https://github.com/hashicorp/consul/commit/3ecdb19cc69396a3232bdb74116f30b7b3a72d04.patch'
 )
 install=consul.install
 backup=('etc/default/consul')
-sha512sums=('b923403413b066fe72d632b4805cc91c4385e3df4b225ca14d001912ed6940e186132a5c5537cdd3113135226993abf74e004daab3bfb960c3f9424286eba536'
-  'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
-  'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
-  'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348'
-  '3279545adae32d0cdbac49e7ae36e6ace99b1cad12da4addd0c9fcca7dc405a4ebc2205fee7177490191069c4645da9276870abaf3a9704c64e62326fa4c4647')
+sha512sums=('73d3b7258282bf2c1922aeb331ef80ba5160fd5670ff0076a46be7defe40893482bcdbe5357ef9e60c982b32a3f586392d810d51518dd9d3e674fecaf6313e91'
+            'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
+            'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
+            'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348'
+            '3279545adae32d0cdbac49e7ae36e6ace99b1cad12da4addd0c9fcca7dc405a4ebc2205fee7177490191069c4645da9276870abaf3a9704c64e62326fa4c4647')
 
 export CGO_LDFLAGS="${LDFLAGS}"
 export CGO_CFLAGS="${CFLAGS}"
