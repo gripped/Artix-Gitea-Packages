@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-aiobotocore
-  version: 2.18.0-1
+  version: 2.19.0-1
   arch:
     - any
   pkgname:
     - python-aiobotocore
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.18.0-1
+    version: 2.19.0-1
     packages:
-      - python-aiobotocore-2.18.0-1-any.pkg.tar.zst
+      - python-aiobotocore-2.19.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
