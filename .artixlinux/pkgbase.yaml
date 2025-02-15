@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-pbs-installer
-  version: 2025.02.05-1
+  version: 2025.02.12-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2025.02.05-1
+    version: 2025.02.12-1
     packages:
-      - python-pbs-installer-2025.02.05-1-any.pkg.tar.zst
+      - python-pbs-installer-2025.02.12-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
