@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-openai
-  version: 1.62.0-1
+  version: 1.63.0-1
   arch:
     - any
   pkgname:
     - python-openai
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.62.0-1
+    version: 1.63.0-1
     packages:
-      - python-openai-1.62.0-1-any.pkg.tar.zst
+      - python-openai-1.63.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
