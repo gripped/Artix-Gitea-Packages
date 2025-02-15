@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-cfn-lint
-  version: 1.22.4-1
+  version: 1.25.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.22.4-1
+    version: 1.25.1-1
     packages:
-      - python-cfn-lint-1.22.4-1-any.pkg.tar.zst
+      - python-cfn-lint-1.25.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
