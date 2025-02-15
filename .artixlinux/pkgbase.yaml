@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: dotnet-core
-  version: 9.0.1.sdk102-1
+  version: 9.0.2.sdk103-1
   arch:
     - x86_64
   pkgname:
@@ -16,11 +16,11 @@ pkgbase:
     - dotnet-source-built-artifacts
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -39,16 +39,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.0.1.sdk102-1
+    version: 9.0.2.sdk103-1
     packages:
-      - dotnet-host-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - netstandard-targeting-pack-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-9.0.1.sdk102-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-9.0.1.sdk102-1-x86_64.pkg.tar.zst
+      - dotnet-host-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - netstandard-targeting-pack-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-9.0.2.sdk103-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-9.0.2.sdk103-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
