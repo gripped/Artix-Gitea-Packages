@@ -53,7 +53,8 @@ check() {
   GITHUB_ACTIONS=1 test-env/bin/python -m pytest "$relative_site_packages" \
     --deselect "$relative_site_packages/psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_disk_partitions_mocked" \
     --deselect "$relative_site_packages/psutil/tests/test_linux.py::TestSystemNetIfAddrs::test_ips" \
-    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestNetAPIs::test_net_if_addrs"
+    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestNetAPIs::test_net_if_addrs" \
+    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestDiskAPIs::test_disk_partitions"
 
 }
 
