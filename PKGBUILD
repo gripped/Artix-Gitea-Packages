@@ -10,7 +10,7 @@
 
 pkgname=nodejs
 pkgver=23.8.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
 url='https://nodejs.org/'
