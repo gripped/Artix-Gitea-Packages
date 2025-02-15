@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-lxml
-  version: 5.3.0-2
+  version: 5.3.1-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - python-lxml-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.3.0-2
+    version: 5.3.1-1
     packages:
-      - python-lxml-5.3.0-2-x86_64.pkg.tar.zst
-      - python-lxml-docs-5.3.0-2-x86_64.pkg.tar.zst
+      - python-lxml-5.3.1-1-x86_64.pkg.tar.zst
+      - python-lxml-docs-5.3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
