@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: nodejs
-  version: 23.7.0-2
+  version: 23.8.0-1
   arch:
     - x86_64
   pkgname:
     - nodejs
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.7.0-1
+    version: 23.8.0-1
     packages:
-      - nodejs-23.7.0-1-x86_64.pkg.tar.zst
+      - nodejs-23.8.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
