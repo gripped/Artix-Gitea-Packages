@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-boto3
-  version: 1.36.1-1
+  version: 1.36.3-1
   arch:
     - any
   pkgname:
     - python-boto3
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.36.1-1
+    version: 1.36.3-1
     packages:
-      - python-boto3-1.36.1-1-any.pkg.tar.zst
+      - python-boto3-1.36.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
