@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: sqlitebrowser
-  version: 3.12.2-4
+  version: 3.13.1-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.12.2-4
+    version: 3.13.1-1
     packages:
-      - sqlitebrowser-3.12.2-4-x86_64.pkg.tar.zst
+      - sqlitebrowser-3.13.1-1-x86_64.pkg.tar.zst
