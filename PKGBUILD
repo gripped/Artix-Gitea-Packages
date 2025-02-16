@@ -1,11 +1,11 @@
-# Maintainer: artist - Artix Linux
+# Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-kl4k
 pkgver=0.3.8
 _pkgname2=MokshaKL4K
 _pkgname3=Moksha-KLK4
 _pkgname4=MokshaKLK4
-pkgrel=8
+pkgrel=9
 pkgdesc="Moksha KL4K theme"
 arch=('any')
 url="https://github.com/thewaiter"
