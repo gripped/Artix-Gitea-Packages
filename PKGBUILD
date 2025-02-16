@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-passion
-pkgver=2.6.15
+pkgver=2.6.17
 _pkgname1=moksha-theme-redpassion
 _pkgname2=MokshaRedPassion
 _pkgname3=MokshaPassion
