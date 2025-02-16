@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: moksha-module-wallscape
+  version: 0.1.1-1
+  arch:
+    - x86_64
+  pkgname:
+    - moksha-module-wallscape
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.1.1-1
+    packages:
+      - moksha-module-wallscape-0.1.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
