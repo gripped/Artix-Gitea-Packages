@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-radiance
-  version: 0.21.0-8
+  version: 0.21.0-10
   arch:
     - any
   pkgname:
     - moksha-theme-radiance
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.21.0-10
+    packages:
+      - moksha-theme-radiance-0.21.0-10-any.pkg.tar.zst
   galaxy:
     version: 0.21.0-8
     packages:
