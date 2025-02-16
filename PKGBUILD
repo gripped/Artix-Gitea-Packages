@@ -1,11 +1,11 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-blueelectric
-pkgver=0.5.16
+pkgver=0.5.17
 _pkgname2=MokshaBlueElectric
 _pkgname3=$_pkgname2
 _pkgname4=Moksha-BlueElectric
-pkgrel=1.2
+pkgrel=1
 pkgdesc="Moksha Blue Electric theme"
 arch=('any')
 url="https://github.com/thewaiter"
