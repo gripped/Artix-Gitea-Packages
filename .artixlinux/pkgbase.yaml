@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-arc-green
-  version: 0.5.0-13
+  version: 0.5.0-15
   arch:
     - any
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.5.0-13
+    version: 0.5.0-15
     packages:
-      - moksha-theme-arc-green-0.5.0-13-any.pkg.tar.zst
+      - moksha-theme-arc-green-0.5.0-15-any.pkg.tar.zst
   galaxy:
     version: 0.5.0-13
     packages:
