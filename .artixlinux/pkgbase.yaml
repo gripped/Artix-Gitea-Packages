@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: yazi
-  version: 25.2.7-1
+  version: 25.2.11-1
   arch:
     - x86_64
   pkgname:
     - yazi
 actions:
-  addRepo: galaxy
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 25.2.11-1
+    packages:
+      - yazi-25.2.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
