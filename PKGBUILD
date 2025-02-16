@@ -3,8 +3,8 @@
 _module='wallscape'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=1
-pkgdesc="WallScape module is an alternative module for changing E/Moksha wallpapers."
+pkgrel=1.1
+pkgdesc="Alternative module for changing Moksha wallpapers."
 _group=('moksha-modules-extra')
 arch=('x86_64')
 url="http://mokshadesktop.org"

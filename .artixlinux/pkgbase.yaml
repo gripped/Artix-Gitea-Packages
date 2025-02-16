@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: moksha-module-wallscape
-  version: 0.1.1-1
+  version: 0.1.1-1.1
   arch:
     - x86_64
   pkgname:
@@ -47,9 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.1.1-1
+    version: 0.1.1-1.1
     packages:
-      - moksha-module-wallscape-0.1.1-1-x86_64.pkg.tar.zst
+      - moksha-module-wallscape-0.1.1-1.1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
