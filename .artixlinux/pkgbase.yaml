@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-seven
-  version: 0.3.9-7
+  version: 0.3.9-8
   arch:
     - any
   pkgname:
     - moksha-theme-seven
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.3.9-8
+    packages:
+      - moksha-theme-seven-0.3.9-8-any.pkg.tar.zst
   galaxy:
     version: 0.3.9-7
     packages:
