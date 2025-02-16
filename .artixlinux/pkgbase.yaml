@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wireplumber
-  version: 0.5.7-1
+  version: 0.5.8-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - wireplumber-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.7-1
+    version: 0.5.8-1
     packages:
-      - wireplumber-0.5.7-1-x86_64.pkg.tar.zst
-      - libwireplumber-0.5.7-1-x86_64.pkg.tar.zst
-      - wireplumber-docs-0.5.7-1-x86_64.pkg.tar.zst
+      - wireplumber-0.5.8-1-x86_64.pkg.tar.zst
+      - libwireplumber-0.5.8-1-x86_64.pkg.tar.zst
+      - wireplumber-docs-0.5.8-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
