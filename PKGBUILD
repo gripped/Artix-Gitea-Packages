@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-green
-pkgver=1.17.8
+pkgver=1.17.9
 _pkgname2=MokshaGreen
 _pkgname3=$_pkgname2
 _pkgname4=Icons-Moksha-Green
