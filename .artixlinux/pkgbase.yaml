@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: osinfo-db
-  version: 20240701-1
+  version: 20250124-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240701-1
+    version: 20250124-1
     packages:
-      - osinfo-db-20240701-1-any.pkg.tar.zst
+      - osinfo-db-20250124-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
