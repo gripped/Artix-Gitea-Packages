@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-viceversa
-  version: 0.1.4-8
+  version: 0.1.4-9
   arch:
     - any
   pkgname:
     - moksha-theme-viceversa
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.1.4-9
+    packages:
+      - moksha-theme-viceversa-0.1.4-9-any.pkg.tar.zst
   galaxy:
     version: 0.1.4-8
     packages:
