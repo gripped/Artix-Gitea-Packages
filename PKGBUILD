@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-forum
-pkgver=0.7.4.7
+pkgver=0.7.4.8
 _pkgname2=MokshaForum
 _pkgname3=forum-moksha
 pkgrel=1
