@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-modules-extra
-pkgver=3
+pkgver=4
 pkgrel=1
 pkgdesc='Extra Modules for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -39,6 +39,7 @@ depends=(
   moksha-module-stickynotes
   moksha-module-tclock
   moksha-module-trash
+  moksha-module-wallscape
   moksha-module-wincontrol
   moksha-module-winlist-ng
   moksha-module-winselector
