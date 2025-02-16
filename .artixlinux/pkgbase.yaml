@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: moksha-theme-arc-dark
-  version: 0.8.10-1.2
+  version: 0.8.11-1
   arch:
     - any
   pkgname:
     - moksha-theme-arc-dark
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.8.11-1
+    packages:
+      - moksha-theme-arc-dark-0.8.11-1-any.pkg.tar.zst
   galaxy:
     version: 0.8.10-1.2
     packages:

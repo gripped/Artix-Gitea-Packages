@@ -1,11 +1,11 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-arc-dark
-pkgver=0.8.10
+pkgver=0.8.11
 _pkgname2=MokshaArcDark
 _pkgname3=arc-dark
 _pkgname4=src
-pkgrel=1.2
+pkgrel=1
 pkgdesc="Moksha Arc Dark theme"
 arch=('any')
 url="https://github.com/thewaiter"
