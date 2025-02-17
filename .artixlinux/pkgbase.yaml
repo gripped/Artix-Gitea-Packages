@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: plasma-desktop
-  version: 6.3.0-2.1
+  version: 6.3.0-2
   arch:
     - x86_64
   pkgname:
     - plasma-desktop
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.2.5-2
+    version: 6.3.0-2
     packages:
-      - plasma-desktop-6.2.5-2-x86_64.pkg.tar.zst
+      - plasma-desktop-6.3.0-2-x86_64.pkg.tar.zst
   world:
     version: 6.2.5-1
     packages:
