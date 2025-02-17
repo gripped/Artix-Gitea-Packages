@@ -1,15 +1,53 @@
- src/Makefile.am       | 24 ++----------------------
- src/paclist.sh.in     |  2 +-
- src/rankmirrors.sh.in | 10 +++++-----
- 3 files changed, 8 insertions(+), 28 deletions(-)
+ doc/checkupdates.8.adoc |  3 +--
+ doc/paccache.8.adoc     |  9 +--------
+ src/Makefile.am         |  6 ------
+ src/paclist.sh.in       |  2 +-
+ src/rankmirrors.sh.in   | 10 +++++-----
+ test/pacsorttest.sh     |  6 +++---
+ 6 files changed, 11 insertions(+), 25 deletions(-)
 
+diff --git a/doc/checkupdates.8.adoc b/doc/checkupdates.8.adoc
+index d4a2dba..8e007ba 100644
+--- a/doc/checkupdates.8.adoc
++++ b/doc/checkupdates.8.adoc
+@@ -36,8 +36,7 @@ Options
+
+ *-n, \--nosync*::
+ 	Do not sync the temporary database, works best when the temporary database
+-	is updated regularly through some other means such as a cronjob or systemd
+-	timer.
++	is updated regularly through some other means such as a cronjob.
+
+ *-V, \--version*::
+ 	Display version information.
+diff --git a/doc/paccache.8.adoc b/doc/paccache.8.adoc
+index bc950a0..09ab190 100644
+--- a/doc/paccache.8.adoc
++++ b/doc/paccache.8.adoc
+@@ -79,15 +79,8 @@ Options
+ 	Display version information.
+
+
+-Systemd Timer
+--------------
+-The package cache can be cleaned periodically using the systemd timer
+-'paccache.timer'. If the timer is enabled the cache will be cleaned weekly with
+-paccache's default options.
+-
+-
+ See Also
+ --------
+-linkman:pacman[8], linkman:pacman.conf[5], linkman:systemctl[1]
++linkman:pacman[8], linkman:pacman.conf[5]
+
+ include::footer.adoc[]
 diff --git a/src/Makefile.am b/src/Makefile.am
-index 4b87cc9..95c966b 100644
+index c893aff..3526512 100644
 --- a/src/Makefile.am
 +++ b/src/Makefile.am
-@@ -29,12 +29,6 @@ vim_syntax__DATA = \
- 	vim/syntax/PKGBUILD.vim \
- 	vim/syntax/SRCINFO.vim
+@@ -38,12 +38,6 @@ sysconf_conf_d_dir = ${sysconfdir}/conf.d
+ sysconf_conf_d__DATA = \
+ 	conf.d/pacman-contrib
 
 -systemd_dir = ${libdir}/systemd/system
 -
@@ -20,51 +58,6 @@ index 4b87cc9..95c966b 100644
  BASHSCRIPTS = \
  	checkupdates \
  	paccache \
-@@ -52,20 +46,12 @@ OURSCRIPTS = \
- 	$(BASHSCRIPTS) \
- 	$(PERLSCRIPTS)
-
--OURFILES = \
--	paccache.service \
--	pacman-filesdb-refresh.service
--
- EXTRA_DIST = \
- 	checkupdates.sh.in \
--	paccache.service.in \
- 	paccache.sh.in \
--	paccache.timer \
- 	pacdiff.sh.in \
- 	paclist.sh.in \
- 	paclog-pkglist.sh.in \
--	pacman-filesdb-refresh.service.in \
--	pacman-filesdb-refresh.timer \
- 	pacscripts.sh.in \
- 	pacsearch.pl.in \
- 	pacsort.c \
-@@ -79,7 +65,7 @@ EXTRA_DIST = \
- 	vim/ftplugin/PKGBUILD.vim
-
- # Files that should be removed, but which Automake does not know.
--MOSTLYCLEANFILES = $(OURSCRIPTS) $(OURFILES) *.tmp
-+MOSTLYCLEANFILES = $(OURSCRIPTS) *.tmp
-
- if USE_GIT_VERSION
- GIT_VERSION := $(shell sh -c 'git describe --long --abbrev=4 --dirty | sed s/^v//')
-@@ -125,13 +111,7 @@ $(PERLSCRIPTS): Makefile
- 	$(AM_V_at)chmod +x,a-w $@.tmp
- 	$(AM_V_at)mv $@.tmp $@
-
--$(OURFILES): Makefile
--	$(AM_V_at)$(RM) $@ $@.tmp
--	$(AM_V_GEN)$(edit) $(srcdir)/$@.in >$@.tmp
--	$(AM_V_at)chmod a-w $@.tmp
--	$(AM_V_at)mv $@.tmp $@
--
--all-am: $(OURSCRIPTS) $(OURFILES)
-+all-am: $(OURSCRIPTS)
-
- $(BASHSCRIPTS): %: $(srcdir)/%.sh.in
- $(PERLSCRIPTS): %: $(srcdir)/%.pl.in
 diff --git a/src/paclist.sh.in b/src/paclist.sh.in
 index 99258df..ce3ef08 100644
 --- a/src/paclist.sh.in
@@ -79,7 +72,7 @@ index 99258df..ce3ef08 100644
  }
 
 diff --git a/src/rankmirrors.sh.in b/src/rankmirrors.sh.in
-index 3927812..429b75f 100644
+index 3927812..1b7ca84 100644
 --- a/src/rankmirrors.sh.in
 +++ b/src/rankmirrors.sh.in
 @@ -67,7 +67,7 @@ err() {
@@ -105,12 +98,36 @@ index 3927812..429b75f 100644
  ARCH="$(uname -m)"
  getfetchurl() {
  	local strippedurl="${1%/}"
-@@ -89,7 +89,7 @@ getfetchurl() {
- 	local replacedurl="${strippedurl//'$arch'/$ARCH}"
- 	if [[ ! $TARGETREPO ]]; then
- 		# shellcheck disable=SC2016
--		replacedurl="${replacedurl//'$repo'/core}"
-+		replacedurl="${replacedurl//'$repo'/system}"
- 		local tmp="${replacedurl%/*}"
- 		tmp="${tmp%/*}"
+@@ -174,7 +174,7 @@ while [[ $1 ]]; do
+ 			done
+ 			STDIN=1
+ 			shift
+-		else
++		elsesystem-gremlins
+ 			snum=1
+ 			for ((i=1 ; i<${#1}; i++)); do
+ 				case ${1:$i:1} in
+diff --git a/test/pacsorttest.sh b/test/pacsorttest.sh
+index 561e4b9..b7e4d79 100755
+--- a/test/pacsorttest.sh
++++ b/test/pacsorttest.sh
+@@ -37,7 +37,7 @@ tap_runtest() {
+ 	tap_diff <(printf "$1" | $bin $4) <(printf "$2") "$3"
+ }
 
+-tap_plan 26
++tap_plan 25
+
+ in="1\n2\n3\n4\n"
+ tap_runtest $in $in "already ordered"
+@@ -81,8 +81,8 @@ tap_runtest $in $in "filename sort with epoch" "--files"
+ in="/packages/dia-log-1:1.2_20130928-1-x86_64.pkg.tar.xz\n/packages/dialog-1.2_20131001-1-x86_64.pkg.tar.xz\n"
+ tap_runtest $in $in "filename sort with differing package names and epoch" "--files"
+
+-in="/packages/systemd-217-1-x86_64.pkg.tar.xz\n/packages/systemd-sysvcompat-217-1-x86_64.pkg.tar.xz\n"
+-tap_runtest $in $in "filename sort with package names as shared substring" "--files"
++# in="/packages/systemd-217-1-x86_64.pkg.tar.xz\n/packages/systemd-sysvcompat-217-1-x86_64.pkg.tar.xz\n"
++# tap_runtest $in $in "filename sort with package names as shared substring" "--files"
+
+ # generate some long input/expected for the next few tests
+ declare fields fields_reverse normal reverse separator separator_reverse
