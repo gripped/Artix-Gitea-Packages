@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kdeplasma-addons
-  version: 6.3.0-2
+  version: 6.3.0-2.1
   arch:
     - x86_64
   pkgname:
     - kdeplasma-addons
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.2.5-2
+    version: 6.3.0-2.1
     packages:
-      - kdeplasma-addons-6.2.5-2-x86_64.pkg.tar.zst
+      - kdeplasma-addons-6.3.0-2.1-x86_64.pkg.tar.zst
   world:
     version: 6.2.5-1
     packages:
