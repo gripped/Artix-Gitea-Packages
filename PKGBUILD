@@ -4,7 +4,7 @@
 
 pkgname=inkscape
 pkgver=1.4
-pkgrel=6
+pkgrel=7
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -73,7 +73,6 @@ depends=(
   'python-pillow'
   'python-pyserial'
   'python-requests'
-  'python-six'
   'python-urllib3'
   'python-zstandard'
   'readline'
@@ -91,7 +90,6 @@ optdepends=(
   'python-tinycss2: DXF export'
 )
 
-#source=("https://media.inkscape.org/dl/resources/file/${pkgname}-${pkgver}.tar.bz2")
 source=("git+https://gitlab.com/inkscape/inkscape.git#tag=INKSCAPE_${pkgver//./_}"
         'inkscape-extensions::git+https://gitlab.com/inkscape/extensions.git'
         'inkscape-lib2geom::git+https://gitlab.com/inkscape/lib2geom.git'
@@ -118,6 +116,8 @@ _backports=(
   '874dcfbd303bc7a1bddb6f34aebbb4dba8eda771'
   # Fix building with poppler 24.12.0
   'c9046810d899a408bfbd489aad91872b1203ee6d'
+  # Fix building with poppler 25.02.0
+  '9754274ea0ee76d9888ec0b306885ecba6926702'
 )
 
 _reverts=(
