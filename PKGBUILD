@@ -3,15 +3,15 @@
 
 pkgname=nvidia-open
 pkgver=570.86.16
-pkgrel=5
+pkgrel=8
 pkgdesc="NVIDIA open kernel modules"
 arch=('x86_64')
 url="https://github.com/NVIDIA/open-gpu-kernel-modules"
 depends=("nvidia-utils=${pkgver}" 'libglvnd')
 makedepends=('linux-headers' "nvidia-open-dkms=$pkgver")
 license=('MIT AND GPL-2.0-only')
-options=('!strip')
-conflicts=('NVIDIA-MODULE')
+options=('!strip' '!debug')
+conflicts=('nvidia')
 provides=('NVIDIA-MODULE')
 
 build() {
