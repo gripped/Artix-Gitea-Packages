@@ -3,7 +3,7 @@
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
 
 pkgname=certbot
-pkgver=3.1.0
+pkgver=3.2.0
 pkgrel=1
 pkgdesc='An ACME client'
 arch=('any')
@@ -11,6 +11,7 @@ license=('Apache-2.0')
 url='https://certbot.eff.org'
 depends=(
   'ca-certificates'
+  'python'
   "python-acme=$pkgver"
   'python-configargparse'
   'python-configobj'
@@ -43,9 +44,9 @@ source=(
   "$_repo::git+https://github.com/certbot/certbot#tag=v$pkgver"
   'tmpfiles.conf'
 )
-sha512sums=('4c43b5c44aed8f950250db5a210105e4910aa705b5d23af7edcdac51cd73c05f20724afce9da2d255f92bff0c74b1a6b583a13f19421b511e37e4058ad7b6852'
+sha512sums=('b180c856eb5a69ef653ae55c74023eb7c7e3d92f972e71a9ed3aa401671a6fd966a66d7b37cbdddd2fa7fb452e35c7c98c3ce09b707ef58fe95e84f4dc808dd3'
             'fbb7bb4591876aeb2e118c3f3fc8ff507b6a3127de0f921c689e1d74c70320b4f2b8bf05b488ec4f714259701f1ac54e64a9f6181475da6bd6d1e3da3a602217')
-b2sums=('596a5cf9507c512a77d706cb6e5ae4aaa706876668dffb4e43091aa0ba88adaff8b1e2626b5956bec309ef8e55ad5cd70fba479fbe550fcb6afa7bce2eda1e2a'
+b2sums=('159daf050b8715d4ca75ef8f82fbc6f630308b544bd2e3987d817b1b22efd03d3067a8aad1e8fea684330a5c56505dc091eed8dccceac3c401fc19408b0cffda'
         '7d2c26a9953d3b5a899053bdd7bd77051c67abe6480af2bfaaee06f20a399b0b4ccccc0af35cfe9e6d2b1fc833dbff928ba46771a9127720073dda29aef9a2e0')
 
 prepare() {
