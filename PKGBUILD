@@ -12,13 +12,13 @@ pkgbase=libreoffice-still
 pkgname=('libreoffice-still-sdk' 'libreoffice-still')
 _LOver=24.8.4.2
 pkgver=24.8.4
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
 makedepends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
     'neon>=0.28.6' 'pango' 'nspr' 'libjpeg-turbo' 'libxrandr' 'libgl' 'dbus-glib'
-    'redland' 'hyphen' 'lpsolve' 'gcc-libs' 'sh' 'graphite' 'icu>=76' 'libxslt'
+    'redland' 'hyphen' 'lpsolve' 'gcc-libs' 'sh' 'graphite' 'icu' 'libxslt'
     'lcms2' 'poppler' 'libvisio' 'libetonyek' 'libodfgen' 'libcdr'
     'libmspub' 'harfbuzz-icu' 'nss' 'hicolor-icon-theme'
     'gst-plugins-base-libs' 'sane' 'perl-archive-zip' 'zip' 'unzip' 'unixodbc' 'ant'
@@ -33,7 +33,7 @@ makedepends=('curl>=7.20.0' 'hunspell>=1.2.8' 'python' 'libwpd>=0.9.2' 'libwps'
     'libtommath' 'libzmf' 'xmlsec' 'rxvt-unicode' 'gpgme' 'libwebp'
     'libepubgen' 'libfreehand' 'libqxp' 'libstaroffice'  'boost' 'libnumbertext'
     'abseil-cpp' 'clang' 'zxing-cpp'
-    'libffi' 'git' 'python-setuptools' 'rhino' 'argon2'
+    'libffi' 'git' 'python-setuptools' 'rhino'
 )
 options=('!lto') # using --enable-lto (for parallel link-time optimization)
 _mirror="https://download.documentfoundation.org/libreoffice/src/${pkgver}"
