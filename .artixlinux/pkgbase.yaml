@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: intel-oneapi-compiler-dpcpp-cpp-runtime
-  version: 2024.1.0-1
+  version: 2025.0.4-1
   arch:
     - x86_64
   pkgname:
     - intel-oneapi-compiler-dpcpp-cpp-runtime
     - intel-oneapi-compiler-dpcpp-cpp-runtime-libs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025.0.4-1
+    packages:
+      - intel-oneapi-compiler-dpcpp-cpp-runtime-2025.0.4-1-x86_64.pkg.tar.zst
+      - intel-oneapi-compiler-dpcpp-cpp-runtime-libs-2025.0.4-1-x86_64.pkg.tar.zst
   world:
     version: 2024.1.0-1
     packages:
