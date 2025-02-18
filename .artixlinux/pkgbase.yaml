@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: linux-zen
-  version: 6.13.zen1-1
+  version: 6.13.3.zen1-1
   arch:
     - x86_64
   pkgname:
@@ -51,9 +51,9 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 6.13.zen1-1
+    version: 6.13.3.zen1-1
     packages:
-      - linux-zen-6.13.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-headers-6.13.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-docs-6.13.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-6.13.3.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-headers-6.13.3.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-docs-6.13.3.zen1-1-x86_64.pkg.tar.zst
 team: galaxy
