@@ -8,7 +8,7 @@ pkgbase:
     - libreoffice-fresh-sdk
     - libreoffice-fresh
 actions:
-  addRepo: galaxy-goblins
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,10 +49,10 @@ repos:
       - libreoffice-fresh-sdk-25.2.0-3-x86_64.pkg.tar.zst
       - libreoffice-fresh-25.2.0-3-x86_64.pkg.tar.zst
   galaxy-gremlins:
-    version: 25.2.0-2
+    version: 25.2.0-3
     packages:
-      - libreoffice-fresh-sdk-25.2.0-2-x86_64.pkg.tar.zst
-      - libreoffice-fresh-25.2.0-2-x86_64.pkg.tar.zst
+      - libreoffice-fresh-sdk-25.2.0-3-x86_64.pkg.tar.zst
+      - libreoffice-fresh-25.2.0-3-x86_64.pkg.tar.zst
   galaxy:
     version: 25.2.0-1
     packages:
