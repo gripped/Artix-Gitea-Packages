@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: intel-oneapi-compiler-shared-runtime
-  version: 2024.1.0-1
+  version: 2025.0.4-2
   arch:
     - x86_64
   pkgname:
     - intel-oneapi-compiler-shared-runtime
     - intel-oneapi-compiler-shared-runtime-libs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025.0.4-2
+    packages:
+      - intel-oneapi-compiler-shared-runtime-2025.0.4-2-x86_64.pkg.tar.zst
+      - intel-oneapi-compiler-shared-runtime-libs-2025.0.4-2-x86_64.pkg.tar.zst
   world:
     version: 2024.1.0-1
     packages:
