@@ -6,7 +6,7 @@ _url=https://gitea.artixlinux.org/artix/octopi
 pkgbase=octopi
 pkgname=(octopi octopi-notifier)
 pkgver=0.17.0
-pkgrel=2
+pkgrel=3
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -32,7 +32,7 @@ depends=(
 source=(
     "git+https://github.com/aarnt/octopi.git#tag=v$pkgver"
     "$pkgbase-$pkgver-use-liboctopi.patch::$_url/commit/83a7d3359ba876dc482ab83c1cbb56d47e2a8c6a.patch"
-    "$pkgbase-$pkgver"-qt-sudo-config.patch::$_url/commit/df63eb937131e8de96d02a4e3c122c6b6aa16e54.patch
+    "$pkgbase-$pkgver-qt-sudo-config.patch::$_url/commit/df63eb937131e8de96d02a4e3c122c6b6aa16e54.patch"
 )
 sha256sums=('25c0e9432af3cab658db40bdf4db15c38b1237f6ee24e859e926c75abbeb8234'
             '058ac6af1ae720b1a99e0fc3980a4cd1a4f4acb210c3a83227006f554a23ffed'
@@ -61,8 +61,8 @@ package_octopi() {
         qt-sudo
     )
     optdepends=(
-        'octopi-notifier-frameworks: Notifier for Octopi with Knotifications support'
-        'trizen: for AUR support'
+        'octopi-notifier: Notifier for Octopi with Knotifications support'
+        'trizen: AUR support'
     )
     provides=(
         'octopi-repoeditor'
