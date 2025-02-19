@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libxml2
-  version: 2.13.5-4
+  version: 2.13.6-1
   arch:
     - x86_64
   pkgname:
@@ -9,21 +9,21 @@ pkgbase:
     - libxml2-docs
 actions:
   addRepo: system-gremlins
-  removeRepo: system-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: 2.13.5-4
+    version: 2.13.6-1
     packages:
-      - libxml2-2.13.5-4-x86_64.pkg.tar.zst
-      - libxml2-docs-2.13.5-4-x86_64.pkg.tar.zst
+      - libxml2-2.13.6-1-x86_64.pkg.tar.zst
+      - libxml2-docs-2.13.6-1-x86_64.pkg.tar.zst
   system:
     version: 2.13.5-2
     packages:
