@@ -7,7 +7,7 @@ pkgver=2025.0.4
 # Figure out new _debpkgrel value using
 # curl -L https://apt.repos.intel.com/oneapi/dists/all/main/binary-amd64/Packages | grep dpcpp-cpp
 _debpkgrel=1519
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Intel oneAPI DPC++/C++ Compiler"
 arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
