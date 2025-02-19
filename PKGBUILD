@@ -3,8 +3,8 @@
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 
 pkgname=freeradius
-pkgver=3.2.6
-pkgrel=5
+pkgver=3.2.7
+pkgrel=1
 pkgdesc='The premier open source RADIUS server'
 arch=('x86_64')
 url='https://freeradius.org/'
@@ -28,7 +28,7 @@ validpgpkeys=('BF2384EC6938B9744B03E2A620E37C25995B4F85') # FreeRADIUS - Package
 source=("https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${pkgver//./_}/freeradius-server-${pkgver}.tar.bz2"{,.sig}
         'freeradius-sysusers.conf'
         'freeradius-tmpfiles.conf')
-sha256sums=('18bbb2318448f13918897ae7a38b36afd3db7dd5c66f78ad24d2e0051269d9b2'
+sha256sums=('8a865766c5c0a1637d7a515cf913c4630771e55345a19d88b4b2c372877dae83'
             'SKIP'
             '717e0cbf090d023dde5f8aba6850ce9b25da29aa28dd6b5b4f98535b5872f14f'
             'f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc')
