@@ -1,10 +1,11 @@
  doc/checkupdates.8.adoc |  3 +--
  doc/paccache.8.adoc     |  9 +--------
+ doc/paclist.8.adoc      |  2 +-
  src/Makefile.am         |  6 ------
  src/paclist.sh.in       |  2 +-
  src/rankmirrors.sh.in   | 10 +++++-----
  test/pacsorttest.sh     |  6 +++---
- 6 files changed, 11 insertions(+), 25 deletions(-)
+ 7 files changed, 12 insertions(+), 26 deletions(-)
 
 diff --git a/doc/checkupdates.8.adoc b/doc/checkupdates.8.adoc
 index d4a2dba..8e007ba 100644
@@ -41,6 +42,19 @@ index bc950a0..09ab190 100644
 +linkman:pacman[8], linkman:pacman.conf[5]
 
  include::footer.adoc[]
+diff --git a/doc/paclist.8.adoc b/doc/paclist.8.adoc
+index 141489e..38071f3 100644
+--- a/doc/paclist.8.adoc
++++ b/doc/paclist.8.adoc
+@@ -16,7 +16,7 @@ Description
+ 'paclist' will list all packages installed on the system from a given repository.
+ Useful for seeing which packages you may have installed from the testing repositories,
+ for instance.
+-Example: paclist core-testing
++Example: paclist system-gremlins
+
+
+ Options
 diff --git a/src/Makefile.am b/src/Makefile.am
 index c893aff..3526512 100644
 --- a/src/Makefile.am
@@ -72,7 +86,7 @@ index 99258df..ce3ef08 100644
  }
 
 diff --git a/src/rankmirrors.sh.in b/src/rankmirrors.sh.in
-index 3927812..1b7ca84 100644
+index 3927812..429b75f 100644
 --- a/src/rankmirrors.sh.in
 +++ b/src/rankmirrors.sh.in
 @@ -67,7 +67,7 @@ err() {
@@ -98,15 +112,15 @@ index 3927812..1b7ca84 100644
  ARCH="$(uname -m)"
  getfetchurl() {
  	local strippedurl="${1%/}"
-@@ -174,7 +174,7 @@ while [[ $1 ]]; do
- 			done
- 			STDIN=1
- 			shift
--		else
-+		elsesystem-gremlins
- 			snum=1
- 			for ((i=1 ; i<${#1}; i++)); do
- 				case ${1:$i:1} in
+@@ -89,7 +89,7 @@ getfetchurl() {
+ 	local replacedurl="${strippedurl//'$arch'/$ARCH}"
+ 	if [[ ! $TARGETREPO ]]; then
+ 		# shellcheck disable=SC2016
+-		replacedurl="${replacedurl//'$repo'/core}"
++		replacedurl="${replacedurl//'$repo'/system}"
+ 		local tmp="${replacedurl%/*}"
+ 		tmp="${tmp%/*}"
+
 diff --git a/test/pacsorttest.sh b/test/pacsorttest.sh
 index 561e4b9..b7e4d79 100755
 --- a/test/pacsorttest.sh
