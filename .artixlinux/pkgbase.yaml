@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: octopi
-  version: 0.17.0-3
+  version: 0.17.0-4
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - octopi-notifier
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.17.0-3
+    version: 0.17.0-4
     packages:
-      - octopi-0.17.0-3-x86_64.pkg.tar.zst
-      - octopi-notifier-0.17.0-3-x86_64.pkg.tar.zst
+      - octopi-0.17.0-4-x86_64.pkg.tar.zst
+      - octopi-notifier-0.17.0-4-x86_64.pkg.tar.zst
 team: galaxy
