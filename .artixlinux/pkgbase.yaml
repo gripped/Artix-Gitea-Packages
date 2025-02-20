@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: plasma-systemmonitor
-  version: 6.3.0-1
+  version: 6.3.1-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.3.0-1
+    version: 6.3.1-1
     packages:
-      - plasma-systemmonitor-6.3.0-1-x86_64.pkg.tar.zst
+      - plasma-systemmonitor-6.3.1-1-x86_64.pkg.tar.zst
   world:
     version: 6.2.5-1
     packages:
