@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - btrfs-progs
 actions:
-  addRepo: null
-  removeRepo: system-gremlins
+  addRepo: system
+  removeRepo: system-goblins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 6.13-1
-    packages:
-      - btrfs-progs-6.13-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   system-gremlins:
     version: null
     packages: []
   system:
-    version: 6.12-2
+    version: 6.13-1
     packages:
-      - btrfs-progs-6.12-2-x86_64.pkg.tar.zst
+      - btrfs-progs-6.13-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
