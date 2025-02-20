@@ -18,7 +18,8 @@ depends=(
 makedepends=(
   rdma-core
   cuda
-  rocm-language-runtime
+  # would need import, do we want the rocm?
+  # rocm-language-runtime
 )
 optdepends=(
   'rdma-core: for InfiniBand and RDMA support'
@@ -40,7 +41,7 @@ build() {
     --prefix=/usr
     --sysconfdir=/etc
     --with-cuda=/opt/cuda
-    --with-rocm=/opt/rocm
+   # --with-rocm=/opt/rocm
     --with-verbs
     --with-rc
     --with-ud
