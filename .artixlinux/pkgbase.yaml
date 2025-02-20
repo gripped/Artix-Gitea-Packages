@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qbittorrent
-  version: 5.0.4-1
+  version: 5.0.4-3
   arch:
     - x86_64
   pkgname:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 5.0.4-1
+    version: 5.0.4-3
     packages:
-      - qbittorrent-5.0.4-1-x86_64.pkg.tar.zst
-      - qbittorrent-nox-5.0.4-1-x86_64.pkg.tar.zst
+      - qbittorrent-5.0.4-3-x86_64.pkg.tar.zst
+      - qbittorrent-nox-5.0.4-3-x86_64.pkg.tar.zst
 team: galaxy
