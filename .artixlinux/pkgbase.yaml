@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libblockdev
-  version: 3.2.1-3
+  version: 3.3.0-1
   arch:
     - x86_64
   pkgname:
@@ -22,11 +22,11 @@ pkgbase:
     - python-libblockdev
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,23 +45,23 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.2.1-3
+    version: 3.3.0-1
     packages:
-      - libblockdev-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-btrfs-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-crypto-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-dm-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-fs-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-loop-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-lvm-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-mdraid-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-mpath-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-nvdimm-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-nvme-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-part-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-smart-3.2.1-3-x86_64.pkg.tar.zst
-      - libblockdev-swap-3.2.1-3-x86_64.pkg.tar.zst
-      - python-libblockdev-3.2.1-3-x86_64.pkg.tar.zst
+      - libblockdev-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-btrfs-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-crypto-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-dm-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-fs-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-loop-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-lvm-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-mdraid-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-mpath-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-nvdimm-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-nvme-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-part-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-smart-3.3.0-1-x86_64.pkg.tar.zst
+      - libblockdev-swap-3.3.0-1-x86_64.pkg.tar.zst
+      - python-libblockdev-3.3.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
