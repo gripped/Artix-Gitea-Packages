@@ -10,7 +10,7 @@ pkgname=(
   openmpi-docs
 )
 pkgver=5.0.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='High performance message passing library (MPI)'
 arch=(x86_64)
 url='https://www.open-mpi.org'
@@ -125,7 +125,7 @@ package_openmpi() {
     'hip-runtime-amd: ROCm support'
     'gcc-fortran: fortran support'
     'openssh: for execution on remote hosts via plm_ssh_agent'
-    'openucc: for UCC accelerated collectives'
+    # 'openucc: for UCC accelerated collectives'
   )
   provides=(
     libmpi.so
