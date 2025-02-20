@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zstd
-  version: 1.5.7-1
+  version: 1.5.7-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 1.5.7-1
+    version: 1.5.7-2
     packages:
-      - zstd-1.5.7-1-x86_64.pkg.tar.zst
+      - zstd-1.5.7-2-x86_64.pkg.tar.zst
   system:
     version: 1.5.6-1
     packages:
