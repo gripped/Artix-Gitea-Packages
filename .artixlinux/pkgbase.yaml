@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: kstars
-  version: 1:3.7.4-1
+  version: 1:3.7.5-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:3.7.4-1
+    version: 1:3.7.5-1
     packages:
-      - kstars-1:3.7.4-1-x86_64.pkg.tar.zst
+      - kstars-1:3.7.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
