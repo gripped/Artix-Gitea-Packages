@@ -9,8 +9,8 @@ pkgbase:
     - postgresql-libs
     - postgresql-docs
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -30,17 +30,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 17.2-3
     packages:
       - postgresql-17.2-3-x86_64.pkg.tar.zst
       - postgresql-libs-17.2-3-x86_64.pkg.tar.zst
       - postgresql-docs-17.2-3-x86_64.pkg.tar.zst
-  world:
-    version: 17.2-2
-    packages:
-      - postgresql-17.2-2-x86_64.pkg.tar.zst
-      - postgresql-libs-17.2-2-x86_64.pkg.tar.zst
-      - postgresql-docs-17.2-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
