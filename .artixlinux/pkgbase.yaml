@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: lib32-libsndfile
-  version: 1.2.2-2
+  version: 1.2.2-3
   arch:
     - x86_64
   pkgname:
     - lib32-libsndfile
 actions:
-  addRepo: lib32
+  addRepo: lib32-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -34,8 +34,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 1.2.2-3
+    packages:
+      - lib32-libsndfile-1.2.2-3-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
