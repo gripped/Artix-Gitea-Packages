@@ -7,11 +7,11 @@ pkgbase:
   pkgname:
     - kpackage
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: null
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.11.0-1
-    packages:
-      - kpackage-6.11.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
