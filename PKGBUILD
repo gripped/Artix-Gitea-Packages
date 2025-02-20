@@ -3,7 +3,7 @@
 
 pkgname=calamares
 pkgver=3.3.13
-pkgrel=3
+pkgrel=4
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://github.com/calamares/calamares"
