@@ -4,7 +4,7 @@
 pkgbase=plasma-integration
 pkgname=(plasma-integration
          plasma5-integration)
-pkgver=6.3.0
+pkgver=6.3.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=2
 pkgdesc='Qt Platform Theme integration plugins for the Plasma workspaces'
@@ -53,7 +53,7 @@ makedepends=(extra-cmake-modules
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
         https://invent.kde.org/plasma/plasma-integration/-/commit/153da40b.patch)
-sha256sums=('e082f45c71807e4a41a5fee0eee3f2734728b8c8ded041e2f944b75306869433'
+sha256sums=('446567571dc8b43447b7b7afd7b82d9ba2a60421393c85cbb109bb65f540a9c2'
             'SKIP'
             'f4774cce352bab4b40130a16ba9cdd59bc333dd8293e2317c82e602be64e0c82')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
