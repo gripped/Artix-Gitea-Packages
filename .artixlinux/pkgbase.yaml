@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: pacman
-  version: 7.0.0.r6.gc685ae6-1.1
+  version: 7.0.0.r6.gc685ae6-2
   arch:
     - x86_64
   pkgname:
     - pacman
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 7.0.0.r6.gc685ae6-2
+    packages:
+      - pacman-7.0.0.r6.gc685ae6-2-x86_64.pkg.tar.zst
   system:
     version: 7.0.0.r6.gc685ae6-1.1
     packages:
