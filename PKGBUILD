@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Alois Nespor <alois.nespor@gmail.com>
 
 pkgbase=kid3
 pkgname=('kid3-common' 'kid3-qt' 'kid3')
 pkgver=3.9.6
-pkgrel=2
+pkgrel=3
 pkgdesc="An MP3, Ogg/Vorbis and FLAC tag editor"
 arch=('x86_64')
 url="https://kid3.kde.org/"
