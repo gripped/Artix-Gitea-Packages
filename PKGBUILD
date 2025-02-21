@@ -331,4 +331,3 @@ END
     ln -srfv "$pkgdir/usr/lib/libnssckbi.so" "$nssckbi"
   fi
 }
-

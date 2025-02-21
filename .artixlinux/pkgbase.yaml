@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - librewolf
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
