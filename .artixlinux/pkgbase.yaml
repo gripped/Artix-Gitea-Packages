@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - libmspub
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.1.4-17
     packages:
       - libmspub-0.1.4-17-x86_64.pkg.tar.zst
-  galaxy:
-    version: 0.1.4-16
-    packages:
-      - libmspub-0.1.4-16-x86_64.pkg.tar.zst
 team: galaxy
