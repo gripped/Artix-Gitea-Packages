@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - liborcus
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,9 +47,8 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: 0.20.0-1
-    packages:
-      - liborcus-0.20.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy:
     version: null
     packages: []
