@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - libixion
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.20.0-1
+    packages:
+      - libixion-0.20.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.19.0-7
     packages:
