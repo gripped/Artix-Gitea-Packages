@@ -1,10 +1,11 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: juergen <juergen@archlinux.org>
 # Contributor: Manolis Tzanidakis, Petter Gundersen
 
 pkgname=scummvm
 pkgver=2.9.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A 'virtual machine' for several classic graphical point-and-click adventure games."
 arch=('x86_64')
 license=('GPL')
