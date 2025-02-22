@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: git-lfs
-  version: 3.6.0-1
+  version: 3.6.1-1
   arch:
     - x86_64
     - aarch64
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.6.0-1
+    version: 3.6.1-1
     packages:
-      - git-lfs-3.6.0-1-x86_64.pkg.tar.zst
+      - git-lfs-3.6.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
