@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: exiv2
-  version: 0.28.4-1
+  version: 0.28.5-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.28.4-1
+    version: 0.28.5-1
     packages:
-      - exiv2-0.28.4-1-x86_64.pkg.tar.zst
+      - exiv2-0.28.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
