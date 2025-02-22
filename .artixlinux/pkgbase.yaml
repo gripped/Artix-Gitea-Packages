@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: orc
-  version: 0.4.40-1
+  version: 0.4.41-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.40-1
+    version: 0.4.41-1
     packages:
-      - orc-0.4.40-1-x86_64.pkg.tar.zst
+      - orc-0.4.41-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
