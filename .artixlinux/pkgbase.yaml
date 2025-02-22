@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: power-profiles-daemon
-  version: 0.23-2
+  version: 0.30-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.23-2
+    version: 0.30-1
     packages:
-      - power-profiles-daemon-0.23-2-x86_64.pkg.tar.zst
+      - power-profiles-daemon-0.30-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
