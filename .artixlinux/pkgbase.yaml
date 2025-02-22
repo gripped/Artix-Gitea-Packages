@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - 0ad
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: a27-3
     packages:
       - 0ad-a27-3-x86_64.pkg.tar.zst
-  galaxy:
-    version: a27-2
-    packages:
-      - 0ad-a27-2-x86_64.pkg.tar.zst
 team: galaxy
