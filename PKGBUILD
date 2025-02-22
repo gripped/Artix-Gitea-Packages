@@ -2,25 +2,22 @@
 # Contributor: Robin Candau <antiz@archlinux.org>
 
 pkgname=lemurs
-pkgver=0.3.2
-pkgrel=3
+pkgver=0.4.0
+pkgrel=1
 pkgdesc="A customizable TUI display/login manager written in Rust"
-arch=('x86_64')
 url="https://github.com/coastalwhite/lemurs"
+arch=('x86_64')
 license=('Apache-2.0 OR MIT')
 depends=('udev' 'pam')
 makedepends=('cargo')
-backup=('etc/lemurs/config.toml')
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz"
-		"rust-stable.patch")
-sha256sums=('a366595602c75ed723e7b527ce1b8be33bdb998f5faa824605b97fb4b9e810f4'
-            '971a83317740066cb96186c6d2be8bfb8beaf3866750fb131ff1923d1fdb602d')
+backup=("etc/${pkgname}/config.toml")
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('05641ea9f0b8fa459c737adccd2f4714fd29e69e07a213c117b35013837bfe3a')
 
 prepare() {
 	cd "${pkgname}-${pkgver}"
 	export RUSTUP_TOOLCHAIN=stable
 	cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
-	patch --strip=1 --input=../rust-stable.patch
 }
 
 build() {

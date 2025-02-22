@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: lemurs
-  version: 0.3.2-3
+  version: 0.4.0-1
   arch:
     - x86_64
   pkgname:
     - lemurs
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.4.0-1
+    packages:
+      - lemurs-0.4.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: 0.3.2-3
     packages:
