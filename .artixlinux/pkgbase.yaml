@@ -13,12 +13,12 @@ pkgbase:
     - rust-wasm
     - rust-src
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,6 +34,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 1:1.85.0-1
     packages:
       - rust-1:1.85.0-1-x86_64.pkg.tar.zst
@@ -43,16 +46,6 @@ repos:
       - rust-aarch64-musl-1:1.85.0-1-x86_64.pkg.tar.zst
       - rust-wasm-1:1.85.0-1-x86_64.pkg.tar.zst
       - rust-src-1:1.85.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 1:1.84.1-1
-    packages:
-      - rust-1:1.84.1-1-x86_64.pkg.tar.zst
-      - lib32-rust-libs-1:1.84.1-1-x86_64.pkg.tar.zst
-      - rust-musl-1:1.84.1-1-x86_64.pkg.tar.zst
-      - rust-aarch64-gnu-1:1.84.1-1-x86_64.pkg.tar.zst
-      - rust-aarch64-musl-1:1.84.1-1-x86_64.pkg.tar.zst
-      - rust-wasm-1:1.84.1-1-x86_64.pkg.tar.zst
-      - rust-src-1:1.84.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
