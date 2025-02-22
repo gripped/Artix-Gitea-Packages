@@ -19,7 +19,7 @@ pkgname=(kde-applications-meta
          kde-utilities-meta
          kdevelop-meta)
 pkgver=24.12
-pkgrel=1
+pkgrel=2
 arch=(any)
 license=(None)
 url='https://www.archlinux.org/'
@@ -137,7 +137,6 @@ package_kde-graphics-meta() {
            kruler
            okular
            skanlite
-           spectacle
            svgpart
            kdegraphics-thumbnailers)
 }
