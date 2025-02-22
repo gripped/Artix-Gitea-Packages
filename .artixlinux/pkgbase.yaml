@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: nvidia-open
-  version: 570.86.16-9
+  version: 570.86.16-9.1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 570.86.16-9
+    version: 570.86.16-9.1
     packages:
-      - nvidia-open-570.86.16-9-x86_64.pkg.tar.zst
+      - nvidia-open-570.86.16-9.1-x86_64.pkg.tar.zst
   world:
     version: 570.86.16-8
     packages:
