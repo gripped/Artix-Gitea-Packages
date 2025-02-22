@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: diffutils
-  version: 3.10-1
+  version: 3.11-1
   arch:
     - x86_64
   pkgname:
     - diffutils
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.11-1
+    packages:
+      - diffutils-3.11-1-x86_64.pkg.tar.zst
   system:
     version: 3.10-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
