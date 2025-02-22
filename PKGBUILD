@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=labwc
-pkgver=0.8.2
-pkgrel=2
+pkgver=0.8.3
+pkgrel=1
 pkgdesc='wlroots-based window-stacking compositor for wayland'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=('libpng' 'librsvg' 'pango' 'seatd' 'ttf-font' 'wlroots=0.18.2' 'wayland
 makedepends=('meson' 'cmake' 'scdoc' 'wayland-protocols')
 provides=(wayland-compositor)
 source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('1adba1c87ec26f2f00409b47a0b79ccfd68bd160e1abc41822fb01f0a76ee947')
+sha256sums=('746be2ff2d0c0c0b795c97fa24c7058f75586685c88a1194c243b6a846f938a5')
 
 build() {
   artix-meson -Dman-pages=enabled "${pkgname}-${pkgver}" build
