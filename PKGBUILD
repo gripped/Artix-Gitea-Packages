@@ -10,7 +10,7 @@
 
 pkgname=blender
 pkgver=4.3.2
-pkgrel=8
+pkgrel=10
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -199,7 +199,7 @@ build() {
     -D OCLOC_INSTALL_DIR=/usr
     -D OPTIX_ROOT_DIR="$srcdir"
     -D PYTHON_VERSION="$(_get_pyver)"
-    # -D SYCL_CPP_FLAGS=--verbose  # for debugging
+    -D SYCL_CPP_FLAGS="--verbose"  # for debugging
     -D SYCL_ROOT_DIR=/opt/intel/oneapi/compiler/latest
     -D SYCL_OFFLINE_COMPILER_PARALLEL_JOBS=8
     -D USD_ROOT_DIR=/usr
