@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: pbzip2
-  version: 1.1.13-3
+  version: 1.1.13-4
   arch:
     - x86_64
   pkgname:
     - pbzip2
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.1.13-3
+    version: 1.1.13-4
     packages:
-      - pbzip2-1.1.13-3-x86_64.pkg.tar.zst
+      - pbzip2-1.1.13-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
