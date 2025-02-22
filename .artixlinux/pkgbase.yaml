@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xfsprogs
-  version: 6.12.0-1
+  version: 6.12.0-2
   arch:
     - x86_64
   pkgname:
     - xfsprogs
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,9 +22,9 @@ repos:
     version: null
     packages: []
   system:
-    version: 6.12.0-1
+    version: 6.12.0-2
     packages:
-      - xfsprogs-6.12.0-1-x86_64.pkg.tar.zst
+      - xfsprogs-6.12.0-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []

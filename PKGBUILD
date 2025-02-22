@@ -2,7 +2,7 @@
 
 pkgname=xfsprogs
 pkgver=6.12.0
-pkgrel=1
+pkgrel=2
 pkgdesc="XFS filesystem utilities"
 arch=('x86_64')
 license=(
@@ -38,6 +38,12 @@ validpgpkeys=(
 build() {
   cd ${pkgname}-dev
   make configure
+
+  # Inject libicuuc to fix link error:
+  # /usr/bin/ld: /tmp/ccRHx17I.ltrans1.ltrans.o: undefined reference to symbol 'uiter_setString_76'
+  # /usr/bin/ld: /usr/lib64/libicuuc.so.76: error adding symbols: DSO missing from command line
+  sed -r -i 's/\$\(LIBICU_LIBS\)/\0 -licuuc/' scrub/Makefile
+
   # Package is honoring CFLAGS; No need to use OPTIMIZER anymore.
   # However, we have to provide an empty value to avoid default
   # flags.
