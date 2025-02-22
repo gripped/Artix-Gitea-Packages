@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: docker-buildx
-  version: 0.20.1-1
+  version: 0.21.1-1
   arch:
     - x86_64
   pkgname:
     - docker-buildx
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20.1-1
+    version: 0.21.1-1
     packages:
-      - docker-buildx-0.20.1-1-x86_64.pkg.tar.zst
+      - docker-buildx-0.21.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

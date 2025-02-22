@@ -4,7 +4,7 @@
 # Contributor: Joakim Saario <saario.joakim@gmail.com>
 
 pkgname=docker-buildx
-pkgver=0.20.1
+pkgver=0.21.1
 pkgrel=1
 pkgdesc="Docker CLI plugin for extended build capabilities with BuildKit"
 arch=('x86_64')
@@ -14,7 +14,7 @@ makedepends=('go' 'git')
 depends=('glibc')
 options=(!lto)
 source=("git+https://github.com/docker/buildx.git#tag=v${pkgver}")
-sha512sums=('edab97b7bc123bb6b38a32b3595751ab8ee380c739676c4205b941cea147a19cead9f5ae64c4e075b329ac602f119e4288e6166510a8b3a549d9085ad63f5066')
+sha512sums=('1e89ef26bd5ba920cff1fe3d56693ba813a2f304af5cca7e54b3f14709df0e3b1cc7f1ecb006bb9232eb700ebccea2833c57fa3acefdfa0bd3356ac21a1e0374')
 
 build() {
   cd "buildx"
@@ -23,7 +23,6 @@ build() {
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_LDFLAGS="${LDFLAGS}"
   export GOFLAGS='-buildmode=pie -trimpath -mod=readonly -modcacherw'
-  export GO111MODULE=on
   _buildx_r=github.com/docker/buildx
   go build -mod=vendor -o docker-buildx -ldflags "-linkmode=external \
     -compressdwarf=false \
