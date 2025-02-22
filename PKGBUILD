@@ -13,7 +13,6 @@ depends=('glibc')
 makedepends=('git' 'go' 'gox' 'go-tools')
 makedepends+=('procps-ng' 'zip' 'yarn' 'nodejs-lts-iron' 'npm')  # makedepends for the UI
 source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
-        'consul.service'
         'consul.default'
         'consul.sysusers'
         'example.json'
@@ -23,11 +22,10 @@ source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
 install=consul.install
 backup=('etc/default/consul')
 sha512sums=('2a0d6d0879f8845329315947c06180e8a428c2670daad370b5f5c231eef48ab7039cb07b313164ecf975a693216a3069ba365d71c074e22ba3a1aadb840f7b09'
-            'c70b9d1556f6c7ecb2e915ab685f289cef0e31198bd2e50c74a0483bbfb387beec67334f539a90adbf68b61b07946e98b300ab8a8e26e53b35f4ab4894adeb04'
             'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
             'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348'
-            '3279545adae32d0cdbac49e7ae36e6ace99b1cad12da4addd0c9fcca7dc405a4ebc2205fee7177490191069c4645da9276870abaf3a9704c64e62326fa4c4647')
+            '39aa5761a725fab8e9cf3eabd7c47d64b91489c03c059747849ec4a4b1032e44f2770a238338fb43c963516c6e941fd82157b91128c2c1899ba5448a9dc49979')
 
 export CGO_LDFLAGS="${LDFLAGS}"
 export CGO_CFLAGS="${CFLAGS}"
@@ -80,7 +78,6 @@ package() {
   install -D -m644 -o 0 -g 0 "${srcdir}/example.json" "${pkgdir}/usr/share/doc/consul/config.example.json"
   install -Dm755 "build/consul" "${pkgdir}/usr/bin/consul"
 
-  install -Dm644 "${srcdir}/consul.service" "${pkgdir}/usr/lib/systemd/system/consul.service"
   install -Dm644 "${srcdir}/consul.sysusers" "${pkgdir}/usr/lib/sysusers.d/consul.conf"
 
   install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"

@@ -1,0 +1,114 @@
+From 3ecdb19cc69396a3232bdb74116f30b7b3a72d04 Mon Sep 17 00:00:00 2001
+From: hashworks <mail@hashworks.net>
+Date: Fri, 10 Jan 2025 14:32:30 +0100
+Subject: [PATCH] Switch to NodeJS LTS 20 "Iron"
+
+NodeJS 18 "Hydrogen" will be EOL in April 2025, so we should switch to a
+newer LTS. The latest LTS 22 "Jod" failed to build for me.
+
+Closed #22065.
+
+Signed-off-by: hashworks <mail@hashworks.net>
+---
+ .github/workflows/build.yml        | 4 ++--
+ .github/workflows/frontend.yml     | 8 ++++----
+ ui/package.json                    | 2 +-
+ ui/packages/consul-ui/package.json | 4 ++--
+ 4 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 78481f2a20566..fc4f7b4c4e379 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -111,7 +111,7 @@ jobs:
+       - name: Setup with node and yarn
+         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+         with:
+-          node-version: '18'
++          node-version: '20'
+           cache: 'yarn'
+           cache-dependency-path: 'ui/yarn.lock'
+ 
+@@ -212,7 +212,7 @@ jobs:
+       - name: Setup with node and yarn
+         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+         with:
+-          node-version: '18'
++          node-version: '20'
+           cache: 'yarn'
+           cache-dependency-path: 'ui/yarn.lock'
+ 
+diff --git a/.github/workflows/frontend.yml b/.github/workflows/frontend.yml
+index 93f8ee0bd0506..596549ea8dbea 100644
+--- a/.github/workflows/frontend.yml
++++ b/.github/workflows/frontend.yml
+@@ -37,7 +37,7 @@ jobs:
+ 
+     - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+       with:
+-        node-version: '18'
++        node-version: '20'
+ 
+     - name: Install Yarn
+       run: corepack enable
+@@ -57,7 +57,7 @@ jobs:
+ 
+     - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+       with:
+-        node-version: '18'
++        node-version: '20'
+ 
+     - name: Install Yarn
+       run: corepack enable
+@@ -87,7 +87,7 @@ jobs:
+ 
+       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+         with:
+-          node-version: '18'
++          node-version: '20'
+ 
+       - name: Install Yarn
+         run: corepack enable
+@@ -127,7 +127,7 @@ jobs:
+ 
+     - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+       with:
+-        node-version: '18'
++        node-version: '20'
+ 
+     - name: Install Yarn
+       run: corepack enable
+diff --git a/ui/package.json b/ui/package.json
+index 2fe24dda1693c..4f4535150a82b 100644
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -29,6 +29,6 @@
+     "ansi-html": "0.0.8"
+   },
+   "engines": {
+-    "node": "18"
++    "node": "20"
+   }
+ }
+diff --git a/ui/packages/consul-ui/package.json b/ui/packages/consul-ui/package.json
+index 44149453e5e0e..68307780304e0 100644
+--- a/ui/packages/consul-ui/package.json
++++ b/ui/packages/consul-ui/package.json
+@@ -196,7 +196,7 @@
+     "webpack": "^5.74.0"
+   },
+   "engines": {
+-    "node": "18"
++    "node": "20"
+   },
+   "ember": {
+     "edition": "octane"
+@@ -211,7 +211,7 @@
+     ]
+   },
+   "volta": {
+-    "node": "18"
++    "node": "20"
+   },
+   "dependencies": {
+     "doctoc": "^2.0.0",
