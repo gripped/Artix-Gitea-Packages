@@ -8,11 +8,11 @@ pkgbase:
     - libreoffice-still-sdk
     - libreoffice-still
 actions:
-  addRepo: null
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -47,13 +47,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 24.8.5-1
     packages:
       - libreoffice-still-sdk-24.8.5-1-x86_64.pkg.tar.zst
       - libreoffice-still-24.8.5-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 24.8.4-4
-    packages:
-      - libreoffice-still-sdk-24.8.4-4-x86_64.pkg.tar.zst
-      - libreoffice-still-24.8.4-4-x86_64.pkg.tar.zst
 team: galaxy
