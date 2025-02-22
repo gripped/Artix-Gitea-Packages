@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: s2n-tls
-  version: 1.5.10-1
+  version: 1.5.11-1
   arch:
     - x86_64
   pkgname:
     - s2n-tls
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.10-1
+    version: 1.5.11-1
     packages:
-      - s2n-tls-1.5.10-1-x86_64.pkg.tar.zst
+      - s2n-tls-1.5.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
