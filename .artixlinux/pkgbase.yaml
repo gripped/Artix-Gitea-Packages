@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: s2n-tls
-  version: 1.5.11-1
+  version: 1.5.12-1
   arch:
     - x86_64
   pkgname:
     - s2n-tls
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.5.12-1
+    packages:
+      - s2n-tls-1.5.12-1-x86_64.pkg.tar.zst
   world:
     version: 1.5.11-1
     packages:
