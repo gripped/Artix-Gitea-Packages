@@ -9,7 +9,7 @@
 
 pkgname=mpd
 pkgver=0.23.17
-pkgrel=2
+pkgrel=3
 pkgdesc="Flexible, powerful, server-side application for playing music"
 arch=(x86_64)
 url="https://www.musicpd.org/"
@@ -102,6 +102,7 @@ validpgpkeys=('0392335A78083894A4301C43236E8A58C6DB4512') # Max Kellermann <max@
 
 build() {
   local _meson_options=(
+    -D systemd=disabled
     -D documentation=enabled
     -D adplug=disabled
     -D audiofile=disabled
@@ -111,7 +112,6 @@ build() {
     -D tremor=disabled
     -D b_ndebug=true
     -D test=true
-    -D systemd=disabled
   )
 
   # NOTE: sndio conflicts with alsa
