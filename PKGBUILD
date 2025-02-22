@@ -1,7 +1,13 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
+
+_ver=6.13.4
+_rel=1
+_arch=arch${_rel}
+_artix=${_arch/arch/artix}
+
 pkgbase=linux
-pkgver=6.13.4.arch1
+pkgver=${_ver}.${_artix}
 pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
@@ -29,10 +35,10 @@ options=(
   !debug
   !strip
 )
-_srcname=linux-${pkgver%.*}
-_srctag=v${pkgver%.*}-${pkgver##*.}
+_srcname=linux-${_ver}
+_srctag=v${_ver}-${_arch}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
@@ -53,7 +59,7 @@ b2sums=('2fe8e972e7de458fba6fbb18a08a01f17b49e4a2d31aa1368e50895a2698c6e1aaaf513
         'SKIP'
         '5b12a734dd023343efa024acb4ba1bdb43f0fe5de09b449f11a30b2f9862cae577569e21b790fc7173ef90e4c7609fb71c889d15a47f9f2f9cbb4751a536e495')
 
-export KBUILD_BUILD_HOST=archlinux
+export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
@@ -73,6 +79,7 @@ prepare() {
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
   done
+  sed -i -r "s/EXTRAVERSION = -${_arch}/EXTRAVERSION = -${_artix}/" "Makefile"
 
   echo "Setting config..."
   cp ../config .config
@@ -108,8 +115,8 @@ _package() {
     WIREGUARD-MODULE
   )
   replaces=(
-    virtualbox-guest-modules-arch
-    wireguard-arch
+    virtualbox-guest-modules-artix
+    wireguard-artix
   )
 
   cd $_srcname
