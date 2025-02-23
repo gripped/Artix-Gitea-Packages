@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - basu
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.2.1-1.1
+    packages:
+      - basu-0.2.1-1.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
