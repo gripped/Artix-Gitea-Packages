@@ -32,7 +32,6 @@ prepare() {
   cp "$srcdir/artix-icon.png" config/bodhi/icon.png
   cp "$srcdir/Artix_dna_spiral_dark_bw-4K.png" data/themes/img/
   cp "$srcdir/background.edc" data/themes/edc/
-  git cherry-pick -n 91cd788f0f29b111ac41bf862636cb28ca31db65
 }
 
 build() {
