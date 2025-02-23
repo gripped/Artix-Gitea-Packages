@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wine
-  version: 10.1-1
+  version: 10.2-2
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 10.1-1
+    version: 10.2-2
     packages:
-      - wine-10.1-1-x86_64.pkg.tar.zst
+      - wine-10.2-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
