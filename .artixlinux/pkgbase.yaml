@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: zeroc-ice
-  version: 3.7.10-1
+  version: 3.7.10-2
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.7.10-1
+    version: 3.7.10-2
     packages:
-      - zeroc-ice-3.7.10-1-x86_64.pkg.tar.zst
-      - zeroc-ice-java-3.7.10-1-x86_64.pkg.tar.zst
+      - zeroc-ice-3.7.10-2-x86_64.pkg.tar.zst
+      - zeroc-ice-java-3.7.10-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
