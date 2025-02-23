@@ -1,16 +1,25 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: pacman-static
+  version: 7.0.0.r6.gc685ae6-15
+  arch:
+    - i486
+    - i686
+    - pentium4
+    - x86_64
+    - arm
+    - armv6h
+    - armv7h
+    - aarch64
+  pkgname:
+    - pacman-static
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +57,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 7.0.0.r6.gc685ae6-15
+    packages:
+      - pacman-static-7.0.0.r6.gc685ae6-15-x86_64.pkg.tar.xz
