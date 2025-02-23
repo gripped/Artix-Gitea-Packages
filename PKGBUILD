@@ -3,8 +3,8 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=18.4
-_commit="632bc8ec1477cd2e0a758daeb5e78fa2c987ecc9"
+pkgrel=20
+_commit="8b36d346c0fdea7138f6fa5895aa962ebe637c90"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -87,7 +87,7 @@ package_moksha-module-mixer() {
   install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COPYING
 }
 
-sha256sums=('819e73ba4a2782398779d42e881b8b32bf1143a1e5444a6eecac25eda3e4fb5d'
+sha256sums=('91c018d8e86e22e2f669eb10a924ecccd07cb6bbf158f3bda38bd43869685122'
             'SKIP'
             '0bd52f4d66bd5f964996f88b379e6b8f50fcf457151ff30083d2d1b13f27dc36'
             '67a67d03fbfb59edecafc6bd3311e258e79da12726dcb1a44f037d54f31a1797'
