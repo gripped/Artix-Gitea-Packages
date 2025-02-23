@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: qt5-styleplugins
-  version: 5.0.0.20170311-44
+  version: 5.0.0.20170311-45
   arch:
     - x86_64
     - aarch64
   pkgname:
     - qt5-styleplugins
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -51,6 +51,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
-team: galaxy
+    version: 5.0.0.20170311-45
+    packages:
+      - qt5-styleplugins-5.0.0.20170311-45-x86_64.pkg.tar.zst
+team: world
