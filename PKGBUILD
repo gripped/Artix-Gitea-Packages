@@ -1,0 +1,57 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Filipe Laíns <lains@archlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Kyle Keen <keenerd@gmail.com>
+# Contributor: Rachel Mant <aur@dragonmux.network>
+
+pkgbase=kicad-library
+pkgname=($pkgbase{,-3d})
+pkgver=8.0.8
+pkgrel=1
+pkgdesc='Assorted libraries for KiCad'
+arch=('any')
+url='http://kicad.org/'
+license=('CC-BY-SA-4.0')
+makedepends=('git' 'cmake')
+options=('!strip' '!debug')
+source=(
+  "git+https://gitlab.com/kicad/libraries/kicad-packages3D.git#tag=$pkgver"
+  "git+https://gitlab.com/kicad/libraries/kicad-symbols.git#tag=$pkgver"
+  "git+https://gitlab.com/kicad/libraries/kicad-templates.git#tag=$pkgver"
+  "git+https://gitlab.com/kicad/libraries/kicad-footprints.git#tag=$pkgver"
+)
+sha512sums=('67843a3c688db499d9f15ed9124f61dfdc9c80432674322e31367c118124c234a6e0fb97b55f560a88259b63b4e8d798529ce33d7ffa140017e94bbaef27ab41'
+            '6057a57f293ff21405874593fd711c5a45e7f38cb210c8027df7b842665411742a64ce9245410948fa8893b6be880c52808f0942713833379a45dfd613be3dd7'
+            '021ad97ce83bb2d1788ac7313160c17ed28c5875ebd6949869ff4738eb2077d6fbf0af98fb84a6312e94e52309fc3bfba3193fdb842d7d5d288867945b367c8c'
+            'a5bd268e88069821350c077b008fcf04f33611190ec4e5fa20d987f12791d3543fb0cb6228effdf85fcdfff02b630d22aad02d50a89c90386662a7e7d8c4722a')
+b2sums=('e1f4c1154d1c04493147b697417207738d79c6a5c5fd41dc55e859feeb91f29213a0118000315f01ab3807779d71ed7336d959c9a7cdb227d425081d5b9fccfc'
+        'e7889862b3fcfc034d6f12e870f8724ca839633378f7ab4f80a11af2d100d75be7c73d7ddaf54a5d3034eff889e7cc47c6654b43c28879642a8b2f310a5c70af'
+        '5801b6160f72401d0482a055051d5cfe78fe6f5c6a3894d3e5e2b498daa6b3f680bafab9f1e8a54c8285bf1d5f9aee605b6f0e241f1641b6f50b378f6120fcfe'
+        '253578c59d80671ede1483a102215ce5d97fa6f0fe0f5cee606cf555bfffb941be32ce7885d5382d36be3a8248cf359b58619a95b8655c1fd8cdc684bade2f57')
+
+build() {
+  for package in symbols footprints packages3D templates; do
+     cmake \
+       -B "build-$package" \
+       -S "kicad-$package" \
+       -DCMAKE_INSTALL_PREFIX=/usr
+
+     cmake --build "build-$package"
+   done
+}
+
+package_kicad-library() {
+  pkgdesc="KiCad symbol, footprint and template libraries"
+
+  for package in symbols footprints templates; do
+    DESTDIR="$pkgdir" cmake --install "build-$package"
+  done
+}
+
+package_kicad-library-3d() {
+  pkgdesc="KiCad 3D model libraries"
+
+  DESTDIR="$pkgdir" cmake --install build-packages3D
+}
+
+# vim:set ts=2 sw=2 et:
