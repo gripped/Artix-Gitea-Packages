@@ -1,8 +1,8 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=xfsprogs
-pkgver=6.12.0
-pkgrel=2
+pkgver=6.13.0
+pkgrel=1
 pkgdesc="XFS filesystem utilities"
 arch=('x86_64')
 license=(
@@ -28,7 +28,7 @@ makedepends=(
   icu
 )
 source=("git+https://git.kernel.org/pub/scm/fs/xfs/xfsprogs-dev.git?signed#tag=v${pkgver}")
-b2sums=('f34492ed498c38b68c3a30eb028d5221e8a45ac0fe0cdf721744d77a2cf03a16a70fa7d6ebd50face5e05c25fcbfc1c671b66f1761387deddbdb14af5e9d8a53')
+b2sums=('27a21cb9d926f67df3d32d97a9b51028964e8c358d8170ddc4c6b22e92c97ec524d706ca1ea3446e3185bae2dedc17ce14fd77b11680cdf3f4a4ceef00bdcdcd')
 validpgpkeys=(
   'AE1B2A9562721A6FC4307C1F46A7EA18AC33E108' #  Andrey Albershteyn <aalbersh@redhat.com>
   '2B8185919E8D248981869DED20AE1692E13DDEE0' # Eric Sandeen <sandeen@sandeen.net>
