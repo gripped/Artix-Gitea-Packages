@@ -1,0 +1,75 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Kyle Keen <keenerd@gmail.com>
+# Contributor: Abhishek Dasgupta <abhidg@gmail.com>
+# Contributor: Jason Taylor <jftaylor21@gmail.com>
+# Contributor: Luis Henrique <lmello.009@gmail.com>
+
+pkgname=ngspice
+pkgver=44.2
+_manual_pkgver=44 # manual seems to lag a bit behind
+pkgrel=1
+pkgdesc='Mixed-level/Mixed-signal circuit simulator based on Spice3f5, Ciber1b1, and Xspice'
+arch=('x86_64')
+url='https://ngspice.sourceforge.net'
+license=('BSD-3-Clause')
+depends=(
+  'gcc-libs'
+  'libedit'
+  'libxaw'
+)
+source=(
+  "$pkgname-$pkgver.tar.gz::https://downloads.sourceforge.net/project/$pkgname/ng-spice-rework/$pkgver/$pkgname-$pkgver.tar.gz"
+  "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/$pkgver/ngspice-$_manual_pkgver-manual.pdf"
+)
+sha512sums=('b6cccf38d460f9aace5379db3b75c247b3aed04b902a2355e27b4ee3a64206b0ac8828c8685da3bf8e57c0746c10f39418849a4f31563e9f5ff7c05de0eb3ae2'
+            '544d33ef43e0856a156e3b55e1fc68559aa99d36e857d8a0036963ca26ed4c56da9fc7bf6616fae8e75bec399aa2c848872b883bf1bb671995fb82c565e3ff8b')
+b2sums=('ec9fe4365f05ef3736f7102099e9f80afe12f9d22a3fd02cb57d45d8613e7bb618a525f7beeba65f0f109b53e4a99f0e197ac65b4ff25af25385944d27a8f824'
+        'b7e74c9545f61fafa61cee5b5085a8f47478a17b89fc5172de121da95db1f8f6f5ed2740705adbf6b82f93b0504e63a8e40e361f63db5623300e1d61b9b8ac29')
+
+build() {
+  cd "$pkgname-$pkgver"
+
+  local _common_flags=(
+    --prefix=/usr
+    --mandir=/usr/share/man
+    --infodir=/usr/share/info
+    --with-readline=no
+    --enable-xspice
+    --enable-cider
+    --enable-openmp
+    --disable-debug
+  )
+
+  # FS#45230, create so lib
+  # shared lib sets flags and modifies headers, needs dedicated pass
+  ./configure \
+    "${_common_flags[@]}" \
+    --with-ngshared
+  make
+
+  ./configure "${_common_flags[@]}"
+  make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  make DESTDIR="$pkgdir" install
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
+
+  # documentation
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" "$srcdir/ngspice-$_manual_pkgver-manual.pdf"
+
+  # shared library
+  local _sover="0.0.12"
+  install -vDm755 "src/.libs/libngspice.so.$_sover" "$pkgdir/usr/lib/libngspice.so.$_sover"
+  ln -s "libngspice.so.$_sover" "$pkgdir/usr/lib/libngspice.so.0"
+  ln -s "libngspice.so.$_sover" "$pkgdir/usr/lib/libngspice.so"
+
+  # FS#70563, probably remove on v35
+  install -Dm644 ngspice.pc "$pkgdir/usr/lib/pkgconfig/ngspice.pc"
+  install -Dm644 src/include/ngspice/sharedspice.h "$pkgdir/usr/include/ngspice/sharedspice.h"
+}
