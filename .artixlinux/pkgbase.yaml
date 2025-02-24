@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: kicad-library
-  version: 8.0.8-1
+  version: 9.0.0-1
   arch:
     - any
   pkgname:
@@ -33,10 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 8.0.8-1
+    version: 9.0.0-1
     packages:
-      - kicad-library-8.0.8-1-any.pkg.tar.zst
-      - kicad-library-3d-8.0.8-1-any.pkg.tar.zst
+      - kicad-library-9.0.0-1-any.pkg.tar.zst
+      - kicad-library-3d-9.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
