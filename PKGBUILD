@@ -4,14 +4,15 @@
 
 pkgname=vcdimager
 pkgver=2.0.1
-pkgrel=4
+pkgrel=5
 pkgdesc="A full-featured mastering suite for authoring disassembling and analyzing Video CD's and Super Video CD's"
 url="https://www.gnu.org/software/vcdimager/"
 arch=(x86_64)
 license=(GPL)
 depends=(libcdio libxml2 popt)
-source=(https://ftp.gnu.org/gnu/vcdimager/$pkgname-$pkgver.tar.gz)
-sha256sums=('67515fefb9829d054beae40f3e840309be60cda7d68753cafdd526727758f67a')
+source=(https://ftp.gnu.org/gnu/vcdimager/$pkgname-$pkgver.tar.gz{,.sig})
+sha256sums=('67515fefb9829d054beae40f3e840309be60cda7d68753cafdd526727758f67a'
+            'SKIP')
 validpgpkeys=(DAA63BC2582034A02B923D521A8DE5008275EC21) # R. Bernstein <rocky@panix.com>
 
 build() {
