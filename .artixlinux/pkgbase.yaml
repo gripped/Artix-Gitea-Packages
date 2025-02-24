@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: os-prober
-  version: 1.81-2
+  version: 1.83-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.81-2
+    version: 1.83-1
     packages:
-      - os-prober-1.81-2-x86_64.pkg.tar.zst
+      - os-prober-1.83-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
