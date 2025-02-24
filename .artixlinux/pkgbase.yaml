@@ -9,12 +9,12 @@ pkgbase:
     - moksha
     - moksha-module-mixer
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -48,12 +48,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.4.1-20
     packages:
       - moksha-0.4.1-20-x86_64.pkg.tar.zst
       - moksha-module-mixer-0.4.1-20-x86_64.pkg.tar.zst
-  galaxy:
-    version: 0.4.1-18.4
-    packages:
-      - moksha-0.4.1-18.4-x86_64.pkg.tar.zst
-      - moksha-module-mixer-0.4.1-18.4-x86_64.pkg.tar.zst
