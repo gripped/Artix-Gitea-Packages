@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: pacman-static
-  version: 7.0.0.r6.gc685ae6-15
+  version: 7.0.0.r6.gc685ae6-15.1
   arch:
     - i486
     - i686
@@ -57,6 +57,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 7.0.0.r6.gc685ae6-15
+    version: 7.0.0.r6.gc685ae6-15.1
     packages:
-      - pacman-static-7.0.0.r6.gc685ae6-15-x86_64.pkg.tar.xz
+      - pacman-static-7.0.0.r6.gc685ae6-15.1-x86_64.pkg.tar.xz
