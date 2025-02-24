@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: vtk
-  version: 9.4.1-4
+  version: 9.4.1-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.4.1-4
+    version: 9.4.1-5
     packages:
-      - vtk-9.4.1-4-x86_64.pkg.tar.zst
+      - vtk-9.4.1-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
