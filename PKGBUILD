@@ -11,7 +11,7 @@ url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
 makedepends=('git' 'meson>=0.58.0')
-source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
+source=("${_module}::git+https://github.com/thewaiter/${_module}.git")
 sha256sums=('SKIP')
 build() {
   export LDFLAGS=-Wl,--allow-multiple-definition
