@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: audacious-plugins
-  version: 4.4.2-2
+  version: 4.4.2-2.1
   arch:
     - x86_64
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 4.4.2-2
+    version: 4.4.2-2.1
     packages:
-      - audacious-plugins-4.4.2-2-x86_64.pkg.tar.zst
+      - audacious-plugins-4.4.2-2.1-x86_64.pkg.tar.zst
 team: galaxy
