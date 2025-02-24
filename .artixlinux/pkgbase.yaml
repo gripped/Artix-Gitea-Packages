@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-boto3
-  version: 1.36.3-1
+  version: 1.36.23-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.36.3-1
+    version: 1.36.23-1
     packages:
-      - python-boto3-1.36.3-1-any.pkg.tar.zst
+      - python-boto3-1.36.23-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
