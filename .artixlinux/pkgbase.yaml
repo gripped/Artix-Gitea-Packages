@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: intel-oneapi-mkl
-  version: 2024.1.0-1
+  version: 2025.0.1-1
   arch:
     - x86_64
   pkgname:
@@ -33,10 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2024.1.0-1
+    version: 2025.0.1-1
     packages:
-      - intel-oneapi-mkl-2024.1.0-1-x86_64.pkg.tar.zst
-      - intel-oneapi-mkl-sycl-2024.1.0-1-x86_64.pkg.tar.zst
+      - intel-oneapi-mkl-2025.0.1-1-x86_64.pkg.tar.zst
+      - intel-oneapi-mkl-sycl-2025.0.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
