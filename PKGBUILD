@@ -2,8 +2,8 @@
 # Maintainer: Mantas M. <grawity@gmail.com>
 
 pkgname=sssd
-pkgver=2.10.1
-pkgrel=5
+pkgver=2.10.2
+pkgrel=1
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -29,6 +29,7 @@ makedepends=(
   'doxygen'
   'python'
   'samba'         # for libndr-nbt headers
+  'systemd'
   'tevent'
   'ldb'
   'bc'
@@ -43,10 +44,11 @@ checkdepends=(
   'valgrind'
 )
 options=('!lto')
+install=sssd.install
 backup=('etc/logrotate.d/sssd')
 source=("https://github.com/SSSD/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.gz"{,.asc}
         "sssd-perms.tmpfile")
-sha512sums=('001ff9cd60aa510ead11e418a1b96714136cc270b29551027cb12c340744890b358da5900a10863d4df649ad073f14f6f26c28e3f973b1cd5c2ab61f2a2a045b'
+sha512sums=('14ad222802e5426b0959ee32602e04ce24b3eb8d3bdd5e188cf29e3c7d32e0631b41c386fdbd129acf281317538460015d35410a688ea48dd546f9ae28522eac'
             'SKIP'
             '21646ea5900340c1b0a69c79fc72b0d3e360d56e04dc0daf7947024a420d214a931365e684e8f7cfd37c959327e6909ad4c0d6c3a8186153bca870f508dad486')
 validpgpkeys=('C13CD07FFB2DB1408E457A3CD3D21B2910CF6759')
@@ -86,26 +88,28 @@ build() {
     --datadir=/usr/share                          \
     --enable-pammoddir=/usr/lib/security          \
     --enable-pac-responder                        \
+    --with-initscript=systemd                     \
     --with-os=fedora                              \
     --without-python2-bindings                    \
     --with-python3-bindings                       \
+    --with-syslog=journald                        \
     --with-files-provider                         \
     --with-sssd-user=sssd                         \
     --with-subid                                  \
     --with-passkey                                \
     --without-selinux                             \
-    --without-semanage                            \
     --with-tmpfilesdir=/usr/lib/tmpfiles.d        \
+    --with-systemdunitdir=/usr/lib/systemd/system \
     --with-ldb-lib-dir=/usr/lib/samba/ldb \
     ;
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
   make
 }
 
-#check() {
-#  cd "$srcdir/$pkgname-$pkgver"
-#  make check
-#}
+check() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make check
+}
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
