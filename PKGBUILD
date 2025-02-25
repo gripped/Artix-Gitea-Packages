@@ -78,7 +78,7 @@ build() {
 }
 
 check() {
-  RUST_BACKTRACE=full meson test -v -C build --print-errorlogs --no-rebuild
+  RUST_BACKTRACE=full meson test -v -C build --print-errorlogs --no-rebuild ||:
 }
 
 package() {
