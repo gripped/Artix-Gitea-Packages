@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: minicom
-  version: 2.9-2
+  version: 2.10-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.9-2
+    version: 2.10-1
     packages:
-      - minicom-2.9-2-x86_64.pkg.tar.zst
+      - minicom-2.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
