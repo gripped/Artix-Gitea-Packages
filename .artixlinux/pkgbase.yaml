@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: docker
-  version: 1:27.5.1-1
+  version: 1:28.0.0-1
   arch:
     - x86_64
     - aarch64
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:27.5.1-1
+    version: 1:28.0.0-1
     packages:
-      - docker-1:27.5.1-1-x86_64.pkg.tar.zst
+      - docker-1:28.0.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
