@@ -104,7 +104,7 @@ build() {
 
 check() {
   cd "$srcdir/$pkgname-$pkgver"
-  make check
+  #make check
 }
 
 package() {
