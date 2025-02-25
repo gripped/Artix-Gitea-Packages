@@ -29,7 +29,6 @@ makedepends=(
   'doxygen'
   'python'
   'samba'         # for libndr-nbt headers
-  'systemd'
   'tevent'
   'ldb'
   'bc'
@@ -88,7 +87,6 @@ build() {
     --datadir=/usr/share                          \
     --enable-pammoddir=/usr/lib/security          \
     --enable-pac-responder                        \
-    --with-initscript=systemd                     \
     --with-os=fedora                              \
     --without-python2-bindings                    \
     --with-python3-bindings                       \
@@ -99,7 +97,6 @@ build() {
     --with-passkey                                \
     --without-selinux                             \
     --with-tmpfilesdir=/usr/lib/tmpfiles.d        \
-    --with-systemdunitdir=/usr/lib/systemd/system \
     --with-ldb-lib-dir=/usr/lib/samba/ldb \
     ;
   sed -i '/\<HAVE_KRB5_SET_TRACE_CALLBACK\>/d' config.h
