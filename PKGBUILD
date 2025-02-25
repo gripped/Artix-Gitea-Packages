@@ -90,7 +90,6 @@ build() {
     --with-os=fedora                              \
     --without-python2-bindings                    \
     --with-python3-bindings                       \
-    --with-syslog=journald                        \
     --with-files-provider                         \
     --with-sssd-user=sssd                         \
     --with-subid                                  \
