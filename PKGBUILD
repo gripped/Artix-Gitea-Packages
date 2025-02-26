@@ -4,9 +4,8 @@
 # Contributor: peace4all <markspost at rocketmail dot com>
 
 pkgname=dnscrypt-proxy
-pkgver=2.1.5
-_commit=8744c6f10da322921d1c12e24105bcfe813e42a6  # refs/tags/2.1.5
-pkgrel=4
+pkgver=2.1.7
+pkgrel=1
 pkgdesc="A flexible DNS proxy, with support for encrypted DNS protocols"
 arch=(x86_64)
 url="https://github.com/DNSCrypt/dnscrypt-proxy"
@@ -26,23 +25,24 @@ backup=(
 # NOTE: LTO breaks reproducibility :(
 options=(!lto)
 source=(
-  git+$url#tag=$_commit?signed
+  git+$url#tag=$pkgver?signed
+  # https://github.com/dvzrv/dnscrypt-proxy/releases/tag/2.1.7.arch1
+  $pkgname-$pkgver-configuration.patch
   tmpfiles.d
-  sysusers.d
-  $pkgname-$pkgver-configuration.patch::https://github.com/dvzrv/dnscrypt-proxy/commit/66ffcf524b55b4f06cfaf4e37c8b8c6dcc10d0df.patch
-)
-sha512sums=('SKIP'
+  sysusers.d)
+sha512sums=('37bd6971d001a3af67285a2762be36ef277cdf39a530836888c7f50351c7667ee57ff052c7591607093adbf875b1f63a918bcb71cfa1e8405b42752d56353b5f'
+            'fb5b68c92598eb09de314338613e9cc957f282c5b79c24968cebff5a5ba6190159b7633a3604d6dd9dd7f5dbe66ec0bdb195888e00d6ccb5567206381339ed6f'
             '005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151'
-            '888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8'
-            'fa45be971c1bb401527ba8f5043312f021fad0d417bd764ab6550637d5488a00d886d966df21be48d4503f1b5e326b875bac42ee18613827326c12af5ce19359')
-b2sums=('SKIP'
+            '888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8')
+b2sums=('f0c8571c9649a9a2d7f9174252a516c31a6bb6456617092d0656956650fa38a9d9f5f88a13a8c33edf414b37110c6a7f55740770b8fad2341dfdd6349357802c'
+        '72660cfef3cc999bfbf7bc451cb9a184a81060b57ef63769981a7cf339a38c70e2669ee9493566176ebef25dc6d0a61fe3d9df5687ae0ebb8b1c00d02a699f8b'
         '2c83832dd8ce63608e4a948deb0a55f2857a7e3f53b3fb8ea67a4c807f7dc7245305bf63fdb35009089df90a070cd95cb6a8f31f79e243d8c97a442554aeb428'
-        '6340a1f5011145642ce2352e8be4bfa50cdf74889e608471519934d814ca64b03461bc21e347feafe98256d7b8b281c1034dd0b8890e1155bdc3dd044ae18e80'
-        'ef48e0e6428e75c6f17c8e16d3eca12d3edd2175d254f42acfb7a915a0d3639071afc37acd7692b0bb7bcc9eb60a4acee6edb67302be37bd8a7b2351f26e3151')
+        '6340a1f5011145642ce2352e8be4bfa50cdf74889e608471519934d814ca64b03461bc21e347feafe98256d7b8b281c1034dd0b8890e1155bdc3dd044ae18e80')
 validpgpkeys=('54A2B8892CC3D6A597B92B6C210627AABA709FE1') # Frank Denis (Jedi/Sector One) <pgp@pureftpd.org
 
 prepare() {
   cd $pkgname
+  # Make configuration FHS compliant:
   patch -Np1 -i ../$pkgname-$pkgver-configuration.patch
 }
 
