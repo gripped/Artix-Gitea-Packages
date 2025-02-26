@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-xml-rss
-  version: 1.64-1.1
+  version: 1.65-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.64-1.1
+    version: 1.65-1
     packages:
-      - perl-xml-rss-1.64-1.1-any.pkg.tar.zst
+      - perl-xml-rss-1.65-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
