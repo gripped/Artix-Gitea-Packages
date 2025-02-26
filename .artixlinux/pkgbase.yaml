@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: iperf3
-  version: 3.17.1-1.2
+  version: 3.18-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.17.1-1.2
+    version: 3.18-1
     packages:
-      - iperf3-3.17.1-1.2-x86_64.pkg.tar.zst
+      - iperf3-3.18-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
