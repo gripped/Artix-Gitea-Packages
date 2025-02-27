@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: ruby-sus-fixtures-time
+  version: 0.1.0-1
+  arch:
+    - any
+  pkgname:
+    - ruby-sus-fixtures-time
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 0.1.0-1
+    packages:
+      - ruby-sus-fixtures-time-0.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
