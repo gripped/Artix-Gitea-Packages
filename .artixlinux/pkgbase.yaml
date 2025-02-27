@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: vulkan-docs
-  version: 1:1.4.303-1
+  version: 1:1.4.304-1
   arch:
     - any
   pkgname:
     - vulkan-html-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:1.4.304-1
+    packages:
+      - vulkan-html-docs-1:1.4.304-1-any.pkg.tar.zst
   world:
     version: 1:1.4.303-1
     packages:
