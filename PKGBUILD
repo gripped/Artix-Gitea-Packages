@@ -10,7 +10,7 @@ pkgname=(
   postfix-{cdb,ldap,lmdb,mongodb,mysql,pcre,pgsql,sqlite}
 )
 pkgver=3.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
 url="https://www.postfix.org/"
@@ -18,12 +18,13 @@ license=(
   'EPL-2.0 OR IPL-1.0'
   BSD-4-Clause-UC
 )
-depends=(glibc esysusers etmpfiles)
+depends=(glibc)
 makedepends=(
   icu
   libldap
   libnsl
   libsasl
+  libtlsrpt
   lmdb
   mariadb-libs
   mongo-c-driver
@@ -82,6 +83,7 @@ build() {
     '-DUSE_TLS'
     '-DHAS_MONGODB' '-I/usr/include/libmongoc-1.0' '-I/usr/include/libbson-1.0'
     '-DHAS_MYSQL' '-I/usr/include/mysql'
+    '-DUSE_TLSRPT'
     '-DHAS_PCRE=2'
     '-DHAS_PGSQL' '-I/usr/include/postgresql'
     '-DHAS_SQLITE'
@@ -101,7 +103,7 @@ build() {
     shared=yes
     dynamicmaps=yes
     CCARGS="${ccargs[*]}"
-    AUXLIBS="$(pkgconf --libs openssl libsasl2) -lnsl"
+    AUXLIBS="$(pkgconf --libs openssl libsasl2 libtlsrpt) -lnsl"
     AUXLIBS_LDAP='-lldap -llber'
     AUXLIBS_LMDB="$(pkgconf --libs lmdb)"
     AUXLIBS_PCRE="$(pcre2-config --libs8)"
@@ -130,6 +132,7 @@ package_postfix() {
     icu libicuuc.so
     libnsl libnsl.so
     libsasl libsasl2.so
+    libtlsrpt libtlsrpt.so
     openssl libcrypto.so libssl.so
     postfix-lmdb
     sh

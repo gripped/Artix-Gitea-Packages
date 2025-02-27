@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: postfix
-  version: 3.10.0-1
+  version: 3.10.0-2
   arch:
     - x86_64
   pkgname:
@@ -16,11 +16,11 @@ pkgbase:
     - postfix-sqlite
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -39,17 +39,17 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.10.0-1
+    version: 3.10.0-2
     packages:
-      - postfix-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-cdb-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-ldap-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-lmdb-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-mongodb-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-mysql-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-pcre-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-pgsql-3.10.0-1-x86_64.pkg.tar.zst
-      - postfix-sqlite-3.10.0-1-x86_64.pkg.tar.zst
+      - postfix-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-cdb-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-ldap-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-lmdb-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-mongodb-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-mysql-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-pcre-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-pgsql-3.10.0-2-x86_64.pkg.tar.zst
+      - postfix-sqlite-3.10.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
