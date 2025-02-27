@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-protocol-rack
-  version: 0.10.1-1
+  version: 0.11.1-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.10.1-1
+    version: 0.11.1-1
     packages:
-      - ruby-protocol-rack-0.10.1-1-any.pkg.tar.zst
+      - ruby-protocol-rack-0.11.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
