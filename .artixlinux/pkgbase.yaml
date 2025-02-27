@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-protocol-http
-  version: 0.40.0-1
+  version: 0.49.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.40.0-1
+    version: 0.49.0-1
     packages:
-      - ruby-protocol-http-0.40.0-1-any.pkg.tar.zst
+      - ruby-protocol-http-0.49.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
