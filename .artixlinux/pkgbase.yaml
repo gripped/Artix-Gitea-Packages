@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: spirv-headers
-  version: 1:1.4.304.1-1
+  version: 1:1.4.304.1-2
   arch:
     - any
   pkgname:
     - spirv-headers
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:1.4.304.1-2
+    packages:
+      - spirv-headers-1:1.4.304.1-2-any.pkg.tar.zst
   world:
     version: 1:1.4.304.1-1
     packages:
