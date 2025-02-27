@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-async-process
-pkgver=1.3.1
-pkgrel=4
+pkgver=1.4.0
+pkgrel=2
 pkgdesc='Asynchronous process spawning'
 arch=(any)
 url='https://github.com/socketry/async-process'
@@ -11,22 +11,32 @@ license=(MIT)
 depends=(
   ruby
   ruby-async
-  ruby-async-io
 )
 checkdepends=(
-  ruby-async-rspec
+  ruby-bake
+  ruby-bake-test
+  ruby-bake-test-external
   ruby-bundler
   ruby-covered
-  ruby-rspec
+  ruby-decode
+  ruby-sus-fixtures-async
 )
 options=(!emptydirs)
 source=(https://github.com/socketry/async-process/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('925f89b1fa5e9780098327a56b9210882c638fa4295a96079fd16f28cd25ee5a')
+sha256sums=('15f4ff6599155e87f9e66c4e709afb104a9ab1518d91699ca511b8a663a832a9')
 
 prepare() {
   cd async-process-$pkgver
-  sed -r -e 's|~>|>=|g' -i async-process.gemspec
-  echo gemspec > gems.rb
+
+  # update gemspec/Gemfile to allow newer version of the dependencies
+  sed --in-place --regexp-extended \
+    --expression 's|~>|>=|g' \
+    --expression '/signing_key/d' async-process.gemspec
+
+  sed --in-place \
+    --expression '/group :maintenance/,/end/d' \
+    --expression '/rubocop/d' \
+    gems.rb
 }
 
 build() {
@@ -58,7 +68,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd async-process-$pkgver
-  GEM_HOME="tmp_install/$_gemdir" rspec
+  GEM_HOME="tmp_install/$_gemdir" bake test
 }
 
 package() {
