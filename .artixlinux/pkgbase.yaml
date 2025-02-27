@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: papirus-icon-theme
-  version: 20240501-1
+  version: 20250201-1
   arch:
     - any
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 20240501-1
+    version: 20250201-1
     packages:
-      - papirus-icon-theme-20240501-1-any.pkg.tar.zst
-      - epapirus-icon-theme-20240501-1-any.pkg.tar.zst
+      - papirus-icon-theme-20250201-1-any.pkg.tar.zst
+      - epapirus-icon-theme-20250201-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
