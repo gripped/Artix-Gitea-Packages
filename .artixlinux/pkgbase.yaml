@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ranger
-  version: 1.9.4-3
+  version: 1.9.4-4
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.9.4-3
+    version: 1.9.4-4
     packages:
-      - ranger-1.9.4-3-any.pkg.tar.zst
+      - ranger-1.9.4-4-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
