@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sus-fixtures-async-http
-pkgver=0.9.0
-pkgrel=2
+pkgver=0.10.0
+pkgrel=1
 pkgdesc='Test fixtures for running in Async::HTTP'
 arch=(any)
 url='https://github.com/socketry/sus-fixtures-async-http'
@@ -11,7 +11,6 @@ license=(MIT)
 depends=(
   ruby
   ruby-async-http
-  ruby-async-io
   ruby-sus
   ruby-sus-fixtures-async
 )
@@ -20,18 +19,16 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-bake-modernize
+  ruby-bake
   ruby-bake-test
   ruby-bake-test-external
   ruby-bundler
   ruby-covered
   ruby-decode
-  ruby-io-stream
-  ruby-io-endpoint
 )
 options=(!emptydirs)
 source=("git+${url}.git#tag=v${pkgver}")
-sha256sums=('cd52b54b5ab93b470d7a768f36c782bf7da1d7dc79b5958bb1ad90e68a727b61')
+sha256sums=('610bc24719758aaff699faf5d7a78b474e3a3b185e63753296d72695c13c4508')
 
 prepare() {
   cd sus-fixtures-async-http
@@ -45,7 +42,6 @@ prepare() {
     -e '/group :maintenance/,/end/d' \
     -e '/rubocop/d' \
     gems.rb
-  #sed -i 's/be < 60/be <= 60/' test/sus/fixtures/async/http/server_context.rb
 }
 
 build() {
