@@ -10,9 +10,9 @@ _google_default_client_secret=0ZChLK6AxeA3Isu96MkwqDR4
 
 pkgbase=libreoffice-fresh
 pkgname=('libreoffice-fresh-sdk' 'libreoffice-fresh')
-_LOver=25.2.0.3
-pkgver=25.2.0
-pkgrel=4
+_LOver=25.2.1.2
+pkgver=25.2.1
+pkgrel=1
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
@@ -62,6 +62,7 @@ source=(${_mirror}/libreoffice{,-help,-translations}-${_LOver}.tar.xz{,.asc}
     ${_additional_source_url2}/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
     libreoffice-24.8.4.2-icu76_fixes-1.patch
     mdds-3.0.0.patch
+    fix_pdf_import_with_poppler_25.02.patch
     soffice-template.desktop.in
     libreoffice-fresh.sh libreoffice-fresh.csh)
 noextract=(a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
@@ -85,11 +86,11 @@ noextract=(a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
            f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 )
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha256sums=('982448d736f8bb858b40d1fcb82b9915bdb88e7c98a5cabb741810fc93d525b4'
+sha256sums=('8001ae2477c504c558194ea31c159afa7174781fa6ec72ceee7df2fc2fd5b75d'
             'SKIP'
-            '5f7f02a8ef5728454fc699eaa9e436fb689c3a9e8302163de0c4a6a6d2aed3dd'
+            'ae710f11de6a4c3eb9c5a31c401a18afeda39d6f1dfb4ac594daf68f225cd064'
             'SKIP'
-            '2ef584b5859cab6abbf3f753fb36711d498c8a94937759c9c0eb2f4ed9acaceb'
+            '89bdc0ca5526f5e5bce6449139cfc4fd4a1415649652776aee91cbb64510cc4b'
             'SKIP'
             '75823776fb51a9c526af904f1503a7afaaab900fba83eda64f8a41073724c870'
             '983941d31ee8d366085cadf28db75eb1f5cb03ba1e5853b98f12f7f51c63b776'
@@ -112,6 +113,7 @@ sha256sums=('982448d736f8bb858b40d1fcb82b9915bdb88e7c98a5cabb741810fc93d525b4'
             'f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140'
             '5c67449d7f7d43b66063780650ebf8954e59164c38b36883078e36c11fde82de'
             '31dbde6d3978d4762428e08c42ed156f2ffd9b582fac9875163b2a86ad4f4898'
+            '74acd4024654f99c38d6edbc9c4e7b94a060d6c67cbb582a0c0bb30e4e397046'
             'd0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879'
             '9fb33dbc3ffeb6af2ea7341b58242142d4eca903584c21c5f4b44ff27fbf5b5f'
             '512355b5ef646791089da8c2b35cf8b019673c0c8a58685962af3b5d9eb5d6bb')
@@ -132,6 +134,11 @@ prepare() {
 
     # update to mdds-3.0.0 / libixion-0.20 /liborcus-0.20
     patch -Np1 -i "${srcdir}"/mdds-3.0.0.patch
+
+    # fix pdf import with poppler >= 25.02
+    # see https://bugs.documentfoundation.org/show_bug.cgi?id=165433
+    # and https://gerrit.libreoffice.org/c/core/+/182282
+    patch -Np1 -i "${srcdir}"/fix_pdf_import_with_poppler_25.02.patch
 
     #use the CFLAGS but remove the LibO overridden ones
     for i in $CFLAGS; do
