@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: lib32-nvidia-utils
-  version: 570.86.16-1
+  version: 570.124.04-1
   arch:
     - x86_64
   pkgname:
     - lib32-nvidia-utils
     - lib32-opencl-nvidia
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -38,8 +38,10 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 570.124.04-1
+    packages:
+      - lib32-nvidia-utils-570.124.04-1-x86_64.pkg.tar.zst
+      - lib32-opencl-nvidia-570.124.04-1-x86_64.pkg.tar.zst
   lib32:
     version: 570.86.16-1
     packages:
