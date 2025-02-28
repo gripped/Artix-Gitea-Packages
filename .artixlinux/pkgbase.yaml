@@ -1,16 +1,19 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: r-linux
+  version: 6.3.191269-1
+  arch:
+    - i686
+    - x86_64
+  pkgname:
+    - r-linux
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +51,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 6.3.191269-1
+    packages:
+      - r-linux-6.3.191269-1-x86_64.pkg.tar.zst
