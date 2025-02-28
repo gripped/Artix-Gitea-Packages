@@ -21,8 +21,8 @@ epoch=2
 _pkgver=2.12
 _unifont_ver='16.0.02'
 #pkgver=${_pkgver/-/}
-pkgver='2.12.r212.g4dc616657'
-pkgrel=2
+pkgver='2.12.r226.g56ccc5ed'
+pkgrel=1
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
@@ -105,7 +105,6 @@ source=(
   '0001-00_header-add-GRUB_COLOR_-variables.patch'
   '0002-10_linux-detect-archlinux-initramfs.patch'
   '0003-support-dropins-for-default-configuration.patch'
-  '1001-loopback-ext.patch'
   'grub.default'
   'sbat.csv'
 )
@@ -116,14 +115,13 @@ b2sums=('a6cec7271c3ea54a99f02ee6bc0a5825c8be657af68ba9a32b39a5fe8bcb571fb1ba392
         '992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b'
         'b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3'
         'a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c'
-        'b8316136261563a411d30fd44b71c20c8c8c65b94fd576ac4122ac40a15c8b948547c31b17cc31757f224dd2bb79fb8936aa0d20315e988ed1e9f5b55f649044'
         'cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc'
-        'e1320fd6487946fbc806d7ccae7ec6b1066d8abc1f709c803a346f41947286432c71967a94b891b374db854f8efad1b1d45578f56ffe198d9052979c3b7b5b60')
+        'e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a')
 
 _backports=(
   # current git master for loads of security fixes
   # https://lists.gnu.org/archive/html/grub-devel/2025-02/msg00024.html
-  "grub-${_pkgver}..4dc6166571645780c459dde2cdc1b001a5ec844c"
+  "grub-${_pkgver}..56ccc5ed569869fd735074ccebeaa7aab058342d"
 )
 
 _reverts=(
@@ -180,9 +178,6 @@ prepare() {
 
   echo "Patch to support dropins for default configuration..."
   patch -Np1 -i "${srcdir}/0003-support-dropins-for-default-configuration.patch"
-
-  echo "Patch: fs/ext2: Rework out-of-bounds read for inline and external exten"
-  patch -Np1 -i "${srcdir}/1001-loopback-ext.patch"
 
   echo "Fix DejaVuSans.ttf location so that grub-mkfont can create *.pf2 files for starfield theme..."
   sed 's|/usr/share/fonts/dejavu|/usr/share/fonts/dejavu /usr/share/fonts/TTF|g' -i "configure.ac"
@@ -379,3 +374,4 @@ package() {
 grub-mkconfig -o /boot/grub/grub.cfg
 END
 }
+
