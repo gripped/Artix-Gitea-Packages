@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libreoffice-still
-  version: 24.8.5-2
+  version: 24.8.5-3
   arch:
     - x86_64
   pkgname:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 24.8.5-2
+    version: 24.8.5-3
     packages:
-      - libreoffice-still-sdk-24.8.5-2-x86_64.pkg.tar.zst
-      - libreoffice-still-24.8.5-2-x86_64.pkg.tar.zst
+      - libreoffice-still-sdk-24.8.5-3-x86_64.pkg.tar.zst
+      - libreoffice-still-24.8.5-3-x86_64.pkg.tar.zst
 team: galaxy
