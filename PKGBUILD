@@ -3,11 +3,11 @@
 # Contributor: williamh <williamh@gentoo.org>
 
 _url=https://gitea.artixlinux.org/artix
-_extras=1.2
+_extra=1.2
 _alpm=1.7
 
 pkgname=openrc
-pkgver=0.56
+pkgver=0.60
 pkgrel=1
 pkgdesc="Gentoo's universal init system"
 arch=('x86_64')
@@ -15,6 +15,7 @@ url="https://github.com/OpenRC/openrc"
 license=('BSD-2-Clause')
 makedepends=('git' 'meson')
 depends=(
+    'audit'
     'bash'
     'glibc'
     'inetutils'
@@ -56,10 +57,10 @@ source=(
     'sysctl.conf'
     "openrc-rc-conf-artix.patch" #::${_url}/openrc/commit/6f9e4c6b4bebebad2f00d1c19bf1f93c707d9a09.patch"
     "openrc-artix-meson.patch" #::${_url}/openrc/commit/05b1fd974c71041265a862ca3a2ba4fc79e797cc.patch"
-    "git+${_url}/openrc-extra.git#tag=${_extras}"
+    "git+${_url}/openrc-extra.git#tag=${_extra}"
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
 )
-sha256sums=('a06b530290057637eab17fc943cbf79c0335eb734ba71ece38b9f3acd8a341d4'
+sha256sums=('5958c40be06740ade13750bf692878b00c5ce50cfec3119bd2e7378c3d656725'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
@@ -98,7 +99,7 @@ build(){
         -Dbash-completions=true
         -Dzsh-completions=true
         -Dnewnet=false
-        -Daudit=disabled
+        -Daudit=enabled
         -Dselinux=disabled
         -Dlibrcdir=openrc
     )
