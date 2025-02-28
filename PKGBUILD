@@ -2,7 +2,7 @@
 
 pkgname=vulkan-icd-loader
 pkgver=1.4.304.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Vulkan Installable Client Driver (ICD) Loader"
 url="https://www.vulkan.org/"
 arch=(x86_64)
