@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: typescript
-  version: 5.7.3-1
+  version: 5.8.2-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.7.3-1
+    version: 5.8.2-1
     packages:
-      - typescript-5.7.3-1-any.pkg.tar.zst
+      - typescript-5.8.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
