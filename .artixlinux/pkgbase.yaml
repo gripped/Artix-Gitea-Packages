@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-sass-embedded
-  version: 1.85.0-1
+  version: 1.85.1-1
   arch:
     - any
   pkgname:
     - ruby-sass-embedded
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.85.1-1
+    packages:
+      - ruby-sass-embedded-1.85.1-1-any.pkg.tar.zst
   world:
     version: 1.85.0-1
     packages:
