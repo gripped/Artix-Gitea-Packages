@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rdma-core
-  version: 56.0-1
+  version: 56.0-2
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 56.0-1
+    version: 56.0-2
     packages:
-      - rdma-core-56.0-1-x86_64.pkg.tar.zst
+      - rdma-core-56.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
