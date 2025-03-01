@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: harfbuzz
-  version: 10.3.0-1
+  version: 10.4.0-1
   arch:
     - x86_64
   pkgname:
@@ -35,13 +35,13 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.3.0-1
+    version: 10.4.0-1
     packages:
-      - harfbuzz-10.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-cairo-10.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-icu-10.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-utils-10.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-docs-10.3.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-10.4.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-10.4.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-10.4.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-10.4.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-10.4.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
