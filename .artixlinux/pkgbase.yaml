@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: vulkan-utility-libraries
-  version: 1.4.304.1-1
+  version: 1.4.304.1-1.1
   arch:
     - x86_64
   pkgname:
@@ -29,12 +29,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: 1.4.304.1-1.1
+    packages:
+      - vulkan-utility-libraries-1.4.304.1-1.1-x86_64.pkg.tar.zst
+  world:
     version: 1.4.304.1-1
     packages:
       - vulkan-utility-libraries-1.4.304.1-1-x86_64.pkg.tar.zst
-  world:
-    version: null
-    packages: []
   lib32-goblins:
     version: null
     packages: []
