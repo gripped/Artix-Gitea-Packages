@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: dconf-editor
-  version: 45.0.1-1
+  version: 45.0.1-2
   arch:
     - x86_64
   pkgname:
     - dconf-editor
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 45.0.1-1
+    version: 45.0.1-2
     packages:
-      - dconf-editor-45.0.1-1-x86_64.pkg.tar.zst
+      - dconf-editor-45.0.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
