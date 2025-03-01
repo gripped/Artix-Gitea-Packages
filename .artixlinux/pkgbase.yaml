@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: networkmanager
-  version: 1.50.3-1
+  version: 1.52.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - nm-cloud-setup
     - networkmanager-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.52.0-1
+    packages:
+      - networkmanager-1.52.0-1-x86_64.pkg.tar.zst
+      - libnm-1.52.0-1-x86_64.pkg.tar.zst
+      - nm-cloud-setup-1.52.0-1-x86_64.pkg.tar.zst
+      - networkmanager-docs-1.52.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.50.3-1
     packages:
