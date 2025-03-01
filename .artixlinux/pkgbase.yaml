@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-harfbuzz
-  version: 10.3.0-1
+  version: 10.4.0-1
   arch:
     - x86_64
   pkgname:
@@ -42,11 +42,11 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 10.3.0-1
+    version: 10.4.0-1
     packages:
-      - lib32-harfbuzz-10.3.0-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-cairo-10.3.0-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-icu-10.3.0-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-10.4.0-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-cairo-10.4.0-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-icu-10.4.0-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
