@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openbsd-netcat
-  version: 1.226_1-3
+  version: 1.228_1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.226_1-3
+    version: 1.228_1-1
     packages:
-      - openbsd-netcat-1.226_1-3-x86_64.pkg.tar.zst
+      - openbsd-netcat-1.228_1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
