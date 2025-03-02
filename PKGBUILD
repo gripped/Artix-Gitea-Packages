@@ -104,57 +104,53 @@ EOT
 build () {
 	cd Waterfox-$pkgver
 
-        export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2} -fno-exceptions"
-        export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2} -fno-exceptions"
+  export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
+  export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
+  export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
+  export MOZ_NOSPAM=1
 
-	export MOZ_NOSPAM=1
-	export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
-	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
+  # malloc_usable_size is used in various parts of the codebase
+  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
-	# LTO needs more open files
-	ulimit -n 4096
+  # Breaks compilation since https://bugzilla.mozilla.org/show_bug.cgi?id=1896066
+  CFLAGS="${CFLAGS/-fexceptions/}"
+  CXXFLAGS="${CXXFLAGS/-fexceptions/}"
 
-	# prevents references to $srcdir being included in error messages
-	# some references still remain in libxul.so and omni.ja
-	CFLAGS+=" -ffile-prefix-map=$srcdir=."
-	CXXFLAGS+=" -ffile-prefix-map=$srcdir=."
+  # LTO needs more open files
+  ulimit -n 4096
 
-	# suppress warnings
-	CFLAGS+=" -w"
-	CXXFLAGS+=" -w"
-	echo "Building instrumented browser..."
-	cat >.mozconfig ../mozconfig - <<EOT
+  # Do 3-tier PGO
+  echo "Building instrumented browser..."
+  cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-profile-generate=cross
-EOT
-	./mach build --priority normal
+END
+  ./mach build --priority normal
 
-	echo "Profiling instrumented browser..."
-	./mach package
-	LLVM_PROFDATA=llvm-profdata \
-		JARLOG_FILE="$PWD/jarlog" \
-		xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
-		./mach python build/pgo/profileserver.py
+  echo "Profiling instrumented browser..."
+  ./mach package
+  LLVM_PROFDATA=llvm-profdata JARLOG_FILE="$PWD/jarlog" \
+    dbus-run-session \
+    xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
+    ./mach python build/pgo/profileserver.py
 
-	stat -c "Profile data found (%s bytes)" merged.profdata
-	test -s merged.profdata
+  stat -c "Profile data found (%s bytes)" merged.profdata
+  test -s merged.profdata
 
-	stat -c "Jar log found (%s bytes)" jarlog
-	test -s jarlog
+  stat -c "Jar log found (%s bytes)" jarlog
+  test -s jarlog
 
-	echo "Removing instrumented browser..."
-	./mach clobber
+  echo "Removing instrumented browser..."
+  ./mach clobber objdir
 
-	echo "Building optimized browser..."
-	cat >.mozconfig ../mozconfig - <<EOT
+  echo "Building optimized browser..."
+  cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-lto=cross
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
-EOT
-	./mach build --priority normal
-
-	echo "Building symbol archive..."
-	./mach buildsymbols
+END
+  ./mach build --priority normal
 }
 
 package () {
