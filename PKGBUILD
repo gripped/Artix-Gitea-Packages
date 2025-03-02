@@ -126,9 +126,9 @@ build () {
 ac_add_options --enable-profile-generate=cross
 END
 
-env|grep FLAGS
-uname -o
-uname -p
+export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection"
+export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fno-plt -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -Wp,-D_GLIBCXX_ASSERTIONS"
+export "LDFLAGS=-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
 
   ./mach build --priority normal
 
