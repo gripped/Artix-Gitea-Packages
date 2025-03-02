@@ -8,10 +8,10 @@ pkgbase:
   pkgname:
     - ruby-sass-embedded
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -33,9 +33,9 @@ repos:
     packages:
       - ruby-sass-embedded-1.85.1-1-any.pkg.tar.zst
   world:
-    version: 1.85.0-1
+    version: 1.85.1-1
     packages:
-      - ruby-sass-embedded-1.85.0-1-any.pkg.tar.zst
+      - ruby-sass-embedded-1.85.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
