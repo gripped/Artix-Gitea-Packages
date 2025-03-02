@@ -127,6 +127,8 @@ ac_add_options --enable-profile-generate=cross
 END
 
 env|grep FLAGS
+uname -o
+uname -p
 
   ./mach build --priority normal
 
