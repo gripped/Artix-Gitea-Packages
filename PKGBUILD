@@ -1,6 +1,6 @@
 pkgname=proxytunnel
 pkgver=1.12.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Stealth tunneling through HTTP(S) proxies."
 arch=("x86_64")
 url="https://proxytunnel.sourceforge.io"
