@@ -2,17 +2,17 @@
 team: world
 pkgbase:
   name: intel-oneapi-mkl
-  version: 2025.0.1-1
+  version: 2025.0.1-2
   arch:
     - x86_64
   pkgname:
     - intel-oneapi-mkl
     - intel-oneapi-mkl-sycl
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -30,8 +30,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025.0.1-2
+    packages:
+      - intel-oneapi-mkl-2025.0.1-2-x86_64.pkg.tar.zst
+      - intel-oneapi-mkl-sycl-2025.0.1-2-x86_64.pkg.tar.zst
   world:
     version: 2025.0.1-1
     packages:
