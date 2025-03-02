@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: hiprt
-  version: 2.3.bd75b7c.rc7-2
+  version: 2.3.bd75b7c.rc7-3
   arch:
     - x86_64
   pkgname:
     - hiprt
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.3.bd75b7c.rc7-3
+    packages:
+      - hiprt-2.3.bd75b7c.rc7-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
