@@ -125,6 +125,9 @@ build () {
   cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-profile-generate=cross
 END
+
+env|grep FLAGS
+
   ./mach build --priority normal
 
   echo "Profiling instrumented browser..."
