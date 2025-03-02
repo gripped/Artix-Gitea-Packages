@@ -126,7 +126,7 @@ build () {
 	cat >.mozconfig ../mozconfig - <<EOT
 ac_add_options --enable-profile-generate=cross
 EOT
-	./mach build
+	./mach build --priority normal
 
 	echo "Profiling instrumented browser..."
 	./mach package
@@ -151,7 +151,7 @@ ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
 EOT
-	./mach build
+	./mach build --priority normal
 
 	echo "Building symbol archive..."
 	./mach buildsymbols
