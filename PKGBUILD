@@ -4,7 +4,7 @@
 
 pkgname=openrct2
 pkgver=0.4.20
-pkgrel=0
+pkgrel=1
 pkgdesc='Open source re-implementation of Roller Coaster Tycoon 2 (requires full copy of the game)'
 arch=('x86_64')
 url='https://openrct2.io'
