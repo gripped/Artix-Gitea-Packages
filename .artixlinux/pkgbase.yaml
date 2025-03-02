@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: vst3sdk
-  version: 3.7.12_build_20-1
+  version: 3.7.13_build_42-1
   arch:
     - any
   pkgname:
     - vst3sdk
     - vst3sdk-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.7.13_build_42-1
+    packages:
+      - vst3sdk-3.7.13_build_42-1-any.pkg.tar.zst
+      - vst3sdk-docs-3.7.13_build_42-1-any.pkg.tar.zst
   world:
     version: 3.7.12_build_20-1
     packages:
