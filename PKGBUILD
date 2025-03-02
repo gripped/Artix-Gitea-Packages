@@ -9,7 +9,7 @@
 
 pkgname=kicad
 pkgver=9.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Electronic schematic and printed circuit board (PCB) design tools'
 arch=('x86_64')
 url='http://kicad.org/'
@@ -26,6 +26,7 @@ depends=(
   'unixodbc'
   'libgit2'
   'nng'
+  'protobuf'
 )
 makedepends=(
   'git'
@@ -34,7 +35,6 @@ makedepends=(
   'mesa'
   'boost'
   'swig'
-  'protobuf'
 )
 optdepends=(
   'kicad-library: for footprints, symbols and templates'

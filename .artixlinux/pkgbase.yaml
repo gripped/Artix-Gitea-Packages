@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: kicad
-  version: 9.0.0-1
+  version: 9.0.0-2
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.0.0-1
+    version: 9.0.0-2
     packages:
-      - kicad-9.0.0-1-x86_64.pkg.tar.zst
+      - kicad-9.0.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
