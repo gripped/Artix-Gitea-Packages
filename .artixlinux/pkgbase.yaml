@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: xfce4-panel-profiles
+  version: 1.0.15-2
+  arch:
+    - any
+  pkgname:
+    - xfce4-panel-profiles
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.0.15-2
+    packages:
+      - xfce4-panel-profiles-1.0.15-2-any.pkg.tar.zst
