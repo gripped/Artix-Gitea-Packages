@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: qgis
-  version: 3.40.4-1
+  version: 3.42.0-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.40.4-1
+    version: 3.42.0-1
     packages:
-      - qgis-3.40.4-1-x86_64.pkg.tar.zst
+      - qgis-3.42.0-1-x86_64.pkg.tar.zst
