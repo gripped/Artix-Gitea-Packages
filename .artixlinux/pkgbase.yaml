@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libmediaart
-  version: 1.9.6-3
+  version: 1.9.7-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.9.6-3
+    version: 1.9.7-1
     packages:
-      - libmediaart-1.9.6-3-x86_64.pkg.tar.zst
+      - libmediaart-1.9.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
