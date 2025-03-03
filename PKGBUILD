@@ -3,7 +3,7 @@
 
 pkgname=volk
 pkgver=1.4.304.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Meta loader for Vulkan API"
 url="https://github.com/zeux/volk"
 arch=(x86_64)
@@ -15,6 +15,10 @@ makedepends=(
   vulkan-headers
 )
 groups=(vulkan-devel)
+options=(
+  # We are producing static libraries
+  !lto
+)
 source=("git+$url#tag=vulkan-sdk-$pkgver")
 b2sums=('bd72a8855c72297527d3807c3c7e8bc033e0fd91505ff6436d8e7a0e7a773e7a60e44175d9890bd1bfb38d30b514a22cc1f1fe6674823bf00fb79ed09ea1e41d')
 
