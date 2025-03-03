@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: plasma-integration
-  version: 6.3.1-2.1
+  version: 6.3.2-3
   arch:
     - x86_64
   pkgname:
     - plasma-integration
     - plasma5-integration
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.3.2-3
+    packages:
+      - plasma-integration-6.3.2-3-x86_64.pkg.tar.zst
+      - plasma5-integration-6.3.2-3-x86_64.pkg.tar.zst
   world:
     version: 6.3.1-2.1
     packages:
