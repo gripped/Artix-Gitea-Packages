@@ -13,6 +13,7 @@ depends=(
     'gcc-libs'
     'glibc'
     'libarchive'
+    'libelogind'
     'pacman'
     'pcre'
    )
@@ -23,6 +24,12 @@ install=pkgfile.install
 source=("git+https://github.com/falconindy/pkgfile.git#tag=v${pkgver}?signed")
 sha256sums=('0a02f98d7b4fd516065757e4942c7d2490104a044e31306f7f4b259db8ba36b3')
 validpgpkeys=('487EACC08557AD082088DABA1EB2638FF56C0C53') # Dave Reisner <d@falconindy.com>
+
+prepare() {
+    cd "$pkgname"
+    # todo: patch this!
+    sed -e 's|libsystemd|libelogind|g' -i meson.build
+}
 
 build() {
     artix-meson "$pkgname" -D systemd_units=false build
