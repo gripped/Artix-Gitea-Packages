@@ -4,7 +4,7 @@
 
 pkgname=vulkan-utility-libraries
 pkgver=1.4.304.1
-pkgrel=1.2
+pkgrel=2
 pkgdesc="Vulkan Utility Libraries"
 url="https://www.vulkan.org/"
 arch=(x86_64)
@@ -19,6 +19,10 @@ makedepends=(
   ninja
   python
   vulkan-headers
+)
+options=(
+  # We are producing static libraries
+  !lto
 )
 groups=(vulkan-devel)
 source=("git+https://github.com/KhronosGroup/Vulkan-Utility-Libraries#tag=vulkan-sdk-$pkgver")
