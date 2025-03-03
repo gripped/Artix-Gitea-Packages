@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libtg_owt
-  version: 0.git27.e9d103e-2.1
+  version: 0.git28.be39b8c-1
   arch:
     - x86_64
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.git27.e9d103e-2.1
+    version: 0.git28.be39b8c-1
     packages:
-      - libtg_owt-0.git27.e9d103e-2.1-x86_64.pkg.tar.zst
+      - libtg_owt-0.git28.be39b8c-1-x86_64.pkg.tar.zst
 team: galaxy
