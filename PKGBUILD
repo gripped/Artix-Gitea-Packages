@@ -4,7 +4,7 @@
 
 pkgname=vulkan-utility-libraries
 pkgver=1.4.304.1
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Vulkan Utility Libraries"
 url="https://www.vulkan.org/"
 arch=(x86_64)

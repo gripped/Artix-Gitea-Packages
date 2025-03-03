@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: vulkan-utility-libraries
-  version: 1.4.304.1-1.1
+  version: 1.4.304.1-1.2
   arch:
     - x86_64
   pkgname:
     - vulkan-utility-libraries
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.304.1-1.1
+    version: 1.4.304.1-1.2
     packages:
-      - vulkan-utility-libraries-1.4.304.1-1.1-x86_64.pkg.tar.zst
+      - vulkan-utility-libraries-1.4.304.1-1.2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
