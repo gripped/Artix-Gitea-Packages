@@ -3,7 +3,7 @@
 
 pkgname=vulkan-validation-layers
 pkgver=1.4.304.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Vulkan Validation Layers"
 url="https://www.vulkan.org/"
 arch=(x86_64)
