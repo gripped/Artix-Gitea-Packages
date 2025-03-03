@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-psycopg
-  version: 3.2.3-1
+  version: 3.2.5-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.2.3-1
+    version: 3.2.5-1
     packages:
-      - python-psycopg-3.2.3-1-any.pkg.tar.zst
+      - python-psycopg-3.2.5-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
