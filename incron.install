@@ -1,0 +1,26 @@
+pre_upgrade() {
+  if [[ $(vercmp '20230601-1' "$2") -eq 0 ]]; then
+    echo " ==> The service script name has changed from 'incrond' to 'incron',"
+    echo " ==> to match the package name. Stopping incrond if active:"
+    echo ' !!> rc-service -s incrond stop'
+    rc-service -s incrond stop
+    [ $? ] || echo ' !!! Failed, stop the daemon manually.'
+    echo ' !!> Removing old service file from /etc/runlevel'
+    rc-update -a del incrond
+    [ $? ] || echo ' !!! Failed, remove the daemon manually.'
+  fi
+}
+
+post_upgrade() {
+  if [[ $(vercmp '20230601-1' "$2") -eq 0 ]]; then
+    echo " ==> Adding new service to runlevel 'default':"
+    rc-update add incron default
+    echo ' ==> Starting incron:'
+    echo ' !!> rc-service -N incron start'
+    rc-service -N incron start
+  fi
+}
+
+post_remove() {
+  rc-update -a del incron
+}

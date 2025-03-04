@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+# nous@artixlinux.org, 2023
+
+name="incron daemon"
+description="inotify cron daemon monitors filesystem events and executes commands defined in system and user tables"
+command="/usr/sbin/incrond"
+command_args="${INCROND_OPTS} -f \"${INCROND_CONFFILE}\""
+command_args_foreground="-n"
+supervisor=supervise-daemon
+retry="${INCROND_TERMTIMEOUT}"
+
+required_files="${INCROND_CONFFILE}"
+
+depend() {
+  use clock logger
+  need localmount
+}
