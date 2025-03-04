@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openrc
-  version: 0.60.1-1
+  version: 0.60.1-2
   arch:
     - x86_64
   pkgname:
@@ -19,9 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: 0.60.1-1
+    version: 0.60.1-2
     packages:
-      - openrc-0.60.1-1-x86_64.pkg.tar.zst
+      - openrc-0.60.1-2-x86_64.pkg.tar.zst
   system:
     version: 0.56-1
     packages:
