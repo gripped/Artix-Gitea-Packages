@@ -2,7 +2,7 @@
 
 pkgname=mkdocs-autorefs
 _pkgname=autorefs
-pkgver=1.3.1
+pkgver=1.4.0
 pkgrel=1
 pkgdesc="Automatically link across pages in MkDocs"
 arch=(any)
@@ -21,12 +21,13 @@ makedepends=(
   python-wheel
 )
 checkdepends=(
+  mkdocs-material
   python-pygments
   python-pymdown-extensions
   python-pytest
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('c86fd428e43b44829e10f60c233353f12842564852fed5095cbe177e3607079c')
+sha256sums=('d9a854660bd18067355f2bf55e53076f072111d411f62b2e38cb69e2134848b0')
 
 build() {
   cd $_pkgname-$pkgver
@@ -36,10 +37,11 @@ build() {
 
 check() {
   cd $_pkgname-$pkgver
-  python -m installer --destdir=tmp_install dist/*.whl
-  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  export PYTHONPATH="$PWD/tmp_install/$site_packages"
-  pytest
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  # tests/test_api.py requires griffe, which is not in repos
+  test-env/bin/python -m pytest \
+    --ignore tests/test_api.py
 }
 
 package() {
