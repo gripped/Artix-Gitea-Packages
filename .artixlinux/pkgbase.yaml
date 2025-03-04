@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: pifpaf
-  version: 3.2.3-3
+  version: 3.3.0-1
   arch:
     - any
   pkgname:
     - pifpaf
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.3.0-1
+    packages:
+      - pifpaf-3.3.0-1-any.pkg.tar.zst
   world:
     version: 3.2.3-3
     packages:
