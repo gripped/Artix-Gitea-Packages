@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: java-openjdk
-  version: 23.0.2.u7-1
+  version: 23.0.2.u7-1.1
   arch:
     - x86_64
   pkgname:
@@ -11,7 +11,7 @@ pkgbase:
     - openjdk-src
     - openjdk-doc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,8 +32,13 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 23.0.2.u7-1.1
+    packages:
+      - jre-openjdk-headless-23.0.2.u7-1.1-x86_64.pkg.tar.zst
+      - jre-openjdk-23.0.2.u7-1.1-x86_64.pkg.tar.zst
+      - jdk-openjdk-23.0.2.u7-1.1-x86_64.pkg.tar.zst
+      - openjdk-src-23.0.2.u7-1.1-x86_64.pkg.tar.zst
+      - openjdk-doc-23.0.2.u7-1.1-x86_64.pkg.tar.zst
   world:
     version: 23.0.2.u7-1
     packages:
