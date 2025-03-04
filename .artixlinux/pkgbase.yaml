@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-inline-snapshot
-  version: 0.20.2-1
+  version: 0.20.4-1
   arch:
     - any
   pkgname:
@@ -29,9 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.20.2-1
+    version: 0.20.4-1
     packages:
-      - python-inline-snapshot-0.20.2-1-any.pkg.tar.zst
+      - python-inline-snapshot-0.20.4-1-any.pkg.tar.zst
   world:
     version: 0.19.3-1
     packages:
