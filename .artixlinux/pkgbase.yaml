@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-text-csv
-  version: 2.05-1
+  version: 2.06-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.05-1
+    version: 2.06-1
     packages:
-      - perl-text-csv-2.05-1-any.pkg.tar.zst
+      - perl-text-csv-2.06-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
