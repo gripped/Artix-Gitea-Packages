@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-dep-logic
-  version: 0.4.10-1
+  version: 0.4.11-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.10-1
+    version: 0.4.11-1
     packages:
-      - python-dep-logic-0.4.10-1-any.pkg.tar.zst
+      - python-dep-logic-0.4.11-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
