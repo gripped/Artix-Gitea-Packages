@@ -2,8 +2,8 @@
 
 pkgname=python-bitarray
 _pkgname=${pkgname#python-}
-pkgver=3.0.0
-pkgrel=2
+pkgver=3.1.0
+pkgrel=1
 pkgdesc="Efficient arrays of booleans for Python"
 arch=(x86_64)
 url="https://github.com/ilanschnell/bitarray"
@@ -20,7 +20,7 @@ makedepends=(
 )
 checkdepends=(python-pytest)
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('7d10d1bd057428f4442da4a0724332e83f2fcaf33d01941b5c1a6b852339979d')
+sha256sums=('cb280568ff190392927e684f42f109c797bcff9e5ba7c29d505d4fad64384c30')
 
 build() {
   cd "$_pkgname-$pkgver"
