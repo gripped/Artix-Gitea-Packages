@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=mongo-c-driver
-pkgver=1.30.0
+pkgver=1.30.1
 pkgrel=1
 pkgdesc="A client library written in C for MongoDB"
 arch=(x86_64)
@@ -31,7 +31,7 @@ replaces=(
   libmongoc
 )
 source=("https://github.com/mongodb/mongo-c-driver/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('be937a0e60be4317640c309acfbf01ca3cdd02afc54a318bab0f02c941fbc485')
+sha256sums=('2542af022415864c08b6232da70a5323ad967e5cee183c2245e35d93eb6410a7')
 
 build() {
   cd $pkgname-$pkgver
