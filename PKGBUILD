@@ -1,7 +1,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=mkdocs-material
-pkgver=9.6.4
+pkgver=9.6.7
 pkgrel=1
 pkgdesc="Documentation that simply works"
 arch=(any)
@@ -15,7 +15,6 @@ depends=(
   python-jinja
   python-markdown
   # python-paginate # Not packaged
-  python-regex
   python-requests
   python-yaml
 )
@@ -27,8 +26,12 @@ makedepends=(
   python-installer
   python-wheel
 )
+optdepends=(
+  'python-cairosvg: for image processing'
+  'python-pillow: for image processing'
+)
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('b2a238aff906b1dca0430fe48d19ecbc45d08510fd5b7b84ef1e7082ac709ac6')
+sha256sums=('923cc46c6bf1075d62d61a8034930ca73b9f36adffa94c24770455848614a6ea')
 
 build() {
   cd $pkgname-$pkgver
