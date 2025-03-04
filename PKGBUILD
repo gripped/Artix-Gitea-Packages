@@ -7,7 +7,7 @@ _extra=1.2
 _alpm=1.7
 
 pkgname=openrc
-pkgver=0.60
+pkgver=0.60.1
 pkgrel=1
 pkgdesc="Gentoo's universal init system"
 arch=('x86_64')
@@ -60,7 +60,7 @@ source=(
     "git+${_url}/openrc-extra.git#tag=${_extra}"
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
 )
-sha256sums=('5958c40be06740ade13750bf692878b00c5ce50cfec3119bd2e7378c3d656725'
+sha256sums=('4b82aac120ba0e9ce56833b153c027f414372f060b212e21182127dbceab5ee6'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
