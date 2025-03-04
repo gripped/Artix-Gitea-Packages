@@ -3,7 +3,7 @@
 pkgname=waterfox
 _pkgname=Waterfox
 pkgver=6.5.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -80,7 +80,7 @@ prepare() {
         patch -Np1 -i ../remove-organization-policy-banner.patch
         patch -Np1 -i ../9002.enable_reader_mode_hotkey.patch
         patch -Np1 -i ../9003.rebind_screenshot_key_to_ctrl_alt_s.patch	
-	sed -i -e "s/%DISPLAY_VERSION%/$pkgver/" waterfox/browser/branding/pref/firefox-branding.js
+        echo "$pkgver" > browser/config/version_display.txt
 	cat >../mozconfig <<END
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
