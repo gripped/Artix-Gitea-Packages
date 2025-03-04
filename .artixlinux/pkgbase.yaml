@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-kubernetes
-  version: 32.0.0-1
+  version: 32.0.1-1
   arch:
     - any
   pkgname:
     - python-kubernetes
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 32.0.1-1
+    packages:
+      - python-kubernetes-32.0.1-1-any.pkg.tar.zst
   world:
     version: 32.0.0-1
     packages:
