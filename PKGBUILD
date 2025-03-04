@@ -2,8 +2,8 @@
 
 pkgname=waterfox
 _pkgname=Waterfox
-pkgver=6.5.4
-pkgrel=1.2
+pkgver=6.5.5
+pkgrel=1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -80,7 +80,7 @@ prepare() {
         patch -Np1 -i ../remove-organization-policy-banner.patch
         patch -Np1 -i ../9002.enable_reader_mode_hotkey.patch
         patch -Np1 -i ../9003.rebind_screenshot_key_to_ctrl_alt_s.patch	
-sed -i -e "s/%DISPLAY_VERSION%/$pkgver/" waterfox/browser/branding/pref/firefox-branding.js
+	sed -i -e "s/%DISPLAY_VERSION%/$pkgver/" waterfox/browser/branding/pref/firefox-branding.js
 	cat >../mozconfig <<END
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
@@ -280,7 +280,7 @@ EOT
         fi
 }
 
-b2sums=('9d0a90d0c86f73d7dc2884d6b6d21bb82859f9c950be69d002dba9418c29609e447b23e94acb7ced7fbec5cd5ec4b17467e720750b1219b15889dc13b85dbd21'
+b2sums=('c3c9f6d24b48816c10ecda64cbea0ba58c2d36b95eb1ca9c949697a64c0f82b18740b7a6d37921e5074bc1299356b87e7100d7567d03e3879e439760c5b20da2'
         'dae98ce62bcc76d822d16a9c140a65943cd1d383734684b08e765b12e61e7010c104a0b333888a6f911fc22c2521c9148a8634cf36d7f120f964bb2ddcde162b'
         '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
         '24a456938be30bc9bbfac1da258134bfbda08f809e78c3903ecb7706f83fd653e24fc50567ee5b68a7447d072adaff27e481f62212665078cd7b8baf1b5f0506'
