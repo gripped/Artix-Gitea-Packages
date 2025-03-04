@@ -4,7 +4,7 @@
 # Contributor: Hugo Doria <hugo@archlinux.org>
 
 pkgname=libcap
-pkgver=2.71
+pkgver=2.74
 pkgrel=1
 pkgdesc="POSIX 1003.1e capabilities"
 arch=(x86_64)
@@ -12,7 +12,6 @@ url="https://sites.google.com/site/fullycapable/"
 _url=https://git.kernel.org/pub/scm/libs/libcap/libcap.git
 license=('BSD-3-Clause OR GPL-2.0-only')
 depends=(
-  gcc-libs
   glibc
   pam
 )
@@ -30,12 +29,12 @@ options=(!lto)
 # NOTE: we rely on a specific tagging scheme to verify with the latest signing key: https://bugzilla.kernel.org/show_bug.cgi?id=218860#c3
 source=(
   git+$_url?signed#tag=sig-$pkgname-$pkgver
-  libcap-2.71-cgo-flags.patch  # provide flags to go build (sent upstream)
+  libcap-2.73-cgo-flags.patch  # provide flags to go build (sent upstream)
 )
-sha512sums=('63ce3d8625e989070604c10c90696a732347b4335017693925592f3cdba17d098d44dec704a8bf0dc32bcf51502b922d4c4f765552ee1d4a6a1d94dd759a5fc0'
-            'bcaf8f2002ac6acd4ac455d71313b71b60617fd6978abf5c722bd9ab7c8cace9a78b25218aef553538467c3a95f3494ce0a0b0c64b8855cfa4ab18d5ba2a28c2')
-b2sums=('f1f86559c673d89ce4bc13fdb90e1051e3bf8562571f686845e46b513d804680e00db738736d4d5d118e828c6e98144f40ff19d1d9bec003a946cd6f63a97d8d'
-        'd704ffe7a4b48a1ac269ebf6735dba162dcfd94ff70a32c8154d6d1520eff4a425b54653da0ac361f5120eb4b915039878a08ebd730ee4655be9cccfbe50ad1e')
+sha512sums=('db83d4717cdbcfb9e3962764162bc0adf1e0e41db5a21344be86213f095dff6eee397c2d694892d34abae2b2597300d9774f2a11fd01c3491b0888613ca9685c'
+            '4feb12bad6c0b37168f67f599155157e2537cb8cd35d906a758ba4405ec916f0504b9f52405a53d5c573232883034c740d0d65c756d9d9722029ef5bc9875fa7')
+b2sums=('94c384697f4229d7a6468ed8533dae90e9fbe4e201458d80301c1493b5426c90d052d0ac2491f1d12f7a7982dc76e163611febae3c4697651023d6037bfb4c57'
+        '2b40bfd3de55a4ad101bb0cdab37c10530b50917995fa67eb6bae8c5df004c3c6b104dc5fa615ea907a7b8d620fa786cd2dfe7f77df7b1df03bdde84d09644f0')
 validpgpkeys=(
   38A644698C69787344E954CE29EE848AE2CCF3F4  # Andrew G. Morgan <morgan@kernel.org>
   0D23D34C577B08C4082CFD76430C5CFF993116B1  # Andrew G. Morgan (2024+ libcap signing key) <morgan@kernel.org>
@@ -54,7 +53,7 @@ _common_make_options=(
 
 prepare() {
   # ensure to use CGO_ENABLED all the way (so that we can have full RELRO)
-  patch -Np1 -d $pkgname -i ../libcap-2.71-cgo-flags.patch
+  patch -Np1 -d $pkgname -i ../libcap-2.73-cgo-flags.patch
 }
 
 build() {
@@ -81,6 +80,7 @@ check() {
     test
     -k
     -C $pkgname
+    -j 1
   )
 
   make "${make_options[@]}"
