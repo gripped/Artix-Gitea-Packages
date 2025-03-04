@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: dbus-openrc
-  version: 20210418-2
+  version: 20250304-1
   arch:
     - any
   pkgname:
     - dbus-openrc
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20250304-1
+    packages:
+      - dbus-openrc-20250304-1-any.pkg.tar.zst
   system:
     version: 20210418-2
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system

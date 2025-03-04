@@ -1,19 +1,29 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20210418
-pkgrel=2
+pkgver=20250304
+pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 license=('GPL2')
-depends=('dbus' 'openrc')
-provides=('init-dbus')
-conflicts=('init-dbus')
-source=('dbus.initd'
-        'dbus-reload.hook'
-        '80-dbus')
+depends=(
+    'dbus'
+    'openrc'
+)
+provides=(
+    'init-dbus'
+)
+conflicts=(
+    'init-dbus'
+)
+source=(
+    dbus{,.user}.initd
+    'dbus-reload.hook'
+    '80-dbus'
+)
 sha256sums=('3801358d1fe65db3711851c4a2d7c491c8750c899d8effdf37eb64d34683e91b'
+            '986fc9a81aa5381d9009be9ca0ea98b473b1d4834ff1c832d5cb5ff347d4de7b'
             '517cb12a30f84ba9580532d5485ce219ad96668480db99fcd4954c7017a0ea47'
             '6d637acae40368db9e7c005b2e53483882014caef281fe9e801633ba7cc3b7dd')
 
@@ -22,6 +32,9 @@ package() {
 
     install -d "${pkgdir}"/etc/runlevels/default
     ln -sf /etc/init.d/dbus "${pkgdir}"/etc/runlevels/default/dbus
+
+    install -d "${pkgdir}"/etc/user/init.d
+    install -Dm755 "${srcdir}"/dbus.user.initd "${pkgdir}"/etc/user/init.d/dbus
 
     install -Dt "${pkgdir}"/usr/share/libalpm/hooks -m644 *.hook
 
