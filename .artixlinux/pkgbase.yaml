@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: img2pdf
-  version: 0.5.1-3
+  version: 0.6.0-1
   arch:
     - any
   pkgname:
     - img2pdf
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.5.1-3
+    version: 0.6.0-1
     packages:
-      - img2pdf-0.5.1-3-any.pkg.tar.zst
+      - img2pdf-0.6.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
