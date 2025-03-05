@@ -40,14 +40,14 @@ build() {
     lib=lib32
     prefix=/usr
     sbindir=bin
-    -C $_name
+    -C lib32-${_name}
   )
 
   make "${make_options[@]}"
 }
 
 check() {
-  make test CC="gcc -m32" -k -C $_name
+  make test CC="gcc -m32" -k -C lib32-${_name}
 }
 
 package() {
@@ -58,7 +58,7 @@ package() {
     prefix=/usr
     sbindir=bin
     install
-    -C $_name
+    -C lib32-${_name}
   )
 
   # NOTE: we add a specific libcap dependency here, because top-level it would not work as libcap is pulled in transitively via base
@@ -67,8 +67,8 @@ package() {
   )
 
   make "${make_options[@]}"
-  install -vDm 644 $_name/{CHANGELOG,README} -t "$pkgdir/usr/share/doc/$pkgname/"
-  install -vDm 644 $_name/License -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -vDm 644 lib32-${_name}/{CHANGELOG,README} -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 lib32-${_name}/License -t "$pkgdir/usr/share/licenses/$pkgname/"
   # remove files provided by libcap
   rm -rv "$pkgdir/usr/"{include,share/man,bin}
 }
