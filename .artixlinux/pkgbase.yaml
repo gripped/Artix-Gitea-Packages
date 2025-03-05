@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: amule
-  version: 1:2.3.3-9
+  version: 1:2.3.3-10
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.3.3-9
+    version: 1:2.3.3-10
     packages:
-      - amule-1:2.3.3-9-x86_64.pkg.tar.zst
+      - amule-1:2.3.3-10-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
