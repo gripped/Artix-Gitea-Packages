@@ -5,7 +5,7 @@
 
 pkgname=yazi
 pkgver=25.2.26
-pkgrel=1
+pkgrel=2
 pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
 url="https://github.com/sxyazi/yazi"
 arch=("x86_64")
@@ -55,7 +55,7 @@ package() {
   local r
   for r in 16 24 32 48 64 128 256; do
     install -dm755 "$pkgdir/usr/share/icons/hicolor/${r}x${r}/apps"
-    convert assets/logo.png -resize "${r}x${r}" "$pkgdir/usr/share/icons/hicolor/${r}x${r}/apps/yazi.png"
+    magick assets/logo.png -resize "${r}x${r}" "$pkgdir/usr/share/icons/hicolor/${r}x${r}/apps/yazi.png"
   done
 
   cd "$pkgname-boot/completions"
