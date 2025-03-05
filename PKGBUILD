@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
 # Contributor: Alexandre Bique <bique.alexandre@gmail.com>
 
 pkgname=re2
 _re2ver=2024-07-02
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgver=${_re2ver//-}
 pkgdesc="Fast, safe, thread-friendly regular expression engine"
