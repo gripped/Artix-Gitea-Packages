@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: qt6-grpc
-  version: 6.8.2-2
+  version: 6.8.2-2.1
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 6.8.2-2
+    version: 6.8.2-2.1
     packages:
-      - qt6-grpc-6.8.2-2-x86_64.pkg.tar.zst
+      - qt6-grpc-6.8.2-2.1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
