@@ -3,7 +3,7 @@
 # Contributor: Jonathon Fernyhough <jonathon_at_manjaro_dot_org>
 # Contributor: Jon Gjengset <jon@tsp.io>
 pkgname=rustup
-pkgver=1.27.1
+pkgver=1.28.0
 pkgrel=1
 pkgdesc="The Rust toolchain installer"
 arch=('x86_64')
@@ -21,7 +21,7 @@ install='post.install'
 options=("!lto")
 source=("rustup-${pkgver}.tar.gz::https://github.com/rust-lang/rustup.rs/archive/${pkgver}.tar.gz"
         "rustup-profile.sh")
-sha512sums=('e0494678b7117464665c2aa88165e13baf2dcfb2a33c57dc78f669533111f773724d227ee05967de427845f8633e56fdf8159c7a5b96638413710beacb115075'
+sha512sums=('874d9d60df9650cd813bbfb80e2e4daae88837329ca854153cfeec5e8e6fd40fae5aff6017c0ca54ac9dd0d233f480735b2c1d79972dd4d42f28d4e71f4c9195'
             '18d5b4ab9a032cb43fd0b59fb553a878068981534e549935c5ff4a12dc2f74849ce36367eb59e670d674a19a7d4bc0056d0694d7f87ede187416c2ffcbb20355')
 _binlinks=('cargo' 'rustc' 'rustdoc' 'rust-gdb' 'rust-lldb' 'rustfmt' 'cargo-fmt' 'cargo-clippy' 'clippy-driver' 'cargo-miri')
 
