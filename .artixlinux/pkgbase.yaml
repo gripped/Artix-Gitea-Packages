@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-zope-testrunner
-  version: 7.0-1
+  version: 7.1-1
   arch:
     - any
   pkgname:
     - python-zope-testrunner
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-zope-testrunner-7.0-1-any.pkg.tar.zst
   world:
-    version: 6.6.1-1
+    version: 7.1-1
     packages:
-      - python-zope-testrunner-6.6.1-1-any.pkg.tar.zst
+      - python-zope-testrunner-7.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

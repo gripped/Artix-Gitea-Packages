@@ -3,7 +3,7 @@
 
 pkgname=python-zope-testrunner
 _pkgname=zope.testrunner
-pkgver=7.0
+pkgver=7.1
 pkgrel=1
 pkgdesc="Zope testrunner script"
 arch=('any')
@@ -24,7 +24,7 @@ makedepends=(
 # package.
 checkdepends=('python-zope-testing')
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('90ba773a90c30a24a1a32618a56a1a5344a76ca5e125f36bc8b86d4cc7e82eb0dc6dc0331ad1487c2602a72bfb3705799a67c3b3d217b36b0f1a0134148e44fd')
+sha512sums=('62cc531616b24f9cdb3ec7c350e59b675b394c9dc035225a8ca6088fb6ca3f8033402bef93374e3cacda945d6eb4bf604b803e981e42dd3a4c6ab7b65678226e')
 
 prepare() {
   cd $_pkgname-$pkgver
@@ -34,7 +34,7 @@ prepare() {
 
 build() {
   cd $_pkgname-$pkgver
-  python -m build --wheel --no-isolation
+  python -m build --wheel --no-isolation --skip-dependency-check
 }
 
 check() {
