@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: libcap
-  version: 2.74-1
+  version: 2.75-1
   arch:
     - x86_64
   pkgname:
     - libcap
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -16,8 +16,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.75-1
+    packages:
+      - libcap-2.75-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: 2.74-1
     packages:
