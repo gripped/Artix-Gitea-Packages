@@ -4,8 +4,8 @@
 # Contributor: Evine Deng <evinedeng@hotmail.com>
 
 pkgname=yazi
-pkgver=25.2.26
-pkgrel=2
+pkgver=25.3.2
+pkgrel=1
 pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
 url="https://github.com/sxyazi/yazi"
 arch=("x86_64")
@@ -25,7 +25,7 @@ optdepends=(
 )
 makedepends=('cargo' 'imagemagick')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/sxyazi/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('49e1a0fb4e8b4c14c1e16e4b4c9bc52302a5ea7104605f3408c3ab513c3a4869')
+sha256sums=('bc1a7b6cd69310ea3369bec2a618e7a0f683f7d25f41a1abdcab82f6a1886bab')
 options=('!lto')
 
 prepare() {
