@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-asyncpg
-  version: 0.30.0-2
+  version: 0.30.0-3
   arch:
     - x86_64
   pkgname:
     - python-asyncpg
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.30.0-2
+    version: 0.30.0-3
     packages:
-      - python-asyncpg-0.30.0-2-x86_64.pkg.tar.zst
+      - python-asyncpg-0.30.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
