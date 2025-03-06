@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: plantuml
-  version: 1.2025.1-1
+  version: 1.2025.2-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.2025.1-1
+    version: 1.2025.2-1
     packages:
-      - plantuml-1.2025.1-1-any.pkg.tar.zst
+      - plantuml-1.2025.2-1-any.pkg.tar.zst
   world:
     version: 1.2025.0-1
     packages:

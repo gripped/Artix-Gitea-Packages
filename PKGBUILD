@@ -4,7 +4,7 @@
 # Contributor : Jingbei Li <i@jingbei.li>
 
 pkgname=plantuml
-pkgver=1.2025.1
+pkgver=1.2025.2
 pkgrel=1
 pkgdesc="Component that allows to quickly write uml diagrams"
 arch=(any)
@@ -32,7 +32,7 @@ source=(
   "https://github.com/plantuml/plantuml/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
   "$pkgname.run"
 )
-sha256sums=('0720a7b4eea6f1c5e9e20152de09b36086e7bb65c19bf8735490b263e30f7b13'
+sha256sums=('5c7a06e91aad9eb46c0b370621ff7f4e482815f9efb6f0a233130968815a1162'
             'a3fb528f4c719cfd0ff6154c60fd54ce341011d132caf950cc30af4989f6aac8')
 
 build() {
