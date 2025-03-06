@@ -2,23 +2,39 @@
 # Contributor: Adrian Perez de Castro <aperez@igalia.com>
 
 pkgname=mold
-pkgver=2.36.0
-pkgrel=1
+pkgver=2.37.0
+pkgrel=2
 pkgdesc='A Modern Linker'
 arch=('x86_64')
 url='https://github.com/rui314/mold'
 license=('MIT')
 # xxhash is bundled
-depends=('glibc' 'gcc-libs' 'mimalloc' 'zlib' 'tbb' 'zstd')
-makedepends=('git' 'python' 'cmake' 'mold')
-checkdepends=('clang' 'libdwarf')
-source=("$pkgname::git+$url.git#tag=v$pkgver")
-sha512sums=('2e399d7810872a7dc8a45b196cd557cd87560633087b99bf65a53743476ccb8c101dd588fd83e6329b9f8ca35111b3a6aa6a06a64de4ed6685da45a4749a7b06')
-b2sums=('bc1e7ff201888afff2c5d3911ea6d88d1474871677eaeb99544bdb8054e472a15bb45fc469fe0ad8ff29cee85dee9715dfa8ceea347294482555852bb20f0913')
+depends=(
+  glibc
+  gcc-libs
+  libblake3
+  mimalloc
+  tbb
+  zlib
+  zstd
+)
+makedepends=(
+  cmake
+  git
+  mold
+  python
+)
+checkdepends=(
+  clang
+  libdwarf
+)
+source=("${pkgname}::git+${url}.git#tag=v${pkgver}")
+sha512sums=('c73c99d6484b4ebc2c070938ecee47ff2c463d34dfcc91fe40412046f42fa8b9b7539d2f495fe927709631b8d9899f68fed19aff9b571aea1c40412158b5a626')
+b2sums=('7aa9e7d6f431bfc05b60ed91b6bfe5859aa1b37d155a5f6a767be640ce0f13120a79ed83240a088e9164ffa14103f5481a12cb2e7e869bbfc56330d72bbdb2f3')
 
 build() {
   cmake \
-  -S "$pkgname" \
+  -S "${pkgname}" \
   -B build \
   -D CMAKE_BUILD_TYPE='None' \
   -D CMAKE_INSTALL_PREFIX='/usr' \
@@ -36,5 +52,6 @@ check() {
 }
 
 package() {
-  DESTDIR="$pkgdir" cmake --install build
+  DESTDIR="${pkgdir}" cmake --install build
+  install -Dm644 "${pkgname}"/LICENSE "${pkgdir}"/usr/share/licenses/mold/LICENSE
 }
