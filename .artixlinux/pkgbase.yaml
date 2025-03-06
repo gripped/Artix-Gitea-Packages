@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: qgis
-  version: 3.42.0-1
+  version: 3.42.0-2
   arch:
     - x86_64
   pkgname:
     - qgis
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -44,8 +44,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 3.42.0-2
+    packages:
+      - qgis-3.42.0-2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
