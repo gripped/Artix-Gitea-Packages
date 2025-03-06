@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gtk3
-  version: 1:3.24.48-2
+  version: 1:3.24.49-1
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - gtk3-demos
     - gtk3-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:3.24.49-1
+    packages:
+      - gtk3-1:3.24.49-1-x86_64.pkg.tar.zst
+      - gtk3-demos-1:3.24.49-1-x86_64.pkg.tar.zst
+      - gtk3-docs-1:3.24.49-1-x86_64.pkg.tar.zst
   world:
     version: 1:3.24.48-2
     packages:
