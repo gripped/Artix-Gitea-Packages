@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fzf
-  version: 0.60.2-1
+  version: 0.60.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.60.2-1
+    version: 0.60.3-1
     packages:
-      - fzf-0.60.2-1-x86_64.pkg.tar.zst
+      - fzf-0.60.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
