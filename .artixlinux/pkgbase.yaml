@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: marble
-  version: 24.12.2-1
+  version: 24.12.2-2
   arch:
     - x86_64
   pkgname:
@@ -11,12 +11,12 @@ pkgbase:
     - marble-maps
     - marble-qt
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 24.12.2-2
+    packages:
+      - marble-24.12.2-2-x86_64.pkg.tar.zst
+      - marble-behaim-24.12.2-2-x86_64.pkg.tar.zst
+      - marble-common-24.12.2-2-x86_64.pkg.tar.zst
+      - marble-maps-24.12.2-2-x86_64.pkg.tar.zst
+      - marble-qt-24.12.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
