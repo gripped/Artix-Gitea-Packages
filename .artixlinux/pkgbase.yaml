@@ -1,27 +1,29 @@
 ---
 pkgbase:
   name: dbus
-  version: 1.16.1-1.4
+  version: 1.16.2-1
   arch:
     - x86_64
   pkgname:
     - dbus
     - dbus-docs
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.16.2-1
+    packages:
+      - dbus-1.16.2-1-x86_64.pkg.tar.zst
+      - dbus-docs-1.16.2-1-x86_64.pkg.tar.zst
   system:
     version: 1.16.1-1.4
     packages:
