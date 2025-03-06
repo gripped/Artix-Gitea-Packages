@@ -1,13 +1,14 @@
 ---
 pkgbase:
   name: mesa
-  version: 1:24.3.4-1
+  version: 1:25.0.1-1
   arch:
     - x86_64
   pkgname:
     - mesa
     - opencl-clover-mesa
     - opencl-rusticl-mesa
+    - vulkan-gfxstream
     - vulkan-intel
     - vulkan-mesa-layers
     - vulkan-nouveau
@@ -16,12 +17,12 @@ pkgbase:
     - vulkan-virtio
     - mesa-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,8 +38,19 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:25.0.1-1
+    packages:
+      - mesa-1:25.0.1-1-x86_64.pkg.tar.zst
+      - opencl-clover-mesa-1:25.0.1-1-x86_64.pkg.tar.zst
+      - opencl-rusticl-mesa-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-gfxstream-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-intel-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-nouveau-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:25.0.1-1-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:25.0.1-1-x86_64.pkg.tar.zst
+      - mesa-docs-1:25.0.1-1-x86_64.pkg.tar.zst
   world:
     version: 1:24.3.4-1
     packages:
