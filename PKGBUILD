@@ -45,7 +45,7 @@ makedepends=(
   'libxcrypt-compat'
   'node-gyp'
   'nodejs'
-  'pnpm'
+  'npm'
   'python'
 )
 optdepends=('xdg-desktop-portal: Screensharing with Wayland')
@@ -68,20 +68,20 @@ prepare() {
   sed 's#"node": "#&>=#' -i package.json
 
   # Install dependencies for sticker-creator
-  pnpm --prefix ./sticker-creator/ install
+  npm --prefix ./sticker-creator/ install
 
   # Install dependencies for signal-desktop
-  pnpm install
+  npm install --ignore-engines
 }
 
 build() {
   cd "${_pkgname}-${pkgver}"
 
   # Build the sticker creator
-  pnpm --prefix ./sticker-creator/ run build
+  npm --prefix ./sticker-creator/ run build
 
   # Build signal-desktop
-  pnpm run build
+  npm run build
 }
 
 package() {
