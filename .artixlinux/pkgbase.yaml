@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: waterfox
-  version: 6.5.5-1.1
+  version: 6.5.5-1.2
   arch:
     - x86_64
   pkgname:
     - waterfox
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.5.5-1.2
+    packages:
+      - waterfox-6.5.5-1.2-x86_64.pkg.tar.zst
   galaxy:
     version: 6.5.5-1.1
     packages:

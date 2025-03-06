@@ -3,7 +3,7 @@
 pkgname=waterfox
 _pkgname=Waterfox
 pkgver=6.5.5
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -76,11 +76,14 @@ options=(!emptydirs !makeflags !strip !lto !debug)
 prepare() {
         mkdir -p mozbuild
         cd "$_pkgname-$pkgver"
+
 	bsdtar xvf ../l10n.zip --strip-components=1 -C waterfox/browser/locales
         patch -Np1 -i ../remove-organization-policy-banner.patch
         patch -Np1 -i ../9002.enable_reader_mode_hotkey.patch
         patch -Np1 -i ../9003.rebind_screenshot_key_to_ctrl_alt_s.patch	
-        echo "$pkgver" > browser/config/version_display.txt
+        sed -i -e "s/%DISPLAY_VERSION%/$pkgver/" waterfox/browser/branding/pref/firefox-branding.js
+        sed -i -e "s/^/$pkgver-/" browser/config/version_display.txt
+
 	cat >../mozconfig <<END
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
@@ -283,8 +286,9 @@ EOT
 b2sums=('c3c9f6d24b48816c10ecda64cbea0ba58c2d36b95eb1ca9c949697a64c0f82b18740b7a6d37921e5074bc1299356b87e7100d7567d03e3879e439760c5b20da2'
         'dae98ce62bcc76d822d16a9c140a65943cd1d383734684b08e765b12e61e7010c104a0b333888a6f911fc22c2521c9148a8634cf36d7f120f964bb2ddcde162b'
         '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
-        '24a456938be30bc9bbfac1da258134bfbda08f809e78c3903ecb7706f83fd653e24fc50567ee5b68a7447d072adaff27e481f62212665078cd7b8baf1b5f0506'
+        '1155404ff59b83a8f35660504f7fd98cec59a93a4b9a2a57055517b98ba41401d0c896bfcb7f8f9c177592f2f6e3cf8c3afb83cd411b9fa572df7847d0115c9c'
         '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
         '98d7b2aa61364c2b015d1a696a326e26d6d570cb8346e243ae67e5bfd7683732ce8227404fbfcac0969c9c52dcb1a9547e5779c74beca07ad3c41d2e4034e7bc'
         'f547df79e8e5d5c83389a0e1fec844945627c652a2058eca4f3d9028a24674feca7553b3f0cd0bb4095c0208fc19992d58ad6991440c8741e1dde418a74a0753'
         '681c4141128e774a57c474f690e9e550f1f17675d5195e39201f17f254a8a376827d30f7ccc0ab2bd1d37495abcbc95bb9321285895c3aa99546a3600ea1668c')
+
