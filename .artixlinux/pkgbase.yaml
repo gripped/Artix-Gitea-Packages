@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: openucx
-  version: 1.17.0-3
+  version: 1.18.0-2
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.17.0-3
+    version: 1.18.0-2
     packages:
-      - openucx-1.17.0-3-x86_64.pkg.tar.zst
+      - openucx-1.18.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
