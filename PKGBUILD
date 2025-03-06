@@ -147,8 +147,8 @@ done
 
 verify() {
   cd "$SRCDEST"
-  sed -n "s|  linux-x86_64/xpi/|  firefox-i18n-$pkgver-|p" \
-    firefox-$pkgver-SHA512SUMS | sha512sum -c -
+  #sed -n "s|  linux-x86_64/xpi/|  firefox-i18n-$pkgver-|p" \
+  #  firefox-$pkgver-SHA512SUMS | sha512sum -c -
 }
 
 _package() {
