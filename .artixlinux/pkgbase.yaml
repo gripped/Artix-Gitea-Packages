@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: mangohud
-  version: 0.8.0-3
+  version: 0.8.1-1
   arch:
     - x86_64
   pkgname:
     - mangohud
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.8.1-1
+    packages:
+      - mangohud-0.8.1-1-x86_64.pkg.tar.zst
   world:
     version: 0.8.0-3
     packages:
