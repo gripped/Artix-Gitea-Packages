@@ -1,8 +1,8 @@
 ---
-team: world
+team: galaxy
 pkgbase:
   name: pinentry-bemenu
-  version: 0.13.0-2
+  version: 0.14.0-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.13.0-2
+    version: 0.14.0-1
     packages:
-      - pinentry-bemenu-0.13.0-2-x86_64.pkg.tar.zst
+      - pinentry-bemenu-0.14.0-1-x86_64.pkg.tar.zst
