@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: glaze
-  version: 4.4.3-1
+  version: 5.0.0-1
   arch:
     - any
   pkgname:
     - glaze
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.0-1
+    packages:
+      - glaze-5.0.0-1-any.pkg.tar.zst
   world:
     version: 4.4.3-1
     packages:
