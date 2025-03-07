@@ -14,12 +14,12 @@ pkgbase:
     - aws-sdk-cpp-kinesis
     - aws-sdk-cpp-s3
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,15 +35,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.11.519-1
-    packages:
-      - aws-sdk-cpp-1.11.519-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-core-1.11.519-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-ec2-1.11.519-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-firehose-1.11.519-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-iam-1.11.519-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-kinesis-1.11.519-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-s3-1.11.519-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 1.11.521-1
     packages:
