@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libxshmfence
-  version: 1.3.2-2
+  version: 1.3.3-1
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.3.2-2
+    version: 1.3.3-1
     packages:
-      - lib32-libxshmfence-1.3.2-2-x86_64.pkg.tar.zst
+      - lib32-libxshmfence-1.3.3-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
