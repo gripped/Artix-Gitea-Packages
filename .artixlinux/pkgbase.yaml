@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lib32-libunistring
-  version: 1.2-1
+  version: 1.3-1
   arch:
     - x86_64
   pkgname:
     - lib32-libunistring
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.2-1
+    version: 1.3-1
     packages:
-      - lib32-libunistring-1.2-1-x86_64.pkg.tar.zst
+      - lib32-libunistring-1.3-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
@@ -52,12 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
-  asteroids-goblins:
-    version: null
-    packages: []
-  asteroids-gremlins:
-    version: null
-    packages: []
-  asteroids:
-    version: null
-    packages: []
+team: lib32
