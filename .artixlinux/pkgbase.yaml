@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: s2n-tls
-  version: 1.5.13-1
+  version: 1.5.14-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.5.13-1
+    version: 1.5.14-1
     packages:
-      - s2n-tls-1.5.13-1-x86_64.pkg.tar.zst
+      - s2n-tls-1.5.14-1-x86_64.pkg.tar.zst
   world:
     version: 1.5.11-1
     packages:
