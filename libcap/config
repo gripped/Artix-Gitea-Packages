@@ -1,8 +1,0 @@
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = true
-[remote "origin"]
-	url = https://git.kernel.org/pub/scm/libs/libcap/libcap.git
-	fetch = +refs/*:refs/*
-	mirror = true
