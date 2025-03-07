@@ -7,7 +7,7 @@
 _pkgbasename=libssh2
 pkgname=lib32-$_pkgbasename
 pkgver=1.11.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A library implementing the SSH2 protocol as defined by Internet Drafts (32-bit)"
 url="https://www.libssh2.org/"
 arch=('x86_64')
