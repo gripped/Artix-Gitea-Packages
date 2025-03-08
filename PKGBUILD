@@ -15,11 +15,12 @@ makedepends=(
   git
   pnpm
 )
-source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-b2sums=('2ecb8928044b429b23361fc20ed8796393ec420c87d7bde68aef6c5feccf5e0d7a9a8a203e72d25aebdb570916f43ba88f6bfbfbde58df654b2e0ee4c86e5b8d')
+source=("https://github.com/$pkgname/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
+b2sums=('251af3b12a8aa97ab295244f4f7afb8bfc2537df4061e000cb096ff08a205b715bb037368c3c879e4b0494139768c39621ac993ec6f6c38f6c7a8535fbd5f447')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
 
 prepare() {
+  mv pnpm-* pnpm
   cd $pkgname/$pkgname
   pnpm install --frozen-lockfile
 }
