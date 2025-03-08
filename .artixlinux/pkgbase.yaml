@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: audex
-  version: 24.12.2-1
+  version: 24.12.3-1
   arch:
     - x86_64
   pkgname:
     - audex
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.12.3-1
+    packages:
+      - audex-24.12.3-1-x86_64.pkg.tar.zst
   world:
     version: 24.12.2-1
     packages:
