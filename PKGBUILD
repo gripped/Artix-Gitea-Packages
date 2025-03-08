@@ -4,7 +4,7 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=8.9.0
+pkgver=8.8.0
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=('any')
