@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: signal-desktop
-  version: 7.45.0-1
+  version: 7.45.1-1
   arch:
     - x86_64
   pkgname:
     - signal-desktop
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 7.45.1-1
+    packages:
+      - signal-desktop-7.45.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: 7.45.0-1
     packages:

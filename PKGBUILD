@@ -4,7 +4,7 @@
 
 pkgname=signal-desktop
 _pkgname=Signal-Desktop
-pkgver=7.45.0
+pkgver=7.45.1
 pkgrel=1
 pkgdesc="Signal Private Messenger for Linux"
 license=('AGPL-3.0-only')
@@ -37,7 +37,7 @@ depends=(
   'nspr'
   'nss'
   'pango' 'libpango-1.0.so'
-  'libudev' 'libudev.so'
+  'systemd-libs' 'libudev.so'
 )
 makedepends=(
   'git'
@@ -45,7 +45,7 @@ makedepends=(
   'libxcrypt-compat'
   'node-gyp'
   'nodejs'
-  'npm'
+  'pnpm'
   'python'
 )
 optdepends=('xdg-desktop-portal: Screensharing with Wayland')
@@ -53,9 +53,9 @@ source=(
   "${pkgname}-${pkgver}.tar.gz::https://github.com/signalapp/${_pkgname}/archive/v${pkgver}.tar.gz"
   "${pkgname}.desktop"
 )
-sha256sums=('69f0bff6d3037aabac42aa2f653f1177e3c32445d0827f291be14260cc11f3e5'
+sha256sums=('748329dd9204f5b606c47b3409e863fda310cf059831f0ebe004d64872b3e1a7'
             'bf388df4b5bbcab5559ebbf220ed4748ed21b057f24b5ff46684e3fe6e88ccce')
-b2sums=('cbfac0039f911028cef218e90de4f6bbb4415a0e0ff1fd44ba030e6b45519c1692fd32e8a12d494f36530500bf67c4dbe41c88b8e0deea11a8ceccbbd792fd82'
+b2sums=('b73bfe073277a23454811dd44d8572c0c3dcf3fd065c783446bdf7e1a402fa7fecfb8a3750411c1a46303f5efe78f4f0b851c5171c84faa1374193cc7d065045'
         'ffb8f7bab4fd84aacf13e7b6d2835daf449b6650b4b3fa723456792ba7fb6cae352928fea11cb030510d558ce30036ff5a1513444f067b94c7fff0158b4f2265')
 
 prepare() {
@@ -68,20 +68,20 @@ prepare() {
   sed 's#"node": "#&>=#' -i package.json
 
   # Install dependencies for sticker-creator
-  npm --prefix ./sticker-creator/ install
+  pnpm --prefix ./sticker-creator/ install
 
   # Install dependencies for signal-desktop
-  npm install --ignore-engines
+  pnpm install
 }
 
 build() {
   cd "${_pkgname}-${pkgver}"
 
   # Build the sticker creator
-  npm --prefix ./sticker-creator/ run build
+  pnpm --prefix ./sticker-creator/ run build
 
   # Build signal-desktop
-  npm run build
+  pnpm run build
 }
 
 package() {
