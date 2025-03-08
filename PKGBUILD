@@ -4,40 +4,41 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=8.6.1
+pkgver=10.5.2
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
-arch=('any')
+arch=(any)
 url=https://pnpm.io
-license=('MIT')
-depends=("nodejs>=16.14")
-makedepends=('jq' 'npm')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/pnpm/$pkgname/archive/v$pkgver.tar.gz")
-b2sums=('SKIP')
+license=(MIT)
+depends=(node-gyp)
+makedepends=(
+  git
+  pnpm
+)
+source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
+b2sums=('2ecb8928044b429b23361fc20ed8796393ec420c87d7bde68aef6c5feccf5e0d7a9a8a203e72d25aebdb570916f43ba88f6bfbfbde58df654b2e0ee4c86e5b8d')
+validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
+
+prepare() {
+  cd $pkgname/$pkgname
+  pnpm install --frozen-lockfile
+}
+
+build() {
+  cd $pkgname/$pkgname
+  pnpm run compile
+}
 
 package() {
-  npm install -g \
-    --cache "$srcdir/npm-cache" \
-    --prefix "$pkgdir/usr" \
-    $pkgname
+  local mod_dir=/usr/lib/node_modules/$pkgname
 
-  cd "$pkgdir"
-  # npm gives ownership of ALL FILES to build user
-  # https://bugs.archlinux.org/task/63396
-  chown -R root:root .
+  install -d "$pkgdir"/{usr/bin,$mod_dir/dist}
+  ln -s $mod_dir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $mod_dir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
 
-  # Delete unnecessary JavaScript source maps
-  find usr/lib -depth -name "*.map" -delete
-
-  # Link README and LICENSE to the appropriate locations
-  local _npmdir=/usr/lib/node_modules/$pkgname
-  install -d usr/share/{doc,licenses}/$pkgname
-  ln -s $_npmdir/LICENSE usr/share/licenses/$pkgname
-  ln -s $_npmdir/README.md usr/share/doc/$pkgname
-
-  # Remove references to $srcdir and $pkgdir
-  local _tmp_package="$(mktemp)"
-  jq '.|=with_entries(select(.key|test("_.+")|not))' ./$_npmdir/package.json > "$_tmp_package"
-  mv "$_tmp_package" ./$_npmdir/package.json
-  chmod 644 ./$_npmdir/package.json
+  cd $pkgname/$pkgname
+  cp -r bin package.json "$pkgdir"/$mod_dir
+  install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
+  cd dist
+  cp -r $pkgname.cjs pnpmrc templates worker.js "$pkgdir"/$mod_dir/dist
 }
