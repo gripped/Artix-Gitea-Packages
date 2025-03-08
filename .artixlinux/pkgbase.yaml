@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: pnpm
-  version: 8.7.3-1
+  version: 10.5.2-0
   arch:
     - any
   pkgname:
     - pnpm
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.5.2-0
+    packages:
+      - pnpm-10.5.2-0-any.pkg.tar.zst
   world:
     version: 8.7.3-1
     packages:
