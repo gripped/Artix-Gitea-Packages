@@ -2,18 +2,19 @@
 
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
-pkgver=0.39.1
+pkgver=0.40.0
 pkgrel=1
 pkgdesc="Modern, hackable, featureful, OpenGL based terminal emulator"
 arch=(x86_64)
 url="https://sw.kovidgoyal.net/kitty/"
 license=(GPL3)
 depends=('python>=3.8' 'harfbuzz>=2.2.0' zlib libpng freetype2 fontconfig openssl libx11 libxi
-         libgl libcanberra dbus lcms2 libxkbcommon-x11 librsync hicolor-icon-theme)
-makedepends=(python-setuptools libxinerama libxcursor libxrandr libxkbcommon mesa
-             wayland-protocols python-sphinx python-sphinx-copybutton
+         libgl libcanberra dbus lcms2 libxkbcommon-x11 xxhash librsync hicolor-icon-theme
+         pixman cairo)
+makedepends=(git python-setuptools libxinerama libxrandr libxkbcommon mesa
+             wayland-protocols python-sphinx python-sphinx-copybutton libxcursor
              python-sphinx-inline-tabs python-sphinxext-opengraph python-sphinx-furo go
-             ttf-roboto ttf-nerd-fonts-symbols-mono xxhash simde)
+             ttf-roboto ttf-nerd-fonts-symbols-mono simde)
 source=(https://github.com/kovidgoyal/kitty/releases/download/v${pkgver}/kitty-${pkgver}.tar.xz{,.sig})
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal
 
@@ -33,8 +34,7 @@ build() {
 
 package_kitty() {
   depends+=('kitty-terminfo' 'kitty-shell-integration')
-  optdepends=('imagemagick: viewing images with icat'
-              'python-pygments: syntax highlighting in kitty +kitten diff')
+  optdepends=('imagemagick: viewing images with icat')
 
   cd "$srcdir/$pkgname-$pkgver"
 
@@ -67,5 +67,5 @@ package_kitty-shell-integration() {
   cp -r "$srcdir/$pkgbase-$pkgver/shell-integration" "$pkgdir/usr/lib/kitty/"
 }
 
-sha256sums=('4baa2a59de7569b3b34f44ea8536c53d312aa76d1347121a2d6557abfde21325'
+sha256sums=('f79222090c9468fef9084bef989cc9bf1c9ec37d3980688bdacf0ddca90d4e74'
             'SKIP')
