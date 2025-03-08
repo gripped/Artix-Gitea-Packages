@@ -4,40 +4,32 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=8.6.4
+pkgver=8.6.8
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=('any')
 url=https://pnpm.io
 license=('MIT')
-depends=("nodejs>=16.14")
-makedepends=('jq' 'npm')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/pnpm/$pkgname/archive/v$pkgver.tar.gz")
-b2sums=('1c9cbfd95f596539d7789d3744959cbec3b2f1249e839e9b88688452472255abbbe0645f03ef3e6284f0111dd8a96072447bc6026ada648ab35509027bd774ee')
+depends=("nodejs")
+makedepends=('pnpm')
+source=("https://github.com/$pkgname/$pkgname/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+b2sums=('b4d2004b32d542ded333118296d6a455f2119013c54d9138a4c1320a6fff7d4cbe039414100e5c20a9444a22426bda516f0a51c600a9b534ff505b85fe5094a6')
+
+build() {
+  cd $pkgname-$pkgver/$pkgname
+  pnpm install --frozen-lockfile
+  pnpm run compile
+}
 
 package() {
-  npm install -g \
-    --cache "$srcdir/npm-cache" \
-    --prefix "$pkgdir/usr" \
-    $pkgname
-
-  cd "$pkgdir"
-  # npm gives ownership of ALL FILES to build user
-  # https://bugs.archlinux.org/task/63396
-  chown -R root:root .
-
-  # Delete unnecessary JavaScript source maps
-  find usr/lib -depth -name "*.map" -delete
-
-  # Link README and LICENSE to the appropriate locations
   local _npmdir=/usr/lib/node_modules/$pkgname
-  install -d usr/share/{doc,licenses}/$pkgname
-  ln -s $_npmdir/LICENSE usr/share/licenses/$pkgname
-  ln -s $_npmdir/README.md usr/share/doc/$pkgname
+  install -d "$pkgdir"/{usr/bin,$_npmdir/dist}
+  ln -s $_npmdir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $_npmdir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
 
-  # Remove references to $srcdir and $pkgdir
-  local _tmp_package="$(mktemp)"
-  jq '.|=with_entries(select(.key|test("_.+")|not))' ./$_npmdir/package.json > "$_tmp_package"
-  mv "$_tmp_package" ./$_npmdir/package.json
-  chmod 644 ./$_npmdir/package.json
+  cd $pkgname-$pkgver/$pkgname
+  cp -r bin package.json "$pkgdir"/$_npmdir
+  install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
+  cd dist
+  cp -r $pkgname.cjs pnpmrc scripts "$pkgdir"/$_npmdir/dist
 }
