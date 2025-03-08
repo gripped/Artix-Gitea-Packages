@@ -4,18 +4,18 @@
 
 _url=https://gitea.artixlinux.org/artix
 _extra=1.2
-_alpm=1.8
+_alpm=1.9
 
 pkgname=openrc
 pkgver=0.60.1
-pkgrel=3
-pkgdesc="Gentoo's universal init system"
+pkgrel=4
+pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
 license=('BSD-2-Clause')
 makedepends=('git' 'meson')
 depends=(
-    'audit'
+    'audit' 'libaudit.so'
     'bash'
     'glibc'
     'inetutils'
@@ -68,7 +68,7 @@ sha256sums=('02f561526ad1a85e164c72a0c1648e49f2d758c315616af795dc49f3f975f265'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
             'd910a8084ca8fab5d4e28c888d3f424c0ec51ac947c2e385722a8806b781da61'
             '88c2ddad5ac5d347962ce9805a0ed7a4f1737aaafa3d6a8c0a7a55009ce5fef1'
-            '8e50e51bf4eb8a044f1adca22ac80da2896897cedcf2beb230dbdae09874b2a6')
+            'd92965ebb3674496fa564d1967561e47ab17b419404128051f227490e10348fa')
 
 prepare() {
     cd "${pkgname}"
