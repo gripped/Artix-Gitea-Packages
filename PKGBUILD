@@ -3,10 +3,11 @@
 pkgbase=pipewire-openrc
 pkgname=(pipewire-openrc pipewire-pulse-openrc)
 pkgver=20250308
-pkgrel=1
+pkgrel=2
 pkgdesc="openrc user service script for pipewire"
 arch=('any')
 url="https://artixlinux.org"
+groups=('openrc-world')
 license=('GPL-2.0-or-later')
 makedepends=(
     'avahi-openrc'
@@ -26,7 +27,7 @@ package_pipewire-openrc() {
         'pipewire'
     )
 
-    install -Dm755 pipewire.user.initd "$pkgdir"/etc/user/pipewire
+    install -Dm755 pipewire.user.initd "$pkgdir"/etc/user/init.d/pipewire
 }
 
 package_pipewire-pulse-openrc() {
