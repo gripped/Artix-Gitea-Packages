@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: calligra
-  version: 24.12.2-2
+  version: 24.12.3-1
   arch:
     - x86_64
   pkgname:
     - calligra
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.12.3-1
+    packages:
+      - calligra-24.12.3-1-x86_64.pkg.tar.zst
   world:
     version: 24.12.2-2
     packages:
