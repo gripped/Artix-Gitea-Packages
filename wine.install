@@ -1,5 +1,5 @@
 post_install() {
-  echo "Run 'systemctl restart systemd-binfmt' in order to make the wine binfmt available on your system."
+   echo "binfmt binary formats will be updated at reboot"
 }
 
 post_remove() {
