@@ -5,7 +5,7 @@
 
 pkgname=pnpm
 pkgver=10.5.2
-pkgrel=1
+pkgrel=0
 pkgdesc='Fast, disk space efficient package manager'
 arch=(any)
 url=https://pnpm.io
@@ -13,7 +13,7 @@ license=(MIT)
 depends=(node-gyp)
 makedepends=(
   git
-  pnpm
+  npm
 )
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
 b2sums=('2ecb8928044b429b23361fc20ed8796393ec420c87d7bde68aef6c5feccf5e0d7a9a8a203e72d25aebdb570916f43ba88f6bfbfbde58df654b2e0ee4c86e5b8d')
@@ -21,12 +21,12 @@ validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kocha
 
 prepare() {
   cd $pkgname/$pkgname
-  pnpm install --frozen-lockfile
+  npm install --frozen-lockfile
 }
 
 build() {
   cd $pkgname/$pkgname
-  pnpm run compile
+  npm run compile
 }
 
 package() {
