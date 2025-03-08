@@ -4,33 +4,40 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=8.10.3
+pkgver=8.6.2
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=('any')
 url=https://pnpm.io
 license=('MIT')
-depends=('node-gyp')
-makedepends=('git' 'pnpm')
-source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-b2sums=('SKIP')
-validpgpkeys=('7B74D1299568B586BA9962B5649E4D4AF74E7DEC') # Zoltan Kochan <z@kochan.io>
-
-build() {
-  cd $pkgname/$pkgname
-  pnpm install --frozen-lockfile
-  pnpm run compile
-}
+depends=("nodejs>=16.14")
+makedepends=('jq' 'npm')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/pnpm/$pkgname/archive/v$pkgver.tar.gz")
+b2sums=('338c967a189d9456c408963a4f73d5c98c174ddc7a4813a58eb9593d417368c013646a490cba96c4277c47292f9f16a0c9bf6044a4a7807c1251876c2954ddd9')
 
 package() {
-  local _npmdir=/usr/lib/node_modules/$pkgname
-  install -d "$pkgdir"/{usr/bin,$_npmdir/dist}
-  ln -s $_npmdir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
-  ln -s $_npmdir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
+  npm install -g \
+    --cache "$srcdir/npm-cache" \
+    --prefix "$pkgdir/usr" \
+    $pkgname
 
-  cd $pkgname/$pkgname
-  cp -r bin package.json "$pkgdir"/$_npmdir
-  install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
-  cd dist
-  cp -r $pkgname.cjs pnpmrc scripts worker.js "$pkgdir"/$_npmdir/dist
+  cd "$pkgdir"
+  # npm gives ownership of ALL FILES to build user
+  # https://bugs.archlinux.org/task/63396
+  chown -R root:root .
+
+  # Delete unnecessary JavaScript source maps
+  find usr/lib -depth -name "*.map" -delete
+
+  # Link README and LICENSE to the appropriate locations
+  local _npmdir=/usr/lib/node_modules/$pkgname
+  install -d usr/share/{doc,licenses}/$pkgname
+  ln -s $_npmdir/LICENSE usr/share/licenses/$pkgname
+  ln -s $_npmdir/README.md usr/share/doc/$pkgname
+
+  # Remove references to $srcdir and $pkgdir
+  local _tmp_package="$(mktemp)"
+  jq '.|=with_entries(select(.key|test("_.+")|not))' ./$_npmdir/package.json > "$_tmp_package"
+  mv "$_tmp_package" ./$_npmdir/package.json
+  chmod 644 ./$_npmdir/package.json
 }
