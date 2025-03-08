@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: kosmindoormap
-  version: 24.12.2-2
+  version: 24.12.3-2
   arch:
     - x86_64
   pkgname:
     - kosmindoormap
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - kosmindoormap-24.12.2-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.12.3-2
+    packages:
+      - kosmindoormap-24.12.3-2-x86_64.pkg.tar.zst
   world:
     version: 24.12.2-1
     packages:
