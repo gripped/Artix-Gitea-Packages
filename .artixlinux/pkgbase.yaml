@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: npm
-  version: 11.1.0-2
+  version: 11.2.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 11.1.0-2
+    version: 11.2.0-1
     packages:
-      - npm-11.1.0-2-any.pkg.tar.zst
+      - npm-11.2.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
