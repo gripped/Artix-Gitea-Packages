@@ -5,23 +5,40 @@
 
 pkgname=pnpm
 pkgver=10.5.2
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
-arch=('any')
+arch=(any)
 url=https://pnpm.io
-license=('MIT')
-depends=("nodejs")
-# makedepends=('git' 'pnpm')
-source=("https://mirror.sanin.dev/arch-linux/extra/os/x86_64/pnpm-10.5.2-1-any.pkg.tar.zst")
-b2sums=('4956b7bdd3d6f44aff21b275e3747d57ea09607c9c4bad2b4c965c576ad0cba67eaab6afb4d0dfdd4f9682102858a93f60b87cb4e78ffa5be9186d6e8742a1f3')
-validpgpkeys=('7B74D1299568B586BA9962B5649E4D4AF74E7DEC') # Zoltan Kochan <z@kochan.io>
+license=(MIT)
+depends=(node-gyp)
+makedepends=(
+  git
+  pnpm
+)
+source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
+b2sums=('2ecb8928044b429b23361fc20ed8796393ec420c87d7bde68aef6c5feccf5e0d7a9a8a203e72d25aebdb570916f43ba88f6bfbfbde58df654b2e0ee4c86e5b8d')
+validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
+
+prepare() {
+  cd $pkgname/$pkgname
+  pnpm install --frozen-lockfile
+}
 
 build() {
-  cd .
+  cd $pkgname/$pkgname
+  pnpm run compile
 }
 
 package() {
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/pnpm-10.5.2-1-any.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  local mod_dir=/usr/lib/node_modules/$pkgname
+
+  install -d "$pkgdir"/{usr/bin,$mod_dir/dist}
+  ln -s $mod_dir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $mod_dir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
+
+  cd $pkgname/$pkgname
+  cp -r bin package.json "$pkgdir"/$mod_dir
+  install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
+  cd dist
+  cp -r $pkgname.cjs pnpmrc templates worker.js "$pkgdir"/$mod_dir/dist
 }

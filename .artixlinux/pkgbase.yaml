@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: pnpm
-  version: 10.5.2-0
+  version: 10.5.2-1
   arch:
     - any
   pkgname:
@@ -29,9 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 10.5.2-0
+    version: 10.5.2-1
     packages:
-      - pnpm-10.5.2-0-any.pkg.tar.zst
+      - pnpm-10.5.2-1-any.pkg.tar.zst
   world:
     version: 8.7.3-1
     packages:
