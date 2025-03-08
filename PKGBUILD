@@ -2,10 +2,11 @@
 
 pkgname=wireplumber-openrc
 pkgver=20250308
-pkgrel=1
+pkgrel=2
 pkgdesc="openrc user service script for wireplumber"
 arch=('any')
 url="https://artixlinux.org"
+groups=('openrc-world')
 license=('GPL-2.0-or-later')
 depends=(
     'pipewire-openrc'

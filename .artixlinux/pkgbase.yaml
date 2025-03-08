@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: wireplumber-openrc
-  version: 20250308-1
+  version: 20250308-2
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20250308-1
+    version: 20250308-2
     packages:
-      - wireplumber-openrc-20250308-1-any.pkg.tar.zst
+      - wireplumber-openrc-20250308-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
