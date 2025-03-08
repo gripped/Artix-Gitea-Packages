@@ -1,0 +1,21 @@
+# Maintainer: Artoo <artoo@artixlinux.org>
+
+pkgname=wireplumber-openrc
+pkgver=20250308
+pkgrel=1
+pkgdesc="openrc user service script for wireplumber"
+arch=('any')
+url="https://artixlinux.org"
+license=('GPL-2.0-or-later')
+depends=(
+    'pipewire-openrc'
+)
+source=(
+    wireplumber.user.initd
+)
+sha256sums=('8a04315fd3a5cc241b62721a056a4a6f4071ed2b1b8abaf2c839daf34091bfb6')
+
+package() {
+    install -Dm755 wireplumber.user.initd "$pkgdir"/etc/user/init.d/wireplumber
+}
+
