@@ -4,41 +4,33 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=10.5.2
+pkgver=8.10.3
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
-arch=(any)
+arch=('any')
 url=https://pnpm.io
-license=(MIT)
-depends=(node-gyp)
-makedepends=(
-  git
-  pnpm
-)
+license=('MIT')
+depends=('node-gyp')
+makedepends=('git' 'pnpm')
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-b2sums=('2ecb8928044b429b23361fc20ed8796393ec420c87d7bde68aef6c5feccf5e0d7a9a8a203e72d25aebdb570916f43ba88f6bfbfbde58df654b2e0ee4c86e5b8d')
-validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
-
-prepare() {
-  cd $pkgname/$pkgname
-  pnpm install --frozen-lockfile
-}
+b2sums=('SKIP')
+validpgpkeys=('7B74D1299568B586BA9962B5649E4D4AF74E7DEC') # Zoltan Kochan <z@kochan.io>
 
 build() {
   cd $pkgname/$pkgname
+  pnpm install --frozen-lockfile
   pnpm run compile
 }
 
 package() {
-  local mod_dir=/usr/lib/node_modules/$pkgname
-
-  install -d "$pkgdir"/{usr/bin,$mod_dir/dist}
-  ln -s $mod_dir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
-  ln -s $mod_dir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
+  local _npmdir=/usr/lib/node_modules/$pkgname
+  install -d "$pkgdir"/{usr/bin,$_npmdir/dist}
+  ln -s $_npmdir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $_npmdir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
 
   cd $pkgname/$pkgname
-  cp -r bin package.json "$pkgdir"/$mod_dir
+  cp -r bin package.json "$pkgdir"/$_npmdir
   install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
   cd dist
-  cp -r $pkgname.cjs pnpmrc templates worker.js "$pkgdir"/$mod_dir/dist
+  cp -r $pkgname.cjs pnpmrc scripts worker.js "$pkgdir"/$_npmdir/dist
 }
