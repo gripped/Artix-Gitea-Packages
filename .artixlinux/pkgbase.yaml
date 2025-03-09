@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-rake-compiler
-  version: 1.2.7-2
+  version: 1.2.9-1
   arch:
     - any
   pkgname:
     - ruby-rake-compiler
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.7-2
+    version: 1.2.9-1
     packages:
-      - ruby-rake-compiler-1.2.7-2-any.pkg.tar.zst
+      - ruby-rake-compiler-1.2.9-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
