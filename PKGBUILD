@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 
-_ver=6.13.5
+_ver=6.13.6
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -21,6 +21,9 @@ makedepends=(
   pahole
   perl
   python
+  rust
+  rust-bindgen
+  rust-src
   tar
   xz
 
@@ -48,16 +51,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('283ecb0784f3fbc16dd822fb1d9642e230ec7515ed33f120e551b839f355e6e2'
+sha256sums=('de0053cb413d408f20fd1d5788219951b8a4403e5dac1b1d9032090938acd199'
             'SKIP'
-            '353ecb6bd29beb8998af1e6b04c4184836e0a2ec0a0115d2902697ad99ac6749'
+            '366f8c26f21cb5f6a16c163aecbaff9e232dd454fbd5db5a2ee7bff90e51dd34'
             'SKIP'
-            '3548a55938edf05f00197fa0b3a3de1fa12ac1009c4314791baef043c957fc55')
-b2sums=('f8d57680d657c57bfc02a7981133e1e0dff9718f9ffdaff99be89861582cc8922884a4c8ce76acf8cc97bf407dc77b91d6c0d0cab59b210d5fa485d27eac1999'
+            '7e0465491f0464620ccdb69f659a8637a418a1a385f336b6710f979da9b2a0e7')
+b2sums=('5a216c56c77efaee1a3f5c9198ade9180e4640ffcde39662ccf85c2a5945a08c5f362220fb0906369c72a3ea8bdc16fdd24d3e1dbc0f51fc831f3f724ed73300'
         'SKIP'
-        '4f1fd3abdff849efa49c1a2dc4e5206f99ce4e3c85a3cc31c68fce9d0f672ff2c0c60343036c37e80c203c75ef77b0c381b820a8786bf14391cfd6b1bf5b611d'
+        '5d915626940caff2be5b70958455a5d7e63f1c31f919302a74bdc21b90c8962433980ef6287d3cfe2b0d125ff8bcfd1bfcba8a7140a53789b2ef326120607f83'
         'SKIP'
-        '5b12a734dd023343efa024acb4ba1bdb43f0fe5de09b449f11a30b2f9862cae577569e21b790fc7173ef90e4c7609fb71c889d15a47f9f2f9cbb4751a536e495')
+        '2a7d662e4d86d35e13743b14941b9f2466838e790bf6e08a5684011e221eb5c75bbf964e1f94a0be63dd4eac8b3fcfc34239db041f25dcfd80e4783eb2dc78cd')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
