@@ -47,7 +47,6 @@ build() {
 
   artix-meson linux-pam \
     --libdir=lib32 \
-    -Delogind=enabled \
     -Ddocs=disabled \
     -Deconf=disabled \
     -Dselinux=disabled \
