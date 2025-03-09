@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: exaile
+  version: 4.1.3-5
+  arch:
+    - any
+  pkgname:
+    - exaile
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 4.1.3-5
+    packages:
+      - exaile-4.1.3-5-any.pkg.tar.zst
