@@ -107,7 +107,7 @@ check() {
   local _gemdir="$(gem env gemdir)"
 
   # https://github.com/puma/puma/blob/master/CONTRIBUTING.md#file-limits
-  ulimit -Sn 5000
+  # ulimit -Sn 5000
 
   export PUMA_NO_RUBOCOP="true"
 
