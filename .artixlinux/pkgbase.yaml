@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-i18n
-  version: 1.14.1-4
+  version: 1.14.7-1
   arch:
     - any
   pkgname:
     - ruby-i18n
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.14.1-4
+    version: 1.14.7-1
     packages:
-      - ruby-i18n-1.14.1-4-any.pkg.tar.zst
+      - ruby-i18n-1.14.7-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
