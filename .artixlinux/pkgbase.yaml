@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openlibm
-  version: 0.8.5-1
+  version: 0.8.6-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.8.5-1
+    version: 0.8.6-1
     packages:
-      - openlibm-0.8.5-1-x86_64.pkg.tar.zst
+      - openlibm-0.8.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
