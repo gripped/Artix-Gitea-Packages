@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: xtrans
-  version: 1.5.2-1
+  version: 1.6.0-1
   arch:
     - any
   pkgname:
     - xtrans
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.6.0-1
+    packages:
+      - xtrans-1.6.0-1-any.pkg.tar.zst
   world:
     version: 1.5.2-1
     packages:
