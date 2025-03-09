@@ -17,7 +17,7 @@ depends=(
   lib32-libnsl
   lib32-libtirpc
   lib32-libxcrypt
-  libelogind
+  lib32-elogind
   pam
 )
 makedepends=(
@@ -26,7 +26,6 @@ makedepends=(
   lib32-flex
   meson
   w3m
-  elogind
 )
 _tag=v$pkgver
 source=(git+https://github.com/linux-pam/linux-pam.git?#tag=${_tag}
