@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-astroid
-  version: 3.3.8-2
+  version: 3.3.9-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.3.8-2
+    version: 3.3.9-1
     packages:
-      - python-astroid-3.3.8-2-any.pkg.tar.zst
+      - python-astroid-3.3.9-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
