@@ -2,7 +2,7 @@
 
 pkgname=mkdocs-autorefs
 _pkgname=autorefs
-pkgver=1.4.0
+pkgver=1.4.1
 pkgrel=1
 pkgdesc="Automatically link across pages in MkDocs"
 arch=(any)
@@ -11,6 +11,7 @@ license=(ISC)
 depends=(
   mkdocs
   python
+  python-jinja
   python-markdown
   python-markupsafe
 )
@@ -27,7 +28,7 @@ checkdepends=(
   python-pytest
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('d9a854660bd18067355f2bf55e53076f072111d411f62b2e38cb69e2134848b0')
+sha256sums=('d91d5e0148551fe70b2cdea50467bc42e5e1a0da173243a0e180e40a6c5cf181')
 
 build() {
   cd $_pkgname-$pkgver
