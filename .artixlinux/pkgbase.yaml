@@ -1,16 +1,19 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: sneedacity
+  version: 3.0.2.r344.1-5
+  arch:
+    - i686
+    - x86_64
+  pkgname:
+    - sneedacity
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -48,5 +51,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 3.0.2.r344.1-5
+    packages:
+      - sneedacity-3.0.2.r344.1-5-x86_64.pkg.tar.zst

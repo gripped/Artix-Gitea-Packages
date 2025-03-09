@@ -1,0 +1,22 @@
+pre_install() {
+    rm -f /usr/sneedacity /usr/bin/sneedacity /usr/lib/sneedacity/sneedacity
+}
+
+pre_upgrade() {
+    pre_install
+}
+
+# what a clusterfuck
+post_install() {
+    mv /usr/bin/sneedacity /usr/lib/sneedacity/sneedacity
+    mv /usr/sneedacity /usr/bin/sneedacity
+    sed -i  's|/\*|/*/*|;s|/bin/sneedacity|/lib/sneedacity/sneedacity|' /usr/bin/sneedacity
+}
+
+post_upgrade() {
+    post_install
+}
+
+pre_remove() {
+    rm -f /usr/lib/sneedacity/sneedacity
+}
