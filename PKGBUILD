@@ -11,7 +11,7 @@ license=('LGPL-2.1-or-later')
 depends=('glibc')
 makedepends=(
   'git'
-  'systemd'
+  'elogind'
 )
 source=(
   "git+$url.git?signed#tag=$pkgver-alt1"
