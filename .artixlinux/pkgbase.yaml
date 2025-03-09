@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: ruby-rails-html-sanitizer
-  version: 1.6.0-2
+  version: 1.6.2-1
   arch:
     - any
   pkgname:
     - ruby-rails-html-sanitizer
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.0-2
+    version: 1.6.2-1
     packages:
-      - ruby-rails-html-sanitizer-1.6.0-2-any.pkg.tar.zst
+      - ruby-rails-html-sanitizer-1.6.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
