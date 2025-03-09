@@ -29,15 +29,22 @@ makedepends=(
   elogind
 )
 _tag=v$pkgver
-source=(git+https://github.com/linux-pam/linux-pam.git?#tag=${_tag})
+source=(git+https://github.com/linux-pam/linux-pam.git?#tag=${_tag}
+       use_elogind.patch)
 validpgpkeys=(296D6F29A020808E8717A8842DB5BD89A340AEB7) # Dimitry V. Levin <ldv@altlinux.org>
-b2sums=('88ecba59692fe86f6f6516007b87fb897018cc5f818c106a037f15df4dda7c31e50fbfcb137493d49cb754e41f2f69a60f24ffea3374ff5e38ce6263bfa7abac')
+b2sums=('88ecba59692fe86f6f6516007b87fb897018cc5f818c106a037f15df4dda7c31e50fbfcb137493d49cb754e41f2f69a60f24ffea3374ff5e38ce6263bfa7abac'
+        '2a60a23eb74dc0f0b3ae5102188eeee1048e16d35c6512067068fa8c6741ca33b4de755ab5e9afb524e416b7b2344ec40ef32b84ff51d220bfcabaff9c6d4919')
 options=(!emptydirs)
 
 pkgver() {
   cd linux-pam
 
   git describe --tags | sed 's/^v//'
+}
+
+prepare() {
+  cd linux-pam
+  patch -Np1 -i ../use_elogind.patch
 }
 
 build() {
