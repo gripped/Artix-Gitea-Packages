@@ -78,7 +78,5 @@ package() {
 
   sed -i -e 's/\/X11R6//g' "${pkgdir}"/etc/X11/xdm/*
 
-  rm -r "$pkgdir/usr/lib/systemd"
-
 }
 
