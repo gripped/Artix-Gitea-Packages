@@ -10,7 +10,7 @@
 
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
-pkgver=29.3
+pkgver=30.0
 pkgrel=1
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
@@ -23,9 +23,9 @@ depends=(
   'abseil-cpp'
 )
 makedepends=(
-  'bazel'
   'cmake'
   'gtest'
+  'jdk-openjdk'
   'python-build'
   'python-installer'
   'python-setuptools'
@@ -38,18 +38,28 @@ checkdepends=(
   python-pytest
   python-numpy
 )
-source=(https://github.com/protocolbuffers/protobuf/archive/v$pkgver/$pkgname-$pkgver.tar.gz
-        protobuf-fix-build-type-none.patch
-        $pkgbase-25.3-ruby-disable-LTO.patch) # https://github.com/protocolbuffers/protobuf/issues/11935
-sha512sums=('0c776133f5789d21baa8860cb41e7926a162d74810a01722b762a78f93e559494e903fcaa092515bfe2ce057fd065a5dd000b316edb1af32c2ef9dbadf02b4c6'
+source=(
+  https://github.com/protocolbuffers/protobuf/archive/v$pkgver/$pkgname-$pkgver.tar.gz
+  protobuf-fix-build-type-none.patch
+  # https://github.com/protocolbuffers/protobuf/issues/11935
+  $pkgbase-25.3-ruby-disable-LTO.patch
+  https://github.com/bazelbuild/bazel/releases/download/7.1.2/bazel_nojdk-7.1.2-linux-x86_64
+)
+sha512sums=('7acdf9b3754aec1032ebcfe764cd13e6530a4da6d64197cab498b206b6ea91d7a1afc9a97e3d2c8654d5c6291ffaa050916faa2eb5e9e223fd35aa0ec162ebdd'
             '18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd'
-            '1ebdea4e533ee0f71baf1b3fe2623ca723b36a08c6b97475ea5996b10aeb6873cf94d9120596ddd1216bd2f6feb991f8c33078e8104008a5078ace5be5431efd')
+            '1ebdea4e533ee0f71baf1b3fe2623ca723b36a08c6b97475ea5996b10aeb6873cf94d9120596ddd1216bd2f6feb991f8c33078e8104008a5078ace5be5431efd'
+            'd1f985d6f7962da9dee352d73abd246f9ebcbc7263b5f8e2578ba46eba037ce00fe2d15bb65ba104d1afc5ad1da81dc9650801230d5c29e4a005f91f6c855fdf')
 
 options=(!lto)
 
 _gemname=google-protobuf
 
 prepare() {
+  install -Dm755 "${srcdir}"/bazel_nojdk-7.1.2-linux-x86_64 bazel/bazel
+  export PATH="${srcdir}/bazel:$PATH"
+  bazel --version
+
+
   patch -d $pkgname-$pkgver -p1 < protobuf-fix-build-type-none.patch # Fix cmake config compatibility mode
   patch -d $pkgbase-$pkgver -p1 < $pkgbase-25.3-ruby-disable-LTO.patch
 }
@@ -72,7 +82,7 @@ build() {
   cmake --build build --verbose
 
   cd "$pkgbase-$pkgver"
-  bazel build //python/dist:binary_wheel --enable_workspace=true
+  bazel build //python/dist:binary_wheel --noenable_bzlmod --enable_workspace
 
   cd ruby
   local _gemdir="$(gem env gemdir)"
