@@ -4,7 +4,7 @@
 
 _url=https://gitea.artixlinux.org/artix
 _extra=1.2
-_alpm=2.1
+_alpm=2.2
 
 pkgname=openrc
 pkgver=0.60.1
@@ -68,7 +68,7 @@ sha256sums=('02f561526ad1a85e164c72a0c1648e49f2d758c315616af795dc49f3f975f265'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
             'd910a8084ca8fab5d4e28c888d3f424c0ec51ac947c2e385722a8806b781da61'
             '88c2ddad5ac5d347962ce9805a0ed7a4f1737aaafa3d6a8c0a7a55009ce5fef1'
-            '87ac386dba5921028f785798e2d896985001f7a7a19c984f48738770844f8e4f')
+            'f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25')
 
 prepare() {
     cd "${pkgname}"
