@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-webcolors
-  version: 24.8.0-2
+  version: 24.11.0-1
   arch:
     - any
   pkgname:
     - python-webcolors
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.8.0-2
+    version: 24.11.0-1
     packages:
-      - python-webcolors-24.8.0-2-any.pkg.tar.zst
+      - python-webcolors-24.11.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
