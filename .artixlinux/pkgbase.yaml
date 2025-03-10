@@ -7,22 +7,21 @@ pkgbase:
   pkgname:
     - libcap
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 2.75-1
     packages:
       - libcap-2.75-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: 2.74-1
-    packages:
-      - libcap-2.74-1-x86_64.pkg.tar.zst
   system:
     version: 2.71-1
     packages:
