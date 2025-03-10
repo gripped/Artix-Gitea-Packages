@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20250304
+pkgver=20250310
 pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
@@ -33,7 +33,6 @@ package() {
     install -d "${pkgdir}"/etc/runlevels/default
     ln -sf /etc/init.d/dbus "${pkgdir}"/etc/runlevels/default/dbus
 
-    install -d "${pkgdir}"/etc/user/init.d
     install -Dm755 "${srcdir}"/dbus.user.initd "${pkgdir}"/etc/user/init.d/dbus
 
     install -Dt "${pkgdir}"/usr/share/libalpm/hooks -m644 *.hook
