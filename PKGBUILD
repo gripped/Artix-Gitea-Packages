@@ -4,7 +4,7 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=10.5.2
+pkgver=10.6.2
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=(any)
@@ -15,12 +15,11 @@ makedepends=(
   git
   pnpm
 )
-source=("https://github.com/$pkgname/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('251af3b12a8aa97ab295244f4f7afb8bfc2537df4061e000cb096ff08a205b715bb037368c3c879e4b0494139768c39621ac993ec6f6c38f6c7a8535fbd5f447')
+source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
+b2sums=('613f53ea24167d559c19f4416818dda60b360eb9f540376bc481bcb6c6790f8b8eb4db429fd9ecc5d234aa04a28b676da2bd8fd9b13ab38d4124a58739977f68')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
 
 prepare() {
-  mv pnpm-* pnpm
   cd $pkgname/$pkgname
   pnpm install --frozen-lockfile
 }

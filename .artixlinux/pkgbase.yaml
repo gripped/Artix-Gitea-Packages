@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: pnpm
-  version: 10.5.2-1
+  version: 10.6.2-1
   arch:
     - any
   pkgname:
     - pnpm
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.5.2-1
+    version: 10.6.2-1
     packages:
-      - pnpm-10.5.2-1-any.pkg.tar.zst
+      - pnpm-10.6.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
