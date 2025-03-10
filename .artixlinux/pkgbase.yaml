@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: grpc
-  version: 1.70.1-2
+  version: 1.71.0-1
   arch:
     - x86_64
   pkgname:
@@ -13,11 +13,11 @@ pkgbase:
     - grpc-cli
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,14 +33,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1.70.1-2
+    version: 1.71.0-1
     packages:
-      - grpc-1.70.1-2-x86_64.pkg.tar.zst
-      - python-grpcio-1.70.1-2-x86_64.pkg.tar.zst
-      - python-grpcio-tools-1.70.1-2-x86_64.pkg.tar.zst
-      - php-grpc-1.70.1-2-x86_64.pkg.tar.zst
-      - php-legacy-grpc-1.70.1-2-x86_64.pkg.tar.zst
-      - grpc-cli-1.70.1-2-x86_64.pkg.tar.zst
+      - grpc-1.71.0-1-x86_64.pkg.tar.zst
+      - python-grpcio-1.71.0-1-x86_64.pkg.tar.zst
+      - python-grpcio-tools-1.71.0-1-x86_64.pkg.tar.zst
+      - php-grpc-1.71.0-1-x86_64.pkg.tar.zst
+      - php-legacy-grpc-1.71.0-1-x86_64.pkg.tar.zst
+      - grpc-cli-1.71.0-1-x86_64.pkg.tar.zst
   world:
     version: 1.70.1-1.1
     packages:
