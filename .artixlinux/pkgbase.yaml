@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-oslo-config
-  version: 9.4.0-4
+  version: 9.5.0-1
   arch:
     - any
   pkgname:
     - python-oslo-config
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.4.0-4
+    version: 9.5.0-1
     packages:
-      - python-oslo-config-9.4.0-4-any.pkg.tar.zst
+      - python-oslo-config-9.5.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
