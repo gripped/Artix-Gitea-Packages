@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - dbus-openrc
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 20250310-1
     packages:
       - dbus-openrc-20250310-1-any.pkg.tar.zst
-  system:
-    version: 20250304-1
-    packages:
-      - dbus-openrc-20250304-1-any.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
