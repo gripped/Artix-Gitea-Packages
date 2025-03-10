@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: opensips
-  version: 3.4.2-1
+  version: 3.5.4-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.4.2-1
+    version: 3.5.4-1
     packages:
-      - opensips-3.4.2-1-x86_64.pkg.tar.zst
+      - opensips-3.5.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
