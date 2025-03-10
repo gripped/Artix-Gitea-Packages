@@ -8,7 +8,7 @@ _alpm=2.2
 
 pkgname=openrc
 pkgver=0.60.1
-pkgrel=7
+pkgrel=8
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
