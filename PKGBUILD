@@ -4,11 +4,11 @@
 
 _url=https://gitea.artixlinux.org/artix
 _extra=1.2
-_alpm=2.0
+_alpm=2.1
 
 pkgname=openrc
 pkgver=0.60.1
-pkgrel=6
+pkgrel=7
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
@@ -68,7 +68,7 @@ sha256sums=('02f561526ad1a85e164c72a0c1648e49f2d758c315616af795dc49f3f975f265'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
             'd910a8084ca8fab5d4e28c888d3f424c0ec51ac947c2e385722a8806b781da61'
             '88c2ddad5ac5d347962ce9805a0ed7a4f1737aaafa3d6a8c0a7a55009ce5fef1'
-            'b5db54076983923eb356634ef96913064be67983b5587c5115b497083eeacead')
+            '87ac386dba5921028f785798e2d896985001f7a7a19c984f48738770844f8e4f')
 
 prepare() {
     cd "${pkgname}"
