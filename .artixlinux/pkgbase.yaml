@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-flexmock
-  version: 0.12.1-2
+  version: 0.12.2-1
   arch:
     - any
   pkgname:
     - python-flexmock
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.12.1-2
+    version: 0.12.2-1
     packages:
-      - python-flexmock-0.12.1-2-any.pkg.tar.zst
+      - python-flexmock-0.12.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
