@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-pydantic-extra-types
-  version: 2.10.2-1
+  version: 2.10.3-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.10.2-1
+    version: 2.10.3-1
     packages:
-      - python-pydantic-extra-types-2.10.2-1-any.pkg.tar.zst
+      - python-pydantic-extra-types-2.10.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
