@@ -22,6 +22,6 @@ build() {
 
 package() {
   cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/pnpm-10.5.2-1-any.pkg.tar.zst
+  tar --use-compress-program=unzstd -xf "${srcdir}"/pnpm-$pkgver-1-any.pkg.tar.zst
   rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
 }
