@@ -1,5 +1,5 @@
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: Tobias Powalowski <tpowa@archlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Giancarlo Razzolini <grazzolini@archlinux.org>
 # Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
@@ -9,7 +9,7 @@ pkgname=bash
 _basever=5.2
 _patchlevel=037
 pkgver=${_basever}.${_patchlevel}
-pkgrel=1
+pkgrel=2
 pkgdesc='The GNU Bourne Again shell'
 arch=(x86_64)
 license=('GPL-3.0-or-later')
@@ -56,7 +56,7 @@ b2sums=('51b196e710794ebad8eac28c31c93eb99ac1a7db30919a13271e39e1cb66a0672f242df
         '93e55e4e1b7e133c0d03733121bb12ba9c64230ff328280ac68a5d1fca0f83637159c0861bca0c30eda61ca14d5a319cd38424959e84344e188c0349cd159ba7'
         '2d53f99e485218ed47f2e40907023645594ac8ffcf00d0569050d54a8f4dabe0a2bdcab515a45b663283c2e6299d805b923ea7b7b789c6a4150c37a98a5b117c'
         'dbfe5c1aaea94419305c1f8c9b54b94eab515260910f2309360ff702a27032faa34514e70b31adbb1e41bd912d4e43a610939cb07565f43e05dd19813a81752e'
-        '03251662eec28d73f2de16e5a215486588ade53c747a55fbebfe107c00d045179b03f2b83faee8808ceb4803f026bcf211d7b237cea9b26e016f6d65dabc201f'
+        'ff7b83a0542bba7d50d75b8e258b1de9bf00442fd66a52d6092494524461d03da7386def13be24b71c7ade5a890467692f9596583a4c9844244d7d68fb51e05c'
         'eed9da98cd4b7cf9db720e9820cf809a9168cb84a8466127ff588d041badc66cc3fd657e897c702cf0b6d19aefc7b880d976aead003594a2e980d98b17ff886f'
         '830d042bc0b3473260844e9aa3bca3e14d4ae60264b1f7760f69168cd4db9d0d5b41c1887463b23663e52e9a6a611ef8a99be82c737f0760eaaaf97f7eec35db'
         'd00a8b4fb3babf52c67a3e345158c1f70b5b45e5a54100a6671d96f9cfbf893143d5a23df7e7c5f4d5c0bd650519fb0c447b2304db2d6e0751dfffa651a7cf49'
@@ -187,3 +187,4 @@ package() {
   install -m644 dot.bash_profile "${pkgdir}/etc/skel/.bash_profile"
   install -m644 dot.bash_logout "${pkgdir}/etc/skel/.bash_logout"
 }
+
