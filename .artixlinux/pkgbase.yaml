@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: bazelisk
-  version: 1.25.0-3
+  version: 1.25.0-4
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.25.0-3
+    version: 1.25.0-4
     packages:
-      - bazelisk-1.25.0-3-x86_64.pkg.tar.zst
+      - bazelisk-1.25.0-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
