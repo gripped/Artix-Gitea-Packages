@@ -7,7 +7,7 @@
 
 pkgname=wine-staging
 pkgver=10.3
-pkgrel=1
+pkgrel=1.1
 
 _pkgbasever=${pkgver/rc/-rc}
 _winever=$_pkgbasever
