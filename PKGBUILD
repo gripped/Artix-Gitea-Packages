@@ -3,8 +3,8 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=consul
-pkgver=1.20.4
-pkgrel=2
+pkgver=1.20.5
+pkgrel=1
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
 url="https://www.consul.io"
@@ -21,7 +21,7 @@ source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
         )
 install=consul.install
 backup=('etc/default/consul')
-sha512sums=('2a0d6d0879f8845329315947c06180e8a428c2670daad370b5f5c231eef48ab7039cb07b313164ecf975a693216a3069ba365d71c074e22ba3a1aadb840f7b09'
+sha512sums=('2623b8db50b18c0cd87670b584a1cf879ddecdd57ff39c7dff3421daddc77ed2a3ba6ae6423bd252b3c3af64a73a5ab6c0d8767f62dfe32e8be55cf42aabe4ae'
             'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
             'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348'
