@@ -1,5 +1,5 @@
 pkgname=libayatana-appindicator
-pkgver=0.5.93
+pkgver=0.5.94
 pkgrel=1
 pkgdesc="Ayatana Application Indicators Shared Library"
 arch=("x86_64")
@@ -26,9 +26,7 @@ makedepends=(
 source=(
 	"https://github.com/AyatanaIndicators/$pkgname/archive/refs/tags/$pkgver.tar.gz"
 )
-sha256sums=(
-	"cbefed7a918a227bf71286246e237fcd3a9c8499b3eaac4897811a869409edf0"
-)
+sha256sums=('884a6bc77994c0b58c961613ca4c4b974dc91aa0f804e70e92f38a542d0d0f90')
 
 build() {
 	cd "$pkgname-$pkgver"
