@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ghostscript
-  version: 10.04.0-1
+  version: 10.05.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,7 +9,7 @@ pkgbase:
     - ghostxps
     - ghostpcl
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.05.0-1
+    packages:
+      - ghostscript-10.05.0-1-x86_64.pkg.tar.zst
+      - ghostxps-10.05.0-1-x86_64.pkg.tar.zst
+      - ghostpcl-10.05.0-1-x86_64.pkg.tar.zst
   world:
     version: 10.04.0-1
     packages:
