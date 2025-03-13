@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: fast_float
-  version: 8.0.0-2
+  version: 8.0.2-1
   arch:
     - any
   pkgname:
     - fast_float
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.0.2-1
+    packages:
+      - fast_float-8.0.2-1-any.pkg.tar.zst
   world:
     version: 8.0.0-2
     packages:
