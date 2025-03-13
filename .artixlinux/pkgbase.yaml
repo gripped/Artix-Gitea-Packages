@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: epiphany
-  version: 47.3.1-1
+  version: 47.4-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 47.3.1-1
+    version: 47.4-1
     packages:
-      - epiphany-47.3.1-1-x86_64.pkg.tar.zst
+      - epiphany-47.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
