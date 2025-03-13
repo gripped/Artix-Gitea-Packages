@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: usd
-  version: 25.02-3
+  version: 25.02.a-1
   arch:
     - x86_64
   pkgname:
     - usd
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 25.02-3
+    version: 25.02.a-1
     packages:
-      - usd-25.02-3-x86_64.pkg.tar.zst
+      - usd-25.02.a-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
