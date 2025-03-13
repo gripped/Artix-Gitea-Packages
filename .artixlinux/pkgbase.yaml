@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mpv
-  version: 1:0.39.0-4
+  version: 1:0.39.0-5
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.39.0-4
+    version: 1:0.39.0-5
     packages:
-      - mpv-1:0.39.0-4-x86_64.pkg.tar.zst
+      - mpv-1:0.39.0-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
