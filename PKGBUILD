@@ -9,7 +9,7 @@ _pkgver=20210904
 _servicedir=/run/runit/service
 
 pkgname=runit
-pkgver=2.1.2
+pkgver=2.2.0
 pkgrel=31
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
@@ -35,8 +35,8 @@ source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "runit-remove.hook"
         "30-binfmt.hook"
         "30-sysctl.hook")
-b2sums=('101e514aeed282685ebe636f401ca6f94d157281d08a3ac487340aebe945b82d2ee01d41e9917446f4ebd7b27fe9fd18ba4ad55739ab1b62a0e59e1c438b55e9'
-        '2c7ee7b3945a553ec93244ca9f023f4ad0d6816079f10bcc0d6a3d740d22fd57deddbc42f8db9d44aba117bba08046b8a0f6fefbe51f7d5fbb03b825b0169b4a'
+b2sums=('46a4b91cf180694a69ade3cabaddb35a89db516ef75e9fc69b8091a5c3570079796b8a4cf227edc74938e182833edcce7af40f01d5cb1b4032993fb094459ede'
+        'cc394e8675f16929f7eea36d44844af9baacf42abbe2d54bc6e8abdba6314876a540c313d6484f2db662801f838e36c4b473aa98e671347d8a313597f34fe46b'
         '4008be93260a5df13f1d1199864c9f5e724643a670d69ed3ee980f35a83cad8bd97bb09614a7847d991b4ac0434ed563a3c5af6a74297b9590ad0e5b47749219'
         'e782155bd99bd4cd049a88fa9c0bfbd1d4ef4c61669e97a6b3d482c9ab52666ad736d38ccfc4486a152fd8446ab9703f99ff5ccef9ded3ba055aa412ec18de3a'
         'af632c732ec8e3942fc27e6450cb04fc539ca4a91bc1ea8e926784922acf8455b00725a082686475e13605a1d897ce17e7fd3bb975f48ffa9619daaaf2774911'
