@@ -2,12 +2,12 @@
 # Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=openshadinglanguage
 pkgver=1.13.12.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Advanced shading language for production GI renderers"
 arch=('x86_64')
 url="https://github.com/imageworks/OpenShadingLanguage"
 license=('custom')
-depends=('boost-libs' 'openimageio' 'imath' 'freetype2' 'libpng'
+depends=('boost-libs' 'openimageio' 'imath' 'fmt' 'freetype2' 'libpng'
          'libtiff' 'zlib' 'ncurses' 'clang')
 makedepends=('boost' 'cmake' 'python' 'llvm' 'ninja')
 optdepends=('python: the Python module')
