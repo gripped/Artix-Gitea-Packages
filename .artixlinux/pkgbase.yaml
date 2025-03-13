@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: musescore
-  version: 4.4.4-2
+  version: 4.4.4-3
   arch:
     - x86_64
   pkgname:
     - musescore
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.4.4-2
+    version: 4.4.4-3
     packages:
-      - musescore-4.4.4-2-x86_64.pkg.tar.zst
+      - musescore-4.4.4-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
