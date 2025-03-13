@@ -3,7 +3,7 @@
 
 pkgname=kosmindoormap
 pkgver=24.12.3
-pkgrel=2.1
+pkgrel=3
 pkgdesc='OSM multi-floor indoor map renderer'
 arch=(x86_64)
 url='https://www.kde.org'
