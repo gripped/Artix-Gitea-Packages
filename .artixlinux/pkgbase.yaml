@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: mkdocs-material
-  version: 9.6.7-2
+  version: 9.6.8-1
   arch:
     - any
   pkgname:
     - mkdocs-material
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 9.6.8-1
+    packages:
+      - mkdocs-material-9.6.8-1-any.pkg.tar.zst
   world:
     version: 9.6.7-2
     packages:
