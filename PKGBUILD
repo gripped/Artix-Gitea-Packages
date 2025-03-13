@@ -10,7 +10,7 @@ _servicedir=/run/runit/service
 
 pkgname=runit
 pkgver=2.2.0
-pkgrel=31
+pkgrel=1
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
