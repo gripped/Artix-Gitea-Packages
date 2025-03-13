@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: gutenprint
-  version: 5.3.4-3
+  version: 5.3.5-1
   arch:
     - x86_64
   pkgname:
     - gutenprint
     - foomatic-db-gutenprint-ppds
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.3.5-1
+    packages:
+      - gutenprint-5.3.5-1-x86_64.pkg.tar.zst
+      - foomatic-db-gutenprint-ppds-5.3.5-1-x86_64.pkg.tar.zst
   world:
     version: 5.3.4-3
     packages:
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
