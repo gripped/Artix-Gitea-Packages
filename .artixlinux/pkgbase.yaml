@@ -2,7 +2,7 @@
 team: lib32
 pkgbase:
   name: lib32-libarchive
-  version: 3.7.7-1
+  version: 3.7.7-2
   arch:
     - x86_64
   pkgname:
@@ -41,9 +41,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 3.7.7-1
+    version: 3.7.7-2
     packages:
-      - lib32-libarchive-3.7.7-1-x86_64.pkg.tar.zst
+      - lib32-libarchive-3.7.7-2-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
