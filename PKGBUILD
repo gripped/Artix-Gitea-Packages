@@ -27,9 +27,7 @@ source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "halt.c"
         "shutdown"
         "clearmem.patch"
-        'chpst.patch'
-        "svlogd.patch"
-        "utmpset-time_t.patch"
+		"svlogd.patch"
         "runit-hook"
         "runit-install.hook"
         "runit-remove.hook"
@@ -40,9 +38,7 @@ b2sums=('46a4b91cf180694a69ade3cabaddb35a89db516ef75e9fc69b8091a5c3570079796b8a4
         '4008be93260a5df13f1d1199864c9f5e724643a670d69ed3ee980f35a83cad8bd97bb09614a7847d991b4ac0434ed563a3c5af6a74297b9590ad0e5b47749219'
         'e782155bd99bd4cd049a88fa9c0bfbd1d4ef4c61669e97a6b3d482c9ab52666ad736d38ccfc4486a152fd8446ab9703f99ff5ccef9ded3ba055aa412ec18de3a'
         'af632c732ec8e3942fc27e6450cb04fc539ca4a91bc1ea8e926784922acf8455b00725a082686475e13605a1d897ce17e7fd3bb975f48ffa9619daaaf2774911'
-        'c6197f9a6b1ffcd2f210186cfec11ea7267f9671f0ad52f40c2b2d83ad1f62a2128883c589e0b25a1d36752b3491fd67e058aca6ab476098594498b88176b892'
-        'd95fdfd7bdad77e540d0c168c0ddc4b17bda1831d4321b5c6f9793247fbe272623425b23faa82756175aef96ae9b4eed9191271ae773831cc62a153a65fd0c3f'
-        'f9e06e60901fd4762468a778866a7d9bf860ef5ee07965b104566e09b5fd8775a9f597708632f429a41b19629543084fec10276b1f4d8c6ef09b06b90f2910c4'
+        'ca43dc96a11e033ddf92b92477f80e246a02ddde945d222224877177e42b436aa69c5a0ea97be405a5962218b915c4522b9fa5d49f408f3524ac2e253c560210'
         '28c687dca9442c73bbc944c92b5a7b8466ceaadb379a7478c13d11604e68ef206558b427bc1714b8410f934b457cab0d36d13fe78ff681095d1cafbe8c0ad236'
         '4335a92d20b0f1916137e87d47bcb0b3d9157480a2aafb847daefba912defc3e45cd86ffeaf092ca40478eb8ad08617bcb88d790a4bdd3ea574941968e379501'
         '8ebbaed9dd9f608025da75448688ebce137d25260b512682d658a8cb2512009467773014ca194c973115af98f0bbaae14d38528494b433e73b6e06516ba0cc9a'
@@ -57,8 +53,6 @@ prepare() {
 	# apply patches
 	patch -p1 -i "${srcdir}/clearmem.patch"
 	patch -p1 -i "${srcdir}/svlogd.patch"
-	patch -p1 -i "${srcdir}/utmpset-time_t.patch"
-	patch -p1 -i "${srcdir}/chpst.patch"
 }
 
 build() {
