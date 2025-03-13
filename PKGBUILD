@@ -10,7 +10,7 @@ pkgname=(
   lib32-pipewire-v4l2
 )
 pkgver=1.4.0
-pkgrel=1
+pkgrel=4
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -30,6 +30,10 @@ b2sums=('4546d0c55dd18a6219730493cefa729d26f1d0760364128e8a942762bb5fbcc8c1962cf
 
 prepare() {
   cd pipewire
+
+  # audioconvert: configure resample channels correctly
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/pipewire/-/issues/12
+  git cherry-pick -n d43fb09ea1177df1dced04b6bafdca96dd73bf30
 }
 
 build() {
