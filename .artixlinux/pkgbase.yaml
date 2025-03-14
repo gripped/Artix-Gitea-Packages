@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: protobuf
-  version: 30.0-1
+  version: 30.0-2
   arch:
     - x86_64
   pkgname:
@@ -27,11 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 30.0-1
+    version: 30.0-2
     packages:
-      - protobuf-30.0-1-x86_64.pkg.tar.zst
-      - python-protobuf-30.0-1-x86_64.pkg.tar.zst
-      - ruby-google-protobuf-30.0-1-x86_64.pkg.tar.zst
+      - protobuf-30.0-2-x86_64.pkg.tar.zst
+      - python-protobuf-30.0-2-x86_64.pkg.tar.zst
+      - ruby-google-protobuf-30.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
