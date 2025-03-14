@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: android-udev
-  version: 20241109-1
+  version: 20250314-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 20241109-1
+    version: 20250314-1
     packages:
-      - android-udev-20241109-1-any.pkg.tar.zst
+      - android-udev-20250314-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
