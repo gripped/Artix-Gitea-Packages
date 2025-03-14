@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-discogs-client
-  version: 2.7.1-1
+  version: 2.8-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.7.1-1
+    version: 2.8-1
     packages:
-      - python-discogs-client-2.7.1-1-any.pkg.tar.zst
+      - python-discogs-client-2.8-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
