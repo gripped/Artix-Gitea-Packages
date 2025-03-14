@@ -7,8 +7,8 @@
 # Contributor: Sparadox <etienne.lafarge at gmail.com>
 
 pkgname=cloud-init
-pkgver=24.3.1
-pkgrel=3
+pkgver=25.1
+pkgrel=1
 pkgdesc="Cloud instance initialization"
 arch=(any)
 url="https://cloud-init.io"
@@ -16,7 +16,7 @@ _url="https://github.com/canonical/cloud-init"
 license=('GPL-3.0-only OR Apache-2.0')
 depends=(
   bash
-  dhclient
+  dhcp-client
   openbsd-netcat
   python
   python-configobj
@@ -59,8 +59,8 @@ backup=(
 source=(
   $_url/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
-sha512sums=('01b798d67328ecd66229568233fb674f45c055ac469adb31a55a909b6b2c8fd1901a833accb66423923b8945210aa4dc6a0d61945787aabe414c01b501b1416d')
-b2sums=('7e4cb8bd65d34d08b4b4e5ea2370ac952e05b3a210b91a9b29d8e4b633246a9520c2d9259aedfe8edded0d7d761808b86b6b19d98309633c981b2eb0e7cf1f93')
+sha512sums=('5d016bfc4b5c600722b6a8ff460d0e6d896ea5eda9fcde76edc21910f4e2f71d371e019b54e50cb58497b7c0c5c051e12ba88f4c9e7146b3e406f241e7cff039')
+b2sums=('b43b2171827e77a7220805c2e14aa1a8f560b6d7a5993e1721b5afcdc44c838bb5e497c8c0056da706cc9dcb7a064d1d446828b5c7a583cf442bccf118d498f6')
 
 build() {
   cd $pkgname-$pkgver
@@ -84,7 +84,7 @@ check() {
 }
 
 package() {
-  local _file
+  local template_file unit_file
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
   cd $pkgname-$pkgver
@@ -107,4 +107,5 @@ package() {
   install -vDm 655 bash_completion/$pkgname -t "$pkgdir/usr/share/bash-completion/completions/"
   # udev rules
   install -vDm 644 udev/*.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+    unit_file="$(basename "${template_file%%.tmpl}")"
 }
