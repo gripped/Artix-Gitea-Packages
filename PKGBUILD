@@ -11,7 +11,7 @@ for _coll in ${_collections[@]}; do
 done
 _rev=74612
 pkgver=2025.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
