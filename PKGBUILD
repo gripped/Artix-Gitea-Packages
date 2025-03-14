@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=ephoto
-pkgver=1.6.5
-pkgrel=2
+pkgver=1.6.6
+pkgrel=1
 pkgdesc="A light image viewer based on EFL"
 arch=('x86_64')
 url="http://www.enlightenment.org"
