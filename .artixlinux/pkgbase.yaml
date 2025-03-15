@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rygel
-  version: 1:0.44.1-1
+  version: 1:0.44.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.44.1-1
+    version: 1:0.44.2-1
     packages:
-      - rygel-1:0.44.1-1-x86_64.pkg.tar.zst
+      - rygel-1:0.44.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
