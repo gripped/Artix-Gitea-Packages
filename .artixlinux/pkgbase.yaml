@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: virtualbox-host-modules-artix
-  version: 7.1.6-11
+  version: 7.1.6-12
   arch:
     - x86_64
   pkgname:
     - virtualbox-host-modules-artix
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 7.1.6-11
+    version: 7.1.6-12
     packages:
-      - virtualbox-host-modules-artix-7.1.6-11-x86_64.pkg.tar.zst
+      - virtualbox-host-modules-artix-7.1.6-12-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
