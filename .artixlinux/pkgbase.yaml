@@ -8,12 +8,12 @@ pkgbase:
     - webkit2gtk
     - webkit2gtk-docs
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.48.0-1
+    packages:
+      - webkit2gtk-2.48.0-1-x86_64.pkg.tar.zst
+      - webkit2gtk-docs-2.48.0-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
