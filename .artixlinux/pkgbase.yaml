@@ -1,11 +1,12 @@
 ---
 pkgbase:
   name: libmanette
-  version: 0.2.9-2
+  version: 0.2.11-1
   arch:
     - x86_64
   pkgname:
     - libmanette
+    - libmanette-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2.9-2
+    version: 0.2.11-1
     packages:
-      - libmanette-0.2.9-2-x86_64.pkg.tar.zst
+      - libmanette-0.2.11-1-x86_64.pkg.tar.zst
+      - libmanette-docs-0.2.11-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
