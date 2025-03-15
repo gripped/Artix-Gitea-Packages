@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - artix-metro
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,10 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 3.1.2-1
     packages:
       - artix-metro-3.1.2-1-any.pkg.tar.zst
-  galaxy:
-    version: 3.1.1-1
-    packages:
-      - artix-metro-3.1.1-1-any.pkg.tar.zst
