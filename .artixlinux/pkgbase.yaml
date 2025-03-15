@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: faac
-  version: 1.30-5
+  version: 1.31.1-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.30-5
+    version: 1.31.1-1
     packages:
-      - faac-1.30-5-x86_64.pkg.tar.zst
+      - faac-1.31.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
