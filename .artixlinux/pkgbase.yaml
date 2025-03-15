@@ -11,12 +11,12 @@ pkgbase:
     - mupdf-tools
     - python-mupdf
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,6 +29,9 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 1.25.5-1
     packages:
       - libmupdf-1.25.5-1-x86_64.pkg.tar.zst
@@ -36,9 +39,6 @@ repos:
       - mupdf-gl-1.25.5-1-x86_64.pkg.tar.zst
       - mupdf-tools-1.25.5-1-x86_64.pkg.tar.zst
       - python-mupdf-1.25.5-1-x86_64.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: 1.25.4-2
     packages:
