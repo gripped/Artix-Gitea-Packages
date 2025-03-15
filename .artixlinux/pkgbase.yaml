@@ -2,13 +2,13 @@
 team: lib32
 pkgbase:
   name: lib32-libarchive
-  version: 3.7.7-2
+  version: 3.7.7-3
   arch:
     - x86_64
   pkgname:
     - lib32-libarchive
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,8 +38,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 3.7.7-3
+    packages:
+      - lib32-libarchive-3.7.7-3-x86_64.pkg.tar.zst
   lib32:
     version: 3.7.7-2
     packages:
