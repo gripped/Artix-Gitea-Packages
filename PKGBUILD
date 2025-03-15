@@ -1,10 +1,11 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Yiyao Yu <yuydevel at protonmail dot com>
 # Contributor: Moritz Lipp <mlq@pwmt.org>
 
 pkgname=bear
 pkgver=3.1.5
-pkgrel=10
+pkgrel=11
 pkgdesc='A tool to generate compilation database for clang tooling'
 arch=('x86_64')
 url='https://github.com/rizsotto/Bear'
