@@ -8,7 +8,7 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.16.12
+pkgver=4.18.1
 pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
@@ -88,12 +88,12 @@ source=(
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('30617c131cfe103e5b7118f0f346df514776c02b5e4564e8989a9ddf85e1442fb4d3123039f97e706924aeb279f16931cee7b1ece73ae5e8cde675f7a95f45d3'
+b2sums=('21dd6b46ae82c8f35fe7f1bd987e1eecfc2356ed5a1ae1c6b9790057021e00750b339c291287b442bd1dfff038cf52f2760f5dc98b45f29c93dc4c5edd726ca1'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
         '4b90eb8d582509b09aab401313d4399cc139ad21b5dd7d45d79860d0764c7494c60714e0794e09823e51d1894ac032a994f27d79d1499abf24ee6f59bdb0c243'
-        '94ab582651495f0eadeb132a6067a31b268945fcbdd1c5c56878284f9d9f41a9848aa1073b7bc8ad9fa0a515e0c4cbbbb68792bf6dc3327f4dd81b2a263569aa')
+        'a672c99d673648a8af5c7e808642ce3ec91fecf336afddfbe0d4723c21cdf03787334754b0590de8617fc9eb10e71e25c2d91234857b1d10a9fe058ecbc72560')
 
 prepare() {
   cd gtk
@@ -172,12 +172,12 @@ END
 
   cd "$pkgdir"
 
-  _pick demo usr/bin/gtk4-{demo,demo-application,icon-browser,node-editor,print-editor,widget-factory}
-  _pick demo usr/share/applications/org.gtk.{Demo4,IconBrowser4,PrintEditor4,WidgetFactory4,gtk4.NodeEditor}.desktop
+  _pick demo usr/bin/gtk4-{demo,demo-application,node-editor,print-editor,widget-factory}
+  _pick demo usr/share/applications/org.gtk.{Demo4,PrintEditor4,WidgetFactory4,gtk4.NodeEditor}.desktop
   _pick demo usr/share/glib-2.0/schemas/org.gtk.Demo4.gschema.xml
-  _pick demo usr/share/icons/hicolor/*/apps/org.gtk.{Demo4,IconBrowser4,PrintEditor4,WidgetFactory4,gtk4.NodeEditor}[-.]*
-  _pick demo usr/share/man/man1/gtk4-{demo,demo-application,icon-browser,node-editor,widget-factory}.1
-  _pick demo usr/share/metainfo/org.gtk.{Demo4,IconBrowser4,PrintEditor4,WidgetFactory4,gtk4.NodeEditor}.appdata.xml
+  _pick demo usr/share/icons/hicolor/*/apps/org.gtk.{Demo4,PrintEditor4,WidgetFactory4,gtk4.NodeEditor}[-.]*
+  _pick demo usr/share/man/man1/gtk4-{demo,demo-application,node-editor,widget-factory}.1
+  _pick demo usr/share/metainfo/org.gtk.{Demo4,PrintEditor4,WidgetFactory4,gtk4.NodeEditor}.appdata.xml
 
   _pick docs usr/share/doc
 
