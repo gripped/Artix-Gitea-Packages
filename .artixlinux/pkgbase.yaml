@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: poppler
-  version: 25.02.0-2
+  version: 25.03.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,12 +10,12 @@ pkgbase:
     - poppler-qt5
     - poppler-qt6
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,8 +31,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 25.03.0-1
+    packages:
+      - poppler-25.03.0-1-x86_64.pkg.tar.zst
+      - poppler-glib-25.03.0-1-x86_64.pkg.tar.zst
+      - poppler-qt5-25.03.0-1-x86_64.pkg.tar.zst
+      - poppler-qt6-25.03.0-1-x86_64.pkg.tar.zst
   world:
     version: 25.02.0-2
     packages:
