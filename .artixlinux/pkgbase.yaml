@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: compface
-  version: 1.5.2-12.1
+  version: 1.5.2-12.2
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.5.2-12.1
+    version: 1.5.2-12.2
     packages:
-      - compface-1.5.2-12.1-x86_64.pkg.tar.zst
+      - compface-1.5.2-12.2-x86_64.pkg.tar.zst

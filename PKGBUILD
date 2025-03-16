@@ -4,7 +4,7 @@
 
 pkgname=compface
 pkgver=1.5.2
-pkgrel=12.1
+pkgrel=12.2
 pkgdesc="Utils & libs to convert from/to X-Face format."
 arch=('x86_64')
 url="http://ftp.xemacs.org/pub/xemacs/aux/"
