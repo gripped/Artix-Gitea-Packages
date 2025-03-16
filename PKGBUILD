@@ -7,7 +7,7 @@ pkgname=(
   python-gobject
   python-gobject-docs
 )
-pkgver=3.50.0
+pkgver=3.52.2
 pkgrel=2
 pkgdesc="Python bindings for GLib/GObject/GIO/GTK"
 url="https://pygobject.gnome.org/"
@@ -37,17 +37,35 @@ checkdepends=(
   xorg-server-xvfb
 )
 optdepends=('python-cairo: Cairo bindings')
-source=("git+https://gitlab.gnome.org/GNOME/pygobject.git?signed#tag=$pkgver")
-b2sums=('d13a6751ec75606e9adf04c85bad53e329cbab6c7534dd81bcb64ded2f40b40371ec47ac6affa89dd075fbd423f9573ecccc3c9dbe01bf9d8b8e028fa93ddcd2')
+source=(
+  "git+https://gitlab.gnome.org/GNOME/pygobject.git?signed#tag=$pkgver"
+  "git+https://gitlab.gnome.org/GNOME/gobject-introspection-tests.git#commit=33dca8ac76c4ccae76e462ce069853e7c12247c"
+  "git+https://github.com/python/pythoncapi-compat#commit=2d18aecd7b2f549d38a13e27b682ea4966f37bd8"
+  0001-docs-Use-furo-theme.patch
+)
+b2sums=('dce69e966cb3195b68933481e406c62a0a0775d090128a9ba32a182c068cc4e16a462d7882e432edbe68d46608065ac2d653db3f4e2abce93d1ac2e1e2c1aa02'
+        '4b682ce3201eec67006a8f953649651ce807c05036d7239da6a64a32c19691d9c68766f809213b5755adee45cb8f4849d4c39335f19c94ff84833a0d43ae1a27'
+        '97ab530cd8256e0c64be5789980af00430a822bb17721a08dcf242512c28ec7b6debd0c5a6b4abd7f555a36c03a88b91d12d734e18b394322372b3c9139fdb6c'
+        '6deeb5fff97f7d98fb27d7ba5df3941bab75d81407fec278f66a6d9bbf06a981047c249a1ab7906077a94bfa6c07b4bedd85d963b24d33ca8fc15c5707128f86')
 validpgpkeys=(
   0EBF782C5D53F7E5FB02A66746BD761F7A49B0EC # Christoph Reiter <reiter.christoph@gmail.com>
+  12B7C9847B4AD5787318A831A61779569ADCE5E6 # Arjan Molenaar <gaphor@gmail.com>
 )
 
 prepare() {
   cd pygobject
+
+  # Fix docs build
+  git apply -3 ../0001-docs-Use-furo-theme.patch
+
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/pygobject/-/merge_requests/1
+  git cherry-pick -n cf88f6ecdd8d3510658cd38f8e8c7a8385f0a478
 }
 
 build() {
+  # Inject subprojects
+  export MESON_PACKAGE_CACHE_DIR="$srcdir"
+
   artix-meson pygobject build
   meson compile -C build
 }

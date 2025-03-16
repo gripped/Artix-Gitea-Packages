@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: pygobject
-  version: 3.50.0-2
+  version: 3.52.2-2
   arch:
     - x86_64
   pkgname:
     - python-gobject
     - python-gobject-docs
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.52.2-2
+    packages:
+      - python-gobject-3.52.2-2-x86_64.pkg.tar.zst
+      - python-gobject-docs-3.52.2-2-x86_64.pkg.tar.zst
   world:
     version: 3.50.0-2
     packages:
