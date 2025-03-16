@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - compface
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.5.2-12.1
-    packages:
-      - compface-1.5.2-12.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
