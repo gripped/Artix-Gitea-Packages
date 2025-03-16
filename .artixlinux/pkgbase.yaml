@@ -1,16 +1,18 @@
 ---
 pkgbase:
   name: vte3
-  version: 0.78.4-1
+  version: 0.80.0-1
   arch:
     - x86_64
   pkgname:
     - vte-common
     - vte3
+    - vte3-utils
     - vte4
+    - vte4-utils
     - vte-docs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +33,14 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.80.0-1
+    packages:
+      - vte-common-0.80.0-1-x86_64.pkg.tar.zst
+      - vte3-0.80.0-1-x86_64.pkg.tar.zst
+      - vte3-utils-0.80.0-1-x86_64.pkg.tar.zst
+      - vte4-0.80.0-1-x86_64.pkg.tar.zst
+      - vte4-utils-0.80.0-1-x86_64.pkg.tar.zst
+      - vte-docs-0.80.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.78.4-1
     packages:
