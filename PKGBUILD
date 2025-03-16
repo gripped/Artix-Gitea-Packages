@@ -3,7 +3,7 @@
 
 pkgname=sssd
 pkgver=2.10.2
-pkgrel=1
+pkgrel=3
 pkgdesc="System Security Services Daemon"
 arch=('x86_64')
 url="https://github.com/SSSD/sssd"
@@ -119,6 +119,7 @@ package() {
 
   install -Dm0644 src/examples/logrotate "$pkgdir"/etc/logrotate.d/sssd
   install -Dm0644 contrib/sssd.sysusers "$pkgdir"/usr/lib/sysusers.d/sssd.conf
+  rm -rf $pkgdir/etc/systemd
   install -Dm0644 "$srcdir"/sssd-perms.tmpfile "$pkgdir"/usr/lib/tmpfiles.d/sssd-perms.conf
 
   setcap cap_dac_read_search,cap_setgid,cap_setuid=p "$pkgdir"/usr/lib/sssd/sssd/krb5_child
@@ -126,7 +127,6 @@ package() {
   setcap cap_dac_read_search=p "$pkgdir"/usr/lib/sssd/sssd/sssd_pam
 
   cd "$srcdir"
-  rm -rf "$pkgdir/etc/systemd" # remove the drop-in
   rm -rf "$pkgdir/var/run"
 }
 
