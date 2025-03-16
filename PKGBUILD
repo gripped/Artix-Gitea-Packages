@@ -8,7 +8,7 @@ pkgname=(
   libadwaita-docs
 )
 pkgver=1.7.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Building blocks for modern adaptive GNOME applications"
 url="https://gnome.pages.gitlab.gnome.org/libadwaita/"
@@ -43,10 +43,8 @@ b2sums=('b935b005d5f6237cfb033286723ec9be47096ed4daf6b3a95c2caf3b873758aaaa073b7
 prepare() {
   cd $pkgname
 
+  # https://gitlab.gnome.org/GNOME/libadwaita/-/merge_requests/1439
   git apply -3 ../0001-meson-Don-t-install-internal-static-library.patch
-
-  # Requires gobject-introspection 1.84.0
-  git revert -n e8f199d833788f134d2ba088a386b706ec795ec6
 }
 
 build() {
