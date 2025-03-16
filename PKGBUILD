@@ -6,7 +6,7 @@ pkgname=(
   libmanette-docs
 )
 pkgver=0.2.11
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple GObject game controller library"
 url="https://gnome.pages.gitlab.gnome.org/libmanette/"
 arch=(x86_64)
@@ -31,9 +31,6 @@ b2sums=('52429dabe15fef2a4d33fbe819ad4b1794d75bc545291eee6abc3ecc2caffc694771bac
 
 prepare() {
   cd $pkgname
-
-  # Needs gobject-introspection 1.84.0
-  git revert -n 60f4692161adc40a5a9be7cdeab4d81129aa9705
 }
 
 build() {
