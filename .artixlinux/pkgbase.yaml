@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - libetpan
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.9.4-5
+    version: 1.9.4-5.1
     packages:
-      - libetpan-1.9.4-5-x86_64.pkg.tar.zst
+      - libetpan-1.9.4-5.1-x86_64.pkg.tar.zst
