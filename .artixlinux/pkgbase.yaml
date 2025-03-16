@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - compface
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.5.2-12
+    version: 1.5.2-12.1
     packages:
-      - compface-1.5.2-12-x86_64.pkg.tar.zst
+      - compface-1.5.2-12.1-x86_64.pkg.tar.zst
