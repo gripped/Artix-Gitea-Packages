@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: pdfjs
-  version: 4.10.38-1
+  version: 5.0.375-1
   arch:
     - any
   pkgname:
     - pdfjs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.375-1
+    packages:
+      - pdfjs-5.0.375-1-any.pkg.tar.zst
   world:
     version: 4.10.38-1
     packages:
