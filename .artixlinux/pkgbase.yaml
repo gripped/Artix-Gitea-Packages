@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: libetpan
-  version: 1.9.4-5.1
+  version: 1.9.4-5.2
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.9.4-5.1
+    version: 1.9.4-5.2
     packages:
-      - libetpan-1.9.4-5.1-x86_64.pkg.tar.zst
+      - libetpan-1.9.4-5.2-x86_64.pkg.tar.zst
