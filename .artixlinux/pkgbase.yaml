@@ -1,5 +1,5 @@
 ---
-team: world
+team: galaxy
 pkgbase:
   name: libetpan
   version: 1.9.4-5
@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - libetpan
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.9.4-5
+    packages:
+      - libetpan-1.9.4-5-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
