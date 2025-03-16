@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gammastep
-  version: 2.0.9-7
+  version: 2.0.10-1
   arch:
     - x86_64
   pkgname:
     - gammastep
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 2.0.10-1
+    packages:
+      - gammastep-2.0.10-1-x86_64.pkg.tar.zst
 team: world
