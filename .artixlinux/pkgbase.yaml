@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: rapidfuzz-cpp
-  version: 3.2.0-1
+  version: 3.3.2-1
   arch:
     - any
   pkgname:
     - rapidfuzz-cpp
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.2.0-1
+    version: 3.3.2-1
     packages:
-      - rapidfuzz-cpp-3.2.0-1-any.pkg.tar.zst
+      - rapidfuzz-cpp-3.3.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
