@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: aws-c-cal
-  version: 0.8.6-1
+  version: 0.8.7-1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.8.6-1
+    version: 0.8.7-1
     packages:
-      - aws-c-cal-0.8.6-1-x86_64.pkg.tar.zst
+      - aws-c-cal-0.8.7-1-x86_64.pkg.tar.zst
   world:
     version: 0.8.5-1
     packages:
