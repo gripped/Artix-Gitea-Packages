@@ -2,7 +2,7 @@
 
 pkgname=libetpan
 pkgver=1.9.4
-pkgrel=5
+pkgrel=5.1
 pkgdesc="A portable middleware for email access"
 arch=('x86_64')
 url="https://www.etpan.org/libetpan.html"
