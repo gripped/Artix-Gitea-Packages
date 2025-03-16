@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: libspelling
-  version: 0.4.6-2
+  version: 0.4.7-1
   arch:
     - x86_64
   pkgname:
@@ -33,10 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.4.6-2
+    version: 0.4.7-1
     packages:
-      - libspelling-0.4.6-2-x86_64.pkg.tar.zst
-      - libspelling-docs-0.4.6-2-x86_64.pkg.tar.zst
+      - libspelling-0.4.7-1-x86_64.pkg.tar.zst
+      - libspelling-docs-0.4.7-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
