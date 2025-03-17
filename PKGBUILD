@@ -6,19 +6,17 @@
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 
 pkgname=gkrellm
-pkgver=2.3.11
-pkgrel=4
+pkgver=2.4.0
+pkgrel=1
 pkgdesc="System monitor package for GTK2"
 arch=('x86_64')
 url="http://gkrellm.srcbox.net/"
-license=('GPL3')
+license=('GPL-3.0-or-later')
 depends=('gtk2' 'libsm' 'lm_sensors')
 makedepends=('gettext')
 backup=('etc/gkrellmd.conf')
-source=("${url}/releases/${pkgname}-${pkgver}.tar.bz2"
-        )
-sha256sums=('1ee0643ed9ed99f88c1504c89d9ccb20780cf29319c904b68e80a8e7c8678c06'
-            )
+source=("${url}/releases/${pkgname}-${pkgver}.tar.bz2")
+sha256sums=('6f83665760b936ad4b55f9182b1ec7601faf38a0f25ea1e4bddc9965088f032d')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -29,8 +27,9 @@ build() {
 package() {
   cd "$srcdir/$pkgname-$pkgver"
 
-  make DESTDIR="$pkgdir" PREFIX=/usr install
-  install -Dm644 "server/gkrellmd.conf" "$pkgdir/etc/gkrellmd.conf"
+  make DESTDIR="$pkgdir" \
+    CFGDIR="$pkgdir"/etc \
+    PREFIX=/usr install
 }
 
 # vim:set ts=2 sw=2 et:
