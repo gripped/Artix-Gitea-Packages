@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: nvm
-  version: 0.39.3-1
+  version: 0.40.2-3
   arch:
     - any
   pkgname:
     - nvm
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -46,9 +46,11 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.40.2-3
+    packages:
+      - nvm-0.40.2-3-any.pkg.tar.zst
   galaxy:
     version: 0.39.3-1
     packages:
       - nvm-0.39.3-1-any.pkg.tar.zst
+team: galaxy
