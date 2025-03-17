@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: directx-shader-compiler
-  version: 1.8.2407-1
+  version: 1.8.2502-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.2407-1
+    version: 1.8.2502-1
     packages:
-      - directx-shader-compiler-1.8.2407-1-x86_64.pkg.tar.zst
+      - directx-shader-compiler-1.8.2502-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
