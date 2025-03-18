@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-hypothesis
-  version: 6.129.3-1
+  version: 6.129.4-1
   arch:
     - any
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 6.129.3-1
+    version: 6.129.4-1
     packages:
-      - python-hypothesis-6.129.3-1-any.pkg.tar.zst
+      - python-hypothesis-6.129.4-1-any.pkg.tar.zst
   world:
     version: 6.128.2-1
     packages:
