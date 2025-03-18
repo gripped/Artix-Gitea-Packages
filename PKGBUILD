@@ -6,7 +6,7 @@
 
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-deprecated-tools' 'bluez-hid2hci' 'bluez-mesh' 'bluez-obex')
-pkgver=5.79
+pkgver=5.80
 pkgrel=1
 url="http://www.bluez.org/"
 arch=('x86_64')
@@ -15,7 +15,7 @@ makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'python-docutils' 'pytho
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
-sha256sums=('4164a5303a9f71c70f48c03ff60be34231b568d93a9ad5e79928d34e6aa0ea8a'
+sha256sums=('a4d0bca3299691f06d5bd9773b854638204a51a5026c42b0ad7f1c6cf16b459a'
             'SKIP'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
@@ -107,7 +107,7 @@ package_bluez-utils() {
   provides=('bluez-plugins')
   replaces=('bluez-plugins')
 
-  _install fakeinstall/usr/bin/{advtest,amptest,avinfo,avtest,bcmfw,bdaddr,bluemoon,bluetoothctl,bluetooth-player,bneptest,btattach,btconfig,btgatt-client,btgatt-server,btinfo,btiotest,btmgmt,btmon,btpclient,btpclientctl,btproxy,btsnoop,check-selftest,cltest,create-image,eddystone,gatt-service,hcieventmask,hcisecfilter,hex2hcd,hid2hci,hwdb,ibeacon,isotest,l2ping,l2test,mcaptest,mpris-proxy,nokfw,oobtest,rctest,rtlfw,scotest,seq2bseq,test-runner}
+  _install fakeinstall/usr/bin/{advtest,avinfo,avtest,bcmfw,bdaddr,bluemoon,bluetoothctl,bluetooth-player,bneptest,btattach,btconfig,btgatt-client,btgatt-server,btinfo,btiotest,btmgmt,btmon,btpclient,btpclientctl,btproxy,btsnoop,check-selftest,cltest,create-image,eddystone,gatt-service,hcieventmask,hcisecfilter,hex2hcd,hid2hci,hwdb,ibeacon,isotest,l2ping,l2test,mcaptest,mpris-proxy,nokfw,oobtest,rctest,rtlfw,scotest,seq2bseq,test-runner}
   _install fakeinstall/usr/share/man/man1/bluetoothctl*.1
   _install fakeinstall/usr/share/man/man1/{btattach,btmgmt,btmon,isotest,l2ping,rctest}.1
   _install fakeinstall/usr/share/man/man5/org.bluez.{A,B,D,G,I,L,M,N,P}*.5
@@ -171,6 +171,7 @@ package_bluez-obex() {
 
   _install fakeinstall/usr/bin/{obexctl,obex-client-tool,obex-server-tool}
   _install fakeinstall/usr/lib/bluetooth/obexd
+  _install fakeinstall/usr/share/dbus-1/system.d/obex.conf
   _install fakeinstall/usr/share/man/man5/org.bluez.obex*.5  
 
   # Installs dbus service
