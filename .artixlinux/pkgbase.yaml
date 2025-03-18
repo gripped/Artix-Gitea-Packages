@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-playwright
-  version: 1.50.0-1
+  version: 1.51.0-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.50.0-1
+    version: 1.51.0-1
     packages:
-      - python-playwright-1.50.0-1-any.pkg.tar.zst
+      - python-playwright-1.51.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
