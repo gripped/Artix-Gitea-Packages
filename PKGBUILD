@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=webhook
-pkgver=2.8.1
-pkgrel=2
+pkgver=2.8.2
+pkgrel=1
 pkgdesc="A lightweight incoming webhook server to run shell commands"
 arch=('x86_64')
 url="https://github.com/adnanh/webhook"
@@ -11,7 +11,7 @@ license=('MIT')
 depends=('glibc')
 makedepends=('go' 'git')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/adnanh/webhook/archive/$pkgver.tar.gz")
-sha512sums=('25edff21725ba9ac8823dbe5728234f7cd9218027e87df3e2482ef365a7dd0efe8659800233753c275f858ff87f848ff6141d09be3e0b66ff88b795680b9b635')
+sha512sums=('2006afc324a265e807bc8be6d2aa108e06082360891682c188be932bdbf6ece3d8d67bb653f9a5466e71bbb256c66f7411920c8c96aee6bb64daba888eba7c1d')
 
 prepare() {
   cd webhook-$pkgver
