@@ -1,17 +1,17 @@
 ---
 pkgbase:
   name: telepathy-gabble
-  version: 0.18.4-4
+  version: 0.18.4-5
   arch:
     - x86_64
   pkgname:
     - telepathy-gabble
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.18.4-5
+    packages:
+      - telepathy-gabble-0.18.4-5-x86_64.pkg.tar.zst
   world:
     version: 0.18.4-4
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
