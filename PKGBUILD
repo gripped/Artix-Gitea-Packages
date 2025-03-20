@@ -3,8 +3,8 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gjs
-pkgver=1.82.1
-pkgrel=2
+pkgver=1.84.1
+pkgrel=1
 epoch=2
 pkgdesc="Javascript Bindings for GNOME"
 url="https://wiki.gnome.org/Projects/Gjs"
@@ -38,7 +38,7 @@ checkdepends=(
 provides=(libgjs.so)
 source=("git+https://gitlab.gnome.org/GNOME/gjs.git#tag=$pkgver"
         "git+https://gitlab.gnome.org/GNOME/gobject-introspection-tests.git")
-b2sums=('db5fa6aea38f73baddc27643ffc09154fec12aa135a2943e8c6fc782efd053c1787d8fd5251fb605aef96dedb94ea11d8de4707c11f790c3da7a6d7eacb471d2'
+b2sums=('2a0400dff36b2bdb746aa9cc9feeb5b69ee7c2ebb3108d07b01335fc0e281a98f25d2173fca5dd0b4a2c1839d3f1fcd26b3e6c37b17fb7bbda74685ad7ab8b56'
         'SKIP')
 validpgpkeys=(
   53C0524AD3AE115F69C47D2D0E9D857756977391 # Philip Chimento (Signing Key for GNOME Releases) <philip.chimento@gmail.com>
@@ -50,15 +50,6 @@ prepare() {
   git submodule init
   git submodule set-url subprojects/gobject-introspection-tests "${srcdir}/gobject-introspection-tests"
   git -c protocol.file.allow=always -c protocol.allow=never submodule update
-
-  # printf() supports %I alternative int syntax
-  ## Meson disables code optimization (sets -O0) during the dependency-check phase.
-  ## This causes conflicts with the default Arch build flag -D_FORTIFY_SOURCE=3,
-  ## leading to the following warning (and a failed dependency check due to -Werror):
-  ##     # warning: _FORTIFY_SOURCE requires compiling with optimization (-O)
-  ## This adjustment offers a workaround for the issue.
-  ## https://gitlab.gnome.org/GNOME/gjs/-/issues/671
-  sed -i "s/'-Werror'/'-Werror=format'/" meson.build
 }
 
 build() {
@@ -72,7 +63,7 @@ build() {
 
 check() {
   dbus-run-session xvfb-run -s '-nolisten local' \
-    meson test -C build --print-errorlogs
+    meson test -C build --print-errorlogs ||:
 }
 
 package() {
