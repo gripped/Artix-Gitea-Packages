@@ -7,7 +7,7 @@ pkgname=(
   python-gobject
   python-gobject-docs
 )
-pkgver=3.52.2
+pkgver=3.52.3
 pkgrel=2
 pkgdesc="Python bindings for GLib/GObject/GIO/GTK"
 url="https://pygobject.gnome.org/"
@@ -43,7 +43,7 @@ source=(
   "git+https://github.com/python/pythoncapi-compat#commit=2d18aecd7b2f549d38a13e27b682ea4966f37bd8"
   0001-docs-Use-furo-theme.patch
 )
-b2sums=('dce69e966cb3195b68933481e406c62a0a0775d090128a9ba32a182c068cc4e16a462d7882e432edbe68d46608065ac2d653db3f4e2abce93d1ac2e1e2c1aa02'
+b2sums=('5d86ac25d085e51b328e901397a8200f4b9aead10b536f038d37fb8d8639135c5d8797a28baa0c9eeab9125c0f22d2b516864b296d9674f1431f1f260f4816e2'
         '4b682ce3201eec67006a8f953649651ce807c05036d7239da6a64a32c19691d9c68766f809213b5755adee45cb8f4849d4c39335f19c94ff84833a0d43ae1a27'
         '97ab530cd8256e0c64be5789980af00430a822bb17721a08dcf242512c28ec7b6debd0c5a6b4abd7f555a36c03a88b91d12d734e18b394322372b3c9139fdb6c'
         '6deeb5fff97f7d98fb27d7ba5df3941bab75d81407fec278f66a6d9bbf06a981047c249a1ab7906077a94bfa6c07b4bedd85d963b24d33ca8fc15c5707128f86')
@@ -57,9 +57,6 @@ prepare() {
 
   # Fix docs build
   git apply -3 ../0001-docs-Use-furo-theme.patch
-
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/pygobject/-/merge_requests/1
-  git cherry-pick -n cf88f6ecdd8d3510658cd38f8e8c7a8385f0a478
 }
 
 build() {
