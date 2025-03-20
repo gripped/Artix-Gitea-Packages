@@ -8,7 +8,7 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=47.2
+pkgver=48.0
 pkgrel=1
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
@@ -42,7 +42,7 @@ depends=(
   xdg-user-dirs-gtk
 )
 makedepends=(
-  appstream-glib
+  appstream
   gi-docgen
   git
   glib2-devel
@@ -54,7 +54,7 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=${pkgver/[a-z]/.&}"
   0001-Disable-tracker-test.patch
 )
-b2sums=('e7dfef5988ef05f9c5e692b82d66267ae66bd7d094ab9e87a0cb7173d252db495bcd574c8361a25a1884a1c134b19e5a9b4a3423055fe23b5242000f9e164080'
+b2sums=('64923b759f638ea01b41d90354701feb5cc61fe6fb56c0270e24ca373b76a622d73c87260135e02748ca39c8af6f99a4176d742563b0f980c2052410e80ae925'
         '8befc868af7e4dc776c50c10d0c6852d237f41b1f4adf8c15e0c378a9ff035e38b2cd22926d313850babcd6c96b6dd2be95fa9e1299383e686ad5a0ff36b957f')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
