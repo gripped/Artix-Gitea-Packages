@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=efl
-pkgver=1.28.0
-pkgrel=3
+pkgver=1.28.1
+pkgrel=1
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="http://www.enlightenment.org"
@@ -31,7 +31,7 @@ optdepends=('gst-plugins-base: Video and thumbnail codecs'
 options=('!emptydirs')
 source=("https://download.enlightenment.org/rel/libs/${pkgname}/$pkgname-$pkgver.tar.xz"
         "moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git")
-sha256sums=('f09a43d6b4861be06cc0e2849c53296413d4e52c8e31f52fc95e9ea5f1c59a36'
+sha256sums=('84cf6145f9cc82bfff690005be24392c8f3c52f8e00ff04d8eea371429c09424'
             'SKIP')
 
 build() {
