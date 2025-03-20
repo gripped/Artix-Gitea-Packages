@@ -10,8 +10,8 @@ pkgbase:
     - bogofilter-lmdb
     - bogofilter-sqlite
 actions:
-  addRepo: galaxy
-  removeRepo: world
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -34,8 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.2.5-12
+    packages:
+      - bogofilter-db-1.2.5-12-x86_64.pkg.tar.zst
+      - bogofilter-kyotocabinet-1.2.5-12-x86_64.pkg.tar.zst
+      - bogofilter-lmdb-1.2.5-12-x86_64.pkg.tar.zst
+      - bogofilter-sqlite-1.2.5-12-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,10 +56,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.2.5-12
-    packages:
-      - bogofilter-db-1.2.5-12-x86_64.pkg.tar.zst
-      - bogofilter-kyotocabinet-1.2.5-12-x86_64.pkg.tar.zst
-      - bogofilter-lmdb-1.2.5-12-x86_64.pkg.tar.zst
-      - bogofilter-sqlite-1.2.5-12-x86_64.pkg.tar.zst
-team: galaxy
+    version: null
+    packages: []
+team: world
