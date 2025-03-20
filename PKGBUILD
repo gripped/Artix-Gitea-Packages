@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=1.66.5
+pkgver=1.67.0
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -48,13 +48,13 @@ optdepends=(
   'python-websockets: Realtime support'
 )
 # Defined in .stats.yml
-_openai_openapi_spec=f3bce04386c4fcfd5037e0477fbaa39010003fd1558eb5185fe4a71dd6a05fdd
+_openai_openapi_spec=b26121d5df6eb5d3032a45a267473798b15fcfec76dd44a3256cf1238be05fa4
 source=(
   "${_name}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
   "https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-${_openai_openapi_spec}.yml"
 )
-sha256sums=('904376a76ff9d634ffbe1fd969e38d9566d6a60ca06fb0dffa4b4940cc960ddc'
-            'f3bce04386c4fcfd5037e0477fbaa39010003fd1558eb5185fe4a71dd6a05fdd')
+sha256sums=('bfc7bb28bc5785f080faed6ab11ec0be420870cdc096e710e6138c303612ddd6'
+            'b26121d5df6eb5d3032a45a267473798b15fcfec76dd44a3256cf1238be05fa4')
 
 prepare() {
   cd "${_name}-${pkgver}"
