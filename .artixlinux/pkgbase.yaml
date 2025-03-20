@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-robots
-  version: 41.1-1
+  version: 41.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 41.1-1
+    version: 41.2-1
     packages:
-      - gnome-robots-41.1-1-x86_64.pkg.tar.zst
+      - gnome-robots-41.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
