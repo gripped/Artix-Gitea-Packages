@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=21
+pkgrel=21.1
 _commit="afc09c5e44a7dc94bbd7f38d7ef5f2517624379f"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
