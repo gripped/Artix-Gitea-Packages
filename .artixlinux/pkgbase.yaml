@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: sshuttle
-  version: 1.1.2-3
+  version: 1.2.0-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.1.2-3
+    version: 1.2.0-1
     packages:
-      - sshuttle-1.1.2-3-any.pkg.tar.zst
+      - sshuttle-1.2.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
