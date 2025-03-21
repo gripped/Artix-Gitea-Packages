@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: fastfetch
-  version: 2.38.0-1
+  version: 2.39.1-1
   arch:
     - x86_64
   pkgname:
     - fastfetch
 actions:
-  addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: null
-    packages: []
+    version: 2.39.1-1
+    packages:
+      - fastfetch-2.39.1-1-x86_64.pkg.tar.zst
 team: world
