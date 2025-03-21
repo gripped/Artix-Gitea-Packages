@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Jaroslaw Swierczynski <swiergot@aur.archlinux.org>
 # Contributor: Sven Kauber, <celeon@gmail.com>
@@ -7,11 +6,11 @@
 
 pkgname=encfs
 pkgver=1.9.5
-pkgrel=8
+pkgrel=9
 pkgdesc='Encrypted filesystem in user-space'
 arch=('x86_64')
 url='https://vgough.github.io/encfs/'
-license=('LGPL')
+license=('LGPL-3.0-or-later')
 depends=('openssl' 'fuse2' 'tinyxml2')
 makedepends=('cmake')
 source=(https://github.com/vgough/$pkgname/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz{,.asc})
