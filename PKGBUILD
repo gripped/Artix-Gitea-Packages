@@ -7,8 +7,8 @@ _extra=1.2
 _alpm=2.2
 
 pkgname=openrc
-pkgver=0.60.1
-pkgrel=8
+pkgver=0.61
+pkgrel=1
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
@@ -61,7 +61,7 @@ source=(
     "git+${_url}/openrc-extra.git#tag=${_extra}"
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
 )
-sha256sums=('02f561526ad1a85e164c72a0c1648e49f2d758c315616af795dc49f3f975f265'
+sha256sums=('b2b7899bb9ef5d426c7537a9fdb1d3ca8cd0e029b7e2c92a23201c603a62e40d'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
