@@ -17,7 +17,7 @@ license=(GPL)
 arch=(any)
 depends=(texlive-bin)
 makedepends=(subversion
-texlive-texmf)
+jre17-openjdk-headless)
 url='https://tug.org/texlive/'
 source=(svn://tug.org/texlive/tags/texlive-$pkgver/Master/texmf-dist#revision=$_rev
         svn://tug.org/texlive/tags/texlive-$pkgver/Master/tlpkg#revision=$_rev
