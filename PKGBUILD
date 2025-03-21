@@ -53,6 +53,7 @@ options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
 # Customize configuration
+source /etc/profile
   patch -d texmf-dist/web2c -p0 < texmf.cnf.patch
   patch -d texmf-dist/web2c -p0 < texmfcnf.lua.patch
 
