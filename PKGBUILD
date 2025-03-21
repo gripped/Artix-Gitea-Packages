@@ -8,14 +8,14 @@ _alpm=2.2
 
 pkgname=openrc
 pkgver=0.61
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
 license=('BSD-2-Clause')
 makedepends=('git' 'meson')
 depends=(
-    'audit' 'libaudit.so'
+    'audit' #'libaudit.so'
     'bash'
     'glibc'
     'inetutils'
