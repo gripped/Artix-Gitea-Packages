@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-webob
-  version: 1.8.7-9
+  version: 1.8.8-1
   arch:
     - any
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - python-webob-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.7-9
+    version: 1.8.8-1
     packages:
-      - python-webob-1.8.7-9-any.pkg.tar.zst
-      - python-webob-docs-1.8.7-9-any.pkg.tar.zst
+      - python-webob-1.8.8-1-any.pkg.tar.zst
+      - python-webob-docs-1.8.8-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
