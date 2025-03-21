@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kplotting
-  version: 6.11.0-1
+  version: 6.12.0-1
   arch:
     - x86_64
   pkgname:
     - kplotting
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.12.0-1
+    packages:
+      - kplotting-6.12.0-1-x86_64.pkg.tar.zst
   world:
     version: null
     packages: []
