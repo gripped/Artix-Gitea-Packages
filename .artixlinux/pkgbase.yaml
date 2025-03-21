@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: evolution-data-server
-  version: 3.56.0-1
+  version: 3.56.0-2
   arch:
     - x86_64
   pkgname:
@@ -30,11 +30,11 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 3.56.0-1
+    version: 3.56.0-2
     packages:
-      - evolution-data-server-3.56.0-1-x86_64.pkg.tar.zst
-      - libedataserverui4-3.56.0-1-x86_64.pkg.tar.zst
-      - evolution-data-server-docs-3.56.0-1-x86_64.pkg.tar.zst
+      - evolution-data-server-3.56.0-2-x86_64.pkg.tar.zst
+      - libedataserverui4-3.56.0-2-x86_64.pkg.tar.zst
+      - evolution-data-server-docs-3.56.0-2-x86_64.pkg.tar.zst
   world:
     version: 3.54.3-5
     packages:
