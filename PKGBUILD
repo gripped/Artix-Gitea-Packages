@@ -1,0 +1,43 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+pkgname=blueprint-compiler
+pkgver=0.16.0
+pkgrel=1
+pkgdesc='A markup language for GTK user interfaces'
+arch=(any)
+url='https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/'
+license=(LGPL-3.0-or-later)
+depends=(
+  libgirepository
+  python
+  python-gobject
+)
+makedepends=(
+  git
+  meson
+  python-sphinx-furo
+)
+checkdepends=(
+  libadwaita
+  xorg-server-xvfb
+)
+source=("git+https://gitlab.gnome.org/jwestman/$pkgname.git#tag=v$pkgver")
+b2sums=('f0c3ca6a2270ba28bcafbccf684c94808cb97fdd1f711670972875a15c4acae38e552a1efe6634c644a5c4b79bd668a157f29a482040bef5297718ac303d0190')
+
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  dbus-run-session xvfb-run \
+    -s '-screen 0 1920x1080x24 -nolisten local' \
+    meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+
+  python -m sphinx -b html $pkgname/docs "$pkgdir/usr/share/doc/$pkgname/html"
+  rm -r "$pkgdir/usr/share/doc/$pkgname/html/.doctrees"
+}
