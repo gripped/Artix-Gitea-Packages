@@ -52,6 +52,7 @@ prepare() {
 
 build() {
   local meson_options=(
+    -D systemd=disabled
     -D selinux=disabled
   )
 
