@@ -1,43 +1,51 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=vulkan-icd-loader
-pkgver=1.4.303
-pkgrel=1.1
-arch=(x86_64)
+pkgver=1.4.309.0
+pkgrel=1
 pkgdesc="Vulkan Installable Client Driver (ICD) Loader"
-url="https://www.khronos.org/vulkan/"
-license=('Apache-2.0')
-makedepends=('cmake' 'python-lxml' 'libx11' 'libxrandr' 'wayland' 'vulkan-headers')
+url="https://www.vulkan.org/"
+arch=(x86_64)
+license=(Apache-2.0)
 depends=(glibc)
-optdepends=('vulkan-driver: packaged vulkan driver') # vulkan-driver: vulkan-intel/vulkan-radeon/nvidia-utils/....
-provides=('libvulkan.so')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/Vulkan-Loader/archive/v${pkgver}.tar.gz")
-sha256sums=('248a5f7dbf990609f61dac34d19e43f441ccc31fd5ec49b64e807740099057a9')
+makedepends=(
+  cmake
+  git
+  libx11
+  libxrandr
+  ninja
+  python-lxml
+  vulkan-headers
+  wayland
+)
+optdepends=(
+  # vulkan-driver: vulkan-intel/vulkan-radeon/nvidia-utils/....
+  'vulkan-driver: packaged vulkan driver'
+)
+provides=(libvulkan.so)
+groups=(vulkan-devel)
+source=("git+https://github.com/KhronosGroup/Vulkan-Loader#tag=vulkan-sdk-$pkgver")
+b2sums=('ffb59db878463016775643efd6cc1a03820711bbf2b52fb3755856429c22d9d8eacd29d8bcbef855e306569c5712b1bf992d089416348b1a9d546afaf8529dc0')
 
 build() {
-  cd "${srcdir}"/Vulkan-Loader*
+  local cmake_options=(
+    -D CMAKE_BUILD_TYPE=Release
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D CMAKE_INSTALL_SYSCONFDIR=/etc
+    -D CMAKE_SKIP_INSTALL_RPATH=ON
+  )
 
-  rm -rf build ; mkdir build ; cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-    -DVULKAN_HEADERS_INSTALL_DIR=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCMAKE_INSTALL_SYSCONFDIR=/etc \
-    -DCMAKE_INSTALL_DATADIR=/share \
-    -DCMAKE_SKIP_RPATH=True \
-    -DBUILD_TESTS=Off \
-    -DBUILD_WSI_XCB_SUPPORT=On \
-    -DBUILD_WSI_XLIB_SUPPORT=On \
-    -DBUILD_WSI_WAYLAND_SUPPORT=On \
-    -DCMAKE_BUILD_TYPE=Release \
-    ..
-  make
+  cmake -S Vulkan-Loader -B build -G Ninja "${cmake_options[@]}"
+  cmake --build build
+}
+
+check() {
+  ctest --test-dir build --output-on-failure --stop-on-failure
 }
 
 package() {
-  cd "${srcdir}"/Vulkan-Loader*/build
-  
-  make DESTDIR="${pkgdir}" install
-  
-  install -dm755 "${pkgdir}"/usr/share/licenses/${pkgname}
-  install -m644 ../LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/
+  DESTDIR="$pkgdir" cmake --install build
 }
+
+# vim:set sw=2 sts=-1 et:
