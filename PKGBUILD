@@ -72,6 +72,7 @@ depends=(
   python-argcomplete
   python-gobject
   startup-notification
+  libelogind
   wayland
   xorg-xwayland
 )
@@ -116,7 +117,6 @@ prepare() {
 
 build() {
   local meson_options=(
-    -D systemd=false
     -D docs=true
     -D egl_device=true
     -D installed_tests=false
