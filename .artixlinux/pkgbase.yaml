@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-oslo-log
-  version: 6.2.0-1
+  version: 7.0.0-1
   arch:
     - any
   pkgname:
     - python-oslo-log
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.2.0-1
+    version: 7.0.0-1
     packages:
-      - python-oslo-log-6.2.0-1-any.pkg.tar.zst
+      - python-oslo-log-7.0.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
