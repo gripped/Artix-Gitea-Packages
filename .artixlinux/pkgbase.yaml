@@ -1,16 +1,18 @@
 ---
 team: lib32
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: lib32-vulkan-utility-libraries
+  version: 1.4.309.0-1
+  arch:
+    - x86_64
+  pkgname:
+    - lib32-vulkan-utility-libraries
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -36,8 +38,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1.4.309.0-1
+    packages:
+      - lib32-vulkan-utility-libraries-1.4.309.0-1-x86_64.pkg.tar.zst
   lib32:
     version: null
     packages: []
