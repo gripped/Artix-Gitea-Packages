@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
 # Contributor: Cristian Maureira <saint@archlinux.cl>
 # Contributor: Dr.Egg <rwhite@archlinux.us>
 
 pkgname=musescore
 pkgver=4.4.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Create, play and print beautiful sheet music'
 arch=(x86_64)
 url=https://musescore.org/
