@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: ada
-  version: 2.9.2-1
+  version: 3.2.1-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 2.9.2-1
+    version: 3.2.1-1
     packages:
-      - ada-2.9.2-1-x86_64.pkg.tar.zst
+      - ada-3.2.1-1-x86_64.pkg.tar.zst
