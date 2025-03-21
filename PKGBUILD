@@ -11,12 +11,13 @@ for _coll in ${_collections[@]}; do
 done
 _rev=74612
 pkgver=2025.1
-pkgrel=1.1
+pkgrel=1
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
 depends=(texlive-bin)
-makedepends=(subversion)
+makedepends=(subversion
+texlive-texmf)
 url='https://tug.org/texlive/'
 source=(svn://tug.org/texlive/tags/texlive-$pkgver/Master/texmf-dist#revision=$_rev
         svn://tug.org/texlive/tags/texlive-$pkgver/Master/tlpkg#revision=$_rev
