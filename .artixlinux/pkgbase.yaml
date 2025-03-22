@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: python-joserfc
-  version: 1.0.1-1
+  version: 1.0.4-1
   arch:
     - any
   pkgname:
     - python-joserfc
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.1-1
+    version: 1.0.4-1
     packages:
-      - python-joserfc-1.0.1-1-any.pkg.tar.zst
+      - python-joserfc-1.0.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
