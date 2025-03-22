@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: recode
-  version: 3.7.14-2
+  version: 3.7.15-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.7.14-2
+    version: 3.7.15-1
     packages:
-      - recode-3.7.14-2-x86_64.pkg.tar.zst
+      - recode-3.7.15-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
