@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxmenu-data
-  version: 0.1.5-4
+  version: 0.1.6-1
   arch:
     - any
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.5-4
+    version: 0.1.6-1
     packages:
-      - lxmenu-data-0.1.5-4-any.pkg.tar.zst
+      - lxmenu-data-0.1.6-1-any.pkg.tar.zst
 team: galaxy
