@@ -53,6 +53,9 @@ sha256sums=('SKIP'
 options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
+  ulimit -a
+  ulimit -n 4096
+  ulimit -a
   sh prepare.sh
 }
 
