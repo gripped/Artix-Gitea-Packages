@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: directx-headers
-  version: 1.615.0-1
+  version: 1.615.0-2
   arch:
     - x86_64
   pkgname:
     - directx-headers
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.615.0-2
+    packages:
+      - directx-headers-1.615.0-2-x86_64.pkg.tar.zst
   world:
     version: 1.615.0-1
     packages:
