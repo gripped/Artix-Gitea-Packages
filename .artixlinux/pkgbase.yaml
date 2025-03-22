@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxhotkey
-  version: 0.1.1-3
+  version: 0.1.2-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - lxhotkey-gtk3
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.1-3
+    version: 0.1.2-1
     packages:
-      - lxhotkey-0.1.1-3-x86_64.pkg.tar.zst
-      - lxhotkey-gtk3-0.1.1-3-x86_64.pkg.tar.zst
+      - lxhotkey-0.1.2-1-x86_64.pkg.tar.zst
+      - lxhotkey-gtk3-0.1.2-1-x86_64.pkg.tar.zst
 team: galaxy
