@@ -1,16 +1,18 @@
 ---
 team: lib32
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: lib32-directx-headers
+  version: 1.615.0-2
+  arch:
+    - x86_64
+  pkgname:
+    - lib32-directx-headers
 actions:
-  addRepo: null
+  addRepo: lib32-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -36,8 +38,9 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 1.615.0-2
+    packages:
+      - lib32-directx-headers-1.615.0-2-x86_64.pkg.tar.zst
   lib32:
     version: null
     packages: []
