@@ -3,7 +3,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=gajim
-pkgver=2.0.2
+pkgver=2.0.4
 pkgrel=1
 pkgdesc="Full featured and easy to use XMPP (Jabber) client"
 url="https://gajim.org/"
@@ -13,7 +13,7 @@ depends=('gtk4' 'gtksourceview5' 'python-cairo' 'python-gobject' 'python-keyring
 makedepends=('python-build' 'python-installer' 'python-wheel')
 optdepends=('python-dbus: to have gajim-remote working'
             'python-sentry_sdk: for Sentry error reporting to dev.gajim.org (users decide whether to send reports or not)'
-            'gspell: for spell checking support'
+            'libspelling: for spell checking support'
             'libsecret: for GNOME Keyring or KDE support as password storage'
             'gupnp-igd: for better NAT traversing'
             'networkmanager: for network lose detection'
@@ -30,12 +30,11 @@ optdepends=('python-dbus: to have gajim-remote working'
             'python-gnupg: encrypting chat messages with OpenPGP'
             'emoji-font: for emojis support')
 source=("https://dev.gajim.org/gajim/gajim/-/archive/${pkgver}/gajim-${pkgver}.tar.gz")
-sha512sums=('096e962c35be176c32f3d60e66b409d9897809b3db396631c1f87fe49f8f675f66ce0b5a33e71796bcce316a9670d229ad82da56835c041f4c9405c484d11ae4')
-b2sums=('1ab09a67c857eeefc25f4c37b7c40ee4bee0c6c49d795ca1783293326dcdbf88f63c409f35c447274cf28c20fba750f870d11d8183535af8fba5da5b853b91b6')
+sha512sums=('7a3369b7df5efa784775916950013cffcc15e3e49f97549e3ba42a3dc41744684051e58a3d4e5d29ad9bb025d3c2a6db11b5df414397ca83879a24ef000ab6f4')
+b2sums=('ee022ded422ba396e94660d7d5f588bbf2cce5bfd371834f776a919af4de2279bed6818a86d60635080ba08eee79092508474cda4417182e54694e7b35dd4afa')
 
 
 build() {
-    env
 	cd "${pkgname}-${pkgver}"
 	./make.py build --dist unix
 	python -m build --wheel --no-isolation
