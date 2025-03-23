@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: microsoft-gsl
-  version: 4.1.0-1
+  version: 4.2.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.1.0-1
+    version: 4.2.0-1
     packages:
-      - microsoft-gsl-4.1.0-1-any.pkg.tar.zst
+      - microsoft-gsl-4.2.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
