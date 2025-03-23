@@ -4,8 +4,8 @@
 
 _gemname='rdoc'
 pkgname="ruby-${_gemname}"
-pkgver=6.6.3.1
-pkgrel=2
+pkgver=6.10.0
+pkgrel=1
 pkgdesc='Command-line documentation generator for Ruby projects'
 arch=('any')
 url='https://ruby.github.io/rdoc/'
@@ -30,7 +30,8 @@ checkdepends=(
 )
 options=('!emptydirs')
 source=("https://github.com/ruby/rdoc/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('c6f3aae83e895e2de28e5a7c27456160dd53007ceb4464a045e0211473eb3d51f49a7c2ac28f2e44e807c5b36447140d15eadff65bfa52335e94adc9c8b56d2e')
+sha512sums=('670295bf8dceb59100fcf6cef46942414d5b1367ff604be3623b5264955c879e37f0bbe382af48a22113f7702d6e3d6e2ed122b6649466779ae4bca1cb0c128b')
+b2sums=('f73029ea1d4984510a2ffe30ca608f609b218948b34ea9966e0ea0482b20946b90b753fe905109a042819677a291442fadc9e66961648db4f1bc442fc817600b')
 
 prepare() {
   cd "${_gemname}-${pkgver}"
