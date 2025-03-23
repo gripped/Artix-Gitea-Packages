@@ -7,10 +7,10 @@ pkgbase:
   pkgname:
     - docker-buildx
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -32,9 +32,9 @@ repos:
     packages:
       - docker-buildx-0.22.0-1-x86_64.pkg.tar.zst
   world:
-    version: 0.21.3-1
+    version: 0.22.0-1
     packages:
-      - docker-buildx-0.21.3-1-x86_64.pkg.tar.zst
+      - docker-buildx-0.22.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
