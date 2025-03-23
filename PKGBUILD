@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 
-_ver=6.13.7
+_ver=6.13.8
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -51,16 +51,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('3a39b62038b7ac2f43d26a1f84b4283e197804e1e817ad637e9a3d874c47801d'
+sha256sums=('259afa59d73d676bec2ae89beacd949e08d54d3f70a7f8b0a742315095751abb'
             'SKIP'
-            'b38f80cf02f9af621ba305ec9ccf992f9f238eb5668110b15cc0c049139f0cd6'
+            '8807a915606709dd8ab98fa836fadefda39ed500c48377355be09fe9a2caaf81'
             'SKIP'
-            '5d1e133ac1c80df9c7e564d05ce9f128e0fba1fce13b7bbaf2fbab5d656f1d0a')
-b2sums=('dc9e71842d7e9d2e016ca2c6e791d627790c87cd445b404c73745dc565eb89617ec69f1150b228d7853a595ea7f6daf6acdb74f8383088af30d42bb4c062a129'
+            '5bdd05243afef68bff7eeb2e7ca247d502c7b5d16849bd938fe9e571cb092901')
+b2sums=('c20916a44a07d355ba8337229f102cd507deae92c88576040965e909fa89c09f98611746a8c8f249bc3dcf492238ce3f08c48f523670ccad4bd7ec21622806af'
         'SKIP'
-        'f2a05a124d4f5dc105c959f5dceef962f867877d451c053b1ba7cca50829b961d74ac3631a5fe06ed0b79ee9388cf9c2f37cffdbd63ab2515e25a0be21a1c77e'
+        'ebff29f7282a7dab84ca09c9c23621daec8d38541c773dc068d5c313db7a60c67e204775ad6e00746ee8f04a7705ab398688e03b2e5534e9062d276e8d6c9d30'
         'SKIP'
-        'c72af75c957bcc56cd312f34553e1a61f6ddb735b2e9f29ba3c23c8f3ce1ee185c0c034836d4b32729fc0aa0537ea9f5a5d839cadf8cc384476316afbbd826c6')
+        '1b2dc9786d0aba40739371f1052672b768118fc5be83a1eadfdeced79709e72c9f0b34258432bc69ab462d3b43993cd958ac41099a545e7603a4d9ea56ece983')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -183,6 +183,14 @@ _package-headers() {
 
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
+
+  echo "Installing Rust files..."
+  install -Dt "$builddir/rust" -m644 rust/*.rmeta
+  install -Dt "$builddir/rust" rust/*.so
+
+  echo "Installing unstripped VDSO..."
+  make INSTALL_MOD_PATH="$pkgdir/usr" vdso_install \
+    link=  # Suppress build-id symlinks
 
   echo "Removing unneeded architectures..."
   local arch
