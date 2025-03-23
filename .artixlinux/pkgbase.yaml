@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby
-  version: 3.4.2-1
+  version: 3.4.2-2
   arch:
     - x86_64
   pkgname:
@@ -13,8 +13,8 @@ pkgbase:
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -29,13 +29,13 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.4.2-1
+    version: 3.4.2-2
     packages:
-      - ruby-3.4.2-1-x86_64.pkg.tar.zst
-      - ruby-docs-3.4.2-1-x86_64.pkg.tar.zst
-      - ruby-default-gems-3.4.2-1-x86_64.pkg.tar.zst
-      - ruby-bundled-gems-3.4.2-1-x86_64.pkg.tar.zst
-      - ruby-stdlib-3.4.2-1-x86_64.pkg.tar.zst
+      - ruby-3.4.2-2-x86_64.pkg.tar.zst
+      - ruby-docs-3.4.2-2-x86_64.pkg.tar.zst
+      - ruby-default-gems-3.4.2-2-x86_64.pkg.tar.zst
+      - ruby-bundled-gems-3.4.2-2-x86_64.pkg.tar.zst
+      - ruby-stdlib-3.4.2-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
