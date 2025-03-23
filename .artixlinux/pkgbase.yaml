@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: glibmm
-  version: 2.66.7-1
+  version: 2.66.8-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - glibmm-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.66.7-1
+    version: 2.66.8-1
     packages:
-      - glibmm-2.66.7-1-x86_64.pkg.tar.zst
-      - glibmm-docs-2.66.7-1-x86_64.pkg.tar.zst
+      - glibmm-2.66.8-1-x86_64.pkg.tar.zst
+      - glibmm-docs-2.66.8-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
