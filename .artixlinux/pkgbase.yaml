@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: nvchecker
-  version: 2.16-3
+  version: 2.17-1
   arch:
     - any
   pkgname:
     - nvchecker
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.16-3
+    version: 2.17-1
     packages:
-      - nvchecker-2.16-3-any.pkg.tar.zst
+      - nvchecker-2.17-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
