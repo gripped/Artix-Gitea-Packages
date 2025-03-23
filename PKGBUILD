@@ -3,8 +3,8 @@
 # Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgname=rubygems
-pkgver=3.5.22
-pkgrel=3
+pkgver=3.6.2
+pkgrel=1
 pkgdesc='Package management framework for Ruby'
 arch=('any')
 url='https://rubygems.org/'
@@ -32,9 +32,9 @@ source=(
   # https://github.com/rubygems/rubygems/pull/7143
   #ruby-3.4-fix-test-install_extension_in_lib.patch
   operating_system.rb)
-sha512sums=('d371634dcd3c63259bbd387f9ab898409596d3be3f8406b60256926f8b8745eda6359c097ccd134fefc9e661cea8f3b1473b9474a26d77a7722bc17692564475'
+sha512sums=('0a7a7a44656ebb717b0bd805a27c18a92e391589a36838e4abecc6c9643192ab9e2a63cd56e113716e635169fa659fcdd1157fa1e394a37c7de7081774365db2'
             '9d74b5528fc87c78316abdd5423a15a8859aec0cd230b20906c53e7e05d8ba8a156af42dc0f6cff270f0c75196079e622c45cc9f0b2f512fc5311fd54e37ab11')
-b2sums=('f44e87c744d5dc38e83c5be9fb91ffce1d02222e14eb7332a0b0b6f70504afc52a14ccfea3462e3a166ee2e98e74d7efa1bfd6e09d0af50ba69b36328bf99bcb'
+b2sums=('68e3637c78c2ac2f59eb58c26cb47c021fda5e0a6fc93e601731cf56ef81ef7f1829a1488074c8535869edf1566a71fdafe3a44bda379c896fc6872a6d660c6d'
         '714ce47535ede25cad914002c45c908de7d4ff6eae5b25daf9ab1d3a75e09fffe6e17bc73422f9ba2fe16ae5e120352c536d2ab6152a36431a7f35e9c5466b47')
 
 prepare() {
