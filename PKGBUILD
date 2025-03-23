@@ -8,7 +8,7 @@
 _gemname=test-unit
 pkgname="ruby-${_gemname}"
 pkgver=3.6.7
-pkgrel=1
+pkgrel=2
 pkgdesc='An xUnit family unit testing framework for Ruby'
 arch=('any')
 url="https://github.com/${_gemname}/${_gemname}"
