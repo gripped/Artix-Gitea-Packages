@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=evisum
-pkgver=0.6.2
+pkgver=0.6.3
 pkgrel=1
 pkgdesc="Process monitor like top based on EFL"
 arch=('x86_64')
