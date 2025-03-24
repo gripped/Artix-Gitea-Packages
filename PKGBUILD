@@ -7,8 +7,8 @@
 
 _gemname=diff-lcs
 pkgname=ruby-${_gemname}
-pkgver=1.5.1
-pkgrel=3
+pkgver=1.6.0
+pkgrel=1
 pkgdesc='Diff::LCS computes the difference between two Enumerable sequences using the McIlroy-Hunt longest common subsequence (LCS) algorithm'
 url='https://github.com/halostatue/diff-lcs'
 arch=('any')
@@ -26,14 +26,17 @@ checkdepends=(
 )
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('9ada148db75f8c06b0168b17f950dfed71f8d1c64a8b696b1843bc97ab68279f26bb97a10db0e5bf0d8277fcad447a6733161a50aa04829a6d115d27f031f5f5')
-b2sums=('e4d5f1c5a24baa6e9de9fbb266453ae121ce63c1bfba4d75d07ea48301be943c663381960e66ee28b16fb7e210be9e75569393deb4ec123813f1685cad44b111')
+sha512sums=('90d0eb9fd8b8beb02d7e2cd3f37958bfa358eb156f1c87529ae528bf3af736502609309d4cf280446feba697c49a20076b6ed162db3b5eb10bab123e22344e05')
+b2sums=('40cbd753491557caac8f60f3c8bc5a57ecb0953a72a1e1227da7efcc29b6b7bc73bf66a3851015c538f266ab4e8166a209a61e0cc8a168daf7fa6402904a0112')
 
 prepare() {
   cd "${_gemname}-${pkgver}"
 
   # update gemspec/Gemfile to allow newer version of the dependencies
-  sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec"
+  sed --in-place --regexp-extended \
+    --expression 's|~>|>=|g' \
+    --expression 's|"CONTRIBUTING.md".freeze, ||g' \
+    "${_gemname}.gemspec"
 }
 
 build() {
@@ -92,7 +95,7 @@ package() {
 
   cp --archive --verbose tmp_install/* "${pkgdir}"
 
-  install --verbose -D --mode=0644 License.md --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
+  install --verbose -D --mode=0644 LICENCE.md --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
   install --verbose -D --mode=0644 *.md --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
 }
 
