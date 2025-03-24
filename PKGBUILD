@@ -13,7 +13,7 @@
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
 pkgver='2.41'
-pkgrel=2
+pkgrel=3
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -24,6 +24,7 @@ makedepends=('asciidoctor'
              'libcap-ng'
              'libxcrypt'
              'meson'
+             'po4a'
              'python'
              'sqlite'
              'udev')
@@ -43,7 +44,6 @@ validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("git+https://github.com/util-linux/util-linux#tag=v${pkgver/rc/-rc}?signed"
         $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
         pam-{login,common,remote,runuser,su}
-        #'util-linux.sysusers'
         '60-rfkill.rules'
         0001-sysusers-and-tmpfiles-no-systemd.patch)
 sha256sums=('bf69afb12389883698078d47ea5ef299d34346ab1c38a885573833ae4b43e5ec'
@@ -57,6 +57,8 @@ sha256sums=('bf69afb12389883698078d47ea5ef299d34346ab1c38a885573833ae4b43e5ec'
             'dcba4bca5b8454c4611c97d7ca8fb3e03d2e8a7e21ab28dfd6d9d95021e1793c')
 
 _backports=(
+  # meson: fix po-man installation
+  '56b97db03a56d90f0480885a35b0383afabc2e18'
 )
 
 _reverts=(
@@ -167,10 +169,6 @@ package_util-linux() {
   mv "$pkgdir"/"${_python_stdlib}"/site-packages util-linux-libs/site-packages
   rmdir "$pkgdir"/"${_python_stdlib}"
   mv "$pkgdir"/usr/share/man/man3 util-linux-libs/man3
-
-  # install esysusers
-#   install -Dm0644 util-linux.sysusers \
-#     "${pkgdir}/usr/lib/sysusers.d/util-linux.conf"
 
   install -Dm0644 60-rfkill.rules \
     "${pkgdir}/usr/lib/udev/rules.d/60-rfkill.rules"
