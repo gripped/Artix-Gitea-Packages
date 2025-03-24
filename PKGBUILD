@@ -4,7 +4,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=ccache
-pkgver=4.11.1
+pkgver=4.11.2
 pkgrel=1
 pkgdesc='Compiler cache that speeds up recompilation by caching previous compilations'
 url='https://ccache.dev/'
@@ -29,9 +29,9 @@ makedepends=(
 )
 checkdepends=('doctest')
 source=(https://github.com/ccache/ccache/releases/download/v${pkgver}/ccache-${pkgver}.tar.xz{,.asc})
-sha512sums=('f7277bbf628e64e19780dd029d7fc0866ade28fa67efd93a72783422586e21beaaa3b0795ba3bfc7ef4403ba6e41823da90cbb6d88c1d5aa412111f3bcb1b7c5'
+sha512sums=('6c0f1243097ee93e7d73d5bdcd4609f771fd19e4b52afc5f9b813663b7d195ec503efb990c3b5205d8e9fa6dd16f78c031d93d5cff47223e6d4c1986ac1d6315'
             'SKIP')
-b2sums=('7a1f866d08232ff74eaa0bac84863bab9fb6a0f4c5c4326be212f1b7e61f10da0afe61d6816ca438afffe2a5be565161086f73c82c84563014f29bfe5e092cf8'
+b2sums=('4536cc3089cb8267fe4c01d3f4f6ffe962cec39d498b962d535a347bfbe1dda5e69652deb86e3e302667d1b51ea60e59a5c72c1acf55466174d0459b640167b7'
         'SKIP')
 validpgpkeys=('5A939A71A46792CF57866A51996DDA075594ADB8') # Joel Rosdahl <joel@rosdahl.net>
 
