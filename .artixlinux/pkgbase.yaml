@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: openntpd
-  version: 6.8p1-9
+  version: 6.8p1-10
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 6.8p1-9
+    version: 6.8p1-10
     packages:
-      - openntpd-6.8p1-9-x86_64.pkg.tar.zst
+      - openntpd-6.8p1-10-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
