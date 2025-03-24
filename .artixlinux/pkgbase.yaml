@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ddrescue
-  version: 1.29-1
+  version: 1.29.1-1
   arch:
     - x86_64
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.29-1
+    version: 1.29.1-1
     packages:
-      - ddrescue-1.29-1-x86_64.pkg.tar.zst
+      - ddrescue-1.29.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
