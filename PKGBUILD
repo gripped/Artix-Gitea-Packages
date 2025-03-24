@@ -4,7 +4,7 @@
 _gemname='thread_order'
 pkgname="ruby-${_gemname}"
 pkgver=1.1.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Test helper for ordering threaded code'
 arch=('any')
 url="https://github.com/JoshCheek/${_gemname}"
