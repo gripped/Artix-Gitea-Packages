@@ -4,7 +4,7 @@
 _gemname='rbs'
 pkgname="ruby-${_gemname}"
 pkgver=3.4.4
-pkgrel=3
+pkgrel=4
 pkgdesc='RBS is the language for type signatures for Ruby and standard library definitions'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
@@ -17,11 +17,9 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-ast
+  ruby-abbrev
   ruby-bundler
   ruby-json-schema
-  ruby-minitest
-  ruby-net-smtp
   ruby-rake
   ruby-rake-compiler
   ruby-test-unit
