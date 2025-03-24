@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kotlin
-  version: 2.1.10-1
+  version: 2.1.20-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.1.10-1
+    version: 2.1.20-1
     packages:
-      - kotlin-2.1.10-1-any.pkg.tar.zst
+      - kotlin-2.1.20-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
