@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.13.7.zen1
+pkgver=6.13.8.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -45,16 +45,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('3a39b62038b7ac2f43d26a1f84b4283e197804e1e817ad637e9a3d874c47801d'
+sha256sums=('259afa59d73d676bec2ae89beacd949e08d54d3f70a7f8b0a742315095751abb'
             'SKIP'
-            'af9109308e2fe73d6f187ce0a2d26ed246cbcbc7d717b1c671d85d1d61124d39'
+            '05da663bb9b6ec9ffbbbad47dbab232e8071952fa9b22a212e2706d3ffc4f38f'
             'SKIP'
-            'e1a8678a4a702220a361aa81d9d744c083ee7e73eb033b442d8c266d536f1eff')
-b2sums=('dc9e71842d7e9d2e016ca2c6e791d627790c87cd445b404c73745dc565eb89617ec69f1150b228d7853a595ea7f6daf6acdb74f8383088af30d42bb4c062a129'
+            '30372e75142c7bd8ba988034d72b1d17031d1a562d06e4b56170089099282153')
+b2sums=('c20916a44a07d355ba8337229f102cd507deae92c88576040965e909fa89c09f98611746a8c8f249bc3dcf492238ce3f08c48f523670ccad4bd7ec21622806af'
         'SKIP'
-        '05cadbe7a698cc41d75eae263c363b014a1be2e26e20d9e2f267eaad6a48fc2765b0a2bee1036ed6f2bd47dc4bb9c5f13cbc34640217adbd437b23afb52082ef'
+        '0228964c400369e8a81878e9707e5e2f62f8bcbdbbb2eb56c4576a742910e0422f66c01404fc7c5b58608eb01de7f5c98bb696971dcb525c679fcc19d9b76c77'
         'SKIP'
-        'ad99fded75fbeab7b306b678e5bc1f6511fe0aeabea216e81ce758ada15ab4b53aa0314599d21e10cb34289fe7ceddea9d60ff4ceb091eb7111e51019316bfb2')
+        '74a249c731a73b761aba30bd79d31533705421370fd8da26b17c3b0f83916a2c68f5ecf49f8df5706a0c7f8620b663e5bbc5f3fe6be35f7be2bbef6747c0ad9e')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -176,6 +176,14 @@ _package-headers() {
 
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
+
+  echo "Installing Rust files..."
+  install -Dt "$builddir/rust" -m644 rust/*.rmeta
+  install -Dt "$builddir/rust" rust/*.so
+
+  echo "Installing unstripped VDSO..."
+  make INSTALL_MOD_PATH="$pkgdir/usr" vdso_install \
+    link=  # Suppress build-id symlinks
 
   echo "Removing unneeded architectures..."
   local arch
