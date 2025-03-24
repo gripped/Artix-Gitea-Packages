@@ -6,38 +6,32 @@
 # Contributor: lolilolicon
 
 pkgname=privoxy
-pkgver=3.0.34
-pkgrel=3
+pkgver=4.0.0
+pkgrel=1
 pkgdesc='A web proxy with advanced filtering capabilities.'
 arch=('x86_64')
 url='https://www.privoxy.org'
 license=('GPL2')
 depends=('pcre2' 'zlib')
+makedepends=('git')
 backup=('etc/privoxy/'{config,trust,match-all.action,{default,user}.{action,filter}}
         'etc/logrotate.d/privoxy')
-source=("https://downloads.sourceforge.net/ijbswa/${pkgname}-${pkgver}-stable-src.tar.gz"
-        '53748ca8ca3c893025be34dd4f104546fcbd0602.patch::https://www.privoxy.org/gitweb/?p=privoxy.git;a=patch;h=53748ca8ca3c893025be34dd4f104546fcbd0602'
+source=("git+https://www.privoxy.org/git/privoxy.git#tag=v_${pkgver//./_}"
         'privoxy.logrotate.d'
-        'privoxy.sysusers')
-sha256sums=('e6ccbca1656f4e616b4657f8514e33a70f6697e9d7294356577839322a3c5d2c'
-            '61861bc3809f06eb77129d466c6e27f35972fa4aef8be2db2b6a789a3700fee8'
+		'privoxy.sysusers')
+sha256sums=('f2621a95a004f2869ed57053e11c0875ce930f152049fd0aed008a13c5b326fc'
             '769740ea3c15228f24b559192e7b3f45b95dcf9040e2b25f15bfdfae8af86ce3'
-            '6681231552f431962dda2ac49187df833b2b57544eac97ca94d1f4207b27b04c')
+			'6681231552f431962dda2ac49187df833b2b57544eac97ca94d1f4207b27b04c')
 
 prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}-stable"
-  # [PATCH] Add pcre2 support
-  patch -Np1 -i ../53748ca8ca3c893025be34dd4f104546fcbd0602.patch
-
+  cd privoxy
   autoheader
   autoconf
 }
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}-stable"
-
+  cd privoxy
   ./configure --prefix=/usr --sysconfdir=/etc/privoxy --enable-compression
-
   make
   sed -i '
     s+^confdir \.+confdir /etc/privoxy+
@@ -46,7 +40,7 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}-stable"
+  cd privoxy
 
   install -Dm644 "$srcdir/privoxy.sysusers" "$pkgdir/usr/lib/sysusers.d/privoxy.conf"
   install -Dm644 "$srcdir/privoxy.logrotate.d" "$pkgdir/etc/logrotate.d/privoxy"
