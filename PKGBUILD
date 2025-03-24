@@ -8,7 +8,7 @@ _alpm=2.2
 
 pkgname=openrc
 pkgver=0.61
-pkgrel=2
+pkgrel=3
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
@@ -49,6 +49,13 @@ backup=(
     'etc/conf.d/udev'
     'etc/conf.d/udev-trigger'
     'etc/conf.d/udev-settle'
+    'etc/conf.d/localmount'
+    'etc/conf.d/netmount'
+    'etc/conf.d/bootmisc'
+    'etc/conf.d/dmesg'
+    'etc/conf.d/devfs'
+    'etc/conf.d/killprocs'
+    'etc/conf.d/swap'
     'etc/conf.d/agetty.tty'{1,2,3,4,5,6}
 )
 source=(
