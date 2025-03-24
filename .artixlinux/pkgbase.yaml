@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gtkmm-4.0
-  version: 4.16.0-1
+  version: 4.18.0-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gtkmm-4.0-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.16.0-1
+    version: 4.18.0-1
     packages:
-      - gtkmm-4.0-4.16.0-1-x86_64.pkg.tar.zst
-      - gtkmm-4.0-docs-4.16.0-1-x86_64.pkg.tar.zst
+      - gtkmm-4.0-4.18.0-1-x86_64.pkg.tar.zst
+      - gtkmm-4.0-docs-4.18.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
