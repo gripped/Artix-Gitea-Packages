@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: wxwidgets
-  version: 3.2.7.1-1
+  version: 3.2.7.1-2
   arch:
     - x86_64
   pkgname:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.2.7.1-1
+    version: 3.2.7.1-2
     packages:
-      - wxwidgets-common-3.2.7.1-1-x86_64.pkg.tar.zst
-      - wxwidgets-gtk3-3.2.7.1-1-x86_64.pkg.tar.zst
-      - wxwidgets-qt5-3.2.7.1-1-x86_64.pkg.tar.zst
+      - wxwidgets-common-3.2.7.1-2-x86_64.pkg.tar.zst
+      - wxwidgets-gtk3-3.2.7.1-2-x86_64.pkg.tar.zst
+      - wxwidgets-qt5-3.2.7.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
