@@ -4,7 +4,7 @@
 
 pkgname=xdg-desktop-portal
 pkgver=1.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Desktop integration portals for sandboxed apps"
 url="https://flatpak.github.io/xdg-desktop-portal/"
 arch=(x86_64)
@@ -71,7 +71,7 @@ build() {
 check() {
   # https://github.com/flatpak/xdg-desktop-portal/issues/1589
   XDP_VALIDATE_ICON_INSECURE=1 XDP_VALIDATE_SOUND_INSECURE=1 \
-    meson test -C build --print-errorlogs || :
+    meson test -C build --print-errorlogs
 }
 
 package() {
