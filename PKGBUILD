@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=terminology
-pkgver=1.13.1
-pkgrel=3.1
+pkgver=1.14
+pkgrel=1
 pkgdesc="EFL based terminal emulator"
 arch=('x86_64')
 url="http://www.enlightenment.org/p.php?p=about/terminology"
