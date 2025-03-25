@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: xf86-video-intel
-  version: 1:2.99.917+923+gb74b67f0-2.2
+  version: 1:2.99.917+939+g4a64400e-1
   arch:
     - x86_64
   pkgname:
     - xf86-video-intel
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:2.99.917+923+gb74b67f0-2.2
+    version: 1:2.99.917+939+g4a64400e-1
     packages:
-      - xf86-video-intel-1:2.99.917+923+gb74b67f0-2.2-x86_64.pkg.tar.zst
+      - xf86-video-intel-1:2.99.917+939+g4a64400e-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
