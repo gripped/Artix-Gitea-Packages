@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: yamllint
-  version: 1.36.2-1
+  version: 1.37.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.36.2-1
+    version: 1.37.0-1
     packages:
-      - yamllint-1.36.2-1-any.pkg.tar.zst
+      - yamllint-1.37.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
