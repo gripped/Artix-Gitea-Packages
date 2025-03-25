@@ -15,7 +15,7 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.13
+pkgver=6.14
 pkgrel=1
 license=('GPL-2.0-only')
 arch=('x86_64')
@@ -44,14 +44,13 @@ makedepends+=('llvm' 'clang')
 makedepends+=('libnl')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
-#        "https://cdn.kernel.org/pub/linux/kernel/v6.x/patch-$pkgver.2.xz"
         'cpupower.default'
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('27aaa9e0a5326c003444cbffcb0ab8a0b444b6e7546e15aa44bc8caa84d97046'
+sha256sums=('8344227fc1b6a8f1df4d1c05b4a5a30150c10796e9731ae35ae53aa84ebc5818'
             '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
 
 prepare() {
