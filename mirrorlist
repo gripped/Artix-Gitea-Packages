@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-01-02
+## Generated on 2025-03-26
 ##
 
 # Artix mirrors
@@ -9,9 +9,9 @@
 # Then put the resulting list on top of this file.
 
 # Default mirrors
-Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
 Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
+Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 
 ## Europe
 # Czech Republic
@@ -32,8 +32,8 @@ Server = https://mirror.pascalpuffke.de/artix-linux/$repo/os/$arch
 Server = https://ftp.uni-bayreuth.de/linux/artix-linux/$repo/os/$arch
 Server = https://ftp.halifax.rwth-aachen.de/artixlinux/$repo/os/$arch
 Server = https://artix.unixpeople.org/repos/$repo/os/$arch
-Server = https://mirror1.artixlinux.org/repos/$repo/os/$arch
-Server = https://eu-mirror.artixlinux.org/repos/$repo/os/$arch
+Server = https://mirror2.artixlinux.org/$repo/os/$arch
+Server = https://mirror3.artixlinux.org/repos/$repo/os/$arch
 Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
 # Greece
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
@@ -61,7 +61,6 @@ Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
 Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://mirrors.ocf.berkeley.edu/artix-linux/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
-Server = https://us-mirror.artixlinux.org/$repo/os/$arch
 Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
 # Canada
 Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
