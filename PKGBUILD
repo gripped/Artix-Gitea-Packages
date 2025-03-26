@@ -37,6 +37,7 @@ prepare() {
   git cherry-pick -n d22e057 # Fix build
   git cherry-pick -n 9e1d9eb
   git cherry-pick -n a667c61 # Install icons
+  git cherry-pick -n 212b189 # Fix build with boost
   rm -fr .git
 }
 
