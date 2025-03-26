@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxtask
-  version: 0.1.11-1
+  version: 0.1.12-1
   arch:
     - x86_64
   pkgname:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.1.11-1
+    version: 0.1.12-1
     packages:
-      - lxtask-0.1.11-1-x86_64.pkg.tar.zst
-      - lxtask-gtk3-0.1.11-1-x86_64.pkg.tar.zst
+      - lxtask-0.1.12-1-x86_64.pkg.tar.zst
+      - lxtask-gtk3-0.1.12-1-x86_64.pkg.tar.zst
 team: galaxy
