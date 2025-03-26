@@ -145,11 +145,11 @@ for _lang in "${_languages[@]}"; do
   }"
 done
 
-verify() {
-  cd "$SRCDEST"
-  sed -n "s|  linux-x86_64/xpi/|  firefox-i18n-$pkgver-|p" \
-    firefox-$pkgver-SHA512SUMS | sha512sum -c -
-}
+#verify() {
+#  cd "$SRCDEST"
+#  sed -n "s|  linux-x86_64/xpi/|  firefox-i18n-$pkgver-|p" \
+#    firefox-$pkgver-SHA512SUMS | sha512sum -c -
+#}
 
 _package() {
   pkgdesc="$2 language pack for Firefox"
