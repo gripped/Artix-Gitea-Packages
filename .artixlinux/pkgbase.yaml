@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: firejail
-  version: 0.9.72-3
+  version: 0.9.74-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.9.72-3
+    version: 0.9.74-1
     packages:
-      - firejail-0.9.72-3-x86_64.pkg.tar.zst
+      - firejail-0.9.74-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
