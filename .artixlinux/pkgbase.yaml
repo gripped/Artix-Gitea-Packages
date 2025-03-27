@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xonsh
-  version: 0.19.3-2
+  version: 0.19.4-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.19.3-2
+    version: 0.19.4-1
     packages:
-      - xonsh-0.19.3-2-any.pkg.tar.zst
+      - xonsh-0.19.4-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
