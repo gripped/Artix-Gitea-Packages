@@ -2,7 +2,7 @@
 
 pkgname=moksha-themes
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc='Themes for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
 arch=('x86_64')
@@ -32,4 +32,6 @@ depends=(
   moksha-theme-sunshine
   moksha-theme-viceversa
   moksha-theme-wood-grey
+  moksha-theme-zenithal
 )
+
