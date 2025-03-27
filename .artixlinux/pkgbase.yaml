@@ -1,16 +1,18 @@
 ---
 team: galaxy
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: moksha-theme-zenithal
+  version: 0.0.1-1
+  arch:
+    - any
+  pkgname:
+    - moksha-theme-zenithal
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -45,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.0.1-1
+    packages:
+      - moksha-theme-zenithal-0.0.1-1-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []
