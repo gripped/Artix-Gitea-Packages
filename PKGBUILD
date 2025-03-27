@@ -75,6 +75,8 @@ check() {
   cd "${pkgname}"
   # remove all tests, which requires real root 
   rm -r $(dirname $(rg -t sh -l -e SUDO_HELPER -e mount -e prepare_test) | rg 'tests/')
+  # prevent tests from calling function that performs 'modprobe btrfs' as this errors when not run as real root
+  sed -i '/^check_kernel_support$/d' tests/*.sh
   # -j1 for running tests chronological
   make -j1 -C tests test
 }
