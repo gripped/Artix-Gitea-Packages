@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxrandr
-  version: 0.3.2-4
+  version: 0.3.3-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - lxrandr-gtk3
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.3.2-4
+    version: 0.3.3-1
     packages:
-      - lxrandr-0.3.2-4-x86_64.pkg.tar.zst
-      - lxrandr-gtk3-0.3.2-4-x86_64.pkg.tar.zst
+      - lxrandr-0.3.3-1-x86_64.pkg.tar.zst
+      - lxrandr-gtk3-0.3.3-1-x86_64.pkg.tar.zst
 team: galaxy
