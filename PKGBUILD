@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-arc-dark
-pkgver=0.8.11
+pkgver=0.8.13
 _pkgname2=MokshaArcDark
 _pkgname3=arc-dark
 _pkgname4=src
