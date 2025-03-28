@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rxvt-unicode
-  version: 9.31-6
+  version: 9.31-7
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.31-6
+    version: 9.31-7
     packages:
-      - rxvt-unicode-9.31-6-x86_64.pkg.tar.zst
-      - rxvt-unicode-terminfo-9.31-6-x86_64.pkg.tar.zst
+      - rxvt-unicode-9.31-7-x86_64.pkg.tar.zst
+      - rxvt-unicode-terminfo-9.31-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
