@@ -1,10 +1,9 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: David Anderson <dave@natulte.net>
 
 pkgname=tailscale
-pkgver=1.80.3
+pkgver=1.82.0
 pkgrel=1
 pkgdesc="A mesh VPN that makes it easy to connect your devices, wherever they are."
 arch=("x86_64")
@@ -14,10 +13,9 @@ makedepends=("git" "go")
 depends=("glibc")
 backup=("etc/default/tailscaled")
 # Important: Check if the version has been published before updating
-# curl -s "https://pkgs.tailscale.com/stable/?mode=json"
 # pkgctl version check
 source=("git+https://github.com/tailscale/tailscale.git#tag=v${pkgver}")
-sha256sums=('4c0526282e5e9284d316856278564a6edd9ea20ca31b17bc481d89245607aa81')
+sha256sums=('a685be50fc8375e24a851b51e07e46b2263710196ecf9bff0b8077f415915130')
 
 options=(!lto)
 
@@ -53,8 +51,6 @@ package() {
     cd "${pkgname}"
     install -Dm755 tailscale tailscaled -t "$pkgdir/usr/bin"
     install -Dm644 cmd/tailscaled/tailscaled.defaults "$pkgdir/etc/default/tailscaled"
-    # Artix stuff, don't remove v
-    # install -Dm644 cmd/tailscaled/tailscaled.service -t "$pkgdir/usr/lib/systemd/system"
     install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 
   "$pkgdir/usr/bin/tailscale" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/tailscale"
