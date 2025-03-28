@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: containers-common
-  version: 1:0.62.2-2
+  version: 1:0.62.3-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.62.2-2
+    version: 1:0.62.3-1
     packages:
-      - containers-common-1:0.62.2-2-any.pkg.tar.zst
+      - containers-common-1:0.62.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
