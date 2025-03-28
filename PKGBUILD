@@ -3,7 +3,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=glslang
-pkgver=15.1.0
+pkgver=15.2.0
 pkgrel=1
 pkgdesc='OpenGL and OpenGL ES shader front end and validator'
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('gcc-libs' 'spirv-tools')
 makedepends=('cmake' 'ninja' 'spirv-headers' 'python')
 options=('staticlibs')
 source=(${pkgname}-${pkgver}.tar.gz::https://github.com/KhronosGroup/glslang/archive/${pkgver}.tar.gz)
-sha256sums=('4bdcd8cdb330313f0d4deed7be527b0ac1c115ff272e492853a6e98add61b4bc')
+sha256sums=('45e3920d264d5c2cc3bfaec0e5dbb66cffd549255e0aaaf38cd283918e35c8ba')
 
 build() {
   cd ${pkgname}-${pkgver}
