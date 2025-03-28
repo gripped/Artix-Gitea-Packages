@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: cfitsio
-  version: 1:4.6.0-4
+  version: 1:4.6.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:4.6.0-4
+    version: 1:4.6.2-1
     packages:
-      - cfitsio-1:4.6.0-4-x86_64.pkg.tar.zst
+      - cfitsio-1:4.6.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
