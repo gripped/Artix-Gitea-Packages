@@ -8,7 +8,7 @@
 pkgbase=thunderbird
 pkgname=(thunderbird)
 pkgver=136.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
 arch=(x86_64)
@@ -66,6 +66,7 @@ source=(https://archive.mozilla.org/pub/thunderbird/releases/${pkgver}/source/th
         metainfo.patch
         org.mozilla.Thunderbird.desktop
         thunderbird-system-icu-76.patch
+        1955834.patch
 )
 validpgpkeys=(
   14F26682D0916CDD81E37B6D61B7B526D98F0353 # Mozilla Software Releases <release@mozilla.com>
@@ -270,6 +271,7 @@ sha512sums=('cc217f3e07620442714337ea396a7146d9d80cc973de862990a9fac7c4343e90041
             '7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290'
             'fffeb73e2055408c5598439b0214b3cb3bb4e53dac3090b880a55f64afcbc56ba5d32d1187829a08ef06d592513d158ced1fde2f20e2f01e967b5fbd3b2fafd4'
             'dd8dd2ba5f2ce009c081c3fc5f1fc0e87261acd55770071e1e05bc6b273d701d9408a282b53a08304eb4b003b336e80c15c2227c5756c3f70f57c951be89d324'
+            '40c12e86f9f4151a5c97dad3db53785e88b3fbb1f0432cb114425c0242ce49a1ad99d6b84590b9e79b21fa403f347fede984a5974244df893bdca6c488a6e6dd'
             'b5809ce531ee8e8a8410f467ee51535c22e1041c7cdd3db8d432c542a400a4fcb9ce338ecbc8f26c4316844351021a3c6f7e34fa65a734a5dd87ac7513d60298'
             '4afcd597d70db6286fa600095c4dc9d74079d210f769a010b16c9d1cca414755d75b51d691c598259cc5c50ede6d63fc9e5d1be6f5d585bdc0d44937b43eb287'
             '37761e5a69b8c38268e25ab79832638577ec3c91c7cc4b8626750a9e1a4ca64c19cda9ddaba2d19d4f02847c1b140340fbf547031fbef95e972d9499935f4197'
