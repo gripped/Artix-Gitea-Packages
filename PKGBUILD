@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=optimist
 pkgname=ruby-${_gemname}
 pkgver=3.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Commandline option parser for Ruby that just gets out of your way'
 url='https://github.com/ManageIQ/optimist'
 arch=('any')
