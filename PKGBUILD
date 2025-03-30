@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 _gemname=multi_json
 pkgname="ruby-${_gemname}"
 pkgver=1.15.0
-pkgrel=5
+pkgrel=6
 pkgdesc='A common interface to multiple JSON libraries.'
 arch=('any')
 url="https://github.com/intridea/${_gemname}"
