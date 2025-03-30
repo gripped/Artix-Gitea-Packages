@@ -1,7 +1,6 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Thomas Dziedzic <gostrc@gmail.com>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: John Proctor <jproctor@prium.net>
