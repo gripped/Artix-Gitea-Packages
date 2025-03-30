@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='ansi'
 pkgname="ruby-${_gemname}"
 pkgver=1.5.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Set of ANSI Code based classes and modules for Ruby'
 arch=('any')
 url="https://github.com/rubyworks/${_gemname}"
