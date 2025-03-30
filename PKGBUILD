@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='nokogiri'
 pkgname="ruby-${_gemname}"
 pkgver=1.18.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser'
 arch=('x86_64')
 url='https://nokogiri.org'
