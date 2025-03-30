@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Bernhard Landauer <oberon@manjaro.org>
 # Contributor: Alexsandr Pavlov <kidoz at mail dot ru>
 
 _gemname=hoe
 pkgname=ruby-${_gemname}
 pkgver=4.2.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Hoe is a rake/rubygems helper for project Rakefiles'
 url='https://www.zenspider.com/projects/hoe.html'
 arch=('any')
