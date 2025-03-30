@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+# Maintainer: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='docile'
 pkgname="ruby-${_gemname}"
 pkgver=1.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="keeps your Ruby DSLs tame and well-behaved"
 arch=('any')
 url='https://ms-ati.github.io/docile'
@@ -20,7 +19,6 @@ checkdepends=(
   ruby-bundler
   ruby-rake
   ruby-rspec
-  ruby-simplecov
 )
 options=(!emptydirs)
 source=("https://github.com/ms-ati/docile/archive/v$pkgver/$_gemname-$pkgver.tar.gz")
@@ -31,6 +29,10 @@ prepare() {
 
   # we use an archive not a git checkout
   sed --in-place --regexp-extended 's|git ls-files -z|find -print0|' "${_gemname}.gemspec"
+
+  # remove dependency on simplecov to break dependency cycle
+  sed --in-place '/require "simplecov"/,+5d' spec/spec_helper.rb
+  sed --in-place '/Object.send/d' spec/spec_helper.rb
 }
 
 build() {
