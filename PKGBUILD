@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: loqs
 
 _gemname=memoist
 pkgname=ruby-${_gemname}
 pkgver=0.16.2
-pkgrel=2
+pkgrel=3
 pkgdesc='ActiveSupport::Memoizable with a few enhancements'
 arch=(any)
 url="https://github.com/matthewrudy/${_gemname}"
