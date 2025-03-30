@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim at bastelfreak dot de>
+# Maintainer: Tim Meusel <tim at bastelfreak dot de>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname=fast_gettext
 pkgname=ruby-${_gemname}
 pkgver=3.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple, fast, memory-efficient and threadsafe implementation of GetText'
 arch=(any)
 url='https://github.com/grosser/fast_gettext'
