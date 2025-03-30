@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-messages
 pkgver=25.0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Protocol Buffer messages for Cucumber's inter-process communication"
 arch=(any)
 url='https://github.com/cucumber/messages/tree/main/ruby'
