@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=mini_portile
 pkgname=ruby-${_gemname}
 pkgver=0.6.2
-pkgrel=6
+pkgrel=7
 pkgdesc='Simple autoconf builder for developers'
 url='https://github.com/flavorjones/mini_portile'
 arch=('any')
