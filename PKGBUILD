@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='oedipus_lex'
 pkgname="ruby-${_gemname}"
 pkgver=2.6.2
-pkgrel=3
+pkgrel=4
 pkgdesc="This is not your father’s lexer"
 arch=('any')
 url="https://github.com/seattlerb/${_gemname}"
