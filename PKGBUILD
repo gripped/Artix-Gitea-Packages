@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='erubi'
 pkgname="ruby-${_gemname}"
 pkgver=1.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Small ERB Implementation'
 arch=('any')
 url="https://github.com/jeremyevans/erubi"
