@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='minitest-proveit'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.0
-pkgrel=4
+pkgrel=5
 pkgdesc='forces all tests to prove success (via at least one assertion) rather than rely on the absence of failure.'
 arch=('any')
 url='https://github.com/seattlerb/minitest-proveit'
