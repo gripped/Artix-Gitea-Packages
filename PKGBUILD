@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Anatol Pomozov
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Anatol Pomozov
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='irb'
 pkgname="ruby-${_gemname}"
 pkgver=1.14.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Interactive Ruby command-line tool for REPL (Read Eval Print Loop).'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"

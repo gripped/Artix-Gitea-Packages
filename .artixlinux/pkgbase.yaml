@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-irb
-  version: 1.14.3-1
+  version: 1.14.3-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.14.3-1
+    version: 1.14.3-2
     packages:
-      - ruby-irb-1.14.3-1-any.pkg.tar.zst
+      - ruby-irb-1.14.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
