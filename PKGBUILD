@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-rake-contrib
 _commit=d23737377289b21ad51973297f7a298b604fac9d
 pkgver=1.0.0.20210616
-pkgrel=3
+pkgrel=4
 pkgdesc='Additional libraries for Rake'
 arch=(any)
 url='https://github.com/ruby/rake-contrib'
