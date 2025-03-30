@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=chronic
 pkgname=ruby-${_gemname}
 pkgver=0.10.2
-pkgrel=5
+pkgrel=6
 pkgdesc='Natural language date/time parser written in pure Ruby'
 url='https://github.com/mojombo/chronic'
 arch=('any')
