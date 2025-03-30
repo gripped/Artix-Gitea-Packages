@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Eric Berquist <eric dot berquist at gmail dot com>
 
 pkgname=ruby-mixlib-cli
 _pkgname="${pkgname#ruby-}"
 pkgver=2.1.10
-pkgrel=3
+pkgrel=4
 pkgdesc='A simple mixin for CLI interfaces, including option parsing'
 arch=('any')
 url='https://github.com/chef/mixlib-cli'
