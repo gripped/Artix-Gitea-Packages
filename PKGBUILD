@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: loqs
 
 _gemname=mkmf-lite
 pkgname=ruby-${_gemname}
 pkgver=0.6.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A lighter version of mkmf designed for use as a library'
 arch=(any)
 url="https://github.com/djberg96/${_gemname}"
