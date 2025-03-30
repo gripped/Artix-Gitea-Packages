@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-nanotest
 pkgver=0.9.4.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Extremely mynymal test framework'
 arch=(any)
 url='https://github.com/mynyml/nanotest'
