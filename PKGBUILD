@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-ice_nine
 _pkgname="${pkgname#ruby-}"
 pkgver=0.11.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Deep freeze Ruby objects'
 arch=('any')
 url='https://github.com/dkubb/ice_nine'
