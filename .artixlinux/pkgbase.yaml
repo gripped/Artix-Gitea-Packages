@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-cucumber-html-formatter
-  version: 21.4.0-3
+  version: 21.4.0-4
   arch:
     - any
   pkgname:
     - ruby-cucumber-html-formatter
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 21.4.0-4
+    packages:
+      - ruby-cucumber-html-formatter-21.4.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

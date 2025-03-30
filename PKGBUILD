@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-html-formatter
 pkgver=21.4.0
-pkgrel=3
+pkgrel=4
 pkgdesc="HTML formatter for Cucumber"
 arch=(any)
 url='https://github.com/cucumber/html-formatter/tree/main/ruby'
