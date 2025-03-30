@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=path_expander
 pkgname=ruby-${_gemname}
 pkgver=1.1.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Helps pre-process command-line arguments expanding directories into their constituent file'
 url='https://github.com/seattlerb/path_expander'
 arch=('any')
