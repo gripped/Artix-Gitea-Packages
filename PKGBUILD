@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-facets
 pkgver=3.1.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Premiere collection of general purpose method extensions and standard additions for the Ruby programming language'
 arch=(any)
 url='https://github.com/rubyworks/facets'
