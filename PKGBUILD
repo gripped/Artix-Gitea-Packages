@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 _gemname=yard
 pkgname=ruby-${_gemname}
 pkgver=0.9.34
-pkgrel=3
+pkgrel=4
 pkgdesc='YARD is a Ruby Documentation tool. The Y stands for "Yay!"'
 url='https://yardoc.org/'
 arch=('any')
