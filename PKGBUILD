@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Bert Peters <bert@bertptrs.nl>
 
 pkgname=ruby-kramdown-parser-gfm
 _pkgname="${pkgname#ruby-}"
 pkgver=1.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='A kramdown parser that converts GitHub Flavoured Markdown to HTML'
 arch=('any')
 url='https://github.com/kramdown/parser-gfm'
