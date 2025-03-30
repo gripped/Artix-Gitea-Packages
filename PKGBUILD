@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-gherkin
 pkgver=28.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Gherkin for Ruby"
 arch=(any)
 url='https://github.com/cucumber/gherkin/blob/main/ruby'
