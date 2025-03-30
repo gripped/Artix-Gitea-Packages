@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='minitest-stub-const'
 pkgname="ruby-${_gemname}"
 pkgver=0.6
-pkgrel=4
+pkgrel=5
 pkgdesc='Stub constants for the duration of a block in MiniTest.Similar to RSpecs stub_const'
 arch=('any')
 url='https://github.com/adammck/minitest-stub-const'
