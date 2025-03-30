@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-rbnacl
 pkgver=7.1.1
 _commit=8794ab08c482e67819958705198df9e866165133
-pkgrel=5
+pkgrel=6
 pkgdesc='Ruby FFI binding to the Networking and Cryptography (NaCl) library (libsodium)'
 arch=(any)
 url='https://github.com/RubyCrypto/rbnacl'
