@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sorted_set
 pkgver=1.0.3
 _commit=3be5eb2c1a33cb78603abbfe423d188d355a240a
-pkgrel=4
+pkgrel=5
 pkgdesc='Implements a variant of Set whose elements are sorted in ascending order'
 arch=(any)
 url='https://github.com/knu/sorted_set'
