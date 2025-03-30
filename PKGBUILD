@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-fiber-annotation
 pkgver=0.2.0
-pkgrel=5
+pkgrel=7
 pkgdesc='A mechanism for annotating fibers'
 arch=(any)
 url='https://github.com/ioquatix/fiber-annotation'
@@ -15,7 +14,7 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-bake-modernize
+  ruby-bake
   ruby-bake-test
   ruby-bake-test-external
   ruby-bundler
@@ -29,7 +28,11 @@ sha256sums=('95d37669c3c3b13fccf2832ba30d8bafeee455e35fc7b263cedf2e0d377f33be')
 prepare() {
   cd fiber-annotation-$pkgver
   sed '/signing_key/d' -i fiber-annotation.gemspec
-  sed -i '/bake-gem/d;/utopia-project/d' gems.rb
+
+  sed --in-place \
+    --expression '/group :maintenance/,/end/d' \
+    --expression '/rubocop/d' \
+    gems.rb
 }
 
 build() {
