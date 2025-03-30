@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Sirat18 <aur@sirat18.de>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Alfredo Palhares <masterkorp@masterkorp.net>
@@ -7,7 +6,7 @@
 
 _gemname=diff-lcs
 pkgname=ruby-${_gemname}
-pkgver=1.6.0
+pkgver=1.6.1
 pkgrel=1
 pkgdesc='Diff::LCS computes the difference between two Enumerable sequences using the McIlroy-Hunt longest common subsequence (LCS) algorithm'
 url='https://github.com/halostatue/diff-lcs'
@@ -26,8 +25,8 @@ checkdepends=(
 )
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('90d0eb9fd8b8beb02d7e2cd3f37958bfa358eb156f1c87529ae528bf3af736502609309d4cf280446feba697c49a20076b6ed162db3b5eb10bab123e22344e05')
-b2sums=('40cbd753491557caac8f60f3c8bc5a57ecb0953a72a1e1227da7efcc29b6b7bc73bf66a3851015c538f266ab4e8166a209a61e0cc8a168daf7fa6402904a0112')
+sha512sums=('fccd868b789a5976342c370b08e8470c6e2c502742887494008fe8eb4e31c61f223209769cc52b7dd7e4e84776c843ad40abb9bb664b084feb714ec305ba4ce4')
+b2sums=('002d72e9c3e752b1e05636177c06c68d561d2e9dc2716285ae8973f6473910c7fc40e7231b408a31040b99240ee220e6e4cc6d73bc3c6bbbf336fdccb39abda5')
 
 prepare() {
   cd "${_gemname}-${pkgver}"
@@ -37,6 +36,10 @@ prepare() {
     --expression 's|~>|>=|g' \
     --expression 's|"CONTRIBUTING.md".freeze, ||g' \
     "${_gemname}.gemspec"
+
+  sed --in-place --regexp-extended \
+    --expression '/trusted_release/d' \
+    Rakefile
 }
 
 build() {
