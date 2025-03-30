@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=kramdown
 pkgname=ruby-kramdown
 pkgver=2.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Fast, pure Ruby Markdown superset converter, using a strict syntax definition'
 url='https://kramdown.gettalong.org/'
 arch=('any')
