@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-ci-environment
 pkgver=9.2.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Detect CI Environment from environment variables'
 arch=(any)
 url='https://github.com/cucumber/ci-environment'
