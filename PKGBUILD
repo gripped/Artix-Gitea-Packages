@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='fiber-storage'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides a compatibility shim for fiber storage'
 arch=('any')
 url="https://github.com/ioquatix/${_gemname}"
