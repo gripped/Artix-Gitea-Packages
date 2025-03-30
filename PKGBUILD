@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=samus
 pkgname=ruby-${_gemname}
 pkgver=3.0.9
-pkgrel=4
+pkgrel=5
 pkgdesc='Helps you automate the release of Open Source Software'
 url='https://github.com/lsegal/samus'
 arch=('any')
