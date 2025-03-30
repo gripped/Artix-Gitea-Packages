@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='permessage_deflate'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Per-message DEFLATE compression extension for WebSocket connections'
 arch=('any')
 url='https://github.com/faye/permessage-deflate-ruby'
