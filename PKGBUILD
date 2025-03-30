@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-multi_test
 pkgver=1.1.0
 _commit=9f984893ba8409bb124dfc3e753b1872105cad37
-pkgrel=4
+pkgrel=5
 pkgdesc='Wafter-thin gem to help control rogue test/unit/autorun requires'
 arch=(any)
 url='https://github.com/cucumber/multi_test'
