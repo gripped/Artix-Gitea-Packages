@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 _gemname=rexml
 pkgname=ruby-$_gemname
 pkgver=3.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc='An XML toolkit for Ruby'
 arch=(any)
 url='https://github.com/ruby/rexml'
