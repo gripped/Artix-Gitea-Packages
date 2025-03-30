@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Dmitry Kharitonov <darksab0r@gmail.com>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: eagletmt <eagletmt@gmail.com>
@@ -8,7 +7,7 @@
 _gemname='mini_portile2'
 pkgname="ruby-${_gemname}"
 pkgver=2.8.8
-pkgrel=1
+pkgrel=3
 pkgdesc='Simple autoconf builder for developers'
 url='https://github.com/flavorjones/mini_portile'
 arch=('any')
@@ -42,6 +41,8 @@ prepare() {
 
   # we don't build from a git checkout
   sed --in-place --regexp-extended 's|`git ls-files -z`\.split\("\\x0"\)|`find . -type f -not -path "*/\.git*" -printf "%P\\n"`\.split\("\\n"\)|' "${_gemname}.gemspec"
+
+  sed --in-place --regexp-extended 's/2\.8\.7/3\.5/g' test/assets/test-cmake-1.0/CMakeLists.txt
 }
 
 build() {
