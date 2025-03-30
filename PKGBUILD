@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor:: Tim Meusel <tim@bastelfreak.de>
+# Maintainer:: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 
 _gemname=mocha
 pkgname="ruby-${_gemname}"
 pkgver=2.5.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Mocha is a mocking and stubbing library for Ruby'
 arch=('any')
 url='https://github.com/freerange/mocha'
