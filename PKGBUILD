@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 
 _gemname='hocon'
 pkgname="ruby-${_gemname}"
 pkgver=1.4.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Ruby support for the HOCON configuration file format'
 arch=('any')
 url='https://github.com/puppetlabs/ruby-hocon'
