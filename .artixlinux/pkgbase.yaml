@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gtk4
-  version: 1:4.18.2-1
+  version: 1:4.18.3-1
   arch:
     - x86_64
   pkgname:
@@ -11,11 +11,11 @@ pkgbase:
     - gtk-update-icon-cache
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,12 +34,12 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:4.18.2-1
+    version: 1:4.18.3-1
     packages:
-      - gtk4-1:4.18.2-1-x86_64.pkg.tar.zst
-      - gtk4-demos-1:4.18.2-1-x86_64.pkg.tar.zst
-      - gtk4-docs-1:4.18.2-1-x86_64.pkg.tar.zst
-      - gtk-update-icon-cache-1:4.18.2-1-x86_64.pkg.tar.zst
+      - gtk4-1:4.18.3-1-x86_64.pkg.tar.zst
+      - gtk4-demos-1:4.18.3-1-x86_64.pkg.tar.zst
+      - gtk4-docs-1:4.18.3-1-x86_64.pkg.tar.zst
+      - gtk-update-icon-cache-1:4.18.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
