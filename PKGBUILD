@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Patrick Lühne <patrick-arch@luehne.de>
 
 _gemname=sass-listen
 pkgname=ruby-${_gemname}
 pkgver=4.0.0
-pkgrel=11
+pkgrel=12
 pkgdesc='Listens to file modifications and notifies you about the changes'
 url='https://github.com/sass/listen'
 arch=('any')
