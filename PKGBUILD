@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Simon Kohlmeyer <simon.kohlmeyer@gmail.com>
 
 _gemname='crack'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Really simple JSON and XML parsing, ripped from Merb and Rails.'
 arch=('any')
 url='https://github.com/jnunemaker/crack/'
@@ -14,6 +13,7 @@ license=('MIT')
 depends=(
   ruby
   ruby-rexml
+  ruby-bigdecimal
 )
 makedepends=(
   ruby-rdoc
