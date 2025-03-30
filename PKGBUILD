@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Alfredo Palhares <masterkorp@masterkorp.net>
@@ -8,7 +7,7 @@
 _gemname='faraday'
 pkgname="ruby-${_gemname}"
 pkgver=2.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='HTTP/REST API client library.'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
