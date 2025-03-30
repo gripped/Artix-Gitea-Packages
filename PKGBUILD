@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=minitest-global_expectations
 pkgname=ruby-${_gemname}
 pkgver=1.0.1
-pkgrel=5
+pkgrel=6
 pkgdesc='Support minitest expectation methods for all objects'
 url='https://github.com/jeremyevans/minitest-global_expectations'
 arch=('any')
