@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: loqs
 
 _gemname=ptools
 pkgname=ruby-${_gemname}
 pkgver=1.5.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Extra methods (power tools) for the File class for Ruby'
 arch=(any)
 url="https://github.com/djberg96/${_gemname}"
