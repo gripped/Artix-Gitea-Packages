@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 
 _gemname='hashdiff'
 pkgname="ruby-${_gemname}"
 pkgver=1.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Library to compute the smallest difference between two hashes'
 arch=('any')
 url="https://github.com/liufengyun/${_gemname}"
