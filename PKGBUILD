@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname=nio4r
 pkgname=ruby-${_gemname}
 pkgver=2.7.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Abstract, cross-platform stateful I/O selector API for Ruby'
 url='https://github.com/celluloid/nio4r'
 arch=('x86_64')
