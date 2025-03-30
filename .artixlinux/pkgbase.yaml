@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-minitar
-  version: 0.9-7
+  version: 0.9-8
   arch:
     - any
   pkgname:
     - ruby-minitar
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.9-8
+    packages:
+      - ruby-minitar-0.9-8-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
