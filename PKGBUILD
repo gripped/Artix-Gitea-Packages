@@ -1,16 +1,16 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-cucumber-expressions
 pkgver=17.1.0
 _commit=b5dcaa533ae6d2ed36a486bdaabbdcc6e6f46777
-pkgrel=2
+pkgrel=3
 pkgdesc="Cucumber Expressions - a simpler alternative to Regular Expressions"
 arch=(any)
 url='https://github.com/cucumber/cucumber-expressions/tree/main/ruby'
 license=(MIT)
 depends=(
   ruby
+  ruby-bigdecimal
 )
 makedepends=(
   git
