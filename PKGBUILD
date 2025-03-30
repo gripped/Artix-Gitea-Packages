@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=packetfu
 pkgname=ruby-${_gemname}
 pkgver=1.1.13
-pkgrel=7
+pkgrel=8
 pkgdesc='Library for reading and writing packets to an interface or to a libpcap-formatted file'
 url='https://github.com/packetfu/packetfu'
 arch=('any')
