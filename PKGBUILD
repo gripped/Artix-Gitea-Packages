@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-range_compressor
 pkgver=1.2.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Compresses Arrays of Objects to Arrays of Ranges'
 arch=(any)
 url='https://github.com/jaynetics/range_compressor'
