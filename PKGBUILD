@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='rubyzip'
 pkgname="ruby-${_gemname}"
 pkgver=2.3.2
-pkgrel=2
+pkgrel=3
 pkgdesc='a ruby module for reading and writing zip files'
 arch=('any')
 url="https://github.com/rubyzip/${_gemname}"
