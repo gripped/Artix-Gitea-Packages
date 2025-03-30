@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-ast
 pkgver=2.4.2
-pkgrel=4
+pkgrel=5
 pkgdesc='A library for working with Abstract Syntax Trees'
 arch=(any)
 url='https://whitequark.github.io/ast/'
