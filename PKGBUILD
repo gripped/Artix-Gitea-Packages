@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-benchmark-ips
 _pkgname="${pkgname#ruby-}"
 pkgver=2.14.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides iteration per second benchmarking for Ruby'
 arch=('any')
 url='https://github.com/evanphx/benchmark-ips'
