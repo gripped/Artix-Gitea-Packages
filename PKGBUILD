@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Massimiliano Torromeo <massimiliano.torromeo at gmail dot com>
 # Contributor: Alexsandr Pavlov <kidoz at mail dot ru>
 # Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
@@ -7,7 +6,7 @@
 _gemname=rdiscount
 pkgname=ruby-$_gemname
 pkgver=2.2.7.3
-pkgrel=4
+pkgrel=5
 pkgdesc="Fast Implementation of Gruber's Markdown in C"
 arch=(x86_64)
 url='https://dafoster.net/projects/rdiscount/'
