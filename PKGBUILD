@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='kpeg'
 pkgname="ruby-${_gemname}"
 pkgver=1.3.3
-pkgrel=5
+pkgrel=6
 pkgdesc='A simple PEG library for ruby'
 arch=('any')
 url="https://github.com/evanphx/${_gemname}"
