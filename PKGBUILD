@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='prime'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Prime numbers and factorization library'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
