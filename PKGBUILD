@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
 _name=mini_mime
 pkgname=ruby-mini_mime
 pkgver=1.1.5
-pkgrel=1
+pkgrel=2
 pkgdesc='A lightweight mime type lookup toy'
 arch=('any')
 url='https://github.com/discourse/mini_mime'
