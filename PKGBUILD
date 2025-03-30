@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Hyacinthe Cartiaux <hyacinthe.cartiaux AT free DOT fr>
 # Contributor: Juan Diego Tascon
 # Contributor: Tom Vincent <http://tlvince.com/contact/>
@@ -7,7 +6,7 @@
 _gemname=rainbow
 pkgname=ruby-${_gemname}
 pkgver=3.1.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Rainbow is extension to ruby's String class adding support for colorizing text on ANSI terminal"
 url='https://rubygems.org/gems/rainbow'
 arch=('any')
