@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-connection_pool
 pkgver=2.4.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Generic connection pool for Ruby'
 arch=(any)
 url='https://github.com/mperham/connection_pool'
