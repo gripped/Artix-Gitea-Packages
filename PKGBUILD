@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='memory_profiler'
 pkgname="ruby-${_gemname}"
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Memory profiling routines for Ruby'
 arch=('any')
 url='https://github.com/SamSaffron/memory_profiler'
