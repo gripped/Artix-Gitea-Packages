@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='net-ftp'
 pkgname="ruby-${_gemname}"
 pkgver=0.3.5
-pkgrel=3
+pkgrel=4
 pkgdesc='Support for the File Transfer Protocol'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
