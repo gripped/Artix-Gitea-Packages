@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
 
 _name=rspec-rerun
 pkgname=ruby-$_name
 pkgver=1.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc='rerun failed RSpec examples for brittle tests'
 url='https://github.com/dblock/rspec-rerun'
 arch=('any')
