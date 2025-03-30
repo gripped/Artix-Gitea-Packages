@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='minitest-reporters'
 pkgname="ruby-${_gemname}"
 pkgver=1.7.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Extend Minitest through simple hooks'
 arch=('any')
 url="https://github.com/minitest-reporters/${_gemname}"
