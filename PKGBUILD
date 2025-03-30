@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='rdoc'
 pkgname="ruby-${_gemname}"
 pkgver=6.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Command-line documentation generator for Ruby projects'
 arch=('any')
 url='https://ruby.github.io/rdoc/'
