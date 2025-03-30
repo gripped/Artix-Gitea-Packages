@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-tag-expressions
 pkgver=5.0.6
-pkgrel=3
+pkgrel=4
 pkgdesc="Cucumber tag expressions for ruby"
 arch=(any)
 url='https://github.com/cucumber/tag-expressions'
