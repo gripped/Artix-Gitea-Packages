@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='rake-compiler-dock'
 pkgname="ruby-${_gemname}"
 pkgver=1.9.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Easy to use and reliable cross compiler environment for building Windows, Linux, Mac and JRuby binary gems'
 arch=('any')
 url='https://github.com/rake-compiler/rake-compiler-dock'
