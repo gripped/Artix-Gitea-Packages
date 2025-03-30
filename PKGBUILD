@@ -16,7 +16,7 @@ pkgname=(
   ruby-stdlib
 )
 pkgver=3.4.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc='An object-oriented language for quick and easy programming'
 url='https://www.ruby-lang.org/en/'
 arch=(x86_64)
