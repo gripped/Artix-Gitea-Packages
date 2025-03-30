@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 _gemname=semantic_puppet
 pkgname="ruby-$_gemname"
 pkgver=1.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Tools used by Puppet to parse, validate, and compare Semantic Versions and Version Ranges and to query and resolve module dependencies.'
 arch=('any')
 url='https://github.com/puppetlabs/semantic_puppet'
