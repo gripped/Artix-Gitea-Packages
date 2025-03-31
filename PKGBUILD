@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-core
 pkgver=13.0.3
-pkgrel=2
+pkgrel=4
 pkgdesc="Core library for the Cucumber BDD app"
 arch=(any)
 url='https://github.com/cucumber/cucumber-ruby-core'
