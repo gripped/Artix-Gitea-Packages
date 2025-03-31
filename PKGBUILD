@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-bake-test
-pkgver=0.2.0
-pkgrel=5
+pkgver=0.3.0
+pkgrel=1
 pkgdesc='Run local test suites without knowing exactly how to run them'
 arch=(any)
 url='https://github.com/ioquatix/bake-test'
@@ -21,7 +21,8 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(https://github.com/ioquatix/bake-test/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('19834a13d42b4f83c357c9e49186428e2614511f108e65ebe1bd8d692d204b72')
+sha512sums=('29ed0b1a8e015306fed495f9f04a6a60b993426ece347afcd01f8ded600d3e3d9c26ed21c26a4b45fa8cade4b9204be12d9e24f15bfaf1b55f1235026ba6bdd2')
+b2sums=('ee8626acf69dd225ee832274c71cfc0722167e8c55cd72f9521e316cdbadc58527f761da96eef0cb2e420f4dd79fbc37e27dad015e3da081875613f1475e9349')
 
 prepare() {
   cd bake-test-$pkgver
