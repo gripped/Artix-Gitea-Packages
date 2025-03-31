@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: gnome-music
-  version: 1:48beta-1
+  version: 1:48beta-2
   arch:
     - any
   pkgname:
     - gnome-music
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:48beta-1
+    version: 1:48beta-2
     packages:
-      - gnome-music-1:48beta-1-any.pkg.tar.zst
+      - gnome-music-1:48beta-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
