@@ -4,7 +4,7 @@
 pkgname=ruby-patron
 pkgver=0.13.3
 _commit=6828083e8db2d2c5f7ea1db7143a9e1a9d13ef78
-pkgrel=5
+pkgrel=6
 pkgdesc='Ruby HTTP client library based on libcurl'
 arch=(x86_64)
 url='https://github.com/toland/patron'
