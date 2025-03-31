@@ -3,7 +3,7 @@
 
 pkgname=ruby-vcr
 pkgver=6.2.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests."
 arch=(any)
 url='https://benoittgt.github.io/vcr'
