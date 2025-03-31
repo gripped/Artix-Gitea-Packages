@@ -1,5 +1,6 @@
-# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='nokogiri'
 pkgname="ruby-${_gemname}"
