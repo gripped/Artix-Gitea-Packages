@@ -1,0 +1,19 @@
+#!/usr/bin/openrc-run
+# 2025, nous@artixlinux.org
+
+name=$RC_SVCNAME
+description="Port-Knock Daemon"
+supervisor="supervise-daemon"
+command="/usr/sbin/knockd"
+command_args="$KNOCKD_OPTS"
+
+depend() {
+    after net
+    use net
+}
+
+reload() {
+    ebegin "Reloading $RC_SVCNAME"
+    /bin/kill -HUP $MAINPID
+    eend $?
+}

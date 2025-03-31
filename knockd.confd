@@ -1,0 +1,3 @@
+# /etc/conf.d/knockd: config file for /etc/init.d/knockd
+
+#KNOCKD_OPTS="-i eth0"
