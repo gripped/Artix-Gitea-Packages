@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@gmail.com>
 # Contributor: Hyacinthe Cartiaux <hyacinthe.cartiaux@free.fr>
 # Contributor: Hilton Medeiros <medeiros.hilton@gmail.com>
