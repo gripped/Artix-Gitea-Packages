@@ -3,7 +3,7 @@
 
 pkgname=ruby-rspec-files
 pkgver=1.1.3
-pkgrel=4
+pkgrel=5
 pkgdesc='RSpec helpers for buffering and detecting file descriptor leaks'
 arch=(any)
 url='https://github.com/socketry/rspec-files'
@@ -13,6 +13,7 @@ depends=(
   ruby-rspec
 )
 checkdepends=(
+  ruby-bake
   ruby-bake-test
   ruby-bundler
   ruby-covered
