@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 _name=test_declarative
 pkgname=ruby-test_declarative
 pkgver=0.0.6
