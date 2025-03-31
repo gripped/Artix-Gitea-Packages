@@ -3,7 +3,7 @@
 _gemname='test-unit-rr'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.5
-pkgrel=9
+pkgrel=9.1
 pkgdesc='test-unit-rr is a RR adapter for test-unit'
 arch=('any')
 url='https://github.com/test-unit/test-unit-rr'
