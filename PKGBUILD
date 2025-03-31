@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Sigmund Vestergaard <sigmundv at gmail dot com>
 
 _gemname='http-cookie'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.7
-pkgrel=2
+pkgrel=3
 pkgdesc='Ruby library to handle HTTP Cookies based on RFC 6265'
 arch=('any')
 url="https://github.com/sparklemotion/${_gemname}"
