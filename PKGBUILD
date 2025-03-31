@@ -1,3 +1,4 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
 _gemname=debug
 pkgname=ruby-${_gemname}
 pkgver=1.10.0
