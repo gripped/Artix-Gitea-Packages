@@ -1,4 +1,5 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-messages
 pkgver=25.0.1
