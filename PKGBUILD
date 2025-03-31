@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sus
 pkgver=0.32.0
-pkgrel=1
+pkgrel=0
 pkgdesc='A fast and scalable test runner'
 arch=(any)
 url='https://github.com/socketry/sus'
