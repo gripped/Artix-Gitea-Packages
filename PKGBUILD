@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-fiber-annotation
 pkgver=0.2.0
-pkgrel=7
+pkgrel=6
 pkgdesc='A mechanism for annotating fibers'
 arch=(any)
 url='https://github.com/ioquatix/fiber-annotation'
