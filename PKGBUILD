@@ -5,7 +5,7 @@
 _name=zeitwerk
 pkgname=ruby-zeitwerk
 pkgver=2.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Efficient and thread-safe code loader for Ruby"
 arch=(any)
 url="https://github.com/fxn/zeitwerk"
