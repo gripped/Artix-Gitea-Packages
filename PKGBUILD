@@ -3,7 +3,7 @@
 
 pkgname=ruby-thread-local
 pkgver=1.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Provides a class-level mixin to make thread local state easy'
 arch=(any)
 url='https://github.com/socketry/thread-local'
