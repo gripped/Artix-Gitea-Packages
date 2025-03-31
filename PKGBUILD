@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='decode'
 pkgname="ruby-${_gemname}"
 pkgver=0.22.0
-pkgrel=3
+pkgrel=2
 pkgdesc='Code analysis for documentation generation'
 arch=('any')
 url="https://github.com/ioquatix/${_gemname}"
