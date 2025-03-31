@@ -5,7 +5,7 @@
 pkgname=ruby-tomlrb
 _pkgname="${pkgname#ruby-}"
 pkgver=2.0.3
-pkgrel=5
+pkgrel=5.1
 pkgdesc='A racc based toml parser'
 arch=('any')
 url='https://github.com/fbernier/tomlrb'
