@@ -7,13 +7,13 @@ pkgbase:
   pkgname:
     - python-pyarrow
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -29,8 +29,9 @@ repos:
     packages:
       - python-pyarrow-18.1.0-1-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 19.0.1-1.1
+    packages:
+      - python-pyarrow-19.0.1-1.1-x86_64.pkg.tar.zst
   world:
     version: 19.0.1-1.1
     packages:
