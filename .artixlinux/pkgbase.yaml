@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-sync
-  version: 0.5.0-9
+  version: 0.5.0-9.1
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.5.0-9
+    version: 0.5.0-9.1
     packages:
-      - ruby-sync-0.5.0-9-any.pkg.tar.zst
+      - ruby-sync-0.5.0-9.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
