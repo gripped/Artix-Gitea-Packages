@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Mario Finelli <mario at finel dot li>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
