@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-syntax
-  version: 1.2.2-4
+  version: 1.2.2-4.1
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.2.2-4
+    version: 1.2.2-4.1
     packages:
-      - ruby-syntax-1.2.2-4-any.pkg.tar.zst
+      - ruby-syntax-1.2.2-4.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

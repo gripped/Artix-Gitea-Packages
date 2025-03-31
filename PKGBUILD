@@ -2,7 +2,7 @@
 
 pkgname=ruby-syntax
 pkgver=1.2.2
-pkgrel=4
+pkgrel=4.1
 pkgdesc='Ruby library for performing simple syntax highlighting'
 arch=(any)
 url='https://github.com/dblock/syntax'
