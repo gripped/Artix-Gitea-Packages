@@ -3,7 +3,7 @@
 _name=activesupport
 pkgname=ruby-activesupport
 pkgver=8.0.1
-pkgrel=5
+pkgrel=5.1
 pkgdesc='A collection of utility classes and standard library extensions'
 arch=(any)
 url="https://github.com/rails/rails/tree/master/activesupport"
