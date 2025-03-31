@@ -4,7 +4,7 @@
 pkgname=ruby-unicode-emoji
 _pkgname="${pkgname#ruby-}"
 pkgver=4.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides Unicode Emoji data and regexes, incorporating the latest standards'
 arch=('any')
 url='https://github.com/janlelis/unicode-emoji'
