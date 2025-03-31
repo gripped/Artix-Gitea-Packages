@@ -3,7 +3,7 @@
 
 pkgname=ruby-bake-test
 pkgver=0.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Run local test suites without knowing exactly how to run them'
 arch=(any)
 url='https://github.com/ioquatix/bake-test'
@@ -17,6 +17,8 @@ makedepends=(
 )
 checkdepends=(
   ruby-bundler
+  ruby-covered
+  ruby-decode
   ruby-sus
 )
 options=(!emptydirs)
@@ -26,8 +28,13 @@ b2sums=('ee8626acf69dd225ee832274c71cfc0722167e8c55cd72f9521e316cdbadc58527f761d
 
 prepare() {
   cd bake-test-$pkgver
+
   sed -e '/signing_key/d' -i bake-test.gemspec
-  echo gemspec > gems.rb
+
+  sed --in-place \
+    --expression '/group :maintenance/,/end/d' \
+    --expression '/rubocop/d' \
+    gems.rb
 }
 
 build() {
