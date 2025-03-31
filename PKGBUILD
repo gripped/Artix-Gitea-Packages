@@ -1,4 +1,5 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Artem Vorotnikov <artem@vorotnikov.me>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Mario Finelli <mario at finel dot li>
