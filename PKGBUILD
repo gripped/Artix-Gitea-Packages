@@ -4,7 +4,7 @@
 _gemname='temple'
 pkgname="ruby-${_gemname}"
 pkgver=0.10.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Template compilation framework in Ruby'
 arch=('any')
 url="https://github.com/judofyr/${_gemname}"
