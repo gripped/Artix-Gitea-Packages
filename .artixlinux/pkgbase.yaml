@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: aws-sdk-cpp
-  version: 1.11.531-1
+  version: 1.11.536-1
   arch:
     - x86_64
   pkgname:
@@ -38,15 +38,15 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.11.531-1
+    version: 1.11.536-1
     packages:
-      - aws-sdk-cpp-1.11.531-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-core-1.11.531-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-ec2-1.11.531-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-firehose-1.11.531-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-iam-1.11.531-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-kinesis-1.11.531-1-x86_64.pkg.tar.zst
-      - aws-sdk-cpp-s3-1.11.531-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-1.11.536-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-core-1.11.536-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-ec2-1.11.536-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-firehose-1.11.536-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-iam-1.11.536-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-kinesis-1.11.536-1-x86_64.pkg.tar.zst
+      - aws-sdk-cpp-s3-1.11.536-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
