@@ -7,13 +7,13 @@ pkgbase:
   pkgname:
     - python-dask
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025.3.0-1
+    packages:
+      - python-dask-2025.3.0-1-any.pkg.tar.zst
   world:
     version: 2025.3.0-1
     packages:
