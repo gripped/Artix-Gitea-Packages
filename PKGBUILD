@@ -3,8 +3,8 @@
 # Contributor: tobias <tobias@archlinux.org>
 
 pkgname=inkscape
-pkgver=1.4
-pkgrel=8
+pkgver=1.4.1
+pkgrel=1
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -98,7 +98,7 @@ source=("git+https://gitlab.com/inkscape/inkscape.git#tag=INKSCAPE_${pkgver//./_
         'inkscape-extras-extension-manager::git+https://gitlab.com/inkscape/extras/extension-manager.git'
         'inkscape-extras-inkscape-import-clipart::git+https://gitlab.com/inkscape/extras/inkscape-import-clipart.git'
         'inkscape-extras-extension-xaml::git+https://gitlab.com/inkscape/extras/extension-xaml.git')
-sha256sums=('2aea5928ae8bd6cf74bdae533578765e869149d9fecb28aafb1353a2a7cbebbf'
+sha256sums=('c0f18fe8ea30662b3242fbef3d673edc3fc362f530c7160767fd33a6a6083fea'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -108,16 +108,6 @@ sha256sums=('2aea5928ae8bd6cf74bdae533578765e869149d9fecb28aafb1353a2a7cbebbf'
             'SKIP')
 
 _backports=(
-  # Future-proof against poppler 24.10 changes
-  '22304ae8034d067670a9f95022083a75fac92b4c'
-  # Fix building with Poppler 24.11
-  '0399372ec240d23e0e70548237a541f2b5bf0f34'
-  # Fix Poppler private includes
-  '874dcfbd303bc7a1bddb6f34aebbb4dba8eda771'
-  # Fix building with poppler 24.12.0
-  'c9046810d899a408bfbd489aad91872b1203ee6d'
-  # Fix building with poppler 25.02.0
-  '9754274ea0ee76d9888ec0b306885ecba6926702'
 )
 
 _reverts=(
@@ -148,6 +138,9 @@ prepare() {
     git log --oneline "${_l}" "${_c}"
     git revert --mainline 1 --no-commit "${_c}"
   done
+
+  # build with recent cmake 
+  sed -i '/cmake_minimum_required/s|3.1.0|3.12.0|' CMakeLists.txt
 }
 
 build() {
