@@ -7,7 +7,7 @@
 pkgname=ruby-tins
 _pkgname="${pkgname#ruby-}"
 pkgver=1.37.1
-pkgrel=1
+pkgrel=2
 pkgdesc='All the stuff that is not good/big enough for a real library'
 arch=('any')
 url='https://github.com/flori/tins'
