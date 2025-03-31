@@ -5,7 +5,7 @@
 _gemname=sys-filesystem
 pkgname=ruby-${_gemname}
 pkgver=1.5.0
-pkgrel=2
+pkgrel=3
 pkgdesc='An interface for getting file system information.'
 arch=(any)
 url="https://github.com/djberg96/${_gemname}"
