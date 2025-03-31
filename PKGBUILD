@@ -3,19 +3,19 @@
 # Contributor: dnuux <dnuuxx@gmail.com>
 
 pkgname=python-faker
-pkgver=35.2.0
+pkgver=36.2.0
 pkgrel=1
 pkgdesc='Faker generates fake data for you.'
 arch=('any')
 url='https://faker.readthedocs.io/en/master/'
 license=('MIT')
-depends=('python-dateutil' 'python-typing_extensions')
+depends=('python-tzdata')
 optdepends=('python-xmltodict: for xml provider')
 makedepends=('git' 'python-build' 'python-installer' 'python-pytest' 'python-setuptools' 'python-wheel')
 checkdepends=('python-validators' 'python-ukpostcodeparser' 'python-freezegun' 'python-pillow'
               'python-xmltodict')
 source=("git+https://github.com/joke2k/faker.git#tag=v$pkgver")
-sha512sums=('6f807a89c47a0ef5892f3309fad36f32ce06e5f3f642240dcb2c231eeadb3a284c8a9ebbb160b7f4bbe448cace722006154f99b62082c61c31a3a7493b52550a')
+sha512sums=('db841f43a2ea9e35b3bec2940cbaf9524b222f59604f1c7c05cbf3ce3c6d0ee81501e7e71354e0acdd545f7fdb924e70d9aa0d2d3c077fbe0eb5947c8ef54915')
 
 build() {
   cd faker
