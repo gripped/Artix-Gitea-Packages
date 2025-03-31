@@ -6,7 +6,7 @@
 
 pkgname=knockd
 pkgver=0.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A simple port-knocking daemon"
 url="http://www.zeroflux.org/projects/knock"
 downurl="https://github.com/jvinet/knock/archive/refs/tags"
@@ -28,6 +28,7 @@ prepare() {
 
 build() {
   cd knock-${pkgver}
+  autoreconf -fi
   ./configure --prefix=/usr --sbin=/usr/bin --sysconfdir=/etc
   make
 }
