@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-fiber-local
 pkgver=1.1.0
-pkgrel=5
+pkgrel=4
 pkgdesc='Provides a class-level mixin to make fiber local state easy'
 arch=(any)
 url='https://github.com/socketry/fiber-local'
