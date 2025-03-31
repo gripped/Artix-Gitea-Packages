@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-openai
-  version: 1.69.0-1
+  version: 1.70.0-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     packages:
       - python-openai-1.68.2-1-any.pkg.tar.zst
   world:
-    version: 1.69.0-1
+    version: 1.70.0-1
     packages:
-      - python-openai-1.69.0-1-any.pkg.tar.zst
+      - python-openai-1.70.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
