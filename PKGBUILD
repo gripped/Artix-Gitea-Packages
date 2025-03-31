@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
 # Contributor: Hyacinthe Cartiaux <hyacinthe.cartiaux@free.fr>
