@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-rbs
-  version: 3.4.4-4
+  version: 3.8.0-1
   arch:
     - any
   pkgname:
@@ -14,7 +14,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.4.4-4
+    version: 3.8.0-1
     packages:
-      - ruby-rbs-3.4.4-4-any.pkg.tar.zst
+      - ruby-rbs-3.8.0-1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
