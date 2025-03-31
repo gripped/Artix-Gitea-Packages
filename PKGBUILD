@@ -3,7 +3,7 @@
 
 pkgname=ruby-bake-test-external
 pkgver=0.6.0
-pkgrel=1
+pkgrel=0
 pkgdesc='Run external test suites to check for breakage'
 arch=(any)
 url='https://github.com/ioquatix/bake-test-external'
