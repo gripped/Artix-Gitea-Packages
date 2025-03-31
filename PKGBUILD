@@ -6,7 +6,7 @@
 pkgname=ruby-mixlib-config
 _pkgname="${pkgname#ruby-}"
 pkgver=3.0.29
-pkgrel=3
+pkgrel=4
 pkgdesc='A class based configuration library'
 arch=('any')
 url='https://github.com/chef/mixlib-config'
