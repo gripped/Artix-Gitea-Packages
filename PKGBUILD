@@ -5,7 +5,7 @@
 _gemname=paint
 pkgname=ruby-${_gemname}
 pkgver=2.3.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Ruby paint manages terminal colors and effects'
 url='https://github.com/janlelis/paint'
 arch=('any')
