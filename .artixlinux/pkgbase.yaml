@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: dns-over-https
-  version: 2.3.7-1
+  version: 2.3.10-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.3.7-1
+    version: 2.3.10-1
     packages:
-      - dns-over-https-2.3.7-1-x86_64.pkg.tar.zst
+      - dns-over-https-2.3.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
