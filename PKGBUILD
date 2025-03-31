@@ -4,7 +4,7 @@
 _gemname='covered'
 pkgname="ruby-${_gemname}"
 pkgver=0.27.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A modern approach to code coverage'
 arch=(any)
 url='https://github.com/socketry/covered'
