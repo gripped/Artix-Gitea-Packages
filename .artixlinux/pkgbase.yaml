@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-build-environment
-  version: 1.13.0-5
+  version: 1.13.0-6
   arch:
     - any
   pkgname:
     - ruby-build-environment
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.13.0-6
+    packages:
+      - ruby-build-environment-1.13.0-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
