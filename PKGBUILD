@@ -1,4 +1,5 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Artem Vorotnikov <artem@vorotnikov.me>
 
 _gemname=rspec-support
