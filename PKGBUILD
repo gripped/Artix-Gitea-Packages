@@ -6,7 +6,7 @@
 _gemname='sys-proctable'
 pkgname="ruby-${_gemname}"
 pkgver=1.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='An interface for providing process table information'
 arch=('any')
 url='https://github.com/djberg96/sys-proctable'
