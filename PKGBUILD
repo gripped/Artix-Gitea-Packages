@@ -78,7 +78,6 @@ validpgpkeys=(163EB50119225DB3DF8F49EA17ACBA8DFA970E17) # Richard Hughes <richar
 build() {
   local meson_options=(
     -D systemd=disabled
-    -D elogind=enabled
     -D docs=enabled
     -D efi_binary=false
     -D supported_build=enabled
