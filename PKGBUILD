@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Eric Berquist <eric dot berquist at gmail dot com>
 # Contributor: Joel Goguen <contact+aur@jgoguen.ca>
 
