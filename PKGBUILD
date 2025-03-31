@@ -1,30 +1,45 @@
 # Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
-_pkgbase=dbus-python
-
-pkgbase=python-dbus
-pkgname=(python-dbus python-dbus-docs)
-pkgver=1.3.2
-pkgrel=5
+pkgbase=dbus-python
+pkgname=(
+  python-dbus
+  python-dbus-docs
+)
+pkgver=1.4.0
+pkgrel=1
 pkgdesc='Python bindings for D-Bus'
-arch=('x86_64')
+arch=(x86_64)
 url='https://www.freedesktop.org/wiki/Software/dbus/'
-license=('MIT')
-depends=('dbus' 'glib2' 'glibc' 'python')
-makedepends=('git' 'meson' 'python-pyproject-metadata' 'python-sphinx'
-             'python-sphinxcontrib-jquery' 'python-sphinx_rtd_theme' 'python-tomli')
+license=(MIT)
+depends=(
+  dbus
+  glib2
+  glibc
+  python
+)
+makedepends=(
+  git
+  meson
+  python-gobject
+  python-pyproject-metadata
+  python-sphinx
+  python-sphinx_rtd_theme
+  python-sphinxcontrib-jquery
+  python-tomli
+)
 optdepends=('python-gobject: D-Bus services via PyGI')
-source=("git+https://gitlab.freedesktop.org/dbus/$_pkgbase.git?signed#tag=$_pkgbase-$pkgver")
-b2sums=('c1dbfb15103b0ab6309c1db218d01d8710c9101a7761f615aefc1d8e2944389e70cff4c1e709aa660ac1f2458163ceb4c5609aaf630d07ee63d33e19b1d9b575')
-validpgpkeys=('DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90') # Simon McVittie <smcv@pseudorandom.co.uk>
+source=("git+https://gitlab.freedesktop.org/dbus/$pkgbase.git?signed#tag=$pkgbase-$pkgver")
+b2sums=(4c00d07dd483748243eb8e4bb7fbf9eba29b1e039c5ee9dd1ac3b3adab9a64290e617b40155269898ef5ac389ca6893ab16ec5237b23e9e8d21cdf41d4e0f267)
+validpgpkeys=(DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90) # Simon McVittie <smcv@pseudorandom.co.uk>
 
 build() {
-  arch-meson $_pkgbase build -D doc=true
+  artix-meson $pkgbase build \
+    -D doc=true
   meson compile -C build
 
   # Generate egg-info
-  python "$_pkgbase/tools/generate-pkginfo.py" $pkgver PKG-INFO
+  python "$pkgbase/tools/generate-pkginfo.py" $pkgver PKG-INFO
 }
 
 check() {
@@ -32,9 +47,18 @@ check() {
 }
 
 package_python-dbus() {
-  conflicts=('dbus-python' 'python-dbus-common')
-  provides=("dbus-python=$pkgver" "python-dbus-common=$pkgver")
-  replaces=('dbus-python' 'python-dbus-common')
+  conflicts=(
+    dbus-python
+    python-dbus-common
+  )
+  provides=(
+    "dbus-python=$pkgver"
+    "python-dbus-common=$pkgver"
+  )
+  replaces=(
+    dbus-python
+    python-dbus-common
+  )
 
   meson install -C build --destdir "$pkgdir"
 
@@ -43,8 +67,8 @@ package_python-dbus() {
   python -O -m compileall -d /usr/lib "$pkgdir/usr/lib"
 
   # Install egg-info and license
-  install -Dm644 -t "$pkgdir`python -c 'import site; print(site.getsitepackages()[0])'`/dbus_python.egg-info/" "$srcdir/PKG-INFO"
-  install -Dm644 "$_pkgbase/COPYING" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+  install -Dm644 -t "$pkgdir$(python -c 'import site; print(site.getsitepackages()[0])')/dbus_python.egg-info/" PKG-INFO
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" "$pkgbase/COPYING"
 
   # Split documentation
   mkdir -p doc/usr/share
@@ -55,10 +79,10 @@ package_python-dbus-docs() {
   pkgdesc="Developer documentation for dbus-python"
   depends=()
   optdepends=()
-  conflicts=('dbus-python-docs')
-  replaces=('dbus-python-docs')
+  conflicts=(dbus-python-docs)
+  replaces=(dbus-python-docs)
 
   mv doc/* "$pkgdir"
-  rm -r "$pkgdir/usr/share/doc/$_pkgbase/html/.doctrees"
-  install -Dm644 "$_pkgbase/COPYING" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+  rm -r "$pkgdir/usr/share/doc/$pkgbase/html/.doctrees"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" "$pkgbase/COPYING"
 }
