@@ -4,7 +4,7 @@
 pkgname=ruby-m
 pkgver=1.6.1
 _commit=c5220612016b014f4aac29632d044a024704cdd9
-pkgrel=3
+pkgrel=4
 pkgdesc='Run test/unit tests by line number. Metal!'
 arch=(any)
 url='https://github.com/qrush/m'
@@ -19,6 +19,7 @@ makedepends=(
   ruby-activesupport
   ruby-rdiscount
   ruby-rdoc
+  ruby-mutex_m
 )
 checkdepends=(
   ruby-bundler
