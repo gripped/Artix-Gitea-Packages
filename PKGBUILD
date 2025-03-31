@@ -4,7 +4,7 @@
 _gemname='loofah'
 pkgname="ruby-${_gemname}"
 pkgver=2.22.0
-pkgrel=2
+pkgrel=3
 pkgdesc='HTML/XML manipulation and sanitization based on Nokogiri'
 arch=('any')
 url='https://github.com/flavorjones/loofah'
