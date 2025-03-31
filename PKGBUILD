@@ -4,7 +4,7 @@
 _name=pydantic-core
 pkgname=python-pydantic-core
 # WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
-pkgver=2.27.2
+pkgver=2.33.0
 pkgrel=1
 epoch=2
 pkgdesc="Core validation logic for pydantic written in rust "
@@ -31,11 +31,12 @@ checkdepends=(
   python-pytest-examples
   python-pytest-mock
   python-pytest-timeout
+  python-pytest-run-parallel
 )
 options=(!lto)
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('2720fe30c074b654bad2f200786962f3d92300de01b757b3a6a892cc3a2cec0693fd0070cee8d27a6c83baba68a29a6fd049cdf2d4fdd50bc07312ef4f3cf47c')
-b2sums=('2b338b3e2d7dd52b8aaa072e06513ec1f5dd10e6699acd3b01cb0e6a7e20d2181a6be233dc51b3d6d4b50a2ea1c19ac66d66c62965fff4b51a94146dbf5eddcc')
+sha512sums=('5c5ec0dfe19368d095ab16373cba099f661454776483b7112412edb0d2052ecce51ec582e95e33a570533276f116ccb0c69d97a1d228612e07bf181c69046c2a')
+b2sums=('bbc5f798b7caa2bdfb39a380163a0d7c0ef69a97828d4c6952f4314495fa5cc472bfb78147a31aee7922a04a5afbe04e5a93287d6807afec874ecb58bfda64fb')
 
 prepare() {
   # we don't support version pinning
