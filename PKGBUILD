@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='rr'
 pkgname="ruby-${_gemname}"
 pkgver=3.1.1
-pkgrel=4
+pkgrel=3
 pkgdesc='RR is a test double framework that features a rich selection of double techniques and a terse syntax'
 arch=('any')
 url='https://github.com/rr/rr'
