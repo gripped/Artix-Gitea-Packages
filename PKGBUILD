@@ -3,7 +3,7 @@
 
 pkgname=ruby-unindent
 pkgver=1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Ruby method to unindent strings'
 arch=(any)
 url='https://github.com/mynyml/unindent'
