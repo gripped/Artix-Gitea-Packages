@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='sus-fixtures-console'
 pkgname="ruby-${_gemname}"
 pkgver=0.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Test fixtures for capturing Console output'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
