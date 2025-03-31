@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-webcolors
-  version: 24.11.0-1
+  version: 24.11.1-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 24.11.0-1
+    version: 24.11.1-1
     packages:
-      - python-webcolors-24.11.0-1-any.pkg.tar.zst
+      - python-webcolors-24.11.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
