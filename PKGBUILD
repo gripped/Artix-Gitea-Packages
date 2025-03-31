@@ -3,7 +3,7 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.126.0
+pkgver=1.127.1
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
@@ -37,7 +37,7 @@ source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf'
         )
-sha256sums=('3db86df398cac272a4640b2c967e3c3009c54c0dfed60b0c7cebd934901cecd7'
+sha256sums=('645e1b0980bf7c9579abf6100316ebfd8dcc7e163e6623bfcef0d4c6a5bf6e61'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
@@ -57,7 +57,7 @@ prepare() {
 	cd $pkgname
 	# allow any poetry-core to be used
 	sed 's/poetry-core>=1.1.0,<=1.9.1/poetry-core>=1.0.0/' -i pyproject.toml
-	sed 's/setuptools_rust>=1.3,<=1.8.1/setuptools_rust>=1.3.0/' -i pyproject.toml
+	sed 's/setuptools_rust>=1.3,<=1.10.2/setuptools_rust>=1.3.0/' -i pyproject.toml
 }
 
 build() {
