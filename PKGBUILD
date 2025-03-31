@@ -6,7 +6,7 @@
 pkgname=markdownlint
 _pkgname=mdl
 pkgver=0.13.0
-pkgrel=3
+pkgrel=4
 pkgdesc='A lint tool to check markdown files and flag style issues'
 arch=('any')
 url='https://github.com/markdownlint/markdownlint'
