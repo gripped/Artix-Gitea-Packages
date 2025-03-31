@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 # Contributor: Aoibhinn di Tori <email@aoibh.in>
 # Contributor: Artem Vorotnikov <artem@vorotnikov.me>
