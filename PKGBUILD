@@ -1,4 +1,5 @@
-# Maintainer: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 
 _gemname='simplecov-html'
 pkgname="ruby-${_gemname}"
