@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Gordin <9ordin @t gmail dot com>
 
 _gemname=paint
