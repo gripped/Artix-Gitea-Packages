@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 
 _name=tzinfo
 pkgname=ruby-tzinfo
 pkgver=2.0.6
-pkgrel=3
+pkgrel=4
 pkgdesc='Daylight savings aware transformations between times in different time zones'
 arch=(any)
 url="https://github.com/tzinfo/tzinfo"
