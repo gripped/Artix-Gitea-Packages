@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-httpx-ws
-  version: 0.7.1-1
+  version: 0.7.2-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.1-1
+    version: 0.7.2-1
     packages:
-      - python-httpx-ws-0.7.1-1-any.pkg.tar.zst
+      - python-httpx-ws-0.7.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
