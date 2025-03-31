@@ -6,7 +6,7 @@
 
 pkgname=ruby-term-ansicolor
 pkgver=1.11.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A ruby library that colors strings using ANSI escape sequences'
 arch=('any')
 url='https://rubygems.org/gems/term-ansicolor'
