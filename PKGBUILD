@@ -3,7 +3,7 @@
 
 pkgname=ruby-qed
 pkgver=2.9.1
-pkgrel=4
+pkgrel=5
 pkgdesc='Quality Ensured Documentation'
 arch=(any)
 url='https://github.com/rubyworks/qed'
