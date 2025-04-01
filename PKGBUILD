@@ -4,7 +4,7 @@
 _gemname='decode'
 pkgname="ruby-${_gemname}"
 pkgver=0.22.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Code analysis for documentation generation'
 arch=('any')
 url="https://github.com/ioquatix/${_gemname}"
