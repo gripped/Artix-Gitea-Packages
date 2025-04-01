@@ -15,6 +15,7 @@ depends=(
 makedepends=(
   git
   ruby-rdoc
+  ruby-covered
 )
 checkdepends=(
   git
