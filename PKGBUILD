@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-pool
 pkgver=0.10.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A singleplex and multiplex resource pool for implementing robust clients'
 arch=(any)
 url='https://github.com/socketry/async-pool'
