@@ -3,7 +3,7 @@
 
 pkgname=ruby-protocol-websocket
 pkgver=0.20.1
-pkgrel=2
+pkgrel=3
 pkgdesc='A low level implementation of the WebSocket protocol'
 arch=(any)
 url='https://github.com/socketry/protocol-websocket'
