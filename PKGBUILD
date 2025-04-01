@@ -4,7 +4,7 @@
 _gemname=async-http-cache
 pkgname="ruby-${_gemname}"
 pkgver=0.4.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Standard-compliant cache for async-http'
 arch=(any)
 url='https://github.com/socketry/async-http-cache'
