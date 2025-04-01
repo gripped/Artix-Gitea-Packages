@@ -4,7 +4,7 @@
 _gemname='sus-fixtures-time'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Test fixtures for manipulating time'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
