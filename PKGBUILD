@@ -3,7 +3,7 @@
 
 pkgname=ruby-protocol-http
 pkgver=0.49.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides abstractions to handle HTTP protocols'
 arch=(any)
 url='https://github.com/socketry/protocol-http'
@@ -16,7 +16,7 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-bake-modernize
+  ruby-bake
   ruby-bake-test
   ruby-bake-test-external
   ruby-bundler
