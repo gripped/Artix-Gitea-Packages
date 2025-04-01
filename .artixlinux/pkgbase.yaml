@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: libgeotiff
-  version: 1.7.3-1
+  version: 1.7.4-1
   arch:
     - x86_64
   pkgname:
     - libgeotiff
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.7.4-1
+    packages:
+      - libgeotiff-1.7.4-1-x86_64.pkg.tar.zst
   world:
     version: 1.7.3-1
     packages:
