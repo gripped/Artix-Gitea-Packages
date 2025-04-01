@@ -4,7 +4,7 @@
 _gemname='io-stream'
 pkgname="ruby-${_gemname}"
 pkgver=0.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides a generic stream wrapper for IO instances'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
