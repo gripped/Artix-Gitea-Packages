@@ -5,7 +5,7 @@
 _gemname=async
 pkgname=ruby-${_gemname}
 pkgver=2.23.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Composable asynchronous I/O'
 url='https://github.com/socketry/async'
 arch=('any')
