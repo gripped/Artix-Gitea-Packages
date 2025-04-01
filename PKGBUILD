@@ -16,6 +16,7 @@ makedepends=(
   git
   ruby-rdoc
   ruby-covered
+  ruby-decode
 )
 checkdepends=(
   git
