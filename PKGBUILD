@@ -3,7 +3,7 @@
 
 pkgname=ruby-brass
 pkgver=1.2.1
-pkgrel=6
+pkgrel=7
 pkgdesc='Bare-Metal Ruby Assertions System Standard'
 arch=(any)
 url='https://github.com/rubyworks/brass'
