@@ -2,7 +2,7 @@
 
 pkgname=ghostscript
 pkgver=10.05.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="An interpreter for the PostScript language"
 url="https://www.ghostscript.com/"
 arch=('x86_64')
@@ -10,7 +10,7 @@ license=('AGPL-3.0-or-later')
 depends=('libxt' 'libcups' 'fontconfig' 'zlib' 'libpng' 'libjpeg-turbo' 'jbig2dec'
          'libtiff' 'lcms2' 'libpaper' 'ijs' 'openjpeg2' 'libidn' 'poppler-data'
          'cairo' 'glibc' 'libx11' 'gdk-pixbuf2' 'glib2' 'sh')
-optdepends=('gtk3:              needed for gsx')
+optdepends=('gtk3: needed for gsx')
 makedepends=('gtk3' 'gnutls' 'glu' 'freeglut')
 replaces=('ghostpcl' 'ghostxps')
 conflicts=('ghostpcl' 'ghostxps')

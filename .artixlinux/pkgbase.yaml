@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ghostscript
-  version: 10.05.0-3
+  version: 10.05.0-3.1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.05.0-3
+    version: 10.05.0-3.1
     packages:
-      - ghostscript-10.05.0-3-x86_64.pkg.tar.zst
+      - ghostscript-10.05.0-3.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
