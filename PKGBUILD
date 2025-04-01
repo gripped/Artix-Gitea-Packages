@@ -3,7 +3,7 @@
 
 pkgname=ruby-regexp_property_values
 pkgver=1.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Inspect property values supported by Ruby's regex engine"
 arch=(x86_64)
 url='https://github.com/jaynetics/regexp_property_values'
