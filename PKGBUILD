@@ -11,13 +11,10 @@ license=(MIT)
 depends=(
   ruby
   ruby-bake
-  ruby-bake-modernize
 )
 makedepends=(
   git
   ruby-rdoc
-  ruby-covered
-  ruby-decode
 )
 checkdepends=(
   git
