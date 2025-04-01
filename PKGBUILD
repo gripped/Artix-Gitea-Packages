@@ -4,7 +4,7 @@
 _gemname='io-endpoint'
 pkgname="ruby-${_gemname}"
 pkgver=0.15.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides a separation of concerns interface for IO endpoints'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
