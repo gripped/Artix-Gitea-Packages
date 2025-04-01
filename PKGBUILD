@@ -4,7 +4,7 @@
 _gemname='faraday-net_http_persistent'
 pkgname="ruby-${_gemname}"
 pkgver=2.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='About Faraday adapter for NetHttpPersistent'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
@@ -13,6 +13,7 @@ depends=(
   ruby
   ruby-faraday
   ruby-net-http-persistent
+  ruby-tzinfo
 )
 checkdepends=(
   ruby-bundler
