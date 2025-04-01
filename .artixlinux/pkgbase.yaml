@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: erlang
-  version: 27.3-1
+  version: 27.3.1-1
   arch:
     - x86_64
   pkgname:
@@ -41,11 +41,11 @@ pkgbase:
     - erlang-xmerl
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -64,42 +64,42 @@ repos:
     version: null
     packages: []
   world:
-    version: 27.3-1
+    version: 27.3.1-1
     packages:
-      - erlang-27.3-1-x86_64.pkg.tar.zst
-      - erlang-headless-27.3-1-x86_64.pkg.tar.zst
-      - erlang-core-27.3-1-x86_64.pkg.tar.zst
-      - erlang-asn1-27.3-1-x86_64.pkg.tar.zst
-      - erlang-common_test-27.3-1-x86_64.pkg.tar.zst
-      - erlang-debugger-27.3-1-x86_64.pkg.tar.zst
-      - erlang-dialyzer-27.3-1-x86_64.pkg.tar.zst
-      - erlang-diameter-27.3-1-x86_64.pkg.tar.zst
-      - erlang-edoc-27.3-1-x86_64.pkg.tar.zst
-      - erlang-eldap-27.3-1-x86_64.pkg.tar.zst
-      - erlang-erl_interface-27.3-1-x86_64.pkg.tar.zst
-      - erlang-et-27.3-1-x86_64.pkg.tar.zst
-      - erlang-eunit-27.3-1-x86_64.pkg.tar.zst
-      - erlang-ftp-27.3-1-x86_64.pkg.tar.zst
-      - erlang-inets-27.3-1-x86_64.pkg.tar.zst
-      - erlang-jinterface-27.3-1-x86_64.pkg.tar.zst
-      - erlang-megaco-27.3-1-x86_64.pkg.tar.zst
-      - erlang-mnesia-27.3-1-x86_64.pkg.tar.zst
-      - erlang-observer-27.3-1-x86_64.pkg.tar.zst
-      - erlang-odbc-27.3-1-x86_64.pkg.tar.zst
-      - erlang-os_mon-27.3-1-x86_64.pkg.tar.zst
-      - erlang-parsetools-27.3-1-x86_64.pkg.tar.zst
-      - erlang-public_key-27.3-1-x86_64.pkg.tar.zst
-      - erlang-reltool-27.3-1-x86_64.pkg.tar.zst
-      - erlang-runtime_tools-27.3-1-x86_64.pkg.tar.zst
-      - erlang-sasl-27.3-1-x86_64.pkg.tar.zst
-      - erlang-snmp-27.3-1-x86_64.pkg.tar.zst
-      - erlang-ssh-27.3-1-x86_64.pkg.tar.zst
-      - erlang-ssl-27.3-1-x86_64.pkg.tar.zst
-      - erlang-syntax_tools-27.3-1-x86_64.pkg.tar.zst
-      - erlang-tftp-27.3-1-x86_64.pkg.tar.zst
-      - erlang-tools-27.3-1-x86_64.pkg.tar.zst
-      - erlang-wx-27.3-1-x86_64.pkg.tar.zst
-      - erlang-xmerl-27.3-1-x86_64.pkg.tar.zst
+      - erlang-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-headless-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-core-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-asn1-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-common_test-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-debugger-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-dialyzer-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-diameter-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-edoc-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-eldap-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-erl_interface-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-et-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-eunit-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-ftp-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-inets-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-jinterface-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-megaco-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-mnesia-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-observer-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-odbc-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-os_mon-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-parsetools-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-public_key-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-reltool-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-runtime_tools-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-sasl-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-snmp-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-ssh-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-ssl-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-syntax_tools-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-tftp-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-tools-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-wx-27.3.1-1-x86_64.pkg.tar.zst
+      - erlang-xmerl-27.3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
