@@ -3,7 +3,7 @@
 
 pkgname=ruby-traces
 pkgver=0.15.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Application instrumentation and tracing'
 arch=(any)
 url='https://github.com/socketry/traces'
@@ -15,7 +15,7 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-bake-modernize
+  ruby-bake
   ruby-bake-test
   ruby-bake-test-external
   ruby-bundler
