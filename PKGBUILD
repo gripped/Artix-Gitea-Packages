@@ -4,12 +4,12 @@
 _gemname='jwt'
 pkgname="ruby-${_gemname}"
 pkgver=2.9.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard'
 arch=('any')
 url="https://github.com/jwt/${pkgname}"
 license=('MIT')
-depends=('ruby')
+depends=('ruby' 'ruby-base64')
 makedepends=('ruby-rdoc' 'ruby-rake' 'ruby-rspec' 'ruby-bundler')
 checkdepends=('ruby-rubocop' 'ruby-simplecov')
 options=('!emptydirs')
