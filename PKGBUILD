@@ -4,7 +4,7 @@
 _gemname=protocol-hpack
 pkgname="ruby-${_gemname}"
 pkgver=1.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A compresssor and decompressor for HTTP 2.0 HPACK'
 arch=(any)
 url='https://github.com/socketry/protocol-hpack'
