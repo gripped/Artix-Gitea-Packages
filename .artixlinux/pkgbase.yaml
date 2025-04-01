@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gn
-  version: 0.2207.ed1abc10-1
+  version: 0.2223.6e8e0d6d-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.2207.ed1abc10-1
+    version: 0.2223.6e8e0d6d-1
     packages:
-      - gn-0.2207.ed1abc10-1-x86_64.pkg.tar.zst
+      - gn-0.2223.6e8e0d6d-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
