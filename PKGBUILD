@@ -3,7 +3,7 @@
 
 pkgname=ruby-fiber-local
 pkgver=1.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Provides a class-level mixin to make fiber local state easy'
 arch=(any)
 url='https://github.com/socketry/fiber-local'
