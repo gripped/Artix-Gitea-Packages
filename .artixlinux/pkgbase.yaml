@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-falcon
-  version: 0.48.4-1
+  version: 0.48.4-2
   arch:
     - any
   pkgname:
     - ruby-falcon
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.48.4-2
+    packages:
+      - ruby-falcon-0.48.4-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

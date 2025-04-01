@@ -4,7 +4,7 @@
 _gemname='falcon'
 pkgname="ruby-${_gemname}"
 pkgver=0.48.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A fast, asynchronous, rack-compatible web server'
 arch=(any)
 url='https://github.com/socketry/falcon'
