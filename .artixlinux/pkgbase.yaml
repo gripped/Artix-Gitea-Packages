@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: android-file-transfer
-  version: 4.3-1
+  version: 4.4-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.3-1
+    version: 4.4-1
     packages:
-      - android-file-transfer-4.3-1-x86_64.pkg.tar.zst
+      - android-file-transfer-4.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
