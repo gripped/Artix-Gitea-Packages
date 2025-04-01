@@ -4,7 +4,7 @@
 _gemname='covered'
 pkgname="ruby-${_gemname}"
 pkgver=0.27.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A modern approach to code coverage'
 arch=(any)
 url='https://github.com/socketry/covered'
@@ -18,10 +18,10 @@ makedepends=(
   ruby-rdoc
 )
 checkdepends=(
-  ruby-bundler
   ruby-bake
   ruby-bake-test
   ruby-bake-test-external
+  ruby-bundler
   ruby-decode
   ruby-minitest
   ruby-rspec
