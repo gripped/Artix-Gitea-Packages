@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: kitty
-  version: 0.40.1-1
+  version: 0.41.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - kitty-shell-integration
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.40.1-1
+    version: 0.41.0-1
     packages:
-      - kitty-0.40.1-1-x86_64.pkg.tar.zst
-      - kitty-terminfo-0.40.1-1-x86_64.pkg.tar.zst
-      - kitty-shell-integration-0.40.1-1-x86_64.pkg.tar.zst
+      - kitty-0.41.0-1-x86_64.pkg.tar.zst
+      - kitty-terminfo-0.41.0-1-x86_64.pkg.tar.zst
+      - kitty-shell-integration-0.41.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
