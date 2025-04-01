@@ -4,7 +4,7 @@
 _gemname=mapping
 pkgname="ruby-${_gemname}"
 pkgver=1.1.2
-pkgrel=0
+pkgrel=1
 pkgdesc='Map model objects based on their class to a given output model'
 arch=(any)
 url='https://github.com/ioquatix/mapping'
