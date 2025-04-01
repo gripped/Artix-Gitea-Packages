@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: ruby-xrb
-  version: 0.11.1-1
+  version: 0.11.1-2
   arch:
     - any
   pkgname:
     - ruby-xrb
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.11.1-2
+    packages:
+      - ruby-xrb-0.11.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

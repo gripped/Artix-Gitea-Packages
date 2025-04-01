@@ -4,7 +4,7 @@
 _gemname='xrb'
 pkgname="ruby-${_gemname}"
 pkgver=0.11.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A fast native templating system that compiles directly to Ruby code'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
