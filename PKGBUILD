@@ -2,9 +2,9 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-markly
-pkgver=0.10.0
+pkgver=0.13.0
 _cmark_gfm_commit=766f161ef6d61019acf3a69f5099489e7d14cd49
-pkgrel=4
+pkgrel=1
 pkgdesc='CommonMark parser and renderer. Written in C, wrapped in Ruby.'
 arch=(x86_64)
 url='https://github.com/ioquatix/markly'
@@ -28,7 +28,7 @@ checkdepends=(
 options=(!emptydirs)
 source=(https://github.com/ioquatix/markly/archive/v$pkgver/$pkgname-$pkgver.tar.gz
         https://github.com/github/cmark-gfm/archive/$_cmark_gfm_commit/cmark-gfm-$_cmark_gfm_commit.tar.gz)
-sha256sums=('79546ab840da22f03faa9be0e65eeacecdf7ca569fe89599e738d6aede4abdce'
+sha256sums=('46ebe03fe49eed65f2b63ddde9e056f0b7fc49cdf56e15e69bb13d5d4c4a787d'
             'e95a1300cfe4c5b5ad68af6a77855df823b5d813334910a41991af0f70575d66')
 
 prepare() {
