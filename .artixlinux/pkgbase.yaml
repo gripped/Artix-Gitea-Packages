@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rssguard
-  version: 4.8.1-1
+  version: 4.8.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.8.1-1
+    version: 4.8.2-1
     packages:
-      - rssguard-4.8.1-1-x86_64.pkg.tar.zst
-      - rssguard-lite-4.8.1-1-x86_64.pkg.tar.zst
+      - rssguard-4.8.2-1-x86_64.pkg.tar.zst
+      - rssguard-lite-4.8.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
