@@ -3,7 +3,7 @@
 
 pkgname=ruby-character_set
 pkgver=1.7.0
-pkgrel=3.1
+pkgrel=4
 pkgdesc='Build, read, write and compare sets of Unicode codepoints'
 arch=(x86_64)
 url='https://github.com/jaynetics/character_set'
