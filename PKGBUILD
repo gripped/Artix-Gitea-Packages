@@ -4,7 +4,7 @@
 _gemname='metrics'
 pkgname="ruby-${_gemname}"
 pkgver=0.12.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Application metrics and instrumentation'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
