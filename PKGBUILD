@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-container
 pkgver=0.18.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Abstract container-based parallelism using threads and processes where appropriate'
 arch=(any)
 url='https://github.com/socketry/async-container'
