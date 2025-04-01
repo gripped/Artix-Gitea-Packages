@@ -4,7 +4,7 @@
 
 pkgname=ruby-multipart-post
 pkgver=2.3.0
-pkgrel=4
+pkgrel=5
 pkgdesc='A multipart form post accessory for Net::HTTP'
 arch=(any)
 url='https://github.com/socketry/multipart-post'
