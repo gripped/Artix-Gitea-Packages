@@ -17,6 +17,7 @@ makedepends=(
   ruby-rdoc
   ruby-covered
   ruby-decode
+  ruby-bake-modernize
 )
 checkdepends=(
   git
