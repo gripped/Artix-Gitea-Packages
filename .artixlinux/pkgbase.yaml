@@ -1,20 +1,18 @@
 ---
 pkgbase:
   name: ghostscript
-  version: 10.05.0-1
+  version: 10.05.0-3
   arch:
     - x86_64
   pkgname:
     - ghostscript
-    - ghostxps
-    - ghostpcl
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 10.05.0-1
+    version: 10.05.0-3
     packages:
-      - ghostscript-10.05.0-1-x86_64.pkg.tar.zst
-      - ghostxps-10.05.0-1-x86_64.pkg.tar.zst
-      - ghostpcl-10.05.0-1-x86_64.pkg.tar.zst
+      - ghostscript-10.05.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
