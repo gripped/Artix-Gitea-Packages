@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-websocket
 pkgver=0.30.0
-pkgrel=1
+pkgrel=3
 pkgdesc='An async websocket library on top of websocket-driver'
 arch=(any)
 url='https://github.com/socketry/async-websocket'
