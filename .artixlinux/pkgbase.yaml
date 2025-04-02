@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: spirv-llvm-translator
-  version: 19.1.5-1
+  version: 19.1.6-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 19.1.5-1
+    version: 19.1.6-1
     packages:
-      - spirv-llvm-translator-19.1.5-1-x86_64.pkg.tar.zst
+      - spirv-llvm-translator-19.1.6-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
