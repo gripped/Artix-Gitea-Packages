@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-django-rest-framework
-  version: 3.15.2-4
+  version: 3.16.0-1
   arch:
     - any
   pkgname:
     - python-django-rest-framework
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.15.2-4
+    version: 3.16.0-1
     packages:
-      - python-django-rest-framework-3.15.2-4-any.pkg.tar.zst
+      - python-django-rest-framework-3.16.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
