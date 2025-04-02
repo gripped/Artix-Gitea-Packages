@@ -1,0 +1,116 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinxu.org>
+# Contributor: Wael Nasreddine <gandalf@siemens-mobiles.org>
+# Contributor: Tor Krill <tor@krill.nu>
+# Contributor: Will Rea <sillywilly@gmail.com>
+# Contributor: Valentine Sinitsyn <e_val@inbox.ru>
+# Contributor: Ryszard Knop <dragoon@dragonic.eu>
+
+pkgname=lib32-libnm
+pkgver=1.52.0
+pkgrel=1
+pkgdesc="NetworkManager client library (32-bit)"
+url="https://networkmanager.dev/"
+arch=(x86_64)
+license=(LGPL-2.1-or-later)
+depends=(
+  lib32-gcc-libs
+  lib32-glib2
+  lib32-glibc
+  lib32-nspr
+  lib32-nss
+
+  lib32-util-linux
+  libnm
+)
+makedepends=(
+  git
+  glib2-devel
+  lib32-dbus
+  lib32-libndp
+  lib32-libpsl
+  lib32-polkit
+  libxslt
+  meson
+
+)
+provides=(libnm.so)
+source=(
+  "git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git?signed#tag=$pkgver"
+)
+b2sums=('c062388e55d5b752244178b59487b4ff8b9d37fe2b6f32110eb36c2e9f17a6721d3ac5e3f347870422f256168793536f1fb1249d61f7884f01d1d291f4f14cba')
+validpgpkeys=(
+  3D10AD045AB4AAFF8E8F36AF9B980AC2FB874FEB # Ana Cabral <acabral@redhat.com>
+  F07F7C1EABD382F81CBFBA3B998D4828CD7E1656 # Beniamino Galvani <bgalvani@redhat.com>
+  2B5F3B2028801E15F57AAA309906C97AA15D984F # Fernando Fernandez Mancera <ffmancera@riseup.net>
+  48FD6FAE515A77B48436821C8789567B8715CEBC # Gris Ge <fge@redhat.com>
+  # Could not locate key ACFA41513D2854D0A72F55BE9A2C77A85F2D72FE # Ján Václav <jvaclav@redhat.com>
+  4B8EF9745A973724E965939189A2DA5AF73D5E3D # Lubomir Rintel <lkundrak@v3.sk>
+  E472337703D0C46002928B5790617850A125DE59 # Stanislas FAYE <sfaye@redhat.com>
+  49EA7C670E0850E7419514F629C2366E4DFC5728 # Thomas Haller <thaller@redhat.com>
+  07F9AEC86144386D9576210B66A44781B4EBC2D0 # Íñigo Huguet <ihuguet@redhat.com>
+)
+
+prepare() {
+  cd NetworkManager || exit
+}
+
+build() {
+  local meson_options=(
+    --cross-file lib32
+
+    # build checks this option; injecting just via *FLAGS is broken
+    -D b_lto=true
+
+    # platform
+    -D dist_version="$pkgver-$pkgrel"
+    -D libaudit=no
+    -D session_tracking_consolekit=false
+    -D suspend_resume=systemd
+    -D modify_system=true
+    -D selinux=false
+
+    # features
+    -D concheck=false
+    -D iwd=false
+    -D modem_manager=false
+    -D nm_cloud_setup=false
+    -D nmcli=false
+    -D nmtui=false
+    -D ovs=false
+    -D ppp=false
+    -D teamdctl=false
+
+    # configuration plugins
+    -D config_plugins_default=keyfile
+    -D ifupdown=false
+
+    # handlers for resolv.conf
+    -D netconfig=no
+    -D config_dns_rc_manager_default=symlink
+
+    # miscellaneous
+    -D vapi=false
+    -D docs=false
+    -D introspection=false
+    -D tests=no
+    -D more_asserts=no
+    -D more_logging=false
+    -D qt=false
+  )
+
+  artix-meson NetworkManager build "${meson_options[@]}"
+  meson compile -C build
+}
+
+check() {
+  NMTST_FORCE_REAL_ROOT=1 meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+  rm -r "$pkgdir"/{etc,usr/{bin,include,lib,lib32/NetworkManager,share},var}
+}
+
+# vim:set sw=2 sts=-1 et:
