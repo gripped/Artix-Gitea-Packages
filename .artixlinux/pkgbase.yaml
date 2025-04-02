@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: node-gyp
-  version: 11.1.0-3
+  version: 11.2.0-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 11.1.0-3
+    version: 11.2.0-1
     packages:
-      - node-gyp-11.1.0-3-any.pkg.tar.zst
+      - node-gyp-11.2.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
