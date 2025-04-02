@@ -21,7 +21,7 @@ depends=(
 makedepends=('git')
 backup=('etc/artix-checkupdates/config')
 source=("git+${url}.git#tag=${pkgver}")
-b2sums=('fafbf919c982762f56e94b1f7930c44a7524627795c3ee4a7753c4fad8594cfac85b64fc8a591577578f4404af02d9fb9e44f63c2ff85234f610f3c9e0c7aac1')
+b2sums=('8cd7ea222d4e79dcec77201c7f84ab581e4ec8bd68b50ae6a44c405aa72ea1f815968541614f1120b0a031ec442103b9a455ba216cda4203f6f394b771ec80b3')
 
 build() {
   cd "$pkgname" || exit
