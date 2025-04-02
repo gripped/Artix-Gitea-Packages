@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: pdfjs
-  version: 5.0.375-1
+  version: 5.1.91-1
   arch:
     - any
   pkgname:
     - pdfjs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.375-1
+    version: 5.1.91-1
     packages:
-      - pdfjs-5.0.375-1-any.pkg.tar.zst
+      - pdfjs-5.1.91-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
