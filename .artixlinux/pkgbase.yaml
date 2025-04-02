@@ -1,8 +1,8 @@
 ---
-team: null
+team: lib32
 pkgbase:
   name: lib32-sdl3
-  version: 3.2.8-1
+  version: 3.2.10-1
   arch:
     - x86_64
   pkgname:
@@ -41,9 +41,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 3.2.8-1
+    version: 3.2.10-1
     packages:
-      - lib32-sdl3-3.2.8-1-x86_64.pkg.tar.zst
+      - lib32-sdl3-3.2.10-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
