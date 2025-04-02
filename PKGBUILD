@@ -54,7 +54,6 @@ depends_x86_64=(
   lib32-libxss
   lib32-nss
   lib32-pipewire
- 
   lib32-vulkan-driver
   lib32-vulkan-icd-loader
 )
@@ -64,19 +63,19 @@ optdepends=(
   'xdg-desktop-portal-impl: file & folder picker'
 )
 # the beta directory is a superset of stable and also contains the stable releases
-source=(https://repo.steampowered.com/${pkgname}/archive/stable/${pkgname}_${pkgver}{.tar.gz,.dsc}
-        steam.sh)
+source=(https://repo.steampowered.com/"$pkgname/archive/stable/${pkgname}_$pkgver"{.tar.gz,.dsc}
+  steam.sh)
 sha512sums=('32f84cbd5c93fb706520ca333c13553d61fe97b57b5dcfe4b83f8155d7c3c11e5dcbe71afa55ea8b7c11e933ba962e1d83cd6e3a9f86714e0afcbaf308c7b668'
-            '0f8b285182c54ba0fbfd34b0ec4f6a6b6d11007c888f3a118b58d90e58d16f9d2b513c339e2b356b94adf7159bbc7eb8bda9f9ec27175701aa24b3b5a101c047'
-            '5e75c019e9fe8c67d686c4e3343dac1180a69a4bdb7d39b333415c63201eef9b98da5619dbf6fd8daa6884e65bc7f8afc9e52778682425e5a75987d527eae6f0')
+  '0f8b285182c54ba0fbfd34b0ec4f6a6b6d11007c888f3a118b58d90e58d16f9d2b513c339e2b356b94adf7159bbc7eb8bda9f9ec27175701aa24b3b5a101c047'
+  '5e75c019e9fe8c67d686c4e3343dac1180a69a4bdb7d39b333415c63201eef9b98da5619dbf6fd8daa6884e65bc7f8afc9e52778682425e5a75987d527eae6f0')
 b2sums=('b526537fd9dd603182a28d35aeac67f778af75ba866a23597f7ae3f52b1b3bc3f548501723459ba35c337c3bdbe62bc359798149ca0d1c4bcee4599c9b84183d'
-        '6d9ec684e53966d735fcd0974a6cd3efc13a7822a3cd9257ec991aa2d06c74215efda0fc4831f1bcf0d246e7bd0ac23baed7aa3a266fcdbac43e2723c7338796'
-        'c6bac99336b7c30fec7cdbaf9e949555c687dd9dff50bcae136134d6314f4b841f5fc66ddb2caac1b003690b926fd4afbdc11da143b4674db4b75f27709fdd23')
+  '6d9ec684e53966d735fcd0974a6cd3efc13a7822a3cd9257ec991aa2d06c74215efda0fc4831f1bcf0d246e7bd0ac23baed7aa3a266fcdbac43e2723c7338796'
+  'c6bac99336b7c30fec7cdbaf9e949555c687dd9dff50bcae136134d6314f4b841f5fc66ddb2caac1b003690b926fd4afbdc11da143b4674db4b75f27709fdd23')
 validpgpkeys=('BA1816EF8E75005FCF5E27A1F24AEA9FB05498B7') # linux@steampowered.com
 
 package() {
-  cd ${pkgname}-launcher
-  make DESTDIR="${pkgdir}" install
+  cd "$pkgname"-launcher || exit
+  make DESTDIR="$pkgdir" install
 
   mv "${pkgdir}/usr/bin/steam" "${pkgdir}/usr/lib/steam/steam"
   install -Dm 755 "${srcdir}/steam.sh" "${pkgdir}/usr/bin/steam"
