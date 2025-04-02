@@ -67,7 +67,10 @@ build() {
     -D dist_version="$pkgver-$pkgrel"
     -D libaudit=no
     -D session_tracking_consolekit=false
-    -D suspend_resume=systemd
+#    -D suspend_resume=elogind
+    -D session_tracking=no
+    -D systemd_journal=false
+    -D systemdsystemunitdir=disable
     -D modify_system=true
     -D selinux=false
 
