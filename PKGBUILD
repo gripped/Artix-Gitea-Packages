@@ -6,7 +6,7 @@
 
 pkgbase=bluez
 pkgname=('bluez' 'bluez-utils' 'bluez-libs' 'bluez-cups' 'bluez-deprecated-tools' 'bluez-hid2hci' 'bluez-mesh' 'bluez-obex')
-pkgver=5.81
+pkgver=5.82
 pkgrel=1
 url="http://www.bluez.org/"
 arch=('x86_64')
@@ -15,7 +15,7 @@ makedepends=('dbus' 'libical' 'alsa-lib' 'json-c' 'ell' 'python-docutils' 'pytho
 source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.{xz,sign}
         bluetooth.modprobe)
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
-sha256sums=('c600c61f149a3a699405f187bf4891f525e277ad24b6b53bf073d9848a070652'
+sha256sums=('0739fa608a837967ee6d5572b43fb89946a938d1c6c26127158aaefd743a790b'
             'SKIP'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
