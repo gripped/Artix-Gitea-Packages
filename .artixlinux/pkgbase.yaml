@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libplacebo
-  version: 7.349.0-5
+  version: 7.349.0-6
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 7.349.0-5
+    version: 7.349.0-6
     packages:
-      - libplacebo-7.349.0-5-x86_64.pkg.tar.zst
+      - libplacebo-7.349.0-6-x86_64.pkg.tar.zst
   world:
     version: 7.349.0-4
     packages:
