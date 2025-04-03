@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-archinfo
-  version: 9.2.134-1
+  version: 9.2.148-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 9.2.134-1
+    version: 9.2.148-1
     packages:
-      - python-archinfo-9.2.134-1-any.pkg.tar.zst
+      - python-archinfo-9.2.148-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
