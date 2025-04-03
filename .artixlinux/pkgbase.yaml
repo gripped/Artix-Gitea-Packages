@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lxsession
-  version: 1:0.5.5-2.1
+  version: 1:0.5.6-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - lxsession-gtk3
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1:0.5.5-2.1
+    version: 1:0.5.6-1
     packages:
-      - lxsession-1:0.5.5-2.1-x86_64.pkg.tar.zst
-      - lxsession-gtk3-1:0.5.5-2.1-x86_64.pkg.tar.zst
+      - lxsession-1:0.5.6-1-x86_64.pkg.tar.zst
+      - lxsession-gtk3-1:0.5.6-1-x86_64.pkg.tar.zst
 team: galaxy
