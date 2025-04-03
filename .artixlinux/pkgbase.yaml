@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - openresolv
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: world
+  removeRepo: system
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -22,9 +22,8 @@ repos:
     version: null
     packages: []
   system:
-    version: 3.13.2-2
-    packages:
-      - openresolv-3.13.2-2-any.pkg.tar.zst
+    version: null
+    packages: []
   world-goblins:
     version: null
     packages: []
@@ -32,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 3.13.2-2
+    packages:
+      - openresolv-3.13.2-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
