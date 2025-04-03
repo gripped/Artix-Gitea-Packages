@@ -1,0 +1,82 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+pkgbase=papers
+pkgname=(
+  papers
+  papers-lib-docs
+)
+pkgver=48.0
+pkgrel=1
+pkgdesc='Document viewer for PDF and other document formats aimed at the GNOME desktop'
+arch=(x86_64)
+url='https://apps.gnome.org/Papers/'
+license=(GPL-2.0-or-later)
+depends=(
+  cairo
+  dconf
+  djvulibre
+  exempi
+  gcc-libs
+  gdk-pixbuf2
+  glib2
+  glibc
+  graphene
+  gtk4
+  gtksourceview5
+  hicolor-icon-theme
+  libadwaita
+  libarchive
+  libnautilus-extension
+  libspelling
+  libtiff
+  pango
+  poppler-glib
+)
+makedepends=(
+  appstream
+  gi-docgen
+  git
+  glib2-devel
+  gobject-introspection
+  itstool
+  libsysprof-capture
+  meson
+  rust
+)
+source=("git+https://gitlab.gnome.org/GNOME/Incubator/papers.git#tag=$pkgver")
+b2sums=('cb4b202e8d384fa19f9084a3f884987d99594328b3e2523282fa47257e0345974675a1b32d8ba6bb49d216c32bceeb305e68fd6781925df802926661812f82e1')
+
+prepare() {
+  cd $pkgbase
+
+  CARGO_HOME="$srcdir/build/cargo-home" \
+    cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  artix-meson $pkgbase build
+
+  CARGO_PROFILE_RELEASE_LTO=true \
+    CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+    CARGO_PROFILE_RELEASE_DEBUG=2 \
+    CARGO_PROFILE_RELEASE_STRIP=false \
+    meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs --no-rebuild
+}
+
+package_papers() {
+  meson install -C build --destdir "$pkgdir" --no-rebuild
+
+  mkdir -p doc/usr/share
+  mv {"$pkgdir",doc}/usr/share/doc
+}
+
+package_papers-lib-docs() {
+  pkgdesc+=" (library API documentation)"
+  depends=()
+
+  mv doc/* "$pkgdir"
+}
