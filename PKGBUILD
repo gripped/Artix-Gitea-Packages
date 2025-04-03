@@ -1,0 +1,64 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+pkgname=decibels
+pkgver=48.0
+pkgrel=1
+pkgdesc='Audio player for GNOME'
+arch=(any)
+url='https://apps.gnome.org/Decibels/'
+license=(GPL-3.0-or-later)
+depends=(
+  dconf
+  gjs
+  glib2
+  graphene
+  gst-plugins-bad-libs
+  gst-plugins-base
+  gst-plugins-base-libs
+  gst-plugins-good
+  gstreamer
+  gtk4
+  hicolor-icon-theme
+  libadwaita
+)
+makedepends=(
+  appstream
+  blueprint-compiler
+  git
+  meson
+  typescript
+)
+optdepends=(
+  'gst-libav: Extra media codecs'
+  'gst-plugins-bad: Extra media codecs'
+  'gst-plugins-ugly: Extra media codecs'
+)
+groups=(gnome)
+source=(
+  "git+https://gitlab.gnome.org/GNOME/decibels.git#tag=${pkgver/[a-z]/.&}"
+  "git+https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions.git"
+)
+b2sums=('3aa9f33e439a37f237d6c7321bdfd499063ebe0ce400d467f656a6aa6a3765e1492990588fadaf5360232e490285cea317489f346425432cf8de478cf5c7a8be'
+        'SKIP')
+
+prepare() {
+  cd $pkgname
+
+  git submodule init
+  git submodule set-url gi-types "$srcdir/gi-typescript-definitions"
+  git -c protocol.file.allow=always -c protocol.allow=never submodule update
+}
+
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+  ln -s org.gnome.Decibels "$pkgdir/usr/bin/decibels"
+}
