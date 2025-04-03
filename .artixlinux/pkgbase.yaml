@@ -1,16 +1,18 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: brasero
+  version: 3.12.3+r41+g98342080-1
+  arch:
+    - x86_64
+  pkgname:
+    - brasero
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 3.12.3+r41+g98342080-1
+    packages:
+      - brasero-3.12.3+r41+g98342080-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
