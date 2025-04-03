@@ -70,11 +70,11 @@ pkgbase:
     - thunderbird-i18n-zh-cn
     - thunderbird-i18n-zh-tw
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
+  addRepo: galaxy-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -158,6 +158,21 @@ repos:
       - thunderbird-i18n-zh-cn-136.0.1-2-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-tw-136.0.1-2-x86_64.pkg.tar.zst
   world:
+    version: null
+    packages: []
+  lib32-goblins:
+    version: null
+    packages: []
+  lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
+    version: null
+    packages: []
+  galaxy-goblins:
+    version: null
+    packages: []
+  galaxy-gremlins:
     version: 137.0-1
     packages:
       - thunderbird-137.0-1-x86_64.pkg.tar.zst
@@ -224,21 +239,6 @@ repos:
       - thunderbird-i18n-vi-137.0-1-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-cn-137.0-1-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-tw-137.0-1-x86_64.pkg.tar.zst
-  lib32-goblins:
-    version: null
-    packages: []
-  lib32-gremlins:
-    version: null
-    packages: []
-  lib32:
-    version: null
-    packages: []
-  galaxy-goblins:
-    version: null
-    packages: []
-  galaxy-gremlins:
-    version: null
-    packages: []
   galaxy:
     version: 128.7.1-1
     packages:
