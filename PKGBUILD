@@ -1,0 +1,85 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=gnome-notes
+pkgver=40.1
+pkgrel=7
+pkgdesc="Write out notes, every detail matters"
+url="https://wiki.gnome.org/Apps/Notes"
+arch=(x86_64)
+license=(GPL-3.0-or-later)
+depends=(
+  curl
+  evolution-data-server
+  glib2
+  gnome-online-accounts
+  gtk3
+  json-glib
+  libhandy
+  libxml2
+  tracker3
+  webkit2gtk-4.1
+)
+makedepends=(
+  git
+  glib2-devel
+  meson
+  yelp-tools
+)
+provides=("bijiben=$pkgver")
+conflicts=(bijiben)
+replaces=(bijiben)
+groups=(gnome-extra)
+source=("git+https://gitlab.gnome.org/GNOME/gnome-notes.git#tag=BIJIBEN_${pkgver//./_}"
+        gnome-notes-invalid-open.patch
+        gnome-notes-invalid-search.patch)
+b2sums=('794f39b637b48a8a64a0fdb98fbd1d346f0a22dc2c752dfbba97f3ffe1c3c6b5d44cd3bbe64fdcc4877065140d6e7b3d3f3961ca872df05c4df22b617729a83d'
+        '0a74c1009d74469aff485bbd79f8f1da48db0acbd1fb53f0256737e6c262657f2c21532df899a9c0c433378cf1407c1d00c5c71b63b55b8449a9a11fab2ec5a3'
+        '350a5d7efaab372d792d15f676238f6c3310a1f56af3b74093eb58ea932e1956b34b6def52f591d6c20b429188d01835e3e82021347fd2457aa9eefd605d3d4d')
+
+prepare() {
+  cd $pkgname
+
+  # Fix build with Meson 0.61
+  git cherry-pick -n 994af76ce5144062d55d141129bf6bf5fab002ee
+
+  # Remove libuuid dep
+  git cherry-pick -n cbadb5e8b7d3e5e6672e8acab82276c174999a12
+
+  # Soup 3
+  git cherry-pick -n 8471369c54f9aa777857e2a42d82ab502c071520
+
+  # Fix crash in shell search provider
+  # https://gitlab.gnome.org/GNOME/gnome-notes/-/merge_requests/193
+  git cherry-pick -n 438678f007f129b6ed636a577917223a503a484b
+
+  # Pass open uri to the primary application instance
+  # https://gitlab.gnome.org/GNOME/gnome-notes/-/merge_requests/194
+  git cherry-pick -n 747ff6119895c2e9bc6560414d8b8091e2d03ee1
+
+  # Fix activate
+  # https://gitlab.gnome.org/GNOME/gnome-notes/-/merge_requests/195
+  git apply -3 ../gnome-notes-invalid-open.patch
+
+  # Don't build result when invalid ID specified
+  # https://gitlab.gnome.org/GNOME/gnome-notes/-/merge_requests/196
+  git apply -3 ../gnome-notes-invalid-search.patch
+}
+
+build() {
+  local meson_options=(
+    -D update_mimedb=false
+  )
+
+  artix-meson $pkgname build "${meson_options[@]}"
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:
