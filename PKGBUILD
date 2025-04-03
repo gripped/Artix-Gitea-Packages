@@ -2,7 +2,7 @@
 # Contributor: Bert Peters <bertptrs@archlinux.org>
 _name="sass-embedded"
 pkgname="ruby-$_name"
-pkgver=1.86.0
+pkgver=1.86.1
 pkgrel=1
 pkgdesc="Embedded Sass Host for Ruby"
 arch=("any")
@@ -13,7 +13,7 @@ makedepends=("ruby-rake" "ruby-rdoc" "protobuf")
 checkdepends=("ruby-bundler" "ruby-rspec")
 source=("$pkgname-$pkgver::https://github.com/sass-contrib/sass-embedded-host-ruby/archive/refs/tags/v$pkgver.tar.gz"
         "no-rubocop-build.patch")
-sha256sums=('b70ff084d19c5ed28e8b409fac31deb706ce64bb20aafc69702c78b73b4766f7'
+sha256sums=('8287c2412abed72db3b6b5e1140ad321d25abae6ae35ec8983a541b5db39a6a4'
             '73586a9f570cb52f04a0afe428ad33a0e080f9847ff9b45ba74af3a40bfcc873')
 
 prepare() {
