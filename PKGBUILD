@@ -3,8 +3,8 @@
 # Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgname=(ruby-sinatra ruby-sinatra-contrib ruby-rack-protection)
-pkgver=4.1.0
-pkgrel=3
+pkgver=4.1.1
+pkgrel=1
 arch=('any')
 url='https://sinatrarb.com/'
 license=('MIT')
@@ -44,7 +44,7 @@ checkdepends=(
 )
 options=('!emptydirs')
 source=("https://github.com/sinatra/sinatra/archive/v${pkgver}/sinatra-v${pkgver}.tar.gz")
-sha512sums=('e0605da6e0f5fb154b6d9574ac5b661077238f03731685bc9558e713a35b3615c445660d5eccffefab7d5eb536d6819ccb726d0f40be37b343e1cd5e02ea9678')
+sha512sums=('d9022acc28048f6424f077216bfc620000887afdc5fb34152610d3f0a5139cea367a165cb6caa1e0b1f02fb8328b563d6993f16419d798bde50e45450b558f2d')
 
 prepare() {
   cd "sinatra-${pkgver}"
