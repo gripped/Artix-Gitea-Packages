@@ -4,7 +4,7 @@
 _name=pydantic-core
 pkgname=python-pydantic-core
 # WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
-pkgver=2.33.0
+pkgver=2.33.1
 pkgrel=1
 epoch=2
 pkgdesc="Core validation logic for pydantic written in rust "
@@ -35,8 +35,8 @@ checkdepends=(
 )
 options=(!lto)
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('5c5ec0dfe19368d095ab16373cba099f661454776483b7112412edb0d2052ecce51ec582e95e33a570533276f116ccb0c69d97a1d228612e07bf181c69046c2a')
-b2sums=('bbc5f798b7caa2bdfb39a380163a0d7c0ef69a97828d4c6952f4314495fa5cc472bfb78147a31aee7922a04a5afbe04e5a93287d6807afec874ecb58bfda64fb')
+sha512sums=('24540debd2a17651863fff256ec29b0c20424ea66f64a84931c7351faa5ae6ac7d3cb739af5c5572b4409740695d6d025ce154a7bd9060d4c62ec16eee0ad271')
+b2sums=('d9936fdf2149770ad0ee8f4ce7772f65447782489be73c64032658a4ae1db86fe338291c6bc02d1d46e3e52f8a23d90c41cc9bab563bf2bfa3e300520cbd191a')
 
 prepare() {
   # we don't support version pinning
