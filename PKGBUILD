@@ -41,7 +41,8 @@ depends=(aha
          xorg-xdpyinfo)
 makedepends=(extra-cmake-modules
              fwupd
-             kdoctools)
+             kdoctools
+             vulkan-headers)
 optdepends=('fwupd: firmware security module')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
