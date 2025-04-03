@@ -6,14 +6,13 @@
 
 pkgname=python-redis
 pkgver=5.2.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='The Python interface to the Redis key-value store'
 arch=('any')
 url='https://github.com/redis/redis-py'
 license=('MIT')
 depends=(
   'python'
-  'python-async-timeout'
 )
 makedepends=(
   'git'
