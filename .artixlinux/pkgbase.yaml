@@ -2,7 +2,7 @@
 team: lib32
 pkgbase:
   name: lib32-libnm
-  version: 1.52.0-1
+  version: 1.52.0-1.1
   arch:
     - x86_64
   pkgname:
@@ -41,9 +41,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 1.52.0-1
+    version: 1.52.0-1.1
     packages:
-      - lib32-libnm-1.52.0-1-x86_64.pkg.tar.zst
+      - lib32-libnm-1.52.0-1.1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []

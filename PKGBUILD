@@ -9,7 +9,7 @@
 
 pkgname=lib32-libnm
 pkgver=1.52.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="NetworkManager client library (32-bit)"
 url="https://networkmanager.dev/"
 arch=(x86_64)
@@ -67,10 +67,9 @@ build() {
     -D dist_version="$pkgver-$pkgrel"
     -D libaudit=no
     -D session_tracking_consolekit=false
-#    -D suspend_resume=elogind
     -D session_tracking=no
     -D systemd_journal=false
-    -D systemdsystemunitdir=disable
+    -D systemdsystemunitdir=no
     -D modify_system=true
     -D selinux=false
 
