@@ -8,11 +8,11 @@ pkgbase:
   pkgname:
     - librewolf
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: null
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -50,7 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 137.0-1
-    packages:
-      - librewolf-137.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
 team: galaxy
