@@ -1,0 +1,80 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Tobias Kieslich <tobias@justdreams.de>
+
+pkgname=gthumb
+pkgver=3.12.7
+pkgrel=1
+pkgdesc="Image browser and viewer for the GNOME Desktop"
+url="https://wiki.gnome.org/Apps/Gthumb"
+arch=(x86_64)
+license=(GPL-2.0-or-later)
+depends=(
+  cairo
+  clutter
+  clutter-gtk
+  dconf
+  gcc-libs
+  gdk-pixbuf2
+  glib2
+  glibc
+  gsettings-desktop-schemas
+  gst-plugin-gtk
+  gst-plugins-base-libs
+  gstreamer
+  gtk3
+  hicolor-icon-theme
+  lcms2
+  libcolord
+  libheif
+  libjpeg-turbo
+  libjxl
+  libpng
+  librsvg
+  libtiff
+  libwebp
+  libx11
+  pango
+  zlib
+)
+makedepends=(
+  appstream
+  brasero
+  docbook-xsl
+  exiv2
+  git
+  glib2-devel
+  libchamplain
+  libraw
+  meson
+  yelp-tools
+)
+optdepends=(
+  'brasero: burn discs'
+  'exiv2: metadata support'
+  'libchamplain: map viewer'
+  'libraw: read RAW files'
+)
+source=(
+  "git+https://gitlab.gnome.org/GNOME/gthumb.git#tag=$pkgver"
+)
+b2sums=('e53ff96c3d9249fa33e649544b24938f71a1b391be63e5967839f443d5bd4657cafe0f9ebcf02a08f65d49555b0d49d620e035fbf807b574bfa9f1380d18c4cb')
+
+prepare() {
+  cd gthumb
+}
+
+build() {
+  artix-meson gthumb build -D libchamplain=true
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:
