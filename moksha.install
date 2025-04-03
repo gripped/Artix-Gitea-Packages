@@ -1,10 +1,10 @@
 post_upgrade() {
 if [ -f /sbin/init ] && [ $(readlink /sbin/init) = "dinit-init" ] ; then
-  if $(grep -i -q 'shutdown -h now' /usr/etc/enlightenment/sysactions.conf) ; then
-    sed -i 's/shutdown -h now/shutdown -p/' /usr/etc/enlightenment/sysactions.conf
+  if $(grep -i -q 'shutdown -h now' /etc/enlightenment/sysactions.conf) ; then
+    sed -i 's/shutdown -h now/shutdown -p/' /etc/enlightenment/sysactions.conf
   fi
-  if $(grep -i -q 'shutdown -r now' /usr/etc/enlightenment/sysactions.conf) ; then
-    sed -i 's/shutdown -r now/shutdown -r/' /usr/etc/enlightenment/sysactions.conf
+  if $(grep -i -q 'shutdown -r now' /etc/enlightenment/sysactions.conf) ; then
+    sed -i 's/shutdown -r now/shutdown -r/' /etc/enlightenment/sysactions.conf
   fi
 fi
 }
