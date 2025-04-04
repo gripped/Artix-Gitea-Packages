@@ -5,18 +5,18 @@
 _gemname='irb'
 pkgname="ruby-${_gemname}"
 pkgver=1.14.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Interactive Ruby command-line tool for REPL (Read Eval Print Loop).'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
 license=('RUBY' 'BSD-2')
 depends=(
   ruby
+  ruby-rdoc
   ruby-reline
 )
 makedepends=(
   ruby-bundler
-  ruby-rdoc
 )
 checkdepends=(
   ruby-debug
