@@ -3,32 +3,54 @@
 # Contributor: Ray Rashif <schiv@archlinux.org>
 
 pkgname=calf
-pkgver=0.90.4
+pkgver=0.90.6
 pkgrel=1
 pkgdesc='LV2 plug-in suite and standalone Jack host'
 arch=(x86_64)
 url='https://calf-studio-gear.org'
-groups=(lv2-plugins pro-audio)
-license=(LGPL2.1)
-depends=(cairo expat fluidsynth gcc-libs gdk-pixbuf2 glib2 glibc gtk2 hicolor-icon-theme jack)
-makedepends=(git lv2)
-source=("git+https://github.com/calf-studio-gear/calf#tag=$pkgver")
-b2sums=('a5d2ccca675c21e807b4851d26e519beafce5ce159be8e5c711d1dd1febbf17f164dd9e6bc4e776295bfc2132c6ccb67bf4dc0a975acf49f6094bd0ef8f914b1')
-
-prepare() {
-  cd $pkgname
-  autoreconf -fiv
-}
+_url="https://github.com/calf-studio-gear/calf"
+groups=(
+  lv2-plugins
+  pro-audio
+)
+license=(
+  GPL-2.0-or-later
+  LGPL-2.0-or-later
+)
+depends=(
+  cairo
+  expat
+  fluidsynth
+  gcc-libs
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk2
+  hicolor-icon-theme
+  jack)
+makedepends=(
+  cmake
+  git
+  lv2
+)
+source=("git+$_url#tag=$pkgver")
+b2sums=('4354d2a09518563725940d48c581d4e14ccb8fba15e40b615ed25511650f9c41a1c71f942f3861e5eae2d987968f6e8f8f9ae2dfb54753126d3089f725004a7c')
 
 build() {
-  cd $pkgname
-  ./configure --enable-experimental --enable-sse --prefix=/usr --with-lv2
-  # prevent libtool from overlinking
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make
+  local cmake_options=(
+    -B build
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D WANT_EXPERIMENTAL=ON
+    -S $pkgname
+    -W no-dev
+  )
+
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
 }
 
 package() {
-  make DESTDIR="$pkgdir" install -C $pkgname
-  install -Dm644 $pkgname/{AUTHORS,ChangeLog,README} -t "$pkgdir/usr/share/doc/$pkgname"
+  DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 $pkgname/{AUTHORS,ChangeLog,README.md} -t "$pkgdir/usr/share/doc/$pkgname"
 }
