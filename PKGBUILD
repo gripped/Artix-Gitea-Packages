@@ -5,7 +5,7 @@ pkgname=(
   b3sum
   libblake3
 )
-pkgver=1.7.0
+pkgver=1.8.1
 pkgrel=1
 pkgdesc='Command line implementation of the BLAKE3 hash function'
 arch=(x86_64)
@@ -15,10 +15,11 @@ depends=(gcc-libs)
 makedepends=(
   cmake
   git
+  onetbb
   rust
 )
 source=("git+$url.git#tag=$pkgver")
-b2sums=('e2c3b987d8092a99577b92784037a25f56756c9a9b9bbefb149533e4895bb00676bb36ebfc2448604325b2261106a74d84f22221ed5dd4374f734dcdca16ea7f')
+b2sums=('73846ef16241d81c87caef57c9ac30fe1b18f2c1dbf048a19df61839900e382a561da74d54ebd7266e57e005ec850a3b34957ad88e26883be08b519acc8b2822')
 
 prepare() {
   cd $_name/"${pkgname[0]}"
@@ -33,6 +34,7 @@ build() {
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
     -D BUILD_SHARED_LIBS=ON
+    -D BLAKE3_USE_TBB=1
   )
   cmake "${cmake_options[@]}"
   cmake --build build
@@ -53,6 +55,7 @@ package_b3sum() {
 
 package_libblake3() {
   pkgdesc='The official C implementation of BLAKE3'
+  depends+=(onetbb)
 
   DESTDIR="$pkgdir" cmake --install build
 }
