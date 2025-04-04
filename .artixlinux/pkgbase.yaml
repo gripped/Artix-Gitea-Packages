@@ -9,8 +9,8 @@ pkgbase:
     - kitty-terminfo
     - kitty-shell-integration
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.41.0-1
+    version: 0.41.1-1
     packages:
-      - kitty-0.41.0-1-x86_64.pkg.tar.zst
-      - kitty-terminfo-0.41.0-1-x86_64.pkg.tar.zst
-      - kitty-shell-integration-0.41.0-1-x86_64.pkg.tar.zst
+      - kitty-0.41.1-1-x86_64.pkg.tar.zst
+      - kitty-terminfo-0.41.1-1-x86_64.pkg.tar.zst
+      - kitty-shell-integration-0.41.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,9 +54,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.41.1-1
-    packages:
-      - kitty-0.41.1-1-x86_64.pkg.tar.zst
-      - kitty-terminfo-0.41.1-1-x86_64.pkg.tar.zst
-      - kitty-shell-integration-0.41.1-1-x86_64.pkg.tar.zst
-team: galaxy
+    version: null
+    packages: []
+team: world
