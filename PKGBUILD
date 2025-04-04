@@ -4,16 +4,21 @@
 _gemname='net-imap'
 pkgname="ruby-${_gemname}"
 pkgver=0.4.12
-pkgrel=3
+pkgrel=4
 pkgdesc='Ruby client api for Internet Message Access Protocol'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
 license=('RUBY' 'BSD-2-CLAUSE')
-depends=('ruby')
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-rdoc
+  )
 checkdepends=(
+  ruby-base64
   ruby-bundler
   ruby-rake
-  ruby-rdoc
   ruby-test-unit
   ruby-test-unit-ruby-core
 )
