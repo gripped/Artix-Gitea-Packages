@@ -1,0 +1,65 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Arnaud Taffanel <dev@taffanel.org>
+# Contributor: Victor Häggqvist <aur a snilius d com>
+
+_name=Solaar
+pkgname=solaar
+pkgver=1.1.14
+pkgrel=2
+pkgdesc="Linux device manager for a wide range of Logitech devices"
+url="https://pwr-solaar.github.io/Solaar/"
+_url="https://github.com/pwr-Solaar/Solaar"
+license=(GPL-2.0-or-later)
+arch=(any)
+depends=(
+  glib2
+  gobject-introspection-runtime
+  gtk3
+  hicolor-icon-theme
+  libnotify
+  python
+  python-dbus
+  python-evdev
+  python-gobject
+  python-psutil
+  python-pyudev
+  python-typing_extensions
+  python-xlib
+  python-yaml
+)
+makedepends=(
+  git
+  python-build
+  python-installer
+  python-setuptools
+  python-wheel
+)
+optdepends=('libayatana-appindicator: Display tray icon')
+source=(
+  "git+$_url.git?signed#tag=$pkgver"
+)
+sha512sums=('e3e16a53daa6e3900d0eb6feef0ffb12401a824f5e498c78b8d2dcbf855855fda1d8e0d8448a6763892cded6df28a8e7db485139fa92b9754a68e82a7d0d1026')
+validpgpkeys=('2FF2ACA9D97FF7B42CF8494A1E32E75672D6A196') # Peter F. Patel-Schneider (key generated for github) <pfpschneider@gmail.com>
+
+prepare() {
+  cd $_name
+  tools/po-compile.sh
+}
+
+build() {
+  cd $_name
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd $_name
+  python -m installer --destdir="$pkgdir" dist/*.whl
+
+  # udev
+  rm -rf "$pkgdir/etc"
+  install -vDm 644 rules.d/42-logitech-unify-permissions.rules -t "$pkgdir/usr/lib/udev/rules.d/"
+  # docs
+  install -vDm 644 {CHANGELOG,README}.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}
+# vim:set ts=2 sw=2 et:
