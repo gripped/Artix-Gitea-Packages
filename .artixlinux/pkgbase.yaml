@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: qt6gtk2
-  version: 0.3-2.7
+  version: 0.4-1
   arch:
     - any
   pkgname:
     - qt6gtk2
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.4-1
+    packages:
+      - qt6gtk2-0.4-1-any.pkg.tar.zst
   galaxy:
     version: 0.3-2.7
     packages:
