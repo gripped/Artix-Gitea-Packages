@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: minizip-ng
-  version: 4.0.8-1
+  version: 4.0.9-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.0.8-1
+    version: 4.0.9-1
     packages:
-      - minizip-ng-4.0.8-1-x86_64.pkg.tar.zst
+      - minizip-ng-4.0.9-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
