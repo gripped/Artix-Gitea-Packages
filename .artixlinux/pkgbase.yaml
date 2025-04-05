@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: uv
-  version: 0.6.11-1
+  version: 0.6.12-1
   arch:
     - x86_64
   pkgname:
@@ -33,10 +33,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.6.11-1
+    version: 0.6.12-1
     packages:
-      - uv-0.6.11-1-x86_64.pkg.tar.zst
-      - python-uv-0.6.11-1-x86_64.pkg.tar.zst
+      - uv-0.6.12-1-x86_64.pkg.tar.zst
+      - python-uv-0.6.12-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
