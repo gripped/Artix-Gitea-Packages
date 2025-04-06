@@ -1,26 +1,27 @@
 ---
 pkgbase:
   name: libinih
-  version: 58-1
+  version: 59-1
   arch:
     - x86_64
   pkgname:
     - libinih
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 59-1
+    packages:
+      - libinih-59-1-x86_64.pkg.tar.zst
   system:
     version: 58-1
     packages:
@@ -52,3 +53,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: system
