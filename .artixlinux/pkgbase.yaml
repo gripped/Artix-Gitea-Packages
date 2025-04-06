@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: jasper
-  version: 4.2.4-2
+  version: 4.2.5-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.2.4-2
+    version: 4.2.5-1
     packages:
-      - jasper-4.2.4-2-x86_64.pkg.tar.zst
-      - jasper-doc-4.2.4-2-x86_64.pkg.tar.zst
+      - jasper-4.2.5-1-x86_64.pkg.tar.zst
+      - jasper-doc-4.2.5-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
