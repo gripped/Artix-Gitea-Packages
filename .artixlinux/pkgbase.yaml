@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-aiogram
-  version: 3.19.0-1
+  version: 3.19.0-2
   arch:
     - any
   pkgname:
     - python-aiogram
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.19.0-1
+    version: 3.19.0-2
     packages:
-      - python-aiogram-3.19.0-1-any.pkg.tar.zst
+      - python-aiogram-3.19.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
