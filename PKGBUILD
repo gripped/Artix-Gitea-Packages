@@ -6,7 +6,7 @@
 
 pkgname=rspamd
 pkgver=3.11.1
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
@@ -38,7 +38,7 @@ makedepends=(
 )
 optdepends=(
   'perl: rspamd stats script'
-  'redis: redis cache and data storage'
+  'valkey: redis cache and data storage'
 )
 backup=(
   etc/rspamd/actions.conf
