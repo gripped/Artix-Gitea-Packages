@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: kitinerary
-  version: 24.12.3-5
+  version: 24.12.3-6
   arch:
     - x86_64
   pkgname:
     - kitinerary
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,9 @@ repos:
     packages:
       - kitinerary-24.12.3-3-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 24.12.3-6
+    packages:
+      - kitinerary-24.12.3-6-x86_64.pkg.tar.zst
   world:
     version: 24.12.3-5
     packages:
