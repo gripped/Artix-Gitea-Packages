@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - kitinerary
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.12.3-3
+    version: 24.12.3-6
     packages:
-      - kitinerary-24.12.3-3-x86_64.pkg.tar.zst
+      - kitinerary-24.12.3-6-x86_64.pkg.tar.zst
   world-gremlins:
     version: 24.12.3-6
     packages:
