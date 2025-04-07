@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - libnewt
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.52.24-3
+    version: 0.52.25-1
     packages:
-      - libnewt-0.52.24-3-x86_64.pkg.tar.zst
+      - libnewt-0.52.25-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
