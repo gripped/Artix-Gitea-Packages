@@ -4,7 +4,7 @@
 
 pkgname=inkscape
 pkgver=1.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -42,7 +42,6 @@ depends=(
   'libpng'
   'librevenge'
   'libsigc++'
-  'libsoup'
   'libvisio'
   'libwpg'
   'libx11'
@@ -92,13 +91,17 @@ optdepends=(
 
 source=("git+https://gitlab.com/inkscape/inkscape.git#tag=INKSCAPE_${pkgver//./_}"
         'inkscape-extensions::git+https://gitlab.com/inkscape/extensions.git'
-        'inkscape-lib2geom::git+https://gitlab.com/inkscape/lib2geom.git'
+        'inkscape-libcroco::git+https://gitlab.com/inkscape/libcroco.git'
         'inkscape-themes::git+https://gitlab.com/inkscape/themes.git'
         'inkscape-extras-extensions-gcodetools::git+https://gitlab.com/inkscape/extras/extensions-gcodetools.git'
         'inkscape-extras-extension-manager::git+https://gitlab.com/inkscape/extras/extension-manager.git'
         'inkscape-extras-inkscape-import-clipart::git+https://gitlab.com/inkscape/extras/inkscape-import-clipart.git'
-        'inkscape-extras-extension-xaml::git+https://gitlab.com/inkscape/extras/extension-xaml.git')
+        'inkscape-extras-extension-xaml::git+https://gitlab.com/inkscape/extras/extension-xaml.git'
+        'inkscape-extras-extension-afdesign::git+https://gitlab.com/inkscape/extras/extension-afdesign.git'
+        'inkscape-extras-extension-curve::git+https://gitlab.com/inkscape/extras/extension-curve.git')
 sha256sums=('c0f18fe8ea30662b3242fbef3d673edc3fc362f530c7160767fd33a6a6083fea'
+            'SKIP'
+            'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -108,6 +111,10 @@ sha256sums=('c0f18fe8ea30662b3242fbef3d673edc3fc362f530c7160767fd33a6a6083fea'
             'SKIP')
 
 _backports=(
+  # Bump cmake requirements
+  '3abcec047b94cf3793fddeafe8b9326e5936433d'
+  # Delete outdated PKG_CONFIG_USE_CMAKE_PREFIX_PATH from CMakeLists.txt
+  'eda68f03d871de326d3e470cd1839fc7f4039031'
 )
 
 _reverts=(
@@ -115,16 +122,20 @@ _reverts=(
 
 prepare() {
   cd "${pkgname}"
+  git submodule init
   git submodule set-url share/extensions ../inkscape-extensions/
-  git submodule set-url src/3rdparty/2geom ../inkscape-lib2geom/
+  git submodule deinit -f src/3rdparty/2geom
+  git submodule set-url src/3rdparty/libcroco ../inkscape-libcroco/
   git submodule set-url share/themes ../inkscape-themes/
-  git -c protocol.file.allow=always submodule update --init
+  git -c protocol.file.allow=always submodule update
 
   ( cd share/extensions/
     git submodule set-url other/gcodetools ../inkscape-extras-extensions-gcodetools/
     git submodule set-url other/inkman ../inkscape-extras-extension-manager/
     git submodule set-url other/clipart ../inkscape-extras-inkscape-import-clipart/
     git submodule set-url other/extension-xaml ../inkscape-extras-extension-xaml/
+    git submodule set-url other/extension-afdesign ../inkscape-extras-extension-afdesign/
+    git submodule set-url other/extension-curve ../inkscape-extras-extension-curve/
     git -c protocol.file.allow=always submodule update --init )
 
   local _c _l
@@ -138,9 +149,6 @@ prepare() {
     git log --oneline "${_l}" "${_c}"
     git revert --mainline 1 --no-commit "${_c}"
   done
-
-  # build with recent cmake 
-  sed -i '/cmake_minimum_required/s|3.1.0|3.12.0|' CMakeLists.txt
 }
 
 build() {
