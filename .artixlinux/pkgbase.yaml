@@ -8,7 +8,7 @@ pkgbase:
   pkgname:
     - calligra
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 24.12.3-3
+    packages:
+      - calligra-24.12.3-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: 24.12.3-3
     packages:
