@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ispc
-  version: 1.25.3-2
+  version: 1.26.0-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.25.3-2
+    version: 1.26.0-1
     packages:
-      - ispc-1.25.3-2-x86_64.pkg.tar.zst
+      - ispc-1.26.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
