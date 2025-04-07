@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: python-flask-caching
-  version: 2.3.1-1
+  version: 2.3.1-2
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.3.1-1
+    version: 2.3.1-2
     packages:
-      - python-flask-caching-2.3.1-1-any.pkg.tar.zst
+      - python-flask-caching-2.3.1-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
