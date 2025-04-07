@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: stb
-  version: r2193.31707d1-1
+  version: r2205.f056911-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: r2193.31707d1-1
+    version: r2205.f056911-1
     packages:
-      - stb-r2193.31707d1-1-any.pkg.tar.zst
+      - stb-r2205.f056911-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
