@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lighttpd
-  version: 1.4.78-1
+  version: 1.4.79-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.4.78-1
+    version: 1.4.79-1
     packages:
-      - lighttpd-1.4.78-1-x86_64.pkg.tar.zst
+      - lighttpd-1.4.79-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

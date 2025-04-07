@@ -1,7 +1,7 @@
 # Maintainer: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=lighttpd
-pkgver=1.4.78
+pkgver=1.4.79
 pkgrel=1
 pkgdesc='A secure, fast, compliant and very flexible web-server'
 license=('BSD-3-Clause')
@@ -45,7 +45,7 @@ source=(
 	'lighttpd.conf'
 	'lighttpd.tmpfiles'
 )
-sha256sums=('14809765686e220ba4140805fd3c41cacd5023a24383c0ddc0078ac34576abfd'
+sha256sums=('12007d899d3d5ef24e979bc759b58c6b9075a5ca6936567b5efa75ed43c6eaea'
             '41f6c0042bb61021553779f861910e335834f6c15e4411756cdc6233b31076fe'
             '3aaa31c3d200e5346e9b8bb0eec293c2b7582598f3baf46537f05b46d6d4becd'
             'da6878d1649572259f29ae50236a129ff131c9b1730af81498581824cf8c4c35')
