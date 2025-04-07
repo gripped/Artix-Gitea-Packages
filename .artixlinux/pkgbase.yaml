@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: hyprgraphics
-  version: 0.1.3-2
+  version: 0.1.3-3
   arch:
     - x86_64
     - aarch64
@@ -10,11 +10,11 @@ pkgbase:
     - hyprgraphics
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,9 +33,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.1.3-2
+    version: 0.1.3-3
     packages:
-      - hyprgraphics-0.1.3-2-x86_64.pkg.tar.zst
+      - hyprgraphics-0.1.3-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
