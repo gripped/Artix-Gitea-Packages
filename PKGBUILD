@@ -1,9 +1,10 @@
 # Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Rasmus Moorats <xx+aur@nns.ee>
 
 pkgname=opensnitch
 pkgver=1.6.8
-pkgrel=1
-pkgdesc="A GNU/Linux application firewall"
+pkgrel=2
+pkgdesc='A GNU/Linux application firewall'
 arch=('x86_64')
 url='https://github.com/evilsocket/opensnitch'
 license=('GPL-3.0-or-later')
@@ -19,6 +20,7 @@ depends=(
   'python-pyqt5'
   'python-pyinotify'
   'python-notify2'
+  'python-packaging'
 )
 makedepends=(
   'git'
@@ -30,12 +32,18 @@ makedepends=(
   'python-setuptools'
   'python-jaraco.text'
   'qt5-tools'
+  'llvm'
+  'clang'
+  'libelf'
+  'linux-headers'
+  'bc'
 )
 optdepends=(
   'logrotate: logfile rotation'
   'python-qt-material: extra ui themes'
   'python-pyasn: display network name of IP'
 )
+replaces=('opensnitch-ebpf-module') # from the AUR
 backup=(
   'etc/opensnitchd/default-config.json'
   'etc/opensnitchd/system-fw.json'
@@ -43,6 +51,7 @@ backup=(
 options=('!lto')
 source=(
   "$pkgname::git+$url#tag=v$pkgver"
+  'fix-systemd-service.patch'
   'remove-debian-path.patch'
   'fix-setup.py.patch'
   'add-generated-protobuf-files.patch'
@@ -52,20 +61,22 @@ source=(
   'tmpfiles.conf'
 )
 sha512sums=('f4e172d8a37fd7530b94fdca9b141ec9aa8e3cb020eb0bfbaecbdccd4f9c1bbfd108df7e9e0e57b23ad414ce4d69316b590e6ae76564ef5bcba8dff3a0d55ef9'
+            '05a0565346917491da3592fb23859a05b0a963932238754b07db7e1e0878437a99802f4e1ea7730ad19ab66207dd191c30d1f14f54c28e9ae842fe740b926d94'
             '36b6056cdc0a24c8899a1daafd9983f1feb44df0ec3972e7e1759a3d5d6486d7c977d8e6ce9edb5456e57231266d3473547219ed32983671f151e4d02979c1f0'
             '3cd3c82c046646426793dbbb8197f40d8a155c78607c65e5cf0a645a93202119b0cc686b555463e013d5032c82ee804a2bd743197fe67236e26ff4cdb04d971b'
             'eff98be7897103e267bd95e837946126a16e29b22dfc3d1ccb5eba6b1fa7b2efac0c7c59f71175ae5cd1283ecbdd9fc2806b480b92e8b5b83e702fa3d57a9748'
             '8606ee06c24fdd3a7c4ef50b34f9d3c0f4e18515060604adb973b900674c18a21f586e4d64cc607762f5973ca0b8e061eecb7f115102f4705df22c51fbc435a0'
             '06e6d40658b51bb5254c2ea06cd6ebef139b2d144ea1060e5b2fa7231fb6ecc13c29b8c10b0f59f4d5470775d2ecea13fb171a9c745633a80a9f1d74d1ded493'
-            '8be6aaf742984dd37763a91294bf30a8b57f562eb86b49a19c87046ecf9c752c000f45816695b33ec230373b38b25e28db769674dba563581455ab920bfebb8a'
+            '155833e51da7bdae4120bce81152cda1b22dd0327d96d11d0b96c8fc7e210643c9071c54461bcb04af42484de94559e83d4b45a2b181e7e7f86ca8d3f4f6fc60'
             '11c20c25693bb5a41114e1a37ca159a6c89db70ecfdcc8b4ff0f4d1f1af1fd4fecf5315508261fa860663da4742f4115e10734ce42da2891db4df57e9c1ac79b')
 b2sums=('16ef85e108437865597c7b08096074606958020f53ec4b29a8791d6e530b652711fcc96ec19dc7eaf795e93f1a13f829ad86ffca940fcd66b3ab1323260d8163'
+        'a632dc8cc86a96e569a990ae1f869c3d03766828d7bfd672f2376bc0a5e8eacea8c09e3e889307ccc6138485dbde8a3e154103646cbaa80ffa4d9010abcc426d'
         '452ac64cc42c818ff8cbd4f0c52c7747b23e7ebcb480f0450d3794725590f3301fa16f634c043b9b394c0868dfd99b1d4bbe8721fdece1c761d44f1ef9b119fb'
         '0d36bd5aa6ffe769172107134c098aa996c9123e42e8de35391f02dc0ab08b4d43b1a0145ffb33ce40bdc44c55ab7f82396757ff9ba4bba4bc989a4207d4eadb'
         'cb63b2d3e2f3ed2d31003bbc81fe95a6bdb69d5a952c38e1735b3c24b51c96e391498c56069bd1cd4efdf212294949b77d505f7b2b566f7a7db54c7330d942f2'
         '7c5934750395b563736ab6ca290336c7c0354a413424aad545d19ef69c9aae087fb41f9b98149e92c3a6f37e497dce439e6315a6c7e51fd72dd89d975d6c0dfc'
         '3735659ecc3fc3c1f12ff7b1e910801f3d121e22d86d1e3c025077a2ee8346487991a2daa87ca439c139f02f8e398ea54722f925b36aed6793e641eacfa087d3'
-        '40c04ce864daed45bd33f271a70b79356669f3b779a10821524c854c4ff2be3d34a25174c601dfd66cdcb62782de17e2ee934bfd216b32ee89cb1822e58d89c6'
+        '8e9fa7c96f597cb090720dfc74ab3828d52716a1dd41a2f4cfaa7e00a8a3951465bf79767cbe277ff21cbb258aa31c5c22119d1fc21cd848960c32742f8ed44f'
         '81dbb6ba72d5bf5a0d9fa3dea33b87f03604c1a2537a4ca47b45923ab186e68d5c24b043691a857948ae404409dc3cc66a7ef004ee20dc2451aa5190fe6479bb')
 
 prepare() {
@@ -90,6 +101,10 @@ prepare() {
   git apply "$srcdir/add-translations.patch"
 
   # TODO file an upstream bug
+  # fix a couple of issues with the systemd service
+  patch -p1 -i "$srcdir/fix-systemd-service.patch"
+
+  # TODO file an upstream bug
   # remove Debian-specific path from sys.path
   patch -p1 -i "$srcdir/remove-debian-path.patch"
 
@@ -108,7 +123,7 @@ build() {
 
   # template-ify version strings for easier sed invocation (2/2)
   sed -e "s/@VERSION@/$pkgver/" -i daemon/core/version.go
-  #sed -e "s/@VERSION@/$pkgver/" -i ui/opensnitch/version.py
+  sed -e "s/@VERSION@/$pkgver/" -i ui/opensnitch/version.py
 
   # set Go flags
   export CGO_CPPFLAGS="${CPPFLAGS}"
@@ -133,6 +148,34 @@ build() {
   pushd ui
   python -m build --wheel --no-isolation
   popd
+
+  # build eBPF module
+  pushd ebpf_prog
+  local KDIR="/usr/src/linux"
+  # we set -fno-stack-protector here to work around a clang regression
+  # this is fine - bpf programs do not use stack protectors
+  CLANG="clang -fno-stack-protector" ARCH="$CARCH" KERNEL_DIR="$KDIR" KERNEL_HEADERS="$KDIR" EXTRA_FLAGS="$CFLAGS" make
+  popd
+}
+
+check() {
+  cd "$pkgname"
+
+  local REQUIRED_SECTIONS=(
+    kprobe/{tcp_v{4,6}_connect,udp{,v6}_sendmsg,iptunnel_xmit}
+    maps/{{tcp,udp}{,v6}Map,tcp{,v6}sock,icmpsock}
+  )
+
+  local SECTIONS=$(llvm-readelf \
+    ebpf_prog/opensnitch.o \
+    --section-headers)
+
+  for section in "${REQUIRED_SECTIONS[@]}"; do
+    grep -q " ${section}" <<<"$SECTIONS" || {
+      echo "Failed to build opensnitch.o properly, section ${section} missing!"
+      return 1
+    }
+  done
 }
 
 package() {
@@ -152,6 +195,10 @@ package() {
 
   # python ui
   python -m installer --destdir="$pkgdir" ui/dist/*.whl
+
+  # eBPF module
+  install -Dm644 ebpf_prog/opensnitch*.o -t \
+    "$pkgdir/usr/lib/opensnitchd/ebpf"
 
   # TODO file an upstream bug
   # tests are in site-packages, big no-no

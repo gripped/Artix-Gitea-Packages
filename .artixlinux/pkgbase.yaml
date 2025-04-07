@@ -2,18 +2,18 @@
 team: galaxy
 pkgbase:
   name: opensnitch
-  version: 1.6.8-1
+  version: 1.6.8-2
   arch:
     - x86_64
   pkgname:
     - opensnitch
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.6.8-1
+    version: 1.6.8-2
     packages:
-      - opensnitch-1.6.8-1-x86_64.pkg.tar.zst
+      - opensnitch-1.6.8-2-x86_64.pkg.tar.zst
