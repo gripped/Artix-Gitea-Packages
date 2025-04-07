@@ -7,7 +7,7 @@
 
 pkgname=valkey
 pkgver=8.1.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
 url='https://valkey.io/'
@@ -16,11 +16,11 @@ depends=(
   'grep'
   'jemalloc'
   'shadow'
- 
+
 )
 # pkg-config fails to detect libraries if is not installed
 makedepends=(
- 
+
   'openssl'
 )
 conflicts=(
