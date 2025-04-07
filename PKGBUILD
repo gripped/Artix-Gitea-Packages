@@ -8,7 +8,7 @@
 
 pkgname=lxc
 epoch=1
-pkgver=6.0.3
+pkgver=6.0.4
 pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
@@ -27,7 +27,7 @@ validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
 	"lxc.tmpfiles.d"
 )
-sha256sums=('adac0837d2abfd2903916eaf56f60756f131327311f4f25ad917f6a71f73f98c'
+sha256sums=('872d26ce8512b9f993d194816e336bf9f3ad8326f22dc24ef0f01f85599fa8b9'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
