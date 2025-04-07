@@ -1,0 +1,74 @@
+# Maintainer: Andrew Crerar <crerar@archlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Contributor: Jan-Erik Rediger <badboy at archlinux dot us>
+# Contributor: nofxx <x@<nick>.com>
+
+pkgname=valkey
+pkgver=8.1.0
+pkgrel=1
+pkgdesc='An in-memory database that persists on disk'
+arch=('x86_64')
+url='https://valkey.io/'
+license=('BSD')
+depends=(
+  'grep'
+  'jemalloc'
+  'shadow'
+ 
+)
+# pkg-config fails to detect libraries if is not installed
+makedepends=(
+ 
+  'openssl'
+)
+conflicts=(
+  'redis'
+)
+provides=(
+  'redis'
+)
+backup=(
+  'etc/valkey/valkey.conf'
+  'etc/valkey/sentinel.conf'
+)
+install=valkey.install
+source=(
+  "${pkgname}-${pkgver}.tar.gz::https://github.com/valkey-io/valkey/archive/${pkgver}.tar.gz"
+  valkey.sysusers
+  valkey.tmpfiles
+  valkey.conf-sane-defaults.patch
+  valkey-5.0-use-system-jemalloc.patch
+  remove-deprecated-use-of-je_calloc.patch
+)
+sha512sums=('54559ad697992611245aa92e33f976a609c44d7e3f97f4773a09a53cb55226367ac5a47a68c49f1d824b0327850f66ce3ff32e5fe42321c896ed3e33c5bcfe70'
+            '286ce5be525166814f8ffce64fdb8ddc3abbaefe75bfc3044e8a4ee2111359fda3b35b3e548538bc05e4393bb4f5c716f549a23d069e5c1f4327b9a60594fbb9'
+            'f1f8265106604c068e1d1ef4bb5755ff85af7965b40b2515adcbe65780a4b45ca9fcdda3c4e6cab52bf9483e0a1d95d11c18a15eb6e504c22591c88c71fd3039'
+            'd47185f700293304b5c23caf59999fecda2d1485a28a5eeff3a2922906f0184794d3eeeeeaac2ca415b865d7c4b5d74f88e694d34eeb6d1ee3a6bedbcd6edfdd'
+            '11cf6d6999329af7a9fa4bcbbcf22242b461cec0c16ad949cc6b0383703f19417092782569bf6224f94167a560de0b4ba53ec0d8522683736a14f01bc5986b28'
+            '032b19af22dd96c7898aa3dcae76d63fd8566c1d35ccb069e22fd0b76612d3285cd318f26ad5994b4f761f44a23c091d5322dec975b9a5a8cc65455399576045'
+            '0acb08a6e0eaba239db7461bcfeddfbe0c1aaa517dc33c3918c9e991a1d5067cfe135b7f75085caade8c3ababd51ec9cefcc4120f57818bea1f7029a548a7732'
+            'c656904ade64b2498766a420dab8e72795bb96bf23cb04e408e011197c755648a3c155e699821347f4ca9e207031493df50b4474c41534e50ec4fb0d4817c45c')
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 < ../valkey.conf-sane-defaults.patch
+  patch -Np1 < ../valkey-5.0-use-system-jemalloc.patch
+  patch -Np1 < ../remove-deprecated-use-of-je_calloc.patch
+}
+
+build() {
+  make BUILD_TLS=yes \
+       -C $pkgname-$pkgver
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make PREFIX="$pkgdir"/usr install
+
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/valkey/LICENSE
+  install -Dm644 -t "$pkgdir"/etc/valkey valkey.conf sentinel.conf
+  install -Dm644 "$srcdir"/valkey.sysusers "$pkgdir"/usr/lib/sysusers.d/valkey.conf
+  install -Dm644 "$srcdir"/valkey.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/valkey.conf
+}
