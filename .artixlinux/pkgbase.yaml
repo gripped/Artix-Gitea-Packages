@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - opensnitch
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.6.6-3
-    packages:
-      - opensnitch-1.6.6-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
