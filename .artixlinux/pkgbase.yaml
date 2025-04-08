@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libgepub
-  version: 0.7.1-2
+  version: 0.7.3-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.7.1-2
+    version: 0.7.3-1
     packages:
-      - libgepub-0.7.1-2-x86_64.pkg.tar.zst
+      - libgepub-0.7.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
