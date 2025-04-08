@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: sundials
-  version: 7.2.1-1
+  version: 7.3.0-1
   arch:
     - x86_64
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 7.2.1-1
+    version: 7.3.0-1
     packages:
-      - sundials-7.2.1-1-x86_64.pkg.tar.zst
+      - sundials-7.3.0-1-x86_64.pkg.tar.zst
