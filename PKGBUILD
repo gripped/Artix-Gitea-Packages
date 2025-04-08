@@ -8,8 +8,8 @@ pkgname=(
   gtk4-docs
   gtk-update-icon-cache
 )
-pkgver=4.18.3
-pkgrel=2
+pkgver=4.18.4
+pkgrel=1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -88,7 +88,7 @@ source=(
   gtk4-querymodules.{hook,script}
   0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
 )
-b2sums=('0cf6fb84cf37703592b59342477f72de41942d49a5df6a8339b3c23bd81abe00df672116d012851ef40d2c4b6a308c549b885c7a1c364a955a2770fec86b89fc'
+b2sums=('c27d0cd2381ca94ee6bbb08ad978cd2f352cab90c24296483b20c6736d964baea0f78f4def0e5790995b5b0d4cb68f47e0df6d9feccf33fa797aca0d93e7b276'
         '136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324'
         '6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814'
         'dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30'
@@ -101,10 +101,6 @@ prepare() {
   # Allow -fcf-protection to work
   # https://gitlab.gnome.org/GNOME/gtk/-/issues/6153
   git apply -3 ../0001-HACK-Don-t-use-objcopy-for-resource-embedding.patch
-
-  # Fix cursor on enter
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/gtk4/-/issues/7
-  git cherry-pick -n 5c065826311fc807f4a1825f52562f14db0f3979
 }
 
 build() {
