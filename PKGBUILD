@@ -4,7 +4,7 @@
 _gemname='faraday-rack'
 pkgname="ruby-${_gemname}"
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='About Faraday adapter for Rack'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
@@ -21,12 +21,19 @@ checkdepends=(
   ruby-webmock
 )
 options=('!emptydirs')
-source=("${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz")
-sha512sums=('0c657d997401e7f4d5dc6909e35a83ea57ac35da2ffa6f183af8411bf1bdcbd6bab1dde21b0d48595ac227c1dd575044883454376bc9dde2f15d707fc06f4192')
-b2sums=('1e0568a1eeb3b2c05cf9d15db547fca6324a55848fffd2f6838f6f875babcf1c50856d714dafe48dbe7ad71d7d10ee2c4ab34978842e62317ab38d2ef886eb9e')
+source=(
+  "${url}/archive/v${pkgver}/${_gemname}-v${pkgver}.tar.gz"
+  "${pkgname}_fix_tests.patch"
+)
+sha512sums=('0c657d997401e7f4d5dc6909e35a83ea57ac35da2ffa6f183af8411bf1bdcbd6bab1dde21b0d48595ac227c1dd575044883454376bc9dde2f15d707fc06f4192'
+            '02cf0e041c7f960d618e1b1002b089040fc687a15287849f0777d16754fed0199249e6d90e11ccde9c7b3cc465b0ac94549a8db846d8586275e32a7a95f8d051')
+b2sums=('1e0568a1eeb3b2c05cf9d15db547fca6324a55848fffd2f6838f6f875babcf1c50856d714dafe48dbe7ad71d7d10ee2c4ab34978842e62317ab38d2ef886eb9e'
+        'e798236153be89984d4e983f295f21df41ced68a0d3dee95383ffa388255dfc46a618bf6324e1a1d686bfbbf0896b2d60bcbd690df4e227195f52c33bf137d2b')
 
 prepare() {
   cd "${_gemname}-${pkgver}"
+
+  patch --verbose --strip=1 --input="../${pkgname}_fix_tests.patch"
 
   # update gemspec/Gemfile to allow newer version of the dependencies
   sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec"
