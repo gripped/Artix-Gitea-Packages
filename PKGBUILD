@@ -3,7 +3,7 @@
 _module='tclock'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=8
+pkgrel=9
 pkgdesc="A digital clock gadget."
 _group=('moksha-modules-extra')
 arch=('x86_64')
