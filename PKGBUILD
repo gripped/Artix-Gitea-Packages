@@ -25,8 +25,8 @@ makedepends=(
   help2man
   meson
 )
-source=("git+https://gitlab.freedesktop.org/mobile-broadband/libmbim.git?signed#tag=${pkgver/[a-z]/-&}")
-b2sums=('eee35efd2a151d7940e92a16ccfc11fd81345c93629b3c66c9dec799d5609d137ad9482f15cdcf4d43fe949f6498b2f56fc0201a46eb8afcca62a961ac0ea484')
+source=("git+https://gitlab.freedesktop.org/mobile-broadband/libmbim.git#tag=${pkgver/[a-z]/-&}")
+b2sums=('SKIP')
 validpgpkeys=(
   A814D09B9C5BC01945A64308AECE0239C6606AD5 # Aleksander Morgado <aleksandermj@chromium.org>
   3A948E16E8860C68CD68441D734614319E26A433 # Dan Williams <dan@ioncontrol.co>
