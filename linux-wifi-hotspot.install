@@ -1,0 +1,14 @@
+post_upgrade() {
+
+  # Remove old file from previous versions if existing
+  if [ -f /etc/sudoers.d/create_ap ]; then
+    rm /etc/sudoers.d/create_ap
+  fi
+}
+
+post_remove() {
+  echo ""
+  echo "Optionally remove config file:"
+  echo "sudo rm /etc/wh.config"
+  echo ""
+}
