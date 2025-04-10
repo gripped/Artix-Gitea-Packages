@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: libmbim
-  version: 1.30.0-1
+  version: 1.32.0-1
   arch:
     - x86_64
   pkgname:
     - libmbim
+    - libmbim-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.30.0-1
+    version: 1.32.0-1
     packages:
-      - libmbim-1.30.0-1-x86_64.pkg.tar.zst
+      - libmbim-1.32.0-1-x86_64.pkg.tar.zst
+      - libmbim-docs-1.32.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,3 +54,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
