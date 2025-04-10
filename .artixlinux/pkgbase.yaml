@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: gzip
-  version: 1.13-4
+  version: 1.14-1
   arch:
     - x86_64
   pkgname:
     - gzip
 actions:
-  addRepo: system
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,8 +19,9 @@ repos:
     version: null
     packages: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.14-1
+    packages:
+      - gzip-1.14-1-x86_64.pkg.tar.zst
   system:
     version: 1.13-4
     packages:
