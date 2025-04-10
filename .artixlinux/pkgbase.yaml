@@ -1,18 +1,19 @@
 ---
 pkgbase:
   name: libqrtr-glib
-  version: 1.2.2-3
+  version: 1.2.2-4
   arch:
     - x86_64
   pkgname:
     - libqrtr-glib
+    - libqrtr-glib-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.2-3
+    version: 1.2.2-4
     packages:
-      - libqrtr-glib-1.2.2-3-x86_64.pkg.tar.zst
+      - libqrtr-glib-1.2.2-4-x86_64.pkg.tar.zst
+      - libqrtr-glib-docs-1.2.2-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
