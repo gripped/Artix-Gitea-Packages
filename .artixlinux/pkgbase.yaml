@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libqmi
-  version: 1.34.0-2
+  version: 1.36.0-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.34.0-2
+    version: 1.36.0-1
     packages:
-      - libqmi-1.34.0-2-x86_64.pkg.tar.zst
-      - libqmi-docs-1.34.0-2-x86_64.pkg.tar.zst
+      - libqmi-1.36.0-1-x86_64.pkg.tar.zst
+      - libqmi-docs-1.36.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
