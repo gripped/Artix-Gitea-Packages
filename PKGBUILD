@@ -28,8 +28,8 @@ makedepends=(
   help2man
   meson
 )
-source=("git+https://gitlab.freedesktop.org/mobile-broadband/libqmi.git?signed#tag=${pkgver/[a-z]/-&}")
-b2sums=('66df45a4b1775d72f78c8ba4539e2bc97a514aa00df55f5cfd23c9ed85f1ccd612642b34671f136103b018f2dc8e320e503734ed25a1e2b972769fb030a0bb3c')
+source=("git+https://gitlab.freedesktop.org/mobile-broadband/libqmi.git#tag=${pkgver/[a-z]/-&}")
+b2sums=('SKIP')
 validpgpkeys=(
   A814D09B9C5BC01945A64308AECE0239C6606AD5 # Aleksander Morgado <aleksandermj@chromium.org>
   3A948E16E8860C68CD68441D734614319E26A433 # Dan Williams <dan@ioncontrol.co>
