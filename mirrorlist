@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-03-26
+## Generated on 2025-04-10
 ##
 
 # Artix mirrors
@@ -9,7 +9,9 @@
 # Then put the resulting list on top of this file.
 
 # Default mirrors
-Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
+Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
+Server = https://ftp.crifo.org/artix/repos/$repo/os/$arch
+Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
 Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 
@@ -22,7 +24,6 @@ Server = https://mirror.group.one/artix/$repo/os/$arch
 # France
 Server = https://artix.toret.fr/$repo/os/$arch
 Server = https://ftp.crifo.org/artix/repos/$repo/os/$arch
-Server = https://mirror.opensrv.org/artixlinux/$repo/os/$arch
 # Hungary
 Server = https://quantum-mirror.hu/mirrors/pub/artix-linux/$repo/os/$arch
 # Germany
@@ -38,8 +39,6 @@ Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
 # Greece
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
 Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
-# Monaco
-Server = https://mirrors.qontinuum.space/artixlinux/$repo/os/$arch
 # Poland
 Server = https://artix.sakamoto.pl/$repo/os/$arch
 # Romania
