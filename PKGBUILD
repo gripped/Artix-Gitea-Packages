@@ -66,8 +66,8 @@ build() {
     -D dbus_policy_dir=/usr/share/dbus-1/system.d
     -D dist_version="\"$pkgver-$pkgrel\""
     -D gtk_doc=true
-  -D elogind_journal=false
-  -D elogindsystemunitdir=no
+    -D systemd_journal=false
+    -D systemdsystemunitdir=no
     -D polkit=permissive
     -D vapi=true
   )
