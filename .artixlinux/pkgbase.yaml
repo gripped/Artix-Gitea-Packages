@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: glaze
-  version: 5.0.2-1
+  version: 5.1.0-1
   arch:
     - any
   pkgname:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 5.0.2-1
+    version: 5.1.0-1
     packages:
-      - glaze-5.0.2-1-any.pkg.tar.zst
+      - glaze-5.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
