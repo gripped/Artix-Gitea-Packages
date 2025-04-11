@@ -1,19 +1,20 @@
 ---
 pkgbase:
   name: modemmanager
-  version: 1.22.0-1
+  version: 1.24.0-1
   arch:
     - x86_64
   pkgname:
     - modemmanager
     - libmm-glib
+    - modemmanager-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.22.0-1
+    version: 1.24.0-1
     packages:
-      - modemmanager-1.22.0-1-x86_64.pkg.tar.zst
-      - libmm-glib-1.22.0-1-x86_64.pkg.tar.zst
+      - modemmanager-1.24.0-1-x86_64.pkg.tar.zst
+      - libmm-glib-1.24.0-1-x86_64.pkg.tar.zst
+      - modemmanager-docs-1.24.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -54,3 +56,4 @@ repos:
   galaxy:
     version: null
     packages: []
+team: world
