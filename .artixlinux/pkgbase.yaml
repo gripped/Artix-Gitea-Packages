@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-coderay
-  version: 1.1.3-6
+  version: 1.1.3-7
   arch:
     - any
   pkgname:
@@ -14,7 +14,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.1.3-6
+    version: 1.1.3-7
     packages:
-      - ruby-coderay-1.1.3-6-any.pkg.tar.zst
+      - ruby-coderay-1.1.3-7-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
