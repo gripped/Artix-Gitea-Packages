@@ -3,7 +3,7 @@
 
 pkgname=ruby-shoulda-context
 pkgver=2.0.0
-pkgrel=7
+pkgrel=8
 pkgdesc='Minitest & Test::Unit context framework'
 arch=(any)
 url='https://github.com/thoughtbot/shoulda-context'
