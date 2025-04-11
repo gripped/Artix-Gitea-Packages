@@ -2,8 +2,8 @@
 # Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgname="rubocop"
-pkgver=1.39.0
-pkgrel=7
+pkgver=1.75.2
+pkgrel=1
 pkgdesc='A Ruby code style checking and code formatting tool'
 arch=('any')
 url='https://rubocop.org/'
@@ -25,6 +25,7 @@ checkdepends=(
   asciidoctor
   procps-ng
   ruby-bundler
+  ruby-irb
   ruby-rake
   ruby-rspec
   ruby-rubocop-performance
@@ -36,17 +37,12 @@ checkdepends=(
   ruby-yard
 )
 options=('!emptydirs')
-source=("https://github.com/rubocop/rubocop/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
-  "${pkgname}_fix_changelog_duplication.patch::https://github.com/rubocop/rubocop/commit/60dbfdb8897c74726a2d9336c1f812dff3a94ea4.patch")
-sha512sums=('0ad3d117907a327035dfbccdc220828d1ab543016c27b837b39a63faa036208c797d26903eb926ff97c7d05838e1f0f530c8f6bd57c807a2911452d1a565f102'
-            '51a811fc31ab1a11de4eb8cd840e67ff879af4973354b5c1bc67ec1d42804de8def426a6906928900b1aea70b15a86dc66ff134ee548a6833e6b4f601782fd3e')
-b2sums=('7a27313959227ab5a74ef42625872daadd95a09b12bb1d080e59b4ae92663d73c0fbd03b067c2c2e77268849221484b653840f7df0f9bf7f7358bea025b11ae0'
-        '07e417229618ec59721622e0f84b8605bcdd39f3de225f22a4272fff4897e9a9702b1b254935f1583dc1eb46ac7816760bd3fa7a043b163f0b52a77b4b12026f')
+source=("https://github.com/rubocop/rubocop/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('e493449266a5f7798cca7e5951524d4b78dea02f64f652d4395b5913d9558dd727cf89cb80c6920ec82e09a7e13319503a7974dd7738c0e5dd362e8c51c15688')
+b2sums=('2cdf1eb21707ab2080ab3084830062927e6f37acdd2624b539b35358510c6127372fe16363877f83131168d0cf5bc3fcb1ad3cd5feb6c039593924692d2d64de')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
-
-  patch --verbose --strip=1 --input="../${pkgname}_fix_changelog_duplication.patch"
 
   # update gemspec/Gemfile to allow newer version of the dependencies
   sed --in-place --regexp-extended 's|~>|>=|g' "${pkgname}.gemspec" Gemfile
