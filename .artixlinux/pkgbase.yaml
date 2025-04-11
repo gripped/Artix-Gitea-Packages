@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libadwaita
-  version: 1:1.7.0-2
+  version: 1:1.7.1-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - libadwaita-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:1.7.0-2
+    version: 1:1.7.1-1
     packages:
-      - libadwaita-1:1.7.0-2-x86_64.pkg.tar.zst
-      - libadwaita-demos-1:1.7.0-2-x86_64.pkg.tar.zst
-      - libadwaita-docs-1:1.7.0-2-x86_64.pkg.tar.zst
+      - libadwaita-1:1.7.1-1-x86_64.pkg.tar.zst
+      - libadwaita-demos-1:1.7.1-1-x86_64.pkg.tar.zst
+      - libadwaita-docs-1:1.7.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
