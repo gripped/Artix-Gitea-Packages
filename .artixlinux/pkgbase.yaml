@@ -10,7 +10,7 @@ pkgbase:
     - lib32-pipewire-jack
     - lib32-pipewire-v4l2
 actions:
-  addRepo: lib32-gremlins
+  addRepo: lib32
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,12 +47,12 @@ repos:
       - lib32-pipewire-jack-1:1.4.1-1.1-x86_64.pkg.tar.zst
       - lib32-pipewire-v4l2-1:1.4.1-1.1-x86_64.pkg.tar.zst
   lib32:
-    version: 1:1.4.1-1
+    version: 1:1.4.1-1.1
     packages:
-      - lib32-pipewire-1:1.4.1-1-x86_64.pkg.tar.zst
-      - lib32-libpipewire-1:1.4.1-1-x86_64.pkg.tar.zst
-      - lib32-pipewire-jack-1:1.4.1-1-x86_64.pkg.tar.zst
-      - lib32-pipewire-v4l2-1:1.4.1-1-x86_64.pkg.tar.zst
+      - lib32-pipewire-1:1.4.1-1.1-x86_64.pkg.tar.zst
+      - lib32-libpipewire-1:1.4.1-1.1-x86_64.pkg.tar.zst
+      - lib32-pipewire-jack-1:1.4.1-1.1-x86_64.pkg.tar.zst
+      - lib32-pipewire-v4l2-1:1.4.1-1.1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
