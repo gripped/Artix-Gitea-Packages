@@ -23,8 +23,8 @@ pkgname=(
   uwsgi-plugin-zabbix
   uwsgi-plugin-notfound
 )
-pkgver=2.0.28
-pkgrel=4.1
+pkgver=2.0.29
+pkgrel=2
 pkgdesc="A full stack for building hosting services"
 arch=(x86_64)
 url="https://uwsgi-docs.readthedocs.io/en/latest/"
@@ -51,28 +51,28 @@ makedepends=(
   zlib
 )
 source=(
-  "$pkgbase-$pkgver.tar.gz::https://github.com/unbit/$pkgbase/archive/refs/tags/$pkgver".tar.gz
+  $pkgbase-$pkgver.tar.gz::https://github.com/unbit/$pkgbase/archive/refs/tags/$pkgver.tar.gz
   archlinux.ini
   emperor.ini
   uwsgi.logrotate
   uwsgi.sysusers
   uwsgi.tmpfiles
 )
-sha512sums=('e5e8a4a21c590a2bc4023879fbf4c29ec4ed7a7dc201e76ff738a3bb5730bd3844ae39d2bf4fcd20be3935c54c5dcea9a785ede1ecf02225646342cbe70c4c72'
-  '3045b54799f11bf19959ed0858c15ba9e208bdd88e41b879766585314c506a7396f3fd030c34c2e3ef821d6c32262ec87c4c4be33cd2cd4e9591b982e7386cc6'
-  'd54c84838ddb2f389e115ebb81aa2583705c9e330f020e6583b496f9c271ed236b6820c2a065f2b55a79adbf13e262b9ff2428124a8044b8fa20ca29ca4930ac'
-  '937878372aa1556f6ba62ad7148d1681288c94d6cff609368a9e861dd4d4524330006a08ae5993441f7d3101170e3a0a681a4c8b3c2c13b364b8b1f81cf25117'
-  '9e9eab08199cf08810ec95b0697cd8817226986d1e3aeb54845c0140ea5887360580348f295060c0558fb2d6aaed26fec929ea36b28cfeaf2b3588ce40fec3df'
-  '4def9dcd06cfc2c6ce554add9d9545a01f3bb2681f0a2a6fc4ba68f91011111803a955cc41b5e70832ca448b196109368fdf874e81b7ec0edee4b51f864e16f7')
-b2sums=('b0d244c78f1e0ad37a498b3398a0106ed539c397c1ae799091df9d237d475de439aa80bce450b3378d619bba651d5e747d0a545d87076d0cb56e7ea76c66ab5f'
-  '6fd3a196b15d0c40200fbf0c4be70d1ba53bd838a26c864c0ff76f8698318f97cd4f9b378dd4db9b1368c080a2d659d2d1845b31f4396066d14976591d1f1b46'
-  '835a1036422e9821cd52ffdf5a6053bdd59fc700d473600bda60b6730746f6c0750c30c85f4139d3ea81c6b6dd10d6849f9406decee3179861c51aca90da6161'
-  'a8b7d003f66ed5c5b1b60d57c05339af3dcdcf346eab52760810086e17f6936dd29ed7fd26281657bc86ac6721c989cbfbaa8e81f97111c807bcd06baece3bf2'
-  '82e03ea95995cfa78abc4d930bd0c250f22788d9ca4dc0921cfbb44a965c0f851cbcc7a855e36ec6e6aa5bf33fbd313b4fe68a2f1c4b7935c2b297be25895324'
-  '9759827f7619358383bf0e68c955522c0054620f742f5122a59888fadfc0bc20bd587eab7a77bc73e8ee4d20cf8f02625c07f241462e8ab9c08f5af509daaef3')
+sha512sums=('6aaaaae9e067814e430dd80e5ac44e806f937c84f0b38a7ac3f399e92a392a426fe41c23c76371203a31625f985a3f5b397a3294b634c1c7a1280981023bdad1'
+            '912b2d85cee0907454f2b1eee79fdeb7d7205c7b6a9f2a05cef969205fd4f3ccb9f3260e71a1c19cc910f6408e1e94da93fcca9978e8432273659b7caed34d9a'
+            'd54c84838ddb2f389e115ebb81aa2583705c9e330f020e6583b496f9c271ed236b6820c2a065f2b55a79adbf13e262b9ff2428124a8044b8fa20ca29ca4930ac'
+            '937878372aa1556f6ba62ad7148d1681288c94d6cff609368a9e861dd4d4524330006a08ae5993441f7d3101170e3a0a681a4c8b3c2c13b364b8b1f81cf25117'
+            '9e9eab08199cf08810ec95b0697cd8817226986d1e3aeb54845c0140ea5887360580348f295060c0558fb2d6aaed26fec929ea36b28cfeaf2b3588ce40fec3df'
+            '4def9dcd06cfc2c6ce554add9d9545a01f3bb2681f0a2a6fc4ba68f91011111803a955cc41b5e70832ca448b196109368fdf874e81b7ec0edee4b51f864e16f7')
+b2sums=('ef27bfaa2d4afc8969a1ab0587a80f3e050476638150be6d5f87a5d86b3a4e26044aeb365cc7dcb4e8f91120bcaa6811c0ccb3cc07c321364f78df2209b4136f'
+        '41a9213d55665c905f71f07c752a74fc7685b2f191381d24f3e1d9691a8dae538aa4344ebe771ffd77ba3c9cd7c52fd9eff54ff876bc399d92256cb86f5b7d53'
+        '835a1036422e9821cd52ffdf5a6053bdd59fc700d473600bda60b6730746f6c0750c30c85f4139d3ea81c6b6dd10d6849f9406decee3179861c51aca90da6161'
+        'a8b7d003f66ed5c5b1b60d57c05339af3dcdcf346eab52760810086e17f6936dd29ed7fd26281657bc86ac6721c989cbfbaa8e81f97111c807bcd06baece3bf2'
+        '82e03ea95995cfa78abc4d930bd0c250f22788d9ca4dc0921cfbb44a965c0f851cbcc7a855e36ec6e6aa5bf33fbd313b4fe68a2f1c4b7935c2b297be25895324'
+        '9759827f7619358383bf0e68c955522c0054620f742f5122a59888fadfc0bc20bd587eab7a77bc73e8ee4d20cf8f02625c07f241462e8ab9c08f5af509daaef3')
 
 prepare() {
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
 
   # fix default lua pkgconfig name
   sed -e 's/lua5.1/lua51/' -i plugins/lua/uwsgiplugin.py
@@ -89,7 +89,7 @@ prepare() {
 }
 
 build() {
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   export UWSGICONFIG_PHP_LEGACY_PATH='php-config-legacy'
   python uwsgiconfig.py --verbose --build archlinux
 }
@@ -109,8 +109,8 @@ package_uwsgi() {
   )
   backup=('etc/uwsgi/emperor.ini')
 
-  cd "$pkgbase-$pkgver" || exit
-  install -vDm 755 "$pkgbase" -t "$pkgdir/usr/bin/"
+  cd $pkgbase-$pkgver
+  install -vDm 755 "${pkgbase}" -t "$pkgdir/usr/bin/"
   install -vDm 644 ../emperor.ini -t "$pkgdir"/etc/uwsgi/
   install -vDm 644 ../uwsgi.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/uwsgi.conf
   install -vDm 644 ../uwsgi.logrotate "$pkgdir"/etc/logrotate.d/uwsgi
@@ -125,7 +125,7 @@ package_uwsgi-plugin-cgi() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 cgi_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -138,7 +138,7 @@ package_uwsgi-plugin-rack() {
   )
   pkgdesc="Ruby rack plugin"
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 {rack,fiber,rbthreads}_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -151,7 +151,7 @@ package_uwsgi-plugin-psgi() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 psgi_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -168,7 +168,7 @@ package_uwsgi-plugin-python() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 {asyncio,gevent,greenlet,python}_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 uwsgidecorators.py -t "${pkgdir}${site_packages}"
   python -m compileall "${pkgdir}${site_packages}"
@@ -184,7 +184,7 @@ package_uwsgi-plugin-pypy() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 pypy_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 uwsgidecorators.py -t "$pkgdir"/opt/pypy/site-packages/
   pypy -m compileall "$pkgdir"/opt/pypy/site-packages/
@@ -200,7 +200,7 @@ package_uwsgi-plugin-lua51() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 lua_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -213,7 +213,7 @@ package_uwsgi-plugin-php() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 php_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -226,7 +226,7 @@ package_uwsgi-plugin-php-legacy() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 php_legacy_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -239,7 +239,7 @@ package_uwsgi-plugin-mono() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 plugins/mono/uwsgi.dll -t "$pkgdir"/usr/lib/mono/2.0/
   install -vDm 755 mono_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
@@ -253,7 +253,7 @@ package_uwsgi-plugin-webdav() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 webdav_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -265,7 +265,7 @@ package_uwsgi-plugin-zabbix() {
     uwsgi
   )
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 zabbix_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -274,7 +274,7 @@ package_uwsgi-plugin-notfound() {
   pkgdesc+=" (notfound plugin)"
   depends=(uwsgi)
 
-  cd "$pkgbase-$pkgver" || exit
+  cd $pkgbase-$pkgver
   install -vDm 755 notfound_plugin.so -t "$pkgdir"/usr/lib/uwsgi/
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
