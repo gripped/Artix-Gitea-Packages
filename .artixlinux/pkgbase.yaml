@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: certbot-dns-luadns
-  version: 3.3.0-1
+  version: 4.0.0-1
   arch:
     - any
   pkgname:
     - certbot-dns-luadns
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 4.0.0-1
+    packages:
+      - certbot-dns-luadns-4.0.0-1-any.pkg.tar.zst
   galaxy:
     version: 3.3.0-1
     packages:
