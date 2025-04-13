@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-online-accounts
-  version: 3.54.1-1
+  version: 3.54.2-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - libgoa
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.54.1-1
+    version: 3.54.2-1
     packages:
-      - gnome-online-accounts-3.54.1-1-x86_64.pkg.tar.zst
-      - libgoa-3.54.1-1-x86_64.pkg.tar.zst
+      - gnome-online-accounts-3.54.2-1-x86_64.pkg.tar.zst
+      - libgoa-3.54.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
