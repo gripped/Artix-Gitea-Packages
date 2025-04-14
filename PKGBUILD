@@ -1,21 +1,32 @@
-# Maintainer:: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 
 _gemname=mocha
 pkgname="ruby-${_gemname}"
-pkgver=2.5.0
+pkgver=2.7.1
 pkgrel=2
 pkgdesc='Mocha is a mocking and stubbing library for Ruby'
 arch=('any')
 url='https://github.com/freerange/mocha'
 license=('Custom')
-depends=('ruby')
-checkdepends=('ruby-rake' 'ruby-bundler' 'ruby-introspection' 'ruby-metaclass' 'ruby-rubocop')
-makedepends=('ruby-minitest')
+depends=(
+  ruby
+)
+checkdepends=(
+  ruby-bundler
+  ruby-introspection
+  ruby-metaclass
+  ruby-rake
+)
+makedepends=(
+  ruby-minitest
+)
 options=('!emptydirs')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/freerange/mocha/archive/v${pkgver}.tar.gz")
-sha512sums=('4ca3be919cf143f661e135f9b477d305688a69f3ea8587028eff20ab93a05b8259632edcc7704773aff88e85237ae95c42f08d48700bcd102696a28ceb11973a')
+sha512sums=('951fc766e49f6bd76846e18929d9463da7575aeb4169e623dd954760eff6f8f883d696db4379ce93215a966abfd15ed734ad812c7cdc6c461690fe948141c215')
+b2sums=('857c188e4eda776ab00f28b79c8adcf1a92621c37ea930623a12a34cb3ee76781eb9293c9dd1091290ae3c1457da2a26255e3f3421b3b392483e5fc945dd1ae7')
 
 prepare() {
   cd "${_gemname}-${pkgver}"
@@ -23,6 +34,10 @@ prepare() {
   # `git` doesn't work within src dir, because we downloaded an archive
   sed --in-place 's|`git ls-files -z`.split("\\x0")|`find`.split("\\n")|' "${_gemname}.gemspec"
   rm Gemfile
+
+  sed --in-place \
+    --expression "/require 'rubocop\/rake_task'/d" \
+    Rakefile
 }
 
 check() {
