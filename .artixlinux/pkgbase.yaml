@@ -8,12 +8,12 @@ pkgbase:
   pkgname:
     - ruby-warnings_logger
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,9 +30,8 @@ repos:
     packages:
       - ruby-warnings_logger-0.1.1-6-any.pkg.tar.zst
   world-gremlins:
-    version: 0.1.1-7
-    packages:
-      - ruby-warnings_logger-0.1.1-7-any.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 0.1.1-5
     packages:
