@@ -7,20 +7,19 @@
 
 pkgname=valkey
 pkgver=8.1.0
-pkgrel=1.1
+pkgrel=3
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
 url='https://valkey.io/'
 license=('BSD')
 depends=(
   'grep'
-  'jemalloc'
   'shadow'
-
+ 
 )
 # pkg-config fails to detect libraries if is not installed
 makedepends=(
-
+ 
   'openssl'
 )
 conflicts=(
@@ -46,13 +45,15 @@ sha512sums=('54559ad697992611245aa92e33f976a609c44d7e3f97f4773a09a53cb55226367ac
             'd47185f700293304b5c23caf59999fecda2d1485a28a5eeff3a2922906f0184794d3eeeeeaac2ca415b865d7c4b5d74f88e694d34eeb6d1ee3a6bedbcd6edfdd'
             '11cf6d6999329af7a9fa4bcbbcf22242b461cec0c16ad949cc6b0383703f19417092782569bf6224f94167a560de0b4ba53ec0d8522683736a14f01bc5986b28'
             '032b19af22dd96c7898aa3dcae76d63fd8566c1d35ccb069e22fd0b76612d3285cd318f26ad5994b4f761f44a23c091d5322dec975b9a5a8cc65455399576045'
-            '0acb08a6e0eaba239db7461bcfeddfbe0c1aaa517dc33c3918c9e991a1d5067cfe135b7f75085caade8c3ababd51ec9cefcc4120f57818bea1f7029a548a7732'
+            'c6972be1a89bb19d8bae4a92b6549dfb16f1779bd9e3d8f018d62fa388f52022adf347665080879745e5a9571db5461fd59d4383857031ecd74937f3d20566d4'
             'c656904ade64b2498766a420dab8e72795bb96bf23cb04e408e011197c755648a3c155e699821347f4ca9e207031493df50b4474c41534e50ec4fb0d4817c45c')
 
 prepare() {
   cd $pkgname-$pkgver
   patch -Np1 < ../valkey.conf-sane-defaults.patch
-  patch -Np1 < ../valkey-5.0-use-system-jemalloc.patch
+# Until this is fixed, use bundled jemalloc:
+# https://github.com/valkey-io/valkey/issues/1882
+#  patch -Np1 < ../valkey-5.0-use-system-jemalloc.patch
   patch -Np1 < ../remove-deprecated-use-of-je_calloc.patch
 }
 
