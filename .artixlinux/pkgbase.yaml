@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-warnings_logger
-  version: 0.1.1-7
+  version: 0.1.1-7.1
   arch:
     - any
   pkgname:
     - ruby-warnings_logger
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1.1-6
+    version: 0.1.1-7.1
     packages:
-      - ruby-warnings_logger-0.1.1-6-any.pkg.tar.zst
+      - ruby-warnings_logger-0.1.1-7.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
