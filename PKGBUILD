@@ -3,7 +3,7 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gjs
-pkgver=1.84.1
+pkgver=1.84.2
 pkgrel=1
 epoch=2
 pkgdesc="Javascript Bindings for GNOME"
@@ -38,7 +38,7 @@ checkdepends=(
 provides=(libgjs.so)
 source=("git+https://gitlab.gnome.org/GNOME/gjs.git#tag=$pkgver"
         "git+https://gitlab.gnome.org/GNOME/gobject-introspection-tests.git")
-b2sums=('2a0400dff36b2bdb746aa9cc9feeb5b69ee7c2ebb3108d07b01335fc0e281a98f25d2173fca5dd0b4a2c1839d3f1fcd26b3e6c37b17fb7bbda74685ad7ab8b56'
+b2sums=('879550e9e90cf168d03b701bdcf0ee608e140f69839134ebc0948d9fe5516a6b8ce25bbb6804d5c5f055061a025209b5e4ba8a54592e5abd340aac29e546c387'
         'SKIP')
 validpgpkeys=(
   53C0524AD3AE115F69C47D2D0E9D857756977391 # Philip Chimento (Signing Key for GNOME Releases) <philip.chimento@gmail.com>
