@@ -4,7 +4,7 @@
 
 pkgname=ruby-multipart-post
 pkgver=2.3.0
-pkgrel=5
+pkgrel=6
 pkgdesc='A multipart form post accessory for Net::HTTP'
 arch=(any)
 url='https://github.com/socketry/multipart-post'
@@ -18,7 +18,6 @@ makedepends=(
 )
 checkdepends=(
   ruby-bake
-  ruby-bake-modernize
   ruby-bake-test
   ruby-bake-test-external
   ruby-bundler
@@ -29,8 +28,15 @@ sha256sums=('006f1fd953eda4d41f4ce03602ab0930e911adb7a1124b5b23b9fbc3c29a601d')
 
 prepare() {
   cd multipart-post-$pkgver
-  sed -i -e '/signing_key/d' -e 's/~>/>=/' multipart-post.gemspec
-  sed -i '/bake-gem/d' gems.rb
+  sed --in-place \
+    --expression '/signing_key/d' \
+    --expression 's/~>/>=/' \
+    multipart-post.gemspec
+
+  sed --in-place \
+    --expression '/group :maintenance/,/end/d' \
+    --expression '/rubocop/d' \
+    gems.rb
 }
 
 build() {
