@@ -4,7 +4,7 @@
 pkgname=ruby-markly
 pkgver=0.13.0
 _cmark_gfm_commit=766f161ef6d61019acf3a69f5099489e7d14cd49
-pkgrel=1
+pkgrel=2
 pkgdesc='CommonMark parser and renderer. Written in C, wrapped in Ruby.'
 arch=(x86_64)
 url='https://github.com/ioquatix/markly'
@@ -17,7 +17,6 @@ makedepends=(
 )
 checkdepends=(
   ruby-bake
-  ruby-bake-modernize
   ruby-bake-test
   ruby-build-files
   ruby-covered
@@ -33,10 +32,20 @@ sha256sums=('46ebe03fe49eed65f2b63ddde9e056f0b7fc49cdf56e15e69bb13d5d4c4a787d'
 
 prepare() {
   cd markly-$pkgver
+
   rmdir cmark-gfm
   ln -s ../cmark-gfm-$_cmark_gfm_commit cmark-gfm
-  sed 's/~>/>=/;/signing_key/d' -i markly.gemspec
-  sed '/bake-gem/d;/utopia-project/d' -i gems.rb
+
+  # update gemspec/Gemfile to allow newer version of the dependencies
+  sed --in-place --regexp-extended \
+    --expression 's|~>|>=|g' \
+    --expression '/signing_key/d' \
+    markly.gemspec
+
+  sed --in-place \
+    --expression '/group :maintenance/,/end/d' \
+    --expression '/rubocop/d' \
+    gems.rb
 }
 
 build() {
