@@ -8,7 +8,7 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=48.0
+pkgver=48.1
 pkgrel=1
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
@@ -54,8 +54,8 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=${pkgver/[a-z]/.&}"
   0001-Disable-tracker-test.patch
 )
-b2sums=('64923b759f638ea01b41d90354701feb5cc61fe6fb56c0270e24ca373b76a622d73c87260135e02748ca39c8af6f99a4176d742563b0f980c2052410e80ae925'
-        '8befc868af7e4dc776c50c10d0c6852d237f41b1f4adf8c15e0c378a9ff035e38b2cd22926d313850babcd6c96b6dd2be95fa9e1299383e686ad5a0ff36b957f')
+b2sums=('d2003198e3371fd27c259c6df4dcd8ec55401deda54032d978917635efaec724df58db6453aa1ab33bb4cb4e62e34bf6f4305fd3a043d498bd9af81d4cacf38d'
+        'b70c17cc83308e25fa1d5fcc0c735f82ba641fa6f78a064c5b01d65fa5b45505d23247528e2d97254a6983e939e3e9e1b1a737f3aab2546e5ecc825f954d9dcc')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
   550660707A6F40376B9B9F8D504A78811E6160CC # Corey Berla <corey@berla.me>
