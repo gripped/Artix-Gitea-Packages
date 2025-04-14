@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-taquin
-  version: 3.38.1+r35+g35edb95-2
+  version: 3.38.1+r43+g33ad61e-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.38.1+r35+g35edb95-2
+    version: 3.38.1+r43+g33ad61e-1
     packages:
-      - gnome-taquin-3.38.1+r35+g35edb95-2-x86_64.pkg.tar.zst
+      - gnome-taquin-3.38.1+r43+g33ad61e-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
