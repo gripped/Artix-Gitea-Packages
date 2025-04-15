@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gnome-control-center
-  version: 48.0-1
+  version: 48.1-1
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - gnome-keybindings
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 48.0-1
+    version: 48.1-1
     packages:
-      - gnome-control-center-48.0-1-x86_64.pkg.tar.zst
-      - gnome-keybindings-48.0-1-x86_64.pkg.tar.zst
+      - gnome-control-center-48.1-1-x86_64.pkg.tar.zst
+      - gnome-keybindings-48.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
