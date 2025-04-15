@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-bake-test-external
-pkgver=0.6.0
+pkgver=0.6.1
 pkgrel=1
 pkgdesc='Run external test suites to check for breakage'
 arch=(any)
@@ -20,13 +20,15 @@ checkdepends=(
   git
   ruby-bake-test
   ruby-bundler
+  ruby-covered
+  ruby-decode
   ruby-rspec
   ruby-sus
 )
 options=(!emptydirs)
 source=(git+https://github.com/ioquatix/bake-test-external.git#tag=v$pkgver)
-sha512sums=('4e0d818540a16651c2d25e1d250f8bce791dbedc18c81ddac8be46360df44af8f033286c77c224fdc13aa3c37c92a7860e17fe1dd59ab938e630c84128605ed0')
-b2sums=('7f24ce0b24c61007a37c04985dece2df7d47499f787254e352c16b86e99a806519c2e528377e9ea83c8d9ac27ad85ec39d1d0954be80e74b775b487a43f378d7')
+sha512sums=('47ab1af74694e2c6805d3a3551d326ca788e6e4773efc64e88b53128c954d31769d72a1d19f7d9c231106e464827a24c1800780507382900cb2c82987f9286f2')
+b2sums=('0dc91b99d6dfd02a101be9981462639bdf506f7fd2ff013c64aa52946635876ab60cdb5bc2c46cc6ab2348179d5ce87dc656579ab7098d0e4c637b4701fe23f4')
 
 prepare() {
   cd bake-test-external
