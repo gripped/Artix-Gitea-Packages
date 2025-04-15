@@ -2,7 +2,7 @@
 team: galaxy
 pkgbase:
   name: mugshot
-  version: 0.4.3-4
+  version: 0.4.3-5
   arch:
     - any
   pkgname:
@@ -50,6 +50,6 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 0.4.3-4
+    version: 0.4.3-5
     packages:
-      - mugshot-0.4.3-4-any.pkg.tar.zst
+      - mugshot-0.4.3-5-any.pkg.tar.zst
