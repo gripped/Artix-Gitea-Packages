@@ -7,7 +7,7 @@
 
 pkgname=wine-staging
 pkgver=10.5
-pkgrel=1
+pkgrel=2
 
 _pkgbasever=${pkgver/rc/-rc}
 _winever=$_pkgbasever
@@ -127,6 +127,7 @@ build() {
     --with-wayland \
     --with-gstreamer \
     --with-xattr \
+    --with-freetype \
     --enable-win64
 
   make
@@ -141,6 +142,7 @@ build() {
     --with-wayland \
     --with-gstreamer \
     --with-xattr \
+    --with-freetype \
     --with-wine64="$srcdir/$pkgname-64-build"
 
   make
