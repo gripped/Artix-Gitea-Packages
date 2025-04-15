@@ -12,8 +12,11 @@ depends=('iptables' 'openssh' 'net-tools')
 makedepends=('git' 'python-sphinx' 'python-build' 'python-installer' 'python-poetry-core')
 checkdepends=('python-pytest')
 backup=('etc/sshuttle/tunnel.conf' 'etc/sshuttle/prefixes.conf')
-source=("git+https://github.com/sshuttle/sshuttle.git#tag=v$pkgver")
-sha512sums=('a14ecd12b99ac2945485bd66e41cfd08c9ff2beb9c22176599ec7394c83cefbe80205acec5933ee623a7db781b7cadef32c5f07c9b980738944e87069e5745e5')
+source=("git+https://github.com/sshuttle/sshuttle.git#tag=v$pkgver"
+        'prefixes.conf' 'tunnel.conf')
+sha512sums=('a14ecd12b99ac2945485bd66e41cfd08c9ff2beb9c22176599ec7394c83cefbe80205acec5933ee623a7db781b7cadef32c5f07c9b980738944e87069e5745e5'
+            'cc5a5dee7991c7641fa8a4fb356e1977aa9d1cbfed63cb5ebf8732c4de76be841f66d9267472e70578b176f528d8cfb4f75e634d5d915f4c8bcdc0b801db8a13'
+            'acd3d0024d4604cc6a96609286c3f27bce2f0b70a068f58a2110dacc235b22ba7cd83c8989f46d0a9391eda7d272040bb3b1b2c547ae3fa0c9f61bef0a187dda')
 
 prepare() {
   cd sshuttle
