@@ -10,7 +10,7 @@ pkgname=('virtualbox'
          'virtualbox-guest-utils-nox'
          'virtualbox-ext-vnc')
 pkgver=7.1.8
-_tarver=${pkgver}a
+_tarver=${pkgver}
 pkgrel=1
 arch=('x86_64')
 url='https://virtualbox.org/'
