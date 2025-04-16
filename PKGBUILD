@@ -2,7 +2,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=inetutils
-pkgver=2.5
+pkgver=2.6
 pkgrel=1
 pkgdesc="A collection of common network programs"
 arch=('x86_64')
@@ -10,14 +10,16 @@ url="https://www.gnu.org/software/inetutils/"
 license=('GPL-3.0-or-later')
 depends=('glibc' 'pam' 'libcap' 'readline' 'ncurses' 'libxcrypt'
 	     libpam.so libcrypt.so libreadline.so libncursesw.so)
-makedepends=('help2man')
+makedepends=('git' 'help2man' 'python')
 backup=('etc/pam.d/rlogin' 'etc/pam.d/rsh')
 options=('!emptydirs')
 install=inetutils.install
-source=("https://ftp.gnu.org/gnu/inetutils/${pkgname}-${pkgver}.tar.xz"{,.sig}
+source=("git+https://git.savannah.gnu.org/git/inetutils.git#tag=v${pkgver}?signed"
+        "git+https://git.savannah.gnu.org/git/gnulib.git"
         'inetutils.sysusers'
-        'rlogin.pam' 'rsh.pam')
-sha512sums=('dc11ad6eeb5ea2c85edddbfc77630b5b09e4e1ac643629edf13b0ac0828c13cdb0885275153c072ae13a798427c96bc461037822ad646f7210369192c35bb04c'
+        'rlogin.pam'
+        'rsh.pam')
+sha512sums=('59a65642f1883cb7315abe602eb92bb4c0639cde616323449e81e44dbdcb4d41b01e2332b5822a92fb08890feda6ef98a17cf8507fa3dce600c2af5b2d917fb4'
             'SKIP'
             '00a6ff36efe63612990181f7cb37ea7d43ee7f2b6bda6b1fc23ccb2f3b19da54aabad041c2412936561dcd997f9613bd8144a96f5e04f30135a36f9ac98d8056'
             '432a45af5cd4f9f2dee4b631b45745b734e47cf631553e79db31905fa0839988914bcfed1dfcdd00d2ea6e4029b0674d46623c33ce0bd0678c2628fbaa0d1b25'
@@ -29,8 +31,20 @@ validpgpkeys=(
   'B1D2BD1375BECB784CF4F8C4D73CF638C53C06BE' # simon@josefsson.org
 )
 
+prepare() {
+  cd ${pkgname}
+
+  # The inetutils does not have a submodule, that is added on the fly.
+  # Giving the path like this should work anyway...
+  GNULIB_REFDIR="${srcdir}/gnulib"
+  export GNULIB_REFDIR
+
+  sh bootstrap
+  autoreconf -fiv
+}
+
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   ./configure \
     --prefix=/usr \
     --libexec=/usr/bin \
@@ -64,16 +78,21 @@ build() {
     --disable-uucpd \
     --disable-ifconfig \
     --disable-traceroute
+
+  # fix tgetent from curses...
+  sed -i '/HAVE_CURSES_TGETENT/c #define HAVE_CURSES_TGETENT 1' config.h
+  sed -i '/# include <curses.h>/a # include <term.h>' telnet/telnet.c telnetd/utility.c
+
   make
 }
 
 check() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   make check
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   make DESTDIR="${pkgdir}" install
 
   chmod -s "${pkgdir}"/usr/bin/{rcp,rlogin,rsh}
