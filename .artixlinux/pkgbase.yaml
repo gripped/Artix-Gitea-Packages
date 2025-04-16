@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: perl-module-runtime
-  version: 0.016-4
+  version: 0.017-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.016-4
+    version: 0.017-1
     packages:
-      - perl-module-runtime-0.016-4-any.pkg.tar.zst
+      - perl-module-runtime-0.017-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
