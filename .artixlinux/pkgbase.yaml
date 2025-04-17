@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: perl-extutils-pkgconfig
-  version: 1.16-13
+  version: 1.16-13.1
   arch:
     - any
   pkgname:
     - perl-extutils-pkgconfig
 actions:
-  addRepo: null
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.16-13
+    version: 1.16-13.1
     packages:
-      - perl-extutils-pkgconfig-1.16-13-any.pkg.tar.zst
+      - perl-extutils-pkgconfig-1.16-13.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -52,4 +52,4 @@ repos:
   galaxy:
     version: null
     packages: []
-team: galaxy
+team: world
