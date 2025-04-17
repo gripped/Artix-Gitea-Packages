@@ -3,7 +3,7 @@
 _module='compton'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=5.1
+pkgrel=7
 pkgdesc="Moksha module for a compositor"
 _group=('moksha-modules-extra')
 #arch=('i686' 'x86_64')
