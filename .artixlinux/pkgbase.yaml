@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: libgedit-gfls
-  version: 1:0.2.1-1
+  version: 1:0.3.0-1
   arch:
     - x86_64
   pkgname:
     - libgedit-gfls
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:0.3.0-1
+    packages:
+      - libgedit-gfls-1:0.3.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
