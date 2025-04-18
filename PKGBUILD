@@ -3,7 +3,7 @@
 
 pkgname=ruby-cucumber-gherkin
 pkgver=28.0.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Gherkin for Ruby"
 arch=(any)
 url='https://github.com/cucumber/gherkin/blob/main/ruby'
