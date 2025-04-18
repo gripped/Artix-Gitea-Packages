@@ -4,7 +4,7 @@
 _gemname='parallel'
 pkgname="ruby-${_gemname}"
 pkgver=1.27.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Run any kind of code in parallel processes'
 arch=('any')
 url="https://github.com/grosser/${_gemname}"

@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-parallel
-  version: 1.27.0-1
+  version: 1.27.0-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.27.0-1
+    version: 1.27.0-2
     packages:
-      - ruby-parallel-1.27.0-1-any.pkg.tar.zst
+      - ruby-parallel-1.27.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
