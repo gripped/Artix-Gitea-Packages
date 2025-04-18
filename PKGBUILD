@@ -5,7 +5,7 @@
 _gemname=msgpack
 pkgname="ruby-${_gemname}"
 pkgver=1.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc='MessagePack implementation for Ruby'
 url='https://github.com/msgpack/msgpack-ruby'
 arch=('x86_64')
