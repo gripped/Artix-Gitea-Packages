@@ -3,7 +3,7 @@
 
 pkgname=ruby-ae
 pkgver=1.8.2
-pkgrel=8
+pkgrel=9
 pkgdesc='Assertive Expressive is an assertions library specifically designed for reuse by other test frameworks'
 arch=(any)
 url='https://github.com/rubyworks/ae'

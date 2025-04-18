@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-ae
-  version: 1.8.2-8
+  version: 1.8.2-9
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.8.2-8
+    version: 1.8.2-9
     packages:
-      - ruby-ae-1.8.2-8-any.pkg.tar.zst
+      - ruby-ae-1.8.2-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
