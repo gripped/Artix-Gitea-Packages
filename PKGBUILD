@@ -3,7 +3,7 @@
 
 pkgname=ruby-coderay
 pkgver=1.1.3
-pkgrel=7
+pkgrel=8
 pkgdesc='Fast and easy syntax highlighting for selected languages'
 arch=(any)
 url='https://github.com/rubychan/coderay'
