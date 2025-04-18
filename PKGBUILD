@@ -4,7 +4,7 @@
 pkgname=ruby-m
 pkgver=1.6.1
 _commit=c5220612016b014f4aac29632d044a024704cdd9
-pkgrel=4
+pkgrel=5
 pkgdesc='Run test/unit tests by line number. Metal!'
 arch=(any)
 url='https://github.com/qrush/m'
