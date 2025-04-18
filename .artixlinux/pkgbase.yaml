@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-jaraco.path
-  version: 3.7.0-3
+  version: 3.7.1-1
   arch:
     - any
   pkgname:
     - python-jaraco.path
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.7.0-3
+    version: 3.7.1-1
     packages:
-      - python-jaraco.path-3.7.0-3-any.pkg.tar.zst
+      - python-jaraco.path-3.7.1-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
