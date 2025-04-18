@@ -4,7 +4,7 @@
 _gemname='leto'
 pkgname="ruby-${_gemname}"
 pkgver=2.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Generic object traverser for Ruby'
 arch=('any')
 url="https://github.com/jaynetics/${_gemname}"
