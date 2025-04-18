@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-manpages
-  version: 0.6.1-7
+  version: 0.6.1-8
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.6.1-7
+    version: 0.6.1-8
     packages:
-      - ruby-manpages-0.6.1-7-any.pkg.tar.zst
+      - ruby-manpages-0.6.1-8-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
