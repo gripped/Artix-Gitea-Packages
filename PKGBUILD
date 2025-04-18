@@ -3,7 +3,7 @@
 
 pkgname=ruby-bake-test-external
 pkgver=0.6.1
-pkgrel=1
+pkgrel=3
 pkgdesc='Run external test suites to check for breakage'
 arch=(any)
 url='https://github.com/ioquatix/bake-test-external'
@@ -72,7 +72,10 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd bake-test-external
-  GEM_HOME="tmp_install/$_gemdir" bake test
+  # workaoround to avoid adding gems that get installed during tests to the package
+  # see https://github.com/ioquatix/bake-test-external/issues/8#issuecomment-2806905353
+  cp -r tmp_install check_install
+  GEM_HOME="check_install/$_gemdir" bake test
 }
 
 package() {
