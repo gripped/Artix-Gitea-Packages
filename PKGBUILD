@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='net-pop'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Ruby client library for POP3'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
