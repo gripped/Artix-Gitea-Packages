@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-psycopg2
-  version: 2.9.9-4
+  version: 2.9.10-1
   arch:
     - x86_64
   pkgname:
     - python-psycopg2
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 2.9.9-4
+    version: 2.9.10-1
     packages:
-      - python-psycopg2-2.9.9-4-x86_64.pkg.tar.zst
+      - python-psycopg2-2.9.10-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
