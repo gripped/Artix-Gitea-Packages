@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lolcat
-  version: 100.0.1-4
+  version: 100.0.1-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 100.0.1-4
+    version: 100.0.1-5
     packages:
-      - lolcat-100.0.1-4-any.pkg.tar.zst
+      - lolcat-100.0.1-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
