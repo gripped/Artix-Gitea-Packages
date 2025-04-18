@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-chronic
-  version: 0.10.2-6
+  version: 0.10.2-7
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.10.2-6
+    version: 0.10.2-7
     packages:
-      - ruby-chronic-0.10.2-6-any.pkg.tar.zst
+      - ruby-chronic-0.10.2-7-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
