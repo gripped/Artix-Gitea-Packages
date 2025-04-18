@@ -1,9 +1,10 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-chef-utils
 _pkgname="${pkgname#ruby-}"
 pkgver=19.0.88
-pkgrel=2
+pkgrel=3
 pkgdesc='Basic utility functions for Core Chef Infra development'
 arch=('any')
 url='https://github.com/chef/chef'
