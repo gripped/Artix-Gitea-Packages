@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-cucumber-compatibility-kit
 pkgver=15.0.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Kit to check compatibility with official cucumber implementation"
 arch=(any)
 url='https://github.com/cucumber/compatibility-kit'
