@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-docile
-  version: 1.4.1-2
+  version: 1.4.1-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.4.1-2
+    version: 1.4.1-3
     packages:
-      - ruby-docile-1.4.1-2-any.pkg.tar.zst
+      - ruby-docile-1.4.1-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

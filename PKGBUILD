@@ -1,10 +1,11 @@
-# Maintainer: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='docile'
 pkgname="ruby-${_gemname}"
 pkgver=1.4.1
-pkgrel=2
+pkgrel=3
 pkgdesc="keeps your Ruby DSLs tame and well-behaved"
 arch=('any')
 url='https://ms-ati.github.io/docile'
