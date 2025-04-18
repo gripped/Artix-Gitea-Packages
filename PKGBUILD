@@ -1,9 +1,10 @@
-# Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgname=rubygems
-pkgver=3.6.2
-pkgrel=2
+pkgver=3.6.7
+pkgrel=1
 pkgdesc='Package management framework for Ruby'
 arch=('any')
 url='https://rubygems.org/'
@@ -28,19 +29,16 @@ provides=(
 options=('!emptydirs')
 source=(
   "https://github.com/rubygems/rubygems/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
-  # https://github.com/rubygems/rubygems/pull/7143
-  #ruby-3.4-fix-test-install_extension_in_lib.patch
   operating_system.rb)
-sha512sums=('0a7a7a44656ebb717b0bd805a27c18a92e391589a36838e4abecc6c9643192ab9e2a63cd56e113716e635169fa659fcdd1157fa1e394a37c7de7081774365db2'
+sha512sums=('521c2649604e36ff9396f6d1e0ad692d9f3cf0e11cc417d62a7afefdd5e7e5cc370bf9c02200b7e23c199787e9f049e5e9a74778599c71c183e369bd21638b5b'
             '9d74b5528fc87c78316abdd5423a15a8859aec0cd230b20906c53e7e05d8ba8a156af42dc0f6cff270f0c75196079e622c45cc9f0b2f512fc5311fd54e37ab11')
-b2sums=('68e3637c78c2ac2f59eb58c26cb47c021fda5e0a6fc93e601731cf56ef81ef7f1829a1488074c8535869edf1566a71fdafe3a44bda379c896fc6872a6d660c6d'
+b2sums=('9cd6d418a810a5e89b0ab66ce1638f6d4f7e5b141be9b6e0c2f2f69dbac858f059170f8dd5dbd7d08a18aaa5bb7a56eaeed4dc30b1a198562ace977cde93f7b6'
         '714ce47535ede25cad914002c45c908de7d4ff6eae5b25daf9ab1d3a75e09fffe6e17bc73422f9ba2fe16ae5e120352c536d2ab6152a36431a7f35e9c5466b47')
 
 prepare() {
   cd "rubygems-${pkgver}"
 
   sed --in-place --regexp-extended 's|git ls-files|find -type f -not -path "*/\.git/*"|' Rakefile
-  # patch -Np1 < ../ruby-3.4-fix-test-install_extension_in_lib.patch
 }
 
 check() {
