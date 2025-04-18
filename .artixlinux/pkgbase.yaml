@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-locale
-  version: 2.1.4-4
+  version: 2.1.4-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.1.4-4
+    version: 2.1.4-5
     packages:
-      - ruby-locale-2.1.4-4-any.pkg.tar.zst
+      - ruby-locale-2.1.4-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
