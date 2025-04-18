@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: puppet
-  version: 8.10.0-2
+  version: 8.10.0-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 8.10.0-2
+    version: 8.10.0-3
     packages:
-      - puppet-8.10.0-2-any.pkg.tar.zst
+      - puppet-8.10.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
