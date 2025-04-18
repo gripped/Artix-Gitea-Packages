@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-optimist
-  version: 3.1.0-4
+  version: 3.1.0-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.1.0-4
+    version: 3.1.0-5
     packages:
-      - ruby-optimist-3.1.0-4-any.pkg.tar.zst
+      - ruby-optimist-3.1.0-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

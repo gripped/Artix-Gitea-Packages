@@ -4,7 +4,7 @@
 _gemname=optimist
 pkgname=ruby-${_gemname}
 pkgver=3.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Commandline option parser for Ruby that just gets out of your way'
 url='https://github.com/ManageIQ/optimist'
 arch=('any')
