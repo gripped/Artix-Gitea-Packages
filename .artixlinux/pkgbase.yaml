@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-addressable
-  version: 2.8.6-4
+  version: 2.8.6-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.8.6-4
+    version: 2.8.6-5
     packages:
-      - ruby-addressable-2.8.6-4-any.pkg.tar.zst
+      - ruby-addressable-2.8.6-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

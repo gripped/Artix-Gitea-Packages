@@ -7,7 +7,7 @@
 _gemname=addressable
 pkgname=ruby-addressable
 pkgver=2.8.6
-pkgrel=4
+pkgrel=5
 pkgdesc='URI Implementation'
 arch=('any')
 url='https://github.com/sporkmonger/addressable'
