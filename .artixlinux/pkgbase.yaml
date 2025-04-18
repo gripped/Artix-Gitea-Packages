@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-attrs
-  version: 23.2.0-4
+  version: 24.1.0-1
   arch:
     - any
   pkgname:
     - python-attrs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 23.2.0-4
+    version: 24.1.0-1
     packages:
-      - python-attrs-23.2.0-4-any.pkg.tar.zst
+      - python-attrs-24.1.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
