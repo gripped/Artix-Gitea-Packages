@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-netrc
 pkgver=0.11.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Reads and writes netrc files'
 arch=(any)
 url='https://github.com/heroku/netrc'
