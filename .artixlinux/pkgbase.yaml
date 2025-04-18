@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-minitest
-  version: 5.25.5-1
+  version: 5.25.5-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 5.25.5-1
+    version: 5.25.5-2
     packages:
-      - ruby-minitest-5.25.5-1-any.pkg.tar.zst
+      - ruby-minitest-5.25.5-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

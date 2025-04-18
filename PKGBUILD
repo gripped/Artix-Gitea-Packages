@@ -6,7 +6,7 @@
 _gemname='minitest'
 pkgname="ruby-${_gemname}"
 pkgver=5.25.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking'
 url="https://github.com/minitest/${_gemname}"
 arch=('any')
