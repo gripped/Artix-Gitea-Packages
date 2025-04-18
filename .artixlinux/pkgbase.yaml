@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-teamcity-messages
-  version: 1.32-4
+  version: 1.33-1
   arch:
     - any
   pkgname:
     - python-teamcity-messages
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.32-4
+    version: 1.33-1
     packages:
-      - python-teamcity-messages-1.32-4-any.pkg.tar.zst
+      - python-teamcity-messages-1.33-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
