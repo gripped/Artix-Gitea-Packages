@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: asciidoctor
-  version: 2.0.23-5
+  version: 2.0.23-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.23-5
+    version: 2.0.23-6
     packages:
-      - asciidoctor-2.0.23-5-any.pkg.tar.zst
+      - asciidoctor-2.0.23-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
