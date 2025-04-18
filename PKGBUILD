@@ -1,10 +1,11 @@
-# Maintainer: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 
 _name=mime-types-data
 pkgname=ruby-$_name
 pkgver=3.2025.0318
-pkgrel=2
+pkgrel=3
 pkgdesc='provides a registry for information about MIME media type definitions'
 arch=(any)
 url='https://github.com/mime-types/mime-types-data/'
