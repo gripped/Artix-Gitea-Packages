@@ -1,9 +1,10 @@
-# Maintainer: Jelle van der Waa <jelle@vdwaa.nl>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jelle van der Waa <jelle@vdwaa.nl>
 
 _gemname=mustermann
 pkgname=ruby-${_gemname}
 pkgver=3.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc="Your personal string matching expert"
 arch=(any)
 url="https://github.com/sinatra/mustermann"
