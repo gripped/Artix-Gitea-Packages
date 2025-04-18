@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-bake
 pkgver=0.23.1
-pkgrel=2
+pkgrel=3
 pkgdesc='A replacement for rake with a simpler syntax'
 arch=(any)
 url='https://github.com/ioquatix/bake'
