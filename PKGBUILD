@@ -1,4 +1,5 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Sirat18 <aur@sirat18.de>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Alfredo Palhares <masterkorp@masterkorp.net>
@@ -7,7 +8,7 @@
 _gemname=diff-lcs
 pkgname=ruby-${_gemname}
 pkgver=1.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Diff::LCS computes the difference between two Enumerable sequences using the McIlroy-Hunt longest common subsequence (LCS) algorithm'
 url='https://github.com/halostatue/diff-lcs'
 arch=('any')
