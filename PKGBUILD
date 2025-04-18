@@ -4,7 +4,7 @@
 _gemname='nkf'
 pkgname="ruby-${_gemname}"
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Ruby extension for Network Kanji Filter'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
