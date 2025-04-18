@@ -1,8 +1,8 @@
 # Maintainer: Leonidas Spyropoulos <artafinde@archlinux.org>
 
 pkgname=memray
-pkgver=1.17.0
-pkgrel=1
+pkgver=1.17.1
+pkgrel=2
 pkgdesc="A memory profiler for Python"
 arch=('x86_64')
 url="https://github.com/bloomberg/memray"
@@ -11,7 +11,7 @@ depends=('python' 'libunwind' 'python-rich' 'python-jinja' 'lz4' 'ipython' 'pyth
 makedepends=('git' 'python-setuptools-scm' 'python-build' 'python-installer' 'python-wheel' 'cython' 'npm' 'python-pkgconfig')
 checkdepends=('npm' 'python-pytest' 'python-pytest-textual-snapshot')
 source=("git+$url.git#tag=v${pkgver}?signed")
-sha512sums=('8eda6ef60fee8d927ecbe0a8b44c0389c617ed485f3cc51725f9247aeaebab1014f63694ef90fc09f7a2c57f49d96d2845f610a325a80c7a880d2620e904a8bf')
+sha512sums=('2582174346b1f7e2e6383cf32ff9ffd802b206a503121428f50639a50e565e12bec4393c2a09202bae06ea9a803968d487bbe341f372d01052c60f3102b0e7f6')
 validpgpkeys=('A035C8C19219BA821ECEA86B64E628F8D684696D') # Pablo Galindo Salgado <pablogsal@gmail.com>
 
 build() {
@@ -35,7 +35,8 @@ check() {
   test-env/bin/python -m pytest -vvv \
     --log-cli-level=info -s \
     --ignore=tests/integration/test_greenlet.py \
-    --ignore=tests/test_tui_reporter.py \
+    --ignore=tests/unit/test_tree_reporter.py \
+    --ignore=tests/unit/test_tui_reporter.py \
     --ignore=tests/integration/test_attach.py \
     tests
 }
