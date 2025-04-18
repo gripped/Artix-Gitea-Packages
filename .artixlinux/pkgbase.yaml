@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: python-s3transfer
-  version: 0.11.2-1
+  version: 0.11.3-1
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.11.2-1
+    version: 0.11.3-1
     packages:
-      - python-s3transfer-0.11.2-1-any.pkg.tar.zst
+      - python-s3transfer-0.11.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
