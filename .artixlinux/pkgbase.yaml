@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-augeas
-  version: 0.6.0-2
+  version: 0.6.0-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.6.0-2
+    version: 0.6.0-3
     packages:
-      - ruby-augeas-0.6.0-2-x86_64.pkg.tar.zst
+      - ruby-augeas-0.6.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

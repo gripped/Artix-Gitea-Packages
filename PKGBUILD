@@ -1,11 +1,12 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <Chris.Rebischke@archlinux.org>
 # Contributor: Greg Sutcliffe <greg.sutcliffe at gmail dot com>
 
 _gemname=ruby-augeas
 pkgname="$_gemname"
 pkgver=0.6.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Provides Ruby bindings for augeas'
 arch=('x86_64')
 url='https://augeas.net'
