@@ -7,7 +7,7 @@
 _gemname='minitar'
 pkgname="ruby-${_gemname}"
 pkgver=0.9
-pkgrel=8
+pkgrel=9
 pkgdesc='A pure-Ruby library that provides the ability to deal with POSIX tar(1) archive files'
 arch=('any')
 url='https://github.com/halostatue/minitar/'
