@@ -7,7 +7,7 @@
 _gemname=ffi
 pkgname=ruby-$_gemname
 pkgver=1.17.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Ruby FFI'
 arch=('x86_64')
 url='https://github.com/ffi/ffi'
