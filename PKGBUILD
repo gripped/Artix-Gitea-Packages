@@ -1,11 +1,12 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Eric Berquist <eric dot berquist at gmail dot com>
 # Contributor: Joel Goguen <contact+aur@jgoguen.ca>
 
 pkgname=ruby-mixlib-config
 _pkgname="${pkgname#ruby-}"
 pkgver=3.0.29
-pkgrel=4
+pkgrel=5
 pkgdesc='A class based configuration library'
 arch=('any')
 url='https://github.com/chef/mixlib-config'
