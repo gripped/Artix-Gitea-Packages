@@ -5,7 +5,7 @@
 _gemname='irb'
 pkgname="ruby-${_gemname}"
 pkgver=1.14.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Interactive Ruby command-line tool for REPL (Read Eval Print Loop).'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
