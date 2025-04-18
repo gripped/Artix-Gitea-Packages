@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: php-imagick
-  version: 3.7.0-11
+  version: 3.8.0-1
   arch:
     - x86_64
   pkgname:
     - php-imagick
     - php-legacy-imagick
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.8.0-1
+    packages:
+      - php-imagick-3.8.0-1-x86_64.pkg.tar.zst
+      - php-legacy-imagick-3.8.0-1-x86_64.pkg.tar.zst
   world:
     version: 3.7.0-11
     packages:
