@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-mixlib-shellout
-  version: 3.2.7-5
+  version: 3.2.7-6
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.2.7-5
+    version: 3.2.7-6
     packages:
-      - ruby-mixlib-shellout-3.2.7-5-any.pkg.tar.zst
+      - ruby-mixlib-shellout-3.2.7-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

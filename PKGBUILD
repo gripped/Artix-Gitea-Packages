@@ -1,4 +1,5 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Joel Goguen <contact+aur@jgoguen.ca>
 # Contributor: Christopher Loen <christopherloen at gmail dot com>
 # Contributor: Artem Vorotnikov <artem@vorotnikov.me>
@@ -6,7 +7,7 @@
 pkgname=ruby-mixlib-shellout
 _pkgname="${pkgname#ruby-}"
 pkgver=3.2.7
-pkgrel=5
+pkgrel=6
 pkgdesc='Run external commands on Unix'
 arch=('any')
 url='https://github.com/chef/mixlib-shellout'
