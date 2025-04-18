@@ -1,11 +1,12 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 # This is a bundled gem and should not be dropped. see https://stdgems.org/
 
 _gemname='matrix'
 pkgname="ruby-${_gemname}"
 pkgver=0.4.2
-pkgrel=3
+pkgrel=4
 pkgdesc='An implementation of Matrix and Vector classes'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
