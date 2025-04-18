@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='crass'
 pkgname="ruby-${_gemname}"
 pkgver=1.0.6
-pkgrel=5
+pkgrel=6
 pkgdesc='Crass is a pure Ruby CSS parser based on the CSS Syntax Level 3 spec'
 arch=('any')
 url='https://github.com/rgrove/crass'

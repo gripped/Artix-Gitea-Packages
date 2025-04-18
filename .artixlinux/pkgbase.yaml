@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-crass
-  version: 1.0.6-5
+  version: 1.0.6-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.6-5
+    version: 1.0.6-6
     packages:
-      - ruby-crass-1.0.6-5-any.pkg.tar.zst
+      - ruby-crass-1.0.6-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
