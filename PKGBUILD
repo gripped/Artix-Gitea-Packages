@@ -4,7 +4,7 @@
 _gemname='net-imap'
 pkgname="ruby-${_gemname}"
 pkgver=0.4.12
-pkgrel=4
+pkgrel=5
 pkgdesc='Ruby client api for Internet Message Access Protocol'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
