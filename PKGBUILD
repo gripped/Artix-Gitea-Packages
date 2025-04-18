@@ -2,7 +2,7 @@
 _gemname=debug
 pkgname=ruby-${_gemname}
 pkgver=1.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Debugging functionality for Ruby'
 url='https://github.com/ruby/debug'
 arch=(x86_64)
