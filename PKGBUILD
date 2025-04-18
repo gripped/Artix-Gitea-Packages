@@ -1,4 +1,5 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 # Contributor: Brad Fanella <bradfanella@archlinux.us>
 # Contributor: gem2arch 0.1
@@ -7,7 +8,7 @@
 pkgname=ruby-pkg-config
 _pkgname="${pkgname#ruby-}"
 pkgver=1.5.7
-pkgrel=2
+pkgrel=3
 pkgdesc='Implementation of pkg-config in Ruby'
 arch=('any')
 url='https://github.com/ruby-gnome/pkg-config'
