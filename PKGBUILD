@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=daemons
 pkgname=ruby-${_gemname}
 pkgver=1.4.1
-pkgrel=4
+pkgrel=5
 pkgdesc='Easy way to wrap existing ruby scripts to be run as a daemon'
 url='https://github.com/thuehlinger/daemons'
 arch=('any')
