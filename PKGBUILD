@@ -14,7 +14,7 @@ pkgname=(
   rabbitmqadmin
 )
 pkgver=4.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
 arch=('any')
@@ -36,7 +36,6 @@ makedepends=(
   'erlang-tools'
   'erlang-xmerl'
   'git'
-  'inetutils'
   'libxslt'
   'python'
   'python-simplejson'
@@ -75,6 +74,7 @@ prepare() {
   sed -E 's|^(SYS_PREFIX=).*$|\1""|' -i deps/rabbit/scripts/rabbitmq-defaults
   sed -E 's|@RABBITMQ_USER@|rabbitmq|g' -i scripts/rabbitmq-script-wrapper
   sed -E 's|@RABBITMQ_GROUP@|rabbitmq|g' -i scripts/rabbitmq-script-wrapper
+  sed -E 's|(else )hostname(;)|\1uname -n\2|' -i deps/rabbitmq_ct_helpers/tools/tls-certs/Makefile
   patch -p1 < ../rabbitmq-devendor-rebar3.patch
 }
 
@@ -146,7 +146,6 @@ package_rabbitmq() {
     'erlang-syntax_tools'
     'erlang-tools'
     'erlang-xmerl'
-    'inetutils'
     'socat'
     'util-linux'
   )
