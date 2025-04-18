@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-bacon
 pkgver=1.2.0
 _tag=1.2
-pkgrel=4
+pkgrel=5
 pkgdesc='A small RSpec clone'
 arch=(any)
 url='https://github.com/leahneukirchen/bacon'
