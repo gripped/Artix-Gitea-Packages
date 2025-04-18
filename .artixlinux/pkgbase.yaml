@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-lemon
-  version: 0.9.1-5
+  version: 0.9.1-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.9.1-5
+    version: 0.9.1-6
     packages:
-      - ruby-lemon-0.9.1-5-any.pkg.tar.zst
+      - ruby-lemon-0.9.1-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
