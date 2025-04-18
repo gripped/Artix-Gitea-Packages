@@ -4,7 +4,7 @@
 _gemname='faraday-rack'
 pkgname="ruby-${_gemname}"
 pkgver=2.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='About Faraday adapter for Rack'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
