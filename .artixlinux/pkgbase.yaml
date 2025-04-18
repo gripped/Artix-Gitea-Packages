@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-oedipus_lex
-  version: 2.6.2-4
+  version: 2.6.2-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.6.2-4
+    version: 2.6.2-5
     packages:
-      - ruby-oedipus_lex-2.6.2-4-any.pkg.tar.zst
+      - ruby-oedipus_lex-2.6.2-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
