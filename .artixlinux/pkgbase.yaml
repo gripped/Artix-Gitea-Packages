@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-beautifulsoup4
-  version: 4.12.3-3
+  version: 4.13.3-1
   arch:
     - any
   pkgname:
     - python-beautifulsoup4
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 4.12.3-3
+    version: 4.13.3-1
     packages:
-      - python-beautifulsoup4-4.12.3-3-any.pkg.tar.zst
+      - python-beautifulsoup4-4.13.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
