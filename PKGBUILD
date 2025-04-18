@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='multipart-parser'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.1
-pkgrel=5
+pkgrel=6
 pkgdesc='A simple parser for multipart MIME messages, written in Ruby'
 arch=('any')
 url='https://github.com/danabr/multipart-parser'
