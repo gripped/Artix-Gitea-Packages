@@ -1,9 +1,10 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=ruby-dbus
 pkgver=0.23.1
-pkgrel=4
+pkgrel=5
 pkgdesc='Ruby module for interaction with D-Bus'
 arch=('any')
 url='https://github.com/mvidner/ruby-dbus'
