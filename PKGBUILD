@@ -3,7 +3,7 @@
 
 pkgname=ruby-cucumber-core
 pkgver=13.0.3
-pkgrel=4
+pkgrel=5
 pkgdesc="Core library for the Cucumber BDD app"
 arch=(any)
 url='https://github.com/cucumber/cucumber-ruby-core'
