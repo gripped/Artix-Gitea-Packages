@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-minitest-proveit
-  version: 1.0.0-5
+  version: 1.0.0-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.0-5
+    version: 1.0.0-6
     packages:
-      - ruby-minitest-proveit-1.0.0-5-any.pkg.tar.zst
+      - ruby-minitest-proveit-1.0.0-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
