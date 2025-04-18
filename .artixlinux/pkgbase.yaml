@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-hypothesis
-  version: 6.130.5-2
+  version: 6.131.3-1
   arch:
     - any
   pkgname:
     - python-hypothesis
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.131.3-1
+    packages:
+      - python-hypothesis-6.131.3-1-any.pkg.tar.zst
   world:
     version: 6.130.5-2
     packages:
