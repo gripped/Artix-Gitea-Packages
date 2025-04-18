@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-mutex_m
-  version: 0.3.0-1
+  version: 0.3.0-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.3.0-1
+    version: 0.3.0-2
     packages:
-      - ruby-mutex_m-0.3.0-1-any.pkg.tar.zst
+      - ruby-mutex_m-0.3.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

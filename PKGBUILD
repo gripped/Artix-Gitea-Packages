@@ -4,7 +4,7 @@
 _gemname='mutex_m'
 pkgname="ruby-${_gemname}"
 pkgver=0.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Mixin to extend objects to be handled like a Mutex'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
