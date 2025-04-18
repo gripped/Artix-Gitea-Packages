@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: fluidsynth
-  version: 2.4.5-2
+  version: 2.4.5-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.4.5-2
+    version: 2.4.5-3
     packages:
-      - fluidsynth-2.4.5-2-x86_64.pkg.tar.zst
+      - fluidsynth-2.4.5-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
