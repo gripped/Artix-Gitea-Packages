@@ -3,7 +3,7 @@
 
 pkgname=ruby-childprocess
 pkgver=5.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Cross-platform Ruby library for managing child processes'
 arch=(any)
 url='https://github.com/enkessler/childprocess'
