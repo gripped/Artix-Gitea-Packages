@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: markdownlint
-  version: 0.13.0-4
+  version: 0.13.0-5
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.13.0-4
+    version: 0.13.0-5
     packages:
-      - markdownlint-0.13.0-4-any.pkg.tar.zst
+      - markdownlint-0.13.0-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
