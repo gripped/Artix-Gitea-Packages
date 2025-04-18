@@ -1,4 +1,5 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Mario Finelli <mario at finel dot li>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
@@ -6,7 +7,7 @@
 _gemname='domain_name'
 pkgname="ruby-${_gemname}"
 pkgver=0.6.20240107
-pkgrel=4
+pkgrel=5
 pkgdesc='Domain Name manipulation library for Ruby'
 arch=('any')
 url='https://github.com/knu/ruby-domain_name'

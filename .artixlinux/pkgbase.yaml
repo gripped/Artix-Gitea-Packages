@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-domain_name
-  version: 0.6.20240107-4
+  version: 0.6.20240107-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.6.20240107-4
+    version: 0.6.20240107-5
     packages:
-      - ruby-domain_name-0.6.20240107-4-any.pkg.tar.zst
+      - ruby-domain_name-0.6.20240107-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
