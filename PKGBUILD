@@ -4,7 +4,7 @@
 
 pkgname=fluidsynth
 pkgver=2.4.5
-pkgrel=1
+pkgrel=2
 pkgdesc="A real-time software synthesizer based on the SoundFont 2 specifications"
 arch=(x86_64)
 url="https://www.fluidsynth.org/"
@@ -76,6 +76,7 @@ package() {
   )
 
   DESTDIR="$pkgdir" cmake --install build
+  install -vDm 644 build/$pkgname.tmpfiles -t "$pkgdir/usr/lib/tmpfiles.d/"
   install -vDm 644 build/$pkgname.conf "$pkgdir/etc/conf.d/$pkgname"
   install -vDm 644 $pkgname-$pkgver/{AUTHORS,{CONTRIBUTING,README}.md,THANKS,TODO} -t "$pkgdir/usr/share/doc/$pkgname/"
 }
