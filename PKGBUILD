@@ -4,7 +4,7 @@
 _gemname='jwt'
 pkgname="ruby-${_gemname}"
 pkgver=2.10.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard'
 arch=('any')
 url="https://github.com/jwt/${pkgname}"
