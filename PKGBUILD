@@ -1,4 +1,5 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 # Contributor: Aoibhinn di Tori <email@aoibh.in>
 # Contributor: Artem Vorotnikov <artem@vorotnikov.me>
@@ -6,7 +7,7 @@
 _gemname='haml'
 pkgname="ruby-${_gemname}"
 pkgver=6.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='HTML Abstraction Markup Language - A Markup Haiku'
 arch=('x86_64')
 url='https://haml.info'
