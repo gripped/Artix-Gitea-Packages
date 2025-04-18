@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-bacon-colored_output
-  version: 1.1.1-5
+  version: 1.1.1-6
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.1.1-5
+    version: 1.1.1-6
     packages:
-      - ruby-bacon-colored_output-1.1.1-5-any.pkg.tar.zst
+      - ruby-bacon-colored_output-1.1.1-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

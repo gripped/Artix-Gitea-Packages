@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-bacon-colored_output
 pkgver=1.1.1
 _commit=e2a8a3cf9a902d2a2e7d644c1d1ff8bcad6843c4
-pkgrel=5
+pkgrel=6
 pkgdesc='Colored output for Bacon test framework'
 arch=(any)
 url='https://github.com/whitequark/bacon-colored_output'
