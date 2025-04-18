@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-metaclass
-  version: 0.0.4-4
+  version: 0.0.4-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.0.4-4
+    version: 0.0.4-5
     packages:
-      - ruby-metaclass-0.0.4-4-any.pkg.tar.zst
+      - ruby-metaclass-0.0.4-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
