@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-nanotest
-  version: 0.9.4.1-4
+  version: 0.9.4.1-5
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.9.4.1-4
+    version: 0.9.4.1-5
     packages:
-      - ruby-nanotest-0.9.4.1-4-any.pkg.tar.zst
+      - ruby-nanotest-0.9.4.1-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
