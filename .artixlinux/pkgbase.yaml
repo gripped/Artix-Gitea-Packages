@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-net-http-persistent
-  version: 4.0.3-2
+  version: 4.0.3-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.0.3-2
+    version: 4.0.3-3
     packages:
-      - ruby-net-http-persistent-4.0.3-2-any.pkg.tar.zst
+      - ruby-net-http-persistent-4.0.3-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

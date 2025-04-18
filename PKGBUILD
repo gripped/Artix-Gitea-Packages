@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-net-http-persistent
 pkgver=4.0.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Thread-safe persistent connections with Net::HTTP'
 arch=(any)
 url='https://github.com/drbrain/net-http-persistent'
