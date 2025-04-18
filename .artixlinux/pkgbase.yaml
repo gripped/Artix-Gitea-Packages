@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-maruku
-  version: 0.7.3-9
+  version: 0.7.3-10
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.7.3-9
+    version: 0.7.3-10
     packages:
-      - ruby-maruku-0.7.3-9-any.pkg.tar.zst
+      - ruby-maruku-0.7.3-10-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
