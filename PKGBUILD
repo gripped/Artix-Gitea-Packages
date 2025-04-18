@@ -3,7 +3,7 @@
 
 pkgname=ruby-byebug
 pkgver=12.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A simple to use and feature rich debugger for Ruby'
 arch=(x86_64)
 url='https://github.com/deivid-rodriguez/byebug'
