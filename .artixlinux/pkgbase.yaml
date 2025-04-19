@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-zeitwerk
-  version: 2.7.2-2
+  version: 2.7.2-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.7.2-2
+    version: 2.7.2-3
     packages:
-      - ruby-zeitwerk-2.7.2-2-any.pkg.tar.zst
+      - ruby-zeitwerk-2.7.2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
