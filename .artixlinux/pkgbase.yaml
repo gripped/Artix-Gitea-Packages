@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rake-compiler
-  version: 1.2.9-2
+  version: 1.2.9-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.2.9-2
+    version: 1.2.9-3
     packages:
-      - ruby-rake-compiler-1.2.9-2-any.pkg.tar.zst
+      - ruby-rake-compiler-1.2.9-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
