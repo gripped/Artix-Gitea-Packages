@@ -3,7 +3,7 @@
 
 pkgname=ruby-pry-byebug
 pkgver=3.11.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Combine 'pry' with 'byebug'. Adds 'step', 'next', 'finish', 'continue' and 'break' commands to control execution."
 arch=(any)
 url='https://github.com/deivid-rodriguez/pry-byebug'

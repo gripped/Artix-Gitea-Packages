@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-pry-byebug
-  version: 3.11.0-1
+  version: 3.11.0-2
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.11.0-1
+    version: 3.11.0-2
     packages:
-      - ruby-pry-byebug-3.11.0-1-any.pkg.tar.zst
+      - ruby-pry-byebug-3.11.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
