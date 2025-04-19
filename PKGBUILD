@@ -4,7 +4,7 @@
 _name=tzinfo
 pkgname=ruby-tzinfo
 pkgver=2.0.6
-pkgrel=4
+pkgrel=5
 pkgdesc='Daylight savings aware transformations between times in different time zones'
 arch=(any)
 url="https://github.com/tzinfo/tzinfo"
