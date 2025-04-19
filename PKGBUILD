@@ -1,9 +1,10 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=tilt
 pkgname=ruby-tilt
 pkgver=2.3.0
-pkgrel=4.1
+pkgrel=5
 pkgdesc='Generic interface to multiple Ruby template engines'
 url='https://github.com/rtomayko/tilt'
 arch=('any')

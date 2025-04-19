@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-tilt
-  version: 2.3.0-4.1
+  version: 2.3.0-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.3.0-4.1
+    version: 2.3.0-5
     packages:
-      - ruby-tilt-2.3.0-4.1-any.pkg.tar.zst
+      - ruby-tilt-2.3.0-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
