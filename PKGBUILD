@@ -4,7 +4,7 @@
 _gemname='rbs'
 pkgname="ruby-${_gemname}"
 pkgver=3.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc='RBS is the language for type signatures for Ruby and standard library definitions'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
