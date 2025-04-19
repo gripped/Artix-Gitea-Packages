@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-qed
-  version: 2.9.1-5
+  version: 2.9.1-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.9.1-5
+    version: 2.9.1-6
     packages:
-      - ruby-qed-2.9.1-5-any.pkg.tar.zst
+      - ruby-qed-2.9.1-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
