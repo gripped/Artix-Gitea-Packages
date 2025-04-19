@@ -1,11 +1,12 @@
-# Maintainer: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@gmail.com>
 # Contributor: Hyacinthe Cartiaux <hyacinthe.cartiaux@free.fr>
 # Contributor: Hilton Medeiros <medeiros.hilton@gmail.com>
 
 pkgname=ruby-term-ansicolor
 pkgver=1.11.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A ruby library that colors strings using ANSI escape sequences'
 arch=('any')
 url='https://rubygems.org/gems/term-ansicolor'
