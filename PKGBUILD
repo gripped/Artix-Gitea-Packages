@@ -1,10 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-rubytest-cli
 pkgver=0.2.0
 # https://github.com/rubyworks/rubytest-cli/issues/1
 _commit=f57b301b69e0b074ac58d18ec553566b258b758b
-pkgrel=5
+pkgrel=6
 pkgdesc='Rubytest CLI is a command-line interface for running tests for Rubytest-based test frameworks'
 arch=(any)
 url='https://github.com/rubyworks/rubytest-cli'
