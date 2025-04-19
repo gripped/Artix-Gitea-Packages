@@ -3,7 +3,7 @@
 
 pkgname=ruby-sus-fixtures-async-http
 pkgver=0.10.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Test fixtures for running in Async::HTTP'
 arch=(any)
 url='https://github.com/socketry/sus-fixtures-async-http'
