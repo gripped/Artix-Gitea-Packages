@@ -3,7 +3,7 @@
 _name="sass-embedded"
 pkgname="ruby-$_name"
 pkgver=1.86.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Embedded Sass Host for Ruby"
 arch=("any")
 url="https://github.com/sass-contrib/sass-embedded-host-ruby"
