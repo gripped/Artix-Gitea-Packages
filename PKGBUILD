@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname=typeprof
 pkgname="ruby-${_gemname}"
 pkgver=0.30.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='An experimental type-level Ruby interpreter for testing and understanding Ruby code'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
