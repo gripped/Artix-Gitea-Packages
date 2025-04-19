@@ -4,7 +4,7 @@
 _gemname='rails-html-sanitizer'
 pkgname="ruby-${_gemname}"
 pkgver=1.6.2
-pkgrel=2
+pkgrel=3
 pkgdesc='HTML sanitization for Rails applications'
 arch=('any')
 url='https://github.com/rails/rails-html-sanitizer'

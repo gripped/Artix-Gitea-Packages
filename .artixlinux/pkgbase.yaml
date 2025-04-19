@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rails-html-sanitizer
-  version: 1.6.2-2
+  version: 1.6.2-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.6.2-2
+    version: 1.6.2-3
     packages:
-      - ruby-rails-html-sanitizer-1.6.2-2-any.pkg.tar.zst
+      - ruby-rails-html-sanitizer-1.6.2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
