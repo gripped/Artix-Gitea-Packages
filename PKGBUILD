@@ -1,10 +1,11 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='test-queue'
 pkgname="ruby-${_gemname}"
 pkgver=0.11.1
-pkgrel=3.1
+pkgrel=4
 pkgdesc='parallel test runner for CI environments'
 arch=('any')
 url="https://github.com/tmm1/${_gemname}"
