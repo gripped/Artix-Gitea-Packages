@@ -3,7 +3,7 @@
 
 pkgname=ruby-localhost
 pkgver=1.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Manage a local certificate authority for self-signed localhost development servers'
 arch=(any)
 url='https://github.com/socketry/localhost'
