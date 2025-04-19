@@ -3,7 +3,7 @@
 
 pkgname=ruby-samovar
 pkgver=2.3.0
-pkgrel=5
+pkgrel=6
 pkgdesc='A flexible option parser excellent support for sub-commands and help documentation'
 arch=(any)
 url='https://github.com/ioquatix/samovar'
