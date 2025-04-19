@@ -3,7 +3,7 @@
 
 pkgname=ruby-bake-test
 pkgver=0.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Run local test suites without knowing exactly how to run them'
 arch=(any)
 url='https://github.com/ioquatix/bake-test'
