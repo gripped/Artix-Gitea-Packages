@@ -1,10 +1,11 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Jonathan Steel <jsteel at archlinux.org>
 # Contributor: Greg Sutcliffe <greg.sutcliffe@gmail.com>>
 
 pkgname=ruby-shadow
 pkgver=2.5.1
-pkgrel=4
+pkgrel=5
 pkgdesc="Shadow password module"
 arch=('x86_64')
 url="https://github.com/apalmblad/${pkgname}"
