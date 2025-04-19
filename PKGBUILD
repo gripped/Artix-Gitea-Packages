@@ -1,11 +1,12 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 # Contributor: Eric Berquist <eric dot berquist at gmail dot com>
 # Contributor: Hyacinthe Cartiaux <hyacinthe.cartiaux (a) free.fr>
 
 pkgname=ruby-tomlrb
 _pkgname="${pkgname#ruby-}"
 pkgver=2.0.3
-pkgrel=5.1
+pkgrel=6
 pkgdesc='A racc based toml parser'
 arch=('any')
 url='https://github.com/fbernier/tomlrb'
