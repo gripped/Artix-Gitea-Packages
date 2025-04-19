@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-regexp_property_values
-  version: 1.5.2-2
+  version: 1.5.2-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.5.2-2
+    version: 1.5.2-3
     packages:
-      - ruby-regexp_property_values-1.5.2-2-x86_64.pkg.tar.zst
+      - ruby-regexp_property_values-1.5.2-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
