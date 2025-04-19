@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-sorted_set
-  version: 1.0.3-5
+  version: 1.0.3-6
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.3-5
+    version: 1.0.3-6
     packages:
-      - ruby-sorted_set-1.0.3-5-any.pkg.tar.zst
+      - ruby-sorted_set-1.0.3-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
