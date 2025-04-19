@@ -3,7 +3,7 @@
 
 pkgname=ruby-range_compressor
 pkgver=1.2.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Compresses Arrays of Objects to Arrays of Ranges'
 arch=(any)
 url='https://github.com/jaynetics/range_compressor'
