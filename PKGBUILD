@@ -5,7 +5,7 @@
 _gemname=thin
 pkgname=ruby-${_gemname}
 pkgver=1.8.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Thin and fast Ruby web server'
 url='https://github.com/macournoyer/thin'
 arch=('x86_64')
