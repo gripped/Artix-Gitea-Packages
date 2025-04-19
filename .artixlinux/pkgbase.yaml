@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-prime
-  version: 0.1.2-3
+  version: 0.1.2-4
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1.2-3
+    version: 0.1.2-4
     packages:
-      - ruby-prime-0.1.2-3-any.pkg.tar.zst
+      - ruby-prime-0.1.2-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
