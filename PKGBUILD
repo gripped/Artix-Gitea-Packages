@@ -3,7 +3,7 @@
 
 pkgname=ruby-pry
 pkgver=0.15.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A runtime developer console and IRB alternative with powerful introspection capabilities'
 arch=(any)
 url='https://pry.github.io/'
