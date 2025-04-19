@@ -3,7 +3,7 @@
 
 pkgname=ruby-fiber-annotation
 pkgver=0.2.0
-pkgrel=7
+pkgrel=8
 pkgdesc='A mechanism for annotating fibers'
 arch=(any)
 url='https://github.com/ioquatix/fiber-annotation'
