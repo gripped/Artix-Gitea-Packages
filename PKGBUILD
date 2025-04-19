@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='tracer'
 pkgname="ruby-${_gemname}"
 pkgver=0.2.3
-pkgrel=4
+pkgrel=5
 pkgdesc='A Ruby tracer'
 arch=('any')
 url="https://github.com/ruby/${_gemname}"
