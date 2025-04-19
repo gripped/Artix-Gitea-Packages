@@ -1,8 +1,9 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 _name=test_declarative
 pkgname=ruby-test_declarative
 pkgver=0.0.6
-pkgrel=5.1
+pkgrel=6
 pkgdesc="Simply adds a declarative test method syntax to test/unit"
 arch=('any')
 url="https://github.com/svenfuchs/test_declarative"

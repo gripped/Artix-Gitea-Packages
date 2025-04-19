@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-test_declarative
-  version: 0.0.6-5.1
+  version: 0.0.6-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.0.6-5.1
+    version: 0.0.6-6
     packages:
-      - ruby-test_declarative-0.0.6-5.1-any.pkg.tar.zst
+      - ruby-test_declarative-0.0.6-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
