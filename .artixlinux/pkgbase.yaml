@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-unf
-  version: 0.2.0.beta2-11.1
+  version: 0.2.0.beta2-12
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.2.0.beta2-11.1
+    version: 0.2.0.beta2-12
     packages:
-      - ruby-unf-0.2.0.beta2-11.1-any.pkg.tar.zst
+      - ruby-unf-0.2.0.beta2-12-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -1,11 +1,12 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Mario Finelli <mario at finel do li>
 
 _gemname='unf'
 pkgname="ruby-${_gemname}"
 pkgver=0.2.0.beta2
-pkgrel=11.1
+pkgrel=12
 pkgdesc='Wrapper library to bring Unicode Normalization Form support to Ruby/JRuby.'
 arch=('any')
 url='https://github.com/knu/ruby-unf'
