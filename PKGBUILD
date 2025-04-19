@@ -3,7 +3,7 @@
 
 pkgname=ruby-rbnacl
 pkgver=7.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Ruby FFI binding to the Networking and Cryptography (NaCl) library (libsodium)'
 arch=(any)
 url='https://github.com/RubyCrypto/rbnacl'
