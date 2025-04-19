@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-rest
 pkgver=0.18.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A library for RESTful clients (and hopefully servers)'
 arch=(any)
 url='https://github.com/socketry/async-rest'
