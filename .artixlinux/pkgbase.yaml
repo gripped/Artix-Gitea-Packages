@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-power_assert
-  version: 2.0.5-2
+  version: 2.0.5-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.5-2
+    version: 2.0.5-3
     packages:
-      - ruby-power_assert-2.0.5-2-any.pkg.tar.zst
+      - ruby-power_assert-2.0.5-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
