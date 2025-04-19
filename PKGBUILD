@@ -1,10 +1,11 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 
 _gemname='puppet-resource_api'
 pkgname="ruby-${_gemname}"
 pkgver=1.9.0
-pkgrel=4
+pkgrel=5
 pkgdesc='This library provides a simple way to write new native resources for puppet.'
 arch=('any')
 url='https://github.com/puppetlabs/puppet-resource_api'
