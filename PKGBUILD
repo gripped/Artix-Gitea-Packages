@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sys-uname
 pkgver=1.2.3
-pkgrel=5.1
+pkgrel=6
 pkgdesc='An interface for gathering information about your current platform'
 arch=(any)
 url='https://github.com/djberg96/sys-uname'
