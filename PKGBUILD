@@ -1,9 +1,10 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-unicode-display_width
 _pkgname="${pkgname#ruby-}"
 pkgver=3.1.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Determines the monospace display width of a string in Ruby'
 arch=('any')
 url='https://github.com/janlelis/unicode-display_width'

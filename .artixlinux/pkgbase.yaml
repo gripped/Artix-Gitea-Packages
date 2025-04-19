@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-unicode-display_width
-  version: 3.1.4-2
+  version: 3.1.4-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.1.4-2
+    version: 3.1.4-3
     packages:
-      - ruby-unicode-display_width-3.1.4-2-any.pkg.tar.zst
+      - ruby-unicode-display_width-3.1.4-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
