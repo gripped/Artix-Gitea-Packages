@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-shoulda-context
-  version: 2.0.0-8
+  version: 2.0.0-9
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.0-8
+    version: 2.0.0-9
     packages:
-      - ruby-shoulda-context-2.0.0-8-any.pkg.tar.zst
+      - ruby-shoulda-context-2.0.0-9-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
