@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-ruby-progressbar
-  version: 1.13.0-3
+  version: 1.13.0-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.13.0-3
+    version: 1.13.0-4
     packages:
-      - ruby-ruby-progressbar-1.13.0-3-any.pkg.tar.zst
+      - ruby-ruby-progressbar-1.13.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
