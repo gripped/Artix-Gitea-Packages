@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: rrdtool
-  version: 1.9.0-4
+  version: 1.9.0-5
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.9.0-4
+    version: 1.9.0-5
     packages:
-      - rrdtool-1.9.0-4-x86_64.pkg.tar.zst
+      - rrdtool-1.9.0-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
