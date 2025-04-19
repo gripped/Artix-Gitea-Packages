@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-webmock
-  version: 3.24.0-2
+  version: 3.24.0-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.24.0-2
+    version: 3.24.0-3
     packages:
-      - ruby-webmock-3.24.0-2-any.pkg.tar.zst
+      - ruby-webmock-3.24.0-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

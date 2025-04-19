@@ -5,7 +5,7 @@
 _gemname='webmock'
 pkgname="ruby-${_gemname}"
 pkgver=3.24.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Allows stubbing HTTP requests and setting expectations on HTTP requests.'
 arch=('any')
 url='https://github.com/bblimke/webmock'
