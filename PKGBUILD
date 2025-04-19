@@ -1,9 +1,10 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname='temple'
 pkgname="ruby-${_gemname}"
 pkgver=0.10.3
-pkgrel=4.1
+pkgrel=5
 pkgdesc='Template compilation framework in Ruby'
 arch=('any')
 url="https://github.com/judofyr/${_gemname}"
