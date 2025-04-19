@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-faraday-net_http_persistent
-  version: 2.1.0-3
+  version: 2.1.0-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.1.0-3
+    version: 2.1.0-4
     packages:
-      - ruby-faraday-net_http_persistent-2.1.0-3-any.pkg.tar.zst
+      - ruby-faraday-net_http_persistent-2.1.0-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

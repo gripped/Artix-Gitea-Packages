@@ -4,7 +4,7 @@
 _gemname='faraday-net_http_persistent'
 pkgname="ruby-${_gemname}"
 pkgver=2.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc='About Faraday adapter for NetHttpPersistent'
 arch=('any')
 url="https://github.com/lostisland/${_gemname}"
