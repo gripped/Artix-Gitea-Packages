@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-traces
-  version: 0.15.2-2
+  version: 0.15.2-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.15.2-2
+    version: 0.15.2-3
     packages:
-      - ruby-traces-0.15.2-2-any.pkg.tar.zst
+      - ruby-traces-0.15.2-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
