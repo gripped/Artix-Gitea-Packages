@@ -3,7 +3,7 @@
 
 pkgname=ruby-protocol-http2
 pkgver=0.22.1
-pkgrel=2
+pkgrel=3
 pkgdesc='A low level implementation of the HTTP/2 protocol'
 arch=(any)
 url='https://github.com/socketry/protocol-http2'
