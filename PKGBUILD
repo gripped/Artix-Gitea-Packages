@@ -1,9 +1,10 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-rbtree
 _pkgname="${pkgname#ruby-}"
 pkgver=0.4.6
-pkgrel=5
+pkgrel=6
 pkgdesc='A sorted associative collection that is implemented with a Red-Black Tree'
 arch=('x86_64')
 url='https://rubygems.org/gems/rbtree'
