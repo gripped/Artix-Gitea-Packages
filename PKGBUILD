@@ -4,7 +4,7 @@
 _gemname='sus-fixtures-openssl'
 pkgname="ruby-${_gemname}"
 pkgver=0.2.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Test fixtures for running with OpenSSL'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
