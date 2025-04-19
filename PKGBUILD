@@ -4,7 +4,7 @@
 _gemname='async-service'
 pkgname="ruby-${_gemname}"
 pkgver=0.12.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A service layer for Async'
 arch=('any')
 url="https://github.com/socketry/${_gemname}"
