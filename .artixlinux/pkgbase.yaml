@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-minitest-sprint
-  version: 1.2.2-4
+  version: 1.2.2-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.2.2-4
+    version: 1.2.2-5
     packages:
-      - ruby-minitest-sprint-1.2.2-4-any.pkg.tar.zst
+      - ruby-minitest-sprint-1.2.2-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
