@@ -3,7 +3,7 @@
 
 pkgname=ruby-protocol-rack
 pkgver=0.11.1
-pkgrel=2
+pkgrel=3
 pkgdesc='An implementation of the Rack protocol/specification'
 arch=(any)
 url='https://github.com/socketry/protocol-rack'
