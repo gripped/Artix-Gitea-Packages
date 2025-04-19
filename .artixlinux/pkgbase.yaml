@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-yard
-  version: 0.9.34-4
+  version: 0.9.34-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.9.34-4
+    version: 0.9.34-5
     packages:
-      - ruby-yard-0.9.34-4-any.pkg.tar.zst
+      - ruby-yard-0.9.34-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
