@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rb-inotify
-  version: 0.10.1-5
+  version: 0.10.1-6
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.10.1-5
+    version: 0.10.1-6
     packages:
-      - ruby-rb-inotify-0.10.1-5-any.pkg.tar.zst
+      - ruby-rb-inotify-0.10.1-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
