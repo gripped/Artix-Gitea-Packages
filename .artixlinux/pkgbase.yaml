@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-mini_portile2
-  version: 2.8.8-3
+  version: 2.8.8-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.8.8-3
+    version: 2.8.8-4
     packages:
-      - ruby-mini_portile2-2.8.8-3-any.pkg.tar.zst
+      - ruby-mini_portile2-2.8.8-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

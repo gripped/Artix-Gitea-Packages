@@ -8,7 +8,7 @@
 _gemname='mini_portile2'
 pkgname="ruby-${_gemname}"
 pkgver=2.8.8
-pkgrel=3
+pkgrel=4
 pkgdesc='Simple autoconf builder for developers'
 url='https://github.com/flavorjones/mini_portile'
 arch=('any')
