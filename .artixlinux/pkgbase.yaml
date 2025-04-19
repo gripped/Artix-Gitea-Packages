@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-console
-  version: 1.30.2-3
+  version: 1.30.2-4
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.30.2-3
+    version: 1.30.2-4
     packages:
-      - ruby-console-1.30.2-3-any.pkg.tar.zst
+      - ruby-console-1.30.2-4-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

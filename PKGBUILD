@@ -3,7 +3,7 @@
 
 pkgname=ruby-console
 pkgver=1.30.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Beautiful logging for Ruby'
 arch=(any)
 url='https://github.com/socketry/console'
