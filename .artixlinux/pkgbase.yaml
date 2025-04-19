@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-minitest-parallel_fork
-  version: 2.0.0-4
+  version: 2.0.0-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.0.0-4
+    version: 2.0.0-5
     packages:
-      - ruby-minitest-parallel_fork-2.0.0-4-any.pkg.tar.zst
+      - ruby-minitest-parallel_fork-2.0.0-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
