@@ -1,10 +1,11 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 _gemname=pcaprub
 pkgname=ruby-${_gemname}
 pkgver=0.13.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Consistent interface to libpcap packet capture library'
 url='https://github.com/pcaprub/pcaprub'
 arch=('x86_64')

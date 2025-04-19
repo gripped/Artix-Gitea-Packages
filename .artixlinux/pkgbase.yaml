@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-pcaprub
-  version: 0.13.3-3
+  version: 0.13.3-4
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.13.3-3
+    version: 0.13.3-4
     packages:
-      - ruby-pcaprub-0.13.3-3-x86_64.pkg.tar.zst
+      - ruby-pcaprub-0.13.3-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
