@@ -5,7 +5,7 @@
 _gemname=rack-test
 pkgname=ruby-${_gemname}
 pkgver=2.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Small, simple testing API for Rack apps'
 url='https://github.com/rack-test/rack-test'
 arch=('any')
