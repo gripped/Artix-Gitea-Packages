@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-permessage_deflate
-  version: 0.1.4-4
+  version: 0.1.4-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.1.4-4
+    version: 0.1.4-5
     packages:
-      - ruby-permessage_deflate-0.1.4-4-any.pkg.tar.zst
+      - ruby-permessage_deflate-0.1.4-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
