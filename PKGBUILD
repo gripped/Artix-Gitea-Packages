@@ -3,7 +3,7 @@
 
 pkgname=ruby-warnings_logger
 pkgver=0.1.1
-pkgrel=7.1
+pkgrel=8
 pkgdesc='Easily log warnings in your gems'
 arch=(any)
 url='https://github.com/mcmire/warnings_logger'
