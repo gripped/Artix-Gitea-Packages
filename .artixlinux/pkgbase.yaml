@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-rack-session
-  version: 2.1.0-1
+  version: 2.1.0-2
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.1.0-1
+    version: 2.1.0-2
     packages:
-      - ruby-rack-session-2.1.0-1-any.pkg.tar.zst
+      - ruby-rack-session-2.1.0-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

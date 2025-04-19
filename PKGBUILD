@@ -3,7 +3,7 @@
 
 pkgname=ruby-rack-session
 pkgver=2.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Session management implementation for Rack.'
 url="https://github.com/rack/rack-session"
 arch=('any')
