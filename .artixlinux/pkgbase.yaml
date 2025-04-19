@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-parser
-  version: 3.3.7.3-1
+  version: 3.3.7.3-2
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.3.7.3-1
+    version: 3.3.7.3-2
     packages:
-      - ruby-parser-3.3.7.3-1-any.pkg.tar.zst
+      - ruby-parser-3.3.7.3-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
