@@ -11,12 +11,12 @@ pkgbase:
     - openjdk8-src
     - openjdk8-doc
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,6 +32,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 8.452.u09-1
     packages:
       - jre8-openjdk-headless-8.452.u09-1-x86_64.pkg.tar.zst
@@ -39,14 +42,6 @@ repos:
       - jdk8-openjdk-8.452.u09-1-x86_64.pkg.tar.zst
       - openjdk8-src-8.452.u09-1-x86_64.pkg.tar.zst
       - openjdk8-doc-8.452.u09-1-x86_64.pkg.tar.zst
-  world:
-    version: 8.442.u06-1
-    packages:
-      - jre8-openjdk-headless-8.442.u06-1-x86_64.pkg.tar.zst
-      - jre8-openjdk-8.442.u06-1-x86_64.pkg.tar.zst
-      - jdk8-openjdk-8.442.u06-1-x86_64.pkg.tar.zst
-      - openjdk8-src-8.442.u06-1-x86_64.pkg.tar.zst
-      - openjdk8-doc-8.442.u06-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
