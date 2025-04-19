@@ -3,7 +3,7 @@
 
 pkgname=ruby-sus
 pkgver=0.32.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A fast and scalable test runner'
 arch=(any)
 url='https://github.com/socketry/sus'
