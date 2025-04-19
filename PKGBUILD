@@ -1,9 +1,10 @@
-# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=ruby-unicode-emoji
 _pkgname="${pkgname#ruby-}"
 pkgver=4.0.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Provides Unicode Emoji data and regexes, incorporating the latest standards'
 arch=('any')
 url='https://github.com/janlelis/unicode-emoji'
