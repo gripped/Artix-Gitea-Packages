@@ -1,10 +1,11 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: loqs
 
 _gemname=sys-filesystem
 pkgname=ruby-${_gemname}
 pkgver=1.5.0
-pkgrel=3.1
+pkgrel=4
 pkgdesc='An interface for getting file system information.'
 arch=(any)
 url="https://github.com/djberg96/${_gemname}"
