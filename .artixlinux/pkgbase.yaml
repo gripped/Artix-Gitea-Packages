@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-fiber-storage
-  version: 1.0.1-1
+  version: 1.0.1-2
   arch:
     - any
   pkgname:
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.0.1-1
+    version: 1.0.1-2
     packages:
-      - ruby-fiber-storage-1.0.1-1-any.pkg.tar.zst
+      - ruby-fiber-storage-1.0.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
