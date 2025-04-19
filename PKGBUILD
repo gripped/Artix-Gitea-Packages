@@ -6,7 +6,7 @@
 _gemname=mocha
 pkgname="ruby-${_gemname}"
 pkgver=2.7.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Mocha is a mocking and stubbing library for Ruby'
 arch=('any')
 url='https://github.com/freerange/mocha'
