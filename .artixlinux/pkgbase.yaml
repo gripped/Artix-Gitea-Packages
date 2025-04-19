@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rdiscount
-  version: 2.2.7.3-5
+  version: 2.2.7.3-6
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.2.7.3-5
+    version: 2.2.7.3-6
     packages:
-      - ruby-rdiscount-2.2.7.3-5-x86_64.pkg.tar.zst
+      - ruby-rdiscount-2.2.7.3-6-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
