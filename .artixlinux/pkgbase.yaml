@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-async-container
-  version: 0.18.3-2
+  version: 0.18.3-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.18.3-2
+    version: 0.18.3-3
     packages:
-      - ruby-async-container-0.18.3-2-any.pkg.tar.zst
+      - ruby-async-container-0.18.3-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
