@@ -1,11 +1,12 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-snowglobe
 # https://github.com/mcmire/snowglobe/issues/4
 pkgver=0.3.0.20200907
 _gemver=0.3.0
 _commit=408ee4c08f823a4d9f89902fa0fa29aff7cafe6d
-pkgrel=5
+pkgrel=6
 pkgdesc='Snowglobe is a gem that helps erect and destroy Rails applications for use in tests'
 arch=(any)
 url='https://github.com/mcmire/snowglobe'
