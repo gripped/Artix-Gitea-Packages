@@ -2,7 +2,7 @@
 team: world
 pkgbase:
   name: ruby-io-event
-  version: 1.9.0-3
+  version: 1.9.0-4
   arch:
     - x86_64
   pkgname:
@@ -14,7 +14,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.9.0-3
+    version: 1.9.0-4
     packages:
-      - ruby-io-event-1.9.0-3-x86_64.pkg.tar.zst
+      - ruby-io-event-1.9.0-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
