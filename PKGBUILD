@@ -1,9 +1,10 @@
-# Maintainer: Tim Meusel <tim@bastelfreak.de>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Tim Meusel <tim@bastelfreak.de>
 
 _gemname='sd_notify'
 pkgname="ruby-${_gemname}"
 pkgver=0.1.1
-pkgrel=5
+pkgrel=6
 pkgdesc="Pure Ruby implementation of systemd's sd_notify(3)"
 arch=('any')
 url='https://github.com/agis/ruby-sdnotify'
