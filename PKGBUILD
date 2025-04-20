@@ -1,10 +1,11 @@
-# Maintainer: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 _gemname=safe_yaml
 pkgname=ruby-safe_yaml
 pkgver=1.0.5
-pkgrel=5
+pkgrel=6
 pkgdesc='Parse YAML safely'
 url='https://github.com/dtao/safe_yaml'
 arch=('any')
