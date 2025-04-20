@@ -3,7 +3,7 @@
 
 pkgname=ruby-rspec-memory
 pkgver=1.0.4
-pkgrel=5
+pkgrel=6
 pkgdesc='RSpec helpers for checking memory allocations'
 arch=(any)
 url='https://github.com/socketry/rspec-memory'
