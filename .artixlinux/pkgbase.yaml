@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-sqlite3
-  version: 2.6.0-2
+  version: 2.6.0-3
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 2.6.0-2
+    version: 2.6.0-3
     packages:
-      - ruby-sqlite3-2.6.0-2-x86_64.pkg.tar.zst
+      - ruby-sqlite3-2.6.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

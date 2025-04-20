@@ -5,7 +5,7 @@
 _gemname='sqlite3'
 pkgname="ruby-${_gemname}"
 pkgver=2.6.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Ruby bindings for the SQLite3 embedded database'
 url='https://github.com/luislavena/sqlite3-ruby'
 arch=('x86_64')
