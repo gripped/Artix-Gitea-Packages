@@ -1,10 +1,11 @@
-# Maintainer: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 # Contributor: Mario Finelli <mario at finel dot li>
 
 _gemname='racc'
 pkgname="ruby-${_gemname}"
 pkgver=1.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc='LALR parser generator written in Ruby itself and generates ruby programs'
 arch=(x86_64)
 url="https://github.com/ruby/${_gemname}"
