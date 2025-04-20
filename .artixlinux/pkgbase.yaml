@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: neon
-  version: 0.34.0-1
+  version: 0.34.2-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.34.0-1
+    version: 0.34.2-1
     packages:
-      - neon-0.34.0-1-x86_64.pkg.tar.zst
+      - neon-0.34.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
