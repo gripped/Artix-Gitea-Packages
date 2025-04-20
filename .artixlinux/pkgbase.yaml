@@ -1,16 +1,24 @@
 ---
 team: world
 pkgbase:
-  name: null
-  version: null
-  arch: []
-  pkgname: []
+  name: rocm-hip-sdk
+  version: 6.3.3-1
+  arch:
+    - any
+  pkgname:
+    - rocm-hip-sdk
+    - rocm-hip-libraries
+    - rocm-opencl-sdk
+    - rocm-hip-runtime
+    - rocm-language-runtime
+    - rocm-ml-sdk
+    - rocm-ml-libraries
 actions:
-  addRepo: null
+  addRepo: world
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -30,8 +38,15 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 6.3.3-1
+    packages:
+      - rocm-hip-sdk-6.3.3-1-any.pkg.tar.zst
+      - rocm-hip-libraries-6.3.3-1-any.pkg.tar.zst
+      - rocm-opencl-sdk-6.3.3-1-any.pkg.tar.zst
+      - rocm-hip-runtime-6.3.3-1-any.pkg.tar.zst
+      - rocm-language-runtime-6.3.3-1-any.pkg.tar.zst
+      - rocm-ml-sdk-6.3.3-1-any.pkg.tar.zst
+      - rocm-ml-libraries-6.3.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
