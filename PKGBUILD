@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-redcarpet
 pkgver=3.6.0
 _commit=3e3f0b522fbe9283ba450334b5cec7a439dc0955
-pkgrel=7
+pkgrel=8
 pkgdesc='A fast, safe and extensible Markdown to (X)HTML parser'
 arch=(x86_64)
 url='https://github.com/vmg/redcarpet'
