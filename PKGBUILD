@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-redcloth
 pkgver=4.3.4
-pkgrel=4
+pkgrel=5
 pkgdesc='Textile parser for Ruby'
 arch=(x86_64)
 url='https://github.com/jgarber/redcloth'
