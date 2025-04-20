@@ -3,7 +3,7 @@
 
 pkgname=kdevelop-python
 pkgver=25.04.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Python language and documentation plugin for KDevelop'
 arch=(x86_64)
 url='https://www.kdevelop.org/'
