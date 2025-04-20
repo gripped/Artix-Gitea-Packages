@@ -1,0 +1,5 @@
+[roctracer]
+source = 'git'
+git = 'https://github.com/ROCm/roctracer.git'
+prefix = 'rocm-'
+include_regex = 'rocm-.*'
