@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-syntax
 pkgver=1.2.2
-pkgrel=4.1
+pkgrel=5
 pkgdesc='Ruby library for performing simple syntax highlighting'
 arch=(any)
 url='https://github.com/dblock/syntax'
