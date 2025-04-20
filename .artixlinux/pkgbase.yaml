@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rake-compiler-dock
-  version: 1.9.1-2
+  version: 1.9.1-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.9.1-2
+    version: 1.9.1-3
     packages:
-      - ruby-rake-compiler-dock-1.9.1-2-any.pkg.tar.zst
+      - ruby-rake-compiler-dock-1.9.1-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
