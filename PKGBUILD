@@ -3,7 +3,7 @@
 
 pkgname=ruby-regexp_parser
 pkgver=2.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A library for tokenizing, lexing, and parsing Ruby regular expressions'
 arch=(any)
 url='https://github.com/ammar/regexp_parser'
