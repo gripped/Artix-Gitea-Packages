@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-rr
-  version: 3.1.1-4
+  version: 3.1.1-5
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 3.1.1-4
+    version: 3.1.1-5
     packages:
-      - ruby-rr-3.1.1-4-any.pkg.tar.zst
+      - ruby-rr-3.1.1-5-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
