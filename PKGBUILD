@@ -1,8 +1,9 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-rss
 pkgver=0.3.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Family of libraries that support various formats of XML "feeds"'
 arch=(any)
 url='https://github.com/ruby/rss'
