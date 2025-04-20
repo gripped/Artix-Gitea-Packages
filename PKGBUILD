@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=tokodon
-pkgver=24.12.3
+pkgver=25.04.0
 pkgrel=2
 pkgdesc='A Mastodon client for Plasma'
 url='https://apps.kde.org/tokodon/'
@@ -17,6 +17,7 @@ depends=(gcc-libs
          kdbusaddons
          kdeclarative
          ki18n
+         kiconthemes
          kio
          kirigami
          kirigami-addons
@@ -25,12 +26,13 @@ depends=(gcc-libs
          kservice
          kunifiedpush
          kwindowsystem
-         mpvqt
          openssl
+         prison
          purpose
          qqc2-desktop-style
          qt6-base
          qt6-declarative
+         qt6-multimedia
          qt6-websockets
          qt6-webview
          qtkeychain-qt6)
@@ -38,7 +40,7 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications 
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('62b2ddcc8caee8889d835a01d06340199040cea46bf858dbaea3b391bb36a6aa'
+sha256sums=('578d241218994ca4854a386413e9ec7a7c022a183e6fed36554a30fb66aa78ba'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
