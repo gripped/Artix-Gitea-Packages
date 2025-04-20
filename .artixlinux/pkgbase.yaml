@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: python-aiohappyeyeballs
-  version: 2.5.0-1
+  version: 2.6.1-1
   arch:
     - any
   pkgname:
     - python-aiohappyeyeballs
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.6.1-1
+    packages:
+      - python-aiohappyeyeballs-2.6.1-1-any.pkg.tar.zst
   world:
     version: 2.5.0-1
     packages:
