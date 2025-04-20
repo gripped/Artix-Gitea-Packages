@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-vimrunner
-  version: 0.3.6-2
+  version: 0.3.6-3
   arch:
     - any
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 0.3.6-2
+    version: 0.3.6-3
     packages:
-      - ruby-vimrunner-0.3.6-2-any.pkg.tar.zst
+      - ruby-vimrunner-0.3.6-3-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
