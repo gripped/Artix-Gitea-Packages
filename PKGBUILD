@@ -2,8 +2,8 @@
 # Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
 
 pkgname="rubocop"
-pkgver=1.75.2
-pkgrel=1.1
+pkgver=1.74.0
+pkgrel=1
 pkgdesc='A Ruby code style checking and code formatting tool'
 arch=('any')
 url='https://rubocop.org/'
@@ -11,21 +11,26 @@ license=('MIT')
 provides=('ruby-rubocop')
 depends=(
   ruby
-  ruby-memory_profiler
+  ruby-language_server-protocol
+  ruby-lint_roller
   ruby-parallel
   ruby-parser
   ruby-rainbow
   ruby-regexp_parser
-  ruby-rexml
   ruby-rubocop-ast
   ruby-ruby-progressbar
   ruby-unicode-display_width
+)
+makedepends=(
+  ruby-rdoc
 )
 checkdepends=(
   asciidoctor
   procps-ng
   ruby-bundler
   ruby-irb
+  ruby-lsp
+  ruby-memory_profiler
   ruby-rake
   ruby-rspec
   ruby-rubocop-performance
@@ -37,22 +42,34 @@ checkdepends=(
   ruby-yard
 )
 options=('!emptydirs')
-source=("https://github.com/rubocop/rubocop/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('e493449266a5f7798cca7e5951524d4b78dea02f64f652d4395b5913d9558dd727cf89cb80c6920ec82e09a7e13319503a7974dd7738c0e5dd362e8c51c15688')
-b2sums=('2cdf1eb21707ab2080ab3084830062927e6f37acdd2624b539b35358510c6127372fe16363877f83131168d0cf5bc3fcb1ad3cd5feb6c039593924692d2d64de')
+source=(
+  "https://github.com/rubocop/rubocop/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
+  "${pkgname}_fix_tests.patch::https://github.com/rubocop/rubocop/pull/14004.patch"
+)
+sha512sums=('81cad3d39464d1f9e6d9ff57fa67b5ebe9ed3091c3ff764c3bd131b5aec125b57f3252ce5ee2b02962dded18cf4d5d1ce66b1a7684351a0a0b029feddca3abdc'
+            'a4c4589b966af442935c95196b103f2f540cb4227f99972f40cf34318836dba1567e097f370f577b4cc09c6c630a38553a8ed8ac003b153c4ae11318fc9e3dc8')
+b2sums=('2663d9e46c15496d1e973af0a92c19032a89c68990462bc9f0cc4d1d39bd0c309796be3995b4d5b6766faa8658d68d3d2ba8d3cc09673b74a787ba927dce1bb3'
+        '66860a795f8fd9a67234f27805b3755e14cadddd323d50143175d81e03c66712391b31b9f1912756944e82d4c4418dc65bf8d09b3c51fc0680ee37d5ae538a02')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
+
+  patch --verbose --strip=1 --input="../${pkgname}_fix_tests.patch"
 
   # update gemspec/Gemfile to allow newer version of the dependencies
   sed --in-place --regexp-extended 's|~>|>=|g' "${pkgname}.gemspec" Gemfile
 
   # we need webmock
-  sed --in-place '/group/d' Gemfile
-  sed --in-place '/end/d' Gemfile
+  sed --in-place \
+    --expression '/group/d' \
+    --expression '/end/d' \
+    Gemfile
 
-  # Remove dependency on bump and simplecov
-  sed --in-place --regexp-extended '/bump|simplecov/d' Gemfile
+  sed --in-place --regexp-extended \
+    --expression '/bump/d' \
+    --expression '/simplecov/d' \
+    Gemfile
+
   rm tasks/cut_release.rake
 }
 
