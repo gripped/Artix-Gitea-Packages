@@ -9,7 +9,7 @@
 
 pkgname=julia
 epoch=2
-pkgver=1.11.4
+pkgver=1.11.5
 pkgrel=1
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
@@ -36,7 +36,6 @@ makedepends=(cmake
              python)
 optdepends=('gnuplot: If using the Gaston Package from julia')
 source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$pkgver-full.tar.gz{,.asc}
-        localhost.patch
         c12e8515.patch
         julia-hardcoded-libs.patch
         julia-libgit2-1.8.patch
@@ -44,9 +43,8 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         julia-metainfo.patch
         julia-curl-1.10.patch)
 backup=(etc/julia/startup.jl)
-sha256sums=('c4936562d05128842d7fe2be30734333519ea94a54861b5d0bfe38d103e96b5b'
+sha256sums=('147626db6b6887bfb6612cb6cd2a48d689806649fae34dc749fddc8375c2c625'
             'SKIP'
-            'fc94d316bd56902f1720da55c331d43d315ce487d6b4cc7e5ffcb207cf9a8299'
             '2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367'
             'e981ce26bb2394333c83512a607e8aa48ae0d66ec40e0f0b6d97ec70b6baa39f'
             '3ba9a85464e874c8ac4caeba155a217e34c3e78e85eccaeb3c2a331ed83882b3'
@@ -69,8 +67,6 @@ prepare() {
   patch -p1 -i ../julia-libgit2-1.9.patch
 # Don't hardcode library names
   patch -p1 -i ../julia-hardcoded-libs.patch
-# Fix test that fails in Artix's build pipeline
-  patch -p1 -i ../localhost.patch
 # Fix segfaults with curl 1.10
   cd stdlib/srccache
   _SAsha=89d3c7dded535a77551e763a437a6d31e4d9bf84
@@ -125,6 +121,7 @@ _make() {
     LLVM_CONFIG=/usr/lib/llvm-julia/bin/llvm-config
   )
 
+  export CMAKE_POLICY_VERSION_MINIMUM=3.5 # Fix build with cmake 4
   LD_LIBRARY_PATH="/usr/lib/mbedtls2" make "${make_options[@]}" "$@"
 }
 
