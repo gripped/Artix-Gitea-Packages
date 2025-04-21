@@ -3,7 +3,7 @@
 
 pkgname="rubocop"
 pkgver=1.75.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A Ruby code style checking and code formatting tool'
 arch=('any')
 url='https://rubocop.org/'
