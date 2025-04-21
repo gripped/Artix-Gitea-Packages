@@ -1,0 +1,61 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
+# Contributor: Iyán Méndez Veiga <me (at) iyanmv (dot) com>
+# Contributor: Dmytro Aleksandrov <alkersan@gmail.com>
+
+pkgname=rpi-imager
+pkgver=1.9.3
+pkgrel=1
+_commit=ebd2a01c66237ce4a8c4ce3a5cdae6dcc307cc0f
+pkgdesc="Raspberry Pi Imaging Utility"
+depends=(
+    'curl'
+    'gcc-libs'
+    'glibc'
+    'gnutls'
+    'hicolor-icon-theme'
+    'libarchive'
+    'qt6-base'
+    'qt6-declarative'
+    'xz'
+)
+optdepends=(
+    'dosfstools: SD card bootloader support'
+    'udisks2: Needed if you want to be able to run rpi-imager as a regular user'
+)
+makedepends=(
+    'git'
+    'cmake'
+    'qt6-tools'
+    'qt6-svg'
+)
+arch=('x86_64')
+url="https://github.com/raspberrypi/rpi-imager"
+license=("Apache-2.0")
+
+source=("git+https://github.com/raspberrypi/rpi-imager.git#commit=${_commit}"
+        "remove-vendoring.patch")
+
+b2sums=('32e9f4b8084c6f075ff8560e714a4dbd79bdb9670335ac6e9f0aa68a76da99dd8359e53e9b8aa5f1b6ebd1552af3183f05717d89481115aa56bd88103b7be814'
+        '775ca71fcb7601de1030b29e7e2203a570690c50d40af74d275393958808fdd6698f2803110eac3c2bda3cf0efc0c68225e73ff018bf70ae30bb46bcc5352047')
+
+prepare() {
+    # https://github.com/raspberrypi/rpi-imager/issues/924
+    patch -Np1 -d "${pkgname}" -i "$srcdir/remove-vendoring.patch"
+}
+
+build() {
+    cmake -B build -S "${pkgname}/src" \
+        -DCMAKE_BUILD_TYPE='None' \
+        -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DENABLE_CHECK_VERSION=OFF \
+        -DENABLE_VENDORING=OFF
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+    install -Dm644 ${srcdir}/${pkgname}/doc/man/rpi-imager.1 "${pkgdir}/usr/share/man/man1/rpi-imager.1"
+    install -Dm644 ${srcdir}/${pkgname}/debian/changelog "${pkgdir}/usr/share/doc/rpi-imager/changelog"
+    install -Dm644 "$pkgname/license.txt" "$pkgdir/usr/share/licenses/$pkgname/license.txt"
+}
