@@ -5,7 +5,7 @@
 
 pkgname=retroarch
 pkgver=1.20.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Reference frontend for the libretro API'
 arch=(x86_64)
 url=http://www.libretro.com/
@@ -37,7 +37,7 @@ depends=(
   libxv
   mesa
   openssl
-  qt5-base
+  qt6-base
   sdl2
   v4l-utils
   wayland
