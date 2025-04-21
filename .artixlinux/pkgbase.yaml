@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libretro-overlays
-  version: 310-1
+  version: 311-1
   arch:
     - any
   pkgname:
@@ -49,7 +49,7 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 310-1
+    version: 311-1
     packages:
-      - libretro-overlays-310-1-any.pkg.tar.zst
+      - libretro-overlays-311-1-any.pkg.tar.zst
 team: galaxy
