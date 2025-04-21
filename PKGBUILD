@@ -6,12 +6,12 @@
 
 pkgname=rspamd
 pkgver=3.11.1
-pkgrel=2
+pkgrel=3
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
 url=https://rspamd.com
-license=(BSD)
+license=(Apache-2.0)
 depends=(
   file
   gcc-libs
@@ -41,6 +41,7 @@ optdepends=(
   'valkey: redis cache and data storage'
 )
 backup=(
+  etc/logrotate.d/rspamd
   etc/rspamd/actions.conf
   etc/rspamd/cgp.inc
   etc/rspamd/common.conf
