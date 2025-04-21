@@ -5,7 +5,7 @@
 _gemname='rubocop-ast'
 pkgname="ruby-${_gemname}"
 pkgver=1.39.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="RuboCop's AST extensions and NodePattern functionality"
 arch=('any')
 url="https://github.com/rubocop/${_gemname}"
