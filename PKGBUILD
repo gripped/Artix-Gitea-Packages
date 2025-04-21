@@ -2,7 +2,7 @@
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=libretro-play
-pkgver=8459
+pkgver=8474
 pkgrel=1
 pkgdesc='Sony PlayStation 2 core'
 arch=(x86_64)
@@ -24,7 +24,7 @@ makedepends=(
   git
   libglvnd
 )
-_commit=b15a49e31172f05dfdb1b1a15ea71e8a870c27ae
+_commit=6082fd0d31c74916b40c6ff80e76b27fdc4d5c76
 source=(
   libretro-play::git+https://github.com/jpd002/Play-.git#commit=${_commit}
   play-CodeGen::git+https://github.com/jpd002/Play--CodeGen.git
@@ -37,7 +37,7 @@ source=(
   git+https://github.com/Cyan4973/xxHash.git
   git+https://github.com/facebook/zstd.git
 )
-b2sums=('6209f9af830fa64f67644afb5bdd97cdd14674348de600773a492f48b02c19a599412d8f6a1f2c1b3dff51404a2878965a9d846ac36ff2289771b53f56b11bba'
+b2sums=('5ad300ff0d7b60f33b834e1c82cc2c39d8a797d9846d5b7ac0b6c87f3e710899a44c20c198b03bee906964b5b3e367b0ad8e42680d9eafaecddb96501433e975'
         'SKIP'
         'SKIP'
         'SKIP'
@@ -76,6 +76,7 @@ prepare() {
 build() {
   cmake -S libretro-play -B build \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DBUILD_LIBRETRO_CORE=ON \
     -DBUILD_PLAY=OFF \
     -DBUILD_TESTS=OFF \
