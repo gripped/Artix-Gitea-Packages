@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ppsspp
-  version: 1.18.1-3
+  version: 1.18.1-4
   arch:
     - x86_64
   pkgname:
@@ -9,11 +9,11 @@ pkgbase:
     - ppsspp-assets
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,8 +50,8 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 1.18.1-3
+    version: 1.18.1-4
     packages:
-      - ppsspp-1.18.1-3-x86_64.pkg.tar.zst
-      - ppsspp-assets-1.18.1-3-x86_64.pkg.tar.zst
+      - ppsspp-1.18.1-4-x86_64.pkg.tar.zst
+      - ppsspp-assets-1.18.1-4-x86_64.pkg.tar.zst
 team: galaxy
