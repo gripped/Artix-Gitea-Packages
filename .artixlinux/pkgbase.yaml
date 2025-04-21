@@ -8,13 +8,13 @@ pkgbase:
   pkgname:
     - ruby-minitest-power_assert
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersRepoRemove: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,12 +26,12 @@ repos:
     version: null
     packages: []
   world-goblins:
+    version: null
+    packages: []
+  world-gremlins:
     version: 0.3.1-5
     packages:
       - ruby-minitest-power_assert-0.3.1-5-any.pkg.tar.zst
-  world-gremlins:
-    version: null
-    packages: []
   world:
     version: null
     packages: []
