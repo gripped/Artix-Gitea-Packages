@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: ruby-sinatra
-  version: 4.1.1-1
+  version: 4.1.1-2
   arch:
     - any
   pkgname:
@@ -27,11 +27,11 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 4.1.1-1
+    version: 4.1.1-2
     packages:
-      - ruby-sinatra-4.1.1-1-any.pkg.tar.zst
-      - ruby-sinatra-contrib-4.1.1-1-any.pkg.tar.zst
-      - ruby-rack-protection-4.1.1-1-any.pkg.tar.zst
+      - ruby-sinatra-4.1.1-2-any.pkg.tar.zst
+      - ruby-sinatra-contrib-4.1.1-2-any.pkg.tar.zst
+      - ruby-rack-protection-4.1.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

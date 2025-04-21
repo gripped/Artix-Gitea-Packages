@@ -4,7 +4,7 @@
 
 pkgname=(ruby-sinatra ruby-sinatra-contrib ruby-rack-protection)
 pkgver=4.1.1
-pkgrel=1
+pkgrel=2
 arch=('any')
 url='https://sinatrarb.com/'
 license=('MIT')
@@ -35,10 +35,8 @@ checkdepends=(
   ruby-rackup
   ruby-rake
   ruby-rdiscount
-  ruby-rdoc
   ruby-rspec
   ruby-sass-embedded
-  ruby-thin
   ruby-tilt
   ruby-zeitwerk
 )
@@ -175,28 +173,45 @@ _check() {
 
   cd "$srcdir/sinatra-${pkgver}/${_gemname}"
 
-  echo "${_gemname}"
+  echo ">> running tests for ${_gemname} ..."
   GEM_PATH="${_gempath}" rake "${_rake_target}"
 }
 
 package_ruby-sinatra() {
   pkgdesc='Classy web-development dressed in a DSL'
-  depends=('ruby' 'ruby-mustermann' 'ruby-rack' 'ruby-rackup'
-           'ruby-rack-protection' 'ruby-rack-session' 'ruby-tilt')
+  depends=(
+    ruby
+    ruby-mustermann
+    ruby-rack
+    ruby-rack-protection
+    ruby-rack-session
+    ruby-tilt
+  )
 
   _package "sinatra" "LICENSE"
 }
 
 package_ruby-sinatra-contrib() {
   pkgdesc='Collection of useful Sinatra extensions'
-  depends=('ruby' 'ruby-multi_json' 'ruby-mustermann' 'ruby-rack-protection' 'ruby-sinatra' 'ruby-tilt')
+  depends=(
+    ruby
+    ruby-multi_json
+    ruby-mustermann
+    ruby-rack-protection
+    ruby-sinatra
+    ruby-tilt
+  )
 
   _package "sinatra-contrib" "LICENSE"
 }
 
 package_ruby-rack-protection() {
   pkgdesc='Protect against typical web attacks, works with all Rack apps, including Rails'
-  depends=('ruby' 'ruby-rack')
+  depends=(
+    ruby
+    ruby-base64
+    ruby-rack
+  )
 
   _package "rack-protection" "License"
 }
