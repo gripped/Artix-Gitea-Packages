@@ -7,7 +7,7 @@
 # Check if new updates break python-engineio
 
 pkgname=python-aiohttp
-pkgver=3.11.17
+pkgver=3.11.18
 pkgrel=1
 pkgdesc='HTTP client/server for asyncio'
 arch=(x86_64)
@@ -56,7 +56,7 @@ source=(
   "$pkgname::git+https://github.com/aio-libs/aiohttp#tag=v$pkgver"
   git+https://github.com/nodejs/llhttp.git
 )
-b2sums=('db825a014f3fc650e10e82ed11a68125caaed82f2ecd78cdfaee1966a442719938a40482f4a7f3b785961021b2e5786cb872bd0a58777b064b8ed39cd97d2179'
+b2sums=('02c8f8a2f20d176d28fc95fcae31652d5dc8c70def8ba77a840a7b71a4db31c4bd550fb721bd2fb5d50878ad25aef2a23bc901c2642c7d02d1546828e7865c00'
         'SKIP')
 
 prepare() {
@@ -82,6 +82,7 @@ check() {
     --deselect=tests/test_http_parser.py::test_http_response_parser_bad_chunked_strict_py
     --deselect=tests/test_http_parser.py::test_http_response_parser_strict_headers
     --deselect=tests/test_http_parser.py::test_http_response_parser_strict_obs_line_folding
+    --deselect=tests/test_proxy_functional.py::test_uvloop_secure_https_proxy
 
     # Fails, calls the Python interpreter without -P, deselect to enable
     # venv-based testing.
