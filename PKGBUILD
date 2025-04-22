@@ -1,8 +1,8 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Chih-Hsuan Yen <base64_decode("eXUzYWN0eHQydHR0ZmlteEBjaHllbi5jYwo=")>
 
 pkgname=lxqt-wayland-session
-pkgver=0.1.1
-pkgrel=2
+pkgver=0.2.0
+pkgrel=1
 pkgdesc='Files needed for the LXQt Wayland Session'
 arch=('any')
 url='https://github.com/lxqt/lxqt-wayland-session'
@@ -28,28 +28,20 @@ depends=(
 optdepends=(
   # See upstream README.md for supported compositors
   # Dependencies that are not official packages are commented out
-  # 'labwc'
+  'labwc'
   # 'wayfire'
   'kwin'
   'hyprland'
-  'labwc'
   'niri'
   'river'
   'sway'
 )
 makedepends=('git' 'cmake' 'qt6-tools' 'lxqt-build-tools')
-source=("git+https://github.com/lxqt/$pkgname.git?signed#tag=$pkgver"
-        "autostart.patch")
-sha256sums=('7e99686ff967b734c77f2e9df2ec79624963176109f8f2fb99a42ed9cd58e918'
-            'cc8f0ac9007a60b095f8c39a89b939cb3bfed1a3e62901ee7ab87cc85441f071')
+source=("git+https://github.com/lxqt/$pkgname.git?signed#tag=$pkgver")
+sha256sums=('59ff0b36ed4f07fdad2f5450c64bb15ad777c0de45b48911b6dc233d9f043efc')
 validpgpkeys=(
   "19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # https://github.com/tsujan
 )
-
-prepare() {
-  cd "$srcdir/$pkgname"
-  patch -Np1 -i "$srcdir/autostart.patch"
-}
 
 build() {
   cmake -B build -S "$srcdir/$pkgname" \

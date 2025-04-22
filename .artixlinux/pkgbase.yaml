@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: lxqt-wayland-session
-  version: 0.1.1-2
+  version: 0.2.0-1
   arch:
     - any
   pkgname:
     - lxqt-wayland-session
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.2.0-1
+    packages:
+      - lxqt-wayland-session-0.2.0-1-any.pkg.tar.zst
   galaxy:
     version: 0.1.1-2
     packages:
