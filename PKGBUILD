@@ -6,8 +6,8 @@
 # Contributor: Schnouki <thomas.jost@gmail.com>
 
 pkgname=python-django-extensions
-pkgver=3.2.3
-pkgrel=6
+pkgver=4.1
+pkgrel=1
 pkgdesc='A collection of custom extensions for the Django Framework'
 arch=(any)
 url=https://github.com/django-extensions/django-extensions
@@ -17,34 +17,33 @@ depends=(
 )
 makedepends=(
   git
+  python-build
+  python-installer
   python-setuptools
+  python-wheel
 )
 optdepends=(
   'graphviz: graph_models extension'
   'ipython: shell_plus extension'
   'python-werkzeug: runserver_plus extension'
 )
-_tag=2ccced1b75d13573b7d738be9ecdc189c46f6480
+_tag=ad015513e5d8e8ee6ad748fca5f32ccf3fb3d5c5
 source=(git+https://github.com/django-extensions/django-extensions.git#tag=${_tag})
-sha256sums=(SKIP)
+sha256sums=('ca727cd17d56a70afe8e4e62654069e6ad325922b02c75538796e38ab97a7f75')
 
 pkgver() {
   cd django-extensions
-
   git describe --tags
 }
 
 build() {
   cd django-extensions
-
-  python setup.py build
+  python -m build --wheel --no-isolation
 }
 
 package() {
-  cd django-extensions
-
-  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
-  install -Dm 644 LICENSE -t "${pkgdir}"/usr/share/licenses/python-django-extensions/
+  python -m installer --destdir="${pkgdir}" django-extensions/dist/*.whl
+  install -Dm 644 django-extensions/LICENSE -t "${pkgdir}"/usr/share/licenses/python-django-extensions/
 }
 
 # vim: ts=2 sw=2 et:
