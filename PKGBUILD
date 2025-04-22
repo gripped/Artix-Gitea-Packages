@@ -4,7 +4,7 @@
 
 pkgname=certbot
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An ACME client'
 arch=('any')
 license=('Apache-2.0')
@@ -20,13 +20,13 @@ depends=(
   'python-parsedatetime'
   'python-pyrfc3339'
   'python-pytz'
-  'python-setuptools'
 )
 makedepends=(
   'git'
   'python-build'
-  'python-wheel'
   'python-installer'
+  'python-setuptools'
+  'python-wheel'
   'python-sphinx'
   'python-sphinx_rtd_theme'
 )
@@ -48,15 +48,6 @@ sha512sums=('f83cdab4ea9795e89b8650f29de78b89c7df6dadd2d2e0f75f2ce83986f01568669
             'fbb7bb4591876aeb2e118c3f3fc8ff507b6a3127de0f921c689e1d74c70320b4f2b8bf05b488ec4f714259701f1ac54e64a9f6181475da6bd6d1e3da3a602217')
 b2sums=('10139118f94c1e8c3e1500e5e9c49f35cd99255aac1c7acfe62c404b8397add173c131a45bbe39fbb0eea3efe376db342bfc62e81b610174cb5a052c3d51c7e2'
         '7d2c26a9953d3b5a899053bdd7bd77051c67abe6480af2bfaaee06f20a399b0b4ccccc0af35cfe9e6d2b1fc833dbff928ba46771a9127720073dda29aef9a2e0')
-
-prepare() {
-  cd "$_repo/$pkgname"
-
-  # nuke setuptools from orbit ^W install_requires
-  sed \
-    -e '/setuptools>=/d' \
-    -i setup.py
-}
 
 build() {
   cd "$_repo/$pkgname"
