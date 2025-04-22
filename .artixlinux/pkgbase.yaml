@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ansible
-  version: 11.4.0-2
+  version: 11.5.0-2
   arch:
     - any
   pkgname:
     - ansible
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 11.5.0-2
+    packages:
+      - ansible-11.5.0-2-any.pkg.tar.zst
   world:
     version: 11.4.0-2
     packages:

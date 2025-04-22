@@ -2,7 +2,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=ansible
-pkgver=11.4.0
+pkgver=11.5.0
 pkgrel=2
 pkgdesc='Official assortment of Ansible collections'
 arch=('any')
