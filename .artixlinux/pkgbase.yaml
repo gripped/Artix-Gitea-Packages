@@ -1,23 +1,24 @@
 ---
 pkgbase:
   name: libarchive
-  version: 3.7.9-2.1
+  version: 3.7.9-2
   arch:
     - x86_64
   pkgname:
     - libarchive
 actions:
-  addRepo: null
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 3.7.9-2
+    packages:
+      - libarchive-3.7.9-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
