@@ -23,7 +23,7 @@ makedepends=(
   yelp-tools
 )
 groups=(gnome-extra)
-source=("git+https://gitlab.gnome.org/GNOME/lightsoff.git#tag=${pkgver/[a-z]/.&}")
+source=("git+https://gitlab.gnome.org/GNOME/lightsoff.git#tag=${pkgver}")
 b2sums=('a9e03de805a546f3e8ec6b505dae0acd05fe7f60619f271594fa95eac577d17369a30b0428fb5aef301820f804c0772a60491aece9ef7b43000589a0acaad717')
 
 prepare() {
