@@ -2,7 +2,7 @@
 
 pkgname=nftables
 epoch=1
-pkgver=1.1.2
+pkgver=1.1.3
 pkgrel=1
 pkgdesc='Netfilter tables userspace tools'
 arch=('x86_64')
@@ -18,7 +18,7 @@ source=("https://netfilter.org/projects/nftables/files/nftables-$pkgver.tar.xz"{
         'nftables.conf'
         )
 install=nftables.install
-sha256sums=('822f1f7c4059e8420387c302bd603cc0eb8cbfe403fa2e3f78c8ddb7f0d53bbc'
+sha256sums=('9c8a64b59c90b0825e540a9b8fcb9d2d942c636f81ba50199f068fde44f34ed8'
             'SKIP'
             'f83d6f2f99f306866850c60ff0e343bbd9bc0c989d333ebe288563f7be4afe20')
 
