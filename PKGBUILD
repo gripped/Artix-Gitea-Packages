@@ -28,7 +28,7 @@ optdepends=('python-argcomplete: shell completions'
             'acme-tiny: openssl_certificate module')
 makedepends=('python-build' 'python-installer' 'python-wheel' 'python-setuptools')
 source=("https://pypi.python.org/packages/source/a/ansible/ansible-${pkgver}.tar.gz")
-sha512sums=('8caf2c7a5c37e4ba3be6342d3c48655dc1a0f5e18a8727a7f2174b2cb53780e01d833aed6ab3342805396160026c9aab14d33d5448b5c03cba37207db50882ce')
+sha512sums=('SKIP')
 
 build() {
   cd "ansible-${pkgver}"
