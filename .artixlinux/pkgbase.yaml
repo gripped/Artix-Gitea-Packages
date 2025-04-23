@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: liblangtag
-  version: 0.6.7-1
+  version: 0.6.7-2
   arch:
     - x86_64
   pkgname:
     - liblangtag
 actions:
-  addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.6.7-2
+    packages:
+      - liblangtag-0.6.7-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
