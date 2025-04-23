@@ -2,18 +2,18 @@
 team: lib32
 pkgbase:
   name: lib32-libarchive
-  version: 3.7.9-1
+  version: 3.7.9-2
   arch:
     - x86_64
   pkgname:
     - lib32-libarchive
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -35,8 +35,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: null
-    packages: []
+    version: 3.7.9-2
+    packages:
+      - lib32-libarchive-3.7.9-2-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
