@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - lib32-libxml2
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: lib32-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -37,9 +37,8 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
-    version: 2.14.2-1
-    packages:
-      - lib32-libxml2-2.14.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32:
     version: 2.13.7-1
     packages:
