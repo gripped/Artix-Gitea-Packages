@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: python-urwid
-  version: 2.6.15-2
+  version: 2.6.16-1
   arch:
-    - x86_64
+    - any
   pkgname:
     - python-urwid
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.6.16-1
+    packages:
+      - python-urwid-2.6.16-1-any.pkg.tar.zst
   world:
     version: 2.6.15-2
     packages:
