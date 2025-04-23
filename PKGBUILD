@@ -23,7 +23,7 @@ depends=(
   sh
 )
 makedepends=(
-  emacs
+  #emacs
 )
 optdepends=('git: for autopoint infrastructure updates')
 options=(!docs)
