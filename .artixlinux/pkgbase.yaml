@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: warpinator
-  version: 1.8.8-1
+  version: 1.8.8-2
   arch:
     - any
   pkgname:
     - warpinator
 actions:
-  addRepo: galaxy
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 1.8.8-2
+    packages:
+      - warpinator-1.8.8-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
