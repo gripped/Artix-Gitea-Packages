@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: iagno
-  version: 3.38.1+r57+gd147e1a-2
+  version: 3.38.1+r125+ge144444-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.38.1+r57+gd147e1a-2
+    version: 3.38.1+r125+ge144444-1
     packages:
-      - iagno-3.38.1+r57+gd147e1a-2-x86_64.pkg.tar.zst
+      - iagno-3.38.1+r125+ge144444-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
