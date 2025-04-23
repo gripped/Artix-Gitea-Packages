@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: devhelp
-  version: 43.0-2
+  version: 43.0-3
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 43.0-2
+    version: 43.0-3
     packages:
-      - devhelp-43.0-2-x86_64.pkg.tar.zst
-      - devhelp-docs-43.0-2-x86_64.pkg.tar.zst
+      - devhelp-43.0-3-x86_64.pkg.tar.zst
+      - devhelp-docs-43.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
