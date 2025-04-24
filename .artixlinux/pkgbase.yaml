@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ebook-tools
-  version: 0.2.2-8
+  version: 0.2.2-9
   arch:
     - x86_64
   pkgname:
     - ebook-tools
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.2.2-9
+    packages:
+      - ebook-tools-0.2.2-9-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

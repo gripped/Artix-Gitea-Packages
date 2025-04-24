@@ -4,7 +4,7 @@
 
 pkgname=ebook-tools
 pkgver=0.2.2
-pkgrel=8
+pkgrel=9
 pkgdesc='Tools for accessing and converting various ebook file formats'
 arch=(x86_64)
 url='https://sourceforge.net/projects/ebook-tools/'
@@ -27,7 +27,8 @@ prepare() {
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build
 }
 
