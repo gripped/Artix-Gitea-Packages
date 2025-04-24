@@ -9,7 +9,7 @@ pkgname=(
   lib32-gst-plugins-good
 )
 pkgver=1.26.0
-pkgrel=2
+pkgrel=5
 pkgdesc="Multimedia graph framework (32-bit)"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -205,6 +205,8 @@ package_lib32-gst-plugins-base-libs() {
     lib32-libdrm
     lib32-libglvnd
     lib32-libgudev
+    lib32-libjpeg-turbo
+    lib32-libpng
     lib32-libx11
     lib32-libxcb
     lib32-libxext
@@ -234,6 +236,7 @@ package_lib32-gst-plugins-base-libs() {
     usr/lib32/gstreamer-1.0/libgstdsd.so
     usr/lib32/gstreamer-1.0/libgstencoding.so
     usr/lib32/gstreamer-1.0/libgstgio.so
+    usr/lib32/gstreamer-1.0/libgstopengl.so
     usr/lib32/gstreamer-1.0/libgstoverlaycomposition.so
     usr/lib32/gstreamer-1.0/libgstpbtypes.so
     usr/lib32/gstreamer-1.0/libgstplayback.so
@@ -263,12 +266,9 @@ package_lib32-gst-plugins-base() {
     lib32-cdparanoia
     lib32-glib2
     lib32-glibc
-    lib32-libjpeg-turbo
     lib32-libogg
-    lib32-libpng
     lib32-libtheora
     lib32-libvorbis
-    lib32-libx11
     lib32-opus
     lib32-pango
   )
@@ -277,7 +277,6 @@ package_lib32-gst-plugins-base() {
     usr/lib32/gstreamer-1.0/libgstalsa.so
     usr/lib32/gstreamer-1.0/libgstcdparanoia.so
     usr/lib32/gstreamer-1.0/libgstogg.so
-    usr/lib32/gstreamer-1.0/libgstopengl.so
     usr/lib32/gstreamer-1.0/libgstopus.so
     usr/lib32/gstreamer-1.0/libgstpango.so
     usr/lib32/gstreamer-1.0/libgsttheora.so
