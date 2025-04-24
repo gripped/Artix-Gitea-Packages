@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libetonyek
-  version: 0.1.12-2
+  version: 0.1.12-3
   arch:
     - x86_64
   pkgname:
     - libetonyek
     - libetonyek-doc
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.12-3
+    packages:
+      - libetonyek-0.1.12-3-x86_64.pkg.tar.zst
+      - libetonyek-doc-0.1.12-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
