@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: libodfgen
-  version: 0.1.8-3
+  version: 0.1.8-4
   arch:
     - x86_64
   pkgname:
     - libodfgen
 actions:
-  addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.8-4
+    packages:
+      - libodfgen-0.1.8-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

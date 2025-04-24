@@ -1,10 +1,11 @@
-# Maintainer: AndyRTR <andyrtr@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Yue
 
 pkgname=libodfgen
 pkgver=0.1.8
-pkgrel=3
+pkgrel=4
 pkgdesc='Library for generating documents in Open Document Format'
 arch=('x86_64')
 url='https://sourceforge.net/p/libwpd/wiki/libodfgen/'
