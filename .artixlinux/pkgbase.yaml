@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: mariadb
-  version: 11.7.2-2
+  version: 11.7.2-3
   arch:
     - x86_64
   pkgname:
@@ -10,7 +10,7 @@ pkgbase:
     - mariadb
     - mytop
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,12 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 11.7.2-3
+    packages:
+      - mariadb-libs-11.7.2-3-x86_64.pkg.tar.zst
+      - mariadb-clients-11.7.2-3-x86_64.pkg.tar.zst
+      - mariadb-11.7.2-3-x86_64.pkg.tar.zst
+      - mytop-11.7.2-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

@@ -12,7 +12,7 @@ pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=11.7.2
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -61,6 +61,10 @@ prepare() {
   # MDEV-36229: Remove CAP_DAC_OVERRIDE CAP_AUDIT_WRITE from AmbientCapabilities
   git cherry-pick -n \
     '85ecb80fa3192035b3beff9578dc254a857175dc'
+
+  # MDEV-36427 - FTBFS with libxml2 2.14.0
+  git cherry-pick -n \
+    'b02ad4a6f8ea09c5cdf0a44a9ee57a60f2989f48'
 
   # Arch Linux specific patches:
   #  * enable PrivateTmp for a little bit more security
@@ -123,6 +127,9 @@ build() {
     -DWITH_SYSTEMD=no
     -DWITH_UNIT_TESTS=OFF
     -DWITH_ZLIB=system
+
+    # fix build with cmake 4.0
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   )
 
   # this uses malloc_usable_size, which is incompatible with fortification level 3
