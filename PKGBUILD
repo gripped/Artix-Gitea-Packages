@@ -4,16 +4,15 @@
 
 pkgname=gtksourceview4
 pkgver=4.8.4
-pkgrel=1
+pkgrel=2
 pkgdesc="A text widget adding syntax highlighting and more to GNOME"
 url="https://wiki.gnome.org/Projects/GtkSourceView"
 arch=(x86_64)
 license=(GPL)
 depends=(gtk3 libxml2)
-makedepends=(gobject-introspection vala gtk-doc glade yelp-tools git meson)
+makedepends=(glib2-devel gobject-introspection vala gtk-doc glade yelp-tools git meson)
 checkdepends=(xorg-server-xvfb)
 provides=(libgtksourceview-${pkgver%%.*}.so)
-options=(debug)
 _commit=7fd3adb3134bbec167167bb6400e018e4f781eb9  # tags/4.8.4^0
 source=("git+https://gitlab.gnome.org/GNOME/gtksourceview.git#commit=$_commit")
 sha256sums=('SKIP')
