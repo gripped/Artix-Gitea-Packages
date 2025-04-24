@@ -28,7 +28,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.26.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
