@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lazarus
-  version: 3.8-1
+  version: 3.8-2
   arch:
     - x86_64
   pkgname:
@@ -52,10 +52,10 @@ repos:
     version: null
     packages: []
   galaxy:
-    version: 3.8-1
+    version: 3.8-2
     packages:
-      - lazarus-3.8-1-x86_64.pkg.tar.zst
-      - lazarus-gtk3-3.8-1-x86_64.pkg.tar.zst
-      - lazarus-qt5-3.8-1-x86_64.pkg.tar.zst
-      - lazarus-qt6-3.8-1-x86_64.pkg.tar.zst
+      - lazarus-3.8-2-x86_64.pkg.tar.zst
+      - lazarus-gtk3-3.8-2-x86_64.pkg.tar.zst
+      - lazarus-qt5-3.8-2-x86_64.pkg.tar.zst
+      - lazarus-qt6-3.8-2-x86_64.pkg.tar.zst
 team: galaxy
