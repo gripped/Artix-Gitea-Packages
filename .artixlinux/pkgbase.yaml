@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: papers
-  version: 48.1-1
+  version: 48.2-1
   arch:
     - x86_64
   pkgname:
     - papers
     - papers-lib-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 48.2-1
+    packages:
+      - papers-48.2-1-x86_64.pkg.tar.zst
+      - papers-lib-docs-48.2-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
