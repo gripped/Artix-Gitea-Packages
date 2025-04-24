@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: virt-viewer
-  version: 11.0-3
+  version: 11.0-4
   arch:
     - x86_64
   pkgname:
     - virt-viewer
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 11.0-4
+    packages:
+      - virt-viewer-11.0-4-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
