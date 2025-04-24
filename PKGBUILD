@@ -5,7 +5,7 @@
 
 pkgname=openslide
 pkgver=4.0.0
-pkgrel=4
+pkgrel=5
 pkgdesc='C library for reading virtual slide images'
 arch=('x86_64')
 url='https://openslide.org'
