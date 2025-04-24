@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: hdf5
-  version: 1.14.6-3
+  version: 1.14.6-4
   arch:
     - x86_64
   pkgname:
     - hdf5
     - hdf5-openmpi
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,8 +29,10 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.14.6-4
+    packages:
+      - hdf5-1.14.6-4-x86_64.pkg.tar.zst
+      - hdf5-openmpi-1.14.6-4-x86_64.pkg.tar.zst
   world:
     version: 1.14.6-3
     packages:
