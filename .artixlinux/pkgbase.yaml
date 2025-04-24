@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: brasero
-  version: 3.12.3+r41+g98342080-1
+  version: 3.12.3+r41+g98342080-2
   arch:
     - x86_64
   pkgname:
     - brasero
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.12.3+r41+g98342080-2
+    packages:
+      - brasero-3.12.3+r41+g98342080-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
