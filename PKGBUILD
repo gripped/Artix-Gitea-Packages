@@ -2,7 +2,7 @@
 
 pkgname=libgnt
 pkgver=2.14.4
-pkgrel=2
+pkgrel=2.1
 pkgdesc="GLib Ncurses Toolkit"
 arch=('x86_64')
 url="https://keep.imfreedom.org/libgnt/libgnt"
