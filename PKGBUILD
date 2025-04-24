@@ -4,7 +4,7 @@
 
 pkgname=gnome-maps
 pkgver=48.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Find places around the world"
 url="https://apps.gnome.org/Maps"
 arch=(x86_64)
