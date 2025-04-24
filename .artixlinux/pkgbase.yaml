@@ -1,16 +1,16 @@
 ---
 pkgbase:
   name: nlohmann-json
-  version: 3.12.0-1
+  version: 3.12.0-2
   arch:
     - any
   pkgname:
     - nlohmann-json
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.12.0-2
+    packages:
+      - nlohmann-json-3.12.0-2-any.pkg.tar.zst
   world:
     version: 3.12.0-1
     packages:
