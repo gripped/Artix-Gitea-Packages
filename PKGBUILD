@@ -24,7 +24,7 @@ makedepends=(cmake
              ninja
              python)
 options=(!lto) # https://github.com/llvm/llvm-project/issues/57740
-source=(llvm-julia::llvm-project-j::git+https://github.com/JuliaLang/llvm-project#tag=julia-$_pkgver)
+source=(llvm-julia::git+https://github.com/JuliaLang/llvm-project#tag=julia-$_pkgver)
 sha256sums=('6591971f0e4bcff0255d99676c55f9495f3c22c078ea982d10c5211bb53b41f5')
 
 # Utilizing LLVM_DISTRIBUTION_COMPONENTS to avoid
