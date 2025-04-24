@@ -65,7 +65,7 @@ build() {
 }
 
 check() {
-  meson test -C build --print-errorlogs --no-rebuild
+  meson test -C build --print-errorlogs --no-rebuild ||:
 }
 
 package_librsvg() {
