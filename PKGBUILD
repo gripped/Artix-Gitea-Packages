@@ -1,28 +1,27 @@
-# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=libgdata
 pkgver=0.18.1
-pkgrel=3
+pkgrel=4
 pkgdesc="GLib-based library for accessing online service APIs using the GData protocol"
 url="https://wiki.gnome.org/Projects/libgdata"
 arch=(x86_64)
 license=(GPL)
 depends=(
   gcr
-  json-glib
   libgoa
   libsoup
 )
 makedepends=(
   git
+  glib2-devel
   gobject-introspection
   gtk-doc
   meson
   vala
 )
 _commit=eb7db048e5445ad567817dced344c47a20c6ea6b  # tags/0.18.1^0
-options=(debug)
 source=("git+https://gitlab.gnome.org/GNOME/libgdata.git#commit=$_commit")
 b2sums=('SKIP')
 
@@ -45,7 +44,7 @@ build() {
   )
 
   artix-meson libgdata build "${meson_options[@]}"
-  ninja -C build
+  meson compile -C build
 }
 
 check() {
