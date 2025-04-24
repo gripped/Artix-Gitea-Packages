@@ -2,7 +2,7 @@
 
 pkgname=phodav
 pkgver=3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='WebDav server implementation using libsoup (RFC 4918)'
 arch=(x86_64)
 url='https://wiki.gnome.org/phodav'
@@ -23,7 +23,7 @@ makedepends=(
 )
 backup=(etc/conf.d/spice-webdavd)
 source=("git+https://gitlab.gnome.org/GNOME/phodav.git?signed#tag=v$pkgver")
-b2sums=(b27ed0f583980460cd51321d38a48f5c755c67a75fe06e4e9f7b7e6b8a68a31edc89ea1197a101dff8088e30dc1c04217035b2c835911dc93dcc8ed871de9411)
+b2sums=('b27ed0f583980460cd51321d38a48f5c755c67a75fe06e4e9f7b7e6b8a68a31edc89ea1197a101dff8088e30dc1c04217035b2c835911dc93dcc8ed871de9411')
 validpgpkeys=(87A9BD933F87C606D276F62DDAE8E10975969CE5) # Marc-André Lureau
 
 prepare() {
