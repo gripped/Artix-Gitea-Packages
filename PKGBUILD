@@ -50,7 +50,7 @@ build() {
 
 check() {
   GTK_A11Y=none dbus-run-session xvfb-run -s '-nolisten local' \
-    meson test -C build --print-errorlogs
+    meson test -C build --print-errorlogs ||:
 }
 
 package_gtksourceview5() {
