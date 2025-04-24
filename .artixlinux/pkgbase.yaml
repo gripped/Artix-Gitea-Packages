@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libcmis
-  version: 0.6.2-4
+  version: 0.6.2-4.1
   arch:
     - x86_64
   pkgname:
@@ -43,9 +43,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: 0.6.2-4
+    version: 0.6.2-4.1
     packages:
-      - libcmis-0.6.2-4-x86_64.pkg.tar.zst
+      - libcmis-0.6.2-4.1-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []
