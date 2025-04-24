@@ -2,7 +2,7 @@
 
 pkgname=gettext
 pkgver=0.24
-pkgrel=2
+pkgrel=3
 pkgdesc="GNU internationalization library"
 url="https://www.gnu.org/software/gettext/"
 arch=(x86_64)
@@ -23,7 +23,7 @@ depends=(
   sh
 )
 makedepends=(
-  #emacs
+  emacs
 )
 optdepends=('git: for autopoint infrastructure updates')
 options=(!docs)
