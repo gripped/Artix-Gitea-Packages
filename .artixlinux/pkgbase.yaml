@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libguestfs
-  version: 1.54.1-4
+  version: 1.54.1-5
   arch:
     - x86_64
   pkgname:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 1.54.1-4
+    version: 1.54.1-5
     packages:
-      - libguestfs-1.54.1-4-x86_64.pkg.tar.zst
+      - libguestfs-1.54.1-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: 1.54.1-3
     packages:
