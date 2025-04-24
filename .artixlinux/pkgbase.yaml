@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: openbox
-  version: 3.6.1-2
+  version: 3.6.1-11
   arch:
     - x86_64
   pkgname:
     - openbox
 actions:
-  addRepo: galaxy-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,8 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: null
-    packages: []
+    version: 3.6.1-11
+    packages:
+      - openbox-3.6.1-11-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
