@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: gupnp
-  version: 1:1.6.8-1
+  version: 1:1.6.8-2
   arch:
     - x86_64
   pkgname:
     - gupnp
     - gupnp-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:1.6.8-2
+    packages:
+      - gupnp-1:1.6.8-2-x86_64.pkg.tar.zst
+      - gupnp-docs-1:1.6.8-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
