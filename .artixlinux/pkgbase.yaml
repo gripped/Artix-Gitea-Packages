@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: libgsf
-  version: 1.14.53-1
+  version: 1.14.53-2
   arch:
     - x86_64
   pkgname:
     - libgsf
     - libgsf-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.14.53-2
+    packages:
+      - libgsf-1.14.53-2-x86_64.pkg.tar.zst
+      - libgsf-docs-1.14.53-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
