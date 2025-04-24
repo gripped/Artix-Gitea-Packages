@@ -2,13 +2,13 @@
 team: galaxy
 pkgbase:
   name: labwc
-  version: 0.8.3-1
+  version: 0.8.3-2
   arch:
     - x86_64
   pkgname:
     - labwc
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -44,8 +44,9 @@ repos:
     version: null
     packages: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.8.3-2
+    packages:
+      - labwc-0.8.3-2-x86_64.pkg.tar.zst
   galaxy-gremlins:
     version: null
     packages: []

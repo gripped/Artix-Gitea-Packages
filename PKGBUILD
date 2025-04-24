@@ -2,7 +2,7 @@
 
 pkgname=labwc
 pkgver=0.8.3
-pkgrel=1
+pkgrel=2
 pkgdesc='wlroots-based window-stacking compositor for wayland'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
