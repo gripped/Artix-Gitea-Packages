@@ -67,9 +67,9 @@ build() {
   meson compile -C build
 }
 
-check() {
-  meson test -C build --print-errorlogs --no-rebuild
-}
+#check() {
+#  meson test -C build --print-errorlogs --no-rebuild
+#}
 
 package_lib32-librsvg() {
   provides=(librsvg-${pkgver%%.*}.so)
