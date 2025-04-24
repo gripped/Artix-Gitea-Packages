@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: wayland
-  version: 1.23.1-1
+  version: 1.23.1-2
   arch:
     - x86_64
   pkgname:
     - wayland
     - wayland-docs
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.23.1-2
+    packages:
+      - wayland-1.23.1-2-x86_64.pkg.tar.zst
+      - wayland-docs-1.23.1-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
