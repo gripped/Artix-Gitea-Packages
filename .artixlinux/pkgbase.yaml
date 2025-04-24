@@ -2,13 +2,13 @@
 team: world
 pkgbase:
   name: gnome-notes
-  version: 40.1-8
+  version: 40.1-9
   arch:
     - x86_64
   pkgname:
     - gnome-notes
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 40.1-9
+    packages:
+      - gnome-notes-40.1-9-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
