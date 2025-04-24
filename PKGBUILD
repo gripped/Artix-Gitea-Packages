@@ -9,7 +9,7 @@ pkgname=(
   lib32-libxkbcommon-x11
 )
 pkgver=1.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Keymap handling library for toolkits and window systems (32-bit)'
 url='https://xkbcommon.org/'
 arch=(x86_64)
@@ -34,6 +34,7 @@ b2sums=('0e524d4f47f32b5df5fe94ad8ac573084f2ffe2f5836190ac5ec88774e0d7fb0e978d69
 
 prepare() {
   cd libxkbcommon
+  git cherry-pick -n d7e112febb7ab756563da6eced0a650396be5945 # support libxml2 2.14
 }
 
 build() {
