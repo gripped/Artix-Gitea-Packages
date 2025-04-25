@@ -3,7 +3,7 @@
 
 pkgname=snapper
 pkgver=0.12.2
-pkgrel=3
+pkgrel=1
 pkgdesc="A tool for managing BTRFS and LVM snapshots. It can create, diff and restore snapshots and provides timelined auto-snapping."
 arch=('x86_64')
 url="http://snapper.io"
@@ -17,7 +17,7 @@ source=("https://github.com/openSUSE/snapper/archive/v$pkgver/$pkgname-$pkgver.t
   "cron-rename.patch"
   "drift-file-path.patch"
   "usr-paths.patch")
-sha256sums=('eec9de03c8c224ac06e0b2970fde4c37cf89f848b4b49c904e8ee00bb7c3aff3'
+sha256sums=('0b902c9e6e4917ae035b60d20166b176e417718b9a853534fff057b14a2cbff8'
             '527fc127eb0569eea9dcb888833e0b1f54302bfcb3a88f0101ae32837771bc61'
             'a78fea96638cd686cb727316b68d0c44e6e3154e72947025774fc0e58c7dce35'
             '093c7993e466a0cf9c0794a971825f5f1b40047512857bc124ed0d63dbb306d6'
