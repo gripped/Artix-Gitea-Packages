@@ -3,11 +3,11 @@
 
 pkgname=snapper
 pkgver=0.12.2
-pkgrel=2
-pkgdesc="A tool for managing BTRFS and LVM snapshots. It can create, diff and restore snapshots and provides timelined auto-snapping."
+pkgrel=3
+pkgdesc="A tool for managing BTRFS and LVM snapshots"
 arch=('x86_64')
 url="http://snapper.io"
-license=('GPL2')
+license=('GPL-2.0-only')
 depends=('btrfs-progs' 'libxml2' 'dbus' 'boost-libs' 'acl' 'json-c')
 makedepends=('boost' 'lvm2' 'libxslt' 'docbook-xsl' 'pam' 'git')
 optdepends=('pam: pam_snapper')
