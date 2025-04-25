@@ -4,7 +4,7 @@
 
 pkgname=xournalpp
 pkgver=1.2.6
-pkgrel=1
+pkgrel=2
 pkgdesc='Handwriting notetaking software with PDF annotation support'
 url='https://github.com/xournalpp/xournalpp'
 license=('GPL-2.0-or-later')
