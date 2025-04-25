@@ -6,7 +6,7 @@
 
 pkgname=mitmproxy
 pkgver=11.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc='SSL-capable man-in-the-middle HTTP proxy'
 arch=('any')
 url='https://mitmproxy.org'
@@ -36,6 +36,7 @@ depends=(
   'python-ruamel-yaml'
   'python-sortedcontainers'
   'python-tornado'
+  'python-typing_extensions'
   'python-urwid'
   'python-wsproto'
   'python-zstandard'
@@ -66,8 +67,8 @@ build() {
 
 check() {
   local pytest_opts=(
-    --override-ini="addopts="
-  	--deselect test/mitmproxy/addons/test_dns_resolver.py
+  	--override-ini="addopts="
+  		--deselect test/mitmproxy/addons/test_dns_resolver.py
   )
   local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
