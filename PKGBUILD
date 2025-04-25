@@ -6,31 +6,38 @@
 # Contributor: nofxx <x@<nick>.com>
 
 pkgname=valkey
-pkgver=8.1.0
-pkgrel=3
+pkgver=8.1.1
+pkgrel=1
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
 url='https://valkey.io/'
-license=('BSD')
+license=(
+  BSD-2-Clause
+  BSD-3-Clause
+)
 depends=(
-  'grep'
-  'shadow'
+  glibc
+  jemalloc
+  openssl
  
 )
 # pkg-config fails to detect libraries if is not installed
 makedepends=(
  
-  'openssl'
+)
+checkdepends=(
+  procps-ng
+  tcl
 )
 conflicts=(
-  'redis'
+  redis
 )
 provides=(
-  'redis'
+  redis
 )
 backup=(
-  'etc/valkey/valkey.conf'
-  'etc/valkey/sentinel.conf'
+  etc/valkey/valkey.conf
+  etc/valkey/sentinel.conf
 )
 install=valkey.install
 source=(
@@ -41,7 +48,7 @@ source=(
   valkey-5.0-use-system-jemalloc.patch
   remove-deprecated-use-of-je_calloc.patch
 )
-sha512sums=('54559ad697992611245aa92e33f976a609c44d7e3f97f4773a09a53cb55226367ac5a47a68c49f1d824b0327850f66ce3ff32e5fe42321c896ed3e33c5bcfe70'
+sha512sums=('1f84b24839856c8d6cdbe1bca5f571fc41cda2b08f495ee80e9a0a03a8ba737f0effeedcb0508195f8d30570443cbccd3c0cf8f4d93980e57f9f8ac656379327'
             'd47185f700293304b5c23caf59999fecda2d1485a28a5eeff3a2922906f0184794d3eeeeeaac2ca415b865d7c4b5d74f88e694d34eeb6d1ee3a6bedbcd6edfdd'
             '11cf6d6999329af7a9fa4bcbbcf22242b461cec0c16ad949cc6b0383703f19417092782569bf6224f94167a560de0b4ba53ec0d8522683736a14f01bc5986b28'
             '032b19af22dd96c7898aa3dcae76d63fd8566c1d35ccb069e22fd0b76612d3285cd318f26ad5994b4f761f44a23c091d5322dec975b9a5a8cc65455399576045'
@@ -49,11 +56,17 @@ sha512sums=('54559ad697992611245aa92e33f976a609c44d7e3f97f4773a09a53cb55226367ac
             'c656904ade64b2498766a420dab8e72795bb96bf23cb04e408e011197c755648a3c155e699821347f4ca9e207031493df50b4474c41534e50ec4fb0d4817c45c')
 
 prepare() {
+  # extract licenses
+  sed -n '7,16p' $pkgname-$pkgver/COPYING > BSD-3-Clause.txt
+  sed -n '22,31p' $pkgname-$pkgver/COPYING > BSD-2-Clause.txt
+
   cd $pkgname-$pkgver
+  # disable defrag test since defrag is currently disabled as long as the bundled jmalloc is not used
+  sed -i '/defragtest.so/d' tests/modules/Makefile
+  rm tests/unit/memefficiency.tcl
+
   patch -Np1 < ../valkey.conf-sane-defaults.patch
-# Until this is fixed, use bundled jemalloc:
-# https://github.com/valkey-io/valkey/issues/1882
-#  patch -Np1 < ../valkey-5.0-use-system-jemalloc.patch
+  patch -Np1 < ../valkey-5.0-use-system-jemalloc.patch
   patch -Np1 < ../remove-deprecated-use-of-je_calloc.patch
 }
 
@@ -62,11 +75,15 @@ build() {
        -C $pkgname-$pkgver
 }
 
+check() {
+  make test -C $pkgname-$pkgver
+}
+
 package() {
   cd $pkgname-$pkgver
   make PREFIX="$pkgdir"/usr install
 
-  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/valkey/LICENSE
+  install -vDm 644 ../BSD-{2,3}-Clause.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
   install -Dm644 -t "$pkgdir"/etc/valkey valkey.conf sentinel.conf
   install -Dm644 "$srcdir"/valkey.sysusers "$pkgdir"/usr/lib/sysusers.d/valkey.conf
   install -Dm644 "$srcdir"/valkey.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/valkey.conf
