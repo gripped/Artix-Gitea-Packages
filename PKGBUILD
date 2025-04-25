@@ -12,7 +12,7 @@ pkgbase=udev
 pkgname=('udev' 'libudev' 'esysusers' 'etmpfiles')
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -55,6 +55,8 @@ sha512sums=('41b3a09f710a7801cec2d89a245c7ac06977aa91e133b72464179ab74c682f0a103
             'c2d1b85f3cd5948333edca36b590dad19d5045424f0145b64fe9abdf6fe7e2c3a0fca6c1901e9bfaa26b4e6fc98ff0ec8d9c825845f778fe77d681075cc47eb2')
 
 _backports=(
+  # fast-forward to current v257-stable
+  "v${pkgver}..1fb1f637baa979fd58fef67ea72b3e7255a99e21"
 )
 
 _reverts=(
