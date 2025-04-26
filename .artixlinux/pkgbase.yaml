@@ -7,25 +7,24 @@ pkgbase:
   pkgname:
     - s-nail
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
   system-gremlins:
+    version: null
+    packages: []
+  system:
     version: 14.9.25-1
     packages:
       - s-nail-14.9.25-1-x86_64.pkg.tar.zst
-  system:
-    version: 14.9.24-2
-    packages:
-      - s-nail-14.9.24-2-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
