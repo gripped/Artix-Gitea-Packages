@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libxml2
-  version: 2.14.2-1
+  version: 2.14.2-2
   arch:
     - x86_64
   pkgname:
@@ -34,9 +34,9 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: 2.14.2-1
+    version: 2.14.2-2
     packages:
-      - lib32-libxml2-2.14.2-1-x86_64.pkg.tar.zst
+      - lib32-libxml2-2.14.2-2-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
