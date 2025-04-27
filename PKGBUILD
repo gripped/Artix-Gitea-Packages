@@ -1,12 +1,13 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
 # Contributor: Moritz Lipp <mlq@pwmt.org>
 # Contributor: fordprefect <fordprefect@dukun.de>
 # Contributor: Thor77 <thor77@thor77.org>
 
 pkgname=radicale
 _name=Radicale
-pkgver=3.5.1
-pkgrel=1
+pkgver=3.5.2
+pkgrel=2
 pkgdesc="Simple calendar (CalDAV) and contact (CardDAV) server"
 arch=(any)
 url="https://radicale.org/"
@@ -15,7 +16,6 @@ license=(GPL-3.0-or-later)
 depends=(
   python
   python-bcrypt
-  python-dateutil
   python-defusedxml
   python-passlib
   python-pika
@@ -31,6 +31,11 @@ checkdepends=(
   python-pytest
   python-waitress
 )
+optdepends=(
+  'python-ldap3: for LDAP authentication'
+  'python-pam: for PAM authentication'
+  'python-requests: for OAuth2 authentication'
+)
 backup=(
   'etc/radicale/config'
   'etc/radicale/rights'
@@ -42,10 +47,10 @@ source=(
   $pkgname-sysusers.conf
   $pkgname-tmpfiles.conf
 )
-sha512sums=('937368e6c68be560760fb1551c8d62029e9b5294d3def86493fc59eebce4ec5eacdf48b64ebb4e480ef6d4d7d903d723d6b8aa2603e6daaa8dfd4a20caf009b5'
+sha512sums=('ebc3ab972107340d1bd2e5526f51bc87ce746a248278652a9b814e321d5c66fdacfd873ea3b7075c16a194c785f5eed64e2424496b5c0b47a7c53e91e61ed23a'
             '602b29275f9b15f7d57a4f965bba3327dfa0e4d1d961f6969ba99bb4dbc212ea04afa2878109210a8ff0e70f958abb233c59389ce4f9781bd21ca823026b1f04'
             '9d0dd88e4a34e9f97abda1785698e4b2a5e8202063deeb91b84e13c05e00b07e45b8d4d9eca09b9241b1138bbbfdc999dba0135c18f5bc0c08d65b0cd83b367b')
-b2sums=('d7f525003ebecd889b8f5bd4c31069aa285c14e535c6cda19655f64a7fa821ba9166a398dae4649d6802127d99ad783d5a0c421a96019a830b040ad3435e0bf4'
+b2sums=('05c8d4875de9d16930ad92eba5f53f0e8eda65d82e87723cb4db074bb9a98d46cd64f4265c5fd5d312fea87dec0a675d5672a23755f02a8f59c18ba93569272f'
         '399e6ffbe1fe2d4ab36439efda22e44fda08d059ff82bdf30c3db55adcddc5c96aedf2ac94f9d1dea1d1cb9fe6cc9e2e7fcb49e2f0006b844dd2906d49d6df65'
         '41916d62f5e3f1060bd21db0722abe837754a4cb915af218c904dafac4b06794f8fde2e34486fb7392777b4738502f3df4c1390b835050045337585b064e23bb')
 
