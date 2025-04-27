@@ -4,7 +4,7 @@
 
 pkgname=atril
 pkgver=1.28.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A document viewer for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
