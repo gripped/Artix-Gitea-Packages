@@ -6,7 +6,7 @@
 pkgname=thermald
 _pkgname=thermal_daemon
 pkgver=2.5.9
-pkgrel=1
+pkgrel=2
 pkgdesc='The Linux Thermal Daemon program from 01.org'
 arch=('x86_64')
 url='https://01.org/linux-thermal-daemon'
