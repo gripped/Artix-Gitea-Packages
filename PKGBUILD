@@ -10,7 +10,7 @@ pkgname=(
   libxml2-docs
 )
 pkgver=2.14.2
-pkgrel=1
+pkgrel=2
 pkgdesc="XML C parser and toolkit"
 url="https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home"
 arch=(x86_64)
@@ -37,6 +37,12 @@ b2sums=('711b2e11d09bba7d0c17237bdbf951208469ae910c47e8875ef17b03196d8e96595e831
 
 prepare() {
   cd libxml2
+
+  # Unbreak xmlstarlet tests
+  git cherry-pick -n f34529641978c47ebd778d0e744acd12b3d9a906
+
+  # Unbreak PostgreSQL tests
+  git cherry-pick -n ae299377feff868272693ec4322b9dbfef2f571b
 
   # Use xmlconf from conformance test suite
   ln -s ../xmlconf
