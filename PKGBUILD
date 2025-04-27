@@ -6,34 +6,44 @@
 
 pkgbase=parallel
 pkgname=('parallel' 'parallel-docs')
-pkgver=20250222
+pkgver=20250422
 pkgrel=1
 pkgdesc='A shell tool for executing jobs in parallel'
 arch=('any')
 url='https://www.gnu.org/software/parallel/'
 license=('GPL-3.0-only')
+makedepends=(
+  'git'
+  'perl'
+  'libreoffice-fresh'
+  'graphviz'
+  'jdk-openjdk'
+  'perl-pod2pdf'
+  'perl-pod-pom-view-restructured'
+  # pod2texi provided by texinfo in base-devel
+)
 source=(
-  "https://ftp.gnu.org/gnu/$pkgbase/$pkgbase-$pkgver.tar.bz2"{,.sig}
+  "git+https://git.savannah.gnu.org/git/parallel.git?signed#tag=${pkgver}"
   '0001-Remove-citation-things.patch'
 )
-sha512sums=('65b4928a592e95adc57b88ba16e50befb9ecd3f9a3bfb1eb54e1ce784c6b0e1427b8401db99c0816e1cc3333da998c40942c4ca5153ae0bd992d3e606fee7374'
-            'SKIP'
-            'b89eec0f705a488d330a7bef4dba5f016830f111acd6d0805977cbf7fb273edd57e3990a9535770d5e8950efe29ec7dc8181252774b65a9e2fc12a5da46156f1')
-b2sums=('94c6b6bcfd3e6c1a4b823f6f0c1de451d8d7254c3e274d8a83675bfc21ab36789013363906d35c769fc111ce31fe2e77d0fd706c0ff72e9ad72a47e183ed4a75'
-        'SKIP'
-        'd4d8707ca2e9d1712d39f86f52c2c0b800b2559e6c72174aed1d062f2600dc9dd395789ee71d8796430f06033c82263f549be9f5a954a8e3ca1aa8562b5836a4')
+sha512sums=('d6e693f45df24c3fc758a20adbd70de8960e39b76698be033f771b956d7c1183c04b0e0f971208c64e8ebc9d0528baf208663d90a60b51b6ceb104ad97c9525b'
+            'e6cad1946433fb0a8858e5b43f23370ff627fce12b1a1d7d0a66113ee362ca0d69f484be607392cfe7491d71cd8d5113c50caf1d4158370a751c17db1ad7f0bb')
+b2sums=('88ff073b3cdaf2e27ab5564d6f7c4729b69507a3ccf81a9b614c4e231b182f613771fe12d41ebecbb3023da1c245a48ff93226db8991470bedeaeb251486c258'
+        '1ea9405c5e35d47572993fe50316bb558008c7dac97c65b6b6e9b2e5d299d21ca090cd5e497c5f3001a515dbbfcdbde16867927ac15397cfc9c25565b690d411')
 validpgpkeys=('CDA01A4208C4F74506107E7BD1AB451688888888')
 
 prepare() {
-  cd "$pkgbase-$pkgver"
+  cd "$pkgbase"
 
   # remove citation warnings
   # https://en.opensuse.org/openSUSE:Packaging_guidelines#Donation_requests
   patch -p1 -i "$srcdir/0001-Remove-citation-things.patch"
+
+  autoreconf -fiv
 }
 
 build() {
-  cd "$pkgbase-$pkgver"
+  cd "$pkgbase"
 
   ./configure --prefix=/usr
 
@@ -44,7 +54,7 @@ package_parallel() {
   depends=('perl' 'procps')
   optdepends=('parallel-docs: documentation')
 
-  cd "$pkgbase-$pkgver"
+  cd "$pkgbase"
 
   make DESTDIR="$pkgdir" install
 
@@ -55,7 +65,7 @@ package_parallel() {
 package_parallel-docs() {
   pkgdesc+=' (documentation)'
 
-  cd "$pkgbase-$pkgver"
+  cd "$pkgbase"
 
   install -vd "$pkgdir/usr/share/doc"
   mv -v docs/* "$pkgdir/usr/share/doc"
