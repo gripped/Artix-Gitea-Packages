@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-chef-utils
-  version: 19.0.88-3
+  version: 19.1.17-1
   arch:
     - any
   pkgname:
     - ruby-chef-utils
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 19.0.88-3
+    version: 19.1.17-1
     packages:
-      - ruby-chef-utils-19.0.88-3-any.pkg.tar.zst
+      - ruby-chef-utils-19.1.17-1-any.pkg.tar.zst
   world:
     version: 19.0.88-1
     packages:
