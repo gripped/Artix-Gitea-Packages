@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: python-awscrt
-  version: 0.23.8-1
+  version: 0.26.1-1
   arch:
     - x86_64
   pkgname:
     - python-awscrt
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.26.1-1
+    packages:
+      - python-awscrt-0.26.1-1-x86_64.pkg.tar.zst
   world:
     version: 0.23.8-1
     packages:
