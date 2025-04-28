@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libxkbcommon
-  version: 1.8.1-2
+  version: 1.9.0-1
   arch:
     - x86_64
   pkgname:
@@ -35,10 +35,10 @@ repos:
     version: null
     packages: []
   lib32-goblins:
-    version: 1.8.1-2
+    version: 1.9.0-1
     packages:
-      - lib32-libxkbcommon-1.8.1-2-x86_64.pkg.tar.zst
-      - lib32-libxkbcommon-x11-1.8.1-2-x86_64.pkg.tar.zst
+      - lib32-libxkbcommon-1.9.0-1-x86_64.pkg.tar.zst
+      - lib32-libxkbcommon-x11-1.9.0-1-x86_64.pkg.tar.zst
   lib32-gremlins:
     version: null
     packages: []
