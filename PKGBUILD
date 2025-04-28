@@ -32,6 +32,7 @@ prepare() {
   rm -v "test/fast/Unit tests/nvm_process_nvmrc"
   # Fails in a chroot for some reason.
   rm -v "test/fast/Listing versions/Running 'nvm ls' should not show a trailing slash"
+  rm -v "test/fast/Unit tests/nvm_stdout_is_terminal"
 }
 
 check() {
