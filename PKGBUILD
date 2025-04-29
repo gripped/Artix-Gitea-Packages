@@ -16,7 +16,7 @@ sha256sums=('43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080')
 
 build() {
   cd $pkgname-$pkgver
-  ./configure --prefix=/usr
+  ./configure --prefix=/usr --enable-freexl=no
   make
 }
 
