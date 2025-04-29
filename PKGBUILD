@@ -4,7 +4,7 @@
 
 pkgname=kdoctools
 pkgver=6.13.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Documentation generation from docbook'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
