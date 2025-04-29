@@ -9,12 +9,12 @@ pkgbase:
     - papers
     - papers-lib-docs
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,18 +27,16 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 48.2-1
-    packages:
-      - papers-48.2-1-x86_64.pkg.tar.zst
-      - papers-lib-docs-48.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   world-gremlins:
     version: null
     packages: []
   world:
-    version: 48.1-1
+    version: 48.2-1
     packages:
-      - papers-48.1-1-x86_64.pkg.tar.zst
-      - papers-lib-docs-48.1-1-x86_64.pkg.tar.zst
+      - papers-48.2-1-x86_64.pkg.tar.zst
+      - papers-lib-docs-48.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
