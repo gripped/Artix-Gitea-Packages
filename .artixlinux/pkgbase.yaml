@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: clazy
-  version: 1.13-2
+  version: 1.14-1
   arch:
     - x86_64
   pkgname:
     - clazy
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.13-2
+    version: 1.14-1
     packages:
-      - clazy-1.13-2-x86_64.pkg.tar.zst
+      - clazy-1.14-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
