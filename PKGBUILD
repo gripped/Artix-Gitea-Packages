@@ -3,7 +3,7 @@
 
 pkgname=stoken
 pkgver=0.92
-pkgrel=4.1
+pkgrel=5
 pkgdesc='RSA SecurID-compatible software token for Linux/UNIX systems'
 url='https://github.com/cernekee/stoken'
 arch=('x86_64')
@@ -12,8 +12,10 @@ depends=('nettle' 'libxml2')
 makedepends=('gtk3')
 optdepends=('gtk3: required for stoken-gui')
 provides=('libstoken.so')
-source=(https://downloads.sourceforge.net/stoken/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('aa2b481b058e4caf068f7e747a2dcf5772bcbf278a4f89bc9efcbf82bcc9ef5a')
+source=(https://downloads.sourceforge.net/stoken/${pkgname}-${pkgver}.tar.gz{,.asc})
+sha256sums=('aa2b481b058e4caf068f7e747a2dcf5772bcbf278a4f89bc9efcbf82bcc9ef5a'
+            'SKIP')
+validpgpkeys=('45DFF2D5205FE8CD74C2EE6C63B81599BC0B0D65')
 
 prepare() {
   cd ${pkgname}-${pkgver}
