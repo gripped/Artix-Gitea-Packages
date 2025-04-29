@@ -3,7 +3,7 @@
 _pkgbasename=libxext
 pkgname=lib32-$_pkgbasename
 pkgver=1.3.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc="X11 miscellaneous extensions library (32-bit)"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
@@ -33,5 +33,5 @@ package() {
   rm -rf "${pkgdir}"/usr/{include,share}
 
   mkdir -p "$pkgdir/usr/share/licenses"
-  ln -s $_pkgbasename "$pkgdir/usr/share/licenses/$pkgname" 
+  ln -s $_pkgbasename "$pkgdir/usr/share/licenses/$pkgname"
 }
