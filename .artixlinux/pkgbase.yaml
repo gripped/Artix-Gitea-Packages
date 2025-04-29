@@ -9,23 +9,23 @@ pkgbase:
     - lib32-glibc
     - glibc-locales
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 2.41+r48+g5cb575ca9a3d-1
     packages:
       - glibc-2.41+r48+g5cb575ca9a3d-1-x86_64.pkg.tar.zst
       - lib32-glibc-2.41+r48+g5cb575ca9a3d-1-x86_64.pkg.tar.zst
       - glibc-locales-2.41+r48+g5cb575ca9a3d-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 2.41+r47+g046b33800c3e-1
     packages:
