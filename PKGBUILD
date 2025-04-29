@@ -7,7 +7,7 @@ _extra=1.3
 _alpm=2.2
 
 pkgname=openrc
-pkgver=0.62
+pkgver=0.62.2
 pkgrel=1
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
@@ -67,10 +67,9 @@ source=(
     "openrc-artix-meson.patch"
     "git+${_url}/openrc-extra.git#tag=${_extra}"
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
-    "openrc-agetty-meson-init-d-fix.patch::https://github.com/OpenRC/openrc/commit/dcf1099d89de0ff0e4488f29b563607f3e4f244f.patch"
     "openrc-agetty-meson-conf-d.patch::https://github.com/OpenRC/openrc/pull/850/commits/e3961a81809ed8d0e594402b012ee685e4ad970f.patch"
 )
-sha256sums=('8545a06e81b710a0ef2fd7e59dadb6f8fde645cabceff5bcc865d9c790d8fa87'
+sha256sums=('510dab44b0a6dcc80dda3372b3de7d2031657ddbb1195bc9630743636e59244f'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
@@ -78,7 +77,6 @@ sha256sums=('8545a06e81b710a0ef2fd7e59dadb6f8fde645cabceff5bcc865d9c790d8fa87'
             '0cb9b79b2e044c3641b20ec701a396dd5575bb5b1c48586ab57de9c2b7d24308'
             'e83f678c3e3d03067d0e5602bad82382cf74c8dc4fd7a1c18f3a3ceb3a21f0be'
             'f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25'
-            '16947c1461007cf20ac02ea0b62de6171318595bc3d617179bdf4253f4095604'
             '0a2aead8c5257cca191e8a3a57c080d4deb4ba5fae89df4709843584eef53534')
 
 prepare() {
