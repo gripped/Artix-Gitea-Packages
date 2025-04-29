@@ -11,7 +11,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.4.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -157,6 +157,9 @@ prepare() {
   cd ${pkgname^^}-${pkgver}
   _fast_float_version=$(pacman -Q fast_float | sed -e 's/.* //; s/-.*//g')
   sed -i "s|3.9.0|${_fast_float_version}|" ThirdParty/fast_float/CMakeLists.txt
+# Use cmake's FindHDF5
+  rm CMake/patches/99/FindHDF5.cmake
+  sed -e '/FindHDF5/d' -i CMake/vtkInstallCMakePackage.cmake
 
   patch -Np1 -i "$srcdir"/vtk-occt.patch
   patch -Np1 -i "$srcdir"/fmt-11.patch
@@ -204,6 +207,9 @@ build() {
     -DVTK_MODULE_ENABLE_VTK_RenderingZSpace=NO \
     -DOpenGL_GL_PREFERENCE=LEGACY \
     -DVTK_IGNORE_CMAKE_CXX11_CHECKS=ON \
+    -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON \
+    -DHDF5_C_COMPILER_EXECUTABLE=h5hlcc \
+    -DHDF5_CXX_COMPILER_EXECUTABLE=h5hlc++ \
     -Wno-dev
 #    -DFIDES_USE_EXTERNAL_RAPIDJSON=ON \
   cmake --build build
