@@ -19,15 +19,18 @@ pkgbase:
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+  system-gremlins:
     version: 15.1.1+r7+gf36ec88aa85a-1
     packages:
       - gcc-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
@@ -43,9 +46,6 @@ repos:
       - gcc-gcobol-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
       - lto-dump-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
       - libgccjit-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
   system:
     version: 14.2.1+r753+g1cd744a6828f-1
     packages:
