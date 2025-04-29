@@ -12,7 +12,7 @@
 
 pkgname=puppet
 pkgver=8.10.0
-pkgrel=3
+pkgrel=5
 pkgdesc='Server automation framework and application'
 arch=('any')
 url='https://www.puppet.com/community/open-source'
@@ -31,6 +31,8 @@ depends=(
   ruby-racc
   ruby-scanf
   ruby-semantic_puppet
+  ruby-getoptlong
+  ruby-syslog
 )
 makedepends=(
   git
@@ -71,6 +73,7 @@ source=("https://github.com/puppetlabs/puppet/archive/${pkgver}/puppet-${pkgver}
         "yumrepo_core::git+https://github.com/puppetlabs/puppetlabs-yumrepo_core#commit=${_yumrepo_commit}"
         "zfs_core::git+https://github.com/puppetlabs/puppetlabs-zfs_core#commit=${_zfs_commit}"
         "zone_core::git+https://github.com/puppetlabs/puppetlabs-zone_core#commit=${_zone_commit}"
+        "ruby34.patch::https://patch-diff.githubusercontent.com/raw/puppetlabs/puppet/pull/9546.patch?full_index=1"
         )
 sha512sums=('f1ec4f9990375b249db3e3664ef332b2c5e95eaaa15afa78d652f4ef6524359fb6b3a19dc50fa2858e1c5b83fb6ecf7ce3e7da1106dee82818ba84ee823278e9'
             '6ebc4603db2e702623070f1703d3e82a25c689b8c149c3328660ab43d74bfa49c5853aa14d267b48c9f91d12bd4a96579bcf3184f8881a57748763484892bf90'
@@ -81,7 +84,8 @@ sha512sums=('f1ec4f9990375b249db3e3664ef332b2c5e95eaaa15afa78d652f4ef6524359fb6b
             '9d458354a95206b998a148bf9b459c8a792051ddaf03672f0ea4c161721ac405c00523ecc065e6acfa610cb9b61e7940a1611b08bb2395c8d3d5a620c6c3662a'
             '6203781a13142747827ee658db3e428ed97732abf356f88224a7f780bfa046ddafcdd69f1e551b3dbe1ad5b00d9a78248a1ba7e97c58fbac636500a95c5e3b7e'
             'cf73509b4b66f307bfe5027814ec7b26173773f568f3b98286b8d1b8334b3f539f62151ac8fb7036be44b84e9d20c1805cd86177ffe1ab0924ed53407e4538ab'
-            '47fafc95cc9aba258cfd8919707366072a50f8a99b59f540c2531e1a367e8c9230070f8b9e7ae5c9ed4f536e05116234ed02ea431b6e48f61c82ce6dd92ebd9b')
+            '47fafc95cc9aba258cfd8919707366072a50f8a99b59f540c2531e1a367e8c9230070f8b9e7ae5c9ed4f536e05116234ed02ea431b6e48f61c82ce6dd92ebd9b'
+            'c95700d06c57768b3fde7ab8db4cad8c221a37a8bd57403eafa98f1bffc869bcc3cc25f8208941fdf7e84d94575d789da7a95b25c0c69c3540e313afb0e4d473')
 conflicts=('puppet5' 'puppet6' 'hiera')
 provides=('puppet')
 replaces=('hiera')
@@ -91,6 +95,8 @@ prepare() {
 
   # FS#45044: fix file location
   sed -i 's_/opt/puppetlabs/puppet_/usr_' ext/systemd/puppet.service
+
+  patch -Np1 -i ../ruby34.patch
 }
 
 # check() {
