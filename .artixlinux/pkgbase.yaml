@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: cantor
-  version: 25.04.0-1
+  version: 25.04.0-3
   arch:
     - x86_64
   pkgname:
     - cantor
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: 24.08.3-2
+    version: 25.04.0-3
     packages:
-      - cantor-24.08.3-2-x86_64.pkg.tar.zst
+      - cantor-25.04.0-3-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
