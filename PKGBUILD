@@ -4,7 +4,7 @@ _pkgbasename=keyutils
 pkgname=lib32-$_pkgbasename
 _tag='5678a1aae8834b5c16b5ed7dc72ef8836a29e122' # git rev-parse v${pkgver}
 pkgver=1.6.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Linux Key Management Utilities (32-bit)'
 arch=('x86_64')
 url='https://www.kernel.org/'
@@ -17,7 +17,7 @@ sha512sums=('SKIP')
 
 build() {
   cd "${_pkgbasename}"
-  
+
   export CC="gcc -m32"
   export CXX="g++ -m32"
   export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
