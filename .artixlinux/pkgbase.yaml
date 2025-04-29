@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: gcc
-  version: 14.2.1+r753+g1cd744a6828f-1
+  version: 15.1.1+r7+gf36ec88aa85a-1
   arch:
     - x86_64
   pkgname:
@@ -15,20 +15,34 @@ pkgbase:
     - gcc-m2
     - gcc-objc
     - gcc-rust
+    - gcc-gcobol
     - lto-dump
     - libgccjit
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 15.1.1+r7+gf36ec88aa85a-1
+    packages:
+      - gcc-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-libs-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - lib32-gcc-libs-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-ada-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-d-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-fortran-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-go-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-m2-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-objc-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-rust-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - gcc-gcobol-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - lto-dump-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
+      - libgccjit-15.1.1+r7+gf36ec88aa85a-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
