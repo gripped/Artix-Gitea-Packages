@@ -1,14 +1,14 @@
 ---
 pkgbase:
   name: sysprof
-  version: 48.0-4
+  version: 48.0-5
   arch:
     - x86_64
   pkgname:
     - sysprof
     - libsysprof-capture
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 48.0-5
+    packages:
+      - sysprof-48.0-5-x86_64.pkg.tar.zst
+      - libsysprof-capture-48.0-5-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
