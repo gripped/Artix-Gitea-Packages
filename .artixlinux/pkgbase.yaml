@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - ruby-cucumber-cucumber-expressions
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,13 +29,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 17.1.0-4
     packages:
       - ruby-cucumber-cucumber-expressions-17.1.0-4-any.pkg.tar.zst
-  world:
-    version: 17.1.0-2
-    packages:
-      - ruby-cucumber-cucumber-expressions-17.1.0-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
