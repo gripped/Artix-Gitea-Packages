@@ -5,7 +5,7 @@
 
 pkgname=xfce4-weather-plugin
 pkgver=0.11.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A weather plugin for the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-weather-plugin/start"
