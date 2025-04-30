@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: caja
-  version: 1.28.0-3
+  version: 1.28.0-3.1
   arch:
     - x86_64
   pkgname:
     - caja
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,7 +50,7 @@ repos:
     packages:
       - caja-1.28.0-3-x86_64.pkg.tar.zst
   galaxy:
-    version: 1.28.0-2
+    version: 1.28.0-3.1
     packages:
-      - caja-1.28.0-2-x86_64.pkg.tar.zst
+      - caja-1.28.0-3.1-x86_64.pkg.tar.zst
 team: galaxy
