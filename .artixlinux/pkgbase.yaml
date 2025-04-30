@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libtracefs
-  version: 1.8.1-1
+  version: 1.8.2-1
   arch:
     - x86_64
   pkgname:
@@ -32,10 +32,10 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.8.1-1
+    version: 1.8.2-1
     packages:
-      - libtracefs-1.8.1-1-x86_64.pkg.tar.zst
-      - libtracefs-docs-1.8.1-1-x86_64.pkg.tar.zst
+      - libtracefs-1.8.2-1-x86_64.pkg.tar.zst
+      - libtracefs-docs-1.8.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
