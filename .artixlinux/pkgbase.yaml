@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - brasero
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -29,13 +29,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 3.12.3+r41+g98342080-2
     packages:
       - brasero-3.12.3+r41+g98342080-2-x86_64.pkg.tar.zst
-  world:
-    version: 3.12.3+r41+g98342080-1
-    packages:
-      - brasero-3.12.3+r41+g98342080-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
