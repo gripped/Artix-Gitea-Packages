@@ -8,8 +8,8 @@ pkgbase:
   pkgname:
     - lib32-libarchive
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: lib32-goblins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -38,13 +38,12 @@ repos:
     version: null
     packages: []
   lib32-gremlins:
+    version: null
+    packages: []
+  lib32:
     version: 3.7.9-2
     packages:
       - lib32-libarchive-3.7.9-2-x86_64.pkg.tar.zst
-  lib32:
-    version: 3.7.9-1
-    packages:
-      - lib32-libarchive-3.7.9-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
