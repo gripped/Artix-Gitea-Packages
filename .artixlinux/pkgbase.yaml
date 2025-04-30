@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - gnome-connections
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -28,13 +28,12 @@ repos:
     version: null
     packages: []
   world-gremlins:
+    version: null
+    packages: []
+  world:
     version: 48.0-6
     packages:
       - gnome-connections-48.0-6-x86_64.pkg.tar.zst
-  world:
-    version: 48.0-3
-    packages:
-      - gnome-connections-48.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
