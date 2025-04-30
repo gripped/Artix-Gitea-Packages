@@ -9,7 +9,7 @@
 
 pkgname=font-manager
 pkgver=0.9.4
-pkgrel=2
+pkgrel=2.1
 pkgdesc='A simple font management application for GTK+ Desktop Environments'
 url=https://fontmanager.github.io
 _url="https://github.com/FontManager/$pkgname"

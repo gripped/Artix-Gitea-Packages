@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: font-manager
-  version: 0.9.4-2
+  version: 0.9.4-2.1
   arch:
     - x86_64
     - i686
   pkgname:
     - font-manager
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,7 +51,7 @@ repos:
     packages:
       - font-manager-0.9.4-2-x86_64.pkg.tar.zst
   galaxy:
-    version: 0.9.4-1
+    version: 0.9.4-2.1
     packages:
-      - font-manager-0.9.4-1-x86_64.pkg.tar.zst
+      - font-manager-0.9.4-2.1-x86_64.pkg.tar.zst
 team: galaxy
