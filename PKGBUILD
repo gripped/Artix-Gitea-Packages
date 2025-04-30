@@ -6,7 +6,7 @@
 
 pkgname=xfce4-xkb-plugin
 pkgver=0.8.5
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Plugin to switch keyboard layouts for the Xfce4 panel"
 arch=('x86_64')
 url="https://docs.xfce.org/panel-plugins/xfce4-xkb-plugin/start"
