@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: connman
-  version: 1.43-3
+  version: 1.44-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.43-3
+    version: 1.44-1
     packages:
-      - connman-1.43-3-x86_64.pkg.tar.zst
+      - connman-1.44-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
