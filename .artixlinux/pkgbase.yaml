@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: tumbler
-  version: 4.20.0-3
+  version: 4.20.0-3.1
   arch:
     - x86_64
   pkgname:
     - tumbler
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,7 +50,7 @@ repos:
     packages:
       - tumbler-4.20.0-3-x86_64.pkg.tar.zst
   galaxy:
-    version: 4.20.0-2
+    version: 4.20.0-3.1
     packages:
-      - tumbler-4.20.0-2-x86_64.pkg.tar.zst
+      - tumbler-4.20.0-3.1-x86_64.pkg.tar.zst
 team: galaxy
