@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: pluma
-  version: 1.28.0-6
+  version: 1.28.0-6.1
   arch:
     - x86_64
   pkgname:
     - pluma
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,7 +50,7 @@ repos:
     packages:
       - pluma-1.28.0-6-x86_64.pkg.tar.zst
   galaxy:
-    version: 1.28.0-5
+    version: 1.28.0-6.1
     packages:
-      - pluma-1.28.0-5-x86_64.pkg.tar.zst
+      - pluma-1.28.0-6.1-x86_64.pkg.tar.zst
 team: galaxy
