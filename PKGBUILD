@@ -7,7 +7,7 @@
 
 pkgname=cinnamon
 pkgver=6.4.10
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Linux desktop which provides advanced innovative features and a traditional user experience"
 arch=(x86_64)
 url="https://github.com/linuxmint/cinnamon"
