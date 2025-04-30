@@ -2,14 +2,14 @@
 team: world
 pkgbase:
   name: hypridle
-  version: 0.1.6-3
+  version: 0.1.6-4
   arch:
     - x86_64
     - aarch64
   pkgname:
     - hypridle
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.1.6-4
+    packages:
+      - hypridle-0.1.6-4-x86_64.pkg.tar.zst
   world:
     version: 0.1.6-3
     packages:
