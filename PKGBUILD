@@ -2,7 +2,7 @@
 
 pkgname=waterfox
 _pkgname=Waterfox
-pkgver=6.5.6
+pkgver=6.5.7
 pkgrel=1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
