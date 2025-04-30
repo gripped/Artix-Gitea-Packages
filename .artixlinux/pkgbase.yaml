@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: mate-applets
-  version: 1.28.1-2
+  version: 1.28.1-2.1
   arch:
     - x86_64
   pkgname:
     - mate-applets
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,7 +50,7 @@ repos:
     packages:
       - mate-applets-1.28.1-2-x86_64.pkg.tar.zst
   galaxy:
-    version: 1.28.1-1
+    version: 1.28.1-2.1
     packages:
-      - mate-applets-1.28.1-1-x86_64.pkg.tar.zst
+      - mate-applets-1.28.1-2.1-x86_64.pkg.tar.zst
 team: galaxy
