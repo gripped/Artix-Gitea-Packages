@@ -50,7 +50,7 @@ prepare() {
   echo 'PNGLIB = libpng.so' >> config.mk
   echo 'ZLIB = libz.so' >> config.mk
   echo 'JBIGLIB = /usr/lib/libjbig.a' >> config.mk
-  echo 'CFLAGS = -std=c17 -Wno-implicit-function-declaration' >> config.mk
+  echo 'CFLAGS = -std=c17 -Wno-implicit-function-declaration -Wno-int-conversion' >> config.mk
 
   sed -i 's|misc|share/netpbm|' common.mk
   sed -e 's|/sharedlink|/lib|' -e 's|/staticlink|/lib|' -i lib/Makefile
