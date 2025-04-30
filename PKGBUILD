@@ -1,8 +1,8 @@
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=ghostscript
-pkgver=10.05.0
-pkgrel=3.1
+pkgver=10.05.1
+pkgrel=1
 pkgdesc="An interpreter for the PostScript language"
 url="https://www.ghostscript.com/"
 arch=('x86_64')
@@ -10,7 +10,7 @@ license=('AGPL-3.0-or-later')
 depends=('libxt' 'libcups' 'fontconfig' 'zlib' 'libpng' 'libjpeg-turbo' 'jbig2dec'
          'libtiff' 'lcms2' 'libpaper' 'ijs' 'openjpeg2' 'libidn' 'poppler-data'
          'cairo' 'glibc' 'libx11' 'gdk-pixbuf2' 'glib2' 'sh')
-optdepends=('gtk3: needed for gsx')
+optdepends=('gtk3:              needed for gsx')
 makedepends=('gtk3' 'gnutls' 'glu' 'freeglut')
 replaces=('ghostpcl' 'ghostxps')
 conflicts=('ghostpcl' 'ghostxps')
@@ -18,7 +18,7 @@ conflicts=('ghostpcl' 'ghostxps')
 source=(https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${pkgver//./}/ghostscript-${pkgver}.tar.xz
         2010_add_build_timestamp_setting.patch)
 # https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/SHA512SUMS
-sha512sums=('5a8695726ea2c70fd153bac47696c9e9046e9f74eccf8eea500794f79f09d5d2be70597c9d85c0b51b71d46d7974f50c5c9e3b0e242816bb84e64f1098a306a6'
+sha512sums=('1a3f2b0f53db9a00a245df19ce8fdce0fbccc6fad47b64d14fc9058b494ab07c77e21bb073df8d4a2522b3ccb0df26735f8224a9e36c07367031ed2262fb26af'
             'cd7794ee4f28b11177021b950196385200b610127ed6cb94a45e3202b690b721a0dfcc0276ff39448d4dab64c1b31a76e6c323696a8315aad9edc22077f18a3d')
 
 ### update jbig2dec first! ###
