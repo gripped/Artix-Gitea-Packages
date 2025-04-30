@@ -3,7 +3,7 @@
 
 pkgname=stoken
 pkgver=0.92
-pkgrel=5
+pkgrel=5.1
 pkgdesc='RSA SecurID-compatible software token for Linux/UNIX systems'
 url='https://github.com/cernekee/stoken'
 arch=('x86_64')

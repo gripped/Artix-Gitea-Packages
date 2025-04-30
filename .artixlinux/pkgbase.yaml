@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: stoken
-  version: 0.92-5
+  version: 0.92-5.1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 0.92-5
+    version: 0.92-5.1
     packages:
-      - stoken-0.92-5-x86_64.pkg.tar.zst
+      - stoken-0.92-5.1-x86_64.pkg.tar.zst
   world:
     version: 0.92-4.1
     packages:
