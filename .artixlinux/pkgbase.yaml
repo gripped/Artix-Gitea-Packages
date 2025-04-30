@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: netpbm
-  version: 10.86.46-1
+  version: 10.86.46-2
   arch:
     - x86_64
   pkgname:
     - netpbm
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.86.46-2
+    packages:
+      - netpbm-10.86.46-2-x86_64.pkg.tar.zst
   world:
     version: 10.86.46-1
     packages:
