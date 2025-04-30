@@ -4,7 +4,7 @@
 
 pkgname=eom
 pkgver=1.28.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="An image viewer for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
