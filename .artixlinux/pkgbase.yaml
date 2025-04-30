@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: lxappearance-obconf
-  version: 0.2.4-2
+  version: 0.2.4-2.1
   arch:
     - x86_64
   pkgname:
     - lxappearance-obconf
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,7 +50,7 @@ repos:
     packages:
       - lxappearance-obconf-0.2.4-2-x86_64.pkg.tar.zst
   galaxy:
-    version: 0.2.4-1
+    version: 0.2.4-2.1
     packages:
-      - lxappearance-obconf-0.2.4-1-x86_64.pkg.tar.zst
+      - lxappearance-obconf-0.2.4-2.1-x86_64.pkg.tar.zst
 team: galaxy
