@@ -8,7 +8,7 @@ pkgbase:
     - openbox
 actions:
   addRepo: null
-  removeRepo: world-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -31,9 +31,8 @@ repos:
     version: null
     packages: []
   world:
-    version: 3.6.1-11
-    packages:
-      - openbox-3.6.1-11-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   lib32-goblins:
     version: null
     packages: []
