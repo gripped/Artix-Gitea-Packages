@@ -4,33 +4,40 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.11.1
+pkgver=4.12.0
 pkgrel=1
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
 url="https://www.nlnetlabs.nl/nsd/"
 license=(BSD)
 depends=(openssl libevent fstrm protobuf-c)
+makedepends=(git systemd-libs)
 validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wouter@nlnetlabs.nl>
               C3E356788FAD0179D872D092BA811E62E7194568
               9E32AFD129E3AB1DC5AB34DE7DE08345DE34009F # Jeroen Koekkoek <jeroen@koekkoek.nl>
               DC34EE5DB2417BCC151E5100E5F8F8212F77A498) # Willem Toorop
-source=("https://www.nlnetlabs.nl/downloads/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
+source=("git+https://github.com/NLnetLabs/nsd.git#tag=NSD_${pkgver//./_}_REL"
+        "git+https://github.com/NLnetLabs/simdzone.git"
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('696e50052008de4fa7ab1d818d5b77eb63247eea2f0575114c9592ff9188a614'
+sha256sums=('374582fc74f5758c4abc8810a0ee85c7d181f0d45477f3b1a07048b9b6d69bc3'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
 install=nsd.install
 
 prepare() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
+
+  git submodule init
+  git config submodule.simdzone.url "${srcdir}/simdzone"
+  git -c protocol.file.allow=always submodule update
+
   autoreconf -vfi
 }
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   ./configure \
     --prefix=/ \
     --sbindir=/usr/bin \
@@ -47,7 +54,7 @@ build() {
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   make DESTDIR="${pkgdir}" install
   rmdir "${pkgdir}"/{tmp,run{/nsd,}}
 
