@@ -2,19 +2,19 @@
 team: world
 pkgbase:
   name: hyprland-qt-support
-  version: 0.1.0-5
+  version: 0.1.0-6
   arch:
     - x86_64
     - aarch64
   pkgname:
     - hyprland-qt-support
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.1.0-6
+    packages:
+      - hyprland-qt-support-0.1.0-6-x86_64.pkg.tar.zst
   world:
     version: 0.1.0-5
     packages:
