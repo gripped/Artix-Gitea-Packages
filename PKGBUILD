@@ -11,7 +11,7 @@ arch=(x86_64)
 url="https://www.nlnetlabs.nl/nsd/"
 license=(BSD)
 depends=(openssl libevent fstrm protobuf-c)
-makedepends=(git systemd-libs)
+makedepends=(git)
 validpgpkeys=(EDFAA3F2CA4E6EB05681AF8E9F6F1C2D7E045F8D  # W.C.A. Wijngaards <wouter@nlnetlabs.nl>
               C3E356788FAD0179D872D092BA811E62E7194568
               9E32AFD129E3AB1DC5AB34DE7DE08345DE34009F # Jeroen Koekkoek <jeroen@koekkoek.nl>
