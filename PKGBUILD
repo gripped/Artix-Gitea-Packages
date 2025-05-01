@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=act-runner-openrc
-pkgver=20231219
+pkgver=20250501
 pkgrel=1
 pkgdesc="OpenRC act-runner init script"
 arch=('any')
