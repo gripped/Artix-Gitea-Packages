@@ -2,7 +2,7 @@
 
 pkgname=wcm
 pkgver=0.9.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Wayfire Config Manager'
 url=https://wayfire.org
 arch=(x86_64)
