@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: leatherman
-  version: 1.12.9-6.1
+  version: 1.12.9-7
   arch:
     - x86_64
   pkgname:
     - leatherman
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.12.9-7
+    packages:
+      - leatherman-1.12.9-7-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
