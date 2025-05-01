@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: x11vnc
-  version: 1:0.9.17-1
+  version: 1:0.9.17-1.1
   arch:
     - x86_64
   pkgname:
@@ -28,9 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 1:0.9.17-1
+    version: 1:0.9.17-1.1
     packages:
-      - x11vnc-1:0.9.17-1-x86_64.pkg.tar.zst
+      - x11vnc-1:0.9.17-1.1-x86_64.pkg.tar.zst
   world:
     version: 1:0.9.16-8
     packages:
