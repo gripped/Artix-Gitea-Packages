@@ -31,7 +31,7 @@ build() {
 }
 
 package() {
-	make -C x11vnc DESTDIR="$pkgdir" install
-	install x11vnc/misc/{rx11vnc,Xdummy} -t "${pkgdir}/usr/bin"
+	make -C "$pkgname-$pkgver" DESTDIR="$pkgdir" install
+	install $pkgname-$pkgver/misc/{rx11vnc,Xdummy} -t "${pkgdir}/usr/bin"
 }
 
