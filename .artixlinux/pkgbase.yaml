@@ -7,8 +7,8 @@ pkgbase:
   pkgname:
     - libcmis
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,11 +46,10 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
+    version: null
+    packages: []
+  galaxy:
     version: 0.6.2-4.1
     packages:
       - libcmis-0.6.2-4.1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 0.6.2-3
-    packages:
-      - libcmis-0.6.2-3-x86_64.pkg.tar.zst
 team: galaxy
