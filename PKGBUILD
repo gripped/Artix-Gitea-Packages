@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Thore Bödecker <foxxx0@archlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 
 pkgname=libwhereami
 pkgver=0.5.0
-pkgrel=20.1
+pkgrel=21
 pkgdesc='Library to report hypervisor information from inside a VM'
 arch=('x86_64')
 url='https://github.com/puppetlabs/libwhereami'
@@ -26,6 +25,7 @@ build() {
     -DCMAKE_BUILD_TYPE=None \
     -DENABLE_CXX_WERROR=OFF \
     -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DBUILD_SHARED_LIBS=ON
   make -C build
 }
