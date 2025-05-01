@@ -19,7 +19,7 @@ optdepends=('tk: for GUI support'
             'xf86-video-dummy: for Xdummy script')
 makedepends=('git')
 source=("git+https://github.com/LibVNC/x11vnc.git#commit=${_commit}?signed")
-sha256sums=('8fb290d3c56970441651f541f1dff3993c6b17147b84483a38f607ef02875eb8')
+sha256sums=('SKIP')
 
 prepare() {
 	autoreconf -fi x11vnc
