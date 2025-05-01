@@ -19,7 +19,6 @@ optdepends=('tk: for GUI support'
             'xf86-video-dummy: for Xdummy script')
 makedepends=('git')
 source=("git+https://github.com/LibVNC/x11vnc.git#commit=${_commit}?signed")
-validpgpkeys=('25E71D2709955ECD4D041E03421BB3B45C6067F8') # Christian Beier
 sha256sums=('8fb290d3c56970441651f541f1dff3993c6b17147b84483a38f607ef02875eb8')
 
 prepare() {
