@@ -3,7 +3,7 @@
 pkgname=waterfox
 _pkgname=Waterfox
 pkgver=6.5.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -234,18 +234,10 @@ about=Waterfox for Artix Linux
 [Preferences]
 app.distributor=artixlinux
 app.distributor.channel=$pkgname
-END
-
-        local distini="$pkgdir/usr/lib/$pkgname/distribution/distribution.ini"
-        install -Dvm644 /dev/stdin "$distini" <<END
-[Global]
-id=artixlinux
-version=1.0
-about=Waterfox for Artix Linux
-[Preferences]
-app.distributor=artixlinux
-app.distributor.channel=$pkgname 
 app.partner.$pkgname=$pkgname
+startup.homepage_welcome_url.additional=""
+startup.homepage_override_url=""
+startup.homepage_welcome_url=""
 END
 
 	local p
