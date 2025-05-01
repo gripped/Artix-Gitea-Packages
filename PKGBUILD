@@ -17,16 +17,15 @@ depends=('libvncserver' 'openssl' 'libxcrypt' 'libxtst' 'libxext' 'libxinerama'
 optdepends=('tk: for GUI support'
             'net-tools: for -auth guess'
             'xf86-video-dummy: for Xdummy script')
-makedepends=('git')
-source=("git+https://github.com/LibVNC/x11vnc.git#commit=${_commit}?signed")
-sha256sums=('SKIP')
+source=("$url/archive/refs/tags/$pkgver.tar.gz")
+sha256sums=('3ab47c042bc1c33f00c7e9273ab674665b85ab10592a8e0425589fe7f3eb1a69')
 
 prepare() {
 	autoreconf -fi x11vnc
 }
 
 build() {
-	cd "$pkgname"
+	cd "$pkgname-$pkgver"
 	./configure --prefix='/usr' --mandir='/usr/share/man' --with-x
 	make
 }
