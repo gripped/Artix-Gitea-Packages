@@ -1,19 +1,19 @@
 ---
 pkgbase:
   name: librewolf
-  version: 137.0-1
+  version: 138.0-1
   arch:
     - x86_64
     - aarch64
   pkgname:
     - librewolf
 actions:
-  addRepo: null
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -47,8 +47,9 @@ repos:
     version: null
     packages: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 138.0-1
+    packages:
+      - librewolf-138.0-1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
