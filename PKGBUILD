@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: Thore Bödecker <foxxx0@archlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 
 pkgname=cpp-hocon
 pkgver=0.3.0
-pkgrel=18.1
+pkgrel=19
 pkgdesc="C++ port of the Typesafe Config library"
 arch=('x86_64')
 url="https://github.com/puppetlabs/cpp-hocon"
@@ -31,6 +30,7 @@ build() {
     -DCMAKE_BUILD_TYPE=None \
     -DENABLE_CXX_WERROR=OFF \
     -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DBUILD_SHARED_LIBS=ON
   make -C build
 }
