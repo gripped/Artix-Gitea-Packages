@@ -21,6 +21,7 @@ source=("$url/archive/refs/tags/$pkgver.tar.gz")
 sha256sums=('3ab47c042bc1c33f00c7e9273ab674665b85ab10592a8e0425589fe7f3eb1a69')
 
 prepare() {
+        cd "$pkgname-$pkgver"
 	autoreconf -fi x11vnc
 }
 
