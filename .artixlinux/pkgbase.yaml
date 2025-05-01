@@ -7,7 +7,7 @@ pkgbase:
   pkgname:
     - grilo-plugins
 actions:
-  addRepo: galaxy
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:0.3.16+r46+gea3afa8c-1.1
+    version: 1:0.3.16+r46+gea3afa8c-2
     packages:
-      - grilo-plugins-1:0.3.16+r46+gea3afa8c-1.1-x86_64.pkg.tar.zst
+      - grilo-plugins-1:0.3.16+r46+gea3afa8c-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
@@ -53,4 +53,4 @@ repos:
     version: 1:0.3.16+r46+gea3afa8c-2
     packages:
       - grilo-plugins-1:0.3.16+r46+gea3afa8c-2-x86_64.pkg.tar.zst
-team: world
+team: galaxy
