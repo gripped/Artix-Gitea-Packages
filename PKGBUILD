@@ -3,41 +3,32 @@
 # Contributor: damir
 
 pkgname=x11vnc
-pkgver=0.9.16
-pkgrel=8
+pkgver=0.9.17
+pkgrel=1
 epoch=1
-_commit='4ca006fed80410bd9b061a1519bd5d9366bb0bc8'
+_commit='e2b726a8c0464051afda01648072af6835aaa5f7'
 pkgdesc='VNC server for real X displays'
 url='https://github.com/LibVNC/x11vnc'
 arch=('x86_64')
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=('libvncserver' 'openssl' 'libxcrypt' 'libxtst' 'libxext' 'libxinerama'
          'libxrandr' 'libxfixes' 'libxdamage' 'libxcomposite' 'libx11' 'avahi'
-         'libxi' 'xorg-xdpyinfo')
+         'libxi' 'xorg-xdpyinfo' 'glibc' 'sh')
 optdepends=('tk: for GUI support'
             'net-tools: for -auth guess'
             'xf86-video-dummy: for Xdummy script')
 makedepends=('git')
-source=("git+https://github.com/LibVNC/x11vnc.git#commit=${_commit}?signed"
-        '010-x11vnc-xfc-null-ptr.patch'::'https://github.com/LibVNC/x11vnc/commit/95a10ab64c2d.patch'
-        '020-x11vnc-gcc10-fix.patch'::'https://github.com/LibVNC/x11vnc/commit/a48b0b1cd887.patch'
-        '030-x11vnc-scan-limit-access-to-shared-memory'::'https://github.com/LibVNC/x11vnc/commit/69eeb9f7baa1.patch')
+source=("git+https://github.com/LibVNC/x11vnc.git#commit=${_commit}?signed")
 validpgpkeys=('25E71D2709955ECD4D041E03421BB3B45C6067F8') # Christian Beier
-sha256sums=('c7130700b4ae360cee1a61ace8bc865a88a4e9501c8992856616d713d6da1b8e'
-            'd39a399d7db8e942e55639ed04a51b3c4f5d31d213d4639b1e26a44d92029403'
-            '2c71af4c586eabaa11744da65916f9223b928d1fba820f117243f6c8c585f16b'
-            'e9c121a0b16013059ce903ed3e7560fabc5015e3b058a3acec85d7ae7102fcf0')
+sha256sums=('8fb290d3c56970441651f541f1dff3993c6b17147b84483a38f607ef02875eb8')
 
 prepare() {
-	patch -d x11vnc -Np1 -i "${srcdir}/010-x11vnc-xfc-null-ptr.patch" # FS#65851
-	patch -d x11vnc -Np1 -i "${srcdir}/020-x11vnc-gcc10-fix.patch"
-	patch -d x11vnc -Np1 -i "${srcdir}/030-x11vnc-scan-limit-access-to-shared-memory" # FS#68930
 	autoreconf -fi x11vnc
 }
 
 build() {
 	cd "$pkgname"
-	./configure --prefix='/usr' --mandir='/usr/share/man'
+	./configure --prefix='/usr' --mandir='/usr/share/man' --with-x
 	make
 }
 
