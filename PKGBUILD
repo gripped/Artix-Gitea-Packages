@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kopeninghours
 pkgver=25.04.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for parsing and evaluating OSM opening hours expressions'
 arch=(x86_64)
 url='https://www.kde.org'
