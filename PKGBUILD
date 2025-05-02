@@ -104,14 +104,6 @@ check() {
     --deselect distributed/diagnostics/tests/test_progress.py::test_AllProgress_lost_key
     --deselect distributed/tests/test_client.py::test_profile
     --deselect distributed/tests/test_worker.py::test_statistical_profiling
-    # These fails in CI: "coroutine 'assert_cannot_connect' was never awaited"
-    --deselect distributed/comm/tests/test_comms.py::test_default_client_server_ipv6[tornado]
-    --deselect distributed/comm/tests/test_comms.py::test_tcp_client_server_ipv6[tornado]
-    --deselect distributed/deploy/tests/test_local.py::test_only_local_access
-    --deselect distributed/deploy/tests/test_local.py::test_remote_access
-    --deselect distributed/deploy/tests/test_local.py::test_local_tls[True]
-    --deselect distributed/deploy/tests/test_local.py::test_local_tls[False]
-    -m "not avoid_ci and not gpu and not extra_packages"
   )
 
   cd $_name-$pkgver
