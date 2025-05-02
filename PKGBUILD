@@ -1,10 +1,8 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
-# Contributor: Ionut Biru <ibiru@archlinux.org>
-# Contributor: Jakub Schmidtke <sjakub@gmail.com>
+# Maintainer: artist for Artix Linux
 
 pkgname=firefox
 pkgver=138.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -82,6 +80,7 @@ source=(
   0001-Install-under-remoting-name.patch
   policies.json
   preferences.patch
+  preferences2.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -94,16 +93,18 @@ sha256sums=('04623d7ee88c1b456228dca1aac4d40b18fee82c803b6562a34ce30b46f19b23'
             '71fe797430198ac8c00b538dce537284cf526e48be0496698cf5a980d70c16da'
             '23f557fa7989adcae03cc9458d94716981dbcf0e9d6d52a289a2426e50b4b785'
             '883ca2fa723a7572269d18559d5b82412782ad63e5dd3820eeb0540e3fe34314'
-            'fdd8260cffd2d0fdddcaa73786add5b0e10bec38b2908b5f95235019702ee6a8'
-            '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2')
+            'c25a6fa683c053afd7577d2ab84db6301684f1a8a52a1b76d2bb9802a86ed20a'
+            '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2'
+            '732a1b5b08aa2b2a572031ea3d15dee6910fea31722171cdd19dd8df85c604de')
 b2sums=('9bd4fb552a4e853fac2c74ddfea5ffeae8ba22d3a22d0c92fbd38a44b124a1c9b3e260bee347d476c5cf5e35a88978ee6b6e66d41a05064aa50eb08b3de2488c'
         'SKIP'
         '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34'
         '2c7936949ef922307fb593bd0480a13bde2eab8ae24fc89071d809d6659384705f9b7838b1ae8bc46b98a152ba01fcffad606d4c84796ad9bfaaf20166f0a0fd'
         '1a7fc030b1051df00df1b2f5b247b8c658de6cdfba0788041c830da3aaaa6ac974ab684e05feb80672aa2d2c22294cacfa93a71dc664b3e60becdd65e879fcee'
         '8a894b01e405b628877483e40e9b018647977cb053b6af02afc901ed24d6e1f767f3db8c321070e33aea4a05ba16f1eb47ae600e5299b5f9caad03d20ba38cf5'
-        'a9ecbf322981ed32caceeec4476943fd1fe4da0cf9430e0a174100f5dc773d755616b7e1a09d07ce589f16f8147a368bc15d8bdf16a9cab816433e73ae0fe20e'
-        '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4')
+        '1155404ff59b83a8f35660504f7fd98cec59a93a4b9a2a57055517b98ba41401d0c896bfcb7f8f9c177592f2f6e3cf8c3afb83cd411b9fa572df7847d0115c9c'
+        '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
+        '58e236e1fd9e05015444148382fe81c685f3c8502f1ab315138844981ecb3e1b514976e4c660b60aac677cc374ab2f5ad16d6631b0ba7cfd3aa3161b11211c23')
 
 
 prepare() {
@@ -116,6 +117,7 @@ prepare() {
   echo -n "$_google_api_key" >google-api-key
 
   patch -Np1 -i ../preferences.patch
+  patch -Np1 -i ../preferences2.patch
 
   cat >../mozconfig <<END
 ac_add_options --enable-application=browser
@@ -240,6 +242,9 @@ about=Mozilla Firefox for Artix Linux
 app.distributor=artixlinux
 app.distributor.channel=$pkgname
 app.partner.artixlinux=artixlinux
+startup.homepage_welcome_url.additional=""
+startup.homepage_override_url=""
+startup.homepage_welcome_url=""
 END
 
   local i theme=official
