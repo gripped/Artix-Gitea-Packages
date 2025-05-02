@@ -2,7 +2,7 @@
 # Contributor: Ignacio Galmarino <igalmarino@gmail.com>
 
 pkgname=openresolv
-pkgver=3.14.1
+pkgver=3.16.0
 pkgrel=1
 pkgdesc="resolv.conf management framework (resolvconf)"
 url="https://roy.marples.name/projects/openresolv"
@@ -13,16 +13,17 @@ conflicts=(resolvconf)
 depends=(bash)
 makedepends=(
   git
+ 
 )
 backup=(etc/resolvconf.conf)
 source=("git+https://github.com/NetworkConfiguration/openresolv?signed#tag=v$pkgver")
-b2sums=('2f3bf6f057f6bd2155797ff50ed3385ffea9599f5f25f1d4a1adf79b02a4db74f1e78a1b21c79713c76e57f0c5172a704c5c824b6be8cc04b4db1670de48a367')
+b2sums=('53be28393dfbdab21d8c795dbffc30b45d9a04e02aca3c2d6159999786c287a4d47f5456549cdc48e9cb1366d65f645ab856275437b925148879e41aaa94569a')
 validpgpkeys=(
   A785ED2755955D9E93EA59F6597F97EA9AD45549 # Roy Marples <roy@marples.name>
 )
 
 prepare() {
-  cd "$pkgname" || exit
+  cd $pkgname
 }
 
 build() {
@@ -33,13 +34,13 @@ build() {
     --sbindir=/usr/bin
   )
 
-  cd "$pkgname" || exit
+  cd $pkgname
   ./configure "${configure_options[@]}"
   make
 }
 
 package() {
-  cd "$pkgname" || exit
+  cd $pkgname
   make DESTDIR="$pkgdir" install
   install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 }
