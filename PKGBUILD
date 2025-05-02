@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=libappimage
 pkgver=1.0.4.5
 _pkgver=1.0.4-5
-pkgrel=9
+pkgrel=10
 pkgdesc='Reference implementation of the AppImage specification'
 arch=(x86_64)
 url='https://appimage.org/'
