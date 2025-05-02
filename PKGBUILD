@@ -2,7 +2,7 @@
 
 _pyname=pysol_cards
 pkgname=python-$_pyname
-pkgver=0.18.1
+pkgver=0.22.0
 pkgrel=1
 pkgdesc='Deal PySol FC Cards'
 arch=(any)
@@ -14,7 +14,7 @@ makedepends=(python-build
              python-setuptools
              python-wheel)
 source=(https://pypi.io/packages/source/p/$_pyname/$_pyname-$pkgver.tar.gz)
-sha256sums=('103c7c0c319e72e836e099bbb47ff54be729d975e35c11ba74d4ac5e4286b8eb')
+sha256sums=('c555ef5e05ad41774e742b603ce6e6ba76e5d013ddf4ae087a3d87c55279f142')
 
 build() {
   cd $_pyname-$pkgver
