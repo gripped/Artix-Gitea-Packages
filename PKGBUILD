@@ -4,7 +4,7 @@
 
 pkgname=cmake
 pkgver=4.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
@@ -39,6 +39,9 @@ validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@k
 
 prepare() {
   git -C "${pkgname}" apply ../artix-cmake.patch
+  cd $pkgname
+  git cherry-pick -n a869b79c5921412c91fb71a761748ae5f7d3fb23 # Fix FindHDF5 for HDF5 built with cmake
+
 }
 
 build() {
