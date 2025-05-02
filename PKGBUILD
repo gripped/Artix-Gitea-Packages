@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
-# Contributor: Filipe Laíns <lains@archlinux.org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Filipe Laíns <lains@archlinux.org>
 # Contributor: Marq Schneider <queueRAM@gmail.com>
 # Contributor: Nick Østergaard
 # Contributor: Rachel Mant <aur@dragonmux.network>
@@ -9,7 +8,7 @@
 
 pkgname=kicad
 pkgver=9.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Electronic schematic and printed circuit board (PCB) design tools'
 arch=('x86_64')
 url='http://kicad.org/'
