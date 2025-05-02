@@ -3,7 +3,7 @@
 
 pkgname=snapper
 pkgver=0.12.2
-pkgrel=4
+pkgrel=4.1
 pkgdesc="A tool for managing BTRFS and LVM snapshots"
 arch=('x86_64')
 url="http://snapper.io"
@@ -11,46 +11,45 @@ license=('GPL-2.0-only')
 depends=('btrfs-progs' 'libxml2' 'dbus' 'boost-libs' 'acl' 'json-c')
 makedepends=('boost' 'lvm2' 'libxslt' 'docbook-xsl' 'pam' 'git')
 optdepends=('pam: pam_snapper')
-backup=('etc/conf.d/snapper')
-source=("https://github.com/openSUSE/snapper/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
-  "conf-d.patch"
-  "cron-rename.patch"
-  "drift-file-path.patch"
-  "usr-paths.patch")
-sha256sums=('0b902c9e6e4917ae035b60d20166b176e417718b9a853534fff057b14a2cbff8'
+backup=(
+  'etc/conf.d/snapper'
+  'etc/cron.hourly/snapper'
+  'etc/logrotate.d/snapper'
+)
+source=("git+https://github.com/openSUSE/snapper.git#tag=v${pkgver}"
+        "conf-d.patch"
+        "cron-rename.patch"
+        "drift-file-path.patch"
+        "usr-paths.patch")
+sha256sums=('e0954bd9ebe4d940c00d2c04eccc4a3bacc42beef14cb85a435416dbafe65942'
             '527fc127eb0569eea9dcb888833e0b1f54302bfcb3a88f0101ae32837771bc61'
             'a78fea96638cd686cb727316b68d0c44e6e3154e72947025774fc0e58c7dce35'
             '093c7993e466a0cf9c0794a971825f5f1b40047512857bc124ed0d63dbb306d6'
             '710da7638a1c123a6985398a15cd7c03432fc3b2d781e2d7a20a1a52669eed95')
 
 prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd $pkgname
   patch -p1 -i "$srcdir/conf-d.patch"
   patch -p1 -i "$srcdir/cron-rename.patch"
   patch -p1 -i "$srcdir/drift-file-path.patch"
   patch -p1 -i "$srcdir/usr-paths.patch"
+  autoreconf -fiv
 }
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
-
-  aclocal
-  libtoolize --force --automake --copy
-  autoheader
-  automake --add-missing --copy
-  autoconf
+  cd $pkgname
   ./configure --prefix=/usr \
-    --sbindir=/usr/bin \
-    --with-conf=/etc/conf.d \
-    --with-pam-security=/usr/lib/security \
-    --disable-zypp \
-    --disable-silent-rules \
-    --disable-systemd
+              --sbindir=/usr/bin \
+              --with-conf=/etc/conf.d \
+              --with-pam-security=/usr/lib/security \
+              --disable-zypp \
+              --disable-silent-rules \
+              --disable-systemd
   make
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd $pkgname
 
   make DESTDIR="$pkgdir" install
   install -Dm644 data/sysconfig.snapper \
