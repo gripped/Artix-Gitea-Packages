@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: alsa-ucm-conf
-  version: 1.2.14-1
+  version: 1.2.14-2
   arch:
     - any
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.2.14-1
+    version: 1.2.14-2
     packages:
-      - alsa-ucm-conf-1.2.14-1-any.pkg.tar.zst
+      - alsa-ucm-conf-1.2.14-2-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
