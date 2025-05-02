@@ -12,15 +12,21 @@
 
 pkgname=('boost' 'boost-libs')
 pkgver=1.88.0
-pkgrel=1
+pkgrel=2
 _srcname=boost_${pkgver//./_}
 pkgdesc="Free peer-reviewed portable C++ source libraries"
 arch=('x86_64')
 url="https://www.boost.org/"
 license=('BSL-1.0')
 makedepends=('icu' 'python' 'python-numpy' 'bzip2' 'zlib' 'openmpi' 'zstd')
-source=(https://archives.boost.io/release/$pkgver/source/$_srcname.tar.bz2)
-sha256sums=('46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b')
+source=(https://archives.boost.io/release/$pkgver/source/$_srcname.tar.bz2
+        https://github.com/boostorg/range/commit/9ac89e99.patch)
+sha256sums=('46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b'
+            'd66116e9ed03c309e5338cfa12b624894d116aed0903595842d97d461db70a28')
+
+prepare() {
+  patch -d $_srcname/boost -p3 < 9ac89e99.patch # Add missing include
+}
 
 build() {
   local JOBS="$(sed 's/.*\(-j *[0-9]\+\).*/\1/' <<<$MAKEFLAGS)"
