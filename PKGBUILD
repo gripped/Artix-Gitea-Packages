@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Giancarlo Razzolini <grazzolini@archlinux.org>
-# Contributor: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: Sébastien Luttringer
 # Contributor: Kaiting Chen <kaitocracy@gmail.com>
 # Contributor: mickael9 <mickael9 at gmail dot com>
 
 pkgname=znc
 pkgver=1.9.1
-pkgrel=7
+pkgrel=8
 pkgdesc='An IRC bouncer with modules & scripts support'
 url='https://wiki.znc.in/'
 license=('Apache-2.0')
