@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Alad Wenter <alad@mailbox.org>
+# Maintainer: Alad Wenter <alad@mailbox.org>
 # Contributor: carstene1ns <arch carsten-teibes de>
 # Contributor: Sam S. <smls75@gmail.com>
 # Contributor: Daniel Scharrer <daniel@constexpr.org>
 pkgname=innoextract
 pkgver=1.9
-pkgrel=12
+pkgrel=13
 pkgdesc="A tool to extract installers created by Inno Setup"
 url='https://constexpr.org/innoextract/'
 arch=('x86_64')
@@ -28,8 +27,11 @@ prepare() {
 build() {
     cd "$pkgname-$pkgver"
 
+    export CMAKE_POLICY_VERSION_MINIMUM=3.5 # Fix build with cmake 4
+
     # https://github.com/dscharrer/innoextract/issues/88
-    cmake . -DCMAKE_INSTALL_PREFIX=/usr -DBoost_NO_BOOST_CMAKE=ON
+    cmake . -DCMAKE_INSTALL_PREFIX=/usr \
+            -DBoost_NO_BOOST_CMAKE=ON
     make
 }
 
