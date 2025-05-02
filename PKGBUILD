@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libkolabxml
 pkgver=1.3.1
-pkgrel=5
+pkgrel=6
 pkgdesc='Kolab XML Format Schema Definitions Library'
 url='https://www.kolab.org/'
 arch=('x86_64')
@@ -32,7 +31,8 @@ build() {
   cmake -B build -S LKX \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_TESTS=OFF \
-    -DBoost_NO_BOOST_CMAKE=ON
+    -DBoost_NO_BOOST_CMAKE=ON \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build
 }
 
