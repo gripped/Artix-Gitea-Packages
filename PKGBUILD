@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kig
 pkgver=25.04.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Interactive Geometry'
 url='https://apps.kde.org/kig/'
 arch=(x86_64)
