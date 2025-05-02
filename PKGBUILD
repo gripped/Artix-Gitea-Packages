@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: Remi Gacogne <rgacogne[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Remi Gacogne <rgacogne[at]archlinux[dot]org>
 # Contributor: Alexander Rødseth <rodseth@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Jan Steffens <heftig@archlinux.org>
 
 pkgname=powerdns-recursor
 pkgver=5.2.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Resolving DNS server'
 url='https://www.powerdns.com/'
 arch=('x86_64')
