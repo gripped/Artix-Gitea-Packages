@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Daniel Bermond <dbermond@archlinux.org>
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
 # Contributor: robertfoster
 # Contributor: kurych
 # Contributor: redfish
@@ -11,7 +10,7 @@
 
 pkgname=i2pd
 pkgver=2.56.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A full-featured C++ implementation of the I2P router'
 arch=('x86_64')
 url='https://i2pd.website/'
