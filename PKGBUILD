@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Christian Neukirchen <chneukirchen@gmail.com>
 # Contributor: Thomas Weißschuh <thomas_weissschuh@lavabit.com>
 
 pkgname=mosh
 pkgver=1.4.0
-pkgrel=21
+pkgrel=22
 pkgdesc='Mobile shell, surviving disconnects with local echo and line editing'
 arch=(x86_64)
 url='https://mosh.org/'
