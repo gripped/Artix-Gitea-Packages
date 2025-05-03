@@ -1,10 +1,11 @@
-# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Maintainer: 
+# Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=apache
 pkgver=2.4.63
-pkgrel=2
+pkgrel=3
 pkgdesc='A high performance Unix-based HTTP server'
 arch=('x86_64')
 url='https://www.apache.org/dist/httpd'
@@ -121,6 +122,10 @@ package() {
       -e 's|#\(Include conf/extra/httpd-default.conf\)|\1|' \
       -e 's|#\(Include conf/extra/httpd-mpm.conf\)|\1|' \
       -i "${pkgdir}/etc/httpd/conf/httpd.conf"
+
+  # allow optional drop-in conf files for local configuration
+  install -d "${pkgdir}/etc/httpd/conf/conf.d"
+  echo "IncludeOptional conf/conf.d/*.conf" >> "${pkgdir}/etc/httpd/conf/httpd.conf"
 
   # cleanup
   rm -r "${pkgdir}/usr/share/httpd/manual"
