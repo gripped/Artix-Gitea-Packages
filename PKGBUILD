@@ -3,7 +3,7 @@
 pkgname=waterfox
 _pkgname=Waterfox
 pkgver=6.5.7
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -202,12 +202,21 @@ END
 	fi
 
 	./mach build
+
+	./mach buildsymbols
+
+	./mach package
+	./mach package-multi-locale --locales ar cs da de el en-US en-GB es-ES fr hu id it ja ko lt nl nn-NO pl pt-BR pt-PT ru sv-SE th tr uk zh-CN zh-TW
 }
 
 package() {
-	cd "$_pkgname-$pkgver"
+	cd "$_pkgname-$pkgver" || exit
 
-	DESTDIR="$pkgdir" ./mach install
+	install -Ddvm755 "${pkgdir}/usr/lib/${pkgname}"
+	cp -rvf "obj-Linux-x86_64/dist/${pkgname}/." "${pkgdir}/usr/lib/${pkgname}"
+
+	install -Ddvm755 "${pkgdir}/usr/bin"
+	ln -srfv "$pkgdir/usr/lib/${pkgname}/${pkgname}" "$pkgdir/usr/bin/${pkgname}"
 
 	local vendorjs="$pkgdir/usr/lib/$pkgname/browser/defaults/preferences/vendor.js"
 	install -Dvm644 /dev/stdin "$vendorjs" <<END
@@ -278,7 +287,7 @@ EOT
 b2sums=('b3a03e95380b11d19bf54e1324734ef8a2e7a7c05e289f6c110bf94611c94f6c49f4667c20ba0e9eeb4afb95192df25d0dfb2f5e77963ecb4d3afc3e550020ab'
         'dae98ce62bcc76d822d16a9c140a65943cd1d383734684b08e765b12e61e7010c104a0b333888a6f911fc22c2521c9148a8634cf36d7f120f964bb2ddcde162b'
         '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
-        '1155404ff59b83a8f35660504f7fd98cec59a93a4b9a2a57055517b98ba41401d0c896bfcb7f8f9c177592f2f6e3cf8c3afb83cd411b9fa572df7847d0115c9c'
+        'c92715c1744082f31bd03966518104c944c9a7a59d2c8ae95b601648751c8495a357062cafd26942da3e0c468ece41d23447f9436b7934f75822bff954df9918'
         '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
         '98d7b2aa61364c2b015d1a696a326e26d6d570cb8346e243ae67e5bfd7683732ce8227404fbfcac0969c9c52dcb1a9547e5779c74beca07ad3c41d2e4034e7bc'
         'f547df79e8e5d5c83389a0e1fec844945627c652a2058eca4f3d9028a24674feca7553b3f0cd0bb4095c0208fc19992d58ad6991440c8741e1dde418a74a0753'
