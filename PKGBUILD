@@ -22,6 +22,7 @@ checkdepends=(
   ruby-bundler
   ruby-minitest
   ruby-rake
+  ruby-public_suffix
 )
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
