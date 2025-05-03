@@ -12,7 +12,7 @@
 
 pkgname=puppet
 pkgver=8.10.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Server automation framework and application'
 arch=('any')
 url='https://www.puppet.com/community/open-source'
@@ -33,6 +33,7 @@ depends=(
   ruby-semantic_puppet
   ruby-getoptlong
   ruby-syslog
+  ruby-shadow
 )
 makedepends=(
   git
