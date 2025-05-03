@@ -7,12 +7,12 @@ pkgbase:
   pkgname:
     - ruby-public_suffix
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,9 +28,8 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: 5.0.5-6.1
-    packages:
-      - ruby-public_suffix-5.0.5-6.1-any.pkg.tar.zst
+    version: null
+    packages: []
   world:
     version: 6.0.2-1
     packages:
