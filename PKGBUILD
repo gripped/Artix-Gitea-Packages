@@ -2,7 +2,7 @@
 # Contributor: Sergej Pupykin <sergej@aur.archlinux.org>
 
 pkgname=man-db
-pkgver=2.13.0
+pkgver=2.13.1
 pkgrel=1
 pkgdesc="A utility for reading man pages"
 arch=('x86_64')
@@ -21,7 +21,7 @@ source=(#https://savannah.nongnu.org/download/man-db/$pkgname-$pkgver.tar.xz{,.a
         https://download-mirror.savannah.gnu.org/releases/man-db/$pkgname-$pkgver.tar.xz{,.asc} 
         convert-mans)
 validpgpkeys=('AC0A4FF12611B6FCCF01C111393587D97D86500B') # Colin Watson <cjwatson@debian.org>
-sha512sums=('612ce39bb1e11aa7797e8e3a26f06a7154c48a13b2d74217c2c6701e0d33fa8f77ae2b8c9ee84353e364d16918f884115f2dfbf3cd743edd4ed32b763b87f723'
+sha512sums=('9b39f512fe940e648ca7f47803f42e473064253b67eb96995d28da30fd322de31a4466bf821e9391e6041af2318a6d2c2d74102b73f4b42a63966b41d2df0578'
             'SKIP'
             '0b159285da20008f0fc0afb21f1eaebd39e8df5b0594880aa0e8a913b656608b8d16bb8d279d9e62d7aae52f62cb9b2fc49e237c6711f4a5170972b38d345535')
 
