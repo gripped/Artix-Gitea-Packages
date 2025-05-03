@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: lib32-libltdl
-  version: 2.5.4+r1+gbaa1fe41-1
+  version: 2.5.4+r23+g5b582aed-1
   arch:
     - x86_64
   pkgname:
@@ -40,9 +40,9 @@ repos:
     version: null
     packages: []
   lib32:
-    version: 2.5.4+r1+gbaa1fe41-1
+    version: 2.5.4+r23+g5b582aed-1
     packages:
-      - lib32-libltdl-2.5.4+r1+gbaa1fe41-1-x86_64.pkg.tar.zst
+      - lib32-libltdl-2.5.4+r23+g5b582aed-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
