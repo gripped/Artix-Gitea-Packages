@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: ruby-public_suffix
-  version: 6.0.2-1
+  version: 5.0.5-6.1
   arch:
     - any
   pkgname:
     - ruby-public_suffix
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.0.5-6.1
+    packages:
+      - ruby-public_suffix-5.0.5-6.1-any.pkg.tar.zst
   world:
     version: 6.0.2-1
     packages:
