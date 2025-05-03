@@ -53,7 +53,6 @@
             "example.org","192.168.*", "localhost"
         ],
         "NetworkPrediction": false,
-        "NewTabPage": false,
         "PopupBlocking": {
             "Allow": [
                 "http://example.org/"
