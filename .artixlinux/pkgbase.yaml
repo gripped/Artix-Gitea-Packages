@@ -1,25 +1,25 @@
 ---
 pkgbase:
   name: nginx
-  version: 1.28.0-2
+  version: 1.28.0-3
   arch:
     - x86_64
   pkgname:
     - nginx
-    - nginx-src
     - nginx-mod-geoip
     - nginx-mod-image-filter
     - nginx-mod-mail
     - nginx-mod-perl
     - nginx-mod-stream
     - nginx-mod-xslt
+    - nginx-src
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -38,16 +38,16 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.28.0-2
+    version: 1.28.0-3
     packages:
-      - nginx-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-src-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-mod-geoip-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-mod-image-filter-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-mod-mail-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-mod-perl-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-mod-stream-1.28.0-2-x86_64.pkg.tar.zst
-      - nginx-mod-xslt-1.28.0-2-x86_64.pkg.tar.zst
+      - nginx-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-mod-geoip-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-mod-image-filter-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-mod-mail-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-mod-perl-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-mod-stream-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-mod-xslt-1.28.0-3-x86_64.pkg.tar.zst
+      - nginx-src-1.28.0-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
