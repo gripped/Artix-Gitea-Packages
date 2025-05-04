@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: xorg-twm
-  version: 1.0.12-2
+  version: 1.0.13-1
   arch:
     - x86_64
   pkgname:
@@ -31,9 +31,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 1.0.12-2
+    version: 1.0.13-1
     packages:
-      - xorg-twm-1.0.12-2-x86_64.pkg.tar.zst
+      - xorg-twm-1.0.13-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
