@@ -1,18 +1,18 @@
 ---
 pkgbase:
   name: arrow
-  version: 19.0.1-8
+  version: 20.0.0-1
   arch:
     - x86_64
   pkgname:
     - arrow
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -28,8 +28,9 @@ repos:
     version: null
     packages: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20.0.0-1
+    packages:
+      - arrow-20.0.0-1-x86_64.pkg.tar.zst
   world:
     version: 19.0.1-8
     packages:
