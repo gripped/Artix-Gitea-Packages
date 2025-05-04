@@ -2,18 +2,18 @@
 team: world
 pkgbase:
   name: ruby-protocol-websocket
-  version: 0.20.1-4
+  version: 0.20.2-1
   arch:
     - any
   pkgname:
     - ruby-protocol-websocket
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -32,9 +32,9 @@ repos:
     version: null
     packages: []
   world:
-    version: 0.20.1-4
+    version: 0.20.2-1
     packages:
-      - ruby-protocol-websocket-0.20.1-4-any.pkg.tar.zst
+      - ruby-protocol-websocket-0.20.2-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
