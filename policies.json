@@ -12,7 +12,6 @@
         "DisablePocket": true,
         "DisableSetDesktopBackground": false,
         "DisableDeveloperTools": false,
-        "DisableFormHistory": true,
         "NoDefaultBookmarks": true,
         "SSLVersionMin": "tls1.2",
         "WebsiteFilter": {
@@ -34,7 +33,7 @@
         },
         "FirefoxHome": {
             "Search": true,
-            "TopSites": false,
+            "TopSites": true,
             "SponsoredTopSites": false,
             "Highlights": false,
             "Pocket": false,
