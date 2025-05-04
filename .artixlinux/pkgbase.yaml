@@ -2,16 +2,16 @@
 team: world
 pkgbase:
   name: llhttp
-  version: 9.2.1-2
+  version: 9.3.0-1
   arch:
     - x86_64
   pkgname:
     - llhttp
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,8 +26,9 @@ repos:
     version: null
     packages: []
   world-goblins:
-    version: null
-    packages: []
+    version: 9.3.0-1
+    packages:
+      - llhttp-9.3.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
