@@ -50,7 +50,7 @@ makedepends=(
 )
 _commit=293a4f665ac59c6d53732a18340a76e69c257ea8
 source=(
-  "git+https://github.com/rabbitmq/rabbitmq-server.git#commit=${_commit}?signed"
+  "git+https://github.com/rabbitmq/rabbitmq-server.git#commit=${_commit}"
   rabbitmq-devendor-rebar3.patch
   rabbitmq-env.conf
   rabbitmq.sysusers
