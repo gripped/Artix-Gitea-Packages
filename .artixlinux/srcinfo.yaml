@@ -1,0 +1,84 @@
+---
+version: 0.36.0-1
+pkgbase:
+  name: artools
+  pkgdesc: Development tools for Artix
+  pkgver: 0.36.0
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/artools
+  arch:
+    - any
+  groups:
+    - artix-tools
+    - artools
+  license:
+    - GPL-1.0-or-later
+  makedepends:
+    - git
+  source:
+    - git+https://gitea.artixlinux.org/artix/artools.git#tag=0.36.0
+  sha256sums:
+    - 853e8f8992a168fe7d19777eb0cf88937d3321a289c868c1c6aecf8a339d0f79
+pkgname:
+  - name: artools-base
+    pkgdesc: Development tools for Artix (base tools)
+    depends:
+      - awk
+      - bash
+      - coreutils
+      - grep
+      - pacman
+      - util-linux
+      - sed
+    optdepends:
+      - 'artools-pkg: Artix package tools'
+      - 'artools-iso: Artix iso tools'
+    conflicts:
+      - arch-install-scripts
+  - name: artools-pkg
+    pkgdesc: Development tools for Artix (packaging tools)
+    depends:
+      - artools-base
+      - awk
+      - parallel
+      - bash
+      - rsync
+      - go-yq
+      - openssh
+      - diffutils
+      - findutils
+      - grep
+      - sed
+      - util-linux
+      - binutils
+      - git
+      - subversion
+      - mercurial
+      - bzr
+    optdepends:
+      - 'pacman-contrib: pacman contrib tools support'
+      - 'artix-rebuild-order: artix rebuild order support'
+      - 'artix-checkupdates: updates checking'
+      - 'graphviz: mkdepgraph graphviz support'
+    backup:
+      - etc/artools/artools-pkg.conf
+  - name: artools-iso
+    pkgdesc: Development tools for Artix (ISO tools)
+    depends:
+      - artools-base
+      - iso-profiles
+      - squashfs-tools
+      - grub
+      - dosfstools
+      - libisoburn
+      - bash
+      - dosfstools
+      - e2fsprogs
+      - libarchive
+      - mtools
+      - grep
+      - sed
+      - go-yq
+    backup:
+      - etc/artools/artools-iso.conf
+# generated with artixpkg 0.36.0-1-any
