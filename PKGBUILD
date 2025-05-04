@@ -16,12 +16,19 @@ source=($pkgname-$pkgver.tar.gz::https://github.com/xelerance/xl2tpd/archive/v$p
 	xl2tpd.conf.client-example
 	xl2tpd.conf.server-example
 	options.l2tpd
-	xl2tpd.tmpfiles)
+	xl2tpd.tmpfiles
+	c23-build.patch::https://patch-diff.githubusercontent.com/raw/xelerance/xl2tpd/pull/269.patch)
 sha256sums=('a4270e00c65f8ef356cab350a0375fbd26a63870eedf0a7d07b2ff1f71b18995'
             '444e84a01d9c379eb5cf25584451ccd06aad48e611c557eb572ba4f220af3ad7'
             '24d5588b0c8194b7763579be75a58c88e72296145d8d223e1549454e18665ba4'
             '8295d3f7522407beafb89d92b53c29ab80d7a5b18a0d3182dd65a18d88a05590'
-            '70ac11e6fe097ad271d878565930aa85dfa75d5cd62d6c35dd580b2ee34e660b')
+            '70ac11e6fe097ad271d878565930aa85dfa75d5cd62d6c35dd580b2ee34e660b'
+            '51fa316dc6ba996f799d948f4c14e31d6d3dc5111091eefdcfca108fa68ed15b')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  patch -Np1 -i ../c23-build.patch
+}
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
