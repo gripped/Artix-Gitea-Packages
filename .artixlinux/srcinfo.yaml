@@ -1,0 +1,47 @@
+---
+version: 2.13.1-1
+pkgbase:
+  name: man-db
+  pkgdesc: A utility for reading man pages
+  pkgver: 2.13.1
+  pkgrel: 1
+  url: https://gitlab.com/man-db/man-db
+  install: man-db.install
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later AND GPL-3.0-or-later
+  makedepends:
+    - po4a
+  depends:
+    - bash
+    - gdbm
+    - zlib
+    - groff
+    - libpipeline
+    - less
+    - libseccomp
+    - glibc
+  optdepends:
+    - gzip
+  provides:
+    - man
+  conflicts:
+    - man
+  replaces:
+    - man
+  backup:
+    - etc/man_db.conf
+  source:
+    - https://download-mirror.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz
+    - https://download-mirror.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz.asc
+    - convert-mans
+  validpgpkeys:
+    - AC0A4FF12611B6FCCF01C111393587D97D86500B
+  sha512sums:
+    - 9b39f512fe940e648ca7f47803f42e473064253b67eb96995d28da30fd322de31a4466bf821e9391e6041af2318a6d2c2d74102b73f4b42a63966b41d2df0578
+    - SKIP
+    - 0b159285da20008f0fc0afb21f1eaebd39e8df5b0594880aa0e8a913b656608b8d16bb8d279d9e62d7aae52f62cb9b2fc49e237c6711f4a5170972b38d345535
+pkgname:
+  - name: man-db
+# generated with artixpkg 0.36.0-1-any
