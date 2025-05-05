@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 2.14.4.0-1
+    version: 2.14.4.0-2
     packages:
-      - skalibs-2.14.4.0-1-x86_64.pkg.tar.zst
+      - skalibs-2.14.4.0-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 2.14.3.0-1
