@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6
-pkgver=2.13.1.0
+pkgver=2.13.2.0
 pkgrel=1
 pkgdesc="skarnet.org's small & secure supervision software suite. Comes with an ultra-fast init replacement, process management tools, an asynchronous locking library, and more."
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('skalibs' 'execline' 'libskarnet.so' 'libexecline.so')
 provides=('libs6.so')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6log.conf")
-sha256sums=('bf0614cf52957cb0af04c7b02d10ebd6c5e023c9d46335cbf75484eed3e2ce7e'
+sha256sums=('c5114b8042716bb70691406931acb0e2796d83b41cbfb5c8068dce7a02f99a45'
             'cb6cc5ca87185ab72aa00857752b6b5436f7653e3d8812dc2704df020c212822')
 
 build() {
@@ -18,8 +18,11 @@ build() {
   ./configure --prefix=/usr \
               --datadir=/etc \
               --libexecdir=/usr/lib \
+              --disable-allstatic \
+              --disable-static \
+              --enable-pkgconfig \
               --enable-shared \
-              --disable-static
+              --with-pkgconfig
   make
 }
 
