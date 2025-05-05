@@ -1,0 +1,31 @@
+---
+version: 2.0.0b2-1
+pkgbase:
+  name: python-puremagic
+  pkgdesc: A Python module that will identify a file based off it's magic numbers
+  pkgver: 2.0.0b2
+  pkgrel: 1
+  url: https://github.com/cdgriffith/puremagic
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-puremagic::git+https://github.com/cdgriffith/puremagic#tag=2.0.0b2
+  sha512sums:
+    - 3f19f07c576fa48b84a960209d3f2b3c3a10ff00c52d266436da34479dde522c50fdc62e9724934987c236d57dac1fe02af54587959bedc66a06aca4f27fd884
+  b2sums:
+    - 5b596847c956532dad2506042905a1c11ff7342802b3295230ed9dfd6d49a0d4536e38a709f6eb686f99878afb40c16c1e4b262690153bc954350c12a62e8add
+pkgname:
+  - name: python-puremagic
+# generated with artixpkg 0.36.0-1-any
