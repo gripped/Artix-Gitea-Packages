@@ -1,0 +1,30 @@
+---
+version: 6.1.1-1
+pkgbase:
+  name: python-pytest-cov
+  pkgdesc: py.test plugin for coverage reporting with support for both centralised and distributed testing, including subprocesses and multiprocessing
+  pkgver: 6.1.1
+  pkgrel: 1
+  url: https://github.com/pytest-dev/pytest-cov
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-virtualenv
+    - python-process-tests
+    - python-pytest-xdist
+    - python-fields
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-coverage
+    - python-pytest
+  source:
+    - git+https://github.com/pytest-dev/pytest-cov.git#tag=v6.1.1
+  sha512sums:
+    - d2d68807abbdaf039ebfae420a6b4d1c0f7c67e5e5076972352f51609e7888f231910221d1725af72529412f920be48cfcfae42a9abb65cb2cec0b56b528ce74
+pkgname:
+  - name: python-pytest-cov
+# generated with artixpkg 0.36.0-1-any
