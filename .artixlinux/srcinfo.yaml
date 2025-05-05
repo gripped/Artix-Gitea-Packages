@@ -1,0 +1,37 @@
+---
+version: 0.20.0-1
+pkgbase:
+  name: python-sphinx-hawkmoth
+  pkgdesc: Sphinx autodoc C extension
+  pkgver: 0.20.0
+  pkgrel: 1
+  url: https://github.com/jnikula/hawkmoth
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-xdist
+    - python-strictyaml
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - clang
+    - python
+    - python-docutils
+    - python-sphinx
+  source:
+    - git+https://github.com/jnikula/hawkmoth?signed#tag=v0.20.0
+  validpgpkeys:
+    - 3FE6F7606966ED87707760B6A14C59DFEDB4CE88
+  b2sums:
+    - d37a9040139dd35b2c030dd023cf9cf4f568f9ac69787225f7d4f00b7dea11822f6b26dfdf1be3693b4a7a40b0b3e761f4a861f46acf58f243734b420bb23abd
+pkgname:
+  - name: python-sphinx-hawkmoth
+# generated with artixpkg 0.36.0-1-any
