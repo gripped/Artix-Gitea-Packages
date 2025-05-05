@@ -1,59 +1,65 @@
 ---
-pkgbase:
-  name: linux-lts
-  version: 6.12.26-1
-  arch:
-    - x86_64
-  pkgname:
-    - linux-lts
-    - linux-lts-headers
-    - linux-lts-docs
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.12.27-1
+    packages:
+      - linux-lts-6.12.27-1-x86_64.pkg.tar.zst
+      - linux-lts-headers-6.12.27-1-x86_64.pkg.tar.zst
+      - linux-lts-docs-6.12.27-1-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 6.12.26-1
     packages:
       - linux-lts-6.12.26-1-x86_64.pkg.tar.zst
       - linux-lts-headers-6.12.26-1-x86_64.pkg.tar.zst
       - linux-lts-docs-6.12.26-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
