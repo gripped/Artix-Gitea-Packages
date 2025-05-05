@@ -1,0 +1,31 @@
+---
+version: 4.11.1-1
+pkgbase:
+  name: python-pytest-django
+  pkgdesc: A Django plugin for py.test
+  pkgver: 4.11.1
+  pkgrel: 1
+  url: https://github.com/pytest-dev/pytest-django
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-django
+    - python-pytest-xdist
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python-pytest
+  source:
+    - git+https://github.com/pytest-dev/pytest-django.git#tag=v4.11.1
+  sha512sums:
+    - 9f0e1300ae1ad09b3c247d2ba89356171134e803640c8d5eab89b35f645803623dac310fe5f93a8e73a23c349b7ddc9b00144c5952b8f752eeb88dc633296b4d
+pkgname:
+  - name: python-pytest-django
+# generated with artixpkg 0.36.0-1-any
