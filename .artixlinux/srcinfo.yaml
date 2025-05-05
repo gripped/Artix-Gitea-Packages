@@ -17,8 +17,10 @@ pkgbase:
     - libexecline.so
   source:
     - https://skarnet.org/software/execline/execline-2.9.7.0.tar.gz
+    - fix-configure.patch
   sha256sums:
     - 73c9160efc994078d8ea5480f9161bfd1b3cf0b61f7faab704ab1898517d0207
+    - 3ac29337324412349b8f036d01ddffa072e9dd0fbdb0409fa8d6b4166b4f39b1
 pkgname:
   - name: execline
 # generated with artixpkg 0.36.0-1-any
