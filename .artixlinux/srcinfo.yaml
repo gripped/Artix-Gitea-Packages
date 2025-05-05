@@ -1,0 +1,28 @@
+---
+version: 2025.2-1
+pkgbase:
+  name: python-pytz
+  pkgdesc: Cross platform time zone library for Python
+  pkgver: 2025.2
+  pkgrel: 1
+  url: https://pypi.python.org/pypi/pytz
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - https://pypi.io/packages/source/p/pytz/pytz-2025.2.tar.gz
+    - 0001-Use-the-system-zoneinfo-from-the-tzdata-package.patch
+  validpgpkeys:
+    - C7ECC365AB6F255E1EB9BA1701FA998FBAC6374A
+  sha512sums:
+    - 1ac84bd8d9a152b71b4de302a472e50619c901ad4c7747ddddbb780d8d3df07e5e18d3c68722eff08f8e8ff625d46133fe12bcf6f5210b69ce589051247cd4b6
+    - 3cbd497313c3049a2ae04298118aefb6dfa9ec4626078c665c95c13a78ae944b33a68813aea0c53b02b0532b64221cca4a0cd2153bd91b3760916bc3c0f6df8f
+pkgname:
+  - name: python-pytz
+# generated with artixpkg 0.36.0-1-any
