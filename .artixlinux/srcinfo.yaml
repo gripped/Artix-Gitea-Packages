@@ -1,0 +1,25 @@
+---
+version: 2.4.1.0-1
+pkgbase:
+  name: s6-dns
+  pkgdesc: A suite of DNS client programs and libraries for UNIX systems
+  pkgver: 2.4.1.0
+  pkgrel: 1
+  url: https://skarnet.org/software/s6-dns/
+  arch:
+    - x86_64
+  license:
+    - ISC
+  depends:
+    - skalibs
+    - libskarnet.so
+  provides:
+    - libs6dns.so
+    - libskadns.so
+  source:
+    - https://skarnet.org/software/s6-dns/s6-dns-2.4.1.0.tar.gz
+  sha256sums:
+    - b6308519f109a67469c4aaafa9df1f009ad0961fa798ffc38f895587e6935729
+pkgname:
+  - name: s6-dns
+# generated with artixpkg 0.36.0-1-any
