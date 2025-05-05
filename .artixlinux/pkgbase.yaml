@@ -1,56 +1,60 @@
 ---
-pkgbase:
-  name: archlinux-mirrorlist
-  version: 20250503-1
-  arch:
-    - any
-  pkgname:
-    - archlinux-mirrorlist
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 20250503-1
     packages:
       - archlinux-mirrorlist-20250503-1-any.pkg.tar.zst
-  galaxy:
-    version: 20250311-1
-    packages:
-      - archlinux-mirrorlist-20250311-1-any.pkg.tar.zst
+    debug: []
 team: galaxy
