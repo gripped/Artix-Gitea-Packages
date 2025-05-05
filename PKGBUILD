@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-utils
-pkgver=2.6.2.1
+pkgver=2.6.3.0
 pkgrel=1
 pkgdesc='Tiny Linux-specific utilities.'
 arch=('x86_64')
@@ -8,13 +8,17 @@ url='https://skarnet.org/software/s6-linux-utils/'
 license=('ISC')
 depends=('skalibs')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('915f167294d36ca9240a62281c7299b5ad5d558b8d45d888761135749d9fd234')
+sha256sums=('7e249c36c73b99ebfc1f9a9a4c318be76b461ebc53d3952de9064ccfab400739')
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
               --datadir=/etc \
               --libexecdir=/usr/lib \
-              --enable-shared
+              --disable-allstatic \
+              --disable-static \
+              --enable-pkgconfig \
+              --enable-shared \
+              --with-pkgconfig
   make
 }
 
