@@ -1,0 +1,40 @@
+---
+version: 1:0.14.3-1
+pkgbase:
+  name: python-cachecontrol
+  pkgdesc: Port of the caching algorithms in httplib2 for use with requests session object
+  pkgver: 0.14.3
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/ionrock/cachecontrol
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-cherrypy
+    - python-pytest
+    - python-redis
+  makedepends:
+    - python-build
+    - python-flit-core
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-filelock
+    - python-msgpack
+    - python-requests
+    - python-urllib3
+  optdepends:
+    - 'python-lockfile: for filecache'
+    - 'python-redis: for redis cache'
+  source:
+    - cachecontrol-0.14.3.tar.gz::https://github.com/ionrock/cachecontrol/archive/refs/tags/v0.14.3.tar.gz
+  sha256sums:
+    - 822e4f1e048f35c9edd19426b4fe8260daf4168732c65c6ff9bc0d8acea24d7b
+  b2sums:
+    - 4536434fee21407ba57cafd376ff2c1fb5dddec7bf45109ea3b7cf7b85a842146144a4e78f553fe2e64437b35d6c32a24fe0967ff5978262af948f7b83f3e5f5
+pkgname:
+  - name: python-cachecontrol
+# generated with artixpkg 0.36.0-1-any
