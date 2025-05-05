@@ -1,0 +1,31 @@
+---
+version: 1.17.0-1
+pkgbase:
+  name: anubis
+  pkgdesc: Reverse proxy to protect against scraper bots
+  pkgver: 1.17.0
+  pkgrel: 1
+  url: https://anubis.techaro.lol/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - brotli
+    - esbuild
+    - git
+    - go
+    - gzip
+    - npm
+    - zstd
+  depends:
+    - glibc
+  backup:
+    - etc/anubis/default.env
+  source:
+    - git+https://github.com/TecharoHQ/anubis#tag=v1.17.0
+  b2sums:
+    - 48bb647163efd14776bc480ad3a6b80b7a949059f25fc020443566fb9eb021c40b3ccba1c0bc6ba68a1f239dfe421f8a98a65006a979bc9a2624299070aa520a
+pkgname:
+  - name: anubis
+# generated with artixpkg 0.36.0-2-any
