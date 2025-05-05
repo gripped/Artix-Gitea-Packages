@@ -1,0 +1,47 @@
+---
+version: 25.3.0-1
+pkgbase:
+  name: python-structlog
+  pkgdesc: Structured Logging for Python
+  pkgver: 25.3.0
+  pkgrel: 1
+  url: https://www.structlog.org
+  arch:
+    - any
+  license:
+    - MIT OR Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-freezegun
+    - python-pretend
+    - python-simplejson
+    - python-twisted
+    - python-rapidjson
+    - python-greenlet
+    - python-pytest-asyncio
+    - python-rich
+    - python-better-exceptions
+  makedepends:
+    - git
+    - openssh
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+    - python-hatch-fancy-pypi-readme
+  depends:
+    - python
+  optdepends:
+    - 'python-greenlet: for greenlet support in structlog.threadlocal (deprecated)'
+    - 'python-twisted: for structlog.twisted'
+    - 'python-rich: for structlog.dev'
+    - 'python-better-exceptions: for structlog.dev'
+  source:
+    - git+https://github.com/hynek/structlog.git#tag=25.3.0
+    - ssh_allowed_signers
+  sha512sums:
+    - 64b0dab6f61df1d97cac63bc1d5e0b18770e8477616a1843f06dd6cd633b8edc09f2616e1f9484b9ce952d400d2e13404ce3aa7332febf1e1d39968190f397ef
+    - 6ccc3793e6128783b745879785264f66961a6d3aeefd4c39746503490fe0c36c92807f3149ed601fdaaf84be244a6b24882a337025a2dd317a96d75b50f1fabd
+pkgname:
+  - name: python-structlog
+# generated with artixpkg 0.36.0-1-any
