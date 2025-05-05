@@ -1,0 +1,35 @@
+---
+version: 8.2-1
+pkgbase:
+  name: python-qrcode
+  pkgdesc: Python library to generate QR codes
+  pkgver: 8.2
+  pkgrel: 1
+  url: https://github.com/lincolnloop/python-qrcode
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-importlib-metadata
+    - python-pillow
+    - python-pypng
+    - python-pytest
+    - python-pytest-mock
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-poetry-core
+  depends:
+    - python
+  optdepends:
+    - 'python-pillow: faster but not python native backend'
+    - 'python-pypng: png support'
+  source:
+    - https://files.pythonhosted.org/packages/source/q/qrcode/qrcode-8.2.tar.gz
+  sha512sums:
+    - 79a783d49872c13fb4ca71cfb9d4892f9d9c1c04035f2afe312ad1bf7c94d00994457749ed1924eb0ca67e3060e89404ffd908563f464137e5e0c78164d8af72
+pkgname:
+  - name: python-qrcode
+# generated with artixpkg 0.36.0-1-any
