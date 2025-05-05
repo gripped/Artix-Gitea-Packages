@@ -1,0 +1,45 @@
+---
+version: 3.3.7-1
+pkgbase:
+  name: python-pylint
+  pkgdesc: Analyzes Python code looking for bugs and signs of poor quality
+  pkgver: 3.3.7
+  pkgrel: 1
+  url: https://pylint.pycqa.org
+  arch:
+    - any
+  license:
+    - GPL-2.0-only
+  checkdepends:
+    - mpdecimal
+    - python-gitpython
+    - python-py
+    - python-pytest
+    - python-pytest-timeout
+    - python-pytest-benchmark
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-myst-parser
+    - python-setuptools
+    - python-sphinx
+    - python-sphinx-reredirects
+  depends:
+    - python
+    - python-astroid
+    - python-colorama
+    - python-dill
+    - python-isort
+    - python-mccabe
+    - python-platformdirs
+    - python-tomlkit
+  optdepends:
+    - 'graphviz: Enable output formats other than dot or vcg'
+  source:
+    - https://github.com/PyCQA/pylint/archive/v3.3.7/pylint-3.3.7.tar.gz
+  sha256sums:
+    - a10501d89b9257720844481b21a16137f7880af793971bdf871f78712f75b5ee
+pkgname:
+  - name: python-pylint
+# generated with artixpkg 0.36.0-1-any
