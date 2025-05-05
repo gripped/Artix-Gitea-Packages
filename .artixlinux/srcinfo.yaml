@@ -1,0 +1,28 @@
+---
+version: 0.21.0-1
+pkgbase:
+  name: python-validators
+  pkgdesc: Python Data Validation for Humans
+  pkgver: 0.21.0
+  pkgrel: 1
+  url: https://github.com/kvesteri/validators
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+  source:
+    - git+https://github.com/kvesteri/validators.git#tag=0.21.0
+  sha512sums:
+    - 267faabc3031d00d43872e00d46337ee2fea1a6160c78f334c28d373fb17e215f7c298efe7196869450e13ef2ae299f9be111827b50f3f2bdc7ec9b12bc36b2d
+pkgname:
+  - name: python-validators
+# generated with artixpkg 0.36.0-1-any
