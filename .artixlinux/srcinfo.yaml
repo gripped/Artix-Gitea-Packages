@@ -1,0 +1,60 @@
+---
+version: 2.03.32-1
+pkgbase:
+  name: lvm2
+  pkgver: 2.03.32
+  pkgrel: 1
+  url: https://sourceware.org/lvm2/
+  arch:
+    - x86_64
+  license:
+    - GPL2
+    - LGPL2.1
+  makedepends:
+    - git
+    - udev
+    - libaio
+    - thin-provisioning-tools
+  source:
+    - git+https://sourceware.org/git/lvm2.git#tag=v2_03_32?signed
+    - 0001-udev-initcpio.patch
+    - 11-dm-initramfs.rules
+  validpgpkeys:
+    - 88437EF5C077BD113D3B7224228191C1567E2C17
+    - D501A478440AE2FD130A1BE8B9112431E509039F
+  sha256sums:
+    - 89302f12db233c2e3cb431a5f4eaf36251947166ce4ab2d2da18ec11b79f27c7
+    - 2b3a16ec05e2bc6678e9ebd5ffa8319ebfde29aa260ce004f79f9b8df57d73c9
+    - e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0
+pkgname:
+  - name: lvm2
+    pkgdesc: Logical Volume Manager 2 utilities
+    depends:
+      - bash
+      - device-mapper>=2.03.32
+      - libudev
+      - libudev.so
+      - util-linux-libs
+      - libblkid.so
+      - readline
+      - libreadline.so
+      - thin-provisioning-tools
+      - libaio
+      - libaio.so
+    conflicts:
+      - lvm
+      - mkinitcpio<38-1
+    backup:
+      - etc/lvm/lvm.conf
+      - etc/lvm/lvmlocal.conf
+  - name: device-mapper
+    pkgdesc: Device mapper userspace library and tools
+    url: http://sourceware.org/dm/
+    depends:
+      - glibc
+      - libudev
+      - libudev.so
+    provides:
+      - libdevmapper.so
+      - libdevmapper-event.so
+# generated with artixpkg 0.36.0-3-any

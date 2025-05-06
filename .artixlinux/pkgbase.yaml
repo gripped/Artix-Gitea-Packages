@@ -1,57 +1,63 @@
 ---
-pkgbase:
-  name: lvm2
-  version: 2.03.31-1
-  arch:
-    - x86_64
-  pkgname:
-    - lvm2
-    - device-mapper
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2.03.32-1
+    packages:
+      - lvm2-2.03.32-1-x86_64.pkg.tar.zst
+      - device-mapper-2.03.32-1-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 2.03.31-1
     packages:
       - lvm2-2.03.31-1-x86_64.pkg.tar.zst
       - device-mapper-2.03.31-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
