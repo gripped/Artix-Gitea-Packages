@@ -1,0 +1,69 @@
+---
+version: 6.4.0-1
+pkgbase:
+  name: rocm-llvm
+  pkgver: 6.4.0
+  pkgrel: 1
+  url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
+  arch:
+    - x86_64
+  makedepends:
+    - git
+    - cmake
+    - python
+    - ninja
+    - rocm-core
+    - rocm-cmake
+    - perl
+    - gcc-libs
+    - zlib
+    - zstd
+    - libffi
+    - libedit
+    - ncurses
+    - libxml2
+    - patchelf
+  options:
+    - staticlibs
+    - '!lto'
+  source:
+    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.0
+    - rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
+  sha256sums:
+    - 16f93fda1aa536eded0b903de5e2fa60d9fb9ec43d5a902e7c07d686c711cb30
+    - 0293c307131426a9c031f215045e2f0725677de0aac6dda1729456ac9a444415
+pkgname:
+  - name: rocm-llvm
+    pkgdesc: Radeon Open Compute - LLVM toolchain (llvm, clang, lld)
+    license:
+      - Apache-2.0 WITH LLVM-exception
+    depends:
+      - rocm-core
+      - perl
+      - gcc-libs
+      - zlib
+      - zstd
+      - libffi
+      - libedit
+      - ncurses
+      - libxml2
+  - name: rocm-device-libs
+    pkgdesc: AMD specific device-side language runtime libraries
+    license:
+      - NCSA
+    depends:
+      - rocm-core
+  - name: comgr
+    pkgdesc: AMDGPU GPU Code Object Manager
+    license:
+      - NCSA
+    depends:
+      - glibc
+      - gcc-libs
+      - zstd
+      - zlib
+      - ncurses
+      - rocm-core
+      - rocm-llvm
+      - rocm-device-libs
+# generated with artixpkg 0.36.0-3-any

@@ -3,14 +3,16 @@
 
 pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-device-libs comgr)
-pkgver=6.3.3
-pkgrel=2
+pkgver=6.4.0
+pkgrel=1
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
              'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
-source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver")
-sha256sums=('c64fd724503b9c10381f350eea38fadb622ea86067839d45cd0efc0058621153')
+source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver"
+        rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch)
+sha256sums=('16f93fda1aa536eded0b903de5e2fa60d9fb9ec43d5a902e7c07d686c711cb30'
+            '0293c307131426a9c031f215045e2f0725677de0aac6dda1729456ac9a444415')
 options=(staticlibs !lto)
 
 prepare() {
@@ -18,6 +20,18 @@ prepare() {
 
   # Fix build with cmake 4.0
   git cherry-pick -n a18cc4c7cb51f94182b6018c7c73acde1b8ebddb
+
+  # Fix build with gcc 15
+  git cherry-pick -n \
+      7e44305041d96b064c197216b931ae3917a34ac1 \
+      8f39502b85d34998752193e85f36c408d3c99248
+
+  # Add fix for build failure in the gold plugin
+  patch -Np1 < ../rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
+
+  # Add fix for missing function overload (openat)
+  # https://github.com/llvm/llvm-project/issues/100754
+  git cherry-pick -n 155b7a12820ec45095988b6aa6e057afaf2bc892
 }
 
 build() {
