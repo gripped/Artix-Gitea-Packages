@@ -1,0 +1,35 @@
+---
+version: 2.2.3-1
+pkgbase:
+  name: sslh
+  pkgdesc: SSL/SSH/OpenVPN/XMPP/tinc port multiplexer
+  pkgver: 2.2.3
+  pkgrel: 1
+  url: https://www.rutschle.net/tech/sslh/README.html
+  install: sslh.install
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  depends:
+    - glibc
+    - libcap
+    - libconfig
+    - pcre2
+    - libev
+    - libbsd
+  backup:
+    - etc/sslh.cfg
+  source:
+    - https://www.rutschle.net/tech/sslh/sslh-v2.2.3.tar.gz
+    - https://www.rutschle.net/tech/sslh/sslh-v2.2.3.tar.gz.asc
+    - sslh.cfg
+  validpgpkeys:
+    - CDDDBADBEA4B72748E007D326C056F7AC7934136
+  sha256sums:
+    - dd7e51c90308ad24654b047bfc29b82578c8e96b872232029ce31517e90b7af7
+    - SKIP
+    - 7db2e873ed4c8770e3c38d7ac3ced94221356a3ceafa9d6c8cdc65dd8f09a18e
+pkgname:
+  - name: sslh
+# generated with artixpkg 0.36.0-3-any

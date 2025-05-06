@@ -3,7 +3,7 @@
 # Contributor: Jason Rodriguez <jason-aur@catloaf.net>
 
 pkgname=sslh
-pkgver=2.1.2
+pkgver=2.2.3
 pkgrel=1
 pkgdesc='SSL/SSH/OpenVPN/XMPP/tinc port multiplexer'
 arch=('x86_64')
@@ -15,7 +15,7 @@ install=$pkgname.install
 source=("https://www.rutschle.net/tech/sslh/$pkgname-v$pkgver.tar.gz"{,.asc}
         'sslh.cfg')
 validpgpkeys=('CDDDBADBEA4B72748E007D326C056F7AC7934136') # Yves Rutschle <yves@rutschle.net>
-sha256sums=('dce8e1a77f48017b5164486084f000d9f20de2d54d293385aec18d606f9c61d9'
+sha256sums=('dd7e51c90308ad24654b047bfc29b82578c8e96b872232029ce31517e90b7af7'
             'SKIP'
             '7db2e873ed4c8770e3c38d7ac3ced94221356a3ceafa9d6c8cdc65dd8f09a18e')
 
