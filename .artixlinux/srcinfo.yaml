@@ -1,0 +1,121 @@
+---
+version: 1.54.1-6
+pkgbase:
+  name: libguestfs
+  pkgdesc: Access and modify virtual machine disk images
+  pkgver: 1.54.1
+  pkgrel: 6
+  url: https://libguestfs.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+  checkdepends:
+    - linux-lts
+    - ruby-test-unit
+    - ruby-minitest
+  makedepends:
+    - bash-completion
+    - cdrtools
+    - cpio
+    - erlang-erl_interface
+    - go
+    - gobject-introspection
+    - gperf
+    - ocaml
+    - ocaml-augeas
+    - ocaml-compiler-libs
+    - ocaml-findlib
+    - perl-module-build
+    - python
+    - java-environment
+    - lua
+    - php
+    - ruby
+    - ruby-rake
+    - ruby-rdoc
+    - rust
+    - vala
+  depends:
+    - augeas
+    - bash
+    - fuse2
+    - gcc-libs
+    - glib2
+    - glibc
+    - hivex
+    - jansson
+    - sleuthkit
+    - libconfig
+    - libtirpc
+    - libvirt
+    - libxml2
+    - ncurses
+    - pcre2
+    - perl-libintl-perl
+    - qemu
+    - readline
+    - supermin
+    - btrfs-progs
+    - debootstrap
+    - dhcpcd
+    - dosfstools
+    - exfatprogs
+    - f2fs-tools
+    - gptfdisk
+    - grub
+    - iproute2
+    - iputils
+    - jfsutils
+    - libldm
+    - lrzip
+    - lsof
+    - lsscsi
+    - lvm2
+    - lzop
+    - mdadm
+    - mtools
+    - multipath-tools
+    - nilfs-utils
+    - ntfs-3g
+    - openssh
+    - pciutils
+    - procps-ng
+    - psmisc
+    - rsync
+    - squashfs-tools
+    - strace
+    - syslinux
+    - vim
+    - xfsprogs
+    - yara
+  optdepends:
+    - 'gobject-introspection: GObject-Introspection Bindings'
+    - 'java-runtime: for Java bindings'
+    - 'ocaml: OCaml Bindings'
+    - 'php: for PHP module'
+    - 'python: Python Bindings'
+    - 'ruby: for Ruby bindings'
+  provides:
+    - libguestfs.so
+    - libguestfs-gobject-1.0.so
+  backup:
+    - etc/libguestfs-tools.conf
+  source:
+    - https://download.libguestfs.org/1.54-stable/libguestfs-1.54.1.tar.gz
+    - https://download.libguestfs.org/1.54-stable/libguestfs-1.54.1.tar.gz.sig
+    - libguestfs-1.48.1-disable_php_tests.patch
+  validpgpkeys:
+    - F7774FB1AD074A7E8C8767EA91738F73E1B768A0
+  sha512sums:
+    - 0113ea1cd26aba9b935b65299cf34d53c3d669508238d642a1a97622eb24948df05b55072d4c715cacb4fdfc7339c69ca25f65ca51ac87c40c5325175e939a0d
+    - SKIP
+    - d59cad07e275f1fa5e82448993db5b3a6dc8cdd1fc97a8839ef0403ad3f1753a5d13df27b184d6c73fa8dda8bd75e63ad68aaad26001986682d5bc7eeb58273a
+  b2sums:
+    - 13fe3a536ec04901a69192ecc9fefe055099d057ba3609bd1ec51b8853e5ad50fd608ef4de7d6296f9bf53a19c1bc81f2ae54c185c18c6e68f7a541f34222f93
+    - SKIP
+    - 2f7c429875d80b2b3a70286f83764ce6ed8be86055232fc059ab55ebf8393f9d29a2241401c7ab55af7ba9180ea85909647fe06ca51880f93bc66b488bcec78c
+pkgname:
+  - name: libguestfs
+# generated with artixpkg 0.36.0-2-any
