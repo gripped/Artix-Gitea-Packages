@@ -1,62 +1,62 @@
 ---
-pkgbase:
-  name: linux
-  version: 6.14.5.artix1-1
-  arch:
-    - x86_64
-  pkgname:
-    - linux
-    - linux-headers
-    - linux-docs
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 6.14.5.artix1-1
     packages:
       - linux-6.14.5.artix1-1-x86_64.pkg.tar.zst
       - linux-headers-6.14.5.artix1-1-x86_64.pkg.tar.zst
       - linux-docs-6.14.5.artix1-1-x86_64.pkg.tar.zst
-  system:
-    version: 6.14.4.artix1-1
-    packages:
-      - linux-6.14.4.artix1-1-x86_64.pkg.tar.zst
-      - linux-headers-6.14.4.artix1-1-x86_64.pkg.tar.zst
-      - linux-docs-6.14.4.artix1-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
