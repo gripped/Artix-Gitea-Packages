@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jakub Klinkovský <lahwaacz at archlinux dot org>
+# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
 
 _name=ucx
 pkgname=openucx
@@ -19,8 +18,7 @@ depends=(
 makedepends=(
   rdma-core
   cuda
-  # would need import, do we want the rocm?
-  # rocm-language-runtime
+  rocm-language-runtime
 )
 optdepends=(
   'rdma-core: for InfiniBand and RDMA support'
@@ -42,7 +40,7 @@ build() {
     --prefix=/usr
     --sysconfdir=/etc
     --with-cuda=/opt/cuda
-   # --with-rocm=/opt/rocm
+    --with-rocm=/opt/rocm
     --with-verbs
     --with-rc
     --with-ud
