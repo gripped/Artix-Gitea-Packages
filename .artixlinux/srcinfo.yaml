@@ -1,0 +1,26 @@
+---
+version: 570.144-4
+pkgbase:
+  name: nvidia
+  pkgdesc: NVIDIA kernel modules
+  pkgver: 570.144
+  pkgrel: 4
+  url: https://www.nvidia.com/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - linux-headers
+    - nvidia-dkms=570.144
+  provides:
+    - NVIDIA-MODULE
+  options:
+    - '!strip'
+pkgname:
+  - name: nvidia
+    depends:
+      - linux
+      - nvidia-utils=570.144
+      - libglvnd
+# generated with artixpkg 0.36.0-3-any
