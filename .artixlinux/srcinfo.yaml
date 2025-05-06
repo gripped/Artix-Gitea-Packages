@@ -1,0 +1,30 @@
+---
+version: 5.2.0-1
+pkgbase:
+  name: python-django-debug-toolbar
+  pkgdesc: A configurable set of panels that display various debug information about the current request/response.
+  pkgver: 5.2.0
+  pkgrel: 1
+  url: https://github.com/jazzband/django-debug-toolbar
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-jinja
+    - python-html5lib
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-hatchling
+  depends:
+    - python-django
+    - python-sqlparse
+  source:
+    - python-django-debug-toolbar-5.2.0.tar.gz::https://github.com/jazzband/django-debug-toolbar/archive/5.2.0.tar.gz
+  sha256sums:
+    - 971f7fbe3a35af6d4d3772dc2f1c7c5f5e1c951a6e645fd29c6f3dcdffbefc19
+pkgname:
+  - name: python-django-debug-toolbar
+# generated with artixpkg 0.36.0-3-any
