@@ -1,0 +1,130 @@
+---
+version: 6.0.1-1
+pkgbase:
+  name: strongswan
+  pkgdesc: Open source IPsec implementation
+  pkgver: 6.0.1
+  pkgrel: 1
+  url: https://www.strongswan.org
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - libnm
+    - ruby
+    - ruby-rdoc
+    - mariadb
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - curl
+    - gmp
+    - iproute2
+    - openssl
+    - sqlite
+    - libcap
+    - pam
+  optdepends:
+    - 'libnm: for networkmanager support'
+    - 'mariadb: MySQL support'
+    - 'ruby: Ruby support'
+    - 'python: Python support'
+    - 'resolvconf: Resolveplugin'
+    - 'openldap: LDAP support'
+  backup:
+    - etc/ipsec.conf
+    - etc/ipsec.secrets
+    - etc/swanctl/swanctl.conf
+    - etc/strongswan.conf
+    - etc/strongswan.d/charon-logging.conf
+    - etc/strongswan.d/charon-nm.conf
+    - etc/strongswan.d/charon-systemd.conf
+    - etc/strongswan.d/charon.conf
+    - etc/strongswan.d/pki.conf
+    - etc/strongswan.d/pool.conf
+    - etc/strongswan.d/starter.conf
+    - etc/strongswan.d/swanctl.conf
+    - etc/strongswan.d/charon/aesni.conf
+    - etc/strongswan.d/charon/agent.conf
+    - etc/strongswan.d/charon/attr-sql.conf
+    - etc/strongswan.d/charon/attr.conf
+    - etc/strongswan.d/charon/bypass-lan.conf
+    - etc/strongswan.d/charon/chapoly.conf
+    - etc/strongswan.d/charon/cmac.conf
+    - etc/strongswan.d/charon/connmark.conf
+    - etc/strongswan.d/charon/constraints.conf
+    - etc/strongswan.d/charon/counters.conf
+    - etc/strongswan.d/charon/curl.conf
+    - etc/strongswan.d/charon/dhcp.conf
+    - etc/strongswan.d/charon/dnscert.conf
+    - etc/strongswan.d/charon/dnskey.conf
+    - etc/strongswan.d/charon/drbg.conf
+    - etc/strongswan.d/charon/eap-aka-3gpp2.conf
+    - etc/strongswan.d/charon/eap-aka.conf
+    - etc/strongswan.d/charon/eap-dynamic.conf
+    - etc/strongswan.d/charon/eap-gtc.conf
+    - etc/strongswan.d/charon/eap-identity.conf
+    - etc/strongswan.d/charon/eap-md5.conf
+    - etc/strongswan.d/charon/eap-mschapv2.conf
+    - etc/strongswan.d/charon/eap-peap.conf
+    - etc/strongswan.d/charon/eap-radius.conf
+    - etc/strongswan.d/charon/eap-sim-file.conf
+    - etc/strongswan.d/charon/eap-sim.conf
+    - etc/strongswan.d/charon/eap-simaka-pseudonym.conf
+    - etc/strongswan.d/charon/eap-simaka-reauth.conf
+    - etc/strongswan.d/charon/eap-tls.conf
+    - etc/strongswan.d/charon/eap-ttls.conf
+    - etc/strongswan.d/charon/ext-auth.conf
+    - etc/strongswan.d/charon/farp.conf
+    - etc/strongswan.d/charon/fips-prf.conf
+    - etc/strongswan.d/charon/forecast.conf
+    - etc/strongswan.d/charon/gmp.conf
+    - etc/strongswan.d/charon/ha.conf
+    - etc/strongswan.d/charon/kdf.conf
+    - etc/strongswan.d/charon/kernel-netlink.conf
+    - etc/strongswan.d/charon/ldap.conf
+    - etc/strongswan.d/charon/mgf1.conf
+    - etc/strongswan.d/charon/ml.conf
+    - etc/strongswan.d/charon/mysql.conf
+    - etc/strongswan.d/charon/nonce.conf
+    - etc/strongswan.d/charon/openssl.conf
+    - etc/strongswan.d/charon/pem.conf
+    - etc/strongswan.d/charon/pgp.conf
+    - etc/strongswan.d/charon/pkcs1.conf
+    - etc/strongswan.d/charon/pkcs11.conf
+    - etc/strongswan.d/charon/pkcs7.conf
+    - etc/strongswan.d/charon/pkcs8.conf
+    - etc/strongswan.d/charon/pubkey.conf
+    - etc/strongswan.d/charon/radattr.conf
+    - etc/strongswan.d/charon/random.conf
+    - etc/strongswan.d/charon/resolve.conf
+    - etc/strongswan.d/charon/revocation.conf
+    - etc/strongswan.d/charon/sha3.conf
+    - etc/strongswan.d/charon/socket-default.conf
+    - etc/strongswan.d/charon/sql.conf
+    - etc/strongswan.d/charon/sqlite.conf
+    - etc/strongswan.d/charon/sshkey.conf
+    - etc/strongswan.d/charon/stroke.conf
+    - etc/strongswan.d/charon/unity.conf
+    - etc/strongswan.d/charon/updown.conf
+    - etc/strongswan.d/charon/vici.conf
+    - etc/strongswan.d/charon/x509.conf
+    - etc/strongswan.d/charon/xauth-eap.conf
+    - etc/strongswan.d/charon/xauth-generic.conf
+    - etc/strongswan.d/charon/xauth-noauth.conf
+    - etc/strongswan.d/charon/xauth-pam.conf
+    - etc/strongswan.d/charon/xcbc.conf
+  source:
+    - https://download.strongswan.org/strongswan-6.0.1.tar.bz2
+    - https://download.strongswan.org/strongswan-6.0.1.tar.bz2.sig
+  validpgpkeys:
+    - 948F158A4E76A27BF3D07532DF42C170B34DBA77
+  sha512sums:
+    - 86aa89242fd5a5569c3e8b73ea9a2b613be1d1674a4384f05ec7e74669cec2ed0b82c0900f797dd374b4c5a165385a4723dc674b84b28498a835a4c8d42a2eff
+    - SKIP
+pkgname:
+  - name: strongswan
+# generated with artixpkg 0.36.0-3-any
