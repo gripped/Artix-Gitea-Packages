@@ -1,0 +1,34 @@
+---
+version: 2025.2-2
+pkgbase:
+  name: shaderc
+  pkgdesc: Collection of tools, libraries and tests for shader compilation
+  pkgver: 2025.2
+  pkgrel: 2
+  url: https://github.com/google/shaderc
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - asciidoctor
+    - cmake
+    - ninja
+    - python
+    - spirv-headers
+  depends:
+    - glibc
+    - gcc-libs
+    - glslang
+    - spirv-tools
+  provides:
+    - libshaderc_shared.so
+  source:
+    - https://github.com/google/shaderc/archive/v2025.2/shaderc-2025.2.tar.gz
+  sha512sums:
+    - 6761372591075944fddd926e9f7c2ea9447496566d2d549f523c6c529c3bd753d459b66d499f76d955bdcfb335016daddbeba49b087f4ecabf37d76a46ac14cd
+  b2sums:
+    - 85ed096488921d042aa1fce18e0c38abe7de54d681b7ab1d5bd1fd0c179ab1e492c703c3b92f7f03a27378fec903384fcb41d6ac740a09770afd02616504ead2
+pkgname:
+  - name: shaderc
+# generated with artixpkg 0.36.0-2-any
