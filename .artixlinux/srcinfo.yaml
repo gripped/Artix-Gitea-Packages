@@ -1,0 +1,222 @@
+---
+version: 2:7.1.1-2
+pkgbase:
+  name: ffmpeg
+  pkgdesc: Complete solution to record, convert and stream audio and video
+  pkgver: 7.1.1
+  pkgrel: 2
+  epoch: 2
+  url: https://ffmpeg.org
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - amf-headers
+    - avisynthplus
+    - clang
+    - ffnvcodec-headers
+    - frei0r-plugins
+    - git
+    - ladspa
+    - mesa
+    - nasm
+    - opencl-headers
+    - vulkan-headers
+  depends:
+    - alsa-lib
+    - aom
+    - bzip2
+    - cairo
+    - dav1d
+    - fontconfig
+    - freetype2
+    - fribidi
+    - glib2
+    - glibc
+    - glslang
+    - gmp
+    - gnutls
+    - gsm
+    - harfbuzz
+    - jack
+    - lame
+    - libass
+    - libavc1394
+    - libbluray
+    - libbs2b
+    - libdrm
+    - libdvdnav
+    - libdvdread
+    - libgl
+    - libiec61883
+    - libjxl
+    - libmodplug
+    - libopenmpt
+    - libplacebo
+    - libpulse
+    - libraw1394
+    - librsvg
+    - libsoxr
+    - libssh
+    - libtheora
+    - libva
+    - libvdpau
+    - libvorbis
+    - libvpx
+    - libwebp
+    - libx11
+    - libxcb
+    - libxext
+    - libxml2
+    - libxv
+    - ocl-icd
+    - onevpl
+    - opencore-amr
+    - openjpeg2
+    - opus
+    - rav1e
+    - rubberband
+    - sdl2
+    - snappy
+    - speex
+    - srt
+    - svt-av1
+    - v4l-utils
+    - vapoursynth
+    - vid.stab
+    - vmaf
+    - vulkan-icd-loader
+    - x264
+    - x265
+    - xvidcore
+    - xz
+    - zeromq
+    - zimg
+    - zlib
+  optdepends:
+    - 'avisynthplus: AviSynthPlus support'
+    - 'frei0r-plugins: Frei0r video effects support'
+    - 'intel-media-sdk: Intel QuickSync support (legacy)'
+    - 'ladspa: LADSPA filters'
+    - 'nvidia-utils: Nvidia NVDEC/NVENC support'
+    - 'onevpl-intel-gpu: Intel QuickSync support'
+  provides:
+    - libavcodec.so
+    - libavdevice.so
+    - libavfilter.so
+    - libavformat.so
+    - libavutil.so
+    - libpostproc.so
+    - libswresample.so
+    - libswscale.so
+  options:
+    - debug
+  source:
+    - git+https://git.ffmpeg.org/ffmpeg.git?signed#tag=a1328e68877e12ab5a6e5d92a84aefa566783ea5
+    - 0001-Add-av_stream_get_first_dts-for-Chromium.patch
+    - 0002-avcodec-libsvtav1-unbreak-build-with-latest-svtav1.patch
+  validpgpkeys:
+    - DD1EC9E8DE085C629B3E1846B18E8928B3948D64
+  b2sums:
+    - c7b1a56593f123de8e18b3b93c81dca4aff439f5701935cc1fe6316543e8c3256acd7f95b4a533eb7ba30e346fa13bf0ad5bff54b7822c088ef3939882416a7c
+    - e5f7b79f7731be9ee5a7280a9221fb531ac5a2d9820fc5870b68b0eabea667dfbe8f39f41c1e1763a4c84982896afaa54c81ff57847d203b70afafd726689e5d
+    - a32aeff68032a78d661011654bbdba138002833f7d17d23bba6f95479ca22bef5697eb9e7e4cb9e0b5140fc23eab3aab16fc60962d62809c3c02f890599a8332
+pkgname:
+  - name: ffmpeg
+    depends:
+      - alsa-lib
+      - aom
+      - bzip2
+      - cairo
+      - dav1d
+      - fontconfig
+      - freetype2
+      - fribidi
+      - glib2
+      - glibc
+      - glslang
+      - gmp
+      - gnutls
+      - gsm
+      - harfbuzz
+      - jack
+      - lame
+      - libass
+      - libavc1394
+      - libbluray
+      - libbs2b
+      - libdrm
+      - libdvdnav
+      - libdvdread
+      - libgl
+      - libiec61883
+      - libjxl
+      - libmodplug
+      - libopenmpt
+      - libplacebo
+      - libpulse
+      - libraw1394
+      - librsvg
+      - libsoxr
+      - libssh
+      - libtheora
+      - libva
+      - libvdpau
+      - libvorbis
+      - libvpx
+      - libwebp
+      - libx11
+      - libxcb
+      - libxext
+      - libxml2
+      - libxv
+      - ocl-icd
+      - onevpl
+      - opencore-amr
+      - openjpeg2
+      - opus
+      - rav1e
+      - rubberband
+      - sdl2
+      - snappy
+      - speex
+      - srt
+      - svt-av1
+      - v4l-utils
+      - vapoursynth
+      - vid.stab
+      - vmaf
+      - vulkan-icd-loader
+      - x264
+      - x265
+      - xvidcore
+      - xz
+      - zeromq
+      - zimg
+      - zlib
+      - libass.so
+      - libbluray.so
+      - libbs2b.so
+      - libdav1d.so
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjxl.so
+      - libopenmpt.so
+      - libplacebo.so
+      - librav1e.so
+      - librsvg-2.so
+      - librubberband.so
+      - libva.so
+      - libva-drm.so
+      - libva-x11.so
+      - libvidstab.so
+      - libvorbisenc.so
+      - libvorbis.so
+      - libvpx.so
+      - libx264.so
+      - libx265.so
+      - libxvidcore.so
+      - libzimg.so
+      - libzmq.so
+# generated with artixpkg 0.36.0-2-any
