@@ -1,0 +1,43 @@
+---
+version: 1.29.6-1
+pkgbase:
+  name: syncthing
+  pkgdesc: Open Source Continuous Replication / Cluster Synchronization Thing
+  pkgver: 1.29.6
+  pkgrel: 1
+  url: https://syncthing.net/
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0
+  makedepends:
+    - git
+    - go
+  depends:
+    - glibc
+  source:
+    - https://github.com/syncthing/syncthing/releases/download/v1.29.6/syncthing-source-v1.29.6.tar.gz
+    - https://github.com/syncthing/syncthing/releases/download/v1.29.6/syncthing-source-v1.29.6.tar.gz.asc
+    - syncthing-discosrv.sysusers
+    - syncthing-relaysrv.sysusers
+    - syncthing-discosrv.tmpfiles
+    - syncthing-relaysrv.tmpfiles
+    - gcc-pie-segfaults-race.patch
+  validpgpkeys:
+    - 37C84554E7E0A261E4F76E1ED26E6ED000654A3E
+  sha256sums:
+    - 28e7f4984a6a34fb4697448141ce2611a6510f5a4369c1669d4e766eb75cd878
+    - SKIP
+    - f6e704dd7b10127b1642c889a29e95468daa75d895493b235ce1ed5e97155b70
+    - 6ab96a5949e223d315d49663734ad27b70c72469c691a61ac198cb7794cb5eaa
+    - a05a66efbbd13f20b5c3af56692fe219fadc967dba4eedb71494827795d2c140
+    - f899998985f2d374af57f17ef6362c37a305467858195b74d1c1def71d97273f
+    - 6a58227c09a18fc7049ec38351a0fd98195688d15821d67d5af4facda401cbba
+pkgname:
+  - name: syncthing
+    install: syncthing.install
+  - name: syncthing-discosrv
+    pkgdesc: Discovery server for Syncthing
+  - name: syncthing-relaysrv
+    pkgdesc: Relay server for Syncthing
+# generated with artixpkg 0.36.0-3-any
