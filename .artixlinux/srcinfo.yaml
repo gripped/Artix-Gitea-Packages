@@ -1,0 +1,30 @@
+---
+version: 0.1.6-1
+pkgbase:
+  name: python-sphinx-reredirects
+  pkgdesc: Handles redirects for moved pages in Sphinx documentation projects
+  pkgver: 0.1.6
+  pkgrel: 1
+  url: https://github.com/documatt/sphinx-reredirects
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-defusedxml
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-sphinx
+  source:
+    - https://github.com/documatt/sphinx-reredirects/archive/v0.1.6/sphinx-reredirects-0.1.6.tar.gz
+  sha256sums:
+    - d1f9cafbf38b2f1aea7c6c172f9dfeda6f50b47d7084d1188f018c24916674c4
+pkgname:
+  - name: python-sphinx-reredirects
+# generated with artixpkg 0.36.0-3-any

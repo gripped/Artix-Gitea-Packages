@@ -1,55 +1,61 @@
 ---
-pkgbase:
-  name: python-sphinx-reredirects
-  version: 0.1.5-2
-  arch:
-    - any
-  pkgname:
-    - python-sphinx-reredirects
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.1.6-1
+    packages:
+      - python-sphinx-reredirects-0.1.6-1-any.pkg.tar.zst
+    debug: []
   world:
     version: 0.1.5-2
     packages:
       - python-sphinx-reredirects-0.1.5-2-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
