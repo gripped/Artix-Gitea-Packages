@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,9 +30,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.17.1-3
-    packages:
-      - anubis-1.17.1-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
