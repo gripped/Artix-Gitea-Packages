@@ -1,0 +1,50 @@
+---
+version: 1:0.2.20-3
+pkgbase:
+  name: toxcore
+  pkgdesc: Secure, configuration-free, P2P Skype replacement backend
+  pkgver: 0.2.20
+  pkgrel: 3
+  epoch: 1
+  url: https://tox.chat
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cmake
+    - gtest
+  depends:
+    - glibc
+    - libconfig
+    - libsodium
+    - libvpx
+    - opus
+  provides:
+    - tox
+  conflicts:
+    - tox
+  backup:
+    - etc/tox-bootstrapd.conf
+  source:
+    - https://github.com/TokTok/c-toxcore/releases/download/v0.2.20/c-toxcore-0.2.20.tar.gz
+    - https://github.com/TokTok/c-toxcore/releases/download/v0.2.20/c-toxcore-0.2.20.tar.gz.asc
+    - toxcore.sysusers
+    - toxcore.tmpfiles
+  validpgpkeys:
+    - 15D3B9A6B3951DF9854FCA93E786548AE0A0B56B
+    - B7008FF12C079BF6E6EA19D1601A604B7E605776
+    - DA262CC93C0E1E525AD21C8596775D454B8EBF44
+    - BA7883E22F9D35945BA3376053137C3033F09008
+    - 1157616BBD860C539926F8139591A163FF9BE04C
+    - 31039166FA902CA50D05D6085AF9F2E29107C727
+    - C7A2552D0B250F983827742C133203A3AC399151
+    - 2880C860D95C909D3DA45C687E086DD661263264
+  sha512sums:
+    - 84497bd8d542d8ccb4d77d9210852a0e73a0f2c4885b8282c39263042555495c37196b5f2ddf37f393bcc2b84d839bba3506da2c68440e4d5329d086b2ebefb6
+    - SKIP
+    - 06d5f7b26e2e10edeb96dfd961b400eacad12df4cd227d0fccc0b1436cc37e9141d712a37eae9ead370c49126758546941f43208d377b7ecdd57f53ee20170a3
+    - f1534f5f46d0b8e2f21b2bce802f48a8bd45ba6beca34112d44e27b6033352867cd9d25f1c3c35c59faf6e6d727793f3d552d0d9b724c9d09cb83075ca196743
+pkgname:
+  - name: toxcore
+# generated with artixpkg 0.36.0-3-any
