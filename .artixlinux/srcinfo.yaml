@@ -1,0 +1,40 @@
+---
+version: 6.4.0-1
+pkgbase:
+  name: hsa-rocr
+  pkgdesc: HSA Runtime API and runtime for ROCm
+  pkgver: 6.4.0
+  pkgrel: 1
+  url: https://github.com/ROCm/ROCR-Runtime
+  arch:
+    - x86_64
+  license:
+    - NCSA
+  makedepends:
+    - cmake
+    - rocm-llvm
+    - xxd
+  depends:
+    - rocm-core
+    - glibc
+    - gcc-libs
+    - numactl
+    - pciutils
+    - libelf
+    - libdrm
+    - rocm-device-libs
+  provides:
+    - hsakmt-roct=6.4.0
+  replaces:
+    - hsakmt-roct
+  options:
+    - '!lto'
+  source:
+    - hsa-rocr-6.4.0.tar.gz::https://github.com/ROCm/ROCR-Runtime/archive/rocm-6.4.0.tar.gz
+    - hsa-rocr-6.4-fix-missing-include.patch
+  sha256sums:
+    - ff740e8c8f2229c6dc47577363f707b1a44ea4254f8ad74f8f0a669998829535
+    - 6b7c62245fd9021ade8046e6a769e48c8c1868131dbac19531befc5f2a4c25b5
+pkgname:
+  - name: hsa-rocr
+# generated with artixpkg 0.36.0-3-any
