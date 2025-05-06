@@ -1,0 +1,51 @@
+---
+version: 1.28.2-1
+pkgbase:
+  name: rustup
+  pkgdesc: The Rust toolchain installer
+  pkgver: 1.28.2
+  pkgrel: 1
+  url: https://github.com/rust-lang/rustup.rs
+  install: post.install
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - Apache-2.0
+  makedepends:
+    - cargo
+  depends:
+    - curl
+    - xz
+    - zstd
+  optdepends:
+    - 'lldb: rust-lldb script'
+    - 'gdb: rust-gdb script'
+  provides:
+    - rust
+    - cargo
+    - rust-nightly
+    - cargo-nightly
+    - rustfmt
+    - rust-src
+    - lib32-rust-libs
+    - rust-musl
+    - rust-wasm
+    - rust-analyzer
+  conflicts:
+    - rust
+    - cargo
+    - rustfmt
+  replaces:
+    - cargo-tree
+  options:
+    - '!lto'
+  source:
+    - rustup-1.28.2.tar.gz::https://github.com/rust-lang/rustup.rs/archive/1.28.2.tar.gz
+    - rustup-profile.sh
+  sha512sums:
+    - dc85f4551e9d3d9d105e4a5c8a7544b6944c82ca4db167a6993e1e0cea498221471b891cefc15e7f634a8528678bb8438dbddadb80a8afe19fbc69bb74817049
+    - 18d5b4ab9a032cb43fd0b59fb553a878068981534e549935c5ff4a12dc2f74849ce36367eb59e670d674a19a7d4bc0056d0694d7f87ede187416c2ffcbb20355
+pkgname:
+  - name: rustup
+# generated with artixpkg 0.36.0-3-any
