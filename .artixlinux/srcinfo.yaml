@@ -1,0 +1,30 @@
+---
+version: 1.15.11-1
+pkgbase:
+  name: go-ethereum
+  pkgdesc: Official Go implementation of the Ethereum protocol
+  pkgver: 1.15.11
+  pkgrel: 1
+  url: https://geth.ethereum.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - go
+  depends:
+    - glibc
+  provides:
+    - geth
+  conflicts:
+    - geth
+  replaces:
+    - geth
+  source:
+    - git+https://github.com/ethereum/go-ethereum.git#tag=v1.15.11
+  sha256sums:
+    - 8ec16452878d76c7e3c87aa46ddb95dfc34b023aa20ab211b58be2868d653072
+pkgname:
+  - name: go-ethereum
+# generated with artixpkg 0.36.0-3-any
