@@ -1,0 +1,125 @@
+---
+version: 17:4.4.3-1
+pkgbase:
+  name: blender
+  pkgdesc: A fully integrated 3D graphics creation suite
+  pkgver: 4.4.3
+  pkgrel: 1
+  epoch: 17
+  url: https://www.blender.org
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - LGPL-2.1-or-later
+    - MIT
+    - MPL-2.0
+    - Zlib
+  makedepends:
+    - boost
+    - cmake
+    - cuda
+    - git
+    - git-lfs
+    - hip-runtime-amd
+    - hiprt
+    - intel-oneapi-compiler-shared-runtime
+    - intel-oneapi-dpcpp-cpp
+    - intel-compute-runtime
+    - level-zero-headers
+    - libdecor
+    - mold
+    - llvm
+    - mesa
+    - ninja
+    - subversion
+    - wayland-protocols
+    - vulkan-headers
+  depends:
+    - alembic
+    - bash
+    - boost-libs
+    - draco
+    - embree
+    - expat
+    - ffmpeg
+    - fftw
+    - freetype2
+    - gcc-libs
+    - glew
+    - glibc
+    - gmp
+    - hicolor-icon-theme
+    - imath
+    - intel-oneapi-compiler-dpcpp-cpp-runtime-libs
+    - intel-oneapi-compiler-shared-runtime-libs
+    - jack
+    - jemalloc
+    - level-zero-loader
+    - libepoxy
+    - libharu
+    - libjpeg-turbo
+    - libpng
+    - libsndfile
+    - libspnav
+    - libtiff
+    - libwebp
+    - libx11
+    - libxfixes
+    - libxi
+    - libxkbcommon
+    - libxml2
+    - libxrender
+    - libxxf86vm
+    - llvm-libs
+    - materialx
+    - onetbb
+    - openal
+    - opencolorio
+    - openexr
+    - openimagedenoise
+    - openimageio
+    - openjpeg2
+    - openpgl
+    - openshadinglanguage
+    - opensubdiv
+    - openvdb
+    - openxr
+    - potrace
+    - pugixml
+    - pystring
+    - python
+    - python-numpy
+    - python-requests
+    - sdl2
+    - shared-mime-info
+    - usd
+    - xdg-utils
+    - yaml-cpp
+    - zlib
+    - zstd
+  optdepends:
+    - 'cuda: Cycles renderer CUDA support'
+    - 'intel-compute-runtime: Cycles renderer Intel OneAPI support'
+    - 'hip-runtime-amd: Cycles renderer AMD ROCm support'
+    - 'hiprt: Ray tracing AMD ROCm support'
+    - 'libdecor: wayland support'
+  options:
+    - '!lto'
+  source:
+    - git+https://projects.blender.org/blender/blender.git#tag=v4.4.3
+    - git+https://projects.blender.org/blender/blender-assets#tag=v4.4.3
+    - https://developer.download.nvidia.com/redist/optix/v8.0/OptiX-8.0-Include.zip
+    - hiprt-lib-path.patch
+  sha512sums:
+    - e24f3ab3b02a3d1b89f0db55ba51fda4e9108a51971692fde52bf371714dd3f79f8878cbc6df159b09b074068377941e2da79b4e049c2b39144ae7731cb2c137
+    - 43cc5f388581698a68ad611222fcf48445441fc58685259beacb4e6de62c86db6adb7d255f1781bbb1cacf3eade4a6745ddcc519dfed3f776bddcbe1e3ee82d9
+    - 5502d9df847de12badc702c0444bd4f1f7620460b2235026df2c3133da1e04c148af0f1fc7f345e9a0c009c32f905f66c8d427743445e8864d3a797cdce6a483
+    - 52dd6c4496af38505761e559adee556176aa2ad023f073618af77f6c9bc5e3a8faa59c8f259dc92302f7e650740afd2060951129408f1939d29c0901e8ccccae
+pkgname:
+  - name: blender
+# generated with artixpkg 0.36.0-2-any

@@ -1,56 +1,60 @@
 ---
 team: galaxy
-pkgbase:
-  name: blender
-  version: 17:4.4.3-1
-  arch:
-    - x86_64
-  pkgname:
-    - blender
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 17:4.4.3-1
     packages:
       - blender-17:4.4.3-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: 17:4.4.1-2
-    packages:
-      - blender-17:4.4.1-2-x86_64.pkg.tar.zst
+    debug: []
