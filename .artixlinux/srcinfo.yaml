@@ -1,0 +1,30 @@
+---
+version: 0.0.18-1
+pkgbase:
+  name: python-pytest-examples
+  pkgdesc: Pytest plugin for testing examples in docstrings and markdown files
+  pkgver: 0.0.18
+  pkgrel: 1
+  url: https://github.com/pydantic/pytest-examples
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-black
+    - python-pytest
+    - python-ruff
+  source:
+    - pytest-examples-0.0.18.tar.gz::https://github.com/pydantic/pytest-examples/archive/refs/tags/v0.0.18.tar.gz
+  sha512sums:
+    - 2fa893ca977418df252a4c3d705054dbecc84b3cbcc90135aa29d6a3c77adfceb1452ad8fc43cf3def69ad2f5e333f678ae83acf2635c8e335ad812a5f852cc0
+  b2sums:
+    - 6a4c4c436e8bf7148debd7cce5869710ba34f209fb152e4222a2ccddffd9d816ff14f5282dfd1f2b7bafe374cb294da75e563f8a285ceeccca702e71815e6db9
+pkgname:
+  - name: python-pytest-examples
+# generated with artixpkg 0.36.0-3-any
