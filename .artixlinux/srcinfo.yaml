@@ -1,0 +1,83 @@
+---
+version: 3.16.4-1
+pkgbase:
+  name: gamescope
+  pkgdesc: SteamOS session compositing window manager
+  pkgver: 3.16.4
+  pkgrel: 1
+  url: https://github.com/ValveSoftware/gamescope
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - LicenseRef-Reshade
+  makedepends:
+    - benchmark
+    - cmake
+    - git
+    - glslang
+    - meson
+    - ninja
+    - vulkan-headers
+    - wayland-protocols
+  depends:
+    - gcc-libs
+    - glibc
+    - lcms2
+    - libavif
+    - libcap.so
+    - libdecor
+    - libdrm
+    - libei
+    - libinput
+    - libpipewire-0.3.so
+    - libx11
+    - libxcb
+    - libxcomposite
+    - libxcursor
+    - libxdamage
+    - libxext
+    - libxfixes
+    - libxi
+    - libxkbcommon.so
+    - libxmu
+    - libxrender
+    - libxres
+    - libxtst
+    - libxxf86vm
+    - luajit
+    - pixman
+    - sdl2
+    - seatd
+    - libudev
+    - vulkan-icd-loader
+    - wayland
+    - xcb-util-errors
+    - xcb-util-wm
+    - xorg-server-xwayland
+  source:
+    - git+https://github.com/ValveSoftware/gamescope.git#commit=3.16.4
+    - git+https://gitlab.freedesktop.org/emersion/libdisplay-info.git
+    - git+https://gitlab.freedesktop.org/emersion/libliftoff.git
+    - git+https://github.com/ValveSoftware/openvr.git
+    - git+https://github.com/Joshua-Ashton/reshade.git
+    - git+https://github.com/KhronosGroup/SPIRV-Headers.git
+    - git+https://github.com/Joshua-Ashton/vkroots.git
+    - git+https://github.com/Joshua-Ashton/wlroots.git
+    - https://github.com/ValveSoftware/openvr/pull/1890.patch
+    - https://github.com/ValveSoftware/gamescope/commit/6a99868.patch
+  b2sums:
+    - e773a84decd8664f7f641a9cf43d75eefbe4d653d8b31dfbb136f73007e09799213597947a70454a6983d615a06813039fa455943b954c1e11a4da843e811b1a
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - ca715d31473649b6e342d75f44c8cf22cb4c303d546718085a18f00afa2e32532f478261c8c150bd0799005b6742a993575c1914575f5da39ae551315f8cac31
+    - 9d667f65de94a75c7367bce03407faaefd0fbd4ecf670296e0ea3fae81f2152f5440c3e0c8e1be7890523d1f60c4b7ec2c624565616b7482505830378f428231
+pkgname:
+  - name: gamescope
+# generated with artixpkg 0.36.0-2-any
