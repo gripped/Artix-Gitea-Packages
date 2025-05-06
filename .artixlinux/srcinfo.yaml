@@ -1,0 +1,189 @@
+---
+version: 8.4.7-1
+pkgbase:
+  name: php
+  pkgver: 8.4.7
+  pkgrel: 1
+  url: https://www.php.net/
+  arch:
+    - x86_64
+  license:
+    - PHP-3.01
+  checkdepends:
+    - procps-ng
+  makedepends:
+    - apache
+    - enchant
+    - gd
+    - gmp
+    - icu
+    - libsodium
+    - libxslt
+    - libzip
+    - net-snmp
+    - argon2
+    - postgresql-libs
+    - sqlite
+    - tidy
+    - unixodbc
+    - curl
+    - libtool
+    - postfix
+    - freetds
+    - pcre2
+    - oniguruma
+    - argon2
+  options:
+    - '!lto'
+  source:
+    - https://php.net/distributions/php-8.4.7.tar.xz
+    - https://php.net/distributions/php-8.4.7.tar.xz.asc
+    - apache.patch
+    - apache.conf
+    - php-fpm.patch
+    - php-fpm.tmpfiles
+    - php.ini.patch
+  validpgpkeys:
+    - AFD8691FDAEDF03BDF6E460563F15A9B715376CA
+    - 9D7F99A0CB8F05C8A6958D6256A97AF7600A39A6
+    - 0616E93D95AF471243E26761770426E17EBBB3DD
+  sha256sums:
+    - e29f4c23be2816ed005aa3f06bbb8eae0f22cc133863862e893515fc841e65e3
+    - SKIP
+    - 74d33ad3e9fa2f0aaf6ceeddd59ec78d35e66673db74b1053cc3e6105478ba8a
+    - 4a2add00d93fa991ccdf6356090264c1059c79935642afff6e8d4a2107fa037e
+    - 78b8074461cdfc5d4e0ba428a8387f308d60720c8ad35c6176801e5088f02090
+    - 640dba0d960bfeaae9ad38d2826d3f6b5d6c175a4d3e16664eefff29141faad5
+    - 52a045005f8b241b54f447c22b5d573f3e994481cfc21c2fc111c4a38df55430
+pkgname:
+  - name: php
+    pkgdesc: A general-purpose scripting language that is especially suited to web development
+    depends:
+      - libxml2
+      - curl
+      - libzip
+      - pcre2
+      - argon2
+      - oniguruma
+    provides:
+      - php-interpreter=8.4
+      - php-intl=8.4.7
+    conflicts:
+      - php-intl
+    replaces:
+      - php-intl
+    backup:
+      - etc/php/php.ini
+  - name: php-cgi
+    pkgdesc: CGI and FCGI SAPI for PHP
+    depends:
+      - php
+    provides:
+      - php-cgi-interpreter=8.4
+  - name: php-apache
+    pkgdesc: Apache SAPI for PHP
+    depends:
+      - php
+      - apache
+    provides:
+      - php-apache-interpreter=8.4
+    backup:
+      - etc/httpd/conf/extra/php_module.conf
+  - name: php-fpm
+    pkgdesc: FastCGI Process Manager for PHP
+    depends:
+      - php
+    provides:
+      - php-fpm-interpreter=8.4
+    options:
+      - '!emptydirs'
+    backup:
+      - etc/php/php-fpm.conf
+      - etc/php/php-fpm.d/www.conf
+  - name: php-embed
+    pkgdesc: Embedded PHP SAPI library
+    depends:
+      - php
+    provides:
+      - php-embed-interpreter=8.4
+    options:
+      - '!emptydirs'
+  - name: php-phpdbg
+    pkgdesc: Interactive PHP debugger
+    depends:
+      - php
+    provides:
+      - php-phpdbg-interpreter=8.4
+    options:
+      - '!emptydirs'
+  - name: php-dblib
+    pkgdesc: dblib module for PHP
+    depends:
+      - php
+      - freetds
+    provides:
+      - php-dblib-interpreter=8.4
+  - name: php-enchant
+    pkgdesc: enchant module for PHP
+    depends:
+      - php
+      - enchant
+    provides:
+      - php-enchant-interpreter=8.4
+  - name: php-gd
+    pkgdesc: gd module for PHP
+    depends:
+      - php
+      - gd
+    provides:
+      - php-gd-interpreter=8.4
+  - name: php-sodium
+    pkgdesc: sodium module for PHP
+    depends:
+      - php
+      - libsodium
+    provides:
+      - php-sodium-interpreter=8.4
+  - name: php-odbc
+    pkgdesc: ODBC modules for PHP
+    depends:
+      - php
+      - unixodbc
+    provides:
+      - php-odbc-interpreter=8.4
+  - name: php-pgsql
+    pkgdesc: PostgreSQL modules for PHP
+    depends:
+      - php
+      - postgresql-libs
+    provides:
+      - php-pgsql-interpreter=8.4
+  - name: php-snmp
+    pkgdesc: snmp module for PHP
+    depends:
+      - php
+      - net-snmp
+    provides:
+      - php-snmp-interpreter=8.4
+  - name: php-sqlite
+    pkgdesc: sqlite module for PHP
+    depends:
+      - php
+      - sqlite
+    provides:
+      - php-sqlite-interpreter=8.4
+  - name: php-tidy
+    pkgdesc: tidy module for PHP
+    depends:
+      - php
+      - tidy
+    provides:
+      - php-tidy-interpreter=8.4
+  - name: php-xsl
+    pkgdesc: xsl module for PHP
+    depends:
+      - php
+      - libxslt
+    provides:
+      - php-xsl-interpreter=8.4
+# generated with artixpkg 0.36.0-3-any
