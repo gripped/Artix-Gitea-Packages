@@ -1,7 +1,7 @@
 ---
 pkgbase:
   name: libvirt
-  version: 1:11.2.0-2
+  version: 1:11.3.0-1
   arch:
     - x86_64
   pkgname:
@@ -10,11 +10,11 @@ pkgbase:
     - libvirt-storage-iscsi-direct
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,11 +33,11 @@ repos:
     version: null
     packages: []
   world:
-    version: 1:11.2.0-2
+    version: 1:11.3.0-1
     packages:
-      - libvirt-1:11.2.0-2-x86_64.pkg.tar.zst
-      - libvirt-storage-gluster-1:11.2.0-2-x86_64.pkg.tar.zst
-      - libvirt-storage-iscsi-direct-1:11.2.0-2-x86_64.pkg.tar.zst
+      - libvirt-1:11.3.0-1-x86_64.pkg.tar.zst
+      - libvirt-storage-gluster-1:11.3.0-1-x86_64.pkg.tar.zst
+      - libvirt-storage-iscsi-direct-1:11.3.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
