@@ -4,7 +4,7 @@
 
 pkgname=glslang
 pkgver=1.4.313.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="OpenGL and OpenGL ES shader front end and validator"
 url="https://github.com/KhronosGroup/glslang"
