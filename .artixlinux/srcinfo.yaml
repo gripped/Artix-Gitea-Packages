@@ -1,0 +1,32 @@
+---
+version: 44.0-3
+pkgbase:
+  name: hitori
+  pkgdesc: GTK application to generate and let you play games of Hitori
+  pkgver: 44.0
+  pkgrel: 3
+  url: https://wiki.gnome.org/Apps/Hitori
+  arch:
+    - x86_64
+  groups:
+    - gnome-extra
+  license:
+    - GPL
+  makedepends:
+    - appstream-glib
+    - git
+    - meson
+    - yelp-tools
+  depends:
+    - gtk3
+  source:
+    - git+https://gitlab.gnome.org/GNOME/hitori.git?signed#tag=44.0
+    - hitori-dbus-activatable.patch
+  validpgpkeys:
+    - 923B7025EE03C1C59F42684CF0942E894B2EAFA0
+  sha256sums:
+    - 0ee9c2bb31698e3e974705d96943a178843881017e4c91d8b7f3bd1a864618ad
+    - 8695a3358c15b905423be0461783a7690a075f0ae132a1b1793652eee9160969
+pkgname:
+  - name: hitori
+# generated with artixpkg 0.36.0-2-any
