@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 0.24.1-2
+    version: 0.25-1
     packages:
-      - gettext-0.24.1-2-x86_64.pkg.tar.zst
+      - gettext-0.25-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 0.24.1-1
