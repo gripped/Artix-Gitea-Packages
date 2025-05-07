@@ -1,0 +1,33 @@
+---
+version: 2.2.1-1
+pkgbase:
+  name: qterminal
+  pkgdesc: A lightweight Qt-based terminal emulator
+  pkgver: 2.2.1
+  pkgrel: 1
+  url: https://github.com/lxqt/qterminal
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - GPL-2.0-or-later
+    - BSD-3-Clause
+  makedepends:
+    - git
+    - cmake
+    - lxqt-build-tools
+  depends:
+    - hicolor-icon-theme
+    - qtermwidget
+    - libcanberra
+    - layer-shell-qt
+  source:
+    - git+https://github.com/lxqt/qterminal.git?signed#tag=2.2.1
+  validpgpkeys:
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 557f260fff85dd277ef340199f6db262bbe1af8e81c7d385ca056e76e71aea1b
+pkgname:
+  - name: qterminal
+# generated with artixpkg 0.36.0-1-any
