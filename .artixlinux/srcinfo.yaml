@@ -1,0 +1,63 @@
+---
+version: 2.4.6-1
+pkgbase:
+  name: lib32-fluidsynth
+  pkgdesc: A real-time software synthesizer based on the SoundFont 2 specifications
+  pkgver: 2.4.6
+  pkgrel: 1
+  url: https://www.fluidsynth.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - lib32-alsa-lib
+    - lib32-glib2
+    - lib32-jack
+    - lib32-ladspa
+    - lib32-libinstpatch
+    - lib32-libpipewire
+    - lib32-libsndfile
+    - lib32-portaudio
+  depends:
+    - fluidsynth=2.4.6
+    - lib32-dbus
+    - lib32-gcc-libs
+    - lib32-glibc
+    - lib32-libpulse
+    - lib32-readline
+    - lib32-sdl3
+  source:
+    - fluidsynth-2.4.6.tar.gz::https://github.com/fluidsynth/fluidsynth/archive/v2.4.6.tar.gz
+  sha512sums:
+    - 2d5424d80234742be45f1c7cdf696182c96b684232bb92b079edf270d726c5d1292c5fc42c8b580ae1a89642ad7b536245977928bbeecedd94443f6e1f47d5fd
+  b2sums:
+    - cddc60ddd97a7403d264a81712b7b71869a49a0927839491897f368dd77484bdb55e07433f95f42b4cd18f57ea111681cd0f5a36f1e77047b34f37bcd7d146bc
+pkgname:
+  - name: lib32-fluidsynth
+    depends:
+      - fluidsynth=2.4.6
+      - lib32-dbus
+      - lib32-gcc-libs
+      - lib32-glibc
+      - lib32-libpulse
+      - lib32-readline
+      - lib32-sdl3
+      - lib32-alsa-lib
+      - libasound.so
+      - lib32-glib2
+      - libglib-2.0.so
+      - libgmodule-2.0.so
+      - libgobject-2.0.so
+      - lib32-jack
+      - libjack.so
+      - lib32-libinstpatch
+      - libinstpatch-1.0.so
+      - lib32-libpipewire
+      - libpipewire-0.3.so
+      - lib32-libsndfile
+      - libsndfile.so
+      - lib32-portaudio
+      - libportaudio.so
+# generated with artixpkg 0.36.0-3-any
