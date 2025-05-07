@@ -1,0 +1,38 @@
+---
+version: 1.4.313.0-1
+pkgbase:
+  name: vulkan-validation-layers
+  pkgdesc: Vulkan Validation Layers
+  pkgver: 1.4.313.0
+  pkgrel: 1
+  url: https://www.vulkan.org/
+  arch:
+    - x86_64
+  groups:
+    - vulkan-devel
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+    - git
+    - libxrandr
+    - ninja
+    - python-lxml
+    - spirv-headers
+    - vulkan-headers
+    - vulkan-icd-loader
+    - vulkan-utility-libraries
+    - wayland
+  depends:
+    - gcc-libs
+    - glibc
+    - spirv-tools
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/KhronosGroup/Vulkan-ValidationLayers#tag=vulkan-sdk-1.4.313.0
+  b2sums:
+    - c549cb272c91ef6b83bea5672e411be03efbda29d55e5aceeac5389f2453ef9b3ae0694bbeb3c50f1d29fd9cafc8dd3599f03652cda72010f8bd84a14fc4faa0
+pkgname:
+  - name: vulkan-validation-layers
+# generated with artixpkg 0.36.0-3-any
