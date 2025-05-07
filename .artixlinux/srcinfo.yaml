@@ -1,0 +1,67 @@
+---
+version: 6.4.0-1
+pkgbase:
+  name: hip-runtime
+  pkgver: 6.4.0
+  pkgrel: 1
+  url: https://rocm.docs.amd.com/projects/HIP/en/latest/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - cmake
+    - python
+    - python-cppheaderparser
+    - rocm-core
+    - bash
+    - perl
+    - glibc
+    - gcc-libs
+    - numactl
+    - mesa
+    - comgr
+    - rocminfo
+    - rocm-llvm
+    - libelf
+    - rocprofiler-register
+    - cuda
+  source:
+    - hip-runtime::git+https://github.com/ROCm/HIP#tag=rocm-6.4.0
+    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.0
+    - hip-runtime-clr::git+https://github.com/ROCm/clr#tag=rocm-6.4.0
+    - hip-runtime-hipother::git+https://github.com/ROcm/hipother#tag=rocm-6.4.0
+  sha256sums:
+    - 2044f7736ea777e258c2956c89a65bea62102eb1db94edd9e0414d44a93e3c93
+    - 16f93fda1aa536eded0b903de5e2fa60d9fb9ec43d5a902e7c07d686c711cb30
+    - b23d1485533028ea7689d76ccb8a7b17b30765a04883e0330af22bc8a8e1acf9
+    - 09f332aa964079647a9407406305f6159937c72c0bc2b675f841ba0ab1b63c43
+pkgname:
+  - name: hip-runtime-amd
+    pkgdesc: Heterogeneous Interface for Portability (AMD runtime)
+    depends:
+      - rocm-core
+      - bash
+      - perl
+      - glibc
+      - gcc-libs
+      - numactl
+      - mesa
+      - comgr
+      - rocminfo
+      - rocm-llvm
+      - libelf
+      - rocprofiler-register
+    optdepends:
+      - 'inetutils: Print hostname in hipconfig'
+      - 'cuda: Cross compile for nvidia'
+    provides:
+      - hip=6.4.0
+    replaces:
+      - hip
+  - name: hip-runtime-nvidia
+    pkgdesc: Heterogeneous Interface for Portability (Nvidia runtime)
+    depends:
+      - cuda
+# generated with artixpkg 0.36.0-2-any
