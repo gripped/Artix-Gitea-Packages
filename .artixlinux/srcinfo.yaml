@@ -1,0 +1,31 @@
+---
+version: 1.4.313.0-1
+pkgbase:
+  name: lib32-vulkan-utility-libraries
+  pkgdesc: Vulkan Utility Libraries (32-bit)
+  pkgver: 1.4.313.0
+  pkgrel: 1
+  url: https://www.vulkan.org/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+    - python
+    - vulkan-headers
+  depends:
+    - lib32-glibc
+    - lib32-vulkan-icd-loader
+    - vulkan-utility-libraries
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/KhronosGroup/Vulkan-Utility-Libraries#tag=vulkan-sdk-1.4.313.0
+  b2sums:
+    - b32579e37837b2b61e68f79b0b584bf8437489a3b6aa4820728d44c8f11b5ae169ee855ba4fe1ae5a5e206a6265c43eb6af724870bec56cca2477a3e1dda4d22
+pkgname:
+  - name: lib32-vulkan-utility-libraries
+# generated with artixpkg 0.36.0-3-any
