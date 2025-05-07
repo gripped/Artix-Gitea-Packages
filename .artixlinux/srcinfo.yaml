@@ -1,0 +1,46 @@
+---
+version: 3.2.0-1
+pkgbase:
+  name: dkms
+  pkgdesc: Dynamic Kernel Modules System
+  pkgver: 3.2.0
+  pkgrel: 1
+  url: https://github.com/dell/dkms
+  install: dkms.install
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+  depends:
+    - bash
+    - coreutils
+    - gawk
+    - gcc
+    - kmod
+    - make
+    - patch
+    - sed
+  optdepends:
+    - 'linux-headers: build modules against the Arch kernel'
+    - 'linux-lts-headers: build modules against the LTS kernel'
+    - 'linux-zen-headers: build modules against the ZEN kernel'
+    - 'linux-hardened-headers: build modules against the HARDENED kernel'
+  backup:
+    - etc/dkms/framework.conf
+  source:
+    - git+https://github.com/dell/dkms.git#tag=v3.2.0
+    - hook.install
+    - hook.remove
+    - hook.upgrade
+    - hook.sh
+  sha256sums:
+    - b2db919399c6c88b9e9f8460f2900c2e4e29ca45bd6515ec081e7c1e6d4130ad
+    - da2dd53bdb427c3ffbe793fd05f898d8a0545e6dbd346c85fad1717b0f838c62
+    - 497422e72b2f10a71caae40c44a07b215425d393acb365700e38944e09f9a554
+    - cc04280e8eb095f4950f5e3c6b2997fbc8d5862d79c5ae29d5943b8ac204d0d4
+    - c1b4a4e2e4e0e0e59ee0887403e79d60b209f3878dbbec6612573f13b90cce01
+pkgname:
+  - name: dkms
+# generated with artixpkg 0.36.1-1-any
