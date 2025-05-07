@@ -2,7 +2,7 @@
 
 pkgname=gettext
 pkgver=0.24.1
-pkgrel=1
+pkgrel=2
 pkgdesc="GNU internationalization library"
 url="https://www.gnu.org/software/gettext/"
 arch=(x86_64)
@@ -26,7 +26,7 @@ makedepends=(
   emacs
 )
 optdepends=('git: for autopoint infrastructure updates'
-            'appstream-glib: for appstream support')
+            'appstream: for appstream support')
 options=(!docs)
 source=(
   https://ftp.gnu.org/pub/gnu/gettext/$pkgname-$pkgver.tar.gz{,.sig}

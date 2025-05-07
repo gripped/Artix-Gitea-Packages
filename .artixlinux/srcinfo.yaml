@@ -1,10 +1,10 @@
 ---
-version: 0.24.1-1
+version: 0.24.1-2
 pkgbase:
   name: gettext
   pkgdesc: GNU internationalization library
   pkgver: 0.24.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/gettext/
   arch:
     - x86_64
@@ -26,7 +26,7 @@ pkgbase:
     - sh
   optdepends:
     - 'git: for autopoint infrastructure updates'
-    - 'appstream-glib: for appstream support'
+    - 'appstream: for appstream support'
   options:
     - '!docs'
   source:
@@ -42,4 +42,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: gettext
-# generated with artixpkg 0.36.0-2-any
+# generated with artixpkg 0.36.0-3-any
