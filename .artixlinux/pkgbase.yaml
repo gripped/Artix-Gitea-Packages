@@ -1,30 +1,26 @@
 ---
-pkgbase:
-  name: sqlite
-  version: 3.49.1-1
-  arch:
-    - x86_64
-  pkgname:
-    - sqlite
-    - sqlite-tcl
-    - sqlite-analyzer
-    - lemon
-    - sqlite-doc
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.49.2-1
+    packages:
+      - sqlite-3.49.2-1-x86_64.pkg.tar.zst
+      - sqlite-tcl-3.49.2-1-x86_64.pkg.tar.zst
+      - sqlite-analyzer-3.49.2-1-x86_64.pkg.tar.zst
+      - lemon-3.49.2-1-x86_64.pkg.tar.zst
+      - sqlite-doc-3.49.2-1-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 3.49.1-1
     packages:
@@ -33,31 +29,41 @@ repos:
       - sqlite-analyzer-3.49.1-1-x86_64.pkg.tar.zst
       - lemon-3.49.1-1-x86_64.pkg.tar.zst
       - sqlite-doc-3.49.1-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
