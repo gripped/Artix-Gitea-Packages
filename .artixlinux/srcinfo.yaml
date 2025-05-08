@@ -1,0 +1,60 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: xdg-desktop-portal-kde
+  pkgdesc: A backend implementation for xdg-desktop-portal using Qt/KF5
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - plasma-wayland-protocols
+    - wayland-protocols
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - kglobalaccel
+    - kiconthemes
+    - ki18n
+    - kio
+    - kio-fuse
+    - kirigami
+    - kitemviews
+    - knotifications
+    - kpipewire
+    - kservice
+    - kstatusnotifieritem
+    - kwayland
+    - kwindowsystem
+    - libxkbcommon
+    - plasma-workspace
+    - qt6-base
+    - qt6-declarative
+    - qt6-wayland
+    - wayland
+    - xdg-desktop-portal
+  provides:
+    - xdg-desktop-portal-impl
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/xdg-desktop-portal-kde-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/xdg-desktop-portal-kde-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 0c2bdc572a6f40ee45d1bda090ed742551b0ca348c469ba1470f8745395a6cf8
+    - SKIP
+pkgname:
+  - name: xdg-desktop-portal-kde
+# generated with artixpkg 0.36.1-1-any
