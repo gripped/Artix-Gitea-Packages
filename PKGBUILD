@@ -4,15 +4,17 @@
 pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-device-libs comgr)
 pkgver=6.4.0
-pkgrel=1
+pkgrel=3
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
              'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
 source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver"
-        rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch)
+        rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
+        rocm-llvm-6.4-fix-array-assert.patch)
 sha256sums=('16f93fda1aa536eded0b903de5e2fa60d9fb9ec43d5a902e7c07d686c711cb30'
-            '0293c307131426a9c031f215045e2f0725677de0aac6dda1729456ac9a444415')
+            '0293c307131426a9c031f215045e2f0725677de0aac6dda1729456ac9a444415'
+            '6485a06e4f3b85df76110548f428217f86e785ec3dec7b0de0a7a2cf6384f0c0')
 options=(staticlibs !lto)
 
 prepare() {
@@ -28,6 +30,9 @@ prepare() {
 
   # Add fix for build failure in the gold plugin
   patch -Np1 < ../rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
+
+  # Apply fix for gcc15
+  patch -Np1 < ../rocm-llvm-6.4-fix-array-assert.patch
 
   # Add fix for missing function overload (openat)
   # https://github.com/llvm/llvm-project/issues/100754
@@ -53,8 +58,13 @@ build() {
         -D LLVM_ENABLE_PROJECTS='clang;lld;clang-tools-extra'
         -D CLANG_ENABLE_AMDCLANG=ON
         -D LLVM_ENABLE_RUNTIMES='compiler-rt;libunwind;libcxx;libcxxabi'
+        -D LIBCXX_ENABLE_SHARED=OFF
         -D LIBCXX_ENABLE_STATIC=ON
+        -D LIBCXX_INSTALL_LIBRARY=OFF
+        -D LIBCXX_INSTALL_HEADERS=OFF
+        -D LIBCXXABI_ENABLE_SHARED=OFF
         -D LIBCXXABI_ENABLE_STATIC=ON
+        -D LIBCXXABI_INSTALL_STATIC_LIBRARY=OFF
         -D LLVM_TARGETS_TO_BUILD='AMDGPU;NVPTX;X86'
         -D CLANG_DEFAULT_LINKER=lld
         -D CLANG_DEFAULT_RTLIB=compiler-rt
