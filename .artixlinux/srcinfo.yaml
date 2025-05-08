@@ -1,0 +1,36 @@
+---
+version: 0.8.4-1
+pkgbase:
+  name: labwc
+  pkgdesc: wlroots-based window-stacking compositor for wayland
+  pkgver: 0.8.4
+  pkgrel: 1
+  url: https://github.com/labwc/labwc
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - meson
+    - cmake
+    - scdoc
+    - wayland-protocols
+  depends:
+    - libpng
+    - librsvg
+    - pango
+    - seatd
+    - ttf-font
+    - wlroots=0.18.2
+    - wayland
+    - xorg-xwayland
+    - libsfdo
+  provides:
+    - wayland-compositor
+  source:
+    - https://github.com/labwc/labwc/archive/refs/tags/0.8.4.tar.gz
+  sha256sums:
+    - 2d3ded90f78efb5060f7057ea802c78a79dc9b2e82ae7a2ad902af957b8b9797
+pkgname:
+  - name: labwc
+# generated with artixpkg 0.36.0-1-any
