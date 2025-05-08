@@ -1,0 +1,104 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: kwin
+  pkgdesc: An easy to use, but flexible, composited Window Manager
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  install: kwin.install
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+    - krunner
+    - plasma-wayland-protocols
+    - python
+    - wayland-protocols
+    - xorg-xwayland
+  depends:
+    - breeze
+    - gcc-libs
+    - glibc
+    - plasma-activities
+    - kauth
+    - kcmutils
+    - kcolorscheme
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - kdeclarative
+    - kdecoration
+    - kglobalaccel
+    - kglobalacceld
+    - kguiaddons
+    - ki18n
+    - kidletime
+    - kirigami
+    - kitemmodels
+    - knewstuff
+    - knotifications
+    - kpackage
+    - kquickcharts
+    - kscreenlocker
+    - kservice
+    - ksvg
+    - kwayland
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - lcms2
+    - libcanberra
+    - libdisplay-info
+    - libdrm
+    - libei
+    - libepoxy
+    - libinput
+    - libpipewire
+    - libqaccessibilityclient-qt6
+    - libx11
+    - libxcb
+    - libxcvt
+    - libxi
+    - libxkbcommon
+    - libxkbcommon-x11
+    - mesa
+    - pipewire-session-manager
+    - libplasma
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-multimedia
+    - qt6-sensors
+    - qt6-svg
+    - qt6-tools
+    - qt6-wayland
+    - libelogind
+    - wayland
+    - xcb-util-cursor
+    - xcb-util-keysyms
+    - xcb-util-wm
+  optdepends:
+    - 'maliit-keyboard: virtual keyboard for kwin-wayland'
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/kwin-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/kwin-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - d71cdacbab35f8139e799fe0013248f68e802ba516411b446d5d66c30bd7e5ec
+    - SKIP
+pkgname:
+  - name: kwin
+# generated with artixpkg 0.36.1-1-any
