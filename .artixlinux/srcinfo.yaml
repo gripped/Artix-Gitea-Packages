@@ -1,0 +1,72 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: kscreenlocker
+  pkgdesc: Library and components for secure lock screen architecture
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kcmutils
+    - kdoctools
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - kdeclarative
+    - kglobalaccel
+    - ki18n
+    - kidletime
+    - kio
+    - kirigami
+    - knotifications
+    - kpackage
+    - ksvg
+    - kwindowsystem
+    - kxmlgui
+    - layer-shell-qt
+    - libkscreen
+    - libx11
+    - libxcb
+    - libxi
+    - pam
+    - libplasma
+    - qt6-base
+    - qt6-declarative
+    - wayland
+    - xcb-util-keysyms
+  optdepends:
+    - 'kcmutils: configuration module'
+  backup:
+    - etc/pam.d/kde
+    - etc/pam.d/kde-fingerprint
+    - etc/pam.d/kde-smartcard
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/kscreenlocker-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/kscreenlocker-6.3.5.tar.xz.sig
+    - kde.pam
+    - kde-fingerprint.pam
+    - kde-smartcard.pam
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 796ef34e91f97dbeb19002b0ff4400eb732dac91d5184a399bf9e5bde236a8f6
+    - SKIP
+    - adba7bb7c27eb3a572e5e9d3cea0dbeebe59d3634472d1863d14fe892cb13b2b
+    - 32734b4e1ec8b7f7e32b6cb2d68285c5c4f15f53736bba085096e76095181241
+    - 5d9c31cbf66e8e455b9559c929f184efd598f714743d5a1e6ce20adb44dc4b2d
+pkgname:
+  - name: kscreenlocker
+# generated with artixpkg 0.36.1-1-any
