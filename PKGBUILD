@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-vault
-pkgver=6.3.4
+pkgver=6.3.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Plasma applet and services for creating encrypted vaults'
@@ -31,19 +31,13 @@ optdepends=('cryfs: to use cryFS for encryption'
             'encfs: to use encFS for encryption'
             'gocryptfs: to use gocryptfs for encryption')
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
-        0003-qdebug-include.patch::https://github.com/KDE/plasma-vault/commit/a982e58679caa583ceb4cc883d1c1923dab54db9.patch)
-sha256sums=('de77af74e09c9539edcf6308ee45e028309905bea08e24f5ff985977e9f86c62'
-            'SKIP'
-            '3a0b55f3191dfcd1a3ae5fe13a363bac3a72db09b39140bc5f8e8fe78aa31435')
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('a6cc8eae781671f62d465dc9ec453604409a24a5c9a91ca2bd029122b7d01e73'
+            'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
-
-prepare() {
-    patch -d $pkgname-$pkgver -Np1 -i ../0003-qdebug-include.patch
-}
 
 build() {
   cmake -B build  -S $pkgname-$pkgver \
