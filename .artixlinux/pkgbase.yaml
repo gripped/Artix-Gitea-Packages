@@ -1,113 +1,34 @@
 ---
-pkgbase:
-  name: qemu
-  version: 10.0.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - qemu-common
-    - qemu-audio-alsa
-    - qemu-audio-dbus
-    - qemu-audio-jack
-    - qemu-audio-oss
-    - qemu-audio-pa
-    - qemu-audio-pipewire
-    - qemu-audio-sdl
-    - qemu-audio-spice
-    - qemu-block-curl
-    - qemu-block-dmg
-    - qemu-block-gluster
-    - qemu-block-iscsi
-    - qemu-block-nfs
-    - qemu-block-ssh
-    - qemu-chardev-baum
-    - qemu-chardev-spice
-    - qemu-docs
-    - qemu-guest-agent
-    - qemu-hw-display-qxl
-    - qemu-hw-display-virtio-gpu
-    - qemu-hw-display-virtio-gpu-gl
-    - qemu-hw-display-virtio-gpu-pci
-    - qemu-hw-display-virtio-gpu-pci-gl
-    - qemu-hw-display-virtio-vga
-    - qemu-hw-display-virtio-vga-gl
-    - qemu-hw-s390x-virtio-gpu-ccw
-    - qemu-hw-uefi-vars
-    - qemu-hw-usb-host
-    - qemu-hw-usb-redirect
-    - qemu-hw-usb-smartcard
-    - qemu-img
-    - qemu-pr-helper
-    - qemu-system-aarch64
-    - qemu-system-alpha
-    - qemu-system-arm
-    - qemu-system-avr
-    - qemu-system-hppa
-    - qemu-system-loongarch64
-    - qemu-system-m68k
-    - qemu-system-microblaze
-    - qemu-system-mips
-    - qemu-system-or1k
-    - qemu-system-ppc
-    - qemu-system-riscv
-    - qemu-system-rx
-    - qemu-system-s390x
-    - qemu-system-sh4
-    - qemu-system-sparc
-    - qemu-system-tricore
-    - qemu-system-x86
-    - qemu-system-xtensa
-    - qemu-system-alpha-firmware
-    - qemu-system-arm-firmware
-    - qemu-system-hppa-firmware
-    - qemu-system-microblaze-firmware
-    - qemu-system-ppc-firmware
-    - qemu-system-riscv-firmware
-    - qemu-system-s390x-firmware
-    - qemu-system-sparc-firmware
-    - qemu-system-x86-firmware
-    - qemu-tests
-    - qemu-tools
-    - qemu-ui-curses
-    - qemu-ui-dbus
-    - qemu-ui-egl-headless
-    - qemu-ui-gtk
-    - qemu-ui-opengl
-    - qemu-ui-sdl
-    - qemu-ui-spice-app
-    - qemu-ui-spice-core
-    - qemu-user
-    - qemu-user-binfmt
-    - qemu-user-static
-    - qemu-user-static-binfmt
-    - qemu-vhost-user-gpu
-    - qemu-vmsr-helper
-    - qemu-base
-    - qemu-desktop
-    - qemu-emulators-full
-    - qemu-full
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 10.0.0-1
     packages:
       - qemu-common-10.0.0-1-x86_64.pkg.tar.zst
@@ -191,105 +112,29 @@ repos:
       - qemu-desktop-10.0.0-1-x86_64.pkg.tar.zst
       - qemu-emulators-full-10.0.0-1-x86_64.pkg.tar.zst
       - qemu-full-10.0.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 9.2.3-1
-    packages:
-      - qemu-common-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-alsa-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-dbus-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-jack-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-oss-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-pa-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-pipewire-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-sdl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-audio-spice-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-block-curl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-block-dmg-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-block-gluster-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-block-iscsi-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-block-nfs-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-block-ssh-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-chardev-baum-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-chardev-spice-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-docs-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-guest-agent-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-qxl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-virtio-gpu-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-virtio-gpu-gl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-virtio-gpu-pci-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-virtio-gpu-pci-gl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-virtio-vga-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-display-virtio-vga-gl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-s390x-virtio-gpu-ccw-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-usb-host-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-usb-redirect-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-hw-usb-smartcard-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-img-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-pr-helper-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-aarch64-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-alpha-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-arm-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-avr-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-hppa-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-loongarch64-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-m68k-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-microblaze-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-mips-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-or1k-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-ppc-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-riscv-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-rx-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-s390x-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-sh4-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-sparc-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-tricore-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-x86-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-xtensa-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-alpha-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-arm-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-hppa-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-microblaze-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-ppc-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-riscv-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-s390x-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-sparc-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-system-x86-firmware-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-tests-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-tools-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-curses-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-dbus-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-egl-headless-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-gtk-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-opengl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-sdl-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-spice-app-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-ui-spice-core-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-user-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-user-binfmt-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-user-static-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-user-static-binfmt-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-vhost-user-gpu-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-vmsr-helper-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-base-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-desktop-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-emulators-full-9.2.3-1-x86_64.pkg.tar.zst
-      - qemu-full-9.2.3-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
