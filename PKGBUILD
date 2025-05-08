@@ -3,7 +3,7 @@
 pkgname=waterfox
 _pkgname=Waterfox
 pkgver=6.5.7
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -88,6 +88,7 @@ prepare() {
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
 ac_add_options --enable-rust-simd
+export MOZ_APP_REMOTINGNAME=${pkgname}
 export RUSTC_OPT_LEVEL=2
 export MOZILLA_OFFICIAL=1
 export RUSTFLAGS="$RUSTFLAGS -Ctarget-cpu=x86-64"
