@@ -1,0 +1,56 @@
+---
+version: 1.9.2-1
+pkgbase:
+  name: libxkbcommon
+  pkgdesc: Keymap handling library for toolkits and window systems
+  pkgver: 1.9.2
+  pkgrel: 1
+  url: https://xkbcommon.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - libgl
+    - xorg-server-xvfb
+  makedepends:
+    - bash-completion
+    - doxygen
+    - git
+    - glibc
+    - graphviz
+    - libxcb
+    - libxml2
+    - meson
+    - wayland
+    - wayland-protocols
+    - xkeyboard-config
+    - xorgproto
+  source:
+    - git+https://github.com/xkbcommon/libxkbcommon#tag=xkbcommon-1.9.2
+  b2sums:
+    - ccbd310122d3eafbaca76bb8d37894aa9f2d738fa31e13a06def71c525980b7ddfa591cbb89da3419b3be03202afbe42c9862e6204a002f90a71aff1d921516f
+pkgname:
+  - name: libxkbcommon
+    depends:
+      - glibc
+      - libxml2
+      - xkeyboard-config
+    optdepends:
+      - 'libxkbcommon-x11: xkbcli interactive-x11'
+      - 'wayland: xkbcli interactive-wayland'
+    provides:
+      - libxkbcommon.so
+      - libxkbregistry.so
+  - name: libxkbcommon-x11
+    pkgdesc: Keyboard handling library using XKB data for X11 XCB clients
+    depends:
+      - glibc
+      - libxcb
+      - libxkbcommon
+      - libxkbcommon.so
+    provides:
+      - libxkbcommon-x11.so
+  - name: libxkbcommon-doc
+    pkgdesc: API documentation for libxkbcommon
+# generated with artixpkg 0.36.1-1-any
