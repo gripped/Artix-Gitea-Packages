@@ -1,0 +1,29 @@
+---
+version: 3.4.2-1
+pkgbase:
+  name: python-charset-normalizer
+  pkgdesc: Encoding and language detection alternative to chardet
+  pkgver: 3.4.2
+  pkgrel: 1
+  url: https://github.com/Ousret/charset_normalizer
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/Ousret/charset_normalizer.git#tag=3.4.2
+  b2sums:
+    - 804b5baaf248c96aff13a856875ff3b97f5e8f390bfecd58ea44d80bb7fd3e4d11664f16efe2752ded00ddf58b01c24501d70849fbebdb2330251cfbf73bf7b0
+pkgname:
+  - name: python-charset-normalizer
+# generated with artixpkg 0.36.0-3-any
