@@ -1,0 +1,54 @@
+---
+version: 1:80.3.1-1
+pkgbase:
+  name: python-setuptools
+  pkgdesc: Easily download, build, install, upgrade, and uninstall Python packages
+  pkgver: 80.3.1
+  pkgrel: 1
+  epoch: 1
+  url: https://pypi.org/project/setuptools/
+  arch:
+    - any
+  groups:
+    - python-build-backend
+  license:
+    - MIT
+  checkdepends:
+    - python-build
+    - python-ini2toml
+    - python-jaraco.envs
+    - python-jaraco.path
+    - python-jaraco.test
+    - python-path
+    - python-pip
+    - python-pytest-home
+    - python-pytest-subprocess
+    - python-pytest-timeout
+    - python-tests
+    - python-tomli-w
+    - python-wheel
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python
+    - python-jaraco.collections
+    - python-jaraco.functools
+    - python-jaraco.text
+    - python-more-itertools
+    - python-packaging
+    - python-platformdirs
+    - python-wheel
+  provides:
+    - python-distribute
+  replaces:
+    - python-distribute
+  source:
+    - git+https://github.com/pypa/setuptools.git#tag=v80.3.1
+    - build-no-isolation.patch
+  b2sums:
+    - 81e41556e41f4896e848e5af2e2a0a52d0612b76f0c62c9b51dc9c66d9b42881a16cd37c38cfffc1dbcb9f2b766cd817520c7e2eb89a687f1dd0afef9039ca08
+    - ff0caf384def8ba8aa1c7fbb29077f2bc14c42935f7f81b6c4993ebe835053207b6773865158ad3143147234b311b95033b266f9b4c34a78a67f0b7e83bb5537
+pkgname:
+  - name: python-setuptools
+# generated with artixpkg 0.36.0-3-any
