@@ -2,7 +2,7 @@
 # Contributor: Markus Näther <naetherm@informatik.uni-freiburg.de>
 pkgname=rocprim
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Header-only library providing HIP parallel primitives'
 arch=('any')
 url='https://rocm.docs.amd.com/projects/rocPRIM/en/latest/index.html'

@@ -1,10 +1,10 @@
 ---
-version: 6.4.0-1
+version: 6.4.0-1.1
 pkgbase:
   name: rocprim
   pkgdesc: Header-only library providing HIP parallel primitives
   pkgver: 6.4.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://rocm.docs.amd.com/projects/rocPRIM/en/latest/index.html
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - c35c568b83f8894fc3b9b722343b0ea75c3bd961be24075fb3527d5230788e26
 pkgname:
   - name: rocprim
-# generated with artixpkg 0.36.0-2-any
+# generated with artixpkg 0.36.1-1-any

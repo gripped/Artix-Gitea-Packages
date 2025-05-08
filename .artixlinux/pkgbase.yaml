@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.4.0-1
+    version: 6.4.0-1.1
     packages:
-      - rocprim-6.4.0-1-any.pkg.tar.zst
+      - rocprim-6.4.0-1.1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
