@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.4.0-1
+    version: 6.4.0-1.1
     packages:
-      - rocprofiler-register-6.4.0-1-x86_64.pkg.tar.zst
+      - rocprofiler-register-6.4.0-1.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

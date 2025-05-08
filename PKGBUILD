@@ -1,7 +1,7 @@
 # Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 pkgname=rocprofiler-register
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Helper library for the ROCprofiler (v2) library'
 arch=('x86_64')
 url='https://github.com/ROCm/rocprofiler-register'
