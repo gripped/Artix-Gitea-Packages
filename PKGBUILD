@@ -6,7 +6,7 @@
 
 pkgname=rocminfo
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='ROCm Application for Reporting System Info '
 arch=('x86_64')
 url='https://github.com/ROCm/rocminfo'
