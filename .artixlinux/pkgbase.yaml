@@ -1,14 +1,7 @@
 ---
-pkgbase:
-  name: mpdecimal
-  version: 4.0.0-2
-  arch:
-    - x86_64
-  pkgname:
-    - mpdecimal
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: system
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -18,37 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
-    version: null
-    packages: []
-  world-goblins:
-    version: null
-    packages: []
-  world-gremlins:
-    version: null
-    packages: []
-  world:
     version: 4.0.0-2
     packages:
       - mpdecimal-4.0.0-2-x86_64.pkg.tar.zst
+    debug: []
+  world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
+    version: null
+    packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
+team: system
