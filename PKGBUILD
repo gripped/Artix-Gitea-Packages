@@ -5,7 +5,7 @@
 pkgbase=breeze
 pkgname=(breeze
          breeze5)
-pkgver=6.3.4
+pkgver=6.3.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 arch=(x86_64)
@@ -39,22 +39,13 @@ makedepends=(extra-cmake-modules
 optdepends=('breeze-gtk: Breeze widget style for GTK applications'
             'breeze5: Breeze widget style for Qt5 applications')
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
-        0001-qdebug-include.patch::https://github.com/KDE/breeze/commit/663da19b8ba6b9849b81bc57f7f8ff4944f6976a.patch
-        0002-qdebug-include.patch::https://github.com/KDE/breeze/commit/9df8a685aa2d7ed1e9e633dda96d141c591f398e.patch)
-sha256sums=('97af530e746eaea423f741697f91eb47ae5e8e883bef3d353fb25ad0b5ed15ac'
-            'SKIP'
-            'd6419aea4b7a7292d009222cdd84386e1553b907a8eb2fe158e7e9c15ab90f95'
-            '10d817ab0758fcb3172f00bed2056b0379ef9469fd6f391614504fb2176475ee')
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('5803d8e3d4edf7de26e2df21ec28662b611a0bca505c39b991c7763dba6026ab'
+            'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
-
-prepare() {
-    patch -d $pkgname-$pkgver -Np1 -i ../0001-qdebug-include.patch
-    patch -d $pkgname-$pkgver -Np1 -i ../0002-qdebug-include.patch
-}
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
