@@ -1,0 +1,70 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: discover
+  pkgdesc: KDE and Plasma resources management GUI
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://apps.kde.org/discover/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - flatpak
+    - fwupd
+    - packagekit-qt6
+  depends:
+    - appstream-qt
+    - archlinux-appstream-data
+    - attica
+    - discount
+    - gcc-libs
+    - glib2
+    - glibc
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - ki18n
+    - kiconthemes
+    - kidletime
+    - kio
+    - kirigami
+    - kirigami-addons
+    - kjobwidgets
+    - knewstuff
+    - knotifications
+    - kservice
+    - kstatusnotifieritem
+    - kuserfeedback
+    - kwidgetsaddons
+    - kwindowsystem
+    - purpose
+    - qcoro
+    - qqc2-desktop-style
+    - qt6-base
+    - qt6-declarative
+    - qt6-webview
+  optdepends:
+    - 'flatpak: Flatpak packages support'
+    - 'fwupd: firmware update support'
+    - 'packagekit-qt6: to manage packages from Arch Linux repositories (not recommended, use at your own risk)'
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/discover-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/discover-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 0822e1fae078a00e3295b578e0054d1e098daca75d75e769c4c1ada937f0b3a0
+    - SKIP
+pkgname:
+  - name: discover
+# generated with artixpkg 0.36.1-1-any
