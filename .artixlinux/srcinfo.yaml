@@ -1,0 +1,53 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: plasma-welcome
+  pkgdesc: A friendly onboarding wizard for Plasma
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+  depends:
+    - gcc-libs
+    - glibc
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - kdbusaddons
+    - ki18n
+    - kio
+    - kirigami
+    - kirigami-addons
+    - kjobwidgets
+    - knewstuff
+    - kservice
+    - ksvg
+    - kuserfeedback
+    - kwindowsystem
+    - libplasma
+    - plasma-nm
+    - plasma5support
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-welcome-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-welcome-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 7ee47329b2946549b7ea53ca13c2d4a592d29a1ee63b92e8ef7b05dc377c70c6
+    - SKIP
+pkgname:
+  - name: plasma-welcome
+# generated with artixpkg 0.36.1-1-any
