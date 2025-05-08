@@ -1,0 +1,47 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: plasma-activities
+  pkgdesc: Core components for KDE Activities
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - boost
+    - doxygen
+    - extra-cmake-modules
+    - qt6-declarative
+    - qt6-doc
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - qt6-base
+  optdepends:
+    - 'qt6-declarative: QML bindings'
+  conflicts:
+    - kactivities
+  replaces:
+    - kactivities
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-activities-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-activities-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - eee55a4ede2d977f91da5a7fded6dd21aea6c2ee4f5d9df1168270a8d61d19fa
+    - SKIP
+pkgname:
+  - name: plasma-activities
+# generated with artixpkg 0.36.1-1-any
