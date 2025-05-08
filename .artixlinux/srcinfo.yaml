@@ -1,0 +1,25 @@
+---
+version: 0.395-1
+pkgbase:
+  name: hwdata
+  pkgdesc: hardware identification databases
+  pkgver: 0.395
+  pkgrel: 1
+  url: https://github.com/vcrhonek/hwdata
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+  replaces:
+    - hwids
+  source:
+    - git+https://github.com/vcrhonek/hwdata.git#tag=v0.395?signed
+  validpgpkeys:
+    - 3C40194FB79138CE0F78FD4919C2F062574F5403
+  b2sums:
+    - 3db63d376e5bb8a3932004f15b4c97b7aab63da9e2430ca37e39bb6d8b56f7384df48f4dd45aad376fd5481495c20b6d38cd54d55eeae03efccfb874cee4abe0
+pkgname:
+  - name: hwdata
+# generated with artixpkg 0.36.1-1-any
