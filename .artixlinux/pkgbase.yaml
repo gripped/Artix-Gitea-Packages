@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: world
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 4.0.1-1
+    packages:
+      - mpdecimal-4.0.1-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 4.0.0-2
