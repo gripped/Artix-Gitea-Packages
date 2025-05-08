@@ -1,0 +1,23 @@
+---
+version: 2.36.0-1
+pkgbase:
+  name: docker-compose
+  pkgdesc: Fast, isolated development environments using Docker
+  pkgver: 2.36.0
+  pkgrel: 1
+  url: https://www.docker.com/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - docker
+  makedepends:
+    - go
+  source:
+    - docker-compose-2.36.0.tar.gz::https://github.com/docker/compose/archive/v2.36.0.tar.gz
+  b2sums:
+    - 2468a22a3ef316d18684ce3260026dd518f7d54e55251a4d03f87fe8f3c3c7111cc81e21743b9fb99ef5e08a27a913c77a557de885b0bcf4c12301da3c62684a
+pkgname:
+  - name: docker-compose
+# generated with artixpkg 0.36.1-1-any
