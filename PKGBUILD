@@ -4,7 +4,7 @@
 
 pkgname=rocm-opencl-runtime
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='OpenCL implementation for AMD'
 arch=('x86_64')
 url='https://github.com/ROCm/clr'
