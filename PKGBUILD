@@ -2,7 +2,7 @@
 # Contributor: Markus Näther <naetherm@informatik.uni-freiburg.de>
 pkgname=rocthrust
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Port of the Thrust parallel algorithm library atop HIP/ROCm'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocThrust/en/latest/index.html'
