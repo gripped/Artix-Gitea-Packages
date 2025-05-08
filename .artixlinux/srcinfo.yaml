@@ -1,0 +1,117 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: plasma-desktop
+  pkgdesc: KDE Plasma Desktop
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - intltool
+    - kaccounts-integration
+    - kdoctools
+    - libibus
+    - packagekit-qt6
+    - scim
+    - wayland-protocols
+    - xf86-input-libinput
+    - xorg-server-devel
+  depends:
+    - attica
+    - baloo
+    - emoji-font
+    - gcc-libs
+    - glibc
+    - icu
+    - kauth
+    - kbookmarks
+    - kcmutils
+    - kcodecs
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - kdeclarative
+    - kglobalaccel
+    - kguiaddons
+    - ki18n
+    - kiconthemes
+    - kio
+    - kirigami
+    - kirigami-addons
+    - kitemmodels
+    - kitemviews
+    - kjobwidgets
+    - kmenuedit
+    - knewstuff
+    - knotifications
+    - knotifyconfig
+    - kpackage
+    - kpipewire
+    - krunner
+    - kservice
+    - ksvg
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - libcanberra
+    - libksysguard
+    - libwacom
+    - libx11
+    - libxcb
+    - libxcursor
+    - libxi
+    - libxkbcommon
+    - libxkbfile
+    - libplasma
+    - plasma-activities
+    - plasma-activities-stats
+    - plasma-workspace
+    - plasma5support
+    - polkit-kde-agent
+    - powerdevil
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-wayland
+    - sdl2
+    - solid
+    - sonnet
+    - systemsettings
+    - wayland
+    - xcb-util-keysyms
+    - xdg-user-dirs
+  optdepends:
+    - 'bluedevil: Bluetooth applet'
+    - 'glib2: kimpanel IBUS support'
+    - 'ibus: kimpanel IBUS support'
+    - 'kaccounts-integration: OpenDesktop integration plugin'
+    - 'kscreen: screen management'
+    - 'libaccounts-qt: OpenDesktop integration plugin'
+    - 'packagekit-qt6: to install new krunner plugins'
+    - 'plasma-nm: Network manager applet'
+    - 'plasma-pa: Audio volume applet'
+    - 'scim: kimpanel SCIM support'
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-desktop-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-desktop-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 047f79e931f2094354b184d4b1fca9154a732c7498bf1871a8010207f8029f9a
+    - SKIP
+pkgname:
+  - name: plasma-desktop
+# generated with artixpkg 0.36.1-1-any
