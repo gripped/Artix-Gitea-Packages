@@ -1,0 +1,33 @@
+---
+version: 4.8.0-1
+pkgbase:
+  name: python-pycares
+  pkgdesc: Python interface for c-ares
+  pkgver: 4.8.0
+  pkgrel: 1
+  url: https://github.com/saghul/pycares
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-idna
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - c-ares
+    - python-cffi
+  optdepends:
+    - python-idna
+  source:
+    - git+https://github.com/saghul/pycares.git#tag=v4.8.0
+  b2sums:
+    - a2621038ad9e2ba043c7b6082362eb8ac90cbce83ffa783cd208a3a494c4f42283b3a9931a02960241248e7046fdb7e9d03d0a9fd75e307bf3efa80e859fc14d
+pkgname:
+  - name: python-pycares
+# generated with artixpkg 0.36.0-3-any
