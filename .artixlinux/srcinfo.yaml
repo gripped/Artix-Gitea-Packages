@@ -1,0 +1,31 @@
+---
+version: 0.14.2-1
+pkgbase:
+  name: vifm
+  pkgdesc: A file manager with curses interface, which provides Vi[m]-like environment
+  pkgver: 0.14.2
+  pkgrel: 1
+  url: https://vifm.info/
+  changelog: vifm.changelog
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - perl
+  depends:
+    - file
+    - glib2
+    - glibc
+    - ncurses
+  source:
+    - https://github.com/vifm/vifm/releases/download/v0.14.2/vifm-0.14.2.tar.bz2
+    - https://github.com/vifm/vifm/releases/download/v0.14.2/vifm-0.14.2.tar.bz2.asc
+  validpgpkeys:
+    - 22349CDBE5227D2108A5667799DC5E4DB05F6BE2
+  sha256sums:
+    - cd1b05d2543cdf6829d60b23bc225c6fde13d3ef7c1008f821b9209837f1e2b0
+    - SKIP
+pkgname:
+  - name: vifm
+# generated with artixpkg 0.36.1-1-any
