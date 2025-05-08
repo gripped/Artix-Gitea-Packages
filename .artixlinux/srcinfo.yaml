@@ -1,0 +1,54 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: plasma-pa
+  pkgdesc: Plasma applet for audio volume management using PulseAudio
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - kdbusaddons
+    - kdeclarative
+    - kglobalaccel
+    - ki18n
+    - kirigami
+    - kitemmodels
+    - kstatusnotifieritem
+    - ksvg
+    - libcanberra
+    - libplasma
+    - libpulse
+    - plasma-workspace
+    - pulse-native-provider
+    - pulseaudio-qt
+    - qt6-base
+    - qt6-declarative
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-pa-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/plasma-pa-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - a66fff73ad59c47d0a0c4f1ac4349afbcd5377e7928edd6849f5a7e4e11c0198
+    - SKIP
+pkgname:
+  - name: plasma-pa
+# generated with artixpkg 0.36.1-1-any
