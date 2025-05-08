@@ -19,11 +19,9 @@ pkgbase:
   source:
     - rocm-cmake-6.4.0.tar.gz::https://github.com/ROCm/rocm-cmake/archive/rocm-6.4.0.tar.gz
     - rocm-cmake-old-policy-cmp0079.patch
-    - cmake-deprecation.patch
   sha256sums:
     - be8109c52e9309d1ae9553e067346ecdf1a25f653cc21974ddc542f31ce54615
     - 7c8d8351a8e85a0d122421d02ad967c75d4dd8442192662c1a1a68bacdfad67d
-    - dc95d690751af7c65c875c50f5d0cea594e50e618e24b33bafc77cced29fec1e
 pkgname:
   - name: rocm-cmake
-# generated with artixpkg 0.36.0-2-any
+# generated with artixpkg 0.36.1-1-any
