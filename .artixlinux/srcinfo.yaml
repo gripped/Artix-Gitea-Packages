@@ -1,0 +1,47 @@
+---
+version: 6.3.5-1
+pkgbase:
+  name: ksystemstats
+  pkgdesc: A plugin based system monitoring daemon
+  pkgver: 6.3.5
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - libnl
+    - networkmanager-qt
+  depends:
+    - gcc-libs
+    - glibc
+    - kcoreaddons
+    - kcrash
+    - ki18n
+    - kio
+    - libksysguard
+    - lm_sensors
+    - qt6-base
+    - solid
+  optdepends:
+    - 'libnl: network usage monitor'
+    - 'networkmanager-qt: network usage monitor'
+    - 'libudev: GPU monitor'
+  source:
+    - https://download.kde.org/stable/plasma/6.3.5/ksystemstats-6.3.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.3.5/ksystemstats-6.3.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - e2fd8ba3fd0ae0ff910b3fd96f617569d1bfb00c2796869feb5f8fb334ef4355
+    - SKIP
+pkgname:
+  - name: ksystemstats
+# generated with artixpkg 0.36.1-1-any
