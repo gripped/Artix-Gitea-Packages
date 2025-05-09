@@ -1,0 +1,37 @@
+---
+version: 10.15-1
+pkgbase:
+  name: python-pymdown-extensions
+  pkgdesc: Extensions for Python Markdown
+  pkgver: 10.15
+  pkgrel: 1
+  url: https://github.com/facelessuser/pymdown-extensions
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pygments
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-markdown
+    - python-yaml
+  optdepends:
+    - 'python-pygments: for code highlighting'
+  provides:
+    - pymdown-extensions
+  replaces:
+    - pymdown-extensions
+  source:
+    - python-pymdown-extensions-10.15.tar.gz::https://github.com/facelessuser/pymdown-extensions/archive/10.15.tar.gz
+  sha256sums:
+    - c4ba1c52da708aa37a87c1a717ed754d2bf3ae78731ea2b0dbec02d54965c38b
+pkgname:
+  - name: python-pymdown-extensions
+# generated with artixpkg 0.36.0-3-any
