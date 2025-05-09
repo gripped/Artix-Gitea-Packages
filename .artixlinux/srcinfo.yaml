@@ -1,0 +1,65 @@
+---
+version: 1.6.4-3
+pkgbase:
+  name: scribus
+  pkgdesc: Desktop publishing software
+  pkgver: 1.6.4
+  pkgrel: 3
+  url: https://www.scribus.net/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+    - mesa
+    - qt5-tools
+  depends:
+    - cairo
+    - fontconfig
+    - freetype2
+    - harfbuzz-icu
+    - hunspell
+    - icu
+    - libicuuc.so
+    - lcms2
+    - libcdr
+    - libcups
+    - libfreehand
+    - libjpeg-turbo
+    - libjpeg.so
+    - libmspub
+    - libpagemaker
+    - libpng
+    - libqxp
+    - librevenge
+    - libtiff
+    - libvisio
+    - libxml2
+    - libzmf
+    - openscenegraph
+    - openssl
+    - podofo
+    - poppler
+    - python3
+    - qt5-base
+    - zlib
+  optdepends:
+    - 'gdal: enable gdal plugin'
+    - 'hyphen-lang: hyphenation patterns for desired languages'
+    - 'tk: scripts based on tkinter'
+  options:
+    - '!lto'
+  source:
+    - https://downloads.sourceforge.net/scribus/scribus-1.6.4.tar.xz
+    - https://downloads.sourceforge.net/scribus/scribus-1.6.4.tar.xz.asc
+  validpgpkeys:
+    - 5086B8D68E70FDDF4C40045AEF7B95E7F60166DA
+    - 757F5E9B13DD648887AD50092D47C099E782504E
+    - 6558BE84D27273A438A151198BEA48118AEBEE64
+  sha256sums:
+    - 533be7af03acfaa736ec5f7a3fc2562abd200fef5ca2a7cdee02b5f44d61829e
+    - SKIP
+pkgname:
+  - name: scribus
+# generated with artixpkg 0.36.1-1-any
