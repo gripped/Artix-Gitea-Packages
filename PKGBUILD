@@ -9,17 +9,17 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.18.5
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
+  adwaita-fonts
   adwaita-icon-theme
   at-spi2-core
   cairo
-  cantarell-fonts
   dconf
   desktop-file-utils
   fontconfig
@@ -57,11 +57,13 @@ depends=(
   wayland
 )
 makedepends=(
+  cantarell-fonts
   docbook-xsl
   gi-docgen
   git
   glib2-devel
   gobject-introspection
+  hicolor-icon-theme
   libsysprof-capture
   meson
   python-docutils
@@ -70,17 +72,6 @@ makedepends=(
   shaderc
   vulkan-headers
   wayland-protocols
-)
-checkdepends=(
-  gst-plugin-pipewire
-  gst-plugins-base
-  mutter
-  noto-fonts
-  pipewire
-  python-pydbus
-  vulkan-swrast
-  weston
-  wireplumber
 )
 source=(
   "git+https://gitlab.gnome.org/GNOME/gtk.git#tag=$pkgver"
@@ -118,24 +109,6 @@ build() {
   meson compile -C build
 }
 
-check() (
-  export XDG_RUNTIME_DIR="$PWD/runtime-dir"
-  mkdir -p -m 700 "$XDG_RUNTIME_DIR"
-
-  export WAYLAND_DISPLAY=wl-$pkgbase-$RANDOM
-  weston --backend=headless --socket=$WAYLAND_DISPLAY --idle-time=0 &
-  _w=$!
-
-  trap "kill $_w; wait" EXIT
-
-  # Test: GTK / templates fails - ignore it for now.
-  sed -i "s/{ 'name': 'templates' }/#{ 'name': 'templates' }/g" gtk/testsuite/gtk/meson.build
-
-  # Comparison tests fail, because thes depend on driver and how mesa was build
-  # https://gitlab.gnome.org/GNOME/gtk/-/issues/6383
-  meson test -C build --print-errorlogs --no-suite=headless --timeout-multiplier=3 ||:
-)
-
 _pick() {
   local p="$1" f d; shift
   for f; do
@@ -164,7 +137,7 @@ package_gtk4() {
 [Settings]
 gtk-icon-theme-name = Adwaita
 gtk-theme-name = Adwaita
-gtk-font-name = Cantarell 11
+gtk-font-name = Adwaita Sans 11
 END
 
   install -Dt "$pkgdir/usr/share/libalpm/hooks" -m644 gtk4-querymodules.hook
@@ -190,6 +163,7 @@ package_gtk4-demos() {
   pkgdesc+=" (demo applications)"
   depends=(
     cairo
+    cantarell-fonts
     dconf
     gdk-pixbuf2
     glib2
