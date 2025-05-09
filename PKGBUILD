@@ -4,7 +4,7 @@
 pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-device-libs comgr)
 pkgver=6.4.0
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
@@ -130,6 +130,13 @@ package_rocm-llvm() {
 
     # Provide symlink to old LLVM location, pre ROCm 6.0.0
     ln -s /opt/rocm/lib/llvm "$pkgdir/opt/rocm/llvm"
+
+    # Some packages require amdclang to be found in /opt/rocm/bin
+    mkdir -p "$pkgdir/opt/rocm/bin"
+    local _compiler
+    for _compiler in amdclang amdclang++ amdclang-cl amdclang-cpp amdlld; do
+        ln -s /opt/rocm/lib/llvm/bin/$_compiler "$pkgdir/opt/rocm/bin/$_compiler"
+    done
 
     # https://bugs.archlinux.org/task/28479
     install -d "$pkgdir/opt/rocm/lib/llvm/lib/bfd-plugins"
