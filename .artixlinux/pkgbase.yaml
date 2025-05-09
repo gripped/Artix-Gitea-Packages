@@ -58,3 +58,10 @@ repos:
     packages:
       - anubis-1.17.1-3-x86_64.pkg.tar.zst
     debug: []
+pkgbase:
+  name: anubis
+  version: 1.17.1-3
+  arch:
+    - x86_64
+  pkgname:
+    - anubis
