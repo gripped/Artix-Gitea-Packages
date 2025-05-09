@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: zxing-cpp
-  version: 2.3.0-4
-  arch:
-    - x86_64
-  pkgname:
-    - zxing-cpp
 actions:
   addRepo: world
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 2.3.0-4
+    version: 2.3.0-5
     packages:
-      - zxing-cpp-2.3.0-4-x86_64.pkg.tar.zst
+      - zxing-cpp-2.3.0-5-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
