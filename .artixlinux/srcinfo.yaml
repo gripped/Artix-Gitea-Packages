@@ -1,0 +1,34 @@
+---
+version: 3.0.5-1
+pkgbase:
+  name: python-jupyter-ydoc
+  pkgdesc: Document structures for collaborative editing using Ypy
+  pkgver: 3.0.5
+  pkgrel: 1
+  url: https://jupyter.org/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - hypercorn
+    - python-pytest-asyncio
+    - python-websockets
+    - python-pycrdt-websocket
+    - python-ypy-websocket
+  makedepends:
+    - git
+    - python-build
+    - python-hatch-nodejs-version
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-pycrdt
+  source:
+    - git+https://github.com/jupyter-server/jupyter_ydoc#tag=v3.0.5
+  sha256sums:
+    - 39be2b4fb42325024080e72730e207014005b4fee194e5c7224180d474c999fd
+pkgname:
+  - name: python-jupyter-ydoc
+# generated with artixpkg 0.36.1-1-any
