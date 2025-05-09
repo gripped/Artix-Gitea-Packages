@@ -1,0 +1,104 @@
+---
+version: 0.49.0-1
+pkgbase:
+  name: hyprland
+  pkgdesc: a highly customizable dynamic tiling Wayland compositor
+  pkgver: 0.49.0
+  pkgrel: 1
+  url: https://github.com/hyprwm/Hyprland
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - glaze
+    - hyprland-protocols
+    - meson
+    - ninja
+    - xorgproto
+  depends:
+    - cairo
+    - aquamarine
+    - libaquamarine.so
+    - gcc-libs
+    - glibc
+    - glib2
+    - libgio-2.0.so
+    - libgobject-2.0.so
+    - glslang
+    - hyprcursor
+    - libhyprcursor.so
+    - hyprgraphics
+    - libhyprgraphics.so
+    - hyprland-qtutils
+    - hyprlang
+    - libhyprlang.so
+    - hyprutils
+    - libhyprutils.so
+    - hyprwayland-scanner
+    - libdisplay-info
+    - libdisplay-info.so
+    - libdrm
+    - libglvnd
+    - libEGL.so
+    - libGLESv2.so
+    - libOpenGL.so
+    - libinput
+    - libliftoff
+    - libliftoff.so
+    - libx11
+    - libxcb
+    - libxcomposite
+    - libxcursor
+    - libxfixes
+    - libxkbcommon
+    - libxkbcommon.so
+    - libxrender
+    - mesa
+    - opengl-driver
+    - pango
+    - libpango-1.0.so
+    - libpangocairo-1.0.so
+    - pixman
+    - libpixman-1.so
+    - re2
+    - libre2.so
+    - seatd
+    - libseat.so
+    - libelogind
+    - libelogind.so
+    - tomlplusplus
+    - libtomlplusplus.so
+    - libudev.so
+    - util-linux-libs
+    - libuuid.so
+    - wayland
+    - libwayland-client.so
+    - libwayland-server.so
+    - wayland-protocols
+    - xcb-proto
+    - xcb-util
+    - xcb-util-errors
+    - xcb-util-image
+    - xcb-util-keysyms
+    - xcb-util-renderutil
+    - xcb-util-wm
+    - xorg-xwayland
+  optdepends:
+    - 'cmake: to build and install plugins using hyprpm'
+    - 'cpio: to build and install plugins using hyprpm'
+    - 'glaze: to build and install plugins using hyprpm'
+    - 'hyprland-protocols: to build and install plugins using hyprpm'
+    - 'meson: to build and install plugins using hyprpm'
+    - 'uwsm: the recommended way to start Hyprland'
+  provides:
+    - wayland-compositor
+  source:
+    - Hyprland-0.49.0.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.49.0/source-v0.49.0.tar.gz
+  sha256sums:
+    - fd96fb043cfeda09a1ab9a5eb69fee55562475c0c6a41f79dad2bcc652dc5730
+pkgname:
+  - name: hyprland
+# generated with artixpkg 0.36.1-1-any
