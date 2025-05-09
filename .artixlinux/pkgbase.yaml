@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,12 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 3.42.2-1.1
     packages:
       - qgis-3.42.2-1.1-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 3.42.2-1
-    packages:
-      - qgis-3.42.2-1-x86_64.pkg.tar.zst
     debug: []
