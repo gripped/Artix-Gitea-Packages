@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.3.5-1
+    version: 6.3.5-2
     packages:
-      - kinfocenter-6.3.5-1-x86_64.pkg.tar.zst
+      - kinfocenter-6.3.5-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.3.4-1

@@ -1,10 +1,10 @@
 ---
-version: 6.3.5-1
+version: 6.3.5-2
 pkgbase:
   name: kinfocenter
   pkgdesc: A utility that provides information about a computer system
   pkgver: 6.3.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -16,6 +16,7 @@ pkgbase:
     - extra-cmake-modules
     - fwupd
     - kdoctools
+    - vulkan-headers
   depends:
     - aha
     - clinfo
@@ -44,7 +45,6 @@ pkgbase:
     - solid
     - systemsettings
     - vulkan-tools
-    - vulkan-headers
     - wayland-utils
     - xorg-xdpyinfo
   optdepends:

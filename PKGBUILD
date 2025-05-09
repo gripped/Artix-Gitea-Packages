@@ -5,7 +5,7 @@
 pkgname=kinfocenter
 pkgver=6.3.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='A utility that provides information about a computer system'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -37,12 +37,12 @@ depends=(aha
          solid
          systemsettings
          vulkan-tools
-         vulkan-headers
          wayland-utils
          xorg-xdpyinfo)
 makedepends=(extra-cmake-modules
              fwupd
-             kdoctools)
+             kdoctools
+             vulkan-headers)
 optdepends=('fwupd: firmware security module')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
