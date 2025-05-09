@@ -1,0 +1,65 @@
+---
+version: 2.3.10-2
+pkgbase:
+  name: qca
+  pkgdesc: Qt Cryptographic Architecture
+  pkgver: 2.3.10
+  pkgrel: 2
+  url: https://userbase.kde.org/QCA
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - botan
+    - cmake
+    - doxygen
+    - libgcrypt
+    - libsasl
+    - openssl
+    - pkcs11-helper
+    - qt5-base
+    - qt6-base
+    - qt6-5compat
+  depends:
+    - ca-certificates
+    - gcc-libs
+    - glibc
+    - nss
+  optdepends:
+    - 'botan: botan plugin'
+    - 'libgcrypt: gcrypt plugin'
+    - 'libsasl: SASL plugin'
+    - 'openssl: SSL plugin'
+    - 'pkcs11-helper: PKCS-11 plugin'
+  source:
+    - https://download.kde.org/stable/qca/2.3.10/qca-2.3.10.tar.xz
+    - https://download.kde.org/stable/qca/2.3.10/qca-2.3.10.tar.xz.sig
+  validpgpkeys:
+    - CB9387521E1EE0127DA804843FDBB55084CC5D84
+  sha256sums:
+    - 1c5b722da93d559365719226bb121c726ec3c0dc4c67dea34f1e50e4e0d14a02
+    - SKIP
+pkgname:
+  - name: qca-qt5
+    depends:
+      - ca-certificates
+      - gcc-libs
+      - glibc
+      - nss
+      - qt5-base
+    provides:
+      - qca
+    conflicts:
+      - qca
+    replaces:
+      - qca
+  - name: qca-qt6
+    depends:
+      - ca-certificates
+      - gcc-libs
+      - glibc
+      - nss
+      - qt6-5compat
+      - qt6-base
+# generated with artixpkg 0.36.1-1-any
