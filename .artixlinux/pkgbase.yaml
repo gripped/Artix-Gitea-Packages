@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:2.5.6-1
+    version: 1:2.5.7-1
     packages:
-      - pyenv-1:2.5.6-1-any.pkg.tar.zst
+      - pyenv-1:2.5.7-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1:2.5.5-1
