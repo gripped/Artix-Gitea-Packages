@@ -1,0 +1,91 @@
+---
+version: 25.04.0-2
+pkgbase:
+  name: calligra
+  pkgdesc: A set of applications for productivity and creative usage
+  pkgver: 25.04.0
+  pkgrel: 2
+  url: https://www.calligra-suite.org/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-office
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - boost
+    - eigen
+    - extra-cmake-modules
+    - kdoctools
+    - libetonyek
+    - libvisio
+    - libwpg
+    - libwps
+    - okular
+    - pstoedit
+    - qt6-webengine
+    - vc
+  depends:
+    - cauchy
+    - fontconfig
+    - freetype2
+    - gcc-libs
+    - glibc
+    - gsl
+    - imath
+    - karchive
+    - kcolorscheme
+    - kcompletion
+    - kconfigwidgets
+    - kcoreaddons
+    - kdbusaddons
+    - kdiagram
+    - kcmutils
+    - kconfig
+    - kcrash
+    - kguiaddons
+    - ki18n
+    - kiconthemes
+    - kio
+    - kitemviews
+    - knotifications
+    - knotifyconfig
+    - ktextwidgets
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - libodfgen
+    - librevenge
+    - openssl
+    - phonon-qt6
+    - qca-qt6
+    - qt6-base
+    - qt6-declarative
+    - qt6-svg
+    - qtkeychain-qt6
+    - sonnet
+    - zlib
+  optdepends:
+    - 'kirigami-addons: for calligralauncher'
+    - 'libetonyek: Apple Keynote import filter'
+    - 'libvisio: Microsoft Visio import filter'
+    - 'libwpg: Corel WordPerfect Graphics image importer'
+    - 'libwps: Microsoft Works file word processor format import'
+    - 'poppler: PDF to SVG filter'
+    - 'pstoedit: EPS to SVG filter'
+    - 'qqc2-desktop-style: for calligralauncher'
+    - 'qt6-webengine: Braindump web shape'
+  source:
+    - https://download.kde.org/stable/release-service/25.04.0/src/calligra-25.04.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.0/src/calligra-25.04.0.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 5bf77c6c6dc7e891b3b9cbb8af10c3386a3d4cb7a0a13bf7568024c30039c91f
+    - SKIP
+pkgname:
+  - name: calligra
+# generated with artixpkg 0.36.1-1-any
