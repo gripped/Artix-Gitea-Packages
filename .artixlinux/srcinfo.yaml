@@ -1,0 +1,59 @@
+---
+version: 31.0.3-2
+pkgbase:
+  name: obs-studio
+  pkgdesc: Free, open source software for live streaming and recording
+  pkgver: 31.0.3
+  pkgrel: 2
+  url: https://obsproject.com
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - cmake
+    - libfdk-aac
+    - x264
+    - swig
+    - python
+    - luajit
+    - sndio
+    - nlohmann-json
+    - ffnvcodec-headers
+    - websocketpp
+    - asio
+    - qrcodegencpp-cmake
+  depends:
+    - ffmpeg
+    - jansson
+    - libxinerama
+    - libxkbcommon-x11
+    - mbedtls
+    - rnnoise
+    - pciutils
+    - qt6-svg
+    - curl
+    - jack
+    - gtk-update-icon-cache
+    - pipewire
+    - libxcomposite
+    - libdatachannel
+    - uthash
+  optdepends:
+    - 'libfdk-aac: FDK AAC codec support'
+    - 'libva-intel-driver: hardware encoding'
+    - 'libva-mesa-driver: hardware encoding'
+    - 'luajit: scripting support'
+    - 'python: scripting support'
+    - 'sndio: Sndio input client'
+    - 'qrcodegencpp-cmake: websocket support'
+    - 'v4l2loopback-dkms: virtual camera support'
+  source:
+    - obs-studio-31.0.3.tar.gz::https://github.com/obsproject/obs-studio/releases/download/31.0.3/OBS-Studio-31.0.3-Sources.tar.gz
+    - obs-studio-json11.patch::https://github.com/obsproject/obs-studio/commit/6931d80e16afc92498e345835204059ac1980782.patch
+  sha256sums:
+    - f99f49eae21059cc3e38411e7e16b62de6be8579e2537b2d7504d82a504f34a9
+    - 7403d7540a9377afe68596f2931459f37ce3fa4b2ffb89e1e3e8574c0d55fa83
+pkgname:
+  - name: obs-studio
+# generated with artixpkg 0.36.1-1-any
