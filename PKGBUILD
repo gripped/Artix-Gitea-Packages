@@ -5,7 +5,7 @@
 
 _gemname=rack
 pkgname=ruby-rack
-pkgver=3.1.13
+pkgver=3.1.14
 pkgrel=1
 pkgdesc='Minimal, modular, and adaptable interface for developing web applications'
 url='https://rack.github.io/'
@@ -30,9 +30,9 @@ source=(
   # see https://github.com/rack/rack/commit/49d4ed033f9c6d0bdba7b2a181437589049dbf7f
   "${pkgname}_fix_tests.patch"
 )
-sha512sums=('ca6158132a50a3ba383ae9e56b25b605ea1c32591539d511461c1f42882a66922d3fcbb2c466b967207aed306d5fd1b5261f2b9e82d7952d2700ab587c64a59c'
+sha512sums=('0a91f8db02467f2e7dd045350fa0c0967ee35a9d4915470865911ffa5ceef4543d87393804fc0aaef619aef8b0eb93545cc789a6412f63a89043ecd9749cf6cb'
             '48445af539dca7f46b250e5aa2caba9a70589a93c2904795e4ac8ac8df65deb9b1230654adc3675e96428ce1d8a92d541b10be16f8566ea94a477a9f3e4efb89')
-b2sums=('aff13963cf5cf438d6709f68c961869a78f1222fd105578843ec03ebcb1202047625f6d75214c25565426c2855fafdad622ebfbd84b2a6f23ba7dcfbab1149c8'
+b2sums=('9162826ff0050a1f30551118dd1d42b618374a838ca7d9b95357aae66ddabab6abeff3c34df66c7038c8c734b4c379466944bb053783d343ecf2d89a7cc72ed8'
         'b74099bfec91aa24c49729909bcd16446c8d7ea89addce9aad32ea585549c1008a74acb346bdbf46c5fc570f6cedbf77c1f639644f7694e4d05c11efe9bd855b')
 
 prepare() {
