@@ -1,0 +1,29 @@
+---
+version: 4.2.5-2
+pkgbase:
+  name: python-fixtures
+  pkgdesc: Python fixtures for testing / resource management
+  pkgver: 4.2.5
+  pkgrel: 2
+  url: https://github.com/testing-cabal/fixtures
+  arch:
+    - any
+  license:
+    - Apache-2.0 OR BSD-3-Clause
+  checkdepends:
+    - python-testtools
+  makedepends:
+    - python-build
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://github.com/testing-cabal/fixtures/archive/1edd6c2bc6cb48cc666eb7d9ffdd182659c2cae0/fixtures-1edd6c2bc6cb48cc666eb7d9ffdd182659c2cae0.tar.gz
+  sha512sums:
+    - 8485f2e9e755fb99d1f575941e2d960ec05a2048229c651eba0933b4aba7e41bc504cda45cc233fcd024cb2268af94dd3aa949a30215cd85446dbdc0d7e124df
+pkgname:
+  - name: python-fixtures
+# generated with artixpkg 0.36.1-1-any
