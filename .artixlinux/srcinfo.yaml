@@ -1,0 +1,37 @@
+---
+version: 7.10.3-1
+pkgbase:
+  name: suitesparse
+  pkgdesc: A collection of sparse matrix libraries
+  pkgver: 7.10.3
+  pkgrel: 1
+  url: http://faculty.cse.tamu.edu/davis/suitesparse.html
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - cmake
+    - gcc-fortran
+    - git
+  depends:
+    - blas
+    - gcc-libs
+    - glibc
+    - gmp
+    - lapack
+    - mpfr
+  replaces:
+    - suitesparse64<7.1.0
+  source:
+    - git+https://github.com/DrTimothyAldenDavis/SuiteSparse#tag=v7.10.3
+  sha256sums:
+    - cb8d60532e42afbac1ffbcd7de73ebe3f4c370cf69889052d41571053dd64449
+pkgname:
+  - name: suitesparse
+  - name: suitesparse-graphblas
+    pkgdesc: Graph algorithms in the language of linear algebra
+    depends:
+      - gcc-libs
+      - glibc
+# generated with artixpkg 0.36.1-1-any
