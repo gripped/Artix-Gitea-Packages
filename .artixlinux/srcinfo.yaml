@@ -1,0 +1,117 @@
+---
+version: 3.10.3-3
+pkgbase:
+  name: gdal
+  pkgdesc: A translator library for raster and vector geospatial data formats
+  pkgver: 3.10.3
+  pkgrel: 3
+  url: https://gdal.org/
+  changelog: gdal.changelog
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - cmake
+    - opencl-headers
+    - python-setuptools
+    - python-numpy
+    - proj
+    - arrow
+    - blosc
+    - cfitsio
+    - curl
+    - crypto++
+    - libdeflate
+    - expat
+    - libfreexl
+    - libgeotiff
+    - geos
+    - giflib
+    - libheif
+    - hdf5
+    - libjpeg-turbo
+    - json-c
+    - libjxl
+    - xz
+    - libxml2
+    - lz4
+    - mariadb-libs
+    - netcdf
+    - unixodbc
+    - ocl-icd
+    - openexr
+    - openjpeg2
+    - openssl
+    - pcre2
+    - libpng
+    - podofo
+    - poppler
+    - postgresql-libs
+    - qhull
+    - libspatialite
+    - sqlite
+    - swig
+    - libtiff
+    - libwebp
+    - xerces-c
+    - zlib
+    - zstd
+    - libaec
+  source:
+    - https://download.osgeo.org/gdal/3.10.3/gdal-3.10.3.tar.xz
+    - fix_build_with_poppler_25.05.patch
+  b2sums:
+    - deb9af3034b86d1b74a348b56cb8fec6a9ccdfa57dade0d1bbd02ab952c6fff2f4673c8f9f77843687fff54b3d507817c8e43640e8007f1da0b39909ddafa9ac
+    - 44581620c56f8fe435a54c3b0428d70c175a7ba27d6976f5ab840a444be8ca76108688977da36fdcad78b82006a8d1ced1129d754358335ef350eddacc50cb01
+pkgname:
+  - name: gdal
+    depends:
+      - proj
+      - blosc
+      - crypto++
+      - curl
+      - libdeflate
+      - expat
+      - libfreexl
+      - geos
+      - libgeotiff
+      - giflib
+      - libjpeg-turbo
+      - json-c
+      - xz
+      - libxml2
+      - lz4
+      - unixodbc
+      - ocl-icd
+      - openssl
+      - pcre2
+      - libpng
+      - qhull
+      - libspatialite
+      - sqlite
+      - libtiff
+      - xerces-c
+      - zlib
+      - zstd
+      - libaec
+    optdepends:
+      - 'arrow: Arrow/Parquet support'
+      - 'cfitsio: FITS support'
+      - 'hdf5: HDF5 support'
+      - 'libheif: HEIF support'
+      - 'libjxl: JPEG XL support'
+      - 'mariadb-libs: MySQL support'
+      - 'netcdf: netCDF support'
+      - 'openexr: EXR support'
+      - 'openjpeg2: JP2 support'
+      - 'podofo: PDF support'
+      - 'poppler: PDF support'
+      - 'postgresql-libs: PostgreSQL support'
+      - 'libwebp: WebP support'
+  - name: python-gdal
+    pkgdesc: Python bindings for GDAL
+    depends:
+      - gdal=3.10.3
+      - python-numpy
+# generated with artixpkg 0.36.1-1-any
