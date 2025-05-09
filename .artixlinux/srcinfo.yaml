@@ -1,0 +1,22 @@
+---
+version: 20250508005311-1
+pkgbase:
+  name: v2ray-domain-list-community
+  pkgdesc: A list of domains to be used as geosites for routing purpose in Project V
+  pkgver: 20250508005311
+  pkgrel: 1
+  url: https://github.com/v2fly/domain-list-community
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - go
+    - git
+  source:
+    - git+https://github.com/v2fly/domain-list-community.git#tag=20250508005311
+  sha512sums:
+    - 40409596270a7201ea3e8aec7bff8106355acc2901b3e3a45e6cc062f2bbfb921d8217875c408c111472ffc3eaca3b1365373b22d91b54b42d1e85112b12b601
+pkgname:
+  - name: v2ray-domain-list-community
+# generated with artixpkg 0.36.1-1-any
