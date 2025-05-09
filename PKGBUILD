@@ -5,13 +5,19 @@
 
 pkgname=libqb
 pkgver=2.0.8
-pkgrel=2
+pkgrel=3
 pkgdesc='Library for providing high performance, reusable features for client-server architecture'
-url='https://github.com/ClusterLabs/libqb'
 arch=('x86_64')
+url='https://github.com/ClusterLabs/libqb'
 license=('LGPL-2.1-or-later')
-depends=('glibc')
-makedepends=('doxygen' 'splint')
+depends=(
+  'glibc'
+  'libxml2'
+)
+makedepends=(
+  'doxygen'
+  'splint'
+)
 checkdepends=('check')
 provides=('libqb.so')
 source=(https://github.com/ClusterLabs/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz{,.asc})

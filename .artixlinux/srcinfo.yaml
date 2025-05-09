@@ -1,0 +1,34 @@
+---
+version: 2.0.8-3
+pkgbase:
+  name: libqb
+  pkgdesc: Library for providing high performance, reusable features for client-server architecture
+  pkgver: 2.0.8
+  pkgrel: 3
+  url: https://github.com/ClusterLabs/libqb
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - check
+  makedepends:
+    - doxygen
+    - splint
+  depends:
+    - glibc
+    - libxml2
+  provides:
+    - libqb.so
+  source:
+    - https://github.com/ClusterLabs/libqb/releases/download/v2.0.8/libqb-2.0.8.tar.gz
+    - https://github.com/ClusterLabs/libqb/releases/download/v2.0.8/libqb-2.0.8.tar.gz.asc
+  validpgpkeys:
+    - C5E29348A2B634E9F71B2014791890532CB5CDDE
+    - 746F4C0CA8C2B82ECC0A694808C81B2C6CE95CA7
+  sha512sums:
+    - c4df06c844685ff12975bf2aa9c17778244bbf208a63ef483c5aa1c160cd4d9f9606a2a643de89698b17013b308a5a72dfb1e1d347a8d63ebdf3076c64a325c6
+    - SKIP
+pkgname:
+  - name: libqb
+# generated with artixpkg 0.36.1-1-any
