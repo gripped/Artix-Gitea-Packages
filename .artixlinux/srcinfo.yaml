@@ -1,0 +1,40 @@
+---
+version: 44.0.3-1
+pkgbase:
+  name: python-cryptography
+  pkgdesc: A package designed to expose cryptographic recipes and primitives to Python developers
+  pkgver: 44.0.3
+  pkgrel: 1
+  url: https://github.com/pyca/cryptography
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 OR BSD-3-Clause
+  checkdepends:
+    - python-certifi
+    - python-hypothesis
+    - python-pretend
+    - python-pytest
+  makedepends:
+    - clang
+    - git
+    - lld
+    - llvm
+    - python-build
+    - python-installer
+    - python-maturin
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - openssl
+    - python
+    - python-cffi
+  source:
+    - git+https://github.com/pyca/cryptography.git#tag=44.0.3
+  sha512sums:
+    - f37e11a97a165435c53dcafc10c913295dce79fe829f4bcfd83c2a7cd8b6dddd9924bf778704afa02d28381a5bfd5bdfffb2b3f65e196c06ca95a8393c864325
+pkgname:
+  - name: python-cryptography
+# generated with artixpkg 0.36.1-1-any
