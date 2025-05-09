@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.4.0-1
+    version: 6.4.0-2
     packages:
-      - rocm-cmake-6.4.0-1-any.pkg.tar.zst
+      - rocm-cmake-6.4.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

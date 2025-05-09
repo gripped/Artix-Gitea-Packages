@@ -5,7 +5,7 @@
 
 pkgname=rocm-cmake
 pkgver=6.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='CMake modules for common build tasks needed for the ROCm software stack'
 arch=('any')
 url='https://github.com/ROCm/rocm-cmake'
@@ -13,27 +13,33 @@ license=('MIT')
 depends=('rocm-core' 'cmake')
 checkdepends=('git' 'rocm-llvm')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/rocm-$pkgver.tar.gz"
-        "${pkgname}-old-policy-cmp0079.patch")
+        "${pkgname}-old-policy-cmp0079.patch"
+        "cmake-deprecation.patch")
 sha256sums=('be8109c52e9309d1ae9553e067346ecdf1a25f653cc21974ddc542f31ce54615'
-            '7c8d8351a8e85a0d122421d02ad967c75d4dd8442192662c1a1a68bacdfad67d')
+            '7c8d8351a8e85a0d122421d02ad967c75d4dd8442192662c1a1a68bacdfad67d'
+            'dc95d690751af7c65c875c50f5d0cea594e50e618e24b33bafc77cced29fec1e')
 _dirname="$(basename "$url")-$(basename "${source[0]}" .tar.gz)"
 
 prepare() {
     cd "$_dirname"
     # Git version tests fail because we're not working in a local git checkout
-    rm test/pass/{analyze.cmake,analyze-gh.cmake,version-norepo.cmake,version-parent.cmake}
+    rm test/pass/{version-norepo.cmake,version-parent.cmake}
     # sphinx tests require a python module named rocm_docs,
     # https://github.com/RadeonOpenCompute/rocm-docs-core
     # As we don't package it, disable also this test
     rm test/pass/doc-sphinxdoxygen.cmake
+    # New test failures with version 6.4, see
+    # https://github.com/ROCm/rocm-cmake/issues/269
+    rm test/pass/{analyze-gh.cmake,analyze.cmake}
+    rm test/fail/rename-compatibility.cmake
     # Fix deprecation erros with pre-3.10 CMake,
     # https://github.com/ROCm/rocm-cmake/issues/238
-    find -name "CMakeLists.txt" -exec sed -i 's/(VERSION 3.[[:digit:]])/(VERSION 3.6...3.31.0)/' {} +
+    patch -Np1 -i "$srcdir/cmake-deprecation.patch"
+    find -name "CMakeLists.txt" -exec sed -i 's/(VERSION 3.[[:digit:]])/(VERSION 3.10)/' {} +
 
     cd share/rocmcmakebuildtools
     # With cmake 3.28.1+ setting cmp0079 to old results in a deprecation error
     patch -Np3 -i "$srcdir/$pkgname-old-policy-cmp0079.patch"
-    
 }
 
 build() {
@@ -50,7 +56,7 @@ build() {
 
 check() {
     export GIT_AUTHOR_NAME="builduser"
-    export GIT_AUTHOR_EMAIL="builduser@artixlinux.local"
+    export GIT_AUTHOR_EMAIL="builduser@archlinux.local"
     export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
     export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
     cmake --build build --target check
