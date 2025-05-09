@@ -1,0 +1,19 @@
+---
+version: 202505050146-1
+pkgbase:
+  name: v2ray-geoip
+  pkgdesc: GeoIP List for V2Ray
+  pkgver: 202505050146
+  pkgrel: 1
+  url: https://github.com/v2fly/geoip
+  arch:
+    - any
+  license:
+    - CCPL:by-sa
+  source:
+    - geoip-202505050146.dat::https://github.com/v2fly/geoip/releases/download/202505050146/geoip.dat
+  sha512sums:
+    - b92e90338b7bce54e36ea30fd84e001bab91248c35e29083447db5548d5e9c79302b4d2f30b20f285286bf3830e70d90fcef306e38c8fe1041e74cb9b9c53413
+pkgname:
+  - name: v2ray-geoip
+# generated with artixpkg 0.36.1-1-any
