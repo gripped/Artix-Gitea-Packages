@@ -1,9 +1,9 @@
 ---
-version: 0.21.0-1
+version: 0.21.1-1
 pkgbase:
   name: python-validators
   pkgdesc: Python Data Validation for Humans
-  pkgver: 0.21.0
+  pkgver: 0.21.1
   pkgrel: 1
   url: https://github.com/kvesteri/validators
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/kvesteri/validators.git#tag=0.21.0
+    - git+https://github.com/kvesteri/validators.git#tag=0.21.1
   sha512sums:
-    - 267faabc3031d00d43872e00d46337ee2fea1a6160c78f334c28d373fb17e215f7c298efe7196869450e13ef2ae299f9be111827b50f3f2bdc7ec9b12bc36b2d
+    - 0296b37a4b2e62e711de8908e535d2def596f7ec7de5fd4e03ba3b610ee0859cf239fc53c94046f0bfcf6d3935eb45f7fae726bf9846e5ebf3fb22bc02714fe7
 pkgname:
   - name: python-validators
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.36.1-1-any
