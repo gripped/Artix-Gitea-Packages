@@ -1,0 +1,41 @@
+---
+version: 7.4.2-1
+pkgbase:
+  name: jupyter-notebook
+  pkgdesc: The language-agnostic HTML notebook application for Project Jupyter
+  pkgver: 7.4.2
+  pkgrel: 1
+  url: https://github.com/jupyter/notebook
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest-jupyter
+    - python-pytest-timeout
+    - python-requests
+  makedepends:
+    - git
+    - nodejs
+    - python-build
+    - python-hatch-jupyter-builder
+    - python-installer
+  depends:
+    - jupyter-notebook-shim
+    - jupyter-server
+    - jupyterlab
+    - python
+    - python-jupyter-client
+    - python-jupyter-core
+    - python-jupyterlab-server
+    - python-tornado
+    - python-traitlets
+  replaces:
+    - jupyter-retrolab
+  source:
+    - git+https://github.com/jupyter/notebook#tag=v7.4.2
+  sha256sums:
+    - 93e715d8507108398b6cdc1c310024143b9a0ef3f946d0a74a717b1880b64f57
+pkgname:
+  - name: jupyter-notebook
+# generated with artixpkg 0.36.1-1-any
