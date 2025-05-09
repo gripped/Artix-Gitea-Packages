@@ -1,0 +1,40 @@
+---
+version: 0.18.0-1
+pkgbase:
+  name: meson-python
+  pkgdesc: Meson PEP 517 Python build backend
+  pkgver: 0.18.0
+  pkgrel: 1
+  url: https://github.com/mesonbuild/meson-python
+  arch:
+    - any
+  groups:
+    - python-build-backend
+  license:
+    - MIT
+  checkdepends:
+    - cython
+    - python-gitpython
+    - python-pytest
+    - python-pytest-mock
+    - python-wheel
+  makedepends:
+    - git
+    - ninja
+    - python-build
+    - python-installer
+  depends:
+    - meson
+    - patchelf
+    - python
+    - python-packaging
+    - python-pyproject-metadata
+  optdepends:
+    - 'python-colorama: colored output'
+  source:
+    - git+https://github.com/mesonbuild/meson-python#tag=0.18.0
+  sha256sums:
+    - 8a63df1fc44d72efa737405eef4bf4e395252305cfc19c20974c3dd50e0fa9a2
+pkgname:
+  - name: meson-python
+# generated with artixpkg 0.36.1-1-any
