@@ -4,7 +4,7 @@
 
 pkgname=keepassxc
 pkgver=2.7.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Cross-platform community-driven port of Keepass password manager"
 arch=(x86_64)
 url="https://keepassxc.org/"
@@ -14,7 +14,7 @@ depends=(argon2 botan hicolor-icon-theme libxtst
 makedepends=(asciidoctor cmake qt5-tools)
 optdepends=('xclip: keepassxc-cli clipboard support under X server'
             'wl-clipboard: keepassxc-cli clipboard support under Wayland')
-checkdepends=(xclip xorg-server-xvfb)
+checkdepends=(xclip xorg-server-xvfb xclip)
 provides=(org.freedesktop.secrets)
 source=(https://github.com/keepassxreboot/keepassxc/releases/download/$pkgver/keepassxc-$pkgver-src.tar.xz{,.sig}
         TestEntryModel.patch)
