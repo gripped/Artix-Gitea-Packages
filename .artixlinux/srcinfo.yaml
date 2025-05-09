@@ -1,0 +1,26 @@
+---
+version: 2025_05_07.eea8a76-1
+pkgbase:
+  name: passt
+  pkgdesc: Plug A Simple Socket Transport
+  pkgver: 2025_05_07.eea8a76
+  pkgrel: 1
+  url: https://passt.top/passt/about/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+  depends:
+    - glibc
+  optdepends:
+    - 'sh: for demo script'
+  source:
+    - https://passt.top/passt/snapshot/passt-2025_05_07.eea8a76.tar.zst
+  sha512sums:
+    - 29568a77f1c178f1697cb50244fb9ea0be107808301e55204114338853988254089e0f0eac53097fd9f129fc075df20b2640b0122bcdc13dab08feea4b078f86
+  b2sums:
+    - 3015ca85a564a48f92d866ce4589f2ff12f7b3d2ec5e394b3ce036e486369f885587ea048c44772ea15f273be94a3448ab071ac13598e5aaa29beeec9437aa47
+pkgname:
+  - name: passt
+# generated with artixpkg 0.36.1-1-any
