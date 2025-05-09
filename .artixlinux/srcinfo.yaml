@@ -1,0 +1,29 @@
+---
+version: 3.4.0-1
+pkgbase:
+  name: python-bitarray
+  pkgdesc: Efficient arrays of booleans for Python
+  pkgver: 3.4.0
+  pkgrel: 1
+  url: https://github.com/ilanschnell/bitarray
+  arch:
+    - x86_64
+  license:
+    - PSF-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+  source:
+    - https://github.com/ilanschnell/bitarray/archive/3.4.0/bitarray-3.4.0.tar.gz
+  sha256sums:
+    - 38c3bb389ad3cee4d6466fefe4cff8671b2f9918bd47ad684b259bd1f8c71f3c
+pkgname:
+  - name: python-bitarray
+# generated with artixpkg 0.36.1-1-any
