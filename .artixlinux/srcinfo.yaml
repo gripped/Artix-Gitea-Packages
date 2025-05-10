@@ -1,0 +1,36 @@
+---
+version: 6.14.0-1
+pkgbase:
+  name: kapidox
+  pkgdesc: Frameworks API Documentation Tools
+  pkgver: 6.14.0
+  pkgrel: 1
+  url: https://community.kde.org/Frameworks
+  arch:
+    - any
+  groups:
+    - kf6
+  license:
+    - LGPL
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+    - qt6-base
+  depends:
+    - python-jinja
+    - python-yaml
+  source:
+    - https://download.kde.org/stable/frameworks/6.14/kapidox-6.14.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.14/kapidox-6.14.0.tar.xz.sig
+  validpgpkeys:
+    - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+  sha256sums:
+    - cd7b976b98d1e6c6cc3da1d20c539533e0d1ae7625e63e14bc7c781096a91546
+    - SKIP
+pkgname:
+  - name: kapidox
+# generated with artixpkg 0.36.1-1-any
