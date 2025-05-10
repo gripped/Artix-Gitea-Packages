@@ -1,0 +1,40 @@
+---
+version: 6.14.0-1
+pkgbase:
+  name: kbookmarks
+  pkgdesc: Support for bookmarks and the XBEL format
+  pkgver: 6.14.0
+  pkgrel: 1
+  url: https://community.kde.org/Frameworks
+  arch:
+    - x86_64
+  groups:
+    - kf6
+  license:
+    - LGPL-2.0-only
+    - LGPL-3.0-only
+  makedepends:
+    - doxygen
+    - extra-cmake-modules
+    - qt6-doc
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - kwidgetsaddons
+    - qt6-base
+  source:
+    - https://download.kde.org/stable/frameworks/6.14/kbookmarks-6.14.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.14/kbookmarks-6.14.0.tar.xz.sig
+  validpgpkeys:
+    - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+  sha256sums:
+    - a3f0a61fcfcca6509f1d7d21289e32776616e7caddec07cb9e1ca81e2f78ea43
+    - SKIP
+pkgname:
+  - name: kbookmarks
+# generated with artixpkg 0.36.1-1-any
