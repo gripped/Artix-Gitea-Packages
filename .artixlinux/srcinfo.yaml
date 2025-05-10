@@ -1,0 +1,42 @@
+---
+version: 6.14.0-1
+pkgbase:
+  name: krunner
+  pkgdesc: Framework for providing different actions given a string query
+  pkgver: 6.14.0
+  pkgrel: 1
+  url: https://community.kde.org/Frameworks
+  arch:
+    - x86_64
+  groups:
+    - kf6
+  license:
+    - LGPL-2.0-only
+    - LGPL-3.0-only
+  makedepends:
+    - doxygen
+    - extra-cmake-modules
+    - kdoctools
+    - qt6-doc
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - ki18n
+    - kitemmodels
+    - qt6-base
+  source:
+    - https://download.kde.org/stable/frameworks/6.14/krunner-6.14.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.14/krunner-6.14.0.tar.xz.sig
+  validpgpkeys:
+    - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+  sha256sums:
+    - 138cfb98cd73392722f4499408d075a2c7705bdbf436ecc077360c3153db2fa6
+    - SKIP
+pkgname:
+  - name: krunner
+# generated with artixpkg 0.36.1-1-any
