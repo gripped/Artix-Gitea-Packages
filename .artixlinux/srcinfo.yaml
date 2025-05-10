@@ -1,0 +1,36 @@
+---
+version: 1:4.0.1-1
+pkgbase:
+  name: python-xmlschema
+  pkgdesc: An XML Schema validator and decoder
+  pkgver: 4.0.1
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/sissaschool/xmlschema
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-lxml
+    - python-jinja
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - python-elementpath
+  optdepends:
+    - 'python-jinja: for XSD based code generators'
+  source:
+    - python-xmlschema::git+https://github.com/sissaschool/xmlschema#tag=v4.0.1
+  sha512sums:
+    - c069a497fc3fe09608649b176349a6505fb7e903788ceed1e68b89a220f8095aa6b69f673b4291df078f771b587217d4f9073ec8a5f8e81c8dba43fe30cefde6
+  b2sums:
+    - 66be11fce093d9fbca37097e85ca489c60a48ae1e66716b51689a91f6846c749448995d26222b90c787780581eb64513dc8818a0455768e429cf5f3ef4b9c56b
+pkgname:
+  - name: python-xmlschema
+# generated with artixpkg 0.36.1-1-any
