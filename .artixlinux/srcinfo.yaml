@@ -1,0 +1,48 @@
+---
+version: 6.14.0-1
+pkgbase:
+  name: kwindowsystem
+  pkgdesc: Access to the windowing system
+  pkgver: 6.14.0
+  pkgrel: 1
+  url: https://community.kde.org/Frameworks
+  arch:
+    - x86_64
+  groups:
+    - kf6
+  license:
+    - LGPL-2.0-only
+    - LGPL-3.0-only
+  makedepends:
+    - doxygen
+    - extra-cmake-modules
+    - plasma-wayland-protocols
+    - qt6-declarative
+    - qt6-doc
+    - qt6-tools
+    - wayland-protocols
+  depends:
+    - gcc-libs
+    - glibc
+    - libx11
+    - libxcb
+    - libxfixes
+    - qt6-base
+    - qt6-wayland
+    - wayland
+    - xcb-util-keysyms
+  optdepends:
+    - 'qt6-declarative: QML bindings'
+  source:
+    - https://download.kde.org/stable/frameworks/6.14/kwindowsystem-6.14.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.14/kwindowsystem-6.14.0.tar.xz.sig
+  validpgpkeys:
+    - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+  sha256sums:
+    - 6625f7d5a46cb9c72289bcaaa65ee74450a671e4dbf6eebefc772650f24cf2a6
+    - SKIP
+pkgname:
+  - name: kwindowsystem
+# generated with artixpkg 0.36.1-1-any
