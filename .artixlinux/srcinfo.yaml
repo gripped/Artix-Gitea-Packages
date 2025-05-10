@@ -1,0 +1,55 @@
+---
+version: 6.14.0-1
+pkgbase:
+  name: purpose
+  pkgdesc: Framework for providing abstractions to get the developers purposes fulfilled
+  pkgver: 6.14.0
+  pkgrel: 1
+  url: https://community.kde.org/Frameworks
+  arch:
+    - x86_64
+  groups:
+    - kf6
+  license:
+    - LGPL-2.0-only
+    - LGPL-3.0-only
+  makedepends:
+    - extra-cmake-modules
+    - intltool
+  depends:
+    - accounts-qml-module
+    - gcc-libs
+    - glibc
+    - kaccounts-integration
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - ki18n
+    - kio
+    - kirigami
+    - knotifications
+    - kservice
+    - libaccounts-qt
+    - qt6-base
+    - qt6-declarative
+  optdepends:
+    - 'bluedevil: sharing via Bluetooth'
+    - 'kdeclarative: Nextcloud and YouTube plugins'
+    - 'kdeconnect: sharing to smartphone via KDE Connect'
+    - 'prison: QR code plugin'
+    - 'telegram-desktop: sharing via Telegram'
+  conflicts:
+    - purpose5<5.114.0-2
+  source:
+    - https://download.kde.org/stable/frameworks/6.14/purpose-6.14.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.14/purpose-6.14.0.tar.xz.sig
+  validpgpkeys:
+    - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+  sha256sums:
+    - dd9f23baf4c4a44f1c71f7d3b0bfe7fbfbcdda2002d74d4b49cd84631ac899e9
+    - SKIP
+pkgname:
+  - name: purpose
+# generated with artixpkg 0.36.1-1-any
