@@ -1,0 +1,81 @@
+---
+version: 6.14.6.zen1-1
+pkgbase:
+  name: linux-zen
+  pkgdesc: Linux ZEN
+  pkgver: 6.14.6.zen1
+  pkgrel: 1
+  url: https://github.com/zen-kernel/zen-kernel
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - bc
+    - cpio
+    - gettext
+    - libelf
+    - pahole
+    - perl
+    - python
+    - rust
+    - rust-bindgen
+    - rust-src
+    - tar
+    - xz
+    - graphviz
+    - imagemagick
+    - python-sphinx
+    - python-yaml
+    - texlive-latexextra
+  options:
+    - '!debug'
+    - '!strip'
+  source:
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.6.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.6.tar.sign
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.14.6-zen1/linux-v6.14.6-zen1.patch.zst
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.14.6-zen1/linux-v6.14.6-zen1.patch.zst.sig
+    - config
+  validpgpkeys:
+    - ABAF11C65A2970B130ABE3C479BE3E4300411886
+    - 647F28654894E3BD457199BE38DBBDC86092693E
+    - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
+  sha256sums:
+    - 21817f1998e2230f81f7e4f605fa6fdcb040e14fa27d99c27ddb16ce749797a9
+    - SKIP
+    - c6393d94764fb35f2e5f2b0aef8c2ab75e7a28e400bbd70cbeee81c54610e915
+    - SKIP
+    - 1fc0f727306ec157b54c6ed9240963939bcb44ffaf13ad3f6cbabaafb1e652f6
+  b2sums:
+    - dedcadc0b7506f620da3ac849446539e83d694f0955d5417e063b6680d53ef8993eeef40562ae8dae9249a21bea9746093f8873a360dd74f6b139fbafdd7b9ac
+    - SKIP
+    - 0bf1690cfa6548a676cc36292cd8cedc77bf818e0d055f9d4fde7008f0b3bc3e331970ca9df5fcba1be71ed1c9657af06f33163ad9aa0463409ff11e2ccf3d90
+    - SKIP
+    - 2a3648586e76395b66e491aec4df7a4188a49d78eb6fc673d65ac1fedf7ceb91345e12610dae1459c6e5b9b92b07bb5085f09b780c7b80bd6fb5d4e79c3fe66f
+pkgname:
+  - name: linux-zen
+    pkgdesc: The Linux ZEN kernel and modules
+    depends:
+      - coreutils
+      - initramfs
+      - kmod
+    optdepends:
+      - 'linux-firmware: firmware images needed for some devices'
+      - 'scx-scheds: to use sched-ext schedulers'
+      - 'wireless-regdb: to set the correct wireless channels of your country'
+    provides:
+      - KSMBD-MODULE
+      - NTSYNC-MODULE
+      - UKSMD-BUILTIN
+      - VHBA-MODULE
+      - VIRTUALBOX-GUEST-MODULES
+      - WIREGUARD-MODULE
+    replaces: []
+  - name: linux-zen-headers
+    pkgdesc: Headers and scripts for building modules for the Linux ZEN kernel
+    depends:
+      - pahole
+  - name: linux-zen-docs
+    pkgdesc: Documentation for the Linux ZEN kernel
+# generated with artixpkg 0.36.1-1-any
