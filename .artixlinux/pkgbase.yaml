@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,6 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 20250508.788aadc8-1
     packages:
       - linux-firmware-whence-20250508.788aadc8-1-any.pkg.tar.zst
@@ -25,20 +29,6 @@ repos:
       - linux-firmware-liquidio-20250508.788aadc8-1-any.pkg.tar.zst
       - linux-firmware-qlogic-20250508.788aadc8-1-any.pkg.tar.zst
       - linux-firmware-bnx2x-20250508.788aadc8-1-any.pkg.tar.zst
-    debug: []
-  system:
-    version: 20250408.c1a774f3-1
-    packages:
-      - linux-firmware-whence-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-20250408.c1a774f3-1-any.pkg.tar.zst
-      - amd-ucode-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-nfp-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-mellanox-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-marvell-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-qcom-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-liquidio-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-qlogic-20250408.c1a774f3-1-any.pkg.tar.zst
-      - linux-firmware-bnx2x-20250408.c1a774f3-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
