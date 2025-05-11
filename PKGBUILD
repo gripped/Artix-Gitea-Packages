@@ -11,7 +11,7 @@
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
 pkgver=30.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
 url='https://developers.google.com/protocol-buffers/'
@@ -32,6 +32,7 @@ makedepends=(
   'python-setuptools'
   'python-wheel'
   'ruby'
+  'ruby-ffi-compiler'
   'ruby-rake'
   'ruby-rake-compiler'
 )
@@ -66,7 +67,7 @@ build() {
     -B build
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
-    -D CMAKE_C_FLAGS="$CFLAGS -ffat-lto-objects" 
+    -D CMAKE_C_FLAGS="$CFLAGS -ffat-lto-objects"
     -D CMAKE_CXX_FLAGS="$CXXFLAGS -ffat-lto-objects"
     -D protobuf_BUILD_SHARED_LIBS=ON
     -D protobuf_USE_EXTERNAL_GTEST=ON
@@ -111,7 +112,6 @@ build() {
     \( \
       -iname "*.o" -o \
       -iname "*.c" -o \
-      -iname "*.so" -o \
       -iname "*.time" -o \
       -iname "gem.build_complete" -o \
       -iname "Makefile" \
