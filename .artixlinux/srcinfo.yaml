@@ -1,0 +1,47 @@
+---
+version: 4.12.1-1
+pkgbase:
+  name: python-pymongo
+  pkgdesc: The official MongoDB Python driver
+  pkgver: 4.12.1
+  pkgrel: 1
+  url: https://github.com/mongodb/mongo-python-driver
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pykerberos
+    - python-pyopenssl
+    - python-pytest
+    - python-pytest-asyncio
+    - python-requests
+    - python-service-identity
+    - python-snappy
+    - python-zstandard
+  makedepends:
+    - python-build
+    - python-hatch-requirements-txt
+    - python-hatchling
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+    - python-dnspython
+  optdepends:
+    - 'python-cryptography: for [ocsp]'
+    - 'python-pyopenssl: for [ocsp]'
+    - 'python-requests: for [ocsp]'
+    - 'python-service-identity: for [ocsp]'
+    - 'python-pykerberos: for [gssapi]'
+    - 'python-snappy: for [snappy]'
+    - 'python-zstandard: for [zstd]'
+  source:
+    - python-pymongo-4.12.1.tar.gz::https://github.com/mongodb/mongo-python-driver/archive/4.12.1/4.12.1.tar.gz
+  sha256sums:
+    - 1b1d623e8d6d02728f439e381833c9edfb9e306b75d78ac1aa1637c074911420
+pkgname:
+  - name: python-pymongo
+# generated with artixpkg 0.36.1-1-any
