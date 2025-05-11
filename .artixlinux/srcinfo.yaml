@@ -1,10 +1,10 @@
 ---
-version: 570.144-4
+version: 570.144-5
 pkgbase:
   name: nvidia
   pkgdesc: NVIDIA kernel modules
   pkgver: 570.144
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.nvidia.com/
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgname:
       - linux
       - nvidia-utils=570.144
       - libglvnd
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.1-1-any
