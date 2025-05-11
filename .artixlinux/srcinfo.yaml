@@ -1,0 +1,56 @@
+---
+version: 25.1.2-1
+pkgbase:
+  name: cloud-init
+  pkgdesc: Cloud instance initialization
+  pkgver: 25.1.2
+  pkgrel: 1
+  url: https://cloud-init.io
+  arch:
+    - any
+  license:
+    - GPL-3.0-only OR Apache-2.0
+  checkdepends:
+    - procps-ng
+    - python-httpretty
+    - python-passlib
+    - python-pytest
+    - python-pytest-mock
+    - python-responses
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - bash
+    - dhcp-client
+    - openbsd-netcat
+    - python
+    - python-configobj
+    - python-jinja
+    - python-jsonpatch
+    - python-jsonschema
+    - python-netifaces
+    - python-oauthlib
+    - python-pyserial
+    - python-pyyaml
+    - python-requests
+    - python-typing_extensions
+    - sudo
+  optdepends:
+    - 'cloud-guest-utils: for growpart'
+    - 'python-passlib: for Azure and BSD support'
+    - 'python-urllib3: for LXD and Scaleway data sources'
+  backup:
+    - etc/cloud/cloud.cfg
+    - etc/cloud/cloud.cfg.d/05_logging.cfg
+  source:
+    - https://github.com/canonical/cloud-init/archive/25.1.2/cloud-init-25.1.2.tar.gz
+  sha512sums:
+    - 0509a0413a13672745e12ef520f5132155308bf02bd440de60b4fb076d43ac0bd81ef9d63ea289093521a21c621ba6bac2ec1cbaa06f7dbe7caa171cb4c8b644
+  b2sums:
+    - cf13302f452e1ffb4a0d7e0394bd22db32eb1bb9eec9732e4c973e2b35ff58f4959a09e3a9d896f41deacba65a820065d5b876419c131870fe20842a89f18e53
+pkgname:
+  - name: cloud-init
+# generated with artixpkg 0.36.1-1-any
