@@ -1,0 +1,98 @@
+---
+version: 1.11.565-1
+pkgbase:
+  name: aws-sdk-cpp
+  pkgdesc: AWS SDK for C++
+  pkgver: 1.11.565
+  pkgrel: 1
+  url: https://github.com/aws/aws-sdk-cpp
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - aws-c-auth
+    - aws-c-common
+    - aws-c-event-stream
+    - aws-c-http
+    - aws-c-io
+    - aws-c-s3
+    - aws-crt-cpp
+    - cmake
+    - curl
+    - gcc-libs
+    - glibc
+    - libpulse
+    - zlib
+  source:
+    - aws-sdk-cpp-1.11.565.tar.gz::https://github.com/aws/aws-sdk-cpp/archive/1.11.565.tar.gz
+  sha256sums:
+    - a6dd504ef371b12691c31065e3412902412cbb2f76f61796aafac0be0762406f
+pkgname:
+  - name: aws-sdk-cpp
+    depends:
+      - aws-c-common
+      - aws-crt-cpp
+      - aws-sdk-cpp-core
+      - aws-sdk-cpp-ec2
+      - aws-sdk-cpp-firehose
+      - aws-sdk-cpp-iam
+      - aws-sdk-cpp-kinesis
+      - aws-sdk-cpp-s3
+      - gcc-libs
+      - glibc
+      - libpulse
+  - name: aws-sdk-cpp-core
+    pkgdesc: AWS SDK for C++ - core library
+    depends:
+      - aws-c-common
+      - aws-c-event-stream
+      - aws-crt-cpp
+      - curl
+      - gcc-libs
+      - glibc
+      - zlib
+  - name: aws-sdk-cpp-ec2
+    pkgdesc: AWS SDK for C++ - EC2 libraries
+    depends:
+      - aws-c-common
+      - aws-crt-cpp
+      - aws-sdk-cpp-core
+      - gcc-libs
+      - glibc
+  - name: aws-sdk-cpp-firehose
+    pkgdesc: AWS SDK for C++ - Firehose libraries
+    depends:
+      - aws-c-common
+      - aws-crt-cpp
+      - aws-sdk-cpp-core
+      - gcc-libs
+      - glibc
+  - name: aws-sdk-cpp-iam
+    pkgdesc: AWS SDK for C++ - IAM libraries
+    depends:
+      - aws-crt-cpp
+      - aws-sdk-cpp-core
+      - gcc-libs
+      - glibc
+  - name: aws-sdk-cpp-kinesis
+    pkgdesc: AWS SDK for C++ - Kinesis libraries
+    depends:
+      - aws-c-common
+      - aws-crt-cpp
+      - aws-sdk-cpp-core
+      - gcc-libs
+      - glibc
+  - name: aws-sdk-cpp-s3
+    pkgdesc: AWS SDK for C++ - S3 libraries
+    depends:
+      - aws-c-auth
+      - aws-c-common
+      - aws-c-http
+      - aws-c-io
+      - aws-c-s3
+      - aws-crt-cpp
+      - aws-sdk-cpp-core
+      - gcc-libs
+      - glibc
+# generated with artixpkg 0.36.1-1-any
