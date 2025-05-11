@@ -1,0 +1,47 @@
+---
+version: 9.0.1-1
+pkgbase:
+  name: python-elasticsearch
+  pkgdesc: Official Python client for Elasticsearch
+  pkgver: 9.0.1
+  pkgrel: 1
+  url: https://github.com/elastic/elasticsearch-py
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - nltk-data
+    - python-aiohttp
+    - python-nltk
+    - python-numpy
+    - python-orjson
+    - python-pandas
+    - python-pyarrow
+    - python-pytest
+    - python-pytest-asyncio
+    - python-requests
+    - python-yaml
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-dateutil
+    - python-elastic-transport
+    - python-typing_extensions
+  optdepends:
+    - 'python-aiohttp: support for asynchronous requests'
+    - 'python-numpy: support for Maximal Marginal Relevance (MMR) for search results'
+    - 'python-orjson: support for faster JSON serialization'
+    - 'python-pyarrow: support for Arrow deserialization'
+    - 'python-requests: support for synchronous requests'
+  source:
+    - python-elasticsearch-9.0.1.tar.gz::https://github.com/elastic/elasticsearch-py/archive/v9.0.1.tar.gz
+  sha256sums:
+    - 35accbdafdb34619655c0f226d99edb3080675735b4dc9ff6b96ee1602dfda64
+pkgname:
+  - name: python-elasticsearch
+# generated with artixpkg 0.36.1-1-any
