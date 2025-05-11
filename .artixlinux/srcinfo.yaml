@@ -1,0 +1,42 @@
+---
+version: 6.0.0-1
+pkgbase:
+  name: python-redis
+  pkgdesc: The Python interface to the Redis key-value store
+  pkgver: 6.0.0
+  pkgrel: 1
+  url: https://github.com/redis/redis-py
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-coverage
+    - python-cryptography
+    - python-hiredis
+    - python-numpy
+    - python-pyopenssl
+    - python-pytest
+    - python-pytest-asyncio
+    - python-requests
+    - valkey
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-cryptography: OCSP certificate validation'
+    - 'python-hiredis: faster performance via hiredis'
+    - 'python-pyopenssl: OCSP certificate validation'
+    - 'python-requests: OCSP certificate validation'
+  source:
+    - python-redis::git+https://github.com/redis/redis-py#tag=v6.0.0
+  b2sums:
+    - ee5ef832d47cfad586ded1fb581f2e907944e8d7c7bcf7bea665d6aa521a6d872dc6f001aa932b1092913c8ce89a92fbd28e2c9883a659bcb066059ab635773b
+pkgname:
+  - name: python-redis
+# generated with artixpkg 0.36.1-1-any
