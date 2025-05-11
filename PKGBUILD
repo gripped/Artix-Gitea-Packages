@@ -3,8 +3,8 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=syslog-ng
-pkgver=4.8.1
-pkgrel=12
+pkgver=4.8.2
+pkgrel=1
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=(x86_64)
 url="https://github.com/syslog-ng/syslog-ng"
@@ -97,7 +97,7 @@ backup=(
 install=$pkgname.install
 source=(
   "git+$url.git#tag=$pkgname-$pkgver"
-  "git+https://github.com/buytenh/ivykis.git"
+  "git+https://github.com/balabit/ivykis.git"
   "git+https://github.com/open-telemetry/opentelemetry-proto.git"
   "git+https://github.com/Thalhammer/jwt-cpp.git"
   "$pkgname.logrotate"
@@ -105,14 +105,14 @@ source=(
   "$pkgname-config.patch"
   "syslog-ng-fix-protobuf-30.0-compatibility.patch"
 )
-sha256sums=('7e8568185e4e2380417ac0db8ab3773721bcfb117d378776ef9f1953bc4faf25'
+sha256sums=('f290a4ce2654d0bc2ac691e00ab4563ee919d0ebb984ed130cf5dc0ad955ff25'
             'SKIP'
             'SKIP'
             'SKIP'
             '93c935eca56854011ea9e353b7a1da662ad40b2e8452954c5b4b5a1d5b2d5317'
             '7ca7f0d9fb203b3814fe2f609904af84df346b84591eeeb171bb2e5eb6393990'
             '1039550b091df1a50e8d30b624d52a7fd56c29d0ceec596b4b029a7cc92a3825'
-            'f2ebdf8c85edeacbd392e7e7b7fee337ed9d919bdb7b633dabf9613e33d5a9f1')
+            '74ee85b53748cb2567b696c9d10dd4a5e1d235769f8efc38c657b1ab4ef16e95')
 
 prepare() {
   cd $pkgname
