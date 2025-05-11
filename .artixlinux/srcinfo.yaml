@@ -1,0 +1,29 @@
+---
+version: 9.0.5-1
+pkgbase:
+  name: python-phonenumbers
+  pkgdesc: Python version of Google's common library for parsing, formatting, storing and validating international phone numbers
+  pkgver: 9.0.5
+  pkgrel: 1
+  url: https://github.com/daviddrysdale/python-phonenumbers
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-protobuf
+  makedepends:
+    - git
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/daviddrysdale/python-phonenumbers.git#tag=v9.0.5
+  sha512sums:
+    - 1b1348189f150b631ccb58baccfab165045610857507b63e109d4feaa287c4c945eec1d32df2d7f73831b2856e1910a10006ed9521f9db7a58245707ed728d40
+pkgname:
+  - name: python-phonenumbers
+# generated with artixpkg 0.36.1-1-any
