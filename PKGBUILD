@@ -2,7 +2,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=prometheus
-pkgver=3.2.1
+pkgver=3.3.1
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -18,21 +18,13 @@ backup=('etc/prometheus/prometheus.yml')
 
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers
-        prometheus.conf
-        ignore_gzip_timestamps.patch)
+	)
 
-sha256sums=('9e6308f48077b93daed1a39650784fc02805a518632b9c5b00e9c778ef88eac5'
-            '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f'
-            '6d32deb125381cbebac11b6953a7d9a65eb7e50f209dc1e22c63facf678a3070'
-            'cd2be58b613e51416fbf91e7c0f25d4f0050bbe0036c48b8691b3fec9c5ba486')
+sha256sums=('2d4a71efb7c662f265c7af5f7db3367b2a7d3981fdc8860103909148b9a82846'
+            '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 prepare() {
   cd prometheus-$pkgver
-
-  # Ignore timestamps recording in gzip metadata
-  # This is required for reproducible builds
-  # See https://github.com/prometheus/prometheus/pull/16035
-  patch -Np1 -i $srcdir/ignore_gzip_timestamps.patch
 }
 
 build() {
