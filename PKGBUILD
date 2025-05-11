@@ -4,7 +4,7 @@ _module='forecasts'
 _fullmodule='bodhi-weather'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=7
+pkgrel=7.1
 pkgdesc="The forecasts gadget will display the current weather conditions plus a few days forecast."
 _group=('moksha-modules-extra')
 arch=('x86_64')
@@ -16,10 +16,6 @@ source=("${_fullmodule}::git+https://github.com/thewaiter/$_fullmodule.git")
 sha256sums=('SKIP')
 
 build() {
-    export LDFLAGS=-Wl,--allow-multiple-definition
-    export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
-           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
-           -fstack-clash-protection -fcf-protection"
     cd "${srcdir}/${_fullmodule}"
     chmod +x autogen.sh
     if [[ -f configure ]]; then
