@@ -1,0 +1,57 @@
+---
+version: 3.5.0-1
+pkgbase:
+  name: couchdb
+  pkgdesc: Document-oriented database that can be queried and indexed in a MapReduce fashion using JSON
+  pkgver: 3.5.0
+  pkgrel: 1
+  url: https://couchdb.apache.org
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - elixir
+    - procps-ng
+    - python
+  makedepends:
+    - erlang-asn1
+    - erlang-erts
+    - erlang-eunit
+    - erlang-os_mon
+    - erlang-reltool
+    - erlang-xmerl
+    - rebar3
+  depends:
+    - gcc-libs
+    - glibc
+    - icu
+    - ncurses
+    - zlib
+  optdepends:
+    - 'erlang-erts: for weatherreport'
+  options:
+    - '!makeflags'
+  backup:
+    - etc/couchdb/local.ini
+    - etc/couchdb/vm.args
+    - etc/default/couchdb
+  source:
+    - https://archive.apache.org/dist/couchdb/source/3.5.0/apache-couchdb-3.5.0.tar.gz
+    - https://archive.apache.org/dist/couchdb/source/3.5.0/apache-couchdb-3.5.0.tar.gz.asc
+    - couchdb.default
+    - couchdb.sysusers
+    - couchdb.tmpfiles
+  validpgpkeys:
+    - 2EC788AE3F239FA13E82D215CDE711289384AE37
+    - D2B17F9DA23C0A10991AF2E3D9EE01E47852AEE4
+    - 0BD7A98499C4AB41C910EE65FC04DFBC9657A78E
+  sha256sums:
+    - 6a98b90a9a980bbef2c35b4996a8e71a2f1ae5227546c85f04c436101bdf78bf
+    - SKIP
+    - 0d21fdd7851b3a6fa099b030cab0e96705b1d5a3a83a4ff1c871814d8742cae9
+    - 76404436346167dd19c3eace1164e35e3ac91ffed9bc3c20acb1b76e6d306f43
+    - 7331b9675e3668c5f0d632bee5d154c061cc3e60d451bef3dc0d0ab2dadfa006
+pkgname:
+  - name: couchdb
+# generated with artixpkg 0.36.1-1-any
