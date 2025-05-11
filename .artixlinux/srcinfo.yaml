@@ -1,0 +1,43 @@
+---
+version: 4.11.3-1
+pkgbase:
+  name: ccache
+  pkgdesc: Compiler cache that speeds up recompilation by caching previous compilations
+  pkgver: 4.11.3
+  pkgrel: 1
+  url: https://ccache.dev/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - doctest
+  makedepends:
+    - asciidoctor
+    - cmake
+    - perl
+    - tl-expected
+  depends:
+    - fmt
+    - gcc-libs
+    - glibc
+    - hiredis
+    - libblake3
+    - libxxhash.so
+    - libzstd.so
+    - xxhash
+    - zstd
+  source:
+    - https://github.com/ccache/ccache/releases/download/v4.11.3/ccache-4.11.3.tar.xz
+    - https://github.com/ccache/ccache/releases/download/v4.11.3/ccache-4.11.3.tar.xz.asc
+  validpgpkeys:
+    - 5A939A71A46792CF57866A51996DDA075594ADB8
+  sha512sums:
+    - 0707d140cc9965144aa9de4b51132dfc87204ff16d907925cff30974fc830731931dbaf17e23e3366d1f5d6ddea8884c06a0f059a4ce460b3a9f87121419398f
+    - SKIP
+  b2sums:
+    - 62c3cd1fc5ef620211b99f2df4e55985c209f24f6f6dfd8fcbd1d0bb4b7b0e29fe3057561314bc62b74d0560e368c9e93e1aaed158c6d6a4f2103aba8c938be4
+    - SKIP
+pkgname:
+  - name: ccache
+# generated with artixpkg 0.36.1-1-any
