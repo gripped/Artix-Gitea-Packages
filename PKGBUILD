@@ -5,7 +5,7 @@
 
 pkgname=smartmontools
 pkgver=7.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives'
 url='https://www.smartmontools.org/'
 license=('GPL')
@@ -14,7 +14,7 @@ depends=('gcc-libs' 'libcap-ng' 'bash' 'libudev')
 makedepends=('udev')
 optdepends=('s-nail: to get mail alerts to work')
 backup=('etc/smartd.conf'
-        'etc/conf.d/smartd')
+        )
 validpgpkeys=('0C9577FD2C4CFCB4B9A599640A30812EFF3AEFF5') # Smartmontools Signing Key (through 2025) <smartmontools-support@listi.jpberlin.de>
 source=("https://downloads.sourceforge.net/sourceforge/${pkgname}/${pkgname}-${pkgver}.tar.gz"{,.asc}
         'smartd.conf')
@@ -46,5 +46,4 @@ package() {
   make DESTDIR="${pkgdir}" install
 
   rm -rf "${pkgdir}"/etc/rc.d
-  install -D -m0644 "${srcdir}"/smartd.conf "${pkgdir}/etc/conf.d/smartd"
 }

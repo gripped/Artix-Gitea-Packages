@@ -1,0 +1,36 @@
+---
+version: 7.5-1.1
+pkgbase:
+  name: smartmontools
+  pkgdesc: Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives
+  pkgver: 7.5
+  pkgrel: 1.1
+  url: https://www.smartmontools.org/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - udev
+  depends:
+    - gcc-libs
+    - libcap-ng
+    - bash
+    - libudev
+  optdepends:
+    - 's-nail: to get mail alerts to work'
+  backup:
+    - etc/smartd.conf
+  source:
+    - https://downloads.sourceforge.net/sourceforge/smartmontools/smartmontools-7.5.tar.gz
+    - https://downloads.sourceforge.net/sourceforge/smartmontools/smartmontools-7.5.tar.gz.asc
+    - smartd.conf
+  validpgpkeys:
+    - 0C9577FD2C4CFCB4B9A599640A30812EFF3AEFF5
+  sha256sums:
+    - 690b83ca331378da9ea0d9d61008c4b22dde391387b9bbad7f29387f2595f76e
+    - SKIP
+    - c2c0f2f6b4a3f3d76da1c7706139297aef6e3f2a705eb7fdd800544812427c74
+pkgname:
+  - name: smartmontools
+# generated with artixpkg 0.36.1-1-any
