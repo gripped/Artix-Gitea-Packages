@@ -1,0 +1,32 @@
+---
+version: 0.25.0-1
+pkgbase:
+  name: python-aiorpcx
+  pkgdesc: A generic asyncio library implementation of RPC suitable for an application that is a client, server or both
+  pkgver: 0.25.0
+  pkgrel: 1
+  url: https://github.com/kyuupichan/aiorpcX
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+    - python-websockets
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-websockets: websocket transport'
+  source:
+    - python-aiorpcx-0.25.0.tar.gz::https://github.com/kyuupichan/aiorpcX/archive/0.25.0.tar.gz
+  sha256sums:
+    - 64982de255cc6e008dd3dbd7fa46525a2d8573206275289b705dbfbae107cd72
+pkgname:
+  - name: python-aiorpcx
+# generated with artixpkg 0.36.1-1-any
