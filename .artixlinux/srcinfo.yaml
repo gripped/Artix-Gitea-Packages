@@ -1,0 +1,35 @@
+---
+version: 8.7.0-1
+pkgbase:
+  name: python-importlib-metadata
+  pkgdesc: Read metadata from Python packages
+  pkgver: 8.7.0
+  pkgrel: 1
+  url: https://importlib-metadata.readthedocs.io
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-jaraco.test
+    - python-pytest
+    - python-pyfakefs
+    - python-pip
+    - python-tests
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python-zipp
+  source:
+    - git+https://github.com/python/importlib_metadata.git#tag=v8.7.0?signed
+  validpgpkeys:
+    - CE380CF3044959B8F377DA03708E6CB181B4C47E
+  sha512sums:
+    - 2577eabc2920d2e0d7658f2eee695a172540d2a9bcfbfa1d975f2b38af99cccd74ed87b2faa8ec37be1c48ff2d8c169b622b5463ccff1de52a82355a717766ea
+pkgname:
+  - name: python-importlib-metadata
+# generated with artixpkg 0.36.1-1-any
