@@ -1,0 +1,34 @@
+---
+version: 0.32.5-1
+pkgbase:
+  name: aws-crt-cpp
+  pkgdesc: C++ wrapper around the aws-c-* libraries. Provides Cross-Platform Transport Protocols and SSL/TLS implementations for C++.
+  pkgver: 0.32.5
+  pkgrel: 1
+  url: https://github.com/awslabs/aws-crt-cpp
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+  depends:
+    - aws-c-auth
+    - aws-c-cal
+    - aws-c-common
+    - aws-c-event-stream
+    - aws-c-http
+    - aws-c-io
+    - aws-c-mqtt
+    - aws-c-s3
+    - aws-c-sdkutils
+    - aws-checksums
+    - gcc-libs
+    - glibc
+  source:
+    - aws-crt-cpp-0.32.5.tar.gz::https://github.com/awslabs/aws-crt-cpp/archive/v0.32.5.tar.gz
+  sha256sums:
+    - 45d281d39ea1f70bd3310b2345395d3e5b414da325424938e095dde38d44cccd
+pkgname:
+  - name: aws-crt-cpp
+# generated with artixpkg 0.36.1-1-any
