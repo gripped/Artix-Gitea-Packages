@@ -3,7 +3,7 @@
 pkgname=kwallet-pam
 pkgver=6.3.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='KWallet PAM integration'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
