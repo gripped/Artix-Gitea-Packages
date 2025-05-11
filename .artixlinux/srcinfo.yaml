@@ -1,0 +1,47 @@
+---
+version: 2.22.0-1
+pkgbase:
+  name: python-aiobotocore
+  pkgdesc: asyncio support for botocore library using aiohttp
+  pkgver: 2.22.0
+  pkgrel: 1
+  url: https://github.com/aio-libs/aiobotocore
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-dill
+    - python-docker
+    - python-docutils
+    - python-flask
+    - python-flask-cors
+    - python-moto
+    - python-openapi-spec-validator
+    - python-pip
+    - python-pytest
+    - python-pytest-asyncio
+    - python-time-machine
+    - python-yaml
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-aiohttp
+    - python-aioitertools
+    - python-botocore
+    - python-dateutil
+    - python-jmespath
+    - python-multidict
+    - python-wrapt
+  source:
+    - git+https://github.com/aio-libs/aiobotocore.git#tag=2.22.0
+  sha256sums:
+    - df7ff2ded659e8000ef2fca289d484ac29a58afbc33c405b030f285b4b1d66a8
+pkgname:
+  - name: python-aiobotocore
+# generated with artixpkg 0.36.1-1-any
