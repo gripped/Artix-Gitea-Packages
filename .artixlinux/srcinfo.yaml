@@ -1,0 +1,23 @@
+---
+version: 0.1.1-2.2
+pkgbase:
+  name: moksha-module-emprint
+  pkgdesc: Emprint is a utility for taking screenshots of the entire screen, a specific window, or a specific region.
+  pkgver: 0.1.1
+  pkgrel: 2.2
+  url: http://mokshadesktop.org
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - git
+  depends:
+    - moksha
+  source:
+    - moksha-modules-extra::git+https://github.com/JeffHoogland/moksha-modules-extra.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: moksha-module-emprint
+# generated with artixpkg 0.36.1-1-any

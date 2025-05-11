@@ -3,7 +3,7 @@
 _module='emprint'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Emprint is a utility for taking screenshots of the entire screen, a specific window, or a specific region."
 _group=('moksha-modules-extra')
 arch=('x86_64')
@@ -15,10 +15,6 @@ source=("${_group}::git+https://github.com/JeffHoogland/${_group}.git")
 sha256sums=('SKIP')
 
 build() {
-    export LDFLAGS=-Wl,--allow-multiple-definition
-    export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
-           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
-           -fstack-clash-protection -fcf-protection"
     cd "${srcdir}/${_group}/lib/${_module}"
     chmod +x autogen.sh
     if [[ -f configure ]]; then
