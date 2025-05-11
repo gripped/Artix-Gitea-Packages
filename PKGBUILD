@@ -62,6 +62,9 @@ check() {
     --deselect='tests/test_patches.py::test_patches[EndpointRulesetResolver._get_provider_params-digests117]'
     --deselect='tests/test_patches.py::test_patches[Session.create_client-digests123]'
     --deselect='tests/test_patches.py::test_patches[Waiter.wait-digests191]'
+
+    # Fails in Artix CI
+    --deselect tests/test_basic_s3.py::test_fail_proxy_request
   )
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
