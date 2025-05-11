@@ -1,0 +1,32 @@
+---
+version: 0.25.3-1
+pkgbase:
+  name: python-pytest-asyncio
+  pkgdesc: Pytest support for asyncio.
+  pkgver: 0.25.3
+  pkgrel: 1
+  url: https://github.com/pytest-dev/pytest-asyncio
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-hypothesis
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-pytest
+  source:
+    - git+https://github.com/pytest-dev/pytest-asyncio.git#tag=v0.25.3?signed
+  validpgpkeys:
+    - 856F4E797CAB2AA5A0A967E1F0827C47163A10D6
+  b2sums:
+    - 729bd4c31d6cab7359cf3a0f58e7fc505b2e7393074f443b4b3ff8618f8cf129a9670092b07a6a86b7e8909eb95650031392b1d0be85db67bb5ea58296eaddfe
+pkgname:
+  - name: python-pytest-asyncio
+# generated with artixpkg 0.36.1-1-any
