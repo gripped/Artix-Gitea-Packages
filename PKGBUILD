@@ -1,4 +1,5 @@
-# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jakub Klinkovský <lahwaacz at archlinux dot org>
 
 _name=ucx
 pkgname=openucx
@@ -32,8 +33,20 @@ provides=(
   libucs_signal.so
   libuct.so
 )
-source=("$pkgname-$pkgver.tar.gz::https://github.com/openucx/$_name/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('4fcf866c6a446f367fc1e8981b1272f405a081d0f241f7f7bc0e7a1cef961230a8b4e07d7e72e4366c80846d3d517f3998cfdc79afcf7c67ebdb8cd82bbf985b')
+source=(
+  $pkgname-$pkgver.tar.gz::https://github.com/openucx/$_name/archive/refs/tags/v$pkgver.tar.gz
+  fix-headers-before-c-decls.patch
+)
+b2sums=('4fcf866c6a446f367fc1e8981b1272f405a081d0f241f7f7bc0e7a1cef961230a8b4e07d7e72e4366c80846d3d517f3998cfdc79afcf7c67ebdb8cd82bbf985b'
+        'e34e1b1fc3c0bbda825a29a0d907f79ceac7f63ed664b66f82c54d4e06aea5fe2a41ab3d77c703d0addb76be9339870f3f13b7bb2a07a4d455c611d65458bfeb')
+
+prepare() {
+  cd $_name-$pkgver
+
+  # TOOLS/PERF: Include headers before BEGIN_C_DECLS
+  # https://github.com/openucx/ucx/pull/10668/commits/1adf2aecb6fedd82227e9c293a77473ad42632be
+  patch -Np1 -i ../fix-headers-before-c-decls.patch
+}
 
 build() {
   local configure_options=(
@@ -52,6 +65,9 @@ build() {
   # this uses malloc_usable_size, which is incompatible with fortification level 3
   export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
+  # workaround to fix building with gcc 15
+  CFLAGS+=' -std=gnu17'
 
   cd $_name-$pkgver
   ./autogen.sh
