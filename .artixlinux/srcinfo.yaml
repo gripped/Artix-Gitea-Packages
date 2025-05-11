@@ -1,0 +1,47 @@
+---
+version: 9.0.2-1
+pkgbase:
+  name: kicad
+  pkgdesc: Electronic schematic and printed circuit board (PCB) design tools
+  pkgver: 9.0.2
+  pkgrel: 1
+  url: http://kicad.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - cmake
+    - ninja
+    - mesa
+    - boost
+    - swig
+  depends:
+    - curl
+    - glew
+    - glm
+    - ngspice
+    - opencascade
+    - python
+    - python-wxpython
+    - wxwidgets-gtk3
+    - unixodbc
+    - libgit2
+    - nng
+    - protobuf
+  optdepends:
+    - 'kicad-library: for footprints, symbols and templates'
+    - 'kicad-library-3d: for 3D models of components'
+  source:
+    - kicad::git+https://gitlab.com/kicad/code/kicad.git#tag=9.0.2
+    - fix-version-string.patch
+  sha512sums:
+    - 333f55d324887230fd926872a97067004dcb6ddbf47176a95deb007bde6d32e518b7196d0c38448d9bb945c5bf9cac6635e406afb425214d4cdabafa730a1dcf
+    - 17100967610c85ce2e8a860dcf703a87dc0c20f52d3f056cdb5d16323160e8594698bd51e095aea63c00a75ce8b121be681e93cec1bab72a8d1d4eb8065a91f5
+  b2sums:
+    - adc25b06f11e0b624c235b8a3833da039c572391dd7735333316e66a1f7b35e8e05181abf7f3eae467a5388808ec3647927cf90cb804fde6280e359cce6ed8e9
+    - 7e09300161b2a1d7af56580a195e3b132d7b6ad82f1c9c381e02a25cd2fabd7ed0cd33b99b87ca14f9f77dad26eee1e5ea962b6eca49bacb40567ecfc24c21ff
+pkgname:
+  - name: kicad
+# generated with artixpkg 0.36.1-1-any
