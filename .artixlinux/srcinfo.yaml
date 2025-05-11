@@ -1,0 +1,39 @@
+---
+version: 1.8.0-1
+pkgbase:
+  name: python-django-q2
+  pkgdesc: A multiprocessing distributed task queue for Django
+  pkgver: 1.8.0
+  pkgrel: 1
+  url: https://github.com/django-q2/django-q2
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python-django
+    - python-django-picklefield
+  optdepends:
+    - 'python-blessed: Display the statistics in the terminal'
+    - 'python-setproctitle: customize the proctitle'
+    - 'python-hiredis: redis support'
+    - 'python-boto3: Amazon Simple Queue Service message queue support'
+    - 'python-psutil: resource usage limit support'
+    - 'python-pymongo: MongoDB as a message broker support'
+  provides:
+    - python-django-q
+  conflicts:
+    - python-django-q
+  replaces:
+    - python-django-q
+  source:
+    - python-django-q2-1.8.0.tar.gz::https://github.com/django-q2/django-q2/archive/refs/tags/v1.8.0.tar.gz
+  sha256sums:
+    - 3f35acadb506ee653d4137cdd27bfd301392922c0c943c373de11962f310a268
+pkgname:
+  - name: python-django-q2
+# generated with artixpkg 0.36.1-1-any
