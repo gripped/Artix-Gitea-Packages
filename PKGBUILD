@@ -4,7 +4,7 @@
 
 pkgname=cython
 pkgver=3.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='C-Extensions for Python'
 arch=(x86_64)
 url='https://cython.org'
@@ -24,6 +24,11 @@ checkdepends=(gdb
               python-tests)
 source=(git+https://github.com/cython/cython#tag=$pkgver)
 sha256sums=('4c16061633cd4c14e4991d08ec243b2340e258e6700faec710170addf6567789')
+
+prepare() {
+  cd cython
+  git cherry-pick -n bcb7c863e734a95a2b185086fb16a78a66205380 # Fix build of sagemath
+}
 
 build() {
   cd cython
