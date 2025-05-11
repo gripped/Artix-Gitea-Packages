@@ -2,15 +2,15 @@
 
 pkgname=valkey-openrc
 pkgver=20250511
-pkgrel=1
+pkgrel=2
 pkgdesc="openrc script for valkey"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artixlinux/packages"
 license=('GPL2')
 groups=('openrc-world')
-provides=('init-valkey')
+provides=('init-valkey'  'init-redis')
 depends=('openrc' 'valkey')
-conflicts=('init-valkey')
+conflicts=('init-valkey' 'init-redis')
 source=(
     "valkey."{initd,confd}
     "valkey-sentinel."{initd,confd}

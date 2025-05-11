@@ -1,10 +1,10 @@
 ---
-version: 20250511-1
+version: 20250511-2
 pkgbase:
   name: valkey-openrc
   pkgdesc: openrc script for valkey
   pkgver: 20250511
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artixlinux/packages
   arch:
     - x86_64
@@ -17,8 +17,10 @@ pkgbase:
     - valkey
   provides:
     - init-valkey
+    - init-redis
   conflicts:
     - init-valkey
+    - init-redis
   source:
     - valkey.initd
     - valkey.confd
