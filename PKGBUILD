@@ -3,7 +3,7 @@
 _module='productivity'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=3.2
+pkgrel=3.3
 pkgdesc="Moksha module ${_module}"
 _group=('moksha-modules-extra')
 arch=('x86_64')
