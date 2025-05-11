@@ -1,0 +1,39 @@
+---
+version: 1.40.12-1
+pkgbase:
+  name: aws-cli
+  pkgdesc: Universal Command Line Interface for Amazon Web Services
+  pkgver: 1.40.12
+  pkgrel: 1
+  url: https://github.com/aws/aws-cli
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-awscrt
+    - python-pytest
+    - python-pytest-xdist
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-botocore
+    - python-colorama
+    - python-dateutil
+    - python-docutils
+    - python-jmespath
+    - python-pyasn1
+    - python-rsa
+    - python-s3transfer
+    - python-yaml
+  source:
+    - https://github.com/aws/aws-cli/archive/1.40.12/aws-cli-1.40.12.tar.gz
+  sha256sums:
+    - c6000e2e57b19c6c7af01f1223e7d2277c83c572c74cafd3a55fe8ed9164ea85
+pkgname:
+  - name: aws-cli
+# generated with artixpkg 0.36.1-1-any
