@@ -1,0 +1,35 @@
+---
+version: 1.38.13-1
+pkgbase:
+  name: python-boto3
+  pkgdesc: The AWS SDK for Python
+  pkgver: 1.38.13
+  pkgrel: 1
+  url: https://github.com/boto/boto3
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-awscrt
+    - python-pytest
+    - python-pytest-xdist
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-botocore
+    - python-jmespath
+    - python-s3transfer
+  optdepends:
+    - 'python-awscrt: AWS CRT S3 transfers'
+  source:
+    - https://github.com/boto/boto3/archive/1.38.13/python-boto3-1.38.13.tar.gz
+  sha512sums:
+    - e06f144b4cc6784d2563de2bfba2e0868c7877a2232c390bfee9db70518880b2d3c1506d3849b5f7cf46515ee2d1932a1ca09ca8847da2824f97fa5d828bc313
+pkgname:
+  - name: python-boto3
+# generated with artixpkg 0.36.1-1-any
