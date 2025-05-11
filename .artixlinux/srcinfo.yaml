@@ -1,0 +1,40 @@
+---
+version: 0.27.1-1
+pkgbase:
+  name: python-awscrt
+  pkgdesc: A common runtime for AWS Python projects
+  pkgver: 0.27.1
+  pkgrel: 1
+  url: https://github.com/awslabs/aws-crt-python
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-websockets
+  makedepends:
+    - cmake
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - aws-c-auth
+    - aws-c-cal
+    - aws-c-common
+    - aws-c-event-stream
+    - aws-c-http
+    - aws-c-io
+    - aws-c-mqtt
+    - aws-c-s3
+    - aws-checksums
+    - glibc
+    - python
+  source:
+    - git+https://github.com/awslabs/aws-crt-python.git#tag=v0.27.1
+  sha256sums:
+    - 8f3d6ecf0c956ed8506c9a9572a7daf2506f5c45d1d1259969eb72a50d0d3637
+pkgname:
+  - name: python-awscrt
+# generated with artixpkg 0.36.1-1-any
