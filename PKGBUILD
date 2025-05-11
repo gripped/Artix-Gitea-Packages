@@ -23,9 +23,9 @@ optdepends=('freetype2: Font rasterization library'
             'libxpm: X11 pixmap library'
             'sharutils: Makes so-called shell archives out of many files')
 options=('!emptydirs' '!makeflags')
-source=("https://github.com/fvwmorg/fvwm3/releases/download/${pkgver}/fvwm3-${pkgver}.tar.gz"
+source=("https://github.com/fvwmorg/${pkgname}/archive/refs/tags/${pkgver}.tar.gz"
         "fvwm3.desktop")
-sha256sums=('fde449c21678e059d16278da3ac69f3786aed96cac90962163e72bf59e840421'
+sha256sums=('6843ff7320d1890dc4757ac7e83c6b4ac18d95a846111ad68d01b463c539bd2c'
             'e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db')
 
 build() {
