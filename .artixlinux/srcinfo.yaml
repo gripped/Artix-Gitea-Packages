@@ -1,0 +1,32 @@
+---
+version: 0.24.0-1
+pkgbase:
+  name: ruby-async-container
+  pkgdesc: Abstract container-based parallelism using threads and processes where appropriate
+  pkgver: 0.24.0
+  pkgrel: 1
+  url: https://github.com/socketry/async-container
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+  depends:
+    - ruby
+    - ruby-async
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/async-container/archive/v0.24.0/ruby-async-container-0.24.0.tar.gz
+  sha256sums:
+    - 9057682de08ec2e19cbfcb8c92ecae038eb080001e37cec2d2c47ed5276ac5a8
+pkgname:
+  - name: ruby-async-container
+# generated with artixpkg 0.36.1-1-any
