@@ -1,0 +1,53 @@
+---
+version: 1.78.0-1
+pkgbase:
+  name: python-openai
+  pkgdesc: Python client library for the OpenAI API
+  pkgver: 1.78.0
+  pkgrel: 1
+  url: https://github.com/openai/openai-python
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - npm
+    - procps-ng
+    - python-dirty-equals
+    - python-inline-snapshot
+    - python-pytest
+    - python-pytest-asyncio
+    - python-nest-asyncio
+    - python-respx
+    - python-rich
+  makedepends:
+    - python-build
+    - python-hatch-fancy-pypi-readme
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-anyio
+    - python-distro
+    - python-h2
+    - python-httpx
+    - python-jiter
+    - python-pydantic
+    - python-pydantic-core
+    - python-sniffio
+    - python-tqdm
+    - python-typing_extensions
+  optdepends:
+    - 'python-numpy: Datalib support'
+    - 'python-pandas: Datalib support'
+    - 'python-websockets: Realtime support'
+  source:
+    - openai-python-1.78.0.tar.gz::https://github.com/openai/openai-python/archive/v1.78.0.tar.gz
+    - https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-794a6ed3c3d3d77887564755168056af8a426b17cf1ec721e3a300503dc22a41.yml
+  sha256sums:
+    - 53dce22bfa563e6d615b113f34f6612827ef681b2091749789a621be978006f3
+    - 794a6ed3c3d3d77887564755168056af8a426b17cf1ec721e3a300503dc22a41
+pkgname:
+  - name: python-openai
+# generated with artixpkg 0.36.1-1-any
