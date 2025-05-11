@@ -1,4 +1,4 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer:
 # Contributor: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
@@ -8,7 +8,7 @@ pkgname=ntp
 _pkgname=ntp #-dev
 _pkgver=4.2.8p18
 pkgver=${_pkgver/p/.p}
-pkgrel=2
+pkgrel=3
 pkgdesc='Network Time Protocol reference implementation'
 url='https://www.ntp.org/'
 license=('custom')
