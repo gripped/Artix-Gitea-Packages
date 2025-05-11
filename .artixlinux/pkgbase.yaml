@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,16 +13,14 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 2.03.32-1.1
     packages:
       - lvm2-2.03.32-1.1-x86_64.pkg.tar.zst
       - device-mapper-2.03.32-1.1-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 2.03.32-1
-    packages:
-      - lvm2-2.03.32-1-x86_64.pkg.tar.zst
-      - device-mapper-2.03.32-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
