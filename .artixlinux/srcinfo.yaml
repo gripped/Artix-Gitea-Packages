@@ -1,0 +1,32 @@
+---
+version: 1.0.2-1
+pkgbase:
+  name: python-kajiki
+  pkgdesc: Python XML-based template engine with Genshi-like syntax and Jinja-style blocks
+  pkgver: 1.0.2
+  pkgrel: 1
+  url: https://github.com/nandoflorestan/kajiki
+  arch:
+    - any
+  license:
+    - LGPL
+  checkdepends:
+    - python-babel
+    - python-pytest
+  makedepends:
+    - python-hatchling
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-sphinx
+    - python-wheel
+  depends:
+    - python
+    - python-linetable
+  source:
+    - kajiki-1.0.2.tar.gz::https://github.com/nandoflorestan/kajiki/archive/v1.0.2.tar.gz
+  sha512sums:
+    - 50e0b44e90bad601bea222e3a93bd86490a645f0d316effad3fb2ee4bfd129fd227170c73dac739d7ef6a95275fc396e3d63440bb1cc22425acde181bbd9b402
+pkgname:
+  - name: python-kajiki
+# generated with artixpkg 0.36.1-1-any
