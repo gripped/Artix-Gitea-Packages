@@ -1,0 +1,39 @@
+---
+version: 3.3.10-1
+pkgbase:
+  name: python-astroid
+  pkgdesc: A common base representation of python source code
+  pkgver: 3.3.10
+  pkgrel: 1
+  url: https://github.com/pylint-dev/astroid
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - mypy
+    - python-attrs
+    - python-dateutil
+    - python-pyqt6
+    - python-regex
+    - python-urllib3
+    - python-pip
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+  conflicts:
+    - python-logilab-astng
+  replaces:
+    - python-logilab-astng
+  source:
+    - https://github.com/pylint-dev/astroid/archive/v3.3.10/astroid-3.3.10.tar.gz
+  sha256sums:
+    - 49a49abfe129a58c17d623544461780f77a24acf27ddc921d9ed7fc31b73279e
+pkgname:
+  - name: python-astroid
+# generated with artixpkg 0.36.1-1-any
