@@ -1,0 +1,44 @@
+---
+version: 3.3.2-1
+pkgbase:
+  name: python-blosc2
+  pkgdesc: Wrapper for the blosc2 compressor
+  pkgver: 3.3.2
+  pkgrel: 1
+  url: https://github.com/Blosc/python-blosc2
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-psutil
+    - python-pytest
+  makedepends:
+    - cmake
+    - cython
+    - git
+    - ninja
+    - python-build
+    - python-installer
+    - python-scikit-build-core
+    - python-setuptools
+  depends:
+    - blosc2
+    - glibc
+    - python
+    - python-msgpack
+    - python-ndindex
+    - python-numexpr
+    - python-numpy
+    - python-platformdirs
+    - python-py-cpuinfo
+    - python-requests
+  source:
+    - python-blosc2::git+https://github.com/Blosc/python-blosc2#tag=v3.3.2
+  sha512sums:
+    - 5bd4c79b19664ed8e6c418faf522bb32a72292766e0581f56e9c757f8bd01546a33ec1c860f2f29d2bb414a21c28a08ca2420d3e88c18a0b50ba8223076ffd75
+  b2sums:
+    - 4d462daaacc104a8980b61abcfb967e76b3ec145aef4ffb39665e040457b657594707db0cde95f349e54d78c9f8a8cb9b5e840650341c2f6c11d28784cbe8d47
+pkgname:
+  - name: python-blosc2
+# generated with artixpkg 0.36.1-1-any
