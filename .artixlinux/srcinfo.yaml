@@ -1,0 +1,26 @@
+---
+version: 0.1.1-7.1
+pkgbase:
+  name: moksha-module-compton
+  pkgdesc: Moksha module for a compositor
+  pkgver: 0.1.1
+  pkgrel: 7.1
+  url: http://mokshadesktop.org
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - git
+    - libpulse
+  depends:
+    - moksha
+  source:
+    - compton::git+https://github.com/rbtylee/comptonmod.git
+    - picom-config-file-name.patch
+  sha256sums:
+    - SKIP
+    - 9ee19834294c946df3a5903322d62853ea6bd0ff617d030755c0fc9d9d263017
+pkgname:
+  - name: moksha-module-compton
+# generated with artixpkg 0.36.1-1-any

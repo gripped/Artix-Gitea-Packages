@@ -3,10 +3,9 @@
 _module='compton'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=7
+pkgrel=7.1
 pkgdesc="Moksha module for a compositor"
 _group=('moksha-modules-extra')
-#arch=('i686' 'x86_64')
 arch=('x86_64')
 url="http://mokshadesktop.org"
 license=('BSD')
@@ -24,10 +23,6 @@ prepare() {
 }
 
 build() {
-    export LDFLAGS=-Wl,--allow-multiple-definition
-    export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
-           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security  \
-           -fstack-clash-protection -fcf-protection"
     cd "${srcdir}/${_module}"
     chmod +x autogen.sh
     if [[ -f configure ]]; then
