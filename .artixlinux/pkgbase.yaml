@@ -1,18 +1,9 @@
 ---
-pkgbase:
-  name: linux-rt-lts
-  version: 6.6.52.rt43.artix1-5
-  arch:
-    - x86_64
-  pkgname:
-    - linux-rt-lts
-    - linux-rt-lts-headers
-    - linux-rt-lts-docs
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -20,40 +11,55 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.6.87.rt54.artix1-1
+    packages:
+      - linux-rt-lts-6.6.87.rt54.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.6.87.rt54.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.6.87.rt54.artix1-1-x86_64.pkg.tar.zst
+    debug: []
   galaxy:
     version: 6.6.52.rt43.artix1-5
     packages:
       - linux-rt-lts-6.6.52.rt43.artix1-5-x86_64.pkg.tar.zst
       - linux-rt-lts-headers-6.6.52.rt43.artix1-5-x86_64.pkg.tar.zst
       - linux-rt-lts-docs-6.6.52.rt43.artix1-5-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
