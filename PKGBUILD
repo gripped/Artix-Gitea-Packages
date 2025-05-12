@@ -2,27 +2,27 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.36.1
-pkgrel=3
-arch=('any')
+pkgver=0.36.2
+pkgrel=1
 pkgdesc='Development tools for Artix'
-license=('GPL-1.0-or-later')
+arch=('any')
 url='https://gitea.artixlinux.org/artix/artools'
-makedepends=('git')
-groups=('artix-tools' 'artools')
+license=(
+    'GPL-1.0-or-later'
+)
+makedepends=(
+    'git'
+)
+groups=(
+    'artix-tools'
+    'artools'
+)
 # checkdepends=('shellcheck')
 source=("git+${url}.git#tag=${pkgver}")
-sha256sums=('ab8700ef210b5370e1467e7f0bde9484cae540f30a1a305d142203495b8b0dae')
+sha256sums=('9b5cbfb55851140a8b84576011a797a634a007b57a80243e7ea0953e02c2d182')
 
 _patches=(
-    896e8e195fa15167ecaaeb24fe7bc81836ca93f7 # fix move for new pkgs not in stable yet
-    bfe462432dd1e5a2d1bcf1989636fb17f8699f72 # fix import on rejected tag erroring
 )
-
-# pkgver() {
-#     cd ${_pkgbase}
-#     git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-# }
 
 prepare() {
     cd "${pkgbase}"
@@ -43,35 +43,77 @@ build() {
 
 package_artools-base() {
     pkgdesc='Development tools for Artix (base tools)'
-    depends=('awk' 'bash' 'coreutils' 'grep'
-            'pacman' 'util-linux' 'sed')
-    optdepends=('artools-pkg: Artix package tools'
-                'artools-iso: Artix iso tools')
-    conflicts=('arch-install-scripts')
+    depends=(
+        'awk'
+        'bash'
+        'coreutils'
+        'grep'
+        'pacman'
+        'sed'
+        'util-linux'
+    )
+    optdepends=(
+        'artools-pkg: Artix package tools'
+        'artools-iso: Artix iso tools'
+    )
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_base
 }
 
 package_artools-pkg() {
     pkgdesc='Development tools for Artix (packaging tools)'
-    depends=('artools-base' 'awk' 'parallel' 'bash' 'rsync' 'go-yq'
-            'openssh' 'diffutils' 'findutils' 'grep' 'sed' 'util-linux'
-            'binutils' 'git' 'subversion' 'mercurial' 'bzr')
-    optdepends=('pacman-contrib: pacman contrib tools support'
-                'artix-rebuild-order: artix rebuild order support'
-                'artix-checkupdates: updates checking'
-                'graphviz: mkdepgraph graphviz support')
-    backup=('etc/artools/artools-pkg.conf')
+    depends=(
+        'artools-base'
+        'awk'
+        'bash'
+        'binutils'
+        'bzr'
+        'diffutils'
+        'findutils'
+        'git'
+        'go-yq'
+        'grep'
+        'mercurial'
+        'openssh'
+        'parallel'
+        'rsync'
+        'sed'
+        'subversion'
+        'util-linux'
+    )
+    optdepends=(
+        'pacman-contrib: pacman contrib tools support'
+        'artix-rebuild-order: artix rebuild order support'
+        'artix-checkupdates: updates checking'
+        'graphviz: mkdepgraph graphviz support'
+    )
+    backup=(
+        'etc/artools/artools-pkg.conf'
+    )
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_pkg
 }
 
 package_artools-iso() {
     pkgdesc='Development tools for Artix (ISO tools)'
-    depends=('artools-base' 'iso-profiles' 'squashfs-tools'
-            'grub' 'dosfstools' 'libisoburn' 'bash' 'dosfstools'
-            'e2fsprogs' 'libarchive' 'mtools' 'grep' 'sed' 'go-yq')
-    backup=('etc/artools/artools-iso.conf')
+    depends=(
+        'artools-base'
+        'bash'
+        'dosfstools'
+        'e2fsprogs'
+        'go-yq'
+        'grep'
+        'grub'
+        'iso-profiles'
+        'libarchive'
+        'libisoburn'
+        'mtools'
+        'sed'
+        'squashfs-tools'
+    )
+    backup=(
+        'etc/artools/artools-iso.conf'
+    )
 
     make -C "${pkgbase}" PREFIX=/usr DESTDIR="${pkgdir}" install_iso
 }

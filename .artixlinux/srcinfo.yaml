@@ -1,10 +1,10 @@
 ---
-version: 0.36.1-3
+version: 0.36.2-1
 pkgbase:
   name: artools
   pkgdesc: Development tools for Artix
-  pkgver: 0.36.1
-  pkgrel: 3
+  pkgver: 0.36.2
+  pkgrel: 1
   url: https://gitea.artixlinux.org/artix/artools
   arch:
     - any
@@ -16,9 +16,9 @@ pkgbase:
   makedepends:
     - git
   source:
-    - git+https://gitea.artixlinux.org/artix/artools.git#tag=0.36.1
+    - git+https://gitea.artixlinux.org/artix/artools.git#tag=0.36.2
   sha256sums:
-    - ab8700ef210b5370e1467e7f0bde9484cae540f30a1a305d142203495b8b0dae
+    - 9b5cbfb55851140a8b84576011a797a634a007b57a80243e7ea0953e02c2d182
 pkgname:
   - name: artools-base
     pkgdesc: Development tools for Artix (base tools)
@@ -28,33 +28,31 @@ pkgname:
       - coreutils
       - grep
       - pacman
-      - util-linux
       - sed
+      - util-linux
     optdepends:
       - 'artools-pkg: Artix package tools'
       - 'artools-iso: Artix iso tools'
-    conflicts:
-      - arch-install-scripts
   - name: artools-pkg
     pkgdesc: Development tools for Artix (packaging tools)
     depends:
       - artools-base
       - awk
-      - parallel
       - bash
-      - rsync
-      - go-yq
-      - openssh
+      - binutils
+      - bzr
       - diffutils
       - findutils
-      - grep
-      - sed
-      - util-linux
-      - binutils
       - git
-      - subversion
+      - go-yq
+      - grep
       - mercurial
-      - bzr
+      - openssh
+      - parallel
+      - rsync
+      - sed
+      - subversion
+      - util-linux
     optdepends:
       - 'pacman-contrib: pacman contrib tools support'
       - 'artix-rebuild-order: artix rebuild order support'
@@ -66,19 +64,18 @@ pkgname:
     pkgdesc: Development tools for Artix (ISO tools)
     depends:
       - artools-base
-      - iso-profiles
-      - squashfs-tools
-      - grub
-      - dosfstools
-      - libisoburn
       - bash
       - dosfstools
       - e2fsprogs
-      - libarchive
-      - mtools
-      - grep
-      - sed
       - go-yq
+      - grep
+      - grub
+      - iso-profiles
+      - libarchive
+      - libisoburn
+      - mtools
+      - sed
+      - squashfs-tools
     backup:
       - etc/artools/artools-iso.conf
-# generated with artixpkg 0.36.1-2-any
+# generated with artixpkg 0.36.2-1-any
