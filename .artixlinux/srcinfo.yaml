@@ -1,10 +1,10 @@
 ---
-version: 0.36.1-1
+version: 0.36.1-2
 pkgbase:
   name: artools
   pkgdesc: Development tools for Artix
   pkgver: 0.36.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/artools
   arch:
     - any
@@ -81,4 +81,4 @@ pkgname:
       - go-yq
     backup:
       - etc/artools/artools-iso.conf
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.1-1-any
