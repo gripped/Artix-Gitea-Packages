@@ -1,0 +1,23 @@
+---
+version: 3.3.0-1
+pkgbase:
+  name: ncftp
+  pkgdesc: A set of free application programs implementing FTP
+  pkgver: 3.3.0
+  pkgrel: 1
+  url: https://www.ncftp.com/
+  arch:
+    - x86_64
+  license:
+    - custom
+  depends:
+    - ncurses
+  source:
+    - https://www.ncftp.com/public_ftp/ncftp/ncftp-3.3.0-src.tar.gz
+    - ncftp-reproducible.patch
+  sha256sums:
+    - 7920f884c2adafc82c8e41c46d6f3d22698785c7b3f56f5677a8d5c866396386
+    - d5df31ab43f1573a86a842fdc69d7ae84f20afd22c74336264cc4e1e39e2f44d
+pkgname:
+  - name: ncftp
+# generated with artixpkg 0.36.1-1-any
