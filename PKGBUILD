@@ -15,6 +15,7 @@ source=("${_module}::git+https://github.com/rbtylee/emodule-${_module}.git")
 sha256sums=('SKIP')
 
 build() {
+    export CFLAGS+=" -Wno-error=implicit-function-declaration"
     cd "${srcdir}/${_module}"
     chmod +x autogen.sh
     if [[ -f configure ]]; then
