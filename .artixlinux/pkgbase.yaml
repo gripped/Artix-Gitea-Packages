@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.1.1-3.3
+    version: 0.1.1-3.4
     packages:
-      - moksha-module-productivity-0.1.1-3.3-x86_64.pkg.tar.zst
+      - moksha-module-productivity-0.1.1-3.4-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.1.1-3.2

@@ -3,7 +3,7 @@
 _module='productivity'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=3.3
+pkgrel=3.4
 pkgdesc="Moksha module ${_module}"
 _group=('moksha-modules-extra')
 arch=('x86_64')
@@ -15,11 +15,6 @@ source=("${_module}::git+https://github.com/rbtylee/emodule-${_module}.git")
 sha256sums=('SKIP')
 
 build() {
-    export LDFLAGS=-Wl,--allow-multiple-definition
-    export CFLAGS="-mtune=generic -O2 -pipe -fno-plt -fexceptions \
-           -Wp,-D_FORTIFY_SOURCE=2 -Wno-format -Wno-format-security \
-           -Wno-error=implicit-function-declaration \
-           -fstack-clash-protection -fcf-protection"
     cd "${srcdir}/${_module}"
     chmod +x autogen.sh
     if [[ -f configure ]]; then
