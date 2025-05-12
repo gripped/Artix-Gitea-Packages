@@ -1,289 +1,177 @@
 ---
-pkgbase:
-  name: libreoffice-still-i18n
-  version: 24.8.6-1
-  arch:
-    - any
-  pkgname:
-    - libreoffice-still-af
-    - libreoffice-still-am
-    - libreoffice-still-ar
-    - libreoffice-still-as
-    - libreoffice-still-ast
-    - libreoffice-still-be
-    - libreoffice-still-bg
-    - libreoffice-still-bn-in
-    - libreoffice-still-bn
-    - libreoffice-still-bo
-    - libreoffice-still-br
-    - libreoffice-still-brx
-    - libreoffice-still-bs
-    - libreoffice-still-ca-valencia
-    - libreoffice-still-ca
-    - libreoffice-still-ckb
-    - libreoffice-still-cs
-    - libreoffice-still-cy
-    - libreoffice-still-da
-    - libreoffice-still-de
-    - libreoffice-still-dgo
-    - libreoffice-still-dsb
-    - libreoffice-still-dz
-    - libreoffice-still-el
-    - libreoffice-still-en-gb
-    - libreoffice-still-en-za
-    - libreoffice-still-eo
-    - libreoffice-still-es
-    - libreoffice-still-et
-    - libreoffice-still-eu
-    - libreoffice-still-fa
-    - libreoffice-still-fi
-    - libreoffice-still-fr
-    - libreoffice-still-fur
-    - libreoffice-still-fy
-    - libreoffice-still-ga
-    - libreoffice-still-gd
-    - libreoffice-still-gl
-    - libreoffice-still-gu
-    - libreoffice-still-gug
-    - libreoffice-still-he
-    - libreoffice-still-hi
-    - libreoffice-still-hr
-    - libreoffice-still-hsb
-    - libreoffice-still-hu
-    - libreoffice-still-id
-    - libreoffice-still-is
-    - libreoffice-still-it
-    - libreoffice-still-ja
-    - libreoffice-still-ka
-    - libreoffice-still-kab
-    - libreoffice-still-kk
-    - libreoffice-still-km
-    - libreoffice-still-kmr-latn
-    - libreoffice-still-kn
-    - libreoffice-still-ko
-    - libreoffice-still-kok
-    - libreoffice-still-ks
-    - libreoffice-still-lb
-    - libreoffice-still-lo
-    - libreoffice-still-lt
-    - libreoffice-still-lv
-    - libreoffice-still-mai
-    - libreoffice-still-mk
-    - libreoffice-still-ml
-    - libreoffice-still-mn
-    - libreoffice-still-mni
-    - libreoffice-still-mr
-    - libreoffice-still-my
-    - libreoffice-still-nb
-    - libreoffice-still-ne
-    - libreoffice-still-nl
-    - libreoffice-still-nn
-    - libreoffice-still-nr
-    - libreoffice-still-nso
-    - libreoffice-still-oc
-    - libreoffice-still-om
-    - libreoffice-still-or
-    - libreoffice-still-pa-in
-    - libreoffice-still-pl
-    - libreoffice-still-pt-br
-    - libreoffice-still-pt
-    - libreoffice-still-ro
-    - libreoffice-still-ru
-    - libreoffice-still-rw
-    - libreoffice-still-sa-in
-    - libreoffice-still-sat
-    - libreoffice-still-sd
-    - libreoffice-still-si
-    - libreoffice-still-sid
-    - libreoffice-still-sk
-    - libreoffice-still-sl
-    - libreoffice-still-sq
-    - libreoffice-still-sr-latn
-    - libreoffice-still-sr
-    - libreoffice-still-ss
-    - libreoffice-still-st
-    - libreoffice-still-sv
-    - libreoffice-still-sw-tz
-    - libreoffice-still-szl
-    - libreoffice-still-ta
-    - libreoffice-still-te
-    - libreoffice-still-tg
-    - libreoffice-still-th
-    - libreoffice-still-tn
-    - libreoffice-still-tr
-    - libreoffice-still-ts
-    - libreoffice-still-tt
-    - libreoffice-still-ug
-    - libreoffice-still-uk
-    - libreoffice-still-uz
-    - libreoffice-still-ve
-    - libreoffice-still-vec
-    - libreoffice-still-vi
-    - libreoffice-still-xh
-    - libreoffice-still-zh-cn
-    - libreoffice-still-zh-tw
-    - libreoffice-still-zu
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 24.8.6-1
+    version: 24.8.7-1
     packages:
-      - libreoffice-still-af-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-am-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ar-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-as-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ast-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-be-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-bg-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-bn-in-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-bn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-bo-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-br-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-brx-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-bs-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ca-valencia-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ca-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ckb-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-cs-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-cy-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-da-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-de-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-dgo-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-dsb-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-dz-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-el-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-en-gb-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-en-za-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-eo-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-es-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-et-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-eu-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-fa-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-fi-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-fr-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-fur-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-fy-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ga-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-gd-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-gl-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-gu-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-gug-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-he-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-hi-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-hr-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-hsb-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-hu-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-id-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-is-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-it-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ja-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ka-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-kab-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-kk-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-km-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-kmr-latn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-kn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ko-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-kok-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ks-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-lb-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-lo-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-lt-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-lv-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-mai-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-mk-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ml-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-mn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-mni-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-mr-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-my-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-nb-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ne-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-nl-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-nn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-nr-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-nso-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-oc-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-om-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-or-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-pa-in-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-pl-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-pt-br-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-pt-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ro-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ru-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-rw-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sa-in-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sat-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sd-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-si-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sid-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sk-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sl-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sq-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sr-latn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sr-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ss-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-st-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sv-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-sw-tz-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-szl-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ta-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-te-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-tg-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-th-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-tn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-tr-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ts-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-tt-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ug-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-uk-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-uz-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-ve-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-vec-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-vi-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-xh-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-zh-cn-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-zh-tw-24.8.6-1-any.pkg.tar.zst
-      - libreoffice-still-zu-24.8.6-1-any.pkg.tar.zst
+      - libreoffice-still-af-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-am-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ar-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-as-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ast-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-be-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-bg-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-bn-in-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-bn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-bo-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-br-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-brx-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-bs-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ca-valencia-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ca-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ckb-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-cs-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-cy-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-da-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-de-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-dgo-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-dsb-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-dz-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-el-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-en-gb-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-en-za-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-eo-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-es-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-et-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-eu-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-fa-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-fi-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-fr-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-fur-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-fy-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ga-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-gd-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-gl-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-gu-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-gug-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-he-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-hi-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-hr-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-hsb-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-hu-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-id-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-is-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-it-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ja-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ka-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-kab-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-kk-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-km-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-kmr-latn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-kn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ko-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-kok-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ks-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-lb-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-lo-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-lt-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-lv-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-mai-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-mk-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ml-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-mn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-mni-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-mr-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-my-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-nb-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ne-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-nl-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-nn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-nr-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-nso-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-oc-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-om-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-or-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-pa-in-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-pl-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-pt-br-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-pt-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ro-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ru-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-rw-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sa-in-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sat-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sd-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-si-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sid-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sk-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sl-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sq-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sr-latn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sr-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ss-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-st-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sv-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-sw-tz-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-szl-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ta-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-te-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-tg-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-th-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-tn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-tr-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ts-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-tt-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ug-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-uk-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-uz-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-ve-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-vec-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-vi-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-xh-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-zh-cn-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-zh-tw-24.8.7-1-any.pkg.tar.zst
+      - libreoffice-still-zu-24.8.7-1-any.pkg.tar.zst
+    debug: []
 team: galaxy
