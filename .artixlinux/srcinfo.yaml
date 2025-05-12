@@ -1,0 +1,91 @@
+---
+version: 0.42.0-1
+pkgbase:
+  name: kitty
+  pkgdesc: Modern, hackable, featureful, OpenGL based terminal emulator
+  pkgver: 0.42.0
+  pkgrel: 1
+  url: https://sw.kovidgoyal.net/kitty/
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - git
+    - python-setuptools
+    - libxinerama
+    - libxrandr
+    - libxkbcommon
+    - mesa
+    - wayland-protocols
+    - python-sphinx
+    - python-sphinx-copybutton
+    - libxcursor
+    - python-sphinx-inline-tabs
+    - python-sphinxext-opengraph
+    - python-sphinx-furo
+    - go
+    - ttf-roboto
+    - ttf-nerd-fonts-symbols-mono
+    - simde
+  depends:
+    - python>=3.8
+    - harfbuzz>=2.2.0
+    - zlib
+    - libpng
+    - freetype2
+    - fontconfig
+    - openssl
+    - libx11
+    - libxi
+    - libgl
+    - libcanberra
+    - dbus
+    - lcms2
+    - libxkbcommon-x11
+    - xxhash
+    - librsync
+    - hicolor-icon-theme
+    - pixman
+    - cairo
+  source:
+    - https://github.com/kovidgoyal/kitty/releases/download/v0.42.0/kitty-0.42.0.tar.xz
+    - https://github.com/kovidgoyal/kitty/releases/download/v0.42.0/kitty-0.42.0.tar.xz.sig
+  validpgpkeys:
+    - 3CE1780F78DD88DF45194FD706BC317B515ACE7C
+  sha256sums:
+    - c84756f36b5807c363261e9ab0fad71f3a11010a800619e4e78c47969eb3e3c4
+    - SKIP
+pkgname:
+  - name: kitty
+    depends:
+      - python>=3.8
+      - harfbuzz>=2.2.0
+      - zlib
+      - libpng
+      - freetype2
+      - fontconfig
+      - openssl
+      - libx11
+      - libxi
+      - libgl
+      - libcanberra
+      - dbus
+      - lcms2
+      - libxkbcommon-x11
+      - xxhash
+      - librsync
+      - hicolor-icon-theme
+      - pixman
+      - cairo
+      - kitty-terminfo
+      - kitty-shell-integration
+    optdepends:
+      - 'imagemagick: viewing images with icat'
+  - name: kitty-terminfo
+    pkgdesc: Terminfo for kitty, an OpenGL-based terminal emulator
+    depends:
+      - ncurses
+  - name: kitty-shell-integration
+    pkgdesc: Shell integration scripts for kitty, an OpenGL-based terminal emulator
+# generated with artixpkg 0.36.1-1-any
