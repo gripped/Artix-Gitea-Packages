@@ -1,0 +1,37 @@
+---
+version: 2.14.0-1
+pkgbase:
+  name: libsidplayfp
+  pkgdesc: Library to play Commodore 64 music
+  pkgver: 2.14.0
+  pkgrel: 1
+  url: https://github.com/libsidplayfp/libsidplayfp
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - vice
+    - xa
+  depends:
+    - glibc
+    - gcc-libs
+    - libgcrypt
+  optdepends:
+    - 'vice: better SID support'
+  source:
+    - libsidplayfp::git+https://github.com/libsidplayfp/libsidplayfp#tag=v2.14.0
+    - github.com-libsidplayfp-exsid-driver::git+https://github.com/libsidplayfp/exsid-driver
+    - github.com-libsidplayfp-resid::git+https://github.com/libsidplayfp/resid
+  sha512sums:
+    - 641b0289aa72f76927a224b2c12a94d077252511639c838b33eb8602d731c3f6239de4c0e4de8fe7339c96b03bdc183882a4ef0cfc8086a7110ccbc949c09af4
+    - SKIP
+    - SKIP
+  b2sums:
+    - 6e1a1f695c1a82c768d8cc6f366e1a2574b79efcf9b48d877b2a47f71afa5587a64be9c24c586807a6c535dbd2a7d3c1ab2c48c2bbcd20b4c8e50aa519fd399c
+    - SKIP
+    - SKIP
+pkgname:
+  - name: libsidplayfp
+# generated with artixpkg 0.36.1-1-any
