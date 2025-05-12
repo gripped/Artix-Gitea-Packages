@@ -1,0 +1,30 @@
+---
+version: 0.8.9-1
+pkgbase:
+  name: xfce4-dict
+  pkgdesc: A dictionary plugin for the Xfce panel
+  pkgver: 0.8.9
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/xfce4-dict/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+    - xfce4-dev-tools
+  depends:
+    - xfce4-panel
+    - librsvg
+    - hicolor-icon-theme
+  source:
+    - git+https://gitlab.xfce.org/apps/xfce4-dict.git#tag=xfce4-dict-0.8.9
+  sha256sums:
+    - 48381c8d18dc0baacfcf01150e291c9683ba0d9a26da89a770de0d46e3e469d0
+pkgname:
+  - name: xfce4-dict
+# generated with artixpkg 0.36.1-3-any
