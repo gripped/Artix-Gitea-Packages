@@ -5,8 +5,8 @@ pkgname=(
   snowball
   libstemmer
 )
-pkgver=2.2.0
-pkgrel=3
+pkgver=3.0.1
+pkgrel=1
 pkgdesc="String processing language for creating stemming algorithms"
 url="https://snowballstem.org/"
 arch=(x86_64)
@@ -17,8 +17,8 @@ source=(
   "git+https://github.com/snowballstem/snowball#tag=v$pkgver"
   0001-Make-libstemmer-a-shared-library.patch
 )
-b2sums=('410b9b9485f75f0cef29af1bde55d909f52678280ae22dda27bee0df1eb1eeb1e995a15fc544d993eb9b90ab929443646e14984d6dbeb35e88ce0a17be3830b6'
-        '64543774530c852a6d20ddca425865e1aa458adf9f2b3fa2e55ef37f50128c01e01ead7b96978d2c4ba2340f557824275ca27780142ee99425d623678e355c67')
+b2sums=('01ee54f79f76d12bfbcf89d3b6f2b036756c704bee2232a5401aba91f62f4da01229d7efe8a738602871fb77b33e1d1753def3efee0e51178a9228ad71655296'
+        '91334cdd8142db106db709fdd5d5e9dd910505f6138d2ee40c0305aed3a652e5dac840c8abcca9784a77feea00a4c5dbec310e9190a25e7991b9d373cd3c129b')
 
 prepare() {
   cd snowball
