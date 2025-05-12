@@ -1,16 +1,4 @@
 ---
-pkgbase:
-  name: libportal
-  version: 0.9.1-1
-  arch:
-    - x86_64
-  pkgname:
-    - libportal
-    - libportal-docs
-    - libportal-gtk3
-    - libportal-gtk4
-    - libportal-qt5
-    - libportal-qt6
 actions:
   addRepo: world
   removeRepo: null
@@ -23,43 +11,55 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 0.9.1-1
+    version: 0.9.1-2
     packages:
-      - libportal-0.9.1-1-x86_64.pkg.tar.zst
-      - libportal-docs-0.9.1-1-x86_64.pkg.tar.zst
-      - libportal-gtk3-0.9.1-1-x86_64.pkg.tar.zst
-      - libportal-gtk4-0.9.1-1-x86_64.pkg.tar.zst
-      - libportal-qt5-0.9.1-1-x86_64.pkg.tar.zst
-      - libportal-qt6-0.9.1-1-x86_64.pkg.tar.zst
+      - libportal-0.9.1-2-x86_64.pkg.tar.zst
+      - libportal-docs-0.9.1-2-x86_64.pkg.tar.zst
+      - libportal-gtk3-0.9.1-2-x86_64.pkg.tar.zst
+      - libportal-gtk4-0.9.1-2-x86_64.pkg.tar.zst
+      - libportal-qt5-0.9.1-2-x86_64.pkg.tar.zst
+      - libportal-qt6-0.9.1-2-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world

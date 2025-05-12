@@ -1,0 +1,99 @@
+---
+version: 0.9.1-2
+pkgbase:
+  name: libportal
+  pkgdesc: GIO-style async APIs for most Flatpak portals
+  pkgver: 0.9.1
+  pkgrel: 2
+  url: https://github.com/flatpak/libportal
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-only
+  checkdepends:
+    - python-dbusmock
+    - python-pytest
+    - xorg-server-xvfb
+  makedepends:
+    - gcc-libs
+    - gi-docgen
+    - git
+    - gjs
+    - glib2
+    - glib2-devel
+    - glibc
+    - gobject-introspection
+    - gtk3
+    - gtk4
+    - meson
+    - qt5-base
+    - qt5-tools
+    - qt5-x11extras
+    - qt6-base
+    - qt6-tools
+    - vala
+  source:
+    - git+https://github.com/flatpak/libportal#tag=0.9.1
+  b2sums:
+    - 076e4fac57e34c96f59a3530855d4f1e29fa82ac9a66a42d97a66e51fe42233cefffe903b539cee5c6e7ff2cf661d40cd512ff0c93f5be5d9436d72cfcbe6420
+pkgname:
+  - name: libportal
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+    optdepends:
+      - 'libportal-docs: API documentation'
+      - 'libportal-gtk3: GTK 3 backend'
+      - 'libportal-gtk4: GTK 4 backend'
+      - 'libportal-qt5: Qt 5 backend'
+      - 'libportal-qt6: Qt 6 backend'
+      - 'xdg-desktop-portal: Portal service'
+    provides:
+      - libportal.so
+  - name: libportal-docs
+    pkgdesc: GIO-style async APIs for most Flatpak portals - API documentation
+  - name: libportal-gtk3
+    pkgdesc: GIO-style async APIs for most Flatpak portals - GTK 3 backend
+    depends:
+      - gcc-libs
+      - glib2
+      - libgdk-3.so
+      - libgtk-3.so
+      - libportal
+    provides:
+      - libportal-gtk3.so
+  - name: libportal-gtk4
+    pkgdesc: GIO-style async APIs for most Flatpak portals - GTK 4 backend
+    depends:
+      - gcc-libs
+      - glib2
+      - libgtk-4.so
+      - libportal
+    provides:
+      - libportal-gtk4.so
+  - name: libportal-qt5
+    pkgdesc: GIO-style async APIs for most Flatpak portals - Qt 5 backend
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - libportal
+      - qt5-base
+      - qt5-x11extras
+    provides:
+      - libportal-qt5.so
+  - name: libportal-qt6
+    pkgdesc: GIO-style async APIs for most Flatpak portals - Qt 6 backend
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - libportal
+      - qt6-base
+    provides:
+      - libportal-qt6.so
+# generated with artixpkg 0.36.1-1-any
