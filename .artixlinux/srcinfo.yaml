@@ -1,0 +1,21 @@
+---
+version: 2.4.12-1
+pkgbase:
+  name: doctest
+  pkgdesc: The lightest feature rich C++ single header testing framework
+  pkgver: 2.4.12
+  pkgrel: 1
+  url: https://github.com/doctest/doctest
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - cmake
+  source:
+    - doctest-2.4.12.tar.gz::https://github.com/doctest/doctest/archive/v2.4.12.tar.gz
+  sha256sums:
+    - 73381c7aa4dee704bd935609668cf41880ea7f19fa0504a200e13b74999c2d70
+pkgname:
+  - name: doctest
+# generated with artixpkg 0.36.1-1-any
