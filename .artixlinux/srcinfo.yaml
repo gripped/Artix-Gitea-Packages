@@ -1,0 +1,89 @@
+---
+version: 6.4.0-1
+pkgbase:
+  name: rocm-hip-sdk
+  pkgver: 6.4.0
+  pkgrel: 1
+  url: https://rocm.docs.amd.com/en/latest/
+  arch:
+    - any
+  license:
+    - LicenseRef-None
+pkgname:
+  - name: rocm-hip-sdk
+    pkgdesc: Develop applications using HIP and libraries for AMD platforms
+    depends:
+      - rocm-core
+      - rocm-hip-libraries
+      - rocm-llvm
+      - rocm-hip-runtime
+      - hipblas
+      - hipcub
+      - hipfft
+      - hipsparse
+      - hipsolver
+      - hiprand
+      - miopen-hip
+      - rccl
+      - rocalution
+      - rocblas
+      - rocfft
+      - rocprim
+      - rocrand
+      - rocsolver
+      - rocsparse
+      - rocthrust
+  - name: rocm-hip-libraries
+    pkgdesc: Develop certain applications using HIP and libraries for AMD platforms
+    depends:
+      - rocm-core
+      - rocm-hip-runtime
+      - hipblas
+      - hipfft
+      - hipsparse
+      - hipsolver
+      - hiprand
+      - rccl
+      - rocalution
+      - rocblas
+      - rocfft
+      - rocrand
+      - rocsolver
+      - rocsparse
+  - name: rocm-opencl-sdk
+    pkgdesc: Develop OpenCL-based applications for AMD platforms
+    depends:
+      - rocm-core
+      - hsa-rocr
+      - rocm-opencl-runtime
+  - name: rocm-hip-runtime
+    pkgdesc: Packages to run HIP applications on the AMD platform
+    depends:
+      - rocm-core
+      - rocm-language-runtime
+      - rocminfo
+      - hip-runtime-amd
+      - rocm-llvm
+      - rocm-cmake
+  - name: rocm-language-runtime
+    pkgdesc: ROCm runtime
+    depends:
+      - rocm-core
+      - hsa-rocr
+      - rocm-device-libs
+      - comgr
+  - name: rocm-ml-sdk
+    pkgdesc: develop and run Machine Learning applications optimized for AMD platforms
+    depends:
+      - rocm-core
+      - rocm-hip-sdk
+      - rocm-ml-libraries
+      - miopen-hip
+  - name: rocm-ml-libraries
+    pkgdesc: Packages for key Machine Learning libraries
+    depends:
+      - rocm-core
+      - rocm-hip-libraries
+      - rocm-llvm
+      - miopen-hip
+# generated with artixpkg 0.36.1-1-any
