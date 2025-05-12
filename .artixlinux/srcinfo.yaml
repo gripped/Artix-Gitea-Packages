@@ -1,0 +1,25 @@
+---
+version: 0.13.1-1
+pkgbase:
+  name: gumbo-parser
+  pkgdesc: HTML5 parsing library in pure C99
+  pkgver: 0.13.1
+  pkgrel: 1
+  url: https://codeberg.org/gumbo-parser/gumbo-parser/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - gtest
+  depends:
+    - glibc
+  provides:
+    - libgumbo.so
+  source:
+    - gumbo-parser-0.13.1.tar.gz::https://codeberg.org/gumbo-parser/gumbo-parser//archive/0.13.1.tar.gz
+  sha256sums:
+    - 1a054d1e53d556641a6666537247411a77b0c18ef6ad5df23e30d2131676ef81
+pkgname:
+  - name: gumbo-parser
+# generated with artixpkg 0.36.1-1-any
