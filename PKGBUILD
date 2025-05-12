@@ -1,10 +1,11 @@
-# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
-# Maintainer: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: Aleksandar Trifunović <akstrfn at gmail dot com>
 
 pkgname=abseil-cpp
 pkgver=20250127.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Collection of C++ library code designed to augment the C++ standard library"
 arch=('x86_64')
 url='https://abseil.io'
