@@ -69,26 +69,10 @@
         "Extensions": {
             "Install": [
                 "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
-            ],
-            "Uninstall": [
-                "google@search.mozilla.org",
-                "bing@search.mozilla.org",
-                "amazondotcom@search.mozilla.org",
-                "ebay@search.mozilla.org",
-                "twitter@search.mozilla.org",
-                "yahoo@search.mozilla.org"
             ]
         },
         "SearchEngines": {
             "PreventInstalls": false,
-            "Remove": [
-                "Google",
-                "Bing",
-                "Amazon.com",
-                "eBay",
-                "Twitter",
-                "Yahoo!"
-            ],
             "Default": "DuckDuckGo",
             "Add": [
                 {
