@@ -1,0 +1,67 @@
+---
+version: 20.0.0-1
+pkgbase:
+  name: arrow
+  pkgdesc: Columnar in-memory analytics layer for big data.
+  pkgver: 20.0.0
+  pkgrel: 1
+  url: https://arrow.apache.org
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - minio
+    - python
+  makedepends:
+    - boost
+    - cmake
+    - flatbuffers
+    - git
+    - gmock
+    - ninja
+    - rapidjson
+    - xsimd
+  depends:
+    - abseil-cpp
+    - apache-orc
+    - aws-crt-cpp
+    - aws-sdk-cpp-core
+    - aws-sdk-cpp-iam
+    - aws-sdk-cpp-s3
+    - brotli
+    - bzip2
+    - gcc-libs
+    - glibc
+    - google-glog
+    - grpc
+    - libutf8proc
+    - lz4
+    - openssl
+    - protobuf
+    - re2
+    - snappy
+    - thrift
+    - zlib
+    - zstd
+  provides:
+    - parquet-cpp
+  conflicts:
+    - parquet-cpp
+  source:
+    - https://archive.apache.org/dist/arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz
+    - https://archive.apache.org/dist/arrow/arrow-20.0.0/apache-arrow-20.0.0.tar.gz.asc
+    - git+https://github.com/apache/parquet-testing.git#commit=6e851ddd768d6af741c7b15dc594874399fc3cff
+    - git+https://github.com/apache/arrow-testing.git#commit=d2a13712303498963395318a4eb42872e66aead7
+  validpgpkeys:
+    - 265F80AB84FE03127E14F01125BCCA5220D84079
+    - 08D3564B7C6A9CAFBFF6A66791D18FCF079F8007
+    - AF6AADA4C9835B75973FF5DA275C532289DD0F4A
+  sha512sums:
+    - 067e62d7d311cebfca43473b0aacaacc534da47c3450b75328517df69281d8be1e79b0430cc7e975eb613e05c62a62d6ca92a4c4f7882ae7733f826d774d9081
+    - SKIP
+    - 65e1539eaa2b0b5dc9fd6d5b5d382412ba82b31661cdceb67b68f56961ca701ad005dcc898ac114d36ecafffc37e5a2e65371fa2eba8d2b7a49d17cd16e9b200
+    - e78205c84d4c893968fd93a0ffe9392bc9d09ec78ae176e8fae53787aba06c8fef3f68baa25b99bfc33c46760ff0ae87a06231b0145888ec61581be75f8a5d6b
+pkgname:
+  - name: arrow
+# generated with artixpkg 0.36.1-1-any

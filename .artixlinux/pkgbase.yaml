@@ -1,56 +1,60 @@
 ---
-pkgbase:
-  name: arrow
-  version: 20.0.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - arrow
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 20.0.0-1
     packages:
       - arrow-20.0.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 19.0.1-8
-    packages:
-      - arrow-19.0.1-8-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
