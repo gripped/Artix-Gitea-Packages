@@ -1,0 +1,96 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: kdepim-addons
+  pkgdesc: Addons for KDE PIM applications
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://kontact.kde.org
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-pim
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  makedepends:
+    - corrosion
+    - extra-cmake-modules
+    - kdoctools
+    - kaddressbook
+  depends:
+    - akonadi-calendar
+    - akonadi-contacts
+    - akonadi-import-wizard
+    - akonadi-mime
+    - calendarsupport
+    - discount
+    - gcc-libs
+    - glibc
+    - gpgme
+    - grantleetheme
+    - incidenceeditor
+    - kcalendarcore
+    - kcalutils
+    - kcmutils
+    - kcodecs
+    - kcolorscheme
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcontacts
+    - kcoreaddons
+    - kdeclarative
+    - kguiaddons
+    - ki18n
+    - kiconthemes
+    - kidentitymanagement
+    - kimap
+    - kio
+    - kirigami
+    - kirigami-addons
+    - kitemmodels
+    - kitemviews
+    - kitinerary
+    - kldap
+    - kmailtransport
+    - kmime
+    - kpimtextedit
+    - kpkpass
+    - kservice
+    - ktextaddons
+    - ktexttemplate
+    - ktnef
+    - kwidgetsaddons
+    - kxmlgui
+    - libakonadi
+    - libgravatar
+    - libkleo
+    - libksieve
+    - mailcommon
+    - mailimporter
+    - messagelib
+    - pimcommon
+    - prison
+    - qgpgme-qt6
+    - qt6-base
+    - qt6-declarative
+    - qt6-webengine
+    - sh
+    - syntax-highlighting
+  options:
+    - '!lto'
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/kdepim-addons-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/kdepim-addons-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - de5bfa0c44630f7fcbb6addff91aee3cf5bd675abe34a8b6ce1a39e404b7df72
+    - SKIP
+pkgname:
+  - name: kdepim-addons
+# generated with artixpkg 0.36.1-3-any
