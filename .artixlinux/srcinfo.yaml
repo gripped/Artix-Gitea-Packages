@@ -1,0 +1,64 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: kwave
+  pkgdesc: A sound editor
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://apps.kde.org/kwave/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-multimedia
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - doxygen
+    - extra-cmake-modules
+    - kdoctools
+    - librsvg
+    - opus
+  depends:
+    - alsa-lib
+    - audiofile
+    - flac
+    - fftw
+    - gcc-libs
+    - glibc
+    - id3lib
+    - karchive
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - ki18n
+    - kiconthemes
+    - kio
+    - ktextwidgets
+    - kwidgetsaddons
+    - kxmlgui
+    - libmad
+    - libogg
+    - libpulse
+    - libsamplerate
+    - libvorbis
+    - qt6-base
+    - qt6-multimedia
+  optdepends:
+    - 'opus: OGG plugin'
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/kwave-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/kwave-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 1e9074f814006a7c183febf56a40423a7e8e834635194279cdde0d0b47b89333
+    - SKIP
+pkgname:
+  - name: kwave
+# generated with artixpkg 0.36.1-3-any
