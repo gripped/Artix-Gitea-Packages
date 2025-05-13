@@ -1,0 +1,79 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: okular
+  pkgdesc: Document Viewer
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://apps.kde.org/okular/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-graphics
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  makedepends:
+    - ebook-tools
+    - extra-cmake-modules
+    - kdegraphics-mobipocket
+    - kdoctools
+  depends:
+    - discount
+    - djvulibre
+    - freetype2
+    - gcc-libs
+    - glibc
+    - plasma-activities
+    - karchive
+    - kbookmarks
+    - kcolorscheme
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - ki18n
+    - kiconthemes
+    - kio
+    - kitemviews
+    - kparts
+    - kpty
+    - ktextwidgets
+    - kwallet
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - libkexiv2
+    - libspectre
+    - libtiff
+    - phonon-qt6
+    - poppler-qt6
+    - purpose
+    - qt6-base
+    - qt6-declarative
+    - qt6-speech
+    - qt6-svg
+    - threadweaver
+    - zlib
+  optdepends:
+    - 'ebook-tools: mobi and epub support'
+    - 'kdegraphics-mobipocket: mobi support'
+    - 'unarchiver: Comic Book Archive support (alternative)'
+    - 'unrar: Comic Book Archive support'
+  options:
+    - '!zipman'
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/okular-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/okular-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - faf3c04f014f20798a71377766135090d199b6a8877f259f8ccee1ef8ffccc78
+    - SKIP
+pkgname:
+  - name: okular
+# generated with artixpkg 0.36.1-3-any
