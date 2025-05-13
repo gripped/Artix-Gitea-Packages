@@ -10,9 +10,9 @@ _google_default_client_secret=0ZChLK6AxeA3Isu96MkwqDR4
 
 pkgbase=libreoffice-still
 pkgname=('libreoffice-still-sdk' 'libreoffice-still')
-_LOver=24.8.6.2
-pkgver=24.8.6
-pkgrel=5
+_LOver=24.8.7.2
+pkgver=24.8.7
+pkgrel=1
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
@@ -86,11 +86,11 @@ noextract=(a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
            f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 )
 validpgpkeys=('C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3') # LibreOffice Build Team (CODE SIGNING KEY) <build@documentfoundation.org>
-sha256sums=('16ed075bdeb431dc81c6905c3ef5f47e95a579a9f749a97c319461c307c506ab'
+sha256sums=('f0df471b0945bd5ec3bf926bdc2e6f3668848602379bfe2564eb43fbb10994eb'
             'SKIP'
-            '1e1f3696a7f24c616baf18978200b263f4665467b3d416d60a48c9a2e857aae3'
+            '159f809eebcbfc2ab41123032cf8728ae41c7dd7bc72e63129c5066f9fce6904'
             'SKIP'
-            'd4ffe0b455afa2e1adc2818a0f16d720ea0de60adcf954e4be5eea4135077b93'
+            'f0d16ff3ec94799130f0f73af224cb0d9716141e00d64de61ae243da89df9f64'
             'SKIP'
             '75823776fb51a9c526af904f1503a7afaaab900fba83eda64f8a41073724c870'
             '983941d31ee8d366085cadf28db75eb1f5cb03ba1e5853b98f12f7f51c63b776'
