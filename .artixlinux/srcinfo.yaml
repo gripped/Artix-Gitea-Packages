@@ -1,0 +1,60 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: kleopatra
+  pkgdesc: Certificate Manager and Unified Crypto GUI
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://apps.kde.org/kleopatra/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-pim
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - akonadi-mime
+    - gcc-libs
+    - glibc
+    - gpgme
+    - kcodecs
+    - kcolorscheme
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - ki18n
+    - kiconthemes
+    - kidentitymanagement
+    - kio
+    - kitemmodels
+    - kmailtransport
+    - kmime
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - libassuan
+    - libgpg-error
+    - libkleo
+    - mimetreeparser
+    - qgpgme-qt6
+    - qt6-base
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/kleopatra-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/kleopatra-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 61f2c473551eb01cbae2b300e274b562ec19014ee3f74c4ee84f35645446b89b
+    - SKIP
+pkgname:
+  - name: kleopatra
+# generated with artixpkg 0.36.1-3-any
