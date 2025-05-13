@@ -1,0 +1,76 @@
+---
+version: 1:25.04.1-1
+pkgbase:
+  name: k3b
+  pkgdesc: Feature-rich and easy to handle CD burning application
+  pkgver: 25.04.1
+  pkgrel: 1
+  epoch: 1
+  url: https://apps.kde.org/k3b/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-multimedia
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - ffmpeg
+    - flac
+    - gcc-libs
+    - glibc
+    - karchive
+    - kauth
+    - kbookmarks
+    - kcmutils
+    - kcolorscheme
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kfilemetadata
+    - ki18n
+    - kiconthemes
+    - kio
+    - knewstuff
+    - knotifications
+    - knotifyconfig
+    - kwidgetsaddons
+    - kxmlgui
+    - lame
+    - libburn
+    - libdvdread
+    - libkcddb
+    - libmad
+    - libmpcdec
+    - libogg
+    - libsamplerate
+    - libsndfile
+    - libvorbis
+    - qt6-base
+    - qt6-webengine
+    - solid
+    - taglib
+  optdepends:
+    - 'cdparanoia: for CD ripping support'
+    - 'cdrdao: for disk-at-once (DAO) mode support'
+    - 'cdrtools: for CD burning with cdrecord'
+    - 'dvd+rw-tools: for DVD burning support'
+    - 'emovix: for bootable multimedia CD/DVD support'
+    - 'vcdimager: for VCD burning support'
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/k3b-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/k3b-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 615b689bc96e3d880a58668aaea75766ff81c60b9583f35bb36addfbee91d222
+    - SKIP
+pkgname:
+  - name: k3b
+# generated with artixpkg 0.36.1-3-any
