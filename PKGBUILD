@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=itinerary
-pkgver=25.04.0
+pkgver=25.04.1
 pkgrel=1
 pkgdesc='Itinerary and boarding pass management application'
 arch=(x86_64)
@@ -46,7 +46,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('37755caaf2e55a841f72922c9ce4932e1ad346bafc1e9cca136d111f6d6793e8'
+sha256sums=('0db89d3951c06508673e2932c7ba371701bf34c9510368a3040b1f5b5fa33476'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>

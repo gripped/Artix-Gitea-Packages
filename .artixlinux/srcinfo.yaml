@@ -1,0 +1,65 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: itinerary
+  pkgdesc: Itinerary and boarding pass management application
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://apps.kde.org/itinerary/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-pim
+  license:
+    - BSD-3-Clause
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - python
+  depends:
+    - gcc-libs
+    - glibc
+    - kcalendarcore
+    - kcontacts
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - kfilemetadata
+    - khealthcertificate
+    - kholidays
+    - ki18n
+    - kio
+    - kirigami
+    - kirigami-addons
+    - kitinerary
+    - kitemmodels
+    - knotifications
+    - kosmindoormap
+    - kpkpass
+    - kpublictransport
+    - kunitconversion
+    - kwindowsystem
+    - libquotient
+    - prison
+    - qqc2-desktop-style
+    - qt6-base
+    - qt6-declarative
+    - qt6-location
+    - qt6-multimedia
+    - qt6-positioning
+    - qtkeychain-qt6
+    - zlib
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/itinerary-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/itinerary-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 0db89d3951c06508673e2932c7ba371701bf34c9510368a3040b1f5b5fa33476
+    - SKIP
+pkgname:
+  - name: itinerary
+# generated with artixpkg 0.36.1-3-any
