@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.04.0-1
+    version: 25.04.1-1
     packages:
-      - kdevelop-25.04.0-1-x86_64.pkg.tar.zst
+      - kdevelop-25.04.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.04.0-1
