@@ -1,0 +1,78 @@
+---
+version: 11.2.1-1
+pkgbase:
+  name: lib32-harfbuzz
+  pkgdesc: OpenType text shaping engine - 32-bit
+  pkgver: 11.2.1
+  pkgrel: 1
+  url: https://harfbuzz.github.io/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-fonttools
+    - python-setuptools
+  makedepends:
+    - git
+    - glib2-devel
+    - lib32-cairo
+    - lib32-icu
+    - meson
+    - python
+    - ragel
+  depends:
+    - harfbuzz
+    - lib32-freetype2
+    - lib32-gcc-libs
+    - lib32-glib2
+    - lib32-glibc
+  source:
+    - git+https://github.com/harfbuzz/harfbuzz?signed#tag=11.2.1
+  validpgpkeys:
+    - 053D20F17CCCA9651B2C6FCB9AB24930C0B997A2
+    - 9F377DDB6D3153A48EB3EB1E63CC496475267693
+    - 2277650A4E8BDFE4B7F6BE419FEE04E5D3531115
+    - EACF64F53455E2771BA661A4803B21859F015E4E
+  b2sums:
+    - 0fe4c46f4456f3bb64af37620c5d1723bc0b4704ae0c7f3e83f89c73fb1ce0dfd2457bfae374826a2e5e1436269a933b297d7c95fba05d94a401171a57f5da65
+pkgname:
+  - name: lib32-harfbuzz
+    depends:
+      - harfbuzz
+      - lib32-freetype2
+      - lib32-gcc-libs
+      - lib32-glib2
+      - lib32-glibc
+      - libfreetype.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+    provides:
+      - libharfbuzz.so
+      - libharfbuzz-subset.so
+      - libharfbuzz-gobject.so
+  - name: lib32-harfbuzz-cairo
+    pkgdesc: OpenType text shaping engine - 32-bit - Cairo integration
+    depends:
+      - harfbuzz-cairo
+      - lib32-cairo
+      - lib32-freetype2
+      - lib32-glib2
+      - lib32-glibc
+      - lib32-harfbuzz
+      - libcairo.so
+      - libharfbuzz.so
+    provides:
+      - libharfbuzz-cairo.so
+  - name: lib32-harfbuzz-icu
+    pkgdesc: OpenType text shaping engine - 32-bit - ICU integration
+    depends:
+      - harfbuzz-icu
+      - lib32-glibc
+      - lib32-harfbuzz
+      - lib32-icu
+      - libharfbuzz.so
+      - libicuuc.so
+    provides:
+      - libharfbuzz-icu.so
+# generated with artixpkg 0.36.2-1-any
