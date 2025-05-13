@@ -1,0 +1,42 @@
+---
+version: 1.21.0-1
+pkgbase:
+  name: consul
+  pkgdesc: A tool for service discovery, monitoring and configuration.
+  pkgver: 1.21.0
+  pkgrel: 1
+  url: https://www.consul.io
+  install: consul.install
+  arch:
+    - x86_64
+  license:
+    - BUSL-1.1
+  makedepends:
+    - git
+    - go
+    - gox
+    - go-tools
+    - procps-ng
+    - zip
+    - yarn
+    - nodejs-lts-iron
+    - npm
+  depends:
+    - glibc
+  backup:
+    - etc/default/consul
+  source:
+    - git+https://github.com/hashicorp/consul#tag=v1.21.0
+    - consul.default
+    - consul.sysusers
+    - example.json
+    - use_nodejs_v20.patch
+  sha512sums:
+    - fa57d58b6c61c3c47fdc6cda19dac50e5a58facb72166529592db25abf85e4c20ce7545526bb48c1dbe7047419b0f6520b85f64d93824499bc074f51f79aa400
+    - ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079
+    - ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87
+    - c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348
+    - 2e13ff1311e96affe4e4554c6dad3ffad95429f2e5e4b7d06f2c18fb46682fc2dbdf603054a2155b2d2dfcad8b6eb6dc38cb7e3042919eedf5c297d32a633da2
+pkgname:
+  - name: consul
+# generated with artixpkg 0.36.1-3-any
