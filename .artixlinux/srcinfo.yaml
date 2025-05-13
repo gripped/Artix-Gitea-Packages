@@ -1,0 +1,25 @@
+---
+version: 1.2.9-1
+pkgbase:
+  name: exfatprogs
+  pkgdesc: exFAT filesystem userspace utilities for the Linux Kernel exfat driver
+  pkgver: 1.2.9
+  pkgrel: 1
+  url: https://github.com/exfatprogs/exfatprogs
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  depends:
+    - glibc
+  provides:
+    - exfat-utils
+  conflicts:
+    - exfat-utils
+  source:
+    - https://github.com/exfatprogs/exfatprogs/archive/1.2.9/exfatprogs-1.2.9.tar.gz
+  b2sums:
+    - 863786f487cbd90583379428d3089ae1746f3906f720230d6b9391469236e3d07c74cae7f48c6177797696705380fb5acc55af9256818c0db6c1d3ab4b302296
+pkgname:
+  - name: exfatprogs
+# generated with artixpkg 0.36.2-1-any
