@@ -1,0 +1,43 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: telly-skout
+  pkgdesc: Convergent TV guide based on Kirigami
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://apps.kde.org/telly-skout/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-utilities
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - ki18n
+    - kirigami-addons
+    - kirigami
+    - qqc2-desktop-style
+    - qt6-base
+    - qt6-declarative
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/telly-skout-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/telly-skout-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 229e6b10f4d5bb689b3fad276aee33256b96806d3df005f696952dd1b5039a43
+    - SKIP
+pkgname:
+  - name: telly-skout
+# generated with artixpkg 0.36.1-3-any
