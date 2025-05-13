@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=eventviews
-pkgver=25.04.0
+pkgver=25.04.1
 pkgrel=1
 pkgdesc='Library for creating events'
 arch=(x86_64)
@@ -36,7 +36,7 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('aec92e1625b8c0924ea7dd5b7f5944e5f00ccb762693e1f9e061fc58b84ecf9a'
+sha256sums=('138db44ebeff29598f8fa5266ccd3200ed1ae68cfc40e8a4351054c400232175'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
