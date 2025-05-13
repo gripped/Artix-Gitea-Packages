@@ -1,0 +1,104 @@
+---
+version: 11.2.1-1
+pkgbase:
+  name: harfbuzz
+  pkgdesc: OpenType text shaping engine
+  pkgver: 11.2.1
+  pkgrel: 1
+  url: https://harfbuzz.github.io/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-fonttools
+    - python-setuptools
+  makedepends:
+    - cairo
+    - chafa
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - help2man
+    - icu
+    - meson
+    - python
+    - ragel
+  depends:
+    - freetype2
+    - glib2
+    - glibc
+    - graphite
+  source:
+    - git+https://github.com/harfbuzz/harfbuzz?signed#tag=11.2.1
+  validpgpkeys:
+    - 053D20F17CCCA9651B2C6FCB9AB24930C0B997A2
+    - 9F377DDB6D3153A48EB3EB1E63CC496475267693
+    - 2277650A4E8BDFE4B7F6BE419FEE04E5D3531115
+    - EACF64F53455E2771BA661A4803B21859F015E4E
+  b2sums:
+    - 0fe4c46f4456f3bb64af37620c5d1723bc0b4704ae0c7f3e83f89c73fb1ce0dfd2457bfae374826a2e5e1436269a933b297d7c95fba05d94a401171a57f5da65
+pkgname:
+  - name: harfbuzz
+    depends:
+      - freetype2
+      - glib2
+      - glibc
+      - graphite
+      - libfreetype.so
+      - libgraphite2.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+    optdepends:
+      - 'harfbuzz-utils: utilities'
+    provides:
+      - libharfbuzz.so
+      - libharfbuzz-subset.so
+      - libharfbuzz-gobject.so
+  - name: harfbuzz-cairo
+    pkgdesc: OpenType text shaping engine - Cairo integration
+    depends:
+      - cairo
+      - freetype2
+      - glib2
+      - glibc
+      - graphite
+      - harfbuzz
+      - libcairo.so
+      - libharfbuzz.so
+    provides:
+      - libharfbuzz-cairo.so
+  - name: harfbuzz-icu
+    pkgdesc: OpenType text shaping engine - ICU integration
+    depends:
+      - glibc
+      - harfbuzz
+      - icu
+      - libharfbuzz.so
+      - libicuuc.so
+    provides:
+      - libharfbuzz-icu.so
+  - name: harfbuzz-utils
+    pkgdesc: OpenType text shaping engine - Utilities
+    depends:
+      - cairo
+      - chafa
+      - freetype2
+      - glib2
+      - glibc
+      - harfbuzz
+      - harfbuzz-cairo
+      - libcairo.so
+      - libchafa.so
+      - libfreetype.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libharfbuzz-cairo.so
+      - libharfbuzz-gobject.so
+      - libharfbuzz-subset.so
+      - libharfbuzz.so
+  - name: harfbuzz-docs
+    pkgdesc: OpenType text shaping engine - Documentation
+    depends: []
+# generated with artixpkg 0.36.2-1-any
