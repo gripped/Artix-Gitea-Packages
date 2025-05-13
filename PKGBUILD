@@ -2,7 +2,7 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 pkgname=roctracer
 pkgver=6.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='ROCm tracer library for performance tracing'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/roctracer/en/latest'
