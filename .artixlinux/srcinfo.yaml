@@ -1,0 +1,48 @@
+---
+version: 25.04.1-1
+pkgbase:
+  name: knetwalk
+  pkgdesc: Connect all the terminals to the server, in as few turns as possible
+  pkgver: 25.04.1
+  pkgrel: 1
+  url: https://apps.kde.org/knetwalk/
+  arch:
+    - x86_64
+  groups:
+    - kde-applications
+    - kde-games
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - ki18n
+    - kiconthemes
+    - ktextwidgets
+    - kwidgetsaddons
+    - kxmlgui
+    - libkdegames
+    - qt6-base
+    - qt6-declarative
+  source:
+    - https://download.kde.org/stable/release-service/25.04.1/src/knetwalk-25.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.1/src/knetwalk-25.04.1.tar.xz.sig
+  validpgpkeys:
+    - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
+    - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
+    - D81C0CB38EB725EF6691C385BB463350D6EF31EF
+  sha256sums:
+    - 08f5f471431a0abfc03814fc75763114b318ae43da78d93c55b4a6c3e49cd60a
+    - SKIP
+pkgname:
+  - name: knetwalk
+# generated with artixpkg 0.36.1-3-any
