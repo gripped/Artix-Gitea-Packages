@@ -1,0 +1,35 @@
+---
+version: 2.3.3-1
+pkgbase:
+  name: ocl-icd
+  pkgdesc: OpenCL ICD Bindings
+  pkgver: 2.3.3
+  pkgrel: 1
+  url: https://github.com/OCL-dev/ocl-icd
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - ruby
+    - mesa
+    - xmlto
+    - asciidoc
+    - opencl-headers>=2.1
+  depends:
+    - glibc
+  optdepends:
+    - 'opencl-driver: packaged opencl driver'
+  provides:
+    - opencl-icd-loader
+  conflicts:
+    - libcl
+  replaces:
+    - libcl
+  source:
+    - ocl-icd-2.3.3.tar.gz::https://github.com/OCL-dev/ocl-icd/archive/v2.3.3.tar.gz
+  sha256sums:
+    - 8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d
+pkgname:
+  - name: ocl-icd
+# generated with artixpkg 0.36.1-3-any
