@@ -1,0 +1,39 @@
+---
+version: 25.5.0-1
+pkgbase:
+  name: python-ansible-compat
+  pkgdesc: Functions that help interacting with various versions of Ansible
+  pkgver: 25.5.0
+  pkgrel: 1
+  url: https://github.com/ansible/ansible-compat
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-instafail
+    - python-pytest-mock
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - ansible-core
+    - python
+    - python-jsonschema
+    - python-packaging
+    - python-pyyaml
+    - python-subprocess-tee
+  source:
+    - git+https://github.com/ansible/ansible-compat.git#tag=v25.5.0
+  sha256sums:
+    - 3dbd4b3c5ec30cc85ce8d9b9cdf5559e1b50d2d873a68276b222ea1966ffce91
+  b2sums:
+    - 2326258f03fe567888e69a91cf0650d020631577a78ef11d4911b3acac99e22314607e0c292dbf63c9492c2d2d0254f6c4d6514b38cb37737c72a0a53b3e08f1
+pkgname:
+  - name: python-ansible-compat
+# generated with artixpkg 0.36.1-3-any
