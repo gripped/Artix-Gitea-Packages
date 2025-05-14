@@ -1,141 +1,103 @@
 ---
 team: world
-pkgbase:
-  name: gst-plugins-rs
-  version: 0.13.5-1
-  arch:
-    - x86_64
-  pkgname:
-    - gst-webrtc-signalling-server
-    - gst-plugin-aws
-    - gst-plugin-cdg
-    - gst-plugin-claxon
-    - gst-plugin-dav1d
-    - gst-plugin-fallbackswitch
-    - gst-plugin-ffv1
-    - gst-plugin-fmp4
-    - gst-plugin-gif
-    - gst-plugin-gopbuffer
-    - gst-plugin-gtk4
-    - gst-plugin-hlssink3
-    - gst-plugin-hsv
-    - gst-plugin-json
-    - gst-plugin-lewton
-    - gst-plugin-livesync
-    - gst-plugin-mp4
-    - gst-plugin-mpegtslive
-    - gst-plugin-originalbuffer
-    - gst-plugin-quinn
-    - gst-plugin-raptorq
-    - gst-plugin-rav1e
-    - gst-plugin-regex
-    - gst-plugin-reqwest
-    - gst-plugin-rsaudiofx
-    - gst-plugin-rsclosedcaption
-    - gst-plugin-rsfile
-    - gst-plugin-rsflv
-    - gst-plugin-rsinter
-    - gst-plugin-rsonvif
-    - gst-plugin-rspng
-    - gst-plugin-rsrtp
-    - gst-plugin-rsrtsp
-    - gst-plugin-rstracers
-    - gst-plugin-rsvideofx
-    - gst-plugin-rswebp
-    - gst-plugin-rswebrtc
-    - gst-plugin-sodium
-    - gst-plugin-spotify
-    - gst-plugin-textahead
-    - gst-plugin-textwrap
-    - gst-plugin-threadshare
-    - gst-plugin-togglerecord
-    - gst-plugin-webrtchttp
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 0.13.5-1
+    version: 0.13.6-1
     packages:
-      - gst-webrtc-signalling-server-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-aws-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-cdg-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-claxon-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-dav1d-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-fallbackswitch-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-ffv1-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-fmp4-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-gif-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-gopbuffer-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-gtk4-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-hlssink3-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-hsv-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-json-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-lewton-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-livesync-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-mp4-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-mpegtslive-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-originalbuffer-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-quinn-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-raptorq-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rav1e-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-regex-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-reqwest-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsaudiofx-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsclosedcaption-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsfile-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsflv-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsinter-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsonvif-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rspng-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsrtp-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsrtsp-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rstracers-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rsvideofx-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rswebp-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-rswebrtc-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-sodium-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-spotify-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-textahead-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-textwrap-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-threadshare-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-togglerecord-0.13.5-1-x86_64.pkg.tar.zst
-      - gst-plugin-webrtchttp-0.13.5-1-x86_64.pkg.tar.zst
+      - gst-webrtc-signalling-server-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-aws-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-cdg-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-claxon-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-dav1d-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-fallbackswitch-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-ffv1-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-fmp4-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-gif-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-gopbuffer-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-gtk4-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-hlssink3-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-hsv-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-json-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-lewton-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-livesync-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-mp4-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-mpegtslive-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-originalbuffer-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-quinn-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-raptorq-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rav1e-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-regex-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-reqwest-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsaudiofx-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsclosedcaption-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsfile-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsflv-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsinter-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsonvif-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rspng-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsrtp-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsrtsp-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rstracers-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rsvideofx-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rswebp-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-rswebrtc-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-sodium-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-spotify-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-textahead-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-textwrap-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-threadshare-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-togglerecord-0.13.6-1-x86_64.pkg.tar.zst
+      - gst-plugin-webrtchttp-0.13.6-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
