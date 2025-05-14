@@ -1,8 +1,8 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -26,14 +26,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 2.5.a21e075-2
     packages:
       - hiprt-2.5.a21e075-2-x86_64.pkg.tar.zst
-    debug: []
-  world:
-    version: 2.5.a21e075-1
-    packages:
-      - hiprt-2.5.a21e075-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
