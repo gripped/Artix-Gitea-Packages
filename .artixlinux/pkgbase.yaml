@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.78.0-1
+    version: 1.78.1-1
     packages:
-      - python-openai-1.78.0-1-any.pkg.tar.zst
+      - python-openai-1.78.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.76.0-1
