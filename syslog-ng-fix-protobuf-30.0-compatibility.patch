@@ -1,23 +1,14 @@
-diff --git i/modules/grpc/common/schema/grpc-schema.hpp w/modules/grpc/common/schema/grpc-schema.hpp
-index 45b3387d7..a1b655999 100644
---- i/modules/grpc/common/schema/grpc-schema.hpp
-+++ w/modules/grpc/common/schema/grpc-schema.hpp
-@@ -50,7 +50,7 @@ struct NameValueTemplatePair
-   std::string name;
+diff --git i/modules/grpc/bigquery/bigquery-dest.hpp w/modules/grpc/bigquery/bigquery-dest.hpp
+index 4a8a33ca8..f81e1f9e3 100644
+--- i/modules/grpc/bigquery/bigquery-dest.hpp
++++ w/modules/grpc/bigquery/bigquery-dest.hpp
+@@ -55,7 +55,7 @@ struct Field
    LogTemplate *value;
- 
--  NameValueTemplatePair(std::string name_, LogTemplate *value_)
-+  NameValueTemplatePair(std::string_view name_, LogTemplate *value_)
-     : name(name_), value(log_template_ref(value_)) {}
- 
-   NameValueTemplatePair(const NameValueTemplatePair &a)
-@@ -78,7 +78,7 @@ struct Field
-   google::protobuf::FieldDescriptorProto::Type type;
    const google::protobuf::FieldDescriptor *field_desc;
  
 -  Field(std::string name_, google::protobuf::FieldDescriptorProto::Type type_, LogTemplate *value_)
 +  Field(std::string_view name_, google::protobuf::FieldDescriptorProto::Type type_, LogTemplate *value_)
-     : nv(name_, value_), type(type_), field_desc(nullptr) {}
+     : name(name_), type(type_), value(log_template_ref(value_)), field_desc(nullptr) {}
  
    Field(const Field &a)
 diff --git i/modules/grpc/otel/filterx/object-otel-array.cpp w/modules/grpc/otel/filterx/object-otel-array.cpp

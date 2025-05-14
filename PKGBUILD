@@ -3,7 +3,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=syslog-ng
-pkgver=4.8.2
+pkgver=4.8.3
 pkgrel=1
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=(x86_64)
@@ -103,16 +103,16 @@ source=(
   "$pkgname.logrotate"
   "$pkgname-do-not-install-python-venv.patch"
   "$pkgname-config.patch"
-  "syslog-ng-fix-protobuf-30.0-compatibility.patch"
+  "$pkgname-fix-protobuf-30.0-compatibility.patch"
 )
-sha256sums=('f290a4ce2654d0bc2ac691e00ab4563ee919d0ebb984ed130cf5dc0ad955ff25'
+sha256sums=('c687b3ecde4a4b01577b6d563e3262c8763cd0e44fe69511cfddc9c703af7c40'
             'SKIP'
             'SKIP'
             'SKIP'
             '93c935eca56854011ea9e353b7a1da662ad40b2e8452954c5b4b5a1d5b2d5317'
             '7ca7f0d9fb203b3814fe2f609904af84df346b84591eeeb171bb2e5eb6393990'
             '1039550b091df1a50e8d30b624d52a7fd56c29d0ceec596b4b029a7cc92a3825'
-            '74ee85b53748cb2567b696c9d10dd4a5e1d235769f8efc38c657b1ab4ef16e95')
+            '7623df735def048a058905de6e5fdd8958866051efd8415e86f2dc12cf60838a')
 
 prepare() {
   cd $pkgname
@@ -122,9 +122,12 @@ prepare() {
   git config submodule.modules/cloud-auth/jwt-cpp.url "$srcdir/jwt-cpp"
   git -c protocol.file.allow=always submodule update
 
-  patch -Np1 -i "$srcdir/$pkgname-do-not-install-python-venv.patch" # Don't install Python venv using pip.
-  patch -Np1 -i "$srcdir/$pkgname-config.patch"                     # Add further distribution examples, disable default log file.
-  patch -Np1 -i "$srcdir/syslog-ng-fix-protobuf-30.0-compatibility.patch"
+  # Don't install Python venv using pip.
+  patch -Np1 < ../$pkgname-do-not-install-python-venv.patch
+  # Add further distribution examples, disable default log file.
+  patch -Np1 < ../$pkgname-config.patch
+
+  patch -Np1 < ../$pkgname-fix-protobuf-30.0-compatibility.patch
 
   # Remove tests failing in a chroot but not on host. Not sure why.
   sed -i '/include lib\/secret-storage\/tests\/Makefile.am/d' lib/secret-storage/Makefile.am
