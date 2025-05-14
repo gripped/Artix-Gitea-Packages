@@ -5,7 +5,7 @@
 # Contributor: Pierre Gueth <pierre.gueth@gmail.com>
 
 pkgname=python-redis
-pkgver=6.0.0
+pkgver=6.1.0
 pkgrel=1
 pkgdesc='The Python interface to the Redis key-value store'
 arch=('any')
@@ -39,7 +39,7 @@ optdepends=(
   'python-requests: OCSP certificate validation'
 )
 source=("$pkgname::git+$url#tag=v$pkgver")
-b2sums=('ee5ef832d47cfad586ded1fb581f2e907944e8d7c7bcf7bea665d6aa521a6d872dc6f001aa932b1092913c8ce89a92fbd28e2c9883a659bcb066059ab635773b')
+b2sums=('6bbd166be98b729ead953e4c7ad130cbff2824d820a5af48864ac874aa8e7542eb3fc70e47d589666f947841465d4e9760aee3f646c2c7ab33c515c7239b1eaa')
 
 prepare() {
   cd "$pkgname"

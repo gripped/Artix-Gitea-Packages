@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.0.0-1
+    version: 6.1.0-1
     packages:
-      - python-redis-6.0.0-1-any.pkg.tar.zst
+      - python-redis-6.1.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 5.2.1-4
