@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.131.15
+pkgver=6.131.16
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -58,8 +58,8 @@ optdepends=(
   'python-watchdog: for tracking file system events'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('42f5947a56222ec3303766d3373d67d040b78bdb08d1e023aaa647c20796fe7bbf622c790c69140fb8dba204ec235b2b404b632895c14bc51f7e74d30852ff68')
-b2sums=('644242ad49e2b3d2142b07d94bba08a48024d96c7fb89773445d70a94677d05d167dfceb72254edbf9b2b1e3eaab2c3e80a13d78a6e231b8309f331bce35ac8e')
+sha512sums=('255a3d57f1e463872d2385c9fcf1955714d7f1bace3f498365bdfd131660c084b5a08f875144bcc91ef45096a74e310baf047e88e82722c1e4e62e0a9a4fbbe0')
+b2sums=('72cacbb5091db14147f5599813f5525a50d486c8d816e4513817f252aa4a2079c1579a18396c5fbb274527bd5ce7e78669cc66adbcea195a0080c5da5868a9c3')
 
 prepare() {
   cd $pkgname/hypothesis-python
@@ -83,6 +83,8 @@ check() {
     --ignore=tests/crosshair/test_crosshair.py
     # Fails with AssertionError for some reason
     --ignore=tests/nocover/test_scrutineer.py
+
+    -W=ignore::DeprecationWarning
   )
   PATH="$PWD/test-env/bin:$PATH" test-env/bin/python -m pytest \
     "${pytest_options[@]}" tests/
