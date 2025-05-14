@@ -11,7 +11,7 @@ url="https://www.tortall.net/projects/yasm/"
 license=('BSD-2-Clause OR BSD-3-Clause' 'GPL-2.0-only' 'LGPL-2.1-only' 'Artistic-1.0-Perl')
 depends=('glibc')
 makedepends=('git' 'python' 'xmlto')
-checkdepends=('systemd')
+checkdepends=('udev')
 options=('staticlibs')
 source=("$pkgname::git+https://github.com/yasm/yasm#tag=v$pkgver")
 sha512sums=('97161e81b91903ddad6bfb26fd4fcaee263b4e71d85b7299aa72572b2d780fe09e69b8a84becedc1b049179080a691055670fa0edebd0a792dd986a0d1d8d703')
