@@ -1,0 +1,51 @@
+---
+version: 1.23.8-1
+pkgbase:
+  name: gitea
+  pkgdesc: Painless self-hosted Git service, community managed.
+  pkgver: 1.23.8
+  pkgrel: 1
+  url: https://gitea.io
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - openssh
+  makedepends:
+    - go
+    - nodejs
+    - npm
+  depends:
+    - git
+  optdepends:
+    - 'mariadb: MariaDB support'
+    - 'memcached: MemCached support'
+    - 'openssh: GIT over SSH support'
+    - 'pam: Authentication via PAM support'
+    - 'postgresql: PostgreSQL support'
+    - 'valkey: Valkey support'
+    - 'sqlite: SQLite support'
+  options:
+    - '!lto'
+  backup:
+    - etc/gitea/app.ini
+  source:
+    - git+https://github.com/go-gitea/gitea.git#tag=v1.23.8?signed
+    - gitea.tmpfiles
+    - gitea.sysusers
+  validpgpkeys:
+    - B56E3C7437A49E136862F5DE9D8A57ADAA232E95
+    - D8F9672D77C0BB60A024C23EDFDE60A0093EB926
+    - BA66F67FD73F7058D712D308C3B7C91B632F738A
+    - 8722B61D72341082553B201CB8BE6D610E61C862
+    - D2CF76DA95F201E9901532AB3CDE74631F13A748
+    - 82A110A44DF1A28D50C093BFB853ADA5DA7BBF7A
+    - FE7C3EAEB8CD8290390B12AD3DECE05F6D9A647C
+  sha256sums:
+    - a7fc5d1a3c504213acdeff515d3965fb4e3feafba774d7b3b3e8388682cb02b9
+    - 1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba
+    - e29dcc74b2f52e32d3931103d03f202d1cafe18e7eb9a271da0f50ef61dc8446
+pkgname:
+  - name: gitea
+# generated with artixpkg 0.36.2-1-any
