@@ -1,0 +1,43 @@
+---
+version: 0.40.0-1
+pkgbase:
+  name: python-eventlet
+  pkgdesc: Highly concurrent networking library
+  pkgver: 0.40.0
+  pkgrel: 1
+  url: https://eventlet.net
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-httplib2
+    - python-psycopg2
+    - python-pyopenssl
+    - python-pytest
+    - python-pyzmq
+  makedepends:
+    - python-build
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+    - python-sphinx
+    - python-sphinxcontrib-apidoc
+  depends:
+    - python
+    - python-dnspython
+    - python-greenlet
+  optdepends:
+    - 'python-httplib2: non-blocking HTTP support'
+    - 'python-psycopg2: non-blocking PostgreSQL support'
+    - 'python-pyopenssl: non-blocking SSL support'
+    - 'python-pyzmq: non-blocking ZeroMQ support'
+  source:
+    - https://github.com/eventlet/eventlet/archive/0.40.0/eventlet-0.40.0.tar.gz
+  sha512sums:
+    - 10ff32ac22dc75cad58d4b97b8e3f411b49e8c199b1d56c933eb341c49a82845f5dabf75ec39697f0cf0e4867545df91556eb0b20f229aa499bf0418912481c7
+  b2sums:
+    - cc953b557a700628d5aca34ab8ebdd51ca46f891d68a085d06183094e98b9a2ba59280f6bc3b820881b0fdcfc0033e44144b854ced41452502ce8911cc61a19e
+pkgname:
+  - name: python-eventlet
+# generated with artixpkg 0.36.1-3-any
