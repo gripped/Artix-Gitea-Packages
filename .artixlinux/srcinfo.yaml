@@ -1,0 +1,44 @@
+---
+version: 4.1.2-1
+pkgbase:
+  name: tellico
+  pkgdesc: A collection manager for KDE
+  pkgver: 4.1.2
+  pkgrel: 1
+  url: https://tellico-project.org/
+  changelog: tellico.changelog
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - cmake
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - exempi
+    - hicolor-icon-theme
+    - kio
+    - libksane
+    - libkcddb
+    - libcdio
+    - kfilemetadata
+    - knewstuff
+    - kxmlgui
+    - kitemmodels
+    - perl-text-bibtex
+    - python
+    - solid
+    - yaz
+    - taglib
+    - poppler-qt6
+    - qt6-base
+    - qt6-charts
+    - qt6-webengine
+  source:
+    - https://tellico-project.org/files/tellico-4.1.2.tar.xz
+  sha256sums:
+    - 3c00d5213d36fb6faa16d57dba42568e801505f25846e41b342c159c1b3b66a5
+pkgname:
+  - name: tellico
+# generated with artixpkg 0.36.1-3-any
