@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 30.2-3
+    packages:
+      - protobuf-30.2-3-x86_64.pkg.tar.zst
+      - python-protobuf-30.2-3-x86_64.pkg.tar.zst
+      - ruby-google-protobuf-30.2-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 30.2-2
