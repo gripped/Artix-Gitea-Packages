@@ -1,11 +1,11 @@
 ---
 team: world
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -22,8 +22,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.15.0-1
+    packages:
+      - zint-2.15.0-1-x86_64.pkg.tar.zst
+      - zint-qt-2.15.0-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
