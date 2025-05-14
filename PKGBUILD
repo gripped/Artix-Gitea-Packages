@@ -3,7 +3,7 @@
 
 pkgname=prometheus
 pkgver=3.3.1
-pkgrel=1
+pkgrel=2
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
 url='https://prometheus.io'
@@ -18,7 +18,7 @@ backup=('etc/prometheus/prometheus.yml')
 
 source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/archive/v$pkgver.tar.gz"
         prometheus.sysusers
-	)
+        )
 
 sha256sums=('2d4a71efb7c662f265c7af5f7db3367b2a7d3981fdc8860103909148b9a82846'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
@@ -49,10 +49,12 @@ build() {
 
   go generate -tags plugins ./plugins
 
+  # stringlabels: https://github.com/prometheus/prometheus/issues/16490
   go build \
     -buildmode=pie \
     -mod=readonly \
     -modcacherw \
+    -tags stringlabels \
     -ldflags "-compressdwarf=false -linkmode external $LDFLAGS" \
     ./cmd/prometheus
   go build \

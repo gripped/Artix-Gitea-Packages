@@ -1,10 +1,10 @@
 ---
-version: 3.3.1-1
+version: 3.3.1-2
 pkgbase:
   name: prometheus
   pkgdesc: An open-source systems monitoring and alerting toolkit
   pkgver: 3.3.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://prometheus.io
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f
 pkgname:
   - name: prometheus
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.1-3-any
