@@ -3,7 +3,7 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.128.0
+pkgver=1.129.0
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
@@ -36,11 +36,13 @@ source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf'
+        'rm-faling-test.patch'
         )
-sha256sums=('c7c71f6282d0802f0fab7dabb96887f0a0106f3cc34605a9c1fcf24253ba2b58'
+sha256sums=('32581aa2a01c43d13821f7ec406d173b49678a8e4f5026411b08a1249e2886dc'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             'aadfdd78fe73e6eb325ee4299b8db8b97bfa2f4e7df953aa8477f442598a7ec5'
-            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
+            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
+            '00c2c75295cf5e674bee3cf9cdbeeecf108627761daf8560aa9343e7b58b83c0')
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
 validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
@@ -58,6 +60,8 @@ prepare() {
 	# allow any poetry-core to be used
 	sed 's/poetry-core>=1.1.0,<=1.9.1/poetry-core>=1.0.0/' -i pyproject.toml
 	sed 's/setuptools_rust>=1.3,<=1.10.2/setuptools_rust>=1.3.0/' -i pyproject.toml
+
+	patch -p 1 -i ../rm-faling-test.patch
 }
 
 build() {
