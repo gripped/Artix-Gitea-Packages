@@ -1,0 +1,89 @@
+---
+version: 6.9.0-7
+pkgbase:
+  name: qt6-webengine
+  pkgdesc: Provides support for web applications using the Chromium browser project
+  pkgver: 6.9.0
+  pkgrel: 7
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - git
+    - gperf
+    - jsoncpp
+    - libepoxy
+    - libpulse
+    - libva
+    - libxcursor
+    - ninja
+    - nodejs
+    - perf
+    - pipewire
+    - python-html5lib
+    - qt6-tools
+    - qt6-websockets
+  depends:
+    - alsa-lib
+    - dbus
+    - expat
+    - ffmpeg
+    - fontconfig
+    - freetype2
+    - gcc-libs
+    - glib2
+    - glibc
+    - harfbuzz
+    - icu
+    - lcms2
+    - libdrm
+    - libevent
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - libwebp
+    - libx11
+    - libxcb
+    - libxcomposite
+    - libxfixes
+    - libxkbcommon
+    - libxkbfile
+    - libxdamage
+    - libxext
+    - libxml2
+    - libxrandr
+    - libxslt
+    - libxtst
+    - mesa
+    - minizip
+    - nspr
+    - nss
+    - openjpeg2
+    - opus
+    - qt6-base
+    - qt6-declarative
+    - qt6-positioning
+    - qt6-webchannel
+    - re2
+    - snappy
+    - ttf-font
+    - zlib
+  optdepends:
+    - 'pipewire: WebRTC desktop sharing under Wayland'
+  source:
+    - git+https://code.qt.io/qt/qtwebengine#tag=v6.9.0
+    - git+https://code.qt.io/qt/qtwebengine-chromium
+  sha256sums:
+    - b241666ad58bc6c30bd9e0e89cb6f7ba2df57be0c51faabe75c858972fa8367e
+    - SKIP
+pkgname:
+  - name: qt6-webengine
+# generated with artixpkg 0.36.1-3-any
