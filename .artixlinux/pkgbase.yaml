@@ -1,55 +1,61 @@
 ---
-pkgbase:
-  name: grub
-  version: 2:2.12.r283.ga4da71da-1
-  arch:
-    - x86_64
-  pkgname:
-    - grub
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 2:2.12.r292.g73d1c959-1
+    packages:
+      - grub-2:2.12.r292.g73d1c959-1-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 2:2.12.r283.ga4da71da-1
     packages:
       - grub-2:2.12.r283.ga4da71da-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
