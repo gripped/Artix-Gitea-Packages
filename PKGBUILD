@@ -1,12 +1,12 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-zenithal
-pkgver=0.0.1
+pkgver=0.0.2
 _pkgname2=zenithal
 _pkgname3=MokshaZenithal
 _pkgname4=Delft
 _pkgname5=Delft-Gray
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Moksha Zenithal theme"
 arch=('any')
 url="https://github.com/thewaiter"
