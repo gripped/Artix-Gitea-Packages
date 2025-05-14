@@ -1,0 +1,36 @@
+---
+version: 0.12.16-1
+pkgbase:
+  name: python-pycrdt
+  pkgdesc: CRDTs based on Yrs
+  pkgver: 0.12.16
+  pkgrel: 1
+  url: https://github.com/jupyter-server/pycrdt
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-anyio
+    - python-pydantic
+    - python-pytest
+    - python-pytest-mypy-testing
+    - python-trio
+    - python-y-py
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-maturin
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+    - python-anyio
+  source:
+    - git+https://github.com/jupyter-server/pycrdt#tag=0.12.16
+  sha256sums:
+    - 9798daee156d839716009193dfde25a9fa82d621f5d24a437ec83c84975ef81c
+pkgname:
+  - name: python-pycrdt
+# generated with artixpkg 0.36.1-3-any
