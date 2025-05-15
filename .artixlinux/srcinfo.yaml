@@ -1,0 +1,43 @@
+---
+version: 23.11.1-1
+pkgbase:
+  name: nodejs
+  pkgdesc: Evented I/O for V8 javascript ("Current" release)
+  pkgver: 23.11.1
+  pkgrel: 1
+  url: https://nodejs.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - procps-ng
+    - python
+  depends:
+    - brotli
+    - c-ares
+    - icu
+    - libnghttp2
+    - libnghttp3
+    - libngtcp2
+    - libuv
+    - openssl
+    - simdjson
+    - zlib
+  optdepends:
+    - 'npm: nodejs package manager'
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/nodejs/node.git#tag=v23.11.1?signed
+  validpgpkeys:
+    - 8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600
+    - 890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4
+    - C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C
+    - C0D6248439F1D5604AAFFB4021D900FFDB233756
+  sha512sums:
+    - 072963c19e218bc57d87673f10ae39cc251d258e91a167a722259e32166565d837c1ca0da03fdacab46021771fc66f092fb7218a7e45099908b93cb4353bc6a4
+pkgname:
+  - name: nodejs
+# generated with artixpkg 0.36.1-3-any
