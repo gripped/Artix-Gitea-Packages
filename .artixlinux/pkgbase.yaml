@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 2:2.12.r292.g73d1c959-1
     packages:
       - grub-2:2.12.r292.g73d1c959-1-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 2:2.12.r283.ga4da71da-1
-    packages:
-      - grub-2:2.12.r283.ga4da71da-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
