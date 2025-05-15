@@ -9,7 +9,7 @@
 pkgbase=mupdf
 pkgname=('libmupdf' 'mupdf' 'mupdf-gl' 'mupdf-tools' 'python-mupdf')
 pkgver=1.26.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Lightweight PDF and XPS viewer"
 url="https://mupdf.com"
 arch=('x86_64')
@@ -100,7 +100,7 @@ build() {
 
 package_libmupdf() {
 	pkgdesc="Library for Lightweight PDF and XPS viewer"
-	depends=('freetype2' 'gcc-libs' 'glibc' 'gumbo-parser' 'harfbuzz' 'jbig2dec' 'leptonica' 'libjpeg-turbo' 'openjpeg2' 'tesseract' 'zlib')
+	depends=('brotli' 'freetype2' 'gcc-libs' 'glibc' 'gumbo-parser' 'harfbuzz' 'jbig2dec' 'leptonica' 'libjpeg-turbo' 'openjpeg2' 'tesseract' 'zlib')
 
 	cd "${pkgbase}"
 	make prefix=/usr DESTDIR="${pkgdir}" SO_INSTALL_MODE=755 install-shared-c install-shared-c++
