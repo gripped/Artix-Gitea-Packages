@@ -2,7 +2,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-blosc2
-pkgver=3.3.2
+pkgver=3.3.3
 pkgrel=1
 pkgdesc='Wrapper for the blosc2 compressor'
 arch=('x86_64')
@@ -35,8 +35,8 @@ checkdepends=(
   'python-pytest'
 )
 source=("$pkgname::git+$url#tag=v$pkgver")
-sha512sums=('5bd4c79b19664ed8e6c418faf522bb32a72292766e0581f56e9c757f8bd01546a33ec1c860f2f29d2bb414a21c28a08ca2420d3e88c18a0b50ba8223076ffd75')
-b2sums=('4d462daaacc104a8980b61abcfb967e76b3ec145aef4ffb39665e040457b657594707db0cde95f349e54d78c9f8a8cb9b5e840650341c2f6c11d28784cbe8d47')
+sha512sums=('89af888c2d7f13216c8e0c32b28ddcd3c2790c4895f28d08ed95aa8f9f4ab6075958787f4ce0746919c2932da217972f90613ae36bd2611f9972610397958642')
+b2sums=('1a827d586af8bf11c6cf197a28723f5939cbc1ab36f0dfb0e7c79c4e2ad74783e31c6122f9ac6218d4636278a2fc6aa179ce82d97de2628cb4e235f9c30420de')
 
 build() {
   cd $pkgname
