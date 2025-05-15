@@ -1,9 +1,9 @@
 ---
-version: 0.12.16-1
+version: 0.12.17-1
 pkgbase:
   name: python-pycrdt
   pkgdesc: CRDTs based on Yrs
-  pkgver: 0.12.16
+  pkgver: 0.12.17
   pkgrel: 1
   url: https://github.com/jupyter-server/pycrdt
   arch:
@@ -28,9 +28,9 @@ pkgbase:
     - python
     - python-anyio
   source:
-    - git+https://github.com/jupyter-server/pycrdt#tag=0.12.16
+    - git+https://github.com/jupyter-server/pycrdt#tag=0.12.17
   sha256sums:
-    - 9798daee156d839716009193dfde25a9fa82d621f5d24a437ec83c84975ef81c
+    - 8b5a62dcd9a786b3bc1342f8b8c2dfd7ca653059beda55b644a1f7642ae1a5fd
 pkgname:
   - name: python-pycrdt
 # generated with artixpkg 0.36.1-3-any
