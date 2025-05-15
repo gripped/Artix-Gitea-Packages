@@ -1,0 +1,31 @@
+---
+version: 0.2.3-1
+pkgbase:
+  name: libdecor
+  pkgdesc: Client-side decorations library for Wayland clients
+  pkgver: 0.2.3
+  pkgrel: 1
+  url: https://gitlab.freedesktop.org/libdecor/libdecor
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - ninja
+    - meson
+    - wayland-protocols
+    - gtk3
+  depends:
+    - wayland
+    - pango
+    - dbus
+  optdepends:
+    - 'gtk3: gtk3 support'
+  source:
+    - https://gitlab.freedesktop.org/libdecor/libdecor/-/archive/0.2.3/libdecor-0.2.3.tar.gz
+  sha512sums:
+    - 99eefab6343a3ea066a5d9b81baaa0db3dc5ad7d71ce55852c4dd005c2b980e066639ed88e2e3a247c30cda23665343b040ed7383b17ac3ad31498af52d9c76e
+pkgname:
+  - name: libdecor
+# generated with artixpkg 0.36.2-1-any
