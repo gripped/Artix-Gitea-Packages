@@ -1,0 +1,69 @@
+---
+version: 16.0.2-1
+pkgbase:
+  name: qtcreator
+  pkgdesc: Lightweight, cross-platform integrated development environment
+  pkgver: 16.0.2
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cmake
+    - git
+    - llvm
+  depends:
+    - clang
+    - clazy
+    - gcc-libs
+    - glib2
+    - glibc
+    - libelf
+    - litehtml
+    - llvm-libs
+    - python
+    - qt6-5compat
+    - qt6-base
+    - qt6-charts
+    - qt6-declarative
+    - qt6-quick3d
+    - qt6-quicktimeline
+    - qt6-tools
+    - qt6-serialport
+    - qt6-svg
+    - qt6-webengine
+    - sh
+    - yaml-cpp
+    - zstd
+  optdepends:
+    - 'qt6-doc: integrated Qt documentation'
+    - 'qt6-examples: welcome page examples'
+    - 'gdb: debugger'
+    - 'cmake: cmake project support'
+    - 'x11-ssh-askpass: ssh support'
+    - 'git: git support'
+    - 'mercurial: mercurial support'
+    - 'breezy: bazaar support'
+    - 'valgrind: analyze support'
+    - 'perf: performer analyzer'
+    - 'mlocate: locator filter'
+  options:
+    - docs
+  source:
+    - git+https://code.qt.io/qt-creator/qt-creator#tag=v16.0.2
+    - git+https://code.qt.io/qt-creator/perfparser
+    - git+https://code.qt.io/playground/qlitehtml
+  sha256sums:
+    - e5274998c96b003a161608ab877f903790cd5255e9dc37bed118d75c4e0e3769
+    - SKIP
+    - SKIP
+pkgname:
+  - name: qtcreator
+  - name: qtcreator-devel
+    pkgdesc: Lightweight, cross-platform integrated development environment (development files)
+    depends:
+      - qtcreator
+    optdepends: []
+# generated with artixpkg 0.36.1-3-any
