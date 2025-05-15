@@ -1,10 +1,10 @@
 ---
-version: 1.29.6-1
+version: 1.29.6-2
 pkgbase:
   name: syncthing
   pkgdesc: Open Source Continuous Replication / Cluster Synchronization Thing
   pkgver: 1.29.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://syncthing.net/
   arch:
     - x86_64
@@ -15,6 +15,8 @@ pkgbase:
     - go
   depends:
     - glibc
+  options:
+    - '!lto'
   source:
     - https://github.com/syncthing/syncthing/releases/download/v1.29.6/syncthing-source-v1.29.6.tar.gz
     - https://github.com/syncthing/syncthing/releases/download/v1.29.6/syncthing-source-v1.29.6.tar.gz.asc
@@ -40,4 +42,4 @@ pkgname:
     pkgdesc: Discovery server for Syncthing
   - name: syncthing-relaysrv
     pkgdesc: Relay server for Syncthing
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.1-3-any
