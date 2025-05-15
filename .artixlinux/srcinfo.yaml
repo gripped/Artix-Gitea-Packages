@@ -1,0 +1,75 @@
+---
+version: 2025.5.0-1
+pkgbase:
+  name: python-dask
+  pkgdesc: Parallel computing with task scheduling
+  pkgver: 2025.5.0
+  pkgrel: 1
+  url: https://dask.org
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - ipython
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-rerunfailures
+    - python-pytest-xdist
+    - python-aiohttp
+    - python-boto3
+    - python-botocore
+    - python-cytoolz
+    - python-distributed
+    - python-graphviz
+    - python-h5py
+    - python-httpretty
+    - python-jinja
+    - python-jsonschema
+    - python-lz4
+    - python-matplotlib
+    - python-moto
+    - python-numexpr
+    - python-numpy
+    - python-pandas
+    - python-psutil
+    - python-pyarrow
+    - python-pytables
+    - python-requests
+    - python-scikit-learn
+    - python-scipy
+    - python-snappy
+    - python-sqlalchemy
+    - python-xarray
+    - python-xxhash
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-versioneer
+    - python-wheel
+  depends:
+    - python
+    - python-click
+    - python-cloudpickle
+    - python-fsspec
+    - python-importlib-metadata
+    - python-packaging
+    - python-partd
+    - python-yaml
+    - python-toolz
+  optdepends:
+    - 'python-distributed: distributed computing'
+    - 'python-numpy: arrays and dataframes support'
+    - 'python-pandas: dataframes support'
+    - 'python-psutil: more accurate CPU count'
+    - 'python-pyarrow: Apache Arrow, for parquet support'
+    - 'python-sqlalchemy: writing and reading from SQL databases'
+    - 'python-xxhash: faster hashing of arrays'
+  source:
+    - https://github.com/dask/dask/archive/2025.5.0/python-dask-2025.5.0.tar.gz
+  b2sums:
+    - 338948c687064b4cb8ac4526d1991cf3e4390971e9f0056359ce7f77455eb740c8a766801d5455471491783f7515e86b0054632c7b14c0e54bf43d69bc4e96ce
+pkgname:
+  - name: python-dask
+# generated with artixpkg 0.36.1-3-any
