@@ -1,0 +1,51 @@
+---
+version: 3.26-1
+pkgbase:
+  name: gpsd
+  pkgdesc: GPS daemon and library to support USB/serial GPS devices
+  pkgver: 3.26
+  pkgrel: 1
+  url: http://catb.org/gpsd/
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - scons
+    - docbook-xsl
+    - qt5-base
+    - python-gobject
+    - python-cairo
+    - python-pyserial
+    - gtk3
+    - python-setuptools
+  depends:
+    - dbus
+    - gcc-libs
+    - glibc
+    - python
+    - libusb
+    - bluez-libs
+    - pps-tools
+  optdepends:
+    - 'gtk3: GUI frontends'
+    - 'php: generate a PHP status page for your GPS'
+    - 'php-gd: image support for the PHP status page'
+    - 'python-cairo: GUI frontends'
+    - 'python-gobject: GUI frontends'
+    - 'python-pyserial: GUI frontends'
+    - 'qt5-base: for Qgpsmm'
+  backup:
+    - etc/default/gpsd
+  source:
+    - https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.26.tar.gz
+    - gpsd.conf
+  validpgpkeys:
+    - EED4A0893DCC705DB309E202CCF29C7238522905
+    - DB239ACA177A35AFBC13F819DD3DD9BBA8F257E8
+  sha256sums:
+    - 291e57a6e227e223b46153170eac97a5f13dd00e214b7a38834083bf7eae1c30
+    - dcfa71c4c730b486269995468bdcfa8e96bf3c282db1dadea9384d32015d277f
+pkgname:
+  - name: gpsd
+# generated with artixpkg 0.36.1-3-any
