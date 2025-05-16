@@ -1,0 +1,122 @@
+---
+version: 1:1.87.0-1
+pkgbase:
+  name: rust
+  pkgdesc: Systems programming language focused on safety, speed and concurrency
+  pkgver: 1.87.0
+  pkgrel: 1
+  epoch: 1
+  url: https://www.rust-lang.org/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 OR MIT
+  checkdepends:
+    - gdb
+    - procps-ng
+  makedepends:
+    - aarch64-linux-gnu-gcc
+    - aarch64-linux-gnu-glibc
+    - clang
+    - cmake
+    - lib32-gcc-libs
+    - lib32-glibc
+    - libffi
+    - lld
+    - llvm
+    - musl
+    - musl-aarch64
+    - ninja
+    - perl
+    - python
+    - rust
+    - wasi-libc
+    - wasm-component-ld
+  depends:
+    - bash
+    - curl
+    - gcc
+    - gcc-libs
+    - glibc
+    - libssh2
+    - llvm-libs
+    - openssl
+    - zlib
+  options:
+    - '!emptydirs'
+    - '!lto'
+  source:
+    - https://static.rust-lang.org/dist/rustc-1.87.0-src.tar.gz
+    - https://static.rust-lang.org/dist/rustc-1.87.0-src.tar.gz.asc
+    - 0001-bootstrap-Change-libexec-dir.patch
+    - 0002-bootstrap-Change-bash-completion-dir.patch
+    - 0003-bootstrap-Use-lld-mode-only-for-host-linked-targets.patch
+    - 0004-compiler-Change-LLVM-targets.patch
+    - 0005-compiler-Use-wasm-ld-for-wasm-targets.patch
+    - 0006-compiler-Use-aarch64-linux-gnu-gcc-to-link-aarch64-t.patch
+  validpgpkeys:
+    - 108F66205EAEB0AAA8DD5E1C85AB96E6FA1BE5FE
+  b2sums:
+    - cb104202691697ae263dc688067420dbe50023aef56dd7d4de2e662c95f17ee888e3ff1a3513b268e05243b90e51e73ba8fe772a97dba0c6119910e99e805bbe
+    - SKIP
+    - 743bf583cf40ec856b7d89953af53db9ef9e7047b936a60e88e626bb7b389446bc5ed7b8b1d02001131ec728455a77ed78d6eeb64e61c370de81c2fe488836cc
+    - f39eef3c8dce60f2ecdac5ac169cbe749c8c353241a1c48cf4815f1da37be174007d5efc98574b4865dcaee886b618139d54fc274be92cc8063a9c48f48b985b
+    - 188c7065d8a623396d7ed93c1f2a4188fd46ede9f93e9bd8e933648fc3db0924b68ec78d2f4b29529bbdcc5d809f6711438535e70d153e0131f10273109e162b
+    - 7c919047f50325be6ad5686094c97affe2148f99c5b41748e8e0187674e3b2c0eed10cd3798c866fbd2f65889636f88a439bad0892c093f6bece3f1263c89c30
+    - 2317343e6b986d1ec1fb6d035fb6d8933245704b5be1b3e4a032ad14300d8a338087c52e53a6dff4ceda52232ce7f21dd8ad536c9d4da04faee6a9b79a9670b6
+    - e9f6b2d58e2a845d8841c0eb2dbde1d903bb6bed1871d090cf8928fe4a2dd5ece0cf157f3f263cf980d1dba7fd9c47565340bc1e19ecd2f28ffb297fe70da30d
+pkgname:
+  - name: rust
+    optdepends:
+      - 'gdb: rust-gdb script'
+      - 'lldb: rust-lldb script'
+    provides:
+      - cargo
+      - rustfmt
+    conflicts:
+      - cargo
+      - rust-docs<1:1.56.1-3
+      - rustfmt
+    replaces:
+      - cargo
+      - cargo-tree
+      - rust-docs<1:1.56.1-3
+      - rustfmt
+  - name: lib32-rust-libs
+    pkgdesc: 32-bit target and libraries for Rust
+    depends:
+      - lib32-gcc-libs
+      - lib32-glibc
+      - rust
+    provides:
+      - lib32-rust
+    conflicts:
+      - lib32-rust
+    replaces:
+      - lib32-rust
+  - name: rust-musl
+    pkgdesc: Musl target for Rust
+    depends:
+      - rust
+  - name: rust-aarch64-gnu
+    pkgdesc: AArch64 GNU target for Rust
+    depends:
+      - aarch64-linux-gnu-gcc
+      - aarch64-linux-gnu-glibc
+      - rust
+  - name: rust-aarch64-musl
+    pkgdesc: AArch64 Musl target for Rust
+    depends:
+      - aarch64-linux-gnu-gcc
+      - rust
+  - name: rust-wasm
+    pkgdesc: WebAssembly targets for Rust
+    depends:
+      - lld
+      - rust
+      - wasm-component-ld
+  - name: rust-src
+    pkgdesc: Source code for the Rust standard library
+    depends:
+      - rust
+# generated with artixpkg 0.36.2-1-any
