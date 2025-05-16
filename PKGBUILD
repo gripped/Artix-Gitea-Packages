@@ -26,6 +26,7 @@ makedepends=(
   texi2html
   texlive-bin
 )
+options=('debug')
 source=(
   "git+https://github.com/libcheck/check#tag=$pkgver"
   0001-Avoid-static-library.patch

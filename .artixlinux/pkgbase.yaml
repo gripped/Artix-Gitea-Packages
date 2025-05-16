@@ -29,7 +29,8 @@ repos:
     packages:
       - check-0.15.2-3-x86_64.pkg.tar.zst
       - check-docs-0.15.2-3-x86_64.pkg.tar.zst
-    debug: []
+    debug:
+      - check-debug-0.15.2-3-x86_64.pkg.tar.zst
   world:
     version: 0.15.2-2
     packages:

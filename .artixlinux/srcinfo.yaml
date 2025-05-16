@@ -21,6 +21,8 @@ pkgbase:
     - awk
     - gcc-libs
     - glibc
+  options:
+    - debug
   source:
     - git+https://github.com/libcheck/check#tag=0.15.2
     - 0001-Avoid-static-library.patch
