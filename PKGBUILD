@@ -9,7 +9,7 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs
-pkgver=23.11.1
+pkgver=24.0.2
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
@@ -39,7 +39,7 @@ makedepends=(
 optdepends=('npm: nodejs package manager')
 options=('!lto')
 source=("git+https://github.com/nodejs/node.git#tag=v$pkgver?signed")
-sha512sums=('072963c19e218bc57d87673f10ae39cc251d258e91a167a722259e32166565d837c1ca0da03fdacab46021771fc66f092fb7218a7e45099908b93cb4353bc6a4')
+sha512sums=('a3cc3eeaa14e6d26577782c18d125986371a4a9baeadb230022f819ca769bba061b08455d398cfb2bebe796862e6af1b37a45c4e451dbe512804067532498e9c')
 validpgpkeys=(
   '8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600' # Michaël Zasso (Targos) <targos@protonmail.com>
   '890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4' # RafaelGSS <rafael.nunu@hotmail.com>
