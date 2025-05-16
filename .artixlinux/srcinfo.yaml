@@ -1,9 +1,9 @@
 ---
-version: 9.3.0-1
+version: 9.3.1-1
 pkgbase:
   name: limine
   pkgdesc: An advanced, portable, multiprotocol bootloader
-  pkgver: 9.3.0
+  pkgver: 9.3.1
   pkgrel: 1
   url: https://limine-bootloader.org/
   arch:
@@ -20,11 +20,11 @@ pkgbase:
   depends:
     - glibc
   source:
-    - git+https://github.com/limine-bootloader/limine.git#tag=v9.3.0?signed
+    - git+https://github.com/limine-bootloader/limine.git#tag=v9.3.1?signed
   validpgpkeys:
     - 05D29860D0A0668AAEFB9D691F3C021BECA23821
   sha256sums:
-    - 9717896ecc812ffd2f86696fe5cb9b5d80bd93aebd9ca64123eba7931f9e0bb2
+    - 0b54144da8aaf3b0cbef0e459f50e257538c18527f56bc781f0850e227abbba1
 pkgname:
   - name: limine
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
