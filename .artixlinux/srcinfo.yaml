@@ -1,0 +1,54 @@
+---
+version: 1.2.11-1
+pkgbase:
+  name: strawberry
+  pkgdesc: A music player aimed at audio enthusiasts and music collectors
+  pkgver: 1.2.11
+  pkgrel: 1
+  url: https://www.strawberrymusicplayer.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - boost
+    - cmake
+    - git
+    - qt6-tools
+    - rapidjson
+    - sparsehash
+  depends:
+    - alsa-lib
+    - chromaprint
+    - fftw
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - icu
+    - kdsingleapplication
+    - libcdio
+    - libebur128
+    - libgpod
+    - libmtp
+    - libpulse
+    - libx11
+    - qt6-base
+    - sqlite
+    - taglib
+    - udisks2
+  optdepends:
+    - 'gst-libav: additional codecs'
+    - 'gst-plugins-bad: additional codecs'
+    - 'gst-plugins-ugly: additional codecs'
+  source:
+    - git+https://github.com/strawberrymusicplayer/strawberry#tag=1.2.11
+  sha256sums:
+    - 379b5da44767195a655f4230f666aed22f64de25096d4aaabbc454444ede52d1
+pkgname:
+  - name: strawberry
+# generated with artixpkg 0.36.2-1-any
