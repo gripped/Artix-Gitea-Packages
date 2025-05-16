@@ -1,14 +1,15 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 
 pkgname=wireplumber-openrc
-pkgver=20250308
-pkgrel=2
+pkgver=20250516
+pkgrel=1
 pkgdesc="openrc user service script for wireplumber"
 arch=('any')
 url="https://artixlinux.org"
 groups=('openrc-world')
 license=('GPL-2.0-or-later')
 depends=(
+    'wireplumber'
     'pipewire-openrc'
 )
 source=(

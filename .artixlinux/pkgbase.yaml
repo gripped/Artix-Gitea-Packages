@@ -1,12 +1,5 @@
 ---
 team: world
-pkgbase:
-  name: wireplumber-openrc
-  version: 20250308-2
-  arch:
-    - any
-  pkgname:
-    - wireplumber-openrc
 actions:
   addRepo: world
   removeRepo: null
@@ -19,37 +12,49 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 20250308-2
+    version: 20250516-1
     packages:
-      - wireplumber-openrc-20250308-2-any.pkg.tar.zst
+      - wireplumber-openrc-20250516-1-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
