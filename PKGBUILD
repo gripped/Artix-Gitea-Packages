@@ -2,7 +2,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=totem
-pkgver=43.1+r37+gea6718427
+pkgver=43.1+r44+gbf65cd39c
 pkgrel=1
 pkgdesc="Movie player for the GNOME desktop based on GStreamer"
 url="https://apps.gnome.org/Totem/"
@@ -59,13 +59,12 @@ provides=(libtotem.so)
 conflicts=(totem-plugin)
 replaces=(totem-plugin)
 groups=(gnome)
-_commit=ea6718427d9e22f7bde432f4d4b4c2dce17234d7  # gnome-43
+_commit=bf65cd39c892608c6dc0286f907c3adfb6807770  # gnome-43
 source=(
   "git+https://gitlab.gnome.org/GNOME/totem.git#commit=$_commit"
-  #"git+https://gitlab.gnome.org/GNOME/totem.git#tag=${pkgver/[a-z]/.&}"
   "git+https://gitlab.gnome.org/GNOME/libgd.git"
 )
-b2sums=('57b81f7dd5242bab5cdd6dabb5184791b126d47eb844da41e38f9eb0ea1856e854b1ec6bf0ebb5950a966b7018db682e8d1c555d753d150666066ad86c33b036'
+b2sums=('1f28b9ca5f2cc892133a8d8dd87cc89b0151bcd86152f4fa9fdf68dec8cec11a4ca8a95266a7ebe74f8c340b22d97b800927a96607653d52fcc95ac2d8212e55'
         'SKIP')
 
 pkgver() {
@@ -76,7 +75,7 @@ pkgver() {
 prepare() {
   cd totem
 
-  git submodule init subprojects/libgd  # Skip flatpak/shared-modules
+  git submodule init subprojects/libgd # Skip flatpak/shared-modules
   git submodule set-url subprojects/libgd "$srcdir/libgd"
   git -c protocol.file.allow=always -c protocol.allow=never submodule update
 }

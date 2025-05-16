@@ -1,0 +1,74 @@
+---
+version: 43.1+r44+gbf65cd39c-1
+pkgbase:
+  name: totem
+  pkgdesc: Movie player for the GNOME desktop based on GStreamer
+  pkgver: 43.1+r44+gbf65cd39c
+  pkgrel: 1
+  url: https://apps.gnome.org/Totem/
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later WITH GStreamer-exception-2008
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - appstream-glib
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - meson
+    - yelp-tools
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-desktop
+    - grilo
+    - gsettings-desktop-schemas
+    - gst-plugin-gtk
+    - gst-plugins-bad
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - gtk3
+    - hicolor-icon-theme
+    - iso-codes
+    - libepoxy
+    - libgirepository
+    - libhandy
+    - libpeas
+    - libportal
+    - libportal-gtk3
+    - pango
+    - python
+    - python-gobject
+    - totem-plparser
+  optdepends:
+    - 'gst-plugins-ugly: Extra media codecs'
+    - 'gst-libav: Extra media codecs'
+    - 'grilo-plugins: Media discovery'
+  provides:
+    - libtotem.so
+  conflicts:
+    - totem-plugin
+  replaces:
+    - totem-plugin
+  source:
+    - git+https://gitlab.gnome.org/GNOME/totem.git#commit=bf65cd39c892608c6dc0286f907c3adfb6807770
+    - git+https://gitlab.gnome.org/GNOME/libgd.git
+  b2sums:
+    - 1f28b9ca5f2cc892133a8d8dd87cc89b0151bcd86152f4fa9fdf68dec8cec11a4ca8a95266a7ebe74f8c340b22d97b800927a96607653d52fcc95ac2d8212e55
+    - SKIP
+pkgname:
+  - name: totem
+# generated with artixpkg 0.36.2-1-any
