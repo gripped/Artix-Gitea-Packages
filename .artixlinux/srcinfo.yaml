@@ -1,0 +1,60 @@
+---
+version: 1.20.1-1
+pkgbase:
+  name: xdg-desktop-portal
+  pkgdesc: Desktop integration portals for sandboxed apps
+  pkgver: 1.20.1
+  pkgrel: 1
+  url: https://flatpak.github.io/xdg-desktop-portal/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-pytest-xdist
+  makedepends:
+    - docbook-xsl
+    - flatpak
+    - geoclue
+    - git
+    - glib2-devel
+    - gst-plugins-good
+    - libportal
+    - meson
+    - python-dbus
+    - python-dbusmock
+    - python-docutils
+    - python-gobject
+    - python-pytest
+    - python-sphinx
+    - python-sphinx-copybutton
+    - python-sphinxext-opengraph
+    - python-sphinx-furo
+    - umockdev
+    - xmlto
+  depends:
+    - fuse3
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gstreamer
+    - gst-plugins-base-libs
+    - json-glib
+    - libgudev
+    - libpipewire
+    - pipewire
+    - rtkit
+  optdepends:
+    - 'geoclue: Geolocation portal'
+    - 'xdg-desktop-portal-impl: Portal backends'
+  source:
+    - git+https://github.com/flatpak/xdg-desktop-portal?signed#tag=1.20.1
+  validpgpkeys:
+    - 9038F70CA72FAC9D10C6327B89AFE307C861D158
+    - 8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A
+  b2sums:
+    - f310f0c08ffe9b1c266e1f80110c1377fba9c9edaa0dec2e9a9bc00743e5e358e534a25e2b4b9dfc5b0fbd4d99fe43875ec62efb5ed6852dc8b50d8aac87f380
+pkgname:
+  - name: xdg-desktop-portal
+# generated with artixpkg 0.36.2-1-any
