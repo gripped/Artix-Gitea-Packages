@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,12 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 0.0.2-2
     packages:
       - moksha-theme-zenithal-0.0.2-2-any.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 0.0.1-1.1
-    packages:
-      - moksha-theme-zenithal-0.0.1-1.1-any.pkg.tar.zst
     debug: []
