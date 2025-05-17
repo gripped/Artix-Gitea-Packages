@@ -1,0 +1,24 @@
+---
+version: 2.1.21-1
+pkgbase:
+  name: kotlin
+  pkgdesc: Statically typed programming language that can interoperate with Java
+  pkgver: 2.1.21
+  pkgrel: 1
+  url: https://kotlinlang.org/
+  arch:
+    - any
+  license:
+    - Apache-2.0
+    - custom
+  makedepends:
+    - setconf
+  depends:
+    - java-runtime-headless
+  source:
+    - https://github.com/JetBrains/kotlin/releases/download/v2.1.21/kotlin-compiler-2.1.21.zip
+  b2sums:
+    - f527f9f6de06ea82963b0582443df421fdb969d00c4c2d0fadac535b311fad03f8e1aeb85ac78e47c0b27b36e225f1135988aeca4512b7d52e87b276100eb60c
+pkgname:
+  - name: kotlin
+# generated with artixpkg 0.36.2-1-any
