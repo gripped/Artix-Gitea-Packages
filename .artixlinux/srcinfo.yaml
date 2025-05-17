@@ -1,0 +1,30 @@
+---
+version: 7.3-1
+pkgbase:
+  name: python-zope-testrunner
+  pkgdesc: Zope testrunner script
+  pkgver: 7.3
+  pkgrel: 1
+  url: https://github.com/zopefoundation/zope.testrunner
+  arch:
+    - any
+  license:
+    - ZPL-2.1
+  checkdepends:
+    - python-zope-testing
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-setuptools
+    - python-zope-exceptions
+    - python-zope-interface
+  source:
+    - https://github.com/zopefoundation/zope.testrunner/archive/7.3/python-zope-testrunner-7.3.tar.gz
+  sha512sums:
+    - 6aef63802c4c50a94d3b0c2692a7a3eb8261110fdfe70e6c7817a7c3ad8f688ff7fc2155479c4cbf38a0cf6ad32484cfbbb92b2428885d312a5a2c62a7907e7b
+pkgname:
+  - name: python-zope-testrunner
+# generated with artixpkg 0.36.2-1-any
