@@ -2,8 +2,8 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=perl-crypt-openssl-rsa
-pkgver=0.33
-pkgrel=5
+pkgver=0.35
+pkgrel=1
 pkgdesc='RSA encoding and decoding, using the openSSL libraries'
 arch=(x86_64)
 license=(PerlArtistic GPL)
@@ -12,8 +12,8 @@ depends=('perl>=5.6' perl-crypt-openssl-random)
 makedepends=('perl-crypt-openssl-guess>=0.11')
 url=https://metacpan.org/release/Crypt-OpenSSL-RSA
 source=("https://cpan.metacpan.org/authors/id/T/TO/TODDR/Crypt-OpenSSL-RSA-$pkgver.tar.gz")
-md5sums=(402994cca9f4502741cf9514719b9bdf)
-sha512sums=(7bfa802ec41925ec9fa6937c5eea0d21f6f554a1d1d57ed679ed03b260cf08c0a397df11880de6d67abacfd843ad2c4f28b20ac58d80e183c2a83c91deb926bf)
+md5sums=('69827a4e1b23f9cdbf3a60ac823ad524')
+sha512sums=('27fbf7d0cc65778b07700b375e8ebed457f237a465582eca07b3fb50d4c966cd4afc71919a50e14bf660dfa3c4ecc202a6410ad9301994d454a78e6e7bcb9608')
 _ddir="Crypt-OpenSSL-RSA-$pkgver"
 
 build()
