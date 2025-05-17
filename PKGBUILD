@@ -4,7 +4,7 @@
 # Contributor: PedroHLC <root@pedrohlc.com>
 
 pkgname=gamescope
-pkgver=3.16.5
+pkgver=3.16.9
 pkgrel=1
 pkgdesc='SteamOS session compositing window manager'
 arch=(x86_64)
@@ -71,7 +71,7 @@ source=(
   git+https://github.com/Joshua-Ashton/wlroots.git
   gamescope-openvr-cmake4.patch::https://github.com/ValveSoftware/openvr/pull/1890.patch
 )
-b2sums=('5de29001fe1410e4b81b1464e31d3fa781093f28b3c765a8fb15ce68da3d4cbf6aa0d80fe5f41a092c1cec56d7b34c846bc640ac08013a9002c15e2ad51ea119'
+b2sums=('a8f152983417a5dcdfed0050f575d9567b1ed91b27f49d64c8b41034cd8a742e76fd0aa94560eecdd12ef655da5164a2064619d9f209f5fd1ea2cdc29c64e898'
         'SKIP'
         'SKIP'
         'SKIP'
