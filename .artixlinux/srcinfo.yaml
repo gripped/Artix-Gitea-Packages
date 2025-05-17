@@ -1,9 +1,9 @@
 ---
-version: 2.9.4-1
+version: 2.9.5-1
 pkgbase:
   name: keychain
   pkgdesc: A front-end to ssh-agent, allowing one long-running ssh-agent process per system, rather than per login
-  pkgver: 2.9.4
+  pkgver: 2.9.5
   pkgrel: 1
   url: https://www.funtoo.org/Keychain
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   depends:
     - sh
   source:
-    - git+https://github.com/funtoo/keychain#tag=2.9.4
+    - git+https://github.com/funtoo/keychain#tag=2.9.5
   sha256sums:
-    - f91c84044e77b3393d0a5149b5d79c2632cd1fb062deb00d19e34bb8c09c355a
+    - e667de574ceba10574896ae0a82a05c78d9edc2de164cd4ec15884a5ec909a06
 pkgname:
   - name: keychain
 # generated with artixpkg 0.36.2-1-any
