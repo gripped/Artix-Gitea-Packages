@@ -1,0 +1,30 @@
+---
+version: 24.8.0-1
+pkgbase:
+  name: towncrier
+  pkgdesc: Utility to produce useful, summarised news files for your project
+  pkgver: 24.8.0
+  pkgrel: 1
+  url: https://github.com/twisted/towncrier
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-twisted
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+  depends:
+    - python
+    - python-click
+    - python-jinja
+  source:
+    - git+https://github.com/twisted/towncrier.git#tag=24.8.0
+  sha512sums:
+    - abb35985b5e5bdfd1a038aa4ede1e9027ef47589f7d309913ff9614e31bca29136215ae827051b64367824e8a869fbee94ca133f25929e4cb777a8dd88e1bbaa
+pkgname:
+  - name: towncrier
+# generated with artixpkg 0.36.2-1-any
