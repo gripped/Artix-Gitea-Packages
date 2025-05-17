@@ -1,9 +1,9 @@
 ---
-version: 3.3.0-1
+version: 3.4.0-1
 pkgbase:
   name: python-aiodns
   pkgdesc: Simple DNS resolver for asyncio
-  pkgver: 3.3.0
+  pkgver: 3.4.0
   pkgrel: 1
   url: https://github.com/saghul/aiodns
   arch:
@@ -12,6 +12,7 @@ pkgbase:
     - MIT
   checkdepends:
     - python-pytest
+    - python-pytest-asyncio
     - python-uvloop
   makedepends:
     - git
@@ -22,9 +23,9 @@ pkgbase:
   depends:
     - python-pycares
   source:
-    - git+https://github.com/saghul/aiodns.git#tag=v3.3.0
+    - git+https://github.com/saghul/aiodns.git#tag=v3.4.0
   b2sums:
-    - 4a9b9fcd80daf153d0bde9e153e32de5adfa8479942c8236bc6a9a35b7a353e176d3b3ec55ad87f05c2f5213db2e9901d83c3bedec528b843979b54c43996bd7
+    - 1afbaf4405f2548977d6f4e430e2c97694e0590420e06316b07d1e6c4604d0608fbb78e45167196f5ae94c0afac619bb0a3e92b23d23ea581175f5eb59f38608
 pkgname:
   - name: python-aiodns
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.2-1-any
