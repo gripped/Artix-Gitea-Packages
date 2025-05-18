@@ -1,0 +1,25 @@
+---
+version: 0.11.1-1
+pkgbase:
+  name: yyjson
+  pkgdesc: A high performance JSON library written in ANSI C
+  pkgver: 0.11.1
+  pkgrel: 1
+  url: https://ibireme.github.io/yyjson
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+  depends:
+    - glibc
+  provides:
+    - libyyjson.so
+  source:
+    - yyjson-0.11.1.tar.gz::https://github.com/ibireme/yyjson/archive/refs/tags/0.11.1.tar.gz
+  sha256sums:
+    - 610a38a5e59192063f5f581ce0c3c1869971c458ea11b58dfe00d1c8269e255d
+pkgname:
+  - name: yyjson
+# generated with artixpkg 0.36.2-1-any
