@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Eric Bélanger
 
@@ -18,7 +17,7 @@ optdepends=('rrdtool: for logging with sensord'
 provides=('libsensors.so')
 backup=('etc/sensors3.conf' 'etc/healthd.conf' 'etc/conf.d/sensord')
 source=(lm_sensors-${pkgver}.tar.gz::${url}/archive/refs/tags/V${_pkgver}.tar.gz
-	healthd healthd.conf sensord.conf)
+	healthd healthd.conf  sensord.conf)
 sha256sums=('c6a0587e565778a40d88891928bf8943f27d353f382d5b745a997d635978a8f0'
             '0ac9afb2a9155dd74ab393756ed552cd542dde1081149beb2ab4ec7ff55b8f4a'
             '5d17a366b175cf9cb4bb0115c030d4b8d91231546f713784a74935b6e533da9f'
@@ -26,21 +25,23 @@ sha256sums=('c6a0587e565778a40d88891928bf8943f27d353f382d5b745a997d635978a8f0'
 validpgpkeys=('7CA69F4460F1BDC41FD2C858A5526B9BB3CD4E6A')
 
 prepare() {
-  cd lm-sensors
+  cd lm-sensors-$pkgver
   sed -i 's|/etc/sysconfig|/etc/conf.d|' prog/detect/sensors-detect
 }
 
 build() {
-  cd lm-sensors
+  cd lm-sensors-$pkgver
   make PREFIX=/usr
 }
 
 package() {
-  cd lm-sensors
+  cd lm-sensors-$pkgver
   make PROG_EXTRA=sensord BUILD_STATIC_LIB=0 \
     PREFIX=/usr SBINDIR=/usr/bin MANDIR=/usr/share/man DESTDIR="${pkgdir}" install
 
   install -D -m755 "${srcdir}/healthd" "${pkgdir}/usr/bin/healthd"
 
   install -D -m644 "${srcdir}/healthd.conf" "${pkgdir}/etc/healthd.conf"
+  install -D -m644 "${srcdir}/sensord.conf" "${pkgdir}/etc/conf.d/sensord"
+ 
 }
