@@ -10,7 +10,7 @@ arch=('x86_64')
 url="http://mcj.sourceforge.net/"
 license=(Xfig)
 depends=('bash' 'bc' 'ghostscript' 'glibc' 'libpng' 'libxpm' 'netpbm' 'zlib')
-makedepends=()
+makedepends=('gcc14')
 conflicts=('transfig')
 replaces=('transfig')
 provides=('transfig')
@@ -35,6 +35,7 @@ prepare() {
 
 build() {
   cd "${pkgname}-${pkgver}"
+    export CC="gcc-14"
   ./configure --prefix=/usr --enable-transfig
   make
 }

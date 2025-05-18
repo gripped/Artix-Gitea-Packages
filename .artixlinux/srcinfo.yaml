@@ -10,6 +10,8 @@ pkgbase:
     - x86_64
   license:
     - Xfig
+  makedepends:
+    - gcc14
   depends:
     - bash
     - bc
