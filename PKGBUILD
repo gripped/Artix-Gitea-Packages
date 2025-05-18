@@ -25,17 +25,17 @@ sha256sums=('c6a0587e565778a40d88891928bf8943f27d353f382d5b745a997d635978a8f0'
 validpgpkeys=('7CA69F4460F1BDC41FD2C858A5526B9BB3CD4E6A')
 
 prepare() {
-  cd lm-sensors-$pkgver
+  cd lm-sensors-${pkgver//./-}
   sed -i 's|/etc/sysconfig|/etc/conf.d|' prog/detect/sensors-detect
 }
 
 build() {
-  cd lm-sensors-$pkgver
+  cd lm-sensors-${pkgver//./-}
   make PREFIX=/usr
 }
 
 package() {
-  cd lm-sensors-$pkgver
+  cd lm-sensors-${pkgver//./-}
   make PROG_EXTRA=sensord BUILD_STATIC_LIB=0 \
     PREFIX=/usr SBINDIR=/usr/bin MANDIR=/usr/share/man DESTDIR="${pkgdir}" install
 
