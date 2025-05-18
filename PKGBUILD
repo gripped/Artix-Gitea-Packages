@@ -13,6 +13,7 @@ optdepends=("wayfire-plugins-extra: configuration for extra Wayfire plugins")
 source=("${pkgname}::git+https://github.com/WayfireWM/wcm#tag=v${pkgver}")
 
 build () {
+  CFLAGS+=" -Wno-incompatible-pointer-types"
   export PKG_CONFIG_PATH=/usr/lib/wlroots0.17/pkgconfig
   artix-meson "${pkgname}" build \
     --auto-features=disabled \
