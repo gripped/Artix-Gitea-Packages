@@ -3,7 +3,7 @@
 pkgname=plasma5support
 pkgver=6.3.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Support components for porting from KF5/Qt5 to KF6/Qt6'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -27,10 +27,12 @@ depends=(gcc-libs
          solid)
 makedepends=(doxygen
              extra-cmake-modules
+             gpsd
              networkmanager-qt
              plasma-activities
              qt6-tools)
-optdepends=('networkmanager-qt: geolocation dataengine'
+optdepends=('gpsd: GPS-based geolocation dataengine'
+            'networkmanager-qt: IP-based geolocation dataengine'
             'plasma-activities: activities dataengine')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
