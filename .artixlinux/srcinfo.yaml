@@ -1,0 +1,54 @@
+---
+version: 3.0.10-1
+pkgbase:
+  name: prrte
+  pkgdesc: PMIx Reference RunTime Environment
+  pkgver: 3.0.10
+  pkgrel: 1
+  url: https://github.com/openpmix/prrte
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - glibc
+    - hwloc
+    - libevent
+    - openpmix
+    - perl
+  options:
+    - '!lto'
+  source:
+    - prrte-3.0.10.tar.gz::https://github.com/openpmix/prrte/releases/download/v3.0.10/prrte-3.0.10.tar.gz
+    - prte-mca-params.conf
+    - prrte-ssh
+  sha512sums:
+    - 38a8196cf9d89d43d7b9148888c60863486184b8f37d179ead25e6f39cd8b7aa90fc195d6e23c536c6be05bef4d7a938ce73d1ef979e1e3114ae3b477797cff4
+    - 7a1c9d8785bf9bd51a72e526bcdceb8e7bea382528ac67989c56b0b5643d2b86cef04414136d5f959630da1eb67ae5dddb87e074aa28e974f01edadb492e9e7a
+    - ababfc5afa98c1f050b2f3f40a923e3fd83b2048c96689efa9f2f032670253136dcae800117875bf46fb5625e2dacee45b036eb7df807cceb98b059b6fab913a
+  b2sums:
+    - d429f34e591d5e96f658a2a4406c2ccd57fd6f8ec8a70366ba77ee3026814ea915efbd4c6dc135d4f5eea5d488499314d50a652e26626a2cc398c090dc77cc34
+    - ebdad2a0c220c6ecd10df0804f5bd2afa9aa50652fdb38d45ebf8f1402cbbb6521ac358371d2055011e907e3ed4b0269e5f92880bb4f1758ef2ecc184110ccb7
+    - cdac9def9d40d3df5e13449cfb8f0c977eaf5da5884135221c29b7add01c0b9bc151558f038ae972344cea242130ee6baa32f2b769f004c5517edf4200869337
+pkgname:
+  - name: prrte
+    depends:
+      - glibc
+      - hwloc
+      - libevent
+      - libevent_core-2.1.so
+      - libevent_pthreads-2.1.so
+      - openpmix
+      - libpmix.so
+    optdepends:
+      - 'openssh: for execution on remote hosts via plm_ssh_agent'
+      - 'prrte-docs: for documentation'
+    provides:
+      - libprrte.so
+    backup:
+      - etc/prrte/prte-default-hostfile
+      - etc/prrte/prte-mca-params.conf
+      - etc/prrte/prte.conf
+  - name: prrte-docs
+    pkgdesc: PMIx Reference RunTime Environment - documentation
+# generated with artixpkg 0.36.1-3-any
