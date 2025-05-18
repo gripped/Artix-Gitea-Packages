@@ -1,10 +1,10 @@
 ---
-version: 6.3.5-1
+version: 6.3.5-2
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
   pkgver: 6.3.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -15,7 +15,6 @@ pkgbase:
   makedepends:
     - baloo
     - extra-cmake-modules
-    - gpsd
     - kdoctools
     - networkmanager-qt
     - plasma-wayland-protocols
@@ -125,7 +124,6 @@ pkgbase:
     - 'appmenu-gtk-module: global menu support for GTK2 and some GTK3 applications'
     - 'baloo: Baloo search runner'
     - 'discover: manage applications installation from the launcher'
-    - 'gpsd: GPS based geolocation'
     - 'kdepim-addons: displaying PIM events in the calendar'
     - 'kwayland-integration: Wayland integration for Qt5 applications'
     - 'networkmanager-qt: IP based geolocation'
@@ -251,4 +249,4 @@ pkgname:
       - xorg-xwayland
       - zlib
       - plasma-integration
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
