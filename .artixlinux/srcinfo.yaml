@@ -1,0 +1,36 @@
+---
+version: 3.2.9-1
+pkgbase:
+  name: fig2dev
+  pkgdesc: Format conversion utility that can be used with xfig
+  pkgver: 3.2.9
+  pkgrel: 1
+  url: http://mcj.sourceforge.net/
+  arch:
+    - x86_64
+  license:
+    - Xfig
+  depends:
+    - bash
+    - bc
+    - ghostscript
+    - glibc
+    - libpng
+    - libxpm
+    - netpbm
+    - zlib
+  provides:
+    - transfig
+  conflicts:
+    - transfig
+  replaces:
+    - transfig
+  source:
+    - https://downloads.sourceforge.net/mcj/fig2dev-3.2.9.tar.xz
+    - fig2dev-3.2.9-remove_broken_tests.patch
+  sha256sums:
+    - 15e246c8d13cc72de25e08314038ad50ce7d2defa9cf1afc172fd7f5932090b1
+    - 32e1fe1d99c76db7d49cb46245442cdf0fce693c3ebcde7b47913ebafb0c72fa
+pkgname:
+  - name: fig2dev
+# generated with artixpkg 0.36.2-1-any
