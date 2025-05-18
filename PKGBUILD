@@ -4,7 +4,7 @@
 pkgname=lm_sensors
 pkgver=3.6.2
 _pkgver=${pkgver//./-}
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Collection of user space tools for general SMBus access and hardware monitoring"
 arch=('x86_64')
@@ -42,6 +42,6 @@ package() {
   install -D -m755 "${srcdir}/healthd" "${pkgdir}/usr/bin/healthd"
 
   install -D -m644 "${srcdir}/healthd.conf" "${pkgdir}/etc/healthd.conf"
-  install -D -m644 "${srcdir}/sensord.conf" "${pkgdir}/etc/conf.d/sensord"
+#  install -D -m644 "${srcdir}/sensord.conf" "${pkgdir}/etc/conf.d/sensord"
  
 }
