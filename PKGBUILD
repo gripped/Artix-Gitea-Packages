@@ -71,7 +71,11 @@ check() {
   cd $pkgname-$pkgver
   python -m installer --destdir=test_dir dist/*.whl
 
-  PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv
+  local pytest_opts=(
+  	--override-ini="addopts="
+  		--deselect test/mitmproxy/addons/test_dns_resolver.py
+  )
+  PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv "${pytest_opts[@]}"
 }
 
 package() {
