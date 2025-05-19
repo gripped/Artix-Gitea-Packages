@@ -1,0 +1,32 @@
+---
+version: 1.12.0-1
+pkgbase:
+  name: bats
+  pkgdesc: Bash Automated Testing System
+  pkgver: 1.12.0
+  pkgrel: 1
+  url: https://github.com/bats-core/bats-core
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - procps-ng
+  depends:
+    - bash
+    - coreutils
+    - ncurses
+    - parallel
+  provides:
+    - bats-core
+  replaces:
+    - bash-bats
+  source:
+    - https://github.com/bats-core/bats-core/archive/refs/tags/v1.12.0/bats-1.12.0.tar.gz
+  sha256sums:
+    - e36b020436228262731e3319ed013d84fcd7c4bd97a1b34dee33d170e9ae6bab
+  b2sums:
+    - 1c5f93888d1f58d029c2a42b3692529e2c5bb37c3577125125283f28f21bf3b86e5b2b991d73e06530e3db2c1f47a29f2d3a028dc45a46ec7007ef29a9f96bad
+pkgname:
+  - name: bats
+# generated with artixpkg 0.36.2-1-any
