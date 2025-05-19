@@ -1,0 +1,32 @@
+---
+version: 0.10.0-2
+pkgbase:
+  name: python-pyogrio
+  pkgdesc: Vectorized vector I/O using OGR
+  pkgver: 0.10.0
+  pkgrel: 2
+  url: https://pyogrio.readthedocs.io/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-versioneer
+    - python-wheel
+  depends:
+    - gdal
+    - python-certifi
+    - python-numpy
+  source:
+    - https://files.pythonhosted.org/packages/source/p/pyogrio/pyogrio-0.10.0.tar.gz
+  sha256sums:
+    - ec051cb568324de878828fae96379b71858933413e185148acb6c162851ab23c
+pkgname:
+  - name: python-pyogrio
+# generated with artixpkg 0.36.2-1-any
