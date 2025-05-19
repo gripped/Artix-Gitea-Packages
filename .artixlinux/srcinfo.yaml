@@ -1,0 +1,46 @@
+---
+version: 6.1.10-1
+pkgbase:
+  name: unrealircd
+  pkgdesc: Open Source IRC Server
+  pkgver: 6.1.10
+  pkgrel: 1
+  url: https://www.unrealircd.org
+  install: unrealircd.install
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - chrpath
+  depends:
+    - openssl
+    - curl
+    - c-ares
+    - tre
+    - pcre2
+    - libnsl
+    - argon2
+    - libsodium
+    - jansson
+  provides:
+    - ircd
+  conflicts:
+    - ircd
+  backup:
+    - etc/unrealircd/unrealircd.conf
+  source:
+    - https://www.unrealircd.org/unrealircd4/unrealircd-6.1.10.tar.gz
+    - https://www.unrealircd.org/unrealircd4/unrealircd-6.1.10.tar.gz.asc
+    - unrealircd.tmpfiles.d
+    - unrealircd.sysusers.d
+  validpgpkeys:
+    - 1D2D2B03A0B68ED11D68A24BA7A21B0A108FF4A9
+  sha256sums:
+    - 1900df4494206eda7a38a1efb71b62ab6a403111fe1638d1b9bf6e35f763d82c
+    - SKIP
+    - 91b5e1d623b51ffd4734d73e35cead09be596460c41b9440406f92c9e2b4b9b1
+    - c9a6ee91098f23d050c73f3d079ea5edf05e885bf148a154000d1768f551307b
+pkgname:
+  - name: unrealircd
+# generated with artixpkg 0.36.2-1-any
