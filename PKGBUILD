@@ -13,7 +13,7 @@
 # Contributor: hugelgupf <ckoch (at) cs.nmt.edu>
 
 pkgname=dpkg
-pkgver=1.22.18
+pkgver=1.22.19
 pkgrel=1
 pkgdesc='The Debian Package Manager tools'
 arch=('x86_64')
@@ -45,7 +45,7 @@ source=(
   origin.archlinux
   origin.artixlinux
 )
-sha256sums=('ba7bad700ca1917bb74d83174085dd3aa4444ca0c4253bace29b3e88c03c52c3'
+sha256sums=('e6534e32d4f423ce449f73d72157ab1be39d0a7a7cd1f8fc4ec465a04d7f8b50'
             '9cfd50f65f1fb52adccf48ea859871259a549f24620b52466c890931919b7e04'
             '33ff4f2677b4438e58810bf4a276a338ff17d0d6cd0adbfaa1004f09148f627a')
 validpgpkeys=('4F3E74F436050C10F5696574B972BF3EA4AE57A3') # Guillem Jover <guillem@hadrons.org>
