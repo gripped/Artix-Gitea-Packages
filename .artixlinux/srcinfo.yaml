@@ -1,0 +1,26 @@
+---
+version: 1.15.0-1
+pkgbase:
+  name: aardvark-dns
+  pkgdesc: Authoritative dns server for A/AAAA container records
+  pkgver: 1.15.0
+  pkgrel: 1
+  url: https://github.com/containers/aardvark-dns
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cargo
+    - git
+    - libgit2
+  depends:
+    - gcc-libs
+    - glibc
+  source:
+    - git+https://github.com/containers/aardvark-dns#tag=v1.15.0
+  sha256sums:
+    - 4c08528b7a81f7c6c87fcdc3d49dc084b5985752fbd1eb66319db4d6cfa7e6c4
+pkgname:
+  - name: aardvark-dns
+# generated with artixpkg 0.36.2-1-any
