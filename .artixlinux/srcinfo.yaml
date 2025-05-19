@@ -1,0 +1,28 @@
+---
+version: 5.23.0-1
+pkgbase:
+  name: v2ray
+  pkgdesc: A platform for building proxies to bypass network restrictions
+  pkgver: 5.23.0
+  pkgrel: 1
+  url: https://github.com/v2fly/v2ray-core
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - go
+    - git
+  depends:
+    - glibc
+    - v2ray-domain-list-community
+    - v2ray-geoip
+  backup:
+    - etc/v2ray/config.json
+  source:
+    - git+https://github.com/v2fly/v2ray-core.git#tag=v5.23.0
+  sha512sums:
+    - 7c48dc458c47389831e44dbc01c2092c085852eb4740f7e06a383cb496729c5404a58e446f3f755df50f04ab99f603ed9c003e38eaf207c5105fba4154339dae
+pkgname:
+  - name: v2ray
+# generated with artixpkg 0.36.2-1-any
