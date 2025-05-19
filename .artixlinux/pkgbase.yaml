@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.0.10-1
+    version: 3.0.11-1
     packages:
-      - prrte-3.0.10-1-x86_64.pkg.tar.zst
-      - prrte-docs-3.0.10-1-x86_64.pkg.tar.zst
+      - prrte-3.0.11-1-x86_64.pkg.tar.zst
+      - prrte-docs-3.0.11-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.0.9-1
