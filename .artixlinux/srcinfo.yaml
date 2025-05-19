@@ -1,0 +1,30 @@
+---
+version: 5.15.19-1
+pkgbase:
+  name: qt5-script
+  pkgdesc: Classes for making Qt applications scriptable. Provided for Qt 4.x compatibility
+  pkgver: 5.15.19
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - git
+  depends:
+    - qt5-base
+  options:
+    - '!lto'
+  source:
+    - kde-qtscript::git+https://code.qt.io/qt/qtscript.git#tag=v5.15.19-lts
+  sha256sums:
+    - 2430cc89b5dd03128586237635c097fa2640ad8ea484796e6e7da170c0b4d9cc
+pkgname:
+  - name: qt5-script
+# generated with artixpkg 0.36.1-3-any
