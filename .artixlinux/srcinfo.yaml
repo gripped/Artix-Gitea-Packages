@@ -1,9 +1,9 @@
 ---
-version: 3.1.14-1
+version: 3.1.15-1
 pkgbase:
   name: ruby-rack
   pkgdesc: Minimal, modular, and adaptable interface for developing web applications
-  pkgver: 3.1.14
+  pkgver: 3.1.15
   pkgrel: 1
   url: https://rack.github.io/
   arch:
@@ -23,14 +23,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://github.com/rack/rack/archive/v3.1.14/ruby-rack-3.1.14.tar.gz
-    - ruby-rack_fix_tests.patch
+    - https://github.com/rack/rack/archive/v3.1.15/ruby-rack-3.1.15.tar.gz
   sha512sums:
-    - 0a91f8db02467f2e7dd045350fa0c0967ee35a9d4915470865911ffa5ceef4543d87393804fc0aaef619aef8b0eb93545cc789a6412f63a89043ecd9749cf6cb
-    - 48445af539dca7f46b250e5aa2caba9a70589a93c2904795e4ac8ac8df65deb9b1230654adc3675e96428ce1d8a92d541b10be16f8566ea94a477a9f3e4efb89
+    - 438a5950ca19b037deb6ec4f1d0ac26f3eb5b6742a8ecce62b2c951cd5290b9c59e75d75d9a7449460827bfc3f7f1797b7b30c13fe24d005b7f623f10af6ec90
   b2sums:
-    - 9162826ff0050a1f30551118dd1d42b618374a838ca7d9b95357aae66ddabab6abeff3c34df66c7038c8c734b4c379466944bb053783d343ecf2d89a7cc72ed8
-    - b74099bfec91aa24c49729909bcd16446c8d7ea89addce9aad32ea585549c1008a74acb346bdbf46c5fc570f6cedbf77c1f639644f7694e4d05c11efe9bd855b
+    - ec41b41e859e0e387f78a7530e78fda0730a02723e69ec3adbe0bca1c68d97b525c8a3fd49c53ea902eb0c97fd6948a009c5ed90c8226c34945ad4c1f82ec916
 pkgname:
   - name: ruby-rack
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
