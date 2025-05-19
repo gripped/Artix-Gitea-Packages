@@ -1,10 +1,11 @@
-# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: aurelien <aurelien@archlinux.org>
 # Contributor: Aurelien Foret <orelien@chez.com>
 
 pkgname=xfce4-battery-plugin
-pkgver=1.1.6
+pkgver=1.2.0
 pkgrel=1
 pkgdesc="A battery monitor plugin for the Xfce panel"
 arch=('x86_64')
@@ -12,28 +13,18 @@ license=('GPL-2.0-or-later')
 url="https://docs.xfce.org/panel-plugins/xfce4-battery-plugin/start"
 groups=('xfce4-goodies')
 depends=('xfce4-panel')
-makedepends=('git' 'xfce4-dev-tools')
+makedepends=('git' 'meson' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-battery-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('3f28fad90a44d1bd70ec7db8a3ef46df9f0645ad08249e0ae351a6b190e27515')
-
-prepare() {
-  cd $pkgname
-  NOCONFIGURE=1 ./autogen.sh
-}
+sha256sums=('c78914ba1ddef189f45c5f9feee94fc5b8d4eda63e6f0e2b5026cbc4e23d5b53')
 
 build() {
-  cd $pkgname
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --disable-debug
-  make
+  artix-meson $pkgname build \
+    --localstatedir=/var
+  meson compile -C build
 }
 
 package() {
-  cd $pkgname
-  make DESTDIR="$pkgdir" install
+  meson install -C build --destdir "$pkgdir"
 }
 
 # vim:set ts=2 sw=2 et:
