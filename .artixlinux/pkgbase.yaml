@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.10.1-2
-    packages:
-      - python-fiona-1.10.1-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: 1.10.1-1
