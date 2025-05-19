@@ -4,7 +4,7 @@
 # Contributor: Emanuele Rampichini <emanuele.rampichini@gmail.com>
 
 pkgname=smb4k
-pkgver=4.0.1
+pkgver=4.0.2
 pkgrel=1
 pkgdesc='A KDE program that browses samba shares'
 arch=(x86_64)
@@ -42,7 +42,7 @@ makedepends=(extra-cmake-modules
              kirigami
              libplasma)
 source=(https://downloads.sourceforge.net/project/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz)
-sha256sums=('4efb1c9b2a2945ae79116ee9a12ce28671876a0a0b3ad08a66605df639c981de')
+sha256sums=('ae459052d4d3dcd82cabc270021f4fafc517f54811dffbdb3b652976d9985da1')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
