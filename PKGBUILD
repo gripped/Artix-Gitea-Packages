@@ -11,7 +11,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.4.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -144,14 +144,18 @@ optdepends=(
   'openmp: OpenMP support for downstream projects built with Clang'
 )
 options=(staticlibs)
-source=(${url}/files/release/${pkgver%.*}/VTK-${pkgver}.tar.gz
-        vtk-occt.patch
-        fmt-11.patch
-        netcdf-4.9.3.patch)
+source=(
+  $url/files/release/${pkgver%.*}/VTK-$pkgver.tar.gz
+  vtk-occt.patch
+  fmt-11.patch
+  netcdf-4.9.3.patch
+  fix-gcc-15.patch
+)
 sha256sums=('36c98e0da96bb12a30fe53708097aa9492e7b66d5c3b366e1c8dc251e2856a02'
             'df958eabc7dc4f5b33383ce0fb0f90a3ba202c1c2a24d3b5b9e7cfb1fb38b011'
             'c6345d09c219b5ca2efa6e7419f404a22715adb4d2ca1fd6ba34affd77cea23e'
-            '87535578bbb0023ede506fd64afae95cdf4fb698c543f9735e6267730634afbc')
+            '87535578bbb0023ede506fd64afae95cdf4fb698c543f9735e6267730634afbc'
+            '4af18628972510f8eee139d4dcc6be79223bfec707b3b0523712ce579c01820d')
 
 prepare() {
   cd ${pkgname^^}-${pkgver}
@@ -164,6 +168,11 @@ prepare() {
   patch -Np1 -i "$srcdir"/vtk-occt.patch
   patch -Np1 -i "$srcdir"/fmt-11.patch
   patch -Np1 -i "$srcdir"/netcdf-4.9.3.patch
+
+  # Fix build with GCC 15
+  # https://gitlab.kitware.com/vtk/vtk/-/issues/19422
+  # https://gitweb.gentoo.org/repo/gentoo.git/commit/?id=8863f3f1551a8190e34e8b14797d96a1527249ce
+  patch -Np1 -i "$srcdir"/fix-gcc-15.patch
 }
 
 build() {
