@@ -1,0 +1,27 @@
+---
+version: 1.2.0-1
+pkgbase:
+  name: xfce4-fsguard-plugin
+  pkgdesc: File system usage monitor plugin for the Xfce4 panel
+  pkgver: 1.2.0
+  pkgrel: 1
+  url: https://docs.xfce.org/panel-plugins/xfce4-fsguard-plugin/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - BSD-2-Clause
+  makedepends:
+    - git
+    - meson
+    - xfce4-dev-tools
+  depends:
+    - xfce4-panel
+  source:
+    - git+https://gitlab.xfce.org/panel-plugins/xfce4-fsguard-plugin.git#tag=xfce4-fsguard-plugin-1.2.0
+  sha256sums:
+    - d44618a302ae94cd0e79870b7f789d74cbc7c1a5be42317b40fe10aed5ceeb8d
+pkgname:
+  - name: xfce4-fsguard-plugin
+# generated with artixpkg 0.36.2-1-any
