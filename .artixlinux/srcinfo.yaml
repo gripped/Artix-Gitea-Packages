@@ -1,0 +1,29 @@
+---
+version: 4.7.0-1
+pkgbase:
+  name: xfce4-eyes-plugin
+  pkgdesc: A rolling eyes (following mouse pointer) plugin for the Xfce panel
+  pkgver: 4.7.0
+  pkgrel: 1
+  url: https://docs.xfce.org/panel-plugins/xfce4-eyes-plugin/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - meson
+    - perl-xml-parser
+    - xfce4-dev-tools
+  depends:
+    - xfce4-panel
+    - hicolor-icon-theme
+  source:
+    - git+https://gitlab.xfce.org/panel-plugins/xfce4-eyes-plugin.git#tag=xfce4-eyes-plugin-4.7.0
+  sha256sums:
+    - 1ff925dfc81d9da545eb164f76158e18323fa2afccfdde381e678f9bb14c8327
+pkgname:
+  - name: xfce4-eyes-plugin
+# generated with artixpkg 0.36.2-1-any
