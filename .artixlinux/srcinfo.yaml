@@ -1,0 +1,32 @@
+---
+version: 0.2.27-1
+pkgbase:
+  name: ruby-stackprof
+  pkgdesc: a fast sampling profiler for ruby code, with cpu, wallclock and object allocation samplers
+  pkgver: 0.2.27
+  pkgrel: 1
+  url: https://github.com/tmm1/stackprof
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-minitest
+    - ruby-mocha
+    - ruby-rake-compiler
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/tmm1/stackprof/archive/v0.2.27/ruby-stackprof-0.2.27.tar.gz
+  sha512sums:
+    - e2fc5f891b2202541d944425ec3238778c62dc654d87931818eb97c55284df2c8ca82505833557600a42b1c90558fa3483e0b1213845a6504f2021651c19eaac
+  b2sums:
+    - 61b80b2dc6fca44f84c0f003b0603f619b76c404ab4e7d21e8d1d284153be3be92f3e2de8057c21b2dfb00c21a0ccbfbbc7f4e89d0f6301f00213ff644a6ca58
+pkgname:
+  - name: ruby-stackprof
+# generated with artixpkg 0.36.2-1-any
