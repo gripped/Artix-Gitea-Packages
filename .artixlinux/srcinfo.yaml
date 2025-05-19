@@ -1,0 +1,30 @@
+---
+version: 4.5-2
+pkgbase:
+  name: android-file-transfer
+  pkgdesc: Android MTP client with minimalistic UI
+  pkgver: 4.5
+  pkgrel: 2
+  url: https://whoozle.github.io/android-file-transfer-linux
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - qt6-tools
+    - ninja
+  depends:
+    - qt6-base
+    - fuse3
+    - hicolor-icon-theme
+    - file
+    - android-udev
+    - taglib
+  source:
+    - android-file-transfer-4.5.tar.gz::https://github.com/whoozle/android-file-transfer-linux/archive/v4.5.tar.gz
+  sha256sums:
+    - 0f366a8d659926d3859a8628d4f7592692389b060f67da9a936d19b252b42d96
+pkgname:
+  - name: android-file-transfer
+# generated with artixpkg 0.36.2-1-any
