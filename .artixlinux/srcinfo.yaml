@@ -1,0 +1,41 @@
+---
+version: 1:0.9.17-1.1
+pkgbase:
+  name: x11vnc
+  pkgdesc: VNC server for real X displays
+  pkgver: 0.9.17
+  pkgrel: 1.1
+  epoch: 1
+  url: https://github.com/LibVNC/x11vnc
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - libvncserver
+    - openssl
+    - libxcrypt
+    - libxtst
+    - libxext
+    - libxinerama
+    - libxrandr
+    - libxfixes
+    - libxdamage
+    - libxcomposite
+    - libx11
+    - avahi
+    - libxi
+    - xorg-xdpyinfo
+    - glibc
+    - sh
+  optdepends:
+    - 'tk: for GUI support'
+    - 'net-tools: for -auth guess'
+    - 'xf86-video-dummy: for Xdummy script'
+  source:
+    - https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.17.tar.gz
+  sha256sums:
+    - 3ab47c042bc1c33f00c7e9273ab674665b85ab10592a8e0425589fe7f3eb1a69
+pkgname:
+  - name: x11vnc
+# generated with artixpkg 0.36.1-3-any
