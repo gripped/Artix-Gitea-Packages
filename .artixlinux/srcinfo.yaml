@@ -1,0 +1,31 @@
+---
+version: 0.10.0-1
+pkgbase:
+  name: python-jiter
+  pkgdesc: Fast iterable JSON parser
+  pkgver: 0.10.0
+  pkgrel: 1
+  url: https://github.com/pydantic/jiter
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-dirty-equals
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-maturin
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  source:
+    - python-jiter-0.10.0.tar.gz::https://github.com/pydantic/jiter/archive/v0.10.0.tar.gz
+  sha256sums:
+    - 9933fbc28f3e9fb34b532f067f15c9ff8d16b724117896f746dcb75004bd0091
+pkgname:
+  - name: python-jiter
+# generated with artixpkg 0.36.2-1-any
