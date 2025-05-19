@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.0.4-1
+    packages:
+      - gimp-3.0.4-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.0.2-3
