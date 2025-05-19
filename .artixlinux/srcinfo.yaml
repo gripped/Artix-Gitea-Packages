@@ -1,0 +1,30 @@
+---
+version: 2.73.0-1
+pkgbase:
+  name: github-cli
+  pkgdesc: The GitHub CLI
+  pkgver: 2.73.0
+  pkgrel: 1
+  url: https://github.com/cli/cli
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - openssh
+  makedepends:
+    - go
+    - git
+  depends:
+    - glibc
+    - mailcap
+  optdepends:
+    - 'git: To interact with repositories'
+    - 'org.freedesktop.secrets: Store credentials in system keyring'
+  source:
+    - github-cli-2.73.0.tar.gz::https://github.com/cli/cli/archive/v2.73.0.tar.gz
+  sha256sums:
+    - e432fd7e8944f94624fbd287b3bdd46f6bbed23609178c940bdb7b5d55a6d1c4
+pkgname:
+  - name: github-cli
+# generated with artixpkg 0.36.2-1-any
