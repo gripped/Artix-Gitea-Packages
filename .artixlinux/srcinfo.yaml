@@ -1,0 +1,30 @@
+---
+version: 1.15.0-1
+pkgbase:
+  name: netavark
+  pkgdesc: Container network stack
+  pkgver: 1.15.0
+  pkgrel: 1
+  url: https://github.com/containers/netavark
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cargo
+    - git
+    - mandown
+    - protobuf
+  depends:
+    - aardvark-dns
+    - gcc-libs
+    - glibc
+  provides:
+    - container-network-stack=2
+  source:
+    - git+https://github.com/containers/netavark#tag=v1.15.0
+  sha256sums:
+    - a194adefd71975f28c57fecc36dcc0ab989281fbe5e2159d97594a13f80ff900
+pkgname:
+  - name: netavark
+# generated with artixpkg 0.36.2-1-any
