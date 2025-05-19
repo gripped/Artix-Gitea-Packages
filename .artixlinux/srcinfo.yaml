@@ -1,0 +1,45 @@
+---
+version: 128.10.1-1
+pkgbase:
+  name: js128
+  pkgdesc: JavaScript interpreter and libraries - Version 128
+  pkgver: 128.10.1
+  pkgrel: 1
+  url: https://spidermonkey.dev/
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0
+  checkdepends:
+    - git
+    - mercurial
+  makedepends:
+    - cbindgen
+    - clang
+    - lld
+    - llvm
+    - python
+    - rust
+    - zip
+  depends:
+    - gcc-libs
+    - glibc
+    - readline
+    - sh
+    - zlib
+  options:
+    - '!lto'
+  source:
+    - https://archive.mozilla.org/pub/firefox/releases/128.10.1esr/source/firefox-128.10.1esr.source.tar.xz
+    - https://archive.mozilla.org/pub/firefox/releases/128.10.1esr/source/firefox-128.10.1esr.source.tar.xz.asc
+  validpgpkeys:
+    - 14F26682D0916CDD81E37B6D61B7B526D98F0353
+  sha256sums:
+    - e85b25dea98bfa400940e0f79aa82a190b445d848b00d19f801a647598fda0b9
+    - SKIP
+  b2sums:
+    - 6fe2da50fcc49ecd1304bd167fd73dad312ae9364ba7a33fe9216cb4fcdb6f806f637dd6aa8857516fd516366c31e19a6120c56c6568f20b2eb87bb6b5b84fff
+    - SKIP
+pkgname:
+  - name: js128
+# generated with artixpkg 0.36.2-1-any
