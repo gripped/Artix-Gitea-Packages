@@ -1,0 +1,105 @@
+---
+version: 7.2.6-2
+pkgbase:
+  name: zabbix
+  pkgver: 7.2.6
+  pkgrel: 2
+  url: https://www.zabbix.com/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - postgresql-libs
+    - libxml2
+    - unixodbc
+    - net-snmp
+    - mariadb-libs
+    - libldap
+    - libevent
+    - go
+    - pkgconfig
+    - pcre2
+    - openipmi
+  source:
+    - https://cdn.zabbix.com/zabbix/sources/stable/7.2/zabbix-7.2.6.tar.gz
+    - zabbix-agent.sysusers
+    - zabbix-agent.tmpfiles
+    - zabbix-server.sysusers
+    - zabbix-server.tmpfiles
+    - zabbix-proxy.sysusers
+    - zabbix-proxy.tmpfiles
+    - zabbix-web-service.sysusers
+    - zabbix-web-service.tmpfiles
+  sha512sums:
+    - 1a686c7a70a70ee6b1c7e949dfcf1fa3ed2484ee71973290e222ba4ce367be8a7d3aec22c858559d599fbe1349b7bc361fb97fea5a49c6d7fd6dfdfd2ff13aab
+    - 7a04f644e32f337794d5cba778ad755b6390830b5598ddfbc135fcb1646f63f0b136a484fbd9238634d3bf43d3ff8e5b17f4d34a8079f72b67f5c9985d664f7f
+    - ca6b4779de23829dfdd80ee21e924fbe4e2754f4e693bed4b1a2aa846cd87d150e399b1169d7fe58d30c50ed837c1b8254e580de420267d0a1834d6dc409c43d
+    - 50012749cb7c5d7d2f8361a64bcbb10e70f90688b1f55917c0f19b045506427b32b891aac930c2576cae4f6e6da5ab45d3be093399e442e440ffe15aef663a36
+    - b6d548a26f845ef1a39724e3273aa521715272e20a0038144f86d377a26dfec6e3e129404cfda77632cad2f5cd6bab4a33f70a26c8c67b0d0b2abb3678ad2d83
+    - b52ab5099a74d851c2de521230929523fc8a9aa6fea3face9a3b97b24b09e78f2e3ec5c186393bd8d86ab1af3a554b9c01c173beef283551c27ae43b3365bb2c
+    - 64042ddf511b56b2a5a311e34643f4e049c09d909ea65b7343a8a9637f33dc59f2b1342201290ca0774cbcbf616096b3696982047fb622b7d51afb5eceb298dd
+    - 985da35f11eb29cb134fb9e1facfe55e69be6a10ccc70e98fafc36e6e8498bdc85881b1726d3c47b454e638584ec75082f5eb6b1b815a1574bd670d630a8c79f
+    - 309f55c8c381364eca6d31c4709a0ebb7e04cefad9e51f44173d839a58e7f8e95e3c678922f9e1fe42cff90dba5144cc7ee3a6e1c236b079b501c0e08ad2152d
+pkgname:
+  - name: zabbix-server
+    pkgdesc: Monitoring software for networks and applications
+    depends:
+      - net-snmp
+      - curl
+      - libxml2
+      - unixodbc
+      - libldap
+      - libevent
+      - pcre2
+      - openipmi
+    optdepends:
+      - 'postgresql-libs: for PostgreSQL support'
+      - 'mariadb-libs: for MariaDB support'
+      - 'zabbix-web-service: for scheduled PDF report generation'
+    backup:
+      - etc/zabbix/zabbix_server.conf
+  - name: zabbix-agent
+    pkgdesc: Monitoring agent for Zabbix
+    depends:
+      - curl
+      - pcre2
+    backup:
+      - etc/zabbix/zabbix_agentd.conf
+  - name: zabbix-agent2
+    pkgdesc: Monitoring agent for Zabbix (version 2)
+    depends:
+      - curl
+      - pcre2
+    backup:
+      - etc/zabbix/zabbix_agent2.conf
+  - name: zabbix-proxy
+    pkgdesc: Data collecting proxy for Zabbix
+    depends:
+      - net-snmp
+      - curl
+      - libxml2
+      - sqlite
+      - unixodbc
+      - libldap
+      - pcre2
+      - libevent
+      - openipmi
+    optdepends:
+      - 'mariadb-libs: for MariaDB support'
+      - 'postgresql-libs: for PostgreSQL support'
+    backup:
+      - etc/zabbix/zabbix_proxy.conf
+  - name: zabbix-frontend-php
+    pkgdesc: PHP frontend for Zabbix
+    depends:
+      - zabbix-server
+      - php
+      - php-gd
+  - name: zabbix-web-service
+    pkgdesc: Zabbix web service used to generate and send scheduled reports
+    depends:
+      - chromium
+    backup:
+      - etc/zabbix/zabbix_web_service.conf
+# generated with artixpkg 0.36.2-1-any
