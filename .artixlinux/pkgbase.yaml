@@ -1,16 +1,6 @@
 ---
-pkgbase:
-  name: nvidia-utils
-  version: 570.144-3
-  arch:
-    - x86_64
-  pkgname:
-    - nvidia-utils
-    - opencl-nvidia
-    - nvidia-dkms
-    - nvidia-open-dkms
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,18 +11,27 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 570.153.02-1
+    packages:
+      - nvidia-utils-570.153.02-1-x86_64.pkg.tar.zst
+      - opencl-nvidia-570.153.02-1-x86_64.pkg.tar.zst
+      - nvidia-dkms-570.153.02-1-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-570.153.02-1-x86_64.pkg.tar.zst
+    debug: []
   world:
     version: 570.144-3
     packages:
@@ -40,22 +39,29 @@ repos:
       - opencl-nvidia-570.144-3-x86_64.pkg.tar.zst
       - nvidia-dkms-570.144-3-x86_64.pkg.tar.zst
       - nvidia-open-dkms-570.144-3-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
