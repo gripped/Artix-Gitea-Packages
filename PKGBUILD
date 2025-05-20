@@ -1,7 +1,7 @@
 # Maintainer: Sébastien Luttringer
 
 pkgname=ipset
-pkgver=7.23
+pkgver=7.24
 pkgrel=1
 pkgdesc='Administration tool for IP sets'
 arch=('x86_64')
@@ -10,8 +10,9 @@ license=('GPL-2.0-only')
 makedepends=('git')
 depends=('glibc' 'libmnl')
 backup=("etc/${pkgname}.conf")
-source=("git://git.netfilter.org/ipset.git#tag=v${pkgver}")
-sha256sums=('c550b2c4b88033b1329607dbd5a5775aad5ddb2e6d7feb37c81fe39544941980')
+validpgpkeys=('B4DAC1EB5D49B76C8D7EFE6ED6A8E7CF924196F6') # Jozsef Kadlecsik <kadlec@blackhole.kfki.hu>
+source=("git+https://git.netfilter.org/ipset.git#tag=v${pkgver}?signed")
+sha256sums=('6ac4541c9f38bd8b2028ec8e3586b9246339d3c4c1b4a981b3b918559f178e49')
 
 prepare() {
   cd "${pkgname}"

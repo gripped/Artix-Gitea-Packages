@@ -1,0 +1,28 @@
+---
+version: 7.24-1
+pkgbase:
+  name: ipset
+  pkgdesc: Administration tool for IP sets
+  pkgver: 7.24
+  pkgrel: 1
+  url: https://netfilter.org/projects/ipset/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+  depends:
+    - glibc
+    - libmnl
+  backup:
+    - etc/ipset.conf
+  source:
+    - git+https://git.netfilter.org/ipset.git#tag=v7.24?signed
+  validpgpkeys:
+    - B4DAC1EB5D49B76C8D7EFE6ED6A8E7CF924196F6
+  sha256sums:
+    - 6ac4541c9f38bd8b2028ec8e3586b9246339d3c4c1b4a981b3b918559f178e49
+pkgname:
+  - name: ipset
+# generated with artixpkg 0.36.2-1-any
