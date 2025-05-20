@@ -6,7 +6,7 @@ pkgname=(wxwidgets-common
          wxwidgets-gtk3
          wxwidgets-qt5)
 pkgver=3.2.8
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url='https://wxwidgets.org'
 license=(custom:wxWindows)
@@ -81,7 +81,7 @@ package_wxwidgets-common() {
 
   DESTDIR="$pkgdir" cmake --install build-gtk3
   DESTDIR="$pkgdir" cmake --install build-qt5
-  rm -r "$pkgdir"/usr/{bin/wx-config,lib/{cmake,wx,libwx_{gtk,qt}*}}
+  rm -r "$pkgdir"/usr/lib/{cmake,wx,libwx_{gtk,qt}*}
   install -Dm644 wxWidgets/wxwin.m4 -t "$pkgdir"/usr/share/aclocal
 
   install -Dm644 wxWidgets/docs/licence.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
@@ -120,7 +120,7 @@ package_wxwidgets-gtk3() {
   replaces=(wxgtk3)
 
   DESTDIR="$pkgdir" cmake --install build-gtk3
-  rm -r "$pkgdir"/usr/{include,lib/libwx_base*,bin/wxrc*,share}
+  rm -r "$pkgdir"/usr/{include,lib/libwx_base*,bin,share}
   
   install -Dm644 wxWidgets/docs/licence.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
