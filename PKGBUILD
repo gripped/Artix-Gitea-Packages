@@ -5,7 +5,7 @@
 
 pkgname=gimp
 pkgver=3.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='GNU Image Manipulation Program'
 url='https://www.gimp.org/'
 arch=('x86_64')
@@ -100,6 +100,9 @@ prepare() {
   git submodule init
   git config submodule.gimp-data.url "$srcdir/gimp-data"
   git -c protocol.file.allow=always submodule update
+
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/gimp/-/issues/12
+  git cherry-pick -n 1685c86af5d6253151d0056a9677ba469ea10164
 }
 
 build() {

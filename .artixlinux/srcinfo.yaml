@@ -1,10 +1,10 @@
 ---
-version: 3.0.4-1
+version: 3.0.4-2
 pkgbase:
   name: gimp
   pkgdesc: GNU Image Manipulation Program
   pkgver: 3.0.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gimp.org/
   install: gimp.install
   arch:
