@@ -1,19 +1,5 @@
 ---
 team: galaxy
-pkgbase:
-  name: pacman-static
-  version: 7.0.0.r6.gc685ae6-15.1
-  arch:
-    - i486
-    - i686
-    - pentium4
-    - x86_64
-    - arm
-    - armv6h
-    - armv7h
-    - aarch64
-  pkgname:
-    - pacman-static
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -26,37 +12,49 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 7.0.0.r6.gc685ae6-15.1
+    version: 7.0.0.r6.gc685ae6-17
     packages:
-      - pacman-static-7.0.0.r6.gc685ae6-15.1-x86_64.pkg.tar.xz
+      - pacman-static-7.0.0.r6.gc685ae6-17-x86_64.pkg.tar.xz
+    debug: []
