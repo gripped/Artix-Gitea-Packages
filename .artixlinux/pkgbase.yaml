@@ -1,59 +1,65 @@
 ---
-pkgbase:
-  name: gpgme
-  version: 1.24.2-1
-  arch:
-    - x86_64
-  pkgname:
-    - gpgme
-    - qgpgme-qt6
-    - python-gpgme
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.24.3-2
+    packages:
+      - gpgme-1.24.3-2-x86_64.pkg.tar.zst
+      - qgpgme-qt6-1.24.3-2-x86_64.pkg.tar.zst
+      - python-gpgme-1.24.3-2-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 1.24.2-1
     packages:
       - gpgme-1.24.2-1-x86_64.pkg.tar.zst
       - qgpgme-qt6-1.24.2-1-x86_64.pkg.tar.zst
       - python-gpgme-1.24.2-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
