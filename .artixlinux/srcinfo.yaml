@@ -1,0 +1,36 @@
+---
+version: 2.3.0-3
+pkgbase:
+  name: maliit-framework
+  pkgdesc: Core libraries of Maliit and server
+  pkgver: 2.3.0
+  pkgrel: 3
+  url: https://maliit.github.io/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  makedepends:
+    - cmake
+    - git
+    - glib2-devel
+    - gtk3
+    - qt5-wayland
+    - wayland-protocols
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - libxcb
+    - qt5-base
+    - qt5-declarative
+    - wayland
+  optdepends:
+    - 'qt5-wayland: wayland-shell integration'
+  source:
+    - git+https://github.com/maliit/framework#tag=2.3.0
+  sha256sums:
+    - 08f2a12d36fd1e0c4f838ae276f2dee8a31339f3ffa5d9a844bda8f82dc593e5
+pkgname:
+  - name: maliit-framework
+# generated with artixpkg 0.36.2-1-any
