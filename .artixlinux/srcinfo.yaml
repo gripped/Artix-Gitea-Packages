@@ -1,0 +1,43 @@
+---
+version: 1.8.1-1
+pkgbase:
+  name: kirigami-addons
+  pkgdesc: Add-ons for the Kirigami framework
+  pkgver: 1.8.1
+  pkgrel: 1
+  url: https://invent.kde.org/libraries/kirigami-addons
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+  makedepends:
+    - extra-cmake-modules
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kcoreaddons
+    - kglobalaccel
+    - kguiaddons
+    - ki18n
+    - kirigami
+    - kitemmodels
+    - ksvg
+    - qt6-base
+    - qt6-declarative
+    - qt6-multimedia
+    - sonnet
+  source:
+    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.8.1.tar.xz
+    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.8.1.tar.xz.sig
+  validpgpkeys:
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - 39FFA93CAE9C6AFC212AD00202325448204E452A
+  sha256sums:
+    - 00028ae4df99e250518345ea28d9cdf49d700e9acac482734bb51384da11f945
+    - SKIP
+pkgname:
+  - name: kirigami-addons
+# generated with artixpkg 0.36.2-1-any
