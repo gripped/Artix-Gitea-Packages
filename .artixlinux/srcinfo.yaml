@@ -1,0 +1,110 @@
+---
+version: 1.72.0-2
+pkgbase:
+  name: grpc
+  pkgdesc: High performance, open source, general RPC framework that puts mobile and HTTP/2 first.
+  pkgver: 1.72.0
+  pkgrel: 2
+  url: https://grpc.io
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - abseil-cpp
+    - benchmark
+    - c-ares
+    - chrpath
+    - cmake
+    - cython
+    - ninja
+    - openssl
+    - php
+    - php-legacy
+    - protobuf
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - re2
+    - re2c
+  source:
+    - https://github.com/grpc/grpc/archive/v1.72.0/grpc-1.72.0.tar.gz
+    - https://github.com/google/googletest/archive/2dd1c131950043a8ad5ab0d2dda0e0970596586a/googletest-2dd1c131950043a8ad5ab0d2dda0e0970596586a.tar.gz
+    - https://github.com/protocolbuffers/protobuf/archive/v31.0/protobuf-31.0.tar.gz
+  sha256sums:
+    - 4a8aa99d5e24f80ea6b7ec95463e16af5bd91aa805e26c661ef6491ae3d2d23c
+    - 31bf78bd91b96dd5e24fab3bb1d7f3f7453ccbaceec9afb86d6e4816a15ab109
+    - 2b695cb1eaef8e173f884235ee6d55f57186e95d89ebb31361ee55cb5fd1b996
+pkgname:
+  - name: grpc
+    depends:
+      - glibc
+      - gcc-libs
+      - zlib
+      - c-ares
+      - protobuf
+      - openssl
+      - re2
+      - abseil-cpp
+    provides:
+      - libupb.so
+      - libgrpcpp_channelz.so
+      - libgrpc_unsecure.so
+      - libgrpc_plugin_support.so
+      - libgrpc.so
+      - libgrpc++_unsecure.so
+      - libgrpc++_reflection.so
+      - libgrpc++_error_details.so
+      - libgrpc++_alts.so
+      - libgrpc++.so
+      - libgpr.so
+      - libaddress_sorting.so
+  - name: python-grpcio
+    pkgdesc: Python language bindings for grpc, remote procedure call (RPC) framework
+    depends:
+      - glibc
+      - gcc-libs
+      - zlib
+      - openssl
+      - c-ares
+      - python
+      - re2
+      - abseil-cpp
+      - python-grpcio-tools
+  - name: python-grpcio-tools
+    pkgdesc: Python protobuf generator for GRPC
+    depends:
+      - glibc
+      - gcc-libs
+      - protobuf
+      - python
+      - python-setuptools
+      - python-protobuf
+  - name: php-grpc
+    pkgdesc: gRPC module for PHP
+    depends:
+      - glibc
+      - gcc-libs
+      - grpc
+      - php
+    backup:
+      - etc/php/conf.d/grpc.ini
+  - name: php-legacy-grpc
+    pkgdesc: gRPC module for PHP Legacy
+    depends:
+      - glibc
+      - gcc-libs
+      - grpc
+      - php-legacy
+    backup:
+      - etc/php-legacy/conf.d/grpc.ini
+  - name: grpc-cli
+    pkgdesc: gRPC protocol buffers cli
+    depends:
+      - glibc
+      - gcc-libs
+      - grpc
+      - protobuf
+      - abseil-cpp
+# generated with artixpkg 0.36.2-1-any

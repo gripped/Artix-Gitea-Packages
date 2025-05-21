@@ -1,5 +1,6 @@
-# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
-# Maintainer: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: Aleksey Filippov <sarum9in@gmail.com>
 # Contributor: Victor Aurélio Santos <victoraur.santos@gmail.com>
 
@@ -7,8 +8,8 @@ pkgbase='grpc'
 pkgname=('grpc' 'python-grpcio' 'python-grpcio-tools' 'php-grpc' 'php-legacy-grpc' 'grpc-cli')
 pkgver=1.72.0
 _gtestver=2dd1c131950043a8ad5ab0d2dda0e0970596586a
-_protover=30.2
-pkgrel=1
+_protover=31.0
+pkgrel=2
 pkgdesc="High performance, open source, general RPC framework that puts mobile and HTTP/2 first."
 arch=('x86_64')
 url='https://grpc.io'
@@ -37,7 +38,7 @@ source=("https://github.com/grpc/grpc/archive/v$pkgver/$pkgbase-$pkgver.tar.gz"
         "https://github.com/protocolbuffers/protobuf/archive/v$_protover/protobuf-$_protover.tar.gz")
 sha256sums=('4a8aa99d5e24f80ea6b7ec95463e16af5bd91aa805e26c661ef6491ae3d2d23c'
             '31bf78bd91b96dd5e24fab3bb1d7f3f7453ccbaceec9afb86d6e4816a15ab109'
-            '07a43d88fe5a38e434c7f94129cad56a4c43a51f99336074d0799c2f7d4e44c5')
+            '2b695cb1eaef8e173f884235ee6d55f57186e95d89ebb31361ee55cb5fd1b996')
 
 prepare() {
   cd "$srcdir/$pkgbase-$pkgver"
