@@ -1,17 +1,10 @@
 ---
 team: galaxy
-pkgbase:
-  name: xfce4-panel-profiles
-  version: 1.0.15-2
-  arch:
-    - any
-  pkgname:
-    - xfce4-panel-profiles
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -19,37 +12,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.1.0-1
+    packages:
+      - xfce4-panel-profiles-1.1.0-1-any.pkg.tar.zst
+    debug: []
   galaxy:
     version: 1.0.15-2
     packages:
       - xfce4-panel-profiles-1.0.15-2-any.pkg.tar.zst
+    debug: []

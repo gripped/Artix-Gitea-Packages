@@ -1,0 +1,28 @@
+---
+version: 1.1.0-1
+pkgbase:
+  name: xfce4-panel-profiles
+  pkgdesc: Simple application to manage Xfce panel layouts
+  pkgver: 1.1.0
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/xfce4-panel-profiles/start
+  arch:
+    - any
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - meson
+    - xfce4-dev-tools
+  depends:
+    - xfce4-panel
+    - python
+    - python-gobject
+    - python-psutil
+  source:
+    - git+https://gitlab.xfce.org/apps/xfce4-panel-profiles.git#tag=xfce4-panel-profiles-1.1.0
+  sha256sums:
+    - 410a3c6ed084207d099dc9fab5c0f311ea7912f2133a2c982bc28c220721045d
+pkgname:
+  - name: xfce4-panel-profiles
+# generated with artixpkg 0.36.2-1-any

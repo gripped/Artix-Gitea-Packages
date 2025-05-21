@@ -4,27 +4,24 @@
 # Contributor: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=xfce4-panel-profiles
-pkgver=1.0.15
-pkgrel=2
+pkgver=1.1.0
+pkgrel=1
 pkgdesc="Simple application to manage Xfce panel layouts"
 arch=('any')
 url="https://docs.xfce.org/apps/xfce4-panel-profiles/start"
 license=('GPL-3.0-only')
 depends=('xfce4-panel' 'python' 'python-gobject' 'python-psutil')
-makedepends=('git' 'xfce4-dev-tools')
+makedepends=('git' 'meson' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/apps/xfce4-panel-profiles.git#tag=$pkgname-$pkgver")
-sha256sums=('cb3ddc0451b0b4aaa04abb4676ea63090abe41da3d4451573f2b6405a2413ee5')
+sha256sums=('410a3c6ed084207d099dc9fab5c0f311ea7912f2133a2c982bc28c220721045d')
 
 build() {
-  cd $pkgname
-  ./configure \
-    --prefix=/usr
-  make
+  artix-meson $pkgname build
+  meson compile -C build
 }
 
 package() {
-  cd $pkgname
-  make DESTDIR="$pkgdir" install
+  meson install -C build --destdir "$pkgdir"
 }
 
 # vim:set ts=2 sw=2 et:
