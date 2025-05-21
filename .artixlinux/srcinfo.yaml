@@ -1,0 +1,149 @@
+---
+version: 1:0.40.0-3
+pkgbase:
+  name: mpv
+  pkgdesc: a free, open source, and cross-platform media player
+  pkgver: 0.40.0
+  pkgrel: 3
+  epoch: 1
+  url: https://mpv.io/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later AND LGPL-2.1-or-later
+  makedepends:
+    - git
+    - meson
+    - python-docutils
+    - ladspa
+    - wayland-protocols
+    - ffnvcodec-headers
+    - vulkan-headers
+  depends:
+    - alsa-lib
+    - desktop-file-utils
+    - ffmpeg
+    - glibc
+    - hicolor-icon-theme
+    - jack
+    - lcms2
+    - libarchive
+    - libass
+    - libbluray
+    - libcdio
+    - libcdio-paranoia
+    - libdisplay-info
+    - libdrm
+    - libdvdnav
+    - libdvdread
+    - libegl
+    - libgl
+    - libglvnd
+    - libjpeg-turbo
+    - libplacebo
+    - libpulse
+    - libsixel
+    - libva
+    - libvdpau
+    - libx11
+    - libxext
+    - libxkbcommon
+    - libxpresent
+    - libxrandr
+    - libxss
+    - libxv
+    - luajit
+    - mesa
+    - mujs
+    - libpipewire
+    - rubberband
+    - openal
+    - uchardet
+    - vapoursynth
+    - vulkan-icd-loader
+    - wayland
+    - zlib
+  optdepends:
+    - 'yt-dlp: for video-sharing websites playback'
+  provides:
+    - libmpv.so
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/mpv-player/mpv.git#tag=v0.40.0?signed
+    - fix_wayland_clipboard_high_cpu_usage.patch
+  validpgpkeys:
+    - 145077D82501AA20152CACCE8D769208D5E31419
+  sha256sums:
+    - 754d045dba7143b51dd6eb2d32ab3a9a483e6a337e685b581a876bc2e20eddf1
+    - 610227f044853fe88888d2317ead0e29c84ccffbdb7f712c3671187778b5b60e
+pkgname:
+  - name: mpv
+    depends:
+      - alsa-lib
+      - desktop-file-utils
+      - ffmpeg
+      - glibc
+      - hicolor-icon-theme
+      - jack
+      - lcms2
+      - libarchive
+      - libass
+      - libbluray
+      - libcdio
+      - libcdio-paranoia
+      - libdisplay-info
+      - libdrm
+      - libdvdnav
+      - libdvdread
+      - libegl
+      - libgl
+      - libglvnd
+      - libjpeg-turbo
+      - libplacebo
+      - libpulse
+      - libsixel
+      - libva
+      - libvdpau
+      - libx11
+      - libxext
+      - libxkbcommon
+      - libxpresent
+      - libxrandr
+      - libxss
+      - libxv
+      - luajit
+      - mesa
+      - mujs
+      - libpipewire
+      - rubberband
+      - openal
+      - uchardet
+      - vapoursynth
+      - vulkan-icd-loader
+      - wayland
+      - zlib
+      - libasound.so
+      - libavcodec.so
+      - libavdevice.so
+      - libavfilter.so
+      - libavformat.so
+      - libavutil.so
+      - libdisplay-info.so
+      - libswresample.so
+      - libswscale.so
+      - libjack.so
+      - liblcms2.so
+      - libarchive.so
+      - libass.so
+      - libbluray.so
+      - libjpeg.so
+      - libplacebo.so
+      - libpulse.so
+      - libva.so
+      - libva-drm.so
+      - libva-wayland.so
+      - libva-x11.so
+      - libxkbcommon.so
+      - librubberband.so
+# generated with artixpkg 0.36.2-1-any
