@@ -1,8 +1,9 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=libphonenumber
 pkgver=9.0.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Google's common library for parsing, formatting, and validating international phone numbers"
 url="https://github.com/googlei18n/libphonenumber"
