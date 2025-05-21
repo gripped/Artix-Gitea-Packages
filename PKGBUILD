@@ -1,10 +1,11 @@
-# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-timer-plugin
-pkgver=1.7.3
+pkgver=1.8.0
 pkgrel=1
 pkgdesc="Plugin to track time for the Xfce4 panel"
 arch=('x86_64')
@@ -12,28 +13,18 @@ url="https://docs.xfce.org/panel-plugins/xfce4-timer-plugin/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4-goodies')
 depends=('xfce4-panel')
-makedepends=('git' 'xfce4-dev-tools')
+makedepends=('git' 'meson' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-timer-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('b17d9b405a4f857d401c0d6c70b61c0f1089d1a3440824e8f47ad030c768f423')
-
-prepare() {
-  cd $pkgname
-  NOCONFIGURE=1 ./autogen.sh
-}
+sha256sums=('5c82b321f9484bcffea66b8bd4e21c52aed9fe4d583bbb054c2acfb6be660935')
 
 build() {
-  cd $pkgname
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --disable-debug
-  make
+  artix-meson $pkgname build \
+    --localstatedir=/var
+  meson compile -C build
 }
 
 package() {
-  cd $pkgname
-  make DESTDIR="$pkgdir" install
+  meson install -C build --destdir "$pkgdir"
 }
 
 # vim:set ts=2 sw=2 et:
