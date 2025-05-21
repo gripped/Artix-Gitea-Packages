@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.11.0-11
+    packages:
+      - opencv-4.11.0-11-x86_64.pkg.tar.zst
+      - opencv-samples-4.11.0-11-x86_64.pkg.tar.zst
+      - python-opencv-4.11.0-11-x86_64.pkg.tar.zst
+      - opencv-cuda-4.11.0-11-x86_64.pkg.tar.zst
+      - python-opencv-cuda-4.11.0-11-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
