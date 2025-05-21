@@ -2,7 +2,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=totem
-pkgver=43.1+r44+gbf65cd39c
+pkgver=43.2
 pkgrel=1
 pkgdesc="Movie player for the GNOME desktop based on GStreamer"
 url="https://apps.gnome.org/Totem/"
@@ -59,18 +59,15 @@ provides=(libtotem.so)
 conflicts=(totem-plugin)
 replaces=(totem-plugin)
 groups=(gnome)
-_commit=bf65cd39c892608c6dc0286f907c3adfb6807770  # gnome-43
 source=(
-  "git+https://gitlab.gnome.org/GNOME/totem.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/totem.git?signed#tag=${pkgver/[a-z]/.&}"
   "git+https://gitlab.gnome.org/GNOME/libgd.git"
 )
-b2sums=('1f28b9ca5f2cc892133a8d8dd87cc89b0151bcd86152f4fa9fdf68dec8cec11a4ca8a95266a7ebe74f8c340b22d97b800927a96607653d52fcc95ac2d8212e55'
+b2sums=('c9c3fce36c82b3cc529443b68b37a457d6f07dddb8827042c8e2c3418166f119e8d04be5af895ce71da3a32fd697a6b82a6090a4e7b5220015eeda751d56acdc'
         'SKIP')
-
-pkgver() {
-  cd totem
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
+validpgpkeys=(
+  90B845BA6595B902DDC9D4A62541290C393E86DF # Bastien Nocera <hadess@hadess.net>
+)
 
 prepare() {
   cd totem
