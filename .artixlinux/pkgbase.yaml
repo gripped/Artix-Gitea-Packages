@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,18 +13,15 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 2.84.2-1
     packages:
       - glib2-2.84.2-1-x86_64.pkg.tar.zst
       - glib2-devel-2.84.2-1-x86_64.pkg.tar.zst
       - glib2-docs-2.84.2-1-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 2.84.1-1
-    packages:
-      - glib2-2.84.1-1-x86_64.pkg.tar.zst
-      - glib2-devel-2.84.1-1-x86_64.pkg.tar.zst
-      - glib2-docs-2.84.1-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
