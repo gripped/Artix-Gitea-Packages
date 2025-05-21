@@ -7,7 +7,7 @@
 
 pkgname=valkey
 pkgver=8.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
 url='https://valkey.io/'
