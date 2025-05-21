@@ -45,9 +45,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 0.4.4-15.1
+    version: 0.4.4-16
     packages:
-      - zathura-pdf-mupdf-0.4.4-15.1-x86_64.pkg.tar.zst
+      - zathura-pdf-mupdf-0.4.4-16-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
