@@ -1,0 +1,36 @@
+---
+version: 4.20.3-1
+pkgbase:
+  name: libxfce4windowing
+  pkgdesc: Windowing concept abstraction library for X11 and Wayland
+  pkgver: 4.20.3
+  pkgrel: 1
+  url: https://docs.xfce.org/xfce/libxfce4windowing/start
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  makedepends:
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - wayland-protocols
+    - xfce4-dev-tools
+  depends:
+    - gdk-pixbuf2
+    - glib2
+    - gtk3
+    - libwnck3
+    - libdisplay-info
+    - libx11
+    - wayland
+  source:
+    - git+https://gitlab.xfce.org/xfce/libxfce4windowing.git#tag=libxfce4windowing-4.20.3
+    - git+https://gitlab.freedesktop.org/wlroots/wlr-protocols.git
+  sha256sums:
+    - afcd6e1bc382124f78fd46362daa2849ad61d67f2c9fdf1d959335c5ed1dc58f
+    - SKIP
+pkgname:
+  - name: libxfce4windowing
+# generated with artixpkg 0.36.2-1-any
