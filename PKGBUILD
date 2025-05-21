@@ -1,10 +1,11 @@
-# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Suzy Williams <suzanne.williams3@verizon.net>
 
 pkgname=xfce4-mailwatch-plugin
-pkgver=1.3.2
+pkgver=1.4.0
 pkgrel=1
 pkgdesc="Multi-protocol, multi-mailbox mail watcher for the Xfce4 panel"
 arch=('x86_64')
@@ -12,28 +13,18 @@ url="https://docs.xfce.org/panel-plugins/xfce4-mailwatch-plugin/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4-goodies')
 depends=('xfce4-panel' 'gnutls')
-makedepends=('git' 'xfce4-dev-tools')
+makedepends=('git' 'meson' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-mailwatch-plugin.git#tag=$pkgname-$pkgver")
-sha256sums=('a4058da90d96cb2ab9c16306358c96d20adbe5aeb821a7fdcb7f48d06ecfdaf8')
-
-prepare() {
-  cd $pkgname
-  NOCONFIGURE=1 ./autogen.sh
-}
+sha256sums=('691a6177d2c7d3b0e35c8a75aa838c231101aa9f6ca9e6eb565bb5a835ea901f')
 
 build() {
-  cd $pkgname
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --disable-debug
-  make
+  artix-meson $pkgname build \
+    --localstatedir=/var
+  meson compile -C build
 }
 
 package() {
-  cd $pkgname
-  make DESTDIR="$pkgdir" install
+  meson install -C build --destdir "$pkgdir"
 }
 
 # vim:set ts=2 sw=2 et:
