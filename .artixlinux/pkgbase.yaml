@@ -21,13 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.26.0-2
+    version: 1.26.1-1
     packages:
-      - libmupdf-1.26.0-2-x86_64.pkg.tar.zst
-      - mupdf-1.26.0-2-x86_64.pkg.tar.zst
-      - mupdf-gl-1.26.0-2-x86_64.pkg.tar.zst
-      - mupdf-tools-1.26.0-2-x86_64.pkg.tar.zst
-      - python-mupdf-1.26.0-2-x86_64.pkg.tar.zst
+      - libmupdf-1.26.1-1-x86_64.pkg.tar.zst
+      - mupdf-1.26.1-1-x86_64.pkg.tar.zst
+      - mupdf-gl-1.26.1-1-x86_64.pkg.tar.zst
+      - mupdf-tools-1.26.1-1-x86_64.pkg.tar.zst
+      - python-mupdf-1.26.1-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
