@@ -1,0 +1,30 @@
+---
+version: 1.6.0-1
+pkgbase:
+  name: xfce4-taskmanager
+  pkgdesc: Easy to use task manager
+  pkgver: 1.6.0
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/xfce4-taskmanager/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - meson
+    - xfce4-dev-tools
+  depends:
+    - libxfce4ui
+    - xfconf
+    - libxmu
+    - libwnck3
+  source:
+    - git+https://gitlab.xfce.org/apps/xfce4-taskmanager.git#tag=xfce4-taskmanager-1.6.0
+  sha256sums:
+    - 2304041ba75c7153f96cbccf238769aaf3e4145874e7d8bef70511185460a68a
+pkgname:
+  - name: xfce4-taskmanager
+# generated with artixpkg 0.36.2-1-any
