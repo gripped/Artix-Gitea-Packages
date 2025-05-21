@@ -1,0 +1,34 @@
+---
+version: 4.20.1-1
+pkgbase:
+  name: catfish
+  pkgdesc: Versatile file searching tool
+  pkgver: 4.20.1
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/catfish/start
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - meson
+  depends:
+    - dbus-python
+    - gtk3
+    - python-cairo
+    - python-gobject
+    - python-pexpect
+    - xdg-utils
+    - xfconf
+    - which
+  optdepends:
+    - 'plocate: search in locate index'
+    - 'zeitgeist: search in zeitgeist index'
+  source:
+    - git+https://gitlab.xfce.org/apps/catfish.git#tag=catfish-4.20.1
+  sha256sums:
+    - 265ca6b2c4494b74bb41a2d642860d7f15982171e87a18978f7b2173763fc39d
+pkgname:
+  - name: catfish
+# generated with artixpkg 0.36.2-1-any
