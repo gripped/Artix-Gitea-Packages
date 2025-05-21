@@ -2,7 +2,7 @@
 
 pkgname=mingw-w64-winpthreads
 pkgver=12.0.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='MinGW-w64 winpthreads library'
 arch=('any')
 url='http://mingw-w64.sourceforge.net'
