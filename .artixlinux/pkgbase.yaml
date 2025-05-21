@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 25.04.1-3
+    packages:
+      - marble-25.04.1-3-x86_64.pkg.tar.zst
+      - marble-behaim-25.04.1-3-x86_64.pkg.tar.zst
+      - marble-common-25.04.1-3-x86_64.pkg.tar.zst
+      - marble-maps-25.04.1-3-x86_64.pkg.tar.zst
+      - marble-qt-25.04.1-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
