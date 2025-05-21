@@ -16,6 +16,7 @@ pkgbase:
     - bison
     - perl
     - flex
+    - mingw-w64-gcc
     - git
     - alsa-lib
     - ffmpeg
