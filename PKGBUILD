@@ -3,9 +3,9 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=6.10.2.rt14.artix1
-archpkgver=6.10.2.rt14.arch1
-pkgrel=6
+pkgver=6.14.0.rt3.artix1
+archpkgver=6.14.0.rt3.arch1
+pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt"
@@ -29,37 +29,42 @@ options=(
   !debug
   !strip
 )
-_pre_rt_ver=${archpkgver%.*}
-_upstream_ver=${_pre_rt_ver%.*}
-_rt_ver=${_pre_rt_ver%.*}-${_pre_rt_ver##*.}
+# Extract the version parts from pkgver and assemble them as needed.
+IFS='.' read -r -a _version_parts <<< "$archpkgver"
+_major="${_version_parts[0]}"
+_minor="${_version_parts[1]}"
+# Depending on whether patch level is 0, assemble the upstream version to use.
+if (( _version_parts[2] == 0 )); then
+  _upstream_ver="${_version_parts[0]}.${_version_parts[1]}"
+else
+  _upstream_ver="${_version_parts[0]}.${_version_parts[1]}.${_version_parts[2]}"
+fi
+# Based on upstream version, assemble the RT patch version.
+_rt_patch_ver="${_upstream_ver}-${_version_parts[3]}"
+# Assemble the distribution patch version.
+_distro_patch_ver="${_version_parts[0]}.${_version_parts[1]}.${_version_parts[2]}-${_version_parts[3]}-${_version_parts[4]}"
+# Add a convenience abstraction for the source directory.
 _srcname=linux-${_upstream_ver}
-_srctag=v${_rt_ver}-${archpkgver##*.}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${archpkgver%%.*}.x/${_srcname}.tar.{xz,sign}
-  https://cdn.kernel.org/pub/linux/kernel/projects/rt/${_upstream_ver%.*}/patch-${_rt_ver}.patch.{xz,sign}
-  $url/-/releases/${_srctag}/downloads/$pkgbase-${_srctag}.patch{,.sig}
-  gcc15-firmware.patch
-  gcc15-boot.patch
+  https://cdn.kernel.org/pub/linux/kernel/v${_major}.x/${_srcname}.tar.{xz,sign}
+  https://cdn.kernel.org/pub/linux/kernel/projects/rt/${_major}.${_minor}/patch-${_rt_patch_ver}.patch.{xz,sign}
+  $url/-/releases/v${_distro_patch_ver}/downloads/$pkgbase-v${_distro_patch_ver}.patch{,.sig}
   config
 )
-sha512sums=('1c121e3c9c8402ec46581b38c736630d25297dc3e981cb69d47b95e2cd3204cd93c6c15c02b81fc53d62c49ded462ab6a0bb4d94b506ec0f9c366e47a1c92606'
+sha512sums=('71dcaa3772d8d9797c3ae30cae9c582b11a7047a3bbcb8dfd479a4dffb40ff0da74cf3d45175f50cc9992e338bcadd46c9c570f54054ca3bde6661768d3d22eb'
             'SKIP'
-            'ddec4023c2864c5c80bb9b2d81b8082f81fd0e82b5ea826368cd0cfc5396ebee6832b064f898831d890920dace822734a2099b9a01162d19f0c3c5b2f352f0b5'
+            '1e190c043fbf8e29e1d125a73a0943057c77c95981af4baf1888e0c599cb12d01ee6df8d3120fb2a483463faf082808a8a5dfd421bb13f900c0604d61677f109'
             'SKIP'
-            'cd2614ecb8deb2bdd524dec2278f447daf7135dc03a6af55047c655cd9c8bec2c61d1b4b602277be4ed3d788a6a2f42baf659f7b4d084a240750e8e31d62cf4c'
+            'c8c920a4e2c7b126ae0c1948eacb3f1e798cbd6be31aa08492c5ce6a9287be9d6012db573b88486c77f72e64240cd3918ac8e626a281b8034e73baca81e1aff7'
             'SKIP'
-            'b61fdb37c471b76c6ff98f2758d89ed3b59062a0ae77943810e10db827671ee0ce374a2c4c676f54129129816a494aa60bd16797e841f77d6876dda4229b382c'
-            'f102f780220da16d93751ddfd5881390da2c4678f6ee273bf520e9e484e9c2794c6f9e0ae2995765e3dbaab4bc0478e3a5027cfd117510cfef4e248e520e5ac0'
-            'ce61521bff103ac9d83a351fbe5d65fad737c116df31fbfd62200d0ae5d50f016c8fc5f9c83e63571ef581e790db9b55a8b562ee23b5bd30faf43f436b8644e8')
-b2sums=('ab1d2e79a1bb8a9b78ab5b1af93db7ef356cb5e14bba1121bbd3ae06b9589c8bfc32bab373acdd0ecf965ac132130e7eb34e70b35a9df1bd85b49dab97e2c02a'
+            '224fb685f1d090598af24f17dfe8f36e42ec0cc0f62eae3d2fef3e5616869cdc3462eb5389e0ebaf74b1c4c7e794e3171faf5e7c6876db79c5fa4fd65c479ea7')
+b2sums=('11835719804b406fe281ea1c276a84dc0cbaa808552ddcca9233d3eaeb1c001d0455c7205379b02de8e8db758c1bae6fe7ceb6697e63e3cf9ae7187dc7a9715e'
         'SKIP'
-        'cfd62f250aacca7b1afff4c5ff8ce5b27e561d4ae3b6b68815e4ec64dfcb4857aa9fac555dcc4095c8d6e470066f121a5694085b7211afbbcf2023051118d1ee'
+        '3b0959d446f3ba321183310271fa61bde64e03a06183be857e61d15fdbcb73354f50128d0cd7bd7970e9cb0771b3889ae23fecb32a0686058989fd816816e706'
         'SKIP'
-        '4bdcccb7aa62817c11d8798ed87539368bf103508dba86162a7291d37314e91485ee5c59df3e171598d797395cc7f42239667ef532e45123dc6ee22357adadd1'
+        'd7ab9cf9dfa966d986369b77fd4d75f44fac474a07b11ba326734f8dbdffa2f50a316a4863ecf3f974b12a9b70b2e5e821df3d3fbffdb63152b9c56226d89186'
         'SKIP'
-        'e2e96bfecf41f99c0376eafa27b00279f34dce786b465518ce7a74d17da5718ca034465a6fdebb66750fbfc2af8704c355064dd118fafcb3d84fbaa53bee410c'
-        'e90f4ad01f5a0374d453c866c82c3b29d99a1c32d330e7b4b0bf1e41b39c4c08202d2899a1d36ab94b4b8983647587fe37598b49692297163a9e446a66c7360a'
-        '529d00e6bee447e80b068690dbf8b0c85e36bc8da5492391b4264173068ed5033da21dad3fdc3d0f2b849d19aac72b6db8d8c8bef9dcce63537c01a9288a6a07')
+        '366bf59a5d1c4e20f4a42cb559d981238676a43bb577c6d88307909d36e60b177521d54ca30ee86bf5653bb92bcfac2c5d889e1ebe4179e0704c87368c2d2a0e')
 validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman <gregkh@kernel.org>
   64254695FFF0AA4466CC19E67B96E8162A8CF5D1  # Sebastian Andrzej Siewior
@@ -148,11 +153,13 @@ _package() {
     kmod
   )
   optdepends=(
-    'wireless-regdb: to set the correct wireless channels of your country'
     'linux-firmware: firmware images needed for some devices'
+    'scx-scheds: to use sched-ext schedulers'
+    'wireless-regdb: to set the correct wireless channels of your country'
   )
   provides=(
     KSMBD-MODULE
+    NTSYNC-MODULE
     VIRTUALBOX-GUEST-MODULES
     WIREGUARD-MODULE
   )
@@ -238,6 +245,7 @@ _package-headers() {
   install -Dt "$builddir/kernel" -m644 kernel/Makefile
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
+  ln -srt "$builddir" "$builddir/scripts/gdb/vmlinux-gdb.py"
 
   # required when STACK_VALIDATION is enabled
   install -Dt "$builddir/tools/objtool" tools/objtool/objtool
@@ -266,6 +274,10 @@ _package-headers() {
 
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
+
+  echo "Installing unstripped VDSO..."
+  make INSTALL_MOD_PATH="$pkgdir/usr" vdso_install \
+    link=  # Suppress build-id symlinks
 
   echo "Removing unneeded architectures..."
   local arch

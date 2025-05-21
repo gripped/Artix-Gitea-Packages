@@ -1,0 +1,172 @@
+---
+version: 6.14.0.rt3.artix1-1
+pkgbase:
+  name: linux-rt
+  pkgdesc: Linux RT
+  pkgver: 6.14.0.rt3.artix1
+  pkgrel: 1
+  url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt
+  arch:
+    - x86_64
+  makedepends:
+    - bc
+    - cpio
+    - gettext
+    - graphviz
+    - imagemagick
+    - libelf
+    - pahole
+    - perl
+    - python
+    - python-sphinx
+    - python-yaml
+    - tar
+    - texlive-latexextra
+    - xz
+  options:
+    - '!debug'
+    - '!strip'
+  source:
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.14/patch-6.14-rt3.patch.xz
+    - https://cdn.kernel.org/pub/linux/kernel/projects/rt/6.14/patch-6.14-rt3.patch.sign
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v6.14.0-rt3-arch1/downloads/linux-rt-v6.14.0-rt3-arch1.patch
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v6.14.0-rt3-arch1/downloads/linux-rt-v6.14.0-rt3-arch1.patch.sig
+    - config
+  validpgpkeys:
+    - 647F28654894E3BD457199BE38DBBDC86092693E
+    - 64254695FFF0AA4466CC19E67B96E8162A8CF5D1
+    - 991F6E3F0765CF6295888586139B09DA5BF0D338
+  sha512sums:
+    - 71dcaa3772d8d9797c3ae30cae9c582b11a7047a3bbcb8dfd479a4dffb40ff0da74cf3d45175f50cc9992e338bcadd46c9c570f54054ca3bde6661768d3d22eb
+    - SKIP
+    - 1e190c043fbf8e29e1d125a73a0943057c77c95981af4baf1888e0c599cb12d01ee6df8d3120fb2a483463faf082808a8a5dfd421bb13f900c0604d61677f109
+    - SKIP
+    - c8c920a4e2c7b126ae0c1948eacb3f1e798cbd6be31aa08492c5ce6a9287be9d6012db573b88486c77f72e64240cd3918ac8e626a281b8034e73baca81e1aff7
+    - SKIP
+    - 224fb685f1d090598af24f17dfe8f36e42ec0cc0f62eae3d2fef3e5616869cdc3462eb5389e0ebaf74b1c4c7e794e3171faf5e7c6876db79c5fa4fd65c479ea7
+  b2sums:
+    - 11835719804b406fe281ea1c276a84dc0cbaa808552ddcca9233d3eaeb1c001d0455c7205379b02de8e8db758c1bae6fe7ceb6697e63e3cf9ae7187dc7a9715e
+    - SKIP
+    - 3b0959d446f3ba321183310271fa61bde64e03a06183be857e61d15fdbcb73354f50128d0cd7bd7970e9cb0771b3889ae23fecb32a0686058989fd816816e706
+    - SKIP
+    - d7ab9cf9dfa966d986369b77fd4d75f44fac474a07b11ba326734f8dbdffa2f50a316a4863ecf3f974b12a9b70b2e5e821df3d3fbffdb63152b9c56226d89186
+    - SKIP
+    - 366bf59a5d1c4e20f4a42cb559d981238676a43bb577c6d88307909d36e60b177521d54ca30ee86bf5653bb92bcfac2c5d889e1ebe4179e0704c87368c2d2a0e
+pkgname:
+  - name: linux-rt
+    pkgdesc: The Linux RT kernel and modules
+    license:
+      - Apache-2.0 OR MIT
+      - BSD-2-Clause OR GPL-2.0-or-later
+      - BSD-3-Clause
+      - BSD-3-Clause OR GPL-2.0-only
+      - BSD-3-Clause OR GPL-2.0-or-later
+      - BSD-3-Clause-Clear
+      - GPL-1.0-or-later
+      - GPL-1.0-or-later OR BSD-3-Clause
+      - GPL-2.0-only
+      - GPL-2.0-only OR Apache-2.0
+      - GPL-2.0-only OR BSD-2-Clause
+      - GPL-2.0-only OR BSD-3-Clause
+      - GPL-2.0-only OR CDDL-1.0
+      - GPL-2.0-only OR Linux-OpenIB
+      - GPL-2.0-only OR MIT
+      - GPL-2.0-only OR MPL-1.1
+      - GPL-2.0-only OR X11
+      - GPL-2.0-only WITH Linux-syscall-note
+      - GPL-2.0-or-later
+      - GPL-2.0-or-later OR BSD-2-Clause
+      - GPL-2.0-or-later OR BSD-3-Clause
+      - GPL-2.0-or-later OR MIT
+      - GPL-2.0-or-later OR X11
+      - GPL-2.0-or-later WITH GCC-exception-2.0
+      - ISC
+      - LGPL-2.0-or-later
+      - LGPL-2.1-only
+      - LGPL-2.1-only OR BSD-2-Clause
+      - LGPL-2.1-or-later
+      - MIT
+      - MPL-1.1
+      - X11
+      - Zlib
+    depends:
+      - coreutils
+      - initramfs
+      - kmod
+    optdepends:
+      - 'linux-firmware: firmware images needed for some devices'
+      - 'scx-scheds: to use sched-ext schedulers'
+      - 'wireless-regdb: to set the correct wireless channels of your country'
+    provides:
+      - KSMBD-MODULE
+      - NTSYNC-MODULE
+      - VIRTUALBOX-GUEST-MODULES
+      - WIREGUARD-MODULE
+  - name: linux-rt-headers
+    pkgdesc: Headers and scripts for building modules for the Linux RT kernel
+    license:
+      - BSD-3-Clause
+      - BSD-3-Clause OR GPL-2.0-only
+      - GPL-1.0-or-later
+      - GPL-1.0-or-later WITH Linux-syscall-note
+      - GPL-2.0-only
+      - GPL-2.0-only OR Apache-2.0
+      - GPL-2.0-only OR BSD-2-Clause
+      - GPL-2.0-only OR BSD-3-Clause
+      - GPL-2.0-only OR CDDL-1.0
+      - GPL-2.0-only OR Linux-OpenIB
+      - GPL-2.0-only OR Linux-OpenIB OR BSD-2-Clause
+      - GPL-2.0-only OR MIT
+      - GPL-2.0-only OR MPL-1.1
+      - GPL-2.0-only OR X11
+      - GPL-2.0-only WITH Linux-syscall-note
+      - (GPL-2.0-only WITH Linux-syscall-note) AND MIT
+      - (GPL-2.0-only WITH Linux-syscall-note) OR BSD-2-Clause
+      - (GPL-2.0-only WITH Linux-syscall-note) OR BSD-3-Clause
+      - (GPL-2.0-only WITH Linux-syscall-note) OR CDDL-1.0
+      - (GPL-2.0-only WITH Linux-syscall-note) OR Linux-OpenIB
+      - (GPL-2.0-only WITH Linux-syscall-note) OR MIT
+      - GPL-2.0-or-later
+      - GPL-2.0-or-later OR BSD-2-Clause
+      - GPL-2.0-or-later OR BSD-3-Clause
+      - GPL-2.0-or-later OR MIT
+      - GPL-2.0-or-later WITH Linux-syscall-note
+      - (GPL-2.0-or-later WITH Linux-syscall-note) OR BSD-3-Clause
+      - (GPL-2.0-or-later WITH Linux-syscall-note) OR MIT
+      - LGPL-2.0-or-later OR BSD-2-Clause
+      - LGPL-2.0-or-later WITH Linux-syscall-note
+      - ISC
+      - LGPL-2.0-or-later WITH Linux-syscall-note
+      - LGPL-2.0-or-later OR BSD-2-Clause
+      - LGPL-2.1-only
+      - LGPL-2.1-only OR BSD-2-Clause
+      - LGPL-2.1-only OR MIT
+      - LGPL-2.1-only WITH Linux-syscall-note
+      - LGPL-2.1-or-later
+      - LGPL-2.1-or-later OR BSD-2-Clause
+      - LGPL-2.1-or-later WITH Linux-syscall-note
+      - MIT
+      - Zlib
+    depends:
+      - pahole
+  - name: linux-rt-docs
+    pkgdesc: Documentation for the Linux RT kernel
+    license:
+      - BSD-3-Clause
+      - GFDL-1.1-no-invariants-or-later
+      - GPL-2.0-only
+      - GPL-2.0-only OR BSD-2-Clause
+      - GPL-2.0-only OR BSD-3-Clause
+      - GPL-2.0-only OR GFDL-1.1-no-invariants-or-later
+      - GPL-2.0-only OR GFDL-1.2-no-invariants-only
+      - GPL-2.0-only OR MIT
+      - GPL-2.0-or-later
+      - GPL-2.0-or-later OR BSD-2-Clause
+      - GPL-2.0-or-later OR CC-BY-4.0
+      - GPL-2.0-or-later OR MIT
+      - GPL-2.0-or-later OR X11
+      - LGPL-2.1-only OR BSD-2-Clause
+      - MIT
+# generated with artixpkg 0.36.2-1-any
