@@ -5,10 +5,10 @@
 
 pkgname=scummvm
 pkgver=2.9.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A 'virtual machine' for several classic graphical point-and-click adventure games."
 arch=('x86_64')
-license=('GPL')
+license=('GPL-3.0-only')
 url="http://www.scummvm.org/"
 depends=('libpng' 'libtheora' 'sdl2' 'sdl2_net' 'fluidsynth' 'flac' 'faad2' 'libvorbis' 'libmad' 'freetype2'
          'libgl' 'glu' 'libjpeg-turbo' 'libmpeg2' 'curl' 'a52dec' 'giflib' 'glew' 'libspeechd' 'gtk3' 'sndio')
@@ -21,7 +21,7 @@ build() {
   cd ${pkgname}-${pkgver}
   ./configure \
     --enable-release \
-    --enable-all-engines \
+    --disable-debug \
     --prefix=/usr
   make
 }
