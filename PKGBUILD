@@ -1,10 +1,11 @@
-# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Evangelos Foutras <foutrelis@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Tobias Kieslich <tobias (at) archlinux.org>
 
 pkgname=xfce4-smartbookmark-plugin
-pkgver=0.5.3
+pkgver=0.6.0
 pkgrel=1
 pkgdesc="Allows you to send requests directly to your browser and perform a custom search"
 arch=('x86_64')
@@ -12,36 +13,27 @@ url="https://docs.xfce.org/panel-plugins/xfce4-smartbookmark-plugin/start"
 license=('GPL-2.0-or-later')
 groups=('xfce4-goodies')
 depends=('xfce4-panel')
-makedepends=('git' 'libxt' 'xfce4-dev-tools')
+makedepends=('git' 'libxt' 'meson' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-smartbookmark-plugin.git#tag=$pkgname-$pkgver"
         xfce4-smartbookmark-plugin-archlinux.patch)
-sha256sums=('ff32dabc708b180f4db53ac51c6fb3bfbcbab6d119957bfd1d169b798452876c'
+sha256sums=('f136fcfbb529aed8f15ac00a68b4567d5ed27245ea0b35b5984bc6d7ad5e3c24'
             '07f0e70bcdf371f7d4302cecf82c59845cf7b6b77ff87befff3603feca29903d')
 
 prepare() {
   cd $pkgname
 
   # Replace Debian URLs by Arch ones
-  patch -Np1 -i ../xfce4-smartbookmark-plugin-archlinux.patch
-
-  NOCONFIGURE=1 ./autogen.sh
+  patch -Np1 -i "$srcdir"/xfce4-smartbookmark-plugin-archlinux.patch
 }
 
 build() {
-  cd $pkgname
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --libexecdir=/usr/lib \
-    --localstatedir=/var \
-    --disable-static \
-    --disable-debug
-  make
+  artix-meson $pkgname build \
+    --localstatedir=/var
+  meson compile -C build
 }
 
 package() {
-  cd $pkgname
-  make DESTDIR="$pkgdir" install
+  meson install -C build --destdir "$pkgdir"
 }
 
 # vim:set ts=2 sw=2 et:
