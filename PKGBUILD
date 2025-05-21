@@ -1,5 +1,6 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Lauri Niskanen <ape@ape3000.com>
 # Contributor: Sebastian.Salich@gmx.de
 # Contributor: Doc Angelo
@@ -8,7 +9,7 @@
 pkgbase=mumble
 pkgname=(mumble mumble-server)
 pkgver=1.5.735
-pkgrel=9
+pkgrel=10
 pkgdesc="An Open Source, low-latency, high quality voice chat software"
 arch=(x86_64)
 url="https://www.mumble.info/"
