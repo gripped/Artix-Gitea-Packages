@@ -1,0 +1,33 @@
+---
+version: 0.6.0-1
+pkgbase:
+  name: thunar-archive-plugin
+  pkgdesc: Adds archive operations to the Thunar file context menus
+  pkgver: 0.6.0
+  pkgrel: 1
+  url: https://docs.xfce.org/xfce/thunar/archive
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - meson
+    - xfce4-dev-tools
+  depends:
+    - thunar
+    - hicolor-icon-theme
+  optdepends:
+    - file-roller
+    - engrampa
+    - ark
+    - xarchiver
+  source:
+    - git+https://gitlab.xfce.org/thunar-plugins/thunar-archive-plugin.git#tag=thunar-archive-plugin-0.6.0
+  sha256sums:
+    - 01543943f188c341f2b4c698b99279de81202673a5446ff1b391d51e95fc46f8
+pkgname:
+  - name: thunar-archive-plugin
+# generated with artixpkg 0.36.2-1-any
