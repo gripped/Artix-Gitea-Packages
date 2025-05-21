@@ -9,7 +9,7 @@ pkgname=(
   evolution-data-server-docs
 )
 pkgver=3.56.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Unified contacts, tasks and calendar backend"
 url="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home"
 arch=(x86_64)
