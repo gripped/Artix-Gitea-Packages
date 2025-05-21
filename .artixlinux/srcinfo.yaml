@@ -1,10 +1,10 @@
 ---
-version: 12.0.0-1
+version: 12.0.0-1.1
 pkgbase:
   name: mingw-w64-crt
   pkgdesc: MinGW-w64 CRT for Windows
   pkgver: 12.0.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: http://mingw-w64.sourceforge.net
   arch:
     - any
