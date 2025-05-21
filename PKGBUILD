@@ -7,7 +7,7 @@ pkgname=(
   libwireplumber
   wireplumber-docs
 )
-pkgver=0.5.9
+pkgver=0.5.10
 pkgrel=1
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
@@ -35,7 +35,7 @@ checkdepends=(pipewire-audio)
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/$pkgbase.git#tag=$pkgver"
 )
-b2sums=('139eb25e44a798a02699e7ae9a245d85d00b12379db36077f1c5d6602c83f5b0afbd3ea282022e80e0fef98ae51588ec5dc85eae524f27c252c960220d47a351')
+b2sums=('5c9d06c4084187ce172e98fb05bef3826e4b7bf1fba505e5543fec0e194d8a957172c81e6fa32c7f53832e204dd794189d48deaae5eca10577b04106f2625ff3')
 
 prepare() {
   cd $pkgbase
@@ -96,7 +96,7 @@ package_wireplumber() {
     _pick libw usr/include
     _pick libw usr/share/gir-1.0
 
-    _pick docs usr/share/doc
+    _pick docs usr/share/doc/wireplumber/html
   )
 
   install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 $pkgbase/{NEWS,README}*

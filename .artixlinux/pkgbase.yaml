@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.5.9-1
+    version: 0.5.10-1
     packages:
-      - wireplumber-0.5.9-1-x86_64.pkg.tar.zst
-      - libwireplumber-0.5.9-1-x86_64.pkg.tar.zst
-      - wireplumber-docs-0.5.9-1-x86_64.pkg.tar.zst
+      - wireplumber-0.5.10-1-x86_64.pkg.tar.zst
+      - libwireplumber-0.5.10-1-x86_64.pkg.tar.zst
+      - wireplumber-docs-0.5.10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.5.8-1
