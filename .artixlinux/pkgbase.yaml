@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -45,8 +45,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 5.14.3-2
+    packages:
+      - telegram-desktop-5.14.3-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
