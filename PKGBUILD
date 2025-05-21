@@ -4,8 +4,8 @@
 
 pkgbase=zabbix
 pkgname=(zabbix-server zabbix-agent{,2} zabbix-proxy zabbix-frontend-php zabbix-web-service)
-pkgver=7.2.6
-pkgrel=2
+pkgver=7.2.7
+pkgrel=1
 arch=(x86_64)
 url='https://www.zabbix.com/'
 license=('GPL-2.0-only')
@@ -16,7 +16,7 @@ source=("https://cdn.zabbix.com/zabbix/sources/stable/${pkgver%.*}/zabbix-${pkgv
         zabbix-proxy.{sysusers,tmpfiles}
         zabbix-web-service.{sysusers,tmpfiles})
 
-sha512sums=('1a686c7a70a70ee6b1c7e949dfcf1fa3ed2484ee71973290e222ba4ce367be8a7d3aec22c858559d599fbe1349b7bc361fb97fea5a49c6d7fd6dfdfd2ff13aab'
+sha512sums=('bc14145ed78596b3c6b8fd40808d6709d2cafaee0b75ca644e631ca1d7cfb2af3ce75d091707831473fb18e32097e7d4d304128579cf731484e91239fd1f0288'
             '7a04f644e32f337794d5cba778ad755b6390830b5598ddfbc135fcb1646f63f0b136a484fbd9238634d3bf43d3ff8e5b17f4d34a8079f72b67f5c9985d664f7f'
             'ca6b4779de23829dfdd80ee21e924fbe4e2754f4e693bed4b1a2aa846cd87d150e399b1169d7fe58d30c50ed837c1b8254e580de420267d0a1834d6dc409c43d'
             '50012749cb7c5d7d2f8361a64bcbb10e70f90688b1f55917c0f19b045506427b32b891aac930c2576cae4f6e6da5ab45d3be093399e442e440ffe15aef663a36'
