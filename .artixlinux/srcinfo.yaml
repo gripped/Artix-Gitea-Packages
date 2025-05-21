@@ -1,0 +1,38 @@
+---
+version: 2.44-1
+pkgbase:
+  name: mingw-w64-binutils
+  pkgdesc: Cross binutils for the MinGW-w64 cross-compiler
+  pkgver: 2.44
+  pkgrel: 1
+  url: http://www.gnu.org/software/binutils
+  arch:
+    - x86_64
+  groups:
+    - mingw-w64-toolchain
+    - mingw-w64
+  license:
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-3.0-or-later
+    - GFDL-1.3-only
+    - FSFAP
+  depends:
+    - glibc
+    - zlib
+    - zstd
+  options:
+    - '!libtool'
+    - '!emptydirs'
+  source:
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.gz
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.gz.sig
+  validpgpkeys:
+    - 3A24BC1E8FB409FA9F14371813FCEF89DD9E3C4F
+  sha512sums:
+    - c8e394c12493bc5e87d49834068ba8f72e8e93be9141d3bd68d4d6fa2e53b3b42360d168a5381da043c596b82e7386f8dbce31ccbdbfdee1e6a89763326d46a7
+    - SKIP
+pkgname:
+  - name: mingw-w64-binutils
+# generated with artixpkg 0.36.2-1-any
