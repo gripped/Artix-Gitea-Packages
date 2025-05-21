@@ -1,0 +1,46 @@
+---
+version: 11.6.0-1
+pkgbase:
+  name: ansible
+  pkgdesc: Official assortment of Ansible collections
+  pkgver: 11.6.0
+  pkgrel: 1
+  url: https://pypi.org/project/ansible/
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - ansible-core
+  optdepends:
+    - 'python-argcomplete: shell completions'
+    - 'python-pyopenssl: openssl modules'
+    - 'python-dnspython: for dig lookup'
+    - 'python-ovirt-engine-sdk: ovirt support'
+    - 'python-boto3: aws_s3 module'
+    - 'python-ldap: ldap support'
+    - 'python-proxmoxer: proxmox modules'
+    - 'python-openstacksdk: OpenStack module'
+    - 'python-pynetbox: NetBox module'
+    - 'python-ldap: LDAP modules'
+    - 'python-kubernetes: Kubernetes modules'
+    - 'python-keyring: Keyring module'
+    - 'python-github3py: GitHub module'
+    - 'python-lxc: LXC module'
+    - 'python-fqdn: fqdn_valid module'
+    - 'acme-tiny: openssl_certificate module'
+  provides:
+    - python-ansible_collections
+  source:
+    - https://pypi.python.org/packages/source/a/ansible/ansible-11.6.0.tar.gz
+  sha512sums:
+    - 2c3d87b75dfc5f81683e019df6e001c633505c4312cb4bbd90e3678f2fdd634fd7a31305b0f22be616ccae7510d61e8d1a319c407f7a315cc331e56a37fd8d15
+pkgname:
+  - name: ansible
+# generated with artixpkg 0.36.2-1-any
