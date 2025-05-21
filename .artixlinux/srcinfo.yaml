@@ -1,0 +1,52 @@
+---
+version: 48.3-1
+pkgbase:
+  name: papers
+  pkgdesc: Document viewer for PDF and other document formats aimed at the GNOME desktop
+  pkgver: 48.3
+  pkgrel: 1
+  url: https://apps.gnome.org/Papers/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - appstream
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - itstool
+    - libsysprof-capture
+    - meson
+    - rust
+  depends:
+    - cairo
+    - dconf
+    - djvulibre
+    - exempi
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - graphene
+    - gtk4
+    - gtksourceview5
+    - hicolor-icon-theme
+    - libadwaita
+    - libarchive
+    - libnautilus-extension
+    - libspelling
+    - libtiff
+    - pango
+    - poppler-glib
+  source:
+    - git+https://gitlab.gnome.org/GNOME/Incubator/papers.git#tag=48.3
+  b2sums:
+    - b6ad587839b27f1f99646cdf28e66192bdd709564a61ba9dc7da164a4cea6c815090e1a903b153ea053f2a6d86078b626cfc9a2c2e09de78091390e4173b4277
+pkgname:
+  - name: papers
+  - name: papers-lib-docs
+    pkgdesc: Document viewer for PDF and other document formats aimed at the GNOME desktop (library API documentation)
+    depends: []
+# generated with artixpkg 0.36.2-1-any
