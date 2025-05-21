@@ -1,0 +1,50 @@
+---
+version: 0.git29.c4192e8-2
+pkgbase:
+  name: libtg_owt
+  pkgdesc: WebRTC library
+  pkgver: 0.git29.c4192e8
+  pkgrel: 2
+  url: https://github.com/desktop-app/tg_owt
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - git
+    - ninja
+    - cmake
+    - protobuf
+    - libxrandr
+    - libxcomposite
+    - openssl
+    - glibc
+    - ffmpeg
+    - libva
+    - opus
+    - yasm
+    - libjpeg-turbo
+    - pipewire
+    - libxtst
+    - libepoxy
+    - openh264
+  depends:
+    - libdrm
+    - libxdamage
+  options:
+    - staticlibs
+  source:
+    - git+https://github.com/desktop-app/tg_owt.git#commit=c4192e8e2e10ccb72704daa79fa108becfa57b01
+    - git+https://chromium.googlesource.com/libyuv/libyuv/
+    - git+https://github.com/google/crc32c
+    - git+https://github.com/abseil/abseil-cpp
+    - git+https://github.com/cisco/libsrtp
+  b2sums:
+    - 6669002e8c0667977fa2c630136574a95b16b652cc067665879be7df9a6d79edcc0d396d3617650822c5b3d2adc9143b3aa90fee62421d55c1a999809a27ccad
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+pkgname:
+  - name: libtg_owt
+# generated with artixpkg 0.36.2-1-any
