@@ -1,0 +1,28 @@
+---
+version: 5.15.17-1
+pkgbase:
+  name: qt5-serialport
+  pkgdesc: Provides access to hardware and virtual serial ports
+  pkgver: 5.15.17
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - git
+  depends:
+    - qt5-base
+  source:
+    - kde-qtserialport::git+https://invent.kde.org/qt/qt/qtserialport#commit=9bb2b66259413ac4eda1ddf64209ef44412aa55d
+  sha256sums:
+    - c544df4e6676ba3f8d26557d4fc4190bedc175e98111e39225c536f500260f88
+pkgname:
+  - name: qt5-serialport
+# generated with artixpkg 0.36.2-1-any
