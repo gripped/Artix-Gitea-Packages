@@ -1,0 +1,28 @@
+---
+version: 5.15.17-1
+pkgbase:
+  name: qt5-quickcontrols
+  pkgdesc: Reusable Qt Quick based UI controls to create classic desktop-style user interfaces
+  pkgver: 5.15.17
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - git
+  depends:
+    - qt5-declarative
+  source:
+    - kde-qtquickcontrols::git+https://invent.kde.org/qt/qt/qtquickcontrols#commit=37ee5e07e82296e24cc02c8bf6f31cb6bd8846b1
+  sha256sums:
+    - f9f0c19d964feae084e3fccc15da8de093b3321a3ae1ea5f07eecbc4a9412a4a
+pkgname:
+  - name: qt5-quickcontrols
+# generated with artixpkg 0.36.2-1-any
