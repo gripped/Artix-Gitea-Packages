@@ -1,0 +1,28 @@
+---
+version: 5.15.17-1
+pkgbase:
+  name: qt5-charts
+  pkgdesc: Provides a set of easy to use chart components
+  pkgver: 5.15.17
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+  makedepends:
+    - qt5-declarative
+    - git
+  depends:
+    - qt5-base
+  optdepends:
+    - 'qt5-declarative: QML bindings'
+  source:
+    - kde-qtcharts::git+https://invent.kde.org/qt/qt/qtcharts#commit=aaf04515611203a32cef866cce9bfeaa4cef20b6
+  sha256sums:
+    - d8415d48fdaf1c4b982966d827e639896e389d5445c322d22a0520184f6255f1
+pkgname:
+  - name: qt5-charts
+# generated with artixpkg 0.36.2-1-any
