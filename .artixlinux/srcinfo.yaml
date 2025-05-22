@@ -1,0 +1,29 @@
+---
+version: 0.9.2-1
+pkgbase:
+  name: gtk-layer-shell
+  pkgdesc: Library to create Wayland desktop components using the Layer Shell protocol
+  pkgver: 0.9.2
+  pkgrel: 1
+  url: https://github.com/wmww/gtk-layer-shell
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - gtk-doc
+    - gobject-introspection
+    - meson
+    - ninja
+    - valabind
+    - wayland-protocols
+  depends:
+    - gtk3
+    - wayland
+  source:
+    - gtk-layer-shell-0.9.2.tar.gz::https://github.com/wmww/gtk-layer-shell/archive/v0.9.2.tar.gz
+  sha512sums:
+    - 7ecbefca73f3bcba709f2b5f4153203592cb345ebce8aee27e75365d615e9a8f66ec28f9d42bae8828da9427082b0df190e820593301a80ac8b730c61a75b708
+pkgname:
+  - name: gtk-layer-shell
+# generated with artixpkg 0.36.2-1-any
