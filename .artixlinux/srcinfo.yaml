@@ -1,0 +1,32 @@
+---
+version: 5.15.17+kde+r2-1
+pkgbase:
+  name: qt5-connectivity
+  pkgdesc: Provides access to Bluetooth hardware
+  pkgver: 5.15.17+kde+r2
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - qt5-declarative
+    - git
+  depends:
+    - qt5-base
+    - bluez-libs
+  optdepends:
+    - 'qt5-declarative: QML bindings'
+  source:
+    - kde-qtconnectivity::git+https://invent.kde.org/qt/qt/qtconnectivity#commit=15961348aa26b73248432a0a274b332c36cd0054
+  sha256sums:
+    - cb9dbca7aaaa873cad2611c7afa5e95a8edb81f3a9622acbabbad8e0145a8149
+pkgname:
+  - name: qt5-connectivity
+# generated with artixpkg 0.36.2-1-any
