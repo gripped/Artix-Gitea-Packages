@@ -1,13 +1,13 @@
 ---
 pkgbase:
   name: zig
-  version: 0.13.0-2
+  version: 0.14.0-1
   arch:
     - x86_64
   pkgname:
     - zig
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -29,8 +29,9 @@ repos:
     packages:
       - zig-0.13.0-2-x86_64.pkg.tar.zst
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.14.0-1
+    packages:
+      - zig-0.14.0-1-x86_64.pkg.tar.zst
   world:
     version: 0.13.0-2
     packages:
