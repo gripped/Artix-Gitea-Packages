@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,17 +25,15 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 2:7.1.1-3
     packages:
       - ffmpeg-2:7.1.1-3-x86_64.pkg.tar.zst
     debug:
       - ffmpeg-debug-2:7.1.1-3-x86_64.pkg.tar.zst
-  world:
-    version: 2:7.1.1-2
-    packages:
-      - ffmpeg-2:7.1.1-2-x86_64.pkg.tar.zst
-    debug:
-      - ffmpeg-debug-2:7.1.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
