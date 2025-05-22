@@ -1,0 +1,40 @@
+---
+version: 1.1.7-1
+pkgbase:
+  name: lib32-libinstpatch
+  pkgdesc: Instrument file software library
+  pkgver: 1.1.7
+  pkgrel: 1
+  url: https://github.com/swami/libinstpatch
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  makedepends:
+    - cmake
+    - glib2-devel
+    - lib32-glib2
+    - lib32-libsndfile
+    - python
+  depends:
+    - lib32-gcc-libs
+    - lib32-glibc
+    - libinstpatch=1.1.7
+  provides:
+    - libinstpatch-1.0.so
+  source:
+    - https://github.com/swami/libinstpatch/archive/v1.1.7/libinstpatch-v1.1.7.tar.gz
+  b2sums:
+    - 7e78b0f868cd805a3633eeecbbd0b70b1d7f344372a96b0c08b1beabf5596a2d768db30499e802ab53ce22fa05e457c26b2d24d5f29285040807dc0d54a0d10e
+pkgname:
+  - name: lib32-libinstpatch
+    depends:
+      - lib32-gcc-libs
+      - lib32-glibc
+      - libinstpatch=1.1.7
+      - lib32-glib2
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - lib32-libsndfile
+      - libsndfile.so
+# generated with artixpkg 0.36.2-1-any
